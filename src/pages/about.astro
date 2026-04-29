@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout title="About" description="The Parent-Coach Playbook is an editorial brand for parents who coach their own kid. The drive home is the real game.">
+  <section class="border-b border-bone">
+    <div class="container-px py-16 md:py-24 grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-8">
+        <div class="t-label text-rust">About</div>
+        <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 max-w-3xl">
+          A field guide for the parents who <em class="text-rust">coach their own kid</em>.
+        </h1>
+        <p class="font-display text-ink-soft text-xl mt-8 leading-snug max-w-2xl">
+          The Parent-Coach Playbook reports on the part of youth sports nobody talks about.
+          The 12 minutes in the car before practice. The two hours on the field. The 90 seconds after the game.
+        </p>
+      </div>
+      <aside class="md:col-span-4 md:pl-8 md:border-l md:border-bone">
+        <div class="aspect-square bg-paper-warm border border-bone flex items-center justify-center">
+          <span class="t-label text-ink-soft">Photo placeholder</span>
+        </div>
+        <p class="t-label text-ink-soft mt-3" style="font-size: 0.65rem;">{SITE.imprint}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <div class="t-label text-rust">Thesis</div>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Most parent-coaches obsess over the middle of the day. The line-up card. The play call. The film from last Saturday. The middle is the smallest part of the relationship.</p>
+        <p>The relationship is built on the bookends. The drive there sets the temperature. The drive home decides what the next week looks like in the house.</p>
+        <p>This is a publication for the parents who want to coach the team and keep the kid. Both jobs at once. No shortcuts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <div class="t-label text-rust">Editorial direction</div>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>The brand is run by {SITE.founder}, a college football coach and a parent who has watched two kids move through youth sports, theater, and music programs. Cornerstone essays carry his byline. Field reporting and weekly issues are filed under PCP Editors.</p>
+        <p>This is a separate business from {SITE.founder}'s work at <a href="https://coachjeffthomas.com">coachjeffthomas.com</a>. The two sites do not share an audience and do not cross-promote.</p>
+        <p>Imprint: {SITE.imprint}.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

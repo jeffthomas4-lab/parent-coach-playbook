@@ -1,0 +1,35 @@
+---
+import { PILLARS } from '../data/site';
+
+interface Props {
+  active?: keyof typeof PILLARS;
+  variant?: 'sidebar' | 'inline';
+}
+const { active, variant = 'sidebar' } = Astro.props;
+const items = Object.values(PILLARS);
+---
+<nav
+  aria-label="The Three Drives"
+  class={`${variant === 'sidebar' ? 'border border-bone bg-paper-warm p-6' : 'border-y border-bone py-4'}`}
+>
+  <div class="t-label text-rust mb-4">The Three Drives</div>
+  <ol class="grid gap-3">
+    {items.map((p, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      const isActive = active === p.slug;
+      return (
+        <li>
+          <a
+            href={`/${p.slug}/`}
+            class={`flex items-baseline gap-3 group ${isActive ? 'text-rust' : 'text-ink'}`}
+          >
+            <span class="t-label">[{num}]</span>
+            <span class="font-display text-lg leading-tight group-hover:text-rust transition-colors">
+              {p.label.replace('The ', '')}
+            </span>
+          </a>
+        </li>
+      );
+    })}
+  </ol>
+</nav>

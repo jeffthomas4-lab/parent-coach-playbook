@@ -1,0 +1,60 @@
+---
+import Logo from './Logo.astro';
+import { SITE, NAV, UTILITY_NAV } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+<footer class="mt-24 border-t border-ink bg-paper">
+  <div class="container-px py-16 grid gap-12 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-3 mb-5">
+        <Logo size={48} />
+        <div class="leading-tight">
+          <div class="font-display text-ink text-lg font-semibold">{SITE.name}</div>
+          <div class="t-label text-ink-soft" style="font-size: 0.625rem;">{SITE.imprint}</div>
+        </div>
+      </div>
+      <p class="font-display text-ink-soft text-lg max-w-md leading-snug">
+        <em class="text-rust not-italic-on-mobile italic">{SITE.tagline}</em>
+      </p>
+    </div>
+
+    <div class="md:col-span-3">
+      <div class="t-label text-ink mb-4">Sections</div>
+      <ul class="grid gap-2.5 font-body text-ink-soft">
+        {NAV.map((item) => (
+          <li><a href={item.href} class="hover:text-rust">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <div class="t-label text-ink mb-4">More</div>
+      <ul class="grid gap-2.5 font-body text-ink-soft">
+        {UTILITY_NAV.map((item) => (
+          <li><a href={item.href} class="hover:text-rust">{item.label}</a></li>
+        ))}
+        <li><a href="/rss.xml" class="hover:text-rust">RSS</a></li>
+        <li><a href="/sitemap.xml" class="hover:text-rust">Sitemap</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <div class="t-label text-ink mb-4">Get in touch</div>
+      <ul class="grid gap-2.5 font-body text-ink-soft">
+        <li><a href={`mailto:${SITE.email}`} class="hover:text-rust">{SITE.email}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-bone">
+    <div class="container-px py-6 flex flex-col md:flex-row justify-between gap-3">
+      <div class="t-label text-ink-soft" style="font-size: 0.625rem;">
+        © {year} {SITE.imprint}. All rights reserved.
+      </div>
+      <div class="t-label text-ink-soft" style="font-size: 0.625rem;">
+        Editorial direction by {SITE.founder}
+      </div>
+    </div>
+  </div>
+</footer>

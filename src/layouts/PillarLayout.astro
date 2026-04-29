@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import ThreeDrivesNav from '../components/ThreeDrivesNav.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { PILLARS, SPORTS, AGE_BANDS, type PillarSlug } from '../data/site';
+
+interface Props {
+  pillar: PillarSlug;
+}
+
+const { pillar } = Astro.props;
+const meta = PILLARS[pillar];
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft && data.phase === pillar))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+// Collect tags actually used in this pillar
+const sportsUsed = [...new Set(articles.map(a => a.data.sport).filter(Boolean))] as string[];
+const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as string[];
+---
+<BaseLayout
+  title={meta.label}
+  description={meta.blurb}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-16 md:py-20 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8">
+        <div class="t-label text-rust">{meta.eyebrow}</div>
+        <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4">
+          {meta.label}
+        </h1>
+        <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+          {meta.blurb}
+        </p>
+      </div>
+      <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
+        <ThreeDrivesNav active={pillar} />
+      </aside>
+    </div>
+  </section>
+
+  {articles.length > 0 && (
+    <section>
+      <div class="container-px py-12">
+        <div class="flex flex-wrap gap-3 mb-2" data-filter-bar>
+          <button data-filter="all" class="t-label px-3 py-1 border border-ink bg-ink text-paper">All issues</button>
+          {sportsUsed.map(s => (
+            <button data-filter-sport={s} class="t-label px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">
+              {SPORTS.find(x => x.slug === s)?.label ?? s}
+            </button>
+          ))}
+          {agesUsed.map(a => (
+            <button data-filter-age={a} class="t-label px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">
+              Age {AGE_BANDS.find(x => x.slug === a)?.label ?? a}
+            </button>
+          ))}
+        </div>
+
+        <div data-article-list>
+          {articles.map((a) => (
+            <div data-sport={a.data.sport ?? ''} data-age={a.data.age ?? ''}>
+              <ArticleCard
+                href={`/${a.data.phase}/${a.slug}/`}
+                issue={a.data.issue}
+                sport={a.data.sport}
+                age={a.data.age}
+                title={a.data.title}
+                dek={a.data.dek}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {articles.length === 0 && (
+    <section>
+      <div class="container-px py-20">
+        <p class="font-display text-ink-soft text-xl">First issue is in the chamber. Subscribe below to get it.</p>
+      </div>
+    </section>
+  )}
+
+  <NewsletterSignup />
+</BaseLayout>
+
+<script>
+  const bar = document.querySelector('[data-filter-bar]');
+  const list = document.querySelector('[data-article-list]');
+  if (bar && list) {
+    bar.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName !== 'BUTTON') return;
+
+      // Reset visual state
+      bar.querySelectorAll('button').forEach((b) => {
+        b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+        b.classList.add('border-bone', 'text-ink-soft');
+      });
+      target.classList.remove('border-bone', 'text-ink-soft');
+      target.classList.add('bg-ink', 'text-paper', 'border-ink');
+
+      const sport = target.getAttribute('data-filter-sport');
+      const age = target.getAttribute('data-filter-age');
+      const all = target.getAttribute('data-filter') === 'all';
+
+      list.querySelectorAll('[data-sport]').forEach((row) => {
+        const r = row as HTMLElement;
+        if (all) {
+          r.style.display = '';
+          return;
+        }
+        if (sport) {
+          r.style.display = r.dataset.sport === sport ? '' : 'none';
+        } else if (age) {
+          r.style.display = r.dataset.age === age ? '' : 'none';
+        }
+      });
+    });
+  }
+</script>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+---
+<BaseLayout
+  title="The Drive Home Playbook"
+  description="A 12-page free field guide. The exact words to say in the first 90 seconds after the game, by sport and by age."
+>
+  <section class="border-b border-ink bg-ink text-paper">
+    <div class="container-px py-20 grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-7">
+        <div class="t-label text-trophy">Free · 12 pages · PDF</div>
+        <h1 class="font-display text-paper text-[2.5rem] md:text-[4.5rem] font-semibold leading-[1.0] mt-4">
+          The Drive Home <em class="text-rust">Playbook</em>.
+        </h1>
+        <p class="font-display text-paper-warm text-xl md:text-2xl mt-8 max-w-xl leading-snug">
+          The first 90 seconds after a youth game decide what the next week feels like in your house. This guide tells you exactly what to say, by sport and by age.
+        </p>
+      </div>
+      <div class="md:col-span-5">
+        <NewsletterSignup
+          variant="card"
+          headline="Send me the playbook"
+          blurb="One email. The PDF lands in your inbox in under a minute. You'll also start getting our weekly issues."
+          buttonLabel="Send the PDF"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <div class="t-label text-rust">What's inside</div>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>The 90-second rule. The science behind why the window is so short and what's happening in your kid's head while it's open.</p>
+        <p>Eight scripted opening lines, by sport. Baseball. Softball. Soccer. Basketball. Football. Hockey. Lacrosse. Volleyball. Each one tested by parent-coaches in our network.</p>
+        <p>Three things never to say in the car after a game. The reasons each one breaks the relationship faster than parents expect.</p>
+        <p>A printable pocket card you can keep in the glove box.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <div class="t-label text-rust">Why we made it</div>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>We watched two kids grow up moving through eight sports, two theater programs, and one orchestra. The same pattern showed up everywhere. Parents handle the game well. Parents handle the drive home badly.</p>
+        <p>The fix is small. The first 90 seconds. A different sentence. A different tone. We wrote down what worked.</p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

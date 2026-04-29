@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import ThreeDrivesNav from '../components/ThreeDrivesNav.astro';
+import { PILLARS, SITE } from '../data/site';
+
+const all = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const featured = all.find(a => a.data.featured) ?? all[0];
+const latest = all.filter(a => a.slug !== featured?.slug).slice(0, 6);
+
+const pillars = Object.values(PILLARS);
+---
+<BaseLayout>
+  <!-- HERO -->
+  <section class="border-b border-bone">
+    <div class="container-px py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8">
+        <div class="t-label text-rust mb-5">Issue 001 / The launch</div>
+        <h1 class="font-display text-ink font-semibold text-[2.75rem] md:text-[4.5rem] leading-[0.98] tracking-tight">
+          The drive home is the <em class="text-rust">real game</em>.
+        </h1>
+        <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 max-w-2xl leading-snug">
+          Editorial reporting and field notes for parents who coach their own kid.
+          Pre-game, in-game, and the conversation that matters most.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="/drive-home/the-90-second-rule/" class="btn">Read the manifesto</a>
+          <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
+        <ThreeDrivesNav variant="sidebar" />
+        <div class="mt-6 t-label text-ink-soft" style="font-size: 0.65rem;">
+          Three drives. One relationship.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- THE THREE PILLARS -->
+  <section class="border-b border-bone">
+    <div class="container-px py-20">
+      <div class="t-label text-rust mb-3">The framework</div>
+      <h2 class="font-display text-ink text-3xl md:text-5xl font-semibold leading-[1.05] max-w-3xl">
+        Most parent-coaches obsess over the <em class="text-rust">middle</em>. The relationship gets built in the bookends.
+      </h2>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-px bg-bone">
+        {pillars.map((p, i) => (
+          <a href={`/${p.slug}/`} class="bg-paper p-8 group card-hover block">
+            <div class="t-label text-rust">{`0${i + 1}`}</div>
+            <h3 class="font-display text-ink text-3xl font-semibold mt-4 leading-tight group-hover:text-rust transition-colors">
+              {p.label}
+            </h3>
+            <p class="font-display text-ink-soft mt-3 leading-snug">
+              {p.blurb}
+            </p>
+            <div class="t-label text-rust mt-6">Open the section →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED + LATEST -->
+  <section>
+    <div class="container-px py-20 grid lg:grid-cols-12 gap-10">
+      {featured && (
+        <article class="lg:col-span-7 border-r-0 lg:border-r lg:pr-10 lg:border-bone">
+          <div class="t-label text-rust mb-4">Featured / {PILLARS[featured.data.phase].label}</div>
+          <a href={`/${featured.data.phase}/${featured.slug}/`} class="block group">
+            <h2
+              class="font-display text-ink text-4xl md:text-5xl font-semibold leading-[1.05] group-hover:text-rust transition-colors"
+              set:html={featured.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+            />
+            {featured.data.dek && (
+              <p class="font-display text-ink-soft text-lg mt-4 leading-snug max-w-xl">
+                {featured.data.dek}
+              </p>
+            )}
+            <div class="t-label text-rust mt-6">Read the issue →</div>
+          </a>
+        </article>
+      )}
+
+      <div class="lg:col-span-5">
+        <div class="t-label text-rust mb-4">Latest issues</div>
+        <div>
+          {latest.map((a) => (
+            <ArticleCard
+              href={`/${a.data.phase}/${a.slug}/`}
+              issue={a.data.issue}
+              sport={a.data.sport}
+              age={a.data.age}
+              title={a.data.title}
+              dek={a.data.dek}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <LeadMagnetCTA />
+
+  <!-- NEWSLETTER -->
+  <NewsletterSignup />
+</BaseLayout>

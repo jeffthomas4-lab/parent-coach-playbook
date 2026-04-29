@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GearCard from '../../components/GearCard.astro';
+import { SPORTS } from '../../data/site';
+
+export async function getStaticPaths() {
+  return SPORTS.map(s => ({ params: { sport: s.slug }, props: { sportSlug: s.slug, sportLabel: s.label } }));
+}
+
+const { sportSlug, sportLabel } = Astro.props;
+const items = (await getCollection('gear', ({ data }) => data.sport === sportSlug || data.sport === 'all-sports'));
+---
+<BaseLayout title={`${sportLabel} gear`} description={`Curated ${sportLabel.toLowerCase()} gear for parent-coaches.`}>
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <div class="t-label text-rust">Gear / {sportLabel}</div>
+      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4">
+        {sportLabel} gear
+      </h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12">
+      {items.length === 0 ? (
+        <p class="font-display text-ink-soft text-xl">First picks for {sportLabel.toLowerCase()} are in the pipeline. Subscribe and you'll see them when they drop.</p>
+      ) : (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map(g => (
+            <GearCard
+              name={g.data.name}
+              retailer={g.data.retailer}
+              priceRange={g.data.priceRange}
+              sport={g.data.sport}
+              age={g.data.age}
+              description={g.data.description}
+              ourTake={g.data.ourTake}
+              affiliateSlug={g.data.affiliateSlug}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

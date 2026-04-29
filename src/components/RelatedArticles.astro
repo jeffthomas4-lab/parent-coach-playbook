@@ -1,0 +1,36 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  articles: CollectionEntry<'articles'>[];
+  pillarLabel?: string;
+}
+
+const { articles, pillarLabel } = Astro.props;
+---
+{articles.length > 0 && (
+  <section class="border-t border-ink mt-20 pt-12">
+    <div class="container-px">
+      <div class="t-label text-rust mb-2">{pillarLabel ? `More from ${pillarLabel}` : 'Keep reading'}</div>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink mb-8">
+        More from this <em class="text-rust">drive</em>
+      </h2>
+      <div class="grid md:grid-cols-3 gap-0 md:gap-px md:bg-bone">
+        {articles.slice(0, 3).map((a) => (
+          <div class="bg-paper">
+            <ArticleCard
+              href={`/${a.data.phase}/${a.slug}/`}
+              issue={a.data.issue}
+              sport={a.data.sport}
+              age={a.data.age}
+              title={a.data.title}
+              dek={a.data.dek}
+              variant="grid"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

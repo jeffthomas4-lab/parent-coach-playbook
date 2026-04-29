@@ -1,0 +1,15 @@
+---
+interface Props {
+  left?: string;
+  right?: string;
+}
+const { left, right } = Astro.props;
+---
+<div class="border-t border-ink">
+  {(left || right) && (
+    <div class="container-px py-3 flex justify-between items-center">
+      {left ? <span class="t-label text-ink">{left}</span> : <span />}
+      {right ? <span class="t-label text-ink-soft">{right}</span> : <span />}
+    </div>
+  )}
+</div>

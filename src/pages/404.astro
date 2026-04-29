@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Wrong field" description="That page isn't here." noindex>
+  <section>
+    <div class="container-px py-32 text-center">
+      <div class="t-label text-rust mb-4">404 / Wrong field</div>
+      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4.5rem] leading-[1.0] max-w-2xl mx-auto">
+        Wrong field. <em class="text-rust">Same league.</em>
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-xl mx-auto leading-snug">
+        That page isn't here. Try the homepage, or pick a drive.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <a href="/" class="btn">Homepage</a>
+        <a href="/drive-there/" class="btn btn-ghost">The Drive There</a>
+        <a href="/game/" class="btn btn-ghost">The Game</a>
+        <a href="/drive-home/" class="btn btn-ghost">The Drive Home</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

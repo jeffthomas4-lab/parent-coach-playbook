@@ -1,0 +1,29 @@
+---
+import affiliates from '../../data/affiliates.json';
+
+export async function getStaticPaths() {
+  return Object.entries(affiliates).map(([slug, entry]) => {
+    const url = new URL((entry as any).destination);
+    url.searchParams.set('utm_source', 'parentcoachplaybook');
+    url.searchParams.set('utm_medium', 'affiliate');
+    url.searchParams.set('utm_campaign', (entry as any).campaign ?? slug);
+    return { params: { slug }, props: { destination: url.toString() } };
+  });
+}
+
+const { destination } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content={`0; url=${destination}`} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={destination} />
+  <title>Redirecting...</title>
+  <script set:html={`window.location.replace(${JSON.stringify(destination)});`} />
+</head>
+<body>
+  <p>Redirecting to <a href={destination} rel="sponsored noopener">{destination}</a>...</p>
+</body>
+</html>

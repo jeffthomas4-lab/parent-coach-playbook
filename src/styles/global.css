@@ -1,0 +1,208 @@
+/* Self-hosted fonts (must precede @tailwind directives) */
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/700.css";
+@import "@fontsource/fraunces/400-italic.css";
+@import "@fontsource/fraunces/500-italic.css";
+@import "@fontsource/fraunces/600-italic.css";
+
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base reset ---------- */
+:root {
+  --paper: #F7F3EC;
+  --paper-warm: #F0EADF;
+  --ink: #1A1F2E;
+  --ink-soft: #2A3042;
+  --rust: #B54422;
+  --turf: #4A5D3A;
+  --bone: #E8E1D2;
+  --trophy: #C89B3C;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink-soft);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* ---------- Editorial type primitives ---------- */
+.t-display {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.t-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.t-h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.t-h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+
+.t-display em {
+  font-style: italic;
+  color: var(--rust);
+  font-weight: 500;
+}
+
+.t-eyebrow,
+.t-label {
+  font-family: "JetBrains Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.t-dek {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ---------- Article body ---------- */
+.article-body {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 680px;
+}
+
+.article-body p { margin: 0 0 1.25em 0; }
+.article-body h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--ink);
+  margin: 2.25em 0 0.75em;
+  line-height: 1.2;
+}
+.article-body h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.375rem;
+  color: var(--ink);
+  margin: 1.75em 0 0.5em;
+}
+.article-body em { color: var(--rust); font-style: italic; }
+.article-body a {
+  color: var(--rust);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.article-body a:hover { color: var(--ink); }
+
+.article-body blockquote {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 2.5em 0;
+  padding: 1.25em 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  text-align: center;
+}
+
+.article-body blockquote p { margin: 0; }
+
+/* Drop cap */
+.article-body > p:first-of-type::first-letter {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: 5.25rem;
+  line-height: 0.9;
+  float: left;
+  margin: 0.05em 0.08em -0.05em 0;
+  color: var(--rust);
+}
+
+/* ---------- Rules ---------- */
+.rule-hair { border-top: 1px solid var(--bone); }
+.rule-strong { border-top: 1px solid var(--ink); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms cubic-bezier(.2,.7,.2,1), color 200ms cubic-bezier(.2,.7,.2,1);
+}
+.btn:hover { background: var(--rust); border-color: var(--rust); color: var(--paper); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Container ---------- */
+.container-px {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container-px { padding: 0 24px; }
+  .article-body > p:first-of-type::first-letter { font-size: 4rem; }
+}
+
+/* ---------- Quiet hover ---------- */
+.card-hover {
+  transition: background 200ms cubic-bezier(.2,.7,.2,1);
+}
+.card-hover:hover {
+  background: var(--paper-warm);
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--rust);
+  color: var(--paper);
+}
+
+/* ---------- Focus ---------- */
+*:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}

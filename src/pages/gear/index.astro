@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GearCard from '../../components/GearCard.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { SPORTS } from '../../data/site';
+import { getCollection } from 'astro:content';
+
+const allGear = await getCollection('gear');
+const sportsWithGear = SPORTS.filter(s => allGear.some(g => g.data.sport === s.slug));
+const featured = allGear.filter(g => g.data.featured).slice(0, 6);
+---
+<BaseLayout title="Gear" description="Curated affiliate picks. Vetted by parent-coaches who actually use them.">
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <div class="t-label text-rust">Gear</div>
+      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 max-w-3xl">
+        The kit we'd actually <em class="text-rust">buy again</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        Affiliate links pay the bills here. Every pick is something a real parent-coach
+        in our network has used for at least a season. No paid placements. No press samples.
+      </p>
+    </div>
+  </section>
+
+  {featured.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-16">
+        <div class="t-label text-rust mb-4">Editor picks</div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featured.map(g => (
+            <GearCard
+              name={g.data.name}
+              retailer={g.data.retailer}
+              priceRange={g.data.priceRange}
+              sport={g.data.sport}
+              age={g.data.age}
+              description={g.data.description}
+              ourTake={g.data.ourTake}
+              affiliateSlug={g.data.affiliateSlug}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section>
+    <div class="container-px py-16">
+      <div class="t-label text-rust mb-4">By sport</div>
+      <div class="grid md:grid-cols-3 gap-px bg-bone">
+        {SPORTS.map(s => (
+          <a href={`/gear/${s.slug}/`} class="bg-paper p-6 card-hover block">
+            <div class="t-label text-ink-soft">Browse</div>
+            <div class="font-display text-2xl text-ink mt-1 group-hover:text-rust">{s.label} →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+---
+<BaseLayout title="Resources" description="Free downloads and tools for parent-coaches.">
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <div class="t-label text-rust">Resources</div>
+      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 max-w-3xl">
+        Free tools for the <em class="text-rust">work in the car</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        Plain printable PDFs. No email gates beyond the first one. Take what you need and use it.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <div class="t-label text-rust mb-4">Free downloads</div>
+      <div class="grid md:grid-cols-2 gap-px bg-bone">
+        <a href="/resources/drive-home-playbook/" class="bg-paper p-8 card-hover block">
+          <div class="t-label text-ink-soft">Lead magnet · 12 pages</div>
+          <h3 class="font-display text-ink text-2xl md:text-3xl mt-3 font-semibold leading-tight">
+            The Drive Home Playbook
+          </h3>
+          <p class="font-display text-ink-soft mt-3 leading-snug">The first 90 seconds, scripted by sport and age.</p>
+          <div class="t-label text-rust mt-5">Get it →</div>
+        </a>
+        <div class="bg-paper p-8">
+          <div class="t-label text-ink-soft">Coming soon</div>
+          <h3 class="font-display text-ink text-2xl md:text-3xl mt-3 font-semibold leading-tight">
+            The Pre-Game Card
+          </h3>
+          <p class="font-display text-ink-soft mt-3 leading-snug">A pocket card with the three things to say in the car.</p>
+          <div class="t-label text-ink-soft mt-5">In the works</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <LeadMagnetCTA />
+  <NewsletterSignup />
+</BaseLayout>

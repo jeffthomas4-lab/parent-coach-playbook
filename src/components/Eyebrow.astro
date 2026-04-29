@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+  class?: string;
+}
+const { text, href, class: className = '' } = Astro.props;
+---
+{href ? (
+  <a href={href} class={`t-eyebrow inline-block hover:text-rust ${className}`}>{text}</a>
+) : (
+  <span class={`t-eyebrow inline-block ${className}`}>{text}</span>
+)}

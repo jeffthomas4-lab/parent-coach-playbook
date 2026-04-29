@@ -1,0 +1,67 @@
+---
+import Logo from './Logo.astro';
+import { SITE, NAV, UTILITY_NAV } from '../data/site';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path === href || path.startsWith(href);
+---
+<header class="border-t border-ink">
+  <div class="container-px flex items-center justify-between py-5 border-b border-bone">
+    <a href="/" class="flex items-center gap-3 group" aria-label={`${SITE.name} home`}>
+      <Logo size={40} />
+      <span class="hidden sm:flex flex-col leading-tight">
+        <span class="font-display text-ink text-[1.1rem] font-semibold tracking-tight">{SITE.name}</span>
+        <span class="t-label text-ink-soft" style="font-size: 0.625rem;">{SITE.imprint}</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
+      {NAV.map((item) => (
+        <a
+          href={item.href}
+          class={`t-label hover:text-rust transition-colors ${
+            isActive(item.href) ? 'text-rust' : 'text-ink'
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-5">
+      {UTILITY_NAV.map((item) => (
+        <a href={item.href} class="hidden md:inline t-label text-ink hover:text-rust transition-colors">{item.label}</a>
+      ))}
+      <button
+        type="button"
+        class="lg:hidden t-label text-ink"
+        aria-label="Toggle menu"
+        data-menu-toggle
+      >
+        Menu
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="lg:hidden hidden border-b border-bone bg-paper-warm"
+    data-mobile-menu
+  >
+    <div class="container-px py-6 grid gap-4">
+      {[...NAV, ...UTILITY_NAV].map((item) => (
+        <a href={item.href} class="t-label text-ink hover:text-rust">{item.label}</a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

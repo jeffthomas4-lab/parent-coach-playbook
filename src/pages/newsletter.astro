@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { getCollection } from 'astro:content';
+import { SPORTS, AGE_BANDS } from '../data/site';
+
+const issues = (await getCollection('articles', ({ data }) => !data.draft && !!data.issue))
+  .sort((a, b) => (b.data.issue ?? 0) - (a.data.issue ?? 0));
+---
+<BaseLayout title="Newsletter" description="One issue a week. Field notes for parents who coach.">
+  <!-- Lead magnet hero -->
+  <section class="border-b border-ink bg-ink text-paper">
+    <div class="container-px py-20 grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-7">
+        <div class="t-label text-trophy">Free download</div>
+        <h1 class="font-display text-paper text-[2.5rem] md:text-[4.25rem] font-semibold leading-[1.0] mt-4">
+          The Drive Home <em class="text-rust">Playbook</em>.
+        </h1>
+        <p class="font-display text-paper-warm text-xl mt-6 max-w-xl leading-snug">
+          A 12-page field guide. The exact words to say in the first 90 seconds after the game, by sport and by age. Free when you sign up.
+        </p>
+      </div>
+      <div class="md:col-span-5">
+        <NewsletterSignup
+          variant="card"
+          headline="Send me the playbook"
+          blurb="One-time email. The PDF lands in your inbox."
+          buttonLabel="Send it"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Archive -->
+  <section>
+    <div class="container-px py-16">
+      <div class="t-label text-rust mb-4">Issue archive</div>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-3">
+        {issues.map((a) => {
+          const sport = SPORTS.find(s => s.slug === a.data.sport)?.label ?? a.data.sport ?? '';
+          const age = AGE_BANDS.find(x => x.slug === a.data.age)?.label;
+          const meta = [sport, age ? `Age ${age}` : null].filter(Boolean).join(' / ');
+          const date = a.data.publishedAt.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+          const titleHtml = a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+          return (
+            <a href={`/${a.data.phase}/${a.slug}/`} class="border-b border-bone py-3 flex flex-col gap-1 hover:bg-paper-warm">
+              <span class="t-label text-ink-soft">
+                #{String(a.data.issue ?? 0).padStart(3, '0')} · {date}{meta ? ' · ' + meta : ''}
+              </span>
+              <span class="font-display text-ink text-xl leading-snug" set:html={titleHtml} />
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

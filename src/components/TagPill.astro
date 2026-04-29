@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string;
+  href?: string;
+  variant?: 'default' | 'phase' | 'sport' | 'age';
+}
+const { label, href, variant = 'default' } = Astro.props;
+
+const colorMap: Record<string, string> = {
+  default: 'border-bone text-ink-soft',
+  phase: 'border-rust text-rust',
+  sport: 'border-ink text-ink',
+  age: 'border-turf text-turf',
+};
+const cls = `inline-flex items-center px-2.5 py-1 border t-label ${colorMap[variant]}`;
+---
+{href ? (
+  <a href={href} class={`${cls} hover:bg-paper-warm transition-colors`}>{label}</a>
+) : (
+  <span class={cls}>{label}</span>
+)}

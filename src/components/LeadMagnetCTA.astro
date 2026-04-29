@@ -1,0 +1,37 @@
+---
+import NewsletterSignup from './NewsletterSignup.astro';
+
+interface Props {
+  title?: string;
+  blurb?: string;
+  formId?: string;
+}
+
+const {
+  title = 'The Drive Home Playbook',
+  blurb = 'A free 12-page field guide. The exact words to say in the first 90 seconds after the game, by sport and by age. Yours when you sign up.',
+  formId = import.meta.env.PUBLIC_KIT_LEAD_MAGNET_FORM_ID,
+} = Astro.props;
+---
+<aside class="bg-rust text-paper border border-rust py-14">
+  <div class="container-px grid md:grid-cols-12 gap-8 items-end">
+    <div class="md:col-span-7">
+      <div class="t-label text-trophy mb-3">Free download</div>
+      <h2 class="font-display text-paper text-4xl md:text-5xl font-semibold leading-[1.05]">
+        {title}
+      </h2>
+      <p class="font-display text-paper-warm mt-4 text-lg max-w-xl leading-snug">
+        {blurb}
+      </p>
+    </div>
+    <div class="md:col-span-5">
+      <NewsletterSignup
+        variant="card"
+        headline="Send me the playbook"
+        blurb="One-time email. The PDF lands in your inbox."
+        buttonLabel="Send it"
+        formId={formId}
+      />
+    </div>
+  </div>
+</aside>

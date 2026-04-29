@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const all = (await getCollection('articles', ({ data }) => !data.draft));
+const index = all.map(a => ({
+  title: a.data.title.replace(/\*/g, ''),
+  dek: a.data.dek ?? '',
+  href: `/${a.data.phase}/${a.slug}/`,
+  phase: a.data.phase,
+  sport: a.data.sport ?? '',
+  age: a.data.age ?? '',
+}));
+---
+<BaseLayout title="Search" description="Search the archive.">
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <div class="t-label text-rust">Search</div>
+      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[3.5rem] leading-[1.0] mt-4">
+        Search the archive
+      </h1>
+      <input
+        type="search"
+        placeholder="Type to filter..."
+        class="mt-8 w-full max-w-xl px-4 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
+        data-search-input
+      />
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12">
+      <div data-search-results></div>
+    </div>
+  </section>
+
+  <script type="application/json" id="search-index" set:html={JSON.stringify(index)} />
+  <script>
+    type Hit = { title: string; dek: string; href: string; phase: string; sport: string; age: string };
+    const idxEl = document.getElementById('search-index') as HTMLScriptElement | null;
+    const input = document.querySelector('[data-search-input]') as HTMLInputElement | null;
+    const out = document.querySelector('[data-search-results]') as HTMLElement | null;
+    if (idxEl && input && out) {
+      const data: Hit[] = JSON.parse(idxEl.textContent || '[]');
+      const render = (hits: Hit[]) => {
+        out.innerHTML = hits.map(h => `
+          <a href="${h.href}" class="block border-b border-bone py-5 hover:bg-paper-warm">
+            <div class="t-label text-ink-soft">${h.phase} ${h.sport ? '· ' + h.sport : ''} ${h.age ? '· age ' + h.age : ''}</div>
+            <h3 class="font-display text-ink text-2xl mt-1 leading-tight">${h.title}</h3>
+            ${h.dek ? `<p class="font-display text-ink-soft mt-2">${h.dek}</p>` : ''}
+          </a>`).join('') || '<p class="font-display text-ink-soft">No matches.</p>';
+      };
+      render(data);
+      input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        if (!q) return render(data);
+        render(data.filter(h =>
+          h.title.toLowerCase().includes(q) ||
+          h.dek.toLowerCase().includes(q) ||
+          h.sport.toLowerCase().includes(q) ||
+          h.phase.toLowerCase().includes(q)
+        ));
+      });
+    }
+  </script>
+</BaseLayout>

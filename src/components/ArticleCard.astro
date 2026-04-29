@@ -1,0 +1,58 @@
+---
+import { PILLARS, SPORTS, AGE_BANDS } from '../data/site';
+
+interface Props {
+  href: string;
+  issue?: string | number;
+  sport?: string;
+  age?: string;
+  phase?: keyof typeof PILLARS;
+  title: string;
+  dek?: string;
+  publishedAt?: Date | string;
+  variant?: 'list' | 'grid' | 'compact';
+}
+
+const {
+  href,
+  issue,
+  sport,
+  age,
+  phase,
+  title,
+  dek,
+  publishedAt,
+  variant = 'list',
+} = Astro.props;
+
+const sportLabel = SPORTS.find(s => s.slug === sport)?.label;
+const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
+
+// Issue tag: "Issue 047 — Baseball / 8–10"
+const tagBits = [
+  issue ? `Issue ${String(issue).padStart(3, '0')}` : null,
+  sportLabel || ageLabel
+    ? [sportLabel, ageLabel].filter(Boolean).join(' / ')
+    : null,
+].filter(Boolean);
+const tagLine = tagBits.join(' — ');
+
+// Italicize the conceptual hinge in the headline by wrapping the
+// substring between * and * in <em>. e.g. "What you say *first* shapes the week"
+const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+---
+<article class={`card-hover border-b border-bone py-7 ${variant === 'grid' ? 'border border-bone p-6' : ''}`}>
+  <a href={href} class="block group">
+    {tagLine && <div class="t-label text-ink-soft mb-3">{tagLine}</div>}
+    <h3
+      class="font-display text-ink text-2xl md:text-[1.65rem] font-semibold leading-tight group-hover:text-rust transition-colors"
+      set:html={renderTitle(title)}
+    />
+    {dek && (
+      <p class="font-display text-ink-soft text-base mt-2 leading-snug max-w-2xl">
+        {dek}
+      </p>
+    )}
+    <div class="t-label text-rust mt-4">Read →</div>
+  </a>
+</article>

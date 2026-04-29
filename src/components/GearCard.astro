@@ -1,0 +1,44 @@
+---
+import { SPORTS, AGE_BANDS } from '../data/site';
+
+interface Props {
+  name: string;
+  retailer: string;
+  priceRange?: string;
+  sport?: string;
+  age?: string;
+  description: string;
+  ourTake?: string;
+  affiliateSlug: string; // resolves to /go/[slug]
+}
+
+const {
+  name,
+  retailer,
+  priceRange,
+  sport,
+  age,
+  description,
+  ourTake,
+  affiliateSlug,
+} = Astro.props;
+
+const sportLabel = SPORTS.find(s => s.slug === sport)?.label;
+const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
+---
+<article class="border border-bone bg-paper-warm p-6 flex flex-col">
+  <div class="t-label text-ink-soft mb-2">
+    {[retailer, sportLabel, ageLabel].filter(Boolean).join(' / ')}
+  </div>
+  <h3 class="font-display text-ink text-2xl font-semibold leading-tight">{name}</h3>
+  {priceRange && <div class="t-label text-rust mt-2">{priceRange}</div>}
+  <p class="font-display text-ink-soft mt-4 leading-snug">{description}</p>
+  {ourTake && (
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug">
+      Our take: {ourTake}
+    </p>
+  )}
+  <a href={`/go/${affiliateSlug}/`} rel="sponsored noopener" class="btn mt-6 self-start">
+    See it at {retailer} ↗
+  </a>
+</article>
