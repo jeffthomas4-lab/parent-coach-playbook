@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+
+// Authoritative bodies we link to when we cite a fact, regulation, or safety standard.
+// They are not competition. They are sources we credit.
+
+const orgGroups = [
+  {
+    label: 'Safety and certification',
+    blurb: 'The bodies that test and certify protective equipment. When we say "NOCSAE certified" or "VTI 5-star," this is who decides.',
+    items: [
+      { name: 'NOCSAE', short: 'National Operating Committee on Standards for Athletic Equipment', url: 'https://nocsae.org', note: 'Sets the certification standards for football, lacrosse, baseball, and softball helmets, chest protectors, and other protective equipment.' },
+      { name: 'Virginia Tech Helmet Lab (STAR ratings)', short: 'Independent helmet impact ratings', url: 'https://www.helmet.beam.vt.edu', note: 'Public, transparent star ratings (1 through 5) for football, hockey, and youth helmets. The current best benchmark for helmet safety beyond minimum certification.' },
+      { name: 'CDC HEADS UP', short: 'Concussion protocols and education', url: 'https://www.cdc.gov/headsup', note: 'Free training and protocols for parents, coaches, and athletes on concussion recognition, response, and return-to-play.' },
+      { name: 'U.S. Center for SafeSport', short: 'Athlete protection in Olympic and Paralympic sports', url: 'https://uscenterforsafesport.org', note: 'Education and reporting for athlete safety, abuse prevention, and emotional wellbeing.' },
+    ],
+  },
+  {
+    label: 'Sport-specific governing bodies',
+    blurb: 'The national organizations that set rules, certifications, and youth-development frameworks for each sport. We link to them whenever we cite a rule, age cutoff, or equipment standard.',
+    items: [
+      { name: 'USA Baseball', short: 'Baseball governing body, USABat standard', url: 'https://www.usabaseball.com', note: 'Defines the USABat certification stamp required by Little League, Cal Ripken, Pony, and most youth leagues.' },
+      { name: 'USSSA', short: 'United States Specialty Sports Association', url: 'https://www.usssa.com', note: 'Travel ball certification authority. The 1.15 BPF stamp on bats comes from here.' },
+      { name: 'Little League International', short: 'The standard youth baseball/softball league', url: 'https://www.littleleague.org', note: 'Field maintenance guides, coaching certifications, and rule books that most rec leagues mirror.' },
+      { name: 'USA Softball', short: 'Softball governing body and ASA stamp', url: 'https://www.teamusa.com/usa-softball', note: 'Certifies softball bats and balls. The ASA/USA Softball stamp is required by most fastpitch leagues.' },
+      { name: 'US Youth Soccer', short: 'The national youth soccer governing body', url: 'https://www.usyouthsoccer.org', note: 'Coaching education, parent guides, and small-sided game standards for U6 through U19.' },
+      { name: 'USA Lacrosse', short: 'The national lacrosse governing body', url: 'https://www.usalacrosse.com', note: 'Equipment standards including the NOCSAE ND200 chest protector requirement, plus boys and girls youth rulebooks.' },
+      { name: 'USA Hockey', short: 'The national hockey governing body', url: 'https://www.usahockey.com', note: 'HECC certification for helmets, the American Development Model, and age-band guidelines.' },
+      { name: 'USA Football', short: 'The national football governing body', url: 'https://www.usafootball.com', note: 'Helmet fitting, equipment guides, Heads Up Football coaching certification, and flag-football resources.' },
+      { name: 'USA Volleyball', short: 'The national volleyball governing body', url: 'https://usavolleyball.org', note: 'Junior development, coaching certifications, and SafeSport-aligned policies for youth play.' },
+      { name: 'USA Basketball', short: 'The national basketball governing body', url: 'https://www.usab.com', note: 'Coaching license programs and youth development guidelines.' },
+    ],
+  },
+  {
+    label: 'Coaching education and youth-sport research',
+    blurb: 'Bodies that study or train youth coaches. We point to them on cornerstone topics. They publish work we cite.',
+    items: [
+      { name: 'Positive Coaching Alliance', short: 'Coach and parent education', url: 'https://positivecoach.org', note: 'Tools and workshops for coaches, parents, and leaders on character-building youth sport.' },
+      { name: 'TrueSport (USADA)', short: 'Sportsmanship and clean-sport education', url: 'https://truesport.org', note: 'Lessons and free resources on sportsmanship, character, and performance for coaches and parents.' },
+      { name: 'Project Play (Aspen Institute)', short: 'Research and policy on youth sports', url: 'https://projectplay.org', note: 'Annual State of Play reports and the eight playbooks for healthier youth sport. Research-grade.' },
+      { name: 'Association for Applied Sport Psychology', short: 'Find a certified mental performance consultant', url: 'https://appliedsportpsych.org', note: 'When a kid needs more than a parent or a coach can offer, this is how to find a credentialed sport psychologist.' },
+      { name: 'USOPC Grassroots Hub', short: 'U.S. Olympic and Paralympic Committee', url: 'https://www.usopc.org/coaching-grassroots', note: 'Athlete-centered coaching frameworks aligned with the Olympic and Paralympic movement.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="National organizations"
+  description="The authoritative bodies behind the rules, certifications, and research we cite. Not our competition. Sources we credit."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-16 md:py-20">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">National organizations</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        The bodies behind <em class="text-rust">the rules</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        When we say "NOCSAE certified" or "USABat stamp" or "VTI 5-star" or "ASTM-certified goggles," these are the organizations that decided. We link to them so you can verify, dig deeper, or take a coaching certification straight from the source.
+      </p>
+      <p class="font-display italic text-ink-soft mt-4 max-w-2xl leading-snug" style="font-weight: 500;">
+        These are not our competitors. They are the institutional ground we build on.
+      </p>
+    </div>
+  </section>
+
+  {orgGroups.map((g) => (
+    <section class="border-b border-bone">
+      <div class="container-px py-12 grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-4">
+          <p class="font-display italic text-rust" style="font-weight: 500; font-size: 1.05rem;">{g.label}</p>
+          <p class="font-display text-ink-soft mt-2 leading-snug">{g.blurb}</p>
+        </div>
+        <div class="md:col-span-8">
+          <ul class="grid gap-3">
+            {g.items.map((item) => (
+              <li class="border border-bone bg-paper p-5">
+                <div class="flex items-baseline justify-between gap-3 flex-wrap">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="font-display text-ink hover:text-rust text-xl leading-tight"
+                    style="font-weight: 500;"
+                  >{item.name} <span aria-hidden="true">↗</span></a>
+                  <span class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">{item.short}</span>
+                </div>
+                <p class="font-display text-ink-soft mt-2 leading-snug text-sm">{item.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12 max-w-3xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">A note on sourcing</p>
+      <div class="article-body">
+        <p>The Parent-Coach Playbook does not duplicate the work of the organizations on this page. We summarize, contextualize, and translate their guidance into language that fits a parent who is also the coach. When we make a specific factual claim about a certification, equipment standard, or rule, we link to the source.</p>
+        <p>If you find an error in a fact we cite, email us at <a href="mailto:parentcoachplaybook@gmail.com">parentcoachplaybook@gmail.com</a>. We correct corrections fast.</p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="Subscribe for the synthesis"
+    blurb="The national bodies write the standards. We translate them. One short note a week."
+  />
+</BaseLayout>

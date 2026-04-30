@@ -7,7 +7,7 @@ phase: "drive-there"
 sport: "multi-sport"
 age: "11-12"
 seasonPhase: "pre-season"
-publishedAt: 2026-04-26
+publishedAt: 2026-03-19
 ---
 
 My twelve-year-old packed her bag four times tonight. The pinnies, the right shoes, the water bottle that doesn't leak, the spare hair tie because she lost two at last week's clinic. I watched her line them up and put them in and take them out and put them back in.

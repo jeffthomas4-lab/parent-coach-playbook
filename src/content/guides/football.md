@@ -6,7 +6,7 @@ sortOrder: 5
 lede: "The most equipment-heavy youth sport. Helmet, shoulder pads, cleats, mouthpiece, pads. Do not cut corners on the helmet."
 costSummary: "$200–400 for tackle starter; $400–700 by middle school. Most leagues provide game uniforms."
 seasonNote: "Fall is the season everywhere. Spring 7-on-7 is optional and growing. Summer two-a-days start in late July."
-publishedAt: 2026-04-30
+publishedAt: 2026-03-09
 contributor: "jeff-thomas"
 ---
 

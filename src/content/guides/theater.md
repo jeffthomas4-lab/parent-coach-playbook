@@ -6,7 +6,7 @@ sortOrder: 9
 lede: "School plays, community theater, summer camps. The smallest equipment list of any youth activity. Most of the cost is time and tuition."
 costSummary: "$50–150 a year for personal gear at most school programs; $400–1,500 for community-theater tuition or summer camps"
 seasonNote: "School productions run twice a year (fall and spring). Community theater is year-round. Summer camps run June through August."
-publishedAt: 2026-04-30
+publishedAt: 2026-04-06
 contributor: "maren-bell"
 ---
 

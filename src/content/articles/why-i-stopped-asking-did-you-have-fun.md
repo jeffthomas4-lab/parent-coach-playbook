@@ -7,7 +7,7 @@ phase: "drive-home"
 sport: "multi-sport"
 age: "8-10"
 seasonPhase: "mid"
-publishedAt: 2026-04-24
+publishedAt: 2026-03-05
 ---
 
 I asked my nine-year-old this question for two years. *Did you have fun?* I asked it after every game. After every practice. After the school play.

@@ -8,7 +8,7 @@ phase: "game"
 sport: "baseball"
 age: "8-10"
 seasonPhase: "mid"
-publishedAt: 2026-04-22
+publishedAt: 2026-04-16
 ---
 
 The clinics don't cover this part. The certification doesn't cover this part. The league orientation definitely doesn't cover this part.

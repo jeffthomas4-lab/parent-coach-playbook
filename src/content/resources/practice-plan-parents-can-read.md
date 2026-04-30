@@ -4,7 +4,7 @@ summary: "Don't wing it. Don't hide it. A simple shared Google Doc parents can s
 category: "practice"
 type: "article"
 contributor: "jeff-thomas"
-publishedAt: 2026-04-30
+publishedAt: 2026-01-22
 featured: true
 ---
 

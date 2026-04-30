@@ -6,7 +6,7 @@ sortOrder: 12
 lede: "Shoes, leotards, tights, dance bag. The shoes vary by style. Recital costumes are an annual surprise expense."
 costSummary: "$200–400 to start; $600–1,500 a year by middle school with multiple styles plus recital costumes"
 seasonNote: "Studio season runs September–June with recitals in June. Competition dance runs February–July. Summer intensives run June–August."
-publishedAt: 2026-04-30
+publishedAt: 2026-04-27
 contributor: "maren-bell"
 ---
 

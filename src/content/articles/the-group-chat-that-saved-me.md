@@ -7,7 +7,7 @@ phase: "game"
 sport: "multi-sport"
 age: "8-10"
 seasonPhase: "mid"
-publishedAt: 2026-04-22
+publishedAt: 2026-04-23
 ---
 
 In April I started a group chat with three other moms from the team. *u8 girls soccer mom thread* is what it is called. We are at thirty-seven hundred messages.

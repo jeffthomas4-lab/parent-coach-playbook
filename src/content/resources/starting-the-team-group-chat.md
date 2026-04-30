@@ -4,7 +4,7 @@ summary: "The group chat is the real league. Here's how to start one that 12 fam
 category: "communication"
 type: "article"
 contributor: "maren-bell"
-publishedAt: 2026-04-30
+publishedAt: 2026-01-29
 featured: true
 ---
 

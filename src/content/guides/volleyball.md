@@ -6,7 +6,7 @@ sortOrder: 8
 lede: "Shoes, knee pads, ball, athletic gear. Indoor sport with low equipment overhead. The shoes really do matter."
 costSummary: "$80–150 for starter; $200–350 by middle school for serious club"
 seasonNote: "School season runs fall (girls) or spring (boys, varies by region). Club season runs December through June."
-publishedAt: 2026-04-30
+publishedAt: 2026-03-30
 contributor: "maren-bell"
 ---
 

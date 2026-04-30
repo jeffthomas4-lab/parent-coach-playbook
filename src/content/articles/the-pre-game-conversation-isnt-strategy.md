@@ -8,7 +8,7 @@ phase: "drive-there"
 sport: "multi-sport"
 age: "8-10"
 seasonPhase: "early"
-publishedAt: 2026-04-08
+publishedAt: 2026-01-08
 ---
 
 The drive to the field is twelve minutes long. For two seasons I used those twelve minutes to drill the lineup, the matchups, the play we installed at practice on Wednesday. The kid in the back seat heard one thing. *Don't mess this up.*

@@ -6,7 +6,7 @@ sortOrder: 1
 lede: "Glove, bat, helmet, cleats. The list grows by age. Most parents buy the wrong size at least once. Here is what actually works."
 costSummary: "$150–250 to outfit tee-ball; $350–600 by little league with travel"
 seasonNote: "Spring is the main season. Fall ball is optional and often shorter. Winter cages and lessons start in January."
-publishedAt: 2026-04-30
+publishedAt: 2026-01-12
 contributor: "maren-bell"
 ---
 

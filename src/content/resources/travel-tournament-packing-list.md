@@ -4,7 +4,7 @@ summary: "What to actually bring to a Saturday-Sunday tournament. From the paren
 category: "travel"
 type: "article"
 contributor: "maren-bell"
-publishedAt: 2026-04-30
+publishedAt: 2026-04-02
 featured: true
 ---
 

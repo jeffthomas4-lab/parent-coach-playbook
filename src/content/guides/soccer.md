@@ -6,7 +6,7 @@ sortOrder: 3
 lede: "Cleats, shin guards, ball, water bottle. The lowest-equipment outdoor sport. Most of the cost is in the league fees, not the gear."
 costSummary: "$100–180 for a full kit at any age, plus league fees"
 seasonNote: "Fall is the main season in most US leagues. Spring is common. Year-round in California, Texas, and Florida."
-publishedAt: 2026-04-30
+publishedAt: 2026-02-09
 contributor: "maren-bell"
 ---
 

@@ -6,7 +6,7 @@ sortOrder: 4
 lede: "Shoes, ball, athletic gear. Indoor sport with low equipment overhead. The shoes do most of the work."
 costSummary: "$80–150 for a starter kit; $200–400 by middle school for travel-quality shoes"
 seasonNote: "School season runs winter. AAU and travel runs spring through summer. Year-round if you want it."
-publishedAt: 2026-04-30
+publishedAt: 2026-02-23
 contributor: "dan-kowalski"
 ---
 

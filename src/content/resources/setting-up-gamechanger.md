@@ -4,7 +4,7 @@ summary: "The 20-minute setup that turns one team mom into the league hero. Rost
 category: "tech-setup"
 type: "article"
 contributor: "dan-kowalski"
-publishedAt: 2026-04-30
+publishedAt: 2026-01-15
 featured: true
 ---
 

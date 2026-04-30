@@ -4,7 +4,7 @@ summary: "Most leagues default to the league's contracted photographer. There's 
 category: "photos-events"
 type: "article"
 contributor: "maren-bell"
-publishedAt: 2026-04-30
+publishedAt: 2026-03-12
 featured: true
 ---
 

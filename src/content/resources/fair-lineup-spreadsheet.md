@@ -4,7 +4,7 @@ summary: "Inning-by-inning rotation that's actually fair. A shared Google Sheet 
 category: "game-day"
 type: "article"
 contributor: "dan-kowalski"
-publishedAt: 2026-04-30
+publishedAt: 2026-02-26
 featured: true
 ---
 

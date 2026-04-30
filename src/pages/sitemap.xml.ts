@@ -21,6 +21,7 @@ export async function GET(_ctx: APIContext) {
     '/resources/',
     '/resources/drive-home-playbook/',
     '/resources/practice-plan-template/',
+    '/resources/national-organizations/',
     '/search/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
   ];

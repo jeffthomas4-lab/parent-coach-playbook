@@ -7,7 +7,7 @@ phase: "drive-home"
 sport: "multi-sport"
 age: "13-14"
 seasonPhase: "pre-season"
-publishedAt: 2026-04-19
+publishedAt: 2026-04-09
 ---
 
 A friend's kid did not make varsity last week. Eighth grade. He had been on the JV roster all of seventh and most parents (and most of the coaches) told her he was a lock.

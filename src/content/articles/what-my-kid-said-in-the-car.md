@@ -7,7 +7,7 @@ phase: "drive-home"
 sport: "soccer"
 age: "8-10"
 seasonPhase: "early"
-publishedAt: 2026-04-17
+publishedAt: 2026-02-05
 ---
 
 We were driving home from soccer practice. My eight-year-old was in the back seat, helmet of his hair smashed to one side, picking at a hole in his sock.
