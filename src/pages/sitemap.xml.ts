@@ -1,22 +1,24 @@
 import { getCollection } from 'astro:content';
-import { SITE, SPORTS } from '../data/site';
+import { SITE, BUYING_GUIDES } from '../data/site';
 import type { APIContext } from 'astro';
 
 export async function GET(_ctx: APIContext) {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
 
   const staticUrls = [
     '/',
     '/drive-there/',
     '/game/',
     '/drive-home/',
-    '/gear/',
+    '/what-to-buy/',
     '/newsletter/',
     '/about/',
+    '/contributors/',
     '/resources/',
     '/resources/drive-home-playbook/',
     '/search/',
-    ...SPORTS.map(s => `/gear/${s.slug}/`),
+    ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
   ];
 
   const articleUrls = articles.map(a => ({
@@ -24,11 +26,17 @@ export async function GET(_ctx: APIContext) {
     lastmod: a.data.publishedAt.toISOString(),
   }));
 
+  const guideUrls = guides.map(g => ({
+    loc: `/what-to-buy/${g.data.slug}/`,
+    lastmod: (g.data.updatedAt ?? g.data.publishedAt).toISOString(),
+  }));
+
   const today = new Date().toISOString();
 
   const urls = [
     ...staticUrls.map(loc => ({ loc, lastmod: today })),
     ...articleUrls,
+    ...guideUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { BUYING_GUIDES, CONTRIBUTORS } from '../../data/site';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  return guides.map((g) => ({
+    params: { slug: g.data.slug },
+    props: { guide: g },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content, headings } = await guide.render();
+const meta = BUYING_GUIDES.find(g => g.slug === guide.data.slug)!;
+const contrib = CONTRIBUTORS[guide.data.contributor];
+
+// Pull only top-level (h2) headings for the in-page jump nav
+const jumpNav = headings.filter((h) => h.depth === 2);
+---
+<BaseLayout
+  title={`What to buy for ${guide.data.activity.toLowerCase()}`}
+  description={guide.data.lede}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/what-to-buy/" class="hover:underline">What to Buy</a> · {meta.category === 'sport' ? 'Sports' : 'Performing arts'}
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        What to buy for <em class="text-rust">{guide.data.activity.toLowerCase()}</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        {guide.data.lede}
+      </p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-3 max-w-2xl">
+        <div class="border border-bone p-4 bg-paper-warm">
+          <p class="font-display italic text-rust text-sm" style="font-weight: 500;">Rough cost</p>
+          <p class="font-display text-ink mt-1" style="font-weight: 500;">{guide.data.costSummary}</p>
+        </div>
+        {guide.data.seasonNote && (
+          <div class="border border-bone p-4 bg-paper-warm">
+            <p class="font-display italic text-rust text-sm" style="font-weight: 500;">Season notes</p>
+            <p class="font-display text-ink mt-1" style="font-weight: 500;">{guide.data.seasonNote}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12 grid lg:grid-cols-12 gap-10">
+      {jumpNav.length > 1 && (
+        <aside class="lg:col-span-3 lg:sticky lg:top-6 self-start">
+          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Jump to</p>
+          <ul class="grid gap-2">
+            {jumpNav.map((h) => (
+              <li>
+                <a
+                  href={`#${h.slug}`}
+                  class="font-display italic text-ink hover:text-rust transition-colors"
+                  style="font-weight: 500;"
+                >{h.text}</a>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8 pt-6 border-t border-bone">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center font-display italic"
+                style={`background: ${contrib.accentBg}; color: ${contrib.accent}; font-weight: 500; font-size: 1rem;`}
+                aria-hidden="true"
+              >{contrib.avatarLetter}</div>
+              <div>
+                <p class="font-display text-ink text-sm" style="font-weight: 500;">By {contrib.name}</p>
+                <p class="font-display italic text-ink-soft text-xs">
+                  Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      )}
+
+      <div class={`${jumpNav.length > 1 ? 'lg:col-span-9' : 'lg:col-span-12 max-w-prose mx-auto'} article-body`}>
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { BUYING_GUIDES } from '../../data/site';
+
+const sports = BUYING_GUIDES.filter(g => g.category === 'sport');
+const activities = BUYING_GUIDES.filter(g => g.category === 'activity');
+---
+<BaseLayout
+  title="What to Buy"
+  description="Honest gear guides by sport and activity. What you actually need, by age and season. How to choose. Rough cost ranges."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-16 md:py-20">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">What to Buy</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        What you <em class="text-rust">actually need</em>, by sport and age.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        Honest starter kits for the activities your kid is doing. Real cost ranges. How to choose between options. Written by parents who have already bought the wrong thing at least twice.
+      </p>
+      <aside class="mt-6 p-4 border border-bone bg-paper-warm max-w-2xl">
+        <p class="font-display italic text-ink-soft text-sm leading-snug" style="font-weight: 500;">
+          Disclosure: when product picks include affiliate links, we earn a small amount when you buy. We only recommend things we have used.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Sports</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+        {sports.map((g) => (
+          <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {g.label}
+            </h3>
+            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
+              {g.blurb}
+            </p>
+            <div class="t-cta mt-4">Open the guide →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Performing arts &amp; activities</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+        {activities.map((g) => (
+          <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {g.label}
+            </h3>
+            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
+              {g.blurb}
+            </p>
+            <div class="t-cta mt-4">Open the guide →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="Get gear updates in your inbox"
+    blurb="When we test new gear or update a guide, you'll be the first to know. Plus the weekly read."
+  />
+</BaseLayout>

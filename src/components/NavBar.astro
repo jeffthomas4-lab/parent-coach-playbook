@@ -1,24 +1,81 @@
 ---
 import Logo from './Logo.astro';
-import { NAV, UTILITY_NAV } from '../data/site';
+import { NAV, UTILITY_NAV, BUYING_GUIDES } from '../data/site';
 
 const path = Astro.url.pathname;
 const isActive = (href: string) =>
   href === '/' ? path === '/' : path === href || path.startsWith(href);
+
+const sportGuides = BUYING_GUIDES.filter(g => g.category === 'sport');
+const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
 ---
-<header class="border-b border-bone">
+<header class="border-b border-bone relative z-50">
   <div class="container-px flex items-center justify-between py-5 gap-6">
     <Logo size={22} />
 
     <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
       {NAV.map((item) => (
-        <a
-          href={item.href}
-          class="font-display italic text-[1.05rem] hover:text-rust transition-colors"
-          style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
-        >
-          {item.label}
-        </a>
+        item.hasDropdown ? (
+          <div class="relative group" data-nav-dropdown>
+            <a
+              href={item.href}
+              class="font-display italic text-[1.05rem] hover:text-rust transition-colors inline-flex items-center gap-1"
+              style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
+            >
+              {item.label} <span aria-hidden="true" style="font-size: 0.7em; line-height: 1;">▾</span>
+            </a>
+            <!-- Dropdown panel -->
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[640px] bg-paper border border-bone shadow-sm hidden group-hover:block group-focus-within:block"
+              style="padding: 1.25rem;"
+            >
+              <div class="grid grid-cols-2 gap-x-8 gap-y-1">
+                <div>
+                  <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Sports</p>
+                  <ul class="grid gap-1">
+                    {sportGuides.map((g) => (
+                      <li>
+                        <a
+                          href={`/what-to-buy/${g.slug}/`}
+                          class="font-display text-ink hover:text-rust block py-0.5"
+                          style="font-weight: 500;"
+                        >{g.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Performing arts</p>
+                  <ul class="grid gap-1">
+                    {activityGuides.map((g) => (
+                      <li>
+                        <a
+                          href={`/what-to-buy/${g.slug}/`}
+                          class="font-display text-ink hover:text-rust block py-0.5"
+                          style="font-weight: 500;"
+                        >{g.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-bone">
+                <a
+                  href="/what-to-buy/"
+                  class="t-cta"
+                >See all guides →</a>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class="font-display italic text-[1.05rem] hover:text-rust transition-colors"
+            style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
+          >
+            {item.label}
+          </a>
+        )
       ))}
     </nav>
 
@@ -44,12 +101,27 @@ const isActive = (href: string) =>
     </div>
   </div>
 
+  <!-- Mobile menu -->
   <div
     class="lg:hidden hidden border-b border-bone bg-paper-warm"
     data-mobile-menu
   >
     <div class="container-px py-6 grid gap-4">
-      {[...NAV, ...UTILITY_NAV].map((item) => (
+      {NAV.map((item) => (
+        <div>
+          <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>
+          {item.hasDropdown && (
+            <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
+              {[...sportGuides, ...activityGuides].map((g) => (
+                <li>
+                  <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink-soft hover:text-rust text-sm">{g.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+      {UTILITY_NAV.map((item) => (
         <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>
       ))}
     </div>

@@ -55,7 +55,7 @@ export const NAV = [
   { label: 'The Drive There', href: '/drive-there/', eyebrow: '01' },
   { label: 'The Game', href: '/game/', eyebrow: '02' },
   { label: 'The Drive Home', href: '/drive-home/', eyebrow: '03' },
-  { label: 'Gear', href: '/gear/' },
+  { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: true },
   { label: 'Newsletter', href: '/newsletter/' },
 ];
 
@@ -124,3 +124,25 @@ export const SEASON_PHASES = [
 export type PillarSlug = keyof typeof PILLARS;
 export type SportSlug = (typeof SPORTS)[number]['slug'];
 export type AgeBandSlug = (typeof AGE_BANDS)[number]['slug'];
+
+// What to Buy / starter-kit guides. 12 entries: 8 youth sports + 4 performing-arts activities.
+// Each one resolves to /what-to-buy/[slug]/ and renders the markdown guide
+// from src/content/guides/[slug].md
+export const BUYING_GUIDES = [
+  // Sports
+  { slug: 'baseball',   label: 'Baseball',   category: 'sport',    blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
+  { slug: 'softball',   label: 'Softball',   category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
+  { slug: 'soccer',     label: 'Soccer',     category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle. Year-round in many places.' },
+  { slug: 'basketball', label: 'Basketball', category: 'sport',    blurb: 'Shoes, ball, athletic gear. Indoor sport, low equipment overhead.' },
+  { slug: 'football',   label: 'Football',   category: 'sport',    blurb: 'Helmet, pads, cleats. The most equipment-heavy youth sport.' },
+  { slug: 'hockey',     label: 'Hockey',     category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
+  { slug: 'lacrosse',   label: 'Lacrosse',   category: 'sport',    blurb: 'Stick, helmet, gloves, pads. Boys and girls gear differs.' },
+  { slug: 'volleyball', label: 'Volleyball', category: 'sport',    blurb: 'Shoes, knee pads, kneepads, ball. Indoor and beach variants.' },
+  // Performing arts
+  { slug: 'theater',    label: 'Theater',    category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
+  { slug: 'band',       label: 'Band',       category: 'activity', blurb: 'Instrument, reeds, accessories. Rent before you buy.' },
+  { slug: 'choir',      label: 'Choir',      category: 'activity', blurb: 'Almost no equipment. The list is short and cheap.' },
+  { slug: 'dance',      label: 'Dance',      category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
+] as const;
+
+export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
