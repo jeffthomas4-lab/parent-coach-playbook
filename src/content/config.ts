@@ -55,14 +55,12 @@ const guides = defineCollection({
     z.object({
       activity: z.string(),                                          // "Baseball", "Theater", etc.
       category: z.enum(['sport', 'activity']),
-      slug: z.enum([
-        'baseball','softball','soccer','basketball','football','hockey','lacrosse','volleyball',
-        'theater','band','choir','dance',
-      ]),
+      // NOTE: do not declare a `slug` field. Astro reserves it; the filename
+      // (e.g. baseball.md) becomes the slug automatically as `entry.slug`.
       sortOrder: z.number().default(99),
-      lede: z.string(),                                              // 1-2 sentence summary for cards
-      costSummary: z.string(),                                       // "$150–250 to start; $300–500 by middle school"
-      seasonNote: z.string().optional(),                             // "Mostly spring/summer. Fall ball optional."
+      lede: z.string(),
+      costSummary: z.string(),
+      seasonNote: z.string().optional(),
       publishedAt: z.coerce.date(),
       updatedAt: z.coerce.date().optional(),
       contributor: z.enum(['maren-bell', 'dan-kowalski', 'jeff-thomas']).default('maren-bell'),

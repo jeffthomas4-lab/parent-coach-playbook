@@ -7,14 +7,14 @@ import { BUYING_GUIDES, CONTRIBUTORS } from '../../data/site';
 export async function getStaticPaths() {
   const guides = await getCollection('guides', ({ data }) => !data.draft);
   return guides.map((g) => ({
-    params: { slug: g.data.slug },
+    params: { slug: g.slug },          // filename-derived slug, e.g. "baseball"
     props: { guide: g },
   }));
 }
 
 const { guide } = Astro.props;
 const { Content, headings } = await guide.render();
-const meta = BUYING_GUIDES.find(g => g.slug === guide.data.slug)!;
+const meta = BUYING_GUIDES.find(g => g.slug === guide.slug)!;
 const contrib = CONTRIBUTORS[guide.data.contributor];
 
 // Pull only top-level (h2) headings for the in-page jump nav
