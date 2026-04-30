@@ -7,7 +7,7 @@ import { SPORTS, AGE_BANDS } from '../data/site';
 const issues = (await getCollection('articles', ({ data }) => !data.draft && !!data.issue))
   .sort((a, b) => (b.data.issue ?? 0) - (a.data.issue ?? 0));
 ---
-<BaseLayout title="Newsletter" description="One issue a week. Field notes for parents who coach.">
+<BaseLayout title="Newsletter" description="One short read a week. Sideline notes for parents who coach.">
   <!-- Lead magnet hero -->
   <section class="border-b border-ink bg-ink text-paper">
     <div class="container-px py-20 grid md:grid-cols-12 gap-10 items-end">

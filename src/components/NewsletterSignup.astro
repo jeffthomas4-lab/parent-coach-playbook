@@ -1,12 +1,9 @@
 ---
-// Inline Kit (formerly ConvertKit) signup form.
-// When you set up Kit:
-//   1. Create a form in Kit, choose "Inline" + "Naked" template
-//   2. Grab the form ID (string of digits in the form URL, e.g. /forms/1234567)
-//   3. Set PUBLIC_KIT_FORM_ID in your environment
+// Kit (formerly ConvertKit) inline signup form.
 //
-// Until then, this falls back to a stub form that POSTs nowhere
-// and console.logs the email so layout reviews still work.
+// Form ID 9388648 is the main newsletter form (set up by Jeff).
+// Override via PUBLIC_KIT_FORM_ID env var for branch previews if needed.
+// Lead-magnet flows can pass a different formId prop.
 
 interface Props {
   variant?: 'inline' | 'card';
@@ -14,30 +11,37 @@ interface Props {
   blurb?: string;
   formId?: string;
   buttonLabel?: string;
+  collectFirstName?: boolean;
 }
 
 const {
   variant = 'inline',
-  headline = 'Get the next issue',
-  blurb = 'Field notes for parents who coach. One issue a week. No fluff.',
-  formId = import.meta.env.PUBLIC_KIT_FORM_ID,
+  headline = 'Slide into the inbox',
+  blurb = 'One short note a week. From Maren, Dan, and Jeff. Easy unsubscribe.',
+  formId = import.meta.env.PUBLIC_KIT_FORM_ID || '9388648',
   buttonLabel = 'Subscribe',
+  collectFirstName = true,
 } = Astro.props;
 
-const action = formId
-  ? `https://app.kit.com/forms/${formId}/subscriptions`
-  : '#';
+const action = `https://app.kit.com/forms/${formId}/subscriptions`;
+const isCard = variant === 'card';
 ---
-<section class={`${variant === 'card' ? 'border border-ink bg-ink text-paper p-10' : 'border-t border-b border-ink py-12'}`}>
-  <div class={`${variant === 'card' ? '' : 'container-px'} grid md:grid-cols-12 gap-6 items-end`}>
+<section class={`${isCard ? 'border border-ink bg-ink text-paper p-10' : 'border-t border-b border-bone py-14'}`}>
+  <div class={`${isCard ? '' : 'container-px'} grid md:grid-cols-12 gap-8 items-end`}>
     <div class="md:col-span-6">
-      <div class={`t-label ${variant === 'card' ? 'text-trophy' : 'text-rust'} mb-3`}>
+      <p
+        class="font-display italic mb-3"
+        style={`font-weight: 500; color: ${isCard ? '#D4AB6A' : '#C5713D'};`}
+      >
         Newsletter
-      </div>
-      <h3 class={`font-display text-3xl md:text-4xl font-semibold leading-[1.05] ${variant === 'card' ? 'text-paper' : 'text-ink'}`}>
+      </p>
+      <h3
+        class={`font-display text-3xl md:text-[2.5rem] leading-[1.07] ${isCard ? 'text-paper' : 'text-ink'}`}
+        style="font-weight: 500;"
+      >
         {headline}
       </h3>
-      <p class={`font-display mt-3 ${variant === 'card' ? 'text-paper-warm' : 'text-ink-soft'}`}>
+      <p class={`font-display mt-3 leading-snug ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
         {blurb}
       </p>
     </div>
@@ -46,45 +50,43 @@ const action = formId
       action={action}
       method="POST"
       data-newsletter-form
-      class="md:col-span-6 flex flex-col sm:flex-row gap-0"
+      class="md:col-span-6 grid gap-3"
     >
-      <label class="sr-only" for="email-address">Email address</label>
-      <input
-        type="email"
-        id="email-address"
-        name="email_address"
-        required
-        placeholder="you@example.com"
-        autocomplete="email"
-        class={`flex-1 px-4 py-3 font-body border ${variant === 'card' ? 'bg-paper text-ink border-paper' : 'bg-paper text-ink border-ink'} focus:outline-none focus:border-rust`}
-      />
-      <button
-        type="submit"
-        class="btn"
-        style="border-radius: 0;"
-      >
-        {buttonLabel}
-      </button>
+      {collectFirstName && (
+        <div>
+          <label class="sr-only" for="ns-first-name">First name</label>
+          <input
+            type="text"
+            id="ns-first-name"
+            name="fields[first_name]"
+            placeholder="First name"
+            autocomplete="given-name"
+            class={`w-full px-4 py-3 font-body border ${isCard ? 'bg-paper text-ink border-paper' : 'bg-paper text-ink border-bone'} focus:outline-none focus:border-rust`}
+          />
+        </div>
+      )}
+      <div class="flex flex-col sm:flex-row gap-0">
+        <label class="sr-only" for="ns-email">Email address</label>
+        <input
+          type="email"
+          id="ns-email"
+          name="email_address"
+          required
+          placeholder="you@example.com"
+          autocomplete="email"
+          class={`flex-1 px-4 py-3 font-body border ${isCard ? 'bg-paper text-ink border-paper' : 'bg-paper text-ink border-bone'} focus:outline-none focus:border-rust`}
+        />
+        <button
+          type="submit"
+          class="btn"
+          style="border-radius: 0;"
+        >
+          {buttonLabel}
+        </button>
+      </div>
+      <p class={`font-display italic text-xs mt-1 ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
+        We won't send you spam. Unsubscribe whenever.
+      </p>
     </form>
   </div>
 </section>
-
-<script>
-  // Stub: when no Kit form ID is set, intercept submission and log.
-  document.querySelectorAll('[data-newsletter-form]').forEach((form) => {
-    const action = form.getAttribute('action');
-    if (!action || action === '#') {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const data = new FormData(form as HTMLFormElement);
-        // eslint-disable-next-line no-console
-        console.log('[Newsletter stub] email:', data.get('email_address'));
-        const btn = (form as HTMLFormElement).querySelector('button');
-        if (btn) {
-          btn.textContent = 'Saved (stub)';
-          btn.setAttribute('disabled', 'true');
-        }
-      });
-    }
-  });
-</script>

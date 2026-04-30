@@ -140,7 +140,7 @@ def cover_page(canvas, doc):
     canvas.line(MARGIN, 1.0 * inch, PAGE_W - MARGIN, 1.0 * inch)
     canvas.setFillColor(PAPER_WARM)
     canvas.setFont('Mono-Medium', 8)
-    canvas.drawString(MARGIN, 0.75 * inch, 'PARENTCOACHPLAYBOOK.COM  /  FIELD NOTES, WEEKLY')
+    canvas.drawString(MARGIN, 0.75 * inch, 'PARENTCOACHPLAYBOOK.COM  /  WEEKLY READS')
     canvas.drawRightString(PAGE_W - MARGIN, 0.75 * inch, 'FREE  ·  12 PAGES  ·  v1')
     canvas.restoreState()
 

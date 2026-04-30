@@ -97,7 +97,7 @@ draw.text((PAD_X + 3 * dot_gap + 12, dots_y - 18), "Three drives. One relationsh
 # ---- Bottom hairline rule + friendly footer ----
 draw.line([(PAD_X, H - PAD_Y), (W - PAD_X, H - PAD_Y)], fill=LINEN, width=1)
 foot_font = ImageFont.truetype(MONO_MEDIUM, 13)
-draw.text((PAD_X, H - PAD_Y + 16), "FIELD NOTES  /  WEEKLY  /  MAREN, DAN & JEFF", font=foot_font, fill=INK_SOFT)
+draw.text((PAD_X, H - PAD_Y + 16), "WEEKLY READS  /  MAREN, DAN & JEFF", font=foot_font, fill=INK_SOFT)
 
 # Save
 out = "/sessions/happy-tender-gates/mnt/Claude Cowork/OUTPUTS/parent-coach-playbook/public/og-default.png"

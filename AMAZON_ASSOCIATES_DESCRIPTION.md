@@ -6,7 +6,7 @@ For the field: *"What can users do on your websites, mobile apps, or Alexa Skill
 
 ## Short version (recommended for the application form)
 
-The Parent-Coach Playbook (parentcoachplaybook.com) is an editorial site for parents who coach, drive, organize, and supervise their kids' youth sports and activities. Visitors can read short field notes and longer essays from three contributors on topics like coaching your own kid, the conversation in the car after a game, pre-game routines, gear that lasts more than one season, and what to say to a kid who didn't make varsity. They can subscribe to a weekly email newsletter, download a free 12-page PDF guide called The Drive Home Playbook, and browse curated gear recommendations organized by sport and age band.
+The Parent-Coach Playbook (parentcoachplaybook.com) is an editorial site for parents who coach, drive, organize, and supervise their kids' youth sports and activities. Visitors can read short reads and longer essays from three contributors on topics like coaching your own kid, the conversation in the car after a game, pre-game routines, gear that lasts more than one season, and what to say to a kid who didn't make varsity. They can subscribe to a weekly email newsletter, download a free 12-page PDF guide called The Drive Home Playbook, and browse curated gear recommendations organized by sport and age band.
 
 The audience is parents and parent-coaches of kids ages 5 through 15+, primarily moms, in eight youth sports (baseball, softball, soccer, basketball, football, hockey, lacrosse, volleyball), plus parents whose kids are in theater, band, choir, or dance. Roughly 60 percent of readers are mothers, 40 percent fathers, with most readers between 30 and 50 years old.
 

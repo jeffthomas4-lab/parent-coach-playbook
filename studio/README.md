@@ -1,48 +1,36 @@
 # Sanity Studio (parent-coach-playbook-studio)
 
-The CMS that powers article editing without touching code.
+> **STATUS: Currently inactive.** This studio is scaffolded but the website does not query Sanity. All articles live as markdown files in `../src/content/articles/`.
+>
+> **Read `../SANITY.md` first** for a full plain explanation of why Sanity is set up but turned off, when you'd ever turn it on, and how to do that. Don't run any of the commands below until you have read that file and decided you actually want to activate Sanity.
 
-## First-time setup
+The CMS scaffold that is *available* if we ever decide to migrate from markdown to a web-based admin.
 
-1. Install dependencies (one time):
-   ```
-   cd studio
-   npm install
-   ```
-2. Initialize a Sanity project (creates the cloud-hosted project):
-   ```
-   npx sanity init --bare
-   ```
-   Pick "Create new project". Name it `parent-coach-playbook`. Use the `production` dataset.
+## When you would activate this
 
-3. Copy the `projectId` Sanity prints into:
-   - `studio/sanity.config.ts` (replace `YOUR_PROJECT_ID`)
-   - The site root `.env` as `PUBLIC_SANITY_PROJECT_ID=...`
+See `../SANITY.md`. Short version: when a non-technical contributor joins, when content becomes image-heavy, or when you want to edit from a phone. Until then, leave this folder alone.
 
-4. Run the studio locally:
-   ```
-   npm run dev
-   ```
-   It opens at http://localhost:3333
+## How to activate (only if SANITY.md tells you to)
 
-5. Deploy the studio (free, hosted by Sanity):
-   ```
-   npm run deploy
-   ```
-   Pick a hostname like `parent-coach-playbook` so you log in at
-   https://parent-coach-playbook.sanity.studio
+```bash
+cd studio
+npm install
+npm run dev   # local studio at http://localhost:3333
+npm run deploy   # hosted studio at parent-coach-playbook.sanity.studio
+```
+
+The Sanity cloud project ID is `oasnvt90` (already wired into `sanity.config.ts` and `../.env`).
 
 ## Schemas
 
-- article — every issue
-- author — bylines
-- gear — affiliate picks
-- leadMagnet — free downloads
-- page — static pages (about, etc.)
-- newsletterIssue — Kit archive mirror
-- siteSettings — nav, footer, social
+- `article` — every issue
+- `author` — bylines
+- `gear` — affiliate picks
+- `leadMagnet` — free downloads
+- `page` — static pages (about, etc.)
+- `newsletterIssue` — Kit archive mirror
+- `siteSettings` — nav, footer, social
 
-## Migrating Astro markdown content into Sanity
+## Migrating from markdown to Sanity
 
-The site ships with three sample articles as markdown in `src/content/articles/`.
-When you're ready to switch to Sanity, follow the migration steps in the root `README.md`.
+Outlined in `../SANITY.md`, step 3. Roughly one hour of work.

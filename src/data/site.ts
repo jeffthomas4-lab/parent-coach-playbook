@@ -4,10 +4,10 @@
 export const SITE = {
   name: 'The Parent-Coach Playbook',
   tagline: 'The drive home is the real game.',
-  shortPitch: 'Field notes from parents who coach, organize, drive, and supervise the snack rotation. Mostly short reads. Sometimes longer ones.',
+  shortPitch: 'Sideline notes from parents who coach, organize, drive, and supervise the snack rotation. Mostly short reads. Sometimes longer ones.',
   url: 'https://parentcoachplaybook.com',
   description:
-    'Field notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
+    'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
   founder: 'Jeff Thomas',
   twitter: '',
   email: 'parentcoachplaybook@gmail.com',
