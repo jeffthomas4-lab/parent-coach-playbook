@@ -12,7 +12,7 @@ const items = Object.values(PILLARS);
   aria-label="The Three Drives"
   class={`${variant === 'sidebar' ? 'border border-bone bg-paper-warm p-6' : 'border-y border-bone py-4'}`}
 >
-  <div class="t-label text-rust mb-4">The Three Drives</div>
+  <div class="t-section mb-4">The three drives</div>
   <ol class="grid gap-3">
     {items.map((p, i) => {
       const num = String(i + 1).padStart(2, '0');
@@ -21,10 +21,19 @@ const items = Object.values(PILLARS);
         <li>
           <a
             href={`/${p.slug}/`}
-            class={`flex items-baseline gap-3 group ${isActive ? 'text-rust' : 'text-ink'}`}
+            class="flex items-baseline gap-3 group"
+            style={`color: ${isActive ? p.accent : '#2D2520'};`}
           >
-            <span class="t-label">[{num}]</span>
-            <span class="font-display text-lg leading-tight group-hover:text-rust transition-colors">
+            <span
+              class="font-display italic"
+              style={`color: ${p.accent}; font-weight: 500; font-size: 0.95rem; min-width: 1.6rem;`}
+            >{num}</span>
+            <span
+              class="font-display text-lg leading-tight transition-colors"
+              style="font-weight: 500;"
+              onmouseover={`this.style.color='${p.accent}'`}
+              onmouseout={`this.style.color='${isActive ? p.accent : '#2D2520'}'`}
+            >
               {p.label.replace('The ', '')}
             </span>
           </a>

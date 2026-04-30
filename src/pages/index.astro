@@ -21,25 +21,25 @@ const pillars = Object.values(PILLARS);
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-8">
-        <div class="t-label text-rust mb-5">Issue 001 / The launch</div>
-        <h1 class="font-display text-ink font-semibold text-[2.75rem] md:text-[4.5rem] leading-[0.98] tracking-tight">
+        <div class="t-section mb-5">A field guide for parents who coach their own kid</div>
+        <h1 class="font-display text-ink text-[2.75rem] md:text-[4.5rem] leading-[1.0]" style="font-weight: 500;">
           The drive home is the <em class="text-rust">real game</em>.
         </h1>
         <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 max-w-2xl leading-snug">
-          Editorial reporting and field notes for parents who coach their own kid.
-          Pre-game, in-game, and the conversation that matters most.
+          Editorial reporting and field notes from a publication that takes the
+          car ride, the kitchen table, and the bedroom doorway as seriously as the game itself.
         </p>
         <div class="mt-10 flex flex-wrap gap-3">
-          <a href="/drive-home/the-90-second-rule/" class="btn">Read the manifesto</a>
+          <a href="/drive-home/three-drives-one-relationship/" class="btn">Read the manifesto</a>
           <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
         </div>
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
         <ThreeDrivesNav variant="sidebar" />
-        <div class="mt-6 t-label text-ink-soft" style="font-size: 0.65rem;">
+        <p class="mt-6 font-display italic text-ink-soft text-sm">
           Three drives. One relationship.
-        </div>
+        </p>
       </aside>
     </div>
   </section>
@@ -47,22 +47,36 @@ const pillars = Object.values(PILLARS);
   <!-- THE THREE PILLARS -->
   <section class="border-b border-bone">
     <div class="container-px py-20">
-      <div class="t-label text-rust mb-3">The framework</div>
-      <h2 class="font-display text-ink text-3xl md:text-5xl font-semibold leading-[1.05] max-w-3xl">
+      <div class="t-section mb-4">The framework</div>
+      <h2 class="font-display text-ink text-3xl md:text-5xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
         Most parent-coaches obsess over the <em class="text-rust">middle</em>. The relationship gets built in the bookends.
       </h2>
 
-      <div class="mt-14 grid md:grid-cols-3 gap-px bg-bone">
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
         {pillars.map((p, i) => (
-          <a href={`/${p.slug}/`} class="bg-paper p-8 group card-hover block">
-            <div class="t-label text-rust">{`0${i + 1}`}</div>
-            <h3 class="font-display text-ink text-3xl font-semibold mt-4 leading-tight group-hover:text-rust transition-colors">
+          <a
+            href={`/${p.slug}/`}
+            class="block group p-8 border border-bone transition-colors"
+            style={`background: ${p.accentBg};`}
+          >
+            <div
+              class="font-display italic"
+              style={`color: ${p.accent}; font-size: 0.95rem; font-weight: 500;`}
+            >
+              {`0${i + 1} / ${p.eyebrow.split(' / ')[1] || ''}`}
+            </div>
+            <h3 class="font-display text-ink text-3xl mt-3 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
               {p.label}
             </h3>
             <p class="font-display text-ink-soft mt-3 leading-snug">
               {p.blurb}
             </p>
-            <div class="t-label text-rust mt-6">Open the section →</div>
+            <div
+              class="font-display italic mt-6"
+              style={`color: ${p.accent}; font-weight: 500;`}
+            >
+              Open the section →
+            </div>
           </a>
         ))}
       </div>
@@ -74,10 +88,11 @@ const pillars = Object.values(PILLARS);
     <div class="container-px py-20 grid lg:grid-cols-12 gap-10">
       {featured && (
         <article class="lg:col-span-7 border-r-0 lg:border-r lg:pr-10 lg:border-bone">
-          <div class="t-label text-rust mb-4">Featured / {PILLARS[featured.data.phase].label}</div>
+          <div class="t-section mb-4">Featured · from {PILLARS[featured.data.phase].label}</div>
           <a href={`/${featured.data.phase}/${featured.slug}/`} class="block group">
             <h2
-              class="font-display text-ink text-4xl md:text-5xl font-semibold leading-[1.05] group-hover:text-rust transition-colors"
+              class="font-display text-ink text-4xl md:text-5xl leading-[1.05] group-hover:text-rust transition-colors"
+              style="font-weight: 500;"
               set:html={featured.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
             />
             {featured.data.dek && (
@@ -85,13 +100,13 @@ const pillars = Object.values(PILLARS);
                 {featured.data.dek}
               </p>
             )}
-            <div class="t-label text-rust mt-6">Read the issue →</div>
+            <div class="t-cta mt-6">Read the issue →</div>
           </a>
         </article>
       )}
 
       <div class="lg:col-span-5">
-        <div class="t-label text-rust mb-4">Latest issues</div>
+        <div class="t-section mb-4">Latest issues</div>
         <div>
           {latest.map((a) => (
             <ArticleCard

@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand tokens — locked. Do not invent new shades.
-        ink: '#1A1F2E',          // Stadium Ink — primary
-        paper: '#F7F3EC',        // Field Paper — background
-        'paper-warm': '#F0EADF', // card backgrounds
-        rust: '#B54422',         // Drive Rust — accent
-        turf: '#4A5D3A',         // support
-        bone: '#E8E1D2',         // borders / dividers
-        trophy: '#C89B3C',       // highlight, used sparingly
-        'ink-soft': '#2A3042',   // body text
+        // Brand tokens — warm editorial. Do not invent new shades.
+        ink: '#2D2520',          // Warm Ink (was Stadium Ink)
+        paper: '#FAF6EE',        // Cream Paper (was Field Paper)
+        'paper-warm': '#F2EAD9', // card backgrounds, warmer cream
+        rust: '#C5713D',         // Terracotta (was Drive Rust)
+        turf: '#8FA68C',         // Sage (was Turf)
+        bone: '#DDD2BD',         // Linen (was Bone) — borders/dividers
+        trophy: '#D4AB6A',       // Honey (was Trophy) — highlight
+        'ink-soft': '#5F5448',   // Walnut — body text
       },
       fontFamily: {
         display: ['"Fraunces"', 'Georgia', 'serif'],

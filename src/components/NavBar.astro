@@ -6,23 +6,18 @@ const path = Astro.url.pathname;
 const isActive = (href: string) =>
   href === '/' ? path === '/' : path === href || path.startsWith(href);
 ---
-<header class="border-t border-ink">
-  <div class="container-px flex items-center justify-between py-5 border-b border-bone">
-    <a href="/" class="flex items-center gap-3 group" aria-label={`${SITE.name} home`}>
-      <Logo size={40} />
-      <span class="hidden sm:flex flex-col leading-tight">
-        <span class="font-display text-ink text-[1.1rem] font-semibold tracking-tight">{SITE.name}</span>
-        <span class="t-label text-ink-soft" style="font-size: 0.625rem;">{SITE.imprint}</span>
-      </span>
-    </a>
+<header class="border-b border-bone">
+  <div class="container-px flex items-center justify-between py-5">
+    <Logo size={36} withTitle={true} />
 
     <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
       {NAV.map((item) => (
         <a
           href={item.href}
-          class={`t-label hover:text-rust transition-colors ${
+          class={`font-display italic text-[1.05rem] hover:text-rust transition-colors ${
             isActive(item.href) ? 'text-rust' : 'text-ink'
           }`}
+          style="font-weight: 500;"
         >
           {item.label}
         </a>
@@ -31,7 +26,13 @@ const isActive = (href: string) =>
 
     <div class="flex items-center gap-5">
       {UTILITY_NAV.map((item) => (
-        <a href={item.href} class="hidden md:inline t-label text-ink hover:text-rust transition-colors">{item.label}</a>
+        <a
+          href={item.href}
+          class="hidden md:inline font-display italic text-ink hover:text-rust transition-colors"
+          style="font-size: 0.95rem; font-weight: 500;"
+        >
+          {item.label}
+        </a>
       ))}
       <button
         type="button"
@@ -50,7 +51,7 @@ const isActive = (href: string) =>
   >
     <div class="container-px py-6 grid gap-4">
       {[...NAV, ...UTILITY_NAV].map((item) => (
-        <a href={item.href} class="t-label text-ink hover:text-rust">{item.label}</a>
+        <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>
       ))}
     </div>
   </div>

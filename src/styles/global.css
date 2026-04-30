@@ -22,14 +22,14 @@
 
 /* ---------- Base reset ---------- */
 :root {
-  --paper: #F7F3EC;
-  --paper-warm: #F0EADF;
-  --ink: #1A1F2E;
-  --ink-soft: #2A3042;
-  --rust: #B54422;
-  --turf: #4A5D3A;
-  --bone: #E8E1D2;
-  --trophy: #C89B3C;
+  --paper: #FAF6EE;          /* cream */
+  --paper-warm: #F2EAD9;     /* warmer cream for cards */
+  --ink: #2D2520;            /* warm dark brown */
+  --ink-soft: #5F5448;       /* walnut for body */
+  --rust: #C5713D;           /* terracotta */
+  --turf: #8FA68C;           /* sage */
+  --bone: #DDD2BD;           /* linen */
+  --trophy: #D4AB6A;         /* honey */
 }
 
 html {
@@ -51,10 +51,10 @@ body {
 /* ---------- Editorial type primitives ---------- */
 .t-display {
   font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
+  font-weight: 500;            /* softened from 600 */
   color: var(--ink);
-  letter-spacing: -0.01em;
-  line-height: 1.05;
+  letter-spacing: -0.005em;
+  line-height: 1.07;
 }
 
 .t-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
@@ -67,14 +67,34 @@ body {
   font-weight: 500;
 }
 
+/* Tiny uppercase metadata only. Use sparingly. */
 .t-eyebrow,
 .t-label {
   font-family: "JetBrains Mono", Menlo, monospace;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--ink);
+}
+
+/* Softer mid-size section labels. Replaces all-caps mono in body chrome. */
+.t-section {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rust);
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+/* Soft call-to-action link, replaces "READ →" all-caps */
+.t-cta {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rust);
+  font-size: 1.0625rem;
 }
 
 .t-dek {

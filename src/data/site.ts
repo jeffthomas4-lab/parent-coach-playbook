@@ -31,6 +31,8 @@ export const PILLARS = {
     slug: 'drive-there',
     label: 'The Drive There',
     eyebrow: '01 / Pre-game',
+    accent: '#8FA68C',         // sage — calm, prep, morning
+    accentBg: '#EAEFE7',
     blurb:
       'Pre-game preparation, mindset, and the conversation on the way to practice. The work that gets done before anyone steps on the field.',
   },
@@ -38,6 +40,8 @@ export const PILLARS = {
     slug: 'game',
     label: 'The Game',
     eyebrow: '02 / In the moment',
+    accent: '#C5713D',         // terracotta — action, focus
+    accentBg: '#F2E2D5',
     blurb:
       'Coaching execution, in-the-moment decisions, and the strange job of coaching your own kid in front of the team.',
   },
@@ -45,6 +49,8 @@ export const PILLARS = {
     slug: 'drive-home',
     label: 'The Drive Home',
     eyebrow: '03 / Post-game',
+    accent: '#D4AB6A',         // honey — warmth, return, dinner table
+    accentBg: '#F5E9D2',
     blurb:
       'The post-game conversation, the car ride, the dinner table. The relationship aftermath, which is the real game.',
   },

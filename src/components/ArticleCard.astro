@@ -45,7 +45,8 @@ const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
   <a href={href} class="block group">
     {tagLine && <div class="t-label text-ink-soft mb-3">{tagLine}</div>}
     <h3
-      class="font-display text-ink text-2xl md:text-[1.65rem] font-semibold leading-tight group-hover:text-rust transition-colors"
+      class="font-display text-ink text-2xl md:text-[1.65rem] leading-tight group-hover:text-rust transition-colors"
+      style="font-weight: 500;"
       set:html={renderTitle(title)}
     />
     {dek && (
@@ -53,6 +54,6 @@ const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
         {dek}
       </p>
     )}
-    <div class="t-label text-rust mt-4">Read →</div>
+    <div class="t-cta mt-4">Read the issue →</div>
   </a>
 </article>

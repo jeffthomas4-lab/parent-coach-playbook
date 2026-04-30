@@ -24,11 +24,19 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
   title={meta.label}
   description={meta.blurb}
 >
-  <section class="border-b border-bone">
+  <section
+    class="border-b border-bone"
+    style={`background: ${meta.accentBg};`}
+  >
     <div class="container-px py-16 md:py-20 grid lg:grid-cols-12 gap-12">
       <div class="lg:col-span-8">
-        <div class="t-label text-rust">{meta.eyebrow}</div>
-        <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4">
+        <div
+          class="font-display italic"
+          style={`color: ${meta.accent}; font-weight: 500; font-size: 1rem;`}
+        >
+          {meta.eyebrow}
+        </div>
+        <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4" style="font-weight: 500;">
           {meta.label}
         </h1>
         <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">

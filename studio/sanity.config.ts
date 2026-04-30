@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'The Parent-Coach Playbook',
   // After running `npx sanity init`, paste your projectId and dataset here
   // (or set SANITY_STUDIO_PROJECT_ID and SANITY_STUDIO_DATASET env vars).
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID ?? 'YOUR_PROJECT_ID',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID ?? 'oasnvt90',
   dataset: process.env.SANITY_STUDIO_DATASET ?? 'production',
   plugins: [structureTool(), visionTool()],
   schema: { types: schemaTypes },
