@@ -52,16 +52,14 @@ export const CONTRIBUTORS = {
 export type ContributorSlug = keyof typeof CONTRIBUTORS;
 
 export const NAV = [
-  { label: 'The Drive There', href: '/drive-there/', eyebrow: '01' },
-  { label: 'The Game', href: '/game/', eyebrow: '02' },
-  { label: 'The Drive Home', href: '/drive-home/', eyebrow: '03' },
+  { label: 'Start here', href: '/start-here/' },
+  { label: 'The Drives', href: '/drive-home/three-drives-one-relationship/', hasDropdown: 'drives' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
   { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
   { label: 'Newsletter', href: '/newsletter/' },
 ];
 
 export const UTILITY_NAV = [
-  { label: 'Start here', href: '/start-here/' },
   { label: 'Resources', href: '/resources/' },
   { label: 'About', href: '/about/' },
   { label: 'Search', href: '/search/' },

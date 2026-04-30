@@ -1,8 +1,9 @@
 ---
 import Logo from './Logo.astro';
-import { SITE, NAV, UTILITY_NAV } from '../data/site';
+import { SITE, NAV, UTILITY_NAV, PILLARS } from '../data/site';
 
 const year = new Date().getFullYear();
+const pillars = Object.values(PILLARS);
 ---
 <footer class="mt-24 border-t border-bone bg-paper">
   <div class="container-px py-16 grid gap-12 md:grid-cols-12">
@@ -17,11 +18,18 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="md:col-span-3">
-      <div class="t-section mb-3">Read</div>
+      <div class="t-section mb-3">The Drives</div>
       <ul class="grid gap-2.5 font-display text-ink-soft">
-        {NAV.map((item) => (
-          <li><a href={item.href} class="hover:text-rust">{item.label}</a></li>
+        {pillars.map((p) => (
+          <li><a href={`/${p.slug}/`} class="hover:text-rust">{p.label}</a></li>
         ))}
+      </ul>
+      <div class="t-section mt-6 mb-3">Read</div>
+      <ul class="grid gap-2.5 font-display text-ink-soft">
+        <li><a href="/start-here/" class="hover:text-rust">Start here</a></li>
+        <li><a href="/what-to-buy/" class="hover:text-rust">What to Buy</a></li>
+        <li><a href="/team-parent/" class="hover:text-rust">Team Parent</a></li>
+        <li><a href="/newsletter/" class="hover:text-rust">Newsletter</a></li>
       </ul>
     </div>
 
