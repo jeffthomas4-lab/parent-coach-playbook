@@ -1,45 +1,91 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+
+// Each lead magnet is a card. Two live, two coming.
+// When you ship a new one, replace a "coming soon" with a real card.
 ---
-<BaseLayout title="Resources" description="Free downloads and tools for parent-coaches.">
+<BaseLayout
+  title="Free downloads"
+  description="Free downloads for parents who coach. The Drive Home Playbook. The Practice Plan Template. More on the way."
+>
   <section class="border-b border-bone">
-    <div class="container-px py-16">
-      <div class="t-label text-rust">Resources</div>
-      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 max-w-3xl">
-        Free tools for the <em class="text-rust">work in the car</em>.
+    <div class="container-px py-16 md:py-20">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Free downloads</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Free tools for the work <em class="text-rust">in the car</em>, <em class="text-rust">on the field</em>, and <em class="text-rust">at the kitchen table</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
-        Plain printable PDFs. No email gates beyond the first one. Take what you need and use it.
+        Plain printable PDFs. Subscribe once and the downloads are yours. We'll send you new ones as we ship them.
       </p>
     </div>
   </section>
 
   <section class="border-b border-bone">
-    <div class="container-px py-16">
-      <div class="t-label text-rust mb-4">Free downloads</div>
+    <div class="container-px py-12">
       <div class="grid md:grid-cols-2 gap-px bg-bone">
-        <a href="/resources/drive-home-playbook/" class="bg-paper p-8 card-hover block">
-          <div class="t-label text-ink-soft">Lead magnet · 12 pages</div>
-          <h3 class="font-display text-ink text-2xl md:text-3xl mt-3 font-semibold leading-tight">
+
+        <a href="/resources/drive-home-playbook/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 12 pages · Free</p>
+          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
             The Drive Home Playbook
           </h3>
-          <p class="font-display text-ink-soft mt-3 leading-snug">The first 90 seconds, scripted by sport and age.</p>
-          <div class="t-label text-rust mt-5">Get it →</div>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            What to say in the first 90 seconds after a youth game. Eight scripted opening lines by sport. Three things never to say. A pocket card.
+          </p>
+          <div class="t-cta mt-5">Send me the playbook →</div>
         </a>
-        <div class="bg-paper p-8">
-          <div class="t-label text-ink-soft">Coming soon</div>
-          <h3 class="font-display text-ink text-2xl md:text-3xl mt-3 font-semibold leading-tight">
-            The Pre-Game Card
+
+        <a href="/resources/practice-plan-template/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 4 pages · Free</p>
+          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            The Practice Plan Template
           </h3>
-          <p class="font-display text-ink-soft mt-3 leading-snug">A pocket card with the three things to say in the car.</p>
-          <div class="t-label text-ink-soft mt-5">In the works</div>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            A printable practice plan parents can read. Blank template, filled example, drill ideas by age. 10 minutes a week of writing saves 10 phone calls.
+          </p>
+          <div class="t-cta mt-5">Send me the template →</div>
+        </a>
+
+        <div class="bg-paper p-8">
+          <p class="font-display italic text-ink-soft mb-2 text-sm" style="font-weight: 500;">Coming next</p>
+          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+            The Tryouts Evaluation Rubric
+          </h3>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            A 1-pager for parent-coaches running tryouts. Plus the script for delivering the news, especially to your own kid.
+          </p>
+          <div class="font-display italic text-ink-soft mt-5 text-sm" style="font-weight: 500;">In the works</div>
         </div>
+
+        <div class="bg-paper p-8">
+          <p class="font-display italic text-ink-soft mb-2 text-sm" style="font-weight: 500;">Coming next</p>
+          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+            The Season-Opener Parent Meeting Agenda
+          </h3>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            A 15-minute script for the first parent meeting of the season. What to say, what to skip, what to email afterward.
+          </p>
+          <div class="font-display italic text-ink-soft mt-5 text-sm" style="font-weight: 500;">In the works</div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <LeadMagnetCTA />
-  <NewsletterSignup />
+  <section class="border-b border-bone">
+    <div class="container-px py-12 max-w-2xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">How this works</p>
+      <div class="article-body">
+        <p>Subscribe once. You'll land on a welcome page with every download we have, and you'll get an email when we ship a new one.</p>
+        <p>If you'd rather just read the articles without the downloads, there's no email gate on those. <a href="/start-here/">Start here</a> and pick what fits your week.</p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="Subscribe and get all of them"
+    blurb="One subscribe, every current and future free download. One short read a week. Easy unsubscribe."
+    buttonLabel="Subscribe"
+  />
 </BaseLayout>

@@ -4,7 +4,7 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
 ---
 <BaseLayout
   title="The Drive Home Playbook"
-  description="A 12-page free guide. The exact words to say in the first 90 seconds after the game, by sport and by age."
+  description="A free 12-page guide. The exact words to say in the first 90 seconds after a game, by sport and by age."
 >
   <section class="border-b border-ink bg-ink text-paper">
     <div class="container-px py-20 grid md:grid-cols-12 gap-10 items-end">
@@ -16,26 +16,16 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
         <p class="font-display text-paper-warm text-xl md:text-2xl mt-8 max-w-xl leading-snug">
           The first 90 seconds after a youth game decide what the next week feels like in your house. This guide tells you exactly what to say, by sport and by age.
         </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a
-            href="/the-drive-home-playbook.pdf"
-            download
-            class="btn"
-            style="background: #C5713D; border-color: #C5713D;"
-          >
-            Download the PDF (free, no email)
-          </a>
-        </div>
-        <p class="font-display italic text-paper-warm mt-3 text-sm">
-          Or subscribe below and get the next ones too.
+        <p class="font-display italic text-paper-warm mt-6 text-base" style="font-weight: 500;">
+          Drop your email below. We'll send you the PDF and add you to the weekly note. Easy unsubscribe.
         </p>
       </div>
       <div class="md:col-span-5">
         <NewsletterSignup
           variant="card"
-          headline="Get the next playbook too"
-          blurb="One short note a week. Maren, Dan, and Jeff. Easy unsubscribe."
-          buttonLabel="Subscribe"
+          headline="Send me the playbook"
+          blurb="One subscribe, two things in your inbox: the playbook now, and one short read a week from Maren, Dan, and Jeff."
+          buttonLabel="Send the playbook"
         />
       </div>
     </div>
@@ -68,26 +58,9 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
     </div>
   </section>
 
-  <section>
-    <div class="container-px py-16 text-center max-w-2xl mx-auto">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Take it</p>
-      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
-        Free, on us. <em class="text-rust">Forever.</em>
-      </h2>
-      <p class="font-display text-ink-soft mt-4 leading-snug">
-        No email gate, no upsell, no bait. If it helps, share it. If you want more like it, subscribe.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a
-          href="/the-drive-home-playbook.pdf"
-          download
-          class="btn"
-        >
-          Download the PDF
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <NewsletterSignup />
+  <NewsletterSignup
+    headline="Send the playbook"
+    blurb="One short note a week, plus the playbook in your inbox right now."
+    buttonLabel="Subscribe"
+  />
 </BaseLayout>

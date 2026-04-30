@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+---
+<BaseLayout
+  title="The Practice Plan Template"
+  description="A free 4-page practice plan template for youth coaches. Blank template plus a filled example. The single highest-leverage thing a coach can share with the team."
+>
+  <section class="border-b border-ink bg-ink text-paper">
+    <div class="container-px py-20 grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-7">
+        <p class="font-display italic text-trophy mb-3" style="font-weight: 500;">Free · 4 pages · PDF</p>
+        <h1 class="font-display text-paper text-[2.5rem] md:text-[4.25rem] leading-[1.0]" style="font-weight: 500;">
+          The Practice Plan <em class="text-rust">Template</em>.
+        </h1>
+        <p class="font-display text-paper-warm text-xl md:text-2xl mt-8 max-w-xl leading-snug">
+          A printable practice plan parents can read. Blank template plus a filled example. The single highest-leverage thing a youth coach can share with the team.
+        </p>
+        <p class="font-display italic text-paper-warm mt-6 text-base" style="font-weight: 500;">
+          Drop your email below. The PDF lands in your inbox along with the weekly note.
+        </p>
+      </div>
+      <div class="md:col-span-5">
+        <NewsletterSignup
+          variant="card"
+          headline="Send me the template"
+          blurb="One subscribe, two things: the template now, and one short read a week from Maren, Dan, and Jeff."
+          buttonLabel="Send the template"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">What's inside</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Page 1: Cover and how to use the template. The 10-minute rule that changes the season.</p>
+        <p>Page 2: A blank weekly practice plan. Two sessions, four lines each: date, focus, drill list, job for parents. Print it. Fill it in.</p>
+        <p>Page 3: A filled example for U10 baseball, week four of the season. The exact level of detail a parent wants and a 10-year-old needs.</p>
+        <p>Page 4: A starter list of drills by age band (5–7, 8–10, 11–12, 13+). Steal what fits.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Why we made it</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Most parent complaints at the youth level come from a perceived lack of structure or fairness. A written practice plan, shared with parents 24 hours before the practice, disarms 80% of those.</p>
+        <p>Most coaches don't share a plan because writing one feels like extra work. It isn't. It takes 10 minutes a week and saves 10 phone calls.</p>
+        <p><a href="/team-parent/practice-plan-parents-can-read/">Read the article behind this template.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="Send the template"
+    blurb="One short note a week, plus the practice plan template in your inbox right now."
+    buttonLabel="Subscribe"
+  />
+</BaseLayout>

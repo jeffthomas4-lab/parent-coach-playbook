@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// This is the universal post-subscribe landing page.
+// Kit's "after subscribe" action on form 9388648 should redirect here.
+// Anyone who subscribes anywhere on the site lands here and gets the freebies.
+//
+// To add a new lead magnet: drop the PDF into /public/, add a card below.
+//
+// noindex on this page so it doesn't pop up in Google searches as the entry point.
+---
+<BaseLayout
+  title="Welcome — your free downloads"
+  description="Welcome. Your free downloads are below."
+  noindex
+>
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-16 md:py-20">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">You're in</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Welcome. Here's <em class="text-rust">everything we have</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        Thanks for subscribing. Your free downloads are below. We'll email you when we add new ones. One short note a week, easy unsubscribe.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <article class="border border-bone bg-paper p-7">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 12 pages</p>
+          <h2 class="font-display text-ink text-2xl leading-tight" style="font-weight: 500;">
+            The Drive Home Playbook
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            What to say in the first 90 seconds after a youth game. Eight scripted opening lines by sport. Three things never to say. A printable pocket card.
+          </p>
+          <a
+            href="/the-drive-home-playbook.pdf"
+            download
+            class="btn mt-5"
+          >Download the PDF ↓</a>
+        </article>
+
+        <article class="border border-bone bg-paper p-7">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 4 pages</p>
+          <h2 class="font-display text-ink text-2xl leading-tight" style="font-weight: 500;">
+            The Practice Plan Template
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            A printable practice plan parents can read. Blank template plus a filled example. The single highest-leverage thing a youth coach can share with the team.
+          </p>
+          <a
+            href="/the-practice-plan-template.pdf"
+            download
+            class="btn mt-5"
+          >Download the PDF ↓</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12 max-w-2xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">What's next</p>
+      <div class="article-body">
+        <p>You'll get one short note from us a week. Maren writes most of them. Dan writes when he has been thinking about something long enough to be useful. Jeff writes the longer cornerstone pieces.</p>
+        <p>If you want to start somewhere, the <a href="/start-here/">Start Here page</a> routes you to the right reading based on what's happening in your week.</p>
+        <p>If we add new free downloads, we'll email you. They show up here too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12 max-w-2xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Bookmark this page</p>
+      <p class="font-display text-ink-soft leading-snug">
+        Want the downloads later? Bookmark <a href="/welcome/" class="text-rust">parentcoachplaybook.com/welcome</a>. New ones land here as we publish them.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

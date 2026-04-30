@@ -20,6 +20,7 @@ export async function GET(_ctx: APIContext) {
     '/contributors/',
     '/resources/',
     '/resources/drive-home-playbook/',
+    '/resources/practice-plan-template/',
     '/search/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
   ];
