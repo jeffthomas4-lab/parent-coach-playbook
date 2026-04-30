@@ -61,8 +61,10 @@ export const NAV = [
 ];
 
 export const UTILITY_NAV = [
+  { label: 'Start here', href: '/start-here/' },
   { label: 'Resources', href: '/resources/' },
   { label: 'About', href: '/about/' },
+  { label: 'Search', href: '/search/' },
 ];
 
 export const PILLARS = {

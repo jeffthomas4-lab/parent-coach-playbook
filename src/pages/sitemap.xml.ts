@@ -9,6 +9,7 @@ export async function GET(_ctx: APIContext) {
 
   const staticUrls = [
     '/',
+    '/start-here/',
     '/drive-there/',
     '/game/',
     '/drive-home/',
