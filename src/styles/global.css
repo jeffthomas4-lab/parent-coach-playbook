@@ -215,6 +215,83 @@ body {
   background: var(--paper-warm);
 }
 
+/* ---------- Gear pick card (used inside guide markdown) ---------- */
+.gear-pick {
+  border: 0.5px solid var(--bone);
+  background: var(--paper-warm);
+  padding: 18px 20px;
+  margin: 1.75em 0;
+  font-family: "Fraunces", Georgia, serif;
+}
+.gear-pick header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.gear-pick h4 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+}
+.gear-pick .price {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--rust);
+  white-space: nowrap;
+}
+.gear-pick .hook {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--rust);
+  margin: 0 0 12px 0;
+}
+.gear-pick > p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 14px 0;
+}
+.gear-pick .how-to-choose {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  padding: 10px 12px;
+  background: var(--paper);
+  border-left: 2px solid var(--rust);
+  margin: 0 0 16px 0;
+}
+.gear-pick .how-to-choose strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.gear-pick .gear-pick-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 9px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 200ms cubic-bezier(.2,.7,.2,1);
+}
+.gear-pick .gear-pick-cta:hover {
+  background: var(--rust);
+  color: var(--paper);
+}
+
 /* ---------- Selection ---------- */
 ::selection {
   background: var(--rust);

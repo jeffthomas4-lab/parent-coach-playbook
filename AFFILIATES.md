@@ -70,12 +70,35 @@ The `campaign` field shows up in the UTM and helps you see which products drive 
 
 ### 3. Use it in a post or component
 
-In a markdown article body:
+**For a quick inline link in any article or guide body:**
 
 ```markdown
 We use the [Rawlings Sure Catch 9-inch glove](/go/rawlings-glove-9-inch/) for the
 younger kids. Two seasons of use across two of our kids. Still in rotation.
 ```
+
+**For a gear-pick card (the editorial card that appears inside What to Buy guides):**
+
+Drop this HTML directly into the markdown wherever you want the card to render. The CSS class hooks are already in `src/styles/global.css`.
+
+```html
+<div class="gear-pick">
+  <header>
+    <h4>The first glove (9-inch youth)</h4>
+    <span class="price">$25–35</span>
+  </header>
+  <p class="hook">For a 5-to-7-year-old hand. Pre-broken-in, so they can actually close it.</p>
+  <p>Anything bigger is for show. A stiff glove that won't close ends up sitting in the bag while the kid plays bare-handed.</p>
+  <div class="how-to-choose">
+    <strong>How to choose.</strong> Have your kid hold the glove out and squeeze it shut with one hand. If they can't close it, it is too big.
+  </div>
+  <a href="/go/baseball-glove-youth/" class="gear-pick-cta">See it at Amazon ↗</a>
+</div>
+```
+
+The `<a href>` links to your `/go/[slug]/` redirect, which adds UTMs and forwards to Amazon with your affiliate credit attached.
+
+You can have multiple cards per guide. Stack them inside the relevant age section (e.g. "Ages 5-7"). The CSS gives them spacing automatically.
 
 In a gear card (in `src/content/gear/[slug].md` frontmatter):
 

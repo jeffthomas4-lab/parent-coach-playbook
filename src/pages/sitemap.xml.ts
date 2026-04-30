@@ -5,6 +5,7 @@ import type { APIContext } from 'astro';
 export async function GET(_ctx: APIContext) {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
   const guides = await getCollection('guides', ({ data }) => !data.draft);
+  const resources = await getCollection('resources', ({ data }) => !data.draft && data.type !== 'external');
 
   const staticUrls = [
     '/',
@@ -12,6 +13,7 @@ export async function GET(_ctx: APIContext) {
     '/game/',
     '/drive-home/',
     '/what-to-buy/',
+    '/team-parent/',
     '/newsletter/',
     '/about/',
     '/contributors/',
@@ -20,6 +22,11 @@ export async function GET(_ctx: APIContext) {
     '/search/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
   ];
+
+  const resourceUrls = resources.map(r => ({
+    loc: `/team-parent/${r.slug}/`,
+    lastmod: r.data.publishedAt.toISOString(),
+  }));
 
   const articleUrls = articles.map(a => ({
     loc: `/${a.data.phase}/${a.slug}/`,
@@ -37,6 +44,7 @@ export async function GET(_ctx: APIContext) {
     ...staticUrls.map(loc => ({ loc, lastmod: today })),
     ...articleUrls,
     ...guideUrls,
+    ...resourceUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

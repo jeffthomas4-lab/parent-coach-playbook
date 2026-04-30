@@ -68,4 +68,23 @@ const guides = defineCollection({
     }),
 });
 
-export const collections = { articles, gear, guides };
+const resources = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      title: z.string(),
+      summary: z.string(),
+      category: z.enum([
+        'tech-setup','communication','practice','game-day',
+        'coaching-tips','photos-events','volunteering','travel',
+      ]),
+      type: z.enum(['article', 'template', 'external']).default('article'),
+      externalUrl: z.string().url().optional(),
+      contributor: z.enum(['maren-bell', 'dan-kowalski', 'jeff-thomas']).default('maren-bell'),
+      publishedAt: z.coerce.date(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+    }),
+});
+
+export const collections = { articles, gear, guides, resources };

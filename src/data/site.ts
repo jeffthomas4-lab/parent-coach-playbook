@@ -55,7 +55,8 @@ export const NAV = [
   { label: 'The Drive There', href: '/drive-there/', eyebrow: '01' },
   { label: 'The Game', href: '/game/', eyebrow: '02' },
   { label: 'The Drive Home', href: '/drive-home/', eyebrow: '03' },
-  { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: true },
+  { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
+  { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
   { label: 'Newsletter', href: '/newsletter/' },
 ];
 
@@ -146,3 +147,59 @@ export const BUYING_GUIDES = [
 ] as const;
 
 export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
+
+// Team Parent toolkit: practical resources organized by category.
+// Each category becomes a section on /team-parent/.
+// Individual resources live in src/content/resources/[slug].md.
+export const TEAM_PARENT_CATEGORIES = [
+  {
+    slug: 'tech-setup',
+    label: 'Tech setup',
+    blurb: 'GameChanger, MaxPreps, TeamSnap. What to use, what to skip.',
+    accent: '#5C7459',  // sage
+  },
+  {
+    slug: 'communication',
+    label: 'Communication',
+    blurb: 'Group chats. Snack signups. League email vs. team email.',
+    accent: '#C5713D',  // terracotta
+  },
+  {
+    slug: 'practice',
+    label: 'Practice',
+    blurb: 'Practice plans. Drills by age. Why parents need to see it.',
+    accent: '#B0894A',  // honey
+  },
+  {
+    slug: 'game-day',
+    label: 'Game day',
+    blurb: 'Lineup spreadsheets. Fair rotations. Bench management.',
+    accent: '#5C7459',
+  },
+  {
+    slug: 'coaching-tips',
+    label: 'Coaching tips',
+    blurb: 'T-ball cones. End on a high note. Substitutions without tears.',
+    accent: '#C5713D',
+  },
+  {
+    slug: 'photos-events',
+    label: 'Photos & events',
+    blurb: 'Picture day choices. Banquet checklists. Team gifts.',
+    accent: '#B0894A',
+  },
+  {
+    slug: 'volunteering',
+    label: 'Volunteering & fundraising',
+    blurb: 'Recruiting assistants. Fundraisers that actually work.',
+    accent: '#5C7459',
+  },
+  {
+    slug: 'travel',
+    label: 'Travel team logistics',
+    blurb: 'Tournament packing. Hotel rotations. Travel budgets.',
+    accent: '#C5713D',
+  },
+] as const;
+
+export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];

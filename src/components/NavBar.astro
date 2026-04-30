@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { NAV, UTILITY_NAV, BUYING_GUIDES } from '../data/site';
+import { NAV, UTILITY_NAV, BUYING_GUIDES, TEAM_PARENT_CATEGORIES } from '../data/site';
 
 const path = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -16,56 +16,72 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
     <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
       {NAV.map((item) => (
         item.hasDropdown ? (
-          <div class="relative group" data-nav-dropdown>
-            <a
-              href={item.href}
+          <div class="relative" data-dropdown-root>
+            <button
+              type="button"
               class="font-display italic text-[1.05rem] hover:text-rust transition-colors inline-flex items-center gap-1"
               style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
+              data-dropdown-trigger
+              aria-haspopup="true"
+              aria-expanded="false"
             >
               {item.label} <span aria-hidden="true" style="font-size: 0.7em; line-height: 1;">▾</span>
-            </a>
-            <!-- Dropdown panel -->
-            <div
-              class="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[640px] bg-paper border border-bone shadow-sm hidden group-hover:block group-focus-within:block"
-              style="padding: 1.25rem;"
-            >
-              <div class="grid grid-cols-2 gap-x-8 gap-y-1">
-                <div>
-                  <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Sports</p>
-                  <ul class="grid gap-1">
-                    {sportGuides.map((g) => (
-                      <li>
-                        <a
-                          href={`/what-to-buy/${g.slug}/`}
-                          class="font-display text-ink hover:text-rust block py-0.5"
-                          style="font-weight: 500;"
-                        >{g.label}</a>
-                      </li>
-                    ))}
-                  </ul>
+            </button>
+
+            {item.hasDropdown === 'buying-guides' && (
+              <div
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[640px] bg-paper border border-bone hidden"
+                style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
+                data-dropdown-panel
+              >
+                <div class="grid grid-cols-2 gap-x-8 gap-y-1">
+                  <div>
+                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Sports</p>
+                    <ul class="grid gap-1">
+                      {sportGuides.map((g) => (
+                        <li>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1" style="font-weight: 500;">{g.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Performing arts</p>
+                    <ul class="grid gap-1">
+                      {activityGuides.map((g) => (
+                        <li>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1" style="font-weight: 500;">{g.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Performing arts</p>
-                  <ul class="grid gap-1">
-                    {activityGuides.map((g) => (
-                      <li>
-                        <a
-                          href={`/what-to-buy/${g.slug}/`}
-                          class="font-display text-ink hover:text-rust block py-0.5"
-                          style="font-weight: 500;"
-                        >{g.label}</a>
-                      </li>
-                    ))}
-                  </ul>
+                <div class="mt-4 pt-3 border-t border-bone">
+                  <a href="/what-to-buy/" class="t-cta">See all guides →</a>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-bone">
-                <a
-                  href="/what-to-buy/"
-                  class="t-cta"
-                >See all guides →</a>
+            )}
+
+            {item.hasDropdown === 'team-parent' && (
+              <div
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] bg-paper border border-bone hidden"
+                style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
+                data-dropdown-panel
+              >
+                <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">Toolkit by category</p>
+                <div class="grid grid-cols-2 gap-x-8 gap-y-1">
+                  {TEAM_PARENT_CATEGORIES.map((c) => (
+                    <a href={`/team-parent/#${c.slug}`} class="font-display text-ink hover:text-rust block py-1" style="font-weight: 500;">
+                      {c.label}
+                      <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{c.blurb}</span>
+                    </a>
+                  ))}
+                </div>
+                <div class="mt-4 pt-3 border-t border-bone">
+                  <a href="/team-parent/" class="t-cta">See all resources →</a>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         ) : (
           <a
@@ -85,9 +101,7 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
           href={item.href}
           class="hidden md:inline font-display italic text-ink hover:text-rust transition-colors"
           style="font-size: 0.95rem; font-weight: 500;"
-        >
-          {item.label}
-        </a>
+        >{item.label}</a>
       ))}
       <button
         type="button"
@@ -95,27 +109,26 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
         style="font-weight: 500; font-size: 0.95rem;"
         aria-label="Toggle menu"
         data-menu-toggle
-      >
-        Menu
-      </button>
+      >Menu</button>
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div
-    class="lg:hidden hidden border-b border-bone bg-paper-warm"
-    data-mobile-menu
-  >
+  <div class="lg:hidden hidden border-b border-bone bg-paper-warm" data-mobile-menu>
     <div class="container-px py-6 grid gap-4">
       {NAV.map((item) => (
         <div>
           <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>
-          {item.hasDropdown && (
+          {item.hasDropdown === 'buying-guides' && (
             <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
               {[...sportGuides, ...activityGuides].map((g) => (
-                <li>
-                  <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink-soft hover:text-rust text-sm">{g.label}</a>
-                </li>
+                <li><a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink-soft hover:text-rust text-sm">{g.label}</a></li>
+              ))}
+            </ul>
+          )}
+          {item.hasDropdown === 'team-parent' && (
+            <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
+              {TEAM_PARENT_CATEGORIES.map((c) => (
+                <li><a href={`/team-parent/#${c.slug}`} class="font-display text-ink-soft hover:text-rust text-sm">{c.label}</a></li>
               ))}
             </ul>
           )}
@@ -132,8 +145,30 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
   const btn = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-mobile-menu]');
   if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
   }
+
+  document.querySelectorAll('[data-dropdown-root]').forEach((root) => {
+    const trigger = root.querySelector('[data-dropdown-trigger]') as HTMLButtonElement | null;
+    const panel = root.querySelector('[data-dropdown-panel]') as HTMLElement | null;
+    if (!trigger || !panel) return;
+
+    const open = () => {
+      document.querySelectorAll('[data-dropdown-panel]').forEach(p => {
+        if (p !== panel) p.classList.add('hidden');
+      });
+      panel.classList.remove('hidden');
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+    const close = () => {
+      panel.classList.add('hidden');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    const toggle = () => panel.classList.contains('hidden') ? open() : close();
+
+    trigger.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+    document.addEventListener('click', (e) => { if (!root.contains(e.target as Node)) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => close()));
+  });
 </script>

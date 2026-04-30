@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { TEAM_PARENT_CATEGORIES } from '../../data/site';
+
+const all = await getCollection('resources', ({ data }) => !data.draft);
+const byCat = (slug: string) =>
+  all.filter(r => r.data.category === slug)
+    .sort((a, b) => (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0));
+---
+<BaseLayout
+  title="Team Parent"
+  description="Practical resources for being the team mom, the assistant coach, the snack-rotation manager, and the carpool dispatcher. All at once. Templates, how-tos, and the things nobody tells you."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-16 md:py-20">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Team Parent toolkit</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        For the parent doing <em class="text-rust">everything off the field</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        Practical resources for the team mom, the assistant coach, the snack-rotation manager, and the carpool dispatcher. Templates, how-tos, and the small operational things that make a season work.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Categories</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        {TEAM_PARENT_CATEGORIES.map((c) => (
+          <a
+            href={`#${c.slug}`}
+            class="font-display italic text-ink hover:text-rust py-1 transition-colors"
+            style="font-weight: 500;"
+          >{c.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {TEAM_PARENT_CATEGORIES.map((c) => {
+    const items = byCat(c.slug);
+    return (
+      <section id={c.slug} class="border-b border-bone scroll-mt-20">
+        <div class="container-px py-14">
+          <div class="grid md:grid-cols-12 gap-8">
+            <div class="md:col-span-4">
+              <p
+                class="font-display italic mb-2"
+                style={`color: ${c.accent}; font-weight: 500; font-size: 1rem;`}
+              >Category</p>
+              <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
+                {c.label}
+              </h2>
+              <p class="font-display text-ink-soft mt-3 leading-snug">
+                {c.blurb}
+              </p>
+            </div>
+            <div class="md:col-span-8">
+              {items.length === 0 ? (
+                <p class="font-display italic text-ink-soft" style="font-weight: 500;">More coming. We're building this section out as fast as we can without phoning it in.</p>
+              ) : (
+                <ul class="grid gap-4">
+                  {items.map((r) => (
+                    <li class="border border-bone bg-paper-warm p-5">
+                      <div class="flex items-baseline justify-between gap-3 flex-wrap mb-2">
+                        <a
+                          href={r.data.type === 'external' && r.data.externalUrl
+                            ? r.data.externalUrl
+                            : `/team-parent/${r.slug}/`}
+                          class="font-display text-ink hover:text-rust text-xl leading-tight"
+                          style="font-weight: 500;"
+                          rel={r.data.type === 'external' ? 'noopener' : undefined}
+                          target={r.data.type === 'external' ? '_blank' : undefined}
+                        >
+                          {r.data.title}
+                          {r.data.type === 'external' && <span aria-hidden="true"> ↗</span>}
+                        </a>
+                        <span
+                          class="font-display italic text-xs"
+                          style={`color: ${c.accent}; font-weight: 500;`}
+                        >
+                          {r.data.type === 'template' ? 'Template' : r.data.type === 'external' ? 'External link' : 'Read'}
+                        </span>
+                      </div>
+                      <p class="font-display text-ink-soft leading-snug text-sm">{r.data.summary}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <NewsletterSignup
+    headline="More tools every week"
+    blurb="When we add new templates and how-tos to the toolkit, you'll see it in the Friday note."
+  />
+</BaseLayout>
