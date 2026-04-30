@@ -12,14 +12,19 @@ const featured = allGear.filter(g => g.data.featured).slice(0, 6);
 <BaseLayout title="Gear" description="Curated affiliate picks. Vetted by parent-coaches who actually use them.">
   <section class="border-b border-bone">
     <div class="container-px py-16">
-      <div class="t-label text-rust">Gear</div>
-      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 max-w-3xl">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Gear</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
         The kit we'd actually <em class="text-rust">buy again</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
-        Affiliate links pay the bills here. Every pick is something a real parent-coach
-        in our network has used for at least a season. No paid placements. No press samples.
+        Every pick is something a real parent-coach in our network has used for at least a season.
+        No paid placements. No press samples.
       </p>
+      <aside class="mt-6 p-4 border border-bone bg-paper-warm max-w-2xl">
+        <p class="font-display italic text-ink-soft text-sm leading-snug" style="font-weight: 500;">
+          Disclosure: links to Amazon and other retailers are affiliate links. When you buy through them, we make a small amount at no cost to you. As an Amazon Associate we earn from qualifying purchases.
+        </p>
+      </aside>
     </div>
   </section>
 

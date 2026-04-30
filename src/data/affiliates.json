@@ -1,19 +1,7 @@
 {
-  "rawlings-glove-9-inch": {
-    "destination": "https://www.amazon.com/dp/B07DVK1Q5N",
+  "baseball-glove-youth": {
+    "destination": "https://amzn.to/4eSZeBW",
     "retailer": "Amazon",
-    "campaign": "gear-baseball-glove",
-    "notes": "Sample affiliate. Replace destination with your real Amazon Associates tagged link before launch."
-  },
-  "easton-bat-youth": {
-    "destination": "https://www.amazon.com/dp/B0BV9G3JCM",
-    "retailer": "Amazon",
-    "campaign": "gear-baseball-bat",
-    "notes": "Sample. Replace with real tagged link."
-  },
-  "soccer-ball-size-4": {
-    "destination": "https://www.amazon.com/dp/B07RYMV93H",
-    "retailer": "Amazon",
-    "campaign": "gear-soccer-ball"
+    "campaign": "gear-baseball-glove"
   }
 }
