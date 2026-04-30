@@ -1,9 +1,10 @@
 ---
-import { PILLARS, SPORTS, AGE_BANDS } from '../data/site';
+import { PILLARS, SPORTS, AGE_BANDS, CONTRIBUTORS, type ContributorSlug } from '../data/site';
 
 interface Props {
   href: string;
-  issue?: string | number;
+  contributor: ContributorSlug;
+  format?: 'note' | 'essay';
   sport?: string;
   age?: string;
   phase?: keyof typeof PILLARS;
@@ -15,37 +16,47 @@ interface Props {
 
 const {
   href,
-  issue,
+  contributor,
+  format = 'note',
   sport,
   age,
   phase,
   title,
   dek,
-  publishedAt,
   variant = 'list',
 } = Astro.props;
 
+const c = CONTRIBUTORS[contributor];
+const pillarLabel = phase ? PILLARS[phase].label.replace('The ', '') : null;
 const sportLabel = SPORTS.find(s => s.slug === sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
 
-// Issue tag: "Issue 047 — Baseball / 8–10"
-const tagBits = [
-  issue ? `Issue ${String(issue).padStart(3, '0')}` : null,
-  sportLabel || ageLabel
-    ? [sportLabel, ageLabel].filter(Boolean).join(' / ')
-    : null,
-].filter(Boolean);
-const tagLine = tagBits.join(' — ');
+const tagBits = [pillarLabel, sportLabel, ageLabel ? `age ${ageLabel}` : null].filter(Boolean);
 
-// Italicize the conceptual hinge in the headline by wrapping the
-// substring between * and * in <em>. e.g. "What you say *first* shapes the week"
+// Italicize the conceptual hinge in the headline
 const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+const titleSize = format === 'essay'
+  ? 'text-2xl md:text-[1.65rem]'
+  : 'text-xl md:text-[1.4rem]';
 ---
-<article class={`card-hover border-b border-bone py-7 ${variant === 'grid' ? 'border border-bone p-6' : ''}`}>
+<article class={`card-hover border-b border-bone py-6 ${variant === 'grid' ? 'border border-bone p-6' : ''}`}>
   <a href={href} class="block group">
-    {tagLine && <div class="t-label text-ink-soft mb-3">{tagLine}</div>}
+    <div class="flex items-center gap-3 mb-3">
+      <div
+        class="w-9 h-9 rounded-full flex items-center justify-center font-display italic"
+        style={`background: ${c.accentBg}; color: ${c.accent}; font-weight: 500; font-size: 0.95rem;`}
+        aria-hidden="true"
+      >{c.avatarLetter}</div>
+      <div class="flex-1">
+        <div class="font-display text-ink" style="font-size: 0.95rem; font-weight: 500;">{c.name}</div>
+        <div class="font-display italic text-ink-soft" style="font-size: 0.8rem;">
+          {tagBits.join(' · ')}{format === 'essay' ? ' · longer read' : ''}
+        </div>
+      </div>
+    </div>
     <h3
-      class="font-display text-ink text-2xl md:text-[1.65rem] leading-tight group-hover:text-rust transition-colors"
+      class={`font-display text-ink ${titleSize} leading-tight group-hover:text-rust transition-colors`}
       style="font-weight: 500;"
       set:html={renderTitle(title)}
     />
@@ -54,6 +65,6 @@ const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
         {dek}
       </p>
     )}
-    <div class="t-cta mt-4">Read the issue →</div>
+    <div class="t-cta mt-3">Keep reading →</div>
   </a>
 </article>

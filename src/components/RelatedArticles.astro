@@ -21,9 +21,11 @@ const { articles, pillarLabel } = Astro.props;
           <div class="bg-paper">
             <ArticleCard
               href={`/${a.data.phase}/${a.slug}/`}
-              issue={a.data.issue}
+              contributor={a.data.contributor}
+              format={a.data.format}
               sport={a.data.sport}
               age={a.data.age}
+              phase={a.data.phase}
               title={a.data.title}
               dek={a.data.dek}
               variant="grid"

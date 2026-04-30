@@ -4,75 +4,70 @@ import { SITE } from '../data/site';
 ---
 <BaseLayout
   title="About"
-  description="The Parent-Coach Playbook is an editorial brand for parents who coach their own kid in youth sports. Three drives. One relationship."
+  description="The Parent-Coach Playbook is a small site for parents who coach, drive, snack-pack, and supervise the group chat. Three of us write it."
 >
   <section class="border-b border-bone">
-    <div class="container-px py-16 md:py-24 grid md:grid-cols-12 gap-12">
-      <div class="md:col-span-8">
-        <div class="t-label text-rust">About</div>
-        <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[4.25rem] leading-[1.0] mt-4 max-w-3xl">
-          A field guide for the parents who <em class="text-rust">coach their own kid</em>.
-        </h1>
-        <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 leading-snug max-w-2xl">
-          Most parent-coaches obsess over the middle of the day. The line-up card. The play call. The film from last Saturday. The relationship gets built on either side of the game.
-        </p>
-      </div>
-      <aside class="md:col-span-4 md:pl-8 md:border-l md:border-bone">
-        <div class="aspect-square bg-paper-warm border border-bone flex items-center justify-center">
-          <span class="t-label text-ink-soft">Photo placeholder</span>
-        </div>
-        <p class="t-label text-ink-soft mt-3" style="font-size: 0.65rem;">{SITE.imprint}</p>
-      </aside>
+    <div class="container-px py-16 md:py-24">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">About this site</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        For the parents who do <em class="text-rust">a lot of the day</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 leading-snug max-w-3xl">
+        Coach. Driver. Team mom. Snack rotation. Group chat admin. Field-change announcer. Tryouts cheerleader. Saturday-game emotional weather forecaster.
+      </p>
+      <p class="font-display text-ink-soft text-lg mt-4 leading-snug max-w-2xl">
+        This is a small site for the people doing all of those jobs at the same time. Mostly short reads. Sometimes longer ones. From three of us, to the rest of you.
+      </p>
     </div>
   </section>
 
   <section class="border-b border-bone">
-    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <div class="t-label text-rust">The thesis</div>
+        <p class="font-display italic text-rust" style="font-weight: 500;">Why this exists</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>The drive there sets the temperature. The game lasts two hours. The drive home decides what the next week feels like in your house.</p>
-        <p>Most coverage of youth sports is about the middle. We cover all three. The bookends are where the relationship gets made or lost, and they're the part nobody writes about with any specificity.</p>
-        <p>Coach the team. Keep the kid. Both jobs at once. No shortcuts.</p>
+        <p>Most coverage of youth sports is written for the parent on the sideline who is yelling at the ref. That is not most parents. Most parents are quiet, tired, doing eight things at once, and trying not to mess up the conversation in the car.</p>
+        <p>The car conversation is the thing nobody writes about. The pre-tryout night. The week your kid got cut from varsity. The text message thread that holds the team together while the email thread does nothing. The way you talk to a 9-year-old after a bad game versus a 14-year-old after a bad game.</p>
+        <p>That is what we cover here.</p>
       </div>
     </div>
   </section>
 
   <section class="border-b border-bone">
-    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <div class="t-label text-rust">Editorial direction</div>
+        <p class="font-display italic text-rust" style="font-weight: 500;">Who writes it</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>The Parent-Coach Playbook is run by {SITE.founder}, a college football coach at the University of Puget Sound and a parent who has watched two kids move through eight sports, two theater programs, and an orchestra.</p>
-        <p>Cornerstone essays carry his byline. Field reporting and weekly issues are filed under PCP Editors. The publication is intentionally faceless. The work is the brand, not a personality.</p>
-        <p>This is a separate business from {SITE.founder}'s work at <a href="https://coachjeffthomas.com">coachjeffthomas.com</a>. The two sites do not share an audience and do not cross-promote.</p>
+        <p><strong>Maren Bell</strong> writes most posts. She is a mom of two, a former college lacrosse player, and the team mom for her daughter's soccer team. Warm, observational, funny.</p>
+        <p><strong>Dan Kowalski</strong> writes when he has been thinking about something long enough to be useful. Dad of three, has coached his twins' baseball for five seasons, and writes mostly on the "coaching your own kid" beat.</p>
+        <p><strong>{SITE.founder}</strong> started the site and writes the longer cornerstone pieces. He coaches college football, watched two of his own kids move through eight youth sports, and edits everything.</p>
+        <p><a href="/contributors/">Read more about the three contributors.</a></p>
       </div>
     </div>
   </section>
 
   <section class="border-b border-bone">
-    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <div class="t-label text-rust">What we cover</div>
+        <p class="font-display italic text-rust" style="font-weight: 500;">Honest disclosure</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>Eight sports: baseball, softball, soccer, basketball, football, hockey, lacrosse, volleyball. The framework also fits theater, band, choir, dance, and any other youth activity that has a drive there, a performance, and a drive home.</p>
-        <p>Five age bands: 5–7, 8–10, 11–12, 13–14, 15+. The 9-year-old who throws to the wrong base and the 14-year-old who quits the team in the parking lot need different sentences from you in the car.</p>
-        <p>One framework: The Three Drives.</p>
+        <p>Jeff writes under his real name. Maren and Dan are composite voices drawn from interviews with parent-coaches across our network. Every situation is real. Every quote is real. We just stitch the voices together so we can write honestly about families without naming any one of them.</p>
+        <p>We landed here because the moms we asked said they would rather read someone telling the truth in a composite voice than read someone pretending the day was fine when it wasn't. If that bothers you, fair. We respect it.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="container-px py-16 grid md:grid-cols-12 gap-10">
+    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <div class="t-label text-rust">Imprint</div>
+        <p class="font-display italic text-rust" style="font-weight: 500;">Get in touch</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>{SITE.imprint} publishes The Parent-Coach Playbook and the forthcoming book Coach the team. Keep the kid. (2027). The imprint exists for editorial work that takes youth coaching seriously as a craft.</p>
-        <p>For tips, story leads, or partnership inquiries: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+        <p>Story leads, gear suggestions, partnership inquiries, or you want to write a guest post: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+        <p>If you want to subscribe to one short note in your inbox a week, sign up below.</p>
       </div>
     </div>
   </section>

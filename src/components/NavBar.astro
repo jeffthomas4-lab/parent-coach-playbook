@@ -1,23 +1,21 @@
 ---
 import Logo from './Logo.astro';
-import { SITE, NAV, UTILITY_NAV } from '../data/site';
+import { NAV, UTILITY_NAV } from '../data/site';
 
 const path = Astro.url.pathname;
 const isActive = (href: string) =>
   href === '/' ? path === '/' : path === href || path.startsWith(href);
 ---
 <header class="border-b border-bone">
-  <div class="container-px flex items-center justify-between py-5">
-    <Logo size={36} withTitle={true} />
+  <div class="container-px flex items-center justify-between py-5 gap-6">
+    <Logo size={22} />
 
     <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
       {NAV.map((item) => (
         <a
           href={item.href}
-          class={`font-display italic text-[1.05rem] hover:text-rust transition-colors ${
-            isActive(item.href) ? 'text-rust' : 'text-ink'
-          }`}
-          style="font-weight: 500;"
+          class="font-display italic text-[1.05rem] hover:text-rust transition-colors"
+          style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
         >
           {item.label}
         </a>
@@ -36,7 +34,8 @@ const isActive = (href: string) =>
       ))}
       <button
         type="button"
-        class="lg:hidden t-label text-ink"
+        class="lg:hidden font-display italic text-ink"
+        style="font-weight: 500; font-size: 0.95rem;"
         aria-label="Toggle menu"
         data-menu-toggle
       >

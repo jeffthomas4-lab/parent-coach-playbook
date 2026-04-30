@@ -140,7 +140,7 @@ def cover_page(canvas, doc):
     canvas.line(MARGIN, 1.0 * inch, PAGE_W - MARGIN, 1.0 * inch)
     canvas.setFillColor(PAPER_WARM)
     canvas.setFont('Mono-Medium', 8)
-    canvas.drawString(MARGIN, 0.75 * inch, 'FIELD & FORGE PRESS  /  PARENTCOACHPLAYBOOK.COM')
+    canvas.drawString(MARGIN, 0.75 * inch, 'PARENTCOACHPLAYBOOK.COM  /  FIELD NOTES, WEEKLY')
     canvas.drawRightString(PAGE_W - MARGIN, 0.75 * inch, 'FREE  ·  12 PAGES  ·  v1')
     canvas.restoreState()
 
@@ -164,7 +164,7 @@ def interior_page(canvas, doc):
     canvas.line(MARGIN, 0.7 * inch, PAGE_W - MARGIN, 0.7 * inch)
     canvas.setFillColor(INK_SOFT)
     canvas.setFont('Mono', 7)
-    canvas.drawString(MARGIN, 0.5 * inch, 'FIELD & FORGE PRESS')
+    canvas.drawString(MARGIN, 0.5 * inch, 'THE PARENT-COACH PLAYBOOK')
     page_num = canvas.getPageNumber()
     canvas.drawRightString(PAGE_W - MARGIN, 0.5 * inch, f'PAGE {page_num} / 12')
     canvas.restoreState()
@@ -400,7 +400,7 @@ def build_story():
             ParagraphStyle('cc6', fontName='Mono-Medium', fontSize=8,
                 textColor=RUST, spaceAfter=4)),
     ], [
-        Paragraph('PARENTCOACHPLAYBOOK.COM  /  FIELD &amp; FORGE PRESS',
+        Paragraph('PARENTCOACHPLAYBOOK.COM  /  THREE DRIVES. ONE RELATIONSHIP.',
             ParagraphStyle('cc7', fontName='Mono', fontSize=7,
                 textColor=INK_SOFT, spaceAfter=0)),
     ]]
@@ -443,11 +443,11 @@ def build_story():
 
     # Imprint block
     imprint = Table([
-        [Paragraph('FIELD &amp; FORGE PRESS', ParagraphStyle('im1',
+        [Paragraph('THE PARENT-COACH PLAYBOOK', ParagraphStyle('im1',
             fontName='Mono-Medium', fontSize=8, textColor=INK))],
-        [Paragraph('The Parent-Coach Playbook is published by Field &amp; Forge Press. ' +
-                   'Editorial direction by Jeff Thomas. ' +
-                   'Cover and interior typography: Fraunces, Inter, JetBrains Mono. ' +
+        [Paragraph('A small site for parents who coach, drive, snack-pack, and supervise the group chat. ' +
+                   'Edited by Jeff Thomas. Written by Maren Bell, Dan Kowalski, and Jeff. ' +
+                   'Maren and Dan are composite voices. Read about them at parentcoachplaybook.com/contributors. ' +
                    '© 2026. All rights reserved.',
             ParagraphStyle('im2', fontName='Inter', fontSize=8, leading=12,
                 textColor=INK_SOFT))],
@@ -493,7 +493,7 @@ def main():
                  title='The Drive Home Playbook',
                  author='PCP Editors',
                  subject='A free field guide for parents who coach their own kid',
-                 creator='Field & Forge Press',
+                 creator='The Parent-Coach Playbook',
                  keywords='youth sports, parent-coach, drive home, parenting')
     doc.build(build_story())
     print(f"wrote: {out_path}")

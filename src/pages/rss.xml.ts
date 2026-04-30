@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { SITE } from '../data/site';
+import { SITE, CONTRIBUTORS } from '../data/site';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
@@ -15,7 +15,7 @@ export async function GET(context: APIContext) {
       title: a.data.title.replace(/\*/g, ''),
       pubDate: a.data.publishedAt,
       description: a.data.dek ?? '',
-      author: a.data.author,
+      author: CONTRIBUTORS[a.data.contributor].name,
       link: `/${a.data.phase}/${a.slug}/`,
     })),
     customData: '<language>en-us</language>',

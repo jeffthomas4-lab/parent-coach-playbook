@@ -3,15 +3,53 @@
 
 export const SITE = {
   name: 'The Parent-Coach Playbook',
-  imprint: 'Field & Forge Press',
   tagline: 'The drive home is the real game.',
+  shortPitch: 'Field notes from parents who coach, organize, drive, and supervise the snack rotation. Mostly short reads. Sometimes longer ones.',
   url: 'https://parentcoachplaybook.com',
   description:
-    'Editorial reporting and field notes for parents who coach their own kid. Pre-game, in-game, and the conversation that matters most: the drive home.',
+    'Field notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
   founder: 'Jeff Thomas',
   twitter: '',
-  email: 'editors@parentcoachplaybook.com',
+  email: 'parentcoachplaybook@gmail.com',
 };
+
+// Contributors. Maren and Dan are composite voices drawn from interviews with
+// parent-coaches in the network. Jeff writes under his real name on cornerstones.
+// Disclosure lives on the About page.
+export const CONTRIBUTORS = {
+  'maren-bell': {
+    slug: 'maren-bell',
+    name: 'Maren Bell',
+    role: 'Lead writer',
+    short: 'Mom of two. Ex-college lacrosse. Writes most things here.',
+    bio: 'Maren is a mom of two — a 9-year-old soccer kid and a 13-year-old who plays viola and basketball. She played lacrosse at Bates, taught middle-school English for six years, and has been a team mom, snack parent, assistant coach, and the parent who texts everyone the field change. She writes most posts on this site. She drinks too much coffee and does not yell from the sidelines.',
+    accent: '#C5713D', // terracotta
+    accentBg: '#F2E2D5',
+    avatarLetter: 'M',
+  },
+  'dan-kowalski': {
+    slug: 'dan-kowalski',
+    name: 'Dan Kowalski',
+    role: 'Contributor',
+    short: 'Dad of three. Has coached his twins\' baseball for five seasons. Writes a couple of times a month.',
+    bio: 'Dan is a dad of three: twin 11-year-olds (one in baseball, one in theater) and a 7-year-old soccer kid. He works in software and has coached his twins\' tee-ball, coach-pitch, and little league for five years running. He writes here when he has been thinking about something long enough to be useful. Mostly that means he is thinking about coaching his own kid in front of the team.',
+    accent: '#5C7459', // deeper sage
+    accentBg: '#EAEFE7',
+    avatarLetter: 'D',
+  },
+  'jeff-thomas': {
+    slug: 'jeff-thomas',
+    name: 'Jeff Thomas',
+    role: 'Founder',
+    short: 'College football coach. Dad of two. Started this site.',
+    bio: 'Jeff is the head football coach at the University of Puget Sound, a former interim athletic director, and a parent who watched two kids move through eight sports, two theater productions, and an orchestra. He started The Parent-Coach Playbook because most of what he learned about coaching kids he learned from being one of two parents in a minivan. He writes occasional cornerstone pieces here.',
+    accent: '#B0894A', // honey deeper
+    accentBg: '#F5E9D2',
+    avatarLetter: 'JT',
+  },
+} as const;
+
+export type ContributorSlug = keyof typeof CONTRIBUTORS;
 
 export const NAV = [
   { label: 'The Drive There', href: '/drive-there/', eyebrow: '01' },

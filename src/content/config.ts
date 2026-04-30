@@ -6,10 +6,17 @@ const articles = defineCollection({
     z.object({
       title: z.string(),
       dek: z.string().optional(),
-      author: z.enum(['PCP Editors', 'Jeff Thomas']).default('PCP Editors'),
+
+      // Contributor — references the slug in CONTRIBUTORS in src/data/site.ts
+      contributor: z.enum(['maren-bell', 'dan-kowalski', 'jeff-thomas']).default('maren-bell'),
+
       issue: z.number().optional(),
       hero: image().optional(),
       heroAlt: z.string().optional(),
+
+      // Short-form 'note' for friend-to-friend posts (200-500 words),
+      // long-form 'essay' for cornerstone pieces (800+ words).
+      format: z.enum(['note', 'essay']).default('note'),
 
       // Tagging
       sport: z
@@ -22,7 +29,12 @@ const articles = defineCollection({
           'hockey',
           'lacrosse',
           'volleyball',
+          'theater',
+          'band',
+          'choir',
+          'dance',
           'multi-sport',
+          'multi-activity',
         ])
         .optional(),
       age: z
@@ -48,7 +60,7 @@ const gear = defineCollection({
       ourTake: z.string().optional(),
       hero: image().optional(),
       retailer: z.string(),
-      affiliateSlug: z.string(), // resolves through /go/[slug]
+      affiliateSlug: z.string(),
       priceRange: z.string().optional(),
 
       sport: z

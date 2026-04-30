@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import { PILLARS, SPORTS, AGE_BANDS, SITE } from '../data/site';
+import { PILLARS, SPORTS, AGE_BANDS, SITE, CONTRIBUTORS } from '../data/site';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -14,19 +14,20 @@ const { data, slug } = article;
 const pillar = PILLARS[data.phase];
 const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
+const contrib = CONTRIBUTORS[data.contributor];
 
 // "More from this drive" — same pillar, exclude this article, top 3
 const related = (await getCollection('articles', ({ data: d, slug: s }) =>
   !d.draft && d.phase === data.phase && s !== slug
 )).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-// Article JSON-LD
+// JSON-LD
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: data.title.replace(/\*/g, ''),
   description: data.dek,
-  author: { '@type': data.author === 'Jeff Thomas' ? 'Person' : 'Organization', name: data.author },
+  author: { '@type': 'Person', name: contrib.name },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
@@ -36,7 +37,6 @@ const articleSchema = {
   mainEntityOfPage: `${SITE.url}/${data.phase}/${slug}/`,
 };
 
-// Breadcrumb JSON-LD
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -47,8 +47,13 @@ const breadcrumbSchema = {
   ],
 };
 
-const filedUnder = [pillar.label, sportLabel, ageLabel].filter(Boolean).join(' / ');
+const tagBits = [
+  pillar.label.replace('The ', ''),
+  sportLabel,
+  ageLabel ? `age ${ageLabel}` : null,
+].filter(Boolean);
 const titleHtml = data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const isShort = data.format === 'note';
 ---
 <BaseLayout
   title={data.title.replace(/\*/g, '')}
@@ -59,39 +64,65 @@ const titleHtml = data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <!-- Top metadata rule -->
-  <div class="border-t border-ink">
-    <div class="container-px py-3 flex flex-wrap justify-between gap-2">
-      <span class="t-label text-ink">
-        {data.issue ? `Issue ${String(data.issue).padStart(3, '0')}` : 'Editorial'} / Filed under {filedUnder}
-      </span>
-      <span class="t-label text-ink-soft">
-        {data.publishedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-      </span>
+  <!-- Soft pillar tint as the page accent -->
+  <article style={`background: ${pillar.accentBg};`}>
+    <div class="container-px pt-10 pb-2">
+      <div class="font-display italic" style={`color: ${pillar.accent}; font-weight: 500; font-size: 1rem;`}>
+        Filed in {pillar.label}{tagBits[1] ? ' · ' + tagBits.slice(1).join(' · ') : ''}
+      </div>
     </div>
-  </div>
+  </article>
 
-  <article class="container-px py-12 md:py-20">
+  <article class="container-px py-10 md:py-14">
     <header class="max-w-prose mx-auto">
       <h1
-        class="font-display text-ink font-semibold text-[2.25rem] md:text-[3.75rem] leading-[1.0]"
+        class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
+        style="font-weight: 500;"
         set:html={titleHtml}
       />
-      {data.dek && (
+      {data.dek && !isShort && (
         <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 leading-snug">
           {data.dek}
         </p>
       )}
-      <div class="t-label text-ink-soft mt-8 flex items-center gap-3">
-        <span>By {data.author}</span>
-        <span aria-hidden="true">·</span>
-        <span>{data.publishedAt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+
+      <!-- Byline with avatar -->
+      <div class="mt-8 flex items-center gap-3">
+        <div
+          class="w-12 h-12 rounded-full flex items-center justify-center font-display italic flex-shrink-0"
+          style={`background: ${contrib.accentBg}; color: ${contrib.accent}; font-weight: 500; font-size: 1.05rem;`}
+          aria-hidden="true"
+        >{contrib.avatarLetter}</div>
+        <div class="leading-tight">
+          <div class="font-display text-ink" style="font-weight: 500;">
+            <a href="/contributors/" class="hover:text-rust">{contrib.name}</a>
+          </div>
+          <div class="font-display italic text-ink-soft text-sm">
+            {data.publishedAt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            {' · '}
+            {isShort ? 'short read' : 'longer read'}
+          </div>
+        </div>
       </div>
     </header>
 
-    <div class="article-body mx-auto mt-12">
+    <div class={`article-body mx-auto ${isShort ? 'mt-8' : 'mt-12'}`}>
       <slot />
     </div>
+
+    <!-- Contributor note at the bottom -->
+    <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone flex items-start gap-4">
+      <div
+        class="w-14 h-14 rounded-full flex items-center justify-center font-display italic flex-shrink-0"
+        style={`background: ${contrib.accentBg}; color: ${contrib.accent}; font-weight: 500; font-size: 1.25rem;`}
+        aria-hidden="true"
+      >{contrib.avatarLetter}</div>
+      <div>
+        <p class="font-display text-ink mb-1" style="font-weight: 500;">More from {contrib.name}</p>
+        <p class="font-display text-ink-soft text-sm leading-snug">{contrib.short}</p>
+        <a href="/contributors/" class="t-cta inline-block mt-2">See contributors →</a>
+      </div>
+    </aside>
   </article>
 
   <RelatedArticles articles={related} pillarLabel={pillar.label} />

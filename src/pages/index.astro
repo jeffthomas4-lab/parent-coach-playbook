@@ -1,124 +1,145 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Logo from '../components/Logo.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import ThreeDrivesNav from '../components/ThreeDrivesNav.astro';
-import { PILLARS, SITE } from '../data/site';
+import { PILLARS, SITE, CONTRIBUTORS } from '../data/site';
 
 const all = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-const featured = all.find(a => a.data.featured) ?? all[0];
-const latest = all.filter(a => a.slug !== featured?.slug).slice(0, 6);
+// Featured cornerstone (the manifesto). Pick the first essay marked featured.
+const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
+// The rest of the feed: most recent, excluding the featured.
+const feed = all.filter(a => a.slug !== featured?.slug).slice(0, 8);
 
 const pillars = Object.values(PILLARS);
+const contribs = Object.values(CONTRIBUTORS);
 ---
 <BaseLayout>
   <!-- HERO -->
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-8">
-        <div class="t-section mb-5">A field guide for parents who coach their own kid</div>
-        <h1 class="font-display text-ink text-[2.75rem] md:text-[4.5rem] leading-[1.0]" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-5" style="font-weight: 500;">
+          Hi. We're glad you're here.
+        </p>
+        <h1 class="font-display text-ink text-[2.5rem] md:text-[4.25rem] leading-[1.0]" style="font-weight: 500;">
           The drive home is the <em class="text-rust">real game</em>.
         </h1>
         <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 max-w-2xl leading-snug">
-          Editorial reporting and field notes from a publication that takes the
-          car ride, the kitchen table, and the bedroom doorway as seriously as the game itself.
+          Field notes from parents who coach, organize, drive, snack-pack, and supervise the
+          group chat. Mostly short reads. Sometimes longer ones. From three of us, to the rest of you.
         </p>
         <div class="mt-10 flex flex-wrap gap-3">
-          <a href="/drive-home/three-drives-one-relationship/" class="btn">Read the manifesto</a>
+          <a href={`/${featured.data.phase}/${featured.slug}/`} class="btn">Read the cornerstone</a>
           <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
         </div>
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
-        <ThreeDrivesNav variant="sidebar" />
-        <p class="mt-6 font-display italic text-ink-soft text-sm">
-          Three drives. One relationship.
-        </p>
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Who writes here</p>
+        <ul class="grid gap-4">
+          {contribs.map((c) => (
+            <li class="flex items-start gap-3">
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center font-display italic flex-shrink-0"
+                style={`background: ${c.accentBg}; color: ${c.accent}; font-weight: 500; font-size: 1rem;`}
+                aria-hidden="true"
+              >{c.avatarLetter}</div>
+              <div>
+                <a href="/contributors/" class="font-display text-ink hover:text-rust" style="font-weight: 500;">{c.name}</a>
+                <p class="font-display text-ink-soft text-sm leading-snug">{c.short}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </aside>
     </div>
   </section>
 
-  <!-- THE THREE PILLARS -->
+  <!-- FEATURED CORNERSTONE -->
+  {featured && (
+    <section class="border-b border-bone">
+      <div class="container-px py-16">
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">If you only read one thing</p>
+        <a href={`/${featured.data.phase}/${featured.slug}/`} class="block group max-w-3xl">
+          <h2
+            class="font-display text-ink text-4xl md:text-[3.5rem] leading-[1.05] group-hover:text-rust transition-colors"
+            style="font-weight: 500;"
+            set:html={featured.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+          />
+          {featured.data.dek && (
+            <p class="font-display text-ink-soft text-xl mt-5 leading-snug max-w-2xl">
+              {featured.data.dek}
+            </p>
+          )}
+          <div class="t-cta mt-6">Read it →</div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- FEED -->
   <section class="border-b border-bone">
-    <div class="container-px py-20">
-      <div class="t-section mb-4">The framework</div>
-      <h2 class="font-display text-ink text-3xl md:text-5xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
-        Most parent-coaches obsess over the <em class="text-rust">middle</em>. The relationship gets built in the bookends.
+    <div class="container-px py-16">
+      <div class="flex items-baseline justify-between mb-6">
+        <p class="font-display italic text-rust" style="font-weight: 500; font-size: 1.05rem;">What's new</p>
+        <a href="/newsletter/" class="t-cta">See the archive →</a>
+      </div>
+      <div class="grid md:grid-cols-2 gap-x-10">
+        {feed.map((a) => (
+          <ArticleCard
+            href={`/${a.data.phase}/${a.slug}/`}
+            contributor={a.data.contributor}
+            format={a.data.format}
+            sport={a.data.sport}
+            age={a.data.age}
+            phase={a.data.phase}
+            title={a.data.title}
+            dek={a.data.dek}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- THE THREE DRIVES (softer) -->
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Three drives. One relationship.</p>
+      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
+        The relationship gets built on either side of the game. Most of us forget that until Saturday at 3pm.
       </h2>
 
-      <div class="mt-14 grid md:grid-cols-3 gap-6">
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
         {pillars.map((p, i) => (
           <a
             href={`/${p.slug}/`}
-            class="block group p-8 border border-bone transition-colors"
+            class="block group p-7 transition-colors"
             style={`background: ${p.accentBg};`}
           >
             <div
               class="font-display italic"
               style={`color: ${p.accent}; font-size: 0.95rem; font-weight: 500;`}
             >
-              {`0${i + 1} / ${p.eyebrow.split(' / ')[1] || ''}`}
+              {p.eyebrow.split(' / ')[1]}
             </div>
-            <h3 class="font-display text-ink text-3xl mt-3 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            <h3 class="font-display text-ink text-2xl mt-2 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
               {p.label}
             </h3>
-            <p class="font-display text-ink-soft mt-3 leading-snug">
+            <p class="font-display text-ink-soft mt-3 leading-snug text-sm">
               {p.blurb}
             </p>
             <div
-              class="font-display italic mt-6"
+              class="font-display italic mt-5"
               style={`color: ${p.accent}; font-weight: 500;`}
             >
-              Open the section →
+              Open this section →
             </div>
           </a>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED + LATEST -->
-  <section>
-    <div class="container-px py-20 grid lg:grid-cols-12 gap-10">
-      {featured && (
-        <article class="lg:col-span-7 border-r-0 lg:border-r lg:pr-10 lg:border-bone">
-          <div class="t-section mb-4">Featured · from {PILLARS[featured.data.phase].label}</div>
-          <a href={`/${featured.data.phase}/${featured.slug}/`} class="block group">
-            <h2
-              class="font-display text-ink text-4xl md:text-5xl leading-[1.05] group-hover:text-rust transition-colors"
-              style="font-weight: 500;"
-              set:html={featured.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
-            />
-            {featured.data.dek && (
-              <p class="font-display text-ink-soft text-lg mt-4 leading-snug max-w-xl">
-                {featured.data.dek}
-              </p>
-            )}
-            <div class="t-cta mt-6">Read the issue →</div>
-          </a>
-        </article>
-      )}
-
-      <div class="lg:col-span-5">
-        <div class="t-section mb-4">Latest issues</div>
-        <div>
-          {latest.map((a) => (
-            <ArticleCard
-              href={`/${a.data.phase}/${a.slug}/`}
-              issue={a.data.issue}
-              sport={a.data.sport}
-              age={a.data.age}
-              title={a.data.title}
-              dek={a.data.dek}
-            />
-          ))}
-        </div>
       </div>
     </div>
   </section>
@@ -127,5 +148,8 @@ const pillars = Object.values(PILLARS);
   <LeadMagnetCTA />
 
   <!-- NEWSLETTER -->
-  <NewsletterSignup />
+  <NewsletterSignup
+    headline="Slide into the inbox"
+    blurb="One short note a week. From Maren, Dan, and Jeff. No fluff, no tracking, easy unsubscribe."
+  />
 </BaseLayout>

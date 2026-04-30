@@ -7,14 +7,17 @@ const year = new Date().getFullYear();
 <footer class="mt-24 border-t border-bone bg-paper">
   <div class="container-px py-16 grid gap-12 md:grid-cols-12">
     <div class="md:col-span-5">
-      <Logo size={44} withTitle={true} />
+      <Logo size={32} />
       <p class="font-display text-ink-soft text-lg mt-6 max-w-md leading-snug">
         <em class="text-rust italic">{SITE.tagline}</em>
+      </p>
+      <p class="font-display text-ink-soft mt-3 max-w-md leading-snug">
+        {SITE.shortPitch}
       </p>
     </div>
 
     <div class="md:col-span-3">
-      <div class="t-section mb-3">Sections</div>
+      <div class="t-section mb-3">Read</div>
       <ul class="grid gap-2.5 font-display text-ink-soft">
         {NAV.map((item) => (
           <li><a href={item.href} class="hover:text-rust">{item.label}</a></li>
@@ -28,26 +31,26 @@ const year = new Date().getFullYear();
         {UTILITY_NAV.map((item) => (
           <li><a href={item.href} class="hover:text-rust">{item.label}</a></li>
         ))}
+        <li><a href="/contributors/" class="hover:text-rust">Contributors</a></li>
         <li><a href="/rss.xml" class="hover:text-rust">RSS</a></li>
-        <li><a href="/sitemap.xml" class="hover:text-rust">Sitemap</a></li>
       </ul>
     </div>
 
     <div class="md:col-span-2">
-      <div class="t-section mb-3">Get in touch</div>
+      <div class="t-section mb-3">Say hi</div>
       <ul class="grid gap-2.5 font-display text-ink-soft">
-        <li><a href={`mailto:${SITE.email}`} class="hover:text-rust">{SITE.email}</a></li>
+        <li><a href={`mailto:${SITE.email}`} class="hover:text-rust break-words">{SITE.email}</a></li>
       </ul>
     </div>
   </div>
 
   <div class="border-t border-bone">
     <div class="container-px py-6 flex flex-col md:flex-row justify-between gap-3">
-      <div class="t-label text-ink-soft" style="font-size: 0.6rem;">
-        © {year} {SITE.imprint}. All rights reserved. v0.2
+      <div class="font-display italic text-ink-soft text-sm">
+        © {year} The Parent-Coach Playbook. v0.3
       </div>
-      <div class="t-label text-ink-soft" style="font-size: 0.6rem;">
-        Editorial direction by {SITE.founder}
+      <div class="font-display italic text-ink-soft text-sm">
+        Edited by {SITE.founder}
       </div>
     </div>
   </div>
