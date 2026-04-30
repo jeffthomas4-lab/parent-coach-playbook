@@ -1,65 +1,150 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { CONTRIBUTORS } from '../data/site';
 
 const all = (await getCollection('articles', ({ data }) => !data.draft));
-const index = all.map(a => ({
+const guides = (await getCollection('guides', ({ data }) => !data.draft));
+const resources = (await getCollection('resources', ({ data }) => !data.draft && data.type !== 'external'));
+
+const articleIndex = all.map(a => ({
+  type: 'article' as const,
   title: a.data.title.replace(/\*/g, ''),
   dek: a.data.dek ?? '',
   href: `/${a.data.phase}/${a.slug}/`,
-  phase: a.data.phase,
-  sport: a.data.sport ?? '',
-  age: a.data.age ?? '',
+  meta: [a.data.phase, a.data.sport, a.data.age].filter(Boolean).join(' · '),
 }));
+const guideIndex = guides.map(g => ({
+  type: 'guide' as const,
+  title: `What to buy for ${g.data.activity.toLowerCase()}`,
+  dek: g.data.lede,
+  href: `/what-to-buy/${g.slug}/`,
+  meta: g.data.category === 'sport' ? 'Sport · gear guide' : 'Activity · gear guide',
+}));
+const resourceIndex = resources.map(r => ({
+  type: 'resource' as const,
+  title: r.data.title,
+  dek: r.data.summary,
+  href: `/team-parent/${r.slug}/`,
+  meta: 'Team Parent · ' + r.data.category.replace('-', ' '),
+}));
+const fullIndex = [...articleIndex, ...guideIndex, ...resourceIndex];
+
+// Curated popular searches and popular reads (manual list, edit anytime)
+const popularSearches = [
+  { label: 'tryouts', href: '/drive-there/night-before-tryouts/' },
+  { label: 'bad game', href: '/drive-home/the-90-second-rule/' },
+  { label: 'group chat', href: '/team-parent/starting-the-team-group-chat/' },
+  { label: 'lineup', href: '/team-parent/fair-lineup-spreadsheet/' },
+  { label: 'first practice', href: '/team-parent/practice-plan-parents-can-read/' },
+  { label: 'travel ball', href: '/team-parent/travel-tournament-packing-list/' },
+];
+
+const popularReads = [
+  { title: 'Three drives. One relationship.', dek: 'The brand thesis. The cornerstone read.', href: '/drive-home/three-drives-one-relationship/' },
+  { title: 'What you say in the first 90 seconds', dek: 'The post-game window decides what the next week feels like.', href: '/drive-home/the-90-second-rule/' },
+  { title: 'Coaching your own kid in front of the team', dek: 'The hardest job in youth sports. The rule we landed on.', href: '/game/coaching-your-own-kid-in-front-of-the-team/' },
+  { title: 'Starting the team group chat that actually works', dek: 'The first message that works. Five rules to keep it tight.', href: '/team-parent/starting-the-team-group-chat/' },
+];
 ---
-<BaseLayout title="Search" description="Search the archive.">
+<BaseLayout title="Search" description="Search the archive. Or pick from popular reads.">
   <section class="border-b border-bone">
-    <div class="container-px py-16">
-      <div class="t-label text-rust">Search</div>
-      <h1 class="font-display text-ink font-semibold text-[2.5rem] md:text-[3.5rem] leading-[1.0] mt-4">
-        Search the archive
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Search</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0]" style="font-weight: 500;">
+        Find what you're looking for
       </h1>
       <input
         type="search"
-        placeholder="Type to filter..."
-        class="mt-8 w-full max-w-xl px-4 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
+        placeholder="Try: tryouts, bad game, group chat, gear..."
+        class="mt-7 w-full max-w-xl px-4 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
         data-search-input
       />
+
+      <div class="mt-5 flex flex-wrap items-center gap-2">
+        <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Popular searches:</span>
+        {popularSearches.map(p => (
+          <a
+            href={p.href}
+            class="font-display italic text-rust hover:text-ink text-sm border border-bone px-3 py-1 hover:bg-paper-warm transition-colors"
+            style="font-weight: 500;"
+          >{p.label}</a>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="container-px py-12">
+  <!-- Default: popular reads. Replaced by JS when the user types. -->
+  <section data-default-state>
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Popular reads</p>
+      <div class="grid md:grid-cols-2 gap-px bg-bone">
+        {popularReads.map(r => (
+          <a href={r.href} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {r.title}
+            </h3>
+            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
+              {r.dek}
+            </p>
+            <div class="t-cta mt-3">Read it →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Search results — populated by JS when the user types -->
+  <section class="hidden" data-results-state>
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;" data-results-label>Results</p>
       <div data-search-results></div>
     </div>
   </section>
 
-  <script type="application/json" id="search-index" set:html={JSON.stringify(index)} />
+  <script type="application/json" id="search-index" set:html={JSON.stringify(fullIndex)} />
   <script>
-    type Hit = { title: string; dek: string; href: string; phase: string; sport: string; age: string };
+    type Hit = { type: string; title: string; dek: string; href: string; meta: string };
     const idxEl = document.getElementById('search-index') as HTMLScriptElement | null;
     const input = document.querySelector('[data-search-input]') as HTMLInputElement | null;
     const out = document.querySelector('[data-search-results]') as HTMLElement | null;
-    if (idxEl && input && out) {
+    const defaultState = document.querySelector('[data-default-state]') as HTMLElement | null;
+    const resultsState = document.querySelector('[data-results-state]') as HTMLElement | null;
+    const resultsLabel = document.querySelector('[data-results-label]') as HTMLElement | null;
+
+    if (idxEl && input && out && defaultState && resultsState && resultsLabel) {
       const data: Hit[] = JSON.parse(idxEl.textContent || '[]');
-      const render = (hits: Hit[]) => {
+      const escape = (s: string) => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c] || c));
+
+      const render = (hits: Hit[], query: string) => {
+        if (hits.length === 0) {
+          out.innerHTML = `<p class="font-display italic text-ink-soft text-lg" style="font-weight: 500;">No matches for "${escape(query)}". Email us at <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust">parentcoachplaybook@gmail.com</a> and tell us what you're looking for.</p>`;
+          return;
+        }
         out.innerHTML = hits.map(h => `
-          <a href="${h.href}" class="block border-b border-bone py-5 hover:bg-paper-warm">
-            <div class="t-label text-ink-soft">${h.phase} ${h.sport ? '· ' + h.sport : ''} ${h.age ? '· age ' + h.age : ''}</div>
-            <h3 class="font-display text-ink text-2xl mt-1 leading-tight">${h.title}</h3>
-            ${h.dek ? `<p class="font-display text-ink-soft mt-2">${h.dek}</p>` : ''}
-          </a>`).join('') || '<p class="font-display text-ink-soft">No matches.</p>';
+          <a href="${h.href}" class="block border-b border-bone py-5 hover:bg-paper-warm transition-colors">
+            <div class="font-display italic text-rust text-xs" style="font-weight: 500;">${escape(h.meta)}</div>
+            <h3 class="font-display text-ink text-xl mt-1 leading-tight" style="font-weight: 500;">${escape(h.title)}</h3>
+            ${h.dek ? `<p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escape(h.dek)}</p>` : ''}
+          </a>`).join('');
       };
-      render(data);
+
       input.addEventListener('input', () => {
         const q = input.value.trim().toLowerCase();
-        if (!q) return render(data);
-        render(data.filter(h =>
+        if (!q) {
+          defaultState.classList.remove('hidden');
+          resultsState.classList.add('hidden');
+          return;
+        }
+        defaultState.classList.add('hidden');
+        resultsState.classList.remove('hidden');
+        const hits = data.filter(h =>
           h.title.toLowerCase().includes(q) ||
           h.dek.toLowerCase().includes(q) ||
-          h.sport.toLowerCase().includes(q) ||
-          h.phase.toLowerCase().includes(q)
-        ));
+          h.meta.toLowerCase().includes(q)
+        );
+        resultsLabel.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'} for "${q}"`;
+        render(hits, q);
       });
     }
   </script>

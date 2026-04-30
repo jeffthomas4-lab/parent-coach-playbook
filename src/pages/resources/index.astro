@@ -1,90 +1,157 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
-
-// Each lead magnet is a card. Two live, two coming.
-// When you ship a new one, replace a "coming soon" with a real card.
 ---
 <BaseLayout
-  title="Free downloads"
-  description="Free downloads for parents who coach. The Drive Home Playbook. The Practice Plan Template. More on the way."
+  title="Resources"
+  description="Free downloads, templates, spreadsheets, and cheat sheets for parents who coach. Everything you can take, in one place."
 >
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-20">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Free downloads</p>
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Resources</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        Free tools for the work <em class="text-rust">in the car</em>, <em class="text-rust">on the field</em>, and <em class="text-rust">at the kitchen table</em>.
+        Everything you can <em class="text-rust">take with you</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
-        Plain printable PDFs. Subscribe once and the downloads are yours. We'll send you new ones as we ship them.
+        Free downloads, templates, and cheat sheets organized by what you need. Some are PDFs you grab in 5 seconds. Some are full how-to articles. None of them are gated behind anything fancier than your email.
       </p>
     </div>
   </section>
 
+  <!-- FREE DOWNLOADS (PDFs) -->
   <section class="border-b border-bone">
     <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500; font-size: 1.05rem;">Free downloads</p>
+      <p class="font-display text-ink-soft mb-6 leading-snug max-w-2xl">
+        Printable PDFs. Subscribe once and they're yours. New ones added when we ship them.
+      </p>
       <div class="grid md:grid-cols-2 gap-px bg-bone">
 
-        <a href="/resources/drive-home-playbook/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors">
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 12 pages · Free</p>
-          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+        <a href="/resources/drive-home-playbook/" class="bg-paper p-7 group block hover:bg-paper-warm transition-colors">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 12 pages</p>
+          <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
             The Drive Home Playbook
           </h3>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            What to say in the first 90 seconds after a youth game. Eight scripted opening lines by sport. Three things never to say. A pocket card.
+          <p class="font-display text-ink-soft mt-3 leading-snug text-sm">
+            What to say in the first 90 seconds after a youth game. Eight scripted opening lines by sport. A printable pocket card.
           </p>
-          <div class="t-cta mt-5">Send me the playbook →</div>
+          <div class="t-cta mt-4">Send me the playbook →</div>
         </a>
 
-        <a href="/resources/practice-plan-template/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors">
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 4 pages · Free</p>
-          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+        <a href="/resources/practice-plan-template/" class="bg-paper p-7 group block hover:bg-paper-warm transition-colors">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">PDF · 4 pages</p>
+          <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
             The Practice Plan Template
           </h3>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            A printable practice plan parents can read. Blank template, filled example, drill ideas by age. 10 minutes a week of writing saves 10 phone calls.
+          <p class="font-display text-ink-soft mt-3 leading-snug text-sm">
+            A printable practice plan parents can read. Blank template, filled example, drill ideas by age band.
           </p>
-          <div class="t-cta mt-5">Send me the template →</div>
+          <div class="t-cta mt-4">Send me the template →</div>
         </a>
-
-        <div class="bg-paper p-8">
-          <p class="font-display italic text-ink-soft mb-2 text-sm" style="font-weight: 500;">Coming next</p>
-          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
-            The Tryouts Evaluation Rubric
-          </h3>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            A 1-pager for parent-coaches running tryouts. Plus the script for delivering the news, especially to your own kid.
-          </p>
-          <div class="font-display italic text-ink-soft mt-5 text-sm" style="font-weight: 500;">In the works</div>
-        </div>
-
-        <div class="bg-paper p-8">
-          <p class="font-display italic text-ink-soft mb-2 text-sm" style="font-weight: 500;">Coming next</p>
-          <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
-            The Season-Opener Parent Meeting Agenda
-          </h3>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            A 15-minute script for the first parent meeting of the season. What to say, what to skip, what to email afterward.
-          </p>
-          <div class="font-display italic text-ink-soft mt-5 text-sm" style="font-weight: 500;">In the works</div>
-        </div>
 
       </div>
     </div>
   </section>
 
+  <!-- TEMPLATES & SPREADSHEETS (link to Team Parent) -->
   <section class="border-b border-bone">
-    <div class="container-px py-12 max-w-2xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">How this works</p>
-      <div class="article-body">
-        <p>Subscribe once. You'll land on a welcome page with every download we have, and you'll get an email when we ship a new one.</p>
-        <p>If you'd rather just read the articles without the downloads, there's no email gate on those. <a href="/start-here/">Start here</a> and pick what fits your week.</p>
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500; font-size: 1.05rem;">Templates and walkthroughs</p>
+      <p class="font-display text-ink-soft mb-6 leading-snug max-w-2xl">
+        Spreadsheets, Google Docs, and step-by-step setups. Live inside the Team Parent toolkit.
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/team-parent/fair-lineup-spreadsheet/" class="block border border-bone p-5 bg-paper hover:bg-paper-warm transition-colors group">
+          <div class="font-display italic text-rust text-xs mb-1" style="font-weight: 500;">Spreadsheet</div>
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">The fair lineup spreadsheet</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Inning-by-inning rotation that's actually fair.</p>
+        </a>
+        <a href="/team-parent/practice-plan-parents-can-read/" class="block border border-bone p-5 bg-paper hover:bg-paper-warm transition-colors group">
+          <div class="font-display italic text-rust text-xs mb-1" style="font-weight: 500;">Google Doc setup</div>
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">A practice plan parents can read</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">10 minutes a week of writing saves 10 phone calls.</p>
+        </a>
+        <a href="/team-parent/setting-up-gamechanger/" class="block border border-bone p-5 bg-paper hover:bg-paper-warm transition-colors group">
+          <div class="font-display italic text-rust text-xs mb-1" style="font-weight: 500;">Walkthrough</div>
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">Setting up GameChanger</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The 20-minute setup that turns one team mom into the league hero.</p>
+        </a>
+        <a href="/team-parent/starting-the-team-group-chat/" class="block border border-bone p-5 bg-paper hover:bg-paper-warm transition-colors group">
+          <div class="font-display italic text-rust text-xs mb-1" style="font-weight: 500;">Script + rules</div>
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">Starting the team group chat</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The first message that works, and five rules to keep it tight.</p>
+        </a>
+        <a href="/team-parent/travel-tournament-packing-list/" class="block border border-bone p-5 bg-paper hover:bg-paper-warm transition-colors group">
+          <div class="font-display italic text-rust text-xs mb-1" style="font-weight: 500;">Checklist</div>
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">Travel-tournament packing list</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to bring to a Saturday-Sunday tournament. Tape it inside the bag.</p>
+        </a>
+        <a href="/team-parent/recruit-assistant-coaches/" class="block border border-bone p-5 bg-paper hover:bg-paper-warm transition-colors group">
+          <div class="font-display italic text-rust text-xs mb-1" style="font-weight: 500;">Script</div>
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">How to recruit assistant coaches</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The text message that gets two of three parents to say yes.</p>
+        </a>
       </div>
+      <div class="mt-6">
+        <a href="/team-parent/" class="t-cta">See the full Team Parent toolkit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEAT SHEETS BY SITUATION -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500; font-size: 1.05rem;">Cheat sheets by situation</p>
+      <p class="font-display text-ink-soft mb-6 leading-snug max-w-2xl">
+        Short reads with the rule, the script, or the move you need in five minutes.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/drive-home/the-90-second-rule/" class="block border-l-2 border-rust pl-4 py-3 hover:bg-paper-warm transition-colors group">
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">The 90-second rule</h3>
+          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">What to say in the first 90 seconds after a game.</p>
+        </a>
+        <a href="/drive-there/night-before-tryouts/" class="block border-l-2 border-rust pl-4 py-3 hover:bg-paper-warm transition-colors group">
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">The night before tryouts</h3>
+          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">What to do, what not to ask.</p>
+        </a>
+        <a href="/team-parent/t-ball-cones-stop-the-bunching/" class="block border-l-2 border-rust pl-4 py-3 hover:bg-paper-warm transition-colors group">
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">T-ball cones</h3>
+          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">Five cones, ten minutes of setup, zero bunching.</p>
+        </a>
+        <a href="/drive-home/on-not-making-varsity/" class="block border-l-2 border-rust pl-4 py-3 hover:bg-paper-warm transition-colors group">
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">On not making varsity</h3>
+          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">Sixteen words. The whole job, in three sentences.</p>
+        </a>
+        <a href="/drive-there/the-pre-game-conversation-isnt-strategy/" class="block border-l-2 border-rust pl-4 py-3 hover:bg-paper-warm transition-colors group">
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">The drive there isn't strategy hour</h3>
+          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">Three things to say in 12 minutes. Then stop.</p>
+        </a>
+        <a href="/team-parent/picture-day-pro-or-parent/" class="block border-l-2 border-rust pl-4 py-3 hover:bg-paper-warm transition-colors group">
+          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">Picture day decisions</h3>
+          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">Pro photographer or just one parent? An honest take.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMING NEXT -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500; font-size: 1.05rem;">In the works</p>
+      <ul class="grid md:grid-cols-2 gap-y-2 gap-x-8 font-display text-ink-soft">
+        <li>The Tryouts Evaluation Rubric (PDF, 1 page)</li>
+        <li>The Season-Opener Parent Meeting Agenda (script + handout)</li>
+        <li>The Pre-Game Pocket Card (laminate-able, glove-box-sized)</li>
+        <li>The Snack Signup Google Form template</li>
+      </ul>
+      <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+        Subscribe and you'll be the first to grab them.
+      </p>
     </div>
   </section>
 
   <NewsletterSignup
-    headline="Subscribe and get all of them"
+    headline="Get every download we ship"
     blurb="One subscribe, every current and future free download. One short read a week. Easy unsubscribe."
     buttonLabel="Subscribe"
   />
