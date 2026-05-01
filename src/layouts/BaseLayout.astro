@@ -66,8 +66,7 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
       name: SITE.name,
       url: SITE.url,
       description: SITE.description,
-      founder: { '@type': 'Person', name: SITE.founder },
-      publishingPrinciples: SITE.url + '/about/',
+      publishingPrinciples: SITE.url + '/disclosure/',
     })}></script>
 
     <slot name="head" />

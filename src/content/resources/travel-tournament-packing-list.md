@@ -3,7 +3,6 @@ title: "The travel-tournament packing list"
 summary: "What to actually bring to a Saturday-Sunday tournament. From the parent who has forgotten almost every item on this list at least once."
 category: "travel"
 type: "article"
-contributor: "maren-bell"
 publishedAt: 2026-04-02
 featured: true
 ---

@@ -1,9 +1,8 @@
 ---
 import Logo from './Logo.astro';
-import { SITE, NAV, UTILITY_NAV, PILLARS } from '../data/site';
+import { SITE, UTILITY_NAV } from '../data/site';
 
 const year = new Date().getFullYear();
-const pillars = Object.values(PILLARS);
 ---
 <footer class="mt-24 border-t border-bone bg-paper">
   <div class="container-px py-16 grid gap-12 md:grid-cols-12">
@@ -18,15 +17,11 @@ const pillars = Object.values(PILLARS);
     </div>
 
     <div class="md:col-span-3">
-      <div class="t-section mb-3">The Drives</div>
-      <ul class="grid gap-2.5 font-display text-ink-soft">
-        {pillars.map((p) => (
-          <li><a href={`/${p.slug}/`} class="hover:text-rust">{p.label}</a></li>
-        ))}
-      </ul>
-      <div class="t-section mt-6 mb-3">Read</div>
+      <div class="t-section mb-3">Read</div>
       <ul class="grid gap-2.5 font-display text-ink-soft">
         <li><a href="/start-here/" class="hover:text-rust">Start here</a></li>
+        <li><a href="/reads/" class="hover:text-rust">Reads</a></li>
+        <li><a href="/coaching-tips/" class="hover:text-rust">Coaching tips</a></li>
         <li><a href="/what-to-buy/" class="hover:text-rust">What to Buy</a></li>
         <li><a href="/team-parent/" class="hover:text-rust">Team Parent</a></li>
         <li><a href="/newsletter/" class="hover:text-rust">Newsletter</a></li>
@@ -39,7 +34,7 @@ const pillars = Object.values(PILLARS);
         {UTILITY_NAV.map((item) => (
           <li><a href={item.href} class="hover:text-rust">{item.label}</a></li>
         ))}
-        <li><a href="/contributors/" class="hover:text-rust">Contributors</a></li>
+        <li><a href="/disclosure/" class="hover:text-rust">Privacy and disclosure</a></li>
         <li><a href="/rss.xml" class="hover:text-rust">RSS</a></li>
       </ul>
     </div>
@@ -55,13 +50,13 @@ const pillars = Object.values(PILLARS);
   <div class="border-t border-bone">
     <div class="container-px py-6 grid gap-3 md:flex md:justify-between md:items-center">
       <div class="font-display italic text-ink-soft text-sm">
-        © {year} The Parent-Coach Playbook.
+        © {year} {SITE.name}.
       </div>
       <div class="font-display italic text-ink-soft text-sm md:text-right max-w-md">
         Some links pay us when you buy. We only recommend things we use. As an Amazon Associate we earn from qualifying purchases.
       </div>
       <div class="font-display italic text-ink-soft text-sm md:text-right">
-        Edited by {SITE.founder}
+        Written by the {SITE.byline}.
       </div>
     </div>
   </div>

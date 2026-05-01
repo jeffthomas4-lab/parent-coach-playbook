@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { CONTRIBUTORS } from '../data/site';
 
 const all = (await getCollection('articles', ({ data }) => !data.draft));
 const guides = (await getCollection('guides', ({ data }) => !data.draft));

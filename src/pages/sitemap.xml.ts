@@ -6,10 +6,13 @@ export async function GET(_ctx: APIContext) {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
   const guides = await getCollection('guides', ({ data }) => !data.draft);
   const resources = await getCollection('resources', ({ data }) => !data.draft && data.type !== 'external');
+  const tips = await getCollection('coachingTips', ({ data }) => !data.draft);
 
   const staticUrls = [
     '/',
     '/start-here/',
+    '/reads/',
+    '/coaching-tips/',
     '/drive-there/',
     '/game/',
     '/drive-home/',
@@ -17,13 +20,14 @@ export async function GET(_ctx: APIContext) {
     '/team-parent/',
     '/newsletter/',
     '/about/',
-    '/contributors/',
+    '/disclosure/',
     '/resources/',
     '/resources/drive-home-playbook/',
     '/resources/practice-plan-template/',
     '/resources/national-organizations/',
     '/search/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
+    ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
   ];
 
   const resourceUrls = resources.map(r => ({
@@ -37,8 +41,13 @@ export async function GET(_ctx: APIContext) {
   }));
 
   const guideUrls = guides.map(g => ({
-    loc: `/what-to-buy/${g.data.slug}/`,
+    loc: `/what-to-buy/${g.slug}/`,
     lastmod: (g.data.updatedAt ?? g.data.publishedAt).toISOString(),
+  }));
+
+  const tipUrls = tips.map(t => ({
+    loc: `/coaching-tips/${t.slug}/`,
+    lastmod: t.data.publishedAt.toISOString(),
   }));
 
   const today = new Date().toISOString();
@@ -48,6 +57,7 @@ export async function GET(_ctx: APIContext) {
     ...articleUrls,
     ...guideUrls,
     ...resourceUrls,
+    ...tipUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

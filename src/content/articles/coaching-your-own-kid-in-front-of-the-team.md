@@ -1,7 +1,6 @@
 ---
 title: "Coaching your own kid in *front of the team*"
 dek: "I made the lineup at midnight. My wife asked why I was crying in the kitchen. Five seasons later, I think I finally have it figured out. Sort of."
-contributor: "dan-kowalski"
 format: "essay"
 issue: 3
 phase: "game"
@@ -15,7 +14,7 @@ The clinics don't cover this part. The certification doesn't cover this part. Th
 
 What do you do when your own kid throws to the wrong base in the third inning, and eleven other nine-year-olds are watching to see how you handle it.
 
-I have done this five seasons running, with twins, in the same dugout. I have done it both ways. Wrong, the first season. Less wrong, every season since. Here is what I have figured out.
+We've seen coaches do this five seasons running with siblings in the same dugout. We've seen it done wrong the first time, then better each season after. Here's what works.
 
 ## The two ways most parent-coaches blow it
 
@@ -47,18 +46,16 @@ Get a second adult to deliver the hard conversations when you can. The assistant
 
 ## When you blow it
 
-You will. I did, twice, last May, in one weekend. The fix is short. *I was hard on you in the third inning. That was a baseball moment. It stayed at the field. We're good.*
+You will. The fix is short. *I was hard on you in the third inning. That was a baseball moment. It stayed at the field. We're good.*
 
 Say it once. Don't ask for forgiveness. Don't make them perform reassurance.
 
-Kids absorb the correction much faster than we expect. What they need is the explicit signal that the dugout self and the car self are the same person, and that person likes them.
+Kids absorb corrections faster than we expect. What they need is the explicit signal that the dugout self and the car self are the same person, and that person likes them.
 
 ## The bigger frame
 
-This site has a thesis I have come to believe. Three drives. One relationship.
+This site has a thesis we believe. Three drives. One relationship.
 
-The middle drive is the one most of us think about. The film, the pre-game speech, the lineup card. It matters less than the bookends. Your kid is not going to remember the specific play call from a Tuesday in April. They will remember whether you were warm in the car on the way home.
+The middle drive is the one coaches obsess over. The film, the pre-game speech, the lineup card. It matters less than the bookends. Your kid won't remember the specific play call from April. They will remember whether you were warm in the car on the way home.
 
 Coach the team in the middle. Keep the kid on either side.
-
-— Dan

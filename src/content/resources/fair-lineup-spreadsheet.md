@@ -3,7 +3,6 @@ title: "The fair lineup spreadsheet"
 summary: "Inning-by-inning rotation that's actually fair. A shared Google Sheet that takes 10 minutes to set up and saves a season of sideline complaints."
 category: "game-day"
 type: "article"
-contributor: "dan-kowalski"
 publishedAt: 2026-02-26
 featured: true
 ---

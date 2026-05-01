@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { EDITORIAL } from '../../data/site';
+
+export async function getStaticPaths() {
+  const tips = await getCollection('coachingTips', ({ data }) => !data.draft);
+  return tips.map((t) => ({
+    params: { slug: t.slug },
+    props: { tip: t },
+  }));
+}
+
+const { tip } = Astro.props;
+const { Content } = await tip.render();
+const tagBits = [tip.data.sport, tip.data.age, tip.data.focus].filter(Boolean);
+---
+<BaseLayout
+  title={tip.data.title}
+  description={tip.data.summary}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/coaching-tips/" class="hover:underline">Coaching tips</a>
+        {tagBits.length > 0 && ' · ' + tagBits.join(' · ')}
+      </p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        {tip.data.title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {tip.data.summary}
+      </p>
+    </div>
+  </section>
+
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      <Content />
+      <aside class="mt-12 pt-8 border-t border-bone">
+        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">From the {EDITORIAL.byline}</p>
+        <p class="font-display text-ink-soft text-sm leading-snug">
+          See the full <a href="/coaching-tips/" class="hover:text-rust underline-offset-2 hover:underline">drill library</a> or filter by sport and age to find what fits Tuesday's practice.
+        </p>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

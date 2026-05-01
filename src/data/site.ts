@@ -2,58 +2,30 @@
 // Update here, the change propagates everywhere.
 
 export const SITE = {
-  name: 'The Parent-Coach Playbook',
-  tagline: 'The drive home is the real game.',
-  shortPitch: 'Sideline notes from parents who coach, organize, drive, and supervise the snack rotation. Mostly short reads. Sometimes longer ones.',
+  name: 'Parent Coach Playbook',
+  tagline: 'Sideline notes for parents in the middle of it.',
+  shortPitch: 'Sideline notes from the editorial desk for parents who coach, organize, drive, and supervise the snack rotation.',
   url: 'https://parentcoachplaybook.com',
   description:
     'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
-  founder: 'Jeff Thomas',
-  twitter: '',
+  byline: 'Parent Coach Playbook Editorial',
+  bylineShort: 'PCP Editorial',
   email: 'parentcoachplaybook@gmail.com',
 };
 
-// Contributors. Maren and Dan are composite voices drawn from interviews with
-// parent-coaches in the network. Jeff writes under his real name on cornerstones.
-// Disclosure lives on the About page.
-export const CONTRIBUTORS = {
-  'maren-bell': {
-    slug: 'maren-bell',
-    name: 'Maren Bell',
-    role: 'Lead writer',
-    short: 'Mom of two. Ex-college lacrosse. Writes most things here.',
-    bio: 'Maren is a mom of two — a 9-year-old soccer kid and a 13-year-old who plays viola and basketball. She played lacrosse at Bates, taught middle-school English for six years, and has been a team mom, snack parent, assistant coach, and the parent who texts everyone the field change. She writes most posts on this site. She drinks too much coffee and does not yell from the sidelines.',
-    accent: '#C5713D', // terracotta
-    accentBg: '#F2E2D5',
-    avatarLetter: 'M',
-  },
-  'dan-kowalski': {
-    slug: 'dan-kowalski',
-    name: 'Dan Kowalski',
-    role: 'Contributor',
-    short: 'Dad of three. Has coached his twins\' baseball for five seasons. Writes a couple of times a month.',
-    bio: 'Dan is a dad of three: twin 11-year-olds (one in baseball, one in theater) and a 7-year-old soccer kid. He works in software and has coached his twins\' tee-ball, coach-pitch, and little league for five years running. He writes here when he has been thinking about something long enough to be useful. Mostly that means he is thinking about coaching his own kid in front of the team.',
-    accent: '#5C7459', // deeper sage
-    accentBg: '#EAEFE7',
-    avatarLetter: 'D',
-  },
-  'jeff-thomas': {
-    slug: 'jeff-thomas',
-    name: 'Jeff Thomas',
-    role: 'Founder',
-    short: 'College football coach. Dad of two. Started this site.',
-    bio: 'Jeff is the head football coach at the University of Puget Sound, a former interim athletic director, and a parent who watched two kids move through eight sports, two theater productions, and an orchestra. He started The Parent-Coach Playbook because most of what he learned about coaching kids he learned from being one of two parents in a minivan. He writes occasional cornerstone pieces here.',
-    accent: '#B0894A', // honey deeper
-    accentBg: '#F5E9D2',
-    avatarLetter: 'JT',
-  },
-} as const;
-
-export type ContributorSlug = keyof typeof CONTRIBUTORS;
+// Single editorial voice. Used for byline rendering on cards, articles, and feeds.
+export const EDITORIAL = {
+  byline: 'Parent Coach Playbook Editorial',
+  short: 'PCP Editorial',
+  // Mark color used wherever a small accent dot or pill renders.
+  accent: '#C5713D',
+  accentBg: '#F2E2D5',
+};
 
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
-  { label: 'The Drives', href: '/drive-home/three-drives-one-relationship/', hasDropdown: 'drives' },
+  { label: 'Reads', href: '/reads/' },
+  { label: 'Coaching tips', href: '/coaching-tips/' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
   { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
   { label: 'Newsletter', href: '/newsletter/' },
@@ -65,45 +37,72 @@ export const UTILITY_NAV = [
   { label: 'Search', href: '/search/' },
 ];
 
+// Phase taxonomy is preserved as light metadata so existing URLs keep working.
+// We no longer brand the site around three drives. The phase shows up only on article frontmatter.
 export const PILLARS = {
   'drive-there': {
     slug: 'drive-there',
-    label: 'The Drive There',
-    eyebrow: '01 / Pre-game',
-    accent: '#8FA68C',         // sage — calm, prep, morning
+    label: 'Before the game',
+    eyebrow: 'Before',
+    accent: '#8FA68C',
     accentBg: '#EAEFE7',
-    blurb:
-      'Pre-game preparation, mindset, and the conversation on the way to practice. The work that gets done before anyone steps on the field.',
+    blurb: 'The conversation on the way to practice. The night before tryouts. What gets done before anyone steps on the field.',
   },
   game: {
     slug: 'game',
-    label: 'The Game',
-    eyebrow: '02 / In the moment',
-    accent: '#C5713D',         // terracotta — action, focus
+    label: 'In the game',
+    eyebrow: 'During',
+    accent: '#C5713D',
     accentBg: '#F2E2D5',
-    blurb:
-      'Coaching execution, in-the-moment decisions, and the strange job of coaching your own kid in front of the team.',
+    blurb: 'Coaching execution, in-the-moment decisions, and the strange job of coaching your own kid in front of the team.',
   },
   'drive-home': {
     slug: 'drive-home',
-    label: 'The Drive Home',
-    eyebrow: '03 / Post-game',
-    accent: '#D4AB6A',         // honey — warmth, return, dinner table
+    label: 'After the game',
+    eyebrow: 'After',
+    accent: '#D4AB6A',
     accentBg: '#F5E9D2',
-    blurb:
-      'The post-game conversation, the car ride, the dinner table. The relationship aftermath, which is the real game.',
+    blurb: 'The post-game conversation, the car ride, the dinner table. The relationship aftermath.',
   },
 } as const;
 
+// Topic taxonomy: the new homepage organization. Replaces three-drives as the front-door grid.
+export const TOPICS = [
+  { slug: 'communication',  label: 'Communication',     blurb: 'Group chats, hard parent emails, the script you wish you had.' },
+  { slug: 'tryouts',        label: 'Tryouts and teams', blurb: 'Making the team, not making it, what to say either way.' },
+  { slug: 'game-day',       label: 'Game day',          blurb: 'Lineups, rotations, what to say in the first ninety seconds after.' },
+  { slug: 'the-hard-stuff', label: 'The hard moments',  blurb: 'Quitting. Losing. Riding the bench. The parent on the team you cannot stand.' },
+  { slug: 'season-ops',     label: 'Season operations', blurb: 'Practice plans, snack signups, the tournament weekend.' },
+  { slug: 'equipment',      label: 'Equipment',         blurb: 'What to buy, what to skip, where to find it used.' },
+  { slug: 'rec-vs-travel',  label: 'Rec vs travel',     blurb: 'The honest comparison. The politics. The reality at fourteen.' },
+  { slug: 'rules-of-play',  label: 'Rules of play',     blurb: 'Why youth sports exists, what it is for, what it is not.' },
+] as const;
+
 export const SPORTS = [
-  { slug: 'baseball', label: 'Baseball' },
-  { slug: 'softball', label: 'Softball' },
-  { slug: 'soccer', label: 'Soccer' },
-  { slug: 'basketball', label: 'Basketball' },
-  { slug: 'football', label: 'Football' },
-  { slug: 'hockey', label: 'Hockey' },
-  { slug: 'lacrosse', label: 'Lacrosse' },
-  { slug: 'volleyball', label: 'Volleyball' },
+  { slug: 'baseball',     label: 'Baseball' },
+  { slug: 'softball',     label: 'Softball' },
+  { slug: 'soccer',       label: 'Soccer' },
+  { slug: 'basketball',   label: 'Basketball' },
+  { slug: 'flag-football',label: 'Flag football' },
+  { slug: 'football',     label: 'Tackle football' },
+  { slug: 'hockey',       label: 'Hockey' },
+  { slug: 'lacrosse',     label: 'Lacrosse' },
+  { slug: 'volleyball',   label: 'Volleyball' },
+  { slug: 'swimming',     label: 'Swimming' },
+  { slug: 'track-field',  label: 'Track and field' },
+  { slug: 'cross-country',label: 'Cross country' },
+  { slug: 'tennis',       label: 'Tennis' },
+  { slug: 'golf',         label: 'Golf' },
+  { slug: 'crew',         label: 'Crew' },
+  { slug: 'martial-arts', label: 'Martial arts' },
+  { slug: 'gymnastics',   label: 'Gymnastics' },
+  { slug: 'cheer',        label: 'Cheerleading' },
+  { slug: 'stunt',        label: 'Stunt and tumbling' },
+  { slug: 'theater',      label: 'Theater' },
+  { slug: 'band',         label: 'Band' },
+  { slug: 'choir',        label: 'Choir' },
+  { slug: 'dance',        label: 'Dance' },
+  { slug: 'ballet',       label: 'Ballet' },
 ] as const;
 
 export const AGE_BANDS = [
@@ -125,81 +124,65 @@ export const SEASON_PHASES = [
 export type PillarSlug = keyof typeof PILLARS;
 export type SportSlug = (typeof SPORTS)[number]['slug'];
 export type AgeBandSlug = (typeof AGE_BANDS)[number]['slug'];
+export type TopicSlug = (typeof TOPICS)[number]['slug'];
 
-// What to Buy / starter-kit guides. 12 entries: 8 youth sports + 4 performing-arts activities.
-// Each one resolves to /what-to-buy/[slug]/ and renders the markdown guide
-// from src/content/guides/[slug].md
+// What to Buy guides. Each one resolves to /what-to-buy/[slug]/ and renders the markdown
+// from src/content/guides/[slug].md. Each sport guide also gets a sizing companion at
+// /what-to-buy/[slug]/sizing/.
 export const BUYING_GUIDES = [
   // Sports
-  { slug: 'baseball',   label: 'Baseball',   category: 'sport',    blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
-  { slug: 'softball',   label: 'Softball',   category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
-  { slug: 'soccer',     label: 'Soccer',     category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle. Year-round in many places.' },
-  { slug: 'basketball', label: 'Basketball', category: 'sport',    blurb: 'Shoes, ball, athletic gear. Indoor sport, low equipment overhead.' },
-  { slug: 'football',   label: 'Football',   category: 'sport',    blurb: 'Helmet, pads, cleats. The most equipment-heavy youth sport.' },
-  { slug: 'hockey',     label: 'Hockey',     category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
-  { slug: 'lacrosse',   label: 'Lacrosse',   category: 'sport',    blurb: 'Stick, helmet, gloves, pads. Boys and girls gear differs.' },
-  { slug: 'volleyball', label: 'Volleyball', category: 'sport',    blurb: 'Shoes, knee pads, kneepads, ball. Indoor and beach variants.' },
+  { slug: 'baseball',      label: 'Baseball',         category: 'sport',    blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
+  { slug: 'softball',      label: 'Softball',         category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
+  { slug: 'soccer',        label: 'Soccer',           category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle.' },
+  { slug: 'basketball',    label: 'Basketball',       category: 'sport',    blurb: 'Shoes, ball, athletic gear. Indoor sport, low overhead.' },
+  { slug: 'flag-football', label: 'Flag football',    category: 'sport',    blurb: 'Mouthguard, cleats, gloves. No pads, no helmet.' },
+  { slug: 'football',      label: 'Tackle football',  category: 'sport',    blurb: 'Helmet, pads, cleats. The most equipment-heavy youth sport.' },
+  { slug: 'hockey',        label: 'Hockey',           category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
+  { slug: 'lacrosse',      label: 'Lacrosse',         category: 'sport',    blurb: 'Stick, helmet, gloves, pads. Boys and girls gear differs.' },
+  { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
+  { slug: 'swimming',      label: 'Swimming',         category: 'sport',    blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
+  { slug: 'track-field',   label: 'Track and field',  category: 'sport',    blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
+  { slug: 'cross-country',label: 'Cross country',    category: 'sport',    blurb: 'Trainers, racing flats, layered cold-weather kit.' },
+  { slug: 'tennis',        label: 'Tennis',           category: 'sport',    blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
+  { slug: 'golf',          label: 'Golf',             category: 'sport',    blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
+  { slug: 'crew',          label: 'Crew',             category: 'sport',    blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
+  { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
+  { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
+  { slug: 'cheer',         label: 'Cheerleading',     category: 'activity', blurb: 'Shoes, bow, practice clothes. Competition uniforms via the team.' },
+  { slug: 'stunt',         label: 'Stunt and tumbling', category: 'activity', blurb: 'Mat shoes, bracing, athletic tape. The tumbling-track essentials.' },
   // Performing arts
-  { slug: 'theater',    label: 'Theater',    category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
-  { slug: 'band',       label: 'Band',       category: 'activity', blurb: 'Instrument, reeds, accessories. Rent before you buy.' },
-  { slug: 'choir',      label: 'Choir',      category: 'activity', blurb: 'Almost no equipment. The list is short and cheap.' },
-  { slug: 'dance',      label: 'Dance',      category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
+  { slug: 'theater',       label: 'Theater',          category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
+  { slug: 'band',          label: 'Band',             category: 'activity', blurb: 'Instrument, reeds, accessories. Rent before you buy.' },
+  { slug: 'choir',         label: 'Choir',            category: 'activity', blurb: 'Almost no equipment. The list is short and cheap.' },
+  { slug: 'dance',         label: 'Dance',            category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
+  { slug: 'ballet',        label: 'Ballet',           category: 'activity', blurb: 'Slippers, leotard, tights. Pointe later, on the teacher\'s timeline.' },
 ] as const;
 
 export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
+
+// Track and field events get sub-pages at /what-to-buy/track-field/[event]/
+export const TRACK_EVENTS = [
+  { slug: 'sprints',   label: 'Sprints',           blurb: '100m, 200m, 400m. Sprint spikes, blocks if your team uses them.' },
+  { slug: 'distance',  label: 'Distance',          blurb: '800m, 1500m, mile, 3200m. Trainers and a pair of racing flats.' },
+  { slug: 'hurdles',   label: 'Hurdles',           blurb: 'Sprint spike with a slightly longer pin set, drill bands.' },
+  { slug: 'jumps',     label: 'Jumps',             blurb: 'Long, triple, high. Jump spikes, takeoff tape, a measuring tape.' },
+  { slug: 'throws',    label: 'Throws and javelin',blurb: 'Shot, discus, javelin. Footwear, a thrower\'s shoe, towel, chalk.' },
+] as const;
+
+export type TrackEventSlug = (typeof TRACK_EVENTS)[number]['slug'];
 
 // Team Parent toolkit: practical resources organized by category.
 // Each category becomes a section on /team-parent/.
 // Individual resources live in src/content/resources/[slug].md.
 export const TEAM_PARENT_CATEGORIES = [
-  {
-    slug: 'tech-setup',
-    label: 'Tech setup',
-    blurb: 'GameChanger, MaxPreps, TeamSnap. What to use, what to skip.',
-    accent: '#5C7459',  // sage
-  },
-  {
-    slug: 'communication',
-    label: 'Communication',
-    blurb: 'Group chats. Snack signups. League email vs. team email.',
-    accent: '#C5713D',  // terracotta
-  },
-  {
-    slug: 'practice',
-    label: 'Practice',
-    blurb: 'Practice plans. Drills by age. Why parents need to see it.',
-    accent: '#B0894A',  // honey
-  },
-  {
-    slug: 'game-day',
-    label: 'Game day',
-    blurb: 'Lineup spreadsheets. Fair rotations. Bench management.',
-    accent: '#5C7459',
-  },
-  {
-    slug: 'coaching-tips',
-    label: 'Coaching tips',
-    blurb: 'T-ball cones. End on a high note. Substitutions without tears.',
-    accent: '#C5713D',
-  },
-  {
-    slug: 'photos-events',
-    label: 'Photos & events',
-    blurb: 'Picture day choices. Banquet checklists. Team gifts.',
-    accent: '#B0894A',
-  },
-  {
-    slug: 'volunteering',
-    label: 'Volunteering & fundraising',
-    blurb: 'Recruiting assistants. Fundraisers that actually work.',
-    accent: '#5C7459',
-  },
-  {
-    slug: 'travel',
-    label: 'Travel team logistics',
-    blurb: 'Tournament packing. Hotel rotations. Travel budgets.',
-    accent: '#C5713D',
-  },
+  { slug: 'tech-setup',    label: 'Tech setup',         blurb: 'GameChanger, MaxPreps, TeamSnap. What to use, what to skip.', accent: '#5C7459' },
+  { slug: 'communication', label: 'Communication',      blurb: 'Group chats. Snack signups. The hard-parent email.',          accent: '#C5713D' },
+  { slug: 'practice',      label: 'Practice',           blurb: 'Practice plans. Drills by age. Why parents need to see it.',  accent: '#B0894A' },
+  { slug: 'game-day',      label: 'Game day',           blurb: 'Lineup spreadsheets. Fair rotations. Bench management.',      accent: '#5C7459' },
+  { slug: 'photos-events', label: 'Photos and events',  blurb: 'Picture day choices. Banquet checklists. Team gifts.',        accent: '#B0894A' },
+  { slug: 'fundraising',   label: 'Fundraising',        blurb: 'Sponsor scripts. Snap Raise reality. Pizza-night models.',    accent: '#C5713D' },
+  { slug: 'volunteering',  label: 'Volunteering',       blurb: 'Recruiting assistants. Snack signups that actually fill.',     accent: '#5C7459' },
+  { slug: 'travel',        label: 'Travel team logistics', blurb: 'Tournament packing. Hotel rotations. Travel budgets.',     accent: '#C5713D' },
 ] as const;
 
 export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];

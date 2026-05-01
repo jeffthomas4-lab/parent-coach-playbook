@@ -1,9 +1,8 @@
 ---
-import { PILLARS, SPORTS, AGE_BANDS, CONTRIBUTORS, type ContributorSlug } from '../data/site';
+import { PILLARS, SPORTS, AGE_BANDS, EDITORIAL } from '../data/site';
 
 interface Props {
   href: string;
-  contributor: ContributorSlug;
   format?: 'note' | 'essay';
   sport?: string;
   age?: string;
@@ -16,22 +15,32 @@ interface Props {
 
 const {
   href,
-  contributor,
   format = 'note',
   sport,
   age,
   phase,
   title,
   dek,
+  publishedAt,
   variant = 'list',
 } = Astro.props;
 
-const c = CONTRIBUTORS[contributor];
-const pillarLabel = phase ? PILLARS[phase].label.replace('The ', '') : null;
 const sportLabel = SPORTS.find(s => s.slug === sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
 
-const tagBits = [pillarLabel, sportLabel, ageLabel ? `age ${ageLabel}` : null].filter(Boolean);
+const fmtDate = (d: Date | string | undefined) => {
+  if (!d) return null;
+  const dt = typeof d === 'string' ? new Date(d) : d;
+  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+};
+
+const dateLabel = fmtDate(publishedAt);
+const tagBits = [
+  format === 'essay' ? 'Longer read' : null,
+  sportLabel,
+  ageLabel ? `age ${ageLabel}` : null,
+  dateLabel,
+].filter(Boolean);
 
 // Italicize the conceptual hinge in the headline
 const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
@@ -42,18 +51,15 @@ const titleSize = format === 'essay'
 ---
 <article class={`card-hover border-b border-bone py-6 ${variant === 'grid' ? 'border border-bone p-6' : ''}`}>
   <a href={href} class="block group">
-    <div class="flex items-center gap-3 mb-3">
-      <div
-        class="w-9 h-9 rounded-full flex items-center justify-center font-display italic"
-        style={`background: ${c.accentBg}; color: ${c.accent}; font-weight: 500; font-size: 0.95rem;`}
-        aria-hidden="true"
-      >{c.avatarLetter}</div>
-      <div class="flex-1">
-        <div class="font-display text-ink" style="font-size: 0.95rem; font-weight: 500;">{c.name}</div>
-        <div class="font-display italic text-ink-soft" style="font-size: 0.8rem;">
-          {tagBits.join(' · ')}{format === 'essay' ? ' · longer read' : ''}
-        </div>
+    <div class="mb-3">
+      <div class="font-display italic text-rust" style="font-size: 0.85rem; font-weight: 500;">
+        {EDITORIAL.byline}
       </div>
+      {tagBits.length > 0 && (
+        <div class="font-display italic text-ink-soft mt-0.5" style="font-size: 0.8rem;">
+          {tagBits.join(' · ')}
+        </div>
+      )}
     </div>
     <h3
       class={`font-display text-ink ${titleSize} leading-tight group-hover:text-rust transition-colors`}

@@ -7,7 +7,6 @@ lede: "Shoes, knee pads, ball, athletic gear. Indoor sport with low equipment ov
 costSummary: "$80–150 for starter; $200–350 by middle school for serious club"
 seasonNote: "School season runs fall (girls) or spring (boys, varies by region). Club season runs December through June."
 publishedAt: 2026-03-30
-contributor: "maren-bell"
 ---
 
 Volleyball is a low-equipment sport. Shoes, knee pads, ball, water bottle. That's the whole list.

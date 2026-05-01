@@ -7,7 +7,6 @@ lede: "Most of the gear is similar to baseball, with a few specific differences.
 costSummary: "$150–250 for tee-ball; $400–700 by middle school with travel"
 seasonNote: "Spring and summer are the main seasons. Fall ball is common. High school season runs spring."
 publishedAt: 2026-01-26
-contributor: "maren-bell"
 ---
 
 If your kid is starting softball, most of the gear list looks like baseball. There are a few specific differences worth knowing before you spend money on the wrong thing.

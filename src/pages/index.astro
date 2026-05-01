@@ -2,21 +2,18 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import { PILLARS, SITE, CONTRIBUTORS } from '../data/site';
+import { TOPICS, EDITORIAL } from '../data/site';
 
 const all = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-// Featured cornerstone (the manifesto). Pick the first essay marked featured.
+// Featured cornerstone (the long read). Pick the first essay marked featured.
 const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
 // The rest of the feed: most recent, excluding the featured.
 const feed = all.filter(a => a.slug !== featured?.slug).slice(0, 8);
 // Latest reads for the hero rail (4 most recent, regardless of featured status).
 const latest = all.slice(0, 4);
-
-const pillars = Object.values(PILLARS);
 
 const fmtDate = (d: Date) =>
   d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -30,67 +27,57 @@ const fmtDate = (d: Date) =>
           Hi. We're glad you're here.
         </p>
         <h1 class="font-display text-ink text-[2.5rem] md:text-[4.25rem] leading-[1.0]" style="font-weight: 500;">
-          The drive home is the <em class="text-rust">real game</em>.
+          The relationship is the <em class="text-rust">real game</em>.
         </h1>
         <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 max-w-2xl leading-snug">
-          Sideline notes from parents who coach, organize, drive, snack-pack, and supervise the
-          group chat. Mostly short reads. Sometimes longer ones. From three of us, to the rest of you.
+          Sideline notes for parents who coach, organize, drive, snack-pack, and supervise the
+          group chat. Mostly short reads. Sometimes longer ones.
         </p>
         <div class="mt-10 flex flex-wrap gap-3">
           <a href="/start-here/" class="btn">Start here</a>
-          <a href={`/${featured.data.phase}/${featured.slug}/`} class="btn btn-ghost">Read the cornerstone</a>
+          <a href={`/${featured.data.phase}/${featured.slug}/`} class="btn btn-ghost">Read the long one</a>
           <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
         </div>
         <p class="font-display italic text-ink-soft text-sm mt-7" style="font-weight: 500;">
-          Written by <a href="/contributors/" class="hover:text-rust underline-offset-2 hover:underline">Maren, Dan, and Jeff</a>. Three voices, one site.
+          Written by the <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
         </p>
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
         <div class="flex items-baseline justify-between mb-5">
           <p class="font-display italic text-rust" style="font-weight: 500;">Latest reads</p>
-          <a href="/newsletter/" class="font-display italic text-ink-soft hover:text-rust text-sm" style="font-weight: 500;">All →</a>
+          <a href="/reads/" class="font-display italic text-ink-soft hover:text-rust text-sm" style="font-weight: 500;">All →</a>
         </div>
         <ul class="grid gap-5">
-          {latest.map((a) => {
-            const c = CONTRIBUTORS[a.data.contributor as keyof typeof CONTRIBUTORS];
-            return (
-              <li class="grid grid-cols-[2.5rem_1fr] gap-3 items-start">
-                <div
-                  class="w-10 h-10 rounded-full flex items-center justify-center font-display italic flex-shrink-0"
-                  style={`background: ${c.accentBg}; color: ${c.accent}; font-weight: 500; font-size: 0.95rem;`}
-                  aria-hidden="true"
-                >{c.avatarLetter}</div>
-                <div>
-                  <a
-                    href={`/${a.data.phase}/${a.slug}/`}
-                    class="font-display text-ink hover:text-rust leading-tight block"
-                    style="font-weight: 500;"
-                    set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
-                  />
-                  <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">
-                    {c.name} · {fmtDate(a.data.publishedAt)}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
+          {latest.map((a) => (
+            <li>
+              <a
+                href={`/${a.data.phase}/${a.slug}/`}
+                class="font-display text-ink hover:text-rust leading-tight block"
+                style="font-weight: 500;"
+                set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+              />
+              <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">
+                {fmtDate(a.data.publishedAt)}
+              </p>
+            </li>
+          ))}
         </ul>
       </aside>
     </div>
   </section>
 
-  <!-- SITUATIONAL ENTRY (condensed Start Here on the homepage) -->
+  <!-- WHERE YOU ARE RIGHT NOW (situational entry) -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-14">
       <div class="flex items-baseline justify-between flex-wrap gap-3 mb-8">
         <div>
-          <p class="font-display italic text-rust mb-1" style="font-weight: 500;">Pick a situation</p>
+          <p class="font-display italic text-rust mb-1" style="font-weight: 500;">Where you are right now</p>
           <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
-            What's happening <em class="text-rust">right now</em>?
+            Pick what fits the <em class="text-rust">week you're having</em>.
           </h2>
         </div>
-        <a href="/start-here/" class="t-cta">Browse all 10 situations →</a>
+        <a href="/start-here/" class="t-cta">Browse all situations →</a>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
@@ -101,11 +88,11 @@ const fmtDate = (d: Date) =>
           <p class="font-display italic text-rust text-sm mt-3" style="font-weight: 500;">→ Start with the practice plan</p>
         </a>
 
-        <a href="/drive-home/three-drives-one-relationship/" class="bg-paper p-6 group block hover:bg-[#EAEFE7] transition-colors" style="border-top: 3px solid #5C7459;">
+        <a href="/game/the-real-job-of-youth-sports/" class="bg-paper p-6 group block hover:bg-[#EAEFE7] transition-colors" style="border-top: 3px solid #5C7459;">
           <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            I'm the parent-coach. The whole thing is hard.
+            I'm not sure why we're doing this anymore.
           </h3>
-          <p class="font-display italic text-sm mt-3" style="color: #5C7459; font-weight: 500;">→ Read the manifesto</p>
+          <p class="font-display italic text-sm mt-3" style="color: #5C7459; font-weight: 500;">→ Read the long one</p>
         </a>
 
         <a href="/drive-home/the-90-second-rule/" class="bg-paper p-6 group block hover:bg-[#F5E9D2] transition-colors" style="border-top: 3px solid #B0894A;">
@@ -129,17 +116,17 @@ const fmtDate = (d: Date) =>
           <p class="font-display italic text-sm mt-3" style="color: #5C7459; font-weight: 500;">→ Read this first</p>
         </a>
 
-        <a href="/team-parent/" class="bg-paper p-6 group block hover:bg-[#F5E9D2] transition-colors" style="border-top: 3px solid #B0894A;">
+        <a href="/game/the-missing-rec-layer/" class="bg-paper p-6 group block hover:bg-[#F5E9D2] transition-colors" style="border-top: 3px solid #B0894A;">
           <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            I'm the team parent. Where do I start?
+            My kid is middling at thirteen. Where do they play?
           </h3>
-          <p class="font-display italic text-sm mt-3" style="color: #B0894A; font-weight: 500;">→ The toolkit</p>
+          <p class="font-display italic text-sm mt-3" style="color: #B0894A; font-weight: 500;">→ The missing rec layer</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED CORNERSTONE -->
+  <!-- FEATURED LONG READ -->
   {featured && (
     <section class="border-b border-bone">
       <div class="container-px py-16">
@@ -161,12 +148,38 @@ const fmtDate = (d: Date) =>
     </section>
   )}
 
+  <!-- BROWSE BY TOPIC (replaces three-drives section) -->
+  <section class="border-b border-bone">
+    <div class="container-px py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Browse by topic</p>
+      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
+        Eight things parents in the middle of it <em class="text-rust">actually deal with</em>.
+      </h2>
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+        {TOPICS.map((t) => (
+          <a
+            href={`/reads/?topic=${t.slug}`}
+            class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
+          >
+            <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {t.label}
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+              {t.blurb}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- FEED with age filter -->
   <section class="border-b border-bone">
     <div class="container-px py-16">
       <div class="flex items-baseline justify-between mb-6 flex-wrap gap-3">
         <p class="font-display italic text-rust" style="font-weight: 500; font-size: 1.05rem;">What's new</p>
-        <a href="/newsletter/" class="t-cta">See the archive →</a>
+        <a href="/reads/" class="t-cta">See the archive →</a>
       </div>
 
       <div class="flex flex-wrap items-center gap-2 mb-6" data-age-filter>
@@ -184,13 +197,13 @@ const fmtDate = (d: Date) =>
           <div data-age-tag={a.data.age ?? 'all-ages'}>
             <ArticleCard
               href={`/${a.data.phase}/${a.slug}/`}
-              contributor={a.data.contributor}
               format={a.data.format}
               sport={a.data.sport}
               age={a.data.age}
               phase={a.data.phase}
               title={a.data.title}
               dek={a.data.dek}
+              publishedAt={a.data.publishedAt}
             />
           </div>
         ))}
@@ -224,45 +237,5 @@ const fmtDate = (d: Date) =>
     }
   </script>
 
-  <!-- THE THREE DRIVES (softer) -->
-  <section class="border-b border-bone">
-    <div class="container-px py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Three drives. One relationship.</p>
-      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
-        The relationship gets built on either side of the game. Most of us forget that until Saturday at 3pm.
-      </h2>
-
-      <div class="mt-12 grid md:grid-cols-3 gap-6">
-        {pillars.map((p, i) => (
-          <a
-            href={`/${p.slug}/`}
-            class="block group p-7 transition-colors"
-            style={`background: ${p.accentBg};`}
-          >
-            <div
-              class="font-display italic"
-              style={`color: ${p.accent}; font-size: 0.95rem; font-weight: 500;`}
-            >
-              {p.eyebrow.split(' / ')[1]}
-            </div>
-            <h3 class="font-display text-ink text-2xl mt-2 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {p.label}
-            </h3>
-            <p class="font-display text-ink-soft mt-3 leading-snug text-sm">
-              {p.blurb}
-            </p>
-            <div
-              class="font-display italic mt-5"
-              style={`color: ${p.accent}; font-weight: 500;`}
-            >
-              Open this section →
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- LEAD MAGNET (single newsletter touchpoint on home) -->
   <LeadMagnetCTA />
 </BaseLayout>

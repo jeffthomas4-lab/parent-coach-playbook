@@ -1,7 +1,6 @@
 ---
 title: "Three drives. *One relationship.*"
 dek: "Why what happens in the car matters more than what happens on the field. The thing nobody tells you when you sign up to coach your own kid."
-contributor: "jeff-thomas"
 format: "essay"
 issue: 0
 phase: "drive-home"
@@ -9,16 +8,16 @@ sport: "multi-sport"
 age: "all-ages"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-30
-featured: true
+featured: false
 ---
 
-Here is a thing nobody told me when I signed up to coach my son's baseball team. The hardest part of the job is not the lineup card. It is the twelve minutes in the car after the game.
+Nobody tells you this when you sign up to coach your own kid's team. The hardest part is not the lineup card. It is the twelve minutes in the car after the game.
 
-I have been a college football coach for twenty years. I have an office full of binders. I have prepped for two hours of practice and produced ninety seconds of usable instruction. None of that prepared me for the first time my own kid struck out four times in a Saturday afternoon and got into the back seat with his face down. I had nothing.
+We know a coach who had run his program for years. He had coached at every level. He prepped hard and knew the details. None of that prepared him for the first time his kid struck out four times on a Saturday and got in the car with his face down. He had nothing to say.
 
-My wife had something. She turned around and said *I love watching you play.* That was it. He looked up. The week unlocked.
+His wife had something. She turned around and said *I love watching you play.* That was it. The kid looked up. The week unlocked.
 
-That was when I realized the framework I needed had three pieces, not one.
+That was when the framework became clear. Three pieces, not one.
 
 ## The framework
 
@@ -44,9 +43,9 @@ The bookends are where development happens. Not skill development. The other kin
 
 ## What the bookends actually do
 
-The drive there sets the temperature for the day. If you spend it drilling the lineup, your kid hears pressure. If you spend it grounding them and handing them one specific job, they walk into the dugout calm and brave.
+The drive there sets the temperature for the day. Spend it drilling the lineup, the kid hears pressure. Spend it grounding them and handing them one specific job, they walk into the dugout calm and brave.
 
-The drive home decides what the next week looks like in your house. The first ninety seconds are a window. Your kid is asking, without using these words: *is this still a place I want to be?* The answer they get from your face and your first sentence sets the rest of the week.
+The drive home decides what the next week looks like at home. The first ninety seconds are a window. The kid is asking, without using these words: *is this still a place I want to be?* The answer they get from your face and your first sentence sets the rest of the week.
 
 This is the part nobody warns you about. There is no certification for the drive home.
 
@@ -62,8 +61,8 @@ If you cannot do both, get a different parent to coach the team. There are seaso
 
 ## What this site is and isn't
 
-This site is not a coaching certification. It is not a parenting framework with capital letters. It is a place where a small group of us write down what we learned about being the parent who runs the snack rotation and also coaches the team and also has to drive to violin afterward.
+This site is not a coaching certification. It is not a parenting framework with capital letters. It is a place where coaches and parents write down what we learned about running the snack rotation and coaching the team and driving to violin afterward.
 
-Most posts are short. Some are longer. They are written by a mom of two named Maren who has been through it, a dad of three named Dan who is still figuring it out, and me. Maren and Dan are composite voices drawn from interviews with parent-coaches in our network. I am one guy in a real minivan.
+Most posts are short. Some are longer. They come from interviews with parent-coaches in our network and from our own seasons on the sideline. We filter for what actually works.
 
 The drive home is the real game. We are still warming up for it. So is everyone else.

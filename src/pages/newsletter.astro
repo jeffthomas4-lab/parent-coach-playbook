@@ -1,79 +1,139 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
-import { SPORTS, AGE_BANDS } from '../data/site';
+import { EDITORIAL } from '../data/site';
 
-const issues = (await getCollection('articles', ({ data }) => !data.draft && !!data.issue))
-  .sort((a, b) => (b.data.issue ?? 0) - (a.data.issue ?? 0));
+// Newsletter archive: every published article, treated as an issue.
+// Sorted newest-first.
+const issues = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const latest = issues[0];
+const archive = issues.slice(1);
 ---
-<BaseLayout title="Newsletter" description="One short read a week. Sideline notes for parents who coach.">
-  <!-- Lead magnet hero -->
+<BaseLayout
+  title="Newsletter"
+  description="One short read a week. Sideline notes for parents who coach. Past issues, free downloads, no spam."
+>
+  <!-- Lead -->
   <section class="border-b border-ink bg-ink text-paper">
-    <div class="container-px py-20 grid md:grid-cols-12 gap-10 items-end">
+    <div class="container-px py-16 md:py-20 grid md:grid-cols-12 gap-10 items-end">
       <div class="md:col-span-7">
         <p class="font-display italic text-trophy mb-3" style="font-weight: 500;">The newsletter</p>
         <h1 class="font-display text-paper text-[2.5rem] md:text-[4.25rem] leading-[1.0]" style="font-weight: 500;">
-          One short read a week. <em class="text-rust">From three of us.</em>
+          One short read a week. <em class="text-rust">No spam.</em>
         </h1>
         <p class="font-display text-paper-warm text-xl mt-6 max-w-xl leading-snug">
-          Maren writes most weeks. Dan writes when he's been thinking about something long enough to be useful. Jeff writes the cornerstones. You get the best one of the three in your Friday inbox.
+          The {EDITORIAL.byline} sends one piece every Friday. Sometimes it's about a hard parent conversation. Sometimes a drill. Sometimes a piece of gear that finally got the kid to stop complaining. Always under five minutes to read.
         </p>
       </div>
       <div class="md:col-span-5">
-        <NewsletterSignup
-          variant="card"
-          headline="Subscribe"
-          blurb="Plus the Drive Home Playbook and the Practice Plan Template, both free, when you sign up."
-          buttonLabel="Send it all"
-        />
+        <form
+          action="https://app.kit.com/forms/9388648/subscriptions"
+          method="post"
+          target="_blank"
+          class="bg-paper p-6 md:p-7 border border-bone"
+        >
+          <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Subscribe</p>
+          <h3 class="font-display text-ink text-2xl leading-tight" style="font-weight: 500;">
+            Friday morning, free, no list-share.
+          </h3>
+          <input
+            type="email"
+            name="email_address"
+            required
+            placeholder="your@email.com"
+            class="mt-4 w-full px-3 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
+          />
+          <button type="submit" class="btn mt-3 w-full">Subscribe</button>
+          <p class="font-display italic text-ink-soft text-xs mt-3" style="font-weight: 500;">
+            Unsubscribe in one click. We don't share or sell your address.
+          </p>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- What's coming Friday -->
-  <section class="border-b border-bone bg-paper-warm">
-    <div class="container-px py-10 md:py-12">
-      <div class="grid md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3">
-          <p class="font-display italic text-rust" style="font-weight: 500;">Coming Friday</p>
-          <p class="font-display italic text-ink-soft text-sm mt-1" style="font-weight: 500;">Issue #009</p>
-        </div>
-        <div class="md:col-span-9">
-          <p class="font-display text-ink text-xl md:text-2xl leading-snug" style="font-weight: 500;">
-            <em class="text-rust">"The post-loss locker room walk to the car."</em>
+  <!-- Latest issue -->
+  {latest && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12 md:py-16">
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Latest issue</p>
+        <a href={`/${latest.data.phase}/${latest.slug}/`} class="block group max-w-3xl">
+          <h2
+            class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] group-hover:text-rust transition-colors"
+            style="font-weight: 500;"
+            set:html={latest.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+          />
+          {latest.data.dek && (
+            <p class="font-display text-ink-soft text-lg mt-4 leading-snug max-w-2xl">
+              {latest.data.dek}
+            </p>
+          )}
+          <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+            {fmt(latest.data.publishedAt)}
+            {latest.data.format === 'essay' ? ' · longer read' : ' · short read'}
           </p>
-          <p class="font-display text-ink-soft mt-2 leading-snug">
-            What I've learned from watching parents handle the worst 90 seconds of a kid's week. By Maren.
-          </p>
-        </div>
+          <div class="t-cta mt-4">Read this issue →</div>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Archive -->
-  <section>
-    <div class="container-px py-16">
-      <div class="t-label text-rust mb-4">Issue archive</div>
-      <div class="grid md:grid-cols-2 gap-x-10 gap-y-3">
-        {issues.map((a) => {
-          const sport = SPORTS.find(s => s.slug === a.data.sport)?.label ?? a.data.sport ?? '';
-          const age = AGE_BANDS.find(x => x.slug === a.data.age)?.label;
-          const meta = [sport, age ? `Age ${age}` : null].filter(Boolean).join(' / ');
-          const date = a.data.publishedAt.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-          const titleHtml = a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-          return (
-            <a href={`/${a.data.phase}/${a.slug}/`} class="border-b border-bone py-3 flex flex-col gap-1 hover:bg-paper-warm">
-              <span class="t-label text-ink-soft">
-                #{String(a.data.issue ?? 0).padStart(3, '0')} · {date}{meta ? ' · ' + meta : ''}
-              </span>
-              <span class="font-display text-ink text-xl leading-snug" set:html={titleHtml} />
-            </a>
-          );
-        })}
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <div class="flex items-baseline justify-between flex-wrap gap-3 mb-8">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Past issues</p>
+        <a href="/rss.xml" class="t-cta">Subscribe via RSS →</a>
       </div>
+      <ul class="grid gap-px bg-bone">
+        {archive.map((a) => (
+          <li class="bg-paper p-5 hover:bg-paper-warm transition-colors">
+            <a href={`/${a.data.phase}/${a.slug}/`} class="grid md:grid-cols-[140px_1fr] gap-4 group items-baseline">
+              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">
+                {fmt(a.data.publishedAt)}
+              </span>
+              <div>
+                <h3
+                  class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors"
+                  style="font-weight: 500;"
+                  set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                />
+                {a.data.dek && (
+                  <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                    {a.data.dek}
+                  </p>
+                )}
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
-  <NewsletterSignup />
+  <!-- What you get -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">What you get</p>
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl">
+        <div>
+          <h3 class="font-display text-ink text-xl leading-tight" style="font-weight: 500;">A short read every Friday.</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Five minutes or less. Topical to the season your kid is in.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-ink text-xl leading-tight" style="font-weight: 500;">Free PDFs as we ship them.</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The Drive Home Playbook, the Practice Plan Template, the Pre-Game Pocket Card. Subscribers get them first.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-ink text-xl leading-tight" style="font-weight: 500;">Reply, real people read it.</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Hit reply on any issue. The {EDITORIAL.byline} writes back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

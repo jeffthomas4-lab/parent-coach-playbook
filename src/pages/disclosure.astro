@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+const updated = 'April 30, 2026';
+---
+<BaseLayout
+  title="Privacy and disclosure"
+  description="Affiliate, privacy, and editorial disclosure for Parent Coach Playbook."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Disclosure</p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Privacy, affiliates, and how this site is funded.
+      </h1>
+      <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}.</p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Affiliate disclosure</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>{SITE.name} is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+        <p>When you click an Amazon link on this site and make a purchase, we earn a small commission. The price you pay does not change. We only recommend gear we would buy for our own kids.</p>
+        <p>Some non-Amazon links may also pay us a commission. Where that is the case the link is marked with a small note. Editorial recommendations are not influenced by commission rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Editorial independence</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Nothing on this site is sponsored. We do not accept payment to feature a product, a camp, a service, or a person. If that ever changes, the post will say so at the top.</p>
+        <p>If a recommendation no longer holds up, we update the piece and add a correction at the bottom.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Privacy</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>We collect three things and only three things.</p>
+        <ol>
+          <li><strong>Email addresses</strong>, when you sign up for the newsletter or download a PDF. Stored at our email provider, Kit. We use your email to send you the newsletter and the resources you asked for. Unsubscribe in any email and your address is removed.</li>
+          <li><strong>Anonymous traffic data</strong> via Cloudflare Web Analytics. Page views, referrer, country. No cookies, no individual tracking, no advertising profiles.</li>
+          <li><strong>Submissions you send us</strong>, when you email a story or submit a camp. Used only to respond and to publish if you ask us to.</li>
+        </ol>
+        <p>We do not sell or share your email. We do not run third-party advertising trackers. We do not use Google Analytics.</p>
+        <p>If you want your email removed, unsubscribe via the link in any newsletter or write to <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Children</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>This site is written for parents and coaches. We do not knowingly collect information from children under 13.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Medical and safety advice</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Nothing on this site is medical advice. When a topic touches injury, concussion, mental health, or returning to play after a setback, follow the guidance of a clinician, your league's protocol, and the relevant national governing body. We link to authoritative sources where we can.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">Contact</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Questions, corrections, complaints: <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

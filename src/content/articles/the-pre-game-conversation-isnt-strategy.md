@@ -1,7 +1,6 @@
 ---
 title: "The drive there isn't *strategy hour*"
 dek: "I used to use the twelve minutes to the field for last-minute coaching. The kid in the back seat heard pressure. Here is what we do now."
-contributor: "maren-bell"
 format: "essay"
 issue: 2
 phase: "drive-there"
@@ -11,11 +10,11 @@ seasonPhase: "early"
 publishedAt: 2026-01-08
 ---
 
-The drive to the field is twelve minutes long. For two seasons I used those twelve minutes to drill the lineup, the matchups, the play we installed at practice on Wednesday. The kid in the back seat heard one thing. *Don't mess this up.*
+The drive to the field is twelve minutes long. For two seasons, coaches used those twelve minutes to drill the lineup, the matchups, the play installed at practice Wednesday. The kid in the back seat heard one thing: *Don't mess this up.*
 
-I did not mean to say that. I said something about footwork on the second batter. The nine-year-old heard pressure.
+Parents didn't mean to say that. They said something about footwork on the second batter. The kid heard pressure.
 
-Eventually a friend, a mom of three, told me what they do in their car. I stole it. It is better.
+A parent figured out what works in that car, and it's better than the old way.
 
 ## What the drive there is for
 
@@ -29,13 +28,13 @@ Hand them their job. One sentence. *Your job today is to talk to the catcher bet
 
 ## What it sounds like by activity
 
-Soccer, age 8. *Your job today is to call for the ball one time in the first half.*
+Soccer, age 8: *Your job today is to call for the ball one time in the first half.*
 
-Lacrosse, age 11. *Your job is to pick one teammate and tell them good play after their next mistake.*
+Lacrosse, age 11: *Your job is to pick one teammate and tell them good play after their next mistake.*
 
-Choir, the spring concert. *Your job is to look at the conductor on the entrance to the second piece.*
+Choir, spring concert: *Your job is to look at the conductor on the entrance to the second piece.*
 
-Theater, opening night. *Your job is to find me in the audience for one second during the curtain call.*
+Theater, opening night: *Your job is to find me in the audience for one second during the curtain call.*
 
 The pattern is the same. Specificity over praise. Presence over evaluation.
 
@@ -51,8 +50,6 @@ We do not talk about the other team. Most kids inflate the opponent in their hea
 
 ## The handoff
 
-When you pull into the lot, end the conversation. Out loud. *OK. We're here. I'm proud of you no matter what.* Then say nothing for the walk to the dugout.
+When you pull into the lot, end the conversation out loud. *OK. We're here. I'm proud of you no matter what.* Then say nothing for the walk to the dugout.
 
-The silence is the work. The kid is now alone with their job. That is what you wanted. That is what twelve minutes of driving was for.
-
-— Maren
+The silence is the work. The kid is now alone with their job. That's what you wanted. That's what twelve minutes of driving was for.

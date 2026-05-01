@@ -3,7 +3,6 @@ title: "A practice plan parents can read"
 summary: "Don't wing it. Don't hide it. A simple shared Google Doc parents can see is the highest-leverage thing a coach can do for buy-in."
 category: "practice"
 type: "article"
-contributor: "jeff-thomas"
 publishedAt: 2026-01-22
 featured: true
 ---

@@ -7,7 +7,6 @@ lede: "Cleats, shin guards, ball, water bottle. The lowest-equipment outdoor spo
 costSummary: "$100–180 for a full kit at any age, plus league fees"
 seasonNote: "Fall is the main season in most US leagues. Spring is common. Year-round in California, Texas, and Florida."
 publishedAt: 2026-02-09
-contributor: "maren-bell"
 ---
 
 Soccer is the easiest youth sport to outfit. There is almost nothing to buy. Cleats, shin guards, a ball, and a water bottle. That's the whole list at every age.

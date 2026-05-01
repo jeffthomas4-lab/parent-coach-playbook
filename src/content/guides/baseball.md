@@ -7,7 +7,6 @@ lede: "Glove, bat, helmet, cleats. The list grows by age. Most parents buy the w
 costSummary: "$150–250 to outfit tee-ball; $350–600 by little league with travel"
 seasonNote: "Spring is the main season. Fall ball is optional and often shorter. Winter cages and lessons start in January."
 publishedAt: 2026-01-12
-contributor: "maren-bell"
 ---
 
 So your kid wants to play baseball. Or your kid signed up because their friend signed up. Either way, you are now staring at a sporting-goods aisle that has six glove sizes, fourteen bat lengths, and helmets in every color but the one your kid wants.

@@ -7,7 +7,6 @@ lede: "Choir is the cheapest youth activity to outfit. Concert clothes, a folder
 costSummary: "Under $100 a year for personal gear at most school choirs"
 seasonNote: "School choir runs the school year. Summer camps and audition-only honor choirs run June–August."
 publishedAt: 2026-04-20
-contributor: "maren-bell"
 ---
 
 Choir is the easiest activity in this guide to outfit. The whole list fits on one hand. Concert clothes, a folder, a pencil, a water bottle.

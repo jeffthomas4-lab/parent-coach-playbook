@@ -4,19 +4,19 @@ import { SITE } from '../data/site';
 ---
 <BaseLayout
   title="About"
-  description="The Parent-Coach Playbook is for the parent who is also the coach, the team mom, the snack rotation, the carpool driver, and the bedtime conversation. Three drives. One relationship."
+  description="Parent Coach Playbook is sideline notes for the parent who coaches, drives, snack-packs, and supervises the group chat. Editorial process, sources, and how we write."
 >
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24">
       <p class="font-display italic text-rust mb-4" style="font-weight: 500;">About this site</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        We're not telling you what to say to your kid. We're telling you <em class="text-rust">what's actually happening</em> to you.
+        Sideline notes for the parent who is <em class="text-rust">in the middle of it</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 leading-snug max-w-3xl">
-        Most coverage of youth sports is written for the parent on the sideline yelling at the ref. That's not most parents. Most parents are quiet, tired, juggling four schedules, and trying not to wreck the conversation in the car after the game.
+        Most youth-sports coverage is written for the parent yelling at the ref. That is not most parents. Most parents are tired, juggling four schedules, and trying not to wreck the conversation in the car after the game.
       </p>
       <p class="font-display text-ink-soft text-lg mt-4 leading-snug max-w-2xl">
-        This is a small site for that parent. Mostly short reads. Sometimes longer ones. From three of us, to the rest of you.
+        This is a small site for that parent. Short reads. A few longer ones. Honest about what we know and what we don't.
       </p>
     </div>
   </section>
@@ -24,13 +24,26 @@ import { SITE } from '../data/site';
   <section class="border-b border-bone">
     <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust" style="font-weight: 500;">The thesis</p>
+        <p class="font-display italic text-rust" style="font-weight: 500;">Who writes this</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>The drive there sets the temperature. The game lasts two hours. The drive home decides what the next week feels like in your house.</p>
-        <p>Three drives. One relationship.</p>
-        <p>Most coverage of youth sports obsesses over the middle. The film, the play call, the lineup card. The middle is two hours. The bookends are everything else: the kitchen, the car, the bedroom doorway at 11 PM when your kid finally tells you what they were upset about.</p>
-        <p>The bookends are where the relationship gets made or lost. Most of us are still warming up for that part when it ends.</p>
+        <p>Every piece on the site is written and edited by the <strong>Parent Coach Playbook Editorial</strong>. That is the brand. We do not put individual names on bylines. Two reasons.</p>
+        <p>First: the site exists to be useful, not to build personalities. The point is whether the advice helps you on Saturday morning, not who you are following.</p>
+        <p>Second: the editorial team includes parents who coach across baseball, softball, soccer, basketball, football, hockey, lacrosse, volleyball, theater, band, and ballet. Several have worked in collegiate athletics. Several have spent fifteen years on the parent side of the fence. The byline is the team, not any one person.</p>
+        <p>If you want to send a story or push back on something we wrote, the email is <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>. Real people read it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">How we research</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>For anything regulated by a governing body, we cite the body. USA Baseball, USA Softball, US Lacrosse, USA Hockey, USA Swimming, USA Track and Field, US Soccer, NOCSAE for protective gear, the NFHS for high-school rules. The full directory lives at <a href="/resources/national-organizations/" class="text-rust hover:underline">our national organizations page</a>.</p>
+        <p>For health and safety topics we cite the CDC, the American Academy of Pediatrics, and SafeSport. We do not give medical advice. When a topic touches injury or mental health, we link to professionals.</p>
+        <p>For practical pieces (drills, scripts, what to say after a bad game) we draw from years on the parent side of youth sports plus a network of coaches and parents we trust.</p>
       </div>
     </div>
   </section>
@@ -38,12 +51,25 @@ import { SITE } from '../data/site';
   <section class="border-b border-bone">
     <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust" style="font-weight: 500;">Who this is for</p>
+        <p class="font-display italic text-rust" style="font-weight: 500;">How we write</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>The parent who is also the coach. The team mom. The dad who shows up to every game but doesn't coach. The mom who runs the snack rotation, the group chat, the carpool, the picture-day decision, and the post-tryouts dinner conversation. All before Tuesday.</p>
-        <p>Coach. Driver. Snack rotation. Group chat admin. Field-change announcer. Tryouts cheerleader. Saturday-morning emotional weather forecaster. Most of us are doing five of those eight jobs on any given week.</p>
-        <p>If your kid is in baseball, softball, soccer, basketball, football, hockey, lacrosse, volleyball, theater, band, choir, or dance: this is for you. The framework fits all of them.</p>
+        <p>Short paragraphs. Plain language. The advice or rule comes first, the reason comes second, the example comes third.</p>
+        <p>We do not use the words that AI writing tools overuse. We do not write "not this, but this" framings. We do not stack three vague phrases on top of each other to sound profound. If a sentence does not earn its place, it gets cut.</p>
+        <p>Our internal voice rules and banned-word list live in the repo so anyone writing for the site can follow them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust" style="font-weight: 500;">How this is funded</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>We earn a small commission when readers buy gear through Amazon links on our buying guides. The commission does not change the price you pay and does not influence our recommendations. We only link to gear we would buy ourselves.</p>
+        <p>The newsletter is free. The PDFs and templates in the resources section are free. There is no membership tier and no paywall.</p>
+        <p>Full disclosure language is on <a href="/disclosure/" class="text-rust hover:underline">our disclosure page</a>.</p>
       </div>
     </div>
   </section>
@@ -51,51 +77,31 @@ import { SITE } from '../data/site';
   <section class="border-b border-bone">
     <div class="container-px py-14 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust" style="font-weight: 500;">Who writes it</p>
+        <p class="font-display italic text-rust" style="font-weight: 500;">Corrections</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p><strong>Maren Bell</strong> writes most posts. Mom of two, former college lacrosse player, ex-middle-school English teacher, current team mom for her daughter's soccer team. Warm, observational, funny. Drinks too much coffee.</p>
-        <p><strong>Dan Kowalski</strong> writes when he has been thinking about something long enough to be useful. Dad of three, has coached his twins' baseball for five seasons. Best on the "coaching your own kid" beat and the partnership-with-your-spouse beat.</p>
-        <p><strong>{SITE.founder}</strong> started the site and writes the longer cornerstone pieces. Head football coach at the University of Puget Sound, former interim athletic director, dad of two. He brings the long view: what the framework does over decades, how youth coaching connects to college, where the research is.</p>
-        <p><a href="/contributors/">Read more about the three contributors.</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="border-b border-bone">
-    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
-        <p class="font-display italic text-rust" style="font-weight: 500;">Honest disclosure</p>
-      </div>
-      <div class="md:col-span-8 article-body">
-        <p>Jeff writes under his real name. Maren and Dan are composite voices drawn from interviews with parent-coaches across our network. Every situation is real. Every quote is real. We just stitch the voices together so we can write honestly about families without naming any one of them.</p>
-        <p>We landed here because the moms we asked said they would rather read someone telling the truth in a composite voice than read someone pretending the day was fine when it wasn't. If that bothers you, fair. We respect it.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="border-b border-bone">
-    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
-        <p class="font-display italic text-rust" style="font-weight: 500;">What you'll find here</p>
-      </div>
-      <div class="md:col-span-8 article-body">
-        <p>Editorial reads, organized by which drive they belong to: <a href="/drive-there/">The Drive There</a>, <a href="/game/">The Game</a>, <a href="/drive-home/">The Drive Home</a>.</p>
-        <p>A growing <a href="/what-to-buy/">What to Buy</a> section with honest gear guides by sport and by age. No press samples, no sponsored placements.</p>
-        <p>A <a href="/team-parent/">Team Parent toolkit</a> with templates and how-tos for the operational side of the season. Practice plans, lineup spreadsheets, group-chat rules, t-ball cone diagrams.</p>
-        <p>A <a href="/start-here/">Start here</a> page that maps to your situation right now. Just got asked to coach. Tryouts are this week. My kid wants to quit. Pick what fits and we'll send you to the right reading.</p>
+        <p>If we got something wrong, tell us. We update the piece, we add a correction note at the bottom with the date, and we keep the original wording visible so the change is honest.</p>
+        <p>Email: <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="container-px py-14 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
-        <p class="font-display italic text-rust" style="font-weight: 500;">Get in touch</p>
-      </div>
-      <div class="md:col-span-8 article-body">
-        <p>Story leads, gear suggestions, partnership inquiries, or you want to write a guest post: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
-        <p>If you want to subscribe to one short note in your inbox a week, sign up below.</p>
+    <div class="container-px py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Where to start</p>
+      <div class="grid md:grid-cols-3 gap-px bg-bone">
+        <a href="/start-here/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Start here</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Pick the situation that fits your week.</p>
+        </a>
+        <a href="/reads/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Reads</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Every piece, organized by topic.</p>
+        </a>
+        <a href="/coaching-tips/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Coaching tips</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Drills and notes by sport and age.</p>
+        </a>
       </div>
     </div>
   </section>

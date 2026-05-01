@@ -3,7 +3,6 @@ title: "Starting the team group chat that actually works"
 summary: "The group chat is the real league. Here's how to start one that 12 families will actually read."
 category: "communication"
 type: "article"
-contributor: "maren-bell"
 publishedAt: 2026-01-29
 featured: true
 ---

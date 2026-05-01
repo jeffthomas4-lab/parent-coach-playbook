@@ -3,7 +3,6 @@ title: "How to recruit assistant coaches without begging"
 summary: "Most teams need three coaches and find one. The reason isn't lack of willing parents. The reason is how the ask is made."
 category: "volunteering"
 type: "article"
-contributor: "jeff-thomas"
 publishedAt: 2026-03-26
 featured: true
 ---

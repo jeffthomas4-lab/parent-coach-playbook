@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import { PILLARS, SPORTS, AGE_BANDS, SITE, CONTRIBUTORS } from '../data/site';
+import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL } from '../data/site';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -14,9 +14,8 @@ const { data, slug } = article;
 const pillar = PILLARS[data.phase];
 const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
-const contrib = CONTRIBUTORS[data.contributor];
 
-// "More from this drive" — same pillar, exclude this article, top 3
+// Related: same phase, exclude this article, top 3
 const related = (await getCollection('articles', ({ data: d, slug: s }) =>
   !d.draft && d.phase === data.phase && s !== slug
 )).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -27,7 +26,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: data.title.replace(/\*/g, ''),
   description: data.dek,
-  author: { '@type': 'Person', name: contrib.name },
+  author: { '@type': 'Organization', name: SITE.name },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
@@ -48,7 +47,7 @@ const breadcrumbSchema = {
 };
 
 const tagBits = [
-  pillar.label.replace('The ', ''),
+  pillar.label,
   sportLabel,
   ageLabel ? `age ${ageLabel}` : null,
 ].filter(Boolean);
@@ -65,13 +64,13 @@ const isShort = data.format === 'note';
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Soft pillar tint as the page accent -->
-  <article style={`background: ${pillar.accentBg};`}>
+  <div style={`background: ${pillar.accentBg};`}>
     <div class="container-px pt-10 pb-2">
       <div class="font-display italic" style={`color: ${pillar.accent}; font-weight: 500; font-size: 1rem;`}>
-        Filed in {pillar.label}{tagBits[1] ? ' · ' + tagBits.slice(1).join(' · ') : ''}
+        {pillar.label}{tagBits[1] ? ' · ' + tagBits.slice(1).join(' · ') : ''}
       </div>
     </div>
-  </article>
+  </div>
 
   <article class="container-px py-10 md:py-14">
     <header class="max-w-prose mx-auto">
@@ -86,22 +85,15 @@ const isShort = data.format === 'note';
         </p>
       )}
 
-      <!-- Byline with avatar -->
-      <div class="mt-8 flex items-center gap-3">
-        <div
-          class="w-12 h-12 rounded-full flex items-center justify-center font-display italic flex-shrink-0"
-          style={`background: ${contrib.accentBg}; color: ${contrib.accent}; font-weight: 500; font-size: 1.05rem;`}
-          aria-hidden="true"
-        >{contrib.avatarLetter}</div>
-        <div class="leading-tight">
-          <div class="font-display text-ink" style="font-weight: 500;">
-            <a href="/contributors/" class="hover:text-rust">{contrib.name}</a>
-          </div>
-          <div class="font-display italic text-ink-soft text-sm">
-            {data.publishedAt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-            {' · '}
-            {isShort ? 'short read' : 'longer read'}
-          </div>
+      <!-- Byline -->
+      <div class="mt-8 pt-5 border-t border-bone">
+        <div class="font-display italic text-rust" style="font-weight: 500;">
+          {EDITORIAL.byline}
+        </div>
+        <div class="font-display italic text-ink-soft text-sm mt-1">
+          {data.publishedAt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          {' · '}
+          {isShort ? 'short read' : 'longer read'}
         </div>
       </div>
     </header>
@@ -110,18 +102,15 @@ const isShort = data.format === 'note';
       <slot />
     </div>
 
-    <!-- Contributor note at the bottom -->
-    <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone flex items-start gap-4">
-      <div
-        class="w-14 h-14 rounded-full flex items-center justify-center font-display italic flex-shrink-0"
-        style={`background: ${contrib.accentBg}; color: ${contrib.accent}; font-weight: 500; font-size: 1.25rem;`}
-        aria-hidden="true"
-      >{contrib.avatarLetter}</div>
-      <div>
-        <p class="font-display text-ink mb-1" style="font-weight: 500;">More from {contrib.name}</p>
-        <p class="font-display text-ink-soft text-sm leading-snug">{contrib.short}</p>
-        <a href="/contributors/" class="t-cta inline-block mt-2">See contributors →</a>
-      </div>
+    <!-- Editorial note at the bottom -->
+    <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">About this piece</p>
+      <p class="font-display text-ink-soft text-sm leading-snug">
+        Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
+        Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
+      </p>
     </aside>
   </article>
 

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
-import { BUYING_GUIDES, CONTRIBUTORS } from '../../data/site';
+import { BUYING_GUIDES, EDITORIAL } from '../../data/site';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides', ({ data }) => !data.draft);
@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 const { guide } = Astro.props;
 const { Content, headings } = await guide.render();
 const meta = BUYING_GUIDES.find(g => g.slug === guide.slug)!;
-const contrib = CONTRIBUTORS[guide.data.contributor];
 
 // Pull only top-level (h2) headings for the in-page jump nav
 const jumpNav = headings.filter((h) => h.depth === 2);
@@ -68,19 +67,13 @@ const jumpNav = headings.filter((h) => h.depth === 2);
           </ul>
 
           <div class="mt-8 pt-6 border-t border-bone">
-            <div class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-full flex items-center justify-center font-display italic"
-                style={`background: ${contrib.accentBg}; color: ${contrib.accent}; font-weight: 500; font-size: 1rem;`}
-                aria-hidden="true"
-              >{contrib.avatarLetter}</div>
-              <div>
-                <p class="font-display text-ink text-sm" style="font-weight: 500;">By {contrib.name}</p>
-                <p class="font-display italic text-ink-soft text-xs">
-                  Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                </p>
-              </div>
-            </div>
+            <p class="font-display italic text-rust text-sm" style="font-weight: 500;">{EDITORIAL.byline}</p>
+            <p class="font-display italic text-ink-soft text-xs mt-1">
+              Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+            </p>
+            <p class="font-display italic text-ink-soft text-xs mt-3 leading-snug">
+              Need to know what size? <a href={`/what-to-buy/${guide.slug}/sizing/`} class="text-rust hover:underline">{guide.data.activity} sizing guide →</a>
+            </p>
           </div>
         </aside>
       )}

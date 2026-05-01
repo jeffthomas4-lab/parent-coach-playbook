@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { TOPICS, AGE_BANDS } from '../../data/site';
+
+const all = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+<BaseLayout
+  title="Reads"
+  description="The full archive. Filter by topic, age, or browse all."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Reads</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
+        Every piece, organized.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Filter by topic. Filter by your kid's age. Or scroll the whole feed.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-8">
+      <div class="grid gap-4">
+        <div class="flex flex-wrap items-center gap-2" data-topic-filter>
+          <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Topic:</span>
+          <button data-topic="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+          {TOPICS.map((t) => (
+            <button data-topic={t.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{t.label}</button>
+          ))}
+        </div>
+        <div class="flex flex-wrap items-center gap-2" data-age-filter>
+          <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Age:</span>
+          <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+          {AGE_BANDS.map((a) => (
+            <button data-age={a.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{a.label}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12">
+      <div class="grid md:grid-cols-2 gap-x-10" data-feed>
+        {all.map((a) => (
+          <div data-topic-tag={a.data.topic ?? ''} data-age-tag={a.data.age ?? 'all-ages'}>
+            <ArticleCard
+              href={`/${a.data.phase}/${a.slug}/`}
+              format={a.data.format}
+              sport={a.data.sport}
+              age={a.data.age}
+              phase={a.data.phase}
+              title={a.data.title}
+              dek={a.data.dek}
+              publishedAt={a.data.publishedAt}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const topicBar = document.querySelector('[data-topic-filter]');
+    const ageBar = document.querySelector('[data-age-filter]');
+    const feedEl = document.querySelector('[data-feed]');
+
+    let currentTopic = '';
+    let currentAge = '';
+
+    const apply = () => {
+      if (!feedEl) return;
+      feedEl.querySelectorAll<HTMLElement>('[data-topic-tag]').forEach((row) => {
+        const t = row.dataset.topicTag ?? '';
+        const a = row.dataset.ageTag ?? '';
+        const topicOk = !currentTopic || t === currentTopic;
+        const ageOk = !currentAge || a === currentAge || a === 'all-ages';
+        row.style.display = topicOk && ageOk ? '' : 'none';
+      });
+    };
+
+    const wire = (bar: Element | null, attr: string, setter: (v: string) => void) => {
+      if (!bar) return;
+      bar.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (target.tagName !== 'BUTTON') return;
+        bar.querySelectorAll('button').forEach(b => {
+          b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+          b.classList.add('border-bone', 'text-ink-soft');
+        });
+        target.classList.remove('border-bone', 'text-ink-soft');
+        target.classList.add('bg-ink', 'text-paper', 'border-ink');
+        setter(target.getAttribute(`data-${attr}`) ?? '');
+        apply();
+      });
+    };
+
+    wire(topicBar, 'topic', v => { currentTopic = v; });
+    wire(ageBar, 'age', v => { currentAge = v; });
+
+    // Read query string on load (e.g. /reads/?topic=communication)
+    const params = new URLSearchParams(window.location.search);
+    const initialTopic = params.get('topic') ?? '';
+    if (initialTopic) {
+      const btn = topicBar?.querySelector(`button[data-topic="${initialTopic}"]`) as HTMLButtonElement | null;
+      btn?.click();
+    }
+  </script>
+</BaseLayout>

@@ -1,0 +1,177 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SPORTS, AGE_BANDS, EDITORIAL } from '../../data/site';
+
+const tips = (await getCollection('coachingTips', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const focusOptions = [
+  { slug: 'warm-up',         label: 'Warm-up' },
+  { slug: 'fundamentals',    label: 'Fundamentals' },
+  { slug: 'situational',     label: 'Situational' },
+  { slug: 'scrimmage',       label: 'Scrimmage' },
+  { slug: 'culture',         label: 'Culture' },
+  { slug: 'game-management', label: 'Game management' },
+];
+---
+<BaseLayout
+  title="Coaching tips"
+  description="A drill library for parent-coaches. Filter by sport, age, and focus. Searchable."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Coaching tips</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
+        Drills, notes, and the <em class="text-rust">cones</em> diagram.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        A library for parent-coaches. Filter by sport, age, or focus. Each entry is short. Each one is something we have run on a Tuesday night practice and seen work.
+      </p>
+    </div>
+  </section>
+
+  {tips.length > 0 ? (
+    <>
+      <section class="border-b border-bone bg-paper-warm">
+        <div class="container-px py-8">
+          <div class="grid gap-4">
+            <div class="flex flex-wrap items-center gap-2" data-sport-filter>
+              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Sport:</span>
+              <button data-sport="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+              {SPORTS.slice(0, 12).map((s) => (
+                <button data-sport={s.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{s.label}</button>
+              ))}
+            </div>
+            <div class="flex flex-wrap items-center gap-2" data-age-filter>
+              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Age:</span>
+              <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+              {AGE_BANDS.map((a) => (
+                <button data-age={a.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{a.label}</button>
+              ))}
+            </div>
+            <div class="flex flex-wrap items-center gap-2" data-focus-filter>
+              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Focus:</span>
+              <button data-focus="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+              {focusOptions.map((f) => (
+                <button data-focus={f.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{f.label}</button>
+              ))}
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="search"
+                placeholder="Search drills, e.g. cones, hitting, defense..."
+                data-search-input
+                class="w-full max-w-md px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container-px py-12">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" data-tips-grid>
+            {tips.map((t) => (
+              <a
+                href={`/coaching-tips/${t.slug}/`}
+                class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
+                data-sport-tag={t.data.sport ?? ''}
+                data-age-tag={t.data.age ?? 'all-ages'}
+                data-focus-tag={t.data.focus ?? ''}
+                data-title={t.data.title.toLowerCase()}
+                data-summary={t.data.summary.toLowerCase()}
+              >
+                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
+                  {[t.data.sport, t.data.age, t.data.focus].filter(Boolean).join(' · ')}
+                </p>
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                  {t.data.title}
+                </h3>
+                <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+                  {t.data.summary}
+                </p>
+              </a>
+            ))}
+          </div>
+          <p class="font-display italic text-ink-soft text-sm mt-6 hidden" data-empty>
+            Nothing matches that filter. Try a different combination.
+          </p>
+        </div>
+      </section>
+
+      <script>
+        const sportBar = document.querySelector('[data-sport-filter]');
+        const ageBar   = document.querySelector('[data-age-filter]');
+        const focusBar = document.querySelector('[data-focus-filter]');
+        const grid     = document.querySelector('[data-tips-grid]');
+        const empty    = document.querySelector('[data-empty]') as HTMLElement | null;
+        const input    = document.querySelector('[data-search-input]') as HTMLInputElement | null;
+
+        let s = '', a = '', f = '', q = '';
+
+        const apply = () => {
+          if (!grid) return;
+          let visible = 0;
+          grid.querySelectorAll<HTMLElement>('[data-sport-tag]').forEach((row) => {
+            const sport = row.dataset.sportTag ?? '';
+            const age   = row.dataset.ageTag ?? '';
+            const focus = row.dataset.focusTag ?? '';
+            const title = row.dataset.title ?? '';
+            const summ  = row.dataset.summary ?? '';
+            const sOk = !s || sport === s;
+            const aOk = !a || age === a || age === 'all-ages';
+            const fOk = !f || focus === f;
+            const qOk = !q || title.includes(q) || summ.includes(q);
+            const ok = sOk && aOk && fOk && qOk;
+            row.style.display = ok ? '' : 'none';
+            if (ok) visible++;
+          });
+          if (empty) empty.classList.toggle('hidden', visible > 0);
+        };
+
+        const wire = (bar: Element | null, attr: string, setter: (v: string) => void) => {
+          if (!bar) return;
+          bar.addEventListener('click', (e) => {
+            const t = e.target as HTMLElement;
+            if (t.tagName !== 'BUTTON') return;
+            bar.querySelectorAll('button').forEach(b => {
+              b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+              b.classList.add('border-bone', 'text-ink-soft');
+            });
+            t.classList.remove('border-bone', 'text-ink-soft');
+            t.classList.add('bg-ink', 'text-paper', 'border-ink');
+            setter(t.getAttribute(`data-${attr}`) ?? '');
+            apply();
+          });
+        };
+
+        wire(sportBar, 'sport', v => { s = v; });
+        wire(ageBar,   'age',   v => { a = v; });
+        wire(focusBar, 'focus', v => { f = v; });
+
+        if (input) {
+          input.addEventListener('input', () => {
+            q = input.value.trim().toLowerCase();
+            apply();
+          });
+        }
+      </script>
+    </>
+  ) : (
+    <section>
+      <div class="container-px py-16">
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Coming next</p>
+        <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+          The drill library is loading. First batch ships this month.
+        </h2>
+        <p class="font-display text-ink-soft mt-5 max-w-2xl leading-snug">
+          We are building this section as a real database of drills. Each drill is short, sport-tagged, age-tagged, and focus-tagged so you can pull a fifteen-minute Tuesday-night practice plan in two minutes. The first wave includes the cones diagram for tee-ball, a five-station soccer practice for ages 6-8, and a rebounding fundamentals drill for basketball ages 9-11.
+        </p>
+        <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+          Written by the {EDITORIAL.byline}.
+        </p>
+      </div>
+    </section>
+  )}
+</BaseLayout>

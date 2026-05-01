@@ -7,7 +7,6 @@ lede: "Stick, helmet, gloves, pads. Boys and girls play different versions with 
 costSummary: "$200–350 for boys starter; $100–180 for girls starter. Add $200–400 by middle school for either."
 seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor box leagues in winter."
 publishedAt: 2026-03-23
-contributor: "maren-bell"
 ---
 
 Lacrosse is two different sports under the same name. Boys lacrosse is a contact sport with helmets, gloves, and full pads. Girls lacrosse is a non-contact sport (with rule-defined contact only) that requires a small set of safety equipment. The sticks are different. The pads are different. Don't get the gear mixed up.

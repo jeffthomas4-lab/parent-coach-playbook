@@ -3,7 +3,6 @@ title: "Picture day: pro photographer or just one parent?"
 summary: "Most leagues default to the league's contracted photographer. There's a cheaper, often-better alternative."
 category: "photos-events"
 type: "article"
-contributor: "maren-bell"
 publishedAt: 2026-03-12
 featured: true
 ---

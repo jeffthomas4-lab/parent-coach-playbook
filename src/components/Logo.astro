@@ -1,7 +1,6 @@
 ---
-// Wordmark for The Parent-Coach Playbook.
-// "The Parent-Coach " in warm ink + "Playbook." in terracotta italic.
-// Full brand name, no monogram, no imprint mention.
+// Wordmark for Parent Coach Playbook.
+// Three words. "Parent Coach" warm ink, "Playbook" terracotta italic.
 //
 // Variants:
 //   variant="dark"   — warm-ink + terracotta (default, on cream)
@@ -18,7 +17,7 @@ interface Props {
 const {
   variant = 'dark',
   size = 22,
-  ariaLabel = 'The Parent-Coach Playbook',
+  ariaLabel = 'Parent Coach Playbook',
   class: className = '',
 } = Astro.props;
 
@@ -47,7 +46,7 @@ const accentColor =
       letter-spacing: -0.005em;
       color: ${baseColor};
     `}
-  >The Parent-Coach </span><span
+  >Parent Coach </span><span
     style={`
       font-family: 'Fraunces', Georgia, serif;
       font-style: italic;
@@ -57,14 +56,5 @@ const accentColor =
       letter-spacing: -0.005em;
       color: ${accentColor};
     `}
-  >Playbook</span><span
-    style={`
-      font-family: 'Fraunces', Georgia, serif;
-      font-style: italic;
-      font-weight: 500;
-      font-size: ${size}px;
-      line-height: 1;
-      color: ${baseColor};
-    `}
-  >.</span>
+  >Playbook</span>
 </a>

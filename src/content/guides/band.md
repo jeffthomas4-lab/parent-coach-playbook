@@ -7,7 +7,6 @@ lede: "An instrument, accessories, music. The instrument is the big-ticket item.
 costSummary: "$300–600 a year to rent an instrument; $1,000–5,000 to buy a quality student instrument outright"
 seasonNote: "Concert band runs the school year (September–May). Marching band adds August/September pre-season. Jazz and chamber are year-round."
 publishedAt: 2026-04-13
-contributor: "maren-bell"
 ---
 
 Band looks complicated until you realize the school does most of the work. They tell you what instrument your kid will play, they sell or rent the starter equipment, and they provide the music.

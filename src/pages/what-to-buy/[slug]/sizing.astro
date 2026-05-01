@@ -1,0 +1,506 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { BUYING_GUIDES, EDITORIAL } from '../../../data/site';
+
+export async function getStaticPaths() {
+  return BUYING_GUIDES.map((g) => ({
+    params: { slug: g.slug },
+    props: { guide: g },
+  }));
+}
+
+const { guide } = Astro.props;
+
+// Sizing copy keyed by slug. Sport-specific. Practical, not theoretical.
+const sizingNotes: Record<string, { intro: string; sections: { heading: string; body: string[] }[] }> = {
+  baseball: {
+    intro: 'Baseball gear has three sizing decisions that matter most: glove, bat, and helmet. Get those right, the rest is forgiving.',
+    sections: [
+      { heading: 'Glove', body: [
+        'Ages 5-7: 10 to 10.5 inches. A first glove should close easily. If the kid cannot close it on a thrown ball, it is too big.',
+        'Ages 8-10: 10.5 to 11.5 inches. Infielders go shorter, outfielders go longer.',
+        'Ages 11-12: 11.5 to 12 inches.',
+        'Ages 13+: 11.5 inches for middle infield, 12 inches for outfield, 12.5 for first base.',
+        'How to test fit: have the kid open and close the glove ten times. If their hand is shaking by ten, the glove is stiff for them. Stiff is fine for an older kid. Not for a beginner.',
+      ]},
+      { heading: 'Bat', body: [
+        'The reach test: stand the bat next to the kid, knob on the floor. The bat should reach the middle of the palm with the arm fully extended down the side.',
+        'The leg test: stand the bat on the ground next to the kid. It should reach the kid\'s hip bone. Not the belly button. Not the ribcage.',
+        'The chest test: kid holds the bat straight out from their chest with one arm. They should be able to hold it for ten seconds without the bat tip dropping.',
+        'Drop weight: Little League uses a -10 or -11 drop for ages 5-12 (USABat stamp required). Senior leagues drop to -8 or -5. Travel teams may require BBCOR (-3) at age 13+.',
+      ]},
+      { heading: 'Helmet', body: [
+        'Sizing is by head circumference. Measure with a soft tape an inch above the eyebrows.',
+        'Most youth helmets fit a 6 1/2 to 7 1/4 inch range. Look for the NOCSAE seal inside.',
+        'Fit check: helmet should not slide front-to-back when the kid shakes their head. The chin strap snug, not strangling.',
+      ]},
+      { heading: 'Cleats', body: [
+        'Buy a half size up from their street shoe. Feet swell on the field.',
+        'Molded cleats for Little League (metal cleats banned for U-13 in most leagues).',
+        'If you buy used cleats, replace the insole. Used cleats are shaped to whoever wore them. A fresh insole resets the foot to a neutral position.',
+      ]},
+    ],
+  },
+  softball: {
+    intro: 'Softball sizing is close to baseball with a few specific differences: bigger glove for the bigger ball, different bat profile, and chest protectors for catchers.',
+    sections: [
+      { heading: 'Glove', body: [
+        'Softball gloves run an inch longer than baseball gloves. Ages 5-7: 11 inches. Ages 8-10: 11 to 12 inches. Ages 11-12: 12 to 12.5 inches. Ages 13+: 12.5 to 13 inches for fielders, 13 inches for first base.',
+        'The web should be deeper than a baseball glove. The ball is bigger.',
+        'Same fit test as baseball: kid opens and closes the glove ten times without their hand shaking.',
+      ]},
+      { heading: 'Bat', body: [
+        'Same reach and leg tests as baseball.',
+        'Drop weight is typically -11 to -12 for fastpitch up to age 12, dropping to -10 for older players. ASA/USA Softball stamp required.',
+        'Slowpitch bats are different. If you are not sure, ask the league what stamp they require.',
+      ]},
+      { heading: 'Face mask and helmet', body: [
+        'Many fastpitch leagues require a fielder\'s face mask. Sizing is by youth/adult and adjusts at the chin strap.',
+        'Catcher\'s gear: chest protector (NOCSAE-approved for the kid\'s age band), shin guards, mask. Sized by height.',
+      ]},
+    ],
+  },
+  soccer: {
+    intro: 'Soccer is mostly cleats and shin guards. Both are fit-tested in seconds.',
+    sections: [
+      { heading: 'Cleats', body: [
+        'Buy a half size up from street shoe. Feet swell on the field.',
+        'For ages 5-9, get firm-ground molded cleats with rounded studs. Avoid bladed studs at this age.',
+        'Used cleats are fine if you replace the insole. The insole is the only piece that molds to the foot. A new insole resets it.',
+        'Indoor soccer needs a separate flat-soled shoe. Cleats damage indoor surfaces and most leagues prohibit them.',
+      ]},
+      { heading: 'Shin guards', body: [
+        'The 70-80 percent rule: the shin guard should cover 70-80 percent of the shin from the top of the cleat to just below the knee.',
+        'Ages 5-7: about 6 inches. Ages 8-10: 6-7 inches. Ages 11-13: 7-9 inches. Ages 14+: youth XL or adult small.',
+        'Slip-in style is fine through about age 10. Older players want strap-on or sleeve style.',
+      ]},
+      { heading: 'Ball', body: [
+        'Size 3: ages 4-8. Size 4: ages 9-12. Size 5: ages 13+.',
+        'Buy two. One stays in the car. One stays in the garage.',
+      ]},
+    ],
+  },
+  basketball: {
+    intro: 'Basketball is mostly shoes. The ball size matters too, and so does the shoe-vs-court grip.',
+    sections: [
+      { heading: 'Shoes', body: [
+        'Court shoes have a flat sole with a herringbone tread. Running shoes do not work and slide on a wood floor.',
+        'A high-top is preferred through age 12 because ankle stability matters more than weight at that age. Mid-cut after that.',
+        'Buy at the end of the day when feet have swelled. Bring the socks they will play in.',
+      ]},
+      { heading: 'Ball', body: [
+        'Size 5 (27.5 inches): ages 5-8.',
+        'Size 6 (28.5 inches, intermediate): ages 9-11 boys, ages 9-13+ girls.',
+        'Size 7 (29.5 inches, official): boys 12+ and high school.',
+      ]},
+    ],
+  },
+  'flag-football': {
+    intro: 'Flag football needs almost no equipment. The fit decisions are mouthguard and cleats.',
+    sections: [
+      { heading: 'Mouthguard', body: [
+        'NOCSAE-stamped boil-and-bite is the right entry point. Five to fifteen dollars.',
+        'A high-top fit-test: the kid bites it after boiling, the impression should fully cover the upper teeth and gums.',
+        'Replace it every season. Mouthguards harden and crack over time.',
+      ]},
+      { heading: 'Cleats', body: [
+        'Soccer cleats work. Football cleats work. Rubber-stud, not metal.',
+        'NFL Flag rules require non-metal cleats. Most leagues match this rule.',
+      ]},
+      { heading: 'Gloves', body: [
+        'Optional. The right glove is sticky receiver gloves: small for kids 5-9, medium for 10-13, large for 14+.',
+        'A kid who hates dropping the ball will love these. A kid who plays line will not need them.',
+      ]},
+    ],
+  },
+  football: {
+    intro: 'Tackle football is the most fit-critical sport on the list. Helmet and shoulder pads must be sized correctly.',
+    sections: [
+      { heading: 'Helmet', body: [
+        'Measure head circumference an inch above the eyebrows. Match to manufacturer chart.',
+        'NOCSAE certification is mandatory. Re-conditioning every 1-2 years per manufacturer guidance. A used helmet must have a current NOCSAE re-cert sticker.',
+        'Fit check: no front-to-back slide when shaking the head, chin strap snug, no pressure points after ten minutes wearing.',
+      ]},
+      { heading: 'Shoulder pads', body: [
+        'Measure shoulder-to-shoulder across the back, plus chest size.',
+        'Pads should sit on the AC joint, not the bicep. Arm holes large enough to lift overhead without the pads riding up.',
+        'Skill-position pads (running back, receiver) are slimmer than line pads. Match the position.',
+      ]},
+      { heading: 'Cleats', body: [
+        'Half size up from street shoe.',
+        'Mid-cut for ankle protection. High-top for linemen.',
+        'Molded cleats for youth. Detachable studs only at high-school level and above.',
+      ]},
+    ],
+  },
+  hockey: {
+    intro: 'Hockey is the most expensive sport and the hardest to size yourself. The skate is the keystone fit.',
+    sections: [
+      { heading: 'Skates', body: [
+        'Most kids fit a hockey skate 1 to 1.5 sizes smaller than their street shoe. Confirm at a hockey shop with a baking process if the brand supports it.',
+        'A hot-spot fit is the goal: heel locked, toes lightly brushing the cap when standing, fully off the cap when bent in the stance.',
+        'Used skates are fine if the boot has not broken down. Look at the heel counter. If it has lost shape, pass.',
+      ]},
+      { heading: 'Helmet', body: [
+        'HECC certification mandatory. The sticker has an expiration date. Past that date, the helmet is not legal for play.',
+        'Cage or full shield required for youth. Sized by helmet model.',
+      ]},
+      { heading: 'Stick', body: [
+        'Junior, intermediate, senior. The right length stands between chin and tip of nose with skates on.',
+        'Flex rating roughly half the player\'s weight in pounds.',
+      ]},
+    ],
+  },
+  lacrosse: {
+    intro: 'Lacrosse gear is sport-specific and sized by age band more than measurement. Boys and girls gear differs.',
+    sections: [
+      { heading: 'Stick', body: [
+        'Boys: youth stick (37-42 inches) for ages 8-12, full length (40-72 inches) for ages 13+. Defenders use longer poles.',
+        'Girls: youth (35-43 inches), full length (35.5-43.25 inches) at older ages.',
+        'Pocket depth is regulated. Tournament officials check.',
+      ]},
+      { heading: 'Helmet (boys)', body: [
+        'NOCSAE certification required. Sized by head circumference plus model fit.',
+        'Cage and chin strap included. Mouthguard worn under the cage.',
+      ]},
+      { heading: 'Chest protector (boys)', body: [
+        'NOCSAE ND200 certification mandatory since 2021/22. This is non-negotiable.',
+        'Sized by chest circumference. Should not restrict arm movement.',
+      ]},
+      { heading: 'Goggles (girls)', body: [
+        'ASTM F803 certification required.',
+        'Sized to the face. Should not bounce when the player runs.',
+      ]},
+    ],
+  },
+  volleyball: {
+    intro: 'Volleyball is mostly shoes and knee pads. Both are fit-tested fast.',
+    sections: [
+      { heading: 'Shoes', body: [
+        'Indoor court shoes, not running shoes. The lateral cut and gum-rubber sole matter for the side-to-side movement.',
+        'Buy at the end of the day. Socks the kid will play in.',
+        'Used indoor shoes are not a great buy. The sole compresses with use.',
+      ]},
+      { heading: 'Knee pads', body: [
+        'Sized small/medium/large. Should sit just below the kneecap when bent.',
+        'Two pairs is standard. They take a beating.',
+      ]},
+      { heading: 'Ball', body: [
+        'Size 5 (official): ages 12+.',
+        'Lighter youth ball for ages 8-11.',
+      ]},
+    ],
+  },
+  swimming: {
+    intro: 'Swim gear is the simplest list on the site. Suit, cap, goggles. Sized in minutes.',
+    sections: [
+      { heading: 'Suit', body: [
+        'A training suit (twenty to forty dollars) is the right buy for ages 5-12. Tech suits are for kids who compete year-round at age 12+.',
+        'Polyester lasts longer than nylon in chlorine. The brand on the tag matters less than the fabric.',
+        'A snug fit. Not painful, not loose. Loose suits create drag.',
+      ]},
+      { heading: 'Goggles', body: [
+        'Press the goggle to the eye socket without the strap. If it suctions for two seconds, the seal fits.',
+        'Anti-fog coating wears off within a season. A drop of baby shampoo on the inside of the lens is the workaround.',
+        'Buy two pairs. One always lives in the bag.',
+      ]},
+      { heading: 'Cap', body: [
+        'Silicone is more comfortable than latex and lasts longer.',
+        'Long hair: a longer cap or two caps stacked.',
+      ]},
+    ],
+  },
+  'track-field': {
+    intro: 'Sizing in track and field changes by event. Trainers are the base layer for everyone.',
+    sections: [
+      { heading: 'Trainers', body: [
+        'A neutral running shoe in the kid\'s correct size. Not a court shoe. Not a basketball shoe.',
+        'Replace every 300-500 miles, which for a youth athlete is roughly every season.',
+      ]},
+      { heading: 'Sprint spikes (100-400m and hurdles)', body: [
+        'A stiffer plate, six to eight pin holes, lightweight upper.',
+        'Buy a half size smaller than the trainer. Sprint spikes should feel close to the foot.',
+      ]},
+      { heading: 'Distance flats / spikes (800m+)', body: [
+        'For 800-1600m: a flexible spike with four to six pins.',
+        'For 3200m+ on track: a flat or a softer spike.',
+      ]},
+      { heading: 'Jump spikes', body: [
+        'Long jump and triple jump: a spike with a heel plate. Different from a sprint spike.',
+        'High jump: a high jump spike, sized to the takeoff foot.',
+      ]},
+      { heading: 'Throwing shoe', body: [
+        'A flat-soled shoe with a smooth bottom for the throwing circle. No spikes.',
+        'Brand and exact model matters less than fit.',
+      ]},
+    ],
+  },
+  'cross-country': {
+    intro: 'Cross country gear is trainers, racing flats, and cold-weather layers. The fit decisions are simple.',
+    sections: [
+      { heading: 'Trainers', body: [
+        'A neutral running shoe sized correctly. Take to a running store for a gait check at the start of the season.',
+        'A second pair on rotation extends the life of both.',
+      ]},
+      { heading: 'Racing flats', body: [
+        'Optional through age 12. Worth it at age 13+.',
+        'Lighter and stiffer than trainers. Not for daily training.',
+      ]},
+      { heading: 'Spikes (cross country)', body: [
+        'Cross country spikes have aggressive lugs in addition to pins.',
+        'Different from track spikes. Track spikes do not bite on grass and mud.',
+      ]},
+      { heading: 'Cold weather', body: [
+        'Tights, a long-sleeve base layer, gloves, a beanie. Cross country season runs into November in most regions.',
+        'Layers come off mid-race in some warm-late-fall regions. Practice with the layers the kid will race in.',
+      ]},
+    ],
+  },
+  tennis: {
+    intro: 'Racket length is the most important fit decision in tennis. A wrong-length racket teaches a wrong swing.',
+    sections: [
+      { heading: 'Racket', body: [
+        'Ages 4-6: 19-21 inch.',
+        'Ages 7-8: 21-23 inch.',
+        'Ages 9-10: 23-25 inch.',
+        'Ages 11-12: 25-26 inch.',
+        'Ages 13+: 27 inch (full size).',
+        'Length test: rest the racket head on the ground. The grip should sit at or just below the kid\'s wrist.',
+      ]},
+      { heading: 'Shoes', body: [
+        'Court soles with a herringbone tread. Running shoes do not work. They damage the court and slide.',
+        'Hard court vs clay court soles differ. Most rec play is hard court.',
+      ]},
+      { heading: 'Balls', body: [
+        'Red dot foam or felt: ages 4-6.',
+        'Orange dot: ages 7-9.',
+        'Green dot: ages 10-11.',
+        'Yellow regular: ages 12+.',
+      ]},
+      { heading: 'Stringing', body: [
+        'A factory-strung racket loses tension in 3-6 months. Re-string at the beginning of each playing season.',
+      ]},
+    ],
+  },
+  golf: {
+    intro: 'Golf clubs are sized by length, by flex, and by the kid\'s height. Off-the-rack adult clubs do not work for kids.',
+    sections: [
+      { heading: 'Club length', body: [
+        'US Kids Golf publishes a height-to-set chart. Use it.',
+        'A starter set in the right length range matters more than the brand.',
+        'Used clubs are common and fine. The right length is everything.',
+      ]},
+      { heading: 'Glove', body: [
+        'Sized by hand circumference. The glove goes on the lead hand (left for right-handed players).',
+        'Should fit snug, no bunching at the palm.',
+      ]},
+      { heading: 'Shoes', body: [
+        'Spikeless golf shoes for kids. Simpler, more versatile, kinder on the parking lot.',
+        'A regular athletic shoe works at first. Spikes only when the kid is consistent enough to need them.',
+      ]},
+    ],
+  },
+  crew: {
+    intro: 'Most crew gear is club-provided. The fit decisions are uniform layer and cold-weather kit.',
+    sections: [
+      { heading: 'Unisuit', body: [
+        'The team usually selects the brand and color.',
+        'Sizing runs snug. A loose unisuit catches on the seat and the rigger.',
+      ]},
+      { heading: 'Layers', body: [
+        'Compression base layer for spring practice.',
+        'Windbreaker shell for cold or wet conditions. Hood preferred.',
+        'A pair of socks dedicated to crew. They wear out fast in the boat.',
+      ]},
+      { heading: 'Sunglasses', body: [
+        'With a strap or retainer. Glare off water is intense.',
+        'Sunscreen is also gear at this level. SPF 50.',
+      ]},
+    ],
+  },
+  'martial-arts': {
+    intro: 'The gi is the only thing parents typically buy outside the school. Sizing is by height and weight, not by age.',
+    sections: [
+      { heading: 'Gi (uniform)', body: [
+        'Karate and taekwondo: lightweight, sized by height in inches.',
+        'BJJ: heavier weave, sized 0-A6. The school will tell you what they require.',
+        'Two gis is the right number. Practices fill the laundry hamper fast.',
+      ]},
+      { heading: 'Belt', body: [
+        'Comes from the school. Length should wrap twice around the waist with about a foot of tail on each side.',
+      ]},
+      { heading: 'Mouthguard and protection', body: [
+        'Required for sparring in most styles.',
+        'Headgear, chest protectors, shin guards: usually sized by age and provided by the school for the first six months.',
+      ]},
+    ],
+  },
+  gymnastics: {
+    intro: 'The gym provides the apparatus. The kid needs leotards, grips at higher levels, and a few small accessories.',
+    sections: [
+      { heading: 'Leotards', body: [
+        'Sized child small through adult medium. The brand chart is the source of truth.',
+        'Three to four leotards is the working set. Chlorinated pools and chalk dust shorten their life.',
+      ]},
+      { heading: 'Grips', body: [
+        'Bars only. Level 4 or 5 is when most gyms introduce grips.',
+        'Sized by hand width. The gym\'s coach will help. Do not buy unprompted.',
+      ]},
+      { heading: 'Hair', body: [
+        'A small pouch with hair ties, bobby pins, gel, and a small hairbrush. Lives in the bag.',
+      ]},
+    ],
+  },
+  cheer: {
+    intro: 'Most cheer kit is team-supplied. Parents buy shoes, practice clothes, and a few small things.',
+    sections: [
+      { heading: 'Cheer shoes', body: [
+        'White, low-profile, designed for stunting (not running). Specific brands by team.',
+        'Sized to the foot. A snug fit is preferred for stunting.',
+      ]},
+      { heading: 'Practice wear', body: [
+        'Sized like athletic gear. Sports bra, leggings or shorts, a fitted t-shirt or tank.',
+      ]},
+      { heading: 'Bow', body: [
+        'The team usually orders one bow per season. Sized one-size-fits-all on a clip.',
+      ]},
+    ],
+  },
+  stunt: {
+    intro: 'Stunt and tumbling needs minimal gear. Mat shoes and athletic tape do most of the work.',
+    sections: [
+      { heading: 'Mat shoes', body: [
+        'Lightweight, flexible, designed for the cheer-stunt and tumbling track.',
+        'Sized to the foot. Replace at the end of every season.',
+      ]},
+      { heading: 'Bracing', body: [
+        'Ankle braces for kids with prior sprains. Sized by ankle circumference.',
+        'Wrist supports for tumbling drills. The coach will tell you when to add them.',
+      ]},
+    ],
+  },
+  theater: {
+    intro: 'Theater rarely requires sized gear. The decisions parents face are stage makeup, dance shoes for musicals, and a binder for the script.',
+    sections: [
+      { heading: 'Dance shoes (musicals)', body: [
+        'Character shoes for musical theater roles. Sized 1-2 sizes smaller than street shoe for women, true to size for men.',
+        'Tap shoes if the show calls for them. Same sizing rule.',
+      ]},
+      { heading: 'Stage makeup', body: [
+        'A starter kit (foundation, blush, mascara, eyeliner, brush set) lives in the bag through the run.',
+        'No size decision. Brand is up to the family.',
+      ]},
+    ],
+  },
+  band: {
+    intro: 'Instrument size matters more than parents expect. A 3/4 size violin or a junior-size trombone makes the difference between practicing and quitting.',
+    sections: [
+      { heading: 'Strings', body: [
+        'Violin: sized 1/16 through 4/4. The teacher measures arm length and selects.',
+        'Cello and bass: same fractional sizing. A 1/2 size cello is for ages 8-10.',
+      ]},
+      { heading: 'Brass', body: [
+        'Trumpet, trombone: most kids 10+ can play full size.',
+        'Tuba: a junior-size sousaphone or compact tuba for middle school.',
+      ]},
+      { heading: 'Woodwinds', body: [
+        'Clarinet, flute: full size from age 9-10. Some flutes have a curved head joint for shorter arms.',
+      ]},
+      { heading: 'Reeds and accessories', body: [
+        'Sized by strength (2.0, 2.5, 3.0). The teacher will say which.',
+      ]},
+    ],
+  },
+  choir: {
+    intro: 'Choir has almost no sized gear. The decisions are concert-attire fit and a folder for the music.',
+    sections: [
+      { heading: 'Concert attire', body: [
+        'Black pants/skirt, white top is the most common standard. Sized normally.',
+      ]},
+      { heading: 'Folder', body: [
+        'A black three-ring binder. A clip-on light for outdoor evening performances.',
+      ]},
+    ],
+  },
+  dance: {
+    intro: 'Dance shoes are sized differently than street shoes. The studio will tell you what to buy and what brand.',
+    sections: [
+      { heading: 'Ballet slippers', body: [
+        'Canvas or leather. Sized 1-2 sizes smaller than street shoe.',
+        'Full-sole for ages 4-7. Split-sole for ages 8+.',
+      ]},
+      { heading: 'Tap shoes', body: [
+        'Sized true to street shoe.',
+      ]},
+      { heading: 'Jazz shoes', body: [
+        'Sized 1 size smaller than street shoe.',
+      ]},
+      { heading: 'Tights and leotards', body: [
+        'Sized 4-6, 6-8, 8-10, etc. The studio specifies brand and color.',
+      ]},
+    ],
+  },
+  ballet: {
+    intro: 'Ballet sizing is technical. The studio prescribes everything. We list the major fit decisions parents should expect.',
+    sections: [
+      { heading: 'Slippers', body: [
+        'Canvas split-sole is the common entry from age 6+.',
+        'Full-sole leather for ages 3-6.',
+        'Sized 1 size smaller than street shoe. Snug from heel to toe.',
+      ]},
+      { heading: 'Pointe shoes', body: [
+        'Only when the teacher says (typically age 11-12 with two years of pre-pointe technique).',
+        'Fitted at a specialty store. Brand, size, width, vamp depth all matter.',
+      ]},
+      { heading: 'Leotard and tights', body: [
+        'Style and color set by the school.',
+        'Footed tights for younger dancers. Convertible (footed with a hole at the heel) for older.',
+      ]},
+    ],
+  },
+};
+
+const notes = sizingNotes[guide.slug] ?? {
+  intro: 'Sizing notes for this activity are coming. Email us at parentcoachplaybook@gmail.com if you want a specific question answered first.',
+  sections: [],
+};
+---
+<BaseLayout
+  title={`${guide.label} sizing guide`}
+  description={`How to size ${guide.label.toLowerCase()} gear for kids: practical fit tests, age-by-age sizing, what to do with used gear.`}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/what-to-buy/" class="hover:underline">What to Buy</a> · <a href={`/what-to-buy/${guide.slug}/`} class="hover:underline">{guide.label}</a> · Sizing
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        {guide.label} <em class="text-rust">sizing</em> guide.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {notes.intro}
+      </p>
+    </div>
+  </section>
+
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      {notes.sections.map((s) => (
+        <section class="mb-10">
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4" style="font-weight: 500;">{s.heading}</h2>
+          {s.body.map((p) => (
+            <p>{p}</p>
+          ))}
+        </section>
+      ))}
+
+      <aside class="mt-12 pt-8 border-t border-bone">
+        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">A note on used gear</p>
+        <p>Used cleats, skates, and shoes are fine if you replace the insole. The insole is the only piece that molds to a foot. A fresh insole resets the shoe to a neutral position so your kid is not standing in someone else’s shape.</p>
+        <p>Used helmets are fine if the certification sticker is current and the re-conditioning record is intact. NOCSAE for football, baseball, lacrosse. HECC for hockey. ASTM for women’s lacrosse goggles.</p>
+        <p>Used pads, bats, sticks, rackets are usually fine. Inspect for cracks. Trust the kid’s hands and feet on a fit test.</p>
+        <a href={`/what-to-buy/${guide.slug}/`} class="t-cta inline-block mt-4">Back to the {guide.label.toLowerCase()} guide →</a>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

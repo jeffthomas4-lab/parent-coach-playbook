@@ -7,7 +7,6 @@ lede: "The most expensive youth sport, period. Skates, helmet, stick, full pads.
 costSummary: "$400–700 for starter; $1,200–2,500 by middle school. Travel hockey adds another $4,000–10,000 per year."
 seasonNote: "Season runs late August through March in most areas. Spring 3-on-3 leagues are common. Summer skills camps are optional."
 publishedAt: 2026-03-16
-contributor: "dan-kowalski"
 ---
 
 Let's get this out of the way: hockey is expensive. There is no cheap way to outfit a hockey player. The minimum-viable starter kit at age 7 runs $400 to $700 and assumes you buy half of it used.

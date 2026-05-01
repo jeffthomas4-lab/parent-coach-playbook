@@ -7,7 +7,6 @@ lede: "Shoes, leotards, tights, dance bag. The shoes vary by style. Recital cost
 costSummary: "$200–400 to start; $600–1,500 a year by middle school with multiple styles plus recital costumes"
 seasonNote: "Studio season runs September–June with recitals in June. Competition dance runs February–July. Summer intensives run June–August."
 publishedAt: 2026-04-27
-contributor: "maren-bell"
 ---
 
 Dance is the activity where the gear list is the most style-specific. A ballerina, a hip-hop kid, and a tap dancer have almost zero gear in common.
