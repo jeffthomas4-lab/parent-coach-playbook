@@ -1,21 +1,25 @@
 {
   // Wrangler config for Parent Coach Playbook.
-  // The site builds via Astro's Cloudflare adapter and deploys through
-  // Cloudflare Pages. Wrangler is here for D1 management (migrations, queries)
-  // and so the local `astro dev` server can bind to the D1 instance via the
-  // platform proxy enabled in astro.config.mjs.
+  // Deploys as a Cloudflare Worker with Static Assets via `wrangler deploy`.
+  // The Astro Cloudflare adapter writes the SSR worker to dist/_worker.js
+  // and static assets alongside it in dist/.
   //
-  // Provision the D1 database once per environment with:
+  // First-time D1 setup:
   //   npx wrangler d1 create parent-coach-playbook
-  // Then paste the returned database_id below in place of the placeholder.
+  // Then paste the returned database_id below.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "parent-coach-playbook",
   "compatibility_date": "2026-04-30",
   "compatibility_flags": ["nodejs_compat"],
 
-  // This project deploys as a Cloudflare PAGES site, not a Worker.
-  // The Astro Cloudflare adapter writes static + SSR output here.
-  "pages_build_output_dir": "./dist",
+  // Worker entry point produced by the Astro Cloudflare adapter.
+  "main": "./dist/_worker.js/index.js",
+
+  // Static asset bundle uploaded alongside the Worker.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
 
   // D1 database for the camps repository.
   // Bind name `DB` is what server code uses (e.g. `runtime.env.DB.prepare(...)`).
