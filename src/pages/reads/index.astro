@@ -1,114 +1,180 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ArticleCard from '../../components/ArticleCard.astro';
-import { TOPICS, AGE_BANDS } from '../../data/site';
+import { TOPICS, AGE_BANDS, SPORTS } from '../../data/site';
 
 const all = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+// Group articles by topic. Articles without a topic field land in "uncategorized".
+const byTopic = new Map<string, typeof all>();
+for (const t of TOPICS) byTopic.set(t.slug, []);
+byTopic.set('uncategorized', []);
+for (const a of all) {
+  const slot = a.data.topic && byTopic.has(a.data.topic) ? a.data.topic : 'uncategorized';
+  byTopic.get(slot)!.push(a);
+}
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+const sportLabel = (s: string | undefined) =>
+  SPORTS.find(x => x.slug === s)?.label ?? null;
+const ageLabel = (a: string | undefined) =>
+  AGE_BANDS.find(x => x.slug === a)?.label ?? null;
 ---
 <BaseLayout
   title="Reads"
-  description="The full archive. Filter by topic, age, or browse all."
+  description="The full archive, grouped by topic. Communication, tryouts, game day, the hard moments, season operations, equipment, rec versus travel, and what youth sports is for."
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Reads</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
-        Every piece, organized.
+        Every piece, by <em class="text-rust">topic</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Filter by topic. Filter by your kid's age. Or scroll the whole feed.
+        Eight topics. Filter by your kid's age inside any topic. Or jump to the topic you need now.
       </p>
     </div>
   </section>
 
+  <!-- Topic jump nav -->
   <section class="border-b border-bone bg-paper-warm">
-    <div class="container-px py-8">
-      <div class="grid gap-4">
-        <div class="flex flex-wrap items-center gap-2" data-topic-filter>
-          <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Topic:</span>
-          <button data-topic="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
-          {TOPICS.map((t) => (
-            <button data-topic={t.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{t.label}</button>
-          ))}
-        </div>
-        <div class="flex flex-wrap items-center gap-2" data-age-filter>
-          <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Age:</span>
-          <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
-          {AGE_BANDS.map((a) => (
-            <button data-age={a.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{a.label}</button>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container-px py-12">
-      <div class="grid md:grid-cols-2 gap-x-10" data-feed>
-        {all.map((a) => (
-          <div data-topic-tag={a.data.topic ?? ''} data-age-tag={a.data.age ?? 'all-ages'}>
-            <ArticleCard
-              href={`/${a.data.phase}/${a.slug}/`}
-              format={a.data.format}
-              sport={a.data.sport}
-              age={a.data.age}
-              phase={a.data.phase}
-              title={a.data.title}
-              dek={a.data.dek}
-              publishedAt={a.data.publishedAt}
-            />
-          </div>
+    <div class="container-px py-6">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 items-center">
+        <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Jump to:</span>
+        {TOPICS.map((t) => (
+          <a href={`#${t.slug}`} class="font-display italic text-ink hover:text-rust text-sm" style="font-weight: 500;">
+            {t.label}
+          </a>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- Per-topic sections -->
+  {TOPICS.map((t) => {
+    const items = byTopic.get(t.slug) ?? [];
+    return (
+      <section id={t.slug} class="border-b border-bone scroll-mt-20">
+        <div class="container-px py-12 md:py-14">
+          <div class="grid md:grid-cols-12 gap-8">
+            <div class="md:col-span-4">
+              <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Topic</p>
+              <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
+                {t.label}
+              </h2>
+              <p class="font-display text-ink-soft mt-3 leading-snug">{t.blurb}</p>
+              <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+                {items.length} {items.length === 1 ? 'piece' : 'pieces'}
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2" data-age-filter={t.slug}>
+                <button data-age="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs" style="font-weight: 500;">All ages</button>
+                {AGE_BANDS.map((a) => (
+                  <button data-age={a.slug} class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">{a.label}</button>
+                ))}
+              </div>
+            </div>
+            <div class="md:col-span-8">
+              {items.length === 0 ? (
+                <p class="font-display italic text-ink-soft" style="font-weight: 500;">More pieces coming. We're building this topic out.</p>
+              ) : (
+                <ul class="grid gap-px bg-bone border border-bone" data-feed={t.slug}>
+                  {items.map((a) => (
+                    <li class="bg-paper" data-age-tag={a.data.age ?? 'all-ages'}>
+                      <a href={`/${a.data.phase}/${a.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
+                        <div class="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+                          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                            {[
+                              a.data.format === 'essay' ? 'Longer read' : null,
+                              sportLabel(a.data.sport),
+                              ageLabel(a.data.age) ? `age ${ageLabel(a.data.age)}` : null,
+                              fmtDate(a.data.publishedAt),
+                            ].filter(Boolean).join(' · ')}
+                          </p>
+                        </div>
+                        <h3
+                          class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors"
+                          style="font-weight: 500;"
+                          set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                        />
+                        {a.data.dek && (
+                          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Uncategorized fallback (older pieces without topic field) -->
+  {(byTopic.get('uncategorized')?.length ?? 0) > 0 && (
+    <section id="uncategorized" class="border-b border-bone scroll-mt-20">
+      <div class="container-px py-12">
+        <div class="grid md:grid-cols-12 gap-8">
+          <div class="md:col-span-4">
+            <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Topic</p>
+            <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">More reads</h2>
+            <p class="font-display text-ink-soft mt-3 leading-snug">Older pieces being re-tagged as we sweep.</p>
+          </div>
+          <div class="md:col-span-8">
+            <ul class="grid gap-px bg-bone border border-bone">
+              {byTopic.get('uncategorized')!.map((a) => (
+                <li class="bg-paper">
+                  <a href={`/${a.data.phase}/${a.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
+                    <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                      {fmtDate(a.data.publishedAt)}
+                    </p>
+                    <h3
+                      class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors mt-1"
+                      style="font-weight: 500;"
+                      set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                    />
+                    {a.data.dek && (
+                      <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
   <script>
-    const topicBar = document.querySelector('[data-topic-filter]');
-    const ageBar = document.querySelector('[data-age-filter]');
-    const feedEl = document.querySelector('[data-feed]');
-
-    let currentTopic = '';
-    let currentAge = '';
-
-    const apply = () => {
-      if (!feedEl) return;
-      feedEl.querySelectorAll<HTMLElement>('[data-topic-tag]').forEach((row) => {
-        const t = row.dataset.topicTag ?? '';
-        const a = row.dataset.ageTag ?? '';
-        const topicOk = !currentTopic || t === currentTopic;
-        const ageOk = !currentAge || a === currentAge || a === 'all-ages';
-        row.style.display = topicOk && ageOk ? '' : 'none';
-      });
-    };
-
-    const wire = (bar: Element | null, attr: string, setter: (v: string) => void) => {
-      if (!bar) return;
+    // Each topic block has its own age-filter bar and feed. Wire them per-topic.
+    document.querySelectorAll<HTMLElement>('[data-age-filter]').forEach((bar) => {
+      const topic = bar.dataset.ageFilter ?? '';
+      const feed = document.querySelector<HTMLElement>(`[data-feed="${topic}"]`);
+      if (!feed) return;
       bar.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        if (target.tagName !== 'BUTTON') return;
+        const t = e.target as HTMLElement;
+        if (t.tagName !== 'BUTTON') return;
         bar.querySelectorAll('button').forEach(b => {
           b.classList.remove('bg-ink', 'text-paper', 'border-ink');
           b.classList.add('border-bone', 'text-ink-soft');
         });
-        target.classList.remove('border-bone', 'text-ink-soft');
-        target.classList.add('bg-ink', 'text-paper', 'border-ink');
-        setter(target.getAttribute(`data-${attr}`) ?? '');
-        apply();
+        t.classList.remove('border-bone', 'text-ink-soft');
+        t.classList.add('bg-ink', 'text-paper', 'border-ink');
+        const age = t.getAttribute('data-age') ?? '';
+        feed.querySelectorAll<HTMLElement>('[data-age-tag]').forEach((row) => {
+          const tag = row.dataset.ageTag ?? '';
+          if (!age || tag === age || tag === 'all-ages') {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
       });
-    };
-
-    wire(topicBar, 'topic', v => { currentTopic = v; });
-    wire(ageBar, 'age', v => { currentAge = v; });
-
-    // Read query string on load (e.g. /reads/?topic=communication)
-    const params = new URLSearchParams(window.location.search);
-    const initialTopic = params.get('topic') ?? '';
-    if (initialTopic) {
-      const btn = topicBar?.querySelector(`button[data-topic="${initialTopic}"]`) as HTMLButtonElement | null;
-      btn?.click();
-    }
+    });
   </script>
 </BaseLayout>

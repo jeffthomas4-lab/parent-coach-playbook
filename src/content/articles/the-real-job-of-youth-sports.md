@@ -1,6 +1,6 @@
 ---
-title: "Youth sports is not college prep. It is the *next year*."
-dek: "Three things youth sports is for. None of them are the recruiting list. The whole job, written down."
+title: "Why we exist. *Three things youth sports is for.*"
+dek: "Have fun. Learn the rules and how to be a good teammate. Want to come back next year. Everything on this site exists to help with one of the three. The fourth, hidden challenge: doing all of this while coaching your own kid."
 topic: "rules-of-play"
 format: "essay"
 phase: "game"
@@ -15,7 +15,7 @@ Youth sports is for something specific. It's not what most people think it is.
 
 It is not preparation for college. It is not a slow-cook for the next varsity roster. It is not a place where you find out if your seven-year-old can throw with their elbow up. The rejection of these framings is not a soft take. It is the actual job, written down.
 
-The job is three things.
+The job is three things. This site exists to help with all three.
 
 ## One. Have a ton of fun.
 
@@ -27,31 +27,37 @@ Tee-ball doesn't have strikeouts for a reason. The rules were written by people 
 
 When the parent on your team starts coaching from the stands at the six-year-old level, the right move is to remind them what tee-ball is for. The point is not to win the four o'clock game. The point is for everyone in that dugout to want to play again on Tuesday.
 
-## Two. Learn the rules and how to play.
+## Two. Learn the rules and be a good teammate.
 
 A kid who plays a sport for two seasons should know the basics. What position they are playing and why. What the count means. Where the ball goes when they catch it.
 
-These are the actual content of the activity. Teachable. Repeatable. No private coach required.
+The other half of this is the part nobody tracks on a stat sheet. Be a good teammate. Pick up the kid who fell. Cheer for the strikeout that wasn't yours. Run on and off the field together. Say something to the kid on the other team after a good play.
 
-If a kid plays tee-ball for two summers and does not know what an out is, somebody dropped the ball. That is on the coach. Not the kid.
+This is the actual content of youth sports. Teachable. Repeatable. No private coach required.
 
-Learning the rules and how to play is also why coaching the same kid for too many seasons in a row can hurt them. If you are the only voice they hear from age six to age eleven, they get one version of the sport. They need other versions. They need the assistant coach who explains it differently. They need the league clinic that hands out wristbands. They need to be coached by someone who is not their parent.
+If a kid plays tee-ball for two summers and does not know what an out is, somebody dropped the ball. That is on the coach. If a kid plays for four years and is still the kid who pouts when they strike out, somebody else dropped the ball. That is on the parents and the coach together.
+
+Learning rules and learning to be a teammate is also why coaching the same kid for too many seasons in a row can hurt them. If you are the only voice they hear from age six to age eleven, they get one version of the sport and one version of how to be on a team. They need other versions. They need the assistant coach who explains it differently. They need the league clinic that hands out wristbands. They need to be coached by someone who is not their parent.
 
 ## Three. Want to come back next year.
 
-Only one metric matters in youth sports under twelve: Did they come back?
+Only one metric matters in youth sports under twelve: did they come back?
 
 If a kid quits at eight because the coach yelled, that is a failure of the program. Not the kid. If a kid quits at ten because their best friend made the A team and they did not, the program failed at sorting kids. If a kid is the best player on the team and they quit at eleven because they are bored, the coach failed to pull the next thing out of them.
 
 The objective at every level under high school is for the kid to want to play next year. Everything else is downstream of that. Skill, character, friendships, lessons about losing. None of it works if the kid quits.
 
-## What this means for you
+## The hidden fourth challenge: doing all three while coaching your own kid
 
-If you are coaching, the test is not the W column. The test is who shows up to next year's signups.
+The three things above are hard for any youth-sports family. They are especially hard for parent-coaches.
 
-If you are the parent of a kid in the program, the test is not whether they made the A team. The test is whether they want to be on a team in twelve months.
+The parent-coach has to make sure their own kid is having fun without showing favoritism that the team will sense. They have to teach their own kid the rules and the teammate piece while also coaching the eleven other kids on the roster. They have to be the reason their own kid wants to come back next year while also being the reason every other kid on the team wants to come back next year.
 
-If your league or coach is talking about college recruiting at the eight-year-old level, that is a tell. They are coaching for the wrong thing. They are not coaching for the kid in front of them. They are coaching for a fantasy version of the kid that is statistically unlikely to exist.
+Most parent-coaches handle the transition wrong at first. They overcorrect to look fair, which the kid hears as *you're mad at me*. Or they overcompensate to protect, which the team hears as *the coach has a favorite*. Either way, the kid notices. All the other kids notice.
+
+The rule that works: coach the team in the dugout. Keep the kid in the car. Both jobs are full-time. Neither one is more important than the other.
+
+If you cannot do both, get a different parent to coach the team. There are seasons when that is the right call. We are saying that out loud because nobody else will.
 
 ## A note on the recruiting math
 
@@ -61,4 +67,16 @@ Don't chase recruiting if a kid wants to. Do keep it from warping the youth expe
 
 The kid in your minivan is, almost certainly, in the ninety-three percent.
 
-The job is for them to have fun, learn the sport, and come back next year. That is the whole job.
+## What we do here
+
+Everything on this site exists to help with one of those three things, or with the fourth challenge that comes from coaching your own kid.
+
+We cover the logistics: practice plans, lineups, snack signups, group chats, fundraising, hotel blocks, picture day, the GameChanger setup, the parent-meeting agenda. The operational scaffolding that makes a season possible.
+
+We cover the equipment: what to buy, what to skip, where to buy it used, the right size, the certifications that matter. From baseball to ballet, swimming to swim caps, mouthguards to pointe shoes.
+
+We cover the relationship void. The drive to practice when the kid is dreading it. The first ninety seconds after a bad game. The kid who quits mid-season. The other parent who emails you about playing time. The teammate who is mean to your kid. The car ride after they don't make varsity.
+
+We cover the coach side. The drill library. The rotation rule. The substitution pattern. The conversation with the parent who is coaching from the stands. The thing to say when your own kid is the worst on the team.
+
+The job is for the kid to have fun, learn the sport and how to be a teammate, and want to come back next year. The job for the parent and the parent-coach is to make all of that possible without breaking the relationship in the process. That is the whole job.

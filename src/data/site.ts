@@ -25,14 +25,13 @@ export const EDITORIAL = {
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
   { label: 'Reads', href: '/reads/' },
-  { label: 'Coaching tips', href: '/coaching-tips/' },
+  { label: 'Drills', href: '/coaching-tips/' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
   { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
-  { label: 'Newsletter', href: '/newsletter/' },
 ];
 
 export const UTILITY_NAV = [
-  { label: 'Resources', href: '/resources/' },
+  { label: 'Newsletter', href: '/newsletter/' },
   { label: 'About', href: '/about/' },
   { label: 'Search', href: '/search/' },
 ];
@@ -129,33 +128,34 @@ export type TopicSlug = (typeof TOPICS)[number]['slug'];
 // What to Buy guides. Each one resolves to /what-to-buy/[slug]/ and renders the markdown
 // from src/content/guides/[slug].md. Each sport guide also gets a sizing companion at
 // /what-to-buy/[slug]/sizing/.
+// Sorted alphabetically by label within each category.
 export const BUYING_GUIDES = [
-  // Sports
+  // Sports (alphabetical)
   { slug: 'baseball',      label: 'Baseball',         category: 'sport',    blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
-  { slug: 'softball',      label: 'Softball',         category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
-  { slug: 'soccer',        label: 'Soccer',           category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle.' },
   { slug: 'basketball',    label: 'Basketball',       category: 'sport',    blurb: 'Shoes, ball, athletic gear. Indoor sport, low overhead.' },
+  { slug: 'crew',          label: 'Crew',             category: 'sport',    blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
+  { slug: 'cross-country', label: 'Cross country',    category: 'sport',    blurb: 'Trainers, racing flats, layered cold-weather kit.' },
   { slug: 'flag-football', label: 'Flag football',    category: 'sport',    blurb: 'Mouthguard, cleats, gloves. No pads, no helmet.' },
-  { slug: 'football',      label: 'Tackle football',  category: 'sport',    blurb: 'Helmet, pads, cleats. The most equipment-heavy youth sport.' },
+  { slug: 'golf',          label: 'Golf',             category: 'sport',    blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
+  { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
   { slug: 'hockey',        label: 'Hockey',           category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
   { slug: 'lacrosse',      label: 'Lacrosse',         category: 'sport',    blurb: 'Stick, helmet, gloves, pads. Boys and girls gear differs.' },
-  { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
-  { slug: 'swimming',      label: 'Swimming',         category: 'sport',    blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
-  { slug: 'track-field',   label: 'Track and field',  category: 'sport',    blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
-  { slug: 'cross-country',label: 'Cross country',    category: 'sport',    blurb: 'Trainers, racing flats, layered cold-weather kit.' },
-  { slug: 'tennis',        label: 'Tennis',           category: 'sport',    blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
-  { slug: 'golf',          label: 'Golf',             category: 'sport',    blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
-  { slug: 'crew',          label: 'Crew',             category: 'sport',    blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
   { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
-  { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
-  { slug: 'cheer',         label: 'Cheerleading',     category: 'activity', blurb: 'Shoes, bow, practice clothes. Competition uniforms via the team.' },
-  { slug: 'stunt',         label: 'Stunt and tumbling', category: 'activity', blurb: 'Mat shoes, bracing, athletic tape. The tumbling-track essentials.' },
-  // Performing arts
-  { slug: 'theater',       label: 'Theater',          category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
+  { slug: 'soccer',        label: 'Soccer',           category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle.' },
+  { slug: 'softball',      label: 'Softball',         category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
+  { slug: 'swimming',      label: 'Swimming',         category: 'sport',    blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
+  { slug: 'football',      label: 'Tackle football',  category: 'sport',    blurb: 'Helmet, pads, cleats. The most equipment-heavy youth sport.' },
+  { slug: 'tennis',        label: 'Tennis',           category: 'sport',    blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
+  { slug: 'track-field',   label: 'Track and field',  category: 'sport',    blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
+  { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
+  // Performing arts (alphabetical)
+  { slug: 'ballet',        label: 'Ballet',           category: 'activity', blurb: 'Slippers, leotard, tights. Pointe later, on the teacher\'s timeline.' },
   { slug: 'band',          label: 'Band',             category: 'activity', blurb: 'Instrument, reeds, accessories. Rent before you buy.' },
+  { slug: 'cheer',         label: 'Cheerleading',     category: 'activity', blurb: 'Shoes, bow, practice clothes. Competition uniforms via the team.' },
   { slug: 'choir',         label: 'Choir',            category: 'activity', blurb: 'Almost no equipment. The list is short and cheap.' },
   { slug: 'dance',         label: 'Dance',            category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
-  { slug: 'ballet',        label: 'Ballet',           category: 'activity', blurb: 'Slippers, leotard, tights. Pointe later, on the teacher\'s timeline.' },
+  { slug: 'stunt',         label: 'Stunt and tumbling', category: 'activity', blurb: 'Mat shoes, bracing, athletic tape. The tumbling-track essentials.' },
+  { slug: 'theater',       label: 'Theater',          category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
 ] as const;
 
 export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
