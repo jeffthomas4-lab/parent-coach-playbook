@@ -13,6 +13,10 @@
   "compatibility_date": "2026-04-30",
   "compatibility_flags": ["nodejs_compat"],
 
+  // This project deploys as a Cloudflare PAGES site, not a Worker.
+  // The Astro Cloudflare adapter writes static + SSR output here.
+  "pages_build_output_dir": "./dist",
+
   // D1 database for the camps repository.
   // Bind name `DB` is what server code uses (e.g. `runtime.env.DB.prepare(...)`).
   "d1_databases": [
