@@ -143,13 +143,13 @@ Cost range: $80–200.
 
 This is the most important buying decision in the sport.
 
-One. Fit matters more than brand. Have a certified equipment manager fit the helmet. Most football programs have one. Most national chains do not.
+One. NOCSAE certification is mandatory. Every legal youth football helmet has it. This is non-negotiable.
 
-Two. Look at the Virginia Tech helmet ratings. They publish a public list of helmets with star ratings (1 to 5). 4 and 5 star helmets are the current standard for safety. Older models drop down the list.
+Two. Virginia Tech STAR rating matters. They publish a public list of helmets with star ratings (1 to 5). 4 and 5 star helmets are the current standard for safety. Older models drop down the list. Check Virginia Tech's official helmet ratings.
 
-Three. Buy the helmet with the most padding your kid will wear. The most protective helmet is no good if your kid won't keep it on.
+Three. Fit matters more than brand. Have a certified equipment manager fit the helmet. Most football programs have one. Most national chains do not.
 
-Four. Reconditioning every 1 to 2 years. Plan for the cost. Don't skip the schedule.
+Four. Reconditioning every 1 to 2 years is mandatory, not optional. Reconditioning runs $40 to $80. Budget for it. Helmets older than 10 years should be replaced entirely.
 
 ## A few honest notes
 
@@ -157,6 +157,4 @@ The single best thing you can do for your kid in football: limit hits to the hea
 
 If your kid wants to play tackle and you are nervous, flag football is a legitimate alternative through age 12 or 13. Many of the best NFL athletes played flag through middle school. The skills transfer.
 
-Don't buy used helmets unless they're from a certified reconditioning shop with current paperwork. The savings aren't worth the risk.
-
-— Jeff
+Don't buy used helmets unless they're fro

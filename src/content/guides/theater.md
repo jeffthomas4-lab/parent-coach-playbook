@@ -121,4 +121,4 @@ Most school theater programs welcome volunteer parents (set construction, costum
 
 The kid who tells you they want to do theater "for fun" sometimes turns into the kid who is doing eight productions a year. Pace yourself.
 
-— Maren
+## Sizing 

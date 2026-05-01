@@ -109,4 +109,4 @@ If your kid is auditioning for honor choir or community children's chorus, the a
 
 Show choir is a different sport. If your kid does show choir, expect the costume and travel costs to dwarf the regular choir budget.
 
-— Maren
+## Sizing 

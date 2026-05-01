@@ -7,7 +7,7 @@ publishedAt: 2026-01-15
 featured: true
 ---
 
-GameChanger (GC, to most parents) is the standard for youth baseball, softball, and a growing list of other sports. If your team is not using it, the parents will notice. If your team is using it badly, the parents will also notice.
+GameChanger (GC, to most parents) is the standard for youth baseball, softball, and a growing list of other sports. Parents will notice if your team isn't using it. They'll also notice if you set it up wrong.
 
 We used to publish a setup walkthrough here. We took it down because GameChanger updates the product faster than we can update the post. A walkthrough that goes stale is worse than no walkthrough.
 

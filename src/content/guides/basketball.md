@@ -149,4 +149,4 @@ Don't buy your kid a $200 signature pro shoe at age 7. They will outgrow it in 3
 
 The ball your kid plays with at home matters more than the one at practice. They get more reps in the driveway than in the gym.
 
-— Dan
+## Sizin

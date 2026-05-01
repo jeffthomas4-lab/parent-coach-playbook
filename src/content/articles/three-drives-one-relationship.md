@@ -1,6 +1,6 @@
 ---
 title: "Three drives. *One relationship.*"
-dek: "Why what happens in the car matters more than what happens on the field. The thing nobody tells you when you sign up to coach your own kid."
+dek: "Why what happens in the car matters more than what happens on the field. The framework, anchored in a t-ball moment."
 format: "essay"
 issue: 0
 phase: "drive-home"
@@ -11,17 +11,15 @@ publishedAt: 2026-04-30
 featured: false
 ---
 
-Nobody tells you this when you sign up to coach your own kid's team. The hardest part is not the lineup card. It is the twelve minutes in the car after the game.
+A six-year-old gets in the car after a Saturday tee-ball game. Tee-ball, where there are no strikeouts. Tee-ball, where the rules are written specifically to keep kids from feeling bad. The kid in the back seat is still upset. He missed two ground balls and forgot which way to run after he hit the ball.
 
-We know a coach who had run his program for years. He had coached at every level. He prepped hard and knew the details. None of that prepared him for the first time his kid struck out four times on a Saturday and got in the car with his face down. He had nothing to say.
+The parent in the front seat tries the obvious. "You did great, buddy." The kid says nothing. "Want some ice cream?" Still nothing.
 
-His wife had something. She turned around and said *I love watching you play.* That was it. The kid looked up. The week unlocked.
-
-That was when the framework became clear. Three pieces, not one.
+That parent has the same problem the parent of a high-school varsity kid has. The problem is not the score. The problem is the ride.
 
 ## The framework
 
-Every game has three drives. The drive there. The game itself. The drive home.
+Every game, at every age, has three drives. The drive there. The game itself. The drive home.
 
 The drive there is roughly fifteen minutes of pre-game prep. Mindset. The job for today. The reduction of stakes. The handoff at the parking lot.
 
@@ -31,9 +29,9 @@ The drive home is forty-five minutes long if you count the dinner table that nig
 
 Three drives. One relationship.
 
-## Most coaches obsess over the middle
+## Most parents obsess over the middle
 
-The middle is the part everybody talks about. The film. The play call. The pre-game speech. The coaching clinics and the certifications and the Twitter threads. All middle.
+The middle is the part everybody talks about. The film. The play call. The pre-game speech. The coaching clinics, the certifications, the Twitter threads. All middle.
 
 The middle is also the smallest part of the relationship.
 
@@ -49,20 +47,28 @@ The drive home decides what the next week looks like at home. The first ninety s
 
 This is the part nobody warns you about. There is no certification for the drive home.
 
+## Why tee-ball matters here
+
+Tee-ball is the proof. The rules of tee-ball were written to make sure six-year-olds want to come back next week. No strikeouts. No outs in some leagues. Everybody bats every inning. The score is barely tracked. The whole game is engineered around the question: did the kid have fun and want to come back.
+
+That question doesn't go away when the kid turns eight. Or eleven. Or fourteen. The question gets harder to ask out loud because the games start to feel important. But the question is still the only one that matters.
+
+The drive home is where that question gets answered. Not in the box score. Not in the lineup card. In the first thing you say when the kid puts the seatbelt on.
+
 ## Coach the team. Keep the kid.
 
 The hardest job in youth sports is treating your kid like every other kid for two hours, then putting them back in the car as your kid.
 
-Most parent-coaches handle the transition wrong. They overcorrect to look fair, which the kid hears as dad is mad. Or they overcompensate to protect, which the team hears as the coach has a favorite. Either way, the kid notices. All eleven other kids notice.
+Most parent-coaches handle the transition wrong. They overcorrect to look fair, which the kid hears as *you're mad at me*. Or they overcompensate to protect, which the team hears as *the coach has a favorite*. Either way, the kid notices. All the other kids notice.
 
-The rule we landed on, after one season of getting it wrong and one season of starting to get it right: coach the team in the dugout. Keep the kid in the car. Both jobs are full-time. Neither one is more important than the other.
+The rule that works, after watching coaches get it wrong and start to get it right: coach the team in the dugout. Keep the kid in the car. Both jobs are full-time. Neither one is more important than the other.
 
 If you cannot do both, get a different parent to coach the team. There are seasons when that is the right call. We are saying that out loud because nobody else will.
 
-## What this site is and isn't
+## What this site is for
 
-This site is not a coaching certification. It is not a parenting framework with capital letters. It is a place where coaches and parents write down what we learned about running the snack rotation and coaching the team and driving to violin afterward.
+This site is not a coaching certification. It is not a parenting framework with capital letters. It is sideline notes from parents who have done this for years across many sports.
 
-Most posts are short. Some are longer. They come from interviews with parent-coaches in our network and from our own seasons on the sideline. We filter for what actually works.
+Most posts are short. Some are longer. They come from years on the parent side of youth sports plus a network of coaches and parents we trust. We filter for what actually works.
 
 The drive home is the real game. We are still warming up for it. So is everyone else.

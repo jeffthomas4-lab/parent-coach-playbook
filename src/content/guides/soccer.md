@@ -153,4 +153,4 @@ The most expensive part of soccer is the league. A $200 set of gear is cheap com
 
 If your kid plays goalie, get them a real pair of goalie gloves. The shared team pair has been used by ten kids and smells like a trash can.
 
-— Maren
+## Sizing 

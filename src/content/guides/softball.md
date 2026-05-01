@@ -31,6 +31,10 @@ Tee-ball softball bats look almost identical to tee-ball baseball bats. The one-
 
 Cost range: $25–55.
 
+**Pants**
+
+If you have a choice, pick gray or tan pants over white. White stains easily and stays stained. Way easier to keep clean if you avoid white.
+
 **A face mask (for pitchers and infielders)**
 
 Many youth softball leagues require a face mask for pitchers and corner infielders. Some require it for everyone. Check your league rules before opening day.
@@ -38,6 +42,8 @@ Many youth softball leagues require a face mask for pitchers and corner infielde
 Cost range: $25–45.
 
 ## Ages 8–10
+
+Coach-pitch softball typically starts at age 6 and overlaps with tee-ball. The transition happens naturally as kids improve. Age, talent, and experience are mixed together at the youth level. That is the point. The goal is for kids to have fun, learn how to be a teammate, and learn a little bit about the sport.
 
 The ball moves to a 12-inch at most leagues by age 10. Pitching also begins (live, not from a machine) at this age in many leagues.
 
@@ -119,14 +125,4 @@ Most high-school programs provide jerseys, helmets, and team catching gear. You 
 
 Travel softball is its own economy. Showcase tournaments cost $300 to $800 each. National tournaments add travel and lodging. A serious 16U travel team runs $3,000 to $6,000 per season.
 
-We are not telling you whether that's worth it. We are telling you it adds up.
-
-## A few honest notes
-
-Softball-specific cleats exist but are not necessary for most kids. Baseball cleats work for softball at every level under high school.
-
-Catcher's gear in softball is similar to baseball. The mitt is the only catcher-specific piece that matters; it has a softer pocket designed for the bigger ball.
-
-The face mask debate: some kids hate them, some don't notice. Buy one early so they get used to it before pitching gets fast.
-
-— Maren
+We are not telling you whether that's worth it. We are telling you it add

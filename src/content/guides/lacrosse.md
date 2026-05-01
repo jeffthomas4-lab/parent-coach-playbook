@@ -47,7 +47,7 @@ Cost range: $30–60.
 
 **Shoulder pads, arm pads, mouthpiece, cup**
 
-Shoulder pads and arm pads are required. Most starter programs sell a kit of all four. Mouthpiece and cup are required separately.
+Shoulder pads and arm pads are required. Most starter programs sell a kit of all four. Mouthpiece and cup are required separately. Note: NOCSAE ND200 chest protectors have been mandatory for all boys lacrosse since the 2021-22 season. Check with your league for specific requirements.
 
 Cost range: $80–150 for the pad kit, $5 to $15 for mouthpiece, $10 to $20 for cup.
 
@@ -211,6 +211,4 @@ Boys and girls lacrosse sticks are NOT interchangeable. The heads are shaped dif
 
 Used lacrosse gear is plentiful. Most lacrosse-heavy regions have annual gear swaps in February or March. Worth showing up.
 
-Stringing your own pocket is a real skill. Most kids don't learn until age 12 or 13. Your local lacrosse shop will string for free with most stick purchases.
-
-— Maren
+Stringing your 

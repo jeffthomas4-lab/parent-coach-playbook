@@ -23,7 +23,7 @@ Learn-to-skate programs usually rent skates for $5 to $10 a session. Use that un
 
 If you're buying: youth recreational skates are fine at this age. Don't buy high-end skates for a 5-year-old who will outgrow them in 4 months.
 
-How to choose: skate fit is professional territory. Have a hockey shop fit them. The skate should be 1 to 1.5 sizes smaller than street shoe size. The heel should sit firmly in the heel pocket.
+How to choose: skate fit is professional territory. Have a hockey shop fit them. Hockey skates run 1 to 1.5 sizes smaller than street shoe size. The heel should sit firmly in the heel pocket. Get them baked at the pro shop to mold the boot to your kid's foot.
 
 Cost range: $80–180 new. Used: $30–80.
 
@@ -179,6 +179,4 @@ The helmet is the one piece you do not buy used unless you can verify the certif
 
 Equipment swaps and exchanges are common in hockey communities. Local rinks often have semi-annual gear swaps where outgrown equipment changes hands at very fair prices. Get on the email list for your rink.
 
-Hockey families share. Older parents pass down outgrown gear to younger families all the time. Be generous when it's your turn.
-
-— Dan
+Hockey families share. Older parents pass down outgrown gear to younger

@@ -195,4 +195,4 @@ The studio dress code is not a suggestion. Most studios are strict. Read it care
 
 If your kid is doing competition dance, expect the budget to triple compared to recreational dance. The costumes, the conventions, the travel, the privates. Plan accordingly.
 
-— Maren
+## Sizing 

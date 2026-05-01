@@ -47,11 +47,13 @@ Cost range: $30–55.
 
 **Pants and a belt**
 
-Leagues usually require white or gray pants. The team provides the jersey. A simple elastic belt works. Don't buy fancy pants for a 6-year-old who slides into bases without thinking.
+Leagues usually require white or gray pants. The team provides the jersey. A simple elastic belt works. If you have a choice, pick gray or tan pants over white. White stains easily and stays stained. Way easier to keep clean if you avoid white.
 
 Cost range: $20–30 for pants, $8–12 for a belt.
 
 ## Ages 8–10 (Coach-pitch and machine-pitch)
+
+Coach-pitch baseball typically starts at age 6 and overlaps with tee-ball. The transition happens naturally as kids improve. Age, talent, and experience are mixed together at the youth level. That is the point. The goal is for kids to have fun, learn how to be a teammate, and learn a little bit about the sport.
 
 This is when kids start to actually look like baseball players. The gear gets a little more serious. Most kids stay with the same glove for two years and outgrow their bat halfway through year two.
 
@@ -95,7 +97,7 @@ Cost range: $80–180.
 
 **A 29-to-30 inch bat**
 
-Look for the USSSA stamp if your league requires it. Drop weight (the difference between length and weight) usually goes from -10 to -8 in this age band. The one-arm test still works. Don't buy your kid a heavier bat to "make them stronger."
+Look for the USSSA stamp if your league requires it. For Little League, use a USABat-approved bat with drop weight of -10 or -11 per USA Baseball rules. Drop weight (the difference between length and weight) usually goes from -10 to -8 in this age band. The one-arm test still works. Don't buy your kid a heavier bat to "make them stronger."
 
 Cost range: $80–250 for a decent name-brand bat. The $400 composite bats are not necessary.
 
@@ -147,12 +149,4 @@ Travel and showcase ball gets expensive fast: $1,500 to $4,000 per season for fe
 
 ## A few honest notes
 
-Don't buy a kid's gear in February for a season that starts in May. Kids grow. Buy as close to the season as you can.
-
-Don't buy used cleats. The mold of the previous kid's foot is in there. Cleats are the one thing always worth buying new.
-
-Don't buy a glove online without trying it first. Glove fit is a hand thing, not a size-chart thing.
-
-Don't tell your kid the bat cost a lot. It will be in the dugout under a pile of helmets within three weeks. They are 11. Let them.
-
-— Maren
+Don't buy a

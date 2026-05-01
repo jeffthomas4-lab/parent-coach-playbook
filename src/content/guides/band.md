@@ -127,4 +127,4 @@ Don't buy a kid an expensive instrument before they've stuck with the program fo
 
 Reeds, oil, strings, and rosin are all consumables. Keep a small bin of spares at home. Running out of reeds the night before a concert is a stressor your family doesn't need.
 
-— Maren
+## Sizing 
