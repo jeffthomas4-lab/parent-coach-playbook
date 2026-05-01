@@ -1,7 +1,7 @@
 ---
 title: "Flag-Pulling Tag Drill"
 summary: "Build hand-eye coordination and pulling technique in a game-like chase. 10 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "5-7"
 focus: "fundamentals"
 publishedAt: 2026-01-06

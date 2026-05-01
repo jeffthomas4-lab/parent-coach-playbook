@@ -1,7 +1,7 @@
 ---
 title: "Block-Shed Drill"
 summary: "Teach defenders to feel a block, shed it, and pursue. 10 minutes."
-sport: "tackle football"
+sport: "football"
 age: "11-12"
 focus: "fundamentals"
 publishedAt: 2026-02-02

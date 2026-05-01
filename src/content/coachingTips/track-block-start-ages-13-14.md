@@ -1,7 +1,7 @@
 ---
 title: "Block Start"
 summary: "Teach the mechanics of an effective explosive start from the blocks. 10 minutes."
-sport: "track and field"
+sport: "track-field"
 age: "13-14"
 focus: "fundamentals"
 publishedAt: 2026-04-09

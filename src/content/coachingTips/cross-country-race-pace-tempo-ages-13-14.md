@@ -1,7 +1,7 @@
 ---
 title: "Race-Pace Tempo"
 summary: "Build aerobic capacity at a steady, challenging pace. 20 minutes."
-sport: "cross country"
+sport: "cross-country"
 age: "13-14"
 focus: "fundamentals"
 publishedAt: 2026-04-27

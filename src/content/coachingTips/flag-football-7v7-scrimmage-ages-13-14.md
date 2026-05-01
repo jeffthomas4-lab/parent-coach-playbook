@@ -1,7 +1,7 @@
 ---
 title: "Full-Field 7v7 Scrimmage with Rules"
 summary: "Run a controlled scrimmage that teaches game speed and decision-making. 25 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "13-14"
 focus: "scrimmage"
 publishedAt: 2026-01-24

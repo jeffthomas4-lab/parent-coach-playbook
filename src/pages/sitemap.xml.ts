@@ -1,18 +1,35 @@
 import { getCollection } from 'astro:content';
 import { SITE, BUYING_GUIDES } from '../data/site';
+import { listAllCampSlugsApproved } from '../lib/camps-db';
 import type { APIContext } from 'astro';
 
-export async function GET(_ctx: APIContext) {
+// SSR so we can include approved camps from D1 at request time.
+export const prerender = false;
+
+export async function GET(ctx: APIContext) {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
   const guides = await getCollection('guides', ({ data }) => !data.draft);
   const resources = await getCollection('resources', ({ data }) => !data.draft && data.type !== 'external');
   const tips = await getCollection('coachingTips', ({ data }) => !data.draft);
+
+  // Camps: pull approved slugs from D1 if the binding is available.
+  const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;
+  let campSlugs: string[] = [];
+  if (env?.DB) {
+    try {
+      campSlugs = await listAllCampSlugsApproved(env.DB);
+    } catch {
+      // ignore — sitemap should still render
+    }
+  }
 
   const staticUrls = [
     '/',
     '/start-here/',
     '/reads/',
     '/coaching-tips/',
+    '/camps/',
+    '/camps/submit/',
     '/drive-there/',
     '/game/',
     '/drive-home/',
@@ -28,6 +45,7 @@ export async function GET(_ctx: APIContext) {
     '/search/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
+    ...campSlugs.map(slug => `/camps/${slug}/`),
   ];
 
   const resourceUrls = resources.map(r => ({

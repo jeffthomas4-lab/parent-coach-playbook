@@ -67,8 +67,4 @@ If you cannot do both, get a different parent to coach the team. There are seaso
 
 ## What this site is for
 
-This site is not a coaching certification. It is not a parenting framework with capital letters. It is sideline notes from parents who have done this for years across many sports.
-
-Most posts are short. Some are longer. They come from years on the parent side of youth sports plus a network of coaches and parents we trust. We filter for what actually works.
-
-The drive home is the real game. We are still warming up for it. So is everyone else.
+This site is not a coaching certification. It is not a parenting framework with capital letters. It is sideline notes from parents who have done this for years acros

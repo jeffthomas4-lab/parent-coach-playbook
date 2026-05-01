@@ -1,7 +1,7 @@
 ---
 title: "Defensive Contain"
 summary: "Teach defenders to control the edge and force plays inside. 10 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "8-10"
 focus: "fundamentals"
 publishedAt: 2026-01-15

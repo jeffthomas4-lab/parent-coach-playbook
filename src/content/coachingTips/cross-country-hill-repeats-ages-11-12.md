@@ -1,7 +1,7 @@
 ---
 title: "Hill Repeats"
 summary: "Build leg strength and mental toughness on a slope. 20 minutes."
-sport: "cross country"
+sport: "cross-country"
 age: "11-12"
 focus: "fundamentals"
 publishedAt: 2026-04-21

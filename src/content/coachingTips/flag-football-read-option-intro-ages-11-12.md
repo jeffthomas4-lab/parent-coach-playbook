@@ -1,7 +1,7 @@
 ---
 title: "Read-Option Intro"
 summary: "Teach QBs to read a defender and make a keep-or-pitch decision. 15 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "11-12"
 focus: "situational"
 publishedAt: 2026-01-18

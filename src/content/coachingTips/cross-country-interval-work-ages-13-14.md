@@ -1,7 +1,7 @@
 ---
 title: "Interval Work"
 summary: "Teach pace control with tempo runs and mile repeats. 25 minutes."
-sport: "cross country"
+sport: "cross-country"
 age: "13-14"
 focus: "fundamentals"
 publishedAt: 2026-04-24

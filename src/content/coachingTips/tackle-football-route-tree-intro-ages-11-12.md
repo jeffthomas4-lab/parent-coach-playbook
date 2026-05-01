@@ -1,7 +1,7 @@
 ---
 title: "Route Tree Intro"
 summary: "Teach receivers the basic five routes: go, slant, in, out, curl. 15 minutes."
-sport: "tackle football"
+sport: "football"
 age: "11-12"
 focus: "fundamentals"
 publishedAt: 2026-02-05

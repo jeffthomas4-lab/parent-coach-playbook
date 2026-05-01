@@ -1,7 +1,7 @@
 ---
 title: "The Screen Pass"
 summary: "Build timing and blocking instinct: receiver becomes a target after the catch. 12 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "8-10"
 focus: "situational"
 publishedAt: 2026-01-12

@@ -233,3 +233,112 @@ If you ever need to hand this off to a developer, point them at:
 3. The `studio/README.md`
 
 Everything they need is in those three files plus `src/data/site.ts`.
+
+---
+
+## Camps database setup (D1)
+
+The camps repository runs on Cloudflare D1. One-time setup on the Windows dev machine.
+
+### 1. Authenticate Wrangler
+
+```powershell
+npx wrangler login
+```
+
+A browser window opens. Sign in with the Cloudflare account that owns the Pages project.
+
+### 2. Create the production D1 database
+
+```powershell
+npx wrangler d1 create parent-coach-playbook
+```
+
+The output ends with a JSON snippet like:
+
+```
+[[d1_databases]]
+binding = "DB"
+database_name = "parent-coach-playbook"
+database_id = "abc123-def456-ghi789-..."
+```
+
+Copy the `database_id` value. Open `wrangler.jsonc` at the project root. Replace the placeholder `REPLACE_WITH_D1_DATABASE_ID` with the actual id. Commit and push.
+
+### 3. Apply the schema migration to production
+
+```powershell
+npx wrangler d1 migrations apply parent-coach-playbook --remote
+```
+
+Confirm the prompt with `y`. Two tables get created: `submitters` and `camps`.
+
+### 4. Confirm the binding is wired through Cloudflare Pages
+
+The D1 binding needs to be attached to the Pages project (the `wrangler.jsonc` file controls Wrangler operations, but Cloudflare Pages reads its own binding configuration).
+
+In the Cloudflare dashboard: Pages → parent-coach-playbook → Settings → Functions → D1 database bindings → Add binding.
+
+- Variable name: `DB`
+- D1 database: parent-coach-playbook
+
+Save. Trigger a fresh deploy (a no-op commit will do it).
+
+### 5. Apply the schema locally for `astro dev`
+
+```powershell
+npx wrangler d1 migrations apply parent-coach-playbook --local
+```
+
+The local DB lives under `.wrangler/state/v3/d1/` and is git-ignored.
+
+### 6. Smoke test
+
+After Cloudflare Pages re-deploys with the binding:
+
+- Visit `https://parentcoachplaybook.com/camps/` — should render the empty-state.
+- Visit `https://parentcoachplaybook.com/camps/submit/` — submit a test camp.
+- Visit `https://parentcoachplaybook.com/admin/camps/` — should be gated by Cloudflare Access (see next section).
+
+## Cloudflare Access on /admin/
+
+The admin queue and the admin API endpoints (/api/admin/camps/*) must be gated. Configure Cloudflare Access to require a verified email on those routes.
+
+### 1. Enable Cloudflare Access for the zone
+
+Cloudflare dashboard → Zero Trust → Access → Applications → Add an application → Self-hosted.
+
+- Application name: `parentcoachplaybook admin`
+- Session duration: 24 hours
+- Application domain: `parentcoachplaybook.com`
+- Path: `/admin/*`
+- Add a second include path: `/api/admin/*`
+
+### 2. Add a policy
+
+- Policy name: `Editorial admins`
+- Action: Allow
+- Include rule: `Emails` → list the admin emails (e.g. `parentcoachplaybook@gmail.com`).
+
+Save.
+
+### 3. Update the admin email allowlist in code
+
+Open `src/lib/admin-auth.ts`. Update `ALLOWED_REVIEWERS_RAW` to match the emails you allow-listed in Access. Comma-separated. Re-deploy.
+
+### 4. Test the gate
+
+Visit `/admin/camps/` in a private/incognito window. Cloudflare's Access login screen should appear before any site content. Sign in with an allow-listed email. The moderation queue then renders.
+
+### Useful Wrangler commands
+
+```powershell
+# List pending camps from production.
+npx wrangler d1 execute parent-coach-playbook --remote --command "SELECT id, name, city, state, submitted_at FROM camps WHERE status='pending' ORDER BY submitted_at DESC;"
+
+# Promote a submitter to trusted.
+npx wrangler d1 execute parent-coach-playbook --remote --command "UPDATE submitters SET trust_level='trusted' WHERE email='someone@example.com';"
+
+# Query approved camp count.
+npx wrangler d1 execute parent-coach-playbook --remote --command "SELECT COUNT(*) FROM camps WHERE status='approved';"
+```

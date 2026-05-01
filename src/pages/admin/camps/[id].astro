@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCampById, getSubmitter, type Camp, type Submitter } from '../../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+const id = Astro.params.id;
+
+let camp: Camp | null = null;
+let submitter: Submitter | null = null;
+if (env?.DB && id) {
+  try {
+    camp = await getCampById(env.DB, id);
+    if (camp) submitter = await getSubmitter(env.DB, camp.submitted_by_email);
+  } catch (e) {
+    console.error('admin camp lookup failed', e);
+  }
+}
+
+if (!camp) {
+  return new Response('Not found', { status: 404 });
+}
+
+const fmtDateTime = (s: string) =>
+  new Date(s).toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+const fmtDate = (s: string) =>
+  new Date(s).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const statusColor: Record<string, string> = {
+  pending: '#B0894A',
+  approved: '#5C7459',
+  rejected: '#C5713D',
+};
+---
+<BaseLayout title={`Review: ${camp.name}`} description="Admin review" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+        <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Review
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+        {camp.name}
+      </h1>
+      <p class="font-display italic mt-2 text-sm" style={`color: ${statusColor[camp.status]}; font-weight: 500;`}>
+        Status: {camp.status}
+        {camp.reviewed_at && ` · reviewed ${fmtDateTime(camp.reviewed_at)} by ${camp.reviewed_by ?? 'unknown'}`}
+      </p>
+      {!adminEmail && (
+        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+          Cloudflare Access header missing. Approve/reject endpoints will reject this request until the route is wired through Access.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10 grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-8 article-body">
+        <h2 class="font-display text-ink text-2xl leading-tight mt-0 mb-4" style="font-weight: 500;">Description</h2>
+        <p style="white-space: pre-wrap;">{camp.description}</p>
+
+        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3" style="font-weight: 500;">Logistics</h2>
+        <ul class="font-display text-ink-soft" style="font-weight: 400;">
+          <li><strong>Sport:</strong> {camp.sport}</li>
+          <li><strong>Ages:</strong> {camp.age_min}–{camp.age_max}</li>
+          <li><strong>Dates:</strong> {fmtDate(camp.start_date)} – {fmtDate(camp.end_date)}</li>
+          <li><strong>Format:</strong> {camp.day_or_overnight === 'day' ? 'Day camp' : 'Overnight camp'}</li>
+          <li><strong>Skill level:</strong> {camp.skill_level}</li>
+          <li><strong>Spots:</strong> {camp.spots_status}</li>
+          <li><strong>Lunch:</strong> {camp.lunch_included ? 'Included' : 'Not included'}</li>
+          <li><strong>Aftercare:</strong> {camp.aftercare_available ? 'Available' : 'Not offered'}</li>
+          {camp.price_text && <li><strong>Price:</strong> {camp.price_text}</li>}
+        </ul>
+
+        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3" style="font-weight: 500;">Location</h2>
+        <p class="font-display text-ink-soft">
+          {camp.address}<br />
+          {camp.city}, {camp.state} {camp.zip}<br />
+          {camp.latitude && camp.longitude ? `Geocode: ${camp.latitude.toFixed(5)}, ${camp.longitude.toFixed(5)}` : 'Geocode: not resolved'}
+        </p>
+
+        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3" style="font-weight: 500;">Camp contact</h2>
+        <ul class="font-display text-ink-soft">
+          {camp.contact_email && <li><strong>Email:</strong> {camp.contact_email}</li>}
+          {camp.contact_phone && <li><strong>Phone:</strong> {camp.contact_phone}</li>}
+          {camp.website_url && <li><strong>Website:</strong> <a href={camp.website_url} target="_blank" rel="noopener" class="text-rust hover:underline">{camp.website_url}</a></li>}
+          {!camp.contact_email && !camp.contact_phone && !camp.website_url && <li>No contact provided.</li>}
+        </ul>
+      </div>
+
+      <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Submitter</p>
+        {submitter ? (
+          <ul class="font-display text-ink-soft text-sm leading-snug grid gap-1">
+            <li><strong>Email:</strong> {submitter.email}</li>
+            <li><strong>Trust:</strong> {submitter.trust_level}</li>
+            <li><strong>Submissions:</strong> {submitter.submission_count}</li>
+            <li><strong>Approved:</strong> {submitter.approved_count}</li>
+            <li><strong>First seen:</strong> {fmtDateTime(submitter.first_submitted_at)}</li>
+            <li><strong>Last submitted:</strong> {fmtDateTime(submitter.last_submitted_at)}</li>
+          </ul>
+        ) : (
+          <p class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">No submitter record (unexpected).</p>
+        )}
+
+        <p class="font-display italic text-rust mt-8 mb-3" style="font-weight: 500;">Decide</p>
+        <div class="grid gap-4">
+          <form method="POST" action={`/api/admin/camps/${camp.id}/approve`} class="grid gap-2">
+            <label class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+              Approval notes (optional)
+              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
+            </label>
+            <button type="submit" class="btn">Approve</button>
+          </form>
+          <form method="POST" action={`/api/admin/camps/${camp.id}/reject`} class="grid gap-2 pt-4 border-t border-bone">
+            <label class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+              Rejection notes (sent to internal log only)
+              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
+            </label>
+            <button type="submit" class="btn btn-ghost">Reject</button>
+          </form>
+        </div>
+
+        {camp.review_notes && (
+          <div class="mt-8 pt-6 border-t border-bone">
+            <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Existing review notes</p>
+            <p class="font-display text-ink-soft text-sm leading-snug" style="white-space: pre-wrap;">{camp.review_notes}</p>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

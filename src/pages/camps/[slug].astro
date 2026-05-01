@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCampBySlug, type Camp } from '../../lib/camps-db';
+
+// SSR — pulls live from D1 each request.
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const slug = Astro.params.slug;
+
+let camp: Camp | null = null;
+if (env?.DB && slug) {
+  try {
+    camp = await getCampBySlug(env.DB, slug);
+  } catch (e) {
+    console.error('getCampBySlug failed', e);
+  }
+}
+
+// Only show approved camps. Pending/rejected return 404.
+if (!camp || camp.status !== 'approved') {
+  return new Response('Not found', { status: 404 });
+}
+
+const fmtDate = (s: string) =>
+  new Date(s).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const fmtRange = (start: string, end: string) => `${fmtDate(start)} – ${fmtDate(end)}`;
+
+const dayLabel = camp.day_or_overnight === 'day' ? 'Day camp' : 'Overnight camp';
+const skillLabel: Record<string, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+  all: 'All levels',
+};
+const spotsLabel: Record<string, string> = {
+  open: 'Open',
+  waitlist: 'Waitlist',
+  full: 'Full',
+};
+---
+<BaseLayout
+  title={camp.name}
+  description={`${camp.sport} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/camps/" class="hover:underline">Camps</a> · {camp.sport}
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        {camp.name}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {camp.sport} · ages {camp.age_min}–{camp.age_max} · {fmtRange(camp.start_date, camp.end_date)}
+      </p>
+
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl">
+        <div class="border border-bone p-3 bg-paper-warm">
+          <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Format</p>
+          <p class="font-display text-ink mt-0.5" style="font-weight: 500;">{dayLabel}</p>
+        </div>
+        <div class="border border-bone p-3 bg-paper-warm">
+          <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Skill level</p>
+          <p class="font-display text-ink mt-0.5" style="font-weight: 500;">{skillLabel[camp.skill_level] ?? camp.skill_level}</p>
+        </div>
+        <div class="border border-bone p-3 bg-paper-warm">
+          <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Spots</p>
+          <p class="font-display text-ink mt-0.5" style="font-weight: 500;">{spotsLabel[camp.spots_status] ?? camp.spots_status}</p>
+        </div>
+        {camp.price_text && (
+          <div class="border border-bone p-3 bg-paper-warm">
+            <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Price</p>
+            <p class="font-display text-ink mt-0.5" style="font-weight: 500;">{camp.price_text}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12 grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-8 article-body">
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4" style="font-weight: 500;">About this camp</h2>
+        <p style="white-space: pre-wrap;">{camp.description}</p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class={`border-l-2 ${camp.lunch_included ? 'border-rust' : 'border-bone'} pl-3`}>
+            <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Lunch</p>
+            <p class="font-display text-ink" style="font-weight: 500;">{camp.lunch_included ? 'Included' : 'Bring your own'}</p>
+          </div>
+          <div class={`border-l-2 ${camp.aftercare_available ? 'border-rust' : 'border-bone'} pl-3`}>
+            <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Aftercare</p>
+            <p class="font-display text-ink" style="font-weight: 500;">{camp.aftercare_available ? 'Available' : 'Not offered'}</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Where</p>
+        <p class="font-display text-ink leading-snug" style="font-weight: 500;">
+          {camp.address}<br />
+          {camp.city}, {camp.state} {camp.zip}
+        </p>
+
+        <p class="font-display italic text-rust mt-6 mb-3" style="font-weight: 500;">Contact</p>
+        <ul class="grid gap-2">
+          {camp.contact_email && (
+            <li>
+              <a href={`mailto:${camp.contact_email}`} class="font-display text-ink hover:text-rust break-words" style="font-weight: 500;">{camp.contact_email}</a>
+            </li>
+          )}
+          {camp.contact_phone && (
+            <li>
+              <a href={`tel:${camp.contact_phone}`} class="font-display text-ink hover:text-rust" style="font-weight: 500;">{camp.contact_phone}</a>
+            </li>
+          )}
+          {camp.website_url && (
+            <li>
+              <a href={camp.website_url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-words" style="font-weight: 500;">Camp website ↗</a>
+            </li>
+          )}
+          {!camp.contact_email && !camp.contact_phone && !camp.website_url && (
+            <li class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">No contact info on file. Email parentcoachplaybook@gmail.com if you need an intro.</li>
+          )}
+        </ul>
+
+        <p class="font-display italic text-ink-soft text-xs mt-8" style="font-weight: 500;">
+          Listing reviewed by the Parent Coach Playbook Editorial. Something off? Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a>.
+        </p>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

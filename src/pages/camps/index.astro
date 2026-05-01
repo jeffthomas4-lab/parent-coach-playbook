@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { listApprovedCamps, type Camp } from '../../lib/camps-db';
+
+// SSR. Pulls live from D1 each request.
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+let camps: Camp[] = [];
+let dbAvailable = !!env?.DB;
+if (env?.DB) {
+  try {
+    camps = await listApprovedCamps(env.DB);
+  } catch (e) {
+    console.error('listApprovedCamps failed', e);
+  }
+}
+
+const fmtDateRange = (start: string, end: string) => {
+  const s = new Date(start);
+  const e = new Date(end);
+  const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'short' });
+  const day = (d: Date) => d.getDate();
+  if (s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear()) {
+    return `${month(s)} ${day(s)}–${day(e)}, ${s.getFullYear()}`;
+  }
+  return `${month(s)} ${day(s)} – ${month(e)} ${day(e)}, ${s.getFullYear()}`;
+};
+
+const PNW = new Set(['WA', 'OR', 'ID', 'MT', 'AK']);
+const pnw = camps.filter(c => PNW.has(c.state));
+const elsewhere = camps.filter(c => !PNW.has(c.state));
+---
+<BaseLayout
+  title="Camps"
+  description="Youth sports camps and activity programs we know about. Starting in the Pacific Northwest where we can verify camps personally. National listings welcome."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Camps</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
+        A directory of <em class="text-rust">camps</em> for the summer that's coming.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Youth sports camps and activity programs, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/camps/submit/" class="btn">Submit a camp</a>
+        <a href="#all-camps" class="btn btn-ghost">Browse the directory</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest scope disclosure -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-8">
+      <div class="grid md:grid-cols-12 gap-6 items-start">
+        <div class="md:col-span-3">
+          <p class="font-display italic text-rust" style="font-weight: 500;">Where we are starting</p>
+        </div>
+        <div class="md:col-span-9 article-body">
+          <p>We're starting in the Pacific Northwest where we can verify camps personally. National listings welcome but light coverage outside PNW for now. If you run a camp anywhere in the country and want it in the directory, <a href="/camps/submit/" class="text-rust hover:underline">submit it here</a>. We'll review and publish it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="all-camps">
+    <div class="container-px py-12">
+      {!dbAvailable ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Directory is warming up. Try again in a moment.</p>
+      ) : camps.length === 0 ? (
+        <div>
+          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Coming online</p>
+          <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+            No camps in the directory yet.
+          </h2>
+          <p class="font-display text-ink-soft mt-4 max-w-2xl leading-snug">
+            We launched the directory recently. The first batch of Pacific-Northwest camps is being verified. If you run a camp or send your kid to one, you can <a href="/camps/submit/" class="text-rust hover:underline">submit it</a> and we'll review it within a few days.
+          </p>
+        </div>
+      ) : (
+        <>
+          {pnw.length > 0 && (
+            <div class="mb-12">
+              <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Pacific Northwest</p>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+                {pnw.map((c) => (
+                  <a href={`/camps/${c.slug}/`} class="bg-paper p-5 hover:bg-paper-warm transition-colors group block">
+                    <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                      {c.sport} · ages {c.age_min}–{c.age_max} · {fmtDateRange(c.start_date, c.end_date)}
+                    </p>
+                    <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                      {c.name}
+                    </h3>
+                    <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                      {c.city}, {c.state} · {c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight'} · {c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full'}
+                    </p>
+                    {c.price_text && (
+                      <p class="font-display italic text-rust text-xs mt-2" style="font-weight: 500;">{c.price_text}</p>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {elsewhere.length > 0 && (
+            <div>
+              <p class="font-display italic text-rust mb-3" style="font-weight: 500;">National</p>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+                {elsewhere.map((c) => (
+                  <a href={`/camps/${c.slug}/`} class="bg-paper p-5 hover:bg-paper-warm transition-colors group block">
+                    <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                      {c.sport} · ages {c.age_min}–{c.age_max} · {fmtDateRange(c.start_date, c.end_date)}
+                    </p>
+                    <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                      {c.name}
+                    </h3>
+                    <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                      {c.city}, {c.state} · {c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight'} · {c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full'}
+                    </p>
+                    {c.price_text && (
+                      <p class="font-display italic text-rust text-xs mt-2" style="font-weight: 500;">{c.price_text}</p>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="New camps as we verify them"
+    blurb="Subscribe and we'll send a Friday note when new camps land in the directory."
+  />
+</BaseLayout>

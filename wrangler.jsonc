@@ -1,0 +1,32 @@
+{
+  // Wrangler config for Parent Coach Playbook.
+  // The site builds via Astro's Cloudflare adapter and deploys through
+  // Cloudflare Pages. Wrangler is here for D1 management (migrations, queries)
+  // and so the local `astro dev` server can bind to the D1 instance via the
+  // platform proxy enabled in astro.config.mjs.
+  //
+  // Provision the D1 database once per environment with:
+  //   npx wrangler d1 create parent-coach-playbook
+  // Then paste the returned database_id below in place of the placeholder.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "parent-coach-playbook",
+  "compatibility_date": "2026-04-30",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // D1 database for the camps repository.
+  // Bind name `DB` is what server code uses (e.g. `runtime.env.DB.prepare(...)`).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "parent-coach-playbook",
+      "database_id": "8336fa9f-cc4f-4475-8284-e75658e26399",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Vars shared across local + production. Anything secret goes via
+  // `npx wrangler secret put` instead.
+  "vars": {
+    "SITE_URL": "https://parentcoachplaybook.com"
+  }
+}

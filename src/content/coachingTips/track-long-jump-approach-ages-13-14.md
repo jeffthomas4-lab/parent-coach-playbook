@@ -1,7 +1,7 @@
 ---
 title: "Long Jump Approach"
 summary: "Teach controlled acceleration and consistent step count to the board. 12 minutes."
-sport: "track and field"
+sport: "track-field"
 age: "13-14"
 focus: "fundamentals"
 publishedAt: 2026-04-15

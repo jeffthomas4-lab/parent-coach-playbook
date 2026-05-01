@@ -1,7 +1,7 @@
 ---
 title: "Shot Put Glide Intro"
 summary: "Teach the glide technique and basic weight transfer. 12 minutes."
-sport: "track and field"
+sport: "track-field"
 age: "13-14"
 focus: "fundamentals"
 publishedAt: 2026-04-18

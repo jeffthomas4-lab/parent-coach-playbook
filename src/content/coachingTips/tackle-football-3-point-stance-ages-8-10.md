@@ -1,7 +1,7 @@
 ---
 title: "The 3-Point Stance"
 summary: "Build the foundation: feet, hands, and head position for linemen. 8 minutes."
-sport: "tackle football"
+sport: "football"
 age: "8-10"
 focus: "fundamentals"
 publishedAt: 2026-01-27

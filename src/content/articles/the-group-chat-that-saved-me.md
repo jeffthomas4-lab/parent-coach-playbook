@@ -28,4 +28,4 @@ The group chat is the actual league. The official league is the bureaucracy that
 
 If you're at the start of a season and you don't yet have a group chat, here's the move. Pick the two parents who seem warmest. Add their numbers. Send the first message. *Hey: wanted a smaller chat for the parents who are juggling. Carpool, snacks, vent. We can keep it tight.*
 
-That message has never not worked.
+That message has never not 

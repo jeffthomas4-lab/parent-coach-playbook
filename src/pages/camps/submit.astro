@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SPORTS } from '../../data/site';
+
+// Static page. Form posts to /api/camps/submit which is SSR.
+export const prerender = true;
+
+// US states for the dropdown.
+const US_STATES = [
+  ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+  ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
+  ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],
+  ['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],
+  ['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],
+  ['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],
+  ['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],
+  ['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],
+  ['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],
+  ['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],
+  ['DC','District of Columbia'],
+] as const;
+
+const sportOptions = [...SPORTS].sort((a, b) => a.label.localeCompare(b.label));
+---
+<BaseLayout
+  title="Submit a camp"
+  description="Add a youth sports or activity camp to the Parent Coach Playbook directory. We review every submission before it goes live."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/camps/" class="hover:underline">Camps</a> · Submit
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Tell us about a <em class="text-rust">camp</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        Whether you run it or your kid attended last summer. We review every submission before it goes live, usually within a few days.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10 md:py-14">
+      <form
+        id="camp-form"
+        class="max-w-3xl grid gap-6"
+        novalidate
+      >
+        <!-- Honeypot. Hidden from users via CSS. Bots will fill it. -->
+        <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+          <label>Website (leave empty)
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
+        <fieldset class="grid gap-4">
+          <legend class="font-display italic text-rust mb-1" style="font-weight: 500;">The basics</legend>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Camp name</span>
+            <input name="name" required maxlength="200" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Sport or activity</span>
+              <select name="sport" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+                <option value="">Choose a sport or activity</option>
+                {sportOptions.map((s) => (
+                  <option value={s.slug}>{s.label}</option>
+                ))}
+              </select>
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Day or overnight</span>
+              <select name="day_or_overnight" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+                <option value="day" selected>Day camp</option>
+                <option value="overnight">Overnight</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Minimum age</span>
+              <input name="age_min" required type="number" min="3" max="22" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Maximum age</span>
+              <input name="age_max" required type="number" min="3" max="22" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Start date</span>
+              <input name="start_date" required type="date" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">End date</span>
+              <input name="end_date" required type="date" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="grid gap-4">
+          <legend class="font-display italic text-rust mb-1" style="font-weight: 500;">Where it happens</legend>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Address</span>
+            <input name="address" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <label class="grid gap-1 sm:col-span-2">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">City</span>
+              <input name="city" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">State</span>
+              <select name="state" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+                <option value="">State</option>
+                {US_STATES.map(([code, label]) => (
+                  <option value={code}>{label}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <label class="grid gap-1 max-w-xs">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">ZIP code</span>
+            <input name="zip" required pattern="[0-9]{5}(-[0-9]{4})?" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+        </fieldset>
+
+        <fieldset class="grid gap-4">
+          <legend class="font-display italic text-rust mb-1" style="font-weight: 500;">The details</legend>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Description</span>
+            <textarea name="description" required minlength="30" maxlength="4000" rows="6" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" placeholder="Who runs it, what kids do each day, what makes it good. 50–300 words."></textarea>
+          </label>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Price (free text)</span>
+              <input name="price_text" maxlength="100" placeholder='e.g. "$425/week" or "Sliding scale"' class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Skill level</span>
+              <select name="skill_level" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+                <option value="all" selected>All levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="grid gap-1 max-w-sm">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Spots status</span>
+            <select name="spots_status" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+              <option value="open" selected>Open</option>
+              <option value="waitlist">Waitlist</option>
+              <option value="full">Full</option>
+            </select>
+          </label>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="flex items-center gap-2">
+              <input type="checkbox" name="lunch_included" value="true" />
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Lunch included</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" name="aftercare_available" value="true" />
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Aftercare available</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="grid gap-4">
+          <legend class="font-display italic text-rust mb-1" style="font-weight: 500;">How to reach the camp</legend>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Camp contact email</span>
+              <input name="contact_email" type="email" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Camp contact phone</span>
+              <input name="contact_phone" maxlength="30" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+          </div>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Website URL</span>
+            <input name="website_url" type="url" placeholder="https://..." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+        </fieldset>
+
+        <fieldset class="grid gap-4 border-t border-bone pt-6">
+          <legend class="font-display italic text-rust mb-1" style="font-weight: 500;">Who is submitting</legend>
+          <label class="grid gap-1 max-w-sm">
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Your email</span>
+            <input name="submitted_by_email" type="email" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+            We use it to ask follow-ups. We do not subscribe you to anything.
+          </p>
+        </fieldset>
+
+        <div class="flex items-center gap-4 pt-2">
+          <button type="submit" class="btn">Submit camp</button>
+          <p class="font-display italic text-ink-soft text-sm hidden" data-status style="font-weight: 500;"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('camp-form') as HTMLFormElement | null;
+    const status = document.querySelector<HTMLElement>('[data-status]');
+    if (form && status) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.classList.remove('hidden');
+        status.textContent = 'Submitting...';
+        status.style.color = '#5F5448';
+
+        const fd = new FormData(form);
+        try {
+          const res = await fetch('/api/camps/submit', {
+            method: 'POST',
+            body: fd,
+          });
+          const data = (await res.json()) as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) {
+            status.textContent = data.error ? `Couldn't submit: ${data.error}` : 'Something went wrong. Try again or email parentcoachplaybook@gmail.com.';
+            status.style.color = '#C5713D';
+            return;
+          }
+          form.reset();
+          status.textContent = 'Submitted. We will review and follow up if needed.';
+          status.style.color = '#5C7459';
+        } catch (err) {
+          status.textContent = 'Network error. Try again.';
+          status.style.color = '#C5713D';
+        }
+      });
+    }
+  </script>
+</BaseLayout>

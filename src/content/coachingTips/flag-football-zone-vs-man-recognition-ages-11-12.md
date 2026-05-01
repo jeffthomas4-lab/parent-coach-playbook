@@ -1,7 +1,7 @@
 ---
 title: "Zone vs. Man Recognition"
 summary: "Teach young defenders to identify coverage and adjust their positioning. 12 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "11-12"
 focus: "fundamentals"
 publishedAt: 2026-01-21

@@ -26,6 +26,7 @@ export const NAV = [
   { label: 'Start here', href: '/start-here/' },
   { label: 'Reads', href: '/reads/' },
   { label: 'Drills', href: '/coaching-tips/' },
+  { label: 'Camps', href: '/camps/' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
   { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
 ];

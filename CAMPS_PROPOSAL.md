@@ -1,5 +1,9 @@
 # The camps repository — planning doc
 
+> **Phase 1: SHIPPED.** Custom build on Cloudflare D1. Submission flow live at `/camps/submit/`. Public directory at `/camps/`. Admin queue at `/admin/camps/` behind Cloudflare Access. Schema supports trust-tier upgrade (`submitters.trust_level`) without a migration. See `DEPLOY.md` for the D1 setup commands. See `migrations/0001_init_camps.sql` for the schema. See `src/lib/camps-db.ts` for the query helpers.
+>
+> Phase 2 (map view, geocoding cache, filtering UI) and phase 3 (zip-code radius search, photos, reviews) are queued but not built.
+
 ## What you said you want
 
 A repository of youth sports camps and activities that is:

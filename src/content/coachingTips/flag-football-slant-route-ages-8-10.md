@@ -1,7 +1,7 @@
 ---
 title: "The Slant Route"
 summary: "Teach the first real pattern: inside cut at 45 degrees. 12 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "8-10"
 focus: "fundamentals"
 publishedAt: 2026-01-09

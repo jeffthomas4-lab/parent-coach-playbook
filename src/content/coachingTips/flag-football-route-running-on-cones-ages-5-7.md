@@ -1,7 +1,7 @@
 ---
 title: "Route Running on Cones"
 summary: "Teach young receivers to follow cone paths at game speed. 8 minutes."
-sport: "flag football"
+sport: "flag-football"
 age: "5-7"
 focus: "fundamentals"
 publishedAt: 2026-01-03

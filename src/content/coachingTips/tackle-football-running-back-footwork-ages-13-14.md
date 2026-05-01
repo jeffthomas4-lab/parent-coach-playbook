@@ -1,7 +1,7 @@
 ---
 title: "Running Back Footwork"
 summary: "Build one-cut, two-cut, and patient footwork for ball carriers. 12 minutes."
-sport: "tackle football"
+sport: "football"
 age: "13-14"
 focus: "fundamentals"
 publishedAt: 2026-02-08
