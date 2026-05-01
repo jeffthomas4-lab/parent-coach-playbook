@@ -1,8 +1,7 @@
 {
   // Wrangler config for Parent Coach Playbook.
-  // Deploys as a Cloudflare Worker with Static Assets via `wrangler deploy`.
-  // The Astro Cloudflare adapter writes the SSR worker to dist/_worker.js
-  // and static assets alongside it in dist/.
+  // Deploys as a Cloudflare PAGES site (not a Worker).
+  // The Astro Cloudflare adapter writes static + SSR output to ./dist.
   //
   // First-time D1 setup:
   //   npx wrangler d1 create parent-coach-playbook
@@ -12,14 +11,8 @@
   "compatibility_date": "2026-04-30",
   "compatibility_flags": ["nodejs_compat"],
 
-  // Worker entry point produced by the Astro Cloudflare adapter.
-  "main": "./dist/_worker.js/index.js",
-
-  // Static asset bundle uploaded alongside the Worker.
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
-  },
+  // Tells wrangler this is a Pages project and where the build output lives.
+  "pages_build_output_dir": "./dist",
 
   // D1 database for the camps repository.
   // Bind name `DB` is what server code uses (e.g. `runtime.env.DB.prepare(...)`).
@@ -33,7 +26,7 @@
   ],
 
   // Vars shared across local + production. Anything secret goes via
-  // `npx wrangler secret put` instead.
+  // `npx wrangler pages secret put` instead.
   "vars": {
     "SITE_URL": "https://parentcoachplaybook.com"
   }
