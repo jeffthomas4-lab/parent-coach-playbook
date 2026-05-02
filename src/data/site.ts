@@ -76,6 +76,7 @@ export const TOPICS = [
   { slug: 'equipment',      label: 'Equipment',         blurb: 'What to buy, what to skip, where to find it used.' },
   { slug: 'rec-vs-travel',  label: 'Rec vs travel',     blurb: 'The honest comparison. The politics. The reality at fourteen.' },
   { slug: 'rules-of-play',  label: 'Rules of play',     blurb: 'Why youth sports exists, what it is for, what it is not.' },
+  { slug: 'summer-camps',   label: 'Summer camps',      blurb: 'How to pick one. What to pack. What to ask. When to stay home.' },
 ] as const;
 
 export const SPORTS = [
@@ -83,10 +84,14 @@ export const SPORTS = [
   { slug: 'softball',     label: 'Softball' },
   { slug: 'soccer',       label: 'Soccer' },
   { slug: 'basketball',   label: 'Basketball' },
-  { slug: 'flag-football',label: 'Flag football' },
-  { slug: 'football',     label: 'Tackle football' },
+  // Football variants. Three lanes that group together alphabetically as "Football — *".
+  // Slugs preserved for URL backwards compatibility — display labels group them visually.
+  { slug: 'flag-football', label: 'Football — Flag' },
+  { slug: 'football-7v7',  label: 'Football — 7v7' },
+  { slug: 'football',      label: 'Football — Tackle' },
   { slug: 'hockey',       label: 'Hockey' },
-  { slug: 'lacrosse',     label: 'Lacrosse' },
+  { slug: 'lacrosse-boys',  label: 'Lacrosse — Boys' },
+  { slug: 'lacrosse-girls', label: 'Lacrosse — Girls' },
   { slug: 'volleyball',   label: 'Volleyball' },
   { slug: 'swimming',     label: 'Swimming' },
   { slug: 'track-field',  label: 'Track and field' },
@@ -140,7 +145,8 @@ export const BUYING_GUIDES = [
   { slug: 'golf',          label: 'Golf',             category: 'sport',    blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
   { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
   { slug: 'hockey',        label: 'Hockey',           category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
-  { slug: 'lacrosse',      label: 'Lacrosse',         category: 'sport',    blurb: 'Stick, helmet, gloves, pads. Boys and girls gear differs.' },
+  { slug: 'lacrosse-boys',  label: 'Lacrosse — Boys',  category: 'sport',    blurb: 'Contact version. Helmet, gloves, full pads, stick.' },
+  { slug: 'lacrosse-girls', label: 'Lacrosse — Girls', category: 'sport',    blurb: 'Non-contact version. Stick, goggles, mouthpiece.' },
   { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
   { slug: 'soccer',        label: 'Soccer',           category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle.' },
   { slug: 'softball',      label: 'Softball',         category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
@@ -157,9 +163,26 @@ export const BUYING_GUIDES = [
   { slug: 'dance',         label: 'Dance',            category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
   { slug: 'stunt',         label: 'Stunt and tumbling', category: 'activity', blurb: 'Mat shoes, bracing, athletic tape. The tumbling-track essentials.' },
   { slug: 'theater',       label: 'Theater',          category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
+  // Essentials (alphabetical)
+  { slug: 'first-aid-kit',      label: 'First aid kit',       category: 'essentials', blurb: 'Bandages, tape, cold packs, and what you use on the sideline every week.' },
+  { slug: 'season-essentials',  label: 'Season essentials',    category: 'essentials', blurb: 'Recovery, hydration, travel logistics. The kit that runs the season.' },
+  { slug: 'sideline-kit',       label: 'Sideline kit',         category: 'essentials', blurb: 'Chair, cooler, blanket. The gear that makes watching comfortable.' },
 ] as const;
 
 export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
+
+// Team Parent article topics: resources for managing team logistics, communication, conflict.
+// Separate from TOPICS (which is for Reads articles). Used for /team-parent/[topic] archive pages.
+export const TEAM_PARENT_TOPICS = [
+  { slug: 'logistics',        label: 'Logistics',         blurb: 'Snacks, carpools, calendar management. The operational stuff.' },
+  { slug: 'communication',    label: 'Communication',     blurb: 'Emails to coaches, group chat rules, the hard-parent conversation.' },
+  { slug: 'money',            label: 'Money',             blurb: 'Fundraising, registration costs, the money talk with your kid.' },
+  { slug: 'picture-day',      label: 'Picture day & events', blurb: 'Photos, banquets, end-of-season celebrations.' },
+  { slug: 'conflict',         label: 'Conflict resolution', blurb: 'When things go sideways. Parent to parent, parent to coach.' },
+  { slug: 'tools',            label: 'Tools & templates', blurb: 'Apps, spreadsheets, checklists. What actually works.' },
+] as const;
+
+export type TeamParentTopicSlug = (typeof TEAM_PARENT_TOPICS)[number]['slug'];
 
 // Track and field events get sub-pages at /what-to-buy/track-field/[event]/
 export const TRACK_EVENTS = [

@@ -2,8 +2,12 @@
 title: "Fielding Stance"
 summary: "Teach the athletic ready position with ground ball practice. 15 minutes. Ages 5-7."
 sport: "softball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "fielding"
+progression: "intro"
+illustrationBrief: "Ready position for ground ball reception"
 publishedAt: 2026-01-09
 featured: false
 ---

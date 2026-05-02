@@ -2,8 +2,12 @@
 title: "Set-Piece Basics"
 summary: "Practice one corner kick and one free kick play. 20 minutes. Ages 11-12."
 sport: "soccer"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "situational"
+fundamental: "set-pieces"
+progression: "build"
+illustrationBrief: "Attacking corner and free kick formations"
 publishedAt: 2026-03-25
 featured: false
 ---

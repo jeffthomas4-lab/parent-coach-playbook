@@ -2,8 +2,12 @@
 title: "Zone vs. Man Recognition"
 summary: "Teach young defenders to identify coverage and adjust their positioning. 12 minutes."
 sport: "flag-football"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "positioning"
+progression: "build"
+illustrationBrief: "Defenders identifying offensive formation and reacting to receiver movement, adjusting between zone coverage and player assignment."
 publishedAt: 2026-01-21
 featured: false
 ---
@@ -24,6 +28,4 @@ By 11-12, defenders should be reading the offense. This drill teaches the differ
 
 **What to look for:**
 
-In zone, if a defender is staring at a receiver instead of feeling the ball coming, they're playing man. In man, if a defender is peeking at the ball and losing their assignment, they break. Watch foot positioning: zone defenders have shoulders square to the field, man defenders are in a backpedal or at 45 degrees. If the offense is running picks (receivers crossing in man), man defenders should feel the traffic and switch. This teaches communication.
-
-**Variation:** Add a QB. Receivers run real routes, defense calls coverage pre-snap. This forces defenders to make the coverage call stick instead of just reacting to the coach's voice.
+In zone, if a defender is staring at a receiver instead of feeling the ball coming, they're playing man. In man, if a defender is peeking at the ball and losing their assignment, they break. Watch foot positioning: zone defenders have shoulders square to the field, man defenders are in a backpedal or at 45 degrees. If the offense is running picks (receivers crossing in man), man defenders should feel the traffic and switch

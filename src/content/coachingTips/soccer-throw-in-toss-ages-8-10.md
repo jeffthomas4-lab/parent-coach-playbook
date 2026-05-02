@@ -2,8 +2,12 @@
 title: "Throw-In Toss"
 summary: "Practice receiving a throw-in with a quick pass or dribble. 15 minutes. Ages 8-10."
 sport: "soccer"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "Receiving and passing after throw-in"
 publishedAt: 2026-02-25
 featured: false
 ---

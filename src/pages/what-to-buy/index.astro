@@ -5,6 +5,7 @@ import { BUYING_GUIDES } from '../../data/site';
 
 const sports = BUYING_GUIDES.filter(g => g.category === 'sport');
 const activities = BUYING_GUIDES.filter(g => g.category === 'activity');
+const essentials = BUYING_GUIDES.filter(g => g.category === 'essentials');
 ---
 <BaseLayout
   title="What to Buy"
@@ -51,6 +52,25 @@ const activities = BUYING_GUIDES.filter(g => g.category === 'activity');
       <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Performing arts &amp; activities</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
         {activities.map((g) => (
+          <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {g.label}
+            </h3>
+            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
+              {g.blurb}
+            </p>
+            <div class="t-cta mt-4">Open the guide →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Essentials</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+        {essentials.map((g) => (
           <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
             <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
               {g.label}

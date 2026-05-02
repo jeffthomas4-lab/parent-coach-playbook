@@ -7,11 +7,14 @@
 @import "@fontsource/fraunces/500-italic.css";
 @import "@fontsource/fraunces/600-italic.css";
 
-@import "@fontsource/inter/300.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
+/* Mulish: warmer humanist sans for body text. Replaces Inter, which read as
+   too neutral / Silicon-Valley. Mulish is editorial-friendly and reads
+   warmer at small sizes without losing readability. */
+@import "@fontsource/mulish/300.css";
+@import "@fontsource/mulish/400.css";
+@import "@fontsource/mulish/500.css";
+@import "@fontsource/mulish/600.css";
+@import "@fontsource/mulish/700.css";
 
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/500.css";
@@ -30,12 +33,14 @@
   --turf: #8FA68C;           /* sage */
   --bone: #DDD2BD;           /* linen */
   --trophy: #D4AB6A;         /* honey */
+  --rose: #B8908F;           /* dusty rose; tertiary accent for pull quotes + soft callouts */
+  --rose-bg: #EDDBD9;        /* light rose tint for backgrounds */
 }
 
 html {
   background: var(--paper);
   color: var(--ink-soft);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -114,7 +119,7 @@ body {
   max-width: 680px;
 }
 
-.article-body p { margin: 0 0 1.25em 0; }
+.article-body p { margin: 0 0 1.5em 0; }
 .article-body h2 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
@@ -153,6 +158,40 @@ body {
 }
 
 .article-body blockquote p { margin: 0; }
+
+/* Pull quote — softer, dusty-rose-accented variation. Use this when you want
+   the line to land warmer than a classic editorial blockquote. */
+.t-quote,
+.article-body .t-quote {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 2.5em 0;
+  padding: 1.5em 1.5em 1.5em 1.75em;
+  border-left: 3px solid var(--rose);
+  background: var(--rose-bg);
+  text-align: left;
+  border-radius: 0 6px 6px 0;
+}
+.t-quote p,
+.article-body .t-quote p { margin: 0; }
+
+.t-quote::before,
+.article-body .t-quote::before {
+  content: '"';
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 0.5;
+  color: var(--rose);
+  display: inline-block;
+  margin-right: 0.1em;
+  vertical-align: -0.1em;
+}
 
 /* Drop cap */
 .article-body > p:first-of-type::first-letter {

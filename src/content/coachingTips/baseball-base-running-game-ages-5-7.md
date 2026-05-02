@@ -2,8 +2,12 @@
 title: "Base Running Game"
 summary: "Teach base running angles and spacing with a relay race. 12 minutes. Ages 5-7."
 sport: "baseball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "base-running"
+progression: "intro"
+illustrationBrief: "Two young children racing from home plate to first base, one running straight along the baseline while the other takes a wider arc around it."
 publishedAt: 2026-01-12
 featured: false
 ---
@@ -24,4 +28,4 @@ Base runners who understand spacing and angles beat runners who are confused abo
 
 **What to look for:** The straight line beats the curve. Some kids will still try to run the wide angle because they think base running means "running to the side." It doesn't.
 
-**Variation:** For older kids (7), set up a second "halfway" cone between first and second and have them sprint to first, round it hard at the halfway point, and decide whether to go to second. That teaches the aggressive turn and the read.
+**Variation:** 

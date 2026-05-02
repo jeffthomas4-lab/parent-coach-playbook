@@ -2,9 +2,13 @@
 title: "Target Hitting at Corners"
 summary: "Teach directional hitting by targeting the corners of the court. 12 minutes."
 sport: "tennis"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
-publishedAt: 2026-05-03
+layer: "foundations"
+fundamental: "forehand"
+progression: "intro"
+illustrationBrief: "Hitting forehands to corner targets"
+publishedAt: 2026-04-19
 featured: false
 ---
 

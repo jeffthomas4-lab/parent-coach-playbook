@@ -2,8 +2,12 @@
 title: "The Screen Pass"
 summary: "Build timing and blocking instinct: receiver becomes a target after the catch. 12 minutes."
 sport: "flag-football"
-age: "8-10"
+ages: ["8-10"]
 focus: "situational"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "A quarterback short passing to a receiver near the line of scrimmage with blockers positioned to lead the receiver upfield."
 publishedAt: 2026-01-12
 featured: false
 ---
@@ -26,4 +30,4 @@ Screens teach receivers to catch and move, and they teach other kids blocking. T
 
 Blockers should be moving before the receiver catches the ball, not reacting after. The QB's throw has to be catchable without the receiver jumping or extending. If a blocker is standing still waiting to see what happens, they're behind. The receiver should feel the screen forming and trust the blockers to move. If the receiver is dancing after the catch, the blockers aren't doing their job.
 
-**Variation:** Add a defender 8 yards away. Now the blockers have a job: keep that defender off the receiver. Receivers shouldn't get hit before they have space to move. Once kids see screens working, they understand why the play exists.
+**Variation:** Add a defender 8 ya

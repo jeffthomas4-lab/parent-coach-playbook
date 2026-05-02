@@ -2,8 +2,12 @@
 title: "Slap Bunting Intro"
 summary: "Teach the slap bunt grip and first-step timing. 20 minutes. Ages 8-10."
 sport: "softball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "hitting"
+progression: "intro"
+illustrationBrief: "Introduction to slap bunting technique"
 publishedAt: 2026-02-03
 featured: false
 ---

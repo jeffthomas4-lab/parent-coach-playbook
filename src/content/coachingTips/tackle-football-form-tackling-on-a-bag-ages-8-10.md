@@ -2,8 +2,12 @@
 title: "Form Tackling on a Bag"
 summary: "Teach the tackle progression: approach, form, and drive. 12 minutes."
 sport: "football"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "tackling"
+progression: "build"
+illustrationBrief: "Tackling mechanics on a stationary bag"
 publishedAt: 2026-01-30
 featured: false
 ---

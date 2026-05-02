@@ -2,8 +2,12 @@
 title: "Finishing Reps"
 summary: "20 shots from different areas and distances. 25 minutes. Ages 13-14+."
 sport: "soccer"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "skills"
+fundamental: "finishing"
+progression: "refine"
+illustrationBrief: "A player shooting on goal from various distances and angles, with a server delivering balls from different field locations."
 publishedAt: 2026-04-14
 featured: false
 ---
@@ -22,6 +26,4 @@ Finishing is a skill that improves with volume. This drill gives a shooter 20 sh
 4. Next shooter receives from a different angle.
 5. Do 5 shots per shooter per round, rotating angles: right side, left side, center, far post, near post.
 
-**What to look for:** Shot placement and finish confidence. Good finishers choose a corner early and shoot with purpose, not panic.
-
-**Variation:** For younger kids (13), do all shots from the same distance (15 yards). For older kids (14), add game scenarios: first touch only, one defender closing down, or crossing from the wing.
+**What to look for:** Shot placement and finish confidence. Good finishers choose a corner early and shoot with purpose, not

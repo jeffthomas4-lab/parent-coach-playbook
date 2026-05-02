@@ -2,8 +2,12 @@
 title: "Base Running"
 summary: "Run the bases fast and in a straight line. 12 minutes. Ages 5-7."
 sport: "softball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "base-running"
+progression: "intro"
+illustrationBrief: "Running bases in proper sequence"
 publishedAt: 2026-01-16
 featured: false
 ---

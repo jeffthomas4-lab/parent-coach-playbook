@@ -2,8 +2,12 @@
 title: "Double Play Finish"
 summary: "Second baseman and first baseman practice the 6-4-3 finish. 20 minutes. Ages 13-14+."
 sport: "softball"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "skills"
+fundamental: "fielding"
+progression: "refine"
+illustrationBrief: "Second and first baseman executing 6-4-3 finish"
 publishedAt: 2026-03-24
 featured: false
 ---

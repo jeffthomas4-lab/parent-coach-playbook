@@ -2,8 +2,12 @@
 title: "Pickoff Plays"
 summary: "Run a 1-2 pickoff at first base. 20 minutes. Ages 11-12."
 sport: "baseball"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "situational"
+progression: "build"
+illustrationBrief: "Pitcher on mound, runner at first base leaning off the bag, first baseman positioned to receive a throw from the pitcher."
 publishedAt: 2026-03-09
 featured: false
 ---
@@ -25,4 +29,4 @@ A pickoff play teaches communication and timing. The pitcher and first baseman h
 
 **What to look for:** Timing and communication. If the pitcher throws too early or too late, the play fails. If the first baseman doesn't sprint, they won't be there to catch it.
 
-**Variation:** For younger kids, use a whip (faster) instead of a spin throw. For older kids, add a second pickoff throw (pitcher to shortstop covering second) so kids learn to recognize the play and adjust.
+*

@@ -1,6 +1,6 @@
 ---
 title: "The 11-12 Best Friend on a Different Team"
-dek: "You can't coach their friendships. But you can help them build resilience around it."
+dek: "You can't fix this by moving them. You can help them build resilience around it."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"
@@ -10,18 +10,24 @@ publishedAt: 2026-03-06
 featured: false
 ---
 
-Your kid's best friend played on the same team last year. This year they're on a different team. They're upset about it. They want to switch teams. They're sad at practice.
+Our kid's best friend played on the same team last year. This year they split to different teams. Our kid was upset. They wanted to switch. They were sad at practice.
 
-You can't fix this by moving them. That teaches them to run from hard situations.
+Our instinct was to make a call. Instead, we sat with the hard moment.
 
-Instead: "I know you miss [friend]. That's real. You're going to be okay. You're going to make new friends on this team. And you'll still see [friend] outside of practice."
+## What we said
 
-Help them find what's good about this situation. "This team has different players. You're going to meet people you wouldn't have met otherwise. That's actually good."
+"I know you miss them. That's real. You're going to be okay. You're going to make new friends on this team. And you'll still see them outside of practice."
 
-Arrange hangouts outside of team stuff. "Can [friend] come to dinner Friday?" Not as a replacement for the team, but as a way to keep the friendship separate from sports. When friendship and team split, friendship usually wins out. Give them a way to have both.
+We helped them find what was good about the situation. "This team has different players. You're going to meet people you wouldn't have met otherwise. That's actually good."
 
-At 11-12, this is actually a good problem to have. They're learning that people you love don't have to be on all your teams. They're learning to build different friendships in different places. That's a real life skill.
+We arranged hangouts outside of team stuff. "Can they come to dinner Friday?" Not as a replacement for the team, but as a way to keep the friendship separate from sports. When friendship and team split, friendship usually wins out. We gave them a way to have both.
 
-Some kids go through a hard transition and come out stronger. Some kids stay attached to the old team and never bond with the new one. Your job is to help them look forward, not backward.
+## Why this matters
 
-By the end of the season, they'll have built a place on the new team. The friendship will still be there. They'll be happier than if you'd just switched them back.
+At 11-12, this is actually a good problem to have. They're learning that people they love don't have to be on all their teams. They're learning to build different friendships in different places. That's a real life skill.
+
+Some kids go through a hard transition and come out stronger. Some kids stay attached to the old team and never bond with the new one. Our job is to help them look forward, not backward.
+
+## The patience part
+
+By the end of the season, they'll have built a place on the new team. The friendship will still be there. They'll be happier than if we'd just switched them back.

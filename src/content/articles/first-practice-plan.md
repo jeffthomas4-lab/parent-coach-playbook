@@ -28,6 +28,6 @@ Something easy. Something they've done before. Success matters here. End on a go
 Same time every practice. This is not optional. Kids as young as five understand routine, and routine builds trust in your program.
 
 **The principle**
-At this age, you're not teaching sport. You're teaching presence and joy. If a kid dreads coming to practice, you've failed. If she comes home tired but happy, you've succeeded. The technical work will happen. But right now, the first practice job is to make her want to come back.
+At this age, you're not teaching sport. You're teaching presence and joy. If a kid dreads coming to practice, you've failed. If they come home tired but happy, you've succeeded. The technical work will happen. But right now, the first practice job is to make them want to come back.
 
 Don't overcomplicate. Don't show them a PowerPoint or a lengthy explanation. Show them what to do. Show them again. Let them play. That's the whole system.

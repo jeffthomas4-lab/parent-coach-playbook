@@ -2,8 +2,12 @@
 title: "Route Tree Intro"
 summary: "Teach receivers the basic five routes: go, slant, in, out, curl. 15 minutes."
 sport: "football"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "route-running"
+progression: "intro"
+illustrationBrief: "Introduction to basic pass routes"
 publishedAt: 2026-02-05
 featured: false
 ---

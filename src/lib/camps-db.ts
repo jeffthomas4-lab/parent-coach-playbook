@@ -41,6 +41,30 @@ export interface Camp {
   reviewed_by: string | null;
   reviewed_at: string | null;
   review_notes: string | null;
+  verified: 0 | 1;
+  hero_photo_key: string | null;
+  is_claimed: 0 | 1;
+  claimed_by_email: string | null;
+  claim_paid_until: string | null;
+  logo_key: string | null;
+  gallery_keys: string | null;
+  registration_url: string | null;
+}
+
+export type ReviewStatus = 'pending' | 'approved' | 'rejected';
+
+export interface CampReview {
+  id: string;
+  camp_id: string;
+  reviewer_email: string;
+  reviewer_display_name: string | null;
+  rating: number;
+  body: string;
+  status: ReviewStatus;
+  submitted_at: string;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  review_notes: string | null;
 }
 
 export interface Submitter {
@@ -136,7 +160,11 @@ export async function setSubmitterTrustLevel(
 
 // ---------- Camps ----------
 
-export async function insertCamp(db: D1Database, camp: NewCampInput): Promise<void> {
+export async function insertCamp(
+  db: D1Database,
+  camp: NewCampInput,
+  status: CampStatus = 'pending',
+): Promise<void> {
   await db
     .prepare(
       `INSERT INTO camps (
@@ -144,9 +172,9 @@ export async function insertCamp(db: D1Database, camp: NewCampInput): Promise<vo
          address, city, state, zip, latitude, longitude,
          description, price_text, day_or_overnight, skill_level, spots_status,
          contact_email, contact_phone, website_url, lunch_included, aftercare_available,
-         status, submitted_by_email, submitted_at
+         status, submitted_by_email, submitted_at, reviewed_by, reviewed_at
        )
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?, ?)`,
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
     .bind(
       camp.id,
@@ -173,8 +201,11 @@ export async function insertCamp(db: D1Database, camp: NewCampInput): Promise<vo
       camp.website_url,
       camp.lunch_included ? 1 : 0,
       camp.aftercare_available ? 1 : 0,
+      status,
       camp.submitted_by_email,
       camp.submitted_at,
+      status === 'approved' ? 'auto-approve (trusted submitter)' : null,
+      status === 'approved' ? camp.submitted_at : null,
     )
     .run();
 }
@@ -285,6 +316,396 @@ export async function uniqueSlug(db: D1Database, base: string): Promise<string> 
   }
   // Last-ditch: append a UUID slice.
   return `${slug}-${crypto.randomUUID().slice(0, 8)}`;
+}
+
+// ---------- Phase 2.5: claim listings ----------
+
+export type ClaimStatus = 'pending' | 'verified' | 'paid' | 'rejected';
+
+export interface CampClaim {
+  id: string;
+  camp_id: string;
+  claimant_email: string;
+  claimant_name: string | null;
+  organization: string | null;
+  phone: string | null;
+  notes: string | null;
+  status: ClaimStatus;
+  payment_amount_cents: number | null;
+  payment_method: string | null;
+  submitted_at: string;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  review_notes: string | null;
+}
+
+export interface NewClaimInput {
+  id: string;
+  camp_id: string;
+  claimant_email: string;
+  claimant_name: string | null;
+  organization: string | null;
+  phone: string | null;
+  notes: string | null;
+  submitted_at: string;
+}
+
+export async function insertClaim(db: D1Database, claim: NewClaimInput): Promise<void> {
+  await db
+    .prepare(
+      `INSERT INTO camp_claims (id, camp_id, claimant_email, claimant_name, organization, phone, notes, status, submitted_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
+    )
+    .bind(
+      claim.id,
+      claim.camp_id,
+      claim.claimant_email,
+      claim.claimant_name,
+      claim.organization,
+      claim.phone,
+      claim.notes,
+      claim.submitted_at,
+    )
+    .run();
+}
+
+export async function listPendingClaims(db: D1Database): Promise<CampClaim[]> {
+  const result = await db
+    .prepare("SELECT * FROM camp_claims WHERE status IN ('pending', 'verified') ORDER BY submitted_at ASC")
+    .all<CampClaim>();
+  return result.results ?? [];
+}
+
+export async function getClaimById(db: D1Database, id: string): Promise<CampClaim | null> {
+  const row = await db.prepare('SELECT * FROM camp_claims WHERE id = ?').bind(id).first<CampClaim>();
+  return row ?? null;
+}
+
+export async function updateClaimStatus(
+  db: D1Database,
+  id: string,
+  status: ClaimStatus,
+  reviewer: string,
+  notes: string | null = null,
+): Promise<CampClaim | null> {
+  await db
+    .prepare(
+      `UPDATE camp_claims
+         SET status = ?, reviewed_by = ?, reviewed_at = ?, review_notes = ?
+         WHERE id = ?`,
+    )
+    .bind(status, reviewer, nowIso(), notes, id)
+    .run();
+  return getClaimById(db, id);
+}
+
+/**
+ * Mark a camp as claimed. Sets the email, marks is_claimed=1, and records the paid-until date
+ * (defaulting to 1 year from today). Called when admin marks a claim as 'paid'.
+ */
+export async function markCampClaimed(
+  db: D1Database,
+  campId: string,
+  claimantEmail: string,
+  paidUntilISO?: string,
+): Promise<void> {
+  const oneYear = new Date();
+  oneYear.setFullYear(oneYear.getFullYear() + 1);
+  const paidUntil = paidUntilISO ?? oneYear.toISOString().slice(0, 10);
+  await db
+    .prepare(
+      `UPDATE camps
+         SET is_claimed = 1, claimed_by_email = ?, claim_paid_until = ?
+         WHERE id = ?`,
+    )
+    .bind(claimantEmail, paidUntil, campId)
+    .run();
+}
+
+export function generateClaimId(): string {
+  return crypto.randomUUID();
+}
+
+// ---------- Phase 2: shared-address handling ----------
+
+/**
+ * Find other approved camps at the same address (matches address + city + zip, case-insensitive).
+ * Optionally exclude a specific camp id (used on the detail page so the camp doesn't list itself).
+ */
+export async function listOtherCampsAtAddress(
+  db: D1Database,
+  address: string,
+  city: string,
+  zip: string,
+  excludeId?: string,
+): Promise<Camp[]> {
+  const result = await db
+    .prepare(
+      `SELECT * FROM camps
+         WHERE status = 'approved'
+           AND LOWER(TRIM(address)) = LOWER(TRIM(?))
+           AND LOWER(TRIM(city)) = LOWER(TRIM(?))
+           AND TRIM(zip) = TRIM(?)
+           ${excludeId ? 'AND id != ?' : ''}
+         ORDER BY name ASC`,
+    )
+    .bind(...(excludeId ? [address, city, zip, excludeId] : [address, city, zip]))
+    .all<Camp>();
+  return result.results ?? [];
+}
+
+/**
+ * Find approved + pending camps at this address (for the submit-flow duplicate warning).
+ * Used to warn submitters before they create what might be a duplicate listing.
+ */
+export async function listCampsAtAddressForSubmit(
+  db: D1Database,
+  address: string,
+  city: string,
+  zip: string,
+): Promise<Camp[]> {
+  const result = await db
+    .prepare(
+      `SELECT * FROM camps
+         WHERE status IN ('approved', 'pending')
+           AND LOWER(TRIM(address)) = LOWER(TRIM(?))
+           AND LOWER(TRIM(city)) = LOWER(TRIM(?))
+           AND TRIM(zip) = TRIM(?)
+         ORDER BY name ASC`,
+    )
+    .bind(address, city, zip)
+    .all<Camp>();
+  return result.results ?? [];
+}
+
+// ---------- Phase 2: verified flag + hero photo ----------
+
+export async function setVerified(db: D1Database, id: string, verified: boolean): Promise<void> {
+  await db
+    .prepare('UPDATE camps SET verified = ? WHERE id = ?')
+    .bind(verified ? 1 : 0, id)
+    .run();
+}
+
+export async function setHeroPhotoKey(db: D1Database, id: string, key: string | null): Promise<void> {
+  await db
+    .prepare('UPDATE camps SET hero_photo_key = ? WHERE id = ?')
+    .bind(key, id)
+    .run();
+}
+
+// ---------- Phase 2: geocoding cache ----------
+
+const canonicalizeAddress = (address: string, city: string, state: string, zip: string): string =>
+  `${address.trim().toLowerCase()}|${city.trim().toLowerCase()}|${state.trim().toUpperCase()}|${zip.trim()}`;
+
+// Hash an address string to a stable 64-char hex digest using SubtleCrypto (available in the Workers runtime).
+async function hashAddress(canonical: string): Promise<string> {
+  const data = new TextEncoder().encode(canonical);
+  const hashBuf = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuf))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+export async function getCachedGeocode(
+  db: D1Database,
+  address: string,
+  city: string,
+  state: string,
+  zip: string,
+): Promise<{ lat: number; lon: number } | null> {
+  const canonical = canonicalizeAddress(address, city, state, zip);
+  const hash = await hashAddress(canonical);
+  const row = await db
+    .prepare('SELECT latitude, longitude FROM geocoded_addresses WHERE address_hash = ?')
+    .bind(hash)
+    .first<{ latitude: number; longitude: number }>();
+  if (!row) return null;
+  return { lat: row.latitude, lon: row.longitude };
+}
+
+export async function putCachedGeocode(
+  db: D1Database,
+  address: string,
+  city: string,
+  state: string,
+  zip: string,
+  lat: number,
+  lon: number,
+): Promise<void> {
+  const canonical = canonicalizeAddress(address, city, state, zip);
+  const hash = await hashAddress(canonical);
+  await db
+    .prepare(
+      `INSERT INTO geocoded_addresses (address_hash, address_canonical, latitude, longitude, cached_at)
+       VALUES (?, ?, ?, ?, ?)
+       ON CONFLICT(address_hash) DO UPDATE SET latitude = excluded.latitude, longitude = excluded.longitude, cached_at = excluded.cached_at`,
+    )
+    .bind(hash, canonical, lat, lon, nowIso())
+    .run();
+}
+
+/**
+ * Cached geocode: hits the local cache first, falls back to Nominatim,
+ * stores the new result for future submissions of the same address.
+ */
+export async function geocodeCached(
+  db: D1Database,
+  address: string,
+  city: string,
+  state: string,
+  zip: string,
+): Promise<{ lat: number; lon: number } | null> {
+  const cached = await getCachedGeocode(db, address, city, state, zip);
+  if (cached) return cached;
+  const fresh = await geocode(address, city, state, zip);
+  if (fresh) {
+    try {
+      await putCachedGeocode(db, address, city, state, zip, fresh.lat, fresh.lon);
+    } catch {
+      // ignore cache write failures
+    }
+  }
+  return fresh;
+}
+
+// ---------- Phase 2: trust-tier auto-approve ----------
+
+/**
+ * Decide whether a new submission from this email should auto-approve.
+ * Rule: trust_level = 'trusted' AND submitter has no banned status. Banned never auto-approves.
+ * New submitters always queue. Admin promotes to trusted after a few approved camps.
+ */
+export async function shouldAutoApprove(db: D1Database, email: string): Promise<boolean> {
+  const submitter = await getSubmitter(db, email);
+  if (!submitter) return false;
+  return submitter.trust_level === 'trusted';
+}
+
+// ---------- Phase 2: zip-code radius search ----------
+
+/**
+ * Haversine distance in miles between two lat/lon pairs.
+ */
+export function haversineMiles(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const R = 3958.8;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+}
+
+/**
+ * Filter approved camps to those within `radiusMiles` of (lat, lon). Returns sorted nearest-first.
+ */
+export async function approvedCampsWithinRadius(
+  db: D1Database,
+  lat: number,
+  lon: number,
+  radiusMiles: number,
+): Promise<Camp[]> {
+  const all = await listApprovedCamps(db);
+  return all
+    .filter((c) => typeof c.latitude === 'number' && typeof c.longitude === 'number')
+    .map((c) => ({
+      camp: c,
+      distance: haversineMiles(lat, lon, c.latitude as number, c.longitude as number),
+    }))
+    .filter((x) => x.distance <= radiusMiles)
+    .sort((a, b) => a.distance - b.distance)
+    .map((x) => x.camp);
+}
+
+// ---------- Phase 2: reviews ----------
+
+export interface NewReviewInput {
+  id: string;
+  camp_id: string;
+  reviewer_email: string;
+  reviewer_display_name: string | null;
+  rating: number;
+  body: string;
+  submitted_at: string;
+}
+
+export async function insertReview(db: D1Database, review: NewReviewInput): Promise<void> {
+  await db
+    .prepare(
+      `INSERT INTO camp_reviews (id, camp_id, reviewer_email, reviewer_display_name, rating, body, status, submitted_at)
+       VALUES (?, ?, ?, ?, ?, ?, 'pending', ?)`,
+    )
+    .bind(
+      review.id,
+      review.camp_id,
+      review.reviewer_email,
+      review.reviewer_display_name,
+      review.rating,
+      review.body,
+      review.submitted_at,
+    )
+    .run();
+}
+
+export async function listApprovedReviewsForCamp(db: D1Database, campId: string): Promise<CampReview[]> {
+  const result = await db
+    .prepare("SELECT * FROM camp_reviews WHERE camp_id = ? AND status = 'approved' ORDER BY submitted_at DESC")
+    .bind(campId)
+    .all<CampReview>();
+  return result.results ?? [];
+}
+
+export async function listPendingReviews(db: D1Database): Promise<CampReview[]> {
+  const result = await db
+    .prepare("SELECT * FROM camp_reviews WHERE status = 'pending' ORDER BY submitted_at ASC")
+    .all<CampReview>();
+  return result.results ?? [];
+}
+
+export async function getReviewById(db: D1Database, id: string): Promise<CampReview | null> {
+  const row = await db.prepare('SELECT * FROM camp_reviews WHERE id = ?').bind(id).first<CampReview>();
+  return row ?? null;
+}
+
+export async function approveReview(
+  db: D1Database,
+  id: string,
+  reviewer: string,
+  notes: string | null = null,
+): Promise<CampReview | null> {
+  await db
+    .prepare(
+      `UPDATE camp_reviews
+         SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ?
+         WHERE id = ?`,
+    )
+    .bind(reviewer, nowIso(), notes, id)
+    .run();
+  return getReviewById(db, id);
+}
+
+export async function rejectReview(
+  db: D1Database,
+  id: string,
+  reviewer: string,
+  notes: string | null = null,
+): Promise<CampReview | null> {
+  await db
+    .prepare(
+      `UPDATE camp_reviews
+         SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ?
+         WHERE id = ?`,
+    )
+    .bind(reviewer, nowIso(), notes, id)
+    .run();
+  return getReviewById(db, id);
+}
+
+export function generateReviewId(): string {
+  return crypto.randomUUID();
 }
 
 // ---------- Geocoding (Nominatim, OpenStreetMap) ----------

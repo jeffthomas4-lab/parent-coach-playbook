@@ -2,8 +2,12 @@
 title: "Defending Shape"
 summary: "Three defenders maintain a line while four attackers try to break through. 25 minutes. Ages 11-12."
 sport: "soccer"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "positioning"
+progression: "build"
+illustrationBrief: "Three defenders in a horizontal line maintaining shape as attackers try to penetrate with passes and dribbling."
 publishedAt: 2026-03-18
 featured: false
 ---
@@ -22,6 +26,4 @@ Defensive shape is a line. This drill teaches defenders to stay in a line while 
 4. If defenders win the ball, they clear it up field and reset.
 5. Play 10 attacking sequences.
 
-**What to look for:** Line integrity and marking. Do defenders stay together or spread too wide? Do they mark their player or ball watch?
-
-**Variation:** For younger kids (11), make the zone bigger and use two defenders. For older kids (12), add two midfielders behind the back line so it's a realistic shape.
+**What to look for:** Line integrity and marking. Do defenders stay together or spread too wide? Do they mark the

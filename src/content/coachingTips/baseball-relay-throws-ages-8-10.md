@@ -2,8 +2,12 @@
 title: "Relay Throws"
 summary: "Three kids relay throws across the field. 15 minutes. Ages 8-10."
 sport: "baseball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "throwing"
+progression: "intro"
+illustrationBrief: "Three children standing 30 feet apart in a line, with the first child throwing to the second, who relays to the third."
 publishedAt: 2026-02-23
 featured: false
 ---
@@ -24,4 +28,4 @@ Relay throws teach kids to position themselves in line with the throw and catch 
 
 **What to look for:** Catching mechanics and transition speed. The quicker they catch and reset, the quicker the relay happens. Momentum is everything.
 
-**Variation:** For younger kids (8-9), do two-person relays (you throw to one, they throw to another). For older kids (10), add a base runner (imaginary or real) and have the third kid make the tag. That's the game.
+**Variation:** F

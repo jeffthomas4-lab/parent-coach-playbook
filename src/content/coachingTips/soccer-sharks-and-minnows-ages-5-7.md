@@ -2,8 +2,12 @@
 title: "Sharks and Minnows"
 summary: "Tag game with the ball at their feet. 15 minutes. Ages 5-7."
 sport: "soccer"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "warm-up"
+progression: "intro"
+illustrationBrief: "One defender chases multiple attackers"
 publishedAt: 2026-01-03
 featured: false
 ---

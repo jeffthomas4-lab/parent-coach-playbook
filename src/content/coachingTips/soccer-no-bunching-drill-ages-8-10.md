@@ -2,8 +2,12 @@
 title: "The No-Bunching Drill"
 summary: "Spread out the field while passing. 20 minutes. Ages 8-10."
 sport: "soccer"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "positioning"
+progression: "intro"
+illustrationBrief: "Three zones marking correct field spacing"
 publishedAt: 2026-02-11
 featured: false
 ---

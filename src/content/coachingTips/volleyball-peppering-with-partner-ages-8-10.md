@@ -2,8 +2,12 @@
 title: "Peppering with a Partner"
 summary: "Build consistency and rhythm in back-and-forth passing. 12 minutes."
 sport: "volleyball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "Partner passing back and forth"
 publishedAt: 2026-03-25
 featured: false
 ---

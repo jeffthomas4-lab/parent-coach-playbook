@@ -151,23 +151,31 @@ const sizingNotes: Record<string, { intro: string; sections: { heading: string; 
       ]},
     ],
   },
-  lacrosse: {
-    intro: 'Lacrosse gear is sport-specific and sized by age band more than measurement. Boys and girls gear differs.',
+  'lacrosse-boys': {
+    intro: 'Boys lacrosse is the contact version. Helmet, gloves, full pads, stick. Most pieces are sized by age band more than measurement.',
     sections: [
       { heading: 'Stick', body: [
-        'Boys: youth stick (37-42 inches) for ages 8-12, full length (40-72 inches) for ages 13+. Defenders use longer poles.',
-        'Girls: youth (35-43 inches), full length (35.5-43.25 inches) at older ages.',
+        'Youth stick (37-42 inches) for ages 8-12, full length (40-72 inches) for ages 13+. Defenders use longer poles.',
         'Pocket depth is regulated. Tournament officials check.',
       ]},
-      { heading: 'Helmet (boys)', body: [
+      { heading: 'Helmet', body: [
         'NOCSAE certification required. Sized by head circumference plus model fit.',
         'Cage and chin strap included. Mouthguard worn under the cage.',
       ]},
-      { heading: 'Chest protector (boys)', body: [
+      { heading: 'Chest protector', body: [
         'NOCSAE ND200 certification mandatory since 2021/22. This is non-negotiable.',
         'Sized by chest circumference. Should not restrict arm movement.',
       ]},
-      { heading: 'Goggles (girls)', body: [
+    ],
+  },
+  'lacrosse-girls': {
+    intro: 'Girls lacrosse is non-contact. Stick, goggles, mouthpiece. Lighter kit, sized by age and face fit.',
+    sections: [
+      { heading: 'Stick', body: [
+        'Youth (35-43 inches), full length (35.5-43.25 inches) at older ages.',
+        'Stringing rules differ from boys. Pocket depth is regulated.',
+      ]},
+      { heading: 'Goggles', body: [
         'ASTM F803 certification required.',
         'Sized to the face. Should not bounce when the player runs.',
       ]},

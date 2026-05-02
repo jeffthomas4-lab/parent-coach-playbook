@@ -2,8 +2,12 @@
 title: "Rondo"
 summary: "Keep-away game with five attackers and one defender. 20 minutes. Ages 11-12."
 sport: "soccer"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "passing"
+progression: "build"
+illustrationBrief: "Circle passing drill with pressure from center"
 publishedAt: 2026-03-04
 featured: false
 ---

@@ -42,6 +42,14 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
         <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
           {meta.blurb}
         </p>
+        {pillar === 'drive-home' && (
+          <img
+            src="/illustrations/drive-home-divider.png"
+            alt="A car silhouette in profile with three small dust clouds receding behind it."
+            class="mt-10 w-full max-w-md opacity-90"
+            loading="lazy"
+          />
+        )}
       </div>
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
         <ThreeDrivesNav active={pillar} />

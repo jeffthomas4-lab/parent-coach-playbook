@@ -2,8 +2,12 @@
 title: "Edge Work"
 summary: "Teach skaters to use inside and outside edges for turning and acceleration. 12 minutes."
 sport: "hockey"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "skating"
+progression: "build"
+illustrationBrief: "A young skater turning at cone markers using inside and outside edges, changing direction quickly and maintaining speed."
 publishedAt: 2026-02-23
 featured: false
 ---
@@ -25,4 +29,4 @@ Edge work separates good skaters from okay ones. Young players at this age can l
 
 Outside edges should feel smooth and fast. If a skater is rough or bouncy, they're fighting the edge. Inside edges are harder because the skater has to lean more. If a skater falls or loses balance on inside edges, they're not ready for this yet. Don't push it. The skater should feel like they're carving the turn, not shuffling around it.
 
-**Variation:** Add a straight-line acceleration. After one lap of edge work, skater accelerates straight 10 yards using the technique they just worked. This teaches how edges carry into straight-line speed.
+**Vari

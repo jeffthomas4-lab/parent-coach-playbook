@@ -1,0 +1,201 @@
+---
+// Inline SVG topic icons for the Reads index and homepage browse-by-topic grid.
+// Brand-aligned: warm ink line, terracotta + sage + honey + rose accents,
+// editorial-warm rather than craft. Each icon is ~120x120, scales freely.
+
+interface Props {
+  topic: string;
+  size?: number;
+  class?: string;
+}
+
+const { topic, size = 96, class: className = '' } = Astro.props;
+
+// Color tokens used inside the SVGs (matches global.css :root).
+const ink = '#2D2520';
+const rust = '#C5713D';
+const sage = '#8FA68C';
+const honey = '#D4AB6A';
+const rose = '#B8908F';
+const paper = '#FAF6EE';
+---
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 120 120"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class={className}
+  aria-hidden="true"
+  role="img"
+>
+  {topic === 'communication' && (
+    <g>
+      {/* Two overlapping speech bubbles, warm ink stroke, rose + honey fills */}
+      <rect x="14" y="22" width="62" height="44" rx="10" fill={rose} fill-opacity="0.35" stroke={ink} stroke-width="2.5" />
+      <path d="M 24 66 L 22 78 L 36 66 Z" fill={rose} fill-opacity="0.35" stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+      <rect x="44" y="48" width="62" height="44" rx="10" fill={honey} fill-opacity="0.45" stroke={ink} stroke-width="2.5" />
+      <path d="M 96 92 L 98 104 L 84 92 Z" fill={honey} fill-opacity="0.45" stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+    </g>
+  )}
+
+  {topic === 'tryouts' && (
+    <g>
+      {/* Clipboard with checkmark — the night-before-tryouts feeling */}
+      <rect x="30" y="22" width="60" height="80" rx="6" fill={paper} stroke={ink} stroke-width="2.5" />
+      <rect x="48" y="14" width="24" height="14" rx="3" fill={honey} stroke={ink} stroke-width="2.5" />
+      <line x1="42" y1="44" x2="78" y2="44" stroke={ink} stroke-width="2" stroke-linecap="round" />
+      <line x1="42" y1="56" x2="72" y2="56" stroke={ink} stroke-width="2" stroke-linecap="round" />
+      <path d="M 44 76 L 54 86 L 78 64" stroke={rust} stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </g>
+  )}
+
+  {topic === 'game-day' && (
+    <g>
+      {/* Whistle + simple field arc — the moment between warm-up and play */}
+      <circle cx="48" cy="60" r="22" fill={rust} fill-opacity="0.4" stroke={ink} stroke-width="2.5" />
+      <circle cx="48" cy="60" r="6" fill={paper} stroke={ink} stroke-width="2" />
+      <rect x="68" y="54" width="32" height="12" rx="2" fill={rust} fill-opacity="0.4" stroke={ink} stroke-width="2.5" />
+      <rect x="96" y="50" width="6" height="20" rx="2" fill={ink} stroke={ink} stroke-width="2" />
+      <path d="M 14 88 Q 60 76, 106 88" stroke={sage} stroke-width="3" stroke-linecap="round" fill="none" />
+    </g>
+  )}
+
+  {topic === 'the-hard-stuff' && (
+    <g>
+      {/* Steering wheel + heart — the drive home moment */}
+      <circle cx="60" cy="60" r="38" fill={rose} fill-opacity="0.3" stroke={ink} stroke-width="2.5" />
+      <circle cx="60" cy="60" r="10" fill={ink} />
+      <line x1="60" y1="22" x2="60" y2="50" stroke={ink} stroke-width="2.5" stroke-linecap="round" />
+      <line x1="22" y1="60" x2="50" y2="60" stroke={ink} stroke-width="2.5" stroke-linecap="round" />
+      <line x1="98" y1="60" x2="70" y2="60" stroke={ink} stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 60 78 C 56 74, 50 74, 50 80 C 50 86, 60 92, 60 92 C 60 92, 70 86, 70 80 C 70 74, 64 74, 60 78 Z" fill={rust} stroke={ink} stroke-width="2" stroke-linejoin="round" />
+    </g>
+  )}
+
+  {topic === 'season-ops' && (
+    <g>
+      {/* Calendar grid + a circled date — running the season */}
+      <rect x="18" y="22" width="84" height="76" rx="6" fill={paper} stroke={ink} stroke-width="2.5" />
+      <rect x="18" y="22" width="84" height="16" rx="6" fill={sage} fill-opacity="0.55" stroke={ink} stroke-width="2.5" />
+      <line x1="40" y1="46" x2="40" y2="98" stroke={ink} stroke-width="1.5" stroke-opacity="0.5" />
+      <line x1="60" y1="46" x2="60" y2="98" stroke={ink} stroke-width="1.5" stroke-opacity="0.5" />
+      <line x1="80" y1="46" x2="80" y2="98" stroke={ink} stroke-width="1.5" stroke-opacity="0.5" />
+      <line x1="18" y1="64" x2="102" y2="64" stroke={ink} stroke-width="1.5" stroke-opacity="0.5" />
+      <line x1="18" y1="82" x2="102" y2="82" stroke={ink} stroke-width="1.5" stroke-opacity="0.5" />
+      <circle cx="70" cy="73" r="9" fill={rust} fill-opacity="0.6" stroke={ink} stroke-width="2" />
+    </g>
+  )}
+
+  {topic === 'equipment' && (
+    <g>
+      {/* Open duffel bag with a ball peeking out */}
+      <rect x="14" y="42" width="92" height="50" rx="10" fill={honey} fill-opacity="0.5" stroke={ink} stroke-width="2.5" />
+      <path d="M 36 42 Q 36 28, 60 28 Q 84 28, 84 42" fill="none" stroke={ink} stroke-width="2.5" stroke-linecap="round" />
+      <line x1="50" y1="32" x2="70" y2="32" stroke={ink} stroke-width="3" stroke-linecap="round" />
+      <circle cx="84" cy="74" r="11" fill={paper} stroke={ink} stroke-width="2" />
+      <path d="M 78 70 Q 84 76, 90 70 M 78 78 Q 84 72, 90 78" stroke={ink} stroke-width="1.5" stroke-linecap="round" fill="none" />
+      <line x1="14" y1="68" x2="106" y2="68" stroke={ink} stroke-width="1.5" stroke-opacity="0.4" />
+    </g>
+  )}
+
+  {topic === 'rec-vs-travel' && (
+    <g>
+      {/* Two roads diverging — the rec/travel decision */}
+      <path d="M 60 100 L 60 70 L 28 22" stroke={ink} stroke-width="3.5" stroke-linecap="round" fill="none" />
+      <path d="M 60 70 L 92 22" stroke={ink} stroke-width="3.5" stroke-linecap="round" fill="none" />
+      <path d="M 60 100 L 60 70 L 28 22" stroke={sage} stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round" fill="none" />
+      <path d="M 60 70 L 92 22" stroke={rust} stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round" fill="none" />
+      <circle cx="28" cy="22" r="6" fill={sage} stroke={ink} stroke-width="2" />
+      <circle cx="92" cy="22" r="6" fill={rust} stroke={ink} stroke-width="2" />
+      <circle cx="60" cy="70" r="4" fill={ink} />
+    </g>
+  )}
+
+  {topic === 'rules-of-play' && (
+    <g>
+      {/* Open book with an italicized "play" mark */}
+      <path d="M 18 32 L 60 38 L 102 32 L 102 96 L 60 102 L 18 96 Z" fill={paper} stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+      <line x1="60" y1="38" x2="60" y2="102" stroke={ink} stroke-width="2" />
+      <line x1="28" y1="50" x2="52" y2="54" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="28" y1="60" x2="50" y2="62" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="28" y1="70" x2="52" y2="72" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="68" y1="54" x2="92" y2="50" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="70" y1="62" x2="92" y2="60" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="68" y1="72" x2="92" y2="70" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <path d="M 76 82 Q 84 76, 88 84 Q 84 92, 76 86" fill={rose} stroke={ink} stroke-width="2" />
+    </g>
+  )}
+
+  {topic === 'summer-camps' && (
+    <g>
+      {/* Tent under a sun — summer, the field, the week away */}
+      <circle cx="92" cy="30" r="12" fill={honey} fill-opacity="0.7" stroke={ink} stroke-width="2" />
+      <line x1="92" y1="10" x2="92" y2="16" stroke={ink} stroke-width="2" stroke-linecap="round" />
+      <line x1="106" y1="30" x2="112" y2="30" stroke={ink} stroke-width="2" stroke-linecap="round" />
+      <line x1="78" y1="44" x2="82" y2="40" stroke={ink} stroke-width="2" stroke-linecap="round" />
+      <line x1="102" y1="44" x2="106" y2="40" stroke={ink} stroke-width="2" stroke-linecap="round" />
+      <path d="M 14 88 L 50 38 L 86 88 Z" fill={sage} fill-opacity="0.55" stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+      <path d="M 50 38 L 50 88" stroke={ink} stroke-width="2" />
+      <path d="M 50 88 L 42 70 L 58 70 Z" fill={paper} stroke={ink} stroke-width="2" stroke-linejoin="round" />
+      <path d="M 14 92 Q 60 84, 106 92" stroke={rust} stroke-width="2" stroke-linecap="round" fill="none" />
+    </g>
+  )}
+
+  {topic === 'logistics' && (
+    <g>
+      {/* Checklist with a checkmark — planning and organizing */}
+      <rect x="20" y="24" width="80" height="72" rx="6" fill={paper} stroke={ink} stroke-width="2.5" />
+      <line x1="36" y1="40" x2="84" y2="40" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="36" y1="58" x2="84" y2="58" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="36" y1="76" x2="84" y2="76" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <path d="M 24 38 L 28 42 L 32 36" stroke={rust} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="M 24 56 L 28 60 L 32 54" stroke={rust} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="M 24 74 L 28 78 L 32 72" stroke={sage} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </g>
+  )}
+
+  {topic === 'money' && (
+    <g>
+      {/* Dollar sign with stacked coins — finances */}
+      <circle cx="60" cy="60" r="32" fill={honey} fill-opacity="0.45" stroke={ink} stroke-width="2.5" />
+      <path d="M 60 44 L 60 76 M 50 50 L 70 50 M 50 70 L 70 70" stroke={ink} stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="80" cy="80" r="8" fill={sage} fill-opacity="0.6" stroke={ink} stroke-width="1.5" />
+      <circle cx="92" cy="88" r="6" fill={rust} fill-opacity="0.5" stroke={ink} stroke-width="1.5" />
+    </g>
+  )}
+
+  {topic === 'picture-day' && (
+    <g>
+      {/* Photo frame with a family silhouette */}
+      <rect x="22" y="26" width="76" height="72" rx="4" fill={paper} stroke={ink} stroke-width="2.5" />
+      <rect x="26" y="30" width="68" height="56" fill={honey} fill-opacity="0.3" />
+      <circle cx="54" cy="46" r="6" fill={rust} />
+      <path d="M 38 62 L 48 50 L 62 62 L 82 40 L 82 60 L 38 60 Z" fill={sage} fill-opacity="0.5" stroke={ink} stroke-width="1" stroke-linejoin="round" />
+      <line x1="26" y1="86" x2="94" y2="86" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+    </g>
+  )}
+
+  {topic === 'conflict' && (
+    <g>
+      {/* Two speech bubbles at angles, with a middle ground symbol */}
+      <rect x="16" y="28" width="48" height="40" rx="6" fill={rose} fill-opacity="0.3" stroke={ink} stroke-width="2.5" />
+      <path d="M 32 68 L 30 78 L 40 68 Z" fill={rose} fill-opacity="0.3" stroke={ink} stroke-width="2" stroke-linejoin="round" />
+      <rect x="56" y="46" width="48" height="40" rx="6" fill={sage} fill-opacity="0.3" stroke={ink} stroke-width="2.5" />
+      <path d="M 88 86 L 90 96 L 80 86 Z" fill={sage} fill-opacity="0.3" stroke={ink} stroke-width="2" stroke-linejoin="round" />
+      <circle cx="60" cy="60" r="5" fill={ink} />
+    </g>
+  )}
+
+  {topic === 'tools' && (
+    <g>
+      {/* Wrench and clipboard — practical resources */}
+      <path d="M 28 68 L 32 56 L 38 54 L 48 60 L 36 70 Z" fill={rust} fill-opacity="0.5" stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+      <circle cx="34" cy="58" r="4" fill={ink} />
+      <rect x="56" y="24" width="48" height="64" rx="4" fill={paper} stroke={ink} stroke-width="2.5" />
+      <line x1="68" y1="40" x2="92" y2="40" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="68" y1="54" x2="92" y2="54" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+      <line x1="68" y1="68" x2="92" y2="68" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
+    </g>
+  )}
+</svg>

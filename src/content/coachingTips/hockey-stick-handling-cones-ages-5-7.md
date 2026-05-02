@@ -2,8 +2,12 @@
 title: "Stick-Handling Through Cones"
 summary: "Build hand-eye coordination and puck control at slow speed. 10 minutes."
 sport: "hockey"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "stick-handling"
+progression: "intro"
+illustrationBrief: "A young player skating slowly through a line of cones, controlling the puck on the stick with short touches."
 publishedAt: 2026-02-17
 featured: false
 ---
@@ -25,4 +29,4 @@ Young players need to feel the puck on their stick before they can handle it at 
 
 If a puck is bouncing off the stick or rolling away, the player is hitting it instead of controlling it. The hands should stay quiet, absorbing the puck. The puck should move side to side with the stick blade, not bounce. If a player is looking down constantly, they're not getting feel for the puck. By the third rep, kids should glance down less often.
 
-**Variation:** Increase the spacing and speed. As kids improve, move cones closer together so they have to work the puck more aggressively. Introduce tight left and right touches by moving cones to the sides.
+**Variation:**

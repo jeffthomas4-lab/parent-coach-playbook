@@ -9,6 +9,9 @@ age: "all-ages"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-30
 featured: false
+hero: /illustrations/three-drives-one-relationship.png
+heroAlt: "A child in a car after a tee-ball game, seen from the dashboard view. Baseball helmet on the seat, parent's hand visible on passenger seat rest."
+ogImage: /illustrations/og-three-drives.png
 ---
 
 A six-year-old gets in the car after a Saturday tee-ball game. Tee-ball, where there are no strikeouts. Tee-ball, where the rules are written specifically to keep kids from feeling bad. The kid in the back seat is still upset. He missed two ground balls and forgot which way to run after he hit the ball.
@@ -67,4 +70,4 @@ If you cannot do both, get a different parent to coach the team. There are seaso
 
 ## What this site is for
 
-This site is not a coaching certification. It is not a parenting framework with capital letters. It is sideline notes from parents who have done this for years acros
+This site is not a coaching certification. It is not a parenting framework with capital letters. It is sideline notes from parents who have done this for years across different teams, different kids, different sports.

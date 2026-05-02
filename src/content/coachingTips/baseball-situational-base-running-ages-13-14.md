@@ -2,8 +2,12 @@
 title: "Situational Base Running"
 summary: "Run different scenarios on balls hit to different parts of the field. 25 minutes. Ages 13-14+."
 sport: "baseball"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "situational"
+fundamental: "base-running"
+progression: "refine"
+illustrationBrief: "A runner at first base advancing to second, third, or home depending on where a ball is hit to different outfield locations."
 publishedAt: 2026-04-06
 featured: false
 ---
@@ -24,6 +28,4 @@ Base running decisions change depending on the hit location and the number of ou
 
 Run all three runners through all five scenarios. Then switch positions.
 
-**What to look for:** Do they know when to go and when to stay? A runner who runs too much is out. A runner who holds up loses runs.
-
-**Variation:** Add a coach calling "Go" or "Stay" as they round bases to simulate a third-base coach. Then test if they can make the call themselves.
+**What to look for:** Do they know when to go and when to stay? A runner

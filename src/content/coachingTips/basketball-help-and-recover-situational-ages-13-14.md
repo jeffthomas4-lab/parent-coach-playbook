@@ -2,8 +2,12 @@
 title: "Help-and-Recover Situational"
 summary: "Three-on-three with emphasis on helping without fouling. 25 minutes. Ages 13-14+."
 sport: "basketball"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "situational"
+fundamental: "defending"
+progression: "refine"
+illustrationBrief: "Three defenders in a 3v3 game, with one defender leaving their player to help on a penetrating ball-handler, then recovering back."
 publishedAt: 2026-04-08
 featured: false
 ---
@@ -21,6 +25,4 @@ Help-and-recover is the most important team defense principle at this age. This 
 3. If the defense is tight, no help is needed.
 4. Play for 25 minutes, rotating positions every 5 minutes.
 
-**What to look for:** Help timing and recovery speed. Is the defense helping too early (opening driving lanes) or too late (allowing an easy pass)? Is the recovery defender in position or recovering to the wrong player?
-
-**Variation:** For younger kids (13), give them the rule: "Help only if the ball is 10 feet from the basket." For older kids (14), let them make the decision and debrief afterward about whether it was right.
+**What to look for:** Help timing and recovery speed. Is the defense helping too early (opening driving lanes) or too late (allowing an easy pass)? Is the recovery defender in position or recovering to the wrong pl

@@ -2,8 +2,12 @@
 title: "Red-Ball Groundstroke Rally"
 summary: "Build ball tracking and basic forehand/backhand at a young age. 12 minutes."
 sport: "tennis"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "forehand"
+progression: "intro"
+illustrationBrief: "Groundstroke rally with oversized red ball"
 publishedAt: 2026-04-30
 featured: false
 ---

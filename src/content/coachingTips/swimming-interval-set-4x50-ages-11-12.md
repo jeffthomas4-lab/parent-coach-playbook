@@ -2,9 +2,13 @@
 title: "Interval Set: 4x50"
 summary: "Build pace control and fitness with a simple interval set. 12 minutes."
 sport: "swimming"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
-publishedAt: 2026-05-15
+layer: "skills"
+fundamental: "freestyle"
+progression: "build"
+illustrationBrief: "Repeated 50-yard swims with rest intervals"
+publishedAt: 2026-05-01
 featured: false
 ---
 

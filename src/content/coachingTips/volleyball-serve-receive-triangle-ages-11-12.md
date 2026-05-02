@@ -2,8 +2,12 @@
 title: "Serve-Receive in a Triangle"
 summary: "Teach serve-receive positioning with a setter and two passers. 12 minutes."
 sport: "volleyball"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "receiving"
+progression: "build"
+illustrationBrief: "Serve receive formation and communication"
 publishedAt: 2026-03-28
 featured: false
 ---

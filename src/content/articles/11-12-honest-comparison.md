@@ -23,9 +23,9 @@ Three to four practices a week. Four to six tournaments spring through summer. H
 Development is faster. Competition is real. But the time commitment is enormous. The stress is higher. And if your kid doesn't make the elite roster, you're paying for a B team that doesn't compete much.
 
 **The honest question**
-Is your kid asking to move up? Or are you pushing because you think she should? Those two answers determine what happens next.
+Is your kid asking to move up? Or are you pushing because you think they should? Those two answers determine what happens next.
 
-If she's begging to play travel and asking to go to extra workouts: she's ready. If you're suggesting it and she's quiet: she's not ready.
+If they're begging to play travel and asking to go to extra workouts: they're ready. If you're suggesting it and they're quiet: they're not ready.
 
 **The schedule piece**
 Walk the travel schedule. Really walk it. Spring starts in March. Tournaments every April, May, June, July. That's your summer gone. That's every Saturday from March through July. Some families love that. Some hate it.
@@ -34,8 +34,8 @@ Walk the travel schedule. Really walk it. Spring starts in March. Tournaments ev
 Some kids play rec in fall and winter, travel in spring and summer. Some play rec while trying out for travel in February. You don't have to pick one forever. You can switch.
 
 **The call**
-Watch her play. Ask her directly: "Would you rather play more games or have your weekends?" Then listen.
+Watch them play. Ask them directly: "Would you rather play more games or have your weekends?" Then listen.
 
 Some kids are travel kids. Some are rec kids. Some kids change their minds at fourteen. That's all okay.
 
-Give her the choice once she understands what both actually cost.
+Give them the choice once they understand what both actually cost.

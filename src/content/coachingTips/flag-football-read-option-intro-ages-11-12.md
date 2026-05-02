@@ -2,8 +2,12 @@
 title: "Read-Option Intro"
 summary: "Teach QBs to read a defender and make a keep-or-pitch decision. 15 minutes."
 sport: "flag-football"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "ball-carrying"
+progression: "build"
+illustrationBrief: "A quarterback holding the ball, reading an end defender approaching, deciding whether to keep the ball or pitch to a trailing running back."
 publishedAt: 2026-01-18
 featured: false
 ---
@@ -23,6 +27,4 @@ The read-option is simple in theory: QB reads the dive end and keeps or pitches.
 
 **What to look for:**
 
-The QB's mesh with the dive man has to look live. If the dive man sees the QB pulling early, the read is obvious. The pitch should be a backward-moving spiral about waist-high. Dive man should hit their gap full speed, not worry about the mesh. The defender should vary their action: sometimes crash inside, sometimes flow outside. If the QB is good, they'll keep the pitch man moving and cut back. If the QB is struggling, the dive man isn't selling the threat.
-
-**Variation:** Add a second defender shadowing the pitch man. Now the QB has to make a two-read decision: first the dive end, then if pitching, whether the pitch man has room. This is closer to game-speed complexity.
+The QB's mesh with the dive man has to look live. If the dive man sees the QB pulling early, the read is obvious. The pitch should be a backward-moving spiral about waist-high. Dive man should hit their gap full speed, not worry about the mesh. The defender should vary their action: sometimes crash inside, sometimes flow outside. If the QB is good, they'll keep the pitch man moving and cut back. If the QB is struggling, the dive man isn't selling the

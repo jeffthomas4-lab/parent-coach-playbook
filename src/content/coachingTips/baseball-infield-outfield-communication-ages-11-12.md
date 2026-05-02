@@ -2,8 +2,12 @@
 title: "Infield-Outfield Communication"
 summary: "Practice calling off and backing up on fly balls. 20 minutes. Ages 11-12."
 sport: "baseball"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "situational"
+progression: "build"
+illustrationBrief: "Infielder and outfielder both running toward a pop fly, with the infielder calling the outfielder off with a raised hand."
 publishedAt: 2026-03-23
 featured: false
 ---
@@ -23,6 +27,4 @@ Collisions happen when kids don't talk. This drill teaches loud, clear communica
 5. The fielder makes the catch.
 6. Repeat to center, right, then back to left. Do 10 total.
 
-**What to look for:** Volume and decision-making. The kid who calls it must be loud and committed. The kid backing off must move away, not hover.
-
-**Variation:** For younger kids, call it out for them: "Shortstop's got it." For older kids, add a base runner and a throw to a base after the catch. That's the complete play.
+**What to look for:** Volume and decision-making. The kid who calls it must be loud and committed. The kid backing o

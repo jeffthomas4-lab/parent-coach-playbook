@@ -2,8 +2,12 @@
 title: "Dribble Tag"
 summary: "Tag game while dribbling a ball. 12 minutes. Ages 5-7."
 sport: "basketball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "dribbling"
+progression: "intro"
+illustrationBrief: "A young child dribbling a basketball while another child chases them, both moving in an open court area."
 publishedAt: 2026-01-13
 featured: false
 ---
@@ -23,4 +27,4 @@ Dribbling control improves when kids have to do it under pressure. Dribble tag f
 
 **What to look for:** Dribble control while moving fast. Kids who look at the ball will bump into people. Kids who keep their eyes up will see the tagger coming.
 
-**Variation:** For younger kids (5-6), make the square bigger so there's more space. For older kids (7), add a rule: if you stop dribbling or the ball gets away, you're automatically "it."
+**V

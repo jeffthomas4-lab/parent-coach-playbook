@@ -2,8 +2,12 @@
 title: "Defensive Shed"
 summary: "Advanced block-shed: rip through, spin out, and leg drive. 12 minutes."
 sport: "football"
-age: "13-14"
+ages: ["13-14"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "defending"
+progression: "refine"
+illustrationBrief: "Getting off offensive blocks in game"
 publishedAt: 2026-02-11
 featured: false
 ---

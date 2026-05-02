@@ -21,7 +21,7 @@ That's it. Throw it in a ziplock bag. Size gallon. Put it in the trunk.
 Don't pack extra shoes. Don't pack a full change of clothes. Don't pack ice packs or medical supplies. Your trunk is not an athletic training room. This is for the small things.
 
 **What you actually need**
-The tape for the time she rolled her ankle two hours before a tournament. The socks for when she left hers at home. The bandage for the time something went wrong and you needed to stabilize something before getting to the trainer.
+The tape for the time they rolled their ankle two hours before a tournament. The socks for when they left theirs at home. The bandage for the time something went wrong and you needed to stabilize something before getting to the trainer.
 
 One roll of tape solves more problems than anything else in that bag. Keep it fresh.
 

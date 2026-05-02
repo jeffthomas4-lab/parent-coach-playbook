@@ -2,8 +2,12 @@
 title: "Four-Corners Ground Balls"
 summary: "Roll balls to different spots so kids field from all angles. 20 minutes. Ages 8-10."
 sport: "baseball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "fielding"
+progression: "intro"
+illustrationBrief: "A child in the center of a 20-foot square with cones at each corner, moving toward a grounder rolling to one of the four directions."
 publishedAt: 2026-02-16
 featured: false
 ---
@@ -21,6 +25,4 @@ This drill teaches kids to move their feet to the ball instead of reaching. Ever
 3. They throw it back to you or to a base.
 4. Repeat. Do four reps to each corner. That's 16 total.
 
-**What to look for:** Footwork, not glove work. The feet position the body. If the feet are right, the glove finds the ball. If the feet are wrong, the glove compensates and the kid is out of position for the throw.
-
-**Variation:** For older kids (10), after they field the grounder, call out a base (first, second, third) and they make the throw. For younger kids (8-9), let them just field and roll it back.
+**What to look for:** Footwork, not glove work. The feet position the body. If the feet are right, the glove finds the ball. If the feet are wrong, the glove compensates and the kid is out of posi

@@ -1,7 +1,7 @@
 ---
 // Kit (formerly ConvertKit) inline signup form.
 //
-// Form ID 9388648 is the main newsletter form (set up by Jeff).
+// Form ID 9388648 is the main newsletter form.
 // Override via PUBLIC_KIT_FORM_ID env var for branch previews if needed.
 // Lead-magnet flows can pass a different formId prop.
 
@@ -17,7 +17,7 @@ interface Props {
 const {
   variant = 'inline',
   headline = 'Slide into the inbox',
-  blurb = 'One short note a week. From Maren, Dan, and Jeff. Easy unsubscribe.',
+  blurb = 'One short read a week from the Parent Coach Playbook Editorial. Easy unsubscribe.',
   formId = import.meta.env.PUBLIC_KIT_FORM_ID || '9388648',
   buttonLabel = 'Subscribe',
   collectFirstName = true,

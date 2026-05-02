@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { listPendingReviews, getCampById, type CampReview, type Camp } from '../../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+let pending: CampReview[] = [];
+const campLookup = new Map<string, Camp>();
+let dbAvailable = !!env?.DB;
+if (env?.DB) {
+  try {
+    pending = await listPendingReviews(env.DB);
+    for (const r of pending) {
+      if (!campLookup.has(r.camp_id)) {
+        const c = await getCampById(env.DB, r.camp_id);
+        if (c) campLookup.set(r.camp_id, c);
+      }
+    }
+  } catch (e) {
+    console.error('listPendingReviews failed', e);
+  }
+}
+
+const fmt = (s: string) =>
+  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+---
+<BaseLayout title="Reviews moderation" description="Admin queue for camp reviews" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+        <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Reviews
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">Pending reviews</h1>
+      {!adminEmail && (
+        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+          Cloudflare Access header not detected. Approve/reject will fail until /admin/* is wired through Access.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {!dbAvailable ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database not bound.</p>
+      ) : pending.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Queue is empty.</p>
+      ) : (
+        <ul class="grid gap-4">
+          {pending.map((r) => {
+            const camp = campLookup.get(r.camp_id);
+            return (
+              <li class="border border-bone p-5 bg-paper">
+                <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                  {r.rating}/5 · {fmt(r.submitted_at)} · from {r.reviewer_email}
+                </p>
+                <h3 class="font-display text-ink text-lg leading-tight mt-1" style="font-weight: 500;">
+                  {camp ? (
+                    <a href={`/camps/${camp.slug}/`} class="hover:text-rust" target="_blank" rel="noopener">{camp.name}</a>
+                  ) : (
+                    <span class="text-ink-soft">Unknown camp</span>
+                  )}
+                  {r.reviewer_display_name && <span class="text-ink-soft font-normal"> · "{r.reviewer_display_name}"</span>}
+                </h3>
+                <p class="font-display text-ink-soft text-sm mt-3 leading-snug" style="white-space: pre-wrap;">{r.body}</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <form method="POST" action={`/api/admin/reviews/${r.id}/approve`} class="inline">
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors" style="font-weight: 500;">Approve</button>
+                  </form>
+                  <form method="POST" action={`/api/admin/reviews/${r.id}/reject`} class="inline">
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;">Reject</button>
+                  </form>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

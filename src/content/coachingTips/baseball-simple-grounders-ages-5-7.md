@@ -2,8 +2,12 @@
 title: "Simple Grounders"
 summary: "Roll balls to kids in a line so they field 10 reps each. 15 minutes. Ages 5-7."
 sport: "baseball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "fielding"
+progression: "intro"
+illustrationBrief: "A coach rolling a grounder to a child in a fielding position, with the child's glove low to the ground and feet positioned to move."
 publishedAt: 2026-01-19
 featured: false
 ---
@@ -22,6 +26,4 @@ Fielding starts with the feet and the glove staying low. Grounders teach this fa
 4. Move to the next kid. Cycle through all four kids twice. That's 8 reps each.
 5. On the final round, let them make a throw to a base (or just back to you). Add that motion only after they've caught 8 clean ones.
 
-**What to look for:** Hands down, knees bent, glove on the ground first. Most kids will reach for the ball with their hands high. Reset them: "Glove goes first. Hands come after."
-
-**Variation:** For kids who are catching cleanly, roll the ball slightly to their right or left so they have to move two steps. That teaches footwork.
+**What to look for:** Hands down, knees bent, glove on the ground first. Most kids will reach for the ball with their ha

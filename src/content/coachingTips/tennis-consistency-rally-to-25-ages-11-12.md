@@ -2,9 +2,13 @@
 title: "Consistency Rally to 25"
 summary: "Build stroke consistency by rallying continuously for 25 shots. 12 minutes."
 sport: "tennis"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
-publishedAt: 2026-05-06
+layer: "skills"
+fundamental: "match-play"
+progression: "build"
+illustrationBrief: "Extended rally practice maintaining shots"
+publishedAt: 2026-04-22
 featured: false
 ---
 

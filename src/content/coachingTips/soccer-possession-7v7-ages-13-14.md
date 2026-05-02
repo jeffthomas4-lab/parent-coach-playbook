@@ -2,8 +2,12 @@
 title: "Possession 7v7"
 summary: "7v7 scrimmage with the goal to keep possession for 10 passes. 30 minutes. Ages 13-14+."
 sport: "soccer"
-age: "13-14"
+ages: ["13-14"]
 focus: "scrimmage"
+layer: "skills"
+fundamental: "scrimmage"
+progression: "refine"
+illustrationBrief: "Seven v seven possession battle in constrained space"
 publishedAt: 2026-04-07
 featured: false
 ---

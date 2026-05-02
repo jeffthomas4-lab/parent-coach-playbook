@@ -2,8 +2,12 @@
 title: "Breakout Patterns"
 summary: "Teach the 1-2-2 breakout: D to D pass, then outlet positioning. 15 minutes."
 sport: "hockey"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "situational"
+fundamental: "positioning"
+progression: "build"
+illustrationBrief: "Two defensemen passing the puck between them near the goal line, with forwards waiting in outlet positions near the blue line."
 publishedAt: 2026-02-26
 featured: false
 ---
@@ -23,6 +27,4 @@ Most possessions start with a breakout from the defensive zone. At 11-12, player
 
 **What to look for:**
 
-The D-to-D pass should be quick and accurate. If it's bouncing or off-target, the opposite D won't have an easy pass to the outlet. The forwards need to be positioned where they can receive and immediately pass. If an outlet is 10 yards away, the pass is too long. The center should be trailing at the blue line before the outlet pass is made, so they're in motion when they receive it.
-
-**Variation:** Add a forechecking forward. Now the defensemen have to move the puck faster because pressure is coming. This teaches the real reason for the breakout pattern.
+The D-to-D pass should be quick and accurate. If it's bouncing or off-target, the opposite D won't have an easy pass to the outlet. The forwards need to be positioned where they can receive and immediately pass. If an outlet is 10 yards away, the pass is too long. The center should be trailing at the blue line before the outlet pass is made, so the

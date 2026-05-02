@@ -2,8 +2,12 @@
 title: "Tee Work: The Foundation"
 summary: "Get solid contact with a stationary tee in 15 minutes. Ages 5-7."
 sport: "baseball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "hitting"
+progression: "intro"
+illustrationBrief: "A young child standing at a T-ball tee with bat in hand, positioned to make contact with the ball at belt height."
 publishedAt: 2026-01-05
 featured: false
 ---
@@ -24,4 +28,4 @@ The tee is where batting starts. Kids this age need to build the habit of seeing
 
 **What to look for:** Solid contact and a full follow-through. Kids this age who start making contact will want to keep going. Let them. The ball coming off the bat is their best teacher.
 
-**Variation:** For younger kids (5-6) who struggle with hand-eye, lower the tee to their knees. For older kids (7) who are consistent, move the tee slightly forward (in front of their front hip) so they learn to hit the ball in front of the plate. That's the real skill.
+**Variation:** For younger kids (5-6) who struggle with hand-eye, lower the te

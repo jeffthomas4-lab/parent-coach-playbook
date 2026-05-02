@@ -2,8 +2,12 @@
 title: "Simple Two-Cone Passing"
 summary: "Two kids pass between two cones and back. 15 minutes. Ages 5-7."
 sport: "soccer"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "Two cones with pass between them"
 publishedAt: 2026-01-24
 featured: false
 ---

@@ -2,8 +2,12 @@
 title: "1v1 to a Goal"
 summary: "One attacker vs one defender, 15 yards to goal. 20 minutes. Ages 8-10."
 sport: "soccer"
-age: "8-10"
+ages: ["8-10"]
 focus: "situational"
+layer: "foundations"
+fundamental: "finishing"
+progression: "intro"
+illustrationBrief: "One attacker facing one defender with a goal 15 yards away, dribbling or shooting to score while the defender closes down."
 publishedAt: 2026-02-18
 featured: false
 ---
@@ -22,6 +26,4 @@ featured: false
 4. Play ends when a goal is scored, the ball goes out of bounds, or the defender wins it.
 5. Do 8-10 reps. Rotate attacker and defender.
 
-**What to look for:** Attack decisions and defensive positioning. Does the attacker have a plan or just run at the defender? Does the defender stay on their feet or dive in?
-
-**Variation:** For younger kids (8-9), make the goal bigger (6 yards) and let the attacker have an unlimited running start. For older kids (10), add a second defender so it's 1v2.
+**What to look for:** Attack decisions and defensive positioning. Does the attacker have a plan or just run at the defender? Does the defender stay on

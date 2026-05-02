@@ -2,8 +2,12 @@
 title: "Race-Pace Tempo"
 summary: "Build aerobic capacity at a steady, challenging pace. 20 minutes."
 sport: "cross-country"
-age: "13-14"
+ages: ["13-14"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "pacing"
+progression: "build"
+illustrationBrief: "Young runners running at tempo effort on a measured course, maintaining a steady hard pace for 15-20 minutes."
 publishedAt: 2026-04-27
 featured: false
 ---
@@ -22,6 +26,4 @@ Tempo runs teach runners to hold a hard pace for an extended time. This builds m
 
 **What to look for:**
 
-The tempo effort should feel consistent across both segments. If the runner is significantly slower on the second tempo, the first one was too fast. Tempo runs teach the runner what "hard but manageable" feels like. This translates directly to racing because races are paced similarly: hard but sustainable. The runner should feel like they could go on, but they're glad when it's over.
-
-**Variation:** For very experienced runners, use 3 miles as one continuous tempo. For building toward tempo work, start with 1 mile continuous tempo and progress up.
+The tempo effort should feel consistent across both segments. If the runner is significantly slower on the second tempo, the first one was too fast. Tempo runs teach the runner what "hard but manageable" feels like. This translates directly to racing because races are paced similarly: hard but sustainable. The runner should feel like they could go on, but they'r

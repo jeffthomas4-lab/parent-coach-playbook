@@ -2,8 +2,12 @@
 title: "Situational Hitting"
 summary: "Swing away, bunt, and hit to the opposite field based on game scenarios. 25 minutes. Ages 11-12."
 sport: "baseball"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "situational"
+fundamental: "hitting"
+progression: "build"
+illustrationBrief: "A batter at home plate demonstrating three positions: full swing, bunting stance, and opposite-field swing technique."
 publishedAt: 2026-03-02
 featured: false
 ---
@@ -24,4 +28,4 @@ Situational hitting teaches kids that the pitch doesn't determine the swing. The
 
 **What to look for:** Decision-making and approach adjustment. Do they swing differently in each situation? If they're the same hitter every rep, they're not thinking.
 
-**Variation:** Add actual location difficulty to each situation (first situation gets waist-high tosses, second gets inside pitches, third gets outside pitches). Or for younger kids, just do one situation repeated 30 times so they nail the mentality.
+**Variation:** Add actual location difficulty to eac

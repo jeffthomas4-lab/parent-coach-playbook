@@ -2,8 +2,12 @@
 title: "Throw and Catch Ladder"
 summary: "Two kids throw increasing distances and catch cleanly. 20 minutes. Ages 8-10."
 sport: "softball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "throwing"
+progression: "intro"
+illustrationBrief: "Distance progression for throwing accuracy"
 publishedAt: 2026-02-17
 featured: false
 ---

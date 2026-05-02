@@ -2,8 +2,12 @@
 title: "Base Running Leadoffs"
 summary: "Practice walking off the base and reading the pitch. 20 minutes. Ages 11-12."
 sport: "softball"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "base-running"
+progression: "build"
+illustrationBrief: "Leading off with runner placement strategy"
 publishedAt: 2026-03-10
 featured: false
 ---

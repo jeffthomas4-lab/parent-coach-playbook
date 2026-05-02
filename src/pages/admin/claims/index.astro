@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { listPendingClaims, getCampById, type CampClaim, type Camp } from '../../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+let claims: CampClaim[] = [];
+const campLookup = new Map<string, Camp>();
+let dbAvailable = !!env?.DB;
+if (env?.DB) {
+  try {
+    claims = await listPendingClaims(env.DB);
+    for (const c of claims) {
+      if (!campLookup.has(c.camp_id)) {
+        const camp = await getCampById(env.DB, c.camp_id);
+        if (camp) campLookup.set(c.camp_id, camp);
+      }
+    }
+  } catch (e) {
+    console.error('listPendingClaims failed', e);
+  }
+}
+
+const fmt = (s: string) =>
+  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+---
+<BaseLayout title="Claims moderation" description="Admin queue for camp claims" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+        <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Claims
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">Pending claims</h1>
+      <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl" style="font-weight: 500;">
+        Two-step flow: <strong>verify</strong> after confirming the claimant runs the camp, then send a Stripe payment link or invoice. Once paid, mark <strong>paid</strong>: the camp's listing flips to "claimed" and the owner gets self-edit access.
+      </p>
+      {!adminEmail && (
+        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+          Cloudflare Access header not detected. Action endpoints will fail until /admin/* is wired through Access.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {!dbAvailable ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database not bound.</p>
+      ) : claims.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">No claims awaiting action.</p>
+      ) : (
+        <ul class="grid gap-4">
+          {claims.map((cl) => {
+            const camp = campLookup.get(cl.camp_id);
+            return (
+              <li class="border border-bone p-5 bg-paper">
+                <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                  {cl.status} · {fmt(cl.submitted_at)}
+                </p>
+                <h3 class="font-display text-ink text-lg leading-tight mt-1" style="font-weight: 500;">
+                  {camp ? <a href={`/camps/${camp.slug}/`} class="hover:text-rust" target="_blank" rel="noopener">{camp.name}</a> : 'Unknown camp'}
+                </h3>
+                <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                  Claimant: <strong>{cl.claimant_email}</strong>
+                  {cl.claimant_name && <> · {cl.claimant_name}</>}
+                  {cl.organization && <> · {cl.organization}</>}
+                  {cl.phone && <> · {cl.phone}</>}
+                </p>
+                <p class="font-display text-ink text-sm mt-3 leading-snug" style="white-space: pre-wrap;"><strong>Notes:</strong> {cl.notes}</p>
+
+                <div class="mt-4 grid gap-2 sm:grid-cols-3">
+                  <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
+                    <input type="hidden" name="status" value="verified" />
+                    <textarea name="notes" rows="2" placeholder="Verification notes (called school, confirmed role)" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper" style="font-weight: 500;">Mark verified</button>
+                  </form>
+                  <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
+                    <input type="hidden" name="status" value="paid" />
+                    <input name="paid_until" type="date" class="px-2 py-1 font-body bg-paper border border-bone text-xs" placeholder="Paid until (defaults to 1 year)" />
+                    <button type="submit" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Mark paid + activate claim</button>
+                  </form>
+                  <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
+                    <input type="hidden" name="status" value="rejected" />
+                    <textarea name="notes" rows="2" placeholder="Reject reason" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">Reject</button>
+                  </form>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

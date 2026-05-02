@@ -2,8 +2,12 @@
 title: "Route Running on Cones"
 summary: "Teach young receivers to follow cone paths at game speed. 8 minutes."
 sport: "flag-football"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "route-running"
+progression: "intro"
+illustrationBrief: "A young receiver running a route marked by cones, cutting hard at each cone and catching a pass at the final destination."
 publishedAt: 2026-01-03
 featured: false
 ---
@@ -26,4 +30,4 @@ Young receivers need to understand that running a route isn't just about speed: 
 
 Watch for hard plant steps at cone cuts. Many kids round their routes; the cone should make them stop and redirect. The QB's job is to throw accurately so the receiver doesn't have to adjust mid-cut. If throws are off, fix the QB's footwork first, not the receiver's route.
 
-**Variation:** For older kids in the same age group (closer to 7), add a defender who starts 2 yards away and tries to tag the receiver before they plant at the next cone. This teaches receivers to accelerate into their cuts, not slow down.
+**Variation:** For older kids in t

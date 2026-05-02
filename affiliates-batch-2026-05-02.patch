@@ -1,0 +1,558 @@
+From bbf33113eaafb71eadbd520a0aa417469875f37f Mon Sep 17 00:00:00 2001
+From: Jeff Thomas <jeffthomas@pugetsound.edu>
+Date: Sat, 2 May 2026 19:06:50 +0000
+Subject: [PATCH] =?UTF-8?q?affiliates:=20add=2015=20baseball=20gear=20pick?=
+ =?UTF-8?q?s=20(practice=20+=20ages=205=E2=80=937=20/=208=E2=80=9310=20/?=
+ =?UTF-8?q?=2011=E2=80=9312=20/=2013=E2=80=9314)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Adds 15 amazon-affiliate gear cards to the baseball guide, plus a new
+'Practice and at-home training' section. Each card has a TODO 'Our take:'
+line for Jeff to fill in his voice. Master list updated with rows for
+all 15 picks. Six picks blocked on Jeff (wrong product at link or no
+slug to verify against) tracked in AFFILIATE_PENDING_FROM_JEFF.md.
+---
+ AFFILIATE_MASTER_LIST.md       |  34 +++++
+ AFFILIATE_PENDING_FROM_JEFF.md |  40 +++++
+ src/content/guides/baseball.md | 272 ++++++++++++++++++++++++++++++++-
+ src/data/affiliates.json       |  90 +++++++++++
+ 4 files changed, 434 insertions(+), 2 deletions(-)
+ create mode 100755 AFFILIATE_MASTER_LIST.md
+ create mode 100755 AFFILIATE_PENDING_FROM_JEFF.md
+
+diff --git a/AFFILIATE_MASTER_LIST.md b/AFFILIATE_MASTER_LIST.md
+new file mode 100755
+index 0000000..e3c1072
+--- /dev/null
++++ b/AFFILIATE_MASTER_LIST.md
+@@ -0,0 +1,34 @@
++# Affiliate Master List
++
++The single source of truth for every product we recommend, where it lives on the site, the affiliate redirect, and the destination URL. Update this every time a pick goes live.
++
++Last updated: 2026-05-02
++
++---
++
++## Live picks
++
++| Pick slug | Product | Sport | Age | Retailer | /go/ slug | Destination URL | Lives on |
++|---|---|---|---|---|---|---|---|
++| baseball-glove-9in-youth | Mizuno Prospect PowerClose Youth Glove | Baseball | 5–7 | Amazon | `/go/baseball-glove-9in-youth/` | https://amzn.to/3OUH9Ji | `guides/baseball.md` (Ages 5–7) |
++| baseball-bat-teeball | Rawlings Remix T-Ball Bat (-12) | Baseball | 5–7 | Amazon | `/go/baseball-bat-teeball/` | https://amzn.to/3OE8ob3 | `guides/baseball.md` (Ages 5–7) |
++| baseball-helmet-youth | Rawlings COOLFLO Youth Batting Helmet | Baseball | 5–7 | Amazon | `/go/baseball-helmet-youth/` | https://amzn.to/4cVoDbx | `guides/baseball.md` (Ages 5–7) |
++| baseball-pants-youth | Easton Youth Standard Baseball Pants | Baseball | 5–7 | Amazon | `/go/baseball-pants-youth/` | https://amzn.to/3Rg9Gtn | `guides/baseball.md` (Ages 5–7) |
++| baseball-belt-youth | Champion Sports Elastic Uniform Belt | Baseball | 5–7 | Amazon | `/go/baseball-belt-youth/` | https://amzn.to/4u5CHqB | `guides/baseball.md` (Ages 5–7) |
++| baseball-catchers-mitt-32in | Rawlings Renegade RCM325B Catcher's Mitt | Baseball | 5–7 (6–8) | Amazon | `/go/baseball-catchers-mitt-32in/` | https://amzn.to/4eYBhZX | `guides/baseball.md` (Ages 5–7) |
++| baseball-batting-gloves-youth | Franklin Sports Shok-Sorb Youth Batting Gloves | Baseball | 8–10 | Amazon | `/go/baseball-batting-gloves-youth/` | https://amzn.to/4ugLk14 | `guides/baseball.md` (Ages 8–10) |
++| baseball-cup-youth | Davion Youth Athletic Cup Underwear | Baseball | 11–12 | Amazon | `/go/baseball-cup-youth/` | https://amzn.to/3QNrCeO | `guides/baseball.md` (Ages 11–12) |
++| baseball-catchers-gear-youth | Easton Black Magic Youth Catcher's Set | Baseball | 11–12 | Amazon | `/go/baseball-catchers-gear-youth/` | https://amzn.to/4dgicRP | `guides/baseball.md` (Ages 11–12) |
++| baseball-catchers-bag | Kioqiear Catcher's Equipment Bag | Baseball | 11–12 | Amazon | `/go/baseball-catchers-bag/` | https://amzn.to/48Cigc0 | `guides/baseball.md` (Ages 11–12) |
++| baseball-sliding-mitt | Grit Glove Baseball Sliding Mitt | Baseball | 11–12 | Amazon | `/go/baseball-sliding-mitt/` | https://amzn.to/4eXZyiR | `guides/baseball.md` (Ages 11–12) |
++| baseball-arm-sleeve | Newcotte Compression Baseball Arm Sleeve | Baseball | 13–14 | Amazon | `/go/baseball-arm-sleeve/` | https://amzn.to/4unojJK | `guides/baseball.md` (Ages 13–14) |
++| baseball-balls-teeball | Poosue Youth T-Ball Safety Baseballs | Baseball | Practice | Amazon | `/go/baseball-balls-teeball/` | https://amzn.to/4d1wJzo | `guides/baseball.md` (Practice) |
++| baseball-bases-rubber | GoSports Rubber Throw-Down Bases | Baseball | Practice | Amazon | `/go/baseball-bases-rubber/` | https://amzn.to/4eiz9fr | `guides/baseball.md` (Practice) |
++| baseball-balls-wiffle | Champion Sports Plastic Wiffle Baseballs | Baseball | Practice | Amazon | `/go/baseball-balls-wiffle/` | https://amzn.to/4w61coO | `guides/baseball.md` (Practice) |
++| baseball-blitzball-set | Blitzball Bat & 3-Ball Starter Pack | Baseball | Practice (10+) | Amazon | `/go/baseball-blitzball-set/` | https://amzn.to/4t3YfCl | `guides/baseball.md` (Practice) |
++| baseball-glove-breakin-kit | Rawlings BRKIT Glove Break-In Kit | Baseball | Practice | Amazon | `/go/baseball-glove-breakin-kit/` | https://amzn.to/4wazlny | `guides/baseball.md` (Practice) |
++| baseball-glove-laces | Baseball Glove Lacing Repair Kit | Baseball | Practice | Amazon | `/go/baseball-glove-laces/` | https://amzn.to/4tb7Fw8 | `guides/baseball.md` (Practice) |
++
++---
++
++## B
+\ No newline at end of file
+diff --git a/AFFILIATE_PENDING_FROM_JEFF.md b/AFFILIATE_PENDING_FROM_JEFF.md
+new file mode 100755
+index 0000000..7113973
+--- /dev/null
++++ b/AFFILIATE_PENDING_FROM_JEFF.md
+@@ -0,0 +1,40 @@
++# Affiliate picks pending from Jeff
++
++Picks Jeff sent that did not match the amzn.to redirect target, or where the redirect URL had no product slug to verify against. Removed from the May 2 batch. Resolve and re-add.
++
++Last updated: 2026-05-02
++
++---
++
++## Wrong product at the link
++
++The amzn.to short link redirects to a product that does not match the label Jeff gave.
++
++| Pick | Link Jeff gave | Where it actually points |
++|---|---|---|
++| Basketball indoor dribbling ball | https://amzn.to/4uso7cs | BLITZBALL Starter Pack (B01H51MVFS) — same ASIN as the baseball Blitzball pick |
++| Sunglasses (modest price) | https://amzn.to/4cM9DOt | Franklin Sports Master Baseball Gloves (B013LPRKQ2) |
++| Socks (HS) | https://amzn.to/4tTh7FE | Raigoo Soccer Socks (B07RJZZ9XX) — soccer-branded, may still be the right product |
++| Batting gloves 12+ | https://amzn.to/4cVc0id | Rawlings SOCL-BLK Baseball Socks (B06XD2XW91) — looks like a swap with the socks pick |
++
++Action: send a corrected `amzn.to` link for each, or paste the brand/model name and I'll find a matching link.
++
++---
++
++## Redirect has no product slug
++
++The amzn.to short link redirects to `/dp/{ASIN}` with no slug, so I can't pull brand/model from the URL. Amazon product pages are blocked from this environment, so I cannot read the page itself.
++
++| Pick | Link Jeff gave | ASIN |
++|---|---|---|
++| Multi-sport cleats (also softball/football) | https://amzn.to/42NphDe | B0DRC1HJN8 |
++| Base layer long sleeve | https://amzn.to/3Pcwmdz | B0D9FD8N75 |
++
++Action: paste the brand and model name, or send a slugged link (anything that includes the product title in the URL).
++
++---
++
++## Notes
++
++- The original list had two Blitzball entries (basketball dribbling ball and "Blitz ball bat & 3 balls") that resolved to the same ASIN B01H51MVFS. Jeff confirmed: keep one (the bat & balls set, listed under Practice and at-home training).
++- amzn.to itself works from this environment. The `amazon.com` page beyond the redirect is blocked, so descriptions are written from the URL slug + search keywords visible in the redirect target. That's fine when the slug names the product. Not fine when the slug is just an ASIN.
+diff --git a/src/content/guides/baseball.md b/src/content/guides/baseball.md
+index 783e4ac..bf8b7c1 100644
+--- a/src/content/guides/baseball.md
++++ b/src/content/guides/baseball.md
+@@ -13,6 +13,8 @@ So your kid wants to play baseball. Or your kid signed up because their friend s
+ 
+ Here is what you actually need, by age. We have bought the wrong thing in almost every category at least once. Learn from us.
+ 
++*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
++
+ ## Ages 5–7 (Tee-ball)
+ 
+ This is the year of *let's see if they like it*. Buy the basics. Don't buy a $200 bat for a 5-year-old who may switch to soccer in three weeks.
+@@ -25,6 +27,17 @@ How to choose: have your kid hold the glove out and squeeze it shut with one han
+ 
+ Cost range: $20–40. Don't go higher at this age.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Prospect PowerClose Youth Glove</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">9-inch youth glove built for small hands. The PowerClose design and soft palm liner help kids actually close the glove on their first day.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Overall versatility, works with players who have small hands. Good quality for the price.</p>
++    <a href="/go/baseball-glove-9in-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ **A tee-ball bat (24–26 inch)**
+ 
+ Tee-ball bats are aluminum, light, and short. Look for a 24-to-26 inch length and 13-to-15 ounce weight. Most leagues mark approved bats with a stamp.
+@@ -33,12 +46,34 @@ How to choose: the one-arm test. Have your kid extend the bat horizontally from
+ 
+ Cost range: $25–50.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings Remix T-Ball Bat (-12)</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Single-piece aluminum, USA Baseball approved, 2 1/4 inch barrel. Light enough for a five-year-old to actually swing.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Cool colors, USA Baseball approved, the right weight for a five-year-old who is still figuring out the swing.</p>
++    <a href="/go/baseball-bat-teeball/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ **A helmet**
+ 
+ Most leagues provide team helmets. If yours doesn't, get a basic youth helmet sized to fit snugly without pinching. The helmet should not move when your kid shakes their head.
+ 
+ Cost range: $25–40.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings COOLFLO Youth Batting Helmet</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard youth helmet with the option to add a face mask if your league requires one or you want the extra coverage.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Has a face mask option if you want to add it. Tough, durable, high reviews.</p>
++    <a href="/go/baseball-helmet-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ **Cleats (optional at this age)**
+ 
+ Tee-ball can be played in regular sneakers. Plastic cleats are nice if you have them, not necessary. If you buy cleats, buy a half-size up so they last through the season.
+@@ -51,6 +86,45 @@ Leagues usually require white or gray pants. The team provides the jersey. A sim
+ 
+ Cost range: $20–30 for pants, $8–12 for a belt.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton Youth Standard Baseball Pants</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Easton youth-cut baseball pants. Standard build, multiple color options, sized down for tee-ball and coach-pitch bodies.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-pants-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Champion Sports Elastic Uniform Belt</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Elastic uniform belt sized for youth waists. Stretches with movement, clips closed, holds up without re-tying every inning.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-belt-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**A catcher's mitt (optional)**
++
++Most kids won't catch in tee-ball. If yours wants to try, or wants to play catcher in the backyard, a 32-inch youth catcher's mitt fits the hand and the role. Most leagues provide team gear; this is the at-home option.
++
++Cost range: $40–80.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings Renegade RCM325B Catcher's Mitt</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rawlings Renegade Series catcher's mitt, 32.5 inches. Entry-level full-size mitt for kids ready to take catcher reps in coach-pitch.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-catchers-mitt-32in/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ ## Ages 8–10 (Coach-pitch and machine-pitch)
+ 
+ Coach-pitch baseball typically starts at age 6 and overlaps with tee-ball. The transition happens naturally as kids improve. Age, talent, and experience are mixed together at the youth level. That is the point. The goal is for kids to have fun, learn how to be a teammate, and learn a little bit about the sport.
+@@ -77,6 +151,17 @@ Most coach-pitch kids don't need them. By age 10, some kids want them because th
+ 
+ Cost range: $15–30.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 8–10</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Franklin Sports Shok-Sorb Youth Batting Gloves</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Franklin Shok-Sorb youth batting gloves. Padded palm cushions the sting of mishit balls. Sized for ages 6 to 10.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-batting-gloves-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ **Cleats (now actually needed)**
+ 
+ Plastic-stud cleats are the standard. Metal cleats are not legal in most leagues until age 13. Look for cleats with a high enough collar to stop ankle rolls.
+@@ -107,12 +192,68 @@ This is a conversation no parent enjoys. Buy one before the season starts. Your
+ 
+ Cost range: $15–25.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Davion Youth Athletic Cup Underwear</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth athletic underwear with a built-in protective cup. Multi-sport (baseball, football, lacrosse), removes the separate cup-and-supporter step.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-cup-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ **Catcher's gear (only if your kid is the catcher)**
+ 
+ Most leagues provide team catcher's gear. If you go travel ball, you may need your own. Helmet, chest protector, leg guards, and a catcher's mitt run $300 to $500 as a set.
+ 
+ Cost range: $300–500 for the full set if needed.
+ 
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton Black Magic Youth Catcher's Set</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Easton Black Magic youth catcher's set. Helmet, chest protector, and leg guards in matching color. Sized for ages 9 to 12.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-catchers-gear-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**A catcher's bag**
++
++A full catcher's setup does not fit in a regular equipment bag. Wheeled or backpack-style catcher's bags carry helmet, chest protector, leg guards, mitt, and bat in one piece. Worth the upgrade once your kid catches more than once a week.
++
++Cost range: $40–80.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Kioqiear Catcher's Equipment Bag</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Catcher's equipment bag with multiple compartments. Carries helmet, chest protector, leg guards, mitt, and bat in one piece.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-catchers-bag/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**A sliding mitt**
++
++Sliding mitts protect the lead hand on head-first slides. Optional but cheap insurance against jammed fingers and bent thumbs. Most kids stop wearing them by 14.
++
++Cost range: $20–40.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Grit Glove Baseball Sliding Mitt</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Grit Glove baseball sliding mitt with batting-glove-style finger protection. Worn on the lead hand on head-first slides to prevent jammed fingers.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-sliding-mitt/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ ## Ages 13–14 (Junior high / pony / travel)
+ 
+ The bat rules change here (BBCOR for high school, USSSA for travel). The glove gets full-size. Investments start to be worth making.
+@@ -139,14 +280,141 @@ Metal cleats grip better but cost more. Plastic still works. If your kid plays t
+ 
+ Cost range: $70–150.
+ 
++**An arm sleeve**
++
++Pitchers and outfielders wear them for warmth and light compression on the throwing arm. Common in cold-weather games and early-spring practices. Not necessary for tee-ball or rec league.
++
++Cost range: $10–20.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13–14</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Newcotte Compression Baseball Arm Sleeve</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Compression baseball arm sleeve. Light support and warmth for pitchers, throwers, and cold-weather games.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-arm-sleeve/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ ## Ages 15+ (High school and club)
+ 
+ The economics change here. Most high-school programs supply jerseys, helmets, and field gear. You buy the personal gear: glove, bat, cleats, gloves, undershirts, and any specialty equipment for their position.
+ 
+-Buy the best glove you can afford. A $250 glove will outlast a $80 glove by three to five seasons. The bat economics are different — composites die after a year or two of heavy use.
++Buy the best glove you can afford. A $250 glove will outlast a $80 glove by three to five seasons. The bat economics are different. Composites die after a year or two of heavy use.
+ 
+ Travel and showcase ball gets expensive fast: $1,500 to $4,000 per season for fees, travel, and equipment. We are not telling you that's worth it. We are telling you what it costs.
+ 
++## Practice and at-home training
++
++The gear that gets used between practices matters more than the gear that sits in a bag on game day. A bucket of balls, a tee, a few wiffle balls, and a kid who wants to swing. Cheap, durable, lasts for years.
++
++**Soft tee-ball baseballs**
++
++Real baseballs are too hard for kids learning to track and swing. Soft-core balls weigh and look the same but won't bruise a kid or break a window.
++
++Cost range: $15–25 for a multi-pack.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Poosue Youth T-Ball Safety Baseballs</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Soft-core youth t-ball baseballs. Same size and look as a regulation ball, soft enough that taking one off the shin or the bat handle does not end practice.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-balls-teeball/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**Throw-down bases**
++
++Rubber bases that lay flat on any surface. Useful for backyard games, driveway practice, and league-day setup when the field crew did not show.
++
++Cost range: $20–35 for a four-base set.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">GoSports Rubber Throw-Down Bases</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rubber throw-down bases. Lay flat on grass, dirt, or concrete, and roll up small enough to throw in a bag.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-bases-rubber/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**Wiffle balls**
++
++The original backyard pitching tool. Plastic, perforated, breaks hard. The kid throwing learns spin; the kid hitting learns to track movement.
++
++Cost range: $10–15 for a six-pack.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Champion Sports Plastic Wiffle Baseballs</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic perforated baseballs in the classic wiffle pattern. Curve hard for the kid throwing, break harmlessly off a bat.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-balls-wiffle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**Blitzball set (ages 10+)**
++
++A step up from wiffle. Plastic balls built to break harder than any wiffle ever did. Comes with a plastic bat and three balls. Best for ages 10 and up; younger kids can't track the movement and stop having fun.
++
++Cost range: $20–30.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Blitzball Bat & 3-Ball Starter Pack</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic bat plus three Blitzballs built to move more aggressively than wiffle balls. Backyard upgrade for kids old enough to track real movement on the ball.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-blitzball-set/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**Glove break-in kit**
++
++Speeds up the process of softening a new glove. Useful for stiff leather gloves that won't close in the first week of practice. Skip it if your glove came pre-broken-in.
++
++Cost range: $10–15.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings BRKIT Glove Break-In Kit</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rawlings BRKIT glove break-in kit. Speeds up the process of softening a new glove so it actually closes.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-glove-breakin-kit/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
++**Replacement glove laces**
++
++A glove with broken webbing isn't done; it just needs new laces. Leather lacing strips and a lacing needle are cheaper than a new glove and let you keep one that's already broken in.
++
++Cost range: $10–20.
++
++<div class="my-8">
++  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
++    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
++    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Baseball Glove Lacing Repair Kit</h3>
++    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Replacement leather laces with a lacing needle. Fixes the failure mode that ends most gloves before the leather body wears out.</p>
++    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
++    <a href="/go/baseball-glove-laces/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
++  </article>
++  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
++</div>
++
+ ## A few honest notes
+ 
+-Don't buy a
+\ No newline at end of file
++Don't buy a $200 bat for a five-year-old. Don't buy metal cleats before the league allows them. Don't buy a custom glove for a kid who has played one season. The first two years of baseball are about whether the kid wants to come back. The gear that lasts is the gear that fits and gets used. Save the upgrades for the years you know they're staying.
++
++If your kid is between sizes, go up. They will grow into it before they grow out of it. The exception is the bat, which has to fit now, not next year.
++
++When in doubt, ask the coach. Most coaches have seen a hundred kids in your kid's size and will tell you straight what works.
+diff --git a/src/data/affiliates.json b/src/data/affiliates.json
+index d7e0445..76a64ff 100644
+--- a/src/data/affiliates.json
++++ b/src/data/affiliates.json
+@@ -3,5 +3,95 @@
+     "destination": "https://amzn.to/4eSZeBW",
+     "retailer": "Amazon",
+     "campaign": "gear-baseball-glove"
++  },
++  "baseball-glove-9in-youth": {
++    "destination": "https://amzn.to/3OUH9Ji",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-glove-9in"
++  },
++  "baseball-bat-teeball": {
++    "destination": "https://amzn.to/3OE8ob3",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-bat-teeball"
++  },
++  "baseball-helmet-youth": {
++    "destination": "https://amzn.to/4cVoDbx",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-helmet-youth"
++  },
++  "baseball-balls-teeball": {
++    "destination": "https://amzn.to/4d1wJzo",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-balls-teeball"
++  },
++  "baseball-bases-rubber": {
++    "destination": "https://amzn.to/4eiz9fr",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-bases-rubber"
++  },
++  "baseball-balls-wiffle": {
++    "destination": "https://amzn.to/4w61coO",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-balls-wiffle"
++  },
++  "baseball-blitzball-set": {
++    "destination": "https://amzn.to/4t3YfCl",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-blitzball-set"
++  },
++  "baseball-glove-breakin-kit": {
++    "destination": "https://amzn.to/4wazlny",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-glove-breakin-kit"
++  },
++  "baseball-glove-laces": {
++    "destination": "https://amzn.to/4tb7Fw8",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-glove-laces"
++  },
++  "baseball-pants-youth": {
++    "destination": "https://amzn.to/3Rg9Gtn",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-pants-youth"
++  },
++  "baseball-belt-youth": {
++    "destination": "https://amzn.to/4u5CHqB",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-belt-youth"
++  },
++  "baseball-catchers-mitt-32in": {
++    "destination": "https://amzn.to/4eYBhZX",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-catchers-mitt-32in"
++  },
++  "baseball-batting-gloves-youth": {
++    "destination": "https://amzn.to/4ugLk14",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-batting-gloves-youth"
++  },
++  "baseball-cup-youth": {
++    "destination": "https://amzn.to/3QNrCeO",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-cup-youth"
++  },
++  "baseball-catchers-gear-youth": {
++    "destination": "https://amzn.to/4dgicRP",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-catchers-gear-youth"
++  },
++  "baseball-catchers-bag": {
++    "destination": "https://amzn.to/48Cigc0",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-catchers-bag"
++  },
++  "baseball-sliding-mitt": {
++    "destination": "https://amzn.to/4eXZyiR",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-sliding-mitt"
++  },
++  "baseball-arm-sleeve": {
++    "destination": "https://amzn.to/4unojJK",
++    "retailer": "Amazon",
++    "campaign": "gear-baseball-arm-sleeve"
+   }
+ }
+-- 
+2.34.1
+

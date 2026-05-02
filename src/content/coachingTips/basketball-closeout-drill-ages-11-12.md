@@ -2,8 +2,12 @@
 title: "Closeout Drill"
 summary: "Defender sprints and closes out on a shooter. 20 minutes. Ages 11-12."
 sport: "basketball"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "defending"
+progression: "build"
+illustrationBrief: "A defender sprinting from 20 feet away toward a player holding the ball, transitioning into a low defensive stance with hands up."
 publishedAt: 2026-03-12
 featured: false
 ---
@@ -22,6 +26,4 @@ A closeout is a sprint to a shooter followed by a controlled stance to contest w
 4. Defender resets and goes to the next spot as directed.
 5. Do 15 closeouts per defender.
 
-**What to look for:** Sprint effort and stance transition. The sprint should be hard, then a controlled plant to avoid fouling (no hand-checking, no running through).
-
-**Variation:** For younger kids (11), start closer (three-point line) and slower. For older kids (12), add a shot attempt after the closeout so the defender must contest.
+**What to look for:** Sprint effort and stance transition. The sprint should be hard, then a controlled plant to avoid fouling

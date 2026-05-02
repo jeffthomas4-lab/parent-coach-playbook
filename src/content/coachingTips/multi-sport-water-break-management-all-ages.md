@@ -2,8 +2,12 @@
 title: "Water-Break Management"
 summary: "Use water breaks as teaching moments and team time, not downtime. 5 minutes."
 sport: "multi-sport"
-age: "all-ages"
+ages: ["all-ages"]
 focus: "culture"
+layer: "foundations"
+fundamental: "warm-up"
+progression: "intro"
+illustrationBrief: "A team gathered during a water break, listening to the coach give a brief instructional point while players hydrate."
 publishedAt: 2026-01-09
 featured: false
 ---
@@ -24,4 +28,4 @@ Water breaks interrupt practice, but they're also built-in teaching moments. Use
 
 If water breaks turn into chat sessions where you lose the group's attention, you've lost control of practice. If kids are isolated and plopped in front of a cooler, you've missed a teaching moment. The goal is hydration plus connection to what you're building.
 
-**Variation:** For very young kids (5-7), make water breaks playful. "Last one to the water is a banana" or some silly thing. For older kids (13-14), use them as brief strategy talks: "Next drill, watch how we want you to position here."
+**Variation:** For very young kids (5

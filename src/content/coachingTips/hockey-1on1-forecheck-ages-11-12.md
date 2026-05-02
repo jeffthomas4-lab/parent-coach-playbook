@@ -2,8 +2,12 @@
 title: "1-on-1 Forecheck"
 summary: "Teach forwards to pressure the puck in the offensive zone. 10 minutes."
 sport: "hockey"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "defending"
+progression: "build"
+illustrationBrief: "A forward approaching an opponent with the puck, maintaining gap control and applying stick pressure without over-committing."
 publishedAt: 2026-03-01
 featured: false
 ---
@@ -23,6 +27,4 @@ A good forecheck starts with one forward disrupting the breakout. This drill tea
 
 **What to look for:**
 
-The forward should close space quickly but under control. If the forward is out of position to defend a breakpass, they're too aggressive. The forward should be in the puck carrier's hip pocket when possible, making it hard to pass without the receiver being covered. If the defenseman is easily walking around the forward, the forward isn't pressuring soon enough.
-
-**Variation:** Add a second forward. Now you have two forecheckers and two defensemen. This teaches positioning and communication in a real situation.
+The forward should close space quickly but under control. If the forward is out of position to defend a breakpass, they're too aggressive. The forward should be in the puck carrier's hip pocket when possible, making it hard to pass without the receiver being covered. If the defenseman is easily walking aroun

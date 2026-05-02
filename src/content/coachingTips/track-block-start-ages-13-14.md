@@ -2,8 +2,12 @@
 title: "Block Start"
 summary: "Teach the mechanics of an effective explosive start from the blocks. 10 minutes."
 sport: "track-field"
-age: "13-14"
+ages: ["13-14"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "starts"
+progression: "refine"
+illustrationBrief: "Starting block acceleration technique"
 publishedAt: 2026-04-09
 featured: false
 ---

@@ -1,0 +1,228 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { TOPICS, AGE_BANDS, SPORTS } from '../../data/site';
+import TopicIcon from '../../components/TopicIcon.astro';
+
+export async function getStaticPaths() {
+  return TOPICS.map((t) => ({
+    params: { topic: t.slug },
+  }));
+}
+
+const { topic } = Astro.params;
+const topicMeta = TOPICS.find(t => t.slug === topic)!;
+
+// Get all articles for this topic, sorted by date desc
+const articles = (await getCollection('articles', ({ data }) =>
+  !data.draft && data.topic === topic
+))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+// Pagination: 24 per page (can add "Load more" button later if needed)
+const ITEMS_PER_PAGE = 24;
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+const sportLabel = (s: string | undefined) =>
+  SPORTS.find(x => x.slug === s)?.label ?? null;
+const ageLabel = (a: string | undefined) =>
+  AGE_BANDS.find(x => x.slug === a)?.label ?? null;
+---
+<BaseLayout
+  title={`Reads: ${topicMeta.label}`}
+  description={topicMeta.blurb}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-14">
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-4">
+          <TopicIcon topic={topic} size={64} />
+          <p class="font-display italic text-rust mb-2 mt-3" style="font-weight: 500;">Topic</p>
+          <h1 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
+            {topicMeta.label}
+          </h1>
+          <p class="font-display text-ink-soft mt-3 leading-snug">{topicMeta.blurb}</p>
+          <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+            {articles.length} {articles.length === 1 ? 'piece' : 'pieces'}
+          </p>
+        </div>
+        <div class="md:col-span-8">
+          {/* Filter bar */}
+          <div class="border border-bone bg-paper-warm p-4 mb-6">
+            <div class="space-y-4">
+              {/* Age filter */}
+              <div class="flex flex-wrap items-center gap-2" data-age-filter>
+                <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Age:</span>
+                <button data-age="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs" style="font-weight: 500;">All ages</button>
+                {AGE_BANDS.map((a) => (
+                  <button data-age={a.slug} class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">{a.label}</button>
+                ))}
+              </div>
+              {/* Sport dropdown */}
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Sport:</span>
+                <select
+                  data-sport-select
+                  class="font-display italic px-2 py-1 border border-bone text-ink-soft text-sm"
+                >
+                  <option value="">All sports</option>
+                  {SPORTS.slice(0, 8).map((s) => (
+                    <option value={s.slug}>{s.label}</option>
+                  ))}
+                  <option value="---more---" disabled>... more</option>
+                </select>
+              </div>
+              {/* Format toggle */}
+              <div class="flex flex-wrap items-center gap-2" data-format-filter>
+                <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Format:</span>
+                <button data-format="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs" style="font-weight: 500;">All</button>
+                <button data-format="note" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">Note</button>
+                <button data-format="essay" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">Essay</button>
+              </div>
+              {/* Search */}
+              <div class="flex items-center gap-2">
+                <input
+                  type="search"
+                  placeholder="Search this topic..."
+                  data-search-input
+                  class="w-full max-w-sm px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Article grid */}
+          {articles.length === 0 ? (
+            <p class="font-display italic text-ink-soft" style="font-weight: 500;">More pieces coming. We're building this topic out.</p>
+          ) : (
+            <>
+              <ul class="grid gap-px bg-bone" data-articles-grid>
+                {articles.slice(0, ITEMS_PER_PAGE).map((a) => (
+                  <li class="bg-paper" data-age-tag={a.data.age ?? 'all-ages'} data-sport-tag={a.data.sport ?? ''} data-format-tag={a.data.format} data-title={a.data.title.toLowerCase()} data-dek={a.data.dek?.toLowerCase() || ''}>
+                    <a href={`/${a.data.phase}/${a.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
+                      {a.data.hero && (
+                        <img
+                          src={a.data.hero.src}
+                          alt={a.data.heroAlt || a.data.title}
+                          class="w-full h-32 object-cover rounded mb-3 group-hover:opacity-90 transition-opacity"
+                        />
+                      )}
+                      <div class="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+                        <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                          {[
+                            a.data.format === 'essay' ? 'Longer read' : null,
+                            sportLabel(a.data.sport),
+                            ageLabel(a.data.age) ? `age ${ageLabel(a.data.age)}` : null,
+                            fmtDate(a.data.publishedAt),
+                          ].filter(Boolean).join(' · ')}
+                        </p>
+                      </div>
+                      <h3
+                        class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors"
+                        style="font-weight: 500;"
+                        set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                      />
+                      {a.data.dek && (
+                        <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p class="font-display italic text-ink-soft text-sm mt-6 hidden" data-empty>
+                Nothing matches that filter. Try a different combination.
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var ageBar = document.querySelector('[data-age-filter]');
+        var formatBar = document.querySelector('[data-format-filter]');
+        var sportSelect = document.querySelector('[data-sport-select]');
+        var grid = document.querySelector('[data-articles-grid]');
+        var empty = document.querySelector('[data-empty]');
+        var input = document.querySelector('[data-search-input]');
+
+        if (!grid) return;
+
+        var a = '', f = '', s = '', q = '';
+
+        function apply() {
+          var rows = grid.querySelectorAll('[data-age-tag]');
+          var visible = 0;
+          for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var age = row.getAttribute('data-age-tag') || '';
+            var format = row.getAttribute('data-format-tag') || '';
+            var sport = row.getAttribute('data-sport-tag') || '';
+            var title = row.getAttribute('data-title') || '';
+            var dek = row.getAttribute('data-dek') || '';
+            var aOk = !a || age === a || age === 'all-ages';
+            var fOk = !f || format === f;
+            var sOk = !s || sport === s;
+            var qOk = !q || title.indexOf(q) !== -1 || dek.indexOf(q) !== -1;
+            var ok = aOk && fOk && sOk && qOk;
+            row.style.display = ok ? '' : 'none';
+            if (ok) visible++;
+          }
+          if (empty) {
+            if (visible > 0) empty.classList.add('hidden');
+            else empty.classList.remove('hidden');
+          }
+        }
+
+        if (ageBar) {
+          ageBar.addEventListener('click', function (e) {
+            var t = e.target;
+            if (t.tagName !== 'BUTTON') return;
+            ageBar.querySelectorAll('button').forEach(function (b) {
+              b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+              b.classList.add('border-bone', 'text-ink-soft');
+            });
+            t.classList.remove('border-bone', 'text-ink-soft');
+            t.classList.add('bg-ink', 'text-paper', 'border-ink');
+            a = t.getAttribute('data-age') || '';
+            apply();
+          });
+        }
+
+        if (formatBar) {
+          formatBar.addEventListener('click', function (e) {
+            var t = e.target;
+            if (t.tagName !== 'BUTTON') return;
+            formatBar.querySelectorAll('button').forEach(function (b) {
+              b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+              b.classList.add('border-bone', 'text-ink-soft');
+            });
+            t.classList.remove('border-bone', 'text-ink-soft');
+            t.classList.add('bg-ink', 'text-paper', 'border-ink');
+            f = t.getAttribute('data-format') || '';
+            apply();
+          });
+        }
+
+        if (sportSelect) {
+          sportSelect.addEventListener('change', function (e) {
+            s = e.target.value === '---more---' ? '' : e.target.value;
+            apply();
+          });
+        }
+
+        if (input) {
+          input.addEventListener('input', function (e) {
+            q = e.target.value.toLowerCase();
+            apply();
+          });
+        }
+      });
+    })();
+  </script>
+</BaseLayout>

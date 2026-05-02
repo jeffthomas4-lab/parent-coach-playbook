@@ -2,8 +2,12 @@
 title: "Advanced Situational"
 summary: "Run full-count and two-out scenarios with game-speed tempo. 25 minutes. Ages 13-14+."
 sport: "softball"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "situational"
+fundamental: "situational"
+progression: "refine"
+illustrationBrief: "Runner placement decisions in game scenarios"
 publishedAt: 2026-03-17
 featured: false
 ---

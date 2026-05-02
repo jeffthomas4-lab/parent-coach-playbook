@@ -2,8 +2,12 @@
 title: "Red Light Green Light"
 summary: "Sprint and stop with the ball at their feet. 15 minutes. Ages 5-7."
 sport: "soccer"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "warm-up"
+progression: "intro"
+illustrationBrief: "Players accelerate and stop to traffic light signals"
 publishedAt: 2026-01-17
 featured: false
 ---

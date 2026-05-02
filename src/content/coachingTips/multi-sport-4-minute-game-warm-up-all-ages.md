@@ -2,8 +2,12 @@
 title: "The 4-Minute Game Warm-Up"
 summary: "Get the team physically ready and mentally locked in. 4 minutes."
 sport: "multi-sport"
-age: "all-ages"
+ages: ["all-ages"]
 focus: "warm-up"
+layer: "foundations"
+fundamental: "warm-up"
+progression: "intro"
+illustrationBrief: "A team gathered together doing dynamic stretches, light running, and sport-specific movements as they prepare mentally for the game."
 publishedAt: 2026-01-03
 featured: false
 ---
@@ -21,6 +25,4 @@ A good warm-up gets kids moving, thinking about the game, and connected to each 
 
 **What to look for:**
 
-Kids should be energized but not gassed. If a kid looks exhausted, the warm-up was too hard. The movement should create conversation and energy, not silence and waiting. If kids are standing around between sections, the transitions are too slow.
-
-**Variation:** For older teams (13-14), add a short competitive element. Partner passing where one pair wins gets first water break. This builds engagement without breaking the team unit.
+Kids should be energized but not gassed. If a kid looks exhausted, the warm-up was too hard. The movement should create conversation and energy, not silence and waiting. If kids are standing around between sections, th

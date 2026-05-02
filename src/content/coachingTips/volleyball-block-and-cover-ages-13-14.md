@@ -2,8 +2,12 @@
 title: "Block and Cover"
 summary: "Teach defensive positioning: blockers at the net, then cover behind them. 12 minutes."
 sport: "volleyball"
-age: "13-14"
+ages: ["13-14"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "blocking"
+progression: "refine"
+illustrationBrief: "Blocking and covering blocked balls"
 publishedAt: 2026-04-03
 featured: false
 ---

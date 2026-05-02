@@ -1,0 +1,973 @@
+From ec7af1a631a9ad033842ead1035f07959db2c41c Mon Sep 17 00:00:00 2001
+From: Jeff Thomas <jeffthomas@pugetsound.edu>
+Date: Sat, 2 May 2026 19:15:11 +0000
+Subject: [PATCH] Split lacrosse into lacrosse-boys and lacrosse-girls
+
+- SPORT_ENUM: replace 'lacrosse' with 'lacrosse-boys' and 'lacrosse-girls'
+- SPORTS and BUYING_GUIDES: split into two entries
+- sizing.astro: separate boys (helmet, chest protector) from girls (goggles)
+- guides: split lacrosse.md into lacrosse-boys.md and lacrosse-girls.md
+- coachingTips: duplicate the 6 existing lacrosse drills, one per sport
+---
+ ...rosse-boys-clearing-pattern-ages-13-14.md} |  12 +-
+ ...se-boys-cradling-on-the-move-ages-8-10.md} |  10 +-
+ ...acrosse-boys-face-off-intro-ages-11-12.md} |  12 +-
+ ...s-ground-ball-scoop-battles-ages-11-12.md} |  12 +-
+ ...crosse-boys-riding-pressure-ages-13-14.md} |  12 +-
+ ...crosse-boys-two-line-passing-ages-8-10.md} |  12 +-
+ ...rosse-girls-clearing-pattern-ages-13-14.md |  30 +++++
+ ...se-girls-cradling-on-the-move-ages-8-10.md |  32 ++++++
+ ...acrosse-girls-face-off-intro-ages-11-12.md |  30 +++++
+ ...ls-ground-ball-scoop-battles-ages-11-12.md |  30 +++++
+ ...crosse-girls-riding-pressure-ages-13-14.md |  30 +++++
+ ...crosse-girls-two-line-passing-ages-8-10.md |  30 +++++
+ src/content/config.ts                         |  63 +++++++++--
+ .../guides/{lacrosse.md => lacrosse-boys.md}  | 102 ++---------------
+ src/content/guides/lacrosse-girls.md          | 104 ++++++++++++++++++
+ src/data/site.ts                              |  31 +++++-
+ src/pages/what-to-buy/[slug]/sizing.astro     |  29 ++---
+ 17 files changed, 430 insertions(+), 151 deletions(-)
+ rename src/content/coachingTips/{lacrosse-clearing-pattern-ages-13-14.md => lacrosse-boys-clearing-pattern-ages-13-14.md} (81%)
+ mode change 100644 => 100755
+ rename src/content/coachingTips/{lacrosse-cradling-on-the-move-ages-8-10.md => lacrosse-boys-cradling-on-the-move-ages-8-10.md} (83%)
+ mode change 100644 => 100755
+ rename src/content/coachingTips/{lacrosse-face-off-intro-ages-11-12.md => lacrosse-boys-face-off-intro-ages-11-12.md} (82%)
+ mode change 100644 => 100755
+ rename src/content/coachingTips/{lacrosse-ground-ball-scoop-battles-ages-11-12.md => lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md} (83%)
+ mode change 100644 => 100755
+ rename src/content/coachingTips/{lacrosse-riding-pressure-ages-13-14.md => lacrosse-boys-riding-pressure-ages-13-14.md} (78%)
+ mode change 100644 => 100755
+ rename src/content/coachingTips/{lacrosse-two-line-passing-ages-8-10.md => lacrosse-boys-two-line-passing-ages-8-10.md} (78%)
+ mode change 100644 => 100755
+ create mode 100755 src/content/coachingTips/lacrosse-girls-clearing-pattern-ages-13-14.md
+ create mode 100755 src/content/coachingTips/lacrosse-girls-cradling-on-the-move-ages-8-10.md
+ create mode 100755 src/content/coachingTips/lacrosse-girls-face-off-intro-ages-11-12.md
+ create mode 100755 src/content/coachingTips/lacrosse-girls-ground-ball-scoop-battles-ages-11-12.md
+ create mode 100755 src/content/coachingTips/lacrosse-girls-riding-pressure-ages-13-14.md
+ create mode 100755 src/content/coachingTips/lacrosse-girls-two-line-passing-ages-8-10.md
+ rename src/content/guides/{lacrosse.md => lacrosse-boys.md} (56%)
+ mode change 100644 => 100755
+ create mode 100755 src/content/guides/lacrosse-girls.md
+
+diff --git a/src/content/coachingTips/lacrosse-clearing-pattern-ages-13-14.md b/src/content/coachingTips/lacrosse-boys-clearing-pattern-ages-13-14.md
+old mode 100644
+new mode 100755
+similarity index 81%
+rename from src/content/coachingTips/lacrosse-clearing-pattern-ages-13-14.md
+rename to src/content/coachingTips/lacrosse-boys-clearing-pattern-ages-13-14.md
+index c10fa74..7e104b9
+--- a/src/content/coachingTips/lacrosse-clearing-pattern-ages-13-14.md
++++ b/src/content/coachingTips/lacrosse-boys-clearing-pattern-ages-13-14.md
+@@ -1,9 +1,13 @@
+ ---
+ title: "Clearing Pattern"
+ summary: "Teach structured escape from the defensive zone with passing and movement. 15 minutes."
+-sport: "lacrosse"
+-age: "13-14"
++sport: "lacrosse-boys"
++ages: ["13-14"]
+ focus: "situational"
++layer: "situational"
++fundamental: "positioning"
++progression: "refine"
++illustrationBrief: "Players in the defensive zone executing three passes to escape pressure, with each receiver moving to open space."
+ publishedAt: 2026-03-16
+ featured: false
+ ---
+@@ -23,6 +27,4 @@ A clear is how a team escapes defensive pressure. At 13-14, players can learn a
+ 
+ **What to look for:**
+ 
+-Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the clear upfield.
+-
+-**Variation:** Add pressure. One defender shadows the initial ball carrier, forcing them to pass early. Now the clearing team has to execute under pressure, which is the real situation.
++Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the cl
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-cradling-on-the-move-ages-8-10.md b/src/content/coachingTips/lacrosse-boys-cradling-on-the-move-ages-8-10.md
+old mode 100644
+new mode 100755
+similarity index 83%
+rename from src/content/coachingTips/lacrosse-cradling-on-the-move-ages-8-10.md
+rename to src/content/coachingTips/lacrosse-boys-cradling-on-the-move-ages-8-10.md
+index cc6eb4d..af8715c
+--- a/src/content/coachingTips/lacrosse-cradling-on-the-move-ages-8-10.md
++++ b/src/content/coachingTips/lacrosse-boys-cradling-on-the-move-ages-8-10.md
+@@ -1,9 +1,13 @@
+ ---
+ title: "Cradling on the Move"
+ summary: "Build ball control while running: the foundation of all lacrosse. 10 minutes."
+-sport: "lacrosse"
+-age: "8-10"
++sport: "lacrosse-boys"
++ages: ["8-10"]
+ focus: "fundamentals"
++layer: "foundations"
++fundamental: "cradling"
++progression: "build"
++illustrationBrief: "A young player running with a lacrosse stick, cradling the ball in the pocket while moving at different speeds."
+ publishedAt: 2026-03-04
+ featured: false
+ ---
+@@ -25,4 +29,4 @@ Cradling is a rhythm. Young players need to feel the ball staying in the pocket
+ 
+ The cradle is an active motion with the wrists and arms, not a grip. If a player is holding the stick tight, they'll lose the ball. The stick should move with the player's body, not out in front. If the ball is rolling or bouncing, the cradle is too loose or off-rhythm. By the run-through, the cradle should feel automatic.
+ 
+-**Variation:** Add direction changes. After cradling through the cones, the player adds a left turn and right turn while maintaining the cradle. This teaches the ball stays in the pocket no matter what the body is doing.
++**Variation:** Add direction
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-face-off-intro-ages-11-12.md b/src/content/coachingTips/lacrosse-boys-face-off-intro-ages-11-12.md
+old mode 100644
+new mode 100755
+similarity index 82%
+rename from src/content/coachingTips/lacrosse-face-off-intro-ages-11-12.md
+rename to src/content/coachingTips/lacrosse-boys-face-off-intro-ages-11-12.md
+index d6af406..55577c8
+--- a/src/content/coachingTips/lacrosse-face-off-intro-ages-11-12.md
++++ b/src/content/coachingTips/lacrosse-boys-face-off-intro-ages-11-12.md
+@@ -1,9 +1,13 @@
+ ---
+ title: "Face-Off Intro"
+ summary: "Teach the basic mechanics of a face-off and winning the ground ball. 12 minutes."
+-sport: "lacrosse"
+-age: "11-12"
++sport: "lacrosse-boys"
++ages: ["11-12"]
+ focus: "fundamentals"
++layer: "skills"
++fundamental: "ground-balls"
++progression: "build"
++illustrationBrief: "Two players at center field crouched with sticks ready for a face-off, with other players positioned to support the ground ball."
+ publishedAt: 2026-03-10
+ featured: false
+ ---
+@@ -23,6 +27,4 @@ Face-offs are 50-50 plays. This drill teaches young players the mechanics and bu
+ 
+ **What to look for:**
+ 
+-Each player should be low and balanced. If they're standing up or leaning, they can't react fast. The first move should be explosive, not cautious. The player with the best first step often wins the ball. Both players should fight for the ground ball after the initial contact. If one player is getting beaten every rep, rotation might be the issue.
+-
+-**Variation:** Add trailing players. Two more players stand 5 yards behind each face-off player. Once the ball is won, the trailing player can help secure it. This teaches the team component of face-offs.
++Each player should be low and balanced. If they're standing up or leaning, they can't react fast. The first move should be explosive, not cautious. The player with the best first step often wins the ball. Both players should fight for the ground ball after the initial contact. If one player is getting beaten every rep, rotation might be th
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-ground-ball-scoop-battles-ages-11-12.md b/src/content/coachingTips/lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md
+old mode 100644
+new mode 100755
+similarity index 83%
+rename from src/content/coachingTips/lacrosse-ground-ball-scoop-battles-ages-11-12.md
+rename to src/content/coachingTips/lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md
+index a46dd26..9af3d1b
+--- a/src/content/coachingTips/lacrosse-ground-ball-scoop-battles-ages-11-12.md
++++ b/src/content/coachingTips/lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md
+@@ -1,9 +1,13 @@
+ ---
+ title: "Ground Ball Scoop Battles"
+ summary: "Teach ground ball technique and compete for possession. 12 minutes."
+-sport: "lacrosse"
+-age: "11-12"
++sport: "lacrosse-boys"
++ages: ["11-12"]
+ focus: "fundamentals"
++layer: "skills"
++fundamental: "ground-balls"
++progression: "build"
++illustrationBrief: "Two players converging on a loose ball, each scooping to win possession while maintaining control of the stick."
+ publishedAt: 2026-03-13
+ featured: false
+ ---
+@@ -23,6 +27,4 @@ Ground balls are 50-50s. This drill teaches young players to scoop and control l
+ 
+ **What to look for:**
+ 
+-The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too light or off-target.
+-
+-**Variation:** Add a defender. After the scoop, a third player tries to dislodge the ball or force a turnover. This teaches the winner to protect the ball, not just scoop it.
++The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-riding-pressure-ages-13-14.md b/src/content/coachingTips/lacrosse-boys-riding-pressure-ages-13-14.md
+old mode 100644
+new mode 100755
+similarity index 78%
+rename from src/content/coachingTips/lacrosse-riding-pressure-ages-13-14.md
+rename to src/content/coachingTips/lacrosse-boys-riding-pressure-ages-13-14.md
+index c2397ad..7d57db2
+--- a/src/content/coachingTips/lacrosse-riding-pressure-ages-13-14.md
++++ b/src/content/coachingTips/lacrosse-boys-riding-pressure-ages-13-14.md
+@@ -1,9 +1,13 @@
+ ---
+ title: "Riding Pressure"
+ summary: "Teach offensive players to apply and maintain pressure on the clearing defense. 12 minutes."
+-sport: "lacrosse"
+-age: "13-14"
++sport: "lacrosse-boys"
++ages: ["13-14"]
+ focus: "situational"
++layer: "situational"
++fundamental: "defending"
++progression: "refine"
++illustrationBrief: "Offensive players funneling defenders during a clear, forcing difficult passing angles and creating turnover opportunities."
+ publishedAt: 2026-03-19
+ featured: false
+ ---
+@@ -23,6 +27,4 @@ Riding is offensive pressure on the clear. This drill teaches young players to f
+ 
+ **What to look for:**
+ 
+-Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the clear toward the sideline or toward waiting midfielders.
+-
+-**Variation:** Add more riders. Three offensive players now apply pressure. This teaches spacing and communication among multiple pressuring players.
++Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the 
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-two-line-passing-ages-8-10.md b/src/content/coachingTips/lacrosse-boys-two-line-passing-ages-8-10.md
+old mode 100644
+new mode 100755
+similarity index 78%
+rename from src/content/coachingTips/lacrosse-two-line-passing-ages-8-10.md
+rename to src/content/coachingTips/lacrosse-boys-two-line-passing-ages-8-10.md
+index 27959a9..55fff31
+--- a/src/content/coachingTips/lacrosse-two-line-passing-ages-8-10.md
++++ b/src/content/coachingTips/lacrosse-boys-two-line-passing-ages-8-10.md
+@@ -1,9 +1,13 @@
+ ---
+ title: "Two-Line Passing"
+ summary: "Build accurate passing and receiving in lines with game-speed positioning. 12 minutes."
+-sport: "lacrosse"
+-age: "8-10"
++sport: "lacrosse-boys"
++ages: ["8-10"]
+ focus: "fundamentals"
++layer: "foundations"
++fundamental: "passing"
++progression: "build"
++illustrationBrief: "Two lines of players facing each other, passing a lacrosse ball back and forth at game speed with accurate stick-to-stick passes."
+ publishedAt: 2026-03-07
+ featured: false
+ ---
+@@ -23,6 +27,4 @@ Passing in lacrosse requires timing. Two lines of players passing back and forth
+ 
+ **What to look for:**
+ 
+-The pass should be accurate and catchable. If the receiving player has to reach way out or step back, the pass is off. The catch should happen on the stick naturally, with the stick in ready position. If a player is reaching for a bad pass or dropping the ball, accuracy is the problem. Communicate about timing: players should call "Ready" or "Set" before the pass.
+-
+-**Variation:** Add movement. Players move laterally while passing, creating a weaving pattern. This teaches passing on the move and awareness of field space.
++The pass should be accurate and catchable. If the receiving player has to reach way out or step back, the pass is off. The catch should happen on the stick naturally, with the stick in ready position. If a player is reaching for a bad pass or dropping the ball, accuracy is the problem. Communicate about timing: pla
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-girls-clearing-pattern-ages-13-14.md b/src/content/coachingTips/lacrosse-girls-clearing-pattern-ages-13-14.md
+new file mode 100755
+index 0000000..a606902
+--- /dev/null
++++ b/src/content/coachingTips/lacrosse-girls-clearing-pattern-ages-13-14.md
+@@ -0,0 +1,30 @@
++---
++title: "Clearing Pattern"
++summary: "Teach structured escape from the defensive zone with passing and movement. 15 minutes."
++sport: "lacrosse-girls"
++ages: ["13-14"]
++focus: "situational"
++layer: "situational"
++fundamental: "positioning"
++progression: "refine"
++illustrationBrief: "Players in the defensive zone executing three passes to escape pressure, with each receiver moving to open space."
++publishedAt: 2026-03-16
++featured: false
++---
++
++A clear is how a team escapes defensive pressure. At 13-14, players can learn a structured three-pass pattern that gets the ball to open space.
++
++**Equipment needed:** 6 cones, 1 ball, 6 sticks.
++
++**Setup:** Mark the defensive zone with cones at the restraining line. One defenseman has the ball in the zone. Two short-stick players line up 5 yards away (wings of the clear). One short-stick player lines up at the restraining line facing the ball carrier (outlet).
++
++**How to run it:**
++
++1. Defenseman passes to the first wing, who catches and immediately looks downfield.
++2. Wing passes to the outlet player at the restraining line. Outlet is the first person to get past the line.
++3. Outlet advances the ball upfield to open space, then passes to the second wing coming behind.
++4. Do 4 reps slow, then 4 reps at game speed with a coach providing light pressure.
++
++**What to look for:**
++
++Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the cl
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-girls-cradling-on-the-move-ages-8-10.md b/src/content/coachingTips/lacrosse-girls-cradling-on-the-move-ages-8-10.md
+new file mode 100755
+index 0000000..0b08ed1
+--- /dev/null
++++ b/src/content/coachingTips/lacrosse-girls-cradling-on-the-move-ages-8-10.md
+@@ -0,0 +1,32 @@
++---
++title: "Cradling on the Move"
++summary: "Build ball control while running: the foundation of all lacrosse. 10 minutes."
++sport: "lacrosse-girls"
++ages: ["8-10"]
++focus: "fundamentals"
++layer: "foundations"
++fundamental: "cradling"
++progression: "build"
++illustrationBrief: "A young player running with a lacrosse stick, cradling the ball in the pocket while moving at different speeds."
++publishedAt: 2026-03-04
++featured: false
++---
++
++Cradling is a rhythm. Young players need to feel the ball staying in the pocket while they move at different speeds. This drill builds that feel.
++
++**Equipment needed:** 8 cones, 1 ball per player, 1 stick per player.
++
++**Setup:** Create a straight line of cones 15 yards long, spaced 1 yard apart. Players line up at one end with a ball in their stick.
++
++**How to run it:**
++
++1. Player walks down the line of cones, cradling the ball in the stick pocket. The cradle is the motion of rotating the stick with the wrists and arms to keep the ball in the pocket.
++2. Walk down slowly (3 reps), then jog down (3 reps), then run down (3 reps).
++3. The ball should never leave the stick during any speed. If it does, the cradle is loose.
++4. Rest and repeat with a new player.
++
++**What to look for:**
++
++The cradle is an active motion with the wrists and arms, not a grip. If a player is holding the stick tight, they'll lose the ball. The stick should move with the player's body, not out in front. If the ball is rolling or bouncing, the cradle is too loose or off-rhythm. By the run-through, the cradle should feel automatic.
++
++**Variation:** Add direction
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-girls-face-off-intro-ages-11-12.md b/src/content/coachingTips/lacrosse-girls-face-off-intro-ages-11-12.md
+new file mode 100755
+index 0000000..893d766
+--- /dev/null
++++ b/src/content/coachingTips/lacrosse-girls-face-off-intro-ages-11-12.md
+@@ -0,0 +1,30 @@
++---
++title: "Face-Off Intro"
++summary: "Teach the basic mechanics of a face-off and winning the ground ball. 12 minutes."
++sport: "lacrosse-girls"
++ages: ["11-12"]
++focus: "fundamentals"
++layer: "skills"
++fundamental: "ground-balls"
++progression: "build"
++illustrationBrief: "Two players at center field crouched with sticks ready for a face-off, with other players positioned to support the ground ball."
++publishedAt: 2026-03-10
++featured: false
++---
++
++Face-offs are 50-50 plays. This drill teaches young players the mechanics and builds confidence in winning ground balls at the center.
++
++**Equipment needed:** 4 cones, 1 ball, 8 sticks.
++
++**Setup:** Place one cone at the center. Two players line up at the center, one on each side, in face-off position. A coach or player stands to the side with the ball.
++
++**How to run it:**
++
++1. Two face-off players get in position: sticks horizontal, knees bent, eyes forward, ready to move.
++2. Coach places the ball between their sticks and calls "Go."
++3. Both players try to control the ball and win it back to their side. No illegal stick contact (hacking). Ground ball battles only.
++4. Do 10 reps per pair, alternating sides (player A on left, then on right).
++
++**What to look for:**
++
++Each player should be low and balanced. If they're standing up or leaning, they can't react fast. The first move should be explosive, not cautious. The player with the best first step often wins the ball. Both players should fight for the ground ball after the initial contact. If one player is getting beaten every rep, rotation might be th
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-girls-ground-ball-scoop-battles-ages-11-12.md b/src/content/coachingTips/lacrosse-girls-ground-ball-scoop-battles-ages-11-12.md
+new file mode 100755
+index 0000000..0d1e159
+--- /dev/null
++++ b/src/content/coachingTips/lacrosse-girls-ground-ball-scoop-battles-ages-11-12.md
+@@ -0,0 +1,30 @@
++---
++title: "Ground Ball Scoop Battles"
++summary: "Teach ground ball technique and compete for possession. 12 minutes."
++sport: "lacrosse-girls"
++ages: ["11-12"]
++focus: "fundamentals"
++layer: "skills"
++fundamental: "ground-balls"
++progression: "build"
++illustrationBrief: "Two players converging on a loose ball, each scooping to win possession while maintaining control of the stick."
++publishedAt: 2026-03-13
++featured: false
++---
++
++Ground balls are 50-50s. This drill teaches young players to scoop and control loose balls while competing for possession.
++
++**Equipment needed:** 8 cones, 4 balls, 8 sticks.
++
++**Setup:** Create four 10-yard by 10-yard squares with cones. Place one ball in the center of each square. Two players stand 5 yards away, facing each other.
++
++**How to run it:**
++
++1. Coach calls "Go." Both players sprint to the ball and try to scoop it and move it away from the opponent.
++2. A successful scoop means the player gets the ball to their stick and takes two steps away from the opponent.
++3. If a player scoops and the opponent knocks it loose, it's still a ground ball battle.
++4. Do 4 reps per pair. If one player is dominating, rotate in a new matchup.
++
++**What to look for:**
++
++The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-girls-riding-pressure-ages-13-14.md b/src/content/coachingTips/lacrosse-girls-riding-pressure-ages-13-14.md
+new file mode 100755
+index 0000000..a61904e
+--- /dev/null
++++ b/src/content/coachingTips/lacrosse-girls-riding-pressure-ages-13-14.md
+@@ -0,0 +1,30 @@
++---
++title: "Riding Pressure"
++summary: "Teach offensive players to apply and maintain pressure on the clearing defense. 12 minutes."
++sport: "lacrosse-girls"
++ages: ["13-14"]
++focus: "situational"
++layer: "situational"
++fundamental: "defending"
++progression: "refine"
++illustrationBrief: "Offensive players funneling defenders during a clear, forcing difficult passing angles and creating turnover opportunities."
++publishedAt: 2026-03-19
++featured: false
++---
++
++Riding is offensive pressure on the clear. This drill teaches young players to funnel the ball and force bad passes.
++
++**Equipment needed:** 6 cones, 2 balls, 6 sticks.
++
++**Setup:** Mark the defensive zone with cones. One defenseman has the ball. Two riders (offensive players) line up 5 yards away, ready to apply pressure.
++
++**How to run it:**
++
++1. Defenseman tries to clear the ball. Riders close on the ball carrier and the first pass option, funneling the clear toward a specific area.
++2. Riders don't hack or slash. They're closing space and forcing quick decisions.
++3. If the defenseman completes the clear, riders reset and the defenseman tries again.
++4. Do 6 reps per rider pair.
++
++**What to look for:**
++
++Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the 
+\ No newline at end of file
+diff --git a/src/content/coachingTips/lacrosse-girls-two-line-passing-ages-8-10.md b/src/content/coachingTips/lacrosse-girls-two-line-passing-ages-8-10.md
+new file mode 100755
+index 0000000..822a0ff
+--- /dev/null
++++ b/src/content/coachingTips/lacrosse-girls-two-line-passing-ages-8-10.md
+@@ -0,0 +1,30 @@
++---
++title: "Two-Line Passing"
++summary: "Build accurate passing and receiving in lines with game-speed positioning. 12 minutes."
++sport: "lacrosse-girls"
++ages: ["8-10"]
++focus: "fundamentals"
++layer: "foundations"
++fundamental: "passing"
++progression: "build"
++illustrationBrief: "Two lines of players facing each other, passing a lacrosse ball back and forth at game speed with accurate stick-to-stick passes."
++publishedAt: 2026-03-07
++featured: false
++---
++
++Passing in lacrosse requires timing. Two lines of players passing back and forth teaches spacing and accuracy without complexity.
++
++**Equipment needed:** 4 cones, 2 balls, 4 sticks per pair of lines.
++
++**Setup:** Create two lines of 4 players facing each other, 15 yards apart. Place cones at the ends to mark the lines.
++
++**How to run it:**
++
++1. Player in line A passes to the first player in line B. That player passes back to the second player in line A. Continue down the lines.
++2. Players should move forward as they pass. Each pass moves both players closer together.
++3. Do one set of passes from each end.
++4. Second rep: increase speed. Passes should be quicker and players should be moving faster.
++
++**What to look for:**
++
++The pass should be accurate and catchable. If the receiving player has to reach way out or step back, the pass is off. The catch should happen on the stick naturally, with the stick in ready position. If a player is reaching for a bad pass or dropping the ball, accuracy is the problem. Communicate about timing: pla
+\ No newline at end of file
+diff --git a/src/content/config.ts b/src/content/config.ts
+index 31c9ff2..7f77089 100644
+--- a/src/content/config.ts
++++ b/src/content/config.ts
+@@ -1,16 +1,48 @@
+ import { defineCollection, z } from 'astro:content';
+ 
+-// All sports + activities supported by the site.
+ const SPORT_ENUM = [
+   'baseball','softball','soccer','basketball',
+-  'flag-football','football','hockey','lacrosse','volleyball',
++  'flag-football','football','football-7v7','hockey','lacrosse-boys','lacrosse-girls','volleyball',
+   'swimming','track-field','cross-country','tennis','golf','crew',
+   'martial-arts','gymnastics','cheer','stunt',
+   'theater','band','choir','dance','ballet',
+-  'multi-sport','multi-activity',
++  'multi-sport','multi-activity','performing-arts',
+ ] as const;
+ 
+-const AGE_ENUM = ['5-7', '8-10', '11-12', '13-14', '15-plus', 'all-ages'] as const;
++const AGE_ENUM = ['t-ball', '5-7', '8-10', '11-12', '13-14', '15-plus', 'all-ages'] as const;
++
++const FUNDAMENTAL_ENUM = [
++  // Common across sports
++  'warm-up','conditioning','situational','scrimmage','positioning',
++  // Defense (multi-sport)
++  'defending','blocking','tackling','flag-pulling','rebounding',
++  'goaltending','goalkeeping',
++  // Offensive ball/object skills (multi-sport)
++  'dribbling','passing','receiving','shooting','serving','setting',
++  'spiking','finishing','route-running','ball-carrying',
++  // Throw/catch family
++  'throwing','catching',
++  // Baseball/softball
++  'hitting','fielding','base-running','pitching',
++  // Hockey
++  'skating','stick-handling',
++  // Lacrosse
++  'cradling','ground-balls',
++  // Soccer
++  'heading','set-pieces',
++  // Football specific
++  'stance',
++  // Tennis
++  'forehand','backhand','volley','match-play',
++  // Track and field
++  'running-form','starts','pacing','intervals','jumping',
++  // Swimming
++  'freestyle','backstroke','breaststroke','butterfly','turns','breathing',
++  // Misc movement
++  'footwork',
++] as const;
++
++const PROGRESSION_ENUM = ['intro', 'build', 'refine'] as const;
+ 
+ const articles = defineCollection({
+   type: 'content',
+@@ -18,18 +50,20 @@ const articles = defineCollection({
+     z.object({
+       title: z.string(),
+       dek: z.string().optional(),
+-      // Topic groups articles for the new homepage browse-by-topic grid.
+       topic: z
+-        .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play'])
++        .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play','summer-camps'])
++        .optional(),
++      teamParentTopic: z
++        .enum(['logistics','communication','money','picture-day','conflict','tools'])
+         .optional(),
+       issue: z.number().optional(),
+-      hero: image().optional(),
++      hero: z.string().optional(),
+       heroAlt: z.string().optional(),
++      ogImage: z.string().optional(),
+       format: z.enum(['note', 'essay']).default('note'),
+       sport: z.enum(SPORT_ENUM).optional(),
+       age: z.enum(AGE_ENUM).optional(),
+-      // Phase is preserved as light metadata so existing URLs keep working.
+-      phase: z.enum(['drive-there', 'game', 'drive-home']),
++      phase: z.enum(['drive-there', 'game', 'drive-home', 'team-parent']),
+       seasonPhase: z
+         .enum(['pre-season', 'early', 'mid', 'playoffs', 'off-season'])
+         .optional(),
+@@ -61,7 +95,7 @@ const guides = defineCollection({
+   schema: () =>
+     z.object({
+       activity: z.string(),
+-      category: z.enum(['sport', 'activity']),
++      category: z.enum(['sport', 'activity', 'essentials']),
+       sortOrder: z.number().default(99),
+       lede: z.string(),
+       costSummary: z.string(),
+@@ -90,8 +124,6 @@ const resources = defineCollection({
+     }),
+ });
+ 
+-// Coaching tips: searchable drill library at /coaching-tips/.
+-// Each entry is a single drill or coaching note tagged by sport, age, and focus.
+ const coachingTips = defineCollection({
+   type: 'content',
+   schema: ({ image }) =>
+@@ -100,11 +132,18 @@ const coachingTips = defineCollection({
+       summary: z.string(),
+       sport: z.enum(SPORT_ENUM).optional(),
+       age: z.enum(AGE_ENUM).optional(),
++      ages: z.array(z.enum(AGE_ENUM)).optional(),
++      fundamental: z.enum(FUNDAMENTAL_ENUM).optional(),
++      progression: z.enum(PROGRESSION_ENUM).optional(),
+       focus: z
+         .enum(['warm-up','fundamentals','situational','scrimmage','culture','game-management'])
+         .optional(),
++      layer: z
++        .enum(['foundations','skills','situational'])
++        .optional(),
+       hero: image().optional(),
+       heroAlt: z.string().optional(),
++      illustrationBrief: z.string().optional(),
+       publishedAt: z.coerce.date(),
+       featured: z.boolean().default(false),
+       draft: z.boolean().default(false),
+diff --git a/src/content/guides/lacrosse.md b/src/content/guides/lacrosse-boys.md
+old mode 100644
+new mode 100755
+similarity index 56%
+rename from src/content/guides/lacrosse.md
+rename to src/content/guides/lacrosse-boys.md
+index 4da7703..f3944e9
+--- a/src/content/guides/lacrosse.md
++++ b/src/content/guides/lacrosse-boys.md
+@@ -1,21 +1,15 @@
+ ---
+-slug: "lacrosse"
+-activity: "Lacrosse"
++slug: "lacrosse-boys"
++activity: "Lacrosse — Boys"
+ category: "sport"
+ sortOrder: 7
+-lede: "Stick, helmet, gloves, pads. Boys and girls play different versions with different equipment. Don't get them confused."
+-costSummary: "$200–350 for boys starter; $100–180 for girls starter. Add $200–400 by middle school for either."
++lede: "Contact version. Helmet, gloves, full pads, stick. The safety gear list is real."
++costSummary: "$200–350 starter. Add $200–400 by middle school. Travel/club $1,500–4,000 a year."
+ seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor box leagues in winter."
+ publishedAt: 2026-03-23
+ ---
+ 
+-Lacrosse is two different sports under the same name. Boys lacrosse is a contact sport with helmets, gloves, and full pads. Girls lacrosse is a non-contact sport (with rule-defined contact only) that requires a small set of safety equipment. The sticks are different. The pads are different. Don't get the gear mixed up.
+-
+-Below covers both. Read the section that fits your kid.
+-
+-## Boys lacrosse
+-
+-Boys lacrosse is the contact version. Full helmet, full gloves, shoulder pads, arm pads, mouthpiece, cup. The safety gear list is real.
++Boys lacrosse is a contact sport. Helmets, gloves, shoulder pads, arm pads, mouthpiece, cup. The pads are not interchangeable with girls' lacrosse and the sticks are not the same. Don't mix the gear.
+ 
+ ### Ages 5–7 (Starter / Lightning)
+ 
+@@ -115,93 +109,15 @@ High-school programs typically provide team helmets and shoulder pads. You provi
+ 
+ A varsity-level boys kit runs $400 to $800 for the parent-provided portion. Travel/club lacrosse adds $1,500 to $4,000 per year.
+ 
+-## Girls lacrosse
+-
+-Girls lacrosse is a non-contact sport (with rule-defined stick contact and minimal body contact). The equipment is much lighter than boys'.
+-
+-### Ages 5–7 (Starter / Tots)
+-
+-**A youth girls lacrosse stick**
+-
+-Girls sticks are different from boys sticks. Different head shape, different stringing rules. Buy a girls-specific starter stick.
+-
+-How to choose: 35 to 38 inch length. Beginner pocket (shallow stringing).
+-
+-Cost range: $40–80.
+-
+-**Eye protection (mandatory)**
+-
+-Girls lacrosse requires goggles. Most leagues require ASTM-certified goggles.
+-
+-How to choose: goggles should fit snugly without pressing on the cheeks or temples.
+-
+-Cost range: $30–60.
+-
+-**A mouthpiece**
+-
+-Required.
+-
+-Cost range: $5–15.
+-
+-**Cleats**
+-
+-Soccer cleats work. Lacrosse cleats are nice but not necessary.
+-
+-Cost range: $35–70.
+-
+-That is the entire required kit for girls' lacrosse at this age. About $110 to $225 to start.
+-
+-### Ages 8–10
+-
+-**Better stick**
+-
+-Girls sticks have specific stringing rules. By this age, your kid will have stringing preferences. Most stores will restring for $20 to $40.
+-
+-Cost range: $60–150.
+-
+-**Better goggles**
+-
+-Higher-end goggles fit better and don't fog as easily.
+-
+-Cost range: $50–100.
+-
+-**Lacrosse cleats**
+-
+-Mid-cut for ankle support.
+-
+-Cost range: $50–100.
+-
+-### Ages 11–12
+-
+-The stick technology starts to matter. Custom stringing becomes common.
+-
+-**A serious girls stick**
+-
+-Stick maker, head shape, pocket depth all matter. Talk to the kid's coach.
+-
+-Cost range: $150–250.
+-
+-**Pro-quality goggles**
+-
+-Lighter weight, better visibility.
+-
+-Cost range: $80–150.
+-
+-### Ages 13–14 and 15+
+-
+-Girls' high-school lacrosse rules added optional headgear in 2018. Most programs don't require it; some do. Some kids choose to wear it anyway after a head impact incident.
+-
+-The kit at varsity level runs $250 to $500 for stick, goggles, mouthpiece, cleats, headgear. Club and travel lacrosse adds $2,000 to $4,000 per year.
+-
+-## How to choose a lacrosse stick (boys or girls)
++## How to choose a boys stick
+ 
+ Three checks:
+ 
+-One. Length. Boys: 37 to 42 inches at the youth level, with adult midfield 40-42 and defenseman 52-72 inches. Girls: 35 to 43 inches across all ages. The stick should reach about chin height when held head-up.
++One. Length. 37 to 42 inches at the youth level. Adult midfield 40-42 and defenseman 52-72 inches. The stick should reach about chin height when held head-up.
+ 
+ Two. Pocket. The pocket is where the ball sits. Beginner pockets are shallow and easier to scoop. Tournament-legal pockets have specific depth rules. New players want shallow; experienced players want deeper.
+ 
+-Three. Weight balance. Hold the stick at the throat (just below the head). It should feel balanced — not head-heavy. A head-heavy stick fatigues the wrist quickly.
++Three. Weight balance. Hold the stick at the throat (just below the head). It should feel balanced, not head-heavy. A head-heavy stick fatigues the wrist quickly.
+ 
+ If you don't know what you're buying, take your kid to a lacrosse-specific shop. They will help you choose the right setup.
+ 
+@@ -210,5 +126,3 @@ If you don't know what you're buying, take your kid to a lacrosse-specific shop.
+ Boys and girls lacrosse sticks are NOT interchangeable. The heads are shaped differently and the stringing rules are different.
+ 
+ Used lacrosse gear is plentiful. Most lacrosse-heavy regions have annual gear swaps in February or March. Worth showing up.
+-
+-Stringing your 
+\ No newline at end of file
+diff --git a/src/content/guides/lacrosse-girls.md b/src/content/guides/lacrosse-girls.md
+new file mode 100755
+index 0000000..40f268a
+--- /dev/null
++++ b/src/content/guides/lacrosse-girls.md
+@@ -0,0 +1,104 @@
++---
++slug: "lacrosse-girls"
++activity: "Lacrosse — Girls"
++category: "sport"
++sortOrder: 8
++lede: "Non-contact version. Stick, goggles, mouthpiece. Lighter kit, very different rules."
++costSummary: "$100–225 starter. $250–500 at varsity. Travel/club $2,000–4,000 a year."
++seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor leagues in winter."
++publishedAt: 2026-03-23
++---
++
++Girls lacrosse is a non-contact sport (with rule-defined stick contact and minimal body contact). The equipment is much lighter than boys'. The sticks are not the same, the stringing rules are not the same, and the gear is not interchangeable with boys' lacrosse.
++
++### Ages 5–7 (Starter / Tots)
++
++**A youth girls lacrosse stick**
++
++Girls sticks are different from boys sticks. Different head shape, different stringing rules. Buy a girls-specific starter stick.
++
++How to choose: 35 to 38 inch length. Beginner pocket (shallow stringing).
++
++Cost range: $40–80.
++
++**Eye protection (mandatory)**
++
++Girls lacrosse requires goggles. Most leagues require ASTM-certified goggles.
++
++How to choose: goggles should fit snugly without pressing on the cheeks or temples.
++
++Cost range: $30–60.
++
++**A mouthpiece**
++
++Required.
++
++Cost range: $5–15.
++
++**Cleats**
++
++Soccer cleats work. Lacrosse cleats are nice but not necessary.
++
++Cost range: $35–70.
++
++That is the entire required kit for girls' lacrosse at this age. About $110 to $225 to start.
++
++### Ages 8–10
++
++**Better stick**
++
++Girls sticks have specific stringing rules. By this age, your kid will have stringing preferences. Most stores will restring for $20 to $40.
++
++Cost range: $60–150.
++
++**Better goggles**
++
++Higher-end goggles fit better and don't fog as easily.
++
++Cost range: $50–100.
++
++**Lacrosse cleats**
++
++Mid-cut for ankle support.
++
++Cost range: $50–100.
++
++### Ages 11–12
++
++The stick technology starts to matter. Custom stringing becomes common.
++
++**A serious girls stick**
++
++Stick maker, head shape, pocket depth all matter. Talk to the kid's coach.
++
++Cost range: $150–250.
++
++**Pro-quality goggles**
++
++Lighter weight, better visibility.
++
++Cost range: $80–150.
++
++### Ages 13–14 and 15+
++
++Girls' high-school lacrosse rules added optional headgear in 2018. Most programs don't require it; some do. Some kids choose to wear it anyway after a head impact incident.
++
++The kit at varsity level runs $250 to $500 for stick, goggles, mouthpiece, cleats, headgear. Club and travel lacrosse adds $2,000 to $4,000 per year.
++
++## How to choose a girls stick
++
++Three checks:
++
++One. Length. 35 to 43 inches across all ages. The stick should reach about chin height when held head-up.
++
++Two. Pocket. The pocket is where the ball sits. Beginner pockets are shallow and easier to scoop. Girls' stringing rules are stricter than boys'. New players want shallow; experienced players will customize.
++
++Three. Weight balance. Hold the stick at the throat (just below the head). It should feel balanced, not head-heavy. A head-heavy stick fatigues the wrist quickly.
++
++If you don't know what you're buying, take your kid to a lacrosse-specific shop. They will help you choose the right setup.
++
++## A few honest notes
++
++Boys and girls lacrosse sticks are NOT interchangeable. The heads are shaped differently and the stringing rules are different.
++
++Used lacrosse gear is plentiful. Most lacrosse-heavy regions have annual gear swaps in February or March. Worth showing up.
+diff --git a/src/data/site.ts b/src/data/site.ts
+index a854100..dbe6537 100644
+--- a/src/data/site.ts
++++ b/src/data/site.ts
+@@ -76,6 +76,7 @@ export const TOPICS = [
+   { slug: 'equipment',      label: 'Equipment',         blurb: 'What to buy, what to skip, where to find it used.' },
+   { slug: 'rec-vs-travel',  label: 'Rec vs travel',     blurb: 'The honest comparison. The politics. The reality at fourteen.' },
+   { slug: 'rules-of-play',  label: 'Rules of play',     blurb: 'Why youth sports exists, what it is for, what it is not.' },
++  { slug: 'summer-camps',   label: 'Summer camps',      blurb: 'How to pick one. What to pack. What to ask. When to stay home.' },
+ ] as const;
+ 
+ export const SPORTS = [
+@@ -83,10 +84,14 @@ export const SPORTS = [
+   { slug: 'softball',     label: 'Softball' },
+   { slug: 'soccer',       label: 'Soccer' },
+   { slug: 'basketball',   label: 'Basketball' },
+-  { slug: 'flag-football',label: 'Flag football' },
+-  { slug: 'football',     label: 'Tackle football' },
++  // Football variants. Three lanes that group together alphabetically as "Football — *".
++  // Slugs preserved for URL backwards compatibility — display labels group them visually.
++  { slug: 'flag-football', label: 'Football — Flag' },
++  { slug: 'football-7v7',  label: 'Football — 7v7' },
++  { slug: 'football',      label: 'Football — Tackle' },
+   { slug: 'hockey',       label: 'Hockey' },
+-  { slug: 'lacrosse',     label: 'Lacrosse' },
++  { slug: 'lacrosse-boys',  label: 'Lacrosse — Boys' },
++  { slug: 'lacrosse-girls', label: 'Lacrosse — Girls' },
+   { slug: 'volleyball',   label: 'Volleyball' },
+   { slug: 'swimming',     label: 'Swimming' },
+   { slug: 'track-field',  label: 'Track and field' },
+@@ -140,7 +145,8 @@ export const BUYING_GUIDES = [
+   { slug: 'golf',          label: 'Golf',             category: 'sport',    blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
+   { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
+   { slug: 'hockey',        label: 'Hockey',           category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
+-  { slug: 'lacrosse',      label: 'Lacrosse',         category: 'sport',    blurb: 'Stick, helmet, gloves, pads. Boys and girls gear differs.' },
++  { slug: 'lacrosse-boys',  label: 'Lacrosse — Boys',  category: 'sport',    blurb: 'Contact version. Helmet, gloves, full pads, stick.' },
++  { slug: 'lacrosse-girls', label: 'Lacrosse — Girls', category: 'sport',    blurb: 'Non-contact version. Stick, goggles, mouthpiece.' },
+   { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
+   { slug: 'soccer',        label: 'Soccer',           category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle.' },
+   { slug: 'softball',      label: 'Softball',         category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
+@@ -157,10 +163,27 @@ export const BUYING_GUIDES = [
+   { slug: 'dance',         label: 'Dance',            category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
+   { slug: 'stunt',         label: 'Stunt and tumbling', category: 'activity', blurb: 'Mat shoes, bracing, athletic tape. The tumbling-track essentials.' },
+   { slug: 'theater',       label: 'Theater',          category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
++  // Essentials (alphabetical)
++  { slug: 'first-aid-kit',      label: 'First aid kit',       category: 'essentials', blurb: 'Bandages, tape, cold packs, and what you use on the sideline every week.' },
++  { slug: 'season-essentials',  label: 'Season essentials',    category: 'essentials', blurb: 'Recovery, hydration, travel logistics. The kit that runs the season.' },
++  { slug: 'sideline-kit',       label: 'Sideline kit',         category: 'essentials', blurb: 'Chair, cooler, blanket. The gear that makes watching comfortable.' },
+ ] as const;
+ 
+ export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
+ 
++// Team Parent article topics: resources for managing team logistics, communication, conflict.
++// Separate from TOPICS (which is for Reads articles). Used for /team-parent/[topic] archive pages.
++export const TEAM_PARENT_TOPICS = [
++  { slug: 'logistics',        label: 'Logistics',         blurb: 'Snacks, carpools, calendar management. The operational stuff.' },
++  { slug: 'communication',    label: 'Communication',     blurb: 'Emails to coaches, group chat rules, the hard-parent conversation.' },
++  { slug: 'money',            label: 'Money',             blurb: 'Fundraising, registration costs, the money talk with your kid.' },
++  { slug: 'picture-day',      label: 'Picture day & events', blurb: 'Photos, banquets, end-of-season celebrations.' },
++  { slug: 'conflict',         label: 'Conflict resolution', blurb: 'When things go sideways. Parent to parent, parent to coach.' },
++  { slug: 'tools',            label: 'Tools & templates', blurb: 'Apps, spreadsheets, checklists. What actually works.' },
++] as const;
++
++export type TeamParentTopicSlug = (typeof TEAM_PARENT_TOPICS)[number]['slug'];
++
+ // Track and field events get sub-pages at /what-to-buy/track-field/[event]/
+ export const TRACK_EVENTS = [
+   { slug: 'sprints',   label: 'Sprints',           blurb: '100m, 200m, 400m. Sprint spikes, blocks if your team uses them.' },
+diff --git a/src/pages/what-to-buy/[slug]/sizing.astro b/src/pages/what-to-buy/[slug]/sizing.astro
+index 72cead2..b2f16bc 100644
+--- a/src/pages/what-to-buy/[slug]/sizing.astro
++++ b/src/pages/what-to-buy/[slug]/sizing.astro
+@@ -151,23 +151,31 @@ const sizingNotes: Record<string, { intro: string; sections: { heading: string;
+       ]},
+     ],
+   },
+-  lacrosse: {
+-    intro: 'Lacrosse gear is sport-specific and sized by age band more than measurement. Boys and girls gear differs.',
++  'lacrosse-boys': {
++    intro: 'Boys lacrosse is the contact version. Helmet, gloves, full pads, stick. Most pieces are sized by age band more than measurement.',
+     sections: [
+       { heading: 'Stick', body: [
+-        'Boys: youth stick (37-42 inches) for ages 8-12, full length (40-72 inches) for ages 13+. Defenders use longer poles.',
+-        'Girls: youth (35-43 inches), full length (35.5-43.25 inches) at older ages.',
++        'Youth stick (37-42 inches) for ages 8-12, full length (40-72 inches) for ages 13+. Defenders use longer poles.',
+         'Pocket depth is regulated. Tournament officials check.',
+       ]},
+-      { heading: 'Helmet (boys)', body: [
++      { heading: 'Helmet', body: [
+         'NOCSAE certification required. Sized by head circumference plus model fit.',
+         'Cage and chin strap included. Mouthguard worn under the cage.',
+       ]},
+-      { heading: 'Chest protector (boys)', body: [
++      { heading: 'Chest protector', body: [
+         'NOCSAE ND200 certification mandatory since 2021/22. This is non-negotiable.',
+         'Sized by chest circumference. Should not restrict arm movement.',
+       ]},
+-      { heading: 'Goggles (girls)', body: [
++    ],
++  },
++  'lacrosse-girls': {
++    intro: 'Girls lacrosse is non-contact. Stick, goggles, mouthpiece. Lighter kit, sized by age and face fit.',
++    sections: [
++      { heading: 'Stick', body: [
++        'Youth (35-43 inches), full length (35.5-43.25 inches) at older ages.',
++        'Stringing rules differ from boys. Pocket depth is regulated.',
++      ]},
++      { heading: 'Goggles', body: [
+         'ASTM F803 certification required.',
+         'Sized to the face. Should not bounce when the player runs.',
+       ]},
+@@ -498,9 +506,4 @@ const notes = sizingNotes[guide.slug] ?? {
+         <p class="font-display italic text-rust mb-2" style="font-weight: 500;">A note on used gear</p>
+         <p>Used cleats, skates, and shoes are fine if you replace the insole. The insole is the only piece that molds to a foot. A fresh insole resets the shoe to a neutral position so your kid is not standing in someone else’s shape.</p>
+         <p>Used helmets are fine if the certification sticker is current and the re-conditioning record is intact. NOCSAE for football, baseball, lacrosse. HECC for hockey. ASTM for women’s lacrosse goggles.</p>
+-        <p>Used pads, bats, sticks, rackets are usually fine. Inspect for cracks. Trust the kid’s hands and feet on a fit test.</p>
+-        <a href={`/what-to-buy/${guide.slug}/`} class="t-cta inline-block mt-4">Back to the {guide.label.toLowerCase()} guide →</a>
+-      </aside>
+-    </div>
+-  </article>
+-</BaseLayout>
++        <p>Used pads, bats, sticks, rackets are
+\ No newline at end of file
+-- 
+2.34.1
+

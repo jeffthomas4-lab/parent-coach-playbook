@@ -1,16 +1,48 @@
 import { defineCollection, z } from 'astro:content';
 
-// All sports + activities supported by the site.
 const SPORT_ENUM = [
   'baseball','softball','soccer','basketball',
-  'flag-football','football','hockey','lacrosse','volleyball',
+  'flag-football','football','football-7v7','hockey','lacrosse-boys','lacrosse-girls','volleyball',
   'swimming','track-field','cross-country','tennis','golf','crew',
   'martial-arts','gymnastics','cheer','stunt',
   'theater','band','choir','dance','ballet',
-  'multi-sport','multi-activity',
+  'multi-sport','multi-activity','performing-arts',
 ] as const;
 
-const AGE_ENUM = ['5-7', '8-10', '11-12', '13-14', '15-plus', 'all-ages'] as const;
+const AGE_ENUM = ['t-ball', '5-7', '8-10', '11-12', '13-14', '15-plus', 'all-ages'] as const;
+
+const FUNDAMENTAL_ENUM = [
+  // Common across sports
+  'warm-up','conditioning','situational','scrimmage','positioning',
+  // Defense (multi-sport)
+  'defending','blocking','tackling','flag-pulling','rebounding',
+  'goaltending','goalkeeping',
+  // Offensive ball/object skills (multi-sport)
+  'dribbling','passing','receiving','shooting','serving','setting',
+  'spiking','finishing','route-running','ball-carrying',
+  // Throw/catch family
+  'throwing','catching',
+  // Baseball/softball
+  'hitting','fielding','base-running','pitching',
+  // Hockey
+  'skating','stick-handling',
+  // Lacrosse
+  'cradling','ground-balls',
+  // Soccer
+  'heading','set-pieces',
+  // Football specific
+  'stance',
+  // Tennis
+  'forehand','backhand','volley','match-play',
+  // Track and field
+  'running-form','starts','pacing','intervals','jumping',
+  // Swimming
+  'freestyle','backstroke','breaststroke','butterfly','turns','breathing',
+  // Misc movement
+  'footwork',
+] as const;
+
+const PROGRESSION_ENUM = ['intro', 'build', 'refine'] as const;
 
 const articles = defineCollection({
   type: 'content',
@@ -18,18 +50,20 @@ const articles = defineCollection({
     z.object({
       title: z.string(),
       dek: z.string().optional(),
-      // Topic groups articles for the new homepage browse-by-topic grid.
       topic: z
-        .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play'])
+        .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play','summer-camps'])
+        .optional(),
+      teamParentTopic: z
+        .enum(['logistics','communication','money','picture-day','conflict','tools'])
         .optional(),
       issue: z.number().optional(),
-      hero: image().optional(),
+      hero: z.string().optional(),
       heroAlt: z.string().optional(),
+      ogImage: z.string().optional(),
       format: z.enum(['note', 'essay']).default('note'),
       sport: z.enum(SPORT_ENUM).optional(),
       age: z.enum(AGE_ENUM).optional(),
-      // Phase is preserved as light metadata so existing URLs keep working.
-      phase: z.enum(['drive-there', 'game', 'drive-home']),
+      phase: z.enum(['drive-there', 'game', 'drive-home', 'team-parent']),
       seasonPhase: z
         .enum(['pre-season', 'early', 'mid', 'playoffs', 'off-season'])
         .optional(),
@@ -61,7 +95,7 @@ const guides = defineCollection({
   schema: () =>
     z.object({
       activity: z.string(),
-      category: z.enum(['sport', 'activity']),
+      category: z.enum(['sport', 'activity', 'essentials']),
       sortOrder: z.number().default(99),
       lede: z.string(),
       costSummary: z.string(),
@@ -90,8 +124,6 @@ const resources = defineCollection({
     }),
 });
 
-// Coaching tips: searchable drill library at /coaching-tips/.
-// Each entry is a single drill or coaching note tagged by sport, age, and focus.
 const coachingTips = defineCollection({
   type: 'content',
   schema: ({ image }) =>
@@ -100,11 +132,18 @@ const coachingTips = defineCollection({
       summary: z.string(),
       sport: z.enum(SPORT_ENUM).optional(),
       age: z.enum(AGE_ENUM).optional(),
+      ages: z.array(z.enum(AGE_ENUM)).optional(),
+      fundamental: z.enum(FUNDAMENTAL_ENUM).optional(),
+      progression: z.enum(PROGRESSION_ENUM).optional(),
       focus: z
         .enum(['warm-up','fundamentals','situational','scrimmage','culture','game-management'])
         .optional(),
+      layer: z
+        .enum(['foundations','skills','situational'])
+        .optional(),
       hero: image().optional(),
       heroAlt: z.string().optional(),
+      illustrationBrief: z.string().optional(),
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),

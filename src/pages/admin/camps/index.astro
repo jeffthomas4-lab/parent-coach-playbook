@@ -32,9 +32,11 @@ const fmtRange = (start: string, end: string) => {
 <BaseLayout title="Camps moderation" description="Admin queue" noindex={true}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Admin · Camps</p>
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+        Admin · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · Individual
+      </p>
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
-        Moderation queue
+        Pending camps
       </h1>
       {adminEmail ? (
         <p class="font-display italic text-ink-soft text-sm mt-2" style="font-weight: 500;">

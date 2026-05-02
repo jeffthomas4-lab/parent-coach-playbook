@@ -10,7 +10,7 @@ publishedAt: 2026-02-02
 featured: false
 ---
 
-At eleven to twelve, your kid is going to outgrow his helmet. The question is whether you upgrade or buy new. It matters.
+At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters.
 
 **The size rule**
 A helmet should fit snug on the sides and back. Two fingers of space on the front. If it slides when you push it side to side, it's too big. If you can't get two fingers in front, it's too small.
@@ -29,7 +29,7 @@ Schutt and Riddell are the standards. Don't go cheaper. A helmet is the one piec
 New helmet: one fifty to two hundred. Refurbished: seventy-five to one hundred. Don't buy at the mall. Don't buy at a big-box store. Go to a sporting goods specialty shop. They fit it right. They'll adjust it when he shows up in August if it shifts.
 
 **The rule**
-If he wore it last season and it still fits, check with the coach. Some programs swap them. Some you own. Ask before you buy.
+If they wore it last season and it still fits, check with the coach. Some programs swap them. Some you own. Ask before you buy.
 
 **The window**
 May or June. Before July camp. Not in August when everyone's buying at once. You'll pay more and selection dies.

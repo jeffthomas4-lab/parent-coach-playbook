@@ -2,8 +2,12 @@
 title: "Soft Toss"
 summary: "Toss balls underhand from 30 feet. 20 minutes. Ages 8-10."
 sport: "baseball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "hitting"
+progression: "build"
+illustrationBrief: "A child at bat with an adult 30 feet away tossing the ball underhand in a high arc toward the strike zone."
 publishedAt: 2026-02-09
 featured: false
 ---
@@ -23,4 +27,4 @@ Soft toss teaches hand-eye coordination with a moving ball. The underhand toss i
 
 **What to look for:** Adjustments. If you toss inside, they should shift weight forward. If you toss low, they should drop the hands. Kids who are rigid will swing the same way on every pitch.
 
-**Variation:** For younger kids (8-9), toss from 25 feet and toss every ball at the same height (waist) to build consistency. For older kids (10), add variables: high fastball, low breaking ball (rolled gently), inside corner, outside corner.
+**Variation:** For younger kids (8-9), toss from 25 feet

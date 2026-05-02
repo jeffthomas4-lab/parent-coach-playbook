@@ -2,12 +2,27 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
-import { TEAM_PARENT_CATEGORIES } from '../../data/site';
+import { TEAM_PARENT_TOPICS, TEAM_PARENT_CATEGORIES } from '../../data/site';
 
-const all = await getCollection('resources', ({ data }) => !data.draft);
-const byCat = (slug: string) =>
-  all.filter(r => r.data.category === slug)
-    .sort((a, b) => (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0));
+// Get articles marked as team-parent phase
+const teamParentArticles = (await getCollection('articles', ({ data }) =>
+  !data.draft && data.phase === 'team-parent'
+))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+// Get resources (old system, kept for backward compat)
+const resources = (await getCollection('resources', ({ data }) => !data.draft))
+  .sort((a, b) => (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0));
+
+// For each team parent topic, gather articles and resources
+const topicData = TEAM_PARENT_TOPICS.map(topic => {
+  const articles = teamParentArticles.filter(a => a.data.teamParentTopic === topic.slug);
+  return {
+    ...topic,
+    count: articles.length,
+    recent: articles[0] || null,
+  };
+});
 ---
 <BaseLayout
   title="Team Parent"
@@ -15,34 +30,67 @@ const byCat = (slug: string) =>
 >
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-20">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Team Parent toolkit</p>
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Team Parent</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
         For the parent doing <em class="text-rust">everything off the field</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
-        Practical resources for the team mom, the assistant coach, the snack-rotation manager, and the carpool dispatcher. Templates, how-tos, and the small operational things that make a season work.
+        Articles, templates, and practical resources for managing logistics, communication, money, conflict, and all the operational things that make a season work.
       </p>
     </div>
   </section>
 
+  {/* Topic navigation grid */}
   <section class="border-b border-bone">
-    <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Categories</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-        {TEAM_PARENT_CATEGORIES.map((c) => (
+    <div class="container-px py-12 md:py-14">
+      <p class="font-display italic text-rust mb-6" style="font-weight: 500;">Browse by topic</p>
+      <div class="grid md:grid-cols-3 gap-4">
+        {topicData.map((t) => (
           <a
-            href={`#${c.slug}`}
-            class="font-display italic text-ink hover:text-rust py-1 transition-colors"
-            style="font-weight: 500;"
-          >{c.label} →</a>
+            href={`/team-parent/${t.slug}/`}
+            class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
+          >
+            <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {t.label}
+            </h2>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.blurb}</p>
+            <div class="mt-4 pt-4 border-t border-bone">
+              <p class="font-display italic text-ink-soft text-xs mb-2" style="font-weight: 500;">
+                {t.count} {t.count === 1 ? 'piece' : 'pieces'}
+              </p>
+              {t.recent && (
+                <p class="font-display text-ink text-sm leading-snug group-hover:text-rust transition-colors">
+                  <span class="font-semibold">Latest:</span> {t.recent.data.title}
+                </p>
+              )}
+            </div>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
+  {/* Deprecated: old resources sections. Kept for backward compat but can be removed once all content migrates to articles. */}
+  {TEAM_PARENT_CATEGORIES.length > 0 && (
+    <section class="border-b border-bone bg-bone/20">
+      <div class="container-px py-10">
+        <p class="font-display italic text-ink-soft text-sm mb-6" style="font-weight: 500;">Older resources (being migrated):</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+          {TEAM_PARENT_CATEGORIES.map((c) => (
+            <a
+              href={`#${c.slug}`}
+              class="font-display italic text-ink hover:text-rust py-1 transition-colors text-sm"
+              style="font-weight: 500;"
+            >{c.label} →</a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   {TEAM_PARENT_CATEGORIES.map((c) => {
-    const items = byCat(c.slug);
-    return (
+    const items = resources.filter(r => r.data.category === c.slug);
+    return items.length > 0 ? (
       <section id={c.slug} class="border-b border-bone scroll-mt-20">
         <div class="container-px py-14">
           <div class="grid md:grid-cols-12 gap-8">
@@ -59,42 +107,38 @@ const byCat = (slug: string) =>
               </p>
             </div>
             <div class="md:col-span-8">
-              {items.length === 0 ? (
-                <p class="font-display italic text-ink-soft" style="font-weight: 500;">More coming. We're building this section out as fast as we can without phoning it in.</p>
-              ) : (
-                <ul class="grid gap-4">
-                  {items.map((r) => (
-                    <li class="border border-bone bg-paper-warm p-5">
-                      <div class="flex items-baseline justify-between gap-3 flex-wrap mb-2">
-                        <a
-                          href={r.data.type === 'external' && r.data.externalUrl
-                            ? r.data.externalUrl
-                            : `/team-parent/${r.slug}/`}
-                          class="font-display text-ink hover:text-rust text-xl leading-tight"
-                          style="font-weight: 500;"
-                          rel={r.data.type === 'external' ? 'noopener' : undefined}
-                          target={r.data.type === 'external' ? '_blank' : undefined}
-                        >
-                          {r.data.title}
-                          {r.data.type === 'external' && <span aria-hidden="true"> ↗</span>}
-                        </a>
-                        <span
-                          class="font-display italic text-xs"
-                          style={`color: ${c.accent}; font-weight: 500;`}
-                        >
-                          {r.data.type === 'template' ? 'Template' : r.data.type === 'external' ? 'External link' : 'Read'}
-                        </span>
-                      </div>
-                      <p class="font-display text-ink-soft leading-snug text-sm">{r.data.summary}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <ul class="grid gap-4">
+                {items.map((r) => (
+                  <li class="border border-bone bg-paper-warm p-5">
+                    <div class="flex items-baseline justify-between gap-3 flex-wrap mb-2">
+                      <a
+                        href={r.data.type === 'external' && r.data.externalUrl
+                          ? r.data.externalUrl
+                          : `/team-parent/${r.slug}/`}
+                        class="font-display text-ink hover:text-rust text-xl leading-tight"
+                        style="font-weight: 500;"
+                        rel={r.data.type === 'external' ? 'noopener' : undefined}
+                        target={r.data.type === 'external' ? '_blank' : undefined}
+                      >
+                        {r.data.title}
+                        {r.data.type === 'external' && <span aria-hidden="true"> ↗</span>}
+                      </a>
+                      <span
+                        class="font-display italic text-xs"
+                        style={`color: ${c.accent}; font-weight: 500;`}
+                      >
+                        {r.data.type === 'template' ? 'Template' : r.data.type === 'external' ? 'External link' : 'Read'}
+                      </span>
+                    </div>
+                    <p class="font-display text-ink-soft leading-snug text-sm">{r.data.summary}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
-    );
+    ) : null;
   })}
 
   <NewsletterSignup

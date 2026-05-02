@@ -2,8 +2,12 @@
 title: "High-Press Triggers"
 summary: "Practice pressing the ball when the opponent receives it. 25 minutes. Ages 13-14+."
 sport: "soccer"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "skills"
+fundamental: "defending"
+progression: "refine"
+illustrationBrief: "Defensive pressure shapes pressing triggers"
 publishedAt: 2026-03-31
 featured: false
 ---

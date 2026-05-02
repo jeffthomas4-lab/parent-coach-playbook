@@ -2,8 +2,12 @@
 title: "Flag-Pulling Tag Drill"
 summary: "Build hand-eye coordination and pulling technique in a game-like chase. 10 minutes."
 sport: "flag-football"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "flag-pulling"
+progression: "intro"
+illustrationBrief: "A defender chasing a ball-carrier with flags hanging from their waist, reaching to pull one of the flags."
 publishedAt: 2026-01-06
 featured: false
 ---
@@ -26,4 +30,4 @@ Pulling a flag is different than tackling. Kids need to understand where the fla
 
 Defenders should be tracking the runner's hips, not staring at the feet. The flag is usually on the hip, so good defenders move to that side. Runners should be accelerating into open space, not just running away. If a runner is dancing in place, they're playing tag, not flag football. If a defender is lunging late, they're not tracking early enough.
 
-**Variation:** Older 7-year-olds can use a live ball. The runner catches a short toss from a coach, then tries to break the plane of a line 5 yards away while the defender pulls the flag. This combines catching, flag-pulling, and field awareness.
+**Variation:** Older 7-year-olds can use a live ball. The

@@ -2,8 +2,12 @@
 title: "The Scrimmage Rule That Keeps It Fun"
 summary: "Use a simple rule to keep scrimmages focused on the skill you're teaching. 20 minutes."
 sport: "multi-sport"
-age: "all-ages"
+ages: ["all-ages"]
 focus: "scrimmage"
+layer: "situational"
+fundamental: "scrimmage"
+progression: "intro"
+illustrationBrief: "Two teams playing a scrimmage with a modified rule visible on the sideline, keeping focus on the specific skill being taught."
 publishedAt: 2026-01-12
 featured: false
 ---
@@ -24,4 +28,4 @@ Scrimmages can turn into chaos or highlight-hunting. A single rule keeps everyon
 
 Kids should be looking for each other first, shooting second. If one player is hogging the ball, call it out. The rule makes them adjust. Weaker players get more chances because the ball has to move. This builds confidence. Stronger players learn that team basketball or team soccer is better than individual play.
 
-**Variation:** Change the rule based on what you're teaching. For football flag, "Everyone in the backfield must touch the ball before the score counts." For volleyball, "Middle hitter must touch the ball before you can attack." For hockey, "One assist minimum before a goal counts." Rules align scrimmages with your teaching point.
+**Variation:** Change the rule based on what you're teaching. For football flag, "Everyone in the backfield must touch th

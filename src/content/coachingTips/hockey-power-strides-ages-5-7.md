@@ -2,8 +2,12 @@
 title: "Power-Stride Skating"
 summary: "Teach young skaters explosive leg drive with short, powerful pushes. 10 minutes."
 sport: "hockey"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "skating"
+progression: "intro"
+illustrationBrief: "A young skater pushing hard on each stride across the ice, extending the legs with force and recovering quickly."
 publishedAt: 2026-02-14
 featured: false
 ---
@@ -25,4 +29,4 @@ Young skaters often shuffle. This drill teaches them to push hard on each stride
 
 The back leg should extend fully on each push. If a skater is taking quick, short steps without extension, they're shuffling. A power stride has visible extension and a brief "load" phase where the skating leg is bent before the push. The torso should stay upright. If a skater is leaning forward, they're fighting gravity instead of using it.
 
-**Variation:** For older kids in this age group, add a weave pattern. Skater takes power strides while weaving left and right between cones. This teaches that power strides work in directions, not just straight line.
+**Variation:** For older 

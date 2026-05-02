@@ -2,8 +2,12 @@
 title: "Attacking Diamond"
 summary: "Four attackers in a diamond shape advance toward goal. 25 minutes. Ages 11-12."
 sport: "soccer"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "skills"
+fundamental: "positioning"
+progression: "build"
+illustrationBrief: "Four attacking players arranged in a diamond formation advancing up the field toward the opponent's goal."
 publishedAt: 2026-03-11
 featured: false
 ---
@@ -22,6 +26,4 @@ The attacking diamond teaches movement in formation. Four attackers work togethe
 4. After a goal or turnover, reset and go again.
 5. Play 10 advancing runs.
 
-**What to look for:** Shape maintenance and timing of the shot. Do they stay in a diamond or bunch up? Do they shoot when they have space?
-
-**Variation:** For younger kids (11), use one defender instead of two. For older kids (12), add a goalkeeper so they have to shoot with actual pressure.
+**What to look for:** Shape maintenance and timing of the shot. Do they stay in a diamond or bunch up?

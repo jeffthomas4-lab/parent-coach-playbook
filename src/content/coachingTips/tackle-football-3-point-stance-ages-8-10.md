@@ -2,8 +2,12 @@
 title: "The 3-Point Stance"
 summary: "Build the foundation: feet, hands, and head position for linemen. 8 minutes."
 sport: "football"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "stance"
+progression: "intro"
+illustrationBrief: "Three-point stance form and balance"
 publishedAt: 2026-01-27
 featured: false
 ---

@@ -2,8 +2,12 @@
 title: "Chair Passing Drill"
 summary: "Pass around chairs to work spacing and cutting. 20 minutes. Ages 8-10."
 sport: "basketball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "Four children positioned around chairs spaced 10 feet apart, passing a basketball while moving to cuts around the chairs."
 publishedAt: 2026-02-05
 featured: false
 ---
@@ -24,4 +28,4 @@ This drill teaches spacing and passing without the complexity of defense. Kids l
 
 **What to look for:** Passing accuracy and quick hands. The passer should be making a new pass the moment they receive one back.
 
-**Variation:** For younger kids (8-9), do slower passes and count how many the passer makes in one minute. For older kids (10), add movement: kids must cut and relocate after passing, creating new passing angles.
+**Variation

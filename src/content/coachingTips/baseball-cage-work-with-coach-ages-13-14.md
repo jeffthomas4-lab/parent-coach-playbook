@@ -2,8 +2,12 @@
 title: "Cage Work with a Coach"
 summary: "Live pitching in a controlled environment. 30 minutes. Ages 13-14+."
 sport: "baseball"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "skills"
+fundamental: "hitting"
+progression: "refine"
+illustrationBrief: "A teenager in a batter's box facing a coach or pitching machine at 50 feet, with a net cage surrounding the batting area."
 publishedAt: 2026-03-30
 featured: false
 ---
@@ -22,5 +26,3 @@ A batting cage is the only place a 13-year-old can face live pitching safely and
 4. Final 10: your choice (fastballs up, changeups down, whatever they struggled with).
 
 **What to look for:** Swing path consistency and decision-making. Do they chase pitches out of the zone? Do they adjust when the pitch is faster or slower? The cage reveals pattern recognition problems that don't show up in soft toss.
-
-**Variation:** For younger kids, stay with fastballs only, all 40 pitches in the zone. For advanced kids, add a scoreboard: count made-contact swings as points, outs as negatives, and run a final score.

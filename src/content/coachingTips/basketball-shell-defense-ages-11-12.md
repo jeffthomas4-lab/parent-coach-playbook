@@ -2,8 +2,12 @@
 title: "Shell Defense"
 summary: "Four defenders vs four offensive players, help and recovery. 25 minutes. Ages 11-12."
 sport: "basketball"
-age: "11-12"
+ages: ["11-12"]
 focus: "situational"
+layer: "situational"
+fundamental: "defending"
+progression: "build"
+illustrationBrief: "Four defenders positioned against four offensive players, with one defender helping inside while others recover, no scorekeeping."
 publishedAt: 2026-03-05
 featured: false
 ---
@@ -22,6 +26,4 @@ Shell defense teaches the core of team defense: on-ball pressure, help-and-recov
 4. Run for 5 minutes, then rotate.
 5. Do 25 minutes total so all kids play both sides.
 
-**What to look for:** Help timing and recovery speed. Do defenders recover to their original player or chase the ball? Good team defense means helping and recovering, not chasing.
-
-**Variation:** For younger kids (11), start with no offensive movement. For older kids (12), add off-ball screens so defenders learn to navigate through screens.
+**What to look for:** Help timing and recovery speed. Do defenders recover to their original player or chase the ball? Good team d

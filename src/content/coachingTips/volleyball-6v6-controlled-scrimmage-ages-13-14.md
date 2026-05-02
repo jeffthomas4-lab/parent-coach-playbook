@@ -2,8 +2,12 @@
 title: "6v6 Controlled Scrimmage"
 summary: "Run a game with scoring and stoppages to teach decision-making. 25 minutes."
 sport: "volleyball"
-age: "13-14"
+ages: ["13-14"]
 focus: "scrimmage"
+layer: "situational"
+fundamental: "scrimmage"
+progression: "refine"
+illustrationBrief: "Full game format with coaching pauses"
 publishedAt: 2026-04-06
 featured: false
 ---

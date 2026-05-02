@@ -3,206 +3,152 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 
-// Two hero situations get larger cards. The rest live under three groupings:
-// "Right now, today"  — immediate-week situations
-// "This season"        — recurring season-wide concerns
-// "The bigger stuff"   — longer-arc, deeper situations
-
-const heroSituations = [
+// Six reader-state themes. Pick the moment that fits the week. Bigger type per card,
+// curated reads, brand color accent at the top edge.
+const themes = [
   {
-    label: 'I just got asked to coach my kid\'s team. Help.',
-    blurb: 'Practice plan, parent meeting, the rule we landed on after one bad season. The single highest-traffic moment of the year for a parent-coach is right now.',
-    accent: '#C5713D',
+    label: 'My kid had a hard day at practice.',
+    blurb: 'The drive home is the moment. The first ninety seconds matter more than the next ninety minutes.',
+    accent: '#C5713D', // rust
+    bg: '#F2E2D5',
+    icon: 'drive-home',
     links: [
-      { text: 'A practice plan parents can read', href: '/team-parent/practice-plan-parents-can-read/' },
-      { text: 'How to recruit assistant coaches without begging', href: '/team-parent/recruit-assistant-coaches/' },
-      { text: 'Coaching your own kid in front of the team', href: '/game/coaching-your-own-kid-in-front-of-the-team/' },
+      { text: 'What you say in the *first 90 seconds*', href: '/drive-home/the-90-second-rule/' },
+      { text: 'Why I stopped asking "did you have fun?"', href: '/drive-home/why-i-stopped-asking-did-you-have-fun/' },
+      { text: 'When she says "*I hate this sport*"', href: '/drive-home/when-she-says-i-hate-this-sport/' },
+      { text: 'When they ask "*am I any good?*"', href: '/drive-home/when-they-ask-am-i-any-good/' },
     ],
   },
   {
-    label: 'I\'m the parent-coach. The whole thing is hard.',
-    blurb: 'You\'re doing two jobs at once. The tension is real, and it doesn\'t mean you\'re doing it wrong. Read this when nobody else is looking.',
-    accent: '#5C7459',
+    label: 'Tryouts are this week.',
+    blurb: 'The night before, the morning of, the wait for the list. The version that does not make tryouts the only story in the house.',
+    accent: '#8FA68C', // sage
+    bg: '#EAEFE7',
+    icon: 'tryouts',
     links: [
-      { text: 'Three drives. One relationship.', href: '/drive-home/three-drives-one-relationship/' },
-      { text: 'Coaching your own kid in front of the team', href: '/game/coaching-your-own-kid-in-front-of-the-team/' },
-      { text: 'What you say in the first 90 seconds', href: '/drive-home/the-90-second-rule/' },
-    ],
-  },
-];
-
-const groups = [
-  {
-    label: 'Right now, today',
-    items: [
-      {
-        label: 'My kid just had a bad game and I have to drive them home.',
-        blurb: 'The first 90 seconds matter more than the next 90 minutes. Here is the rule.',
-        accent: '#B0894A',
-        links: [
-          { text: 'What you say in the first 90 seconds', href: '/drive-home/the-90-second-rule/' },
-          { text: 'Why I stopped asking "did you have fun?"', href: '/drive-home/why-i-stopped-asking-did-you-have-fun/' },
-        ],
-      },
-      {
-        label: 'Game day. Tomorrow.',
-        blurb: 'The pre-game car ride. The "one job today" trick. What not to say in the parking lot.',
-        accent: '#C5713D',
-        links: [
-          { text: 'The drive there isn\'t strategy hour', href: '/drive-there/the-pre-game-conversation-isnt-strategy/' },
-        ],
-      },
-      {
-        label: 'There\'s drama with another parent or coach.',
-        blurb: 'The yelling parent on the sideline. The co-coach who is over it. The other team\'s coach who is being a jerk. What we\'ve learned, and more we\'re writing.',
-        accent: '#5C7459',
-        links: [
-          { text: 'The group chat that saved my season', href: '/game/the-group-chat-that-saved-me/' },
-          { text: 'More posts on this lane are in the works. Subscribe and you\'ll see them.', href: '/newsletter/' },
-        ],
-      },
+      { text: 'The night before tryouts', href: '/drive-there/night-before-tryouts/' },
+      { text: 'Pre-tryout dinner. *What works*', href: '/drive-there/pre-tryout-dinner/' },
+      { text: 'How to *read the tryout drill*', href: '/drive-there/how-to-read-the-tryout-drill/' },
+      { text: 'After the cut. *The 24-hour rule*', href: '/drive-home/after-the-cut-the-24-hour-rule/' },
     ],
   },
   {
-    label: 'This season',
-    items: [
-      {
-        label: 'Tryouts are this week.',
-        blurb: 'What to do the night before. What to say in the car. How to handle the result either way.',
-        accent: '#B0894A',
-        links: [
-          { text: 'The night before tryouts', href: '/drive-there/night-before-tryouts/' },
-          { text: 'On not making varsity', href: '/drive-home/on-not-making-varsity/' },
-        ],
-      },
-      {
-        label: 'I\'m the team parent. Where do I start?',
-        blurb: 'The group chat. The snack signup. The picture-day decision. The lineup spreadsheet. Templates and how-tos.',
-        accent: '#C5713D',
-        links: [
-          { text: 'Starting the team group chat', href: '/team-parent/starting-the-team-group-chat/' },
-          { text: 'Picture day: pro or just a parent?', href: '/team-parent/picture-day-pro-or-parent/' },
-          { text: 'The full Team Parent toolkit', href: '/team-parent/' },
-        ],
-      },
-      {
-        label: 'My kid is starting a new sport. What\'s actually worth buying?',
-        blurb: 'Honest starter kits by sport and age. Cost ranges. How to choose between options. No fluff, no hype, no pro-level gear for a 7-year-old.',
-        accent: '#5C7459',
-        links: [
-          { text: 'Browse all sport guides', href: '/what-to-buy/' },
-          { text: 'Baseball', href: '/what-to-buy/baseball/' },
-          { text: 'Soccer', href: '/what-to-buy/soccer/' },
-        ],
-      },
+    label: 'I am new to this sport.',
+    blurb: 'What to buy. What to skip. The first parent meeting. The questions to ask before you sign up.',
+    accent: '#D4AB6A', // honey
+    bg: '#F2E5C9',
+    icon: 'equipment',
+    links: [
+      { text: 'Browse all sport guides', href: '/what-to-buy/' },
+      { text: 'Used vs new gear. *The actual math*', href: '/drive-there/used-gear-rules/' },
+      { text: 'The first parent meeting', href: '/drive-there/first-parent-meeting/' },
+      { text: 'The 8-10 *cleat conversation*', href: '/drive-there/8-10-cleat-conversation/' },
     ],
   },
   {
-    label: 'The bigger stuff',
-    items: [
-      {
-        label: 'My kid wants to quit.',
-        blurb: 'Read this before you say anything. Then read it again.',
-        accent: '#B0894A',
-        links: [
-          { text: 'What my eight-year-old said in the car last week', href: '/drive-home/what-my-kid-said-in-the-car/' },
-          { text: 'Why I stopped asking "did you have fun?"', href: '/drive-home/why-i-stopped-asking-did-you-have-fun/' },
-        ],
-      },
-      {
-        label: 'We\'re starting travel ball this season.',
-        blurb: 'The travel-tournament packing list. Hotel rotations. The economics nobody warned you about.',
-        accent: '#C5713D',
-        links: [
-          { text: 'The travel-tournament packing list', href: '/team-parent/travel-tournament-packing-list/' },
-        ],
-      },
+    label: 'We are picking a summer camp.',
+    blurb: 'How to evaluate one in ten minutes. The safety questions to ask. Day vs overnight. What to pack.',
+    accent: '#B8908F', // rose
+    bg: '#EDDBD9',
+    icon: 'summer-camps',
+    links: [
+      { text: 'How to *evaluate a summer camp* in 10 minutes', href: '/drive-there/how-to-evaluate-a-summer-camp/' },
+      { text: 'How to *vet a camp for safety*', href: '/drive-there/how-to-vet-a-camp-for-safety/' },
+      { text: 'Day camp or overnight. *The real age cutoff*', href: '/drive-home/day-camp-vs-overnight-camp/' },
+      { text: 'The summer camp *packing list* that actually works', href: '/drive-there/summer-camp-packing-list/' },
+    ],
+  },
+  {
+    label: 'Travel ball is on the table.',
+    blurb: 'The recruiter at rec ball. The cost. The schedule. The signs your kid is, or is not, ready.',
+    accent: '#C5713D', // rust
+    bg: '#F2E2D5',
+    icon: 'rec-vs-travel',
+    links: [
+      { text: 'The *recruiter at rec ball* promising the sun', href: '/drive-home/the-recruiter-at-rec-ball/' },
+      { text: 'The cost of *travel ball*. Actual annual breakdown', href: '/drive-home/the-cost-of-travel-ball/' },
+      { text: 'The *11-year-old who is not ready* for travel', href: '/drive-home/the-11-year-old-whos-not-ready-for-travel/' },
+      { text: 'When you *say no to travel* and feel guilty', href: '/drive-home/when-you-say-no-to-travel/' },
+    ],
+  },
+  {
+    label: 'Game day stuff.',
+    blurb: 'The thirty minutes before kickoff. The bench reaction your kid will remember. The bad call that did not go your way.',
+    accent: '#8FA68C', // sage
+    bg: '#EAEFE7',
+    icon: 'game-day',
+    links: [
+      { text: 'What to do in the *30 minutes before kickoff*', href: '/drive-there/what-to-do-in-the-30-minutes-before-kickoff/' },
+      { text: 'The *bench reaction* your kid will remember', href: '/game/the-bench-reaction-your-kid-will-remember/' },
+      { text: 'The *cheer that embarrasses* your kid', href: '/game/the-cheer-that-embarrasses-your-kid/' },
+      { text: 'The bad call that *did not go your way*', href: '/drive-home/the-bad-call-that-didnt-go-your-way/' },
     ],
   },
 ];
 ---
 <BaseLayout
   title="Start here"
-  description="Pick what's happening to you right now. We'll send you to the right reading. New parent-coach, tryouts week, drive home after a tough game, team-parent getting started — there's a route for it."
+  description="Six reader-state themes. Pick the moment that fits your week, and we'll route you to the right reading. The drive home, tryouts week, summer camps, travel ball, and the rest."
 >
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-20">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Start here</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        What's happening <em class="text-rust">right now</em>?
+      <p class="font-display-soft text-rust mb-4" style="font-weight: 600; letter-spacing: 0.04em;">Start here</p>
+      <h1 class="font-display-soft text-ink text-[2.5rem] md:text-[4.5rem] leading-[1.05] max-w-3xl" style="font-weight: 700;">
+        What's happening <span class="text-rust italic font-display" style="font-weight: 500;">this week</span>?
       </h1>
-      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
-        Pick the one that fits your week. We'll route you to the right reading. Most of these are short. A few are longer. None of them will waste your time.
+      <p class="font-display-soft text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-relaxed" style="font-weight: 400;">
+        Pick the moment that fits your family right now. We'll route you to the right reads. Most are short. A few are longer. None waste your time.
       </p>
     </div>
   </section>
 
-  <!-- TWO HERO SITUATIONS (large) -->
+  <!-- ROSE SECTION DIVIDER -->
+  <section style="background: #EDDBD9; height: 4px;"></section>
+
+  <!-- SIX THEME CARDS -->
   <section class="border-b border-bone bg-paper-warm">
-    <div class="container-px py-12">
-      <div class="grid md:grid-cols-2 gap-px bg-bone">
-        {heroSituations.map((s) => (
-          <div class="bg-paper p-8" style={`border-top: 4px solid ${s.accent};`}>
-            <h2 class="font-display text-ink text-2xl md:text-[1.75rem] leading-tight" style="font-weight: 500;">
-              {s.label}
-            </h2>
-            <p class="font-display text-ink-soft mt-3 leading-snug">
-              {s.blurb}
+    <div class="container-px py-14">
+      <div class="grid md:grid-cols-2 gap-6">
+        {themes.map((t) => (
+          <article
+            class="p-8 md:p-10 transition-shadow hover:shadow-md"
+            style={`background: ${t.bg}; border-top: 5px solid ${t.accent};`}
+          >
+            <h2
+              class="font-display-soft text-ink text-2xl md:text-3xl leading-tight"
+              style="font-weight: 700;"
+              set:html={t.label}
+            />
+            <p class="font-display-soft text-ink-soft mt-4 leading-relaxed text-base md:text-lg" style="font-weight: 400;">
+              {t.blurb}
             </p>
-            <ul class="grid gap-2 mt-5">
-              {s.links.map((l) => (
+            <ul class="grid gap-2.5 mt-6">
+              {t.links.map((l) => (
                 <li>
                   <a
                     href={l.href}
-                    class="font-display italic hover:text-rust transition-colors"
-                    style={`color: ${s.accent}; font-weight: 500;`}
-                  >→ {l.text}</a>
+                    class="font-display-soft hover:underline transition-colors text-base"
+                    style={`color: ${t.accent}; font-weight: 600;`}
+                    set:html={`→ ${l.text.replace(/\*([^*]+)\*/g, '<em class="italic font-display" style="font-weight: 500;">$1</em>')}`}
+                  />
                 </li>
               ))}
             </ul>
-          </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- GROUPED SITUATIONS -->
-  {groups.map((g) => (
-    <section class="border-b border-bone">
-      <div class="container-px py-12">
-        <p class="font-display italic text-rust mb-6" style="font-weight: 500; font-size: 1.05rem;">{g.label}</p>
-        <div class="grid md:grid-cols-3 gap-px bg-bone">
-          {g.items.map((s) => (
-            <div class="bg-paper p-7" style={`border-top: 3px solid ${s.accent};`}>
-              <h3 class="font-display text-ink text-xl leading-tight" style="font-weight: 500;">
-                {s.label}
-              </h3>
-              <p class="font-display text-ink-soft mt-3 leading-snug text-sm">
-                {s.blurb}
-              </p>
-              <ul class="grid gap-1.5 mt-4">
-                {s.links.map((l) => (
-                  <li>
-                    <a
-                      href={l.href}
-                      class="font-display italic hover:text-rust transition-colors text-sm"
-                      style={`color: ${s.accent}; font-weight: 500;`}
-                    >→ {l.text}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
+  <!-- ROSE SECTION DIVIDER -->
+  <section style="background: #EDDBD9; height: 4px;"></section>
 
+  <!-- DON'T SEE YOUR SITUATION -->
   <section class="border-b border-bone">
     <div class="container-px py-14 max-w-3xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Don't see your situation?</p>
-      <p class="font-display text-ink-soft text-lg leading-snug">
-        Email us at <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a> and tell us what's happening. If we already wrote about it, we'll send the link. If we haven't, we'll add it to the list.
+      <p class="font-display-soft text-rust mb-3" style="font-weight: 600;">Don't see your situation?</p>
+      <p class="font-display-soft text-ink-soft text-lg md:text-xl leading-relaxed" style="font-weight: 400;">
+        Email us at <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a> and tell us what's happening this week. If we've written it, we'll send the link. If we haven't, we'll add it to the list.
       </p>
     </div>
   </section>
@@ -210,6 +156,6 @@ const groups = [
   <LeadMagnetCTA />
   <NewsletterSignup
     headline="One short note a week"
-    blurb="Maren, Dan, and Jeff write a short read every week. We send the best one to your inbox. Easy unsubscribe."
+    blurb="One short read a week from the Parent Coach Playbook Editorial. Friday morning. Easy unsubscribe."
   />
 </BaseLayout>

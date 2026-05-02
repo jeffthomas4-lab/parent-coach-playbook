@@ -1,6 +1,6 @@
 ---
 title: "Middle-School Tryouts (13-14): When Not Making It Is the Best Thing"
-dek: "A lot of good kids don't make this team. Maybe your kid is supposed to be elsewhere."
+dek: "The A team has 12 spots. Your kid is not the worst kid who didn't get one."
 topic: "tryouts"
 format: "note"
 phase: "drive-home"
@@ -10,16 +10,24 @@ publishedAt: 2026-03-10
 featured: false
 ---
 
-The A team at middle school is the best 12 kids. They're going to win. Your kid might not be one of them. That's okay. Actually, it's good.
+It was March and the roster list went up. Our kid made B team. Not A. We sat with the disappointment for a night, then watched what happened next.
 
-Kids who don't make the top team at 13-14 often end up better off. They play on a team where they're more valuable. They get more minutes. They develop faster. They don't sit on the bench watching. By freshman year, they catch up to the kids who made A, then they pass them.
+The A team at middle school is the best 12 kids. They're going to win. There are always good kids who don't make it. That might be our kid. And that's actually okay. It might be good.
 
-The kids who make A? Half of them sit. They get frustrated. Some quit. Some play conservative to avoid mistakes because mistakes mean shorter leash. That's not development.
+I've seen this over and over. The kids who don't make the top team get valuable minutes. They develop faster. They don't sit on the bench watching. By freshman year, they catch up to the kids who made A. Then they pass them.
 
-If your kid doesn't make the A team, don't treat it like failure. Treat it like placement. "You're on the B team. That's where you're going to play the most and learn the fastest right now."
+The kids who make A? Half of them sit. They get frustrated. Some quit. Some play conservative because mistakes mean a shorter leash. That's not development.
 
-When they come home frustrated, say: "I know you wanted A. Me too. But let's watch how this works. You're going to get big minutes. You're going to make mistakes and learn from them. That matters more than sitting on the best team."
+## What we say
 
-This only works if you actually mean it. If you go home and complain to your spouse about the coach's politics, your kid will hear it. Then they'll think they didn't make it because the system is unfair, not because they have room to grow.
+If our kid doesn't make the A team, we don't treat it like failure. We treat it like placement. "You're on the B team. That's where you're going to play the most and learn the fastest right now."
 
-Some kids do belong on A. If yours is one of them, that'll be clear next season when they move up. Until then, focus on effort, not outcome.
+When they come home frustrated, we say: "I know you wanted A. I wanted that too. But let's watch how this works. You're going to get big minutes. You're going to make mistakes and learn from them. That matters more than sitting on the best team."
+
+This only works if we actually mean it. If we go home and complain to our spouse about the coach's politics, our kid will hear it. Then they'll think they didn't make it because the system is unfair, not because they have room to grow.
+
+## What we don't do
+
+We don't call the coach. We don't suggest our kid should have made A. We don't text other parents about the decision. We let it be.
+
+Some kids do belong on A. If ours is one of them, that will be clear next season when they move up. Until then, we focus on effort, not outcome.

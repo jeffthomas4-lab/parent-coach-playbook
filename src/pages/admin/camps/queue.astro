@@ -1,0 +1,478 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  listPendingCamps,
+  listPendingReviews,
+  listPendingClaims,
+  getCampById,
+  type Camp,
+  type CampReview,
+  type CampClaim,
+} from '../../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+let pendingCamps: Camp[] = [];
+let pendingReviews: CampReview[] = [];
+let pendingClaims: CampClaim[] = [];
+const campLookup = new Map<string, Camp>();
+let dbAvailable = !!env?.DB;
+
+if (env?.DB) {
+  try {
+    pendingCamps = await listPendingCamps(env.DB);
+    pendingReviews = await listPendingReviews(env.DB);
+    pendingClaims = await listPendingClaims(env.DB);
+
+    // Build camp lookup for reviews and claims
+    const allCampIds = new Set<string>();
+    pendingReviews.forEach((r) => allCampIds.add(r.camp_id));
+    pendingClaims.forEach((c) => allCampIds.add(c.camp_id));
+
+    for (const campId of allCampIds) {
+      const camp = await getCampById(env.DB, campId);
+      if (camp) campLookup.set(campId, camp);
+    }
+  } catch (e) {
+    console.error('admin queue fetch failed', e);
+  }
+}
+
+const fmt = (s: string) =>
+  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+const fmtRange = (start: string, end: string) => {
+  const s = new Date(start);
+  const e = new Date(end);
+  return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}–${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+};
+---
+
+<BaseLayout title="Admin queue" description="Unified moderation dashboard" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+        <a href="/admin/camps/" class="hover:underline">Admin</a> · Queue
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+        Moderation queue
+      </h1>
+      {!adminEmail && (
+        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+          Cloudflare Access header not detected. Actions will fail until /admin/* is wired through Access.
+        </p>
+      )}
+    </div>
+  </section>
+
+  {!dbAvailable ? (
+    <section>
+      <div class="container-px py-10">
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database not bound.</p>
+      </div>
+    </section>
+  ) : (
+    <>
+      {/* SECTION A: Pending camps */}
+      <section class="border-b border-bone">
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="font-display text-ink text-2xl" style="font-weight: 500;">
+              Pending camp submissions
+            </h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone" style="font-weight: 500;">
+              {pendingCamps.length}
+            </span>
+          </div>
+
+          {pendingCamps.length === 0 ? (
+            <p class="font-display italic text-ink-soft" style="font-weight: 500;">All clear—no camps awaiting review.</p>
+          ) : (
+            <ul class="grid gap-4">
+              {pendingCamps.map((camp) => (
+                <li class="border border-bone p-5 bg-paper camp-row" data-id={camp.id}>
+                  <div class="grid gap-4">
+                    {/* Top row: name, location, submitted date */}
+                    <div>
+                      <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                        {camp.sport} · ages {camp.age_min}–{camp.age_max} · {camp.day_or_overnight}
+                      </p>
+                      <h3 class="font-display text-ink text-lg leading-tight mt-0.5" style="font-weight: 500;">
+                        {camp.name}
+                      </h3>
+                      <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                        {camp.city}, {camp.state} · {fmtRange(camp.start_date, camp.end_date)}
+                      </p>
+                    </div>
+
+                    {/* Editable fields */}
+                    <div class="grid gap-3 text-sm">
+                      <div class="grid gap-1">
+                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Website</label>
+                        <input type="url" class="px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.website_url || ''} placeholder="https://..." data-field="website_url" />
+                      </div>
+
+                      <div class="grid gap-1">
+                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Contact email</label>
+                        <input type="email" class="px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.contact_email || ''} placeholder="email@example.com" data-field="contact_email" />
+                      </div>
+
+                      <div class="grid gap-1">
+                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Description</label>
+                        <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="3" data-field="description">{camp.description}</textarea>
+                      </div>
+
+                      <div class="grid gap-1">
+                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Submitted by</label>
+                        <p class="text-ink-soft">{camp.submitted_by_email}</p>
+                      </div>
+
+                      <div class="grid gap-1">
+                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Submitted {fmt(camp.submitted_at)}</label>
+                      </div>
+                    </div>
+
+                    {/* Action buttons */}
+                    <div class="grid gap-2 sm:grid-cols-4">
+                      <div class="col-span-1">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors" style="font-weight: 500;" data-action="approve-verified">
+                          Approve & verify
+                        </button>
+                      </div>
+                      <div class="col-span-1">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;" data-action="approve">
+                          Approve
+                        </button>
+                      </div>
+                      <div class="col-span-1">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;" data-action="reject">
+                          Reject
+                        </button>
+                      </div>
+                      <div class="col-span-1">
+                        <label class="font-display italic px-3 py-2 border border-bone bg-paper text-sm text-center cursor-pointer hover:bg-paper-warm transition-colors block" style="font-weight: 500;">
+                          Photo
+                          <input type="file" class="hidden" accept="image/*" data-action="upload-photo" />
+                        </label>
+                      </div>
+                    </div>
+
+                    {/* Status message */}
+                    <div class="status-message text-xs text-rust font-display italic" style="display: none;"></div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      {/* SECTION B: Pending reviews */}
+      <section class="border-b border-bone">
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="font-display text-ink text-2xl" style="font-weight: 500;">
+              Pending camp reviews
+            </h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone" style="font-weight: 500;">
+              {pendingReviews.length}
+            </span>
+          </div>
+
+          {pendingReviews.length === 0 ? (
+            <p class="font-display italic text-ink-soft" style="font-weight: 500;">All clear—no reviews awaiting action.</p>
+          ) : (
+            <ul class="grid gap-4">
+              {pendingReviews.map((review) => {
+                const camp = campLookup.get(review.camp_id);
+                return (
+                  <li class="border border-bone p-5 bg-paper review-row" data-id={review.id}>
+                    <div class="grid gap-3">
+                      <div>
+                        <p class="font-display text-ink-soft text-sm" style="font-weight: 500;">
+                          {camp ? camp.name : 'Unknown camp'} · Rating: <strong>{review.rating}/5</strong>
+                        </p>
+                        <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">
+                          By {review.reviewer_email} {review.reviewer_display_name ? `(${review.reviewer_display_name})` : ''} · {fmt(review.submitted_at)}
+                        </p>
+                      </div>
+
+                      <p class="font-body text-ink text-sm leading-snug" style="white-space: pre-wrap; max-height: 120px; overflow-y: auto;">
+                        {review.body}
+                      </p>
+
+                      <div class="grid gap-2 sm:grid-cols-2">
+                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;" data-action="approve">
+                          Approve
+                        </button>
+                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;" data-action="reject">
+                          Reject
+                        </button>
+                      </div>
+
+                      <div class="status-message text-xs text-rust font-display italic" style="display: none;"></div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      {/* SECTION C: Pending claims */}
+      <section>
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="font-display text-ink text-2xl" style="font-weight: 500;">
+              Pending claim requests
+            </h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone" style="font-weight: 500;">
+              {pendingClaims.length}
+            </span>
+          </div>
+
+          {pendingClaims.length === 0 ? (
+            <p class="font-display italic text-ink-soft" style="font-weight: 500;">All clear—no claims awaiting action.</p>
+          ) : (
+            <ul class="grid gap-4">
+              {pendingClaims.map((claim) => {
+                const camp = campLookup.get(claim.camp_id);
+                return (
+                  <li class="border border-bone p-5 bg-paper claim-row" data-id={claim.id}>
+                    <div class="grid gap-3">
+                      <div>
+                        <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                          Status: {claim.status}
+                        </p>
+                        <p class="font-display text-ink text-lg leading-tight mt-1" style="font-weight: 500;">
+                          {camp ? camp.name : 'Unknown camp'}
+                        </p>
+                        <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+                          Claimant: <strong>{claim.claimant_email}</strong>
+                          {claim.claimant_name && <> · {claim.claimant_name}</>}
+                          {claim.organization && <> · {claim.organization}</>}
+                          {claim.phone && <> · {claim.phone}</>}
+                        </p>
+                        {claim.notes && (
+                          <p class="font-body text-ink text-sm mt-2 leading-snug" style="white-space: pre-wrap;">
+                            <strong>Notes:</strong> {claim.notes}
+                          </p>
+                        )}
+                        <p class="font-display italic text-ink-soft text-xs mt-2" style="font-weight: 500;">
+                          Submitted {fmt(claim.submitted_at)}
+                        </p>
+                      </div>
+
+                      <div class="grid gap-2 sm:grid-cols-3">
+                        <button type="button" class="font-display italic px-3 py-2 border border-paper-warm bg-paper-warm text-sm hover:bg-paper transition-colors" style="font-weight: 500;" data-action="mark-verified">
+                          Mark verified
+                        </button>
+                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;" data-action="mark-paid">
+                          Mark paid
+                        </button>
+                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;" data-action="reject">
+                          Reject
+                        </button>
+                      </div>
+
+                      <div class="status-message text-xs text-rust font-display italic" style="display: none;"></div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Camp submission actions
+    document.querySelectorAll('.camp-row').forEach(function (row) {
+      const campId = row.getAttribute('data-id');
+      const statusDiv = row.querySelector('.status-message');
+
+      row.querySelectorAll('[data-action]').forEach(function (btn) {
+        if (btn.type === 'file') return; // skip file inputs
+
+        btn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          const action = this.getAttribute('data-action');
+          let endpoint, method, body;
+
+          if (action === 'approve-verified') {
+            endpoint = '/api/admin/camps/' + campId + '/approve';
+            body = JSON.stringify({ notes: null });
+            // Also set verified
+            await fetch('/api/admin/camps/' + campId + '/verify', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ verified: true }),
+            });
+          } else if (action === 'approve') {
+            endpoint = '/api/admin/camps/' + campId + '/approve';
+            body = JSON.stringify({ notes: null });
+          } else if (action === 'reject') {
+            endpoint = '/api/admin/camps/' + campId + '/reject';
+            body = JSON.stringify({ notes: null });
+          } else {
+            return;
+          }
+
+          try {
+            const resp = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: body,
+            });
+            const data = await resp.json();
+
+            if (data.ok) {
+              statusDiv.textContent = action === 'reject' ? 'Rejected' : 'Approved';
+              statusDiv.style.display = 'block';
+              setTimeout(function () {
+                row.style.opacity = '0.5';
+                setTimeout(function () {
+                  row.remove();
+                }, 300);
+              }, 500);
+            } else {
+              statusDiv.textContent = 'Error: ' + (data.error || 'unknown');
+              statusDiv.style.display = 'block';
+            }
+          } catch (err) {
+            statusDiv.textContent = 'Error: ' + (err instanceof Error ? err.message : 'network error');
+            statusDiv.style.display = 'block';
+          }
+        });
+      });
+
+      // Photo upload
+      const photoInput = row.querySelector('input[type="file"]');
+      if (photoInput) {
+        photoInput.addEventListener('change', async function () {
+          if (this.files && this.files.length > 0) {
+            const fd = new FormData();
+            fd.append('file', this.files[0]);
+
+            try {
+              const resp = await fetch('/api/admin/camps/' + campId + '/photo', {
+                method: 'POST',
+                body: fd,
+              });
+              const data = await resp.json();
+
+              if (data.ok) {
+                statusDiv.textContent = 'Photo uploaded';
+              } else {
+                statusDiv.textContent = 'Photo error: ' + (data.error || 'unknown');
+              }
+              statusDiv.style.display = 'block';
+            } catch (err) {
+              statusDiv.textContent = 'Photo error: ' + (err instanceof Error ? err.message : 'network error');
+              statusDiv.style.display = 'block';
+            }
+          }
+        });
+      }
+    });
+
+    // Review actions
+    document.querySelectorAll('.review-row').forEach(function (row) {
+      const reviewId = row.getAttribute('data-id');
+      const statusDiv = row.querySelector('.status-message');
+
+      row.querySelectorAll('[data-action]').forEach(function (btn) {
+        btn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          const action = this.getAttribute('data-action');
+          const endpoint = action === 'approve' ? '/api/admin/reviews/' + reviewId + '/approve' : '/api/admin/reviews/' + reviewId + '/reject';
+
+          try {
+            const resp = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ notes: null }),
+            });
+            const data = await resp.json();
+
+            if (data.ok) {
+              statusDiv.textContent = action === 'approve' ? 'Approved' : 'Rejected';
+              statusDiv.style.display = 'block';
+              setTimeout(function () {
+                row.style.opacity = '0.5';
+                setTimeout(function () {
+                  row.remove();
+                }, 300);
+              }, 500);
+            } else {
+              statusDiv.textContent = 'Error: ' + (data.error || 'unknown');
+              statusDiv.style.display = 'block';
+            }
+          } catch (err) {
+            statusDiv.textContent = 'Error: ' + (err instanceof Error ? err.message : 'network error');
+            statusDiv.style.display = 'block';
+          }
+        });
+      });
+    });
+
+    // Claim actions
+    document.querySelectorAll('.claim-row').forEach(function (row) {
+      const claimId = row.getAttribute('data-id');
+      const statusDiv = row.querySelector('.status-message');
+
+      row.querySelectorAll('[data-action]').forEach(function (btn) {
+        btn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          const action = this.getAttribute('data-action');
+          let status;
+
+          if (action === 'mark-verified') {
+            status = 'verified';
+          } else if (action === 'mark-paid') {
+            status = 'paid';
+          } else if (action === 'reject') {
+            status = 'rejected';
+          } else {
+            return;
+          }
+
+          try {
+            const resp = await fetch('/api/admin/claims/' + claimId + '/update', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ status: status, notes: null }),
+            });
+            const data = await resp.json();
+
+            if (data.ok) {
+              statusDiv.textContent = 'Updated: ' + status;
+              statusDiv.style.display = 'block';
+              setTimeout(function () {
+                row.style.opacity = '0.5';
+                setTimeout(function () {
+                  row.remove();
+                }, 300);
+              }, 500);
+            } else {
+              statusDiv.textContent = 'Error: ' + (data.error || 'unknown');
+              statusDiv.style.display = 'block';
+            }
+          } catch (err) {
+            statusDiv.textContent = 'Error: ' + (err instanceof Error ? err.message : 'network error');
+            statusDiv.style.display = 'block';
+          }
+        });
+      });
+    });
+  });
+</script>

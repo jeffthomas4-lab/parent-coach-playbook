@@ -2,8 +2,12 @@
 title: "Four-Corner Passing"
 summary: "Four kids pass in a square, then move. 20 minutes. Ages 8-10."
 sport: "soccer"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "Four players positioned at corners of a square, passing the ball around and moving to the next corner."
 publishedAt: 2026-02-04
 featured: false
 ---
@@ -25,4 +29,4 @@ This drill teaches first touch and passing accuracy while building movement. Kid
 
 **What to look for:** Reception and touch. Good first touch is the whole game. A bad first touch forces a bad pass.
 
-**Variation:** For younger kids (8-9), make the square bigger (15 by 15 yards) and pass only when called. For older kids (10), add a second ball so there are two passes happening at once.
+**Var

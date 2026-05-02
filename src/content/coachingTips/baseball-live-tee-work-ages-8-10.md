@@ -2,8 +2,12 @@
 title: "Live Tee Work"
 summary: "Hit off the tee with a pitcher standing behind it. 20 minutes. Ages 8-10."
 sport: "baseball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "hitting"
+progression: "build"
+illustrationBrief: "A child at bat hitting a ball off a tee while a pitcher stands behind the tee in a pitching stance."
 publishedAt: 2026-02-02
 featured: false
 ---
@@ -25,4 +29,4 @@ Live tee work teaches kids to track the ball as if someone is throwing it, even 
 
 **What to look for:** A consistent approach every rep. Feet set, hands ready, same breath, same swing. Rhythm matters. Kids who are loose will make more contact than kids who think too hard.
 
-**Variation:** For older kids (10), tee the ball slightly forward (toward the pitcher's mound) so they practice hitting the ball in front of the plate. For kids struggling with contact, tee the ball higher so their hands don't have to drop.
+**Variation:** For older kids (10), tee the ball slightly for

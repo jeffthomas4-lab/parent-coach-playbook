@@ -2,8 +2,12 @@
 title: "Softball Tee Work"
 summary: "Hit off a tee with the proper underhand swing approach. 15 minutes. Ages 5-7."
 sport: "softball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "hitting"
+progression: "intro"
+illustrationBrief: "Batting off the tee with proper form"
 publishedAt: 2026-01-02
 featured: false
 ---

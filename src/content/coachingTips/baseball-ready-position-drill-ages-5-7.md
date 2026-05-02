@@ -2,8 +2,12 @@
 title: "The Ready Position Drill"
 summary: "Teach the athletic stance with a reaction game. 10 minutes. Ages 5-7."
 sport: "baseball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "fielding"
+progression: "intro"
+illustrationBrief: "A young child in athletic stance with knees bent, feet shoulder-width apart, ready to move left or right on command."
 publishedAt: 2026-01-26
 featured: false
 ---
@@ -22,6 +26,4 @@ The ready position is where fielding starts. Kids who know how to stand, wait, a
 4. Do 10 reps per direction (10 left, 10 right, 10 back). Thirty total. They'll be tired and engaged.
 5. On the last five of each direction, add a clap. They react to the clap and move. That trains the trigger.
 
-**What to look for:** Kids who stay balanced on every rep. Some will lean forward or backward. That's slow.
-
-**Variation:** For kids who are consistent, make the movements faster or add a jump before the direction call. For younger kids, do 5 reps per direction instead of 10.
+**What to look for:** Kids who stay balanced on every rep. Some will lean forwar

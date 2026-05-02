@@ -10,12 +10,12 @@ publishedAt: 2026-01-12
 featured: false
 ---
 
-Tee-ball doesn't have strikeouts. Every kid bats until she hits it. This is not soft. This is smart coaching.
+Tee-ball doesn't have strikeouts. Every kid bats until they hit it. This is not soft. This is smart coaching.
 
 **Why it matters at this age**
-A five-year-old doesn't understand what a strike is. She doesn't understand the count. She understands one thing: the ball came at me, I swung, something happened. That's the whole perception.
+A five-year-old doesn't understand what a strike is. They don't understand the count. They understand one thing: the ball came at me, I swung, something happened. That's the whole perception.
 
-Strikeouts teach failure before she understands what she's failing at. A kid who strikes out doesn't learn. She learns to fear the at-bat.
+Strikeouts teach failure before they understand what they're failing at. A kid who strikes out doesn't learn. They learn to fear the at-bat.
 
 **What the rule actually teaches**
 Persistence. Every swing, you keep going. Every miss, you try again. The ball comes from the tee, you have another chance. That's the lesson.
@@ -34,6 +34,6 @@ Machine pitch (ages 6-8): you get three strikes and you're out. Now she understa
 Coach pitch (ages 8-10): three strikes, walk after four balls. She understands pitches and patience now.
 
 **The parent job**
-Don't push strikeouts earlier than the league has them. Don't tell your daughter she should have hit it. Just say, "Good at-bat. We'll get the next one." Then let it go.
+Don't push strikeouts earlier than the league has them. Don't tell your kid they should have hit it. Just say, "Good at-bat. We'll get the next one." Then let it go.
 
-The strikeout rule will come. Until then, celebrate that she swung.
+The strikeout rule will come. Until then, celebrate that they swung.

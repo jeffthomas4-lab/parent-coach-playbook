@@ -16,17 +16,17 @@ const focusOptions = [
 ];
 ---
 <BaseLayout
-  title="Coaching tips"
+  title="Drills"
   description="A drill library for parent-coaches. Filter by sport, age, and focus. Searchable."
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Coaching tips</p>
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Drills</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
         Drills, notes, and the <em class="text-rust">cones</em> diagram.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        A library for parent-coaches. Filter by sport, age, or focus. Each entry is short. Each one is something we have run on a Tuesday night practice and seen work.
+        A free library for parent-coaches. Filter by sport, age, or focus. Each entry is short, age-appropriate, and written to be useful at a normal weeknight practice.
       </p>
     </div>
   </section>
@@ -100,62 +100,80 @@ const focusOptions = [
         </div>
       </section>
 
-      <script>
-        const sportBar = document.querySelector('[data-sport-filter]');
-        const ageBar   = document.querySelector('[data-age-filter]');
-        const focusBar = document.querySelector('[data-focus-filter]');
-        const grid     = document.querySelector('[data-tips-grid]');
-        const empty    = document.querySelector('[data-empty]') as HTMLElement | null;
-        const input    = document.querySelector('[data-search-input]') as HTMLInputElement | null;
+      <script is:inline>
+        (function () {
+          function init() {
+            var sportBar = document.querySelector('[data-sport-filter]');
+            var ageBar   = document.querySelector('[data-age-filter]');
+            var focusBar = document.querySelector('[data-focus-filter]');
+            var grid     = document.querySelector('[data-tips-grid]');
+            var empty    = document.querySelector('[data-empty]');
+            var input    = document.querySelector('[data-search-input]');
 
-        let s = '', a = '', f = '', q = '';
+            if (!grid) return;
 
-        const apply = () => {
-          if (!grid) return;
-          let visible = 0;
-          grid.querySelectorAll<HTMLElement>('[data-sport-tag]').forEach((row) => {
-            const sport = row.dataset.sportTag ?? '';
-            const age   = row.dataset.ageTag ?? '';
-            const focus = row.dataset.focusTag ?? '';
-            const title = row.dataset.title ?? '';
-            const summ  = row.dataset.summary ?? '';
-            const sOk = !s || sport === s;
-            const aOk = !a || age === a || age === 'all-ages';
-            const fOk = !f || focus === f;
-            const qOk = !q || title.includes(q) || summ.includes(q);
-            const ok = sOk && aOk && fOk && qOk;
-            row.style.display = ok ? '' : 'none';
-            if (ok) visible++;
-          });
-          if (empty) empty.classList.toggle('hidden', visible > 0);
-        };
+            var s = '', a = '', f = '', q = '';
 
-        const wire = (bar: Element | null, attr: string, setter: (v: string) => void) => {
-          if (!bar) return;
-          bar.addEventListener('click', (e) => {
-            const t = e.target as HTMLElement;
-            if (t.tagName !== 'BUTTON') return;
-            bar.querySelectorAll('button').forEach(b => {
-              b.classList.remove('bg-ink', 'text-paper', 'border-ink');
-              b.classList.add('border-bone', 'text-ink-soft');
-            });
-            t.classList.remove('border-bone', 'text-ink-soft');
-            t.classList.add('bg-ink', 'text-paper', 'border-ink');
-            setter(t.getAttribute(`data-${attr}`) ?? '');
-            apply();
-          });
-        };
+            function apply() {
+              var rows = grid.querySelectorAll('[data-sport-tag]');
+              var visible = 0;
+              for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                var sport = row.getAttribute('data-sport-tag') || '';
+                var age   = row.getAttribute('data-age-tag') || '';
+                var focus = row.getAttribute('data-focus-tag') || '';
+                var title = row.getAttribute('data-title') || '';
+                var summ  = row.getAttribute('data-summary') || '';
+                var sOk = !s || sport === s;
+                var aOk = !a || age === a || age === 'all-ages';
+                var fOk = !f || focus === f;
+                var qOk = !q || title.indexOf(q) !== -1 || summ.indexOf(q) !== -1;
+                var ok = sOk && aOk && fOk && qOk;
+                row.style.display = ok ? '' : 'none';
+                if (ok) visible++;
+              }
+              if (empty) {
+                if (visible > 0) empty.classList.add('hidden');
+                else empty.classList.remove('hidden');
+              }
+            }
 
-        wire(sportBar, 'sport', v => { s = v; });
-        wire(ageBar,   'age',   v => { a = v; });
-        wire(focusBar, 'focus', v => { f = v; });
+            function wire(bar, attr, setter) {
+              if (!bar) return;
+              bar.addEventListener('click', function (e) {
+                var t = e.target;
+                while (t && t.tagName !== 'BUTTON' && t !== bar) t = t.parentElement;
+                if (!t || t.tagName !== 'BUTTON') return;
+                var buttons = bar.querySelectorAll('button');
+                for (var i = 0; i < buttons.length; i++) {
+                  buttons[i].classList.remove('bg-ink', 'text-paper', 'border-ink');
+                  buttons[i].classList.add('border-bone', 'text-ink-soft');
+                }
+                t.classList.remove('border-bone', 'text-ink-soft');
+                t.classList.add('bg-ink', 'text-paper', 'border-ink');
+                setter(t.getAttribute('data-' + attr) || '');
+                apply();
+              });
+            }
 
-        if (input) {
-          input.addEventListener('input', () => {
-            q = input.value.trim().toLowerCase();
-            apply();
-          });
-        }
+            wire(sportBar, 'sport', function (v) { s = v; });
+            wire(ageBar,   'age',   function (v) { a = v; });
+            wire(focusBar, 'focus', function (v) { f = v; });
+
+            if (input) {
+              input.addEventListener('input', function () {
+                q = input.value.trim().toLowerCase();
+                apply();
+              });
+            }
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+          } else {
+            init();
+          }
+        })();
       </script>
     </>
   ) : (

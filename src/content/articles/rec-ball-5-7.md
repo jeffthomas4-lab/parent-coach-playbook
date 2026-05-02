@@ -16,7 +16,7 @@ At five to seven, there is no travel ball that makes sense. There's only rec bal
 One game a week. One practice a week. Maybe two games if there's a tournament. Everyone plays. Everyone gets time. The coach is probably a parent. The goal is exposure and joy, not elite development.
 
 **Why this is right**
-Your five-year-old doesn't have the body for travel. She doesn't have the focus. She doesn't have the decision-making speed. She has the ability to run and the ability to smile. Rec ball is built for exactly that.
+Your five-year-old doesn't have the body for travel. They don't have the focus. They don't have the decision-making speed. They have the ability to run and the ability to smile. Rec ball is built for exactly that.
 
 **The development myth**
 Some parents think travel ball at five accelerates development. It doesn't. It accelerates selection. Travel coaches are looking for the kid who's already bigger, already faster, already coordinated. They're not building players. They're sorting them.
@@ -29,9 +29,9 @@ One game a week at a local field. One hour of practice Tuesday night. You're hom
 Travel ball at five means four hours every Saturday. Sometimes both days. You become a chauffeur. Your kid becomes tired.
 
 **The social part**
-Rec ball is where she plays with the kid from her neighborhood. The one from her school. These are the kids she'll see in the cafeteria. These are the ones she'll want to play with. Travel ball at this age doesn't build friendships. It separates her from the ones she already has.
+Rec ball is where they play with the kid from their neighborhood. The one from their school. These are the kids they'll see in the cafeteria. These are the ones they'll want to play with. Travel ball at this age doesn't build friendships. It separates them from the ones they already have.
 
 **When to move**
-Eleven to twelve. That's when travel makes sense. That's when she can handle the commitment. That's when she understands strategy. Not five. Not eight. Not even ten. Eleven.
+Eleven to twelve. That's when travel makes sense. That's when they can handle the commitment. That's when they understand strategy. Not five. Not eight. Not even ten. Eleven.
 
-Keep her in rec ball. Watch her play. Clap when she gets a hit. That's the whole job right now.
+Keep them in rec ball. Watch them play. Clap when they get a hit. That's the whole job right now.

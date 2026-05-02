@@ -2,8 +2,12 @@
 title: "Interval Ladder"
 summary: "Build aerobic capacity through ascending and descending intervals. 20 minutes."
 sport: "track-field"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "intervals"
+progression: "build"
+illustrationBrief: "Increasing then decreasing sprint distances"
 publishedAt: 2026-04-12
 featured: false
 ---

@@ -2,8 +2,12 @@
 title: "Motion Offense Intro"
 summary: "Five players move and pass without called plays. 25 minutes. Ages 13-14+."
 sport: "basketball"
-age: "13-14"
+ages: ["13-14"]
 focus: "situational"
+layer: "situational"
+fundamental: "positioning"
+progression: "refine"
+illustrationBrief: "Five players on the court moving in motion, passing and cutting to create spacing without a set play, in transition and half-court sets."
 publishedAt: 2026-04-01
 featured: false
 ---
@@ -22,6 +26,4 @@ Motion offense teaches movement and decision-making without memorized plays. Pla
 4. Offense tries to shoot when they have a good look.
 5. Play for 25 minutes continuous, with defenders going live.
 
-**What to look for:** Decision-making and reading defense. Do they pass into the cutter early enough? Do they shoot when open or overdribble?
-
-**Variation:** For younger kids (13), use stationary defenders (no help, just straight man-to-man). For older kids (14), add defensive help so the offense has to move the ball quickly.
+**What to look for:** Decision-making and reading defense. Do they pass into the cutter early enough? Do 

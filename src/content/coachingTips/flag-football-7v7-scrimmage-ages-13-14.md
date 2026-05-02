@@ -2,8 +2,12 @@
 title: "Full-Field 7v7 Scrimmage with Rules"
 summary: "Run a controlled scrimmage that teaches game speed and decision-making. 25 minutes."
 sport: "flag-football"
-age: "13-14"
+ages: ["13-14"]
 focus: "scrimmage"
+layer: "situational"
+fundamental: "scrimmage"
+progression: "refine"
+illustrationBrief: "Seven offensive and seven defensive players on a full field, with the offense running plays and defense reading coverage."
 publishedAt: 2026-01-24
 featured: false
 ---
@@ -26,4 +30,4 @@ At this age, kids can run plays and react to defense. A 7v7 scrimmage with a few
 
 Do QBs make pre-snap reads? Are receivers running their routes or improvising? Do defenders stick to coverage or get lazy? Are kids communicating? In this age group, the difference between good and bad scrimmages is usually effort and communication, not talent. Call out what you see: "D-line, you three gap filled their run. Offense, you had a free play and didn't take it."
 
-**Variation:** If the group is still building comfort, run the scrimmage with one defender (safety) playing over the top while the others handle man coverage underneath. This takes some pressure off newer defenders.
+**Variatio

@@ -2,9 +2,13 @@
 title: "Kickboard Flutter Drill"
 summary: "Build flutter-kick rhythm and leg strength with a kickboard. 10 minutes."
 sport: "swimming"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
-publishedAt: 2026-05-09
+layer: "foundations"
+fundamental: "freestyle"
+progression: "intro"
+illustrationBrief: "Flutter kick drill with kickboard"
+publishedAt: 2026-04-25
 featured: false
 ---
 

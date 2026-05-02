@@ -28,7 +28,7 @@ If you're celebrating a goal with your teammates: respect.
 If you're mocking the goalie: no respect.
 
 **What parents see as unfair**
-Your kid argues a call. Yellow card. She thinks it's unjust. It's not. The rule is clear. Don't argue with officials. If the call was wrong, that's the cost of playing.
+Your kid argues a call. Yellow card. They think it's unjust. It's not. The rule is clear. Don't argue with officials. If the call was wrong, that's the cost of playing.
 
 **How to talk about it**
 "You got carded for arguing. The ref's call is the ref's call. Next time, let it go." That's the conversation. Not: "That was a bad call." You're not the ref. Move on.
@@ -36,11 +36,11 @@ Your kid argues a call. Yellow card. She thinks it's unjust. It's not. The rule 
 **The sportsmanship problem that matters**
 If your kid is getting carded for taunting or mocking, that's a bigger issue. That's poor character. That needs a conversation at home about respect.
 
-If she's getting carded for intensity or emotion, she's learning where the line is. That's normal.
+If they're getting carded for intensity or emotion, they're learning where the line is. That's normal.
 
 **The perspective**
-At fourteen, she's learning that there are rules beyond the rules. How to compete hard while staying in bounds. How to want to win without being a jerk about it.
+At fourteen, they're learning that there are rules beyond the rules. How to compete hard while staying in bounds. How to want to win without being a jerk about it.
 
 Those lessons matter more than the game.
 
-Watch the card. If it's justified, don't defend it. That's how she learns.
+Watch the card. If it's justified, don't defend it. That's how they learn.

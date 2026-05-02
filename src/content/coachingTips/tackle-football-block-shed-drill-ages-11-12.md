@@ -2,8 +2,12 @@
 title: "Block-Shed Drill"
 summary: "Teach defenders to feel a block, shed it, and pursue. 10 minutes."
 sport: "football"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "blocking"
+progression: "build"
+illustrationBrief: "Offensive block followed by defensive shed"
 publishedAt: 2026-02-02
 featured: false
 ---

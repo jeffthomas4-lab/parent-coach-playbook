@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCampBySlug, type Camp } from '../../lib/camps-db';
+import { getCampBySlug, listApprovedReviewsForCamp, listOtherCampsAtAddress, type Camp, type CampReview } from '../../lib/camps-db';
+import { SPORTS, BUYING_GUIDES } from '../../data/site';
 
 // SSR — pulls live from D1 each request.
 export const prerender = false;
@@ -22,10 +23,47 @@ if (!camp || camp.status !== 'approved') {
   return new Response('Not found', { status: 404 });
 }
 
+// Approved reviews for this camp.
+let reviews: CampReview[] = [];
+try {
+  if (env?.DB) reviews = await listApprovedReviewsForCamp(env.DB, camp.id);
+} catch (e) {
+  console.error('listApprovedReviewsForCamp failed', e);
+}
+
+const avgRating = reviews.length
+  ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length)
+  : null;
+
+// Other camps at this same address (a college campus, a high school, a YMCA may host multiple programs).
+let otherAtAddress: Camp[] = [];
+try {
+  if (env?.DB) {
+    otherAtAddress = await listOtherCampsAtAddress(env.DB, camp.address, camp.city, camp.zip, camp.id);
+  }
+} catch (e) {
+  console.error('listOtherCampsAtAddress failed', e);
+}
+
 const fmtDate = (s: string) =>
   new Date(s).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
 const fmtRange = (start: string, end: string) => `${fmtDate(start)} – ${fmtDate(end)}`;
+
+// Sport label: prefer the SPORTS array's title-cased label; fall back to capitalizing.
+const sportLabel = (slug: string): string => {
+  const match = SPORTS.find((s) => s.slug === slug);
+  if (match) return match.label;
+  return slug
+    .split(/[\s-]+/)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+};
+
+const sportPretty = sportLabel(camp.sport);
+
+// Cross-link to the relevant What to Buy + sizing guide if one exists.
+const sportGuide = BUYING_GUIDES.find((g) => g.slug === camp.sport);
 
 const dayLabel = camp.day_or_overnight === 'day' ? 'Day camp' : 'Overnight camp';
 const skillLabel: Record<string, string> = {
@@ -39,22 +77,65 @@ const spotsLabel: Record<string, string> = {
   waitlist: 'Waitlist',
   full: 'Full',
 };
+
+// Normalize submitted URLs that may be missing a protocol (e.g. "tacomahawks.com").
+const normalizeUrl = (raw: string | null): string | null => {
+  if (!raw) return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+};
+const websiteHref = normalizeUrl(camp.website_url);
+
+const hasGeo = typeof camp.latitude === 'number' && typeof camp.longitude === 'number';
+const mapsHref = hasGeo
+  ? `https://www.google.com/maps/search/?api=1&query=${camp.latitude},${camp.longitude}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${camp.address}, ${camp.city}, ${camp.state} ${camp.zip}`)}`;
 ---
 <BaseLayout
   title={camp.name}
-  description={`${camp.sport} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
+  description={`${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
 >
+  {hasGeo && (
+    <Fragment slot="head">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    </Fragment>
+  )}
+
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
-        <a href="/camps/" class="hover:underline">Camps</a> · {camp.sport}
+        <a href="/camps/" class="hover:underline">Camps</a> · {sportPretty}
       </p>
       <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
         {camp.name}
+        {camp.verified === 1 && (
+          <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5" style="font-weight: 500;" title="Verified by the Parent Coach Playbook editorial">
+            Verified ✓
+          </span>
+        )}
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
-        {camp.sport} · ages {camp.age_min}–{camp.age_max} · {fmtRange(camp.start_date, camp.end_date)}
+        {sportPretty} · ages {camp.age_min}–{camp.age_max} · {fmtRange(camp.start_date, camp.end_date)}
+        {avgRating !== null && (
+          <span class="inline-block ml-2 font-display italic text-rust text-base" style="font-weight: 500;">
+            · {avgRating.toFixed(1)}/5 ({reviews.length} {reviews.length === 1 ? 'review' : 'reviews'})
+          </span>
+        )}
       </p>
+
+      {camp.hero_photo_key && (
+        <div class="mt-8 max-w-3xl border border-bone bg-paper-warm" style="aspect-ratio: 16/9; overflow: hidden;">
+          <img
+            src={`/camp-photos/${camp.hero_photo_key}`}
+            alt={`${camp.name} hero photo`}
+            loading="eager"
+            style="width: 100%; height: 100%; object-fit: cover;"
+          />
+        </div>
+      )}
 
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl">
         <div class="border border-bone p-3 bg-paper-warm">
@@ -85,16 +166,105 @@ const spotsLabel: Record<string, string> = {
         <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4" style="font-weight: 500;">About this camp</h2>
         <p style="white-space: pre-wrap;">{camp.description}</p>
 
-        <div class="mt-8 grid sm:grid-cols-2 gap-4">
-          <div class={`border-l-2 ${camp.lunch_included ? 'border-rust' : 'border-bone'} pl-3`}>
-            <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Lunch</p>
-            <p class="font-display text-ink" style="font-weight: 500;">{camp.lunch_included ? 'Included' : 'Bring your own'}</p>
-          </div>
-          <div class={`border-l-2 ${camp.aftercare_available ? 'border-rust' : 'border-bone'} pl-3`}>
-            <p class="font-display italic text-rust text-xs" style="font-weight: 500;">Aftercare</p>
-            <p class="font-display text-ink" style="font-weight: 500;">{camp.aftercare_available ? 'Available' : 'Not offered'}</p>
-          </div>
-        </div>
+        <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+          {camp.lunch_included ? 'Lunch included.' : 'Bring lunch.'}
+          {' '}{camp.aftercare_available ? 'Aftercare available.' : 'No aftercare.'}
+        </p>
+
+        {sportGuide && (
+          <section class="mt-10 pt-8 border-t border-bone">
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-3" style="font-weight: 500;">
+              Equipment for this camp
+            </h2>
+            <p class="font-display text-ink-soft leading-snug max-w-2xl">
+              Most {sportPretty.toLowerCase()} camps expect kids to bring their own basic gear. Our guide covers what to buy at every age band, fit tests, and used-gear notes.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href={`/what-to-buy/${sportGuide.slug}/`} class="font-display italic px-4 py-2 border border-rust text-rust hover:bg-rust hover:text-paper transition-colors" style="font-weight: 500;">
+                What to buy for {sportPretty.toLowerCase()} →
+              </a>
+              <a href={`/what-to-buy/${sportGuide.slug}/sizing/`} class="font-display italic px-4 py-2 border border-bone text-ink hover:bg-paper-warm transition-colors" style="font-weight: 500;">
+                {sportPretty} sizing guide →
+              </a>
+            </div>
+            <p class="font-display italic text-ink-soft text-xs mt-4" style="font-weight: 500;">
+              Some links on the buying guide are affiliate links. We earn a small commission when you buy. The price you pay is the same.
+            </p>
+          </section>
+        )}
+
+        <!-- Reviews -->
+        <section class="mt-12 pt-8 border-t border-bone">
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4" style="font-weight: 500;">
+            What parents say
+          </h2>
+          {reviews.length === 0 ? (
+            <p class="font-display italic text-ink-soft" style="font-weight: 500;">
+              No reviews yet. If you've sent your kid here, you can be the first.
+            </p>
+          ) : (
+            <ul class="grid gap-5">
+              {reviews.map((r) => (
+                <li class="border border-bone p-4 bg-paper-warm">
+                  <p class="font-display italic text-rust text-sm" style="font-weight: 500;">
+                    {r.rating}/5 · {r.reviewer_display_name ?? 'A parent'} · {new Date(r.submitted_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </p>
+                  <p class="font-display text-ink mt-2 leading-snug" style="white-space: pre-wrap;">{r.body}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <details class="mt-8 border border-bone bg-paper">
+            <summary class="font-display italic text-rust px-4 py-3 cursor-pointer" style="font-weight: 500;">
+              Leave a review (your kid attended) →
+            </summary>
+            <form id="review-form" class="grid gap-4 p-4 pt-0" novalidate>
+              <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+                <label>Website (leave empty)
+                  <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
+
+              <label class="grid gap-1">
+                <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Your email</span>
+                <input name="reviewer_email" type="email" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+                <span class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Stays private. Used only to verify and follow up if needed.</span>
+              </label>
+
+              <label class="grid gap-1">
+                <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Display name (optional)</span>
+                <input name="reviewer_display_name" maxlength="40" placeholder='e.g. "Tacoma soccer mom"' class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+                <span class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">If you skip this, your review shows as "A parent."</span>
+              </label>
+
+              <label class="grid gap-1">
+                <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Rating (1-5)</span>
+                <select name="rating" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none max-w-xs">
+                  <option value="">Choose...</option>
+                  <option value="5">5 — would do again</option>
+                  <option value="4">4 — solid, minor gripes</option>
+                  <option value="3">3 — fine, mixed</option>
+                  <option value="2">2 — would not repeat</option>
+                  <option value="1">1 — avoid</option>
+                </select>
+              </label>
+
+              <label class="grid gap-1">
+                <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Your review</span>
+                <textarea name="body" required minlength="30" maxlength="2000" rows="5" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" placeholder="What was your kid's week like? What worked, what didn't? 50-300 words."></textarea>
+              </label>
+
+              <div class="flex items-center gap-4">
+                <button type="submit" class="btn">Submit review</button>
+                <p data-review-status class="font-display italic text-ink-soft text-sm hidden" style="font-weight: 500;"></p>
+              </div>
+              <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                Reviews are read by the editorial team before they go live. We publish the honest ones, both good and bad. Spam and personal attacks get rejected.
+              </p>
+            </form>
+          </details>
+        </section>
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
@@ -103,6 +273,26 @@ const spotsLabel: Record<string, string> = {
           {camp.address}<br />
           {camp.city}, {camp.state} {camp.zip}
         </p>
+
+        {hasGeo ? (
+          <div
+            id="camp-map"
+            class="mt-3 border border-bone"
+            style="height: 220px; width: 100%; background: #EAEFE7;"
+            data-lat={camp.latitude}
+            data-lon={camp.longitude}
+            data-name={camp.name}
+            aria-label={`Map showing ${camp.name}`}
+          ></div>
+        ) : (
+          <div class="mt-3 border border-bone bg-paper-warm p-4">
+            <p class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Map coming once we verify the address.</p>
+          </div>
+        )}
+
+        <a href={mapsHref} target="_blank" rel="noopener" class="t-cta inline-block mt-3">
+          Open in Google Maps ↗
+        </a>
 
         <p class="font-display italic text-rust mt-6 mb-3" style="font-weight: 500;">Contact</p>
         <ul class="grid gap-2">
@@ -116,9 +306,9 @@ const spotsLabel: Record<string, string> = {
               <a href={`tel:${camp.contact_phone}`} class="font-display text-ink hover:text-rust" style="font-weight: 500;">{camp.contact_phone}</a>
             </li>
           )}
-          {camp.website_url && (
+          {websiteHref && (
             <li>
-              <a href={camp.website_url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-words" style="font-weight: 500;">Camp website ↗</a>
+              <a href={websiteHref} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-words" style="font-weight: 500;">Camp website ↗</a>
             </li>
           )}
           {!camp.contact_email && !camp.contact_phone && !camp.website_url && (
@@ -126,10 +316,155 @@ const spotsLabel: Record<string, string> = {
           )}
         </ul>
 
+        {otherAtAddress.length > 0 && (
+          <div class="mt-8 pt-6 border-t border-bone">
+            <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Also at this address</p>
+            <ul class="grid gap-2">
+              {otherAtAddress.map((c) => (
+                <li>
+                  <a href={`/camps/${c.slug}/`} class="font-display text-ink hover:text-rust block leading-tight" style="font-weight: 500;">
+                    {c.name}
+                  </a>
+                  <p class="font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 500;">
+                    {c.sport} · ages {c.age_min}–{c.age_max}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {camp.is_claimed === 1 ? (
+          <p class="font-display italic text-rust text-xs mt-8" style="font-weight: 500;">
+            ✓ Claimed by the camp. Information self-managed.
+          </p>
+        ) : (
+          <details class="mt-8 pt-6 border-t border-bone">
+            <summary class="font-display italic text-rust cursor-pointer text-sm" style="font-weight: 500;">
+              Run this camp? Claim the listing →
+            </summary>
+            <div class="mt-3 article-body" style="font-size: 0.9rem;">
+              <p>Camps that claim their listing get to self-edit info, add a logo, post a photo gallery, and embed a registration link. $79 a year, no commission on sign-ups.</p>
+            </div>
+            <form id="claim-form" class="grid gap-3 mt-3" novalidate>
+              <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+                <label>Website (leave empty)
+                  <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
+              <input name="claimant_email" type="email" required placeholder="Your email" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input name="claimant_name" placeholder="Your name" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input name="organization" placeholder="Organization (e.g. Lincoln High School Athletics)" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input name="phone" placeholder="Phone (optional)" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <textarea name="notes" required minlength="20" rows="3" placeholder="Proof of ownership: your role, how to verify (e.g. 'I'm the head coach. Reach me via the school's main line.')" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
+              <button type="submit" class="btn">Submit claim request</button>
+              <p data-claim-status class="font-display italic text-ink-soft text-xs hidden" style="font-weight: 500;"></p>
+              <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                We review every claim. Verification takes ~2 business days. Payment is collected after verification, not before.
+              </p>
+            </form>
+          </details>
+        )}
+
         <p class="font-display italic text-ink-soft text-xs mt-8" style="font-weight: 500;">
           Listing reviewed by the Parent Coach Playbook Editorial. Something off? Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a>.
         </p>
       </aside>
     </div>
   </section>
+
+  {hasGeo && (
+    <Fragment slot="head">
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    </Fragment>
+  )}
+
+  <script is:inline define:vars={{ slug: camp.slug }}>
+    (function () {
+      var form = document.getElementById('review-form');
+      var status = document.querySelector('[data-review-status]');
+      if (!form || !status) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.classList.remove('hidden');
+        status.textContent = 'Submitting...';
+        status.style.color = '#5F5448';
+        var fd = new FormData(form);
+        fetch('/api/camps/' + slug + '/reviews/submit', { method: 'POST', body: fd })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (!data.ok) {
+              status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
+              status.style.color = '#C5713D';
+              return;
+            }
+            form.reset();
+            status.textContent = 'Thanks. Review queued for moderation.';
+            status.style.color = '#5C7459';
+          })
+          .catch(function () {
+            status.textContent = 'Network error. Try again.';
+            status.style.color = '#C5713D';
+          });
+      });
+    })();
+
+    (function () {
+      var form = document.getElementById('claim-form');
+      var status = document.querySelector('[data-claim-status]');
+      if (!form || !status) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.classList.remove('hidden');
+        status.textContent = 'Submitting...';
+        status.style.color = '#5F5448';
+        var fd = new FormData(form);
+        fetch('/api/camps/' + slug + '/claim', { method: 'POST', body: fd })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (!data.ok) {
+              status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
+              status.style.color = '#C5713D';
+              return;
+            }
+            form.reset();
+            status.textContent = data.message || 'Claim request received.';
+            status.style.color = '#5C7459';
+          })
+          .catch(function () {
+            status.textContent = 'Network error. Try again.';
+            status.style.color = '#C5713D';
+          });
+      });
+    })();
+  </script>
+
+  {hasGeo && (
+    <script is:inline>
+      (function () {
+        function init() {
+          var el = document.getElementById('camp-map');
+          if (!el || typeof L === 'undefined') {
+            return setTimeout(init, 80);
+          }
+          var lat = parseFloat(el.getAttribute('data-lat'));
+          var lon = parseFloat(el.getAttribute('data-lon'));
+          var name = el.getAttribute('data-name') || 'Camp';
+          if (!isFinite(lat) || !isFinite(lon)) return;
+          var map = L.map(el, {
+            scrollWheelZoom: false,
+            attributionControl: true,
+          }).setView([lat, lon], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; OpenStreetMap',
+          }).addTo(map);
+          L.marker([lat, lon]).addTo(map).bindPopup(name);
+        }
+        if (document.readyState !== 'loading') init();
+        else document.addEventListener('DOMContentLoaded', init);
+      })();
+    </script>
+  )}
 </BaseLayout>

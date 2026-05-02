@@ -2,8 +2,12 @@
 title: "The Slant Route"
 summary: "Teach the first real pattern: inside cut at 45 degrees. 12 minutes."
 sport: "flag-football"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "route-running"
+progression: "build"
+illustrationBrief: "A receiver running straight 5 yards downfield, then cutting at 45 degrees across the middle toward the quarterback."
 publishedAt: 2026-01-09
 featured: false
 ---
@@ -26,4 +30,4 @@ The slant is the building block for every inside route. Kids at this age can lea
 
 The plant is everything. If the receiver rounds the cut or doesn't plant hard, the QB's throw timing is ruined. Make sure the QB is leading the receiver forward, not back toward the LOS. The receiver should never break stride going into the cut. If the QB is throwing high or the receiver is reaching, the angle is off. Adjust the cone position, not the throw.
 
-**Variation:** Add a defender. Once the receiver shows they can catch the slant consistently, put a defender 2 yards away shading the inside shoulder. Now the receiver has to make the cut clean and use the plant to separate. The defender should not pull the flag, just try to stay with the route so the QB can see if there's separation.
+**Variation:** Add a defender. Once the receiver shows they can catch the slant consistently, put a defender 2 yards away shading the i

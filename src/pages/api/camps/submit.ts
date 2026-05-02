@@ -9,10 +9,13 @@
 import type { APIRoute } from 'astro';
 import {
   insertCamp,
-  geocode,
+  geocodeCached,
   generateCampId,
   uniqueSlug,
   upsertSubmitterOnSubmission,
+  shouldAutoApprove,
+  incrementSubmitterApproved,
+  listCampsAtAddressForSubmit,
   type DayOrOvernight,
   type SkillLevel,
   type SpotsStatus,
@@ -23,6 +26,8 @@ export const prerender = false;
 interface SubmitPayload {
   // honeypot
   website?: string;
+  // duplicate-address ack ("yes, this is a different program at the same address")
+  confirm_duplicate?: string;
   // public
   name?: string;
   sport?: string;
@@ -154,11 +159,30 @@ export const POST: APIRoute = async ({ request, locals }) => {
   }
   if (data.name!.length > 200) return fail('name too long');
 
-  // Geocode (best-effort; phase 1 stores null if Nominatim fails).
+  // Duplicate-address check. Warns the submitter once if there are existing camps
+  // at the same address. They confirm via `confirm_duplicate=true` to proceed.
+  if (data.confirm_duplicate !== 'true' && data.confirm_duplicate !== 'on') {
+    const existing = await listCampsAtAddressForSubmit(env.DB, data.address!, data.city!, data.zip!);
+    if (existing.length > 0) {
+      return ok({
+        ok: false,
+        warning: 'duplicate_address',
+        existing: existing.map((c) => ({
+          name: c.name,
+          sport: c.sport,
+          status: c.status,
+          slug: c.slug,
+        })),
+        message: `We already have ${existing.length} ${existing.length === 1 ? 'camp' : 'camps'} at this address. If this is a separate program, resubmit with confirm_duplicate=true.`,
+      });
+    }
+  }
+
+  // Geocode through the local cache (saves Nominatim hits on repeated addresses).
   let lat: number | null = null;
   let lon: number | null = null;
   try {
-    const g = await geocode(data.address!, data.city!, data.state!, data.zip!);
+    const g = await geocodeCached(env.DB, data.address!, data.city!, data.state!, data.zip!);
     if (g) {
       lat = g.lat;
       lon = g.lon;
@@ -171,7 +195,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const slug = await uniqueSlug(env.DB, data.name!);
   const submittedAt = new Date().toISOString();
 
-  await upsertSubmitterOnSubmission(env.DB, data.submitted_by_email!.toLowerCase());
+  const submitterEmail = data.submitted_by_email!.toLowerCase();
+  await upsertSubmitterOnSubmission(env.DB, submitterEmail);
+  const autoApprove = await shouldAutoApprove(env.DB, submitterEmail);
 
   await insertCamp(env.DB, {
     id,
@@ -195,12 +221,16 @@ export const POST: APIRoute = async ({ request, locals }) => {
     spots_status: spotsStatus,
     contact_email: data.contact_email ?? null,
     contact_phone: data.contact_phone ?? null,
-    website_url: data.website_url ?? null,
+    website_url: data.website_url ? (/^https?:\/\//i.test(data.website_url.trim()) ? data.website_url.trim() : `https://${data.website_url.trim()}`) : null,
     lunch_included: data.lunch_included === 'true' || data.lunch_included === 'on',
     aftercare_available: data.aftercare_available === 'true' || data.aftercare_available === 'on',
-    submitted_by_email: data.submitted_by_email!.toLowerCase(),
+    submitted_by_email: submitterEmail,
     submitted_at: submittedAt,
-  });
+  }, autoApprove ? 'approved' : 'pending');
 
-  return ok({ ok: true, id, slug, status: 'pending' });
+  if (autoApprove) {
+    await incrementSubmitterApproved(env.DB, submitterEmail);
+  }
+
+  return ok({ ok: true, id, slug, status: autoApprove ? 'approved' : 'pending' });
 };

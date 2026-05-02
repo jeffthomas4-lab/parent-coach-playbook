@@ -2,8 +2,12 @@
 title: "Forearm Pass to a Target"
 summary: "Build accuracy and control in the foundation skill: the pass. 10 minutes."
 sport: "volleyball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "passing"
+progression: "intro"
+illustrationBrief: "Passing accuracy to specific targets"
 publishedAt: 2026-03-22
 featured: false
 ---

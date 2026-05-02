@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import TopicIcon from '../components/TopicIcon.astro';
 import { TOPICS, EDITORIAL } from '../data/site';
 
 const all = (await getCollection('articles', ({ data }) => !data.draft))
@@ -23,15 +24,14 @@ const fmtDate = (d: Date) =>
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-8">
-        <p class="font-display italic text-rust mb-5" style="font-weight: 500;">
-          Hi. We're glad you're here.
+        <p class="font-display-soft text-rust mb-5" style="font-weight: 600; letter-spacing: 0.04em;">
+          Hi. So glad you found us.
         </p>
-        <h1 class="font-display text-ink text-[2.5rem] md:text-[4.25rem] leading-[1.0]" style="font-weight: 500;">
-          The relationship is the <em class="text-rust">real game</em>.
+        <h1 class="font-display-soft text-ink text-[2.5rem] md:text-[4.5rem] leading-[1.05]" style="font-weight: 700;">
+          The relationship is the <span class="font-display italic text-rust" style="font-weight: 500;">real game</span>.
         </h1>
-        <p class="font-display text-ink-soft text-xl md:text-2xl mt-8 max-w-2xl leading-snug">
-          Sideline notes for parents who coach, organize, drive, snack-pack, and supervise the
-          group chat. Mostly short reads. Sometimes longer ones.
+        <p class="font-display-soft text-ink-soft text-xl md:text-2xl mt-8 max-w-2xl leading-relaxed" style="font-weight: 400;">
+          A warm, honest place for parents in the middle of it. Youth sports, dance, theater, whatever your kid is into this season. Short reads, kind voice, real moments. Made for the parent in the bleachers and the parent in the car.
         </p>
         <div class="mt-10 flex flex-wrap gap-3">
           <a href="/start-here/" class="btn">Start here</a>
@@ -162,7 +162,8 @@ const fmtDate = (d: Date) =>
             href={`/reads/?topic=${t.slug}`}
             class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
           >
-            <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            <TopicIcon topic={t.slug} size={72} />
+            <h3 class="font-display text-ink text-xl leading-tight mt-3 group-hover:text-rust transition-colors" style="font-weight: 500;">
               {t.label}
             </h3>
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">

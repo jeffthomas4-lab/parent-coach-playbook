@@ -25,6 +25,15 @@
     }
   ],
 
+  // R2 bucket for camp hero photos.
+  // Provision once with: npx wrangler r2 bucket create parent-coach-playbook-photos
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS",
+      "bucket_name": "parent-coach-playbook-photos"
+    }
+  ],
+
   // Vars shared across local + production. Anything secret goes via
   // `npx wrangler pages secret put` instead.
   "vars": {

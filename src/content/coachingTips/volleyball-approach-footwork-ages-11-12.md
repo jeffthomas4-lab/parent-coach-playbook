@@ -2,8 +2,12 @@
 title: "Approach Footwork"
 summary: "Teach the two-step and three-step approach to the net. 10 minutes."
 sport: "volleyball"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "spiking"
+progression: "build"
+illustrationBrief: "Footwork rhythm before spiking contact"
 publishedAt: 2026-03-31
 featured: false
 ---

@@ -2,8 +2,12 @@
 title: "Running Back Footwork"
 summary: "Build one-cut, two-cut, and patient footwork for ball carriers. 12 minutes."
 sport: "football"
-age: "13-14"
+ages: ["13-14"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "ball-carrying"
+progression: "refine"
+illustrationBrief: "Vision and footwork in open field"
 publishedAt: 2026-02-08
 featured: false
 ---

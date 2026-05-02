@@ -58,6 +58,7 @@ const isShort = data.format === 'note';
   title={data.title.replace(/\*/g, '')}
   description={data.dek ?? SITE.description}
   ogType="article"
+  ogImage={(data as any).ogImage ?? (data.hero ? (typeof data.hero === 'string' ? data.hero : data.hero.src) : undefined)}
   publishedAt={data.publishedAt.toISOString()}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

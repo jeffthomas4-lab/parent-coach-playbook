@@ -9,6 +9,8 @@ age: "13-14"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-22
 featured: false
+hero: /illustrations/the-missing-rec-layer.png
+heroAlt: "A nearly empty soccer field at dusk. One thirteen-year-old in scrimmage gear kicking a ball alone toward an empty net, with a single backpack on empty bleachers."
 ---
 
 Look at the graph of how Americans play sports across a lifetime and a strange shape appears. Peak at age eight. Long dive starting at thirteen. Small recovery at nineteen when college kids find intramurals and adult leagues. The dip in the middle is the thing nobody is talking about.
@@ -25,17 +27,17 @@ The country does not have, at scale, a just-for-fun high school option.
 
 ## What that hole looks like in practice
 
-A kid plays rec soccer through fifth grade. They are middling. They like it. They like their friends.
+Your kid plays rec soccer through fifth grade. She's middling. She likes it. She likes her friends.
 
-In sixth grade the kid who is going to play in college joins a club team. The club team practices three nights a week and travels six weekends a year. The middling kid does not. The middling kid stays in rec.
+In sixth grade, the kid who is going to play in college joins a club team. Club team practices three nights a week, travels six weekends a year. Your kid doesn't. She stays in rec.
 
-Rec, by seventh grade, is a graveyard. The travel kids are gone. The kids who stayed are bored because the games are uneven. The volunteer coaches do not have anyone to teach above the middling kid. So in eighth grade, the rec league folds, or it consolidates, or it shrinks to a half-season.
+By seventh grade, rec is a graveyard. The travel kids are gone. The kids who stayed are bored because the games are uneven. The volunteer coaches have nobody to teach above the middling level. Eighth grade, the rec league folds or consolidates or shrinks to a half-season.
 
-By ninth grade, the middling kid has nowhere to play. The high school team takes about twenty kids. The middling kid is not one of those twenty. The travel pipeline kept the top kids on a track. The high school team takes those top kids. The middling kid is out.
+By ninth grade, your kid has nowhere to play. The high school team takes about twenty kids. She's not one of them. The travel pipeline kept the top kids on a track. The high school team takes those top kids. Your kid is out.
 
-The middling kid does not play organized soccer again until they are nineteen and they walk into the rec center on a Tuesday night and there is an adult-league game and they remember they used to like this.
+She doesn't play organized soccer again until nineteen, when she walks into the rec center on a Tuesday night, sees an adult-league game, and remembers she used to like this.
 
-That is six years of nothing in between. The whole high school window. Gone.
+That's six years of nothing in between. The whole high school window. Gone.
 
 ## What it costs the country
 
@@ -61,9 +63,9 @@ If your kid is in the middling tier at thirteen and wants to keep playing, you h
 
 Ask the high school athletic director if there is an intramural option. Ask the local YMCA if their league runs through high school. Ask the parks department. Ask the rec coordinator at your church or community center.
 
-If the answer is no, find three other parents whose kids are in the same boat and start a Saturday league at the public field. We mean this literally. A coach who shows up with cones, four parent volunteers, twenty kids, and a two-hour Saturday block is most of what is needed.
+If the answer is no, find three other parents whose kids are in the same boat and start a Saturday league at the public field. I mean this literally. A coach who shows up with cones, four parent volunteers, twenty kids, and a two-hour Saturday block is most of what is needed.
 
-We have done that thing. Our kids are doing it again next spring. It is not glamorous. It is not the travel team. It is also not nothing, which is what the rec system would otherwise hand them.
+I've done that thing. My kids are doing it again next spring. It is not glamorous. It is not the travel team. It is also not nothing, which is what the rec system would otherwise hand them.
 
 ## What to look for as a coach
 

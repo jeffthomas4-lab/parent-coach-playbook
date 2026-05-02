@@ -2,8 +2,12 @@
 title: "Pop-Up Communication"
 summary: "Call pop-ups loudly so no two fielders go for the same ball. 15 minutes. Ages 8-10."
 sport: "softball"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "situational"
+progression: "intro"
+illustrationBrief: "Fielders calling and positioning for fly balls"
 publishedAt: 2026-02-10
 featured: false
 ---

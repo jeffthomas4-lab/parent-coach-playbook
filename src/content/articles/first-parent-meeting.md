@@ -18,7 +18,7 @@ The first parent meeting should answer four questions and then finish. Not four 
 No explanation of the philosophy. No story about how you learned this method. The fact. Then move on.
 
 **2. What you expect from your parent**
-"You pick up on time. You ask your kid what went well today, not why she didn't play more. You sign the waiver and the code of conduct. You email me if something changes with your kid. That's it."
+"You pick up on time. You ask your kid what went well today, not why they didn't play more. You sign the waiver and the code of conduct. You email me if something changes with your kid. That's it."
 
 Again. Fact. Not a lecture about team culture. The ask.
 

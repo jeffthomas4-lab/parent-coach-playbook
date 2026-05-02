@@ -2,8 +2,12 @@
 title: "Defensive Contain"
 summary: "Teach defenders to control the edge and force plays inside. 10 minutes."
 sport: "flag-football"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "defending"
+progression: "intro"
+illustrationBrief: "A defender standing at the edge of the field, maintaining position as a ball-carrier approaches, forcing them toward the middle."
 publishedAt: 2026-01-15
 featured: false
 ---
@@ -26,4 +30,4 @@ Contain is a defensive job, not a position. Young defenders think they should ru
 
 The outside defender should have a wide base, not be leaning forward. If they're falling forward trying to chase, they're too aggressive. The runner's cut back tells you the contain is working. If the runner reaches the corner, the defender opened the edge. If the inside defender gets there before the runner cuts, the outside defender is doing their job. The two defenders should communicate: "You take the edge, I'll clean up inside."
 
-**Variation:** For the older end of this age group, add motion or a second runner. Now defenders have to recognize coverage and adjust their contain responsibility. One defender might have to follow a motion man, opening the edge. That's when the other defender shifts to plug the hole.
+**Variation:** For the older end of this age group, add motion or a second r

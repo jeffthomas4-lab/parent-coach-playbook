@@ -1,6 +1,6 @@
 ---
-title: "The 15-Plus Game Day: When Your Kid Is on the Bench"
-dek: "They know they're not starting. Your job isn't to fix it, it's to support the actual goal."
+title: "Game Day When Your Kid Is on the Bench"
+dek: "They know they're not starting. Your job is to support what they can control."
 topic: "game-day"
 format: "note"
 phase: "game"
@@ -10,20 +10,26 @@ publishedAt: 2026-04-25
 featured: false
 ---
 
-Your 15-year-old isn't starting. They come home frustrated, angry, or both. Your instinct: advocate for them. Text the coach. Tell them they were wrong. Tell your kid they're better than the starter.
+Our 15-year-old wasn't starting. They came home frustrated and angry. Our instinct was to advocate for them. Text the coach. Tell them they were wrong. Tell our kid they're better than the starter.
 
-Don't do any of that.
+We didn't do any of that.
 
-Instead: "Tough position. What are you going to do about it?"
+Instead we said: "Tough position. What are you going to do about it?"
 
-Make them own the situation. That's more valuable than any argument you could have with the coach.
+We made them own the situation. That's more valuable than any argument we could have with the coach.
 
-The truth they need to hear: if they're better than the starter, they'll play. If they're not playing, they're either not better, not ready, or not the right fit for the system. Arguing won't change any of those things.
+## The hard truth
+
+If they're better than the starter, they'll play. If they're not playing, they're either not better, not ready, or not the right fit for the system. Arguing won't change any of those things.
 
 What will change things: improving in a specific area the coach identified, or finding a team where they fit better.
 
-If the coach has never told them why they're not starting, that's different. That's worth asking. "Can I get feedback on what I need to work on?" But that question comes from your kid, not you.
+## If it's unclear
 
-At 15-plus, you're raising someone who can handle disappointment, work within a system even when it's hard, and make decisions about their future. Bench time teaches all three if you don't rescue them from it.
+If the coach has never told them why they're not starting, that's different. That's worth asking. "Can I get feedback on what I need to work on?" But that question comes from our kid, not from us.
 
-Watch the game. Cheer when they go in. Don't spend four quarters thinking about how the coach is wrong. Your kid will pick up that energy and it'll make them bitter instead of better.
+## What we're actually teaching
+
+At 15-plus, we're raising someone who can handle disappointment, work within a system even when it's hard, and make decisions about their future. Bench time teaches all three if we don't rescue them from it.
+
+We watch the game. We cheer when they go in. We don't spend four quarters thinking about how the coach is wrong. Our kid will pick up that energy. It'll make them bitter instead of better.

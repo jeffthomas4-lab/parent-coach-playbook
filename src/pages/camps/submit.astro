@@ -20,7 +20,13 @@ const US_STATES = [
   ['DC','District of Columbia'],
 ] as const;
 
-const sportOptions = [...SPORTS].sort((a, b) => a.label.localeCompare(b.label));
+// Camps include a "multi-sport" option for camps that cover several sports in one program.
+// Also surface a 7v7 football option that isn't in the global SPORTS array.
+const sportOptions = [
+  ...SPORTS,
+  { slug: 'multi-sport', label: 'Multi-sport (multiple sports in one camp)' },
+  { slug: 'football-7v7', label: 'Football — 7v7' },
+].sort((a, b) => a.label.localeCompare(b.label));
 ---
 <BaseLayout
   title="Submit a camp"
@@ -58,8 +64,9 @@ const sportOptions = [...SPORTS].sort((a, b) => a.label.localeCompare(b.label));
           <legend class="font-display italic text-rust mb-1" style="font-weight: 500;">The basics</legend>
 
           <label class="grid gap-1">
-            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Camp name</span>
-            <input name="name" required maxlength="200" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            <span class="font-display italic text-ink text-sm" style="font-weight: 500;">Camp or program name</span>
+            <input name="name" required maxlength="200" placeholder='e.g. "Tacoma Hawks Summer Baseball" or "PNW Lacrosse Academy"' class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            <span class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">The program's name. Not your name. (Your name goes at the bottom under "Who is submitting.")</span>
           </label>
 
           <div class="grid sm:grid-cols-2 gap-4">
@@ -233,7 +240,39 @@ const sportOptions = [...SPORTS].sort((a, b) => a.label.localeCompare(b.label));
             method: 'POST',
             body: fd,
           });
-          const data = (await res.json()) as { ok: boolean; error?: string };
+          const data = (await res.json()) as {
+            ok: boolean;
+            error?: string;
+            warning?: string;
+            existing?: Array<{ name: string; sport: string; status: string; slug: string }>;
+            message?: string;
+          };
+
+          // Soft-warning: existing camps at this address. Confirm and resubmit.
+          if (!data.ok && data.warning === 'duplicate_address') {
+            const list = (data.existing ?? []).map((c) => `• ${c.name} (${c.sport}, ${c.status})`).join('\n');
+            const confirmed = window.confirm(
+              `We already have ${data.existing?.length ?? 0} program(s) at this address:\n\n${list}\n\nIs this a separate program? Click OK to submit anyway. Cancel to fix the form.`,
+            );
+            if (!confirmed) {
+              status.textContent = 'Submission paused. Edit the form or close it.';
+              status.style.color = '#5F5448';
+              return;
+            }
+            fd.set('confirm_duplicate', 'true');
+            const res2 = await fetch('/api/camps/submit', { method: 'POST', body: fd });
+            const data2 = (await res2.json()) as { ok: boolean; error?: string };
+            if (!res2.ok || !data2.ok) {
+              status.textContent = data2.error ? `Couldn't submit: ${data2.error}` : 'Something went wrong. Try again.';
+              status.style.color = '#C5713D';
+              return;
+            }
+            form.reset();
+            status.textContent = 'Submitted. We will review and follow up if needed.';
+            status.style.color = '#5C7459';
+            return;
+          }
+
           if (!res.ok || !data.ok) {
             status.textContent = data.error ? `Couldn't submit: ${data.error}` : 'Something went wrong. Try again or email parentcoachplaybook@gmail.com.';
             status.style.color = '#C5713D';

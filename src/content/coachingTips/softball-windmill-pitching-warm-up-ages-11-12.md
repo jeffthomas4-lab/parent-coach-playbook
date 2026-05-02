@@ -2,8 +2,12 @@
 title: "Windmill Pitching Warm-Up"
 summary: "Build arm strength and mechanics with interval work before pitching. 20 minutes. Ages 11-12."
 sport: "softball"
-age: "11-12"
+ages: ["11-12"]
 focus: "fundamentals"
+layer: "skills"
+fundamental: "pitching"
+progression: "build"
+illustrationBrief: "Windmill mechanics and arm circles"
 publishedAt: 2026-03-03
 featured: false
 ---

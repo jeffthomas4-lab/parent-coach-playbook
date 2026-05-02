@@ -2,8 +2,12 @@
 title: "Cones at every position. Everyone on the field."
 summary: "How to set up cones for a tee-ball practice or game so every kid has a place to stand. Two cone bins so kids alternate infield and outfield without you tracking it."
 sport: "baseball"
-age: "5-7"
+ages: ["5-7"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "positioning"
+progression: "intro"
+illustrationBrief: "Cones marking fielder positions"
 publishedAt: 2026-04-25
 featured: true
 ---

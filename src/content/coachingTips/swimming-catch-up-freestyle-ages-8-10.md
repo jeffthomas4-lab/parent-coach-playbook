@@ -2,9 +2,13 @@
 title: "Catch-Up Freestyle"
 summary: "Build freestyle rhythm and stroke synchronization. 10 minutes."
 sport: "swimming"
-age: "8-10"
+ages: ["8-10"]
 focus: "fundamentals"
-publishedAt: 2026-05-12
+layer: "foundations"
+fundamental: "freestyle"
+progression: "intro"
+illustrationBrief: "Lead hand catch-up drill for freestyle"
+publishedAt: 2026-04-28
 featured: false
 ---
 

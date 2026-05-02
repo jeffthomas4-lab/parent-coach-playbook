@@ -2,8 +2,12 @@
 title: "Pitching Mechanics Drill"
 summary: "Three-step mechanical progression from balance point to follow-through. 30 minutes. Ages 13-14+."
 sport: "baseball"
-age: "13-14"
+ages: ["13-14"]
 focus: "fundamentals"
+layer: "foundations"
+fundamental: "pitching"
+progression: "refine"
+illustrationBrief: "A teenager pitcher shown in three positions: balance point with knee raised, arm at maximum extension, and follow-through with trailing leg."
 publishedAt: 2026-04-13
 featured: false
 ---
@@ -22,6 +26,4 @@ Pitching mechanics are taught in pieces, not whole. This drill builds the motion
 
 After 30 reps, the pitcher will have thrown 10 actual pitches from a mechanically sound position.
 
-**What to look for:** Posture at balance point, stride direction, and front shoulder alignment. One mechanical breakdown at balance point ruins everything downstream.
-
-**Variation:** For younger kids (13-14), use step 1 and 2 only (no throwing). For advanced pitchers, add velocity goals (hit 50 mph, then 55 mph).
+**What to look for:** Posture at balance point, stride direction, and front shoulder alignm

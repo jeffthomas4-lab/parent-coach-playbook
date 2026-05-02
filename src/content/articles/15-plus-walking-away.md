@@ -16,24 +16,24 @@ At fifteen and up, some kids walk away from travel ball. They're burned out or r
 Four years of three-to-five-days-a-week practice builds fatigue. Fatigue builds resentment. Some kids want their weekends back. Some want to try other sports. Some want to focus on school. All of these are legitimate reasons.
 
 **What you say to coaches**
-"She's done." You don't owe an explanation. You don't need to schedule a meeting. You don't need to justify your kid's decision to an adult. Send an email. Done.
+"They're done." You don't owe an explanation. You don't need to schedule a meeting. You don't need to justify your kid's decision to an adult. Send an email. Done.
 
 **What you say to your kid**
-"This is your call. You understand this changes things, and that's okay." If she's been all-in for four years and now wants to stop, she understands the cost. Respect it.
+"This is your call. You understand this changes things, and that's okay." If they've been all-in for four years and now want to stop, they understand the cost. Respect it.
 
 **What doesn't happen**
-You don't convince her to stay one more season. You don't promise her she'll be on the elite team if she sticks it out. You don't use guilt or obligation. She's fifteen. She gets to decide.
+You don't convince them to stay one more season. You don't promise them they'll be on the elite team if they stick it out. You don't use guilt or obligation. They're fifteen. They get to decide.
 
 **The pivot**
-Some kids move to club teams (less practice, same competition level). Some move to school sports. Some quit competitive play and join the gym instead. All of those are wins. The goal was to give her an experience, not to own her life.
+Some kids move to club teams (less practice, same competition level). Some move to school sports. Some quit competitive play and join the gym instead. All of those are wins. The goal was to give them an experience, not to own their life.
 
-**The talk with her**
+**The talk with them**
 "You gave this four years. You learned things you wouldn't have otherwise. You made friends. That's done now. What do you want to do next?" Then listen.
 
 **What not to do**
-Don't treat this like a betrayal. Don't bring it up five years from now. Don't tell her she should have pushed through. She made her call. Let it be.
+It's best to avoid treating this like a betrayal. Skip bringing it up five years from now. Don't tell them they should have pushed through. They made their call. Let it be.
 
 **The bigger picture**
-She's learning that her preferences matter. That her energy is her own. That quitting something doesn't make her weak. Those are lessons she needs.
+They're learning that their preferences matter. That their energy is their own. That quitting something doesn't make them weak. Those are lessons they need.
 
-If she's done, she's done. Let her be done. That's actually winning.
+If they're done, they're done. Let them be done. That's actually winning.
