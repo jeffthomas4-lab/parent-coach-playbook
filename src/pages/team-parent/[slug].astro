@@ -1,61 +1,239 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
-import { TEAM_PARENT_CATEGORIES, EDITORIAL } from '../../data/site';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
+import {
+  TEAM_PARENT_CATEGORIES,
+  TEAM_PARENT_TOPICS,
+  SPORTS,
+  AGE_BANDS,
+  EDITORIAL,
+  SITE,
+} from '../../data/site';
+
+type Article = CollectionEntry<'articles'>;
+type Resource = CollectionEntry<'resources'>;
+
+type ResourceProps = { kind: 'resource'; resource: Resource };
+type ArticleProps = { kind: 'article'; article: Article };
+type Props = ResourceProps | ArticleProps;
 
 export async function getStaticPaths() {
   const resources = await getCollection('resources', ({ data }) =>
     !data.draft && data.type !== 'external'
   );
-  return resources.map((r) => ({
+  const articles = await getCollection('articles', ({ data }) =>
+    !data.draft && data.phase === 'team-parent'
+  );
+
+  const resourcePaths = resources.map((r) => ({
     params: { slug: r.slug },
-    props: { resource: r },
+    props: { kind: 'resource' as const, resource: r },
   }));
+
+  // Avoid collisions: if an article slug somehow matches a resource slug or a
+  // topic slug, the resource/topic wins. (No collisions today, but cheap to guard.)
+  const taken = new Set<string>([
+    ...resources.map((r) => r.slug),
+    ...TEAM_PARENT_TOPICS.map((t) => t.slug),
+  ]);
+
+  const articlePaths = articles
+    .filter((a) => !taken.has(a.slug))
+    .map((a) => ({
+      params: { slug: a.slug },
+      props: { kind: 'article' as const, article: a },
+    }));
+
+  return [...resourcePaths, ...articlePaths];
 }
 
-const { resource } = Astro.props;
-const { Content } = await resource.render();
-const cat = TEAM_PARENT_CATEGORIES.find(c => c.slug === resource.data.category)!;
----
-<BaseLayout
-  title={resource.data.title}
-  description={resource.data.summary}
->
-  <section class="border-b border-bone" style={`background: ${cat.accent}15;`}>
-    <div class="container-px py-12">
-      <p class="font-display italic mb-2" style={`color: ${cat.accent}; font-weight: 500;`}>
-        <a href="/team-parent/" class="hover:underline">Team Parent</a> · <a href={`/team-parent/#${cat.slug}`} class="hover:underline">{cat.label}</a>
-      </p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        {resource.data.title}
-      </h1>
-      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
-        {resource.data.summary}
-      </p>
-      {resource.data.type === 'template' && resource.data.externalUrl && (
-        <a
-          href={resource.data.externalUrl}
-          target="_blank"
-          rel="noopener"
-          class="btn mt-6 inline-flex"
-        >Open the template ↗</a>
-      )}
+const props = Astro.props as Props;
 
-      <div class="mt-7 pt-5 border-t border-bone">
-        <p class="font-display italic text-rust" style="font-weight: 500;">{EDITORIAL.byline}</p>
-        <p class="font-display italic text-ink-soft text-sm mt-1">
-          {resource.data.publishedAt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+// Shared formatters
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+// ---- Resource branch ----
+if (props.kind === 'resource') {
+  // no-op; rendering happens below
+}
+
+// ---- Article branch setup ----
+let article: Article | null = null;
+let ArticleContent: any = null;
+let topicMeta: (typeof TEAM_PARENT_TOPICS)[number] | undefined;
+let sportLabel: string | undefined;
+let ageLabel: string | undefined;
+let related: Article[] = [];
+let isShort = true;
+let titleHtml = '';
+let articleSchema: any = null;
+let breadcrumbSchema: any = null;
+
+if (props.kind === 'article') {
+  article = props.article;
+  const rendered = await article.render();
+  ArticleContent = rendered.Content;
+  topicMeta = TEAM_PARENT_TOPICS.find((t) => t.slug === article!.data.teamParentTopic);
+  sportLabel = SPORTS.find((s) => s.slug === article.data.sport)?.label;
+  ageLabel = AGE_BANDS.find((a) => a.slug === article!.data.age)?.label;
+  isShort = article.data.format === 'note';
+  titleHtml = article.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+  related = (
+    await getCollection('articles', ({ data: d, slug: s }) =>
+      !d.draft && d.phase === 'team-parent' && s !== article!.slug
+    )
+  )
+    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+    .slice(0, 3);
+
+  articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.data.title.replace(/\*/g, ''),
+    description: article.data.dek,
+    author: { '@type': 'Organization', name: SITE.name },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.name,
+      logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.png` },
+    },
+    datePublished: article.data.publishedAt.toISOString(),
+    mainEntityOfPage: `${SITE.url}/team-parent/${article.slug}/`,
+  };
+
+  breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Team Parent', item: `${SITE.url}/team-parent/` },
+      { '@type': 'ListItem', position: 3, name: article.data.title.replace(/\*/g, '') },
+    ],
+  };
+}
+
+// Resource branch values (only used when kind === 'resource')
+const resource = props.kind === 'resource' ? props.resource : null;
+const ResourceContent = resource ? (await resource.render()).Content : null;
+const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.data.category)! : null;
+---
+{props.kind === 'resource' && resource && cat && ResourceContent && (
+  <BaseLayout
+    title={resource.data.title}
+    description={resource.data.summary}
+  >
+    <section class="border-b border-bone" style={`background: ${cat.accent}15;`}>
+      <div class="container-px py-12">
+        <p class="font-display italic mb-2" style={`color: ${cat.accent}; font-weight: 500;`}>
+          <a href="/team-parent/" class="hover:underline">Team Parent</a> · <a href={`/team-parent/#${cat.slug}`} class="hover:underline">{cat.label}</a>
         </p>
+        <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+          {resource.data.title}
+        </h1>
+        <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+          {resource.data.summary}
+        </p>
+        {resource.data.type === 'template' && resource.data.externalUrl && (
+          <a
+            href={resource.data.externalUrl}
+            target="_blank"
+            rel="noopener"
+            class="btn mt-6 inline-flex"
+          >Open the template ↗</a>
+        )}
+
+        <div class="mt-7 pt-5 border-t border-bone">
+          <p class="font-display italic text-rust" style="font-weight: 500;">{EDITORIAL.byline}</p>
+          <p class="font-display italic text-ink-soft text-sm mt-1">
+            {fmtDate(resource.data.publishedAt)}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <article class="container-px py-12 md:py-16">
+      <div class="article-body max-w-prose mx-auto">
+        <ResourceContent />
+      </div>
+    </article>
+
+    <NewsletterSignup />
+  </BaseLayout>
+)}
+
+{props.kind === 'article' && article && ArticleContent && (
+  <BaseLayout
+    title={article.data.title.replace(/\*/g, '')}
+    description={article.data.dek ?? SITE.description}
+    ogType="article"
+    ogImage={(article.data as any).ogImage}
+    publishedAt={article.data.publishedAt.toISOString()}
+  >
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <div style={`background: ${EDITORIAL.accentBg};`}>
+      <div class="container-px pt-10 pb-2">
+        <div class="font-display italic" style={`color: ${EDITORIAL.accent}; font-weight: 500; font-size: 1rem;`}>
+          <a href="/team-parent/" class="hover:underline">Team Parent</a>
+          {topicMeta ? (
+            <>
+              {' · '}
+              <a href={`/team-parent/${topicMeta.slug}/`} class="hover:underline">{topicMeta.label}</a>
+            </>
+          ) : null}
+          {sportLabel ? ` · ${sportLabel}` : ''}
+          {ageLabel ? ` · age ${ageLabel}` : ''}
+        </div>
       </div>
     </div>
-  </section>
 
-  <article class="container-px py-12 md:py-16">
-    <div class="article-body max-w-prose mx-auto">
-      <Content />
-    </div>
-  </article>
+    <article class="container-px py-10 md:py-14">
+      <header class="max-w-prose mx-auto">
+        <h1
+          class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
+          style="font-weight: 500;"
+          set:html={titleHtml}
+        />
+        {article.data.dek && !isShort && (
+          <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 leading-snug">
+            {article.data.dek}
+          </p>
+        )}
 
-  <NewsletterSignup />
-</BaseLayout>
+        <div class="mt-8 pt-5 border-t border-bone">
+          <div class="font-display italic text-rust" style="font-weight: 500;">
+            {EDITORIAL.byline}
+          </div>
+          <div class="font-display italic text-ink-soft text-sm mt-1">
+            {fmtDate(article.data.publishedAt)}
+            {' · '}
+            {isShort ? 'short read' : 'longer read'}
+          </div>
+        </div>
+      </header>
+
+      <div class={`article-body mx-auto ${isShort ? 'mt-8' : 'mt-12'}`}>
+        <ArticleContent />
+      </div>
+
+      <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone">
+        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">About this piece</p>
+        <p class="font-display text-ink-soft text-sm leading-snug">
+          Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
+        </p>
+        <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
+          Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
+        </p>
+      </aside>
+    </article>
+
+    <RelatedArticles articles={related} pillarLabel="Team Parent" />
+    <LeadMagnetCTA />
+  </BaseLayout>
+)}
