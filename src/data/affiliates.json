@@ -3,5 +3,95 @@
     "destination": "https://amzn.to/4eSZeBW",
     "retailer": "Amazon",
     "campaign": "gear-baseball-glove"
+  },
+  "baseball-glove-9in-youth": {
+    "destination": "https://amzn.to/3OUH9Ji",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-glove-9in"
+  },
+  "baseball-bat-teeball": {
+    "destination": "https://amzn.to/3OE8ob3",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-bat-teeball"
+  },
+  "baseball-helmet-youth": {
+    "destination": "https://amzn.to/4cVoDbx",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-helmet-youth"
+  },
+  "baseball-balls-teeball": {
+    "destination": "https://amzn.to/4d1wJzo",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-balls-teeball"
+  },
+  "baseball-bases-rubber": {
+    "destination": "https://amzn.to/4eiz9fr",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-bases-rubber"
+  },
+  "baseball-balls-wiffle": {
+    "destination": "https://amzn.to/4w61coO",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-balls-wiffle"
+  },
+  "baseball-blitzball-set": {
+    "destination": "https://amzn.to/4t3YfCl",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-blitzball-set"
+  },
+  "baseball-glove-breakin-kit": {
+    "destination": "https://amzn.to/4wazlny",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-glove-breakin-kit"
+  },
+  "baseball-glove-laces": {
+    "destination": "https://amzn.to/4tb7Fw8",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-glove-laces"
+  },
+  "baseball-pants-youth": {
+    "destination": "https://amzn.to/3Rg9Gtn",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-pants-youth"
+  },
+  "baseball-belt-youth": {
+    "destination": "https://amzn.to/4u5CHqB",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-belt-youth"
+  },
+  "baseball-catchers-mitt-32in": {
+    "destination": "https://amzn.to/4eYBhZX",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-catchers-mitt-32in"
+  },
+  "baseball-batting-gloves-youth": {
+    "destination": "https://amzn.to/4ugLk14",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-batting-gloves-youth"
+  },
+  "baseball-cup-youth": {
+    "destination": "https://amzn.to/3QNrCeO",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-cup-youth"
+  },
+  "baseball-catchers-gear-youth": {
+    "destination": "https://amzn.to/4dgicRP",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-catchers-gear-youth"
+  },
+  "baseball-catchers-bag": {
+    "destination": "https://amzn.to/48Cigc0",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-catchers-bag"
+  },
+  "baseball-sliding-mitt": {
+    "destination": "https://amzn.to/4eXZyiR",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-sliding-mitt"
+  },
+  "baseball-arm-sleeve": {
+    "destination": "https://amzn.to/4unojJK",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-arm-sleeve"
   }
 }
