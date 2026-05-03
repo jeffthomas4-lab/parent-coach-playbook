@@ -86,11 +86,11 @@ const fmtRange = (start: string, end: string) => {
                 <div class="flex flex-col gap-2 items-end">
                   <a href={`/camps/${c.slug}/`} target="_blank" rel="noopener noreferrer" class="font-display italic text-rust text-sm hover:underline" style="font-weight: 500;">View on site ↗</a>
                   <a href={`/admin/camps/${c.id}/`} class="t-cta">Edit →</a>
-                  <form method="POST" action={`/api/admin/camps/${c.id}/verify`} class="inline">
+                  <form method="POST" action={`/admin/api/camps/${c.id}/verify`} class="inline">
                     <input type="hidden" name="verified" value="true" />
                     <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;">Mark verified ✓</button>
                   </form>
-                  <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline">
+                  <form method="POST" action={`/admin/api/camps/${c.id}/reject`} class="inline">
                     <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;">Reject</button>
                   </form>
                 </div>
