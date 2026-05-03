@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { listApprovedUnverifiedCamps, type Camp } from '../../../lib/camps-db';
+import { listApprovedUnverifiedCamps, setVerified, rejectCamp, type Camp } from '../../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
 
 // SSR. Pulls live from D1 each request. Behind Cloudflare Access.
@@ -8,6 +8,39 @@ export const prerender = false;
 
 const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
 const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+// Handle verify/reject POSTs in-page. Form posts to this same URL with a
+// hidden `action` field. Doing it here (instead of in /admin/api/* or
+// /api/admin/*) keeps the request under /admin/* where Cloudflare Access is
+// known to work, sidestepping any path-coverage edge cases.
+let actionBanner: { ok: boolean; text: string } | null = null;
+if (Astro.request.method === 'POST') {
+  if (!env?.DB) {
+    actionBanner = { ok: false, text: 'Database not bound; action ignored.' };
+  } else if (!adminEmail) {
+    actionBanner = { ok: false, text: 'Not authenticated; action ignored.' };
+  } else {
+    try {
+      const fd = await Astro.request.formData();
+      const action = String(fd.get('action') ?? '').trim();
+      const id = String(fd.get('camp_id') ?? '').trim();
+      if (!id) {
+        actionBanner = { ok: false, text: 'Missing camp id.' };
+      } else if (action === 'verify') {
+        await setVerified(env.DB, id, true);
+        actionBanner = { ok: true, text: 'Verified.' };
+      } else if (action === 'reject') {
+        await rejectCamp(env.DB, id, adminEmail, null);
+        actionBanner = { ok: true, text: 'Rejected.' };
+      } else {
+        actionBanner = { ok: false, text: `Unknown action: ${action}` };
+      }
+    } catch (e) {
+      console.error('spot-check action failed', e);
+      actionBanner = { ok: false, text: 'Action failed; check the server logs.' };
+    }
+  }
+}
 
 let camps: Camp[] = [];
 let dbAvailable = !!env?.DB;
@@ -49,6 +82,11 @@ const fmtRange = (start: string, end: string) => {
           Cloudflare Access header not detected. Verify will fail. Configure /admin/* behind Access before deploying.
         </p>
       )}
+      {actionBanner && (
+        <p class={`font-display text-sm mt-2 ${actionBanner.ok ? 'text-sage' : 'text-rust'}`} style="font-weight: 500;">
+          {actionBanner.text}
+        </p>
+      )}
     </div>
   </section>
 
@@ -86,11 +124,14 @@ const fmtRange = (start: string, end: string) => {
                 <div class="flex flex-col gap-2 items-end">
                   <a href={`/camps/${c.slug}/`} target="_blank" rel="noopener noreferrer" class="font-display italic text-rust text-sm hover:underline" style="font-weight: 500;">View on site ↗</a>
                   <a href={`/admin/camps/${c.id}/`} class="t-cta">Edit →</a>
-                  <form method="POST" action={`/admin/api/camps/${c.id}/verify`} class="inline">
-                    <input type="hidden" name="verified" value="true" />
+                  <form method="POST" action="/admin/camps/spot-check" class="inline">
+                    <input type="hidden" name="action" value="verify" />
+                    <input type="hidden" name="camp_id" value={c.id} />
                     <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;">Mark verified ✓</button>
                   </form>
-                  <form method="POST" action={`/admin/api/camps/${c.id}/reject`} class="inline">
+                  <form method="POST" action="/admin/camps/spot-check" class="inline">
+                    <input type="hidden" name="action" value="reject" />
+                    <input type="hidden" name="camp_id" value={c.id} />
                     <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;">Reject</button>
                   </form>
                 </div>

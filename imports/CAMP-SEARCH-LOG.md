@@ -145,3 +145,4 @@ Auto-appended by `import-camps.py` after every successful run. Manual entries OK
 | 2026-05-03 | Tacoma, WA (25mi) | camps-2026-tacoma-batch-2.csv | 55 | 0 |  |
 | 2026-05-03 | Peachjar (Tacoma SD) | camps-2026-peachjar-batch-1.csv | 8 | 4 |  |
 | 2026-05-03 | Peachjar (Tacoma SD) | camps-2026-peachjar-batch-1.csv | 11 | 1 |  |
+| 2026-05-03 | Peachjar (Tacoma SD) | camps-2026-peachjar-batch-1.csv | 11 | 1 |  |

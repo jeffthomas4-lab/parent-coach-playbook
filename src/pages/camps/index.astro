@@ -226,6 +226,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                     <option value="25">25 miles</option>
                     <option value="50">50 miles</option>
                     <option value="100">100 miles</option>
+                    <option value="all">Any distance</option>
                   </select>
                 </div>
                 <button type="submit" class="font-display px-4 py-2 border border-rust bg-rust text-white hover:opacity-90 transition-opacity">Search</button>
@@ -478,8 +479,9 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           // State
           if (state.state && c.state !== state.state) return false;
 
-          // Zip radius
-          if (state.zipLat !== null && state.zipLon !== null) {
+          // Zip radius. Infinity means user picked "Any distance" — zip filter
+          // is effectively off, all camps pass regardless of coordinates.
+          if (state.zipLat !== null && state.zipLon !== null && Number.isFinite(state.zipRadius)) {
             if (typeof c.latitude !== 'number' || typeof c.longitude !== 'number') return false;
             const dist = haversineMiles(state.zipLat, state.zipLon, c.latitude, c.longitude);
             if (dist > state.zipRadius) return false;
@@ -588,7 +590,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
           state.zipLat = geo.lat;
           state.zipLon = geo.lon;
-          state.zipRadius = parseInt(document.getElementById('filter-radius').value, 10);
+          const radiusVal = document.getElementById('filter-radius').value;
+          state.zipRadius = radiusVal === 'all' ? Infinity : parseInt(radiusVal, 10);
           applyFilters();
         });
 
