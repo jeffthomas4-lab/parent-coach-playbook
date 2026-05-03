@@ -56,8 +56,8 @@ const campsJson = JSON.stringify(camps);
 const sportsListJson = JSON.stringify(CAMP_SPORTS);
 ---
 <BaseLayout
-  title="Camps"
-  description="Youth sports camps and activity programs we know about. Starting in the Pacific Northwest where we can verify camps personally. National listings welcome."
+  title="Camps & Leagues"
+  description="Youth camps and league signups we know about. Starting in the Pacific Northwest where we can verify programs personally. National listings welcome."
   ogImage="/illustrations/og-camps.png"
 >
   <Fragment slot="head">
@@ -66,15 +66,15 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   </Fragment>
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Camps</p>
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Camps & Leagues</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
-        A directory of <em class="text-rust">camps</em> for the summer that's coming.
+        A directory of <em class="text-rust">camps and leagues</em> your kid can actually sign up for.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Youth sports camps and activity programs, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live.
+        Youth camps and league signups, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live. Full programs and leagues are hidden by default — flip the toggles to see them.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="/camps/submit/" class="btn">Submit a camp</a>
+        <a href="/camps/submit/" class="btn">Submit a program</a>
         <a href="#all-camps" class="btn btn-ghost">Browse the directory</a>
       </div>
     </div>
@@ -88,8 +88,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           <p class="font-display italic text-rust" style="font-weight: 500;">Where we are starting</p>
         </div>
         <div class="md:col-span-9 article-body">
-          <p>We're starting in the Pacific Northwest where we can verify camps personally. National listings welcome but light coverage outside PNW for now. If you run a camp anywhere in the country and want it in the directory, <a href="/camps/submit/" class="text-rust hover:underline">submit it here</a>. We'll review and publish it.</p>
-          <p style="font-size: 0.875rem; color: var(--ink-soft);">Some camps don't have coordinates yet and won't appear on the map, but you'll find them in the directory below.</p>
+          <p>We're starting in the Pacific Northwest where we can verify camps and leagues personally. National listings welcome but light coverage outside PNW for now. If you run a camp or league anywhere in the country and want it in the directory, <a href="/camps/submit/" class="text-rust hover:underline">submit it here</a>. We'll review and publish it.</p>
+          <p style="font-size: 0.875rem; color: var(--ink-soft);">Some programs don't have coordinates yet and won't appear on the map, but you'll find them in the directory below.</p>
         </div>
       </div>
     </div>
@@ -187,6 +187,15 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                   <button data-filter-dayovernght="all" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors" data-active="true">All</button>
                   <button data-filter-dayovernght="day" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Day</button>
                   <button data-filter-dayovernght="overnight" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Overnight</button>
+                </div>
+              </div>
+
+              {/* Include hidden-by-default rows */}
+              <div>
+                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Include</p>
+                <div class="flex gap-2">
+                  <button id="filter-show-leagues" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Leagues</button>
+                  <button id="filter-show-full" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Full programs</button>
                 </div>
               </div>
 
@@ -353,7 +362,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         }
       }
 
-      // Filter state
+      // Filter state. showLeagues and showFull default to false so the page
+      // opens with only camps that parents can actually sign up for right now.
       let state = {
         sport: '',
         ageMin: null,
@@ -365,6 +375,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         zipLat: null,
         zipLon: null,
         zipRadius: 10,
+        showLeagues: false,
+        showFull: false,
       };
 
       let map = null;
@@ -439,6 +451,14 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       // Apply all filters
       function applyFilters() {
         visibleCamps = camps.filter(c => {
+          // Hide leagues unless toggled on. program_type may be undefined on
+          // older rows imported before the schema was extended; treat those as 'camp'.
+          const isLeague = c.program_type === 'league';
+          if (isLeague && !state.showLeagues) return false;
+
+          // Hide full programs unless toggled on.
+          if (c.spots_status === 'full' && !state.showFull) return false;
+
           // Sport
           if (state.sport && c.sport !== state.sport) return false;
 
@@ -572,9 +592,31 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           applyFilters();
         });
 
-        // Clear filters
+        // Show leagues toggle
+        document.getElementById('filter-show-leagues').addEventListener('click', (e) => {
+          state.showLeagues = !state.showLeagues;
+          if (state.showLeagues) {
+            e.target.setAttribute('data-active', 'true');
+          } else {
+            e.target.removeAttribute('data-active');
+          }
+          applyFilters();
+        });
+
+        // Show full toggle
+        document.getElementById('filter-show-full').addEventListener('click', (e) => {
+          state.showFull = !state.showFull;
+          if (state.showFull) {
+            e.target.setAttribute('data-active', 'true');
+          } else {
+            e.target.removeAttribute('data-active');
+          }
+          applyFilters();
+        });
+
+        // Clear filters — resets to default which hides leagues + full programs.
         document.getElementById('clear-filters').addEventListener('click', () => {
-          state = { sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10 };
+          state = { sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false };
           document.getElementById('filter-sport').value = '';
           document.getElementById('filter-age-min').value = '';
           document.getElementById('filter-age-max').value = '';
@@ -586,6 +628,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           document.querySelectorAll('[data-filter-dayovernght]').forEach(b => b.removeAttribute('data-active'));
           const allBtn = document.querySelector('[data-filter-dayovernght="all"]');
           if (allBtn) allBtn.setAttribute('data-active', 'true');
+          document.getElementById('filter-show-leagues').removeAttribute('data-active');
+          document.getElementById('filter-show-full').removeAttribute('data-active');
           applyFilters();
         });
       }
