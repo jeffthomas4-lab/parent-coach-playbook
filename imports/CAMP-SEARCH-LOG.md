@@ -142,3 +142,4 @@ Auto-appended by `import-camps.py` after every successful run. Manual entries OK
 | 2026-05-03 | Tacoma, WA (25mi) | camps-2026-tacoma-batch-2.csv | 55 | 0 |  |
 | 2026-05-03 | Tacoma, WA (25mi) | camps-2026-tacoma-batch-2.csv | 55 | 0 |  |
 | 2026-05-03 | Tacoma, WA (25mi) | camps-2026-tacoma-batch-2.csv | 55 | 0 |  |
+| 2026-05-03 | Tacoma, WA (25mi) | camps-2026-tacoma-batch-2.csv | 55 | 0 |  |
