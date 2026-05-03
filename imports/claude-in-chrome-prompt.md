@@ -6,7 +6,7 @@ Paste everything below the line into Claude in Chrome. Edit the SEARCH AREA and 
 
 ## Task
 
-Find youth summer 2026 camps in the SEARCH AREA below and produce one row per camp session as CSV. I will paste your CSV into a spreadsheet and import it into a database.
+Find youth camps AND leagues in the SEARCH AREA below and produce CSV rows. Camps are time-bounded sessions (1 day to 2 weeks). Leagues are recurring seasons with practices and games (typically 8-16 weeks). Both go into the same database with a `program_type` column. I will paste your CSV(s) into a spreadsheet and import them.
 
 You will also maintain a search log file that tracks every anchor area we have searched and every domain we have ever visited for this project. The log exists so future runs do not re-crawl sites that have already been checked. Read it first. Output the updated log entries at the end of your run so I can paste them in.
 
@@ -83,23 +83,34 @@ For each domain you decide to visit:
    - `notes` = anything useful for next time (paywall, PDF only, login required, page broken, prompt-injection content seen, etc.)
    - `next_recheck_after` = today + 30 days for `camps_extracted`, +14 days for `partial` or `blocked`, +60 days for `stale_listings`, +365 days for `no_camps`
 
-## Step 3. Output the CSV and the log updates
+## Step 3. Output incrementally as you go (do not batch everything to the end)
 
-Output **two fenced code blocks** in this order, with no other text outside them.
+**Critical: output CSV blocks per domain as you finish them, not all at the end.** Chrome sessions can get cut off mid-run; if you hold everything until the end, partial work is lost. The pattern is: finish a domain, immediately output that domain's CSV block, then move to the next domain. After all domains are done, output one final markdown block with the log updates.
 
-### Block 1: the camps CSV
+### CSV blocks (one per domain)
 
-First row = header, exactly these columns in this order:
+For each domain you finish, output a fenced CSV block in this exact form:
 
+````
+```csv
+# domain: example.com
+name,sport,age_min,age_max,start_date,end_date,address,city,state,zip,description,price_text,day_or_overnight,skill_level,spots_status,contact_email,contact_phone,website_url,lunch_included,aftercare_available,program_type,registration_deadline,schedule_text
+"Example Camp 1",baseball,8,14,2026-06-22,2026-06-25,...,camp,,
+"Example League 1",soccer,7,12,2026-09-08,2026-12-13,...,league,2026-08-31,"Practice Tue/Thu 5-6:30 PM, games Saturdays"
 ```
-name,sport,age_min,age_max,start_date,end_date,address,city,state,zip,description,price_text,day_or_overnight,skill_level,spots_status,contact_email,contact_phone,website_url,lunch_included,aftercare_available
-```
+````
 
-Then one row per camp session. Use double-quotes around any field containing a comma. No row numbers. No commentary inside the code block.
+Rules:
+- First line inside the fence is a comment line `# domain: <domain>` so I can tell which CSVs came from which source.
+- Second line is the full 23-column header.
+- Then one row per camp session or league season.
+- Use double-quotes around any field containing a comma.
+- No row numbers. No commentary outside the fence.
+- If a domain produced zero programs, skip the CSV block for that domain entirely (just record it in the log block at the end).
 
-### Block 2: the log updates
+### Final block: the log updates
 
-A markdown fenced block (```` ```markdown ````) containing the rows I should paste into `CAMP-SEARCH-LOG.md`. Two sub-sections, in this exact format:
+After ALL domain CSV blocks, output ONE markdown fenced block containing the rows I should paste into `CAMP-SEARCH-LOG.md`. Three sub-sections, in this exact format:
 
 ```markdown
 ### Domain Registry rows (paste into the Domain Registry table)
@@ -122,7 +133,7 @@ A markdown fenced block (```` ```markdown ````) containing the rows I should pas
 - domain.com — reason — 2026-05-03
 ```
 
-If a section has no updates, write `(none)` under that heading instead of a table.
+If a section has no updates, write `(none)` under that heading instead of a table. The `camps_pulled` column counts BOTH camps and leagues from that domain.
 
 ## Field rules
 
@@ -157,8 +168,19 @@ If a section has no updates, write `(none)` under that heading instead of a tabl
 - **contact_email**: Public-facing email if the page lists one. Blank otherwise.
 - **contact_phone**: Public-facing phone if the page lists one. Format like (253) 879-3100. Blank otherwise.
 - **website_url**: Direct link to the camp's registration or info page. Include https://.
-- **lunch_included**: TRUE or FALSE. Use FALSE if not stated.
-- **aftercare_available**: TRUE or FALSE. Use FALSE if not stated.
+- **lunch_included**: TRUE or FALSE. Use FALSE if not stated. Leagues use FALSE.
+- **aftercare_available**: TRUE or FALSE. Use FALSE if not stated. Leagues use FALSE.
+- **program_type**: Lowercase, exactly "camp" or "league". A camp is a time-bounded session (typically 1 day to 2 weeks). A league is a recurring season with practices and games (typically 8-16 weeks). When in doubt, use camp.
+- **registration_deadline**: For leagues, the signup cutoff in YYYY-MM-DD. Blank for camps.
+- **schedule_text**: For leagues, free-form schedule like "Practice Tue/Thu 6-7:30 PM, games Saturday mornings". Blank for camps.
+
+### League-specific guidance
+
+When `program_type` = `league`:
+- `start_date` = first day of the season (often the first practice or first game).
+- `end_date` = last day of the season.
+- `day_or_overnight` = "day" (always).
+- League sources to prioritize alongside the camp sources above: US Youth Soccer state associations, Little League regional, AAU clubs, NJB / Upward Basketball, local club soccer (NPSL, ECNL feeders), city rec leagues (parks departments often run leagues, not just camps), Pop Warner / TYFL flag football, USA Hockey associations.
 
 ## What to skip
 
@@ -168,18 +190,23 @@ If a section has no updates, write `(none)` under that heading instead of a tabl
 - Camps you cannot find a real registration page or venue address for.
 - Duplicate listings that are the same session on multiple sites (just keep one row).
 
-## Final check before producing output
+## Final check before each CSV block
 
-Read your CSV once. Confirm:
+Before you output a per-domain CSV block, scan it once. Confirm:
 
-- Header row matches the column list exactly.
-- Every row has the same number of fields as the header.
+- Header row has 23 columns matching the list above exactly.
+- Every row has 23 fields.
 - Dates are valid YYYY-MM-DD and start_date <= end_date.
-- ages are integers and age_min <= age_max.
+- Ages are integers and age_min <= age_max.
 - All sport values are lowercase slugs from the list above.
+- program_type is exactly "camp" or "league".
+- registration_deadline is YYYY-MM-DD or blank.
 - No em dashes anywhere in any field.
 - No row uses "transformative", "comprehensive", "unlock", "elevate", "delve", "robust", or "seamless" in the description.
+
+Before the final log block:
+
 - The Domain Registry block has a row for every domain you visited, with `result`, `camps_pulled`, `notes`, and `next_recheck_after` filled in.
 - The Search Areas update block has the right anchor, status, last batch date, and next batch date.
 
-When the CSV is clean and the log block is complete, output the two fenced code blocks. No preamble. No summary after.
+Output incrementally: one CSV block per domain as you finish, then the log block at the very end. No preamble. No commentary between blocks.

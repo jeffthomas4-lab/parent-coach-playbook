@@ -9,6 +9,7 @@ export type TrustLevel = 'new' | 'trusted' | 'banned';
 export type DayOrOvernight = 'day' | 'overnight';
 export type SkillLevel = 'beginner' | 'intermediate' | 'advanced' | 'all';
 export type SpotsStatus = 'open' | 'waitlist' | 'full';
+export type ProgramType = 'camp' | 'league';
 
 export interface Camp {
   id: string;
@@ -51,6 +52,9 @@ export interface Camp {
   registration_url: string | null;
   last_edited_at: string | null;
   last_edited_by: string | null;
+  program_type: ProgramType;
+  registration_deadline: string | null;
+  schedule_text: string | null;
 }
 
 export type ReviewStatus = 'pending' | 'approved' | 'rejected';
@@ -106,6 +110,9 @@ export interface NewCampInput {
   aftercare_available: boolean;
   submitted_by_email: string;
   submitted_at: string;
+  program_type?: ProgramType;
+  registration_deadline?: string | null;
+  schedule_text?: string | null;
 }
 
 const nowIso = () => new Date().toISOString();
@@ -174,9 +181,10 @@ export async function insertCamp(
          address, city, state, zip, latitude, longitude,
          description, price_text, day_or_overnight, skill_level, spots_status,
          contact_email, contact_phone, website_url, lunch_included, aftercare_available,
-         status, submitted_by_email, submitted_at, reviewed_by, reviewed_at
+         status, submitted_by_email, submitted_at, reviewed_by, reviewed_at,
+         program_type, registration_deadline, schedule_text
        )
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
     .bind(
       camp.id,
@@ -208,6 +216,9 @@ export async function insertCamp(
       camp.submitted_at,
       status === 'approved' ? 'auto-approve (trusted submitter)' : null,
       status === 'approved' ? camp.submitted_at : null,
+      camp.program_type ?? 'camp',
+      camp.registration_deadline ?? null,
+      camp.schedule_text ?? null,
     )
     .run();
 }
@@ -320,6 +331,9 @@ export interface CampEditFields {
   website_url?: string | null;
   lunch_included?: boolean;
   aftercare_available?: boolean;
+  program_type?: ProgramType;
+  registration_deadline?: string | null;
+  schedule_text?: string | null;
 }
 
 const EDITABLE_TEXT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
@@ -327,6 +341,7 @@ const EDITABLE_TEXT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
   'address', 'city', 'state', 'zip',
   'description', 'price_text', 'day_or_overnight', 'skill_level', 'spots_status',
   'contact_email', 'contact_phone', 'website_url',
+  'program_type', 'registration_deadline', 'schedule_text',
 ];
 const EDITABLE_INT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
   'age_min', 'age_max',

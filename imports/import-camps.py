@@ -60,11 +60,13 @@ ALL_COLUMNS = REQUIRED_FIELDS + [
     "price_text", "day_or_overnight", "skill_level", "spots_status",
     "contact_email", "contact_phone", "website_url",
     "lunch_included", "aftercare_available",
+    "program_type", "registration_deadline", "schedule_text",
 ]
 
 DAY_OVERNIGHT = {"day", "overnight"}
 SKILL_LEVELS = {"beginner", "intermediate", "advanced", "all"}
 SPOTS_STATUS = {"open", "waitlist", "full"}
+PROGRAM_TYPES = {"camp", "league"}
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
@@ -260,6 +262,24 @@ def validate_row(row: dict[str, Any], idx: int) -> dict[str, Any]:
     cleaned["website_url"] = normalize_url(row.get("website_url"))
     cleaned["lunch_included"] = parse_bool(row.get("lunch_included"))
     cleaned["aftercare_available"] = parse_bool(row.get("aftercare_available"))
+
+    program_type = (str(row.get("program_type") or "camp")).strip().lower()
+    if program_type not in PROGRAM_TYPES:
+        raise RowError(f"row {idx}: program_type must be 'camp' or 'league'")
+    cleaned["program_type"] = program_type
+
+    rd = row.get("registration_deadline")
+    if rd in (None, ""):
+        cleaned["registration_deadline"] = None
+    else:
+        normalized = normalize_date(rd)
+        if not normalized:
+            raise RowError(f"row {idx}: registration_deadline must be YYYY-MM-DD or blank")
+        cleaned["registration_deadline"] = normalized
+
+    sched = row.get("schedule_text")
+    cleaned["schedule_text"] = str(sched).strip() if sched not in (None, "") else None
+
     return cleaned
 
 
@@ -293,6 +313,7 @@ INSERT_COLUMNS = [
     "lunch_included", "aftercare_available",
     "status", "submitted_by_email", "submitted_at",
     "reviewed_by", "reviewed_at", "verified",
+    "program_type", "registration_deadline", "schedule_text",
 ]
 
 
