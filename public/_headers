@@ -1,0 +1,20 @@
+# Cloudflare Pages reads this file at deploy time and applies the listed
+# headers to every matching response. Static assets get them automatically;
+# SSR responses keep their own Cache-Control (set in code) but inherit the
+# rest of these defaults.
+
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Lock down admin paths even at the header layer. Belt-and-suspenders on top
+# of the Cloudflare Access policy.
+/admin/*
+  X-Robots-Tag: noindex, nofollow
+
+/api/admin/*
+  X-Robots-Tag: noindex, nofollow

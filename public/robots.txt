@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://parentcoachplaybook.com/sitemap.xml

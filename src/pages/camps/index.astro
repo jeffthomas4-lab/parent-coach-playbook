@@ -160,6 +160,26 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                 </div>
               </div>
 
+              {/* Date Range */}
+              <div>
+                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Date range</p>
+                <div class="flex gap-2 items-center">
+                  <input
+                    type="date"
+                    id="filter-date-start"
+                    aria-label="Earliest start date"
+                    class="font-display px-3 py-2 border border-bone bg-paper"
+                  />
+                  <span class="text-ink-soft px-1">to</span>
+                  <input
+                    type="date"
+                    id="filter-date-end"
+                    aria-label="Latest end date"
+                    class="font-display px-3 py-2 border border-bone bg-paper"
+                  />
+                </div>
+              </div>
+
               {/* Day/Overnight */}
               <div>
                 <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Format</p>
@@ -338,6 +358,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         sport: '',
         ageMin: null,
         ageMax: null,
+        dateStart: '',  // ISO YYYY-MM-DD; empty means no lower bound
+        dateEnd: '',    // ISO YYYY-MM-DD; empty means no upper bound
         dayOvernight: 'all',
         state: '',
         zipLat: null,
@@ -424,6 +446,12 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           if (state.ageMin !== null && c.age_max < state.ageMin) return false;
           if (state.ageMax !== null && c.age_min > state.ageMax) return false;
 
+          // Date range — overlap test. Camp matches if any of its days fall
+          // inside the requested window: camp.start <= filter.end AND
+          // camp.end >= filter.start. Empty bound = no constraint on that side.
+          if (state.dateStart && c.end_date < state.dateStart) return false;
+          if (state.dateEnd && c.start_date > state.dateEnd) return false;
+
           // Day/overnight
           if (state.dayOvernight !== 'all' && c.day_or_overnight !== state.dayOvernight) return false;
 
@@ -493,6 +521,18 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           applyFilters();
         });
 
+        // Date start
+        document.getElementById('filter-date-start').addEventListener('change', (e) => {
+          state.dateStart = e.target.value || '';
+          applyFilters();
+        });
+
+        // Date end
+        document.getElementById('filter-date-end').addEventListener('change', (e) => {
+          state.dateEnd = e.target.value || '';
+          applyFilters();
+        });
+
         // Day/overnight
         document.querySelectorAll('[data-filter-dayovernght]').forEach(btn => {
           btn.addEventListener('click', () => {
@@ -534,10 +574,12 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
         // Clear filters
         document.getElementById('clear-filters').addEventListener('click', () => {
-          state = { sport: '', ageMin: null, ageMax: null, dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10 };
+          state = { sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10 };
           document.getElementById('filter-sport').value = '';
           document.getElementById('filter-age-min').value = '';
           document.getElementById('filter-age-max').value = '';
+          document.getElementById('filter-date-start').value = '';
+          document.getElementById('filter-date-end').value = '';
           document.getElementById('filter-state').value = '';
           document.getElementById('filter-zip').value = '';
           document.getElementById('filter-radius').value = '10';

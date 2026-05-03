@@ -3,12 +3,12 @@
 
 import type { APIRoute } from 'astro';
 import { rejectCamp } from '../../../../../lib/camps-db';
-import { requireAdmin } from '../../../../../lib/admin-auth';
+import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ params, request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB: D1Database } | undefined;
+  const env = (locals as any).runtime?.env as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
   if (!env?.DB) {
     return new Response(JSON.stringify({ ok: false, error: 'database not available' }), {
       status: 500,
@@ -16,8 +16,11 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     });
   }
 
-  const auth = requireAdmin(request);
+  const auth = requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const originErr = requireSameOrigin(request);
+  if (originErr) return originErr;
 
   const id = params.id;
   if (!id) {
