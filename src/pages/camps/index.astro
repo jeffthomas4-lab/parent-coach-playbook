@@ -35,15 +35,16 @@ if (env?.DB) {
   }
 }
 
+// Parse YYYY-MM-DD as local date (not UTC). Avoids the off-by-one timezone bug
+// where new Date('2026-08-03') becomes Aug 2 in Pacific time.
 const fmtDateRange = (start: string, end: string) => {
-  const s = new Date(start);
-  const e = new Date(end);
-  const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'short' });
-  const day = (d: Date) => d.getDate();
-  if (s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear()) {
-    return `${month(s)} ${day(s)}–${day(e)}, ${s.getFullYear()}`;
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const [sy, sm, sd] = start.split('-').map(Number);
+  const [ey, em, ed] = end.split('-').map(Number);
+  if (sm === em && sy === ey) {
+    return `${MONTHS[sm - 1]} ${sd}–${ed}, ${sy}`;
   }
-  return `${month(s)} ${day(s)} – ${month(e)} ${day(e)}, ${s.getFullYear()}`;
+  return `${MONTHS[sm - 1]} ${sd} – ${MONTHS[em - 1]} ${ed}, ${sy}`;
 };
 
 const PNW = new Set(['WA', 'OR', 'ID', 'MT', 'AK']);

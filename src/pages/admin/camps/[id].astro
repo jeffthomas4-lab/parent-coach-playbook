@@ -27,8 +27,13 @@ if (!camp) {
 
 const fmtDateTime = (s: string) =>
   new Date(s).toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
-const fmtDate = (s: string) =>
-  new Date(s).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+// fmtDate is for camp start_date / end_date which are YYYY-MM-DD strings. Parse
+// as local date (not UTC) to avoid the off-by-one timezone bug.
+const MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const fmtDate = (s: string) => {
+  const [y, m, d] = s.split('-').map(Number);
+  return `${MONTHS_LONG[m - 1]} ${d}, ${y}`;
+};
 
 const statusColor: Record<string, string> = {
   pending: '#B0894A',
@@ -181,7 +186,7 @@ const statusColor: Record<string, string> = {
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
                 ZIP
-                <input type="text" name="zip" value={camp.zip} pattern="\d{5}(-\d{4})?" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="zip" value={camp.zip} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
@@ -208,7 +213,7 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
                 Contact email
-                <input type="email" name="contact_email" value={camp.contact_email ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="contact_email" value={camp.contact_email ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
                 Contact phone
@@ -218,7 +223,7 @@ const statusColor: Record<string, string> = {
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
               Website URL
-              <input type="url" name="website_url" value={camp.website_url ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input type="text" name="website_url" value={camp.website_url ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">

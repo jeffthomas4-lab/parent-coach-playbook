@@ -51,8 +51,13 @@ try {
   console.error('listOtherCampsAtAddress failed', e);
 }
 
-const fmtDate = (s: string) =>
-  new Date(s).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+// Parse YYYY-MM-DD as local date (not UTC) so dates display correctly in
+// Pacific time. new Date('2026-08-03') would be Aug 2 5pm Pacific.
+const MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const fmtDate = (s: string) => {
+  const [y, m, d] = s.split('-').map(Number);
+  return `${MONTHS_LONG[m - 1]} ${d}, ${y}`;
+};
 
 const fmtRange = (start: string, end: string) => `${fmtDate(start)} – ${fmtDate(end)}`;
 

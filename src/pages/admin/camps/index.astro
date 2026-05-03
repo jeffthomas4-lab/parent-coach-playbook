@@ -23,10 +23,12 @@ if (env?.DB) {
 const fmtDateTime = (s: string) =>
   new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 
+// Parse YYYY-MM-DD as local date (not UTC) to avoid the off-by-one timezone bug.
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmtRange = (start: string, end: string) => {
-  const s = new Date(start);
-  const e = new Date(end);
-  return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}–${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+  const [, sm, sd] = start.split('-').map(Number);
+  const [ey, em, ed] = end.split('-').map(Number);
+  return `${MONTHS[sm - 1]} ${sd}–${MONTHS[em - 1]} ${ed}, ${ey}`;
 };
 ---
 <BaseLayout title="Camps moderation" description="Admin queue" noindex={true}>
