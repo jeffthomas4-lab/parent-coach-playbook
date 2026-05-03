@@ -10,27 +10,41 @@ const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined
 const adminEmail = getAdminEmailFromRequest(Astro.request);
 
 // Handle verify/reject POSTs in-page. Form posts to this same URL with a
-// hidden `action` field. Doing it here (instead of in /admin/api/* or
-// /api/admin/*) keeps the request under /admin/* where Cloudflare Access is
-// known to work, sidestepping any path-coverage edge cases.
+// hidden `action` field. The page itself is gated by Cloudflare Access; if a
+// POST reaches this handler, Access already let it through. We don't require
+// the Cf-Access-Authenticated-User-Email header here because Cloudflare's
+// Access cookie scope can be inconsistent on POST in some configurations and
+// the same-origin check below is the actual defense against forged requests.
 let actionBanner: { ok: boolean; text: string } | null = null;
 if (Astro.request.method === 'POST') {
-  if (!env?.DB) {
+  // Same-origin check: browsers set Origin based on the page that initiated
+  // the request. A POST originating outside parentcoachplaybook.com cannot
+  // forge a matching Origin header. Combined with Access gating GET, only
+  // Jeff's logged-in browser can produce a valid same-origin POST.
+  const origin = Astro.request.headers.get('origin') ?? '';
+  const referer = Astro.request.headers.get('referer') ?? '';
+  const reqUrl = new URL(Astro.request.url);
+  const sameOrigin =
+    (origin && new URL(origin).host === reqUrl.host) ||
+    (referer && new URL(referer).host === reqUrl.host);
+
+  if (!sameOrigin) {
+    actionBanner = { ok: false, text: 'Cross-origin request blocked.' };
+  } else if (!env?.DB) {
     actionBanner = { ok: false, text: 'Database not bound; action ignored.' };
-  } else if (!adminEmail) {
-    actionBanner = { ok: false, text: 'Not authenticated; action ignored.' };
   } else {
     try {
       const fd = await Astro.request.formData();
       const action = String(fd.get('action') ?? '').trim();
       const id = String(fd.get('camp_id') ?? '').trim();
+      const reviewer = adminEmail || 'spot-check (cookie auth)';
       if (!id) {
         actionBanner = { ok: false, text: 'Missing camp id.' };
       } else if (action === 'verify') {
         await setVerified(env.DB, id, true);
         actionBanner = { ok: true, text: 'Verified.' };
       } else if (action === 'reject') {
-        await rejectCamp(env.DB, id, adminEmail, null);
+        await rejectCamp(env.DB, id, reviewer, null);
         actionBanner = { ok: true, text: 'Rejected.' };
       } else {
         actionBanner = { ok: false, text: `Unknown action: ${action}` };

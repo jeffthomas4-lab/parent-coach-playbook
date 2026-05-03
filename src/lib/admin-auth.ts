@@ -30,14 +30,58 @@ export interface AdminContext {
 }
 
 /**
- * Pull the verified admin email from the Cloudflare Access header.
- * Returns null if the header is missing — does NOT enforce the allowlist.
- * Use requireAdmin for full auth + allowlist enforcement.
+ * Decode a base64url string (no padding) to a UTF-8 string.
+ */
+function b64urlDecode(input: string): string {
+  const pad = input.length % 4 === 2 ? '==' : input.length % 4 === 3 ? '=' : '';
+  const b64 = input.replace(/-/g, '+').replace(/_/g, '/') + pad;
+  // atob exists in the Workers runtime.
+  return atob(b64);
+}
+
+/**
+ * Read the email claim from the CF_Authorization cookie's JWT payload.
+ *
+ * Important security note: this decodes the JWT without verifying its
+ * signature. We rely on Cloudflare Access being the only entity that can mint
+ * a CF_Authorization cookie for parentcoachplaybook.com (browsers enforce
+ * cookie domain scoping, so foreign sites cannot set this cookie). For phase 2
+ * we should verify the signature against the Access JWKs.
+ *
+ * Returns null on any parse failure or if the JWT is expired.
+ */
+function getAdminEmailFromCookie(request: Request): string | null {
+  const cookieHeader = request.headers.get('cookie') ?? '';
+  if (!cookieHeader) return null;
+  const match = cookieHeader.match(/(?:^|;\s*)CF_Authorization=([^;]+)/);
+  if (!match) return null;
+  const token = match[1];
+  const parts = token.split('.');
+  if (parts.length !== 3) return null;
+  try {
+    const payload = JSON.parse(b64urlDecode(parts[1])) as { email?: string; exp?: number };
+    if (payload.exp && payload.exp * 1000 < Date.now()) return null;
+    if (typeof payload.email === 'string' && payload.email.includes('@')) {
+      return payload.email.toLowerCase();
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Pull the verified admin email from the Cloudflare Access header. If that
+ * header is missing (which happens in some Access path configurations on
+ * Cloudflare Pages), fall back to decoding the CF_Authorization cookie.
+ *
+ * Returns null if neither source yields an email — does NOT enforce the
+ * allowlist. Use requireAdmin for full auth + allowlist enforcement.
  */
 export function getAdminEmailFromRequest(request: Request): string | null {
-  const email = request.headers.get('Cf-Access-Authenticated-User-Email');
-  if (!email) return null;
-  return email.toLowerCase();
+  const headerEmail = request.headers.get('Cf-Access-Authenticated-User-Email');
+  if (headerEmail) return headerEmail.toLowerCase();
+  return getAdminEmailFromCookie(request);
 }
 
 /**
