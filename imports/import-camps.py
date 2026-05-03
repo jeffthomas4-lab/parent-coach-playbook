@@ -318,10 +318,12 @@ INSERT_COLUMNS = [
 
 
 def render_insert(rec: dict[str, Any]) -> str:
+    # Use INSERT OR IGNORE so re-runs are safe: rows whose slug already exists
+    # in D1 are silently skipped instead of aborting the whole batch.
     parts = [sql_str(rec[c]) for c in INSERT_COLUMNS]
     cols = ", ".join(INSERT_COLUMNS)
     vals = ", ".join(parts)
-    return f"INSERT INTO camps ({cols}) VALUES ({vals});"
+    return f"INSERT OR IGNORE INTO camps ({cols}) VALUES ({vals});"
 
 
 def append_search_log(
