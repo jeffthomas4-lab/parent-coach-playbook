@@ -13,8 +13,16 @@ const sportLabel = (slug: string): string => {
     .join(' ');
 };
 
-// SSR. Pulls live from D1 each request.
+// SSR. Pulls live from D1 each request, but the response is cached at
+// Cloudflare's edge for 10 minutes (s-maxage=600), with stale-while-revalidate
+// keeping the page snappy for up to 24 hours while a background refresh runs.
+// Net effect: at typical traffic, ~1 D1 read per 10 minutes per Cloudflare PoP
+// instead of 1 read per visit.
 export const prerender = false;
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, s-maxage=600, stale-while-revalidate=86400',
+);
 
 const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
 let camps: Camp[] = [];

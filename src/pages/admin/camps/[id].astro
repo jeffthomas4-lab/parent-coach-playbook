@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCampById, getSubmitter, type Camp, type Submitter } from '../../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+import { CAMP_SPORTS } from '../../../data/site';
 
 export const prerender = false;
 
@@ -89,6 +90,158 @@ const statusColor: Record<string, string> = {
           {camp.website_url && <li><strong>Website:</strong> <a href={camp.website_url} target="_blank" rel="noopener" class="text-rust hover:underline">{camp.website_url}</a></li>}
           {!camp.contact_email && !camp.contact_phone && !camp.website_url && <li>No contact provided.</li>}
         </ul>
+
+        {camp.last_edited_at && (
+          <p class="font-display italic text-ink-soft text-xs mt-6" style="font-weight: 500;">
+            Last edited {fmtDateTime(camp.last_edited_at)} by {camp.last_edited_by ?? 'unknown'}.
+          </p>
+        )}
+
+        <details class="mt-10 border border-bone bg-paper-warm">
+          <summary class="font-display text-ink cursor-pointer px-4 py-3 hover:bg-paper" style="font-weight: 500;">
+            Edit fields
+          </summary>
+          <form
+            method="POST"
+            action={`/api/admin/camps/${camp.id}/update`}
+            class="grid gap-4 p-4 border-t border-bone"
+          >
+            <input type="hidden" name="redirect" value={`/admin/camps/${camp.id}/`} />
+
+            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              Camp name
+              <input type="text" name="name" value={camp.name} maxlength="200" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+            </label>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Sport (slug)
+                <select name="sport" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                  {CAMP_SPORTS.map((s) => (
+                    <option value={s.slug} selected={s.slug === camp.sport}>{s.label}</option>
+                  ))}
+                  {!CAMP_SPORTS.find((s) => s.slug === camp.sport) && (
+                    <option value={camp.sport} selected>{camp.sport} (legacy)</option>
+                  )}
+                </select>
+              </label>
+
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Format
+                <select name="day_or_overnight" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                  <option value="day" selected={camp.day_or_overnight === 'day'}>Day</option>
+                  <option value="overnight" selected={camp.day_or_overnight === 'overnight'}>Overnight</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Age min
+                <input type="number" name="age_min" value={camp.age_min} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Age max
+                <input type="number" name="age_max" value={camp.age_max} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Skill level
+                <select name="skill_level" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                  <option value="all" selected={camp.skill_level === 'all'}>all</option>
+                  <option value="beginner" selected={camp.skill_level === 'beginner'}>beginner</option>
+                  <option value="intermediate" selected={camp.skill_level === 'intermediate'}>intermediate</option>
+                  <option value="advanced" selected={camp.skill_level === 'advanced'}>advanced</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Start date
+                <input type="date" name="start_date" value={camp.start_date} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                End date
+                <input type="date" name="end_date" value={camp.end_date} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+            </div>
+
+            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              Address
+              <input type="text" name="address" value={camp.address} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+            </label>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                City
+                <input type="text" name="city" value={camp.city} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                State
+                <input type="text" name="state" value={camp.state} maxlength="2" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm uppercase" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                ZIP
+                <input type="text" name="zip" value={camp.zip} pattern="\d{5}(-\d{4})?" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+            </div>
+
+            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              Description (30-4000 chars)
+              <textarea name="description" rows="6" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">{camp.description}</textarea>
+            </label>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Price text
+                <input type="text" name="price_text" value={camp.price_text ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Spots
+                <select name="spots_status" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                  <option value="open" selected={camp.spots_status === 'open'}>open</option>
+                  <option value="waitlist" selected={camp.spots_status === 'waitlist'}>waitlist</option>
+                  <option value="full" selected={camp.spots_status === 'full'}>full</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Contact email
+                <input type="email" name="contact_email" value={camp.contact_email ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+                Contact phone
+                <input type="text" name="contact_phone" value={camp.contact_phone ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              </label>
+            </div>
+
+            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              Website URL
+              <input type="url" name="website_url" value={camp.website_url ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+            </label>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="font-display italic text-ink-soft text-xs flex items-center gap-2" style="font-weight: 500;">
+                <input type="hidden" name="lunch_included" value="false" />
+                <input type="checkbox" name="lunch_included" value="true" checked={camp.lunch_included === 1} />
+                Lunch included
+              </label>
+              <label class="font-display italic text-ink-soft text-xs flex items-center gap-2" style="font-weight: 500;">
+                <input type="hidden" name="aftercare_available" value="false" />
+                <input type="checkbox" name="aftercare_available" value="true" checked={camp.aftercare_available === 1} />
+                Aftercare available
+              </label>
+            </div>
+
+            <div class="flex gap-3 mt-2">
+              <button type="submit" class="btn">Save changes</button>
+              <p class="font-display italic text-ink-soft text-xs self-center" style="font-weight: 500;">
+                Address changes re-run the geocoder. Name changes generate a new URL slug.
+              </p>
+            </div>
+          </form>
+        </details>
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">

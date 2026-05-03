@@ -49,6 +49,8 @@ export interface Camp {
   logo_key: string | null;
   gallery_keys: string | null;
   registration_url: string | null;
+  last_edited_at: string | null;
+  last_edited_by: string | null;
 }
 
 export type ReviewStatus = 'pending' | 'approved' | 'rejected';
@@ -284,6 +286,109 @@ export async function rejectCamp(
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
+  return getCampById(db, id);
+}
+
+// ---------- Phase 4: admin edit ----------
+
+/**
+ * Fields an admin is allowed to edit after a camp is live. Status, audit
+ * timestamps, geocode cache, photo keys, and claim state are NOT editable
+ * here — those have their own endpoints or are managed automatically.
+ */
+export interface CampEditFields {
+  name?: string;
+  slug?: string;
+  sport?: string;
+  age_min?: number;
+  age_max?: number;
+  start_date?: string;
+  end_date?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+  latitude?: number | null;
+  longitude?: number | null;
+  description?: string;
+  price_text?: string | null;
+  day_or_overnight?: DayOrOvernight;
+  skill_level?: SkillLevel;
+  spots_status?: SpotsStatus;
+  contact_email?: string | null;
+  contact_phone?: string | null;
+  website_url?: string | null;
+  lunch_included?: boolean;
+  aftercare_available?: boolean;
+}
+
+const EDITABLE_TEXT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
+  'name', 'slug', 'sport', 'start_date', 'end_date',
+  'address', 'city', 'state', 'zip',
+  'description', 'price_text', 'day_or_overnight', 'skill_level', 'spots_status',
+  'contact_email', 'contact_phone', 'website_url',
+];
+const EDITABLE_INT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
+  'age_min', 'age_max',
+];
+const EDITABLE_BOOL_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
+  'lunch_included', 'aftercare_available',
+];
+const EDITABLE_REAL_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
+  'latitude', 'longitude',
+];
+
+/**
+ * Update one or more fields on an existing camp. Only fields explicitly
+ * provided in `fields` are written. Stamps last_edited_at and last_edited_by.
+ */
+export async function updateCamp(
+  db: D1Database,
+  id: string,
+  fields: CampEditFields,
+  editorEmail: string,
+): Promise<Camp | null> {
+  const sets: string[] = [];
+  const values: unknown[] = [];
+
+  const push = (col: keyof CampEditFields, value: unknown) => {
+    sets.push(`${col} = ?`);
+    values.push(value);
+  };
+
+  for (const col of EDITABLE_TEXT_COLUMNS) {
+    if (col in fields) push(col, fields[col] ?? null);
+  }
+  for (const col of EDITABLE_INT_COLUMNS) {
+    if (col in fields) push(col, fields[col] ?? null);
+  }
+  for (const col of EDITABLE_REAL_COLUMNS) {
+    if (col in fields) push(col, fields[col] ?? null);
+  }
+  for (const col of EDITABLE_BOOL_COLUMNS) {
+    if (col in fields) {
+      const v = fields[col];
+      push(col, v ? 1 : 0);
+    }
+  }
+
+  if (sets.length === 0) {
+    // Nothing to do. Return the row unchanged.
+    return getCampById(db, id);
+  }
+
+  // Audit columns always written when any edit happens.
+  sets.push('last_edited_at = ?');
+  values.push(nowIso());
+  sets.push('last_edited_by = ?');
+  values.push(editorEmail);
+
+  values.push(id);
+  await db
+    .prepare(`UPDATE camps SET ${sets.join(', ')} WHERE id = ?`)
+    .bind(...values)
+    .run();
+
   return getCampById(db, id);
 }
 
