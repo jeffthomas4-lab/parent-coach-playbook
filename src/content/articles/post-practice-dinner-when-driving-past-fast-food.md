@@ -58,11 +58,11 @@ This is a planning problem, not a willpower problem.
 
 Stock your freezer with:
 
-Frozen burritos (real ones, with beans and cheese and real ingredients)
-Microwaveable rice and beans
-Pasta you can cook in 10 minutes
-Rotisserie chicken (from the grocery store, not the drive-through)
-Frozen veggie patties or other protein
+- Frozen burritos (real ones, with beans and cheese and real ingredients)
+- Microwaveable rice and beans
+- Pasta you can cook in 10 minutes
+- Rotisserie chicken (from the grocery store, not the drive-through)
+- Frozen veggie patties or other protein
 
 This is slower than McDonald's drive-through, but not slow. And 100% better for your kid.
 

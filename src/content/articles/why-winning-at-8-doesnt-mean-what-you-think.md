@@ -58,11 +58,11 @@ Winning is fun. I'm not saying don't celebrate.
 
 But what matters at 8 is:
 
-Does your kid want to come back?
-Do they want to practice?
-Are they getting better?
-Do they have friends?
-Are they learning how to respond to mistakes?
+- Does your kid want to come back?
+- Do they want to practice?
+- Are they getting better?
+- Do they have friends?
+- Are they learning how to respond to mistakes?
 
 A team that loses but learns and stays engaged is ahead of a team that wins but gets cocky.
 

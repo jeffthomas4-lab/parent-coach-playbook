@@ -107,7 +107,7 @@ const ageLabel = (a: string | undefined) =>
                     <a href={`/${a.data.phase}/${a.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
                       {a.data.hero && (
                         <img
-                          src={a.data.hero.src}
+                          src={a.data.hero}
                           alt={a.data.heroAlt || a.data.title}
                           class="w-full h-32 object-cover rounded mb-3 group-hover:opacity-90 transition-opacity"
                         />

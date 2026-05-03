@@ -65,10 +65,10 @@ If you don't have black shorts, Target again: $18-25. You're looking at 15-20 mi
 
 Black shoes include:
 
-Soccer cleats: If your kid plays soccer, these work
-Athletic sneakers: Any black sneaker is fine
-Turf shoes: Some sports allow these
-Cleats for baseball, softball, lacrosse: If they're black, they work
+- Soccer cleats: If your kid plays soccer, these work
+- Athletic sneakers: Any black sneaker is fine
+- Turf shoes: Some sports allow these
+- Cleats for baseball, softball, lacrosse: If they're black, they work
 
 Check the rules. Some tournaments specify cleat type. Most just want black shoes.
 

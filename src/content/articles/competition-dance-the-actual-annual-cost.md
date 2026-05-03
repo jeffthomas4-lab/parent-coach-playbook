@@ -84,21 +84,21 @@ Jewelry, undergarments, tights: $200-300
 
 Low estimate (local competitor only, no nationals):
 
-Costumes: $1,000
-Entry fees: $1,500
-Travel: $1,500
-Classes/coaching: $3,000
-Accessories: $500
+- Costumes: $1,000
+- Entry fees: $1,500
+- Travel: $1,500
+- Classes/coaching: $3,000
+- Accessories: $500
 
 Total: $7,500
 
 High estimate (serious competitor, makes nationals):
 
-Costumes: $1,500
-Entry fees: $5,000
-Travel: $4,000
-Classes/coaching: $5,000
-Accessories: $750
+- Costumes: $1,500
+- Entry fees: $5,000
+- Travel: $4,000
+- Classes/coaching: $5,000
+- Accessories: $750
 
 Total: $16,250
 
@@ -110,12 +110,12 @@ That's real money. That's serious money.
 
 You're buying:
 
-Your kid's participation in a competitive activity
-Community
-Coaching
-Performance opportunities
-Travel experiences
-The chance for your kid to be part of something high-intensity
+- Your kid's participation in a competitive activity
+- Community
+- Coaching
+- Performance opportunities
+- Travel experiences
+- The chance for your kid to be part of something high-intensity
 
 You're not buying guarantees. You're not buying scholarships. You're buying participation.
 

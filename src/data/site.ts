@@ -110,6 +110,32 @@ export const SPORTS = [
   { slug: 'ballet',       label: 'Ballet' },
 ] as const;
 
+// Camp-specific sport options. Camps cover programs that don't fit the canonical SPORTS list:
+// traditional day camps, outdoor adventure, STEM/coding, art camps, plus a few real sports
+// (wrestling, rugby, etc.) that aren't part of the rest of the site.
+//
+// CAMP_SPORTS = SPORTS + the camp-only slugs below, sorted by label.
+// Both /camps/ and /camps/submit/ should consume CAMP_SPORTS so the filter dropdown and
+// the submit form stay in sync.
+const CAMP_ONLY_SPORTS = [
+  { slug: 'multi-sport',    label: 'Multi-sport' },
+  { slug: 'football-7v7',   label: 'Football — 7v7' },
+  { slug: 'wrestling',      label: 'Wrestling' },
+  { slug: 'rugby',          label: 'Rugby' },
+  { slug: 'field-hockey',   label: 'Field hockey' },
+  { slug: 'climbing',       label: 'Rock climbing' },
+  { slug: 'skateboarding',  label: 'Skateboarding' },
+  { slug: 'outdoor',        label: 'Outdoor and adventure' },
+  { slug: 'stem',           label: 'STEM and coding' },
+  { slug: 'arts',           label: 'Arts (visual and performing)' },
+  { slug: 'academic',       label: 'Academic enrichment' },
+  { slug: 'general',        label: 'General day camp' },
+] as const;
+
+export const CAMP_SPORTS = [...SPORTS, ...CAMP_ONLY_SPORTS]
+  .slice()
+  .sort((a, b) => a.label.localeCompare(b.label));
+
 export const AGE_BANDS = [
   { slug: '5-7', label: '5–7' },
   { slug: '8-10', label: '8–10' },

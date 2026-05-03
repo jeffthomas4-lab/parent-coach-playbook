@@ -94,10 +94,10 @@ But water is 90% of the solution.
 
 Dehydration signs:
 
-Extreme tiredness after exertion.
-Dark urine (sign of dehydration).
-Dizziness or lightheadedness.
-Headache after practice.
+- Extreme tiredness after exertion.
+- Dark urine (sign of dehydration).
+- Dizziness or lightheadedness.
+- Headache after practice.
 
 If you see these, hydration is probably the issue.
 

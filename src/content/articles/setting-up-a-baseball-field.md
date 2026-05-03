@@ -30,9 +30,9 @@ First base, second base, and third base form the diamond.
 
 Distance between bases (for youth, depends on age):
 
-8U/10U: 60 feet
-12U/14U: 60 feet
-16U and up: 90 feet
+- 8U/10U: 60 feet
+- 12U/14U: 60 feet
+- 16U and up: 90 feet
 
 (Some leagues vary. Check your specific league rules.)
 
@@ -48,9 +48,9 @@ Mark each base at the correct distance.
 
 From home plate to the pitcher's mound (depending on age):
 
-8U/10U: 40-46 feet (check your league)
-12U/14U: 46 feet
-16U and up: 60 feet 6 inches
+- 8U/10U: 40-46 feet (check your league)
+- 12U/14U: 46 feet
+- 16U and up: 60 feet 6 inches
 
 (Again, varies by league. Know your league's rules.)
 

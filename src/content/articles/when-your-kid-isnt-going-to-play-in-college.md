@@ -168,13 +168,13 @@ Not the championships. Not the trophies.
 
 You'll remember:
 
-The early mornings.
-The terrible tournament food.
-The drive-home conversations.
-The friends you made in the stands.
-The season where your kid finally got it.
-The coach who saw them and believed in them.
-The last game ever and how it felt.
+- The early mornings.
+- The terrible tournament food.
+- The drive-home conversations.
+- The friends you made in the stands.
+- The season where your kid finally got it.
+- The coach who saw them and believed in them.
+- The last game ever and how it felt.
 
 That's what stays. The texture of twelve years.
 

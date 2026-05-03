@@ -2,10 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { listApprovedCamps, type Camp } from '../../lib/camps-db';
-import { SPORTS } from '../../data/site';
+import { CAMP_SPORTS } from '../../data/site';
 
 const sportLabel = (slug: string): string => {
-  const match = SPORTS.find((s) => s.slug === slug);
+  const match = CAMP_SPORTS.find((s) => s.slug === slug);
   if (match) return match.label;
   return slug
     .split(/[\s-]+/)
@@ -44,13 +44,8 @@ const elsewhere = camps.filter(c => !PNW.has(c.state));
 
 // Serialize camps for client-side JS
 const campsJson = JSON.stringify(camps);
-// Camps directory includes the camp-only sport options (multi-sport + football-7v7) on top of the global SPORTS array.
-const campsSportsList = [
-  ...SPORTS,
-  { slug: 'multi-sport', label: 'Multi-sport' },
-  { slug: 'football-7v7', label: 'Football — 7v7' },
-].sort((a, b) => a.label.localeCompare(b.label));
-const sportsListJson = JSON.stringify(campsSportsList);
+// CAMP_SPORTS already includes the camp-only options (multi-sport, outdoor, stem, general, etc).
+const sportsListJson = JSON.stringify(CAMP_SPORTS);
 ---
 <BaseLayout
   title="Camps"

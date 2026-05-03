@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { SPORTS } from '../../data/site';
+import { CAMP_SPORTS } from '../../data/site';
 
 // Static page. Form posts to /api/camps/submit which is SSR.
 export const prerender = true;
@@ -20,13 +20,8 @@ const US_STATES = [
   ['DC','District of Columbia'],
 ] as const;
 
-// Camps include a "multi-sport" option for camps that cover several sports in one program.
-// Also surface a 7v7 football option that isn't in the global SPORTS array.
-const sportOptions = [
-  ...SPORTS,
-  { slug: 'multi-sport', label: 'Multi-sport (multiple sports in one camp)' },
-  { slug: 'football-7v7', label: 'Football — 7v7' },
-].sort((a, b) => a.label.localeCompare(b.label));
+// CAMP_SPORTS is the canonical list shared between this form and the camps directory filter.
+const sportOptions = CAMP_SPORTS;
 ---
 <BaseLayout
   title="Submit a camp"

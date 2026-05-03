@@ -120,6 +120,20 @@ body {
 }
 
 .article-body p { margin: 0 0 1.5em 0; }
+
+/* Lists. Tailwind preflight strips list-style; restore it for prose. */
+.article-body ol,
+.article-body ul {
+  margin: 0 0 1.5em 0;
+  padding-left: 1.5em;
+}
+.article-body ol { list-style: decimal; }
+.article-body ul { list-style: disc; }
+.article-body li { margin: 0 0 0.5em 0; }
+.article-body li::marker { color: var(--rust); font-weight: 500; }
+.article-body li > p { margin: 0 0 0.5em 0; }
+.article-body li > p:last-child { margin-bottom: 0; }
+
 .article-body h2 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;

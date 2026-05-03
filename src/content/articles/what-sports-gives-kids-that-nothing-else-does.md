@@ -24,12 +24,12 @@ Sadness because you know what they're losing. Not the sport. Something deeper.
 
 I'm not talking about dribbling or passing or footwork. I'm talking about what happens when your kid:
 
-Has to show up when they don't want to.
-Has to try hard when they're tired.
-Has to sit on the bench when they want to play.
-Has to be part of something bigger than themselves.
-Has to handle losing when they hate losing.
-Has to celebrate someone else's win when they wanted it themselves.
+- Has to show up when they don't want to.
+- Has to try hard when they're tired.
+- Has to sit on the bench when they want to play.
+- Has to be part of something bigger than themselves.
+- Has to handle losing when they hate losing.
+- Has to celebrate someone else's win when they wanted it themselves.
 
 School doesn't teach this. Clubs don't. Music lessons don't. Only team sports does, consistently, over a long period of time.
 

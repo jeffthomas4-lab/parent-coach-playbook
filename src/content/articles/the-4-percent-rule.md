@@ -83,10 +83,10 @@ Most of these require investment. National tournaments cost money. Good coaching
 
 If you want your 14-year-old on the college path:
 
-Travel team: $2,500-4,000 per year
-National tournaments: $2,000-5,000 per year
-Private coaching (optional but common): $50-200 per session
-Equipment, camps, etc.: $1,000-2,000 per year
+- Travel team: $2,500-4,000 per year
+- National tournaments: $2,000-5,000 per year
+- Private coaching (optional but common): $50-200 per session
+- Equipment, camps, etc.: $1,000-2,000 per year
 
 Total: $5,500-11,000 per year for two years.
 
@@ -168,4 +168,4 @@ Whether that leads to college or not, they're learning. They're growing. They're
 
 That's the outcome that matters.
 
-The scholarship is nice. But the person they become is permanent.
+The scholarship is nice. But the person they become is
