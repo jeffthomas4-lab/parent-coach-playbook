@@ -30,3 +30,6 @@ pnpm-debug.log*
 # sanity
 .sanity/
 sanity-cli.json
+
+# generated SQL imports (don't commit)
+imports/out/

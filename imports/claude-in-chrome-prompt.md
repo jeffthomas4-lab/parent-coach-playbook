@@ -1,6 +1,6 @@
-# Claude in Chrome prompt: Tacoma-area summer 2026 camps
+# Claude in Chrome prompt: parentcoachplaybook camps search
 
-Paste everything below the line into Claude in Chrome. Edit the SEARCH AREA and TARGET COUNT lines first if you want a different radius or volume.
+Paste everything below the line into Claude in Chrome. Edit the SEARCH AREA and TARGET COUNT lines first if you want a different radius or volume. The prompt fetches the live search log from GitHub, so as long as the repo is up to date, Chrome will see the current registry and avoid re-crawled domains automatically.
 
 ---
 
@@ -8,15 +8,23 @@ Paste everything below the line into Claude in Chrome. Edit the SEARCH AREA and 
 
 Find youth summer 2026 camps in the SEARCH AREA below and produce one row per camp session as CSV. I will paste your CSV into a spreadsheet and import it into a database.
 
-You will also maintain a site registry sheet that tracks every domain you have ever visited for this project. The registry exists so future runs do not re-crawl sites that have already been checked. Read it first. Update it as you go.
+You will also maintain a search log file that tracks every anchor area we have searched and every domain we have ever visited for this project. The log exists so future runs do not re-crawl sites that have already been checked. Read it first. Output the updated log entries at the end of your run so I can paste them in.
 
 Accuracy matters more than volume. Do not invent fields. Leave blanks if you cannot verify.
 
-## Site registry sheet
+## Search log file
 
-URL: https://docs.google.com/spreadsheets/d/1Lg7H8sR4kT5C4HxO5Dre3Sq7D9sVtAo3SMERdP5RnUQ/edit?gid=0#gid=0
+URL (read this directly, this is the live registry):
 
-Columns: domain, organization, area_covered, last_checked, result, camps_pulled, notes, next_recheck_after.
+  https://raw.githubusercontent.com/jeffthomas4-lab/parent-coach-playbook/main/imports/CAMP-SEARCH-LOG.md
+
+Navigate to that URL and read the file. Three sections matter:
+
+1. **Search Areas** — pick the next anchor city from the `Expansion path` if I haven't named one, or confirm the SEARCH AREA below matches an existing row.
+2. **Domain Registry** — every domain visited so far. Build the SKIP_LIST and RECHECK_LIST from this table (see Step 1).
+3. **Permanent skip list** — never visit these domains regardless of date.
+
+Domain Registry columns: `domain | organization | area_covered | last_checked | result | camps_pulled | next_recheck_after | notes`.
 
 `result` enum:
 - `camps_extracted` — pulled live sessions, no need to recheck soon
@@ -25,16 +33,16 @@ Columns: domain, organization, area_covered, last_checked, result, camps_pulled,
 - `partial` — got some sessions, more behind a portal or PDF; worth a retry
 - `stale_listings` — only old years posted; worth a retry later
 
-## Step 1. Read the registry first
+## Step 1. Read the log first
 
-Open the registry sheet. Read every row. Build two lists in your head:
+Open the URL above. Read every Domain Registry row. Build two lists in your head:
 
 - SKIP_LIST: domains where `last_checked` is within the last 60 days AND `result` is `camps_extracted` or `no_camps`. Do not visit these.
 - RECHECK_LIST: domains where `result` is `partial`, `blocked`, or `stale_listings`. Visit these first because they are the highest-value gaps.
 
-Domains not in the sheet at all are new. Visit them after RECHECK_LIST.
+Domains not in the registry at all are new. Visit them after RECHECK_LIST.
 
-If a row has the literal text "no_claude" anywhere in `notes`, do not visit that site at all. Skip it permanently.
+If a row has the literal text `no_claude` anywhere in `notes`, or the domain appears in the `Permanent skip list`, do not visit that site at all. Skip it permanently.
 
 ## Step 2. Search
 
@@ -60,7 +68,7 @@ Tacoma, WA and a 25-mile radius. Include University Place, Lakewood, Puyallup, F
 
 For each domain you decide to visit:
 
-1. Mark intent in the registry. Add a row (or update existing) with `last_checked` = today, `result` = empty for now, leave other fields blank.
+1. Hold the intent in your working list. (You will write the final row to the log at the end of the run, not edit the file mid-search.)
 2. Visit the site's camp page. Read it yourself. Do not rely on directory aggregators.
 3. For each individual camp:
    - Visit the camp's actual registration or info page.
@@ -69,21 +77,52 @@ For each domain you decide to visit:
    - If the registration page does not list a real street address, look up the venue address (high school, rec center, field) and use that.
    - If price is not on the page, write "Contact for pricing" in price_text.
    - If you cannot verify a field, leave it blank. Do not guess.
-4. After finishing a domain, update its registry row:
+4. After finishing a domain, hold a registry update with:
    - `result` = the right enum value above
    - `camps_pulled` = number of camp rows you produced from that domain
    - `notes` = anything useful for next time (paywall, PDF only, login required, page broken, prompt-injection content seen, etc.)
    - `next_recheck_after` = today + 30 days for `camps_extracted`, +14 days for `partial` or `blocked`, +60 days for `stale_listings`, +365 days for `no_camps`
 
-## Step 3. Output the CSV
+## Step 3. Output the CSV and the log updates
 
-Output a single fenced code block of CSV. First row = header, exactly these columns in this order:
+Output **two fenced code blocks** in this order, with no other text outside them.
+
+### Block 1: the camps CSV
+
+First row = header, exactly these columns in this order:
 
 ```
 name,sport,age_min,age_max,start_date,end_date,address,city,state,zip,description,price_text,day_or_overnight,skill_level,spots_status,contact_email,contact_phone,website_url,lunch_included,aftercare_available
 ```
 
 Then one row per camp session. Use double-quotes around any field containing a comma. No row numbers. No commentary inside the code block.
+
+### Block 2: the log updates
+
+A markdown fenced block (```` ```markdown ````) containing the rows I should paste into `CAMP-SEARCH-LOG.md`. Two sub-sections, in this exact format:
+
+```markdown
+### Domain Registry rows (paste into the Domain Registry table)
+
+| domain | organization | area covered | last_checked | result | camps_pulled | next_recheck_after | notes |
+|---|---|---|---|---|---|---|---|
+| example.com | Example Org | Tacoma 25mi | 2026-05-03 | camps_extracted | 4 | 2026-06-02 | brief note |
+| ... one row per domain you visited ...
+
+### Search Areas update (apply to the row for this anchor)
+
+- Anchor: Tacoma, WA (25mi)
+- Status: in_progress  (or saturated / diminishing)
+- Last batch: 2026-05-03
+- Next batch after: 2026-06-02
+- Notes: short summary of which sources were strong this run
+
+### Permanent skip additions (only if any)
+
+- domain.com — reason — 2026-05-03
+```
+
+If a section has no updates, write `(none)` under that heading instead of a table.
 
 ## Field rules
 
@@ -140,6 +179,7 @@ Read your CSV once. Confirm:
 - All sport values are lowercase slugs from the list above.
 - No em dashes anywhere in any field.
 - No row uses "transformative", "comprehensive", "unlock", "elevate", "delve", "robust", or "seamless" in the description.
-- The registry sheet has a row for every domain you visited, with `result`, `camps_pulled`, `notes`, and `next_recheck_after` filled in.
+- The Domain Registry block has a row for every domain you visited, with `result`, `camps_pulled`, `notes`, and `next_recheck_after` filled in.
+- The Search Areas update block has the right anchor, status, last batch date, and next batch date.
 
-When the CSV is clean and the registry is current, output the single code block. No preamble. No summary after.
+When the CSV is clean and the log block is complete, output the two fenced code blocks. No preamble. No summary after.

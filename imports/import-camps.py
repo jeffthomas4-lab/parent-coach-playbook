@@ -24,6 +24,9 @@ Optional flags:
     --submitter EMAIL   Override submitter email (default: jeffthomas@pugetsound.edu)
     --out PATH          Override output SQL path
     --skipped PATH      Path to write a CSV of rows that failed validation
+    --anchor TEXT       Anchor area for this batch (e.g., 'Tacoma, WA (25mi)').
+                        When set, a row is appended to CAMP-SEARCH-LOG.md.
+    --no-log            Skip the CAMP-SEARCH-LOG.md append even if --anchor is set.
 """
 
 from __future__ import annotations
@@ -300,6 +303,53 @@ def render_insert(rec: dict[str, Any]) -> str:
     return f"INSERT INTO camps ({cols}) VALUES ({vals});"
 
 
+def append_search_log(
+    log_path: Path,
+    today: str,
+    anchor: str,
+    source_name: str,
+    imported: int,
+    skipped: int,
+    notes: str = "",
+) -> bool:
+    """Append a row to CAMP-SEARCH-LOG.md Batch History. Update Last updated.
+
+    Returns True if the file was modified.
+    """
+    if not log_path.exists():
+        print(f"  CAMP-SEARCH-LOG.md not found at {log_path}; skipping log update")
+        return False
+    content = log_path.read_text(encoding="utf-8")
+
+    # Update the 'Last updated' line near the top.
+    content = re.sub(
+        r"(\*\*Last updated:\*\*\s*)\d{4}-\d{2}-\d{2}",
+        rf"\g<1>{today}",
+        content,
+        count=1,
+    )
+
+    marker = "## Batch History"
+    idx = content.find(marker)
+    if idx < 0:
+        print(f"  no '## Batch History' section in {log_path.name}; skipping log update")
+        return False
+
+    section_end = content.find("\n## ", idx + len(marker))
+    if section_end < 0:
+        section_end = len(content)
+
+    notes_safe = notes.replace("|", "\\|") if notes else ""
+    new_row = f"| {today} | {anchor} | {source_name} | {imported} | {skipped} | {notes_safe} |"
+
+    section = content[idx:section_end].rstrip()
+    new_section = section + "\n" + new_row + "\n"
+    new_content = content[:idx] + new_section + content[section_end:]
+    log_path.write_text(new_content, encoding="utf-8")
+    print(f"  appended batch row to {log_path.name}")
+    return True
+
+
 def unique_slug(name: str, used: set) -> str:
     base = slugify(name)
     if base not in used:
@@ -324,6 +374,11 @@ def main() -> int:
     p.add_argument("--reviewer", default=DEFAULT_REVIEWER)
     p.add_argument("--out", default=None)
     p.add_argument("--skipped", default=None)
+    p.add_argument("--anchor", default=None,
+                   help="Anchor area for this batch (e.g., 'Tacoma, WA (25mi)'). "
+                        "When set, appends a row to CAMP-SEARCH-LOG.md.")
+    p.add_argument("--no-log", action="store_true",
+                   help="Skip the CAMP-SEARCH-LOG.md append even if --anchor is set.")
     args = p.parse_args()
 
     in_path = Path(args.input).resolve()
@@ -436,6 +491,23 @@ def main() -> int:
             for idx, raw, reason in skipped:
                 writer.writerow([idx, reason] + [raw.get(c, "") for c in ALL_COLUMNS])
         print(f"wrote {skipped_path} ({len(skipped)} skipped rows)")
+
+    if args.no_log:
+        print("--no-log set: CAMP-SEARCH-LOG.md not updated")
+    elif not args.anchor:
+        print("note: --anchor not provided; CAMP-SEARCH-LOG.md not updated.")
+        print("      pass --anchor 'Tacoma, WA (25mi)' (or similar) to log this batch.")
+    else:
+        log_path = in_path.parent / "CAMP-SEARCH-LOG.md"
+        append_search_log(
+            log_path=log_path,
+            today=dt.date.today().isoformat(),
+            anchor=args.anchor,
+            source_name=in_path.name,
+            imported=len(valid),
+            skipped=len(skipped),
+            notes="",
+        )
 
     print("\nNext step:")
     print(f'  npx wrangler d1 execute parent-coach-playbook --file="{out_path}" --remote')

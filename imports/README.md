@@ -1,11 +1,12 @@
 # Camps bulk import
 
-Three files. One workflow. Goes from "I want a list of camps" to "they're live on parentcoachplaybook.com" in five steps.
+Four files. One workflow. Goes from "I want a list of camps" to "they're live on parentcoachplaybook.com" in five steps.
 
 ## What's in this folder
 
 ```
 imports/
+  CAMP-SEARCH-LOG.md               persistent memory: areas searched, domains visited, batch history
   camps-template.xlsx              the spreadsheet you give to Claude in Chrome
   claude-in-chrome-prompt.md       the prompt that drives the search
   import-camps.py                  the script that turns the filled sheet into SQL
@@ -13,19 +14,23 @@ imports/
   out/                             generated SQL files land here (gitignored)
 ```
 
+`CAMP-SEARCH-LOG.md` is the single source of truth for what we have already searched. Read it before starting a batch. The Claude-in-Chrome prompt now reads it directly. The import script appends to it after every successful run when you pass `--anchor`.
+
 ## The flow
 
-1. Open `claude-in-chrome-prompt.md`. Edit the SEARCH AREA and TARGET COUNT lines if you want a different radius or volume.
-2. Hand the prompt to Claude in Chrome. Let it run. It will return a CSV block.
-3. Open `camps-template.xlsx`. Delete row 2 (the yellow EXAMPLE row). Paste the CSV data starting at row 2.
-4. Save the file. From the project root:
+1. Open `CAMP-SEARCH-LOG.md`. Pick the next anchor city from the `Expansion path`, or confirm the area you want to fill out next. Note any domains in the registry that need a re-check.
+2. Open `claude-in-chrome-prompt.md`. Edit the SEARCH AREA and TARGET COUNT lines if you want a different radius or volume.
+3. Hand the prompt to Claude in Chrome. Let it run. It will return two fenced blocks: a CSV of camps and a markdown block of log updates.
+4. Paste the log block's tables into `CAMP-SEARCH-LOG.md` (Domain Registry rows, Search Areas update for the anchor row, any permanent skip additions).
+5. Open `camps-template.xlsx`. Delete row 2 (the yellow EXAMPLE row). Paste the CSV data starting at row 2.
+6. Save the file. From the project root, pass `--anchor` so the import logs the batch:
 
    ```powershell
    cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-playbook"
-   python imports/import-camps.py imports/camps-template.xlsx
+   python imports/import-camps.py imports/camps-template.xlsx --anchor "Tacoma, WA (25mi)"
    ```
 
-5. The script geocodes each address (1 sec per unique address, polite to Nominatim) and writes `imports/out/camps-import-YYYY-MM-DD.sql`. Run it:
+7. The script geocodes each address (1 sec per unique address, polite to Nominatim), writes `imports/out/camps-import-YYYY-MM-DD.sql`, and appends a row to `CAMP-SEARCH-LOG.md` Batch History. Run the SQL:
 
    ```powershell
    npx wrangler d1 execute parent-coach-playbook --file=imports/out/camps-import-2026-05-03.sql --remote
@@ -49,11 +54,14 @@ The whole batch runs inside a `BEGIN TRANSACTION ... COMMIT;` block. Either ever
 ## Flags worth knowing
 
 ```
---no-geocode        Don't hit Nominatim. lat/lon stay NULL. Useful for re-runs.
---status pending    Insert as pending instead of approved (queue for review).
---submitter EMAIL   Different submitter email.
---out PATH          Write SQL somewhere other than imports/out/.
---skipped PATH      Write the failed-validation CSV somewhere specific.
+--no-geocode            Don't hit Nominatim. lat/lon stay NULL. Useful for re-runs.
+--status pending        Insert as pending instead of approved (queue for review).
+--submitter EMAIL       Different submitter email.
+--out PATH              Write SQL somewhere other than imports/out/.
+--skipped PATH          Write the failed-validation CSV somewhere specific.
+--anchor "City, ST (Nmi)"  Anchor area string for this batch. Required if you want
+                        the script to append a row to CAMP-SEARCH-LOG.md.
+--no-log                Skip the log append even if --anchor is set.
 ```
 
 ## Validation rules
