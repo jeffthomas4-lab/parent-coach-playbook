@@ -36,7 +36,11 @@
 
   // Vars shared across local + production. Anything secret goes via
   // `npx wrangler pages secret put` instead.
+  //
+  // ADMIN_EMAILS: comma-separated allowlist for /admin/ and /api/admin/ routes.
+  // Read by src/lib/admin-auth.ts. Add or remove emails here, redeploy, done.
   "vars": {
-    "SITE_URL": "https://parentcoachplaybook.com"
+    "SITE_URL": "https://parentcoachplaybook.com",
+    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas@pugetsound.edu"
   }
 }
