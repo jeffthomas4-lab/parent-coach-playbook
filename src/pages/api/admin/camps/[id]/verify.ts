@@ -28,12 +28,14 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
   if (!id) return json({ ok: false, error: 'missing id' }, 400);
 
   let verified = true;
+  let isForm = false;
   try {
     const ct = (request.headers.get('content-type') ?? '').toLowerCase();
     if (ct.includes('application/json')) {
       const body = (await request.json()) as { verified?: boolean };
       verified = body?.verified ?? true;
     } else if (ct.includes('form')) {
+      isForm = true;
       const fd = await request.formData();
       const v = fd.get('verified');
       verified = v === 'true' || v === 'on' || v === '1';
@@ -45,5 +47,15 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
   await setVerified(env.DB, id, verified);
   const camp = await getCampById(env.DB, id);
   if (!camp) return json({ ok: false, error: 'camp not found' }, 404);
+
+  // Browser form submissions get redirected back to the camp's admin page.
+  // Programmatic JSON callers still receive the JSON response.
+  if (isForm) {
+    return new Response(null, {
+      status: 303,
+      headers: { Location: `/admin/camps/${id}/` },
+    });
+  }
+
   return json({ ok: true, camp });
 };

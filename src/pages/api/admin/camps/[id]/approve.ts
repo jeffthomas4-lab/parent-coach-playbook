@@ -31,12 +31,14 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
   }
 
   let notes: string | null = null;
+  let isForm = false;
   try {
     const ct = (request.headers.get('content-type') ?? '').toLowerCase();
     if (ct.includes('application/json')) {
       const body = (await request.json()) as { notes?: string };
       notes = body?.notes?.trim() || null;
     } else if (ct.includes('form')) {
+      isForm = true;
       const fd = await request.formData();
       const v = fd.get('notes');
       if (typeof v === 'string' && v.trim()) notes = v.trim();
@@ -50,6 +52,15 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
       status: 404,
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    });
+  }
+
+  // Browser form submissions get redirected back to the camp's admin page.
+  // Programmatic JSON callers still receive the JSON response.
+  if (isForm) {
+    return new Response(null, {
+      status: 303,
+      headers: { Location: `/admin/camps/${id}/` },
     });
   }
 
