@@ -24,9 +24,9 @@ Also read the `Active filter rules` section at the top of that file. Apply those
 
 ## Step 2. Visit the school's Peachjar board
 
-SCHOOL URL: (paste the school's Peachjar URL here — looks like `https://app.peachjar.com/flyers/all/school/<school-slug>`)
+SCHOOL URL: https://my.peachjar.com/jar?audienceId=61436&tab=school&districtId=2591&audienceType=school
 
-Open the URL. You will see a list of active flyers. Each flyer has:
+Open the URL. You will see a list of active flyers from the school's "jar" view. Each flyer has:
 - A title and an organization
 - A posted date
 - An "active until" / expiration date

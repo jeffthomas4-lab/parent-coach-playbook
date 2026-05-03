@@ -19,8 +19,8 @@ Tracks every Peachjar flyer we've seen so we don't re-process them. Different fr
 
 Set this to the Peachjar URL for your son's school. Chrome navigates here.
 
-**School name:** (fill in)
-**School Peachjar URL:** (fill in, looks like `https://app.peachjar.com/flyers/all/school/<school-slug>`)
+**School name:** (fill in if you want it on the page)
+**School Peachjar URL:** https://my.peachjar.com/jar?audienceId=61436&tab=school&districtId=2591&audienceType=school
 
 If the URL changes year-to-year, update it here once and never again.
 
