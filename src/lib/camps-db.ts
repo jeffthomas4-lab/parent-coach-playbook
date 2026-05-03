@@ -255,6 +255,17 @@ export async function listPendingCamps(db: D1Database): Promise<Camp[]> {
   return result.results ?? [];
 }
 
+/**
+ * Spot-check queue: camps that are live (approved) but Jeff hasn't personally
+ * verified yet. Newest first so the latest imports surface at the top.
+ */
+export async function listApprovedUnverifiedCamps(db: D1Database): Promise<Camp[]> {
+  const result = await db
+    .prepare("SELECT * FROM camps WHERE status = 'approved' AND verified = 0 ORDER BY submitted_at DESC")
+    .all<Camp>();
+  return result.results ?? [];
+}
+
 export async function listAllCampSlugsApproved(db: D1Database): Promise<string[]> {
   const result = await db
     .prepare('SELECT slug FROM camps WHERE status = ?')

@@ -402,6 +402,10 @@ def main() -> int:
                         "When set, appends a row to CAMP-SEARCH-LOG.md.")
     p.add_argument("--no-log", action="store_true",
                    help="Skip the CAMP-SEARCH-LOG.md append even if --anchor is set.")
+    p.add_argument("--pre-verified", action="store_true",
+                   help="Mark all imported rows as verified=1 immediately. Default is "
+                        "verified=0 so they show up in /admin/camps/spot-check for "
+                        "personal review before getting the Verified ✓ badge.")
     args = p.parse_args()
 
     in_path = Path(args.input).resolve()
@@ -466,7 +470,7 @@ def main() -> int:
         rec["submitted_at"] = now_iso
         rec["reviewed_by"] = args.reviewer if args.status == "approved" else None
         rec["reviewed_at"] = now_iso if args.status == "approved" else None
-        rec["verified"] = 1 if args.status == "approved" else 0
+        rec["verified"] = 1 if args.pre_verified else 0
 
     if args.out:
         out_path = Path(args.out).resolve()

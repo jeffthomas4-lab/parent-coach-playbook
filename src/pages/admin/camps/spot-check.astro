@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { listApprovedUnverifiedCamps, type Camp } from '../../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+
+// SSR. Pulls live from D1 each request. Behind Cloudflare Access.
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+let camps: Camp[] = [];
+let dbAvailable = !!env?.DB;
+if (env?.DB) {
+  try {
+    camps = await listApprovedUnverifiedCamps(env.DB);
+  } catch (e) {
+    console.error('listApprovedUnverifiedCamps failed', e);
+  }
+}
+
+const fmtDateTime = (s: string) =>
+  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+const fmtRange = (start: string, end: string) => {
+  const s = new Date(start);
+  const e = new Date(end);
+  return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}–${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+};
+---
+<BaseLayout title="Spot check" description="Approved-but-unverified camps awaiting personal review" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+        Admin · <a href="/admin/camps/" class="hover:underline">Pending</a> · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · Spot check
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+        Spot check queue
+      </h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Camps that are live on the site but haven't been personally verified yet. Click each one's website link, confirm the details still match, then mark verified. Once verified the camp drops off this list and gets the Verified ✓ badge on the public page.
+      </p>
+      {adminEmail ? (
+        <p class="font-display italic text-ink-soft text-sm mt-2" style="font-weight: 500;">
+          Logged in as {adminEmail}. {camps.length} camps awaiting spot check.
+        </p>
+      ) : (
+        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+          Cloudflare Access header not detected. Verify will fail. Configure /admin/* behind Access before deploying.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {!dbAvailable ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database is not bound. Confirm D1 binding in wrangler.jsonc.</p>
+      ) : camps.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">All caught up. Every approved camp has been spot-checked.</p>
+      ) : (
+        <ul class="grid gap-4">
+          {camps.map((c) => (
+            <li class="border border-bone p-5 bg-paper">
+              <div class="flex items-baseline justify-between flex-wrap gap-3">
+                <div class="flex-1 min-w-0">
+                  <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                    {c.sport} · ages {c.age_min}–{c.age_max} · {fmtRange(c.start_date, c.end_date)}{c.program_type === 'league' ? ' · league' : ''}{c.spots_status === 'full' ? ' · full' : c.spots_status === 'waitlist' ? ' · waitlist' : ''}
+                  </p>
+                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5" style="font-weight: 500;">{c.name}</h3>
+                  <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                    {c.address}, {c.city}, {c.state} {c.zip} · imported {fmtDateTime(c.submitted_at)}
+                  </p>
+                  {c.website_url && (
+                    <p class="font-display text-sm mt-1">
+                      <a href={c.website_url} target="_blank" rel="noopener noreferrer" class="text-rust hover:underline" style="font-weight: 500;">{c.website_url} ↗</a>
+                    </p>
+                  )}
+                  {c.price_text && (
+                    <p class="font-display italic text-rust text-xs mt-1" style="font-weight: 500;">{c.price_text}</p>
+                  )}
+                  <p class="font-display text-ink-soft text-sm mt-2 leading-snug max-w-3xl" style="white-space: pre-wrap;">
+                    {c.description.length > 320 ? c.description.slice(0, 320) + '…' : c.description}
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2 items-end">
+                  <a href={`/camps/${c.slug}/`} target="_blank" rel="noopener noreferrer" class="font-display italic text-rust text-sm hover:underline" style="font-weight: 500;">View on site ↗</a>
+                  <a href={`/admin/camps/${c.id}/`} class="t-cta">Edit →</a>
+                  <form method="POST" action={`/api/admin/camps/${c.id}/verify`} class="inline">
+                    <input type="hidden" name="verified" value="true" />
+                    <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;">Mark verified ✓</button>
+                  </form>
+                  <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline">
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;">Reject</button>
+                  </form>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>
