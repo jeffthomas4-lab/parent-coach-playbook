@@ -128,6 +128,17 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           {/* Filter Bar */}
           <div class="mb-8 border border-bone bg-paper-warm p-6">
             <div class="flex flex-wrap items-end gap-4 mb-6">
+              {/* Search by name */}
+              <div>
+                <label for="filter-search" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Search</label>
+                <input
+                  type="search"
+                  id="filter-search"
+                  placeholder="Camp name, org, or keyword"
+                  class="font-display px-3 py-2 border border-bone bg-paper w-64"
+                />
+              </div>
+
               {/* Sport Dropdown */}
               <div>
                 <label for="filter-sport" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Sport</label>
@@ -366,6 +377,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       // Filter state. showLeagues and showFull default to false so the page
       // opens with only camps that parents can actually sign up for right now.
       let state = {
+        search: '',
         sport: '',
         ageMin: null,
         ageMax: null,
@@ -460,6 +472,14 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           // Hide full programs unless toggled on.
           if (c.spots_status === 'full' && !state.showFull) return false;
 
+          // Free-text search across name, city, and description. Case-insensitive
+          // substring match. Empty string matches everything.
+          if (state.search) {
+            const q = state.search.toLowerCase();
+            const haystack = `${c.name} ${c.city} ${c.description}`.toLowerCase();
+            if (!haystack.includes(q)) return false;
+          }
+
           // Sport
           if (state.sport && c.sport !== state.sport) return false;
 
@@ -525,6 +545,12 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
       // Event listeners
       function attachListeners() {
+        // Free-text search
+        document.getElementById('filter-search').addEventListener('input', (e) => {
+          state.search = e.target.value.trim();
+          applyFilters();
+        });
+
         // Sport
         document.getElementById('filter-sport').addEventListener('change', (e) => {
           state.sport = e.target.value;
@@ -619,7 +645,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
         // Clear filters — resets to default which hides leagues + full programs.
         document.getElementById('clear-filters').addEventListener('click', () => {
-          state = { sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false };
+          state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false };
+          document.getElementById('filter-search').value = '';
           document.getElementById('filter-sport').value = '';
           document.getElementById('filter-age-min').value = '';
           document.getElementById('filter-age-max').value = '';

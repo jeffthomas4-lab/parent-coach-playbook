@@ -93,6 +93,18 @@ const normalizeUrl = (raw: string | null): string | null => {
   return `https://${trimmed}`;
 };
 const websiteHref = normalizeUrl(camp.website_url);
+const registrationHref = normalizeUrl(camp.registration_url);
+
+// Parse gallery_keys (stored as JSON array of R2 keys). Tolerant of empty/null.
+let galleryKeys: string[] = [];
+if (camp.gallery_keys) {
+  try {
+    const parsed = JSON.parse(camp.gallery_keys);
+    if (Array.isArray(parsed)) galleryKeys = parsed.filter((k) => typeof k === 'string' && k.length > 0);
+  } catch {
+    // ignore malformed
+  }
+}
 
 const hasGeo = typeof camp.latitude === 'number' && typeof camp.longitude === 'number';
 const mapsHref = hasGeo
@@ -115,14 +127,24 @@ const mapsHref = hasGeo
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
         <a href="/camps/" class="hover:underline">Camps</a> · {sportPretty}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        {camp.name}
-        {camp.verified === 1 && (
-          <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5" style="font-weight: 500;" title="Verified by the Parent Coach Playbook editorial">
-            Verified ✓
-          </span>
+      <div class="flex items-start gap-4 max-w-3xl">
+        {camp.is_claimed === 1 && camp.logo_key && (
+          <img
+            src={`/camp-photos/${camp.logo_key}`}
+            alt={`${camp.name} logo`}
+            class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 object-contain bg-paper-warm border border-bone"
+            loading="eager"
+          />
         )}
-      </h1>
+        <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0]" style="font-weight: 500;">
+          {camp.name}
+          {camp.verified === 1 && (
+            <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5" style="font-weight: 500;" title="Verified by the Parent Coach Playbook editorial">
+              Verified ✓
+            </span>
+          )}
+        </h1>
+      </div>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {sportPretty} · ages {camp.age_min}–{camp.age_max} · {fmtRange(camp.start_date, camp.end_date)}
         {avgRating !== null && (
@@ -163,6 +185,23 @@ const mapsHref = hasGeo
           </div>
         )}
       </div>
+
+      {camp.is_claimed === 1 && registrationHref && camp.spots_status !== 'full' && (
+        <div class="mt-6 max-w-3xl">
+          <a
+            href={registrationHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block font-display px-6 py-3 bg-rust text-paper hover:opacity-90 transition-opacity"
+            style="font-weight: 500;"
+          >
+            Register now ↗
+          </a>
+          <p class="font-display italic text-ink-soft text-xs mt-2" style="font-weight: 500;">
+            Registration goes directly to the camp's site. We don't take a commission.
+          </p>
+        </div>
+      )}
     </div>
   </section>
 
@@ -176,6 +215,26 @@ const mapsHref = hasGeo
           {camp.lunch_included ? 'Lunch included.' : 'Bring lunch.'}
           {' '}{camp.aftercare_available ? 'Aftercare available.' : 'No aftercare.'}
         </p>
+
+        {camp.is_claimed === 1 && galleryKeys.length > 0 && (
+          <section class="mt-10 pt-8 border-t border-bone">
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4" style="font-weight: 500;">
+              Photos
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {galleryKeys.map((key, idx) => (
+                <div class="border border-bone bg-paper-warm overflow-hidden" style="aspect-ratio: 4/3;">
+                  <img
+                    src={`/camp-photos/${key}`}
+                    alt={`${camp.name} photo ${idx + 1}`}
+                    loading="lazy"
+                    style="width: 100%; height: 100%; object-fit: cover;"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {sportGuide && (
           <section class="mt-10 pt-8 border-t border-bone">
