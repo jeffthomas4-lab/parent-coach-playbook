@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 import { TOOLS_NAV, SPORTS } from '../../data/site';
 import { PROFILES } from '../../data/costDefaults';
 
@@ -114,9 +115,7 @@ const profileCount = PROFILES.length;
         {featuredPathways.map((p) => (
           <a href={`/pathways/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
             <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Pathway · {sportLabel(p.data.sport)}</p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {p.data.title}
-            </h3>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
           </a>
         ))}
@@ -124,9 +123,7 @@ const profileCount = PROFILES.length;
         {featuredBody.map((b) => (
           <a href={`/body/${b.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
             <p class="font-display italic text-xs mb-2" style="color: #5C7459; font-weight: 500;">The body · {b.data.category}</p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {b.data.title}
-            </h3>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(b.data.title)} />
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{b.data.summary}</p>
           </a>
         ))}
@@ -134,9 +131,7 @@ const profileCount = PROFILES.length;
         {featuredCalendars.map((c) => (
           <a href={`/season-calendar/${c.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
             <p class="font-display italic text-xs mb-2" style="color: #8FA68C; font-weight: 500;">Calendar · {sportLabel(c.data.sport)}</p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {c.data.title}
-            </h3>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(c.data.title)} />
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{c.data.summary}</p>
           </a>
         ))}

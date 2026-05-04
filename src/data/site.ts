@@ -44,6 +44,8 @@ export const TOOLS_NAV = [
   { slug: 'adaptive',         label: 'Adaptive athletes', href: '/adaptive/',         blurb: 'ADHD, autism, sensory, Unified Sports, adaptive leagues.' },
   { slug: 'decisions',        label: 'Decisions',         href: '/decisions/',        blurb: 'The big youth-sports decisions. Travel, quit, specialize, how many.' },
   { slug: 'pendulum',         label: 'The pendulum',      href: '/youth-sports-pendulum/', blurb: 'Where is your family on the fun-to-performance spectrum right now?' },
+  { slug: 'mental-skills',    label: 'Mental skills',     href: '/mental-skills/',    blurb: 'Pre-game nerves, performance anxiety, burnout, identity. Sports psychology for parents.' },
+  { slug: 'governing-bodies', label: 'Governing bodies',  href: '/governing-bodies/', blurb: 'The directory parents send each other when somebody says "check the rule book."' },
 ] as const;
 
 export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];

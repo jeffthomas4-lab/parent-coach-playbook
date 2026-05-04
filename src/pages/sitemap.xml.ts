@@ -64,6 +64,8 @@ export async function GET(ctx: APIContext) {
     '/scripts/',
     '/decisions/',
     '/youth-sports-pendulum/',
+    '/mental-skills/',
+    '/governing-bodies/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
     ...campSlugs.map(slug => `/camps/${slug}/`),

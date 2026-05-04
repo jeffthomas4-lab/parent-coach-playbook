@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SeasonCalendarChart from '../../components/SeasonCalendarChart.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -33,7 +34,7 @@ const siblingCalendars = allCalendars
 const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
 ---
 <BaseLayout
-  title={calendar.data.title}
+  title={stripTitle(calendar.data.title)}
   description={calendar.data.summary}
 >
   <section class="border-b border-bone">
@@ -43,9 +44,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
         <a href="/season-calendar/" class="hover:underline">Season calendar</a> ·
         {sportLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
-        {calendar.data.title}
-      </h1>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(calendar.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {calendar.data.summary}
       </p>
@@ -87,7 +86,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
               <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">From The body</p>
               <ul class="grid gap-2">
                 {relatedBody.map(b => (
-                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {b.data.title}</a></li>
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(b.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
@@ -96,7 +95,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
             <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Other paths</p>
             <ul class="grid gap-2">
               {siblingCalendars.map(c => (
-                <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {c.data.title}</a></li>
+                <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(c.data.title)} /></a></li>
               ))}
               <li><a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ Run the cost for this sport</a></li>
             </ul>

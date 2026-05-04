@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { TEAM_PARENT_TOPICS, TEAM_PARENT_CATEGORIES } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 
 // Get articles marked as team-parent phase
 const teamParentArticles = (await getCollection('articles', ({ data }) =>
@@ -121,7 +122,7 @@ const topicData = TEAM_PARENT_TOPICS.map(topic => {
                         rel={r.data.type === 'external' ? 'noopener' : undefined}
                         target={r.data.type === 'external' ? '_blank' : undefined}
                       >
-                        {r.data.title}
+                        <span set:html={renderTitle(r.data.title)} />
                         {r.data.type === 'external' && <span aria-hidden="true"> ↗</span>}
                       </a>
                       <span

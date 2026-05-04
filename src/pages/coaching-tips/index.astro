@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SPORTS, AGE_BANDS, EDITORIAL } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 
 const tips = (await getCollection('coachingTips', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -86,9 +87,7 @@ const focusOptions = [
                 <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
                   {[t.data.sport, t.data.age, t.data.focus].filter(Boolean).join(' · ')}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-                  {t.data.title}
-                </h3>
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(t.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
                   {t.data.summary}
                 </p>

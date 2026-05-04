@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// National governing bodies by sport. The link parents need when they hear a phrase
+// like "USA Hockey rules" or "NFHS state rule" and want the source.
+const nationalBodies = [
+  { sport: 'Baseball',          orgs: [
+    { name: 'Little League International',                url: 'https://www.littleleague.org/' },
+    { name: 'USA Baseball',                                url: 'https://www.usabaseball.com/' },
+    { name: 'Cal Ripken / Babe Ruth League',               url: 'https://www.baberuthleague.org/' },
+    { name: 'PONY Baseball',                                url: 'https://www.pony.org/' },
+  ] },
+  { sport: 'Softball',          orgs: [
+    { name: 'USA Softball',                                url: 'https://www.usasoftball.com/' },
+    { name: 'Little League Softball',                      url: 'https://www.littleleague.org/play-little-league/softball/' },
+  ] },
+  { sport: 'Soccer',            orgs: [
+    { name: 'US Soccer',                                   url: 'https://www.ussoccer.com/' },
+    { name: 'US Youth Soccer',                             url: 'https://www.usyouthsoccer.org/' },
+    { name: 'AYSO (American Youth Soccer Organization)',   url: 'https://www.ayso.org/' },
+    { name: 'ECNL (Elite Clubs National League)',          url: 'https://www.theecnl.com/' },
+    { name: 'MLS Next',                                    url: 'https://www.mlssoccer.com/mlsnext/' },
+  ] },
+  { sport: 'Basketball',        orgs: [
+    { name: 'USA Basketball',                              url: 'https://www.usab.com/' },
+    { name: 'AAU Basketball',                              url: 'https://aaubasketball.org/' },
+    { name: 'Nike EYBL',                                   url: 'https://www.eybl.com/' },
+  ] },
+  { sport: 'Football',          orgs: [
+    { name: 'USA Football',                                url: 'https://www.usafootball.com/' },
+    { name: 'Pop Warner',                                  url: 'https://www.popwarner.com/' },
+    { name: 'American Youth Football',                     url: 'https://www.americanyouthfootball.com/' },
+    { name: 'NFL Flag',                                    url: 'https://www.nflflag.com/' },
+  ] },
+  { sport: 'Hockey',            orgs: [
+    { name: 'USA Hockey',                                  url: 'https://www.usahockey.com/' },
+    { name: 'AAU Ice Hockey',                              url: 'https://aauicehockey.org/' },
+  ] },
+  { sport: 'Lacrosse',          orgs: [
+    { name: 'USA Lacrosse (formerly US Lacrosse)',         url: 'https://www.usalacrosse.com/' },
+  ] },
+  { sport: 'Volleyball',        orgs: [
+    { name: 'USA Volleyball',                              url: 'https://usavolleyball.org/' },
+    { name: 'JVA (Junior Volleyball Association)',         url: 'https://www.jvaonline.org/' },
+    { name: 'AAU Volleyball',                              url: 'https://aauvolleyball.org/' },
+  ] },
+  { sport: 'Swimming',          orgs: [
+    { name: 'USA Swimming',                                url: 'https://www.usaswimming.org/' },
+    { name: 'YMCA Swimming',                                url: 'https://ymca.net/' },
+  ] },
+  { sport: 'Track & Field / XC',orgs: [
+    { name: 'USA Track & Field',                           url: 'https://www.usatf.org/' },
+    { name: 'AAU Track & Field',                           url: 'https://aautrackandfield.org/' },
+  ] },
+  { sport: 'Tennis',            orgs: [
+    { name: 'USTA',                                         url: 'https://www.usta.com/' },
+  ] },
+  { sport: 'Golf',              orgs: [
+    { name: 'USGA / US Kids Golf',                         url: 'https://www.uskidsgolf.com/' },
+    { name: 'PGA Junior League',                            url: 'https://www.pgajrleague.com/' },
+  ] },
+  { sport: 'Gymnastics',        orgs: [
+    { name: 'USA Gymnastics',                              url: 'https://usagym.org/' },
+  ] },
+  { sport: 'Cheer',             orgs: [
+    { name: 'USASF (US All Star Federation)',              url: 'https://www.usasf.net/' },
+    { name: 'USA Cheer',                                   url: 'https://www.usacheer.org/' },
+  ] },
+  { sport: 'Martial Arts',      orgs: [
+    { name: 'USA Taekwondo',                               url: 'https://www.usataekwondo.us/' },
+    { name: 'USA Judo',                                    url: 'https://www.teamusa.com/usa-judo' },
+    { name: 'USA Karate',                                  url: 'https://www.usankf.org/' },
+  ] },
+  { sport: 'Wrestling',         orgs: [
+    { name: 'USA Wrestling',                               url: 'https://www.usawrestling.org/' },
+  ] },
+  { sport: 'Crew',              orgs: [
+    { name: 'USRowing',                                    url: 'https://usrowing.org/' },
+  ] },
+];
+
+// High school athletic associations: NFHS is the national umbrella.
+const hsBodies = [
+  { name: 'NFHS — National Federation of State High School Associations', url: 'https://www.nfhs.org/', blurb: 'Umbrella for all 50 state HS athletic associations. Publishes the rule books most HS sports use.' },
+  { name: 'NFHS state association directory',                              url: 'https://www.nfhs.org/who-we-are/our-members/', blurb: 'Find your state\'s high school athletic association. The authority on eligibility, transfers, and your kid\'s actual season schedule.' },
+];
+
+// College recruiting governing bodies.
+const collegeBodies = [
+  { name: 'NCAA',                                                          url: 'https://www.ncaa.org/' },
+  { name: 'NCAA Eligibility Center',                                       url: 'https://web3.ncaa.org/ecwr3/' },
+  { name: 'NAIA',                                                          url: 'https://www.naia.org/' },
+  { name: 'NAIA Eligibility Center',                                       url: 'https://www.playnaia.org/' },
+  { name: 'NJCAA (junior college)',                                        url: 'https://www.njcaa.org/' },
+];
+
+// Safety, integrity, and adaptive sports organizations parents should know exist.
+const safetyAndAdaptive = [
+  { name: 'U.S. Center for SafeSport',                                     url: 'https://uscenterforsafesport.org/',                       blurb: 'Required training for many youth sport coaches. Reports of abuse and misconduct in Olympic and Paralympic movement sports.' },
+  { name: 'CDC HEADS UP',                                                  url: 'https://www.cdc.gov/headsup/youthsports/index.html',     blurb: 'Concussion training and resources for coaches, parents, and athletes.' },
+  { name: 'Korey Stringer Institute',                                      url: 'https://ksi.uconn.edu/',                                blurb: 'Heat illness prevention and youth sport safety research.' },
+  { name: 'Project Play (Aspen Institute)',                                url: 'https://projectplay.org/',                              blurb: 'National research and policy on youth sports participation, costs, and health.' },
+  { name: 'Special Olympics',                                              url: 'https://www.specialolympics.org/',                      blurb: 'Programs for athletes with intellectual disabilities, plus Unified Sports.' },
+  { name: 'Move United',                                                   url: 'https://www.moveunitedsport.org/',                      blurb: 'National adaptive sports network. Programs for athletes with physical disabilities.' },
+  { name: 'Adaptive Sports USA',                                           url: 'https://www.adaptivesportsusa.org/',                    blurb: 'National governing body for adaptive sports across multiple disciplines.' },
+];
+---
+<BaseLayout
+  title="Governing bodies finder"
+  description="The national governing body, state HS athletic association, and major youth-sport organization for every sport we cover. The directory parents send each other when somebody says 'check the rule book.'"
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Reference</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        The <em class="text-rust">governing bodies</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Every sport has an authority. The national governing body sets the rules. The state high school association sets eligibility. The big youth associations run the leagues most kids play in. This is the directory.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-6 max-w-2xl leading-snug" style="font-weight: 500;">
+        When someone tells you "the rule book says..." or "USA Hockey requires..." this is where you go to verify.
+      </p>
+    </div>
+  </section>
+
+  <!-- High school athletic associations (most-used) -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 md:py-12 max-w-4xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">High school athletics</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+        Your <em class="text-rust">state HS association</em> is the authority on eligibility.
+      </h2>
+      <p class="font-display text-ink-soft mt-3 leading-snug">
+        Transfers, GPA minimums, season dates, postseason qualifying, residency rules. All run by your state's high school athletic association under the NFHS umbrella.
+      </p>
+      <ul class="grid gap-3 mt-6">
+        {hsBodies.map((b) => (
+          <li>
+            <a href={b.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block" style="font-weight: 500;">{b.name} ↗</a>
+            <p class="font-display italic text-ink-soft text-sm leading-snug mt-1" style="font-weight: 500;">{b.blurb}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- National governing bodies by sport -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">By sport</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+        National governing bodies and major youth organizations.
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone mt-8">
+        {nationalBodies.map((s) => (
+          <div class="bg-paper p-6">
+            <p class="font-display italic text-rust text-xs mb-3" style="font-weight: 500;">{s.sport}</p>
+            <ul class="grid gap-2">
+              {s.orgs.map((o) => (
+                <li>
+                  <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">{o.name} ↗</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- College recruiting -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-12 max-w-4xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">College recruiting</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+        The eligibility centers that decide whether your kid can play.
+      </h2>
+      <p class="font-display text-ink-soft mt-3 leading-snug">
+        For NCAA D1 and D2, register with the Eligibility Center. For NAIA, register with PlayNAIA. For NJCAA, individual schools. D3 has no central eligibility center.
+      </p>
+      <ul class="grid gap-3 mt-6">
+        {collegeBodies.map((b) => (
+          <li>
+            <a href={b.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust" style="font-weight: 500;">{b.name} ↗</a>
+          </li>
+        ))}
+      </ul>
+      <p class="font-display italic text-ink-soft text-sm mt-5" style="font-weight: 500;">
+        See also: <a href="/recruiting/the-recruiting-process/" class="text-rust hover:underline">The Recruiting Process</a> · <a href="/recruiting/ncaa-eligibility-center/" class="text-rust hover:underline">NCAA Eligibility Center</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Safety + adaptive -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Safety, research, and adaptive</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+        Other organizations parents should know exist.
+      </h2>
+      <ul class="grid gap-4 mt-8 max-w-3xl">
+        {safetyAndAdaptive.map((o) => (
+          <li>
+            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg" style="font-weight: 500;">{o.name} ↗</a>
+            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1" style="font-weight: 500;">{o.blurb}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10 max-w-3xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Missing one?</p>
+      <p class="font-display text-ink leading-relaxed">
+        Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a> with the sport and organization. We'll add it.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

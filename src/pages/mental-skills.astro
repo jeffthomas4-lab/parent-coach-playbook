@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import { isLive } from '../lib/publishFilter';
+import { renderTitle } from '../lib/title';
+
+// Pull all body topics tagged mental-skills, plus related scripts and decisions.
+const bodyTopics = (await getCollection('body', ({ data }) => isLive(data) && data.category === 'mental-skills'))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const allScripts = await getCollection('scripts', ({ data }) => isLive(data));
+const relatedScriptSlugs = ['kid-upset','kid-silent','before-game-nerves','after-a-bad-game'];
+const relatedScripts = relatedScriptSlugs
+  .map(slug => allScripts.find(s => s.slug === slug))
+  .filter(Boolean) as typeof allScripts;
+
+const allDecisions = await getCollection('decisions', ({ data }) => isLive(data));
+const relatedDecisions = ['should-my-kid-quit-sports']
+  .map(slug => allDecisions.find(d => d.slug === slug))
+  .filter(Boolean) as typeof allDecisions;
+---
+<BaseLayout
+  title="Mental skills"
+  description="Pre-game nerves. Performance anxiety. Burnout signs. Identity beyond the sport. The mental side of youth sports, parent-to-parent."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/body/" class="hover:underline">The body</a> · Mental skills
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Mental <em class="text-rust">skills</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Mental skills are skills. Pre-game nerves, performance anxiety, burnout, the identity wrap-up — all of it has names, evidence, and protocols. Parent-to-parent.
+      </p>
+      <aside class="mt-8 border-l-4 pl-4 py-3 max-w-2xl" style="border-color: #B8908F; background: #FAF6F1;">
+        <p class="font-display italic text-rust text-sm" style="font-weight: 500;">What this is</p>
+        <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+          Sports-psychology basics translated for parents. Cites AASP, USOPC, AAP. Not a substitute for a sports psychologist or licensed therapist when one is needed. We tell you when to bring one in.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Body topics tagged mental-skills -->
+  {bodyTopics.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Read</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+          {bodyTopics.map((t) => (
+            <a href={`/body/${t.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(t.data.title)} />
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
+              <p class="t-cta mt-3">Open →</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related scripts -->
+  {relatedScripts.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-12">
+        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Scripts</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-6" style="font-weight: 500;">
+          What to say in the moments where mental skills get tested.
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+          {relatedScripts.map((s) => (
+            <a href={`/scripts/${s.slug}/`} class="bg-paper p-5 group block hover:bg-paper-warm transition-colors">
+              <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(s.data.title)} />
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{s.data.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related decisions -->
+  {relatedDecisions.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Related decision</p>
+        <div class="grid md:grid-cols-2 gap-px bg-bone max-w-3xl">
+          {relatedDecisions.map((d) => (
+            <a href={`/decisions/${d.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(d.data.title)} />
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{d.data.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Closing -->
+  <section class="border-b border-bone bg-ink text-paper">
+    <div class="container-px py-12 max-w-3xl">
+      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The point</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+        Mental skills are skills. Coachable, learnable, real. The kid who has them lasts longer in sport — and in everything else.
+      </p>
+    </div>
+  </section>
+
+  <LeadMagnetCTA />
+</BaseLayout>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
 const calendars = (await getCollection('seasonCalendars', ({ data }) => isLive(data)))
@@ -50,9 +51,7 @@ const levelAccent: Record<string, string> = {
               <p class="font-display italic text-xs mb-2" style={`color: ${levelAccent[c.data.level]}; font-weight: 500;`}>
                 {sportLabel(c.data.sport)} · {levelLabel[c.data.level]}{c.data.region ? ` · ${c.data.region}` : ''}
               </p>
-              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-                {c.data.title}
-              </h2>
+              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(c.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{c.data.summary}</p>
               <p class="font-display italic text-ink-soft text-xs mt-3" style="font-weight: 500;">
                 {c.data.durationLabel}

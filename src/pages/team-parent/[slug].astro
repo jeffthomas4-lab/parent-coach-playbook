@@ -13,6 +13,7 @@ import {
   SITE,
 } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
 
 type Article = CollectionEntry<'articles'>;
 type Resource = CollectionEntry<'resources'>;
@@ -125,7 +126,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
 ---
 {props.kind === 'resource' && resource && cat && ResourceContent && (
   <BaseLayout
-    title={resource.data.title}
+    title={stripTitle(resource.data.title)}
     description={resource.data.summary}
   >
     <section class="border-b border-bone" style={`background: ${cat.accent}15;`}>
@@ -133,9 +134,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
         <p class="font-display italic mb-2" style={`color: ${cat.accent}; font-weight: 500;`}>
           <a href="/team-parent/" class="hover:underline">Team Parent</a> · <a href={`/team-parent/#${cat.slug}`} class="hover:underline">{cat.label}</a>
         </p>
-        <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-          {resource.data.title}
-        </h1>
+        <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(resource.data.title)} />
         <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
           {resource.data.summary}
         </p>
