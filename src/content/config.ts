@@ -282,7 +282,7 @@ const recruiting = defineCollection({
       title: z.string(),
       summary: z.string(),
       category: z.enum([
-        'overview','sport-specific','timeline','eligibility','nil','commits','showcases','walk-on','transfer-portal','academics',
+        'overview','sport-specific','timeline','eligibility','nil','commits','showcases','walk-on','transfer-portal','academics','communication',
       ]),
       gradeLevels: z.array(z.enum(['8','9','10','11','12'])).default([]),
       divisions: z.array(z.enum(['d1','d2','d3','naia','juco','all'])).default(['all']),
