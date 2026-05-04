@@ -10,6 +10,8 @@ const profilesPayload = PROFILES.map((p) => ({
   level: p.level,
   estimatedGames: p.estimatedGames,
   lines: p.lines,
+  sources: p.sources,
+  sourceNote: p.sourceNote,
 }));
 
 const sportsForPicker = [
@@ -26,7 +28,7 @@ const levels = [
 ---
 <BaseLayout
   title="Cost calculator"
-  description="What does a year of youth sports actually cost? Pick a sport and level, edit the line items, see the per-year, per-month, and per-game-your-kid-actually-plays-in number."
+  description="What does a year of youth sports actually cost? Pick a sport and level. We pre-fill national medians at every tier. Edit any line. Honest math either way."
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
@@ -37,7 +39,7 @@ const levels = [
         What does a year <em class="text-rust">actually cost</em>?
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Pick a sport and level. We pre-fill national medians. Edit any line. The dashboard updates in real time. Save the result, share the URL.
+        Pick a sport and level. Pre-filled with national medians at every tier — rec, school, travel, and elite. Edit any line. Honest numbers either way.
       </p>
     </div>
   </section>
@@ -73,13 +75,7 @@ const levels = [
             <div class="mt-4 grid md:grid-cols-2 gap-4">
               <div>
                 <label class="font-display italic text-rust text-sm block mb-1" style="font-weight: 500;">Estimated games your kid plays in</label>
-                <input
-                  type="number"
-                  data-games
-                  class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm"
-                  style="font-weight: 500;"
-                  min="1"
-                />
+                <input type="number" data-games class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm" style="font-weight: 500;" min="1" />
                 <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">
                   Actual games where they got real minutes. Not roster games.
                 </p>
@@ -94,6 +90,17 @@ const levels = [
             <button data-reset type="button" class="btn btn-ghost">Reset to defaults</button>
             <button data-share type="button" class="btn">Copy share URL</button>
           </div>
+
+          <div class="mt-8 border border-bone bg-paper p-5" data-sources>
+            <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">Where these defaults come from</p>
+            <p class="font-display text-ink-soft text-sm leading-snug" data-source-note>
+              Pick a sport and level to see the sources behind the defaults.
+            </p>
+            <ul class="grid gap-1 mt-3" data-source-list></ul>
+            <p class="font-display italic text-ink-soft text-xs mt-3 leading-snug" style="font-weight: 500;">
+              Full list of profiles and their sourcing on the <a href="/cost-calculator/methodology/" class="text-rust hover:underline">methodology page</a>.
+            </p>
+          </div>
         </div>
 
         <!-- Dashboard -->
@@ -102,55 +109,96 @@ const levels = [
             <p class="font-display italic mb-1" style="color: #D4AB6A; font-weight: 500;">Annual total</p>
             <p class="font-display text-paper" style="font-weight: 500; font-size: 3rem; line-height: 1;" data-total-annual>$0</p>
 
-            <div class="mt-6 grid grid-cols-2 gap-4 pt-4 border-t" style="border-color: #5a4d44;">
+            <div class="mt-6 grid grid-cols-3 gap-3 pt-4 border-t" style="border-color: #5a4d44;">
               <div>
                 <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per month</p>
-                <p class="font-display text-paper text-2xl mt-1" style="font-weight: 500;" data-total-monthly>$0</p>
+                <p class="font-display text-paper text-xl mt-1" style="font-weight: 500;" data-total-monthly>$0</p>
+              </div>
+              <div>
+                <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per week</p>
+                <p class="font-display text-paper text-xl mt-1" style="font-weight: 500;" data-total-weekly>$0</p>
               </div>
               <div>
                 <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per game played</p>
-                <p class="font-display text-paper text-2xl mt-1" style="font-weight: 500;" data-total-per-game>$0</p>
+                <p class="font-display text-paper text-xl mt-1" style="font-weight: 500;" data-total-per-game>$0</p>
               </div>
             </div>
 
-            <p class="font-display italic text-paper-warm text-xs mt-6 leading-snug" style="font-weight: 500;">
-              The per-game number is the gut punch. It's the one to share when the travel-ball debate starts.
+            <div class="mt-5 pt-4 border-t" style="border-color: #5a4d44;">
+              <p class="font-display italic text-paper-warm text-xs mb-2" style="font-weight: 500;">Insights</p>
+              <ul class="grid gap-2 font-display text-sm" data-insights style="font-weight: 400;">
+                <li class="text-paper-warm">Pick a sport and level to see your insights.</li>
+              </ul>
+            </div>
+
+            <p class="font-display italic text-paper-warm text-xs mt-5 leading-snug" style="font-weight: 500;">
+              Per-game-played is the metric most parents find most useful. Works the same whether you're spending $400 a season or $14,000.
             </p>
           </div>
 
+          <div class="mt-5 border border-bone bg-paper-warm p-4">
+            <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">See also</p>
+            <ul class="grid gap-1.5">
+              <li><a href="/cost-calculator/methodology/" class="font-display italic text-ink hover:text-rust text-sm" style="font-weight: 500;">→ Methodology: where the numbers come from</a></li>
+              <li data-related-pathway style="display: none;"><a class="font-display italic text-ink hover:text-rust text-sm" style="font-weight: 500;" href="#">→ Pathway for this sport</a></li>
+              <li data-related-calendar style="display: none;"><a class="font-display italic text-ink hover:text-rust text-sm" style="font-weight: 500;" href="#">→ Season calendar for this sport</a></li>
+              <li><a href="/body/" class="font-display italic text-ink hover:text-rust text-sm" style="font-weight: 500;">→ Body topics: what to spend on, what to skip</a></li>
+            </ul>
+          </div>
+
           <p class="font-display italic text-ink-soft text-xs mt-4 leading-snug" style="font-weight: 500;">
-            Numbers are saved to this browser only. Use Copy share URL to send a snapshot. Defaults sourced from the Aspen Institute Project Play and public registration data.
+            Numbers saved to this browser only. Use Copy share URL to send a snapshot.
           </p>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- Bootstrap data for the client -->
   <script type="application/json" id="cost-profiles" set:html={JSON.stringify(profilesPayload)} />
   <script type="application/json" id="level-blurbs" set:html={JSON.stringify(levels)} />
 
   <script>
     type Line = { key: string; label: string; default: number; hint?: string; hideable?: boolean };
-    type Profile = { sport: string; level: 'rec'|'school'|'travel'|'elite'; estimatedGames: number; lines: Line[] };
+    type Source = { label: string; url: string };
+    type Profile = { sport: string; level: 'rec'|'school'|'travel'|'elite'; estimatedGames: number; lines: Line[]; sources?: Source[]; sourceNote?: string };
+
+    const $ = <T extends HTMLElement = HTMLElement>(sel: string) => document.querySelector(sel) as T | null;
 
     const profilesEl = document.getElementById('cost-profiles') as HTMLScriptElement | null;
-    const blurbsEl = document.getElementById('level-blurbs') as HTMLScriptElement | null;
-    const sportSel = document.querySelector('[data-sport]') as HTMLSelectElement | null;
-    const levelSel = document.querySelector('[data-level]') as HTMLSelectElement | null;
-    const blurbEl = document.querySelector('[data-level-blurb]') as HTMLElement | null;
-    const gamesInput = document.querySelector('[data-games]') as HTMLInputElement | null;
-    const linesEl = document.querySelector('[data-lines]') as HTMLUListElement | null;
-    const totalAnnualEl = document.querySelector('[data-total-annual]') as HTMLElement | null;
-    const totalMonthlyEl = document.querySelector('[data-total-monthly]') as HTMLElement | null;
-    const totalPerGameEl = document.querySelector('[data-total-per-game]') as HTMLElement | null;
-    const addBtn = document.querySelector('[data-add]') as HTMLButtonElement | null;
-    const resetBtn = document.querySelector('[data-reset]') as HTMLButtonElement | null;
-    const shareBtn = document.querySelector('[data-share]') as HTMLButtonElement | null;
+    const blurbsEl   = document.getElementById('level-blurbs') as HTMLScriptElement | null;
+    const sportSel   = $<HTMLSelectElement>('[data-sport]');
+    const levelSel   = $<HTMLSelectElement>('[data-level]');
+    const blurbEl    = $('[data-level-blurb]');
+    const gamesInput = $<HTMLInputElement>('[data-games]');
+    const linesEl    = $<HTMLUListElement>('[data-lines]');
+    const totalAnnualEl  = $('[data-total-annual]');
+    const totalMonthlyEl = $('[data-total-monthly]');
+    const totalWeeklyEl  = $('[data-total-weekly]');
+    const totalPerGameEl = $('[data-total-per-game]');
+    const insightsEl       = $('[data-insights]');
+    const relatedPathwayEl = $('[data-related-pathway]');
+    const relatedCalendarEl= $('[data-related-calendar]');
+    const sourceNoteEl     = $('[data-source-note]');
+    const sourceListEl     = $('[data-source-list]');
+    const addBtn   = $<HTMLButtonElement>('[data-add]');
+    const resetBtn = $<HTMLButtonElement>('[data-reset]');
+    const shareBtn = $<HTMLButtonElement>('[data-share]');
 
-    if (!profilesEl || !blurbsEl || !sportSel || !levelSel || !linesEl || !totalAnnualEl) {
-      // page didn't fully render; bail out quietly
-    } else {
+    // Sports that have a pathway page. Keep in sync with src/content/pathways/*.md.
+    const PATHWAY_SPORTS = new Set(['baseball','soccer','basketball','football','volleyball','lacrosse-boys','swimming','gymnastics']);
+    // Sport → first matching season-calendar slug.
+    const CALENDAR_BY_SPORT: Record<string, string> = {
+      football:        'hs-football-fall-pnw',
+      basketball:      'aau-basketball-12u-year-round',
+      baseball:        'little-league-rec-baseball-spring',
+      soccer:          'hs-soccer-fall',
+      volleyball:      'club-volleyball-14s',
+      'lacrosse-boys': 'hs-lacrosse-spring-boys',
+      dance:           'dance-studio-recital-cycle',
+      gymnastics:      'year-round-gymnastics',
+    };
+
+    if (profilesEl && blurbsEl && sportSel && levelSel && linesEl && totalAnnualEl) {
       const profiles: Profile[] = JSON.parse(profilesEl.textContent || '[]');
       const blurbs: { slug: string; label: string; blurb: string }[] = JSON.parse(blurbsEl.textContent || '[]');
       const STORAGE_KEY = 'pcp.costcalc.v1';
@@ -165,6 +213,8 @@ const levels = [
       const fmt = (n: number) =>
         n >= 0 ? '$' + Math.round(n).toLocaleString('en-US') : '-$' + Math.round(-n).toLocaleString('en-US');
 
+      const escapeAttr = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
       const getProfile = (sport: string, level: Profile['level']): Profile =>
         profiles.find(p => p.sport === sport && p.level === level) ??
         profiles.find(p => p.sport === 'generic' && p.level === level)!;
@@ -178,7 +228,7 @@ const levels = [
             key: l.key,
             label: l.label,
             amount: l.default,
-            included: !l.hideable, // hideable lines start unchecked so the parent opts them in
+            included: !l.hideable,
           })),
         };
       };
@@ -189,12 +239,10 @@ const levels = [
         if (!data) return null;
         try { return JSON.parse(atob(data)) as State; } catch { return null; }
       };
-
       const loadFromStorage = (): State | null => {
         try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) as State : null; }
         catch { return null; }
       };
-
       const saveToStorage = (s: State) => {
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {}
       };
@@ -204,98 +252,142 @@ const levels = [
       const computeTotal = () => state.items.reduce((sum, i) => sum + (i.included ? i.amount : 0), 0);
 
       const render = () => {
-        // sync pickers
-        sportSel!.value = state.sport;
-        levelSel!.value = state.level;
+        sportSel.value = state.sport;
+        levelSel.value = state.level;
         gamesInput!.value = String(state.games);
         if (blurbEl) {
           const b = blurbs.find(x => x.slug === state.level);
           if (b) blurbEl.textContent = b.blurb;
         }
 
-        // line items
-        linesEl!.innerHTML = state.items.map((it, idx) => `
+        // Line items
+        linesEl.innerHTML = state.items.map((it, idx) => `
           <li class="border border-bone bg-paper p-3 grid grid-cols-[1fr_120px_auto] gap-3 items-center">
-            <div class="grid gap-1">
-              <input
-                type="text"
-                value="${escapeAttr(it.label)}"
-                data-line-label="${idx}"
-                class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm"
-                style="font-weight: 500;"
-              />
-            </div>
+            <input type="text" value="${escapeAttr(it.label)}" data-line-label="${idx}"
+              class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm" style="font-weight: 500;" />
             <div class="flex items-center gap-1">
               <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">$</span>
-              <input
-                type="number"
-                value="${it.amount}"
-                data-line-amount="${idx}"
-                class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm w-full"
-                style="font-weight: 500;"
-                min="0"
-              />
+              <input type="number" value="${it.amount}" data-line-amount="${idx}" min="0"
+                class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm w-full" style="font-weight: 500;" />
             </div>
             <div class="flex items-center gap-2">
               <label class="inline-flex items-center gap-1 text-xs font-display italic text-ink-soft" style="font-weight: 500;">
-                <input type="checkbox" ${it.included ? 'checked' : ''} data-line-include="${idx}" />
-                In
+                <input type="checkbox" ${it.included ? 'checked' : ''} data-line-include="${idx}" /> In
               </label>
               <button type="button" data-line-remove="${idx}" class="font-display italic text-ink-soft hover:text-rust text-xs" style="font-weight: 500;">×</button>
             </div>
           </li>
         `).join('');
 
+        // Totals
         const total = computeTotal();
         totalAnnualEl!.textContent = fmt(total);
         if (totalMonthlyEl) totalMonthlyEl.textContent = fmt(total / 12);
+        if (totalWeeklyEl)  totalWeeklyEl.textContent  = fmt(total / 52);
         if (totalPerGameEl) totalPerGameEl.textContent = state.games > 0 ? fmt(total / state.games) : '$0';
+
+        // Insights — neutral observations, not warnings
+        if (insightsEl) {
+          const insights: string[] = [];
+          const included = state.items.filter(i => i.included);
+          const sortedByAmount = [...included].sort((a, b) => b.amount - a.amount);
+          const top = sortedByAmount[0];
+          if (top && total > 0) {
+            const pct = Math.round((top.amount / total) * 100);
+            insights.push(`Biggest line: <strong>${escapeAttr(top.label)}</strong> at ${pct}% of total.`);
+          }
+          const travelLines = included.filter(i =>
+            /travel|hotel|gas|flight|food/i.test(i.key) || /travel|hotel|gas|flight|food/i.test(i.label)
+          );
+          const travelTotal = travelLines.reduce((s, i) => s + i.amount, 0);
+          if (total > 0 && travelTotal / total > 0.25) {
+            const pct = Math.round((travelTotal / total) * 100);
+            insights.push(`Travel and lodging is <strong>${pct}%</strong> of total. The most variable line in travel sports.`);
+          }
+          if (state.games > 0 && total / state.games > 300) {
+            insights.push(`<strong>${fmt(total / state.games)}/game played</strong>. Useful number to know either way.`);
+          } else if (state.games > 0 && total > 0) {
+            insights.push(`<strong>${fmt(total / state.games)}/game played</strong>.`);
+          }
+          const eqLines = included.filter(i => /equipment|apparel|uniform|shoes|costume|leotard/i.test(i.key + ' ' + i.label));
+          const eqTotal = eqLines.reduce((s, i) => s + i.amount, 0);
+          if (total > 0 && eqTotal / total > 0.20) {
+            insights.push(`Equipment and apparel is <strong>${Math.round(eqTotal / total * 100)}%</strong> of total.`);
+          }
+          if (total >= 10000)      insights.push(`<strong>${fmt(total)}/year</strong> sits in the elite-tier range nationally.`);
+          else if (total >= 5000)  insights.push(`<strong>${fmt(total)}/year</strong> sits in the travel-tier range nationally.`);
+          else if (total >= 1500)  insights.push(`<strong>${fmt(total)}/year</strong> sits in the school/competitive-rec range nationally.`);
+          else if (total > 0)      insights.push(`<strong>${fmt(total)}/year</strong> sits in the rec range nationally.`);
+          if (insights.length === 0) insights.push(`Pick a sport and level to see your insights.`);
+          insightsEl.innerHTML = insights.map(t => `<li class="text-paper-warm leading-snug">${t}</li>`).join('');
+        }
+
+        // Related pathway / calendar links
+        if (relatedPathwayEl) {
+          const a = relatedPathwayEl.querySelector('a');
+          if (PATHWAY_SPORTS.has(state.sport) && a) {
+            a.setAttribute('href', `/pathways/${state.sport}/`);
+            a.textContent = `→ Pathway: ${sportSel.options[sportSel.selectedIndex].text}`;
+            relatedPathwayEl.style.display = '';
+          } else {
+            relatedPathwayEl.style.display = 'none';
+          }
+        }
+        if (relatedCalendarEl) {
+          const a = relatedCalendarEl.querySelector('a');
+          const slug = CALENDAR_BY_SPORT[state.sport];
+          if (slug && a) {
+            a.setAttribute('href', `/season-calendar/${slug}/`);
+            a.textContent = `→ Season calendar for ${sportSel.options[sportSel.selectedIndex].text}`;
+            relatedCalendarEl.style.display = '';
+          } else {
+            relatedCalendarEl.style.display = 'none';
+          }
+        }
+
+        // Sources panel
+        if (sourceNoteEl && sourceListEl) {
+          const activeProfile = getProfile(state.sport, state.level);
+          sourceNoteEl.textContent = activeProfile.sourceNote || 'Defaults synthesized from public youth-sports cost data.';
+          const srcs = activeProfile.sources || [];
+          sourceListEl.innerHTML = srcs.map(s => `
+            <li class="font-display text-sm leading-snug" style="font-weight: 500;">
+              <a href="${s.url}" target="_blank" rel="noopener" class="text-rust hover:underline">${escapeAttr(s.label)} ↗</a>
+            </li>
+          `).join('');
+        }
 
         saveToStorage(state);
       };
 
-      const escapeAttr = (s: string) => s.replace(/"/g, '&quot;').replace(/</g, '&lt;');
-
-      // Event wiring
-      sportSel!.addEventListener('change', () => {
-        state = stateFromProfile(sportSel!.value, state.level);
-        render();
-      });
-      levelSel!.addEventListener('change', () => {
-        state = stateFromProfile(state.sport, levelSel!.value as Profile['level']);
-        render();
-      });
+      // Wiring
+      sportSel.addEventListener('change', () => { state = stateFromProfile(sportSel.value, state.level); render(); });
+      levelSel.addEventListener('change', () => { state = stateFromProfile(state.sport, levelSel.value as Profile['level']); render(); });
       gamesInput!.addEventListener('input', () => {
         const v = parseInt(gamesInput!.value, 10);
         state.games = isNaN(v) ? 0 : v;
         render();
       });
-      linesEl!.addEventListener('input', (e) => {
+      linesEl.addEventListener('input', (e) => {
         const t = e.target as HTMLInputElement;
         const labelIdx = t.getAttribute('data-line-label');
         const amountIdx = t.getAttribute('data-line-amount');
         const includeIdx = t.getAttribute('data-line-include');
-        if (labelIdx !== null) state.items[+labelIdx].label = t.value;
+        if (labelIdx !== null)  state.items[+labelIdx].label = t.value;
         if (amountIdx !== null) state.items[+amountIdx].amount = parseFloat(t.value) || 0;
-        if (includeIdx !== null) state.items[+includeIdx].included = t.checked;
+        if (includeIdx !== null) state.items[+includeIdx].included = (t as HTMLInputElement).checked;
         render();
       });
-      linesEl!.addEventListener('click', (e) => {
+      linesEl.addEventListener('click', (e) => {
         const t = e.target as HTMLElement;
         const removeIdx = t.getAttribute('data-line-remove');
-        if (removeIdx !== null) {
-          state.items.splice(+removeIdx, 1);
-          render();
-        }
+        if (removeIdx !== null) { state.items.splice(+removeIdx, 1); render(); }
       });
       addBtn!.addEventListener('click', () => {
         state.items.push({ key: 'custom-' + Date.now(), label: 'Custom line item', amount: 0, included: true });
         render();
       });
-      resetBtn!.addEventListener('click', () => {
-        state = stateFromProfile(state.sport, state.level);
-        render();
-      });
+      resetBtn!.addEventListener('click', () => { state = stateFromProfile(state.sport, state.level); render(); });
       shareBtn!.addEventListener('click', async () => {
         const data = btoa(JSON.stringify(state));
         const url = window.location.origin + window.location.pathname + '?d=' + data;

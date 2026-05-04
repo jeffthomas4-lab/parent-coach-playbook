@@ -17,6 +17,20 @@ const sportLabel = SPORTS.find(s => s.slug === calendar.data.sport)?.label ?? ca
 const levelLabel: Record<string, string> = {
   rec: 'Rec', school: 'School', travel: 'Travel/club', elite: 'Elite/showcase',
 };
+
+// Related: pathway for this sport, body topics tagged for this sport, sibling calendars for this sport.
+const pathways = await getCollection('pathways', ({ data }) => isLive(data));
+const matchingPathway = pathways.find(p => p.data.sport === calendar.data.sport);
+
+const allBody = await getCollection('body', ({ data }) => isLive(data));
+const relatedBody = allBody.filter(b => (b.data.sportTags ?? []).includes(calendar.data.sport)).slice(0, 4);
+
+const allCalendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const siblingCalendars = allCalendars
+  .filter(c => c.slug !== calendar.slug && c.data.sport === calendar.data.sport)
+  .slice(0, 3);
+
+const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
 ---
 <BaseLayout
   title={calendar.data.title}
@@ -50,6 +64,45 @@ const levelLabel: Record<string, string> = {
   <article class="container-px py-10 md:py-14">
     <div class="article-body max-w-prose mx-auto">
       <Content />
+      <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone" style="font-weight: 500;">
+        Last updated {lastUpdated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
+      </p>
     </div>
   </article>
+
+  <!-- Related across the site -->
+  {(matchingPathway || relatedBody.length > 0 || siblingCalendars.length > 0) && (
+    <section class="border-t border-bone bg-paper-warm">
+      <div class="container-px py-10">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">For {sportLabel} families</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          {matchingPathway && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Age pathway</p>
+              <a href={`/pathways/${matchingPathway.data.sport}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug block" style="font-weight: 500;">→ {matchingPathway.data.title}</a>
+            </div>
+          )}
+          {relatedBody.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">From The body</p>
+              <ul class="grid gap-2">
+                {relatedBody.map(b => (
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {b.data.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div>
+            <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Other paths</p>
+            <ul class="grid gap-2">
+              {siblingCalendars.map(c => (
+                <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {c.data.title}</a></li>
+              ))}
+              <li><a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ Run the cost for this sport</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>

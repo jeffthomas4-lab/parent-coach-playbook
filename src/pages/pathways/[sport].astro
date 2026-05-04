@@ -13,6 +13,13 @@ const { pathway } = Astro.props;
 const { Content } = await pathway.render();
 const sportLabel = SPORTS.find(s => s.slug === pathway.data.sport)?.label ?? pathway.data.sport;
 
+// Related: body topics tagged for this sport, season calendars for this sport.
+const allBody = await getCollection('body', ({ data }) => isLive(data));
+const relatedBody = allBody.filter(b => (b.data.sportTags ?? []).includes(pathway.data.sport)).slice(0, 4);
+
+const allCalendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const relatedCalendars = allCalendars.filter(c => c.data.sport === pathway.data.sport).slice(0, 3);
+
 const bandLabel = (slug: string) => AGE_BANDS.find(b => b.slug === slug)?.label ?? slug;
 
 // Render bands in canonical order regardless of file order.
@@ -171,4 +178,39 @@ const bandAccent: Record<string, string> = {
       <Content />
     </div>
   </article>
+
+  <!-- Related across the site -->
+  {(relatedBody.length > 0 || relatedCalendars.length > 0) && (
+    <section class="border-t border-bone bg-paper-warm">
+      <div class="container-px py-10">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">For this sport</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedBody.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">From The body</p>
+              <ul class="grid gap-2">
+                {relatedBody.map(b => (
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {b.data.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedCalendars.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Season calendars</p>
+              <ul class="grid gap-2">
+                {relatedCalendars.map(c => (
+                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {c.data.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div>
+            <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Run the math</p>
+            <a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ Cost calculator (defaults loaded for {sportLabel})</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>

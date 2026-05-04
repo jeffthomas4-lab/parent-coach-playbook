@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PROFILES } from '../../data/costDefaults';
+import { SPORTS } from '../../data/site';
+
+const sportLabel = (s: string) =>
+  s === 'generic' ? 'Generic (any sport)' : SPORTS.find(x => x.slug === s)?.label ?? s;
+
+const levelLabel: Record<string, string> = {
+  rec: 'Rec', school: 'School', travel: 'Travel/club', elite: 'Elite/showcase',
+};
+
+// Group profiles by sport for the breakdown.
+const grouped = PROFILES.reduce<Record<string, typeof PROFILES>>((acc, p) => {
+  (acc[p.sport] = acc[p.sport] ?? []).push(p);
+  return acc;
+}, {});
+const sortedSports = Object.keys(grouped).sort((a, b) => {
+  if (a === 'generic') return -1;
+  if (b === 'generic') return 1;
+  return sportLabel(a).localeCompare(sportLabel(b));
+});
+---
+<BaseLayout
+  title="Cost calculator methodology"
+  description="Where the default numbers come from, how they get updated, and what we don't try to model. Per-profile sourcing for every sport and level."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/cost-calculator/" class="hover:underline">Cost calculator</a> · Methodology
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        Where the <em class="text-rust">numbers</em> come from.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        Every profile carries an explicit source list. Numbers are anchored to public data, not pulled from thin air. If something looks wrong, we want to hear it.
+      </p>
+    </div>
+  </section>
+
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      <h2>The base sources</h2>
+      <p>Three sources sit underneath every profile:</p>
+      <ul>
+        <li><strong>Aspen Institute Project Play — State of Play</strong> (annual report on youth-sports participation, including family spending data by income, sport, and level).</li>
+        <li><strong>Project Play — Costs to Play</strong> (national survey of youth-sports family spending).</li>
+        <li><strong>TeamSnap — State of Youth Sports</strong> (annual industry report including family budget data).</li>
+      </ul>
+
+      <p>Sport-specific profiles add additional sources from the relevant national governing body or club association (USA Hockey, USAV, USAG, US Lacrosse, US Youth Soccer, USTA, USASF, USA Swimming, ECNL, AAU Basketball, NFHS, USA Football, Little League International, Perfect Game, JVA, NUVO, Dance Studio Owners Association). Each profile lists which sources it draws from.</p>
+
+      <h2>How the defaults get assembled</h2>
+      <p>For each sport-and-level combination, defaults come from a synthesis of three things:</p>
+      <ul>
+        <li>Published fee structures from the relevant governing body or representative club programs (registration, club dues, tournament fees, membership).</li>
+        <li>Project Play and TeamSnap national survey medians, weighted toward the level (rec/school/travel/elite).</li>
+        <li>Reader-submitted budget data through this site, which gets cross-checked against the survey medians.</li>
+      </ul>
+
+      <p>Hotel and travel cost defaults assume mid-range chain hotels and the IRS standard mileage rate ($0.67/mile in 2026). Equipment and apparel defaults assume mid-range new gear with a 2-3 year replacement cycle averaged annually.</p>
+
+      <h2>What we don't try to model</h2>
+      <p>Three things vary too much for a default to be useful:</p>
+      <ul>
+        <li><strong>Region.</strong> Hotel costs in Houston are different from Boston. Gas costs in Wyoming are different from Manhattan.</li>
+        <li><strong>Family logistics.</strong> Two parents and one kid is different from one parent and three kids. Carpools, shared hotel rooms, and split travel changes the math.</li>
+        <li><strong>Time cost.</strong> The hours a parent spends driving, organizing, coaching, and managing the season have real value. Surfaced as an optional line item; not priced for you.</li>
+      </ul>
+
+      <h2>What we do try to surface</h2>
+      <p>Four things parents consistently underestimate:</p>
+      <ul>
+        <li><strong>Tournament travel hotels.</strong> The single most underestimated line in travel sports.</li>
+        <li><strong>Equipment replacement.</strong> Most parents budget the initial purchase, not the annual replacement.</li>
+        <li><strong>Team apparel.</strong> The required spirit pack, second jersey, and warm-ups that often run $300-600/year at travel level.</li>
+        <li><strong>Per-game-played cost.</strong> Annual cost divided by games where the kid actually got real minutes. The metric most parents find most useful — it works the same whether you're at $400/year or $14,000/year.</li>
+      </ul>
+
+      <h2>Update cadence</h2>
+      <p>Defaults update annually after the Project Play State of Play release (typically September) and after a winter pass through reader-submitted data. Profiles in the calculator carry an "as of" year reference; if you spot a number that's clearly off, email us at <a href="mailto:parentcoachplaybook@gmail.com">parentcoachplaybook@gmail.com</a>.</p>
+
+      <h2>Per-profile sourcing</h2>
+      <p>Every profile in the calculator and what's behind it:</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto mt-8 grid gap-6">
+      {sortedSports.map((sport) => (
+        <section class="border border-bone bg-paper-warm p-6">
+          <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">{sportLabel(sport)}</p>
+          <div class="grid gap-5">
+            {grouped[sport].map((p) => (
+              <div class="border-l-2 border-bone pl-4">
+                <p class="font-display text-ink text-base mb-1" style="font-weight: 500;">
+                  {sportLabel(sport)} — {levelLabel[p.level]} · {p.estimatedGames} games estimated
+                </p>
+                {p.sourceNote && (
+                  <p class="font-display text-ink-soft text-sm leading-snug mt-1">{p.sourceNote}</p>
+                )}
+                <ul class="grid gap-1 mt-2">
+                  {(p.sources || []).map((s) => (
+                    <li class="font-display italic text-ink-soft text-xs leading-snug" style="font-weight: 500;">
+                      → <a href={s.url} target="_blank" rel="noopener" class="text-rust hover:underline">{s.label} ↗</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div class="article-body max-w-prose mx-auto mt-12">
+      <h2>Submit your numbers</h2>
+      <p>If your real numbers diverge significantly from the defaults, email them. The more reader data we have, the more accurate the calculator gets. Especially helpful: which sport, which level, which region, your annual all-in cost, and a flag for any line that surprised you.</p>
+
+      <p><a href="/cost-calculator/" class="t-cta">← Back to the calculator</a></p>
+    </div>
+  </article>
+</BaseLayout>

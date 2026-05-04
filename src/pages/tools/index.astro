@@ -1,33 +1,143 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { TOOLS_NAV } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
+import { TOOLS_NAV, SPORTS } from '../../data/site';
+import { PROFILES } from '../../data/costDefaults';
+
+const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const bodyTopics = await getCollection('body', ({ data }) => isLive(data));
+const pathways = await getCollection('pathways', ({ data }) => isLive(data));
+
+const featuredCalendars = calendars.filter(c => c.data.featured).slice(0, 2);
+const featuredBody = bodyTopics.filter(b => b.data.featured).slice(0, 3);
+const featuredPathways = pathways.slice(0, 3);
+
+const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+const profileCount = PROFILES.length;
 ---
 <BaseLayout
   title="Tools"
-  description="Reference tools for activities-oriented parents. Season calendars, age pathways, cost calculator, and the body."
+  description="Reference tools for activities-oriented parents. Season calendars, age pathways, cost calculator, and the body. Built to be re-opened, not read once."
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Tools</p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        The reference rack.
+        Pages parents <em class="text-rust">come back to</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Pages parents come back to. Save them, share them, send them in the group chat when the question comes up again.
+        Four reference sections that work as a system. Pick the moment you're in. The right tool tells you what's typical, what's not, and what to do about it.
       </p>
     </div>
   </section>
 
+  <!-- The four cards, big and direct -->
   <section class="border-b border-bone">
     <div class="container-px py-12">
       <div class="grid md:grid-cols-2 gap-px bg-bone">
-        {TOOLS_NAV.map((t) => (
-          <a href={t.href} class="bg-paper p-8 group block hover:bg-paper-warm transition-colors">
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {t.label}
-            </h2>
-            <p class="font-display text-ink-soft mt-3 leading-snug">{t.blurb}</p>
-            <p class="t-cta mt-4">Open →</p>
+        <a href="/season-calendar/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #8FA68C;">
+          <p class="font-display italic text-xs mb-2" style="color: #8FA68C; font-weight: 500;">{calendars.length} canonical calendars</p>
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            Season calendar
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            Twelve months by sport and level. Tryouts week. Picture day window. Tournament season. Off-season. Pick the canonical shape that matches your kid's year.
+          </p>
+          <p class="t-cta mt-4">Open the calendar →</p>
+        </a>
+
+        <a href="/pathways/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #C5713D;">
+          <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{pathways.length} sports mapped</p>
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            Age pathways
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            What "good" looks like at 7, 10, 13, 15. Per sport. Skill milestones, practice shape, social and emotional markers, and the parent decision points at each age.
+          </p>
+          <p class="t-cta mt-4">Open the pathways →</p>
+        </a>
+
+        <a href="/cost-calculator/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #B0894A;">
+          <p class="font-display italic text-xs mb-2" style="color: #B0894A; font-weight: 500;">{profileCount} pre-loaded profiles</p>
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            Cost calculator
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            Pick a sport and level. Pre-filled with national medians. Edit any line. Annual, monthly, weekly, and per-game-played in real time. Save, share, send to the group chat.
+          </p>
+          <p class="t-cta mt-4">Open the calculator →</p>
+        </a>
+
+        <a href="/body/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #5C7459;">
+          <p class="font-display italic text-xs mb-2" style="color: #5C7459; font-weight: 500;">{bodyTopics.length} topics, all with sources</p>
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            The body
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            Concussion. Arm care. Heat. Sleep. ACL prevention. Pediatric sports medicine translated for parents. Every topic cites the governing body and lists the questions to bring to the doc.
+          </p>
+          <p class="t-cta mt-4">Open the body →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How they work together -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">How they fit</p>
+      <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        The four work as <em class="text-rust">one system</em>.
+      </h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-8 max-w-4xl">
+        <div>
+          <p class="font-display text-ink leading-relaxed" style="font-weight: 400;">
+            Pick a calendar to see what your kid's year looks like. Open the matching pathway to see what good looks like at this age. Run the cost calculator on the same sport and level to see what it actually costs.
+          </p>
+        </div>
+        <div>
+          <p class="font-display text-ink leading-relaxed" style="font-weight: 400;">
+            Read the body topics that match the sport. Concussion if it's contact. Arm care if it's pitching. Heat if it's August practice. Each detail page links to the matching pieces in the other three sections so you don't have to hunt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured pieces from each section -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-6" style="font-weight: 500;">Start with these</p>
+
+      <div class="grid md:grid-cols-3 gap-px bg-bone">
+        {featuredPathways.map((p) => (
+          <a href={`/pathways/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Pathway · {sportLabel(p.data.sport)}</p>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {p.data.title}
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
+          </a>
+        ))}
+
+        {featuredBody.map((b) => (
+          <a href={`/body/${b.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <p class="font-display italic text-xs mb-2" style="color: #5C7459; font-weight: 500;">The body · {b.data.category}</p>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {b.data.title}
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{b.data.summary}</p>
+          </a>
+        ))}
+
+        {featuredCalendars.map((c) => (
+          <a href={`/season-calendar/${c.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <p class="font-display italic text-xs mb-2" style="color: #8FA68C; font-weight: 500;">Calendar · {sportLabel(c.data.sport)}</p>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {c.data.title}
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{c.data.summary}</p>
           </a>
         ))}
       </div>

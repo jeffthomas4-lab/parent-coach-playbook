@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
 import { isLive } from '../../lib/publishFilter';
+import { SPORTS } from '../../data/site';
 
 export async function getStaticPaths() {
   const topics = await getCollection('body', ({ data }) => isLive(data));
@@ -11,6 +12,24 @@ export async function getStaticPaths() {
 
 const { topic } = Astro.props;
 const { Content } = await topic.render();
+
+// Related: pathways for the same sports, calendars for the same sports, sibling body topics.
+const sportTags = topic.data.sportTags ?? [];
+
+const pathways = await getCollection('pathways', ({ data }) => isLive(data));
+const relatedPathways = pathways.filter(p => sportTags.includes(p.data.sport)).slice(0, 4);
+
+const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const relatedCalendars = calendars.filter(c => sportTags.includes(c.data.sport)).slice(0, 4);
+
+const allBody = await getCollection('body', ({ data }) => isLive(data));
+const siblingBody = allBody
+  .filter(b => b.slug !== topic.slug && (b.data.category === topic.data.category || b.data.sportTags?.some(s => sportTags.includes(s))))
+  .slice(0, 4);
+
+const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+
+const lastUpdated = topic.data.publishedAt;
 ---
 <BaseLayout
   title={topic.data.title}
@@ -84,6 +103,51 @@ const { Content } = await topic.render();
           </p>
         </aside>
       )}
+
+      <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone" style="font-weight: 500;">
+        Last updated {lastUpdated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
+      </p>
     </div>
   </article>
+
+  <!-- Related across the site -->
+  {(relatedPathways.length > 0 || relatedCalendars.length > 0 || siblingBody.length > 0) && (
+    <section class="border-t border-bone bg-paper-warm">
+      <div class="container-px py-10">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Related across the site</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          {siblingBody.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">More from The body</p>
+              <ul class="grid gap-2">
+                {siblingBody.map(b => (
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {b.data.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedPathways.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Pathways</p>
+              <ul class="grid gap-2">
+                {relatedPathways.map(p => (
+                  <li><a href={`/pathways/${p.data.sport}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {sportLabel(p.data.sport)} pathway</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedCalendars.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Season calendars</p>
+              <ul class="grid gap-2">
+                {relatedCalendars.map(c => (
+                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {c.data.title}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
