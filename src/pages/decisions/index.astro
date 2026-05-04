@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
+
+const decisions = (await getCollection('decisions', ({ data }) => isLive(data)))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<BaseLayout
+  title="Decisions parents face"
+  description="The big decisions in youth sports, one page each. Should my kid play travel? Should they quit? When to specialize? How many sports? Honest framing, real signs, the rule under each."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · Decisions
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        The big <em class="text-rust">decisions</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Should my kid play travel? Should they quit? When to specialize? How many sports? One page per question. Benefits, costs, signs it fits, signs it doesn't, and the rule under each.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      {decisions.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">First decisions ship this week.</p>
+      ) : (
+        <div class="grid sm:grid-cols-2 gap-px bg-bone">
+          {decisions.map((d) => (
+            <a href={`/decisions/${d.slug}/`} class="bg-paper p-7 group block hover:bg-paper-warm transition-colors">
+              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">The question</p>
+              <h2 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(d.data.title)} />
+              <p class="font-display text-ink-soft text-sm mt-3 leading-snug">{d.data.summary}</p>
+              <p class="t-cta mt-4">Walk through the decision →</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

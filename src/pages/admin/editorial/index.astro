@@ -14,6 +14,8 @@ const tips        = await getCollection('coachingTips');
 const recruiting  = await getCollection('recruiting');
 const adaptive    = await getCollection('adaptive');
 const rules       = await getCollection('rules');
+const scripts     = await getCollection('scripts');
+const decisions   = await getCollection('decisions');
 
 type Row = {
   collection: string;
@@ -37,6 +39,8 @@ const urlFor = (collection: string, item: any): string => {
     case 'recruiting':     return `/recruiting/${item.slug}/`;
     case 'adaptive':       return `/adaptive/${item.slug}/`;
     case 'rules':          return `/rules/${item.data.sport}/`;
+    case 'scripts':        return `/scripts/${item.slug}/`;
+    case 'decisions':      return `/decisions/${item.slug}/`;
     default:               return `/${item.slug}/`;
   }
 };
@@ -54,6 +58,8 @@ const rows: Row[] = [
   ...recruiting.map(i => ({ collection: 'recruiting',     slug: i.slug, title: titleFor(i), url: urlFor('recruiting', i),     publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
   ...adaptive.map(i =>   ({ collection: 'adaptive',       slug: i.slug, title: titleFor(i), url: urlFor('adaptive', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
   ...rules.map(i =>      ({ collection: 'rules',          slug: i.slug, title: titleFor(i), url: urlFor('rules', i),          publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...scripts.map(i =>    ({ collection: 'scripts',        slug: i.slug, title: titleFor(i), url: urlFor('scripts', i),        publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...decisions.map(i =>  ({ collection: 'decisions',      slug: i.slug, title: titleFor(i), url: urlFor('decisions', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
 ].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
 
 // Top-line stats

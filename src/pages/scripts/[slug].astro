@@ -1,0 +1,157 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
+import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
+
+export async function getStaticPaths() {
+  const scripts = await getCollection('scripts', ({ data }) => isLive(data));
+  return scripts.map((s) => ({ params: { slug: s.slug }, props: { script: s } }));
+}
+
+const { script } = Astro.props;
+const { Content } = await script.render();
+
+// Pull the related scripts the author flagged.
+const allScripts = await getCollection('scripts', ({ data }) => isLive(data));
+const related = (script.data.relatedScripts ?? [])
+  .map(slug => allScripts.find(s => s.slug === slug))
+  .filter(Boolean) as typeof allScripts;
+---
+<BaseLayout
+  title={stripTitle(script.data.title)}
+  description={script.data.summary}
+>
+  <!-- Hero -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/scripts/" class="hover:underline">Scripts</a>
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(script.data.title)} />
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {script.data.summary}
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 1: What they're feeling -->
+  {script.data.whatTheyAreFeeling.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 max-w-3xl">
+        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">What they're feeling</p>
+        <ul class="grid gap-2">
+          {script.data.whatTheyAreFeeling.map((f) => (
+            <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {f}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Section 2: What to say -->
+  {script.data.whatToSay.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-10 max-w-3xl">
+        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">What to say (pick one)</p>
+        <ul class="grid gap-3">
+          {script.data.whatToSay.map((line) => (
+            <li class="font-display text-ink text-lg italic leading-snug pl-4 border-l-2 border-rust" style="font-weight: 400;">"{line}"</li>
+          ))}
+        </ul>
+        <p class="font-display italic text-ink-soft text-sm mt-5" style="font-weight: 500;">
+          Then stop talking.
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- Section 3: What NOT to say -->
+  {script.data.whatNotToSay.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 max-w-3xl">
+        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">What not to say</p>
+        <ul class="grid gap-2">
+          {script.data.whatNotToSay.map((line) => (
+            <li class="font-display text-ink-soft leading-snug line-through" style="font-weight: 400;">"{line}"</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Section 4: The rule -->
+  <section class="border-b border-bone bg-ink text-paper">
+    <div class="container-px py-12 max-w-3xl">
+      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The rule</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+        {script.data.theRule}
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: If they bring it up -->
+  {script.data.ifTheyBringItUp.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 max-w-3xl">
+        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">If they bring it up</p>
+        <ul class="grid gap-2">
+          {script.data.ifTheyBringItUp.map((line) => (
+            <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {line}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Section 6: Save block -->
+  {script.data.saveBlockBullets.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-10 max-w-3xl">
+        <div class="border-2 border-ink p-6 bg-paper">
+          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Save this</p>
+          <h2 class="font-display text-ink text-xl mb-4" style="font-weight: 500;">
+            {script.data.saveBlockTitle ?? stripTitle(script.data.title)}
+          </h2>
+          <ul class="grid gap-2">
+            {script.data.saveBlockBullets.map((b) => (
+              <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {b}</li>
+            ))}
+          </ul>
+          <p class="font-display italic text-ink-soft text-xs mt-5" style="font-weight: 500;">
+            parentcoachplaybook.com/scripts
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Optional markdown body -->
+  {script.body && script.body.trim().length > 0 && (
+    <article class="container-px py-10 md:py-12">
+      <div class="article-body max-w-prose mx-auto">
+        <Content />
+      </div>
+    </article>
+  )}
+
+  <!-- Related scripts (You might also need) -->
+  {related.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-10">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">You might also need</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+          {related.map((r) => (
+            <a href={`/scripts/${r.slug}/`} class="bg-paper p-5 group block hover:bg-paper transition-colors">
+              <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(r.data.title)} />
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{r.data.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <LeadMagnetCTA />
+</BaseLayout>

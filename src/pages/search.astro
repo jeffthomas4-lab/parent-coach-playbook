@@ -16,6 +16,8 @@ const calendars   = (await getCollection('seasonCalendars',({ data }) => isLive(
 const recruiting  = (await getCollection('recruiting',     ({ data }) => isLive(data)));
 const adaptive    = (await getCollection('adaptive',       ({ data }) => isLive(data)));
 const rules       = (await getCollection('rules',          ({ data }) => isLive(data)));
+const scripts     = (await getCollection('scripts',        ({ data }) => isLive(data)));
+const decisions   = (await getCollection('decisions',      ({ data }) => isLive(data)));
 
 const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 
@@ -101,6 +103,22 @@ const rulesIndex = rules.map(r => ({
   meta: 'Rules · ' + sportLabel(r.data.sport),
 }));
 
+const scriptsIndex = scripts.map(s => ({
+  type: 'Scripts',
+  title: stripTitle(s.data.title),
+  dek: s.data.summary,
+  href: `/scripts/${s.slug}/`,
+  meta: 'Scripts · ' + s.data.moment.replace(/-/g, ' '),
+}));
+
+const decisionsIndex = decisions.map(d => ({
+  type: 'Decisions',
+  title: stripTitle(d.data.title),
+  dek: d.data.summary,
+  href: `/decisions/${d.slug}/`,
+  meta: 'Decisions',
+}));
+
 // Static pages parents might search for.
 const staticIndex = [
   { type: 'Tools', title: 'Cost calculator', dek: 'What does a year of youth sports actually cost?', href: '/cost-calculator/', meta: 'Tools · cost calculator' },
@@ -112,6 +130,7 @@ const staticIndex = [
 ];
 
 const fullIndex = [
+  ...scriptsIndex, ...decisionsIndex,
   ...articleIndex, ...guideIndex, ...resourceIndex, ...tipsIndex,
   ...bodyIndex, ...pathwayIndex, ...calendarIndex,
   ...recruitingIndex, ...adaptiveIndex, ...rulesIndex,

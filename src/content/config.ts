@@ -342,4 +342,67 @@ const rules = defineCollection({
     }),
 });
 
-export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules };
+// Scripts: short, scriptable moment-pages parents read in 30 seconds. The flagship
+// format for the relationship-first lane. Six structured sections: what they're feeling,
+// what to say, what not to say, the rule, if they bring it up, save block.
+//
+// Each script lives at /scripts/[slug]/. Hub at /scripts/.
+const scripts = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      summary: z.string(),
+      moment: z.enum([
+        'after-a-bad-game','after-a-win','after-no-playing-time','after-a-mistake',
+        'kid-upset','kid-silent','before-game-nerves','after-the-last-game',
+        'after-a-loss','tryouts-week','before-a-game','during-a-game',
+        'coach-conflict','teammate-conflict','injury','other',
+      ]),
+      whatTheyAreFeeling: z.array(z.string()).default([]),
+      whatToSay:          z.array(z.string()).default([]),
+      whatNotToSay:       z.array(z.string()).default([]),
+      theRule:            z.string(),
+      ifTheyBringItUp:    z.array(z.string()).default([]),
+      saveBlockTitle:     z.string().optional(),
+      saveBlockBullets:   z.array(z.string()).default([]),
+      relatedScripts:     z.array(z.string()).default([]),
+      sportTags:          z.array(z.enum(SPORT_ENUM)).optional(),
+      ageBands:           z.array(z.enum(AGE_ENUM)).optional(),
+      hero:               image().optional(),
+      heroAlt:            z.string().optional(),
+      publishedAt:        z.coerce.date(),
+      featured:           z.boolean().default(false),
+      draft:              z.boolean().default(false),
+      ...editorialField,
+    }),
+});
+
+// Decisions: structured pages for the big youth-sports decisions parents face.
+// Same pattern as Rules at-a-glance. Question → benefits → costs → signs it fits →
+// signs it doesn't → the rule → how to handle it.
+const decisions = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      title: z.string(),                                  // "Should My Kid Play Travel Sports?"
+      summary: z.string(),
+      theQuestion: z.string(),                            // user-search-language version of the question
+      benefits:          z.array(z.string()).default([]),
+      costs:             z.array(z.string()).default([]),
+      signsItsAGoodFit:  z.array(z.string()).default([]),
+      signsItsNot:       z.array(z.string()).default([]),
+      howToHandleIt:     z.array(z.string()).default([]),
+      theRule:           z.string(),
+      relatedScripts:    z.array(z.string()).default([]),
+      relatedDecisions:  z.array(z.string()).default([]),
+      sportTags:         z.array(z.enum(SPORT_ENUM)).optional(),
+      ageBands:          z.array(z.enum(AGE_ENUM)).optional(),
+      publishedAt:       z.coerce.date(),
+      featured:          z.boolean().default(false),
+      draft:             z.boolean().default(false),
+      ...editorialField,
+    }),
+});
+
+export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules, scripts, decisions };

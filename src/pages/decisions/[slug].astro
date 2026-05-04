@@ -1,0 +1,176 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
+import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
+
+export async function getStaticPaths() {
+  const decisions = await getCollection('decisions', ({ data }) => isLive(data));
+  return decisions.map((d) => ({ params: { slug: d.slug }, props: { decision: d } }));
+}
+
+const { decision } = Astro.props;
+const { Content } = await decision.render();
+
+// Related scripts and other decisions
+const allScripts = await getCollection('scripts', ({ data }) => isLive(data));
+const relatedScripts = (decision.data.relatedScripts ?? [])
+  .map(slug => allScripts.find(s => s.slug === slug))
+  .filter(Boolean) as typeof allScripts;
+
+const allDecisions = await getCollection('decisions', ({ data }) => isLive(data));
+const relatedDecisions = (decision.data.relatedDecisions ?? [])
+  .map(slug => allDecisions.find(d => d.slug === slug))
+  .filter(Boolean) as typeof allDecisions;
+---
+<BaseLayout
+  title={stripTitle(decision.data.title)}
+  description={decision.data.summary}
+>
+  <!-- Hero -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/decisions/" class="hover:underline">Decisions</a>
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(decision.data.title)} />
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {decision.data.summary}
+      </p>
+    </div>
+  </section>
+
+  <!-- The question reframed -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-8 max-w-3xl">
+      <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">The real question</p>
+      <p class="font-display text-ink text-xl leading-snug" style="font-weight: 500;">
+        {decision.data.theQuestion}
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits + Costs -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+        {decision.data.benefits.length > 0 && (
+          <div>
+            <p class="font-display italic mb-3 text-sm" style="color: #5C7459; font-weight: 500;">Benefits</p>
+            <ul class="grid gap-2">
+              {decision.data.benefits.map((b) => (
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {b}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {decision.data.costs.length > 0 && (
+          <div>
+            <p class="font-display italic mb-3 text-sm" style="color: #C5713D; font-weight: 500;">Costs</p>
+            <ul class="grid gap-2">
+              {decision.data.costs.map((c) => (
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {c}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Signs it fits / signs it doesn't -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+        {decision.data.signsItsAGoodFit.length > 0 && (
+          <div>
+            <p class="font-display italic mb-3 text-sm" style="color: #5C7459; font-weight: 500;">Signs it's a good fit</p>
+            <ul class="grid gap-2">
+              {decision.data.signsItsAGoodFit.map((s) => (
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {decision.data.signsItsNot.length > 0 && (
+          <div>
+            <p class="font-display italic mb-3 text-sm" style="color: #C5713D; font-weight: 500;">Signs it's not</p>
+            <ul class="grid gap-2">
+              {decision.data.signsItsNot.map((s) => (
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- How to handle it -->
+  {decision.data.howToHandleIt.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 max-w-3xl">
+        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How to handle the conversation</p>
+        <ul class="grid gap-2">
+          {decision.data.howToHandleIt.map((h) => (
+            <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {h}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- The rule -->
+  <section class="border-b border-bone bg-ink text-paper">
+    <div class="container-px py-12 max-w-3xl">
+      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The rule</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+        {decision.data.theRule}
+      </p>
+    </div>
+  </section>
+
+  <!-- Optional markdown body -->
+  {decision.body && decision.body.trim().length > 0 && (
+    <article class="container-px py-10 md:py-12">
+      <div class="article-body max-w-prose mx-auto">
+        <Content />
+      </div>
+    </article>
+  )}
+
+  <!-- You might also need -->
+  {(relatedScripts.length > 0 || relatedDecisions.length > 0) && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-10">
+        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">You might also need</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          {relatedScripts.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Scripts</p>
+              <ul class="grid gap-2">
+                {relatedScripts.map(s => (
+                  <li><a href={`/scripts/${s.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(s.data.title)} /></a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedDecisions.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Other decisions</p>
+              <ul class="grid gap-2">
+                {relatedDecisions.map(d => (
+                  <li><a href={`/decisions/${d.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(d.data.title)} /></a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <LeadMagnetCTA />
+</BaseLayout>

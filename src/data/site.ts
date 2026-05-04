@@ -24,6 +24,7 @@ export const EDITORIAL = {
 
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
+  { label: 'Scripts', href: '/scripts/' },
   { label: 'Reads', href: '/reads/' },
   { label: 'Drills', href: '/coaching-tips/' },
   { label: 'Camps', href: '/camps/' },
@@ -41,6 +42,8 @@ export const TOOLS_NAV = [
   { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. From a D3 head coach.' },
   { slug: 'rules',            label: 'Rules at-a-glance', href: '/rules/',            blurb: 'Five-minute rules primers for every sport we cover.' },
   { slug: 'adaptive',         label: 'Adaptive athletes', href: '/adaptive/',         blurb: 'ADHD, autism, sensory, Unified Sports, adaptive leagues.' },
+  { slug: 'decisions',        label: 'Decisions',         href: '/decisions/',        blurb: 'The big youth-sports decisions. Travel, quit, specialize, how many.' },
+  { slug: 'pendulum',         label: 'The pendulum',      href: '/youth-sports-pendulum/', blurb: 'Where is your family on the fun-to-performance spectrum right now?' },
 ] as const;
 
 export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];

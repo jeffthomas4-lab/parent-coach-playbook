@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
+
+const scripts = (await getCollection('scripts', ({ data }) => isLive(data)))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Group scripts by moment phase for the hub layout.
+const moments = [
+  { group: 'After the game', slugs: ['after-a-bad-game','after-a-loss','after-a-win','after-no-playing-time','after-a-mistake','kid-upset','kid-silent','after-the-last-game'] },
+  { group: 'Before the game', slugs: ['before-game-nerves','before-a-game','tryouts-week'] },
+  { group: 'During the game', slugs: ['during-a-game'] },
+  { group: 'Hard moments',    slugs: ['coach-conflict','teammate-conflict','injury'] },
+];
+
+const grouped = moments.map(g => ({
+  ...g,
+  items: g.slugs.map(s => scripts.find(x => x.data.moment === s)).filter(Boolean) as typeof scripts,
+})).filter(g => g.items.length > 0);
+---
+<BaseLayout
+  title="Scripts: what to say in the moments that matter"
+  description="Short, scriptable pages for parents in real moments. The exact words to say after a bad game, after a win, after no playing time, after a mistake. Built for the car ride."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Scripts</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        What to say in the <em class="text-rust">moments that matter</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Short pages for the car ride home. What they're feeling. What to say. What not to say. The one rule. Built to be read in 30 seconds and saved for the next time.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-6 max-w-2xl leading-snug" style="font-weight: 500;">
+        Pick the moment you're in. Or download <a href="/resources/drive-home-playbook/" class="text-rust hover:underline">the Drive Home Playbook</a> to keep all of these in your glove box.
+      </p>
+    </div>
+  </section>
+
+  {grouped.length === 0 ? (
+    <section><div class="container-px py-12">
+      <p class="font-display italic text-ink-soft" style="font-weight: 500;">Scripts ship this week.</p>
+    </div></section>
+  ) : (
+    grouped.map((g) => (
+      <section class="border-b border-bone">
+        <div class="container-px py-10 md:py-12">
+          <p class="font-display italic text-rust mb-4" style="font-weight: 500;">{g.group}</p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+            {g.items.map((s) => (
+              <a href={`/scripts/${s.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+                <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(s.data.title)} />
+                <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{s.data.summary}</p>
+                <p class="t-cta mt-3">30-second read →</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))
+  )}
+
+  <!-- The big idea -->
+  <section class="border-b border-bone bg-ink text-paper">
+    <div class="container-px py-14 max-w-3xl">
+      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The rule under all of this</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+        The car ride is not for coaching. It's for connection.
+      </p>
+      <p class="font-display text-paper-warm mt-4 leading-relaxed">
+        These scripts are tools, not formulas. The point isn't to say the perfect line. The point is to make the car a place your kid wants to be after a hard day.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
