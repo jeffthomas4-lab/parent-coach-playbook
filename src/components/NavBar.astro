@@ -6,8 +6,11 @@ const path = Astro.url.pathname;
 const isActive = (href: string) =>
   href === '/' ? path === '/' : path === href || path.startsWith(href);
 
-const sportGuides = BUYING_GUIDES.filter(g => g.category === 'sport');
-const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
+const teamSportGuides       = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'team');
+const individualSportGuides = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'individual');
+const activityGuides        = BUYING_GUIDES.filter(g => g.category === 'activity');
+// Legacy alias kept in case anything else in the file references the old name.
+const sportGuides = [...teamSportGuides, ...individualSportGuides];
 ---
 <header class="border-b border-bone relative z-50">
   <div class="container-px flex items-center justify-between py-5 gap-6">
@@ -36,9 +39,9 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
               >
                 <div class="grid grid-cols-3 gap-x-6 gap-y-1">
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Field sports</p>
+                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Field & team sports</p>
                     <ul class="grid gap-1">
-                      {sportGuides.slice(0, 9).map((g) => (
+                      {teamSportGuides.map((g) => (
                         <li>
                           <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm" style="font-weight: 500;">{g.label}</a>
                         </li>
@@ -48,7 +51,7 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
                   <div>
                     <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Individual sports</p>
                     <ul class="grid gap-1">
-                      {sportGuides.slice(9).map((g) => (
+                      {individualSportGuides.map((g) => (
                         <li>
                           <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm" style="font-weight: 500;">{g.label}</a>
                         </li>

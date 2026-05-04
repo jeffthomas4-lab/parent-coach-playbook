@@ -44,4 +44,4 @@ The danger isn't the single Saturday game where your kid throws 80. The danger i
 
 **The signs to watch for.** Pain that lingers more than 24 hours after throwing. Loss of velocity that doesn't recover with rest. A pitcher who used to locate now suddenly can't. Pain when the arm is fully extended. Any of those mean a doctor visit before the next outing, not after.
 
-The brutal honest part: most youth UCL injuries that become Tommy John surgeries at 17 started as ignored signals at 12. The kid says it's fine. The coach wants to win the bracket. The parent wants the kid to get the recruiting look. Everyone has a reason to keep going. The arm doesn't.
+The honest part: a lot of the youth UCL injuries that show up as Tommy John surgeries at 17 had earlier warning signals that got missed or dismissed. The kid says it's fine. The coach wants to win the bracket. The parent wants the kid to get the recruiting look. Following the pitch counts and rest days doesn't guarantee a healthy arm; ignoring them is associated with materially higher injury rates in the published research. Both things are true.

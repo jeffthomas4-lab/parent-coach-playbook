@@ -29,9 +29,9 @@ gearPicks:
     note: "Phone apps approximate it. Real WBGT readers are what serious programs use."
 ---
 
-Heat illness in youth sports is preventable. Almost every preseason heatstroke story has the same shape: a hot day, a coach who didn't modify practice, a kid who didn't speak up, no one watching the warning signs. The protocol is well-established and ignored most often by the people who think they're tough enough not to need it.
+Heat illness in youth sports is largely manageable with the right protocol — but it's not a problem you "prevent" once and forget. The hot day, the unmodified practice, the kid who doesn't speak up, the missed early warning signs: those are the ingredients in almost every preseason heat-illness story. The protocol below is well-established and reduces risk. It does not eliminate it.
 
-**The first five practices are different.** NATA's Preseason Heat-Acclimatization Guidelines lay it out: practice times scale up over the first 14 days. Day 1 is no helmets, no pads. Day 2 is the same. Pads come on at day 3 (helmets and shoulder pads only). Full pads no earlier than day 6. Two-a-days don't start until day 6 at the earliest, and never on consecutive days. Most heatstroke deaths in football have happened in the first five days of August practice. The programs that follow these guidelines don't lose kids to heat.
+**The first five practices are different.** NATA's Preseason Heat-Acclimatization Guidelines lay it out: practice times scale up over the first 14 days. Day 1 is no helmets, no pads. Day 2 is the same. Pads come on at day 3 (helmets and shoulder pads only). Full pads no earlier than day 6. Two-a-days don't start until day 6 at the earliest, and never on consecutive days. The early-August window is when the published heatstroke fatality data clusters. Programs that follow these guidelines have a meaningfully lower risk profile through that window.
 
 **The water rule isn't "stay hydrated."** It's specific. Drink 16-24 ounces in the two hours before practice. Drink 6-12 ounces every 15-20 minutes during practice. Drink 24 ounces for every pound lost during practice. If your kid is losing more than 2% of body weight in a session, the practice is too hard for the conditions or the hydration plan failed. Coaches should weigh kids in and out for the first week of preseason in real heat.
 
@@ -39,7 +39,7 @@ Heat illness in youth sports is preventable. Almost every preseason heatstroke s
 
 **Wet-bulb globe temperature is the metric that matters, not air temperature.** WBGT factors in humidity, wind, and sun. An 85°F day with 80% humidity is more dangerous than a 95°F day in dry desert air. Programs that take heat seriously have a WBGT reader on the field and modify practice based on it. The Korey Stringer Institute's table is the standard: above certain thresholds, practice is shortened, padded gear comes off, or practice is canceled.
 
-**The signs that mean stop right now.** Confusion or slurred speech. Stopped sweating despite heat. Vomiting. Body temperature above 104°F. Loss of coordination. Any of those means heatstroke and the response is cold-water immersion until EMS arrives. Cool first, transport second. That sequence has saved lives. Reversing it has cost them.
+**The signs that mean stop right now.** Confusion or slurred speech. Stopped sweating despite heat. Vomiting. Body temperature above 104°F. Loss of coordination. Any of those means heatstroke and the response per current guidelines is cold-water immersion while EMS is en route. Cool first, transport second is the published protocol from NATA and the Korey Stringer Institute.
 
 **Earlier signs to watch for.** Cramping in the legs or abdomen. Feeling dizzy. Headache. Unusual fatigue. Dark yellow urine in the bathroom break. Goose bumps despite the heat. Any of these means the kid sits in shade with cold water for 20 minutes minimum and the day is probably over.
 

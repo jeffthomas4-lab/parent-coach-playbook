@@ -171,27 +171,32 @@ export type TopicSlug = (typeof TOPICS)[number]['slug'];
 // What to Buy guides. Each one resolves to /what-to-buy/[slug]/ and renders the markdown
 // from src/content/guides/[slug].md. Each sport guide also gets a sizing companion at
 // /what-to-buy/[slug]/sizing/.
-// Sorted alphabetically by label within each category.
+//
+// `group` separates field/team sports from individual sports for navigation grouping.
+// Don't rely on alphabetical position — football used to land in "Individual" because
+// of slice math. The group field is the source of truth for nav grouping.
 export const BUYING_GUIDES = [
-  // Sports (alphabetical)
-  { slug: 'baseball',      label: 'Baseball',         category: 'sport',    blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
-  { slug: 'basketball',    label: 'Basketball',       category: 'sport',    blurb: 'Shoes, ball, athletic gear. Indoor sport, low overhead.' },
-  { slug: 'crew',          label: 'Crew',             category: 'sport',    blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
-  { slug: 'cross-country', label: 'Cross country',    category: 'sport',    blurb: 'Trainers, racing flats, layered cold-weather kit.' },
-  { slug: 'flag-football', label: 'Flag football',    category: 'sport',    blurb: 'Mouthguard, cleats, gloves. No pads, no helmet.' },
-  { slug: 'golf',          label: 'Golf',             category: 'sport',    blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
-  { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
-  { slug: 'hockey',        label: 'Hockey',           category: 'sport',    blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
-  { slug: 'lacrosse-boys',  label: 'Lacrosse — Boys',  category: 'sport',    blurb: 'Contact version. Helmet, gloves, full pads, stick.' },
-  { slug: 'lacrosse-girls', label: 'Lacrosse — Girls', category: 'sport',    blurb: 'Non-contact version. Stick, goggles, mouthpiece.' },
-  { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
-  { slug: 'soccer',        label: 'Soccer',           category: 'sport',    blurb: 'Cleats, shin guards, ball, water bottle.' },
-  { slug: 'softball',      label: 'Softball',         category: 'sport',    blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
-  { slug: 'swimming',      label: 'Swimming',         category: 'sport',    blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
-  { slug: 'football',      label: 'Tackle football',  category: 'sport',    blurb: 'Helmet, pads, cleats. The most equipment-heavy youth sport.' },
-  { slug: 'tennis',        label: 'Tennis',           category: 'sport',    blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
-  { slug: 'track-field',   label: 'Track and field',  category: 'sport',    blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
-  { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
+  // Field & team sports (alphabetical)
+  { slug: 'baseball',      label: 'Baseball',         category: 'sport',    group: 'team',       blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
+  { slug: 'basketball',    label: 'Basketball',       category: 'sport',    group: 'team',       blurb: 'Shoes, ball, athletic gear. Indoor sport, low overhead.' },
+  { slug: 'flag-football', label: 'Football — Flag',  category: 'sport',    group: 'team',       blurb: 'Mouthguard, cleats, gloves. No pads, no helmet.' },
+  { slug: 'football-7v7',  label: 'Football — 7v7',   category: 'sport',    group: 'team',       blurb: 'Skill-position 7v7. Mouthguard, cleats, gloves, optional skull cap. No tackling, no linemen.' },
+  { slug: 'football',      label: 'Football — Tackle',category: 'sport',    group: 'team',       blurb: 'Helmet, full pads, cleats. The most equipment-heavy youth sport.' },
+  { slug: 'hockey',        label: 'Hockey',           category: 'sport',    group: 'team',       blurb: 'Skates, helmet, stick, full pads. Plan for serious investment.' },
+  { slug: 'lacrosse-boys',  label: 'Lacrosse — Boys',  category: 'sport',   group: 'team',       blurb: 'Contact version. Helmet, gloves, full pads, stick.' },
+  { slug: 'lacrosse-girls', label: 'Lacrosse — Girls', category: 'sport',   group: 'team',       blurb: 'Non-contact version. Stick, goggles, mouthpiece.' },
+  { slug: 'soccer',        label: 'Soccer',           category: 'sport',    group: 'team',       blurb: 'Cleats, shin guards, ball, water bottle.' },
+  { slug: 'softball',      label: 'Softball',         category: 'sport',    group: 'team',       blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
+  { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    group: 'team',       blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
+  // Individual sports (alphabetical)
+  { slug: 'crew',          label: 'Crew',             category: 'sport',    group: 'individual', blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
+  { slug: 'cross-country', label: 'Cross country',    category: 'sport',    group: 'individual', blurb: 'Trainers, racing flats, layered cold-weather kit.' },
+  { slug: 'golf',          label: 'Golf',             category: 'sport',    group: 'individual', blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
+  { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    group: 'individual', blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
+  { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    group: 'individual', blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
+  { slug: 'swimming',      label: 'Swimming',         category: 'sport',    group: 'individual', blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
+  { slug: 'tennis',        label: 'Tennis',           category: 'sport',    group: 'individual', blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
+  { slug: 'track-field',   label: 'Track and field',  category: 'sport',    group: 'individual', blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
   // Performing arts (alphabetical)
   { slug: 'ballet',        label: 'Ballet',           category: 'activity', blurb: 'Slippers, leotard, tights. Pointe later, on the teacher\'s timeline.' },
   { slug: 'band',          label: 'Band',             category: 'activity', blurb: 'Instrument, reeds, accessories. Rent before you buy.' },
