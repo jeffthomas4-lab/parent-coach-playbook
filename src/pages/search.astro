@@ -2,61 +2,154 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { isLive } from '../lib/publishFilter';
+import { stripTitle } from '../lib/title';
+import { SPORTS } from '../data/site';
 
-const all = (await getCollection('articles', ({ data }) => isLive(data)));
-const guides = (await getCollection('guides', ({ data }) => isLive(data)));
-const resources = (await getCollection('resources', ({ data }) => isLive(data) && data.type !== 'external'));
+// Pull every public collection so search covers the whole site.
+const articles    = (await getCollection('articles',       ({ data }) => isLive(data)));
+const guides      = (await getCollection('guides',         ({ data }) => isLive(data)));
+const resources   = (await getCollection('resources',      ({ data }) => isLive(data) && data.type !== 'external'));
+const tips        = (await getCollection('coachingTips',   ({ data }) => isLive(data)));
+const bodyTopics  = (await getCollection('body',           ({ data }) => isLive(data)));
+const pathways    = (await getCollection('pathways',       ({ data }) => isLive(data)));
+const calendars   = (await getCollection('seasonCalendars',({ data }) => isLive(data)));
+const recruiting  = (await getCollection('recruiting',     ({ data }) => isLive(data)));
+const adaptive    = (await getCollection('adaptive',       ({ data }) => isLive(data)));
+const rules       = (await getCollection('rules',          ({ data }) => isLive(data)));
 
-const articleIndex = all.map(a => ({
-  type: 'article' as const,
-  title: a.data.title.replace(/\*/g, ''),
+const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+
+// Each entry: type for the meta label, title for matching+display, dek for matching+display,
+// href for the destination, meta for the small label above the title.
+const articleIndex = articles.map(a => ({
+  type: 'Reads',
+  title: stripTitle(a.data.title),
   dek: a.data.dek ?? '',
   href: `/${a.data.phase}/${a.slug}/`,
-  meta: [a.data.phase, a.data.sport, a.data.age].filter(Boolean).join(' · '),
+  meta: ['Reads', a.data.phase, a.data.sport, a.data.age].filter(Boolean).join(' · '),
 }));
+
 const guideIndex = guides.map(g => ({
-  type: 'guide' as const,
+  type: 'What to Buy',
   title: `What to buy for ${g.data.activity.toLowerCase()}`,
   dek: g.data.lede,
   href: `/what-to-buy/${g.slug}/`,
-  meta: g.data.category === 'sport' ? 'Sport · gear guide' : 'Activity · gear guide',
+  meta: g.data.category === 'sport' ? 'What to Buy · sport' : g.data.category === 'activity' ? 'What to Buy · activity' : 'What to Buy · essentials',
 }));
+
 const resourceIndex = resources.map(r => ({
-  type: 'resource' as const,
-  title: r.data.title,
+  type: 'Team Parent',
+  title: stripTitle(r.data.title),
   dek: r.data.summary,
   href: `/team-parent/${r.slug}/`,
   meta: 'Team Parent · ' + r.data.category.replace('-', ' '),
 }));
-const fullIndex = [...articleIndex, ...guideIndex, ...resourceIndex];
+
+const tipsIndex = tips.map(t => ({
+  type: 'Drills',
+  title: stripTitle(t.data.title),
+  dek: t.data.summary,
+  href: `/coaching-tips/${t.slug}/`,
+  meta: ['Drills', t.data.sport, t.data.age, t.data.focus].filter(Boolean).join(' · '),
+}));
+
+const bodyIndex = bodyTopics.map(b => ({
+  type: 'The Body',
+  title: stripTitle(b.data.title),
+  dek: b.data.summary,
+  href: `/body/${b.slug}/`,
+  meta: 'The Body · ' + b.data.category.replace('-', ' '),
+}));
+
+const pathwayIndex = pathways.map(p => ({
+  type: 'Pathways',
+  title: stripTitle(p.data.title),
+  dek: p.data.summary,
+  href: `/pathways/${p.data.sport}/`,
+  meta: 'Pathways · ' + sportLabel(p.data.sport),
+}));
+
+const calendarIndex = calendars.map(c => ({
+  type: 'Season calendar',
+  title: stripTitle(c.data.title),
+  dek: c.data.summary,
+  href: `/season-calendar/${c.slug}/`,
+  meta: 'Season calendar · ' + sportLabel(c.data.sport),
+}));
+
+const recruitingIndex = recruiting.map(r => ({
+  type: 'Recruiting',
+  title: stripTitle(r.data.title),
+  dek: r.data.summary,
+  href: `/recruiting/${r.slug}/`,
+  meta: 'Recruiting · ' + r.data.category,
+}));
+
+const adaptiveIndex = adaptive.map(a => ({
+  type: 'Adaptive',
+  title: stripTitle(a.data.title),
+  dek: a.data.summary,
+  href: `/adaptive/${a.slug}/`,
+  meta: 'Adaptive · ' + a.data.category.replace('-', ' '),
+}));
+
+const rulesIndex = rules.map(r => ({
+  type: 'Rules',
+  title: stripTitle(r.data.title),
+  dek: r.data.summary,
+  href: `/rules/${r.data.sport}/`,
+  meta: 'Rules · ' + sportLabel(r.data.sport),
+}));
+
+// Static pages parents might search for.
+const staticIndex = [
+  { type: 'Tools', title: 'Cost calculator', dek: 'What does a year of youth sports actually cost?', href: '/cost-calculator/', meta: 'Tools · cost calculator' },
+  { type: 'Tools', title: 'Cost calculator methodology', dek: 'Where the default numbers come from.', href: '/cost-calculator/methodology/', meta: 'Tools · methodology' },
+  { type: 'Tools', title: 'Tools index', dek: 'Season calendar, pathways, cost calculator, the body, recruiting, rules, adaptive.', href: '/tools/', meta: 'Tools' },
+  { type: 'Camps', title: 'Camps directory', dek: 'Search and submit youth sports and activity camps.', href: '/camps/', meta: 'Camps' },
+  { type: 'About', title: 'About Parent Coach Playbook', dek: 'What this is and who writes it.', href: '/about/', meta: 'About' },
+  { type: 'Newsletter', title: 'Newsletter', dek: 'One short read every Friday from the editorial desk.', href: '/newsletter/', meta: 'Newsletter' },
+];
+
+const fullIndex = [
+  ...articleIndex, ...guideIndex, ...resourceIndex, ...tipsIndex,
+  ...bodyIndex, ...pathwayIndex, ...calendarIndex,
+  ...recruitingIndex, ...adaptiveIndex, ...rulesIndex,
+  ...staticIndex,
+];
+
+const totalCount = fullIndex.length;
 
 // Curated popular searches and popular reads (manual list, edit anytime)
 const popularSearches = [
   { label: 'tryouts', href: '/drive-there/night-before-tryouts/' },
   { label: 'bad game', href: '/drive-home/the-90-second-rule/' },
-  { label: 'group chat', href: '/team-parent/starting-the-team-group-chat/' },
-  { label: 'lineup', href: '/team-parent/fair-lineup-spreadsheet/' },
-  { label: 'first practice', href: '/team-parent/practice-plan-parents-can-read/' },
+  { label: 'cost', href: '/cost-calculator/' },
+  { label: 'recruiting', href: '/recruiting/' },
+  { label: 'concussion', href: '/body/concussion-protocol-basics/' },
   { label: 'travel ball', href: '/team-parent/travel-tournament-packing-list/' },
 ];
 
 const popularReads = [
-  { title: 'Three drives. One relationship.', dek: 'The brand thesis. The cornerstone read.', href: '/drive-home/three-drives-one-relationship/' },
+  { title: 'The Recruiting Process', dek: 'A no-hype guide to how college recruiting really works.', href: '/recruiting/the-recruiting-process/' },
   { title: 'What you say in the first 90 seconds', dek: 'The post-game window decides what the next week feels like.', href: '/drive-home/the-90-second-rule/' },
-  { title: 'Coaching your own kid in front of the team', dek: 'The hardest job in youth sports. The rule we landed on.', href: '/game/coaching-your-own-kid-in-front-of-the-team/' },
-  { title: 'Starting the team group chat that actually works', dek: 'The first message that works. Five rules to keep it tight.', href: '/team-parent/starting-the-team-group-chat/' },
+  { title: 'Cost calculator', dek: 'What does a year of youth sports actually cost? Honest math, either way.', href: '/cost-calculator/' },
+  { title: 'Concussion protocol basics', dek: 'CDC HEADS UP, return-to-play, your state law.', href: '/body/concussion-protocol-basics/' },
 ];
 ---
-<BaseLayout title="Search" description="Search the archive. Or pick from popular reads.">
+<BaseLayout title="Search" description="Search the whole site. Articles, body topics, pathways, season calendars, cost calculator, recruiting, adaptive, rules, drills, gear guides.">
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Search</p>
       <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0]" style="font-weight: 500;">
         Find what you're looking for
       </h1>
+      <p class="font-display italic text-ink-soft text-sm mt-3" style="font-weight: 500;">
+        Searching {totalCount} pieces across the whole site.
+      </p>
       <input
         type="search"
-        placeholder="Try: tryouts, bad game, group chat, gear..."
+        placeholder="Try: tryouts, recruiting, concussion, AAU, gear, cost..."
         class="mt-7 w-full max-w-xl px-4 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
         data-search-input
       />

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
 const pieces = (await getCollection('recruiting', ({ data }) => isLive(data)))
@@ -58,9 +59,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
       <div class="container-px py-12 md:py-16">
         <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Read this first</p>
         <a href={`/recruiting/${pillar.slug}/`} class="block group max-w-3xl">
-          <h2 class="font-display text-ink text-3xl md:text-[3rem] leading-[1.05] group-hover:text-rust transition-colors" style="font-weight: 500;">
-            {pillar.data.title}
-          </h2>
+          <h2 class="font-display text-ink text-3xl md:text-[3rem] leading-[1.05] group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(pillar.data.title)} />
           <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
             {pillar.data.summary}
           </p>
@@ -84,9 +83,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
               <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
                 {(p.data.sportTags ?? []).map(s => sportLabel(s)).join(' · ') || 'Sport'}
               </p>
-              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-                {p.data.title}
-              </h3>
+              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
               <p class="t-cta mt-3">Open →</p>
             </a>
@@ -122,9 +119,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
             <ul class="grid gap-4">
               {g.items.map((p) => (
                 <li class="border border-bone bg-paper-warm p-5">
-                  <a href={`/recruiting/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;">
-                    {p.data.title}
-                  </a>
+                  <a href={`/recruiting/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
                   <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
                 </li>
               ))}

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -14,7 +15,7 @@ const { Content } = await piece.render();
 const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece.data.sport;
 ---
 <BaseLayout
-  title={piece.data.title}
+  title={stripTitle(piece.data.title)}
   description={piece.data.summary}
 >
   <section class="border-b border-bone">
@@ -24,9 +25,7 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
         <a href="/rules/" class="hover:underline">Rules at-a-glance</a> ·
         {sportLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
-        {piece.data.title}
-      </h1>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {piece.data.summary}
       </p>

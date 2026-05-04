@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -32,7 +33,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 const lastUpdated = topic.data.publishedAt;
 ---
 <BaseLayout
-  title={topic.data.title}
+  title={stripTitle(topic.data.title)}
   description={topic.data.summary}
 >
   <section class="border-b border-bone">
@@ -41,9 +42,7 @@ const lastUpdated = topic.data.publishedAt;
         <a href="/tools/" class="hover:underline">Tools</a> ·
         <a href="/body/" class="hover:underline">The body</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
-        {topic.data.title}
-      </h1>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(topic.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {topic.data.summary}
       </p>
@@ -121,7 +120,7 @@ const lastUpdated = topic.data.publishedAt;
               <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">More from The body</p>
               <ul class="grid gap-2">
                 {siblingBody.map(b => (
-                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {b.data.title}</a></li>
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(b.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
@@ -141,7 +140,7 @@ const lastUpdated = topic.data.publishedAt;
               <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Season calendars</p>
               <ul class="grid gap-2">
                 {relatedCalendars.map(c => (
-                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {c.data.title}</a></li>
+                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(c.data.title)} /></a></li>
                 ))}
               </ul>
             </div>

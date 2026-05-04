@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 
 const pieces = (await getCollection('adaptive', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -64,9 +65,7 @@ const grouped = categories.map(c => ({
               <ul class="grid gap-4">
                 {g.items.map((p) => (
                   <li class="border border-bone bg-paper-warm p-5">
-                    <a href={`/adaptive/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;">
-                      {p.data.title}
-                    </a>
+                    <a href={`/adaptive/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
                     <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
                   </li>
                 ))}

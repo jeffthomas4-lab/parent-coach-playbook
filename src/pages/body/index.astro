@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 
 const topics = (await getCollection('body', ({ data }) => isLive(data)))
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
@@ -72,9 +73,7 @@ const groupedTopics = categories.map(c => ({
               <ul class="grid gap-4">
                 {g.items.map((t) => (
                   <li class="border border-bone bg-paper-warm p-5">
-                    <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;">
-                      {t.data.title}
-                    </a>
+                    <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;" set:html={renderTitle(t.data.title)} />
                     <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
                   </li>
                 ))}

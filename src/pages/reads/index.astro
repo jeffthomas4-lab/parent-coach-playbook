@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TOPICS } from '../../data/site';
 import TopicIcon from '../../components/TopicIcon.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 
 // Get all published articles
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
@@ -61,9 +62,7 @@ const fmtDate = (d: Date) =>
             <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
               {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'}
             </p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {a.data.title}
-            </h3>
+            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(a.data.title)} />
             {a.data.dek && (
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{a.data.dek}</p>
             )}
@@ -97,7 +96,7 @@ const fmtDate = (d: Date) =>
               </p>
               {t.recent && (
                 <p class="font-display text-ink text-sm leading-snug group-hover:text-rust transition-colors">
-                  <span class="font-semibold">Latest:</span> {t.recent.data.title}
+                  <span class="font-semibold">Latest:</span> <span set:html={renderTitle(t.recent.data.title)} />
                 </p>
               )}
             </div>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
 const pieces = (await getCollection('rules', ({ data }) => isLive(data)))
@@ -39,9 +40,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
           {pieces.map((p) => (
             <a href={`/rules/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{sportLabel(p.data.sport)}</p>
-              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-                {p.data.title}
-              </h2>
+              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
               <p class="t-cta mt-3">5-min read →</p>
             </a>

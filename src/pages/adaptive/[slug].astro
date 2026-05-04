@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
 
 export async function getStaticPaths() {
   const pieces = await getCollection('adaptive', ({ data }) => isLive(data));
@@ -12,7 +13,7 @@ const { piece } = Astro.props;
 const { Content } = await piece.render();
 ---
 <BaseLayout
-  title={piece.data.title}
+  title={stripTitle(piece.data.title)}
   description={piece.data.summary}
 >
   <section class="border-b border-bone">
@@ -21,9 +22,7 @@ const { Content } = await piece.render();
         <a href="/tools/" class="hover:underline">Tools</a> ·
         <a href="/adaptive/" class="hover:underline">Adaptive</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
-        {piece.data.title}
-      </h1>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {piece.data.summary}
       </p>
