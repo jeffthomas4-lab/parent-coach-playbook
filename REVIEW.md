@@ -127,3 +127,35 @@ Score honestly. A 7 is a fine piece. A 10 is rare. Below 6, rewrite.
 **Auto-derived fields not yet implemented:** sourceCount, updateCount, wordCount, readTime. Future work — would be computed at build time from content, not stored in frontmatter.
 
 **Backfill of existing pieces:** the ~80 articles, body topics, pathways, calendars, and other content from before this session don't yet have editorial frontmatter. They show as `draft` in the dashboard until reviewed. Plan a backfill pass.
+
+---
+
+## Curation principle: home page and /start-here/
+
+Standing rule: every time a new article ships, evaluate whether it earns a slot on the homepage or `/start-here/`. Most won't. The ones that do change the front-door experience and should.
+
+**The two surfaces:**
+
+- **Homepage** (`/index.astro`). The first impression. Lead with cornerstone pieces, the moment-based "what do you need right now" tiles, the active SEO-traffic articles, and the lead magnet. Heavy turnover happens here.
+- **`/start-here/`**. The deep parents'-guide entry point. Curated lists organized as Cornerstone reads / New to this / Big decisions / Scripts / Common searches / The body. Each list is a hand-maintained slug array in the page file. When a new piece deserves cornerstone status, add the slug. When a piece falls out of relevance, remove it.
+
+**The five questions to ask when a new article ships:**
+
+1. **Is this the kind of piece a parent would Google?** (search-volume question — does it fit the "common searches" lane on /start-here/?)
+2. **Is this a cornerstone, evergreen, deep piece?** (cornerstone slot)
+3. **Does it answer one of the "big decisions" parents face?** (decisions hub + /start-here/ decisions list)
+4. **Is it a moment-based scripted page?** (Scripts hub + /start-here/ scripts list)
+5. **Is it a body/health topic parents Google at 11pm?** (Body hub + /start-here/ body list)
+
+If yes to any: edit the relevant slug list in `/src/pages/start-here.astro` and the relevant featured-content block in `/src/pages/index.astro`. If yes to none: the piece is fine in its category section, doesn't need front-door treatment.
+
+**Rotation rule:**
+
+The homepage and /start-here/ should not become an ever-growing list. When a new piece earns a slot, an older piece may drop. Use editorial judgment. The point is to keep the front door curated and current, not exhaustive.
+
+**Where the curated lists live in code:**
+
+- `src/pages/start-here.astro` — `cornerstoneSlugs`, `newToThis`, `commonSearchSlugs`, `bodyTopicSlugs` arrays. Featured decisions and scripts pull from `featured: true` in their frontmatter.
+- `src/pages/index.astro` — homepage situation tiles, featured pillar, latest-reads section.
+
+**Apply this rule every time a new article ships. Especially new SEO-targeted pieces — they're the ones most likely to earn /start-here/ placement.**

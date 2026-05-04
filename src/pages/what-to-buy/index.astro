@@ -3,85 +3,117 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { BUYING_GUIDES } from '../../data/site';
 
-const sports = BUYING_GUIDES.filter(g => g.category === 'sport');
-const activities = BUYING_GUIDES.filter(g => g.category === 'activity');
-const essentials = BUYING_GUIDES.filter(g => g.category === 'essentials');
+// Split into the three top-level categories the directory uses.
+const teamSports       = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'team');
+const individualSports = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'individual');
+const performingArts   = BUYING_GUIDES.filter(g => g.category === 'activity');
+const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
 ---
 <BaseLayout
   title="What to Buy"
-  description="Honest gear guides by sport and activity. What you actually need, by age and season. How to choose. Rough cost ranges."
+  description="Honest gear guides by sport and activity. What you actually need, by age and season. Real cost ranges. Affiliate disclosure clear."
 >
+  <!-- Hero: what this section is, fast -->
   <section class="border-b border-bone">
-    <div class="container-px py-16 md:py-20">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">What to Buy</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
-        What you <em class="text-rust">actually need</em>, by sport and age.
+    <div class="container-px py-10 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">What to Buy</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        What you <em class="text-rust">actually need</em>, by sport.
       </h1>
-      <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
-        Honest starter kits for the activities your kid is doing. Real cost ranges. How to choose between options. Written by parents who have already bought the wrong thing at least twice.
+      <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
+        Honest starter kits. Real cost ranges. What to skip. Written by parents who have already bought the wrong thing.
       </p>
-      <aside class="mt-6 p-4 border border-bone bg-paper-warm max-w-2xl">
-        <p class="font-display italic text-ink-soft text-sm leading-snug" style="font-weight: 500;">
-          Disclosure: when product picks include affiliate links, we earn a small amount when you buy. We only recommend things we have used.
-        </p>
-      </aside>
     </div>
   </section>
 
+  <!-- What this section is — the explainer Jeff asked for -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-8 md:py-10 max-w-3xl">
+      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How this works</p>
+      <p class="font-display text-ink leading-relaxed text-base md:text-lg">
+        Pick your sport or activity below. Each guide has a starter list, the gear that actually matters, and what to skip. Sizing companion pages where the sport needs them. Affiliate links where used; <a href="/disclosure/" class="text-rust hover:underline">disclosure here</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick anchor nav (mobile-friendly) -->
   <section class="border-b border-bone">
-    <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Sports</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
-        {sports.map((g) => (
-          <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {g.label}
-            </h3>
-            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
-              {g.blurb}
-            </p>
-            <div class="t-cta mt-4">Open the guide →</div>
-          </a>
-        ))}
+    <div class="container-px py-5">
+      <p class="font-display italic text-ink-soft text-xs mb-3" style="font-weight: 500;">Jump to</p>
+      <div class="flex flex-wrap gap-2">
+        <a href="#team-sports"       class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Team sports</a>
+        <a href="#individual-sports" class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Individual sports</a>
+        <a href="#performing-arts"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Performing arts</a>
+        <a href="#essentials"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Essentials</a>
       </div>
     </div>
   </section>
 
-  <section class="border-b border-bone">
-    <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Performing arts &amp; activities</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
-        {activities.map((g) => (
-          <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {g.label}
-            </h3>
-            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
-              {g.blurb}
-            </p>
-            <div class="t-cta mt-4">Open the guide →</div>
-          </a>
+  <!-- Team sports: compact text-list grid (mobile-fast) -->
+  <section id="team-sports" class="border-b border-bone scroll-mt-16">
+    <div class="container-px py-8 md:py-10">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Team sports</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+        {teamSports.map((g) => (
+          <li>
+            <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
-  <section class="border-b border-bone">
-    <div class="container-px py-12">
+  <!-- Individual sports -->
+  <section id="individual-sports" class="border-b border-bone scroll-mt-16">
+    <div class="container-px py-8 md:py-10">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Individual sports</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+        {individualSports.map((g) => (
+          <li>
+            <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Performing arts -->
+  <section id="performing-arts" class="border-b border-bone scroll-mt-16">
+    <div class="container-px py-8 md:py-10">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Performing arts</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+        {performingArts.map((g) => (
+          <li>
+            <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Essentials -->
+  <section id="essentials" class="border-b border-bone scroll-mt-16">
+    <div class="container-px py-8 md:py-10">
       <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Essentials</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {essentials.map((g) => (
-          <a href={`/what-to-buy/${g.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <h3 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {g.label}
-            </h3>
-            <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
-              {g.blurb}
-            </p>
-            <div class="t-cta mt-4">Open the guide →</div>
-          </a>
+          <li>
+            <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 

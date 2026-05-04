@@ -2,140 +2,94 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
-import { renderTitle } from '../../lib/title';
 import { TOOLS_NAV, SPORTS } from '../../data/site';
 import { PROFILES } from '../../data/costDefaults';
 
-const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
-const bodyTopics = await getCollection('body', ({ data }) => isLive(data));
-const pathways = await getCollection('pathways', ({ data }) => isLive(data));
-
-const featuredCalendars = calendars.filter(c => c.data.featured).slice(0, 2);
-const featuredBody = bodyTopics.filter(b => b.data.featured).slice(0, 3);
-const featuredPathways = pathways.slice(0, 3);
-
-const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+// Counts for the tile blurbs
+const calendars  = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const bodyTopics = await getCollection('body',           ({ data }) => isLive(data));
+const pathways   = await getCollection('pathways',       ({ data }) => isLive(data));
+const recruiting = await getCollection('recruiting',     ({ data }) => isLive(data));
+const adaptive   = await getCollection('adaptive',       ({ data }) => isLive(data));
+const rules      = await getCollection('rules',          ({ data }) => isLive(data));
+const decisions  = await getCollection('decisions',      ({ data }) => isLive(data));
 const profileCount = PROFILES.length;
+
+// Add live counts to each tool's metadata.
+const toolsWithCounts = TOOLS_NAV.map(t => {
+  const counts: Record<string, string> = {
+    'season-calendar':  `${calendars.length} calendars`,
+    'pathways':         `${pathways.length} sports`,
+    'cost-calculator':  `${profileCount} profiles`,
+    'body':             `${bodyTopics.length} topics`,
+    'recruiting':       `${recruiting.length} pieces`,
+    'rules':            `${rules.length} sports`,
+    'adaptive':         `${adaptive.length} topics`,
+    'decisions':        `${decisions.length} decisions`,
+    'pendulum':         `single page`,
+    'mental-skills':    `5 topics`,
+    'governing-bodies': `directory`,
+  };
+  return { ...t, count: counts[t.slug] ?? '' };
+});
 ---
 <BaseLayout
   title="Tools"
-  description="Reference tools for activities-oriented parents. Season calendars, age pathways, cost calculator, and the body. Built to be re-opened, not read once."
+  description="Reference tools for activities-oriented parents. Season calendars, age pathways, cost calculator, the body, recruiting, rules, adaptive athletes, decisions, the pendulum, mental skills, and the governing-body directory."
 >
+  <!-- Hero: what this section is, fast -->
   <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-16">
+    <div class="container-px py-10 md:py-16">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Tools</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
         Pages parents <em class="text-rust">come back to</em>.
       </h1>
-      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Four reference sections that work as a system. Pick the moment you're in. The right tool tells you what's typical, what's not, and what to do about it.
+      <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
+        Reference tools, not articles. Open one when the moment comes up. Save it. Send it to the group chat the next time it does.
       </p>
     </div>
   </section>
 
-  <!-- The four cards, big and direct -->
-  <section class="border-b border-bone">
-    <div class="container-px py-12">
-      <div class="grid md:grid-cols-2 gap-px bg-bone">
-        <a href="/season-calendar/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #8FA68C;">
-          <p class="font-display italic text-xs mb-2" style="color: #8FA68C; font-weight: 500;">{calendars.length} canonical calendars</p>
-          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            Season calendar
-          </h2>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            Twelve months by sport and level. Tryouts week. Picture day window. Tournament season. Off-season. Pick the canonical shape that matches your kid's year.
-          </p>
-          <p class="t-cta mt-4">Open the calendar →</p>
-        </a>
-
-        <a href="/pathways/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #C5713D;">
-          <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{pathways.length} sports mapped</p>
-          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            Age pathways
-          </h2>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            What "good" looks like at 7, 10, 13, 15. Per sport. Skill milestones, practice shape, social and emotional markers, and the parent decision points at each age.
-          </p>
-          <p class="t-cta mt-4">Open the pathways →</p>
-        </a>
-
-        <a href="/cost-calculator/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #B0894A;">
-          <p class="font-display italic text-xs mb-2" style="color: #B0894A; font-weight: 500;">{profileCount} pre-loaded profiles</p>
-          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            Cost calculator
-          </h2>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            Pick a sport and level. Pre-filled with national medians. Edit any line. Annual, monthly, weekly, and per-game-played in real time. Save, share, send to the group chat.
-          </p>
-          <p class="t-cta mt-4">Open the calculator →</p>
-        </a>
-
-        <a href="/body/" class="bg-paper p-8 group block hover:bg-paper-warm transition-colors" style="border-top: 4px solid #5C7459;">
-          <p class="font-display italic text-xs mb-2" style="color: #5C7459; font-weight: 500;">{bodyTopics.length} topics, all with sources</p>
-          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            The body
-          </h2>
-          <p class="font-display text-ink-soft mt-3 leading-snug">
-            Concussion. Arm care. Heat. Sleep. ACL prevention. Pediatric sports medicine translated for parents. Every topic cites the governing body and lists the questions to bring to the doc.
-          </p>
-          <p class="t-cta mt-4">Open the body →</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How they work together -->
+  <!-- What this section is — quick explainer -->
   <section class="border-b border-bone bg-paper-warm">
-    <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">How they fit</p>
-      <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
-        The four work as <em class="text-rust">one system</em>.
-      </h2>
-      <div class="mt-8 grid md:grid-cols-2 gap-8 max-w-4xl">
-        <div>
-          <p class="font-display text-ink leading-relaxed" style="font-weight: 400;">
-            Pick a calendar to see what your kid's year looks like. Open the matching pathway to see what good looks like at this age. Run the cost calculator on the same sport and level to see what it actually costs.
-          </p>
-        </div>
-        <div>
-          <p class="font-display text-ink leading-relaxed" style="font-weight: 400;">
-            Read the body topics that match the sport. Concussion if it's contact. Arm care if it's pitching. Heat if it's August practice. Each detail page links to the matching pieces in the other three sections so you don't have to hunt.
-          </p>
-        </div>
-      </div>
+    <div class="container-px py-8 md:py-10 max-w-3xl">
+      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How this works</p>
+      <p class="font-display text-ink leading-relaxed text-base md:text-lg">
+        Each tool is a self-contained reference. The cost calculator runs the numbers. The season calendar shows the year. The body hub tells you what to ask the doctor. The scripts hub tells you what to say. Pick the one you need.
+      </p>
     </div>
   </section>
 
-  <!-- Featured pieces from each section -->
+  <!-- Scannable directory of tools -->
   <section class="border-b border-bone">
-    <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-6" style="font-weight: 500;">Start with these</p>
-
-      <div class="grid md:grid-cols-3 gap-px bg-bone">
-        {featuredPathways.map((p) => (
-          <a href={`/pathways/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Pathway · {sportLabel(p.data.sport)}</p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
-            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
-          </a>
+    <div class="container-px py-8 md:py-10">
+      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">All the tools</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+        {toolsWithCounts.map((t) => (
+          <li>
+            <a href={t.href} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <div class="flex items-baseline justify-between gap-3">
+                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{t.label}</span>
+                <span class="font-display italic text-ink-soft text-xs whitespace-nowrap" style="font-weight: 500;">{t.count}</span>
+              </div>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{t.blurb}</span>
+            </a>
+          </li>
         ))}
+      </ul>
+    </div>
+  </section>
 
-        {featuredBody.map((b) => (
-          <a href={`/body/${b.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <p class="font-display italic text-xs mb-2" style="color: #5C7459; font-weight: 500;">The body · {b.data.category}</p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(b.data.title)} />
-            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{b.data.summary}</p>
-          </a>
-        ))}
-
-        {featuredCalendars.map((c) => (
-          <a href={`/season-calendar/${c.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <p class="font-display italic text-xs mb-2" style="color: #8FA68C; font-weight: 500;">Calendar · {sportLabel(c.data.sport)}</p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(c.data.title)} />
-            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{c.data.summary}</p>
-          </a>
-        ))}
-      </div>
+  <!-- How they fit together -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 md:py-12">
+      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How they fit</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        The tools work as <em class="text-rust">one system</em>.
+      </h2>
+      <p class="font-display text-ink leading-relaxed mt-4 max-w-3xl">
+        Pick a calendar to see the shape of your kid's year. Open the matching pathway to see what good looks like at this age. Run the cost calculator to see what it costs. Read the body topics that match the sport. Use the scripts when the hard moment hits.
+      </p>
     </div>
   </section>
 </BaseLayout>
