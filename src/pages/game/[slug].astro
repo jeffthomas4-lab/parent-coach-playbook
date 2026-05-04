@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { isLive } from '../../lib/publishFilter';
 
 export async function getStaticPaths() {
-  const articles = await getCollection('articles', ({ data }) => !data.draft && data.phase === 'game');
+  const articles = await getCollection('articles', ({ data }) => isLive(data) && data.phase === 'game');
   return articles.map((a) => ({ params: { slug: a.slug }, props: { article: a } }));
 }
 

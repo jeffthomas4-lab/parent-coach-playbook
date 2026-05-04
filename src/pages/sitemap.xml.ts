@@ -1,16 +1,17 @@
 import { getCollection } from 'astro:content';
 import { SITE, BUYING_GUIDES } from '../data/site';
 import { listAllCampSlugsApproved } from '../lib/camps-db';
+import { isLive } from '../lib/publishFilter';
 import type { APIContext } from 'astro';
 
 // SSR so we can include approved camps from D1 at request time.
 export const prerender = false;
 
 export async function GET(ctx: APIContext) {
-  const articles = await getCollection('articles', ({ data }) => !data.draft);
-  const guides = await getCollection('guides', ({ data }) => !data.draft);
-  const resources = await getCollection('resources', ({ data }) => !data.draft && data.type !== 'external');
-  const tips = await getCollection('coachingTips', ({ data }) => !data.draft);
+  const articles = await getCollection('articles', ({ data }) => isLive(data));
+  const guides = await getCollection('guides', ({ data }) => isLive(data));
+  const resources = await getCollection('resources', ({ data }) => isLive(data) && data.type !== 'external');
+  const tips = await getCollection('coachingTips', ({ data }) => isLive(data));
 
   // Camps: pull approved slugs from D1 if the binding is available.
   const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;

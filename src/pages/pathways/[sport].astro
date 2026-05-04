@@ -1,0 +1,174 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+import { SPORTS, AGE_BANDS } from '../../data/site';
+
+export async function getStaticPaths() {
+  const pathways = await getCollection('pathways', ({ data }) => isLive(data));
+  return pathways.map((p) => ({ params: { sport: p.data.sport }, props: { pathway: p } }));
+}
+
+const { pathway } = Astro.props;
+const { Content } = await pathway.render();
+const sportLabel = SPORTS.find(s => s.slug === pathway.data.sport)?.label ?? pathway.data.sport;
+
+const bandLabel = (slug: string) => AGE_BANDS.find(b => b.slug === slug)?.label ?? slug;
+
+// Render bands in canonical order regardless of file order.
+const order = ['5-7', '8-10', '11-12', '13-14', '15-plus'];
+const orderedBands = [...pathway.data.bands].sort((a, b) => order.indexOf(a.age) - order.indexOf(b.age));
+
+// Per-band accent color. Rotates through the site palette.
+const bandAccent: Record<string, string> = {
+  '5-7':     '#8FA68C',
+  '8-10':    '#D4AB6A',
+  '11-12':   '#C5713D',
+  '13-14':   '#B0894A',
+  '15-plus': '#5C7459',
+};
+---
+<BaseLayout
+  title={`${sportLabel} pathway`}
+  description={pathway.data.summary}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/pathways/" class="hover:underline">Age pathways</a> ·
+        {sportLabel}
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        {pathway.data.title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {pathway.data.summary}
+      </p>
+    </div>
+  </section>
+
+  <!-- Age band timeline -->
+  {orderedBands.map((b) => (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 md:py-12">
+        <div class="grid md:grid-cols-12 gap-8">
+          <div class="md:col-span-3">
+            <p class="font-display italic mb-2 text-sm" style={`color: ${bandAccent[b.age]}; font-weight: 500;`}>Age band</p>
+            <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.0]" style="font-weight: 500;">
+              {bandLabel(b.age)}
+            </h2>
+          </div>
+          <div class="md:col-span-9 grid md:grid-cols-2 gap-x-8 gap-y-6">
+            {b.skillMilestones && b.skillMilestones.length > 0 && (
+              <div>
+                <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">Skill milestones</p>
+                <ul class="grid gap-1.5">
+                  {b.skillMilestones.map((s) => (
+                    <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {b.practiceShape && b.practiceShape.length > 0 && (
+              <div>
+                <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">What good practice looks like</p>
+                <ul class="grid gap-1.5">
+                  {b.practiceShape.map((s) => (
+                    <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {b.socialEmotional && b.socialEmotional.length > 0 && (
+              <div>
+                <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">Social and emotional</p>
+                <ul class="grid gap-1.5">
+                  {b.socialEmotional.map((s) => (
+                    <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {b.decisionPoints && b.decisionPoints.length > 0 && (
+              <div>
+                <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">Parent decision points</p>
+                <ul class="grid gap-1.5">
+                  {b.decisionPoints.map((s) => (
+                    <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Do not do this yet -->
+  {pathway.data.notYet && pathway.data.notYet.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-10">
+        <div class="grid md:grid-cols-12 gap-8">
+          <div class="md:col-span-3">
+            <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Body hub link</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05]" style="font-weight: 500;">
+              Do not do this <em class="text-rust">yet</em>.
+            </h2>
+            <p class="font-display italic text-ink-soft text-sm mt-3" style="font-weight: 500;">
+              See <a href="/body/" class="text-rust hover:underline">The body</a> for the why.
+            </p>
+          </div>
+          <div class="md:col-span-9">
+            <ul class="grid gap-2">
+              {pathway.data.notYet.map((s) => (
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Ahead or behind -->
+  {pathway.data.aheadBehind && pathway.data.aheadBehind.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10">
+        <div class="grid md:grid-cols-12 gap-8">
+          <div class="md:col-span-3">
+            <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Reframe</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05]" style="font-weight: 500;">
+              If your kid is <em class="text-rust">"ahead" or "behind"</em>.
+            </h2>
+          </div>
+          <div class="md:col-span-9">
+            <ul class="grid gap-2">
+              {pathway.data.aheadBehind.map((s) => (
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- LTAD closing line -->
+  <section class="border-b border-bone bg-ink text-paper">
+    <div class="container-px py-12 max-w-3xl">
+      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">Where your kid is on the path</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+        {pathway.data.ltadStage}
+      </p>
+    </div>
+  </section>
+
+  <!-- Markdown body for any extra notes -->
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

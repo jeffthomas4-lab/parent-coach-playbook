@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { isLive } from '../lib/publishFilter';
 
-const all = (await getCollection('articles', ({ data }) => !data.draft));
-const guides = (await getCollection('guides', ({ data }) => !data.draft));
-const resources = (await getCollection('resources', ({ data }) => !data.draft && data.type !== 'external'));
+const all = (await getCollection('articles', ({ data }) => isLive(data)));
+const guides = (await getCollection('guides', ({ data }) => isLive(data)));
+const resources = (await getCollection('resources', ({ data }) => isLive(data) && data.type !== 'external'));
 
 const articleIndex = all.map(a => ({
   type: 'article' as const,

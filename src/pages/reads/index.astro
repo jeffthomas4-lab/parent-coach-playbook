@@ -3,9 +3,10 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TOPICS } from '../../data/site';
 import TopicIcon from '../../components/TopicIcon.astro';
+import { isLive } from '../../lib/publishFilter';
 
 // Get all published articles
-const all = (await getCollection('articles', ({ data }) => !data.draft))
+const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 // Latest 6 articles across all topics

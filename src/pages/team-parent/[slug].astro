@@ -12,6 +12,7 @@ import {
   EDITORIAL,
   SITE,
 } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
 
 type Article = CollectionEntry<'articles'>;
 type Resource = CollectionEntry<'resources'>;
@@ -22,10 +23,10 @@ type Props = ResourceProps | ArticleProps;
 
 export async function getStaticPaths() {
   const resources = await getCollection('resources', ({ data }) =>
-    !data.draft && data.type !== 'external'
+    isLive(data) && data.type !== 'external'
   );
   const articles = await getCollection('articles', ({ data }) =>
-    !data.draft && data.phase === 'team-parent'
+    isLive(data) && data.phase === 'team-parent'
   );
 
   const resourcePaths = resources.map((r) => ({
@@ -85,7 +86,7 @@ if (props.kind === 'article') {
 
   related = (
     await getCollection('articles', ({ data: d, slug: s }) =>
-      !d.draft && d.phase === 'team-parent' && s !== article!.slug
+      isLive(d) && d.phase === 'team-parent' && s !== article!.slug
     )
   )
     .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())

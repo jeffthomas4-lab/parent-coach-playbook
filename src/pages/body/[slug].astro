@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
+import { isLive } from '../../lib/publishFilter';
+
+export async function getStaticPaths() {
+  const topics = await getCollection('body', ({ data }) => isLive(data));
+  return topics.map((t) => ({ params: { slug: t.slug }, props: { topic: t } }));
+}
+
+const { topic } = Astro.props;
+const { Content } = await topic.render();
+---
+<BaseLayout
+  title={topic.data.title}
+  description={topic.data.summary}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/body/" class="hover:underline">The body</a>
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        {topic.data.title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {topic.data.summary}
+      </p>
+    </div>
+  </section>
+
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      <BodyDisclaimer />
+      <Content />
+
+      {topic.data.governingBodies && topic.data.governingBodies.length > 0 && (
+        <aside class="mt-10 pt-6 border-t border-bone">
+          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Sources</p>
+          <ul class="grid gap-2">
+            {topic.data.governingBodies.map((g) => (
+              <li>
+                <a href={g.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust" style="font-weight: 500;">
+                  {g.name} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
+      {topic.data.doctorQuestions && topic.data.doctorQuestions.length > 0 && (
+        <aside class="mt-10 pt-6 border-t border-bone">
+          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Questions to bring to the pediatrician</p>
+          <ul class="grid gap-2">
+            {topic.data.doctorQuestions.map((q) => (
+              <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {q}</li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
+      {topic.data.gearPicks && topic.data.gearPicks.length > 0 && (
+        <aside class="mt-10 pt-6 border-t border-bone">
+          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Gear that helps</p>
+          <ul class="grid gap-3">
+            {topic.data.gearPicks.map((g) => (
+              <li>
+                {g.affiliateSlug ? (
+                  <a href={`/go/${g.affiliateSlug}/`} class="font-display text-ink hover:text-rust" style="font-weight: 500;">{g.name} →</a>
+                ) : (
+                  <span class="font-display text-ink" style="font-weight: 500;">{g.name}</span>
+                )}
+                {g.note && (
+                  <p class="font-display italic text-ink-soft text-sm mt-1 leading-snug" style="font-weight: 500;">{g.note}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+          <p class="font-display italic text-ink-soft text-xs mt-4 leading-snug" style="font-weight: 500;">
+            Some of these are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
+          </p>
+        </aside>
+      )}
+    </div>
+  </article>
+</BaseLayout>

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TOPICS, AGE_BANDS, SPORTS } from '../../data/site';
 import TopicIcon from '../../components/TopicIcon.astro';
+import { isLive } from '../../lib/publishFilter';
 
 export async function getStaticPaths() {
   return TOPICS.map((t) => ({
@@ -15,7 +16,7 @@ const topicMeta = TOPICS.find(t => t.slug === topic)!;
 
 // Get all articles for this topic, sorted by date desc
 const articles = (await getCollection('articles', ({ data }) =>
-  !data.draft && data.topic === topic
+  isLive(data) && data.topic === topic
 ))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 

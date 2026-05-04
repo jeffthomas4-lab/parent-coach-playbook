@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+
+const topics = (await getCollection('body', ({ data }) => isLive(data)))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const categories = [
+  { slug: 'concussion',         label: 'Concussion',          blurb: 'CDC HEADS UP, return-to-play, your state law.' },
+  { slug: 'arm-care',            label: 'Arm care',            blurb: 'Pitch counts, off-season throwing, no curveballs before 14.' },
+  { slug: 'heat',                label: 'Heat and hydration',  blurb: 'NATA youth heat acclimatization. The rules of an August practice.' },
+  { slug: 'sleep',               label: 'Sleep',                blurb: 'AAP targets by age. Why the 6am practice is a performance issue.' },
+  { slug: 'growth-plates',       label: 'Growth plates',        blurb: 'Sever\'s, Osgood-Schlatter\'s, why adolescent ankle pain matters.' },
+  { slug: 'recovery',            label: 'Recovery',             blurb: 'Foam rollers, ice baths, when the gear actually helps.' },
+  { slug: 'injury-prevention',   label: 'Injury prevention',    blurb: 'Pre-practice warm-up. The 11 minutes that change ACL math.' },
+  { slug: 'nutrition',           label: 'Nutrition',            blurb: 'Real fueling for kids. The pre-game meal that doesn\'t backfire.' },
+  { slug: 'hydration',           label: 'Hydration',            blurb: 'How much water, when. The electrolyte question.' },
+  { slug: 'mental-skills',       label: 'Mental skills',        blurb: 'Pre-game nerves, identity, burnout signs.' },
+  { slug: 'specialization',      label: 'Specialization',       blurb: 'When single-sport helps, when it costs you.' },
+];
+
+const groupedTopics = categories.map(c => ({
+  ...c,
+  items: topics.filter(t => t.data.category === c.slug),
+})).filter(g => g.items.length > 0);
+---
+<BaseLayout
+  title="The body"
+  description="Pediatric sports medicine translated for parents. Concussion, arm care, heat, sleep, growth plates, recovery. What to know, what to ask the pediatrician, what gear actually helps."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · The body
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        The <em class="text-rust">body</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Concussion. Arm care. Heat. Sleep. Growth plates. The stuff parents Google at 11pm. We cite the governing body, give you the questions to ask the doctor, and stay in our lane.
+      </p>
+
+      <aside class="mt-8 border-l-4 pl-4 py-3 max-w-2xl" style="border-color: #B8908F; background: #FAF6F1;">
+        <p class="font-display italic text-rust text-sm" style="font-weight: 500;">What this is</p>
+        <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+          Parent-to-parent. Not medical advice. We cite the governing body where one exists. For anything specific to your kid, talk to your pediatrician or your team's athletic trainer.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  {groupedTopics.length === 0 ? (
+    <section>
+      <div class="container-px py-12">
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">
+          The first batch of body topics ships this month. Check back.
+        </p>
+      </div>
+    </section>
+  ) : (
+    groupedTopics.map((g) => (
+      <section class="border-b border-bone">
+        <div class="container-px py-10 md:py-12">
+          <div class="grid md:grid-cols-12 gap-8">
+            <div class="md:col-span-4">
+              <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Category</p>
+              <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">{g.label}</h2>
+              <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
+            </div>
+            <div class="md:col-span-8">
+              <ul class="grid gap-4">
+                {g.items.map((t) => (
+                  <li class="border border-bone bg-paper-warm p-5">
+                    <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;">
+                      {t.data.title}
+                    </a>
+                    <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))
+  )}
+</BaseLayout>

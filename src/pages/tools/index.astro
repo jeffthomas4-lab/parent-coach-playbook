@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { TOOLS_NAV } from '../../data/site';
+---
+<BaseLayout
+  title="Tools"
+  description="Reference tools for activities-oriented parents. Season calendars, age pathways, cost calculator, and the body."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Tools</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        The reference rack.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Pages parents come back to. Save them, share them, send them in the group chat when the question comes up again.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <div class="grid md:grid-cols-2 gap-px bg-bone">
+        {TOOLS_NAV.map((t) => (
+          <a href={t.href} class="bg-paper p-8 group block hover:bg-paper-warm transition-colors">
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+              {t.label}
+            </h2>
+            <p class="font-display text-ink-soft mt-3 leading-snug">{t.blurb}</p>
+            <p class="t-cta mt-4">Open →</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

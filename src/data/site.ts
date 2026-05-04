@@ -29,7 +29,18 @@ export const NAV = [
   { label: 'Camps', href: '/camps/' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
   { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
+  { label: 'Tools', href: '/tools/', hasDropdown: 'tools' },
 ];
+
+// Items inside the Tools nav dropdown. Each is a hub URL parents return to.
+export const TOOLS_NAV = [
+  { slug: 'season-calendar',  label: 'Season calendar',   href: '/season-calendar/',  blurb: 'Twelve months by sport and level. Tryouts, peaks, off-season.' },
+  { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15 — by sport.' },
+  { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost. Per game your kid actually plays in.' },
+  { slug: 'body',             label: 'The body',          href: '/body/',             blurb: 'Concussion, arm care, heat, sleep. What to know, what to ask the doc.' },
+] as const;
+
+export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];
 
 export const UTILITY_NAV = [
   { label: 'Newsletter', href: '/newsletter/' },

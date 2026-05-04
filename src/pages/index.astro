@@ -5,8 +5,9 @@ import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import TopicIcon from '../components/TopicIcon.astro';
 import { TOPICS, EDITORIAL } from '../data/site';
+import { isLive } from '../lib/publishFilter';
 
-const all = (await getCollection('articles', ({ data }) => !data.draft))
+const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 // Featured cornerstone (the long read). Pick the first essay marked featured.

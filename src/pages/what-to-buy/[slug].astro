@@ -3,9 +3,10 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { BUYING_GUIDES, EDITORIAL } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
 
 export async function getStaticPaths() {
-  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  const guides = await getCollection('guides', ({ data }) => isLive(data));
   return guides.map((g) => ({
     params: { slug: g.slug },          // filename-derived slug, e.g. "baseball"
     props: { guide: g },

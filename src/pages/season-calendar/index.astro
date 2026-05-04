@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+import { SPORTS } from '../../data/site';
+
+const calendars = (await getCollection('seasonCalendars', ({ data }) => isLive(data)))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+
+const levelLabel: Record<string, string> = {
+  rec: 'Rec', school: 'School', travel: 'Travel/club', elite: 'Elite/showcase',
+};
+const levelAccent: Record<string, string> = {
+  rec: '#8FA68C', school: '#5C7459', travel: '#C5713D', elite: '#B0894A',
+};
+---
+<BaseLayout
+  title="Season calendar"
+  description="Twelve months at a glance. Tryouts, league windows, picture-day, peak season, off-season. Pick the canonical calendar that matches your kid's life."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · Season calendar
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Twelve months. <em class="text-rust">Pick the shape that fits.</em>
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        There isn't one calendar. There are about five real shapes. Single-season rec. School-sport season. Year-round club. Discipline practice. Hybrid stack. Pick the one that looks like your kid's year.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+        Phase 2: stack builder. Pick multiple, see them overlaid, find your conflict windows. Coming.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      {calendars.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">
+          The first batch of canonical calendars ships this month. Check back.
+        </p>
+      ) : (
+        <div class="grid md:grid-cols-2 gap-px bg-bone">
+          {calendars.map((c) => (
+            <a href={`/season-calendar/${c.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+              <p class="font-display italic text-xs mb-2" style={`color: ${levelAccent[c.data.level]}; font-weight: 500;`}>
+                {sportLabel(c.data.sport)} · {levelLabel[c.data.level]}{c.data.region ? ` · ${c.data.region}` : ''}
+              </p>
+              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                {c.data.title}
+              </h2>
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{c.data.summary}</p>
+              <p class="font-display italic text-ink-soft text-xs mt-3" style="font-weight: 500;">
+                {c.data.durationLabel}
+              </p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

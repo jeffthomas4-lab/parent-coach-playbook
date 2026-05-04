@@ -1,0 +1,81 @@
+---
+// Renders a 12-month strip for one canonical season calendar.
+// Intensity drives the bar color. Events render below each month.
+
+interface MonthEntry {
+  key: 'jan'|'feb'|'mar'|'apr'|'may'|'jun'|'jul'|'aug'|'sep'|'oct'|'nov'|'dec';
+  intensity: 'off'|'build'|'peak'|'taper'|'rest';
+  events: string[];
+  note?: string;
+}
+
+interface Props {
+  months: MonthEntry[];
+}
+
+const { months } = Astro.props as Props;
+
+const monthLabel: Record<MonthEntry['key'], string> = {
+  jan: 'Jan', feb: 'Feb', mar: 'Mar', apr: 'Apr', may: 'May', jun: 'Jun',
+  jul: 'Jul', aug: 'Aug', sep: 'Sep', oct: 'Oct', nov: 'Nov', dec: 'Dec',
+};
+
+// Map intensity to a bar height + color. The site palette (rust / sage / honey).
+const bar: Record<MonthEntry['intensity'], { h: string; bg: string; label: string }> = {
+  off:   { h: '8px',  bg: '#EAE3D8', label: 'Off' },
+  rest:  { h: '14px', bg: '#D9CFBE', label: 'Rest' },
+  build: { h: '28px', bg: '#8FA68C', label: 'Build' },
+  taper: { h: '20px', bg: '#D4AB6A', label: 'Taper' },
+  peak:  { h: '44px', bg: '#C5713D', label: 'Peak' },
+};
+
+// Make sure the months render Jan–Dec even if input is in a different order.
+const order: MonthEntry['key'][] = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+const byKey = new Map(months.map(m => [m.key, m]));
+const ordered = order.map(k => byKey.get(k) ?? { key: k, intensity: 'off' as const, events: [] });
+---
+<div class="border border-bone bg-paper-warm p-4 md:p-6">
+  <div class="flex items-end gap-1 md:gap-2 h-16">
+    {ordered.map((m) => (
+      <div class="flex-1 flex flex-col items-center justify-end" title={`${monthLabel[m.key]} — ${bar[m.intensity].label}`}>
+        <div style={`height: ${bar[m.intensity].h}; width: 100%; background: ${bar[m.intensity].bg};`} />
+      </div>
+    ))}
+  </div>
+  <div class="flex gap-1 md:gap-2 mt-2">
+    {ordered.map((m) => (
+      <div class="flex-1 text-center font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+        {monthLabel[m.key]}
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-6 pt-5 border-t border-bone grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {ordered.filter(m => m.events.length > 0 || m.note).map((m) => (
+      <div class="border-l-2 pl-3" style={`border-color: ${bar[m.intensity].bg};`}>
+        <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+          {monthLabel[m.key]} · {bar[m.intensity].label}
+        </p>
+        {m.events.length > 0 && (
+          <ul class="font-display text-ink text-sm mt-1 leading-snug" style="font-weight: 400;">
+            {m.events.map((e) => <li>{e}</li>)}
+          </ul>
+        )}
+        {m.note && (
+          <p class="font-display italic text-ink-soft text-xs mt-1 leading-snug" style="font-weight: 500;">
+            {m.note}
+          </p>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-6 pt-4 border-t border-bone flex flex-wrap gap-3">
+    {(['off','rest','build','taper','peak'] as const).map((k) => (
+      <span class="inline-flex items-center gap-2 font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+        <span style={`display:inline-block; width: 14px; height: 14px; background: ${bar[k].bg};`} />
+        {bar[k].label}
+      </span>
+    ))}
+  </div>
+</div>

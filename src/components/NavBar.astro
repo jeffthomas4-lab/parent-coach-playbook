@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { NAV, UTILITY_NAV, BUYING_GUIDES, TEAM_PARENT_CATEGORIES } from '../data/site';
+import { NAV, UTILITY_NAV, BUYING_GUIDES, TEAM_PARENT_CATEGORIES, TOOLS_NAV } from '../data/site';
 
 const path = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -92,6 +92,24 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
                 </div>
               </div>
             )}
+
+            {item.hasDropdown === 'tools' && (
+              <div
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[520px] bg-paper border border-bone hidden"
+                style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
+                data-dropdown-panel
+              >
+                <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">Reference tools</p>
+                <div class="grid grid-cols-1 gap-y-1">
+                  {TOOLS_NAV.map((t) => (
+                    <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5" style="font-weight: 500;">
+                      {t.label}
+                      <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <a
@@ -139,6 +157,13 @@ const activityGuides = BUYING_GUIDES.filter(g => g.category === 'activity');
             <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
               {TEAM_PARENT_CATEGORIES.map((c) => (
                 <li><a href={`/team-parent/#${c.slug}`} class="font-display text-ink-soft hover:text-rust text-sm">{c.label}</a></li>
+              ))}
+            </ul>
+          )}
+          {item.hasDropdown === 'tools' && (
+            <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
+              {TOOLS_NAV.map((t) => (
+                <li><a href={t.href} class="font-display text-ink-soft hover:text-rust text-sm">{t.label}</a></li>
               ))}
             </ul>
           )}

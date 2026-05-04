@@ -4,6 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL } from '../data/site';
+import { isLive } from '../lib/publishFilter';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -17,7 +18,7 @@ const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
 
 // Related: same phase, exclude this article, top 3
 const related = (await getCollection('articles', ({ data: d, slug: s }) =>
-  !d.draft && d.phase === data.phase && s !== slug
+  isLive(d) && d.phase === data.phase && s !== slug
 )).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 // JSON-LD

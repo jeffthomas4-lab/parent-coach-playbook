@@ -150,4 +150,93 @@ const coachingTips = defineCollection({
     }),
 });
 
-export const collections = { articles, gear, guides, resources, coachingTips };
+// Season calendars: canonical month-by-month maps for a given sport + level.
+// One file = one shape parents can pick from. Future builder layer will overlay multiple
+// calendars on the same twelve-month view.
+const seasonCalendars = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      title: z.string(),                        // "Club volleyball 14s — National qualifier track"
+      sport: z.enum(SPORT_ENUM),
+      level: z.enum(['rec', 'school', 'travel', 'elite']),
+      region: z.string().optional(),            // "PNW", "National", "Southeast"
+      durationLabel: z.string(),                // "Year-round", "Aug–Nov", "Mar–Jun"
+      summary: z.string(),
+      months: z.array(
+        z.object({
+          key: z.enum(['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']),
+          intensity: z.enum(['off', 'build', 'peak', 'taper', 'rest']),
+          events: z.array(z.string()).default([]),
+          note: z.string().optional(),
+        })
+      ),
+      publishedAt: z.coerce.date(),
+      updatedAt: z.coerce.date().optional(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+    }),
+});
+
+// Body hub: pediatric sports medicine translated for parents. Strict boundary —
+// describe, don't diagnose. Always cite the governing body. Always end with the
+// questions to bring to the pediatrician.
+const body = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      title: z.string(),
+      summary: z.string(),
+      category: z.enum([
+        'injury-prevention','recovery','sleep','nutrition','hydration',
+        'mental-skills','arm-care','concussion','heat','growth-plates','specialization',
+      ]),
+      sportTags: z.array(z.enum(SPORT_ENUM)).optional(),
+      ageBands: z.array(z.enum(AGE_ENUM)).optional(),
+      governingBodies: z.array(
+        z.object({
+          name: z.string(),                     // "USA Baseball Pitch Smart"
+          url: z.string().url(),
+        })
+      ).default([]),
+      doctorQuestions: z.array(z.string()).default([]),
+      gearPicks: z.array(
+        z.object({
+          name: z.string(),
+          note: z.string().optional(),
+          affiliateSlug: z.string().optional(),
+        })
+      ).default([]),
+      publishedAt: z.coerce.date(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+    }),
+});
+
+// Pathways: per-sport age timeline. What good looks like at 7, 10, 13, 15.
+// Same template, sport-specific evidence.
+const pathways = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      sport: z.enum(SPORT_ENUM),
+      title: z.string(),
+      summary: z.string(),
+      bands: z.array(
+        z.object({
+          age: z.enum(AGE_ENUM),
+          skillMilestones: z.array(z.string()).default([]),
+          practiceShape: z.array(z.string()).default([]),
+          socialEmotional: z.array(z.string()).default([]),
+          decisionPoints: z.array(z.string()).default([]),
+        })
+      ),
+      notYet: z.array(z.string()).default([]),
+      aheadBehind: z.array(z.string()).default([]),
+      ltadStage: z.string(),
+      publishedAt: z.coerce.date(),
+      draft: z.boolean().default(false),
+    }),
+});
+
+export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways };

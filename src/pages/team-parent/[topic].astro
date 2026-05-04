@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TEAM_PARENT_TOPICS, AGE_BANDS, SPORTS } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
 
 export async function getStaticPaths() {
   return TEAM_PARENT_TOPICS.map((t) => ({
@@ -14,7 +15,7 @@ const topicMeta = TEAM_PARENT_TOPICS.find(t => t.slug === topic)!;
 
 // Get all team parent articles for this topic, sorted by date desc
 const articles = (await getCollection('articles', ({ data }) =>
-  !data.draft && data.phase === 'team-parent' && data.teamParentTopic === topic
+  isLive(data) && data.phase === 'team-parent' && data.teamParentTopic === topic
 ))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 

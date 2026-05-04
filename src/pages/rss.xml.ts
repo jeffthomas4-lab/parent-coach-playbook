@@ -1,10 +1,11 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE, EDITORIAL } from '../data/site';
+import { isLive } from '../lib/publishFilter';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  const articles = (await getCollection('articles', ({ data }) => isLive(data)))
     .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
   return rss({

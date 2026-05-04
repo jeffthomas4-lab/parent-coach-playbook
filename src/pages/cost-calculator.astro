@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SPORTS } from '../data/site';
+import { PROFILES } from '../data/costDefaults';
+
+// Build the data the client needs: every profile flattened into one object the
+// browser can read without another round trip.
+const profilesPayload = PROFILES.map((p) => ({
+  sport: p.sport,
+  level: p.level,
+  estimatedGames: p.estimatedGames,
+  lines: p.lines,
+}));
+
+const sportsForPicker = [
+  { slug: 'generic', label: '— Pick your sport —' },
+  ...SPORTS,
+];
+
+const levels = [
+  { slug: 'rec',    label: 'Rec',                 blurb: 'Local rec league. Single season.' },
+  { slug: 'school', label: 'School',              blurb: 'Middle school or high school program.' },
+  { slug: 'travel', label: 'Travel/club',         blurb: 'Tryout-based, travel weekends, year-round or near-it.' },
+  { slug: 'elite',  label: 'Elite/showcase',      blurb: 'National-level club, showcases, recruiting events.' },
+];
+---
+<BaseLayout
+  title="Cost calculator"
+  description="What does a year of youth sports actually cost? Pick a sport and level, edit the line items, see the per-year, per-month, and per-game-your-kid-actually-plays-in number."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · Cost calculator
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        What does a year <em class="text-rust">actually cost</em>?
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Pick a sport and level. We pre-fill national medians. Edit any line. The dashboard updates in real time. Save the result, share the URL.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-12">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <!-- Pickers + line items -->
+        <div class="lg:col-span-7">
+          <div class="border border-bone bg-paper-warm p-5 mb-6">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="font-display italic text-rust text-sm block mb-1" style="font-weight: 500;">Sport</label>
+                <select data-sport class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm" style="font-weight: 500;">
+                  {sportsForPicker.map(s => (
+                    <option value={s.slug}>{s.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label class="font-display italic text-rust text-sm block mb-1" style="font-weight: 500;">Level</label>
+                <select data-level class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm" style="font-weight: 500;">
+                  {levels.map(l => (
+                    <option value={l.slug}>{l.label}</option>
+                  ))}
+                </select>
+                <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;" data-level-blurb>
+                  {levels[0].blurb}
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="font-display italic text-rust text-sm block mb-1" style="font-weight: 500;">Estimated games your kid plays in</label>
+                <input
+                  type="number"
+                  data-games
+                  class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm"
+                  style="font-weight: 500;"
+                  min="1"
+                />
+                <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">
+                  Actual games where they got real minutes. Not roster games.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <ul class="grid gap-3" data-lines></ul>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button data-add type="button" class="btn btn-ghost">+ Add a line item</button>
+            <button data-reset type="button" class="btn btn-ghost">Reset to defaults</button>
+            <button data-share type="button" class="btn">Copy share URL</button>
+          </div>
+        </div>
+
+        <!-- Dashboard -->
+        <aside class="lg:col-span-5">
+          <div class="border border-ink bg-ink text-paper p-6 sticky top-6">
+            <p class="font-display italic mb-1" style="color: #D4AB6A; font-weight: 500;">Annual total</p>
+            <p class="font-display text-paper" style="font-weight: 500; font-size: 3rem; line-height: 1;" data-total-annual>$0</p>
+
+            <div class="mt-6 grid grid-cols-2 gap-4 pt-4 border-t" style="border-color: #5a4d44;">
+              <div>
+                <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per month</p>
+                <p class="font-display text-paper text-2xl mt-1" style="font-weight: 500;" data-total-monthly>$0</p>
+              </div>
+              <div>
+                <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per game played</p>
+                <p class="font-display text-paper text-2xl mt-1" style="font-weight: 500;" data-total-per-game>$0</p>
+              </div>
+            </div>
+
+            <p class="font-display italic text-paper-warm text-xs mt-6 leading-snug" style="font-weight: 500;">
+              The per-game number is the gut punch. It's the one to share when the travel-ball debate starts.
+            </p>
+          </div>
+
+          <p class="font-display italic text-ink-soft text-xs mt-4 leading-snug" style="font-weight: 500;">
+            Numbers are saved to this browser only. Use Copy share URL to send a snapshot. Defaults sourced from the Aspen Institute Project Play and public registration data.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap data for the client -->
+  <script type="application/json" id="cost-profiles" set:html={JSON.stringify(profilesPayload)} />
+  <script type="application/json" id="level-blurbs" set:html={JSON.stringify(levels)} />
+
+  <script>
+    type Line = { key: string; label: string; default: number; hint?: string; hideable?: boolean };
+    type Profile = { sport: string; level: 'rec'|'school'|'travel'|'elite'; estimatedGames: number; lines: Line[] };
+
+    const profilesEl = document.getElementById('cost-profiles') as HTMLScriptElement | null;
+    const blurbsEl = document.getElementById('level-blurbs') as HTMLScriptElement | null;
+    const sportSel = document.querySelector('[data-sport]') as HTMLSelectElement | null;
+    const levelSel = document.querySelector('[data-level]') as HTMLSelectElement | null;
+    const blurbEl = document.querySelector('[data-level-blurb]') as HTMLElement | null;
+    const gamesInput = document.querySelector('[data-games]') as HTMLInputElement | null;
+    const linesEl = document.querySelector('[data-lines]') as HTMLUListElement | null;
+    const totalAnnualEl = document.querySelector('[data-total-annual]') as HTMLElement | null;
+    const totalMonthlyEl = document.querySelector('[data-total-monthly]') as HTMLElement | null;
+    const totalPerGameEl = document.querySelector('[data-total-per-game]') as HTMLElement | null;
+    const addBtn = document.querySelector('[data-add]') as HTMLButtonElement | null;
+    const resetBtn = document.querySelector('[data-reset]') as HTMLButtonElement | null;
+    const shareBtn = document.querySelector('[data-share]') as HTMLButtonElement | null;
+
+    if (!profilesEl || !blurbsEl || !sportSel || !levelSel || !linesEl || !totalAnnualEl) {
+      // page didn't fully render; bail out quietly
+    } else {
+      const profiles: Profile[] = JSON.parse(profilesEl.textContent || '[]');
+      const blurbs: { slug: string; label: string; blurb: string }[] = JSON.parse(blurbsEl.textContent || '[]');
+      const STORAGE_KEY = 'pcp.costcalc.v1';
+
+      type State = {
+        sport: string;
+        level: Profile['level'];
+        games: number;
+        items: { key: string; label: string; amount: number; included: boolean }[];
+      };
+
+      const fmt = (n: number) =>
+        n >= 0 ? '$' + Math.round(n).toLocaleString('en-US') : '-$' + Math.round(-n).toLocaleString('en-US');
+
+      const getProfile = (sport: string, level: Profile['level']): Profile =>
+        profiles.find(p => p.sport === sport && p.level === level) ??
+        profiles.find(p => p.sport === 'generic' && p.level === level)!;
+
+      const stateFromProfile = (sport: string, level: Profile['level']): State => {
+        const p = getProfile(sport, level);
+        return {
+          sport, level,
+          games: p.estimatedGames,
+          items: p.lines.map(l => ({
+            key: l.key,
+            label: l.label,
+            amount: l.default,
+            included: !l.hideable, // hideable lines start unchecked so the parent opts them in
+          })),
+        };
+      };
+
+      const loadFromUrl = (): State | null => {
+        const params = new URLSearchParams(window.location.search);
+        const data = params.get('d');
+        if (!data) return null;
+        try { return JSON.parse(atob(data)) as State; } catch { return null; }
+      };
+
+      const loadFromStorage = (): State | null => {
+        try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) as State : null; }
+        catch { return null; }
+      };
+
+      const saveToStorage = (s: State) => {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {}
+      };
+
+      let state: State = loadFromUrl() ?? loadFromStorage() ?? stateFromProfile('generic', 'rec');
+
+      const computeTotal = () => state.items.reduce((sum, i) => sum + (i.included ? i.amount : 0), 0);
+
+      const render = () => {
+        // sync pickers
+        sportSel!.value = state.sport;
+        levelSel!.value = state.level;
+        gamesInput!.value = String(state.games);
+        if (blurbEl) {
+          const b = blurbs.find(x => x.slug === state.level);
+          if (b) blurbEl.textContent = b.blurb;
+        }
+
+        // line items
+        linesEl!.innerHTML = state.items.map((it, idx) => `
+          <li class="border border-bone bg-paper p-3 grid grid-cols-[1fr_120px_auto] gap-3 items-center">
+            <div class="grid gap-1">
+              <input
+                type="text"
+                value="${escapeAttr(it.label)}"
+                data-line-label="${idx}"
+                class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm"
+                style="font-weight: 500;"
+              />
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">$</span>
+              <input
+                type="number"
+                value="${it.amount}"
+                data-line-amount="${idx}"
+                class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm w-full"
+                style="font-weight: 500;"
+                min="0"
+              />
+            </div>
+            <div class="flex items-center gap-2">
+              <label class="inline-flex items-center gap-1 text-xs font-display italic text-ink-soft" style="font-weight: 500;">
+                <input type="checkbox" ${it.included ? 'checked' : ''} data-line-include="${idx}" />
+                In
+              </label>
+              <button type="button" data-line-remove="${idx}" class="font-display italic text-ink-soft hover:text-rust text-xs" style="font-weight: 500;">×</button>
+            </div>
+          </li>
+        `).join('');
+
+        const total = computeTotal();
+        totalAnnualEl!.textContent = fmt(total);
+        if (totalMonthlyEl) totalMonthlyEl.textContent = fmt(total / 12);
+        if (totalPerGameEl) totalPerGameEl.textContent = state.games > 0 ? fmt(total / state.games) : '$0';
+
+        saveToStorage(state);
+      };
+
+      const escapeAttr = (s: string) => s.replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+      // Event wiring
+      sportSel!.addEventListener('change', () => {
+        state = stateFromProfile(sportSel!.value, state.level);
+        render();
+      });
+      levelSel!.addEventListener('change', () => {
+        state = stateFromProfile(state.sport, levelSel!.value as Profile['level']);
+        render();
+      });
+      gamesInput!.addEventListener('input', () => {
+        const v = parseInt(gamesInput!.value, 10);
+        state.games = isNaN(v) ? 0 : v;
+        render();
+      });
+      linesEl!.addEventListener('input', (e) => {
+        const t = e.target as HTMLInputElement;
+        const labelIdx = t.getAttribute('data-line-label');
+        const amountIdx = t.getAttribute('data-line-amount');
+        const includeIdx = t.getAttribute('data-line-include');
+        if (labelIdx !== null) state.items[+labelIdx].label = t.value;
+        if (amountIdx !== null) state.items[+amountIdx].amount = parseFloat(t.value) || 0;
+        if (includeIdx !== null) state.items[+includeIdx].included = t.checked;
+        render();
+      });
+      linesEl!.addEventListener('click', (e) => {
+        const t = e.target as HTMLElement;
+        const removeIdx = t.getAttribute('data-line-remove');
+        if (removeIdx !== null) {
+          state.items.splice(+removeIdx, 1);
+          render();
+        }
+      });
+      addBtn!.addEventListener('click', () => {
+        state.items.push({ key: 'custom-' + Date.now(), label: 'Custom line item', amount: 0, included: true });
+        render();
+      });
+      resetBtn!.addEventListener('click', () => {
+        state = stateFromProfile(state.sport, state.level);
+        render();
+      });
+      shareBtn!.addEventListener('click', async () => {
+        const data = btoa(JSON.stringify(state));
+        const url = window.location.origin + window.location.pathname + '?d=' + data;
+        try {
+          await navigator.clipboard.writeText(url);
+          shareBtn!.textContent = 'Copied!';
+          setTimeout(() => { shareBtn!.textContent = 'Copy share URL'; }, 1500);
+        } catch {
+          window.prompt('Copy this URL:', url);
+        }
+      });
+
+      render();
+    }
+  </script>
+</BaseLayout>

@@ -1,0 +1,21 @@
+# Cloudflare Worker that fires the Pages deploy hook on a schedule.
+# Purpose: rebuild parentcoachplaybook.com daily so queued posts (publishedAt in the future)
+# go live on their date without anyone pushing a button.
+#
+# Deploy commands and the rest of the operator manual live in QUEUE.md at the project root.
+
+name = "parent-coach-playbook-cron"
+main = "src/index.ts"
+compatibility_date = "2025-04-01"
+
+# Daily at 13:00 UTC = 6am Pacific / 9am Eastern.
+# Pacific summer time = 6am PDT. Pacific winter = 5am PST. Either way the morning rebuild lands
+# before any reasonable parent picks up the phone.
+[triggers]
+crons = ["0 13 * * *"]
+
+# Set the Pages deploy hook URL as a secret, NOT in this file:
+#   npx wrangler secret put DEPLOY_HOOK_URL
+# Get the hook URL from the Cloudflare dashboard:
+#   Pages → parent-coach-playbook → Settings → Builds & deployments → Deploy hooks → Add deploy hook
+# Name the hook "scheduled-publish" and point it at the main branch.

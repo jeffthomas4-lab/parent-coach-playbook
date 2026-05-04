@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SeasonCalendarChart from '../../components/SeasonCalendarChart.astro';
+import { isLive } from '../../lib/publishFilter';
+import { SPORTS } from '../../data/site';
+
+export async function getStaticPaths() {
+  const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+  return calendars.map((c) => ({ params: { slug: c.slug }, props: { calendar: c } }));
+}
+
+const { calendar } = Astro.props;
+const { Content } = await calendar.render();
+const sportLabel = SPORTS.find(s => s.slug === calendar.data.sport)?.label ?? calendar.data.sport;
+
+const levelLabel: Record<string, string> = {
+  rec: 'Rec', school: 'School', travel: 'Travel/club', elite: 'Elite/showcase',
+};
+---
+<BaseLayout
+  title={calendar.data.title}
+  description={calendar.data.summary}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/season-calendar/" class="hover:underline">Season calendar</a> ·
+        {sportLabel}
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        {calendar.data.title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {calendar.data.summary}
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+        {sportLabel} · {levelLabel[calendar.data.level]}{calendar.data.region ? ` · ${calendar.data.region}` : ''} · {calendar.data.durationLabel}
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <SeasonCalendarChart months={calendar.data.months} />
+    </div>
+  </section>
+
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
