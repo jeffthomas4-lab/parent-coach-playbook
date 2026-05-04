@@ -52,20 +52,24 @@ Name it `scheduled-publish`. Branch: `main`. Copy the URL it gives you. It looks
 
 ### 2. Deploy the cron worker
 
+`npm install` first, every time. Without a local `node_modules` in `worker-cron`, `npx wrangler` walks up the tree, hits the parent project's Astro Cloudflare adapter, and refuses to deploy with "It looks like you've run a Workers-specific command in a Pages project." Local install fixes it.
+
 ```powershell
 cd "$HOME\Desktop\Claude Cowork\Outputs\parent-coach-playbook\worker-cron"
 npm install
-npx wrangler secret put DEPLOY_HOOK_URL
+npm run secret:hook
 # paste the deploy hook URL when prompted
-npx wrangler secret put MANUAL_TRIGGER_KEY
+npm run secret:key
 # pick any string, save it in your password manager
-npx wrangler deploy
+npm run deploy
 ```
+
+The npm scripts pass `--config ./wrangler.toml` explicitly so Wrangler can't get confused about which project it's in.
 
 Confirm:
 
 ```powershell
-npx wrangler deployments list
+npx wrangler deployments list --config ./wrangler.toml
 ```
 
 The cron schedule is set in `worker-cron/wrangler.toml`. Default is `0 13 * * *` which is 6am Pacific in summer, 5am Pacific in winter. Change the cron line if you want a different time. Cloudflare uses UTC.
@@ -118,7 +122,9 @@ node -e "const fs=require('fs');const m=require('gray-matter');const dir='src/co
 
 ## What can go wrong
 
-**Deploy hook URL changed.** Cloudflare lets you delete hooks. Don't. If you do, regenerate and run `npx wrangler secret put DEPLOY_HOOK_URL` again.
+**"Workers-specific command in a Pages project" error on deploy.** Wrangler walked up from `worker-cron` and detected the parent Astro project as Pages. Run `npm install` inside `worker-cron` first. Then use `npm run deploy` (the npm script passes `--config ./wrangler.toml` explicitly). If you still get the error, you ran `npx wrangler` directly without the explicit config — switch to `npm run deploy`.
+
+**Deploy hook URL changed.** Cloudflare lets you delete hooks. Don't. If you do, regenerate and run `npm run secret:hook` again.
 
 **Cron stopped firing.** Cloudflare requires the worker to be on a paid plan if you exceed the free tier. The free tier is 100k requests/day, far above what one daily ping uses. If billing lapses, the worker pauses. Cloudflare emails about it.
 

@@ -12,6 +12,9 @@ export async function GET(ctx: APIContext) {
   const guides = await getCollection('guides', ({ data }) => isLive(data));
   const resources = await getCollection('resources', ({ data }) => isLive(data) && data.type !== 'external');
   const tips = await getCollection('coachingTips', ({ data }) => isLive(data));
+  const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+  const bodyTopics = await getCollection('body', ({ data }) => isLive(data));
+  const pathways = await getCollection('pathways', ({ data }) => isLive(data));
 
   // Camps: pull approved slugs from D1 if the binding is available.
   const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;
@@ -44,6 +47,11 @@ export async function GET(ctx: APIContext) {
     '/resources/practice-plan-template/',
     '/resources/national-organizations/',
     '/search/',
+    '/tools/',
+    '/season-calendar/',
+    '/body/',
+    '/cost-calculator/',
+    '/pathways/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
     ...campSlugs.map(slug => `/camps/${slug}/`),
@@ -69,6 +77,21 @@ export async function GET(ctx: APIContext) {
     lastmod: t.data.publishedAt.toISOString(),
   }));
 
+  const calendarUrls = calendars.map(c => ({
+    loc: `/season-calendar/${c.slug}/`,
+    lastmod: (c.data.updatedAt ?? c.data.publishedAt).toISOString(),
+  }));
+
+  const bodyUrls = bodyTopics.map(t => ({
+    loc: `/body/${t.slug}/`,
+    lastmod: t.data.publishedAt.toISOString(),
+  }));
+
+  const pathwayUrls = pathways.map(p => ({
+    loc: `/pathways/${p.data.sport}/`,
+    lastmod: p.data.publishedAt.toISOString(),
+  }));
+
   const today = new Date().toISOString();
 
   const urls = [
@@ -77,6 +100,9 @@ export async function GET(ctx: APIContext) {
     ...guideUrls,
     ...resourceUrls,
     ...tipUrls,
+    ...calendarUrls,
+    ...bodyUrls,
+    ...pathwayUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

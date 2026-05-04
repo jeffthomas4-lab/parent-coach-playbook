@@ -4,12 +4,14 @@
   "private": true,
   "description": "Daily cron worker that rebuilds parentcoachplaybook.com so queued posts publish on schedule.",
   "scripts": {
-    "deploy": "wrangler deploy",
-    "tail": "wrangler tail",
-    "dev": "wrangler dev"
+    "deploy": "wrangler deploy --config ./wrangler.toml",
+    "tail":   "wrangler tail   --config ./wrangler.toml",
+    "dev":    "wrangler dev    --config ./wrangler.toml",
+    "secret:hook": "wrangler secret put DEPLOY_HOOK_URL    --config ./wrangler.toml",
+    "secret:key":  "wrangler secret put MANUAL_TRIGGER_KEY --config ./wrangler.toml"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250101.0",
-    "wrangler": "^3.90.0"
+    "wrangler": "^4.0.0"
   }
 }
