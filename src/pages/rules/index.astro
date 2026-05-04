@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+import { SPORTS } from '../../data/site';
+
+const pieces = (await getCollection('rules', ({ data }) => isLive(data)))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+---
+<BaseLayout
+  title="Rules at-a-glance"
+  description="Five-minute primers on the rules of every sport we cover. The setup, the scoring, the calls you'll see, and the three things parents most often get wrong."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · Rules at-a-glance
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Five-minute <em class="text-rust">rules</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Most parents can't fully explain their kid's sport's rules and never admit it. These primers fix that. Field setup, scoring, the calls you'll see in a typical game, and the three things parents most often get wrong.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+        Each piece links to the official governing-body rulebook for the version of record.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      {pieces.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">First batch ships this month.</p>
+      ) : (
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+          {pieces.map((p) => (
+            <a href={`/rules/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{sportLabel(p.data.sport)}</p>
+              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                {p.data.title}
+              </h2>
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
+              <p class="t-cta mt-3">5-min read →</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

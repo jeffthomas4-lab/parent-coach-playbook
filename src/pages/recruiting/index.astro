@@ -1,0 +1,145 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+import { SPORTS } from '../../data/site';
+
+const pieces = (await getCollection('recruiting', ({ data }) => isLive(data)))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+// Featured pillar piece (the cross-sport overview).
+const pillar = pieces.find(p => p.data.category === 'overview' && p.data.featured) ?? pieces.find(p => p.data.category === 'overview');
+
+// Sport-specific deep dives.
+const sportPieces = pieces.filter(p => p.data.category === 'sport-specific')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Topical sub-pieces, grouped.
+const topicCategories = [
+  { slug: 'timeline',       label: 'Timeline by grade',     blurb: 'When things actually happen, by 8th through 12th grade.' },
+  { slug: 'eligibility',    label: 'NCAA Eligibility',      blurb: 'Eligibility Center registration, core courses, GPA, test scores.' },
+  { slug: 'nil',            label: 'NIL basics',            blurb: 'Name, Image, Likeness for high schoolers. State-by-state reality.' },
+  { slug: 'commits',        label: 'Verbal commits',        blurb: 'What "verbal commit" actually means and what it doesn\'t.' },
+  { slug: 'showcases',      label: 'ID camps & showcases',   blurb: 'Which ones matter, when, for which sports.' },
+  { slug: 'walk-on',        label: 'Walk-on path',          blurb: 'Real walk-on numbers by sport and division.' },
+  { slug: 'transfer-portal',label: 'Transfer portal',       blurb: 'How HS families should think about the portal\'s impact.' },
+  { slug: 'academics',      label: 'Academics & GPA',       blurb: 'The variable that matters more than every showcase combined.' },
+];
+
+const groupedTopics = topicCategories.map(c => ({
+  ...c,
+  items: pieces.filter(p => p.data.category === c.slug),
+})).filter(g => g.items.length > 0);
+
+const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
+---
+<BaseLayout
+  title="HS-to-college recruiting"
+  description="A no-hype guide to how college recruiting really works, broken out by sport and by level. Real numbers, real timelines, written by a Division III head coach with two decades of recruiting experience."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · Recruiting
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        College recruiting, <em class="text-rust">honestly</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        No services to sell. No D1 fantasies. The recruiting process as it actually works, sport by sport and level by level. Written by a Division III head coach with two decades of recruiting experience.
+      </p>
+    </div>
+  </section>
+
+  {/* Pillar piece — front and center */}
+  {pillar && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-12 md:py-16">
+        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Read this first</p>
+        <a href={`/recruiting/${pillar.slug}/`} class="block group max-w-3xl">
+          <h2 class="font-display text-ink text-3xl md:text-[3rem] leading-[1.05] group-hover:text-rust transition-colors" style="font-weight: 500;">
+            {pillar.data.title}
+          </h2>
+          <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+            {pillar.data.summary}
+          </p>
+          <div class="t-cta mt-6">Open the guide →</div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  {/* Sport-specific deep dives */}
+  {sportPieces.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12">
+        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">By sport</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-6" style="font-weight: 500;">
+          The recruiting <em class="text-rust">infrastructure</em>, sport by sport.
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+          {sportPieces.map((p) => (
+            <a href={`/recruiting/${p.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
+                {(p.data.sportTags ?? []).map(s => sportLabel(s)).join(' · ') || 'Sport'}
+              </p>
+              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                {p.data.title}
+              </h3>
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
+              <p class="t-cta mt-3">Open →</p>
+            </a>
+          ))}
+          {/* Coming-soon placeholders for the other sport pages Jeff plans to write */}
+          {['Basketball','Baseball','Softball','Soccer','Lacrosse','Volleyball','Hockey'].filter(name =>
+            !sportPieces.some(p => p.data.title.toLowerCase().startsWith(name.toLowerCase()))
+          ).map((name) => (
+            <div class="bg-paper p-6 opacity-60">
+              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{name}</p>
+              <h3 class="font-display text-ink text-xl leading-tight" style="font-weight: 500;">
+                {name} recruiting
+              </h3>
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Coming next.</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Topical sub-pieces */}
+  {groupedTopics.length > 0 && groupedTopics.map((g) => (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 md:py-12">
+        <div class="grid md:grid-cols-12 gap-8">
+          <div class="md:col-span-4">
+            <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Topic</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">{g.label}</h2>
+            <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
+          </div>
+          <div class="md:col-span-8">
+            <ul class="grid gap-4">
+              {g.items.map((p) => (
+                <li class="border border-bone bg-paper-warm p-5">
+                  <a href={`/recruiting/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;">
+                    {p.data.title}
+                  </a>
+                  <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 max-w-3xl">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">A note on the byline</p>
+      <p class="font-display text-ink leading-relaxed">
+        These pieces are written by a Division III head coach with two decades of recruiting experience. Published for parents, not for sale. Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a> with corrections, questions, or requests for sport pages we haven't written yet.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

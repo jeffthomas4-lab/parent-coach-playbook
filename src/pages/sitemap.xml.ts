@@ -15,6 +15,9 @@ export async function GET(ctx: APIContext) {
   const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
   const bodyTopics = await getCollection('body', ({ data }) => isLive(data));
   const pathways = await getCollection('pathways', ({ data }) => isLive(data));
+  const recruiting = await getCollection('recruiting', ({ data }) => isLive(data));
+  const adaptive = await getCollection('adaptive', ({ data }) => isLive(data));
+  const rules = await getCollection('rules', ({ data }) => isLive(data));
 
   // Camps: pull approved slugs from D1 if the binding is available.
   const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;
@@ -51,7 +54,11 @@ export async function GET(ctx: APIContext) {
     '/season-calendar/',
     '/body/',
     '/cost-calculator/',
+    '/cost-calculator/methodology/',
     '/pathways/',
+    '/recruiting/',
+    '/adaptive/',
+    '/rules/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
     ...campSlugs.map(slug => `/camps/${slug}/`),
@@ -92,6 +99,21 @@ export async function GET(ctx: APIContext) {
     lastmod: p.data.publishedAt.toISOString(),
   }));
 
+  const recruitingUrls = recruiting.map(r => ({
+    loc: `/recruiting/${r.slug}/`,
+    lastmod: r.data.publishedAt.toISOString(),
+  }));
+
+  const adaptiveUrls = adaptive.map(a => ({
+    loc: `/adaptive/${a.slug}/`,
+    lastmod: a.data.publishedAt.toISOString(),
+  }));
+
+  const rulesUrls = rules.map(r => ({
+    loc: `/rules/${r.data.sport}/`,
+    lastmod: r.data.publishedAt.toISOString(),
+  }));
+
   const today = new Date().toISOString();
 
   const urls = [
@@ -103,6 +125,9 @@ export async function GET(ctx: APIContext) {
     ...calendarUrls,
     ...bodyUrls,
     ...pathwayUrls,
+    ...recruitingUrls,
+    ...adaptiveUrls,
+    ...rulesUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

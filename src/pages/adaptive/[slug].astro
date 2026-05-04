@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+
+export async function getStaticPaths() {
+  const pieces = await getCollection('adaptive', ({ data }) => isLive(data));
+  return pieces.map((p) => ({ params: { slug: p.slug }, props: { piece: p } }));
+}
+
+const { piece } = Astro.props;
+const { Content } = await piece.render();
+---
+<BaseLayout
+  title={piece.data.title}
+  description={piece.data.summary}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/adaptive/" class="hover:underline">Adaptive</a>
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+        {piece.data.title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {piece.data.summary}
+      </p>
+    </div>
+  </section>
+
+  <article class="container-px py-10 md:py-14">
+    <div class="article-body max-w-prose mx-auto">
+      <Content />
+
+      {piece.data.governingBodies && piece.data.governingBodies.length > 0 && (
+        <aside class="mt-10 pt-6 border-t border-bone">
+          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Sources & programs</p>
+          <ul class="grid gap-2">
+            {piece.data.governingBodies.map((g) => (
+              <li>
+                <a href={g.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust" style="font-weight: 500;">
+                  {g.name} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
+      <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone" style="font-weight: 500;">
+        Last updated {piece.data.publishedAt.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

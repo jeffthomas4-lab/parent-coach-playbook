@@ -44,6 +44,32 @@ const FUNDAMENTAL_ENUM = [
 
 const PROGRESSION_ENUM = ['intro', 'build', 'refine'] as const;
 
+// Shared editorial-review fields. Attach to every collection so each piece carries its
+// own quality/integrity/approval state. The /admin/editorial dashboard reads from these.
+//
+// Workflow: I (Claude) write a piece → run a skeptical review pass and fill in qualityGrade,
+// originalityGrade, voiceGrade, flags, citationCheckPassed, set status='claude-reviewed' and
+// claudeReviewedAt. Jeff reads, edits if needed, then sets jeffReviewedAt and status='jeff-approved'.
+//
+// See REVIEW.md at the project root for the full operator manual.
+const editorialField = {
+  editorial: z.object({
+    qualityGrade:               z.number().min(1).max(10).optional(),     // skeptical reader's "is this actually good"
+    originalityGrade:           z.number().min(1).max(10).optional(),     // is this Jeff's take or a rephrase of what's everywhere
+    voiceGrade:                 z.number().min(1).max(10).optional(),     // does it sound like Jeff
+    flagInappropriateness:      z.boolean().default(false),               // culture-war, political bias, off-brand
+    flagIpRisk:                 z.boolean().default(false),               // paraphrased without attribution, suspect product claims
+    flagSensitiveTopic:         z.boolean().default(false),               // mental health, body image, injury, divorce — extra care
+    citationCheckPassed:        z.boolean().default(false),               // sources cited where claims are made
+    affiliateDisclosurePresent: z.boolean().default(false),               // FTC requires when affiliate links present
+    claudeReviewedAt:           z.coerce.date().optional(),
+    jeffReviewedAt:             z.coerce.date().optional(),
+    status:                     z.enum(['draft','claude-reviewed','jeff-approved','published','needs-revision']).default('draft'),
+    reviewerNotes:              z.string().optional(),
+    factCheckGoodThrough:       z.coerce.date().optional(),               // for evergreen content with date-sensitive facts
+  }).optional(),
+};
+
 const articles = defineCollection({
   type: 'content',
   schema: ({ image }) =>
@@ -70,6 +96,7 @@ const articles = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -87,6 +114,7 @@ const gear = defineCollection({
       sport: z.enum([...SPORT_ENUM, 'all-sports']).optional(),
       age: z.enum(AGE_ENUM).optional(),
       featured: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -103,6 +131,7 @@ const guides = defineCollection({
       publishedAt: z.coerce.date(),
       updatedAt: z.coerce.date().optional(),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -121,6 +150,7 @@ const resources = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -147,6 +177,7 @@ const coachingTips = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -175,6 +206,7 @@ const seasonCalendars = defineCollection({
       updatedAt: z.coerce.date().optional(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -210,6 +242,7 @@ const body = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
@@ -236,7 +269,77 @@ const pathways = defineCollection({
       ltadStage: z.string(),
       publishedAt: z.coerce.date(),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 
-export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways };
+// Recruiting: HS-to-college funnel content. Timeline by grade, NCAA Eligibility Center,
+// NIL basics, what verbal commits actually mean. Strict factual, sourced framing.
+const recruiting = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      title: z.string(),
+      summary: z.string(),
+      category: z.enum([
+        'overview','sport-specific','timeline','eligibility','nil','commits','showcases','walk-on','transfer-portal','academics',
+      ]),
+      gradeLevels: z.array(z.enum(['8','9','10','11','12'])).default([]),
+      divisions: z.array(z.enum(['d1','d2','d3','naia','juco','all'])).default(['all']),
+      sportTags: z.array(z.enum(SPORT_ENUM)).optional(),
+      governingBodies: z.array(
+        z.object({ name: z.string(), url: z.string().url() })
+      ).default([]),
+      publishedAt: z.coerce.date(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+      ...editorialField,
+    }),
+});
+
+// Adaptive & neurodivergent athletes. Inclusive sports content. Uses similar structure
+// to the body collection but framed for a different audience (parent of an adaptive kid).
+const adaptive = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      title: z.string(),
+      summary: z.string(),
+      category: z.enum([
+        'adhd','autism','sensory','physical-disability','unified-sports','intellectual-disability','general','inclusion-rules',
+      ]),
+      sportTags: z.array(z.enum(SPORT_ENUM)).optional(),
+      ageBands: z.array(z.enum(AGE_ENUM)).optional(),
+      governingBodies: z.array(
+        z.object({ name: z.string(), url: z.string().url() })
+      ).default([]),
+      publishedAt: z.coerce.date(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+      ...editorialField,
+    }),
+});
+
+// Rules at-a-glance. One file per sport. Five-minute primer parents can scan during
+// a tournament or before their first game.
+const rules = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      sport: z.enum(SPORT_ENUM),
+      title: z.string(),
+      summary: z.string(),
+      fieldSetup: z.string(),
+      gameLength: z.string(),
+      scoringBasics: z.array(z.string()).default([]),
+      commonCalls: z.array(z.string()).default([]),
+      thingsParentsGetWrong: z.array(z.string()).default([]),
+      governingBody: z.object({ name: z.string(), url: z.string().url() }),
+      ruleBookUrl: z.string().url().optional(),
+      publishedAt: z.coerce.date(),
+      draft: z.boolean().default(false),
+      ...editorialField,
+    }),
+});
+
+export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules };

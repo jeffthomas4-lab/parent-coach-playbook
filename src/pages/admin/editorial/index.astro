@@ -1,0 +1,206 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+// Pull every reviewable collection. Each row gets normalized to a common shape so the
+// table can render without per-collection branching.
+const articles    = await getCollection('articles');
+const body        = await getCollection('body');
+const pathways    = await getCollection('pathways');
+const calendars   = await getCollection('seasonCalendars');
+const guides      = await getCollection('guides');
+const resources   = await getCollection('resources');
+const tips        = await getCollection('coachingTips');
+const recruiting  = await getCollection('recruiting');
+const adaptive    = await getCollection('adaptive');
+const rules       = await getCollection('rules');
+
+type Row = {
+  collection: string;
+  slug: string;
+  title: string;
+  url: string;
+  publishedAt: Date;
+  draft: boolean;
+  editorial?: any;
+};
+
+const urlFor = (collection: string, item: any): string => {
+  switch (collection) {
+    case 'articles':       return `/${item.data.phase}/${item.slug}/`;
+    case 'body':           return `/body/${item.slug}/`;
+    case 'pathways':       return `/pathways/${item.data.sport}/`;
+    case 'seasonCalendars':return `/season-calendar/${item.slug}/`;
+    case 'guides':         return `/what-to-buy/${item.slug}/`;
+    case 'resources':      return `/team-parent/${item.slug}/`;
+    case 'coachingTips':   return `/coaching-tips/${item.slug}/`;
+    case 'recruiting':     return `/recruiting/${item.slug}/`;
+    case 'adaptive':       return `/adaptive/${item.slug}/`;
+    case 'rules':          return `/rules/${item.data.sport}/`;
+    default:               return `/${item.slug}/`;
+  }
+};
+
+const titleFor = (item: any): string => item.data.title || item.data.activity || item.slug;
+
+const rows: Row[] = [
+  ...articles.map(i =>   ({ collection: 'articles',       slug: i.slug, title: titleFor(i), url: urlFor('articles', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...body.map(i =>       ({ collection: 'body',           slug: i.slug, title: titleFor(i), url: urlFor('body', i),           publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...pathways.map(i =>   ({ collection: 'pathways',       slug: i.slug, title: titleFor(i), url: urlFor('pathways', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...calendars.map(i =>  ({ collection: 'seasonCalendars',slug: i.slug, title: titleFor(i), url: urlFor('seasonCalendars', i),publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...guides.map(i =>     ({ collection: 'guides',         slug: i.slug, title: titleFor(i), url: urlFor('guides', i),         publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...resources.map(i =>  ({ collection: 'resources',      slug: i.slug, title: titleFor(i), url: urlFor('resources', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...tips.map(i =>       ({ collection: 'coachingTips',   slug: i.slug, title: titleFor(i), url: urlFor('coachingTips', i),   publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...recruiting.map(i => ({ collection: 'recruiting',     slug: i.slug, title: titleFor(i), url: urlFor('recruiting', i),     publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...adaptive.map(i =>   ({ collection: 'adaptive',       slug: i.slug, title: titleFor(i), url: urlFor('adaptive', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...rules.map(i =>      ({ collection: 'rules',          slug: i.slug, title: titleFor(i), url: urlFor('rules', i),          publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
+
+// Top-line stats
+const total = rows.length;
+const claudeReviewed = rows.filter(r => r.editorial?.status === 'claude-reviewed' || r.editorial?.status === 'jeff-approved' || r.editorial?.status === 'published').length;
+const jeffApproved   = rows.filter(r => r.editorial?.status === 'jeff-approved' || r.editorial?.status === 'published').length;
+const flagged        = rows.filter(r => r.editorial?.flagInappropriateness || r.editorial?.flagIpRisk).length;
+const needsRevision  = rows.filter(r => r.editorial?.status === 'needs-revision').length;
+const pctClaude = Math.round((claudeReviewed / total) * 100) || 0;
+const pctJeff   = Math.round((jeffApproved / total) * 100) || 0;
+
+const fmtDate = (d: Date | undefined) =>
+  d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—';
+const fmtGrade = (n: number | undefined) => n === undefined ? '—' : `${n}/10`;
+
+const statusColor: Record<string, string> = {
+  'draft':            '#B8908F',
+  'claude-reviewed':  '#D4AB6A',
+  'jeff-approved':    '#5C7459',
+  'published':        '#5C7459',
+  'needs-revision':   '#C5713D',
+};
+---
+<BaseLayout title="Editorial dashboard" description="Per-piece editorial state across the site.">
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Admin · Editorial</p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+        Editorial review board
+      </h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Every URL on the site, with its current editorial state. Filter, sort, and click through to read the piece.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-bone mt-6">
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Total</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{total}</p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Claude-reviewed</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{claudeReviewed} <span class="font-display italic text-ink-soft text-sm">({pctClaude}%)</span></p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Jeff-approved</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{jeffApproved} <span class="font-display italic text-ink-soft text-sm">({pctJeff}%)</span></p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Flagged</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{flagged}</p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Needs revision</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{needsRevision}</p>
+        </div>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic" style="font-weight: 500;" data-filter-bar>
+        <button data-filter="all"             class="px-3 py-1 border border-ink bg-ink text-paper">All</button>
+        <button data-filter="needs-review"    class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs review</button>
+        <button data-filter="claude-reviewed" class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Claude reviewed</button>
+        <button data-filter="jeff-approved"   class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Jeff approved</button>
+        <button data-filter="flagged"         class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Flagged</button>
+        <button data-filter="needs-revision"  class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs revision</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-6">
+      <table class="w-full text-sm" data-editorial-table>
+        <thead>
+          <tr class="border-b border-bone">
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Title</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Section</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Status</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Q</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">O</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">V</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Flags</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Claude</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Jeff</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => {
+            const status = r.editorial?.status || 'draft';
+            const flags = [
+              r.editorial?.flagInappropriateness ? 'INAPPROP' : null,
+              r.editorial?.flagIpRisk ? 'IP' : null,
+              r.editorial?.flagSensitiveTopic ? 'SENS' : null,
+              r.editorial?.citationCheckPassed ? null : 'NOCITE',
+            ].filter(Boolean).join(' ');
+            const flagged = !!(r.editorial?.flagInappropriateness || r.editorial?.flagIpRisk);
+            return (
+              <tr class="border-b border-bone hover:bg-paper-warm" data-status={status} data-flagged={flagged}>
+                <td class="py-2 pr-3">
+                  <a href={r.url} class="font-display text-ink hover:text-rust" style="font-weight: 500;">{r.title}</a>
+                  {r.draft && <span class="ml-2 font-display italic text-ink-soft text-xs" style="font-weight: 500;">[draft]</span>}
+                </td>
+                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs" style="font-weight: 500;">{r.collection}</td>
+                <td class="py-2 pr-3">
+                  <span class="font-display italic px-2 py-0.5 text-xs text-paper" style={`background: ${statusColor[status]}; font-weight: 500;`}>{status}</span>
+                </td>
+                <td class="py-2 pr-3 font-display text-ink" style="font-weight: 500;">{fmtGrade(r.editorial?.qualityGrade)}</td>
+                <td class="py-2 pr-3 font-display text-ink" style="font-weight: 500;">{fmtGrade(r.editorial?.originalityGrade)}</td>
+                <td class="py-2 pr-3 font-display text-ink" style="font-weight: 500;">{fmtGrade(r.editorial?.voiceGrade)}</td>
+                <td class="py-2 pr-3 font-display text-ink-soft text-xs" style="font-weight: 500;">{flags}</td>
+                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs" style="font-weight: 500;">{fmtDate(r.editorial?.claudeReviewedAt)}</td>
+                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs" style="font-weight: 500;">{fmtDate(r.editorial?.jeffReviewedAt)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const bar = document.querySelector('[data-filter-bar]');
+    const table = document.querySelector('[data-editorial-table]');
+    if (bar && table) {
+      bar.addEventListener('click', (e) => {
+        const t = e.target as HTMLElement;
+        if (t.tagName !== 'BUTTON') return;
+        bar.querySelectorAll('button').forEach((b) => {
+          b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+          b.classList.add('border-bone', 'text-ink-soft');
+        });
+        t.classList.remove('border-bone', 'text-ink-soft');
+        t.classList.add('bg-ink', 'text-paper', 'border-ink');
+
+        const filter = t.getAttribute('data-filter') || 'all';
+        const rows = table.querySelectorAll('tbody tr');
+        rows.forEach((row) => {
+          const status = row.getAttribute('data-status');
+          const flagged = row.getAttribute('data-flagged') === 'true';
+          let show = false;
+          if (filter === 'all') show = true;
+          else if (filter === 'needs-review') show = status === 'draft' || status === 'needs-revision';
+          else if (filter === 'flagged') show = flagged;
+          else show = status === filter;
+          (row as HTMLElement).style.display = show ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { isLive } from '../../lib/publishFilter';
+
+const pieces = (await getCollection('adaptive', ({ data }) => isLive(data)))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const categories = [
+  { slug: 'adhd',                    label: 'ADHD athletes',           blurb: 'Practice structure, medication and sport, the coach conversation.' },
+  { slug: 'autism',                  label: 'Autistic athletes',       blurb: 'Sensory needs, predictable structure, finding the right program.' },
+  { slug: 'sensory',                 label: 'Sensory needs',           blurb: 'Crowds, noise, equipment fit, transitions. Practical accommodations.' },
+  { slug: 'physical-disability',     label: 'Physical disability',     blurb: 'Adaptive equipment, classification, finding inclusive programs.' },
+  { slug: 'intellectual-disability', label: 'Intellectual disability', blurb: 'Special Olympics, Unified, school-based adaptive PE.' },
+  { slug: 'unified-sports',          label: 'Unified Sports',          blurb: 'Special Olympics Unified — athletes with and without disabilities on one team.' },
+  { slug: 'inclusion-rules',         label: 'Inclusion rules',         blurb: 'What governing bodies require. ADA in youth sports. Reasonable accommodation.' },
+  { slug: 'general',                 label: 'General',                  blurb: 'Cross-cutting topics for all adaptive athletes and families.' },
+];
+
+const grouped = categories.map(c => ({
+  ...c,
+  items: pieces.filter(p => p.data.category === c.slug),
+})).filter(g => g.items.length > 0);
+---
+<BaseLayout
+  title="Adaptive & neurodivergent athletes"
+  description="Inclusive sports content for parents of ADHD, autistic, sensory, intellectually-disabled, and physically-disabled kids. Real options. Real programs. Real practice."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/tools/" class="hover:underline">Tools</a> · Adaptive
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+        Sports for <em class="text-rust">every kid</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        ADHD, autism, sensory needs, physical disability, intellectual disability. The programs that exist. The accommodations that work. The conversations to have with coaches.
+      </p>
+      <aside class="mt-8 border-l-4 pl-4 py-3 max-w-2xl" style="border-color: #B8908F; background: #FAF6F1;">
+        <p class="font-display italic text-rust text-sm" style="font-weight: 500;">What this is</p>
+        <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+          Practical guidance from parent-coaches who've worked with neurodivergent and adaptive athletes. Not a substitute for IEP teams, OT/PT clinicians, or developmental pediatricians. Use this as a starting point for the conversations with the right specialists.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  {grouped.length === 0 ? (
+    <section><div class="container-px py-12">
+      <p class="font-display italic text-ink-soft" style="font-weight: 500;">First batch ships this month.</p>
+    </div></section>
+  ) : (
+    grouped.map((g) => (
+      <section class="border-b border-bone">
+        <div class="container-px py-10 md:py-12">
+          <div class="grid md:grid-cols-12 gap-8">
+            <div class="md:col-span-4">
+              <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Topic</p>
+              <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">{g.label}</h2>
+              <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
+            </div>
+            <div class="md:col-span-8">
+              <ul class="grid gap-4">
+                {g.items.map((p) => (
+                  <li class="border border-bone bg-paper-warm p-5">
+                    <a href={`/adaptive/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;">
+                      {p.data.title}
+                    </a>
+                    <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))
+  )}
+</BaseLayout>
