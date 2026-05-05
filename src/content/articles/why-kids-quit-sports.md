@@ -1,5 +1,7 @@
 ---
 title: "Why kids quit sports"
+seoTitle: "Why kids quit sports — the real reasons, by age"
+seoDescription: "The actual reasons kids drop out of youth sports at every age, what parents miss, and what to do before the kid hands you back the gear."
 dek: "The real reasons kids walk away. None of them are the ones parents usually focus on."
 topic: "the-hard-stuff"
 format: "essay"

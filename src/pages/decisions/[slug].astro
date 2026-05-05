@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
+import FAQPageSchema from '../../components/FAQPageSchema.astro';
+import { SITE } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
@@ -23,11 +25,34 @@ const allDecisions = await getCollection('decisions', ({ data }) => isLive(data)
 const relatedDecisions = (decision.data.relatedDecisions ?? [])
   .map(slug => allDecisions.find(d => d.slug === slug))
   .filter(Boolean) as typeof allDecisions;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Decisions', item: `${SITE.url}/decisions/` },
+    { '@type': 'ListItem', position: 3, name: stripTitle(decision.data.title) },
+  ],
+};
 ---
 <BaseLayout
   title={stripTitle(decision.data.title)}
   description={decision.data.summary}
 >
+  <FAQPageSchema
+    slot="head"
+    question={decision.data.theQuestion}
+    summary={decision.data.summary}
+    theRule={decision.data.theRule}
+    benefits={decision.data.benefits}
+    costs={decision.data.costs}
+    signsItsAGoodFit={decision.data.signsItsAGoodFit}
+    signsItsNot={decision.data.signsItsNot}
+    howToHandleIt={decision.data.howToHandleIt}
+  />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
   <!-- Hero -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">

@@ -1,5 +1,7 @@
 ---
 title: "Coaching your own kid in *front of the team*"
+seoTitle: "How to coach your own kid in front of the team without messing it up"
+seoDescription: "The two ways most parent-coaches blow it, the rule that works after five seasons, and how to handle the dugout without losing the relationship at home."
 dek: "I made the lineup at midnight. My wife asked why I was crying in the kitchen. Five seasons later, I think I finally have it figured out. Sort of."
 format: "essay"
 issue: 3

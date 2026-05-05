@@ -1,5 +1,7 @@
 ---
 title: "What you say in the *first 90 seconds*"
+seoTitle: "What to say to your kid in the first 90 seconds after a game"
+seoDescription: "The post-game window is shorter than parents think. The exact words that protect the relationship after a hard game, by sport and by age."
 dek: "The window after the game is shorter than you think. I waste it almost every Saturday. Here is what I am trying to do instead."
 format: "essay"
 issue: 1

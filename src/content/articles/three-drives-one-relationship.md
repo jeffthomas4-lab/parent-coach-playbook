@@ -1,5 +1,7 @@
 ---
 title: "Three drives. *One relationship.*"
+seoTitle: "The car ride home matters more than the game — youth sports framework"
+seoDescription: "Why the drive there and the drive home shape your kid's relationship with sport more than what happens on the field. The framework anchored in a t-ball moment."
 dek: "Why what happens in the car matters more than what happens on the field. The framework, anchored in a t-ball moment."
 format: "essay"
 issue: 0

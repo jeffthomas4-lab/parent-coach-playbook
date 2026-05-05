@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EDITORIAL } from '../../data/site';
+import { EDITORIAL, SITE } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
@@ -16,11 +16,40 @@ export async function getStaticPaths() {
 const { tip } = Astro.props;
 const { Content } = await tip.render();
 const tagBits = [tip.data.sport, tip.data.age, tip.data.focus].filter(Boolean);
+
+// JSON-LD: HowTo for drill content. Steps come from the markdown body, so we
+// emit a minimal HowTo with name/description/single step pointing at the page.
+// Better than nothing for SEO. A future content migration can structure steps.
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: stripTitle(tip.data.title),
+  description: tip.data.summary,
+  author: {
+    '@type': 'Person',
+    name: EDITORIAL.authorName,
+    url: EDITORIAL.authorUrl,
+    description: EDITORIAL.authorBio,
+    jobTitle: EDITORIAL.authorRole,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  step: [{
+    '@type': 'HowToStep',
+    name: 'Run the drill',
+    text: tip.data.summary,
+    url: `${SITE.url}/coaching-tips/${tip.slug}/`,
+  }],
+};
 ---
 <BaseLayout
   title={stripTitle(tip.data.title)}
   description={tip.data.summary}
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">

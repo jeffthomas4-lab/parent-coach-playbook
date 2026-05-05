@@ -143,6 +143,15 @@ body {
   max-width: 680px;
 }
 
+/* Slightly smaller body on mobile improves dwell time and reduces vertical
+   scrolling without sacrificing readability. Per the strategic audit. */
+@media (max-width: 640px) {
+  .article-body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
 .article-body p { margin: 0 0 1.5em 0; }
 
 /* Lists. Tailwind preflight strips list-style; restore it for prose. */

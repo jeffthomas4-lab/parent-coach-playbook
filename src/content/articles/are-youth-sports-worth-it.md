@@ -1,5 +1,7 @@
 ---
 title: "Are youth sports worth it? An honest answer."
+seoTitle: "Are youth sports worth it? Honest cost vs benefit answer"
+seoDescription: "The cost is real, the hassle is real, and the benefits are real too. Honest math on whether youth sports are worth it for your family right now."
 dek: "The cost is real. The hassle is real. The benefits are real too. Here's the honest math."
 topic: "rules-of-play"
 format: "essay"

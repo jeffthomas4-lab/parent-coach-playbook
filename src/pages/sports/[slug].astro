@@ -1,0 +1,256 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SPORTS } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
+import { renderTitle, stripTitle } from '../../lib/title';
+
+// Sport landing pages: aggregate everything tagged with this sport into one
+// reference hub. Replaces the SEO-leaky model where each piece of content
+// for a sport lived in five different surfaces with no consolidated entry.
+
+export async function getStaticPaths() {
+  return SPORTS.map(s => ({ params: { slug: s.slug }, props: { sportSlug: s.slug, sportLabel: s.label } }));
+}
+
+const { sportSlug, sportLabel } = Astro.props;
+
+// Pull every collection that has a sport tag.
+const articles      = await getCollection('articles',      ({ data }) => isLive(data));
+const guides        = await getCollection('guides',        ({ data }) => isLive(data));
+const tips          = await getCollection('coachingTips',  ({ data }) => isLive(data));
+const pathways      = await getCollection('pathways',      ({ data }) => isLive(data));
+const calendars     = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const recruiting    = await getCollection('recruiting',    ({ data }) => isLive(data));
+const rules         = await getCollection('rules',         ({ data }) => isLive(data));
+const body          = await getCollection('body',          ({ data }) => isLive(data));
+const scripts       = await getCollection('scripts',       ({ data }) => isLive(data));
+
+// Filter for this sport.
+const matchedArticles   = articles.filter(a => a.data.sport === sportSlug);
+const matchedGuide      = guides.find(g => g.slug === sportSlug);
+const matchedTips       = tips.filter(t => t.data.sport === sportSlug);
+const matchedPathway    = pathways.find(p => p.data.sport === sportSlug);
+const matchedCalendar   = calendars.find(c => c.data.sport === sportSlug);
+const matchedRecruiting = recruiting.filter(r => r.data.sportTags?.includes(sportSlug as any));
+const matchedRules      = rules.find(r => r.data.sport === sportSlug);
+const matchedBody       = body.filter(b => b.data.sportTags?.includes(sportSlug as any));
+const matchedScripts    = scripts.filter(s => s.data.sportTags?.includes(sportSlug as any));
+
+// Sort articles by date desc.
+matchedArticles.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+matchedTips.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const totalCount = matchedArticles.length + matchedTips.length
+  + (matchedGuide ? 1 : 0) + (matchedPathway ? 1 : 0) + (matchedCalendar ? 1 : 0) + (matchedRules ? 1 : 0)
+  + matchedRecruiting.length + matchedBody.length + matchedScripts.length;
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+<BaseLayout
+  title={`${sportLabel} parent guide`}
+  description={`Every read, drill, calendar, pathway, rule, and recruiting note we have on ${sportLabel.toLowerCase()}, in one place. Built for the parent who is in it.`}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">Sport guide</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        {sportLabel}, for the <em class="text-rust">parent in it</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Every read, drill, calendar, pathway, rule, and recruiting note we have on {sportLabel.toLowerCase()}. Use this as the front door.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
+        {totalCount} pieces.
+      </p>
+    </div>
+  </section>
+
+  {/* Tools row: cost calculator + pathway + calendar + rules */}
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 md:py-12">
+      <p class="font-display italic text-rust mb-2 font-medium">Tools for {sportLabel.toLowerCase()}</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+        <a href={`/cost-calculator/?sport=${sportSlug}`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+          <p class="font-display italic text-rust text-xs font-medium">Cost</p>
+          <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+            What does {sportLabel.toLowerCase()} actually cost?
+          </h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+            Pre-filled annual estimates by tier. Edit any line.
+          </p>
+        </a>
+        {matchedPathway && (
+          <a href={`/pathways/${sportSlug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+            <p class="font-display italic text-rust text-xs font-medium">Pathway</p>
+            <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+              {sportLabel} by age
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+              What good looks like at 7, 10, 13, 15.
+            </p>
+          </a>
+        )}
+        {matchedCalendar && (
+          <a href={`/season-calendar/${matchedCalendar.slug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+            <p class="font-display italic text-rust text-xs font-medium">Calendar</p>
+            <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+              The {sportLabel.toLowerCase()} year
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+              {matchedCalendar.data.summary}
+            </p>
+          </a>
+        )}
+        {matchedRules && (
+          <a href={`/rules/${sportSlug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+            <p class="font-display italic text-rust text-xs font-medium">Rules</p>
+            <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+              Rules at-a-glance
+            </h3>
+            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+              Five-minute primer.
+            </p>
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  {/* What to buy */}
+  {matchedGuide && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 md:py-12">
+        <p class="font-display italic text-rust mb-2 font-medium">What to buy</p>
+        <a href={`/what-to-buy/${sportSlug}/`} class="block max-w-2xl group">
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors font-medium">
+            The {sportLabel.toLowerCase()} buying guide
+          </h2>
+          <p class="font-display text-ink-soft mt-3 leading-snug">{matchedGuide.data.lede}</p>
+          <p class="font-display italic text-rust text-sm mt-4 font-medium">→ Read the guide</p>
+        </a>
+      </div>
+    </section>
+  )}
+
+  {/* Reads (articles tagged this sport) */}
+  {matchedArticles.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12 md:py-14">
+        <p class="font-display italic text-rust mb-3 font-medium">Reads</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+          {sportLabel} <em class="text-rust">articles</em>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-x-10">
+          {matchedArticles.slice(0, 12).map((a) => (
+            <a href={`/${a.data.phase}/${a.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <p class="font-display italic text-rust text-xs font-medium">
+                {a.data.age ? `age ${a.data.age} · ` : ''}{fmtDate(a.data.publishedAt)}
+              </p>
+              <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+              {a.data.dek && (
+                <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Drills */}
+  {matchedTips.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-12 md:py-14">
+        <p class="font-display italic text-rust mb-3 font-medium">Drills</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+          {sportLabel} <em class="text-rust">drills</em>
+        </h2>
+        <p class="font-display italic text-ink-soft text-sm mb-4 font-medium">{matchedTips.length} drills total. Most recent shown.</p>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+          {matchedTips.slice(0, 12).map((t) => (
+            <li class="bg-paper p-4">
+              <a href={`/coaching-tips/${t.slug}/`} class="block group">
+                <p class="font-display italic text-rust text-xs font-medium">
+                  {t.data.age ? `age ${t.data.age}` : ''}{t.data.focus ? ` · ${t.data.focus}` : ''}
+                </p>
+                <h3 class="font-display text-ink text-base leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-5">
+          <a href={`/coaching-tips/?sport=${sportSlug}`} class="font-display italic text-rust hover:text-ink font-medium">→ All {sportLabel.toLowerCase()} drills</a>
+        </p>
+      </div>
+    </section>
+  )}
+
+  {/* Body topics specific to this sport */}
+  {matchedBody.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12">
+        <p class="font-display italic text-rust mb-3 font-medium">Body and mind</p>
+        <ul class="grid md:grid-cols-2 gap-x-10">
+          {matchedBody.map((b) => (
+            <li>
+              <a href={`/body/${b.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(b.data.title)} />
+                <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{b.data.summary}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Recruiting */}
+  {matchedRecruiting.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-12">
+        <p class="font-display italic text-rust mb-3 font-medium">Recruiting</p>
+        <ul class="grid md:grid-cols-2 gap-x-10">
+          {matchedRecruiting.map((r) => (
+            <li>
+              <a href={`/recruiting/${r.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
+                <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{r.data.summary}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Scripts */}
+  {matchedScripts.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12">
+        <p class="font-display italic text-rust mb-3 font-medium">Scripts</p>
+        <ul class="grid md:grid-cols-2 gap-x-10">
+          {matchedScripts.map((s) => (
+            <li>
+              <a href={`/scripts/${s.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
+                <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{s.data.summary}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {totalCount === 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-16 text-center">
+        <p class="font-display italic text-ink-soft font-medium">
+          We're working on the {sportLabel.toLowerCase()} content. Check back soon.
+        </p>
+      </div>
+    </section>
+  )}
+</BaseLayout>

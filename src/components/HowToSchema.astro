@@ -1,0 +1,32 @@
+---
+// JSON-LD HowTo schema for coaching tip / drill pages.
+// A drill page typically includes setup, coaching cue, common mistake, variation.
+// We map those into HowTo steps.
+
+interface Props {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string; // ISO 8601 duration like PT5M
+}
+
+const { name, description, steps, totalTime } = Astro.props;
+
+const schema: any = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name,
+  description,
+  step: steps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.name,
+    text: s.text,
+  })),
+};
+
+if (totalTime) {
+  schema.totalTime = totalTime;
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

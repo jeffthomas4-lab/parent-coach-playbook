@@ -121,12 +121,25 @@ const decisionsIndex = decisions.map(d => ({
 
 // Static pages parents might search for.
 const staticIndex = [
+  { type: 'Parent-Coach', title: 'The parent-coach', dek: 'Reads, drills, scripts, and decisions for the parent who is also on the bench.', href: '/parent-coach/', meta: 'Parent-coach pillar' },
+  { type: 'Sports', title: 'By sport', dek: 'Every read, drill, calendar, and tool grouped by sport. The fastest entry point.', href: '/sports/', meta: 'Sports · index' },
+  ...SPORTS.map(s => ({
+    type: 'Sport guide' as const,
+    title: `${s.label} parent guide`,
+    dek: `Articles, drills, pathways, calendars, and rules for ${s.label.toLowerCase()} families.`,
+    href: `/sports/${s.slug}/`,
+    meta: `Sports · ${s.label}`,
+  })),
   { type: 'Tools', title: 'Cost calculator', dek: 'What does a year of youth sports actually cost?', href: '/cost-calculator/', meta: 'Tools · cost calculator' },
   { type: 'Tools', title: 'Cost calculator methodology', dek: 'Where the default numbers come from.', href: '/cost-calculator/methodology/', meta: 'Tools · methodology' },
-  { type: 'Tools', title: 'Tools index', dek: 'Season calendar, pathways, cost calculator, the body, recruiting, rules, adaptive.', href: '/tools/', meta: 'Tools' },
+  { type: 'Tools', title: 'Tools index', dek: 'Cost calculator, by sport, season calendar, pathways, body and mind, recruiting.', href: '/tools/', meta: 'Tools' },
   { type: 'Camps', title: 'Camps directory', dek: 'Search and submit youth sports and activity camps.', href: '/camps/', meta: 'Camps' },
-  { type: 'About', title: 'About Parent Coach Playbook', dek: 'What this is and who writes it.', href: '/about/', meta: 'About' },
+  { type: 'About', title: 'About Parent Coach Playbook', dek: 'What this is and who writes it. Coach Jeff Thomas and the editorial team.', href: '/about/', meta: 'About' },
+  { type: 'About', title: 'Methodology', dek: 'How we research, how we cite, how we update.', href: '/about/methodology/', meta: 'About · methodology' },
+  { type: 'About', title: 'Sources', dek: 'The institutions and journals we cite from.', href: '/about/sources/', meta: 'About · sources' },
+  { type: 'About', title: 'Corrections', dek: 'Every fix we have made to a published piece.', href: '/about/corrections/', meta: 'About · corrections' },
   { type: 'Newsletter', title: 'Newsletter', dek: 'One short read every Friday from the editorial desk.', href: '/newsletter/', meta: 'Newsletter' },
+  { type: 'Start', title: 'Start here', dek: 'If you are new to this, or in the middle of a hard moment, start here.', href: '/start-here/', meta: 'Start here' },
 ];
 
 const fullIndex = [

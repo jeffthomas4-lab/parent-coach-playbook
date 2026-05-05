@@ -8,15 +8,21 @@ export const SITE = {
   url: 'https://parentcoachplaybook.com',
   description:
     'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
-  byline: 'Parent Coach Playbook Editorial',
-  bylineShort: 'PCP Editorial',
+  byline: 'Coach Jeff Thomas and the Parent Coach Playbook Editorial',
+  bylineShort: 'Coach Jeff Thomas',
   email: 'parentcoachplaybook@gmail.com',
 };
 
 // Single editorial voice. Used for byline rendering on cards, articles, and feeds.
+// Lead author is Jeff Thomas, Division III head football coach at the University of Puget Sound.
+// The editorial team supports research, fact-checking, and ghostwritten pieces in the same voice.
 export const EDITORIAL = {
-  byline: 'Parent Coach Playbook Editorial',
-  short: 'PCP Editorial',
+  byline: 'Coach Jeff Thomas and the Parent Coach Playbook Editorial',
+  short: 'Coach Jeff Thomas',
+  authorName: 'Jeff Thomas',
+  authorRole: 'Head Football Coach, University of Puget Sound (D3)',
+  authorBio: 'Two decades coaching parents and athletes. Former interim Athletic Director. Author of the Power Of Series and Chain Reaction. Builds the parent resource he wished existed when his own kids started playing.',
+  authorUrl: 'https://parentcoachplaybook.com/about/',
   // Mark color used wherever a small accent dot or pill renders.
   accent: '#C5713D',
   accentBg: '#F2E2D5',
@@ -33,21 +39,18 @@ export const NAV = [
   { label: 'Tools', href: '/tools/', hasDropdown: 'tools' },
 ];
 
-// Items inside the Tools nav dropdown. Each is a hub URL parents return to.
-// Adaptive and Decisions are kept as live pages (linked from the Tools landing
-// and individual reads) but demoted out of the primary nav dropdown until each
-// section reaches 15+ pieces. Camps folded in here from the old top-level nav.
+// Items inside the Tools nav dropdown. Six items, organized by what parents are doing.
+// Body and Mental Skills consolidated under "Body and mind" (linked sub-pages from the
+// Body hub). Adaptive, Recruiting, Rules, Camps, Governing bodies still live but moved
+// to footer or accessed via Tools landing page. Decisions and Scripts live in /reads/ flow.
 export const TOOLS_NAV = [
+  { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost of any sport. Pre-filled, edit any line, share the result.' },
+  { slug: 'sports',           label: 'By sport',          href: '/sports/',           blurb: 'Every read, drill, calendar, and tool grouped by sport. The fastest entry point.' },
   { slug: 'season-calendar',  label: 'Season calendar',   href: '/season-calendar/',  blurb: 'Twelve months by sport and level. Tryouts, peaks, off-season.' },
   { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15, by sport.' },
-  { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost. Per game your kid actually plays in.' },
-  { slug: 'body',             label: 'The body',          href: '/body/',             blurb: 'Concussion, arm care, heat, sleep. What to know, what to ask the doc.' },
-  { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
-  { slug: 'rules',            label: 'Rules at-a-glance', href: '/rules/',            blurb: 'Five-minute rules primers for every sport we cover.' },
+  { slug: 'body',             label: 'Body and mind',     href: '/body/',             blurb: 'Concussion, arm care, sleep, mental skills. What to know, what to ask the doc.' },
   { slug: 'pendulum',         label: 'The pendulum',      href: '/youth-sports-pendulum/', blurb: 'Where is your family on the fun-to-performance spectrum right now?' },
-  { slug: 'mental-skills',    label: 'Mental skills',     href: '/mental-skills/',    blurb: 'Pre-game nerves, performance anxiety, burnout, identity. Sports psychology for parents.' },
-  { slug: 'camps',            label: 'Camps & leagues',   href: '/camps/',            blurb: 'Submitted by parents and program directors. Reviewed before they go live.' },
-  { slug: 'governing-bodies', label: 'Governing bodies',  href: '/governing-bodies/', blurb: 'The directory parents send each other when somebody says "check the rule book."' },
+  { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
 ] as const;
 
 export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];

@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { SITE, BUYING_GUIDES } from '../data/site';
+import { SITE, BUYING_GUIDES, SPORTS } from '../data/site';
 import { listAllCampSlugsApproved } from '../lib/camps-db';
 import { isLive } from '../lib/publishFilter';
 import type { APIContext } from 'astro';
@@ -67,8 +67,14 @@ export async function GET(ctx: APIContext) {
     '/mental-skills/',
     '/governing-bodies/',
     '/why-we-exist/',
+    '/parent-coach/',
+    '/sports/',
+    '/about/methodology/',
+    '/about/sources/',
+    '/about/corrections/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
+    ...SPORTS.map(s => `/sports/${s.slug}/`),
     ...campSlugs.map(slug => `/camps/${slug}/`),
   ];
 

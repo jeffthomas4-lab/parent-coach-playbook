@@ -10,6 +10,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com; frame-ancestors 'none'; form-action 'self' https://app.kit.com; base-uri 'self'; object-src 'none'
 
 # Static HTML: edge-cache for a day, browser-cache for 5 minutes, serve stale
 # while revalidating in the background. New deploys auto-purge the CF edge so

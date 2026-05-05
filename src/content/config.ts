@@ -74,7 +74,9 @@ const articles = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
-      title: z.string(),
+      title: z.string(),                       // The voice H1 (with markdown italics)
+      seoTitle: z.string().optional(),         // Optional search-shaped title for the <title> tag and SERP. Falls back to title if missing.
+      seoDescription: z.string().optional(),   // Optional search-shaped description override. Falls back to dek.
       dek: z.string().optional(),
       topic: z
         .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play','summer-camps'])
@@ -96,24 +98,6 @@ const articles = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
-      ...editorialField,
-    }),
-});
-
-const gear = defineCollection({
-  type: 'content',
-  schema: ({ image }) =>
-    z.object({
-      name: z.string(),
-      description: z.string(),
-      ourTake: z.string().optional(),
-      hero: image().optional(),
-      retailer: z.string(),
-      affiliateSlug: z.string(),
-      priceRange: z.string().optional(),
-      sport: z.enum([...SPORT_ENUM, 'all-sports']).optional(),
-      age: z.enum(AGE_ENUM).optional(),
-      featured: z.boolean().default(false),
       ...editorialField,
     }),
 });
@@ -405,5 +389,5 @@ const decisions = defineCollection({
     }),
 });
 
-export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules, scripts, decisions };
+export const collections = { articles, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules, scripts, decisions };
 

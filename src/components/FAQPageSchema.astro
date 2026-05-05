@@ -1,0 +1,47 @@
+---
+// JSON-LD FAQPage schema for decision pages.
+// The decision template is structured Q&A: theQuestion, benefits, costs, signs,
+// howToHandleIt. We map that to a single FAQPage with the question
+// answered by a synthesized response from the structured fields.
+//
+// FAQPage schema lets Google show rich expandable Q&A in SERPs.
+
+interface Props {
+  question: string;
+  summary: string;
+  theRule: string;
+  benefits: string[];
+  costs: string[];
+  signsItsAGoodFit: string[];
+  signsItsNot: string[];
+  howToHandleIt: string[];
+}
+
+const { question, summary, theRule, benefits, costs, signsItsAGoodFit, signsItsNot, howToHandleIt } = Astro.props;
+
+// Compose a single answer text that captures the structured page in plain prose.
+// Google's FAQPage requires the answer be HTML-textual, plain enough to parse.
+const benefitsText = benefits.length > 0 ? `Benefits: ${benefits.join(' ')} ` : '';
+const costsText = costs.length > 0 ? `Costs: ${costs.join(' ')} ` : '';
+const fitText = signsItsAGoodFit.length > 0 ? `Signs it fits: ${signsItsAGoodFit.join(' ')} ` : '';
+const notFitText = signsItsNot.length > 0 ? `Signs it does not: ${signsItsNot.join(' ')} ` : '';
+const handleText = howToHandleIt.length > 0 ? `How to handle it: ${howToHandleIt.join(' ')} ` : '';
+
+const answer = `${summary} ${benefitsText}${costsText}${fitText}${notFitText}${handleText}The rule: ${theRule}`.trim();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    },
+  ],
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

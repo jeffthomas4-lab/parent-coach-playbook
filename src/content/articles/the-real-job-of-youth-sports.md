@@ -1,5 +1,7 @@
 ---
 title: "Why we exist. *Three things youth sports is for.*"
+seoTitle: "What is youth sports actually for? Three things, honestly"
+seoDescription: "Have fun. Learn how to be a good teammate. Want to come back next year. The honest answer to what youth sports is supposed to do, by a head coach and parent."
 dek: "Have fun. Learn the rules and how to be a good teammate. Want to come back next year. Everything on this site exists to help with one of the three. The fourth, hidden challenge: doing all of this while coaching your own kid."
 topic: "rules-of-play"
 format: "essay"

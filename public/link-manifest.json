@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-05T19:48:48.167Z",
-  "count": 194,
+  "generatedAt": "2026-05-05T21:32:31.011Z",
+  "count": 195,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -327,6 +327,10 @@
     {
       "url": "https://schema.org",
       "sources": [
+        "src/pages/about.astro",
+        "src/pages/coaching-tips/[slug].astro",
+        "src/pages/decisions/[slug].astro",
+        "src/pages/scripts/[slug].astro",
         "src/pages/team-parent/[slug].astro"
       ]
     },
@@ -906,6 +910,12 @@
       "sources": [
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.pugetsound.edu/",
+      "sources": [
+        "src/pages/about.astro"
       ]
     },
     {

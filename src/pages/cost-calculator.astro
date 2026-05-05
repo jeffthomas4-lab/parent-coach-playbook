@@ -247,7 +247,19 @@ const levels = [
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {}
       };
 
-      let state: State = loadFromUrl() ?? loadFromStorage() ?? stateFromProfile('generic', 'rec');
+      // Pre-select a sport if /cost-calculator/?sport=baseball is the entry URL.
+      // Sport landing pages link with this param so the calculator opens with that sport selected.
+      const loadFromSportParam = (): State | null => {
+        const params = new URLSearchParams(window.location.search);
+        const sport = params.get('sport');
+        if (!sport) return null;
+        // Validate the sport exists in profiles. If not, fall through.
+        const exists = profiles.some(p => p.sport === sport);
+        if (!exists) return null;
+        return stateFromProfile(sport, 'rec');
+      };
+
+      let state: State = loadFromUrl() ?? loadFromSportParam() ?? loadFromStorage() ?? stateFromProfile('generic', 'rec');
 
       const computeTotal = () => state.items.reduce((sum, i) => sum + (i.included ? i.amount : 0), 0);
 

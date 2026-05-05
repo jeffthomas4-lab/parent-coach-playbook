@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SPORTS } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
+
+// /sports/ index — the entry point to sport-specific landing hubs.
+// Each sport gets a card with the count of pieces tagged that sport across collections.
+
+const articles      = await getCollection('articles',      ({ data }) => isLive(data));
+const guides        = await getCollection('guides',        ({ data }) => isLive(data));
+const tips          = await getCollection('coachingTips',  ({ data }) => isLive(data));
+const pathways      = await getCollection('pathways',      ({ data }) => isLive(data));
+const calendars     = await getCollection('seasonCalendars', ({ data }) => isLive(data));
+const recruiting    = await getCollection('recruiting',    ({ data }) => isLive(data));
+const rules         = await getCollection('rules',         ({ data }) => isLive(data));
+const body          = await getCollection('body',          ({ data }) => isLive(data));
+
+const counts = SPORTS.map(s => {
+  const n =
+    articles.filter(a => a.data.sport === s.slug).length +
+    tips.filter(t => t.data.sport === s.slug).length +
+    (guides.find(g => g.slug === s.slug) ? 1 : 0) +
+    (pathways.find(p => p.data.sport === s.slug) ? 1 : 0) +
+    (calendars.find(c => c.data.sport === s.slug) ? 1 : 0) +
+    (rules.find(r => r.data.sport === s.slug) ? 1 : 0) +
+    recruiting.filter(r => r.data.sportTags?.includes(s.slug as any)).length +
+    body.filter(b => b.data.sportTags?.includes(s.slug as any)).length;
+  return { ...s, count: n };
+});
+
+// Group sports the same way the What to Buy nav does.
+const team = counts.filter(s => ['baseball','basketball','flag-football','football-7v7','football','hockey','lacrosse-boys','lacrosse-girls','soccer','softball','volleyball'].includes(s.slug));
+const individual = counts.filter(s => ['crew','cross-country','golf','gymnastics','martial-arts','swimming','tennis','track-field'].includes(s.slug));
+const arts = counts.filter(s => ['ballet','band','cheer','choir','dance','stunt','theater'].includes(s.slug));
+---
+<BaseLayout
+  title="Sports — every read, drill, and tool by sport"
+  description="A single front door for every sport we cover. Articles, drills, pathways, calendars, rules, recruiting, and body topics organized by sport."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">Sports</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        Every read by <em class="text-rust">sport</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Articles, drills, pathways, season calendars, rules, recruiting notes, and body topics for every sport we cover. Pick a sport. Everything we have on it lives in one place.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-14">
+      <p class="font-display italic text-rust mb-2 font-medium">Field and team sports</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+        {team.map(s => (
+          <a href={`/sports/${s.slug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+            <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+              {s.label}
+            </h2>
+            <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
+              {s.count} {s.count === 1 ? 'piece' : 'pieces'}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12 md:py-14">
+      <p class="font-display italic text-rust mb-2 font-medium">Individual sports</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+        {individual.map(s => (
+          <a href={`/sports/${s.slug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+            <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+              {s.label}
+            </h2>
+            <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
+              {s.count} {s.count === 1 ? 'piece' : 'pieces'}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-14">
+      <p class="font-display italic text-rust mb-2 font-medium">Performing arts</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+        {arts.map(s => (
+          <a href={`/sports/${s.slug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+            <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+              {s.label}
+            </h2>
+            <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
+              {s.count} {s.count === 1 ? 'piece' : 'pieces'}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

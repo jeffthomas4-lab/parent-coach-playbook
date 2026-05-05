@@ -21,20 +21,43 @@ const related = (await getCollection('articles', ({ data: d, slug: s }) =>
   isLive(d) && d.phase === data.phase && s !== slug
 )).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-// JSON-LD
+// JSON-LD: Article schema with Person author for E-E-A-T signal.
+// Author bio and role pulled from EDITORIAL config so updates propagate.
+const reviewedAt = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
+const heroImage = (data as any).ogImage ?? (data.hero ? (typeof data.hero === 'string' ? data.hero : data.hero.src) : '/og-default.jpg');
+const heroImageUrl = new URL(heroImage, SITE.url).toString();
+const heroAlt = (data as any).heroAlt ?? data.title.replace(/\*/g, '');
+// Full ImageObject for image search. Standard OG dimensions are 1200x630.
+const imageObject = {
+  '@type': 'ImageObject',
+  url: heroImageUrl,
+  width: 1200,
+  height: 630,
+  caption: heroAlt,
+};
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: data.title.replace(/\*/g, ''),
   description: data.dek,
-  author: { '@type': 'Organization', name: SITE.name },
+  image: imageObject,
+  author: {
+    '@type': 'Person',
+    name: EDITORIAL.authorName,
+    url: EDITORIAL.authorUrl,
+    description: EDITORIAL.authorBio,
+    jobTitle: EDITORIAL.authorRole,
+  },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
+    url: SITE.url,
     logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
   },
   datePublished: data.publishedAt.toISOString(),
+  dateModified: new Date(reviewedAt ?? data.publishedAt).toISOString(),
   mainEntityOfPage: `${SITE.url}/${data.phase}/${slug}/`,
+  articleSection: pillar.label,
 };
 
 const breadcrumbSchema = {
@@ -62,8 +85,8 @@ const showReviewed = reviewedDate !== null && reviewedDate.getTime() > data.publ
 const dateOpts = { month: 'long', day: 'numeric', year: 'numeric' } as const;
 ---
 <BaseLayout
-  title={data.title.replace(/\*/g, '')}
-  description={data.dek ?? SITE.description}
+  title={(data as any).seoTitle ?? data.title.replace(/\*/g, '')}
+  description={(data as any).seoDescription ?? data.dek ?? SITE.description}
   ogType="article"
   ogImage={(data as any).ogImage ?? (data.hero ? (typeof data.hero === 'string' ? data.hero : data.hero.src) : undefined)}
   publishedAt={data.publishedAt.toISOString()}

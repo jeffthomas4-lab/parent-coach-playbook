@@ -1,5 +1,7 @@
 ---
 title: "When she says \"*I hate this sport*\""
+seoTitle: "What to do when your kid says they hate their sport"
+seoDescription: "What it actually means when a kid says they hate their sport, what to ask, what not to do, and how to tell the difference between a phase and a real signal."
 dek: "The first time you hear it, the floor drops. What it actually means. What to ask. What not to do."
 topic: "the-hard-stuff"
 format: "essay"

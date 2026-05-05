@@ -1,0 +1,67 @@
+---
+// JSON-LD Article schema for individual reads.
+// Drop into any [slug].astro page that renders article-shaped content.
+//
+// Article schema unlocks rich results, byline displays, and improves
+// E-E-A-T signal to Google. Author entity links to /about/.
+
+import { SITE, EDITORIAL } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  publishedAt: Date;
+  modifiedAt?: Date;
+  image?: string;
+  authorName?: string;
+  url: string;
+  articleSection?: string;
+}
+
+const {
+  title,
+  description,
+  publishedAt,
+  modifiedAt,
+  image,
+  authorName = EDITORIAL.authorName,
+  url,
+  articleSection,
+} = Astro.props;
+
+const imageUrl = image
+  ? new URL(image, SITE.url).toString()
+  : new URL('/og-default.jpg', SITE.url).toString();
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description ?? SITE.description,
+  image: imageUrl,
+  datePublished: publishedAt.toISOString(),
+  dateModified: (modifiedAt ?? publishedAt).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: authorName,
+    url: EDITORIAL.authorUrl,
+    description: EDITORIAL.authorBio,
+    jobTitle: EDITORIAL.authorRole,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/og-default.jpg', SITE.url).toString(),
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+  ...(articleSection ? { articleSection } : {}),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
