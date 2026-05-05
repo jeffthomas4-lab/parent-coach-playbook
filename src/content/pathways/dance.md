@@ -130,8 +130,8 @@ editorial:
 
 Competitive dance is one of the most time-intensive youth activities. A serious 13-year-old dancer trains 15-25 hours per week year-round, often comparable to elite gymnastics or year-round soccer. The cost is comparable too once competition fees, costumes, and national events are factored in.
 
-The honest career arc looks different from sport. Most competitive dancers will not pursue pre-professional training. Most will not dance in college at the NCAA dance-team level. Many will transition to college cheer, musical theater, or a different art form by 18. That's a healthy outcome — the dance training transfers across all of those.
+The honest career arc looks different from sport. Most competitive dancers will not pursue pre-professional training. Most will not dance in college at the NCAA dance-team level. Many will transition to college cheer, musical theater, or a different art form by 18. That's a healthy outcome, the dance training transfers across all of those.
 
 The body conversation in dance deserves real care. The combination of high training volume, body composition culture, and aesthetic judgment creates risk for under-fueling, RED-S, and disordered eating. Studios that emphasize fueling and body health vs. studios that emphasize body composition produce very different outcomes for dancers' long-term wellbeing. Pick the studio carefully.
 
-The strength of dance as a developmental activity is real. Body control, musicality, performance comfort, work ethic, ability to receive correction — all transfer. A kid who dances seriously through 14 has athletic and personal advantages that show up in any next direction they take.
+The strength of dance as a developmental activity is real. Body control, musicality, performance comfort, work ethic, ability to receive correction, all transfer. A kid who dances seriously through 14 has athletic and personal advantages that show up in any next direction they take.

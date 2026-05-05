@@ -19,7 +19,7 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Search-targeted (what age should kids start sports). The two-answer framing — early for movement, late for competition — is the useful distinction."
+  reviewerNotes: "Search-targeted (what age should kids start sports). The two-answer framing: early for movement, late for competition: is the useful distinction."
 ---
 
 There are two answers to this question, and the difference matters.

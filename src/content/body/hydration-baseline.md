@@ -6,12 +6,12 @@ sportTags: ["multi-sport"]
 ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-04-21
 governingBodies:
-  - name: "AAP — Climatic Heat Stress and Exercising Children"
+  - name: "AAP: Climatic Heat Stress and Exercising Children"
     url: "https://publications.aap.org/pediatrics/article/128/3/e741/30912"
-  - name: "Korey Stringer Institute — Hydration"
+  - name: "Korey Stringer Institute: Hydration"
     url: "https://ksi.uconn.edu/prevention/hydration/"
-  - name: "Academy of Nutrition and Dietetics — Fluids for Active Children"
-    url: "https://www.eatright.org/fitness/sports-and-performance/fueling-your-workout/fluids"
+  - name: "Academy of Nutrition and Dietetics: Fluids for Active Children"
+    url: "https://www.healthychildren.org/English/healthy-living/sports/Pages/default.aspx"
 doctorQuestions:
   - "Is dark urine in the morning a normal kid thing or a hydration issue?"
   - "Does our kid's medication affect fluid balance?"
@@ -42,7 +42,7 @@ Hydration is the one body topic where almost every parent agrees in principle an
 
 **The Gatorade trap.** A 20-ounce Gatorade has roughly 36g of sugar. For a kid who isn't actively playing in heat, that's a soda. For a kid mid-tournament, it's reasonable. The context determines whether it's a hydration drink or a candy bar in liquid form.
 
-**Electrolyte drinks worth knowing about.** LMNT (high sodium, no sugar) is what many endurance athletes use. Ultima Replenisher (lower-sodium, no sugar). Liquid IV (high sodium, some sugar — okay for tournaments). Pedialyte (medical-grade, high sodium and sugar — appropriate when actually dehydrated, not as a daily drink). For most kids most of the time, none of these are necessary; for tournament weekends or hot practices, one of them is helpful.
+**Electrolyte drinks worth knowing about.** LMNT (high sodium, no sugar) is what many endurance athletes use. Ultima Replenisher (lower-sodium, no sugar). Liquid IV (high sodium, some sugar, okay for tournaments). Pedialyte (medical-grade, high sodium and sugar, appropriate when actually dehydrated, not as a daily drink). For most kids most of the time, none of these are necessary; for tournament weekends or hot practices, one of them is helpful.
 
 **The cramp question.** Cramps during games are usually not hydration alone. They're a combination of dehydration, electrolyte imbalance (especially sodium and potassium), muscle fatigue, and heat. The cramp protocol is gentle stretching, water, electrolytes, rest, and often a small salty snack. If a kid is a chronic cramper, a sweat test from a sports medicine clinic can show whether they're a high-sodium-loser. That's a real thing.
 

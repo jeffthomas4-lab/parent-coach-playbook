@@ -11,9 +11,9 @@ governingBodies:
   - name: "NCAA Softball"
     url: "https://www.ncaa.org/sports/softball"
   - name: "NAIA Softball"
-    url: "https://www.naia.org/sports/sb/index"
+    url: "https://www.playnaia.org/"
   - name: "USA Softball"
-    url: "https://www.teamusa.com/usa-softball"
+    url: "https://www.usasoftball.com/"
 editorial:
   qualityGrade: 9
   originalityGrade: 9
@@ -31,7 +31,7 @@ editorial:
 
 → New here? Start with [The Recruiting Process](/recruiting/the-recruiting-process/) for the cross-sport basics, then come back.
 
-Softball recruiting moved earlier than almost any other women's sport — for a stretch, college coaches were verbal-committing players in eighth grade. The NCAA closed that loophole in 2018 by banning recruiting communication before September 1 of junior year. The travel circuit has not slowed down.
+Softball recruiting moved earlier than almost any other women's sport, for a stretch, college coaches were verbal-committing players in eighth grade. The NCAA closed that loophole in 2018 by banning recruiting communication before September 1 of junior year. The travel circuit has not slowed down.
 
 About 360,000 girls play high-school softball each year. Roughly 22,000 play college softball across all divisions. The funnel is narrower than baseball at the top end and wider than basketball at every other level.
 
@@ -41,7 +41,7 @@ About 360,000 girls play high-school softball each year. Roughly 22,000 play col
 
 **D2.** About 290 programs. 7.2 scholarships, equivalency. Partial scholarships are the norm.
 
-**D3.** About 440 programs. No athletic scholarships. Need-based and academic aid. D3 softball is a real spring season — 40 games, 8-week stretch, multi-day road trips on weekends.
+**D3.** About 440 programs. No athletic scholarships. Need-based and academic aid. D3 softball is a real spring season, 40 games, 8-week stretch, multi-day road trips on weekends.
 
 **NAIA.** About 215 programs. 10 scholarships, equivalency. Often a great fit for late-developing kids.
 
@@ -67,7 +67,7 @@ PGF (Premier Girls Fastpitch) and TC (Triple Crown) are the two dominant circuit
 
 Below the elite tier, the showcase economy mirrors baseball. A summer of high-end events runs $4,000 to $9,000 per family in fees, hotels, and travel. The economic barrier to recruiting access is real.
 
-For families targeting D2, D3, NAIA, and JUCO — which is most families — local and regional travel ball plus 2 to 3 well-chosen camps does most of the work.
+For families targeting D2, D3, NAIA, and JUCO, which is most families, local and regional travel ball plus 2 to 3 well-chosen camps does most of the work.
 
 ## The recruiting calendar
 

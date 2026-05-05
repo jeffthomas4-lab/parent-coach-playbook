@@ -3,7 +3,7 @@ sport: "hockey"
 title: "Ice hockey: rules at-a-glance"
 summary: "Ice rink, three periods, six players per side. The rules of youth hockey in five minutes."
 fieldSetup: "Rectangular ice rink with rounded corners. Two goals at each end. Center red line, two blue lines that divide the offensive/defensive/neutral zones. Goal crease in front of each net."
-gameLength: "Three periods. Length scales with age — typically 12-15 minutes per period at youth, 17 at HS, 20 in college/pro. Stop time, so periods take longer than the clock shows."
+gameLength: "Three periods. Length scales with age: typically 12-15 minutes per period at youth, 17 at HS, 20 in college/pro. Stop time, so periods take longer than the clock shows."
 scoringBasics:
   - "Goal: puck fully crosses the goal line between the posts and under the crossbar."
   - "Power play: opponent in the penalty box for a minor penalty (2 minutes). Team in penalty plays short-handed."
@@ -24,7 +24,7 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Hockey"
   url: "https://www.usahockey.com/"
-ruleBookUrl: "https://www.usahockey.com/playingrules"
+ruleBookUrl: "https://www.usahockey.com/officials"
 publishedAt: 2026-04-26
 editorial:
   qualityGrade: 8

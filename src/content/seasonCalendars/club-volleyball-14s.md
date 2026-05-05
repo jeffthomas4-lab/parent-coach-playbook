@@ -1,5 +1,5 @@
 ---
-title: "Club volleyball 14s — national qualifier track"
+title: "Club volleyball 14s: national qualifier track"
 sport: "volleyball"
 level: "travel"
 region: "National"
@@ -51,7 +51,7 @@ months:
 
 Club volleyball at 14U is one of the most committed youth sports tracks in the country. National-bid teams practice three times a week from November through July and travel to a major qualifier roughly once a month from February through May.
 
-The cost structure is the part parents underestimate. The club fee is the smallest line. Hotels for the qualifier weekends are the largest. The cost calculator's club volleyball travel preset will give you the honest annual number — usually $9,000 to $12,000 for national-bid teams once travel is included.
+The cost structure is the part parents underestimate. The club fee is the smallest line. Hotels for the qualifier weekends are the largest. The cost calculator's club volleyball travel preset will give you the honest annual number, usually $9,000 to $12,000 for national-bid teams once travel is included.
 
 The shoulder-care conversation matters. Volleyball involves more overhead motion than any other youth sport. The two weeks fully off in August is non-negotiable. Year-round play without that break is the path to chronic shoulder pain by 16. Add shoulder rotator-cuff work to the off-season, ideally with a trained S&C coach.
 

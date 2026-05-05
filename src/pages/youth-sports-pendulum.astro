@@ -43,8 +43,8 @@ const axes = [
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">A way to think about it</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">A way to think about it</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         The youth sports <em class="text-rust">pendulum</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -67,33 +67,33 @@ const axes = [
   {axes.map((a) => (
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-12 max-w-4xl">
-        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">Axis</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-3 text-sm font-medium">Axis</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
           {a.label}
         </h2>
 
         <!-- Visual spectrum -->
         <div class="mt-6 flex items-center gap-3">
-          <span class="font-display italic text-sm" style="color: #5C7459; font-weight: 500;">{a.leftLabel}</span>
+          <span class="font-display italic text-sm font-medium" style="color: #5C7459">{a.leftLabel}</span>
           <div class="flex-1 h-2 bg-bone relative">
             <div class="absolute top-1/2 -translate-y-1/2 h-4 w-4 bg-rust rounded-full" style="left: 50%; transform: translate(-50%, -50%);"></div>
           </div>
-          <span class="font-display italic text-sm" style="color: #C5713D; font-weight: 500;">{a.rightLabel}</span>
+          <span class="font-display italic text-sm font-medium" style="color: #C5713D">{a.rightLabel}</span>
         </div>
 
         <div class="mt-6 grid md:grid-cols-2 gap-6">
           <div>
-            <p class="font-display italic text-sm mb-2" style="color: #5C7459; font-weight: 500;">{a.leftLabel}</p>
+            <p class="font-display italic text-sm mb-2 font-medium" style="color: #5C7459">{a.leftLabel}</p>
             <p class="font-display text-ink leading-snug">{a.leftBlurb}</p>
           </div>
           <div>
-            <p class="font-display italic text-sm mb-2" style="color: #C5713D; font-weight: 500;">{a.rightLabel}</p>
+            <p class="font-display italic text-sm mb-2 font-medium" style="color: #C5713D">{a.rightLabel}</p>
             <p class="font-display text-ink leading-snug">{a.rightBlurb}</p>
           </div>
         </div>
 
         <div class="mt-5 pt-4 border-t border-bone">
-          <p class="font-display italic text-ink-soft text-sm leading-snug" style="font-weight: 500;">
+          <p class="font-display italic text-ink-soft text-sm leading-snug font-medium">
             {a.middleBlurb}
           </p>
         </div>
@@ -104,8 +104,8 @@ const axes = [
   <!-- The big idea -->
   <section class="border-b border-bone bg-ink text-paper">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The point</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+      <p class="font-display italic mb-3 text-sm font-medium" style="color: #D4AB6A">The point</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
         Find where your family actually is on each axis. Then ask: is that where we want to be?
       </p>
       <p class="font-display text-paper-warm mt-5 leading-relaxed">
@@ -117,22 +117,22 @@ const axes = [
   <!-- Where to go from here -->
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">From here</p>
+      <p class="font-display italic text-rust mb-4 font-medium">From here</p>
       <div class="grid sm:grid-cols-2 gap-px bg-bone max-w-4xl">
         <a href="/decisions/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Walk through the big decisions</h3>
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Walk through the big decisions</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Travel, quit, specialize, multi-sport. Page each.</p>
         </a>
         <a href="/scripts/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Open the Scripts hub</h3>
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Open the Scripts hub</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to say in the moments that matter.</p>
         </a>
         <a href="/cost-calculator/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Run the cost</h3>
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Run the cost</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What does each tier of the pendulum cost in real dollars?</p>
         </a>
         <a href="/body/burnout-signs/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors" style="font-weight: 500;">Read on burnout signs</h3>
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Read on burnout signs</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">If the pendulum is sliding toward the wrong end.</p>
         </a>
       </div>

@@ -50,7 +50,7 @@ For some kids, the cut from the team or the bench role is the moment the sport e
 
 **6. The cost.**
 
-Travel sports cost money. Time. Family-schedule disruption. At some point, many families decide it isn't worth the trade. The kid is removed from the program — or the kid feels the family stress and removes themselves first.
+Travel sports cost money. Time. Family-schedule disruption. At some point, many families decide it isn't worth the trade. The kid is removed from the program, or the kid feels the family stress and removes themselves first.
 
 **The reasons parents tend to focus on (that aren't actually the reasons):**
 

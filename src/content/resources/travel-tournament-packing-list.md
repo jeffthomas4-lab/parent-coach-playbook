@@ -13,7 +13,7 @@ Here is the list we now keep taped to the inside of the tournament bag.
 
 ## For your kid
 
-- Game uniform (top, pants, socks, belt) — TWO sets if it's a multi-day tournament with mud
+- Game uniform (top, pants, socks, belt), TWO sets if it's a multi-day tournament with mud
 - Cleats
 - Helmet (in protective bag)
 - Glove

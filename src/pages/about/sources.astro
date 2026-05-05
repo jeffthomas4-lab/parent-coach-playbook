@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const updated = 'May 5, 2026';
+
+// Curated sources we cite from across the site, grouped by category.
+// Maintenance: when we add a new piece that cites a new institution, add it here.
+const sources = {
+  'Pediatric medicine and youth-sports health': [
+    { name: 'American Academy of Pediatrics (AAP)',                    url: 'https://www.aap.org/' },
+    { name: 'AAP Pediatrics journal',                                  url: 'https://publications.aap.org/pediatrics' },
+    { name: 'AAP HealthyChildren',                                     url: 'https://www.healthychildren.org/' },
+    { name: 'CDC HEADS UP (concussion)',                               url: 'https://www.cdc.gov/heads-up/' },
+    { name: 'Korey Stringer Institute (heat illness)',                 url: 'https://koreystringer.institute.uconn.edu/' },
+    { name: 'American Academy of Orthopaedic Surgeons (OrthoInfo)',    url: 'https://orthoinfo.aaos.org/' },
+    { name: 'NIH National Institute of Arthritis and Musculoskeletal', url: 'https://www.niams.nih.gov/health-topics/sports-injuries' },
+    { name: 'American Medical Society for Sports Medicine',            url: 'https://www.amssm.org/' },
+    { name: 'KidsHealth (Nemours Foundation)',                         url: 'https://kidshealth.org/' },
+  ],
+  'Peer-reviewed journals (sports medicine and pediatrics)': [
+    { name: 'British Journal of Sports Medicine',                      url: 'https://bjsm.bmj.com/' },
+    { name: 'American Journal of Sports Medicine',                     url: 'https://journals.sagepub.com/home/ajs' },
+    { name: 'Journal of Strength and Conditioning Research',           url: 'https://journals.lww.com/nsca-jscr/' },
+    { name: 'Pediatric Exercise Science',                              url: 'https://journals.humankinetics.com/view/journals/pes/pes-overview.xml' },
+    { name: 'Orthopaedic Journal of Sports Medicine',                  url: 'https://journals.sagepub.com/home/ojs' },
+    { name: 'PubMed (NIH National Library of Medicine)',               url: 'https://pubmed.ncbi.nlm.nih.gov/' },
+  ],
+  'Research and policy on youth sports': [
+    { name: 'Aspen Institute Project Play',                            url: 'https://projectplay.org/' },
+    { name: 'Project Play State of Play (annual)',                     url: 'https://projectplay.org/state-of-play-2025/introduction' },
+    { name: 'National Federation of State High School Associations',   url: 'https://www.nfhs.org/' },
+    { name: 'Positive Coaching Alliance',                              url: 'https://positivecoach.org/' },
+    { name: 'TrueSport (US Anti-Doping Agency youth program)',         url: 'https://truesport.org/' },
+  ],
+  'Governing bodies (national)': [
+    { name: 'USA Football',                                            url: 'https://www.usafootball.com/' },
+    { name: 'Pop Warner Little Scholars',                              url: 'https://www.popwarner.com/' },
+    { name: 'Little League International',                             url: 'https://www.littleleague.org/' },
+    { name: 'USA Baseball',                                            url: 'https://www.usabaseball.com/' },
+    { name: 'USA Softball',                                            url: 'https://www.usasoftball.com/' },
+    { name: 'US Soccer / US Youth Soccer',                             url: 'https://www.usyouthsoccer.org/' },
+    { name: 'AYSO',                                                    url: 'https://www.ayso.org/' },
+    { name: 'USA Basketball',                                          url: 'https://www.usab.com/' },
+    { name: 'AAU Sports',                                              url: 'https://aau.com/' },
+    { name: 'USA Hockey',                                              url: 'https://www.usahockey.com/' },
+    { name: 'USA Lacrosse',                                            url: 'https://www.usalacrosse.com/' },
+    { name: 'USA Volleyball',                                          url: 'https://usavolleyball.org/' },
+    { name: 'USA Swimming',                                            url: 'https://www.usaswimming.org/' },
+    { name: 'USA Gymnastics',                                          url: 'https://usagym.org/' },
+    { name: 'USA Track & Field',                                       url: 'https://www.usatf.org/' },
+    { name: 'USTA',                                                    url: 'https://www.usta.com/' },
+    { name: 'USASF (cheer)',                                           url: 'https://www.usasf.net/' },
+  ],
+  'College recruiting and eligibility': [
+    { name: 'NCAA',                                                    url: 'https://www.ncaa.org/' },
+    { name: 'NCAA Eligibility Center',                                 url: 'https://web3.ncaa.org/ecwr3/' },
+    { name: 'NAIA',                                                    url: 'https://www.naia.org/' },
+    { name: 'NAIA Play (eligibility)',                                 url: 'https://www.playnaia.org/' },
+    { name: 'NJCAA (junior college)',                                  url: 'https://www.njcaa.org/' },
+  ],
+  'Adaptive sports and inclusion': [
+    { name: 'Special Olympics',                                        url: 'https://www.specialolympics.org/' },
+    { name: 'Move United (national adaptive sports network)',          url: 'https://www.moveunitedsport.org/' },
+    { name: 'U.S. Center for SafeSport',                               url: 'https://uscenterforsafesport.org/' },
+  ],
+};
+
+const groups = Object.entries(sources);
+---
+<BaseLayout
+  title="Sources"
+  description="The institutions, journals, governing bodies, and primary references Parent Coach Playbook cites from across the site."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">
+        <a href="/about/" class="hover:underline">About</a> · Sources
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        Where the numbers come from.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        Every claim that touches health, safety, money, or eligibility points at one of the institutions below. Primary sources first. We try to skip the news write-up and link to the original.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}.</p>
+    </div>
+  </section>
+
+  {groups.map(([category, items]) => (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-4">
+          <p class="font-display italic text-rust font-medium">{category}</p>
+        </div>
+        <div class="md:col-span-8 article-body">
+          <ul>
+            {items.map((s) => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener" class="text-rust hover:underline">{s.name}</a> ↗
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">The full external-link manifest</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Every external URL on the site lives in a public manifest, regenerated on every build. A Cloudflare Worker validates a rolling subset on a daily cron and writes results to a Cloudflare D1 database. Broken links surface in the editorial dashboard with a Wayback snapshot fallback.</p>
+        <p>
+          <a href="/link-manifest.json" class="text-rust hover:underline">→ link-manifest.json</a> (JSON, ~30KB)
+        </p>
+        <p>If a source on this page goes dark, it lands in the broken-links queue. If you find a link that points somewhere wrong, write to us at <a href="/disclosure/" class="text-rust hover:underline">the address on the disclosure page</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

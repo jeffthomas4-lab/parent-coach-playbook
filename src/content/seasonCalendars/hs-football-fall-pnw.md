@@ -1,5 +1,5 @@
 ---
-title: "HS football, fall season — Pacific Northwest"
+title: "HS football, fall season: Pacific Northwest"
 sport: "football"
 level: "school"
 region: "PNW"

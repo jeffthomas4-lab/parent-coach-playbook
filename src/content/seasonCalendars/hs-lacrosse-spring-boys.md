@@ -1,5 +1,5 @@
 ---
-title: "HS lacrosse, spring season — boys"
+title: "HS lacrosse, spring season: boys"
 sport: "lacrosse-boys"
 level: "school"
 region: "National"

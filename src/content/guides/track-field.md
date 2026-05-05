@@ -10,7 +10,7 @@ publishedAt: 2026-04-30
 
 ## What you actually need
 
-Good trainers ($80-120) are the foundation. These are what your child wears to every practice and slower workout. Don't cheap out here—a solid pair of running shoes from Nike, Asics, or Brooks lasts the season and prevents injuries.
+Good trainers ($80-120) are the foundation. These are what your child wears to every practice and slower workout. Don't cheap out here, a solid pair of running shoes from Nike, Asics, or Brooks lasts the season and prevents injuries.
 
 Event-specific spikes ($70-120) come next, but only after your child knows their event. Sprint spikes for the 100, 200, and 400. Distance flats for the mile and longer. Jumping spikes for high jump and long jump. Throwing shoes for shot put and discus. Yes, different events have different spikes. The track provides the rest: the runways, pits, equipment.
 
@@ -22,7 +22,7 @@ Need to know what size? See our [Track and field sizing guide](/what-to-buy/trac
 
 ## Used gear notes
 
-Play It Again Sports usually has used spikes in stock. Facebook Marketplace is hit or miss depending on your area. Trainers should generally be new—used running shoes have collapsed cushioning that causes injuries. For spikes, inspect the plate for damage. A bent or cracked plate is worthless.
+Play It Again Sports usually has used spikes in stock. Facebook Marketplace is hit or miss depending on your area. Trainers should generally be new, used running shoes have collapsed cushioning that causes injuries. For spikes, inspect the plate for damage. A bent or cracked plate is worthless.
 
 ## What you can skip
 

@@ -9,7 +9,7 @@ age: "13-14"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-22
 featured: false
-hero: /illustrations/the-missing-rec-layer.png
+hero: /illustrations/the-missing-rec-layer.webp
 heroAlt: "A nearly empty soccer field at dusk. One thirteen-year-old in scrimmage gear kicking a ball alone toward an empty net, with a single backpack on empty bleachers."
 ---
 

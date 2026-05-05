@@ -80,7 +80,7 @@ Coach gift: collected from the team. Range $5-20 per family. Depends on the seas
 
 The best coach gifts in our experience:
 
-- A team-signed ball, jersey, or photo book — kids sign in marker the week before
+- A team-signed ball, jersey, or photo book, kids sign in marker the week before
 - A gift card to a local restaurant the coach actually goes to (ask the family)
 - A handwritten note in addition (see [the parent thank-you note](/team-parent/the-parent-thank-you-note/))
 

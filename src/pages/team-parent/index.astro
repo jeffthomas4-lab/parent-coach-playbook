@@ -35,8 +35,8 @@ const recentArticles = teamParentArticles.slice(0, 6);
   <!-- Hero -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Team Parent</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Team Parent</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl font-medium">
         For the parent doing <em class="text-rust">everything off the field</em>.
       </h1>
       <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
@@ -48,9 +48,9 @@ const recentArticles = teamParentArticles.slice(0, 6);
   <!-- Quick explainer -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-8 md:py-10 max-w-3xl">
-      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How this works</p>
+      <p class="font-display italic text-rust mb-3 text-sm font-medium">How this works</p>
       <p class="font-display text-ink leading-relaxed text-base md:text-lg">
-        Pick a topic to see the articles for it. Or browse the toolkit categories below — pre-built templates and scripts you can copy-paste. Most are designed to be sent straight from your phone.
+        Pick a topic to see the articles for it. Or browse the toolkit categories below. Pre-built templates and scripts you can copy-paste. Most are designed to be sent straight from your phone.
       </p>
     </div>
   </section>
@@ -58,11 +58,11 @@ const recentArticles = teamParentArticles.slice(0, 6);
   <!-- Quick anchor nav -->
   <section class="border-b border-bone">
     <div class="container-px py-5">
-      <p class="font-display italic text-ink-soft text-xs mb-3" style="font-weight: 500;">Jump to</p>
+      <p class="font-display italic text-ink-soft text-xs mb-3 font-medium">Jump to</p>
       <div class="flex flex-wrap gap-2">
-        <a href="#topics"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Topics</a>
-        <a href="#recent"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Recent articles</a>
-        <a href="#toolkit"  class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Toolkit</a>
+        <a href="#topics"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Topics</a>
+        <a href="#recent"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Recent articles</a>
+        <a href="#toolkit"  class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Toolkit</a>
       </div>
     </div>
   </section>
@@ -70,16 +70,16 @@ const recentArticles = teamParentArticles.slice(0, 6);
   <!-- Topics: scannable text-link grid -->
   <section id="topics" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Browse by topic</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Browse by topic</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {topicData.map((t) => (
           <li>
             <a href={`/team-parent/${t.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
               <div class="flex items-baseline justify-between gap-3">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{t.label}</span>
-                <span class="font-display italic text-ink-soft text-xs whitespace-nowrap" style="font-weight: 500;">{t.count} {t.count === 1 ? 'piece' : 'pieces'}</span>
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{t.label}</span>
+                <span class="font-display italic text-ink-soft text-xs whitespace-nowrap font-medium">{t.count} {t.count === 1 ? 'piece' : 'pieces'}</span>
               </div>
-              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{t.blurb}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{t.blurb}</span>
             </a>
           </li>
         ))}
@@ -91,13 +91,13 @@ const recentArticles = teamParentArticles.slice(0, 6);
   {recentArticles.length > 0 && (
     <section id="recent" class="border-b border-bone scroll-mt-16">
       <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Recent articles</p>
+        <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Recent articles</p>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {recentArticles.map((a) => (
             <li>
               <a href={`/team-parent/${a.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;" set:html={renderTitle(a.data.title)} />
-                {a.data.dek && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{a.data.dek}</span>}
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(a.data.title)} />
+                {a.data.dek && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{a.data.dek}</span>}
               </a>
             </li>
           ))}
@@ -109,7 +109,7 @@ const recentArticles = teamParentArticles.slice(0, 6);
   <!-- Toolkit: compact category list -->
   <section id="toolkit" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Toolkit by category</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Toolkit by category</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {TEAM_PARENT_CATEGORIES.map((c) => {
           const items = resources.filter(r => r.data.category === c.slug);
@@ -117,10 +117,10 @@ const recentArticles = teamParentArticles.slice(0, 6);
             <li>
               <a href={`#${c.slug}`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
                 <div class="flex items-baseline justify-between gap-3">
-                  <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{c.label}</span>
-                  <span class="font-display italic text-ink-soft text-xs whitespace-nowrap" style="font-weight: 500;">{items.length} {items.length === 1 ? 'item' : 'items'}</span>
+                  <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{c.label}</span>
+                  <span class="font-display italic text-ink-soft text-xs whitespace-nowrap font-medium">{items.length} {items.length === 1 ? 'item' : 'items'}</span>
                 </div>
-                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{c.blurb}</span>
+                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{c.blurb}</span>
               </a>
             </li>
           );
@@ -136,7 +136,7 @@ const recentArticles = teamParentArticles.slice(0, 6);
       <section id={c.slug} class="border-b border-bone scroll-mt-16">
         <div class="container-px py-8 md:py-10">
           <p class="font-display italic mb-3 text-sm" style={`color: ${c.accent}; font-weight: 500;`}>{c.label}</p>
-          <h2 class="font-display text-ink text-xl md:text-2xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">{c.blurb}</h2>
+          <h2 class="font-display text-ink text-xl md:text-2xl leading-tight max-w-2xl mb-4 font-medium">{c.blurb}</h2>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
             {items.map((r) => (
               <li>
@@ -149,15 +149,15 @@ const recentArticles = teamParentArticles.slice(0, 6);
                   target={r.data.type === 'external' ? '_blank' : undefined}
                 >
                   <div class="flex items-baseline justify-between gap-3">
-                    <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">
+                    <span class="font-display text-ink text-base block group-hover:text-rust font-medium">
                       <span set:html={renderTitle(r.data.title)} />
                       {r.data.type === 'external' && <span aria-hidden="true"> ↗</span>}
                     </span>
-                    <span class="font-display italic text-ink-soft text-xs whitespace-nowrap" style="font-weight: 500;">
+                    <span class="font-display italic text-ink-soft text-xs whitespace-nowrap font-medium">
                       {r.data.type === 'template' ? 'template' : r.data.type === 'external' ? 'external' : 'read'}
                     </span>
                   </div>
-                  <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{r.data.summary}</span>
+                  <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{r.data.summary}</span>
                 </a>
               </li>
             ))}

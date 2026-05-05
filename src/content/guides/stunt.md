@@ -24,11 +24,11 @@ Need to know what size? See our [Stunt sizing guide](/what-to-buy/stunt/sizing/)
 
 ## Used gear notes
 
-Used mat shoes are acceptable from Facebook Marketplace or Play It Again Sports. Check the soles for uneven wear. Ankle braces should be new—used ones may have lost their structural integrity. Foam mats and tape are fine used.
+Used mat shoes are acceptable from Facebook Marketplace or Play It Again Sports. Check the soles for uneven wear. Ankle braces should be new, used ones may have lost their structural integrity. Foam mats and tape are fine used.
 
 ## What you can skip
 
-Skip professional-grade physical therapy equipment. A basic foam roller and mat are enough. Skip multiple pairs of mat shoes. One good pair works. Skip expensive stretching programs or apps—basic YouTube stretching works for beginners.
+Skip professional-grade physical therapy equipment. A basic foam roller and mat are enough. Skip multiple pairs of mat shoes. One good pair works. Skip expensive stretching programs or apps, basic YouTube stretching works for beginners.
 
 ## Rules and Citations
 

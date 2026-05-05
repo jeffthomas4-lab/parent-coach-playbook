@@ -40,8 +40,8 @@ const toolsWithCounts = TOOLS_NAV.map(t => {
   <!-- Hero: what this section is, fast -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Tools</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Tools</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl font-medium">
         Pages parents <em class="text-rust">come back to</em>.
       </h1>
       <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
@@ -50,10 +50,10 @@ const toolsWithCounts = TOOLS_NAV.map(t => {
     </div>
   </section>
 
-  <!-- What this section is — quick explainer -->
+  <!-- What this section is: quick explainer -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-8 md:py-10 max-w-3xl">
-      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How this works</p>
+      <p class="font-display italic text-rust mb-3 text-sm font-medium">How this works</p>
       <p class="font-display text-ink leading-relaxed text-base md:text-lg">
         Each tool is a self-contained reference. The cost calculator runs the numbers. The season calendar shows the year. The body hub tells you what to ask the doctor. The scripts hub tells you what to say. Pick the one you need.
       </p>
@@ -63,16 +63,16 @@ const toolsWithCounts = TOOLS_NAV.map(t => {
   <!-- Scannable directory of tools -->
   <section class="border-b border-bone">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">All the tools</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">All the tools</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {toolsWithCounts.map((t) => (
           <li>
             <a href={t.href} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
               <div class="flex items-baseline justify-between gap-3">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{t.label}</span>
-                <span class="font-display italic text-ink-soft text-xs whitespace-nowrap" style="font-weight: 500;">{t.count}</span>
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{t.label}</span>
+                <span class="font-display italic text-ink-soft text-xs whitespace-nowrap font-medium">{t.count}</span>
               </div>
-              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{t.blurb}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{t.blurb}</span>
             </a>
           </li>
         ))}
@@ -83,8 +83,8 @@ const toolsWithCounts = TOOLS_NAV.map(t => {
   <!-- How they fit together -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 md:py-12">
-      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How they fit</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 text-sm font-medium">How they fit</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05] max-w-3xl font-medium">
         The tools work as <em class="text-rust">one system</em>.
       </h2>
       <p class="font-display text-ink leading-relaxed mt-4 max-w-3xl">

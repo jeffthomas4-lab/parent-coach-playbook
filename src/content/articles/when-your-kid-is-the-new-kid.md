@@ -36,7 +36,7 @@ Skill levels equalize within the first three or four practices. Social position 
 
 Show up early. Five to ten minutes early. Lets the kid get the lay of the field, find a place to put their stuff, see the coach for thirty seconds before everyone else arrives. Lower stress because they aren't walking into the middle of an established scene.
 
-Have a small bag of team-typical snacks. Granola bars, oranges, sports drinks. Not for your kid — for sharing. Showing up with extras for the team is a real social accelerator and the kid won't think to do it themselves.
+Have a small bag of team-typical snacks. Granola bars, oranges, sports drinks. Not for your kid, for sharing. Showing up with extras for the team is a real social accelerator and the kid won't think to do it themselves.
 
 Tell the coach the kid is new. Most coaches will introduce them at the first practice. A two-second intro in front of the team is a friction-reducer.
 

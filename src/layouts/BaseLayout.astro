@@ -17,14 +17,14 @@ interface Props {
 const {
   title,
   description = SITE.description,
-  ogImage = '/og-default.png',
+  ogImage = '/og-default.jpg',
   ogType = 'website',
   canonical,
   publishedAt,
   noindex = false,
 } = Astro.props;
 
-const pageTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+const pageTitle = title ? `${title} | ${SITE.name}` : `${SITE.name}: ${SITE.tagline}`;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.url).toString();
 const ogImageUrl = new URL(ogImage, SITE.url).toString();
 ---

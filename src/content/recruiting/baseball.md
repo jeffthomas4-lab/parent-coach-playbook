@@ -33,7 +33,7 @@ editorial:
 
 College baseball is one of the most expensive recruiting sports for families and one of the most under-funded scholarship sports at the college level. The travel-team and showcase economy has moved the recruiting clock down to age 13 in some cases. The actual scholarship math has barely budged.
 
-About 480,000 boys play high-school baseball each year. About 36,000 play college baseball across all divisions. About 1 in 13 — better odds than basketball, worse than the parent in row C tells you.
+About 480,000 boys play high-school baseball each year. About 36,000 play college baseball across all divisions. About 1 in 13, better odds than basketball, worse than the parent in row C tells you.
 
 ## What each level actually looks like
 
@@ -45,7 +45,7 @@ About 480,000 boys play high-school baseball each year. About 36,000 play colleg
 
 **NAIA.** About 200 programs. 12 scholarships, equivalency. Often a strong fit for late bloomers who didn't show up on the showcase circuit until junior year.
 
-**JUCO.** This is the unsung path. Two-year college baseball is real baseball. Many D1 programs recruit JUCO transfers as juniors. JUCOs offer up to 24 scholarships per program — more than most four-year schools. A kid who isn't ready for D1 at 18 can mature physically, get reps, and transfer up at 20.
+**JUCO.** This is the unsung path. Two-year college baseball is real baseball. Many D1 programs recruit JUCO transfers as juniors. JUCOs offer up to 24 scholarships per program, more than most four-year schools. A kid who isn't ready for D1 at 18 can mature physically, get reps, and transfer up at 20.
 
 ## What coaches actually evaluate
 
@@ -69,13 +69,13 @@ Talk to your high-school and travel coach about which 2 or 3 events per summer a
 
 Pitchers get recruited first. Catchers second. Then up-the-middle position players (shortstop, center field, second base). Corner infielders and corner outfielders are recruited last and often last to commit.
 
-Lefty pitchers always have a market. Lefties at D1 with 87+ velocity and a usable second pitch can find a home almost regardless of college. Righty pitchers face a higher bar — most D1 programs want 88+ minimum entering freshman year.
+Lefty pitchers always have a market. Lefties at D1 with 87+ velocity and a usable second pitch can find a home almost regardless of college. Righty pitchers face a higher bar, most D1 programs want 88+ minimum entering freshman year.
 
 Switch-hitting catchers with arm strength have the lowest unemployment rate in college baseball.
 
 ## The recruiting calendar
 
-NCAA Division I baseball recruiting rules tightened in 2018 to push first contact later. Coaches cannot have recruiting conversations before September 1 of a player's junior year. (The rule still gets bent — verbal interest gets transmitted through travel coaches and at unofficial visits — but the formal contact window starts in junior year.)
+NCAA Division I baseball recruiting rules tightened in 2018 to push first contact later. Coaches cannot have recruiting conversations before September 1 of a player's junior year. (The rule still gets bent, verbal interest gets transmitted through travel coaches and at unofficial visits, but the formal contact window starts in junior year.)
 
 For most prospects:
 

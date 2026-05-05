@@ -57,7 +57,7 @@ If the kid wants quiet, give them quiet. If they want music, let them pick. If t
 
 **When the routine is missing.**
 
-Most youth athletes don't have a routine. They show up, dump their bag, and stand around. Coaches lead the warm-up but the mental side is unstructured. Adding even a small routine — say the cue once on the drive, do the first 60 seconds of visualization in the parking lot — usually shows up in the first five minutes of the game.
+Most youth athletes don't have a routine. They show up, dump their bag, and stand around. Coaches lead the warm-up but the mental side is unstructured. Adding even a small routine, say the cue once on the drive, do the first 60 seconds of visualization in the parking lot, usually shows up in the first five minutes of the game.
 
 **When to bring in a sports psychologist.**
 

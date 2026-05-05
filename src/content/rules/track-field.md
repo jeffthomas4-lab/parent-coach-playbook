@@ -16,13 +16,13 @@ commonCalls:
   - "Incomplete handoff (relay): baton dropped or passed outside the exchange zone. DQ."
   - "Hurdle violation: deliberately knocking down hurdles or running outside the lane. DQ."
 thingsParentsGetWrong:
-  - "Personal records (PRs) matter more than place finish. A kid can finish 10th in a competitive meet and set a PR — that's progress."
+  - "Personal records (PRs) matter more than place finish. A kid can finish 10th in a competitive meet and set a PR: that's progress."
   - "Track is multiple meets across a season. The state qualifying meet is usually mid- to late-season, not the season opener."
   - "Spikes have different lengths for different events. Wrong spikes = injury risk or disqualification at meets."
 governingBody:
   name: "USA Track & Field"
   url: "https://www.usatf.org/"
-ruleBookUrl: "https://www.usatf.org/governance/rules"
+ruleBookUrl: "https://www.usatf.org/"
 publishedAt: 2026-04-30
 editorial:
   qualityGrade: 8
@@ -54,4 +54,4 @@ A few specifics.
 
 **Field events have rotations.** Most field events give each athlete three attempts in prelims; top 8 or 9 advance to finals for three more.
 
-**Wind matters.** Sprints, jumps, and hurdles can be wind-aided. A wind reading of +2.0 m/s or more makes the result "wind-aided" — still valid for placing but doesn't count for record purposes.
+**Wind matters.** Sprints, jumps, and hurdles can be wind-aided. A wind reading of +2.0 m/s or more makes the result "wind-aided", still valid for placing but doesn't count for record purposes.

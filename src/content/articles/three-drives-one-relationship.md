@@ -9,9 +9,9 @@ age: "all-ages"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-30
 featured: false
-hero: /illustrations/three-drives-one-relationship.png
+hero: /illustrations/three-drives-one-relationship.webp
 heroAlt: "A child in a car after a tee-ball game, seen from the dashboard view. Baseball helmet on the seat, parent's hand visible on passenger seat rest."
-ogImage: /illustrations/og-three-drives.png
+ogImage: /illustrations/og-three-drives.jpg
 ---
 
 A six-year-old gets in the car after a Saturday tee-ball game. Tee-ball, where there are no strikeouts. Tee-ball, where the rules are written specifically to keep kids from feeling bad. The kid in the back seat is still upset. He missed two ground balls and forgot which way to run after he hit the ball.

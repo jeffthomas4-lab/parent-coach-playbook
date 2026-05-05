@@ -106,11 +106,11 @@ The pay-for-development trap. The hockey ecosystem is full of "elite" travel pro
 
 The age-up trap. Some 16-year-olds skate well enough to compete with 18-year-olds. Most don't. Playing up too early often slows development by reducing puck touches and game involvement.
 
-The Canadian Hockey League (CHL) eligibility trap. Playing in the CHL (OHL, WHL, QMJHL) makes the player a "professional" by NCAA rules and ends NCAA eligibility. As of recent NCAA rule discussions, this is changing — but families need current eligibility advice from the player's coach or directly from the NCAA before committing to a CHL team.
+The Canadian Hockey League (CHL) eligibility trap. Playing in the CHL (OHL, WHL, QMJHL) makes the player a "professional" by NCAA rules and ends NCAA eligibility. As of recent NCAA rule discussions, this is changing, but families need current eligibility advice from the player's coach or directly from the NCAA before committing to a CHL team.
 
 ## The bottom line
 
-College hockey is real, hard, and a long road. The path is more structured than any other major sport — juniors first, then college — and the family needs to plan around that timeline financially and emotionally.
+College hockey is real, hard, and a long road. The path is more structured than any other major sport, juniors first, then college, and the family needs to plan around that timeline financially and emotionally.
 
 D3 hockey is often the smartest target for kids who don't want the juniors detour and want to be on a campus at 18. Many D3 programs play 27+ games and travel competitively without the year-or-two delay.
 

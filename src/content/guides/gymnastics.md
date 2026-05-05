@@ -24,11 +24,11 @@ Need to know what size? See our [Gymnastics sizing guide](/what-to-buy/gymnastic
 
 ## Used gear notes
 
-Used leotards are fine. Check for loose seams or pilling. Grips should be new—palm wear affects grip and safety. Tape and foam rollers don't really "wear out," so used ones are fine.
+Used leotards are fine. Check for loose seams or pilling. Grips should be new, palm wear affects grip and safety. Tape and foam rollers don't really "wear out," so used ones are fine.
 
 ## What you can skip
 
-Skip expensive hair clips and accessories. A simple ponytail holder works. Skip nail polish—nails should be short and bare for safety. Skip matching gym bags. Any bag works. Skip branded gymnastics socks unless your gym requires them.
+Skip expensive hair clips and accessories. A simple ponytail holder works. Skip nail polish, nails should be short and bare for safety. Skip matching gym bags. Any bag works. Skip branded gymnastics socks unless your gym requires them.
 
 ## Rules and citations
 

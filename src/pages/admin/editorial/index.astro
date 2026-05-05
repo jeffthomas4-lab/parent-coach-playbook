@@ -86,8 +86,8 @@ const statusColor: Record<string, string> = {
 <BaseLayout title="Editorial dashboard" description="Per-piece editorial state across the site.">
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Admin · Editorial</p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">Admin · Editorial</p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Editorial review board
       </h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
@@ -97,29 +97,29 @@ const statusColor: Record<string, string> = {
       <!-- Stats -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-bone mt-6">
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Total</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{total}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Total</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{total}</p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Claude-reviewed</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{claudeReviewed} <span class="font-display italic text-ink-soft text-sm">({pctClaude}%)</span></p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Claude-reviewed</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{claudeReviewed} <span class="font-display italic text-ink-soft text-sm">({pctClaude}%)</span></p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Jeff-approved</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{jeffApproved} <span class="font-display italic text-ink-soft text-sm">({pctJeff}%)</span></p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Jeff-approved</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{jeffApproved} <span class="font-display italic text-ink-soft text-sm">({pctJeff}%)</span></p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Flagged</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{flagged}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Flagged</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{flagged}</p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Needs revision</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{needsRevision}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Needs revision</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{needsRevision}</p>
         </div>
       </div>
 
       <!-- Filter bar -->
-      <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic" style="font-weight: 500;" data-filter-bar>
+      <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic font-medium" data-filter-bar>
         <button data-filter="all"             class="px-3 py-1 border border-ink bg-ink text-paper">All</button>
         <button data-filter="needs-review"    class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs review</button>
         <button data-filter="claude-reviewed" class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Claude reviewed</button>
@@ -135,15 +135,15 @@ const statusColor: Record<string, string> = {
       <table class="w-full text-sm" data-editorial-table>
         <thead>
           <tr class="border-b border-bone">
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Title</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Section</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Status</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Q</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">O</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">V</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Flags</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Claude</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Jeff</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Title</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Section</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Q</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">O</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">V</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Flags</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Claude</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Jeff</th>
           </tr>
         </thead>
         <tbody>
@@ -159,19 +159,19 @@ const statusColor: Record<string, string> = {
             return (
               <tr class="border-b border-bone hover:bg-paper-warm" data-status={status} data-flagged={flagged}>
                 <td class="py-2 pr-3">
-                  <a href={r.url} class="font-display text-ink hover:text-rust" style="font-weight: 500;">{r.title}</a>
-                  {r.draft && <span class="ml-2 font-display italic text-ink-soft text-xs" style="font-weight: 500;">[draft]</span>}
+                  <a href={r.url} class="font-display text-ink hover:text-rust font-medium">{r.title}</a>
+                  {r.draft && <span class="ml-2 font-display italic text-ink-soft text-xs font-medium">[draft]</span>}
                 </td>
-                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs" style="font-weight: 500;">{r.collection}</td>
+                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{r.collection}</td>
                 <td class="py-2 pr-3">
                   <span class="font-display italic px-2 py-0.5 text-xs text-paper" style={`background: ${statusColor[status]}; font-weight: 500;`}>{status}</span>
                 </td>
-                <td class="py-2 pr-3 font-display text-ink" style="font-weight: 500;">{fmtGrade(r.editorial?.qualityGrade)}</td>
-                <td class="py-2 pr-3 font-display text-ink" style="font-weight: 500;">{fmtGrade(r.editorial?.originalityGrade)}</td>
-                <td class="py-2 pr-3 font-display text-ink" style="font-weight: 500;">{fmtGrade(r.editorial?.voiceGrade)}</td>
-                <td class="py-2 pr-3 font-display text-ink-soft text-xs" style="font-weight: 500;">{flags}</td>
-                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs" style="font-weight: 500;">{fmtDate(r.editorial?.claudeReviewedAt)}</td>
-                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs" style="font-weight: 500;">{fmtDate(r.editorial?.jeffReviewedAt)}</td>
+                <td class="py-2 pr-3 font-display text-ink font-medium">{fmtGrade(r.editorial?.qualityGrade)}</td>
+                <td class="py-2 pr-3 font-display text-ink font-medium">{fmtGrade(r.editorial?.originalityGrade)}</td>
+                <td class="py-2 pr-3 font-display text-ink font-medium">{fmtGrade(r.editorial?.voiceGrade)}</td>
+                <td class="py-2 pr-3 font-display text-ink-soft text-xs font-medium">{flags}</td>
+                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.editorial?.claudeReviewedAt)}</td>
+                <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.editorial?.jeffReviewedAt)}</td>
               </tr>
             );
           })}

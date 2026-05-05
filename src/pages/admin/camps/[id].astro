@@ -44,10 +44,10 @@ const statusColor: Record<string, string> = {
 <BaseLayout title={`Review: ${camp.name}`} description="Admin review" noindex={true}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Review
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         {camp.name}
       </h1>
       <p class="font-display italic mt-2 text-sm" style={`color: ${statusColor[camp.status]}; font-weight: 500;`}>
@@ -55,7 +55,7 @@ const statusColor: Record<string, string> = {
         {camp.reviewed_at && ` · reviewed ${fmtDateTime(camp.reviewed_at)} by ${camp.reviewed_by ?? 'unknown'}`}
       </p>
       {!adminEmail && (
-        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
           Cloudflare Access header missing. Approve/reject endpoints will reject this request until the route is wired through Access.
         </p>
       )}
@@ -65,10 +65,10 @@ const statusColor: Record<string, string> = {
   <section>
     <div class="container-px py-10 grid lg:grid-cols-12 gap-10">
       <div class="lg:col-span-8 article-body">
-        <h2 class="font-display text-ink text-2xl leading-tight mt-0 mb-4" style="font-weight: 500;">Description</h2>
+        <h2 class="font-display text-ink text-2xl leading-tight mt-0 mb-4 font-medium">Description</h2>
         <p style="white-space: pre-wrap;">{camp.description}</p>
 
-        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3" style="font-weight: 500;">Logistics</h2>
+        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3 font-medium">Logistics</h2>
         <ul class="font-display text-ink-soft" style="font-weight: 400;">
           <li><strong>Sport:</strong> {camp.sport}</li>
           <li><strong>Ages:</strong> {camp.age_min}–{camp.age_max}</li>
@@ -81,14 +81,14 @@ const statusColor: Record<string, string> = {
           {camp.price_text && <li><strong>Price:</strong> {camp.price_text}</li>}
         </ul>
 
-        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3" style="font-weight: 500;">Location</h2>
+        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3 font-medium">Location</h2>
         <p class="font-display text-ink-soft">
           {camp.address}<br />
           {camp.city}, {camp.state} {camp.zip}<br />
           {camp.latitude && camp.longitude ? `Geocode: ${camp.latitude.toFixed(5)}, ${camp.longitude.toFixed(5)}` : 'Geocode: not resolved'}
         </p>
 
-        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3" style="font-weight: 500;">Camp contact</h2>
+        <h2 class="font-display text-ink text-xl leading-tight mt-8 mb-3 font-medium">Camp contact</h2>
         <ul class="font-display text-ink-soft">
           {camp.contact_email && <li><strong>Email:</strong> {camp.contact_email}</li>}
           {camp.contact_phone && <li><strong>Phone:</strong> {camp.contact_phone}</li>}
@@ -97,13 +97,13 @@ const statusColor: Record<string, string> = {
         </ul>
 
         {camp.last_edited_at && (
-          <p class="font-display italic text-ink-soft text-xs mt-6" style="font-weight: 500;">
+          <p class="font-display italic text-ink-soft text-xs mt-6 font-medium">
             Last edited {fmtDateTime(camp.last_edited_at)} by {camp.last_edited_by ?? 'unknown'}.
           </p>
         )}
 
         <details class="mt-10 border border-bone bg-paper-warm">
-          <summary class="font-display text-ink cursor-pointer px-4 py-3 hover:bg-paper" style="font-weight: 500;">
+          <summary class="font-display text-ink cursor-pointer px-4 py-3 hover:bg-paper font-medium">
             Edit fields
           </summary>
           <form
@@ -113,13 +113,13 @@ const statusColor: Record<string, string> = {
           >
             <input type="hidden" name="redirect" value={`/admin/camps/${camp.id}/`} />
 
-            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+            <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Camp name
               <input type="text" name="name" value={camp.name} maxlength="200" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Sport (slug)
                 <select name="sport" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
                   {CAMP_SPORTS.map((s) => (
@@ -131,7 +131,7 @@ const statusColor: Record<string, string> = {
                 </select>
               </label>
 
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Format
                 <select name="day_or_overnight" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
                   <option value="day" selected={camp.day_or_overnight === 'day'}>Day</option>
@@ -141,15 +141,15 @@ const statusColor: Record<string, string> = {
             </div>
 
             <div class="grid sm:grid-cols-3 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Age min
                 <input type="number" name="age_min" value={camp.age_min} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Age max
                 <input type="number" name="age_max" value={camp.age_max} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Skill level
                 <select name="skill_level" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
                   <option value="all" selected={camp.skill_level === 'all'}>all</option>
@@ -161,46 +161,46 @@ const statusColor: Record<string, string> = {
             </div>
 
             <div class="grid sm:grid-cols-2 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Start date
                 <input type="date" name="start_date" value={camp.start_date} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 End date
                 <input type="date" name="end_date" value={camp.end_date} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
-            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+            <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Address
               <input type="text" name="address" value={camp.address} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
             </label>
             <div class="grid sm:grid-cols-3 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 City
                 <input type="text" name="city" value={camp.city} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 State
                 <input type="text" name="state" value={camp.state} maxlength="2" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm uppercase" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 ZIP
                 <input type="text" name="zip" value={camp.zip} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
-            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+            <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Description (30-4000 chars)
               <textarea name="description" rows="6" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">{camp.description}</textarea>
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Price text
                 <input type="text" name="price_text" value={camp.price_text ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Spots
                 <select name="spots_status" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
                   <option value="open" selected={camp.spots_status === 'open'}>open</option>
@@ -211,28 +211,28 @@ const statusColor: Record<string, string> = {
             </div>
 
             <div class="grid sm:grid-cols-2 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Contact email
                 <input type="text" name="contact_email" value={camp.contact_email ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Contact phone
                 <input type="text" name="contact_phone" value={camp.contact_phone ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
-            <label class="font-display italic text-ink-soft text-xs grid gap-1" style="font-weight: 500;">
+            <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Website URL
               <input type="text" name="website_url" value={camp.website_url ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
-              <label class="font-display italic text-ink-soft text-xs flex items-center gap-2" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs flex items-center gap-2 font-medium">
                 <input type="hidden" name="lunch_included" value="false" />
                 <input type="checkbox" name="lunch_included" value="true" checked={camp.lunch_included === 1} />
                 Lunch included
               </label>
-              <label class="font-display italic text-ink-soft text-xs flex items-center gap-2" style="font-weight: 500;">
+              <label class="font-display italic text-ink-soft text-xs flex items-center gap-2 font-medium">
                 <input type="hidden" name="aftercare_available" value="false" />
                 <input type="checkbox" name="aftercare_available" value="true" checked={camp.aftercare_available === 1} />
                 Aftercare available
@@ -241,7 +241,7 @@ const statusColor: Record<string, string> = {
 
             <div class="flex gap-3 mt-2">
               <button type="submit" class="btn">Save changes</button>
-              <p class="font-display italic text-ink-soft text-xs self-center" style="font-weight: 500;">
+              <p class="font-display italic text-ink-soft text-xs self-center font-medium">
                 Address changes re-run the geocoder. Name changes generate a new URL slug.
               </p>
             </div>
@@ -250,7 +250,7 @@ const statusColor: Record<string, string> = {
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
-        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Submitter</p>
+        <p class="font-display italic text-rust mb-3 font-medium">Submitter</p>
         {submitter ? (
           <ul class="font-display text-ink-soft text-sm leading-snug grid gap-1">
             <li><strong>Email:</strong> {submitter.email}</li>
@@ -261,20 +261,20 @@ const statusColor: Record<string, string> = {
             <li><strong>Last submitted:</strong> {fmtDateTime(submitter.last_submitted_at)}</li>
           </ul>
         ) : (
-          <p class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">No submitter record (unexpected).</p>
+          <p class="font-display italic text-ink-soft text-sm font-medium">No submitter record (unexpected).</p>
         )}
 
-        <p class="font-display italic text-rust mt-8 mb-3" style="font-weight: 500;">Decide</p>
+        <p class="font-display italic text-rust mt-8 mb-3 font-medium">Decide</p>
         <div class="grid gap-4">
           <form method="POST" action={`/api/admin/camps/${camp.id}/approve`} class="grid gap-2">
-            <label class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+            <label class="font-display italic text-ink-soft text-xs font-medium">
               Approval notes (optional)
               <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
             </label>
             <button type="submit" class="btn">Approve</button>
           </form>
           <form method="POST" action={`/api/admin/camps/${camp.id}/reject`} class="grid gap-2 pt-4 border-t border-bone">
-            <label class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+            <label class="font-display italic text-ink-soft text-xs font-medium">
               Rejection notes (sent to internal log only)
               <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
             </label>
@@ -284,39 +284,39 @@ const statusColor: Record<string, string> = {
 
         {camp.review_notes && (
           <div class="mt-8 pt-6 border-t border-bone">
-            <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Existing review notes</p>
+            <p class="font-display italic text-rust mb-2 text-sm font-medium">Existing review notes</p>
             <p class="font-display text-ink-soft text-sm leading-snug" style="white-space: pre-wrap;">{camp.review_notes}</p>
           </div>
         )}
 
         <div class="mt-8 pt-6 border-t border-bone">
-          <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Verified flag</p>
+          <p class="font-display italic text-rust mb-2 font-medium">Verified flag</p>
           <p class="font-display text-ink-soft text-sm leading-snug">
             Currently: <strong>{camp.verified === 1 ? 'Verified ✓' : 'Not verified'}</strong>
           </p>
           <form method="POST" action={`/api/admin/camps/${camp.id}/verify`} class="mt-3">
             <input type="hidden" name="verified" value={camp.verified === 1 ? 'false' : 'true'} />
-            <button type="submit" class="font-display italic px-3 py-1 border border-bone text-sm hover:bg-paper-warm" style="font-weight: 500;">
+            <button type="submit" class="font-display italic px-3 py-1 border border-bone text-sm hover:bg-paper-warm font-medium">
               {camp.verified === 1 ? 'Remove verified flag' : 'Mark as verified'}
             </button>
           </form>
         </div>
 
         <div class="mt-8 pt-6 border-t border-bone">
-          <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Hero photo</p>
+          <p class="font-display italic text-rust mb-2 font-medium">Hero photo</p>
           {camp.hero_photo_key ? (
             <div class="mt-2 mb-3 border border-bone bg-paper-warm" style="aspect-ratio: 16/9; max-width: 320px; overflow: hidden;">
               <img src={`/camp-photos/${camp.hero_photo_key}`} alt="current hero" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
           ) : (
-            <p class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">No photo yet.</p>
+            <p class="font-display italic text-ink-soft text-sm font-medium">No photo yet.</p>
           )}
           <form method="POST" action={`/api/admin/camps/${camp.id}/photo`} enctype="multipart/form-data" class="grid gap-2 mt-3">
             <input type="file" name="file" accept="image/jpeg,image/png,image/webp" required />
-            <button type="submit" class="font-display italic px-3 py-1 border border-bone text-sm hover:bg-paper-warm self-start" style="font-weight: 500;">
+            <button type="submit" class="font-display italic px-3 py-1 border border-bone text-sm hover:bg-paper-warm self-start font-medium">
               Upload photo
             </button>
-            <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">JPG, PNG, or WebP. 5 MB max. 16:9 aspect ratio looks best.</p>
+            <p class="font-display italic text-ink-soft text-xs font-medium">JPG, PNG, or WebP. 5 MB max. 16:9 aspect ratio looks best.</p>
           </form>
         </div>
       </aside>

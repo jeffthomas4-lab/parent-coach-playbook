@@ -39,16 +39,16 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
 >
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> ·
         <a href="/season-calendar/" class="hover:underline">Season calendar</a> ·
         {sportLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(calendar.data.title)} />
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(calendar.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {calendar.data.summary}
       </p>
-      <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
         {sportLabel} · {levelLabel[calendar.data.level]}{calendar.data.region ? ` · ${calendar.data.region}` : ''} · {calendar.data.durationLabel}
       </p>
     </div>
@@ -63,7 +63,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
   <article class="container-px py-10 md:py-14">
     <div class="article-body max-w-prose mx-auto">
       <Content />
-      <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone font-medium">
         Last updated {lastUpdated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
       </p>
     </div>
@@ -73,31 +73,31 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
   {(matchingPathway || relatedBody.length > 0 || siblingCalendars.length > 0) && (
     <section class="border-t border-bone bg-paper-warm">
       <div class="container-px py-10">
-        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">For {sportLabel} families</p>
+        <p class="font-display italic text-rust mb-4 font-medium">For {sportLabel} families</p>
         <div class="grid md:grid-cols-3 gap-6">
           {matchingPathway && (
             <div>
-              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Age pathway</p>
-              <a href={`/pathways/${matchingPathway.data.sport}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug block" style="font-weight: 500;">→ {matchingPathway.data.title}</a>
+              <p class="font-display text-ink text-sm mb-3 font-medium">Age pathway</p>
+              <a href={`/pathways/${matchingPathway.data.sport}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug block font-medium">→ {matchingPathway.data.title}</a>
             </div>
           )}
           {relatedBody.length > 0 && (
             <div>
-              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">From The body</p>
+              <p class="font-display text-ink text-sm mb-3 font-medium">From The body</p>
               <ul class="grid gap-2">
                 {relatedBody.map(b => (
-                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(b.data.title)} /></a></li>
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(b.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
           )}
           <div>
-            <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Other paths</p>
+            <p class="font-display text-ink text-sm mb-3 font-medium">Other paths</p>
             <ul class="grid gap-2">
               {siblingCalendars.map(c => (
-                <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(c.data.title)} /></a></li>
+                <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(c.data.title)} /></a></li>
               ))}
-              <li><a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ Run the cost for this sport</a></li>
+              <li><a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ Run the cost for this sport</a></li>
             </ul>
           </div>
         </div>

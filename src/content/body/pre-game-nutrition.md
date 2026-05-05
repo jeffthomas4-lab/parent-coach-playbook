@@ -6,12 +6,12 @@ sportTags: ["multi-sport"]
 ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-04-20
 governingBodies:
-  - name: "AAP — Sports Nutrition for Young Athletes"
+  - name: "AAP: Sports Nutrition for Young Athletes"
     url: "https://publications.aap.org/pediatrics/article/127/6/1182/30330"
-  - name: "Academy of Nutrition and Dietetics — Sports Nutrition Position Paper"
-    url: "https://www.eatrightpro.org/practice/position-and-practice-papers"
+  - name: "Academy of Nutrition and Dietetics: Sports Nutrition Position Paper"
+    url: "https://www.eatright.org/"
   - name: "USOPC Athletes' Plate Resources"
-    url: "https://www.teamusa.com/nutrition"
+    url: "https://www.healthychildren.org/English/healthy-living/sports/Pages/default.aspx"
 doctorQuestions:
   - "My kid has been getting stomach issues during games. What's the difference between performance food sensitivities and a real GI problem?"
   - "Are sports drinks appropriate for a kid this age? When?"

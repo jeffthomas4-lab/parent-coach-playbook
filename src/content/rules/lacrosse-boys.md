@@ -48,6 +48,6 @@ A few specifics.
 
 **Penalty box like hockey.** A player who commits a personal foul serves a man-down penalty. The team plays short-handed. If scored on, the penalty ends (for some penalty types).
 
-**Concussion rules.** Same as football and other contact sports — same-day removal if a concussion is suspected, written clearance from a licensed health care provider before return-to-play. Helmet and mouthguard fit matters; the body hub on concussion applies.
+**Concussion rules.** Same as football and other contact sports, same-day removal if a concussion is suspected, written clearance from a licensed health care provider before return-to-play. Helmet and mouthguard fit matters; the body hub on concussion applies.
 
 **Youth modifications.** US Lacrosse publishes age-appropriate rules at the U13 and below levels. Limited body checking, smaller fields, modified equipment requirements.

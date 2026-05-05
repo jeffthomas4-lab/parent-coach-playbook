@@ -37,13 +37,13 @@ About 460,000 girls and 65,000 boys play high-school volleyball. Roughly 20,000 
 
 ## What each level actually looks like
 
-**D1 (women).** About 340 programs. 12 scholarships per team, headcount. Headcount means full scholarships only — no partials. Top programs offer 4 to 6 scholarships per recruiting class.
+**D1 (women).** About 340 programs. 12 scholarships per team, headcount. Headcount means full scholarships only, no partials. Top programs offer 4 to 6 scholarships per recruiting class.
 
 **D1 (men).** About 25 programs. 4.5 scholarships per team, equivalency. Tiny footprint, mostly West Coast, Big Ten, and a few Eastern programs.
 
 **D2.** About 280 programs (women), 20 (men). 8 scholarships, equivalency.
 
-**D3.** About 460 programs (women), 70 (men). No athletic scholarships. The competitive heart of college volleyball — many D3 programs play 30+ matches and travel nationally.
+**D3.** About 460 programs (women), 70 (men). No athletic scholarships. The competitive heart of college volleyball, many D3 programs play 30+ matches and travel nationally.
 
 **NAIA.** About 200 programs (women). 8 scholarships, equivalency.
 
@@ -51,7 +51,7 @@ About 460,000 girls and 65,000 boys play high-school volleyball. Roughly 20,000 
 
 ## What coaches actually evaluate
 
-**Height.** The honest first filter. D1 outside hitters sit 6'0+ on average for women, 6'5+ for men. Middle blockers run taller. Setters can be smaller (5'10+ at D1 women's is competitive). Liberos are the position where height matters least — defensive ability and ball control take over.
+**Height.** The honest first filter. D1 outside hitters sit 6'0+ on average for women, 6'5+ for men. Middle blockers run taller. Setters can be smaller (5'10+ at D1 women's is competitive). Liberos are the position where height matters least, defensive ability and ball control take over.
 
 **Vertical jump and approach jump.** Touch on the net (or above) is what coaches measure. The "block touch" and "approach touch" numbers are often known by junior year for any kid being recruited.
 
@@ -96,7 +96,7 @@ The school-team neglect trap. In some regions, club teams discourage school-team
 
 ## The men's volleyball reality
 
-Men's college volleyball is a small footprint — about 25 D1 programs and 70 D3 programs across the country. The talent pipeline runs largely through California, the Midwest, and the East Coast. A 6'5 boy who plays club at a serious program has real recruiting opportunities. A 5'11 boy at the same program will have a much harder time.
+Men's college volleyball is a small footprint, about 25 D1 programs and 70 D3 programs across the country. The talent pipeline runs largely through California, the Midwest, and the East Coast. A 6'5 boy who plays club at a serious program has real recruiting opportunities. A 5'11 boy at the same program will have a much harder time.
 
 For boys interested in volleyball, the path often runs through D3 or D2. The scholarship math is small at every level. The experience can still be excellent.
 

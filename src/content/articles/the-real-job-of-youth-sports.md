@@ -9,7 +9,7 @@ age: "all-ages"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-29
 featured: true
-hero: /illustrations/the-real-job-of-youth-sports.png
+hero: /illustrations/the-real-job-of-youth-sports.webp
 heroAlt: "A six-year-old in a tee-ball uniform running toward first base, joyful and unbothered by technique. Coach giving thumbs-up in soft background, chalk lines suggested on field."
 ---
 

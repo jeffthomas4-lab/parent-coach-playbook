@@ -26,7 +26,7 @@ Need to know what size? See our [Ballet sizing guide](/what-to-buy/ballet/sizing
 
 ## Used gear notes
 
-Used slippers and leotards are fine from Facebook Marketplace. Check slippers for tears or worn seams. Tights are cheap enough to buy new. Pointe shoes should always be new—used ones won't have the structural integrity your dancer needs.
+Used slippers and leotards are fine from Facebook Marketplace. Check slippers for tears or worn seams. Tights are cheap enough to buy new. Pointe shoes should always be new, used ones won't have the structural integrity your dancer needs.
 
 ## What you can skip
 
@@ -34,5 +34,5 @@ Skip expensive hair accessories. Simple pins work. Skip designer leotards or bra
 
 ## Rules and Citations
 
-- [Royal Academy of Dance](https://www.rad.org.uk/)
+- [Royal Academy of Dance](https://www.royalacademyofdance.org/)
 - [American Ballet Theatre](https://www.abt.org/)

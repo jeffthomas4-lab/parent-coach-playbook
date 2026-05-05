@@ -19,7 +19,7 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Strong piece. Mentions AAP and AOSSM consensus in-text but no formal sources block — should add before Jeff review. The 'off-season is not zero, not training-camp, just less' close earns its place."
+  reviewerNotes: "Strong piece. Mentions AAP and AOSSM consensus in-text but no formal sources block: should add before Jeff review. The 'off-season is not zero, not training-camp, just less' close earns its place."
 ---
 
 The off-season is one of the most-misunderstood concepts in youth sports. Coaches use the word. Parents nod. Almost nobody agrees on what it actually means.
@@ -34,7 +34,7 @@ Off-season by age:
 
 **Ages 11-12.** Off-season is "play a different sport, plus general fitness." The kid who plays travel baseball might play rec basketball in the off-season. The kid who does year-round soccer takes August off completely and adds rock climbing or swimming for fall. Strength work is still bodyweight focused. No private skill trainer in the primary sport.
 
-**Ages 13-14.** Off-season is "active recovery + cross-training + strength foundation." Two months fully off the primary sport. Add a different physical activity — lifting, yoga, climbing, swimming, hiking. Begin real strength training (bodyweight to light loaded with proper coaching). One or two skill sessions a month in the primary sport is fine if the kid wants them; not required.
+**Ages 13-14.** Off-season is "active recovery + cross-training + strength foundation." Two months fully off the primary sport. Add a different physical activity, lifting, yoga, climbing, swimming, hiking. Begin real strength training (bodyweight to light loaded with proper coaching). One or two skill sessions a month in the primary sport is fine if the kid wants them; not required.
 
 **Ages 15+.** Off-season is "structured training that's not the sport." Real strength and conditioning, ideally with a trained coach. Cross-training in a different physical mode (swim if you're a runner, run if you're a swimmer). Two months fully off competitive play in the primary sport. Skill work tapered to once or twice a week, max.
 

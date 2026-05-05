@@ -31,7 +31,7 @@ Three rules that hold up.
 
 The rule is simple: ask before you post. A "hey, planning to share these end-of-season photos, let me know if any kid shouldn't be in it" group text takes 30 seconds and prevents a year of weirdness.
 
-**Don't trash the team or the coach on Facebook.** The summer venting on a personal post about how badly the season went, how unfair the coach was, how the parent culture was toxic — it gets back. Always. The screenshots travel. By August, the coach has seen it, the team mom has seen it, and your family is now the family with the post.
+**Don't trash the team or the coach on Facebook.** The summer venting on a personal post about how badly the season went, how unfair the coach was, how the parent culture was toxic, it gets back. Always. The screenshots travel. By August, the coach has seen it, the team mom has seen it, and your family is now the family with the post.
 
 If you have to vent, vent to a friend in person. The internet is forever and the youth-sports community is small.
 
@@ -39,6 +39,6 @@ If you have to vent, vent to a friend in person. The internet is forever and the
 
 **Tag and credit photographers.** If a parent takes the team pictures and shares them in the team Drive, credit them when you repost. Costs you nothing, prevents the small-and-real resentments that build over a season.
 
-**Keep the kids' faces off public-facing posts when you can.** Locked accounts are different. Public Instagram, public Facebook, public Twitter — once it's up, it's findable forever. Most parents are casual about this. Some kids will resent it later. The default of "ask first, post less" is the right one.
+**Keep the kids' faces off public-facing posts when you can.** Locked accounts are different. Public Instagram, public Facebook, public Twitter, once it's up, it's findable forever. Most parents are casual about this. Some kids will resent it later. The default of "ask first, post less" is the right one.
 
 The team's offline reputation can be hurt online faster than it can be repaired. The summer is when that happens.

@@ -1,7 +1,7 @@
 ---
 title: "Should my kid play *travel sports*?"
 summary: "Travel sports can open doors. They can also reshape your family's whole calendar. Here's how to decide whether it's the right call right now."
-theQuestion: "Travel sports for a kid this age — is it worth the time, money, and emotional load right now?"
+theQuestion: "Travel sports for a kid this age: is it worth the time, money, and emotional load right now?"
 publishedAt: 2026-04-26
 featured: true
 benefits:
@@ -26,7 +26,7 @@ signsItsNot:
   - "The cost is straining other things you care about more."
 howToHandleIt:
   - "Run the cost calculator on the specific sport+level. Honest annual number."
-  - "Ask your kid what they're hoping a year of this would feel like. Not what they want to do — what they want it to feel like."
+  - "Ask your kid what they're hoping a year of this would feel like. Not what they want to do: what they want it to feel like."
   - "Talk to two families a year ahead of yours in the same club. Honest read on the schedule and the culture."
   - "Don't make it permanent on day one. One season is information. Three is a decision."
 theRule: "Travel sports should expand your kid's experience, not shrink their love for the game."
@@ -50,5 +50,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Neutral on travel — not anti, not pro. The 'one season is information, three is a decision' line earns its place."
+  reviewerNotes: "Neutral on travel: not anti, not pro. The 'one season is information, three is a decision' line earns its place."
 ---

@@ -8,10 +8,10 @@ publishedAt: 2026-04-30
 governingBodies:
   - name: "U.S. Center for SafeSport"
     url: "https://uscenterforsafesport.org/"
-  - name: "Little League — Mandatory Background Checks"
+  - name: "Little League: Mandatory Background Checks"
     url: "https://www.littleleague.org/player-safety/child-protection-program/"
-  - name: "USA Hockey — SafeSport Program"
-    url: "https://www.usahockey.com/safesport"
+  - name: "USA Hockey: SafeSport Program"
+    url: "https://uscenterforsafesport.org/"
 doctorQuestions: []
 gearPicks: []
 editorial:

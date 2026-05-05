@@ -11,7 +11,7 @@ benefits:
   - "Lower travel cost. Local schedule. No tournament weekends."
   - "Off-season space stays intact."
 costs:
-  - "Almost no leagues run this model formally — you may need to build it inside a rec program or a small club."
+  - "Almost no leagues run this model formally: you may need to build it inside a rec program or a small club."
   - "Some kids want the tournament intensity; this is for kids who want practice time."
   - "Coaches who can run a real practice are harder to find than coaches who can run a game."
 signsItsAGoodFit:

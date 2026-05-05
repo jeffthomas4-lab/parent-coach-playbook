@@ -29,7 +29,7 @@ Don't.
 
 The two-sentence text always wins.
 
-**Bad:** "Hi Coach Sarah, this is Mike, Jamie's dad. Just wanted to introduce myself before the season. Jamie loved playing for Coach Tom last year and we're excited about this season. Quick background — Jamie is mostly a midfielder but played some forward last year and is comfortable in either spot. She had some confidence issues mid-season after she missed a couple of breakaways but came back strong. Anyway, looking forward to meeting you, let us know what we can do to help!"
+**Bad:** "Hi Coach Sarah, this is Mike, Jamie's dad. Just wanted to introduce myself before the season. Jamie loved playing for Coach Tom last year and we're excited about this season. Quick background, Jamie is mostly a midfielder but played some forward last year and is comfortable in either spot. She had some confidence issues mid-season after she missed a couple of breakaways but came back strong. Anyway, looking forward to meeting you, let us know what we can do to help!"
 
 **Good:** "Hi Coach Sarah, this is Mike, Jamie's dad. Looking forward to the season. Let us know if you need anything from us."
 

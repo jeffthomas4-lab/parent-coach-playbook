@@ -23,7 +23,7 @@ Three. **Schedule and roster.** Once it is set up, the parent group sees the sch
 
 ## Where to learn the setup
 
-Go to GameChanger's own help center. They keep it current. <a href="https://gc.com/help" target="_blank" rel="noopener">gc.com/help</a> covers team creation, roster invites, scorekeeper assignments, and parent invites.
+Go to GameChanger's own help center. They keep it current. <a href="https://teammanager.zendesk.com/hc/en-us" target="_blank" rel="noopener">gc.com/help</a> covers team creation, roster invites, scorekeeper assignments, and parent invites.
 
 The setup takes about twenty minutes the first time. Watch the official video. Skip third-party tutorials, including ours. Theirs is the one that matches the current app.
 

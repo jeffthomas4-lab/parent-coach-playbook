@@ -23,7 +23,7 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Football"
   url: "https://www.usafootball.com/"
-ruleBookUrl: "https://usafootball.com/programs/7v7/"
+ruleBookUrl: "https://usafootball.com/programs/"
 publishedAt: 2026-04-26
 editorial:
   qualityGrade: 7
@@ -36,7 +36,7 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "7v7 has fewer standardized rules than other formats — varies by league. Reviewer flagged that league-specific rules matter more here than in tackle/flag."
+  reviewerNotes: "7v7 has fewer standardized rules than other formats: varies by league. Reviewer flagged that league-specific rules matter more here than in tackle/flag."
 ---
 
 A few specifics.

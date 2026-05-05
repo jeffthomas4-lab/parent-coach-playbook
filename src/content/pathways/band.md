@@ -130,7 +130,7 @@ editorial:
 
 Music in school is a real youth pursuit and one of the most-overlooked in the parent-advice world. A serious high school musician practices 5-10 hours a week, performs regularly, and develops skills (reading, ensemble, performance, work ethic) that transfer across everything.
 
-The career arc is honest: most kids who play in middle school band or sing in school choir won't be music majors in college. Most who go to college do music as a non-major — ensemble, private lessons, occasional gigs. That's a fully legitimate outcome. The pathway is meant to capture this without treating non-major music as a failure.
+The career arc is honest: most kids who play in middle school band or sing in school choir won't be music majors in college. Most who go to college do music as a non-major, ensemble, private lessons, occasional gigs. That's a fully legitimate outcome. The pathway is meant to capture this without treating non-major music as a failure.
 
 Marching band is a uniquely intense fall commitment. Programs vary, but a competitive marching band requires 12-20 hours per week from August through November. Kids who play a fall sport have to choose. Programs that allow marching band kids to also do school sports are rare; most require choosing.
 

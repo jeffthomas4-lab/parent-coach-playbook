@@ -39,31 +39,31 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
               >
                 <div class="grid grid-cols-3 gap-x-6 gap-y-1">
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Field & team sports</p>
+                    <p class="font-display italic text-rust mb-2 text-sm font-medium">Field & team sports</p>
                     <ul class="grid gap-1">
                       {teamSportGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm" style="font-weight: 500;">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Individual sports</p>
+                    <p class="font-display italic text-rust mb-2 text-sm font-medium">Individual sports</p>
                     <ul class="grid gap-1">
                       {individualSportGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm" style="font-weight: 500;">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Performing arts</p>
+                    <p class="font-display italic text-rust mb-2 text-sm font-medium">Performing arts</p>
                     <ul class="grid gap-1">
                       {activityGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm" style="font-weight: 500;">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
@@ -81,10 +81,10 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
                 style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
                 data-dropdown-panel
               >
-                <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">Toolkit by category</p>
+                <p class="font-display italic text-rust mb-3 text-sm font-medium">Toolkit by category</p>
                 <div class="grid grid-cols-2 gap-x-8 gap-y-1">
                   {TEAM_PARENT_CATEGORIES.map((c) => (
-                    <a href={`/team-parent/#${c.slug}`} class="font-display text-ink hover:text-rust block py-1" style="font-weight: 500;">
+                    <a href={`/team-parent/#${c.slug}`} class="font-display text-ink hover:text-rust block py-1 font-medium">
                       {c.label}
                       <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{c.blurb}</span>
                     </a>
@@ -102,10 +102,10 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
                 style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
                 data-dropdown-panel
               >
-                <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">Reference tools</p>
+                <p class="font-display italic text-rust mb-3 text-sm font-medium">Reference tools</p>
                 <div class="grid grid-cols-1 gap-y-1">
                   {TOOLS_NAV.map((t) => (
-                    <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5" style="font-weight: 500;">
+                    <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
                       {t.label}
                       <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
                     </a>
@@ -127,17 +127,27 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
     </nav>
 
     <div class="flex items-center gap-5">
+      <a
+        href="/search/"
+        class="hidden md:inline-flex items-center gap-1 font-display italic text-ink hover:text-rust transition-colors font-medium"
+        style="font-size: 0.95rem"
+        aria-label="Search the site"
+      >
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="9" cy="9" r="6" />
+          <line x1="13.5" y1="13.5" x2="18" y2="18" stroke-linecap="round" />
+        </svg>
+        <span>Search</span>
+      </a>
       {UTILITY_NAV.map((item) => (
         <a
           href={item.href}
-          class="hidden md:inline font-display italic text-ink hover:text-rust transition-colors"
-          style="font-size: 0.95rem; font-weight: 500;"
+          class="hidden md:inline font-display italic text-ink hover:text-rust transition-colors font-medium" style="font-size: 0.95rem"
         >{item.label}</a>
       ))}
       <button
         type="button"
-        class="lg:hidden font-display italic text-ink"
-        style="font-weight: 500; font-size: 0.95rem;"
+        class="lg:hidden font-display italic text-ink font-medium" style="font-size: 0.95rem"
         aria-label="Toggle menu"
         data-menu-toggle
       >Menu</button>
@@ -149,10 +159,11 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
       {/* Mobile menu: top-level items only. Sub-navigation lives on each landing page
           to avoid blowing out the menu with 27 sport links. */}
       {NAV.map((item) => (
-        <a href={item.href} class="font-display italic text-ink hover:text-rust block py-2" style="font-weight: 500;">{item.label}</a>
+        <a href={item.href} class="font-display italic text-ink hover:text-rust block py-2 font-medium">{item.label}</a>
       ))}
+      <a href="/search/" class="font-display italic text-ink hover:text-rust block py-2 font-medium">Search</a>
       {UTILITY_NAV.map((item) => (
-        <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>
+        <a href={item.href} class="font-display italic text-ink hover:text-rust font-medium">{item.label}</a>
       ))}
     </div>
   </div>
@@ -189,3 +200,4 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
     panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => close()));
   });
 </script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

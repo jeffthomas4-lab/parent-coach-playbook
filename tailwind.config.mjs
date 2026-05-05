@@ -17,11 +17,12 @@ export default {
         'rose-bg': '#EDDBD9',    // Light rose tint for backgrounds
       },
       fontFamily: {
-        display: ['"Fraunces"', 'Georgia', 'serif'],
+        // Real font first, metric-adjusted fallback (defined in src/styles/global.css), then system fonts.
+        display: ['"Fraunces"', '"Fraunces Fallback"', 'Georgia', 'serif'],
         // Soft display: Mulish at heavy weight. Used on landing pages where the
         // editorial-but-stern Fraunces reads too heavy for a mom-audience first impression.
-        'display-soft': ['"Mulish"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-        body: ['"Mulish"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        'display-soft': ['"Mulish"', '"Mulish Fallback"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        body: ['"Mulish"', '"Mulish Fallback"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'Menlo', 'monospace'],
       },
       letterSpacing: {
@@ -35,7 +36,7 @@ export default {
         DEFAULT: {
           css: {
             color: '#2A3042',
-            fontFamily: '"Fraunces", Georgia, serif',
+            fontFamily: '"Fraunces", "Fraunces Fallback", Georgia, serif',
             maxWidth: '680px',
           },
         },

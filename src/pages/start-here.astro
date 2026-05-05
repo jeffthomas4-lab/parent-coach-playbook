@@ -57,14 +57,14 @@ const bodyTopicSlugs = ['concussion-protocol-basics', 'youth-pitcher-arm-care', 
 const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
 ---
 <BaseLayout
-  title="Start here — the parents' guide to youth sports"
-  description="If you're new to youth sports — or in the middle of a hard moment — start here. The cornerstone pieces, the big decisions, the scripts for the car ride, and the searches every parent runs."
+  title="Start here: the parents' guide to youth sports"
+  description="If you're new to youth sports, or in the middle of a hard moment, start here. The cornerstone pieces, the big decisions, the scripts for the car ride, and the searches every parent runs."
 >
   <!-- Hero -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Start here</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Start here</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl font-medium">
         The <em class="text-rust">parents' guide</em> to youth sports.
       </h1>
       <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
@@ -76,14 +76,14 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   <!-- Quick anchor nav -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-5">
-      <p class="font-display italic text-ink-soft text-xs mb-3" style="font-weight: 500;">Jump to</p>
+      <p class="font-display italic text-ink-soft text-xs mb-3 font-medium">Jump to</p>
       <div class="flex flex-wrap gap-2">
-        <a href="#cornerstone"      class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm" style="font-weight: 500;">Cornerstone reads</a>
-        <a href="#new-to-this"      class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm" style="font-weight: 500;">New to this</a>
-        <a href="#big-decisions"    class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm" style="font-weight: 500;">Big decisions</a>
-        <a href="#scripts"          class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm" style="font-weight: 500;">Scripts for the car</a>
-        <a href="#parent-searches"  class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm" style="font-weight: 500;">Common searches</a>
-        <a href="#the-body"         class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm" style="font-weight: 500;">The body</a>
+        <a href="#cornerstone"      class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Cornerstone reads</a>
+        <a href="#new-to-this"      class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">New to this</a>
+        <a href="#big-decisions"    class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Big decisions</a>
+        <a href="#scripts"          class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Scripts for the car</a>
+        <a href="#parent-searches"  class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Common searches</a>
+        <a href="#the-body"         class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">The body</a>
       </div>
     </div>
   </section>
@@ -92,16 +92,16 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   {cornerstone.length > 0 && (
     <section id="cornerstone" class="border-b border-bone scroll-mt-16">
       <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">If you only read a few</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-2 text-sm font-medium">If you only read a few</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           The <em class="text-rust">cornerstone</em> pieces.
         </h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {cornerstone.map((c) => (
             <li>
               <a href={c.href} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;" set:html={renderTitle(c.title)} />
-                {c.summary && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{c.summary}</span>}
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(c.title)} />
+                {c.summary && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{c.summary}</span>}
               </a>
             </li>
           ))}
@@ -113,16 +113,16 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   <!-- New to this -->
   <section id="new-to-this" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">If this is all new</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 text-sm font-medium">If this is all new</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
         Get the <em class="text-rust">lay of the land</em>.
       </h2>
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
         {newToThis.map((p) => (
           <li>
             <a href={p.href} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{p.title}</span>
-              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{p.dek}</span>
+              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{p.title}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{p.dek}</span>
             </a>
           </li>
         ))}
@@ -134,21 +134,21 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   {bigDecisions.length > 0 && (
     <section id="big-decisions" class="border-b border-bone bg-paper-warm scroll-mt-16">
       <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">The conversations every family has</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-2 text-sm font-medium">The conversations every family has</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           The <em class="text-rust">big decisions</em>.
         </h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {bigDecisions.map((d) => (
             <li>
               <a href={`/decisions/${d.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;" set:html={renderTitle(d.data.title)} />
-                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{d.data.summary}</span>
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(d.data.title)} />
+                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{d.data.summary}</span>
               </a>
             </li>
           ))}
         </ul>
-        <p class="font-display italic text-rust text-sm mt-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-4 font-medium">
           <a href="/decisions/" class="hover:underline">→ All decision pages</a>
         </p>
       </div>
@@ -159,21 +159,21 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   {topScripts.length > 0 && (
     <section id="scripts" class="border-b border-bone scroll-mt-16">
       <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">For the moment in the car</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-2 text-sm font-medium">For the moment in the car</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           <em class="text-rust">What to say</em> when it counts.
         </h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {topScripts.map((s) => (
             <li>
               <a href={`/scripts/${s.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;" set:html={renderTitle(s.data.title)} />
-                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{s.data.summary}</span>
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(s.data.title)} />
+                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{s.data.summary}</span>
               </a>
             </li>
           ))}
         </ul>
-        <p class="font-display italic text-rust text-sm mt-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-4 font-medium">
           <a href="/scripts/" class="hover:underline">→ All scripts</a>
         </p>
       </div>
@@ -184,16 +184,16 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   {commonSearches.length > 0 && (
     <section id="parent-searches" class="border-b border-bone bg-paper-warm scroll-mt-16">
       <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">The questions every parent Googles</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-2 text-sm font-medium">The questions every parent Googles</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           <em class="text-rust">Common searches</em>, real answers.
         </h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {commonSearches.map((a) => (
             <li>
               <a href={`/${a.data.phase}/${a.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;" set:html={renderTitle(a.data.title)} />
-                {a.data.dek && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{a.data.dek}</span>}
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(a.data.title)} />
+                {a.data.dek && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{a.data.dek}</span>}
               </a>
             </li>
           ))}
@@ -206,21 +206,21 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
   {topBodyTopics.length > 0 && (
     <section id="the-body" class="border-b border-bone scroll-mt-16">
       <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">What parents Google at 11pm</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-2 text-sm font-medium">What parents Google at 11pm</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           <em class="text-rust">The body</em>: concussion, arm care, sleep, burnout.
         </h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {topBodyTopics.map((b) => (
             <li>
               <a href={`/body/${b.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;" set:html={renderTitle(b.data.title)} />
-                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug" style="font-weight: 500;">{b.data.summary}</span>
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(b.data.title)} />
+                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{b.data.summary}</span>
               </a>
             </li>
           ))}
         </ul>
-        <p class="font-display italic text-rust text-sm mt-4" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-4 font-medium">
           <a href="/body/" class="hover:underline">→ All body topics</a>
         </p>
       </div>

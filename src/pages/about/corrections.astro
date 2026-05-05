@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
+
+const updated = 'May 5, 2026';
+
+// Running corrections log. Newest first. When a published piece gets a fact
+// fix or a substantive update, add an entry here.
+//
+// Format: { date, piece, url, change, reason }
+type Correction = {
+  date: string;        // ISO YYYY-MM-DD
+  piece: string;       // Display title
+  url: string;         // Path on site
+  change: string;      // What was fixed
+  reason: string;      // Where the correction came from (reader, governing-body update, internal review)
+};
+
+const corrections: Correction[] = [
+  // The first batch documents the May 5 audit pass.
+  {
+    date: '2026-05-05',
+    piece: 'The ACL prevention warm-up',
+    url: '/body/acl-prevention-warmup/',
+    change: 'Replaced a dead Santa Monica Sports Medicine Foundation link with the Gilchrist et al. 2008 PEP study on PubMed Central. The original SMSMF domain had been taken over by an unrelated site after the foundation closed.',
+    reason: 'Internal link-health audit.',
+  },
+  {
+    date: '2026-05-05',
+    piece: 'AAU Basketball entries (cost calculator and governing-bodies finder)',
+    url: '/governing-bodies/',
+    change: 'Switched the AAU Basketball link from aaubasketball.org to aau.com/sports/basketball. The old subdomain had started 302-redirecting to a survey-spam site.',
+    reason: 'Internal link-health audit.',
+  },
+  {
+    date: '2026-05-05',
+    piece: 'CDC HEADS UP references (multiple body topics and the governing-bodies finder)',
+    url: '/body/concussion-protocol-basics/',
+    change: 'Updated CDC HEADS UP URLs from /headsup/* to /heads-up/. CDC restructured the program domain.',
+    reason: 'Internal link-health audit.',
+  },
+  {
+    date: '2026-05-05',
+    piece: 'Several recruiting reads (NCAA references)',
+    url: '/recruiting/',
+    change: 'NCAA reorganized the /sports/yyyy/ knowledge-base structure. Replaced deep-link URLs that 404 with the NCAA Eligibility Center root and the NCAA research page on probability of competing beyond high school.',
+    reason: 'Internal link-health audit.',
+  },
+  {
+    date: '2026-05-05',
+    piece: 'Adaptive Sports USA reference (governing-bodies finder)',
+    url: '/governing-bodies/',
+    change: 'Replaced a dead adaptivesportsusa.org link with Move United, which is the active national adaptive-sports network.',
+    reason: 'Internal link-health audit.',
+  },
+];
+
+// Sort newest first
+const sorted = [...corrections].sort((a, b) => b.date.localeCompare(a.date));
+
+const fmt = (iso: string) => new Date(iso).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+---
+<BaseLayout
+  title="Corrections"
+  description="Every fix we have made to a published piece, with the date, the change, and the source of the correction."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">
+        <a href="/about/" class="hover:underline">About</a> · Corrections
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        Every fix, on the record.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        When we change a published piece, we say so here. The original piece carries a note at the bottom for anything substantive. The full log lives on this page.
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}.</p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">What counts as a correction</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Three things get logged on this page.</p>
+        <ol>
+          <li><strong>Factual fix.</strong> A claim we made was wrong. We change the piece and log the change here with the date and the source.</li>
+          <li><strong>Source replacement.</strong> An external link broke or moved. We replace with the current canonical and log it if the original carried meaningful weight (a citation, not a "see also" pointer).</li>
+          <li><strong>Substantive rewrite.</strong> We changed the piece's argument or recommendation in a way a returning reader should know about.</li>
+        </ol>
+        <p>Typo fixes, copy edits, and rewrites that don't change the substance do not get logged.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Submit a correction</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>If you spot something that looks wrong, write to <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a> with a link to the piece and what you saw. We re-check, fix the read if you're right, and log the change here.</p>
+        <p>We answer every correction email. We credit readers who want credit and skip credit for readers who would rather not.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-6 font-medium max-w-3xl">The log</p>
+      {sorted.length === 0 ? (
+        <p class="font-display italic text-ink-soft max-w-3xl font-medium">No corrections logged yet.</p>
+      ) : (
+        <ol class="grid gap-6 max-w-3xl list-none p-0 m-0">
+          {sorted.map((c) => (
+            <li class="border-l-2 border-rust pl-5">
+              <p class="font-display italic text-rust text-sm font-medium">{fmt(c.date)}</p>
+              <h2 class="font-display text-ink text-xl leading-tight mt-1 font-medium">
+                <a href={c.url} class="hover:underline">{c.piece}</a>
+              </h2>
+              <p class="font-display text-ink mt-3 leading-snug">{c.change}</p>
+              <p class="font-display italic text-ink-soft text-sm mt-2">{c.reason}</p>
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  </section>
+</BaseLayout>

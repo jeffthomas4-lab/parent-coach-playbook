@@ -27,7 +27,7 @@ Two kids, two sports, two seasons that overlap. Saturday morning has a soccer ga
 
 Three rules that most families settle into.
 
-**Rotate the rough Saturdays.** This Saturday, parent A goes to the soccer game and parent B goes to the baseball game. Next Saturday, swap. Over a season, both kids get equal parent attendance at games. Track it casually so it stays equal. Don't track it on a spreadsheet — that turns it into a chore.
+**Rotate the rough Saturdays.** This Saturday, parent A goes to the soccer game and parent B goes to the baseball game. Next Saturday, swap. Over a season, both kids get equal parent attendance at games. Track it casually so it stays equal. Don't track it on a spreadsheet, that turns it into a chore.
 
 **Trade the high-stakes games.** Some games matter more to the kid than others. Senior night, a tournament championship, the first game of the season, the last game. Both parents go to the high-stakes game even if it means missing the other kid's regular Saturday game. Make the trade explicit: "We'll both go to the playoff game, then we both go to your meet two weeks later."
 

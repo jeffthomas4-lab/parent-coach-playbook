@@ -1,5 +1,5 @@
 ---
-title: "HS soccer, fall season — boys"
+title: "HS soccer, fall season: boys"
 sport: "soccer"
 level: "school"
 region: "National"

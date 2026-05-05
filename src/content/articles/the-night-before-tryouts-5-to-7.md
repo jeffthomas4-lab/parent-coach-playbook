@@ -8,7 +8,7 @@ sport: "multi-sport"
 age: "5-7"
 publishedAt: 2026-02-17
 featured: false
-hero: /illustrations/the-night-before-tryouts-5-to-7.png
+hero: /illustrations/the-night-before-tryouts-5-to-7.webp
 heroAlt: "A six-year-old at kitchen table, hair damp from bath, eating small bowl of pasta in pajamas. Parent across table reading a book, not on phone. Clock on wall reads 7:50 PM."
 ---
 

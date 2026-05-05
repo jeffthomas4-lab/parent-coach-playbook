@@ -7,8 +7,8 @@ divisions: ["all"]
 publishedAt: 2026-04-21
 featured: true
 governingBodies:
-  - name: "NCAA — Recruiting calendars and contact rules"
-    url: "https://www.ncaa.org/sports/2018/8/24/recruiting-calendars-and-information.aspx"
+  - name: "NCAA: Recruiting calendars and contact rules"
+    url: "https://www.ncaa.org/sports/2013/12/17/probability-of-competing-beyond-high-school.aspx"
 editorial:
   qualityGrade: 9
   originalityGrade: 9
@@ -45,7 +45,7 @@ The platform matters because that is where coaches are looking. A football recru
 
 The kid runs the account. Period.
 
-This is not a polite preference. Coaches can tell within two posts whether a parent is writing the captions. The vocabulary, the punctuation, the things being celebrated, the level of polish — all of it reads parent-written and all of it gets noticed. Once a coach decides the parent is running the kid's social media, the kid drops a tier in their evaluation. We have seen it happen in real time.
+This is not a polite preference. Coaches can tell within two posts whether a parent is writing the captions. The vocabulary, the punctuation, the things being celebrated, the level of polish, all of it reads parent-written and all of it gets noticed. Once a coach decides the parent is running the kid's social media, the kid drops a tier in their evaluation. We have seen it happen in real time.
 
 Same rule as the email: the coach is recruiting the kid, not you. If you are the one posting on his behalf, the coach is learning that he cannot run his own life yet. That is not the read you want.
 
@@ -87,7 +87,7 @@ What is not fine: closing direct messages and not putting any contact informatio
 
 If a coach is recruiting your son, there has to be a way to reach him. If the DMs are closed and there is no email, the coach moves on. There are other recruits with open lines.
 
-The cleanest setup for most families: open DMs on the platform plus an email in the bio that the kid actually checks. If you would rather not have an email visible publicly, that is a defensible choice — but in that case, leaving DMs open is not optional. It is the only path coaches have.
+The cleanest setup for most families: open DMs on the platform plus an email in the bio that the kid actually checks. If you would rather not have an email visible publicly, that is a defensible choice, but in that case, leaving DMs open is not optional. It is the only path coaches have.
 
 For younger recruits (sophomores, freshmen) where parents want more control over communication, a shared email account that goes to both the kid and a parent is fine. Just remember the kid still needs to be the one writing back.
 
@@ -107,7 +107,7 @@ A real example. A college coach lost a close friend and wrote a public post abou
 
 That recruit is not on the coach's board anymore. The coach mentioned it to other coaches. The recruit will not know any of this, but his recruiting reach got smaller in a way he cannot recover from.
 
-The lesson is bigger than that one post. A coach's social media is a window into a real person who has a life outside of football. The funeral post, the family photo, the political moment, the personal milestone — those are not opportunities to slide in a recruiting pitch. Read the room.
+The lesson is bigger than that one post. A coach's social media is a window into a real person who has a life outside of football. The funeral post, the family photo, the political moment, the personal milestone, those are not opportunities to slide in a recruiting pitch. Read the room.
 
 If a coach posts something deeply personal, the right reply from a recruit is no reply. Maybe a quiet like. Nothing more. The recruiting conversation continues through the appropriate channels at an appropriate time.
 
@@ -116,7 +116,7 @@ If a coach posts something deeply personal, the right reply from a recruit is no
 The stuff that ends recruiting conversations:
 
 - Anything that looks like trash talk about an opponent, teammate, or coach
-- Anything that involves alcohol, drugs, vapes, or guns (even as a joke, even on Snapchat — it screenshots)
+- Anything that involves alcohol, drugs, vapes, or guns (even as a joke, even on Snapchat, it screenshots)
 - Anything that mocks a school the recruit might want to attend or another player at his position
 - Anything political or culturally divisive that does not need to be there
 - Reposts and retweets of the above from someone else's account (the same way the coach reads it as your son's view)
@@ -131,7 +131,7 @@ Strength and conditioning progress (a clean bench number, a vertical jump, a tra
 
 Team accomplishments and credit to teammates.
 
-Genuine thank-yous to coaches, mentors, family — kept short and specific.
+Genuine thank-yous to coaches, mentors, family, kept short and specific.
 
 Major life moments where the recruiting connection is implicit, not stated. A college acceptance letter. A camp invite. An offer (when the time comes).
 
@@ -148,4 +148,5 @@ That is roughly the whole list. The recruit's social media should be the cleanes
 
 Social media is a small piece of the recruiting infrastructure. Done well, it removes friction. Done badly, it ends conversations before they start. The bar is not "be impressive on social." The bar is "do not get yourself eliminated." Most of the work is restraint.
 
-— Parent Coach Playbook editorial team
+, Parent Coach Playbook editorial team
+ 

@@ -7,12 +7,12 @@ ageBands: ["11-12","13-14","15-plus"]
 publishedAt: 2026-04-28
 featured: true
 governingBodies:
-  - name: "USOPC — Athlete Mental Health Resources"
+  - name: "USOPC: Athlete Mental Health Resources"
     url: "https://www.teamusa.com/mental-health"
-  - name: "AAP — Mental Health Care in Sport"
+  - name: "AAP: Mental Health Care in Sport"
     url: "https://www.aap.org/en/practice-management/care-delivery-approaches/mental-health/"
-  - name: "NCAA — Mental Health Best Practices"
-    url: "https://www.ncaa.org/sports/2014/10/30/mental-health-best-practices.aspx"
+  - name: "NCAA: Mental Health Best Practices"
+    url: "https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school"
 doctorQuestions:
   - "Should we be worried that my kid's identity is wrapped up in this one sport?"
   - "How do we know if their reaction to a setback is normal grief vs identity collapse?"
@@ -43,7 +43,7 @@ The kid talks about the sport constantly. They know their stats. They follow col
 
 A bad game ruins the week, not the day. A non-starting role triggers a real crisis. An injury sends them into something that looks like depression. A conversation about quitting feels existential.
 
-These signs aren't bad on their own. Loving a sport is healthy. Having teammate friends is healthy. The signal is when there's no other room — no other identity to fall back on when the sport gets hard.
+These signs aren't bad on their own. Loving a sport is healthy. Having teammate friends is healthy. The signal is when there's no other room, no other identity to fall back on when the sport gets hard.
 
 **Why it happens.**
 

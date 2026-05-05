@@ -31,15 +31,15 @@ const fmt = (s: string) =>
 <BaseLayout title="Claims moderation" description="Admin queue for camp claims" noindex={true}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Claims
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">Pending claims</h1>
-      <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Pending claims</h1>
+      <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
         Two-step flow: <strong>verify</strong> after confirming the claimant runs the camp, then send a Stripe payment link or invoice. Once paid, mark <strong>paid</strong>: the camp's listing flips to "claimed" and the owner gets self-edit access.
       </p>
       {!adminEmail && (
-        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
           Cloudflare Access header not detected. Action endpoints will fail until /admin/* is wired through Access.
         </p>
       )}
@@ -49,19 +49,19 @@ const fmt = (s: string) =>
   <section>
     <div class="container-px py-10">
       {!dbAvailable ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database not bound.</p>
+        <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
       ) : claims.length === 0 ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">No claims awaiting action.</p>
+        <p class="font-display italic text-ink-soft font-medium">No claims awaiting action.</p>
       ) : (
         <ul class="grid gap-4">
           {claims.map((cl) => {
             const camp = campLookup.get(cl.camp_id);
             return (
               <li class="border border-bone p-5 bg-paper">
-                <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                <p class="font-display italic text-rust text-xs font-medium">
                   {cl.status} · {fmt(cl.submitted_at)}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight mt-1" style="font-weight: 500;">
+                <h3 class="font-display text-ink text-lg leading-tight mt-1 font-medium">
                   {camp ? <a href={`/camps/${camp.slug}/`} class="hover:text-rust" target="_blank" rel="noopener">{camp.name}</a> : 'Unknown camp'}
                 </h3>
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
@@ -76,7 +76,7 @@ const fmt = (s: string) =>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="verified" />
                     <textarea name="notes" rows="2" placeholder="Verification notes (called school, confirmed role)" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper" style="font-weight: 500;">Mark verified</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper font-medium">Mark verified</button>
                   </form>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="paid" />
@@ -86,7 +86,7 @@ const fmt = (s: string) =>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="rejected" />
                     <textarea name="notes" rows="2" placeholder="Reject reason" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">Reject</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">Reject</button>
                   </form>
                 </div>
               </li>

@@ -62,7 +62,7 @@ Not about their playing time. Not about their skills. Not about their parents. N
 
 **Don't bring the kid's bad school morning to the game.**
 
-Whatever happened at home, on the way over, with their homework, with their phone — leave it in the car. The 90 minutes the kid is on the field belong to the kid and the team. Bring the rest up later if it matters.
+Whatever happened at home, on the way over, with their homework, with their phone, leave it in the car. The 90 minutes the kid is on the field belong to the kid and the team. Bring the rest up later if it matters.
 
 **Don't film other kids.**
 

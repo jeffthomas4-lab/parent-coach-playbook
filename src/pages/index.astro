@@ -3,8 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import TopicIcon from '../components/TopicIcon.astro';
-import { TOPICS, PILLARS, EDITORIAL } from '../data/site';
+import { PILLARS, EDITORIAL } from '../data/site';
 import { isLive } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
 
@@ -13,59 +12,49 @@ const all = (await getCollection('articles', ({ data }) => isLive(data)))
 
 // Featured cornerstone (the long read). Pick the first essay marked featured.
 const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
-// The rest of the feed: most recent, excluding the featured. Slim to 6 (was 8).
+// The rest of the feed: most recent, excluding the featured. Six cards.
 const feed = all.filter(a => a.slug !== featured?.slug).slice(0, 6);
-
-// Featured scripts and decisions for the Moment Tools strip.
-const scripts = (await getCollection('scripts', ({ data }) => isLive(data)))
-  .filter(s => s.data.featured)
-  .slice(0, 3);
-const decisions = (await getCollection('decisions', ({ data }) => isLive(data)))
-  .filter(d => d.data.featured)
-  .slice(0, 3);
 
 const drives = Object.values(PILLARS);
 ---
 <BaseLayout>
-  <!-- HERO -->
+  {/* SECTION 1 of 6: HERO */}
   <section class="border-b border-bone">
     <div class="container-px py-14 md:py-20">
       <p class="font-display-soft text-rust mb-5" style="font-weight: 600; letter-spacing: 0.04em;">
         Hi. So glad you found us.
       </p>
-      <h1 class="font-display-soft text-ink text-[2.5rem] md:text-[5rem] leading-[1.05] max-w-4xl" style="font-weight: 700;">
-        The relationship is the <span class="font-display italic text-rust" style="font-weight: 500;">real game</span>.
+      <h1 class="font-display-soft text-ink text-[2.25rem] md:text-[4rem] leading-[1.1] max-w-4xl" style="font-weight: 700;">
+        Every parent is a coach. Some on the field. Most in the car. <span class="font-display italic text-rust font-medium">All at the dinner table after.</span>
       </h1>
       <p class="font-display-soft text-ink-soft text-xl md:text-2xl mt-7 max-w-2xl leading-relaxed" style="font-weight: 400;">
-        A warm, honest place for parents in the middle of it. Youth sports, dance, theater — whatever your kid is into this season. Short reads, kind voice, real moments.
+        A warm, honest place for parents in the middle of it. Youth sports, dance, theater, band, ballet, choir, whatever your kid is into this season. Short reads, kind voice, real moments.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a href="/start-here/" class="btn">Start here</a>
-        <a href="/manifesto/" class="btn btn-ghost">Read the manifesto</a>
+        <a href="/about/" class="btn btn-ghost">About this site</a>
         <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
       </div>
-      <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-sm mt-6 font-medium">
         Written by the <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
       </p>
     </div>
   </section>
 
-  <!-- THE THREE DRIVES — lead visual -->
+  {/* SECTION 2 of 6: THE THREE DRIVES (lead visual) */}
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <div class="flex items-baseline justify-between flex-wrap gap-3 mb-8">
-        <div>
-          <p class="font-display italic text-rust mb-2" style="font-weight: 500;">The frame</p>
-          <h2 class="font-display text-ink text-3xl md:text-[2.75rem] leading-[1.05]" style="font-weight: 500;">
-            Every game is <em class="text-rust">three drives</em>.
-          </h2>
-          <p class="font-display text-ink-soft text-lg mt-3 max-w-2xl leading-snug">
-            The car ride there. The game itself. The car ride home. Most of the work happens in the cars.
-          </p>
-        </div>
+      <div>
+        <p class="font-display italic text-rust mb-2 font-medium">The frame</p>
+        <h2 class="font-display text-ink text-3xl md:text-[2.75rem] leading-[1.05] font-medium">
+          Every game is <em class="text-rust">three drives</em>.
+        </h2>
+        <p class="font-display text-ink-soft text-lg mt-3 max-w-2xl leading-snug">
+          The car ride there. The game itself. The car ride home. Most of the work happens in the cars.
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-px bg-bone">
+      <div class="grid md:grid-cols-3 gap-px bg-bone mt-8">
         {drives.map((p, i) => (
           <a
             href={`/${p.slug}/`}
@@ -76,11 +65,11 @@ const drives = Object.values(PILLARS);
               <span class="font-display italic text-sm" style={`color: ${p.accent}; font-weight: 500;`}>
                 Drive {String(i + 1).padStart(2, '0')}
               </span>
-              <span class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+              <span class="font-display italic text-ink-soft text-xs font-medium">
                 {p.eyebrow}
               </span>
             </div>
-            <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors font-medium">
               {p.label}
             </h3>
             <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
@@ -95,159 +84,70 @@ const drives = Object.values(PILLARS);
     </div>
   </section>
 
-  <!-- MOMENT TOOLS: Scripts / Decisions / Pendulum / Playbook -->
+  {/* SECTION 3 of 6: FOUR-TILE ENTRY GRID. The four situations that send parents to the site. */}
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">For the moment you're in</p>
-      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">For the moment you're in</p>
+      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] max-w-3xl font-medium">
         Tools, not <em class="text-rust">advice columns</em>.
       </h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-bone mt-8">
         <a href="/scripts/" class="bg-paper p-6 group block hover:bg-[#F5E9D2] transition-colors" style="border-top: 3px solid #D4AB6A;">
-          <p class="font-display italic text-sm" style="color: #D4AB6A; font-weight: 500;">Scripts</p>
-          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors" style="font-weight: 500;">
+          <p class="font-display italic text-sm font-medium" style="color: #D4AB6A">Scripts</p>
+          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors font-medium">
             What to <em>actually</em> say.
           </h3>
           <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
             The first 90 seconds after a bad game. The night before tryouts. The post-cut text.
           </p>
-          <p class="font-display italic text-sm mt-4" style="color: #D4AB6A; font-weight: 500;">→ Browse the scripts</p>
+          <p class="font-display italic text-sm mt-4 font-medium" style="color: #D4AB6A">→ Browse the scripts</p>
         </a>
 
         <a href="/decisions/" class="bg-paper p-6 group block hover:bg-[#F2E2D5] transition-colors" style="border-top: 3px solid #C5713D;">
-          <p class="font-display italic text-rust text-sm" style="font-weight: 500;">Decisions</p>
-          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors" style="font-weight: 500;">
+          <p class="font-display italic text-rust text-sm font-medium">Decisions</p>
+          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors font-medium">
             The big calls, walked through.
           </h3>
           <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
             Travel ball or rec. Specialize or stay multi-sport. Quit or push through.
           </p>
-          <p class="font-display italic text-rust text-sm mt-4" style="font-weight: 500;">→ Walk through a decision</p>
+          <p class="font-display italic text-rust text-sm mt-4 font-medium">→ Walk through a decision</p>
         </a>
 
         <a href="/youth-sports-pendulum/" class="bg-paper p-6 group block hover:bg-[#EAEFE7] transition-colors" style="border-top: 3px solid #5C7459;">
-          <p class="font-display italic text-sm" style="color: #5C7459; font-weight: 500;">Pendulum</p>
-          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors" style="font-weight: 500;">
+          <p class="font-display italic text-sm font-medium" style="color: #5C7459">Pendulum</p>
+          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors font-medium">
             Where is your family, right now?
           </h3>
           <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
             Fun-to-performance spectrum. The check-in that pulls families back from the edge.
           </p>
-          <p class="font-display italic text-sm mt-4" style="color: #5C7459; font-weight: 500;">→ Take the check-in</p>
+          <p class="font-display italic text-sm mt-4 font-medium" style="color: #5C7459">→ Take the check-in</p>
         </a>
 
-        <a href="/resources/drive-home-playbook/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors" style="border-top: 3px solid #B0894A;">
-          <p class="font-display italic text-sm" style="color: #B0894A; font-weight: 500;">Playbook</p>
-          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors" style="font-weight: 500;">
-            The free <em>Drive-Home Playbook</em>.
+        <a href="/cost-calculator/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors" style="border-top: 3px solid #B0894A;">
+          <p class="font-display italic text-sm font-medium" style="color: #B0894A">Cost calculator</p>
+          <h3 class="font-display text-ink text-xl leading-tight mt-2 group-hover:text-rust transition-colors font-medium">
+            What does a year <em>actually</em> cost?
           </h3>
           <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
-            Print it, keep it in the glove box, hand it to a friend who's struggling.
+            Pre-filled with national medians at every tier. Edit any line. Honest math either way.
           </p>
-          <p class="font-display italic text-sm mt-4" style="color: #B0894A; font-weight: 500;">→ Get the PDF</p>
-        </a>
-      </div>
-
-      {(scripts.length > 0 || decisions.length > 0) && (
-        <div class="mt-10 grid md:grid-cols-2 gap-x-10 gap-y-4">
-          {scripts.length > 0 && (
-            <div>
-              <p class="font-display italic text-ink-soft text-xs mb-2" style="font-weight: 500;">Featured scripts</p>
-              <ul class="grid gap-2">
-                {scripts.map((s) => (
-                  <li>
-                    <a href={`/scripts/${s.slug}/`} class="font-display text-ink hover:text-rust text-base leading-snug" style="font-weight: 500;" set:html={renderTitle(s.data.title)} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {decisions.length > 0 && (
-            <div>
-              <p class="font-display italic text-ink-soft text-xs mb-2" style="font-weight: 500;">Featured decisions</p>
-              <ul class="grid gap-2">
-                {decisions.map((d) => (
-                  <li>
-                    <a href={`/decisions/${d.slug}/`} class="font-display text-ink hover:text-rust text-base leading-snug" style="font-weight: 500;" set:html={renderTitle(d.data.title)} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  </section>
-
-  <!-- WHERE YOU ARE RIGHT NOW (situational entry) -->
-  <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-14">
-      <div class="flex items-baseline justify-between flex-wrap gap-3 mb-7">
-        <div>
-          <p class="font-display italic text-rust mb-1" style="font-weight: 500;">Where you are right now</p>
-          <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
-            Pick what fits the <em class="text-rust">week you're having</em>.
-          </h2>
-        </div>
-        <a href="/start-here/" class="t-cta">Browse all situations →</a>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
-        <a href="/team-parent/practice-plan-parents-can-read/" class="bg-paper p-6 group block hover:bg-[#F2EAD9] transition-colors" style="border-top: 3px solid #C5713D;">
-          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            I just got asked to coach my kid's team. Help.
-          </h3>
-          <p class="font-display italic text-rust text-sm mt-3" style="font-weight: 500;">→ Start with the practice plan</p>
-        </a>
-
-        <a href="/game/the-real-job-of-youth-sports/" class="bg-paper p-6 group block hover:bg-[#EAEFE7] transition-colors" style="border-top: 3px solid #5C7459;">
-          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            I'm not sure why we're doing this anymore.
-          </h3>
-          <p class="font-display italic text-sm mt-3" style="color: #5C7459; font-weight: 500;">→ Why we exist</p>
-        </a>
-
-        <a href="/drive-home/the-90-second-rule/" class="bg-paper p-6 group block hover:bg-[#F5E9D2] transition-colors" style="border-top: 3px solid #B0894A;">
-          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            My kid had a bad game and I have to drive them home.
-          </h3>
-          <p class="font-display italic text-sm mt-3" style="color: #B0894A; font-weight: 500;">→ The first 90 seconds</p>
-        </a>
-
-        <a href="/drive-there/night-before-tryouts/" class="bg-paper p-6 group block hover:bg-[#F2EAD9] transition-colors" style="border-top: 3px solid #C5713D;">
-          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            Tryouts are this week.
-          </h3>
-          <p class="font-display italic text-rust text-sm mt-3" style="font-weight: 500;">→ The night before</p>
-        </a>
-
-        <a href="/drive-home/what-my-kid-said-in-the-car/" class="bg-paper p-6 group block hover:bg-[#EAEFE7] transition-colors" style="border-top: 3px solid #5C7459;">
-          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            My kid wants to quit.
-          </h3>
-          <p class="font-display italic text-sm mt-3" style="color: #5C7459; font-weight: 500;">→ Read this first</p>
-        </a>
-
-        <a href="/game/the-missing-rec-layer/" class="bg-paper p-6 group block hover:bg-[#F5E9D2] transition-colors" style="border-top: 3px solid #B0894A;">
-          <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
-            My kid is middling at thirteen. Where do they play?
-          </h3>
-          <p class="font-display italic text-sm mt-3" style="color: #B0894A; font-weight: 500;">→ The missing rec layer</p>
+          <p class="font-display italic text-sm mt-4 font-medium" style="color: #B0894A">→ Run your numbers</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED LONG READ -->
+  {/* SECTION 4 of 6: FEATURED LONG READ */}
   {featured && (
     <section class="border-b border-bone">
       <div class="container-px py-14 md:py-16">
-        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">If you only read one thing</p>
+        <p class="font-display italic text-rust mb-3 font-medium">If you only read one thing</p>
         <a href={`/${featured.data.phase}/${featured.slug}/`} class="block group max-w-3xl">
           <h2
-            class="font-display text-ink text-4xl md:text-[3.5rem] leading-[1.05] group-hover:text-rust transition-colors"
-            style="font-weight: 500;"
+            class="font-display text-ink text-4xl md:text-[3.5rem] leading-[1.05] group-hover:text-rust transition-colors font-medium"
             set:html={renderTitle(featured.data.title)}
           />
           {featured.data.dek && (
@@ -261,62 +161,22 @@ const drives = Object.values(PILLARS);
     </section>
   )}
 
-  <!-- BROWSE BY TOPIC -->
-  <section class="border-b border-bone">
-    <div class="container-px py-14 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Browse by topic</p>
-      <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] max-w-3xl" style="font-weight: 500;">
-        Eight things parents in the middle of it <em class="text-rust">actually deal with</em>.
-      </h2>
-
-      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
-        {TOPICS.map((t) => (
-          <a
-            href={`/reads/?topic=${t.slug}`}
-            class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
-          >
-            <TopicIcon topic={t.slug} size={72} />
-            <h3 class="font-display text-ink text-xl leading-tight mt-3 group-hover:text-rust transition-colors" style="font-weight: 500;">
-              {t.label}
-            </h3>
-            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
-              {t.blurb}
-            </p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO TEASER -->
-  <section class="border-b border-bone bg-ink">
-    <div class="container-px py-14 md:py-20">
-      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The manifesto</p>
-      <a href="/manifesto/" class="block group max-w-4xl">
-        <p class="font-display text-paper text-2xl md:text-[2.5rem] leading-[1.15] group-hover:text-rust transition-colors" style="font-weight: 500;">
-          We are not raising future pros. We are raising future <em style="color: #D4AB6A;">adults</em> who happened to play a sport.
-        </p>
-        <p class="font-display italic text-sm mt-6" style="color: #B8908F; font-weight: 500;">→ Read the manifesto in full</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- WHAT'S NEW (slimmed) -->
+  {/* SECTION 5 of 6: LATEST FEED with age filter */}
   <section class="border-b border-bone">
     <div class="container-px py-14 md:py-16">
       <div class="flex items-baseline justify-between mb-6 flex-wrap gap-3">
-        <p class="font-display italic text-rust" style="font-weight: 500; font-size: 1.05rem;">What's new</p>
+        <p class="font-display italic text-rust font-medium" style="font-size: 1.05rem;">What's new</p>
         <a href="/reads/" class="t-cta">See the archive →</a>
       </div>
 
       <div class="flex flex-wrap items-center gap-2 mb-6" data-age-filter>
-        <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Filter by your kid's age:</span>
-        <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
-        <button data-age="5-7" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">5–7</button>
-        <button data-age="8-10" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">8–10</button>
-        <button data-age="11-12" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">11–12</button>
-        <button data-age="13-14" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">13–14</button>
-        <button data-age="15-plus" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm" style="font-weight: 500;">15+</button>
+        <span class="font-display italic text-ink-soft text-sm font-medium">Filter by your kid's age:</span>
+        <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+        <button data-age="5-7" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">5–7</button>
+        <button data-age="8-10" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">8–10</button>
+        <button data-age="11-12" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">11–12</button>
+        <button data-age="13-14" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">13–14</button>
+        <button data-age="15-plus" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">15+</button>
       </div>
 
       <div class="grid md:grid-cols-2 gap-x-10" data-feed>
@@ -364,5 +224,6 @@ const drives = Object.values(PILLARS);
     }
   </script>
 
+  {/* SECTION 6 of 6: LEAD MAGNET (component handles the layout) */}
   <LeadMagnetCTA />
 </BaseLayout>

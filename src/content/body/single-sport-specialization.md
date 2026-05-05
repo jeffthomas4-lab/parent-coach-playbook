@@ -7,11 +7,11 @@ ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-04-19
 featured: true
 governingBodies:
-  - name: "AAP — Sports Specialization and Intensive Training in Young Athletes"
+  - name: "AAP: Sports Specialization and Intensive Training in Young Athletes"
     url: "https://publications.aap.org/pediatrics/article/138/3/e20162148/52359"
-  - name: "AOSSM — Early Sport Specialization Consensus Statement"
+  - name: "AOSSM: Early Sport Specialization Consensus Statement"
     url: "https://journals.sagepub.com/doi/10.1177/2325967116644241"
-  - name: "Project Play (Aspen Institute) — State of Play 2025"
+  - name: "Project Play (Aspen Institute): State of Play 2025"
     url: "https://projectplay.org/state-of-play-2025/introduction"
 doctorQuestions:
   - "My kid plays one sport year-round. What injury risks should we be watching for?"
@@ -37,4 +37,4 @@ The American Academy of Pediatrics, the American Orthopaedic Society for Sports 
 
 **The two-month rule.** AAP's guidance on this is specific: at least 2-3 months per year away from competitive single-sport activity. Spread across the year (a few weeks here and there) or in one block. The block is easier to enforce. The break is not optional. It is when the body recovers from accumulated stress and when the kid recovers from the psychological grind of competition.
 
-The honest part: every travel coach reading this will tell you why their sport is the exception. They are wrong. The science is consistent across sports. Hold the line through 14.
+The honest part: every travel coach reading this will tell you why their sport is the exception. They are wrong. The science is consistent across sports. Hol

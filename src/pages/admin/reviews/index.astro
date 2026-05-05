@@ -31,12 +31,12 @@ const fmt = (s: string) =>
 <BaseLayout title="Reviews moderation" description="Admin queue for camp reviews" noindex={true}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Reviews
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">Pending reviews</h1>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Pending reviews</h1>
       {!adminEmail && (
-        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
           Cloudflare Access header not detected. Approve/reject will fail until /admin/* is wired through Access.
         </p>
       )}
@@ -46,19 +46,19 @@ const fmt = (s: string) =>
   <section>
     <div class="container-px py-10">
       {!dbAvailable ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database not bound.</p>
+        <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
       ) : pending.length === 0 ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Queue is empty.</p>
+        <p class="font-display italic text-ink-soft font-medium">Queue is empty.</p>
       ) : (
         <ul class="grid gap-4">
           {pending.map((r) => {
             const camp = campLookup.get(r.camp_id);
             return (
               <li class="border border-bone p-5 bg-paper">
-                <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                <p class="font-display italic text-rust text-xs font-medium">
                   {r.rating}/5 · {fmt(r.submitted_at)} · from {r.reviewer_email}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight mt-1" style="font-weight: 500;">
+                <h3 class="font-display text-ink text-lg leading-tight mt-1 font-medium">
                   {camp ? (
                     <a href={`/camps/${camp.slug}/`} class="hover:text-rust" target="_blank" rel="noopener">{camp.name}</a>
                   ) : (
@@ -69,10 +69,10 @@ const fmt = (s: string) =>
                 <p class="font-display text-ink-soft text-sm mt-3 leading-snug" style="white-space: pre-wrap;">{r.body}</p>
                 <div class="flex flex-wrap gap-2 mt-4">
                   <form method="POST" action={`/api/admin/reviews/${r.id}/approve`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors" style="font-weight: 500;">Approve</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium">Approve</button>
                   </form>
                   <form method="POST" action={`/api/admin/reviews/${r.id}/reject`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;">Reject</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>
               </li>

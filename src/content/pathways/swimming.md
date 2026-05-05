@@ -90,7 +90,7 @@ bands:
       - "First exposure to 'plateau' periods where times don't drop"
     decisionPoints:
       - "Single-sport swimming vs multi-sport: AAP says multi-sport through 14"
-      - "Sectionals, Junior Nationals — real travel meets begin"
+      - "Sectionals, Junior Nationals: real travel meets begin"
       - "Recruiting noise begins for the very fast (rarely matches reality)"
       - "Burnout is the biggest risk; manage volume"
   - age: "15-plus"

@@ -16,13 +16,13 @@ commonCalls:
   - "Carry / double hit: ball hits the racket twice or rests on strings. Loss of point."
   - "Ball touches body (other than racket hand): loss of point."
 thingsParentsGetWrong:
-  - "Junior tennis often uses no umpires. Players make their own calls — an honor system that can break down in tight matches. Parent's job is to stay out of it."
+  - "Junior tennis often uses no umpires. Players make their own calls: an honor system that can break down in tight matches. Parent's job is to stay out of it."
   - "USTA junior tennis uses different ball colors by age (red, orange, green) for younger ages. Ball pressure matters."
   - "Tennis tournaments are individual and can be all-day affairs. Pack snacks, sunscreen, water. Plan to be there for a long time."
 governingBody:
   name: "USTA"
   url: "https://www.usta.com/"
-ruleBookUrl: "https://www.usta.com/en/home/play/officiating-and-coaching/learn/officiating/officiating-rules-and-regulations.html"
+ruleBookUrl: "https://www.usta.com/en/home/play.html"
 publishedAt: 2026-04-30
 editorial:
   qualityGrade: 8
@@ -50,4 +50,4 @@ A few specifics.
 
 **The line-call problem.** Junior tennis (under HS varsity) typically has no umpire. Players call their own lines. Bad-faith calls happen and create real conflict. The right parent move when your kid believes the opponent made a bad call: stay quiet at the moment, debrief later, model not engaging the other parent.
 
-**Equipment.** Racket (sized for age), shoes (court-appropriate, not running shoes), balls (provided by tournament). Stringing matters more than parents think — strings break and lose tension over weeks. Re-string every 30-50 hours of play at competitive levels.
+**Equipment.** Racket (sized for age), shoes (court-appropriate, not running shoes), balls (provided by tournament). Stringing matters more than parents think, strings break and lose tension over weeks. Re-string every 30-50 hours of play at competitive levels.

@@ -48,7 +48,7 @@ The eye-roll when your kid misses. The hands-on-hips when the team gets scored o
 
 **Live-scouting other kids in earshot.**
 
-Talking to another parent about which kids should be playing more, which kids you'd cut, which kids "have it" — within earshot of any of those kids or their families — is the version of sideline behavior that makes parents leave seasons. Even private conversations get back to people. Don't have them.
+Talking to another parent about which kids should be playing more, which kids you'd cut, which kids "have it", within earshot of any of those kids or their families, is the version of sideline behavior that makes parents leave seasons. Even private conversations get back to people. Don't have them.
 
 **Bringing the older kid's drama to the younger kid's game.**
 

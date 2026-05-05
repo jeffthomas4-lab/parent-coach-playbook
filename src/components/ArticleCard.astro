@@ -52,7 +52,7 @@ const titleSize = format === 'essay'
 <article class={`card-hover border-b border-bone py-6 ${variant === 'grid' ? 'border border-bone p-6' : ''}`}>
   <a href={href} class="block group">
     <div class="mb-3">
-      <div class="font-display italic text-rust" style="font-size: 0.85rem; font-weight: 500;">
+      <div class="font-display italic text-rust font-medium" style="font-size: 0.85rem">
         {EDITORIAL.byline}
       </div>
       {tagBits.length > 0 && (
@@ -63,7 +63,7 @@ const titleSize = format === 'essay'
     </div>
     <h3
       class={`font-display text-ink ${titleSize} leading-tight group-hover:text-rust transition-colors`}
-      style="font-weight: 500;"
+      class="font-medium"
       set:html={renderTitle(title)}
     />
     {dek && (

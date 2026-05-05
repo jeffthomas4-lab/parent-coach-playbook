@@ -15,12 +15,12 @@ commonCalls:
   - "Stalling: not engaging in sparring. Warning then penalty."
   - "Disrespect to judges/opponents: warning to DQ."
 thingsParentsGetWrong:
-  - "Martial arts is many sports. Taekwondo, Karate, Judo, Brazilian Jiu-Jitsu, Kung Fu, Aikido — all different disciplines with different rules."
+  - "Martial arts is many sports. Taekwondo, Karate, Judo, Brazilian Jiu-Jitsu, Kung Fu, Aikido: all different disciplines with different rules."
   - "Belt color systems vary widely between disciplines and even between schools within the same discipline. Don't compare belts across schools."
   - "Sparring contact rules differ by age. Most youth tournaments use light contact or point-style sparring; full-contact sparring is uncommon for kids."
 governingBody:
   name: "Discipline-specific (USA Taekwondo, USA Karate, USA Judo, etc.)"
-  url: "https://www.usataekwondo.us/"
+  url: "https://www.usatkd.org/"
 publishedAt: 2026-04-30
 editorial:
   qualityGrade: 7

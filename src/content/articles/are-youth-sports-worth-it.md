@@ -54,7 +54,7 @@ Sport participation looks good on college applications, especially when combined
 
 **If you're paying because the kid loves it, the answer is yes.**
 
-This is the simplest case. If your kid loves the activity, asks for more, finds joy and identity in it, and the family schedule and budget can sustain the version they want — yes. Worth it.
+This is the simplest case. If your kid loves the activity, asks for more, finds joy and identity in it, and the family schedule and budget can sustain the version they want, yes. Worth it.
 
 **If you're paying because the parent wants it more than the kid, the answer is no.**
 
@@ -65,7 +65,7 @@ This is the hardest version of the question to answer honestly. If the kid is go
 Before signing up for the next season, ask:
 
 1. Does the kid want this, or am I deciding for them?
-2. What am I actually paying for — health, social, identity, scholarship, college admission, parent ego?
+2. What am I actually paying for, health, social, identity, scholarship, college admission, parent ego?
 3. Does the cost (money + time + emotional load) match what I'm getting?
 4. Is the relationship with my kid stronger or weaker because of the sport investment?
 
@@ -75,7 +75,7 @@ If the answers don't, change the configuration. Drop a level. Switch programs. T
 
 **The biggest underrated benefit.**
 
-Across all the published research, the single most consistent long-term benefit of youth sports participation is something parents underweight: **kids learn how to fail in front of other people and recover.** That skill — performing under observation, missing, sitting with the failure, going back the next day — is rare. It's also one of the highest-leverage life skills there is.
+Across all the published research, the single most consistent long-term benefit of youth sports participation is something parents underweight: **kids learn how to fail in front of other people and recover.** That skill, performing under observation, missing, sitting with the failure, going back the next day, is rare. It's also one of the highest-leverage life skills there is.
 
 Most kids don't get many other settings to develop it. Sport is one of the few. The kid who plays through high school and learns to handle the bad games has built a muscle they'll use the rest of their lives.
 

@@ -7,7 +7,7 @@ sport: "multi-sport"
 age: "13-14"
 seasonPhase: "pre-season"
 publishedAt: 2026-04-09
-hero: /illustrations/on-not-making-varsity.png
+hero: /illustrations/on-not-making-varsity.webp
 heroAlt: "A teenager on front porch in mid-afternoon, headphones in, scrolling on phone. Backpack dropped beside them, framing pulled back with warm light."
 ---
 

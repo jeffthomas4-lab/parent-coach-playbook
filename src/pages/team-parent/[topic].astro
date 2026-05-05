@@ -38,12 +38,12 @@ const ageLabel = (a: string | undefined) =>
     <div class="container-px py-12 md:py-14">
       <div class="grid md:grid-cols-12 gap-8">
         <div class="md:col-span-4">
-          <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Topic</p>
-          <h1 class="font-display text-ink text-3xl md:text-4xl leading-[1.07]" style="font-weight: 500;">
+          <p class="font-display italic text-rust mb-2 font-medium">Topic</p>
+          <h1 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] font-medium">
             {topicMeta.label}
           </h1>
           <p class="font-display text-ink-soft mt-3 leading-snug">{topicMeta.blurb}</p>
-          <p class="font-display italic text-ink-soft text-sm mt-4" style="font-weight: 500;">
+          <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
             {articles.length} {articles.length === 1 ? 'piece' : 'pieces'}
           </p>
           <div class="mt-6">
@@ -58,15 +58,15 @@ const ageLabel = (a: string | undefined) =>
             <div class="space-y-4">
               {/* Age filter */}
               <div class="flex flex-wrap items-center gap-2" data-age-filter>
-                <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Age:</span>
-                <button data-age="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs" style="font-weight: 500;">All ages</button>
+                <span class="font-display italic text-ink-soft text-sm font-medium">Age:</span>
+                <button data-age="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All ages</button>
                 {AGE_BANDS.map((a) => (
-                  <button data-age={a.slug} class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">{a.label}</button>
+                  <button data-age={a.slug} class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">{a.label}</button>
                 ))}
               </div>
               {/* Sport dropdown */}
               <div class="flex flex-wrap items-center gap-2">
-                <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Sport:</span>
+                <span class="font-display italic text-ink-soft text-sm font-medium">Sport:</span>
                 <select
                   data-sport-select
                   class="font-display italic px-2 py-1 border border-bone text-ink-soft text-sm"
@@ -80,10 +80,10 @@ const ageLabel = (a: string | undefined) =>
               </div>
               {/* Format toggle */}
               <div class="flex flex-wrap items-center gap-2" data-format-filter>
-                <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Format:</span>
-                <button data-format="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs" style="font-weight: 500;">All</button>
-                <button data-format="note" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">Note</button>
-                <button data-format="essay" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper" style="font-weight: 500;">Essay</button>
+                <span class="font-display italic text-ink-soft text-sm font-medium">Format:</span>
+                <button data-format="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All</button>
+                <button data-format="note" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Note</button>
+                <button data-format="essay" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Essay</button>
               </div>
               {/* Search */}
               <div class="flex items-center gap-2">
@@ -99,7 +99,7 @@ const ageLabel = (a: string | undefined) =>
 
           {/* Article grid */}
           {articles.length === 0 ? (
-            <p class="font-display italic text-ink-soft" style="font-weight: 500;">More pieces coming. We're building this topic out.</p>
+            <p class="font-display italic text-ink-soft font-medium">More pieces coming. We're building this topic out.</p>
           ) : (
             <>
               <ul class="grid gap-px bg-bone" data-articles-grid>
@@ -114,7 +114,7 @@ const ageLabel = (a: string | undefined) =>
                         />
                       )}
                       <div class="flex items-baseline justify-between gap-3 flex-wrap mb-1">
-                        <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                        <p class="font-display italic text-ink-soft text-xs font-medium">
                           {[
                             a.data.format === 'essay' ? 'Longer read' : null,
                             sportLabel(a.data.sport),
@@ -124,8 +124,7 @@ const ageLabel = (a: string | undefined) =>
                         </p>
                       </div>
                       <h3
-                        class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors"
-                        style="font-weight: 500;"
+                        class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium"
                         set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
                       />
                       {a.data.dek && (

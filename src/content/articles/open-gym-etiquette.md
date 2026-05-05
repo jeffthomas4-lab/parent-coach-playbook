@@ -19,7 +19,7 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
   status: claude-reviewed
-  reviewerNotes: "Underdiscussed topic — the social rules of stepping up in age."
+  reviewerNotes: "Underdiscussed topic: the social rules of stepping up in age."
 ---
 
 Open gym at the local high school is one of the best off-season opportunities for a kid trying to level up. It's also socially complicated for a 12-year-old walking into a gym full of 16-year-olds.

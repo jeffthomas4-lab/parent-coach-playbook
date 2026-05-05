@@ -20,12 +20,12 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
 >
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> ·
         <a href="/rules/" class="hover:underline">Rules at-a-glance</a> ·
         {sportLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(piece.data.title)} />
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {piece.data.summary}
       </p>
@@ -37,21 +37,21 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
     <div class="container-px py-10 md:py-12">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         <div>
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Field/court setup</p>
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Field/court setup</p>
           <p class="font-display text-ink leading-snug">{piece.data.fieldSetup}</p>
         </div>
         <div>
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Game length</p>
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Game length</p>
           <p class="font-display text-ink leading-snug">{piece.data.gameLength}</p>
         </div>
       </div>
 
       {piece.data.scoringBasics && piece.data.scoringBasics.length > 0 && (
         <div class="mt-8 max-w-3xl">
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Scoring basics</p>
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Scoring basics</p>
           <ul class="grid gap-1.5">
             {piece.data.scoringBasics.map((s) => (
-              <li class="font-display text-ink leading-snug">— {s}</li>
+              <li class="font-display text-ink leading-snug">· {s}</li>
             ))}
           </ul>
         </div>
@@ -59,10 +59,10 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
 
       {piece.data.commonCalls && piece.data.commonCalls.length > 0 && (
         <div class="mt-8 max-w-3xl">
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Calls you'll see</p>
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Calls you'll see</p>
           <ul class="grid gap-1.5">
             {piece.data.commonCalls.map((s) => (
-              <li class="font-display text-ink leading-snug">— {s}</li>
+              <li class="font-display text-ink leading-snug">· {s}</li>
             ))}
           </ul>
         </div>
@@ -70,10 +70,10 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
 
       {piece.data.thingsParentsGetWrong && piece.data.thingsParentsGetWrong.length > 0 && (
         <div class="mt-8 max-w-3xl bg-paper-warm border-l-4 pl-4 py-3" style="border-color: #C5713D;">
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Three things parents most often get wrong</p>
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Three things parents most often get wrong</p>
           <ul class="grid gap-1.5">
             {piece.data.thingsParentsGetWrong.map((s) => (
-              <li class="font-display text-ink leading-snug">— {s}</li>
+              <li class="font-display text-ink leading-snug">· {s}</li>
             ))}
           </ul>
         </div>
@@ -87,7 +87,7 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
       <Content />
 
       <aside class="mt-10 pt-6 border-t border-bone">
-        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">The official rulebook</p>
+        <p class="font-display italic text-rust mb-2 font-medium">The official rulebook</p>
         <p class="font-display text-ink leading-snug">
           {piece.data.governingBody.name}:
           <a href={piece.data.governingBody.url} target="_blank" rel="noopener" class="text-rust hover:underline">{piece.data.governingBody.url} ↗</a>
@@ -99,7 +99,7 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
         )}
       </aside>
 
-      <p class="font-display italic text-ink-soft text-xs mt-8 pt-6 border-t border-bone" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-xs mt-8 pt-6 border-t border-bone font-medium">
         Last updated {piece.data.publishedAt.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
       </p>
     </div>

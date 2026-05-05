@@ -32,7 +32,7 @@ A small hierarchy that helps.
 
 **Both parents have to be aligned before the conversation with the kid.** Most of the family conflict in this scenario comes from one parent privately favoring the camp and the other privately favoring the vacation, then both pretending to be neutral when the kid asks. Pre-agree.
 
-**Don't make the kid choose.** Putting the call on the kid creates guilt either way. The grown-ups make this call. Tell the kid the answer cleanly: "We've decided we're doing the family week and we'll find a different camp later," or "We've decided you're going to the camp because it matters this year — we'll plan something else as a family."
+**Don't make the kid choose.** Putting the call on the kid creates guilt either way. The grown-ups make this call. Tell the kid the answer cleanly: "We've decided we're doing the family week and we'll find a different camp later," or "We've decided you're going to the camp because it matters this year, we'll plan something else as a family."
 
 **If the call is the camp, do something special as a family that summer instead.** A long weekend, a day trip, a project together. The kid who skips the family vacation should still feel like the family did something together that summer.
 

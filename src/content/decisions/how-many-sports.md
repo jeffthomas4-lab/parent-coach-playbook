@@ -25,7 +25,7 @@ signsItsNot:
   - "Adding a sport to fill a gap when the kid is already showing burnout signs."
 howToHandleIt:
   - "Start with the kid's actual interest, not the schedule the family already runs."
-  - "Match the season to the body — fall sport, winter sport, spring sport with summer off is the cleanest pattern."
+  - "Match the season to the body: fall sport, winter sport, spring sport with summer off is the cleanest pattern."
   - "Talk to the head coach of any year-round program about whether they accept multi-sport kids without penalty."
   - "Build the off-season window first. Everything else schedules around it."
 theRule: "Multi-sport through 14 is the strong recommendation. After 14, let interest lead."

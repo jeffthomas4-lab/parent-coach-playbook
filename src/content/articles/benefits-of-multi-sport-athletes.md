@@ -28,7 +28,7 @@ Kids who play multiple sports through middle school have:
 
 **Lower overuse-injury rates.** Same joints don't take the same load year after year. The pitcher who also plays basketball uses different muscle groups in different patterns. The soccer player who also runs cross country develops a different neuromuscular profile.
 
-**Lower burnout rates.** Mental break from one sport while engaged in another. Identity diversification — when one sport gets hard, the other is fun.
+**Lower burnout rates.** Mental break from one sport while engaged in another. Identity diversification, when one sport gets hard, the other is fun.
 
 **Higher long-term continuation in sport.** Multi-sport kids are statistically more likely to still be playing in late high school and beyond. The early-specialization kids drop out at higher rates.
 
@@ -70,7 +70,7 @@ Multi-sport schedules require active management. Conflicts will happen. The righ
 2. Identify the must-attend events for each (championship games, key meets).
 3. Plan around those. Skip the rest of the conflicts without guilt.
 
-Most coaches at the youth level accept multi-sport kids when the parents are organized about it. The coaches who don't — who require year-round commitment to a single program at age 11 — are the coaches whose kids burn out fastest. Read the room.
+Most coaches at the youth level accept multi-sport kids when the parents are organized about it. The coaches who don't, who require year-round commitment to a single program at age 11, are the coaches whose kids burn out fastest. Read the room.
 
 **The bottom line.**
 

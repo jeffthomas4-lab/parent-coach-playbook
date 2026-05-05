@@ -10,7 +10,7 @@ governingBodies:
   - name: "U.S. Center for SafeSport"
     url: "https://uscenterforsafesport.org/"
   - name: "USOPC SafeSport resources"
-    url: "https://www.teamusa.com/safesport"
+    url: "https://uscenterforsafesport.org/"
 doctorQuestions:
   - "Are there pediatric resources for talking to my kid about boundaries with adults in sport?"
   - "What signs of grooming or abuse should I be watching for?"
@@ -67,7 +67,7 @@ For non-NGB youth programs (rec leagues, school sports), report to the program's
 
 **The conversation with your kid.**
 
-Most parents wait too long to have this. The age-appropriate version starts early: name body parts directly, talk about the difference between OK touch and not-OK touch, make clear that no adult — coach included — should ask them to keep secrets from you. Repeat the conversation as they age; the version at 8 is different from the version at 14.
+Most parents wait too long to have this. The age-appropriate version starts early: name body parts directly, talk about the difference between OK touch and not-OK touch, make clear that no adult, coach included, should ask them to keep secrets from you. Repeat the conversation as they age; the version at 8 is different from the version at 14.
 
 The key message: if something feels wrong, you can tell me, and you won't be in trouble. Coaches who tell kids to keep things from parents are the wrong coaches.
 

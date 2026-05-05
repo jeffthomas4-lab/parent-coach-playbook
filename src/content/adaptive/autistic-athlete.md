@@ -7,11 +7,11 @@ ageBands: ["5-7","8-10","11-12","13-14","15-plus"]
 publishedAt: 2026-04-23
 featured: true
 governingBodies:
-  - name: "Autism Speaks — Sports Resources"
+  - name: "Autism Speaks: Sports Resources"
     url: "https://www.autismspeaks.org/"
-  - name: "Special Olympics — Unified Sports"
+  - name: "Special Olympics: Unified Sports"
     url: "https://www.specialolympics.org/our-work/sports/unified-sports"
-  - name: "AAP — Autism Spectrum Disorder Clinical Report"
+  - name: "AAP: Autism Spectrum Disorder Clinical Report"
     url: "https://publications.aap.org/pediatrics/article/145/1/e20193447/36917"
 editorial:
   qualityGrade: 8
@@ -39,7 +39,7 @@ What's consistent: most autistic kids thrive with predictable structure, clear e
 - **Climbing.** Increasingly available at youth gyms. Self-paced, problem-solving, low-social.
 
 **Programs that often don't fit.**
-- High-volume team sports with constant verbal communication and unpredictable transitions can be overwhelming for some autistic kids. Doesn't mean don't try — means the right coach matters more.
+- High-volume team sports with constant verbal communication and unpredictable transitions can be overwhelming for some autistic kids. Doesn't mean don't try, means the right coach matters more.
 - Sports with significant unpredictable physical contact can create sensory overload and anxiety.
 
 **Special Olympics.** For kids with intellectual disability or significant developmental delay, Special Olympics offers programs in 30+ sports. Free or near-free participation. Trained coaches. National infrastructure. Worth knowing about even for families who think their kid doesn't need it.
@@ -63,10 +63,10 @@ The coaches who hear this conversation well, learn the kid's specific needs, and
 
 **The competition piece.** Some autistic kids love competition. Some find it deeply distressing. There's no right answer. What helps is honest conversation with the kid about what they want from the experience. Many kids prefer practice to games; that's a fine outcome. Some autistic kids excel competitively; lean into that.
 
-**The transitions piece.** Going to practice, coming home from practice. Both are hard. Build a routine. Use the same drive home conversation pattern every time (the 90-second rule applies but the routine is more important than the specific words). Many families have a "decompression" period after practice — quiet car, no questions for 20 minutes.
+**The transitions piece.** Going to practice, coming home from practice. Both are hard. Build a routine. Use the same drive home conversation pattern every time (the 90-second rule applies but the routine is more important than the specific words). Many families have a "decompression" period after practice, quiet car, no questions for 20 minutes.
 
 **The friendship piece.** Sport doesn't always produce friendship for autistic kids the way it does for neurotypical kids. That's OK. The value is in the activity itself, the body, the accomplishment. Don't push social outcomes that aren't naturally happening; let the kid have the sport for the sport's reasons.
 
 **What to ask the OT or developmental pediatrician.** "Are there sports that match my kid's specific sensory profile better than others?" "What accommodations should I be requesting from the coach?" "Are there specific clinics in our area that work with autistic athletes?" The OT often knows local programs even when general youth-sports parents don't.
 
-**The bigger picture.** Sport can be one of the most stabilizing parts of an autistic kid's life — predictable structure, body-focused, clear roles, achievement-based feedback. The job is finding the program that fits, not forcing a kid into a program that doesn't.
+**The bigger picture.** Sport can be one of the most stabilizing parts of an autistic kid's life, predictable structure, body-focused, clear roles, achievement-based feedback. The job is finding the program that fits, not forcing a kid into a program that doesn't.

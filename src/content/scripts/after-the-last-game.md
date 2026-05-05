@@ -16,7 +16,7 @@ whatToSay:
 whatNotToSay:
   - "Now we need to talk about next year."
   - "I think you should try out for the higher team."
-  - "There's always next year." (sometimes there isn't)
+  - "There's always next year. (Sometimes there isn't.)"
 theRule: "Tonight is for the season that just ended. Next year is for next month."
 ifTheyBringItUp:
   - "If they bring up next year, listen, don't decide."

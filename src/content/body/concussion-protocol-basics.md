@@ -8,9 +8,9 @@ publishedAt: 2026-05-03
 featured: true
 governingBodies:
   - name: "CDC HEADS UP to Youth Sports"
-    url: "https://www.cdc.gov/headsup/youthsports/index.html"
-  - name: "CDC HEADS UP — Return to Play Guidance"
-    url: "https://www.cdc.gov/headsup/providers/return_to_activities.html"
+    url: "https://www.cdc.gov/heads-up/"
+  - name: "CDC HEADS UP: Return to Play Guidance"
+    url: "https://www.cdc.gov/heads-up/"
   - name: "Concussion Legacy Foundation"
     url: "https://concussionfoundation.org/"
 doctorQuestions:

@@ -23,8 +23,8 @@ const focusOptions = [
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Drills</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Drills</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] font-medium">
         Drills, notes, and the <em class="text-rust">cones</em> diagram.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -39,24 +39,24 @@ const focusOptions = [
         <div class="container-px py-8">
           <div class="grid gap-4">
             <div class="flex flex-wrap items-center gap-2" data-sport-filter>
-              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Sport:</span>
-              <button data-sport="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+              <span class="font-display italic text-ink-soft text-sm font-medium">Sport:</span>
+              <button data-sport="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
               {SPORTS.slice(0, 12).map((s) => (
-                <button data-sport={s.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{s.label}</button>
+                <button data-sport={s.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{s.label}</button>
               ))}
             </div>
             <div class="flex flex-wrap items-center gap-2" data-age-filter>
-              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Age:</span>
-              <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+              <span class="font-display italic text-ink-soft text-sm font-medium">Age:</span>
+              <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
               {AGE_BANDS.map((a) => (
-                <button data-age={a.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{a.label}</button>
+                <button data-age={a.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{a.label}</button>
               ))}
             </div>
             <div class="flex flex-wrap items-center gap-2" data-focus-filter>
-              <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Focus:</span>
-              <button data-focus="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm" style="font-weight: 500;">All</button>
+              <span class="font-display italic text-ink-soft text-sm font-medium">Focus:</span>
+              <button data-focus="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
               {focusOptions.map((f) => (
-                <button data-focus={f.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper" style="font-weight: 500;">{f.label}</button>
+                <button data-focus={f.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{f.label}</button>
               ))}
             </div>
             <div class="flex items-center gap-2">
@@ -84,10 +84,10 @@ const focusOptions = [
                 data-title={t.data.title.toLowerCase()}
                 data-summary={t.data.summary.toLowerCase()}
               >
-                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
+                <p class="font-display italic text-rust text-xs mb-2 font-medium">
                   {[t.data.sport, t.data.age, t.data.focus].filter(Boolean).join(' · ')}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(t.data.title)} />
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
                   {t.data.summary}
                 </p>
@@ -179,14 +179,14 @@ const focusOptions = [
   ) : (
     <section>
       <div class="container-px py-16">
-        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Coming next</p>
-        <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-3 font-medium">Coming next</p>
+        <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl font-medium">
           The drill library is loading. First batch ships this month.
         </h2>
         <p class="font-display text-ink-soft mt-5 max-w-2xl leading-snug">
           We are building this section as a real database of drills. Each drill is short, sport-tagged, age-tagged, and focus-tagged so you can pull a fifteen-minute Tuesday-night practice plan in two minutes. The first wave includes the cones diagram for tee-ball, a five-station soccer practice for ages 6-8, and a rebounding fundamentals drill for basketball ages 9-11.
         </p>
-        <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+        <p class="font-display italic text-ink-soft text-sm mt-6 font-medium">
           Written by the {EDITORIAL.byline}.
         </p>
       </div>

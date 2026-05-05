@@ -32,11 +32,11 @@ The 90-second rule still applies. Don't lead with the season recap. Don't lead w
 
 **The next sentence belongs to the kid.** They will bring up the season on their own, often within the first ten minutes. Or they won't, and that means they're not ready, and that is fine.
 
-If they say "I'm so glad it's over" — believe them. Don't try to convince them they had fun. They didn't, or at least not as much as you wanted them to.
+If they say "I'm so glad it's over", believe them. Don't try to convince them they had fun. They didn't, or at least not as much as you wanted them to.
 
-If they say "I'm going to miss it" — believe that too. The first hour after the last game is when the friend list, the bus rides, the weird coach jokes, the whole texture of the season hits.
+If they say "I'm going to miss it", believe that too. The first hour after the last game is when the friend list, the bus rides, the weird coach jokes, the whole texture of the season hits.
 
-If they cry — let them. Don't fix it. Don't compare it to a worse loss they'll have someday. Don't say "there's always next year." Sometimes there isn't.
+If they cry, let them. Don't fix it. Don't compare it to a worse loss they'll have someday. Don't say "there's always next year." Sometimes there isn't.
 
 **The conversation about next year doesn't happen tonight.** Not "are you doing this again?" Not "I think you should try out for the higher team." Not "we need to talk about specialization." None of that. Tonight is for the season that just ended.
 

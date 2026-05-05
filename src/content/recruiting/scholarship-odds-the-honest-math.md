@@ -8,8 +8,8 @@ publishedAt: 2026-04-29
 featured: true
 governingBodies:
   - name: "NCAA Recruiting Facts"
-    url: "https://www.ncaa.org/sports/2015/3/2/recruiting-facts.aspx"
-  - name: "NCAA — Estimated Probability of Competing in College Athletics"
+    url: "https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school"
+  - name: "NCAA: Estimated Probability of Competing in College Athletics"
     url: "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx"
   - name: "Aspen Institute Project Play"
     url: "https://projectplay.org/"
@@ -68,7 +68,7 @@ For specific sports, the NCAA's own published numbers (as a percentage of HS ath
 - Men's lacrosse: ~3%
 - Volleyball (women's): ~2%
 
-Even these numbers are misleading because most "scholarships" outside the headcount sports are partial — often 25-50% of tuition.
+Even these numbers are misleading because most "scholarships" outside the headcount sports are partial, often 25-50% of tuition.
 
 **The academic-aid framing parents miss.**
 
@@ -84,7 +84,7 @@ The math: for a strong student, academic aid at a strong-academic school often e
 
 The honest order of operations:
 
-1. **Strong GPA.** This expands college options at every level — academic, athletic, and need-based aid. The single highest-leverage move.
+1. **Strong GPA.** This expands college options at every level, academic, athletic, and need-based aid. The single highest-leverage move.
 2. **Decent test scores** (or strong without if test-optional). Many merit aid programs use them.
 3. **Good film and fit with realistic schools.** Not necessarily D1.
 4. **Apply broadly across levels.** D2, D3, NAIA all have programs that may fit better than D1 anyway.
@@ -93,12 +93,12 @@ The kid who optimizes for D1 athletic scholarship at the cost of GPA is making t
 
 **The cost calculator framing.**
 
-We have a [cost calculator](/cost-calculator/) that helps families think about youth-sports spending honestly. The companion question — "is this spending plausibly going to produce a scholarship that pays it back?" — almost never answers yes. Travel and club sports through age 18 routinely cost $30,000-100,000+ across a kid's career. The math of recovering that through athletic scholarships is, for most families, not real.
+We have a [cost calculator](/cost-calculator/) that helps families think about youth-sports spending honestly. The companion question, "is this spending plausibly going to produce a scholarship that pays it back?", almost never answers yes. Travel and club sports through age 18 routinely cost $30,000-100,000+ across a kid's career. The math of recovering that through athletic scholarships is, for most families, not real.
 
 That's not an argument against youth sports or against travel. It's an argument for honesty about what you're paying for. You're paying for the experience, the development, the relationships, and the long-term health benefits. Not for an investment that pays back at college tuition time. Almost never that.
 
 **The healthy framing.**
 
-Play sports. Get good grades. Apply to a wide range of schools. Run the net price calculator at every school you're seriously considering. Make the college decision on fit, cost, and program — not on the athletic-scholarship myth.
+Play sports. Get good grades. Apply to a wide range of schools. Run the net price calculator at every school you're seriously considering. Make the college decision on fit, cost, and program, not on the athletic-scholarship myth.
 
 The kids who end up playing college sport are the ones who make it to college first. The academics are the path. The athletics are the bonus.

@@ -32,7 +32,7 @@ This is the most common failure. Skills coaches and team coaches often have diff
 
 **The kid is dreading the lesson.** Lessons are intense. Some intensity is fine. Dread is not. When a kid is dragging into a lesson at 6pm Wednesday and not wanting to play in their game on Saturday, the lessons have become a job they didn't sign up for.
 
-**The kid is over-coaching themselves in games.** They're standing at the plate or on the mound running through the cues from the lesson. They've stopped being a player and started being a student of the swing. Performance gets worse before it gets better with mechanics changes — but if it stays worse for more than four to six weeks, the work isn't translating.
+**The kid is over-coaching themselves in games.** They're standing at the plate or on the mound running through the cues from the lesson. They've stopped being a player and started being a student of the swing. Performance gets worse before it gets better with mechanics changes, but if it stays worse for more than four to six weeks, the work isn't translating.
 
 **The team coach mentions it.** Most team coaches will not directly criticize a private coach. But "we're trying to get him to relax in the box" or "she's thinking too much" are coded notes. The translation is often: the lesson work isn't translating to game performance.
 

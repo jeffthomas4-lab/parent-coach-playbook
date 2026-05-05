@@ -40,11 +40,11 @@ editorial:
 
 A few specifics.
 
-**Equipment differs significantly from boys.** Goggles required (not full helmet, except goalie). Mouthguard required. Stick. Cleats. No shoulder pads, arm pads, or rib pads — the no-contact rules don't require them.
+**Equipment differs significantly from boys.** Goggles required (not full helmet, except goalie). Mouthguard required. Stick. Cleats. No shoulder pads, arm pads, or rib pads, the no-contact rules don't require them.
 
 **Field positions.** 12 players per side: 1 goalie, 4 attack, 5 midfield, 3 defense (spelled out as 4-5-3 + goalie). The field is bigger and more spread out than boys' 10v10.
 
-**Draw to start.** Like a faceoff but standing — two players hold sticks together and the ball is set between them. Whistle releases. The midfielders battle for possession.
+**Draw to start.** Like a faceoff but standing, two players hold sticks together and the ball is set between them. Whistle releases. The midfielders battle for possession.
 
 **Rules vary at youth.** US Lacrosse publishes age-appropriate modifications for U13 and below. Younger ages may use modified field sizes and stick-check restrictions.
 

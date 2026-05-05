@@ -37,9 +37,9 @@ The numbers tell the real story. Roughly 540,000 boys play high-school basketbal
 
 **D1.** Roughly 360 men's programs and 350 women's programs. 13 scholarships per team in men's, 15 in women's. Basketball is "headcount" at D1: every scholarship is full, no partials. That sounds great until you realize it means the staff offers exactly 4 to 5 scholarships per recruiting class. Nationwide. Across all 350-odd schools.
 
-**D2.** About 310 programs each side. 10 scholarships available per team, but they're "equivalency" — schools split them into partials. Most rosters carry 12 to 15 players, very few on a full ride.
+**D2.** About 310 programs each side. 10 scholarships available per team, but they're "equivalency", schools split them into partials. Most rosters carry 12 to 15 players, very few on a full ride.
 
-**D3.** About 420 programs. No athletic scholarships, period. The aid is academic and need-based. D3 basketball is a real commitment — 25-game season, multi-day road trips, gym-rat culture — but it's structured around the academic experience rather than against it.
+**D3.** About 420 programs. No athletic scholarships, period. The aid is academic and need-based. D3 basketball is a real commitment, 25-game season, multi-day road trips, gym-rat culture, but it's structured around the academic experience rather than against it.
 
 **NAIA.** About 240 programs. 11 scholarships, equivalency. Often a great fit for a kid who wants the basketball-first experience without the D1 grind, or who needs more academic flexibility.
 

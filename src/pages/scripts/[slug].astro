@@ -26,10 +26,10 @@ const related = (script.data.relatedScripts ?? [])
   <!-- Hero -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/scripts/" class="hover:underline">Scripts</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(script.data.title)} />
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(script.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {script.data.summary}
       </p>
@@ -40,10 +40,10 @@ const related = (script.data.relatedScripts ?? [])
   {script.data.whatTheyAreFeeling.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">What they're feeling</p>
+        <p class="font-display italic text-rust mb-3 text-sm font-medium">What they're feeling</p>
         <ul class="grid gap-2">
           {script.data.whatTheyAreFeeling.map((f) => (
-            <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {f}</li>
+            <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {f}</li>
           ))}
         </ul>
       </div>
@@ -54,13 +54,13 @@ const related = (script.data.relatedScripts ?? [])
   {script.data.whatToSay.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">What to say (pick one)</p>
+        <p class="font-display italic text-rust mb-3 text-sm font-medium">What to say (pick one)</p>
         <ul class="grid gap-3">
           {script.data.whatToSay.map((line) => (
             <li class="font-display text-ink text-lg italic leading-snug pl-4 border-l-2 border-rust" style="font-weight: 400;">"{line}"</li>
           ))}
         </ul>
-        <p class="font-display italic text-ink-soft text-sm mt-5" style="font-weight: 500;">
+        <p class="font-display italic text-ink-soft text-sm mt-5 font-medium">
           Then stop talking.
         </p>
       </div>
@@ -71,7 +71,7 @@ const related = (script.data.relatedScripts ?? [])
   {script.data.whatNotToSay.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">What not to say</p>
+        <p class="font-display italic text-rust mb-3 text-sm font-medium">What not to say</p>
         <ul class="grid gap-2">
           {script.data.whatNotToSay.map((line) => (
             <li class="font-display text-ink-soft leading-snug line-through" style="font-weight: 400;">"{line}"</li>
@@ -84,8 +84,8 @@ const related = (script.data.relatedScripts ?? [])
   <!-- Section 4: The rule -->
   <section class="border-b border-bone bg-ink text-paper">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The rule</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+      <p class="font-display italic mb-3 text-sm font-medium" style="color: #D4AB6A">The rule</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
         {script.data.theRule}
       </p>
     </div>
@@ -95,10 +95,10 @@ const related = (script.data.relatedScripts ?? [])
   {script.data.ifTheyBringItUp.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">If they bring it up</p>
+        <p class="font-display italic text-rust mb-3 text-sm font-medium">If they bring it up</p>
         <ul class="grid gap-2">
           {script.data.ifTheyBringItUp.map((line) => (
-            <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {line}</li>
+            <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {line}</li>
           ))}
         </ul>
       </div>
@@ -110,16 +110,16 @@ const related = (script.data.relatedScripts ?? [])
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10 max-w-3xl">
         <div class="border-2 border-ink p-6 bg-paper">
-          <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">Save this</p>
-          <h2 class="font-display text-ink text-xl mb-4" style="font-weight: 500;">
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Save this</p>
+          <h2 class="font-display text-ink text-xl mb-4 font-medium">
             {script.data.saveBlockTitle ?? stripTitle(script.data.title)}
           </h2>
           <ul class="grid gap-2">
             {script.data.saveBlockBullets.map((b) => (
-              <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {b}</li>
+              <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {b}</li>
             ))}
           </ul>
-          <p class="font-display italic text-ink-soft text-xs mt-5" style="font-weight: 500;">
+          <p class="font-display italic text-ink-soft text-xs mt-5 font-medium">
             parentcoachplaybook.com/scripts
           </p>
         </div>
@@ -140,11 +140,11 @@ const related = (script.data.relatedScripts ?? [])
   {related.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10">
-        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">You might also need</p>
+        <p class="font-display italic text-rust mb-4 font-medium">You might also need</p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {related.map((r) => (
             <a href={`/scripts/${r.slug}/`} class="bg-paper p-5 group block hover:bg-paper transition-colors">
-              <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(r.data.title)} />
+              <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{r.data.summary}</p>
             </a>
           ))}

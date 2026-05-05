@@ -7,9 +7,9 @@ ageBands: ["5-7", "8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-05-03
 featured: true
 governingBodies:
-  - name: "American Academy of Pediatrics — Sleep Recommendations"
+  - name: "American Academy of Pediatrics: Sleep Recommendations"
     url: "https://publications.aap.org/aapnews/news/14302/AAP-endorses-new-recommendations-on-sleep-times"
-  - name: "American Academy of Sleep Medicine — Sleep Duration for Children"
+  - name: "American Academy of Sleep Medicine: Sleep Duration for Children"
     url: "https://aasm.org/resources/pdf/pediatricsleepdurationconsensus.pdf"
 doctorQuestions:
   - "My kid sleeps X hours per night. Is that enough for their age?"

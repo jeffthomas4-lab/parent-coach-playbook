@@ -8,7 +8,7 @@ whatTheyAreFeeling:
   - "Processing."
   - "Tired."
   - "Not ready to perform conversation for you."
-  - "Sometimes nothing — and that's allowed."
+  - "Sometimes nothing: and that's allowed."
 whatToSay:
   - "Glad you're here."
   - "Want music, quiet, or talk?"

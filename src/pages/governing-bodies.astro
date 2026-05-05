@@ -23,8 +23,8 @@ const nationalBodies = [
   ] },
   { sport: 'Basketball',        orgs: [
     { name: 'USA Basketball',                              url: 'https://www.usab.com/' },
-    { name: 'AAU Basketball',                              url: 'https://aaubasketball.org/' },
-    { name: 'Nike EYBL',                                   url: 'https://www.eybl.com/' },
+    { name: 'AAU Basketball',                              url: 'https://aau.com/sports/basketball' },
+    { name: 'Nike EYBL',                                   url: 'https://aau.com/sports/basketball' },
   ] },
   { sport: 'Football',          orgs: [
     { name: 'USA Football',                                url: 'https://www.usafootball.com/' },
@@ -34,7 +34,7 @@ const nationalBodies = [
   ] },
   { sport: 'Hockey',            orgs: [
     { name: 'USA Hockey',                                  url: 'https://www.usahockey.com/' },
-    { name: 'AAU Ice Hockey',                              url: 'https://aauicehockey.org/' },
+    { name: 'AAU Ice Hockey',                              url: 'https://aau.com/sports/ice-hockey' },
   ] },
   { sport: 'Lacrosse',          orgs: [
     { name: 'USA Lacrosse (formerly US Lacrosse)',         url: 'https://www.usalacrosse.com/' },
@@ -42,7 +42,7 @@ const nationalBodies = [
   { sport: 'Volleyball',        orgs: [
     { name: 'USA Volleyball',                              url: 'https://usavolleyball.org/' },
     { name: 'JVA (Junior Volleyball Association)',         url: 'https://www.jvaonline.org/' },
-    { name: 'AAU Volleyball',                              url: 'https://aauvolleyball.org/' },
+    { name: 'AAU Volleyball',                              url: 'https://aau.com/sports/volleyball' },
   ] },
   { sport: 'Swimming',          orgs: [
     { name: 'USA Swimming',                                url: 'https://www.usaswimming.org/' },
@@ -50,7 +50,7 @@ const nationalBodies = [
   ] },
   { sport: 'Track & Field / XC',orgs: [
     { name: 'USA Track & Field',                           url: 'https://www.usatf.org/' },
-    { name: 'AAU Track & Field',                           url: 'https://aautrackandfield.org/' },
+    { name: 'AAU Track & Field',                           url: 'https://aau.com/sports/track-and-field' },
   ] },
   { sport: 'Tennis',            orgs: [
     { name: 'USTA',                                         url: 'https://www.usta.com/' },
@@ -67,12 +67,12 @@ const nationalBodies = [
     { name: 'USA Cheer',                                   url: 'https://www.usacheer.org/' },
   ] },
   { sport: 'Martial Arts',      orgs: [
-    { name: 'USA Taekwondo',                               url: 'https://www.usataekwondo.us/' },
-    { name: 'USA Judo',                                    url: 'https://www.teamusa.com/usa-judo' },
+    { name: 'USA Taekwondo',                               url: 'https://www.usatkd.org/' },
+    { name: 'USA Judo',                                    url: 'https://www.teamusa.com/' },
     { name: 'USA Karate',                                  url: 'https://www.usankf.org/' },
   ] },
   { sport: 'Wrestling',         orgs: [
-    { name: 'USA Wrestling',                               url: 'https://www.usawrestling.org/' },
+    { name: 'USA Wrestling',                               url: 'https://www.themat.com/' },
   ] },
   { sport: 'Crew',              orgs: [
     { name: 'USRowing',                                    url: 'https://usrowing.org/' },
@@ -81,8 +81,8 @@ const nationalBodies = [
 
 // High school athletic associations: NFHS is the national umbrella.
 const hsBodies = [
-  { name: 'NFHS — National Federation of State High School Associations', url: 'https://www.nfhs.org/', blurb: 'Umbrella for all 50 state HS athletic associations. Publishes the rule books most HS sports use.' },
-  { name: 'NFHS state association directory',                              url: 'https://www.nfhs.org/who-we-are/our-members/', blurb: 'Find your state\'s high school athletic association. The authority on eligibility, transfers, and your kid\'s actual season schedule.' },
+  { name: 'NFHS (National Federation of State High School Associations)', url: 'https://www.nfhs.org/', blurb: 'Umbrella for all 50 state HS athletic associations. Publishes the rule books most HS sports use.' },
+  { name: 'NFHS state association directory',                              url: 'https://www.nfhs.org/who-we-are/our-members', blurb: 'Find your state\'s high school athletic association. The authority on eligibility, transfers, and your kid\'s actual season schedule.' },
 ];
 
 // College recruiting governing bodies.
@@ -97,12 +97,12 @@ const collegeBodies = [
 // Safety, integrity, and adaptive sports organizations parents should know exist.
 const safetyAndAdaptive = [
   { name: 'U.S. Center for SafeSport',                                     url: 'https://uscenterforsafesport.org/',                       blurb: 'Required training for many youth sport coaches. Reports of abuse and misconduct in Olympic and Paralympic movement sports.' },
-  { name: 'CDC HEADS UP',                                                  url: 'https://www.cdc.gov/headsup/youthsports/index.html',     blurb: 'Concussion training and resources for coaches, parents, and athletes.' },
+  { name: 'CDC HEADS UP',                                                  url: 'https://www.cdc.gov/heads-up/',     blurb: 'Concussion training and resources for coaches, parents, and athletes.' },
   { name: 'Korey Stringer Institute',                                      url: 'https://ksi.uconn.edu/',                                blurb: 'Heat illness prevention and youth sport safety research.' },
   { name: 'Project Play (Aspen Institute)',                                url: 'https://projectplay.org/',                              blurb: 'National research and policy on youth sports participation, costs, and health.' },
   { name: 'Special Olympics',                                              url: 'https://www.specialolympics.org/',                      blurb: 'Programs for athletes with intellectual disabilities, plus Unified Sports.' },
   { name: 'Move United',                                                   url: 'https://www.moveunitedsport.org/',                      blurb: 'National adaptive sports network. Programs for athletes with physical disabilities.' },
-  { name: 'Adaptive Sports USA',                                           url: 'https://www.adaptivesportsusa.org/',                    blurb: 'National governing body for adaptive sports across multiple disciplines.' },
+  { name: 'Adaptive Sports USA',                                           url: 'https://www.moveunitedsport.org/',                    blurb: 'National governing body for adaptive sports across multiple disciplines.' },
 ];
 ---
 <BaseLayout
@@ -111,14 +111,14 @@ const safetyAndAdaptive = [
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Reference</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Reference</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         The <em class="text-rust">governing bodies</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
         Every sport has an authority. The national governing body sets the rules. The state high school association sets eligibility. The big youth associations run the leagues most kids play in. This is the directory.
       </p>
-      <p class="font-display italic text-ink-soft text-sm mt-6 max-w-2xl leading-snug" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-sm mt-6 max-w-2xl leading-snug font-medium">
         When someone tells you "the rule book says..." or "USA Hockey requires..." this is where you go to verify.
       </p>
     </div>
@@ -127,8 +127,8 @@ const safetyAndAdaptive = [
   <!-- High school athletic associations (most-used) -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 md:py-12 max-w-4xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">High school athletics</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">High school athletics</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
         Your <em class="text-rust">state HS association</em> is the authority on eligibility.
       </h2>
       <p class="font-display text-ink-soft mt-3 leading-snug">
@@ -137,8 +137,8 @@ const safetyAndAdaptive = [
       <ul class="grid gap-3 mt-6">
         {hsBodies.map((b) => (
           <li>
-            <a href={b.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block" style="font-weight: 500;">{b.name} ↗</a>
-            <p class="font-display italic text-ink-soft text-sm leading-snug mt-1" style="font-weight: 500;">{b.blurb}</p>
+            <a href={b.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block font-medium">{b.name} ↗</a>
+            <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{b.blurb}</p>
           </li>
         ))}
       </ul>
@@ -148,18 +148,18 @@ const safetyAndAdaptive = [
   <!-- National governing bodies by sport -->
   <section class="border-b border-bone">
     <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">By sport</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">By sport</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
         National governing bodies and major youth organizations.
       </h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone mt-8">
         {nationalBodies.map((s) => (
           <div class="bg-paper p-6">
-            <p class="font-display italic text-rust text-xs mb-3" style="font-weight: 500;">{s.sport}</p>
+            <p class="font-display italic text-rust text-xs mb-3 font-medium">{s.sport}</p>
             <ul class="grid gap-2">
               {s.orgs.map((o) => (
                 <li>
-                  <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">{o.name} ↗</a>
+                  <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust text-sm leading-snug font-medium">{o.name} ↗</a>
                 </li>
               ))}
             </ul>
@@ -172,8 +172,8 @@ const safetyAndAdaptive = [
   <!-- College recruiting -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-12 max-w-4xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">College recruiting</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">College recruiting</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
         The eligibility centers that decide whether your kid can play.
       </h2>
       <p class="font-display text-ink-soft mt-3 leading-snug">
@@ -182,11 +182,11 @@ const safetyAndAdaptive = [
       <ul class="grid gap-3 mt-6">
         {collegeBodies.map((b) => (
           <li>
-            <a href={b.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust" style="font-weight: 500;">{b.name} ↗</a>
+            <a href={b.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust font-medium">{b.name} ↗</a>
           </li>
         ))}
       </ul>
-      <p class="font-display italic text-ink-soft text-sm mt-5" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-sm mt-5 font-medium">
         See also: <a href="/recruiting/the-recruiting-process/" class="text-rust hover:underline">The Recruiting Process</a> · <a href="/recruiting/ncaa-eligibility-center/" class="text-rust hover:underline">NCAA Eligibility Center</a>
       </p>
     </div>
@@ -195,15 +195,15 @@ const safetyAndAdaptive = [
   <!-- Safety + adaptive -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Safety, research, and adaptive</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Safety, research, and adaptive</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
         Other organizations parents should know exist.
       </h2>
       <ul class="grid gap-4 mt-8 max-w-3xl">
         {safetyAndAdaptive.map((o) => (
           <li>
-            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg" style="font-weight: 500;">{o.name} ↗</a>
-            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1" style="font-weight: 500;">{o.blurb}</p>}
+            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg font-medium">{o.name} ↗</a>
+            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{o.blurb}</p>}
           </li>
         ))}
       </ul>
@@ -213,10 +213,10 @@ const safetyAndAdaptive = [
   <!-- Closing -->
   <section class="border-b border-bone">
     <div class="container-px py-10 max-w-3xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Missing one?</p>
+      <p class="font-display italic text-rust mb-3 font-medium">Missing one?</p>
       <p class="font-display text-ink leading-relaxed">
         Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a> with the sport and organization. We'll add it.
       </p>
     </div>
   </section>
-</BaseLayout>
+</BaseLay

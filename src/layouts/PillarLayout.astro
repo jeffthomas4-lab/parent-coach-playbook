@@ -37,7 +37,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
         >
           {meta.eyebrow}
         </div>
-        <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4" style="font-weight: 500;">
+        <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 font-medium">
           {meta.label}
         </h1>
         <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
@@ -45,7 +45,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
         </p>
         {pillar === 'drive-home' && (
           <img
-            src="/illustrations/drive-home-divider.png"
+            src="/illustrations/drive-home-divider.webp"
             alt="A car silhouette in profile with three small dust clouds receding behind it."
             class="mt-10 w-full max-w-md opacity-90"
             loading="lazy"

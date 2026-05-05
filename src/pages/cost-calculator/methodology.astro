@@ -27,11 +27,11 @@ const sortedSports = Object.keys(grouped).sort((a, b) => {
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> ·
         <a href="/cost-calculator/" class="hover:underline">Cost calculator</a> · Methodology
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium">
         Where the <em class="text-rust">numbers</em> come from.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
@@ -45,9 +45,9 @@ const sortedSports = Object.keys(grouped).sort((a, b) => {
       <h2>The base sources</h2>
       <p>Three sources sit underneath every profile:</p>
       <ul>
-        <li><strong>Aspen Institute Project Play — State of Play 2025</strong> (annual report on youth-sports participation, including family spending data by income, sport, and level).</li>
-        <li><strong>Project Play — National Youth Sports Parent Survey</strong> (cost data; the "average U.S. sports family spent $1,016 on their child's primary sport in 2024" finding comes from this survey).</li>
-        <li><strong>Project Play — Research index</strong> (the State of Play archive plus published surveys, available at projectplay.org/research).</li>
+        <li><strong>Aspen Institute Project Play: State of Play 2025</strong> (annual report on youth-sports participation, including family spending data by income, sport, and level).</li>
+        <li><strong>Project Play: National Youth Sports Parent Survey</strong> (cost data; the "average U.S. sports family spent $1,016 on their child's primary sport in 2024" finding comes from this survey).</li>
+        <li><strong>Project Play: Research index</strong> (the State of Play archive plus published surveys, available at projectplay.org/research).</li>
       </ul>
 
       <p>Sport-specific profiles add additional sources from the relevant national governing body or club association (USA Hockey, USAV, USAG, US Lacrosse, US Youth Soccer, USTA, USASF, USA Swimming, ECNL, AAU Basketball, NFHS, USA Football, Little League International, Perfect Game, JVA, NUVO, Dance Studio Owners Association). Each profile lists which sources it draws from.</p>
@@ -76,7 +76,7 @@ const sortedSports = Object.keys(grouped).sort((a, b) => {
         <li><strong>Tournament travel hotels.</strong> The single most underestimated line in travel sports.</li>
         <li><strong>Equipment replacement.</strong> Most parents budget the initial purchase, not the annual replacement.</li>
         <li><strong>Team apparel.</strong> The required spirit pack, second jersey, and warm-ups that often run $300-600/year at travel level.</li>
-        <li><strong>Per-game-played cost.</strong> Annual cost divided by games where the kid actually got real minutes. The metric most parents find most useful — it works the same whether you're at $400/year or $14,000/year.</li>
+        <li><strong>Per-game-played cost.</strong> Annual cost divided by games where the kid actually got real minutes. The metric most parents find most useful: it works the same whether you're at $400/year or $14,000/year.</li>
       </ul>
 
       <h2>Update cadence</h2>
@@ -89,19 +89,19 @@ const sortedSports = Object.keys(grouped).sort((a, b) => {
     <div class="max-w-4xl mx-auto mt-8 grid gap-6">
       {sortedSports.map((sport) => (
         <section class="border border-bone bg-paper-warm p-6">
-          <p class="font-display italic text-rust text-sm mb-2" style="font-weight: 500;">{sportLabel(sport)}</p>
+          <p class="font-display italic text-rust text-sm mb-2 font-medium">{sportLabel(sport)}</p>
           <div class="grid gap-5">
             {grouped[sport].map((p) => (
               <div class="border-l-2 border-bone pl-4">
-                <p class="font-display text-ink text-base mb-1" style="font-weight: 500;">
-                  {sportLabel(sport)} — {levelLabel[p.level]} · {p.estimatedGames} games estimated
+                <p class="font-display text-ink text-base mb-1 font-medium">
+                  {sportLabel(sport)}: {levelLabel[p.level]} · {p.estimatedGames} games estimated
                 </p>
                 {p.sourceNote && (
                   <p class="font-display text-ink-soft text-sm leading-snug mt-1">{p.sourceNote}</p>
                 )}
                 <ul class="grid gap-1 mt-2">
                   {(p.sources || []).map((s) => (
-                    <li class="font-display italic text-ink-soft text-xs leading-snug" style="font-weight: 500;">
+                    <li class="font-display italic text-ink-soft text-xs leading-snug font-medium">
                       → <a href={s.url} target="_blank" rel="noopener" class="text-rust hover:underline">{s.label} ↗</a>
                     </li>
                   ))}
@@ -115,9 +115,4 @@ const sortedSports = Object.keys(grouped).sort((a, b) => {
 
     <div class="article-body max-w-prose mx-auto mt-12">
       <h2>Submit your numbers</h2>
-      <p>If your real numbers diverge significantly from the defaults, email them. The more reader data we have, the more accurate the calculator gets. Especially helpful: which sport, which level, which region, your annual all-in cost, and a flag for any line that surprised you.</p>
-
-      <p><a href="/cost-calculator/" class="t-cta">← Back to the calculator</a></p>
-    </div>
-  </article>
-</BaseLayout>
+      <p>If your real numbers diverge significantly from the defaults, email them. The more reader data we have, the more accurate the calculator gets. Especially helpful: which sport, which level, which region, your annual all-in cost, and a flag for any line that surprised you

@@ -3,7 +3,7 @@ sport: "volleyball"
 title: "Volleyball: rules at-a-glance"
 summary: "Six players per side, three touches max, get the ball over the net. The rules of indoor volleyball in five minutes."
 fieldSetup: "Rectangular court divided by a net. Court is 18 × 9 meters. Net height is 7'4\" at 12U, 7'11.625\" at 13U+ for girls (8' for boys). Attack line 3 meters from the net."
-gameLength: "Best of 5 sets. Sets played to 25 points (must win by 2). The deciding set (5th) is played to 15. No game clock — sets continue until someone wins."
+gameLength: "Best of 5 sets. Sets played to 25 points (must win by 2). The deciding set (5th) is played to 15. No game clock: sets continue until someone wins."
 scoringBasics:
   - "Rally scoring: every play results in a point for one team."
   - "Point scored when the ball lands in bounds on the opponent's side, hits the floor, or the opponent commits an error."
@@ -24,7 +24,7 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Volleyball"
   url: "https://usavolleyball.org/"
-ruleBookUrl: "https://usavolleyball.org/play/rules-and-officials/"
+ruleBookUrl: "https://usavolleyball.org/officials/"
 publishedAt: 2026-04-26
 editorial:
   qualityGrade: 8

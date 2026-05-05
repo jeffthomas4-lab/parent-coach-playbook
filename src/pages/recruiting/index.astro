@@ -41,10 +41,10 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> · Recruiting
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         College recruiting, <em class="text-rust">honestly</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -57,9 +57,9 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
   {pillar && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-12 md:py-16">
-        <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Read this first</p>
+        <p class="font-display italic text-rust mb-3 font-medium">Read this first</p>
         <a href={`/recruiting/${pillar.slug}/`} class="block group max-w-3xl">
-          <h2 class="font-display text-ink text-3xl md:text-[3rem] leading-[1.05] group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(pillar.data.title)} />
+          <h2 class="font-display text-ink text-3xl md:text-[3rem] leading-[1.05] group-hover:text-rust transition-colors font-medium" set:html={renderTitle(pillar.data.title)} />
           <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
             {pillar.data.summary}
           </p>
@@ -73,17 +73,17 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
   {sportPieces.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12">
-        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">By sport</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-6" style="font-weight: 500;">
+        <p class="font-display italic text-rust mb-2 font-medium">By sport</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-6 font-medium">
           The recruiting <em class="text-rust">infrastructure</em>, sport by sport.
         </h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {sportPieces.map((p) => (
             <a href={`/recruiting/${p.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
+              <p class="font-display italic text-rust text-xs mb-2 font-medium">
                 {(p.data.sportTags ?? []).map(s => sportLabel(s)).join(' · ') || 'Sport'}
               </p>
-              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
+              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(p.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
               <p class="t-cta mt-3">Open →</p>
             </a>
@@ -93,8 +93,8 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
             !sportPieces.some(p => p.data.title.toLowerCase().startsWith(name.toLowerCase()))
           ).map((name) => (
             <div class="bg-paper p-6 opacity-60">
-              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{name}</p>
-              <h3 class="font-display text-ink text-xl leading-tight" style="font-weight: 500;">
+              <p class="font-display italic text-rust text-xs mb-2 font-medium">{name}</p>
+              <h3 class="font-display text-ink text-xl leading-tight font-medium">
                 {name} recruiting
               </h3>
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Coming next.</p>
@@ -111,15 +111,15 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
       <div class="container-px py-10 md:py-12">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-4">
-            <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Topic</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">{g.label}</h2>
+            <p class="font-display italic text-rust mb-2 font-medium">Topic</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">{g.label}</h2>
             <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
           </div>
           <div class="md:col-span-8">
             <ul class="grid gap-4">
               {g.items.map((p) => (
                 <li class="border border-bone bg-paper-warm p-5">
-                  <a href={`/recruiting/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
+                  <a href={`/recruiting/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(p.data.title)} />
                   <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
                 </li>
               ))}
@@ -132,7 +132,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 max-w-3xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">A note on the byline</p>
+      <p class="font-display italic text-rust mb-3 font-medium">A note on the byline</p>
       <p class="font-display text-ink leading-relaxed">
         These pieces are written by a Division III head coach with two decades of recruiting experience. Published for parents, not for sale. Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a> with corrections, questions, or requests for sport pages we haven't written yet.
       </p>

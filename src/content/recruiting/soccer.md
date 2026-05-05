@@ -31,13 +31,13 @@ editorial:
 
 → New here? Start with [The Recruiting Process](/recruiting/the-recruiting-process/) for the cross-sport basics, then come back.
 
-Soccer in the United States has a club-team ladder that operates almost completely separate from the high-school season. For ambitious players, the path runs through ECNL, MLS Next, and other elite leagues — not through the school team. College coaches recruit primarily from those leagues. Understanding the ladder is half the recruiting battle.
+Soccer in the United States has a club-team ladder that operates almost completely separate from the high-school season. For ambitious players, the path runs through ECNL, MLS Next, and other elite leagues, not through the school team. College coaches recruit primarily from those leagues. Understanding the ladder is half the recruiting battle.
 
 About 850,000 boys and girls play high-school soccer combined each year. About 50,000 play college soccer across all divisions. The funnel is similar to baseball: better than basketball, narrower than the parent in row C tells you.
 
 ## What each level actually looks like
 
-**D1 (men).** About 200 programs. 9.9 scholarships per team, equivalency. Almost no full rides — typical starter at a mid-major might be on a 30 to 50 percent scholarship. Top high-major programs have more flexibility but still split.
+**D1 (men).** About 200 programs. 9.9 scholarships per team, equivalency. Almost no full rides, typical starter at a mid-major might be on a 30 to 50 percent scholarship. Top high-major programs have more flexibility but still split.
 
 **D1 (women).** About 330 programs. 14 scholarships per team, equivalency. Better aid environment than men's D1 because of Title IX implications.
 

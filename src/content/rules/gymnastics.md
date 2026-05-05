@@ -22,7 +22,7 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Gymnastics"
   url: "https://usagym.org/"
-ruleBookUrl: "https://usagym.org/pages/women/pages/program_overview.html"
+ruleBookUrl: "https://usagym.org/programs/"
 publishedAt: 2026-04-30
 editorial:
   qualityGrade: 8

@@ -16,16 +16,16 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> · Rules at-a-glance
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         Five-minute <em class="text-rust">rules</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
         Most parents can't fully explain their kid's sport's rules and never admit it. These primers fix that. Field setup, scoring, the calls you'll see in a typical game, and the three things parents most often get wrong.
       </p>
-      <p class="font-display italic text-ink-soft text-sm mt-6" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-sm mt-6 font-medium">
         Each piece links to the official governing-body rulebook for the version of record.
       </p>
     </div>
@@ -34,13 +34,13 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
   <section class="border-b border-bone">
     <div class="container-px py-12">
       {pieces.length === 0 ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">First batch ships this month.</p>
+        <p class="font-display italic text-ink-soft font-medium">First batch ships this month.</p>
       ) : (
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {pieces.map((p) => (
             <a href={`/rules/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">{sportLabel(p.data.sport)}</p>
-              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(p.data.title)} />
+              <p class="font-display italic text-rust text-xs mb-2 font-medium">{sportLabel(p.data.sport)}</p>
+              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(p.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
               <p class="t-cta mt-3">5-min read →</p>
             </a>

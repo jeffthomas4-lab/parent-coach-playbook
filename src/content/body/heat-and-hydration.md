@@ -7,11 +7,11 @@ ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-05-03
 featured: true
 governingBodies:
-  - name: "Korey Stringer Institute — Youth Sports Heat Safety"
-    url: "https://ksi.uconn.edu/prevention/heat-illnesses/youth-sports/"
-  - name: "NATA Inter-Association Task Force — Preseason Heat-Acclimatization Guidelines"
-    url: "https://www.nata.org/sites/default/files/preseason-heat-acclimatization-guidelines.pdf"
-  - name: "American Academy of Pediatrics — Climatic Heat Stress and Exercising Children"
+  - name: "Korey Stringer Institute: Youth Sports Heat Safety"
+    url: "https://koreystringer.institute.uconn.edu/"
+  - name: "NATA Inter-Association Task Force: Preseason Heat-Acclimatization Guidelines"
+    url: "https://www.nata.org/professional-interests/job-settings/secondary-school"
+  - name: "American Academy of Pediatrics: Climatic Heat Stress and Exercising Children"
     url: "https://publications.aap.org/pediatrics/article/128/3/e741/30912"
 doctorQuestions:
   - "Has my kid had a heat illness episode before? How does that change risk?"
@@ -29,7 +29,7 @@ gearPicks:
     note: "Phone apps approximate it. Real WBGT readers are what serious programs use."
 ---
 
-Heat illness in youth sports is largely manageable with the right protocol — but it's not a problem you "prevent" once and forget. The hot day, the unmodified practice, the kid who doesn't speak up, the missed early warning signs: those are the ingredients in almost every preseason heat-illness story. The protocol below is well-established and reduces risk. It does not eliminate it.
+Heat illness in youth sports is largely manageable with the right protocol, but it's not a problem you "prevent" once and forget. The hot day, the unmodified practice, the kid who doesn't speak up, the missed early warning signs: those are the ingredients in almost every preseason heat-illness story. The protocol below is well-established and reduces risk. It does not eliminate it.
 
 **The first five practices are different.** NATA's Preseason Heat-Acclimatization Guidelines lay it out: practice times scale up over the first 14 days. Day 1 is no helmets, no pads. Day 2 is the same. Pads come on at day 3 (helmets and shoulder pads only). Full pads no earlier than day 6. Two-a-days don't start until day 6 at the earliest, and never on consecutive days. The early-August window is when the published heatstroke fatality data clusters. Programs that follow these guidelines have a meaningfully lower risk profile through that window.
 

@@ -44,8 +44,8 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
 <BaseLayout title="Link health" description="External-link health dashboard.">
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Admin · Link health</p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">Admin · Link health</p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         External-link health
       </h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
@@ -54,28 +54,28 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
 
       <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-bone mt-6">
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Total tracked</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.total ?? 0}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Total tracked</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{totals.total ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Broken</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Broken</p>
           <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? '#C5713D' : '#5C7459'};`}>{totals.broken ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Redirected</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.redirected ?? 0}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Redirected</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{totals.redirected ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Never checked</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.neverChecked ?? 0}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Never checked</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{totals.neverChecked ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
-          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Due soon</p>
-          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.dueSoon ?? 0}</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Due soon</p>
+          <p class="font-display text-ink text-2xl mt-1 font-medium">{totals.dueSoon ?? 0}</p>
         </div>
       </div>
 
-      <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic" style="font-weight: 500;" data-filter-bar>
+      <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic font-medium" data-filter-bar>
         <button data-filter="all"        class="px-3 py-1 border border-ink bg-ink text-paper">All</button>
         <button data-filter="broken"     class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Broken</button>
         <button data-filter="redirected" class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Redirected</button>
@@ -89,16 +89,16 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
       <table class="w-full text-sm" data-link-table>
         <thead>
           <tr class="border-b border-bone">
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">URL</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Status</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Last checked</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Used in</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Replacement help</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">URL</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Last checked</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Used in</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Replacement help</th>
           </tr>
         </thead>
         <tbody>
           {rows.length === 0 && (
-            <tr><td colspan="5" class="py-6 font-display italic text-ink-soft" style="font-weight: 500;">
+            <tr><td colspan="5" class="py-6 font-display italic text-ink-soft font-medium">
               No data yet. Run the link-checker worker once to populate (`npm run deploy && open the manual trigger URL`).
             </td></tr>
           )}
@@ -111,19 +111,19 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
             return (
               <tr class="border-b border-bone hover:bg-paper-warm" data-status={status}>
                 <td class="py-2 pr-3 align-top max-w-md">
-                  <a href={r.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-all" style="font-weight: 500;">{truncate(r.url, 80)}</a>
+                  <a href={r.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-all font-medium">{truncate(r.url, 80)}</a>
                   {r.final_url && r.final_url !== r.url && (
-                    <p class="font-display italic text-ink-soft text-xs mt-1 break-all" style="font-weight: 500;">→ {truncate(r.final_url, 80)}</p>
+                    <p class="font-display italic text-ink-soft text-xs mt-1 break-all font-medium">→ {truncate(r.final_url, 80)}</p>
                   )}
                   {r.notes && (
-                    <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">{r.notes}</p>
+                    <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">{r.notes}</p>
                   )}
                 </td>
                 <td class="py-2 pr-3 align-top">
                   <span class="font-display italic px-2 py-0.5 text-xs text-paper" style={`background: ${statusColor}; font-weight: 500;`}>{statusLabel}</span>
                 </td>
-                <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs" style="font-weight: 500;">{fmtDate(r.last_checked)}</td>
-                <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.last_checked)}</td>
+                <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs font-medium">
                   {sourceFiles.slice(0, 3).map(f => (<div>{truncate(f, 50)}</div>))}
                   {sourceFiles.length > 3 && <div class="text-ink-soft">+{sourceFiles.length - 3} more</div>}
                 </td>
@@ -131,10 +131,10 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                   {r.is_broken === 1 && (
                     <div class="grid gap-1">
                       {r.wayback_snapshot && (
-                        <a href={r.wayback_snapshot} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs" style="font-weight: 500;">→ Wayback snapshot</a>
+                        <a href={r.wayback_snapshot} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs font-medium">→ Wayback snapshot</a>
                       )}
                       {r.suggested_search && (
-                        <a href={r.suggested_search} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs" style="font-weight: 500;">→ Search for replacement</a>
+                        <a href={r.suggested_search} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs font-medium">→ Search for replacement</a>
                       )}
                     </div>
                   )}

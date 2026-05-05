@@ -57,14 +57,14 @@ const fmtRange = (start: string, end: string) => {
 <BaseLayout title="Admin queue" description="Unified moderation dashboard" noindex={true}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Pending</a> · Queue · <a href="/admin/camps/spot-check" class="hover:underline">Spot check</a>
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Moderation queue
       </h1>
       {!adminEmail && (
-        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
           Cloudflare Access header not detected. Actions will fail until /admin/* is wired through Access.
         </p>
       )}
@@ -74,7 +74,7 @@ const fmtRange = (start: string, end: string) => {
   {!dbAvailable ? (
     <section>
       <div class="container-px py-10">
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database not bound.</p>
+        <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
       </div>
     </section>
   ) : (
@@ -83,16 +83,16 @@ const fmtRange = (start: string, end: string) => {
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl" style="font-weight: 500;">
+            <h2 class="font-display text-ink text-2xl font-medium">
               Pending camp submissions
             </h2>
-            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone" style="font-weight: 500;">
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
               {pendingCamps.length}
             </span>
           </div>
 
           {pendingCamps.length === 0 ? (
-            <p class="font-display italic text-ink-soft" style="font-weight: 500;">All clear—no camps awaiting review.</p>
+            <p class="font-display italic text-ink-soft font-medium">All clear, no camps awaiting review.</p>
           ) : (
             <ul class="grid gap-4">
               {pendingCamps.map((camp) => (
@@ -100,10 +100,10 @@ const fmtRange = (start: string, end: string) => {
                   <div class="grid gap-4">
                     {/* Top row: name, location, submitted date */}
                     <div>
-                      <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                      <p class="font-display italic text-rust text-xs font-medium">
                         {camp.sport} · ages {camp.age_min}–{camp.age_max} · {camp.day_or_overnight}
                       </p>
-                      <h3 class="font-display text-ink text-lg leading-tight mt-0.5" style="font-weight: 500;">
+                      <h3 class="font-display text-ink text-lg leading-tight mt-0.5 font-medium">
                         {camp.name}
                       </h3>
                       <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
@@ -114,49 +114,49 @@ const fmtRange = (start: string, end: string) => {
                     {/* Editable fields */}
                     <div class="grid gap-3 text-sm">
                       <div class="grid gap-1">
-                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Website</label>
+                        <label class="font-display text-ink-soft italic text-xs font-medium">Website</label>
                         <input type="url" class="px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.website_url || ''} placeholder="https://..." data-field="website_url" />
                       </div>
 
                       <div class="grid gap-1">
-                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Contact email</label>
+                        <label class="font-display text-ink-soft italic text-xs font-medium">Contact email</label>
                         <input type="email" class="px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.contact_email || ''} placeholder="email@example.com" data-field="contact_email" />
                       </div>
 
                       <div class="grid gap-1">
-                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Description</label>
+                        <label class="font-display text-ink-soft italic text-xs font-medium">Description</label>
                         <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="3" data-field="description">{camp.description}</textarea>
                       </div>
 
                       <div class="grid gap-1">
-                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Submitted by</label>
+                        <label class="font-display text-ink-soft italic text-xs font-medium">Submitted by</label>
                         <p class="text-ink-soft">{camp.submitted_by_email}</p>
                       </div>
 
                       <div class="grid gap-1">
-                        <label class="font-display text-ink-soft italic text-xs" style="font-weight: 500;">Submitted {fmt(camp.submitted_at)}</label>
+                        <label class="font-display text-ink-soft italic text-xs font-medium">Submitted {fmt(camp.submitted_at)}</label>
                       </div>
                     </div>
 
                     {/* Action buttons */}
                     <div class="grid gap-2 sm:grid-cols-4">
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors" style="font-weight: 500;" data-action="approve-verified">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="approve-verified">
                           Approve & verify
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;" data-action="approve">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium" data-action="approve">
                           Approve
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;" data-action="reject">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <label class="font-display italic px-3 py-2 border border-bone bg-paper text-sm text-center cursor-pointer hover:bg-paper-warm transition-colors block" style="font-weight: 500;">
+                        <label class="font-display italic px-3 py-2 border border-bone bg-paper text-sm text-center cursor-pointer hover:bg-paper-warm transition-colors block font-medium">
                           Photo
                           <input type="file" class="hidden" accept="image/*" data-action="upload-photo" />
                         </label>
@@ -177,16 +177,16 @@ const fmtRange = (start: string, end: string) => {
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl" style="font-weight: 500;">
+            <h2 class="font-display text-ink text-2xl font-medium">
               Pending camp reviews
             </h2>
-            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone" style="font-weight: 500;">
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
               {pendingReviews.length}
             </span>
           </div>
 
           {pendingReviews.length === 0 ? (
-            <p class="font-display italic text-ink-soft" style="font-weight: 500;">All clear—no reviews awaiting action.</p>
+            <p class="font-display italic text-ink-soft font-medium">All clear, no reviews awaiting action.</p>
           ) : (
             <ul class="grid gap-4">
               {pendingReviews.map((review) => {
@@ -195,10 +195,10 @@ const fmtRange = (start: string, end: string) => {
                   <li class="border border-bone p-5 bg-paper review-row" data-id={review.id}>
                     <div class="grid gap-3">
                       <div>
-                        <p class="font-display text-ink-soft text-sm" style="font-weight: 500;">
+                        <p class="font-display text-ink-soft text-sm font-medium">
                           {camp ? camp.name : 'Unknown camp'} · Rating: <strong>{review.rating}/5</strong>
                         </p>
-                        <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">
+                        <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">
                           By {review.reviewer_email} {review.reviewer_display_name ? `(${review.reviewer_display_name})` : ''} · {fmt(review.submitted_at)}
                         </p>
                       </div>
@@ -208,10 +208,10 @@ const fmtRange = (start: string, end: string) => {
                       </p>
 
                       <div class="grid gap-2 sm:grid-cols-2">
-                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;" data-action="approve">
+                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium" data-action="approve">
                           Approve
                         </button>
-                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;" data-action="reject">
+                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
                         </button>
                       </div>
@@ -230,16 +230,16 @@ const fmtRange = (start: string, end: string) => {
       <section>
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl" style="font-weight: 500;">
+            <h2 class="font-display text-ink text-2xl font-medium">
               Pending claim requests
             </h2>
-            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone" style="font-weight: 500;">
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
               {pendingClaims.length}
             </span>
           </div>
 
           {pendingClaims.length === 0 ? (
-            <p class="font-display italic text-ink-soft" style="font-weight: 500;">All clear—no claims awaiting action.</p>
+            <p class="font-display italic text-ink-soft font-medium">All clear, no claims awaiting action.</p>
           ) : (
             <ul class="grid gap-4">
               {pendingClaims.map((claim) => {
@@ -248,10 +248,10 @@ const fmtRange = (start: string, end: string) => {
                   <li class="border border-bone p-5 bg-paper claim-row" data-id={claim.id}>
                     <div class="grid gap-3">
                       <div>
-                        <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                        <p class="font-display italic text-rust text-xs font-medium">
                           Status: {claim.status}
                         </p>
-                        <p class="font-display text-ink text-lg leading-tight mt-1" style="font-weight: 500;">
+                        <p class="font-display text-ink text-lg leading-tight mt-1 font-medium">
                           {camp ? camp.name : 'Unknown camp'}
                         </p>
                         <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
@@ -265,19 +265,19 @@ const fmtRange = (start: string, end: string) => {
                             <strong>Notes:</strong> {claim.notes}
                           </p>
                         )}
-                        <p class="font-display italic text-ink-soft text-xs mt-2" style="font-weight: 500;">
+                        <p class="font-display italic text-ink-soft text-xs mt-2 font-medium">
                           Submitted {fmt(claim.submitted_at)}
                         </p>
                       </div>
 
                       <div class="grid gap-2 sm:grid-cols-3">
-                        <button type="button" class="font-display italic px-3 py-2 border border-paper-warm bg-paper-warm text-sm hover:bg-paper transition-colors" style="font-weight: 500;" data-action="mark-verified">
+                        <button type="button" class="font-display italic px-3 py-2 border border-paper-warm bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="mark-verified">
                           Mark verified
                         </button>
-                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;" data-action="mark-paid">
+                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium" data-action="mark-paid">
                           Mark paid
                         </button>
-                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;" data-action="reject">
+                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
                         </button>
                       </div>
@@ -478,3 +478,4 @@ const fmtRange = (start: string, end: string) => {
     });
   });
 </script>
+   

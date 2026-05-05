@@ -1,5 +1,5 @@
 ---
-title: "Year-round gymnastics — Levels 3-7"
+title: "Year-round gymnastics: Levels 3-7"
 sport: "gymnastics"
 level: "travel"
 region: "National"
@@ -48,7 +48,7 @@ months:
 
 USAG gymnastics doesn't have a real off-season because the off-season is when next year's skills get learned. Competitive gymnasts at Levels 3 and up train 12-25 hours a week year-round.
 
-The cost structure has its own shape. Tuition is the biggest line and is monthly (not seasonal) — typical Level 5-6 tuition is $300-600/month. Meet fees are $75-150 per meet, with 6-10 meets per season. USAG membership is roughly $50/year. Leotards are $100-300 each, with several needed.
+The cost structure has its own shape. Tuition is the biggest line and is monthly (not seasonal), typical Level 5-6 tuition is $300-600/month. Meet fees are $75-150 per meet, with 6-10 meets per season. USAG membership is roughly $50/year. Leotards are $100-300 each, with several needed.
 
 Travel is mostly local through Level 5. State meets are usually within a few hours' drive. Regionals require an overnight at most levels. Nationals (Level 6 and above) is a real travel event.
 

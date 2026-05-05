@@ -35,7 +35,7 @@ That message does four things. Introduces you. Sets the chat's purpose. Sets bou
 
 **Two. Celebrate every kid by name at least once a season.** The mom whose kid scored the go-ahead run got a moment. The mom whose kid quietly played good defense the whole game probably didn't. Make the second moment happen too.
 
-**Three. Don't be the league.** When parents have complaints about the coach, the league, the umpire — redirect them. Most complaints want to vent, not actually solve. Saying "ugh that's frustrating" works. Don't carry the complaint up the chain unless they ask.
+**Three. Don't be the league.** When parents have complaints about the coach, the league, the umpire, redirect them. Most complaints want to vent, not actually solve. Saying "ugh that's frustrating" works. Don't carry the complaint up the chain unless they ask.
 
 **Four. Mute non-team chatter (kindly).** When two parents start a long side-conversation about their other kids' schedules, send "love it, want to take this offline?" That ends it without making anyone feel bad.
 

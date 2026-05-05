@@ -48,11 +48,11 @@ A few specifics.
 
 **Season structure.** All-star season runs roughly August through April. Tryouts in May/June. Practices begin June/July. Competition season starts in November/December and runs through April. Major events: NCA, UCA, The Summit, Worlds.
 
-**Equipment.** Cheer shoes ($60-100), uniform (provided by gym at significant cost — see cost calculator), bow, warm-ups, practice clothes. Mat shoes for practice (sometimes).
+**Equipment.** Cheer shoes ($60-100), uniform (provided by gym at significant cost, see cost calculator), bow, warm-ups, practice clothes. Mat shoes for practice (sometimes).
 
 **Practice intensity.** Competitive all-star teams practice 6-12 hours per week, with additional tumbling, conditioning, and choreography sessions during peak season.
 
-**Stunting and tumbling progression.** USASF restricts skills by level. A Level 1 team can't do a back handspring. A Level 6 team can do double-twisting basket tosses. The rules exist for safety — kids learning at age-appropriate levels under trained coaches reduces injury rates.
+**Stunting and tumbling progression.** USASF restricts skills by level. A Level 1 team can't do a back handspring. A Level 6 team can do double-twisting basket tosses. The rules exist for safety, kids learning at age-appropriate levels under trained coaches reduces injury rates.
 
 **Body conversation.** Specific to cheer: stunt-related concussion is a real concern. Wrist and ankle injuries from tumbling are common. The body hub on concussion applies. Year-round stunting culture creates burnout risk; the off-season exists in name but is often filled with private lessons and choreography prep.
 

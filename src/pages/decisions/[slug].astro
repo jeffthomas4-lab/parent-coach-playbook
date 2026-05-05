@@ -31,11 +31,11 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
   <!-- Hero -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> ·
         <a href="/decisions/" class="hover:underline">Decisions</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(decision.data.title)} />
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(decision.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {decision.data.summary}
       </p>
@@ -45,8 +45,8 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
   <!-- The question reframed -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-8 max-w-3xl">
-      <p class="font-display italic text-rust mb-2 text-sm" style="font-weight: 500;">The real question</p>
-      <p class="font-display text-ink text-xl leading-snug" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 text-sm font-medium">The real question</p>
+      <p class="font-display text-ink text-xl leading-snug font-medium">
         {decision.data.theQuestion}
       </p>
     </div>
@@ -58,20 +58,20 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         {decision.data.benefits.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm" style="color: #5C7459; font-weight: 500;">Benefits</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #5C7459">Benefits</p>
             <ul class="grid gap-2">
               {decision.data.benefits.map((b) => (
-                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {b}</li>
+                <li class="font-display text-ink leading-snug pl-4 -indent-4" style="font-weight: 400;">· {b}</li>
               ))}
             </ul>
           </div>
         )}
         {decision.data.costs.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm" style="color: #C5713D; font-weight: 500;">Costs</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #C5713D">Costs</p>
             <ul class="grid gap-2">
               {decision.data.costs.map((c) => (
-                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {c}</li>
+                <li class="font-display text-ink leading-snug pl-4 -indent-4" style="font-weight: 400;">· {c}</li>
               ))}
             </ul>
           </div>
@@ -86,20 +86,20 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         {decision.data.signsItsAGoodFit.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm" style="color: #5C7459; font-weight: 500;">Signs it's a good fit</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #5C7459">Signs it's a good fit</p>
             <ul class="grid gap-2">
               {decision.data.signsItsAGoodFit.map((s) => (
-                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
               ))}
             </ul>
           </div>
         )}
         {decision.data.signsItsNot.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm" style="color: #C5713D; font-weight: 500;">Signs it's not</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #C5713D">Signs it's not</p>
             <ul class="grid gap-2">
               {decision.data.signsItsNot.map((s) => (
-                <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {s}</li>
+                <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
               ))}
             </ul>
           </div>
@@ -112,10 +112,10 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
   {decision.data.howToHandleIt.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How to handle the conversation</p>
+        <p class="font-display italic text-rust mb-3 text-sm font-medium">How to handle the conversation</p>
         <ul class="grid gap-2">
           {decision.data.howToHandleIt.map((h) => (
-            <li class="font-display text-ink leading-snug" style="font-weight: 400;">— {h}</li>
+            <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {h}</li>
           ))}
         </ul>
       </div>
@@ -125,8 +125,8 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
   <!-- The rule -->
   <section class="border-b border-bone bg-ink text-paper">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm" style="color: #D4AB6A; font-weight: 500;">The rule</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug" style="font-weight: 500;">
+      <p class="font-display italic mb-3 text-sm font-medium" style="color: #D4AB6A">The rule</p>
+      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
         {decision.data.theRule}
       </p>
     </div>
@@ -145,24 +145,24 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
   {(relatedScripts.length > 0 || relatedDecisions.length > 0) && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10">
-        <p class="font-display italic text-rust mb-4" style="font-weight: 500;">You might also need</p>
+        <p class="font-display italic text-rust mb-4 font-medium">You might also need</p>
         <div class="grid md:grid-cols-2 gap-6">
           {relatedScripts.length > 0 && (
             <div>
-              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Scripts</p>
+              <p class="font-display text-ink text-sm mb-3 font-medium">Scripts</p>
               <ul class="grid gap-2">
                 {relatedScripts.map(s => (
-                  <li><a href={`/scripts/${s.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(s.data.title)} /></a></li>
+                  <li><a href={`/scripts/${s.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(s.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
           )}
           {relatedDecisions.length > 0 && (
             <div>
-              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Other decisions</p>
+              <p class="font-display text-ink text-sm mb-3 font-medium">Other decisions</p>
               <ul class="grid gap-2">
                 {relatedDecisions.map(d => (
-                  <li><a href={`/decisions/${d.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(d.data.title)} /></a></li>
+                  <li><a href={`/decisions/${d.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(d.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
@@ -172,5 +172,4 @@ const relatedDecisions = (decision.data.relatedDecisions ?? [])
     </section>
   )}
 
-  <LeadMagnetCTA />
-</BaseLayout>
+  <Lea

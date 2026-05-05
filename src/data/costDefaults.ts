@@ -2,7 +2,7 @@
 //
 // Numbers are national medians as of 2026, sourced from Project Play, the Aspen
 // Institute State of Play reports, and a synthesis of public registration fee
-// data. Treat them as starting points — the calculator is editable inline so
+// data. Treat them as starting points: the calculator is editable inline so
 // parents can dial in their actual numbers and share the result.
 //
 // Add more profiles by following the shape below. Calculator falls back to a
@@ -13,11 +13,11 @@ export type CostLine = {
   label: string;
   default: number;        // annual dollars
   hint?: string;
-  hideable?: boolean;     // line items parents often forget — toggle on/off
+  hideable?: boolean;     // line items parents often forget: toggle on/off
 };
 
 export type CostSource = {
-  label: string;          // "Aspen Institute Project Play — State of Play 2024"
+  label: string;          // "Aspen Institute Project Play: State of Play 2024"
   url: string;            // public link
 };
 
@@ -32,75 +32,75 @@ export type CostProfile = {
 
 // Sources that apply across many profiles. Keep in one place so updates are easy.
 const BASE_SOURCES: CostSource[] = [
-  { label: 'Aspen Institute Project Play — State of Play 2025',                  url: 'https://projectplay.org/state-of-play-2025/introduction' },
-  { label: 'Project Play — National Youth Sports Parent Survey (cost data)',     url: 'https://projectplay.org/news/2025/2/24/project-play-survey-family-spending-on-youth-sports-rises-46-over-five-years' },
-  { label: 'Project Play — Research index (State of Play archive)',              url: 'https://projectplay.org/research' },
+  { label: 'Aspen Institute Project Play: State of Play 2025',                  url: 'https://projectplay.org/state-of-play-2025/introduction' },
+  { label: 'Project Play: National Youth Sports Parent Survey (cost data)',     url: 'https://projectplay.org/news/2025/2/24/project-play-survey-family-spending-on-youth-sports-rises-46-over-five-years' },
+  { label: 'Project Play: Research index (State of Play archive)',              url: 'https://projectplay.org/research' },
 ];
 
 const HOCKEY_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USA Hockey — Cost of Hockey resources',                 url: 'https://www.usahockey.com/' },
+  { label: 'USA Hockey: Cost of Hockey resources',                 url: 'https://www.usahockey.com/' },
 ];
 
 const BASEBALL_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'Little League International — League fee structure',    url: 'https://www.littleleague.org/' },
+  { label: 'Little League International: League fee structure',    url: 'https://www.littleleague.org/' },
   { label: 'Perfect Game / Travel Ball annual cost coverage',        url: 'https://www.perfectgame.org/' },
 ];
 
 const FOOTBALL_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USA Football — Participation and program data',         url: 'https://usafootball.com/' },
-  { label: 'NFHS — High school participation survey',                url: 'https://www.nfhs.org/articles/high-school-participation/' },
+  { label: 'USA Football: Participation and program data',         url: 'https://usafootball.com/' },
+  { label: 'NFHS: High school participation survey',                url: 'https://www.nfhs.org/articles/high-school-participation/' },
 ];
 
 const SOCCER_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'US Youth Soccer — Costs and participation',             url: 'https://www.usyouthsoccer.org/' },
-  { label: 'ECNL — Member club fee disclosures',                     url: 'https://www.theecnl.com/' },
+  { label: 'US Youth Soccer: Costs and participation',             url: 'https://www.usyouthsoccer.org/' },
+  { label: 'ECNL: Member club fee disclosures',                     url: 'https://www.theecnl.com/' },
 ];
 
 const VOLLEYBALL_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USA Volleyball — Junior program guidance',              url: 'https://usavolleyball.org/' },
-  { label: 'JVA (Junior Volleyball Association) — Club resources',  url: 'https://www.jvaonline.org/' },
+  { label: 'USA Volleyball: Junior program guidance',              url: 'https://usavolleyball.org/' },
+  { label: 'JVA (Junior Volleyball Association): Club resources',  url: 'https://www.jvaonline.org/' },
 ];
 
 const GYMNASTICS_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USA Gymnastics — Membership and program info',          url: 'https://usagym.org/' },
+  { label: 'USA Gymnastics: Membership and program info',          url: 'https://usagym.org/' },
 ];
 
 const SWIMMING_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USA Swimming — Membership and meet fee structures',      url: 'https://www.usaswimming.org/' },
+  { label: 'USA Swimming: Membership and meet fee structures',      url: 'https://www.usaswimming.org/' },
 ];
 
 const LACROSSE_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'US Lacrosse — Participation and program data',          url: 'https://www.usalacrosse.com/' },
+  { label: 'US Lacrosse: Participation and program data',          url: 'https://www.usalacrosse.com/' },
 ];
 
 const BASKETBALL_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'AAU Basketball — Tournament and membership info',       url: 'https://aaubasketball.org/' },
-  { label: 'NCAA recruiting calendar (basketball)',                  url: 'https://www.ncaa.org/sports/2018/8/24/recruiting-calendars-and-information.aspx' },
+  { label: 'AAU Basketball: Tournament and membership info',       url: 'https://aau.com/sports/basketball' },
+  { label: 'NCAA recruiting calendar (basketball)',                  url: 'https://www.ncaa.org/sports/2013/12/17/probability-of-competing-beyond-high-school.aspx' },
 ];
 
 const DANCE_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'Dance Studio Owners Association — Industry pricing',    url: 'https://danceshop.com/' },
-  { label: 'NUVO Dance Convention — Competition fee transparency',   url: 'https://www.nuvodance.com/' },
+  { label: 'Dance Studio Owners Association: Industry pricing',    url: 'https://danceshop.com/' },
+  { label: 'NUVO Dance Convention: Competition fee transparency',   url: 'https://www.nuvodance.com/' },
 ];
 
 const CHEER_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USASF — All-star cheer program structure',              url: 'https://www.usasf.net/' },
+  { label: 'USASF: All-star cheer program structure',              url: 'https://www.usasf.net/' },
 ];
 
 const TENNIS_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
-  { label: 'USTA — Junior program participation and cost data',     url: 'https://www.usta.com/en/home/play/youth-tennis.html' },
+  { label: 'USTA: Junior program participation and cost data',     url: 'https://www.usta.com/en/home/play/youth-tennis.html' },
 ];
 
 const REC: CostLine[] = [

@@ -1,5 +1,5 @@
 ---
-title: "AAU basketball 12U — year-round travel"
+title: "AAU basketball 12U: year-round travel"
 sport: "basketball"
 level: "travel"
 region: "National"
@@ -23,7 +23,7 @@ months:
     events: ["Tournaments most weekends", "Spring break tournament (national event)"]
   - key: may
     intensity: peak
-    events: ["Live period weekend (high school staff can watch — for older kids; previewable at 12U)", "Tournaments most weekends"]
+    events: ["Live period weekend (high school staff can watch: for older kids; previewable at 12U)", "Tournaments most weekends"]
   - key: jun
     intensity: peak
     events: ["Three or four tournaments", "Some teams add a regional showcase"]

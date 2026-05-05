@@ -44,7 +44,7 @@ A few things to know.
 
 **Format varies.** NFL Flag uses 5v5 in most age groups. Some youth leagues use 7v7 or 8v8. Check your league.
 
-**Equipment requirements.** Mouthguard, cleats (rubber stud only — no metal), flag belt (usually team-supplied). Optional: gloves, padded compression shorts.
+**Equipment requirements.** Mouthguard, cleats (rubber stud only, no metal), flag belt (usually team-supplied). Optional: gloves, padded compression shorts.
 
 **Safety profile.** Flag has dramatically lower injury rates than tackle, especially for concussion. The trade-off is no contact technique development; kids who go from flag to tackle in middle school often need to learn tackling and blocking from scratch.
 

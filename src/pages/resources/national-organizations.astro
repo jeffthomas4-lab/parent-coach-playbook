@@ -23,7 +23,7 @@ const orgGroups = [
       { name: 'USA Baseball', short: 'Baseball governing body, USABat standard', url: 'https://www.usabaseball.com', note: 'Defines the USABat certification stamp required by Little League, Cal Ripken, Pony, and most youth leagues.' },
       { name: 'USSSA', short: 'United States Specialty Sports Association', url: 'https://www.usssa.com', note: 'Travel ball certification authority. The 1.15 BPF stamp on bats comes from here.' },
       { name: 'Little League International', short: 'The standard youth baseball/softball league', url: 'https://www.littleleague.org', note: 'Field maintenance guides, coaching certifications, and rule books that most rec leagues mirror.' },
-      { name: 'USA Softball', short: 'Softball governing body and ASA stamp', url: 'https://www.teamusa.com/usa-softball', note: 'Certifies softball bats and balls. The ASA/USA Softball stamp is required by most fastpitch leagues.' },
+      { name: 'USA Softball', short: 'Softball governing body and ASA stamp', url: 'https://www.usasoftball.com/', note: 'Certifies softball bats and balls. The ASA/USA Softball stamp is required by most fastpitch leagues.' },
       { name: 'US Youth Soccer', short: 'The national youth soccer governing body', url: 'https://www.usyouthsoccer.org', note: 'Coaching education, parent guides, and small-sided game standards for U6 through U19.' },
       { name: 'USA Lacrosse', short: 'The national lacrosse governing body', url: 'https://www.usalacrosse.com', note: 'Equipment standards including the NOCSAE ND200 chest protector requirement, plus boys and girls youth rulebooks.' },
       { name: 'USA Hockey', short: 'The national hockey governing body', url: 'https://www.usahockey.com', note: 'HECC certification for helmets, the American Development Model, and age-band guidelines.' },
@@ -37,7 +37,7 @@ const orgGroups = [
       { name: 'USA Cheer', short: 'National governing body for cheerleading and STUNT', url: 'https://www.usacheer.org', note: 'Rules, safety standards, and competition guidelines for team cheerleading.' },
       { name: 'USA Cheer / USASF (Cheer All-Star)', short: 'All-Star competitive cheer side', url: 'https://www.usasf.net', note: 'Governs the all-star competitive cheerleading circuit separate from school cheerleading.' },
       { name: 'USTA (USA Tennis)', short: 'National governing body for tennis', url: 'https://www.usta.org', note: 'Junior tennis programs, USTA Junior Team Tennis, and youth development frameworks.' },
-      { name: 'USA Karate', short: 'National governing body for sport karate', url: 'https://www.teamusakarate.org', note: 'Rules, age divisions, and competition standards for youth karate athletes.' },
+      { name: 'USA Karate', short: 'National governing body for sport karate', url: 'https://www.usankf.org/', note: 'Rules, age divisions, and competition standards for youth karate athletes.' },
       { name: 'USA Taekwondo', short: 'National governing body for taekwondo', url: 'https://www.usataekwondo.org', note: 'Sets standards, age groups, and competition guidelines for youth taekwondo.' },
       { name: 'NFL Flag', short: 'The dominant national flag football league', url: 'https://www.nflflag.com', note: 'Operates youth flag football programs and sanctioned tournaments nationwide.' },
       { name: 'AYF (American Youth Football)', short: 'Youth tackle football and flag', url: 'https://www.americanyouthfootball.com', note: 'Rules, safety standards, and age-group guidelines for youth tackle and flag football.' },
@@ -63,7 +63,7 @@ const orgGroups = [
       { name: 'TrueSport (USADA)', short: 'Sportsmanship and clean-sport education', url: 'https://truesport.org', note: 'Lessons and free resources on sportsmanship, character, and performance for coaches and parents.' },
       { name: 'Project Play (Aspen Institute)', short: 'Research and policy on youth sports', url: 'https://projectplay.org', note: 'Annual State of Play reports and the eight playbooks for healthier youth sport. Research-grade.' },
       { name: 'Association for Applied Sport Psychology', short: 'Find a certified mental performance consultant', url: 'https://appliedsportpsych.org', note: 'When a kid needs more than a parent or a coach can offer, this is how to find a credentialed sport psychologist.' },
-      { name: 'USOPC Grassroots Hub', short: 'U.S. Olympic and Paralympic Committee', url: 'https://www.usopc.org/coaching-grassroots', note: 'Athlete-centered coaching frameworks aligned with the Olympic and Paralympic movement.' },
+      { name: 'USOPC Grassroots Hub', short: 'U.S. Olympic and Paralympic Committee', url: 'https://www.usopc.org/', note: 'Athlete-centered coaching frameworks aligned with the Olympic and Paralympic movement.' },
     ],
   },
 ];
@@ -74,14 +74,14 @@ const orgGroups = [
 >
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-20">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">National organizations</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-4 font-medium">National organizations</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         The bodies behind <em class="text-rust">the rules</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
         When we say "NOCSAE certified" or "USABat stamp" or "VTI 5-star" or "ASTM-certified goggles," these are the organizations that decided. We link to them so you can verify, dig deeper, or take a coaching certification straight from the source.
       </p>
-      <p class="font-display italic text-ink-soft mt-4 max-w-2xl leading-snug" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft mt-4 max-w-2xl leading-snug font-medium">
         These are not our competitors. They are the institutional ground we build on.
       </p>
     </div>
@@ -91,7 +91,7 @@ const orgGroups = [
     <section class="border-b border-bone">
       <div class="container-px py-12 grid md:grid-cols-12 gap-8">
         <div class="md:col-span-4">
-          <p class="font-display italic text-rust" style="font-weight: 500; font-size: 1.05rem;">{g.label}</p>
+          <p class="font-display italic text-rust font-medium" style="font-size: 1.05rem">{g.label}</p>
           <p class="font-display text-ink-soft mt-2 leading-snug">{g.blurb}</p>
         </div>
         <div class="md:col-span-8">
@@ -103,10 +103,9 @@ const orgGroups = [
                     href={item.url}
                     target="_blank"
                     rel="noopener"
-                    class="font-display text-ink hover:text-rust text-xl leading-tight"
-                    style="font-weight: 500;"
+                    class="font-display text-ink hover:text-rust text-xl leading-tight font-medium"
                   >{item.name} <span aria-hidden="true">↗</span></a>
-                  <span class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">{item.short}</span>
+                  <span class="font-display italic text-ink-soft text-xs font-medium">{item.short}</span>
                 </div>
                 <p class="font-display text-ink-soft mt-2 leading-snug text-sm">{item.note}</p>
               </li>
@@ -119,7 +118,7 @@ const orgGroups = [
 
   <section class="border-b border-bone">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">A note on sourcing</p>
+      <p class="font-display italic text-rust mb-3 font-medium">A note on sourcing</p>
       <div class="article-body">
         <p>The Parent-Coach Playbook does not duplicate the work of the organizations on this page. We summarize, contextualize, and translate their guidance into language that fits a parent who is also the coach. When we make a specific factual claim about a certification, equipment standard, or rule, we link to the source.</p>
         <p>If you find an error in a fact we cite, email us at <a href="mailto:parentcoachplaybook@gmail.com">parentcoachplaybook@gmail.com</a>. We correct corrections fast.</p>

@@ -87,7 +87,7 @@ For most prospects:
 
 **Junior year.** September 1: send introduction emails to D1 coaches with film, transcript, schedule. Email D2, D3, NAIA earlier. Attend 2 to 4 high-leverage college recruiting clinics. Take unofficial visits.
 
-**Senior year.** Take official visits, sign in NLI windows. D3 recruiting often runs into spring of senior year — late commits are common and not a bad sign.
+**Senior year.** Take official visits, sign in NLI windows. D3 recruiting often runs into spring of senior year, late commits are common and not a bad sign.
 
 ## Parent traps to avoid
 

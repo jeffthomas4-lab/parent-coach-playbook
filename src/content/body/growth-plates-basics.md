@@ -6,11 +6,11 @@ sportTags: ["multi-sport"]
 ageBands: ["8-10", "11-12", "13-14"]
 publishedAt: 2026-04-22
 governingBodies:
-  - name: "AAOS — Sever's Disease (Calcaneal Apophysitis)"
-    url: "https://orthoinfo.aaos.org/en/diseases--conditions/severs-disease-calcaneal-apophysitis/"
-  - name: "AAOS — Osgood-Schlatter Disease"
+  - name: "AAOS: Sever's Disease (Calcaneal Apophysitis)"
+    url: "https://orthoinfo.aaos.org/en/diseases--conditions/"
+  - name: "AAOS: Osgood-Schlatter Disease"
     url: "https://orthoinfo.aaos.org/en/diseases--conditions/osgood-schlatter-disease-knee-pain/"
-  - name: "AAP — Overuse Injuries in Children and Adolescents"
+  - name: "AAP: Overuse Injuries in Children and Adolescents"
     url: "https://publications.aap.org/pediatrics/article/119/6/1242/70488"
 doctorQuestions:
   - "Is this Sever's, Osgood-Schlatter's, or something else?"
@@ -30,7 +30,7 @@ gearPicks:
 
 Growth plates are the soft cartilage zones at the ends of children's bones where new bone forms during growth. They are weaker than the surrounding bone and ligament, which is why kids' bones heal fast (high growth-plate activity) and also why certain spots hurt during growth spurts.
 
-The two most-common growth-plate-related conditions in youth athletes are Sever's disease (heel) and Osgood-Schlatter's disease (knee). Despite the word "disease," both are normal growth-related conditions, not infections or chronic illnesses. The medical term is "apophysitis" — inflammation at the spot where a tendon attaches to a growth plate.
+The two most-common growth-plate-related conditions in youth athletes are Sever's disease (heel) and Osgood-Schlatter's disease (knee). Despite the word "disease," both are normal growth-related conditions, not infections or chronic illnesses. The medical term is "apophysitis", inflammation at the spot where a tendon attaches to a growth plate.
 
 **Sever's disease (heel pain).** Most common in kids 8-12 doing impact sports (soccer, basketball, gymnastics, running, baseball with sliding). Pain is at the back of the heel, worse with activity and after running, often present in both heels. The cause is rapid growth combined with calf tightness and Achilles tension pulling on the heel growth plate. Treatment: ice after activity, calf stretching, heel cups in shoes, modified activity if pain is significant. Resolves on its own once the growth plate fuses (around 14-15).
 

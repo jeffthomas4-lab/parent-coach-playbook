@@ -1,5 +1,5 @@
 ---
-title: "Dance studio year — competition + recital cycle"
+title: "Dance studio year: competition + recital cycle"
 sport: "dance"
 level: "travel"
 region: "National"
@@ -48,7 +48,7 @@ months:
     events: ["Holiday performances (community)", "Brief studio break"]
 ---
 
-Competition dance is the most under-explained activity in this site's content. Studio dancers spend more hours per week than most travel-sport athletes — a competitive 13-year-old often dances 12 to 18 hours a week across technique class, jazz, lyrical, ballet, and rehearsal. The annual cost is comparable to club soccer or AAU basketball, and most parents going in for the first year don't realize that.
+Competition dance is the most under-explained activity in this site's content. Studio dancers spend more hours per week than most travel-sport athletes, a competitive 13-year-old often dances 12 to 18 hours a week across technique class, jazz, lyrical, ballet, and rehearsal. The annual cost is comparable to club soccer or AAU basketball, and most parents going in for the first year don't realize that.
 
 The recital is the year's anchor. Whatever else happens, the recital weekend is locked. Plan the rest of the family's June around it.
 

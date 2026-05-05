@@ -31,7 +31,7 @@ const articleSchema = {
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
-    logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.png` },
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
   },
   datePublished: data.publishedAt.toISOString(),
   mainEntityOfPage: `${SITE.url}/${data.phase}/${slug}/`,
@@ -54,6 +54,12 @@ const tagBits = [
 ].filter(Boolean);
 const titleHtml = data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 const isShort = data.format === 'note';
+
+// Last reviewed: surface the most recent editorial review date if it exceeds publishedAt.
+const reviewedRaw = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
+const reviewedDate = reviewedRaw ? new Date(reviewedRaw) : null;
+const showReviewed = reviewedDate !== null && reviewedDate.getTime() > data.publishedAt.getTime();
+const dateOpts = { month: 'long', day: 'numeric', year: 'numeric' } as const;
 ---
 <BaseLayout
   title={data.title.replace(/\*/g, '')}
@@ -78,7 +84,7 @@ const isShort = data.format === 'note';
     <header class="max-w-prose mx-auto">
       <h1
         class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
-        style="font-weight: 500;"
+        class="font-medium"
         set:html={titleHtml}
       />
       {data.dek && !isShort && (
@@ -89,11 +95,14 @@ const isShort = data.format === 'note';
 
       <!-- Byline -->
       <div class="mt-8 pt-5 border-t border-bone">
-        <div class="font-display italic text-rust" style="font-weight: 500;">
+        <div class="font-display italic text-rust font-medium">
           {EDITORIAL.byline}
         </div>
         <div class="font-display italic text-ink-soft text-sm mt-1">
-          {data.publishedAt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          Published {data.publishedAt.toLocaleDateString('en-US', dateOpts)}
+          {showReviewed && reviewedDate && (
+            <span> · Last reviewed {reviewedDate.toLocaleDateString('en-US', dateOpts)}</span>
+          )}
           {' · '}
           {isShort ? 'short read' : 'longer read'}
         </div>
@@ -106,7 +115,7 @@ const isShort = data.format === 'note';
 
     <!-- Editorial note at the bottom -->
     <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">About this piece</p>
+      <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
       <p class="font-display text-ink-soft text-sm leading-snug">
         Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
       </p>

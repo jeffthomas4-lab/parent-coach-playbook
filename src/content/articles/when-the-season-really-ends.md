@@ -19,7 +19,7 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
   status: claude-reviewed
-  reviewerNotes: "Useful and rare angle — the post-season void rather than the last game itself."
+  reviewerNotes: "Useful and rare angle: the post-season void rather than the last game itself."
 ---
 
 The last game of a season is not the end of the season. The end of the season is the following Tuesday, when there is no practice, the gear bag is by the door, and nobody knows what to do with the suddenly empty 5pm hour.

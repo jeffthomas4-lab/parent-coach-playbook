@@ -21,7 +21,7 @@ Most kids at this age play short-sided games (3v3 or 5v5) on small fields. The g
 
 Plastic-stud soccer cleats are standard at every age. For a 5-to-7-year-old, look for cleats with a wide toe box (kids' feet are still growing wide).
 
-How to choose: thumb width gap at the toe (with the kid standing). Heel should be snug — no slipping when they walk. Avoid black-only cleats; kids this age love color and they're more likely to wear them.
+How to choose: thumb width gap at the toe (with the kid standing). Heel should be snug, no slipping when they walk. Avoid black-only cleats; kids this age love color and they're more likely to wear them.
 
 Cost range: $25–45. Don't go higher; they will outgrow them in 4 to 6 months.
 
@@ -151,43 +151,4 @@ The kids who get better between seasons are the kids who touch the ball every da
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Soccer · Backyard</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Soccer rebound net</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Returns the ball back to the player. Solo passing, shooting, first-touch reps with no parent throwing.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The backyard tool that gets the most reps per dollar. Worth it from age 8 up.</p>
-    <a href="/go/soccer-rebound-net/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Soccer · Cleats</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth soccer cleats</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Entry-level cleats for ages 6-12. Molded studs work for grass and most modern turf fields.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Right price for a foot that grows two sizes a year.</p>
-    <a href="/go/soccer-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Soccer · Practice</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Agility cones (12-pack)</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Stackable cones for backyard dribbling channels, gates, and footwork ladders.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The cheapest piece of training gear that actually changes how a kid touches the ball.</p>
-    <a href="/go/agility-cones/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-## A few honest notes
-
-Don't buy expensive cleats for a 6-year-old. They outgrow them in a season.
-
-Don't get talked into "soccer-specific" socks, headbands, or arm sleeves. The base kit is enough until age 12.
-
-The most expensive part of soccer is the league. A $200 set of gear is cheap compared to $400 a season for the team.
-
-If your kid plays goalie, get them a real pair of goalie gloves. The shared team pair has been used by ten kids and smells like a trash can.
-
-## Sizing 
+    <p class="font-display text-ink-soft mt-4 leading-sn

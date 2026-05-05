@@ -93,7 +93,7 @@ bands:
       - "Club level: top-tier (Black Wolves, Brotherhood, Crabs, Express, etc.) or regional?"
       - "Cross-training: still appropriate. Multi-sport athletes outperform specialists at this age."
       - "Lift program: start with bodyweight, ramp into loaded movements with supervision"
-      - "Tournament travel becomes significant — Crab Feast, Naptown Brawl, etc."
+      - "Tournament travel becomes significant: Crab Feast, Naptown Brawl, etc."
   - age: "15-plus"
     skillMilestones:
       - "Varsity-level technical and tactical execution"

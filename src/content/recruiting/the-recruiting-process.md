@@ -72,7 +72,7 @@ Recruiting is not one process. It is three variables stacked on top of each othe
 
 There are five practical levels of college sports. Each one has its own recruiting culture, money, and timeline. Here is the honest version.
 
-**Division I.** The big one. Television contracts, scholarships, dedicated recruiting staff, official visit budgets. Roughly 350 schools. Recruiting starts early — for some sports, very early. The recruiting process here is the most professionalized and the most cutthroat. If your kid is being recruited at this level, you will probably know by the end of sophomore year. If you are getting form mailers and questionnaires only, that is interest, not recruitment.
+**Division I.** The big one. Television contracts, scholarships, dedicated recruiting staff, official visit budgets. Roughly 350 schools. Recruiting starts early, for some sports, very early. The recruiting process here is the most professionalized and the most cutthroat. If your kid is being recruited at this level, you will probably know by the end of sophomore year. If you are getting form mailers and questionnaires only, that is interest, not recruitment.
 
 **Division II.** About 300 schools. Athletic scholarships exist but are typically partial and stack with academic aid. The culture is somewhere between D1 and D3. The recruiting timeline is later than D1, often picking up junior and senior year, and the contact volume is lower. Many D2 programs are excellent, regionally strong, and a much better fit for many athletes than the D1 schools their families fixate on.
 
@@ -92,7 +92,7 @@ This is where the page you are reading branches into the rest of the site. Here 
 
 - **The recruiting calendar.** A baseball player committing in tenth grade is not unusual. A football player committing in tenth grade is. Sport calendars are different.
 - **Showcase culture.** Soccer recruiting runs through ECNL and ID camps. Lacrosse recruiting runs through summer tournaments. Football recruiting runs through camps and combines. Volleyball recruiting runs through club. Each sport has its own infrastructure that you have to plug into to be seen.
-- **Scholarship math.** Football and men's and women's basketball at the D1 level are headcount sports — full scholarships. Most other sports are equivalency sports — the same scholarship pool gets divided across many athletes. A "scholarship" in baseball at D1 is often 25 percent of tuition. That is a different conversation than a full ride.
+- **Scholarship math.** Football and men's and women's basketball at the D1 level are headcount sports, full scholarships. Most other sports are equivalency sports, the same scholarship pool gets divided across many athletes. A "scholarship" in baseball at D1 is often 25 percent of tuition. That is a different conversation than a full ride.
 - **Roster size.** A football roster carries 100 players. A women's golf roster carries 8. The math of how many kids any program can take per year is wildly different by sport.
 - **Position scarcity.** Some positions in some sports are routinely overrecruited. Others are perpetually thin. Knowing which one your kid plays changes how you approach the process.
 
@@ -184,13 +184,13 @@ Each sport page below has the same five sections, so you can compare apples to a
 Pick your sport.
 
 - [Football →](/recruiting/football/)
-- Basketball — coming
-- Baseball — coming
-- Softball — coming
-- Soccer — coming
-- Lacrosse — coming
-- Volleyball — coming
-- Hockey — coming
+- Basketball, coming
+- Baseball, coming
+- Softball, coming
+- Soccer, coming
+- Lacrosse, coming
+- Volleyball, coming
+- Hockey, coming
 
 Non-sport-specific pieces parents ask about most:
 
@@ -200,3 +200,4 @@ Non-sport-specific pieces parents ask about most:
 - [What verbal commits actually mean (and don't)](/recruiting/what-verbal-commits-mean/)
 
 This guide was written by the Parent Coach Playbook editorial team with input from coaches across every NCAA division and from families navigating offers from D1 through JUCO. It is published for parents, not for sale.
+                                  

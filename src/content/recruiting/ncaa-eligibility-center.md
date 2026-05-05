@@ -21,10 +21,10 @@ editorial:
 governingBodies:
   - name: "NCAA Eligibility Center"
     url: "https://web3.ncaa.org/ecwr3/"
-  - name: "NCAA — Eligibility for D1"
-    url: "https://www.ncaa.org/sports/2014/10/9/division-i-academic-requirements-college-bound-student-athletes.aspx"
-  - name: "NCAA — Eligibility for D2"
-    url: "https://www.ncaa.org/sports/2014/10/9/division-ii-academic-requirements-college-bound-student-athletes.aspx"
+  - name: "NCAA: Eligibility for D1"
+    url: "https://web3.ncaa.org/ecwr3/"
+  - name: "NCAA: Eligibility for D2"
+    url: "https://web3.ncaa.org/ecwr3/"
 ---
 
 The NCAA Eligibility Center is the office that decides whether your kid is eligible to compete at D1 or D2 schools, regardless of how many offers they get. It is administrative. It is unforgiving. It costs nothing to comply with and breaks athletes who ignore it.
@@ -33,13 +33,13 @@ The NCAA Eligibility Center is the office that decides whether your kid is eligi
 
 **Register when.** Most families register at the end of sophomore year or beginning of junior year. There is no benefit to registering earlier. The cost is roughly $100 (more for international students). The fee is waived for students who qualify based on financial need.
 
-**The 16 core courses for D1.** Four years of English. Three years of math (Algebra 1 or higher). Two years of natural/physical science (one with a lab). One additional year of English, math, or science. Two years of social science. Four years of additional core courses from any of the above areas, foreign language, or comparative religion/philosophy. Your high school registers its course list with the NCAA — check that the classes your kid is taking actually count.
+**The 16 core courses for D1.** Four years of English. Three years of math (Algebra 1 or higher). Two years of natural/physical science (one with a lab). One additional year of English, math, or science. Two years of social science. Four years of additional core courses from any of the above areas, foreign language, or comparative religion/philosophy. Your high school registers its course list with the NCAA, check that the classes your kid is taking actually count.
 
 **The GPA math.** D1 requires a 2.3 minimum core-course GPA. D2 requires 2.2. There's a sliding-scale relationship between GPA and test scores: higher GPA allows lower test scores and vice versa. The NCAA publishes the sliding scale; bookmark it.
 
 **Test scores.** As of 2026, NCAA D1 and D2 are test-optional for initial eligibility. Many individual schools still require or strongly prefer test scores for admissions and athletic scholarship eligibility. Take the SAT or ACT junior year regardless.
 
-**Amateurism certification.** Separate from academics, the Eligibility Center also certifies amateur status — meaning the kid hasn't accepted prize money, contracted with an agent, or done other things that would compromise NCAA eligibility. The NIL rules (since 2021) carve out specific allowed activities; outside of NIL, the amateurism rules are still strict.
+**Amateurism certification.** Separate from academics, the Eligibility Center also certifies amateur status, meaning the kid hasn't accepted prize money, contracted with an agent, or done other things that would compromise NCAA eligibility. The NIL rules (since 2021) carve out specific allowed activities; outside of NIL, the amateurism rules are still strict.
 
 **The most-common eligibility breakdowns.**
 1. Junior-year credit recovery in a non-NCAA-approved class. The kid retook Algebra 1 to fix a freshman D, but the recovery class isn't on the school's NCAA-approved course list. The grade doesn't count.

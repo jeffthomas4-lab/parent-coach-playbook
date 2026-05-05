@@ -102,7 +102,7 @@ if (props.kind === 'article') {
     publisher: {
       '@type': 'Organization',
       name: SITE.name,
-      logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.png` },
+      logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
     },
     datePublished: article.data.publishedAt.toISOString(),
     mainEntityOfPage: `${SITE.url}/team-parent/${article.slug}/`,
@@ -134,7 +134,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
         <p class="font-display italic mb-2" style={`color: ${cat.accent}; font-weight: 500;`}>
           <a href="/team-parent/" class="hover:underline">Team Parent</a> · <a href={`/team-parent/#${cat.slug}`} class="hover:underline">{cat.label}</a>
         </p>
-        <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(resource.data.title)} />
+        <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium" set:html={renderTitle(resource.data.title)} />
         <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
           {resource.data.summary}
         </p>
@@ -148,7 +148,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
         )}
 
         <div class="mt-7 pt-5 border-t border-bone">
-          <p class="font-display italic text-rust" style="font-weight: 500;">{EDITORIAL.byline}</p>
+          <p class="font-display italic text-rust font-medium">{EDITORIAL.byline}</p>
           <p class="font-display italic text-ink-soft text-sm mt-1">
             {fmtDate(resource.data.publishedAt)}
           </p>
@@ -197,7 +197,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
       <header class="max-w-prose mx-auto">
         <h1
           class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
-          style="font-weight: 500;"
+          class="font-medium"
           set:html={titleHtml}
         />
         {article.data.dek && !isShort && (
@@ -207,7 +207,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
         )}
 
         <div class="mt-8 pt-5 border-t border-bone">
-          <div class="font-display italic text-rust" style="font-weight: 500;">
+          <div class="font-display italic text-rust font-medium">
             {EDITORIAL.byline}
           </div>
           <div class="font-display italic text-ink-soft text-sm mt-1">
@@ -223,7 +223,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
       </div>
 
       <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone">
-        <p class="font-display italic text-rust mb-2" style="font-weight: 500;">About this piece</p>
+        <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
         <p class="font-display text-ink-soft text-sm leading-snug">
           Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
         </p>

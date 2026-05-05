@@ -26,10 +26,10 @@ const jumpNav = headings.filter((h) => h.depth === 2);
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/what-to-buy/" class="hover:underline">What to Buy</a> · {meta.category === 'sport' ? 'Sports' : 'Performing arts'}
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         What to buy for <em class="text-rust">{guide.data.activity.toLowerCase()}</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
@@ -37,13 +37,13 @@ const jumpNav = headings.filter((h) => h.depth === 2);
       </p>
       <div class="mt-6 grid sm:grid-cols-2 gap-3 max-w-2xl">
         <div class="border border-bone p-4 bg-paper-warm">
-          <p class="font-display italic text-rust text-sm" style="font-weight: 500;">Rough cost</p>
-          <p class="font-display text-ink mt-1" style="font-weight: 500;">{guide.data.costSummary}</p>
+          <p class="font-display italic text-rust text-sm font-medium">Rough cost</p>
+          <p class="font-display text-ink mt-1 font-medium">{guide.data.costSummary}</p>
         </div>
         {guide.data.seasonNote && (
           <div class="border border-bone p-4 bg-paper-warm">
-            <p class="font-display italic text-rust text-sm" style="font-weight: 500;">Season notes</p>
-            <p class="font-display text-ink mt-1" style="font-weight: 500;">{guide.data.seasonNote}</p>
+            <p class="font-display italic text-rust text-sm font-medium">Season notes</p>
+            <p class="font-display text-ink mt-1 font-medium">{guide.data.seasonNote}</p>
           </div>
         )}
       </div>
@@ -54,21 +54,20 @@ const jumpNav = headings.filter((h) => h.depth === 2);
     <div class="container-px py-12 grid lg:grid-cols-12 gap-10">
       {jumpNav.length > 1 && (
         <aside class="lg:col-span-3 lg:sticky lg:top-6 self-start">
-          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Jump to</p>
+          <p class="font-display italic text-rust mb-3 font-medium">Jump to</p>
           <ul class="grid gap-2">
             {jumpNav.map((h) => (
               <li>
                 <a
                   href={`#${h.slug}`}
-                  class="font-display italic text-ink hover:text-rust transition-colors"
-                  style="font-weight: 500;"
+                  class="font-display italic text-ink hover:text-rust transition-colors font-medium"
                 >{h.text}</a>
               </li>
             ))}
           </ul>
 
           <div class="mt-8 pt-6 border-t border-bone">
-            <p class="font-display italic text-rust text-sm" style="font-weight: 500;">{EDITORIAL.byline}</p>
+            <p class="font-display italic text-rust text-sm font-medium">{EDITORIAL.byline}</p>
             <p class="font-display italic text-ink-soft text-xs mt-1">
               Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
             </p>

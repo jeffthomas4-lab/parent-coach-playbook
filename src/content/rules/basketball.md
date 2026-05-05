@@ -2,7 +2,7 @@
 sport: "basketball"
 title: "Basketball: rules at-a-glance"
 summary: "Two teams of five, a hoop, a ball, four quarters. The rules of youth basketball in five minutes."
-fieldSetup: "Rectangular court with a hoop at each end. Three-point line, free-throw line, half-court line. Court size scales with age — youth uses smaller courts at younger ages."
+fieldSetup: "Rectangular court with a hoop at each end. Three-point line, free-throw line, half-court line. Court size scales with age: youth uses smaller courts at younger ages."
 gameLength: "Four quarters. 6-8 minutes per quarter at youth, 8 at middle school, 8 at HS, 12 in college, 12 in NBA. Clock stops on whistles, free throws, and timeouts."
 scoringBasics:
   - "Shot inside the 3-point arc: 2 points."

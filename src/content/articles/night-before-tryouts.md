@@ -7,7 +7,7 @@ sport: "multi-sport"
 age: "11-12"
 seasonPhase: "pre-season"
 publishedAt: 2026-03-19
-hero: /illustrations/night-before-tryouts.png
+hero: /illustrations/night-before-tryouts.webp
 heroAlt: "A kid's bedroom at night. Cleats, glove, and folded jersey laid out on a chair. Soft lamp light and muted rose tones, parent silhouette in doorway."
 ---
 

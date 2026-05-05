@@ -1,5 +1,5 @@
 ---
-title: "HS basketball, winter season — boys"
+title: "HS basketball, winter season: boys"
 sport: "basketball"
 level: "school"
 region: "National"
@@ -48,7 +48,7 @@ months:
     events: ["Pre-season scrimmages", "Season opener", "Holiday tournaments"]
 ---
 
-High school boys basketball has a clean dual-track shape. November through March is the school season. April through July is the AAU/travel season. The eight-week stretch where the school season ends and AAU begins is the part parents miss — there's no real off-season unless the family makes one.
+High school boys basketball has a clean dual-track shape. November through March is the school season. April through July is the AAU/travel season. The eight-week stretch where the school season ends and AAU begins is the part parents miss, there's no real off-season unless the family makes one.
 
 The AAU live periods in May and July are the recruiting moments. NCAA rules limit when college coaches can watch players in person. April, May, and July live periods are when most college recruiting happens. The biggest AAU circuits (Nike EYBL, Adidas Gauntlet, Under Armour Association) host their major events during these windows.
 

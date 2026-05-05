@@ -30,7 +30,7 @@ First overnight camp is a real moment. You're nervous. They're nervous. The list
 
 **Toiletries.** Toothbrush, toothpaste, deodorant if age-appropriate, soap, shampoo, sunscreen, bug spray, lip balm. Pack everything in a hanging shower caddy. The kid will not unpack a toiletry bag.
 
-**Sport-specific gear.** Whatever the camp said to bring. Plus a backup mouthguard. Plus a water bottle that won't leak. Plus their own ball if it's a ball sport — a familiar ball is comfort.
+**Sport-specific gear.** Whatever the camp said to bring. Plus a backup mouthguard. Plus a water bottle that won't leak. Plus their own ball if it's a ball sport, a familiar ball is comfort.
 
 **The hidden essentials.** A small flashlight or headlamp. A book they actually want to read. A deck of cards. A small notebook and a pen. A pre-stamped, pre-addressed letter to home so they remember to write. A laundry bag for dirty clothes.
 

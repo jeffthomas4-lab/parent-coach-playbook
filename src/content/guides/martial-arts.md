@@ -10,7 +10,7 @@ publishedAt: 2026-04-30
 
 ## What you actually need
 
-The gi is the first purchase, but many schools include it in the enrollment fee, so ask first. If you're buying separately, expect $40-80. The style matters: Brazilian Jiu-Jitsu requires a heavier, thicker weave gi ($60-100). Karate uses a lighter cotton gi ($40-60). Taekwondo uses a dobok, which is different ($50-80). Don't cross them over—each style has its own gear.
+The gi is the first purchase, but many schools include it in the enrollment fee, so ask first. If you're buying separately, expect $40-80. The style matters: Brazilian Jiu-Jitsu requires a heavier, thicker weave gi ($60-100). Karate uses a lighter cotton gi ($40-60). Taekwondo uses a dobok, which is different ($50-80). Don't cross them over, each style has its own gear.
 
 A belt comes from progression. Your child starts at white belt (usually included) and earns higher belts through training. You buy them only when your child advances.
 
@@ -24,11 +24,11 @@ Need to know what size? See our [Martial arts sizing guide](/what-to-buy/martial
 
 ## Used gear notes
 
-Used gis are fine from Facebook Marketplace or Play It Again Sports. Check the seams—splits are expensive to repair. Mouthguards should be new. Belts should be earned, not bought.
+Used gis are fine from Facebook Marketplace or Play It Again Sports. Check the seams, splits are expensive to repair. Mouthguards should be new. Belts should be earned, not bought.
 
 ## What you can skip
 
-Skip protective gear beyond the mouthguard until your instructor asks for it. Skip expensive branded gis—cheap ones work fine for beginners. Skip belt certificates or fancy frames. Your child knows they earned it.
+Skip protective gear beyond the mouthguard until your instructor asks for it. Skip expensive branded gis, cheap ones work fine for beginners. Skip belt certificates or fancy frames. Your child knows they earned it.
 
 ## Rules and citations
 

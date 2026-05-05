@@ -44,5 +44,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "High-search-volume keyword (what to say after losing). Distinct from 'bad game' — a loss can come from a great performance. The 'don't talk them out of feeling it' frame is the central move."
+  reviewerNotes: "High-search-volume keyword (what to say after losing). Distinct from 'bad game': a loss can come from a great performance. The 'don't talk them out of feeling it' frame is the central move."
 ---

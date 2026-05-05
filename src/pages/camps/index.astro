@@ -59,7 +59,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 <BaseLayout
   title="Camps & Leagues"
   description="Youth camps and league signups we know about. Starting in the Pacific Northwest where we can verify programs personally. National listings welcome."
-  ogImage="/illustrations/og-camps.png"
+  ogImage="/illustrations/og-camps.jpg"
 >
   <Fragment slot="head">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -67,12 +67,12 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   </Fragment>
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Camps & Leagues</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0]" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Camps & Leagues</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] font-medium">
         A directory of <em class="text-rust">camps and leagues</em> your kid can actually sign up for.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Youth camps and league signups, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live. Full programs and leagues are hidden by default — flip the toggles to see them.
+        Youth camps and league signups, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live. Full programs and leagues are hidden by default. Flip the toggles to see them.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="/camps/submit/" class="btn">Submit a program</a>
@@ -86,7 +86,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
     <div class="container-px py-8">
       <div class="grid md:grid-cols-12 gap-6 items-start">
         <div class="md:col-span-3">
-          <p class="font-display italic text-rust" style="font-weight: 500;">Where we are starting</p>
+          <p class="font-display italic text-rust font-medium">Where we are starting</p>
         </div>
         <div class="md:col-span-9 article-body">
           <p>We're starting in the Pacific Northwest where we can verify camps and leagues personally. National listings welcome but light coverage outside PNW for now. If you run a camp or league anywhere in the country and want it in the directory, <a href="/camps/submit/" class="text-rust hover:underline">submit it here</a>. We'll review and publish it.</p>
@@ -99,17 +99,17 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   <section id="all-camps">
     <div class="container-px py-12">
       {!dbAvailable ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Directory is warming up. Try again in a moment.</p>
+        <p class="font-display italic text-ink-soft font-medium">Directory is warming up. Try again in a moment.</p>
       ) : camps.length === 0 ? (
         <div>
           <img
-            src="/illustrations/camps-empty-state.png"
+            src="/illustrations/camps-empty-state.webp"
             alt="A summer camp at golden hour: a wooded lakeside, a wooden dock, two canoes."
             class="w-full max-w-3xl mb-8 rounded"
             loading="lazy"
           />
-          <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Coming online</p>
-          <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl" style="font-weight: 500;">
+          <p class="font-display italic text-rust mb-3 font-medium">Coming online</p>
+          <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl font-medium">
             No camps in the directory yet.
           </h2>
           <p class="font-display text-ink-soft mt-4 max-w-2xl leading-snug">
@@ -131,7 +131,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
             <div class="flex flex-wrap items-end gap-4 mb-6">
               {/* Search by name */}
               <div>
-                <label for="filter-search" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Search</label>
+                <label for="filter-search" class="font-display italic text-rust text-xs block mb-2 font-medium">Search</label>
                 <input
                   type="search"
                   id="filter-search"
@@ -142,7 +142,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
               {/* Sport Dropdown */}
               <div>
-                <label for="filter-sport" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Sport</label>
+                <label for="filter-sport" class="font-display italic text-rust text-xs block mb-2 font-medium">Sport</label>
                 <select id="filter-sport" class="font-display px-3 py-2 border border-bone bg-paper">
                   <option value="">All sports</option>
                 </select>
@@ -150,7 +150,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
               {/* Age Range */}
               <div>
-                <label for="filter-age-min" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Age range</label>
+                <label for="filter-age-min" class="font-display italic text-rust text-xs block mb-2 font-medium">Age range</label>
                 <div class="flex gap-2">
                   <input
                     type="number"
@@ -174,7 +174,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
               {/* Date Range */}
               <div>
-                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Date range</p>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium">Date range</p>
                 <div class="flex gap-2 items-center">
                   <input
                     type="date"
@@ -194,7 +194,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
               {/* Day/Overnight */}
               <div>
-                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Format</p>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium">Format</p>
                 <div class="flex gap-2">
                   <button data-filter-dayovernght="all" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors" data-active="true">All</button>
                   <button data-filter-dayovernght="day" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Day</button>
@@ -204,7 +204,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
               {/* Include hidden-by-default rows */}
               <div>
-                <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">Include</p>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium">Include</p>
                 <div class="flex gap-2">
                   <button id="filter-show-leagues" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Leagues</button>
                   <button id="filter-show-full" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Full programs</button>
@@ -213,7 +213,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
               {/* State Dropdown */}
               <div>
-                <label for="filter-state" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">State</label>
+                <label for="filter-state" class="font-display italic text-rust text-xs block mb-2 font-medium">State</label>
                 <select id="filter-state" class="font-display px-3 py-2 border border-bone bg-paper">
                   <option value="">All states</option>
                 </select>
@@ -222,7 +222,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
               {/* Zip + Radius */}
               <form id="filter-zip-form" class="flex gap-2 items-end">
                 <div>
-                  <label for="filter-zip" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Zip code</label>
+                  <label for="filter-zip" class="font-display italic text-rust text-xs block mb-2 font-medium">Zip code</label>
                   <input
                     type="text"
                     id="filter-zip"
@@ -232,7 +232,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                   />
                 </div>
                 <div>
-                  <label for="filter-radius" class="font-display italic text-rust text-xs block mb-2" style="font-weight: 500;">Radius</label>
+                  <label for="filter-radius" class="font-display italic text-rust text-xs block mb-2 font-medium">Radius</label>
                   <select id="filter-radius" class="font-display px-3 py-2 border border-bone bg-paper">
                     <option value="10">10 miles</option>
                     <option value="25">25 miles</option>
@@ -246,14 +246,14 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
             </div>
 
             {/* Clear Filters */}
-            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline" style="font-weight: 500;">Clear all filters</button>
+            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium">Clear all filters</button>
           </div>
 
           {/* Camps Grid */}
           <div id="camps-directory">
             {pnw.length > 0 && (
               <div class="mb-12">
-                <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Pacific Northwest</p>
+                <p class="font-display italic text-rust mb-3 font-medium">Pacific Northwest</p>
                 <div id="pnw-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
                   {pnw.map((c) => (
                     <div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id={c.id}>
@@ -263,15 +263,15 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                         </div>
                       )}
                       <div class="flex items-start justify-between gap-2 mb-1">
-                        <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                        <p class="font-display italic text-ink-soft text-xs font-medium">
                           {sportLabel(c.sport)} · ages {c.age_min}–{c.age_max} · {fmtDateRange(c.start_date, c.end_date)}
                         </p>
                         {c.verified === 1 && (
-                          <span class="font-display text-rust text-xs" style="font-weight: 500; white-space: nowrap;">Verified ✓</span>
+                          <span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>
                         )}
                       </div>
                       <a href={`/camps/${c.slug}/`} class="block">
-                        <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                        <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">
                           {c.name}
                         </h3>
                       </a>
@@ -279,7 +279,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                         {c.city}, {c.state} · {c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight'} · {c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full'}
                       </p>
                       {c.price_text && (
-                        <p class="font-display italic text-rust text-xs mt-2" style="font-weight: 500;">{c.price_text}</p>
+                        <p class="font-display italic text-rust text-xs mt-2 font-medium">{c.price_text}</p>
                       )}
                       <a href={`/camps/${c.slug}/`} class="t-cta inline-block mt-3">View</a>
                     </div>
@@ -290,7 +290,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
             {elsewhere.length > 0 && (
               <div>
-                <p class="font-display italic text-rust mb-3" style="font-weight: 500;">National</p>
+                <p class="font-display italic text-rust mb-3 font-medium">National</p>
                 <div id="national-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
                   {elsewhere.map((c) => (
                     <div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id={c.id}>
@@ -300,15 +300,15 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                         </div>
                       )}
                       <div class="flex items-start justify-between gap-2 mb-1">
-                        <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                        <p class="font-display italic text-ink-soft text-xs font-medium">
                           {sportLabel(c.sport)} · ages {c.age_min}–{c.age_max} · {fmtDateRange(c.start_date, c.end_date)}
                         </p>
                         {c.verified === 1 && (
-                          <span class="font-display text-rust text-xs" style="font-weight: 500; white-space: nowrap;">Verified ✓</span>
+                          <span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>
                         )}
                       </div>
                       <a href={`/camps/${c.slug}/`} class="block">
-                        <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+                        <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">
                           {c.name}
                         </h3>
                       </a>
@@ -316,7 +316,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
                         {c.city}, {c.state} · {c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight'} · {c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full'}
                       </p>
                       {c.price_text && (
-                        <p class="font-display italic text-rust text-xs mt-2" style="font-weight: 500;">{c.price_text}</p>
+                        <p class="font-display italic text-rust text-xs mt-2 font-medium">{c.price_text}</p>
                       )}
                       <a href={`/camps/${c.slug}/`} class="t-cta inline-block mt-3">View</a>
                     </div>
@@ -674,3 +674,4 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
     })();
   </script>
 </BaseLayout>
+   

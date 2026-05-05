@@ -9,10 +9,10 @@ featured: true
 governingBodies:
   - name: "USA Baseball Pitch Smart"
     url: "https://www.mlb.com/pitch-smart"
-  - name: "Little League International — Pitch Count Regulation"
+  - name: "Little League International: Pitch Count Regulation"
     url: "https://www.littleleague.org/playing-rules/pitch-count/"
-  - name: "American Sports Medicine Institute (ASMI) — Position Statement on Youth Baseball Pitchers"
-    url: "https://www.asmi.org/research.php?page=research&section=positionStatement"
+  - name: "American Sports Medicine Institute (ASMI): Position Statement on Youth Baseball Pitchers"
+    url: "https://asmi.org/"
 doctorQuestions:
   - "My kid pitches X innings a week. What pitch count is reasonable for their age?"
   - "How do I know the difference between normal soreness and elbow pain that needs imaging?"

@@ -17,7 +17,7 @@ commonCalls:
   - "Slow play warnings: USGA pace-of-play rules apply at tournaments. Repeated warnings = penalty."
 thingsParentsGetWrong:
   - "Golf is mostly self-officiated. The kid keeps their own score and calls penalties on themselves. Honor system is the heart of the sport."
-  - "Tournament golf is hours of walking between brief moments of action. Hydration, nutrition, mental focus all matter — this isn't watching a baseball game."
+  - "Tournament golf is hours of walking between brief moments of action. Hydration, nutrition, mental focus all matter: this isn't watching a baseball game."
   - "Parents/caddies have specific rules about when they can give advice (mostly: between holes, club selection, reading greens at some levels)."
 governingBody:
   name: "USGA / US Kids Golf"
@@ -48,6 +48,6 @@ A few specifics.
 
 **Scorecard.** The kid is responsible for keeping their own score and signing the scorecard at the end of the round. Signing for a wrong score (lower than actual) = disqualification. This is part of the integrity test of golf.
 
-**Pace of play.** Most junior tournaments enforce 4-hour 18-hole pace. Falling behind = warnings then penalty strokes. Teach kids to play "ready golf" — whoever is ready, hits.
+**Pace of play.** Most junior tournaments enforce 4-hour 18-hole pace. Falling behind = warnings then penalty strokes. Teach kids to play "ready golf", whoever is ready, hits.
 
 **The mental piece.** Golf is the sport where the gap between practice swing and real swing is widest. Mental skills (breathing, routine, recovery from a bad shot) matter more than in most sports. The body hub on performance anxiety applies directly.

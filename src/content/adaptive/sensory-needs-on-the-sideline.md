@@ -8,7 +8,7 @@ publishedAt: 2026-04-25
 governingBodies:
   - name: "STAR Institute for Sensory Processing"
     url: "https://sensoryhealth.org/"
-  - name: "AOTA — Sensory processing in children"
+  - name: "AOTA: Sensory processing in children"
     url: "https://www.aota.org/"
 editorial:
   qualityGrade: 7
@@ -28,7 +28,7 @@ Some kids feel sounds, textures, smells, and crowds more intensely than others. 
 
 This isn't about coddling. It's about removing the friction that has nothing to do with the actual game.
 
-**Equipment fit matters more than you'd think.** Tags scratch. Helmets pinch. Compression gear feels wrong. Cleats feel different from sneakers. For sensory-sensitive kids, gear discomfort isn't a minor irritation — it's a constant signal that pulls focus away from the game.
+**Equipment fit matters more than you'd think.** Tags scratch. Helmets pinch. Compression gear feels wrong. Cleats feel different from sneakers. For sensory-sensitive kids, gear discomfort isn't a minor irritation, it's a constant signal that pulls focus away from the game.
 
 What helps:
 - Cut tags out of every uniform piece
@@ -38,12 +38,12 @@ What helps:
 - For helmet sports, take time on the fitting; pad swaps are usually possible
 - Same socks every game (find what works, buy six pairs)
 
-**The noise problem.** Gym whistles, parents cheering, refs yelling, teammates shouting — the auditory load of a youth game is high. For sensitive kids, this can become overwhelming.
+**The noise problem.** Gym whistles, parents cheering, refs yelling, teammates shouting, the auditory load of a youth game is high. For sensitive kids, this can become overwhelming.
 
 What helps:
 - Loop earplugs (specifically designed to dampen volume without losing speech) work well for many kids in indoor sports
 - Noise-canceling headphones in the bleachers between games at all-day tournaments
-- Brief sensory breaks — kid steps off the bench for 60 seconds in a hallway
+- Brief sensory breaks, kid steps off the bench for 60 seconds in a hallway
 - For some kids, a hat with a brim down low helps with visual overstimulation that pairs with noise
 
 **The crowd problem.** All-day tournaments mean spending hours in busy gyms. Pre-game warm-ups mean being in tight spaces with strangers. Locker rooms mean smells, voices, lights.

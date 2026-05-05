@@ -8,7 +8,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-02-12
 featured: false
-hero: /illustrations/your-kid-is-the-worst-on-the-team.png
+hero: /illustrations/your-kid-is-the-worst-on-the-team.webp
 heroAlt: "Child sits on end of dugout bench alone, head down on water bottle. Rest of team loosely suggested in middle distance, celebrating a goal. Honest composition showing posture over face."
 ---
 

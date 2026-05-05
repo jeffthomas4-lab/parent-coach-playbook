@@ -1,5 +1,5 @@
 ---
-title: "Little League rec baseball — spring season"
+title: "Little League rec baseball: spring season"
 sport: "baseball"
 level: "rec"
 region: "National"

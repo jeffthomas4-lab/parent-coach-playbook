@@ -34,18 +34,18 @@ const fmtRange = (start: string, end: string) => {
 <BaseLayout title="Camps moderation" description="Admin queue" noindex={true}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-2 font-medium">
         Admin · Pending · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · <a href="/admin/camps/spot-check" class="hover:underline">Spot check</a>
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Pending camps
       </h1>
       {adminEmail ? (
-        <p class="font-display italic text-ink-soft text-sm mt-2" style="font-weight: 500;">
+        <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
           Logged in as {adminEmail}.
         </p>
       ) : (
-        <p class="font-display italic text-rust text-sm mt-2" style="font-weight: 500;">
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
           Cloudflare Access header not detected. Approve/reject will fail. Configure /admin/* behind Access before deploying.
         </p>
       )}
@@ -55,19 +55,19 @@ const fmtRange = (start: string, end: string) => {
   <section>
     <div class="container-px py-10">
       {!dbAvailable ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Database is not bound. Confirm D1 binding in wrangler.jsonc.</p>
+        <p class="font-display italic text-ink-soft font-medium">Database is not bound. Confirm D1 binding in wrangler.jsonc.</p>
       ) : camps.length === 0 ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">Queue is empty. No camps awaiting review.</p>
+        <p class="font-display italic text-ink-soft font-medium">Queue is empty. No camps awaiting review.</p>
       ) : (
         <ul class="grid gap-4">
           {camps.map((c) => (
             <li class="border border-bone p-5 bg-paper">
               <div class="flex items-baseline justify-between flex-wrap gap-3">
                 <div>
-                  <p class="font-display italic text-rust text-xs" style="font-weight: 500;">
+                  <p class="font-display italic text-rust text-xs font-medium">
                     {c.sport} · ages {c.age_min}–{c.age_max} · {fmtRange(c.start_date, c.end_date)}
                   </p>
-                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5" style="font-weight: 500;">{c.name}</h3>
+                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5 font-medium">{c.name}</h3>
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
                     {c.city}, {c.state} · submitted by {c.submitted_by_email} · {fmtDateTime(c.submitted_at)}
                   </p>
@@ -78,10 +78,10 @@ const fmtRange = (start: string, end: string) => {
                 <div class="flex flex-col gap-2 items-end">
                   <a href={`/admin/camps/${c.id}/`} class="t-cta">Review →</a>
                   <form method="POST" action={`/api/admin/camps/${c.id}/approve`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors" style="font-weight: 500;">Approve</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium">Approve</button>
                   </form>
                   <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors" style="font-weight: 500;">Reject</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>
               </div>

@@ -16,12 +16,12 @@ commonCalls:
   - "Obstruction/interference: same as baseball."
 thingsParentsGetWrong:
   - "The look-back rule is unique to softball. Many parents who played baseball don't know about it. Watch how runners behave when the pitcher has the ball in the circle."
-  - "Pitching distance is shorter than baseball — the ball gets to the plate fast. Reaction time is roughly the same as a 90-mph fastball at the major-league level."
+  - "Pitching distance is shorter than baseball: the ball gets to the plate fast. Reaction time is roughly the same as a 90-mph fastball at the major-league level."
   - "Slap-hitting and short-game tactics are core to fastpitch. The casual baseball-watcher misses how much footwork is happening at the plate."
 governingBody:
   name: "USA Softball"
   url: "https://www.usasoftball.com/"
-ruleBookUrl: "https://www.usasoftball.com/sports/2018/8/13/playing-rules.aspx"
+ruleBookUrl: "https://www.usasoftball.com/"
 publishedAt: 2026-04-26
 editorial:
   qualityGrade: 8

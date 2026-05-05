@@ -32,10 +32,10 @@ const groupedTopics = categories.map(c => ({
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> · The body
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         The <em class="text-rust">body</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -43,7 +43,7 @@ const groupedTopics = categories.map(c => ({
       </p>
 
       <aside class="mt-8 border-l-4 pl-4 py-3 max-w-2xl" style="border-color: #B8908F; background: #FAF6F1;">
-        <p class="font-display italic text-rust text-sm" style="font-weight: 500;">What this is</p>
+        <p class="font-display italic text-rust text-sm font-medium">What this is</p>
         <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
           Parent-to-parent. Not medical advice. We cite the governing body where one exists. For anything specific to your kid, talk to your pediatrician or your team's athletic trainer.
         </p>
@@ -54,7 +54,7 @@ const groupedTopics = categories.map(c => ({
   {groupedTopics.length === 0 ? (
     <section>
       <div class="container-px py-12">
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">
+        <p class="font-display italic text-ink-soft font-medium">
           The first batch of body topics ships this month. Check back.
         </p>
       </div>
@@ -65,15 +65,15 @@ const groupedTopics = categories.map(c => ({
         <div class="container-px py-10 md:py-12">
           <div class="grid md:grid-cols-12 gap-8">
             <div class="md:col-span-4">
-              <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Category</p>
-              <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight" style="font-weight: 500;">{g.label}</h2>
+              <p class="font-display italic text-rust mb-2 font-medium">Category</p>
+              <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">{g.label}</h2>
               <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
             </div>
             <div class="md:col-span-8">
               <ul class="grid gap-4">
                 {g.items.map((t) => (
                   <li class="border border-bone bg-paper-warm p-5">
-                    <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block" style="font-weight: 500;" set:html={renderTitle(t.data.title)} />
+                    <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(t.data.title)} />
                     <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
                   </li>
                 ))}

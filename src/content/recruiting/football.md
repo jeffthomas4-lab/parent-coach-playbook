@@ -37,7 +37,7 @@ Here is the rest.
 
 ## The honest version of football recruiting
 
-There are roughly one million high school football players in the United States in any given year. The number who go on to play college football, at any level, is around 75,000 across all four years of college eligibility. That is roughly seven percent of high school players ending up on a college roster somewhere — and that includes walk-ons.
+There are roughly one million high school football players in the United States in any given year. The number who go on to play college football, at any level, is around 75,000 across all four years of college eligibility. That is roughly seven percent of high school players ending up on a college roster somewhere, and that includes walk-ons.
 
 Of that 75,000, the breakdown is approximately:
 
@@ -74,7 +74,7 @@ Realistic FCS prospect: All-state level player at most positions. Can be all-con
 
 ### D2
 
-Often misunderstood. D2 is competitive football. Some D2 programs would compete in FCS. The scholarship math is similar to FCS in practice — 36 scholarships across the roster, divided equivalencies. Most D2 players are on partial scholarships supplemented by academic aid.
+Often misunderstood. D2 is competitive football. Some D2 programs would compete in FCS. The scholarship math is similar to FCS in practice, 36 scholarships across the roster, divided equivalencies. Most D2 players are on partial scholarships supplemented by academic aid.
 
 D2 recruiting timelines run later than D1, usually picking up significantly in junior year and continuing through early senior year. D2 staffs are smaller, so coaches recruit specific regions hard. If you are within a four-hour drive of a D2 program, they are watching.
 
@@ -128,7 +128,7 @@ Football is a late-developing sport in the recruiting calendar compared to baseb
 
 **Camps.** This is where football recruiting actually happens at most levels. There are four types worth knowing:
 
-1. **A specific school's on-campus camp.** Held in June. The coaching staff at the school you are attending evaluates you directly. If your son is a real prospect at a particular school, this is the most important day on the calendar at that school. We cover the decision tree below — whether to go to a given school's camp is one of the highest-stakes choices in summer recruiting.
+1. **A specific school's on-campus camp.** Held in June. The coaching staff at the school you are attending evaluates you directly. If your son is a real prospect at a particular school, this is the most important day on the calendar at that school. We cover the decision tree below, whether to go to a given school's camp is one of the highest-stakes choices in summer recruiting.
 
 2. **Satellite camps.** A satellite camp is a college program running a camp away from its own campus, often hosted at a high school or a partner university. The host program is there. Sometimes other programs come along as guest staffs. Satellite camps were the way that schools without big recruiting budgets used to reach kids who could not afford to travel. They are still useful, but they are tricky. We have a section below on how to read them.
 
@@ -142,7 +142,7 @@ Football is a late-developing sport in the recruiting calendar compared to baseb
 
 ## Should your son attend a specific school's camp? A decision tree.
 
-A school's one-day camp — sometimes called a prospect camp, an elite camp, or an ID camp — is a specific event you have to decide whether to drive to and pay for. Here is how to make that call.
+A school's one-day camp, sometimes called a prospect camp, an elite camp, or an ID camp, is a specific event you have to decide whether to drive to and pay for. Here is how to make that call.
 
 **Step 1: Has the school actually contacted your son?**
 
@@ -193,7 +193,7 @@ One important nuance. A coach at a satellite camp is working a long day in a hot
 
 ## Visiting campus
 
-If a school is on your son's list, get him on campus. Unofficial visits are unlimited at every level and can happen any time. The official visit is a paid trip that NCAA programs can offer at specific points in the recruiting calendar — for D1, generally beginning August 1 before junior year. For most families, the unofficial visit is the workhorse.
+If a school is on your son's list, get him on campus. Unofficial visits are unlimited at every level and can happen any time. The official visit is a paid trip that NCAA programs can offer at specific points in the recruiting calendar, for D1, generally beginning August 1 before junior year. For most families, the unofficial visit is the workhorse.
 
 **What to actually do on a visit.** The point of a visit is to evaluate the school, not to be evaluated. Coaches are not bringing your son to campus to test him. They are showing him what the place is like. Your son's job is to walk around like a college student and see if it fits.
 
@@ -203,7 +203,7 @@ A productive visit includes:
 - A walk through the locker room, weight room, training room, and team meeting room. He is going to live in those spaces for four years.
 - A tour of campus that is not just the athletic facilities. Where will he live freshman year? Where will he eat? Where is the library? Where do classes meet?
 - A sit-down with a current player, ideally one who plays his position. A real conversation without coaches in the room.
-- A meeting with admissions and financial aid, if the school is academically driven and your son is a strong student. At D3 schools, this is essential — admissions is where the financial conversation happens.
+- A meeting with admissions and financial aid, if the school is academically driven and your son is a strong student. At D3 schools, this is essential, admissions is where the financial conversation happens.
 - A class visit, if the timing works. Sitting in on a class for forty-five minutes tells him more about the academic culture than any tour can.
 
 **What to skip.** The "wow" parts of the official visit playbook can be misleading. Sideline access at a game is fun but tells you nothing. The dinner at a coach's house tells you something about the head coach's family and very little about whether your son will start. Hospitality is real, but it is not data.
@@ -251,8 +251,8 @@ That is it. No flattery. No life story. No mention of how dedicated he is. The f
 
 **What to put in the subject line:**
 
-- "[Name] — [Class Year] [Position] — [State]"
-- Example: "Marcus Williams — '27 OT — Texas"
+- "[Name], [Class Year] [Position], [State]"
+- Example: "Marcus Williams, '27 OT, Texas"
 
 That is the format coaches scan most efficiently. Class year is the most important piece of information in the subject line because coaches mentally sort their inbox by class.
 
@@ -314,9 +314,10 @@ If you do those things, by November of senior year your son will have a college 
 
 ## Up next
 
-- Basketball recruiting — coming
-- Baseball recruiting — coming
-- Soccer recruiting — coming
-- Recruiting and the academically strong student — coming
+- Basketball recruiting, coming
+- Baseball recruiting, coming
+- Soccer recruiting, coming
+- Recruiting and the academically strong student, coming
 
 Written by the Parent Coach Playbook editorial team, with input from current college football coaches and families across every level of college football, including D1 through JUCO.
+                                                                        

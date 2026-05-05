@@ -7,7 +7,7 @@ sport: "soccer"
 age: "8-10"
 seasonPhase: "early"
 publishedAt: 2026-02-05
-hero: /illustrations/what-my-kid-said-in-the-car.png
+hero: /illustrations/what-my-kid-said-in-the-car.webp
 heroAlt: "Backseat of car view from back-passenger window. Nine-year-old looks out window in profile, breath fogging glass slightly, mid-thought expression."
 ---
 

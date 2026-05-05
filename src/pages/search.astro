@@ -159,11 +159,11 @@ const popularReads = [
 <BaseLayout title="Search" description="Search the whole site. Articles, body topics, pathways, season calendars, cost calculator, recruiting, adaptive, rules, drills, gear guides.">
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Search</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0]" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">Search</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0] font-medium">
         Find what you're looking for
       </h1>
-      <p class="font-display italic text-ink-soft text-sm mt-3" style="font-weight: 500;">
+      <p class="font-display italic text-ink-soft text-sm mt-3 font-medium">
         Searching {totalCount} pieces across the whole site.
       </p>
       <input
@@ -174,12 +174,11 @@ const popularReads = [
       />
 
       <div class="mt-5 flex flex-wrap items-center gap-2">
-        <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">Popular searches:</span>
+        <span class="font-display italic text-ink-soft text-sm font-medium">Popular searches:</span>
         {popularSearches.map(p => (
           <a
             href={p.href}
-            class="font-display italic text-rust hover:text-ink text-sm border border-bone px-3 py-1 hover:bg-paper-warm transition-colors"
-            style="font-weight: 500;"
+            class="font-display italic text-rust hover:text-ink text-sm border border-bone px-3 py-1 hover:bg-paper-warm transition-colors font-medium"
           >{p.label}</a>
         ))}
       </div>
@@ -189,11 +188,11 @@ const popularReads = [
   <!-- Default: popular reads. Replaced by JS when the user types. -->
   <section data-default-state>
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Popular reads</p>
+      <p class="font-display italic text-rust mb-4 font-medium">Popular reads</p>
       <div class="grid md:grid-cols-2 gap-px bg-bone">
         {popularReads.map(r => (
           <a href={r.href} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;">
+            <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
               {r.title}
             </h3>
             <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
@@ -206,10 +205,10 @@ const popularReads = [
     </div>
   </section>
 
-  <!-- Search results — populated by JS when the user types -->
+  <!-- Search results: populated by JS when the user types -->
   <section class="hidden" data-results-state>
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500;" data-results-label>Results</p>
+      <p class="font-display italic text-rust mb-4 font-medium" data-results-label>Results</p>
       <div data-search-results></div>
     </div>
   </section>
@@ -230,13 +229,13 @@ const popularReads = [
 
       const render = (hits: Hit[], query: string) => {
         if (hits.length === 0) {
-          out.innerHTML = `<p class="font-display italic text-ink-soft text-lg" style="font-weight: 500;">No matches for "${escape(query)}". Email us at <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust">parentcoachplaybook@gmail.com</a> and tell us what you're looking for.</p>`;
+          out.innerHTML = `<p class="font-display italic text-ink-soft text-lg font-medium">No matches for "${escape(query)}". Email us at <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust">parentcoachplaybook@gmail.com</a> and tell us what you're looking for.</p>`;
           return;
         }
         out.innerHTML = hits.map(h => `
           <a href="${h.href}" class="block border-b border-bone py-5 hover:bg-paper-warm transition-colors">
-            <div class="font-display italic text-rust text-xs" style="font-weight: 500;">${escape(h.meta)}</div>
-            <h3 class="font-display text-ink text-xl mt-1 leading-tight" style="font-weight: 500;">${escape(h.title)}</h3>
+            <div class="font-display italic text-rust text-xs font-medium">${escape(h.meta)}</div>
+            <h3 class="font-display text-ink text-xl mt-1 leading-tight font-medium">${escape(h.title)}</h3>
             ${h.dek ? `<p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escape(h.dek)}</p>` : ''}
           </a>`).join('');
       };

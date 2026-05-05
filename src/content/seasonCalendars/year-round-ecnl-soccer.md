@@ -1,5 +1,5 @@
 ---
-title: "Year-round club soccer — ECNL track (girls)"
+title: "Year-round club soccer: ECNL track (girls)"
 sport: "soccer"
 level: "elite"
 region: "National"

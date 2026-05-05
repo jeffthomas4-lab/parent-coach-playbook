@@ -21,7 +21,7 @@ thingsParentsGetWrong:
 governingBody:
   name: "USA Track & Field"
   url: "https://www.usatf.org/"
-ruleBookUrl: "https://www.usatf.org/governance/rules"
+ruleBookUrl: "https://www.usatf.org/"
 publishedAt: 2026-04-30
 editorial:
   qualityGrade: 8
@@ -43,7 +43,7 @@ A few specifics.
 
 **Pre-race walk.** Coaches and runners walk the course before the meet to plan tactics. Identify hills, turns, narrow sections, finishing chute layout. The kid who runs an unfamiliar course blind makes more mistakes.
 
-**Equipment.** Trainers for warm-up. Spikes for racing (most cross-country spikes are 9-12mm; some courses restrict spike length). Layered apparel for cold-weather meets — fall championship season can hit 30°F.
+**Equipment.** Trainers for warm-up. Spikes for racing (most cross-country spikes are 9-12mm; some courses restrict spike length). Layered apparel for cold-weather meets, fall championship season can hit 30°F.
 
 **Pacing rules.** Cross country is one of the few high school sports where outside pacing is actively discouraged. Coaches give splits and encouragement; non-team-members running alongside is typically not allowed in sanctioned meets.
 

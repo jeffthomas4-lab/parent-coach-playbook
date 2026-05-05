@@ -20,8 +20,8 @@ editorial:
   factCheckGoodThrough: 2027-09-01
   reviewerNotes: "Timeline content is partly standard NCAA reference, but the 'industry sells noise vs actual timeline' framing and the GPA closing punch are original. Sources cited (NCAA, NAIA, NJCAA, Eligibility Center)."
 governingBodies:
-  - name: "NCAA — Recruiting calendars"
-    url: "https://www.ncaa.org/sports/2018/8/24/recruiting-calendars-and-information.aspx"
+  - name: "NCAA: Recruiting calendars"
+    url: "https://www.ncaa.org/sports/2013/12/17/probability-of-competing-beyond-high-school.aspx"
   - name: "NCAA Eligibility Center"
     url: "https://web3.ncaa.org/ecwr3/"
   - name: "NAIA Eligibility Center"
@@ -34,7 +34,7 @@ The recruiting calendar is structured. The industry sells noise; the actual time
 
 **8th grade.** Almost nothing. Some basketball and soccer programs make verbal "offers" at this age. They are non-binding, they don't mean what the kid thinks they mean, and they are increasingly frowned upon by NCAA. If your kid gets one, take it as flattery and move on. The recruiting work this year is to focus on academics and to play multiple sports. The kid who locks in at 14 has a higher burnout rate than the kid who diversifies through 14.
 
-**9th grade.** Still mostly off the radar. Start tracking your kid's GPA carefully — the NCAA Eligibility Center counts every grade from 9th onward in core courses. A weak freshman semester is hard to overcome. Begin a basic recruiting database (a spreadsheet of schools that interest the kid, divisions, programs). Don't email coaches yet. Focus on athletic development and grades.
+**9th grade.** Still mostly off the radar. Start tracking your kid's GPA carefully, the NCAA Eligibility Center counts every grade from 9th onward in core courses. A weak freshman semester is hard to overcome. Begin a basic recruiting database (a spreadsheet of schools that interest the kid, divisions, programs). Don't email coaches yet. Focus on athletic development and grades.
 
 **10th grade.** This is where it starts. Several things to do this year:
 - Register with the NCAA Eligibility Center if pursuing D1 or D2.
@@ -46,7 +46,7 @@ The recruiting calendar is structured. The industry sells noise; the actual time
 
 The first contact dates with college coaches vary by sport (NCAA publishes the calendar). For most sports, the active recruiting period for D1 starts June 15 of sophomore year or September 1 of junior year.
 
-**11th grade.** The biggest year. Coaches can call, visit, and host official visits. Most D1 commitments happen this year. Take the SAT/ACT (most do this fall). Continue updating film. Visit campuses. Attend ID camps at the schools doing the recruiting. Have a serious conversation about the realistic division level — most kids are D2, D3, NAIA, or JUCO, and that's a great outcome.
+**11th grade.** The biggest year. Coaches can call, visit, and host official visits. Most D1 commitments happen this year. Take the SAT/ACT (most do this fall). Continue updating film. Visit campuses. Attend ID camps at the schools doing the recruiting. Have a serious conversation about the realistic division level, most kids are D2, D3, NAIA, or JUCO, and that's a great outcome.
 
 **12th grade.** Sign in November (early signing period in most sports) or April (regular signing period). For walk-on candidates, this is the year to make the case. For the kid who hasn't been recruited yet, the D3 and NAIA conversation often opens up late. Many kids commit between January and April of senior year.
 

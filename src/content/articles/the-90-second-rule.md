@@ -9,7 +9,7 @@ age: "8-10"
 seasonPhase: "mid"
 publishedAt: 2026-02-19
 featured: true
-hero: /illustrations/the-90-second-rule.png
+hero: /illustrations/the-90-second-rule.webp
 heroAlt: "Close-up of parent's hands on steering wheel, looking through windshield with child's head visible in rearview mirror. Dashboard clock reads 4:47 PM, late-afternoon honey light."
 ---
 

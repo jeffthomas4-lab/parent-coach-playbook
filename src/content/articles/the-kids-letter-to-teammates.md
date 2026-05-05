@@ -32,11 +32,11 @@ Not a thank-you card. A letter. One sentence per teammate. Specific.
 
 Format:
 
-*To Jake — I'm always going to remember the time you slid into second and told the umpire it was a great call even though it was wrong.*
+*To Jake, I'm always going to remember the time you slid into second and told the umpire it was a great call even though it was wrong.*
 
-*To Maya — your celebration after Anna's first goal made me want to be on a team with you for the rest of my life.*
+*To Maya, your celebration after Anna's first goal made me want to be on a team with you for the rest of my life.*
 
-*To Coach — the practice in March where you let us run the drill ourselves was the practice I started actually loving baseball.*
+*To Coach, the practice in March where you let us run the drill ourselves was the practice I started actually loving baseball.*
 
 That's the format. One sentence per person. Specific moment.
 
@@ -70,7 +70,7 @@ Because longer letters become essays and essays become homework. One sentence pe
 
 Don't write it for them. Don't edit the spelling. Don't suggest sentences.
 
-Read it after they're done if they want you to. Then say: "I loved how you thought about Maya." Specific. Don't praise the act of writing the letter — praise one of the moments they noticed.
+Read it after they're done if they want you to. Then say: "I loved how you thought about Maya." Specific. Don't praise the act of writing the letter, praise one of the moments they noticed.
 
 **The longer arc.**
 

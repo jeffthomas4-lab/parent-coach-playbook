@@ -19,10 +19,10 @@ editorial:
   factCheckGoodThrough: 2027-09-01
   reviewerNotes: "Real-talk on a topic many parents misunderstand. The marriage/engagement metaphor lands. NCAA sources cited."
 governingBodies:
-  - name: "NCAA — National Letter of Intent"
-    url: "https://www.ncaa.org/sports/2014/10/27/national-letter-of-intent.aspx"
+  - name: "NCAA: National Letter of Intent"
+    url: "https://web3.ncaa.org/ecwr3/"
   - name: "NCAA Recruiting Calendar"
-    url: "https://www.ncaa.org/sports/2018/8/24/recruiting-calendars-and-information.aspx"
+    url: "https://www.ncaa.org/sports/2013/12/17/probability-of-competing-beyond-high-school.aspx"
 ---
 
 A "verbal commit" is what people say when an athlete announces publicly that they intend to attend a particular school. It is not a contract. It is not legally binding. Either side can change their mind. Some do.
@@ -45,8 +45,8 @@ The kid changes too. The kid who verbal'd at 15 may grow three inches. May get f
 
 **The early-commit conversation in some sports.** Soccer (especially girls' soccer through ECNL), softball, lacrosse, and a few others have historically had earlier commits than other sports. NCAA has worked to push commitment dates later through rule changes. As of 2026, most D1 sports have rules that prohibit certain coach contacts before specific dates (often June 15 of sophomore year or September 1 of junior year). Verbals before those dates technically violate NCAA rules even though they happen.
 
-**The honest framing for parents.** A verbal is a relationship marker, not a contract. Celebrate it but don't bet the family's college planning on it. Visit the school multiple times before signing. Read the financial aid offer carefully — verbal offers sometimes shift before they're written. Ask about coaching contracts (most schools won't share them, but the conversation is worth having).
+**The honest framing for parents.** A verbal is a relationship marker, not a contract. Celebrate it but don't bet the family's college planning on it. Visit the school multiple times before signing. Read the financial aid offer carefully, verbal offers sometimes shift before they're written. Ask about coaching contracts (most schools won't share them, but the conversation is worth having).
 
-**For walk-ons.** No verbal. No NLI. Walk-on commitments happen later — often the summer before freshman year — and are even more informal. The kid is offered a roster spot, not a scholarship. The walk-on conversation deserves its own piece (coming).
+**For walk-ons.** No verbal. No NLI. Walk-on commitments happen later, often the summer before freshman year, and are even more informal. The kid is offered a roster spot, not a scholarship. The walk-on conversation deserves its own piece (coming).
 
 **The bottom line.** A verbal commit is the recruiting equivalent of an engagement. Marriage is signing day. Lots of engagements end before the wedding. That's not failure; that's normal. Plan accordingly.

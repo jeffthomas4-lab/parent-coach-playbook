@@ -6,9 +6,9 @@ sportTags: ["multi-sport"]
 ageBands: ["8-10","11-12","13-14","15-plus"]
 publishedAt: 2026-05-12
 governingBodies:
-  - name: "Korey Stringer Institute — Hydration"
+  - name: "Korey Stringer Institute: Hydration"
     url: "https://ksi.uconn.edu/prevention/hydration/"
-  - name: "AAP — Climatic Heat Stress and Exercising Children"
+  - name: "AAP: Climatic Heat Stress and Exercising Children"
     url: "https://publications.aap.org/pediatrics/article/128/3/e741/30912"
 doctorQuestions:
   - "My kid is a heavy sweater. Should we be doing anything different?"
@@ -38,7 +38,7 @@ The fix is the daily plan, not the bottle.
 
 **The plan.**
 
-**Wake up.** 8-12 ounces of water with breakfast. Skip orange juice as the only morning fluid — too much sugar.
+**Wake up.** 8-12 ounces of water with breakfast. Skip orange juice as the only morning fluid, too much sugar.
 
 **Mid-morning, two hours before practice.** 16-20 ounces of water. This is the loading window. The kid who drinks a full water bottle at 9 for an 11am practice walks onto the field hydrated. The kid who chugs at 10:55 walks on with water sloshing in the stomach and not yet absorbed.
 

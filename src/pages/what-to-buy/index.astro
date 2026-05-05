@@ -16,8 +16,8 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
   <!-- Hero: what this section is, fast -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">What to Buy</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">What to Buy</p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl font-medium">
         What you <em class="text-rust">actually need</em>, by sport.
       </h1>
       <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
@@ -26,10 +26,10 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
     </div>
   </section>
 
-  <!-- What this section is — the explainer Jeff asked for -->
+  <!-- What this section is: the explainer Jeff asked for -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-8 md:py-10 max-w-3xl">
-      <p class="font-display italic text-rust mb-3 text-sm" style="font-weight: 500;">How this works</p>
+      <p class="font-display italic text-rust mb-3 text-sm font-medium">How this works</p>
       <p class="font-display text-ink leading-relaxed text-base md:text-lg">
         Pick your sport or activity below. Each guide has a starter list, the gear that actually matters, and what to skip. Sizing companion pages where the sport needs them. Affiliate links where used; <a href="/disclosure/" class="text-rust hover:underline">disclosure here</a>.
       </p>
@@ -39,12 +39,12 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
   <!-- Quick anchor nav (mobile-friendly) -->
   <section class="border-b border-bone">
     <div class="container-px py-5">
-      <p class="font-display italic text-ink-soft text-xs mb-3" style="font-weight: 500;">Jump to</p>
+      <p class="font-display italic text-ink-soft text-xs mb-3 font-medium">Jump to</p>
       <div class="flex flex-wrap gap-2">
-        <a href="#team-sports"       class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Team sports</a>
-        <a href="#individual-sports" class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Individual sports</a>
-        <a href="#performing-arts"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Performing arts</a>
-        <a href="#essentials"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm" style="font-weight: 500;">Essentials</a>
+        <a href="#team-sports"       class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Team sports</a>
+        <a href="#individual-sports" class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Individual sports</a>
+        <a href="#performing-arts"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Performing arts</a>
+        <a href="#essentials"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Essentials</a>
       </div>
     </div>
   </section>
@@ -52,13 +52,13 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
   <!-- Team sports: compact text-list grid (mobile-fast) -->
   <section id="team-sports" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Team sports</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Team sports</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {teamSports.map((g) => (
           <li>
             <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
-              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 font-medium">{g.blurb}</span>
             </a>
           </li>
         ))}
@@ -69,13 +69,13 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
   <!-- Individual sports -->
   <section id="individual-sports" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Individual sports</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Individual sports</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {individualSports.map((g) => (
           <li>
             <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
-              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 font-medium">{g.blurb}</span>
             </a>
           </li>
         ))}
@@ -86,13 +86,13 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
   <!-- Performing arts -->
   <section id="performing-arts" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Performing arts</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Performing arts</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {performingArts.map((g) => (
           <li>
             <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
-              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 font-medium">{g.blurb}</span>
             </a>
           </li>
         ))}
@@ -103,13 +103,13 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
   <!-- Essentials -->
   <section id="essentials" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4" style="font-weight: 500; font-size: 1.05rem;">Essentials</p>
+      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Essentials</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {essentials.map((g) => (
           <li>
             <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-              <span class="font-display text-ink text-base block group-hover:text-rust" style="font-weight: 500;">{g.label}</span>
-              <span class="font-display italic text-ink-soft text-xs block mt-1" style="font-weight: 500;">{g.blurb}</span>
+              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 font-medium">{g.blurb}</span>
             </a>
           </li>
         ))}

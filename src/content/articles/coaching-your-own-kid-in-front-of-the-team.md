@@ -8,7 +8,7 @@ sport: "baseball"
 age: "8-10"
 seasonPhase: "mid"
 publishedAt: 2026-04-16
-hero: /illustrations/coaching-your-own-kid-in-front-of-the-team.png
+hero: /illustrations/coaching-your-own-kid-in-front-of-the-team.webp
 heroAlt: "Coach's back, viewed from behind, kneeling in front of baseball dugout talking to small group of players. One child faintly familiar, the coach's own kid."
 ---
 

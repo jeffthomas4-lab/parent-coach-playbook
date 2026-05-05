@@ -118,7 +118,7 @@ bands:
 
 Volleyball at the youth level has rapidly become a club-driven sport. Most serious 13U+ players play in club leagues that run November through July, with school ball running August through October. The club year owns most of the volleyball calendar.
 
-The position-specialization question is where a lot of parents make early mistakes. Setters specialize early (13-14 typical). Liberos specialize early (also 13-14). Outside hitters can usually play multiple positions until 15-16. Middle blockers depend on height — by 14, the very tallest kids are getting tracked there. Don't lock in a position too early; many kids change positions in high school based on team needs and physical development.
+The position-specialization question is where a lot of parents make early mistakes. Setters specialize early (13-14 typical). Liberos specialize early (also 13-14). Outside hitters can usually play multiple positions until 15-16. Middle blockers depend on height, by 14, the very tallest kids are getting tracked there. Don't lock in a position too early; many kids change positions in high school based on team needs and physical development.
 
 The shoulder is the body part that asks the most of you in volleyball. Year-round overhead motion stresses the rotator cuff, the labrum, and the AC joint. Shoulder care should be part of every practice (band work, scapular activation) and the August off-season is non-negotiable for shoulder health.
 

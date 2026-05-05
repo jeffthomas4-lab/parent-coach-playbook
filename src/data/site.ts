@@ -22,38 +22,42 @@ export const EDITORIAL = {
   accentBg: '#F2E2D5',
 };
 
+// Primary nav: 5 items + search button. Scripts fold into Reads (linked from
+// the Reads landing). Camps and Team Parent fold into Tools and Reads
+// respectively. Search promoted from utility nav into the main bar.
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
-  { label: 'Scripts', href: '/scripts/' },
   { label: 'Reads', href: '/reads/' },
   { label: 'Drills', href: '/coaching-tips/' },
-  { label: 'Camps', href: '/camps/' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
-  { label: 'Team Parent', href: '/team-parent/', hasDropdown: 'team-parent' },
   { label: 'Tools', href: '/tools/', hasDropdown: 'tools' },
 ];
 
 // Items inside the Tools nav dropdown. Each is a hub URL parents return to.
+// Adaptive and Decisions are kept as live pages (linked from the Tools landing
+// and individual reads) but demoted out of the primary nav dropdown until each
+// section reaches 15+ pieces. Camps folded in here from the old top-level nav.
 export const TOOLS_NAV = [
   { slug: 'season-calendar',  label: 'Season calendar',   href: '/season-calendar/',  blurb: 'Twelve months by sport and level. Tryouts, peaks, off-season.' },
-  { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15 — by sport.' },
+  { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15, by sport.' },
   { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost. Per game your kid actually plays in.' },
   { slug: 'body',             label: 'The body',          href: '/body/',             blurb: 'Concussion, arm care, heat, sleep. What to know, what to ask the doc.' },
   { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
   { slug: 'rules',            label: 'Rules at-a-glance', href: '/rules/',            blurb: 'Five-minute rules primers for every sport we cover.' },
-  { slug: 'adaptive',         label: 'Adaptive athletes', href: '/adaptive/',         blurb: 'ADHD, autism, sensory, Unified Sports, adaptive leagues.' },
-  { slug: 'decisions',        label: 'Decisions',         href: '/decisions/',        blurb: 'The big youth-sports decisions. Travel, quit, specialize, how many.' },
   { slug: 'pendulum',         label: 'The pendulum',      href: '/youth-sports-pendulum/', blurb: 'Where is your family on the fun-to-performance spectrum right now?' },
   { slug: 'mental-skills',    label: 'Mental skills',     href: '/mental-skills/',    blurb: 'Pre-game nerves, performance anxiety, burnout, identity. Sports psychology for parents.' },
+  { slug: 'camps',            label: 'Camps & leagues',   href: '/camps/',            blurb: 'Submitted by parents and program directors. Reviewed before they go live.' },
   { slug: 'governing-bodies', label: 'Governing bodies',  href: '/governing-bodies/', blurb: 'The directory parents send each other when somebody says "check the rule book."' },
 ] as const;
 
 export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];
 
+// Utility nav: Newsletter and About sit on the right side of the header bar.
+// Search has been promoted into the main nav as an icon button (handled in
+// NavBar.astro), so it's no longer a utility item.
 export const UTILITY_NAV = [
   { label: 'Newsletter', href: '/newsletter/' },
   { label: 'About', href: '/about/' },
-  { label: 'Search', href: '/search/' },
 ];
 
 // Phase taxonomy is preserved as light metadata so existing URLs keep working.
@@ -104,7 +108,7 @@ export const SPORTS = [
   { slug: 'soccer',       label: 'Soccer' },
   { slug: 'basketball',   label: 'Basketball' },
   // Football variants. Three lanes that group together alphabetically as "Football — *".
-  // Slugs preserved for URL backwards compatibility — display labels group them visually.
+  // Slugs preserved for URL backwards compatibility. Display labels group them visually.
   { slug: 'flag-football', label: 'Football — Flag' },
   { slug: 'football-7v7',  label: 'Football — 7v7' },
   { slug: 'football',      label: 'Football — Tackle' },
@@ -181,7 +185,7 @@ export type TopicSlug = (typeof TOPICS)[number]['slug'];
 // /what-to-buy/[slug]/sizing/.
 //
 // `group` separates field/team sports from individual sports for navigation grouping.
-// Don't rely on alphabetical position — football used to land in "Individual" because
+// Don't rely on alphabetical position. Football used to land in "Individual" because
 // of slice math. The group field is the source of truth for nav grouping.
 export const BUYING_GUIDES = [
   // Field & team sports (alphabetical)
@@ -256,6 +260,11 @@ export const TEAM_PARENT_CATEGORIES = [
   { slug: 'photos-events', label: 'Photos and events',  blurb: 'Picture day choices. Banquet checklists. Team gifts.',        accent: '#B0894A' },
   { slug: 'fundraising',   label: 'Fundraising',        blurb: 'Sponsor scripts. Snap Raise reality. Pizza-night models.',    accent: '#C5713D' },
   { slug: 'volunteering',  label: 'Volunteering',       blurb: 'Recruiting assistants. Snack signups that actually fill.',     accent: '#5C7459' },
+  { slug: 'travel',        label: 'Travel team logistics', blurb: 'Tournament packing. Hotel rotations. Travel budgets.',     accent: '#C5713D' },
+] as const;
+
+export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];
+ssistants. Snack signups that actually fill.',     accent: '#5C7459' },
   { slug: 'travel',        label: 'Travel team logistics', blurb: 'Tournament packing. Hotel rotations. Travel budgets.',     accent: '#C5713D' },
 ] as const;
 

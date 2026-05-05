@@ -24,7 +24,7 @@ thingsParentsGetWrong:
 governingBody:
   name: "NFHS (National Federation of State High School Associations)"
   url: "https://www.nfhs.org/"
-ruleBookUrl: "https://www.nfhs.org/sports-resource-content/football-rules-changes/"
+ruleBookUrl: "https://www.nfhs.org/"
 publishedAt: 2026-04-26
 editorial:
   qualityGrade: 8
@@ -42,12 +42,12 @@ editorial:
 
 A few youth-specific notes.
 
-**Youth football rule variations.** Many youth football leagues (Pop Warner, AYF) use modified rules — minimum number of plays per player, weight limits at younger ages, kickoff modifications, mandatory rotation, etc. Read your league's specific rules.
+**Youth football rule variations.** Many youth football leagues (Pop Warner, AYF) use modified rules, minimum number of plays per player, weight limits at younger ages, kickoff modifications, mandatory rotation, etc. Read your league's specific rules.
 
 **Concussion protocols.** Every state has a concussion law for HS football. Same-game return-to-play after a suspected concussion is prohibited; written clearance required from a licensed health care provider before return. See the body hub on concussion.
 
 **Heat acclimatization.** Most state athletic associations require modified practice structure for the first 5-14 days of preseason football. Helmets only day 1-2, helmets + shoulder pads day 3-5, full pads no earlier than day 6. Two-a-days never on consecutive days.
 
-**Equipment.** Helmet must meet NOCSAE standards. Mouthguard required. Pads (shoulder, hip, thigh, knee) required at most levels. Cleats — molded plastic at HS and below; metal allowed in some college/pro contexts.
+**Equipment.** Helmet must meet NOCSAE standards. Mouthguard required. Pads (shoulder, hip, thigh, knee) required at most levels. Cleats, molded plastic at HS and below; metal allowed in some college/pro contexts.
 
 **Pitch counts equivalent.** Football doesn't have pitch counts but does have practice load management. The American Sports Medicine Institute recommends limits on contact practice time per week. NFHS encourages "thud" or non-tackling practice for skill work.

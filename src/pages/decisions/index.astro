@@ -13,10 +13,10 @@ const decisions = (await getCollection('decisions', ({ data }) => isLive(data)))
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+      <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> · Decisions
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl" style="font-weight: 500;">
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         The big <em class="text-rust">decisions</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -28,13 +28,13 @@ const decisions = (await getCollection('decisions', ({ data }) => isLive(data)))
   <section class="border-b border-bone">
     <div class="container-px py-12">
       {decisions.length === 0 ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">First decisions ship this week.</p>
+        <p class="font-display italic text-ink-soft font-medium">First decisions ship this week.</p>
       ) : (
         <div class="grid sm:grid-cols-2 gap-px bg-bone">
           {decisions.map((d) => (
             <a href={`/decisions/${d.slug}/`} class="bg-paper p-7 group block hover:bg-paper-warm transition-colors">
-              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">The question</p>
-              <h2 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors" style="font-weight: 500;" set:html={renderTitle(d.data.title)} />
+              <p class="font-display italic text-rust text-xs mb-2 font-medium">The question</p>
+              <h2 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(d.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-3 leading-snug">{d.data.summary}</p>
               <p class="t-cta mt-4">Walk through the decision →</p>
             </a>

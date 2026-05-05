@@ -12,9 +12,9 @@ publishedAt: 2026-04-30
 
 A NOCSAE-stamped mouthguard ($5-15) is the only real safety requirement. Same standard as tackle and flag.
 
-Cleats come next. Rubber-stud football or soccer cleats work on grass and most turf. Skip metal-stud cleats — they're banned in most 7v7 leagues and unnecessary for the cutting and route running 7v7 demands. Mid- or low-cut cleats both work; receivers usually prefer low-cut for ankle mobility.
+Cleats come next. Rubber-stud football or soccer cleats work on grass and most turf. Skip metal-stud cleats, they're banned in most 7v7 leagues and unnecessary for the cutting and route running 7v7 demands. Mid- or low-cut cleats both work; receivers usually prefer low-cut for ankle mobility.
 
-Football gloves are not optional in 7v7 the way they are in flag. Almost every kid wears them because the receivers actually catch passes and the DBs have to flip to the ball. A solid mid-range pair (Cutters Game Day, Nike Vapor Jet, Under Armour F8) runs $30-60. Replacement annually is normal — the tack wears out.
+Football gloves are not optional in 7v7 the way they are in flag. Almost every kid wears them because the receivers actually catch passes and the DBs have to flip to the ball. A solid mid-range pair (Cutters Game Day, Nike Vapor Jet, Under Armour F8) runs $30-60. Replacement annually is normal, the tack wears out.
 
 A skull cap or compression skull cap goes under the (optional) headgear. Many 7v7 leagues now require or strongly recommend Guardian Caps or padded headbands during practice. Check your league.
 
@@ -30,7 +30,7 @@ Recruiting bag for showcases: a small backpack with extra mouthguard, gloves, to
 
 ## What you can skip
 
-Skip shoulder pads. 7v7 is no-contact (or extremely limited contact in some leagues). Skip hip pads, thigh pads, knee pads — those are tackle gear. Skip a regulation football helmet. The Guardian Cap or skull cap is the relevant headgear.
+Skip shoulder pads. 7v7 is no-contact (or extremely limited contact in some leagues). Skip hip pads, thigh pads, knee pads, those are tackle gear. Skip a regulation football helmet. The Guardian Cap or skull cap is the relevant headgear.
 
 Skip premium $80+ "elite" gloves at the youth level. The performance difference between a $40 mid-range glove and an $80 elite glove is real for college receivers, marginal for 11-year-olds.
 
@@ -48,13 +48,13 @@ Need to know what size? See our [Football — 7v7 sizing guide](/what-to-buy/foo
 
 ## Used gear notes
 
-Cleats are the only line item with a meaningful used market. Play It Again Sports and Facebook Marketplace have inventory. Buy a fresh insole when you buy used cleats. Mouthguards should always be new. Gloves should usually be new — the tack on used gloves is gone.
+Cleats are the only line item with a meaningful used market. Play It Again Sports and Facebook Marketplace have inventory. Buy a fresh insole when you buy used cleats. Mouthguards should always be new. Gloves should usually be new, the tack on used gloves is gone.
 
 ## Rules and citations
 
-- [USA Football](https://www.usafootball.com/) — national governing body, includes 7v7 program info
-- [NFL Flag Football](https://www.nflflag.com/) — for the related flag rules
-- [NOCSAE Mouthguard Standard](https://nocsae.org/) — for the mouthguard certification stamp
+- [USA Football](https://www.usafootball.com/), national governing body, includes 7v7 program info
+- [NFL Flag Football](https://www.nflflag.com/), for the related flag rules
+- [NOCSAE Mouthguard Standard](https://nocsae.org/), for the mouthguard certification stamp
 
 ## Recruiting note
 
