@@ -146,31 +146,10 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
 
   <div class="lg:hidden hidden border-b border-bone bg-paper-warm" data-mobile-menu>
     <div class="container-px py-6 grid gap-4">
+      {/* Mobile menu: top-level items only. Sub-navigation lives on each landing page
+          to avoid blowing out the menu with 27 sport links. */}
       {NAV.map((item) => (
-        <div>
-          <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>
-          {item.hasDropdown === 'buying-guides' && (
-            <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
-              {[...sportGuides, ...activityGuides].map((g) => (
-                <li><a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink-soft hover:text-rust text-sm">{g.label}</a></li>
-              ))}
-            </ul>
-          )}
-          {item.hasDropdown === 'team-parent' && (
-            <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
-              {TEAM_PARENT_CATEGORIES.map((c) => (
-                <li><a href={`/team-parent/#${c.slug}`} class="font-display text-ink-soft hover:text-rust text-sm">{c.label}</a></li>
-              ))}
-            </ul>
-          )}
-          {item.hasDropdown === 'tools' && (
-            <ul class="grid gap-1 mt-2 pl-4 border-l border-bone">
-              {TOOLS_NAV.map((t) => (
-                <li><a href={t.href} class="font-display text-ink-soft hover:text-rust text-sm">{t.label}</a></li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <a href={item.href} class="font-display italic text-ink hover:text-rust block py-2" style="font-weight: 500;">{item.label}</a>
       ))}
       {UTILITY_NAV.map((item) => (
         <a href={item.href} class="font-display italic text-ink hover:text-rust" style="font-weight: 500;">{item.label}</a>

@@ -8,9 +8,12 @@ name = "parent-coach-playbook-cron"
 main = "src/index.ts"
 compatibility_date = "2025-04-01"
 
-# Daily at 13:00 UTC = 6am Pacific / 9am Eastern.
-# Pacific summer time = 6am PDT. Pacific winter = 5am PST. Either way the morning rebuild lands
-# before any reasonable parent picks up the phone.
+# Daily at 13:00 UTC.
+# Pacific Time:
+#   - PST (winter): 5:00 AM
+#   - PDT (summer): 6:00 AM
+# Cloudflare cron is UTC-only and doesn't follow DST. The morning rebuild lands
+# before any reasonable parent picks up the phone in either season.
 [triggers]
 crons = ["0 13 * * *"]
 
