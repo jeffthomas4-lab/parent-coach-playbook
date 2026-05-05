@@ -150,8 +150,8 @@ const popularSearches = [
 ];
 
 const popularReads = [
-  { title: 'The Recruiting Process', dek: 'A no-hype guide to how college recruiting really works.', href: '/recruiting/the-recruiting-process/' },
   { title: 'What you say in the first 90 seconds', dek: 'The post-game window decides what the next week feels like.', href: '/drive-home/the-90-second-rule/' },
+  { title: 'Are youth sports worth it? An honest answer.', dek: 'The cost is real. The hassle is real. The benefits are real too.', href: '/drive-there/are-youth-sports-worth-it/' },
   { title: 'Cost calculator', dek: 'What does a year of youth sports actually cost? Honest math, either way.', href: '/cost-calculator/' },
   { title: 'Concussion protocol basics', dek: 'CDC HEADS UP, return-to-play, your state law.', href: '/body/concussion-protocol-basics/' },
 ];
@@ -240,8 +240,8 @@ const popularReads = [
           </a>`).join('');
       };
 
-      input.addEventListener('input', () => {
-        const q = input.value.trim().toLowerCase();
+      const runSearch = (raw: string) => {
+        const q = raw.trim().toLowerCase();
         if (!q) {
           defaultState.classList.remove('hidden');
           resultsState.classList.add('hidden');
@@ -256,7 +256,18 @@ const popularReads = [
         );
         resultsLabel.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'} for "${q}"`;
         render(hits, q);
-      });
+      };
+
+      input.addEventListener('input', () => runSearch(input.value));
+
+      // Pre-fill from ?q= URL parameter so inline searches from /reads/ land on results.
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialQ = urlParams.get('q');
+      if (initialQ) {
+        input.value = initialQ;
+        runSearch(initialQ);
+        input.focus();
+      }
     }
   </script>
 </BaseLayout>

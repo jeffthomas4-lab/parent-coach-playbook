@@ -10,8 +10,8 @@ import { renderTitle } from '../../lib/title';
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-// Latest 6 articles across all topics
-const latest = all.slice(0, 6);
+// Latest 8 for the right rail (slim list)
+const latest = all.slice(0, 8);
 
 // For each topic, get the count and most recent article
 const topicData = TOPICS.map(topic => {
@@ -28,8 +28,9 @@ const fmtDate = (d: Date) =>
 ---
 <BaseLayout
   title="Reads"
-  description="The full archive of articles, organized by topic. Browse the latest pieces, then dive into your topic."
+  description="The full archive, organized by topic. Browse by what's on your mind, or scan the latest pieces."
 >
+  {/* Hero + inline search */}
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">Reads</p>
@@ -37,71 +38,96 @@ const fmtDate = (d: Date) =>
         Articles, organized by <em class="text-rust">topic</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Start with what's new, then pick a topic. Each section has everything we've written on that subject, filterable by age.
+        Pick a topic. Each section has everything we've written on that subject, filterable by age. Or scan what's new in the right rail.
       </p>
+
+      {/* Inline search — submits to /search/ with the query in the URL */}
+      <form action="/search/" method="get" class="mt-8 max-w-2xl">
+        <label for="reads-search" class="font-display italic text-ink-soft text-sm font-medium block mb-2">
+          Looking for something specific? Search the whole site.
+        </label>
+        <div class="flex gap-0">
+          <input
+            id="reads-search"
+            type="search"
+            name="q"
+            placeholder="Try: tryouts, recruiting, concussion, AAU, gear, cost..."
+            class="flex-1 px-4 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
+          />
+          <button type="submit" class="btn" style="border-radius: 0;">
+            Search
+          </button>
+        </div>
+        <p class="font-display italic text-ink-soft text-xs mt-2 font-medium">
+          Searches every read, drill, gear guide, body topic, pathway, calendar, recruiting page, rule, script, and decision on the site.
+        </p>
+      </form>
     </div>
   </section>
 
-  {/* Latest 6 */}
+  {/* Two-column: topics on the left, latest on the right rail */}
   <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-14">
-      <p class="font-display italic text-rust mb-6 font-medium">Latest</p>
-      <div class="grid md:grid-cols-3 gap-px bg-bone" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-        {latest.map((a) => (
-          <a
-            href={`/${a.data.phase}/${a.slug}/`}
-            class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
-          >
-            {a.data.hero && (
-              <img
-                src={a.data.hero}
-                alt={a.data.heroAlt || a.data.title}
-                class="w-full h-40 object-cover rounded mb-4 group-hover:opacity-90 transition-opacity"
-              />
-            )}
-            <p class="font-display italic text-rust text-xs mb-2 font-medium">
-              {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'}
-            </p>
-            <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
-            {a.data.dek && (
-              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{a.data.dek}</p>
-            )}
-            <p class="font-display italic text-ink-soft text-xs mt-3 font-medium">
-              {fmtDate(a.data.publishedAt)}
-            </p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+    <div class="container-px py-12 md:py-16">
+      <div class="grid lg:grid-cols-12 gap-10">
+        {/* LEFT: Browse by topic grid */}
+        <div class="lg:col-span-8">
+          <p class="font-display italic text-rust mb-2 font-medium">Browse by topic</p>
+          <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-7">
+            Pick what's <em class="text-rust">on your mind</em>.
+          </h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {topicData.map((t) => (
+              <a
+                href={`/reads/${t.slug}/`}
+                class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
+              >
+                <TopicIcon topic={t.slug} size={48} class="mb-4" />
+                <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+                  {t.label}
+                </h3>
+                <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.blurb}</p>
+                <div class="mt-4 pt-4 border-t border-bone">
+                  <p class="font-display italic text-ink-soft text-xs mb-2 font-medium">
+                    {t.count} {t.count === 1 ? 'piece' : 'pieces'}
+                  </p>
+                  {t.recent && (
+                    <p class="font-display text-ink text-sm leading-snug group-hover:text-rust transition-colors">
+                      <span class="font-semibold">Latest:</span> <span set:html={renderTitle(t.recent.data.title)} />
+                    </p>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
 
-  {/* Topic grid 3x3 */}
-  <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-14">
-      <p class="font-display italic text-rust mb-6 font-medium">Browse by topic</p>
-      <div class="grid md:grid-cols-3 gap-4">
-        {topicData.map((t) => (
-          <a
-            href={`/reads/${t.slug}/`}
-            class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
-          >
-            <TopicIcon topic={t.slug} size={48} class="mb-4" />
-            <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
-              {t.label}
+        {/* RIGHT RAIL: Latest reads */}
+        <aside class="lg:col-span-4">
+          <div class="lg:sticky lg:top-6">
+            <p class="font-display italic text-rust mb-2 font-medium">Latest</p>
+            <h2 class="font-display text-ink text-2xl md:text-[1.75rem] leading-[1.1] font-medium mb-5">
+              What's <em class="text-rust">new</em>.
             </h2>
-            <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.blurb}</p>
-            <div class="mt-4 pt-4 border-t border-bone">
-              <p class="font-display italic text-ink-soft text-xs mb-2 font-medium">
-                {t.count} {t.count === 1 ? 'piece' : 'pieces'}
-              </p>
-              {t.recent && (
-                <p class="font-display text-ink text-sm leading-snug group-hover:text-rust transition-colors">
-                  <span class="font-semibold">Latest:</span> <span set:html={renderTitle(t.recent.data.title)} />
-                </p>
-              )}
-            </div>
-          </a>
-        ))}
+            <ul class="border-t border-bone">
+              {latest.map((a) => (
+                <li>
+                  <a
+                    href={`/${a.data.phase}/${a.slug}/`}
+                    class="block py-4 border-b border-bone hover:bg-paper-warm transition-colors group"
+                  >
+                    <p class="font-display italic text-rust text-xs font-medium">
+                      {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {fmtDate(a.data.publishedAt)}
+                    </p>
+                    <h3 class="font-display text-ink text-base leading-snug mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p class="font-display italic text-rust text-sm mt-4 font-medium">
+              <a href="/rss.xml" class="hover:underline">→ RSS feed</a>
+            </p>
+          </div>
+        </aside>
       </div>
     </div>
   </section>

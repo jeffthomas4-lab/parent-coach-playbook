@@ -11,28 +11,29 @@ import { renderTitle } from '../lib/title';
 const articles   = await getCollection('articles',  ({ data }) => isLive(data));
 const scripts    = await getCollection('scripts',   ({ data }) => isLive(data));
 const decisions  = await getCollection('decisions', ({ data }) => isLive(data));
-const recruiting = await getCollection('recruiting',({ data }) => isLive(data));
 const body       = await getCollection('body',      ({ data }) => isLive(data));
 
 // CURATED LISTS — editorial picks, not auto-generated.
 // When a new article belongs here, add the slug. When a piece falls out of relevance, remove it.
 
 // Cornerstone pillar pieces — the deepest, most-shared content.
+// Editorial principle: cornerstones are the total-person, emotional pieces.
+// Recruiting belongs in /recruiting/, not in the cornerstone surface area.
 const cornerstoneSlugs = [
-  'the-recruiting-process',
-  'football',
+  'the-real-job-of-youth-sports',
   'are-youth-sports-worth-it',
   'why-kids-quit-sports',
+  'the-90-second-rule',
+  'when-she-says-i-hate-this-sport',
   'what-age-should-kids-start-sports',
 ];
-const cornerstone = [
-  ...recruiting.filter(r => cornerstoneSlugs.includes(r.slug)).map(r => ({ kind: 'recruiting' as const, slug: r.slug, title: r.data.title, summary: r.data.summary, href: `/recruiting/${r.slug}/` })),
-  ...articles.filter(a => cornerstoneSlugs.includes(a.slug)).map(a => ({ kind: 'article' as const, slug: a.slug, title: a.data.title, summary: a.data.dek ?? '', href: `/${a.data.phase}/${a.slug}/` })),
-];
+const cornerstone = articles
+  .filter(a => cornerstoneSlugs.includes(a.slug))
+  .map(a => ({ kind: 'article' as const, slug: a.slug, title: a.data.title, summary: a.data.dek ?? '', href: `/${a.data.phase}/${a.slug}/` }));
 
-// "If you're new" — quick-orient pieces.
+// "If you're new" — quick-orient pieces. Lead with the emotional frame, not the pipeline.
 const newToThis = [
-  { title: 'The Recruiting Process: what parents actually need to know',         href: '/recruiting/the-recruiting-process/', dek: 'No-hype guide to how college recruiting really works.' },
+  { title: 'Why we exist. Three things youth sports is for.',                    href: '/game/the-real-job-of-youth-sports/', dek: 'Have fun. Learn how to be a good teammate. Want to come back next year.' },
   { title: 'Are youth sports worth it? An honest answer.',                       href: '/drive-there/are-youth-sports-worth-it/', dek: 'The real math, by what you\'re actually paying for.' },
   { title: 'What age should kids start sports?',                                 href: '/drive-there/what-age-should-kids-start-sports/', dek: 'Earlier than you think for movement. Later than you think for competition.' },
   { title: 'The youth sports pendulum',                                          href: '/youth-sports-pendulum/', dek: 'Where is your family on the fun-to-performance spectrum right now?' },
