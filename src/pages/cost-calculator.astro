@@ -393,4 +393,22 @@ const levels = [
         const url = window.location.origin + window.location.pathname + '?d=' + data;
         try {
           await navigator.clipboard.writeText(url);
-     
+               shareBtn!.textContent = 'Copied!';
+          setTimeout(() => { shareBtn!.textContent = 'Copy share URL'; }, 2000);
+        } catch {
+          window.prompt('Copy this URL', url);
+        }
+      });
+
+      // Initialize from share URL if present
+      const urlParams = new URLSearchParams(window.location.search);
+      const dataParam = urlParams.get('d');
+      if (dataParam) {
+        try { state = JSON.parse(atob(dataParam)); } catch {}
+      }
+
+      render();
+    }
+</script>
+
+</BaseLayout>
