@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-05T21:35:33.259Z",
-  "count": 195,
+  "generatedAt": "2026-05-05T21:54:54.226Z",
+  "count": 194,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -870,12 +870,6 @@
       "url": "https://www.njcaa.org/sports/fball/index",
       "sources": [
         "src/content/recruiting/football.md"
-      ]
-    },
-    {
-      "url": "https://www.perfectgame.org/",
-      "sources": [
-        "src/content/recruiting/baseball.md"
       ]
     },
     {

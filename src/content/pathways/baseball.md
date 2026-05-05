@@ -112,7 +112,7 @@ bands:
     decisionPoints:
       - "Single-sport specialization is now a reasonable conversation (per AAP, after 14)"
       - "Recruiting timeline: D1 prospects are talking to schools by sophomore year, but most kids don't start until junior year"
-      - "Showcase events become more legitimate (Perfect Game, etc.)"
+      - "Showcase events become more legitimate at this age, though still buyer-beware"
       - "Recruiting services like NCSA: usually not worth it. Coaches find players via film and live looks."
 ---
 

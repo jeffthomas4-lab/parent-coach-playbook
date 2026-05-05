@@ -12,8 +12,6 @@ governingBodies:
     url: "https://www.ncaa.org/sports/baseball"
   - name: "NAIA Baseball"
     url: "https://www.naia.org/sports/bsb/index"
-  - name: "Perfect Game"
-    url: "https://www.perfectgame.org/"
 editorial:
   qualityGrade: 9
   originalityGrade: 9
@@ -53,13 +51,13 @@ College baseball coaches evaluate three things: tools, performance, and projecti
 
 **Tools.** Throwing velocity (radar gun on the mound and in the outfield), exit velocity off the bat, sixty-yard dash time, position-specific arm grades. These are often known by junior year for any kid getting recruited.
 
-**Performance.** Stats matter, but only against credible competition. A .500 average in a weak rec league means little. A .310 average in a top travel program at Perfect Game tournaments means more.
+**Performance.** Stats matter, but only against credible competition. A .500 average in a weak rec league means little. A .310 average in a top travel program at high-level showcase tournaments means more.
 
 **Projection.** Coaches recruit the kid who will be at peak at 22, not at 17. A 16-year-old with a 165-pound frame, projectable mechanics, and current 84-mph velocity is more interesting than an 18-year-old maxed-out at 88 with no remaining frame.
 
 ## Showcase economics
 
-The Perfect Game and PBR (Prep Baseball Report) showcase circuits are real. Coaches do attend them. They are also expensive. A summer of high-end showcase ball can run $4,000 to $10,000 in tournament fees, travel, hotels, and per-event registrations. Some families spend more than that.
+The major showcase circuits are real. Coaches do attend them. They are also expensive. A summer of high-end showcase ball can run $4,000 to $10,000 in tournament fees, travel, hotels, and per-event registrations. Some families spend more than that.
 
 The honest filter: if your kid's velocity, exit velo, and 60 are at or above the published cut lines for the level you're targeting, showcases are worth attending where the coaches you want will see them. If your kid's metrics are below the cut lines, showcases are mostly an expensive way to discover that.
 

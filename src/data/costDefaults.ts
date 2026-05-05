@@ -45,7 +45,6 @@ const HOCKEY_SOURCES: CostSource[] = [
 const BASEBALL_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
   { label: 'Little League International: League fee structure',    url: 'https://www.littleleague.org/' },
-  { label: 'Perfect Game / Travel Ball annual cost coverage',        url: 'https://www.perfectgame.org/' },
 ];
 
 const FOOTBALL_SOURCES: CostSource[] = [
@@ -237,7 +236,7 @@ export const PROFILES: CostProfile[] = [
       l.key === 'private-lessons' ? { ...l, default: 2400, hint: 'Hitting + pitching, $80-100/hr × ~25-30 sessions/year.' } : l
     ),
     sources: BASEBALL_SOURCES,
-    sourceNote: 'Travel baseball club fees average $1,500-3,000. Tournament fees, private lessons, and equipment (especially bat upgrades) compose the bulk of total cost. Perfect Game and other tournament organizers publish entry fee schedules.',
+    sourceNote: 'Travel baseball club fees average $1,500-3,000. Tournament fees, private lessons, and equipment (especially bat upgrades) compose the bulk of total cost. Tournament organizers publish entry fee schedules; budget $200-600 per weekend tournament.',
   },
 
   // Lacrosse boys: stick + helmet + full pads, plus high travel exposure for serious club.
