@@ -264,8 +264,3 @@ export const TEAM_PARENT_CATEGORIES = [
 ] as const;
 
 export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];
-ssistants. Snack signups that actually fill.',     accent: '#5C7459' },
-  { slug: 'travel',        label: 'Travel team logistics', blurb: 'Tournament packing. Hotel rotations. Travel budgets.',     accent: '#C5713D' },
-] as const;
-
-export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];
