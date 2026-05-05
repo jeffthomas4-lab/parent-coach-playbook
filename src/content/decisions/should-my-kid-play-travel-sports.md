@@ -34,6 +34,8 @@ relatedDecisions:
   - "should-my-kid-quit-sports"
   - "when-to-specialize"
   - "how-many-sports"
+  - "financial-pressure-decisions"
+  - "leave-this-team"
 relatedScripts:
   - "after-no-playing-time"
   - "after-a-bad-game"

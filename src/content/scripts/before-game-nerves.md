@@ -31,6 +31,8 @@ relatedScripts:
   - "after-a-bad-game"
   - "kid-upset"
   - "tryouts-week"
+  - "before-a-game-11-12"
+  - "before-a-game-13-14"
 sportTags: ["multi-sport"]
 ageBands: ["8-10","11-12","13-14","15-plus"]
 editorial:

@@ -32,6 +32,8 @@ theRule: "Don't force a kid to stay in something that is consistently taking mor
 relatedDecisions:
   - "should-my-kid-play-travel-sports"
   - "how-many-sports"
+  - "when-sports-stop-being-fun"
+  - "leave-this-team"
 relatedScripts:
   - "kid-upset"
   - "after-a-bad-game"

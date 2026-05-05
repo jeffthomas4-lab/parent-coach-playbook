@@ -34,6 +34,7 @@ relatedDecisions:
   - "should-my-kid-play-travel-sports"
   - "when-to-specialize"
   - "how-many-sports"
+  - "financial-pressure-decisions"
 relatedScripts:
   - "after-a-bad-game"
 sportTags: ["baseball","softball"]

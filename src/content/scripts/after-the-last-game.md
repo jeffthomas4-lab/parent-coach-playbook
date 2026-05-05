@@ -31,6 +31,7 @@ relatedScripts:
   - "after-a-win"
   - "after-a-bad-game"
   - "kid-upset"
+  - "after-a-game-13-14"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]
 editorial:

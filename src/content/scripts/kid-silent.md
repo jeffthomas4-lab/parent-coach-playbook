@@ -31,6 +31,7 @@ relatedScripts:
   - "kid-upset"
   - "after-a-bad-game"
   - "after-no-playing-time"
+  - "after-a-game-13-14"
 sportTags: ["multi-sport"]
 ageBands: ["11-12","13-14","15-plus"]
 editorial:

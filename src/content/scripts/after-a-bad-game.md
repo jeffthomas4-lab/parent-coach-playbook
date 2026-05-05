@@ -32,6 +32,8 @@ relatedScripts:
   - "after-a-mistake"
   - "kid-upset"
   - "after-no-playing-time"
+  - "after-a-game-8-10"
+  - "after-a-game-11-12"
 sportTags: ["multi-sport"]
 ageBands: ["8-10","11-12","13-14"]
 editorial:

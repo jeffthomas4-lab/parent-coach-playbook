@@ -61,3 +61,5 @@ This site has a thesis we believe. Three drives. One relationship.
 The middle drive is the one coaches obsess over. The film, the pre-game speech, the lineup card. It matters less than the bookends. Your kid won't remember the specific play call from April. They will remember whether you were warm in the car on the way home.
 
 Coach the team in the middle. Keep the kid on either side.
+
+The rest of the parent-coach pieces live at [/parent-coach/](/parent-coach/). The drills you'll actually run on Tuesday night live at [/coaching-tips/](/coaching-tips/).

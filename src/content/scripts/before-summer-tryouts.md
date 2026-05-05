@@ -30,6 +30,8 @@ relatedScripts:
   - "before-game-nerves"
   - "kid-upset"
   - "after-a-bad-game"
+  - "before-a-game-11-12"
+  - "before-a-game-13-14"
 sportTags: ["multi-sport"]
 ageBands: ["8-10","11-12","13-14"]
 editorial:

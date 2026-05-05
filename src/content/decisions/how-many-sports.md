@@ -33,6 +33,7 @@ relatedDecisions:
   - "when-to-specialize"
   - "should-my-kid-play-travel-sports"
   - "should-my-kid-quit-sports"
+  - "financial-pressure-decisions"
 relatedScripts:
   - "after-the-last-game"
 sportTags: ["multi-sport"]

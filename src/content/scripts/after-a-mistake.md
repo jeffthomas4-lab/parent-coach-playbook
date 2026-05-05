@@ -31,6 +31,7 @@ relatedScripts:
   - "after-a-bad-game"
   - "kid-upset"
   - "kid-silent"
+  - "after-a-game-8-10"
 sportTags: ["multi-sport"]
 ageBands: ["8-10","11-12","13-14"]
 editorial:

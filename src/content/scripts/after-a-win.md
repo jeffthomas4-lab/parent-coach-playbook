@@ -30,6 +30,8 @@ relatedScripts:
   - "after-a-bad-game"
   - "kid-silent"
   - "after-the-last-game"
+  - "after-a-game-8-10"
+  - "after-a-game-11-12"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]
 editorial:

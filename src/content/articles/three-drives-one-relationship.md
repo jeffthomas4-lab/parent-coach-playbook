@@ -71,3 +71,5 @@ If you cannot do both, get a different parent to coach the team. There are seaso
 ## What this site is for
 
 This site is not a coaching certification. It is not a parenting framework with capital letters. It is sideline notes from parents who have done this for years across different teams, different kids, different sports.
+
+If you're the parent who is also the coach, the rest of those notes live at [/parent-coach/](/parent-coach/).

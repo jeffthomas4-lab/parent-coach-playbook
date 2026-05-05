@@ -34,6 +34,7 @@ relatedDecisions:
   - "how-many-sports"
   - "should-my-kid-play-travel-sports"
   - "should-my-kid-quit-sports"
+  - "when-sports-stop-being-fun"
 relatedScripts:
   - "kid-upset"
 sportTags: ["multi-sport"]
