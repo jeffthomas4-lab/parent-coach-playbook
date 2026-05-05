@@ -64,7 +64,7 @@ const editorialField = {
     affiliateDisclosurePresent: z.boolean().default(false),               // FTC requires when affiliate links present
     claudeReviewedAt:           z.coerce.date().optional(),
     jeffReviewedAt:             z.coerce.date().optional(),
-    status:                     z.enum(['draft','claude-reviewed','jeff-approved','published','needs-revision']).default('draft'),
+    status: z.enum(['draft','claude-reviewed','ready-for-jeff','jeff-approved','published','needs-revision']).default('draft'),
     reviewerNotes:              z.string().optional(),
     factCheckGoodThrough:       z.coerce.date().optional(),               // for evergreen content with date-sensitive facts
   }).optional(),
@@ -406,3 +406,4 @@ const decisions = defineCollection({
 });
 
 export const collections = { articles, gear, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules, scripts, decisions };
+
