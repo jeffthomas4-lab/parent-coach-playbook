@@ -1,0 +1,217 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { isLive } from '../lib/publishFilter';
+import { renderTitle } from '../lib/title';
+
+// Curated lists. Editorial picks, not auto-generated.
+// When a new piece earns parent-coach pillar status, add the slug here.
+
+// Cornerstone parent-coach reads — the essays that named the niche.
+const cornerstoneSlugs = [
+  'coaching-your-own-kid-in-front-of-the-team',
+  'three-drives-one-relationship',
+  'the-real-job-of-youth-sports',
+];
+
+// Decision pieces specific to the parent who's also (or considering being) the coach.
+const decisionSlugs = [
+  'the-you-should-be-assistant-coaching-pressure',
+];
+
+// Scripts and dispatches for the parent-coach moments.
+const scriptSlugs: string[] = [
+  // Add parent-coach-specific scripts here as they're written.
+];
+
+const articles  = await getCollection('articles',  ({ data }) => isLive(data));
+const scripts   = await getCollection('scripts',   ({ data }) => isLive(data));
+
+const cornerstone = articles
+  .filter(a => cornerstoneSlugs.includes(a.slug))
+  .sort((a, b) => cornerstoneSlugs.indexOf(a.slug) - cornerstoneSlugs.indexOf(b.slug));
+
+const decisionReads = articles
+  .filter(a => decisionSlugs.includes(a.slug));
+
+const scriptReads = scripts
+  .filter(s => scriptSlugs.includes(s.slug));
+---
+<BaseLayout
+  title="The parent-coach"
+  description="If you're coaching your own kid's team, this is where those pieces live. Reads, drills, scripts, frameworks for the parent who's also on the bench."
+>
+  {/* Hero — names the niche directly */}
+  <section class="border-b border-bone" style="background: #2D2520; color: #FAF6EE;">
+    <div class="container-px py-16 md:py-24">
+      <p class="font-display italic mb-4 font-medium" style="color: #D4AB6A;">The parent-coach</p>
+      <h1 class="font-display text-[2.5rem] md:text-[4.5rem] leading-[1.0] max-w-4xl font-medium" style="color: #FAF6EE;">
+        If you're <em class="italic" style="color: #C5713D;">also</em> on the bench.
+      </h1>
+      <p class="font-display text-xl md:text-2xl mt-7 max-w-2xl leading-relaxed" style="color: #DDD2BD;">
+        Coaching your kid's team is its own job. Most clinics don't cover the part where it's also your kid. The lineup at midnight. The walk to the dugout. The drive home, knowing they're not getting the truth from anyone else either.
+      </p>
+      <p class="font-display text-lg mt-5 max-w-2xl leading-relaxed" style="color: #DDD2BD;">
+        We built this site partly because nobody was writing for the parent-coach honestly. The reads below are aimed at you specifically. The rest of the site is here too. Welcome.
+      </p>
+    </div>
+  </section>
+
+  {/* Cornerstone reads */}
+  {cornerstone.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-14 md:py-16">
+        <p class="font-display italic text-rust mb-2 font-medium">If you only read three</p>
+        <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-8">
+          The <em class="text-rust">cornerstone</em> pieces.
+        </h2>
+        <ul class="grid md:grid-cols-3 gap-px bg-bone">
+          {cornerstone.map((c) => (
+            <li class="bg-paper p-6 hover:bg-paper-warm transition-colors group">
+              <a href={`/${c.data.phase}/${c.slug}/`} class="block">
+                <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(c.data.title)} />
+                {c.data.dek && (
+                  <p class="font-display text-ink-soft text-sm mt-3 leading-snug">{c.data.dek}</p>
+                )}
+                <p class="t-cta mt-4">Read it →</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Drills — the coaching-tips pillar is parent-coach-native */}
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-14 md:py-16">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-7">
+          <p class="font-display italic text-rust mb-2 font-medium">For practice this week</p>
+          <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium">
+            Drills you can <em class="text-rust">actually run</em>.
+          </h2>
+          <p class="font-display text-ink-soft text-lg mt-4 max-w-xl leading-snug">
+            The drills library is built for parent-coaches. Each one has setup, the coaching cue, the most common mistake, and the variation for younger kids. Filter by sport, by age, by what you're trying to fix.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/coaching-tips/" class="btn">Open the drills library</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <ul class="grid gap-2">
+            <li class="border border-bone bg-paper p-4">
+              <p class="font-display italic text-rust text-xs font-medium">Baseball · 8–10</p>
+              <a href="/coaching-tips/baseball-target-bucket-throw/" class="font-display text-ink hover:text-rust font-medium">Target bucket throw</a>
+            </li>
+            <li class="border border-bone bg-paper p-4">
+              <p class="font-display italic text-rust text-xs font-medium">Lacrosse · 11–12</p>
+              <a href="/coaching-tips/lacrosse-ground-ball-scoop-battles-ages-11-12/" class="font-display text-ink hover:text-rust font-medium">Ground ball scoop battles</a>
+            </li>
+            <li class="border border-bone bg-paper p-4">
+              <p class="font-display italic text-rust text-xs font-medium">Baseball · 5–7</p>
+              <a href="/coaching-tips/baseball-tee-belly-button-contact/" class="font-display text-ink hover:text-rust font-medium">Tee, belly-button contact point</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Decisions for the parent-coach */}
+  {decisionReads.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-14 md:py-16">
+        <p class="font-display italic text-rust mb-2 font-medium">The decisions</p>
+        <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-7">
+          Should I <em class="text-rust">coach this team</em>?
+        </h2>
+        <ul class="grid md:grid-cols-2 gap-x-6 gap-y-1 max-w-3xl">
+          {decisionReads.map((a) => (
+            <li>
+              <a href={`/${a.data.phase}/${a.slug}/`} class="font-display block py-4 border-b border-bone hover:text-rust transition-colors group">
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(a.data.title)} />
+                {a.data.dek && (
+                  <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{a.data.dek}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Scripts (only renders when we add parent-coach-specific scripts to the slug list) */}
+  {scriptReads.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-14 md:py-16">
+        <p class="font-display italic text-rust mb-2 font-medium">For the moment in the car</p>
+        <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-7">
+          What to <em class="text-rust">say</em>.
+        </h2>
+        <ul class="grid md:grid-cols-2 gap-x-6 gap-y-1 max-w-3xl">
+          {scriptReads.map((s) => (
+            <li>
+              <a href={`/scripts/${s.slug}/`} class="font-display block py-4 border-b border-bone hover:text-rust transition-colors group">
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(s.data.title)} />
+                {s.data.summary && (
+                  <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{s.data.summary}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* What's coming — preview future products for the niche */}
+  <section class="border-b border-bone">
+    <div class="container-px py-14 md:py-16">
+      <p class="font-display italic text-rust mb-2 font-medium">In the works</p>
+      <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] max-w-2xl font-medium mb-8">
+        What's <em class="text-rust">coming</em> for parent-coaches.
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-bone">
+        <div class="bg-paper p-6">
+          <p class="font-display italic text-rust text-xs mb-3 font-medium">Books</p>
+          <h3 class="font-display text-ink text-xl leading-tight font-medium">A series for the parent-coach</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+            Two books in progress. The first is the manuscript that became this site.
+          </p>
+        </div>
+        <div class="bg-paper p-6">
+          <p class="font-display italic text-rust text-xs mb-3 font-medium">Podcast</p>
+          <h3 class="font-display text-ink text-xl leading-tight font-medium">The drive home, in long form</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+            Conversations with parent-coaches about the moments that don't make the highlight reel.
+          </p>
+        </div>
+        <div class="bg-paper p-6">
+          <p class="font-display italic text-rust text-xs mb-3 font-medium">Video</p>
+          <h3 class="font-display text-ink text-xl leading-tight font-medium">Drills, in five minutes</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+            Short demos of the drills you'll actually run on Tuesday night with twelve eight-year-olds.
+          </p>
+        </div>
+        <div class="bg-paper p-6">
+          <p class="font-display italic text-rust text-xs mb-3 font-medium">Courses</p>
+          <h3 class="font-display text-ink text-xl leading-tight font-medium">A first season, walked through</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
+            For the parent stepping up for the first time. Roster night to banquet, with the curveballs in between.
+          </p>
+        </div>
+      </div>
+      <p class="font-display italic text-ink-soft text-sm mt-6 max-w-xl leading-snug font-medium">
+        Subscribe to the newsletter and you'll be the first to hear when any of these ship.
+      </p>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="The parent-coach pieces, first"
+    blurb="One short read every Friday from the editorial desk. Parent-coach pieces are flagged at the top so you can read those first."
+  />
+</BaseLayout>
