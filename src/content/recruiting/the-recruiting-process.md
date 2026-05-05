@@ -199,4 +199,4 @@ Non-sport-specific pieces parents ask about most:
 - [NIL basics for high schoolers](/recruiting/nil-basics-for-hs/)
 - [What verbal commits actually mean (and don't)](/recruiting/what-verbal-commits-mean/)
 
-This guide was written by a Division III head coach with two decades of experience recruiting student-athletes, with input from coaches across other levels and sports. It is published for parents, not for sale. — Jeff Thomas for Parent Coach Playbook
+This guide was written by the Parent Coach Playbook editorial team with input from coaches across every NCAA division and from families navigating offers from D1 through JUCO. It is published for parents, not for sale.

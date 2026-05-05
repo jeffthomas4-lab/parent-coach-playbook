@@ -105,22 +105,22 @@ const levels = [
 
         <!-- Dashboard -->
         <aside class="lg:col-span-5">
-          <div class="border border-ink bg-ink text-paper p-6 sticky top-6">
+          <div class="border border-ink bg-ink text-paper p-5 sm:p-6 lg:sticky lg:top-6">
             <p class="font-display italic mb-1" style="color: #D4AB6A; font-weight: 500;">Annual total</p>
             <p class="font-display text-paper" style="font-weight: 500; font-size: 3rem; line-height: 1;" data-total-annual>$0</p>
 
-            <div class="mt-6 grid grid-cols-3 gap-3 pt-4 border-t" style="border-color: #5a4d44;">
-              <div>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t" style="border-color: #5a4d44;">
+              <div class="flex items-baseline justify-between sm:block">
                 <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per month</p>
-                <p class="font-display text-paper text-xl mt-1" style="font-weight: 500;" data-total-monthly>$0</p>
+                <p class="font-display text-paper text-lg sm:text-xl sm:mt-1" style="font-weight: 500;" data-total-monthly>$0</p>
               </div>
-              <div>
+              <div class="flex items-baseline justify-between sm:block">
                 <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per week</p>
-                <p class="font-display text-paper text-xl mt-1" style="font-weight: 500;" data-total-weekly>$0</p>
+                <p class="font-display text-paper text-lg sm:text-xl sm:mt-1" style="font-weight: 500;" data-total-weekly>$0</p>
               </div>
-              <div>
+              <div class="flex items-baseline justify-between sm:block">
                 <p class="font-display italic text-paper-warm text-xs" style="font-weight: 500;">Per game played</p>
-                <p class="font-display text-paper text-xl mt-1" style="font-weight: 500;" data-total-per-game>$0</p>
+                <p class="font-display text-paper text-lg sm:text-xl sm:mt-1" style="font-weight: 500;" data-total-per-game>$0</p>
               </div>
             </div>
 
@@ -262,7 +262,7 @@ const levels = [
 
         // Line items
         linesEl.innerHTML = state.items.map((it, idx) => `
-          <li class="border border-bone bg-paper p-3 grid grid-cols-[1fr_120px_auto] gap-3 items-center">
+          <li class="border border-bone bg-paper p-3 grid grid-cols-[1fr_90px_auto] sm:grid-cols-[1fr_120px_auto] gap-2 sm:gap-3 items-center">
             <input type="text" value="${escapeAttr(it.label)}" data-line-label="${idx}"
               class="font-display text-ink bg-paper-warm border border-bone px-2 py-1 text-sm" style="font-weight: 500;" />
             <div class="flex items-center gap-1">

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-05T05:21:23.577Z",
-  "count": 179,
+  "generatedAt": "2026-05-05T05:46:39.199Z",
+  "count": 195,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -321,6 +321,7 @@
     {
       "url": "https://usavolleyball.org/",
       "sources": [
+        "src/content/recruiting/volleyball.md",
         "src/content/rules/volleyball.md",
         "src/pages/governing-bodies.astro"
       ]
@@ -581,9 +582,33 @@
       ]
     },
     {
+      "url": "https://www.naia.org/sports/bsb/index",
+      "sources": [
+        "src/content/recruiting/baseball.md"
+      ]
+    },
+    {
       "url": "https://www.naia.org/sports/fball/index",
       "sources": [
         "src/content/recruiting/football.md"
+      ]
+    },
+    {
+      "url": "https://www.naia.org/sports/mbkb/index",
+      "sources": [
+        "src/content/recruiting/basketball.md"
+      ]
+    },
+    {
+      "url": "https://www.naia.org/sports/msoc/index",
+      "sources": [
+        "src/content/recruiting/soccer.md"
+      ]
+    },
+    {
+      "url": "https://www.naia.org/sports/sb/index",
+      "sources": [
+        "src/content/recruiting/softball.md"
       ]
     },
     {
@@ -650,9 +675,75 @@
       ]
     },
     {
+      "url": "https://www.ncaa.org/sports/baseball",
+      "sources": [
+        "src/content/recruiting/baseball.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/basketball-men",
+      "sources": [
+        "src/content/recruiting/basketball.md"
+      ]
+    },
+    {
       "url": "https://www.ncaa.org/sports/football",
       "sources": [
         "src/content/recruiting/football.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/ice-hockey-men",
+      "sources": [
+        "src/content/recruiting/hockey.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/ice-hockey-women",
+      "sources": [
+        "src/content/recruiting/hockey.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/lacrosse-men",
+      "sources": [
+        "src/content/recruiting/lacrosse.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/lacrosse-women",
+      "sources": [
+        "src/content/recruiting/lacrosse.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/soccer-men",
+      "sources": [
+        "src/content/recruiting/soccer.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/soccer-women",
+      "sources": [
+        "src/content/recruiting/soccer.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/softball",
+      "sources": [
+        "src/content/recruiting/softball.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/volleyball-men",
+      "sources": [
+        "src/content/recruiting/volleyball.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/volleyball-women",
+      "sources": [
+        "src/content/recruiting/volleyball.md"
       ]
     },
     {
@@ -709,6 +800,12 @@
       "url": "https://www.njcaa.org/sports/fball/index",
       "sources": [
         "src/content/recruiting/football.md"
+      ]
+    },
+    {
+      "url": "https://www.perfectgame.org/",
+      "sources": [
+        "src/content/recruiting/baseball.md"
       ]
     },
     {
@@ -809,6 +906,7 @@
     {
       "url": "https://www.teamusa.com/usa-softball",
       "sources": [
+        "src/content/recruiting/softball.md",
         "src/pages/resources/national-organizations.astro"
       ]
     },
@@ -903,6 +1001,7 @@
     {
       "url": "https://www.usahockey.com/",
       "sources": [
+        "src/content/recruiting/hockey.md",
         "src/content/rules/hockey.md",
         "src/pages/governing-bodies.astro"
       ]
@@ -928,6 +1027,7 @@
     {
       "url": "https://www.usalacrosse.com/",
       "sources": [
+        "src/content/recruiting/lacrosse.md",
         "src/content/rules/lacrosse-boys.md",
         "src/content/rules/lacrosse-girls.md",
         "src/pages/governing-bodies.astro"

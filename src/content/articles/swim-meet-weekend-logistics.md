@@ -1,0 +1,40 @@
+---
+title: "Swim-meet weekend logistics that save the family"
+dek: "Two-day swim meets can break a marriage. The shift schedule, the snack strategy, and the eight things to pack that you forgot."
+topic: "season-ops"
+format: "note"
+phase: "team-parent"
+teamParentTopic: "logistics"
+sport: "swimming"
+age: "all-ages"
+publishedAt: 2026-05-29
+featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 9
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-04
+  status: claude-reviewed
+  reviewerNotes: "Practical and well-targeted to a specific sport's pain point."
+---
+
+A two-day swim meet is 14 hours of pool deck, 90 seconds of actual racing per kid per session, and a parking lot full of stressed-out families. A few logistics decisions on Friday night make the weekend survivable.
+
+**Pre-decide the parent shift schedule.** Both parents do not need to be at the pool for both days. One parent on Saturday morning, the other on Sunday morning, switch off afternoons. The kid is fine with one parent at any given time. The "we both have to be there" pressure usually backfires by 11am Saturday.
+
+**Pack one bag with all the swim stuff. Pack a separate bag with parent stuff.** Swim bag: extra cap, extra goggles, extra suit, towels, water bottle, snacks, sweats for between events. Parent bag: phone charger, book, water, a folding chair if the venue allows, layers (pool decks are humid then cold).
+
+**Snack strategy: small, easy, every 90 minutes.** Bananas, granola bars, peanut butter sandwiches, electrolyte drinks. Avoid heavy meals on race day; the kid will swim them. Big meals after the last race.
+
+**Know the warm-up time and the first event.** That tells you the actual arrival time. Working backward: if warm-up is at 7:30am and you live 30 minutes away, you're leaving at 6:45am. Plan breakfast accordingly.
+
+**Eight things parents forget:** insulated water bottle (sips between events), a phone-mounted clock or watch (deck wifi is unreliable), a printed heat sheet (in case the meet system crashes), an extra pair of dry socks for after, parking cash (some venues), sunscreen if outdoor, hand sanitizer, the kid's favorite small comfort item for between events.
+
+**The post-meet wind-down.** Swimmers are tired in a specific way after a meet. Easy dinner, early bed, no analysis of the races until at least the next morning. The "what could you have done differently" conversation has no place at 9pm Sunday.
+
+The families that survive a two-day meet without snapping at each other are the families that pre-decided who does what.

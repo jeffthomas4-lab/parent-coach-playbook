@@ -319,4 +319,4 @@ If you do those things, by November of senior year your son will have a college 
 - Soccer recruiting — coming
 - Recruiting and the academically strong student — coming
 
-Written by a current Division III head football coach with two decades of recruiting experience across every level of college football, including direct work with families navigating offers from D1 through JUCO. — Jeff Thomas for Parent Coach Playbook
+Written by the Parent Coach Playbook editorial team, with input from current college football coaches and families across every level of college football, including D1 through JUCO.
