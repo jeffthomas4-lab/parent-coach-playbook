@@ -17,8 +17,8 @@ whatToSay:
 whatNotToSay:
   - "You should have been captain."
   - "Coach made a mistake."
-  - "Next year." (Maybe. Maybe not.)
-  - "It's not a big deal." (It is to them today.)
+  - "Next year. (Maybe. Maybe not.)"
+  - "It's not a big deal. (It is to them today.)"
 theRule: "Don't tell them how to feel about it. Find out how they feel about it."
 ifTheyBringItUp:
   - "If they say they don't care, ask one follow-up. 'Are you sure?' Listen to the answer."

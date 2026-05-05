@@ -19,7 +19,7 @@ whatNotToSay:
   - "This is the biggest day of your life."
   - "Don't let me down."
   - "Coach is counting on you."
-  - "Win this for grandma." (Real example. Don't.)
+  - "Win this for grandma. (Real example. Don't.)"
 theRule: "Lower the temperature, don't raise it. The game is loud enough on its own."
 ifTheyBringItUp:
   - "If they want to talk strategy, listen, don't add your own."

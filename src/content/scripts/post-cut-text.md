@@ -16,7 +16,7 @@ whatToSay:
   - "We can talk about it tomorrow if you want, or never. Up to you."
 whatNotToSay:
   - "It's their loss."
-  - "We'll get them next year." (Not always true.)
+  - "We'll get them next year. (Not always true.)"
   - "I bet the kids who made it weren't even better than you."
   - "Now we know what to work on."
 theRule: "The cut is the cut. The next 12 hours are about the kid, not the verdict."

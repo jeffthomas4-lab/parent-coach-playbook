@@ -16,7 +16,7 @@ whatToSay:
   - "Tell me when you want food."
   - "(Then wait. Just drive.)"
 whatNotToSay:
-  - "How did it go?" (Too broad. They'll shut down.)
+  - "How did it go? (Too broad. They'll shut down.)"
   - "I noticed in the third quarter you..."
   - "Coach left you in too long. Or pulled you too soon."
   - "Anything that starts with 'next time.'"

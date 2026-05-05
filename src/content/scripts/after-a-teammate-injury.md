@@ -18,7 +18,7 @@ whatToSay:
 whatNotToSay:
   - "These things happen, don't worry about it."
   - "You're fine. They'll be fine."
-  - "Did the coach say what happened?" (Pumping for info.)
+  - "Did the coach say what happened? (Pumping for info.)"
   - "That's why I told you to keep your head up."
 theRule: "Witnessing an injury is its own thing. Don't rush past it. Don't make them perform okay-ness."
 ifTheyBringItUp:

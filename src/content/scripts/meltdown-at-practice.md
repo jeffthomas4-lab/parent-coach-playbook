@@ -18,7 +18,7 @@ whatNotToSay:
   - "What is wrong with you?"
   - "You can't do that in front of the team."
   - "You embarrassed yourself."
-  - "We're going to have a talk when we get home." (Threat-shaped.)
+  - "We're going to have a talk when we get home. (Threat-shaped.)"
 theRule: "Regulate first. Evaluate later. Sometimes evaluation is the next day. Sometimes it's never."
 ifTheyBringItUp:
   - "If they explain, listen. Don't fix the explanation."

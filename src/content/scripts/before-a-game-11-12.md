@@ -18,7 +18,7 @@ whatToSay:
 whatNotToSay:
   - "If you have a good game, we'll go to..."
   - "Coach told me you need to..."
-  - "Don't be nervous." (Telling someone not to be nervous adds nerves.)
+  - "Don't be nervous. (Telling someone not to be nervous adds nerves.)"
   - "Today's the game we've been waiting for."
 theRule: "Decouple your approval from their performance. Say it out loud, once, before they walk to the dugout."
 ifTheyBringItUp:

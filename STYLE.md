@@ -90,6 +90,26 @@ End on substance, not motivation. No empowerment closes.
 
 ---
 
+## YAML frontmatter trap
+
+In script and decision arrays, every list item that contains a parenthetical aside must keep the parenthetical INSIDE the closing quote.
+
+**Wrong:**
+```yaml
+whatNotToSay:
+  - "Don't be nervous." (Telling someone not to be nervous adds nerves.)
+```
+
+**Right:**
+```yaml
+whatNotToSay:
+  - "Don't be nervous. (Telling someone not to be nervous adds nerves.)"
+```
+
+The wrong version breaks YAML with `bad indentation of a sequence entry`. This bug has appeared in three sessions. Don't make it four.
+
+---
+
 ## Frontmatter
 
 Every article has, minimum:

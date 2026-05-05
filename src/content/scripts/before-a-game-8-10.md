@@ -18,7 +18,7 @@ whatNotToSay:
   - "Just don't strike out."
   - "Coach said you'd start. Make sure he keeps you in."
   - "We need a win today."
-  - "Remember, scouts are watching." (No, they're not. They are nine.)
+  - "Remember, scouts are watching. (No, they're not. They are nine.)"
 theRule: "Reinforce the part they can control. Effort. Attempt. Whatever they've been working on. Skip outcomes."
 ifTheyBringItUp:
   - "If they ask whether they'll start, say what you know. 'I think so' is honest. 'I don't know' is too. 'Definitely' is not yours to give."
