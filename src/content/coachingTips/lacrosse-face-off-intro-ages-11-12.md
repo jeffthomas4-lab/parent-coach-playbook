@@ -26,3 +26,11 @@ Face-offs are 50-50 plays. This drill teaches young players the mechanics and bu
 Each player should be low and balanced. If they're standing up or leaning, they can't react fast. The first move should be explosive, not cautious. The player with the best first step often wins the ball. Both players should fight for the ground ball after the initial contact. If one player is getting beaten every rep, rotation might be the issue.
 
 **Variation:** Add trailing players. Two more players stand 5 yards behind each face-off player. Once the ball is won, the trailing player can help secure it. This teaches the team component of face-offs.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls →](/go/lacrosse-ball/) — official 6-pack. The drill burns through balls fast.
+
+*As an Amazon Associate we earn from qualifying purchases.*

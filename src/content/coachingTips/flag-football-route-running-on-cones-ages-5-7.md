@@ -31,3 +31,13 @@ Young receivers need to understand that running a route isn't just about speed: 
 Watch for hard plant steps at cone cuts. Many kids round their routes; the cone should make them stop and redirect. The QB's job is to throw accurately so the receiver doesn't have to adjust mid-cut. If throws are off, fix the QB's footwork first, not the receiver's route.
 
 **Variation:** For older kids in t
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — right size for ages 5-7 hands. Soft enough to throw safely indoors.
+
+[Agility cones →](/go/agility-cones/) — set of 12 in bright colors. Stack flat for storage.
+
+*As an Amazon Associate we earn from qualifying purchases.*

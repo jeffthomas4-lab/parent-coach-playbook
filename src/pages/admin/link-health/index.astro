@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+// SSR — pulls from D1 at request time so the dashboard is always current.
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB?: D1Database } | undefined;
+
+let rows: any[] = [];
+let totals = { total: 0, broken: 0, redirected: 0, neverChecked: 0, dueSoon: 0 };
+
+if (env?.DB) {
+  try {
+    const result = await env.DB.prepare(
+      `SELECT url, source_files, last_checked, last_status_code, final_url,
+              is_broken, is_redirect, redirected_off_host, consecutive_failures,
+              last_broken_at, last_ok_at, wayback_snapshot, suggested_search, notes, first_seen
+       FROM link_health
+       ORDER BY is_broken DESC, last_checked ASC NULLS FIRST
+       LIMIT 500`
+    ).all();
+    rows = result.results;
+
+    const totalsResult = await env.DB.prepare(
+      `SELECT
+         COUNT(*) AS total,
+         SUM(CASE WHEN is_broken = 1 THEN 1 ELSE 0 END) AS broken,
+         SUM(CASE WHEN is_redirect = 1 THEN 1 ELSE 0 END) AS redirected,
+         SUM(CASE WHEN last_checked IS NULL THEN 1 ELSE 0 END) AS neverChecked,
+         SUM(CASE WHEN last_checked < datetime('now', '-150 days') AND is_broken = 0 THEN 1 ELSE 0 END) AS dueSoon
+       FROM link_health`
+    ).first();
+    totals = totalsResult as any;
+  } catch (err) {
+    console.error('link-health dashboard query failed', err);
+  }
+}
+
+const fmtDate = (s: string | null | undefined) =>
+  s ? new Date(s).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—';
+
+const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' : s;
+---
+<BaseLayout title="Link health" description="External-link health dashboard.">
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2" style="font-weight: 500;">Admin · Link health</p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight" style="font-weight: 500;">
+        External-link health
+      </h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Every external URL on the site, with last-checked status. Broken links surface here first. The link-checker worker runs daily and rotates through every URL on a 180-day cadence.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-bone mt-6">
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Total tracked</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.total ?? 0}</p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Broken</p>
+          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? '#C5713D' : '#5C7459'};`}>{totals.broken ?? 0}</p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Redirected</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.redirected ?? 0}</p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Never checked</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.neverChecked ?? 0}</p>
+        </div>
+        <div class="bg-paper p-4">
+          <p class="font-display italic text-ink-soft text-xs" style="font-weight: 500;">Due soon</p>
+          <p class="font-display text-ink text-2xl mt-1" style="font-weight: 500;">{totals.dueSoon ?? 0}</p>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic" style="font-weight: 500;" data-filter-bar>
+        <button data-filter="all"        class="px-3 py-1 border border-ink bg-ink text-paper">All</button>
+        <button data-filter="broken"     class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Broken</button>
+        <button data-filter="redirected" class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Redirected</button>
+        <button data-filter="never"      class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Never checked</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-6">
+      <table class="w-full text-sm" data-link-table>
+        <thead>
+          <tr class="border-b border-bone">
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">URL</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Status</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Last checked</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Used in</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust" style="font-weight: 500;">Replacement help</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.length === 0 && (
+            <tr><td colspan="5" class="py-6 font-display italic text-ink-soft" style="font-weight: 500;">
+              No data yet. Run the link-checker worker once to populate (`npm run deploy && open the manual trigger URL`).
+            </td></tr>
+          )}
+          {rows.map((r) => {
+            const status = r.is_broken === 1 ? 'broken' : (r.is_redirect === 1 ? 'redirected' : (r.last_checked ? 'ok' : 'never'));
+            const statusLabel = status === 'broken' ? `BROKEN ${r.last_status_code ?? ''}` : (status === 'redirected' ? `${r.last_status_code} (redirect)` : (status === 'ok' ? `${r.last_status_code}` : '—'));
+            const statusColor = status === 'broken' ? '#C5713D' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
+            let sourceFiles: string[] = [];
+            try { sourceFiles = JSON.parse(r.source_files || '[]'); } catch {}
+            return (
+              <tr class="border-b border-bone hover:bg-paper-warm" data-status={status}>
+                <td class="py-2 pr-3 align-top max-w-md">
+                  <a href={r.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-all" style="font-weight: 500;">{truncate(r.url, 80)}</a>
+                  {r.final_url && r.final_url !== r.url && (
+                    <p class="font-display italic text-ink-soft text-xs mt-1 break-all" style="font-weight: 500;">→ {truncate(r.final_url, 80)}</p>
+                  )}
+                  {r.notes && (
+                    <p class="font-display italic text-ink-soft text-xs mt-1" style="font-weight: 500;">{r.notes}</p>
+                  )}
+                </td>
+                <td class="py-2 pr-3 align-top">
+                  <span class="font-display italic px-2 py-0.5 text-xs text-paper" style={`background: ${statusColor}; font-weight: 500;`}>{statusLabel}</span>
+                </td>
+                <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs" style="font-weight: 500;">{fmtDate(r.last_checked)}</td>
+                <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs" style="font-weight: 500;">
+                  {sourceFiles.slice(0, 3).map(f => (<div>{truncate(f, 50)}</div>))}
+                  {sourceFiles.length > 3 && <div class="text-ink-soft">+{sourceFiles.length - 3} more</div>}
+                </td>
+                <td class="py-2 pr-3 align-top">
+                  {r.is_broken === 1 && (
+                    <div class="grid gap-1">
+                      {r.wayback_snapshot && (
+                        <a href={r.wayback_snapshot} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs" style="font-weight: 500;">→ Wayback snapshot</a>
+                      )}
+                      {r.suggested_search && (
+                        <a href={r.suggested_search} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs" style="font-weight: 500;">→ Search for replacement</a>
+                      )}
+                    </div>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const bar = document.querySelector('[data-filter-bar]');
+    const table = document.querySelector('[data-link-table]');
+    if (bar && table) {
+      bar.addEventListener('click', (e) => {
+        const t = e.target as HTMLElement;
+        if (t.tagName !== 'BUTTON') return;
+        bar.querySelectorAll('button').forEach((b) => {
+          b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+          b.classList.add('border-bone', 'text-ink-soft');
+        });
+        t.classList.remove('border-bone', 'text-ink-soft');
+        t.classList.add('bg-ink', 'text-paper', 'border-ink');
+
+        const filter = t.getAttribute('data-filter') || 'all';
+        const rows = table.querySelectorAll('tbody tr[data-status]');
+        rows.forEach((row) => {
+          const status = row.getAttribute('data-status');
+          let show = false;
+          if (filter === 'all') show = true;
+          else if (filter === 'broken') show = status === 'broken';
+          else if (filter === 'redirected') show = status === 'redirected';
+          else if (filter === 'never') show = status === 'never';
+          (row as HTMLElement).style.display = show ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</BaseLayout>

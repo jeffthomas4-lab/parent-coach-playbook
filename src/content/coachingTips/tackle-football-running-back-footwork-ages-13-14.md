@@ -30,3 +30,13 @@ Good backs have footwork that matches their read. This drill teaches one-cut pat
 The back's eyes should be up immediately after taking the hand. Not watching the QB, watching the hole. The first step should be downhill, committed. If a back is dancing sideways, they're indecisive. One cut means plant the outside foot and accelerate, not stop and cut. If the back is waiting for a hole to open, they're too patient. Young backs need to understand that gap reads happen in two steps, not three.
 
 **Variation:** Add a linebacker at a cone 5 yards deep. Now the back reads the initial hole, cuts, and reads the linebacker's approach. This teaches true reading, not just running a lane.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — easier on the QB-RB exchange than a slick leather game ball.
+
+[Agility training pole →](/go/agility-training-pole/) — sturdier than cones for the linebacker variation.
+
+*As an Amazon Associate we earn from qualifying purchases.*

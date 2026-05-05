@@ -25,6 +25,17 @@ How to choose: pre-broken-in webbing matters more here than in baseball because 
 
 Cost range: $25–45.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Ages 5–7</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">11-inch youth softball glove</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Bigger pocket than a baseball glove of the same size, soft enough out of the box for a kid to actually close on the bigger ball.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A solid first softball glove. The pocket is forgiving on miss-catches at this age.</p>
+    <a href="/go/softball-glove-11in/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A bat (24–26 inch)**
 
 Tee-ball softball bats look almost identical to tee-ball baseball bats. The one-arm test works the same way: kid extends the bat horizontally with one arm, holds for 5 to 10 seconds, that's the right weight.
@@ -54,6 +65,17 @@ Infielders use 11.5-inch. Outfielders use 12-inch. Pitchers need a glove with a 
 How to choose: bigger pocket than a baseball glove. The ball is larger, so the pocket needs more depth.
 
 Cost range: $50–100.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Ages 8–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">11-inch infield softball glove</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Right size for an infielder making the jump from coach-pitch to live pitching. Closed-back design keeps the pocket stable on grounders.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: An honest middle-of-the-road glove that breaks in fast. Fine for one or two seasons before they outgrow it.</p>
+    <a href="/go/softball-glove-11in/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A 27-to-29 inch bat**
 

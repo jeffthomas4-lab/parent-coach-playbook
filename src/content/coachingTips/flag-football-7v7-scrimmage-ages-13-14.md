@@ -30,4 +30,12 @@ At this age, kids can run plays and react to defense. A 7v7 scrimmage with a few
 
 Do QBs make pre-snap reads? Are receivers running their routes or improvising? Do defenders stick to coverage or get lazy? Are kids communicating? In this age group, the difference between good and bad scrimmages is usually effort and communication, not talent. Call out what you see: "D-line, you three gap filled their run. Offense, you had a free play and didn't take it."
 
-**Variatio
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — grippy in wet weather, easier on hands than leather at this age.
+
+[QB wristbands →](/go/football-qb-wristbands/) — keeps the play sheet on the QB instead of in their helmet.
+
+*As an Amazon Associate we earn from qualifying purchases.*

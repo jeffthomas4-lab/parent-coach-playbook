@@ -26,3 +26,11 @@ A clear is how a team escapes defensive pressure. At 13-14, players can learn a 
 Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the clear upfield.
 
 **Variation:** Add pressure. One defender shadows the initial ball carrier, forcing them to pass early. Now the clearing team has to execute under pressure, which is the real situation.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls →](/go/lacrosse-ball/) — meets NOCSAE standards. Buy a 6-pack so the drill keeps moving.
+
+*As an Amazon Associate we earn from qualifying purchases.*

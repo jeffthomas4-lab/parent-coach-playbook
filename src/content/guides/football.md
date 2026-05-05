@@ -151,6 +151,65 @@ Three. Fit matters more than brand. Have a certified equipment manager fit the h
 
 Four. Reconditioning every 1 to 2 years is mandatory, not optional. Reconditioning runs $40 to $80. Budget for it. Helmets older than 10 years should be replaced entirely.
 
+## Backyard practice gear
+
+Pre-season throwing reps and route running at home make game-day reps look easy. None of this is required, all of it pays back fast.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Backyard</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth rubber football</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The right ball for ages 5-10. Rubber holds up to driveway and grass, easier on hands than leather at this age.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy this before any leather ball. It survives the season and the kid actually catches it.</p>
+    <a href="/go/football-rubber-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth leather football</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Move to leather around age 11 when the kid is ready for a real game ball. Better grip in dry conditions, more accurate spiral.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The right step up once they can throw a tight spiral. Don't rush it.</p>
+    <a href="/go/football-leather-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · QB</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">QB throwing net</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Target net with multiple holes for accuracy reps. Solo throwing without chasing the ball.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Useful from age 9 up. Trains accuracy without needing a partner.</p>
+    <a href="/go/football-qb-throwing-net/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · QB</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">QB play-call wristbands</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Play-sheet wristband for the QB. Useful from age 11 once the playbook is more than 5 calls.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Worth it the day a QB starts getting plays from the sideline. Cheaper than the team set.</p>
+    <a href="/go/football-qb-wristbands/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · College</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Full-size college leather football</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Regulation college-size game ball. For the high-school-age player who is ready for the real thing.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The ball varsity QBs throw. Don't size up too early.</p>
+    <a href="/go/football-leather-college/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## A few honest notes
 
 The single best thing you can do for your kid in football: limit hits to the head in practice. The data on cumulative impact is strong. Coaches who run thudding tackling drills during the week increase risk for marginal practice value.

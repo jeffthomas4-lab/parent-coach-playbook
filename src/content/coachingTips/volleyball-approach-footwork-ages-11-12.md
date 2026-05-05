@@ -31,3 +31,11 @@ The approach footwork builds momentum for hitting. Young players at this age can
 The approach should feel coordinated, not choppy. The final two steps should be quick and powerful. The jump should be straight up at the net, not leaning forward or back. If a hitter is landing awkwardly, the approach footwork is off. Arms should swing forward as the jump happens, generating power.
 
 **Variation:** Add a setter. The setter tosses the ball to a spot, and the hitter approaches and attacks it. This teaches timing between approach and the ball location.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Portable volleyball net →](/go/volleyball-net/) — adjustable height for 11-12 size court. Sets up in a driveway or backyard.
+
+*As an Amazon Associate we earn from qualifying purchases.*

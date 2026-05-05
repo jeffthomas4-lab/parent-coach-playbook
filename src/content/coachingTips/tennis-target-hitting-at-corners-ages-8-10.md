@@ -31,3 +31,13 @@ By 8-10, young players can aim. This drill teaches them to hit to specific targe
 The hitter should adjust their stance and swing direction for each target. Hitting the right corner requires different footwork than the left. If the hitter is always hitting the same shot regardless of the target, they're not adjusting. Success is hitting within 3-4 feet of the target. Perfect accuracy isn't the goal at this age. Control and awareness are.
 
 **Variation:** Add targets at the service line as well. Now the hitter has to aim at two different depths, teaching depth variation.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Portable tennis net →](/go/tennis-net/) — practice anywhere, not just at the courts.
+
+[Agility cones →](/go/agility-cones/) — bright targets for the corner reps.
+
+*As an Amazon Associate we earn from qualifying purchases.*

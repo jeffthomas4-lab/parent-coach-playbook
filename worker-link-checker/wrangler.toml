@@ -1,0 +1,29 @@
+# Cloudflare Worker that validates external links on a rolling schedule.
+# Reads link-manifest.json from the live site, checks ~50 URLs per run on a 6-month
+# rolling cadence, and writes results to the parent-coach-playbook D1 binding.
+#
+# Operator manual lives in LINKS.md at the project root.
+
+name = "parent-coach-playbook-link-checker"
+main = "src/index.ts"
+compatibility_date = "2025-04-01"
+
+# Daily at 09:00 UTC = 1am PST / 2am PDT. Off-peak for both us and most external hosts.
+[triggers]
+crons = ["0 9 * * *"]
+
+# Bind to the same D1 database the camps directory uses. Schema lives in schema.sql.
+[[d1_databases]]
+binding = "DB"
+database_name = "parent-coach-playbook"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+preview_database_id = "REPLACE_WITH_YOUR_PREVIEW_D1_ID"
+
+# Optional: configure the manifest URL via env var so we can point at staging in dev.
+[vars]
+MANIFEST_URL = "https://parentcoachplaybook.com/link-manifest.json"
+LINKS_PER_RUN = "50"
+ROTATION_DAYS = "180"
+
+# Secrets to set with `wrangler secret put`:
+#   ADMIN_API_KEY (used by /admin/link-health/ to authenticate ad-hoc check requests)

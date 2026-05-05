@@ -27,3 +27,11 @@ Dribbling through gates teaches kids to change direction while keeping the ball 
 5. Rotate kids through so each gets three rounds.
 
 **What to look for:** Touch consistency and speed. The faster they dribble, the closer the touches nee
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones (set of 12) →](/go/soccer-cones-12pk/) — the set used in the diagram. Stackable, bright, holds up to wet grass.
+
+*As an Amazon Associate we earn from qualifying purchases.*

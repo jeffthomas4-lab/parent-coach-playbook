@@ -11,8 +11,8 @@ governingBodies:
     url: "https://publications.aap.org/pediatrics/article/119/6/1242/70488"
   - name: "USOPC — Athlete Burnout Resources"
     url: "https://www.teamusa.com/mental-health"
-  - name: "Project Play (Aspen Institute) — State of Play"
-    url: "https://projectplay.org/state-of-play"
+  - name: "Project Play (Aspen Institute) — State of Play 2025"
+    url: "https://projectplay.org/state-of-play-2025/introduction"
 doctorQuestions:
   - "We've noticed a real change in our kid's mood and energy. Could this be burnout, depression, or both?"
   - "What does a real off-season look like for an athlete in this sport?"

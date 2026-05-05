@@ -145,6 +145,17 @@ The one-arm test still works. At this age, bats run 27 to 29 inches and 17 to 22
 
 Cost range: $50–120.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 8–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">28-inch coach-pitch bat (USA Baseball stamped)</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">A drop-10 28-inch bat sized for the coach-pitch / machine-pitch transition. USA Baseball stamp covers most rec leagues.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Light enough for an 8-year-old to swing through the zone, durable enough to last into 9 and 10.</p>
+    <a href="/go/baseball-bat-28in/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Batting gloves (optional)**
 
 Most coach-pitch kids don't need them. By age 10, some kids want them because they see older kids wearing them. They do help with grip and they hide blisters.
@@ -407,6 +418,32 @@ Cost range: $10–20.
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Replacement leather laces with a lacing needle. Fixes the failure mode that ends most gloves before the leather body wears out.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
     <a href="/go/baseball-glove-laces/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+## Backyard practice gear
+
+The reason most kids stagnate between seasons is they get zero reps at home. A few low-cost tools change that.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Backyard</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Soft-toss baseball trainer</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lets one parent feed reps without throwing. Five minutes a day in the backyard adds up to thousands of swings across a season.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The single best gear-to-reps multiplier I've found at this price.</p>
+    <a href="/go/baseball-trainer/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Backyard</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Throwback rebound net</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Stand-alone rebound net for solo throwing reps. Useful for between-practice arm work without needing a partner.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Holds up to thrown grounders and short-toss. Good for the kid who wants to keep working when no one else is around.</p>
+    <a href="/go/baseball-throwback-net/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>

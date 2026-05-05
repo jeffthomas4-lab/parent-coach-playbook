@@ -30,3 +30,11 @@ Blocking and covering are two parts of the same play. This drill teaches young p
 Blockers should be at the net with hands up and ready. Covering players should be low and ready to move in any direction. If a covering player is standing up watching, they can't react. When the ball bounces off the block, one covering player should be calling it and moving to it. Communication prevents collisions.
 
 **Variation:** Add hitting from multiple angles. Hitters attack from different positions at the net. Blockers and covering players now have to adjust their positioning based on where the attack is coming from.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Portable volleyball net →](/go/volleyball-net/) — full regulation height. Useful for off-gym reps.
+
+*As an Amazon Associate we earn from qualifying purchases.*

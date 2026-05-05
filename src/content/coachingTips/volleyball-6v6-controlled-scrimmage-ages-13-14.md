@@ -31,3 +31,11 @@ At 13-14, players are ready for game-speed competition with structure. This cont
 Do players communicate? Are they running offensive plays (set and attack) or just bouncing it back? Do passers move to receive or wait in place? Is the setter directing the hitters or just sending the ball wherever? Do covering players communicate before plays? In a controlled scrimmage, the goal is to see execution and teamwork, not just winning.
 
 **Variation:** Add a libero (defensive specialist). This teaches rotation and gives struggling passers a chance to focus on one position. Or set a rule: every player must touch the ball on one rally. This forces movement and involvement.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Portable volleyball net →](/go/volleyball-net/) — adjustable height, quick setup. Useful for backyard reps when gym time gets tight.
+
+*As an Amazon Associate we earn from qualifying purchases.*

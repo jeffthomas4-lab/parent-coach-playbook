@@ -31,3 +31,11 @@ At 5-7, the red ball (larger and softer) lets young players focus on tracking an
 Young players should be tracking the ball with their eyes. If they're looking away or at their feet, focus it back on the ball. The swing should be simple: step, turn, swing, follow through. Over-thinking mechanics is not helpful at this age. If the ball is wobbling, they're hitting it off-center. If they're swinging too hard, they're out of control. Controlled, easy swings let the ball stay on the court.
 
 **Variation:** Add a target. Place a cone on the opponent's court. Young players try to hit near the cone, not just over the net. This teaches direction without adding complexity.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Portable tennis net →](/go/tennis-net/) — set up in a driveway or grass for ages 5-7 mini-court reps.
+
+*As an Amazon Associate we earn from qualifying purchases.*

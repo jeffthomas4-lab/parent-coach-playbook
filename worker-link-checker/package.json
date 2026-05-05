@@ -1,0 +1,17 @@
+{
+  "name": "parent-coach-playbook-link-checker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Daily worker that validates external links on a rolling 6-month cadence, surfaces broken links to the admin dashboard.",
+  "scripts": {
+    "deploy":       "wrangler deploy --config ./wrangler.toml",
+    "tail":         "wrangler tail   --config ./wrangler.toml",
+    "dev":          "wrangler dev    --config ./wrangler.toml",
+    "schema":       "wrangler d1 execute parent-coach-playbook --file=./schema.sql",
+    "secret:admin": "wrangler secret put ADMIN_API_KEY --config ./wrangler.toml"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250101.0",
+    "wrangler": "^4.0.0"
+  }
+}

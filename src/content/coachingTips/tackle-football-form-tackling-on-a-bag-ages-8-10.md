@@ -31,3 +31,11 @@ Real tackling starts with a heavy bag where young players can't get hurt and for
 The approach speed should be controlled, not out of balance. Kids who are leaning forward will fall forward after contact. The wrap is critical: arms around the bag, not swinging at it. The drive phase is where the tackle happens. If a defender is standing upright after contact, they didn't drive their legs. The legs should still be moving even as the arms wrap.
 
 **Variation:** Add a partner with a ball. The defender tackles the bag holder who is trying to advance it 5 yards. This teaches defenders to make a tackle and feel resistance. Start with the ball carrier moving slow, then speed up as kids build comfort.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — sized right for 8-10 hands. Use this for the ball-carrier variation.
+
+*As an Amazon Associate we earn from qualifying purchases.*

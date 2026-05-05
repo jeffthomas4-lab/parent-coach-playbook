@@ -29,4 +29,14 @@ Young players need to feel the puck on their stick before they can handle it at 
 
 If a puck is bouncing off the stick or rolling away, the player is hitting it instead of controlling it. The hands should stay quiet, absorbing the puck. The puck should move side to side with the stick blade, not bounce. If a player is looking down constantly, they're not getting feel for the puck. By the third rep, kids should glance down less often.
 
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — sized for ages 5-7. Lighter shaft so the kid can actually load and release.
+
+[Practice pucks →](/go/hockey-puck/) — buy a 6-pack so you don't lose the drill chasing one runaway.
+
+*As an Amazon Associate we earn from qualifying purchases.*
+
 **Variation:**

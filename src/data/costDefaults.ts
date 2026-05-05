@@ -32,9 +32,9 @@ export type CostProfile = {
 
 // Sources that apply across many profiles. Keep in one place so updates are easy.
 const BASE_SOURCES: CostSource[] = [
-  { label: 'Aspen Institute Project Play — State of Play (annual)', url: 'https://projectplay.org/state-of-play' },
-  { label: 'Project Play — Costs to Play (national survey)',         url: 'https://projectplay.org/youth-sports/facts/costs' },
-  { label: 'TeamSnap — State of Youth Sports (annual report)',       url: 'https://www.teamsnap.com/community/state-of-youth-sports' },
+  { label: 'Aspen Institute Project Play — State of Play 2025',                  url: 'https://projectplay.org/state-of-play-2025/introduction' },
+  { label: 'Project Play — National Youth Sports Parent Survey (cost data)',     url: 'https://projectplay.org/news/2025/2/24/project-play-survey-family-spending-on-youth-sports-rises-46-over-five-years' },
+  { label: 'Project Play — Research index (State of Play archive)',              url: 'https://projectplay.org/research' },
 ];
 
 const HOCKEY_SOURCES: CostSource[] = [
@@ -159,11 +159,11 @@ const ELITE: CostLine[] = [
 // array so parents can see where the defaults are anchored.
 export const PROFILES: CostProfile[] = [
   { sport: 'generic', level: 'rec',    estimatedGames: 14, lines: REC,    sources: BASE_SOURCES,
-    sourceNote: 'Generic rec defaults blended from Project Play national survey medians and TeamSnap rec-league data.' },
+    sourceNote: 'Generic rec defaults blended from Project Play National Youth Sports Parent Survey medians and reader-submitted data.' },
   { sport: 'generic', level: 'school', estimatedGames: 18, lines: SCHOOL, sources: BASE_SOURCES,
     sourceNote: 'School-sport defaults blended from Project Play State of Play (school athletic fee data) and NFHS participation surveys.' },
   { sport: 'generic', level: 'travel', estimatedGames: 50, lines: TRAVEL, sources: BASE_SOURCES,
-    sourceNote: 'Travel-tier defaults synthesized from Project Play Costs to Play, TeamSnap travel-family medians, and reader-submitted data.' },
+    sourceNote: 'Travel-tier defaults synthesized from Project Play Costs to Play trends and reader-submitted data.' },
   { sport: 'generic', level: 'elite',  estimatedGames: 70, lines: ELITE,  sources: BASE_SOURCES,
     sourceNote: 'Elite-tier defaults synthesized from national showcase event budgets, ECNL/MLS Next/Nike EYBL fee structures, and reader-submitted data.' },
 

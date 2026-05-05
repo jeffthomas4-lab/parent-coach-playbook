@@ -93,5 +93,105 @@
     "destination": "https://amzn.to/4unojJK",
     "retailer": "Amazon",
     "campaign": "gear-baseball-arm-sleeve"
+  },
+  "baseball-bat-28in": {
+    "destination": "https://amzn.to/4f1EbNy",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-bat-28in"
+  },
+  "baseball-trainer": {
+    "destination": "https://amzn.to/4d2y5Kj",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-trainer"
+  },
+  "baseball-throwback-net": {
+    "destination": "https://amzn.to/4uymTfL",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-throwback-net"
+  },
+  "softball-glove-11in": {
+    "destination": "https://amzn.to/4f1x87E",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-glove-11in"
+  },
+  "lacrosse-ball": {
+    "destination": "https://amzn.to/42MLWj7",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-ball"
+  },
+  "lacrosse-starter-kit-youth": {
+    "destination": "https://amzn.to/4wpycsq",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-starter-kit-youth"
+  },
+  "soccer-cones-12pk": {
+    "destination": "https://amzn.to/42MMEwN",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-cones-12pk"
+  },
+  "soccer-rebound-net": {
+    "destination": "https://amzn.to/4tpBWaI",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-rebound-net"
+  },
+  "soccer-cleats-youth": {
+    "destination": "https://amzn.to/4tQC1oC",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-cleats-youth"
+  },
+  "agility-cones": {
+    "destination": "https://amzn.to/4d0Bw47",
+    "retailer": "Amazon",
+    "campaign": "gear-agility-cones"
+  },
+  "agility-training-pole": {
+    "destination": "https://amzn.to/4n9wS8w",
+    "retailer": "Amazon",
+    "campaign": "gear-agility-training-pole"
+  },
+  "football-rubber-youth": {
+    "destination": "https://amzn.to/4d43PyS",
+    "retailer": "Amazon",
+    "campaign": "gear-football-rubber-youth"
+  },
+  "football-leather-youth": {
+    "destination": "https://amzn.to/4uup8R7",
+    "retailer": "Amazon",
+    "campaign": "gear-football-leather-youth"
+  },
+  "football-leather-college": {
+    "destination": "https://amzn.to/3R3rmIG",
+    "retailer": "Amazon",
+    "campaign": "gear-football-leather-college"
+  },
+  "football-qb-wristbands": {
+    "destination": "https://amzn.to/4na1MxB",
+    "retailer": "Amazon",
+    "campaign": "gear-football-qb-wristbands"
+  },
+  "football-qb-throwing-net": {
+    "destination": "https://amzn.to/4wb7ELi",
+    "retailer": "Amazon",
+    "campaign": "gear-football-qb-throwing-net"
+  },
+  "hockey-puck": {
+    "destination": "https://amzn.to/4d6rTBd",
+    "retailer": "Amazon",
+    "campaign": "gear-hockey-puck"
+  },
+  "hockey-stick-youth": {
+    "destination": "https://amzn.to/4n67PTW",
+    "retailer": "Amazon",
+    "campaign": "gear-hockey-stick-youth"
+  },
+  "volleyball-net": {
+    "destination": "https://amzn.to/4f2h4m5",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-net"
+  },
+  "tennis-net": {
+    "destination": "https://amzn.to/4na5Uh3",
+    "retailer": "Amazon",
+    "campaign": "gear-tennis-net"
   }
 }

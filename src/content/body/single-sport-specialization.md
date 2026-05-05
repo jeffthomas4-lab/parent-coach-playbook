@@ -11,8 +11,8 @@ governingBodies:
     url: "https://publications.aap.org/pediatrics/article/138/3/e20162148/52359"
   - name: "AOSSM — Early Sport Specialization Consensus Statement"
     url: "https://journals.sagepub.com/doi/10.1177/2325967116644241"
-  - name: "Project Play (Aspen Institute) — State of Play"
-    url: "https://projectplay.org/state-of-play"
+  - name: "Project Play (Aspen Institute) — State of Play 2025"
+    url: "https://projectplay.org/state-of-play-2025/introduction"
 doctorQuestions:
   - "My kid plays one sport year-round. What injury risks should we be watching for?"
   - "When is it medically reasonable to specialize?"
