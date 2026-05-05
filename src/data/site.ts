@@ -39,7 +39,7 @@ export const TOOLS_NAV = [
   { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15 — by sport.' },
   { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost. Per game your kid actually plays in.' },
   { slug: 'body',             label: 'The body',          href: '/body/',             blurb: 'Concussion, arm care, heat, sleep. What to know, what to ask the doc.' },
-  { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. From a D3 head coach.' },
+  { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
   { slug: 'rules',            label: 'Rules at-a-glance', href: '/rules/',            blurb: 'Five-minute rules primers for every sport we cover.' },
   { slug: 'adaptive',         label: 'Adaptive athletes', href: '/adaptive/',         blurb: 'ADHD, autism, sensory, Unified Sports, adaptive leagues.' },
   { slug: 'decisions',        label: 'Decisions',         href: '/decisions/',        blurb: 'The big youth-sports decisions. Travel, quit, specialize, how many.' },

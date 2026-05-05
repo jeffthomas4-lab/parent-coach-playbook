@@ -213,13 +213,23 @@ export const PROFILES: CostProfile[] = [
     sourceNote: 'ECNL and MLS Next clubs publish member fee structures averaging $4,500-7,500. National showcase event travel is the largest variable.',
   },
 
-  // Baseball: rec is cheap, travel adds private hitting/pitching lessons, equipment escalates fast.
+  // Baseball: rec is cheap, the middle layer (rec-plus / school) is where most families actually live,
+  // travel adds private hitting/pitching lessons, equipment escalates fast.
   { sport: 'baseball', level: 'rec', estimatedGames: 16,
     lines: REC.map(l =>
       l.key === 'equipment' ? { ...l, default: 250, hint: 'Glove, bat, helmet, cleats, bag.' } : l
     ),
     sources: BASEBALL_SOURCES,
     sourceNote: 'Little League International local league fees range $100-300. Equipment ($250 average) covers glove, bat, helmet, cleats with a 2-year replacement cycle.',
+  },
+  { sport: 'baseball', level: 'school', estimatedGames: 30,
+    lines: SCHOOL.map(l =>
+      l.key === 'equipment' ? { ...l, default: 450, hint: 'Better glove, bat upgrade, helmet, cleats, gear bag, batting gloves.' } :
+      l.key === 'fees' ? { ...l, default: 600, hint: 'Rec league + a fall ball season + a winter clinic. The "rec-plus" middle layer most families settle into around age 9-11.' } :
+      l.key === 'private-lessons' ? { ...l, default: 600, hint: 'Occasional hitting lessons, $60-80/hr × ~8-10 sessions/year. Not weekly.' } : l
+    ),
+    sources: BASEBALL_SOURCES,
+    sourceNote: 'The middle layer for baseball families: a rec season plus fall ball plus a winter clinic, with a few private hitting lessons per year. Sits between $1,200 and $2,500 annually depending on equipment cycle. Project Play data and reader surveys both put the median family in this band.',
   },
   { sport: 'baseball', level: 'travel', estimatedGames: 60,
     lines: TRAVEL.map(l =>
