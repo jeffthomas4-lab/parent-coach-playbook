@@ -114,6 +114,19 @@ Content-Type: application/json
 
 If `duplicate_count > 0`, the listing is already in the system. Skip the row and note "duplicate of <slug>" in the domain registry's `notes`.
 
+If any of the returned matches has `reason: "previously-rejected-dead-url"`, that URL was already rejected as dead in a previous audit. **Do not re-submit it.** Either find a different verified URL for the same camp, or skip the row entirely and note "previously rejected as dead" in the domain registry.
+
+### URL liveness gate at submit time
+
+The `/api/camps/submit` endpoint runs an HTTP HEAD/GET check on every `website_url` before inserting. Submissions whose URL returns 4xx, 5xx, or times out get rejected with HTTP 422 and a JSON error body. **This means you cannot submit a fabricated or guessed URL — the server will check and refuse.**
+
+If a submission returns 422 with a URL-related error:
+- Do not retry with the same URL.
+- Do not modify the URL by trying different paths or schemes (the URL discipline rules above apply).
+- Either go back to the operator's site, click through to a URL that loads, copy that real URL from the browser address bar and resubmit; or skip the row entirely and note the issue in the domain registry's `notes`.
+
+If submission returns 422 with a "previously rejected as dead" error, this URL is on the do-not-import list. Skip the row and move on. Do not try to bypass the gate by changing other fields.
+
 ## Step 3. Output incrementally as you go (do not batch everything to the end)
 
 **Critical: output CSV blocks per domain as you finish them, not all at the end.** Chrome sessions can get cut off mid-run; if you hold everything until the end, partial work is lost. The pattern is: finish a domain, immediately output that domain's CSV block, then move to the next domain. After all domains are done, output one final markdown block with the log updates.

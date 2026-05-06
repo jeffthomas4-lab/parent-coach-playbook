@@ -19,6 +19,7 @@ import {
   upsertDomainQuality,
   updateUrlHealth,
   extractDomain,
+  findFuzzyCampMatches,
   type ConfidenceLevel,
   type DayOrOvernight,
   type SkillLevel,
@@ -211,6 +212,50 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const sourceDomain =
     (data.source_domain && data.source_domain.trim().toLowerCase()) ||
     extractDomain(normalizedWebsite);
+
+  // Pre-flight URL gate: refuse submissions whose website_url has previously been
+  // killed as dead, OR whose URL doesn't load right now. This prevents the LLM
+  // import flow from re-introducing dead links we already triaged out, and stops
+  // fabricated URLs from making it past the import boundary.
+  if (normalizedWebsite) {
+    const fuzzyHits = await findFuzzyCampMatches(env.DB, {
+      name: data.name!,
+      city: data.city!,
+      state: data.state!.toUpperCase(),
+      zip: data.zip!,
+      address: data.address!,
+      website_url: normalizedWebsite,
+    });
+    const previouslyKilled = fuzzyHits.find((m) => m.reason === 'previously-rejected-dead-url');
+    if (previouslyKilled) {
+      return fail(
+        `URL was previously rejected as dead and is on the do-not-import list. ` +
+        `If the operator has fixed it, update the existing rejected camp's URL ` +
+        `instead of re-submitting. Existing slug: ${previouslyKilled.camp.slug}`,
+        422,
+      );
+    }
+
+    // Check the URL is actually reachable right now. If it's dead/timeout, refuse
+    // the submit so the import flow can correct or skip it before it becomes a
+    // queue problem we have to clean up later.
+    let liveCheck;
+    try {
+      liveCheck = await checkUrlHealth(normalizedWebsite);
+    } catch {
+      liveCheck = { status: 'dead' as const, statusCode: null, finalUrl: null };
+    }
+    if (liveCheck.status === 'dead' || liveCheck.status === 'timeout') {
+      return fail(
+        `Website URL did not respond as live. Status: ${liveCheck.status}` +
+        (liveCheck.statusCode ? ` (HTTP ${liveCheck.statusCode})` : '') +
+        `. Verify you copied the URL from the actual page in your browser. ` +
+        `Constructed URLs (e.g., guessing /camps/<sport>/<season>/) almost always ` +
+        `404. Either fix the URL or use the operator's parent listing page.`,
+        422,
+      );
+    }
+  }
 
   await insertCamp(env.DB, {
     id,
