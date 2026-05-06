@@ -29,6 +29,7 @@ export const EDITORIAL = {
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
   { label: 'Reads', href: '/reads/' },
+  { label: 'Camps', href: '/camps/' },
   { label: 'Drills', href: '/coaching-tips/' },
   { label: 'What to Buy', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
   { label: 'Tools', href: '/tools/', hasDropdown: 'tools' },
