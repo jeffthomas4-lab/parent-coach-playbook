@@ -1,6 +1,6 @@
 # Claude in Chrome prompt: parentcoachplaybook camps search
 
-Paste everything below the line into Claude in Chrome. Edit the SEARCH AREA and TARGET COUNT lines first if you want a different radius or volume. The prompt fetches the live search log from GitHub, so as long as the repo is up to date, Chrome will see the current registry and avoid re-crawled domains automatically.
+Paste everything below the line into Claude in Chrome. Edit the SEARCH AREA and TARGET COUNT lines first if you want a different radius or volume. The prompt hits a live API endpoint that returns the current priority queue (which domains to visit, which to skip), scoped to the current anchor city, so Chrome only sees what's actionable right now and avoids re-crawled or dead-end sources automatically.
 
 ---
 
