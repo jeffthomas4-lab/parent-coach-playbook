@@ -12,37 +12,48 @@ You will also maintain a search log file that tracks every anchor area we have s
 
 Accuracy matters more than volume. Do not invent fields. Leave blanks if you cannot verify.
 
-## Search log file
+## Step 1. Read the priority queue from the API
 
-URL (read this directly, this is the live registry):
+Hit this URL (replace the anchor slug with your current SEARCH AREA's slug, default `tacoma-25mi`):
 
-  https://raw.githubusercontent.com/jeffthomas4-lab/parent-coach-playbook/main/imports/CAMP-SEARCH-LOG.md
+  https://parentcoachplaybook.com/api/camps/search-priority?anchor=tacoma-25mi
 
-Navigate to that URL and read the file. Three sections matter:
+It returns JSON:
 
-1. **Search Areas** — pick the next anchor city from the `Expansion path` if I haven't named one, or confirm the SEARCH AREA below matches an existing row.
-2. **Domain Registry** — every domain visited so far. Build the SKIP_LIST and RECHECK_LIST from this table (see Step 1).
-3. **Permanent skip list** — never visit these domains regardless of date.
+```json
+{
+  "ok": true,
+  "anchor": { "slug": "tacoma-25mi", "city": "Tacoma, WA", "status": "in_progress", ... },
+  "today": "2026-05-06",
+  "recheck_due": [
+    { "domain": "parkstacoma.gov", "result": "partial", "camps_pulled": 17, "next_recheck_after": "2026-05-20", "note": "..." }
+  ],
+  "skip_domains": ["pugetsound.edu", "nwtrek.org", "tacomaschools.org", ...],
+  "counts": { "recheck_due": 4, "skip_domains": 12 }
+}
+```
 
-Domain Registry columns: `domain | organization | area_covered | last_checked | result | camps_pulled | next_recheck_after | notes`.
+**How to use the response:**
 
-`result` enum:
+- Visit every domain in `recheck_due` first. Those are the highest-value gaps.
+- Never visit any domain in `skip_domains`. Those are either confirmed `no_camps` or on cooldown until a future recheck date.
+- Domains not in either list are new — fair game after the recheck list is exhausted.
+
+**Slim markdown alternative** (if the API is unreachable for any reason):
+
+  https://raw.githubusercontent.com/jeffthomas4-lab/parent-coach-playbook/main/imports/CAMP-SEARCH-LOG-LLM.md
+
+That file has the same information in markdown form, ~70% smaller than the full search log. Do NOT read the full `CAMP-SEARCH-LOG.md` for batch planning — it's the human reference and is much larger.
+
+`result` enum (returned by the API):
 - `camps_extracted` — pulled live sessions, no need to recheck soon
-- `no_camps` — site has no youth camp listings, skip on next run
+- `no_camps` — site has no youth camp listings, skip permanently
 - `blocked` — Cloudflare / login / Claude not allowed; do not retry until next_recheck_after
 - `partial` — got some sessions, more behind a portal or PDF; worth a retry
-- `stale_listings` — only old years posted; worth a retry later
+- `stale_listings` — only old years posted, OR structural data-extraction block; long recheck window
+- `unknown` — never been visited
 
-## Step 1. Read the log first
-
-Open the URL above. Read every Domain Registry row. Build two lists in your head:
-
-- SKIP_LIST: domains where `last_checked` is within the last 60 days AND `result` is `camps_extracted` or `no_camps`. Do not visit these.
-- RECHECK_LIST: domains where `result` is `partial`, `blocked`, or `stale_listings`. Visit these first because they are the highest-value gaps.
-
-Domains not in the registry at all are new. Visit them after RECHECK_LIST.
-
-If a row has the literal text `no_claude` anywhere in `notes`, or the domain appears in the `Permanent skip list`, do not visit that site at all. Skip it permanently.
+If the API or slim log lists a domain in the skip set, do not visit it under any circumstances. The skip set already accounts for `no_camps`, future-dated rechecks, and permanent skips — you don't need to interpret recheck dates yourself.
 
 ## Step 2. Search
 
