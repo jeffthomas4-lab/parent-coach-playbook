@@ -14,8 +14,8 @@ const all = (await getCollection('articles', ({ data }) => isLive(data)))
 const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
 // The centered feed: most recent, excluding the featured. Six cards.
 const feed = all.filter(a => a.slug !== featured?.slug).slice(0, 6);
-// The right rail: most recent, slim list. Eight items, excludes featured.
-const latestRail = all.filter(a => a.slug !== featured?.slug).slice(0, 8);
+// The right rail: most recent, slim list. Five items, excludes featured.
+const latestRail = all.filter(a => a.slug !== featured?.slug).slice(0, 5);
 
 const drives = Object.values(PILLARS);
 
