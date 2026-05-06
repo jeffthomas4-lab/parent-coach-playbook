@@ -78,6 +78,13 @@ For each domain you decide to visit:
    - If price is not on the page, write "Contact for pricing" in price_text.
    - If you cannot verify a field, leave it blank. Do not guess.
    - Set `confidence` per the rules below.
+
+   **URL discipline (hard rule, no exceptions):**
+   - The `website_url` must be a URL you actually navigated to in the browser and verified loaded a real page with the camp on it. Copy it from the browser address bar.
+   - Do NOT construct URLs by guessing a pattern like `<site>/recreation/camps/<camp-name>/` or `/camps/<sport>/<season>/`. Sites do not consistently follow patterns like that. Constructed URLs almost always 404 in our health check.
+   - If you cannot find a direct URL for the camp by clicking through from the operator's main camp listing page, use the parent listing page as the `website_url`. Do not fabricate a more specific path.
+   - If the camp registers through a third-party platform (Ready Set Register, ActiveNet, ASAP Connected, JumpForward, CommunityPass, Sawyer, etc.), use that registration URL as the `website_url`. Those are legitimate registration pages even though they are not the operator's own domain.
+   - HTTP vs HTTPS: if the operator's site only serves HTTP, leave it as `http://`. Do not change it to `https://` because some operator sites have broken or missing TLS certs and our liveness check will mark them dead.
 4. After finishing a domain, hold a registry update with:
    - `result` = the right enum value above
    - `camps_pulled` = number of camp rows you produced from that domain
