@@ -880,7 +880,12 @@ export function normalizeCampName(name: string): string {
 
 export interface FuzzyMatchResult {
   camp: Camp;
-  reason: 'exact-name-city' | 'normalized-name-city' | 'same-website' | 'same-address';
+  reason:
+    | 'exact-name-city'
+    | 'normalized-name-city'
+    | 'same-website'
+    | 'same-address'
+    | 'previously-rejected-dead-url';
 }
 
 export async function findFuzzyCampMatches(
@@ -894,8 +899,9 @@ export async function findFuzzyCampMatches(
     website_url?: string | null;
   },
 ): Promise<FuzzyMatchResult[]> {
+  // Include rejected camps too so the queue can warn about previously-killed URLs.
   const result = await db
-    .prepare(`SELECT * FROM camps WHERE status IN ('approved', 'pending')`)
+    .prepare(`SELECT * FROM camps WHERE status IN ('approved', 'pending', 'rejected')`)
     .all<Camp>();
   const all = result.results ?? [];
 
@@ -911,7 +917,25 @@ export async function findFuzzyCampMatches(
     if (!seen.has(camp.id)) seen.set(camp.id, { camp, reason });
   };
 
+  // Pre-pass: any rejected camp with reject_reason_code='dead-url' that shares the
+  // candidate's exact website_url is a high-priority warning. Surface it first so
+  // the admin queue can flag "we already killed this URL once."
   for (const c of all) {
+    if (
+      c.status === 'rejected' &&
+      c.reject_reason_code === 'dead-url' &&
+      candidate.website_url &&
+      c.website_url &&
+      c.website_url.trim().toLowerCase() === candidate.website_url.trim().toLowerCase()
+    ) {
+      set(c, 'previously-rejected-dead-url');
+    }
+  }
+
+  for (const c of all) {
+    // Don't re-fuzzy-match rejected camps via name/address — only flag them on URL.
+    if (c.status === 'rejected') continue;
+
     const cCity = c.city.trim().toLowerCase();
     const cState = c.state.trim().toUpperCase();
     const cName = c.name.trim().toLowerCase();
