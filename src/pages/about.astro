@@ -1,30 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, EDITORIAL } from '../data/site';
+import { SITE } from '../data/site';
 
-// Person + WebSite schema. The Person entity is what every Article schema
-// references via author. Centralizing it here makes E-E-A-T legible to Google.
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: EDITORIAL.authorName,
-  url: EDITORIAL.authorUrl,
-  description: EDITORIAL.authorBio,
-  jobTitle: EDITORIAL.authorRole,
-  worksFor: {
-    '@type': 'Organization',
-    name: 'University of Puget Sound',
-    url: 'https://www.pugetsound.edu/',
-  },
-  knowsAbout: [
-    'Youth sports',
-    'Parent-coaching',
-    'Athletic development',
-    'Coaching methodology',
-    'College athletics recruiting',
-  ],
-};
-
+// WebSite schema with SearchAction for SERP search box. The site is intentionally
+// anonymous, so no Person schema. Publisher is the Organization entity rendered
+// from BaseLayout.
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -50,7 +30,6 @@ const websiteSchema = {
   title="About"
   description="Parent Coach Playbook is sideline notes for the parent who coaches, drives, snack-packs, and supervises the group chat. Editorial process, sources, and how we write."
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24">
@@ -73,9 +52,9 @@ const websiteSchema = {
         <p class="font-display italic text-rust font-medium">Who writes this</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>The site is led by <strong>Coach Jeff Thomas</strong>, head football coach at the University of Puget Sound (NCAA Division III, Tacoma, WA). Jeff has spent two decades coaching parents and athletes, served as interim Athletic Director through January 2025, and is the author of the Power Of Series and Chain Reaction. He built this site partly because nobody was writing for the parent-coach honestly.</p>
-        <p>Most pieces carry the <strong>Coach Jeff Thomas and the Parent Coach Playbook Editorial</strong> byline. The editorial team includes parents who coach across baseball, softball, soccer, basketball, football, hockey, lacrosse, volleyball, theater, band, and ballet. The byline is the team. Jeff is the lead voice and the final editor.</p>
-        <p>Why two voices on the byline. The site is most useful when it draws from a range of parent-coach experience, not just one. Jeff's voice is the through-line. The team brings the breadth.</p>
+        <p>Every piece on the site is written and edited by the <strong>Parent Coach Playbook Editorial</strong>. That is the brand. We do not put individual names on bylines. Two reasons.</p>
+        <p>First: the site exists to be useful, not to build personalities. The point is whether the advice helps you on Saturday morning, not who you are following.</p>
+        <p>Second: the editorial team includes parents who coach across baseball, softball, soccer, basketball, football, hockey, lacrosse, volleyball, theater, band, and ballet. Several have worked in collegiate athletics. Several have spent fifteen years on the parent side of the fence. The byline is the team, not any one person.</p>
         <p>If you want to send a story or push back on something we wrote, the email is <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>. Real people read it.</p>
       </div>
     </div>

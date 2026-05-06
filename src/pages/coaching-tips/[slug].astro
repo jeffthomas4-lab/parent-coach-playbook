@@ -26,11 +26,9 @@ const howToSchema = {
   name: stripTitle(tip.data.title),
   description: tip.data.summary,
   author: {
-    '@type': 'Person',
-    name: EDITORIAL.authorName,
-    url: EDITORIAL.authorUrl,
-    description: EDITORIAL.authorBio,
-    jobTitle: EDITORIAL.authorRole,
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
   },
   publisher: {
     '@type': 'Organization',

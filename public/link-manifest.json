@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-05T21:54:54.226Z",
-  "count": 194,
+  "generatedAt": "2026-05-06T03:39:54.247Z",
+  "count": 193,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -904,12 +904,6 @@
       "sources": [
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
-      ]
-    },
-    {
-      "url": "https://www.pugetsound.edu/",
-      "sources": [
-        "src/pages/about.astro"
       ]
     },
     {

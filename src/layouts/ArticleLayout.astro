@@ -21,13 +21,13 @@ const related = (await getCollection('articles', ({ data: d, slug: s }) =>
   isLive(d) && d.phase === data.phase && s !== slug
 )).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-// JSON-LD: Article schema with Person author for E-E-A-T signal.
-// Author bio and role pulled from EDITORIAL config so updates propagate.
+// JSON-LD: Article schema. The site is intentionally anonymous, so the author
+// is the publishing Organization, not a named Person. Image upgraded to a full
+// ImageObject for image search.
 const reviewedAt = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
 const heroImage = (data as any).ogImage ?? (data.hero ? (typeof data.hero === 'string' ? data.hero : data.hero.src) : '/og-default.jpg');
 const heroImageUrl = new URL(heroImage, SITE.url).toString();
 const heroAlt = (data as any).heroAlt ?? data.title.replace(/\*/g, '');
-// Full ImageObject for image search. Standard OG dimensions are 1200x630.
 const imageObject = {
   '@type': 'ImageObject',
   url: heroImageUrl,
@@ -42,11 +42,9 @@ const articleSchema = {
   description: data.dek,
   image: imageObject,
   author: {
-    '@type': 'Person',
-    name: EDITORIAL.authorName,
-    url: EDITORIAL.authorUrl,
-    description: EDITORIAL.authorBio,
-    jobTitle: EDITORIAL.authorRole,
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
   },
   publisher: {
     '@type': 'Organization',

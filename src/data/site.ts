@@ -8,21 +8,16 @@ export const SITE = {
   url: 'https://parentcoachplaybook.com',
   description:
     'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
-  byline: 'Coach Jeff Thomas and the Parent Coach Playbook Editorial',
-  bylineShort: 'Coach Jeff Thomas',
+  byline: 'Parent Coach Playbook Editorial',
+  bylineShort: 'PCP Editorial',
   email: 'parentcoachplaybook@gmail.com',
 };
 
 // Single editorial voice. Used for byline rendering on cards, articles, and feeds.
-// Lead author is Jeff Thomas, Division III head football coach at the University of Puget Sound.
-// The editorial team supports research, fact-checking, and ghostwritten pieces in the same voice.
+// The site is intentionally anonymous. The byline is the team, not any one person.
 export const EDITORIAL = {
-  byline: 'Coach Jeff Thomas and the Parent Coach Playbook Editorial',
-  short: 'Coach Jeff Thomas',
-  authorName: 'Jeff Thomas',
-  authorRole: 'Head Football Coach, University of Puget Sound (D3)',
-  authorBio: 'Two decades coaching parents and athletes. Former interim Athletic Director. Author of the Power Of Series and Chain Reaction. Builds the parent resource he wished existed when his own kids started playing.',
-  authorUrl: 'https://parentcoachplaybook.com/about/',
+  byline: 'Parent Coach Playbook Editorial',
+  short: 'PCP Editorial',
   // Mark color used wherever a small accent dot or pill renders.
   accent: '#C5713D',
   accentBg: '#F2E2D5',

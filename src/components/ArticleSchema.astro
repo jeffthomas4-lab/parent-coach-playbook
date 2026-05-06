@@ -2,10 +2,11 @@
 // JSON-LD Article schema for individual reads.
 // Drop into any [slug].astro page that renders article-shaped content.
 //
-// Article schema unlocks rich results, byline displays, and improves
-// E-E-A-T signal to Google. Author entity links to /about/.
+// The site is intentionally anonymous. Author is the publishing Organization,
+// not a named Person. This is the trade-off of an editorial brand: weaker
+// E-E-A-T Person signal, but no individual identity exposed.
 
-import { SITE, EDITORIAL } from '../data/site';
+import { SITE } from '../data/site';
 
 interface Props {
   title: string;
@@ -13,7 +14,6 @@ interface Props {
   publishedAt: Date;
   modifiedAt?: Date;
   image?: string;
-  authorName?: string;
   url: string;
   articleSection?: string;
 }
@@ -24,7 +24,6 @@ const {
   publishedAt,
   modifiedAt,
   image,
-  authorName = EDITORIAL.authorName,
   url,
   articleSection,
 } = Astro.props;
@@ -42,11 +41,9 @@ const schema = {
   datePublished: publishedAt.toISOString(),
   dateModified: (modifiedAt ?? publishedAt).toISOString(),
   author: {
-    '@type': 'Person',
-    name: authorName,
-    url: EDITORIAL.authorUrl,
-    description: EDITORIAL.authorBio,
-    jobTitle: EDITORIAL.authorRole,
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
   },
   publisher: {
     '@type': 'Organization',

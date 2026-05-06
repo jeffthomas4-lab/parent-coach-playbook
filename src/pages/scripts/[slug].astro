@@ -20,17 +20,17 @@ const related = (script.data.relatedScripts ?? [])
   .map(slug => allScripts.find(s => s.slug === slug))
   .filter(Boolean) as typeof allScripts;
 
-// Article + Breadcrumb schema for SERP visibility
+// Article + Breadcrumb schema for SERP visibility. Anonymous editorial — author
+// is the Organization, not a named Person.
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: stripTitle(script.data.title),
   description: script.data.summary,
   author: {
-    '@type': 'Person',
-    name: EDITORIAL.authorName,
-    url: EDITORIAL.authorUrl,
-    jobTitle: EDITORIAL.authorRole,
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
   },
   publisher: {
     '@type': 'Organization',
