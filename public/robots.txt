@@ -4,4 +4,85 @@ Disallow: /go/
 Disallow: /admin/
 Disallow: /api/
 
+# AI crawlers — explicitly allowed for citation. Goal is to be cited as a
+# source in AI summaries while building topical authority. Revisit if AI
+# summaries start displacing clicks measurably (track in GSC + GA).
+User-agent: GPTBot
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: CCBot
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /go/
+Disallow: /admin/
+Disallow: /api/
+
 Sitemap: https://parentcoachplaybook.com/sitemap.xml

@@ -78,6 +78,46 @@ These four standards protect the playbook from controversy and ensure the voice 
 
 ---
 
+## 5. BLUF on every read
+
+**The Rule:** Every new article gets a `bluf` field in the frontmatter. 30-50 words. Plain text, no markdown. Answer-first. Match the language a parent would actually type into Google.
+
+The BLUF renders as a styled box at the top of the article and feeds the JSON-LD `Article` description. It's what Google pulls into a featured snippet.
+
+**The pattern:**
+- Sentence 1: the direct answer to the implied question
+- Sentence 2-3: the rule or the why
+- Sentence 4: the trade-off, the watch-out, or the next step
+
+**Examples that work:**
+- "Coach the team, keep the kid. In the dugout your child is a player. You correct them the same way you'd correct any nine-year-old, same words, same tone, same length. In the car after, they are your kid again, not a learning opportunity."
+- "Don't make any decisions in the first 24 hours after a cut. Don't email the coach. Don't switch leagues. Don't promise private lessons. Sit. Wait. Talk in the morning."
+
+**Anti-patterns:**
+- Restating the dek in different words. The dek is voice. The BLUF is search.
+- Paragraph form with multiple ideas. Snippet boxes are short. Pick one answer.
+- Hedging ("it can be helpful to consider..."). Direct or skip the BLUF.
+
+**Backfilled so far (May 6, 2026):** 10 flagship pieces. The pattern is in place; new pieces should ship with a BLUF from day one.
+
+---
+
+## 6. Anchor text discipline
+
+**The Rule:** In-prose links use search-query-shaped anchors, not titles.
+
+The audit caught that most internal links read like article titles ("Three drives, one relationship") instead of the queries parents actually search ("what to say after a bad game"). Title-shaped anchors are good for tone but weak for SEO. Query-shaped anchors stack topical authority on the linked page.
+
+**Bad:** "See [Three drives, one relationship] for the framework."
+**Good:** "See [why what you say in the car matters more than the game itself] for the framework."
+
+**Bad:** "Read [The 90-Second Rule]."
+**Good:** "Read [what to say to your kid in the first 90 seconds after a bad game]."
+
+The pillar nav and footer can keep title-shaped anchors. In-prose links should match search intent for the destination page.
+
+---
+
 ## Implementation
 
 **For future writing:**

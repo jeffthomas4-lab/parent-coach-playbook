@@ -78,6 +78,7 @@ const articles = defineCollection({
       seoTitle: z.string().optional(),         // Optional search-shaped title for the <title> tag and SERP. Falls back to title if missing.
       seoDescription: z.string().optional(),   // Optional search-shaped description override. Falls back to dek.
       dek: z.string().optional(),
+      bluf: z.string().optional(),             // Bottom Line Up Front. 30-50 word answer-first paragraph for featured-snippet capture. Renders above the article body in a styled callout. Plain text only, no markdown. Match the language a parent would type into Google.
       topic: z
         .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play','summer-camps'])
         .optional(),

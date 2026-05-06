@@ -1,6 +1,7 @@
 ---
 title: "Post-practice dinner *when driving past fast food*"
 dek: "You're starving. They're starving. The drive-through is right there. The 15-minute fix that costs you later."
+bluf: "Skip the drive-through. Pack a real-food snack in the car so the 6pm hunger doesn't override the plan. Eat at home thirty minutes later. The drive-through fix costs you sleep, recovery, and the conversation you should be having on the way home from practice."
 topic: "season-ops"
 format: "note"
 phase: "drive-home"

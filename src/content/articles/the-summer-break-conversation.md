@@ -1,6 +1,7 @@
 ---
 title: "The *summer break* conversation"
 dek: "Your kid wants more sport this summer. Or they want less. Either way, the conversation goes the same way."
+bluf: "Summer breaks split into two camps. The kid who wants more sport. The kid who wants less. Both conversations go the same way. Ask what they actually want, not what they think you want, then plan the summer around the honest answer. The middle of June is too late for this."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The summer camp *packing list* that actually works"
 dek: "What to pack. What to skip. What every parent forgets."
+bluf: "Pack three sets of socks per day, not one. Bring two water bottles. Skip the new gear, send what they already trust. Label everything with their name in a Sharpie. Most parents over-pack clothes and under-pack the small things that actually decide whether camp is good or bad."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

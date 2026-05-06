@@ -23,23 +23,47 @@ const related = (await getCollection('articles', ({ data: d, slug: s }) =>
 
 // JSON-LD: Article schema. The site is intentionally anonymous, so the author
 // is the publishing Organization, not a named Person. Image upgraded to a full
-// ImageObject for image search.
+// ImageObject for image search. Dimensions are omitted unless we're sure of them
+// (og-default is the only file at a known aspect ratio); hero illustrations vary
+// in size and lying to Google about dimensions hurts more than helps.
 const reviewedAt = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
+const hasOgOverride = !!(data as any).ogImage;
 const heroImage = (data as any).ogImage ?? (data.hero ? (typeof data.hero === 'string' ? data.hero : data.hero.src) : '/og-default.jpg');
 const heroImageUrl = new URL(heroImage, SITE.url).toString();
 const heroAlt = (data as any).heroAlt ?? data.title.replace(/\*/g, '');
-const imageObject = {
+const imageObject: Record<string, unknown> = {
   '@type': 'ImageObject',
   url: heroImageUrl,
-  width: 1200,
-  height: 630,
   caption: heroAlt,
+  representativeOfPage: true,
+  creator: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  copyrightHolder: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  license: SITE.url,
+  contentUrl: heroImageUrl,
 };
+// Only assert dimensions when we're confident: ogImage overrides go through
+// the Open Graph 1200x630 mold; hero illustrations vary, so let Google infer.
+if (hasOgOverride || heroImage === '/og-default.jpg') {
+  imageObject.width = 1200;
+  imageObject.height = 630;
+}
+// Description preference: bluf (snippet-shaped) > seoDescription > dek. The bluf
+// is the answer-first 30-50 word paragraph parents will see in a featured snippet,
+// so it's also the strongest signal to Google about what this article answers.
+const articleDescription = data.bluf ?? (data as any).seoDescription ?? data.dek;
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: data.title.replace(/\*/g, ''),
-  description: data.dek,
+  description: articleDescription,
   image: imageObject,
   author: {
     '@type': 'Organization',
@@ -129,6 +153,17 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric' } as const;
         </div>
       </div>
     </header>
+
+    {data.bluf && (
+      <aside class="max-w-prose mx-auto mt-10 border-l-4 border-rust pl-5 py-1" aria-label="Quick answer">
+        <p class="font-mono text-rust uppercase text-[0.7rem] tracking-label mb-2 font-medium">
+          The short version
+        </p>
+        <p class="font-display text-ink text-lg md:text-xl leading-snug" style="font-weight: 500;">
+          {data.bluf}
+        </p>
+      </aside>
+    )}
 
     <div class={`article-body mx-auto ${isShort ? 'mt-8' : 'mt-12'}`}>
       <slot />

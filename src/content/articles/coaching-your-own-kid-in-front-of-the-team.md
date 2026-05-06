@@ -3,6 +3,7 @@ title: "Coaching your own kid in *front of the team*"
 seoTitle: "How to coach your own kid in front of the team without messing it up"
 seoDescription: "The two ways most parent-coaches blow it, the rule that works after five seasons, and how to handle the dugout without losing the relationship at home."
 dek: "I made the lineup at midnight. My wife asked why I was crying in the kitchen. Five seasons later, I think I finally have it figured out. Sort of."
+bluf: "Coach the team, keep the kid. In the dugout your child is a player. You correct them the same way you'd correct any nine-year-old, same words, same tone, same length. In the car after, they are your kid again, not a learning opportunity. The hard part is the transition home."
 format: "essay"
 issue: 3
 phase: "game"

@@ -1,6 +1,7 @@
 ---
 title: "After the cut. *The 24-hour rule*"
 dek: "Don't make any decisions in the first 24 hours. The rule that prevents most regrets."
+bluf: "Don't make any decisions in the first 24 hours after a cut. Don't email the coach. Don't switch leagues. Don't promise private lessons. The kid isn't ready, you aren't ready, and any decision made tonight is one you'll undo in a week. Sit. Wait. Talk in the morning."
 topic: "tryouts"
 format: "note"
 phase: "drive-home"

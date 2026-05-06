@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
-import { SPORTS } from '../../data/site';
+import { SPORTS, SITE } from '../../data/site';
 
 export async function getStaticPaths() {
   const topics = await getCollection('body', ({ data }) => isLive(data));
@@ -13,6 +13,44 @@ export async function getStaticPaths() {
 
 const { topic } = Astro.props;
 const { Content } = await topic.render();
+
+// JSON-LD: Article schema for the body topic (medical / training reference reads).
+// Author / publisher are the editorial Organization. The page is medical-adjacent
+// so we surface MedicalWebPage as the page type via mainEntityOfPage where useful.
+const bodyArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: stripTitle(topic.data.title),
+  description: topic.data.summary,
+  author: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
+  },
+  datePublished: topic.data.publishedAt.toISOString(),
+  dateModified: topic.data.publishedAt.toISOString(),
+  mainEntityOfPage: `${SITE.url}/body/${topic.slug}/`,
+  articleSection: 'The body',
+  ...(topic.data.governingBodies && topic.data.governingBodies.length > 0
+    ? { citation: topic.data.governingBodies.map((g: { name: string; url: string }) => ({ '@type': 'CreativeWork', name: g.name, url: g.url })) }
+    : {}),
+};
+
+const bodyBreadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'The body', item: `${SITE.url}/body/` },
+    { '@type': 'ListItem', position: 3, name: stripTitle(topic.data.title) },
+  ],
+};
 
 // Related: pathways for the same sports, calendars for the same sports, sibling body topics.
 const sportTags = topic.data.sportTags ?? [];
@@ -36,6 +74,8 @@ const lastUpdated = topic.data.publishedAt;
   title={stripTitle(topic.data.title)}
   description={topic.data.summary}
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(bodyArticleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(bodyBreadcrumbSchema)} />
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">

@@ -1,6 +1,7 @@
 ---
 title: "The end-of-season *banquet* toolkit"
 dek: "Speech format. Awards philosophy. Photos. Gifts. The whole thing planned in two hours."
+bluf: "Plan the banquet in two hours. Pick one award per kid, anchored to a specific moment from the season, not stats. Speech under three minutes. Photos before the food, not after. Gifts under ten dollars that they actually use. The whole thing fits a single rough script."
 topic: "season-ops"
 format: "essay"
 phase: "team-parent"

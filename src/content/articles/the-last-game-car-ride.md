@@ -1,6 +1,7 @@
 ---
 title: "The *last game* car ride"
 dek: "End-of-season has a different drive home than mid-season. Here's the script that works."
+bluf: "The last car ride of a season is not the place for performance review. Skip the highlights and lowlights. Ask one question: what was your favorite part of this whole season. Then listen and let them talk. The drive home from a final game is for closing a chapter, not coaching the next one."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"
