@@ -45,5 +45,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "The 'don't move the goalpost' frame is the original beat. Most parents over-coach the win and the kid notices."
+  reviewerNotes: "Don't move the goalpost frame is the original beat."
 ---

@@ -50,5 +50,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
   status: claude-reviewed
-  reviewerNotes: "Substance from Jeff: missing rec-plus model, 3 practices per 1 game, LTAD focus, individual skill development. The 'skill development is a practice problem not a games problem' frame is the central original move. Could expand into a model template for other sports later."
+  reviewerNotes: "Substance from Jeff. Original move."
 ---

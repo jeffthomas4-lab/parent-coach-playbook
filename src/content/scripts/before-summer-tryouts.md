@@ -45,5 +45,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Distinct from before-game-nerves script: tryouts have no warm-up season behind them. Sensitive flagged."
+  reviewerNotes: "Distinct from before-game-nerves script."
 ---

@@ -45,5 +45,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "The shame-vs-mistake distinction is the central move. Specific praise of a different moment in the same game is the practical fix."
+  reviewerNotes: "Shame-vs-mistake distinction is the central move."
 ---

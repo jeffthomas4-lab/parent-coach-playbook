@@ -51,5 +51,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. The 'they want to quit the current configuration, not the sport' frame is the central diagnostic and the most original beat."
+  reviewerNotes: "Sensitive flagged."
 ---

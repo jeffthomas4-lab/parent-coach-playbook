@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { listDomainQuality, type DomainQuality } from '../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../lib/admin-auth';
+
+// SSR — reads from D1 each request. Cloudflare Access protects /admin/*.
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+let rows: DomainQuality[] = [];
+let dbAvailable = !!env?.DB;
+if (env?.DB) {
+  try {
+    rows = await listDomainQuality(env.DB);
+  } catch (e) {
+    console.error('listDomainQuality failed', e);
+  }
+}
+
+interface Enriched extends DomainQuality {
+  approval_rate: number;
+  rejection_rate: number;
+  high_pct: number;
+  low_pct: number;
+}
+
+const enriched: Enriched[] = rows.map((r) => {
+  const decided = r.approved_count + r.rejected_count;
+  const approvalRate = decided > 0 ? r.approved_count / decided : 0;
+  const rejectionRate = decided > 0 ? r.rejected_count / decided : 0;
+  const highPct = r.submitted_count > 0 ? r.high_confidence_count / r.submitted_count : 0;
+  const lowPct = r.submitted_count > 0 ? r.low_confidence_count / r.submitted_count : 0;
+  return {
+    ...r,
+    approval_rate: approvalRate,
+    rejection_rate: rejectionRate,
+    high_pct: highPct,
+    low_pct: lowPct,
+  };
+});
+
+// Sort: highest-volume first; within that, lowest approval rate (worst signal) first.
+enriched.sort((a, b) => {
+  if (b.submitted_count !== a.submitted_count) return b.submitted_count - a.submitted_count;
+  return a.approval_rate - b.approval_rate;
+});
+
+const totalSubmitted = enriched.reduce((s, r) => s + r.submitted_count, 0);
+const totalApproved = enriched.reduce((s, r) => s + r.approved_count, 0);
+const totalRejected = enriched.reduce((s, r) => s + r.rejected_count, 0);
+
+const fmtPct = (n: number) => `${Math.round(n * 100)}%`;
+const fmtDate = (s: string) =>
+  new Date(s).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+// Color tone for approval rate: low approval = warning.
+const rateTone = (rate: number, decided: number): string => {
+  if (decided < 3) return 'text-ink-soft'; // not enough signal
+  if (rate >= 0.7) return 'text-sage';
+  if (rate >= 0.4) return 'text-ink-soft';
+  return 'text-rust';
+};
+---
+<BaseLayout title="Source quality" description="Per-domain submission quality dashboard" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">
+        Admin · <a href="/admin/camps/" class="hover:underline">Pending</a> · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · Source quality
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+        Source quality
+      </h1>
+      <p class="font-body text-ink-soft text-base mt-3 leading-snug max-w-2xl">
+        Per-domain track record. High volume + low approval rate is the signal we want to react to.
+        That domain is probably an aggregator or has stopped maintaining its listings. Skip it next sweep.
+      </p>
+      {adminEmail ? (
+        <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
+          Logged in as {adminEmail}.
+        </p>
+      ) : (
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
+          Cloudflare Access header not detected.
+        </p>
+      )}
+    </div>
+  </section>
+
+  {!dbAvailable ? (
+    <section>
+      <div class="container-px py-10">
+        <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
+      </div>
+    </section>
+  ) : (
+    <>
+      {/* Summary tiles */}
+      <section class="border-b border-bone">
+        <div class="container-px py-8">
+          <div class="grid gap-4 sm:grid-cols-4">
+            <div class="border border-bone p-4 bg-paper">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Domains tracked</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{enriched.length}</p>
+            </div>
+            <div class="border border-bone p-4 bg-paper">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Total submitted</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{totalSubmitted}</p>
+            </div>
+            <div class="border border-bone p-4 bg-paper">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Approved</p>
+              <p class="font-display text-sage text-2xl mt-1 font-medium">{totalApproved}</p>
+            </div>
+            <div class="border border-bone p-4 bg-paper">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Rejected</p>
+              <p class="font-display text-rust text-2xl mt-1 font-medium">{totalRejected}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Per-domain table */}
+      <section>
+        <div class="container-px py-10">
+          {enriched.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">
+              No domains tracked yet. The first submission will populate this table.
+            </p>
+          ) : (
+            <div class="overflow-x-auto border border-bone">
+              <table class="min-w-full text-sm font-body">
+                <thead class="bg-paper-warm">
+                  <tr class="border-b border-bone">
+                    <th class="text-left px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Domain</th>
+                    <th class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Submitted</th>
+                    <th class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Approved</th>
+                    <th class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Rejected</th>
+                    <th class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Approval rate</th>
+                    <th class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">High conf</th>
+                    <th class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Low conf</th>
+                    <th class="text-left px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Last seen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {enriched.map((r) => {
+                    const decided = r.approved_count + r.rejected_count;
+                    const tone = rateTone(r.approval_rate, decided);
+                    return (
+                      <tr class="border-b border-bone last:border-b-0 hover:bg-paper-warm">
+                        <td class="px-3 py-2 text-ink font-medium">
+                          <a href={`https://${r.domain}`} target="_blank" rel="noopener" class="hover:underline">
+                            {r.domain}
+                          </a>
+                        </td>
+                        <td class="px-3 py-2 text-right text-ink">{r.submitted_count}</td>
+                        <td class="px-3 py-2 text-right text-sage">{r.approved_count}</td>
+                        <td class="px-3 py-2 text-right text-rust">{r.rejected_count}</td>
+                        <td class={`px-3 py-2 text-right font-medium ${tone}`}>
+                          {decided > 0 ? fmtPct(r.approval_rate) : '—'}
+                        </td>
+                        <td class="px-3 py-2 text-right text-ink-soft">
+                          {r.high_confidence_count}
+                          {r.submitted_count > 0 && (
+                            <span class="text-xs"> ({fmtPct(r.high_pct)})</span>
+                          )}
+                        </td>
+                        <td class="px-3 py-2 text-right text-ink-soft">
+                          {r.low_confidence_count}
+                          {r.submitted_count > 0 && (
+                            <span class="text-xs"> ({fmtPct(r.low_pct)})</span>
+                          )}
+                        </td>
+                        <td class="px-3 py-2 text-ink-soft text-xs">{fmtDate(r.last_seen_at)}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          <p class="font-display italic text-ink-soft text-xs mt-4 font-medium">
+            Domains with fewer than 3 decided submissions show — for approval rate (not enough signal).
+            Approval rate under 40% is shown in rust as a skip-this-source signal.
+          </p>
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>

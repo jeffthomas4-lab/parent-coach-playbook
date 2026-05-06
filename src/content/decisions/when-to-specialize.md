@@ -50,5 +50,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Anchored to AAP/AOSSM consensus. The originality is in the framing, not the medical position. Could cite governing bodies inline; current version says 'consensus' without linking."
+  reviewerNotes: "Anchored to AAP/AOSSM consensus."
 ---

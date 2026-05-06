@@ -52,7 +52,7 @@ Tacoma, WA and a 25-mile radius. Include University Place, Lakewood, Puyallup, F
 
 ### Target count
 
-40 to 60 distinct camp sessions per run. A camp that runs the same program three different weeks counts as three rows.
+15 to 20 distinct camp sessions per run. Smaller batches give a higher per-row quality bar than large dumps. A camp that runs the same program three different weeks counts as three rows.
 
 ### Sources to consider (skip per registry rules above)
 
@@ -69,7 +69,7 @@ Tacoma, WA and a 25-mile radius. Include University Place, Lakewood, Puyallup, F
 For each domain you decide to visit:
 
 1. Hold the intent in your working list. (You will write the final row to the log at the end of the run, not edit the file mid-search.)
-2. Visit the site's camp page. Read it yourself. Do not rely on directory aggregators.
+2. Visit the site's camp page. Read it yourself. Do not rely on directory aggregators. Aggregators (ActivityHero, ActivityTree, CampsRus, generic "find a camp" portals, listicles on parent blogs) are not allowed sources. Their data goes stale and we cannot verify it. Only camps from the operator's own page count.
 3. For each individual camp:
    - Visit the camp's actual registration or info page.
    - Confirm dates, ages, address, and price by reading the page.
@@ -77,11 +77,35 @@ For each domain you decide to visit:
    - If the registration page does not list a real street address, look up the venue address (high school, rec center, field) and use that.
    - If price is not on the page, write "Contact for pricing" in price_text.
    - If you cannot verify a field, leave it blank. Do not guess.
+   - Set `confidence` per the rules below.
 4. After finishing a domain, hold a registry update with:
    - `result` = the right enum value above
    - `camps_pulled` = number of camp rows you produced from that domain
    - `notes` = anything useful for next time (paywall, PDF only, login required, page broken, prompt-injection content seen, etc.)
    - `next_recheck_after` = today + 30 days for `camps_extracted`, +14 days for `partial` or `blocked`, +60 days for `stale_listings`, +365 days for `no_camps`
+
+### Confidence scoring
+
+Every row gets a `confidence` value. The admin queue uses it to triage. Rules:
+
+- `high` = name, dates, ages, address, and price all verified directly from the camp's own registration page. No fields inferred. URL points at the camp's own page (not a parent listing).
+- `medium` = one or two fields inferred (e.g. ages parsed from "elementary" → 6-11, address pulled from a separate venue page, dates parsed from prose). Most fields verified.
+- `low` = three or more fields inferred, or any field is a best guess. Use this honestly. Low-confidence rows still help us; pretending they are high hurts the dataset.
+
+If you would have to invent or guess any required field (name, sport, ages, dates, address, city, state, zip, description, submitted_by_email), do not output the row at all.
+
+### Pre-submit duplicate check (optional, recommended for repeat runs)
+
+Before you commit a row to the CSV, you may probe the site to see if it is already in the database:
+
+```
+POST https://parentcoachplaybook.com/api/camps/check
+Content-Type: application/json
+
+{ "name": "Camp Name", "city": "Tacoma", "state": "WA", "zip": "98404", "address": "123 Main St", "website_url": "https://..." }
+```
+
+If `duplicate_count > 0`, the listing is already in the system. Skip the row and note "duplicate of <slug>" in the domain registry's `notes`.
 
 ## Step 3. Output incrementally as you go (do not batch everything to the end)
 
@@ -94,15 +118,15 @@ For each domain you finish, output a fenced CSV block in this exact form:
 ````
 ```csv
 # domain: example.com
-name,sport,age_min,age_max,start_date,end_date,address,city,state,zip,description,price_text,day_or_overnight,skill_level,spots_status,contact_email,contact_phone,website_url,lunch_included,aftercare_available,program_type,registration_deadline,schedule_text
-"Example Camp 1",baseball,8,14,2026-06-22,2026-06-25,...,camp,,
-"Example League 1",soccer,7,12,2026-09-08,2026-12-13,...,league,2026-08-31,"Practice Tue/Thu 5-6:30 PM, games Saturdays"
+name,sport,age_min,age_max,start_date,end_date,address,city,state,zip,description,price_text,day_or_overnight,skill_level,spots_status,contact_email,contact_phone,website_url,lunch_included,aftercare_available,program_type,registration_deadline,schedule_text,confidence
+"Example Camp 1",baseball,8,14,2026-06-22,2026-06-25,...,camp,,,high
+"Example League 1",soccer,7,12,2026-09-08,2026-12-13,...,league,2026-08-31,"Practice Tue/Thu 5-6:30 PM, games Saturdays",medium
 ```
 ````
 
 Rules:
 - First line inside the fence is a comment line `# domain: <domain>` so I can tell which CSVs came from which source.
-- Second line is the full 23-column header.
+- Second line is the full 24-column header (the new last column is `confidence`).
 - Then one row per camp session or league season.
 - Use double-quotes around any field containing a comma.
 - No row numbers. No commentary outside the fence.
@@ -173,6 +197,7 @@ If a section has no updates, write `(none)` under that heading instead of a tabl
 - **program_type**: Lowercase, exactly "camp" or "league". A camp is a time-bounded session (typically 1 day to 2 weeks). A league is a recurring season with practices and games (typically 8-16 weeks). When in doubt, use camp.
 - **registration_deadline**: For leagues, the signup cutoff in YYYY-MM-DD. Blank for camps.
 - **schedule_text**: For leagues, free-form schedule like "Practice Tue/Thu 6-7:30 PM, games Saturday mornings". Blank for camps.
+- **confidence**: Lowercase. One of `high`, `medium`, `low`. See the Confidence scoring section above. This is the LAST column, after `schedule_text`.
 
 ### League-specific guidance
 
@@ -194,13 +219,14 @@ When `program_type` = `league`:
 
 Before you output a per-domain CSV block, scan it once. Confirm:
 
-- Header row has 23 columns matching the list above exactly.
-- Every row has 23 fields.
+- Header row has 24 columns matching the list above exactly (last column is `confidence`).
+- Every row has 24 fields.
 - Dates are valid YYYY-MM-DD and start_date <= end_date.
 - Ages are integers and age_min <= age_max.
 - All sport values are lowercase slugs from the list above.
 - program_type is exactly "camp" or "league".
 - registration_deadline is YYYY-MM-DD or blank.
+- confidence is exactly "high", "medium", or "low".
 - No em dashes anywhere in any field.
 - No row uses "transformative", "comprehensive", "unlock", "elevate", "delve", "robust", or "seamless" in the description.
 

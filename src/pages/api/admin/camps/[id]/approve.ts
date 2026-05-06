@@ -2,7 +2,7 @@
 // Approves a pending camp. Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { approveCamp } from '../../../../../lib/camps-db';
+import { approveCamp, upsertDomainQuality } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 
 export const prerender = false;
@@ -44,7 +44,7 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
       if (typeof v === 'string' && v.trim()) notes = v.trim();
     }
   } catch {
-    // ignore — notes are optional
+    // ignore
   }
 
   const camp = await approveCamp(env.DB, id, auth.email, notes);
@@ -55,8 +55,8 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     });
   }
 
-  // Browser form submissions get redirected back to the camp's admin page.
-  // Programmatic JSON callers still receive the JSON response.
+  await upsertDomainQuality(env.DB, camp.source_domain, 'approved');
+
   if (isForm) {
     return new Response(null, {
       status: 303,

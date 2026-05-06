@@ -5,9 +5,12 @@ import {
   listPendingReviews,
   listPendingClaims,
   getCampById,
+  findFuzzyCampMatches,
+  REJECT_REASON_CODES,
   type Camp,
   type CampReview,
   type CampClaim,
+  type FuzzyMatchResult,
 } from '../../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
 
@@ -20,6 +23,7 @@ let pendingCamps: Camp[] = [];
 let pendingReviews: CampReview[] = [];
 let pendingClaims: CampClaim[] = [];
 const campLookup = new Map<string, Camp>();
+const fuzzyByCamp = new Map<string, FuzzyMatchResult[]>();
 let dbAvailable = !!env?.DB;
 
 if (env?.DB) {
@@ -28,7 +32,6 @@ if (env?.DB) {
     pendingReviews = await listPendingReviews(env.DB);
     pendingClaims = await listPendingClaims(env.DB);
 
-    // Build camp lookup for reviews and claims
     const allCampIds = new Set<string>();
     pendingReviews.forEach((r) => allCampIds.add(r.camp_id));
     pendingClaims.forEach((c) => allCampIds.add(c.camp_id));
@@ -37,15 +40,43 @@ if (env?.DB) {
       const camp = await getCampById(env.DB, campId);
       if (camp) campLookup.set(campId, camp);
     }
+
+    for (const camp of pendingCamps) {
+      const matches = await findFuzzyCampMatches(env.DB, {
+        name: camp.name,
+        city: camp.city,
+        state: camp.state,
+        zip: camp.zip,
+        address: camp.address,
+        website_url: camp.website_url,
+      });
+      fuzzyByCamp.set(
+        camp.id,
+        matches.filter((m) => m.camp.id !== camp.id),
+      );
+    }
   } catch (e) {
     console.error('admin queue fetch failed', e);
   }
 }
 
+const confidenceTone: Record<string, string> = {
+  high: 'border-sage bg-sage-bg text-sage',
+  medium: 'border-bone bg-paper-warm text-ink-soft',
+  low: 'border-rust bg-paper-warm text-rust',
+};
+
+const urlHealthTone: Record<string, string> = {
+  live: 'border-sage bg-sage-bg text-sage',
+  redirect: 'border-bone bg-paper-warm text-ink-soft',
+  unchecked: 'border-bone bg-paper-warm text-ink-soft',
+  dead: 'border-rust bg-paper-warm text-rust',
+  timeout: 'border-rust bg-paper-warm text-rust',
+};
+
 const fmt = (s: string) =>
   new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 
-// Parse YYYY-MM-DD as local date (not UTC) to avoid the off-by-one timezone bug.
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmtRange = (start: string, end: string) => {
   const [, sm, sd] = start.split('-').map(Number);
@@ -58,7 +89,7 @@ const fmtRange = (start: string, end: string) => {
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
-        <a href="/admin/camps/" class="hover:underline">Pending</a> · Queue · <a href="/admin/camps/spot-check" class="hover:underline">Spot check</a>
+        <a href="/admin/camps/" class="hover:underline">Pending</a> · Queue · <a href="/admin/camps/spot-check" class="hover:underline">Spot check</a> · <a href="/admin/source-quality" class="hover:underline">Source quality</a>
       </p>
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Moderation queue
@@ -79,7 +110,6 @@ const fmtRange = (start: string, end: string) => {
     </section>
   ) : (
     <>
-      {/* SECTION A: Pending camps */}
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
@@ -95,10 +125,11 @@ const fmtRange = (start: string, end: string) => {
             <p class="font-display italic text-ink-soft font-medium">All clear, no camps awaiting review.</p>
           ) : (
             <ul class="grid gap-4">
-              {pendingCamps.map((camp) => (
+              {pendingCamps.map((camp) => {
+                const fuzzy = fuzzyByCamp.get(camp.id) ?? [];
+                return (
                 <li class="border border-bone p-5 bg-paper camp-row" data-id={camp.id}>
                   <div class="grid gap-4">
-                    {/* Top row: name, location, submitted date */}
                     <div>
                       <p class="font-display italic text-rust text-xs font-medium">
                         {camp.sport} · ages {camp.age_min}–{camp.age_max} · {camp.day_or_overnight}
@@ -109,9 +140,42 @@ const fmtRange = (start: string, end: string) => {
                       <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
                         {camp.city}, {camp.state} · {fmtRange(camp.start_date, camp.end_date)}
                       </p>
+
+                      <div class="flex flex-wrap items-center gap-2 mt-2 text-xs font-display font-medium">
+                        <span class={`px-2 py-0.5 border ${confidenceTone[camp.confidence] ?? confidenceTone.medium}`}>
+                          confidence: {camp.confidence}
+                        </span>
+                        {camp.source_domain && (
+                          <span class="px-2 py-0.5 border border-bone bg-paper-warm text-ink-soft">
+                            source: {camp.source_domain}
+                          </span>
+                        )}
+                        <span class={`px-2 py-0.5 border ${urlHealthTone[camp.url_health_status] ?? urlHealthTone.unchecked}`}>
+                          url: {camp.url_health_status}{camp.url_last_status_code ? ` (${camp.url_last_status_code})` : ''}
+                        </span>
+                      </div>
+
+                      {fuzzy.length > 0 && (
+                        <div class="mt-3 p-3 border border-rust bg-paper-warm">
+                          <p class="font-display italic text-rust text-xs font-medium mb-1">
+                            Possible duplicate{fuzzy.length === 1 ? '' : 's'} ({fuzzy.length}):
+                          </p>
+                          <ul class="text-xs text-ink-soft font-body grid gap-1">
+                            {fuzzy.slice(0, 5).map((m) => (
+                              <li>
+                                <a href={`/camps/${m.camp.slug}/`} target="_blank" rel="noopener" class="underline">
+                                  {m.camp.name}
+                                </a>{' '}
+                                <span class="text-ink-soft">
+                                  ({m.camp.city}, {m.camp.state} · {m.camp.status} · matched: {m.reason})
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
 
-                    {/* Editable fields */}
                     <div class="grid gap-3 text-sm">
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Website</label>
@@ -138,7 +202,27 @@ const fmtRange = (start: string, end: string) => {
                       </div>
                     </div>
 
-                    {/* Action buttons */}
+                    <div class="reject-reason-row gap-2 p-3 border border-bone bg-paper-warm" style="display: none;">
+                      <label class="font-display italic text-ink-soft text-xs font-medium">
+                        Reject reason (recorded for source-quality stats)
+                      </label>
+                      <select class="px-2 py-1 font-body bg-paper border border-bone text-sm" data-field="reason_code">
+                        <option value="">— pick a reason —</option>
+                        {REJECT_REASON_CODES.map((r) => (
+                          <option value={r.code}>{r.label}</option>
+                        ))}
+                      </select>
+                      <input type="text" class="px-2 py-1 font-body bg-paper border border-bone text-sm" placeholder="optional notes" data-field="reject_notes" />
+                      <div class="flex gap-2">
+                        <button type="button" class="font-display italic px-3 py-1 border border-rust bg-paper text-rust text-sm hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-confirm">
+                          Confirm reject
+                        </button>
+                        <button type="button" class="font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject-cancel">
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+
                     <div class="grid gap-2 sm:grid-cols-4">
                       <div class="col-span-1">
                         <button type="button" class="w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="approve-verified">
@@ -163,17 +247,16 @@ const fmtRange = (start: string, end: string) => {
                       </div>
                     </div>
 
-                    {/* Status message */}
                     <div class="status-message text-xs text-rust font-display italic" style="display: none;"></div>
                   </div>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           )}
         </div>
       </section>
 
-      {/* SECTION B: Pending reviews */}
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
@@ -226,7 +309,6 @@ const fmtRange = (start: string, end: string) => {
         </div>
       </section>
 
-      {/* SECTION C: Pending claims */}
       <section>
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
@@ -297,23 +379,32 @@ const fmtRange = (start: string, end: string) => {
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
-    // Camp submission actions
     document.querySelectorAll('.camp-row').forEach(function (row) {
       const campId = row.getAttribute('data-id');
       const statusDiv = row.querySelector('.status-message');
+      const rejectRow = row.querySelector('.reject-reason-row');
 
       row.querySelectorAll('[data-action]').forEach(function (btn) {
-        if (btn.type === 'file') return; // skip file inputs
+        if (btn.type === 'file') return;
 
         btn.addEventListener('click', async function (e) {
           e.preventDefault();
           const action = this.getAttribute('data-action');
-          let endpoint, method, body;
+
+          if (action === 'reject') {
+            if (rejectRow) rejectRow.style.display = 'grid';
+            return;
+          }
+          if (action === 'reject-cancel') {
+            if (rejectRow) rejectRow.style.display = 'none';
+            return;
+          }
+
+          let endpoint, body;
 
           if (action === 'approve-verified') {
             endpoint = '/api/admin/camps/' + campId + '/approve';
             body = JSON.stringify({ notes: null });
-            // Also set verified
             await fetch('/api/admin/camps/' + campId + '/verify', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -322,9 +413,18 @@ const fmtRange = (start: string, end: string) => {
           } else if (action === 'approve') {
             endpoint = '/api/admin/camps/' + campId + '/approve';
             body = JSON.stringify({ notes: null });
-          } else if (action === 'reject') {
+          } else if (action === 'reject-confirm') {
+            const reasonSelect = row.querySelector('select[data-field="reason_code"]');
+            const notesInput = row.querySelector('input[data-field="reject_notes"]');
+            const reasonCode = reasonSelect && reasonSelect.value ? reasonSelect.value : null;
+            const notes = notesInput && notesInput.value.trim() ? notesInput.value.trim() : null;
+            if (!reasonCode) {
+              statusDiv.textContent = 'Pick a reject reason first.';
+              statusDiv.style.display = 'block';
+              return;
+            }
             endpoint = '/api/admin/camps/' + campId + '/reject';
-            body = JSON.stringify({ notes: null });
+            body = JSON.stringify({ notes: notes, reason_code: reasonCode });
           } else {
             return;
           }
@@ -338,13 +438,11 @@ const fmtRange = (start: string, end: string) => {
             const data = await resp.json();
 
             if (data.ok) {
-              statusDiv.textContent = action === 'reject' ? 'Rejected' : 'Approved';
+              statusDiv.textContent = action === 'reject-confirm' ? 'Rejected' : 'Approved';
               statusDiv.style.display = 'block';
               setTimeout(function () {
                 row.style.opacity = '0.5';
-                setTimeout(function () {
-                  row.remove();
-                }, 300);
+                setTimeout(function () { row.remove(); }, 300);
               }, 500);
             } else {
               statusDiv.textContent = 'Error: ' + (data.error || 'unknown');
@@ -357,7 +455,6 @@ const fmtRange = (start: string, end: string) => {
         });
       });
 
-      // Photo upload
       const photoInput = row.querySelector('input[type="file"]');
       if (photoInput) {
         photoInput.addEventListener('change', async function () {
@@ -387,7 +484,6 @@ const fmtRange = (start: string, end: string) => {
       }
     });
 
-    // Review actions
     document.querySelectorAll('.review-row').forEach(function (row) {
       const reviewId = row.getAttribute('data-id');
       const statusDiv = row.querySelector('.status-message');
@@ -411,9 +507,7 @@ const fmtRange = (start: string, end: string) => {
               statusDiv.style.display = 'block';
               setTimeout(function () {
                 row.style.opacity = '0.5';
-                setTimeout(function () {
-                  row.remove();
-                }, 300);
+                setTimeout(function () { row.remove(); }, 300);
               }, 500);
             } else {
               statusDiv.textContent = 'Error: ' + (data.error || 'unknown');
@@ -427,7 +521,6 @@ const fmtRange = (start: string, end: string) => {
       });
     });
 
-    // Claim actions
     document.querySelectorAll('.claim-row').forEach(function (row) {
       const claimId = row.getAttribute('data-id');
       const statusDiv = row.querySelector('.status-message');
@@ -438,15 +531,10 @@ const fmtRange = (start: string, end: string) => {
           const action = this.getAttribute('data-action');
           let status;
 
-          if (action === 'mark-verified') {
-            status = 'verified';
-          } else if (action === 'mark-paid') {
-            status = 'paid';
-          } else if (action === 'reject') {
-            status = 'rejected';
-          } else {
-            return;
-          }
+          if (action === 'mark-verified') status = 'verified';
+          else if (action === 'mark-paid') status = 'paid';
+          else if (action === 'reject') status = 'rejected';
+          else return;
 
           try {
             const resp = await fetch('/api/admin/claims/' + claimId + '/update', {
@@ -461,9 +549,7 @@ const fmtRange = (start: string, end: string) => {
               statusDiv.style.display = 'block';
               setTimeout(function () {
                 row.style.opacity = '0.5';
-                setTimeout(function () {
-                  row.remove();
-                }, 300);
+                setTimeout(function () { row.remove(); }, 300);
               }, 500);
             } else {
               statusDiv.textContent = 'Error: ' + (data.error || 'unknown');
@@ -478,4 +564,3 @@ const fmtRange = (start: string, end: string) => {
     });
   });
 </script>
-   

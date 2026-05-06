@@ -2,10 +2,17 @@
 // Rejects a pending camp. Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { rejectCamp } from '../../../../../lib/camps-db';
+import {
+  rejectCamp,
+  upsertDomainQuality,
+  REJECT_REASON_CODES,
+  type RejectReasonCode,
+} from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 
 export const prerender = false;
+
+const VALID_REASON_CODES = new Set<RejectReasonCode>(REJECT_REASON_CODES.map((r) => r.code));
 
 export const POST: APIRoute = async ({ params, request, locals }) => {
   const env = (locals as any).runtime?.env as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
@@ -31,23 +38,30 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
   }
 
   let notes: string | null = null;
+  let reasonCode: RejectReasonCode | null = null;
   let isForm = false;
   try {
     const ct = (request.headers.get('content-type') ?? '').toLowerCase();
     if (ct.includes('application/json')) {
-      const body = (await request.json()) as { notes?: string };
+      const body = (await request.json()) as { notes?: string; reason_code?: string };
       notes = body?.notes?.trim() || null;
+      const rc = body?.reason_code?.trim() as RejectReasonCode | undefined;
+      if (rc && VALID_REASON_CODES.has(rc)) reasonCode = rc;
     } else if (ct.includes('form')) {
       isForm = true;
       const fd = await request.formData();
       const v = fd.get('notes');
       if (typeof v === 'string' && v.trim()) notes = v.trim();
+      const rc = fd.get('reason_code');
+      if (typeof rc === 'string' && VALID_REASON_CODES.has(rc as RejectReasonCode)) {
+        reasonCode = rc as RejectReasonCode;
+      }
     }
   } catch {
     // ignore
   }
 
-  const camp = await rejectCamp(env.DB, id, auth.email, notes);
+  const camp = await rejectCamp(env.DB, id, auth.email, notes, reasonCode);
   if (!camp) {
     return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
       status: 404,
@@ -55,8 +69,8 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     });
   }
 
-  // Browser form submissions get redirected back to the camps queue.
-  // Programmatic JSON callers still receive the JSON response.
+  await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
+
   if (isForm) {
     return new Response(null, {
       status: 303,

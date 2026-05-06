@@ -45,5 +45,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Permission to not fix the silence is the original beat here. Most parents read silence as a signal to dig. That's the wrong move."
+  reviewerNotes: "Permission to not fix the silence is the original beat."
 ---

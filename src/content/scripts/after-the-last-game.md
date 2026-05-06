@@ -45,5 +45,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Pulled from the queued blog post (the-last-game-car-ride) and reformatted for the script lane. The 'sometimes there isn't' beat earns its place."
+  reviewerNotes: "Pulled from the queued blog post."
 ---

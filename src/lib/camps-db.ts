@@ -11,6 +11,50 @@ export type SkillLevel = 'beginner' | 'intermediate' | 'advanced' | 'all';
 export type SpotsStatus = 'open' | 'waitlist' | 'full';
 export type ProgramType = 'camp' | 'league';
 
+// ---------- Phase 6: quality framework ----------
+
+export type ConfidenceLevel = 'high' | 'medium' | 'low';
+
+export type UrlHealthStatus = 'unchecked' | 'live' | 'dead' | 'timeout' | 'redirect';
+
+export type RejectReasonCode =
+  | 'duplicate'
+  | 'dead-url'
+  | 'unverifiable-address'
+  | 'missing-required-field'
+  | 'off-brand'
+  | 'past-date'
+  | 'aggregator-source'
+  | 'low-confidence'
+  | 'spam'
+  | 'other';
+
+export const REJECT_REASON_CODES: ReadonlyArray<{ code: RejectReasonCode; label: string }> = [
+  { code: 'duplicate', label: 'Duplicate of an existing camp' },
+  { code: 'dead-url', label: 'Dead URL (registration link broken)' },
+  { code: 'unverifiable-address', label: 'Address can\'t be verified' },
+  { code: 'missing-required-field', label: 'Missing a required field' },
+  { code: 'off-brand', label: 'Off-brand (pure travel-club operator, etc.)' },
+  { code: 'past-date', label: 'Dates already past' },
+  { code: 'aggregator-source', label: 'Pulled from an aggregator, not the camp\'s own page' },
+  { code: 'low-confidence', label: 'Too many fields inferred or unclear' },
+  { code: 'spam', label: 'Spam' },
+  { code: 'other', label: 'Other' },
+];
+
+export interface DomainQuality {
+  domain: string;
+  submitted_count: number;
+  approved_count: number;
+  rejected_count: number;
+  high_confidence_count: number;
+  low_confidence_count: number;
+  last_seen_at: string;
+  notes: string | null;
+}
+
+export type DomainQualityOutcome = 'submitted' | 'approved' | 'rejected';
+
 export interface Camp {
   id: string;
   slug: string;
@@ -18,7 +62,7 @@ export interface Camp {
   sport: string;
   age_min: number;
   age_max: number;
-  start_date: string; // ISO date YYYY-MM-DD
+  start_date: string;
   end_date: string;
   address: string;
   city: string;
@@ -55,6 +99,12 @@ export interface Camp {
   program_type: ProgramType;
   registration_deadline: string | null;
   schedule_text: string | null;
+  confidence: ConfidenceLevel;
+  source_domain: string | null;
+  reject_reason_code: RejectReasonCode | null;
+  url_health_status: UrlHealthStatus;
+  url_last_checked_at: string | null;
+  url_last_status_code: number | null;
 }
 
 export type ReviewStatus = 'pending' | 'approved' | 'rejected';
@@ -113,9 +163,21 @@ export interface NewCampInput {
   program_type?: ProgramType;
   registration_deadline?: string | null;
   schedule_text?: string | null;
+  confidence?: ConfidenceLevel;
+  source_domain?: string | null;
 }
 
 const nowIso = () => new Date().toISOString();
+
+export function extractDomain(url: string | null | undefined): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url.trim());
+    return u.hostname.replace(/^www\./, '').toLowerCase() || null;
+  } catch {
+    return null;
+  }
+}
 
 // ---------- Submitters ----------
 
@@ -133,7 +195,6 @@ export async function upsertSubmitterOnSubmission(
   notes: string | null = null,
 ): Promise<Submitter> {
   const now = nowIso();
-  // Insert with defaults if not present, otherwise increment counters and bump last_submitted.
   await db
     .prepare(
       `INSERT INTO submitters (email, trust_level, submission_count, approved_count, first_submitted_at, last_submitted_at, notes)
@@ -174,6 +235,8 @@ export async function insertCamp(
   camp: NewCampInput,
   status: CampStatus = 'pending',
 ): Promise<void> {
+  const sourceDomain =
+    camp.source_domain ?? extractDomain(camp.website_url) ?? extractDomain(null);
   await db
     .prepare(
       `INSERT INTO camps (
@@ -182,9 +245,10 @@ export async function insertCamp(
          description, price_text, day_or_overnight, skill_level, spots_status,
          contact_email, contact_phone, website_url, lunch_included, aftercare_available,
          status, submitted_by_email, submitted_at, reviewed_by, reviewed_at,
-         program_type, registration_deadline, schedule_text
+         program_type, registration_deadline, schedule_text,
+         confidence, source_domain
        )
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
     .bind(
       camp.id,
@@ -219,23 +283,19 @@ export async function insertCamp(
       camp.program_type ?? 'camp',
       camp.registration_deadline ?? null,
       camp.schedule_text ?? null,
+      camp.confidence ?? 'medium',
+      sourceDomain,
     )
     .run();
 }
 
 export async function getCampById(db: D1Database, id: string): Promise<Camp | null> {
-  const row = await db
-    .prepare('SELECT * FROM camps WHERE id = ?')
-    .bind(id)
-    .first<Camp>();
+  const row = await db.prepare('SELECT * FROM camps WHERE id = ?').bind(id).first<Camp>();
   return row ?? null;
 }
 
 export async function getCampBySlug(db: D1Database, slug: string): Promise<Camp | null> {
-  const row = await db
-    .prepare('SELECT * FROM camps WHERE slug = ?')
-    .bind(slug)
-    .first<Camp>();
+  const row = await db.prepare('SELECT * FROM camps WHERE slug = ?').bind(slug).first<Camp>();
   return row ?? null;
 }
 
@@ -255,10 +315,6 @@ export async function listPendingCamps(db: D1Database): Promise<Camp[]> {
   return result.results ?? [];
 }
 
-/**
- * Spot-check queue: camps that are live (approved) but Jeff hasn't personally
- * verified yet. Newest first so the latest imports surface at the top.
- */
 export async function listApprovedUnverifiedCamps(db: D1Database): Promise<Camp[]> {
   const result = await db
     .prepare("SELECT * FROM camps WHERE status = 'approved' AND verified = 0 ORDER BY submitted_at DESC")
@@ -284,9 +340,7 @@ export async function approveCamp(
   if (!camp) return null;
   await db
     .prepare(
-      `UPDATE camps
-         SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ?
-         WHERE id = ?`,
+      `UPDATE camps SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
@@ -299,25 +353,19 @@ export async function rejectCamp(
   id: string,
   reviewer: string,
   notes: string | null = null,
+  reasonCode: RejectReasonCode | null = null,
 ): Promise<Camp | null> {
   await db
     .prepare(
-      `UPDATE camps
-         SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ?
-         WHERE id = ?`,
+      `UPDATE camps SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ?, reject_reason_code = ? WHERE id = ?`,
     )
-    .bind(reviewer, nowIso(), notes, id)
+    .bind(reviewer, nowIso(), notes, reasonCode, id)
     .run();
   return getCampById(db, id);
 }
 
-// ---------- Phase 4: admin edit ----------
+// ---------- admin edit ----------
 
-/**
- * Fields an admin is allowed to edit after a camp is live. Status, audit
- * timestamps, geocode cache, photo keys, and claim state are NOT editable
- * here — those have their own endpoints or are managed automatically.
- */
 export interface CampEditFields {
   name?: string;
   slug?: string;
@@ -354,20 +402,10 @@ const EDITABLE_TEXT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
   'contact_email', 'contact_phone', 'website_url',
   'program_type', 'registration_deadline', 'schedule_text',
 ];
-const EDITABLE_INT_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
-  'age_min', 'age_max',
-];
-const EDITABLE_BOOL_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
-  'lunch_included', 'aftercare_available',
-];
-const EDITABLE_REAL_COLUMNS: ReadonlyArray<keyof CampEditFields> = [
-  'latitude', 'longitude',
-];
+const EDITABLE_INT_COLUMNS: ReadonlyArray<keyof CampEditFields> = ['age_min', 'age_max'];
+const EDITABLE_BOOL_COLUMNS: ReadonlyArray<keyof CampEditFields> = ['lunch_included', 'aftercare_available'];
+const EDITABLE_REAL_COLUMNS: ReadonlyArray<keyof CampEditFields> = ['latitude', 'longitude'];
 
-/**
- * Update one or more fields on an existing camp. Only fields explicitly
- * provided in `fields` are written. Stamps last_edited_at and last_edited_by.
- */
 export async function updateCamp(
   db: D1Database,
   id: string,
@@ -376,7 +414,6 @@ export async function updateCamp(
 ): Promise<Camp | null> {
   const sets: string[] = [];
   const values: unknown[] = [];
-
   const push = (col: keyof CampEditFields, value: unknown) => {
     sets.push(`${col} = ?`);
     values.push(value);
@@ -398,12 +435,8 @@ export async function updateCamp(
     }
   }
 
-  if (sets.length === 0) {
-    // Nothing to do. Return the row unchanged.
-    return getCampById(db, id);
-  }
+  if (sets.length === 0) return getCampById(db, id);
 
-  // Audit columns always written when any edit happens.
   sets.push('last_edited_at = ?');
   values.push(nowIso());
   sets.push('last_edited_by = ?');
@@ -421,7 +454,6 @@ export async function updateCamp(
 // ---------- Slug + ID helpers ----------
 
 export function generateCampId(): string {
-  // crypto.randomUUID is available in the Workers runtime.
   return crypto.randomUUID();
 }
 
@@ -439,17 +471,15 @@ export async function uniqueSlug(db: D1Database, base: string): Promise<string> 
   if (!slug) slug = 'camp';
   const existing = await getCampBySlug(db, slug);
   if (!existing) return slug;
-  // Append a short suffix until unique.
   for (let i = 0; i < 50; i += 1) {
     const candidate = `${slug}-${Math.random().toString(36).slice(2, 6)}`;
     const conflict = await getCampBySlug(db, candidate);
     if (!conflict) return candidate;
   }
-  // Last-ditch: append a UUID slice.
   return `${slug}-${crypto.randomUUID().slice(0, 8)}`;
 }
 
-// ---------- Phase 2.5: claim listings ----------
+// ---------- claim listings ----------
 
 export type ClaimStatus = 'pending' | 'verified' | 'paid' | 'rejected';
 
@@ -521,19 +551,13 @@ export async function updateClaimStatus(
 ): Promise<CampClaim | null> {
   await db
     .prepare(
-      `UPDATE camp_claims
-         SET status = ?, reviewed_by = ?, reviewed_at = ?, review_notes = ?
-         WHERE id = ?`,
+      `UPDATE camp_claims SET status = ?, reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
     )
     .bind(status, reviewer, nowIso(), notes, id)
     .run();
   return getClaimById(db, id);
 }
 
-/**
- * Mark a camp as claimed. Sets the email, marks is_claimed=1, and records the paid-until date
- * (defaulting to 1 year from today). Called when admin marks a claim as 'paid'.
- */
 export async function markCampClaimed(
   db: D1Database,
   campId: string,
@@ -545,9 +569,7 @@ export async function markCampClaimed(
   const paidUntil = paidUntilISO ?? oneYear.toISOString().slice(0, 10);
   await db
     .prepare(
-      `UPDATE camps
-         SET is_claimed = 1, claimed_by_email = ?, claim_paid_until = ?
-         WHERE id = ?`,
+      `UPDATE camps SET is_claimed = 1, claimed_by_email = ?, claim_paid_until = ? WHERE id = ?`,
     )
     .bind(claimantEmail, paidUntil, campId)
     .run();
@@ -557,12 +579,8 @@ export function generateClaimId(): string {
   return crypto.randomUUID();
 }
 
-// ---------- Phase 2: shared-address handling ----------
+// ---------- shared-address handling ----------
 
-/**
- * Find other approved camps at the same address (matches address + city + zip, case-insensitive).
- * Optionally exclude a specific camp id (used on the detail page so the camp doesn't list itself).
- */
 export async function listOtherCampsAtAddress(
   db: D1Database,
   address: string,
@@ -585,10 +603,6 @@ export async function listOtherCampsAtAddress(
   return result.results ?? [];
 }
 
-/**
- * Find approved + pending camps at this address (for the submit-flow duplicate warning).
- * Used to warn submitters before they create what might be a duplicate listing.
- */
 export async function listCampsAtAddressForSubmit(
   db: D1Database,
   address: string,
@@ -609,7 +623,7 @@ export async function listCampsAtAddressForSubmit(
   return result.results ?? [];
 }
 
-// ---------- Phase 2: verified flag + hero photo ----------
+// ---------- verified flag + hero photo ----------
 
 export async function setVerified(db: D1Database, id: string, verified: boolean): Promise<void> {
   await db
@@ -625,12 +639,11 @@ export async function setHeroPhotoKey(db: D1Database, id: string, key: string | 
     .run();
 }
 
-// ---------- Phase 2: geocoding cache ----------
+// ---------- geocoding cache ----------
 
 const canonicalizeAddress = (address: string, city: string, state: string, zip: string): string =>
   `${address.trim().toLowerCase()}|${city.trim().toLowerCase()}|${state.trim().toUpperCase()}|${zip.trim()}`;
 
-// Hash an address string to a stable 64-char hex digest using SubtleCrypto (available in the Workers runtime).
 async function hashAddress(canonical: string): Promise<string> {
   const data = new TextEncoder().encode(canonical);
   const hashBuf = await crypto.subtle.digest('SHA-256', data);
@@ -677,10 +690,6 @@ export async function putCachedGeocode(
     .run();
 }
 
-/**
- * Cached geocode: hits the local cache first, falls back to Nominatim,
- * stores the new result for future submissions of the same address.
- */
 export async function geocodeCached(
   db: D1Database,
   address: string,
@@ -694,31 +703,21 @@ export async function geocodeCached(
   if (fresh) {
     try {
       await putCachedGeocode(db, address, city, state, zip, fresh.lat, fresh.lon);
-    } catch {
-      // ignore cache write failures
-    }
+    } catch {}
   }
   return fresh;
 }
 
-// ---------- Phase 2: trust-tier auto-approve ----------
+// ---------- trust-tier auto-approve ----------
 
-/**
- * Decide whether a new submission from this email should auto-approve.
- * Rule: trust_level = 'trusted' AND submitter has no banned status. Banned never auto-approves.
- * New submitters always queue. Admin promotes to trusted after a few approved camps.
- */
 export async function shouldAutoApprove(db: D1Database, email: string): Promise<boolean> {
   const submitter = await getSubmitter(db, email);
   if (!submitter) return false;
   return submitter.trust_level === 'trusted';
 }
 
-// ---------- Phase 2: zip-code radius search ----------
+// ---------- zip-code radius search ----------
 
-/**
- * Haversine distance in miles between two lat/lon pairs.
- */
 export function haversineMiles(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const toRad = (d: number) => (d * Math.PI) / 180;
   const R = 3958.8;
@@ -730,9 +729,6 @@ export function haversineMiles(lat1: number, lon1: number, lat2: number, lon2: n
   return 2 * R * Math.asin(Math.sqrt(a));
 }
 
-/**
- * Filter approved camps to those within `radiusMiles` of (lat, lon). Returns sorted nearest-first.
- */
 export async function approvedCampsWithinRadius(
   db: D1Database,
   lat: number,
@@ -751,7 +747,7 @@ export async function approvedCampsWithinRadius(
     .map((x) => x.camp);
 }
 
-// ---------- Phase 2: reviews ----------
+// ---------- reviews ----------
 
 export interface NewReviewInput {
   id: string;
@@ -809,9 +805,7 @@ export async function approveReview(
 ): Promise<CampReview | null> {
   await db
     .prepare(
-      `UPDATE camp_reviews
-         SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ?
-         WHERE id = ?`,
+      `UPDATE camp_reviews SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
@@ -826,9 +820,7 @@ export async function rejectReview(
 ): Promise<CampReview | null> {
   await db
     .prepare(
-      `UPDATE camp_reviews
-         SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ?
-         WHERE id = ?`,
+      `UPDATE camp_reviews SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
@@ -839,14 +831,8 @@ export function generateReviewId(): string {
   return crypto.randomUUID();
 }
 
-// ---------- Geocoding (Nominatim, OpenStreetMap) ----------
+// ---------- Geocoding (Nominatim) ----------
 
-/**
- * Free geocoding via Nominatim. Subject to their usage policy: 1 req/sec,
- * include a User-Agent that identifies the application.
- *
- * Returns null if no result. Caller decides whether to require coordinates.
- */
 export async function geocode(
   address: string,
   city: string,
@@ -873,4 +859,205 @@ export async function geocode(
   const lon = Number.parseFloat(first.lon);
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
   return { lat, lon };
+}
+
+// ---------- Phase 6: fuzzy dedup ----------
+
+export function normalizeCampName(name: string): string {
+  const stopwords = new Set([
+    'camp', 'camps', 'the', 'and', '&', 'a', 'an', 'of', 'at', 'in',
+    'summer', 'youth', 'kids', 'club', 'academy', 'sports', 'sport',
+    'inc', 'llc', 'corp',
+  ]);
+  const tokens = name
+    .toLowerCase()
+    .replace(/['"`]/g, '')
+    .replace(/[^a-z0-9\s]+/g, ' ')
+    .split(/\s+/)
+    .filter((t) => t && !stopwords.has(t));
+  return tokens.join(' ').trim();
+}
+
+export interface FuzzyMatchResult {
+  camp: Camp;
+  reason: 'exact-name-city' | 'normalized-name-city' | 'same-website' | 'same-address';
+}
+
+export async function findFuzzyCampMatches(
+  db: D1Database,
+  candidate: {
+    name: string;
+    city: string;
+    state: string;
+    zip?: string | null;
+    address?: string | null;
+    website_url?: string | null;
+  },
+): Promise<FuzzyMatchResult[]> {
+  const result = await db
+    .prepare(`SELECT * FROM camps WHERE status IN ('approved', 'pending')`)
+    .all<Camp>();
+  const all = result.results ?? [];
+
+  const candidateNormName = normalizeCampName(candidate.name);
+  const candidateCity = candidate.city.trim().toLowerCase();
+  const candidateState = candidate.state.trim().toUpperCase();
+  const candidateHost = extractDomain(candidate.website_url ?? null);
+  const candidateAddress = (candidate.address ?? '').trim().toLowerCase();
+  const candidateZip = (candidate.zip ?? '').trim();
+
+  const seen = new Map<string, FuzzyMatchResult>();
+  const set = (camp: Camp, reason: FuzzyMatchResult['reason']) => {
+    if (!seen.has(camp.id)) seen.set(camp.id, { camp, reason });
+  };
+
+  for (const c of all) {
+    const cCity = c.city.trim().toLowerCase();
+    const cState = c.state.trim().toUpperCase();
+    const cName = c.name.trim().toLowerCase();
+    const cNormName = normalizeCampName(c.name);
+    const cHost = extractDomain(c.website_url);
+
+    if (cName === candidate.name.trim().toLowerCase() && cCity === candidateCity && cState === candidateState) {
+      set(c, 'exact-name-city');
+      continue;
+    }
+    if (cNormName && cNormName === candidateNormName && cCity === candidateCity && cState === candidateState) {
+      set(c, 'normalized-name-city');
+      continue;
+    }
+    if (candidateHost && cHost && cHost === candidateHost) {
+      set(c, 'same-website');
+      continue;
+    }
+    if (
+      candidateAddress &&
+      candidateZip &&
+      c.address.trim().toLowerCase() === candidateAddress &&
+      cCity === candidateCity &&
+      c.zip.trim() === candidateZip
+    ) {
+      set(c, 'same-address');
+      continue;
+    }
+  }
+
+  return Array.from(seen.values());
+}
+
+// ---------- Phase 6: URL health ----------
+
+export async function updateUrlHealth(
+  db: D1Database,
+  id: string,
+  status: UrlHealthStatus,
+  statusCode: number | null,
+): Promise<void> {
+  await db
+    .prepare(
+      `UPDATE camps SET url_health_status = ?, url_last_checked_at = ?, url_last_status_code = ? WHERE id = ?`,
+    )
+    .bind(status, nowIso(), statusCode, id)
+    .run();
+}
+
+export async function listCampsForUrlSweep(
+  db: D1Database,
+  beforeIso: string,
+  limit = 50,
+): Promise<Camp[]> {
+  const result = await db
+    .prepare(
+      `SELECT * FROM camps
+         WHERE status = 'approved'
+           AND website_url IS NOT NULL
+           AND (url_last_checked_at IS NULL OR url_last_checked_at < ?)
+         ORDER BY url_last_checked_at ASC NULLS FIRST
+         LIMIT ?`,
+    )
+    .bind(beforeIso, limit)
+    .all<Camp>();
+  return result.results ?? [];
+}
+
+export async function listStaleCamps(
+  db: D1Database,
+  beforeDate: string,
+): Promise<Camp[]> {
+  const result = await db
+    .prepare(
+      `SELECT * FROM camps WHERE status = 'approved' AND end_date < ? ORDER BY end_date ASC`,
+    )
+    .bind(beforeDate)
+    .all<Camp>();
+  return result.results ?? [];
+}
+
+export async function archiveStaleCamps(db: D1Database, todayDate: string, reviewer: string): Promise<number> {
+  const stale = await listStaleCamps(db, todayDate);
+  for (const c of stale) {
+    await rejectCamp(db, c.id, reviewer, 'auto-archived past-date', 'past-date');
+  }
+  return stale.length;
+}
+
+// ---------- Phase 6: domain quality ----------
+
+export async function upsertDomainQuality(
+  db: D1Database,
+  domain: string | null,
+  outcome: DomainQualityOutcome,
+  confidence?: ConfidenceLevel,
+): Promise<void> {
+  if (!domain) return;
+  const now = nowIso();
+  const submittedDelta = outcome === 'submitted' ? 1 : 0;
+  const approvedDelta = outcome === 'approved' ? 1 : 0;
+  const rejectedDelta = outcome === 'rejected' ? 1 : 0;
+  const highDelta = outcome === 'submitted' && confidence === 'high' ? 1 : 0;
+  const lowDelta = outcome === 'submitted' && confidence === 'low' ? 1 : 0;
+
+  await db
+    .prepare(
+      `INSERT INTO domain_quality
+         (domain, submitted_count, approved_count, rejected_count, high_confidence_count, low_confidence_count, last_seen_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(domain) DO UPDATE SET
+         submitted_count = submitted_count + ?,
+         approved_count = approved_count + ?,
+         rejected_count = rejected_count + ?,
+         high_confidence_count = high_confidence_count + ?,
+         low_confidence_count = low_confidence_count + ?,
+         last_seen_at = excluded.last_seen_at`,
+    )
+    .bind(
+      domain,
+      submittedDelta,
+      approvedDelta,
+      rejectedDelta,
+      highDelta,
+      lowDelta,
+      now,
+      submittedDelta,
+      approvedDelta,
+      rejectedDelta,
+      highDelta,
+      lowDelta,
+    )
+    .run();
+}
+
+export async function listDomainQuality(db: D1Database): Promise<DomainQuality[]> {
+  const result = await db
+    .prepare(`SELECT * FROM domain_quality ORDER BY submitted_count DESC, last_seen_at DESC`)
+    .all<DomainQuality>();
+  return result.results ?? [];
+}
+
+export async function getDomainQuality(db: D1Database, domain: string): Promise<DomainQuality | null> {
+  const row = await db
+    .prepare('SELECT * FROM domain_quality WHERE domain = ?')
+    .bind(domain)
+    .first<DomainQuality>();
+  return row ?? null;
 }

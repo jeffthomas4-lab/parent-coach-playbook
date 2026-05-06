@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-05-06T13:18:12.134Z",
-  "count": 193,
+  "generatedAt": "2026-05-06T14:03:18.849Z",
+  "count": 194,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       "sources": [
         "src/pages/camps/[slug].astro",
         "src/pages/camps/index.astro"
+      ]
+    },
+    {
+      "url": "https://${r.domain}",
+      "sources": [
+        "src/pages/admin/source-quality.astro"
       ]
     },
     {

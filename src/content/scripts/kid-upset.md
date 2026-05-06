@@ -46,5 +46,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Sensitive topic flagged (kid in distress). Stays parent-to-parent. The 'regulate before you evaluate' frame is the central useful idea."
+  reviewerNotes: "Sensitive topic flagged."
 ---

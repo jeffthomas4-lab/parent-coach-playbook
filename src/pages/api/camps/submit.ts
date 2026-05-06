@@ -16,10 +16,15 @@ import {
   shouldAutoApprove,
   incrementSubmitterApproved,
   listCampsAtAddressForSubmit,
+  upsertDomainQuality,
+  updateUrlHealth,
+  extractDomain,
+  type ConfidenceLevel,
   type DayOrOvernight,
   type SkillLevel,
   type SpotsStatus,
 } from '../../../lib/camps-db';
+import { checkUrlHealth } from '../../../lib/url-health';
 
 export const prerender = false;
 
@@ -50,6 +55,9 @@ interface SubmitPayload {
   lunch_included?: string;
   aftercare_available?: string;
   submitted_by_email?: string;
+  // Phase 6 quality fields
+  confidence?: string;
+  source_domain?: string;
 }
 
 const REQUIRED: (keyof SubmitPayload)[] = [
@@ -93,7 +101,6 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
     }
     return out as SubmitPayload;
   }
-  // Fallback: try JSON, then empty.
   try {
     return (await req.json()) as SubmitPayload;
   } catch {
@@ -107,18 +114,15 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   const data = await readPayload(request);
 
-  // Honeypot. Bots fill it, humans do not.
   if (data.website && data.website.trim().length > 0) {
     return ok({ ok: true });
   }
 
-  // Required fields.
   const missing = REQUIRED.filter((k) => !data[k] || String(data[k]).trim() === '');
   if (missing.length) {
     return fail(`missing required fields: ${missing.join(', ')}`);
   }
 
-  // Type / format validation.
   if (!isInt(data.age_min) || !isInt(data.age_max)) {
     return fail('age_min and age_max must be integers');
   }
@@ -153,14 +157,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return fail('spots_status invalid');
   }
 
-  // Length sanity.
   if (data.description!.length < 30 || data.description!.length > 4000) {
     return fail('description must be between 30 and 4000 characters');
   }
   if (data.name!.length > 200) return fail('name too long');
 
-  // Duplicate-address check. Warns the submitter once if there are existing camps
-  // at the same address. They confirm via `confirm_duplicate=true` to proceed.
   if (data.confirm_duplicate !== 'true' && data.confirm_duplicate !== 'on') {
     const existing = await listCampsAtAddressForSubmit(env.DB, data.address!, data.city!, data.zip!);
     if (existing.length > 0) {
@@ -178,7 +179,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
   }
 
-  // Geocode through the local cache (saves Nominatim hits on repeated addresses).
   let lat: number | null = null;
   let lon: number | null = null;
   try {
@@ -188,7 +188,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       lon = g.lon;
     }
   } catch {
-    // ignore — moderation can fix it later
+    // ignore
   }
 
   const id = generateCampId();
@@ -198,6 +198,19 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const submitterEmail = data.submitted_by_email!.toLowerCase();
   await upsertSubmitterOnSubmission(env.DB, submitterEmail);
   const autoApprove = await shouldAutoApprove(env.DB, submitterEmail);
+
+  const rawConfidence = (data.confidence ?? '').toLowerCase().trim();
+  const confidence: ConfidenceLevel =
+    rawConfidence === 'high' || rawConfidence === 'low' || rawConfidence === 'medium'
+      ? (rawConfidence as ConfidenceLevel)
+      : 'medium';
+
+  const normalizedWebsite = data.website_url
+    ? (/^https?:\/\//i.test(data.website_url.trim()) ? data.website_url.trim() : `https://${data.website_url.trim()}`)
+    : null;
+  const sourceDomain =
+    (data.source_domain && data.source_domain.trim().toLowerCase()) ||
+    extractDomain(normalizedWebsite);
 
   await insertCamp(env.DB, {
     id,
@@ -221,15 +234,31 @@ export const POST: APIRoute = async ({ request, locals }) => {
     spots_status: spotsStatus,
     contact_email: data.contact_email ?? null,
     contact_phone: data.contact_phone ?? null,
-    website_url: data.website_url ? (/^https?:\/\//i.test(data.website_url.trim()) ? data.website_url.trim() : `https://${data.website_url.trim()}`) : null,
+    website_url: normalizedWebsite,
     lunch_included: data.lunch_included === 'true' || data.lunch_included === 'on',
     aftercare_available: data.aftercare_available === 'true' || data.aftercare_available === 'on',
     submitted_by_email: submitterEmail,
     submitted_at: submittedAt,
+    confidence,
+    source_domain: sourceDomain,
   }, autoApprove ? 'approved' : 'pending');
 
   if (autoApprove) {
     await incrementSubmitterApproved(env.DB, submitterEmail);
+  }
+
+  await upsertDomainQuality(env.DB, sourceDomain, 'submitted', confidence);
+  if (autoApprove) {
+    await upsertDomainQuality(env.DB, sourceDomain, 'approved');
+  }
+
+  if (normalizedWebsite) {
+    try {
+      const health = await checkUrlHealth(normalizedWebsite);
+      await updateUrlHealth(env.DB, id, health.status, health.statusCode);
+    } catch {
+      // ignore
+    }
   }
 
   return ok({ ok: true, id, slug, status: autoApprove ? 'approved' : 'pending' });

@@ -46,5 +46,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "The 'vent or strategy' question is the strongest practical move. Validates feeling without locking into a narrative the kid will regret."
+  reviewerNotes: "Vent or strategy question is the strongest practical move."
 ---

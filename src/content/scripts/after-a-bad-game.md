@@ -47,5 +47,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Flagship script. Same framework as the Drive Home Playbook PDF, scriptable format. Voice tight, no AI residue. Ready for Jeff sign-off."
+  reviewerNotes: "Flagship script."
 ---

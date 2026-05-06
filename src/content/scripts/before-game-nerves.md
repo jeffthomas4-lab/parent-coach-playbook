@@ -15,7 +15,7 @@ whatToSay:
   - "Whatever happens out there, we go get food after."
 whatNotToSay:
   - "You'll be fine, don't worry about it."
-  - "Just go out and have fun! (Kid will roll their eyes.)"
+  - "Just go out and have fun. (Kid will roll their eyes.)"
   - "Other kids don't get nervous like this."
 theRule: "Don't promise the outcome. Promise the relationship."
 ifTheyBringItUp:
@@ -46,5 +46,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged (anxiety adjacent). 'Don't promise the outcome, promise the relationship' is the strongest line on the page."
+  reviewerNotes: "Sensitive flagged."
 ---

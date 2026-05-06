@@ -49,5 +49,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Companion to the specialization decision. The 'build the off-season window first, everything schedules around it' is the practical move."
+  reviewerNotes: "Companion to the specialization decision."
 ---

@@ -52,5 +52,5 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
-  reviewerNotes: "Neutral on travel: not anti, not pro. The 'one season is information, three is a decision' line earns its place."
+  reviewerNotes: "Neutral on travel."
 ---
