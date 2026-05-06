@@ -23,26 +23,54 @@ const fmtDate = (d: Date) =>
   d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 ---
 <BaseLayout>
-  {/* SECTION 1 of 6: HERO */}
+  {/* SECTION 1 of 6: HERO + latest-reads rail (top right, above the fold) */}
   <section class="border-b border-bone">
     <div class="container-px py-14 md:py-20">
-      <p class="font-display-soft text-rust mb-5" style="font-weight: 600; letter-spacing: 0.04em;">
-        Hi. So glad you found us.
-      </p>
-      <h1 class="font-display-soft text-ink text-[2.25rem] md:text-[4rem] leading-[1.1] max-w-4xl" style="font-weight: 700;">
-        Every parent is a coach. Some on the field. <span class="font-display italic text-rust font-medium">All at the dinner table after.</span>
-      </h1>
-      <p class="font-display-soft text-ink-soft text-xl md:text-2xl mt-7 max-w-2xl leading-relaxed" style="font-weight: 400;">
-        A warm, honest place for parents in the middle of it. Youth sports, dance, theater, band, ballet, choir, whatever your kid is into this season. Short reads, kind voice, real moments.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a href="/start-here/" class="btn">Start here</a>
-        <a href="/about/" class="btn btn-ghost">About this site</a>
-        <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        {/* Hero copy */}
+        <div class="lg:col-span-8">
+          <p class="font-display-soft text-rust mb-5" style="font-weight: 600; letter-spacing: 0.04em;">
+            Hi. So glad you found us.
+          </p>
+          <h1 class="font-display-soft text-ink text-[2.25rem] md:text-[4rem] leading-[1.1]" style="font-weight: 700;">
+            Every parent is a coach. Some on the field. <span class="font-display italic text-rust font-medium">All at the dinner table after.</span>
+          </h1>
+          <p class="font-display-soft text-ink-soft text-xl md:text-2xl mt-7 max-w-2xl leading-relaxed" style="font-weight: 400;">
+            A warm, honest place for parents in the middle of it. Youth sports, dance, theater, band, ballet, choir, whatever your kid is into this season. Short reads, kind voice, real moments.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="/start-here/" class="btn">Start here</a>
+            <a href="/about/" class="btn btn-ghost">About this site</a>
+            <a href="/resources/drive-home-playbook/" class="btn btn-ghost">Get the free playbook</a>
+          </div>
+          <p class="font-display italic text-ink-soft text-sm mt-6 font-medium">
+            Written by the <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
+          </p>
+        </div>
+
+        {/* Latest reads rail — top right, above the fold on desktop */}
+        <aside class="lg:col-span-4">
+          <p class="font-display italic text-rust mb-2 font-medium">Latest</p>
+          <h2 class="font-display text-ink text-xl md:text-2xl leading-tight mb-4 font-medium">
+            Right off the <em class="text-rust">desk</em>
+          </h2>
+          <ul class="border-t border-bone">
+            {latestRail.map((a) => (
+              <li>
+                <a href={`/${a.data.phase}/${a.slug}/`} class="block py-3 border-b border-bone hover:bg-paper-warm transition-colors group">
+                  <p class="font-display italic text-rust text-xs font-medium">
+                    {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {fmtDate(a.data.publishedAt)}
+                  </p>
+                  <h3 class="font-display text-ink text-sm leading-snug mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p class="font-display italic text-rust text-sm mt-4 font-medium">
+            <a href="/reads/" class="hover:underline">→ Browse the full archive</a>
+          </p>
+        </aside>
       </div>
-      <p class="font-display italic text-ink-soft text-sm mt-6 font-medium">
-        Written by the <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
-      </p>
     </div>
   </section>
 
@@ -268,7 +296,7 @@ const fmtDate = (d: Date) =>
     </section>
   )}
 
-  {/* SECTION 5 of 6: LATEST FEED with age filter + right rail */}
+  {/* SECTION 5 of 6: LATEST FEED with age filter (single column, regular blog grid) */}
   <section class="border-b border-bone">
     <div class="container-px py-14 md:py-16">
       <div class="flex items-end justify-between mb-8 flex-wrap gap-3">
@@ -281,61 +309,31 @@ const fmtDate = (d: Date) =>
         <a href="/reads/" class="t-cta">See the archive →</a>
       </div>
 
-      <div class="grid lg:grid-cols-12 gap-10">
-        {/* Main feed: centered cards with age filter */}
-        <div class="lg:col-span-8">
-          <div class="flex flex-wrap items-center gap-2 mb-6" data-age-filter>
-            <span class="font-display italic text-ink-soft text-sm font-medium">Filter by your kid's age:</span>
-            <button data-age="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
-            <button data-age="5-7" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">5–7</button>
-            <button data-age="8-10" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">8–10</button>
-            <button data-age="11-12" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">11–12</button>
-            <button data-age="13-14" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">13–14</button>
-            <button data-age="15-plus" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">15+</button>
-          </div>
+      <div class="flex flex-wrap items-center gap-2 mb-6" data-age-filter>
+        <span class="font-display italic text-ink-soft text-sm font-medium">Filter by your kid's age:</span>
+        <button data-age="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+        <button data-age="5-7" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">5–7</button>
+        <button data-age="8-10" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">8–10</button>
+        <button data-age="11-12" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">11–12</button>
+        <button data-age="13-14" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">13–14</button>
+        <button data-age="15-plus" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">15+</button>
+      </div>
 
-          <div class="grid md:grid-cols-2 gap-x-10" data-feed>
-            {feed.map((a) => (
-              <div data-age-tag={a.data.age ?? 'all-ages'}>
-                <ArticleCard
-                  href={`/${a.data.phase}/${a.slug}/`}
-                  format={a.data.format}
-                  sport={a.data.sport}
-                  age={a.data.age}
-                  phase={a.data.phase}
-                  title={a.data.title}
-                  dek={a.data.dek}
-                  publishedAt={a.data.publishedAt}
-                />
-              </div>
-            ))}
+      <div class="grid md:grid-cols-2 gap-x-10" data-feed>
+        {feed.map((a) => (
+          <div data-age-tag={a.data.age ?? 'all-ages'}>
+            <ArticleCard
+              href={`/${a.data.phase}/${a.slug}/`}
+              format={a.data.format}
+              sport={a.data.sport}
+              age={a.data.age}
+              phase={a.data.phase}
+              title={a.data.title}
+              dek={a.data.dek}
+              publishedAt={a.data.publishedAt}
+            />
           </div>
-        </div>
-
-        {/* Right rail: latest reads, slim list */}
-        <aside class="lg:col-span-4">
-          <div class="lg:sticky lg:top-6">
-            <p class="font-display italic text-rust mb-2 font-medium">Latest</p>
-            <h3 class="font-display text-ink text-xl md:text-2xl leading-tight mb-4 font-medium">
-              Right off the <em class="text-rust">desk</em>
-            </h3>
-            <ul class="border-t border-bone">
-              {latestRail.map((a) => (
-                <li>
-                  <a href={`/${a.data.phase}/${a.slug}/`} class="block py-3 border-b border-bone hover:bg-paper-warm transition-colors group">
-                    <p class="font-display italic text-rust text-xs font-medium">
-                      {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {fmtDate(a.data.publishedAt)}
-                    </p>
-                    <h4 class="font-display text-ink text-sm leading-snug mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p class="font-display italic text-rust text-sm mt-4 font-medium">
-              <a href="/reads/" class="hover:underline">→ Browse the full archive</a>
-            </p>
-          </div>
-        </aside>
+        ))}
       </div>
     </div>
   </section>
