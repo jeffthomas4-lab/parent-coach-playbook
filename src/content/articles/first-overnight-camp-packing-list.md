@@ -18,7 +18,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
-  status: claude-reviewed
+  status: published
   reviewerNotes: "Packing lists are a commodity content type; the original value is in the framing (the stuffed animal line, the parking lot lingering note, the day-three rhythm). No factual claims requiring sources."
 ---
 
