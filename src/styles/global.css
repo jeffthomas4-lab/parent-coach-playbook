@@ -281,6 +281,79 @@ body {
 }
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
+/* ---------- Soft button (mom-to-mom voice) ----------
+   Used for the warm, primary CTAs (newsletter submit, lead-magnet button,
+   sidebar widgets). Keep .btn (mono caps) for editorial chrome. Soft is for
+   moments where the page is talking to a person, not a reader. */
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-family: "Mulish", "Mulish Fallback", -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  border: 1px solid var(--rust);
+  background: var(--rust);
+  color: var(--paper);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms cubic-bezier(.2,.7,.2,1),
+              border-color 200ms cubic-bezier(.2,.7,.2,1),
+              color 200ms cubic-bezier(.2,.7,.2,1);
+}
+.btn-soft:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.btn-soft-ghost {
+  background: transparent;
+  color: var(--rust);
+}
+.btn-soft-ghost:hover {
+  background: var(--rust);
+  color: var(--paper);
+}
+
+/* ---------- Tag pill (rounded, sentence-case) ----------
+   Replaces the all-caps mono .t-label as the default chip used for category
+   tags, filter buttons, and topic chips on cards. The base style is neutral;
+   per-topic tint is set inline via --pill-accent / --pill-bg from themeFor(). */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  font-family: "Mulish", "Mulish Fallback", -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--pill-bg, var(--paper-warm));
+  color: var(--pill-accent, var(--ink-soft));
+  text-decoration: none;
+  white-space: nowrap;
+  transition: filter 150ms cubic-bezier(.2,.7,.2,1);
+}
+.tag-pill:hover {
+  filter: brightness(0.97);
+}
+.tag-pill-outline {
+  background: transparent;
+  border-color: var(--pill-accent, var(--bone));
+  color: var(--pill-accent, var(--ink-soft));
+}
+.tag-pill-active {
+  background: var(--pill-accent, var(--ink));
+  color: var(--paper);
+  border-color: var(--pill-accent, var(--ink));
+}
+
 /* ---------- Container ---------- */
 .container-px {
   max-width: 1200px;

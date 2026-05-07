@@ -263,3 +263,68 @@ export const TEAM_PARENT_CATEGORIES = [
 ] as const;
 
 export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];
+
+// ----------------------------------------------------------------------------
+// Theme registry. One source of truth for the per-section accent colors that
+// drive tag pills, hero tints, and topic chips. Keyed by URL section slug or
+// the article `topic` enum so any component can call themeFor(slug) and get
+// a consistent {accent, accentBg} pair without re-deriving it locally.
+// ----------------------------------------------------------------------------
+
+export interface Theme {
+  accent: string;     // foreground / border / text accent
+  accentBg: string;   // soft tinted background
+  label?: string;     // human label for tag pills
+}
+
+// Section themes keyed by top-level URL segment. Mirror the PILLARS palette
+// for the three drives so existing pillar pages keep their look. Other
+// sections get their own color so /body/ doesn't look like /recruiting/.
+export const SECTION_THEMES: Record<string, Theme> = {
+  // The three drives (phase taxonomy)
+  'drive-there':     { accent: '#8FA68C', accentBg: '#EAEFE7', label: 'Before the game' },
+  'game':            { accent: '#C5713D', accentBg: '#F2E2D5', label: 'In the game' },
+  'drive-home':      { accent: '#D4AB6A', accentBg: '#F5E9D2', label: 'After the game' },
+  // Topic landing pages
+  'body':            { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Body and mind' },
+  'mental-skills':   { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Mental skills' },
+  'recruiting':      { accent: '#A66A8E', accentBg: '#EFE0E8', label: 'Recruiting' },
+  'coaching-tips':   { accent: '#C5713D', accentBg: '#F2E2D5', label: 'Drills' },
+  'decisions':       { accent: '#6F8AA8', accentBg: '#E2EAF2', label: 'Decisions' },
+  'pathways':        { accent: '#B0894A', accentBg: '#F0E5CE', label: 'Age pathways' },
+  'reads':           { accent: '#2D2520', accentBg: '#F2EAD9', label: 'Reads' },
+  'rules':           { accent: '#6B7B6F', accentBg: '#E8ECE8', label: 'Rules at-a-glance' },
+  'scripts':         { accent: '#B8908F', accentBg: '#EDDBD9', label: 'Scripts' },
+  'season-calendar': { accent: '#9E7B4E', accentBg: '#EFE3D2', label: 'Season calendar' },
+  'team-parent':     { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'Team parent' },
+  'tools':           { accent: '#5C7459', accentBg: '#E3EAE2', label: 'Tools' },
+  'what-to-buy':     { accent: '#C5713D', accentBg: '#F2E2D5', label: 'What to buy' },
+  'sports':          { accent: '#2D2520', accentBg: '#F2EAD9', label: 'By sport' },
+  'camps':           { accent: '#7C9E5E', accentBg: '#E8EFE0', label: 'Summer camps' },
+  'cost-calculator': { accent: '#9C7A4A', accentBg: '#F0E5D2', label: 'Cost calculator' },
+  'adaptive':        { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'Adaptive' },
+};
+
+// Topic themes keyed by the article `topic` enum. Lets ArticleCard tint a
+// topic chip even when the section landing page lives under a different URL.
+export const TOPIC_THEMES: Record<TopicSlug, Theme> = {
+  'communication':  { accent: '#6F8AA8', accentBg: '#E2EAF2', label: 'Communication' },
+  'tryouts':        { accent: '#A66A8E', accentBg: '#EFE0E8', label: 'Tryouts and teams' },
+  'game-day':       { accent: '#C5713D', accentBg: '#F2E2D5', label: 'Game day' },
+  'the-hard-stuff': { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'The hard moments' },
+  'season-ops':     { accent: '#5C7459', accentBg: '#E3EAE2', label: 'Season operations' },
+  'equipment':      { accent: '#9E7B4E', accentBg: '#EFE3D2', label: 'Equipment' },
+  'rec-vs-travel':  { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Rec vs travel' },
+  'rules-of-play':  { accent: '#6B7B6F', accentBg: '#E8ECE8', label: 'Rules of play' },
+  'summer-camps':   { accent: '#7C9E5E', accentBg: '#E8EFE0', label: 'Summer camps' },
+};
+
+// Default theme for anything outside the registry.
+const DEFAULT_THEME: Theme = { accent: '#C5713D', accentBg: '#F2E2D5' };
+
+// Look up a theme by section slug or topic slug. Falls back to the editorial
+// rust accent if nothing matches, so callers never need null checks.
+export function themeFor(slug: string | undefined | null): Theme {
+  if (!slug) return DEFAULT_THEME;
+  return SECTION_THEMES[slug] ?? (TOPIC_THEMES as Record<string, Theme>)[slug] ?? DEFAULT_THEME;
+}

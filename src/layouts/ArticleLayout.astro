@@ -3,7 +3,8 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL } from '../data/site';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL, themeFor } from '../data/site';
 import { isLive } from '../lib/publishFilter';
 
 interface Props {
@@ -100,6 +101,15 @@ const tagBits = [
 const titleHtml = data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 const isShort = data.format === 'note';
 
+// Theme for the topic chip in the article header. Prefer the explicit topic
+// taxonomy when present, fall back to the phase pillar.
+const articleTheme = themeFor(data.topic ?? data.phase);
+const topicChipLabel = data.topic ? articleTheme.label : pillar.label;
+
+// Sidebar rail. Top 4 related links (vertical list). Reuse the `related`
+// query already computed above. Surface the title and a short tag suffix.
+const sidebarRelated = related.slice(0, 4);
+
 // Last reviewed: surface the most recent editorial review date if it exceeds publishedAt.
 const reviewedRaw = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
 const reviewedDate = reviewedRaw ? new Date(reviewedRaw) : null;
@@ -118,68 +128,124 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric' } as const;
 
   <!-- Soft pillar tint as the page accent -->
   <div style={`background: ${pillar.accentBg};`}>
-    <div class="container-px pt-10 pb-2">
-      <div class="font-display italic" style={`color: ${pillar.accent}; font-weight: 500; font-size: 1rem;`}>
-        {pillar.label}{tagBits[1] ? ' · ' + tagBits.slice(1).join(' · ') : ''}
-      </div>
+    <div class="container-px pt-10 pb-4">
+      <span
+        class="tag-pill"
+        style={`--pill-accent: ${articleTheme.accent}; --pill-bg: ${articleTheme.accentBg};`}
+      >
+        {topicChipLabel}
+      </span>
+      {(sportLabel || ageLabel) && (
+        <span class="font-display italic text-ink-soft ml-3" style="font-size: 0.95rem;">
+          {[sportLabel, ageLabel ? `age ${ageLabel}` : null].filter(Boolean).join(' · ')}
+        </span>
+      )}
     </div>
   </div>
 
-  <article class="container-px py-10 md:py-14">
-    <header class="max-w-prose mx-auto">
-      <h1
-        class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
-        class="font-medium"
-        set:html={titleHtml}
-      />
-      {data.dek && !isShort && (
-        <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 leading-snug">
-          {data.dek}
-        </p>
-      )}
-
-      <!-- Byline -->
-      <div class="mt-8 pt-5 border-t border-bone">
-        <div class="font-display italic text-rust font-medium">
-          {EDITORIAL.byline}
-        </div>
-        <div class="font-display italic text-ink-soft text-sm mt-1">
-          Published {data.publishedAt.toLocaleDateString('en-US', dateOpts)}
-          {showReviewed && reviewedDate && (
-            <span> · Last reviewed {reviewedDate.toLocaleDateString('en-US', dateOpts)}</span>
+  <div class="container-px py-10 md:py-14">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <article class="lg:col-span-8">
+        <header>
+          <h1
+            class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
+            class="font-medium"
+            set:html={titleHtml}
+          />
+          {data.dek && !isShort && (
+            <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 leading-snug">
+              {data.dek}
+            </p>
           )}
-          {' · '}
-          {isShort ? 'short read' : 'longer read'}
+
+          <!-- Byline -->
+          <div class="mt-8 pt-5 border-t border-bone">
+            <div class="font-display italic text-rust font-medium">
+              {EDITORIAL.byline}
+            </div>
+            <div class="font-display italic text-ink-soft text-sm mt-1">
+              Published {data.publishedAt.toLocaleDateString('en-US', dateOpts)}
+              {showReviewed && reviewedDate && (
+                <span> · Last reviewed {reviewedDate.toLocaleDateString('en-US', dateOpts)}</span>
+              )}
+              {' · '}
+              {isShort ? 'short read' : 'longer read'}
+            </div>
+          </div>
+        </header>
+
+        {data.bluf && (
+          <aside class="mt-10 border-l-4 border-rust pl-5 py-1" aria-label="Quick answer">
+            <p class="font-mono text-rust uppercase text-[0.7rem] tracking-label mb-2 font-medium">
+              The short version
+            </p>
+            <p class="font-display text-ink text-lg md:text-xl leading-snug" style="font-weight: 500;">
+              {data.bluf}
+            </p>
+          </aside>
+        )}
+
+        <div class={`article-body ${isShort ? 'mt-8' : 'mt-12'}`}>
+          <slot />
         </div>
-      </div>
-    </header>
 
-    {data.bluf && (
-      <aside class="max-w-prose mx-auto mt-10 border-l-4 border-rust pl-5 py-1" aria-label="Quick answer">
-        <p class="font-mono text-rust uppercase text-[0.7rem] tracking-label mb-2 font-medium">
-          The short version
-        </p>
-        <p class="font-display text-ink text-lg md:text-xl leading-snug" style="font-weight: 500;">
-          {data.bluf}
-        </p>
+        <!-- Editorial note at the bottom -->
+        <aside class="mt-16 pt-8 border-t border-bone">
+          <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
+          <p class="font-display text-ink-soft text-sm leading-snug">
+            Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
+          </p>
+          <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
+            Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
+          </p>
+        </aside>
+      </article>
+
+      <!-- Right rail. Hidden on mobile, sticks below the lg breakpoint.
+           Holds: ad placeholder (commented until Mediavine/Raptive lands at
+           ~50K sessions), compact newsletter signup, and a vertical list of
+           more reads from the same phase. -->
+      <aside class="lg:col-span-4 lg:sticky lg:top-8 lg:self-start space-y-6">
+        <!-- AD SLOT. Wired up when an ad network goes live (Mediavine/Raptive).
+             Reserve the space now so the layout doesn't shift on launch. -->
+        <div
+          class="hidden lg:block border border-dashed border-bone bg-paper-warm rounded text-center"
+          style="min-height: 250px; display: flex; align-items: center; justify-content: center;"
+          data-ad-slot="article-rail-top"
+          aria-hidden="true"
+        >
+          <span class="font-display italic text-ink-soft text-xs">Ad slot · reserved</span>
+        </div>
+
+        <NewsletterSignup
+          variant="compact"
+          headline="Slide into the inbox"
+          blurb="One short read a week. Easy unsubscribe."
+          buttonLabel="Subscribe"
+        />
+
+        {sidebarRelated.length > 0 && (
+          <div class="border border-bone bg-paper-warm rounded-lg p-5">
+            <p class="font-display italic text-rust mb-3 font-medium" style="font-size: 0.95rem;">
+              More from {pillar.label.toLowerCase()}
+            </p>
+            <ul class="space-y-3">
+              {sidebarRelated.map((r) => (
+                <li>
+                  <a
+                    href={`/${r.data.phase}/${r.slug}/`}
+                    class="font-display text-ink hover:text-rust block leading-snug"
+                    style="font-size: 1rem; font-weight: 500;"
+                    set:html={r.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </aside>
-    )}
-
-    <div class={`article-body mx-auto ${isShort ? 'mt-8' : 'mt-12'}`}>
-      <slot />
     </div>
-
-    <!-- Editorial note at the bottom -->
-    <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone">
-      <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
-      <p class="font-display text-ink-soft text-sm leading-snug">
-        Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
-      </p>
-      <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
-        Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
-      </p>
-    </aside>
-  </article>
+  </div>
 
   <RelatedArticles articles={related} pillarLabel={pillar.label} />
   <LeadMagnetCTA />

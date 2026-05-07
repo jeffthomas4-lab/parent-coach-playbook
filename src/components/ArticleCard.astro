@@ -1,5 +1,5 @@
 ---
-import { PILLARS, SPORTS, AGE_BANDS, EDITORIAL } from '../data/site';
+import { PILLARS, SPORTS, AGE_BANDS, EDITORIAL, themeFor } from '../data/site';
 
 interface Props {
   href: string;
@@ -7,6 +7,7 @@ interface Props {
   sport?: string;
   age?: string;
   phase?: keyof typeof PILLARS;
+  topic?: string;
   title: string;
   dek?: string;
   publishedAt?: Date | string;
@@ -19,6 +20,7 @@ const {
   sport,
   age,
   phase,
+  topic,
   title,
   dek,
   publishedAt,
@@ -27,6 +29,12 @@ const {
 
 const sportLabel = SPORTS.find(s => s.slug === sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
+
+// Topic pill: prefer explicit topic, fall back to phase (always present on
+// articles). themeFor() returns the rust default if neither resolves.
+const chipTone  = topic ?? phase;
+const chipTheme = themeFor(chipTone);
+const chipLabel = chipTheme.label ?? (phase ? PILLARS[phase as keyof typeof PILLARS]?.label : null);
 
 const fmtDate = (d: Date | string | undefined) => {
   if (!d) return null;
@@ -51,6 +59,14 @@ const titleSize = format === 'essay'
 ---
 <article class={`card-hover border-b border-bone py-6 ${variant === 'grid' ? 'border border-bone p-6' : ''}`}>
   <a href={href} class="block group">
+    {chipLabel && (
+      <span
+        class="tag-pill mb-3"
+        style={`--pill-accent: ${chipTheme.accent}; --pill-bg: ${chipTheme.accentBg};`}
+      >
+        {chipLabel}
+      </span>
+    )}
     <div class="mb-3">
       <div class="font-display italic text-rust font-medium" style="font-size: 0.85rem">
         {EDITORIAL.byline}

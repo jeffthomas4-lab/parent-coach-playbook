@@ -1,21 +1,54 @@
 ---
+// Rounded sentence-case pill. Auto-tints to the topic / phase / sport accent
+// when a `tone` slug is passed (looked up via themeFor). Falls back to the
+// neutral cream-on-walnut look otherwise.
+//
+// Variant is preserved for backwards compatibility with any older callers,
+// but `tone` is the new way to drive color.
+import { themeFor, type Theme } from '../data/site';
+
 interface Props {
   label: string;
   href?: string;
-  variant?: 'default' | 'phase' | 'sport' | 'age';
+  tone?: string;                            // section/topic/phase slug
+  variant?: 'default' | 'phase' | 'sport' | 'age' | 'topic';
+  style?: 'soft' | 'outline' | 'active';    // soft fill (default), outline, or active
 }
-const { label, href, variant = 'default' } = Astro.props;
 
-const colorMap: Record<string, string> = {
-  default: 'border-bone text-ink-soft',
-  phase: 'border-rust text-rust',
-  sport: 'border-ink text-ink',
-  age: 'border-turf text-turf',
+const {
+  label,
+  href,
+  tone,
+  variant = 'default',
+  style = 'soft',
+} = Astro.props;
+
+// Variant -> tone fallback when tone isn't passed explicitly. Keeps the
+// previous semantic API working while we migrate callers.
+const variantToneFallback: Record<string, string | undefined> = {
+  phase: 'game',
+  sport: undefined,    // sports don't have themes; render neutral
+  age: undefined,
+  topic: undefined,
 };
-const cls = `inline-flex items-center px-2.5 py-1 border t-label ${colorMap[variant]}`;
+
+const resolvedTone = tone ?? variantToneFallback[variant];
+const theme: Theme = themeFor(resolvedTone);
+
+const cls = [
+  'tag-pill',
+  style === 'outline' ? 'tag-pill-outline' : '',
+  style === 'active' ? 'tag-pill-active' : '',
+].filter(Boolean).join(' ');
+
+// Inline style supplies the per-topic colors via CSS variables. Falls back to
+// the neutral pill colors when no tone is provided.
+const inlineStyle = resolvedTone
+  ? `--pill-accent: ${theme.accent}; --pill-bg: ${theme.accentBg};`
+  : '';
 ---
 {href ? (
-  <a href={href} class={`${cls} hover:bg-paper-warm transition-colors`}>{label}</a>
+  <a href={href} class={cls} style={inlineStyle}>{label}</a>
 ) : (
-  <span class={cls}>{label}</span>
+  <span class={cls} style={inlineStyle}>{label}</span>
 )}

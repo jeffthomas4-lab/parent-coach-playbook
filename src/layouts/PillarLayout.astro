@@ -61,15 +61,19 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
   {articles.length > 0 && (
     <section>
       <div class="container-px py-12">
-        <div class="flex flex-wrap gap-3 mb-2" data-filter-bar>
-          <button data-filter="all" class="t-label px-3 py-1 border border-ink bg-ink text-paper">All issues</button>
+        <div
+          class="flex flex-wrap gap-2 mb-2"
+          data-filter-bar
+          style={`--pill-accent: ${meta.accent}; --pill-bg: ${meta.accentBg};`}
+        >
+          <button data-filter="all" class="tag-pill tag-pill-active" type="button">All issues</button>
           {sportsUsed.map(s => (
-            <button data-filter-sport={s} class="t-label px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">
+            <button data-filter-sport={s} class="tag-pill tag-pill-outline" type="button">
               {SPORTS.find(x => x.slug === s)?.label ?? s}
             </button>
           ))}
           {agesUsed.map(a => (
-            <button data-filter-age={a} class="t-label px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">
+            <button data-filter-age={a} class="tag-pill tag-pill-outline" type="button">
               Age {AGE_BANDS.find(x => x.slug === a)?.label ?? a}
             </button>
           ))}
@@ -85,6 +89,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
                 sport={a.data.sport}
                 age={a.data.age}
                 phase={a.data.phase}
+                topic={a.data.topic}
                 title={a.data.title}
                 dek={a.data.dek}
               />
@@ -114,13 +119,13 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
       const target = e.target as HTMLElement;
       if (target.tagName !== 'BUTTON') return;
 
-      // Reset visual state
+      // Reset visual state. Every chip back to outline.
       bar.querySelectorAll('button').forEach((b) => {
-        b.classList.remove('bg-ink', 'text-paper', 'border-ink');
-        b.classList.add('border-bone', 'text-ink-soft');
+        b.classList.remove('tag-pill-active');
+        b.classList.add('tag-pill-outline');
       });
-      target.classList.remove('border-bone', 'text-ink-soft');
-      target.classList.add('bg-ink', 'text-paper', 'border-ink');
+      target.classList.remove('tag-pill-outline');
+      target.classList.add('tag-pill-active');
 
       const sport = target.getAttribute('data-filter-sport');
       const age = target.getAttribute('data-filter-age');
