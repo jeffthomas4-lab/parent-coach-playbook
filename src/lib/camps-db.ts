@@ -179,6 +179,57 @@ export function extractDomain(url: string | null | undefined): string | null {
   }
 }
 
+// Hosts that are shared registration platforms. Many distinct organizations
+// live on the same hostname, distinguished only by the first path segment.
+// For these hosts, two URLs only count as "same site" if their first path
+// segment (the org slug) also matches. Bare-hostname matching is too aggressive:
+// every ActiveNet camp would match every other ActiveNet camp, etc.
+const SHARED_PLATFORM_HOSTS = new Set<string>([
+  'anc.apm.activecommunities.com',
+  'apm.activecommunities.com',
+  'activecommunities.com',
+  'secure.rec1.com',
+  'rec1.com',
+  'app.jackrabbitclass.com',
+  'register.communitypass.net',
+  'register.skyhawks.com',
+  'campwise.com',
+  'gomotionapp.com',
+  'teamsnap.com',
+  'leagueapps.com',
+  'reg.sportsengine.com',
+  'sportsengine.com',
+  'readysetregister.com',
+]);
+
+/**
+ * Returns a key suitable for "same organization site" comparison.
+ *
+ *  - For multi-tenant registration platforms (ActiveNet, Rec1, etc.) we include
+ *    the first path segment, which is the org slug
+ *    (e.g. `anc.apm.activecommunities.com/lakewoodparksandrec`).
+ *  - For ordinary hosts we just use the bare hostname.
+ *
+ * Returns null if the URL is missing or unparseable.
+ */
+export function extractOrgKey(url: string | null | undefined): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url.trim());
+    const host = u.hostname.replace(/^www\./, '').toLowerCase();
+    if (!host) return null;
+    if (SHARED_PLATFORM_HOSTS.has(host)) {
+      const segs = u.pathname.split('/').filter(Boolean);
+      const slug = (segs[0] ?? '').toLowerCase();
+      // No slug present → fall back to bare host so we still match obvious dupes.
+      return slug ? `${host}/${slug}` : host;
+    }
+    return host;
+  } catch {
+    return null;
+  }
+}
+
 // ---------- Submitters ----------
 
 export async function getSubmitter(db: D1Database, email: string): Promise<Submitter | null> {
@@ -908,7 +959,7 @@ export async function findFuzzyCampMatches(
   const candidateNormName = normalizeCampName(candidate.name);
   const candidateCity = candidate.city.trim().toLowerCase();
   const candidateState = candidate.state.trim().toUpperCase();
-  const candidateHost = extractDomain(candidate.website_url ?? null);
+  const candidateOrgKey = extractOrgKey(candidate.website_url ?? null);
   const candidateAddress = (candidate.address ?? '').trim().toLowerCase();
   const candidateZip = (candidate.zip ?? '').trim();
 
@@ -940,7 +991,7 @@ export async function findFuzzyCampMatches(
     const cState = c.state.trim().toUpperCase();
     const cName = c.name.trim().toLowerCase();
     const cNormName = normalizeCampName(c.name);
-    const cHost = extractDomain(c.website_url);
+    const cOrgKey = extractOrgKey(c.website_url);
 
     if (cName === candidate.name.trim().toLowerCase() && cCity === candidateCity && cState === candidateState) {
       set(c, 'exact-name-city');
@@ -950,7 +1001,7 @@ export async function findFuzzyCampMatches(
       set(c, 'normalized-name-city');
       continue;
     }
-    if (candidateHost && cHost && cHost === candidateHost) {
+    if (candidateOrgKey && cOrgKey && cOrgKey === candidateOrgKey) {
       set(c, 'same-website');
       continue;
     }
