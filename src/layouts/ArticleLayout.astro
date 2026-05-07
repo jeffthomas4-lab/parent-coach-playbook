@@ -201,22 +201,11 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric' } as const;
         </aside>
       </article>
 
-      <!-- Right rail. Hidden on mobile, sticks below the lg breakpoint.
-           Holds: ad placeholder (commented until Mediavine/Raptive lands at
-           ~50K sessions), compact newsletter signup, and a vertical list of
-           more reads from the same phase. -->
+      <!-- Right rail. Hidden on mobile, drops below the article on smaller
+           screens. Holds the compact newsletter signup and a vertical list of
+           more reads from the same phase. Ad slot wiring will land when an
+           ad network goes live (months out). -->
       <aside class="lg:col-span-4 lg:sticky lg:top-8 lg:self-start space-y-6">
-        <!-- AD SLOT. Wired up when an ad network goes live (Mediavine/Raptive).
-             Reserve the space now so the layout doesn't shift on launch. -->
-        <div
-          class="hidden lg:block border border-dashed border-bone bg-paper-warm rounded text-center"
-          style="min-height: 250px; display: flex; align-items: center; justify-content: center;"
-          data-ad-slot="article-rail-top"
-          aria-hidden="true"
-        >
-          <span class="font-display italic text-ink-soft text-xs">Ad slot · reserved</span>
-        </div>
-
         <NewsletterSignup
           variant="compact"
           headline="Slide into the inbox"
