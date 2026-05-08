@@ -10,7 +10,7 @@ const issues = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const fmt = (d: Date) =>
-  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
 const latest = issues[0];
 const archive = issues.slice(1);

@@ -54,7 +54,7 @@ const { Content } = await piece.render();
       )}
 
       <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone font-medium">
-        Last updated {piece.data.publishedAt.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.
+        Last updated {piece.data.publishedAt.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}.
       </p>
     </div>
   </article>

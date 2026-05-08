@@ -69,7 +69,7 @@ const jumpNav = headings.filter((h) => h.depth === 2);
           <div class="mt-8 pt-6 border-t border-bone">
             <p class="font-display italic text-rust text-sm font-medium">{EDITORIAL.byline}</p>
             <p class="font-display italic text-ink-soft text-xs mt-1">
-              Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+              Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}
             </p>
             <p class="font-display italic text-ink-soft text-xs mt-3 leading-snug">
               Need to know what size? <a href={`/what-to-buy/${guide.slug}/sizing/`} class="text-rust hover:underline">{guide.data.activity} sizing guide →</a>

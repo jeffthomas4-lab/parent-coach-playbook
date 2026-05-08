@@ -114,7 +114,10 @@ const sidebarRelated = related.slice(0, 4);
 const reviewedRaw = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
 const reviewedDate = reviewedRaw ? new Date(reviewedRaw) : null;
 const showReviewed = reviewedDate !== null && reviewedDate.getTime() > data.publishedAt.getTime();
-const dateOpts = { month: 'long', day: 'numeric', year: 'numeric' } as const;
+// timeZone: 'UTC' is required because publishedAt parses to midnight UTC and
+// the build runs in the deployer's local TZ. Without it, dates render one day
+// early for any deployer west of UTC.
+const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' } as const;
 ---
 <BaseLayout
   title={(data as any).seoTitle ?? data.title.replace(/\*/g, '')}

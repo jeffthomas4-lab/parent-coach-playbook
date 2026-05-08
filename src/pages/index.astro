@@ -19,8 +19,11 @@ const latestRail = all.filter(a => a.slug !== featured?.slug).slice(0, 5);
 
 const drives = Object.values(PILLARS);
 
+// timeZone: 'UTC' is required because publishedAt in YAML frontmatter parses to
+// midnight UTC, and the build runs in the deployer's local TZ. Without forcing
+// UTC here, every date renders one day early for any deployer west of UTC.
 const fmtDate = (d: Date) =>
-  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 <BaseLayout>
   {/* SECTION 1 of 6: HERO + latest-reads rail (top right, above the fold) */}

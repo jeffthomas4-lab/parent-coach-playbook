@@ -39,7 +39,7 @@ const chipLabel = chipTheme.label ?? (phase ? PILLARS[phase as keyof typeof PILL
 const fmtDate = (d: Date | string | undefined) => {
   if (!d) return null;
   const dt = typeof d === 'string' ? new Date(d) : d;
-  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 };
 
 const dateLabel = fmtDate(publishedAt);
@@ -71,22 +71,4 @@ const titleSize = format === 'essay'
       <div class="font-display italic text-rust font-medium" style="font-size: 0.85rem">
         {EDITORIAL.byline}
       </div>
-      {tagBits.length > 0 && (
-        <div class="font-display italic text-ink-soft mt-0.5" style="font-size: 0.8rem;">
-          {tagBits.join(' · ')}
-        </div>
-      )}
-    </div>
-    <h3
-      class={`font-display text-ink ${titleSize} leading-tight group-hover:text-rust transition-colors`}
-      class="font-medium"
-      set:html={renderTitle(title)}
-    />
-    {dek && (
-      <p class="font-display text-ink-soft text-base mt-2 leading-snug max-w-2xl">
-        {dek}
-      </p>
-    )}
-    <div class="t-cta mt-3">Keep reading →</div>
-  </a>
-</article>
+      {tagBi

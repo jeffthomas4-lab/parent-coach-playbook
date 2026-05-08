@@ -56,7 +56,7 @@ const props = Astro.props as Props;
 
 // Shared formatters
 const fmtDate = (d: Date) =>
-  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
 // ---- Resource branch ----
 if (props.kind === 'resource') {
