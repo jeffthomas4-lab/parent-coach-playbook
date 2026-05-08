@@ -105,6 +105,7 @@ export interface Camp {
   url_health_status: UrlHealthStatus;
   url_last_checked_at: string | null;
   url_last_status_code: number | null;
+  awaiting_review: 0 | 1;
 }
 
 export type ReviewStatus = 'pending' | 'approved' | 'rejected';
@@ -285,6 +286,7 @@ export async function insertCamp(
   db: D1Database,
   camp: NewCampInput,
   status: CampStatus = 'pending',
+  awaitingReview: boolean = false,
 ): Promise<void> {
   const sourceDomain =
     camp.source_domain ?? extractDomain(camp.website_url) ?? extractDomain(null);
@@ -338,6 +340,15 @@ export async function insertCamp(
       sourceDomain,
     )
     .run();
+
+  // Set awaiting_review separately so we don't have to re-thread the column
+  // through every position-bound INSERT signature. Default in the schema is 0.
+  if (awaitingReview) {
+    await db
+      .prepare('UPDATE camps SET awaiting_review = 1 WHERE id = ?')
+      .bind(camp.id)
+      .run();
+  }
 }
 
 export async function getCampById(db: D1Database, id: string): Promise<Camp | null> {
@@ -359,9 +370,14 @@ export async function listApprovedCamps(db: D1Database): Promise<Camp[]> {
 }
 
 export async function listPendingCamps(db: D1Database): Promise<Camp[]> {
+  // Includes both status='pending' submissions AND any row flagged
+  // awaiting_review=1 regardless of status. The latter is how bulk imports
+  // surface in the queue — they're public on the site already but still need
+  // a per-row review pass.
   const result = await db
-    .prepare('SELECT * FROM camps WHERE status = ? ORDER BY submitted_at ASC')
-    .bind('pending')
+    .prepare(
+      "SELECT * FROM camps WHERE status = 'pending' OR awaiting_review = 1 ORDER BY submitted_at ASC",
+    )
     .all<Camp>();
   return result.results ?? [];
 }
@@ -389,13 +405,19 @@ export async function approveCamp(
 ): Promise<Camp | null> {
   const camp = await getCampById(db, id);
   if (!camp) return null;
+  // Clear awaiting_review on approval so the row drops out of the admin queue.
+  // Skip the submitter approved-count bump if this row was already counted as
+  // an auto-approve at insert time (awaiting_review=1 means it was inserted
+  // status='approved' and already incremented).
   await db
     .prepare(
-      `UPDATE camps SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
+      `UPDATE camps SET status = 'approved', awaiting_review = 0, reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
-  await incrementSubmitterApproved(db, camp.submitted_by_email);
+  if (!(camp.status === 'approved' && camp.awaiting_review === 1)) {
+    await incrementSubmitterApproved(db, camp.submitted_by_email);
+  }
   return getCampById(db, id);
 }
 
@@ -406,9 +428,11 @@ export async function rejectCamp(
   notes: string | null = null,
   reasonCode: RejectReasonCode | null = null,
 ): Promise<Camp | null> {
+  // Clear awaiting_review on reject so the row drops out of the queue and
+  // status='rejected' takes it off the public listing.
   await db
     .prepare(
-      `UPDATE camps SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ?, reject_reason_code = ? WHERE id = ?`,
+      `UPDATE camps SET status = 'rejected', awaiting_review = 0, reviewed_by = ?, reviewed_at = ?, review_notes = ?, reject_reason_code = ? WHERE id = ?`,
     )
     .bind(reviewer, nowIso(), notes, reasonCode, id)
     .run();

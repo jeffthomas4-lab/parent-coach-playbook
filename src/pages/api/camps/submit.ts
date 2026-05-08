@@ -34,6 +34,10 @@ interface SubmitPayload {
   website?: string;
   // duplicate-address ack ("yes, this is a different program at the same address")
   confirm_duplicate?: string;
+  // bulk-import shared secret (matched against env.BULK_IMPORT_TOKEN). When
+  // present and correct, the row is inserted as status='approved' with
+  // awaiting_review=1 — public on the site immediately, still in admin queue.
+  import_token?: string;
   // public
   name?: string;
   sport?: string;
@@ -110,7 +114,7 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
 }
 
 export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB: D1Database } | undefined;
+  const env = (locals as any).runtime?.env as { DB: D1Database; BULK_IMPORT_TOKEN?: string } | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const data = await readPayload(request);
@@ -198,7 +202,19 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   const submitterEmail = data.submitted_by_email!.toLowerCase();
   await upsertSubmitterOnSubmission(env.DB, submitterEmail);
-  const autoApprove = await shouldAutoApprove(env.DB, submitterEmail);
+  const trustedAutoApprove = await shouldAutoApprove(env.DB, submitterEmail);
+
+  // Bulk-import auto-approve: when the caller presents the right shared secret,
+  // the row goes live immediately AND is flagged for admin review. This is the
+  // CSV import flow's "--auto-approve" path. Constant-time-ish compare; the
+  // token isn't a password so plain equality is acceptable here.
+  const bulkImportApprove =
+    Boolean(env.BULK_IMPORT_TOKEN) &&
+    typeof data.import_token === 'string' &&
+    data.import_token.length > 0 &&
+    data.import_token === env.BULK_IMPORT_TOKEN;
+
+  const autoApprove = trustedAutoApprove || bulkImportApprove;
 
   const rawConfidence = (data.confidence ?? '').toLowerCase().trim();
   const confidence: ConfidenceLevel =
@@ -286,7 +302,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     submitted_at: submittedAt,
     confidence,
     source_domain: sourceDomain,
-  }, autoApprove ? 'approved' : 'pending');
+  }, autoApprove ? 'approved' : 'pending', bulkImportApprove);
 
   if (autoApprove) {
     await incrementSubmitterApproved(env.DB, submitterEmail);
@@ -306,5 +322,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
   }
 
-  return ok({ ok: true, id, slug, status: autoApprove ? 'approved' : 'pending' });
+  return ok({
+    ok: true,
+    id,
+    slug,
+    status: autoApprove ? 'approved' : 'pending',
+    awaiting_review: bulkImportApprove,
+  });
 };

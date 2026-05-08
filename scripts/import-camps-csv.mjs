@@ -14,6 +14,14 @@
 //   --email <addr>   submitter email (default: parentcoachplaybook@gmail.com)
 //   --base <url>     site base (default: https://parentcoachplaybook.com)
 //   --dry-run        parse + validate only, do not POST
+//   --auto-approve   submit each row with status='approved' AND awaiting_review=1
+//                    so the camps go LIVE on the public site immediately while
+//                    still showing in the admin queue for a per-row review pass.
+//                    Requires BULK_IMPORT_TOKEN env var (must match the worker
+//                    secret of the same name). Set the secret once with:
+//                      npx wrangler secret put BULK_IMPORT_TOKEN
+//                    Then export the same value locally before each run:
+//                      $env:BULK_IMPORT_TOKEN = "your-token"
 
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -28,18 +36,28 @@ const flag = (name, fallback) => {
 
 const csvPath = positional[0];
 if (!csvPath) {
-  console.error('Usage: node scripts/import-camps-csv.mjs <csv-path> [--email addr] [--base url] [--dry-run]');
+  console.error('Usage: node scripts/import-camps-csv.mjs <csv-path> [--email addr] [--base url] [--dry-run] [--auto-approve]');
   process.exit(1);
 }
 
 const SUBMITTER_EMAIL = flag('email', 'parentcoachplaybook@gmail.com');
 const BASE_URL = flag('base', 'https://parentcoachplaybook.com');
 const DRY = args.includes('--dry-run');
+const AUTO_APPROVE = args.includes('--auto-approve');
+const BULK_TOKEN = process.env.BULK_IMPORT_TOKEN || '';
+
+if (AUTO_APPROVE && !BULK_TOKEN) {
+  console.error('--auto-approve requires the BULK_IMPORT_TOKEN env var to be set.');
+  console.error('First time setup: npx wrangler secret put BULK_IMPORT_TOKEN');
+  console.error('Then before each import: $env:BULK_IMPORT_TOKEN = "your-token"');
+  process.exit(1);
+}
 
 console.log(`Importing ${csvPath}`);
 console.log(`  submitter: ${SUBMITTER_EMAIL}`);
 console.log(`  endpoint:  ${BASE_URL}/api/camps/submit`);
 if (DRY) console.log('  mode:      DRY RUN (no POSTs)');
+if (AUTO_APPROVE) console.log('  mode:      AUTO-APPROVE (rows go live, flagged for review)');
 console.log('');
 
 const text = await readFile(resolve(csvPath), 'utf8');
@@ -88,6 +106,7 @@ for (let i = 0; i < rows.length; i += 1) {
     submitted_by_email: SUBMITTER_EMAIL,
     confidence: row.confidence || 'medium',
     confirm_duplicate: 'true', // pre-acknowledge; the dedup probe still runs server-side
+    ...(AUTO_APPROVE ? { import_token: BULK_TOKEN } : {}),
   };
 
   if (DRY) {
@@ -105,7 +124,8 @@ for (let i = 0; i < rows.length; i += 1) {
     const body = await res.json().catch(() => ({}));
     if (res.ok && body.ok) {
       ok += 1;
-      console.log(`✓ ${row.name} → ${body.status} (${body.slug})`);
+      const reviewSuffix = body.awaiting_review ? ' · awaiting review' : '';
+      console.log(`✓ ${row.name} → ${body.status}${reviewSuffix} (${body.slug})`);
     } else {
       failed += 1;
       const err = body.error || body.warning || `HTTP ${res.status}`;

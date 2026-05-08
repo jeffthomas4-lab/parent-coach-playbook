@@ -2,7 +2,7 @@
 // Approves a pending camp. Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { approveCamp, upsertDomainQuality } from '../../../../../lib/camps-db';
+import { approveCamp, getCampById, upsertDomainQuality } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 
 export const prerender = false;
@@ -47,6 +47,14 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     // ignore
   }
 
+  // Read prior state so we can tell whether this approve is a true
+  // pending→approved transition or just clearing the awaiting_review flag on
+  // a row that was already auto-approved at bulk-import time. The latter case
+  // skips the domain-quality increment to avoid double-counting an approve.
+  const before = await getCampById(env.DB, id);
+  const wasAlreadyApproved =
+    before?.status === 'approved' && before?.awaiting_review === 1;
+
   const camp = await approveCamp(env.DB, id, auth.email, notes);
   if (!camp) {
     return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
@@ -55,7 +63,9 @@ export const POST: APIRoute = async ({ params, request, locals }) => {
     });
   }
 
-  await upsertDomainQuality(env.DB, camp.source_domain, 'approved');
+  if (!wasAlreadyApproved) {
+    await upsertDomainQuality(env.DB, camp.source_domain, 'approved');
+  }
 
   if (isForm) {
     return new Response(null, {
