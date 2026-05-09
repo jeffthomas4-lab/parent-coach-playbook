@@ -293,7 +293,7 @@ Adds one part-time freelance writer at month 12-13. Budget $1,500-3,000/month fo
 The single biggest near-term lever. Every fix here compounds across every existing and future piece. Pulled directly from the strategic audit, with timing.
 
 ### Months 1-2 (immediate fixes)
-1. **Article schema on every read.** JSON-LD with headline, datePublished, dateModified, author, publisher, image. Two hours of work. Highest single-leverage SEO move.
+1. **Article schema on every read.** JSON-LD with headline, datePublished, dateModified, author, publisher, image. Two hours of work. Highest single-shot SEO upgrade available.
 2. **FAQPage schema on decisions and body pages.** Existing Q&A structure wraps cleanly. Two hours.
 3. **HowTo schema on drills.** 533 pieces of surface area. Three hours.
 4. **Person schema on /about/ + author byline linkage.** Two hours. Helps E-E-A-T signal.
@@ -663,7 +663,7 @@ Eight conditions. Any one fails, the plan adjusts.
 4. **Affiliate networks approve in months 1-2.** ShareASale, Dick's, Bookshop minimum. Without them, the gear guides have only Amazon and revenue ceiling drops.
 5. **Mediavine eligibility hits by month 9-10.** If not, plan B is direct ad sales or Mediavine alternatives (Ezoic, MonetizeMore) at lower RPMs.
 6. **Camps directory monetization works.** First 50 paid claim listings have to convert in Q1 2027. If not, the camps revenue line shrinks and we lean harder on affiliate + display.
-7. **November face-reveal happens cleanly with UPS.** If institutional friction emerges, pivot to a pseudonym + small bio rather than full reveal. Lose some podcast/press optionality, keep most of the site.
+7. **November face-reveal happens cleanly with UPS.** If institutional friction emerges, pivot to a pseudonym + small bio instead of full reveal. Lose some podcast/press optionality, keep most of the site.
 8. **Path B reader signal is real by month 18.** If reader questions don't cluster around 3-5 product categories, Path B doesn't launch in Year 3 and we extend the audience-build phase another 12 months.
 
 ---
