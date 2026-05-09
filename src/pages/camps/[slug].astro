@@ -46,6 +46,28 @@ if (!stateCities || stateCities.length === 0) {
   }
 }
 
+// State-page presentation values. Computed in frontmatter to avoid TypeScript
+// type assertions inline in the template body — esbuild's parser interprets
+// `<string, string>` as JSX and the build breaks.
+const STATE_NAMES_BY_CODE: Record<string, string> = {
+  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas',
+  CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware',
+  FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho',
+  IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas',
+  KY: 'Kentucky', LA: 'Louisiana', ME: 'Maine', MD: 'Maryland',
+  MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi',
+  MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada',
+  NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York',
+  NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma',
+  OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
+  SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah',
+  VT: 'Vermont', VA: 'Virginia', WA: 'Washington', WV: 'West Virginia',
+  WI: 'Wisconsin', WY: 'Wyoming', DC: 'District of Columbia',
+};
+const stateCodeForSlug = (slug || '').toUpperCase();
+const stateNameForSlug = STATE_NAMES_BY_CODE[stateCodeForSlug] || stateCodeForSlug;
+const stateTotalCamps = stateCities ? stateTotalCamps : 0;
+
 // Approved reviews for this camp.
 let reviews: CampReview[] = [];
 try {
@@ -135,8 +157,8 @@ const mapsHref = hasGeo
 ---
 {stateCities && stateCities.length > 0 ? (
   <BaseLayout
-    title={`Summer camps in ${({AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'District of Columbia'} as Record<string, string>)[(slug || '').toUpperCase()] || (slug || '').toUpperCase()}`}
-    description={`${stateCities.reduce((n, c) => n + c.count, 0)} verified camps across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
+    title={`Summer camps in ${stateNameForSlug}`}
+    description={`${stateTotalCamps} verified camps across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
   >
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-14">
@@ -144,10 +166,10 @@ const mapsHref = hasGeo
           <a href="/camps/" class="hover:underline">Camps</a>
         </p>
         <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05]" style="font-weight: 500;">
-          Summer camps in {({AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'District of Columbia'} as Record<string, string>)[(slug || '').toUpperCase()] || (slug || '').toUpperCase()}
+          Summer camps in {stateNameForSlug}
         </h1>
         <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
-          {stateCities.reduce((n, c) => n + c.count, 0)} verified camp{stateCities.reduce((n, c) => n + c.count, 0) === 1 ? '' : 's'} across {stateCities.length} {stateCities.length === 1 ? 'city' : 'cities'}.
+          {stateTotalCamps} verified camp{stateTotalCamps === 1 ? '' : 's'} across {stateCities.length} {stateCities.length === 1 ? 'city' : 'cities'}.
         </p>
       </div>
     </section>
