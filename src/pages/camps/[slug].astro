@@ -66,28 +66,31 @@ const STATE_NAMES_BY_CODE: Record<string, string> = {
 };
 const stateCodeForSlug = (slug || '').toUpperCase();
 const stateNameForSlug = STATE_NAMES_BY_CODE[stateCodeForSlug] || stateCodeForSlug;
-const stateTotalCamps = stateCities ? stateTotalCamps : 0;
+const stateTotalCamps = stateCities ? stateCities.reduce((n, c) => n + c.count, 0) : 0;
 
-// Approved reviews for this camp.
+// Camp-only frontmatter. Skip entirely when we're rendering a state landing
+// (camp is null in that branch and these calls would crash on camp.id).
 let reviews: CampReview[] = [];
-try {
-  if (env?.DB) reviews = await listApprovedReviewsForCamp(env.DB, camp.id);
-} catch (e) {
-  console.error('listApprovedReviewsForCamp failed', e);
-}
-
-const avgRating = reviews.length
-  ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length)
-  : null;
-
-// Other camps at this same address (a college campus, a high school, a YMCA may host multiple programs).
+let avgRating: number | null = null;
 let otherAtAddress: Camp[] = [];
-try {
-  if (env?.DB) {
-    otherAtAddress = await listOtherCampsAtAddress(env.DB, camp.address, camp.city, camp.zip, camp.id);
+if (camp) {
+  try {
+    if (env?.DB) reviews = await listApprovedReviewsForCamp(env.DB, camp.id);
+  } catch (e) {
+    console.error('listApprovedReviewsForCamp failed', e);
   }
-} catch (e) {
-  console.error('listOtherCampsAtAddress failed', e);
+
+  avgRating = reviews.length
+    ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length)
+    : null;
+
+  try {
+    if (env?.DB) {
+      otherAtAddress = await listOtherCampsAtAddress(env.DB, camp.address, camp.city, camp.zip, camp.id);
+    }
+  } catch (e) {
+    console.error('listOtherCampsAtAddress failed', e);
+  }
 }
 
 // Parse YYYY-MM-DD as local date (not UTC) so dates display correctly in

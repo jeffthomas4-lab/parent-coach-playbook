@@ -18,7 +18,7 @@ Run `--sitemap <domain>` directly. Filter as needed.
 | Domain | Provider | Sitemap | Notes | Status |
 |---|---|---|---|---|
 | ussportscamps.com | US Sports Camps / Nike branded camps | https://www.ussportscamps.com/sitemap.xml | 17,577 URLs. Best-in-class JSON-LD Event data. ~398 soccer-camp URLs alone. Filter: `<sport>.*camp-`. | 🟡 (soccer + baseball ran) |
-| skyhawks.com | Skyhawks Sports Academy | https://www.skyhawks.com/sitemap.xml | Multi-sport youth camps national. Confirm JSON-LD coverage. | ⏳ |
+| skyhawks.com | Skyhawks Sports Academy | (n/a — no Event schema) | Main domain is SEO landing pages only (zip-by-zip generic copy + Register button). Camp data lives behind a JS form at register.skyhawks.com. Treat as Tier 3: pull via partner municipal portals (parkstacoma, PenMet, Federal Way) where Skyhawks sessions land. | ⛔ |
 | imgacademy.com | IMG Academy | https://www.imgacademy.com/sitemap.xml | High-end residential camps; small but high-margin operator. | ⏳ |
 | galileo-camps.com | Galileo Learning | https://galileo-camps.com/sitemap.xml | West Coast / national STEM-arts day camps. | ⏳ |
 | steveandkates.com | Steve & Kate's Camp | https://steveandkates.com/sitemap.xml | National traditional day camps. | ⏳ |
