@@ -1,0 +1,26 @@
+# Seed URL list for scripts/harvest-jsonld.mjs
+# One URL per line. Lines starting with # are ignored.
+# These are the operator pages from Tacoma + Seattle batches that had
+# clean schema.org event JSON-LD. Run:
+#   node scripts/harvest-jsonld.mjs imports/harvester-seed-urls.txt --dry
+# to see what comes out without writing the CSV. Drop --dry to write
+# imports/harvested-YYYY-MM-DD.csv.
+
+# --- US Sports Camps / Nike (rich Event schema across sites) ---
+https://www.ussportscamps.com/soccer/nike/nike-soccer-camp-hilltop-heritage-middle-school
+https://www.ussportscamps.com/soccer/nike/nike-soccer-camp-tacoma-stars-tacoma-soccer-center
+https://www.ussportscamps.com/soccer/nike/nike-soccer-camp-tacoma-stars-sera
+
+# --- Challenger Sports (Foundational Skills Soccer) ---
+https://challengersports.com/camps/dupont-park-and-recreations-week-1-dupont-wa/
+https://challengersports.com/camps/dupont-park-and-recreations-week-2-dupont-wa/
+https://challengersports.com/camps/norpoint-sc-week-1-tacoma-wa/
+
+# --- i9 Sports venue pages (clean JSON-LD on franchise + venue pages) ---
+https://www.i9sports.com/venues/federal-way-todd-beamer-high-school-youth-sports-programs/10118
+https://www.i9sports.com/venues/lakewood-lakes-high-school-youth-sports-programs/9861
+
+# --- Bellevue Youth Theatre (Seattle anchor) ---
+https://bellevuewa.gov/city-government/departments/parks/community-centers/bellevue-youth-theatre/classes-camps
+
+# --- Add new operator pages here as Chrome runs surface them ---

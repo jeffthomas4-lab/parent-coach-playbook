@@ -14,9 +14,11 @@ Accuracy matters more than volume. Do not invent fields. Leave blanks if you can
 
 ## Step 1. Read the priority queue from the API
 
-Hit this URL (replace the anchor slug with your current SEARCH AREA's slug, default `tacoma-25mi`):
+Hit this URL (replace the anchor slug with your current SEARCH AREA's slug, default `tacoma-wa-25mi`):
 
-  https://parentcoachplaybook.com/api/camps/search-priority?anchor=tacoma-25mi
+  https://parentcoachplaybook.com/api/camps/search-priority?anchor=tacoma-wa-25mi
+
+**Slug format.** Anchor slugs are `<city>-<state>-<radius>mi`, lowercase, hyphenated. Examples: `tacoma-wa-25mi`, `seattle-wa-25mi`, `bellevue--eastside-wa-15mi`, `portland-or-25mi`. If you pass a wrong slug the API returns `anchor: null` with empty `recheck_due` and `skip_domains` — that means the anchor doesn't exist in the database, not that it's saturated. Stop and verify the slug before continuing.
 
 It returns JSON:
 

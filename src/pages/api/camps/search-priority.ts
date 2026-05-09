@@ -1,4 +1,4 @@
-// GET /api/camps/search-priority?anchor=tacoma-25mi&today=2026-05-06
+// GET /api/camps/search-priority?anchor=tacoma-wa-25mi&today=2026-05-06
 //
 // Returns the camp-search priority queue for a given anchor city, scoped and
 // compact so the Claude in Chrome flow can decide what to visit without parsing
@@ -37,7 +37,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500, false);
 
   const url = new URL(request.url);
-  const anchor = (url.searchParams.get('anchor') ?? 'tacoma-25mi').trim().toLowerCase();
+  const anchor = (url.searchParams.get('anchor') ?? 'tacoma-wa-25mi').trim().toLowerCase();
   const onDate = (url.searchParams.get('today') ?? today()).trim();
 
   const anchorRow = await getAnchor(env.DB, anchor);

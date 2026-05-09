@@ -164,7 +164,7 @@ try {
   );
   console.log(`\n✓ Seeded ${anchors.length} anchors and ${domains.length} domains`);
   console.log('\nTest the API:');
-  console.log('  curl "https://parentcoachplaybook.com/api/camps/search-priority?anchor=tacoma-25mi"');
+  console.log('  curl "https://parentcoachplaybook.com/api/camps/search-priority?anchor=tacoma-wa-25mi"');
 } catch (e) {
   console.error('! D1 execute failed. The generated SQL is at:');
   console.error('   ' + SQL_OUT);
