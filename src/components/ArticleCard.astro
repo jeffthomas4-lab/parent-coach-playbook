@@ -71,4 +71,22 @@ const titleSize = format === 'essay'
       <div class="font-display italic text-rust font-medium" style="font-size: 0.85rem">
         {EDITORIAL.byline}
       </div>
-      {tagBi
+      {tagBits.length > 0 && (
+        <div class="font-display italic text-ink-soft mt-0.5" style="font-size: 0.8rem;">
+          {tagBits.join(' · ')}
+        </div>
+      )}
+    </div>
+    <h3
+      class={`font-display text-ink ${titleSize} leading-tight group-hover:text-rust transition-colors`}
+      class="font-medium"
+      set:html={renderTitle(title)}
+    />
+    {dek && (
+      <p class="font-display text-ink-soft text-base mt-2 leading-snug max-w-2xl">
+        {dek}
+      </p>
+    )}
+    <div class="t-cta mt-3">Keep reading →</div>
+  </a>
+</article>
