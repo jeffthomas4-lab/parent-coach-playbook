@@ -155,3 +155,38 @@ const lastUpdated = topic.data.publishedAt;
       <div class="container-px py-10">
         <p class="font-display italic text-rust mb-4" style="font-weight: 500;">Related across the site</p>
         <div class="grid md:grid-cols-3 gap-6">
+          {siblingBody.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">More from The body</p>
+              <ul class="grid gap-2">
+                {siblingBody.map(b => (
+                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(b.data.title)} /></a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedPathways.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Pathways</p>
+              <ul class="grid gap-2">
+                {relatedPathways.map(p => (
+                  <li><a href={`/pathways/${p.data.sport}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ {sportLabel(p.data.sport)} pathway</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedCalendars.length > 0 && (
+            <div>
+              <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Season calendars</p>
+              <ul class="grid gap-2">
+                {relatedCalendars.map(c => (
+                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(c.data.title)} /></a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
