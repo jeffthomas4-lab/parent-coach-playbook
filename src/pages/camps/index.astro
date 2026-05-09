@@ -196,9 +196,9 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
               <div>
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">Format</p>
                 <div class="flex gap-2">
-                  <button data-filter-dayovernght="all" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors" data-active="true">All</button>
-                  <button data-filter-dayovernght="day" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Day</button>
-                  <button data-filter-dayovernght="overnight" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Overnight</button>
+                  <button type="button" data-filter-dayovernght="all" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors" data-active="true" style="background: var(--rust); color: white; border-color: var(--rust);">All</button>
+                  <button type="button" data-filter-dayovernght="day" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Day</button>
+                  <button type="button" data-filter-dayovernght="overnight" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Overnight</button>
                 </div>
               </div>
 
@@ -206,8 +206,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
               <div>
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">Include</p>
                 <div class="flex gap-2">
-                  <button id="filter-show-leagues" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Leagues</button>
-                  <button id="filter-show-full" class="font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Full programs</button>
+                  <button type="button" id="filter-show-leagues" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Leagues</button>
+                  <button type="button" id="filter-show-full" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Full programs</button>
                 </div>
               </div>
 
@@ -361,18 +361,31 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         return 2 * R * Math.asin(Math.sqrt(a));
       }
 
-      // Helper: geocode zip via Nominatim
+      // Helper: geocode zip via Nominatim. Uses structured query so the
+      // country filter actually applies — `country=US` is silently ignored
+      // when paired with free-text `q=`, which was causing "98101" to
+      // resolve to a French postcode about 50% of the time. Falls back to
+      // "ZIP, USA" free-text if structured returns nothing.
       async function geocodeZip(zip) {
-        const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(zip)}&country=US&format=json&limit=1`;
-        try {
-          const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
-          if (!r.ok) return null;
-          const data = await r.json();
-          if (!data.length) return null;
-          return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
-        } catch {
-          return null;
+        const tries = [
+          `https://nominatim.openstreetmap.org/search?postalcode=${encodeURIComponent(zip)}&countrycodes=us&format=json&limit=1`,
+          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(zip + ', USA')}&format=json&limit=1`,
+        ];
+        for (const url of tries) {
+          try {
+            const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+            if (!r.ok) continue;
+            const data = await r.json();
+            if (!data.length) continue;
+            const lat = parseFloat(data[0].lat);
+            const lon = parseFloat(data[0].lon);
+            if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+            return { lat, lon };
+          } catch {
+            // try the next URL
+          }
         }
+        return null;
       }
 
       // Filter state. showLeagues and showFull default to false so the page
@@ -592,11 +605,25 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           applyFilters();
         });
 
-        // Day/overnight
+        // Visual helpers: filter toggle buttons need to *look* active when
+        // pressed. Swap an inline style so the user gets feedback without
+        // needing a CSS file change.
+        const ACTIVE_STYLE = 'background: var(--rust); color: white; border-color: var(--rust);';
+        function setToggleActive(btn, active) {
+          if (active) {
+            btn.setAttribute('data-active', 'true');
+            btn.style.cssText = ACTIVE_STYLE;
+          } else {
+            btn.removeAttribute('data-active');
+            btn.style.cssText = '';
+          }
+        }
+
+        // Day/overnight — single-select group
         document.querySelectorAll('[data-filter-dayovernght]').forEach(btn => {
           btn.addEventListener('click', () => {
-            document.querySelectorAll('[data-filter-dayovernght]').forEach(b => b.removeAttribute('data-active'));
-            btn.setAttribute('data-active', 'true');
+            document.querySelectorAll('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
+            setToggleActive(btn, true);
             state.dayOvernight = btn.getAttribute('data-filter-dayovernght');
             applyFilters();
           });
@@ -608,7 +635,9 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           applyFilters();
         });
 
-        // Zip form
+        // Zip form. The submit button does the geocode; clearing the input
+        // releases the filter automatically; changing the radius after a
+        // successful search re-filters without requiring another click.
         document.getElementById('filter-zip-form').addEventListener('submit', async (e) => {
           e.preventDefault();
           const zip = document.getElementById('filter-zip').value.trim();
@@ -619,9 +648,16 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
             return;
           }
 
+          const submitBtn = e.target.querySelector('button[type="submit"]');
+          const originalLabel = submitBtn ? submitBtn.textContent : null;
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Searching...'; }
+
           const geo = await geocodeZip(zip);
+
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+
           if (!geo) {
-            alert('Zip code not found. Try again.');
+            alert('Zip code not found. Make sure it is a 5-digit US zip and try again.');
             return;
           }
 
@@ -632,25 +668,33 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           applyFilters();
         });
 
-        // Show leagues toggle
-        document.getElementById('filter-show-leagues').addEventListener('click', (e) => {
-          state.showLeagues = !state.showLeagues;
-          if (state.showLeagues) {
-            e.target.setAttribute('data-active', 'true');
-          } else {
-            e.target.removeAttribute('data-active');
+        // Clearing the zip input releases the radius filter immediately.
+        document.getElementById('filter-zip').addEventListener('input', (e) => {
+          if (!e.target.value.trim() && state.zipLat !== null) {
+            state.zipLat = null;
+            state.zipLon = null;
+            applyFilters();
           }
+        });
+
+        // Changing the radius after a successful zip search re-filters in place.
+        document.getElementById('filter-radius').addEventListener('change', (e) => {
+          if (state.zipLat === null) return; // no active zip filter, nothing to do
+          state.zipRadius = e.target.value === 'all' ? Infinity : parseInt(e.target.value, 10);
           applyFilters();
         });
 
-        // Show full toggle
+        // Show leagues toggle (independent on/off)
+        document.getElementById('filter-show-leagues').addEventListener('click', (e) => {
+          state.showLeagues = !state.showLeagues;
+          setToggleActive(e.currentTarget, state.showLeagues);
+          applyFilters();
+        });
+
+        // Show full toggle (independent on/off)
         document.getElementById('filter-show-full').addEventListener('click', (e) => {
           state.showFull = !state.showFull;
-          if (state.showFull) {
-            e.target.setAttribute('data-active', 'true');
-          } else {
-            e.target.removeAttribute('data-active');
-          }
+          setToggleActive(e.currentTarget, state.showFull);
           applyFilters();
         });
 
@@ -666,11 +710,11 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           document.getElementById('filter-state').value = '';
           document.getElementById('filter-zip').value = '';
           document.getElementById('filter-radius').value = '10';
-          document.querySelectorAll('[data-filter-dayovernght]').forEach(b => b.removeAttribute('data-active'));
+          document.querySelectorAll('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
           const allBtn = document.querySelector('[data-filter-dayovernght="all"]');
-          if (allBtn) allBtn.setAttribute('data-active', 'true');
-          document.getElementById('filter-show-leagues').removeAttribute('data-active');
-          document.getElementById('filter-show-full').removeAttribute('data-active');
+          if (allBtn) setToggleActive(allBtn, true);
+          setToggleActive(document.getElementById('filter-show-leagues'), false);
+          setToggleActive(document.getElementById('filter-show-full'), false);
           applyFilters();
         });
       }

@@ -61,6 +61,7 @@ const editorialField = {
     flagIpRisk:                 z.boolean().default(false),               // paraphrased without attribution, suspect product claims
     flagSensitiveTopic:         z.boolean().default(false),               // mental health, body image, injury, divorce — extra care
     citationCheckPassed:        z.boolean().default(false),               // sources cited where claims are made
+    sportLanguageCheckPassed:   z.boolean().default(false),               // every action verb and noun in the body uses the correct vocabulary for the tagged sport — see sport-vocab/<sport>.md
     affiliateDisclosurePresent: z.boolean().default(false),               // FTC requires when affiliate links present
     claudeReviewedAt:           z.coerce.date().optional(),
     jeffReviewedAt:             z.coerce.date().optional(),

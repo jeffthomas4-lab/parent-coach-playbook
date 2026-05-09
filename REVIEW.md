@@ -15,6 +15,7 @@ editorial:
   flagIpRisk: false                  # paraphrased w/o attribution, suspect product claims
   flagSensitiveTopic: true           # mental health, body image, injury, divorce - extra care
   citationCheckPassed: true          # sources cited where claims are made
+  sportLanguageCheckPassed: true     # body uses the right vocabulary for the tagged sport (no touchdowns in baseball)
   affiliateDisclosurePresent: false  # FTC requires when affiliate links present
   claudeReviewedAt: 2026-05-03
   jeffReviewedAt: 2026-05-04
@@ -34,6 +35,7 @@ All fields are optional. A piece with no `editorial` block defaults to `status: 
    - All three grades
    - Flags as needed
    - `citationCheckPassed: true` only if every claim has a source
+   - `sportLanguageCheckPassed: true` only if every term in the body matches `sport-vocab/<sport>.md` for the tagged sport (drills and any sport-specific piece — open the cheat sheet, read the piece, confirm)
    - `affiliateDisclosurePresent: true` only if affiliate links are in the piece AND the disclosure block is present
    - `claudeReviewedAt: <today>`
    - `status: claude-reviewed`
@@ -79,6 +81,8 @@ A piece that grades below 7 on any axis should not go to Jeff for review yet. Cl
 
 **citationCheckPassed.** True only if every empirical claim, statistic, governing-body rule, or medical assertion has a source linked in the piece (typically in the Sources section or inline).
 
+**sportLanguageCheckPassed.** True only if every action verb, noun, position name, scoring term, field/court term, and equipment term in the body matches the vocabulary for the tagged sport. The reference is `sport-vocab/<sport>.md`. A baseball drill never says "touchdown," "goal," or "basket." A flag-football drill never says "tackle." A volleyball drill never says "shoot." A girls' lacrosse drill never describes body contact. Most common slip: a writer drifts into the vocabulary of a more-popular sport when describing a similar action ("the runner shot toward second" — wrong, it's "the runner sprinted toward second"). Read the piece once with the cheat sheet open and flag every term that doesn't belong. False is the right answer when in doubt — the cheat sheet exists so this is a quick check, not a judgment call.
+
 **affiliateDisclosurePresent.** True if the piece contains affiliate links AND a disclosure statement appears in the piece. False if affiliate links exist but disclosure is missing (FTC violation).
 
 ---
@@ -94,7 +98,7 @@ A piece that grades below 7 on any axis should not go to Jeff for review yet. Cl
 - **Flagged** — anything with flagInappropriateness or flagIpRisk
 - **Needs revision** — Jeff sent back to Claude
 
-The columns are dense. Q/O/V are the three grades (Quality / Originality / Voice). Flags abbreviated: INAPPROP / IP / SENS / NOCITE.
+The columns are dense. Q/O/V are the three grades (Quality / Originality / Voice). Flags abbreviated: INAPPROP / IP / SENS / NOCITE / NOSPORT (sport-language check failed or not run).
 
 Click any title to open the live URL. The editorial block lives in that file's frontmatter; edit there.
 

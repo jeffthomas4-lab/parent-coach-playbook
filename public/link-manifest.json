@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-09T19:59:05.791Z",
-  "count": 194,
+  "generatedAt": "2026-05-09T20:31:01.551Z",
+  "count": 195,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -183,6 +183,12 @@
       "url": "https://nocsae.org/",
       "sources": [
         "src/content/guides/football-7v7.md"
+      ]
+    },
+    {
+      "url": "https://nominatim.openstreetmap.org/search?postalcode=${encodeURIComponent",
+      "sources": [
+        "src/pages/camps/index.astro"
       ]
     },
     {
