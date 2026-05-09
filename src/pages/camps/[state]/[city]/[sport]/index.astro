@@ -1,0 +1,147 @@
+---
+// City + sport listing. Same UI as city page, pre-filtered to one sport.
+//
+// URL: /camps/wa/seattle/soccer/, /camps/wa/tacoma/basketball/, etc.
+// Age filter still applies via ?ages=5-7.
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import { listCampsByCitySport, slugifyCity, type Camp } from '../../../../../lib/camps-db';
+import { CAMP_SPORTS, AGE_BANDS } from '../../../../../data/site';
+
+export const prerender = false;
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
+
+const stateParam = (Astro.params.state || '').toLowerCase();
+const cityParam = (Astro.params.city || '').toLowerCase();
+const sportParam = (Astro.params.sport || '').toLowerCase();
+const stateCode = stateParam.toUpperCase();
+
+const sportInfo = CAMP_SPORTS.find((s) => s.slug === sportParam);
+if (!sportInfo) {
+  return new Response('Unknown sport', { status: 404 });
+}
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+let camps: Camp[] = [];
+if (env?.DB && stateCode && cityParam) {
+  try { camps = await listCampsByCitySport(env.DB, stateCode, cityParam, sportParam); }
+  catch (e) { console.error('listCampsByCitySport failed', e); }
+}
+if (camps.length === 0) {
+  return new Response('Not found', { status: 404 });
+}
+
+const cityLabel = camps[0].city;
+
+const url = new URL(Astro.request.url);
+const filterAges = url.searchParams.get('ages') || '';
+
+let visible = camps;
+if (filterAges) {
+  const ageMap: Record<string, [number, number]> = {
+    '5-7': [5, 7], '8-10': [8, 10], '11-12': [11, 12], '13-14': [13, 14], '15-plus': [15, 22],
+  };
+  const range = ageMap[filterAges];
+  if (range) visible = visible.filter((c) => c.age_max >= range[0] && c.age_min <= range[1]);
+}
+
+const fmtDateRange = (start: string, end: string) => {
+  const M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const [sy, sm, sd] = start.split('-').map(Number);
+  const [, em, ed] = end.split('-').map(Number);
+  if (sm === em) return `${M[sm-1]} ${sd}–${ed}, ${sy}`;
+  return `${M[sm-1]} ${sd} – ${M[em-1]} ${ed}, ${sy}`;
+};
+
+const title = `${sportInfo.label} camps in ${cityLabel}, ${stateCode}`;
+const description = `${camps.length} verified ${sportInfo.label.toLowerCase()} camp${camps.length === 1 ? '' : 's'} in ${cityLabel}.`;
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: title,
+  numberOfItems: visible.length,
+  itemListElement: visible.slice(0, 50).map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `https://parentcoachplaybook.com/camps/${c.slug}/`,
+    name: c.name,
+  })),
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Camps', item: 'https://parentcoachplaybook.com/camps/' },
+    { '@type': 'ListItem', position: 2, name: stateCode, item: `https://parentcoachplaybook.com/camps/${stateParam}/` },
+    { '@type': 'ListItem', position: 3, name: cityLabel, item: `https://parentcoachplaybook.com/camps/${stateParam}/${cityParam}/` },
+    { '@type': 'ListItem', position: 4, name: sportInfo.label },
+  ],
+};
+---
+<BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/camps/" class="hover:underline">Camps</a> ·
+        <a href={`/camps/${stateParam}/`} class="hover:underline">{stateCode}</a> ·
+        <a href={`/camps/${stateParam}/${cityParam}/`} class="hover:underline">{cityLabel}</a>
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05]" style="font-weight: 500;">
+        {title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {visible.length === camps.length
+          ? `${camps.length} verified camp${camps.length === 1 ? '' : 's'}.`
+          : `${visible.length} of ${camps.length} match your age filter.`}
+        <a href={`/camps/${stateParam}/${cityParam}/`} class="text-rust hover:underline ml-2">All sports in {cityLabel} →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-4 flex flex-wrap gap-2 items-center">
+      <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">By age:</span>
+      <a
+        href="./"
+        class={`font-display text-xs px-2 py-1 rounded-full border ${!filterAges ? 'bg-rust text-paper border-rust' : 'border-bone hover:border-rust'}`}
+        style="font-weight: 500;"
+      >Any</a>
+      {AGE_BANDS.map((b) => (
+        <a
+          href={`?ages=${b.slug}`}
+          class={`font-display text-xs px-2 py-1 rounded-full border ${filterAges === b.slug ? 'bg-rust text-paper border-rust' : 'border-bone hover:border-rust'}`}
+          style="font-weight: 500;"
+        >{b.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {visible.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">
+          No camps match that age band. <a href={`/camps/${stateParam}/${cityParam}/${sportParam}/`} class="text-rust hover:underline">Clear age filter</a>.
+        </p>
+      ) : (
+        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {visible.map((c) => (
+            <li class="border border-bone p-5 rounded">
+              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
+                {fmtDateRange(c.start_date, c.end_date)} · ages {c.age_min}–{c.age_max}
+              </p>
+              <h3 class="font-display text-ink text-lg leading-snug mb-2" style="font-weight: 500;">
+                <a href={`/camps/${c.slug}/`} class="hover:text-rust">{c.name}</a>
+              </h3>
+              <p class="font-display text-ink-soft text-sm leading-snug" style="font-weight: 500;">
+                {c.address}, {c.city} · {c.price_text || 'Contact for pricing'}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

@@ -45,6 +45,7 @@ const SITEMAP_FLAG = flagValue('sitemap', null);
 const FILTER_FLAG = flagValue('filter', null);
 const MAX_URLS = parseInt(flagValue('max-urls', '500'), 10);
 const OUT_FLAG = flagValue('out', `imports/harvested-${TODAY}.csv`);
+const MISSES_OUT = flagValue('misses-out', `imports/harvester-misses-${TODAY}.csv`);
 const BASE_URL = flagValue('base', 'https://parentcoachplaybook.com');
 const SUBMITTER_EMAIL = flagValue('email', 'parentcoachplaybook@gmail.com');
 const BULK_TOKEN = process.env.BULK_IMPORT_TOKEN || '';
@@ -92,22 +93,23 @@ async function main() {
 
   const rows = [];
   let visited = 0, withSchema = 0, totalEvents = 0;
+  const misses = [];
 
   for (const url of urls) {
     visited += 1;
     process.stdout.write(`-> ${url}\n`);
     let html;
     try { html = await fetchUrl(url); }
-    catch (e) { console.log(`  ERR fetch: ${e.message}`); continue; }
+    catch (e) { console.log(`  ERR fetch: ${e.message}`); misses.push({ url, reason: 'fetch_error', note: e.message }); continue; }
 
     const blocks = extractJsonLd(html);
-    if (blocks.length === 0) { console.log('  no JSON-LD blocks'); continue; }
+    if (blocks.length === 0) { console.log('  no JSON-LD blocks'); misses.push({ url, reason: 'no_jsonld', note: '' }); continue; }
     withSchema += 1;
     console.log(`  ${blocks.length} JSON-LD block(s)`);
 
     const events = [];
     for (const b of blocks) findEvents(b, events);
-    if (events.length === 0) { console.log('  no Event-type entries'); continue; }
+    if (events.length === 0) { console.log('  no Event-type entries'); misses.push({ url, reason: 'no_events', note: 'JSON-LD present but no Event-type entries' }); continue; }
     console.log(`  ${events.length} Event-type entries`);
     totalEvents += events.length;
 
@@ -115,7 +117,7 @@ async function main() {
       const row = eventToRow(ev, url);
       if (row) rows.push(row);
     }
-    await new Promise((r) => setTimeout(r, 300));
+    await new Promise((r) => setTimeout(r, 600));
   }
 
   console.log('');
@@ -123,6 +125,7 @@ async function main() {
   console.log(`URLs with JSON-LD: ${withSchema}`);
   console.log(`Event entries found: ${totalEvents}`);
   console.log(`Rows extracted: ${rows.length}`);
+  console.log(`URLs skipped (need Chrome flow or manual review): ${misses.length}`);
 
   if (rows.length === 0) { console.log('\nNothing to write. Done.'); return; }
 
@@ -136,7 +139,7 @@ async function main() {
 
   if (HAS_SUBMIT || HAS_SUBMIT_PENDING) {
     console.log('\nSubmitting rows to /api/camps/submit...\n');
-    await submitRows(rows);
+    await submitRows(rows, misses);
   } else {
     console.log('\nReview before importing. Inferred fields to spot-check:');
     console.log('  sport (auto-inferred; "general" if no match)');
@@ -145,6 +148,25 @@ async function main() {
     console.log('\nThen:');
     console.log(`  node scripts/import-camps-csv.mjs ${OUT_FLAG}`);
   }
+
+  if (misses.length > 0 && !HAS_DRY) {
+    const missesPath = resolve(MISSES_OUT);
+    await mkdir(dirname(missesPath), { recursive: true });
+    await writeFile(missesPath, missesToCsv(misses));
+    console.log(`\nWrote ${misses.length} skipped URL(s) to ${MISSES_OUT}`);
+    console.log('  These are URLs the harvester could not extract events from.');
+    console.log('  Feed this file into the Chrome flow as the next round of long-tail targets.');
+  }
+}
+
+function missesToCsv(misses) {
+  const lines = ['url,reason,note,domain'];
+  for (const m of misses) {
+    let domain = '';
+    try { domain = new URL(m.url).hostname.replace(/^www\./, ''); } catch {}
+    lines.push([m.url, m.reason, m.note, domain].map(csvCell).join(','));
+  }
+  return lines.join('\n') + '\n';
 }
 
 async function fetchUrl(url) {
@@ -260,7 +282,7 @@ function eventToRow(ev, sourceUrl) {
   description = description.slice(0, 4000);
   const haystack = [name, description].join(' ');
   const sport = inferSport(haystack);
-  const ages = inferAges(haystack);
+  const ages = inferAgesFromEvent(ev) || inferAges(haystack);
   return {
     name, sport,
     age_min: ages.min == null ? '' : ages.min,
@@ -328,8 +350,34 @@ function inferSport(text) {
   return 'general';
 }
 
+function inferAgesFromEvent(ev) {
+  // schema.org Event.typicalAgeRange ("7-9", "8-12 years", "11-")
+  if (ev.typicalAgeRange) {
+    const s = ev.typicalAgeRange.toString();
+    const m = s.match(/(\d{1,2})\s*-\s*(\d{1,2})/);
+    if (m) return { min: clamp(+m[1]), max: clamp(+m[2]) };
+    const open = s.match(/(\d{1,2})\s*[-+]/);
+    if (open) return { min: clamp(+open[1]), max: 18 };
+  }
+  // schema.org Event.audience.suggestedMinAge / suggestedMaxAge
+  const aud = pick(ev.audience);
+  if (aud) {
+    const min = aud.suggestedMinAge != null ? clamp(+aud.suggestedMinAge) : null;
+    const max = aud.suggestedMaxAge != null ? clamp(+aud.suggestedMaxAge) : null;
+    if (min != null && max != null) return { min, max };
+    if (min != null) return { min, max: 18 };
+  }
+  return null;
+}
+
 function inferAges(text) {
-  let m = text.match(/ages?\s+(\d{1,2})\s*(?:to|-|–|—)\s*(\d{1,2})/i);
+  // boys/girls/players/coed X-Y
+  let m = text.match(/\b(?:boys|girls|kids|youth|athletes?|players?|coed|co-ed)\s+(?:ages?\s+)?(\d{1,2})\s*(?:to|-|\u2013|\u2014)\s*(\d{1,2})\b/i);
+  if (m) return { min: clamp(+m[1]), max: clamp(+m[2]) };
+  // for X-Y year/kid/player
+  m = text.match(/\bfor\s+(\d{1,2})\s*(?:to|-|\u2013|\u2014)\s*(\d{1,2})\s+(?:year|kid|player|athlete)/i);
+  if (m) return { min: clamp(+m[1]), max: clamp(+m[2]) };
+  m = text.match(/ages?\s+(\d{1,2})\s*(?:to|-|–|—)\s*(\d{1,2})/i);
   if (m) return { min: clamp(+m[1]), max: clamp(+m[2]) };
   m = text.match(/\b(\d{1,2})\s*(?:to|-|–|—)\s*(\d{1,2})\s*(?:year|yr|y\.o\.|years? old)/i);
   if (m) return { min: clamp(+m[1]), max: clamp(+m[2]) };
@@ -431,7 +479,40 @@ function csvCell(v) {
   return s;
 }
 
-async function submitRows(rows) {
+// POST with backoff on rate-limit-like responses (503, 429, 502, 504).
+// Other status codes return immediately so dedup/422 rejections don't get retried.
+// Backoff: 30s, 60s, 120s. After 3 retries we give up and return the last response
+// so the caller logs the failure normally.
+const RETRY_STATUSES = new Set([429, 502, 503, 504]);
+const RETRY_BACKOFFS_MS = [30000, 60000, 120000];
+
+async function postWithRetry(url, body) {
+  for (let attempt = 0; attempt <= RETRY_BACKOFFS_MS.length; attempt += 1) {
+    let res;
+    try {
+      res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch (e) {
+      // Network error (connection reset, DNS, etc.) — treat like a retryable
+      // failure if we still have attempts left, otherwise rethrow.
+      if (attempt >= RETRY_BACKOFFS_MS.length) throw e;
+      const wait = RETRY_BACKOFFS_MS[attempt];
+      console.log(`  network error (${e.message}); backing off ${wait/1000}s before retry ${attempt + 1}/${RETRY_BACKOFFS_MS.length}`);
+      await new Promise((r) => setTimeout(r, wait));
+      continue;
+    }
+    if (!RETRY_STATUSES.has(res.status)) return res;
+    if (attempt >= RETRY_BACKOFFS_MS.length) return res;
+    const wait = RETRY_BACKOFFS_MS[attempt];
+    console.log(`  rate-limited (HTTP ${res.status}); backing off ${wait/1000}s before retry ${attempt + 1}/${RETRY_BACKOFFS_MS.length}`);
+    await new Promise((r) => setTimeout(r, wait));
+  }
+}
+
+async function submitRows(rows, misses) {
   let ok = 0, failed = 0;
   const errors = [];
   for (const r of rows) {
@@ -446,6 +527,7 @@ async function submitRows(rows) {
     if (r.age_min === '' || r.age_max === '') {
       failed += 1;
       errors.push({ name: r.name, error: 'age_min/age_max blank — inference did not match' });
+      misses.push({ url: r.website_url || '', reason: 'age_blank', note: r.name });
       console.log(`x ${r.name} -> age inference blank, skipping submit`);
       continue;
     }
@@ -458,11 +540,7 @@ async function submitRows(rows) {
       ...(HAS_SUBMIT ? { import_token: BULK_TOKEN } : {}),
     };
     try {
-      const res = await fetch(`${BASE_URL}/api/camps/submit`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const res = await postWithRetry(`${BASE_URL}/api/camps/submit`, payload);
       const body = await res.json().catch(() => ({}));
       if (res.ok && body.ok) {
         ok += 1;

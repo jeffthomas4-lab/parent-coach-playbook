@@ -397,6 +397,60 @@ export async function listAllCampSlugsApproved(db: D1Database): Promise<string[]
   return (result.results ?? []).map((r) => r.slug);
 }
 
+// City-aware geo helpers. Used by /camps/[state]/[city]/ and friends.
+//
+// The DB stores `city` as the operator's natural text ("Tacoma", "University Place",
+// "Federal Way"). URL slugs are kebab-case ("tacoma", "university-place"). These
+// helpers slugify in JS post-query because SQLite's LIKE is too coarse and we don't
+// have a city_slug column yet (a future migration when state row counts go national).
+
+export function slugifyCity(s: string): string {
+  return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+export async function listCampsByState(db: D1Database, state: string): Promise<Camp[]> {
+  const result = await db
+    .prepare('SELECT * FROM camps WHERE status = ? AND state = ? ORDER BY start_date ASC')
+    .bind('approved', state.toUpperCase())
+    .all<Camp>();
+  return result.results ?? [];
+}
+
+export async function listCampsByCity(db: D1Database, state: string, citySlug: string): Promise<Camp[]> {
+  const rows = await listCampsByState(db, state);
+  const want = citySlug.toLowerCase();
+  return rows.filter((c) => slugifyCity(c.city) === want);
+}
+
+export async function listCampsByCitySport(
+  db: D1Database, state: string, citySlug: string, sport: string,
+): Promise<Camp[]> {
+  const result = await db
+    .prepare('SELECT * FROM camps WHERE status = ? AND state = ? AND sport = ? ORDER BY start_date ASC')
+    .bind('approved', state.toUpperCase(), sport)
+    .all<Camp>();
+  const rows = result.results ?? [];
+  const want = citySlug.toLowerCase();
+  return rows.filter((c) => slugifyCity(c.city) === want);
+}
+
+export async function listStatesWithCounts(db: D1Database): Promise<{ state: string; count: number }[]> {
+  const result = await db
+    .prepare("SELECT state, COUNT(*) AS count FROM camps WHERE status = 'approved' GROUP BY state ORDER BY count DESC")
+    .all<{ state: string; count: number }>();
+  return result.results ?? [];
+}
+
+export async function listCitiesInState(
+  db: D1Database, state: string,
+): Promise<{ city: string; count: number }[]> {
+  const result = await db
+    .prepare("SELECT city, COUNT(*) AS count FROM camps WHERE status = 'approved' AND state = ? GROUP BY city ORDER BY count DESC")
+    .bind(state.toUpperCase())
+    .all<{ city: string; count: number }>();
+  return result.results ?? [];
+}
+
 export async function approveCamp(
   db: D1Database,
   id: string,
@@ -1119,44 +1173,4 @@ export async function upsertDomainQuality(
   await db
     .prepare(
       `INSERT INTO domain_quality
-         (domain, submitted_count, approved_count, rejected_count, high_confidence_count, low_confidence_count, last_seen_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT(domain) DO UPDATE SET
-         submitted_count = submitted_count + ?,
-         approved_count = approved_count + ?,
-         rejected_count = rejected_count + ?,
-         high_confidence_count = high_confidence_count + ?,
-         low_confidence_count = low_confidence_count + ?,
-         last_seen_at = excluded.last_seen_at`,
-    )
-    .bind(
-      domain,
-      submittedDelta,
-      approvedDelta,
-      rejectedDelta,
-      highDelta,
-      lowDelta,
-      now,
-      submittedDelta,
-      approvedDelta,
-      rejectedDelta,
-      highDelta,
-      lowDelta,
-    )
-    .run();
-}
-
-export async function listDomainQuality(db: D1Database): Promise<DomainQuality[]> {
-  const result = await db
-    .prepare(`SELECT * FROM domain_quality ORDER BY submitted_count DESC, last_seen_at DESC`)
-    .all<DomainQuality>();
-  return result.results ?? [];
-}
-
-export async function getDomainQuality(db: D1Database, domain: string): Promise<DomainQuality | null> {
-  const row = await db
-    .prepare('SELECT * FROM domain_quality WHERE domain = ?')
-    .bind(domain)
-    .first<DomainQuality>();
-  return row ?? null;
-}
+         (domain, submitted_count, approved_count, rejected_count, high_confidence_count, low_confidence_count, last_seen_a

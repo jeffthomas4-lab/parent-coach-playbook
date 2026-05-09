@@ -673,4 +673,35 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       applyFilters();
     })();
   </script>
+
+<script is:inline>
+(function () {
+  try {
+    if (!navigator.geolocation) return;
+    if (sessionStorage.getItem('pcp:camps:geo-tried') === '1') return;
+    sessionStorage.setItem('pcp:camps:geo-tried', '1');
+
+    // Don't redirect if the URL already has a query (filter applied).
+    if (location.search) return;
+
+    navigator.geolocation.getCurrentPosition(
+      function (pos) {
+        var lat = pos.coords.latitude;
+        var lon = pos.coords.longitude;
+        // Hit a server endpoint that resolves lat/lng to nearest covered city.
+        fetch('/api/camps/nearest?lat=' + lat + '&lon=' + lon)
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (j) {
+            if (j && j.state && j.city_slug) {
+              location.replace('/camps/' + j.state.toLowerCase() + '/' + j.city_slug + '/');
+            }
+          })
+          .catch(function () { /* stay put */ });
+      },
+      function () { /* permission denied - stay put */ },
+      { timeout: 4000, maximumAge: 600000 }
+    );
+  } catch (e) { /* swallow */ }
+})();
+</script>
 </BaseLayout>

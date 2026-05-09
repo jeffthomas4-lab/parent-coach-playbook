@@ -1,0 +1,170 @@
+---
+// City-level camp listing. The page parents actually use.
+//
+// URL: /camps/wa/seattle/, /camps/wa/university-place/, etc.
+// Filters via query string:
+//   ?ages=5-7         age band slug
+// Sport filter is a sub-path: /camps/<state>/<city>/<sport>/
+//
+// SSR. Cached at the edge for 10 min, stale-while-revalidate 24h.
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { listCampsByCity, slugifyCity, type Camp } from '../../../../lib/camps-db';
+import { CAMP_SPORTS, AGE_BANDS } from '../../../../data/site';
+
+export const prerender = false;
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
+
+const stateParam = (Astro.params.state || '').toLowerCase();
+const cityParam = (Astro.params.city || '').toLowerCase();
+const stateCode = stateParam.toUpperCase();
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+let camps: Camp[] = [];
+if (env?.DB && stateCode && cityParam) {
+  try { camps = await listCampsByCity(env.DB, stateCode, cityParam); }
+  catch (e) { console.error('listCampsByCity failed', e); }
+}
+if (camps.length === 0) {
+  return new Response('Not found', { status: 404 });
+}
+
+const cityLabel = camps[0].city;
+
+// Filters
+const url = new URL(Astro.request.url);
+const filterAges = url.searchParams.get('ages') || '';
+
+let visible = camps;
+if (filterAges) {
+  const ageMap: Record<string, [number, number]> = {
+    '5-7': [5, 7], '8-10': [8, 10], '11-12': [11, 12], '13-14': [13, 14], '15-plus': [15, 22],
+  };
+  const range = ageMap[filterAges];
+  if (range) visible = visible.filter((c) => c.age_max >= range[0] && c.age_min <= range[1]);
+}
+
+const sportsInCity = [...new Set(camps.map((c) => c.sport))];
+const sportPills = CAMP_SPORTS.filter((s) => sportsInCity.includes(s.slug));
+
+const fmtDateRange = (start: string, end: string) => {
+  const M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const [sy, sm, sd] = start.split('-').map(Number);
+  const [, em, ed] = end.split('-').map(Number);
+  if (sm === em) return `${M[sm-1]} ${sd}–${ed}, ${sy}`;
+  return `${M[sm-1]} ${sd} – ${M[em-1]} ${ed}, ${sy}`;
+};
+
+const sportLabel = (slug: string) => CAMP_SPORTS.find((x) => x.slug === slug)?.label || slug;
+
+const title = `Summer camps in ${cityLabel}, ${stateCode}`;
+const description = `${camps.length} verified camp${camps.length === 1 ? '' : 's'} in ${cityLabel}. Filter by sport and age.`;
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: title,
+  numberOfItems: visible.length,
+  itemListElement: visible.slice(0, 50).map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `https://parentcoachplaybook.com/camps/${c.slug}/`,
+    name: c.name,
+  })),
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Camps', item: 'https://parentcoachplaybook.com/camps/' },
+    { '@type': 'ListItem', position: 2, name: stateCode, item: `https://parentcoachplaybook.com/camps/${stateParam}/` },
+    { '@type': 'ListItem', position: 3, name: cityLabel },
+  ],
+};
+
+const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
+---
+<BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
+        <a href="/camps/" class="hover:underline">Camps</a> ·
+        <a href={`/camps/${stateParam}/`} class="hover:underline">{stateCode}</a>
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05]" style="font-weight: 500;">
+        {title}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        {visible.length === camps.length
+          ? `${camps.length} verified camp${camps.length === 1 ? '' : 's'} in ${cityLabel}.`
+          : `${visible.length} of ${camps.length} camps match your filters.`}
+      </p>
+    </div>
+  </section>
+
+  {sportPills.length > 1 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-6 flex flex-wrap gap-2">
+        <span class="font-display italic text-ink-soft text-sm self-center mr-2" style="font-weight: 500;">By sport:</span>
+        <a
+          href={`/camps/${stateParam}/${cityParam}/`}
+          class="font-display text-sm px-3 py-1 rounded-full border bg-rust text-paper border-rust"
+          style="font-weight: 500;"
+        >All</a>
+        {sportPills.map((s) => (
+          <a
+            href={`/camps/${stateParam}/${cityParam}/${s.slug}/`}
+            class="font-display text-sm px-3 py-1 rounded-full border border-bone hover:border-rust"
+            style="font-weight: 500;"
+          >{s.label}</a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="border-b border-bone">
+    <div class="container-px py-4 flex flex-wrap gap-2 items-center">
+      <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">By age:</span>
+      <a
+        href="./"
+        class={`font-display text-xs px-2 py-1 rounded-full border ${!filterAges ? 'bg-rust text-paper border-rust' : 'border-bone hover:border-rust'}`}
+        style="font-weight: 500;"
+      >Any</a>
+      {AGE_BANDS.map((b) => (
+        <a
+          href={ageQS(b.slug)}
+          class={`font-display text-xs px-2 py-1 rounded-full border ${filterAges === b.slug ? 'bg-rust text-paper border-rust' : 'border-bone hover:border-rust'}`}
+          style="font-weight: 500;"
+        >{b.label}</a>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {visible.length === 0 ? (
+        <p class="font-display italic text-ink-soft" style="font-weight: 500;">
+          No camps match those filters. <a href={`/camps/${stateParam}/${cityParam}/`} class="text-rust hover:underline">Clear filters</a>.
+        </p>
+      ) : (
+        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {visible.map((c) => (
+            <li class="border border-bone p-5 rounded">
+              <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
+                {sportLabel(c.sport)} · {fmtDateRange(c.start_date, c.end_date)} · ages {c.age_min}–{c.age_max}
+              </p>
+              <h3 class="font-display text-ink text-lg leading-snug mb-2" style="font-weight: 500;">
+                <a href={`/camps/${c.slug}/`} class="hover:text-rust">{c.name}</a>
+              </h3>
+              <p class="font-display text-ink-soft text-sm leading-snug" style="font-weight: 500;">
+                {c.address}, {c.city} · {c.price_text || 'Contact for pricing'}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

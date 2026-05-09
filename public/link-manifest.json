@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-09T14:29:58.567Z",
+  "generatedAt": "2026-05-09T15:29:29.184Z",
   "count": 194,
   "links": [
     {
@@ -335,6 +335,9 @@
       "sources": [
         "src/pages/about.astro",
         "src/pages/body/[slug].astro",
+        "src/pages/camps/[state]/[city]/[sport]/index.astro",
+        "src/pages/camps/[state]/[city]/index.astro",
+        "src/pages/camps/[state]/index.astro",
         "src/pages/coaching-tips/[slug].astro",
         "src/pages/decisions/[slug].astro",
         "src/pages/scripts/[slug].astro",
