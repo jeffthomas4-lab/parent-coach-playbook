@@ -1,0 +1,9 @@
+url,reason,note,domain
+https://www.ussportscamps.com/tips/volleyball/what-makes-a-great-sports-camp-three-things-to-look-for,fetch_error,HTTP 404,ussportscamps.com
+https://www.ussportscamps.com/volleyball/pennsylvania/camp-hill,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-university-of-memphis,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-myrtle-beach,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-ripon-christian,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-anthem-arizona,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-millworks,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-town-school,no_events,JSON-LD present but no Event-type entries,ussportscamps.com

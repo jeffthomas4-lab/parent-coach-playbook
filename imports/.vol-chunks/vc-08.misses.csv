@@ -1,0 +1,3 @@
+url,reason,note,domain
+https://www.ussportscamps.com/news/volleyball/2011-nike-volleyball-camp-schedule,fetch_error,HTTP 410,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nbc/nbc-volleyball-camp-in-okotoks-ab,no_events,JSON-LD present but no Event-type entries,ussportscamps.com

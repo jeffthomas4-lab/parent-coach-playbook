@@ -1,0 +1,9 @@
+url,reason,note,domain
+https://www.ussportscamps.com/news/volleyball/us-sports-camps-to-host-new-volleyball-camp-in-austin-texas,fetch_error,HTTP 410,ussportscamps.com
+https://www.ussportscamps.com/news/volleyball/mcdaniel-college-coach-new-position-volleyball-camp-this-summer,no_jsonld,,ussportscamps.com
+https://www.ussportscamps.com/news/volleyball/nike-volleyball-camp-adds-a-second-session-to-university-of-mary-washington,no_jsonld,,ussportscamps.com
+https://www.ussportscamps.com/news/volleyball/nike-volleyball-camp--las-vegas-durango-high-school,fetch_error,HTTP 410,ussportscamps.com
+https://www.ussportscamps.com/news/volleyball/arizona-volleyball-camp-new-ages-advanced-camp,fetch_error,HTTP 410,ussportscamps.com
+https://www.ussportscamps.com/volleyball/nike/nike-volleyball-camp-the-gym-houston,no_events,JSON-LD present but no Event-type entries,ussportscamps.com
+https://www.ussportscamps.com/news/volleyball/nike-sports-camps-pennsylvania-volleyball-camp-2018,no_jsonld,,ussportscamps.com
+https://www.ussportscamps.com/news/volleyball/nike-volleyball-camps-2018-summer-volleyball-camp-dates,no_jsonld,,ussportscamps.com
