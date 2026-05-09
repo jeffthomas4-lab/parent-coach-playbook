@@ -1173,4 +1173,44 @@ export async function upsertDomainQuality(
   await db
     .prepare(
       `INSERT INTO domain_quality
-         (domain, submitted_count, approved_count, rejected_count, high_confidence_count, low_confidence_count, last_seen_a
+         (domain, submitted_count, approved_count, rejected_count, high_confidence_count, low_confidence_count, last_seen_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(domain) DO UPDATE SET
+         submitted_count = submitted_count + ?,
+         approved_count = approved_count + ?,
+         rejected_count = rejected_count + ?,
+         high_confidence_count = high_confidence_count + ?,
+         low_confidence_count = low_confidence_count + ?,
+         last_seen_at = excluded.last_seen_at`,
+    )
+    .bind(
+      domain,
+      submittedDelta,
+      approvedDelta,
+      rejectedDelta,
+      highDelta,
+      lowDelta,
+      now,
+      submittedDelta,
+      approvedDelta,
+      rejectedDelta,
+      highDelta,
+      lowDelta,
+    )
+    .run();
+}
+
+export async function listDomainQuality(db: D1Database): Promise<DomainQuality[]> {
+  const result = await db
+    .prepare(`SELECT * FROM domain_quality ORDER BY submitted_count DESC, last_seen_at DESC`)
+    .all<DomainQuality>();
+  return result.results ?? [];
+}
+
+export async function getDomainQuality(db: D1Database, domain: string): Promise<DomainQuality | null> {
+  const row = await db
+    .prepare('SELECT * FROM domain_quality WHERE domain = ?')
+    .bind(domain)
+    .first<DomainQuality>();
+  return row ?? null;
+}
