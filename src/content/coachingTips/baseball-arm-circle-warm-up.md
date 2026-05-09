@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young pitcher swinging the throwing arm in a slow circle, then in faster circles, with the glove arm relaxed at the side."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Touches arm-care safety. Clean voice. Specific rep counts and distances are good."
 ---
 
 A pitcher's arm has to be warm before they throw a single pitch. Cold arms get hurt. Two minutes of arm circles and a five-minute easy catch warms the shoulder enough to handle 30 pitches. Skip this and you're playing with an injury risk.

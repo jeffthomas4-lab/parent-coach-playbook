@@ -51,8 +51,54 @@ const PNW = new Set(['WA', 'OR', 'ID', 'MT', 'AK']);
 const pnw = camps.filter(c => PNW.has(c.state));
 const elsewhere = camps.filter(c => !PNW.has(c.state));
 
-// Serialize camps for client-side JS
-const campsJson = JSON.stringify(camps);
+// Render cards as HTML strings in the frontmatter and inject via set:html.
+// Astro's per-element JSX iteration was costing ~50-100µs per card; at 1308
+// camps that pushed past the Cloudflare Pages Function CPU budget and triggered
+// 1102 errors. A pre-built HTML string is roughly 10x faster on the server.
+const escHtml = (s: unknown) => String(s ?? '')
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+const renderCardHtml = (c: Camp): string => {
+  const photo = c.hero_photo_key
+    ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachplaybook.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" /></div>`
+    : '';
+  const verified = c.verified === 1
+    ? `<span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>`
+    : '';
+  const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
+  const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
+  const price = c.price_text
+    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">${escHtml(c.price_text)}</p>`
+    : '';
+  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ages ${c.age_min}–${c.age_max} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+};
+const pnwHtml = pnw.map(renderCardHtml).join('');
+const nationalHtml = elsewhere.map(renderCardHtml).join('');
+
+// Serialize camps for client-side JS — slim payload. Client filters only
+// touch the fields below, so dropping the rest cuts the JSON payload from
+// ~2 MB to ~400 KB on a 1300-camp directory. Description is truncated to
+// 200 chars (still enough for substring search).
+const campsLite = camps.map(c => ({
+  id: c.id,
+  name: c.name,
+  slug: c.slug,
+  sport: c.sport,
+  age_min: c.age_min,
+  age_max: c.age_max,
+  start_date: c.start_date,
+  end_date: c.end_date,
+  city: c.city,
+  state: c.state,
+  day_or_overnight: c.day_or_overnight,
+  spots_status: c.spots_status,
+  program_type: c.program_type,
+  latitude: c.latitude,
+  longitude: c.longitude,
+  description: (c.description || '').slice(0, 200),
+}));
+const campsJson = JSON.stringify(campsLite);
 // CAMP_SPORTS already includes the camp-only options (multi-sport, outdoor, stem, general, etc).
 const sportsListJson = JSON.stringify(CAMP_SPORTS);
 ---
@@ -249,79 +295,21 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
             <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium">Clear all filters</button>
           </div>
 
-          {/* Camps Grid */}
+          {/* Camps Grid — cards are pre-rendered as an HTML string in the
+               frontmatter (much faster than per-element JSX over 1000+ rows)
+               and injected via set:html. */}
           <div id="camps-directory">
             {pnw.length > 0 && (
               <div class="mb-12">
                 <p class="font-display italic text-rust mb-3 font-medium">Pacific Northwest</p>
-                <div id="pnw-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
-                  {pnw.map((c) => (
-                    <div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id={c.id}>
-                      {c.hero_photo_key && (
-                        <div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;">
-                          <img src={`https://parentcoachplaybook.com/camp-photos/${c.hero_photo_key}`} alt={c.name} class="w-full h-full object-cover" />
-                        </div>
-                      )}
-                      <div class="flex items-start justify-between gap-2 mb-1">
-                        <p class="font-display italic text-ink-soft text-xs font-medium">
-                          {sportLabel(c.sport)} · ages {c.age_min}–{c.age_max} · {fmtDateRange(c.start_date, c.end_date)}
-                        </p>
-                        {c.verified === 1 && (
-                          <span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>
-                        )}
-                      </div>
-                      <a href={`/camps/${c.slug}/`} class="block">
-                        <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">
-                          {c.name}
-                        </h3>
-                      </a>
-                      <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
-                        {c.city}, {c.state} · {c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight'} · {c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full'}
-                      </p>
-                      {c.price_text && (
-                        <p class="font-display italic text-rust text-xs mt-2 font-medium">{c.price_text}</p>
-                      )}
-                      <a href={`/camps/${c.slug}/`} class="t-cta inline-block mt-3">View</a>
-                    </div>
-                  ))}
-                </div>
+                <div id="pnw-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" set:html={pnwHtml}></div>
               </div>
             )}
 
             {elsewhere.length > 0 && (
               <div>
                 <p class="font-display italic text-rust mb-3 font-medium">National</p>
-                <div id="national-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
-                  {elsewhere.map((c) => (
-                    <div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id={c.id}>
-                      {c.hero_photo_key && (
-                        <div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;">
-                          <img src={`https://parentcoachplaybook.com/camp-photos/${c.hero_photo_key}`} alt={c.name} class="w-full h-full object-cover" />
-                        </div>
-                      )}
-                      <div class="flex items-start justify-between gap-2 mb-1">
-                        <p class="font-display italic text-ink-soft text-xs font-medium">
-                          {sportLabel(c.sport)} · ages {c.age_min}–{c.age_max} · {fmtDateRange(c.start_date, c.end_date)}
-                        </p>
-                        {c.verified === 1 && (
-                          <span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>
-                        )}
-                      </div>
-                      <a href={`/camps/${c.slug}/`} class="block">
-                        <h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">
-                          {c.name}
-                        </h3>
-                      </a>
-                      <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
-                        {c.city}, {c.state} · {c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight'} · {c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full'}
-                      </p>
-                      {c.price_text && (
-                        <p class="font-display italic text-rust text-xs mt-2 font-medium">{c.price_text}</p>
-                      )}
-                      <a href={`/camps/${c.slug}/`} class="t-cta inline-block mt-3">View</a>
-                    </div>
-                  ))}
-                </div>
+                <div id="national-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" set:html={nationalHtml}></div>
               </div>
             )}
           </div>
