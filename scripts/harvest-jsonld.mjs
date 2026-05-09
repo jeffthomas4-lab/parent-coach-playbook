@@ -40,6 +40,7 @@ function flagValue(name, fallback) {
 const HAS_DRY = args.includes('--dry');
 const HAS_SUBMIT = args.includes('--submit');
 const HAS_SUBMIT_PENDING = args.includes('--submit-pending');
+const HAS_NO_COLLAPSE = args.includes('--no-collapse');
 const URL_FLAG = flagValue('url', null);
 const SITEMAP_FLAG = flagValue('sitemap', null);
 const FILTER_FLAG = flagValue('filter', null);
@@ -129,17 +130,29 @@ async function main() {
 
   if (rows.length === 0) { console.log('\nNothing to write. Done.'); return; }
 
-  const csv = toCsv(rows);
+  // Collapse same-date Events on the same camp page. Nike-style operators publish
+  // one Event per price tier (overnight / day / half-day) — we want one row per
+  // session with a price range. Disable with --no-collapse if you want the raw
+  // per-offer rows.
+  let finalRows = rows;
+  if (!HAS_NO_COLLAPSE) {
+    finalRows = collapseEvents(rows);
+    if (finalRows.length !== rows.length) {
+      console.log(`Collapsed ${rows.length} rows -> ${finalRows.length} unique sessions (merged price tiers)`);
+    }
+  }
+
+  const csv = toCsv(finalRows);
   if (HAS_DRY) { console.log('\n--- CSV preview (DRY) ---'); console.log(csv); return; }
 
   const outPath = resolve(OUT_FLAG);
   await mkdir(dirname(outPath), { recursive: true });
   await writeFile(outPath, csv);
-  console.log(`\nWrote ${rows.length} rows to ${OUT_FLAG}`);
+  console.log(`\nWrote ${finalRows.length} rows to ${OUT_FLAG}`);
 
   if (HAS_SUBMIT || HAS_SUBMIT_PENDING) {
     console.log('\nSubmitting rows to /api/camps/submit...\n');
-    await submitRows(rows, misses);
+    await submitRows(finalRows, misses);
   } else {
     console.log('\nReview before importing. Inferred fields to spot-check:');
     console.log('  sport (auto-inferred; "general" if no match)');
@@ -463,6 +476,53 @@ const HEADERS = [
   'lunch_included','aftercare_available',
   'program_type','registration_deadline','schedule_text','confidence',
 ];
+
+// Collapse same-date Events on the same camp into one row.
+// Group key: name|start|end|address|zip. For the merged row, take the first row's
+// metadata and merge price_text into a range. Strip URL fragments so the canonical
+// URL points at the parent camp page, not a specific offer anchor.
+function collapseEvents(rows) {
+  const groups = new Map();
+  for (const r of rows) {
+    const key = [r.name, r.start_date, r.end_date, r.address, r.zip].join('|');
+    const existing = groups.get(key);
+    if (!existing) {
+      groups.set(key, { ...r, website_url: stripFragment(r.website_url) });
+      continue;
+    }
+    existing.price_text = mergePriceText(existing.price_text, r.price_text);
+    if (!existing.contact_email && r.contact_email) existing.contact_email = r.contact_email;
+    if (!existing.contact_phone && r.contact_phone) existing.contact_phone = r.contact_phone;
+    if ((existing.age_min === '' || existing.age_min == null) && r.age_min !== '' && r.age_min != null) {
+      existing.age_min = r.age_min;
+      existing.age_max = r.age_max;
+    }
+    const order = { low: 0, medium: 1, high: 2 };
+    if (order[r.confidence] > order[existing.confidence]) existing.confidence = r.confidence;
+  }
+  return Array.from(groups.values());
+}
+
+function stripFragment(url) {
+  if (!url) return url;
+  const i = url.indexOf('#');
+  return i === -1 ? url : url.slice(0, i);
+}
+
+function mergePriceText(a, b) {
+  if (!a) return b || '';
+  if (!b) return a;
+  if (a === b) return a;
+  const all = [a, b];
+  const nums = all.flatMap((s) => [...String(s).matchAll(/\$?(\d+(?:\.\d+)?)/g)].map((m) => parseFloat(m[1])));
+  if (nums.length >= 2) {
+    const min = Math.min(...nums);
+    const max = Math.max(...nums);
+    if (min !== max) return `$${min}-$${max}`;
+    return `$${min}`;
+  }
+  return `${a} / ${b}`;
+}
 
 function toCsv(rows) {
   const lines = [HEADERS.join(',')];
