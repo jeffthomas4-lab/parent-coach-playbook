@@ -52,7 +52,18 @@ async function geocode(address, city, state, zip) {
 }
 
 // Wrangler --json output is an array of result blocks. Find the rows.
-const raw = JSON.parse(await readFile(inputPath, 'utf8'));
+// PowerShell's `>` redirect writes UTF-16 LE BOM, so detect and decode that
+// before JSON.parse — otherwise the file looks like garbage.
+const buf = await readFile(inputPath);
+let text;
+if (buf.length >= 2 && buf[0] === 0xff && buf[1] === 0xfe) {
+  text = buf.slice(2).toString('utf16le'); // UTF-16 LE BOM (PowerShell default)
+} else if (buf.length >= 3 && buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf) {
+  text = buf.slice(3).toString('utf8'); // UTF-8 BOM
+} else {
+  text = buf.toString('utf8');
+}
+const raw = JSON.parse(text);
 const rows = Array.isArray(raw) ? raw[0]?.results ?? raw[0] ?? [] : raw.results ?? [];
 if (!rows.length) {
   console.error('No rows in', inputPath);
