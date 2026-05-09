@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A pop-up between the shortstop and the left fielder, both running toward it, the outfielder calling for it."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Pop-ups between two fielders cause collisions. The rule: outfielders have priority over infielders. Center fielder has priority over corners. Catcher gives way to everyone. When two players call it, the priority player wins. Teach the rule and the call drill keeps them alive.

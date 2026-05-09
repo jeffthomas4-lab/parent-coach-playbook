@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher on the mound fielding a slow ground ball, then turning to first base with the glove arm pointed at the first baseman."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a ball is hit back at the pitcher, they're closer to first base than anyone except the first baseman. The play is fast and the angle is awkward. The pitcher has to field, find first base, and throw on a target without overthinking it.

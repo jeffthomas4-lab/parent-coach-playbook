@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child looking straight up at a pop-up coming down with both hands raised above the head and the mouth open mid-shout 'I got it.'"
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 A pop-up is the only ball where the rule is: yell. Two players running for the same ball collide, and the ball drops between them. The kid who calls it loud and early gets the ball and avoids the bump. Calling is the skill.

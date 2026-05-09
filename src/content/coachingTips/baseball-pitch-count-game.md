@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher on the mound facing a coach acting as the umpire, with a chalkboard or cone setup tracking ball and strike count."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass. Good mental-toughness framing."
 ---
 
 Real pitching isn't throwing strikes for fun. It's throwing strikes when the count matters. This drill puts the pitcher in fake at-bats with real ball and strike calls. The goal is to get to 3 outs before walking 2 batters.

@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "A teenager pitcher shown in three positions: balance point with knee raised, arm at maximum extension, and follow-through with trailing leg."
 publishedAt: 2026-04-13
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated ending."
 ---
 
 Pitching mechanics are taught in pieces, not whole. This drill builds the motion in three stages so the pitcher can isolate and fix one piece at a time.

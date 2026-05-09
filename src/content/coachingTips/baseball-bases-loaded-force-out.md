@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Infield diagram with runners on every base and arrows showing infielders fielding ground balls and stepping on the nearest base for force outs."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass. Force-out logic explained simply."
 ---
 
 When the bases are loaded, every base is a force base. The fielder doesn't have to tag the runner. Step on the bag with the ball before the runner gets there. This simplifies the play. The hardest part is remembering it under pressure.

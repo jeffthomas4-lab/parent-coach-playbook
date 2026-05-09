@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult standing next to a 5-gallon bucket of baseballs, hitting or rolling grounders in rapid succession to a child fielding 20 feet away."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass. Good 'reps, not lectures' framing."
 ---
 
 Good fielders are made by reps, not by lectures. A bucket of 20 balls gets the kid in the position 20 times in a row. Same body shape. Same hands. Same finish. The repetition builds the habit.

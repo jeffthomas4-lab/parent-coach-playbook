@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Side view of a runner sliding feet-first into a base, back leg bent in a 4-shape underneath, lead leg extended to touch the base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sliding is injury-adjacent. Sensible 'grass first, dirt later' progression."
 ---
 
 The bent leg slide (also called the figure-4 slide) is the safest and most common slide. The back leg bends into a 4 shape under the body. The lead leg extends out and touches the base. Done right, the runner stays on the bag and is hard to tag.

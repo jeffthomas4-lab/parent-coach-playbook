@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young pitcher on a mound with the front knee lifted high, body balanced over the back leg, glove and ball held together in front of the chest."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Pitching starts with one foot on the rubber and ends with a throw. Between is the most important part: the balance position, where the front knee is lifted and the body is balanced over the back leg. If the kid can't hold the balance, every pitch will be off.

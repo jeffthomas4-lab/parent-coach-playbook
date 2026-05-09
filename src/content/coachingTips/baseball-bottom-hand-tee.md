@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child holding a small bat with only the bottom hand, swinging through a ball on a tee with the top hand held behind the back."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The bottom hand controls the bat path. The top hand adds power. If the bottom hand is weak, the swing rolls over and the ball gets pulled into the ground. This drill isolates the bottom hand so it gets stronger and learns the right path.
