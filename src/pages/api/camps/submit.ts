@@ -22,6 +22,7 @@ import {
   findFuzzyCampMatches,
   type ConfidenceLevel,
   type DayOrOvernight,
+  type ProgramType,
   type SkillLevel,
   type SpotsStatus,
 } from '../../../lib/camps-db';
@@ -63,6 +64,10 @@ interface SubmitPayload {
   // Phase 6 quality fields
   confidence?: string;
   source_domain?: string;
+  // Program type + league-specific fields (migration 0005)
+  program_type?: string;
+  registration_deadline?: string;
+  schedule_text?: string;
 }
 
 const REQUIRED: (keyof SubmitPayload)[] = [
@@ -160,6 +165,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const spotsStatus = ((data.spots_status as SpotsStatus) ?? 'open') as SpotsStatus;
   if (!['open', 'waitlist', 'full'].includes(spotsStatus)) {
     return fail('spots_status invalid');
+  }
+  const programType = ((data.program_type ?? 'camp').toLowerCase() as ProgramType);
+  if (!['camp', 'league'].includes(programType)) {
+    return fail('program_type must be "camp" or "league"');
+  }
+  if (data.registration_deadline && !isIsoDate(data.registration_deadline)) {
+    return fail('registration_deadline must be YYYY-MM-DD');
   }
 
   if (data.description!.length < 30 || data.description!.length > 4000) {
@@ -302,6 +314,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     submitted_at: submittedAt,
     confidence,
     source_domain: sourceDomain,
+    program_type: programType,
+    registration_deadline: data.registration_deadline?.trim() ? data.registration_deadline.trim() : null,
+    schedule_text: data.schedule_text?.trim() ? data.schedule_text.trim() : null,
   }, autoApprove ? 'approved' : 'pending', bulkImportApprove);
 
   if (autoApprove) {

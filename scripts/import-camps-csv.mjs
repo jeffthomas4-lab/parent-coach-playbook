@@ -105,6 +105,9 @@ for (let i = 0; i < rows.length; i += 1) {
     aftercare_available: String(row.aftercare_available).toLowerCase() === 'true',
     submitted_by_email: SUBMITTER_EMAIL,
     confidence: row.confidence || 'medium',
+    program_type: (row.program_type || 'camp').toLowerCase(),
+    registration_deadline: row.registration_deadline || '',
+    schedule_text: row.schedule_text || '',
     confirm_duplicate: 'true', // pre-acknowledge; the dedup probe still runs server-side
     ...(AUTO_APPROVE ? { import_token: BULK_TOKEN } : {}),
   };
