@@ -16,7 +16,7 @@ Five strands of content. Each strand is a horizontal lane that grows over time:
 4. **Foundations** (NEW) — coach training, certifications, what every parent-coach should know
 5. **Social and emotional** — parent dynamics, identity, mental health, recruiting reality
 
-Cornerstones are essays under Jeff's byline. Short reads are under Maren's or Dan's bylines. Resources are under whichever fits the topic.
+Every piece publishes under the single Editorial byline. The "Voice" column below indicates pace and depth (cornerstone vs short read vs resource), not contributor identity.
 
 ---
 
@@ -26,14 +26,14 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Jeff | `/team-parent/coach-certifications/` | PIPELINE |
-| Why SafeSport training is non-negotiable | Jeff | Foundations short read | PIPELINE |
-| The one-day coaching clinic: what to look for | Dan | Team Parent · Tech setup | PIPELINE |
-| Concussion protocols: the parent-coach version | Jeff | Drive Home (cornerstone) + link to CDC | PIPELINE |
-| Heat, lightning, and weather decision trees | Dan | Team Parent · Game day | PIPELINE |
-| First-aid kit for the dugout (what's in it) | Maren | Team Parent · Game day | PIPELINE |
-| The pre-season parent meeting agenda | Jeff | Lead magnet (PDF) | PIPELINE |
-| What to email parents on day one | Maren | Team Parent · Communication | PIPELINE |
+| The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Editorial | `/team-parent/coach-certifications/` | PIPELINE |
+| Why SafeSport training is non-negotiable | Editorial | Foundations short read | PIPELINE |
+| The one-day coaching clinic: what to look for | Editorial | Team Parent · Tech setup | PIPELINE |
+| Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | PIPELINE |
+| Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | PIPELINE |
+| First-aid kit for the dugout (what's in it) | Editorial | Team Parent · Game day | PIPELINE |
+| The pre-season parent meeting agenda | Editorial | Lead magnet (PDF) | PIPELINE |
+| What to email parents on day one | Editorial | Team Parent · Communication | PIPELINE |
 
 ---
 
@@ -41,13 +41,13 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| How to wash your kid's sports gear (laundry stripping for that smell) | Maren | Team Parent · Tech setup | PIPELINE |
-| Helmet care without ruining the helmet (vinegar/water, no abrasives) | Dan | Team Parent · Equipment | PIPELINE |
-| Cleat care that triples the lifespan | Maren | Team Parent · Equipment | PIPELINE |
-| Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Dan | Add to baseball guide + standalone article | PIPELINE |
-| The car kit: what stays in the trunk all season | Maren | Team Parent · Game day | PIPELINE |
-| The ski-boot dryer hack and other gear-drying tricks | Maren | Team Parent · Equipment | PIPELINE |
-| Color-coded bin system for households with multiple sports | Maren | Team Parent · Communication | PIPELINE |
+| How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | PIPELINE |
+| Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | PIPELINE |
+| Cleat care that triples the lifespan | Editorial | Team Parent · Equipment | PIPELINE |
+| Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | PIPELINE |
+| The car kit: what stays in the trunk all season | Editorial | Team Parent · Game day | PIPELINE |
+| The ski-boot dryer hack and other gear-drying tricks | Editorial | Team Parent · Equipment | PIPELINE |
+| Color-coded bin system for households with multiple sports | Editorial | Team Parent · Communication | PIPELINE |
 
 ---
 
@@ -57,28 +57,28 @@ A new sub-category under Team Parent · Coaching tips.
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| How to chalk a foul line (string-line method, inside edge of the line) | Jeff | Team Parent · Coaching tips | PIPELINE |
-| The 3-4-5 method for soccer field corners | Dan | Team Parent · Coaching tips | PIPELINE |
-| Setting up the soccer center circle (10-yard radius, twine and a stake) | Dan | Team Parent · Coaching tips | PIPELINE |
-| Infield maintenance: watering, raking, the "lip" you don't want | Jeff | Team Parent · Coaching tips | PIPELINE |
-| Field break-down checklist for the post-game crew | Maren | Team Parent · Game day | PIPELINE |
+| How to chalk a foul line (string-line method, inside edge of the line) | Editorial | Team Parent · Coaching tips | PIPELINE |
+| The 3-4-5 method for soccer field corners | Editorial | Team Parent · Coaching tips | PIPELINE |
+| Setting up the soccer center circle (10-yard radius, twine and a stake) | Editorial | Team Parent · Coaching tips | PIPELINE |
+| Infield maintenance: watering, raking, the "lip" you don't want | Editorial | Team Parent · Coaching tips | PIPELINE |
+| Field break-down checklist for the post-game crew | Editorial | Team Parent · Game day | PIPELINE |
 
 ---
 
 ## Coach's-kid dynamics (audit gap, your expansion list)
 
-The hardest emotional terrain. These are cornerstone-quality essays under Jeff's byline plus Dan's perspective.
+The hardest emotional terrain. Cornerstone-quality essays under the Editorial byline.
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| Your kid is the best on the team. Now what. | Jeff | The Game (cornerstone) | PIPELINE |
-| Your kid is the worst on the team. Now what. | Jeff | The Game (cornerstone) | PIPELINE |
-| Tempering a top kid's hunger for growth without crushing the team | Dan | The Game | PIPELINE |
-| Making it fun for everyone when your own kid is struggling | Maren | The Game | PIPELINE |
-| The "playing time" email from another parent | Dan | Team Parent · Communication | PIPELINE |
-| When your kid's friend makes the A team and your kid doesn't | Maren | Drive Home | PIPELINE |
-| The kid on your team who is mean to your kid | Maren | The Game | PIPELINE |
-| Co-parenting the season: who does what | Dan | Drive There | PIPELINE |
+| Your kid is the best on the team. Now what. | Editorial | The Game (cornerstone) | PIPELINE |
+| Your kid is the worst on the team. Now what. | Editorial | The Game (cornerstone) | PIPELINE |
+| Tempering a top kid's hunger for growth without crushing the team | Editorial | The Game | PIPELINE |
+| Making it fun for everyone when your own kid is struggling | Editorial | The Game | PIPELINE |
+| The "playing time" email from another parent | Editorial | Team Parent · Communication | PIPELINE |
+| When your kid's friend makes the A team and your kid doesn't | Editorial | Drive Home | PIPELINE |
+| The kid on your team who is mean to your kid | Editorial | The Game | PIPELINE |
+| Co-parenting the season: who does what | Editorial | Drive There | PIPELINE |
 
 ---
 
@@ -88,11 +88,11 @@ Scripts and frameworks for the hardest parent conversations.
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| How to talk to a problem parent on your team | Jeff | Team Parent · Communication | PIPELINE |
-| How to handle a parent yelling at the ref | Maren | Team Parent · Communication | PIPELINE |
-| Disagreeing with your co-coach in front of the team | Dan | Team Parent · Communication | PIPELINE |
-| The friend you coached with who isn't coming back | Maren | Drive Home | PIPELINE |
-| What to say when a parent asks "why isn't my kid pitching?" | Dan | Team Parent · Communication | PIPELINE |
+| How to talk to a problem parent on your team | Editorial | Team Parent · Communication | PIPELINE |
+| How to handle a parent yelling at the ref | Editorial | Team Parent · Communication | PIPELINE |
+| Disagreeing with your co-coach in front of the team | Editorial | Team Parent · Communication | PIPELINE |
+| The friend you coached with who isn't coming back | Editorial | Drive Home | PIPELINE |
+| What to say when a parent asks "why isn't my kid pitching?" | Editorial | Team Parent · Communication | PIPELINE |
 
 ---
 
@@ -102,11 +102,11 @@ A small mini-series that can become a flagship cornerstone.
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| Rec league vs travel ball: the honest comparison | Jeff | Foundations (cornerstone) | PIPELINE |
-| Six questions to ask before joining a travel organization | Jeff | Lead magnet (PDF, 1 page) | PIPELINE |
-| The travel-ball politics: how to stay out of them | Maren | Team Parent · Travel | PIPELINE |
-| What every family decides for itself (no judgment from us) | Jeff | Foundations | PIPELINE |
-| The night you decide to walk away from a travel team | Dan | Drive Home | PIPELINE |
+| Rec league vs travel ball: the honest comparison | Editorial | Foundations (cornerstone) | PIPELINE |
+| Six questions to ask before joining a travel organization | Editorial | Lead magnet (PDF, 1 page) | PIPELINE |
+| The travel-ball politics: how to stay out of them | Editorial | Team Parent · Travel | PIPELINE |
+| What every family decides for itself (no judgment from us) | Editorial | Foundations | PIPELINE |
+| The night you decide to walk away from a travel team | Editorial | Drive Home | PIPELINE |
 
 ---
 
@@ -116,12 +116,12 @@ Lighter touch, with explicit links out to professionals (AASP, SafeSport).
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| The kid who throws up before tryouts | Maren | Drive There | PIPELINE |
-| When to involve a sport psychologist | Jeff | Foundations · Mental health | PIPELINE |
-| Identity and burnout: the kid who quits at 14 | Jeff | Drive Home (cornerstone) | PIPELINE |
-| Specialization vs. multi-sport, by age | Jeff | Foundations | PIPELINE |
-| The college-recruiting reality check | Jeff | Foundations (cornerstone) | PIPELINE |
-| Your own emotional regulation as the parent-coach | Jeff | Drive Home (cornerstone) | PIPELINE |
+| The kid who throws up before tryouts | Editorial | Drive There | PIPELINE |
+| When to involve a sport psychologist | Editorial | Foundations · Mental health | PIPELINE |
+| Identity and burnout: the kid who quits at 14 | Editorial | Drive Home (cornerstone) | PIPELINE |
+| Specialization vs. multi-sport, by age | Editorial | Foundations | PIPELINE |
+| The college-recruiting reality check | Editorial | Foundations (cornerstone) | PIPELINE |
+| Your own emotional regulation as the parent-coach | Editorial | Drive Home (cornerstone) | PIPELINE |
 
 ---
 
@@ -155,30 +155,30 @@ Separate planning doc. The repository is a real engineering effort and lives in 
 We are not building all of this at once. The math:
 
 - **2 short reads a week** is a sustainable cadence for an AI-assisted workflow
-- **1 cornerstone essay a month** is realistic for Jeff
+- **1 cornerstone essay a month** is the realistic Editorial pace
 - **1 new lead magnet a month** keeps the Resources page growing without overwhelming editing time
 
 Priority for the next 90 days, in order:
 
 **Month 1 (May 2026):**
 1. Six questions to ask before joining a travel organization (lead magnet PDF)
-2. Your kid is the best on the team / Your kid is the worst on the team (paired Jeff cornerstones)
+2. Your kid is the best on the team / Your kid is the worst on the team (paired cornerstones)
 3. The certifications you actually need (Foundations short read)
 4. Three Team Parent shorts: laundry stripping, helmet care, cleat care
 5. Pre-season parent meeting agenda (lead magnet PDF)
 
 **Month 2 (June 2026):**
-1. Rec league vs travel ball: the honest comparison (Jeff cornerstone)
-2. The college-recruiting reality check (Jeff cornerstone)
-3. How to chalk a foul line + the 3-4-5 method (Dan + Jeff, paired Coaching Tips pieces)
-4. The car kit + the ski boot dryer hack (Maren shorts)
+1. Rec league vs travel ball: the honest comparison (cornerstone)
+2. The college-recruiting reality check (cornerstone)
+3. How to chalk a foul line + the 3-4-5 method (paired Coaching Tips pieces)
+4. The car kit + the ski boot dryer hack (shorts)
 5. Tryouts evaluation rubric (lead magnet PDF)
 
 **Month 3 (July 2026):**
-1. The "playing time" email scripts (Dan)
-2. Your own emotional regulation as the parent-coach (Jeff cornerstone)
+1. The "playing time" email scripts
+2. Your own emotional regulation as the parent-coach (cornerstone)
 3. What to Buy V2 upgrades for baseball, softball, soccer (the three highest-traffic guides)
-4. The travel-ball politics (Maren)
+4. The travel-ball politics
 5. Pre-game pocket card (lead magnet PDF)
 
 After that, the rest of the pipeline happens at 2-per-week sustainable cadence. The roadmap above gives roughly 9-12 months of content if we follow it strictly.
@@ -190,10 +190,10 @@ After that, the rest of the pipeline happens at 2-per-week sustainable cadence. 
 When you sit down to draft a post:
 
 1. Pick a topic from the table above
-2. Note the recommended voice (Maren / Dan / Jeff)
-3. Open `VOICES.md` and copy the relevant bio paragraph
+2. Note the recommended depth (cornerstone vs short read vs resource)
+3. Open `EDITORIAL_VOICE.md` and re-read the rules
 4. Open `AI_WORKFLOW.md` and copy the prompt template
-5. Generate a draft with the topic + voice paragraph + tagging hints (sport, age, season, phase)
+5. Generate a draft with the topic + voice rules + tagging hints (sport, age, season, phase)
 6. Edit. Read aloud. Confirm voice fingerprint. Ship.
 7. Update this roadmap: change status from PIPELINE → SHIPPED with the URL.
 

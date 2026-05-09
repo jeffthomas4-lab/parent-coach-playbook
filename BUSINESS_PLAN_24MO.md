@@ -53,7 +53,7 @@ Pulled from the strategic audit and a fresh inventory of `src/content/`.
 
 **Reads it correctly:** the product is in better shape than 90% of media properties at this stage. The growth problem from here is distribution and SERP visibility, not the product. (Strategic audit conclusion, still true.)
 
-**One contradiction to flag:** CONTENT_ROADMAP.md still references Maren / Dan / Jeff bylines. EDITORIAL_VOICE.md has already moved to a single "Editorial" voice. The roadmap document needs a sweep to remove persona references. Tracked in §10 below.
+**One housekeeping item:** all surfaces have been migrated to a single Editorial byline. Persona references have been swept out of the strategy docs as part of this plan.
 
 ---
 

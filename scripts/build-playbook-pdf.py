@@ -446,8 +446,7 @@ def build_story():
         [Paragraph('THE PARENT-COACH PLAYBOOK', ParagraphStyle('im1',
             fontName='Mono-Medium', fontSize=8, textColor=INK))],
         [Paragraph('A small site for parents who coach, drive, snack-pack, and supervise the group chat. ' +
-                   'Edited by Jeff Thomas. Written by Maren Bell, Dan Kowalski, and Jeff. ' +
-                   'Maren and Dan are composite voices. Read about them at parentcoachplaybook.com/contributors. ' +
+                   'Edited by Jeff Thomas. Single Editorial byline across the site. ' +
                    '© 2026. All rights reserved.',
             ParagraphStyle('im2', fontName='Inter', fontSize=8, leading=12,
                 textColor=INK_SOFT))],

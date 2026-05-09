@@ -29,7 +29,7 @@ If you object to any of those nine, say which and I'll adjust before Wave 1 ship
 - Update the wordmark to `Parent Coach Playbook` everywhere (nav, footer, OG title, manifest, sitemap, package.json description)
 - Add a small visible wordmark header strip above the nav on every page (or confirm the existing nav logo qualifies)
 - Replace all bylines on articles with `Parent Coach Playbook Editorial`
-- Strip Maren, Dan, Jeff names from: every article frontmatter, About, Contributors page (delete), homepage hero footnote, ArticleCard component, NewsletterSignup blurb, footer, AI workflow doc
+- Strip all persona contributor names from: every article frontmatter, About, Contributors page (delete), homepage hero footnote, ArticleCard component, NewsletterSignup blurb, footer, AI workflow doc. Single Editorial byline everywhere.
 - Remove avatar circles from `ArticleCard.astro` and the homepage Latest Reads list
 - Replace the homepage "Pick a situation" eyebrow. Candidates: `What's happening this week`, `Pick what fits today`, `Where this lands for you`, `For the Saturday you're having`. I'll go with `Where you are right now` unless you pick a different one.
 - Search-and-replace `manifesto` → `the long read` (or `the cornerstone`) throughout

@@ -152,7 +152,7 @@ def filled_practice_plan_block():
          Paragraph(
             '5 min: stretching + dynamic warmup<br/>'
             '10 min: throwing program (partners, 30 ft)<br/>'
-            '15 min: cutoff drill at second base (Coach Dan leads)<br/>'
+            '15 min: cutoff drill at second base (assistant coach leads)<br/>'
             '20 min: live BP rotation (3 hitters, 4 fielders, rotate every 4 swings)<br/>'
             '5 min: huddle, snack, reminders for Saturday',
             mini)],
@@ -262,7 +262,7 @@ def build_story():
     s.append(Paragraph('More tools, every week.', display_md))
     s.append(Paragraph(
         "Subscribe to the Parent-Coach Playbook newsletter and we'll send you new templates and short reads as we publish them. "
-        "Maren writes most posts. Dan writes the coaching-your-own-kid stuff. Jeff writes the longer cornerstone pieces.",
+        "One Editorial voice across the site. Cornerstone essays once a month, short reads in between.",
         body))
     s.append(Spacer(1, 6))
     s.append(Paragraph('PARENTCOACHPLAYBOOK.COM', ParagraphStyle('cta_url',
@@ -275,8 +275,7 @@ def build_story():
         [Paragraph('THE PARENT-COACH PLAYBOOK', ParagraphStyle('im1',
             fontName='Mono-Medium', fontSize=8, textColor=INK))],
         [Paragraph('A small site for parents who coach, drive, snack-pack, and supervise the group chat. ' +
-                   'Edited by Jeff Thomas. Written by Maren Bell, Dan Kowalski, and Jeff. ' +
-                   'Maren and Dan are composite voices. Read about them at parentcoachplaybook.com/contributors. ' +
+                   'Edited by Jeff Thomas. Single Editorial byline across the site. ' +
                    '© 2026. All rights reserved.',
             ParagraphStyle('im2', fontName='Inter', fontSize=8, leading=12,
                 textColor=INK_SOFT))],
