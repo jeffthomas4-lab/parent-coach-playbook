@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Two young children racing from home plate to first base, one running straight along the baseline while the other takes a wider arc around it."
 publishedAt: 2026-01-12
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "File ended mid-sentence at 'Variation:'. Replaced with standard 'If they're struggling / If they've got it' progressions."
 ---
 
 Base runners who understand spacing and angles beat runners who are confused about where to go. This drill turns that into a game so kids remember it.
@@ -28,4 +41,6 @@ Base runners who understand spacing and angles beat runners who are confused abo
 
 **What to look for:** The straight line beats the curve. Some kids will still try to run the wide angle because they think base running means "running to the side." It doesn't.
 
-**Variation:** 
+**If they're struggling:** Move the start line closer to first. The race is shorter so they finish before they get tired.
+
+**If they've got it:** Add a second leg. After they touch first, they round and head for second. Now they have to think about the angle into the next base, not just the line to the first one.

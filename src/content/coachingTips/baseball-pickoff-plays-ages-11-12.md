@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Pitcher on mound, runner at first base leaning off the bag, first baseman positioned to receive a throw from the pitcher."
 publishedAt: 2026-03-09
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated ending with struggling/got-it variants."
 ---
 
 A pickoff play teaches communication and timing. The pitcher and first baseman have to move in sync, and the runner has to decide whether to dive back or run.
@@ -29,4 +42,6 @@ A pickoff play teaches communication and timing. The pitcher and first baseman h
 
 **What to look for:** Timing and communication. If the pitcher throws too early or too late, the play fails. If the first baseman doesn't sprint, they won't be there to catch it.
 
-*
+**If they're struggling:** Walk through the count and the throw at half speed. Get the timing first, then add the runner.
+
+**If they've got it:** Add a second runner at second. Now the pitcher has two threats and has to pick which to hold.

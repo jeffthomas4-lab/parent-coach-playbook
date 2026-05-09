@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner caught between two bases, two fielders with the ball, runner about to commit to running back toward the closest base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a runner gets caught between bases (a "pickle"), most kids panic and run in zigzags. The right move: commit to one direction, force the fielder to throw, then go the other way if you can. This drill teaches the read.

@@ -26,4 +26,8 @@ Pitching mechanics are taught in pieces, not whole. This drill builds the motion
 
 After 30 reps, the pitcher will have thrown 10 actual pitches from a mechanically sound position.
 
-**What to look for:** Posture at balance point, stride direction, and front shoulder alignm
+**What to look for:** Posture at balance point, stride direction, and front shoulder alignment. If the pitcher falls off the mound at the finish, check the balance point first.
+
+**If they're struggling:** Drop to Step 1 only. Hold the balance point for five seconds. No throws until the hold is steady.
+
+**If they've got it:** Have them throw to spots — inside corner, outside corner, low. Mechanics are a tool, not the goal.

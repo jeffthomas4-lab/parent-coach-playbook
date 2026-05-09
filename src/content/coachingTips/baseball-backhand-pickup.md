@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player on one knee, glove turned over with thumb pointing down, fielding a ball rolled to their throwing-hand side."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass. Good specifics on body position."
 ---
 
 Most ground balls are easy because the glove gets in front of the body. The hard ones are hit to the side where the glove has to reach across the body, turned upside down. This is the position kids fail in tryouts. Teach it now.

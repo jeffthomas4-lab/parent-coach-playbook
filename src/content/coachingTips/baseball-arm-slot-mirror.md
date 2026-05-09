@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two children facing each other in throwing position, mirroring each other's arm angle just before release."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Most throwing problems are arm-slot problems. Sidearm throws float. Below-three-quarters throws sail. Over-the-top throws stay on a line. This drill uses a partner as a mirror so the kid sees what their arm is actually doing.
