@@ -113,12 +113,8 @@ const sportLabel = (slug: string): string => {
     .join(' ');
 };
 
-const sportPretty = sportLabel(camp.sport);
-
-// Cross-link to the relevant What to Buy + sizing guide if one exists.
-const sportGuide = BUYING_GUIDES.find((g) => g.slug === camp.sport);
-
-const dayLabel = camp.day_or_overnight === 'day' ? 'Day camp' : 'Overnight camp';
+// Camp-only computed values. Declare null/empty defaults so the state-page
+// dispatch branch can render without these being referenced via undefined.
 const skillLabel: Record<string, string> = {
   beginner: 'Beginner',
   intermediate: 'Intermediate',
@@ -139,24 +135,37 @@ const normalizeUrl = (raw: string | null): string | null => {
   if (/^https?:\/\//i.test(trimmed)) return trimmed;
   return `https://${trimmed}`;
 };
-const websiteHref = normalizeUrl(camp.website_url);
-const registrationHref = normalizeUrl(camp.registration_url);
 
-// Parse gallery_keys (stored as JSON array of R2 keys). Tolerant of empty/null.
+let sportPretty = '';
+let sportGuide: typeof BUYING_GUIDES[number] | undefined = undefined;
+let dayLabel = '';
+let websiteHref: string | null = null;
+let registrationHref: string | null = null;
 let galleryKeys: string[] = [];
-if (camp.gallery_keys) {
-  try {
-    const parsed = JSON.parse(camp.gallery_keys);
-    if (Array.isArray(parsed)) galleryKeys = parsed.filter((k) => typeof k === 'string' && k.length > 0);
-  } catch {
-    // ignore malformed
-  }
-}
+let hasGeo = false;
+let mapsHref = '';
 
-const hasGeo = typeof camp.latitude === 'number' && typeof camp.longitude === 'number';
-const mapsHref = hasGeo
-  ? `https://www.google.com/maps/search/?api=1&query=${camp.latitude},${camp.longitude}`
-  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${camp.address}, ${camp.city}, ${camp.state} ${camp.zip}`)}`;
+if (camp) {
+  sportPretty = sportLabel(camp.sport);
+  sportGuide = BUYING_GUIDES.find((g) => g.slug === camp.sport);
+  dayLabel = camp.day_or_overnight === 'day' ? 'Day camp' : 'Overnight camp';
+  websiteHref = normalizeUrl(camp.website_url);
+  registrationHref = normalizeUrl(camp.registration_url);
+
+  if (camp.gallery_keys) {
+    try {
+      const parsed = JSON.parse(camp.gallery_keys);
+      if (Array.isArray(parsed)) galleryKeys = parsed.filter((k) => typeof k === 'string' && k.length > 0);
+    } catch {
+      // ignore malformed
+    }
+  }
+
+  hasGeo = typeof camp.latitude === 'number' && typeof camp.longitude === 'number';
+  mapsHref = hasGeo
+    ? `https://www.google.com/maps/search/?api=1&query=${camp.latitude},${camp.longitude}`
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${camp.address}, ${camp.city}, ${camp.state} ${camp.zip}`)}`;
+}
 ---
 {stateCities && stateCities.length > 0 ? (
   <BaseLayout
