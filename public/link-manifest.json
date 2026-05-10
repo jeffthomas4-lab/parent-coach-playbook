@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-10T21:24:30.192Z",
-  "count": 319,
+  "generatedAt": "2026-05-10T21:33:20.483Z",
+  "count": 336,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -160,6 +160,12 @@
       ]
     },
     {
+      "url": "https://jedfoundation.org/jed-sports/",
+      "sources": [
+        "src/content/body/post-injury-depression.md"
+      ]
+    },
+    {
       "url": "https://jissn.biomedcentral.com/",
       "sources": [
         "src/content/body/creatine-youth-athletes.md"
@@ -219,6 +225,7 @@
         "src/content/body/humidity-dew-point-practice-modifiers.md",
         "src/content/body/league-questions-checklist.md",
         "src/content/body/youth-football-safety-briefing.md",
+        "src/content/body/youth-track-and-field-safety-briefing.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -240,6 +247,12 @@
       "url": "https://nccsir.unc.edu/",
       "sources": [
         "src/content/body/youth-cheer-stunt-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://nfhslearn.com/",
+      "sources": [
+        "src/content/body/coach-coach-conflicts.md"
       ]
     },
     {
@@ -298,6 +311,7 @@
       "sources": [
         "src/content/body/broken-bone-vs-sprain.md",
         "src/content/body/cleats-and-foot-safety.md",
+        "src/content/body/growth-spurt-injury-window.md",
         "src/content/body/hand-finger-fracture-triage.md",
         "src/content/body/knee-braces-youth-sport.md",
         "src/content/body/patellar-dislocation.md",
@@ -310,6 +324,7 @@
         "src/content/body/youth-soccer-safety-briefing.md",
         "src/content/body/youth-softball-safety-briefing.md",
         "src/content/body/youth-swimming-safety-briefing.md",
+        "src/content/body/youth-track-and-field-safety-briefing.md",
         "src/content/body/youth-volleyball-safety-briefing.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
@@ -361,6 +376,7 @@
       "url": "https://positivecoach.org/",
       "sources": [
         "src/content/body/bus-and-banquet-conduct.md",
+        "src/content/body/coach-coach-conflicts.md",
         "src/content/body/coach-targeting-pattern.md",
         "src/content/body/coach-verbal-abuse.md",
         "src/content/body/sideline-parent-conduct.md",
@@ -466,6 +482,12 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://saferbus.fmcsa.dot.gov/",
+      "sources": [
+        "src/content/body/bus-charter-vetting.md"
       ]
     },
     {
@@ -611,6 +633,7 @@
         "src/content/body/bus-and-banquet-conduct.md",
         "src/content/body/camp-counselor-vetting.md",
         "src/content/body/coach-background-checks.md",
+        "src/content/body/coach-coach-conflicts.md",
         "src/content/body/coach-targeting-pattern.md",
         "src/content/body/coach-verbal-abuse.md",
         "src/content/body/cyberbullying-team-apps.md",
@@ -673,6 +696,7 @@
       "sources": [
         "src/content/body/anaphylaxis-and-epipen-on-field.md",
         "src/content/body/asthma-attack-on-field.md",
+        "src/content/body/chlorine-asthma-swimmers.md",
         "src/content/body/restaurant-food-allergies-travel.md"
       ]
     },
@@ -718,13 +742,18 @@
         "src/content/body/eating-disorders-in-sport.md",
         "src/content/body/emergency-action-plan-template.md",
         "src/content/body/energy-drinks-youth.md",
+        "src/content/body/fainting-syncope-on-field.md",
         "src/content/body/febrile-seizure-on-field.md",
+        "src/content/body/growth-spurt-injury-window.md",
         "src/content/body/hand-finger-fracture-triage.md",
         "src/content/body/knee-braces-youth-sport.md",
         "src/content/body/lgbtq-youth-athlete-safety.md",
+        "src/content/body/mosquito-borne-illness.md",
         "src/content/body/nosebleed-and-eye-injury.md",
         "src/content/body/patellar-dislocation.md",
         "src/content/body/play-through-pain-question.md",
+        "src/content/body/post-injury-depression.md",
+        "src/content/body/protein-powder-safety.md",
         "src/content/body/sideline-first-aid-kit.md",
         "src/content/body/soccer-headgear-data.md",
         "src/content/body/suicidal-ideation-youth-athletes.md",
@@ -788,6 +817,7 @@
       "url": "https://www.acep.org/",
       "sources": [
         "src/content/body/broken-bone-vs-sprain.md",
+        "src/content/body/fainting-syncope-on-field.md",
         "src/content/body/patellar-dislocation.md",
         "src/content/body/shoulder-dislocation-on-field.md",
         "src/content/body/spinal-injury-cervical-spine-protocol.md",
@@ -859,6 +889,12 @@
       ]
     },
     {
+      "url": "https://www.apa.org/",
+      "sources": [
+        "src/content/body/post-injury-depression.md"
+      ]
+    },
+    {
       "url": "https://www.apa.org/topics/sport-exercise/competitive-anxiety",
       "sources": [
         "src/content/body/performance-anxiety.md"
@@ -874,6 +910,7 @@
       "url": "https://www.astm.org/",
       "sources": [
         "src/content/body/goalkeeper-gear-safety.md",
+        "src/content/body/soccer-goalpost-anchoring.md",
         "src/content/body/youth-lacrosse-girls-safety-briefing.md",
         "src/pages/governing-bodies.astro"
       ]
@@ -933,6 +970,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/easternequineencephalitis/",
+      "sources": [
+        "src/content/body/mosquito-borne-illness.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/heads-up/",
       "sources": [
         "src/content/body/concussion-protocol-basics.md",
@@ -958,7 +1001,15 @@
     {
       "url": "https://www.cdc.gov/healthy-swimming/",
       "sources": [
+        "src/content/body/chlorine-asthma-swimmers.md",
+        "src/content/body/diving-board-rules-supervision.md",
         "src/content/body/swim-ear-infection-prevention.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/mosquitoes/",
+      "sources": [
+        "src/content/body/mosquito-borne-illness.md"
       ]
     },
     {
@@ -977,6 +1028,12 @@
       "url": "https://www.cdc.gov/ticks/",
       "sources": [
         "src/content/body/tick-prevention-lyme-disease.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/westnile/",
+      "sources": [
+        "src/content/body/mosquito-borne-illness.md"
       ]
     },
     {
@@ -1002,6 +1059,12 @@
       "sources": [
         "src/content/body/used-gear-safety.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.cpsc.gov/safety-education/safety-education-centers/sports-recreation/soccer-goal-safety",
+      "sources": [
+        "src/content/body/soccer-goalpost-anchoring.md"
       ]
     },
     {
@@ -1109,6 +1172,12 @@
       ]
     },
     {
+      "url": "https://www.fmcsa.dot.gov/safety/motorcoach-safety",
+      "sources": [
+        "src/content/body/bus-charter-vetting.md"
+      ]
+    },
+    {
       "url": "https://www.foodallergy.org/",
       "sources": [
         "src/content/body/anaphylaxis-and-epipen-on-field.md",
@@ -1168,6 +1237,12 @@
       ]
     },
     {
+      "url": "https://www.heart.org/",
+      "sources": [
+        "src/content/body/fainting-syncope-on-field.md"
+      ]
+    },
+    {
       "url": "https://www.hecc.net/",
       "sources": [
         "src/content/body/hockey-equipment-safety.md",
@@ -1197,6 +1272,12 @@
       "url": "https://www.iii.org/article/auto-insurance-basics",
       "sources": [
         "src/content/body/transporting-other-peoples-kids.md"
+      ]
+    },
+    {
+      "url": "https://www.informed-sport.com/",
+      "sources": [
+        "src/content/body/protein-powder-safety.md"
       ]
     },
     {
@@ -1262,6 +1343,12 @@
       "url": "https://www.littleleague.org/playing-rules/pitch-count/",
       "sources": [
         "src/content/body/youth-pitcher-arm-care.md"
+      ]
+    },
+    {
+      "url": "https://www.lung.org/clean-air/indoor-air",
+      "sources": [
+        "src/content/body/chlorine-asthma-swimmers.md"
       ]
     },
     {
@@ -1359,6 +1446,7 @@
         "src/content/body/spinal-injury-cervical-spine-protocol.md",
         "src/content/body/wrestling-headgear-skin-infections.md",
         "src/content/body/youth-football-safety-briefing.md",
+        "src/content/body/youth-track-and-field-safety-briefing.md",
         "src/content/body/youth-volleyball-safety-briefing.md",
         "src/content/body/youth-wrestling-safety-briefing.md",
         "src/pages/governing-bodies.astro"
@@ -1608,9 +1696,27 @@
       ]
     },
     {
+      "url": "https://www.nsfsport.com/",
+      "sources": [
+        "src/content/body/protein-powder-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.ntsb.gov/",
+      "sources": [
+        "src/content/body/bus-charter-vetting.md"
+      ]
+    },
+    {
       "url": "https://www.nwcaonline.com/",
       "sources": [
         "src/content/body/youth-wrestling-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://www.olympic.org/",
+      "sources": [
+        "src/content/body/growth-spurt-injury-window.md"
       ]
     },
     {
@@ -1710,6 +1816,7 @@
     {
       "url": "https://www.redcross.org/take-a-class/water-safety",
       "sources": [
+        "src/content/body/diving-board-rules-supervision.md",
         "src/content/body/hotel-pool-safety.md",
         "src/content/body/open-water-swim-safety.md",
         "src/content/body/pool-deck-rules.md",
@@ -1789,6 +1896,12 @@
         "src/content/body/identity-beyond-the-sport.md",
         "src/content/body/performance-anxiety.md",
         "src/content/body/pre-game-routine.md"
+      ]
+    },
+    {
+      "url": "https://www.teamusa.com/usa-diving",
+      "sources": [
+        "src/content/body/diving-board-rules-supervision.md"
       ]
     },
     {
@@ -1895,6 +2008,12 @@
       "sources": [
         "src/content/body/youth-cheer-stunt-safety-briefing.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usada.org/athletes/substances/supplement-411/",
+      "sources": [
+        "src/content/body/protein-powder-safety.md"
       ]
     },
     {
@@ -2062,6 +2181,8 @@
     {
       "url": "https://www.usaswimming.org/safe-sport",
       "sources": [
+        "src/content/body/chlorine-asthma-swimmers.md",
+        "src/content/body/diving-board-rules-supervision.md",
         "src/content/body/hotel-pool-safety.md",
         "src/content/body/open-water-swim-safety.md",
         "src/content/body/pool-deck-rules.md",
@@ -2083,6 +2204,7 @@
     {
       "url": "https://www.usatf.org/",
       "sources": [
+        "src/content/body/youth-track-and-field-safety-briefing.md",
         "src/content/guides/cross-country.md",
         "src/content/guides/track-field.md",
         "src/content/rules/cross-country.md",
@@ -2147,6 +2269,7 @@
       "url": "https://www.ussoccer.com/",
       "sources": [
         "src/content/body/goalkeeper-gear-safety.md",
+        "src/content/body/soccer-goalpost-anchoring.md",
         "src/content/body/youth-soccer-safety-briefing.md",
         "src/content/rules/soccer.md",
         "src/pages/governing-bodies.astro"
