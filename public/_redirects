@@ -1,0 +1,5 @@
+# Permanent redirect for the renamed lead magnet.
+# Astro's redirects: config in astro.config.mjs doesn't fire under the
+# Cloudflare adapter; this file is read natively by Cloudflare Pages.
+/resources/drive-home-playbook /resources/what-to-say-when 301
+/resources/drive-home-playbook/ /resources/what-to-say-when/ 301
