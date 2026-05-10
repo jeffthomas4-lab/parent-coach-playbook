@@ -216,6 +216,7 @@ const SAFETY_CATEGORY_ENUM = [
   'conduct',                  // bullying, hazing, sideline parents, refs, locker room
   'aquatic',                  // pool/lake/deck rules, shallow-water blackout
   'cyber',                    // team apps, photo policies, recruiting DMs
+  'nutrition-substance',      // caffeine, energy drinks, creatine, banned substances, supplements
   'crisis-mental-health',     // deferred mini-launch; schema-ready, not slate-ready
 ] as const;
 
