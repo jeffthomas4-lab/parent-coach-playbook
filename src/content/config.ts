@@ -2,9 +2,9 @@ import { defineCollection, z } from 'astro:content';
 
 const SPORT_ENUM = [
   'baseball','softball','soccer','basketball',
-  'flag-football','football','football-7v7','hockey','lacrosse','lacrosse-boys','lacrosse-girls','volleyball',
+  'flag-football','football','football-7v7','hockey','field-hockey','lacrosse','lacrosse-boys','lacrosse-girls','volleyball',
   'swimming','track-field','cross-country','tennis','golf','crew',
-  'martial-arts','gymnastics','cheer','stunt',
+  'martial-arts','wrestling','gymnastics','cheer','stunt',
   'theater','band','choir','dance','ballet',
   'multi-sport','multi-activity','performing-arts',
 ] as const;
