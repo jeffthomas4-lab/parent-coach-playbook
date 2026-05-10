@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player at the elbow receiving a pass and shooting over defenders with a high release."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Minor: free throw line is 15 feet, three-point arc is much further; the 'intersection' framing is loose. Body left as-is."
 ---
 
 The elbow is a key shooting spot for bigs and wings. It's at the intersection of the free throw line and the three-point line (about 12-15 feet). This drill builds confidence at that range.

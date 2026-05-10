@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Five small drawings showing high knees, butt kicks, side shuffles, walking lunges, and arm swings on a basketball court."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "'Cold muscles tear' opener has temperature without crossing into medical advice."
 ---
 
 Cold muscles tear. Eight minutes of dynamic movement gets the body ready for cuts, jumps, and contact. Same routine before every practice. Kids learn it once and run it themselves.

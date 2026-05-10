@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child bouncing a basketball in front of their body, bouncing the ball in front of the left foot then the right foot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Hands-meet-at-top-of-bounce cue is the right teach for ages 8-10."
 ---
 
 The crossover dribble moves the ball from one side of the body to the other in one bounce. It's the foundation for dribble moves. Start stationary so the focus is only on the bounce pattern, not movement.

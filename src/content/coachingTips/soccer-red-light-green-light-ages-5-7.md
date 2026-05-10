@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Players accelerate and stop to traffic light signals"
 publishedAt: 2026-01-17
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Game-based 5-7 warm-up. Soccer vocab correct."
 ---
 
 This is the classic game with a ball. It teaches first touch, ball control, and stopping power. And kids will run hard because it's a game.

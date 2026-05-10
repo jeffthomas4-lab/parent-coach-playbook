@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young players, one dribbling and trying to create space while a defender applies pressure from the side."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Effort-percentage scaffolding (25/50/75%) is a good repeatable pattern across the basketball series."
 ---
 
 Dribbling in practice is easy when nobody's guarding you. This drill adds a defender who plays 50% effort, not full pressure. The dribbler practices reading pressure and using moves.

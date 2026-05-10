@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A line of children dribbling basketballs from one baseline to the other, each in their own lane, eyes up."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "'Look at the back of the kid in front of them' is a sticky concrete cue."
 ---
 
 Practice starts with the ball in their hands. The dribble warm-up gets the muscles working, the eyes up, and the brain ready before any structured drill. Six minutes, lots of touches.

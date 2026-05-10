@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Seven v seven possession battle in constrained space"
 publishedAt: 2026-04-07
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard 7v7 possession scrimmage. Soccer vocab correct."
 ---
 
 Possession soccer builds understanding of movement, positioning, and passing rhythm. This 7v7 forces players to think about how to keep the ball against pressure.

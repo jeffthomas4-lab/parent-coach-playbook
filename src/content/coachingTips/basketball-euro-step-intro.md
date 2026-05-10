@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player driving to the basket, stepping left then right (or right then left) to avoid a defender and finish."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Walk-the-footwork-first cue is the right teach for an advanced finish."
 ---
 
 The Euro step is an advanced dribble move. The player plants one foot, steps the other way, then finishes. It's deceptive and hard to defend.

@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Attacker shooting toward goal, ball rebounds off the goalkeeper or post, attacker immediately gets the second shot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Realistic situational shooting drill. Soccer vocab correct."
 ---
 
 Rebounding is a fundamental. Not every shot is clean. Sometimes the keeper makes a save or the post gives it back. The second shot often goes in because the keeper is out of position.

@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Young players dribbling a soccer ball through pairs of cones set up as 'gates' across the field at varying speeds."
 publishedAt: 2026-01-10
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body truncated mid-word at 'the closer the touches nee' before the affiliate block. Missing rest of What to look for plus If they're struggling / If they've got it variations. Affiliate disclosure is present and FTC-compliant."
 ---
 
 Dribbling through gates teaches kids to change direction while keeping the ball close. This is the foundation of all ball movement.

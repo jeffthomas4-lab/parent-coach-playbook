@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young defender standing between a passer and receiver, hand extended to deny the passing lane."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "'Body in the lane, not just a hand' is the load-bearing teach. Minor: 'the reps stops' should be 'the rep stops' (left as-is)."
 ---
 
 Denying the pass is active defense. The defender positions their body between the ball and their player. This prevents easy passes and creates turnovers.

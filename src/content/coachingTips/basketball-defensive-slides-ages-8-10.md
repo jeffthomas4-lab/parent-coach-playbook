@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A defender in athletic stance shuffling laterally between two cones placed 10 feet apart, staying low and facing forward."
 publishedAt: 2026-02-19
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body had been truncated; completed with struggle/got-it tiers."
 ---
 
 Defensive footwork is taught before defensive concepts. This drill isolates the sliding motion so kids build the habit of staying in front of their player.

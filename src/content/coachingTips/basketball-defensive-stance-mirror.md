@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young children facing each other in defensive stances, one moving slowly while the other mirrors the movement."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "No-ball start for ages 5-7 is the right call. Stance/Slide/Mirror/Hands cue is consistent."
 ---
 
 The defensive stance is the foundation. This drill teaches the position without the ball. Feet wide, knees bent, hands active. Just stance and simple movement.

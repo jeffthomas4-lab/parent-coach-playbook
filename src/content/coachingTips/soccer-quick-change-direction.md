@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player dribbling forward, planting their outside foot, then cutting the ball back with their inside foot to change direction 90 degrees."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cutting drill with concrete steps. Soccer vocab correct."
 ---
 
 Cutting is the foundation of all dribbling moves. A sharp plant of the outside foot followed by a quick touch with the inside foot creates a 90-degree direction change that leaves the defender behind.

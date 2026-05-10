@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young child dribbling a basketball while another child chases them, both moving in an open court area."
 publishedAt: 2026-01-13
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Fixed yards to feet on basketball court. Body had been truncated; completed with struggle/got-it tiers."
 ---
 
 Dribbling control improves when kids have to do it under pressure. Dribble tag forces them to keep the ball while being chased.

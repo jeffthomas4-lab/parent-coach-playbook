@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player receiving a pass on their back, using their first touch to turn and face the field."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "First-touch-and-turn drill, useful concept. Soccer vocab correct."
 ---
 
 Most passes come with the receiver's back to goal. They have to receive and turn in one motion to be effective. This is about using the first touch to change body position.

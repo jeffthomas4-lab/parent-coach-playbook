@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Kicker standing 18 feet from goal with a wall of defenders between them and the goal, runner curving the ball around the wall."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "18-foot free kick distance is short relative to typical youth scenarios; consider verifying against age-group standards. Drill is otherwise solid."
 ---
 
 Free kicks teach technique and strategy. A wall blocks the direct shot. The runner curves the ball around the wall or a teammate passes it to an open space. Both require planning.

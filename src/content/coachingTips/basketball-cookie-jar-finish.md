@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child in shooting stance with arm extended, hand finishing with relaxed wrist and fingers pointing downward toward the rim."
+editorial:
+  qualityGrade: 9
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cookie jar metaphor lands. Set/Bend/Lift/Cookie shot cue is concrete and memorable."
 ---
 
 The cookie jar is the follow-through. Hand finishes relaxed with fingers pointing at the rim, like you're putting your hand in a cookie jar on a high shelf. This is the hardest part of the shot to teach and the most important.

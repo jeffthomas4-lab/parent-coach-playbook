@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "One defender pressuring the ball, one defending the first passing option, one covering deep space."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Classic defensive-shape concept made concrete. Soccer vocab correct."
 ---
 
 Defensive shape means one defender pressures the ball, one defender covers the most dangerous pass, and one defender balances to the opposite side. This teaches positional defense.

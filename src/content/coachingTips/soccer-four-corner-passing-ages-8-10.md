@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Four players positioned at corners of a square, passing the ball around and moving to the next corner."
 publishedAt: 2026-02-04
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body truncated mid-word at '**Var'. Missing variations / If they're struggling / If they've got it sections."
 ---
 
 This drill teaches first touch and passing accuracy while building movement. Kids learn to receive, turn, and pass in one motion.
