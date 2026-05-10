@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T05:48:23.985Z",
+  "generatedAt": "2026-05-10T06:04:29.729Z",
   "count": 194,
   "links": [
     {
@@ -55,12 +55,6 @@
       "url": "https://aau.com/sports/volleyball",
       "sources": [
         "src/pages/governing-bodies.astro"
-      ]
-    },
-    {
-      "url": "https://app.kit.com/forms/9388648/subscriptions",
-      "sources": [
-        "src/pages/newsletter.astro"
       ]
     },
     {
@@ -219,6 +213,12 @@
       "url": "https://orthoinfo.aaos.org/en/diseases--conditions/osgood-schlatter-disease-knee-pain/",
       "sources": [
         "src/content/body/growth-plates-basics.md"
+      ]
+    },
+    {
+      "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
+      "sources": [
+        "src/pages/newsletter.astro"
       ]
     },
     {

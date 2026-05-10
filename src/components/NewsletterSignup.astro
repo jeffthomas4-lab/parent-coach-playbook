@@ -1,19 +1,22 @@
 ---
-// Kit (formerly ConvertKit) inline signup form.
+// Newsletter signup CTA.
 //
-// IMPORTANT: 9388648 is the form's NUMERIC ID — that's what the
-// /forms/<id>/subscriptions endpoint expects. The hash 4b28f916b5 you'll
-// see on the hosted form (parent-coach-playbook.kit.com/4b28f916b5) is
-// the form's data-uid, used for styling/tracking only. Don't swap them
-// or POSTs get silently rejected. Override via PUBLIC_KIT_FORM_ID for
-// branch previews. Lead-magnet flows can pass a different formId prop.
+// We link out to Kit's hosted form rather than embed our own. Kit's own
+// page handles the subscription end-to-end (validation, confirmation
+// email, redirect to /welcome/) which is more reliable than posting to
+// their endpoint ourselves. The visitor briefly sees a Kit-hosted page,
+// then lands back on parentcoachplaybook.com/welcome/ with the downloads.
+//
+// To swap the destination form, change KIT_HOSTED_URL.
 
 interface Props {
   variant?: 'inline' | 'card' | 'compact';
   headline?: string;
   blurb?: string;
-  formId?: string;
   buttonLabel?: string;
+  /** kept for back-compat with callers; not currently used */
+  formId?: string;
+  /** kept for back-compat with callers; not currently used */
   collectFirstName?: boolean;
 }
 
@@ -21,12 +24,10 @@ const {
   variant = 'inline',
   headline = 'Slide into the inbox',
   blurb = 'One short read a week from the Parent Coach Playbook Editorial. Easy unsubscribe.',
-  formId = import.meta.env.PUBLIC_KIT_FORM_ID || '9388648',
   buttonLabel = 'Subscribe',
-  collectFirstName = true,
 } = Astro.props;
 
-const action = `https://app.kit.com/forms/${formId}/subscriptions`;
+const KIT_HOSTED_URL = 'https://parent-coach-playbook.kit.com/4b28f916b5';
 const isCard = variant === 'card';
 const isCompact = variant === 'compact';
 ---
@@ -41,44 +42,15 @@ const isCompact = variant === 'compact';
     <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
       {blurb}
     </p>
-    <form
-      action={action}
-      method="POST"
-      data-newsletter-form
-      class="mt-4 grid gap-2"
+    <a
+      href={KIT_HOSTED_URL}
+      class="btn-soft mt-4 inline-block"
     >
-      {collectFirstName && (
-        <div>
-          <label class="sr-only" for="ns-first-name-compact">First name</label>
-          <input
-            type="text"
-            id="ns-first-name-compact"
-            name="fields[first_name]"
-            placeholder="First name"
-            autocomplete="given-name"
-            class="w-full px-3 py-2 font-body border border-bone bg-paper text-ink rounded focus:outline-none focus:border-rust"
-            style="font-size: 0.95rem;"
-          />
-        </div>
-      )}
-      <label class="sr-only" for="ns-email-compact">Email address</label>
-      <input
-        type="email"
-        id="ns-email-compact"
-        name="email_address"
-        required
-        placeholder="you@example.com"
-        autocomplete="email"
-        class="w-full px-3 py-2 font-body border border-bone bg-paper text-ink rounded focus:outline-none focus:border-rust"
-        style="font-size: 0.95rem;"
-      />
-      <button type="submit" class="btn-soft mt-1">
-        {buttonLabel}
-      </button>
-      <p class="font-display italic text-ink-soft text-xs mt-1">
-        Easy unsubscribe.
-      </p>
-    </form>
+      {buttonLabel}
+    </a>
+    <p class="font-display italic text-ink-soft text-xs mt-3">
+      Easy unsubscribe.
+    </p>
   </aside>
 ) : (
   <section class={`${isCard ? 'border border-ink bg-ink text-paper p-10' : 'border-t border-b border-bone py-14'}`}>
@@ -91,8 +63,7 @@ const isCompact = variant === 'compact';
           Newsletter
         </p>
         <h3
-          class={`font-display text-3xl md:text-[2.5rem] leading-[1.07] ${isCard ? 'text-paper' : 'text-ink'}`}
-          class="font-medium"
+          class={`font-display text-3xl md:text-[2.5rem] leading-[1.07] font-medium ${isCard ? 'text-paper' : 'text-ink'}`}
         >
           {headline}
         </h3>
@@ -101,44 +72,17 @@ const isCompact = variant === 'compact';
         </p>
       </div>
 
-      <form
-        action={action}
-        method="POST"
-        data-newsletter-form
-        class="md:col-span-6 grid gap-3"
-      >
-        {collectFirstName && (
-          <div>
-            <label class="sr-only" for="ns-first-name">First name</label>
-            <input
-              type="text"
-              id="ns-first-name"
-              name="fields[first_name]"
-              placeholder="First name"
-              autocomplete="given-name"
-              class={`w-full px-4 py-3 font-body border rounded ${isCard ? 'bg-paper text-ink border-paper' : 'bg-paper text-ink border-bone'} focus:outline-none focus:border-rust`}
-            />
-          </div>
-        )}
-        <div class="flex flex-col sm:flex-row gap-2">
-          <label class="sr-only" for="ns-email">Email address</label>
-          <input
-            type="email"
-            id="ns-email"
-            name="email_address"
-            required
-            placeholder="you@example.com"
-            autocomplete="email"
-            class={`flex-1 px-4 py-3 font-body border rounded ${isCard ? 'bg-paper text-ink border-paper' : 'bg-paper text-ink border-bone'} focus:outline-none focus:border-rust`}
-          />
-          <button type="submit" class="btn-soft">
-            {buttonLabel}
-          </button>
-        </div>
-        <p class={`font-display italic text-xs mt-1 ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
+      <div class="md:col-span-6">
+        <a
+          href={KIT_HOSTED_URL}
+          class={`btn-soft inline-block ${isCard ? '' : ''}`}
+        >
+          {buttonLabel}
+        </a>
+        <p class={`font-display italic text-xs mt-3 ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
           We won't send you spam. Unsubscribe whenever.
         </p>
-      </form>
+      </div>
     </div>
   </section>
 )}
