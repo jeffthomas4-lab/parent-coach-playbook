@@ -10,6 +10,19 @@ import { renderTitle } from '../../lib/title';
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
+// Body & Safety hub. Top-line tile on /reads/, sits with the topic grid as a
+// peer entry point even though /body/ is its own URL space and collection.
+const bodyAll = (await getCollection('body', ({ data }) => isLive(data)))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const bodyTile = {
+  slug: 'body',
+  label: 'Body & Safety',
+  blurb: 'Concussion, arm care, sleep, heat, growth plates. Plus the safety canon coming online: equipment certs, lightning, league vetting.',
+  count: bodyAll.length,
+  recent: bodyAll[0] || null,
+};
+
 // Latest 8 for the right rail (slim list)
 const latest = all.slice(0, 8);
 
@@ -80,6 +93,29 @@ const fmtDate = (d: Date) =>
             Pick what's <em class="text-rust">on your mind</em>.
           </h2>
           <div class="grid sm:grid-cols-2 gap-4">
+            {/* Body & Safety hub — top-line tile, leads the grid */}
+            <a
+              href="/body/"
+              class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
+            >
+              <TopicIcon topic="body" size={48} class="mb-4" />
+              <p class="font-display italic text-rust text-xs font-medium mb-1">Hub</p>
+              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+                {bodyTile.label}
+              </h3>
+              <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{bodyTile.blurb}</p>
+              <div class="mt-4 pt-4 border-t border-bone">
+                <p class="font-display italic text-ink-soft text-xs mb-2 font-medium">
+                  {bodyTile.count} {bodyTile.count === 1 ? 'piece' : 'pieces'}
+                </p>
+                {bodyTile.recent && (
+                  <p class="font-display text-ink text-sm leading-snug group-hover:text-rust transition-colors">
+                    <span class="font-semibold">Latest:</span> <span set:html={renderTitle(bodyTile.recent.data.title)} />
+                  </p>
+                )}
+              </div>
+            </a>
+
             {topicData.map((t) => (
               <a
                 href={`/reads/${t.slug}/`}

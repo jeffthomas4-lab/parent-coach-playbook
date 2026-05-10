@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-10T06:04:29.729Z",
-  "count": 194,
+  "generatedAt": "2026-05-10T14:52:49.986Z",
+  "count": 195,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -961,6 +961,12 @@
         "src/content/body/identity-beyond-the-sport.md",
         "src/content/body/performance-anxiety.md",
         "src/content/body/pre-game-routine.md"
+      ]
+    },
+    {
+      "url": "https://www.teamusa.com/usa-softball",
+      "sources": [
+        "src/content/coachingTips/softball-baserunning-leadoffs-ages-11-12.md"
       ]
     },
     {

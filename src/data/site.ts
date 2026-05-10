@@ -36,15 +36,15 @@ export const NAV = [
 ];
 
 // Items inside the Tools nav dropdown. Six items, organized by what parents are doing.
-// Body and Mental Skills consolidated under "Body and mind" (linked sub-pages from the
-// Body hub). Adaptive, Recruiting, Rules, Camps, Governing bodies still live but moved
+// Body & Safety hub now lives under /reads/ as a top-line tile, not in Tools. The
+// body collection still owns /body/ as its URL home; only the navigation parent moved.
+// Adaptive, Recruiting, Rules, Camps, Governing bodies still live but moved
 // to footer or accessed via Tools landing page. Decisions and Scripts live in /reads/ flow.
 export const TOOLS_NAV = [
   { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost of any sport. Pre-filled, edit any line, share the result.' },
   { slug: 'sports',           label: 'By sport',          href: '/sports/',           blurb: 'Every read, drill, calendar, and tool grouped by sport. The fastest entry point.' },
   { slug: 'season-calendar',  label: 'Season calendar',   href: '/season-calendar/',  blurb: 'Twelve months by sport and level. Tryouts, peaks, off-season.' },
   { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15, by sport.' },
-  { slug: 'body',             label: 'Body and mind',     href: '/body/',             blurb: 'Concussion, arm care, sleep, mental skills. What to know, what to ask the doc.' },
   { slug: 'pendulum',         label: 'The pendulum',      href: '/youth-sports-pendulum/', blurb: 'Where is your family on the fun-to-performance spectrum right now?' },
   { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
 ] as const;

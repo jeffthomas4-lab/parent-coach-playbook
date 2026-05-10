@@ -198,4 +198,12 @@ const paper = '#FAF6EE';
       <line x1="68" y1="68" x2="92" y2="68" stroke={ink} stroke-width="1.5" stroke-opacity="0.6" />
     </g>
   )}
+
+  {topic === 'body' && (
+    <g>
+      {/* Shield (safety) holding a heart (body) — the Body & Safety hub */}
+      <path d="M 60 14 L 96 26 L 96 60 Q 96 90, 60 106 Q 24 90, 24 60 L 24 26 Z" fill={sage} fill-opacity="0.35" stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+      <path d="M 60 84 C 52 78, 36 70, 36 56 C 36 48, 44 44, 50 48 C 54 50, 58 54, 60 58 C 62 54, 66 50, 70 48 C 76 44, 84 48, 84 56 C 84 70, 68 78, 60 84 Z" fill={rust} fill-opacity="0.6" stroke={ink} stroke-width="2.5" stroke-linejoin="round" />
+    </g>
+  )}
 </svg>

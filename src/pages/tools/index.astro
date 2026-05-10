@@ -7,7 +7,6 @@ import { PROFILES } from '../../data/costDefaults';
 
 // Counts for the tile blurbs
 const calendars  = await getCollection('seasonCalendars', ({ data }) => isLive(data));
-const bodyTopics = await getCollection('body',           ({ data }) => isLive(data));
 const pathways   = await getCollection('pathways',       ({ data }) => isLive(data));
 const recruiting = await getCollection('recruiting',     ({ data }) => isLive(data));
 const adaptive   = await getCollection('adaptive',       ({ data }) => isLive(data));
@@ -16,12 +15,12 @@ const decisions  = await getCollection('decisions',      ({ data }) => isLive(da
 const profileCount = PROFILES.length;
 
 // Add live counts to each tool's metadata.
+// Body & Safety lives under /reads/ now, not Tools, so no body count here.
 const toolsWithCounts = TOOLS_NAV.map(t => {
   const counts: Record<string, string> = {
     'season-calendar':  `${calendars.length} calendars`,
     'pathways':         `${pathways.length} sports`,
     'cost-calculator':  `${profileCount} profiles`,
-    'body':             `${bodyTopics.length} topics`,
     'recruiting':       `${recruiting.length} pieces`,
     'rules':            `${rules.length} sports`,
     'adaptive':         `${adaptive.length} topics`,
@@ -55,7 +54,7 @@ const toolsWithCounts = TOOLS_NAV.map(t => {
     <div class="container-px py-8 md:py-10 max-w-3xl">
       <p class="font-display italic text-rust mb-3 text-sm font-medium">How this works</p>
       <p class="font-display text-ink leading-relaxed text-base md:text-lg">
-        Each tool is a self-contained reference. The cost calculator runs the numbers. The season calendar shows the year. The body hub tells you what to ask the doctor. The scripts hub tells you what to say. Pick the one you need.
+        Each tool is a self-contained reference. The cost calculator runs the numbers. The season calendar shows the year. The pathways show what good looks like at every age. Pick the one you need. The Body & Safety hub and the scripts hub now live under <a href="/reads/" class="text-rust hover:underline">Reads</a>.
       </p>
     </div>
   </section>
@@ -88,7 +87,7 @@ const toolsWithCounts = TOOLS_NAV.map(t => {
         The tools work as <em class="text-rust">one system</em>.
       </h2>
       <p class="font-display text-ink leading-relaxed mt-4 max-w-3xl">
-        Pick a calendar to see the shape of your kid's year. Open the matching pathway to see what good looks like at this age. Run the cost calculator to see what it costs. Read the body topics that match the sport. Use the scripts when the hard moment hits.
+        Pick a calendar to see the shape of your kid's year. Open the matching pathway to see what good looks like at this age. Run the cost calculator to see what it costs. The body topics and the scripts that match the moment live in <a href="/reads/" class="text-rust hover:underline">Reads</a>.
       </p>
     </div>
   </section>
