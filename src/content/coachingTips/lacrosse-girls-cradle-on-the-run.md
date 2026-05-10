@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player sprinting through cones while cradling the ball, the stick swinging in rhythm with the running stride."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cradle vocab clean throughout."
 ---
 
 Real lacrosse is sprinting with the ball. The cradle has to hold up at full speed and through cuts. This drill puts the kid in motion and tests whether the cradle works under pressure.

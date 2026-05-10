@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player shooting over a defender's outstretched hands on the spot."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Contested-shot drill, sport language clean. Could use more rep volume per shooter."
 ---
 
 Game shooting happens against defenders. This drill adds a defender playing at 75% intensity. The shooter must still get a clean look and the defender must contest without fouling.

@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young defender standing with feet set, knees bent, hands behind their back as an offensive player drives toward them."
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Flagged sensitive: charge drills at age 11-12 carry collision risk. Consider adding a safety note that contact should be at controlled speeds, and that many youth leagues discourage teaching the charge. Lead has four sentences."
 ---
 
 The charge is an advanced defensive play. The defender sets their feet in the path of the driver. The driver has to run into them. This is legal defense when done correctly.

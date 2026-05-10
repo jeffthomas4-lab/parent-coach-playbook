@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players sprinting toward the same loose ball, both dropping low to scoop, one boxing the other out with the body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Boys 11-12 contact drill; body shielding within rules. Sensitive flag set for contact context."
 ---
 
 Real ground balls are contested. Two players going for the same ball. The kid who gets there first, with the right body position, wins. This drill simulates that battle. Hard but essential at this age.

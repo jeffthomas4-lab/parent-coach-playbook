@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player receiving a pass with the lacrosse stick head, the stick giving slightly back as the ball arrives so it doesn't bounce out."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean foundations piece; egg analogy works."
 ---
 
 A hard catch bounces the ball out. A soft catch absorbs it. The stick has to give a little when the ball arrives, like catching an egg. This drill teaches the give.

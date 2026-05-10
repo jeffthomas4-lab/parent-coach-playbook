@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Four defenders positioned against four offensive players, with one defender helping inside while others recover, no scorekeeping."
 publishedAt: 2026-03-05
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated body with two voice-matched scaling sentences. Standard shell-defense drill, sport language clean."
 ---
 
 Shell defense teaches the core of team defense: on-ball pressure, help-and-recovery, and switching. This drill is game-paced but no score.
@@ -26,4 +39,8 @@ Shell defense teaches the core of team defense: on-ball pressure, help-and-recov
 4. Run for 5 minutes, then rotate.
 5. Do 25 minutes total so all kids play both sides.
 
-**What to look for:** Help timing and recovery speed. Do defenders recover to their original player or chase the ball? Good team d
+**What to look for:** Help timing and recovery speed. Do defenders recover to their original player or chase the ball? Good team defense moves together on every pass.
+
+**If they're struggling:** Drop to three on three. Walk through the rotations first with no score, just shape.
+
+**If they've got it:** Add a 14-second shot clock. Pressure forces the offense to attack and tests whether the defenders can hold their rotations.

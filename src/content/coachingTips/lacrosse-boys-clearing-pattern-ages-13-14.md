@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Players in the defensive zone executing three passes to escape pressure, with each receiver moving to open space."
 publishedAt: 2026-03-16
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated 'continue the cl...' tail with two voice-matched sentences."
 ---
 
 A clear is how a team escapes defensive pressure. At 13-14, players can learn a structured three-pass pattern that gets the ball to open space.
@@ -27,4 +40,4 @@ A clear is how a team escapes defensive pressure. At 13-14, players can learn a 
 
 **What to look for:**
 
-Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the cl
+Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the clear into the attack zone. Stop and reset any rep where two players occupy the same lane.

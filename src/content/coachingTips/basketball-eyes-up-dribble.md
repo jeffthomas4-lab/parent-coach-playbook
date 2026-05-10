@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child dribbling while looking ahead at targets on the court, not down at the ball."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Hold-up-fingers struggle variation is a great forced-eyes-up trick."
 ---
 
 Ball watchers can't see the defense or where to go next. This drill forces the eyes to stay up. Start slow and let them build confidence that they don't need to look down.

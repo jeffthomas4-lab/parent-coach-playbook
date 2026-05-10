@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player shooting at four cones placed in the corners of an empty lacrosse goal, ball flying toward the upper-right cone."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pull-Step-Snap-Follow shooting cue is clear and correct."
 ---
 
 A shot in the middle of the goal hits the goalie. A shot in the corner is a goal. This drill teaches kids to aim, not just shoot. Cones in the corners are the targets. Hit the cone, score the goal.

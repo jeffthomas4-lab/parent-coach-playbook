@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A player dribbling forward, planting their feet for a half-second, then pushing back while dribbling in the opposite direction."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clear plant-and-explode framing, no AI residue."
 ---
 
 The hesitation pull-back is when you plant your feet as if you're stopping, the defender commits forward, then you explode backward. This is a real NBA move. Master it here before using it in games.

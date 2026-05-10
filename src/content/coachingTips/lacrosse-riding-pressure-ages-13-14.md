@@ -6,6 +6,19 @@ age: "13-14"
 focus: "situational"
 publishedAt: 2026-03-19
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic-tagged. Uses 'defenseman' (boys'-default for generic). Riders close space, no body checks described."
 ---
 
 Riding is offensive pressure on the clear. This drill teaches young players to funnel the ball and force bad passes.

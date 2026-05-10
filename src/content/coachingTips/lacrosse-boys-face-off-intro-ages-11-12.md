@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Two players at center field crouched with sticks ready for a face-off, with other players positioned to support the ground ball."
 publishedAt: 2026-03-10
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated 'rotation might be th...' tail with two voice-matched sentences."
 ---
 
 Face-offs are 50-50 plays. This drill teaches young players the mechanics and builds confidence in winning ground balls at the center.
@@ -27,4 +40,4 @@ Face-offs are 50-50 plays. This drill teaches young players the mechanics and bu
 
 **What to look for:**
 
-Each player should be low and balanced. If they're standing up or leaning, they can't react fast. The first move should be explosive, not cautious. The player with the best first step often wins the ball. Both players should fight for the ground ball after the initial contact. If one player is getting beaten every rep, rotation might be th
+Each player should be low and balanced. If they're standing up or leaning, they can't react fast. The first move should be explosive, not cautious. The player with the best first step often wins the ball. Both players should fight for the ground ball after the initial contact. If one player is getting beaten every rep, rotation might be the answer. Pair them with someone closer to their level so both kids get reps that build confidence.

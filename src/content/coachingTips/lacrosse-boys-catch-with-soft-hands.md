@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player receiving a pass with the lacrosse stick head, the stick giving slightly back as the ball arrives so it doesn't bounce out."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Soft-hands catch fundamentals for ages 8-10."
 ---
 
 A hard catch bounces the ball out. A soft catch absorbs it. The stick has to give a little when the ball arrives, like catching an egg. This drill teaches the give.

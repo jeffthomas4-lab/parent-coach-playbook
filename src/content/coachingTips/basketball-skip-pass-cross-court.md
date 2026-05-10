@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A player passing over a defender to reach a teammate on the opposite side of the court."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Skip pass drill, sport language correct. Triangle setup is clear."
 ---
 
 The skip pass goes over a defender to hit a teammate on the opposite wing. It's a high-level passing skill. This drill teaches the arc and the distance.

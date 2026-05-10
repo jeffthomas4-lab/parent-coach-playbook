@@ -6,6 +6,19 @@ age: "13-14"
 focus: "situational"
 publishedAt: 2026-03-16
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic lacrosse tag; reads as boys' default (defenseman, short-stick). Affiliate disclosure present. Em dashes in affiliate boilerplate left untouched per scope."
 ---
 
 A clear is how a team escapes defensive pressure. At 13-14, players can learn a structured three-pass pattern that gets the ball to open space.

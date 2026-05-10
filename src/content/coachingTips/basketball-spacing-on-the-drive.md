@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player driving toward the basket while the off-ball wing slides behind to fill the corner spot, maintaining 15 feet between players."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong spacing drill with concrete relocations. Lead paragraph runs four sentences instead of three."
 ---
 
 When a teammate drives, the four other offensive players have a job. The kid the driver is going to pass to has to be open. The other three have to clear the lane and stay spaced. Most youth teams collapse toward the ball. Teach them to do the opposite.

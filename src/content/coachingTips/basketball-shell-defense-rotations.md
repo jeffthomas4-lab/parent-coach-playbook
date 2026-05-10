@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Four defenders in a shell formation passing a basketball around, with defenders rotating and adjusting to each pass."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard rotations drill, sport language clean. Minor inconsistency: setup mentions 'five spots' but only four offensive players are listed."
 ---
 
 The shell drill teaches team defense and rotations. Four defenders guard four offensive players. As the ball moves, defenders rotate to stay in position.

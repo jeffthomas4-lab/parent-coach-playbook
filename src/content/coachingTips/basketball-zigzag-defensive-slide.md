@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player sliding laterally in a zigzag pattern around cones, staying in a low defensive stance."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundational defensive footwork drill, sport language clean."
 ---
 
 The zigzag drill teaches lateral movement without crossing feet. The cones mark the change of direction points. This is foundational footwork for one-on-one defense.

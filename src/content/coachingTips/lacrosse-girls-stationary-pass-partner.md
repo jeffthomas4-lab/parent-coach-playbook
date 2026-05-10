@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young players facing each other 15 feet apart, one releasing a pass with the lacrosse stick, the other catching with the head of the stick high."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean intro pass mechanics."
 ---
 
 The lacrosse pass is a controlled flick. Top hand pushes, bottom hand pulls. Ball flies off the head with backspin. This drill is the first pass and catch with a partner.

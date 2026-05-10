@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Receiver running forward with the stick reaching back over the shoulder, catching a long pass that's slightly behind them."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Football analogy ('deep ball') is fine as a reader cue; no body contact described."
 ---
 
 The over-the-shoulder catch is the lacrosse equivalent of a deep ball. The pass is long, the receiver is running away from the passer. The stick reaches back, the eyes look back, the catch happens at full sprint. High difficulty, high reward.

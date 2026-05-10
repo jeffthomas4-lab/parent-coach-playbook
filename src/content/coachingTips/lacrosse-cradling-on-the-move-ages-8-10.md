@@ -6,6 +6,19 @@ age: "8-10"
 focus: "fundamentals"
 publishedAt: 2026-03-04
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic lacrosse tag; cradle works for both boys' and girls' rule sets. Affiliate disclosure present."
 ---
 
 Cradling is a rhythm. Young players need to feel the ball staying in the pocket while they move at different speeds. This drill builds that feel.

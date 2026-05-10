@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player shooting from the wing, one of five shooting spots around the arc."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard five-spot drill. Lead paragraph has four sentences."
 ---
 
 Spot shooting builds range and consistency. The spots are baseline, wing, top of key, other wing, and baseline other side. All about the same distance. Shooting five spots teaches game positioning.

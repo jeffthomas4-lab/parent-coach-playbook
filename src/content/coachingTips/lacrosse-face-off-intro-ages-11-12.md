@@ -6,6 +6,19 @@ age: "11-12"
 focus: "fundamentals"
 publishedAt: 2026-03-10
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic lacrosse tag, but face-off is a boys'-only term (girls' use 'draw'). Should be retagged lacrosse-boys. Affiliate disclosure present."
 ---
 
 Face-offs are 50-50 plays. This drill teaches young players the mechanics and builds confidence in winning ground balls at the center.

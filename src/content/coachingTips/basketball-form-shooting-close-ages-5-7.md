@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young child shooting a basketball from 6 feet away, with hands positioned in shooting form and following through upward."
 publishedAt: 2026-01-06
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body was truncated mid-sentence; completed the close with adjustments."
 ---
 
 Form shooting teaches the mechanics early. The closer the shot, the easier it is to focus on form instead of result. This drill is all about repetition and habit.
@@ -26,4 +39,8 @@ Form shooting teaches the mechanics early. The closer the shot, the easier it is
 4. Repeat. Do 10 shots per kid.
 5. Count makes.
 
-**What to look for:** Consistent mechanics, not result. The feet, knees, and elbows in the same position 
+**What to look for:** Consistent mechanics, not result. The feet, knees, and elbows in the same position every shot. Makes will follow once the form locks in.
+
+**If they're struggling:** Lower the hoop to 7 feet. Move them to 4 feet. Use a smaller youth ball.
+
+**If they've got it:** Step back to 8 feet. Add a one-dribble approach before the shot.

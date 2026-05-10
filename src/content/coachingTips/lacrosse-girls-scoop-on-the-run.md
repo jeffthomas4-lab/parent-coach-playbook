@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player sprinting forward, dropping low to scoop a rolling ball without breaking stride, then continuing to run."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Scoop mechanics on the run; girls' vocab clean."
 ---
 
 A stationary scoop is just the start. Real games have rolling ground balls and the scooper is sprinting. This drill puts the kid in motion. Body has to drop low without losing speed.

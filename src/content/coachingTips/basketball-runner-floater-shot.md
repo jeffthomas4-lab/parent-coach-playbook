@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player running toward the basket and shooting a soft floater over an outstretched defender."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Title uses runner as a shot-name synonym for floater; body stays in basketball vocab."
 ---
 
 The floater is a touch shot between a layup and a jump shot. It's used when the defender is too tall for a normal layup. This drill teaches the soft touch needed for the floater.

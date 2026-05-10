@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player holding a lacrosse stick vertically, rolling the wrist back and forth to keep the ball cupped in the head of the stick."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundations cradle drill, ages 5-7. Title misalignment (file says 'cradle-stationary,' title says 'Stationary Cradle') is fine."
 ---
 
 Cradling is the rhythm that keeps the ball in the stick. Wrist rolls one way, then back. Ball stays cupped in the head. This is the first lacrosse skill. Without it, the ball falls out before the kid takes a step.

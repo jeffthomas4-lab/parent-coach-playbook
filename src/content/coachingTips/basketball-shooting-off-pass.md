@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player catching a chest pass and immediately moving into shooting form without a dribble."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean catch-and-shoot drill, correct sport language."
 ---
 
 Game shots come off passes, not dribbles. This drill teaches the catch-and-shoot mechanics. The passer delivers the ball at chest height so the shooter can shoot immediately.

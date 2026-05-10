@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players: ball carrier cradling and shielding the stick with their body, defender attempting to stick-check the ball loose."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Defender stick-checks only (no body contact described). 'Through the contact' refers to stick contact, which fits girls' rules."
 ---
 
 In a game, the defender is hitting the stick to dislodge the ball. Good ball handlers cradle through the contact. Body between defender and stick. Cradle tight. This drill simulates that pressure.

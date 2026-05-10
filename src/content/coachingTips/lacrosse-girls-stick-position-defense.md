@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender shadowing an attacker, with the stick held in front of the body in the attacker's passing lane, eyes on the attacker's chest."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Defense by stick position; no body contact described."
 ---
 
 Defense in lacrosse starts with stick position. The stick goes in the attacker's passing lane. The body stays between the attacker and the goal. Most kids try to swing the stick at the ball. That's a foul. Smart defenders stay positioned.

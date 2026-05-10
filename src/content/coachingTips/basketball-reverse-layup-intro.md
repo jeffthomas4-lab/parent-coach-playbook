@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player driving to the basket from the right, then laying the ball off the left side of the backboard going away from the rim."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Backboard reach-around explained well."
 ---
 
 The reverse layup goes around the back of the rim. It's used when the defender is in the direct layup line. This intro version uses the backboard from the reverse angle.

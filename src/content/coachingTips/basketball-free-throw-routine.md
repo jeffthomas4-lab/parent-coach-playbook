@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player at the free throw line in a ready stance, about to shoot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cites NBA 15 ft and youth 12-13 ft, league varies."
 ---
 
 Free throws are the only unguarded shot in basketball. Building a routine early creates confidence. The NBA line is 15 feet. Youth often shoots from 12-13 feet depending on age and league rules.

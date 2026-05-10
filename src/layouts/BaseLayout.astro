@@ -78,5 +78,57 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
       <slot />
     </main>
     <Footer />
+
+    <!-- Newsletter signup AJAX handler.
+         Auto-attaches to any form with data-newsletter-form. Posts to Kit's
+         endpoint via fetch and shows an in-place thank-you instead of
+         redirecting the visitor off-site to Kit's hosted thank-you page.
+         Falls back to the native form POST if JS is unavailable. -->
+    <script is:inline>
+      (function () {
+        document.addEventListener('submit', function (e) {
+          var form = e.target;
+          if (!form || !form.matches || !form.matches('[data-newsletter-form]')) return;
+          if (form.dataset.submitting === '1') { e.preventDefault(); return; }
+          e.preventDefault();
+
+          form.dataset.submitting = '1';
+          var submitBtn = form.querySelector('button[type="submit"]');
+          var originalLabel = submitBtn ? submitBtn.textContent : null;
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Subscribing...';
+          }
+
+          var data = new FormData(form);
+
+          // no-cors lets us POST cross-origin without Kit needing to expose
+          // CORS headers. Tradeoff: we can't read the response, so we
+          // optimistically treat any fulfilled fetch as success (the user
+          // will get a confirmation email from Kit either way — that's the
+          // real signal). If the network blows up, we surface a retry.
+          fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' })
+            .then(function () {
+              form.innerHTML =
+                '<p class="font-display italic text-rust mb-2 font-medium">Thanks</p>' +
+                '<p class="font-display text-ink text-lg leading-snug">Check your inbox to confirm your subscription. The first issue lands Friday.</p>';
+            })
+            .catch(function () {
+              form.dataset.submitting = '0';
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
+              }
+              if (!form.querySelector('[data-newsletter-error]')) {
+                var p = document.createElement('p');
+                p.setAttribute('data-newsletter-error', '');
+                p.className = 'font-display italic text-rust text-sm mt-2';
+                p.textContent = "Couldn't reach Kit. Check your connection and try again.";
+                form.appendChild(p);
+              }
+            });
+        });
+      })();
+    </script>
   </body>
 </html>

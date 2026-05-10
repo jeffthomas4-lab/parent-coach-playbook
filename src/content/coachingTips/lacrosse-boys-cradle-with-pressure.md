@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players: ball carrier cradling and shielding the stick with their body, defender attempting to stick-check the ball loose."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Boys 11-12 stick-check pressure; legal contact context. Sensitive flag for contact."
 ---
 
 In a game, the defender is hitting the stick to dislodge the ball. Good ball handlers cradle through the contact. Body between defender and stick. Cradle tight. This drill simulates that pressure.

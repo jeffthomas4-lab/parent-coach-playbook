@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child bouncing a basketball hard on the ground with both feet planted, ball returning to chest height."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundation drill for U7; eyes-closed variation is a nice touch."
 ---
 
 A kid can't dribble down the court until they can control a ball bouncing in place. This drill is just that. Low ball, low stance, eyes wherever they want right now.

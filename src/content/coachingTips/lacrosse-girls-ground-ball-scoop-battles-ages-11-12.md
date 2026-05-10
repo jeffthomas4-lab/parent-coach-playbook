@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Two players converging on a loose ball, each scooping to win possession while maintaining control of the stick."
 publishedAt: 2026-03-13
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated closing line."
 ---
 
 Ground balls are 50-50s. This drill teaches young players to scoop and control loose balls while competing for possession.
@@ -27,4 +40,6 @@ Ground balls are 50-50s. This drill teaches young players to scoop and control l
 
 **What to look for:**
 
-The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too
+The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too light or off-target.
+
+**Variation:** Add a third player who tries to dislodge the ball after the scoop. This teaches the winner to protect the ball, not just collect it.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the top of the box with no defender pressuring, taking a full overhand shot at the goal with maximum power."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Time-and-room shot mechanics; clean."
 ---
 
 Time and room means the shooter has space and time. No defender. Big windup, full power, accurate aim. This is the highest-velocity shot in lacrosse. Worth practicing because in real games, time-and-room shots come from a teammate's pass that gets the defender out of position.

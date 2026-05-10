@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A young player running with a lacrosse stick, cradling the ball in the pocket while moving at different speeds."
 publishedAt: 2026-03-04
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated variation line."
 ---
 
 Cradling is a rhythm. Young players need to feel the ball staying in the pocket while they move at different speeds. This drill builds that feel.
@@ -29,4 +42,4 @@ Cradling is a rhythm. Young players need to feel the ball staying in the pocket 
 
 The cradle is an active motion with the wrists and arms, not a grip. If a player is holding the stick tight, they'll lose the ball. The stick should move with the player's body, not out in front. If the ball is rolling or bouncing, the cradle is too loose or off-rhythm. By the run-through, the cradle should feel automatic.
 
-**Variation:** Add direction
+**Variation:** Add direction changes. Coach calls "left" or "right" and the player cuts that way without losing the ball. The cradle has to hold through the change of direction.

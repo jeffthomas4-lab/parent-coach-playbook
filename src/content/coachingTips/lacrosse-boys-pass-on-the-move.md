@@ -10,9 +10,22 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players running parallel up the field, exchanging passes while continuing to sprint forward."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Fixed typo: 'The lead the pass' to 'Lead the pass' in lede."
 ---
 
-In a real game, players pass while moving. The lead the pass to where the receiver is going, not where they are. This drill builds that connection between motion and accuracy.
+In a real game, players pass while moving. Lead the pass to where the receiver is going, not where they are. This drill builds that connection between motion and accuracy.
 
 **What you need:** Two sticks, ball, two players, 30-yard area.
 

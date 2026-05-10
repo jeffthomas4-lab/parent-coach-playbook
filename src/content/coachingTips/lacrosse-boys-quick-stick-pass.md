@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player receiving a pass and immediately redirecting it back to the partner without lowering the stick or cradling."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Quick-stick fundamentals; clean drill."
 ---
 
 The quick stick is the lacrosse one-timer. Ball arrives, ball leaves. No cradle in between. This is a high-skill move that creates fast offense and beats defenders who haven't recovered.

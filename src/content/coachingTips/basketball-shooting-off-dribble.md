@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player dribbling to a spot, then pulling up to shoot mid-range."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pull-up shooting drill, clear cues, sport language correct."
 ---
 
 Pull-up shooting is how guards score in games. This drill teaches the rhythm of dribble-to-stop-to-shoot. The key is the stop (plant feet) before the shot.

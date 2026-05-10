@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Two lines of children in a gym, each taking turns approaching the basket from the baseline and shooting a layup from one side."
 publishedAt: 2026-01-20
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated body with two voice-matched lines on launch step and ball off the backboard. Sport language clean."
 ---
 
 Layups are the easiest bucket in basketball. This drill teaches the approach, the footsteps, and the finish from both sides.
@@ -24,4 +37,4 @@ Layups are the easiest bucket in basketball. This drill teaches the approach, th
 2. First kid in Line 2 dribbles toward the hoop from the left, shoots a layup, and goes to the back of Line 1.
 3. Alternate. Do 20 total reps (10 per side).
 
-**What to look for:** Footwork on the approach. A layup has two steps before the shot. First step is longer, second step is a launch
+**What to look for:** Footwork on the approach. A layup has two steps before the shot. First step is longer, second step is a launch off the inside foot, then lay the ball off the backboard with the outside hand. Soft touch matters more than power at this age.

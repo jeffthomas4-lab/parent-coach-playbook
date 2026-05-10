@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child walking forward through a 20x20 yard area cradling a lacrosse ball in the stick, head turning side to side."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundations walk-while-cradling drill; clean."
 ---
 
 Standing still and cradling is one thing. Moving while cradling is another. The body moves, the ball has to stay in the stick. Walking before running.

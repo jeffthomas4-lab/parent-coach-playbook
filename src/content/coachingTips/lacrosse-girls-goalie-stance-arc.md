@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Lacrosse goalie in stance with the stick held vertical in front of the body, knees bent, feet shuffling along an arc to track an offensive player."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Goalie stance fundamentals; clean girls' vocabulary."
 ---
 
 The lacrosse goalie position is unique. Stick held high in front. Body square to the ball. Feet shuffle along an imaginary arc that follows the shooter. Get the stance right and the saves are easier. Most goalies are made by stance, not by reflexes.

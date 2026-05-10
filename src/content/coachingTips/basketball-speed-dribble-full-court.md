@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child sprinting down the court dribbling, ball slightly higher and further out in front for speed control."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Progressive intensity reps make this useful, sport language clean. Lead has four sentences."
 ---
 
 Fast dribbling is different from control dribbling. The ball bounces higher and further out in front so you can move faster. This teaches the adjustment. Line drills keep it organized and safe.

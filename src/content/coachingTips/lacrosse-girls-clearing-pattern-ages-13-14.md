@@ -10,21 +10,36 @@ progression: "refine"
 illustrationBrief: "Players in the defensive zone executing three passes to escape pressure, with each receiver moving to open space."
 publishedAt: 2026-03-16
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated body. Removed boys'-vocab terms (defenseman, short-stick) for girls' rule set."
 ---
 
 A clear is how a team escapes defensive pressure. At 13-14, players can learn a structured three-pass pattern that gets the ball to open space.
 
 **Equipment needed:** 6 cones, 1 ball, 6 sticks.
 
-**Setup:** Mark the defensive zone with cones at the restraining line. One defenseman has the ball in the zone. Two short-stick players line up 5 yards away (wings of the clear). One short-stick player lines up at the restraining line facing the ball carrier (outlet).
+**Setup:** Mark the defensive zone with cones at the restraining line. One defender has the ball in the zone. Two players line up 5 yards away (wings of the clear). One player lines up at the restraining line facing the ball carrier (outlet).
 
 **How to run it:**
 
-1. Defenseman passes to the first wing, who catches and immediately looks downfield.
+1. Defender passes to the first wing, who catches and immediately looks downfield.
 2. Wing passes to the outlet player at the restraining line. Outlet is the first person to get past the line.
 3. Outlet advances the ball upfield to open space, then passes to the second wing coming behind.
 4. Do 4 reps slow, then 4 reps at game speed with a coach providing light pressure.
 
 **What to look for:**
 
-Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the cl
+Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the clear if the outlet is covered.
+
+**Variation:** Add a second defender to apply real pressure on the clear. Players have to read the pressure and pick the right outlet, not just run the pattern.

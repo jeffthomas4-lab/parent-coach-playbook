@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player jumping repeatedly to tip a basketball against the backboard with one hand, arm extended, in a continuous motion."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Lead sentence runs a triplet (strength/timing/fingers) — could trim. Otherwise solid."
 ---
 
 Rebounding takes hands. Tip drill builds the strength to control a ball above the rim, the timing to reach it at the peak, and the fingers to direct it where you want. This is conditioning and skill in one drill.

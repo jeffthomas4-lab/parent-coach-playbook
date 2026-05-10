@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player at the basket, making a layup on the left side, then immediately moving to the right side."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Names George Mikan; backboard-as-target is correct."
 ---
 
 The Mikan drill is the foundation for finishing. George Mikan invented it. The player bounces layups back and forth under the basket. Left hand, right hand, left hand, right hand.

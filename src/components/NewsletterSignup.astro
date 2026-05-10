@@ -1,7 +1,8 @@
 ---
 // Kit (formerly ConvertKit) inline signup form.
 //
-// Form ID 9388648 is the main newsletter form.
+// Form UID 4b28f916b5 maps to the hosted form at
+// https://parent-coach-playbook.kit.com/4b28f916b5 — the main newsletter form.
 // Override via PUBLIC_KIT_FORM_ID env var for branch previews if needed.
 // Lead-magnet flows can pass a different formId prop.
 
@@ -18,7 +19,7 @@ const {
   variant = 'inline',
   headline = 'Slide into the inbox',
   blurb = 'One short read a week from the Parent Coach Playbook Editorial. Easy unsubscribe.',
-  formId = import.meta.env.PUBLIC_KIT_FORM_ID || '9388648',
+  formId = import.meta.env.PUBLIC_KIT_FORM_ID || '4b28f916b5',
   buttonLabel = 'Subscribe',
   collectFirstName = true,
 } = Astro.props;

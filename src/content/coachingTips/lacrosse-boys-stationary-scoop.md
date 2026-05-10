@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player low to the ground with knees bent, the head of the stick scooping a ball, bottom hand near the ground for leverage."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundational scoop fundamentals; clean."
 ---
 
 Lacrosse is a ground ball game. Most teams that win possession the most win the game. The scoop is the basic skill. Get low, head of the stick on the ground, scoop the ball into the cradle. Done right, easy. Done wrong, a constant turnover.

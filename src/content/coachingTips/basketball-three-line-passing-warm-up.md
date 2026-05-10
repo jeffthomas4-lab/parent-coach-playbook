@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Three lines of players running down the court in zigzag patterns, the middle player passing left and right to the outside players in succession."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pattern as written keeps the ball flowing through the middle rather than the classic weave (pass-and-cut-behind). Lead has four sentences."
 ---
 
 Three line passing is the warm-up for a fast-break offense. Players run, pass, catch, finish. It builds conditioning and chemistry at the same time. Most teams use this every practice.

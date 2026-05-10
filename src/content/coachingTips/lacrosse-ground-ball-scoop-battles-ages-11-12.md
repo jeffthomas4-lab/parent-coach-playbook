@@ -6,6 +6,19 @@ age: "11-12"
 focus: "fundamentals"
 publishedAt: 2026-03-13
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic-tagged piece. No body-contact language; safe for both rule sets at age 11-12."
 ---
 
 Ground balls are 50-50s. This drill teaches young players to scoop and control loose balls while competing for possession.

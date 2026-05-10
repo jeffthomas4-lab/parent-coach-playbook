@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the wing passing to a player at the top of the key, then cutting hard toward the rim, the second player passing back for a layup."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong lead, clean cut-vs-jog distinction."
 ---
 
 Give and go is the oldest play in basketball. Pass the ball, cut to the basket, get it back. It works because the defender watches the ball and forgets about the passer. Most kids stand still after passing. Teach the cut and they're a threat every possession.

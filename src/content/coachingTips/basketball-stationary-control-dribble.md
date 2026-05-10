@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child dribbling a basketball while standing with knees bent, ball staying below waist level, eyes up."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean foundational dribble drill, voice strong throughout."
 ---
 
 This is about rhythm and habit. The ball stays low. The knees stay bent. Eyes are anywhere but the ball. Do this drill every warm-up.

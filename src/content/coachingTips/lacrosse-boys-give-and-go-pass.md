@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player A passing to Player B at midfield, then cutting toward the goal, Player B passing back to a new spot near the goal."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean give-and-go drill with cut emphasis."
 ---
 
 Give and go is movement after the pass. Most kids stand still after passing. Give and go teaches them to pass and cut. The defender watches the ball and forgets the passer. Cut to space, get it back, score.

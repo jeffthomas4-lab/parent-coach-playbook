@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T00:31:20.486Z",
+  "generatedAt": "2026-05-10T05:25:00.745Z",
   "count": 194,
   "links": [
     {
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "url": "https://app.kit.com/forms/9388648/subscriptions",
+      "url": "https://app.kit.com/forms/4b28f916b5/subscriptions",
       "sources": [
         "src/pages/newsletter.astro"
       ]

@@ -6,6 +6,19 @@ age: "8-10"
 focus: "fundamentals"
 publishedAt: 2026-03-07
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic-tagged passing drill; clean vocabulary."
 ---
 
 Passing in lacrosse requires timing. Two lines of players passing back and forth teaches spacing and accuracy without complexity.

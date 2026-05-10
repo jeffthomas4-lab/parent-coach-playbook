@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player shooting from 3 feet away with perfect form, hand finishing in the cookie jar position, ball going through the net."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Good lead about priming the muscles; reads tight."
 ---
 
 The first shot of practice should look like every other shot. Form shooting from 3 feet primes the muscles before kids start shooting from real distance. Five minutes of close-range form is worth twenty minutes of bad shots from the three.

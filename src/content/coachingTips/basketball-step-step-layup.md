@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child taking two steps toward the basket, then laying the ball off the backboard."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Footwork as written has inside foot plant first, which is the opposite of the conventional outside-foot-plants layup. May want to verify intent for this age group."
 ---
 
 This is the entry layup. Two steps from the free throw line, then finish at the basket. No dribble. Just walk, step, step, layup.

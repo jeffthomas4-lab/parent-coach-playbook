@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player sprinting forward with the stick held high, catching a pass mid-stride without slowing down."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean drill; catch-on-the-run mechanics straightforward."
 ---
 
 A receiver who slows down to catch the ball gets caught. The catch has to happen at full speed. Stick high, hands soft, eyes on the ball.

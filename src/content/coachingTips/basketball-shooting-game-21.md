@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young players at the basket, one shooting while the other watches their make or miss."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Classic shooting game. Note: 'corner threes' line is inconsistent with corner spot listed at 3 feet, not beyond the arc."
 ---
 
 21 is a classic shooting game that teaches pressure. You shoot from different spots at different ranges. Make it from one spot, move to the next. First to 21 points wins.

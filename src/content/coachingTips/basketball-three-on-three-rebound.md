@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Six players grouped near the rim, three boxing out and three trying to break through, ball coming off the front of the rim."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong rebounding drill, voice has temperature. Lead has four sentences."
 ---
 
 Rebounding is a contact sport. Practice without contact doesn't translate. Three on three at the rim teaches kids to find a body, get low, and fight. This is the drill that produces actual rebounders.

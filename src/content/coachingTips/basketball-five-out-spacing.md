@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Five players evenly spaced around the three-point arc with the basket open in the middle, arrows showing each player at least 15 feet from the next."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid spacing concept, well-paced for U12."
 ---
 
 Five out is the simplest offense in modern basketball. All five players spread around the arc. The lane is open. The kid with the ball can drive, kick, or pass. The other four maintain spacing 15 feet apart from each other. Spacing is the offense.

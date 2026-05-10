@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Two lines of players facing each other, passing a lacrosse ball back and forth at game speed with accurate stick-to-stick passes."
 publishedAt: 2026-03-07
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated final paragraph and added variation."
 ---
 
 Passing in lacrosse requires timing. Two lines of players passing back and forth teaches spacing and accuracy without complexity.
@@ -27,4 +40,6 @@ Passing in lacrosse requires timing. Two lines of players passing back and forth
 
 **What to look for:**
 
-The pass should be accurate and catchable. If the receiving player has to reach way out or step back, the pass is off. The catch should happen on the stick naturally, with the stick in ready position. If a player is reaching for a bad pass or dropping the ball, accuracy is the problem. Communicate about timing: pla
+The pass should be accurate and catchable. If the receiving player has to reach way out or step back, the pass is off. The catch should happen on the stick naturally, with the stick in ready position. If a player is reaching for a bad pass or dropping the ball, accuracy is the problem. Communicate about timing: players should call "Ready" or "Set" before the pass.
+
+**Variation:** Add lateral movement. Players move sideways while passing, creating a weaving pattern. This teaches passing on the move and awareness of field space.

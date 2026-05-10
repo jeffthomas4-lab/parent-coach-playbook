@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Three defenders in a 3v3 game, with one defender leaving their player to help on a penetrating ball-handler, then recovering back."
 publishedAt: 2026-04-08
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body was truncated mid-sentence; completed the closing sections."
 ---
 
 Help-and-recover is the most important team defense principle at this age. This drill forces defenders to make the right decision about when to help and when to recover.
@@ -25,4 +38,8 @@ Help-and-recover is the most important team defense principle at this age. This 
 3. If the defense is tight, no help is needed.
 4. Play for 25 minutes, rotating positions every 5 minutes.
 
-**What to look for:** Help timing and recovery speed. Is the defense helping too early (opening driving lanes) or too late (allowing an easy pass)? Is the recovery defender in position or recovering to the wrong pl
+**What to look for:** Help timing and recovery speed. Is the defense helping too early (opening driving lanes) or too late (allowing an easy pass)? Is the recovery defender in position or recovering to the wrong player?
+
+**If they're struggling:** Slow the offense to walking speed. Call out "help" and "recover" so the timing becomes obvious. Reset every 30 seconds.
+
+**If they've got it:** Add a fourth offensive player and a fourth defender. The rotations get harder when the help defender has a longer recovery.

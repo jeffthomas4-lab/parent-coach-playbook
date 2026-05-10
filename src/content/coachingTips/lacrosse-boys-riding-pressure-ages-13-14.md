@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Offensive players funneling defenders during a clear, forcing difficult passing angles and creating turnover opportunities."
 publishedAt: 2026-03-19
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated 'funnel the' tail with two voice-matched sentences."
 ---
 
 Riding is offensive pressure on the clear. This drill teaches young players to funnel the ball and force bad passes.
@@ -27,4 +40,4 @@ Riding is offensive pressure on the clear. This drill teaches young players to f
 
 **What to look for:**
 
-Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the 
+Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the ball toward a sideline or back into a stick-side trap. The bad pass is the goal, not the takeaway.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player landing from a rebound near the rim, pivoting outward, and throwing a two-handed pass to a guard at the wing."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pivot-first cue is the right teaching point."
 ---
 
 The rebound isn't the end of the play. It's the start. Fast teams turn defensive boards into offense in three seconds. The outlet pass is the link.

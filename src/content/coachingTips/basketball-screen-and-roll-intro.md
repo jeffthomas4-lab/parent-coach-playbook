@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "One player setting a stationary screen on the side of an imaginary defender, the ball-handler dribbling around the screen, the screener rolling toward the basket."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Illegal-screen warning is a useful detail."
 ---
 
 The screen and roll (or pick and roll) is the most common play in basketball. Two players, one defender beat by setup. The screener sets a body. The ball-handler dribbles past. The screener rolls to the rim. Done right, two offensive players occupy three defenders.

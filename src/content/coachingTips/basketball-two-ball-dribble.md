@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child bouncing two basketballs simultaneously, one in each hand, standing with low stance and bent knees."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean two-ball drill, sport language correct."
 ---
 
 Two-ball dribbling breaks the habit of looking down at the ball and builds independent hand control. Each hand has its own job. The balls bounce at the same time.

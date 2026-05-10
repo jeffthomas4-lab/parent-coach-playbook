@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player driving from behind the goal (the X position), wrapping around the side to shoot at the open net."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard X-drive shot drill; correct lacrosse vocab."
 ---
 
 X is the spot directly behind the goal. Attackers drive from X and shoot from the wings. This is one of the most common lacrosse plays. The drill builds the footwork and the shot together.

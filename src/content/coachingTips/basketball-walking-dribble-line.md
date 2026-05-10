@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child walking in a straight line on a court, dribbling a basketball in front of their body, eyes forward."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid intro drill. Lead paragraph runs five sentences and could be tightened."
 ---
 
 Walking and bouncing at the same time is the next step. The ball stays in front. The pace is slow. The eyes stay up. This is a transition drill between pound dribbles and real dribble movement.
