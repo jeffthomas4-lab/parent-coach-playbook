@@ -1,172 +1,226 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicIcon from '../../components/TopicIcon.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle } from '../../lib/title';
+import { AGE_BANDS, SPORTS } from '../../data/site';
 
-const topics = (await getCollection('body', ({ data }) => isLive(data)))
-  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+// Pull every body piece (both subhubs), sorted newest first to match /reads/.
+const all = (await getCollection('body', ({ data }) => isLive(data)))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-const healthCategories = [
-  { slug: 'concussion',         label: 'Concussion',          blurb: 'CDC HEADS UP, return-to-play, your state law.' },
-  { slug: 'arm-care',            label: 'Arm care',            blurb: 'Pitch counts, off-season throwing, no curveballs before 14.' },
-  { slug: 'heat',                label: 'Heat and hydration',  blurb: 'NATA youth heat acclimatization. The rules of an August practice.' },
-  { slug: 'sleep',               label: 'Sleep',                blurb: 'AAP targets by age. Why the 6am practice is a performance issue.' },
-  { slug: 'growth-plates',       label: 'Growth plates',        blurb: 'Sever\'s, Osgood-Schlatter\'s, why adolescent ankle pain matters.' },
-  { slug: 'recovery',            label: 'Recovery',             blurb: 'Foam rollers, ice baths, when the gear actually helps.' },
-  { slug: 'injury-prevention',   label: 'Injury prevention',    blurb: 'Pre-practice warm-up. The 11 minutes that change ACL math.' },
-  { slug: 'nutrition',           label: 'Nutrition',            blurb: 'Real fueling for kids. The pre-game meal that doesn\'t backfire.' },
-  { slug: 'hydration',           label: 'Hydration',            blurb: 'How much water, when. The electrolyte question.' },
-  { slug: 'mental-skills',       label: 'Mental skills',        blurb: 'Pre-game nerves, identity, burnout signs.' },
-  { slug: 'specialization',      label: 'Specialization',       blurb: 'When single-sport helps, when it costs you.' },
-];
+const ITEMS_PER_PAGE = 60;
 
-const safetyCategories = [
-  { slug: 'weather',                  label: 'Weather',                  blurb: 'Lightning, heat, cold, wildfire smoke. When the day is too dangerous.' },
-  { slug: 'coach-vetting',            label: 'Coach vetting',            blurb: 'SafeSport, background checks, the questions every league should answer.' },
-  { slug: 'equipment-certification',  label: 'Equipment certification',  blurb: 'Helmet stamps, bat marks, mouthguards. What\'s safe, what\'s expired.' },
-  { slug: 'travel-logistics',         label: 'Travel logistics',         blurb: 'Rooming, chaperones, transporting kids who aren\'t yours.' },
-  { slug: 'emergency-response',       label: 'Emergency response',       blurb: 'Concussion now, broken-bone triage, AED location, missing-kid plan.' },
-  { slug: 'conduct',                  label: 'Conduct',                  blurb: 'Bullying, hazing, ref abuse, locker room culture.' },
-  { slug: 'aquatic',                  label: 'Aquatic',                  blurb: 'Pool deck rules, shallow-water blackout, open water.' },
-  { slug: 'cyber',                    label: 'Cyber',                    blurb: 'Team apps, photo policies, recruiting DMs.' },
-];
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
-const groupedHealth = healthCategories.map(c => ({
-  ...c,
-  items: topics.filter(t => (t.data.subhub ?? 'health') === 'health' && t.data.category === c.slug),
-})).filter(g => g.items.length > 0);
+const ageLabel = (a: string | undefined) =>
+  AGE_BANDS.find(x => x.slug === a)?.label ?? null;
 
-const groupedSafety = safetyCategories.map(c => ({
-  ...c,
-  items: topics.filter(t => t.data.subhub === 'safety' && (t.data as any).safetyCategory === c.slug),
-})).filter(g => g.items.length > 0);
+// Pretty labels for the meta chip.
+const lensLabel = (subhub: string | undefined) =>
+  subhub === 'safety' ? 'Safety' : 'The body';
 
-const sportBriefings = topics.filter(t => t.data.format === 'sport-briefing');
+const categoryLabel = (data: any) => {
+  const slug = data.safetyCategory ?? data.category ?? '';
+  if (!slug) return '';
+  return slug.toString().replace(/-/g, ' ');
+};
+
+const formatLabel = (f: string | undefined) => {
+  if (f === 'protocol') return 'Protocol';
+  if (f === 'checklist') return 'Checklist';
+  if (f === 'sport-briefing') return 'Sport briefing';
+  return 'Topic';
+};
 ---
 <BaseLayout
   title="Body & Safety"
-  description="Pediatric sports medicine plus the safety canon. Concussion, arm care, heat, sleep, growth plates, equipment certification, lightning, league vetting, emergency response. What to know, what to ask the pediatrician, what to say to the league."
+  description="Pediatric sports medicine plus the safety canon. Concussion, arm care, heat, sleep, growth plates, equipment certification, lightning, league vetting, emergency response, conduct."
 >
   <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/reads/" class="hover:underline">Reads</a> · Body & Safety
-      </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
-        Body & <em class="text-rust">Safety</em>.
-      </h1>
-      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
-        Two lenses, one hub. The body is the medicine: concussion, arm care, heat, sleep, growth plates. Safety is everything around the kid: weather, equipment, league vetting, emergency response, conduct.
-      </p>
+    <div class="container-px py-12 md:py-14">
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-4">
+          <TopicIcon topic="body" size={64} />
+          <p class="font-display italic text-rust mb-2 mt-3 font-medium">Hub</p>
+          <h1 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] font-medium">
+            Body & <em class="text-rust">Safety</em>
+          </h1>
+          <p class="font-display text-ink-soft mt-3 leading-snug">
+            Two lenses, one hub. The body is the medicine: concussion, arm care, heat, sleep, growth plates. Safety is everything around the kid: weather, equipment, league vetting, emergency response, conduct.
+          </p>
+          <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
+            {all.length} {all.length === 1 ? 'piece' : 'pieces'}
+          </p>
+          <aside class="mt-6 border-l-4 pl-4 py-2" style="border-color: #B8908F; background: #FAF6F1;">
+            <p class="font-display italic text-rust text-xs font-medium">What this is</p>
+            <p class="font-display text-ink-soft text-xs mt-1 leading-snug">
+              Parent-to-parent. Not medical advice. We cite the governing body where one exists. For anything specific to your kid, talk to your pediatrician or your team's athletic trainer.
+            </p>
+          </aside>
+        </div>
+        <div class="md:col-span-8">
+          {/* Filter bar */}
+          <div class="border border-bone bg-paper-warm p-4 mb-6">
+            <div class="space-y-4">
+              {/* Lens filter (Health vs Safety) */}
+              <div class="flex flex-wrap items-center gap-2" data-lens-filter>
+                <span class="font-display italic text-ink-soft text-sm font-medium">Lens:</span>
+                <button data-lens="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All</button>
+                <button data-lens="health" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">The body</button>
+                <button data-lens="safety" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Safety</button>
+              </div>
+              {/* Format filter */}
+              <div class="flex flex-wrap items-center gap-2" data-format-filter>
+                <span class="font-display italic text-ink-soft text-sm font-medium">Format:</span>
+                <button data-format="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All</button>
+                <button data-format="topic" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Topic</button>
+                <button data-format="protocol" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Protocol</button>
+                <button data-format="checklist" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Checklist</button>
+                <button data-format="sport-briefing" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Sport briefing</button>
+              </div>
+              {/* Age filter */}
+              <div class="flex flex-wrap items-center gap-2" data-age-filter>
+                <span class="font-display italic text-ink-soft text-sm font-medium">Age:</span>
+                <button data-age="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All ages</button>
+                {AGE_BANDS.map((a) => (
+                  <button data-age={a.slug} class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">{a.label}</button>
+                ))}
+              </div>
+              {/* Search */}
+              <div class="flex items-center gap-2">
+                <input
+                  type="search"
+                  placeholder="Search this hub..."
+                  data-search-input
+                  class="w-full max-w-sm px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"
+                />
+              </div>
+            </div>
+          </div>
 
-      <aside class="mt-8 border-l-4 pl-4 py-3 max-w-2xl" style="border-color: #B8908F; background: #FAF6F1;">
-        <p class="font-display italic text-rust text-sm font-medium">What this is</p>
-        <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
-          Parent-to-parent. Not medical advice. We cite the governing body where one exists. For anything specific to your kid, talk to your pediatrician or your team's athletic trainer.
-        </p>
-      </aside>
+          {/* Article grid */}
+          {all.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">More pieces coming.</p>
+          ) : (
+            <>
+              <ul class="grid gap-px bg-bone" data-articles-grid>
+                {all.slice(0, ITEMS_PER_PAGE).map((b) => {
+                  const subhub = (b.data as any).subhub === 'safety' ? 'safety' : 'health';
+                  const ageTags = ((b.data as any).ageBands ?? []).join(' ');
+                  const fmt = (b.data as any).format ?? 'topic';
+                  return (
+                    <li
+                      class="bg-paper"
+                      data-lens-tag={subhub}
+                      data-format-tag={fmt}
+                      data-age-tags={ageTags}
+                      data-title={b.data.title.toLowerCase()}
+                      data-summary={(b.data.summary ?? '').toLowerCase()}
+                    >
+                      <a href={`/body/${b.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
+                        <div class="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+                          <p class="font-display italic text-ink-soft text-xs font-medium">
+                            {[
+                              lensLabel((b.data as any).subhub),
+                              categoryLabel(b.data),
+                              formatLabel(fmt),
+                              fmtDate(b.data.publishedAt),
+                            ].filter(Boolean).join(' · ')}
+                          </p>
+                        </div>
+                        <h3
+                          class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium"
+                          set:html={renderTitle(b.data.title)}
+                        />
+                        {b.data.summary && (
+                          <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{b.data.summary}</p>
+                        )}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p class="font-display italic text-ink-soft text-sm mt-6 hidden" data-empty>
+                Nothing matches that filter. Try a different combination.
+              </p>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   </section>
 
-  {/* Health lens */}
-  {groupedHealth.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
-      <div class="container-px py-8">
-        <p class="font-display italic text-rust text-sm font-medium">The body</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium mt-1">Pediatric sports medicine, translated.</h2>
-      </div>
-    </section>
-  )}
-  {groupedHealth.map((g) => (
-    <section class="border-b border-bone">
-      <div class="container-px py-10 md:py-12">
-        <div class="grid md:grid-cols-12 gap-8">
-          <div class="md:col-span-4">
-            <p class="font-display italic text-rust mb-2 font-medium">Category</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">{g.label}</h2>
-            <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
-          </div>
-          <div class="md:col-span-8">
-            <ul class="grid gap-4">
-              {g.items.map((t) => (
-                <li class="border border-bone bg-paper-warm p-5">
-                  <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(t.data.title)} />
-                  <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  ))}
+  <script is:inline>
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var lensBar = document.querySelector('[data-lens-filter]');
+        var formatBar = document.querySelector('[data-format-filter]');
+        var ageBar = document.querySelector('[data-age-filter]');
+        var input = document.querySelector('[data-search-input]');
+        var grid = document.querySelector('[data-articles-grid]');
+        var empty = document.querySelector('[data-empty]');
 
-  {/* Sport briefings — sit above category, after Health, before Safety */}
-  {sportBriefings.length > 0 && (
-    <section class="border-b border-bone">
-      <div class="container-px py-10 md:py-12">
-        <div class="grid md:grid-cols-12 gap-8">
-          <div class="md:col-span-4">
-            <p class="font-display italic text-rust mb-2 font-medium">Per-sport briefings</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">Sport-specific safety</h2>
-            <p class="font-display text-ink-soft mt-3 leading-snug">What is actually dangerous about youth football, and the per-sport equivalents as we ship them.</p>
-          </div>
-          <div class="md:col-span-8">
-            <ul class="grid gap-4">
-              {sportBriefings.map((t) => (
-                <li class="border border-bone bg-paper-warm p-5">
-                  <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(t.data.title)} />
-                  <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
+        if (!grid) return;
 
-  {/* Safety lens */}
-  {groupedSafety.length > 0 && (
-    <section class="border-b border-bone" style="background: #E5EFEB;">
-      <div class="container-px py-8">
-        <p class="font-display italic text-rust text-sm font-medium">Safety</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium mt-1">What's around the kid: people, places, equipment, weather, conduct.</h2>
-      </div>
-    </section>
-  )}
-  {groupedSafety.map((g) => (
-    <section class="border-b border-bone">
-      <div class="container-px py-10 md:py-12">
-        <div class="grid md:grid-cols-12 gap-8">
-          <div class="md:col-span-4">
-            <p class="font-display italic text-rust mb-2 font-medium">Category</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">{g.label}</h2>
-            <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
-          </div>
-          <div class="md:col-span-8">
-            <ul class="grid gap-4">
-              {g.items.map((t) => (
-                <li class="border border-bone bg-paper-warm p-5">
-                  <a href={`/body/${t.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(t.data.title)} />
-                  <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.data.summary}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  ))}
+        var l = '', f = '', a = '', q = '';
 
-  {groupedHealth.length === 0 && groupedSafety.length === 0 && sportBriefings.length === 0 && (
-    <section>
-      <div class="container-px py-12">
-        <p class="font-display italic text-ink-soft font-medium">
-          The first batch of topics ships this month. Check back.
-        </p>
-      </div>
-    </section>
-  )}
+        function apply() {
+          var rows = grid.querySelectorAll('[data-lens-tag]');
+          var visible = 0;
+          for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var lens = row.getAttribute('data-lens-tag') || '';
+            var fmt = row.getAttribute('data-format-tag') || '';
+            var ages = row.getAttribute('data-age-tags') || '';
+            var title = row.getAttribute('data-title') || '';
+            var summary = row.getAttribute('data-summary') || '';
+            var lOk = !l || lens === l;
+            var fOk = !f || fmt === f;
+            var aOk = !a || ages.indexOf(a) !== -1 || ages.indexOf('all-ages') !== -1;
+            var qOk = !q || title.indexOf(q) !== -1 || summary.indexOf(q) !== -1;
+            var ok = lOk && fOk && aOk && qOk;
+            row.style.display = ok ? '' : 'none';
+            if (ok) visible++;
+          }
+          if (empty) {
+            if (visible > 0) empty.classList.add('hidden');
+            else empty.classList.remove('hidden');
+          }
+        }
+
+        function bindBar(bar, key, attrName) {
+          if (!bar) return;
+          bar.addEventListener('click', function (e) {
+            var t = e.target;
+            if (t.tagName !== 'BUTTON') return;
+            bar.querySelectorAll('button').forEach(function (b) {
+              b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+              b.classList.add('border-bone', 'text-ink-soft');
+            });
+            t.classList.remove('border-bone', 'text-ink-soft');
+            t.classList.add('bg-ink', 'text-paper', 'border-ink');
+            var val = t.getAttribute(attrName) || '';
+            if (key === 'lens') l = val;
+            else if (key === 'format') f = val;
+            else if (key === 'age') a = val;
+            apply();
+          });
+        }
+
+        bindBar(lensBar, 'lens', 'data-lens');
+        bindBar(formatBar, 'format', 'data-format');
+        bindBar(ageBar, 'age', 'data-age');
+
+        if (input) {
+          input.addEventListener('input', function (e) {
+            q = e.target.value.toLowerCase();
+            apply();
+          });
+        }
+      });
+    })();
+  </script>
 </BaseLayout>

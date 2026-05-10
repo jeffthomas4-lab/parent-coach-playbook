@@ -143,9 +143,25 @@ const lastUpdated = topic.data.publishedAt;
         </aside>
       )}
 
-      <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone" style="font-weight: 500;">
-        Last updated {lastUpdated.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}.
-      </p>
+      <!-- Liability-conscious closing disclaimer. Reinforces that the article
+           reflects sourced guidance from listed orgs and is not medical advice.
+           Sits after Sources / Doctor Questions / Gear Picks so readers see the
+           citation list before reading the disclaimer. -->
+      <aside class="mt-12 pt-8 border-t border-bone bg-paper-warm p-6" aria-label="Editorial disclaimer">
+        <p class="font-display italic text-rust mb-3 font-medium">About this piece and its limits</p>
+        <p class="font-display text-ink-soft text-sm leading-snug">
+          This article was written by the Parent Coach Playbook Editorial. It synthesizes publicly available guidance from the medical organizations, governing bodies, and primary research listed in the Sources section above. We do every reasonable thing to reflect current published guidance.
+        </p>
+        <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
+          <strong class="font-medium text-ink">This is not medical advice.</strong> We are not physicians, athletic trainers, or licensed healthcare providers. For any decision specific to your child, consult their pediatrician, athletic trainer, or relevant specialist. For the current standard, go to the source organizations cited above. Standards change. Laws vary by state. The right choice for your family depends on circumstances we cannot see.
+        </p>
+        <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
+          If your child is in a medical emergency right now, call 911. If you are working through a non-emergency concern, your pediatrician's office is the right first call.
+        </p>
+        <p class="font-display italic text-ink-soft text-xs mt-4 leading-snug">
+          Last updated {lastUpdated.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
+        </p>
+      </aside>
     </div>
   </article>
 
