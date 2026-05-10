@@ -1,6 +1,9 @@
 ---
 title: "Coach background checks: what they actually verify"
 summary: "Not all background checks are the same. What the major youth-sport organizations require, what the checks miss, and what to ask your league."
+subhub: "safety"
+safetyCategory: "coach-vetting"
+format: "topic"
 category: "injury-prevention"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]

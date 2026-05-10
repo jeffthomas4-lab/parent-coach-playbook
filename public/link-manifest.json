@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-10T14:52:49.986Z",
-  "count": 195,
+  "generatedAt": "2026-05-10T15:23:08.070Z",
+  "count": 238,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -58,6 +58,12 @@
       ]
     },
     {
+      "url": "https://aausports.org/aau-youth-protection-policy/",
+      "sources": [
+        "src/content/body/volunteer-vs-paid-coach-vetting.md"
+      ]
+    },
+    {
       "url": "https://appliedsportpsych.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -90,7 +96,27 @@
     {
       "url": "https://concussionfoundation.org/",
       "sources": [
-        "src/content/body/concussion-protocol-basics.md"
+        "src/content/body/concussion-protocol-basics.md",
+        "src/content/body/suspected-concussion-right-now.md"
+      ]
+    },
+    {
+      "url": "https://cpr.heart.org/",
+      "sources": [
+        "src/content/body/cpr-for-parents.md"
+      ]
+    },
+    {
+      "url": "https://cpr.heart.org/en/cpr-courses-and-kits/hands-only-cpr",
+      "sources": [
+        "src/content/body/cpr-for-parents.md"
+      ]
+    },
+    {
+      "url": "https://cpr.heart.org/en/resources/aed-implementation",
+      "sources": [
+        "src/content/body/aed-location-field-readiness.md",
+        "src/content/body/tournament-safety-plan-checklist.md"
       ]
     },
     {
@@ -139,7 +165,16 @@
       "url": "https://koreystringer.institute.uconn.edu/",
       "sources": [
         "src/content/body/heat-and-hydration.md",
+        "src/content/body/heatstroke-right-now.md",
+        "src/content/body/league-questions-checklist.md",
+        "src/content/body/youth-football-safety-briefing.md",
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://koreystringer.institute.uconn.edu/health-and-safety/sudden-cardiac-arrest/",
+      "sources": [
+        "src/content/body/aed-location-field-readiness.md"
       ]
     },
     {
@@ -170,6 +205,9 @@
     {
       "url": "https://nocsae.org/",
       "sources": [
+        "src/content/body/helmet-bat-mouthguard-certification.md",
+        "src/content/body/helmet-recertification.md",
+        "src/content/body/used-gear-safety.md",
         "src/content/guides/football-7v7.md"
       ]
     },
@@ -200,6 +238,7 @@
     {
       "url": "https://orthoinfo.aaos.org/",
       "sources": [
+        "src/content/body/broken-bone-vs-sprain.md",
         "src/pages/about/sources.astro"
       ]
     },
@@ -236,6 +275,7 @@
     {
       "url": "https://positivecoach.org/",
       "sources": [
+        "src/content/body/sideline-parent-conduct.md",
         "src/pages/about/sources.astro"
       ]
     },
@@ -274,6 +314,12 @@
       ]
     },
     {
+      "url": "https://publications.aap.org/pediatrics/",
+      "sources": [
+        "src/content/body/cold-weather-practice.md"
+      ]
+    },
+    {
       "url": "https://publications.aap.org/pediatrics/article/119/6/1242/70488",
       "sources": [
         "src/content/body/burnout-signs.md",
@@ -296,6 +342,7 @@
       "url": "https://publications.aap.org/pediatrics/article/128/3/e741/30912",
       "sources": [
         "src/content/body/heat-and-hydration.md",
+        "src/content/body/heatstroke-right-now.md",
         "src/content/body/hydration-baseline.md",
         "src/content/body/summer-hydration-daily-plan.md"
       ]
@@ -389,6 +436,12 @@
       ]
     },
     {
+      "url": "https://usafootball.com/heads-up-football/",
+      "sources": [
+        "src/content/body/youth-football-safety-briefing.md"
+      ]
+    },
+    {
       "url": "https://usafootball.com/programs/",
       "sources": [
         "src/content/rules/football-7v7.md"
@@ -444,8 +497,19 @@
     {
       "url": "https://uscenterforsafesport.org/",
       "sources": [
+        "src/content/body/bullying-and-hazing.md",
         "src/content/body/coach-background-checks.md",
+        "src/content/body/league-questions-checklist.md",
+        "src/content/body/locker-room-culture.md",
+        "src/content/body/one-on-one-coach-dms.md",
+        "src/content/body/recruiting-dms.md",
         "src/content/body/safesport-basics-for-parents.md",
+        "src/content/body/safesport-reporting-walkthrough.md",
+        "src/content/body/team-app-dm-settings.md",
+        "src/content/body/tournament-safety-plan-checklist.md",
+        "src/content/body/transporting-other-peoples-kids.md",
+        "src/content/body/travel-team-rooming-chaperones.md",
+        "src/content/body/volunteer-vs-paid-coach-vetting.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -474,8 +538,19 @@
       ]
     },
     {
+      "url": "https://www.aad.org/public/everyday-care/sun-protection",
+      "sources": [
+        "src/content/body/sun-and-skin.md"
+      ]
+    },
+    {
       "url": "https://www.aap.org/",
       "sources": [
+        "src/content/body/broken-bone-vs-sprain.md",
+        "src/content/body/sideline-first-aid-kit.md",
+        "src/content/body/sun-and-skin.md",
+        "src/content/body/transporting-other-peoples-kids.md",
+        "src/content/body/wildfire-smoke-aqi.md",
         "src/pages/about/sources.astro"
       ]
     },
@@ -496,6 +571,24 @@
       "url": "https://www.abt.org/training",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.acep.org/",
+      "sources": [
+        "src/content/body/broken-bone-vs-sprain.md"
+      ]
+    },
+    {
+      "url": "https://www.airnow.gov/",
+      "sources": [
+        "src/content/body/wildfire-smoke-aqi.md"
+      ]
+    },
+    {
+      "url": "https://www.airnow.gov/wildfire-smoke-guide/",
+      "sources": [
+        "src/content/body/wildfire-smoke-aqi.md"
       ]
     },
     {
@@ -548,9 +641,24 @@
       ]
     },
     {
+      "url": "https://www.bnq.qc.ca/",
+      "sources": [
+        "src/content/body/hockey-equipment-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/drowning/",
+      "sources": [
+        "src/content/body/pool-deck-rules.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/heads-up/",
       "sources": [
         "src/content/body/concussion-protocol-basics.md",
+        "src/content/body/league-questions-checklist.md",
+        "src/content/body/suspected-concussion-right-now.md",
+        "src/content/body/youth-football-safety-briefing.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -559,6 +667,24 @@
       "url": "https://www.cdc.gov/headsup",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.childhelp.org/",
+      "sources": [
+        "src/content/body/safesport-reporting-walkthrough.md"
+      ]
+    },
+    {
+      "url": "https://www.commonsensemedia.org/",
+      "sources": [
+        "src/content/body/team-app-dm-settings.md"
+      ]
+    },
+    {
+      "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation",
+      "sources": [
+        "src/content/body/used-gear-safety.md"
       ]
     },
     {
@@ -592,6 +718,12 @@
       ]
     },
     {
+      "url": "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa",
+      "sources": [
+        "src/content/body/team-app-dm-settings.md"
+      ]
+    },
+    {
       "url": "https://www.google.com/maps/search/?api=1&query=${camp.latitude},${camp.longitude}",
       "sources": [
         "src/pages/camps/[slug].astro"
@@ -617,9 +749,27 @@
       ]
     },
     {
+      "url": "https://www.hecc.net/",
+      "sources": [
+        "src/content/body/hockey-equipment-safety.md"
+      ]
+    },
+    {
       "url": "https://www.helmet.beam.vt.edu",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.iii.org/article/auto-insurance-basics",
+      "sources": [
+        "src/content/body/transporting-other-peoples-kids.md"
+      ]
+    },
+    {
+      "url": "https://www.justice.gov/",
+      "sources": [
+        "src/content/body/missing-kid-at-tournament.md"
       ]
     },
     {
@@ -651,7 +801,8 @@
     {
       "url": "https://www.littleleague.org/player-safety/child-protection-program/",
       "sources": [
-        "src/content/body/coach-background-checks.md"
+        "src/content/body/coach-background-checks.md",
+        "src/content/body/volunteer-vs-paid-coach-vetting.md"
       ]
     },
     {
@@ -664,6 +815,12 @@
       "url": "https://www.littleleague.org/playing-rules/pitch-count/",
       "sources": [
         "src/content/body/youth-pitcher-arm-care.md"
+      ]
+    },
+    {
+      "url": "https://www.missingkids.org/",
+      "sources": [
+        "src/content/body/missing-kid-at-tournament.md"
       ]
     },
     {
@@ -683,6 +840,12 @@
       "sources": [
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.naera.org/",
+      "sources": [
+        "src/content/body/helmet-recertification.md"
       ]
     },
     {
@@ -718,6 +881,26 @@
       ]
     },
     {
+      "url": "https://www.naso.org/",
+      "sources": [
+        "src/content/body/sideline-parent-conduct.md"
+      ]
+    },
+    {
+      "url": "https://www.nata.org/",
+      "sources": [
+        "src/content/body/heatstroke-right-now.md",
+        "src/content/body/sideline-first-aid-kit.md",
+        "src/content/body/youth-football-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://www.nata.org/practice-patient-care/health-issues/environmental",
+      "sources": [
+        "src/content/body/cold-weather-practice.md"
+      ]
+    },
+    {
       "url": "https://www.nata.org/professional-interests/job-settings/secondary-school",
       "sources": [
         "src/content/body/heat-and-hydration.md"
@@ -747,9 +930,27 @@
       ]
     },
     {
+      "url": "https://www.ncaa.org/sports/2014/8/14/sports-medicine-handbook.aspx",
+      "sources": [
+        "src/content/body/lightning-at-the-field.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/2014/8/25/recruiting-calendars.aspx",
+      "sources": [
+        "src/content/body/recruiting-dms.md"
+      ]
+    },
+    {
       "url": "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx",
       "sources": [
         "src/content/recruiting/scholarship-odds-the-honest-math.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx",
+      "sources": [
+        "src/content/body/recruiting-dms.md"
       ]
     },
     {
@@ -833,6 +1034,12 @@
     {
       "url": "https://www.nfhs.org/",
       "sources": [
+        "src/content/body/bullying-and-hazing.md",
+        "src/content/body/helmet-bat-mouthguard-certification.md",
+        "src/content/body/helmet-recertification.md",
+        "src/content/body/lightning-at-the-field.md",
+        "src/content/body/locker-room-culture.md",
+        "src/content/body/sideline-parent-conduct.md",
         "src/content/guides/cheer.md",
         "src/content/recruiting/nil-basics-for-hs.md",
         "src/content/rules/football.md",
@@ -917,6 +1124,38 @@
       ]
     },
     {
+      "url": "https://www.projectadam.com/",
+      "sources": [
+        "src/content/body/aed-location-field-readiness.md"
+      ]
+    },
+    {
+      "url": "https://www.redcross.org/",
+      "sources": [
+        "src/content/body/missing-kid-at-tournament.md",
+        "src/content/body/tournament-safety-plan-checklist.md"
+      ]
+    },
+    {
+      "url": "https://www.redcross.org/take-a-class/cpr",
+      "sources": [
+        "src/content/body/cpr-for-parents.md"
+      ]
+    },
+    {
+      "url": "https://www.redcross.org/take-a-class/first-aid",
+      "sources": [
+        "src/content/body/sideline-first-aid-kit.md"
+      ]
+    },
+    {
+      "url": "https://www.redcross.org/take-a-class/water-safety",
+      "sources": [
+        "src/content/body/open-water-swim-safety.md",
+        "src/content/body/pool-deck-rules.md"
+      ]
+    },
+    {
       "url": "https://www.royalacademyofdance.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -926,6 +1165,12 @@
       "url": "https://www.royalacademyofdance.org/",
       "sources": [
         "src/content/guides/ballet.md"
+      ]
+    },
+    {
+      "url": "https://www.skincancer.org/",
+      "sources": [
+        "src/content/body/sun-and-skin.md"
       ]
     },
     {
@@ -946,6 +1191,13 @@
       "url": "https://www.specialolympics.org/programs",
       "sources": [
         "src/content/adaptive/unified-sports-explained.md"
+      ]
+    },
+    {
+      "url": "https://www.stopbullying.gov/",
+      "sources": [
+        "src/content/body/bullying-and-hazing.md",
+        "src/content/body/locker-room-culture.md"
       ]
     },
     {
@@ -1015,6 +1267,13 @@
       ]
     },
     {
+      "url": "https://www.usabat.com/",
+      "sources": [
+        "src/content/body/helmet-bat-mouthguard-certification.md",
+        "src/content/body/used-gear-safety.md"
+      ]
+    },
+    {
       "url": "https://www.usacheer.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -1073,6 +1332,13 @@
       "url": "https://www.usahockey.com/officials",
       "sources": [
         "src/content/rules/hockey.md"
+      ]
+    },
+    {
+      "url": "https://www.usahockey.com/safety",
+      "sources": [
+        "src/content/body/hockey-equipment-safety.md",
+        "src/content/body/travel-team-rooming-chaperones.md"
       ]
     },
     {
@@ -1143,6 +1409,12 @@
       ]
     },
     {
+      "url": "https://www.usasoftball.com/play/equipment-standards/",
+      "sources": [
+        "src/content/body/helmet-bat-mouthguard-certification.md"
+      ]
+    },
+    {
       "url": "https://www.usaswimming.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -1161,6 +1433,13 @@
       "url": "https://www.usaswimming.org/officials/rules-regulations",
       "sources": [
         "src/content/rules/swimming.md"
+      ]
+    },
+    {
+      "url": "https://www.usaswimming.org/safe-sport",
+      "sources": [
+        "src/content/body/open-water-swim-safety.md",
+        "src/content/body/pool-deck-rules.md"
       ]
     },
     {
@@ -1191,6 +1470,18 @@
       "sources": [
         "src/content/rules/martial-arts.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usavolleyball.org/safesport/",
+      "sources": [
+        "src/content/body/travel-team-rooming-chaperones.md"
+      ]
+    },
+    {
+      "url": "https://www.uscg.mil/water-safety/",
+      "sources": [
+        "src/content/body/open-water-swim-safety.md"
       ]
     },
     {
@@ -1269,6 +1560,18 @@
       "sources": [
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.weather.gov/safety/cold-wind-chill-chart",
+      "sources": [
+        "src/content/body/cold-weather-practice.md"
+      ]
+    },
+    {
+      "url": "https://www.weather.gov/safety/lightning",
+      "sources": [
+        "src/content/body/lightning-at-the-field.md"
       ]
     },
     {

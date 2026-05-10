@@ -196,19 +196,42 @@ const seasonCalendars = defineCollection({
     }),
 });
 
-// Body hub: pediatric sports medicine translated for parents. Strict boundary —
-// describe, don't diagnose. Always cite the governing body. Always end with the
-// questions to bring to the pediatrician.
+// Body hub: pediatric sports medicine plus the safety canon. Two lenses, one
+// collection. Strict boundary — describe, don't diagnose. Always cite the
+// governing body. Always end with the questions to bring to the pediatrician.
+//
+// subhub splits the collection into 'health' (existing pediatric medicine) and
+// 'safety' (the institutional, environmental, equipment, conduct canon). See
+// SAFETY_PLAN.md at the repo root for the full operator manual.
+//
+// format picks the page layout. 'topic' is the existing long deep page.
+// 'protocol' is the moment-of-need numbered page. 'sport-briefing' is the per-
+// sport page. 'checklist' is the print/screenshot artifact.
+const SAFETY_CATEGORY_ENUM = [
+  'weather',                  // heat, lightning, wildfire smoke / AQI, cold, sun
+  'coach-vetting',            // SafeSport, background checks, league questions
+  'equipment-certification',  // NOCSAE helmets, bat stamps, mouthguards, used gear
+  'travel-logistics',         // rooming, chaperones, transporting other kids
+  'emergency-response',       // protocols, sideline kit, AED/CPR, missing kid
+  'conduct',                  // bullying, hazing, sideline parents, refs, locker room
+  'aquatic',                  // pool/lake/deck rules, shallow-water blackout
+  'cyber',                    // team apps, photo policies, recruiting DMs
+  'crisis-mental-health',     // deferred mini-launch; schema-ready, not slate-ready
+] as const;
+
 const body = defineCollection({
   type: 'content',
   schema: () =>
     z.object({
       title: z.string(),
       summary: z.string(),
+      subhub: z.enum(['health', 'safety']).default('health'),
+      format: z.enum(['topic', 'protocol', 'sport-briefing', 'checklist']).default('topic'),
       category: z.enum([
         'injury-prevention','recovery','sleep','nutrition','hydration',
         'mental-skills','arm-care','concussion','heat','growth-plates','specialization',
-      ]),
+      ]).optional(),
+      safetyCategory: z.enum(SAFETY_CATEGORY_ENUM).optional(),
       sportTags: z.array(z.enum(SPORT_ENUM)).optional(),
       ageBands: z.array(z.enum(AGE_ENUM)).optional(),
       governingBodies: z.array(
@@ -225,10 +248,23 @@ const body = defineCollection({
           affiliateSlug: z.string().optional(),
         })
       ).default([]),
+      protocolSteps: z.array(z.string()).default([]),       // numbered moment-of-need steps for format: protocol
+      checklistItems: z.array(z.string()).default([]),      // line items for format: checklist
+      checklistPdf: z.string().optional(),                  // path to printable PDF for format: checklist
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
       ...editorialField,
+    }).superRefine((data, ctx) => {
+      // The pairing rule: health pieces use category; safety pieces use safetyCategory,
+      // unless format is 'sport-briefing' which sits above the category dimension.
+      if (data.format === 'sport-briefing') return;
+      if (data.subhub === 'health' && !data.category) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'subhub:health requires a category' });
+      }
+      if (data.subhub === 'safety' && !data.safetyCategory) {
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'subhub:safety requires a safetyCategory' });
+      }
     }),
 });
 

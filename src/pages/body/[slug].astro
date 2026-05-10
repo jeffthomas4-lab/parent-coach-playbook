@@ -79,8 +79,8 @@ const lastUpdated = topic.data.publishedAt;
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
-        <a href="/tools/" class="hover:underline">Tools</a> ·
-        <a href="/body/" class="hover:underline">The body</a>
+        <a href="/reads/" class="hover:underline">Reads</a> ·
+        <a href="/body/" class="hover:underline">{(topic.data as any).subhub === 'safety' ? 'Safety' : 'The body'}</a>
       </p>
       <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl" style="font-weight: 500;" set:html={renderTitle(topic.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">

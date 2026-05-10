@@ -93,13 +93,12 @@ const fmtDate = (d: Date) =>
             Pick what's <em class="text-rust">on your mind</em>.
           </h2>
           <div class="grid sm:grid-cols-2 gap-4">
-            {/* Body & Safety hub — top-line tile, leads the grid */}
+            {/* Body & Safety hub — top-line tile, leads the grid. Same shape as the topic tiles below so the grid reads as one set. */}
             <a
               href="/body/"
               class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
             >
               <TopicIcon topic="body" size={48} class="mb-4" />
-              <p class="font-display italic text-rust text-xs font-medium mb-1">Hub</p>
               <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
                 {bodyTile.label}
               </h3>

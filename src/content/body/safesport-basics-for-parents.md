@@ -1,6 +1,9 @@
 ---
 title: "SafeSport basics: what every youth sports parent should know"
 summary: "U.S. Center for SafeSport: what it is, what training your kid's coaches should have completed, and what to do if something feels wrong."
+subhub: "safety"
+safetyCategory: "coach-vetting"
+format: "topic"
 category: "injury-prevention"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]
