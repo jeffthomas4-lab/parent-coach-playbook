@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-09T23:19:15.021Z",
-  "count": 195,
+  "generatedAt": "2026-05-10T00:31:20.486Z",
+  "count": 194,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -97,12 +97,6 @@
       "url": "https://concussionfoundation.org/",
       "sources": [
         "src/content/body/concussion-protocol-basics.md"
-      ]
-    },
-    {
-      "url": "https://github.com/jeffthomas4-lab/parent-coach-playbook",
-      "sources": [
-        "src/pages/about/methodology.astro"
       ]
     },
     {

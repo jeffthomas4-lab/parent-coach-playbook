@@ -69,7 +69,6 @@ export async function GET(ctx: APIContext) {
     '/why-we-exist/',
     '/parent-coach/',
     '/sports/',
-    '/about/methodology/',
     '/about/sources/',
     '/about/corrections/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
