@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Kicker driving the ball to the near post where an attacker is positioned to head or volley it in."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Drill mentions heading or volley as finishing options at 11-12 (compliant with US Soccer 11+ heading guidance), but doesn't include rule note about heading restrictions. Volley is the safer default for younger groups."
 ---
 
 Corner kicks are set-piece scoring opportunities. The near-post corner is the simplest: kick it to the near post, attacker finishes. This teaches timing and finishing under pressure.

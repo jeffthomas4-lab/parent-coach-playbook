@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Four players in a circle, three passing among themselves while one defender in the middle tries to intercept."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cue framework lands well; circle rotation rules are clear."
 ---
 
 Rondo is the best possession drill. Three attackers have to move, pass, and think under pressure from one defender. The defender learns to pressure. The attackers learn to escape pressure with quick passes.

@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Attacker jumping and heading a crossed ball toward goal with power and direction."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Heading drill restricted to ages 11-12 with US Soccer rule note and 5-rep cap. Flagged sensitive due to heading injury concerns. Could cite US Soccer/NFHS heading guidance directly for stronger compliance."
 ---
 
 US Soccer guidelines limit heading before age 11-12. Attacking heading is about placing the header on goal. Soft ball, low volume (5 reps). Power and placement matter. The header is trying to score, not just clear it.

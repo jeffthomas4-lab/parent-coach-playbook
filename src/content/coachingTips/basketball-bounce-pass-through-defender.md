@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A player bouncing a basketball past an outstretched defender's hands to reach a teammate."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Graduated defender pressure tiers (25/50/75%) make the progression clear."
 ---
 
 When a defender guards tightly, the bounce pass gets through where air passes can't. This drill teaches the angle and timing under pressure.

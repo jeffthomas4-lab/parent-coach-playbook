@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Field divided into zones with defender in one zone, staying in position as the ball moves."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Zone-defense intro; could note that pure zone is rare in 8-10 game play."
 ---
 
 Zone defense means players defend an area, not a person. This teaches kids to stay in their lane and not follow the ball around aimlessly. Discipline and positioning first.

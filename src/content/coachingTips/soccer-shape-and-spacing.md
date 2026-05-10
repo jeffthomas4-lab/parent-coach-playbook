@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Overhead view of a team maintaining a defensive or offensive shape, players evenly distributed across the field."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Could use one concrete spacing distance, but overall clean."
 ---
 
 Good teams keep their shape. Even spacing between players, defenders and forwards in their correct positions. This drill teaches players to adjust their position based on the ball location without breaking formation.

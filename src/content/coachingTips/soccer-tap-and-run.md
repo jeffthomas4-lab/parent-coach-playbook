@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young child with feet next to a soccer ball, tapping it with the inside of their foot, eyes down on the ball."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Walking pace rule is a strong cue for 5-7s."
 ---
 
 Five-year-olds have no sense of where their feet are. This drill teaches them that the ball stays close and moves when they tap it. Nothing fancy. Just tap and follow.

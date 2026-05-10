@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Overhead view of 3 spots around a goal at different distances and angles, players rotating through each."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Three-station rotation is concrete; angle adjustments well-flagged."
 ---
 
 Stations teach kids that every shot is different. Distance changes. Angle changes. They learn to adjust. Dead-ball shooting is boring. Stations add variety and challenge.

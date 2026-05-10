@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender timing a tackle, extending their leg to contact the ball while staying balanced."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tackle-timing read on outside foot is a real coaching point."
 ---
 
 At this age, defenders can try tackles. The key is timing. A tackle too early gives the attacker space. A tackle too late is beaten. This drill teaches the rhythm of a clean tackle.

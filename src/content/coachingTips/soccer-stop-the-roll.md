@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child's sole of the foot pressing down on a rolling soccer ball to stop it completely."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tight, focused 5-7 receiving drill; sole-stop fundamentals."
 ---
 
 Before a five-year-old can pass or shoot, they need to stop the ball. Stopping is harder than it looks. The sole of the foot is the brake.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young child kicking a ball between two cones positioned 10 feet apart."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Inside-of-foot vs. toe-poke is the right 5-7 emphasis."
 ---
 
 Five-year-olds don't have the foot strength to pass far. This drill teaches them to push the ball to a target that's close and visible. Two cones are easy to see and hit.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player receiving a ball on their thigh with a bent knee, absorbing the bounce and settling it at their feet."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "See-Cushion-Settle-Move framework consistent; thigh is right surface for this age."
 ---
 
 Air balls come at kids from crosses and long passes. They need to trap them. The thigh is the biggest contact surface and the easiest to control at this age.

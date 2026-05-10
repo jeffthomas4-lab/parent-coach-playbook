@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Three defenders in a horizontal line maintaining shape as attackers try to penetrate with passes and dribbling."
 publishedAt: 2026-03-18
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body truncated mid-sentence at 'Do they mark the'. Missing the rest of What to look for plus If they're struggling / If they've got it variations."
 ---
 
 Defensive shape is a line. This drill teaches defenders to stay in a line while marking attackers and closing down the ball.

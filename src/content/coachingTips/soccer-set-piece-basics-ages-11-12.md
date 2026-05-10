@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Attacking corner and free kick formations"
 publishedAt: 2026-03-25
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Two plays in 20 minutes is tight but workable."
 ---
 
 Set pieces are organized chances to score. This drill teaches two basic plays: the near-post corner and the direct free kick.

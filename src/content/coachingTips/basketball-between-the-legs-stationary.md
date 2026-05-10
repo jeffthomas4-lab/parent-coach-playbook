@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child with feet wide apart, bouncing a basketball between their legs from one hand to the other."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Specific stance width (12 inches wider than shoulders) is the kind of detail the voice rules ask for."
 ---
 
 Between-the-legs dribbles look flashy but they're just a different bounce angle. This drill starts stationary. The goal is to bounce it through without kicking it or losing control.

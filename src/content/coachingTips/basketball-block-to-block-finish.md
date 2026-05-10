@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player shooting from near the corner on the baseline, very close to the basket."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard build-confidence-near-the-rim drill. Vocabulary stays in basketball lane."
 ---
 
 Block shooting teaches the finish near the basket. The blocks are the spots right next to the basket at the baseline. These are high-percentage spots. Build confidence with close shots.

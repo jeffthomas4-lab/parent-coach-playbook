@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Three players positioned at the corners of a triangle, one passing to another while moving to fill a gap."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Move-after-pass cue is the key teaching point."
 ---
 
 The triangle teaches kids spatial awareness. Each player has a passing option and needs to read who's closest. It's simple but it demands constant small decisions.

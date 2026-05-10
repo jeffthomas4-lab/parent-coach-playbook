@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player passing a ball to a wall 8 feet away, then receiving the rebound with a cushioned first touch."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Wall-as-partner framing is sharp; consistency-over-power coaching point lands."
 ---
 
 The wall returns every pass the same speed and angle it came in. That forces the player to be accurate and teaches them to anticipate the return. No partner needed. The wall is always there.

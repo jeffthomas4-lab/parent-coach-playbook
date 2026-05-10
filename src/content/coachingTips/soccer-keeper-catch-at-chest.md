@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Goalkeeper receiving a ball at chest height with hands positioned behind the ball, catching and securing it to the body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean introductory keeper drill. Soccer vocab correct."
 ---
 
 This drill is for kids who want to play goalkeeper. Air balls require a different technique than ground balls. The keeper catches at chest height, hands behind the ball, and secures it to their body.

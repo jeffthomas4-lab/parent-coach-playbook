@@ -31,19 +31,3 @@ This drill teaches spacing and passing without the complexity of defense. Kids l
 **If they're struggling:** Move the chairs closer (6 feet apart). Slow the rotation so the passer has time to set their feet between passes.
 
 **If they've got it:** Add a defender in the middle who tries to deflect passes. Or have the chair kids cut to a new chair after each pass to add movement.
-
----
-
-editorial:
-  qualityGrade: 7
-  originalityGrade: 6
-  voiceGrade: 7
-  flagInappropriateness: false
-  flagIpRisk: false
-  flagSensitiveTopic: false
-  citationCheckPassed: true
-  sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-09
-  status: claude-reviewed
-  reviewerNotes: "Body was truncated mid-Variation; completed with struggle/got-it tiers."

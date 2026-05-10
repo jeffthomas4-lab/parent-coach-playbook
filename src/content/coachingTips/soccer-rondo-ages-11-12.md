@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Circle passing drill with pressure from center"
 publishedAt: 2026-03-04
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid rondo write-up; first-touch coaching point sharp."
 ---
 
 A rondo is the best passing drill. Five players pass around one defender who's trying to intercept. It teaches first touch, spacing, and decision-making under pressure.

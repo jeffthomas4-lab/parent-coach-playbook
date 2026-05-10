@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young child kicking a ball at a cone standing alone 15 feet away."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cone target instead of goal is a great age-appropriate twist."
 ---
 
 Shooting at a cone is more fun than shooting at a goal. Kids get instant feedback. Did they knock it over or miss? The cone doesn't move. The target is clear.

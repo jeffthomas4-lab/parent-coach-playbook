@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child's foot making contact with the top of the ball near the shoelaces, standing still in place."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foot-feel work for 5-7s; coaching point on rolling vs. tapping is sharp."
 ---
 
 Shoelace touches build feel for the ball. The top of the foot has less surface area than the inside, so it forces better control. Kids stay in one spot and just work the ball.

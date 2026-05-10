@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players near the rim, one with arms wide and butt low, sealing the other from the basket as the ball comes off the rim."
+editorial:
+  qualityGrade: 9
+  originalityGrade: 8
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Lead has temperature: 'jumping stops working at 11.' Strong opener."
 ---
 
 Most rebounds at this age go to the kid who jumps highest. That stops working at 11. Boxing out beats jumping when both kids know what they're doing. Teach it now and they'll have the habit.

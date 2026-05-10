@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player dribbling at speed toward goal with a defender closing in from behind, taking a shot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Good timing-vs-composure framing; xG mention may be too jargon-y for some parents."
 ---
 
 In games, shooters don't have time to set up. They dribble, they see an opening, they shoot. This drill teaches timing and composure. Shoot before the defender arrives.

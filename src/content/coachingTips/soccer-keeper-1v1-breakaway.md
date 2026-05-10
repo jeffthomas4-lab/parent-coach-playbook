@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Goalkeeper charging out to narrow the angle as an attacker approaches with the ball."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean keeper drill. Soccer vocab correct."
 ---
 
 This drill is for kids who want to play goalkeeper. The breakaway is the most critical situation. Keeper has to come out quickly, narrow the angle, and make the save.

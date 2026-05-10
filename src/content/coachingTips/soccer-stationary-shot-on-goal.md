@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young child kicking a stationary ball toward a cone goal 12 feet away."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Plant-Lock-Strike-Finish cue clearly explained; 5-7 appropriate."
 ---
 
 Before kids move or receive passes, they shoot a still ball. The ball is not moving. They are in complete control. This is about building confidence and aim.

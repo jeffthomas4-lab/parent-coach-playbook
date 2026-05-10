@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender with legs bent, reaching their foot out to poke the ball away while staying upright."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong on safety and technique; matches US Soccer guidance against slide tackles at this age."
 ---
 
 Young defenders want to dive and slide. That's reckless. Good defending happens on your feet. The defender pokes the ball away with their foot while staying upright and balanced.

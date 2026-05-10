@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Goalkeeper in one-handed throwing position, releasing a ball toward a teammate."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Distribution throw drill. Soccer vocab correct."
 ---
 
 This drill is for kids who want to play goalkeeper. Goalkeepers are the first attacker. They have to throw accurately to start the team's offense. Range and accuracy matter.

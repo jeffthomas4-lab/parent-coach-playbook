@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Receiving and passing after throw-in"
 publishedAt: 2026-02-25
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Could note proper throw-in form (both feet down, hands behind head) for completeness."
 ---
 
 Receiving a throw-in is different from receiving a pass. The ball comes down from above, and the receiver has to be ready to move immediately.

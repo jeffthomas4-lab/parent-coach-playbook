@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player alternating feet in a juggling pattern, ball at chest height on each touch."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid juggling warm-up. Soccer vocab correct."
 ---
 
 Juggling is the best warm-up for touch and rhythm. It requires focus and soft feet. Kids compete against themselves to beat their record. It's fun, hard, and builds real skill.

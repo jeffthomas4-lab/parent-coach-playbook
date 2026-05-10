@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Goalkeeper bending with soft hands to scoop a rolling ball from the ground."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundational keeper drill. Soccer vocab correct."
 ---
 
 This drill is for kids who want to play goalkeeper. Rolling balls come at keepers all the time. They have to bend down, stay soft with their hands, and pick it up cleanly.

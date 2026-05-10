@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Dribbler approaching a defender who is positioned at a cone, preparing to execute a quick cut or push past them."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Read-the-defender framing avoids fancy-move pitfall."
 ---
 
 Now the defender doesn't chase. They're set. This teaches the attacker to read where the defender is set and go the opposite way. Speed and timing matter more than flashy moves.

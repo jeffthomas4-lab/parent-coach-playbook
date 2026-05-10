@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Goalkeeper diving sideways with arms extended to block a shot, landing on their side."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Diving carries impact risk; soft ground noted. Sensitive flag for injury risk."
 ---
 
 This drill is for kids who want to play goalkeeper. Diving is the signature keeper move. At 11-12, they can handle the impact. Keeper pushes off their feet and extends to cover space.

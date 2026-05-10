@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young children with a basketball bouncing between them on the ground, one child bouncing it toward the other."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Halfway-bounce-point cue is the right teaching detail for ages 5-7."
 ---
 
 The bounce pass goes on the ground. It's slower than a chest pass but harder to intercept. This drill teaches the angle. The ball bounces at a point between you and your partner.

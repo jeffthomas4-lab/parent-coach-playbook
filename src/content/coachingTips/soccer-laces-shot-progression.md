@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child's foot striking the ball with the laces, toe pointed down, generating power."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Good progression-style shooting drill. Soccer vocab correct."
 ---
 
 Laces shots are powerful but harder to control. Kids start with inside foot shots, then progress to laces. This drill walks them up the progression so they learn when and how to use power.

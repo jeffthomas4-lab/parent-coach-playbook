@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child's sole of the foot pressing down on a moving soccer ball to stop it."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sole-of-foot brake metaphor is concrete and age-right."
 ---
 
 Kids need to learn they can stop the ball whenever they want. This drill teaches them that the sole of the foot is the brake. Tap, roll, stop. That's control.

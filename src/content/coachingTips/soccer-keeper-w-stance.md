@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young goalkeeper in a wide stance with hands positioned at waist height in a W shape, ready to react."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundational ready-stance drill. Soccer vocab correct."
 ---
 
 This drill is for kids who want to play goalkeeper. Not every kid will use these. The W stance is the foundation. Hands up, feet wide, ready to move. It's the shape they start from on every shot.

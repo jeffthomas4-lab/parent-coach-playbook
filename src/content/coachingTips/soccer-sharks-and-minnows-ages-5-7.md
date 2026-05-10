@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "One defender chases multiple attackers"
 publishedAt: 2026-01-03
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Classic drill, well-paced explanation, age variation good."
 ---
 
 Dribbling starts with confidence and touch. This game forces ball control because getting tagged means you're out. Kids learn to protect the ball while moving fast.

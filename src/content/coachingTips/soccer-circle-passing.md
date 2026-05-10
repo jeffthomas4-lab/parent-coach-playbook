@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "5 children standing in a circle facing inward, one passing a soccer ball to the child to their right."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Drill is functional but generic; originality below 7. Could add named coaching cue or specific rotation variant to lift it."
 ---
 
 The circle is the simplest structure for group passing. Every kid gets a touch. No waiting. No confusion about where the ball goes next.

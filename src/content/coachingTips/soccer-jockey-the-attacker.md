@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender moving sideways toward an attacker with the ball, staying upright and ready."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Step 1 mashes the cue list with steps; could split for clarity. Soccer vocab correct."
 ---
 
 Jockeying is active defending. The defender moves toward the attacker while staying in control, ready to react to their move. Not diving. Not standing still. Active positioning.

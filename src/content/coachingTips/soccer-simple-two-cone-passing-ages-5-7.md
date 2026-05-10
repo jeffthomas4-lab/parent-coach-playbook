@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Two cones with pass between them"
 publishedAt: 2026-01-24
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid intro passing drill; stepping-back rule adds structure."
 ---
 
 Passing is touch and accuracy. This drill teaches both by making it simple: pass to your partner and pass it back.

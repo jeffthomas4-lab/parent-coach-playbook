@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Four attacking players arranged in a diamond formation advancing up the field toward the opponent's goal."
 publishedAt: 2026-03-11
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body truncated mid-thought at 'Do they stay in a diamond or bunch up?'. Missing the rest of What to look for plus If they're struggling / If they've got it variations."
 ---
 
 The attacking diamond teaches movement in formation. Four attackers work together to advance up the field, pass around defenders, and create a scoring chance.

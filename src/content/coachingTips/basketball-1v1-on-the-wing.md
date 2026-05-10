@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young players, one dribbling while the other defends tight on the wing, both competing for the ball."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean. Stance/Slide/Mirror/Hands cue is consistent with the defensive series."
 ---
 
 One-on-one on the wing teaches individual defense under game conditions. The offensive player has the ball and can score. The defender must stop them or force a turnover.

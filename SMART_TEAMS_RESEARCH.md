@@ -264,7 +264,7 @@ How to actually execute. Six quarters, slotted into the existing 24-month plan w
 ### Q4 2027 (months 16-18)
 - Maintenance phase on the safety pillars
 - Add 5-10 new safety pieces per quarter going forward (driven by reader interviews, new research, GSC patterns)
-- The safety pillar is now PCP's authority bedrock — the content that gets PCP into governing-body partnership conversations and that earns the Wirecutter / Project Play / Athletic citations the strategic audit named as the year-2 backlink targets
+- The safety pillar is now PCP's authority anchor. This is the content that gets PCP into governing-body partnership conversations and earns the Wirecutter / Project Play / Athletic citations the strategic audit named as year-2 backlink targets.
 
 ---
 
