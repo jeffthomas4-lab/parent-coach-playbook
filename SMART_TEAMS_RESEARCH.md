@@ -55,7 +55,7 @@ For each pillar, where PCP stands today.
 
 ### Physical safety
 - Live: `body/youth-pitcher-arm-care.md`, `body/growth-plates-basics.md`, `body/single-sport-specialization.md`, `body/recovery-basics.md`, `body/acl-prevention-warmup.md`, `body/sleep-targets-by-age.md`, `body/pre-game-routine.md`, `body/pre-game-nutrition.md`. Strong foundation.
-- Gap: comprehensive arm care pillar (prep, prehab, nagging-vs-serious, tournament cost-benefit). Lightning safety. Equipment standards explainers. Female athlete health (RED-S). Return-to-play sport-specific.
+- Gap: full arm care pillar (prep, prehab, nagging-vs-serious, tournament cost-benefit). Lightning safety. Equipment standards explainers. Female athlete health (RED-S). Return-to-play sport-specific.
 
 ### Sexual safety
 - Live: `body/safesport-basics-for-parents.md`, `body/coach-background-checks.md`.
@@ -151,10 +151,12 @@ This is the largest pillar. Arm care, overuse, joint protection, return-to-play,
 
 Strategic answer, not tactical. The youth-sports parent safety category has been served well in some respects and poorly in others. PCP has five structural advantages that, if held, make it possible to publish this content better than the current options.
 
-### A. Voice that travels
-Most existing safety content reads with an institutional or clinical register. That voice earns authority but does not travel through Facebook groups, parent text chains, or email forwards. PCP's peer-to-peer voice does. The same evidence under a "what to actually do when your daughter stops eating after gymnastics practice" headline reaches a different reader in a different state.
+### A. Headlines that travel, prose that cites
+Safety content is not opinion writing. It is parent-facing translation of the best practices that governing bodies, pediatric medical associations, and standards bodies already publish. The voice register for safety pieces is reportorial, not voicey. The headline can still travel ("What to do when your kid takes a chest hit") because plain language is plain language. The body cites NFHS, AAP, AMSSM, NOCSAE, USA Baseball, US Lacrosse, USA Hockey, etc. inline, by claim, with hyperlinks.
 
-PCP's move: write every safety piece in PCP's voice. Cite the same evidence everyone else cites. Reach the parent who would never click a thought-leadership link.
+Every safety piece carries a "Last reviewed" date and a healthcare-professional disclaimer at the top. The full editorial standards for safety content live in `SAFETY_EDITORIAL_STANDARDS.md` in this folder. PCP's voice (no AI tells, plain language, short paragraphs, no jargon) still applies. The opinion register that drives the Drive Home essays does not.
+
+PCP's move: every safety piece is the parent-friendly version of what the cited authority already says. PCP makes it readable. PCP does not make it up.
 
 ### B. Tools, not just articles
 Most safety content is published as articles. PCP publishes tools: cost calculator, camps directory, age pathways, season calendars, pendulum quiz. Each tool is a backlink magnet, an email signup machine, and a decision aid in one.
@@ -261,7 +263,7 @@ Four to flag honestly.
 
 **Authority signal.** PCP is one coach with a real-but-narrow medical-adjacent credentialing footprint. The pieces in the 47-piece backlog must cite governing-body guidance (NOCSAE, NFHS, AAP, AMSSM, US Lacrosse, USA Hockey, USA Baseball, US Soccer Foundation) rather than presenting PCP as the medical authority. PCP is the parent-facing translator. The medical authority is the cited body.
 
-**Voice drift risk.** Safety content has a strong pull toward institutional register because of the seriousness of the topic. Hold the line. Every safety piece passes the same Anti AI Writing checklist as every essay. "What to do when your kid takes a chest hit" beats "Considerations for parental response to chest impact in pediatric athletes" every time, even when the underlying content is identical.
+**Voice register risk in both directions.** Safety content has two opposing pulls: toward institutional jargon (because the topic is serious) and toward opinion essay (because PCP's house style is voicey). Both register slips break the work. Safety pieces are reportorial parent-facing translations of governing-body guidance, with inline citations. They are not opinion essays and they are not consultant-speak. The full register rules live in `SAFETY_EDITORIAL_STANDARDS.md`. Every safety piece passes the standards checklist before publish.
 
 **The arm care sub-pillar specifically needs medical review.** Pieces 27 through 34 prescribe physical activity (prehab routines, daily checks, return decisions). At minimum, get a sports medicine PT or athletic trainer to read the drafts before ship. Budget $300-500 for a one-time review of the eight pieces. Document the reviewer's credentials on the methodology page.
 

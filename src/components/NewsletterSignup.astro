@@ -1,10 +1,12 @@
 ---
 // Kit (formerly ConvertKit) inline signup form.
 //
-// Form UID 4b28f916b5 maps to the hosted form at
-// https://parent-coach-playbook.kit.com/4b28f916b5 — the main newsletter form.
-// Override via PUBLIC_KIT_FORM_ID env var for branch previews if needed.
-// Lead-magnet flows can pass a different formId prop.
+// IMPORTANT: 9388648 is the form's NUMERIC ID — that's what the
+// /forms/<id>/subscriptions endpoint expects. The hash 4b28f916b5 you'll
+// see on the hosted form (parent-coach-playbook.kit.com/4b28f916b5) is
+// the form's data-uid, used for styling/tracking only. Don't swap them
+// or POSTs get silently rejected. Override via PUBLIC_KIT_FORM_ID for
+// branch previews. Lead-magnet flows can pass a different formId prop.
 
 interface Props {
   variant?: 'inline' | 'card' | 'compact';
@@ -19,7 +21,7 @@ const {
   variant = 'inline',
   headline = 'Slide into the inbox',
   blurb = 'One short read a week from the Parent Coach Playbook Editorial. Easy unsubscribe.',
-  formId = import.meta.env.PUBLIC_KIT_FORM_ID || '4b28f916b5',
+  formId = import.meta.env.PUBLIC_KIT_FORM_ID || '9388648',
   buttonLabel = 'Subscribe',
   collectFirstName = true,
 } = Astro.props;
