@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child dribbling around three cones in a line, switching the ball from right to left hand at each cone."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Low/Push/Eyes/Both cue is consistent. Time-trial extension is a smart progression."
 ---
 
 The cone weave teaches change of direction under control. The cones are in a line. The kid dribbles around each one, switching hands at each cone. Eyes still stay up.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young defender sprinting to close out on a shooter, hands up but not reaching, feet in stance."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Last-two-steps plant cue is the right teach. 'Don't reach' keeps it foul-aware."
 ---
 
 The closeout is when you run to contest a shooter who just caught the ball. This drill teaches the final steps and hand positioning to contest without fouling.

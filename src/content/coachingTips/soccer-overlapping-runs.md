@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender running from deep to pass a midfielder on the ball, creating a numerical advantage in attack."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Setup line has typo (defending team has 1 defender repeats). Soccer vocab correct."
 ---
 
 Overlapping turns a 1v1 into a 2v1 in your favor. The defender runs around the midfielder and offers themselves as a passing option. This is an advanced offensive tactic that requires timing and communication.

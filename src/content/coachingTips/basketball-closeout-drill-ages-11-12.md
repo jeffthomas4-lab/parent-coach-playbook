@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A defender sprinting from 20 feet away toward a player holding the ball, transitioning into a low defensive stance with hands up."
 publishedAt: 2026-03-12
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body had been truncated; completed with struggle/got-it tiers."
 ---
 
 A closeout is a sprint to a shooter followed by a controlled stance to contest without fouling. This drill teaches the sprint and the transition into defensive stance.

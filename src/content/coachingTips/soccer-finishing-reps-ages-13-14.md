@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "A player shooting on goal from various distances and angles, with a server delivering balls from different field locations."
 publishedAt: 2026-04-14
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body truncated mid-sentence at 'shoot with purpose, not'. Missing the rest of What to look for plus If they're struggling / If they've got it variations."
 ---
 
 Finishing is a skill that improves with volume. This drill gives a shooter 20 shots from game-realistic positions so they build feel and confidence.
