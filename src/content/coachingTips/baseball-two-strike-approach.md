@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Batter with hands choked up an inch on the bat, slightly wider stance, and a shorter swing path through the strike zone."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 With two strikes, the goal changes. It's no longer hit a hard line drive. It's put the ball in play. A two-strike swing is shorter, the bat is choked up, and any pitch close to the zone gets a swing. This is mental and mechanical.

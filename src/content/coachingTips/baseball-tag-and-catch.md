@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player standing on a base with the glove low and out, catching a throw that arrives near the runner's foot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tag plays with sliding variant; flagged sensitive."
 ---
 
 The tag is a catch and a tag. A bad catch lets the runner slide in safe. The right move is to catch the ball with the glove already low so the tag is automatic. This is the play middle infielders mess up because they catch high and then drop the glove down.

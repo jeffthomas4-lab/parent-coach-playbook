@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player tossing a soft ball to themselves and heading it down with a firm neck."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Heading at 11-12 with US Soccer rule note. Sensitive flag for head-injury topic."
 ---
 
 US Soccer guidelines limit heading before age 11-12. This is introductory heading at low volume and with soft balls. We use a beach-ball-style ball or oversized soft ball. Five reps, not twenty. This is about building the technique safely.

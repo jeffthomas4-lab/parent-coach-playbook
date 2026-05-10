@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Infielder fielding a grounder while looking up at a runner advancing from first to second, deciding which base to throw to."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 A fielder's choice is when the defense gets the lead runner instead of the batter. With a runner on first and a ground ball, the right play might be the force at second instead of the throw to first. The decision happens in half a second. This drill builds it.

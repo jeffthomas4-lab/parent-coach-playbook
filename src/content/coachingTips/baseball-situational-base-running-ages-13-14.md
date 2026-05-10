@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "A runner at first base advancing to second, third, or home depending on where a ball is hit to different outfield locations."
 publishedAt: 2026-04-06
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence at 'A runner'; needs the rest of 'What to look for' and any closing sections."
 ---
 
 Base running decisions change depending on the hit location and the number of outs. This drill runs three runners through five scenarios each so they build decision-making speed.

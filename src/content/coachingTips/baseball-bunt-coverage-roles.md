@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Field diagram with arrows showing pitcher, first baseman, third baseman, second baseman, and catcher each moving to their bunt-coverage spot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 A bunt looks simple from the offense. From the defense, it's organized chaos. Five fielders have specific moves. Pitcher and corners charge. Second baseman covers first. Shortstop covers second. Catcher reads the bunt and either fields or backs up. Run this drill until the moves are automatic.

@@ -26,4 +26,8 @@ Defensive footwork is taught before defensive concepts. This drill isolates the 
 4. Point back. Kids sprint forward five steps and reset.
 5. Do 10 cycles (40 total slide directions).
 
-**What to look for:** Stance consistency. Do they stay in a basketball stance the whole time or stand up? Good defenders stay in their athletic s
+**What to look for:** Stance consistency. Do they stay in a basketball stance the whole time or stand up? Good defenders stay in their athletic stance the entire possession.
+
+**If they're struggling:** Cut to 3 steps per direction. Slow the calls so they can set their feet.
+
+**If they've got it:** Add a basketball. They slide while you walk a ball side to side. Hands track the ball.

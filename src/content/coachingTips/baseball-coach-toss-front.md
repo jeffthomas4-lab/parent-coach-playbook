@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach kneeling 15 feet in front of a batter behind a protective net, tossing a ball underhand to a batter mid-swing."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Hitting off a tee is good. Hitting a moving ball is better. Front toss is the bridge between the two: the ball moves but slowly and predictably, and the coach controls the spot. This is the most efficient hitting drill in baseball.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult holding a tennis ball in front of a child whose glove is open and steady, ready to receive without flinching."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Kids who slap at the ball with the glove make it bounce out. Soft hands means the glove gives a little when the ball lands, like an egg landing in your palm. The opposite is "hard hands" where the glove stays stiff and the ball pops away.

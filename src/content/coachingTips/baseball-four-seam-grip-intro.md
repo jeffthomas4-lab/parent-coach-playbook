@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Close-up of a child's hand holding a baseball with two fingers across the U-shaped seam, thumb underneath the ball."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Most kids grip the ball with their palm, which makes throws curve and float. The four-seam grip puts two fingers across the U-shaped seam and the thumb underneath. The ball comes out cleaner and goes where they aim.

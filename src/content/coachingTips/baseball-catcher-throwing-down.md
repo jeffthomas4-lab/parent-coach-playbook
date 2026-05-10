@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Catcher in full gear catching a pitch and standing up in one motion to throw across the diamond toward second base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a runner steals second, the catcher has about 3 seconds total. The catch, the stand-up, the throw, all in one motion. This is the hardest defensive play a youth catcher will ever make. Worth practicing slowly.

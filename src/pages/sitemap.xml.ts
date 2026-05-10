@@ -48,7 +48,7 @@ export async function GET(ctx: APIContext) {
     '/about/',
     '/disclosure/',
     '/resources/',
-    '/resources/drive-home-playbook/',
+    '/resources/what-to-say-when/',
     '/resources/practice-plan-template/',
     '/resources/national-organizations/',
     '/search/',

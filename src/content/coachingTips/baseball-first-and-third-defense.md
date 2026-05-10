@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Diagram of the diamond with a runner on first stealing second, a runner on third breaking for home, and the catcher and shortstop reading the play."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 With runners on first and third, offenses run the double steal. The runner on first breaks for second to draw a throw. As soon as the catcher throws, the runner on third breaks for home. The defense has to read it and react. There are three ways to play it.

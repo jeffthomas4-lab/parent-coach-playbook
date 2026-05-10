@@ -47,7 +47,7 @@ Two. Stop talking. Just for a mile. The silence does the work.
 
 Three. Mention something else that has nothing to do with the sport. Pizza for dinner. The dog needing a walk. *Did you finish the chapter for English?* That sentence tells him home is bigger than the game and the game is one piece of his life, not all of it.
 
-The longer version of this lives in our free playbook. By sport. By age. The exact words for baseball, soccer, theater, choir, dance. <a href="/resources/drive-home-playbook/">Get it here.</a>
+The longer version of this lives in our free field guide. Twenty-three scripts for before, after, and the hard moments in between. By age. <a href="/resources/what-to-say-when/">Get it here.</a>
 
 ## The longer arc
 

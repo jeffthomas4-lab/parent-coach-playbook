@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach kneeling to the side of a batter behind a protective screen, tossing a ball softly across the plate at belt height."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Soft toss from the side gives the batter 50 swings in 10 minutes. The ball comes from a different angle than a real pitch, which is fine for this drill because the goal is reps, not realism. This is volume training for the swing.

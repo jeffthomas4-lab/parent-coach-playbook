@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Close-up of a child's hand gripping a baseball with three fingers across the seams (sometimes called a circle change), thumb tucked underneath."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pitching grip introduction at 11-12; flagged sensitive (arm care implications)."
 ---
 
 A changeup looks like a fastball but arrives slower. The hitter swings early and either pops up or whiffs. Done well, it's the most useful second pitch a young pitcher can have. The grip is everything: deeper in the hand, more fingers, less force.

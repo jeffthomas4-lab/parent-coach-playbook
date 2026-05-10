@@ -173,7 +173,7 @@ Make a simple spreadsheet. Columns: Contact, Email, Date sent, Tier, Response, O
 
 ## Email list growth: zero-budget tactics
 
-You said no email list yet. Start collecting. The Drive Home Playbook lead magnet is wired up. Three more lead magnets to add when you're ready (they require Kit form setup, ~30 min each):
+You said no email list yet. Start collecting. The What to Say When field guide is wired up as the primary lead magnet. Three more lead magnets to add when you're ready (they require Kit form setup, ~30 min each):
 
 ### Lead magnet 1: Cost calculator results email
 After someone runs the cost calculator, offer to email the result with a 5-step plan to reduce the cost by 30%. Capture email. Sequence is automated in Kit.

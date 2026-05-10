@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child swinging a bat at a tee with the ball positioned at belly button height, contact happening out in front of the body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The first hitting drill teaches the kid that the bat has to hit the ball, not the ball has to hit the bat. The ball is sitting still on the tee. They are in charge. Belly button height is the easiest contact height for a kid to feel.

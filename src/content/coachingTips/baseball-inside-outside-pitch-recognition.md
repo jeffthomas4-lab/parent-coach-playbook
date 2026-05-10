@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two strike zone diagrams showing an inside pitch on the batter's side of the plate and an outside pitch on the far side, with arrows pointing where each ball should be hit."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Inside pitches get pulled. Outside pitches go to the opposite field. A hitter who knows where the pitch is going before it gets there can plan the swing. This drill builds that recognition.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult rolling a tennis ball on flat grass to a young child crouched in fielding position with a glove low to the ground."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The first time a kid uses a glove to field a ball, they need to feel where the glove goes (low, on the ground) and what the body does (drop down to meet it). Flat ground means no bounces, no surprises. Just rolls.

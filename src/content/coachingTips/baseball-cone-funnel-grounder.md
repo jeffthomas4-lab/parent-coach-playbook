@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two cones placed about 18 inches apart on the ground, marking the spot where a child's glove and throwing hand should funnel the ball into the chest."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The Funnel step in our cue (Drop, Show, Funnel, Send) is the part most kids skip. Funnel means the glove and the throwing hand bring the ball up the centerline of the body to the chest. Cones on the ground show them where that path starts.

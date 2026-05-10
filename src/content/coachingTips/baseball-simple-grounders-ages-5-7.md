@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A coach rolling a grounder to a child in a fielding position, with the child's glove low to the ground and feet positioned to move."
 publishedAt: 2026-01-19
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence at 'reach for the ball with their ha'; needs completion."
 ---
 
 Fielding starts with the feet and the glove staying low. Grounders teach this faster than pop-ups because the ball is moving toward them on the ground.

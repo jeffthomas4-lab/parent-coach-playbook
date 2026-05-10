@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A child at bat hitting a ball off a tee while a pitcher stands behind the tee in a pitching stance."
 publishedAt: 2026-02-02
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence in the Variation paragraph ('tee the ball slightly for'). Finish the line and add an If they're struggling / If they've got it block to match the rest of the drill set."
 ---
 
 Live tee work teaches kids to track the ball as if someone is throwing it, even though the tee is stationary. This is the bridge between tee work and soft toss.

@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Defensive pressure shapes pressing triggers"
 publishedAt: 2026-03-31
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Setup says 50-yard zone but mark a 40-by-40 square; minor inconsistency. Soccer vocab correct."
 ---
 
 A high press means attacking the player with the ball immediately. This drill teaches trigger recognition: when the pass is made, when to close down.

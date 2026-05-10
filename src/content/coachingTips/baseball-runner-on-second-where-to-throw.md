@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Infielder fielding a grounder while looking toward third base to check on a runner advancing from second."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 With a runner on second and a ground ball hit to short or third, the fielder has a decision. Throw to first for the easy out, or look the runner back to second first. Most kids panic and throw to first while the runner advances. The right play depends on the speed of the runner and the score.

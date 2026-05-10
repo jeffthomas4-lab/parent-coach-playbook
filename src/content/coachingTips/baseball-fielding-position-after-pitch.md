@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher landing in a balanced fielding position immediately after the throw, glove ready, eyes on the batter."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The pitch ends with the ball leaving the hand. The play might not. Comebackers, bunts, and slow rollers are the pitcher's responsibility. After every throw, the pitcher needs to land in a fielding stance, glove ready. This drill builds the habit.

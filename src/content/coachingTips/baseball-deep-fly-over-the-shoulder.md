@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "An outfielder running away from home plate, looking back over the shoulder at a ball coming down behind them, glove reaching back."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 A deep fly ball that's going to land behind the outfielder needs the toughest catch in the game. The kid runs to the spot looking over their shoulder and catches the ball without ever turning around. This is a skill, not a stunt. Outfielders make this catch every weekend in college baseball.

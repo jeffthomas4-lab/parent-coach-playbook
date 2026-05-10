@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Top-down view of a runner taking a curved path approaching first base, swinging wide before the bag and cutting in to touch the inside corner."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a runner is going to second on a hit, they can't run a straight line to first and then make a 90-degree turn. They have to round the bag. The path curves out before the base and back in to touch the inside corner. This is the "round" turn.

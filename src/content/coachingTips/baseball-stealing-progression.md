@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Sequence of three drawings: runner taking a lead, then crossing over with the back foot, then sprinting toward second base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sliding/contact-adjacent at second base; flagged sensitive."
 ---
 
 A stolen base is a lead, a quick first step, and a full sprint to the next base. Most kids try to steal on a hop or a jump. The right first step is a crossover where the back foot crosses over the front foot toward the next base. This drill builds the move.

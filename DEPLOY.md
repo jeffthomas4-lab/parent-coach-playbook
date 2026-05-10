@@ -152,7 +152,7 @@ Skip if you're not using a newsletter yet.
 
 1. Sign in to Kit. Create a new form. Style: **Inline**. Template: **Naked**.
 2. Save it. Look at the form URL — it ends in something like `/forms/1234567`. That number is your form ID.
-3. Make a second form for the lead magnet ("The Drive Home Playbook"). Set up an automation in Kit so signing up triggers an email with the PDF attached.
+3. Make a second form for the lead magnet ("What to Say When"). Set up an automation in Kit so signing up triggers an email with the PDF attached.
 4. In Cloudflare Pages → Settings → Environment variables:
    - `PUBLIC_KIT_FORM_ID` = `1234567` (the main one)
    - `PUBLIC_KIT_LEAD_MAGNET_FORM_ID` = `7654321` (the lead magnet one)

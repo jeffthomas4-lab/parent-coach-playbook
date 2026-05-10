@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Right-handed batter making contact on a ball in the outside half of the strike zone with the bat extended and the ball heading toward right field."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Pull hitters get pitched outside until they learn to hit the ball where it's pitched. The opposite field hit goes to the side of the field opposite the batter's pull side (right field for a right-handed batter). It requires a slightly later swing and a different bat path. This is the skill that makes hitters hard to pitch to.

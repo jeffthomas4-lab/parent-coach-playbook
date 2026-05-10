@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two children kneeling on the throwing-side knee 15 feet apart, throwing a baseball back and forth in clean overhand form."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Throwing mechanics; arm-care adjacent."
 ---
 
 When a kid throws from one knee, the legs can't help and the lower body can't cheat. The drill forces the upper body, shoulder, and arm to do the work the right way. This is how you fix arm-only throwers.

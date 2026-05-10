@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player A passing to Player B, then sprinting past them to receive the return pass in space."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard give-and-go, clean voice, soccer vocab correct."
 ---
 
 The give and go is the first team move kids learn. It's pass, move, receive. Simple but it teaches timing and off-ball movement. In a real game, this move splits defenses.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher on a mound throwing a bullpen with a coach watching, ball cart full of baseballs nearby, scoreboard tracking pitch count."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Touches pitch count for 11-12 year olds; flagged as sensitive (arm care). Voice clean."
 ---
 
 A real bullpen has structure. Specific pitches at specific spots. Rest between sets. Pitch count tracked. This is how a pitcher prepares for a game outing without throwing themselves dead.

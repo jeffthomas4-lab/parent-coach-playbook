@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A catcher in full gear dropping to both knees with the glove between the legs and the chest angled forward to keep the ball in front."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Contact-safety drill (catcher gear required); flagged sensitive."
 ---
 
 A catcher who can block balls in the dirt is the difference between a runner advancing and a runner staying put. The block is not a catch. It's the catcher's body stopping the ball and keeping it close. This is a 12-and-up skill because it requires gear and commitment.

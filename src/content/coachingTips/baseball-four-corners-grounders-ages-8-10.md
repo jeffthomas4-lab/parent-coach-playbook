@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A child in the center of a 20-foot square with cones at each corner, moving toward a grounder rolling to one of the four directions."
 publishedAt: 2026-02-16
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-word ('out of posi'). Finish the What to look for paragraph and add If they're struggling / If they've got it to match the drill template."
 ---
 
 This drill teaches kids to move their feet to the ball instead of reaching. Every grounder comes from a different angle, so they can't cheat or predict where it's going.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Outfielder pivoting on the back foot and stepping backward at an angle, eyes on a ball flying overhead."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a fly ball is hit over a kid's head, their first instinct is to back-pedal. Back-pedalling is slow and unstable. The right move is to drop the back foot and run sideways at an angle. This is the drop step. It's the difference between catching the ball and watching it land behind you.

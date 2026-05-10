@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child crouched low with both hands together palms-up on the grass, fielding a slow tennis ball without a glove."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When the glove is off, kids stop hiding behind it. They have to drop low and bring both hands together to catch a rolling ball. The body learns the right position because the body has no choice.

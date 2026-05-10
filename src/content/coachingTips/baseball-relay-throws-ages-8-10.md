@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Three children standing 30 feet apart in a line, with the first child throwing to the second, who relays to the third."
 publishedAt: 2026-02-23
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence at 'Variation: F'; needs completion."
 ---
 
 Relay throws teach kids to position themselves in line with the throw and catch the ball at their chest. This is the foundation for all relay work in games.

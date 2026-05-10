@@ -26,4 +26,8 @@ A closeout is a sprint to a shooter followed by a controlled stance to contest w
 4. Defender resets and goes to the next spot as directed.
 5. Do 15 closeouts per defender.
 
-**What to look for:** Sprint effort and stance transition. The sprint should be hard, then a controlled plant to avoid fouling
+**What to look for:** Sprint effort and stance transition. The sprint should be hard, then a controlled plant to avoid fouling. Hands up at the end, not reaching in.
+
+**If they're struggling:** Cut the sprint distance in half. Walk the last two steps so they feel the plant before adding speed.
+
+**If they've got it:** Shooter can shoot or drive past. Defender has to read the choice and either contest or slide back.

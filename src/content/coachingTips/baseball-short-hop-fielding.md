@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child fielding a baseball that bounces 6 inches in front of the glove, with the glove low and angled forward to scoop the ball off the short hop."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Short hops are balls that bounce just before they reach the glove. The glove has to be down and angled forward so the ball doesn't kick up into the chest. This is the play that separates good infielders from average ones.

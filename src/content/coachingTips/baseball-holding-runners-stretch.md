@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher in the stretch position with both feet on the rubber side-by-side, hands together at the chest, glancing at first base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pitching mechanics; arm-care adjacent."
 ---
 
 When there's a runner on first, pitchers throw from the stretch instead of the windup. The stretch is a quicker delivery that gives the runner less time to steal. Mixing in pickoff moves keeps the runner honest.

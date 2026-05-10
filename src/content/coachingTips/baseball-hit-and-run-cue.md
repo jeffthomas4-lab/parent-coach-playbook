@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner taking off from first base while batter is mid-swing on a ball in play, defense scrambling to cover the base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The hit and run is a team play. The runner on first goes on the pitch. The batter swings at any pitch close to the zone, even bad ones. The point: the runner gets a head start, the defense has to cover the bag, and the batter can hit the ball through the hole that opens up.

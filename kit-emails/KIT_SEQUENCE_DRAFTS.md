@@ -10,9 +10,9 @@ Sender: `Parent Coach Playbook Editorial <parentcoachplaybook@gmail.com>`. From-
 
 ## EMAIL 1 — Day 0 (instant on signup)
 
-**Subject:** Your free playbook is here. Plus what comes next.
+**Subject:** Your free field guide is here. Plus what comes next.
 
-**Preview text:** A short note, the playbook PDF, and what to expect.
+**Preview text:** A short note, the field guide PDF, and what to expect.
 
 **Body:**
 
@@ -21,10 +21,10 @@ Hi friend,
 
 Welcome. You signed up, which means you're a parent in the middle of it — youth sports, dance, theater, whatever this season looks like.
 
-Here's the Drive Home Playbook, on us.
-[Download the PDF →] (link to /the-drive-home-playbook.pdf)
+Here's the field guide, on us.
+[Download the PDF →] (link to /what-to-say-when.pdf)
 
-Read it when you have ten minutes. It covers what to say after a hard game, by sport, by age. We use it. The parents we talk to use it. Hopefully you'll find a version of yourself in it.
+It's called What to Say When. Twenty-three scripts for the moments before and after the game, and the hard ones in between. By age. Read it when you have ten minutes. We use it. The parents we talk to use it. Hopefully you'll find a version of yourself in it.
 
 Over the next four weeks, we'll send a few more notes. Specific ones. The kind of read you can do at the kitchen counter while the laundry runs.
 
@@ -38,7 +38,7 @@ Parent Coach Playbook
 
 **Trigger:** subscribe to free tier.
 **Personalization:** none required. Optional: `{{first_name}}` in salutation.
-**Asset:** attach or link the existing `/public/the-drive-home-playbook.pdf`.
+**Asset:** attach or link `/public/what-to-say-when.pdf`.
 
 ---
 
@@ -67,7 +67,7 @@ The short version:
 - Don't fill the silence.
 - Pick a specific moment your kid had agency in. Mention it briefly. Then talk about something else.
 
-That's the whole rule. The longer version on the site has the language by sport.
+That's the whole rule. The longer version is in the field guide, calibrated by age.
 
 If you find yourself in the car this Saturday with a kid who didn't have a great game, this is the one to remember.
 
@@ -194,7 +194,7 @@ Your kid focuses on the fun. You focus on the questions. That's the deal.
 ```
 Hi friend,
 
-Twenty-eight days in. By now you've gotten the playbook, the practice plan, a few reads, and the camp guide.
+Twenty-eight days in. By now you've gotten the field guide, the practice plan, a few reads, and the camp guide.
 
 We have one favor.
 
@@ -235,7 +235,7 @@ Increment `email-1` through `email-6`.
 
 ## To do before sending live
 
-1. Confirm the playbook PDF link works at production URL.
+1. Confirm the field guide PDF link works at production URL.
 2. Confirm the article links work for any post that hasn't published yet (Email 4's "Three things I didn't know" — pick an existing piece if needed).
 3. Test from-name and subject preview on iOS and Gmail.
 4. Send a test of all six to your own inbox to QA.

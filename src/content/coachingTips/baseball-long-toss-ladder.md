@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two kids playing catch on a field, with a series of cones at 20, 40, 60, and 80 feet marking each step of the ladder."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Arm-strength progression; arm-care adjacent."
 ---
 
 Arm strength comes from throwing further than what's comfortable, but in steps. The ladder builds it without overdoing it. This is how high school pitchers warm up. Same pattern works for any kid age 8 and up.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Five young children jogging in a line on a field, then stopping to do simple toe touches and arm circles."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Note uses 'yard' for a baseball field distance; that's standard plain English here, not a wrong-sport flag."
 ---
 
 Six-year-olds don't need a sophisticated warm-up. They need movement, attention, and three minutes of energy burn before practice starts. This is that simple version.

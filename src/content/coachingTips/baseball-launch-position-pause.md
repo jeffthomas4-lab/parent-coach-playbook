@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child paused mid-stance with hands held back and bat angled over the back shoulder, weight on the back leg, just before the swing starts."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The Load is the moment right before the swing. Hands back, weight on the back leg, ready to fire. Most kids rush past it. This drill forces them to pause at the Load and feel the ready position before the bat moves.

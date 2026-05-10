@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young child in athletic stance with knees bent, feet shoulder-width apart, ready to move left or right on command."
 publishedAt: 2026-01-26
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence; needs the rest of 'What to look for' and any closing sections rewritten."
 ---
 
 The ready position is where fielding starts. Kids who know how to stand, wait, and react will track balls better. This drill makes the stance into something they can practice.

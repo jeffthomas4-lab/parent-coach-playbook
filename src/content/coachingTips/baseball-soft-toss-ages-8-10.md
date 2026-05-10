@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A child at bat with an adult 30 feet away tossing the ball underhand in a high arc toward the strike zone."
 publishedAt: 2026-02-09
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence at 'toss from 25 feet'; needs completion."
 ---
 
 Soft toss teaches hand-eye coordination with a moving ball. The underhand toss is slow enough that kids can react, and it's close enough to your position that you see every swing.

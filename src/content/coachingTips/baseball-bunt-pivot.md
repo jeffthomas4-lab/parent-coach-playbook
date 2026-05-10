@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A batter in normal stance with the upper body pivoted to face the pitcher and the bat held flat, while the feet stay in the original batting position."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Squaring around tells the defense the bunt is coming. The pivot bunt hides the move until the last second. Feet stay in batting stance. Only the upper body and bat turn. Harder for kids to learn but more useful in real games.

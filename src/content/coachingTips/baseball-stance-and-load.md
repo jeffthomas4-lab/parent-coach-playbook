@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child in batting stance with feet shoulder-width apart, knees soft, hands held back by the rear shoulder, weight slightly on the back leg."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Before a kid swings, they have to know how to stand. The Set is the stance. The Load is what the hands and weight do before the swing starts. Most kids skip the Load because nobody taught it. Teach it now.

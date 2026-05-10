@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child throwing a ball into an angled rebound net and catching the return at different heights."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Mentions $50 product price without affiliate disclosure; product claim is generic, not a brand recommendation."
 ---
 
 A rebound net (sometimes called a pitch-back) is the best $50 a baseball parent can spend. It returns the ball at different angles depending on where the throw hits, so the kid never gets the same catch twice. This is volume training for catching.

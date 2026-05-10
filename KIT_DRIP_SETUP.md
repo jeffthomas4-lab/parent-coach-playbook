@@ -1,24 +1,30 @@
-# Drive-Home Playbook drip series: Kit setup spec
+# What to Say When drip series: Kit setup spec
 
 Single doc covering the form-to-sequence wiring in Kit. Email content is yours
 to write. This file specifies the plumbing.
+
+> **Renamed from "Drive-Home Playbook" → "What to Say When" (May 2026).**
+> Kit subscriber tag `drive-home-playbook-downloaded` is preserved as-is to
+> avoid orphaning existing subscribers. Rename the tag in Kit only when you're
+> ready to migrate the audience over.
 
 ---
 
 ## What we're building
 
 A 5-email sequence that sends every 3 days after a reader downloads the
-Drive-Home Playbook PDF. Anchored on the three drives plus two longer-arc
-themes. The point: turn a one-PDF download into a regular reader.
+What to Say When field guide. Anchored on the three windows (before / after /
+hard moments) plus two longer-arc themes. The point: turn a one-PDF download
+into a regular reader.
 
 Sequence map:
 
 | Step | Day | Theme | Working title (yours to rewrite) |
 |------|-----|-------|----------------------------------|
-| 0    | 0   | Welcome + deliver the PDF | "The Playbook is yours" |
-| 1    | 3   | Drive there | "Before the game starts" |
+| 0    | 0   | Welcome + deliver the PDF | "The field guide is yours" |
+| 1    | 3   | Before the game | "Before the game starts" |
 | 2    | 6   | The game itself | "What happens in the middle" |
-| 3    | 9   | Drive home | "The first 90 seconds" |
+| 3    | 9   | After the game | "The first 90 seconds" |
 | 4    | 12  | The parent on the team you can't stand | "The other parent" |
 | 5    | 15  | The long view | "Why this is worth it" |
 
@@ -28,10 +34,10 @@ Sequence map:
 
 ### 1. The form (already exists)
 
-Form ID: the existing Drive-Home Playbook form Kit is wired to. The lead-magnet
+Form ID: the existing lead-magnet form Kit is wired to. The lead-magnet
 component on the site posts to:
 
-- `/resources/drive-home-playbook/`
+- `/resources/what-to-say-when/`
 - `LeadMagnetCTA.astro` component
 - Form action lives in the component's HTML
 
@@ -39,18 +45,22 @@ No change required if the form already collects email and tags subscribers.
 
 ### 2. The tag
 
-Add a Kit subscriber tag: `drive-home-playbook-downloaded`.
+The existing Kit subscriber tag is `drive-home-playbook-downloaded`. We're
+keeping it as-is so existing subscribers stay attached to the same automation.
+If you want to rename it to `field-guide-downloaded` for cleanliness, do the
+migration in Kit (rename + reattach automation triggers) and then update the
+references below.
 
 Apply this tag automatically when a subscriber submits the lead-magnet form.
 This is the trigger for the sequence. In Kit's form settings:
 
-- Go to the Drive-Home Playbook form
+- Go to the lead-magnet form
 - Settings → Incentive: confirm the PDF is the incentive (already wired)
 - Settings → Tags: auto-apply `drive-home-playbook-downloaded` on subscribe
 
 ### 3. The sequence
 
-Create a new Kit Sequence called `Drive-Home Playbook Drip`.
+Create a new Kit Sequence called `What to Say When Drip`.
 
 Six emails (the welcome + the five themed). Day offsets:
 
@@ -68,10 +78,10 @@ rules from `About Me/About Me.txt` and `About Me/Anti AI Writing.txt` apply.
 
 ### 4. The automation
 
-Create a new Kit Automation called `Drive-Home Drip on Download`.
+Create a new Kit Automation called `What to Say When Drip on Download`.
 
 - Trigger: tag added → `drive-home-playbook-downloaded`
-- Action: subscribe to sequence → `Drive-Home Playbook Drip`
+- Action: subscribe to sequence → `What to Say When Drip`
 
 That's the whole wiring.
 

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Outfielder catching a fly ball with a runner on third tagging up, the cutoff player and catcher both ready for the throw home."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a runner tags up on a fly ball with less than two outs, the defense has one chance: catch the ball and throw home before the runner gets there. The throw has to be on a line, and the cutoff has to be in position. Practice the throw home from different outfield positions.

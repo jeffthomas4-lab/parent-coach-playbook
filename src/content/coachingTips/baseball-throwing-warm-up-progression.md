@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players warming up, starting close together, then mid-distance, then far apart, throwing softly at each step."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Arm-care content; flagged sensitive."
 ---
 
 Cold arms are injured arms. Eight minutes of progressive warm-up tosses prevents shoulder pain and gets the kid ready to actually practice. Skip this and you risk a kid who can't throw the next day.

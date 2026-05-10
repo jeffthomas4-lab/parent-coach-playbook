@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child crouched in fielding position with the glove starting at the chest, snapping up to catch a line drive at face height."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Mentions face/black-eye risk on hard line drives; safety-adjacent."
 ---
 
 Line drives come fast. The kid has half a second to react. Slow hands or wrong starting position turns a catch into a black eye. This drill trains the hands to come up fast from the ready position.

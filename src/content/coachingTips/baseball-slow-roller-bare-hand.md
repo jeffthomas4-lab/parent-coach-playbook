@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child running forward and reaching down with the throwing hand to scoop a slowly rolling baseball, glove dropped to the side."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a ball is rolling slow and the runner is fast, the glove is too slow. The throwing hand picks up the ball directly and the throw comes out of the run. This is the play third basemen and pitchers make on bunts and dribblers.

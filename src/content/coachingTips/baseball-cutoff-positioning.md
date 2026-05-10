@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Top-down diagram of the field with the right fielder fielding a ball, the second baseman running into a cutoff position halfway between the outfielder and home plate."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When an outfielder catches a ball deep, they can't always throw it to the base on a line. The cutoff player stands halfway between the outfielder and the target base. They catch the throw, decide whether to relay or eat it, and turn a long throw into two short throws.

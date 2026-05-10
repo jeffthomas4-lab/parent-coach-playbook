@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "A teenager in a batter's box facing a coach or pitching machine at 50 feet, with a net cage surrounding the batting area."
 publishedAt: 2026-03-30
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 A batting cage is the only place a 13-year-old can face live pitching safely and get 40+ swings in 30 minutes. Cage time builds confidence and teaches pitch recognition.

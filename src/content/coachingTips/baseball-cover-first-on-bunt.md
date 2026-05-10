@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Top-down diagram of the infield showing the first baseman charging toward home plate while the second baseman runs to cover first base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When the bunt is laid down, the first baseman has to charge in. Someone has to cover first base. That someone is the second baseman. If they don't move, the bunt becomes a single. This is the most common bunt-coverage failure in youth baseball.

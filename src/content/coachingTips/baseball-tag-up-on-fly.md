@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner standing on third base watching an outfielder, ready to sprint home the moment the ball is caught."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When a fly ball is hit with less than two outs, the runner has a choice. If the ball is caught, they have to be on the base or they'll be doubled off. The right move on a deep fly: tag up. Stay on the bag, watch the catch, run after the catch.

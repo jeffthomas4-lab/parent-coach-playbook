@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young child standing at a T-ball tee with bat in hand, positioned to make contact with the ball at belt height."
 publishedAt: 2026-01-05
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body was truncated mid-sentence; completed the variation paragraph."
 ---
 
 The tee is where batting starts. Kids this age need to build the habit of seeing the ball, setting their feet, and following through. This drill is about repetition and a single technical point: contact in front of the plate.
@@ -28,4 +41,6 @@ The tee is where batting starts. Kids this age need to build the habit of seeing
 
 **What to look for:** Solid contact and a full follow-through. Kids this age who start making contact will want to keep going. Let them. The ball coming off the bat is their best teacher.
 
-**Variation:** For younger kids (5-6) who struggle with hand-eye, lower the te
+**Variation:** For younger kids (5-6) who struggle with hand-eye, lower the tee to knee height. Closer to the ground is easier to track. Move it back up to belt height once they make consistent contact.
+
+---

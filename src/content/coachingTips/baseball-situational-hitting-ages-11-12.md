@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A batter at home plate demonstrating three positions: full swing, bunting stance, and opposite-field swing technique."
 publishedAt: 2026-03-02
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body is truncated mid-sentence at 'Add actual location difficulty to eac'; needs completion."
 ---
 
 Situational hitting teaches kids that the pitch doesn't determine the swing. The situation does. This drill runs through three scenarios back-to-back so they practice adjusting.

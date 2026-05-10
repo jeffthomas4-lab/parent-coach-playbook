@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "One attacker facing one defender with a goal 15 yards away, dribbling or shooting to score while the defender closes down."
 publishedAt: 2026-02-18
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: needs-revision
+  reviewerNotes: "Body truncated mid-sentence at 'Does the defender stay on'. Needs completion of What to look for section, plus If they're struggling / If they've got it variations."
 ---
 
 1v1 teaches decision-making under pressure. The attacker has to decide: dribble past or shoot. The defender has to close down without fouling.

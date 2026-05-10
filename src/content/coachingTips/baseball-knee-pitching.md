@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young pitcher kneeling on the throwing-side knee, throwing a baseball overhand with the same arm motion as a regular pitch."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pitching mechanics; arm-care adjacent."
 ---
 
 Pitching mechanics get messy because the legs have to do half the work. On one knee, the legs are out of the picture and the kid has to use the arm and shoulder properly. This is how you teach the upper-body part of the pitch.

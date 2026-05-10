@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult tossing a tennis ball into the air with a tennis racquet, child watching the ball arc through the air with eyes following."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tennis racquet used as training tool, not as baseball vocab; sport language fine."
 ---
 
 Before a kid can field a fly ball, they need to learn how to follow a ball through the air with their eyes. A tennis racquet hits a tennis ball higher and softer than a bat hits a baseball, so this is a safer way to teach tracking.

@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Shortstop at short position fielding a grounder and flipping to second baseman standing at second base, with first baseman ready at first."
 publishedAt: 2026-03-16
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 A double play starts with the shortstop making the first out at second base. The feed has to be catchable and on time so the second baseman can make the relay throw to first.

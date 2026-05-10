@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner on third base watching the catcher's throw to second, ready to score if the throw goes through, hold if it gets cut off."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 With runners on first and third, the runner on first usually steals or breaks for second to draw a throw. The runner on third reads the catcher's throw. If the catcher throws through to second, third is unguarded and the runner can score. If the throw gets cut off, the runner stays.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Feet of a player rapidly alternating touches on the ball using the inside and outside of the foot in quick succession."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean dribbling drill. Soccer vocab correct."
 ---
 
 Fast feet and soft touch go together. This drill trains both feet to control the ball and builds the rhythm that good dribblers have. Inside, outside, inside, outside. Rapid-fire.

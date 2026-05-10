@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner sprinting from third toward home as the batter squares to bunt, the catcher and pitcher both reading the bunt at the same time."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Play at the plate; flagged sensitive for contact at home."
 ---
 
 The suicide squeeze is the boldest play in baseball. Runner on third breaks for home as the pitch is delivered. Batter has to bunt the ball anywhere on the ground. If the batter misses, the runner is dead. Defending it is hard but not impossible.

@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner two-stepping off first base as the pitch is being thrown, body angled toward second, eyes on the catcher."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 The primary lead is the lead off the base. The secondary lead is the few extra steps the runner takes after the pitcher releases the ball. If the catcher catches it cleanly, the runner stops. If the ball gets past the catcher, the runner is already moving and can advance.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Field diagram with an outfielder, then a shortstop relay player, then a second baseman second relay player, all in a line toward home plate."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When the ball is hit deep into the gap, one relay isn't enough. A double cut puts two relay players in a line. Outfielder throws to the first cut, who catches and throws to the second cut, who throws home. Three short throws beat one long one every time.

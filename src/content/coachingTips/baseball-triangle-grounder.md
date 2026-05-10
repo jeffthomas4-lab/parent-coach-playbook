@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Side view of a child in fielding position with feet wider than the shoulders and the glove out front, forming a triangle between feet and glove."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Good fielders all have the same body shape. Feet wider than the shoulders. Glove out front, low. The shape forms a triangle (feet apart, glove forward) and the ball comes in through the open side. Same shape every time means same catch every time.

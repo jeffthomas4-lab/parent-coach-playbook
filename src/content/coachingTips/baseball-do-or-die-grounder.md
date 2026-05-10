@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Outfielder fielding a one-hop grounder while charging forward, then throwing on a low line to home plate."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 When there's a runner heading home and the ball is hit to the outfield, the fielder has one option: charge the ball, field it on the run, and throw on a line to home. No backup. No setup. Do or die. This is the most aggressive fielding play in the game.

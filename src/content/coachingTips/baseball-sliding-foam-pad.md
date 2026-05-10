@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child mid-slide on a foam mat or yoga mat, one leg bent under, the other extended toward a base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sliding safety topic flagged. Drill uses foam progression before dirt; note about sliding shorts is appropriate. No head-first sliding instruction."
 ---
 
 Sliding on dirt scares most kids. Foam (a yoga mat or a furniture pad) is a soft surface that lets them feel the slide motion without the burn of dirt on the legs. Once they trust the move, they'll do it on dirt.

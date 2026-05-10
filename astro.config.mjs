@@ -19,6 +19,12 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
+  // Permanent redirects for renamed URLs. Preserves inbound links from emails,
+  // social, and articles published before the slug changed.
+  redirects: {
+    '/resources/drive-home-playbook': '/resources/what-to-say-when',
+    '/resources/drive-home-playbook/': '/resources/what-to-say-when/',
+  },
   image: {
     domains: ['cdn.sanity.io'],
   },

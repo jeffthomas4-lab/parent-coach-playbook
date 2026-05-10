@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A target taped to a chain link fence at the strike zone, with a pitcher 46 feet away throwing toward the center of the target."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pitching volume drill; flagged sensitive for arm care and pitch counts."
 ---
 
 Pitching is throwing strikes. A pitcher who can't throw strikes can't pitch. This drill puts a target on a fence at strike zone height and asks the kid to hit it. Track and tell. The score is the motivator.

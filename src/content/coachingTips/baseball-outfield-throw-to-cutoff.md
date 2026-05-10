@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Outfielder throwing a baseball on a low arc to a relay player about 80 feet away who has both hands raised at chest height as a target."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean pass."
 ---
 
 Outfielders who throw the ball over the cutoff player's head let runners advance. The right throw is on a low arc, hits the cutoff player chest-high, and can be caught and relayed. This is the throw that turns a single into one base, not three.
