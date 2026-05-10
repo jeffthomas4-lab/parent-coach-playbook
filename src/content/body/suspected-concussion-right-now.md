@@ -4,7 +4,7 @@ summary: "The first ten minutes after the hit. What the trainer, coach, or paren
 subhub: "safety"
 safetyCategory: "emergency-response"
 format: "protocol"
-sportTags: ["football", "soccer", "basketball", "lacrosse-boys", "lacrosse-girls", "hockey", "cheer", "wrestling"]
+sportTags: ["football", "soccer", "basketball", "lacrosse-boys", "lacrosse-girls", "hockey", "cheer"]
 ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-04-15
 featured: true

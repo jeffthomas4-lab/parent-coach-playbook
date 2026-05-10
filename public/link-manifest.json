@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-10T15:23:08.070Z",
-  "count": 238,
+  "generatedAt": "2026-05-10T15:29:45.324Z",
+  "count": 245,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -64,6 +64,12 @@
       ]
     },
     {
+      "url": "https://afsp.org/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
       "url": "https://appliedsportpsych.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -97,13 +103,15 @@
       "url": "https://concussionfoundation.org/",
       "sources": [
         "src/content/body/concussion-protocol-basics.md",
-        "src/content/body/suspected-concussion-right-now.md"
+        "src/content/body/suspected-concussion-right-now.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://cpr.heart.org/",
       "sources": [
-        "src/content/body/cpr-for-parents.md"
+        "src/content/body/cpr-for-parents.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -168,19 +176,14 @@
         "src/content/body/heatstroke-right-now.md",
         "src/content/body/league-questions-checklist.md",
         "src/content/body/youth-football-safety-briefing.md",
-        "src/pages/about/sources.astro"
+        "src/pages/about/sources.astro",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://koreystringer.institute.uconn.edu/health-and-safety/sudden-cardiac-arrest/",
       "sources": [
         "src/content/body/aed-location-field-readiness.md"
-      ]
-    },
-    {
-      "url": "https://ksi.uconn.edu/",
-      "sources": [
-        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -208,7 +211,8 @@
         "src/content/body/helmet-bat-mouthguard-certification.md",
         "src/content/body/helmet-recertification.md",
         "src/content/body/used-gear-safety.md",
-        "src/content/guides/football-7v7.md"
+        "src/content/guides/football-7v7.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -239,7 +243,8 @@
       "url": "https://orthoinfo.aaos.org/",
       "sources": [
         "src/content/body/broken-bone-vs-sprain.md",
-        "src/pages/about/sources.astro"
+        "src/pages/about/sources.astro",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -276,7 +281,8 @@
       "url": "https://positivecoach.org/",
       "sources": [
         "src/content/body/sideline-parent-conduct.md",
-        "src/pages/about/sources.astro"
+        "src/pages/about/sources.astro",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -528,6 +534,18 @@
       ]
     },
     {
+      "url": "https://usssa.com/baseball/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://usssa.com/fastpitch/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
       "url": "https://web3.ncaa.org/ecwr3/",
       "sources": [
         "src/content/recruiting/ncaa-eligibility-center.md",
@@ -540,7 +558,8 @@
     {
       "url": "https://www.aad.org/public/everyday-care/sun-protection",
       "sources": [
-        "src/content/body/sun-and-skin.md"
+        "src/content/body/sun-and-skin.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -551,7 +570,8 @@
         "src/content/body/sun-and-skin.md",
         "src/content/body/transporting-other-peoples-kids.md",
         "src/content/body/wildfire-smoke-aqi.md",
-        "src/pages/about/sources.astro"
+        "src/pages/about/sources.astro",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -576,19 +596,34 @@
     {
       "url": "https://www.acep.org/",
       "sources": [
-        "src/content/body/broken-bone-vs-sprain.md"
+        "src/content/body/broken-bone-vs-sprain.md",
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.adaptivesportsusa.org/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.airnow.gov/",
       "sources": [
-        "src/content/body/wildfire-smoke-aqi.md"
+        "src/content/body/wildfire-smoke-aqi.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.airnow.gov/wildfire-smoke-guide/",
       "sources": [
-        "src/content/body/wildfire-smoke-aqi.md"
+        "src/content/body/wildfire-smoke-aqi.md",
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.allianceforeatingdisorders.com/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -622,6 +657,12 @@
       ]
     },
     {
+      "url": "https://www.astm.org/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
       "url": "https://www.autismspeaks.org/",
       "sources": [
         "src/content/adaptive/autistic-athlete.md"
@@ -643,13 +684,15 @@
     {
       "url": "https://www.bnq.qc.ca/",
       "sources": [
-        "src/content/body/hockey-equipment-safety.md"
+        "src/content/body/hockey-equipment-safety.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.cdc.gov/drowning/",
       "sources": [
-        "src/content/body/pool-deck-rules.md"
+        "src/content/body/pool-deck-rules.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -672,19 +715,22 @@
     {
       "url": "https://www.childhelp.org/",
       "sources": [
-        "src/content/body/safesport-reporting-walkthrough.md"
+        "src/content/body/safesport-reporting-walkthrough.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.commonsensemedia.org/",
       "sources": [
-        "src/content/body/team-app-dm-settings.md"
+        "src/content/body/team-app-dm-settings.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation",
       "sources": [
-        "src/content/body/used-gear-safety.md"
+        "src/content/body/used-gear-safety.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -720,7 +766,8 @@
     {
       "url": "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa",
       "sources": [
-        "src/content/body/team-app-dm-settings.md"
+        "src/content/body/team-app-dm-settings.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -751,7 +798,8 @@
     {
       "url": "https://www.hecc.net/",
       "sources": [
-        "src/content/body/hockey-equipment-safety.md"
+        "src/content/body/hockey-equipment-safety.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -820,7 +868,8 @@
     {
       "url": "https://www.missingkids.org/",
       "sources": [
-        "src/content/body/missing-kid-at-tournament.md"
+        "src/content/body/missing-kid-at-tournament.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -845,7 +894,8 @@
     {
       "url": "https://www.naera.org/",
       "sources": [
-        "src/content/body/helmet-recertification.md"
+        "src/content/body/helmet-recertification.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -883,7 +933,8 @@
     {
       "url": "https://www.naso.org/",
       "sources": [
-        "src/content/body/sideline-parent-conduct.md"
+        "src/content/body/sideline-parent-conduct.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -891,7 +942,8 @@
       "sources": [
         "src/content/body/heatstroke-right-now.md",
         "src/content/body/sideline-first-aid-kit.md",
-        "src/content/body/youth-football-safety-briefing.md"
+        "src/content/body/youth-football-safety-briefing.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1111,6 +1163,12 @@
       ]
     },
     {
+      "url": "https://www.playnsa.com/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
       "url": "https://www.pony.org/",
       "sources": [
         "src/pages/governing-bodies.astro"
@@ -1126,14 +1184,16 @@
     {
       "url": "https://www.projectadam.com/",
       "sources": [
-        "src/content/body/aed-location-field-readiness.md"
+        "src/content/body/aed-location-field-readiness.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.redcross.org/",
       "sources": [
         "src/content/body/missing-kid-at-tournament.md",
-        "src/content/body/tournament-safety-plan-checklist.md"
+        "src/content/body/tournament-safety-plan-checklist.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1170,7 +1230,8 @@
     {
       "url": "https://www.skincancer.org/",
       "sources": [
-        "src/content/body/sun-and-skin.md"
+        "src/content/body/sun-and-skin.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1197,7 +1258,14 @@
       "url": "https://www.stopbullying.gov/",
       "sources": [
         "src/content/body/bullying-and-hazing.md",
-        "src/content/body/locker-room-culture.md"
+        "src/content/body/locker-room-culture.md",
+        "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.stopthebleed.org/",
+      "sources": [
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1270,7 +1338,8 @@
       "url": "https://www.usabat.com/",
       "sources": [
         "src/content/body/helmet-bat-mouthguard-certification.md",
-        "src/content/body/used-gear-safety.md"
+        "src/content/body/used-gear-safety.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1481,7 +1550,8 @@
     {
       "url": "https://www.uscg.mil/water-safety/",
       "sources": [
-        "src/content/body/open-water-swim-safety.md"
+        "src/content/body/open-water-swim-safety.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1500,6 +1570,7 @@
     {
       "url": "https://www.usopc.org/",
       "sources": [
+        "src/pages/governing-bodies.astro",
         "src/pages/resources/national-organizations.astro"
       ]
     },
@@ -1565,13 +1636,15 @@
     {
       "url": "https://www.weather.gov/safety/cold-wind-chill-chart",
       "sources": [
-        "src/content/body/cold-weather-practice.md"
+        "src/content/body/cold-weather-practice.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
       "url": "https://www.weather.gov/safety/lightning",
       "sources": [
-        "src/content/body/lightning-at-the-field.md"
+        "src/content/body/lightning-at-the-field.md",
+        "src/pages/governing-bodies.astro"
       ]
     },
     {

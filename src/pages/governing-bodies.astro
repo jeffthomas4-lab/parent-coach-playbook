@@ -7,12 +7,16 @@ const nationalBodies = [
   { sport: 'Baseball',          orgs: [
     { name: 'Little League International',                url: 'https://www.littleleague.org/' },
     { name: 'USA Baseball',                                url: 'https://www.usabaseball.com/' },
+    { name: 'USA Baseball Bat Standard',                   url: 'https://www.usabat.com/' },
     { name: 'Cal Ripken / Babe Ruth League',               url: 'https://www.baberuthleague.org/' },
     { name: 'PONY Baseball',                                url: 'https://www.pony.org/' },
+    { name: 'USSSA Baseball',                              url: 'https://usssa.com/baseball/' },
   ] },
   { sport: 'Softball',          orgs: [
     { name: 'USA Softball',                                url: 'https://www.usasoftball.com/' },
     { name: 'Little League Softball',                      url: 'https://www.littleleague.org/play-little-league/softball/' },
+    { name: 'USSSA Fastpitch',                             url: 'https://usssa.com/fastpitch/' },
+    { name: 'NSA Fastpitch',                               url: 'https://www.playnsa.com/' },
   ] },
   { sport: 'Soccer',            orgs: [
     { name: 'US Soccer',                                   url: 'https://www.ussoccer.com/' },
@@ -94,15 +98,66 @@ const collegeBodies = [
   { name: 'NJCAA (junior college)',                                        url: 'https://www.njcaa.org/' },
 ];
 
-// Safety, integrity, and adaptive sports organizations parents should know exist.
-const safetyAndAdaptive = [
-  { name: 'U.S. Center for SafeSport',                                     url: 'https://uscenterforsafesport.org/',                       blurb: 'Required training for many youth sport coaches. Reports of abuse and misconduct in Olympic and Paralympic movement sports.' },
-  { name: 'CDC HEADS UP',                                                  url: 'https://www.cdc.gov/heads-up/',     blurb: 'Concussion training and resources for coaches, parents, and athletes.' },
-  { name: 'Korey Stringer Institute',                                      url: 'https://ksi.uconn.edu/',                                blurb: 'Heat illness prevention and youth sport safety research.' },
-  { name: 'Project Play (Aspen Institute)',                                url: 'https://projectplay.org/',                              blurb: 'National research and policy on youth sports participation, costs, and health.' },
-  { name: 'Special Olympics',                                              url: 'https://www.specialolympics.org/',                      blurb: 'Programs for athletes with intellectual disabilities, plus Unified Sports.' },
-  { name: 'Move United',                                                   url: 'https://www.moveunitedsport.org/',                      blurb: 'National adaptive sports network. Programs for athletes with physical disabilities.' },
-  { name: 'Adaptive Sports USA',                                           url: 'https://www.moveunitedsport.org/',                    blurb: 'National governing body for adaptive sports across multiple disciplines.' },
+// Safety, medical, and emergency response. The orgs the body & safety hub cites the most.
+const safetyMedical = [
+  { name: 'U.S. Center for SafeSport',                       url: 'https://uscenterforsafesport.org/',                                                blurb: 'Federally authorized abuse-prevention authority for Olympic and Paralympic movement sports. Required training for many youth sport coaches. Helpline: 720-531-0340.' },
+  { name: 'CDC HEADS UP',                                    url: 'https://www.cdc.gov/heads-up/',                                                    blurb: 'Concussion training and resources for coaches, parents, athletes, and clinicians.' },
+  { name: 'Korey Stringer Institute',                        url: 'https://koreystringer.institute.uconn.edu/',                                       blurb: 'Heat illness prevention, sudden cardiac arrest, and youth sport safety research at UConn.' },
+  { name: 'National Athletic Trainers\' Association (NATA)', url: 'https://www.nata.org/',                                                            blurb: 'Heat acclimatization, environmental cold, exertional heatstroke position statements. The clinical authority for athletic trainers.' },
+  { name: 'American Academy of Pediatrics (AAP)',            url: 'https://www.aap.org/',                                                              blurb: 'Pediatric medicine policy, including the Council on Sports Medicine and Fitness. Authoritative on youth health, climate, and sport.' },
+  { name: 'American Heart Association (AHA)',                url: 'https://cpr.heart.org/',                                                            blurb: 'CPR and AED standards. Hands-Only CPR. Heartsaver and BLS certifications.' },
+  { name: 'American Red Cross',                              url: 'https://www.redcross.org/',                                                         blurb: 'First aid, CPR/AED, lifeguard certifications, water-safety standards.' },
+  { name: 'AAOS / OrthoInfo',                                url: 'https://orthoinfo.aaos.org/',                                                       blurb: 'American Academy of Orthopaedic Surgeons. Lay-language guidance on fractures, sprains, and pediatric musculoskeletal injuries.' },
+  { name: 'American College of Emergency Physicians',        url: 'https://www.acep.org/',                                                             blurb: 'Emergency medicine clinical guidance. Useful for parents on triage decisions.' },
+  { name: 'American Academy of Dermatology (AAD)',           url: 'https://www.aad.org/public/everyday-care/sun-protection',                            blurb: 'Sun-protection guidance, including for youth athletes.' },
+  { name: 'Skin Cancer Foundation',                          url: 'https://www.skincancer.org/',                                                       blurb: 'Youth UV-exposure data and prevention.' },
+  { name: 'Concussion Legacy Foundation',                    url: 'https://concussionfoundation.org/',                                                 blurb: 'State concussion-law tracker, return-to-play resources, and CTE research advocacy.' },
+  { name: 'Project ADAM',                                    url: 'https://www.projectadam.com/',                                                      blurb: 'School and youth-sport AED implementation and Heart Safe certification.' },
+  { name: 'USOPC SafeSport / U.S. Olympic & Paralympic Committee', url: 'https://www.usopc.org/',                                                       blurb: 'Olympic movement governance. SafeSport policy framework.' },
+  { name: 'Stop the Bleed',                                  url: 'https://www.stopthebleed.org/',                                                     blurb: 'Civilian bleeding-control training. Tourniquets, wound packing, direct pressure.' },
+];
+
+// Equipment standards and reconditioning bodies. The acronyms inside the helmet shell.
+const equipmentStandards = [
+  { name: 'NOCSAE (National Operating Committee on Standards for Athletic Equipment)', url: 'https://nocsae.org/',                                     blurb: 'Certifies football, lacrosse, batting, and pole-vault helmets. The "Meets NOCSAE Standard" stamp.' },
+  { name: 'NAERA (National Athletic Equipment Reconditioners Association)',           url: 'https://www.naera.org/',                                  blurb: 'Licensed reconditioners that recertify NOCSAE helmets annually. Up to 10 years from manufacture.' },
+  { name: 'HECC (Hockey Equipment Certification Council)',                            url: 'https://www.hecc.net/',                                   blurb: 'Hockey helmet and face-shield certification. The HECC sticker on the back of the helmet.' },
+  { name: 'BNQ (Bureau de normalisation du Québec)',                                  url: 'https://www.bnq.qc.ca/',                                  blurb: 'Goalie neck-and-collarbone protector standard. Required for younger USA Hockey goalies.' },
+  { name: 'USA Baseball Bat Standard',                                                url: 'https://www.usabat.com/',                                  blurb: 'The USA Baseball mark required on most youth-baseball bats since 2018.' },
+  { name: 'ASTM International',                                                        url: 'https://www.astm.org/',                                   blurb: 'Industrial standards body. ASTM F3137 is the girls-lacrosse eyewear standard. Other youth-sport standards across disciplines.' },
+];
+
+// Federal agencies, weather, and family helplines. The number you save in your phone.
+const federalAndHelplines = [
+  { name: 'EPA AirNow',                                      url: 'https://www.airnow.gov/',                                                          blurb: 'Air Quality Index for the field zip code. Wildfire smoke, ozone, particulate. The number that drives the cancellation call.' },
+  { name: 'EPA: Wildfire Smoke Guide',                       url: 'https://www.airnow.gov/wildfire-smoke-guide/',                                       blurb: 'AQI-based recommendations for schools, youth sports, and outdoor activity.' },
+  { name: 'National Weather Service: Lightning Safety',      url: 'https://www.weather.gov/safety/lightning',                                          blurb: 'The 30/30 rule and lightning-event protocol.' },
+  { name: 'National Weather Service: Wind Chill Chart',      url: 'https://www.weather.gov/safety/cold-wind-chill-chart',                              blurb: 'Cold-weather practice thresholds.' },
+  { name: 'U.S. Coast Guard: Water Safety',                  url: 'https://www.uscg.mil/water-safety/',                                                blurb: 'Open-water swim and boating safety.' },
+  { name: 'CDC: Drowning Prevention',                        url: 'https://www.cdc.gov/drowning/',                                                     blurb: 'Pool and open-water drowning data and prevention.' },
+  { name: 'NCMEC (National Center for Missing & Exploited Children)', url: 'https://www.missingkids.org/',                                            blurb: 'Resources for missing-child events. CyberTipline at 1-800-843-5678.' },
+  { name: 'ChildHelp National Child Abuse Hotline',          url: 'https://www.childhelp.org/',                                                        blurb: '24-hour hotline for child abuse concerns and resources. 1-800-422-4453.' },
+  { name: 'StopBullying.gov',                                url: 'https://www.stopbullying.gov/',                                                     blurb: 'HHS-managed bullying prevention and reporting resources.' },
+  { name: 'FTC: Children\'s Online Privacy Protection Rule (COPPA)', url: 'https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa', blurb: 'Federal rules for online services collecting data on children under 13.' },
+  { name: 'Consumer Product Safety Commission: Sports & Recreation', url: 'https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation', blurb: 'Recall database and product-safety advisories for youth-sport gear.' },
+  { name: 'AFSP (American Foundation for Suicide Prevention)', url: 'https://afsp.org/',                                                              blurb: 'Crisis resources and prevention. 988 Suicide & Crisis Lifeline.' },
+  { name: 'National Alliance for Eating Disorders',          url: 'https://www.allianceforeatingdisorders.com/',                                       blurb: 'Helpline and treatment-finder for eating disorders.' },
+];
+
+// Officiating, culture, and athlete-environment organizations.
+const officiatingAndCulture = [
+  { name: 'NASO (National Association of Sports Officials)', url: 'https://www.naso.org/',                                                            blurb: 'Officiating standards, training, and abuse-of-officials data and advocacy.' },
+  { name: 'Positive Coaching Alliance',                      url: 'https://positivecoach.org/',                                                        blurb: 'Coach and parent education on positive sport culture and sportsmanship.' },
+  { name: 'Aspen Institute: Project Play',                   url: 'https://projectplay.org/',                                                          blurb: 'National research and policy on youth-sports participation, costs, and health.' },
+  { name: 'Common Sense Media',                              url: 'https://www.commonsensemedia.org/',                                                 blurb: 'Reviews and policy guidance on apps, social media, and digital safety for kids and families.' },
+];
+
+// Adaptive sports organizations parents should know exist.
+const adaptiveOrgs = [
+  { name: 'Special Olympics',                                url: 'https://www.specialolympics.org/',                                                  blurb: 'Programs for athletes with intellectual disabilities, plus Unified Sports.' },
+  { name: 'Move United',                                     url: 'https://www.moveunitedsport.org/',                                                   blurb: 'National adaptive sports network. Programs for athletes with physical disabilities.' },
+  { name: 'Adaptive Sports USA',                             url: 'https://www.adaptivesportsusa.org/',                                                blurb: 'National governing body for adaptive sports across multiple disciplines.' },
+  { name: 'Disabled Sports USA / Move United',                url: 'https://www.moveunitedsport.org/',                                                  blurb: 'National adaptive sports network (merged with Disabled Sports USA in 2020).' },
 ];
 ---
 <BaseLayout
@@ -192,15 +247,87 @@ const safetyAndAdaptive = [
     </div>
   </section>
 
-  <!-- Safety + adaptive -->
+  <!-- Safety + medical -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-3 font-medium">Safety, research, and adaptive</p>
+      <p class="font-display italic text-rust mb-3 font-medium">Safety, medical & emergency response</p>
       <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
-        Other organizations parents should know exist.
+        The orgs the <em class="text-rust">Body & Safety</em> hub cites the most.
       </h2>
       <ul class="grid gap-4 mt-8 max-w-3xl">
-        {safetyAndAdaptive.map((o) => (
+        {safetyMedical.map((o) => (
+          <li>
+            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg font-medium">{o.name} ↗</a>
+            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{o.blurb}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Equipment standards -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3 font-medium">Equipment standards</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
+        The acronyms inside the helmet shell.
+      </h2>
+      <ul class="grid gap-4 mt-8 max-w-3xl">
+        {equipmentStandards.map((o) => (
+          <li>
+            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg font-medium">{o.name} ↗</a>
+            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{o.blurb}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Federal agencies + helplines -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3 font-medium">Federal agencies & helplines</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
+        Weather, water, kids, and the numbers worth saving in your phone.
+      </h2>
+      <ul class="grid gap-4 mt-8 max-w-3xl">
+        {federalAndHelplines.map((o) => (
+          <li>
+            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg font-medium">{o.name} ↗</a>
+            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{o.blurb}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Officiating + culture -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3 font-medium">Officiating, culture & policy</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
+        The non-NGB organizations shaping youth sport.
+      </h2>
+      <ul class="grid gap-4 mt-8 max-w-3xl">
+        {officiatingAndCulture.map((o) => (
+          <li>
+            <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg font-medium">{o.name} ↗</a>
+            {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{o.blurb}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Adaptive -->
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12">
+      <p class="font-display italic text-rust mb-3 font-medium">Adaptive sports</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
+        Programs for athletes with physical or intellectual disabilities.
+      </h2>
+      <ul class="grid gap-4 mt-8 max-w-3xl">
+        {adaptiveOrgs.map((o) => (
           <li>
             <a href={o.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust block text-lg font-medium">{o.name} ↗</a>
             {o.blurb && <p class="font-display italic text-ink-soft text-sm leading-snug mt-1 font-medium">{o.blurb}</p>}
