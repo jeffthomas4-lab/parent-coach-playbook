@@ -1,0 +1,126 @@
+---
+// Admin preview route. Renders any content entry — including drafts and
+// future-dated posts — without going through the public site's isLive() filter.
+//
+// Behind Cloudflare Access on /admin/* (same as the editorial dashboard).
+//
+// URL: /admin/preview/<collection>/<slug>
+// Used by the editorial dashboard when a piece's public URL would 404
+// (because draft: true or publishedAt is in the future).
+
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+export const prerender = false;
+
+const VALID_COLLECTIONS = new Set([
+  'articles',
+  'body',
+  'pathways',
+  'seasonCalendars',
+  'guides',
+  'resources',
+  'coachingTips',
+  'recruiting',
+  'adaptive',
+  'rules',
+  'scripts',
+  'decisions',
+]);
+
+const collection = Astro.params.collection;
+const slug = Astro.params.slug;
+
+if (!collection || !slug || !VALID_COLLECTIONS.has(collection)) {
+  return new Response('Unknown collection', { status: 404 });
+}
+
+const entry = await getEntry(collection as any, slug);
+if (!entry) {
+  return new Response(`Not found: ${collection}/${slug}`, { status: 404 });
+}
+
+const data = entry.data as any;
+const { Content } = await entry.render();
+
+const fmt = (d: any) =>
+  d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—';
+
+const title = data.title || data.activity || slug;
+const dek = data.dek || data.summary || data.lede || '';
+const editorial = data.editorial as any;
+
+// Public URL the piece will live at once it's live.
+const publicUrlFor = (col: string, item: any): string => {
+  switch (col) {
+    case 'articles':        return `/${item.data.phase}/${item.slug}/`;
+    case 'body':            return `/body/${item.slug}/`;
+    case 'pathways':        return `/pathways/${item.data.sport}/`;
+    case 'seasonCalendars': return `/season-calendar/${item.slug}/`;
+    case 'guides':          return `/what-to-buy/${item.slug}/`;
+    case 'resources':       return `/team-parent/${item.slug}/`;
+    case 'coachingTips':    return `/coaching-tips/${item.slug}/`;
+    case 'recruiting':      return `/recruiting/${item.slug}/`;
+    case 'adaptive':        return `/adaptive/${item.slug}/`;
+    case 'rules':           return `/rules/${item.data.sport}/`;
+    case 'scripts':         return `/scripts/${item.slug}/`;
+    case 'decisions':       return `/decisions/${item.slug}/`;
+    default:                return `/${item.slug}/`;
+  }
+};
+const publicUrl = publicUrlFor(collection, entry);
+---
+<BaseLayout title={`Preview · ${title}`} description="Editorial preview (admin only).">
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-4">
+        <div>
+          <p class="font-display italic text-rust mb-1 font-medium">Admin · Editorial preview</p>
+          <p class="font-display italic text-ink-soft text-xs font-medium">
+            This is a preview. The public page is{' '}
+            <a href={publicUrl} class="underline hover:text-rust">{publicUrl}</a>
+            {data.draft && ' (currently hidden — draft: true)'}
+            {!data.draft && data.publishedAt && new Date(data.publishedAt) > new Date() &&
+              ` (queued for ${fmt(data.publishedAt)})`}
+          </p>
+        </div>
+        <a
+          href="/admin/editorial/"
+          class="font-display italic text-xs px-3 py-1 border border-ink text-ink hover:bg-ink hover:text-paper font-medium"
+        >← Back to dashboard</a>
+      </div>
+
+      <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-1 text-xs font-display italic font-medium">
+        <div><span class="text-ink-soft">Collection:</span> <span class="text-ink">{collection}</span></div>
+        <div><span class="text-ink-soft">Slug:</span> <span class="text-ink">{slug}</span></div>
+        <div><span class="text-ink-soft">Published:</span> <span class="text-ink">{fmt(data.publishedAt)}</span></div>
+        <div><span class="text-ink-soft">Draft flag:</span> <span class="text-ink">{data.draft ? 'true' : 'false'}</span></div>
+        {editorial && (
+          <>
+            <div><span class="text-ink-soft">Status:</span> <span class="text-ink">{editorial.status || '—'}</span></div>
+            <div><span class="text-ink-soft">Quality:</span> <span class="text-ink">{editorial.qualityGrade ?? '—'}</span></div>
+            <div><span class="text-ink-soft">Originality:</span> <span class="text-ink">{editorial.originalityGrade ?? '—'}</span></div>
+            <div><span class="text-ink-soft">Voice:</span> <span class="text-ink">{editorial.voiceGrade ?? '—'}</span></div>
+          </>
+        )}
+      </div>
+
+      {editorial?.reviewerNotes && (
+        <p class="mt-3 text-xs font-display italic text-ink-soft font-medium">
+          <span class="text-ink-soft">Reviewer notes:</span> <span class="text-ink">{editorial.reviewerNotes}</span>
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-8 max-w-3xl">
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium" set:html={title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}></h1>
+      {dek && <p class="font-display text-ink-soft mt-3 leading-snug max-w-2xl">{dek}</p>}
+
+      <article class="mt-6 prose prose-ink max-w-none">
+        <Content />
+      </article>
+    </div>
+  </section>
+</BaseLayout>

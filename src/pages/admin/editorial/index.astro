@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { isLive } from '../../../lib/publishFilter';
 
 // Pull every reviewable collection. Each row gets normalized to a common shape so the
 // table can render without per-collection branching.
@@ -47,19 +48,26 @@ const urlFor = (collection: string, item: any): string => {
 
 const titleFor = (item: any): string => item.data.title || item.data.activity || item.slug;
 
+// If the piece is live, link to its public URL. Otherwise, link to the
+// admin preview route so Jeff can read drafts and queued pieces.
+const linkFor = (collection: string, item: any): string => {
+  if (isLive(item.data)) return urlFor(collection, item);
+  return `/admin/preview/${collection}/${item.slug}/`;
+};
+
 const rows: Row[] = [
-  ...articles.map(i =>   ({ collection: 'articles',       slug: i.slug, title: titleFor(i), url: urlFor('articles', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...body.map(i =>       ({ collection: 'body',           slug: i.slug, title: titleFor(i), url: urlFor('body', i),           publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...pathways.map(i =>   ({ collection: 'pathways',       slug: i.slug, title: titleFor(i), url: urlFor('pathways', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...calendars.map(i =>  ({ collection: 'seasonCalendars',slug: i.slug, title: titleFor(i), url: urlFor('seasonCalendars', i),publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...guides.map(i =>     ({ collection: 'guides',         slug: i.slug, title: titleFor(i), url: urlFor('guides', i),         publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...resources.map(i =>  ({ collection: 'resources',      slug: i.slug, title: titleFor(i), url: urlFor('resources', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...tips.map(i =>       ({ collection: 'coachingTips',   slug: i.slug, title: titleFor(i), url: urlFor('coachingTips', i),   publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...recruiting.map(i => ({ collection: 'recruiting',     slug: i.slug, title: titleFor(i), url: urlFor('recruiting', i),     publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...adaptive.map(i =>   ({ collection: 'adaptive',       slug: i.slug, title: titleFor(i), url: urlFor('adaptive', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...rules.map(i =>      ({ collection: 'rules',          slug: i.slug, title: titleFor(i), url: urlFor('rules', i),          publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...scripts.map(i =>    ({ collection: 'scripts',        slug: i.slug, title: titleFor(i), url: urlFor('scripts', i),        publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...decisions.map(i =>  ({ collection: 'decisions',      slug: i.slug, title: titleFor(i), url: urlFor('decisions', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...articles.map(i =>   ({ collection: 'articles',       slug: i.slug, title: titleFor(i), url: linkFor('articles', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...body.map(i =>       ({ collection: 'body',           slug: i.slug, title: titleFor(i), url: linkFor('body', i),           publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...pathways.map(i =>   ({ collection: 'pathways',       slug: i.slug, title: titleFor(i), url: linkFor('pathways', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...calendars.map(i =>  ({ collection: 'seasonCalendars',slug: i.slug, title: titleFor(i), url: linkFor('seasonCalendars', i),publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...guides.map(i =>     ({ collection: 'guides',         slug: i.slug, title: titleFor(i), url: linkFor('guides', i),         publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...resources.map(i =>  ({ collection: 'resources',      slug: i.slug, title: titleFor(i), url: linkFor('resources', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...tips.map(i =>       ({ collection: 'coachingTips',   slug: i.slug, title: titleFor(i), url: linkFor('coachingTips', i),   publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...recruiting.map(i => ({ collection: 'recruiting',     slug: i.slug, title: titleFor(i), url: linkFor('recruiting', i),     publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...adaptive.map(i =>   ({ collection: 'adaptive',       slug: i.slug, title: titleFor(i), url: linkFor('adaptive', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...rules.map(i =>      ({ collection: 'rules',          slug: i.slug, title: titleFor(i), url: linkFor('rules', i),          publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...scripts.map(i =>    ({ collection: 'scripts',        slug: i.slug, title: titleFor(i), url: linkFor('scripts', i),        publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...decisions.map(i =>  ({ collection: 'decisions',      slug: i.slug, title: titleFor(i), url: linkFor('decisions', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
 ].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
 
 // Top-line stats
@@ -144,6 +152,7 @@ const statusColor: Record<string, string> = {
             <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Flags</th>
             <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Claude</th>
             <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Jeff</th>
+            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -172,6 +181,19 @@ const statusColor: Record<string, string> = {
                 <td class="py-2 pr-3 font-display text-ink-soft text-xs font-medium">{flags}</td>
                 <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.editorial?.claudeReviewedAt)}</td>
                 <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.editorial?.jeffReviewedAt)}</td>
+                <td class="py-2 pr-3" data-action-cell>
+                  {(status === 'claude-reviewed' || status === 'draft' || status === 'ready-for-jeff') ? (
+                    <button
+                      class="approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
+                      data-collection={r.collection}
+                      data-slug={r.slug}
+                    >Approve</button>
+                  ) : (status === 'jeff-approved' || status === 'published') ? (
+                    <span class="font-display italic text-pine text-xs font-medium">approved</span>
+                  ) : (
+                    <span class="font-display italic text-ink-soft text-xs font-medium">—</span>
+                  )}
+                </td>
               </tr>
             );
           })}
@@ -206,6 +228,66 @@ const statusColor: Record<string, string> = {
           else show = status === filter;
           (row as HTMLElement).style.display = show ? '' : 'none';
         });
+      });
+    }
+
+    // Approve button: POST to /api/admin/editorial/approve, then update the
+    // row optimistically. The committed change shows up after the next build.
+    if (table) {
+      table.addEventListener('click', async (e) => {
+        const target = e.target as HTMLElement;
+        if (!target.classList.contains('approve-btn')) return;
+        const collection = target.getAttribute('data-collection');
+        const slug = target.getAttribute('data-slug');
+        if (!collection || !slug) return;
+
+        const btn = target as HTMLButtonElement;
+        btn.disabled = true;
+        const originalText = btn.textContent;
+        btn.textContent = 'Approving…';
+
+        try {
+          const res = await fetch('/api/admin/editorial/approve', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ collection, slug }),
+          });
+          const data = await res.json() as { ok: boolean; error?: string; jeffReviewedAt?: string };
+          if (!res.ok || !data.ok) {
+            throw new Error(data.error || `HTTP ${res.status}`);
+          }
+
+          const row = btn.closest('tr');
+          if (row) {
+            row.setAttribute('data-status', 'jeff-approved');
+
+            const actionCell = btn.closest('[data-action-cell]');
+            if (actionCell) {
+              actionCell.innerHTML =
+                '<span class="font-display italic text-pine text-xs font-medium">approved (pending build)</span>';
+            }
+
+            const statusPill = row.querySelector('td:nth-child(3) span');
+            if (statusPill) {
+              statusPill.textContent = 'jeff-approved';
+              (statusPill as HTMLElement).style.background = '#5C7459';
+            }
+
+            if (data.jeffReviewedAt) {
+              const jeffCell = row.querySelector('td:nth-child(9)');
+              if (jeffCell) {
+                const d = new Date(data.jeffReviewedAt);
+                jeffCell.textContent = d.toLocaleDateString('en-US', {
+                  month: 'short', day: 'numeric', year: 'numeric',
+                });
+              }
+            }
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = originalText;
+          alert('Approve failed: ' + ((err as Error).message || 'unknown error'));
+        }
       });
     }
   </script>
