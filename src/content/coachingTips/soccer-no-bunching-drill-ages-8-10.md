@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Three zones marking correct field spacing"
 publishedAt: 2026-02-11
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solves the universal bunching problem at this age. Soccer vocab correct."
 ---
 
 Most young teams clump together around the ball. This drill forces spacing so they learn to spread and pass.

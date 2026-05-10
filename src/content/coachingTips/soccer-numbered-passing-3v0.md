@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Three attackers with numbers on their jerseys passing among themselves in a defined sequence while avoiding defenders."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Title says 3v0 but setup uses 2 defenders; minor inconsistency. Soccer vocab correct."
 ---
 
 Numbered passing forces players to read the field quickly and make the right decision. It's not random. Pass to the next number in sequence. Under pressure, that takes focus.

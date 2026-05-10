@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young children facing each other 8 feet apart, one passing a basketball from chest level to the other."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Thumbs-down release cue is the standard teach. Distances are concrete."
 ---
 
 The chest pass is the first pass kids learn. It's the easiest to control and the hardest to defend. This drill is just that: catch, pass, repeat.

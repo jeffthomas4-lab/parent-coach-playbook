@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player dribbling at speed for a few steps, then slowing down suddenly, then accelerating again."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clap-cue progression is a nice touch. 'Real change of pace means they look like they're stopping' is a sticky cue."
 ---
 
 Change of pace makes the defender commit to a wrong speed. You go fast, they react fast, you go slow and leave them behind. This drill teaches the feel for tempo changes while dribbling.

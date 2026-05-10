@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Four children positioned around chairs spaced 10 feet apart, passing a basketball while moving to cuts around the chairs."
 publishedAt: 2026-02-05
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body was truncated mid-Variation; completed with struggle/got-it tiers."
 ---
 
 This drill teaches spacing and passing without the complexity of defense. Kids learn to find open teammates and pass on time.

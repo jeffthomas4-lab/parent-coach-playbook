@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender copying the attacker's sideways movement, keeping their body facing them."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Age-appropriate intro defending drill. Soccer vocab correct."
 ---
 
 Mirroring teaches the defender to react to the attacker's movement instead of guessing. If the attacker moves left, the defender moves left. Simple copy-cat.
