@@ -19,6 +19,24 @@ const latestRail = all.filter(a => a.slug !== featured?.slug).slice(0, 5);
 
 const drives = Object.values(PILLARS);
 
+// Photo per drive, in order: before, during, after.
+// Loaded from /public/illustrations/. Same aspect ratio across all three so the
+// triptych reads as one composition.
+const driveImages = [
+  {
+    src: '/illustrations/walk-to-the-field.webp',
+    alt: 'A dad and son walking together through the parking lot toward the field at twilight.',
+  },
+  {
+    src: '/illustrations/coach-setting-cones.webp',
+    alt: 'A coach kneeling on the field at golden hour, setting up orange cones for a drill.',
+  },
+  {
+    src: '/illustrations/the-car-ride-home.webp',
+    alt: 'A dad driving with his young son in the passenger seat, soccer cleats in the foreground, sunset out the windshield.',
+  },
+];
+
 // timeZone: 'UTC' is required because publishedAt in YAML frontmatter parses to
 // midnight UTC, and the build runs in the deployer's local TZ. Without forcing
 // UTC here, every date renders one day early for any deployer west of UTC.
@@ -27,8 +45,22 @@ const fmtDate = (d: Date) =>
 ---
 <BaseLayout>
   {/* SECTION 1 of 6: HERO + latest-reads rail (top right, above the fold) */}
-  <section class="border-b border-bone">
-    <div class="container-px py-14 md:py-20">
+  <section class="border-b border-bone relative overflow-hidden">
+    {/* Hero photo + paper-tinted overlay so dark hero type stays readable. */}
+    <img
+      src="/illustrations/sports-family-sideline.webp"
+      alt="A family of four sitting close together on the sideline at a youth game, smiling."
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, rgba(250,246,238,0.94) 0%, rgba(250,246,238,0.88) 55%, rgba(250,246,238,0.72) 100%);"
+      aria-hidden="true"
+    ></div>
+    <div class="container-px py-14 md:py-20 relative">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
         {/* Hero copy */}
         <div class="lg:col-span-8">
@@ -94,26 +126,37 @@ const fmtDate = (d: Date) =>
         {drives.map((p, i) => (
           <a
             href={`/${p.slug}/`}
-            class="group block p-7 md:p-8 transition-colors"
+            class="group block transition-colors overflow-hidden"
             style={`background: ${p.accentBg};`}
           >
-            <div class="flex items-baseline gap-3 mb-4">
-              <span class="font-display italic text-sm" style={`color: ${p.accent}; font-weight: 500;`}>
-                Drive {String(i + 1).padStart(2, '0')}
-              </span>
-              <span class="font-display italic text-ink-soft text-xs font-medium">
-                {p.eyebrow}
-              </span>
+            <div class="aspect-[3/2] overflow-hidden bg-bone">
+              <img
+                src={driveImages[i].src}
+                alt={driveImages[i].alt}
+                class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-            <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors font-medium">
-              {p.label}
-            </h3>
-            <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
-              {p.blurb}
-            </p>
-            <p class="font-display italic text-sm mt-5" style={`color: ${p.accent}; font-weight: 500;`}>
-              → Read the {p.label.toLowerCase()} pieces
-            </p>
+            <div class="p-7 md:p-8">
+              <div class="flex items-baseline gap-3 mb-4">
+                <span class="font-display italic text-sm" style={`color: ${p.accent}; font-weight: 500;`}>
+                  Drive {String(i + 1).padStart(2, '0')}
+                </span>
+                <span class="font-display italic text-ink-soft text-xs font-medium">
+                  {p.eyebrow}
+                </span>
+              </div>
+              <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors font-medium">
+                {p.label}
+              </h3>
+              <p class="font-display text-ink-soft text-sm mt-3 leading-snug">
+                {p.blurb}
+              </p>
+              <p class="font-display italic text-sm mt-5" style={`color: ${p.accent}; font-weight: 500;`}>
+                → Read the {p.label.toLowerCase()} pieces
+              </p>
+            </div>
           </a>
         ))}
       </div>
@@ -121,8 +164,21 @@ const fmtDate = (d: Date) =>
   </section>
 
   {/* PARENT-COACH PILLAR — names the niche so they don't get lost in the broad welcome. */}
-  <section class="border-b border-bone" style="background: #2D2520; color: #FAF6EE;">
-    <div class="container-px py-14 md:py-20">
+  <section class="border-b border-bone relative overflow-hidden" style="background: #2D2520; color: #FAF6EE;">
+    {/* Empty-gym photo lives behind the dark overlay — quiet, "lineup at midnight" feel. */}
+    <img
+      src="/illustrations/empty-gym-after-practice.webp"
+      alt="An empty high school gym in late afternoon light: basketball on the floor near the bench, Teamwork Respect Integrity banner on the wall."
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+      loading="lazy"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, rgba(45,37,32,0.94) 0%, rgba(45,37,32,0.82) 55%, rgba(45,37,32,0.55) 100%);"
+      aria-hidden="true"
+    ></div>
+    <div class="container-px py-14 md:py-20 relative">
       <div class="grid lg:grid-cols-12 gap-10 items-start">
         <div class="lg:col-span-7">
           <p class="font-display italic mb-3 font-medium" style="color: #D4AB6A;">If you're also on the bench</p>
@@ -237,8 +293,21 @@ const fmtDate = (d: Date) =>
   </section>
 
   {/* COST CALCULATOR HERO — promote the most-shareable tool to its own block */}
-  <section class="border-b border-bone" style="background: #F5E9D2;">
-    <div class="container-px py-14 md:py-20">
+  <section class="border-b border-bone relative overflow-hidden" style="background: #F5E9D2;">
+    {/* Sunset-scoreboard photo behind a cream wash — sets the community-cost stakes. */}
+    <img
+      src="/illustrations/sunset-field-scoreboard.webp"
+      alt="A community field scoreboard at sunset, parents watching from camping chairs along the sideline."
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, rgba(245,233,210,0.94) 0%, rgba(245,233,210,0.82) 55%, rgba(245,233,210,0.45) 100%);"
+      aria-hidden="true"
+    ></div>
+    <div class="container-px py-14 md:py-20 relative">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7">
           <p class="font-display italic mb-3 font-medium" style="color: #B0894A;">Most-asked question on the site</p>

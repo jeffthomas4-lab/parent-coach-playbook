@@ -23,6 +23,18 @@ const {
       <p class="font-display text-paper-warm mt-4 text-lg max-w-xl leading-snug">
         {blurb}
       </p>
+      {/* Field-guide thumbnail. Hand-illustrated family calendar previewing the
+          kind of templates inside the download. Hidden on small screens to keep
+          the CTA tight on mobile. */}
+      <div class="hidden md:block mt-7 max-w-md">
+        <img
+          src="/illustrations/family-season-calendar.webp"
+          alt="A hand-illustrated family wall calendar with color-coded kids, sports, and activities — a preview of the templates inside the field guide."
+          class="w-full h-auto rounded-sm shadow-lg border-2 border-paper-warm"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
     </div>
     <div class="md:col-span-5">
       <NewsletterSignup
