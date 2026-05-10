@@ -20,6 +20,7 @@ editorial:
   claudeReviewedAt: 2026-05-03
   status: published
   reviewerNotes: "Packing lists are a commodity content type; the original value is in the framing (the stuffed animal line, the parking lot lingering note, the day-three rhythm). No factual claims requiring sources."
+hero: /illustrations/first-overnight-camp-duffel.webp
 ---
 
 First overnight camp is a real moment. You're nervous. They're nervous. The list the camp sends you is too long and too vague. Here's the actual list.

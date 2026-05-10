@@ -7,6 +7,7 @@ lede: "Recovery, hydration, travel logistics, and the replacement consumables th
 costSummary: "$250–450 for a full essentials kit; scales with tournament travel"
 seasonNote: "Most essentials stay consistent year-round. Tour and tournament seasons push cooler and travel gear higher."
 publishedAt: 2026-05-01
+hero: /illustrations/season-essentials-flatlay.webp
 ---
 
 Your kid has cleats. You have a glove or whatever sport-specific equipment lives in the garage. Now you need the support infrastructure. Recovery tools that prevent muscle soreness from becoming an excuse to sit out. Hydration systems that work for a three-game Saturday. Travel logistics that get everything to the tournament site without forgetting the mouthguards.

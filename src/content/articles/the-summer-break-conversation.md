@@ -21,6 +21,7 @@ editorial:
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
   reviewerNotes: "Touches on burnout: flagged sensitive. Mentions AAP guidance in-text but no formal source link; consider adding before Jeff review. The 'what are you hoping the summer feels like' frame is the original value."
+hero: /illustrations/dockside-sunset-reflection.webp
 ---
 
 School ends in a few weeks. The summer schedule is a question. Your kid is on one of three tracks.

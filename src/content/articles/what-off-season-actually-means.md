@@ -20,6 +20,7 @@ editorial:
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
   reviewerNotes: "Strong piece. Mentions AAP and AOSSM consensus in-text but no formal sources block: should add before Jeff review. The 'off-season is not zero, not training-camp, just less' close earns its place."
+hero: /illustrations/sunset-dugout-quiet.webp
 ---
 
 The off-season is one of the most-misunderstood concepts in youth sports. Coaches use the word. Parents nod. Almost nobody agrees on what it actually means.

@@ -53,4 +53,5 @@ editorial:
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
   reviewerNotes: "Neutral on travel."
+hero: /illustrations/travel-vs-rec-diptych.webp
 ---

@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-02-14
 featured: false
+hero: /illustrations/night-before-tryouts-bedroom.webp
 ---
 
 Your kid is nine. Tryouts are tomorrow morning. He is at the dinner table. He has not eaten much. He is asking too many questions.

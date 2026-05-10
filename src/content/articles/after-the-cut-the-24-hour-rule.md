@@ -9,6 +9,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-02-05
 featured: false
+hero: /illustrations/the-post-cut-porch.webp
 ---
 
 The cuts list went up. Your kid wasn't on it. The next 24 hours, you will be tempted to do several things. Don't.

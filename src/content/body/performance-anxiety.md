@@ -18,6 +18,7 @@ doctorQuestions:
   - "Are there pediatric mental health resources you'd recommend in our area?"
   - "What's the role of sleep, caffeine, and nutrition in our kid's pre-game state?"
 gearPicks: []
+hero: /illustrations/big-feelings-toolkit.webp
 ---
 
 Pre-game nerves are normal. Almost every athlete at every level feels them, often badly. The conversation that matters is the one that distinguishes between nerves that fuel performance and anxiety that's actively costing your kid the season.

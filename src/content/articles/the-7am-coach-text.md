@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-04-09
 featured: false
+hero: /illustrations/outside-gym-phone-moment.webp
 ---
 
 You wake up at 7:02am to a text from the coach. *Practice moved to 5:30 today, can your son make it?*

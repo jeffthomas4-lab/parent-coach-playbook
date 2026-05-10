@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "11-12"
 publishedAt: 2026-02-02
 featured: true
+hero: /illustrations/travel-vs-rec-diptych.webp
 ---
 
 Travel ball costs more than you think. The registration fee on the website is not the number. Here is the full math.

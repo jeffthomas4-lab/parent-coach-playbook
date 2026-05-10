@@ -9,6 +9,7 @@ sport: "multi-sport"
 age: "5-7"
 publishedAt: 2026-03-11
 featured: false
+hero: /illustrations/team-snack-table.webp
 ---
 
 Most rec teams of six-year-olds have a snack rotation. Most rotations fall apart by week four because no one knows whose turn it is.

@@ -23,6 +23,7 @@ editorial:
   claudeReviewedAt: 2026-05-06
   status: claude-reviewed
   reviewerNotes: "Rewrite from a preachy framework into a narrative essay. Same substantive points, fewer bold section headlines, fewer 'if you are paying for X' bullet beats. Keeps the SEO targets."
+hero: /illustrations/cost-calculator-kitchen-table.webp
 ---
 
 The question gets asked at registration time. Then again in February when the travel-team fee comes due. Then a third time at eleven at night when somebody is staring at the family budget on the kitchen counter and the kid is asleep upstairs.

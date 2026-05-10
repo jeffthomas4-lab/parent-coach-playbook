@@ -25,6 +25,7 @@ gearPicks:
     note: "The first hour is rest, not action. No special gear required."
   - name: "Headache log notebook"
     note: "Track symptom severity and duration each day. Bring it to follow-up appointments."
+hero: /illustrations/concussion-quiet-care-kit-poster.webp
 ---
 
 A concussion is a brain injury caused by a hit to the head, neck, or body that makes the brain move inside the skull. It does not require loss of consciousness. Most concussions in youth sports do not involve passing out. The kid who got hit and now seems "off" is the kid you take out.

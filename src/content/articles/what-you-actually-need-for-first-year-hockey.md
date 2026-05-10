@@ -8,6 +8,7 @@ sport: "hockey"
 age: "5-7"
 publishedAt: 2026-04-12
 featured: false
+hero: /illustrations/hockey-gear-up-parent-helping.webp
 ---
 
 Hockey startup costs feel insane. You see families walking out of the ice rink with bags that cost more than a car payment.

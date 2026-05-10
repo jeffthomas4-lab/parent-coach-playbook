@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "15-plus"
 publishedAt: 2026-04-25
 featured: false
+hero: /illustrations/bench-moment-during-game.webp
 ---
 
 Our 15-year-old wasn't starting. They came home frustrated and angry. Our instinct was to advocate for them. Text the coach. Tell them they were wrong. Tell our kid they're better than the starter.

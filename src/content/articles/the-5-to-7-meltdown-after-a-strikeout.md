@@ -8,6 +8,7 @@ sport: "baseball"
 age: "5-7"
 publishedAt: 2026-01-08
 featured: false
+hero: /illustrations/after-a-tough-day-reset-kit.webp
 ---
 
 Our 6-year-old struck out. They walked off the field crying. We wanted to help. We wanted to say it's okay, they'll do better next time, we're proud of them anyway.

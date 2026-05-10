@@ -30,8 +30,22 @@ const levels = [
   title="Cost calculator"
   description="What does a year of youth sports actually cost? Pick a sport and level. We pre-fill national medians at every tier. Edit any line. Honest math either way."
 >
-  <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-16">
+  <section class="border-b border-bone relative overflow-hidden">
+    {/* Cost-calc kitchen-table flatlay behind a paper-tinted wash for the hero. */}
+    <img
+      src="/illustrations/cost-calculator-kitchen-table.webp"
+      alt="A registration form with red pen circles, a calculator, a coffee mug, and a credit card on a kitchen table."
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, rgba(250,246,238,0.94) 0%, rgba(250,246,238,0.85) 55%, rgba(250,246,238,0.55) 100%);"
+      aria-hidden="true"
+    ></div>
+    <div class="container-px py-12 md:py-16 relative">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">Tools</a> · Cost calculator
       </p>

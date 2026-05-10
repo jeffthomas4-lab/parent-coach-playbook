@@ -29,6 +29,7 @@ editorial:
   claudeReviewedAt: 2026-05-03
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged (mental health, identity). Stays parent-to-parent. Cites USOPC, AAP, NCAA. The 'identity collapse vs normal grief' distinction is the most useful diagnostic frame."
+hero: /illustrations/quiet-care-toolkit-poster.webp
 ---
 
 By age 13 or 14, some kids stop being kids who play a sport and become kids whose entire sense of self is the sport. When the sport goes well, they're great. When it doesn't, they have nothing left.

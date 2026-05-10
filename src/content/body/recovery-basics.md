@@ -28,6 +28,7 @@ gearPicks:
     note: "Strength and power work. Doubles as a step-down for hip stability drills."
   - name: "Normatec or Air Relax compression boots"
     note: "Aspirational tier. Useful for serious endurance athletes (cross country, distance swimmers, soccer ECNL+). Probably overkill for most rec/middle school athletes."
+hero: /illustrations/concussion-care-at-home-poster.webp
 ---
 
 Recovery is the unsexy 50% of training. Most kids skip it. The ones who do it consistently are the ones who stay healthy, get less sore, and recover faster between sessions.

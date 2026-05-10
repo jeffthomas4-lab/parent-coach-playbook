@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-03-29
 featured: false
+hero: /illustrations/you-should-be-assistant-coaching-pressure.webp
 ---
 
 The head coach pulled you aside. *We could really use you as an assistant. You played in college. The team would love it.*

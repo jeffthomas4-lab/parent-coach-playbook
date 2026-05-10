@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "13-14"
 publishedAt: 2026-04-21
 featured: false
+hero: /illustrations/bench-moment-backlit-sunset.webp
 ---
 
 It was February and we had a kid who wasn't playing. Not because they were bad. Because the matchup didn't favor them. We could see the frustration building at practice. So we sat them down before the next game.

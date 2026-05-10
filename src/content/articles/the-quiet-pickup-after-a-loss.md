@@ -8,6 +8,7 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-02-20
 featured: false
+hero: /illustrations/walking-home-sunset.webp
 ---
 
 Final whistle. The team lost. Your kid walks off the field with the kind of slow steps that mean he played his heart out and lost anyway.

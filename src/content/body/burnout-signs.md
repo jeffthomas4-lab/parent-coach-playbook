@@ -19,6 +19,7 @@ doctorQuestions:
   - "Are there blood tests worth running to check for overtraining markers?"
   - "What's a healthy way to step back without losing roster spot?"
 gearPicks: []
+hero: /illustrations/build-a-reset-corner.webp
 ---
 
 Burnout in youth athletes follows a predictable pattern. It rarely shows up as a single dramatic moment. It builds over months as a slow loss of joy, energy, and identification with the sport. By the time a kid says "I want to quit," burnout has usually been building for a year.

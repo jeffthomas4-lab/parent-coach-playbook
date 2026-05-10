@@ -36,4 +36,5 @@ relatedScripts:
   - "after-a-game-11-12"
 sportTags: ["multi-sport"]
 ageBands: ["11-12","13-14","15-plus"]
+hero: /illustrations/the-post-cut-porch.webp
 ---

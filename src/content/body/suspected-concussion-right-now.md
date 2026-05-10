@@ -36,6 +36,7 @@ editorial:
   claudeReviewedAt: 2026-04-15
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. Companion to concussion-protocol-basics. CDC HEADS UP and Concussion Legacy Foundation cited. Designed as moment-of-need page."
+hero: /illustrations/concussion-quiet-care-couch.webp
 ---
 
 This is the page you read while it is happening. The full background is at concussion-protocol-basics. The protocol below is the next ten minutes.

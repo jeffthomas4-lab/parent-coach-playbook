@@ -5,6 +5,7 @@ category: "practice"
 type: "article"
 publishedAt: 2026-01-22
 featured: true
+hero: /illustrations/practice-plan-clipboard-flatlay.webp
 ---
 
 The single highest-leverage thing a youth coach can do is share a written practice plan with parents. The parents who trust you are the parents who can see what you're doing. Coaches who win the most buy-in are the ones who write things down.
