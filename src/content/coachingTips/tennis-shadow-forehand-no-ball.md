@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child holding a kid-sized tennis racquet, taking the racquet back, stepping forward with the opposite foot, and swinging through to a finish over the shoulder."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Shadow forehand for 5-7 with proper racquet sizing."
 ---
 
 The first tennis swing should look right before a ball is involved. Shadow swinging builds the path. Turn, drop, lift, follow. No ball, no pressure. Just the motion.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A lineman pulling laterally from the line of scrimmage, running to the edge to block."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pulling lineman to live block on edge defender; sensitive flagged for partner contact."
 ---
 
 Pulling is when an interior lineman leaves the line to go block someone on the edge. This teaches kids how to pull, maintain their pad level, and get to the defender in space.

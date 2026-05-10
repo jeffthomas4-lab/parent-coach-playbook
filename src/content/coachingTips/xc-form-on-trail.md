@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner on a dirt trail with mixed terrain (uphill, downhill, flat), maintaining upright posture and even arm swing throughout."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Trail form work with hill posture cues; sensitive flag for trail terrain."
 ---
 
 Cross country is running over uneven ground. Uphills, downhills, roots, mud. Form has to adjust without breaking down. This drill puts the runner on real terrain and teaches them to keep the form even when the ground changes.

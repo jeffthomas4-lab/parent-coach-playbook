@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child throwing a softball underhand at a wall and catching the rebound, glove ready."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Wall-rebound reaction drill; ball term fixed."
 ---
 
 Wall ball teaches reaction time and foot movement. The ball bounces back unpredictably, forcing the kid to move and adjust. It's faster than tossing drills.
 
-**What you need:** 5 soft baseballs (11"), a glove, a fence or wall.
+**What you need:** 5 softballs (11"), a glove, a fence or wall.
 
 **Setup:** Stand 8 feet from a wall or fence. Kid has a glove on.
 

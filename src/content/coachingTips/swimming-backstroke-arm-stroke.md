@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer on their back with one arm reaching backward into the water, the other arm completing a pull underwater, body rotating with each stroke."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Backstroke arm cycle with pinky-first cue; uses 'length' correctly."
 ---
 
 Backstroke arms alternate, like freestyle but on the back. One arm reaches behind the head and enters the water pinky-first. The other arm pulls along the body underwater. The body rotates side to side as the arms work.

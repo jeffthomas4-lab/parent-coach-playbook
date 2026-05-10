@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence at 'reach for the ball with their ha'; needs completion."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'reach for the ball with their ha'."
 ---
 
 Fielding starts with the feet and the glove staying low. Grounders teach this faster than pop-ups because the ball is moving toward them on the ground.
@@ -39,4 +39,8 @@ Fielding starts with the feet and the glove staying low. Grounders teach this fa
 4. Move to the next kid. Cycle through all four kids twice. That's 8 reps each.
 5. On the final round, let them make a throw to a base (or just back to you). Add that motion only after they've caught 8 clean ones.
 
-**What to look for:** Hands down, knees bent, glove on the ground first. Most kids will reach for the ball with their ha
+**What to look for:** Hands down, knees bent, glove on the ground first. Most kids will reach for the ball with their hands instead of dropping the glove and letting the ball come to it. Tap your own glove on the dirt to model what you want before each rep.
+
+**If they're struggling:** Roll the ball from 8 feet away instead of 15, and roll it slower. Use one tennis ball only so the bounce is soft and predictable.
+
+**If they've got it:** Add a target. After the catch, they throw the ball to a cone 20 feet to your right. Make the throw count too.

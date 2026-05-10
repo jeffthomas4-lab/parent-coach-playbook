@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer in streamline glide position after a pull, body fully extended, hands together overhead, kick completed."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Glide-emphasis drill with 2-second hold."
 ---
 
 Most breaststrokers rush the glide. The result is a slow stroke. The right move is a long glide where the body shoots forward through the water with no work. This drill teaches the kid to wait for the glide.

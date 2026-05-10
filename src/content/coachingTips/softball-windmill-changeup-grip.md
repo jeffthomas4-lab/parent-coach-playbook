@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher's hand showing a different grip on the ball compared to the fastball, preparing to throw a changeup."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Off-speed grip work with pitch-count guardrails."
 ---
 
 A changeup grip changes the ball's spin and speed without changing the arm motion. A pitcher with one good off-speed pitch becomes much harder to hit.
 
-**What you need:** 30 soft baseballs (12"), pitcher at 40 feet, catcher with gear.
+**What you need:** 30 softballs (12"), pitcher at 40 feet, catcher with gear.
 
 **Setup:** Pitcher on mound. Catcher at home plate.
 

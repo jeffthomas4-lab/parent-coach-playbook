@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young player holding the racquet with both hands, swinging from the backhand side with both hands following through over the opposite shoulder."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Two-handed backhand shadow swing for younger ages."
 ---
 
 Two-handed backhand is the standard for kids. Both hands give support and consistency. The motion mirrors the forehand: turn, swing low to high, follow through. Shadow practice builds it before the ball complicates things.

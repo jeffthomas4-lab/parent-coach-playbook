@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Puck flying through the air in a low flat arc above the ice, going over a defender's stick that's lying flat on the ice between two passing players."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Wrist-roll diagnostic for flat-versus-edge landing is concrete."
 ---
 
 A saucer pass is a flat-arc pass that flies over a defender's stick and lands flat for the receiver. It's one of the trickier passes to learn but worth it. This is what beats stick-checking defenders in tight spaces.

@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence in the Variation paragraph ('tee the ball slightly for'). Finish the line and add an If they're struggling / If they've got it block to match the rest of the drill set."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'tee the ball slightly for'."
 ---
 
 Live tee work teaches kids to track the ball as if someone is throwing it, even though the tee is stationary. This is the bridge between tee work and soft toss.
@@ -42,4 +42,8 @@ Live tee work teaches kids to track the ball as if someone is throwing it, even 
 
 **What to look for:** A consistent approach every rep. Feet set, hands ready, same breath, same swing. Rhythm matters. Kids who are loose will make more contact than kids who think too hard.
 
-**Variation:** For older kids (10), tee the ball slightly for
+**Variation:** For older kids (10), tee the ball slightly forward of the front foot to force them to drive through the zone instead of getting jammed.
+
+**If they're struggling:** Drop the pace. Wait three seconds between "Hit" calls and let them reset their breath. Cut the set to 10 reps total.
+
+**If they've got it:** Mix two ball heights in the same set. Put 5 balls high, 5 low, and don't tell them which is coming until you load it.

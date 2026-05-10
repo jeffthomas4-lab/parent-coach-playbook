@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer turning the head to breathe during freestyle, alternating sides every three strokes, body rolling with each breath."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Bilateral breathing every 3 strokes; uses correct vocab."
 ---
 
 Most kids breathe to one side only. That creates an uneven stroke. Bilateral breathing (both sides) balances the body and tracks straight. Hard at first, easier with practice. By 11-12, kids can build this habit.

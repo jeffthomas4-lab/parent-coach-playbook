@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach standing 12 feet from a player, gently tossing a volleyball underhand, the player bumping it straight back with a flat platform."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "First-rep bump drill. Forearm-meat contact point is correct."
 ---
 
 The first real bump rep is from a controlled toss. The coach throws to a predictable spot. The kid forms the platform and bumps the ball back. No movement, no surprise. Just feel the ball on the platform.

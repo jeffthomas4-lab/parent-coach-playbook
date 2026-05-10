@@ -11,7 +11,7 @@ illustrationBrief: "A child in the center of a 20-foot square with cones at each
 publishedAt: 2026-02-16
 featured: false
 editorial:
-  qualityGrade: 6
+  qualityGrade: 7
   originalityGrade: 7
   voiceGrade: 8
   flagInappropriateness: false
@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-word ('out of posi'). Finish the What to look for paragraph and add If they're struggling / If they've got it to match the drill template."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'the kid is out of posi'."
 ---
 
 This drill teaches kids to move their feet to the ball instead of reaching. Every grounder comes from a different angle, so they can't cheat or predict where it's going.
@@ -38,4 +38,8 @@ This drill teaches kids to move their feet to the ball instead of reaching. Ever
 3. They throw it back to you or to a base.
 4. Repeat. Do four reps to each corner. That's 16 total.
 
-**What to look for:** Footwork, not glove work. The feet position the body. If the feet are right, the glove finds the ball. If the feet are wrong, the glove compensates and the kid is out of posi
+**What to look for:** Footwork, not glove work. The feet position the body. If the feet are right, the glove finds the ball. If the feet are wrong, the glove compensates and the kid is out of position by the time the ball arrives.
+
+**If they're struggling:** Slow the rolls down to 1-2 mph and only call two corners (right front, left front). Cut the reps to 8 total.
+
+**If they've got it:** Hit the ball with a fungo bat instead of rolling, and shorten the call window so they have to read direction off your bat instead of your voice.

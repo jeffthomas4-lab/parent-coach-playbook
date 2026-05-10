@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Goalie reaching out with the glove hand to catch a puck heading for the upper corner, body square to the shooter."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Glove side and blocker side framing maps to right- vs left-catching goalies cleanly."
 ---
 
 The glove and blocker are the goalie's two upper-body tools. Glove catches and holds the puck. Blocker deflects it away. Most goalies favor one and miss with the other. This drill builds both.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player setting a volleyball against a brick wall above a marked target line, the ball rebounding back for another set."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solo setting drill. Quiet-vs-slap audio cue is sharp."
 ---
 
 The wall is the perfect setting partner. It returns every set to the same spot. The kid can practice the hand shape, the push, and the target hundreds of times in a session.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Setter at the net with hands above the forehead, releasing the ball backward over the head to a hitter behind, body arched slightly back."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong opening. Setter cue and progression are clear."
 ---
 
 The back set is the surprise weapon. Setter looks one direction, sets the other. The defense doesn't know which side to block until the ball is in the air. This is what makes a setter dangerous instead of predictable.

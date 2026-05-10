@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player tossing a tennis ball straight up to about 8 feet high, catching it without moving the feet, the toss landing in front of the body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Toss isolation drill; specifics on release and height."
 ---
 
 A bad toss kills the serve. Most beginners toss the ball wherever and try to hit it. The right move is a consistent toss every time. This drill takes the racquet out and just builds the toss.

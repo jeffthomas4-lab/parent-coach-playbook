@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult and child standing 8 feet apart on grass, child's throwing arm raised behind the ear in an L-shape, glove pointing at the adult."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Overhand here means non-pitch throwing motion, which is correct. Pitching is windmill; this is a fielding throw drill. Changed soft baseballs to softballs."
 ---
 
 Softball throwing is the same overhand motion as baseball. Most young kids sidearm because it feels natural. Overhand has to be taught early or bad arm paths stick.
 
-**What you need:** 5 soft baseballs (11" for 10U). Open grass.
+**What you need:** 5 softballs (11" for 10U). Open grass.
 
 **Setup:** Stand 8 feet apart. Kid faces you with throwing-side foot back and glove-side foot forward.
 

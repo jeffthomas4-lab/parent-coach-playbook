@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Skater facing forward but moving backward, weight on the heels, each foot tracing an inverted C as it pushes."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Inverted C-cut framing connects forward and backward skating cleanly."
 ---
 
 Defensemen skate backward most of the time. Forwards do too when they're tracking play. Backward skating uses the same C-cut motion as forward, just inverted. Hard at first, fast once it clicks.

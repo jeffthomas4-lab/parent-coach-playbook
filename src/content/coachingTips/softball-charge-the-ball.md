@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player sprinting forward toward an incoming ground ball, dropping into ready position at the last moment."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid drill. Changed soft baseballs to softballs."
 ---
 
 Charging eliminates extra bounces and reduces reaction time for the batter. A fielder who charges is more aggressive and puts pressure on baserunners.
 
-**What you need:** 15 soft baseballs (12"), a partner with a glove, a large field.
+**What you need:** 15 softballs (12"), a partner with a glove, a large field.
 
 **Setup:** Fielder stands 20 feet from a partner. Partner rolls ground balls at them.
 

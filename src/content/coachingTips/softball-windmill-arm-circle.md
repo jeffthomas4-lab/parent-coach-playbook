@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young pitcher on the mound with arm extended, beginning a full windmill rotation above the head."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Windmill foundation; fixed ball terminology in equipment line."
 ---
 
 The windmill is the foundation of softball pitching. It takes months to build. Start with arm circles on flat ground before the mound. This is the Set and Wind part of the Set, Wind, Whip, Release cue.
 
-**What you need:** Softball pitcher (12"), flat ground 30 feet from a target or wall.
+**What you need:** A softball (12"), flat ground 30 feet from a target or wall.
 
 **Setup:** Pitcher stands on flat ground facing the wall or target, feet shoulder-width apart.
 

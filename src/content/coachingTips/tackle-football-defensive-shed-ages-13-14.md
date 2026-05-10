@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Getting off offensive blocks in game"
 publishedAt: 2026-02-11
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Live shield-block sheds for 13-14; sensitive flagged for live contact at older age."
 ---
 
 By 13-14, defenders should have multiple shed techniques in their toolbox. This drill teaches rip, spin, and leg drive as three separate options.

@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Hitting forehands to corner targets"
 publishedAt: 2026-04-19
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Target work; affiliate disclosure present."
 ---
 
 By 8-10, young players can aim. This drill teaches them to hit to specific targets on the court, building direction and control.

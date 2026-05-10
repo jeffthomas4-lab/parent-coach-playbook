@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Young runners running at tempo effort on a measured course, maintaining a steady hard pace for 15-20 minutes."
 publishedAt: 2026-04-27
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'but they\\'r'. Sensitive flag on tempo-effort load retained."
 ---
 
 Tempo runs teach runners to hold a hard pace for an extended time. This builds mental toughness and aerobic capacity needed for racing.
@@ -26,4 +39,8 @@ Tempo runs teach runners to hold a hard pace for an extended time. This builds m
 
 **What to look for:**
 
-The tempo effort should feel consistent across both segments. If the runner is significantly slower on the second tempo, the first one was too fast. Tempo runs teach the runner what "hard but manageable" feels like. This translates directly to racing because races are paced similarly: hard but sustainable. The runner should feel like they could go on, but they'r
+The tempo effort should feel consistent across both segments. If the runner is significantly slower on the second tempo, the first one was too fast. Tempo runs teach the runner what "hard but manageable" feels like. This translates directly to racing because races are paced similarly: hard but sustainable. The runner should feel like they could go on, but they're glad they don't have to.
+
+**If they're struggling:** Cut to a single 1.5 mile tempo and a 0.5 mile recovery. End the workout there if the pace falls off by more than 30 seconds per mile.
+
+**If they've got it:** Stretch the first tempo to 2.5 miles and hold the same pace. Or add a 30-second pickup at the end of the second tempo to practice closing strong.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner with the front leg lifted high, knee at hip height, opposite arm driving forward, standing tall with chest forward."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Knee-drive A-skip progression with body-position cue."
 ---
 
 Sprinters drive the knee high. Joggers shuffle. The knee-drive pattern generates more power per stride and uses less effort overall. Worth teaching at 11-12 because it's the foundation of every track event.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer approaching the wall, ducking the head and tucking into a forward roll, feet planting on the wall, then pushing off in streamline."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Flip turn at the wall; sensitive flag for head-near-wall injury risk."
 ---
 
 A flip turn is faster than touching and turning. The swimmer somersaults forward, plants feet on the wall, pushes off underwater. Hard to learn. Once mastered, every length is faster and the kid swims like a real competitive swimmer.

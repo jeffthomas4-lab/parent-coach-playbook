@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Three players in a triangle: a passer bumping the ball to a setter at the net, who sets it to a hitter on the outside."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Bump-set sequence. Setter behind-the-ball footwork is the keeper detail."
 ---
 
 In a real game, the setter receives the bump and sets the hitter. This drill builds that sequence. Bump-set-target. The setter has to read the incoming bump, get to the spot, and deliver an accurate set.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player in low defensive stance with feet wider than shoulders, knees deeply bent, chest forward, hands ready in front of the body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cross-sport stance comparison lands well. Clean foundations drill."
 ---
 
 Defense in volleyball is reading and reacting fast. The starting position is a low athletic stance. Lower than infield. Lower than basketball defense. The lower the stance, the easier it is to dig a hard spike.

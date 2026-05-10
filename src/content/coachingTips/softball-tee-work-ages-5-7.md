@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Batting off the tee with proper form"
 publishedAt: 2026-01-02
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid intro tee drill; level swing focus."
 ---
 
 Softball hitting starts with the tee and a single thought: level swing, follow through. The underhand mechanics are taught later. Right now, contact is everything.

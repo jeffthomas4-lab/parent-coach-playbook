@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner at home plate running at an angle toward the inside corner of first base."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Inside-corner base-running cue is sharp."
 ---
 
 The shortest distance between two points is a straight line. Kids curve around first. The cue is Eyes, Drive, Touch, Brake: they run at the inside corner of the bag.

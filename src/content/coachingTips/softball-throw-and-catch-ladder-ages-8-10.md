@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Distance progression for throwing accuracy"
 publishedAt: 2026-02-17
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Distance-ladder throwing; soft-hands cue is good."
 ---
 
 Catching and throwing improve together. This drill has kids throw farther each round, which teaches them to throw harder and catch with softer hands.

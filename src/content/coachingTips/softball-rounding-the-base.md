@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner taking a wide angle around second base, eyes on third, arm pumping."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Rounding cues are concrete; correct base-path distances."
 ---
 
 Rounding is the next step. The runner takes a wider path around the base than through it. This saves time by keeping momentum and speed.

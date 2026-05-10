@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence at 'Add actual location difficulty to eac'; needs completion."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Add actual location difficulty to eac'."
 ---
 
 Situational hitting teaches kids that the pitch doesn't determine the swing. The situation does. This drill runs through three scenarios back-to-back so they practice adjusting.
@@ -41,4 +41,8 @@ Situational hitting teaches kids that the pitch doesn't determine the swing. The
 
 **What to look for:** Decision-making and approach adjustment. Do they swing differently in each situation? If they're the same hitter every rep, they're not thinking.
 
-**Variation:** Add actual location difficulty to eac
+**Variation:** Add actual location difficulty to each scenario. For "just contact," toss low and inside so they have to fight the pitch off. For "fly ball," toss up in the zone so they can get under it.
+
+**If they're struggling:** Cut to two scenarios (just contact, fly ball) and give 6 tosses each. Tell them the swing they want before each toss.
+
+**If they've got it:** Have them call out the situation themselves before the toss. If they can name the right swing without your prompt, they've internalized it.

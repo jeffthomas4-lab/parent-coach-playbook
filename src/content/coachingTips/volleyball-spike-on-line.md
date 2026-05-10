@@ -10,9 +10,22 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Hitter at the left front spiking the ball straight down the sideline, ball arcing into the back left corner of the court."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Removed a not-just-X-but-Y phrasing. Hand position teaching point is the keeper."
 ---
 
-A line shot is a spike that travels straight down the sideline. It catches the defense out of position. Best hitters don't just spike the ball, they aim it. This drill teaches the line shot specifically.
+A line shot is a spike that travels straight down the sideline. It catches the defense out of position. Best hitters aim the spike. This drill teaches the line shot specifically.
 
 **What you need:** A volleyball, a net, a setter, target cones in the back corners.
 

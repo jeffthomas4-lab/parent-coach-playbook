@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Groundstroke rally with oversized red ball"
 publishedAt: 2026-04-30
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Red-ball intro for 5-7; affiliate disclosure present."
 ---
 
 At 5-7, the red ball (larger and softer) lets young players focus on tracking and hitting, not fear. This drill builds basic stroke mechanics in a rally setting.

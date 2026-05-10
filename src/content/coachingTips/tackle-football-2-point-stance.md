@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young defensive back in a 2-point stance with feet shoulder-width apart, hands in front at chest height, knees slightly bent."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean stance teaching with cue mnemonic. No contact."
 ---
 
 DBs, receivers, and running backs don't need a hand on the ground. The 2-point stance gives them more freedom to move in any direction. The key is balance.

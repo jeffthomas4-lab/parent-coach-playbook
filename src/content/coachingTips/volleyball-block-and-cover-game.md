@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the net jumping to block, then immediately turning toward the back court to cover a soft tip ball that landed behind the block."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tip-after-block recovery drill. Specific and well-paced."
 ---
 
 A block doesn't always stop the spike. Sometimes the attacker tips it over the block. Good defenders block AND cover. Jump up, land, turn, find the ball. This drill builds that recovery.

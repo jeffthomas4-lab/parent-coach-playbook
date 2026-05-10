@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player standing in athletic stance with arms straight out in front, hands together with thumbs aligned, forming a flat platform from elbows to wrists."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pre-ball platform shape. Balloon progression is a good young-age fallback."
 ---
 
 The forearm pass (the bump) starts with a platform. Arms straight, hands together, flat surface from elbow to wrist. If the platform isn't right, no pass works. This drill builds the shape before the ball is even involved.

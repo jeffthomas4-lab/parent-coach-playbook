@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Extended rally practice maintaining shots"
 publishedAt: 2026-04-22
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid cooperative rally drill; uses correct rally/court vocab."
 ---
 
 Consistency is the foundation of tennis. This drill challenges young players to keep the ball in play over an extended rally, teaching patience and control.

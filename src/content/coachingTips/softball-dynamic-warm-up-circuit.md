@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Group of kids doing leg swings, lunges, arm circles, and jogging in a line across the field."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Generic warm-up; fine for the use."
 ---
 
 A dynamic warm-up gets the whole body moving. Leg swings, lunges, arm circles, and light jogging prepare muscles for the demands of softball.

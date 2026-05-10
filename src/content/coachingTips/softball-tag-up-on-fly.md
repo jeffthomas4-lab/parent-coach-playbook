@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner on third base waiting, then sprinting toward home as a fly ball is caught by an outfielder."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tag-up base-running drill with clear timing focus."
 ---
 
 Tag up means advancing after a fly ball is caught. The runner stays on the base until the ball is caught, then sprints to the next base. This is a game situation that requires timing.

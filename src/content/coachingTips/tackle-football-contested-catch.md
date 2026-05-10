@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A receiver reaching for the ball with a defender nearby, both fighting for the catch."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body contact at higher progression; sensitive flagged for press contact."
 ---
 
 In a game, receivers don't always have open space. This drill teaches them to catch while a defender is trying to knock the ball away or get between them and the throw.

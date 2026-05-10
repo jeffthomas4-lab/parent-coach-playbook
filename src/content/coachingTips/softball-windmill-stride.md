@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher on the mound stepping forward with back leg while beginning the windmill arm rotation."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Stride-and-arm timing drill; pitch-count rule included."
 ---
 
 A stride adds power to the windmill. The pitcher steps forward with the back leg while the arm circles. This is where the motion becomes a real pitch.
 
-**What you need:** A mound or flat ground, 10 soft baseballs (12"), catcher at 40 feet.
+**What you need:** A mound or flat ground, 10 softballs (12"), catcher at 40 feet.
 
 **Setup:** Pitcher on the mound or flat ground. Catcher at 40 feet.
 

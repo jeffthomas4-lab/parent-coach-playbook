@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner on a 200m oval, splitting the run into two 100m segments, both run at the same pace with consistent stride."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Even-split pacing teach; clear specifics."
 ---
 
 Most kids start too fast and die. Even pacing is the bedrock of distance running. This drill teaches the kid to feel the pace and hold it through both halves of the lap.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players facing each other 15 feet apart, one passing a puck along the ice with a flat blade follow-through pointing at the partner's stick."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Push not slap framing is the right diagnostic for new passers."
 ---
 
 A pass is a controlled push of the puck to a target. The blade stays low, the puck slides flat, the follow-through points at the receiver. Most kids slap at the puck. This drill teaches them to push.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner crouched at the starting line with one hand on the ground, dominant foot forward, weight loaded on the back leg."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Three-point start before blocks; sensitive flag for sprint-start injury."
 ---
 
 Sprint races are won in the first 10 yards. The start matters. Three-point start (one hand down, two feet down) is the basic version. Build the position before adding starting blocks.

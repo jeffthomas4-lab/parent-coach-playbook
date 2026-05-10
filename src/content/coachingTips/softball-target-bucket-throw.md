@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child throwing a softball overhand into a bucket or crate sitting on the ground 15 feet away."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Bucket-target accuracy intro; ball term fixed."
 ---
 
 Throwing to a target gives the throw direction and purpose. A bucket makes the target big, hard to miss, and honest feedback when the ball lands in it.
 
-**What you need:** A bucket or laundry crate, 10 soft baseballs (11"), open space.
+**What you need:** A bucket or laundry crate, 10 softballs (11"), open space.
 
 **Setup:** Set a bucket on the ground 15 feet away. Kid stands facing the bucket with feet shoulder-width apart.
 

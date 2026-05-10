@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Left-handed batter taking a step toward first base while contacting the ball with a slap motion."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sport-specific slap-bunt; cue chain works."
 ---
 
 The slap-bunt is a softball-specific skill. The hitter takes a running step toward first base while contacting the ball, creating bat speed without a full swing. It's deadly for fast left-handed hitters.
 
-**What you need:** A tee, 20 soft baseballs (12"), an age-appropriate bat, a net.
+**What you need:** A tee, 20 softballs (12"), an age-appropriate bat, a net.
 
 **Setup:** Tee at mid-thigh height. Batter in Set position facing the tee at an angle.
 

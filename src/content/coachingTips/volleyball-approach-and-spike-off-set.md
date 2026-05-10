@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the peak of a jump, arm pulled back, hand high above the net, about to snap down on a set ball."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Full spike rep. Approach, plant, reach, snap cue is consistent."
 ---
 
 The full spike is the goal of every offense. Approach, jump, snap the wrist over the ball, drive it down. Hard to learn at first. Easier once the approach footwork is solid.

@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child tossing a softball underhand into the air and catching it with a glove, eyes on the ball."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean intro catching drill; fixed soft baseballs to softballs."
 ---
 
 Self-toss removes the pressure of catching a throw from someone else. The kid controls the height and pace. This builds the habit of watching the ball all the way into the glove.
 
-**What you need:** 5 soft baseballs (11"), a glove, open grass.
+**What you need:** 5 softballs (11"), a glove, open grass.
 
 **Setup:** Kid stands alone in a clear area with a glove on.
 

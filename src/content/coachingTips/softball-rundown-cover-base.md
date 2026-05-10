@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two infielders throwing a ball back and forth, chasing a runner trapped between two bases."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Rundown drill; voice clean. 60ft base paths correct for softball."
 ---
 
 A rundown (pickle) happens when a runner is caught between bases. The defense throws the ball back and forth to chase the runner and force a mistake. A good rundown ends in an out without allowing advancement.

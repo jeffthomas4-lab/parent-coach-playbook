@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body truncated mid-thought at 'Do they stay in a diamond or bunch up?'. Missing the rest of What to look for plus If they're struggling / If they've got it variations."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Do they stay in a diamond or bunch up?'"
 ---
 
 The attacking diamond teaches movement in formation. Four attackers work together to advance up the field, pass around defenders, and create a scoring chance.
@@ -39,4 +39,8 @@ The attacking diamond teaches movement in formation. Four attackers work togethe
 4. After a goal or turnover, reset and go again.
 5. Play 10 advancing runs.
 
-**What to look for:** Shape maintenance and timing of the shot. Do they stay in a diamond or bunch up?
+**What to look for:** Shape maintenance and timing of the shot. Do they stay in a diamond or bunch up? The back attacker is the release valve; if everyone runs forward, the diamond collapses into a line. The shot should come from the player who has the cleanest angle, not the one closest to goal.
+
+**If they're struggling:** Take the defenders out for two reps. Let the four attackers move the ball through the diamond unopposed and end with a shot. Add one defender on rep three.
+
+**If they've got it:** Add a third defender and a 12-second shot clock. They have to advance, shape, and finish before the count. Or rotate which point of the diamond starts with the ball.

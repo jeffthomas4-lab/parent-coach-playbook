@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A blocker in a 2-point stance keeping a defender away from the QB's pocket with hands ready."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Live blocker-vs-rusher rep at 11-12; sensitive flagged for partner contact."
 ---
 
 Pass protection is different from run blocking. The blocker's job is to stay in front of the defender, keep them from getting to the QB, and use their hands to control, not drive.

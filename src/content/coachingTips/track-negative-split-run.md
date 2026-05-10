@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner on a track with two halves marked, the second half labeled with a faster pace than the first half."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Negative-split workout; sensitive flag for distance-effort load."
 ---
 
 A negative split is when the second half of a run is faster than the first. It teaches the runner to hold back early and finish strong. This is how every great distance race is won. Kids who learn it crush their PRs.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A receiver running upfield to a cone, planting their foot, and breaking toward the sideline with hands ready."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Plant-and-break footwork with QB throw. No contact."
 ---
 
 An out route is a break toward the sideline. The receiver runs upfield, plants at 10 yards, and breaks at 90 degrees toward the sideline. This teaches the plant and break footwork.

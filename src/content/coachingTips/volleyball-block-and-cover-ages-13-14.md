@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Blocking and covering blocked balls"
 publishedAt: 2026-04-03
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "13-14 block-cover combo. Slight overlap with the 11-12 game version. Affiliate disclosure present."
 ---
 
 Blocking and covering are two parts of the same play. This drill teaches young players how to position and react when a ball bounces off the block.

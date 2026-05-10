@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player skating from the blue line toward the net, taking a wrist shot at the high slot, body leaning into the shot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Stationary shots don't happen in real games is the right framing."
 ---
 
 Stationary shots don't happen in real games. A real shot comes off the rush, off a pass, off a turnover. The shooter is moving and the goalie has less time to read it. This drill is the live-game version.

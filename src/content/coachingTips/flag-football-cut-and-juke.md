@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner planting hard on the right foot and exploding to the left, defender lunging the wrong direction."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Plant-and-cut footwork. Clean ball-carrying vocabulary."
 ---
 
 A good ball carrier sells one direction and goes the other. The juke is the move that does it. Plant hard on one foot, push off it, accelerate the other way. Done well, the defender ends up in another zip code.

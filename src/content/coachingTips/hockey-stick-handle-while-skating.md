@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player skating across the rink with the stick controlling a puck on the forehand side, head up scanning the ice."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Eyes-up cue is the right next step after stationary handling."
 ---
 
 Stick handling standing still is one skill. Stick handling while skating full speed is another. The puck moves. The body moves. The eyes have to be up. This drill brings them together.

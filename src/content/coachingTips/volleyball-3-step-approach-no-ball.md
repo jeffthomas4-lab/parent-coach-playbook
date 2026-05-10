@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player demonstrating the three-step approach: left foot, right foot, left-right plant, arms swinging back then forward into a jump."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean no-ball footwork drill. Volleyball vocab correct throughout."
 ---
 
 The spike approach is a three-step rhythm: left, right, left-right. Most kids try to jump from a standstill or run flat-footed. The three-step builds momentum into the jump and lifts the body higher than any other footwork.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young QB holding the football in their grip, fingers on the laces, wrist cocked, ready to throw."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Beginner grip and throw mechanics. No contact."
 ---
 
 A proper grip is where throwing starts. The fingers go on the laces, not the palm. The thumb stays underneath for stability. Without the right grip, accurate throws are impossible.

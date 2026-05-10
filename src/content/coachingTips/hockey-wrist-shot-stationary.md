@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player in shooting stance with weight loaded on back foot, stick blade cupped behind the puck, ready to sweep forward and snap the wrist."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Load Sweep Snap Follow phases give a memorable structure."
 ---
 
 The wrist shot is the most useful shot a young hockey player will learn. Quick, accurate, no big windup. This drill teaches the four phases of the shot.

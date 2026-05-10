@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young player skating slowly through a line of cones, controlling the puck on the stick with short touches."
 publishedAt: 2026-02-17
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Affiliate links and FTC disclosure present. Trailing Variation block was truncated. Completed it."
 ---
 
 Young players need to feel the puck on their stick before they can handle it at speed. This drill builds touch and control in a low-pressure environment.
@@ -39,4 +52,4 @@ If a puck is bouncing off the stick or rolling away, the player is hitting it in
 
 *As an Amazon Associate we earn from qualifying purchases.*
 
-**Variation:**
+**Variation:** Tighten the cone spacing to half a yard. Or have the kid carry the puck while looking up at a target on the boards instead of looking down.

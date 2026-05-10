@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Full game format with coaching pauses"
 publishedAt: 2026-04-06
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard 6v6 format with affiliate disclosure present. Vocab correct."
 ---
 
 At 13-14, players are ready for game-speed competition with structure. This controlled scrimmage keeps the focus on execution, not chaos.

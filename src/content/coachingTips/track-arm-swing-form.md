@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young runner standing in place with arms bent at 90 degrees, swinging the arms forward and back along the body's center line."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Arm-swing form drill with clear cross-body fix."
 ---
 
 Running fast starts with the arms. Bent at 90 degrees. Swing forward and back, not across the body. Most kids let their arms flop or cross the chest. Eight minutes of arm swing form fixes the pattern before it becomes a habit.

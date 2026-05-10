@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child in throwing position with back foot stepping forward toward the glove-side foot, hips rotating, arm cocked."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Throw mechanics drill with the Turn-Shuffle-Point-Fire cue."
 ---
 
 The shuffle is the heart of a strong throw. The back foot steps toward the front foot, which loads the hips and creates rotation. This is how kids build distance and accuracy at the same time.
 
-**What you need:** 15 soft baseballs (12" for 12U), a partner at 30 feet.
+**What you need:** 15 softballs (12" for 12U), a partner at 30 feet.
 
 **Setup:** Stand 30 feet apart. Kid faces you in a ready position.
 

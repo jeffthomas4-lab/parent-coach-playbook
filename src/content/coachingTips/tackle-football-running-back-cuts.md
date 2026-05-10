@@ -9,7 +9,20 @@ focus: "fundamentals"
 layer: "skills"
 publishedAt: 2026-05-02
 featured: false
-illustrationBrief: "A running back plant their foot and cutting upfield, keeping the ball secure and eyes on the play."
+illustrationBrief: "A running back planting their foot and cutting upfield, keeping the ball secure and eyes on the play."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Fixed illustrationBrief grammar (plant -> planting). Cone-cut footwork. Light defender variation only."
 ---
 
 RBs need to plant their foot and cut without losing the ball or balance. This drill teaches the footwork and coordination to make sharp cuts while holding the ball tight.

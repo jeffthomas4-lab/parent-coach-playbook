@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Fielders calling and positioning for fly balls"
 publishedAt: 2026-02-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong opening; specific cues. Voice is solid."
 ---
 
 Pop-ups are the easiest outs to mess up. Kids hesitate, two fielders run at the same ball, and the ball drops. Loud communication fixes this.

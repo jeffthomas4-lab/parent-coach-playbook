@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner with ball tucked in one arm, the other arm extended straight out with palm pushing the defender's shoulder, flag still on the runner's hip."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cites stiff-arm-on-flag-puller restriction implicitly via open-palm rule. Per league rules vary, may want explicit cite later."
 ---
 
 In flag football the stiff arm is legal as long as it's open palm and not in the face. Used right, it keeps the defender's hand off the flag. Most kids forget they have a free arm. Teach them to use it.

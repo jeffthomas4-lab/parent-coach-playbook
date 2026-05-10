@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Kids and coach lined up throwing soft distance, gradually increasing distance, no full-effort throws."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard pre-practice warm-up sequence."
 ---
 
 A proper warm-up prevents injury. Start short distance, easy effort. Build to game-distance with controlled throws. Never go full-speed without warming up first.
 
-**What you need:** 20 soft baseballs (11" or 12"), players in pairs at 20-foot intervals.
+**What you need:** 20 softballs (11" or 12"), players in pairs at 20-foot intervals.
 
 **Setup:** Pairs of players standing 20 feet apart on grass.
 

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A receiver running forward, looking back over their shoulder to track a deep ball with both hands ready."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Deep-ball tracking and catch mechanics. No contact."
 ---
 
 A deep ball requires the receiver to run forward, look back over their shoulder, and catch the ball behind their head. This is a different catching position from chest-high catches.

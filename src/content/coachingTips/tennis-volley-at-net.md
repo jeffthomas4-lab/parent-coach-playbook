@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the net with the racquet held in front of the body, punching a short volley back over the net with a small forward motion."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Net volley with punch-not-swing distinction."
 ---
 
 A volley is a shot hit before the ball bounces. Short, punching motion. No big swing. The racquet meets the ball in front of the body and pushes it back. Most beginners try to swing big and miss. The right volley is a punch.

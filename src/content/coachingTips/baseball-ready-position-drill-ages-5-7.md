@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence; needs the rest of 'What to look for' and any closing sections rewritten."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Some will lean forwar'."
 ---
 
 The ready position is where fielding starts. Kids who know how to stand, wait, and react will track balls better. This drill makes the stance into something they can practice.
@@ -39,4 +39,8 @@ The ready position is where fielding starts. Kids who know how to stand, wait, a
 4. Do 10 reps per direction (10 left, 10 right, 10 back). Thirty total. They'll be tired and engaged.
 5. On the last five of each direction, add a clap. They react to the clap and move. That trains the trigger.
 
-**What to look for:** Kids who stay balanced on every rep. Some will lean forwar
+**What to look for:** Kids who stay balanced on every rep. Some will lean forward and tip onto their toes; others will lock their knees and stand straight up between calls. You want a low chest, soft knees, and feet that move first. If the head bobs up before the feet move, the stance is wasted.
+
+**If they're struggling:** Cut to one direction at a time and walk through it slow. Tap their knee and tell them "soft" so they remember to bend.
+
+**If they've got it:** Replace your voice with a tossed ball. Roll a tennis ball left or right and have them shuffle to it instead of reacting to a clap.

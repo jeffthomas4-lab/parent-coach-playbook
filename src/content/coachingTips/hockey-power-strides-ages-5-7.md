@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young skater pushing hard on each stride across the ice, extending the legs with force and recovering quickly."
 publishedAt: 2026-02-14
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Variation was truncated. Completed it."
 ---
 
 Young skaters often shuffle. This drill teaches them to push hard on each stride, building power and control at the same time.
@@ -29,4 +42,4 @@ Young skaters often shuffle. This drill teaches them to push hard on each stride
 
 The back leg should extend fully on each push. If a skater is taking quick, short steps without extension, they're shuffling. A power stride has visible extension and a brief "load" phase where the skating leg is bent before the push. The torso should stay upright. If a skater is leaning forward, they're fighting gravity instead of using it.
 
-**Variation:** For older 
+**Variation:** For kids who pick it up fast, add a finish line and time the trip. Or have them carry a stick to start building the body shape they will use with a puck later.

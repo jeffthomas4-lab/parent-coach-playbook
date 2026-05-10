@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player completing the three-step approach and lightly tipping the ball over the net with the fingertips, ball arcing softly to the empty court."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tip is correctly defined. Useful younger-age progression off the spike."
 ---
 
 A tip is a controlled spike. Player approaches, jumps, but instead of attacking with full force, they push the ball over the net with the fingertips. Useful in real games when the defense is set deep, and a great drill for younger kids who aren't ready for full attack.

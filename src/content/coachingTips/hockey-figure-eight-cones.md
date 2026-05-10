@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two cones placed 4 feet apart with a player handling a puck in a figure-8 pattern around them, stick switching between forehand and backhand."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Off-ice with street hockey ball is a useful path for new players."
 ---
 
 The figure 8 forces the puck to move both directions. Forehand on one side of the cone, backhand on the other. This is how kids learn to handle on both sides of the body without thinking about it.

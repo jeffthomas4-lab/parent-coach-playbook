@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Skater snowplowing to a stop, ice spraying from the blade, body low, then exploding back into a forward push."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Snowplow stop into hockey stop progression is correct for 8-10."
 ---
 
 Hockey is start-stop. Players sprint, stop hard, sprint again. The kid who can stop and reaccelerate the fastest gets to every loose puck first. This drill builds that pattern.

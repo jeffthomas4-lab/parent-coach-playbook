@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Windmill mechanics and arm circles"
 publishedAt: 2026-03-03
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Windmill-specific pre-throwing progression."
 ---
 
 Windmill pitching is hard on the arm. A proper warm-up prevents injury and builds strength. This is the sequence to use before every throwing session.

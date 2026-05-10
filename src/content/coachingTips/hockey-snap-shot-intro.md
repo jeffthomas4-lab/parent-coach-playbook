@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player taking a quick snap shot with a 6-inch backswing, releasing the puck with a hard wrist snap and the stick lifting off the ice."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "6-inch backswing number gives a real measurable shape to the cue."
 ---
 
 The snap shot is faster than a wrist shot. Smaller windup, harder release. The puck leaves the blade quicker so the goalie has less time to react. Worth learning at 10 because in a real game, time is the difference between a goal and a save.

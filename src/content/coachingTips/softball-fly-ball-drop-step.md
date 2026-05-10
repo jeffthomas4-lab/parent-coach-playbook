@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player dropping back and running, watching a fly ball above them, glove raised overhead."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Drop-step fundamentals; sport language clean. Changed soft baseballs to softballs."
 ---
 
 Fly balls require a different footwork pattern than grounders. The drop step gets the fielder moving backward efficiently so they can track the ball.
 
-**What you need:** 15 soft baseballs (12"), a partner 20 feet away, open space to run.
+**What you need:** 15 softballs (12"), a partner 20 feet away, open space to run.
 
 **Setup:** Fielder and partner stand 20 feet apart with space to move backward.
 

@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence at 'Variation: F'; needs completion."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Variation: F'."
 ---
 
 Relay throws teach kids to position themselves in line with the throw and catch the ball at their chest. This is the foundation for all relay work in games.
@@ -41,4 +41,8 @@ Relay throws teach kids to position themselves in line with the throw and catch 
 
 **What to look for:** Catching mechanics and transition speed. The quicker they catch and reset, the quicker the relay happens. Momentum is everything.
 
-**Variation:** F
+**Variation:** For older kids, stretch the spacing to 45 feet between each kid and add a runner sprinting between two cones. The relay has to beat the runner to the bag.
+
+**If they're struggling:** Shorten the spacing to 20 feet and drop the reset clock. Let them catch, plant, then throw without rushing.
+
+**If they've got it:** Have the middle kid catch with the glove side foot forward and turn over the throwing shoulder in one motion. Time the relay; under 4 seconds from your throw to first base is the bar.

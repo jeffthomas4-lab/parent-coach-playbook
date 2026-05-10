@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player A passing to Player B at center ice, then skating diagonally to a new spot, Player B passing back to the new spot."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pass triggers the skate framing names the failure mode kids fall into."
 ---
 
 Give and go is movement after the pass. Pass it, skate, get it back. The receiver of the first pass is the next passer. This is how teams break the puck up the ice past defenders who only watch the puck.

@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A team gathered during a water break, listening to the coach give a brief instructional point while players hydrate."
 publishedAt: 2026-01-09
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'For very young kids (5'."
 ---
 
 Water breaks interrupt practice, but they're also built-in teaching moments. Use them to reinforce what you're working on and build team connection.
@@ -28,4 +41,8 @@ Water breaks interrupt practice, but they're also built-in teaching moments. Use
 
 If water breaks turn into chat sessions where you lose the group's attention, you've lost control of practice. If kids are isolated and plopped in front of a cooler, you've missed a teaching moment. The goal is hydration plus connection to what you're building.
 
-**Variation:** For very young kids (5
+**Variation:** For very young kids (5-7), skip the question and stick to a single highlight. Keep the break to 90 seconds or you lose them. For ages 11 and up, hand the highlight off to a player and let them name what they saw.
+
+**If they're struggling:** Cut the highlight and the question. Just say "drink, then back here in 60 seconds" and use the time to set up the next drill.
+
+**If they've got it:** Use the break to ask a tactical question that loads the next rep. "Who's covering the back side on this next set?" Now hydration time is also film-room time.

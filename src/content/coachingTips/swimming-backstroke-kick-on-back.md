@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young swimmer floating on their back with arms at the sides or extended overhead, flutter kicking from the hips, looking up at the ceiling."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Backstroke kick on back; clear hip-up cue."
 ---
 
 The backstroke kick is the freestyle kick upside down. Same flutter, same straight legs, just on the back. This drill builds the float position and the kick at the same time.

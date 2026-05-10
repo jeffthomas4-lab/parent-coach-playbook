@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A team gathered in a circle after practice, listening to the coach give brief feedback and set a focus point for the next day."
 publishedAt: 2026-01-15
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'For younger '."
 ---
 
 A post-practice huddle gives kids closure and sets expectations for the next day. It should be specific, honest, and brief.
@@ -28,4 +41,8 @@ A post-practice huddle gives kids closure and sets expectations for the next day
 
 Kids should feel clear on what happened and what's next. If they're confused about what you said or what to work on tomorrow, the huddle didn't land. If the huddle turns into a rant or criticism, it kills momentum. Criticism can be honest (we made errors, we need to be sharper) but it should lead to what's next, not dwelling.
 
-**Variation:** For younger 
+**Variation:** For younger kids (5-7), skip the feedback statement and ask instead "What was your favorite part?" Get one answer, name the team, hands in. Done in 90 seconds.
+
+**If they're struggling:** Drop steps 2 and 3 entirely. Just close with the commitment word and a hand-in. Build the feedback habit later.
+
+**If they've got it:** Hand the huddle to a kid. Pick one player each practice to deliver the feedback statement and the focus for tomorrow. You step back.

@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player shuffling rapidly between three cones in a triangle, receiving and bumping a ball at each cone before shuffling to the next."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Conditioning + reads combo. No-cross-feet teaching point is correct."
 ---
 
 Real defense is shuffling between zones, reading the play, getting set, passing. This drill puts all of it together. Conditioning, technique, and reads in one drill.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player with both hands held above the forehead, fingers spread to form a diamond or window shape framing the face."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pre-ball window shape. Forehead-touch trick is a sharp teaching aid."
 ---
 
 The set starts with the hand shape. Both hands above the forehead, fingers spread, forming a diamond or "window" through which the player looks at the ball. Without the right shape, the set is a slap.

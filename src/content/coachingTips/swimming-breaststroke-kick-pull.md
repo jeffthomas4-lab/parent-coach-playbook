@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer demonstrating the breaststroke frog kick (legs out, in, glide) and the arm pull (sweep out, in, forward)."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Breaststroke separated kick-pull-glide build."
 ---
 
 Breaststroke is the most technical stroke. Frog kick. Sweep arm pull. Glide. The kick and arms have to work in alternating rhythm: pull-kick-glide. This drill builds each piece separately, then combines them.

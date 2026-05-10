@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young swimmer holding a kickboard with both hands, body horizontal in the water, flutter kicking with straight legs from the hips."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Flutter kick from hips; clean."
 ---
 
 The freestyle kick is the engine. Most kids try to kick from the knees and bend their legs. The right kick comes from the hips, with mostly-straight legs. The kickboard isolates the kick so the kid can focus on it.

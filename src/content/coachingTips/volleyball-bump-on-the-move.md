@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player shuffling sideways to track a tossed ball, arriving at the spot, then forming the platform to bump the ball to a target."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Feet-first principle articulated well. Solid teaching point."
 ---
 
 In a real game, the ball never comes right to the passer. They have to move first, then pass. The legs get there, the arms form the platform after. This drill builds that order: feet first, arms second.

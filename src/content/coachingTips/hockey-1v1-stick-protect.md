@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player skating along the boards with the body between a defender and the puck, the stick on the far side of the body shielding the puck."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "11-12, no body checks. Drill uses body position and shielding only, defender stick-checks. Within USA Hockey age rules."
 ---
 
 Protecting the puck is body position. Defender on one side, puck on the other, body between. This is how players hold the puck under pressure long enough to make a play. Most kids just try to outskate the defender. This drill teaches them to hold instead.

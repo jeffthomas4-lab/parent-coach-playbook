@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A defender driving through a ball carrier with the near shoulder, head to the side, arms wrapped."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Live partner walk-to-half-speed tackle fit; head-behind safety cited. Sensitive flagged."
 ---
 
 The Near shoulder is the one closest to the ball carrier. Leading with the near shoulder and keeping the head behind or to the side is critical for safe, effective tackling. Cue: Profile, Sink, Near, Wrap.

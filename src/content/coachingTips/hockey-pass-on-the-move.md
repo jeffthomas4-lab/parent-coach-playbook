@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players skating up the ice in parallel lanes 20 feet apart, exchanging passes while continuing to skate forward."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pass to where they're going cue is the heart of the drill."
 ---
 
 Real game passing happens while moving. Both players have momentum, both are reading each other. This drill is the live-game version of stationary passing. The puck has to lead the receiver into the next stride.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Receiver sprinting downfield with the ball arcing overhead, looking back over the shoulder, hands reaching up to catch."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Over-the-shoulder catch teaching. No tackle language."
 ---
 
 The deep ball is the highest-value play in flag football. The receiver runs a straight line and the ball comes down 25 yards downfield. Catching while running and looking back is the hardest receiver skill at this age.

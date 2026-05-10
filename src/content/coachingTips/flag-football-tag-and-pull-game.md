@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Five young children running in a 20x20 yard area, each wearing flags, chasing each other to pull flags off."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean flag-pull language throughout. Tight voice."
 ---
 
 Five-year-olds learning flag football need to learn the move that wins the game: pull the flag. The game version teaches the move while they're having fun. Skip the technique lecture. Play.

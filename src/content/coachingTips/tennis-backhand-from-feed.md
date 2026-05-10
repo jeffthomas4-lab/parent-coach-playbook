@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the baseline hitting a two-handed backhand from a fed ball, racquet finishing high over the front shoulder."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean backhand build drill; correct tennis vocab."
 ---
 
 The backhand is most kids' weaker side. Practice closes the gap. From a coach feed, the player gets predictable balls to the backhand. They can build the rhythm without having to rally.

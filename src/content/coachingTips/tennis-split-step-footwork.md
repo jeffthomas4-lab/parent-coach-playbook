@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player landing in athletic stance with feet shoulder-width apart after a small hop, ready to push off in any direction."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Split-step footwork with clear ready-position cues."
 ---
 
 Pro tennis players split-step before every opponent shot. Small hop, both feet off the ground, land in athletic stance. The split-step times the body to the ball and lets the player push off in any direction. Without it, the first step is slow.

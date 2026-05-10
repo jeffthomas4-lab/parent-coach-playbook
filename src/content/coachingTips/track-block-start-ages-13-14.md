@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Starting block acceleration technique"
 publishedAt: 2026-04-09
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Block start mechanics; sensitive due to explosive-start injury risk."
 ---
 
 The first step out of the blocks determines sprinting momentum. This drill teaches young athletes the mechanics of driving out of the blocks with power.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young runner sprinting through first base in a straight line, not slowing down."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong opening, clear cue. Note: 60ft is correct softball base path; the sub-bullet says 60 feet (regulation) which is right."
 ---
 
 Kids stop at first base. That's the mistake. The cue is Eyes, Drive, Touch, Brake. Run through, not to. This habit saves a tenth of a second.

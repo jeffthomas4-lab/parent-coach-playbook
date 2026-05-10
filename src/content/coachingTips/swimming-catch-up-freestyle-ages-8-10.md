@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Lead hand catch-up drill for freestyle"
 publishedAt: 2026-04-28
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Catch-up freestyle for hand timing; uses yards correctly."
 ---
 
 Catch-up freestyle teaches hand coordination. The swimmer must touch one hand to the other before beginning the next stroke, forcing a deliberate rhythm.

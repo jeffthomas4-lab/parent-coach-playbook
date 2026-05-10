@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Long jumper running down the runway, hitting the takeoff board with the dominant foot, exploding upward and forward into the sand pit."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Walk-jog-run-jump progression; sensitive flag for jump injury risk."
 ---
 
 The long jump is half run-up, half jump. A bad approach means a bad jump no matter how strong the legs. This drill builds the approach in stages: walk, jog, run, then the full jump.

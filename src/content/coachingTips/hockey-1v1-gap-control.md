@@ -10,9 +10,22 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Defender skating backward 6 feet in front of an attacker who has the puck, both moving up the ice in parallel lines."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "11-12, no body checks. Defender ends with poke check or stay-in-front, fits USA Hockey age rules. Fixed dek to deke and pokechecks to poke checks for sport-language compliance."
 ---
 
-Gap is the distance between defender and attacker. Too close, the attacker dekes around. Too far, the attacker shoots or passes freely. The right gap is 5-7 feet, close enough to pressure but not so close they get beat. This drill builds gap control.
+Gap is the distance between defender and attacker. Too close, the attacker dekes around. Too far, the attacker shoots or passes freely. The right gap is 5-7 feet: close enough to pressure but not so close they get beat. This drill builds gap control.
 
 **What you need:** Sticks, puck, two players in full gear, ice rink.
 
@@ -23,11 +36,11 @@ Gap is the distance between defender and attacker. Too close, the attacker dekes
 1. Coach blows whistle.
 2. Attacker skates forward with the puck.
 3. Defender skates backward, keeping a 6-foot gap.
-4. As the attacker tries to dek around, the defender mirrors with backward skating.
-5. At the other blue line, defender either pokechecks or stays in front. Reset.
+4. As the attacker tries to deke around, the defender mirrors with backward skating.
+5. At the other blue line, defender either poke checks or stays in front. Reset.
 
 **What to watch:** Gap distance. If the defender gets closer than 5 feet, they get faked out. If further than 8 feet, the attacker has space to shoot.
 
-**If they're struggling:** Slow the attacker. Or limit the dek moves.
+**If they're struggling:** Slow the attacker. Or limit the deke moves.
 
-**If they've got it:** Allow the attacker to use a teammate (2v1). The defender has to read pass vs. dek.
+**If they've got it:** Allow the attacker to use a teammate (2v1). The defender has to read pass vs. deke.

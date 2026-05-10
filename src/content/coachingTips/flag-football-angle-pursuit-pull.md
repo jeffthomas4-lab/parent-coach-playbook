@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Top-down view of a runner heading down the sideline and a defender taking a diagonal angle to cut them off, lines showing the convergence point."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Pursuit-angle teaching is solid. Clean flag-pull language."
 ---
 
 A defender chasing in a straight line never catches a faster runner. The right play is an angle. Cut off the path the runner is going to take. This is geometry, not speed.

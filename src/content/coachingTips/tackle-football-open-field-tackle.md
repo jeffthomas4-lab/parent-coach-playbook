@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A defender approaching a ball carrier in space, reading their direction and moving at an angle for contact."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Open-field live tackling at 11-12; Hawk Tackle and head-behind cues cited. Sensitive flagged."
 ---
 
 In the open field, defenders have to read the ball carrier's direction, take the right angle, and get them down with solid form. This combines Profile, Sink, Near, and Wrap with read and react. Cue: Profile, Sink, Near, Wrap.

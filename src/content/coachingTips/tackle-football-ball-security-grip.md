@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player holding a football one-handed, cradled in the fingers, thumb underneath for security."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Summary says 'one hand' but body teaches two-hand cradle; keep the body, summary slightly off but acceptable."
 ---
 
 Before kids run with the ball, they need to hold it correctly. A good grip starts with the fingers on the laces, thumb underneath, ball cradled against the body. No palm grip.

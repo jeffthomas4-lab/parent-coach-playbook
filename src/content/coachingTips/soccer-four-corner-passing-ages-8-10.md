@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body truncated mid-word at '**Var'. Missing variations / If they're struggling / If they've got it sections."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at '**Var'."
 ---
 
 This drill teaches first touch and passing accuracy while building movement. Kids learn to receive, turn, and pass in one motion.
@@ -40,6 +40,10 @@ This drill teaches first touch and passing accuracy while building movement. Kid
 5. After each pass, the passer follows the pass and takes the next kid's spot (rotates clockwise).
 6. Do this for five minutes continuous, building rhythm.
 
-**What to look for:** Reception and touch. Good first touch is the whole game. A bad first touch forces a bad pass.
+**What to look for:** Reception and touch. Good first touch is the whole game. A bad first touch forces a bad pass. Watch the receiving foot; if it stays planted, the ball bounces off. The good ones cushion the ball with the inside of the foot and direct it to their next pass with the same touch.
 
-**Var
+**Variation:** Reverse the rotation halfway through so they pass and follow the opposite direction. Or add a second ball to the square for the last 90 seconds and watch them adjust.
+
+**If they're struggling:** Shrink the square to 8 by 8 yards and let them take two touches: one to receive, one to pass.
+
+**If they've got it:** Add a one-touch rule. They receive and pass in the same motion, no settling. Or stretch the square to 15 by 15 yards so the pass has to travel.

@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young goalie in stance with knees bent, glove and blocker out front, stick on the ice, shuffling sideways across the crease."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Stance description with shoulder-width skates and stick on ice is correct."
 ---
 
 The goalie stance is the position from which every save starts. Knees bent. Glove and blocker out front. Stick on the ice. Body square to the puck. From there, the goalie shuffles side to side without crossing feet to track the puck.

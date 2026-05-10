@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence at 'toss from 25 feet'; needs completion."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'toss from 25 feet'."
 ---
 
 Soft toss teaches hand-eye coordination with a moving ball. The underhand toss is slow enough that kids can react, and it's close enough to your position that you see every swing.
@@ -40,4 +40,8 @@ Soft toss teaches hand-eye coordination with a moving ball. The underhand toss i
 
 **What to look for:** Adjustments. If you toss inside, they should shift weight forward. If you toss low, they should drop the hands. Kids who are rigid will swing the same way on every pitch.
 
-**Variation:** For younger kids (8-9), toss from 25 feet
+**Variation:** For younger kids (8-9), toss from 25 feet at chest height only and call no location. Let them just see the ball and swing.
+
+**If they're struggling:** Slow the toss to 8 mph and stay in the middle of the zone for a full set of 10 before you start moving locations.
+
+**If they've got it:** Call the location after the toss leaves your hand instead of before. Now they have to read and adjust mid-flight, which mimics real pitching.

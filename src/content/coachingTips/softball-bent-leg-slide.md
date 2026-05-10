@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player sliding into a base with one leg bent underneath and the other extended, arms up for balance."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sliding flagged sensitive (contact/injury). Cues are correct."
 ---
 
 The bent-leg slide is the safest slide for youth. One leg bends underneath the body, the other extends to the base. Hands stay up so they're not stepped on.

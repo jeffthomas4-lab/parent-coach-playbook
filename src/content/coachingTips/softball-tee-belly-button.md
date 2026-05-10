@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child swinging a bat at a tee with the ball positioned at belly button height, contact happening out in front of the body."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "First hitting drill; ball term changed to softballs."
 ---
 
 The first hitting drill teaches the kid that the bat has to hit the ball, not the ball hitting the bat. The ball sits still on the tee. They are in charge. Belly button height is the easiest contact height for a kid to feel.
 
-**What you need:** A T-ball tee, 10 plastic or safety-core baseballs, an age-appropriate bat, a fence or net.
+**What you need:** A T-ball tee, 10 plastic or safety-core softballs, an age-appropriate bat, a fence or net.
 
 **Setup:** Tee at belly button height. Kid stands so the tee is between them and the net.
 

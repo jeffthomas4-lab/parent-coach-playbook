@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player tossing the ball forward and high, taking a three-step approach, jumping, and contacting the ball above the head while in the air."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sensitive flag for jump landing risk. Drill correctly cautions to build stationary serve first."
 ---
 
 The jump serve is the highest-level serve. Higher contact, more power, harder to receive. It's a hybrid of a spike and a serve. Hard to learn but worth introducing at 11-12 for the kids who are ready.

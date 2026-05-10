@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A child marching with high knees across the ice, knees lifted to belt height with each step, body upright but knees bent."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid early skating drill. Knee-to-hand cue is concrete."
 ---
 
 Marching on skates teaches kids to pick up the feet, not shuffle. A shuffler stays in one place. A marcher moves. This drill is the bridge from glide to stride.

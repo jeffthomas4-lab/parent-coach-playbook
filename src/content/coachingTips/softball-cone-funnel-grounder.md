@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Young child fielding a grounder and moving the ball through two cones set up in a funnel shape toward a basket."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cone funnel teaches transfer; clean. Changed soft baseballs to softballs."
 ---
 
 The funnel teaches the kid where the ball goes after they catch it. Two cones form a path from the glove to a basket. It's the Funnel part of the Drop, Show, Funnel, Send cue.
 
-**What you need:** 2 cones, a bucket or basket, 10 soft baseballs (11"), grass.
+**What you need:** 2 cones, a bucket or basket, 10 softballs (11"), grass.
 
 **Setup:** Place two cones 3 feet apart forming a V-shape with a bucket behind them. Kid stands 10 feet in front of the V.
 

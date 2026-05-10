@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer doing freestyle, turning the head to the side every two strokes to breathe, body rotating with the breath."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Side-breathing rhythm with body-roll cue."
 ---
 
 Most kids hold their breath while swimming or come up to gasp. The right move is to breathe in a rhythm. Every two strokes (one side) or three strokes (both sides). The breath happens during the body rotation, not as a separate movement.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A running back driving through defenders with the ball tucked tight against their body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Light contact tunnel; intensity is controlled. Sensitive flagged for body contact."
 ---
 
 In a game, RBs get hit. This drill teaches them to hold the ball tight and power through contact. The ball stays cradled against the body no matter what.

@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Introduction to slap bunting technique"
 publishedAt: 2026-02-03
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Intro to softball-specific slap; clear grip-and-step focus."
 ---
 
 A slap bunt is a move, not a swing. It requires a specific grip and a running start. Start with the grip and first step, and the swing comes later.

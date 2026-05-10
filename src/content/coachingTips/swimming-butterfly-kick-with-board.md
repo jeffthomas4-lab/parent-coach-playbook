@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer holding a kickboard with both hands, body undulating in the water, legs together moving up and down in a dolphin kick."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Dolphin kick on board; clean undulation cue."
 ---
 
 Butterfly is the hardest stroke. The dolphin kick is its foundation. Both legs together, body undulating, kick from the core. Most kids try to flutter kick. The right kick is two legs as one.

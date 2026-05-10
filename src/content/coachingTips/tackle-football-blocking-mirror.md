@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two young players facing each other with hands up, one mirroring the other's hand movement."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Light hand-touch mirror drill, no impact contact."
 ---
 
 Before they block anyone, kids need to feel what it means to keep their hands in front. This drill is like a mirror drill where one kid moves and the other follows, both keeping their hands ready.

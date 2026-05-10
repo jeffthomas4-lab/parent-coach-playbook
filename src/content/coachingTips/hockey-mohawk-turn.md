@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Skater with feet pointing in opposite directions (like a heel-to-heel position), pivoting from forward skating to backward skating in one motion."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Hip-leads-the-foot cue is the right diagnostic for tangling feet."
 ---
 
 The mohawk is the move that turns a forward skater into a backward skater in one step. Hips open. Feet point opposite directions for a beat. Then the skater is going backward without losing speed. Defensemen use this to track an offensive player who turned upice.

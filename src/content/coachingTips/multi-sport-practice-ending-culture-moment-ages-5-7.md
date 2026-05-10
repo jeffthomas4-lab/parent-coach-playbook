@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A group of young children gathered together at the end of practice, participating in a simple team ritual like a chant or hand-in center."
 publishedAt: 2026-01-06
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'didn\\'t happen, kids '."
 ---
 
 Young kids need to feel like they belong to something. A simple closing ritual builds that feeling and gives them a memory of team.
@@ -26,4 +39,8 @@ Young kids need to feel like they belong to something. A simple closing ritual b
 
 **What to look for:**
 
-Kids should feel included in the ritual, not rushed through it. If a kid is staring at the ground or looks uncomfortable, don't force them to speak. The ritual should take 2 minutes max, or kids lose interest. The observation should be genuine. If you're making up good things that didn't happen, kids 
+Kids should feel included in the ritual, not rushed through it. If a kid is staring at the ground or looks uncomfortable, don't force them to speak. The ritual should take 2 minutes max, or kids lose interest. The observation should be genuine. If you're making up good things that didn't happen, kids hear the fake note and the ritual stops mattering.
+
+**Variation:** Rotate which kid gets to share each week. By practice 6, every kid has had a turn. Pin a small chant card to the bag so they know the words.
+
+**If they're struggling:** Cut step 2 and let the coach speak only. Get the chant in, get the hands in, send them home.

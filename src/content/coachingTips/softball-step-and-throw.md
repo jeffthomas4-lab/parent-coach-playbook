@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child stepping forward with the glove-side foot while rotating the throwing shoulder and extending the arm forward."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Step-into-throw build; ball terminology corrected."
 ---
 
 Now the throw gets power. A step toward the target gives the kid momentum and teaches hip rotation. Without stepping, kids rely on arm strength alone.
 
-**What you need:** 10 soft baseballs (11"), a partner at 20 feet, open grass.
+**What you need:** 10 softballs (11"), a partner at 20 feet, open grass.
 
 **Setup:** Stand 20 feet apart. Kid stands with feet together, ready to step.
 

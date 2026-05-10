@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the net jumping straight up with both arms extended high above the net, hands wide, palms facing the opposite court."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Block position basics. Clean voice and correct net vocabulary."
 ---
 
 The block is the front line of defense. Jump straight up at the net, hands above the tape, palms facing the attacker. The block isn't about contact, it's about taking up space. This drill builds the position.

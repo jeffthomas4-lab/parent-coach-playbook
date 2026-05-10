@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult kneeling 6 feet from a child, rolling a softball on grass. Child's hands are out, palms up, ready to receive."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Smart pre-glove drill for the youngest. Changed soft baseballs to softballs."
 ---
 
 Before a kid uses a glove, they need to feel that a rolling ball is something they can stop. The glove gets in the way of that lesson. Skip it for now.
 
-**What you need:** 5 soft baseballs (11"), a patch of grass.
+**What you need:** 5 softballs (11"), a patch of grass.
 
 **Setup:** Kneel about 6 feet from your kid. They stand facing you, feet apart, hands out in front with palms up.
 

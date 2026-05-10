@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body truncated mid-word at 'the closer the touches nee' before the affiliate block. Missing rest of What to look for plus If they're struggling / If they've got it variations. Affiliate disclosure is present and FTC-compliant."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'the closer the touches nee' before the affiliate block. Affiliate disclosure remains present and FTC-compliant."
 ---
 
 Dribbling through gates teaches kids to change direction while keeping the ball close. This is the foundation of all ball movement.
@@ -39,7 +39,11 @@ Dribbling through gates teaches kids to change direction while keeping the ball 
 4. Third round: fast (move as fast as possible, one touch per gate).
 5. Rotate kids through so each gets three rounds.
 
-**What to look for:** Touch consistency and speed. The faster they dribble, the closer the touches nee
+**What to look for:** Touch consistency and speed. The faster they dribble, the closer the touches need to be. Kids who lose the ball at speed are kicking it instead of pushing it. Watch the head; if they're staring at the ball, they can't see the next gate.
+
+**If they're struggling:** Cut to three gates and let them use one foot the whole way. Walk through it once before the first round.
+
+**If they've got it:** Add a tag. A second kid follows 5 yards behind trying to catch up. The dribbler has to stay ahead through every gate.
 
 ---
 

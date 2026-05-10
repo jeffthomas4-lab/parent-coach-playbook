@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player in a 3-point stance with staggered feet, one hand on the ground, knees bent, eyes looking forward."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Stance teaching with cue mnemonic. No contact."
 ---
 
 Linemen win with their feet first. A solid 3-point stance is where it starts. This drill teaches kids the four parts: stagger the feet, bend the knees, get a hand down, and keep the eyes up.

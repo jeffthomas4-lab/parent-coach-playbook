@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Offensive block followed by defensive shed"
 publishedAt: 2026-02-02
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Live shed work, ages 11-12; sensitive flagged for player-to-player contact."
 ---
 
 At 11-12, defenders face blocks on every snap. This drill teaches them to recognize contact, shed off, and flow to the ball. All three have to happen fast.

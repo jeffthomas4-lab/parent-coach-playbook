@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Quarterback moving to the right, body squared toward a downfield receiver, ball held back ready to throw, feet still set under the body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Rolling-pocket QB drill. Squared-shoulders cue is the keeper."
 ---
 
 In flag football the rusher gets to the QB fast. Throwing flat-footed isn't always an option. Throwing on the move, with the body squared to the receiver, keeps the offense alive when the pocket breaks down.

@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Adult rolling a softball on flat grass to a young child crouched in fielding position with a glove low to the ground."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "First-glove drill is well-framed. Changed soft baseballs to softballs."
 ---
 
 The first time a kid uses a glove to field, they need to feel where the glove goes (low, on the ground) and what the body does (drop down to meet it). Flat ground means no bounces, no surprises. Just rolls.
 
-**What you need:** A glove, 5 soft baseballs (11"), flat grass.
+**What you need:** A glove, 5 softballs (11"), flat grass.
 
 **Setup:** Stand 10 feet from the kid. They face you with the glove on, ready position.
 

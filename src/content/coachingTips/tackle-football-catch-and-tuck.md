@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young receiver catching the ball at chest height and immediately tucking it against their body."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Catching mechanics with cue mnemonic. No contact."
 ---
 
 After the catch, the ball goes away immediately. See, Reach, Squeeze, Tuck. The Tuck is critical. Once the hands have the ball, it goes into the body and stays there.

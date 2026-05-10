@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players facing each other 5 yards apart, the offensive player making cuts left and right, the defender shuffling to mirror without crossing feet."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clean flag-pull mechanics. No tackle language."
 ---
 
 A flag puller who lunges at the wrong moment misses. Good defenders mirror the offensive player until the offensive player commits, then pull. This drill builds the patience to wait for the moment.

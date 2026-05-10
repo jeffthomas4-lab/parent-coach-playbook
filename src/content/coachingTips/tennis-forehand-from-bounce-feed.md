@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach feeding an orange tennis ball with a bounce, child stepping forward and hitting a forehand over the net."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Orange-ball forehand drill with USTA stage cited; clean."
 ---
 
 USTA's orange ball is sized right for 8-10 year olds. Lower bounce, slower speed. The bounce feed gives the kid a predictable ball to hit. They can focus on the swing without worrying about timing.

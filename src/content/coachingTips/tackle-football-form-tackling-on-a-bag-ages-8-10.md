@@ -10,9 +10,22 @@ progression: "build"
 illustrationBrief: "Tackling mechanics on a stationary bag"
 publishedAt: 2026-01-30
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Fixed broken lead sentence (form-vs-explosive). Bag-only tackling for 8-10. Affiliate block present with disclosure."
 ---
 
-Real tackling starts with a heavy bag where young players can't get hurt and form doesn't matter if it's explosive. This builds confidence and technique at the same time.
+Real tackling starts with a heavy bag. Young players can't get hurt on a bag, and form gets locked in before the play moves live. This builds confidence and technique at the same time.
 
 **Equipment needed:** 2 heavy bags (tackle dummies or shields), 1 ball.
 

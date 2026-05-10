@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach tossing a volleyball overhand from the far side of the net to simulate a serve, player on the receiving side passing the ball to a setter target."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Bridge from drill to serve receive. Platform angle teaching point is the keeper."
 ---
 
 In a real game, the bump comes off a serve. The coach toss is the bridge. Ball comes from across the net at a downward angle. Player has to get into position, form the platform, and pass to the setter target. This is the rep that translates to the game.

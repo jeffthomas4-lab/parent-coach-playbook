@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young receiver with hands ready, catching a football at chest height with thumbs together."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Beginner catch drill, hands-not-body focus. No contact."
 ---
 
 The first catching drill teaches kids to see the ball and catch it with their hands, not their body. Cue: See, Reach, Squeeze, Tuck. This drill focuses on catches at chest height, hands ready.

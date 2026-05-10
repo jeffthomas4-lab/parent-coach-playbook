@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Increasing then decreasing sprint distances"
 publishedAt: 2026-04-12
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Ladder intervals; sensitive flag for distance-effort load on 11-12s."
 ---
 
 The interval ladder teaches young distance runners pace and builds fitness. It's structured, so athletes can focus on execution rather than figuring out what effort is needed.

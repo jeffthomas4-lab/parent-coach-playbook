@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Two skaters passing a puck back and forth while moving across the ice, maintaining speed and accuracy in the exchange."
 publishedAt: 2026-02-20
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Variation was truncated. Completed it."
 ---
 
 By 8-10, young players can pass and receive with control. This drill builds timing and accuracy in a partner setting where communication matters.
@@ -30,4 +43,4 @@ By 8-10, young players can pass and receive with control. This drill builds timi
 
 The pass should arrive flat on the ice, not bouncing. A bouncing pass is too hard. The receiver should be reaching forward slightly to meet the pass. The puck should stick to the receiving player's stick, not roll past. If a player is reaching backward for the pass, the passer is leading too far. Communication matters: partners should call "Ready" or "Here" to stay in sync.
 
-**Variation:** A
+**Variation:** Add a third partner so passes go in a triangle. Or add a defender in the middle who tries to poke check the puck between exchanges.

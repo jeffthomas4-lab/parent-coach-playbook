@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Skater going around a circle on the ice, the outside foot crossing in front of the inside foot to maintain speed through the turn."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Faceoff circle as built-in track is a smart, real-rink detail."
 ---
 
 A turn without crossovers loses speed. A turn with crossovers gains speed. Hockey players cross over on every curved path. This drill builds the pattern in a controlled circle.

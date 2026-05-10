@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child in a balanced stance facing the tee, hands cocked by the back shoulder, weight on the back foot."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Set-Load fundamentals for the youngest hitters."
 ---
 
 Before the swing, the body needs to be in the right position. Stance and Load are the first two parts of the Set, Load, Step, Swing cue.
 
-**What you need:** A tee, 10 soft baseballs (11"), an age-appropriate bat, a net.
+**What you need:** A tee, 10 softballs (11"), an age-appropriate bat, a net.
 
 **Setup:** Tee at belt height. Kid without a bat first to build the position.
 

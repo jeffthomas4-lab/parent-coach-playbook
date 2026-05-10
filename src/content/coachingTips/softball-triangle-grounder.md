@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Three kids positioned in a triangle, rolling ground balls to each other. One rolls, two wait in ready position."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Multi-angle ground-ball formation; ball term fixed."
 ---
 
 A triangle teaches kids to field from their right, left, and straight ahead. It simulates game situations where the ball doesn't always come directly at you.
 
-**What you need:** 10 soft baseballs (11"), three kids in a triangle formation 15 feet apart.
+**What you need:** 10 softballs (11"), three kids in a triangle formation 15 feet apart.
 
 **Setup:** Three kids stand in a triangle, each 15 feet from the other two. They all have gloves.
 

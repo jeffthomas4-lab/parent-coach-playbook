@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A young skater turning at cone markers using inside and outside edges, changing direction quickly and maintaining speed."
 publishedAt: 2026-02-23
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Variation block was truncated. Completed it."
 ---
 
 Edge work separates good skaters from okay ones. Young players at this age can learn to use edges intentionally instead of just shuffling.
@@ -29,4 +42,4 @@ Edge work separates good skaters from okay ones. Young players at this age can l
 
 Outside edges should feel smooth and fast. If a skater is rough or bouncy, they're fighting the edge. Inside edges are harder because the skater has to lean more. If a skater falls or loses balance on inside edges, they're not ready for this yet. Don't push it. The skater should feel like they're carving the turn, not shuffling around it.
 
-**Vari
+**Variation:** Add a puck. Skater carries it around the circle while staying on edges. Or shrink the circle to 10 yards to force tighter edges.

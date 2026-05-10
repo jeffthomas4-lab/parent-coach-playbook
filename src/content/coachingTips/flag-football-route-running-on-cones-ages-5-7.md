@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A young receiver running a route marked by cones, cutting hard at each cone and catching a pass at the final destination."
 publishedAt: 2026-01-03
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated variation. Affiliate disclosure present."
 ---
 
 Young receivers need to understand that running a route isn't just about speed: it's about hitting a spot and cutting hard. This drill builds that habit before anything else matters.
@@ -30,7 +43,7 @@ Young receivers need to understand that running a route isn't just about speed: 
 
 Watch for hard plant steps at cone cuts. Many kids round their routes; the cone should make them stop and redirect. The QB's job is to throw accurately so the receiver doesn't have to adjust mid-cut. If throws are off, fix the QB's footwork first, not the receiver's route.
 
-**Variation:** For older kids in t
+**Variation:** For older kids in this age group, add a soft defender shadowing the route from a few yards back. The receiver still cuts at the cone, and the defender's job is only to track. Builds awareness of coverage without putting flags on the line.
 
 ---
 

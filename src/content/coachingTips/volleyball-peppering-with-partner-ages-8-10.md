@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Partner passing back and forth"
 publishedAt: 2026-03-25
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard pepper drill. Pattern description is clear."
 ---
 
 Peppering is partners passing back and forth. It builds rhythm and teaches young players to control the ball rather than just react.

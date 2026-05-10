@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Cones marking fielder positions"
 publishedAt: 2026-04-25
 featured: true
+editorial:
+  qualityGrade: 9
+  originalityGrade: 8
+  voiceGrade: 9
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strong, voice-y cones drill with two-bin rotation system; tagged sport: baseball which fits since t-ball is a baseball variant."
 ---
 
 The bunching problem at tee-ball is famous. Ten six-year-olds chase the ball wherever it goes. The shortstop ends up in left field. The pitcher ends up at first base. Nobody learns where they are supposed to stand.

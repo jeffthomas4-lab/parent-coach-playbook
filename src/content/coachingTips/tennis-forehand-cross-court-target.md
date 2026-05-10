@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player at the baseline hitting a forehand cross-court, ball arcing toward a cone target placed in the opposite corner of the court."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cross-court target work with deuce/ad court correctly named."
 ---
 
 Cross-court is the longer diagonal of the court. The ball travels further in the air, giving more margin over the net. This is the highest-percentage tennis shot. This drill teaches the kid to hit it on purpose.

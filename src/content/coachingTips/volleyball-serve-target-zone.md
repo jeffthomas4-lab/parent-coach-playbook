@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A volleyball court with cones marking six zones (1-6), the server aiming serves at specific zones to score points."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Zone scoring variation makes this competitive. Vocabulary correct."
 ---
 
 A serve that just goes over the net is a free ball for the receivers. A serve to a specific zone (the seam between two players, or the back corner where no one's standing) is a weapon. This drill teaches the kid to aim, not just hit.

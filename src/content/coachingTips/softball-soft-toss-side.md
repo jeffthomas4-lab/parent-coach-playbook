@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Tosser standing 10 feet to the side of the batter, tossing a ball underhand into the strike zone."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Side-toss for live timing; softball ball term fixed."
 ---
 
 Soft toss from the side simulates game pitching. The tosser is out of the batter's direct line of sight. The batter has to find the ball and hit it with proper timing.
 
-**What you need:** 25 soft baseballs (12"), tosser, batter, an age-appropriate bat, a fence or net.
+**What you need:** 25 softballs (12"), tosser, batter, an age-appropriate bat, a fence or net.
 
 **Setup:** Tosser stands 10 feet to the side of the batter (between first base and the batter's box). Batter in ready position.
 

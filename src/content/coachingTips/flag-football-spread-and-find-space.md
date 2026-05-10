@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Five offensive players spread across the field with three defenders, the QB scanning the field and the receivers in different empty zones."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "5v3 space-finding game. Clean flag-pull language."
 ---
 
 In flag football, the offense wins by spreading out the defense. If three defenders cover three zones, two zones are open. The QB throws to whoever is in the open zone. This drill teaches receivers to find space, not run set routes.

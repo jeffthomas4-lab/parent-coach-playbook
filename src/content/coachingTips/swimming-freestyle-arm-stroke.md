@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Swimmer reaching one arm forward in the water while the other arm recovers high above the water, elbow bent."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Freestyle arm stroke with high-elbow cue and lengths counted."
 ---
 
 Freestyle arms work in alternating cycles. One arm pulls underwater while the other recovers above water with a high elbow. The pattern creates continuous propulsion. Most kids learn the kick first; this drill adds the arms.

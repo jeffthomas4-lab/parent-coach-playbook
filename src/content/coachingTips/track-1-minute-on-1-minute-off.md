@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner alternating between fast running and slow jogging on a track or open path, watch showing 1-minute intervals."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Time-based intervals; flag sensitive for distance-effort safety."
 ---
 
 Time-based intervals are simpler than distance-based for younger runners. 1 minute hard, 1 minute easy. Repeat. The body learns to handle the repeated effort, which builds the engine for longer races.

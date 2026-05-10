@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Top-down view of a skater's path showing each foot tracing a C-shaped curve in the ice as the skater moves forward."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Clear four-phase cue and a useful diagnostic. Push-direction note is gold."
 ---
 
 A C-cut is the basic forward skating push. The blade pushes out and around in a C-shape, transferring power to the ice. Done right, it's the most efficient way to move on skates. Done wrong, it's the choppy step beginners do.

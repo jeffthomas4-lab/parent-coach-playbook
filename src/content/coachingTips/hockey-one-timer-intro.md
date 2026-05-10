@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players: one passing the puck across, the other in shooting stance about to swing through the puck without stopping it, contact happening as the puck arrives."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Honest about misses is the right voice. Eight tries, many will miss."
 ---
 
 A one-timer is a shot taken on a moving puck without stopping it. The pass arrives, the stick is already loaded, the puck gets hit on contact and flies at the net. This is the goal-scoring play in hockey. Hard to learn but very high value.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players at the net jumping side by side with their hands creating a solid wall above the net, no gap between them."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Seam-sealing teaching point is the load-bearing detail."
 ---
 
 A double block is two blockers jumping together. Done right, the wall is 4 feet wide and the spiker has nowhere to hit. Done wrong, there's a gap and the spike goes through. This drill builds the timing.

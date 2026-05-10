@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A team gathered together doing dynamic stretches, light running, and sport-specific movements as they prepare mentally for the game."
 publishedAt: 2026-01-03
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'between sections, th'."
 ---
 
 A good warm-up gets kids moving, thinking about the game, and connected to each other. This 4-minute routine does all three without chewing up practice time.
@@ -25,4 +38,6 @@ A good warm-up gets kids moving, thinking about the game, and connected to each 
 
 **What to look for:**
 
-Kids should be energized but not gassed. If a kid looks exhausted, the warm-up was too hard. The movement should create conversation and energy, not silence and waiting. If kids are standing around between sections, th
+Kids should be energized but not gassed. If a kid looks exhausted, the warm-up was too hard. The movement should create conversation and energy, not silence and waiting. If kids are standing around between sections, the transitions are too long. Cue the next thing while they're finishing the last.
+
+**Variation:** For ages 5-7, drop the dynamic stretching to 30 seconds and replace with a tag game. For ages 13-14, swap the group circle for individual activation work and stretch the sport-specific block to 90 seconds.

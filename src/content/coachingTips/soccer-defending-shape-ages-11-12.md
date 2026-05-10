@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body truncated mid-sentence at 'Do they mark the'. Missing the rest of What to look for plus If they're struggling / If they've got it variations."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Do they mark the'."
 ---
 
 Defensive shape is a line. This drill teaches defenders to stay in a line while marking attackers and closing down the ball.
@@ -39,4 +39,8 @@ Defensive shape is a line. This drill teaches defenders to stay in a line while 
 4. If defenders win the ball, they clear it up field and reset.
 5. Play 10 attacking sequences.
 
-**What to look for:** Line integrity and marking. Do defenders stay together or spread too wide? Do they mark the
+**What to look for:** Line integrity and marking. Do defenders stay together or spread too wide? Do they mark the player with the ball or pick up the runner cutting behind? The middle defender controls the line; if she steps forward, the wings step with her. If she gets pulled out, the line breaks and the through ball goes.
+
+**If they're struggling:** Drop to two defenders against three attackers and shrink the zone to 30 by 25. Tell the attackers to walk for the first two reps so the defenders can read the shape.
+
+**If they've got it:** Add a target line behind the defenders. If attackers dribble across it, they score. Defenders now have to defend the goal and the line, which forces them to step and recover as a unit.

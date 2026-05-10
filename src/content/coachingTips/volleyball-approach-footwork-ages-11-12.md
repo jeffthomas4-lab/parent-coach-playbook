@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Footwork rhythm before spiking contact"
 publishedAt: 2026-03-31
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Two-step + three-step progression. Affiliate disclosure present."
 ---
 
 The approach footwork builds momentum for hitting. Young players at this age can learn to coordinate the steps and timing to the jump.

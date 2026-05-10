@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Flutter kick drill with kickboard"
 publishedAt: 2026-04-25
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Kickboard flutter for 5-7; clean."
 ---
 
 Young swimmers need to build leg strength and rhythm before worrying about full strokes. The kickboard isolates the kick so they can focus on the motion.

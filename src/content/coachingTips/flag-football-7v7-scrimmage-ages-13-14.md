@@ -10,17 +10,30 @@ progression: "refine"
 illustrationBrief: "Seven offensive and seven defensive players on a full field, with the offense running plays and defense reading coverage."
 publishedAt: 2026-01-24
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Fixed 'No tackles' and 'Flag pull is the tackle' to flag-pull language. Affiliate disclosure present."
 ---
 
 At this age, kids can run plays and react to defense. A 7v7 scrimmage with a few rules keeps the game moving and forces decision-making without chaos.
 
 **Equipment needed:** 1 field (or marked 40-yard section), 14 flag belts, 1 ball, cones for yard markers.
 
-**Setup:** Full width of the field, 40 yards long. Mark the goal lines and midfield with cones. Each side has 7 players: QB, 3 receivers, 2 defensive linemen, 1 linebacker/safety hybrid. No tackles, just defense trying to pull flags.
+**Setup:** Full width of the field, 40 yards long. Mark the goal lines and midfield with cones. Each side has 7 players: QB, 3 receivers, 2 defensive linemen, 1 linebacker/safety hybrid. No body contact, just defense trying to pull flags.
 
 **How to run it:**
 
-1. Standard flag football rules: 4 downs to reach midfield, then 4 downs to score. Flag pull is the tackle.
+1. Standard flag football rules: 4 downs to reach midfield, then 4 downs to score. The flag pull ends the play.
 2. Before the drive, the offense calls 3 plays they want to run. Defense doesn't know the call, so QBs get real reads.
 3. After each score, defense gets a chance to run offense. This keeps all kids engaged.
 4. Run 4 possessions per side (about 20 minutes total).

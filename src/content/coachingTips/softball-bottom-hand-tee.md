@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Batter gripping the bat with both hands on the tee, focusing on bottom hand power through the zone."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tee work focused on grip; voice fine. Changed soft baseballs to softballs."
 ---
 
 The bottom hand drives the swing. When a batter gets weak, it's often because the bottom hand has relaxed. Tee work with focus on the bottom hand builds that power.
 
-**What you need:** A tee, 15 soft baseballs (12"), an age-appropriate bat, a net.
+**What you need:** A tee, 15 softballs (12"), an age-appropriate bat, a net.
 
 **Setup:** Tee at mid-thigh height. Batter in Set position with emphasis on the bottom hand grip.
 

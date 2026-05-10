@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child standing 10 feet from an adult, both hands extended forward with thumbs together, catching a foam football."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "See-Reach-Squeeze-Tuck cue. Solid for ages 5-7."
 ---
 
 Most young kids try to catch the ball against their chest. The football bounces off. The right move is hands out front, thumbs together, eyes on the ball. Cue: See, Reach, Squeeze, Tuck.

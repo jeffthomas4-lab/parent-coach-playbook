@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Infielder standing in a relay line between the outfield and a base, arms up ready to catch and relay."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cutoff drill; voice fine, sport language correct."
 ---
 
 A cutoff player is the relay between the outfield and the base. Positioning is critical. They stand in a line with the outfielder and the base so they can catch and relay in one motion.

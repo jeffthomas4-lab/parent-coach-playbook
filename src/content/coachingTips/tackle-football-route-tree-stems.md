@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A receiver running straight upfield on a stem route, eyes on the QB for the throw."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Stem-only foundation drill. No contact."
 ---
 
 A route stem is the first 10 yards of a route. Learning proper stems teaches receivers to get upfield with pace and eyes ready. This is the foundation for all route breaks.

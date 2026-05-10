@@ -10,9 +10,22 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young defender squared up to a ball carrier, eyes up and on the chest, feet planted and ready."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Fixed garbled lead (was 'between the ball and the defender'). Profile-only positioning, no contact, but tackle-prep so flagged sensitive."
 ---
 
-Profile means getting your body between the ball and the defender, squaring up with the ball carrier. This is the first step of the Hawk Tackle. Cue: Profile, Sink, Near, Wrap.
+Profile means getting square to the ball carrier with your hips, shoulders, and feet aligned. This is the first step of the Hawk Tackle. Cue: Profile, Sink, Near, Wrap.
 
 **What you need:** Open grass or field. No equipment needed.
 

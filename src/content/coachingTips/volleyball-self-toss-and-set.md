@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player tossing a volleyball straight up, then setting it back up with both hands above the forehead in a clean window position."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solo set rep. Fingertip vs palm cue is the keeper detail."
 ---
 
 The first set rep should be predictable. The ball comes from the player's own toss. They form the window, set the ball back up. Repeat. The ball never goes far. The skill builds in the hands.

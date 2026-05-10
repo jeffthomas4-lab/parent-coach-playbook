@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Introduction to glide technique"
 publishedAt: 2026-04-18
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Shot put glide intro; sensitive flag for throwing-event injury risk."
 ---
 
 The glide is the foundation of shot put technique. This drill teaches young throwers the footwork and weight transfer that generate power.

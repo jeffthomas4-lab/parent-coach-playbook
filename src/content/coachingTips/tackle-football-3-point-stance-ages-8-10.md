@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Three-point stance form and balance"
 publishedAt: 2026-01-27
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Stance fundamentals only; bag variation noted, no live contact."
 ---
 
 The 3-point stance is not complicated, but young linemen need to feel correct positioning before they can explode out of it. This drill builds the habit.

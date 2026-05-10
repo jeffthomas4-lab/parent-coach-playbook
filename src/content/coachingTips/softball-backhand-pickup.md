@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player moving right, reaching across the body with the glove on the backhand side to field a grounder."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Changed soft baseballs to softballs in equipment line."
 ---
 
 Backhand fielding means the ball is going away from the throwing-side arm. It requires footwork to get the body in front and the glove across.
 
-**What you need:** 15 soft baseballs (12"), a partner at 15 feet away.
+**What you need:** 15 softballs (12"), a partner at 15 feet away.
 
 **Setup:** Fielder and partner stand 15 feet apart. Partner will roll balls to the fielder's right (backhand side).
 

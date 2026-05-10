@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player in mid-air horizontal to the floor, arms extended forward to dig a ball, body sliding to the floor on the chest after contact."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Sensitive flag for diving injury risk. Body-mechanics call-out (knees do NOT hit floor) is critical."
 ---
 
 The dive is the last-resort defense. Ball is going to land 6 feet in front of the player. They dive forward, hit it with one or both hands, slide on the chest after contact. Done right, it's a clean dig. Done wrong, it's a wipeout. Worth teaching slowly.

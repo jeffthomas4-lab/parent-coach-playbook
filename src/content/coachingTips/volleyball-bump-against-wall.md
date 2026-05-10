@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player standing 5 feet from a brick wall, repeatedly bumping a volleyball against the wall and receiving the rebound."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solo wall rep drill. High-volume touches in driveway setting."
 ---
 
 Wall bump is the volleyball version of wall ball. The wall returns every bump. Hundreds of touches in 10 minutes. The kid can do this in a driveway or against any flat wall.

@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Young runners on a track completing a mile repeat at hard effort, recovering briefly, then beginning another mile at measured pace."
 publishedAt: 2026-04-24
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'fatigue is setting in, bu'. Sensitive flag on mile-repeat load retained."
 ---
 
 Intervals at this age build the fitness needed for racing. This structured workout teaches pacing and effort management.
@@ -28,4 +41,8 @@ Intervals at this age build the fitness needed for racing. This structured worko
 
 **What to look for:**
 
-Each mile repeat should be similar in time. If the third mile is significantly slower, the first pace was too fast. If all three are slow, the athlete is being cautious instead of committed. Goal race pace should feel hard but sustainable. By the third mile, fatigue is setting in, bu
+Each mile repeat should be similar in time. If the third mile is significantly slower, the first pace was too fast. If all three are slow, the athlete is being cautious instead of committed. Goal race pace should feel hard but sustainable. By the third mile, fatigue is setting in, but the time should still hold within 5-10 seconds of the first.
+
+**If they're struggling:** Cut to two mile repeats and stretch the recovery to 600 meters. If the second mile is more than 20 seconds off the first, end the workout.
+
+**If they've got it:** Add a fourth mile at goal pace, or shorten the recovery to 200 meters. Keep the goal time honest; don't let them coast to fit the volume.

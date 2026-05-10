@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A defender chasing a ball-carrier with flags hanging from their waist, reaching to pull one of the flags."
 publishedAt: 2026-01-06
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated variation. Clean flag-pull language throughout."
 ---
 
 Pulling a flag is different than tackling. Kids need to understand where the flag is, how to reach it, and how to pull with intent. This game makes it fun while building the skill.
@@ -30,4 +43,4 @@ Pulling a flag is different than tackling. Kids need to understand where the fla
 
 Defenders should be tracking the runner's hips, not staring at the feet. The flag is usually on the hip, so good defenders move to that side. Runners should be accelerating into open space, not just running away. If a runner is dancing in place, they're playing tag, not flag football. If a defender is lunging late, they're not tracking early enough.
 
-**Variation:** Older 7-year-olds can use a live ball. The
+**Variation:** Older 7-year-olds can use a live ball. The runner has to carry a foam football while protecting the flag, and any drop counts as a turnover. This adds the ball-security habit on top of the flag-pulling skill.

@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Defenders identifying offensive formation and reacting to receiver movement, adjusting between zone coverage and player assignment."
 publishedAt: 2026-01-21
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated What to look for paragraph. Clean coverage vocabulary."
 ---
 
 By 11-12, defenders should be reading the offense. This drill teaches the difference between zone and man coverage by asking defenders to react to receiver movement.
@@ -28,4 +41,4 @@ By 11-12, defenders should be reading the offense. This drill teaches the differ
 
 **What to look for:**
 
-In zone, if a defender is staring at a receiver instead of feeling the ball coming, they're playing man. In man, if a defender is peeking at the ball and losing their assignment, they break. Watch foot positioning: zone defenders have shoulders square to the field, man defenders are in a backpedal or at 45 degrees. If the offense is running picks (receivers crossing in man), man defenders should feel the traffic and switch
+In zone, if a defender is staring at a receiver instead of feeling the ball coming, they're playing man. In man, if a defender is peeking at the ball and losing their assignment, they break. Watch foot positioning: zone defenders have shoulders square to the field, man defenders are in a backpedal or at 45 degrees. If the offense is running picks (receivers crossing in man), man defenders should feel the traffic and switch assignments before contact. Call the switch out loud so both defenders know who has whom.

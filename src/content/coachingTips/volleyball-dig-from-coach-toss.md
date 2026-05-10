@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach throwing a hard ball at a player in low defensive stance, the player digging the ball up with a flat platform back to a setter target."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Bridge from passing drill to live attack. Dig vocabulary used correctly."
 ---
 
 A dig is a defensive bump on a hard incoming ball. The platform is the same as the pass, but the timing is faster and the ball is harder. Coach toss is the bridge between drills and live attacks.

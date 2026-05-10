@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players in a 20-yard square, the offensive player with a ball trying to reach the back line while the defender stays in front and pulls the flag."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "1-on-1 open-field test. Clean flag-pull vocabulary."
 ---
 
 Real games have open field. The defender has nothing but a runner and a body. This drill is the test: can they pull the flag when the offensive player can go anywhere?

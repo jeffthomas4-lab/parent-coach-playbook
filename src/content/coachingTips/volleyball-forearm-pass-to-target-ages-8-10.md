@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Passing accuracy to specific targets"
 publishedAt: 2026-03-22
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Foundational passing accuracy. Solid teaching points on platform shape."
 ---
 
 The forearm pass is where volleyball skill begins. Young players need to hit a specific target, not just get the ball up. This drill builds accuracy.

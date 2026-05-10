@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player using the toe of the stick to drag the puck backward and across the body, defender lunging the wrong direction."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cone-or-defender setup gives easy progression from solo to live."
 ---
 
 The toe drag is the move that beats a defender who lunges at the puck. Reach the puck out, defender goes for it, you drag it back with the toe of the stick and slip past. Pro move. Worth teaching at 11-12 because the kids who learn it become the kids who score.

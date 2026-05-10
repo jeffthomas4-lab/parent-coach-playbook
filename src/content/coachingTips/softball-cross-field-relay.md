@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Three kids in a line across the field, passing a softball back and forth with full throws."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard relay drill. Changed soft baseballs to softballs."
 ---
 
 A relay teaches kids to throw across distance and to catch incoming throws. It's also the first time they feel the game speed of a real relay situation.
 
-**What you need:** 5 soft baseballs (12"), three kids standing in a line 30 feet apart.
+**What you need:** 5 softballs (12"), three kids standing in a line 30 feet apart.
 
 **Setup:** Three players in a straight line across the field, 30 feet apart.
 

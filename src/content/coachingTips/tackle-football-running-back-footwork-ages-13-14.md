@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Vision and footwork in open field"
 publishedAt: 2026-02-08
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: true
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "One-cut/two-cut reads against bag defenders for 13-14. No live tackles. Affiliate block present with disclosure."
 ---
 
 Good backs have footwork that matches their read. This drill teaches one-cut patience (inside zone), two-cut decisiveness (outside zone), and trust in blocks.

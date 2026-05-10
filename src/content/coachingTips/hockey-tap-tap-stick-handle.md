@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young player standing still with a hockey stick, tapping a puck softly back and forth between the forehand and backhand sides of the blade."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Letting eyes-down be okay at 5-7 is the right call. Builds feel first."
 ---
 
 Stick handling starts with the puck moving on the blade. Tap, tap, tap. Forehand, backhand, forehand. Hundreds of taps build the soft hands every hockey player needs.

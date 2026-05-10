@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body is truncated mid-sentence at 'A runner'; needs the rest of 'What to look for' and any closing sections."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'A runner'."
 ---
 
 Base running decisions change depending on the hit location and the number of outs. This drill runs three runners through five scenarios each so they build decision-making speed.
@@ -41,4 +41,8 @@ Base running decisions change depending on the hit location and the number of ou
 
 Run all three runners through all five scenarios. Then switch positions.
 
-**What to look for:** Do they know when to go and when to stay? A runner
+**What to look for:** Do they know when to go and when to stay? A runner who hesitates two steps off the bag has already lost the read. The good ones pick up the ball off the bat, glance at the third base coach, and commit. The shaky ones drift halfway, then guess.
+
+**If they're struggling:** Drop to two scenarios at a time and walk through the read out loud before the pitch. "Ball on the ground to the right side, you advance one." Then run it.
+
+**If they've got it:** Add a real fielder making a real throw. The runner has to react to the actual play, not the scripted call. Mix the scenarios randomly so they can't anticipate.

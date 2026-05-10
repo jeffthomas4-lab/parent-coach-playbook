@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player running toward a partner and throwing a softball overhand mid-stride, shoulders rotated."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Throw-on-move drill for older fielders."
 ---
 
 Fielders chase balls. They have to throw while moving, not standing still. This drill teaches rhythm between feet and arm so the throw doesn't lose power or accuracy on the move.
 
-**What you need:** 10 soft baseballs (12"), a large open field, a partner at 40 feet.
+**What you need:** 10 softballs (12"), a large open field, a partner at 40 feet.
 
 **Setup:** Kid stands 40 feet from a partner. Both are spaced far enough apart to run.
 

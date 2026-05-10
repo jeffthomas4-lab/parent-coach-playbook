@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body truncated mid-sentence at 'shoot with purpose, not'. Missing the rest of What to look for plus If they're struggling / If they've got it variations."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'shoot with purpose, not'."
 ---
 
 Finishing is a skill that improves with volume. This drill gives a shooter 20 shots from game-realistic positions so they build feel and confidence.
@@ -39,4 +39,8 @@ Finishing is a skill that improves with volume. This drill gives a shooter 20 sh
 4. Next shooter receives from a different angle.
 5. Do 5 shots per shooter per round, rotating angles: right side, left side, center, far post, near post.
 
-**What to look for:** Shot placement and finish confidence. Good finishers choose a corner early and shoot with purpose, not
+**What to look for:** Shot placement and finish confidence. Good finishers choose a corner early and shoot with purpose, not strength. The ones who try to blast every ball miss the frame; the ones who pick a side-netting spot and place the ball score more often. Watch the plant foot too. If it points at the keeper, the shot goes at the keeper.
+
+**If they're struggling:** Drop the touch requirement and let them set the ball before shooting. Move the feed to 12 yards out so the angle is shorter.
+
+**If they've got it:** Add a defender closing from 8 yards behind. The shooter has one touch and then a shot, with pressure arriving at impact. Track the goals; the bar is 12 of 20.

@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher mid-motion with arm circling, releasing a pitch down the middle of the strike zone to a catcher in full gear."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Strike-zone control work; pitch count rules called out."
 ---
 
 Once the motion is smooth, control is the next priority. A pitcher who can throw strikes is valuable. Work on hitting the zone consistently, not velocity.
 
-**What you need:** 30 soft baseballs (12"), pitcher on mound at 40 feet, catcher with gear.
+**What you need:** 30 softballs (12"), pitcher on mound at 40 feet, catcher with gear.
 
 **Setup:** Pitcher on mound. Catcher at home plate in full protective gear.
 

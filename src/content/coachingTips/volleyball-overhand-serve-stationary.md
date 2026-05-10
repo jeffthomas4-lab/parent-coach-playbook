@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player tossing a ball straight up with the non-hitting hand, then contacting the ball above the head with the heel of the hitting hand."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard overhand serve build. Toss-fix instruction is correct."
 ---
 
 The overhand serve is the next step up. Harder, faster, more aggressive. Toss the ball up, contact above the head, hit through the ball with the heel of the hand. This is the serve that scores aces.

@@ -21,8 +21,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
-  status: needs-revision
-  reviewerNotes: "Body truncated mid-sentence at 'Does the defender stay on'. Needs completion of What to look for section, plus If they're struggling / If they've got it variations."
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Does the defender stay on'."
 ---
 
 1v1 teaches decision-making under pressure. The attacker has to decide: dribble past or shoot. The defender has to close down without fouling.
@@ -39,4 +39,8 @@ editorial:
 4. Play ends when a goal is scored, the ball goes out of bounds, or the defender wins it.
 5. Do 8-10 reps. Rotate attacker and defender.
 
-**What to look for:** Attack decisions and defensive positioning. Does the attacker have a plan or just run at the defender? Does the defender stay on
+**What to look for:** Attack decisions and defensive positioning. Does the attacker have a plan or just run at the defender? Does the defender stay on their feet, body angled to push the ball wide, or do they lunge in and get beat? The best defenders force the attacker to a side and shrink the shooting angle without diving at the ball.
+
+**If they're struggling:** Shrink the grid to 10 by 10 yards and start the attacker 5 yards closer to goal. Tell the defender to delay only, no tackles for the first round.
+
+**If they've got it:** Add a 5-second time limit. The attacker has to score or lose possession before the count. Now they can't dribble forever waiting for an opening.

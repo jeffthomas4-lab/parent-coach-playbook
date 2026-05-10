@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Diagram showing a receiver at the line with three route paths branching from the same release point: hitch (straight up), out (90 degrees outside), slant (45 degrees inside)."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Same-release route tree teaches deception. Clean."
 ---
 
 The route tree is a numbered system of routes that come from the same release. Hitch, out, slant, post, corner, fly. At 11-12, focus on three: hitch, out, slant. All three start with the same first three steps. Defense can't tell which is coming until the break.

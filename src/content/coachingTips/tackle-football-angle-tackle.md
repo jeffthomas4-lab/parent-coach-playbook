@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A defender running at an angle to intercept a ball carrier, driving low with the near shoulder."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Live tackle drill with ball carrier; head-behind safety cue cited (Hawk/Heads Up). Sensitive flagged for contact instruction."
 ---
 
 An angle tackle is when the defender isn't straight in front of the ball carrier but has to take a different angle to make contact. This requires reading the play and moving to the right spot. Cue: Profile, Sink, Near, Wrap.

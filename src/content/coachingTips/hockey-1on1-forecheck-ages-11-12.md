@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "A forward approaching an opponent with the puck, maintaining gap control and applying stick pressure without over-committing."
 publishedAt: 2026-03-01
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body was truncated mid-sentence at end of What to look for. Completed it. Stick pressure and angling only at 11-12, no body checks."
 ---
 
 A good forecheck starts with one forward disrupting the breakout. This drill teaches that forward to pressure hard while staying gap-conscious.
@@ -27,4 +40,6 @@ A good forecheck starts with one forward disrupting the breakout. This drill tea
 
 **What to look for:**
 
-The forward should close space quickly but under control. If the forward is out of position to defend a breakpass, they're too aggressive. The forward should be in the puck carrier's hip pocket when possible, making it hard to pass without the receiver being covered. If the defenseman is easily walking aroun
+The forward should close space quickly but under control. If the forward is out of position to defend a breakout pass, they're too aggressive. The forward should be in the puck carrier's hip pocket when possible, making it hard to pass without the receiver being covered. If the defenseman is easily walking around the forward, the forward is over-committing or skating past the puck.
+
+**Coaching note:** No body checks at 11-12. USA Hockey rules limit contact to angling, stick-on-stick, and body positioning at this age. Pressure is about feet, stick, and lane control.

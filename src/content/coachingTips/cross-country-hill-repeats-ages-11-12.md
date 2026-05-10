@@ -10,6 +10,19 @@ progression: "build"
 illustrationBrief: "Young runners sprinting up a moderate slope, recovering at the top, then jogging back down for the next repetition."
 publishedAt: 2026-04-21
 featured: false
+editorial:
+  qualityGrade: 6
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Hill training builds confidence for racing,'. Sensitive flag on hill effort retained."
 ---
 
 Hill repeats teach young runners to maintain effort on challenging terrain. They build strength and confidence for racing over varied ground.
@@ -27,4 +40,8 @@ Hill repeats teach young runners to maintain effort on challenging terrain. They
 
 **What to look for:**
 
-Runners should maintain effort on the hill, not slow down as they get tired. On the first few repeats, they should feel strong. If a runner is struggling on repeat 2, the pace was too hard on repeat 1. The descent should be controlled, not reckless. Hill training builds confidence for racing,
+Runners should maintain effort on the hill, not slow down as they get tired. On the first few repeats, they should feel strong. If a runner is struggling on repeat 2, the pace was too hard on repeat 1. The descent should be controlled, not reckless. Hill training builds confidence for racing, but only if the effort is honest and the recovery is full.
+
+**If they're struggling:** Cut to 3 repeats and a shorter hill (100-150 meters). Add 30 seconds of rest at the bottom.
+
+**If they've got it:** Add a sixth repeat with a hard finish. The last 50 meters of the climb at near-sprint, then a full minute walk-down before the easy jog.

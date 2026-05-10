@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Catcher in full gear dropping to block a low pitch in the dirt in front of home plate."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Catcher contact flagged sensitive. Cues correct; changed soft baseballs to softballs."
 ---
 
 A catcher's job is to stop all pitches, even bad ones. Blocking is the skill that saves runs. The body goes in front of the ball, not the glove.
 
-**What you need:** 15 soft baseballs (12"), catcher gear (chest protector at minimum), pitcher at 40 feet.
+**What you need:** 15 softballs (12"), catcher gear (chest protector at minimum), pitcher at 40 feet.
 
 **Setup:** Catcher in full gear crouched at home plate. Pitcher 40 feet away.
 

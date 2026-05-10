@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Pitcher or first baseman sprinting to cover first base as the first baseman fields the bunt."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Bunt coverage drill; situational. Voice clean."
 ---
 
 On a bunt, the first baseman often fields the ball near the line and has to make a quick throw to first. Either the pitcher or the second baseman covers the base. Communication is key.

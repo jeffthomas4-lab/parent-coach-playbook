@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Coach standing 20 feet in front of the batter tossing an underhand pitch, batter in ready position."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Front toss is age-appropriate; underhand toss is correct vocabulary. Changed soft baseballs to softballs."
 ---
 
 Front toss is live pitching at a comfortable speed. The ball is still coming slow and straight, but now the kid has to time it and track it. This is the first step toward game-speed pitching.
 
-**What you need:** 20 soft baseballs (11"), coach position, an age-appropriate bat, a fence or net.
+**What you need:** 20 softballs (11"), coach position, an age-appropriate bat, a fence or net.
 
 **Setup:** Coach stands 20 feet in front of the batter. Batter in Set position with bat ready.
 

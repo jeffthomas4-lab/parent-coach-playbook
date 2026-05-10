@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Player bending low to field a grounder that has just bounced off the ground, catching it in mid-hop."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Solid short-hop progression; ball terminology corrected."
 ---
 
 A short hop is the trickiest ground ball. The ball bounces right in front of the fielder. They have to time the catch perfectly or the ball skips off the glove.
 
-**What you need:** 20 soft baseballs (12"), a partner at 15 feet, a glove.
+**What you need:** 20 softballs (12"), a partner at 15 feet, a glove.
 
 **Setup:** Partner stands 15 feet away. Fielder in ready position.
 

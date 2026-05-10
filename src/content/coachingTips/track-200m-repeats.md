@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Runner sprinting a 200m on a track, then walking the next 200m as recovery, repeating the pattern."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard 200m repeat workout; sensitive due to high-effort intervals."
 ---
 
 Interval training builds speed and stamina at the same time. 200m repeats are the workhorse interval. Run 200m hard, recover by walking 200m, repeat. Six rounds and the kid is faster.

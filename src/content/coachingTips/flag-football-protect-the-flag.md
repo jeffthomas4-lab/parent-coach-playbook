@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young child running with a foam football tucked under one arm, the other arm bent slightly to shield the flag on that hip."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Ball-security and flag-protection basics for ages 5-7."
 ---
 
 The kid running the ball has two jobs: hold the ball and protect the flag. If they drop the ball or get the flag pulled, the play is over. This drill teaches the basic body position.

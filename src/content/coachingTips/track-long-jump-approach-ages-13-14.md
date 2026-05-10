@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Approach speed and board placement"
 publishedAt: 2026-04-15
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Long-jump approach; sensitive flag for jumping injury risk."
 ---
 
 The long jump is about speed at the right place. This drill teaches young athletes to build speed on approach and hit the board consistently.

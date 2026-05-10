@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Introduction to basic pass routes"
 publishedAt: 2026-02-05
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Five-route tree primer with QB calls. No contact."
 ---
 
 The route tree is a language. Young receivers need to learn the five basic routes and run them cleanly before anything else matters. This drill makes each route a habit.

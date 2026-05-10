@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "Running bases in proper sequence"
 publishedAt: 2026-01-16
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Standard baserunning intro; works for ages 5-7."
 ---
 
 Fast base running is about straight lines and quick feet. This drill teaches both at once by turning base running into a race.

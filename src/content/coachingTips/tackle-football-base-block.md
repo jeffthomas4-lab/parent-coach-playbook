@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "A young blocker with hands in the chest of a defender, driving the legs and moving them backward."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Live partner blocking; sensitive flagged for player-to-player contact."
 ---
 
 A base block is a blocker going straight at a defender and driving them back. This is the simplest block and the one that builds everything else. Cue: Plant, Punch, Drive, Finish.

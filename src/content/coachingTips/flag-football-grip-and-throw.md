@@ -10,6 +10,19 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Close-up of a child's hand gripping a football with three fingers across the laces, thumb underneath, ball held above the ear."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Grip-and-spiral fundamentals. Clean throwing vocabulary."
 ---
 
 The football grip is finger pads on the laces, thumb under the ball, ball held back behind the ear before the throw. Wrong grip and the throw wobbles or duck-flies short. Get the grip right and the throw improves immediately.

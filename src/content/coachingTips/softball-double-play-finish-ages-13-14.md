@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Second and first baseman executing 6-4-3 finish"
 publishedAt: 2026-03-24
 featured: false
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "DP drill with sliding contact at second flagged sensitive."
 ---
 
 A double play is won or lost at second base and first base. The feed to second is first. The finish at first (where the force play ends) is second. This drill runs both.

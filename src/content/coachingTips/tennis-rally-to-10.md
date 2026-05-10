@@ -10,6 +10,19 @@ layer: "situational"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Two players on opposite sides of the net rallying a green tennis ball back and forth, counting each shot they keep in play."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 7
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Cooperative rally; reads slightly basic but voice is clean."
 ---
 
 Tennis is a rally game. Whoever can keep the ball in play longest wins. Rally to 10 is the simplest cooperative game: two players, count every shot, restart at zero on a miss. This builds consistency, the foundation of match play.

@@ -10,6 +10,19 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Skater leaning into a tight turn, inside leg bent deep, outside leg trailing, body angled into the turn like a motorcycle taking a corner."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Drop-the-shoulder cue is a concrete fix, lean is the whole skill."
 ---
 
 A tight turn changes direction without slowing down. The body leans into the turn like a motorcycle. The inside skate edge holds the curve. Players who can do this beat opponents to loose pucks and shake defenders in tight spaces.

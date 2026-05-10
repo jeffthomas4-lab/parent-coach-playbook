@@ -10,11 +10,24 @@ layer: "foundations"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child in ready position with a glove on, receiving an underhand toss from an adult 12 feet away."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Two-hand catch fundamentals; ball term fixed."
 ---
 
 Receiving a thrown ball is different from self-toss. Now the kid has to react to the speed and angle. The cue is Eyes, Hands, Squeeze, Pull.
 
-**What you need:** 10 soft baseballs (11"), two kids or an adult and kid at 12 feet apart.
+**What you need:** 10 softballs (11"), two kids or an adult and kid at 12 feet apart.
 
 **Setup:** Stand 12 feet apart. Kid wears a glove and faces you in ready position.
 

@@ -10,11 +10,24 @@ layer: "skills"
 publishedAt: 2026-05-02
 featured: false
 illustrationBrief: "Child swinging at a tee positioned in front of the front hip, contacting the ball with an extended arm."
+editorial:
+  qualityGrade: 7
+  originalityGrade: 6
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Tee progression to front-hip contact; ball term fixed."
 ---
 
 Now the tee moves forward. Front hip contact teaches the kid to extend the arms and create better bat speed. This is the next step after belly button.
 
-**What you need:** A T-ball tee, 15 soft baseballs (11"), an age-appropriate bat, a fence or net.
+**What you need:** A T-ball tee, 15 softballs (11"), an age-appropriate bat, a fence or net.
 
 **Setup:** Tee positioned in front of the front hip, slightly lower than belly button. Kid in ready position.
 

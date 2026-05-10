@@ -10,6 +10,19 @@ progression: "refine"
 illustrationBrief: "Runner placement decisions in game scenarios"
 publishedAt: 2026-03-17
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Specific scenarios with realistic counts; voice is clean."
 ---
 
 Situational softball at this age means making decisions under pressure. This drill builds a hitter's comfort in high-leverage spots by running real game scenarios at game speed.

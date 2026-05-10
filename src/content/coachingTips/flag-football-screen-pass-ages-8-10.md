@@ -10,6 +10,19 @@ progression: "intro"
 illustrationBrief: "A quarterback short passing to a receiver near the line of scrimmage with blockers positioned to lead the receiver upfield."
 publishedAt: 2026-01-12
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 7
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-05-09
+  status: claude-reviewed
+  reviewerNotes: "Completed truncated variation. Clean flag-pull language."
 ---
 
 Screens teach receivers to catch and move, and they teach other kids blocking. This is the first drill where kids see themselves as a unit instead of individual routes.
@@ -30,4 +43,4 @@ Screens teach receivers to catch and move, and they teach other kids blocking. T
 
 Blockers should be moving before the receiver catches the ball, not reacting after. The QB's throw has to be catchable without the receiver jumping or extending. If a blocker is standing still waiting to see what happens, they're behind. The receiver should feel the screen forming and trust the blockers to move. If the receiver is dancing after the catch, the blockers aren't doing their job.
 
-**Variation:** Add a defender 8 ya
+**Variation:** Add a defender 8 yards downfield. The receiver has to catch and read which side of the blockers gives the cleanest path. The blockers have to react to where the defender is, not just step in a fixed direction.
