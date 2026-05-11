@@ -392,7 +392,7 @@ const scripts = defineCollection({
       relatedScripts:     z.array(z.string()).default([]),
       sportTags:          z.array(z.enum(SPORT_ENUM)).optional(),
       ageBands:           z.array(z.enum(AGE_ENUM)).optional(),
-      hero:               image().optional(),
+      hero:               z.string().optional(),
       heroAlt:            z.string().optional(),
       publishedAt:        z.coerce.date(),
       featured:           z.boolean().default(false),
@@ -428,5 +428,17 @@ const decisions = defineCollection({
     }),
 });
 
-export const collections = { articles, guides, resources, coachingTips, seasonCalendars, body, pathways, recruiting, adaptive, rules, scripts, decisions };
-
+export const collections = {
+  articles,
+  guides,
+  resources,
+  coachingTips,
+  seasonCalendars,
+  body,
+  pathways,
+  recruiting,
+  adaptive,
+  rules,
+  scripts,
+  decisions,
+};
