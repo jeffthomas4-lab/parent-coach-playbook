@@ -11,7 +11,7 @@ governingBodies:
   - name: "American Academy of Pediatrics: Climatic Heat Stress and Exercising Children (cold considerations referenced)"
     url: "https://publications.aap.org/pediatrics/"
   - name: "National Athletic Trainers' Association: Environmental Cold Injuries Position Statement"
-    url: "https://www.nata.org/practice-patient-care/health-issues/environmental"
+    url: "https://www.nata.org/practice-patient-care/health-issues"
   - name: "National Weather Service: Wind Chill Chart"
     url: "https://www.weather.gov/safety/cold-wind-chill-chart"
 editorial:

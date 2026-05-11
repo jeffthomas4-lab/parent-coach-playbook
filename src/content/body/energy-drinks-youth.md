@@ -30,7 +30,7 @@ editorial:
 
 The companion piece to caffeine in youth athletes covers the broader caffeine landscape. This piece is specifically about energy drinks, which the American Academy of Pediatrics has explicitly said are not appropriate for children or adolescents.
 
-Most parents have not seen the AAP position. Most kids in middle school and high school sports drink energy drinks regularly. The case for the team policy is direct.
+Most parents have not seen the American Academy of Pediatrics (AAP) position. Most kids in middle school and high school sports drink energy drinks regularly. The case for the team policy is direct.
 
 **What's actually in an energy drink.**
 
@@ -120,4 +120,4 @@ For tournament weekends, identify acceptable beverages in advance. Water, sports
 
 **The honest read.** Energy drinks are aggressively marketed to youth athletes. The AAP has been clear and consistent: not appropriate for kids or teens. Programs that explicitly prohibit them at team events have done the work the marketing made necessary. The kids who drink them are at small but real risk for cardiac, sleep, and anxiety events. The conversation costs nothing. The policy costs nothing. The kids who follow it are fine.
 
-If this content is reaching a parent whose kid is showing cardiac symptoms (chest pain, racing heart, dizziness) after energy drink consumption, call the pediatrician same day or go to the ER. Most events resolve. Some do not.
+If this content is reaching a parent whose kid is showing cardiac symptoms (chest pain, racing heart, dizziness) after energy drink consumption, call the pediatrician same day or go to the emergency room (ER). Most events resolve. Some do not.

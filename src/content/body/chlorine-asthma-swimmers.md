@@ -114,7 +114,7 @@ Pre-practice showering rule. Bathers showering before entering the pool reduces 
 
 Restroom breaks for kids. Pool urination is the largest source of organic matter introduced during practice. Encouraged restroom breaks reduce the problem.
 
-Chemical balance monitoring. Operators maintain free chlorine, combined chlorine (chloramines), and pH within standards. CDC's Model Aquatic Health Code provides the framework.
+Chemical balance monitoring. Operators maintain free chlorine, combined chlorine (chloramines), and pH within standards. U.S. Centers for Disease Control and Prevention (CDC)'s Model Aquatic Health Code provides the framework.
 
 Water replacement. Periodic addition of fresh water dilutes chloramine accumulation. Skipping this saves operating cost and creates the chloramine accumulation problem.
 

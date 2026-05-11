@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "Clear-eyed on the certifications. AHA and Red Cross direct sources. Hands-Only CPR is the realistic floor for most parents."
 ---
 
-The right level of CPR training for the parent who carries a snack rotation is not the same as the right level for a paid head coach. Both matter. The bar is different.
+The right level of cardiopulmonary resuscitation (CPR) training for the parent who carries a snack rotation is not the same as the right level for a paid head coach. Both matter. The bar is different.
 
 **Hands-Only CPR.** The American Heart Association's Hands-Only CPR is the technique for adult cardiac arrest. Two steps: call 911, push hard and fast in the center of the chest at 100 to 120 compressions per minute. No mouth-to-mouth required.
 
@@ -36,7 +36,7 @@ Hands-Only is what AHA recommends for an untrained bystander witnessing an adult
 
 **For kids, conventional CPR matters more.** Pediatric cardiac arrest is more often respiratory in origin, which means breaths matter. Conventional CPR with breaths at the 30:2 ratio is the technique for kids. This is one reason a parent who coaches youth sports should consider going past Hands-Only.
 
-**Heartsaver CPR/AED.** AHA's Heartsaver and Red Cross's Adult/Pediatric CPR/AED courses run about four to five hours. They cover Hands-Only, conventional CPR for adults and children, AED use, and choking response. They certify for two years. Cost is typically $50 to $90.
+**Heartsaver CPR/automated external defibrillator (AED).** AHA's Heartsaver and Red Cross's Adult/Pediatric CPR/AED courses run about four to five hours. They cover Hands-Only, conventional CPR for adults and children, AED use, and choking response. They certify for two years. Cost is typically $50 to $90.
 
 This is the realistic level for a parent who coaches, manages a team, or carries the safety bag. Four hours, every two years.
 

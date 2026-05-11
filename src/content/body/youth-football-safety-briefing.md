@@ -34,25 +34,25 @@ Youth football is the most equipment-heavy youth sport and the one with the most
 
 **One. Heat.** The leading cause of preventable death in youth football is exertional heatstroke during August preseason. Korey Stringer Institute data is clear on this. The fatality cluster sits in the first 14 days of practice, before kids are heat-acclimatized, when full pads come on too early or two-a-days start too soon.
 
-NATA's Preseason Heat-Acclimatization Guidelines lay out the protocol. Day 1 to 2: helmets only, no pads. Day 3: helmets and shoulder pads. Day 6: full pads earliest. Two-a-days: not on consecutive days, ever, and not before day 6. Programs that follow this protocol see the heat fatality risk drop dramatically.
+National Athletic Trainers' Association (NATA)'s Preseason Heat-Acclimatization Guidelines lay out the protocol. Day 1 to 2: helmets only, no pads. Day 3: helmets and shoulder pads. Day 6: full pads earliest. Two-a-days: not on consecutive days, ever, and not before day 6. Programs that follow this protocol see the heat fatality risk drop dramatically.
 
 The thing parents miss most: heat is the number one risk in youth football. Concussion is not. Heat is.
 
 **Two. Concussion.** Concussion is the next-highest-frequency serious injury in youth football, particularly at the middle school and high school transition. The published rate runs around 1 per 1,000 athletic exposures in youth football, with higher rates in tackle football than in flag.
 
-USA Football's Heads Up program, paired with CDC HEADS UP for parents and coaches, is the published protocol. Same-day removal for any suspected concussion. Written clearance from a licensed health care provider before return. Six-step graduated return-to-play.
+USA Football's Heads Up program, paired with U.S. Centers for Disease Control and Prevention (CDC) HEADS UP for parents and coaches, is the published protocol. Same-day removal for any suspected concussion. Written clearance from a licensed health care provider before return. Six-step graduated return-to-play.
 
 The thing parents miss: most concussions in youth football do not involve loss of consciousness. The kid who got hit and now seems off is the one who comes out, period.
 
 **Three. Knees.** Anterior cruciate ligament tears, meniscal injuries, and MCL sprains are common in youth football and increase sharply at the high-school level. Most are non-contact, planted-foot, change-of-direction injuries.
 
-The published risk-reduction protocol is a structured warm-up, often the FIFA 11+ or its football-adapted equivalents, run for 10 to 15 minutes before practice. Programs that adopt it see ACL injury reductions in published trials. Most youth-football programs do not.
+The published risk-reduction protocol is a structured warm-up, often the FIFA 11+ or its football-adapted equivalents, run for 10 to 15 minutes before practice. Programs that adopt it see anterior cruciate ligament (ACL) injury reductions in published trials. Most youth-football programs do not.
 
 **Four. Other contact injuries.** Stingers, contusions, sprained ankles, broken hands, broken collarbones. Frequent enough that any season has several per team. Most resolve with standard sports-medicine treatment.
 
 **The catastrophic risks, in proportion.** Cervical-spine injury is rare but catastrophic when it occurs. Heads-up tackling technique, taught by USA Football's Heads Up program and most state-level programs, focuses on taking the head out of the tackle. The published incidence of cervical-spine injury in youth football has declined since the 1970s by every available measure.
 
-Sudden cardiac arrest is rare in youth football, on the order of 1 in 50,000 to 1 in 100,000 athlete-years across youth sports broadly. AED on site, CPR-trained staff, 90-second response is the standard.
+Sudden cardiac arrest is rare in youth football, on the order of 1 in 50,000 to 1 in 100,000 athlete-years across youth sports broadly. automated external defibrillator (AED) on site, cardiopulmonary resuscitation (CPR)-trained staff, 90-second response is the standard.
 
 **What parents should ask before the season.**
 

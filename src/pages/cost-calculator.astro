@@ -278,16 +278,10 @@ const levels = [
 
       const computeTotal = () => state.items.reduce((sum, i) => sum + (i.included ? i.amount : 0), 0);
 
-      const render = () => {
-        sportSel.value = state.sport;
-        levelSel.value = state.level;
-        gamesInput!.value = String(state.games);
-        if (blurbEl) {
-          const b = blurbs.find(x => x.slug === state.level);
-          if (b) blurbEl.textContent = b.blurb;
-        }
-
-        // Line items
+      // Split: renderLines() rebuilds the line input list (destroys focused inputs,
+      // so only call when items change). renderTotals() updates totals/insights/sources
+      // without touching inputs, so typing preserves focus.
+      const renderLines = () => {
         linesEl.innerHTML = state.items.map((it, idx) => `
           <li class="border border-bone bg-paper p-3 grid grid-cols-[1fr_90px_auto] sm:grid-cols-[1fr_120px_auto] gap-2 sm:gap-3 items-center">
             <input type="text" value="${escapeAttr(it.label)}" data-line-label="${idx}"
@@ -305,6 +299,18 @@ const levels = [
             </div>
           </li>
         `).join('');
+      };
+
+      const renderTotals = () => {
+        sportSel.value = state.sport;
+        levelSel.value = state.level;
+        if (gamesInput && document.activeElement !== gamesInput) {
+          gamesInput.value = String(state.games);
+        }
+        if (blurbEl) {
+          const b = blurbs.find(x => x.slug === state.level);
+          if (b) blurbEl.textContent = b.blurb;
+        }
 
         // Totals
         const total = computeTotal();
@@ -387,13 +393,20 @@ const levels = [
         saveToStorage(state);
       };
 
+      // Full render: rebuilds line inputs and updates totals.
+      // Only call on structural state changes (items added/removed, sport/level swap, reset).
+      const render = () => {
+        renderLines();
+        renderTotals();
+      };
+
       // Wiring
       sportSel.addEventListener('change', () => { state = stateFromProfile(sportSel.value, state.level); render(); });
       levelSel.addEventListener('change', () => { state = stateFromProfile(state.sport, levelSel.value as Profile['level']); render(); });
       gamesInput!.addEventListener('input', () => {
         const v = parseInt(gamesInput!.value, 10);
         state.games = isNaN(v) ? 0 : v;
-        render();
+        renderTotals();
       });
       linesEl.addEventListener('input', (e) => {
         const t = e.target as HTMLInputElement;
@@ -403,7 +416,7 @@ const levels = [
         if (labelIdx !== null)  state.items[+labelIdx].label = t.value;
         if (amountIdx !== null) state.items[+amountIdx].amount = parseFloat(t.value) || 0;
         if (includeIdx !== null) state.items[+includeIdx].included = (t as HTMLInputElement).checked;
-        render();
+        renderTotals();
       });
       linesEl.addEventListener('click', (e) => {
         const t = e.target as HTMLElement;

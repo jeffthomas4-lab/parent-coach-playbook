@@ -42,7 +42,7 @@ Bulimia nervosa. Episodes of binge eating followed by compensatory behaviors (vo
 
 Other Specified Feeding or Eating Disorders (OSFED). The most common diagnosis in adolescents. Disordered eating that does not meet full criteria for anorexia or bulimia but produces real harm.
 
-Relative Energy Deficiency in Sport (RED-S). The IOC framework that captures the broader picture of inadequate energy availability in athletes. Includes the female athlete triad (low energy, menstrual disruption, low bone density) and recognizes male athletes are affected too. RED-S effects span cardiovascular, gastrointestinal, immunological, hormonal, and psychological systems.
+Relative Energy Deficiency in Sport (RED-S). The International Olympic Committee (IOC) framework that captures the broader picture of inadequate energy availability in athletes. Includes the female athlete triad (low energy, menstrual disruption, low bone density) and recognizes male athletes are affected too. Relative Energy Deficiency in Sport (RED-S) effects span cardiovascular, gastrointestinal, immunological, hormonal, and psychological systems.
 
 The shift from the older "female athlete triad" to RED-S reflects research showing the underfueling syndrome affects more than just the three classic triad components.
 

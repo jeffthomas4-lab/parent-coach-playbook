@@ -52,7 +52,7 @@ Some evidence of neuroprotective effects in concussion recovery research, though
 
 Side effects: weight gain (water retention), occasional GI upset at loading doses. No documented long-term harm in healthy adults at recommended doses.
 
-**The AAP position on supplements broadly.**
+**The American Academy of Pediatrics (AAP) position on supplements broadly.**
 
 The American Academy of Pediatrics' position on performance-enhancing supplements in youth athletes has historically been conservative. The published statement: pediatric and adolescent athletes should not use performance-enhancing supplements, and the AAP recommends that pediatricians counsel families against supplement use.
 
@@ -86,7 +86,7 @@ The marketing-driven supplement industry produces many products with poor qualit
 
 The dietary approach (adequate protein, adequate calories, adequate sleep, structured training) produces 80 percent of the available performance improvement creatine might add.
 
-If the family decides to use creatine, USADA-Certified or NSF Certified for Sport products are the only ones with verified content. Many widely-sold creatine products have failed third-party testing for contamination with banned substances.
+If the family decides to use creatine, U.S. Anti-Doping Agency (USADA)-Certified or NSF Certified for Sport products are the only ones with verified content. Many widely-sold creatine products have failed third-party testing for contamination with banned substances.
 
 Dosing: 3 to 5 grams per day, no loading required. Daily, with adequate fluid intake.
 
@@ -114,7 +114,7 @@ The performance edge is real but modest. The kid who skips creatine and works on
 
 **For coaches.**
 
-A team policy on supplement use clearly communicated to athletes and families. Most NCAA-aligned high school programs prohibit creatine. Most rec and club programs are silent.
+A team policy on supplement use clearly communicated to athletes and families. Most National Collegiate Athletic Association (NCAA)-aligned high school programs prohibit creatine. Most rec and club programs are silent.
 
 Education on third-party certification. Athletes who choose to use any supplement should use Certified for Sport, Informed-Sport, or USP Verified products only.
 

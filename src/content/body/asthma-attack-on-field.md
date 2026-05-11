@@ -62,7 +62,7 @@ If your kid has asthma and there is no Action Plan on file, that is the homework
 
 4. Stay with the kid. Do not leave them alone.
 
-A red-zone attack is a life-threatening event. Cardiac arrest can follow severe asthma. Time to EMS matters.
+A red-zone attack is a life-threatening event. Cardiac arrest can follow severe asthma. Time to emergency medical services (EMS) matters.
 
 **Spacers and proper technique.** Most kids do not use rescue inhalers correctly. The medication ends up in the back of the throat instead of the lungs. A spacer (a plastic chamber that attaches to the inhaler) doubles the lung delivery in pediatric users per pulmonology research.
 

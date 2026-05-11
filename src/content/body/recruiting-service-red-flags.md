@@ -9,7 +9,7 @@ ageBands: ["13-14", "15-plus"]
 publishedAt: 2026-01-28
 governingBodies:
   - name: "NCAA: Recruiting"
-    url: "https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx"
+    url: "https://web3.ncaa.org/ecwr3/"
   - name: "Federal Trade Commission"
     url: "https://www.ftc.gov/"
   - name: "Better Business Bureau"
@@ -68,7 +68,7 @@ The published research on recruiting outcomes is consistent: paid recruiting ser
 
 **The red flags.**
 
-Aggressive sales calls or in-home visits. Legitimate companies do not pressure with "sign tonight or lose your spot." NCAA-affiliated services do not operate this way.
+Aggressive sales calls or in-home visits. Legitimate companies do not pressure with "sign tonight or lose your spot." National Collegiate Athletic Association (NCAA)-affiliated services do not operate this way.
 
 Guarantees. No legitimate operator guarantees a scholarship or a roster spot. The athlete's performance, grades, and fit are the variables. A "money back if no scholarship" guarantee is a scam pattern.
 

@@ -24,13 +24,13 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-10
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. ARC, CDC, AAP cited. Clarifies the 'secondary drowning' myth while honoring the real post-event monitoring."
 ---
 
 The kid was under longer than expected. Someone pulled them out. They are coughing, scared, sometimes vomiting. They say they are fine.
 
-What happens in the next 10 minutes and the next 24 hours matters. The protocol below is what published guidance from the Red Cross, CDC, and AAP supports.
+What happens in the next 10 minutes and the next 24 hours matters. The protocol below is what published guidance from the Red Cross, U.S. Centers for Disease Control and Prevention (CDC), and American Academy of Pediatrics (AAP) supports.
 
 **Recognize first.**
 
@@ -42,7 +42,7 @@ The pull-out itself is the immediate priority. If you are watching this happen, 
 
 1. Lay the kid on their back on a flat surface near the water. Check for breathing.
 
-2. If not breathing, start CPR immediately. Continue until EMS arrives. AED if available.
+2. If not breathing, start cardiopulmonary resuscitation (CPR) immediately. Continue until emergency medical services (EMS) arrives. automated external defibrillator (AED) if available.
 
 3. If breathing, position the kid on their side (recovery position) to clear airway. Keep them warm with a dry towel or blanket.
 
@@ -52,7 +52,7 @@ The pull-out itself is the immediate priority. If you are watching this happen, 
 
 6. The kid often coughs forcefully, may vomit, may be confused or frightened. This is normal post-immersion.
 
-**The ER decision.**
+**The emergency room (ER) decision.**
 
 The published guidance from AAP and most pediatric emergency medicine sources is clear: any kid who has had a submersion event with documented water aspiration, loss of consciousness in the water, or significant coughing afterward should be evaluated at an ER.
 
@@ -66,7 +66,7 @@ If the kid coughed heavily, vomited, or had any breathing difficulty after the p
 
 If the kid was simply briefly submerged with no symptoms (rough water, surface dunk, brief panicked moment), evaluation may be less urgent but pediatrician same day is reasonable.
 
-The "they look fine, let's just watch them" approach for kids who actually inhaled water has produced documented bad outcomes. The ER evaluation rules out aspiration injury that can develop over hours.
+The "they look fine, let's just watch them" approach for kids who actually inhaled water has produced documented bad outcomes ([AAP statement on drowning](https://publications.aap.org/pediatrics/article/143/5/e20190850/76819/Prevention-of-Drowning)). The ER evaluation rules out aspiration injury that can develop over hours.
 
 **The "secondary drowning" question.**
 

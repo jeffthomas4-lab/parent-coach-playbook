@@ -25,7 +25,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-08
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. USATF, AAOS, IOC RED-S, National Alliance for Eating Disorders cited. The RED-S risk for adolescent girls in distance running is well-documented."
 ---
 
@@ -51,7 +51,7 @@ Prior stress fracture history (high recurrence rate).
 
 The prevention is mileage management, surface variety, adequate nutrition, and attention to risk factors. Programs that train kids hard early in the season often produce more stress fractures than programs that build slowly.
 
-**Two. Relative Energy Deficiency in Sport (RED-S).** Distance running has the highest documented rates of RED-S among youth sports. Mechanism: training volume exceeds calorie intake, producing low energy availability. The downstream effects:
+**Two. Relative Energy Deficiency in Sport (RED-S).** Distance running has the highest documented rates of Relative Energy Deficiency in Sport (RED-S) among youth sports. Mechanism: training volume exceeds calorie intake, producing low energy availability. The downstream effects:
 
 Menstrual disruption (amenorrhea) in female runners. Often the first visible sign.
 
@@ -73,7 +73,7 @@ RED-S can be subclinical for months or years. The kid running well, but missing 
 
 **Three. Overuse injuries.** Iliotibial band syndrome, patellofemoral pain syndrome, plantar fasciitis, Achilles tendinopathy, shin splints. All common in adolescent cross-country runners. Treatment is typically modification of training plus structured rehab.
 
-**Four. Heat illness.** Late-summer training, fall meets in warm weather. NATA heat acclimatization, WBGT thresholds, hydration. Same protocol as other outdoor sports.
+**Four. Heat illness.** Late-summer training, fall meets in warm weather. National Athletic Trainers' Association (NATA) heat acclimatization, WBGT thresholds, hydration. Same protocol as other outdoor sports.
 
 **Five. Cold-weather exposure.** Late-fall and winter cross-country running through cold and wet conditions. Hypothermia risk on long runs in bad weather, especially for kids returning from a race who stop moving.
 
@@ -91,7 +91,7 @@ For families evaluating a cross-country program, the cultural question is the cu
 
 **The catastrophic risks, in proportion.**
 
-Sudden cardiac arrest in young distance runners is rare but documented. AED on-site at meets, CPR-trained adults. Pre-participation cardiac screening per AHA guidelines.
+Sudden cardiac arrest in young distance runners is rare but documented. automated external defibrillator (AED) on-site at meets, cardiopulmonary resuscitation (CPR)-trained adults. Pre-participation cardiac screening per AHA guidelines.
 
 Severe hyponatremia (water intoxication) from over-hydration on long runs. Rare but documented in marathon-distance running; less common in cross country but possible on long training runs.
 

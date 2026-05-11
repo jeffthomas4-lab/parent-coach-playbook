@@ -110,11 +110,11 @@ Kids who are deep into heat illness sometimes report feeling fine. The mental cl
 
 A kid who appeared to have heatstroke and recovered in 10 minutes after cooling may have actually had heat exhaustion. Or may have had heatstroke that has not fully presented.
 
-Either way, ER evaluation is reasonable for any suspected heatstroke. Lab work checks for organ stress. Same-day return to play does not happen.
+Either way, emergency room (ER) evaluation is reasonable for any suspected heatstroke. Lab work checks for organ stress. Same-day return to play does not happen.
 
 **Prevention is what makes both rare.**
 
-NATA's Inter-Association Task Force on Preseason Heat-Acclimatization Guidelines covers the prevention. Day-by-day intensity progression, WBGT-based practice modification, hydration, cooling stations on the field. Programs that follow this see fewer heat events. Programs that do not are the source of most preventable heat fatalities.
+National Athletic Trainers' Association (NATA)'s Inter-Association Task Force on Preseason Heat-Acclimatization Guidelines covers the prevention. Day-by-day intensity progression, WBGT-based practice modification, hydration, cooling stations on the field. Programs that follow this see fewer heat events. Programs that do not are the source of most preventable heat fatalities.
 
 **For coaches.**
 

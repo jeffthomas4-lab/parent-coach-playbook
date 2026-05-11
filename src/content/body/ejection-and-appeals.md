@@ -43,7 +43,7 @@ The mechanics differ by sport but the structure rhymes:
 
 **The 48-hour window.**
 
-Most sports' appeals processes have tight deadlines. NFHS-aligned state associations typically require notice of intent to appeal within 24 to 72 hours of the ejection. USA Hockey's appeals process for game misconducts has a 14-day window. Each youth NGB has its own.
+Most sports' appeals processes have tight deadlines. National Federation of State High School Associations (NFHS)-aligned state associations typically require notice of intent to appeal within 24 to 72 hours of the ejection. USA Hockey's appeals process for game misconducts has a 14-day window. Each youth NGB has its own.
 
 What this means: if you think the ejection was wrong, do not wait. Email the head coach, the AD, and the league rules administrator that day or the next. The window closes fast.
 

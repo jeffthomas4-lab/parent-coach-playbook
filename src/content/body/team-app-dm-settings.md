@@ -52,7 +52,7 @@ For GroupMe: most coach-team threads are visible to all members, which is fine. 
 
 For Slack: workspace administrators can disable direct messages between specific roles. If your team uses Slack, ask the workspace admin to disable DMs from coach roles to athlete roles.
 
-**The COPPA piece.** The Children's Online Privacy Protection Rule, enforced by the Federal Trade Commission, requires verifiable parental consent before an online service can collect personal information from children under 13. Most team apps comply by requiring parent-managed accounts for under-13 users. Verify your kid's account type. If your 11-year-old has their own account with their own email, that may not be COPPA-compliant.
+**The Children's Online Privacy Protection Act (COPPA) piece.** The Children's Online Privacy Protection Rule, enforced by the Federal Trade Commission, requires verifiable parental consent before an online service can collect personal information from children under 13. Most team apps comply by requiring parent-managed accounts for under-13 users. Verify your kid's account type. If your 11-year-old has their own account with their own email, that may not be COPPA-compliant.
 
 **Photo and video permissions.** This is where most leagues and teams have the loosest practices. The default in most team apps is that any team member can post photos to the team gallery. The risk: a casual locker-room shot, a bench shot showing a kid in a moment they would not consent to publicly, a video that shows a player's face along with their last name and team city.
 

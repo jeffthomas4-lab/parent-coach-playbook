@@ -14,7 +14,7 @@ governingBodies:
   - name: "USA Volleyball: Travel Policies"
     url: "https://www.usavolleyball.org/safesport/"
   - name: "USA Hockey: Travel Standards"
-    url: "https://www.usahockey.com/safety"
+    url: "https://www.usahockey.com/page/show/910900-safety"
 editorial:
   qualityGrade: 8
   originalityGrade: 8

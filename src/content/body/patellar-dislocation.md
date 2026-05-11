@@ -54,7 +54,7 @@ In some cases, the kneecap has spontaneously reduced (popped back) before adults
 
 4. Apply ice over a cloth for 15 to 20 minutes. Reduces swelling and pain.
 
-5. For a dislocation that has not spontaneously reduced, do not try to push the kneecap back yourself. The straight-leg-lift technique used by athletic trainers and ER providers (gentle knee extension while encouraging the kid to relax the quadriceps) often produces spontaneous reduction. Without training, attempting it can cause additional injury.
+5. For a dislocation that has not spontaneously reduced, do not try to push the kneecap back yourself. The straight-leg-lift technique used by athletic trainers and emergency room (ER) providers (gentle knee extension while encouraging the kid to relax the quadriceps) often produces spontaneous reduction. Without training, attempting it can cause additional injury.
 
 6. Transport to ER or urgent care with imaging capability. Imaging confirms the diagnosis, rules out associated fractures (osteochondral fragments), and determines the recovery plan.
 

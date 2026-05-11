@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "AAP and FDA cited directly. The under-12 zero recommendation is the load-bearing AAP position. Filed under nutrition-substance, the new safetyCategory shipped with this piece."
 ---
 
-The American Academy of Pediatrics' position on caffeine in kids is direct. No caffeine for children under 12. For adolescents 12 to 18, AAP recommends limiting caffeine to less than 100 mg per day, which is roughly one cup of coffee or one 8-ounce energy drink.
+The American Academy of Pediatrics' position on caffeine in kids is direct. No caffeine for children under 12. For adolescents 12 to 18, American Academy of Pediatrics (AAP) recommends limiting caffeine to less than 100 mg per day, which is roughly one cup of coffee or one 8-ounce energy drink.
 
 Most parents do not know this is the published guidance. Most kids in youth sports above age 12 consume more than that on a regular basis.
 

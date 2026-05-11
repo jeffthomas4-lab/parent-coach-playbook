@@ -27,7 +27,7 @@ The American Academy of Pediatrics, the American Orthopaedic Society for Sports 
 
 **Why parents specialize early anyway.** Three reasons usually. The travel club tells them their kid will fall behind. They worry about losing roster spots if they leave. They are afraid the kid won't get recruited. None of these survive the data.
 
-**What the data says about the recruiting argument.** A 2017 NCAA survey of D1 athletes found that the majority played multiple sports through high school. Of football D1 recruits, 87% played a second varsity sport. Of basketball D1 recruits, 72%. Coaches at the highest level specifically value multi-sport athletes for their athletic literacy, durability, and lower burnout risk.
+**What the data says about the recruiting argument.** A 2017 National Collegiate Athletic Association (NCAA) survey of D1 athletes found that the majority played multiple sports through high school. Of football D1 recruits, 87% played a second varsity sport. Of basketball D1 recruits, 72%. Coaches at the highest level specifically value multi-sport athletes for their athletic literacy, durability, and lower burnout risk.
 
 **What single-sport play costs.** Higher overuse injury rates (UCL injuries in baseball, ACL in soccer, stress fractures in distance runners, hip injuries in dancers). Higher burnout rates. Earlier dropout from sport entirely. The kid who specializes in soccer at 9 is statistically more likely to quit soccer by 14 than the kid who plays soccer plus one other sport.
 
@@ -35,6 +35,6 @@ The American Academy of Pediatrics, the American Orthopaedic Society for Sports 
 
 **When specialization actually starts to make sense.** After age 14-15 for most sports. Earlier in some sports with very early peak ages (gymnastics, figure skating, diving). Even in those sports, specialization should mean focused primary-sport training, not the elimination of all other physical activity.
 
-**The two-month rule.** AAP's guidance on this is specific: at least 2-3 months per year away from competitive single-sport activity. Spread across the year (a few weeks here and there) or in one block. The block is easier to enforce. The break is not optional. It is when the body recovers from accumulated stress and when the kid recovers from the psychological grind of competition.
+**The two-month rule.** American Academy of Pediatrics (AAP)'s guidance on this is specific: at least 2-3 months per year away from competitive single-sport activity. Spread across the year (a few weeks here and there) or in one block. The block is easier to enforce. The break is not optional. It is when the body recovers from accumulated stress and when the kid recovers from the psychological grind of competition.
 
 The honest part: every travel coach reading this will tell you why their sport is the exception. They are wrong. The science is consistent across sports. Hol

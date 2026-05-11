@@ -57,7 +57,7 @@ How: kneel above or beside the kid's head. Place one hand on each side of the he
 
 Do not lift the head. Do not turn the head to face you. Do not put a pillow under the head.
 
-Stay in this position until EMS arrives. This may be 10 to 15 minutes. Your hands do not move during that time.
+Stay in this position until emergency medical services (EMS) arrives. This may be 10 to 15 minutes. Your hands do not move during that time.
 
 **Call 911.**
 
@@ -67,7 +67,7 @@ Confirm address and gate access. EMS access to the field is part of every progra
 
 **The helmet question.**
 
-For football-equipped athletes, the helmet stays on. NATA's position statement is direct: do not remove the helmet at the field for a suspected spinal injury. The helmet and shoulder pads form a unit that maintains cervical alignment. EMS removes them together at the hospital, with trained personnel, on a backboard.
+For football-equipped athletes, the helmet stays on. National Athletic Trainers' Association (NATA)'s position statement is direct: do not remove the helmet at the field for a suspected spinal injury. The helmet and shoulder pads form a unit that maintains cervical alignment. EMS removes them together at the hospital, with trained personnel, on a backboard.
 
 For sports without helmets (cheer, gymnastics, swim), the head is stabilized directly by hand.
 
@@ -83,7 +83,7 @@ Stabilize the head in the prone position. Wait for EMS. They will perform a coor
 
 **Prone and not breathing.**
 
-The exception to "do not move." Airway is the priority. Coordinated log-roll to supine, maintaining cervical alignment, with the most adults possible (4 to 5 ideal). Begin rescue breathing or CPR.
+The exception to "do not move." Airway is the priority. Coordinated log-roll to supine, maintaining cervical alignment, with the most adults possible (4 to 5 ideal). Begin rescue breathing or cardiopulmonary resuscitation (CPR).
 
 This is the scenario where training matters most. If you are not trained, hold cervical alignment and wait. Untrained log-rolling can cause additional spinal injury.
 

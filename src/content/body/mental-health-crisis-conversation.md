@@ -17,7 +17,7 @@ governingBodies:
   - name: "JED Foundation"
     url: "https://jedfoundation.org/"
 editorial:
-  qualityGrade: 10
+  qualityGrade: 9
   originalityGrade: 9
   voiceGrade: 9
   flagInappropriateness: false
@@ -26,13 +26,13 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-15
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. 988, AAP, AFSP, JED cited. Follows user-wellbeing guidance: no safety-assessment questions, no categorical confidentiality assurances, directs to professionals for crisis support."
 ---
 
 Your kid said something that worried you. Maybe directly ("I don't want to be here anymore"). Maybe indirectly ("I'm so tired of all of this"). Maybe through a behavior change you noticed and the conversation you initiated.
 
-The next 30 minutes is one of the most important parental moments you will have. The script below is what the published research and clinical guidance from AAP, AFSP, and JED Foundation converges on. It is not therapy. It is what a thoughtful parent does to support a kid while connecting them to professional help.
+The next 30 minutes is one of the most important parental moments you will have. The script below is what the published research and clinical guidance from American Academy of Pediatrics (AAP), AFSP, and JED Foundation (JED) Foundation converges on. It is not therapy. It is what a thoughtful parent does to support a kid while connecting them to professional help.
 
 This is sensitive content. If you are reading this in active crisis with your kid right now, you can call or text **988** at any time. The Suicide & Crisis Lifeline supports both the person in crisis and the family member.
 

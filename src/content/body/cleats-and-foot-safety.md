@@ -36,7 +36,7 @@ Soccer: most youth leagues prohibit metal studs. Molded plastic or rubber studs 
 
 Baseball and softball: molded only at younger ages (typically 8 and under, sometimes 12 and under per league rules). Metal cleats are allowed at older youth levels, generally 13 and up. Specific league rules vary; check the rule packet.
 
-Football: molded plastic studs at most youth levels. NFL-style detachable studs allowed at older levels per NFHS rules.
+Football: molded plastic studs at most youth levels. NFL-style detachable studs allowed at older levels per National Federation of State High School Associations (NFHS) rules.
 
 Lacrosse: molded only at most youth levels.
 
@@ -44,7 +44,7 @@ Track and field: spike length and material vary by event. Generally pin spikes f
 
 Field hockey: molded only.
 
-The "metal cleat" rule is mostly about reducing laceration risk in sliding contact and inadvertent kicks. Programs that enforce the rule see fewer cleat-related ER visits.
+The "metal cleat" rule is mostly about reducing laceration risk in sliding contact and inadvertent kicks. Programs that enforce the rule see fewer cleat-related emergency room (ER) visits.
 
 **Fit: the ten-minute rule.**
 

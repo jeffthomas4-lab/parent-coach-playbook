@@ -24,7 +24,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-02-15
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "NSCA and AAP cited. The 'kids can lift safely' position is current consensus, contrary to older folk wisdom."
 ---
 
@@ -36,7 +36,7 @@ This piece is the framework.
 
 Folk wisdom: kids should not lift weights, it stunts growth, strength training is dangerous during the growth spurt.
 
-Research consensus: properly supervised strength training is safe and beneficial for kids and adolescents. The NSCA, AAP, and major pediatric sports-medicine organizations have published position statements supporting it. The growth-plate concerns from older recommendations have not been borne out in modern research with appropriate supervision and progression.
+Research consensus: properly supervised strength training is safe and beneficial for kids and adolescents. The National Strength and Conditioning Association (NSCA), American Academy of Pediatrics (AAP), and major pediatric sports-medicine organizations have published position statements supporting it. The growth-plate concerns from older recommendations have not been borne out in modern research with appropriate supervision and progression.
 
 What does cause injury in youth strength training:
 
@@ -134,7 +134,7 @@ Plyometric training is appropriate for kids and adolescents under supervision.
 
 Volume should be modest relative to advanced adult programs. Low-volume, high-quality jumps with full recovery between sets.
 
-Landing technique matters most. The ACL-injury-prevention research is largely about plyometric and landing-mechanics work.
+Landing technique matters most. The anterior cruciate ligament (ACL)-injury-prevention research is largely about plyometric and landing-mechanics work.
 
 For most youth athletes, integrating plyometric work into the warm-up (FIFA 11+ style) and into 2 to 3 short sessions per week is appropriate. Hour-long plyometric sessions without supervision are not.
 

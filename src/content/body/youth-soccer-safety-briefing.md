@@ -33,7 +33,7 @@ Soccer is the highest-participation youth sport in the U.S. The injury data is w
 
 **One. Ankle sprains.** Top youth-soccer injury by category. Lateral mechanism, frequent direction changes, contact and non-contact. Ankle bracing for kids with prior sprain history reduces recurrence by around 50 percent in published trials.
 
-**Two. ACL tears, especially in girls.** Female youth soccer players have ACL injury rates 2 to 8 times higher than male players in published epidemiology, depending on age and level. The mechanism is non-contact, planted-foot, knee-in pivot.
+**Two. anterior cruciate ligament (ACL) tears, especially in girls.** Female youth soccer players have ACL injury rates 2 to 8 times higher than male players in published epidemiology, depending on age and level. The mechanism is non-contact, planted-foot, knee-in pivot.
 
 The FIFA 11+ neuromuscular warm-up (15 minutes pre-practice, 3 times per week) reduces ACL injuries by 30 to 50 percent in published trials. The protocol is free, runs in 10 to 15 minutes, and has been published in peer-reviewed journals for over a decade. Programs that adopt it see fewer ACL tears. Most do not.
 
@@ -43,9 +43,9 @@ For families with a daughter playing competitive soccer, the FIFA 11+ adoption q
 
 Programs that follow the U.S. Soccer heading policy keep deliberate head impacts down for younger kids. Programs that ignore it do not.
 
-CDC HEADS UP applies. Same-day removal, written clearance, six-step return.
+U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies. Same-day removal, written clearance, six-step return.
 
-**Four. Heat and lightning.** Outdoor practice in summer heat is the load-bearing weather risk. NATA heat acclimatization, WBGT-based modifications, hydration. The 30/30 rule for lightning. Both are protocol questions, not judgment calls.
+**Four. Heat and lightning.** Outdoor practice in summer heat is the load-bearing weather risk. National Athletic Trainers' Association (NATA) heat acclimatization, WBGT-based modifications, hydration. The 30/30 rule for lightning. Both are protocol questions, not judgment calls.
 
 **Five. Goalkeeper-specific risks.** Goalkeepers face additional impact mechanisms (knee-to-head, shoulder-to-ground, elbow contact). Goalkeeper headgear is sometimes used; the data on its effectiveness is mixed.
 

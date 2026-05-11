@@ -96,6 +96,6 @@ For tournament weekends on turf, pack ice towels, cold drinks, and shade options
 
 **The longer-term concerns.**
 
-Some research has investigated potential health effects of crumb-rubber infill (heavy metals, PAHs). The EPA and CDC have published evaluations; current evidence does not establish a clear health risk at typical exposures, though research continues. The thermal risk is the more established concern in current published research.
+Some research has investigated potential health effects of crumb-rubber infill (heavy metals, PAHs). The EPA and U.S. Centers for Disease Control and Prevention (CDC) have published evaluations; current evidence does not establish a clear health risk at typical exposures, though research continues. The thermal risk is the more established concern in current published research.
 
 **The honest read.** Artificial turf has thermal properties grass does not. Most heat-illness protocols were written when fields were grass. Programs playing on turf during summer should add 5 to 10°F to their conservative thresholds and treat the surface as a heat source. The kid who burned a knee on a slide on a 95°F day was on a 145°F surface that nobody measured.

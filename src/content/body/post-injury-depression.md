@@ -13,7 +13,7 @@ governingBodies:
   - name: "American Psychological Association"
     url: "https://www.apa.org/"
   - name: "JED Foundation: JED Sports"
-    url: "https://jedfoundation.org/jed-sports/"
+    url: "https://jedfoundation.org/programs/"
 editorial:
   qualityGrade: 9
   originalityGrade: 9
@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "Sensitive flagged. AAP, APA, JED Foundation cited. Companion to suicidal-ideation piece for the post-injury pathway."
 ---
 
-The kid tears their ACL in November. Surgery in December. Rehab for 9 months. The team plays without them. The college coaches who were watching last fall stop responding. The identity built over years of being "the soccer kid" runs into a year of not being able to be the soccer kid.
+The kid tears their anterior cruciate ligament (ACL) in November. Surgery in December. Rehab for 9 months. The team plays without them. The college coaches who were watching last fall stop responding. The identity built over years of being "the soccer kid" runs into a year of not being able to be the soccer kid.
 
 This is post-injury depression, and the published research on it has grown substantially. The rates of depressive symptoms in seriously-injured young athletes are meaningfully elevated compared to the general adolescent population. The kid is at increased risk for sustained depression, anxiety, substance use, and in some cases suicidal ideation through the recovery window.
 
@@ -126,7 +126,7 @@ Activity outside sport. New things the kid is good at, new social contexts, new 
 
 Professional support. A sports-psychology counselor or general therapist with sport experience can be transformative for an athlete in this window. Many athletic departments have referral pathways. Pediatricians can refer.
 
-For families with insurance constraints, the JED Foundation's JED Sports resources and APA's Find a Psychologist tool are starting points. Some sport-psychology graduate programs offer reduced-fee services.
+For families with insurance constraints, the JED Foundation (JED) Foundation's JED Sports resources and APA's Find a Psychologist tool are starting points. Some sport-psychology graduate programs offer reduced-fee services.
 
 **The return-to-sport mental piece.**
 

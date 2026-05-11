@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-01-12
 governingBodies:
   - name: "NATA: Inter-Association Task Force EAP Recommendations"
-    url: "https://www.nata.org/practice-patient-care/health-issues/secondary-school-safety"
+    url: "https://www.nata.org/practice-patient-care"
   - name: "Korey Stringer Institute: EAP Resources"
     url: "https://koreystringer.institute.uconn.edu/"
   - name: "American Academy of Pediatrics"
@@ -41,21 +41,21 @@ editorial:
   reviewerNotes: "NATA EAP framework is the source. Practical template every program should adapt. Companion to AED-location and CPR pieces."
 ---
 
-NATA, KSI, and the AAP all converge on the same framework: every athletic venue should have a written Emergency Action Plan (EAP), reviewed before each season, practiced at least once, and posted at the venue. Most youth programs do not have one. Programs that do see meaningfully better outcomes when emergencies happen.
+National Athletic Trainers' Association (NATA), KSI, and the American Academy of Pediatrics (AAP) all converge on the same framework: every athletic venue should have a written Emergency Action Plan (EAP), reviewed before each season, practiced at least once, and posted at the venue. Most youth programs do not have one. Programs that do see meaningfully better outcomes when emergencies happen.
 
 This is the template. Adapt it for each venue your program uses.
 
 **The 11 elements.**
 
-1. The 911 address. Not "the field on Maple Street." The address EMS will navigate to. For multi-field complexes, the specific entrance and field designation. Include GPS coordinates if the venue is hard to find.
+1. The 911 address. Not "the field on Maple Street." The address emergency medical services (EMS) will navigate to. For multi-field complexes, the specific entrance and field designation. Include GPS coordinates if the venue is hard to find.
 
-2. The closest hospital with a pediatric ER. Full address, phone number, drive time in normal traffic, drive time in heavy traffic. Some pediatric emergencies are best routed to a children's hospital even if it is not the closest ER.
+2. The closest hospital with a pediatric emergency room (ER). Full address, phone number, drive time in normal traffic, drive time in heavy traffic. Some pediatric emergencies are best routed to a children's hospital even if it is not the closest ER.
 
 3. The secondary closest urgent care. For non-911 situations.
 
-4. AED location. Walking time from each field, court, or rink at the venue. The 90-second standard from the AED-location piece. Include who has the key or code if the AED is in a locked cabinet.
+4. automated external defibrillator (AED) location. Walking time from each field, court, or rink at the venue. The 90-second standard from the AED-location piece. Include who has the key or code if the AED is in a locked cabinet.
 
-5. CPR/AED-certified adults. Named roster of every adult on-site at practices and games who is currently certified. Phone numbers. The kid in cardiac arrest needs the certified adult identifiable in 30 seconds.
+5. cardiopulmonary resuscitation (CPR)/AED-certified adults. Named roster of every adult on-site at practices and games who is currently certified. Phone numbers. The kid in cardiac arrest needs the certified adult identifiable in 30 seconds.
 
 6. EMS access. Which gate. Who has the key. Line of sight from the field. For school facilities with locked perimeters, the access plan needs to be coordinated with the school.
 

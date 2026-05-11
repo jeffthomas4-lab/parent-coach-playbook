@@ -26,7 +26,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-19
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. TikTok safety, FTC COPPA, Common Sense, NCMEC cited. Concrete settings instructions are the actionable piece."
 ---
 
@@ -42,7 +42,7 @@ For accounts of users 16 to 17: account public by default. Direct messages from 
 
 For accounts of users 18+: full default settings.
 
-The age the platform thinks the user is determines defaults. Kids under 13 are not supposed to have accounts per TikTok's terms of service and COPPA, but many do, with birth dates listed as older than they are.
+The age the platform thinks the user is determines defaults. Kids under 13 are not supposed to have accounts per TikTok's terms of service and Children's Online Privacy Protection Act (COPPA), but many do, with birth dates listed as older than they are.
 
 **The settings to change.**
 

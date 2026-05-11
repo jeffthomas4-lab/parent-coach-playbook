@@ -34,7 +34,7 @@ The protocol below is what good travel teams set up. Drowsy driving is one of th
 
 **The data.**
 
-NHTSA estimates 100,000 reported crashes per year involve drowsy driving. The actual number is higher because fatigue is hard to verify after the fact.
+National Highway Traffic Safety Administration (NHTSA) estimates 100,000 reported crashes per year involve drowsy driving. The actual number is higher because fatigue is hard to verify after the fact.
 
 AAA Foundation research has shown that being awake for 17 to 19 hours produces driving impairment equivalent to a blood-alcohol concentration of 0.05 percent. Awake for 24 hours, the impairment matches BAC of 0.10 percent (above the legal limit in every state).
 
@@ -42,7 +42,7 @@ The peak windows for drowsy crashes are 2 AM to 6 AM and 2 PM to 4 PM (the natur
 
 **The 4-hour rule.**
 
-A practical youth-sports parent rule that aligns with FMCSA principles for commercial drivers (though parents are not commercial drivers, the underlying physiology is the same):
+A practical youth-sports parent rule that aligns with Federal Motor Carrier Safety Administration (FMCSA) principles for commercial drivers (though parents are not commercial drivers, the underlying physiology is the same):
 
 No single driver should drive more than 4 hours without a 30-minute break.
 

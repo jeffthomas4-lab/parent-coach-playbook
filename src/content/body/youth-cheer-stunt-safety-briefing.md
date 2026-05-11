@@ -35,7 +35,7 @@ This is the sport-briefing parents should read before signing the registration. 
 
 **One. Concussion.** Cheer is consistently in the top three to five youth sports for concussion incidence among girls. Mechanisms include head-to-head contact during stunt construction, head-to-ground from failed stunts, and head-to-elbow contact in close formations.
 
-USA Cheer's stunt progression rules, AACCA safety standards, and the increasing use of certified instructors have reduced concussion incidence over the past decade but it remains real. CDC HEADS UP applies. Same-day removal, written clearance, six-step return.
+USA Cheer's stunt progression rules, AACCA safety standards, and the increasing use of certified instructors have reduced concussion incidence over the past decade but it remains real. U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies. Same-day removal, written clearance, six-step return.
 
 **Two. Catastrophic head, neck, and spine injuries.** Cheer has had the highest rate of direct catastrophic injuries in female high school sport for decades per NCCSIR data. Mechanism: falls from height during stunts (basket tosses, pyramids, partner stunts), often onto hard surfaces.
 
@@ -57,7 +57,7 @@ Coaching certification. Programs led by USA Cheer or AACCA-certified coaches hav
 
 **Five. Lower-back injuries.** Repetitive hyperextension under load (back walkovers, layouts, jumps). Spondylolysis is documented in cheer athletes at higher rates than the general population. Persistent low-back pain warrants imaging by a pediatric sports-medicine specialist.
 
-**Six. Knee injuries.** Tumbling and stunt landings produce ACL, meniscus, and patellar injuries. Female cheer athletes have ACL injury rates that benefit from the neuromuscular warm-up programs proven in soccer and basketball. Most cheer programs do not run them.
+**Six. Knee injuries.** Tumbling and stunt landings produce anterior cruciate ligament (ACL), meniscus, and patellar injuries. Female cheer athletes have ACL injury rates that benefit from the neuromuscular warm-up programs proven in soccer and basketball. Most cheer programs do not run them.
 
 **Seven. Eating disorders and disordered eating.** Cheer has documented elevated rates of disordered eating, particularly in competitive all-star programs. Body-composition culture varies by program; the highest-risk programs are the ones with body-shape commentary as part of the team culture.
 

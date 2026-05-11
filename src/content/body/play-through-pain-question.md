@@ -90,7 +90,7 @@ The framework works better than guilt or fear. The kid can opt into the version 
 
 Coaches set the cultural tone. The coach who praises the kid who plays through is the coach who incentivizes hiding pain. The coach who says "tell me if something hurts so we can address it together" is the coach who gets accurate reports.
 
-The published research from NATA on coach-influenced injury reporting is consistent: coaches who explicitly frame honesty about pain as part of being a good teammate get more accurate reports than coaches who frame toughness in opposition to honesty.
+The published research from National Athletic Trainers' Association (NATA) on coach-influenced injury reporting is consistent: coaches who explicitly frame honesty about pain as part of being a good teammate get more accurate reports than coaches who frame toughness in opposition to honesty.
 
 **The "I just don't want to disappoint the team" pattern.**
 

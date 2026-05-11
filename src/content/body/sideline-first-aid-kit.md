@@ -66,7 +66,7 @@ Medical tape, athletic, 1-inch. For securing gauze and minor strapping.
 
 Self-adherent wrap, often called Coban. The same thing nurses use to hold gauze without sticking to skin. Stays on through sweat.
 
-Elastic bandages, two sizes. For ankle and wrist support after a sprain that does not warrant immediate ER.
+Elastic bandages, two sizes. For ankle and wrist support after a sprain that does not warrant immediate emergency room (ER).
 
 Instant cold packs, four of them. Single-use. The reusable gel packs work better but require a cooler.
 
@@ -82,9 +82,9 @@ Tweezers. Splinters happen.
 
 Triangular bandage for a sling. Light, takes no space, and turns a suspected broken arm from a panic into a manageable thing while you wait for parents.
 
-CPR face shield with a one-way valve. If you ever need it, you will be very glad you carried it. About $4.
+cardiopulmonary resuscitation (CPR) face shield with a one-way valve. If you ever need it, you will be very glad you carried it. About $4.
 
-Rescue blanket. Heat exhaustion, shock, cold-weather wait for EMS. The mylar packs to nothing.
+Rescue blanket. Heat exhaustion, shock, cold-weather wait for emergency medical services (EMS). The mylar packs to nothing.
 
 Tampons. The EMT trick for nosebleeds that will not stop is a tampon. They are also useful for athletes on their periods who get caught short. Carry both small and regular.
 

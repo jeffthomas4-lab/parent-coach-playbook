@@ -85,7 +85,7 @@ Do not post identifying information beyond first name and team. Last name plus t
 
 For action photos, prefer mid-action and back angles over close-ups of faces, especially for kids under 13.
 
-**The COPPA piece.** The Children's Online Privacy Protection Rule, enforced by the FTC, restricts collection of personal information from children under 13. For team-managed platforms with kids under 13 active on them, parental consent is required, and any geolocation data collected falls under COPPA's reach.
+**The Children's Online Privacy Protection Act (COPPA) piece.** The Children's Online Privacy Protection Rule, enforced by the FTC, restricts collection of personal information from children under 13. For team-managed platforms with kids under 13 active on them, parental consent is required, and any geolocation data collected falls under COPPA's reach.
 
 **The conversation with the older kid.** A 13-year-old with their own Instagram or TikTok should know about Snap Map ghost mode, location toggles, and the difference between a public account and a private one. Common Sense Media has age-appropriate resources for this conversation.
 

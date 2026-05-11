@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-03-10
 governingBodies:
   - name: "U.S. Consumer Product Safety Commission: Soccer Goal Safety"
-    url: "https://www.cpsc.gov/safety-education/safety-education-centers/sports-recreation/soccer-goal-safety"
+    url: "https://www.cpsc.gov/Safety"
   - name: "U.S. Soccer Federation"
     url: "https://www.ussoccer.com/"
   - name: "ASTM International: Soccer Goal Standards"
@@ -34,7 +34,7 @@ The fix is simple. The goal is anchored. Most leagues that have had this happen 
 
 This piece is the protocol every parent should know.
 
-**The CPSC data.**
+**The U.S. Consumer Product Safety Commission (CPSC) data.**
 
 CPSC consumer alerts on movable soccer goals span three decades. The pattern documented in case reports:
 

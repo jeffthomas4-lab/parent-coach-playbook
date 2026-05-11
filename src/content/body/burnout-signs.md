@@ -42,6 +42,6 @@ Burnout in youth athletes follows a predictable pattern. It rarely shows up as a
 
 **When burnout is more than burnout.** Persistent loss of joy across multiple areas of life (not just sport). Significant weight loss or gain. Sleep disruption that doesn't resolve with rest. Talk of self-harm. Any of these need a pediatrician conversation right away. Adolescent depression and burnout overlap, and they often need separate treatment paths.
 
-**The off-season as medicine.** AAP recommendation: at least 2-3 months per year off from competitive single-sport play. Spread or block. The block is more effective for burnout recovery. A kid who takes June and July off competitive volleyball does not lose ground in the long run. They come back rested, healthier, and often re-energized about the sport.
+**The off-season as medicine.** American Academy of Pediatrics (AAP) recommendation: at least 2-3 months per year off from competitive single-sport play. Spread or block. The block is more effective for burnout recovery. A kid who takes June and July off competitive volleyball does not lose ground in the long run. They come back rested, healthier, and often re-energized about the sport.
 
 The honest part: the youth sports system is structured to push kids toward burnout. The travel club has every reason to want year-round commitment. The recruiting culture pushes early specialization. The parent investment makes "stepping back" feel like a loss. The job is to push back against all of that on behalf of the kid in front of you. That's the

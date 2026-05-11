@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "Sensitive flagged. Stop the Bleed and ACS direct sources. The three techniques are the published civilian standard."
 ---
 
-Stop the Bleed is the civilian bleeding-control program from the American College of Surgeons. The premise is simple: significant bleeding can kill a person in 5 to 10 minutes, faster than EMS can arrive at most fields. A trained bystander buys the time that matters.
+Stop the Bleed is the civilian bleeding-control program from the American College of Surgeons. The premise is simple: significant bleeding can kill a person in 5 to 10 minutes, faster than emergency medical services (EMS) can arrive at most fields. A trained bystander buys the time that matters.
 
 The protocol below is the basics. The full course is 90 minutes, free in many areas through fire departments and Red Cross chapters, and the highest-leverage emergency-response training a youth-sports parent or coach can take.
 

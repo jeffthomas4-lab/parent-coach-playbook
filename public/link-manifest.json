@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-11T00:33:36.659Z",
-  "count": 347,
+  "generatedAt": "2026-05-11T04:45:45.941Z",
+  "count": 349,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -91,6 +91,12 @@
       ]
     },
     {
+      "url": "https://ai.fmcsa.dot.gov/SMS/",
+      "sources": [
+        "src/content/body/bus-charter-vetting.md"
+      ]
+    },
+    {
       "url": "https://appliedsportpsych.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -118,6 +124,12 @@
       "url": "https://chadd.org/",
       "sources": [
         "src/content/adaptive/adhd-athlete.md"
+      ]
+    },
+    {
+      "url": "https://civilrights.justice.gov/",
+      "sources": [
+        "src/content/body/religious-accommodations-team-culture.md"
       ]
     },
     {
@@ -163,7 +175,7 @@
       ]
     },
     {
-      "url": "https://jedfoundation.org/jed-sports/",
+      "url": "https://jedfoundation.org/programs/",
       "sources": [
         "src/content/body/post-injury-depression.md"
       ]
@@ -234,7 +246,7 @@
       ]
     },
     {
-      "url": "https://koreystringer.institute.uconn.edu/health-and-safety/sudden-cardiac-arrest/",
+      "url": "https://ksi.uconn.edu/",
       "sources": [
         "src/content/body/aed-location-field-readiness.md"
       ]
@@ -472,6 +484,12 @@
       ]
     },
     {
+      "url": "https://publications.aap.org/pediatrics/article/143/5/e20190850/76819/Prevention-of-Drowning",
+      "sources": [
+        "src/content/body/drowning-rescue-and-monitoring.md"
+      ]
+    },
+    {
       "url": "https://publications.aap.org/pediatrics/article/144/4/e20192528/81590",
       "sources": [
         "src/content/adaptive/adhd-athlete.md"
@@ -487,12 +505,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/",
       "sources": [
         "src/pages/about/sources.astro"
-      ]
-    },
-    {
-      "url": "https://saferbus.fmcsa.dot.gov/",
-      "sources": [
-        "src/content/body/bus-charter-vetting.md"
       ]
     },
     {
@@ -696,6 +708,8 @@
     {
       "url": "https://web3.ncaa.org/ecwr3/",
       "sources": [
+        "src/content/body/recruiting-dms.md",
+        "src/content/body/recruiting-service-red-flags.md",
         "src/content/recruiting/ncaa-eligibility-center.md",
         "src/content/recruiting/timeline-by-grade.md",
         "src/content/recruiting/what-verbal-commits-mean.md",
@@ -850,18 +864,6 @@
       ]
     },
     {
-      "url": "https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/dental-trauma",
-      "sources": [
-        "src/content/body/knocked-out-tooth-protocol.md"
-      ]
-    },
-    {
-      "url": "https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/mouthguards",
-      "sources": [
-        "src/content/body/mouthguard-fit-boil-vs-custom.md"
-      ]
-    },
-    {
       "url": "https://www.adaptivesportsusa.org/",
       "sources": [
         "src/pages/governing-bodies.astro"
@@ -877,8 +879,13 @@
     {
       "url": "https://www.airnow.gov/wildfire-smoke-guide/",
       "sources": [
-        "src/content/body/wildfire-smoke-aqi.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.airnow.gov/wildfires/",
+      "sources": [
+        "src/content/body/wildfire-smoke-aqi.md"
       ]
     },
     {
@@ -969,7 +976,6 @@
     {
       "url": "https://www.bnq.qc.ca/",
       "sources": [
-        "src/content/body/hockey-equipment-safety.md",
         "src/pages/governing-bodies.astro"
       ]
     },
@@ -1082,16 +1088,16 @@
       ]
     },
     {
-      "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation",
+      "url": "https://www.cpsc.gov/Safety",
       "sources": [
-        "src/content/body/used-gear-safety.md",
-        "src/pages/governing-bodies.astro"
+        "src/content/body/soccer-goalpost-anchoring.md",
+        "src/content/body/used-gear-safety.md"
       ]
     },
     {
-      "url": "https://www.cpsc.gov/safety-education/safety-education-centers/sports-recreation/soccer-goal-safety",
+      "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation",
       "sources": [
-        "src/content/body/soccer-goalpost-anchoring.md"
+        "src/pages/governing-bodies.astro"
       ]
     },
     {
@@ -1102,7 +1108,7 @@
       ]
     },
     {
-      "url": "https://www.ed.gov/laws-and-policy/idea/title-vi",
+      "url": "https://www.ed.gov/laws-and-policy/civil-rights-laws/title-vi",
       "sources": [
         "src/content/body/racism-discrimination-on-team.md"
       ]
@@ -1235,6 +1241,12 @@
       ]
     },
     {
+      "url": "https://www.globaldro.com/",
+      "sources": [
+        "src/content/body/banned-substances-hs-college.md"
+      ]
+    },
+    {
       "url": "https://www.glsen.org/research",
       "sources": [
         "src/content/body/lgbtq-youth-athlete-safety.md"
@@ -1319,12 +1331,6 @@
       "url": "https://www.justice.gov/",
       "sources": [
         "src/content/body/missing-kid-at-tournament.md"
-      ]
-    },
-    {
-      "url": "https://www.justice.gov/crt/religious-discrimination",
-      "sources": [
-        "src/content/body/religious-accommodations-team-culture.md"
       ]
     },
     {
@@ -1417,6 +1423,18 @@
       ]
     },
     {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies",
+      "sources": [
+        "src/content/body/knocked-out-tooth-protocol.md"
+      ]
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/mouthguards/",
+      "sources": [
+        "src/content/body/mouthguard-fit-boil-vs-custom.md"
+      ]
+    },
+    {
       "url": "https://www.moveunitedsport.org/",
       "sources": [
         "src/pages/about/sources.astro",
@@ -1489,28 +1507,22 @@
       ]
     },
     {
-      "url": "https://www.nata.org/practice-patient-care/health-issues/environmental",
+      "url": "https://www.nata.org/practice-patient-care",
+      "sources": [
+        "src/content/body/emergency-action-plan-template.md"
+      ]
+    },
+    {
+      "url": "https://www.nata.org/practice-patient-care/health-issues",
       "sources": [
         "src/content/body/cold-weather-practice.md",
         "src/content/body/hypothermia-on-the-field.md"
       ]
     },
     {
-      "url": "https://www.nata.org/practice-patient-care/health-issues/secondary-school-safety",
-      "sources": [
-        "src/content/body/emergency-action-plan-template.md"
-      ]
-    },
-    {
       "url": "https://www.nata.org/professional-interests/job-settings/secondary-school",
       "sources": [
         "src/content/body/heat-and-hydration.md"
-      ]
-    },
-    {
-      "url": "https://www.nationalpolevaultsafetyfoundation.org/",
-      "sources": [
-        "src/content/body/pole-vault-helmet-debate.md"
       ]
     },
     {
@@ -1522,10 +1534,34 @@
       ]
     },
     {
+      "url": "https://www.ncaa.org/about/inclusion",
+      "sources": [
+        "src/content/body/racism-discrimination-on-team.md"
+      ]
+    },
+    {
       "url": "https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school",
       "sources": [
         "src/content/body/identity-beyond-the-sport.md",
         "src/content/recruiting/scholarship-odds-the-honest-math.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/news/2021/6/30/ncaa-adopts-interim-name-image-and-likeness-policy.aspx",
+      "sources": [
+        "src/content/body/nil-privacy-hs-athletes.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/recruiting",
+      "sources": [
+        "src/content/body/recruiting-dms.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sport-science-institute",
+      "sources": [
+        "src/content/body/lightning-at-the-field.md"
       ]
     },
     {
@@ -1534,24 +1570,6 @@
         "src/content/recruiting/social-media-for-recruiting.md",
         "src/content/recruiting/timeline-by-grade.md",
         "src/content/recruiting/what-verbal-commits-mean.md"
-      ]
-    },
-    {
-      "url": "https://www.ncaa.org/sports/2014/8/14/diversity-and-inclusion.aspx",
-      "sources": [
-        "src/content/body/racism-discrimination-on-team.md"
-      ]
-    },
-    {
-      "url": "https://www.ncaa.org/sports/2014/8/14/sports-medicine-handbook.aspx",
-      "sources": [
-        "src/content/body/lightning-at-the-field.md"
-      ]
-    },
-    {
-      "url": "https://www.ncaa.org/sports/2014/8/25/recruiting-calendars.aspx",
-      "sources": [
-        "src/content/body/recruiting-dms.md"
       ]
     },
     {
@@ -1564,19 +1582,6 @@
       "url": "https://www.ncaa.org/sports/2015/6/10/ncaa-banned-substances.aspx",
       "sources": [
         "src/content/body/banned-substances-hs-college.md"
-      ]
-    },
-    {
-      "url": "https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx",
-      "sources": [
-        "src/content/body/recruiting-dms.md",
-        "src/content/body/recruiting-service-red-flags.md"
-      ]
-    },
-    {
-      "url": "https://www.ncaa.org/sports/2021/6/30/about-name-image-likeness-nil.aspx",
-      "sources": [
-        "src/content/body/nil-privacy-hs-athletes.md"
       ]
     },
     {
@@ -1853,6 +1858,16 @@
       ]
     },
     {
+      "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html",
+      "sources": [
+        "src/content/body/diving-board-rules-supervision.md",
+        "src/content/body/hotel-pool-safety.md",
+        "src/content/body/open-water-swim-safety.md",
+        "src/content/body/pool-deck-rules.md",
+        "src/content/body/youth-swimming-safety-briefing.md"
+      ]
+    },
+    {
       "url": "https://www.redcross.org/take-a-class/cpr",
       "sources": [
         "src/content/body/cpr-for-parents.md"
@@ -1869,16 +1884,6 @@
       "url": "https://www.redcross.org/take-a-class/lifeguarding",
       "sources": [
         "src/content/body/drowning-rescue-and-monitoring.md"
-      ]
-    },
-    {
-      "url": "https://www.redcross.org/take-a-class/water-safety",
-      "sources": [
-        "src/content/body/diving-board-rules-supervision.md",
-        "src/content/body/hotel-pool-safety.md",
-        "src/content/body/open-water-swim-safety.md",
-        "src/content/body/pool-deck-rules.md",
-        "src/content/body/youth-swimming-safety-briefing.md"
       ]
     },
     {
@@ -1954,12 +1959,6 @@
         "src/content/body/identity-beyond-the-sport.md",
         "src/content/body/performance-anxiety.md",
         "src/content/body/pre-game-routine.md"
-      ]
-    },
-    {
-      "url": "https://www.teamusa.com/usa-diving",
-      "sources": [
-        "src/content/body/diving-board-rules-supervision.md"
       ]
     },
     {
@@ -2087,6 +2086,12 @@
       ]
     },
     {
+      "url": "https://www.usadiving.org/",
+      "sources": [
+        "src/content/body/diving-board-rules-supervision.md"
+      ]
+    },
+    {
       "url": "https://www.usafootball.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -2137,7 +2142,7 @@
       ]
     },
     {
-      "url": "https://www.usahockey.com/safety",
+      "url": "https://www.usahockey.com/page/show/910900-safety",
       "sources": [
         "src/content/body/hockey-equipment-safety.md",
         "src/content/body/travel-team-rooming-chaperones.md",
@@ -2222,7 +2227,7 @@
       ]
     },
     {
-      "url": "https://www.usasoftball.com/play/equipment-standards/",
+      "url": "https://www.usasoftball.com/play/",
       "sources": [
         "src/content/body/helmet-bat-mouthguard-certification.md"
       ]
@@ -2283,6 +2288,12 @@
         "src/content/rules/track-field.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usatf.org/home",
+      "sources": [
+        "src/content/body/pole-vault-helmet-debate.md"
       ]
     },
     {

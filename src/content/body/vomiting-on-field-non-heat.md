@@ -36,7 +36,7 @@ One. Gastrointestinal illness. Viral gastroenteritis ("stomach flu"), food poiso
 
 Two. Heat illness. Vomiting is a classic sign of heat exhaustion progressing toward heatstroke. Combined with sweating, dizziness, headache, and a hot environment, this is the heat-illness picture. See heat-exhaustion-vs-heatstroke for the full protocol.
 
-Three. Concussion or head injury. Vomiting after a hit to the head, neck, or body is a red-flag concussion sign. The CDC HEADS UP guidance is direct: vomiting post-impact escalates the concern.
+Three. Concussion or head injury. Vomiting after a hit to the head, neck, or body is a red-flag concussion sign. The U.S. Centers for Disease Control and Prevention (CDC) HEADS UP guidance is direct: vomiting post-impact escalates the concern.
 
 Four. Abdominal trauma. Vomiting after a hit to the torso can indicate splenic injury, liver laceration, or other intra-abdominal trauma. The specific concern is delayed presentation: the kid took a hit, finished the half, and is vomiting an hour later. Surgical emergency.
 
@@ -46,7 +46,7 @@ Five. Anaphylaxis. Vomiting can be part of anaphylactic reaction, especially in 
 
 Was there a recent hit to the head or body? If yes:
 
-A hit to the head with subsequent vomiting is a presumed concussion until evaluated. The kid is out. Suspected-concussion-right-now protocol applies. ER if any other red-flag signs (loss of consciousness, repeated vomiting, severe headache, slurring, weakness).
+A hit to the head with subsequent vomiting is a presumed concussion until evaluated. The kid is out. Suspected-concussion-right-now protocol applies. emergency room (ER) if any other red-flag signs (loss of consciousness, repeated vomiting, severe headache, slurring, weakness).
 
 A hit to the torso with subsequent vomiting needs evaluation for abdominal injury. ER, particularly if pain in the abdomen, shoulder (referred pain from spleen), or back.
 

@@ -78,7 +78,7 @@ The letter is not always required but border agents in some countries ask for it
 
 **Vaccinations.**
 
-The CDC's Travelers' Health pages list country-specific vaccination requirements and recommendations.
+The U.S. Centers for Disease Control and Prevention (CDC)'s Travelers' Health pages list country-specific vaccination requirements and recommendations.
 
 Standard recommendations for most international travel: routine vaccines up to date (MMR, DTaP, varicella, polio, COVID-19 per current guidance). Hepatitis A and Hepatitis B for most international destinations.
 

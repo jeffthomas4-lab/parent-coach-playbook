@@ -30,7 +30,7 @@ hero: /illustrations/concussion-quiet-care-kit-poster.webp
 
 A concussion is a brain injury caused by a hit to the head, neck, or body that makes the brain move inside the skull. It does not require loss of consciousness. Most concussions in youth sports do not involve passing out. The kid who got hit and now seems "off" is the kid you take out.
 
-**The first ten minutes belong to the trainer or coach.** If your kid takes a hit and shows any of these signs, they are done for the day: dazed look, confusion about where they are or what just happened, slurred speech, balance problems, vomiting, headache, sensitivity to light or noise. The CDC's HEADS UP program is the standard youth-sports concussion training; every coach and athletic trainer should have completed it.
+**The first ten minutes belong to the trainer or coach.** If your kid takes a hit and shows any of these signs, they are done for the day: dazed look, confusion about where they are or what just happened, slurred speech, balance problems, vomiting, headache, sensitivity to light or noise. The U.S. Centers for Disease Control and Prevention (CDC)'s HEADS UP program is the standard youth-sports concussion training; every coach and athletic trainer should have completed it.
 
 If the trainer or coach pulls your kid for a possible concussion, the kid does not go back in that day. There is no "shake it off." There is no "let me check him again at the half." Same-game return-to-play after a suspected concussion is the move that turns a one-week recovery into an eight-week one (or worse, second impact syndrome, which can be fatal).
 

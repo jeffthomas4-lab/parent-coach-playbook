@@ -27,7 +27,7 @@ gearPicks:
     note: "For the kid's home bedroom. The single highest-ROI sleep upgrade."
 ---
 
-Sleep is the cheapest performance enhancer in sports. It is also the one most adolescent athletes skip. The data on this is not subtle, and the AAP and American Academy of Sleep Medicine have both been clear for a decade.
+Sleep is the cheapest performance enhancer in sports. It is also the one most adolescent athletes skip. The data on this is not subtle, and the American Academy of Pediatrics (AAP) and American Academy of Sleep Medicine have both been clear for a decade.
 
 **The targets, by age.** Ages 6-12 need 9-12 hours per night. Ages 13-18 need 8-10 hours. These are not aspirations. They are the AAP's evidence-based recommendations. A 14-year-old running 6.5 hours of sleep on a school night is not "tough." They are sleep-deprived, and the performance, mood, and injury cost is real.
 

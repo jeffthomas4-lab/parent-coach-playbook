@@ -50,7 +50,7 @@ For a goalkeeper with a concussion history, headgear is reasonable as an extra l
 
 *Throat protector.* Required by USA Lacrosse for boys and girls goalies. Hangs from the helmet.
 
-*Chest protector.* Boys lacrosse goalie chest protectors must meet NOCSAE ND200 commotio cordis standard as of recent rule changes. Girls lacrosse chest protectors meet ASTM F3137. The standards address the chest-impact cardiac risk specifically. Older non-certified protectors are no longer compliant in NCAA play and most high-school competition; check your league rules.
+*Chest protector.* Boys lacrosse goalie chest protectors must meet NOCSAE ND200 commotio cordis standard as of recent rule changes. Girls lacrosse chest protectors meet ASTM F3137. The standards address the chest-impact cardiac risk specifically. Older non-certified protectors are no longer compliant in National Collegiate Athletic Association (NCAA) play and most high-school competition; check your league rules.
 
 *Pelvic protection.* Cup for boys, hip pads for girls and boys. Required.
 

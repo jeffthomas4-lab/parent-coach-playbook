@@ -9,11 +9,11 @@ ageBands: ["all-ages"]
 publishedAt: 2026-04-12
 governingBodies:
   - name: "American Red Cross: Aquatic Safety"
-    url: "https://www.redcross.org/take-a-class/water-safety"
+    url: "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html"
   - name: "USA Swimming: Safe Sport"
     url: "https://www.usaswimming.org/safe-sport"
   - name: "USA Diving"
-    url: "https://www.teamusa.com/usa-diving"
+    url: "https://www.usadiving.org/"
   - name: "CDC: Diving Injuries"
     url: "https://www.cdc.gov/healthy-swimming/"
 editorial:
@@ -142,7 +142,7 @@ Do not move the kid. Stabilize the head in the position you find them.
 
 If the kid is in water with airway compromised, the rescue protocol is complex and benefits from trained lifeguard performance. Untrained rescue can produce additional spinal injury.
 
-Once stabilized, EMS arrival and proper spine-board immobilization.
+Once stabilized, emergency medical services (EMS) arrival and proper spine-board immobilization.
 
 The full spinal-injury protocol is at spinal-injury-cervical-spine-protocol.
 

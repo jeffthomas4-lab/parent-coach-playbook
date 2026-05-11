@@ -24,7 +24,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-08
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "AAAAI, AAO, AAP cited. Practical management of a common outdoor-sport seasonal issue."
 ---
 

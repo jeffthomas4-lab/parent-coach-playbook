@@ -48,7 +48,7 @@ If your kid has diabetes and there is no written plan on file, that is the homew
 
 A kid with T1D who is "off" mid-practice is hypoglycemic until proven otherwise. Speed matters because severe hypoglycemia can produce seizure and unconsciousness.
 
-**The 15-15 rule.** ADA-published protocol for conscious mild-to-moderate hypoglycemia.
+**The 15-15 rule.** Americans with Disabilities Act (ADA)-published protocol for conscious mild-to-moderate hypoglycemia.
 
 1. Stop activity. Sit the kid down.
 
@@ -68,7 +68,7 @@ The kid does not return to play immediately even if blood sugar normalizes. Wait
 
 3. Place the kid on their side (recovery position).
 
-4. Stay with the kid until EMS arrives.
+4. Stay with the kid until emergency medical services (EMS) arrives.
 
 The team should know in advance whether the kid has glucagon on site, where it is, and which adults are authorized to administer.
 
@@ -81,7 +81,7 @@ The team should know in advance whether the kid has glucagon on site, where it i
 - Nausea, vomiting
 - Confusion (severe)
 
-Sustained hyperglycemia with vomiting, fruity breath, or confusion is DKA territory and a medical emergency. Call 911 or get the kid to the ER. DKA is the more common diabetic-emergency hospital admission for kids.
+Sustained hyperglycemia with vomiting, fruity breath, or confusion is DKA territory and a medical emergency. Call 911 or get the kid to the emergency room (ER). DKA is the more common diabetic-emergency hospital admission for kids.
 
 **Pre-game and pre-practice management.** Most T1D kids manage this routinely. The standard pattern:
 

@@ -12,7 +12,7 @@ governingBodies:
   - name: "American Heart Association: AED Programs"
     url: "https://cpr.heart.org/en/resources/aed-implementation"
   - name: "Korey Stringer Institute: Sudden Cardiac Arrest"
-    url: "https://koreystringer.institute.uconn.edu/health-and-safety/sudden-cardiac-arrest/"
+    url: "https://ksi.uconn.edu/"
   - name: "Project ADAM"
     url: "https://www.projectadam.com/"
 editorial:
@@ -31,11 +31,11 @@ editorial:
 
 Sudden cardiac arrest in youth athletes is rare. When it happens, the timeline is brutal. Survival to hospital discharge runs above 60 percent if defibrillation happens in the first three minutes. It drops below 10 percent if it takes more than ten.
 
-The Korey Stringer Institute and the American Heart Association both publish the same target. The AED on the field, in the hands of someone who knows how to use it, in 90 seconds or less.
+The Korey Stringer Institute and the American Heart Association both publish the same target. The automated external defibrillator (AED) on the field, in the hands of someone who knows how to use it, in 90 seconds or less.
 
 **What an AED actually does.** An automated external defibrillator analyzes the heart rhythm and, if it detects ventricular fibrillation or ventricular tachycardia, delivers a shock. It will not shock a normal rhythm. It is designed for use by laypeople. Modern AEDs talk you through every step.
 
-**The 90-second standard.** From the moment a kid collapses, here is the timeline that survives versus the one that does not. Someone calls 911. Someone starts CPR. Someone runs for the AED. The AED is opened, pads applied, shock delivered. All of that, complete, in about 90 seconds. Achievable only when the AED is close, the case is unlocked, and at least one adult on site knows the routine.
+**The 90-second standard.** From the moment a kid collapses, here is the timeline that survives versus the one that does not. Someone calls 911. Someone starts cardiopulmonary resuscitation (CPR). Someone runs for the AED. The AED is opened, pads applied, shock delivered. All of that, complete, in about 90 seconds. Achievable only when the AED is close, the case is unlocked, and at least one adult on site knows the routine.
 
 **The field walkthrough.** The first practice of every season, the head coach should do this with the team-manager parent and any assistant coaches.
 
@@ -43,7 +43,7 @@ Walk to where the AED lives. Time the walk. If it is more than 60 seconds, the A
 
 Open the case. Turn the unit on (if your model is "always-on with battery check," verify the battery indicator is green).
 
-Identify the entry point for EMS. Is the gate locked? Who has the key? What's the field's address as a 911 caller would say it?
+Identify the entry point for emergency medical services (EMS). Is the gate locked? Who has the key? What's the field's address as a 911 caller would say it?
 
 Identify two adults at every practice and game who are CPR/AED certified. Names and phone numbers in a shared note.
 

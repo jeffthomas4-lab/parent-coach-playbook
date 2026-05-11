@@ -57,7 +57,7 @@ Note the time of injection.
 
 The injection works in 30 to 60 seconds. Symptoms may improve dramatically. The risk of being wrong about whether it was anaphylaxis is much smaller than the risk of waiting too long. The American Academy of Pediatrics and FARE both endorse erring on the side of administration.
 
-**Then call 911.** Even if symptoms improve. Anaphylaxis can rebound 30 minutes to 12 hours after the initial reaction (biphasic reaction). The kid needs to be transported to the ER for monitoring. The trip to the hospital is non-negotiable.
+**Then call 911.** Even if symptoms improve. Anaphylaxis can rebound 30 minutes to 12 hours after the initial reaction (biphasic reaction). The kid needs to be transported to the emergency room (ER) for monitoring. The trip to the hospital is non-negotiable.
 
 A second dose may be needed if symptoms do not improve in 5 minutes. Programs that have a kid with a known severe allergy should carry two auto-injectors, not one.
 

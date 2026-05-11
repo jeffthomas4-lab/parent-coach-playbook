@@ -79,7 +79,7 @@ Any of these means concussion is on the table. The kid is out.
 
 **Eight. No return to play without written clearance.** Every state has a youth-sports concussion law. All require written clearance from a licensed health care provider before return. The specific provider type varies by state. The Concussion Legacy Foundation maintains a state-by-state map.
 
-The CDC return-to-play progression is six steps: light aerobic, sport-specific exercise, non-contact drills, full-contact practice, return to game. Each step is at least 24 hours. If symptoms come back at any step, drop to the previous step.
+The U.S. Centers for Disease Control and Prevention (CDC) return-to-play progression is six steps: light aerobic, sport-specific exercise, non-contact drills, full-contact practice, return to game. Each step is at least 24 hours. If symptoms come back at any step, drop to the previous step.
 
 **The thing parents miss most.** The kid who feels "almost back" at day three is not back. The recovery curve is not linear. A second hit during the symptomatic window does massively more damage than the first one did. Two extra days of rest cost nothing. The cost of being wrong about it is real.
 

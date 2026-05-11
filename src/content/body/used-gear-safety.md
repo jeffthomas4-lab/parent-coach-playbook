@@ -11,7 +11,7 @@ governingBodies:
   - name: "NOCSAE"
     url: "https://nocsae.org/"
   - name: "Consumer Product Safety Commission: Sports & Recreation"
-    url: "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation"
+    url: "https://www.cpsc.gov/Safety"
   - name: "USA Baseball: Bat Standards"
     url: "https://www.usabat.com/"
 editorial:

@@ -76,7 +76,7 @@ Salter-Harris fractures of finger bones. Common in basketball, volleyball, and f
 
 1. Stop activity. Do not let the kid keep playing through hand pain that does not resolve in a few minutes.
 
-2. Check distal sensation and capillary refill. Any color change or numbness is a flag for faster ER transport.
+2. Check distal sensation and capillary refill. Any color change or numbness is a flag for faster emergency room (ER) transport.
 
 3. Remove rings on the affected hand immediately. Rings on a swelling finger can cut off circulation.
 

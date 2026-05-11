@@ -48,11 +48,11 @@ What the data does NOT clearly show: that face guards reduce concussion incidenc
 
 **State and league rules.**
 
-Girls' fastpitch softball at the youth and high school levels generally requires full face cages on batters' helmets. NFHS and USA Softball codify this.
+Girls' fastpitch softball at the youth and high school levels generally requires full face cages on batters' helmets. National Federation of State High School Associations (NFHS) and USA Softball codify this.
 
 Youth baseball: face guards are optional in most leagues. Some travel and elite leagues have moved toward C-flaps as a quasi-norm. Little League and Cal Ripken/Babe Ruth allow but do not require.
 
-College baseball: face guards (typically C-flaps) are increasingly common after several high-profile facial injuries. NCAA does not require.
+College baseball: face guards (typically C-flaps) are increasingly common after several high-profile facial injuries. National Collegiate Athletic Association (NCAA) does not require.
 
 For girls fastpitch softball, the cage is non-negotiable. For youth baseball, it is a family choice.
 

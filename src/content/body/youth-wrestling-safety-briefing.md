@@ -41,7 +41,7 @@ Impetigo: bacterial, golden-crusted lesions. Treatable.
 
 MRSA: less common but serious. Resistant bacterial skin infection.
 
-Prevention: shower immediately after every practice, do not share towels or gear, mats cleaned daily with EPA-approved disinfectant. Pre-match skin checks by certified officials are mandatory in NFHS-aligned high school wrestling and most youth USA Wrestling events.
+Prevention: shower immediately after every practice, do not share towels or gear, mats cleaned daily with EPA-approved disinfectant. Pre-match skin checks by certified officials are mandatory in National Federation of State High School Associations (NFHS)-aligned high school wrestling and most youth USA Wrestling events.
 
 A kid with an active skin infection should not wrestle. Programs that handwave on this produce outbreaks.
 
@@ -55,7 +55,7 @@ Programs that prioritize "going down a weight class" over kid health are program
 
 **Three. Concussion.** Wrestling is a top-five youth sport for concussion incidence. Mechanisms: head-to-mat contact, head-to-knee contact in takedowns, head-to-head contact in collision moves.
 
-USA Wrestling and NFHS rules have tightened on illegal head moves, slam rules, and protective padding. CDC HEADS UP applies. Same-day removal, written clearance, six-step return.
+USA Wrestling and NFHS rules have tightened on illegal head moves, slam rules, and protective padding. U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies. Same-day removal, written clearance, six-step return.
 
 **Four. Shoulder, elbow, and knee injuries.** Joint locks, takedowns, and pinning maneuvers produce joint stress. AC-joint injuries, elbow hyperextension, and meniscus tears are common.
 
@@ -65,7 +65,7 @@ USA Wrestling and NFHS rules have tightened on illegal head moves, slam rules, a
 
 **The catastrophic risks, in proportion.**
 
-Sudden cardiac arrest during weight cutting. Documented at high school and college level. AED on-site, CPR-trained staff, weight-management compliance.
+Sudden cardiac arrest during weight cutting. Documented at high school and college level. automated external defibrillator (AED) on-site, cardiopulmonary resuscitation (CPR)-trained staff, weight-management compliance.
 
 Cervical-spine injury from improper or illegal slams. Rare. NFHS rule enforcement reduces incidence.
 

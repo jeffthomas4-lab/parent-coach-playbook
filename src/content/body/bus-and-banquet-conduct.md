@@ -98,7 +98,7 @@ A "no targeting individual teammates for the loss" rule, enforced verbally in th
 
 A short, structured cool-down in the locker room: a coach speaks for 2 minutes, players don't speak about the game until on the bus.
 
-The hand-off to parents in the parking lot. Parents who immediately criticize their kid for the play that lost the game create a different category of harm. PCA's framework is the standard parents should reference: ROOTS (Respect for Rules, Opponents, Officials, Teammates, Self) and the post-game positive opener.
+The hand-off to parents in the parking lot. Parents who immediately criticize their kid for the play that lost the game create a different category of harm. Positive Coaching Alliance (PCA)'s framework is the standard parents should reference: ROOTS (Respect for Rules, Opponents, Officials, Teammates, Self) and the post-game positive opener.
 
 **The "I didn't think it was a big deal" pattern.**
 

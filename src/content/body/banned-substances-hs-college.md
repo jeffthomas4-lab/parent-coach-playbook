@@ -10,6 +10,8 @@ publishedAt: 2026-01-23
 governingBodies:
   - name: "USADA: Athlete Resources"
     url: "https://www.usada.org/athletes/"
+  - name: "GlobalDRO (Global Drug Reference Online — substance-checker for athletes/parents)"
+    url: "https://www.globaldro.com/"
   - name: "NCAA: Banned Substances"
     url: "https://www.ncaa.org/sports/2015/6/10/ncaa-banned-substances.aspx"
   - name: "World Anti-Doping Agency (WADA)"
@@ -26,7 +28,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-01-23
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. USADA, NCAA, WADA, NFHS cited. The supplement-contamination pathway is the load-bearing risk for inadvertent positives."
 ---
 
@@ -36,13 +38,13 @@ Most kids never face a drug test. Some do. The framework below is what families 
 
 **The frameworks, briefly.**
 
-USADA. United States Anti-Doping Agency. Tests Olympic-track, USA-team athletes, and oversees the U.S. component of the WADA Code. Highest level, most extensive list.
+U.S. Anti-Doping Agency (USADA). United States Anti-Doping Agency. Tests Olympic-track, USA-team athletes, and oversees the U.S. component of the World Anti-Doping Agency (WADA) Code. Highest level, most extensive list.
 
 WADA. World Anti-Doping Agency. International framework. The full Prohibited List is updated annually. Available at wada-ama.org.
 
-NCAA. National Collegiate Athletic Association. Tests college athletes. NCAA's banned-substance list overlaps with WADA but has some differences (notably caffeine has a threshold rather than a flat ban).
+National Collegiate Athletic Association (NCAA). National Collegiate Athletic Association. Tests college athletes. NCAA's banned-substance list overlaps with WADA but has some differences (notably caffeine has a threshold rather than a flat ban).
 
-NFHS / state HS associations. High school testing varies by state. A minority of states test HS athletes routinely. Most do not test but follow NFHS guidance on prohibited substances.
+National Federation of State High School Associations (NFHS) / state HS associations. High school testing varies by state. A minority of states test HS athletes routinely. Most do not test but follow NFHS guidance on prohibited substances.
 
 For HS athletes being recruited to NCAA programs, the NCAA list is the relevant one for the future. For HS athletes currently competing, the state HS association's list is the immediate one.
 
@@ -52,7 +54,7 @@ Anabolic agents. Steroids, prohormones, SARMs (selective androgen receptor modul
 
 Peptide hormones, growth factors. HGH, EPO, IGF-1, and related compounds. Always banned.
 
-Stimulants. Amphetamines (Adderall and related ADHD medications), ephedra, methylhexanamine, cocaine. ADHD medications have Therapeutic Use Exemption pathways (see ADHD section below).
+Stimulants. Amphetamines (Adderall and related ADHD medications), ephedra, methylhexanamine, cocaine. attention-deficit/hyperactivity disorder (ADHD) medications have Therapeutic Use Exemption pathways (see ADHD section below).
 
 Diuretics and masking agents. Banned because they can dilute samples and mask other substances.
 

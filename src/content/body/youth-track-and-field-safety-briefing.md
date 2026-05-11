@@ -55,7 +55,7 @@ Four. Achilles tendinopathy. Inflammation from sustained running load. Often rel
 
 Five. RED-S (Relative Energy Deficiency in Sport). Distance running has documented elevated rates of disordered eating and energy deficiency, particularly in girls. The triad of low energy availability, menstrual disruption, and low bone density is real and produces stress fractures.
 
-Six. Heat illness in summer training. NATA acclimatization, hydration, WBGT.
+Six. Heat illness in summer training. National Athletic Trainers' Association (NATA) acclimatization, hydration, WBGT.
 
 **Jumps (long jump, triple jump, high jump, pole vault).**
 
@@ -67,7 +67,7 @@ Three. Lower-back injuries. High jump and pole vault hyperextension. Spondylolys
 
 Four. Catastrophic pole vault injuries. Rare but historically the highest-risk event in track. The published incidence has declined dramatically with rule changes (mandatory helmet rule controversial; mandatory landing-pit specifications mandated; coaching certification requirements).
 
-Pole vault helmet question. NFHS does not currently require helmets in HS pole vault. Some state associations have considered or implemented mandatory helmets. Published research on whether helmets prevent the most-serious head injuries (which typically occur from landing on hard surfaces past the pit) is contested.
+Pole vault helmet question. National Federation of State High School Associations (NFHS) does not currently require helmets in HS pole vault. Some state associations have considered or implemented mandatory helmets. Published research on whether helmets prevent the most-serious head injuries (which typically occur from landing on hard surfaces past the pit) is contested.
 
 Five. Concussion from missed landings.
 
@@ -89,7 +89,7 @@ Cumulative load from multiple disciplines. The injury profile is the union of th
 
 **All events: catastrophic risks.**
 
-Sudden cardiac arrest in distance runners is rare but documented. AED at meets, CPR-trained adults. The 90-second AED standard.
+Sudden cardiac arrest in distance runners is rare but documented. automated external defibrillator (AED) at meets, cardiopulmonary resuscitation (CPR)-trained adults. The 90-second AED standard.
 
 Lightning at outdoor meets. The 30/30 rule.
 
@@ -105,7 +105,7 @@ Heat illness across summer training and competition.
 
 "For pole vault: what is your landing-pit specification, helmet policy, and coaching certification?"
 
-"For girls' distance running: what is the program's approach to RED-S screening and athlete welfare?"
+"For girls' distance running: what is the program's approach to Relative Energy Deficiency in Sport (RED-S) screening and athlete welfare?"
 
 "Where is the AED, and is at least one adult CPR/AED certified?"
 

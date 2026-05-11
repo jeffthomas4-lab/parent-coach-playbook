@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-03-25
 governingBodies:
   - name: "U.S. Department of Justice: Religious Accommodation"
-    url: "https://www.justice.gov/crt/religious-discrimination"
+    url: "https://civilrights.justice.gov/"
   - name: "Title VII of the Civil Rights Act"
     url: "https://www.eeoc.gov/statutes/title-vii-civil-rights-act-1964"
   - name: "NFHS: Religious Accommodation Resources"
@@ -38,7 +38,7 @@ For school-based athletics: Title VII of the Civil Rights Act and Title VI in so
 
 For private clubs and rec leagues: legal requirements vary by state. Some state-level civil-rights laws extend to private youth-sports providers; some do not. Even where not legally required, accommodation is usually feasible and good practice.
 
-NFHS publishes resources on religious accommodation for member state associations. Many states have specific frameworks.
+National Federation of State High School Associations (NFHS) publishes resources on religious accommodation for member state associations. Many states have specific frameworks.
 
 **The common accommodations.**
 

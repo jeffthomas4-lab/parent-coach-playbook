@@ -142,4 +142,4 @@ For a kid with recurrent syncope, the workup escalates. Insist on cardiac evalua
 
 **The honest read.** Most kids who faint on the field have vasovagal syncope and are fine. The minority who do not are the kids whose outcomes change based on whether the adults at the field ran the protocol. Out for the day, pediatrician evaluation, red-flag review. Low cost when the kid is fine. High return when the kid is not.
 
-If this content is reaching someone whose kid just fainted, work the decision tree. Cardiac flags warrant ER. Clear vasovagal still warrants pediatrician follow-up. Same-day return to play is not appropriate either way.
+If this content is reaching someone whose kid just fainted, work the decision tree. Cardiac flags warrant emergency room (ER). Clear vasovagal still warrants pediatrician follow-up. Same-day return to play is not appropriate either way.

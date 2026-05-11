@@ -33,7 +33,7 @@ Softball injury patterns rhyme with baseball but are not identical. The windmill
 
 **One. Pitching arm and shoulder injuries.** The windmill motion in fastpitch softball was once considered low-injury because no overhand throw is required. Published research over the last decade has revised that picture. Repetitive windmill pitching produces shoulder, biceps, and back stress that can produce overuse injuries comparable to baseball pitching at high volume.
 
-USA Softball does not yet publish pitch-count limits with the same rigor as USA Baseball's Pitch Smart, though there is increasing pressure to do so. AAOS-affiliated pediatric orthopedic surgeons report rising labral tears and biceps tendon issues in adolescent female pitchers.
+USA Softball does not yet publish pitch-count limits with the same rigor as USA Baseball's Pitch Smart, though there is increasing pressure to do so. American Academy of Orthopaedic Surgeons (AAOS)-affiliated pediatric orthopedic surgeons report rising labral tears and biceps tendon issues in adolescent female pitchers.
 
 The practical guidance: cap windmill innings per outing per age (most leagues use a per-pitch or per-inning cap), build in mandatory rest days, and watch total seasonal volume across all teams. The principle that wrecks baseball pitchers (multi-team stacking with no central tracking) wrecks softball pitchers too.
 
@@ -43,13 +43,13 @@ The practical guidance: cap windmill innings per outing per age (most leagues us
 
 **Four. Catcher's gear-related injuries.** Same as in baseball. Foul tips off the mask, throat injuries from missing throat protectors, chest impact (commotio cordis is rare but possible). Same gear standards apply.
 
-**Five. Concussion.** Lower frequency than in contact sports but real. Mechanisms include head-to-base on slides, head-to-glove or head-to-bat in collision plays, and direct impacts from pitched or thrown balls. CDC HEADS UP applies.
+**Five. Concussion.** Lower frequency than in contact sports but real. Mechanisms include head-to-base on slides, head-to-glove or head-to-bat in collision plays, and direct impacts from pitched or thrown balls. U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies.
 
-**Six. Heat illness.** Spring-summer outdoor sport. Tournaments often run all day in July heat. NATA acclimatization, WBGT thresholds, hydration. Same protocol as any outdoor youth sport.
+**Six. Heat illness.** Spring-summer outdoor sport. Tournaments often run all day in July heat. National Athletic Trainers' Association (NATA) acclimatization, WBGT thresholds, hydration. Same protocol as any outdoor youth sport.
 
 **Seven. Eye injuries.** Polycarbonate impact-resistant lenses for kids who wear glasses. Some pitchers wear protective eyewear.
 
-**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare but documented. AED on-site at every game and practice. The 90-second AED standard.
+**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare but documented. automated external defibrillator (AED) on-site at every game and practice. The 90-second AED standard.
 
 Lightning at outdoor tournaments. The 30/30 rule.
 
@@ -65,7 +65,7 @@ Heatstroke at summer tournaments, especially weekend-long events. Cool first, tr
 
 "Do you require pitcher's facemasks at competitive levels?"
 
-"Where is the AED, and is at least one adult CPR/AED certified?"
+"Where is the AED, and is at least one adult cardiopulmonary resuscitation (CPR)/AED certified?"
 
 A program with answers is one that has done the work.
 

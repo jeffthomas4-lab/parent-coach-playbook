@@ -72,7 +72,7 @@ For the LGBTQ+ kid who is out: "What does practice and the locker room feel like
 
 For the LGBTQ+ kid who is not out: respect the privacy. The same questions about language and team culture apply. The kid does not need to disclose to be entitled to a safe environment.
 
-For the kid who is figuring it out: the AAP's pediatric-mental-health framework applies. A team that is broadly safe for any kid is safe for this kid.
+For the kid who is figuring it out: the American Academy of Pediatrics (AAP)'s pediatric-mental-health framework applies. A team that is broadly safe for any kid is safe for this kid.
 
 For non-LGBTQ+ kids on the team: the conversation is about language norms and being a teammate. "Slurs and jokes-about-gay-people are not part of how this team talks. If you hear it, you say something or you tell me."
 
@@ -92,7 +92,7 @@ NGB policy (USA Soccer, USA Volleyball, etc.) for affiliated competition.
 
 State athletic association policy for high-school competition. State laws sometimes override.
 
-NCAA policy for college.
+National Collegiate Athletic Association (NCAA) policy for college.
 
 International federation policy for international competition.
 

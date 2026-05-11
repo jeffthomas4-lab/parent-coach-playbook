@@ -43,7 +43,7 @@ USA Volleyball rules on net-line foot violations are part of the prevention; con
 
 Programs that brace returning kids and coach the centerline rule see fewer ankle injuries.
 
-**Two. Knee injuries, including patellar tendinitis ("jumper's knee") and ACL.** Repetitive jumping is the volleyball-specific stress. Patellar tendinitis (anterior knee pain at the patellar tendon) is common in adolescent players logging high jump volume.
+**Two. Knee injuries, including patellar tendinitis ("jumper's knee") and anterior cruciate ligament (ACL).** Repetitive jumping is the volleyball-specific stress. Patellar tendinitis (anterior knee pain at the patellar tendon) is common in adolescent players logging high jump volume.
 
 ACL injuries occur in volleyball at rates that have been increasing in girls' youth volleyball. Mechanism is non-contact, planted-foot landing, often after a block. The neuromuscular warm-up protocols (FIFA 11+ adapted for indoor sport, ACL-prevention warm-ups) reduce ACL incidence by 30 to 50 percent in published trials. Programs that adopt them see fewer ACL tears.
 
@@ -57,9 +57,9 @@ Some programs use protective finger tape during hard hitting drills. Worth norma
 
 **Five. Lower back pain.** The hitting motion involves lumbar extension under load. Adolescent players, particularly during growth spurts, develop low-back pain at higher rates than the general youth population. Modify volume, integrate core work, consult sports medicine if persistent.
 
-**Six. Concussion.** Less frequent than in contact sports but real. Mechanisms include head-to-floor falls (defensive plays, dive-and-roll), head-to-ball at high velocity (errant serves), and head-to-head contact in net jumps. CDC HEADS UP applies.
+**Six. Concussion.** Less frequent than in contact sports but real. Mechanisms include head-to-floor falls (defensive plays, dive-and-roll), head-to-ball at high velocity (errant serves), and head-to-head contact in net jumps. U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies.
 
-**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare in volleyball. AED on-site, CPR-trained staff. The 90-second AED standard.
+**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare in volleyball. automated external defibrillator (AED) on-site, cardiopulmonary resuscitation (CPR)-trained staff. The 90-second AED standard.
 
 Heat illness is generally not the issue indoors, with the exception of summer tournaments in non-air-conditioned venues. Beach volleyball at outdoor levels has its own heat-and-sun profile.
 

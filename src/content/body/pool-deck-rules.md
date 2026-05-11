@@ -11,7 +11,7 @@ governingBodies:
   - name: "USA Swimming: Safety Resources"
     url: "https://www.usaswimming.org/safe-sport"
   - name: "American Red Cross: Aquatic Safety"
-    url: "https://www.redcross.org/take-a-class/water-safety"
+    url: "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html"
   - name: "CDC: Drowning Prevention"
     url: "https://www.cdc.gov/drowning/"
 editorial:
@@ -44,7 +44,7 @@ A coach is not a lifeguard. A coach focused on technique is not scanning. The tw
 
 Worth observing at your kid's pool. Check the lifeguard's eyes. Are they on the water?
 
-**Drowning is silent.** This is the persistent myth-busting point from the CDC and Red Cross. Real drowning rarely looks like the splashing-and-yelling movies show. It is silent, vertical, head-tilted-back, mouth-at-surface. A drowning swimmer has 20 to 60 seconds before they go under.
+**Drowning is silent.** This is the persistent myth-busting point from the U.S. Centers for Disease Control and Prevention (CDC) and Red Cross. Real drowning rarely looks like the splashing-and-yelling movies show. It is silent, vertical, head-tilted-back, mouth-at-surface. A drowning swimmer has 20 to 60 seconds before they go under.
 
 **For competitive swim teams.** USA Swimming's Safe Sport program includes athlete-protection training plus aquatic-safety standards. The full standard:
 

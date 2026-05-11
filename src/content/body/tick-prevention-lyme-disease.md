@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "Sensitive flagged. CDC, IDSA, AAP cited. The 36-hour attachment-to-transmission window is the published Lyme threshold."
 ---
 
-Lyme disease cases have increased substantially in published CDC surveillance over the past two decades. Outdoor youth sports played in the Northeast, mid-Atlantic, and upper Midwest are in high-incidence regions for the deer ticks that transmit the bacteria. Other tick-borne diseases (anaplasmosis, babesiosis, ehrlichiosis, Rocky Mountain spotted fever) add to the picture.
+Lyme disease cases have increased substantially in published U.S. Centers for Disease Control and Prevention (CDC) surveillance over the past two decades. Outdoor youth sports played in the Northeast, mid-Atlantic, and upper Midwest are in high-incidence regions for the deer ticks that transmit the bacteria. Other tick-borne diseases (anaplasmosis, babesiosis, ehrlichiosis, Rocky Mountain spotted fever) add to the picture.
 
 This is the prevention and detection protocol for outdoor youth sports.
 

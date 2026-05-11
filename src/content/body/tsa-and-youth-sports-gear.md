@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "TSA and FAA direct sources. Sport-by-sport gear list practical."
 ---
 
-The team has a flight to a tournament. The gear bag is the size of a small adult. The TSA rules for youth-sports gear are specific, and most parents learn them at the security checkpoint by getting things confiscated.
+The team has a flight to a tournament. The gear bag is the size of a small adult. The Transportation Security Administration (TSA) rules for youth-sports gear are specific, and most parents learn them at the security checkpoint by getting things confiscated.
 
 This is what flies, what gets checked, and what stays home.
 

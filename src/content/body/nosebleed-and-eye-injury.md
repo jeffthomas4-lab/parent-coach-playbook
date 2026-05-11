@@ -52,7 +52,7 @@ A tampon used as a packing material works for severe nosebleeds when nothing els
 
 **When a nosebleed is more than a nosebleed.**
 
-If the kid took a hit to the face and the nose is visibly deformed, or if there's significant facial pain, or if the bleed is heavy and not slowing, possible nasal fracture. Get to urgent care or ER. Suspected facial fracture also warrants a check for septal hematoma (a blood pool in the septum), which needs prompt drainage to prevent septum collapse.
+If the kid took a hit to the face and the nose is visibly deformed, or if there's significant facial pain, or if the bleed is heavy and not slowing, possible nasal fracture. Get to urgent care or emergency room (ER). Suspected facial fracture also warrants a check for septal hematoma (a blood pool in the septum), which needs prompt drainage to prevent septum collapse.
 
 If the kid has a known bleeding disorder, is on blood thinners, or is bleeding from both nostrils repeatedly, seek medical care faster than the 20-minute rule.
 

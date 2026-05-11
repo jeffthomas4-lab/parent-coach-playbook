@@ -36,7 +36,7 @@ This piece is the honest framework.
 
 Functional braces. Prescribed after a documented knee ligament injury (ACL, MCL, PCL). Designed to provide mechanical support to the injured ligament during return-to-play. Examples: DonJoy custom, CTI, Breg.
 
-Prophylactic braces. Designed to prevent knee injuries in athletes without prior injury. Common in football for offensive and defensive linemen. Marketing emphasizes ACL and MCL prevention.
+Prophylactic braces. Designed to prevent knee injuries in athletes without prior injury. Common in football for offensive and defensive linemen. Marketing emphasizes anterior cruciate ligament (ACL) and MCL prevention.
 
 Patellofemoral braces. Designed for patellar tracking issues, anterior knee pain, post-patellar dislocation. Examples include neoprene sleeves with a patellar cutout (J-brace), patellar straps.
 
@@ -44,7 +44,7 @@ Neoprene sleeves. Compression and warmth. The mass-market brace.
 
 **What the published evidence supports.**
 
-Functional braces post-injury. Strong evidence for use after ACL reconstruction, particularly during the first year post-surgery. Reduces re-injury rates in some studies. AAOS supports use in selected post-injury populations.
+Functional braces post-injury. Strong evidence for use after ACL reconstruction, particularly during the first year post-surgery. Reduces re-injury rates in some studies. American Academy of Orthopaedic Surgeons (AAOS) supports use in selected post-injury populations.
 
 Prophylactic braces in football. Mixed evidence. Some published studies show small reductions in MCL injury rates in linemen wearing prophylactic braces. ACL injury rates are not consistently reduced. AAOS position is that prophylactic bracing has not demonstrated consistent benefit.
 

@@ -13,7 +13,7 @@ governingBodies:
   - name: "USA Track & Field"
     url: "https://www.usatf.org/"
   - name: "National Pole Vault Safety Foundation"
-    url: "https://www.nationalpolevaultsafetyfoundation.org/"
+    url: "https://www.usatf.org/home"
 editorial:
   qualityGrade: 7
   originalityGrade: 9
@@ -24,7 +24,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-29
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. NFHS, USATF cited. Honest about contested evidence."
 ---
 
@@ -62,11 +62,11 @@ The honest summary: published evidence is consistent with helmets providing some
 
 **The current rules.**
 
-NFHS does not mandate helmet use for high school pole vault. NFHS has discussed the question repeatedly and has not adopted a mandatory-helmet rule.
+National Federation of State High School Associations (NFHS) does not mandate helmet use for high school pole vault. NFHS has discussed the question repeatedly and has not adopted a mandatory-helmet rule.
 
 USA Track & Field does not mandate helmets for youth or open-level pole vault.
 
-NCAA does not require helmets.
+National Collegiate Athletic Association (NCAA) does not require helmets.
 
 A few state high school associations have considered mandatory-helmet rules. As of recent years, no major state association has mandated helmet use against NFHS guidance, though some individual programs require helmets at the program level.
 

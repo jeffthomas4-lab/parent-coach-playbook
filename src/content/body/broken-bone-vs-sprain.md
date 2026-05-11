@@ -32,7 +32,7 @@ Your kid hits the ground and cannot get up. The athletic trainer is at the other
 
 This is not medical advice. It is the triage shape that doctors and trainers use, in plain language, so you can make the next call.
 
-**The signs that mean ER, now.**
+**The signs that mean emergency room (ER), now.**
 
 Visible deformity. The bone is not where it should be. The ankle, the wrist, the collarbone, the finger has an angle that is wrong. Visible deformity is bone, almost always.
 
@@ -68,7 +68,7 @@ If the kid is not noticeably better at 48 hours, escalate to the pediatrician.
 
 **Two specific kid-injury patterns worth knowing.**
 
-Growth-plate injuries. Pediatric bones have growth plates (physes) that are weaker than the surrounding bone in growing kids. A "sprain" in an adult can be a growth-plate fracture in a 12-year-old. Point tenderness over a bone end (wrist, ankle, knee) in a kid is worth an X-ray even if other signs look mild. AAOS has good lay-language resources on this at orthoinfo.aaos.org.
+Growth-plate injuries. Pediatric bones have growth plates (physes) that are weaker than the surrounding bone in growing kids. A "sprain" in an adult can be a growth-plate fracture in a 12-year-old. Point tenderness over a bone end (wrist, ankle, knee) in a kid is worth an X-ray even if other signs look mild. American Academy of Orthopaedic Surgeons (AAOS) has good lay-language resources on this at orthoinfo.aaos.org.
 
 Buckle (torus) fractures. Common pediatric forearm injury after a fall on outstretched hand. The bone bends rather than breaks all the way through. May not be visibly deformed. Point tenderness on the forearm bones in a kid who fell warrants an X-ray.
 

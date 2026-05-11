@@ -13,7 +13,7 @@ governingBodies:
   - name: "U.S. Coast Guard: Open Water Safety"
     url: "https://www.uscg.mil/water-safety/"
   - name: "American Red Cross: Open Water Swimming"
-    url: "https://www.redcross.org/take-a-class/water-safety"
+    url: "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html"
 editorial:
   qualityGrade: 8
   originalityGrade: 8

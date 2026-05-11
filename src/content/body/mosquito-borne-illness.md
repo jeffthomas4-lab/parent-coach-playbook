@@ -58,7 +58,7 @@ Southeast: West Nile, EEE, and (rarely) local Zika transmission.
 
 Florida and Texas: West Nile, Zika, occasional dengue, chikungunya.
 
-For specific risk in your region, the CDC's state-by-state surveillance maps update weekly during summer. Local public-health departments issue advisories during outbreaks.
+For specific risk in your region, the U.S. Centers for Disease Control and Prevention (CDC)'s state-by-state surveillance maps update weekly during summer. Local public-health departments issue advisories during outbreaks.
 
 **The high-risk windows.**
 
@@ -108,7 +108,7 @@ Sometimes nausea or vomiting.
 
 For most kids, symptoms resolve in days to a week.
 
-The red flags that require ER evaluation:
+The red flags that require emergency room (ER) evaluation:
 
 Severe headache with stiff neck.
 

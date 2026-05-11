@@ -36,7 +36,7 @@ Headgear is the other equipment piece worth getting right. The two are related: 
 
 **The headgear: HECC certification.**
 
-USA Wrestling and NFHS require ear protection (headgear) in scholastic and collegiate competition. Youth USA Wrestling tournaments vary in headgear enforcement.
+USA Wrestling and National Federation of State High School Associations (NFHS) require ear protection (headgear) in scholastic and collegiate competition. Youth USA Wrestling tournaments vary in headgear enforcement.
 
 The HECC-certified headgear standard ensures the ear cups absorb impact and stay positioned during competition. Look for the HECC sticker on the back or inside the headgear.
 
@@ -50,7 +50,7 @@ Fit. Headgear should be snug enough not to slip during a match but loose enough 
 
 Five categories, ranked by frequency and seriousness in youth wrestling:
 
-Tinea corporis ("ringworm"). Fungal. Circular red rash with a clearer center. Often appears on arms, neck, or torso. Treated with topical antifungals (clotrimazole, terbinafine) for 2 to 4 weeks. The kid is out of practice and matches until the lesion has been treated for at least 72 hours and is no longer active per NATA guidance.
+Tinea corporis ("ringworm"). Fungal. Circular red rash with a clearer center. Often appears on arms, neck, or torso. Treated with topical antifungals (clotrimazole, terbinafine) for 2 to 4 weeks. The kid is out of practice and matches until the lesion has been treated for at least 72 hours and is no longer active per National Athletic Trainers' Association (NATA) guidance.
 
 Herpes gladiatorum (HSV-1 skin infection). Viral. Painful blistering rash, often on the face, neck, or arms. Highly contagious during active outbreak. Treated with antiviral medications (acyclovir, valacyclovir). The kid is out for 120 hours of antiviral treatment with no new lesions per most state association rules. Cannot be cured; outbreaks can recur. Some wrestlers take daily antivirals during the season prophylactically.
 

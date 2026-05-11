@@ -52,11 +52,11 @@ A league that answers cleanly is one that has thought about this. A league that 
 
 2. Are background checks fingerprint-based or name-only? Fingerprint catches out-of-state convictions and name changes that name-based misses.
 
-3. Do you have a written emergency action plan posted at every field? An EAP names the closest hospital, the access point for EMS, and who calls 911. It should not live in a coach's head.
+3. Do you have a written emergency action plan posted at every field? An EAP names the closest hospital, the access point for emergency medical services (EMS), and who calls 911. It should not live in a coach's head.
 
-4. Where is the AED, and who on staff is certified to use it? Sudden cardiac arrest survival drops 7 to 10 percent every minute without defibrillation, per the American Heart Association.
+4. Where is the automated external defibrillator (AED), and who on staff is certified to use it? Sudden cardiac arrest survival drops 7 to 10 percent every minute without defibrillation, per the American Heart Association.
 
-5. What is your concussion protocol, and is it written? CDC HEADS UP is the standard. Same-day removal, written clearance, six-step return.
+5. What is your concussion protocol, and is it written? U.S. Centers for Disease Control and Prevention (CDC) HEADS UP is the standard. Same-day removal, written clearance, six-step return.
 
 6. What is your heat policy, and do you use wet-bulb globe temperature? The Korey Stringer Institute's WBGT thresholds are the published standard. Air temperature alone is not enough.
 

@@ -1,0 +1,197 @@
+status,code,url,note,sources
+BROKEN,403,https://publications.aap.org/pediatrics/article/133/5/e1437/32855,HTTPError GET,acl-prevention-warmup.md
+BROKEN,403,https://www.transportation.gov/individuals/aviation-consumer-protection/traveling-children,HTTPError GET,airport-pickup-non-parents.md
+BROKEN,403,https://publications.aap.org/pediatrics/article/119/6/1242/70488,HTTPError GET,burnout-signs.md; growth-plates-basics.md
+BROKEN,403,https://www.stopbullying.gov/,HTTPError GET,bullying-and-hazing.md; locker-room-culture.md
+BROKEN,403,https://www.fmcsa.dot.gov/safety/motorcoach-safety,HTTPError GET,bus-charter-vetting.md
+BROKEN,403,https://publications.aap.org/pediatrics/,HTTPError GET,cold-weather-practice.md; youth-hockey-safety-briefing.md
+BROKEN,404,https://koreystringer.institute.uconn.edu/health-and-safety/sudden-cardiac-arrest/,HTTPError HEAD,aed-location-field-readiness.md
+BROKEN,403,https://www.acacamps.org/,HTTPError GET,camp-counselor-vetting.md
+BROKEN,403,https://www.redcross.org/take-a-class/cpr,HTTPError GET,cpr-for-parents.md
+BROKEN,403,https://www.stopbullying.gov/cyberbullying,HTTPError GET,cyberbullying-team-apps.md
+BROKEN,403,https://www.redcross.org/take-a-class/water-safety,HTTPError GET,diving-board-rules-supervision.md; hotel-pool-safety.md; open-water-swim-safety.md; pool-deck-rules.md; youth-swimming-safety-briefing.md
+BROKEN,404,https://www.nata.org/practice-patient-care/health-issues/environmental,HTTPError HEAD,cold-weather-practice.md; hypothermia-on-the-field.md
+BROKEN,403,https://www.fmcsa.dot.gov/regulations/hours-of-service,HTTPError GET,driver-fatigue-team-trips.md
+BROKEN,403,https://www.redcross.org/take-a-class/lifeguarding,HTTPError GET,drowning-rescue-and-monitoring.md
+BROKEN,403,https://www.nhtsa.gov/risky-driving/drowsy-driving,HTTPError GET,driver-fatigue-team-trips.md
+BROKEN,404,https://www.teamusa.com/usa-diving,HTTPError HEAD,diving-board-rules-supervision.md
+BROKEN,403,https://www.epilepsy.com/,HTTPError GET,febrile-seizure-on-field.md
+BROKEN,403,https://www.nhtsa.gov/road-safety/15-passenger-vans,HTTPError GET,fifteen-passenger-van-risks.md
+BROKEN,404,https://www.nata.org/practice-patient-care/health-issues/secondary-school-safety,HTTPError HEAD,emergency-action-plan-template.md
+BROKEN,403,https://www.fmcsa.dot.gov/,HTTPError GET,fifteen-passenger-van-risks.md
+BROKEN,404,https://www.usahockey.com/safety,HTTPError HEAD,hockey-equipment-safety.md; travel-team-rooming-chaperones.md; youth-hockey-safety-briefing.md
+BROKEN,403,https://publications.aap.org/pediatrics/article/128/3/e741/30912,HTTPError GET,heat-and-hydration.md; heat-exhaustion-vs-heatstroke.md; heatstroke-right-now.md; hydration-baseline.md; summer-hydration-daily-plan.md
+BROKEN,403,https://www.redcross.org/,HTTPError GET,hypothermia-on-the-field.md; missing-kid-at-tournament.md; stop-the-bleed-basics.md; tournament-safety-plan-checklist.md
+BROKEN,404,https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school,HTTPError HEAD,identity-beyond-the-sport.md
+BROKEN,403,https://journals.sagepub.com/home/ajs,HTTPError GET,knee-braces-youth-sport.md
+BROKEN,404,https://www.usasoftball.com/play/equipment-standards/,HTTPError HEAD,helmet-bat-mouthguard-certification.md
+BROKEN,403,https://www.cdc.gov/niosh/topics/coldstress/,HTTPError GET,hypothermia-on-the-field.md
+BROKEN,404,https://www.bnq.qc.ca/,HTTPError HEAD,hockey-equipment-safety.md
+BROKEN,404,https://www.ncaa.org/sports/2014/8/14/sports-medicine-handbook.aspx,HTTPError HEAD,lightning-at-the-field.md
+BROKEN,403,https://www.redcross.org/take-a-class/first-aid,HTTPError GET,nosebleed-and-eye-injury.md; sideline-first-aid-kit.md
+BROKEN,404,https://www.ncaa.org/sports/2021/6/30/about-name-image-likeness-nil.aspx,HTTPError HEAD,nil-privacy-hs-athletes.md
+BROKEN,403,https://www.uscg.mil/water-safety/,HTTPError GET,open-water-swim-safety.md
+BROKEN,403,https://publications.aap.org/pediatrics/article/127/6/1182/30330,HTTPError GET,pre-game-nutrition.md
+BROKEN,404,https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/dental-trauma,HTTPError HEAD,knocked-out-tooth-protocol.md
+BROKEN,404,https://www.apa.org/topics/sport-exercise/competitive-anxiety,HTTPError HEAD,performance-anxiety.md
+BROKEN,403,https://publications.aap.org/pediatrics/article/121/4/835/72624,HTTPError GET,recovery-basics.md
+BROKEN,403,https://journals.lww.com/nsca-jscr/fulltext/2009/08000/youth_resistance_training__updated_position.40.aspx,HTTPError GET,recovery-basics.md
+BROKEN,404,https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/mouthguards,HTTPError HEAD,mouthguard-fit-boil-vs-custom.md
+BROKEN,404,https://jedfoundation.org/jed-sports/,HTTPError HEAD,post-injury-depression.md
+BROKEN,403,https://publications.aap.org/pediatrics/article/138/3/e20162148/52359,HTTPError GET,single-sport-specialization.md
+BROKEN,403,https://publications.aap.org/aapnews/news/14302/AAP-endorses-new-recommendations-on-sleep-times,HTTPError GET,sleep-targets-by-age.md
+BROKEN,403,https://journals.sagepub.com/doi/10.1177/2325967116644241,HTTPError GET,single-sport-specialization.md
+BROKEN,404,https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx,HTTPError HEAD,recruiting-dms.md; recruiting-service-red-flags.md
+BROKEN,404,https://www.ncaa.org/sports/2014/8/25/recruiting-calendars.aspx,HTTPError HEAD,recruiting-dms.md
+BROKEN,404,https://www.ncaa.org/sports/2014/8/14/diversity-and-inclusion.aspx,HTTPError HEAD,racism-discrimination-on-team.md
+BROKEN,404,https://www.justice.gov/crt/religious-discrimination,HTTPError HEAD,religious-accommodations-team-culture.md
+BROKEN,404,https://www.tiktok.com/safety,HTTPError HEAD,tiktok-privacy-settings.md
+BROKEN,404,https://www.ed.gov/laws-and-policy/idea/title-vi,HTTPError HEAD,racism-discrimination-on-team.md
+BROKEN,403,https://www.faa.gov/hazmat/packsafe,HTTPError GET,tsa-and-youth-sports-gear.md
+BROKEN,403,https://www.transportation.gov/individuals/aviation-consumer-protection,HTTPError GET,tsa-and-youth-sports-gear.md
+BROKEN,404,https://www.cpsc.gov/safety-education/safety-education-centers/sports-recreation/soccer-goal-safety,HTTPError HEAD,soccer-goalpost-anchoring.md
+BROKEN,403,https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/tornado.html,HTTPError GET,tornado-severe-weather-protocol.md
+BROKEN,404,https://www.airnow.gov/wildfire-smoke-guide/,HTTPError HEAD,wildfire-smoke-aqi.md
+BROKEN,403,https://aausports.org/aau-youth-protection-policy/,HTTPError GET,volunteer-vs-paid-coach-vetting.md
+BROKEN,502,https://aacca.org/,HTTPError HEAD,youth-cheer-stunt-safety-briefing.md
+BROKEN,404,https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation,HTTPError HEAD,used-gear-safety.md
+ERROR,ERR,https://saferbus.fmcsa.dot.gov/,URL: [Errno -2] Name or service not known,bus-charter-vetting.md
+ERROR,ERR,https://www.plantscience.psu.edu/research/centers/ssrc,"URL: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.plantscience.psu.edu'. (_ssl.c:1007)",artificial-turf-temperatures-burn-risk.md
+ERROR,ERR,https://www.nationalpolevaultsafetyfoundation.org/,URL: [Errno -2] Name or service not known,pole-vault-helmet-debate.md
+ERROR,TIMEOUT,https://www.astm.org/,socket timeout,goalkeeper-gear-safety.md; soccer-goalpost-anchoring.md; youth-lacrosse-girls-safety-briefing.md
+ERROR,TIMEOUT,https://www.olympic.org/athlete365/health/relative-energy-deficiency-in-sport/,socket timeout,eating-disorders-in-sport.md
+ERROR,TIMEOUT,https://www.olympic.org/,socket timeout,growth-spurt-injury-window.md; youth-cross-country-safety-briefing.md
+REDIRECT,308,https://www.teamusa.com/mental-health,HTTPError HEAD,burnout-signs.md; identity-beyond-the-sport.md; performance-anxiety.md; pre-game-routine.md
+REDIRECT,308,https://usafootball.com/heads-up-football/,HTTPError HEAD,youth-football-safety-briefing.md
+OK,200,https://www.foodallergy.org/,HEAD,anaphylaxis-and-epipen-on-field.md; restaurant-food-allergies-travel.md
+OK,200,https://uscenterforsafesport.org/,HEAD,airport-pickup-non-parents.md; bullying-and-hazing.md; bus-and-banquet-conduct.md; camp-counselor-vetting.md; coach-background-checks.md; coach-background-checks.md; coach-coach-conflicts.md; coach-targeting-pattern.md; coach-verbal-abuse.md; cyberbullying-team-apps.md; league-questions-checklist.md; lgbtq-youth-athlete-safety.md; locker-room-culture.md; one-on-one-coach-dms.md; one-on-one-coach-dms.md; private-trainer-vetting.md; racism-discrimination-on-team.md; recruiting-dms.md; safesport-basics-for-parents.md; safesport-basics-for-parents.md; safesport-reporting-walkthrough.md; safesport-reporting-walkthrough.md; team-app-dm-settings.md; team-manager-parent-conduct.md; tournament-safety-plan-checklist.md; transporting-other-peoples-kids.md; travel-team-rooming-chaperones.md; volunteer-vs-paid-coach-vetting.md; youth-gymnastics-safety-briefing.md
+OK,200,https://www.wada-ama.org/,HEAD,banned-substances-hs-college.md
+OK,200,https://pmc.ncbi.nlm.nih.gov/articles/PMC2729972/,HEAD,acl-prevention-warmup.md
+OK,200,https://www.aap.org/,HEAD,anaphylaxis-and-epipen-on-field.md; artificial-turf-temperatures-burn-risk.md; asthma-attack-on-field.md; broken-bone-vs-sprain.md; caffeine-youth-athletes.md; camp-counselor-vetting.md; cleats-and-foot-safety.md; coach-targeting-pattern.md; coach-verbal-abuse.md; creatine-youth-athletes.md; diabetic-emergency-on-field.md; drowning-rescue-and-monitoring.md; eating-disorders-in-sport.md; emergency-action-plan-template.md; energy-drinks-youth.md; fainting-syncope-on-field.md; febrile-seizure-on-field.md; growth-spurt-injury-window.md; hand-finger-fracture-triage.md; knee-braces-youth-sport.md; lgbtq-youth-athlete-safety.md; mental-health-crisis-conversation.md; mosquito-borne-illness.md; nosebleed-and-eye-injury.md; off-season-conditioning-safety.md; patellar-dislocation.md; play-through-pain-question.md; pollen-allergic-conjunctivitis.md; post-injury-depression.md; protein-powder-safety.md; sideline-first-aid-kit.md; soccer-headgear-data.md; suicidal-ideation-youth-athletes.md; sun-and-skin.md; swim-ear-infection-prevention.md; tick-prevention-lyme-disease.md; transporting-other-peoples-kids.md; vomiting-on-field-non-heat.md; water-polo-specific-safety.md; wildfire-smoke-aqi.md; youth-basketball-safety-briefing.md; youth-gymnastics-safety-briefing.md
+OK,200,https://www.nfhs.org/,HEAD,banned-substances-hs-college.md; batting-helmet-face-guards.md; bullying-and-hazing.md; bus-and-banquet-conduct.md; cleats-and-foot-safety.md; ejection-and-appeals.md; helmet-bat-mouthguard-certification.md; helmet-recertification.md; lightning-at-the-field.md; locker-room-culture.md; nil-privacy-hs-athletes.md; pole-vault-helmet-debate.md; religious-accommodations-team-culture.md; sideline-parent-conduct.md; wrestling-headgear-skin-infections.md; youth-lacrosse-boys-safety-briefing.md; youth-wrestling-safety-briefing.md
+OK,200,https://www.lung.org/lung-health-diseases/lung-disease-lookup/asthma,HEAD,asthma-attack-on-field.md
+OK,200,https://www.aaaai.org/,HEAD,anaphylaxis-and-epipen-on-field.md; asthma-attack-on-field.md; chlorine-asthma-swimmers.md; pollen-allergic-conjunctivitis.md; restaurant-food-allergies-travel.md
+OK,200,https://nocsae.org/,HEAD,batting-helmet-face-guards.md; catchers-gear-safety.md; helmet-bat-mouthguard-certification.md; helmet-recertification.md; used-gear-safety.md; youth-baseball-safety-briefing.md; youth-lacrosse-boys-safety-briefing.md; youth-softball-safety-briefing.md
+OK,200,https://www.tsa.gov/travel/special-procedures/traveling-children,HEAD,airport-pickup-non-parents.md
+OK,200,https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much,HEAD,caffeine-youth-athletes.md; energy-drinks-youth.md
+OK,200,https://www.usabaseball.com/,HEAD,batting-helmet-face-guards.md; catchers-gear-safety.md
+OK,200,https://www.ncaa.org/sports/2015/6/10/ncaa-banned-substances.aspx,HEAD,banned-substances-hs-college.md
+OK,200,https://koreystringer.institute.uconn.edu/,HEAD,artificial-turf-temperatures-burn-risk.md; emergency-action-plan-template.md; heat-and-hydration.md; heat-exhaustion-vs-heatstroke.md; heatstroke-right-now.md; humidity-dew-point-practice-modifiers.md; league-questions-checklist.md; youth-football-safety-briefing.md; youth-track-and-field-safety-briefing.md
+OK,200,https://orthoinfo.aaos.org/,HEAD,broken-bone-vs-sprain.md; cleats-and-foot-safety.md; growth-spurt-injury-window.md; hand-finger-fracture-triage.md; knee-braces-youth-sport.md; patellar-dislocation.md; play-through-pain-question.md; spinal-injury-cervical-spine-protocol.md; youth-baseball-safety-briefing.md; youth-basketball-safety-briefing.md; youth-cross-country-safety-briefing.md; youth-gymnastics-safety-briefing.md; youth-lacrosse-girls-safety-briefing.md; youth-soccer-safety-briefing.md; youth-softball-safety-briefing.md; youth-swimming-safety-briefing.md; youth-track-and-field-safety-briefing.md; youth-volleyball-safety-briefing.md
+OK,200,https://positivecoach.org/,HEAD,bus-and-banquet-conduct.md; coach-coach-conflicts.md; coach-targeting-pattern.md; coach-verbal-abuse.md; sideline-parent-conduct.md; team-manager-parent-conduct.md
+OK,200,https://projectplay.org/state-of-play-2025/introduction,HEAD,burnout-signs.md; single-sport-specialization.md
+OK,200,https://www.cdc.gov/healthy-swimming/,HEAD,chlorine-asthma-swimmers.md; diving-board-rules-supervision.md; swim-ear-infection-prevention.md
+OK,200,https://www.acep.org/,HEAD,broken-bone-vs-sprain.md; fainting-syncope-on-field.md; patellar-dislocation.md; shoulder-dislocation-on-field.md; spinal-injury-cervical-spine-protocol.md; vomiting-on-field-non-heat.md
+OK,200,https://www.ntsb.gov/,HEAD,bus-charter-vetting.md
+OK,200,https://www.projectadam.com/,HEAD,aed-location-field-readiness.md
+OK,200,https://www.lung.org/clean-air/indoor-air,HEAD,chlorine-asthma-swimmers.md
+OK,200,https://www.cdc.gov/heads-up/,HEAD,concussion-protocol-basics.md; concussion-protocol-basics.md; league-questions-checklist.md; suspected-concussion-right-now.md; suspected-concussion-right-now.md; vomiting-on-field-non-heat.md; youth-basketball-safety-briefing.md; youth-football-safety-briefing.md; youth-hockey-safety-briefing.md; youth-lacrosse-boys-safety-briefing.md; youth-lacrosse-girls-safety-briefing.md; youth-volleyball-safety-briefing.md
+OK,200,https://cpr.heart.org/en/resources/aed-implementation,HEAD,aed-location-field-readiness.md; tournament-safety-plan-checklist.md
+OK,200,https://www.weather.gov/safety/cold-wind-chill-chart,HEAD,cold-weather-practice.md
+OK,200,https://www.commonsensemedia.org/,HEAD,cyberbullying-team-apps.md; live-streams-and-minor-athletes.md; photo-geotagging-team-posts.md; snapchat-snap-map-risks.md; team-app-dm-settings.md; tiktok-privacy-settings.md
+OK,200,https://www.eatright.org/,HEAD,caffeine-youth-athletes.md; pre-game-nutrition.md
+OK,200,https://nfhslearn.com/,HEAD,coach-coach-conflicts.md
+OK,200,https://www.breakthrought1d.org/,HEAD,diabetic-emergency-on-field.md
+OK,200,https://diabetes.org/health-wellness/fitness,HEAD,diabetic-emergency-on-field.md
+OK,200,https://concussionfoundation.org/,HEAD,concussion-protocol-basics.md; suspected-concussion-right-now.md
+OK,200,https://www.littleleague.org/player-safety/child-protection-program/,HEAD,coach-background-checks.md; volunteer-vs-paid-coach-vetting.md
+OK,200,https://www.nsca.com/,HEAD,creatine-youth-athletes.md; off-season-conditioning-safety.md; private-trainer-vetting.md
+OK,200,https://www.cdc.gov/drowning/,HEAD,drowning-rescue-and-monitoring.md; hotel-pool-safety.md; pool-deck-rules.md; youth-swimming-safety-briefing.md
+OK,200,https://cpr.heart.org/en/cpr-courses-and-kits/hands-only-cpr,HEAD,cpr-for-parents.md
+OK,200,https://cpr.heart.org/,HEAD,cpr-for-parents.md; stop-the-bleed-basics.md
+OK,200,https://aaafoundation.org/,HEAD,driver-fatigue-team-trips.md
+OK,200,https://www.allianceforeatingdisorders.com/,HEAD,eating-disorders-in-sport.md; youth-cross-country-safety-briefing.md
+OK,200,https://www.ussoccer.com/,HEAD,goalkeeper-gear-safety.md; soccer-goalpost-anchoring.md; youth-soccer-safety-briefing.md
+OK,200,https://www.aan.com/,HEAD,febrile-seizure-on-field.md
+OK,200,https://www.usaswimming.org/safe-sport,HEAD,chlorine-asthma-swimmers.md; diving-board-rules-supervision.md; hotel-pool-safety.md; open-water-swim-safety.md; pool-deck-rules.md; youth-swimming-safety-briefing.md
+OK,200,https://www.iihs.org/,HEAD,fifteen-passenger-van-risks.md
+OK,200,https://www.usalacrosse.com/,HEAD,goalkeeper-gear-safety.md
+OK,200,https://www.usada.org/athletes/,HEAD,banned-substances-hs-college.md
+OK,200,https://www.acc.org/,HEAD,energy-drinks-youth.md
+OK,200,https://www.littleleague.org/player-safety/,HEAD,catchers-gear-safety.md; youth-baseball-safety-briefing.md
+OK,200,https://www.nata.org/professional-interests/job-settings/secondary-school,HEAD,heat-and-hydration.md
+OK,200,https://orthoinfo.aaos.org/en/diseases--conditions/,HEAD,growth-plates-basics.md
+OK,200,https://orthoinfo.aaos.org/en/diseases--conditions/osgood-schlatter-disease-knee-pain/,HEAD,growth-plates-basics.md
+OK,200,https://www.weather.gov/safety/heat,HEAD,humidity-dew-point-practice-modifiers.md
+OK,200,https://www.nata.org/,HEAD,heat-exhaustion-vs-heatstroke.md; heatstroke-right-now.md; humidity-dew-point-practice-modifiers.md; play-through-pain-question.md; shoulder-dislocation-on-field.md; sideline-first-aid-kit.md; spinal-injury-cervical-spine-protocol.md; wrestling-headgear-skin-infections.md; youth-football-safety-briefing.md; youth-track-and-field-safety-briefing.md; youth-volleyball-safety-briefing.md; youth-wrestling-safety-briefing.md
+OK,200,https://www.assh.org/,HEAD,hand-finger-fracture-triage.md
+OK,200,https://www.fifatrainingcentre.com/en/,HEAD,acl-prevention-warmup.md
+OK,200,https://www.naera.org/,HEAD,helmet-recertification.md
+OK,200,https://www.heart.org/,HEAD,fainting-syncope-on-field.md
+OK,200,https://www.cbp.gov/travel,HEAD,international-tournament-passports-visas.md
+OK,200,https://www.usahockey.com/,HEAD,ejection-and-appeals.md
+OK,200,https://travel.state.gov/,HEAD,international-tournament-passports-visas.md
+OK,200,https://www.aap.org/en/practice-management/care-delivery-approaches/mental-health/,HEAD,identity-beyond-the-sport.md; performance-anxiety.md
+OK,200,https://www.healthychildren.org/English/healthy-living/sports/Pages/default.aspx,HEAD,hydration-baseline.md; pre-game-nutrition.md
+OK,200,https://www.weather.gov/safety/lightning,HEAD,lightning-at-the-field.md
+OK,200,https://wwwnc.cdc.gov/travel,HEAD,international-tournament-passports-visas.md
+OK,200,https://www.justice.gov/,HEAD,missing-kid-at-tournament.md
+OK,200,https://afsp.org/,HEAD,mental-health-crisis-conversation.md; suicidal-ideation-youth-athletes.md
+OK,200,https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa,HEAD,live-streams-and-minor-athletes.md; photo-geotagging-team-posts.md; team-app-dm-settings.md; team-manager-parent-conduct.md; tiktok-privacy-settings.md
+OK,200,https://www.aapd.org/,HEAD,knocked-out-tooth-protocol.md; mouthguard-fit-boil-vs-custom.md
+OK,200,https://www.naso.org/,HEAD,ejection-and-appeals.md; sideline-parent-conduct.md
+OK,200,https://988lifeline.org/,HEAD,mental-health-crisis-conversation.md; suicidal-ideation-youth-athletes.md
+OK,200,https://www.missingkids.org/,HEAD,live-streams-and-minor-athletes.md; missing-kid-at-tournament.md; photo-geotagging-team-posts.md; snapchat-snap-map-risks.md; tiktok-privacy-settings.md
+OK,200,https://www.usabat.com/,HEAD,helmet-bat-mouthguard-certification.md; used-gear-safety.md
+OK,200,https://www.cdc.gov/easternequineencephalitis/,HEAD,mosquito-borne-illness.md
+OK,200,https://www.cdc.gov/westnile/,HEAD,mosquito-borne-illness.md
+OK,200,https://jedfoundation.org/,HEAD,mental-health-crisis-conversation.md; suicidal-ideation-youth-athletes.md
+OK,200,https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking,HEAD,nil-privacy-hs-athletes.md
+OK,200,https://www.glsen.org/research,HEAD,lgbtq-youth-athlete-safety.md
+OK,200,https://www.usatf.org/,HEAD,pole-vault-helmet-debate.md; youth-cross-country-safety-briefing.md; youth-track-and-field-safety-briefing.md
+OK,200,https://www.cdc.gov/mosquitoes/,HEAD,mosquito-borne-illness.md
+OK,200,https://www.iyca.org/,HEAD,off-season-conditioning-safety.md
+OK,200,https://www.aae.org/specialty/patient-resources/traumatic-dental-injuries/,HEAD,knocked-out-tooth-protocol.md
+OK,200,https://www.aao.org/eye-health/tips-prevention/protective-eyewear,HEAD,nosebleed-and-eye-injury.md
+OK,200,https://ksi.uconn.edu/prevention/hydration/,HEAD,hydration-baseline.md; summer-hydration-daily-plan.md
+OK,200,https://www.bbb.org/,HEAD,private-trainer-vetting.md; recruiting-service-red-flags.md
+OK,200,https://www.nsfsport.com/,HEAD,protein-powder-safety.md
+OK,200,https://www.academyforsportsdentistry.org/,HEAD,mouthguard-fit-boil-vs-custom.md
+OK,200,https://www.aao.org/,HEAD,pollen-allergic-conjunctivitis.md
+OK,200,https://www.ftc.gov/,HEAD,recruiting-service-red-flags.md
+OK,200,https://www.eeoc.gov/,HEAD,racism-discrimination-on-team.md
+OK,200,https://appliedsportpsych.org/,HEAD,pre-game-routine.md
+OK,200,https://www.fda.gov/food/food-labeling-nutrition/food-allergies,HEAD,restaurant-food-allergies-travel.md
+OK,200,https://orthoinfo.aaos.org/en/diseases--conditions/dislocated-shoulder/,HEAD,shoulder-dislocation-on-field.md
+OK,200,https://jissn.biomedcentral.com/,HEAD,creatine-youth-athletes.md
+OK,200,https://www.eeoc.gov/statutes/title-vii-civil-rights-act-1964,HEAD,religious-accommodations-team-culture.md
+OK,200,https://www.usada.org/athletes/substances/supplement-411/,HEAD,protein-powder-safety.md
+OK,200,https://aasm.org/resources/pdf/pediatricsleepdurationconsensus.pdf,HEAD,sleep-targets-by-age.md
+OK,200,https://www.skincancer.org/,HEAD,sun-and-skin.md
+OK,200,https://www.entnet.org/,HEAD,swim-ear-infection-prevention.md
+OK,200,https://www.ussoccer.com/playerhealth-and-safety,HEAD,soccer-headgear-data.md
+OK,200,https://www.aad.org/public/everyday-care/sun-protection,HEAD,sun-and-skin.md
+OK,200,https://www.idsociety.org/practice-guideline/lyme-disease/,HEAD,tick-prevention-lyme-disease.md
+OK,200,https://www.informed-sport.com/,HEAD,protein-powder-safety.md
+OK,200,https://www.apa.org/,HEAD,post-injury-depression.md
+OK,200,https://www.tsa.gov/travel/security-screening/whatcanibring,HEAD,tsa-and-youth-sports-gear.md
+OK,200,https://www.stopthebleed.org/,HEAD,stop-the-bleed-basics.md
+OK,200,https://www.weather.gov/safety/tornado,HEAD,tornado-severe-weather-protocol.md
+OK,200,https://www.ready.gov/tornadoes,HEAD,tornado-severe-weather-protocol.md
+OK,200,https://www.cdc.gov/ticks/,HEAD,tick-prevention-lyme-disease.md
+OK,200,https://www.airnow.gov/,HEAD,wildfire-smoke-aqi.md
+OK,200,https://www.iii.org/article/auto-insurance-basics,HEAD,transporting-other-peoples-kids.md
+OK,200,https://www.fifa.com/who-we-are/news/fifa-medical,HEAD,soccer-headgear-data.md
+OK,200,https://www.themat.com/,HEAD,wrestling-headgear-skin-infections.md; youth-wrestling-safety-briefing.md
+OK,200,https://www.usavolleyball.org/safesport/,HEAD,travel-team-rooming-chaperones.md
+OK,200,https://www.childhelp.org/,HEAD,safesport-reporting-walkthrough.md
+OK,200,https://www.worldaquatics.com/,HEAD,water-polo-specific-safety.md
+OK,200,https://www.usasf.net/,HEAD,youth-cheer-stunt-safety-briefing.md
+OK,200,https://nccsir.unc.edu/,HEAD,youth-cheer-stunt-safety-briefing.md
+OK,200,https://www.cdc.gov/mrsa/,HEAD,wrestling-headgear-skin-infections.md
+OK,200,https://www.usasoftball.com/,HEAD,youth-softball-safety-briefing.md
+OK,200,https://usavolleyball.org/safesport/,HEAD,youth-volleyball-safety-briefing.md
+OK,200,https://usagym.org/safety/,HEAD,youth-gymnastics-safety-briefing.md
+OK,200,https://parents.snapchat.com/,HEAD,snapchat-snap-map-risks.md
+OK,200,https://www.fifa.com/who-we-are/news/fifa-medical-fifa-11-injury-prevention-programme,HEAD,youth-soccer-safety-briefing.md
+OK,200,https://www.ussoccer.com/playerhealth-and-safety/concussion-initiatives,HEAD,youth-soccer-safety-briefing.md
+OK,200,https://www.mlb.com/pitch-smart,HEAD,youth-baseball-safety-briefing.md; youth-pitcher-arm-care.md
+OK,200,https://www.usab.com/youth/,HEAD,youth-basketball-safety-briefing.md
+OK,200,https://www.littleleague.org/playing-rules/pitch-count/,HEAD,youth-pitcher-arm-care.md
+OK,200,https://www.nwcaonline.com/,HEAD,youth-wrestling-safety-briefing.md
+OK,200,https://www.hecc.net/,HEAD,hockey-equipment-safety.md; youth-hockey-safety-briefing.md
+OK,200,https://www.usawaterpolo.org/safety,HEAD,water-polo-specific-safety.md
+OK,200,https://www.usacheer.org/,HEAD,youth-cheer-stunt-safety-briefing.md
+OK,200,https://asmi.org/,HEAD,youth-pitcher-arm-care.md
+OK,200,https://www.littleleague.org/play-little-league/softball/,HEAD,youth-softball-safety-briefing.md
+OK,200,https://www.usalacrosse.com/safety,HEAD,youth-lacrosse-boys-safety-briefing.md; youth-lacrosse-girls-safety-briefing.md

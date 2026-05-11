@@ -24,7 +24,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-29
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "USA Water Polo, FINA, AAP cited. The underwater-contact and eye-injury patterns are the load-bearing risks."
 ---
 
@@ -60,7 +60,7 @@ The serious end of this spectrum has produced injuries and (rarely) drowning-nea
 
 Programs with clear policies about underwater conduct, officiating that addresses it, and supervision that watches for it produce safer environments. Programs that handwave on the cultural acceptance of underwater play can produce real harm.
 
-**Four. Concussion.** Less frequent than in contact sports but real. Mechanisms include head-to-elbow contact in close play, head-to-pool-wall, and ball-to-head impacts. CDC HEADS UP applies.
+**Four. Concussion.** Less frequent than in contact sports but real. Mechanisms include head-to-elbow contact in close play, head-to-pool-wall, and ball-to-head impacts. U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies.
 
 **Five. Ear infections.** Same as competitive swim. See swim-ear-infection-prevention. Frequent water exposure produces otitis externa.
 
@@ -72,7 +72,7 @@ Programs with clear policies about underwater conduct, officiating that addresse
 
 Drowning is rare in supervised water polo but documented in near-miss form. The underwater-grab pattern and the fatigue at the end of high-intensity practices intersect with drowning risk. Adequate lifeguard supervision separate from coaching is the protection.
 
-Sudden cardiac arrest is rare. AED on-site, CPR-trained adults.
+Sudden cardiac arrest is rare. automated external defibrillator (AED) on-site, cardiopulmonary resuscitation (CPR)-trained adults.
 
 **The supervision standard.**
 

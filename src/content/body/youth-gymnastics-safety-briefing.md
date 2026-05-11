@@ -37,7 +37,7 @@ The list below is what shows up most in published youth-gymnastics epidemiology,
 
 The published prevention research:
 
-Volume management. AAP recommends no more than 16 to 20 hours of structured training per week for elite-track adolescents, with at least 1 to 2 days off per week and at least 1 month off per year. Many competitive gym programs exceed these volumes.
+Volume management. American Academy of Pediatrics (AAP) recommends no more than 16 to 20 hours of structured training per week for elite-track adolescents, with at least 1 to 2 days off per week and at least 1 month off per year. Many competitive gym programs exceed these volumes.
 
 Pre-pubertal training caps. AAP recommends not specializing in gymnastics before age 8 to 10, with controlled volume increases through adolescence.
 
@@ -49,7 +49,7 @@ Programs that follow AAP volume guidelines see meaningfully fewer overuse injuri
 
 **Three. Lower-back injuries.** Spondylolysis (stress fracture of the pars interarticularis in the lumbar spine) is documented at rates several times higher in gymnasts than in the general adolescent population. Mechanism is repetitive hyperextension under load (back walkovers, vault landings, beam dismounts). Persistent low-back pain in a gymnast warrants imaging by a pediatric sports-medicine specialist.
 
-**Four. Ankle and knee injuries.** Vault landings and floor tumbling produce ankle sprains, Achilles strains, and (less frequently) ACL injuries. Floor padding, vault training progression, and landing technique work reduce incidence.
+**Four. Ankle and knee injuries.** Vault landings and floor tumbling produce ankle sprains, Achilles strains, and (less frequently) anterior cruciate ligament (ACL) injuries. Floor padding, vault training progression, and landing technique work reduce incidence.
 
 **Five. Catastrophic apparatus injuries.** Rare but documented. Falls from uneven bars, balance beam, or high bar that produce cervical-spine injury or severe head injury. The published incidence is low; spotter training, mat coverage, and progression-based skill introduction are the prevention layers. USA Gymnastics has age-appropriate-skill guidelines.
 
@@ -75,7 +75,7 @@ The published research on gymnastics culture and athlete welfare has shifted con
 
 **The catastrophic risks, in proportion.**
 
-Sudden cardiac arrest is rare. AED on-site, CPR-trained staff. The 90-second AED standard.
+Sudden cardiac arrest is rare. automated external defibrillator (AED) on-site, cardiopulmonary resuscitation (CPR)-trained staff. The 90-second AED standard.
 
 Cervical-spine injuries from apparatus falls. Rare. Spotter discipline, mat coverage, age-appropriate skill progression.
 

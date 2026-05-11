@@ -34,7 +34,7 @@ This is the gap most parents do not realize. Team coaches in NGB-affiliated prog
 
 **The credentials that mean something.**
 
-Strength and conditioning coaches: the CSCS (Certified Strength and Conditioning Specialist) from the NSCA is the gold-standard credential for working with athletes. Requires a bachelor's degree, an exam, and continuing education.
+Strength and conditioning coaches: the CSCS (Certified Strength and Conditioning Specialist) from the National Strength and Conditioning Association (NSCA) is the gold-standard credential for working with athletes. Requires a bachelor's degree, an exam, and continuing education.
 
 Personal trainers (general): NSCA-CPT, NASM-CPT, ACSM-CPT, ACE-CPT are the major certifications. Personal training does not require a degree.
 

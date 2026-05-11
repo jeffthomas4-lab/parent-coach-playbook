@@ -24,7 +24,7 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-02-02
-  status: claude-reviewed
+  status: ready-for-jeff
   reviewerNotes: "Sensitive flagged. SafeSport, PCA, FTC COPPA cited. The team-manager role is widely underdocumented in youth-sports literature; framed practically."
 ---
 
@@ -54,7 +54,7 @@ Distributed only on a need-to-know basis (to the head coach, the chaperone for a
 
 Deleted or returned to the program at the end of the season.
 
-For kids under 13, COPPA-aligned thinking applies. The personal information cannot be shared with third parties without parental consent.
+For kids under 13, Children's Online Privacy Protection Act (COPPA)-aligned thinking applies. The personal information cannot be shared with third parties without parental consent.
 
 **The money the team-manager handles.**
 

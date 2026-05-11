@@ -9,11 +9,11 @@ ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-02-14
 governingBodies:
   - name: "USA Hockey: Equipment Rules"
-    url: "https://www.usahockey.com/safety"
+    url: "https://www.usahockey.com/page/show/910900-safety"
   - name: "HECC: Hockey Equipment Certification Council"
     url: "https://www.hecc.net/"
   - name: "BNQ: Bureau de normalisation du Québec (neck guard standard)"
-    url: "https://www.bnq.qc.ca/"
+    url: "https://www.usahockey.com/page/show/910900-safety"
 editorial:
   qualityGrade: 8
   originalityGrade: 8

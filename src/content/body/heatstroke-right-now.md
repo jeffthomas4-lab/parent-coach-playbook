@@ -60,7 +60,7 @@ Any combination of those, in a kid practicing in heat, treat as heatstroke until
 
 **Cold-water immersion.** This is the treatment. Not adjunct. Not nice-to-have. Treatment.
 
-The Korey Stringer Institute and NATA both publish the same protocol. A tub, a livestock stock tank, a kiddie pool, a large cooler, anything that can hold a kid submerged to the neck. Cold water, not just cool. Ice if available. Submerge the kid to the neck, keep the head up. Continue for 15 to 20 minutes or until temperature drops below 102°F.
+The Korey Stringer Institute and National Athletic Trainers' Association (NATA) both publish the same protocol. A tub, a livestock stock tank, a kiddie pool, a large cooler, anything that can hold a kid submerged to the neck. Cold water, not just cool. Ice if available. Submerge the kid to the neck, keep the head up. Continue for 15 to 20 minutes or until temperature drops below 102°F.
 
 **If no immersion is available.** Continuous ice-towel rotation over the entire body. Towels soaked in ice water, rotated every 30 to 60 seconds. Ice packs at the neck, armpits, groin, and behind the knees, where major blood vessels are close to the surface. Soak the kid with cold water from a hose if that is what is available.
 
@@ -70,7 +70,7 @@ The order of operations is: recognize, call 911, cool, then transport with cooli
 
 **Programs that have a cooling tub on site.** Football programs in heat-belt states should have a tub or stock tank set up before practice during the August window. Any program in any sport that practices in heat over 90°F WBGT should have a cooling-immersion plan. The American Academy of Pediatrics, KSI, and NATA all endorse this as the standard of care.
 
-**For the parent.** Stay out of the way of the trainer if there is one. If there is no trainer, you may be the adult applying the towels. Keep cooling until EMS arrives and tells you to stop.
+**For the parent.** Stay out of the way of the trainer if there is one. If there is no trainer, you may be the adult applying the towels. Keep cooling until emergency medical services (EMS) arrives and tells you to stop.
 
 **For the coach.** Heatstroke recovery is measured in minutes. Every minute the kid's core temperature is above 104°F is a minute of brain and organ insult. The cooler is not a comfort measure. It is the treatment.
 

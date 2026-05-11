@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "AAOS, AAP, IOC cited. The growth-spurt biomechanical window is well-published; framing emphasizes the specific injury cluster and prevention."
 ---
 
-The 12-to-15 age range is the highest-risk injury window in most youth sports. Parents and coaches who track injury rates by age see the same pattern across sports: a spike in overuse injuries, growth-plate injuries, and ACL tears that lines up with the adolescent growth spurt.
+The 12-to-15 age range is the highest-risk injury window in most youth sports. Parents and coaches who track injury rates by age see the same pattern across sports: a spike in overuse injuries, growth-plate injuries, and anterior cruciate ligament (ACL) tears that lines up with the adolescent growth spurt.
 
 The mechanism is biomechanical. Bones grow first; muscles, tendons, and coordination catch up later. For 12 to 18 months in most kids, the system is mismatched in ways that produce predictable injury patterns. The good news: many of these injuries are preventable through training modifications during the window.
 
@@ -73,7 +73,7 @@ Osteochondritis dissecans. Cartilage and underlying bone separation at joint sur
 
 **The protective adjustments.**
 
-The published research from AAOS, AAP, and IOC consensus statements on youth athletic development supports several specific adjustments during the growth-spurt window:
+The published research from American Academy of Orthopaedic Surgeons (AAOS), American Academy of Pediatrics (AAP), and International Olympic Committee (IOC) consensus statements on youth athletic development supports several specific adjustments during the growth-spurt window:
 
 Volume reduction. Total training volume should not increase dramatically during peak growth velocity. Programs that maintain or modestly reduce volume during this window see fewer overuse injuries.
 

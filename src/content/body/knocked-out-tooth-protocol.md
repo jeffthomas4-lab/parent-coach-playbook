@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-03-14
 governingBodies:
   - name: "American Dental Association: Dental Emergencies"
-    url: "https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/dental-trauma"
+    url: "https://www.mouthhealthy.org/all-topics-a-z/dental-emergencies"
   - name: "American Association of Endodontists: Saving a Knocked-Out Tooth"
     url: "https://www.aae.org/specialty/patient-resources/traumatic-dental-injuries/"
   - name: "American Academy of Pediatric Dentistry"
@@ -72,7 +72,7 @@ Within 30 minutes: about 50 percent.
 
 After 60 minutes: drops sharply, under 20 percent.
 
-Call the dentist on the way. If your dentist is unavailable, ER. Most ERs have an on-call oral surgeon for emergencies.
+Call the dentist on the way. If your dentist is unavailable, emergency room (ER). Most ERs have an on-call oral surgeon for emergencies.
 
 **Baby teeth are different.** A knocked-out baby tooth (deciduous tooth) is generally not reimplanted. The American Academy of Pediatric Dentistry is direct on this: pushing a baby tooth back into the socket can damage the developing permanent tooth above it.
 

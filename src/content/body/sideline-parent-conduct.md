@@ -48,7 +48,7 @@ Approaching the ref after the game in a confrontational way, including blocking 
 
 Read your league's policy on this. If parent ejection means kid suspension, the cost-benefit math of yelling at the ref changes.
 
-**Refs leaving youth sports.** Officials are leaving youth sports faster than they are being trained. The NASO and NFHS both attribute the trend partly to spectator abuse. Programs that lose officials are programs that schedule fewer games and run shorter seasons. The cost of bad sideline behavior is shared.
+**Refs leaving youth sports.** Officials are leaving youth sports faster than they are being trained. The NASO and National Federation of State High School Associations (NFHS) both attribute the trend partly to spectator abuse. Programs that lose officials are programs that schedule fewer games and run shorter seasons. The cost of bad sideline behavior is shared.
 
 **The honest part about being a parent on the sideline.** You will see calls you disagree with. You will see refs who appear to have something against your team. Some of those impressions will be correct. Most will not be. The line between expressive frustration and the conduct that crosses lines is loud, sustained, and personal.
 

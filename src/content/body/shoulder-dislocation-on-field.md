@@ -44,7 +44,7 @@ Numbness or tingling in the arm or hand can suggest nerve involvement.
 
 Pale or cool fingers can suggest vascular compromise.
 
-If any of those red flags (numbness, vascular signs) are present, escalate to ER faster.
+If any of those red flags (numbness, vascular signs) are present, escalate to emergency room (ER) faster.
 
 **Do not reduce the dislocation yourself.**
 

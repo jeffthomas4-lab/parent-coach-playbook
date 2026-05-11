@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-01-31
 governingBodies:
   - name: "NATA: Environmental Cold Injuries Position Statement"
-    url: "https://www.nata.org/practice-patient-care/health-issues/environmental"
+    url: "https://www.nata.org/practice-patient-care/health-issues"
   - name: "American Red Cross: Cold Emergencies"
     url: "https://www.redcross.org/"
   - name: "CDC: Cold Stress"
@@ -59,7 +59,7 @@ A wet, cold kid who is "just tired" and "wants to sit down" with any of those si
 
 **Three. Warm liquids if alert.** If the kid is conscious, swallowing without difficulty, and not severely impaired, warm sweet liquids help (warm water with sugar, broth, sports drinks heated). No alcohol. No caffeine. Both make hypothermia worse by changing peripheral circulation.
 
-**Four. Skin-to-skin if no other option.** When blankets and warm liquids are limited (a backcountry cross-country course, a delayed ambulance), skin-to-skin warming under layered blankets is the field method. Two adults wrapping a kid in a "sandwich" of body heat with blankets over the top. NATA references this for severe field hypothermia.
+**Four. Skin-to-skin if no other option.** When blankets and warm liquids are limited (a backcountry cross-country course, a delayed ambulance), skin-to-skin warming under layered blankets is the field method. Two adults wrapping a kid in a "sandwich" of body heat with blankets over the top. National Athletic Trainers' Association (NATA) references this for severe field hypothermia.
 
 **Five. Call 911.** Any confusion, slurring, or drowsiness. Body temperature below 95°F. No improvement within 10 minutes of warming. Severe shivering that does not respond. Any breathing irregularity.
 
@@ -71,7 +71,7 @@ Do not place the kid in hot water (a hot bath, a hot shower).
 
 Do not apply direct hot packs to skin. Wrap hot packs in cloth, place at neck and core under blankets.
 
-Do not assume an unconscious cold kid is dead. Hypothermic patients can recover from extreme cold and apparent loss of pulse. The medical maxim is "not dead until warm and dead." Continue CPR while transporting.
+Do not assume an unconscious cold kid is dead. Hypothermic patients can recover from extreme cold and apparent loss of pulse. The medical maxim is "not dead until warm and dead." Continue cardiopulmonary resuscitation (CPR) while transporting.
 
 **For coaches in cold-weather sports.**
 
@@ -83,4 +83,4 @@ Practice modification at NATA-published thresholds. Below 30°F wind chill, modi
 
 **For parents.** A kid coming off the field who is shivering uncontrollably, can't form full sentences, or seems "out of it" is not "just tired." That kid is in early hypothermia. Get them inside, dry, warm, and to medical attention if symptoms do not improve in 10 minutes.
 
-**The honest read.** Hypothermia is preventable through cold-weather practice modifications, dry clothing, and warming options on the field. The kid who shows up at 11:30 PM in the ER with severe hypothermia is nearly always a kid whose program did not have the protocol. Programs that take cold weather seriously do not have these stories.
+**The honest read.** Hypothermia is preventable through cold-weather practice modifications, dry clothing, and warming options on the field. The kid who shows up at 11:30 PM in the emergency room (ER) with severe hypothermia is nearly always a kid whose program did not have the protocol. Programs that take cold weather seriously do not have these stories.

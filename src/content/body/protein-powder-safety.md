@@ -92,7 +92,7 @@ USP Verified. United States Pharmacopeia. Tests for content, purity, and manufac
 
 Banned-substances testing matters most for athletes subject to drug testing (NCAA athletes, Olympic-track athletes, some HS state-level athletes). For non-tested athletes, the contamination concern (heavy metals, undisclosed ingredients) still applies.
 
-USADA's Supplement 411 is the standard reference. It explains the system and includes a searchable database of high-risk products and brands with documented problems.
+U.S. Anti-Doping Agency (USADA)'s Supplement 411 is the standard reference. It explains the system and includes a searchable database of high-risk products and brands with documented problems.
 
 **The brands and products to consider.**
 
@@ -132,7 +132,7 @@ The protein-powder conversation often precedes a broader supplement-stack conver
 
 Creatine (covered in its own piece). Reasonable for adolescent athletes 14+ with third-party certification.
 
-Pre-workout. AAP-aligned recommendation is no. The combination of caffeine plus other stimulants does not fit youth-athlete needs.
+Pre-workout. American Academy of Pediatrics (AAP)-aligned recommendation is no. The combination of caffeine plus other stimulants does not fit youth-athlete needs.
 
 Recovery products (BCAAs, glutamine, etc.). Published evidence for measurable performance impact is weak.
 
@@ -142,7 +142,7 @@ The "supplement stack" mentality often comes from social media or older training
 
 **For coaches.**
 
-A team policy on supplement use. Most NCAA-aligned HS programs prohibit supplements other than basic vitamins. Most rec and club programs are silent.
+A team policy on supplement use. Most National Collegiate Athletic Association (NCAA)-aligned HS programs prohibit supplements other than basic vitamins. Most rec and club programs are silent.
 
 Education on third-party certification at the start of each season.
 

@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-03-20
 governingBodies:
   - name: "FMCSA: SaferBus"
-    url: "https://saferbus.fmcsa.dot.gov/"
+    url: "https://ai.fmcsa.dot.gov/SMS/"
   - name: "FMCSA: Motorcoach Safety"
     url: "https://www.fmcsa.dot.gov/safety/motorcoach-safety"
   - name: "National Transportation Safety Board"
@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "Sensitive flagged. FMCSA SaferBus is the load-bearing public resource. NTSB cited for crash-pattern context."
 ---
 
-When your kid's travel team charters a bus, you assume the bus company has a safety record that justifies trusting them with 25 kids. The FMCSA's SaferBus tool lets parents and team managers verify that assumption in 3 minutes.
+When your kid's travel team charters a bus, you assume the bus company has a safety record that justifies trusting them with 25 kids. The Federal Motor Carrier Safety Administration (FMCSA)'s SaferBus tool lets parents and team managers verify that assumption in 3 minutes.
 
 Most parents have never used it. Many team managers have not either. The cases where a bus crash hurt or killed kids on team trips frequently involved carriers whose SaferBus record would have flagged the problem in advance.
 
@@ -114,7 +114,7 @@ For older buses without seatbelts (still in some fleets), parents and team manag
 
 **The school bus alternative.**
 
-For some teams, school district transportation is an option. School buses have a documented strong safety record per NHTSA data — among the safest forms of transportation per passenger-mile.
+For some teams, school district transportation is an option. School buses have a documented strong safety record per National Highway Traffic Safety Administration (NHTSA) data — among the safest forms of transportation per passenger-mile.
 
 School buses lack seatbelts in many states (the "compartmentalization" design is intended to protect occupants without belts), which is a separate discussion. The overall safety record is strong.
 

@@ -96,7 +96,7 @@ The kid is in water during the seizure (drowning risk).
 
 The seizure was brief (under 5 minutes), the kid recovered to baseline, and the family has handled febrile seizures with this kid before. The pediatrician will want to evaluate the underlying fever and the seizure event but transport may not need to be 911.
 
-For first-time seizures, even if the kid recovers fast, ER evaluation is appropriate to rule out underlying causes.
+For first-time seizures, even if the kid recovers fast, emergency room (ER) evaluation is appropriate to rule out underlying causes.
 
 **For team managers and coaches.**
 
@@ -110,7 +110,7 @@ After the event, document time of onset, duration, what was happening before, wh
 
 If your kid has known seizure disorder, the team should have a written care plan from the neurologist. The plan covers triggers, rescue medication if any, and 911 thresholds.
 
-For a one-off febrile seizure with no prior history, the AAP guidance is that most do not require chronic anti-seizure medication. The kid is at slightly elevated risk for another febrile seizure but not for adult epilepsy.
+For a one-off febrile seizure with no prior history, the American Academy of Pediatrics (AAP) guidance is that most do not require chronic anti-seizure medication. The kid is at slightly elevated risk for another febrile seizure but not for adult epilepsy.
 
 **The thing parents miss most.**
 

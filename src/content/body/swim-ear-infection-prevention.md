@@ -52,7 +52,7 @@ Severe cases may have spreading redness, swollen lymph nodes, fever.
 
 **The prevention protocol.**
 
-The CDC's Healthy Swimming program and AAO's published guidance converge on a few steps:
+The U.S. Centers for Disease Control and Prevention (CDC)'s Healthy Swimming program and AAO's published guidance converge on a few steps:
 
 After every swim, dry the ears thoroughly. Tilt head to each side, allow water to drain, dry the outer ear with a towel. Most parents stop here. Most kids who get swimmer's ear are kids who stopped here.
 

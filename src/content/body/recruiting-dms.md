@@ -9,9 +9,9 @@ ageBands: ["13-14", "15-plus"]
 publishedAt: 2026-04-30
 governingBodies:
   - name: "NCAA Eligibility Center"
-    url: "https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx"
+    url: "https://web3.ncaa.org/ecwr3/"
   - name: "NCAA Recruiting Calendars"
-    url: "https://www.ncaa.org/sports/2014/8/25/recruiting-calendars.aspx"
+    url: "https://www.ncaa.org/recruiting"
   - name: "U.S. Center for SafeSport"
     url: "https://uscenterforsafesport.org/"
 editorial:
@@ -28,7 +28,7 @@ editorial:
   reviewerNotes: "Sensitive flagged. NCAA recruiting rules sourced. Includes the predator-via-fake-recruiter vector that parents should know about."
 ---
 
-The college coach DM hits your kid's Instagram. Or your kid's TikTok. Or your kid's email. Sometimes the message is real. Sometimes it is from a real coach but earlier than NCAA rules allow. Sometimes it is not from a coach at all.
+The college coach DM hits your kid's Instagram. Or your kid's TikTok. Or your kid's email. Sometimes the message is real. Sometimes it is from a real coach but earlier than National Collegiate Athletic Association (NCAA) rules allow. Sometimes it is not from a coach at all.
 
 The recruiting space has been a soft target for predators and traffickers for two decades because the framing dressing legitimizes the contact. Parents need to know how to read it.
 

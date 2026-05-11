@@ -50,7 +50,7 @@ Insurance attestation (the driver carries valid auto insurance and a valid licen
 
 Some leagues now require a per-trip slip rather than a season-long one. Tighter is better.
 
-**Booster seats and child-restraint laws.** Federal and state child-restraint laws apply regardless of whose kid is in the car. AAP recommends rear-facing seats for children under 2, forward-facing harness seats up to age 4 or to the seat's height/weight limit, and booster seats until 4 feet 9 inches or about age 10 to 12.
+**Booster seats and child-restraint laws.** Federal and state child-restraint laws apply regardless of whose kid is in the car. American Academy of Pediatrics (AAP) recommends rear-facing seats for children under 2, forward-facing harness seats up to age 4 or to the seat's height/weight limit, and booster seats until 4 feet 9 inches or about age 10 to 12.
 
 State laws set the floor. AAP guidance is the better practice. For youth sports, this matters mostly for sibling kids riding along to practice.
 

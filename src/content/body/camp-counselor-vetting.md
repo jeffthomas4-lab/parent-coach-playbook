@@ -50,7 +50,7 @@ For sports camps, ACA accreditation is one signal. Sport-specific standards (USA
 
 3. "What is the SafeSport or equivalent youth-protection training requirement?" For sports camps, SafeSport training should be required. For non-sport camps, ACA's MyACA training or similar.
 
-4. "What is the medical-staffing setup? Nurse on-site, infirmary, hospital affiliation?" Overnight camps should have a registered nurse on-site or on-call. Day camps should have at least one staff member with current first-aid and CPR certification per group.
+4. "What is the medical-staffing setup? Nurse on-site, infirmary, hospital affiliation?" Overnight camps should have a registered nurse on-site or on-call. Day camps should have at least one staff member with current first-aid and cardiopulmonary resuscitation (CPR) certification per group.
 
 5. "What is the policy on adult-camper one-on-one settings?" SafeSport-aligned: no closed-door 1-on-1 between an adult and a camper. Always two adults present, or doors open, or in observable areas. A camp without a clear policy on this is a yellow flag.
 

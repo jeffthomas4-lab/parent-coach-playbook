@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-01-14
 governingBodies:
   - name: "American Dental Association: Mouthguards"
-    url: "https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/mouthguards"
+    url: "https://www.mouthhealthy.org/all-topics-a-z/mouthguards/"
   - name: "American Academy of Pediatric Dentistry"
     url: "https://www.aapd.org/"
   - name: "Academy for Sports Dentistry"
@@ -36,7 +36,7 @@ Protects teeth from direct impact. The published evidence on this is overwhelmin
 
 Cushions soft-tissue impact. Reduces lip and tongue lacerations from forceful jaw closure on impact.
 
-Marketed but not supported by published evidence: concussion reduction. The ADA and Academy for Sports Dentistry are explicit that no mouthguard product has been shown to reduce concussion incidence in published trials. Marketing claims to the contrary should be ignored.
+Marketed but not supported by published evidence: concussion reduction. The Americans with Disabilities Act (ADA) and Academy for Sports Dentistry are explicit that no mouthguard product has been shown to reduce concussion incidence in published trials. Marketing claims to the contrary should be ignored.
 
 **The three categories.**
 
@@ -84,7 +84,7 @@ Older kids who have settled into their adult dentition and will use the mouthgua
 
 **State and league requirements.**
 
-NFHS requires mouthguards in football, ice hockey, lacrosse, field hockey, and wrestling. State high school associations and most youth NGB-affiliated leagues match the requirement.
+National Federation of State High School Associations (NFHS) requires mouthguards in football, ice hockey, lacrosse, field hockey, and wrestling. State high school associations and most youth NGB-affiliated leagues match the requirement.
 
 Mouthguard tethering (a strap from the mouthguard to the helmet face mask) is required in football and lacrosse-boys at most levels. Tether reduces lost mouthguards and ensures the kid is wearing it on every play.
 

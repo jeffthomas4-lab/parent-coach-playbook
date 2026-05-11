@@ -14,7 +14,7 @@ governingBodies:
   - name: "NFHS: Lightning Safety in Athletics"
     url: "https://www.nfhs.org/"
   - name: "NCAA Sports Medicine Handbook: Lightning Safety"
-    url: "https://www.ncaa.org/sports/2014/8/14/sports-medicine-handbook.aspx"
+    url: "https://www.ncaa.org/sport-science-institute"
 protocolSteps:
   - "Count the seconds between the lightning flash and the thunder. If under 30 seconds, lightning is within 6 miles. Clear the field now."
   - "Move all players, coaches, and spectators to a substantial enclosed building (not a dugout, not a tent, not under a tree)."
@@ -39,7 +39,7 @@ editorial:
 
 You see a flash. You hear a rumble. You count.
 
-The 30/30 rule is the standard from the National Weather Service, the NFHS, and the NCAA Sports Medicine Handbook. It is the cleanest rule in youth-sports weather safety because it is a count and a clock.
+The 30/30 rule is the standard from the National Weather Service, the National Federation of State High School Associations (NFHS), and the National Collegiate Athletic Association (NCAA) Sports Medicine Handbook. It is the cleanest rule in youth-sports weather safety because it is a count and a clock.
 
 **The first 30: when to clear.** Count the seconds between a lightning flash and the corresponding thunder. If the count is under 30 seconds, the lightning is within 6 miles and capable of reaching where you are standing. Clear the field.
 
@@ -61,6 +61,6 @@ The 30-minute number is the published standard. Some programs use 20 minutes; th
 
 **For the parent.** Watch the sky. Watch your phone's lightning detection app. Watch the coach. If the coach is delaying the call, you can pull your kid first and explain it later.
 
-**If someone is struck.** Call 911 immediately. Lightning-strike victims are not electrically charged. You can touch them. If they are not breathing, start CPR. Use the AED if available. Roughly 90 percent of lightning-strike victims survive with prompt CPR.
+**If someone is struck.** Call 911 immediately. Lightning-strike victims are not electrically charged. You can touch them. If they are not breathing, start cardiopulmonary resuscitation (CPR). Use the automated external defibrillator (AED) if available. Roughly 90 percent of lightning-strike victims survive with prompt CPR.
 
 The honest part: youth-sports lightning fatalities cluster around moments of organizational hesitation. The coach who is unsure, the tournament that wants to keep going, the parent who is unwilling to be "that parent." The 30/30 rule exists so the decision is not a judgment call. It is a count and a clock.

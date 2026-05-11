@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-04-20
 governingBodies:
   - name: "American Red Cross: Aquatic Safety"
-    url: "https://www.redcross.org/take-a-class/water-safety"
+    url: "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/water-safety.html"
   - name: "CDC: Drowning Prevention"
     url: "https://www.cdc.gov/drowning/"
   - name: "USA Swimming: Safe Sport"
@@ -30,7 +30,7 @@ editorial:
 
 The team hotel pool at 9 PM on the Saturday of a tournament weekend is one of the highest-risk environments in youth sports. No lifeguard. Tired kids. Multiple horseplay incentives. A pool that may or may not have proper drain covers and depth markings.
 
-CDC drowning data shows hotel and motel pools account for a meaningful share of childhood drowning fatalities, second only to home pools. The pattern is consistent: kids unattended or under-attended, no lifeguard, often after dark.
+U.S. Centers for Disease Control and Prevention (CDC) drowning data shows hotel and motel pools account for a meaningful share of childhood drowning fatalities, second only to home pools. The pattern is consistent: kids unattended or under-attended, no lifeguard, often after dark.
 
 The protocol below is what good travel teams set up.
 
@@ -82,17 +82,17 @@ A 14-year-old at a team hotel who wants to swim at 11 PM with no chaperone is th
 
 Hotel hot tubs are a separate risk category.
 
-Maximum recommended exposure for adults is 15 minutes in 104°F water. For kids, the AAP recommends a hard cap on hot tub use, particularly for kids under 5 (no use) and for adolescents (limited use, no horseplay). Cardiovascular stress, dehydration, and the rare hyperthermia risk are real.
+Maximum recommended exposure for adults is 15 minutes in 104°F water. For kids, the American Academy of Pediatrics (AAP) recommends a hard cap on hot tub use, particularly for kids under 5 (no use) and for adolescents (limited use, no horseplay). Cardiovascular stress, dehydration, and the rare hyperthermia risk are real.
 
 For travel teams, the hot tub is generally off-limits. Worth writing down.
 
 **The protocol if a drowning happens.**
 
-Pull the kid out as quickly as possible. Call 911. Start CPR if not breathing. Use AED if available.
+Pull the kid out as quickly as possible. Call 911. Start cardiopulmonary resuscitation (CPR) if not breathing. Use automated external defibrillator (AED) if available.
 
-Continue CPR until EMS arrives. Drowning victims can recover with extended CPR more often than other arrest types.
+Continue CPR until emergency medical services (EMS) arrives. Drowning victims can recover with extended CPR more often than other arrest types.
 
-Even after a "near drowning" where the kid recovers on the deck, ER evaluation is recommended. The "secondary drowning" or delayed pulmonary edema window is real, though less common than internet narratives suggest. AAP guidance is observation for symptoms over the following hours; ER if breathing changes, fatigue, or persistent cough.
+Even after a "near drowning" where the kid recovers on the deck, emergency room (ER) evaluation is recommended. The "secondary drowning" or delayed pulmonary edema window is real, though less common than internet narratives suggest. AAP guidance is observation for symptoms over the following hours; ER if breathing changes, fatigue, or persistent cough.
 
 **For team managers.**
 

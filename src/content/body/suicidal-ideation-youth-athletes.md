@@ -34,7 +34,7 @@ This piece covers what to recognize and what to do if a youth athlete is showing
 
 **The published context.**
 
-Suicide is one of the leading causes of death among American adolescents per CDC data. Youth athletes are not immune; some sports cultures and competitive pressures correlate with increased risk in specific subgroups.
+Suicide is one of the leading causes of death among American adolescents per U.S. Centers for Disease Control and Prevention (CDC) data. Youth athletes are not immune; some sports cultures and competitive pressures correlate with increased risk in specific subgroups.
 
 The risk factors clinically associated with adolescent suicidal ideation include: depression, anxiety disorders, prior suicide attempt, family history of suicide, exposure to suicide of a peer, substance use, identity-based bullying, recent major loss, eating disorders, traumatic brain injury (including sport-related concussion), and acute interpersonal crisis.
 
@@ -96,7 +96,7 @@ If the situation is acute:
 
 Call 988 with the kid, or text 988.
 
-If the kid is in immediate danger, call 911 or take them to the nearest ER. Most EDs have psychiatric evaluation capability.
+If the kid is in immediate danger, call 911 or take them to the nearest emergency room (ER). Most EDs have psychiatric evaluation capability.
 
 Do not leave them alone.
 
@@ -128,7 +128,7 @@ If a teammate has died by suicide or attempted suicide, the team needs structure
 
 A trauma-informed counselor or sport-psychology professional for team meetings.
 
-The JED Foundation's Postvention Toolkit for guidance on what to do and not do.
+The JED Foundation (JED) Foundation's Postvention Toolkit for guidance on what to do and not do.
 
 Direct communication with parents about resources for their kids.
 
@@ -138,7 +138,7 @@ The pattern of "we don't talk about it" creates the conditions for additional ri
 
 **For coaches.**
 
-Most coaches will not face this directly. The ones who do are unprepared. AAP, JED Foundation, and AFSP all publish coach-targeted resources.
+Most coaches will not face this directly. The ones who do are unprepared. American Academy of Pediatrics (AAP), JED Foundation, and AFSP all publish coach-targeted resources.
 
 The basics: notice changes, ask directly when concerned, route to professionals fast. Do not try to be the therapist. Do be a trusted adult who is paying attention.
 

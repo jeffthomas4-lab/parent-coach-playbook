@@ -47,11 +47,11 @@ Most pitch-to-the-batter injuries are bruising or minor lacerations. Severe inju
 
 **Four. Commotio cordis.** Rare but documented. A baseball or softball striking the chest at a specific instant of the cardiac cycle can produce ventricular fibrillation. Catchers and pitchers are at marginally higher risk than position players.
 
-The cardiac risk is partly addressed by NOCSAE-certified ND200 chest protectors (specifically designed for the chest-impact cardiac risk). The standard is increasingly adopted in youth play. Beyond that, AED on-site and CPR-trained staff matter most. Survival from commotio cordis approaches normal cardiac arrest survival when the AED is used in the first three minutes.
+The cardiac risk is partly addressed by NOCSAE-certified ND200 chest protectors (specifically designed for the chest-impact cardiac risk). The standard is increasingly adopted in youth play. Beyond that, automated external defibrillator (AED) on-site and cardiopulmonary resuscitation (CPR)-trained staff matter most. Survival from commotio cordis approaches normal cardiac arrest survival when the AED is used in the first three minutes.
 
 **Five. Eye injuries.** Foul balls, line drives, errant throws. Polycarbonate impact-resistant lenses for kids who wear glasses. Sport eyewear (goggles) for pitchers with prior eye injury history is reasonable.
 
-**Six. Heat illness.** Outdoor practice in summer heat. NATA acclimatization, WBGT thresholds, hydration. Same protocol as any outdoor youth sport.
+**Six. Heat illness.** Outdoor practice in summer heat. National Athletic Trainers' Association (NATA) acclimatization, WBGT thresholds, hydration. Same protocol as any outdoor youth sport.
 
 **The catastrophic risks, in proportion.**
 

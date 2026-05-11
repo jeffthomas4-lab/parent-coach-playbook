@@ -54,7 +54,7 @@ Searchability of the kid's name connected to a specific game, team, and date.
 
 Use of the footage for purposes outside the original event (highlight reels, recruitment materials, third-party scouting databases).
 
-**The COPPA piece.**
+**The Children's Online Privacy Protection Act (COPPA) piece.**
 
 The Children's Online Privacy Protection Rule, enforced by the FTC, requires verifiable parental consent before an online service can collect "personal information" from children under 13. Video streaming with identifying information arguably meets the definition.
 
@@ -84,7 +84,7 @@ GameChanger. Stat-and-video platform owned by DICK'S Sporting Goods. Default set
 
 BallerTV. Private platform that streams hundreds of thousands of youth tournaments. Pay-per-view. Streams typically not opt-out by individual.
 
-NFHS Network. National federation of state high school associations' streaming partner. Streams high school games publicly. Opt-out varies by state.
+National Federation of State High School Associations (NFHS) Network. National federation of state high school associations' streaming partner. Streams high school games publicly. Opt-out varies by state.
 
 Hudl. Coach-and-team film tool. Generally private to the team but with sharing tools that can leak public.
 
@@ -92,7 +92,7 @@ Individual league sites. Many leagues now stream through their own sites or YouT
 
 **The targeted-content concern.**
 
-Predators and trafficking networks have used youth-sports streams as a discovery vector in documented cases per NCMEC and DOJ reports. The pattern: a publicly streamed game identifies a kid by name, team, and location; the predator then targets the kid through social media or in-person contact at future games.
+Predators and trafficking networks have used youth-sports streams as a discovery vector in documented cases per National Center for Missing & Exploited Children (NCMEC) and DOJ reports. The pattern: a publicly streamed game identifies a kid by name, team, and location; the predator then targets the kid through social media or in-person contact at future games.
 
 The risk is real and small. The mitigations are real and meaningful.
 

@@ -72,7 +72,7 @@ An identity-collapse setback: the kid grieves intensely, then keeps grieving. Sl
 
 Pediatrician first. They can rule out other causes and refer appropriately. A sports psychologist or licensed therapist who works with adolescent athletes is the right specialist for athletic identity work. Many universities have free or low-cost sliding-scale referrals through their psychology departments.
 
-The USOPC and NCAA both publish mental-health resources. The fact that elite organizations have to publish them tells you the issue isn't rare. The fact that they're published also means there's no stigma left in talking to someone.
+The USOPC and National Collegiate Athletic Association (NCAA) both publish mental-health resources. The fact that elite organizations have to publish them tells you the issue isn't rare. The fact that they're published also means there's no stigma left in talking to someone.
 
 **The parent conversation.**
 

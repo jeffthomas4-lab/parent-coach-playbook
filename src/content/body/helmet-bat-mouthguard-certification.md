@@ -14,7 +14,7 @@ governingBodies:
   - name: "USA Baseball: Bat Standards"
     url: "https://www.usabat.com/"
   - name: "USA Softball: Equipment Standards"
-    url: "https://www.usasoftball.com/play/equipment-standards/"
+    url: "https://www.usasoftball.com/play/"
   - name: "NFHS: National Federation of State High School Associations"
     url: "https://www.nfhs.org/"
 editorial:
@@ -41,7 +41,7 @@ For football helmets, NOCSAE certification expires. Helmets reconditioned by an 
 
 USA Softball runs its own certification and publishes a list of approved and disapproved bat models. The "ASA 2004" certification carries forward; the newer USA Softball certification is the current standard. Check the league's rule packet for which standard applies to your kid's division. The list updates annually.
 
-**Mouthguards: state and league rules.** The NFHS requires "tooth and mouth protectors" for football, ice hockey, lacrosse, field hockey, and wrestling. State high school associations follow that lead. Most youth leagues match. The American Dental Association recommends custom-fitted mouthguards over boil-and-bite, but boil-and-bite is the floor, not the ceiling.
+**Mouthguards: state and league rules.** The National Federation of State High School Associations (NFHS) requires "tooth and mouth protectors" for football, ice hockey, lacrosse, field hockey, and wrestling. State high school associations follow that lead. Most youth leagues match. The American Dental Association recommends custom-fitted mouthguards over boil-and-bite, but boil-and-bite is the floor, not the ceiling.
 
 Mouthguards do not prevent concussions. The marketing on some "concussion-reducing" mouthguards has been challenged repeatedly. They protect teeth and lips. That is the actual job.
 

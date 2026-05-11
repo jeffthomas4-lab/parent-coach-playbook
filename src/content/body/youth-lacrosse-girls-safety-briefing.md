@@ -39,11 +39,11 @@ The rules attempt to prevent the contact mechanisms that drive boys' lacrosse in
 
 The headgear mandate. Florida was the first state to mandate ASTM-F3137-certified headgear for girls' lacrosse (2018). Other states have followed in various forms. USA Lacrosse permits headgear at all levels but does not yet mandate it nationally. Published research on whether the headgear reduces concussion rates in girls' lacrosse specifically is mixed, similar to the soccer-headgear question.
 
-CDC HEADS UP applies. Same-day removal, written clearance, six-step return.
+U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies. Same-day removal, written clearance, six-step return.
 
 **Two. Eye injuries.** ASTM-F3137-certified goggles are required by USA Lacrosse rules. The goggle standard was developed specifically after early-2000s eye injuries in unguarded girls' lacrosse. The goggles work; eye injury incidence dropped significantly after the mandate. Worth verifying the goggles your kid wears carry the certification stamp.
 
-**Three. Ankle and knee injuries.** Cutting, dodging, running on grass and turf. Lateral ankle sprains and ACL injuries (especially in girls) at rates comparable to soccer.
+**Three. Ankle and knee injuries.** Cutting, dodging, running on grass and turf. Lateral ankle sprains and anterior cruciate ligament (ACL) injuries (especially in girls) at rates comparable to soccer.
 
 The FIFA 11+ neuromuscular warm-up reduces ACL incidence in published trials by 30 to 50 percent. The protocol is free and runs in 10 to 15 minutes. Programs that adopt it see fewer ACL tears. Most do not.
 
@@ -51,11 +51,11 @@ For families with a daughter playing competitive girls' lacrosse, FIFA 11+ adopt
 
 **Four. Hand and wrist injuries.** Stick-to-hand contact during defensive checks (within rules). Mallet finger and jersey finger from stick contact. Wrist sprains from falls.
 
-**Five. Heat illness.** Spring outdoor sport, often during early-summer heat at travel-team tournaments. NATA acclimatization, WBGT thresholds, hydration.
+**Five. Heat illness.** Spring outdoor sport, often during early-summer heat at travel-team tournaments. National Athletic Trainers' Association (NATA) acclimatization, WBGT thresholds, hydration.
 
 **Six. Lower back pain.** From the dynamic shooting motion, particularly in older players. Strength training and core work address this. Pediatric sports medicine consultation if persistent.
 
-**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare in girls' lacrosse but documented. AED on-site, CPR-trained staff. The 90-second standard.
+**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare in girls' lacrosse but documented. automated external defibrillator (AED) on-site, cardiopulmonary resuscitation (CPR)-trained staff. The 90-second standard.
 
 Lightning at outdoor games. The 30/30 rule.
 

@@ -58,11 +58,11 @@ The trip is supposed to be fun. The checklist exists so the fun is not interrupt
 
 **Curfew and bed checks.** Written curfew. Bed checks done by chaperones, not by the head coach alone. Document time and that all kids were in their assigned rooms.
 
-**Local medical info.** The closest hospital with a pediatric ER, and the closest urgent care, for each tournament venue. Addresses, phone numbers, distances, expected drive time. Saved in the chaperones' phone navigation apps before arrival.
+**Local medical info.** The closest hospital with a pediatric emergency room (ER), and the closest urgent care, for each tournament venue. Addresses, phone numbers, distances, expected drive time. Saved in the chaperones' phone navigation apps before arrival.
 
-**AED location.** Confirmed before warmups at each venue. Walk to it. Time the walk. If it is more than 90 seconds, that is a conversation with the tournament organizer.
+**automated external defibrillator (AED) location.** Confirmed before warmups at each venue. Walk to it. Time the walk. If it is more than 90 seconds, that is a conversation with the tournament organizer.
 
-**First-aid kit and CPR coverage.** The team's sideline first-aid kit is stocked and on-site. At least the head coach and one chaperone are CPR/AED certified within their two-year window.
+**First-aid kit and cardiopulmonary resuscitation (CPR) coverage.** The team's sideline first-aid kit is stocked and on-site. At least the head coach and one chaperone are CPR/AED certified within their two-year window.
 
 **Weather policies.** Heat and lightning policies confirmed in writing with the tournament organizer before the team arrives. Wet-bulb globe temperature thresholds for cancellation, lightning all-clear protocol. If these are vague in the tournament rule packet, ask before warmups.
 

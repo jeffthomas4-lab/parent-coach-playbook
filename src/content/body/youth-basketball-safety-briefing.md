@@ -39,23 +39,23 @@ The risk reduction protocol is established: lace-up ankle braces (semi-rigid) re
 
 Mid-cut shoes do not significantly reduce ankle sprains in published trials, despite the marketing. Lace-up braces do.
 
-**Two. Knee injuries, including ACL.** ACL tears in youth basketball are growing as a category, particularly in girls. Mechanism is non-contact, planted-foot, change-of-direction. The same neuromuscular warmup protocols (FIFA 11+, the Anterior Cruciate Ligament-prevention warm-up) reduce ACL incidence by 40 to 60 percent in published trials.
+**Two. Knee injuries, including anterior cruciate ligament (ACL).** ACL tears in youth basketball are growing as a category, particularly in girls. Mechanism is non-contact, planted-foot, change-of-direction. The same neuromuscular warmup protocols (FIFA 11+, the Anterior Cruciate Ligament-prevention warm-up) reduce ACL incidence by 40 to 60 percent in published trials.
 
 Programs that run a 10-minute pre-practice warm-up see lower ACL rates. Most do not.
 
-**Three. Finger fractures and dislocations.** "Jammed finger" turns into "fractured finger" more often than parents expect. Direct ball contact at the fingertips, finger caught in a jersey or another player's hand. AAOS and pediatric orthopedic surgeons see growth-plate injuries (Salter-Harris) in pediatric finger fractures at high rates.
+**Three. Finger fractures and dislocations.** "Jammed finger" turns into "fractured finger" more often than parents expect. Direct ball contact at the fingertips, finger caught in a jersey or another player's hand. American Academy of Orthopaedic Surgeons (AAOS) and pediatric orthopedic surgeons see growth-plate injuries (Salter-Harris) in pediatric finger fractures at high rates.
 
 Point tenderness over a fingertip after a jam, especially with swelling and limited motion, warrants an X-ray. Buddy-taping a "sprained" finger that turns out to be a growth-plate fracture can cause permanent deformity.
 
 **Four. Concussion.** Less frequent than in football or hockey but real. Mechanisms include head-to-floor falls, head-to-elbow contact, head-to-pole or stanchion contact (dunks, hard drives to the basket). The published rate is around 0.5 per 1,000 athletic exposures for youth basketball.
 
-CDC HEADS UP applies. Same-day removal, written clearance, six-step return.
+U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies. Same-day removal, written clearance, six-step return.
 
 **Five. Wrist and forearm fractures.** Falls on outstretched hand. Common in younger players who have not yet developed protective falling instincts.
 
 **Six. Patellar tendonitis ("jumper's knee") and Osgood-Schlatter.** Overuse injuries affecting growing kids. Pre-pubertal and adolescent boys especially. Modify training volume, rest, ice, and pediatric orthopedic consultation if symptoms persist beyond a few weeks.
 
-**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare in youth basketball but documented. Commotio cordis from chest impact is rare. AED on-site at every game and practice is the published standard. The 90-second AED standard applies.
+**The catastrophic risks, in proportion.** Sudden cardiac arrest is rare in youth basketball but documented. Commotio cordis from chest impact is rare. automated external defibrillator (AED) on-site at every game and practice is the published standard. The 90-second AED standard applies.
 
 Heat is generally not the issue indoors. Outdoor courts in summer heat get warm; the heat-acclimatization protocol matters less for basketball than for outdoor sports but is still relevant for tournaments in non-air-conditioned gyms.
 
@@ -65,7 +65,7 @@ Heat is generally not the issue indoors. Outdoor courts in summer heat get warm;
 
 "What is the concussion protocol, and is it written?"
 
-"Where is the AED, and is at least one adult CPR/AED certified at every practice and game?"
+"Where is the AED, and is at least one adult cardiopulmonary resuscitation (CPR)/AED certified at every practice and game?"
 
 "What is the policy on a kid who reports a finger or ankle injury, in terms of return to play?"
 

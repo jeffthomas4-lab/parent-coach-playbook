@@ -44,7 +44,7 @@ Friends in this context can be anyone the user has accepted as a friend. The fri
 
 A predator with even superficial access to a kid's friend list (through a fake account, mutual-friend connection, or compromised account of an actual friend) can map the kid's daily movements. Practice schedule, school, home, after-school habits.
 
-Documented cases per NCMEC reports include exactly this pattern: predators using Snap Map (and similar features on Find My, Life360, Instagram, and Facebook) to identify when and where to target a kid.
+Documented cases per National Center for Missing & Exploited Children (NCMEC) reports include exactly this pattern: predators using Snap Map (and similar features on Find My, Life360, Instagram, and Facebook) to identify when and where to target a kid.
 
 The risk is real and small. The mitigation is real and easy.
 

@@ -11,7 +11,7 @@ governingBodies:
   - name: "NFHS: State Association NIL Tracker"
     url: "https://www.nfhs.org/"
   - name: "NCAA: NIL"
-    url: "https://www.ncaa.org/sports/2021/6/30/about-name-image-likeness-nil.aspx"
+    url: "https://www.ncaa.org/news/2021/6/30/ncaa-adopts-interim-name-image-and-likeness-policy.aspx"
   - name: "FTC: Endorsement Guides"
     url: "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
 editorial:
@@ -40,7 +40,7 @@ A local business pays a HS star $500 to post about their gym on Instagram. A nat
 
 The scale varies. Most HS NIL deals are small (under $1,000). A small number of top recruits sign deals worth tens of thousands of dollars. A handful sign larger.
 
-The state-by-state framework. NFHS does not control HS NIL; each state athletic association sets its rules. Currently more than 35 states permit some form of HS NIL. Some are restrictive (no school-logo use, no in-uniform endorsements, no recruiting-conflict deals). Some are permissive.
+The state-by-state framework. National Federation of State High School Associations (NFHS) does not control HS NIL; each state athletic association sets its rules. Currently more than 35 states permit some form of HS NIL. Some are restrictive (no school-logo use, no in-uniform endorsements, no recruiting-conflict deals). Some are permissive.
 
 **The privacy implications.**
 

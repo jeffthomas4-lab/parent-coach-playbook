@@ -32,7 +32,7 @@ The 15-passenger van is one of the most-used and least-understood vehicles in yo
 
 This piece walks through the data, the laws, and the safer alternatives.
 
-**The NHTSA position.**
+**The National Highway Traffic Safety Administration (NHTSA) position.**
 
 The National Highway Traffic Safety Administration has issued repeated consumer advisories about 15-passenger vans. The published findings:
 
@@ -62,7 +62,7 @@ Drivers without specific 15-passenger-van training. The vehicle handles differen
 
 Multiple smaller vehicles. Sedans, SUVs, or minivans driven by multiple parents. Reduces the catastrophic-rollover risk by simply not having a 15-passenger van.
 
-A chartered bus. Coach buses operated by FMCSA-regulated commercial carriers have substantially better safety records per passenger-mile than 15-passenger vans. The cost is real but it is the safer option for trips longer than a couple hours.
+A chartered bus. Coach buses operated by Federal Motor Carrier Safety Administration (FMCSA)-regulated commercial carriers have substantially better safety records per passenger-mile than 15-passenger vans. The cost is real but it is the safer option for trips longer than a couple hours.
 
 A school bus. For programs that have access through partnership.
 

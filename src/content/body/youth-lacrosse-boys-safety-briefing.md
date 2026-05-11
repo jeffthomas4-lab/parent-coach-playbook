@@ -33,23 +33,23 @@ Boys' lacrosse is full-contact at older ages, with helmets, shoulder pads, glove
 
 **One. Concussion.** Boys' lacrosse has one of the highest concussion incidence rates among youth team sports, at the level of football and hockey at older age groups. Mechanisms: body checks, head-to-stick contact, head-to-ground falls, head impacts in scrum situations.
 
-USA Lacrosse and NFHS rule changes over the last decade have tightened body-check rules: no body-checking below age 12 in most associations, defined contact zones (no head, no back, no below-knee), and a higher penalty threshold for high hits. Programs that follow the age progression see lower concussion incidence.
+USA Lacrosse and National Federation of State High School Associations (NFHS) rule changes over the last decade have tightened body-check rules: no body-checking below age 12 in most associations, defined contact zones (no head, no back, no below-knee), and a higher penalty threshold for high hits. Programs that follow the age progression see lower concussion incidence.
 
-CDC HEADS UP applies. Same-day removal, written clearance, six-step return.
+U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies. Same-day removal, written clearance, six-step return.
 
 **Two. Shoulder, AC-joint, and clavicle injuries.** Body checking, board contact (in indoor / box lacrosse), and stick checks to the upper body produce shoulder injuries at high rates. Properly fitted shoulder pads are protective. Outgrown gear is not.
 
 **Three. Wrist, hand, and finger injuries.** Defensive stick checks land on hands and forearms constantly. Gloves with proper thumb and finger protection. Wrist sprains and fractures from falls. Mallet finger and jersey finger from stick contact and hand catches.
 
-**Four. Knee and ACL injuries.** Cutting, dodging, and change-of-direction at speed. The same FIFA 11+-style neuromuscular warm-up that reduces ACL injuries in soccer reduces them in lacrosse. Most programs do not run it. Worth asking.
+**Four. Knee and anterior cruciate ligament (ACL) injuries.** Cutting, dodging, and change-of-direction at speed. The same FIFA 11+-style neuromuscular warm-up that reduces ACL injuries in soccer reduces them in lacrosse. Most programs do not run it. Worth asking.
 
 **Five. Head and face lacerations.** Stick to the helmet, stick to the unprotected face under the helmet (the gap between cage bars), elbow contact in scrums. The helmet design and proper cage fit reduce these. Annual NOCSAE recertification matters.
 
-**Six. Heat illness.** Spring-summer outdoor sport, often in full pads. NATA acclimatization, WBGT thresholds, hydration. Same protocol as football.
+**Six. Heat illness.** Spring-summer outdoor sport, often in full pads. National Athletic Trainers' Association (NATA) acclimatization, WBGT thresholds, hydration. Same protocol as football.
 
 **The catastrophic risks, in proportion.** Cervical-spine injury from head-down checks is rare but documented. The "no head, no back" rule is the prevention. Programs that drill heads-up checking technique see fewer.
 
-Sudden cardiac arrest is rare. AED on-site, CPR-trained staff. The 90-second AED standard.
+Sudden cardiac arrest is rare. automated external defibrillator (AED) on-site, cardiopulmonary resuscitation (CPR)-trained staff. The 90-second AED standard.
 
 **What parents should ask before signing up.**
 

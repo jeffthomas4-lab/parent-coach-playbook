@@ -13,9 +13,9 @@ governingBodies:
   - name: "U.S. Equal Employment Opportunity Commission"
     url: "https://www.eeoc.gov/"
   - name: "U.S. Department of Education: Title VI"
-    url: "https://www.ed.gov/laws-and-policy/idea/title-vi"
+    url: "https://www.ed.gov/laws-and-policy/civil-rights-laws/title-vi"
   - name: "NCAA Inclusion"
-    url: "https://www.ncaa.org/sports/2014/8/14/diversity-and-inclusion.aspx"
+    url: "https://www.ncaa.org/about/inclusion"
 editorial:
   qualityGrade: 9
   originalityGrade: 9

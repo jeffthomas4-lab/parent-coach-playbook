@@ -131,3 +131,38 @@ The pillar nav and footer can keep title-shaped anchors. In-prose links should m
 - Search for "always," "never," "should," "best," "right" in context of parenting choices. Soften to invitational language.
 - Search for stereotypes (check against rubric above). Rewrite as individual variation.
 - Read titles of articles about sensitive topics (bullying, quitting, mental health). Ensure they don't contain gendered defaults or stereotypes in the URL or headline.
+
+---
+
+## 7. Acronym discipline (accessibility + plain language)
+
+**The Rule:** Every acronym used in body content must be expanded on first use within the article. Subsequent uses can shorten to the acronym alone.
+
+A parent reading "AED" in a panic doesn't know what an AED is. A screen-reader user hears "ay-ee-dee" with no context. ESL parents and people with cognitive disabilities are excluded by un-expanded jargon. The expansion is a one-time cost for clarity that benefits every reader.
+
+**Format:** `expanded form (ACRONYM)` on first use, then `ACRONYM` alone in subsequent paragraphs.
+
+**Bad:** "Call EMS. AED if available."
+**Good:** "Call emergency medical services (EMS). Get the automated external defibrillator (AED) if available." Then later: "EMS arrives and takes over. The AED stays attached until they say otherwise."
+
+**Acronyms that always need expansion on first use:**
+
+- Medical: AED, CPR, EMS, ER, TBI, ACL, RED-S, ADHD
+- Governing bodies: AAP, CDC, NATA, NCAA, NFHS, USADA, WADA, IOC, NHTSA, FMCSA, CPSC, NCMEC, AAAAI, AAOS, AAFP
+- Legal/policy: COPPA, ADA (Americans with Disabilities Act, not American Dental Association — disambiguate by context)
+- Orgs: NSCA, JED Foundation, PCA, NPVSF
+- Travel/transport: FAA, TSA
+
+**Acronyms that DO NOT need expansion** (assumed reader-known):
+
+- NIL (in NCAA recruiting context — site-wide convention)
+- NFL, NBA, MLB, MLS, USA, U.S., DC, NY, GPS, IP, IT, SUV, AM/PM
+
+**Where the rule does NOT apply:**
+
+- Frontmatter (titles of citations are reference labels, not running prose)
+- Headings (acronyms in section headers are scannable, expansion can come in the prose below)
+- Code blocks
+- Inside markdown link text or URL targets
+
+**Enforcement:** `scripts/audit-acronyms.py` (run before any content publish) flags acronyms used without expansion. The acronym-expansion pass on existing content was applied 2026-05-10; new content should be expanded at write time, not retroactively.

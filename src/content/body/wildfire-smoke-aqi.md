@@ -12,7 +12,7 @@ governingBodies:
   - name: "EPA AirNow"
     url: "https://www.airnow.gov/"
   - name: "EPA: Wildfire Smoke Guide for Public Health Officials"
-    url: "https://www.airnow.gov/wildfire-smoke-guide/"
+    url: "https://www.airnow.gov/wildfires/"
   - name: "American Academy of Pediatrics: Wildfires and Children's Health"
     url: "https://www.aap.org/"
 editorial:
