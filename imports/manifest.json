@@ -1,0 +1,13 @@
+{
+  "_doc": "Map ChatGPT/MJ image source filenames (or substrings) to target illustration filenames + dimensions. Run scripts/process-imports.py to apply.",
+  "_format": {
+    "match": "substring of source filename (e.g. '10_15_53' for the timestamp)",
+    "out":   "target filename in public/illustrations/",
+    "dims":  "[width, height] for final webp/png"
+  },
+  "mappings": [
+    {"match": "EXAMPLE_DELETE_THIS", "out": "pillar-game-day.webp",      "dims": [1600, 1000]},
+    {"match": "EXAMPLE_DELETE_THIS", "out": "pillar-season-calendar.webp","dims": [1600, 1000]},
+    {"match": "EXAMPLE_DELETE_THIS", "out": "pillar-recruiting.webp",    "dims": [1600, 1000]}
+  ]
+}

@@ -40,7 +40,19 @@ const formatLabel = (f: string | undefined) => {
   description="Pediatric sports medicine plus the safety canon. Concussion, arm care, heat, sleep, growth plates, equipment certification, lightning, league vetting, emergency response, conduct."
 >
   <section class="border-b border-bone">
-    <div class="container-px py-12 md:py-14">
+    <div class="container-px pt-12 md:pt-14 pb-6">
+      <figure class="mb-10 max-w-4xl">
+        <img
+          src="/illustrations/pillar-body-safety.webp"
+          alt="A sideline first-aid kit half-open on a folding chair: bandages, instant cold pack, sunscreen, water bottle. A youth soccer ball and bag in the grass beside it."
+          class="w-full border border-bone"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </figure>
+    </div>
+    <div class="container-px pb-12 md:pb-14">
       <div class="grid md:grid-cols-12 gap-8">
         <div class="md:col-span-4">
           <TopicIcon topic="body" size={64} />
@@ -179,48 +191,4 @@ const formatLabel = (f: string | undefined) => {
             var summary = row.getAttribute('data-summary') || '';
             var lOk = !l || lens === l;
             var fOk = !f || fmt === f;
-            var aOk = !a || ages.indexOf(a) !== -1 || ages.indexOf('all-ages') !== -1;
-            var qOk = !q || title.indexOf(q) !== -1 || summary.indexOf(q) !== -1;
-            var ok = lOk && fOk && aOk && qOk;
-            row.style.display = ok ? '' : 'none';
-            if (ok) visible++;
-          }
-          if (empty) {
-            if (visible > 0) empty.classList.add('hidden');
-            else empty.classList.remove('hidden');
-          }
-        }
-
-        function bindBar(bar, key, attrName) {
-          if (!bar) return;
-          bar.addEventListener('click', function (e) {
-            var t = e.target;
-            if (t.tagName !== 'BUTTON') return;
-            bar.querySelectorAll('button').forEach(function (b) {
-              b.classList.remove('bg-ink', 'text-paper', 'border-ink');
-              b.classList.add('border-bone', 'text-ink-soft');
-            });
-            t.classList.remove('border-bone', 'text-ink-soft');
-            t.classList.add('bg-ink', 'text-paper', 'border-ink');
-            var val = t.getAttribute(attrName) || '';
-            if (key === 'lens') l = val;
-            else if (key === 'format') f = val;
-            else if (key === 'age') a = val;
-            apply();
-          });
-        }
-
-        bindBar(lensBar, 'lens', 'data-lens');
-        bindBar(formatBar, 'format', 'data-format');
-        bindBar(ageBar, 'age', 'data-age');
-
-        if (input) {
-          input.addEventListener('input', function (e) {
-            q = e.target.value.toLowerCase();
-            apply();
-          });
-        }
-      });
-    })();
-  </script>
-</BaseLayout>
+            var a

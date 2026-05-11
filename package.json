@@ -12,7 +12,12 @@
     "build:og:force": "python3 scripts/build-og-images.py --force",
     "build": "npm run build:manifest && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "illustrations:dry": "python3 scripts/build-illustrations.py --dry-run",
+    "illustrations:prompts": "python3 scripts/build-illustrations.py --print-prompts",
+    "illustrations:generate": "python3 scripts/build-illustrations.py",
+    "imports:process": "python3 scripts/process-imports.py",
+    "imports:dry": "python3 scripts/process-imports.py --dry-run"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^11.2.0",

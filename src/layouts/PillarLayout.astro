@@ -43,13 +43,29 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
         <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
           {meta.blurb}
         </p>
+        {pillar === 'drive-there' && (
+          <figure class="mt-10">
+            <img
+              src="/illustrations/pillar-drive-there.webp"
+              alt="Interior of a car at dawn — a parent's hands on the wheel, sport bag and water bottle visible, sunrise through the windshield."
+              class="w-full max-w-2xl border border-bone"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+        )}
         {pillar === 'drive-home' && (
-          <img
-            src="/illustrations/drive-home-divider.webp"
-            alt="A car silhouette in profile with three small dust clouds receding behind it."
-            class="mt-10 w-full max-w-md opacity-90"
-            loading="lazy"
-          />
+          <figure class="mt-10">
+            <img
+              src="/illustrations/pillar-drive-home.webp"
+              alt="Same car interior at dusk — kid asleep in back seat with a helmet in their lap, warm streetlight glow, parent visible only as a shoulder."
+              class="w-full max-w-2xl border border-bone"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
         )}
       </div>
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">

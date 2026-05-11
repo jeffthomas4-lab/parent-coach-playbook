@@ -54,8 +54,19 @@ const isCompact = variant === 'compact';
     </p>
   </aside>
 ) : (
-  <section class={`${isCard ? 'border border-ink bg-ink text-paper p-10' : 'border-t border-b border-bone py-14'}`}>
-    <div class={`${isCard ? '' : 'container-px'} grid md:grid-cols-12 gap-8 items-end`}>
+  <section class={`${isCard ? 'border border-ink bg-ink text-paper overflow-hidden' : 'border-t border-b border-bone py-14'}`}>
+    {isCard && (
+      <figure class="border-b border-paper-warm/20">
+        <img
+          src="/illustrations/newsletter-banner.webp"
+          alt="A rural mailbox at sunset with a folded copy of The Parent-Coach Playbook newspaper inside. A driveway leads to a small lit house in the distance."
+          class="w-full h-48 md:h-64 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    )}
+    <div class={`${isCard ? 'p-10' : 'container-px'} grid md:grid-cols-12 gap-8 items-end`}>
       <div class="md:col-span-6">
         <p
           class="font-display italic mb-3"
