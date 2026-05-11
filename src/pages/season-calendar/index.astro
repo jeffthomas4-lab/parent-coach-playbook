@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import ReviewedFooter from '../../components/ReviewedFooter.astro';
 import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
@@ -62,4 +63,10 @@ const levelAccent: Record<string, string> = {
       )}
     </div>
   </section>
+  <div class="container-px pb-12">
+    <ReviewedFooter
+      reviewed="2026-05-10"
+      note="Calendars are reviewed each spring against the prior season's tryout, peak, and off-season windows."
+    />
+  </div>
 </BaseLayout>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 import { BUYING_GUIDES, EDITORIAL } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 
@@ -79,6 +80,7 @@ const jumpNav = headings.filter((h) => h.depth === 2);
       )}
 
       <div class={`${jumpNav.length > 1 ? 'lg:col-span-9' : 'lg:col-span-12 max-w-prose mx-auto'} article-body`}>
+        <BuyingGuideDisclosure />
         <Content />
       </div>
     </div>

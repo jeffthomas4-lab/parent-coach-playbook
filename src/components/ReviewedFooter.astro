@@ -1,0 +1,43 @@
+---
+// Visible "Reviewed" footer for evergreen tools and reference pages.
+//
+// Articles already render their own published/reviewed dates inside
+// ArticleLayout. This component is for standalone pages — the cost
+// calculator, season calendar, age pathways, recruiting overview,
+// etc. — that aren't articles but should still tell readers (and
+// Google) when the page was last verified.
+//
+// Usage:
+//   <ReviewedFooter reviewed="2026-05-10" />
+//   <ReviewedFooter reviewed="2026-05-10" published="2026-02-14" />
+//   <ReviewedFooter reviewed={new Date()} note="Numbers refresh from
+//     national medians every quarter." />
+
+interface Props {
+  reviewed: string | Date;
+  published?: string | Date;
+  note?: string;
+}
+
+const { reviewed, published, note } = Astro.props;
+
+const fmt = (d: string | Date) =>
+  new Date(d).toLocaleDateString('en-US', {
+    month: 'long', year: 'numeric', timeZone: 'UTC',
+  });
+
+const reviewedStr = fmt(reviewed);
+const publishedStr = published ? fmt(published) : null;
+---
+<aside class="mt-16 pt-6 border-t border-bone" aria-label="Editorial review status">
+  <p class="font-display italic text-rust text-sm font-medium mb-1">
+    Editorial review
+  </p>
+  <p class="font-display text-ink-soft text-sm leading-snug">
+    {publishedStr && (
+      <span><span class="font-medium text-ink">Published</span> {publishedStr} · </span>
+    )}
+    <span class="font-medium text-ink">Reviewed</span> {reviewedStr}.
+    {note && <span class="block mt-1 italic">{note}</span>}
+  </p>
+</aside>

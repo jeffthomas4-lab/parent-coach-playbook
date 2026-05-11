@@ -3,3 +3,13 @@
 # Cloudflare adapter; this file is read natively by Cloudflare Pages.
 /resources/drive-home-playbook /resources/what-to-say-when 301
 /resources/drive-home-playbook/ /resources/what-to-say-when/ 301
+
+# Common URLs ad networks, link checkers, and partner programs probe for.
+# /privacy/ and /terms/ map to our combined disclosure page.
+# /contact/ maps to /about/, where the editorial email is published.
+/privacy /disclosure 301
+/privacy/ /disclosure/ 301
+/terms /disclosure 301
+/terms/ /disclosure/ 301
+/contact /about 301
+/contact/ /about/ 301

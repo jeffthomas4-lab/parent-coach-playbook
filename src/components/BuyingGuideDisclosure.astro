@@ -1,0 +1,25 @@
+---
+// Per-page FTC affiliate disclosure for buying guides.
+//
+// FTC 16 CFR Part 255 ("Guides Concerning the Use of Endorsements and
+// Testimonials in Advertising") expects affiliate disclosure to be
+// "clear and conspicuous" — close to the relevant claim, in plain
+// language, not buried in a sitewide footer. This component is
+// rendered above the first affiliate link on every /what-to-buy/[sport]/
+// page. Sitewide footer disclosure is kept as a backstop.
+//
+// Wording is deliberately short, in the editorial voice, and links to
+// the full /disclosure/ page for readers who want detail.
+---
+<aside
+  class="border-l-2 border-rust bg-paper-warm pl-4 pr-3 py-3 my-6 max-w-prose"
+  aria-label="Affiliate disclosure"
+>
+  <p class="font-display italic text-ink-soft text-sm leading-snug">
+    <span class="font-medium text-ink">Heads up:</span>
+    Some links on this page are affiliate links. If you buy through them
+    we earn a small commission. The price you pay does not change. We
+    only recommend gear we would put on our own kid.
+    <a href="/disclosure/" class="text-rust hover:underline">Full disclosure&nbsp;→</a>
+  </p>
+</aside>

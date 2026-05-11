@@ -49,7 +49,8 @@ const isCompact = variant === 'compact';
       {buttonLabel}
     </a>
     <p class="font-display italic text-ink-soft text-xs mt-3">
-      Easy unsubscribe.
+      Easy unsubscribe. By subscribing you agree to receive emails from
+      Parent Coach Playbook and to our <a href="/disclosure/" class="text-rust hover:underline">privacy notice</a>.
     </p>
   </aside>
 ) : (
@@ -80,7 +81,8 @@ const isCompact = variant === 'compact';
           {buttonLabel}
         </a>
         <p class={`font-display italic text-xs mt-3 ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
-          We won't send you spam. Unsubscribe whenever.
+          We won't send you spam. Unsubscribe whenever. By subscribing you
+          agree to our <a href="/disclosure/" class={`underline ${isCard ? 'text-paper' : 'text-rust'} hover:opacity-80`}>privacy notice</a>.
         </p>
       </div>
     </div>

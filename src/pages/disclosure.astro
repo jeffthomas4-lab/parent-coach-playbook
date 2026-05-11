@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../data/site';
-const updated = 'April 30, 2026';
+const updated = 'May 10, 2026';
 ---
 <BaseLayout
   title="Privacy and disclosure"
@@ -48,13 +48,15 @@ const updated = 'April 30, 2026';
         <p class="font-display italic text-rust font-medium">Privacy</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>We collect three things and only three things.</p>
+        <p>We collect a small amount of data, only what we need to run the site and the newsletter.</p>
         <ol>
           <li><strong>Email addresses</strong>, when you sign up for the newsletter or download a PDF. Stored at our email provider, Kit. We use your email to send you the newsletter and the resources you asked for. Unsubscribe in any email and your address is removed.</li>
           <li><strong>Anonymous traffic data</strong> via Cloudflare Web Analytics. Page views, referrer, country. No cookies, no individual tracking, no advertising profiles.</li>
+          <li><strong>Aggregate audience data</strong> via Google Analytics 4. We use it to understand which pieces are useful and where readers come from. IP addresses are anonymized. We do not enable Google Signals, advertising features, or remarketing. We do not share GA data with advertisers. Google Analytics is not loaded for visitors with Do Not Track or Global Privacy Control enabled.</li>
           <li><strong>Submissions you send us</strong>, when you email a story or submit a camp. Used only to respond and to publish if you ask us to.</li>
         </ol>
-        <p>We do not sell or share your email. We do not run third-party advertising trackers. We do not use Google Analytics.</p>
+        <p>We do not sell or share your email. We do not run third-party advertising trackers. We do not run remarketing or behavioral ads.</p>
+        <p>You can opt out of Google Analytics tracking site-wide by installing the <a href="https://tools.google.com/dlpage/gaoptout" class="text-rust hover:underline" rel="noopener nofollow">Google Analytics opt-out browser add-on</a>, or by enabling "Do Not Track" / "Global Privacy Control" in your browser, which we honor automatically.</p>
         <p>If you want your email removed, unsubscribe via the link in any newsletter or write to <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
       </div>
     </div>

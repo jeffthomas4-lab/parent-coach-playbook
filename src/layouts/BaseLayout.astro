@@ -35,6 +35,62 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#FAF6EE" />
+
+    <!-- Google Analytics 4 (gtag.js).
+         - is:inline keeps Astro from bundling so the snippet ships exactly
+           as Google specifies.
+         - Honors Global Privacy Control and Do-Not-Track by skipping load
+           entirely when either is set. Disclosure page promises this.
+         - anonymize_ip + Google Signals/ad features are disabled.
+         - CSP in public/_headers whitelists googletagmanager.com and the
+           GA4 collection endpoints. -->
+    <script is:inline>
+      (function () {
+        var gpc = (navigator.globalPrivacyControl === true);
+        var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1');
+        if (gpc || dnt) return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-BY35JP5EN8';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-BY35JP5EN8', {
+          anonymize_ip: true,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+      })();
+    </script>
+
+    <!-- Web Vitals (LCP, INP, CLS, FCP, TTFB) -> GA4 events. -->
+    <script is:inline type="module">
+      if (window.gtag) {
+        import('https://cdn.jsdelivr.net/npm/web-vitals@4/dist/web-vitals.attribution.js')
+          .then(({ onCLS, onINP, onLCP, onFCP, onTTFB }) => {
+            function send(metric) {
+              gtag('event', metric.name, {
+                value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+                metric_id: metric.id,
+                metric_value: metric.value,
+                metric_delta: metric.delta,
+                metric_rating: metric.rating,
+                non_interaction: true
+              });
+            }
+            onCLS(send); onINP(send); onLCP(send); onFCP(send); onTTFB(send);
+          })
+          .catch(() => {});
+      }
+    </script>
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 

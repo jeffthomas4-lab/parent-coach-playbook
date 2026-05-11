@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-10T22:42:45.385Z",
-  "count": 346,
+  "generatedAt": "2026-05-11T00:16:09.259Z",
+  "count": 347,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -519,6 +519,12 @@
       "url": "https://teammanager.zendesk.com/hc/en-us",
       "sources": [
         "src/content/resources/setting-up-gamechanger.md"
+      ]
+    },
+    {
+      "url": "https://tools.google.com/dlpage/gaoptout",
+      "sources": [
+        "src/pages/disclosure.astro"
       ]
     },
     {

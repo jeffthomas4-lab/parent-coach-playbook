@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SPORTS } from '../data/site';
+import ReviewedFooter from '../components/ReviewedFooter.astro';
 import { PROFILES } from '../data/costDefaults';
 
 // Build the data the client needs: every profile flattened into one object the
@@ -437,4 +438,11 @@ const levels = [
     }
 </script>
 
+  <div class="container-px pb-12">
+    <ReviewedFooter
+      reviewed="2026-05-10"
+      published="2026-04-29"
+      note="National medians refresh quarterly. The numbers you enter stay in your browser; nothing is sent to us."
+    />
+  </div>
 </BaseLayout>

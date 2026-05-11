@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
+import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 
 export async function getStaticPaths() {
   const pieces = await getCollection('recruiting', ({ data }) => isLive(data));
@@ -36,6 +37,7 @@ const { Content } = await piece.render();
 
   <article class="container-px py-10 md:py-14">
     <div class="article-body max-w-prose mx-auto">
+      <BuyingGuideDisclosure />
       <Content />
 
       {piece.data.governingBodies && piece.data.governingBodies.length > 0 && (

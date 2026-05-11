@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+const updated = 'May 10, 2026';
+---
+<BaseLayout
+  title="Accessibility"
+  description="Accessibility statement for Parent Coach Playbook. Our conformance target, what we test, and how to report issues."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">Accessibility</p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        We want this site to be usable by every parent, on every device.
+      </h1>
+      <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}.</p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Our target</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Parent Coach Playbook is built to conform with the Web Content Accessibility Guidelines (WCAG) 2.2, level AA. We aim to meet these standards across every page on the site, including reads, tools, and buying guides.</p>
+        <p>Conformance is a continuous process, not a finished state. New articles publish weekly; we audit each one for the patterns below and revisit older pages when we touch them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">What we test for</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <ul>
+          <li><strong>Keyboard navigation.</strong> Every interactive element is reachable and operable with a keyboard alone, with a visible focus indicator. A "skip to content" link is the first focusable item on every page.</li>
+          <li><strong>Screen readers.</strong> Headings, landmarks, and lists use semantic HTML. Images carry descriptive alt text or are marked decorative.</li>
+          <li><strong>Color contrast.</strong> Body text and interactive elements meet at least 4.5:1 against their background. Large display type meets at least 3:1.</li>
+          <li><strong>Resizable text.</strong> The site reflows cleanly down to a 320px viewport and at 200% browser zoom without loss of content.</li>
+          <li><strong>Motion and animation.</strong> The site has minimal animation, and what exists honors <code>prefers-reduced-motion</code>.</li>
+          <li><strong>Forms and inputs.</strong> Every input has a label. Errors are described in text, not by color alone.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Known limitations</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>We are honest about gaps:</p>
+        <ul>
+          <li>The cost calculator is interactive; we are improving its screen-reader behavior so each line announces both the label and the running total.</li>
+          <li>A small number of older illustrations still need richer alt text. We update these as we touch the surrounding piece.</li>
+          <li>The newsletter signup links out to a Kit-hosted form. Kit's form is generally accessible but is not under our direct control.</li>
+        </ul>
+        <p>If you find something else, please tell us. We treat accessibility issues as we treat factual corrections — we fix the page and log the change.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Tools we rely on</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>This site honors several standard browser and OS signals:</p>
+        <ul>
+          <li><strong>Reduced motion</strong> — animations soften when your system requests it.</li>
+          <li><strong>Dark mode</strong> — text and contrast adjust to your preference where applicable.</li>
+          <li><strong>Do Not Track / Global Privacy Control</strong> — analytics scripts are not loaded when these are enabled.</li>
+          <li><strong>Browser zoom and reflow</strong> — pages remain readable at 200% zoom and on a 320px viewport.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Report an issue</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a> with the URL of the page, what you were trying to do, and the assistive technology or browser you were using if relevant. We aim to respond within five business days and to fix or triage within ten.</p>
+        <p class="font-display italic text-ink-soft text-sm mt-6">This statement is updated when we make material changes to the site or to our testing process.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

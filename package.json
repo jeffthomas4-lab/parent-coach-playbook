@@ -8,6 +8,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build:manifest": "node scripts/build-link-manifest.mjs",
+    "build:og": "python3 scripts/build-og-images.py",
+    "build:og:force": "python3 scripts/build-og-images.py --force",
     "build": "npm run build:manifest && astro build",
     "preview": "astro preview",
     "astro": "astro"

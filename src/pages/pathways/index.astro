@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
+import ReviewedFooter from '../../components/ReviewedFooter.astro';
 import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
@@ -58,4 +59,10 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
       )}
     </div>
   </section>
+  <div class="container-px pb-12">
+    <ReviewedFooter
+      reviewed="2026-05-10"
+      note="Pathways are revisited each spring against the current crop of governing-body benchmarks."
+    />
+  </div>
 </BaseLayout>
