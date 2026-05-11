@@ -20,7 +20,7 @@ Fraunces, terracotta accent), but each card carries the article title
 so social previews aren't all interchangeable.
 """
 
-import os, sys, glob, re
+import os, sys, glob, re, tempfile
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
@@ -47,7 +47,7 @@ W, H = 1200, 630
 # --- Fonts: convert woff2 from @fontsource/fraunces to ttf on demand ---
 FRAUNCES_DIR = ROOT / 'node_modules' / '@fontsource' / 'fraunces' / 'files'
 JBM_DIR      = ROOT / 'node_modules' / '@fontsource' / 'jetbrains-mono' / 'files'
-FONT_CACHE   = Path('/tmp/pcp-og-fonts')
+FONT_CACHE   = Path(tempfile.gettempdir()) / 'pcp-og-fonts'
 FONT_CACHE.mkdir(exist_ok=True)
 
 
