@@ -17,7 +17,9 @@
     "illustrations:prompts": "python3 scripts/build-illustrations.py --print-prompts",
     "illustrations:generate": "python3 scripts/build-illustrations.py",
     "imports:process": "python3 scripts/process-imports.py",
-    "imports:dry": "python3 scripts/process-imports.py --dry-run"
+    "imports:dry": "python3 scripts/process-imports.py --dry-run",
+    "illustrations:wire": "python3 scripts/wire-illustrations.py",
+    "illustrations:wire:dry": "python3 scripts/wire-illustrations.py --dry-run"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^11.2.0",
