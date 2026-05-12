@@ -49,7 +49,7 @@ months:
 
 ECNL is the standard pre-college pipeline for girls soccer in the US. Eleven months of competitive soccer per year. National league play with travel to other states. Showcase events that attract college coaches at scale.
 
-The cost is the part parents are not prepared for. ECNL clubs typically charge $4,500 to $7,000 per year just for the team fee. Travel for the showcase weekends adds another $3,000 to $5,000. Total annual cost for ECNL is often $9,000 to $14,000. Run the cost calculator with the elite preset before you sign.
+The cost is the part parents are not prepared for. ECNL clubs typically charge $4,500 to $7,000 per year just for the team fee. Travel for the showcase weekends adds another $3,000 to $5,000. Total annual cost for ECNL is often $9,000 to $14,000. Open the cost calculator with the elite preset before you sign.
 
 The recruiting reality is that ECNL is the watched track. College coaches use ECNL events as their primary scouting venue for women's soccer. If your kid is a serious college prospect, ECNL or one of the other top tracks (GA, MLS Next equivalent) is essentially required.
 

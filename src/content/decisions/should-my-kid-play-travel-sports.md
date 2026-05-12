@@ -25,7 +25,7 @@ signsItsNot:
   - "Burnout signs are showing up: avoidance, sleep changes, mood shift after practice."
   - "The cost is straining other things you care about more."
 howToHandleIt:
-  - "Run the cost calculator on the specific sport+level. Honest annual number."
+  - "Open the cost calculator on the specific sport+level. Honest annual number."
   - "Ask your kid what they're hoping a year of this would feel like. Not what they want to do: what they want it to feel like."
   - "Talk to two families a year ahead of yours in the same club. Honest read on the schedule and the culture."
   - "Don't make it permanent on day one. One season is information. Three is a decision."
