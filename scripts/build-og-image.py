@@ -56,8 +56,8 @@ def measure(text, font):
     return b[2] - b[0], b[3] - b[1]
 
 wm_y = PAD_Y + 60
-prefix = "The Parent-Coach "
-accent = "Playbook"
+prefix = "The Parent Coach "
+accent = "Desk"
 period = "."
 prefix_w, _ = measure(prefix, wm_font)
 accent_w, _ = measure(accent, wm_font)
