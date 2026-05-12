@@ -199,7 +199,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         <aside class="mt-16 pt-8 border-t border-bone">
           <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
           <p class="font-display text-ink-soft text-sm leading-snug">
-            Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
+            Written and edited by {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
           </p>
           <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
             Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
@@ -242,6 +242,4 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
     </div>
   </div>
 
-  <RelatedArticles articles={related} pillarLabel={pillar.label} />
-  <LeadMagnetCTA />
-</BaseLayout>
+  <RelatedArticles articles={related}

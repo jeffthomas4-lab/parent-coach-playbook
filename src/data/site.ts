@@ -8,16 +8,16 @@ export const SITE = {
   url: 'https://parentcoachdesk.com',
   description:
     'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
-  byline: 'Parent Coach Desk Editorial',
-  bylineShort: 'PCD Editorial',
+  byline: 'the Parent Coach Desk',
+  bylineShort: 'PCD',
   email: 'parentcoachplaybook@gmail.com',
 };
 
 // Single editorial voice. Used for byline rendering on cards, articles, and feeds.
 // The site is intentionally anonymous. The byline is the team, not any one person.
 export const EDITORIAL = {
-  byline: 'Parent Coach Desk Editorial',
-  short: 'PCD Editorial',
+  byline: 'the Parent Coach Desk',
+  short: 'PCD',
   // Mark color used wherever a small accent dot or pill renders.
   accent: '#C5713D',
   accentBg: '#F2E2D5',

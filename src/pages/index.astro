@@ -79,7 +79,7 @@ const fmtDate = (d: Date) =>
             <a href="/resources/what-to-say-when/" class="btn btn-ghost">Get the free field guide</a>
           </div>
           <p class="font-display italic text-ink-soft text-sm mt-6 font-medium">
-            Written by the <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
+            Written by <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
           </p>
         </div>
 
@@ -374,69 +374,4 @@ const fmtDate = (d: Date) =>
       <div class="flex items-end justify-between mb-8 flex-wrap gap-3">
         <div>
           <p class="font-display italic text-rust mb-2 font-medium">Fresh off the desk</p>
-          <h2 class="font-display text-ink text-3xl md:text-[2.75rem] leading-[1.05] font-medium">
-            What's <em class="text-rust">new</em> this week.
-          </h2>
-        </div>
-        <a href="/reads/" class="t-cta">See the archive →</a>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-2 mb-6" data-age-filter>
-        <span class="font-display italic text-ink-soft text-sm font-medium">Filter by your kid's age:</span>
-        <button data-age="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
-        <button data-age="5-7" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">5–7</button>
-        <button data-age="8-10" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">8–10</button>
-        <button data-age="11-12" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">11–12</button>
-        <button data-age="13-14" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">13–14</button>
-        <button data-age="15-plus" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">15+</button>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10" data-feed>
-        {feed.map((a) => (
-          <div data-age-tag={a.data.age ?? 'all-ages'}>
-            <ArticleCard
-              href={`/${a.data.phase}/${a.slug}/`}
-              format={a.data.format}
-              sport={a.data.sport}
-              age={a.data.age}
-              phase={a.data.phase}
-              topic={a.data.topic}
-              title={a.data.title}
-              dek={a.data.dek}
-              publishedAt={a.data.publishedAt}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const bar = document.querySelector('[data-age-filter]');
-    const feedEl = document.querySelector('[data-feed]');
-    if (bar && feedEl) {
-      bar.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        if (target.tagName !== 'BUTTON') return;
-        bar.querySelectorAll('button').forEach(b => {
-          b.classList.remove('bg-ink', 'text-paper', 'border-ink');
-          b.classList.add('border-bone', 'text-ink-soft');
-        });
-        target.classList.remove('border-bone', 'text-ink-soft');
-        target.classList.add('bg-ink', 'text-paper', 'border-ink');
-        const age = target.getAttribute('data-age') ?? '';
-        feedEl.querySelectorAll<HTMLElement>('[data-age-tag]').forEach((row) => {
-          const tag = row.dataset.ageTag ?? '';
-          if (!age || tag === age || tag === 'all-ages') {
-            row.style.display = '';
-          } else {
-            row.style.display = 'none';
-          }
-        });
-      });
-    }
-  </script>
-
-  {/* SECTION 6 of 6: LEAD MAGNET (component handles the layout) */}
-  <LeadMagnetCTA />
-</BaseLayout>
+          <h2 class="font-display tex

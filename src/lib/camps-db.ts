@@ -356,15 +356,29 @@ export async function getCampById(db: D1Database, id: string): Promise<Camp | nu
   return row ?? null;
 }
 
+// Returns today's date as YYYY-MM-DD (UTC). Used to auto-archive past camps
+// from every public-facing query. A camp whose end_date is before today does
+// not appear on /camps/, state/city/sport pages, or the individual detail
+// page — even via direct URL. Admin queries (listPendingCamps,
+// listApprovedUnverifiedCamps) intentionally do NOT filter so past entries
+// stay manageable. To bring 2027 camps online, just leave them in the table
+// with end_dates in the future; they auto-surface on the day start_date hits.
+export function todayDateISO(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
 export async function getCampBySlug(db: D1Database, slug: string): Promise<Camp | null> {
   const row = await db.prepare('SELECT * FROM camps WHERE slug = ?').bind(slug).first<Camp>();
-  return row ?? null;
+  if (!row) return null;
+  // Auto-archive: past camps return null even on direct URL access.
+  if (row.end_date && row.end_date < todayDateISO()) return null;
+  return row;
 }
 
 export async function listApprovedCamps(db: D1Database): Promise<Camp[]> {
   const result = await db
-    .prepare('SELECT * FROM camps WHERE status = ? ORDER BY start_date ASC')
-    .bind('approved')
+    .prepare('SELECT * FROM camps WHERE status = ? AND end_date >= ? ORDER BY start_date ASC')
+    .bind('approved', todayDateISO())
     .all<Camp>();
   return result.results ?? [];
 }
@@ -391,8 +405,8 @@ export async function listApprovedUnverifiedCamps(db: D1Database): Promise<Camp[
 
 export async function listAllCampSlugsApproved(db: D1Database): Promise<string[]> {
   const result = await db
-    .prepare('SELECT slug FROM camps WHERE status = ?')
-    .bind('approved')
+    .prepare('SELECT slug FROM camps WHERE status = ? AND end_date >= ?')
+    .bind('approved', todayDateISO())
     .all<{ slug: string }>();
   return (result.results ?? []).map((r) => r.slug);
 }
@@ -410,8 +424,8 @@ export function slugifyCity(s: string): string {
 
 export async function listCampsByState(db: D1Database, state: string): Promise<Camp[]> {
   const result = await db
-    .prepare('SELECT * FROM camps WHERE status = ? AND state = ? ORDER BY start_date ASC')
-    .bind('approved', state.toUpperCase())
+    .prepare('SELECT * FROM camps WHERE status = ? AND state = ? AND end_date >= ? ORDER BY start_date ASC')
+    .bind('approved', state.toUpperCase(), todayDateISO())
     .all<Camp>();
   return result.results ?? [];
 }
@@ -426,8 +440,8 @@ export async function listCampsByCitySport(
   db: D1Database, state: string, citySlug: string, sport: string,
 ): Promise<Camp[]> {
   const result = await db
-    .prepare('SELECT * FROM camps WHERE status = ? AND state = ? AND sport = ? ORDER BY start_date ASC')
-    .bind('approved', state.toUpperCase(), sport)
+    .prepare('SELECT * FROM camps WHERE status = ? AND state = ? AND sport = ? AND end_date >= ? ORDER BY start_date ASC')
+    .bind('approved', state.toUpperCase(), sport, todayDateISO())
     .all<Camp>();
   const rows = result.results ?? [];
   const want = citySlug.toLowerCase();
@@ -436,7 +450,8 @@ export async function listCampsByCitySport(
 
 export async function listStatesWithCounts(db: D1Database): Promise<{ state: string; count: number }[]> {
   const result = await db
-    .prepare("SELECT state, COUNT(*) AS count FROM camps WHERE status = 'approved' GROUP BY state ORDER BY count DESC")
+    .prepare("SELECT state, COUNT(*) AS count FROM camps WHERE status = 'approved' AND end_date >= ? GROUP BY state ORDER BY count DESC")
+    .bind(todayDateISO())
     .all<{ state: string; count: number }>();
   return result.results ?? [];
 }
@@ -445,8 +460,8 @@ export async function listCitiesInState(
   db: D1Database, state: string,
 ): Promise<{ city: string; count: number }[]> {
   const result = await db
-    .prepare("SELECT city, COUNT(*) AS count FROM camps WHERE status = 'approved' AND state = ? GROUP BY city ORDER BY count DESC")
-    .bind(state.toUpperCase())
+    .prepare("SELECT city, COUNT(*) AS count FROM camps WHERE status = 'approved' AND state = ? AND end_date >= ? GROUP BY city ORDER BY count DESC")
+    .bind(state.toUpperCase(), todayDateISO())
     .all<{ city: string; count: number }>();
   return result.results ?? [];
 }
@@ -717,17 +732,19 @@ export async function listOtherCampsAtAddress(
   zip: string,
   excludeId?: string,
 ): Promise<Camp[]> {
+  const today = todayDateISO();
   const result = await db
     .prepare(
       `SELECT * FROM camps
          WHERE status = 'approved'
+           AND end_date >= ?
            AND LOWER(TRIM(address)) = LOWER(TRIM(?))
            AND LOWER(TRIM(city)) = LOWER(TRIM(?))
            AND TRIM(zip) = TRIM(?)
            ${excludeId ? 'AND id != ?' : ''}
-         ORDER BY name ASC`,
+         ORDER BY start_date ASC`,
     )
-    .bind(...(excludeId ? [address, city, zip, excludeId] : [address, city, zip]))
+    .bind(...(excludeId ? [today, address, city, zip, excludeId] : [today, address, city, zip]))
     .all<Camp>();
   return result.results ?? [];
 }

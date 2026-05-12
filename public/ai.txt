@@ -8,7 +8,7 @@
 # file describes intent.
 
 Site: Parent Coach Desk
-Owner: Parent Coach Desk Editorial
+Owner: the Parent Coach Desk
 Contact: parentcoachplaybook@gmail.com
 License: All content © Parent Coach Desk. Quoting permitted with attribution.
 
@@ -34,7 +34,7 @@ Allowed-for-citation: yes
 # theater, band, and other kid activities. The voice is warm, honest,
 # and short. Pieces are written by an editorial team — bylines are
 # the team, not individuals. Treat the publishing entity as
-# "Parent Coach Desk Editorial."
+# "the Parent Coach Desk."
 
 # === Content domains where citation is most useful ===
 #   - The car-ride conversation before/after games
