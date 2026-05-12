@@ -1,4 +1,4 @@
-# Full deploy script for Parent Coach Playbook.
+# Full deploy script for Parent Coach Desk.
 # Usage:  .\deploy.ps1
 # Stops on first error. Will not push if the build fails.
 
@@ -44,13 +44,13 @@ Write-Host "=========================================" -ForegroundColor Green
 Write-Host "Cloudflare Pages will rebuild in ~60-90s."
 Write-Host ""
 Write-Host "Verify when deploy completes:"
-Write-Host "  https://parentcoachplaybook.com/"
-Write-Host "  https://parentcoachplaybook.com/disclosure/"
-Write-Host "  https://parentcoachplaybook.com/accessibility/"
-Write-Host "  https://parentcoachplaybook.com/privacy/        (should 301 to /disclosure/)"
-Write-Host "  https://parentcoachplaybook.com/contact/        (should 301 to /about/)"
-Write-Host "  https://parentcoachplaybook.com/what-to-buy/baseball/"
-Write-Host "  https://parentcoachplaybook.com/cost-calculator/"
-Write-Host "  https://parentcoachplaybook.com/og/are-youth-sports-worth-it.jpg"
+Write-Host "  https://parentcoachdesk.com/"
+Write-Host "  https://parentcoachdesk.com/disclosure/"
+Write-Host "  https://parentcoachdesk.com/accessibility/"
+Write-Host "  https://parentcoachdesk.com/privacy/        (should 301 to /disclosure/)"
+Write-Host "  https://parentcoachdesk.com/contact/        (should 301 to /about/)"
+Write-Host "  https://parentcoachdesk.com/what-to-buy/baseball/"
+Write-Host "  https://parentcoachdesk.com/cost-calculator/"
+Write-Host "  https://parentcoachdesk.com/og/are-youth-sports-worth-it.jpg"
 Write-Host ""
 Write-Host "Then check GA4 Realtime: https://analytics.google.com"

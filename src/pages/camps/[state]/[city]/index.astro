@@ -67,7 +67,7 @@ const itemListSchema = {
   itemListElement: visible.slice(0, 50).map((c, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    url: `https://parentcoachplaybook.com/camps/${c.slug}/`,
+    url: `https://parentcoachdesk.com/camps/${c.slug}/`,
     name: c.name,
   })),
 };
@@ -75,8 +75,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Camps', item: 'https://parentcoachplaybook.com/camps/' },
-    { '@type': 'ListItem', position: 2, name: stateCode, item: `https://parentcoachplaybook.com/camps/${stateParam}/` },
+    { '@type': 'ListItem', position: 1, name: 'Camps', item: 'https://parentcoachdesk.com/camps/' },
+    { '@type': 'ListItem', position: 2, name: stateCode, item: `https://parentcoachdesk.com/camps/${stateParam}/` },
     { '@type': 'ListItem', position: 3, name: cityLabel },
   ],
 };

@@ -34,7 +34,7 @@ const COLLECTION_PATHS: Record<string, string> = {
   decisions:       'src/content/decisions',
 };
 
-const REPO = 'jeffthomas4-lab/parent-coach-playbook';
+const REPO = 'jeffthomas4-lab/parent-coach-desk';
 const BRANCH = 'main';
 
 // UTF-8 safe base64 helpers — atob/btoa alone only handle Latin-1.
@@ -168,7 +168,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     Authorization: `Bearer ${env.GITHUB_TOKEN}`,
     Accept: 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28',
-    'User-Agent': 'parent-coach-playbook-editorial',
+    'User-Agent': 'parent-coach-desk-editorial',
   };
 
   // 1. GET the file to obtain content + sha.
@@ -208,7 +208,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         sha: fileData.sha,
         branch: BRANCH,
         committer: {
-          name: 'Parent Coach Playbook Editorial',
+          name: 'Parent Coach Desk Editorial',
           email: auth.email,
         },
       }),

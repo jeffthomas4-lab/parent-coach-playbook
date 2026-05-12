@@ -56,7 +56,7 @@ if (deadCamps.length > 0) {
   } else {
     try {
       execSync(
-        `npx wrangler d1 execute parent-coach-playbook --command "${sql.replace(/"/g, '\\"')}" --remote`,
+        `npx wrangler d1 execute parent-coach-desk --command "${sql.replace(/"/g, '\\"')}" --remote`,
         { stdio: 'inherit' },
       );
       console.log(`✓ Archived ${deadCamps.length} camps`);

@@ -61,7 +61,7 @@ const escHtml = (s: unknown) => String(s ?? '')
 
 const renderCardHtml = (c: Camp): string => {
   const photo = c.hero_photo_key
-    ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachplaybook.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
+    ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
     ? `<span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>`
@@ -743,10 +743,4 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           })
           .catch(function () { /* stay put */ });
       },
-      function () { /* permission denied - stay put */ },
-      { timeout: 4000, maximumAge: 600000 }
-    );
-  } catch (e) { /* swallow */ }
-})();
-</script>
-</BaseLayout>
+      function () { /* permission d

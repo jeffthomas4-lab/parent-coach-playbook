@@ -1,4 +1,4 @@
-// Default cost line items for the Parent Coach Playbook cost calculator.
+// Default cost line items for the Parent Coach Desk cost calculator.
 //
 // Numbers are national medians as of 2026, sourced from Project Play, the Aspen
 // Institute State of Play reports, and a synthesis of public registration fee

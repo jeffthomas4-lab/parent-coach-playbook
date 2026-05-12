@@ -18,7 +18,7 @@ const adminEmail = getAdminEmailFromRequest(Astro.request);
 let actionBanner: { ok: boolean; text: string } | null = null;
 if (Astro.request.method === 'POST') {
   // Same-origin check: browsers set Origin based on the page that initiated
-  // the request. A POST originating outside parentcoachplaybook.com cannot
+  // the request. A POST originating outside parentcoachdesk.com cannot
   // forge a matching Origin header. Combined with Access gating GET, only
   // Jeff's logged-in browser can produce a valid same-origin POST.
   const origin = Astro.request.headers.get('origin') ?? '';

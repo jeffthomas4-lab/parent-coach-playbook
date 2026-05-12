@@ -201,7 +201,7 @@ def main():
 
         title = fm.get('title', md.stem)
         phase = fm.get('phase', 'drive-there')
-        eyebrow, accent = PHASE_META.get(phase, ('Parent Coach Playbook', TERRACOTTA))
+        eyebrow, accent = PHASE_META.get(phase, ('Parent Coach Desk', TERRACOTTA))
         try:
             render_card(title=title, eyebrow=eyebrow, accent=accent, out_path=out_path)
             written += 1

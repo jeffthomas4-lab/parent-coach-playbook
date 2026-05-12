@@ -44,7 +44,7 @@ function b64urlDecode(input: string): string {
  *
  * Important security note: this decodes the JWT without verifying its
  * signature. We rely on Cloudflare Access being the only entity that can mint
- * a CF_Authorization cookie for parentcoachplaybook.com (browsers enforce
+ * a CF_Authorization cookie for parentcoachdesk.com (browsers enforce
  * cookie domain scoping, so foreign sites cannot set this cookie). For phase 2
  * we should verify the signature against the Access JWKs.
  *

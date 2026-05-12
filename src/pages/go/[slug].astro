@@ -4,7 +4,7 @@ import affiliates from '../../data/affiliates.json';
 export async function getStaticPaths() {
   return Object.entries(affiliates).map(([slug, entry]) => {
     const url = new URL((entry as any).destination);
-    url.searchParams.set('utm_source', 'parentcoachplaybook');
+    url.searchParams.set('utm_source', 'parentcoachdesk');
     url.searchParams.set('utm_medium', 'affiliate');
     url.searchParams.set('utm_campaign', (entry as any).campaign ?? slug);
     return { params: { slug }, props: { destination: url.toString() } };

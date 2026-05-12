@@ -1,6 +1,6 @@
 # backup-d1.ps1
 #
-# Pulls a SQL dump of every table in the parent-coach-playbook D1 database
+# Pulls a SQL dump of every table in the parent-coach-desk D1 database
 # and writes it to backups\d1\camps-YYYY-MM-DD.sql.
 #
 # Run manually:
@@ -9,8 +9,8 @@
 # Schedule nightly via Task Scheduler:
 #   Action: Start a program
 #   Program: powershell.exe
-#   Arguments: -NoProfile -ExecutionPolicy Bypass -File "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-playbook\scripts\backup-d1.ps1"
-#   Start in:  C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-playbook
+#   Arguments: -NoProfile -ExecutionPolicy Bypass -File "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk\scripts\backup-d1.ps1"
+#   Start in:  C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk
 #
 # After the script writes the file, it commits and pushes to GitHub so
 # the backup lives offsite, not just on this machine.
@@ -32,7 +32,7 @@ Write-Host "Dumping D1 tables to $backupFile"
 # rebuilds itself, and skip empty tables.
 $tables = @("submitters", "camps", "camp_reviews", "camp_claims")
 $header = @"
--- Backup of parent-coach-playbook D1
+-- Backup of parent-coach-desk D1
 -- Generated: $(Get-Date -Format "o")
 -- Tables: $($tables -join ', ')
 
@@ -42,7 +42,7 @@ Set-Content -Path $backupFile -Value $header -Encoding UTF8
 foreach ($table in $tables) {
     Write-Host "  exporting $table..."
     $cmd = "SELECT * FROM $table"
-    $out = npx wrangler@latest d1 execute parent-coach-playbook --remote --command "$cmd" --json 2>$null
+    $out = npx wrangler@latest d1 execute parent-coach-desk --remote --command "$cmd" --json 2>$null
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "  failed to export $table (continuing)"
         continue

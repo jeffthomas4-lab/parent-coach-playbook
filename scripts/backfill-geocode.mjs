@@ -9,7 +9,7 @@
 // Run from project root:
 //
 //   1. Dump the missing rows to JSON:
-//      npx wrangler d1 execute parent-coach-playbook --remote --json \
+//      npx wrangler d1 execute parent-coach-desk --remote --json \
 //        --command "SELECT id, address, city, state, zip FROM camps WHERE status='approved' AND (latitude IS NULL OR longitude IS NULL)" \
 //        > imports/.cache/missing-geo.json
 //
@@ -17,7 +17,7 @@
 //      node scripts/backfill-geocode.mjs imports/.cache/missing-geo.json
 //
 //   3. Apply the generated SQL:
-//      npx wrangler d1 execute parent-coach-playbook --remote --file=imports/.cache/backfill-geocode.sql
+//      npx wrangler d1 execute parent-coach-desk --remote --file=imports/.cache/backfill-geocode.sql
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
@@ -30,7 +30,7 @@ if (!inputPath) {
 }
 
 const SLEEP_MS = 1100; // Nominatim asks for ≤1 req/sec
-const UA = 'parentcoachplaybook.com camps directory (parentcoachplaybook@gmail.com)';
+const UA = 'parentcoachdesk.com camps directory (parentcoachplaybook@gmail.com)';
 
 async function geocode(address, city, state, zip) {
   const q = [address, city, state, zip].filter(Boolean).join(', ');
@@ -125,4 +125,4 @@ if (fails.length) {
   for (const f of fails) console.log(`   ${f.id}  ${f.city}, ${f.state}  (${f.reason})`);
 }
 console.log('\nApply with:');
-console.log(`  npx wrangler d1 execute parent-coach-playbook --remote --file="${out}"`);
+console.log(`  npx wrangler d1 execute parent-coach-desk --remote --file="${out}"`);

@@ -1,5 +1,5 @@
 """
-Build the default Open Graph image for The Parent-Coach Playbook.
+Build the default Open Graph image for The Parent Coach Desk.
 
 Output: public/og-default.png  (1200x630 PNG)
 
@@ -47,7 +47,7 @@ rb = draw.textbbox((0, 0), right_label, font=mono)
 rw = rb[2] - rb[0]
 draw.text((W - PAD_X - rw, PAD_Y + 18), right_label, font=mono, fill=INK_SOFT)
 
-# ---- Wordmark: "The Parent-Coach Playbook." italic Fraunces, two-tone ----
+# ---- Wordmark: "The Parent Coach Desk." italic Fraunces, two-tone ----
 wm_size = 48
 wm_font = ImageFont.truetype(F_ITALIC, wm_size)
 
@@ -100,7 +100,7 @@ foot_font = ImageFont.truetype(MONO_MEDIUM, 13)
 draw.text((PAD_X, H - PAD_Y + 16), "WEEKLY READS  /  MAREN, DAN & JEFF", font=foot_font, fill=INK_SOFT)
 
 # Save
-out = "/sessions/happy-tender-gates/mnt/Claude Cowork/OUTPUTS/parent-coach-playbook/public/og-default.png"
+out = "/sessions/happy-tender-gates/mnt/Claude Cowork/OUTPUTS/parent-coach-desk/public/og-default.png"
 img.save(out, "PNG", optimize=True)
 print(f"wrote: {out}")
 print(f"size: {os.path.getsize(out)} bytes")

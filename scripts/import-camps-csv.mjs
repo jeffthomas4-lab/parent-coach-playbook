@@ -12,7 +12,7 @@
 //
 // Optional flags:
 //   --email <addr>   submitter email (default: parentcoachplaybook@gmail.com)
-//   --base <url>     site base (default: https://parentcoachplaybook.com)
+//   --base <url>     site base (default: https://parentcoachdesk.com)
 //   --dry-run        parse + validate only, do not POST
 //   --auto-approve   submit each row with status='approved' AND awaiting_review=1
 //                    so the camps go LIVE on the public site immediately while
@@ -41,7 +41,7 @@ if (!csvPath) {
 }
 
 const SUBMITTER_EMAIL = flag('email', 'parentcoachplaybook@gmail.com');
-const BASE_URL = flag('base', 'https://parentcoachplaybook.com');
+const BASE_URL = flag('base', 'https://parentcoachdesk.com');
 const DRY = args.includes('--dry-run');
 const AUTO_APPROVE = args.includes('--auto-approve');
 const BULK_TOKEN = process.env.BULK_IMPORT_TOKEN || '';

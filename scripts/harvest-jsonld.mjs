@@ -47,7 +47,7 @@ const FILTER_FLAG = flagValue('filter', null);
 const MAX_URLS = parseInt(flagValue('max-urls', '500'), 10);
 const OUT_FLAG = flagValue('out', `imports/harvested-${TODAY}.csv`);
 const MISSES_OUT = flagValue('misses-out', `imports/harvester-misses-${TODAY}.csv`);
-const BASE_URL = flagValue('base', 'https://parentcoachplaybook.com');
+const BASE_URL = flagValue('base', 'https://parentcoachdesk.com');
 const SUBMITTER_EMAIL = flagValue('email', 'parentcoachplaybook@gmail.com');
 const BULK_TOKEN = process.env.BULK_IMPORT_TOKEN || '';
 
@@ -185,7 +185,7 @@ function missesToCsv(misses) {
 async function fetchUrl(url) {
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'parent-coach-playbook-harvester/1.0 (jeffthomas@pugetsound.edu)',
+      'User-Agent': 'parent-coach-desk-harvester/1.0 (jeffthomas@pugetsound.edu)',
       Accept: 'text/html,application/xhtml+xml,application/xml,*/*;q=0.8',
     },
     redirect: 'follow',

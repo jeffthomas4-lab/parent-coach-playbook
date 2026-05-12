@@ -1,6 +1,6 @@
 {
-  "name": "Parent Coach Playbook",
-  "short_name": "PCP",
+  "name": "Parent Coach Desk",
+  "short_name": "PCD",
   "description": "Sideline notes for parents in the middle of it.",
   "start_url": "/",
   "display": "minimal-ui",

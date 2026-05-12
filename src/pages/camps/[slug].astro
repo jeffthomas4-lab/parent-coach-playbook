@@ -239,7 +239,7 @@ if (camp) {
         <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] font-medium">
           {camp.name}
           {camp.verified === 1 && (
-            <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5 font-medium" title="Verified by the Parent Coach Playbook editorial">
+            <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5 font-medium" title="Verified by the Parent Coach Desk editorial">
               Verified ✓
             </span>
           )}
@@ -538,7 +538,7 @@ if (camp) {
         )}
 
         <p class="font-display italic text-ink-soft text-xs mt-8 font-medium">
-          Listing reviewed by the Parent Coach Playbook Editorial. Something off? Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a>.
+          Listing reviewed by the Parent Coach Desk Editorial. Something off? Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a>.
         </p>
       </aside>
     </div>
@@ -629,12 +629,15 @@ if (camp) {
           }).setView([lat, lon], 13);
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: '&copy; OpenStreetMap',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
           }).addTo(map);
           L.marker([lat, lon]).addTo(map).bindPopup(name);
         }
-        if (document.readyState !== 'loading') init();
-        else document.addEventListener('DOMContentLoaded', init);
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
       })();
     </script>
   )}

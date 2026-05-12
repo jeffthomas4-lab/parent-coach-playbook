@@ -4,7 +4,7 @@ title: "Image needs (admin)"
 description: "Comprehensive list of images the site needs, with prompts ready for image-generation models."
 ---
 
-# Image Needs — Parent Coach Playbook
+# Image Needs — Parent Coach Desk
 *Comprehensive audit of where the site needs imagery, with prompts for AI generation.*
 
 ---

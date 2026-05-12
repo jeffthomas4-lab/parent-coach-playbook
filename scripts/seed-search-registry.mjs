@@ -159,16 +159,16 @@ console.log('Executing against D1 via single wrangler call...');
 
 try {
   execSync(
-    `npx wrangler d1 execute parent-coach-playbook --file="${SQL_OUT}" --remote`,
+    `npx wrangler d1 execute parent-coach-desk --file="${SQL_OUT}" --remote`,
     { stdio: 'inherit' },
   );
   console.log(`\n✓ Seeded ${anchors.length} anchors and ${domains.length} domains`);
   console.log('\nTest the API:');
-  console.log('  curl "https://parentcoachplaybook.com/api/camps/search-priority?anchor=tacoma-wa-25mi"');
+  console.log('  curl "https://parentcoachdesk.com/api/camps/search-priority?anchor=tacoma-wa-25mi"');
 } catch (e) {
   console.error('! D1 execute failed. The generated SQL is at:');
   console.error('   ' + SQL_OUT);
   console.error('You can inspect it and run manually with:');
-  console.error(`   npx wrangler d1 execute parent-coach-playbook --file="${SQL_OUT}" --remote`);
+  console.error(`   npx wrangler d1 execute parent-coach-desk --file="${SQL_OUT}" --remote`);
   process.exit(1);
 }

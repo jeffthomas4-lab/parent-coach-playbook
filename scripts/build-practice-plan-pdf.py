@@ -261,7 +261,7 @@ def build_story():
     s.append(Paragraph('04 / KEEP READING', eyebrow))
     s.append(Paragraph('More tools, every week.', display_md))
     s.append(Paragraph(
-        "Subscribe to the Parent-Coach Playbook newsletter and we'll send you new templates and short reads as we publish them. "
+        "Subscribe to the Parent Coach Desk newsletter and we'll send you new templates and short reads as we publish them. "
         "One Editorial voice across the site. Cornerstone essays once a month, short reads in between.",
         body))
     s.append(Spacer(1, 6))
@@ -309,14 +309,14 @@ class PCPDoc(BaseDocTemplate):
 
 
 def main():
-    out_path = "/sessions/happy-tender-gates/mnt/Claude Cowork/OUTPUTS/parent-coach-playbook/public/the-practice-plan-template.pdf"
+    out_path = "/sessions/happy-tender-gates/mnt/Claude Cowork/OUTPUTS/parent-coach-desk/public/the-practice-plan-template.pdf"
     doc = PCPDoc(out_path, pagesize=letter,
                  leftMargin=MARGIN, rightMargin=MARGIN,
                  topMargin=MARGIN, bottomMargin=MARGIN,
                  title='The Practice Plan Template',
                  author='PCP Editors',
                  subject='A free practice plan template for youth coaches',
-                 creator='The Parent-Coach Playbook',
+                 creator='The Parent Coach Desk',
                  keywords='youth sports, practice plan, coach, template')
     doc.build(build_story())
     print(f"wrote: {out_path}")

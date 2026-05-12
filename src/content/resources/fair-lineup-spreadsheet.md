@@ -54,7 +54,7 @@ Don't share the lineup in the parent group chat. It clogs the chat. Use email or
 
 We use a simple Google Sheet. Make a copy and fill in your roster.
 
-→ [Open the lineup spreadsheet template](https://parentcoachplaybook.com/team-parent/fair-lineup-spreadsheet/)
+→ [Open the lineup spreadsheet template](https://parentcoachdesk.com/team-parent/fair-lineup-spreadsheet/)
 *(Replace the URL above with your real shared template once you've made one.)*
 
 ## One last thing

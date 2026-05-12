@@ -85,4 +85,4 @@ Disallow: /go/
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://parentcoachplaybook.com/sitemap.xml
+Sitemap: https://parentcoachdesk.com/sitemap.xml

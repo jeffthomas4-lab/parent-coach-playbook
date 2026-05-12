@@ -1,5 +1,5 @@
 {
-  // Wrangler config for Parent Coach Playbook.
+  // Wrangler config for Parent Coach Desk.
   // Deploys as a Cloudflare PAGES site (not a Worker).
   // The Astro Cloudflare adapter writes static + SSR output to ./dist.
   //
@@ -40,7 +40,7 @@
   // ADMIN_EMAILS: comma-separated allowlist for /admin/ and /api/admin/ routes.
   // Read by src/lib/admin-auth.ts. Add or remove emails here, redeploy, done.
   "vars": {
-    "SITE_URL": "https://parentcoachplaybook.com",
+    "SITE_URL": "https://parentcoachdesk.com",
     "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas@pugetsound.edu"
   }
 }

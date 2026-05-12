@@ -2,22 +2,22 @@
 // Update here, the change propagates everywhere.
 
 export const SITE = {
-  name: 'Parent Coach Playbook',
+  name: 'Parent Coach Desk',
   tagline: 'Sideline notes for parents in the middle of it.',
   shortPitch: 'Sideline notes from the editorial desk for parents who coach, organize, drive, and supervise the snack rotation.',
-  url: 'https://parentcoachplaybook.com',
+  url: 'https://parentcoachdesk.com',
   description:
     'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
-  byline: 'Parent Coach Playbook Editorial',
-  bylineShort: 'PCP Editorial',
+  byline: 'Parent Coach Desk Editorial',
+  bylineShort: 'PCD Editorial',
   email: 'parentcoachplaybook@gmail.com',
 };
 
 // Single editorial voice. Used for byline rendering on cards, articles, and feeds.
 // The site is intentionally anonymous. The byline is the team, not any one person.
 export const EDITORIAL = {
-  byline: 'Parent Coach Playbook Editorial',
-  short: 'PCP Editorial',
+  byline: 'Parent Coach Desk Editorial',
+  short: 'PCD Editorial',
   // Mark color used wherever a small accent dot or pill renders.
   accent: '#C5713D',
   accentBg: '#F2E2D5',
@@ -44,8 +44,8 @@ export const AUTHOR = {
   worksFor: 'University of Puget Sound',
   worksForUrl: 'https://athletics.pugetsound.edu',
   description:
-    'Head coach with two decades inside the youth-to-college athletics pipeline. Writes Parent Coach Playbook for the parents on the other side of the field.',
-  url: 'https://parentcoachplaybook.com/about/',
+    'Head coach with two decades inside the youth-to-college athletics pipeline. Writes Parent Coach Desk for the parents on the other side of the field.',
+  url: 'https://parentcoachdesk.com/about/',
   // External profiles that confirm identity. Add LinkedIn, school staff page,
   // podcast appearances here as they go live (post-reveal).
   sameAs: [] as string[],

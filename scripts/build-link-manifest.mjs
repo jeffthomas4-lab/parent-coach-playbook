@@ -24,7 +24,7 @@ function shouldSkip(url) {
   if (url.startsWith('mailto:') || url.startsWith('tel:')) return true;
   try {
     const u = new URL(url);
-    if (u.hostname.endsWith('parentcoachplaybook.com')) return true;
+    if (u.hostname.endsWith('parentcoachdesk.com')) return true;
     if (u.hostname === 'localhost' || u.hostname === '127.0.0.1') return true;
     if (u.hostname.includes('example.com') || u.hostname.includes('example.org')) return true;
     return false;

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-12T05:24:16.488Z",
-  "count": 384,
+  "generatedAt": "2026-05-12T13:30:33.927Z",
+  "count": 385,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -392,7 +392,7 @@
       ]
     },
     {
-      "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
+      "url": "https://parent-coach-desk.kit.com/4b28f916b5",
       "sources": [
         "src/pages/newsletter.astro"
       ]
@@ -1961,6 +1961,12 @@
       "url": "https://www.olympic.org/athlete365/health/relative-energy-deficiency-in-sport/",
       "sources": [
         "src/content/body/eating-disorders-in-sport.md"
+      ]
+    },
+    {
+      "url": "https://www.openstreetmap.org/copyright",
+      "sources": [
+        "src/pages/camps/[slug].astro"
       ]
     },
     {

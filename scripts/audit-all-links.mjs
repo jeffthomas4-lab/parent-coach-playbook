@@ -22,7 +22,7 @@ const ROOT = resolve(process.cwd());
 const MANIFEST_PATH = join(ROOT, 'public/link-manifest.json');
 const TIMEOUT_MS = 10000;
 const CONCURRENCY = 10;
-const USER_AGENT = 'parentcoachplaybook.com link audit (https://parentcoachplaybook.com)';
+const USER_AGENT = 'parentcoachdesk.com link audit (https://parentcoachdesk.com)';
 
 // --- 1. Gather URLs from the manifest ---
 
@@ -42,7 +42,7 @@ let campUrls = [];
 try {
   const sql = `SELECT name, website_url FROM camps WHERE status = 'approved' AND website_url IS NOT NULL AND website_url != ''`;
   const raw = execSync(
-    `npx wrangler d1 execute parent-coach-playbook --command "${sql}" --remote --json`,
+    `npx wrangler d1 execute parent-coach-desk --command "${sql}" --remote --json`,
     { encoding: 'utf8', stdio: ['pipe', 'pipe', 'inherit'] },
   );
   const parsed = JSON.parse(raw);

@@ -51,7 +51,7 @@ export async function checkUrlHealth(
       method: 'HEAD',
       redirect: 'follow',
       signal: controller.signal,
-      headers: { 'User-Agent': 'parentcoachplaybook.com link checker' },
+      headers: { 'User-Agent': 'parentcoachdesk.com link checker' },
     });
 
     // Some servers don't support HEAD properly. Fall back to GET on 4xx/5xx.
@@ -60,7 +60,7 @@ export async function checkUrlHealth(
         method: 'GET',
         redirect: 'follow',
         signal: controller.signal,
-        headers: { 'User-Agent': 'parentcoachplaybook.com link checker' },
+        headers: { 'User-Agent': 'parentcoachdesk.com link checker' },
       });
     }
 
