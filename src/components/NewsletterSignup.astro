@@ -27,7 +27,10 @@ const {
   buttonLabel = 'Subscribe',
 } = Astro.props;
 
-const KIT_HOSTED_URL = 'https://parent-coach-desk.kit.com/4b28f916b5';
+// Kit subdomain has not been renamed yet — leaving the working URL.
+// When the Kit account is renamed to "parent-coach-desk", update this
+// constant and the matching href in src/pages/newsletter.astro.
+const KIT_HOSTED_URL = 'https://parent-coach-playbook.kit.com/4b28f916b5';
 const isCard = variant === 'card';
 const isCompact = variant === 'compact';
 ---
