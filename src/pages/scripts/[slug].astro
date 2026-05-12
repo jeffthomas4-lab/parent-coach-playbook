@@ -179,7 +179,7 @@ const breadcrumbSchema = {
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10 max-w-3xl">
         <div class="border-2 border-ink p-6 bg-paper">
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Save this</p>
+          <p class="font-display italic text-rust mb-2 text-sm font-medium">Pin this</p>
           <h2 class="font-display text-ink text-xl mb-4 font-medium">
             {script.data.saveBlockTitle ?? stripTitle(script.data.title)}
           </h2>
@@ -189,7 +189,7 @@ const breadcrumbSchema = {
             ))}
           </ul>
           <p class="font-display italic text-ink-soft text-xs mt-5 font-medium">
-            parentcoachplaybook.com/scripts
+            parentcoachdesk.com/scripts
           </p>
         </div>
       </div>
@@ -212,7 +212,7 @@ const breadcrumbSchema = {
         <p class="font-display italic text-rust mb-4 font-medium">You might also need</p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {related.map((r) => (
-            <a href={`/scripts/${r.slug}/`} class="bg-paper p-5 group block hover:bg-paper transition-colors">
+            <a href={`/scripts/${r.slug}/`} class="bg-paper p-5 group block hover:bg-paper-warm transition-colors">
               <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{r.data.summary}</p>
             </a>

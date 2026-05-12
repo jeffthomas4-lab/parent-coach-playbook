@@ -66,7 +66,7 @@ const breadcrumbSchema = {
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/decisions/" class="hover:underline">Decisions</a>
       </p>
       <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(decision.data.title)} />
@@ -102,7 +102,7 @@ const breadcrumbSchema = {
         )}
         {decision.data.costs.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm font-medium" style="color: #C5713D">Costs</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #BC8F84">Costs</p>
             <ul class="grid gap-2">
               {decision.data.costs.map((c) => (
                 <li class="font-display text-ink leading-snug pl-4 -indent-4" style="font-weight: 400;">· {c}</li>
@@ -130,7 +130,7 @@ const breadcrumbSchema = {
         )}
         {decision.data.signsItsNot.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm font-medium" style="color: #C5713D">Signs it's not</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #BC8F84">Signs it's not</p>
             <ul class="grid gap-2">
               {decision.data.signsItsNot.map((s) => (
                 <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
@@ -195,7 +195,7 @@ const breadcrumbSchema = {
             <div>
               <p class="font-display text-ink text-sm mb-3 font-medium">Other decisions</p>
               <ul class="grid gap-2">
-                {relatedDecisions.map(d => (
+                                {relatedDecisions.map(d => (
                   <li><a href={`/decisions/${d.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(d.data.title)} /></a></li>
                 ))}
               </ul>
@@ -206,4 +206,5 @@ const breadcrumbSchema = {
     </section>
   )}
 
-  <Lea
+  <LeadMagnetCTA />
+</BaseLayout>

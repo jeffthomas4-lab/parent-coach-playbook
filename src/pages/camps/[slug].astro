@@ -352,7 +352,7 @@ if (camp) {
             </p>
             <div class="mt-4 flex flex-wrap gap-3">
               <a href={`/what-to-buy/${sportGuide.slug}/`} class="font-display italic px-4 py-2 border border-rust text-rust hover:bg-rust hover:text-paper transition-colors font-medium">
-                What to buy for {sportPretty.toLowerCase()} →
+                Gear file for {sportPretty.toLowerCase()} →
               </a>
               <a href={`/what-to-buy/${sportGuide.slug}/sizing/`} class="font-display italic px-4 py-2 border border-bone text-ink hover:bg-paper-warm transition-colors font-medium">
                 {sportPretty} sizing guide →
@@ -567,7 +567,7 @@ if (camp) {
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
-              status.style.color = '#C5713D';
+              status.style.color = '#BC8F84';
               return;
             }
             form.reset();
@@ -576,7 +576,7 @@ if (camp) {
           })
           .catch(function () {
             status.textContent = 'Network error. Try again.';
-            status.style.color = '#C5713D';
+            status.style.color = '#BC8F84';
           });
       });
     })();
@@ -596,7 +596,7 @@ if (camp) {
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
-              status.style.color = '#C5713D';
+              status.style.color = '#BC8F84';
               return;
             }
             form.reset();
@@ -605,7 +605,7 @@ if (camp) {
           })
           .catch(function () {
             status.textContent = 'Network error. Try again.';
-            status.style.color = '#C5713D';
+            status.style.color = '#BC8F84';
           });
       });
     })();

@@ -50,10 +50,10 @@
 /* ---------- Base reset ---------- */
 :root {
   --paper: #FAF6EE;          /* cream */
-  --paper-warm: #F2EAD9;     /* warmer cream for cards */
+  --paper-warm: #F2E8DD;     /* warmer cream for cards */
   --ink: #2D2520;            /* warm dark brown */
   --ink-soft: #5F5448;       /* walnut for body */
-  --rust: #C5713D;           /* terracotta */
+  --rust: #BC8F84;           /* terracotta */
   --turf: #8FA68C;           /* sage */
   --bone: #DDD2BD;           /* linen */
   --trophy: #D4AB6A;         /* honey */

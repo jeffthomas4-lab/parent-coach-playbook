@@ -48,7 +48,7 @@ const levels = [
     ></div>
     <div class="container-px py-12 md:py-16 relative">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/tools/" class="hover:underline">Tools</a> · Cost calculator
+        <a href="/tools/" class="hover:underline">The Drawer</a> · Cost calculator
       </p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         What does a year <em class="text-rust">actually cost</em>?
@@ -93,6 +93,13 @@ const levels = [
                 <input type="number" data-games class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm font-medium" min="1" />
                 <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">
                   Actual games where they got real minutes. Not roster games.
+                </p>
+              </div>
+              <div>
+                <label class="font-display italic text-rust text-sm block mb-1 font-medium">Active weeks in the season</label>
+                <input type="number" data-weeks class="w-full font-display bg-paper border border-bone px-3 py-2 text-sm font-medium" min="1" max="52" />
+                <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">
+                  Practices, games, travel weekends. Drives the per-week math.
                 </p>
               </div>
             </div>
@@ -185,6 +192,7 @@ const levels = [
     const levelSel   = $<HTMLSelectElement>('[data-level]');
     const blurbEl    = $('[data-level-blurb]');
     const gamesInput = $<HTMLInputElement>('[data-games]');
+    const weeksInput = $<HTMLInputElement>('[data-weeks]');
     const linesEl    = $<HTMLUListElement>('[data-lines]');
     const totalAnnualEl  = $('[data-total-annual]');
     const totalMonthlyEl = $('[data-total-monthly]');
@@ -222,6 +230,7 @@ const levels = [
         sport: string;
         level: Profile['level'];
         games: number;
+        weeks: number;  // active weeks in the season; drives per-week math
         items: { key: string; label: string; amount: number; included: boolean }[];
       };
 
@@ -234,11 +243,22 @@ const levels = [
         profiles.find(p => p.sport === sport && p.level === level) ??
         profiles.find(p => p.sport === 'generic' && p.level === level)!;
 
+      // Default season length by level — rough national averages for active
+      // weeks in season (practices + games + travel). Edit-friendly so parents
+      // can dial it to their actual schedule.
+      const DEFAULT_WEEKS_BY_LEVEL: Record<Profile['level'], number> = {
+        rec:    12,
+        school: 14,
+        travel: 28,
+        elite:  44,
+      };
+
       const stateFromProfile = (sport: string, level: Profile['level']): State => {
         const p = getProfile(sport, level);
         return {
           sport, level,
           games: p.estimatedGames,
+          weeks: DEFAULT_WEEKS_BY_LEVEL[level],
           items: p.lines.map(l => ({
             key: l.key,
             label: l.label,
@@ -275,6 +295,10 @@ const levels = [
       };
 
       let state: State = loadFromUrl() ?? loadFromSportParam() ?? loadFromStorage() ?? stateFromProfile('generic', 'rec');
+      // Backfill `weeks` for older saved states that pre-date the field.
+      if (!state.weeks || state.weeks < 1) {
+        state.weeks = DEFAULT_WEEKS_BY_LEVEL[state.level] ?? 12;
+      }
 
       const computeTotal = () => state.items.reduce((sum, i) => sum + (i.included ? i.amount : 0), 0);
 
@@ -307,6 +331,9 @@ const levels = [
         if (gamesInput && document.activeElement !== gamesInput) {
           gamesInput.value = String(state.games);
         }
+        if (weeksInput && document.activeElement !== weeksInput) {
+          weeksInput.value = String(state.weeks);
+        }
         if (blurbEl) {
           const b = blurbs.find(x => x.slug === state.level);
           if (b) blurbEl.textContent = b.blurb;
@@ -316,7 +343,7 @@ const levels = [
         const total = computeTotal();
         totalAnnualEl!.textContent = fmt(total);
         if (totalMonthlyEl) totalMonthlyEl.textContent = fmt(total / 12);
-        if (totalWeeklyEl)  totalWeeklyEl.textContent  = fmt(total / 52);
+        if (totalWeeklyEl)  totalWeeklyEl.textContent  = state.weeks > 0 ? fmt(total / state.weeks) : '$0';
         if (totalPerGameEl) totalPerGameEl.textContent = state.games > 0 ? fmt(total / state.games) : '$0';
 
         // Insights — neutral observations, not warnings
@@ -407,7 +434,18 @@ const levels = [
         const v = parseInt(gamesInput!.value, 10);
         state.games = isNaN(v) ? 0 : v;
         renderTotals();
+        saveToStorage(state);
       });
+      if (weeksInput) {
+        weeksInput.addEventListener('input', () => {
+          const v = parseInt(weeksInput.value, 10);
+          // Clamp to 1..52 so a typo doesn't divide-by-zero or produce
+          // implausibly huge per-week numbers.
+          state.weeks = isNaN(v) ? 0 : Math.max(1, Math.min(52, v));
+          renderTotals();
+          saveToStorage(state);
+        });
+      }
       linesEl.addEventListener('input', (e) => {
         const t = e.target as HTMLInputElement;
         const labelIdx = t.getAttribute('data-line-label');

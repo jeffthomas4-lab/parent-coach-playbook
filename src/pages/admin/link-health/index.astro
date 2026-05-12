@@ -59,7 +59,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
         </div>
         <div class="bg-paper p-4">
           <p class="font-display italic text-ink-soft text-xs font-medium">Broken</p>
-          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? '#C5713D' : '#5C7459'};`}>{totals.broken ?? 0}</p>
+          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? '#BC8F84' : '#5C7459'};`}>{totals.broken ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
           <p class="font-display italic text-ink-soft text-xs font-medium">Redirected</p>
@@ -105,7 +105,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
           {rows.map((r) => {
             const status = r.is_broken === 1 ? 'broken' : (r.is_redirect === 1 ? 'redirected' : (r.last_checked ? 'ok' : 'never'));
             const statusLabel = status === 'broken' ? `BROKEN ${r.last_status_code ?? ''}` : (status === 'redirected' ? `${r.last_status_code} (redirect)` : (status === 'ok' ? `${r.last_status_code}` : '—'));
-            const statusColor = status === 'broken' ? '#C5713D' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
+            const statusColor = status === 'broken' ? '#BC8F84' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
             let sourceFiles: string[] = [];
             try { sourceFiles = JSON.parse(r.source_files || '[]'); } catch {}
             return (

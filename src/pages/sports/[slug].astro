@@ -70,7 +70,7 @@ const fmtDate = (d: Date) =>
   {/* Tools row: cost calculator + pathway + calendar + rules */}
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 md:py-12">
-      <p class="font-display italic text-rust mb-2 font-medium">Tools for {sportLabel.toLowerCase()}</p>
+      <p class="font-display italic text-rust mb-2 font-medium">From The Drawer for {sportLabel.toLowerCase()}</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
         <a href={`/cost-calculator/?sport=${sportSlug}`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
           <p class="font-display italic text-rust text-xs font-medium">Cost</p>
@@ -122,7 +122,7 @@ const fmtDate = (d: Date) =>
   {matchedGuide && (
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-12">
-        <p class="font-display italic text-rust mb-2 font-medium">What to buy</p>
+        <p class="font-display italic text-rust mb-2 font-medium">Gear file</p>
         <a href={`/what-to-buy/${sportSlug}/`} class="block max-w-2xl group">
           <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors font-medium">
             The {sportLabel.toLowerCase()} buying guide
@@ -191,7 +191,7 @@ const fmtDate = (d: Date) =>
   {matchedBody.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12">
-        <p class="font-display italic text-rust mb-3 font-medium">Body and mind</p>
+        <p class="font-display italic text-rust mb-3 font-medium">The Sideline File</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedBody.map((b) => (
             <li>

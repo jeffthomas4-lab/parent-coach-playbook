@@ -40,7 +40,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/season-calendar/" class="hover:underline">Season calendar</a> ·
         {sportLabel}
       </p>
@@ -97,7 +97,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
               {siblingCalendars.map(c => (
                 <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(c.data.title)} /></a></li>
               ))}
-              <li><a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ Run the cost for this sport</a></li>
+              <li><a href="/cost-calculator/" class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ Open the calculator for this sport</a></li>
             </ul>
           </div>
         </div>

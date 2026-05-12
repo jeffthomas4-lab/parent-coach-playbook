@@ -7,8 +7,8 @@ export default {
         // Brand tokens — warm editorial. Do not invent new shades.
         ink: '#2D2520',          // Warm Ink (was Stadium Ink)
         paper: '#FAF6EE',        // Cream Paper (was Field Paper)
-        'paper-warm': '#F2EAD9', // card backgrounds, warmer cream
-        rust: '#C5713D',         // Terracotta (was Drive Rust)
+        'paper-warm': '#F2E8DD', // card backgrounds, warmer cream
+        rust: '#BC8F84',         // Terracotta (was Drive Rust)
         turf: '#8FA68C',         // Sage (was Turf)
         bone: '#DDD2BD',         // Linen (was Bone) — borders/dividers
         trophy: '#D4AB6A',       // Honey (was Trophy) — highlight

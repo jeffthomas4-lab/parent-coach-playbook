@@ -17,7 +17,7 @@ const bodyAll = (await getCollection('body', ({ data }) => isLive(data)))
 
 const bodyTile = {
   slug: 'body',
-  label: 'Body & Safety',
+  label: 'The Sideline File',
   blurb: 'Concussion, arm care, sleep, heat, growth plates. Plus the safety canon coming online: equipment certs, lightning, league vetting.',
   count: bodyAll.length,
   recent: bodyAll[0] || null,

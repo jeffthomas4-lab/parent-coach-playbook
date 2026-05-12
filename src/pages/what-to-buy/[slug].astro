@@ -22,16 +22,16 @@ const meta = BUYING_GUIDES.find(g => g.slug === guide.slug)!;
 const jumpNav = headings.filter((h) => h.depth === 2);
 ---
 <BaseLayout
-  title={`What to buy for ${guide.data.activity.toLowerCase()}`}
+  title={`Gear File: ${guide.data.activity.toLowerCase()}`}
   description={guide.data.lede}
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/what-to-buy/" class="hover:underline">What to Buy</a> · {meta.category === 'sport' ? 'Sports' : 'Performing arts'}
+        <a href="/what-to-buy/" class="hover:underline">Gear Files</a> · {meta.category === 'sport' ? 'Sports' : 'Performing arts'}
       </p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
-        What to buy for <em class="text-rust">{guide.data.activity.toLowerCase()}</em>.
+        Gear file for <em class="text-rust">{guide.data.activity.toLowerCase()}</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
         {guide.data.lede}

@@ -31,20 +31,20 @@ A simple diagram of where to put them:
     <text x="52" y="93" text-anchor="end" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">3B</text>
     <circle cx="150" cy="105" r="5" fill="#2D2520"/>
     <text x="150" y="125" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">Pitcher / SS</text>
-    <g fill="#C5713D">
+    <g fill="#BC8F84">
       <polygon points="240,75 234,87 246,87"/>
-      <text x="240" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#C5713D">cone</text>
+      <text x="240" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#BC8F84">cone</text>
     </g>
-    <g fill="#C5713D">
+    <g fill="#BC8F84">
       <polygon points="150,15 144,27 156,27"/>
     </g>
-    <g fill="#C5713D">
+    <g fill="#BC8F84">
       <polygon points="60,75 54,87 66,87"/>
     </g>
-    <g fill="#C5713D">
+    <g fill="#BC8F84">
       <polygon points="150,90 144,102 156,102"/>
     </g>
-    <g fill="#C5713D">
+    <g fill="#BC8F84">
       <polygon points="200,140 194,152 206,152"/>
     </g>
   </svg>

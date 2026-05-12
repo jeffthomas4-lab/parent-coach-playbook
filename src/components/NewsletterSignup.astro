@@ -22,14 +22,11 @@ interface Props {
 
 const {
   variant = 'inline',
-  headline = 'Slide into the inbox',
-  blurb = 'One short read a week from the Parent Coach Desk. Easy unsubscribe.',
-  buttonLabel = 'Subscribe',
+  headline = 'The Friday Letter',
+  blurb = 'One short read every Friday from the Parent Coach Desk. Easy unsubscribe.',
+  buttonLabel = 'Get the Friday Letter',
 } = Astro.props;
 
-// Kit subdomain has not been renamed yet — leaving the working URL.
-// When the Kit account is renamed to "parent-coach-desk", update this
-// constant and the matching href in src/pages/newsletter.astro.
 const KIT_HOSTED_URL = 'https://parent-coach-playbook.kit.com/4b28f916b5';
 const isCard = variant === 'card';
 const isCompact = variant === 'compact';
@@ -37,7 +34,7 @@ const isCompact = variant === 'compact';
 {isCompact ? (
   <aside class="border border-bone bg-paper-warm rounded-lg p-5">
     <p class="font-display italic text-rust mb-1 font-medium" style="font-size: 0.95rem;">
-      Newsletter
+      The Friday Letter
     </p>
     <h3 class="font-display text-ink text-xl leading-tight font-medium">
       {headline}
@@ -73,9 +70,9 @@ const isCompact = variant === 'compact';
       <div class="md:col-span-6">
         <p
           class="font-display italic mb-3"
-          style={`font-weight: 500; color: ${isCard ? '#D4AB6A' : '#C5713D'};`}
+          style={`font-weight: 500; color: ${isCard ? '#D4AB6A' : '#BC8F84'};`}
         >
-          Newsletter
+          The Friday Letter
         </p>
         <h3
           class={`font-display text-3xl md:text-[2.5rem] leading-[1.07] font-medium ${isCard ? 'text-paper' : 'text-ink'}`}

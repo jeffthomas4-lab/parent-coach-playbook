@@ -21,7 +21,7 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/tools/" class="hover:underline">Tools</a> ·
+        <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/rules/" class="hover:underline">Rules at-a-glance</a> ·
         {sportLabel}
       </p>
@@ -69,7 +69,7 @@ const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece
       )}
 
       {piece.data.thingsParentsGetWrong && piece.data.thingsParentsGetWrong.length > 0 && (
-        <div class="mt-8 max-w-3xl bg-paper-warm border-l-4 pl-4 py-3" style="border-color: #C5713D;">
+        <div class="mt-8 max-w-3xl bg-paper-warm border-l-4 pl-4 py-3" style="border-color: #BC8F84;">
           <p class="font-display italic text-rust mb-2 text-sm font-medium">Three things parents most often get wrong</p>
           <ul class="grid gap-1.5">
             {piece.data.thingsParentsGetWrong.map((s) => (
