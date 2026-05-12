@@ -1,6 +1,7 @@
 ---
 title: "Used Gear: The Insole Rule, The Helmet Rule, The Bat Rule"
 dek: "What's safe to buy secondhand. What's not."
+seoDescription: "Buying used gear saves money. Some used gear is smart. Some is a mistake. Three rules separate the two."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

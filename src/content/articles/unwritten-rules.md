@@ -1,6 +1,7 @@
 ---
 title: "The Unwritten Rules Every League Has"
 dek: "The stuff nobody tells you but everyone knows."
+seoDescription: "Every league, every age, has unwritten rules. Nobody puts them in writing. Coaches know them. Parents figure them out. New families get blindsided."
 topic: "rules-of-play"
 format: "note"
 phase: "game"

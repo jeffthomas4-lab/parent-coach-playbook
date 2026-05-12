@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
-import { SPORTS, SITE } from '../../data/site';
+import { SPORTS, SITE, authorEntity } from '../../data/site';
 
 export async function getStaticPaths() {
   const topics = await getCollection('body', ({ data }) => isLive(data));
@@ -15,18 +15,14 @@ const { topic } = Astro.props;
 const { Content } = await topic.render();
 
 // JSON-LD: Article schema for the body topic (medical / training reference reads).
-// Author / publisher are the editorial Organization. The page is medical-adjacent
-// so we surface MedicalWebPage as the page type via mainEntityOfPage where useful.
+// Author entity resolved via authorEntity() — Organization until November,
+// Person after the AUTHOR_REVEALED flip. Publisher stays Organization.
 const bodyArticleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: stripTitle(topic.data.title),
   description: topic.data.summary,
-  author: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-  },
+  author: authorEntity(),
   publisher: {
     '@type': 'Organization',
     name: SITE.name,

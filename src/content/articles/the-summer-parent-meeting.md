@@ -1,6 +1,7 @@
 ---
 title: "The *what should we do all summer* parent meeting"
 dek: "Twenty minutes at the kitchen table beats six weeks of scrambling. The questions to bring to the conversation."
+seoDescription: "Most families don't have a summer plan until June, when the schedule has already been imposed by everyone else's signups."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

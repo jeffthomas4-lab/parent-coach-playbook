@@ -1,6 +1,7 @@
 ---
 title: "The Pregame Snack at 11-12"
 dek: "Water and a banana. Hydration and carbs. Not a meal."
+seoDescription: "An hour before game time: water and banana. Or water and a bagel. Or water and a protein bar. That's it."
 topic: "game-day"
 format: "note"
 phase: "drive-there"

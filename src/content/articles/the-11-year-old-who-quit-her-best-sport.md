@@ -1,6 +1,7 @@
 ---
 title: "The *11-year-old* who quit their best sport"
 dek: "They're quitting the sport they're best at. The reasons are real. The decision might be too."
+seoDescription: "Your kid is eleven. They have been playing soccer since they were four. They are the best player on their team."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

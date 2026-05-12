@@ -1,6 +1,7 @@
 ---
 title: "When the kid wants to specialize this summer"
 dek: "What 'I just want to focus on one sport' usually means at age 11, and the three questions that surface what they actually want."
+seoDescription: "When your kid says \"I just want to focus on one sport this summer,\" it almost never means what the words say."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-there"

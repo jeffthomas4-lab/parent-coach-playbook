@@ -1,6 +1,7 @@
 ---
 title: "The team's social-media rules for the summer"
 dek: "What to post and not post about your kid's team between June and August. The mistakes that explode in fall."
+seoDescription: "The team is officially off in the summer. The team chat goes quiet. The Instagram account stops posting."
 topic: "communication"
 format: "note"
 phase: "team-parent"

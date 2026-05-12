@@ -1,6 +1,7 @@
 ---
 title: "When the *tournament organizer* mistake"
 dek: "Lost paperwork, wrong field assignment, no umpires. The script for the parent who gets stuck handling it."
+seoDescription: "You drove three hours. The tournament organizer can't find your roster. There's no umpire for the 10 a.m. game."
 topic: "the-hard-stuff"
 format: "note"
 phase: "game"

@@ -1,6 +1,7 @@
 ---
 title: "How to *read the tryout drill*"
 dek: "A parent's eye view. What coaches are actually watching for."
+seoDescription: "You're at the field watching tryouts. Forty kids. Three coaches. Drills you don't fully understand. You're trying to figure out where your kid stands."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

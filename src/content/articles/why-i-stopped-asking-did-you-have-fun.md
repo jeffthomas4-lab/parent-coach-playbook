@@ -1,5 +1,6 @@
 ---
 title: "Why we stopped asking *\"did you have fun?\"*"
+seoDescription: "I asked kids this question for years. Did you have fun? After every game. After every practice. After the school play. The kids always said yes."
 format: "note"
 issue: 5
 phase: "drive-home"

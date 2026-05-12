@@ -1,6 +1,7 @@
 ---
 title: "Week-one camp *drop-off*"
 dek: "First day. Five years old. The thirty seconds at the gate that decide the week."
+seoDescription: "Monday morning. 8:53am. You're in the parking lot of your kid's first ever summer camp. Your five-year-old is in the back seat with a backpack twice his size."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

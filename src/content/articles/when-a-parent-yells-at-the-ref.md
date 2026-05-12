@@ -1,6 +1,7 @@
 ---
 title: "When a parent *yells at the ref*"
 dek: "Could be your team. Could be the other team. Could be you. The rules."
+seoDescription: "A parent in the bleachers stood up and yelled at the referee. The whole field heard it. The kids on the field heard it. The other parents are quietly mortified."
 topic: "game-day"
 format: "note"
 phase: "game"

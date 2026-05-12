@@ -1,6 +1,7 @@
 ---
 title: "The end-of-season equipment cleanup"
 dek: "An hour now saves $200 in fall replacement gear. The five-step audit before everything gets stuffed in a closet for four months."
+seoDescription: "Most families pile the gear bag in the garage after the last game and don't open it again until two weeks before the next season."
 topic: "equipment"
 format: "note"
 phase: "drive-home"

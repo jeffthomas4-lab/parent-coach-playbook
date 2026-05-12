@@ -1,6 +1,7 @@
 ---
 title: "The 15-Plus Kid Who Is Bored"
 dek: "They're not bored by the sport. They're frustrated by their role. That's different."
+seoDescription: "Our 15-year-old said they were bored. The practices were boring. The games were boring. They were thinking about quitting."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

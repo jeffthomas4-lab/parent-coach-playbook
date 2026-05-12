@@ -1,6 +1,7 @@
 ---
 title: "Back-to-school *sport balance*"
 dek: "School starts in two weeks. The fall season starts in three. The conversation about how the kid handles both."
+seoDescription: "The summer is ending. The kid has been on the field every day for six weeks. School starts soon, and so does the next sports season."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

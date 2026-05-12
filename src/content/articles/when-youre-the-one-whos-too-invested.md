@@ -1,6 +1,7 @@
 ---
 title: "When *you're the one* who's too invested"
 dek: "The mirror moment. Signs to watch for. What to do when you realize it's you."
+seoDescription: "It is 6pm on a Tuesday. I'm sitting in the parking lot of a soccer field, watching my kid's practice from my car. I'm not supposed to be watching practice."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

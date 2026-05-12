@@ -1,6 +1,7 @@
 ---
 title: "The text to the new coach for next season"
 dek: "First impressions get set in the first text. The two-sentence version that lands well, and the seven-sentence version that doesn't."
+seoDescription: "The team-formation email lands with the new head coach's contact info. The temptation is to send a thoughtful introduction text laying out your kid's history..."
 topic: "communication"
 format: "note"
 phase: "team-parent"

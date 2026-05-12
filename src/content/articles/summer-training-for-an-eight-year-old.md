@@ -1,6 +1,7 @@
 ---
 title: "What 'summer training' actually does for an 8-year-old"
 dek: "The hard truth about $400 summer skills clinics for kids who are still losing baby teeth. What helps, what doesn't, and the cheap version that works."
+seoDescription: "A $400 summer skills clinic for an 8-year-old promises advanced footwork, position-specific training, and elite progression."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

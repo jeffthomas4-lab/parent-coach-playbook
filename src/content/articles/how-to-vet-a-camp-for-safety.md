@@ -1,6 +1,7 @@
 ---
 title: "How to *vet a camp for safety*"
 dek: "Your kid focuses on the fun. You focus on keeping them safe. The questions to ask before you sign the check, especially for overnight."
+seoDescription: "Your kid is excited. They're packing the bag, picking the cabin assignment, telling you which friend they hope to bunk with. That excitement is the point."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-there"

@@ -1,6 +1,7 @@
 ---
 title: "The *cost of travel ball*. Actual annual breakdown"
 dek: "Don't mortgage the house. The real numbers, plus the line items most parents don't see."
+seoDescription: "Travel ball costs more than you think. The registration fee on the website is not the number. Here is the full math."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-home"
@@ -9,6 +10,7 @@ age: "11-12"
 publishedAt: 2026-02-02
 featured: true
 hero: /illustrations/travel-vs-rec-diptych.webp
+heroAlt: "A two-panel comparison: on the left, a rec field with a single chair and cooler; on the right, a hotel parking lot full of team SUVs at a tournament weekend."
 ---
 
 Travel ball costs more than you think. The registration fee on the website is not the number. Here is the full math.

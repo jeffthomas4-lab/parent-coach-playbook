@@ -1,6 +1,7 @@
 ---
 title: "The 15-Plus Skate-Baking Trip"
 dek: "The most important equipment investment in hockey."
+seoDescription: "At fifteen and up, if your kid is serious about hockey, baked skates are non-negotiable. It's not optional."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

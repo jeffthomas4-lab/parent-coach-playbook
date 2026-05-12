@@ -1,6 +1,7 @@
 ---
 title: "The 13-14 Quit-Mid-Season Call"
 dek: "They want out today. Don't let one hard week become a permanent decision."
+seoDescription: "Our 13-year-old came home on a Tuesday and said they wanted to quit. Right now. Today. Done. We took a breath."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

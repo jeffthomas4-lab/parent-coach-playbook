@@ -1,6 +1,7 @@
 ---
 title: "Game Day: When to Call a Timeout"
 dek: "Three reasons. Everything else is coaching theater."
+seoDescription: "We call a timeout when: a kid is hurt or upset and needs a minute to recover, our team hasn't touched the ball in five minutes and they need a reset, or we see..."
 topic: "game-day"
 format: "note"
 phase: "game"

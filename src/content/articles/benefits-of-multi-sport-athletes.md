@@ -1,6 +1,7 @@
 ---
 title: "The benefits of multi-sport athletes (and what the research actually says)"
 dek: "Lower injuries, lower burnout, better long-term performance. The case for keeping kids in multiple sports through 14."
+seoDescription: "The research on multi-sport athletes is unusually consistent. Across academic studies, NCAA athlete surveys, and consensus statements from the American Academy..."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-there"

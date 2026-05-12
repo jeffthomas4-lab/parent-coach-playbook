@@ -1,6 +1,7 @@
 ---
 title: "What to bring to a *7am Saturday game*"
 dek: "Six year old. Forty degrees. Field is wet. The pre-dawn list."
+seoDescription: "The schedule says 7am. You wake up at 5:45. You are not ready. Your kid is not ready. Here is what you need."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

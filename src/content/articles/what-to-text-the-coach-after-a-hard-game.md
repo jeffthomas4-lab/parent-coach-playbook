@@ -1,6 +1,7 @@
 ---
 title: "What to text the coach *after a hard game*"
 dek: "Sometimes nothing. Sometimes the right ten words. Here is how to know."
+seoDescription: "Your team got beat 6-1. The coach looked tired on the sideline. Your kid had a rough game."
 topic: "communication"
 format: "note"
 phase: "drive-home"

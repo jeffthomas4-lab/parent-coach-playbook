@@ -1,6 +1,7 @@
 ---
 title: "The First Parent-Meeting Agenda (Every Age)"
 dek: "Fifteen minutes of clarity beats thirty minutes of noise."
+seoDescription: "The first parent meeting should answer four questions and then finish. Not four questions plus clarifications plus sidebar stories. Four questions."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

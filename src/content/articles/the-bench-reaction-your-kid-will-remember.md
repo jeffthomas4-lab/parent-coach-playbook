@@ -1,6 +1,7 @@
 ---
 title: "The *bench reaction* your kid will remember"
 dek: "He got pulled. He's on the bench. His face is checking yours. The reaction matters."
+seoDescription: "Your son just got pulled. He's walking to the bench. He looks across the field at you."
 topic: "game-day"
 format: "note"
 phase: "game"

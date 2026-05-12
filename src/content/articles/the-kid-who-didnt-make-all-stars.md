@@ -1,6 +1,7 @@
 ---
 title: "The kid who didn't make the all-star team"
 dek: "All-stars get picked, the list goes up, and your kid isn't on it. The first 24 hours, and the longer arc."
+seoDescription: "The all-star team list is one of the smaller cuts in youth sports and one of the more painful ones. The season is already over."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

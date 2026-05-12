@@ -1,6 +1,7 @@
 ---
 title: "The *group chat parent* who won't stop venting"
 dek: "She's in the team chat. She has opinions. The chat is starting to make everyone tense. Here is the move."
+seoDescription: "Your team has a group chat with 24 parents in it. One parent posts six times a day. Most of them are critiques of the coach, the ref, the field, the schedule."
 topic: "communication"
 format: "note"
 phase: "drive-home"

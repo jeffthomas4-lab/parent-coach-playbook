@@ -1,6 +1,7 @@
 ---
 title: "The hotel pool *is the practice*"
 dek: "Three days at a tournament, two pool sessions, one kid who doesn't want to play tomorrow's game. The trade nobody talks about."
+seoDescription: "You drove four hours. You're at a tournament hotel. Your kid spent two hours in the pool with three teammates who also spent two hours in the pool."
 topic: "season-ops"
 format: "note"
 phase: "game"

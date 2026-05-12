@@ -1,6 +1,7 @@
 ---
 title: "The 5-7 Meltdown After a Strikeout"
 dek: "They're not sad about baseball. They're sad about the moment. Let it pass."
+seoDescription: "Our 6-year-old struck out. They walked off the field crying. We wanted to help. We wanted to say it's okay, they'll do better next time, we're proud of them..."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"
@@ -9,6 +10,7 @@ age: "5-7"
 publishedAt: 2026-01-08
 featured: false
 hero: /illustrations/after-a-tough-day-reset-kit.webp
+heroAlt: "A juice box, a small stuffed animal, and a child's batting helmet on a kitchen counter — the after-game reset kit."
 ---
 
 Our 6-year-old struck out. They walked off the field crying. We wanted to help. We wanted to say it's okay, they'll do better next time, we're proud of them anyway.

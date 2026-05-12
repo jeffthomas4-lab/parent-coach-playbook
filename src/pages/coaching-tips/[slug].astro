@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EDITORIAL, SITE } from '../../data/site';
+import { EDITORIAL, SITE, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
@@ -25,11 +25,7 @@ const howToSchema = {
   '@type': 'HowTo',
   name: stripTitle(tip.data.title),
   description: tip.data.summary,
-  author: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-  },
+  author: authorEntity(),
   publisher: {
     '@type': 'Organization',
     name: SITE.name,

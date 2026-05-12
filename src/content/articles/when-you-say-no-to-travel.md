@@ -1,6 +1,7 @@
 ---
 title: "When you say *no to travel* and feel guilty"
 dek: "He made the team. You're saying no. The guilt is real. The reasons are also real."
+seoDescription: "Your kid made the travel team. You looked at the cost, the schedule, the family calendar. You said no."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-home"

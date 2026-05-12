@@ -1,6 +1,7 @@
 ---
 title: "Why Tee-Ball Doesn't Have Strikeouts"
 dek: "The rule exists for a reason."
+seoDescription: "Tee-ball doesn't have strikeouts. Every kid bats until they hit it. This is not soft. This is smart coaching."
 topic: "rules-of-play"
 format: "note"
 phase: "game"

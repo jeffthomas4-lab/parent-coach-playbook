@@ -1,6 +1,7 @@
 ---
 title: "Heat illness: *when to pull them out*"
 dek: "The signs that a kid is in trouble, the signs that they're tired, and the rule that protects you when it's not clear which is which."
+seoDescription: "It's July. The field is 95. Your kid finished the warm-up and looks gray in the face."
 topic: "the-hard-stuff"
 format: "note"
 phase: "game"

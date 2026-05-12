@@ -1,6 +1,7 @@
 ---
 title: "When private lessons start to backfire"
 dek: "The signs that the $80-an-hour skills coach is making your kid worse at the sport, not better. And what to do about it."
+seoDescription: "Most private lessons help. The kid gets focused reps, individual feedback, and skill work the team practice can't deliver."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-there"

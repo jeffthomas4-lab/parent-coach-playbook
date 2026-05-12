@@ -1,6 +1,7 @@
 ---
 title: "The 11-12 Substitution Rules Every Parent Should Know"
 dek: "How playing time actually works at this age."
+seoDescription: "At eleven to twelve, different leagues have different rules about substitutions. I didn't know what the rule was for years."
 topic: "rules-of-play"
 format: "note"
 phase: "game"

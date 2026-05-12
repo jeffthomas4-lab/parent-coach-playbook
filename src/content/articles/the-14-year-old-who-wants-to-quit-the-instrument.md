@@ -1,6 +1,7 @@
 ---
 title: "The 14-year-old who wants *to quit the instrument*"
 dek: "Six years of lessons. And now they're done. Is this a phase or is this real?"
+seoDescription: "Your kid has been taking piano lessons since they were 8."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The *end-of-season dip* in mood"
 dek: "The season ended. Your kid is unmoored. The dip is real and it has a name."
+seoDescription: "The season ended Sunday. By Wednesday, your kid is in a funk. By Friday, the funk is a thing the whole family is feeling."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

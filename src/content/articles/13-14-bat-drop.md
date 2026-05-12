@@ -1,6 +1,7 @@
 ---
 title: "The 13-14 Bat Drop Weight Check"
 dek: "Understanding drop weight and when to upgrade."
+seoDescription: "At thirteen and fourteen, your kid is getting stronger and faster. The bat they used last year might be the wrong drop now."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

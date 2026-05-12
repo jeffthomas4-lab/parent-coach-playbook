@@ -1,6 +1,7 @@
 ---
 title: "The *snack rotation* that doesn't fall apart"
 dek: "Twelve families. Twelve weeks. One spreadsheet. The format that holds."
+seoDescription: "Most rec teams of six-year-olds have a snack rotation. Most rotations fall apart by week four because no one knows whose turn it is."
 topic: "season-ops"
 format: "note"
 phase: "team-parent"
@@ -10,6 +11,7 @@ age: "5-7"
 publishedAt: 2026-03-11
 featured: false
 hero: /illustrations/team-snack-table.webp
+heroAlt: "A folding table at the side of a youth sports field set with juice boxes, granola bars, sliced oranges, and a printed snack rotation list."
 ---
 
 Most rec teams of six-year-olds have a snack rotation. Most rotations fall apart by week four because no one knows whose turn it is.

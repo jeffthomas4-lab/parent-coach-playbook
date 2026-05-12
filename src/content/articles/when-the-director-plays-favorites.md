@@ -1,6 +1,7 @@
 ---
 title: "When the director *plays favorites*"
 dek: "The same kids always get the leads. Your kid is good but stays ensemble. How to tell if it's bias or fair judgment."
+seoDescription: "Your kid auditioned for the spring musical."
 topic: "communication"
 format: "essay"
 phase: "team-parent"

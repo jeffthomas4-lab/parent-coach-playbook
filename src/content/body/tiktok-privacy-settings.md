@@ -9,7 +9,7 @@ ageBands: ["11-12", "13-14", "15-plus"]
 publishedAt: 2026-01-19
 governingBodies:
   - name: "TikTok: Safety Center"
-    url: "https://www.tiktok.com/safety"
+    url: "https://www.tiktok.com/safety/en-us/"
   - name: "FTC: COPPA"
     url: "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa"
   - name: "Common Sense Media: TikTok"

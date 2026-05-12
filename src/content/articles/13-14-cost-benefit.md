@@ -1,6 +1,7 @@
 ---
 title: "The 13-14 Cost-Benefit Conversation"
 dek: "When it's time to actually do the math."
+seoDescription: "At thirteen and fourteen, if your kid is playing travel ball, you're writing real checks. The question is whether the return makes sense for your family."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-there"

@@ -1,6 +1,7 @@
 ---
 title: "The college *ID camp* pitch at 13–14"
 dek: "The recruiter's email arrives in March. Limited spots. Coach will be there. Here is what they are actually selling."
+seoDescription: "The email arrives in early March, a week after a tournament where your kid had a good weekend. The subject line is friendly but specific."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-home"

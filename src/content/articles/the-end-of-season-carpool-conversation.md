@@ -1,6 +1,7 @@
 ---
 title: "The end-of-season carpool conversation"
 dek: "How to thank the carpool partner without making it weird, and how to talk about next season's logistics before everyone forgets who drove who in May."
+seoDescription: "The carpool you and another family ran for four months is one of the under-thanked relationships in youth sports."
 topic: "communication"
 format: "note"
 phase: "team-parent"

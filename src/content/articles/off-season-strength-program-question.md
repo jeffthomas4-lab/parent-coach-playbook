@@ -1,6 +1,7 @@
 ---
 title: "The off-season strength program question"
 dek: "Should an 11-year-old be lifting weights this summer? What the actual research says, and what kind of program is appropriate by age."
+seoDescription: "The summer training club promises a 10-week strength program for 11-year-olds. The pitch is \"kids who don't strength train fall behind.\" The parent question is..."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

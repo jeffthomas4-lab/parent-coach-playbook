@@ -1,6 +1,7 @@
 ---
 title: "Single-sport or multi-sport camp at *8*"
 dek: "Single-sport camps look better in the marketing. At eight, multi-sport almost always wins."
+seoDescription: "Your kid is eight. They like baseball. The local single-sport baseball camp is $475 for the week. The multi-sport day camp is $325. Both are five days."
 topic: "summer-camps"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "When your kid says they're *not as good as their teammate*"
 dek: "She is right. He is better than she is. Now what."
+seoDescription: "She is nine. She tells you in the car that Avery is better than her."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

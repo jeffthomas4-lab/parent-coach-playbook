@@ -1,6 +1,7 @@
 ---
 title: "Raking the infield"
 dek: "The difference between a good field and a bad one. The maintenance that prevents injuries."
+seoDescription: "You're at a baseball field and you notice: some fields are perfectly smooth. Others are rutted and lumpy."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

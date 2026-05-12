@@ -1,6 +1,7 @@
 ---
 title: "When the family vacation overlaps with the camp"
 dek: "The conflict every June. The camp deposit, the family beach week, the kid in the middle. How families resolve it without resentment."
+seoDescription: "The summer camp registered in February starts the same week as the family beach trip booked in November. The kid wants both. The family budget supports one."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

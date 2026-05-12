@@ -1,6 +1,7 @@
 ---
 title: "Managing Substitutions Kids Actually Buy Into"
 dek: "You're not sneaking subs past them. You're explaining the decision before the game."
+seoDescription: "It was February and we had a kid who wasn't playing. Not because they were bad. Because the matchup didn't favor them."
 topic: "game-day"
 format: "note"
 phase: "game"
@@ -9,6 +10,7 @@ age: "13-14"
 publishedAt: 2026-04-21
 featured: false
 hero: /illustrations/bench-moment-backlit-sunset.webp
+heroAlt: "Backlit silhouettes of teenage athletes on a bench at sunset, one cleaning a glove, the others watching the field."
 ---
 
 It was February and we had a kid who wasn't playing. Not because they were bad. Because the matchup didn't favor them. We could see the frustration building at practice. So we sat them down before the next game.

@@ -1,6 +1,7 @@
 ---
 title: "Chalking the lines"
 dek: "Straight lines. Bright lines. The tool that makes it easy. Why it matters."
+seoDescription: "For soccer, baseball, lacrosse, or any sport that uses marked fields."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

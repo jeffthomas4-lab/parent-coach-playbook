@@ -1,6 +1,7 @@
 ---
 title: "The summer tournament *kit*"
 dek: "Sunscreen, electrolytes, towels, the cooler. The pack list that prevents most of the meltdowns."
+seoDescription: "The summer tournament list is shorter than the winter one but the cost of forgetting an item is bigger."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

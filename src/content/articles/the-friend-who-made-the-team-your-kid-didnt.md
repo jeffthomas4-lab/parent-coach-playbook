@@ -1,6 +1,7 @@
 ---
 title: "The friend who *made the team* your kid didn't"
 dek: "Same evaluation. Different result. Now you have to figure out the playdate next Saturday."
+seoDescription: "The cuts list went up Tuesday. Your kid's best friend made the travel team. Your kid didn't."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

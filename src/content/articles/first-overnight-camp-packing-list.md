@@ -1,6 +1,7 @@
 ---
 title: "*First overnight camp* packing list"
 dek: "What to pack so the kid doesn't call home day two. The list that works."
+seoDescription: "First overnight camp is a real moment. You're nervous. They're nervous. The list the camp sends you is too long and too vague. Here's the actual list."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"
@@ -21,6 +22,7 @@ editorial:
   status: published
   reviewerNotes: "Packing lists are a commodity content type; the original value is in the framing (the stuffed animal line, the parking lot lingering note, the day-three rhythm). No factual claims requiring sources."
 hero: /illustrations/first-overnight-camp-duffel.webp
+heroAlt: "An open duffel bag on a bed half-packed with neatly folded clothes, a sleeping bag, a flashlight, and a sealed letter on top."
 ---
 
 First overnight camp is a real moment. You're nervous. They're nervous. The list the camp sends you is too long and too vague. Here's the actual list.

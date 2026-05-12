@@ -1,6 +1,7 @@
 ---
 title: "The recovery talk at 13-14"
 dek: "They're sore. They're tight. They think stretching is for old people. What actually matters."
+seoDescription: "Your 13-year-old is complaining about sore muscles."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

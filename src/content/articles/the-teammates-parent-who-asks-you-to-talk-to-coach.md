@@ -1,6 +1,7 @@
 ---
 title: "The *teammate's parent* who asks you to talk to coach"
 dek: "She thinks her son is being benched unfairly. She wants you to bring it up because the coach likes you. Don't."
+seoDescription: "Another mom corners you at pickup. Her son has been benched for two games. She thinks the coach is being unfair."
 topic: "communication"
 format: "note"
 phase: "drive-home"

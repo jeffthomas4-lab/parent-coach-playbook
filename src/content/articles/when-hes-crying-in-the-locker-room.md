@@ -1,6 +1,7 @@
 ---
 title: "When he's *crying in the locker room*"
 dek: "He came out red-eyed. He won't talk. The car ride is forty minutes."
+seoDescription: "Your son walked out of the locker room with the kind of red eyes that mean he was crying and is trying to hide it. He doesn't say anything."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

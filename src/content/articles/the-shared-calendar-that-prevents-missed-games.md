@@ -1,6 +1,7 @@
 ---
 title: "The *shared calendar* that prevents missed games"
 dek: "Two parents. Three kids. Six teams. One calendar. The setup."
+seoDescription: "You missed a game last season because you didn't have it on the calendar. The kid noticed. You felt awful."
 topic: "season-ops"
 format: "note"
 phase: "team-parent"

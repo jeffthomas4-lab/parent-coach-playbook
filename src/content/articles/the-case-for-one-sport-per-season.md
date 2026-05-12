@@ -1,6 +1,7 @@
 ---
 title: "The case for *one sport per season*"
 dek: "We over-schedule kids. The actual research. What one season buys you. The pushback you will get."
+seoDescription: "I know a mom with a fourth-grader who plays travel soccer in the fall, basketball in the winter, baseball in the spring, and a summer tournament team in..."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-home"

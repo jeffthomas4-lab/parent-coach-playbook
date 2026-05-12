@@ -1,6 +1,7 @@
 ---
 title: "What sports gives kids *that nothing else does*"
 dek: "Not the trophy. Not the skill. The thing that sticks with them at 30."
+seoDescription: "They're in middle school now. They said, \"I want to try something else.\""
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-home"

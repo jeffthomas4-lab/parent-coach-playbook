@@ -1,6 +1,7 @@
 ---
 title: "How to ask for *playing time* without asking for playing time"
 dek: "The conversation every parent wants to have with the coach. The version that actually works."
+seoDescription: "Your kid is eight. They've played eleven minutes of game time in three weeks. The other kids on the team are getting full halves. You are sure something is off."
 topic: "communication"
 format: "essay"
 phase: "drive-home"

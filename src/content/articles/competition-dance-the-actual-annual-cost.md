@@ -1,6 +1,7 @@
 ---
 title: "Competition dance: *the actual annual cost*"
 dek: "The $3,000 costume. The $2,000 hotel. The $5,000 nationals fee. The real number nobody talks about."
+seoDescription: "Competition. As in nationals. As in real money."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The Mid-Season Tune-Up at 11-12"
 dek: "One thing. One practice. Reset without starting over."
+seoDescription: "It was late February. We'd watched three games in four weeks. In all three, we saw the same defensive collapse on the weak side. Not new skill issues."
 topic: "season-ops"
 format: "note"
 phase: "game"

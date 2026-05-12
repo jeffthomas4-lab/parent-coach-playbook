@@ -1,6 +1,7 @@
 ---
 title: "Reading the Ref: When to Say Something, When to Shut Up"
 dek: "One bad call doesn't lose the game. Your reaction to it does."
+seoDescription: "It was a Saturday in April and we were down three. A call went against our team. The whole sideline erupted."
 topic: "game-day"
 format: "note"
 phase: "game"

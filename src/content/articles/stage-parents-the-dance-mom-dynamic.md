@@ -1,6 +1,7 @@
 ---
 title: "Stage parents: *the dance-mom dynamic* and how to stay sane"
 dek: "The costume drama. The politics. The moms who run everything. How to be supportive without losing yourself."
+seoDescription: "You've joined the performing arts parent community."
 topic: "communication"
 format: "essay"
 phase: "team-parent"

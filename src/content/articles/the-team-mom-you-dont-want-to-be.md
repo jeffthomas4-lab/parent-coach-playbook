@@ -1,6 +1,7 @@
 ---
 title: "The *team mom* you don't want to be"
 dek: "Five archetypes to avoid. How to be the team mom people thank in November."
+seoDescription: "You volunteered to be team parent in February. The season starts in August. You have time to think about what kind of team parent you want to be."
 topic: "season-ops"
 format: "note"
 phase: "game"

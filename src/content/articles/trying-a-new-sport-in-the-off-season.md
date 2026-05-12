@@ -1,6 +1,7 @@
 ---
 title: "Trying a new sport in the off-season"
 dek: "The kid wants to try something new. The five-week test that tells you whether it sticks, and the parent traps to avoid."
+seoDescription: "The off-season is the right time to try a new sport. The kid is fresh, the competition for time is light, and the stakes are low."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

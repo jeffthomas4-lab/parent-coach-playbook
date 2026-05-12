@@ -1,6 +1,7 @@
 ---
 title: "Used vs new gear. *The actual math*"
 dek: "When used is fine. When used is a mistake. The five-minute decision."
+seoDescription: "Some gear is fine to buy used. Some gear is a mistake to buy used. Here is how to tell."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

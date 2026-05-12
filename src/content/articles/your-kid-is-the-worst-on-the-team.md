@@ -1,6 +1,7 @@
 ---
 title: "Your Kid Is the Worst on the Team"
 dek: "They know. The team knows. You're the only one pretending otherwise."
+seoDescription: "There's always one. The kid who is clearly several levels below everyone else. Maybe it's yours."
 topic: "the-hard-stuff"
 format: "note"
 phase: "game"

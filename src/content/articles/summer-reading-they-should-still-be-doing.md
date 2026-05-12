@@ -1,6 +1,7 @@
 ---
 title: "Summer reading they should *still be doing*"
 dek: "Sports doesn't get them out of school. The 30 minutes that protects fall academics."
+seoDescription: "The sport ate the calendar. The kid hasn't opened a book in six weeks. School starts in seven weeks."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "What to do in the *30 minutes before kickoff*"
 dek: "You're at the field. Warm-ups have started. Your job in those thirty minutes."
+seoDescription: "You arrived at 8:30 for the 9am game. Your kid is in warm-ups. You have thirty minutes."
 topic: "game-day"
 format: "note"
 phase: "drive-there"

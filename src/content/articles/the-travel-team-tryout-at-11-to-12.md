@@ -1,6 +1,7 @@
 ---
 title: "The Travel-Team Tryout at 11-12"
 dek: "This is the first time it gets real. Here's what changes."
+seoDescription: "Travel tryouts mean your kid is competing against 40 other kids they don't know. The coach is picking 12 to 14. Your kid knows the math."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

@@ -1,6 +1,7 @@
 ---
 title: "The \"*elite*\" camp label"
 dek: "Elite is a marketing word, not a credential. Three ways to test if a camp is actually advanced."
+seoDescription: "You're looking at two camps. One is called Summer Skills Camp. The other is called Elite Performance Academy. Both cost about the same. Both are five days."
 topic: "summer-camps"
 format: "note"
 phase: "drive-home"

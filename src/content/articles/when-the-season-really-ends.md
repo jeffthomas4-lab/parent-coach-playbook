@@ -1,6 +1,7 @@
 ---
 title: "When the season really ends"
 dek: "It's not the last game. It's the week after, when the schedule disappears and the family suddenly has nothing to do at 5pm on a Tuesday."
+seoDescription: "The last game of a season is not the end of the season. The end of the season is the following Tuesday, when there is no practice, the gear bag is by the door..."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

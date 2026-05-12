@@ -108,6 +108,10 @@ const ageLabel = (a: string | undefined) =>
                           src={a.data.hero}
                           alt={a.data.heroAlt || a.data.title}
                           class="w-full h-32 object-cover rounded mb-3 group-hover:opacity-90 transition-opacity"
+                          loading="lazy"
+                          decoding="async"
+                          width="600"
+                          height="200"
                         />
                       )}
                       <div class="flex items-baseline justify-between gap-3 flex-wrap mb-1">

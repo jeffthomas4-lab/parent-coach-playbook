@@ -1,6 +1,7 @@
 ---
 title: "When your kid *isn't going to play* in college (and that's fine)"
 dek: "The moment you know. The conversation that matters. What comes next."
+seoDescription: "Your kid is 17. They're a good athlete. Not great. Good."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-home"

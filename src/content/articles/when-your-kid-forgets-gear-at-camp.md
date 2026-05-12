@@ -1,6 +1,7 @@
 ---
 title: "When your kid *forgets gear* at camp"
 dek: "It will happen. The label-everything rule. The replacement strategy. What not to do."
+seoDescription: "Wednesday afternoon, day three. You get a call from the camp. Your kid is asking us if she can borrow a cleat. She thinks she left her cleats at home."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

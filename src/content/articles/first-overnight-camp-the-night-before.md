@@ -1,6 +1,7 @@
 ---
 title: "First overnight camp: the night before drop-off"
 dek: "What to actually do the night before a kid leaves for their first overnight camp. The conversations to have, the things to skip."
+seoDescription: "The night before first overnight camp is its own small ceremony. The kid is excited, nervous, asking weird questions, deeply quiet, then asking weird questions..."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

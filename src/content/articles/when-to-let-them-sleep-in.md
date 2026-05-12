@@ -1,6 +1,7 @@
 ---
 title: "When to let them *sleep in*"
 dek: "Summer practice is at 7 a.m. They're 13 and exhausted. The honest math on sleep, growth, and when missing practice is the right call."
+seoDescription: "Adolescents need 9-10 hours of sleep. Most don't get it. Summer is the one chance to fix that, and most families spend the summer at 7 a.m. practices."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

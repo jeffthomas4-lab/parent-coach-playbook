@@ -1,6 +1,7 @@
 ---
 title: "The *laundry rotation* for travel season"
 dek: "Two practices, two games, three jerseys. The cycle that holds."
+seoDescription: "Travel season hits hard on laundry. Two practices a week. Two games on weekends. Tournaments. Two complete uniforms. Sweatpants for warm-up. White socks."
 topic: "season-ops"
 format: "note"
 phase: "team-parent"

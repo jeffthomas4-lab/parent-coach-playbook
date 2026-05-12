@@ -1,6 +1,7 @@
 ---
 title: "The camp counselor your kid hates"
 dek: "Day three at camp. The kid calls home. They hate the counselor. The 10-minute conversation that helps, and the one that hurts."
+seoDescription: "The Wednesday-night call from camp: \"I hate my counselor. They're so mean. Can you come get me?\""
 topic: "summer-camps"
 format: "note"
 phase: "drive-home"

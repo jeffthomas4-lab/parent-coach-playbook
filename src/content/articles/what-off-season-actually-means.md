@@ -1,6 +1,7 @@
 ---
 title: "What *off-season* actually means by age"
 dek: "It's not zero. It's not a private trainer five days a week. Here's what off-season looks like by age."
+seoDescription: "The off-season is one of the most-misunderstood concepts in youth sports. Coaches use the word. Parents nod. Almost nobody agrees on what it actually means."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"
@@ -21,6 +22,7 @@ editorial:
   status: claude-reviewed
   reviewerNotes: "Strong piece. Mentions AAP and AOSSM consensus in-text but no formal sources block: should add before Jeff review. The 'off-season is not zero, not training-camp, just less' close earns its place."
 hero: /illustrations/sunset-dugout-quiet.webp
+heroAlt: "An empty dugout at sunset, a single bat leaning against the fence, the field beyond it lit in golden light."
 ---
 
 The off-season is one of the most-misunderstood concepts in youth sports. Coaches use the word. Parents nod. Almost nobody agrees on what it actually means.

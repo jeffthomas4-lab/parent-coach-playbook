@@ -1,6 +1,7 @@
 ---
 title: "Swim-meet weekend logistics that save the family"
 dek: "Two-day swim meets can break a marriage. The shift schedule, the snack strategy, and the eight things to pack that you forgot."
+seoDescription: "A two-day swim meet is 14 hours of pool deck, 90 seconds of actual racing per kid per session, and a parking lot full of stressed-out families."
 topic: "season-ops"
 format: "note"
 phase: "team-parent"

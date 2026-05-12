@@ -11,7 +11,7 @@ governingBodies:
   - name: "USOPC Athlete Mental Health Resources"
     url: "https://www.teamusa.com/mental-health"
   - name: "American Psychological Association: Anxiety in Youth Sport"
-    url: "https://www.apa.org/topics/sport-exercise/competitive-anxiety"
+    url: "https://www.apa.org/topics/sport-exercise"
 doctorQuestions:
   - "How do I tell the difference between normal pre-game nerves and an anxiety disorder?"
   - "When should we consider talking to a sports psychologist?"

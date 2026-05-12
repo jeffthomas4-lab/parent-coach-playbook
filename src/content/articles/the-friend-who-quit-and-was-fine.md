@@ -1,6 +1,7 @@
 ---
 title: "The summer the kid met someone *who quit and was fine*"
 dek: "The kid back from camp with a story about a friend who left their sport and is happier. The conversation about what that means for them."
+seoDescription: "The kid comes back from camp. They mention a new friend at the camp who quit travel ball last spring and is now doing theater."
 topic: "communication"
 format: "note"
 phase: "drive-home"

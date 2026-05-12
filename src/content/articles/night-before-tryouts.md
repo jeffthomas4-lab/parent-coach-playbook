@@ -1,5 +1,6 @@
 ---
 title: "The night before *tryouts*"
+seoDescription: "Your kid packed their bag four times tonight. Pinnies, right shoes, water bottle that doesn't leak, spare hair ties from earlier losses."
 format: "note"
 issue: 4
 phase: "drive-there"

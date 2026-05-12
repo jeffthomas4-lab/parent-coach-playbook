@@ -1,6 +1,7 @@
 ---
 title: "The \"*you should be assistant coaching*\" pressure"
 dek: "Coach asked. Two parents asked. You're considering it. Read this first."
+seoDescription: "The head coach pulled you aside. We could really use you as an assistant. You played in college. The team would love it."
 topic: "communication"
 format: "note"
 phase: "drive-home"
@@ -9,6 +10,7 @@ age: "all-ages"
 publishedAt: 2026-03-29
 featured: false
 hero: /illustrations/you-should-be-assistant-coaching-pressure.webp
+heroAlt: "A parent in the stands holding a clipboard handed up from the field, weighing whether to take it."
 ---
 
 The head coach pulled you aside. *We could really use you as an assistant. You played in college. The team would love it.*

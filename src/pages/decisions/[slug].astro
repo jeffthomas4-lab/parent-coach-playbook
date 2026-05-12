@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
 import FAQPageSchema from '../../components/FAQPageSchema.astro';
+import HowToSchema from '../../components/HowToSchema.astro';
 import { SITE } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
@@ -52,6 +53,14 @@ const breadcrumbSchema = {
     howToHandleIt={decision.data.howToHandleIt}
   />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {decision.data.howToHandleIt.length > 0 && (
+    <HowToSchema
+      slot="head"
+      name={`How to handle: ${stripTitle(decision.data.title)}`}
+      description={decision.data.summary}
+      steps={decision.data.howToHandleIt.map((h, i) => ({ name: `Step ${i + 1}`, text: h }))}
+    />
+  )}
 
   <!-- Hero -->
   <section class="border-b border-bone">

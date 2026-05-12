@@ -2,11 +2,13 @@
 // JSON-LD Article schema for individual reads.
 // Drop into any [slug].astro page that renders article-shaped content.
 //
-// The site is intentionally anonymous. Author is the publishing Organization,
-// not a named Person. This is the trade-off of an editorial brand: weaker
-// E-E-A-T Person signal, but no individual identity exposed.
+// Author entity is resolved through authorEntity() in site.ts. While
+// AUTHOR_REVEALED is false the author is the editorial Organization;
+// after the November flip, it becomes the named Person (Jeff). Visible
+// bylines on cards and articles always stay editorial-branded — only
+// the JSON-LD author identity flips.
 
-import { SITE } from '../data/site';
+import { SITE, authorEntity } from '../data/site';
 
 interface Props {
   title: string;
@@ -40,11 +42,7 @@ const schema = {
   image: imageUrl,
   datePublished: publishedAt.toISOString(),
   dateModified: (modifiedAt ?? publishedAt).toISOString(),
-  author: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-  },
+  author: authorEntity(),
   publisher: {
     '@type': 'Organization',
     name: SITE.name,

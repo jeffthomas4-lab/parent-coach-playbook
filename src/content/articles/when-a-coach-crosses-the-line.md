@@ -1,6 +1,7 @@
 ---
 title: "When a coach *crosses the line*"
 dek: "The line. The steps. Who to call. When to walk. The honest playbook for the conversation no parent wants to have."
+seoDescription: "Most coaches are fine. Some are great. A few are not, and the few are the ones this piece is about."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

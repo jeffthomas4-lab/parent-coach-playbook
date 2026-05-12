@@ -1,6 +1,7 @@
 ---
 title: "The *dad who corners coach* in the parking lot"
 dek: "Coach is loading his car. The dad is not letting him leave. What to do."
+seoDescription: "Friday night, 7:45pm. Practice is over. The coach is putting cones in his trunk. A dad has him cornered between his car door and the trunk and has been talking..."
 topic: "communication"
 format: "note"
 phase: "game"

@@ -1,6 +1,7 @@
 ---
 title: "The nutrition talk at 8-10"
 dek: "What they eat affects how they play. Not just energy. Focus. Mood. Recovery."
+seoDescription: "Your eight-year-old is playing better soccer this season."
 topic: "season-ops"
 format: "note"
 phase: "drive-home"

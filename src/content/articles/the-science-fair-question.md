@@ -1,6 +1,7 @@
 ---
 title: "The science fair question"
 dek: "When sports stops being practice and becomes more. When your kid needs to choose."
+seoDescription: "Your kid has a soccer tournament Saturday."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-home"

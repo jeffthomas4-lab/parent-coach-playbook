@@ -1,6 +1,7 @@
 ---
 title: "Packing for a long tournament weekend"
 dek: "Three games in two days, hotel pool, restaurant dinner, and 110-degree heat. The 18-item packing list that doesn't show up on the team email."
+seoDescription: "The team email lists uniforms, water bottles, and the practice schedule. It doesn't list the 18 things that will determine whether the weekend goes well or..."
 topic: "season-ops"
 format: "note"
 phase: "team-parent"

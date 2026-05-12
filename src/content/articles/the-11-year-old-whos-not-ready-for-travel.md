@@ -1,6 +1,7 @@
 ---
 title: "The *11-year-old who's not ready* for travel even if they're talented"
 dek: "Talent is not the only readiness. The signs your kid is not ready, and the cost of going anyway."
+seoDescription: "Your kid is talented. The travel coach has been recruiting. You're tempted."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-home"

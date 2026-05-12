@@ -1,6 +1,7 @@
 ---
 title: "The 13-14 Practice Plan That Respects Their Time"
 dek: "Fifty minutes. One problem. One focus. They know when you're wasting it."
+seoDescription: "It was early October and we had a clear problem. We were leaving runners on in crucial moments. Not because of lack of skill."
 topic: "season-ops"
 format: "note"
 phase: "game"

@@ -1,6 +1,7 @@
 ---
 title: "When the team goes on a *tournament vacation*"
 dek: "Three nights, four games, two beach days. The framework for whether your family does this and how to survive it."
+seoDescription: "The team is doing a destination tournament. The brochure is selling sand and pool time. The team chat has six tabs of dinner-reservation logistics open."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

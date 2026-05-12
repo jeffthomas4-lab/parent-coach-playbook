@@ -1,6 +1,7 @@
 ---
 title: "Varsity Tryouts at 15+: How to Read the Coach"
 dek: "The coach's behavior during tryouts tells you everything about what the season will be."
+seoDescription: "At 15-plus, tryouts reveal the coach's actual system. Watch for three things:"
 topic: "tryouts"
 format: "note"
 phase: "drive-home"

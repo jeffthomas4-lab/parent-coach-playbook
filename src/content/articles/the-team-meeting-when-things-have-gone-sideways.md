@@ -1,6 +1,7 @@
 ---
 title: "The 11-12 Ages: The Team Meeting When Things Have Gone Sideways"
 dek: "Something broke. Here's how to talk about it without pointing fingers."
+seoDescription: "A clique forms. Someone is excluded. A kid made a mistake and got benched and now two parents are questioning your decisions."
 topic: "communication"
 format: "note"
 phase: "game"

@@ -1,6 +1,7 @@
 ---
 title: "The *hotel pool rule*"
 dek: "Tournament weekend. Hotel pool. Twelve kids. The rule that prevents disaster."
+seoDescription: "Tournament weekend. Friday night. The team has checked in. Twelve kids hit the pool at 8pm."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

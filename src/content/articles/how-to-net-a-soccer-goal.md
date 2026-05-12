@@ -1,6 +1,7 @@
 ---
 title: "How to net a soccer goal"
 dek: "You have the frame. You need the netting. Five minutes and you're done. Here's how."
+seoDescription: "You have a soccer goal frame sitting in your garage."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

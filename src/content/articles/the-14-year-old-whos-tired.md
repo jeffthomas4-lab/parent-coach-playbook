@@ -1,6 +1,7 @@
 ---
 title: "The *14-year-old who's tired*"
 dek: "They sleep 11 hours and are still tired. They've lost their pop. The body is changing. The schedule is not."
+seoDescription: "Your kid is fourteen. They're playing the same schedule they played at twelve. Their body has done a different thing in the last year."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The parent *ruining the team chat*"
 dek: "It's one parent. It's always one parent. The fix isn't the chat. The fix is the structure."
+seoDescription: "The team chat has 28 parents. One parent is responsible for 60% of the messages. The messages are not bad, exactly. They are constant. They are off-topic."
 topic: "communication"
 format: "note"
 phase: "drive-home"

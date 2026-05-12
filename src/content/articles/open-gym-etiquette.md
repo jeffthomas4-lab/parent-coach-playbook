@@ -1,6 +1,7 @@
 ---
 title: "Open gym etiquette in the off-season"
 dek: "Showing up to a high-school open gym at 12. The unspoken rules nobody tells you, and how to help your kid not get frozen out."
+seoDescription: "Open gym at the local high school is one of the best off-season opportunities for a kid trying to level up."
 topic: "rules-of-play"
 format: "note"
 phase: "drive-there"

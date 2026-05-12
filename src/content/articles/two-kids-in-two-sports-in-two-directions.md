@@ -1,6 +1,7 @@
 ---
 title: "Two kids, two sports, *two directions*"
 dek: "Sundays without losing the marriage. The schedule conversation nobody teaches you. What works when there is more family than there is calendar."
+seoDescription: "Saturday morning. Your daughter has a 9 a.m. soccer game across town. Your son has a 9:30 baseball game on the other side of town."
 topic: "season-ops"
 format: "essay"
 phase: "drive-home"

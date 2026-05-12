@@ -1,6 +1,7 @@
 ---
 title: "The 11-12 Best Friend on a Different Team"
 dek: "You can't fix this by moving them. You can help them build resilience around it."
+seoDescription: "Our kid's best friend played on the same team last year. This year they split to different teams. Our kid was upset. They wanted to switch."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

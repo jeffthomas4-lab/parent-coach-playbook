@@ -1,6 +1,7 @@
 ---
 title: "The 4% rule"
 dek: "What college sports actually looks like. The math that matters."
+seoDescription: "Your kid is 14 and getting serious about their sport."
 topic: "rules-of-play"
 format: "note"
 phase: "drive-home"

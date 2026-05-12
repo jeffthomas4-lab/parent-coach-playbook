@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE } from '../data/site';
+import { SITE, personSchema } from '../data/site';
 
-// WebSite schema with SearchAction for SERP search box. The site is intentionally
-// anonymous, so no Person schema. Publisher is the Organization entity rendered
-// from BaseLayout.
+// WebSite schema with SearchAction for SERP search box. Person schema is
+// emitted only after AUTHOR_REVEALED is flipped on in November — until then
+// personSchema() returns null and only the WebSite + Organization entities
+// ship from this page.
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -25,12 +26,17 @@ const websiteSchema = {
     'query-input': 'required name=search_term_string',
   },
 };
+
+const personJsonLd = personSchema();
 ---
 <BaseLayout
   title="About"
   description="Parent Coach Playbook is sideline notes for the parent who coaches, drives, snack-packs, and supervises the group chat. Editorial process, sources, and how we write."
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  {personJsonLd && (
+    <script slot="head" type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+  )}
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24">
       <p class="font-display italic text-rust mb-4 font-medium">About this site</p>

@@ -1,6 +1,7 @@
 ---
 title: "When your kid is the *new kid* on the team"
 dek: "First practice with a team that's already a team. The week that decides the season."
+seoDescription: "You moved. You switched clubs. You finally made the team you've been trying out for three years to make. Whatever the reason, the kid is the new kid this week."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

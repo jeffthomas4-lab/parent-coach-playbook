@@ -1,6 +1,7 @@
 ---
 title: "What to Do the Night Before Tryouts at Age 5-7 (Which Is to Say, Almost Nothing)"
 dek: "*Normal bedtime* is the only rule."
+seoDescription: "They're 5 to 7. They don't know what tryouts are. They've never felt the weight of wanting something they might not get."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

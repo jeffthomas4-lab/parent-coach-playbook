@@ -1,6 +1,7 @@
 ---
 title: "Mom and Dad *disagree* on a youth-sports decision"
 dek: "The travel-team question. The specialization question. The pull-the-kid-from-the-team question. How to work it out without making the kid pick a side."
+seoDescription: "You and your spouse are in the kitchen on a Tuesday. The travel coach has called. He wants your kid to commit to the spring tournament season."
 topic: "communication"
 format: "essay"
 phase: "drive-home"

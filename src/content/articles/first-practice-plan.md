@@ -1,6 +1,7 @@
 ---
 title: "The First Practice Plan (5-7 Years Old)"
 dek: "Twenty-five minutes that work for this age group."
+seoDescription: "Twenty-five minutes is your window. Longer and you lose them to fatigue and distraction. Shorter and the practice feels incomplete."
 topic: "season-ops"
 format: "note"
 phase: "game"

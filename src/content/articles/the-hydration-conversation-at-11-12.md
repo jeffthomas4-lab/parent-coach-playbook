@@ -1,6 +1,7 @@
 ---
 title: "The hydration conversation at 11-12"
 dek: "They say they don't need water. They finish games and haven't touched their water bottle. The actual cost of dehydration."
+seoDescription: "Your 11-year-old has a soccer game at 2 pm."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

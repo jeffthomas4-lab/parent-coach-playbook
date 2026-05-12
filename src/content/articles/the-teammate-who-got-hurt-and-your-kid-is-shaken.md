@@ -1,6 +1,7 @@
 ---
 title: "The *teammate who got hurt* and your kid is shaken"
 dek: "She saw the injury. She heard the parent scream. She is not herself for a week."
+seoDescription: "Your daughter's teammate broke her leg in a soccer game on Saturday. The crack was audible. Her mom screamed. The ambulance came."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

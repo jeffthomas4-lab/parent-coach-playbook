@@ -1,6 +1,7 @@
 ---
 title: "The team gift that's too much"
 dek: "When the team-mom proposal lands at $80 a family for the coach's gift, and you don't know how to push back without looking cheap."
+seoDescription: "The end-of-season group text from the team mom: \"We were thinking everyone chip in $80 for the coach's gift. Sound good?\""
 topic: "season-ops"
 format: "note"
 phase: "team-parent"

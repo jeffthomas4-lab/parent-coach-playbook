@@ -1,6 +1,7 @@
 ---
 title: "The night before *tryouts* when you're also the coach"
 dek: "Your job tonight is parent. Your job tomorrow morning is coach. The seam between the two is the hard part. Here's how to keep them straight."
+seoDescription: "You already know who is making the team. You decided two days ago. The kid sitting across from you at dinner does not know yet, and you are about to spend the..."
 topic: "tryouts"
 format: "essay"
 phase: "drive-there"

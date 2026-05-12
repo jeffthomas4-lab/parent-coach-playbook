@@ -10,6 +10,7 @@ age: "all-ages"
 publishedAt: 2026-02-05
 featured: false
 hero: /illustrations/the-post-cut-porch.webp
+heroAlt: "A teenager sitting on a porch step at dusk, head down, baseball glove on the boards beside them. A parent visible just inside the front door, not approaching."
 ---
 
 The cuts list went up. Your kid wasn't on it. The next 24 hours, you will be tempted to do several things. Don't.

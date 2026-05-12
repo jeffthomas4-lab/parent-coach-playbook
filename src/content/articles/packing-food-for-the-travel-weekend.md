@@ -1,6 +1,7 @@
 ---
 title: "*Packing food* for the travel weekend"
 dek: "Tournament weekends eat money in $14 sandwiches. The cooler approach saves hundreds and feeds the team better."
+seoDescription: "Three meals out a day, four people, three days. At tournament-venue restaurant prices, that's $400 to $600 a weekend."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-there"

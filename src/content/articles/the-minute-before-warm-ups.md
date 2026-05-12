@@ -1,6 +1,7 @@
 ---
 title: "The Minute Before Warm-ups"
 dek: "One sentence. Your presence matters more than your words."
+seoDescription: "Our kid is standing with the team, about to warm up. This is our last chance to say something. Here's what works."
 topic: "game-day"
 format: "note"
 phase: "drive-home"

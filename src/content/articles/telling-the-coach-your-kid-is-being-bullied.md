@@ -1,6 +1,7 @@
 ---
 title: "Telling the coach *your kid is being bullied*"
 dek: "Without making it bigger. Without making it smaller. The conversation that protects your kid and the team."
+seoDescription: "Your daughter is nine. She tells you Tuesday night, in a quiet voice, that two girls on the team have been excluding her at practice."
 topic: "communication"
 format: "essay"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "When you *disagree with the coach* in front of your kid"
 dek: "Don't. Even when you're right. Especially when you're right."
+seoDescription: "Your son's coach made a substitution Saturday that you thought was wrong. Pulled him at a moment your son was finally getting going. The team lost."
 topic: "communication"
 format: "essay"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "When they ask \"*am I any good?*\""
 dek: "She is six. She just had her first game. She is asking. Don't blow this."
+seoDescription: "She is six. The first game ended thirty minutes ago. In the car, out of nowhere, she asks the question."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

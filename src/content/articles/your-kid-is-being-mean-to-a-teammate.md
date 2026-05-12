@@ -1,6 +1,7 @@
 ---
 title: "Your 8-10 Kid Is Being Mean to a Teammate"
 dek: "This isn't about sports. This is about your kid's character. Handle it now."
+seoDescription: "The coach tells you. Or another parent tells you. Or you see it yourself: your kid was unkind to a teammate."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The Car Kit That Stays in the Trunk"
 dek: "What you need and what you can skip."
+seoDescription: "A car kit is not a first-aid kit. It's the stuff you forgot that you'll need three times a season. Build it once in March. Check it once in June. It saves you."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

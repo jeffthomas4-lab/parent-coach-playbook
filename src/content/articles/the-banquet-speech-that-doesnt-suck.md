@@ -1,6 +1,7 @@
 ---
 title: "The end-of-season *banquet speech* that doesn't suck"
 dek: "Most parent banquet speeches go on too long, name too many people, and make the kid wish they were anywhere else. Here's the version that doesn't."
+seoDescription: "Banquet season is here. If you're the team mom, the team parent, the assistant coach, or the unfortunate volunteer who said yes when the head coach asked, you..."
 topic: "the-hard-stuff"
 format: "note"
 phase: "team-parent"

@@ -12,7 +12,7 @@ governingBodies:
   - name: "AAP: Mental Health Care in Sport"
     url: "https://www.aap.org/en/practice-management/care-delivery-approaches/mental-health/"
   - name: "NCAA: Mental Health Best Practices"
-    url: "https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school"
+    url: "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx"
 doctorQuestions:
   - "Should we be worried that my kid's identity is wrapped up in this one sport?"
   - "How do we know if their reaction to a setback is normal grief vs identity collapse?"

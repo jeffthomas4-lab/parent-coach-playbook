@@ -1,6 +1,7 @@
 ---
 title: "The kid who *used to love it* and doesn't anymore"
 dek: "He played his sport with joy until he was 12. He's 13 now. Something is different."
+seoDescription: "Your son loved baseball from when he was four. He'd play wiffle ball in the yard until dark. He had a game journal. He memorized stats."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

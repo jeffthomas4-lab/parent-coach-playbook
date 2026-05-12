@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-12T04:27:53.900Z",
-  "count": 386,
+  "generatedAt": "2026-05-12T05:24:16.488Z",
+  "count": 384,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -753,6 +753,8 @@
       "sources": [
         "src/content/body/recruiting-dms.md",
         "src/content/body/recruiting-service-red-flags.md",
+        "src/content/body/recruiting-visit-conduct.md",
+        "src/content/body/showcase-event-vetting.md",
         "src/content/recruiting/ncaa-eligibility-center.md",
         "src/content/recruiting/timeline-by-grade.md",
         "src/content/recruiting/what-verbal-commits-mean.md",
@@ -961,7 +963,7 @@
       ]
     },
     {
-      "url": "https://www.airnow.gov/wildfire-smoke-guide/",
+      "url": "https://www.airnow.gov/wildfire-smoke/",
       "sources": [
         "src/pages/governing-bodies.astro"
       ]
@@ -1013,7 +1015,7 @@
       ]
     },
     {
-      "url": "https://www.apa.org/topics/sport-exercise/competitive-anxiety",
+      "url": "https://www.apa.org/topics/sport-exercise",
       "sources": [
         "src/content/body/performance-anxiety.md"
       ]
@@ -1080,7 +1082,7 @@
       ]
     },
     {
-      "url": "https://www.bnq.qc.ca/",
+      "url": "https://www.bnq.ca/en/",
       "sources": [
         "src/pages/governing-bodies.astro"
       ]
@@ -1218,7 +1220,7 @@
       ]
     },
     {
-      "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Sports-Recreation",
+      "url": "https://www.cpsc.gov/Safety-Education/Safety-Guides/sports-fitness-and-recreation",
       "sources": [
         "src/pages/governing-bodies.astro"
       ]
@@ -1697,13 +1699,6 @@
       ]
     },
     {
-      "url": "https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school",
-      "sources": [
-        "src/content/body/identity-beyond-the-sport.md",
-        "src/content/recruiting/scholarship-odds-the-honest-math.md"
-      ]
-    },
-    {
       "url": "https://www.ncaa.org/news/2021/6/30/ncaa-adopts-interim-name-image-and-likeness-policy.aspx",
       "sources": [
         "src/content/body/nil-privacy-hs-athletes.md"
@@ -1732,6 +1727,7 @@
     {
       "url": "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx",
       "sources": [
+        "src/content/body/identity-beyond-the-sport.md",
         "src/content/recruiting/scholarship-odds-the-honest-math.md"
       ]
     },
@@ -1745,13 +1741,6 @@
       "url": "https://www.ncaa.org/sports/2015/6/10/ncaa-drug-testing-program.aspx",
       "sources": [
         "src/content/body/adhd-medication-competition-rules.md"
-      ]
-    },
-    {
-      "url": "https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx",
-      "sources": [
-        "src/content/body/recruiting-visit-conduct.md",
-        "src/content/body/showcase-event-vetting.md"
       ]
     },
     {
@@ -2224,7 +2213,7 @@
       ]
     },
     {
-      "url": "https://www.tiktok.com/safety",
+      "url": "https://www.tiktok.com/safety/en-us/",
       "sources": [
         "src/content/body/tiktok-privacy-settings.md"
       ]

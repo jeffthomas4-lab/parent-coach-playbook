@@ -1,6 +1,7 @@
 ---
 title: "August first. The *pre-season week*"
 dek: "Tryouts in days. School in two weeks. The week to get the kid right without overdoing any of it."
+seoDescription: "The first week of August. Pre-season is here. School is right behind it."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

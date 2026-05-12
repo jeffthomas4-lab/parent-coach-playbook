@@ -1,6 +1,7 @@
 ---
 title: "The Olympic dream conversation at 12"
 dek: "When your kid says they want to go pro. When the dream is big but the reality is getting bigger."
+seoDescription: "Driving home from a tournament. Your kid is in the backseat."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-home"

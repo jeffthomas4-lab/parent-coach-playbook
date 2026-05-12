@@ -1,6 +1,7 @@
 ---
 title: "The *8-year-old's glove* that cost too much"
 dek: "You spent $180 on a glove. They are eight. Here is what you actually needed to buy."
+seoDescription: "You walked into the sporting-goods store last spring. Your eight-year-old said the orange one was cool. The salesperson said it was a great glove."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

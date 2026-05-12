@@ -46,28 +46,22 @@ const PROGRESSION_ENUM = ['intro', 'build', 'refine'] as const;
 
 // Shared editorial-review fields. Attach to every collection so each piece carries its
 // own quality/integrity/approval state. The /admin/editorial dashboard reads from these.
-//
-// Workflow: I (Claude) write a piece → run a skeptical review pass and fill in qualityGrade,
-// originalityGrade, voiceGrade, flags, citationCheckPassed, set status='claude-reviewed' and
-// claudeReviewedAt. Jeff reads, edits if needed, then sets jeffReviewedAt and status='jeff-approved'.
-//
-// See REVIEW.md at the project root for the full operator manual.
 const editorialField = {
   editorial: z.object({
-    qualityGrade:               z.number().min(1).max(10).optional(),     // skeptical reader's "is this actually good"
-    originalityGrade:           z.number().min(1).max(10).optional(),     // is this Jeff's take or a rephrase of what's everywhere
-    voiceGrade:                 z.number().min(1).max(10).optional(),     // does it sound like Jeff
-    flagInappropriateness:      z.boolean().default(false),               // culture-war, political bias, off-brand
-    flagIpRisk:                 z.boolean().default(false),               // paraphrased without attribution, suspect product claims
-    flagSensitiveTopic:         z.boolean().default(false),               // mental health, body image, injury, divorce — extra care
-    citationCheckPassed:        z.boolean().default(false),               // sources cited where claims are made
-    sportLanguageCheckPassed:   z.boolean().default(false),               // every action verb and noun in the body uses the correct vocabulary for the tagged sport — see sport-vocab/<sport>.md
-    affiliateDisclosurePresent: z.boolean().default(false),               // FTC requires when affiliate links present
+    qualityGrade:               z.number().min(1).max(10).optional(),
+    originalityGrade:           z.number().min(1).max(10).optional(),
+    voiceGrade:                 z.number().min(1).max(10).optional(),
+    flagInappropriateness:      z.boolean().default(false),
+    flagIpRisk:                 z.boolean().default(false),
+    flagSensitiveTopic:         z.boolean().default(false),
+    citationCheckPassed:        z.boolean().default(false),
+    sportLanguageCheckPassed:   z.boolean().default(false),
+    affiliateDisclosurePresent: z.boolean().default(false),
     claudeReviewedAt:           z.coerce.date().optional(),
     jeffReviewedAt:             z.coerce.date().optional(),
     status: z.enum(['draft','claude-reviewed','ready-for-jeff','jeff-approved','published','needs-revision']).default('draft'),
     reviewerNotes:              z.string().optional(),
-    factCheckGoodThrough:       z.coerce.date().optional(),               // for evergreen content with date-sensitive facts
+    factCheckGoodThrough:       z.coerce.date().optional(),
   }).optional(),
 };
 
@@ -75,11 +69,13 @@ const articles = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
-      title: z.string(),                       // The voice H1 (with markdown italics)
-      seoTitle: z.string().optional(),         // Optional search-shaped title for the <title> tag and SERP. Falls back to title if missing.
-      seoDescription: z.string().optional(),   // Optional search-shaped description override. Falls back to dek.
-      dek: z.string().optional(),
-      bluf: z.string().optional(),             // Bottom Line Up Front. 30-50 word answer-first paragraph for featured-snippet capture. Renders above the article body in a styled callout. Plain text only, no markdown. Match the language a parent would type into Google.
+      // Min/max enforced so a sloppy frontmatter (12-char title, 1-line dek) can't
+      // ship a thin SERP card. Loose ceilings; nothing here clips real editorial work.
+      title: z.string().min(8, 'title too short for SERP').max(120, 'title too long for SERP'),
+      seoTitle: z.string().min(20).max(70).optional(),
+      seoDescription: z.string().min(40).max(180).optional(),
+      dek: z.string().min(20).max(240).optional(),
+      bluf: z.string().min(80).max(500).optional(),
       topic: z
         .enum(['communication','tryouts','game-day','the-hard-stuff','season-ops','equipment','rec-vs-travel','rules-of-play','summer-camps'])
         .optional(),
@@ -88,7 +84,7 @@ const articles = defineCollection({
         .optional(),
       issue: z.number().optional(),
       hero: z.string().optional(),
-      heroAlt: z.string().optional(),
+      heroAlt: z.string().min(15).max(280).optional(),
       ogImage: z.string().optional(),
       format: z.enum(['note', 'essay']).default('note'),
       sport: z.enum(SPORT_ENUM).optional(),
@@ -101,6 +97,14 @@ const articles = defineCollection({
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
       ...editorialField,
+    }).superRefine((data, ctx) => {
+      if (data.hero && !data.heroAlt) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ['heroAlt'],
+          message: 'heroAlt is required whenever hero is set (a11y + image-search).',
+        });
+      }
     }),
 });
 
@@ -144,8 +148,8 @@ const coachingTips = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
-      title: z.string(),
-      summary: z.string(),
+      title: z.string().min(4).max(120),  // Drill names like "Rondo" are legit short titles.
+      summary: z.string().min(40).max(280),
       sport: z.enum(SPORT_ENUM).optional(),
       age: z.enum(AGE_ENUM).optional(),
       ages: z.array(z.enum(AGE_ENUM)).optional(),
@@ -158,27 +162,32 @@ const coachingTips = defineCollection({
         .enum(['foundations','skills','situational'])
         .optional(),
       hero: image().optional(),
-      heroAlt: z.string().optional(),
+      heroAlt: z.string().min(15).max(280).optional(),
       illustrationBrief: z.string().optional(),
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
       ...editorialField,
+    }).superRefine((data, ctx) => {
+      if (data.hero && !data.heroAlt) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ['heroAlt'],
+          message: 'heroAlt is required whenever hero is set (a11y + image-search).',
+        });
+      }
     }),
 });
 
-// Season calendars: canonical month-by-month maps for a given sport + level.
-// One file = one shape parents can pick from. Future builder layer will overlay multiple
-// calendars on the same twelve-month view.
 const seasonCalendars = defineCollection({
   type: 'content',
   schema: () =>
     z.object({
-      title: z.string(),                        // "Club volleyball 14s — National qualifier track"
+      title: z.string(),
       sport: z.enum(SPORT_ENUM),
       level: z.enum(['rec', 'school', 'travel', 'elite']),
-      region: z.string().optional(),            // "PNW", "National", "Southeast"
-      durationLabel: z.string(),                // "Year-round", "Aug–Nov", "Mar–Jun"
+      region: z.string().optional(),
+      durationLabel: z.string(),
       summary: z.string(),
       months: z.array(
         z.object({
@@ -196,28 +205,10 @@ const seasonCalendars = defineCollection({
     }),
 });
 
-// Body hub: pediatric sports medicine plus the safety canon. Two lenses, one
-// collection. Strict boundary — describe, don't diagnose. Always cite the
-// governing body. Always end with the questions to bring to the pediatrician.
-//
-// subhub splits the collection into 'health' (existing pediatric medicine) and
-// 'safety' (the institutional, environmental, equipment, conduct canon). See
-// SAFETY_PLAN.md at the repo root for the full operator manual.
-//
-// format picks the page layout. 'topic' is the existing long deep page.
-// 'protocol' is the moment-of-need numbered page. 'sport-briefing' is the per-
-// sport page. 'checklist' is the print/screenshot artifact.
 const SAFETY_CATEGORY_ENUM = [
-  'weather',                  // heat, lightning, wildfire smoke / AQI, cold, sun
-  'coach-vetting',            // SafeSport, background checks, league questions
-  'equipment-certification',  // NOCSAE helmets, bat stamps, mouthguards, used gear
-  'travel-logistics',         // rooming, chaperones, transporting other kids
-  'emergency-response',       // protocols, sideline kit, AED/CPR, missing kid
-  'conduct',                  // bullying, hazing, sideline parents, refs, locker room
-  'aquatic',                  // pool/lake/deck rules, shallow-water blackout
-  'cyber',                    // team apps, photo policies, recruiting DMs
-  'nutrition-substance',      // caffeine, energy drinks, creatine, banned substances, supplements
-  'crisis-mental-health',     // deferred mini-launch; schema-ready, not slate-ready
+  'weather','coach-vetting','equipment-certification','travel-logistics',
+  'emergency-response','conduct','aquatic','cyber','nutrition-substance',
+  'crisis-mental-health',
 ] as const;
 
 const body = defineCollection({
@@ -237,7 +228,7 @@ const body = defineCollection({
       ageBands: z.array(z.enum(AGE_ENUM)).optional(),
       governingBodies: z.array(
         z.object({
-          name: z.string(),                     // "USA Baseball Pitch Smart"
+          name: z.string(),
           url: z.string().url(),
         })
       ).default([]),
@@ -249,16 +240,14 @@ const body = defineCollection({
           affiliateSlug: z.string().optional(),
         })
       ).default([]),
-      protocolSteps: z.array(z.string()).default([]),       // numbered moment-of-need steps for format: protocol
-      checklistItems: z.array(z.string()).default([]),      // line items for format: checklist
-      checklistPdf: z.string().optional(),                  // path to printable PDF for format: checklist
+      protocolSteps: z.array(z.string()).default([]),
+      checklistItems: z.array(z.string()).default([]),
+      checklistPdf: z.string().optional(),
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
       ...editorialField,
     }).superRefine((data, ctx) => {
-      // The pairing rule: health pieces use category; safety pieces use safetyCategory,
-      // unless format is 'sport-briefing' which sits above the category dimension.
       if (data.format === 'sport-briefing') return;
       if (data.subhub === 'health' && !data.category) {
         ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'subhub:health requires a category' });
@@ -269,8 +258,6 @@ const body = defineCollection({
     }),
 });
 
-// Pathways: per-sport age timeline. What good looks like at 7, 10, 13, 15.
-// Same template, sport-specific evidence.
 const pathways = defineCollection({
   type: 'content',
   schema: () =>
@@ -296,8 +283,6 @@ const pathways = defineCollection({
     }),
 });
 
-// Recruiting: HS-to-college funnel content. Timeline by grade, NCAA Eligibility Center,
-// NIL basics, what verbal commits actually mean. Strict factual, sourced framing.
 const recruiting = defineCollection({
   type: 'content',
   schema: () =>
@@ -320,8 +305,6 @@ const recruiting = defineCollection({
     }),
 });
 
-// Adaptive & neurodivergent athletes. Inclusive sports content. Uses similar structure
-// to the body collection but framed for a different audience (parent of an adaptive kid).
 const adaptive = defineCollection({
   type: 'content',
   schema: () =>
@@ -343,8 +326,6 @@ const adaptive = defineCollection({
     }),
 });
 
-// Rules at-a-glance. One file per sport. Five-minute primer parents can scan during
-// a tournament or before their first game.
 const rules = defineCollection({
   type: 'content',
   schema: () =>
@@ -365,11 +346,6 @@ const rules = defineCollection({
     }),
 });
 
-// Scripts: short, scriptable moment-pages parents read in 30 seconds. The flagship
-// format for the relationship-first lane. Six structured sections: what they're feeling,
-// what to say, what not to say, the rule, if they bring it up, save block.
-//
-// Each script lives at /scripts/[slug]/. Hub at /scripts/.
 const scripts = defineCollection({
   type: 'content',
   schema: ({ image }) =>
@@ -401,16 +377,13 @@ const scripts = defineCollection({
     }),
 });
 
-// Decisions: structured pages for the big youth-sports decisions parents face.
-// Same pattern as Rules at-a-glance. Question → benefits → costs → signs it fits →
-// signs it doesn't → the rule → how to handle it.
 const decisions = defineCollection({
   type: 'content',
   schema: () =>
     z.object({
-      title: z.string(),                                  // "Should My Kid Play Travel Sports?"
+      title: z.string(),
       summary: z.string(),
-      theQuestion: z.string(),                            // user-search-language version of the question
+      theQuestion: z.string(),
       benefits:          z.array(z.string()).default([]),
       costs:             z.array(z.string()).default([]),
       signsItsAGoodFit:  z.array(z.string()).default([]),

@@ -1,6 +1,7 @@
 ---
 title: "The sibling at the game who *isn't playing*"
 dek: "The kid you keep losing in the schedule. What a six-year-old actually experiences at a tournament. Five rules that hold the family together."
+seoDescription: "She is six. She has been at the volleyball tournament since 8 a.m. It is now 4:15. Her sister has played four matches and is about to play a fifth."
 topic: "season-ops"
 format: "essay"
 phase: "game"

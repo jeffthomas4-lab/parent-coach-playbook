@@ -1,6 +1,7 @@
 ---
 title: "Summer skills camp: *5 questions* to ask before you sign up"
 dek: "Most camps look fine on the website. The questions that actually tell you whether to sign up."
+seoDescription: "Camp websites are designed to look great. The phone call to the camp director tells you what's actually going on. Five questions to ask."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

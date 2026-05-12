@@ -1,6 +1,7 @@
 ---
 title: "When your kid loses the part *to their best friend*"
 dek: "The double heartbreak. Being happy for them and devastated for themselves. How to sit with both."
+seoDescription: "Your kid auditioned for the school musical."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

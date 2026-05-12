@@ -1,6 +1,7 @@
 ---
 title: "The *text to the coach* you should never send"
 dek: "Friday at 9pm. The text in your drafts. Don't send it. Here is what to do instead."
+seoDescription: "It is Friday at 9:14pm. Your son's team lost. He played five minutes. The coach pulled him in the second half for a kid who didn't deserve the spot."
 topic: "communication"
 format: "essay"
 phase: "drive-home"

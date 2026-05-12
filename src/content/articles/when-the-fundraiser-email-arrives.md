@@ -1,6 +1,7 @@
 ---
 title: "When the *fundraiser email* arrives"
 dek: "Snap Raise. Pizza nights. The auction. The four kinds and what to do about each."
+seoDescription: "The fundraiser email lands. It is asking for something. Money. Time. Your contact list. Sometimes all three."
 topic: "season-ops"
 format: "note"
 phase: "team-parent"

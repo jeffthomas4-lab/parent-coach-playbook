@@ -1,6 +1,7 @@
 ---
 title: "When your kid *doesn't want to go* to camp"
 dek: "Sunday night. The camp starts in twelve hours. The meltdown is real. Three things to figure out before you decide."
+seoDescription: "Sunday night. 8:45pm. The camp you signed up for in February starts at 9am tomorrow. You've packed. You've washed the cleats. The bag is by the door."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-home"

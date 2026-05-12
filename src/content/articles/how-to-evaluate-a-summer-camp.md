@@ -1,6 +1,7 @@
 ---
 title: "How to evaluate a summer camp in *10 minutes*"
 dek: "Eight questions. Two minutes apiece. Watch what they answer with, not just what they say."
+seoDescription: "You don't have an hour to research every camp. You have ten minutes between the laundry and the email backlog. Here's the version that works."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

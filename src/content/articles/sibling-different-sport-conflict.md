@@ -1,6 +1,7 @@
 ---
 title: "When the siblings play different sports and the schedules collide"
 dek: "One family, two kids, four practices a week, two games on Saturday at the same time on opposite sides of town. The honest triage."
+seoDescription: "Two kids, two sports, two seasons that overlap. Saturday morning has a soccer game in one town and a baseball game in another, both starting at 9:15."
 topic: "communication"
 format: "note"
 phase: "team-parent"

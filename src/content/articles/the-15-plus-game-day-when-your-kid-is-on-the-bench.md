@@ -1,6 +1,7 @@
 ---
 title: "Game Day When Your Kid Is on the Bench"
 dek: "They know they're not starting. Your job is to support what they can control."
+seoDescription: "Our 15-year-old wasn't starting. They came home frustrated and angry. Our instinct was to advocate for them. Text the coach. Tell them they were wrong."
 topic: "game-day"
 format: "note"
 phase: "game"
@@ -9,6 +10,7 @@ age: "15-plus"
 publishedAt: 2026-04-25
 featured: false
 hero: /illustrations/bench-moment-during-game.webp
+heroAlt: "A high school athlete sitting on the team bench during a game, fully suited, watching teammates play."
 ---
 
 Our 15-year-old wasn't starting. They came home frustrated and angry. Our instinct was to advocate for them. Text the coach. Tell them they were wrong. Tell our kid they're better than the starter.

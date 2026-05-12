@@ -1,6 +1,7 @@
 ---
 title: "The *end-of-season coach thank-you* that actually lands"
 dek: "Not a card with everyone's name on it. The note coaches keep."
+seoDescription: "Most teams do a coach gift at the end of the season. A signed ball. A gift card. A card with everyone's signature."
 topic: "communication"
 format: "note"
 phase: "drive-home"

@@ -22,6 +22,7 @@ editorial:
   status: claude-reviewed
   reviewerNotes: "Touches on burnout: flagged sensitive. Mentions AAP guidance in-text but no formal source link; consider adding before Jeff review. The 'what are you hoping the summer feels like' frame is the original value."
 hero: /illustrations/dockside-sunset-reflection.webp
+heroAlt: "A parent and teenager sitting on a wooden dock at sunset, looking out at the water, talking quietly."
 ---
 
 School ends in a few weeks. The summer schedule is a question. Your kid is on one of three tracks.

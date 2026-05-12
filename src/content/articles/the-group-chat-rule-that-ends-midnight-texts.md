@@ -1,6 +1,7 @@
 ---
 title: "The Group Chat Rule That Ends Midnight Texts"
 dek: "Schedules and weather only. Everything else goes one-on-one."
+seoDescription: "We state this in our first team email: group chat is for schedule updates and weather cancellations only."
 topic: "communication"
 format: "note"
 phase: "drive-there"

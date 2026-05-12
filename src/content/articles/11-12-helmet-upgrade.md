@@ -1,6 +1,7 @@
 ---
 title: "The 11-12 Helmet Upgrade Decision"
 dek: "When to replace what he has."
+seoDescription: "At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

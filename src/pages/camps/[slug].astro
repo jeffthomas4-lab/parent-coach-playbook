@@ -231,6 +231,9 @@ if (camp) {
             alt={`${camp.name} logo`}
             class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 object-contain bg-paper-warm border border-bone"
             loading="eager"
+            decoding="async"
+            width="96"
+            height="96"
           />
         )}
         <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] font-medium">
@@ -257,6 +260,10 @@ if (camp) {
             src={`/camp-photos/${camp.hero_photo_key}`}
             alt={`${camp.name} hero photo`}
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1200"
+            height="675"
             style="width: 100%; height: 100%; object-fit: cover;"
           />
         </div>
@@ -324,6 +331,9 @@ if (camp) {
                     src={`/camp-photos/${key}`}
                     alt={`${camp.name} photo ${idx + 1}`}
                     loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                     style="width: 100%; height: 100%; object-fit: cover;"
                   />
                 </div>

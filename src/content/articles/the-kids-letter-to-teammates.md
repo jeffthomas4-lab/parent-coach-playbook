@@ -1,6 +1,7 @@
 ---
 title: "The *kid's letter* to their teammates at the end of the season"
 dek: "An end-of-season ritual that builds the kid's voice and the team's memory."
+seoDescription: "Most end-of-season rituals are run by parents for parents. The kids stand around. They get their trophy. They go home."
 topic: "communication"
 format: "note"
 phase: "drive-home"

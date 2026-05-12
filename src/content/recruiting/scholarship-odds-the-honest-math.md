@@ -8,7 +8,7 @@ publishedAt: 2026-04-29
 featured: true
 governingBodies:
   - name: "NCAA Recruiting Facts"
-    url: "https://www.ncaa.org/about/resources/research/probability-competing-beyond-high-school"
+    url: "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx"
   - name: "NCAA: Estimated Probability of Competing in College Athletics"
     url: "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx"
   - name: "Aspen Institute Project Play"

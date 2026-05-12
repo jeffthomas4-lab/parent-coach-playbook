@@ -1,6 +1,7 @@
 ---
 title: "The end-of-season *parent thank-you note* to the coach"
 dek: "Three sentences. Specific. Sent. The note coaches actually keep."
+seoDescription: "Coaches get a lot of generic thank-you cards at the end of a season. Most of them go in a drawer."
 topic: "communication"
 format: "note"
 phase: "team-parent"

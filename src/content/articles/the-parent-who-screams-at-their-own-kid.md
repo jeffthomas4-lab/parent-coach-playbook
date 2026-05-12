@@ -1,6 +1,7 @@
 ---
 title: "The parent who *screams at their own kid* in the bleachers"
 dek: "Everyone hears it. Most people pretend they didn't. What to do."
+seoDescription: "The dad two rows down has been on his son for twenty minutes. Every play. Loud. What are you doing! Are you even trying! The kid is eight. The kid hears it."
 topic: "communication"
 format: "essay"
 phase: "game"

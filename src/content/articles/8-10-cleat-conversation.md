@@ -1,6 +1,7 @@
 ---
 title: "The 8-10 Cleat Conversation"
 dek: "When and what to buy."
+seoDescription: "Most eight-year-olds don't need cleats. Most kids wearing cleats at this age are wearing them because their parents think they do. The real answer is simpler."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

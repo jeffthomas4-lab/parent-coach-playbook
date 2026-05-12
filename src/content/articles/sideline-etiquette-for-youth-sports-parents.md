@@ -1,6 +1,7 @@
 ---
 title: "Sideline etiquette for youth sports parents"
 dek: "What to do, what to skip, and the unspoken rules every coach wishes parents knew."
+seoDescription: "Most youth-sports sideline behavior is fine. A handful of parents at every game cross the line. The kids notice. The other parents notice. The refs notice."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "game"

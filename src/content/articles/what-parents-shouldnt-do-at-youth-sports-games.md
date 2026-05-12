@@ -1,6 +1,7 @@
 ---
 title: "What parents shouldn't do at youth sports games"
 dek: "Eight behaviors that ruin youth sports for everyone, including the kid you came to watch."
+seoDescription: "Most parents at youth sports games are fine. A handful are not. The handful is what kids remember, and what makes the youth sports system harder for everyone."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "game"

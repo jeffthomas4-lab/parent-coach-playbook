@@ -1,6 +1,7 @@
 ---
 title: "The First Parent Email of the Season"
 dek: "Parents show up to information. They panic over mystery. Be clear."
+seoDescription: "We send this email before the first practice. Not after. Not two weeks in."
 topic: "communication"
 format: "note"
 phase: "drive-there"

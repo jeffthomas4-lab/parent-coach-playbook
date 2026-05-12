@@ -1,6 +1,7 @@
 ---
 title: "Day camp or overnight. *The real age cutoff*"
 dek: "Most parents send their kid overnight too early. The age on the brochure is not the right number."
+seoDescription: "The brochure says ages 7 and up. So you sign up your seven-year-old. Tuesday night you get a phone call."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-home"

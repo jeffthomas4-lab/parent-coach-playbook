@@ -1,6 +1,7 @@
 ---
 title: "The first *overnight camp* at 9"
 dek: "The night before drop-off. Letter rules. The phone-call expectation. The homesickness window."
+seoDescription: "She is nine. Her best friend's older sister went to this camp four years ago and loved it. She has been asking since February."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-home"

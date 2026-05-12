@@ -9,7 +9,7 @@ ageBands: ["13-14", "15-plus"]
 publishedAt: 2026-04-26
 governingBodies:
   - name: "National Collegiate Athletic Association (NCAA): Recruiting"
-    url: "https://www.ncaa.org/sports/2018/12/13/ncaa-eligibility-center.aspx"
+    url: "https://web3.ncaa.org/ecwr3/"
   - name: "U.S. Center for SafeSport"
     url: "https://uscenterforsafesport.org/"
   - name: "Federal Trade Commission (FTC)"

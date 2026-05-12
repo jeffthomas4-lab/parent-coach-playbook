@@ -1,6 +1,7 @@
 ---
 title: "The audition *that didn't go your way*"
 dek: "The part they didn't get. The callback that didn't come. The first real no."
+seoDescription: "They auditioned for the school musical. Or the dance recital. Or the choir solo."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

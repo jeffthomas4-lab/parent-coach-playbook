@@ -1,6 +1,7 @@
 ---
 title: "The sleep talk at 11-12"
 dek: "They're staying up late. Game days and homework mean 10 pm bedtimes. When it's actually a problem."
+seoDescription: "Your 11 or 12-year-old is getting 7-8 hours of sleep on school nights."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

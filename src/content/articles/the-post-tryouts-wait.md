@@ -1,6 +1,7 @@
 ---
 title: "The post-tryouts wait"
 dek: "What to say (and not say) in the 48 hours between tryouts and the call. The inside of your kid's head while they wait."
+seoDescription: "The hardest part of tryouts is rarely the tryout. It's the hours and days after, when nothing is happening and the kid is in their head about it."
 topic: "tryouts"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The *recruiter at rec ball* promising the sun"
 dek: "He'll find you in the parking lot. The pitch is good. Here is what he is not saying."
+seoDescription: "Your son has just finished a rec game. He went 2 for 3 with a double. You are walking back to the car with the cooler and a sand chair when a man in a polo..."
 topic: "rec-vs-travel"
 format: "essay"
 phase: "drive-home"

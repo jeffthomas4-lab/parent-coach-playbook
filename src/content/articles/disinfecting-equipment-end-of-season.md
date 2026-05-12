@@ -1,6 +1,7 @@
 ---
 title: "Disinfecting equipment *end of season*"
 dek: "The stuff nobody does that prevents mold, mildew, and sickness. What actually needs cleaning."
+seoDescription: "Equipment has been sitting in bags, in lockers, in the back of cars."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

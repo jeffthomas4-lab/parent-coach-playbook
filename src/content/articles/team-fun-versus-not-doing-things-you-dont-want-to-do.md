@@ -1,6 +1,7 @@
 ---
 title: "Team fun *versus not doing things you don't want to do*"
 dek: "The Saturday-night team activity. The Sunday morning bowling. You can pass. The art of how."
+seoDescription: "Friday night arrival at the tournament hotel. The team chat lights up. Everyone meet in the lobby for bowling. Saturday afternoon. Pizza party at the suite."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-there"

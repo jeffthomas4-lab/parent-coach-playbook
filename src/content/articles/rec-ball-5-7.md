@@ -1,6 +1,7 @@
 ---
 title: "Rec Ball at 5-7: Why It's the Right Answer"
 dek: "The foundations are here. Everything else comes later."
+seoDescription: "At five to seven, there is no travel ball that makes sense. There's only rec ball. Understanding why saves you from three years of pointless driving."
 topic: "rec-vs-travel"
 format: "note"
 phase: "game"

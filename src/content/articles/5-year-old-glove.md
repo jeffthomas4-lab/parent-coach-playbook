@@ -1,6 +1,7 @@
 ---
 title: "What a 5-Year-Old Actually Needs in a Glove"
 dek: "Smaller is better, but not as small as you think."
+seoDescription: "The mistake every parent makes: buying a glove your five-year-old can barely close. You think you're being smart."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

@@ -1,6 +1,7 @@
 ---
 title: "Travel-Ball Politics: How to Stay Out"
 dek: "The drama happens. Choosing not to participate."
+seoDescription: "Travel ball has politics. Elite rosters. Playing time conflicts. Parent cliques. Coach decisions that feel unfair. It's all real."
 topic: "rec-vs-travel"
 format: "note"
 phase: "game"

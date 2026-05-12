@@ -1,6 +1,7 @@
 ---
 title: "The recital meltdown at 5"
 dek: "They made it on stage, then froze. Or cried. Or refused to go. Why and what to do."
+seoDescription: "Your five-year-old has been practicing piano for six months."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

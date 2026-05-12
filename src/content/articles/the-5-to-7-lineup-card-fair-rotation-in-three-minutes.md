@@ -1,6 +1,7 @@
 ---
 title: "The 5-7 Lineup Card: A Fair Rotation in Three Minutes"
 dek: "Every kid plays half the game. Build it the night before. Post it before first pitch."
+seoDescription: "It was opening day. We had 13 kids and a field. At this age, every kid should play half the game. Period. That's the deal."
 topic: "game-day"
 format: "note"
 phase: "game"

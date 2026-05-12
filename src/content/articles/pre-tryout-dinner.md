@@ -1,6 +1,7 @@
 ---
 title: "*Pre-tryout dinner*. What works, what doesn't"
 dek: "The food the night before. The food the morning of. Don't overthink it."
+seoDescription: "Tryouts in the morning. The night before, parents over-engineer dinner. They need carbs. They need protein. Should we do pasta. Should we skip the dairy."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

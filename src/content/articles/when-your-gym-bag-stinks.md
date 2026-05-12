@@ -1,6 +1,7 @@
 ---
 title: "When your *gym bag stinks* and you can't remember why"
 dek: "There is something in there. You don't want to find it. Here is the system."
+seoDescription: "You opened the gym bag for Tuesday's practice. The smell hit you. Something has been in there since the last weekend. You don't want to know what."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

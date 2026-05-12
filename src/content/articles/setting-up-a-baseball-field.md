@@ -1,6 +1,7 @@
 ---
 title: "Setting up a baseball field"
 dek: "Home plate, bases, pitching distance. The measurements that matter. How to set it up right."
+seoDescription: "You're setting up a baseball field for practice or a game."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

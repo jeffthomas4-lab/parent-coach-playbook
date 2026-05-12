@@ -1,6 +1,7 @@
 ---
 title: "The *specialty camp* decision window"
 dek: "Pitching, kicking, goalkeeping. Three days for $700. When it's worth it. When it's not."
+seoDescription: "Specialty camps run August. Pitching camp. Kicking camp. Goalkeeper camp. They charge $400-1,200 for two or three days of focused work."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

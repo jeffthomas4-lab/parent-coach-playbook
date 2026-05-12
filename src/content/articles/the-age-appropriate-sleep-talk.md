@@ -1,6 +1,7 @@
 ---
 title: "The age-appropriate sleep talk at 5-7"
 dek: "Why they're cranky after practice. Why sleep matters more than you think. What to actually say."
+seoDescription: "Your five-year-old played a soccer game on Saturday morning."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

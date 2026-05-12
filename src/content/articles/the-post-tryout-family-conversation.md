@@ -1,6 +1,7 @@
 ---
 title: "The Post-Tryout Family Conversation"
 dek: "Same structure works whether they made it or didn't. Start with curiosity."
+seoDescription: "Tryout results come in. We don't lead with congratulations or sympathy. We lead with curiosity."
 topic: "tryouts"
 format: "note"
 phase: "drive-home"

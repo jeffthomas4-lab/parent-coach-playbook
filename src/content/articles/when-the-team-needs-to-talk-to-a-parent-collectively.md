@@ -1,6 +1,7 @@
 ---
 title: "When the team needs to talk to a parent *collectively*"
 dek: "One parent is making the season miserable for everyone. The conversation is bigger than one parent can have."
+seoDescription: "A parent on your team has been doing something for weeks. Yelling at the ref, dominating the team chat, intimidating other parents, behaving badly at the..."
 topic: "communication"
 format: "note"
 phase: "drive-home"

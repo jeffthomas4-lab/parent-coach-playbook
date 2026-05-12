@@ -1,6 +1,7 @@
 ---
 title: "The 8-10 Tryout: What Coaches Actually Evaluate"
 dek: "Not skill. Coachability, effort, commitment, and friendliness."
+seoDescription: "At 8-10, coaches are not evaluating soccer talent or baseball technique. We're evaluating four things."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

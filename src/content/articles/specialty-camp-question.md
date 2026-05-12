@@ -1,6 +1,7 @@
 ---
 title: "Specialty camps. *Pitching, kicking, goalkeeping*"
 dek: "When a specialty camp is worth the money. When it isn't."
+seoDescription: "A specialty camp focuses on one position or skill. A pitching camp. A kicking camp. A goalkeeping camp. A long-snapping camp at 14. A faceoff camp in lacrosse."
 topic: "summer-camps"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The summer your kid asks *not to play for you* again"
 dek: "What it actually means. What it doesn't mean. And the right way to hear it without making it about you."
+seoDescription: "It's the first week of June. You're filling out the rec league sign-up. You ask your kid offhand if they want you to coach again this fall."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"

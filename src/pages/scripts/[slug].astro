@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
-import { SITE, EDITORIAL } from '../../data/site';
+import HowToSchema from '../../components/HowToSchema.astro';
+import { SITE, EDITORIAL, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
@@ -20,18 +21,14 @@ const related = (script.data.relatedScripts ?? [])
   .map(slug => allScripts.find(s => s.slug === slug))
   .filter(Boolean) as typeof allScripts;
 
-// Article + Breadcrumb schema for SERP visibility. Anonymous editorial — author
-// is the Organization, not a named Person.
+// Article + Breadcrumb schema for SERP visibility. Author entity is resolved
+// via authorEntity() — Organization until November, Person after the flip.
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: stripTitle(script.data.title),
   description: script.data.summary,
-  author: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-  },
+  author: authorEntity(),
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
@@ -40,6 +37,36 @@ const articleSchema = {
   datePublished: script.data.publishedAt.toISOString(),
   mainEntityOfPage: `${SITE.url}/scripts/${script.slug}/`,
 };
+
+// HowTo schema models the conversation playbook as ordered steps:
+// recognize the feeling → say one of these → stop talking → respond if they
+// bring it up. Steps come from the structured frontmatter, not the body.
+const howToSteps: { name: string; text: string }[] = [];
+if (script.data.whatTheyAreFeeling.length > 0) {
+  howToSteps.push({
+    name: 'Notice what they are feeling',
+    text: script.data.whatTheyAreFeeling.join(' '),
+  });
+}
+if (script.data.whatToSay.length > 0) {
+  howToSteps.push({
+    name: 'Say one of these',
+    text: script.data.whatToSay.map(line => `"${line}"`).join(' Or: '),
+  });
+}
+howToSteps.push({
+  name: 'Then stop talking',
+  text: 'Let the silence sit. Do not fill it with more words.',
+});
+if (script.data.ifTheyBringItUp.length > 0) {
+  howToSteps.push({
+    name: 'If they bring it up',
+    text: script.data.ifTheyBringItUp.join(' '),
+  });
+}
+if (script.data.theRule) {
+  howToSteps.push({ name: 'The rule', text: script.data.theRule });
+}
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -57,6 +84,14 @@ const breadcrumbSchema = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {howToSteps.length >= 2 && (
+    <HowToSchema
+      slot="head"
+      name={`How to: ${stripTitle(script.data.title)}`}
+      description={script.data.summary}
+      steps={howToSteps}
+    />
+  )}
   <!-- Hero -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">

@@ -1,6 +1,7 @@
 ---
 title: "Quitting travel. *How to do it cleanly*"
 dek: "They are fourteen. The travel commitment is too much. Here is how to step away without burning the bridge."
+seoDescription: "Your kid has played travel ball since nine. The schedule has gotten harder every year. School has gotten harder. Their body is growing."
 topic: "rec-vs-travel"
 format: "note"
 phase: "drive-home"

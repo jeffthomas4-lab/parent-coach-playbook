@@ -23,6 +23,92 @@ export const EDITORIAL = {
   accentBg: '#F2E2D5',
 };
 
+// ---------------------------------------------------------------------------
+// AUTHOR REVEAL SWITCH
+// ---------------------------------------------------------------------------
+// Set AUTHOR_REVEALED = true on the November face-reveal date and every
+// Article / HowTo / About schema starts emitting Person instead of
+// Organization. No other code changes needed — every schema goes through
+// authorEntity() / personSchema() below.
+//
+// Until then we ship Organization-as-author so Jeff's identity stays out of
+// public-facing JSON-LD. The AUTHOR object stays populated so the switch is
+// truly one-line on the day.
+// ---------------------------------------------------------------------------
+
+export const AUTHOR_REVEALED = false;
+
+export const AUTHOR = {
+  name: 'Jeff Thomas',
+  jobTitle: 'Head Coach, Football',
+  worksFor: 'University of Puget Sound',
+  worksForUrl: 'https://athletics.pugetsound.edu',
+  description:
+    'Head coach with two decades inside the youth-to-college athletics pipeline. Writes Parent Coach Playbook for the parents on the other side of the field.',
+  url: 'https://parentcoachplaybook.com/about/',
+  // External profiles that confirm identity. Add LinkedIn, school staff page,
+  // podcast appearances here as they go live (post-reveal).
+  sameAs: [] as string[],
+  knowsAbout: [
+    'Youth sports',
+    'College athletics recruiting',
+    'Youth coaching',
+    'Parent education',
+    'Sports parenting',
+  ],
+};
+
+// authorEntity() is what every JSON-LD `author:` field should call.
+// Returns Organization while AUTHOR_REVEALED is false, Person after the flip.
+export function authorEntity(): Record<string, unknown> {
+  if (!AUTHOR_REVEALED) {
+    return {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+    };
+  }
+  return {
+    '@type': 'Person',
+    name: AUTHOR.name,
+    jobTitle: AUTHOR.jobTitle,
+    description: AUTHOR.description,
+    url: AUTHOR.url,
+    worksFor: {
+      '@type': 'Organization',
+      name: AUTHOR.worksFor,
+      url: AUTHOR.worksForUrl,
+    },
+    knowsAbout: AUTHOR.knowsAbout,
+    ...(AUTHOR.sameAs.length ? { sameAs: AUTHOR.sameAs } : {}),
+  };
+}
+
+// personSchema() is the standalone Person JSON-LD that lives on /about/.
+// Returns null until the reveal so /about/ stays org-only pre-November.
+export function personSchema(): Record<string, unknown> | null {
+  if (!AUTHOR_REVEALED) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: AUTHOR.name,
+    jobTitle: AUTHOR.jobTitle,
+    description: AUTHOR.description,
+    url: AUTHOR.url,
+    worksFor: {
+      '@type': 'Organization',
+      name: AUTHOR.worksFor,
+      url: AUTHOR.worksForUrl,
+    },
+    knowsAbout: AUTHOR.knowsAbout,
+    ...(AUTHOR.sameAs.length ? { sameAs: AUTHOR.sameAs } : {}),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': AUTHOR.url,
+    },
+  };
+}
+
 // Primary nav: 5 items + search button. Scripts fold into Reads (linked from
 // the Reads landing). Camps and Team Parent fold into Tools and Reads
 // respectively. Search promoted from utility nav into the main bar.
@@ -106,8 +192,6 @@ export const SPORTS = [
   { slug: 'softball',     label: 'Softball' },
   { slug: 'soccer',       label: 'Soccer' },
   { slug: 'basketball',   label: 'Basketball' },
-  // Football variants. Three lanes that group together alphabetically as "Football — *".
-  // Slugs preserved for URL backwards compatibility. Display labels group them visually.
   { slug: 'flag-football', label: 'Football — Flag' },
   { slug: 'football-7v7',  label: 'Football — 7v7' },
   { slug: 'football',      label: 'Football — Tackle' },
@@ -132,13 +216,6 @@ export const SPORTS = [
   { slug: 'ballet',       label: 'Ballet' },
 ] as const;
 
-// Camp-specific sport options. Camps cover programs that don't fit the canonical SPORTS list:
-// traditional day camps, outdoor adventure, STEM/coding, art camps, plus a few real sports
-// (wrestling, rugby, etc.) that aren't part of the rest of the site.
-//
-// CAMP_SPORTS = SPORTS + the camp-only slugs below, sorted by label.
-// Both /camps/ and /camps/submit/ should consume CAMP_SPORTS so the filter dropdown and
-// the submit form stay in sync.
 const CAMP_ONLY_SPORTS = [
   { slug: 'multi-sport',    label: 'Multi-sport' },
   { slug: 'football-7v7',   label: 'Football — 7v7' },
@@ -179,15 +256,7 @@ export type SportSlug = (typeof SPORTS)[number]['slug'];
 export type AgeBandSlug = (typeof AGE_BANDS)[number]['slug'];
 export type TopicSlug = (typeof TOPICS)[number]['slug'];
 
-// What to Buy guides. Each one resolves to /what-to-buy/[slug]/ and renders the markdown
-// from src/content/guides/[slug].md. Each sport guide also gets a sizing companion at
-// /what-to-buy/[slug]/sizing/.
-//
-// `group` separates field/team sports from individual sports for navigation grouping.
-// Don't rely on alphabetical position. Football used to land in "Individual" because
-// of slice math. The group field is the source of truth for nav grouping.
 export const BUYING_GUIDES = [
-  // Field & team sports (alphabetical)
   { slug: 'baseball',      label: 'Baseball',         category: 'sport',    group: 'team',       blurb: 'Glove, bat, helmet, cleats. Tee-ball through middle school.' },
   { slug: 'basketball',    label: 'Basketball',       category: 'sport',    group: 'team',       blurb: 'Shoes, ball, athletic gear. Indoor sport, low overhead.' },
   { slug: 'flag-football', label: 'Football — Flag',  category: 'sport',    group: 'team',       blurb: 'Mouthguard, cleats, gloves. No pads, no helmet.' },
@@ -199,7 +268,6 @@ export const BUYING_GUIDES = [
   { slug: 'soccer',        label: 'Soccer',           category: 'sport',    group: 'team',       blurb: 'Cleats, shin guards, ball, water bottle.' },
   { slug: 'softball',      label: 'Softball',         category: 'sport',    group: 'team',       blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
   { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    group: 'team',       blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
-  // Individual sports (alphabetical)
   { slug: 'crew',          label: 'Crew',             category: 'sport',    group: 'individual', blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
   { slug: 'cross-country', label: 'Cross country',    category: 'sport',    group: 'individual', blurb: 'Trainers, racing flats, layered cold-weather kit.' },
   { slug: 'golf',          label: 'Golf',             category: 'sport',    group: 'individual', blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
@@ -208,7 +276,6 @@ export const BUYING_GUIDES = [
   { slug: 'swimming',      label: 'Swimming',         category: 'sport',    group: 'individual', blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
   { slug: 'tennis',        label: 'Tennis',           category: 'sport',    group: 'individual', blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
   { slug: 'track-field',   label: 'Track and field',  category: 'sport',    group: 'individual', blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
-  // Performing arts (alphabetical)
   { slug: 'ballet',        label: 'Ballet',           category: 'activity', blurb: 'Slippers, leotard, tights. Pointe later, on the teacher\'s timeline.' },
   { slug: 'band',          label: 'Band',             category: 'activity', blurb: 'Instrument, reeds, accessories. Rent before you buy.' },
   { slug: 'cheer',         label: 'Cheerleading',     category: 'activity', blurb: 'Shoes, bow, practice clothes. Competition uniforms via the team.' },
@@ -216,7 +283,6 @@ export const BUYING_GUIDES = [
   { slug: 'dance',         label: 'Dance',            category: 'activity', blurb: 'Shoes, leotards, tights, recital costumes. Style-specific.' },
   { slug: 'stunt',         label: 'Stunt and tumbling', category: 'activity', blurb: 'Mat shoes, bracing, athletic tape. The tumbling-track essentials.' },
   { slug: 'theater',       label: 'Theater',          category: 'activity', blurb: 'School plays, community theater. Mostly time, less equipment.' },
-  // Essentials (alphabetical)
   { slug: 'first-aid-kit',      label: 'First aid kit',       category: 'essentials', blurb: 'Bandages, tape, cold packs, and what you use on the sideline every week.' },
   { slug: 'season-essentials',  label: 'Season essentials',    category: 'essentials', blurb: 'Recovery, hydration, travel logistics. The kit that runs the season.' },
   { slug: 'sideline-kit',       label: 'Sideline kit',         category: 'essentials', blurb: 'Chair, cooler, blanket. The gear that makes watching comfortable.' },
@@ -224,8 +290,6 @@ export const BUYING_GUIDES = [
 
 export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];
 
-// Team Parent article topics: resources for managing team logistics, communication, conflict.
-// Separate from TOPICS (which is for Reads articles). Used for /team-parent/[topic] archive pages.
 export const TEAM_PARENT_TOPICS = [
   { slug: 'logistics',        label: 'Logistics',         blurb: 'Snacks, carpools, calendar management. The operational stuff.' },
   { slug: 'communication',    label: 'Communication',     blurb: 'Emails to coaches, group chat rules, the hard-parent conversation.' },
@@ -237,7 +301,6 @@ export const TEAM_PARENT_TOPICS = [
 
 export type TeamParentTopicSlug = (typeof TEAM_PARENT_TOPICS)[number]['slug'];
 
-// Track and field events get sub-pages at /what-to-buy/track-field/[event]/
 export const TRACK_EVENTS = [
   { slug: 'sprints',   label: 'Sprints',           blurb: '100m, 200m, 400m. Sprint spikes, blocks if your team uses them.' },
   { slug: 'distance',  label: 'Distance',          blurb: '800m, 1500m, mile, 3200m. Trainers and a pair of racing flats.' },
@@ -248,9 +311,6 @@ export const TRACK_EVENTS = [
 
 export type TrackEventSlug = (typeof TRACK_EVENTS)[number]['slug'];
 
-// Team Parent toolkit: practical resources organized by category.
-// Each category becomes a section on /team-parent/.
-// Individual resources live in src/content/resources/[slug].md.
 export const TEAM_PARENT_CATEGORIES = [
   { slug: 'tech-setup',    label: 'Tech setup',         blurb: 'GameChanger, MaxPreps, TeamSnap. What to use, what to skip.', accent: '#5C7459' },
   { slug: 'communication', label: 'Communication',      blurb: 'Group chats. Snack signups. The hard-parent email.',          accent: '#C5713D' },
@@ -264,28 +324,16 @@ export const TEAM_PARENT_CATEGORIES = [
 
 export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];
 
-// ----------------------------------------------------------------------------
-// Theme registry. One source of truth for the per-section accent colors that
-// drive tag pills, hero tints, and topic chips. Keyed by URL section slug or
-// the article `topic` enum so any component can call themeFor(slug) and get
-// a consistent {accent, accentBg} pair without re-deriving it locally.
-// ----------------------------------------------------------------------------
-
 export interface Theme {
-  accent: string;     // foreground / border / text accent
-  accentBg: string;   // soft tinted background
-  label?: string;     // human label for tag pills
+  accent: string;
+  accentBg: string;
+  label?: string;
 }
 
-// Section themes keyed by top-level URL segment. Mirror the PILLARS palette
-// for the three drives so existing pillar pages keep their look. Other
-// sections get their own color so /body/ doesn't look like /recruiting/.
 export const SECTION_THEMES: Record<string, Theme> = {
-  // The three drives (phase taxonomy)
   'drive-there':     { accent: '#8FA68C', accentBg: '#EAEFE7', label: 'Before the game' },
   'game':            { accent: '#C5713D', accentBg: '#F2E2D5', label: 'In the game' },
   'drive-home':      { accent: '#D4AB6A', accentBg: '#F5E9D2', label: 'After the game' },
-  // Topic landing pages
   'body':            { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Body and mind' },
   'mental-skills':   { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Mental skills' },
   'recruiting':      { accent: '#A66A8E', accentBg: '#EFE0E8', label: 'Recruiting' },
@@ -305,8 +353,6 @@ export const SECTION_THEMES: Record<string, Theme> = {
   'adaptive':        { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'Adaptive' },
 };
 
-// Topic themes keyed by the article `topic` enum. Lets ArticleCard tint a
-// topic chip even when the section landing page lives under a different URL.
 export const TOPIC_THEMES: Record<TopicSlug, Theme> = {
   'communication':  { accent: '#6F8AA8', accentBg: '#E2EAF2', label: 'Communication' },
   'tryouts':        { accent: '#A66A8E', accentBg: '#EFE0E8', label: 'Tryouts and teams' },
@@ -319,11 +365,8 @@ export const TOPIC_THEMES: Record<TopicSlug, Theme> = {
   'summer-camps':   { accent: '#7C9E5E', accentBg: '#E8EFE0', label: 'Summer camps' },
 };
 
-// Default theme for anything outside the registry.
 const DEFAULT_THEME: Theme = { accent: '#C5713D', accentBg: '#F2E2D5' };
 
-// Look up a theme by section slug or topic slug. Falls back to the editorial
-// rust accent if nothing matches, so callers never need null checks.
 export function themeFor(slug: string | undefined | null): Theme {
   if (!slug) return DEFAULT_THEME;
   return SECTION_THEMES[slug] ?? (TOPIC_THEMES as Record<string, Theme>)[slug] ?? DEFAULT_THEME;

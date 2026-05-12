@@ -1,6 +1,7 @@
 ---
 title: "What you actually need for *first-year hockey*"
 dek: "The $800 starter kit vs. the $400 one. The skates you'll replace twice. The protection that matters."
+seoDescription: "Hockey startup costs feel insane. You see families walking out of the ice rink with bags that cost more than a car payment."
 topic: "equipment"
 format: "note"
 phase: "drive-there"
@@ -9,6 +10,7 @@ age: "5-7"
 publishedAt: 2026-04-12
 featured: false
 hero: /illustrations/hockey-gear-up-parent-helping.webp
+heroAlt: "A parent kneeling in a locker room helping a young player put on hockey shin guards, gear bag open beside them."
 ---
 
 Hockey startup costs feel insane. You see families walking out of the ice rink with bags that cost more than a car payment.

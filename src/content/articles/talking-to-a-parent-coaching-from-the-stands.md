@@ -1,6 +1,7 @@
 ---
 title: "Talking to a Parent Who's Coaching From the Stands"
 dek: "They're trying to help. They don't see what they're actually doing."
+seoDescription: "It was mid-season. One parent kept yelling coaching cues from the stands. \"Keep your feet moving!\" \"Talk to each other!\" We could feel the kids' attention..."
 topic: "communication"
 format: "note"
 phase: "game"

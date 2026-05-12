@@ -11,6 +11,7 @@ import {
   AGE_BANDS,
   EDITORIAL,
   SITE,
+  authorEntity,
 } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
@@ -98,7 +99,7 @@ if (props.kind === 'article') {
     '@type': 'Article',
     headline: article.data.title.replace(/\*/g, ''),
     description: article.data.dek,
-    author: { '@type': 'Organization', name: SITE.name },
+    author: authorEntity(),
     publisher: {
       '@type': 'Organization',
       name: SITE.name,

@@ -1,6 +1,7 @@
 ---
 title: "Sock and underwear rules *nobody tells you*"
 dek: "The friction point. The blister. The reason other parents shake their heads."
+seoDescription: "Your kid comes home limping. Blister on the heel. Red spot on the toe. You ask what happened."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

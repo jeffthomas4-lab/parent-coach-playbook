@@ -1,6 +1,7 @@
 ---
 title: "The nutrition talk at 13-14"
 dek: "They're growing. They're training hard. They think energy drinks are fine. What they actually need."
+seoDescription: "They're getting taller. Their body is changing. They're training hard."
 topic: "season-ops"
 format: "essay"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "Lunch, aftercare, and what \"*full day*\" actually means"
 dek: "Full day varies wildly. The aftercare question nobody asks. The lunch options most camps don't explain."
+seoDescription: "The website says full day, 9 to 3. You assume your kid is supervised, fed, and active for those six hours."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"

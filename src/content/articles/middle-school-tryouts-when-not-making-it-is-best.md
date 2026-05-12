@@ -1,6 +1,7 @@
 ---
 title: "Middle-School Tryouts (13-14): When Not Making It Is the Best Thing"
 dek: "The A team has 12 spots. Your kid is not the worst kid who didn't get one."
+seoDescription: "It was March and the roster list went up. Our kid made B team. Not A. We sat with the disappointment for a night, then watched what happened next."
 topic: "tryouts"
 format: "note"
 phase: "drive-home"

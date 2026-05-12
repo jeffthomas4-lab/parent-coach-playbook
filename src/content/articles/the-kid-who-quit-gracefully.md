@@ -1,6 +1,7 @@
 ---
 title: "The kid who quit the team gracefully"
 dek: "When the decision to quit is the right one. The week to do it well, the texts to send, the conversations to skip."
+seoDescription: "Sometimes the decision is to quit. The kid has thought about it, the parent has thought about it, the family has had the conversation, and the answer is no..."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

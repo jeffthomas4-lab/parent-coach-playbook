@@ -1,6 +1,7 @@
 ---
 title: "The kid who *scored* vs the kid who *didn't*"
 dek: "Same team. One scored the winning goal. One didn't touch the ball. Both go home with you."
+seoDescription: "Saturday game. Your son scored the winning goal. His sister, on a different field, had a tough game and barely touched the ball."
 topic: "game-day"
 format: "note"
 phase: "drive-home"

@@ -1,6 +1,7 @@
 ---
 title: "The kid who is bored in the off-season"
 dek: "Boredom in the first off-season week is a feature, not a problem. The 14-day rule before you sign up for another league."
+seoDescription: "The first week off the season is a slow-motion identity adjustment. Kids who built their week around a sport for four months don't know what to do with..."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

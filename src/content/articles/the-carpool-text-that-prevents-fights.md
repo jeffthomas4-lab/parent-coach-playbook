@@ -1,6 +1,7 @@
 ---
 title: "The *carpool text* that prevents 90% of fights"
 dek: "One template. Sent Sunday night. Saves the week."
+seoDescription: "The carpool fights I see are not about who is driving. They are about confusion. Confusion gets resolved on game day, at 7:48am, when one parent realizes the..."
 topic: "communication"
 format: "note"
 phase: "drive-there"

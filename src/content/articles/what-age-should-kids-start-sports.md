@@ -1,6 +1,7 @@
 ---
 title: "What age should kids start sports?"
 dek: "Earlier than most parents think for movement skills. Later than most parents think for organized competition."
+seoDescription: "There are two answers to this question, and the difference matters."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-there"

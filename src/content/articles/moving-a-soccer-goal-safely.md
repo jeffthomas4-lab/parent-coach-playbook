@@ -1,6 +1,7 @@
 ---
 title: "Moving a soccer goal safely"
 dek: "Heavier than it looks. Easy to tip. How to move it without it crushing someone."
+seoDescription: "You need to move the soccer goal from one field to another."
 topic: "equipment"
 format: "note"
 phase: "drive-there"

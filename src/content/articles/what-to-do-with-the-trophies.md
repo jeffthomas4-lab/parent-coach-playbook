@@ -1,6 +1,7 @@
 ---
 title: "What to do with the trophies"
 dek: "Eight participation trophies in nine months. The shelf is full. The kid doesn't care about half of them. A simple system."
+seoDescription: "Most kids' rooms accumulate eight to twelve trophies, medals, and certificates per year. Within three years, the shelf cannot hold them."
 topic: "season-ops"
 format: "note"
 phase: "drive-home"

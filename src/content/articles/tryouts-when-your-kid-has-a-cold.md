@@ -1,6 +1,7 @@
 ---
 title: "Tryouts when your kid has a *cold*"
 dek: "Saturday. Tryouts. He's congested and tired. The decision."
+seoDescription: "Friday night. Tryouts are tomorrow at 9. Your kid has a runny nose and a cough. He says he feels okay-ish. You don't know what to do."
 topic: "tryouts"
 format: "note"
 phase: "drive-there"

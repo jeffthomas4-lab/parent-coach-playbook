@@ -1,6 +1,7 @@
 ---
 title: "The friend-group camp vs the *right camp*"
 dek: "Three of his friends are doing the same camp. The camp is not the camp you would have picked. What now."
+seoDescription: "The text comes in early March from another mom. We just signed Sammy up for the basketball camp at the YMCA. Want to do the same week?"
 topic: "summer-camps"
 format: "essay"
 phase: "drive-home"

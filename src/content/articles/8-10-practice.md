@@ -1,6 +1,7 @@
 ---
 title: "The 8-10 Practice That Doesn't Drag"
 dek: "Forty minutes. One game. One fix. They remember what they played, not what you drilled."
+seoDescription: "It was a Tuesday in October. We had a forty-minute window before the next activity. One team. One field."
 topic: "season-ops"
 format: "note"
 phase: "game"

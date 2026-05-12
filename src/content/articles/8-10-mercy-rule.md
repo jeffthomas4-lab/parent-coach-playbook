@@ -1,6 +1,7 @@
 ---
 title: "The 8-10 Mercy Rule and Why It's a Feature"
 dek: "Competition is good. Running up the score is not. The mercy rule teaches both."
+seoDescription: "It was a Saturday in March. One team came in with a complete roster and batting cages during the week."
 topic: "rules-of-play"
 format: "note"
 phase: "game"

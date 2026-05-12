@@ -1,6 +1,7 @@
 ---
 title: "When your kid wants to *switch sports* mid-season"
 dek: "Three weeks into baseball, she wants to play soccer. The team is counting on her. So is your investment."
+seoDescription: "She is nine. You signed up for the spring baseball season. Three weeks in, she's not enjoying it. She wants to play soccer instead."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"

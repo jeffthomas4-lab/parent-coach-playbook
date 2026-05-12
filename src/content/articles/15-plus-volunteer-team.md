@@ -1,6 +1,7 @@
 ---
 title: "The 15-Plus Volunteer Team You Might Not Have"
 dek: "The kids who aged out still want to be here. Ask them."
+seoDescription: "It was March and we were running twelve practices a week across three age groups. We needed help but the budget was flat."
 topic: "season-ops"
 format: "note"
 phase: "drive-there"

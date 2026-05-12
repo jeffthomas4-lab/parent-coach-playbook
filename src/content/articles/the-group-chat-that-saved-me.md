@@ -1,6 +1,7 @@
 ---
 title: "The Group Chat That Saved My Season"
 dek: "Three parents. One thread. Thirty-seven hundred messages of actual help."
+seoDescription: "I started a chat with three other moms from my kid's team last April. It's called the u8 girls soccer thread. We're at thirty-seven hundred messages now."
 format: "note"
 topic: "communication"
 phase: "game"

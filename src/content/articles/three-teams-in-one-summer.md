@@ -1,6 +1,7 @@
 ---
 title: "When the kid is on *three teams in one summer*"
 dek: "Travel ball plus showcase plus rec all-stars. The schedule that breaks the body, and the conversation about which one to drop."
+seoDescription: "Some families end up here without meaning to. The travel team is committed. The showcase is the one the kid wanted."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

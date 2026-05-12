@@ -1,6 +1,7 @@
 ---
 title: "Opening night nerves at 12"
 dek: "They've been rehearsing for two months. Now the show is real. How to help when they're spiraling."
+seoDescription: "Your kid has been rehearsing for two months. They know their lines. They know their blocking. The choreography is solid."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"

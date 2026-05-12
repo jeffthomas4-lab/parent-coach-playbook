@@ -1,6 +1,7 @@
 ---
 title: "When your kid wants you to *email the coach* for them"
 dek: "He's eleven. He's frustrated. He says, can you just talk to coach. Don't say yes."
+seoDescription: "He's eleven. He gets in the car after a hard practice. He says, can you email coach about the position thing?"
 topic: "communication"
 format: "essay"
 phase: "drive-home"
