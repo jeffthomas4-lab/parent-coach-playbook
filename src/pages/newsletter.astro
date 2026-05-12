@@ -1,30 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import { EDITORIAL } from '../data/site';
-import { isLive } from '../lib/publishFilter';
 
-// Newsletter archive: every published article, treated as an issue.
-// Sorted newest-first.
-const issues = (await getCollection('articles', ({ data }) => isLive(data)))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
-
+// Newsletter archive. Will list actual Friday Letter issues once they ship.
+// Until then, the archive is empty and the page leads with the signup CTA.
+// When real issues exist, replace the empty-state block with a list pulled
+// from a future `newsletter` content collection. The site's article posts
+// (which are the body of the blog, not newsletter issues) intentionally
+// do not appear here.
+const issues: Array<{ slug: string; title: string; publishedAt: Date; dek?: string }> = [];
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
-
-const latest = issues[0];
-const archive = issues.slice(1);
 ---
 <BaseLayout
   title="The Friday Letter"
-  description="One short read every Friday from the Parent Coach Desk. Sideline notes for parents who coach. Past issues, free downloads, no spam."
+  description="One short read every Friday from the Parent Coach Playbook. Sideline notes for parents who coach. Free, no spam."
 >
   <!-- Lead -->
   <section class="border-b border-ink bg-ink text-paper relative overflow-hidden">
     {/* Mailbox-at-sunset cover sits at 25% opacity behind a near-opaque dark wash. */}
     <img
       src="/illustrations/newsletter-mailbox-cta.webp"
-      alt="A suburban mailbox at sunset with a Parent Coach Desk envelope sticking out."
+      alt="A suburban mailbox at sunset with a Parent Coach Playbook envelope sticking out."
       class="absolute inset-0 w-full h-full object-cover opacity-25"
       loading="eager"
       fetchpriority="high"
@@ -42,7 +38,7 @@ const archive = issues.slice(1);
           One short read every Friday. <em class="text-rust">No spam.</em>
         </h1>
         <p class="font-display text-paper-warm text-xl mt-6 max-w-xl leading-snug">
-          A letter from the Parent Coach Desk lands in your inbox every Friday. Sometimes it's about a hard parent conversation. Sometimes a drill. Sometimes a piece of gear that finally got the kid to stop complaining. Always under five minutes to read.
+          A letter from the Parent Coach Playbook lands in your inbox every Friday. Sometimes it's about a hard parent conversation. Sometimes a drill. Sometimes a piece of gear that finally got the kid to stop complaining. Always under five minutes to read.
         </p>
       </div>
       <div class="md:col-span-5">
@@ -65,60 +61,51 @@ const archive = issues.slice(1);
     </div>
   </section>
 
-  <!-- Latest issue -->
-  {latest && (
-    <section class="border-b border-bone">
-      <div class="container-px py-12 md:py-16">
-        <p class="font-display italic text-rust mb-3 font-medium">Latest issue</p>
-        <a href={`/${latest.data.phase}/${latest.slug}/`} class="block group max-w-3xl">
-          <h2
-            class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] group-hover:text-rust transition-colors font-medium"
-            set:html={latest.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
-          />
-          {latest.data.dek && (
-            <p class="font-display text-ink-soft text-lg mt-4 leading-snug max-w-2xl">
-              {latest.data.dek}
-            </p>
-          )}
-          <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
-            {fmt(latest.data.publishedAt)}
-            {latest.data.format === 'essay' ? ' · longer read' : ' · short read'}
-          </p>
-          <div class="t-cta mt-4">Read this issue →</div>
-        </a>
-      </div>
-    </section>
-  )}
-
-  <!-- Archive -->
+  <!-- Past issues / empty state -->
   <section class="border-b border-bone">
     <div class="container-px py-12">
       <div class="flex items-baseline justify-between flex-wrap gap-3 mb-8">
         <p class="font-display italic text-rust font-medium">Past issues</p>
-        <a href="/rss.xml" class="t-cta">Subscribe via RSS →</a>
       </div>
-      <ul class="grid gap-px bg-bone">
-        {archive.map((a) => (
-          <li class="bg-paper p-5 hover:bg-paper-warm transition-colors">
-            <a href={`/${a.data.phase}/${a.slug}/`} class="grid md:grid-cols-[140px_1fr] gap-4 group items-baseline">
-              <span class="font-display italic text-ink-soft text-sm font-medium">
-                {fmt(a.data.publishedAt)}
-              </span>
-              <div>
-                <h3
-                  class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium"
-                  set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
-                />
-                {a.data.dek && (
-                  <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
-                    {a.data.dek}
-                  </p>
-                )}
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
+      {issues.length === 0 ? (
+        <div class="max-w-2xl">
+          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
+            The first letter is on the way.
+          </h2>
+          <p class="font-display text-ink-soft text-base mt-4 leading-snug">
+            We haven't sent an issue yet. Subscribe and you'll be there for the first one. Past issues will live here once we have them.
+          </p>
+          <a
+            href="https://parent-coach-playbook.kit.com/4b28f916b5"
+            class="btn mt-6 inline-block"
+          >
+            Subscribe
+          </a>
+        </div>
+      ) : (
+        <ul class="grid gap-px bg-bone">
+          {issues.map((a) => (
+            <li class="bg-paper p-5 hover:bg-paper-warm transition-colors">
+              <a href={`/newsletter/${a.slug}/`} class="grid md:grid-cols-[140px_1fr] gap-4 group items-baseline">
+                <span class="font-display italic text-ink-soft text-sm font-medium">
+                  {fmt(a.publishedAt)}
+                </span>
+                <div>
+                  <h3
+                    class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium"
+                    set:html={a.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                  />
+                  {a.dek && (
+                    <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                      {a.dek}
+                    </p>
+                  )}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   </section>
 
@@ -137,7 +124,7 @@ const archive = issues.slice(1);
         </div>
         <div>
           <h3 class="font-display text-ink text-xl leading-tight font-medium">Reply, real people read it.</h3>
-          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Hit reply on any issue. The Parent Coach Desk writes back.</p>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Hit reply on any issue. The Parent Coach Playbook writes back.</p>
         </div>
       </div>
     </div>
