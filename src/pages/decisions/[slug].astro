@@ -102,7 +102,7 @@ const breadcrumbSchema = {
         )}
         {decision.data.costs.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm font-medium" style="color: #BC8F84">Costs</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #C5713D">Costs</p>
             <ul class="grid gap-2">
               {decision.data.costs.map((c) => (
                 <li class="font-display text-ink leading-snug pl-4 -indent-4" style="font-weight: 400;">· {c}</li>
@@ -130,7 +130,7 @@ const breadcrumbSchema = {
         )}
         {decision.data.signsItsNot.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm font-medium" style="color: #BC8F84">Signs it's not</p>
+            <p class="font-display italic mb-3 text-sm font-medium" style="color: #C5713D">Signs it's not</p>
             <ul class="grid gap-2">
               {decision.data.signsItsNot.map((s) => (
                 <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>

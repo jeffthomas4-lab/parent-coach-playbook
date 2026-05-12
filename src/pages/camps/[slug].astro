@@ -567,7 +567,7 @@ if (camp) {
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
-              status.style.color = '#BC8F84';
+              status.style.color = '#C5713D';
               return;
             }
             form.reset();
@@ -576,7 +576,7 @@ if (camp) {
           })
           .catch(function () {
             status.textContent = 'Network error. Try again.';
-            status.style.color = '#BC8F84';
+            status.style.color = '#C5713D';
           });
       });
     })();
@@ -596,7 +596,7 @@ if (camp) {
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
-              status.style.color = '#BC8F84';
+              status.style.color = '#C5713D';
               return;
             }
             form.reset();
@@ -605,7 +605,7 @@ if (camp) {
           })
           .catch(function () {
             status.textContent = 'Network error. Try again.';
-            status.style.color = '#BC8F84';
+            status.style.color = '#C5713D';
           });
       });
     })();

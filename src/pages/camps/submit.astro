@@ -259,7 +259,7 @@ const sportOptions = CAMP_SPORTS;
             const data2 = (await res2.json()) as { ok: boolean; error?: string };
             if (!res2.ok || !data2.ok) {
               status.textContent = data2.error ? `Couldn't submit: ${data2.error}` : 'Something went wrong. Try again.';
-              status.style.color = '#BC8F84';
+              status.style.color = '#C5713D';
               return;
             }
             form.reset();
@@ -270,7 +270,7 @@ const sportOptions = CAMP_SPORTS;
 
           if (!res.ok || !data.ok) {
             status.textContent = data.error ? `Couldn't submit: ${data.error}` : 'Something went wrong. Try again or email parentcoachplaybook@gmail.com.';
-            status.style.color = '#BC8F84';
+            status.style.color = '#C5713D';
             return;
           }
           form.reset();
@@ -278,7 +278,7 @@ const sportOptions = CAMP_SPORTS;
           status.style.color = '#5C7459';
         } catch (err) {
           status.textContent = 'Network error. Try again.';
-          status.style.color = '#BC8F84';
+          status.style.color = '#C5713D';
         }
       });
     }

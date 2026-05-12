@@ -48,7 +48,7 @@ const levels = [
     ></div>
     <div class="container-px py-12 md:py-16 relative">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/tools/" class="hover:underline">The Drawer</a> · Cost calculator
+        <a href="/tools/" class="hover:underline">Tools</a> · Cost calculator
       </p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         What does a year <em class="text-rust">actually cost</em>?
@@ -439,8 +439,6 @@ const levels = [
       if (weeksInput) {
         weeksInput.addEventListener('input', () => {
           const v = parseInt(weeksInput.value, 10);
-          // Clamp to 1..52 so a typo doesn't divide-by-zero or produce
-          // implausibly huge per-week numbers.
           state.weeks = isNaN(v) ? 0 : Math.max(1, Math.min(52, v));
           renderTotals();
           saveToStorage(state);

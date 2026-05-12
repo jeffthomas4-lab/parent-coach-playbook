@@ -153,9 +153,6 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
             alt="A summer camp at golden hour: a wooded lakeside, a wooden dock, two canoes."
             class="w-full max-w-3xl mb-8 rounded"
             loading="lazy"
-            decoding="async"
-            width="1200"
-            height="675"
           />
           <p class="font-display italic text-rust mb-3 font-medium">Coming online</p>
           <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl font-medium">
@@ -743,4 +740,10 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           })
           .catch(function () { /* stay put */ });
       },
-      function () { /* permission d
+      function () { /* permission denied - stay put */ },
+      { timeout: 4000, maximumAge: 600000 }
+    );
+  } catch (e) { /* swallow */ }
+})();
+</script>
+</BaseLayout>

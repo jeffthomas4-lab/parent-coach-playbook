@@ -34,8 +34,8 @@ These have been generated, processed (resized/cropped to spec), and saved to `pu
 > calm and human. Backgrounds always favor depth and natural light over
 > graphic flatness.
 >
-> **Palette:** Cream paper (#FAF6EE) and warm paper (#F2E8DD) backgrounds.
-> Ink (#2D2520) for grounding. Terracotta (#BC8F84) and honey (#D4AB6A)
+> **Palette:** Cream paper (#FAF6EE) and warm paper (#F2EAD9) backgrounds.
+> Ink (#2D2520) for grounding. Terracotta (#C5713D) and honey (#D4AB6A)
 > as warm accents. Sage green (#8FA68C) for outdoors. Bone (#E7DECB) and
 > linen (#DDD2BD) as neutrals. No saturated reds, blues, or neons.
 >

@@ -993,7 +993,7 @@ export async function geocode(
 
   const res = await fetch(url.toString(), {
     headers: {
-      'User-Agent': 'parentcoachdesk.com camps directory (parentcoachplaybook@gmail.com)',
+      'User-Agent': 'parentcoachplaybook.com camps directory (parentcoachplaybook@gmail.com)',
       'Accept-Language': 'en',
     },
   });
