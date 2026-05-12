@@ -167,7 +167,7 @@ const formatLabel = (f: string | undefined) => {
 
   <script is:inline>
     (function () {
-      document.addEventListener('DOMContentLoaded', function () {
+      function init() {
         var lensBar = document.querySelector('[data-lens-filter]');
         var formatBar = document.querySelector('[data-format-filter]');
         var ageBar = document.querySelector('[data-age-filter]');
@@ -191,4 +191,54 @@ const formatLabel = (f: string | undefined) => {
             var summary = row.getAttribute('data-summary') || '';
             var lOk = !l || lens === l;
             var fOk = !f || fmt === f;
-            var a
+            var ageList = ages ? ages.split(' ') : [];
+            var aOk = !a || ageList.length === 0 || ageList.indexOf(a) !== -1;
+            var qOk = !q || title.indexOf(q) !== -1 || summary.indexOf(q) !== -1;
+            var ok = lOk && fOk && aOk && qOk;
+            row.style.display = ok ? '' : 'none';
+            if (ok) visible++;
+          }
+          if (empty) {
+            if (visible > 0) empty.classList.add('hidden');
+            else empty.classList.remove('hidden');
+          }
+        }
+
+        function wire(bar, attr, setter) {
+          if (!bar) return;
+          bar.addEventListener('click', function (e) {
+            var t = e.target;
+            while (t && t.tagName !== 'BUTTON' && t !== bar) t = t.parentElement;
+            if (!t || t.tagName !== 'BUTTON') return;
+            var buttons = bar.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+              buttons[i].classList.remove('bg-ink', 'text-paper', 'border-ink');
+              buttons[i].classList.add('border-bone', 'text-ink-soft');
+            }
+            t.classList.remove('border-bone', 'text-ink-soft');
+            t.classList.add('bg-ink', 'text-paper', 'border-ink');
+            setter(t.getAttribute('data-' + attr) || '');
+            apply();
+          });
+        }
+
+        wire(lensBar,   'lens',   function (v) { l = v; });
+        wire(formatBar, 'format', function (v) { f = v; });
+        wire(ageBar,    'age',    function (v) { a = v; });
+
+        if (input) {
+          input.addEventListener('input', function () {
+            q = input.value.trim().toLowerCase();
+            apply();
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</BaseLayout>
