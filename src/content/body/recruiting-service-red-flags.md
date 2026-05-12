@@ -110,7 +110,7 @@ Before signing any recruiting service contract:
 
 "How does this differ from what I could do for free through NCAA Eligibility Center, my high school coach, and direct outreach to college programs?"
 
-A service that answers cleanly is one to consider. A service that handwaves on any of these is one to walk away from.
+A service that answers cleanly is one to consider. A service that skips these protocols on any of these is one to walk away from.
 
 **The kid's role.**
 

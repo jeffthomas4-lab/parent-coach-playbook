@@ -122,7 +122,7 @@ Education on third-party certification. Athletes who choose to use any supplemen
 
 The decision is yours. The published evidence is reassuring at the high-school age. The AAP remains conservative. The dietary and sleep approaches produce most of the available benefit.
 
-If you decide to allow creatine, the third-party certification is non-negotiable. Walmart-brand or online-cheap creatine without certification is a contamination risk.
+If you decide to allow creatine, the third-party certification is worth not skipping. Walmart-brand or online-cheap creatine without certification is a contamination risk.
 
 For kids under 14, the answer is no. The evidence does not support need.
 

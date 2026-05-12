@@ -58,7 +58,7 @@ Intentional dunking or holding under water.
 
 The serious end of this spectrum has produced injuries and (rarely) drowning-near-miss situations.
 
-Programs with clear policies about underwater conduct, officiating that addresses it, and supervision that watches for it produce safer environments. Programs that handwave on the cultural acceptance of underwater play can produce real harm.
+Programs with clear policies about underwater conduct, officiating that addresses it, and supervision that watches for it produce safer environments. Programs without these protocols on the cultural acceptance of underwater play can produce real harm.
 
 **Four. Concussion.** Less frequent than in contact sports but real. Mechanisms include head-to-elbow contact in close play, head-to-pool-wall, and ball-to-head impacts. U.S. Centers for Disease Control and Prevention (CDC) HEADS UP applies.
 
@@ -120,6 +120,6 @@ For families new to the sport, the questions to ask the program go beyond logist
 
 USA Water Polo's Safe Sport program is the governance framework for the affiliated programs. SafeSport-aligned training and reporting structures apply.
 
-**The honest read.** Water polo is a real sport with a real injury profile that includes some risks unique to the aquatic-and-contact combination. The kids who flourish are usually in programs with strong supervision, clear underwater-conduct standards, eye-protection norms, and shoulder-care discipline. The published injury rates are manageable in good programs and higher in programs that handwave on the cultural elements.
+**The honest read.** Water polo is a real sport with a real injury profile that includes some risks unique to the aquatic-and-contact combination. The kids who flourish are usually in programs with strong supervision, clear underwater-conduct standards, eye-protection norms, and shoulder-care discipline. The published injury rates are manageable in good programs and higher in programs without these protocols on the cultural elements.
 
 For families evaluating youth water polo, the questions to ask are concrete and the program's answers reveal the safety culture.

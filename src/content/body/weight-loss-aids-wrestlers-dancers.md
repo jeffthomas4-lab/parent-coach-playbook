@@ -92,7 +92,7 @@ Weekly weight-loss limits (typically 1.5 to 2 percent of body weight per week).
 
 Hydration testing at weigh-in to detect dehydration.
 
-Programs that follow these standards have substantially reduced unsafe cutting compared to historical patterns. Programs that handwave produce the documented risks.
+Programs that follow these standards have substantially reduced unsafe cutting compared to historical patterns. Programs without these protocols show the documented patterns.
 
 For families with wrestling kids, the question is whether the program operates within the published wrestling-weight-management framework or outside it.
 
@@ -102,7 +102,7 @@ Dance, gymnastics, figure skating, and cheer have documented elevated rates of d
 
 Programs that have addressed the cultural pressure have lower rates of these behaviors. Programs that emphasize body composition produce higher rates.
 
-For families evaluating dance studios, gymnastics gyms, or cheer programs, the cultural assessment matters. Programs that comment on body shape, hold public weigh-ins, or have coaches who criticize body composition produce the documented harms.
+For families evaluating dance studios, gymnastics gyms, or cheer programs, the cultural assessment matters. Programs that comment on body shape, hold public weigh-ins, or have coaches who criticize body composition show the documented patterns.
 
 **The cross-country and distance-running context.**
 
@@ -148,7 +148,7 @@ The published recovery from these patterns is good when addressed early. The rec
 
 **For coaches.**
 
-Awareness of the patterns. Coaches who comment on body composition, hold weigh-ins, or push weight-class decisions are coaches whose programs produce the documented harms.
+Awareness of the patterns. Coaches who comment on body composition, hold weigh-ins, or push weight-class decisions are coaches whose programs show the documented patterns.
 
 A team culture that focuses on performance and health rather than body composition. The published evidence supports this; the kids who are healthiest perform best long-term.
 

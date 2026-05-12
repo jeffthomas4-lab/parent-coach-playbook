@@ -57,7 +57,7 @@ The 30-minute number is the published standard. Some programs use 20 minutes; th
 
 **Indoor sports during outdoor storms.** Programs in metal-roofed gymnasiums or covered turf facilities should still pause if lightning is close. The buildings are usually safe; the moment kids walk to or from cars in the parking lot, they are not.
 
-**For the coach calling the game.** The decision is yours. Tournament organizers may push to play through. The 30/30 rule is non-negotiable. A delayed game is a delayed game. A struck kid is a tragedy.
+**For the coach calling the game.** The decision is yours. Tournament organizers may push to play through. The 30/30 rule is worth not skipping. A delayed game is a delayed game. A struck kid is a tragedy.
 
 **For the parent.** Watch the sky. Watch your phone's lightning detection app. Watch the coach. If the coach is delaying the call, you can pull your kid first and explain it later.
 

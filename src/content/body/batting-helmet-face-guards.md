@@ -54,7 +54,7 @@ Youth baseball: face guards are optional in most leagues. Some travel and elite 
 
 College baseball: face guards (typically C-flaps) are increasingly common after several high-profile facial injuries. National Collegiate Athletic Association (NCAA) does not require.
 
-For girls fastpitch softball, the cage is non-negotiable. For youth baseball, it is a family choice.
+For girls fastpitch softball, the cage is worth not skipping. For youth baseball, it is a family choice.
 
 **When the case for face protection is strongest.**
 

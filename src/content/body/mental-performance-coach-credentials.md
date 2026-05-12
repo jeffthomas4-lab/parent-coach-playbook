@@ -160,4 +160,4 @@ For clinical mental health needs, the framing is different: "I am worried about 
 
 For families, the credential check matters. The Association for Applied Sport Psychology directory (CMPCs) and the APA Division 47 directory (licensed sport psychologists) are the starting points. The kid who works with a credentialed professional gets services that are evidence-supported and appropriate. The kid who works with an uncredentialed "mental coach" may get value or may get pseudo-therapy from someone outside their scope.
 
-For families with kids in any clinical mental-health territory, the licensed professional is non-negotiable.
+For families with kids in any clinical mental-health territory, the licensed professional is worth not skipping.

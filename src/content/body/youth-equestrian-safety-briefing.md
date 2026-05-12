@@ -69,7 +69,7 @@ Western disciplines. Reining, cutting, barrel racing. Fall risk from speed, espe
 
 Polo. Highest impact-injury rate among riding disciplines. Helmet, face guard, body armor are standard for serious players.
 
-Rodeo events. Highest catastrophic-injury rates of any equestrian discipline. Bull riding and bronc events in particular. Youth rodeo participation produces documented serious injuries; the cost-benefit conversation matters.
+Rodeo events. Highest catastrophic-injury rates of any equestrian discipline. Bull riding and bronc events in particular. Youth rodeo participation is associated with documented serious injuries; the cost-benefit conversation matters.
 
 **What parents should ask before signing up.**
 
@@ -103,4 +103,4 @@ SafeSport applies to USEF-affiliated equestrian programs. The Minor Athlete Abus
 
 **The honest read.** Equestrian sports carry the highest per-hour catastrophic-injury rate of common youth sports. The protections are well-published: certified helmets replaced after any fall, body protectors for jumping disciplines, age-appropriate horse-matching, qualified instruction, and SafeSport-aligned program culture.
 
-For families considering or already in equestrian sports, the safety conversation deserves more attention than it typically receives. Programs that take it seriously produce riders who continue safely into adulthood; programs that do not produce the documented injury rates.
+For families considering or already in equestrian sports, the safety conversation deserves more attention than it typically receives. Programs that take it seriously produce riders who continue safely into adulthood; programs that do not see higher published injury rates.

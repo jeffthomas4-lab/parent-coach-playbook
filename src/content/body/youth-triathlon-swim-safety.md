@@ -148,4 +148,4 @@ Pre-race briefing. Course description, safety protocols, abort signals.
 
 **The honest read.** Youth triathlon is one of the safer competitive swim formats when programs and events follow USAT-aligned protocols. The fatality risk is documented but rare for youth athletes specifically. The swim leg remains the highest-attention segment.
 
-For families with kids entering youth triathlon, the questions to ask are about water temperature, safety craft ratios, start format, and pre-race practice opportunity. Programs that have thought about these produce kids who finish strong. Programs that handwave produce the documented risks.
+For families with kids entering youth triathlon, the questions to ask are about water temperature, safety craft ratios, start format, and pre-race practice opportunity. Programs that have thought about these produce kids who finish strong. Programs without these protocols show the documented patterns.

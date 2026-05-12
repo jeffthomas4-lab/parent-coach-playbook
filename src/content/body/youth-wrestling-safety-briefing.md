@@ -43,7 +43,7 @@ MRSA: less common but serious. Resistant bacterial skin infection.
 
 Prevention: shower immediately after every practice, do not share towels or gear, mats cleaned daily with EPA-approved disinfectant. Pre-match skin checks by certified officials are mandatory in National Federation of State High School Associations (NFHS)-aligned high school wrestling and most youth USA Wrestling events.
 
-A kid with an active skin infection should not wrestle. Programs that handwave on this produce outbreaks.
+A kid with an active skin infection should not wrestle. Programs without these protocols on this produce outbreaks.
 
 **Two. Weight cutting.** The cultural risk that is unique to wrestling. Athletes attempting to make a weight class lower than their natural body weight use sweating, food restriction, and sometimes laxatives or diuretics. Severe weight cutting has caused fatalities at the high school and college levels.
 

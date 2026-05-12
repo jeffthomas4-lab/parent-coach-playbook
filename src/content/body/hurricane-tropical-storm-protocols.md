@@ -101,7 +101,7 @@ Identify alternative shelter if the hotel is in an evacuation zone.
 
 For families with athletes who have specific medical needs (asthma, diabetes), the medication supply and access during evacuation matters.
 
-If evacuation is ordered, follow local authority guidance. The "we'll try to ride it out" approach is the approach that produces the documented worst cases.
+If evacuation is ordered, follow local authority guidance. The "we'll try to ride it out" approach is associated with the documented worst-case outcomes.
 
 **The home-program preparation.**
 
@@ -169,6 +169,6 @@ Communication transparency. Families need clear information to make their own de
 
 Insurance and liability awareness. Programs operating without storm-specific protocols are programs whose liability profile includes the worst-case scenario.
 
-**The honest read.** Hurricane and tropical-storm decisions in coastal youth sport are routine annual considerations during the Atlantic season. Programs and families that have planned for them handle the decisions calmly. Programs and families that improvise produce the documented difficult outcomes.
+**The honest read.** Hurricane and tropical-storm decisions in coastal youth sport are routine annual considerations during the Atlantic season. Programs and families that have planned for them handle the decisions calmly. Programs and families without a plan are associated with the documented difficult outcomes.
 
 For coastal programs and families, the June 1 to November 30 window deserves the same kind of structured preparation that any other safety scenario gets. The National Hurricane Center provides the forecasts; the family and program decisions are the human side.

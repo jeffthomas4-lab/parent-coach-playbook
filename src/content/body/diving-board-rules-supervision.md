@@ -80,7 +80,7 @@ Lifeguard direct supervision of the diving area. Some facilities have a lifeguar
 
 Visible depth markings at the diving area, clearly readable from the board.
 
-Pool operators that enforce the rules have very few diving injuries. Operators that handwave have the historical rates.
+Pool operators that enforce the rules have very few diving injuries. Operators that do not enforce them see higher published injury rates.
 
 **The supervision protocol.**
 

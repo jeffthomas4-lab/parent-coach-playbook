@@ -78,7 +78,7 @@ For non-LGBTQ+ kids on the team: the conversation is about language norms and be
 
 **The escalation path.**
 
-A specific incident: head coach, with documentation. AD or program director if the head coach handwaves.
+A specific incident: head coach, with documentation. AD or program director if the head coach does not act.
 
 A pattern: SafeSport for NGB-affiliated programs (720-531-0340). Title IX coordinator for school-based programs. State-level human rights or anti-discrimination commissions for non-school programs.
 
@@ -106,4 +106,4 @@ Address language in real time. The first time a slur happens in the locker room 
 
 Make the team's anti-harassment standard explicit at the start of the season. "On this team, we don't use slurs about anyone. Anyone." The clarity helps the kids.
 
-**The honest read.** The vast majority of LGBTQ+ youth athletes succeed in sport when adults set culture norms that exclude harassment as part of the deal. The published research is consistent: programs with explicit standards have fewer incidents and lower dropout rates. The kids whose seasons get derailed are usually the kids in programs that handwaved on language and culture. The work is mostly in the early-season setup. Once it is set, most kids on most teams behave fine.
+**The honest read.** The vast majority of LGBTQ+ youth athletes succeed in sport when adults set culture norms that exclude harassment as part of the deal. The published research is consistent: programs with explicit standards have fewer incidents and lower dropout rates. The kids whose seasons get derailed are usually the kids in programs without these protocolsd on language and culture. The work is mostly in the early-season setup. Once it is set, most kids on most teams behave fine.

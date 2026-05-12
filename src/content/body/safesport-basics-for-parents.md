@@ -76,4 +76,4 @@ The key message: if something feels wrong, you can tell me, and you won't be in 
 
 **The rare-but-real reality.**
 
-Most coaches are good. The systems exist because the rare bad ones cause significant damage when no one is watching. The combination of SafeSport training, background checks, parent awareness, and kid-empowering conversations meaningfully shifts the risk profile. None of it is a guarantee. All of it is the responsible baseline.
+Most coaches are good. The systems exist because the rare ones who cause harm cause significant damage when no one is watching. The combination of SafeSport training, background checks, parent awareness, and kid-empowering conversations meaningfully shifts the risk profile. None of it is a guarantee. All of it is the responsible baseline.

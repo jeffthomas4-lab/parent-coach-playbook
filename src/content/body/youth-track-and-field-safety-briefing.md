@@ -77,7 +77,7 @@ One. Shoulder, elbow, and back injuries. Repetitive throwing load. Particularly 
 
 Two. Bystander injuries. The throwing area is dangerous. Athletes hit by errant throws (or by their own implement on a release miscue) is the leading acute injury in throwing events.
 
-The "no one enters the throwing area without permission" rule is foundational. Programs that enforce it strictly have very few bystander injuries. Programs that handwave produce the avoidable injuries.
+The "no one enters the throwing area without permission" rule is foundational. Programs that enforce it strictly have very few bystander injuries. Programs without these protocols produce the avoidable injuries.
 
 Three. Acute injury from improper technique. Hyperextension of the elbow in javelin, low-back strain in shot.
 

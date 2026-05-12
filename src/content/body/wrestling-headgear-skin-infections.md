@@ -112,4 +112,4 @@ Pre-practice skin check awareness. Kids should know what to look for and feel co
 
 Cooperation with parents on emerging cases. The kid pulled from practice for a suspicious lesion needs to know the team supports the call.
 
-**The honest read.** Wrestling's skin-infection profile is unique among youth sports. The protocols are well-published and effective when followed. Programs with strict hygiene see few outbreaks. Programs that handwave produce season-disrupting outbreaks that affect every family. Headgear, daily mat cleaning, immediate showering, no sharing, and prompt diagnosis when something appears. Six things, consistently applied, that change the math.
+**The honest read.** Wrestling's skin-infection profile is unique among youth sports. The protocols are well-published and effective when followed. Programs with strict hygiene see few outbreaks. Programs without these protocols produce season-disrupting outbreaks that affect every family. Headgear, daily mat cleaning, immediate showering, no sharing, and prompt diagnosis when something appears. Six things, consistently applied, that change the math.

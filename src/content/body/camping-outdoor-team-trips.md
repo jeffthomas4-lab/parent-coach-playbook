@@ -56,7 +56,7 @@ For backcountry trips, at least one adult with wilderness-first-aid training (ty
 
 A clear leadership structure with named roles.
 
-The "coach takes the team camping" framing without trained leadership is the framing that produces documented bad outcomes.
+The "coach takes the team camping" framing without trained leadership is the framing that is associated with documented bad outcomes.
 
 **The adult-minor configuration framework.**
 
@@ -130,7 +130,7 @@ Operator's protocol for medical issues during the activity.
 
 Operator's emergency-evacuation plan.
 
-A reputable operator answers these questions readily. An operator who handwaves is one to question.
+A reputable operator answers these questions readily. An operator who skips these protocols is one to question.
 
 **The Communication plan.**
 
@@ -186,6 +186,6 @@ For kids with medical needs, additional planning conversations.
 
 For trips with concerning gaps in safety planning, opting out is a reasonable family decision.
 
-**The honest read.** Outdoor team trips can be among the most meaningful experiences in a season or among the highest-risk depending on planning. Programs that approach them with the same seriousness applied to other safety considerations produce good experiences. Programs that improvise on the outdoor side because "it's just camping" produce the documented incidents.
+**The honest read.** Outdoor team trips can be among the most meaningful experiences in a season or among the highest-risk depending on planning. Programs that approach them with the same seriousness applied to other safety considerations produce good experiences. Programs that improvise on the outdoor side because "it's just camping" show the documented incidents.
 
 For families with a trip on the horizon, the questions to ask are concrete. The program's answers reveal the planning depth.

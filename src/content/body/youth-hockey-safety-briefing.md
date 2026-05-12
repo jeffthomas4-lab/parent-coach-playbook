@@ -65,6 +65,6 @@ Mouthguards are required by most affiliated leagues for ages 12 and up. Boil-and
 
 "Do skaters wear neck guards (mandatory or strongly recommended)?"
 
-A program with answers is a program that has done the work. A program that handwaves on any of those is one that hasn't.
+A program with answers is a program that has done the work. A program that skips these protocols on any of those is one that hasn't.
 
 **The honest read.** Hockey is one of the most equipment-protected youth sports. The risks that remain are the ones that get past the equipment: concussion from contact, blade lacerations, the rare cardiac event. The programs with the lowest incident rates are the ones that follow USA Hockey's age progression, enforce equipment rules without exception, and treat concussion management as protocol, not judgment call.

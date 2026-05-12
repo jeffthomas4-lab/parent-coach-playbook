@@ -78,7 +78,7 @@ Stimulants (caffeine, ephedra-derivatives, banned compounds) in some "energy-pro
 
 Protein content lower than labeled, sometimes by 30 to 50 percent.
 
-The bad actors are a minority of the market. Identifying them is the consumer's job because the regulatory system is light.
+Brands cutting corners are a minority of the market. Identifying them is the consumer's job because the regulatory system is light.
 
 **The certifications that matter.**
 
@@ -152,7 +152,7 @@ Awareness of the SafeSport and NGB-specific banned-substances list for competiti
 
 The dietary review first. Real food before supplements.
 
-If a supplement is used, third-party certification non-negotiable.
+If a supplement is used, third-party certification worth not skipping.
 
 For competitive athletes (NCAA recruits, USA-team-track athletes), the conversation with a registered dietitian who specializes in sport nutrition is the right pathway.
 

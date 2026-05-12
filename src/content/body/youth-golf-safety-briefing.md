@@ -29,7 +29,7 @@ editorial:
   reviewerNotes: "USGA, U.S. Kids Golf, AAOS, NWS cited. Lightning is the load-bearing acute risk; overuse is the load-bearing chronic risk."
 ---
 
-Golf looks like one of the safest youth sports. No contact, controlled environment, slow pace. The injury data is more interesting at competitive levels. Lightning is the leading cause of golf-related deaths in the United States. Overuse back and elbow injuries are common in serious junior golfers. Cart and club incidents, though rare, produce documented serious injuries.
+Golf looks like one of the safest youth sports. No contact, controlled environment, slow pace. The injury data is more interesting at competitive levels. Lightning is the leading cause of golf-related deaths in the United States. Overuse back and elbow injuries are common in serious junior golfers. Cart and club incidents, though rare, are associated with documented serious injuries.
 
 The list below is what shows up most in published youth-golf epidemiology, ranked by severity and frequency.
 
@@ -43,7 +43,7 @@ Wait 30 minutes after the last flash or thunder before resuming.
 
 Substantial-shelter rule. Lightning-shelter buildings or hard-topped vehicles. Not under trees, not in golf cart shelters that have metal roofs.
 
-Programs and tournaments that have clear lightning protocols handle this well. Programs that handwave produce the documented fatalities.
+Programs and tournaments that have clear lightning protocols handle this well. Programs without these protocols see the documented fatality patterns.
 
 For families with kids in junior golf, the lightning question is the question to ask before the lightning event arrives. Course-side shelter access, on-course warning systems (horns), and pre-tournament briefings all matter.
 

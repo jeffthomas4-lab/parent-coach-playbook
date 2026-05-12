@@ -108,7 +108,7 @@ Many programs require a formal reset: deletion of the offending posts, written a
 
 **The conversation with the team.**
 
-A coach who addresses cyberbullying in the team meeting, names what is and is not acceptable, and follows through on consequences when it happens shifts the team culture. The coach who handwaves on it sends a different signal.
+A coach who addresses cyberbullying in the team meeting, names what is and is not acceptable, and follows through on consequences when it happens shifts the team culture. The coach who skips these protocols on it sends a different signal.
 
 **The honest read.** Cyberbullying in youth sports is one of the most-underreported and slowest-addressed categories of harm. The kids being targeted often do not have language for it. The adults running the team app often cannot see it. The protocol that works is documentation early, escalation through the right channels, and a willingness to act on consequences when the pattern is established.
 

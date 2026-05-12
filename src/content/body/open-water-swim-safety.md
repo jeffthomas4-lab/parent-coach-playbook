@@ -62,6 +62,6 @@ The kid who has only swum pools may not understand how chop affects breathing rh
 
 "Is the course marked clearly, and how is the start staggered?"
 
-A meet director with answers is one running a tight event. A meet director who handwaves is one to be cautious about.
+A meet director with answers is one running a tight event. A meet director who skips these protocols is one to be cautious about.
 
 **The honest part.** Open-water swimming is a beautiful discipline and a useful skill. The fatalities that occur are largely preventable through the protocols above. The first open-water meet of the season is the one to be most careful about.

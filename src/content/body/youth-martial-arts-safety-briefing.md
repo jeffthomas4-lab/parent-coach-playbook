@@ -71,4 +71,4 @@ Note the adult-minor configuration patterns. Private one-on-one lessons should f
 
 A program with answers is one that has done the work.
 
-**The honest read.** Martial arts at the youth level can be among the safer organized activities or among the higher-risk, depending on the discipline and the program. The instructor and the cultural standards matter more than the specific art. Programs that hold to SafeSport norms, age-appropriate technique progression, and clean training environments produce kids who benefit. Programs that handwave produce the documented risks.
+**The honest read.** Martial arts at the youth level can be among the safer organized activities or among the higher-risk, depending on the discipline and the program. The instructor and the cultural standards matter more than the specific art. Programs that hold to SafeSport norms, age-appropriate technique progression, and clean training environments produce kids who benefit. Programs without these protocols show the documented patterns.

@@ -73,8 +73,8 @@ A league that answers these clearly takes child safety as the institutional base
 
 **The system is incomplete. Parent attention helps.**
 
-Background checks are a screen, not a guarantee. They catch the small percentage of bad actors with prior records. They don't catch everyone. The system that protects kids is layered: background checks + SafeSport training + observable practice settings + open communication norms + parent attentiveness + kid-empowering conversations.
+Background checks are a screen, not a guarantee. They catch the small percentage of individuals with prior records. They don't catch everyone. The system that protects kids is layered: background checks + SafeSport training + observable practice settings + open communication norms + parent attentiveness + kid-empowering conversations.
 
 Each layer adds something. None are sufficient alone.
 
-The honest read: most coaches are good. The systems exist because the rare bad ones cause damage that lasts. The thirty seconds it takes to ask your league about their procedures is the lowest-cost piece of vigilance available to parents.
+The honest read: most coaches are good. The systems exist because the rare ones who cause harm cause damage that lasts. The thirty seconds it takes to ask your league about their procedures is the lowest-cost piece of vigilance available to parents.
