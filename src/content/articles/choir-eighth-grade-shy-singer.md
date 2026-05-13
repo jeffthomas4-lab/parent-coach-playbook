@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 8th grader has been in choir since 4th grade. They love it. They sing all the time at home.
+You are sitting in the audience at the winter choir concert. Three rows back, center. Your kid is on the riser in the back row.
 
-But at the concert they barely move their mouths. You can see them on the riser, looking down, almost not singing.
+You cannot tell if she is singing. You think her mouth is barely moving. The kid next to her is belting and you can hear the difference in their shoulders. Your kid is somewhere else entirely.
 
-What is going on.
+She loves choir. She sings in the shower at home. Something happens between the kitchen and the concert. Here is what is going on.
 
 ## Stage fright in singers
 

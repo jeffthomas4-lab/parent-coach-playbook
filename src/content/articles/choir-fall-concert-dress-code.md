@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid's fall choir concert is in three weeks. The director sent home a dress code that is mostly clear but mostly not.
+Three weeks until the fall concert. The dress code email came home in October as an attachment titled "concert_attire_2026.pdf."
 
-Here is what to buy and what to skip.
+Long black dress or black pants and a white shirt. Black dress shoes. No sparkly anything. You called your mom and asked her if she still had your old concert dress from 1992. She did. It does not fit your kid.
+
+Here is what to actually buy.
 
 ## The standard dress code
 

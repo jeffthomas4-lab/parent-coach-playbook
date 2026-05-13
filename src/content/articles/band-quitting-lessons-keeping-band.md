@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid started lessons in third or fourth grade. Same teacher. Once a week. For five or six years.
+Tuesday afternoon. You are pulling out of the driveway to drive him to lessons. He is looking out the passenger window at the same trees he has looked at every Tuesday for five years.
 
-Now they are 13 and they are saying they want to quit lessons. They still want to play in band. They just do not want to drive across town on Tuesday afternoons anymore.
+He says it without turning his head. He wants to quit. Not band. Just lessons. He has had the same teacher since third grade and now at 13 he is done.
 
-Here is how to think about it.
+You almost turn the car around. Then you keep driving. Here is how to think about this on the way to the lesson he might be quitting.
 
 ## What is probably going on
 

@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The studio just sent out the fall convention schedule. Your kid wants to go to the big one in February. The fee is $400 and the hotel is $600.
+The studio just sent home the fall convention schedule in a thick manila envelope.
 
-You are not sure what a convention is, exactly.
+Your daughter circled the February one in pink Sharpie before you even saw it. $400 entry fee. Hotel block at $230 a night. The convention is in a city six hours away.
 
-Here is the breakdown.
+You have not said yes yet. Here is what a convention actually is and how to decide whether this is the year.
 
 ## What a convention is
 

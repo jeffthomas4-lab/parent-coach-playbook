@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid sings at school in concert choir twice a week. They also sing at church on Sunday morning. They also do the church youth choir on Wednesday night. That is four rehearsals a week.
+Sunday morning. She is at church choir warm-up by 8 am. Wednesday night she has church youth choir at 6:30. Tuesday and Thursday she has school concert choir during second period. Tomorrow is also school spring concert rehearsal until 5:00.
 
-You are starting to wonder if it is too much.
+That is five rehearsals a week. She is 11.
 
-Here is the breakdown.
+You are starting to wonder if it is too much. Here is how to think about it before this becomes a fight.
 
 ## Why both choirs are worth doing
 

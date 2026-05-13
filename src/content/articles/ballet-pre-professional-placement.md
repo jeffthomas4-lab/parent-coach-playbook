@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The studio just offered your 11-year-old a spot in the pre-professional track. Classes go up from two a week to twelve. Tuition triples.
+The email came on a Tuesday afternoon. Your 11-year-old just got offered a spot in the pre-professional track at the studio. Classes go up from two a week to twelve. Tuition triples.
 
-You are flattered. Also a little overwhelmed.
+The studio director copied you on the same email she sent your daughter. You read it three times in the school pickup line.
 
-Here is what the offer actually means.
+You are flattered. Also a little overwhelmed. Here is what the offer actually means before you say yes.
 
 ## What pre-professional means
 

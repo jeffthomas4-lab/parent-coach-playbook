@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid signed up for band. The school sent home a flyer with a music store and a price list. The numbers are bigger than you expected.
+The music store on a Saturday morning in August. The line is out the door and around the corner. Every kid in the district who signed up for band is here, with a parent and a flyer and a slightly confused look.
 
-Here is the actual math.
+The salesperson is pleasant. The rental contract is laminated. You sign and walk out with a beginner clarinet in a hard case the size of a shoebox.
+
+Then you do the math in the car. Here is what that math actually says.
 
 ## What the rental usually costs
 

@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The studio just sent home the fall schedule. There are eight class options for your kid's age group. You have no idea which to sign up for.
+The studio just sent home the fall schedule, a single sheet of paper with eight class options in your kid's age group.
 
-Here is what each one actually teaches.
+Ballet. Jazz. Lyrical. Contemporary. Tap. Hip hop. Acro. And something called "tiny tots musical theater."
+
+You and your 7-year-old are at the kitchen table with the printout and two different highlighters. Here is what each style actually teaches.
 
 ## Ballet
 

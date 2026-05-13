@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The MRI came back. Stress reaction in the tibia. Or a labral tear. Or a growth plate injury that needs to heal completely.
+You are sitting in an exam room with your 14-year-old. The orthopedist has the MRI up on the screen behind her.
 
-The doctor said no dance for six months. Your daughter is 14 and serious about ballet.
+She is using the word "labrum." Then the word "rest." Then the words "six months."
 
-You are now in the hardest conversation of her childhood.
+Your daughter is looking at the floor. The summer intensive she was supposed to attend in eight weeks is not happening. Here is the hardest conversation of your daughter's childhood and how to start having it.
 
 ## The first 48 hours after the diagnosis
 

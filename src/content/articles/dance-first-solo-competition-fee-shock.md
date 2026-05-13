@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The studio just offered your daughter a solo. She is over the moon. Then the invoice came.
+The director pulled you aside at pickup last week. They are offering your daughter a solo for the year.
 
-$1,400 for the year. You blinked.
+Today the invoice came. $1,400 for the season. You read it twice.
 
-Here is what that money covers and how to think about whether to say yes.
+Your daughter is over the moon. You are running the numbers at the kitchen table while she is upstairs practicing in front of the mirror. Here is what that money actually buys and how to decide if this is the right year for it.
 
 ## What the solo fee usually includes
 

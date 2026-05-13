@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-There are two ballet studios near you. Both teach ballet. They are not the same.
+Saturday morning at the recital studio on the south side of town. The lobby was full of sparkles. The recital photos on the walls were a wedding photographer's dream.
 
-One advertises an annual recital with sparkly costumes. One advertises a graded examination program. The difference is bigger than the marketing suggests.
+Saturday afternoon at the syllabus school on the north side. The lobby was quiet. The walls had black-and-white photos of dancers in fifth position.
 
-Here is what each is and how to choose.
+Same kid. Same age. Two very different schools. Here is how to pick.
 
 ## What a recital studio is
 

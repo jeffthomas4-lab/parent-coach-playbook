@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The director called it tech week. Your kid will call it the worst week of their life. You will probably agree.
+The kitchen is empty at 9:50 pm. The dinner you made is wrapped in foil on the counter. Her phone is dead because she forgot to charge it. The director's text from earlier said pickup at 9:45 but you both know that means 10:15 on a tech week night.
 
-Here is what is happening, why it is necessary, and how to get your kid and yourself through it.
+The dog is asleep on the couch. You are eating a stale cracker over the sink.
+
+Welcome to tech week. The single most chaotic seven days a theater family will live through this season. Here is how to get through it.
 
 ## What tech week actually is
 

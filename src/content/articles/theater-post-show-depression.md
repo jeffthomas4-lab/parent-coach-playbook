@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Sunday night. The show closed. The set is going to the dumpster Monday morning. Your kid is in their room and not coming out.
+Sunday night. The show closed three hours ago. The cast party was at someone's house. She got home at midnight and went straight to her room.
 
-Welcome to post-show depression. It is a real thing. It is temporary. Here is what is happening and what helps.
+Now it is Monday morning at 7 am and she is not getting up for school. You stood at her door for a minute before knocking. You can feel through the wood that this is not a tired-from-late-night problem.
+
+Welcome to post-show depression. It is real, it is temporary, and it has a name.
 
 ## What it is
 

@@ -12,13 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 12-year-old just told you their voice cracked at choir today.
+He climbed in the car after Tuesday choir and immediately said his voice cracked twice in the same song. He said it like a confession. The other kids in his section laughed when it happened the second time.
 
-Then it cracked again.
+The director called it normal. He does not believe her. He says he is never opening his mouth in choir again.
 
-They are mortified. The other kids laughed. The director said it was normal.
-
-Here is what is actually happening.
+Welcome to adolescent voice change. The most awkward two years of a young singer's life.
 
 ## What voice change is
 

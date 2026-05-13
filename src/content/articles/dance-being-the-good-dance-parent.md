@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Dance parent culture has a reputation. Some of it is earned. Some of it is overblown.
+You have been sitting in this studio lobby for three years. You know everyone's name. You know which mom not to sit next to. You know which mom always gossips about casting in the bathroom line at competition.
 
-Here is how to show up well.
+Tonight your daughter has an extra rehearsal. You have an hour to kill in a folding chair next to a coffee machine.
+
+Here is how to use that lobby time without becoming the cliché your daughter does not want to see in you.
 
 ## The lobby is not a coffee shop
 

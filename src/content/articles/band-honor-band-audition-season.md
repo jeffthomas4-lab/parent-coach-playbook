@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid wants to audition for the honor band this year.
+She told you at dinner. She is going to audition for all-state honor band this year. The audition is in November. The packet is in her room. She is going to start practicing this week.
 
-Honor band auditions are different from school band placements. They are selective, regional, and anonymous. They are also the first time most kids face a real, professional-style audition.
+You nodded like you knew what she was talking about. Then after she went to her room you looked it up.
 
-Here is what happens and how to help.
+Most parents think all-state is a singing or playing audition. It is, partly. It is also a music-reading audition. Here is what that means.
 
 ## What honor band is
 

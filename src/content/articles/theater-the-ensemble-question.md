@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The cast list went up. Your kid is in the ensemble.
+The cast list went up at the school at 3:30. You drove over to look at it together. Her name was on it. Two thirds down the page, in the ensemble section.
 
-You can hear it in their voice before they even tell you. The casual "yeah I got in" that is trying very hard not to be disappointed.
+She did not say anything in the parking lot. She did not say anything in the car. You could see her in the passenger seat trying very hard to be okay.
 
-A part of you wants to fix it. Resist. Here is what the ensemble part is actually worth, and how to talk about it on the drive home.
+Resist the urge to fix it. The ensemble role is not a consolation. Here is what it is actually worth, and how to talk about it tonight at dinner.
 
 ## What ensemble work teaches
 

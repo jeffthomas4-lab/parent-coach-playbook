@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid is in 6th, 7th, or 8th grade. The band director just sent home the sign-up sheets for jazz band, concert band, and marching band. You have no idea which to circle.
+The sign-up sheets came home in his folder, slightly bent. Concert band. Marching band. Jazz band. Three boxes for him to check, three boxes for you to initial, and zero context for any of it.
 
-Here is what each one actually is.
+He says he wants to do all three. You say you need a minute.
+
+Then you went to the school's band website and read three pages of the parent handbook. You still had questions. Here is what each one actually is and how to figure out the combination that fits.
 
 ## Concert band
 

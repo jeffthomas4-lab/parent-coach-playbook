@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid got cast. The director sent home a script. You expected to hear that they spent rehearsal acting.
+First rehearsal was today. You picked her up at 5:30 in the parking lot behind the auditorium. She got in with a marked-up script in a folder and her face slightly closed.
 
-Instead they come home and say it was boring.
+You asked the question on the drive home. How was it. She shrugged. We just sat in a circle and read it. That was it.
 
-Welcome to the first week. Here is what is actually happening so you can stop asking the wrong questions.
+You expected her to be electric. She is not. Welcome to the first week of theater rehearsals. The boredom is the work.
 
 ## The table read
 

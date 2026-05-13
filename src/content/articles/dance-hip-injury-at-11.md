@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 11-year-old has been complaining about her hip for a few weeks. Sometimes it pops. Sometimes it aches after class. The studio teacher said to ice it.
+She has been favoring her right hip for two weeks. After class she limps to the car for the first few steps and then walks it off.
 
-Here is how to think about this.
+The studio teacher told her to ice it. She has been icing it. It is still hurting. Tonight you saw her wince when she sat down for dinner.
+
+You scheduled a pediatrician appointment for Monday. Here is how to think about hip pain in a young dancer before that appointment.
 
 ## Why dance hips are at risk
 

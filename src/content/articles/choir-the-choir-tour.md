@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The choir director just announced this year's tour. New York. Or Disney. Or somewhere in Europe.
+The email landed at 4 pm on a Wednesday. The subject line said TOUR ANNOUNCEMENT — Spring 2027. The first line was a destination. The second line was a price per kid.
 
-The price tag landed in your inbox. You are doing some math.
+You did the math in your head. Then you did it again with the calculator app because the first number could not be right.
 
-Here is the breakdown.
+It was right. Here is what that money actually covers and how to think about whether to send her.
 
 ## What a typical tour costs
 

@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid wants to try for all-state choir this year.
+She decided over breakfast on a Tuesday in September. All-state choir this year. The audition is in January. She is in 9th grade and the kids who usually make it are juniors and seniors.
 
-Most parents think this is a singing audition. It is not, mostly. It is a music reading audition. Here is the difference and how to prep.
+You said good for you and poured more coffee. Then she left for school and you sat there for a minute.
+
+Most parents think all-state is a singing audition. It is not, mostly. It is a music-reading audition. Here is what that distinction actually means.
 
 ## What the audition usually involves
 

@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 4-year-old wants to take ballet. The studio website shows tiny tutus and serious-looking little girls at the barre.
+Your 4-year-old is in there in pink tights and a tiny black leotard. You are pressed against the one-way mirror in the lobby with five other parents, watching her sit on the floor with her arms over her head because the teacher said be a flower.
 
-Here is what is actually going to happen.
+This is pre-ballet. It is not really ballet.
+
+Here is what it actually is, and what your kid is supposed to be getting out of $80 a month plus shoes plus tights.
 
 ## What pre-ballet is
 

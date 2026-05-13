@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 11-year-old came out of class and asked you why she is bigger than the other girls. She said it casually. Almost as if it does not matter.
+She got in the car after Thursday class. She was quiet for half a mile. Then she asked, casually, why she is bigger than the other girls in her class.
 
-It matters.
+Not bitter. Not crying. Just a question, like she was asking about the weather. She kept looking out the window.
 
-Here is how to handle the moment.
+That casual is the most dangerous version of the question. Here is how to handle the moment without making it worse.
 
 ## What is actually happening
 

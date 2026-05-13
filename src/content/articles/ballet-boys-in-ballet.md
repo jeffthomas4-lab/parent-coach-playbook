@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your son loves ballet. He has been at it for two years. He just told you a kid at school said something.
+He got in the car after the homecoming dance on Friday night. He was quiet on the drive home.
 
-You know what is coming. You did not want to deal with it this year.
+Halfway there he told you what a kid said to him about ballet. The kid was on the football team. He laughed when he told you because that is what he has learned to do.
 
-Here is how to think about it.
+You did not laugh. You wanted to drive to that kid's house. Instead you took your son home. Here is how to think about this without making it worse for him on Monday.
 
 ## The numbers
 

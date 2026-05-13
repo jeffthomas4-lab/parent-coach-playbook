@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid is playing their first solo at the spring concert.
+He told you in the car on the way home from rehearsal. Eight bars at the spring concert. A solo. The director picked him for it.
 
-Eight bars maybe. Sixteen at the most. The whole band stops and your kid plays alone. Then the band comes back in.
+He said it like it was nothing. But he was white-knuckling the seatbelt.
 
-Here is how to help without making it worse.
+You both know that "nothing" is a cover for "I cannot believe this is happening." Here is how to help him in the next three weeks without making the next three weeks worse.
 
 ## What a solo really is at this age
 

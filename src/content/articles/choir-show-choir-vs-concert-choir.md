@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid signed up for choir. The choir teacher just told you about audition season for show choir.
+Open house night at the choir room. Two sign-up tables by the door. Concert choir on the left. Show choir on the right.
 
-You did not realize there were two choirs. Now you have questions.
+Your daughter is standing between them with a flyer in each hand. The choir director, who has been talking for fifteen minutes at the front of the room, just announced that show choir auditions are in April and decisions have to come in this week.
+
+You are standing next to your daughter trying to read both flyers at the same time. Here is the actual difference.
 
 ## Concert choir
 

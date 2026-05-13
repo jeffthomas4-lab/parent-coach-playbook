@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid wants to take dance. Every studio in town has a glossy website and a fall open house. They all look the same online.
+Saturday morning open house at the dance studio. Pink ballet shoes lined up by the front desk. A mom in a "Dance Mom" tank top filling out a clipboard.
 
-Here is how to tell them apart in person.
+The director, who introduced herself as a former regional pro, gave you a tour that highlighted the trophy wall and the new marley floor.
+
+Your 5-year-old wants to sign up. You have a year-long contract in your hand. Here is how to actually evaluate a studio before you sign.
 
 ## The two main types of dance studios
 

@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your daughter is in her fourth year of serious ballet. She is 11. The studio just added a "pre-pointe" class to her schedule.
+She is in her fourth year of serious ballet. She is 11. The studio just added a "pre-pointe" class to her schedule starting in September.
 
-You need to understand what this class actually is and what comes after.
+You did not know what pre-pointe meant until tonight, when she came home from class with a Theraband and a sheet of foot exercises printed on cardstock.
+
+Here is what is about to happen to her feet over the next twelve months.
 
 ## What pre-pointe is
 

@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid attended a major summer intensive last year. The school just sent an invitation to audition for the year-round program.
+Your kid attended a major summer intensive last year. Five weeks in another city. She came home transformed.
 
-This is a serious offer. Here is what it means.
+Last week the school's email arrived. The subject line was simple. Invitation to audition: year-round program 2027-28.
+
+She is 14. The program is two thousand miles from home. You read the email standing in the kitchen and have not yet figured out how to bring it up. Here is how to think about what they are actually offering.
 
 ## What a year-round program is
 

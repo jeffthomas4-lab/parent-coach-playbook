@@ -12,9 +12,9 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 8th grader wants to audition for the high school musical.
+She told you on the walk to school. The high school musical auditions are open and they are taking 8th graders this year. By dinner she had picked out her song. By bedtime she had a monologue from a book on the shelf. By breakfast the next morning she had emailed the high school drama teacher with a question.
 
-This is great and also complicated. Here is how to think about it.
+You are watching a kid commit to an audition that is going to put her up against juniors and seniors. Here is how to think about it.
 
 ## How most schools handle this
 

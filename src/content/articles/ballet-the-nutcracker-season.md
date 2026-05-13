@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid got cast as a party girl in the studio Nutcracker. Or a mouse. Or a soldier. Or, if they are advanced, a Spanish dancer.
+October 1. The cast list went up at the studio at 4 pm. She is a party girl. She found out the same time everyone else did, by walking up to the studio bulletin board with her dance bag still on her shoulder.
 
-Either way, December is now a Nutcracker month. Here is what is about to happen.
+By 4:15 you had the rehearsal calendar in your phone. By 4:30 you realized your entire December was already gone.
+
+Welcome to Nutcracker season.
 
 ## The schedule arc
 

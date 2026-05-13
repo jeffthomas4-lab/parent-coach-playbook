@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The band hands out uniforms on a specific day, usually a Saturday morning in August. This is fitting day. It is a project.
+Saturday morning at the band hall. There is a pile of plumed shakos on a folding table by the door. The smell of slightly mothballed wool is in the air. Three older students are running the fitting line.
 
-Here is what to expect.
+Your 14-year-old is third in line for the size 38 coat. The senior fitting him just made a comment about his shoulders that made him stand up straighter.
+
+By 11 am you will have signed a $600 uniform contract. Here is what you are agreeing to.
 
 ## What your kid wears under the uniform
 

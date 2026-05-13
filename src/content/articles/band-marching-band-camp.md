@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your high school marching band starts camp in August. Two weeks before school. Outside. Hot. All day.
+5:45 am. The high school parking lot. A hundred kids are unloading garment bags and water bottles from the back of family SUVs. The drum line is already tapping warmups on the concrete behind the band hall.
 
-Here is the actual deal.
+Your 14-year-old just got out of the car, did not look back, and joined the freshman line.
+
+Two weeks of marching band camp start now. Here is what is actually about to happen to her.
 
 ## The structure
 

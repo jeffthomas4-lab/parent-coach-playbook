@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid came home with a piece in Latin. Or German. Or French. Or all three.
+She came home with a folder. Inside was a piece in Latin. Three pages. She is supposed to memorize it for the December concert.
 
-They are confused. You are confused. You want to know if this is real.
+You looked at the words and recognized maybe one of them. Kyrie. Eleison. The two of you stared at the page together at the kitchen table.
 
-It is real. Choirs sing in many languages, and they have for a long time. Here is what your kid is supposed to be doing.
+Then you remembered: this is what choir does. Here is what your kid is actually supposed to be doing with the lyrics, and how to help from your side of the table.
 
 ## Why choirs sing in other languages
 

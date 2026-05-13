@@ -12,11 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The teacher said your kid should practice 20 minutes a day. Your kid spends 20 minutes in their room with the instrument. The teacher says they are not progressing.
+You are unloading the dishwasher. Twenty feet down the hall the door is closed and your kid is supposedly practicing.
 
-You ask: what is going on. You hear noise. You assume practice.
+You hear the instrument. You hear music. You have no idea if what you are hearing is good practice or a kid playing the parts they already know to feel good for twenty minutes.
 
-Here is what is actually happening and how to tell.
+The band director told you last week that they are not improving. Here is how to tell, from the kitchen, what is going on down the hall.
 
 ## What good practice sounds like
 

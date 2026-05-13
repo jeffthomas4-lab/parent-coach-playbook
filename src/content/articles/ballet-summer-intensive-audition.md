@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your 13-year-old wants to audition for a summer intensive at a major ballet school. The application is open. You need a video.
+Friday night. You have moved the kitchen table out of the way and set up your phone on a tripod borrowed from a neighbor.
 
-Here is how to do this without making it weird.
+Your daughter is in a black leotard and pink tights, hair in a fresh bun, and her ballet shoes have been re-tied three times because she keeps stepping on the ribbons. The light from the kitchen window is going.
+
+You are about to film the eighteen minutes of barre and center work that will be sent to four major summer intensives. Here is how to do this without making it embarrassing.
 
 ## What summer intensives are
 

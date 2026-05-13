@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-You got the cast list. Something is wrong.
+Your kid is staring at the cast list outside the drama room door. You are too.
 
-Either the part is smaller than your kid expected, or it is bigger than your kid can handle. Both feel bad. They are different problems.
+Something is wrong with what you are reading. Either the part is smaller than what you expected based on the audition, or the part is bigger than what you think your kid can handle.
+
+Both feel bad. They are different problems. Before you say anything in the car, sit with the role for 48 hours.
 
 ## Reading the role they got
 

@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Solo and ensemble festival is on the spring calendar. Your kid signed up. You have no idea what is about to happen.
+She signed up for solo and ensemble festival without telling you first. The form went home in her folder last week, signed by her, returned by her, with the check written in the choir teacher's handwriting.
 
-Here is the breakdown.
+Now she has a piece to learn, an accompanist to find, and a Saturday in March that is suddenly important.
+
+You said sure on the way to school the next morning. Then you went to look up what solo and ensemble festival actually is. Here is what is about to happen.
 
 ## What it is
 

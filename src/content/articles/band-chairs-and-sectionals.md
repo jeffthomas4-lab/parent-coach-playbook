@@ -12,9 +12,11 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid came home and said they got fourth chair clarinet. They are upset. You do not know if this is a big deal.
+He got in the car with his backpack in his lap and his ears pink. Fourth chair clarinet. He told you in a voice that was trying not to be a voice.
 
-Here is the band hierarchy explained.
+The girl who beat him out for second was sitting on the lobby bench with her mom waiting for her ride. You smiled at the mom and tried not to look at your kid.
+
+Then you drove home in silence for half a mile. Here is what the chair number actually means and how to talk about it once you get inside.
 
 ## What sections are
 
