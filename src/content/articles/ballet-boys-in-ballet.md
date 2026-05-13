@@ -14,7 +14,7 @@ featured: false
 
 He got in the car after the homecoming dance on Friday night. He was quiet on the drive home.
 
-Halfway there he told you what a kid said to him about ballet. The kid was on the football team. He laughed when he told you because that is what he has learned to do.
+Halfway there he told you what a kid said to him about ballet at lunch. He laughed when he told you because that is what he has learned to do.
 
 You did not laugh. You wanted to drive to that kid's house. Instead you took your son home. Here is how to think about this without making it worse for him on Monday.
 
@@ -34,11 +34,11 @@ A kid at school said something. It is going to happen. It is going to happen mor
 
 The common moves.
 
-Kids ask if your son is gay because he does ballet. The implicit message is that ballet is for girls. The actual percentage of male dancers who are gay is probably higher than the general population. So what. The question is hostile regardless of any answer.
+Kids ask your son if he is gay because he does ballet. The question is hostile no matter the answer. The implication is that ballet is something a boy should be embarrassed about. He is not, and ballet is not.
 
-Kids tease him about wearing tights. The teasing is about anything that does not look traditionally masculine. Tights are an easy target.
+Kids tease him about the clothing — tights, leotards, the studio uniform. This is the easiest surface to grab at. Help him separate the costume from the work: the tights are practical for what he does in the room, the same way a wrestling singlet or a swim brief is practical for what those athletes do.
 
-Kids ask why he does not play a real sport. The implicit message is that ballet does not count. The truth is that ballet is one of the most physically demanding athletic disciplines on earth. Top male ballet dancers train more hours per week than most college athletes. They can jump higher and turn faster than most basketball players. They have the body composition of elite gymnasts. Ballet is a sport. The teasing is wrong on the facts.
+Kids ask why he does not play a real sport. The implicit message is that ballet does not count. The truth is that ballet is one of the most physically demanding athletic disciplines on earth. Male ballet dancers train long hours, build serious strength and stamina, and execute jumps and turns that take years to learn. Ballet is a sport. The teasing is wrong on the facts.
 
 ## What to say to your son
 
@@ -48,9 +48,9 @@ Validate what is happening. "Yeah. That is something boys in ballet deal with. I
 
 Do not minimize it. "Just ignore them" is empty advice that teaches him to swallow his feelings.
 
-Give him the language. "Ballet is one of the hardest physical disciplines on earth. The men who do it are some of the strongest athletes in any sport. You are not doing girl stuff. You are doing one of the hardest things a body can do."
+Give him the language. "Ballet is one of the hardest physical disciplines on earth. The dancers who do it are strong, trained, and disciplined. What you are doing takes years to learn and most kids could not do a single class of it."
 
-Help him understand who the bullies are. "Kids who tease other kids for doing hard things are usually kids who are not doing anything hard themselves."
+Help him understand what is going on. "Most kids tease about things they have not tried. The teasing is about them, not you. It tells you what they are uncomfortable with, not what is wrong with what you are doing."
 
 Let him know it gets better. By high school, most kids stop teasing about ballet. Some kids start to be impressed by it. By college, ballet is a credential.
 

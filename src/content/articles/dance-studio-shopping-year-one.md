@@ -12,7 +12,7 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Saturday morning open house at the dance studio. Pink ballet shoes lined up by the front desk. A mom in a "Dance Mom" tank top filling out a clipboard.
+Saturday morning open house at the dance studio. Pink ballet shoes lined up by the front desk. A clipboard of sign-up sheets on the counter and a row of folding chairs along the lobby wall.
 
 The director, who introduced herself as a former regional pro, gave you a tour that highlighted the trophy wall and the new marley floor.
 

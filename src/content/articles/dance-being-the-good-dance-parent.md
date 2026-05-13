@@ -1,7 +1,7 @@
 ---
-title: "How to be a dance parent without becoming THAT dance parent"
-dek: "The dance studio lobby has a reputation. Here is how to be there without becoming the cliché."
-seoDescription: "Dance parent culture can be intense. Here is how to support your kid without becoming the parent everyone avoids in the lobby."
+title: "How to be the dance parent your kid wants in the lobby"
+dek: "The dance studio lobby is its own small community. Here is how to show up well in a space you will be in every week for years."
+seoDescription: "Dance lobbies have their own dynamics. Here is how to show up well in a space you will see the same parents in every week for years."
 bluf: "Good dance parents show up on time, keep their opinions about other kids to themselves, follow the studio's communication channels, and do not coach their kid in the parking lot. The lobby is not the place to talk about casting, technique, or competition results."
 topic: "communication"
 format: "essay"
@@ -12,15 +12,15 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-You have been sitting in this studio lobby for three years. You know everyone's name. You know which mom not to sit next to. You know which mom always gossips about casting in the bathroom line at competition.
+You have been sitting in this studio lobby for three years. You know everyone's name. You know who is easy to sit with and who is in a hurry. You know which conversations are about kids and which ones drift somewhere else.
 
 Tonight your daughter has an extra rehearsal. You have an hour to kill in a folding chair next to a coffee machine.
 
-Here is how to use that lobby time without becoming the cliché your daughter does not want to see in you.
+Here is how to use that lobby time in a way that makes the years easier on her and on you.
 
 ## The lobby is not a coffee shop
 
-The first thing to understand about dance parent culture is that the lobby is a small, contained space where everyone is going to see each other every week for a long time.
+The first thing to understand about the dance lobby is that it is a small, contained space where everyone will see each other every week for a long time.
 
 The kids will talk. The parents will talk. Conversations carry. Everyone will know what was said.
 
@@ -38,7 +38,7 @@ Do not coach your kid in the parking lot. They just finished a 90-minute class w
 
 Do not record other kids' performances and share them. Not at the studio. Not at competition. Not at recital. Other parents have not consented for their kids to be filmed by you.
 
-Do not show up to the lobby in a t-shirt that says "Dance Mom" or "I have rights as a parent." The cultural caricature is real. Wearing it on your chest just confirms it.
+Skip lobby t-shirts that announce a parent type. The lobby is small and you will be in it for years. The most-liked parents in any lobby are the ones who do not announce themselves before they sit down.
 
 ## A short list of things to do
 
@@ -100,7 +100,7 @@ The exception is when something is clearly wrong. A teacher said something inapp
 
 ## The competition weekend
 
-Competition weekends compress all of the dynamics of dance parent culture into 48 hours.
+Competition weekends compress all of the lobby dynamics into 48 hours.
 
 A few survival rules.
 

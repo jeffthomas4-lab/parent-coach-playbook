@@ -120,13 +120,13 @@ Take photos at the theater before the show. Bring family. The "kid in costume wi
 
 Do not let family watch the dress rehearsal. The show should be the show. Save the surprise.
 
-## Stage moms (and dads)
+## The parent lobby in December
 
-The Nutcracker season brings out the most intense version of dance parent culture. The lobby will be full of parents who have feelings about casting, costumes, and rehearsal schedules.
+Nutcracker season is the most intense stretch on the studio calendar, and the lobby reflects it. Parents have feelings about casting, costumes, and rehearsal schedules. Some of it spills into conversations between sets.
 
 Stay neutral. Be polite. Cheer for everyone's kids. Do not feed the gossip.
 
-You will see these parents for the next ten years. Make friends. Avoid drama.
+You will see these parents for the next ten years. Make friends. Steer clear of the drama you don't need to be in.
 
 ## After the run
 
