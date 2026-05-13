@@ -5,7 +5,7 @@ seoDescription: "They auditioned for the school musical. Or the dance recital. O
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"
-sport: "performing-arts"
+sport: "theater"
 age: "8-10"
 publishedAt: 2026-04-21
 featured: false

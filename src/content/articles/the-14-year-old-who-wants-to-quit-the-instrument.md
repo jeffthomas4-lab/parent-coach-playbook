@@ -5,7 +5,7 @@ seoDescription: "Your kid has been taking piano lessons since they were 8."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"
-sport: "performing-arts"
+sport: "band"
 age: "13-14"
 publishedAt: 2026-04-28
 featured: false

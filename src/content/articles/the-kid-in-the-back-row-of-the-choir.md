@@ -5,7 +5,7 @@ seoDescription: "They're in the back row. They don't have a solo. They're one of
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"
-sport: "performing-arts"
+sport: "choir"
 age: "8-10"
 publishedAt: 2026-04-24
 featured: false

@@ -5,7 +5,7 @@ seoDescription: "You've joined the performing arts parent community."
 topic: "communication"
 format: "essay"
 phase: "team-parent"
-sport: "performing-arts"
+sport: "dance"
 age: "all-ages"
 publishedAt: 2026-04-25
 featured: false

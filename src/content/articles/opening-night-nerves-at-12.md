@@ -5,7 +5,7 @@ seoDescription: "Your kid has been rehearsing for two months. They know their li
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"
-sport: "performing-arts"
+sport: "theater"
 age: "11-12"
 publishedAt: 2026-04-26
 featured: false

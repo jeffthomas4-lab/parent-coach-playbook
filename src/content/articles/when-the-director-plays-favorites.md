@@ -5,7 +5,7 @@ seoDescription: "Your kid auditioned for the spring musical."
 topic: "communication"
 format: "essay"
 phase: "team-parent"
-sport: "performing-arts"
+sport: "theater"
 age: "13-14"
 publishedAt: 2026-04-30
 featured: false

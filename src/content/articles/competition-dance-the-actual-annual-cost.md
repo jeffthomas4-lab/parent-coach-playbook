@@ -5,7 +5,7 @@ seoDescription: "Competition. As in nationals. As in real money."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"
-sport: "performing-arts"
+sport: "dance"
 age: "11-12"
 publishedAt: 2026-04-29
 featured: false

@@ -5,7 +5,7 @@ seoDescription: "Your kid auditioned for the school musical."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"
-sport: "performing-arts"
+sport: "theater"
 age: "11-12"
 publishedAt: 2026-04-22
 featured: false

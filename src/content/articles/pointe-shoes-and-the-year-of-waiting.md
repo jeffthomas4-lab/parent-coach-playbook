@@ -5,7 +5,7 @@ seoDescription: "Your daughter or son has been in dance class for four years."
 topic: "the-hard-stuff"
 format: "essay"
 phase: "drive-home"
-sport: "performing-arts"
+sport: "ballet"
 age: "11-12"
 publishedAt: 2026-04-27
 featured: false

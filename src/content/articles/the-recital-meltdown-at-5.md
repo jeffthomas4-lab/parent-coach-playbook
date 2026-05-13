@@ -5,7 +5,7 @@ seoDescription: "Your five-year-old has been practicing piano for six months."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-there"
-sport: "performing-arts"
+sport: "dance"
 age: "5-7"
 publishedAt: 2026-04-23
 featured: false
