@@ -1,14 +1,20 @@
 ---
-title: "The audition season for year-round ballet programs"
-dek: "Some pre-professional kids transition to a year-round residential program in middle or high school. Here is what the audition season looks like and how to decide if it is the right move."
-seoDescription: "Year-round ballet programs require auditions in winter. Here is what to expect and how to decide if it is the right path."
-bluf: "Year-round ballet programs offer full-time training, sometimes including residential living for students aged 14 and up. The audition process runs late winter through spring. Acceptance often involves financial aid. Choosing this path is one of the bigger decisions a ballet family makes. The right kid for this path is rare."
-topic: "tryouts"
-format: "essay"
-phase: "team-parent"
-sport: "ballet"
-age: "13-14"
-publishedAt: "2026-05-12"
+title: The audition season for year-round ballet programs
+dek: Some pre-professional kids transition to a year-round residential program in
+  middle or high school. Here is what the audition season looks like and how to decide
+  if it is the right move.
+seoDescription: Year-round ballet programs require auditions in winter. Here is what
+  to expect and how to decide if it is the right path.
+bluf: Year-round ballet programs offer full-time training, sometimes including residential
+  living for students aged 14 and up. The audition process runs late winter through
+  spring. Acceptance often involves financial aid. Choosing this path is one of the
+  bigger decisions a ballet family makes. The right kid for this path is rare.
+topic: tryouts
+format: essay
+phase: team-parent
+sport: ballet
+age: 13-14
+publishedAt: '2026-05-12'
 featured: false
 ---
 

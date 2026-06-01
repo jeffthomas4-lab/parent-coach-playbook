@@ -1,13 +1,15 @@
 ---
-title: "When your kid's friend *quit* and your kid is asking why"
-dek: "The honest answer that doesn't shame the friend. What the question is actually about. How to keep your kid's reasons their own."
-seoDescription: "Your kid finds out at the lunch table. Mason quit baseball. Just like that. He's not going to the tryout next week."
-topic: "the-hard-stuff"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-06-19
+title: When your kid's friend *quit* and your kid is asking why
+dek: The honest answer that doesn't shame the friend. What the question is actually
+  about. How to keep your kid's reasons their own.
+seoDescription: Your kid finds out at the lunch table. Mason quit baseball. Just like
+  that. He's not going to the tryout next week.
+topic: the-hard-stuff
+format: essay
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

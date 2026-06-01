@@ -1,14 +1,17 @@
 ---
-title: "The 13-14 Sportsmanship Rules"
-dek: "What actually gets kids in trouble."
-seoDescription: "At thirteen and fourteen, sportsmanship rules get enforced harder. Coaches are watching. Refs are watching. And there are actual penalties."
-topic: "rules-of-play"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "13-14"
+title: The 13-14 Sportsmanship Rules
+dek: What actually gets kids in trouble.
+seoDescription: At thirteen and fourteen, sportsmanship rules get enforced harder.
+  Coaches are watching. Refs are watching. And there are actual penalties.
+topic: rules-of-play
+format: note
+phase: game
+sport: multi-sport
+age: 13-14
 publishedAt: 2026-02-13
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-18
 ---
 
 At thirteen and fourteen, sportsmanship rules get enforced harder. Coaches are watching. Refs are watching. And there are actual penalties.

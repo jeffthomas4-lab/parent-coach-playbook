@@ -1,14 +1,17 @@
 ---
-title: "The 13-14 Practice Plan That Respects Their Time"
-dek: "Fifty minutes. One problem. One focus. They know when you're wasting it."
-seoDescription: "It was early October and we had a clear problem. We were leaving runners on in crucial moments. Not because of lack of skill."
-topic: "season-ops"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "13-14"
+title: The 13-14 Practice Plan That Respects Their Time
+dek: Fifty minutes. One problem. One focus. They know when you're wasting it.
+seoDescription: It was early October and we had a clear problem. We were leaving runners
+  on in crucial moments. Not because of lack of skill.
+topic: season-ops
+format: note
+phase: game
+sport: multi-sport
+age: 13-14
 publishedAt: 2026-02-09
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-11
 ---
 
 It was early October and we had a clear problem. We were leaving runners on in crucial moments. Not because of lack of skill. Because we weren't converting the chances we actually got. So we built a practice around solving that one thing. Fifty minutes. That's all we had before they had to leave.

@@ -1,14 +1,18 @@
 ---
-title: "Talking to Your Kid About the Coach They Don't Like"
-dek: "They're not wrong to be frustrated. Here's how to help them work with it anyway."
-seoDescription: "Our 15-year-old came home frustrated. \"Coach yelled at me.\" \"Coach doesn't like me.\" \"Coach is unfair.\" Our instinct was to either defend the coach or take our..."
-topic: "communication"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "15-plus"
+title: Talking to Your Kid About the Coach They Don't Like
+dek: They're not wrong to be frustrated. Here's how to help them work with it anyway.
+seoDescription: Our 15-year-old came home frustrated. "Coach yelled at me." "Coach
+  doesn't like me." "Coach is unfair." Our instinct was to either defend the coach
+  or take our...
+topic: communication
+format: note
+phase: drive-home
+sport: multi-sport
+age: 15-plus
 publishedAt: 2026-02-10
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-14
 ---
 
 Our 15-year-old came home frustrated. "Coach yelled at me." "Coach doesn't like me." "Coach is unfair." Our instinct was to either defend the coach or take our kid's side.

@@ -1,13 +1,15 @@
 ---
-title: "The kid who is bored in the off-season"
-dek: "Boredom in the first off-season week is a feature, not a problem. The 14-day rule before you sign up for another league."
-seoDescription: "The first week off the season is a slow-motion identity adjustment. Kids who built their week around a sport for four months don't know what to do with..."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-05-18
+title: The kid who is bored in the off-season
+dek: Boredom in the first off-season week is a feature, not a problem. The 14-day
+  rule before you sign up for another league.
+seoDescription: The first week off the season is a slow-motion identity adjustment.
+  Kids who built their week around a sport for four months don't know what to do with...
+topic: the-hard-stuff
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-22
   status: claude-reviewed
-  reviewerNotes: "The 14-day rule is the genuinely useful frame."
+  reviewerNotes: The 14-day rule is the genuinely useful frame.
 ---
 
 The first week off the season is a slow-motion identity adjustment. Kids who built their week around a sport for four months don't know what to do with themselves. They mope. They pick fights with siblings. They say "I'm bored" 11 times a day.

@@ -1,13 +1,15 @@
 ---
-title: "The end-of-season carpool conversation"
-dek: "How to thank the carpool partner without making it weird, and how to talk about next season's logistics before everyone forgets who drove who in May."
-seoDescription: "The carpool you and another family ran for four months is one of the under-thanked relationships in youth sports."
-topic: "communication"
-format: "note"
-phase: "team-parent"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-05-17
+title: The end-of-season carpool conversation
+dek: How to thank the carpool partner without making it weird, and how to talk about
+  next season's logistics before everyone forgets who drove who in May.
+seoDescription: The carpool you and another family ran for four months is one of the
+  under-thanked relationships in youth sports.
+topic: communication
+format: note
+phase: team-parent
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-19
   status: claude-reviewed
-  reviewerNotes: "Quietly important season-ops piece."
+  reviewerNotes: Quietly important season-ops piece.
 ---
 
 The carpool you and another family ran for four months is one of the under-thanked relationships in youth sports. Whoever picked your kid up on the rainy Tuesday in March did you a real favor.

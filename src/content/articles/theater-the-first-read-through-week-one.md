@@ -12,62 +12,38 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-First rehearsal was today. You picked her up at 5:30 in the parking lot behind the auditorium. She got in with a marked-up script in a folder and her face slightly closed.
+The first day of rehearsals always sounds more exciting than it actually is. You pick her up at five-thirty behind the auditorium expecting her to come out buzzing — she got the part, this is the thing she wanted, she's been talking about it for two weeks — and instead she climbs in with a marked-up script in her lap and a face that's gone a little quiet. You ask how it went and she shrugs. They sat in a circle and read it. That was it.
 
-You asked the question on the drive home. How was it. She shrugged. We just sat in a circle and read it. That was it.
-
-You expected her to be electric. She is not. Welcome to the first week of theater rehearsals. The boredom is the work.
+If you haven't lived through the first week of a school production before, here's the part nobody warns you about: the early rehearsals are slow on purpose. The kid who comes home flat after the first one isn't disappointed in the show — she's just inside the process, and the process is mostly listening.
 
 ## The table read
 
-Day one of most school and community productions is a table read. Everyone sits in folding chairs in a circle. The director reads stage directions. The cast reads their lines.
+Day one of almost any school or community production is what's called a table read. Everyone gathers around in folding chairs, the director reads the stage directions out loud, and the cast reads their lines straight through with no acting yet. Kids stumble over words they've never said out loud before, funny lines land flat, and the dramatic moments feel awkward. It's not supposed to be polished, and if your kid expected it to be, she'll come home feeling like nothing happened.
 
-This is not acting yet. Nobody is "in character." Kids stumble over words. The funny lines do not get laughs. The dramatic lines feel flat.
-
-Your kid will come home and tell you nothing happened. That is true and also wrong. A great table read does the most important job in the room: it tells the director who can read a script and who is going to need help with the language. Your kid is being evaluated. They just do not know it.
+What she doesn't know yet is that the table read is its own kind of audition. The director is watching who can read a script cleanly, who's following along, who's listening even when other people are reading. By the end of that first day the director has already made a quiet mental list of who's solid and who's going to need help. Your kid is being evaluated — she just doesn't know it.
 
 ## Blocking starts in week two
 
-Blocking is where actors learn where to stand, when to move, when to sit, when to cross. It is choreography for spoken scenes.
+After the table read, the next stretch is blocking, which is the choreography of where actors stand, when they move, when they sit, when they cross. Most school productions block one scene at a time over weeks two and three, and your kid will spend long stretches just standing on her mark while the director figures out where six other people go. She'll repeat the same five lines fourteen times so the choreographer can adjust a transition behind her.
 
-Most school productions block one scene at a time across week two and three. Your kid will spend an hour standing in one spot while the director figures out where six other people go. They will then repeat the same five lines fourteen times so the choreographer can adjust a transition.
-
-This is the most boring stretch of the entire production for a kid. It is also where everything is set. The blocking you learn in week two is the blocking you do on closing night.
+This is the most boring stretch of the entire production for a kid, and it's also where everything is set. The blocking she learns this week is the blocking she'll be doing on closing night. So even though it feels like nothing, it's everything.
 
 ## What the director is watching for
 
-Three things, mostly.
-
-First: did the kid memorize their lines on the schedule the director set. Most directors expect Act 1 off-book by week three or four. Lines come before everything else.
-
-Second: can the kid take direction. A director will say "try it slower" or "try it angrier" and watch what happens. Kids who can adjust on the fly get bigger moments. Kids who only have one delivery get cut down.
-
-Third: does the kid show up on time, ready, and quiet during scenes they are not in. The kid who is on their phone backstage is the kid who misses an entrance in week six.
+If you want to know what your kid is being judged on through the first month, it's three things, mostly in this order. The first is whether she's memorizing on schedule — most directors expect Act 1 off-book by week three or four, and the kids who fall behind on lines get cut down. The second is whether she can take direction. A good director will say "try it slower" or "try it angrier" and watch what happens; the kids who can adjust get bigger moments, and the kids who only have one delivery stay where they are. The third is the small stuff: showing up on time, being ready, staying quiet during scenes she isn't in. The kid who's on her phone backstage is the kid who misses an entrance in week six.
 
 ## What to ask on the drive home
 
-Stop asking "how was rehearsal." You will get nothing.
+Stop asking "how was rehearsal." You'll get nothing. The question is too big, and she doesn't know how to answer it. What works better is asking about something specific. What scene did you work on today, did anything change from last time. How many lines do you have memorized, are you on schedule or behind. Who else is in your scene, and are they keeping up with you. Did the director give you a note today, what was it, and did you do anything different the next time through.
 
-Try these instead.
-
-What scene did you work on today. Did anything change from last time.
-
-How many lines have you memorized so far. Are you on schedule or behind.
-
-Who else is in your scene. Are they ready or still using the script.
-
-Did the director give you a note. What was it. Did you do anything different the next time through.
-
-These questions tell you what is actually happening. They also signal to your kid that you understand the work. That changes the way they show up next week.
+Those questions tell you what's actually happening, and they also signal to her that you understand the work. That changes the way she shows up next week.
 
 ## When to worry
 
-A real first week looks like: a table read, an outline of the rehearsal schedule, maybe one scene blocked, a script in their backpack with notes on it, lines being memorized at night.
+A normal first week looks like this: a table read, an outline of the rehearsal schedule, maybe one scene blocked, a script in her backpack with notes on it, lines being memorized at night. If two weeks have gone by and she still doesn't have the schedule, doesn't know who's in her scenes, and has memorized zero lines, that's usually a problem with the production, not with her — disorganized productions are stressful for everyone in them.
 
-If your kid is two weeks in and they still do not have the schedule, do not know who is in their scenes, and have memorized zero lines, that is a problem. It usually means the production is disorganized, not that your kid is failing.
-
-If your kid is two weeks in and the script is in pristine condition with no notes on it, that is a different problem. It means they have not actually been at rehearsal mentally. Have a conversation.
+The other version of a problem looks different. If her script is pristine two weeks in, with no notes, no marks, no folded corners, she hasn't been at rehearsal mentally. That's a conversation worth having gently — not as a confrontation, but as a "what's going on for you right now."
 
 ## The week-one rule of thumb
 
-If they come home tired, slightly bored, and carrying a marked-up script, you are exactly where you should be. The fun does not start until tech week. That is six weeks away. Pace yourselves.
+If she comes home tired, a little bored, and carrying a marked-up script, you're exactly where you should be. The fun part doesn't start until tech week, and that's six weeks away. Pace yourselves.

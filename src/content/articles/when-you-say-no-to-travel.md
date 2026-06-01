@@ -1,14 +1,17 @@
 ---
-title: "When you say *no to travel* and feel guilty"
-dek: "He made the team. You're saying no. The guilt is real. The reasons are also real."
-seoDescription: "Your kid made the travel team. You looked at the cost, the schedule, the family calendar. You said no."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
+title: When you say *no to travel* and feel guilty
+dek: He made the team. You're saying no. The guilt is real. The reasons are also real.
+seoDescription: Your kid made the travel team. You looked at the cost, the schedule,
+  the family calendar. You said no.
+topic: rec-vs-travel
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-01
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-28
 ---
 
 Your kid made the travel team. You looked at the cost, the schedule, the family calendar. You said no.

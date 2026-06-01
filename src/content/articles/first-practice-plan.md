@@ -1,14 +1,17 @@
 ---
-title: "The First Practice Plan (5-7 Years Old)"
-dek: "Twenty-five minutes that work for this age group."
-seoDescription: "Twenty-five minutes is your window. Longer and you lose them to fatigue and distraction. Shorter and the practice feels incomplete."
-topic: "season-ops"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "5-7"
+title: The First Practice Plan (5-7 Years Old)
+dek: Twenty-five minutes that work for this age group.
+seoDescription: Twenty-five minutes is your window. Longer and you lose them to fatigue
+  and distraction. Shorter and the practice feels incomplete.
+topic: season-ops
+format: note
+phase: game
+sport: multi-sport
+age: 5-7
 publishedAt: 2026-01-05
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-03
 ---
 
 Twenty-five minutes is your window. Longer and you lose them to fatigue and distraction. Shorter and the practice feels incomplete. Here's what fits into that time.

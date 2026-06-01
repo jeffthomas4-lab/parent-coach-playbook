@@ -1,14 +1,16 @@
 ---
-title: "When the siblings play different sports and the schedules collide"
-dek: "One family, two kids, four practices a week, two games on Saturday at the same time on opposite sides of town. The honest triage."
-seoDescription: "Two kids, two sports, two seasons that overlap. Saturday morning has a soccer game in one town and a baseball game in another, both starting at 9:15."
-topic: "communication"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "logistics"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-05-30
+title: When the siblings play different sports and the schedules collide
+dek: One family, two kids, four practices a week, two games on Saturday at the same
+  time on opposite sides of town. The honest triage.
+seoDescription: Two kids, two sports, two seasons that overlap. Saturday morning has
+  a soccer game in one town and a baseball game in another, both starting at 9:15.
+topic: communication
+format: note
+phase: team-parent
+teamParentTopic: logistics
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -19,9 +21,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-07
   status: claude-reviewed
-  reviewerNotes: "Real life logistics. The triage rules are useful frames."
+  reviewerNotes: Real life logistics. The triage rules are useful frames.
 ---
 
 Two kids, two sports, two seasons that overlap. Saturday morning has a soccer game in one town and a baseball game in another, both starting at 9:15. Both kids notice if you don't show up.

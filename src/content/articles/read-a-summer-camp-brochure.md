@@ -1,13 +1,15 @@
 ---
-title: "How to read a *summer camp brochure* honestly"
-dek: "What the marketing language hides. The questions that surface what the camp actually does. The answers that should make you walk."
-seoDescription: "The summer camp brochure is a sales document. Glossy photos, smiling kids, \"elite training,\" and three pricing tiers."
-topic: "summer-camps"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-07-17
+title: How to read a *summer camp brochure* honestly
+dek: What the marketing language hides. The questions that surface what the camp actually
+  does. The answers that should make you walk.
+seoDescription: The summer camp brochure is a sales document. Glossy photos, smiling
+  kids, "elite training," and three pricing tiers.
+topic: summer-camps
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

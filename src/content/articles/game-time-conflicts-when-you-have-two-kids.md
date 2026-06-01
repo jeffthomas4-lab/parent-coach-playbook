@@ -1,14 +1,18 @@
 ---
-title: "*Game-time conflicts* when you have two kids"
-dek: "Both have games at 9am Saturday at different fields. The annual problem. Here is the system."
-seoDescription: "You have two kids. They both have games Saturday at 9am at different fields. You are two parents. You can split."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: '*Game-time conflicts* when you have two kids'
+dek: Both have games at 9am Saturday at different fields. The annual problem. Here
+  is the system.
+seoDescription: You have two kids. They both have games Saturday at 9am at different
+  fields. You are two parents. You can split.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-03-08
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-23
 ---
 
 You have two kids. They both have games Saturday at 9am at different fields. You are two parents. You can split.

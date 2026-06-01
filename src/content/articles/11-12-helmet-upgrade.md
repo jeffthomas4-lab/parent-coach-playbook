@@ -1,14 +1,17 @@
 ---
-title: "The 11-12 Helmet Upgrade Decision"
-dek: "When to replace what he has."
-seoDescription: "At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "football"
-age: "11-12"
+title: The 11-12 Helmet Upgrade Decision
+dek: When to replace what he has.
+seoDescription: At eleven to twelve, your kid is going to outgrow their helmet. The
+  question is whether you upgrade or buy new. It matters.
+topic: equipment
+format: note
+phase: drive-there
+sport: football
+age: 11-12
 publishedAt: 2026-02-02
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-29
 ---
 
 At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters.

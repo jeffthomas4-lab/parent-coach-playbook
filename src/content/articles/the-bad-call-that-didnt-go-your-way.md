@@ -1,14 +1,19 @@
 ---
-title: "The bad call that *didn't go your way*"
-dek: "The ref blew it. The team lost because of it. The kid is asking about it. What you say."
-seoDescription: "The ref made a bad call in the third quarter. The score change made the difference. Your team lost. Your kid is in the car saying that ref ruined the game."
-topic: "game-day"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
+title: The bad call that *didn't go your way*
+dek: The ref blew it. The team lost because of it. The kid is asking about it. What
+  you say.
+seoDescription: The ref made a bad call in the third quarter. The score change made
+  the difference. Your team lost. Your kid is in the car saying that ref ruined the
+  game.
+topic: game-day
+format: note
+phase: drive-home
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-18
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-26
 ---
 
 The ref made a bad call in the third quarter. The score change made the difference. Your team lost. Your kid is in the car saying *that ref ruined the game.*

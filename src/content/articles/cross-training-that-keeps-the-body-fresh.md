@@ -1,13 +1,16 @@
 ---
-title: "Cross-training that *keeps the body fresh*"
-dek: "Swimming, biking, hiking, pickup hoops. The summer activities that make the kid better at their sport without anyone calling it training."
-seoDescription: "The kid who plays one sport year-round is the kid who burns out and gets hurt. The kid who plays one sport in-season and does a different physical thing in the..."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-07-10
+title: Cross-training that *keeps the body fresh*
+dek: Swimming, biking, hiking, pickup hoops. The summer activities that make the kid
+  better at their sport without anyone calling it training.
+seoDescription: The kid who plays one sport year-round is the kid who burns out and
+  gets hurt. The kid who plays one sport in-season and does a different physical thing
+  in the...
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

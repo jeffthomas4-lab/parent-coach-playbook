@@ -1,14 +1,17 @@
 ---
-title: "Talking to a Parent Who's Coaching From the Stands"
-dek: "They're trying to help. They don't see what they're actually doing."
-seoDescription: "It was mid-season. One parent kept yelling coaching cues from the stands. \"Keep your feet moving!\" \"Talk to each other!\" We could feel the kids' attention..."
-topic: "communication"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "5-7"
+title: Talking to a Parent Who's Coaching From the Stands
+dek: They're trying to help. They don't see what they're actually doing.
+seoDescription: It was mid-season. One parent kept yelling coaching cues from the
+  stands. "Keep your feet moving!" "Talk to each other!" We could feel the kids' attention...
+topic: communication
+format: note
+phase: game
+sport: multi-sport
+age: 5-7
 publishedAt: 2026-01-20
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-13
 ---
 
 It was mid-season. One parent kept yelling coaching cues from the stands. "Keep your feet moving!" "Talk to each other!" We could feel the kids' attention split between the field and the bleachers. So we had a conversation.

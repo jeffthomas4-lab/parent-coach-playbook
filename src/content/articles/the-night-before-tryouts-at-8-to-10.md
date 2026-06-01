@@ -1,16 +1,21 @@
 ---
-title: "The night before tryouts at *8 to 10*"
-dek: "He's nervous. The dinner table is tense. The 8-10 version is different from the 5-7 version."
-seoDescription: "Your kid is nine. Tryouts are tomorrow morning. He is at the dinner table. He has not eaten much. He is asking too many questions."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: The night before tryouts at *8 to 10*
+dek: He's nervous. The dinner table is tense. The 8-10 version is different from the
+  5-7 version.
+seoDescription: Your kid is nine. Tryouts are tomorrow morning. He is at the dinner
+  table. He has not eaten much. He is asking too many questions.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-14
 featured: false
 hero: /illustrations/night-before-tryouts-bedroom.webp
-heroAlt: "A child's bedroom at night with a youth jersey laid out on the dresser, cleats by the door, and a glove on the bed."
+heroAlt: A child's bedroom at night with a youth jersey laid out on the dresser, cleats
+  by the door, and a glove on the bed.
+editorial:
+  claudeReviewedAt: 2026-04-20
 ---
 
 Your kid is nine. Tryouts are tomorrow morning. He is at the dinner table. He has not eaten much. He is asking too many questions.

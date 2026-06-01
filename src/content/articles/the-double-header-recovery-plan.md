@@ -1,14 +1,17 @@
 ---
-title: "The *double-header* recovery plan"
-dek: "Two games in one day. Two hours apart. The plan that gets the team through."
-seoDescription: "Saturday tournament. Two games. 9am and 1pm. Three hours between final whistle of game one and warm-up of game two."
-topic: "game-day"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "11-12"
+title: The *double-header* recovery plan
+dek: Two games in one day. Two hours apart. The plan that gets the team through.
+seoDescription: Saturday tournament. Two games. 9am and 1pm. Three hours between final
+  whistle of game one and warm-up of game two.
+topic: game-day
+format: note
+phase: game
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-16
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-23
 ---
 
 Saturday tournament. Two games. 9am and 1pm. Three hours between final whistle of game one and warm-up of game two.

@@ -1,14 +1,17 @@
 ---
-title: "When your *gym bag stinks* and you can't remember why"
-dek: "There is something in there. You don't want to find it. Here is the system."
-seoDescription: "You opened the gym bag for Tuesday's practice. The smell hit you. Something has been in there since the last weekend. You don't want to know what."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: When your *gym bag stinks* and you can't remember why
+dek: There is something in there. You don't want to find it. Here is the system.
+seoDescription: You opened the gym bag for Tuesday's practice. The smell hit you.
+  Something has been in there since the last weekend. You don't want to know what.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-03-04
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-17
 ---
 
 You opened the gym bag for Tuesday's practice. The smell hit you. Something has been in there since the last weekend. You don't want to know what.

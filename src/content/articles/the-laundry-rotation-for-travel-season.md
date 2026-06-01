@@ -1,15 +1,18 @@
 ---
-title: "The *laundry rotation* for travel season"
-dek: "Two practices, two games, three jerseys. The cycle that holds."
-seoDescription: "Travel season hits hard on laundry. Two practices a week. Two games on weekends. Tournaments. Two complete uniforms. Sweatpants for warm-up. White socks."
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "logistics"
-sport: "multi-sport"
-age: "11-12"
+title: The *laundry rotation* for travel season
+dek: Two practices, two games, three jerseys. The cycle that holds.
+seoDescription: Travel season hits hard on laundry. Two practices a week. Two games
+  on weekends. Tournaments. Two complete uniforms. Sweatpants for warm-up. White socks.
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: logistics
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-03-03
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-15
 ---
 
 Travel season hits hard on laundry. Two practices a week. Two games on weekends. Tournaments. Two complete uniforms. Sweatpants for warm-up. White socks. Black socks. Game-day socks.

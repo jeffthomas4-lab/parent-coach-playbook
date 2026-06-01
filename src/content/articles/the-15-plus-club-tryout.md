@@ -1,14 +1,17 @@
 ---
-title: "The *15+ club tryout* is a different beast"
-dek: "Higher stakes. Older kids. More money. The differences from rec or travel tryouts."
-seoDescription: "Your kid is fifteen. He's tried out for rec teams, travel teams, school teams. He's now trying out for a 15+ elite club. Everything is different."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "15-plus"
+title: The *15+ club tryout* is a different beast
+dek: Higher stakes. Older kids. More money. The differences from rec or travel tryouts.
+seoDescription: Your kid is fifteen. He's tried out for rec teams, travel teams, school
+  teams. He's now trying out for a 15+ elite club. Everything is different.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 15-plus
 publishedAt: 2026-02-06
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-07
 ---
 
 Your kid is fifteen. He's tried out for rec teams, travel teams, school teams. He's now trying out for a 15+ elite club. Everything is different.

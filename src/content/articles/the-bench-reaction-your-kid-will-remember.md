@@ -1,14 +1,17 @@
 ---
-title: "The *bench reaction* your kid will remember"
-dek: "He got pulled. He's on the bench. His face is checking yours. The reaction matters."
-seoDescription: "Your son just got pulled. He's walking to the bench. He looks across the field at you."
-topic: "game-day"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "all-ages"
+title: The *bench reaction* your kid will remember
+dek: He got pulled. He's on the bench. His face is checking yours. The reaction matters.
+seoDescription: Your son just got pulled. He's walking to the bench. He looks across
+  the field at you.
+topic: game-day
+format: note
+phase: game
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-22
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-03
 ---
 
 Your son just got pulled. He's walking to the bench. He looks across the field at you.

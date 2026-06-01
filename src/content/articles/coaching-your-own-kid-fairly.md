@@ -1,15 +1,22 @@
 ---
-title: "How to know if you're *actually* coaching your kid fairly"
-seoTitle: "How to coach your own kid fairly — the test that works"
-seoDescription: "Most parent-coaches drift toward overcorrecting or undercorrecting their own kid. The simple test that tells you which one you're doing and how to fix it in two weeks."
-dek: "Most parent-coaches go one of two ways. Neither one is fair. Here's the test that tells you which side you're on, and the small habits that move you back to the middle."
-bluf: "Don't aim for perfectly fair. Aim for predictable. Same playing-time formula every game. Same correction style for every kid in every situation. Predictability solves the perception problem better than hand-wringing about whether you're hard enough on your own kid. The test is whether the other parents can predict your decisions."
-topic: "the-hard-stuff"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-07-02
+title: How to know if you're *actually* coaching your kid fairly
+seoTitle: How to coach your own kid fairly — the test that works
+seoDescription: Most parent-coaches drift toward overcorrecting or undercorrecting
+  their own kid. The simple test that tells you which one you're doing and how to
+  fix it in two weeks.
+dek: Most parent-coaches go one of two ways. Neither one is fair. Here's the test
+  that tells you which side you're on, and the small habits that move you back to
+  the middle.
+bluf: Don't aim for perfectly fair. Aim for predictable. Same playing-time formula
+  every game. Same correction style for every kid in every situation. Predictability
+  solves the perception problem better than hand-wringing about whether you're hard
+  enough on your own kid. The test is whether the other parents can predict your decisions.
+topic: the-hard-stuff
+format: essay
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

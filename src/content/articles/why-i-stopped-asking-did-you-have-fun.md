@@ -1,13 +1,16 @@
 ---
-title: "Why we stopped asking *\"did you have fun?\"*"
-seoDescription: "I asked kids this question for years. Did you have fun? After every game. After every practice. After the school play. The kids always said yes."
-format: "note"
+title: Why we stopped asking *"did you have fun?"*
+seoDescription: I asked kids this question for years. Did you have fun? After every
+  game. After every practice. After the school play. The kids always said yes.
+format: note
 issue: 5
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
-seasonPhase: "mid"
+phase: drive-home
+sport: multi-sport
+age: 8-10
+seasonPhase: mid
 publishedAt: 2026-03-05
+editorial:
+  claudeReviewedAt: 2026-05-19
 ---
 
 I asked kids this question for years. *Did you have fun?* After every game. After every practice. After the school play. The kids always said yes. Even when they didn't.

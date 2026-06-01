@@ -1,14 +1,18 @@
 ---
-title: "When a parent *yells at the ref*"
-dek: "Could be your team. Could be the other team. Could be you. The rules."
-seoDescription: "A parent in the bleachers stood up and yelled at the referee. The whole field heard it. The kids on the field heard it. The other parents are quietly mortified."
-topic: "game-day"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "all-ages"
+title: When a parent *yells at the ref*
+dek: Could be your team. Could be the other team. Could be you. The rules.
+seoDescription: A parent in the bleachers stood up and yelled at the referee. The
+  whole field heard it. The kids on the field heard it. The other parents are quietly
+  mortified.
+topic: game-day
+format: note
+phase: game
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-21
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-02
 ---
 
 A parent in the bleachers stood up and yelled at the referee. The whole field heard it. The kids on the field heard it. The other parents are quietly mortified.

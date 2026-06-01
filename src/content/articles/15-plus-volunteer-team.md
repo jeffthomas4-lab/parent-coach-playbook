@@ -1,14 +1,17 @@
 ---
-title: "The 15-Plus Volunteer Team You Might Not Have"
-dek: "The kids who aged out still want to be here. Ask them."
-seoDescription: "It was March and we were running twelve practices a week across three age groups. We needed help but the budget was flat."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "15-plus"
+title: The 15-Plus Volunteer Team You Might Not Have
+dek: The kids who aged out still want to be here. Ask them.
+seoDescription: It was March and we were running twelve practices a week across three
+  age groups. We needed help but the budget was flat.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 15-plus
 publishedAt: 2026-02-20
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-29
 ---
 
 It was March and we were running twelve practices a week across three age groups. We needed help but the budget was flat. So we sent an email to our former players. We asked if anyone with a job and a car and a free Thursday evening wanted to run one drill station. Five said yes.

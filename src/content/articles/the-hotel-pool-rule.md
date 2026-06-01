@@ -1,14 +1,17 @@
 ---
-title: "The *hotel pool rule*"
-dek: "Tournament weekend. Hotel pool. Twelve kids. The rule that prevents disaster."
-seoDescription: "Tournament weekend. Friday night. The team has checked in. Twelve kids hit the pool at 8pm."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: The *hotel pool rule*
+dek: Tournament weekend. Hotel pool. Twelve kids. The rule that prevents disaster.
+seoDescription: Tournament weekend. Friday night. The team has checked in. Twelve
+  kids hit the pool at 8pm.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-03-06
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-21
 ---
 
 Tournament weekend. Friday night. The team has checked in. Twelve kids hit the pool at 8pm.

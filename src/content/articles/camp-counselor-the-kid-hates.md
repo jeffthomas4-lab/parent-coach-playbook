@@ -1,13 +1,15 @@
 ---
-title: "The camp counselor your kid hates"
-dek: "Day three at camp. The kid calls home. They hate the counselor. The 10-minute conversation that helps, and the one that hurts."
-seoDescription: "The Wednesday-night call from camp: \"I hate my counselor. They're so mean. Can you come get me?\""
-topic: "summer-camps"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-06-04
+title: The camp counselor your kid hates
+dek: Day three at camp. The kid calls home. They hate the counselor. The 10-minute
+  conversation that helps, and the one that hurts.
+seoDescription: 'The Wednesday-night call from camp: "I hate my counselor. They''re
+  so mean. Can you come get me?"'
+topic: summer-camps
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-28
   status: claude-reviewed
-  reviewerNotes: "Real and useful. Distinguishes between annoyance and actual concern correctly."
+  reviewerNotes: Real and useful. Distinguishes between annoyance and actual concern
+    correctly.
 ---
 
 The Wednesday-night call from camp: "I hate my counselor. They're so mean. Can you come get me?"

@@ -1,14 +1,16 @@
 ---
-title: "The team's social-media rules for the summer"
-dek: "What to post and not post about your kid's team between June and August. The mistakes that explode in fall."
-seoDescription: "The team is officially off in the summer. The team chat goes quiet. The Instagram account stops posting."
-topic: "communication"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "communication"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-06-02
+title: The team's social-media rules for the summer
+dek: What to post and not post about your kid's team between June and August. The
+  mistakes that explode in fall.
+seoDescription: The team is officially off in the summer. The team chat goes quiet.
+  The Instagram account stops posting.
+topic: communication
+format: note
+phase: team-parent
+teamParentTopic: communication
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -19,9 +21,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-25
   status: claude-reviewed
-  reviewerNotes: "Practical and current to the platform reality."
+  reviewerNotes: Practical and current to the platform reality.
 ---
 
 The team is officially off in the summer. The team chat goes quiet. The Instagram account stops posting. But the parents and the kids keep using social media, and what gets posted in June can detonate in August.

@@ -1,13 +1,15 @@
 ---
-title: "The camp counselor your kid *hates*"
-dek: "Day three. The counselor singled them out. The kid wants to come home. The conversation that doesn't blow up the week."
-seoDescription: "Day-three calls from camp are common. The counselor doesn't like me. Can I come home?"
-topic: "summer-camps"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-07-24
+title: The camp counselor your kid *hates*
+dek: Day three. The counselor singled them out. The kid wants to come home. The conversation
+  that doesn't blow up the week.
+seoDescription: Day-three calls from camp are common. The counselor doesn't like me.
+  Can I come home?
+topic: summer-camps
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

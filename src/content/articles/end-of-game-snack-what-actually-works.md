@@ -1,15 +1,19 @@
 ---
-title: "End-of-game snack. *What actually works*"
-dek: "Six-year-olds. Twenty minutes after the whistle. The snacks they will actually eat."
-seoDescription: "You signed up for snack. You are at the grocery store. You don't know what to bring."
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "logistics"
-sport: "multi-sport"
-age: "5-7"
+title: End-of-game snack. *What actually works*
+dek: Six-year-olds. Twenty minutes after the whistle. The snacks they will actually
+  eat.
+seoDescription: You signed up for snack. You are at the grocery store. You don't know
+  what to bring.
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: logistics
+sport: multi-sport
+age: 5-7
 publishedAt: 2026-03-10
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-27
 ---
 
 You signed up for snack. You are at the grocery store. You don't know what to bring.

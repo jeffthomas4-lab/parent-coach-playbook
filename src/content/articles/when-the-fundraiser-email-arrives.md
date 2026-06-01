@@ -1,15 +1,18 @@
 ---
-title: "When the *fundraiser email* arrives"
-dek: "Snap Raise. Pizza nights. The auction. The four kinds and what to do about each."
-seoDescription: "The fundraiser email lands. It is asking for something. Money. Time. Your contact list. Sometimes all three."
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "money"
-sport: "multi-sport"
-age: "all-ages"
+title: When the *fundraiser email* arrives
+dek: Snap Raise. Pizza nights. The auction. The four kinds and what to do about each.
+seoDescription: The fundraiser email lands. It is asking for something. Money. Time.
+  Your contact list. Sometimes all three.
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: money
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-28
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-11
 ---
 
 The fundraiser email lands. It is asking for something. Money. Time. Your contact list. Sometimes all three.

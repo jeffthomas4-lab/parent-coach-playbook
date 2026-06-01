@@ -1,14 +1,17 @@
 ---
-title: "The *first travel tournament*. What no one warns you about"
-dek: "Three days. Five games. A hotel. The honest preview."
-seoDescription: "You signed up for travel. The first tournament is in two weeks. You don't know what you're walking into."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: The *first travel tournament*. What no one warns you about
+dek: Three days. Five games. A hotel. The honest preview.
+seoDescription: You signed up for travel. The first tournament is in two weeks. You
+  don't know what you're walking into.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-03
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-31
 ---
 
 You signed up for travel. The first tournament is in two weeks. You don't know what you're walking into.

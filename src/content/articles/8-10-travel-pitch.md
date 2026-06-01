@@ -1,14 +1,18 @@
 ---
-title: "The 8-10 First Travel-Team Pitch"
-dek: "What to listen for. What to ask."
-seoDescription: "At eight to ten, you'll get the first pitch to move your kid to a travel team. A coach will tell you they're special, they're ready, the travel program is..."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: The 8-10 First Travel-Team Pitch
+dek: What to listen for. What to ask.
+seoDescription: At eight to ten, you'll get the first pitch to move your kid to a
+  travel team. A coach will tell you they're special, they're ready, the travel program
+  is...
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-01-22
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-14
 ---
 
 At eight to ten, you'll get the first pitch to move your kid to a travel team. A coach will tell you they're special, they're ready, the travel program is where the real development happens. Listen hard. Ask specific questions.

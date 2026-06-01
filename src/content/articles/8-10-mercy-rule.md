@@ -1,14 +1,17 @@
 ---
-title: "The 8-10 Mercy Rule and Why It's a Feature"
-dek: "Competition is good. Running up the score is not. The mercy rule teaches both."
-seoDescription: "It was a Saturday in March. One team came in with a complete roster and batting cages during the week."
-topic: "rules-of-play"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "8-10"
+title: The 8-10 Mercy Rule and Why It's a Feature
+dek: Competition is good. Running up the score is not. The mercy rule teaches both.
+seoDescription: It was a Saturday in March. One team came in with a complete roster
+  and batting cages during the week.
+topic: rules-of-play
+format: note
+phase: game
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-01-24
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-17
 ---
 
 It was a Saturday in March. One team came in with a complete roster and batting cages during the week. The other team was half nine-year-olds playing tee-ball for the first time. By the third inning, the score was 11-1 and one set of parents was watching their kid check out emotionally while the other set kept adding up the runs.

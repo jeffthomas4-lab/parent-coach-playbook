@@ -1,16 +1,22 @@
 ---
-title: "After the cut. *The 24-hour rule*"
-dek: "Don't make any decisions in the first 24 hours. The rule that prevents most regrets."
-bluf: "Don't make any decisions in the first 24 hours after a cut. Don't email the coach. Don't switch leagues. Don't promise private lessons. The kid isn't ready, you aren't ready, and any decision made tonight is one you'll undo in a week. Sit. Wait. Talk in the morning."
-topic: "tryouts"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
+title: After the cut. *The 24-hour rule*
+dek: Don't make any decisions in the first 24 hours. The rule that prevents most regrets.
+bluf: Don't make any decisions in the first 24 hours after a cut. Don't email the
+  coach. Don't switch leagues. Don't promise private lessons. The kid isn't ready,
+  you aren't ready, and any decision made tonight is one you'll undo in a week. Sit.
+  Wait. Talk in the morning.
+topic: tryouts
+format: note
+phase: drive-home
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-05
 featured: false
 hero: /illustrations/the-post-cut-porch.webp
-heroAlt: "A teenager sitting on a porch step at dusk, head down, baseball glove on the boards beside them. A parent visible just inside the front door, not approaching."
+heroAlt: A teenager sitting on a porch step at dusk, head down, baseball glove on
+  the boards beside them. A parent visible just inside the front door, not approaching.
+editorial:
+  claudeReviewedAt: 2026-04-04
 ---
 
 The cuts list went up. Your kid wasn't on it. The next 24 hours, you will be tempted to do several things. Don't.

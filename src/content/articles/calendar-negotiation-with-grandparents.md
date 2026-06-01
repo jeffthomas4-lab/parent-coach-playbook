@@ -1,13 +1,16 @@
 ---
-title: "The *calendar negotiation* with grandparents"
-dek: "They want the kids for two weeks in July. The travel team has nationals that week. The conversation that doesn't blow up the family."
-seoDescription: "Grandma planned the family trip in March. The travel coach added a tournament in April. They overlap. Grandma is upset. The team is expecting your kid."
-topic: "communication"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-07-19
+title: The *calendar negotiation* with grandparents
+dek: They want the kids for two weeks in July. The travel team has nationals that
+  week. The conversation that doesn't blow up the family.
+seoDescription: Grandma planned the family trip in March. The travel coach added a
+  tournament in April. They overlap. Grandma is upset. The team is expecting your
+  kid.
+topic: communication
+format: note
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

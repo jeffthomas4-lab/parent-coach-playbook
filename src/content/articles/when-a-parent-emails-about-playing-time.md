@@ -1,14 +1,17 @@
 ---
-title: "The 8-10 Ages: When a Parent Emails About Playing Time"
-dek: "They're asking a fair question. Here's the answer structure that works."
-seoDescription: "This email comes in during week two. \"My kid isn't getting much playing time. What can we do to help him improve?\""
-topic: "communication"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
+title: 'The 8-10 Ages: When a Parent Emails About Playing Time'
+dek: They're asking a fair question. Here's the answer structure that works.
+seoDescription: This email comes in during week two. "My kid isn't getting much playing
+  time. What can we do to help him improve?"
+topic: communication
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-01-27
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-22
 ---
 
 This email comes in during week two. "My kid isn't getting much playing time. What can we do to help him improve?"

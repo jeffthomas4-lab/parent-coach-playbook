@@ -1,13 +1,14 @@
 ---
-title: "The pre-season meeting with the *new coach*"
-dek: "Twenty minutes. Two questions to ask. One thing to never bring up."
-seoDescription: "The new coach scheduled a parent meeting before the season. Most parents bring up playing time. Most coaches mentally tune out within 90 seconds."
-topic: "communication"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-07-21
+title: The pre-season meeting with the *new coach*
+dek: Twenty minutes. Two questions to ask. One thing to never bring up.
+seoDescription: The new coach scheduled a parent meeting before the season. Most parents
+  bring up playing time. Most coaches mentally tune out within 90 seconds.
+topic: communication
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

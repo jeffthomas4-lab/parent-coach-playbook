@@ -1,13 +1,15 @@
 ---
-title: "The *summer showcase* question"
-dek: "When 'showcase' means real exposure and when it means $1,200 to play games for nobody. The honest read for parents being sold."
-seoDescription: "The summer showcase pitch sounds like recruiting magic. College coaches will be there. Your kid will be seen. Pay the entry fee."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "13-14"
-publishedAt: 2026-07-16
+title: The *summer showcase* question
+dek: When 'showcase' means real exposure and when it means $1,200 to play games for
+  nobody. The honest read for parents being sold.
+seoDescription: The summer showcase pitch sounds like recruiting magic. College coaches
+  will be there. Your kid will be seen. Pay the entry fee.
+topic: the-hard-stuff
+format: note
+phase: drive-there
+sport: multi-sport
+age: 13-14
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

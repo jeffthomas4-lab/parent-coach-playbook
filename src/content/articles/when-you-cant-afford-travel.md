@@ -1,14 +1,18 @@
 ---
-title: "When you *can't afford travel* but everyone else is going"
-dek: "The financial reality. The honest conversation. The path that doesn't require pretending."
-seoDescription: "Your kid made the travel team. The financial commitment is $8,000 to $12,000 a year. Your family can't sustain that without major sacrifice."
-topic: "rec-vs-travel"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
+title: When you *can't afford travel* but everyone else is going
+dek: The financial reality. The honest conversation. The path that doesn't require
+  pretending.
+seoDescription: Your kid made the travel team. The financial commitment is $8,000
+  to $12,000 a year. Your family can't sustain that without major sacrifice.
+topic: rec-vs-travel
+format: essay
+phase: drive-home
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-28
 featured: true
+editorial:
+  claudeReviewedAt: 2026-03-24
 ---
 
 Your kid made the travel team. The financial commitment is $8,000 to $12,000 a year. Your family can't sustain that without major sacrifice.

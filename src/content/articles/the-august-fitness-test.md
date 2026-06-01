@@ -1,13 +1,15 @@
 ---
-title: "The August *fitness test*"
-dek: "Two weeks before tryouts. Conditioning matters more than skill at this point. The week-by-week to be ready."
-seoDescription: "Most fall sports tryouts include a fitness component. A timed mile, a beep test, a yo-yo, shuttle runs."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "13-14"
-publishedAt: 2026-07-22
+title: The August *fitness test*
+dek: Two weeks before tryouts. Conditioning matters more than skill at this point.
+  The week-by-week to be ready.
+seoDescription: Most fall sports tryouts include a fitness component. A timed mile,
+  a beep test, a yo-yo, shuttle runs.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 13-14
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

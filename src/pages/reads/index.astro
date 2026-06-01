@@ -3,12 +3,12 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TOPICS } from '../../data/site';
 import TopicIcon from '../../components/TopicIcon.astro';
-import { isLive } from '../../lib/publishFilter';
+import { isLive, freshnessDate, wasUpdated } from '../../lib/publishFilter';
 import { renderTitle } from '../../lib/title';
 
 // Get all published articles
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+  .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
 // Body & Safety hub. Top-line tile on /reads/, sits with the topic grid as a
 // peer entry point even though /body/ is its own URL space and collection.
@@ -155,7 +155,7 @@ const fmtDate = (d: Date) =>
                     class="block py-4 border-b border-bone hover:bg-paper-warm transition-colors group"
                   >
                     <p class="font-display italic text-rust text-xs font-medium">
-                      {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {fmtDate(a.data.publishedAt)}
+                      {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {wasUpdated(a.data) ? 'Updated ' : ''}{fmtDate(freshnessDate(a.data))}
                     </p>
                     <h3 class="font-display text-ink text-base leading-snug mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
                   </a>

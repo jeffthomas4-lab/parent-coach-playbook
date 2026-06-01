@@ -1,89 +1,64 @@
 ---
-title: "Marching band camp: what they actually do for those two weeks"
-dek: "Two weeks. Outside. Hot. Long days. Here is what to expect, what to pack, and why the kid you drop off Monday morning is not the kid you pick up Friday night."
-seoDescription: "Marching band camp runs for one or two weeks before school starts. Here is what your kid will do, what to pack, and how to survive it."
-bluf: "Marching band camp is usually a one or two week intensive in August before school starts. Kids learn drill, music, and choreography simultaneously. Days run from 8am to 5pm with breaks. Pack water bottles, sunscreen, a hat, a pencil, and a binder. Expect a tired kid who has bonded with a hundred new friends by Friday."
-topic: "season-ops"
-format: "essay"
-phase: "drive-there"
-sport: "band"
-age: "13-14"
-publishedAt: "2026-05-12"
+title: 'Marching band camp: what they actually do for those two weeks'
+dek: Two weeks. Outside. Hot. Long days. Here is what to expect, what to pack, and
+  why the kid you drop off Monday morning is not the kid you pick up Friday night.
+seoDescription: Marching band camp runs for one or two weeks before school starts.
+  Here is what your kid will do, what to pack, and how to survive it.
+bluf: Marching band camp is usually a one or two week intensive in August before school
+  starts. Kids learn drill, music, and choreography simultaneously. Days run from
+  8am to 5pm with breaks. Pack water bottles, sunscreen, a hat, a pencil, and a binder.
+  Expect a tired kid who has bonded with a hundred new friends by Friday.
+topic: season-ops
+format: essay
+phase: drive-there
+sport: band
+age: 13-14
+publishedAt: '2026-05-12'
 featured: false
 ---
 
-5:45 am. The high school parking lot. A hundred kids are unloading garment bags and water bottles from the back of family SUVs. The drum line is already tapping warmups on the concrete behind the band hall.
+Five-forty-five in the morning, and the high school parking lot is already loud — a hundred kids unloading garment bags and water bottles from the back of family SUVs, the drum line tapping warmups on the concrete behind the band hall. Your fourteen-year-old just got out of the car without looking back, joined the freshman line, and disappeared into the crowd. Two weeks of marching band camp start now.
 
-Your 14-year-old just got out of the car, did not look back, and joined the freshman line.
-
-Two weeks of marching band camp start now. Here is what is actually about to happen to her.
+Here's what's actually about to happen, what to pack, and why the kid you drop off Monday morning is not the kid you pick up Friday night.
 
 ## The structure
 
-Most marching band camps run from 8am to 5pm Monday through Friday, sometimes with a half day on Saturday. There are usually morning sessions on visual work (drill, marching, choreography) and afternoon sessions on music. Some camps flip this in extreme heat.
+Most marching band camps run eight to five Monday through Friday, sometimes with a half day on Saturday, with morning sessions on visual work — drill, marching, choreography — and afternoon sessions on music. Some camps flip the order in extreme heat. A typical day looks something like this: stretching and warm-ups, a drill block, water break, sectional rehearsal, lunch, music block, water break, full ensemble, stretch out, end.
 
-A typical day looks like this. Stretching and warm-ups. Drill block. Water break. Sectional rehearsal. Lunch. Music block. Water break. Full ensemble. Stretch out. End.
+By the end of week one most bands have learned the opening sequence of the show. By the end of week two they've learned about half of it. The rest gets learned across September.
 
-By the end of week one, most bands have learned the opening sequence of the show. By the end of week two, they have learned about half of it. The rest gets learned across September.
+## What they'll learn
 
-## What they will learn
+Marching technique first — how to roll-step, how to hold the horn at carriage angle, how to come to a halt without bouncing, how to back-march, how to slide. It's unsexy and feels endless. Then drill, which is where they stand at each moment of the show — modern shows have hundreds of "dots," and your kid will get a coordinate sheet with personal positions for every set in the show. She will lose this paper at least once. Print a backup. Then the music itself — most shows have three to four pieces she has to memorize before the first competition, and the sheet music is gone by week two for the strongest sections.
 
-Marching technique. How to roll-step, how to hold their horn at carriage angle, how to come to a halt without bouncing, how to back-march, how to slide. This is unsexy and feels endless.
-
-Drill. Where they stand at each moment of the show. Modern shows have hundreds of "dots" or coordinates. Your kid will get a coordinate sheet with their personal positions for every set in the show. They will lose this paper. Print a backup.
-
-Music. The actual notes. Most shows have three to four pieces of music your kid has to memorize before the first competition. Sheet music is gone by week two for the strongest sections.
-
-The bond. Two weeks of suffering together creates a level of friendship that does not exist anywhere else in high school. This is the part that will surprise you. The kid who left Monday a freshman will come home Friday with 50 best friends.
+And then the bond, which is the part that will surprise you the most. Two weeks of suffering together creates a level of friendship that doesn't exist anywhere else in high school. The kid who left Monday a freshman comes home Friday with fifty best friends.
 
 ## What to pack
 
-Two refillable water bottles. They need 64 ounces a day minimum, more in real heat. Tap-water filled, frozen the night before, will stay cold most of the day.
+Two refillable water bottles, because she needs sixty-four ounces a day minimum and more in real heat. Tap-water filled and frozen the night before will stay cold most of the day. A hat with an actual brim, not a backwards cap — sun in the eyes is a major source of headaches. Sunscreen, SPF 50, in a stick rather than a tube because she'll actually reapply it. Athletic shoes that are broken in — brand-new sneakers cause blisters by Wednesday, so if she needs new shoes for camp, buy them two weeks early and wear them every day.
 
-A hat with a brim. Not a backwards cap. A real brim. Sun on the eyes is a major source of headaches.
-
-Sunscreen. SPF 50. They will not reapply unless you put it in their hand. Stick versions are easier for kids to use mid-day than tubes.
-
-Athletic shoes that are broken in. Brand-new sneakers cause blisters by Wednesday. If they need new shoes, buy them two weeks before camp and wear them every day.
-
-A pencil and a small binder. Drill sets get changed daily. They will write on their sheets.
-
-A small towel. For the back of the neck. For sweat. For sitting on hot bleachers.
-
-Salty snacks for the car ride home. Pretzels, beef jerky, peanut butter sandwich. They have been sweating salt all day. They need it back.
+A pencil and a small binder for the drill sheets that get changed daily. A small towel for the back of her neck, for sweat, for sitting on hot bleachers. And salty snacks in the car for the ride home — pretzels, beef jerky, peanut butter sandwich — because she's been sweating salt all day and her body needs it back.
 
 ## Heat safety
 
-This is the conversation parents do not have enough.
+This is the conversation parents don't have often enough. Hot kids in heavy uniforms working hard outside is a recipe for heat illness, and your kid should know what heat exhaustion feels like and should know that telling the director "I feel weird" is not a sign of weakness.
 
-Hot kids in heavy uniforms working hard outside is a recipe for heat illness. Your kid should know what heat exhaustion feels like and they should know that telling the director "I feel weird" is not a sign of weakness.
-
-Symptoms to teach them. Headache that does not go away with water. Goosebumps in the sun. Confusion about what they are doing. Stopped sweating. Stomach feels off.
-
-If they feel any of these, they sit in the shade and tell a director immediately. Most band programs run a tight ship on this. A few do not. If you suspect your kid is at a program that pushes through heat, talk to the director.
+Symptoms to teach her: a headache that doesn't go away with water, goosebumps in the sun, confusion about what she's doing, no more sweating, a stomach that feels off. If she feels any of those, she sits in the shade and tells a director immediately. Most band programs run a tight ship on this. A few don't. If you suspect your kid is at a program that pushes through heat, talk to the director.
 
 ## The pickup window
 
-The end of the first day will be longer than your kid expected. They will be quiet in the car. Tired. Probably not chatty.
+The end of the first day will be longer than your kid expected, and she'll be quiet in the car, tired, probably not chatty. By Wednesday she'll be wrecked — sore feet, a sunburn somewhere, maybe a small injury. By Friday she'll be running on adrenaline and group friendship and won't want camp to end.
 
-By Wednesday they will be wrecked. Sore feet. Sunburn somewhere. Maybe a small injury.
-
-By Friday they will be running on adrenaline and group friendship. They will not want the camp to end.
-
-Do not over-schedule the weekends during camp. Saturday and Sunday should be for sleep, eating, and not doing much else. School starts the week after camp ends. They need to recover.
+Don't over-schedule the weekends during camp. Saturday and Sunday should be for sleep, eating, and not doing much else. School starts the week after camp ends and she needs to recover.
 
 ## A note for first-year parents
 
-If your kid is a freshman, you are about to enter a sub-community of the school you did not know existed.
+If she's a freshman, you're about to enter a sub-community of the school you didn't know existed. Marching band parents are organized — they run concessions, build props, drive equipment trucks, feed the band on competition days, and there's almost always a band booster organization. Show up to the first meeting, find out what jobs need doing, pick one. The fastest way to know everyone is to volunteer for the chaperone list or the uniform crew.
 
-Marching band parents are organized. They run concessions. They build props. They drive equipment trucks. They feed the band on competition days. There is almost always a band booster organization. Show up to the first meeting. Find out what jobs need doing. Pick one. The fastest way to know everyone is to volunteer for the chaperone list or the uniform crew.
-
-You will see those parents on competition Saturdays for the next four years. That is a long time. Make friends.
+You'll see those parents on competition Saturdays for the next four years. That's a long time. Make friends.
 
 ## The thing nobody tells you
 
-The reason marching band parents are so weirdly enthusiastic about their kids' band is because the band has changed their kid. Two weeks at camp at age 14 builds work ethic, group identity, accountability, and physical resilience that some kids never get from any other activity.
+The reason marching band parents are so weirdly enthusiastic about their kids' band is because the band has changed their kid. Two weeks at camp at fourteen builds work ethic, group identity, accountability, and physical resilience that some kids never get from any other activity. By the homecoming game in October, you'll see what they meant. The kid in uniform marching onto the field is not the kid you dropped off the first day of camp. She looks like a person.
 
-By the homecoming game in October, you will see what they meant. The kid in uniform marching onto the field is not the kid you dropped off the first day of camp. They look like a person.
-
-Pictures will be required. Buy a real camera with a zoom lens.
+Pictures are going to be required. Buy a real camera with a zoom lens.

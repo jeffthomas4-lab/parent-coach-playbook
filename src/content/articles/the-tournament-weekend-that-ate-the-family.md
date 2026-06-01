@@ -1,13 +1,15 @@
 ---
-title: "The tournament weekend that *ate the family*"
-dek: "Three days, eight games, four meals out of a cooler. The honest math, the real cost, and the next-time fix."
-seoDescription: "You leave Friday at 4. You get home Sunday at 9:30 p.m. You took 14 photos. You ate at three different chain restaurants."
-topic: "season-ops"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-06-16
+title: The tournament weekend that *ate the family*
+dek: Three days, eight games, four meals out of a cooler. The honest math, the real
+  cost, and the next-time fix.
+seoDescription: You leave Friday at 4. You get home Sunday at 9:30 p.m. You took 14
+  photos. You ate at three different chain restaurants.
+topic: season-ops
+format: essay
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

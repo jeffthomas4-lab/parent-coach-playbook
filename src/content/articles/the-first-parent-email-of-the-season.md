@@ -1,14 +1,17 @@
 ---
-title: "The First Parent Email of the Season"
-dek: "Parents show up to information. They panic over mystery. Be clear."
-seoDescription: "We send this email before the first practice. Not after. Not two weeks in."
-topic: "communication"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: The First Parent Email of the Season
+dek: Parents show up to information. They panic over mystery. Be clear.
+seoDescription: We send this email before the first practice. Not after. Not two weeks
+  in.
+topic: communication
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-06
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-04
 ---
 
 We send this email before the first practice. Not after. Not two weeks in.

@@ -1,14 +1,16 @@
 ---
-title: "The text to the new coach for next season"
-dek: "First impressions get set in the first text. The two-sentence version that lands well, and the seven-sentence version that doesn't."
-seoDescription: "The team-formation email lands with the new head coach's contact info. The temptation is to send a thoughtful introduction text laying out your kid's history..."
-topic: "communication"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "communication"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-05-22
+title: The text to the new coach for next season
+dek: First impressions get set in the first text. The two-sentence version that lands
+  well, and the seven-sentence version that doesn't.
+seoDescription: The team-formation email lands with the new head coach's contact info.
+  The temptation is to send a thoughtful introduction text laying out your kid's history...
+topic: communication
+format: note
+phase: team-parent
+teamParentTopic: communication
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -19,9 +21,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-24
   status: claude-reviewed
-  reviewerNotes: "Specific text examples make it actionable."
+  reviewerNotes: Specific text examples make it actionable.
 ---
 
 The team-formation email lands with the new head coach's contact info. The temptation is to send a thoughtful introduction text laying out your kid's history, what worked last season, what didn't, and how you're hoping things go.

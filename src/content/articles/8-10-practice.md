@@ -1,14 +1,18 @@
 ---
-title: "The 8-10 Practice That Doesn't Drag"
-dek: "Forty minutes. One game. One fix. They remember what they played, not what you drilled."
-seoDescription: "It was a Tuesday in October. We had a forty-minute window before the next activity. One team. One field."
-topic: "season-ops"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "8-10"
+title: The 8-10 Practice That Doesn't Drag
+dek: Forty minutes. One game. One fix. They remember what they played, not what you
+  drilled.
+seoDescription: It was a Tuesday in October. We had a forty-minute window before the
+  next activity. One team. One field.
+topic: season-ops
+format: note
+phase: game
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-01-16
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-11
 ---
 
 It was a Tuesday in October. We had a forty-minute window before the next activity. One team. One field. The goal was to keep everyone engaged without running them to death. By minute thirty-five, they were still asking to play more.

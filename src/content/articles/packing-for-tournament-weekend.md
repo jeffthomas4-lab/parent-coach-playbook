@@ -1,14 +1,17 @@
 ---
-title: "Packing for a long tournament weekend"
-dek: "Three games in two days, hotel pool, restaurant dinner, and 110-degree heat. The 18-item packing list that doesn't show up on the team email."
-seoDescription: "The team email lists uniforms, water bottles, and the practice schedule. It doesn't list the 18 things that will determine whether the weekend goes well or..."
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "logistics"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-06-03
+title: Packing for a long tournament weekend
+dek: Three games in two days, hotel pool, restaurant dinner, and 110-degree heat.
+  The 18-item packing list that doesn't show up on the team email.
+seoDescription: The team email lists uniforms, water bottles, and the practice schedule.
+  It doesn't list the 18 things that will determine whether the weekend goes well
+  or...
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: logistics
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -19,9 +22,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-10
   status: claude-reviewed
-  reviewerNotes: "Real packing list. The 18 items are the things that fail families on the road."
+  reviewerNotes: Real packing list. The 18 items are the things that fail families
+    on the road.
 ---
 
 The team email lists uniforms, water bottles, and the practice schedule. It doesn't list the 18 things that will determine whether the weekend goes well or whether you're driving to a Walmart at 9pm.

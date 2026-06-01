@@ -1,14 +1,17 @@
 ---
-title: "What a 5-Year-Old Actually Needs in a Glove"
-dek: "Smaller is better, but not as small as you think."
-seoDescription: "The mistake every parent makes: buying a glove your five-year-old can barely close. You think you're being smart."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "baseball"
-age: "5-7"
+title: What a 5-Year-Old Actually Needs in a Glove
+dek: Smaller is better, but not as small as you think.
+seoDescription: 'The mistake every parent makes: buying a glove your five-year-old
+  can barely close. You think you''re being smart.'
+topic: equipment
+format: note
+phase: drive-there
+sport: baseball
+age: 5-7
 publishedAt: 2026-01-07
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-05
 ---
 
 The mistake every parent makes: buying a glove your five-year-old can barely close. You think you're being smart. You're actually setting them up for frustration.

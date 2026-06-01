@@ -12,92 +12,46 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-He climbed in the car after Tuesday choir and immediately said his voice cracked twice in the same song. He said it like a confession. The other kids in his section laughed when it happened the second time.
+He climbed in the car after Tuesday choir and immediately said his voice cracked twice in the same song. He said it like a confession, because the other kids in his section laughed when it happened the second time. The director told him it was normal, but he doesn't believe her, and right now he's telling you he's never opening his mouth in choir again.
 
-The director called it normal. He does not believe her. He says he is never opening his mouth in choir again.
+Welcome to adolescent voice change — probably the most awkward two years of a young singer's life. Here's what's actually happening to his voice and what to do about it.
 
-Welcome to adolescent voice change. The most awkward two years of a young singer's life.
+## What voice change actually is
 
-## What voice change is
+Voice change is the biological process where a kid's larynx grows during puberty and the vocal folds get longer and thicker, which drops the pitch of his speaking and singing voice. For boys, the change is dramatic — the speaking voice can drop a full octave over the course of a year, the singing voice goes through a period where it's unreliable, high notes crack, low notes don't have weight yet, and some kids lose the ability to sing certain pitches entirely for a few months.
 
-Voice change is the biological process where a kid's larynx grows during puberty and the vocal folds get longer and thicker. This drops the pitch of their speaking and singing voice.
-
-For boys, the change is dramatic. The speaking voice can drop a full octave over the course of a year. The singing voice goes through a period where it is unreliable. High notes crack. Low notes do not have weight yet. Some kids lose the ability to sing certain pitches entirely for a few months.
-
-For girls, the change is real but less obvious. The speaking voice drops slightly. The singing voice gets fuller, lower in the bottom range, and sometimes the top notes become less reliable for a short window.
-
-Most kids go through this between ages 11 and 14. Some start earlier. Some start later. The change can take 12 to 24 months to complete.
+For girls, the change is real but less obvious. The speaking voice drops slightly, the singing voice gets fuller in the bottom range, and sometimes the top notes become less reliable for a short window. Most kids go through this between eleven and fourteen, some earlier, some later, with the whole change taking twelve to twenty-four months to complete.
 
 ## What this means for choir
 
-A good choir director knows what to do.
+A good choir director knows what to do. Boys who were singing in the treble section (soprano or alto) might move to a temporary "cambiata" section, which is a middle range built for changing voices, and after a few months they might move again to tenor, baritone, or bass. The shifting is normal and expected. Girls who were singing soprano might find they can't sustain the high range and move to alto temporarily, and after the change settles they often move back to soprano if that's their natural fach.
 
-Boys who were singing in the treble section (soprano or alto) might move to a temporary "cambiata" section, which is a middle range for changing voices. After a few months they might move again to tenor, baritone, or bass. The shifting is normal and expected.
-
-Girls who were singing soprano might find they cannot sustain the high range and move to alto temporarily. After the change settles, they often move back to soprano if that is their natural fach.
-
-The director will assign voice parts based on what they hear, not what the kid sang last year. Your kid might be in three different sections in three different concerts. That is fine.
+The director will assign voice parts based on what she hears, not what your kid sang last year. Your kid might be in three different sections in three different concerts. That's fine.
 
 ## What you might see at home
 
-Singing in the shower, but only in certain ranges. The kid is exploring where the voice still works.
-
-Avoidance of singing in front of people. The fear of cracking is real and social.
-
-Coughing or throat-clearing more often. The larynx is growing and inflammation is normal.
-
-Speaking in a deeper voice some days, higher on others. The voice is unsettled and the kid is figuring out where it lives.
-
-These are all normal. None of them are signs of anything to worry about.
+He'll sing in the shower, but only in certain ranges — he's exploring where the voice still works. He'll avoid singing in front of people, because the fear of cracking is real and social. He might cough or clear his throat more often as the larynx grows and inflammation increases. He'll speak in a deeper voice some days and higher on others as the voice is unsettled and he's figuring out where it lives. All of this is normal and none of it is a sign of anything to worry about.
 
 ## What helps
 
-A few things.
+Water. The vocal folds need hydration, and a kid drinking enough through the day has fewer issues with cracks and dry throat. Sleep, because the voice depends on the body being rested and a tired thirteen-year-old sings worse than a rested one. A real warm-up — choir teachers usually warm up at the start of class, but if he's also doing solo work or auditioning, encourage him to spend five minutes warming up at home before he sings alone. And patience. The voice will settle. It always does. Just not on a schedule he can predict.
 
-Hydration. The vocal folds need water. A kid drinking enough water through the day has fewer issues with cracks and dry throat.
+## What doesn't help
 
-Sleep. The voice depends on the body being rested. A tired 13-year-old sings worse than a rested one.
-
-Warm-up. Choir teachers usually warm up the voice at the start of class. If your kid is also doing solo work or auditioning, encourage them to spend five minutes warming up at home before they sing alone.
-
-Patience. The voice will settle. It always does. Just not on a schedule the kid can predict.
-
-## What does not help
-
-Forcing range. Pushing a high note when the voice is not ready cracks it more. Best to let the kid sing where they can sing.
-
-Voice lessons that ignore the voice change. Most strong voice teachers know how to teach through a voice change. A few do not. If your kid is in lessons and they are not progressing or they are coming home frustrated, ask the teacher how they handle voice change. The answer should be specific, not vague.
-
-Comparing to other kids. Some kids change earlier or later. Some kids end up with bigger or smaller adult voices. The voice they have at 12 is not the voice they will have at 17.
+Forcing range — pushing a high note when the voice isn't ready cracks it more, and it's better to let him sing where he can sing. Voice lessons that ignore the voice change — most strong voice teachers know how to teach through it, but a few don't, and if he's in lessons and not progressing or coming home frustrated, ask the teacher how she handles voice change. The answer should be specific. Comparing him to other kids who change earlier or later, end up with bigger or smaller adult voices, or anything else — the voice he has at twelve is not the voice he'll have at seventeen.
 
 ## The audition season problem
 
-Voice change can happen right in the middle of audition season for all-state choir, show choir, or musical theater. This is brutal for the kid.
+Voice change can happen right in the middle of audition season for all-state choir, show choir, or musical theater. This is brutal for the kid. Two pieces of advice. If the change is in full swing and the audition is for a serious selective ensemble, sometimes the right move is to skip this year and audition next year. Not always. Sometimes the right move is to audition anyway and let the panel hear where the voice is — they've seen kids in voice change and they know what to listen for.
 
-Two pieces of advice.
+If the audition includes a range test that goes above where he can comfortably sing, talk to the choir director. They'll sometimes shift the audition material to a key that works. Sometimes not. Either way, the conversation is worth having.
 
-If the change is in full swing and the audition is for a serious selective ensemble, sometimes the right move is to skip this year and audition next year. Not always. Sometimes the right move is to audition anyway and let the panel hear where the voice is. They have seen kids in voice change. They know what to listen for.
+## When the change is harder than it should be
 
-If the audition includes a range test that goes above where your kid can comfortably sing, talk to the choir director. They will sometimes shift the audition material to a key that works. They will sometimes not. Either way, the conversation is worth having.
-
-## When voice change is harder than it should be
-
-Most kids go through voice change without medical concerns. A few do not.
-
-Signs to watch for. Hoarseness that lasts more than two weeks without a cold. Pain when speaking or singing. A breathy quality that does not go away after the change settles. Loss of upper range that lasts beyond age 15 for a kid who used to sing high.
-
-These can sometimes indicate vocal nodules or other voice issues that benefit from seeing a voice-specialist ENT.
-
-This is rare. Most kids end the change with a healthier voice than they started with.
+Most kids go through voice change without medical concerns. A few don't. Signs to watch for: hoarseness that lasts more than two weeks without a cold, pain when speaking or singing, a breathy quality that doesn't go away after the change settles, loss of upper range that lasts beyond age fifteen for a kid who used to sing high. These can sometimes indicate vocal nodules or other voice issues that benefit from seeing a voice-specialist ENT. This is rare, and most kids end the change with a healthier voice than they started with.
 
 ## The voice that comes out the other side
 
-Most kids who sing through voice change end up with a more powerful, expressive voice than they had as children.
+Most kids who sing through voice change end up with a more powerful, expressive voice than they had as children. Boy sopranos become tenors or baritones with real range, some end up basses with bottom notes that boy sopranos can only dream of. Girls who were thin sopranos in middle school sometimes become full mezzos in high school with the kind of voice that wins all-state auditions.
 
-Boy sopranos become tenors or baritones with real range. Some end up basses with the bottom notes that boy sopranos can only dream of.
-
-Girls who were thin sopranos in middle school sometimes become full mezzo-sopranos in high school with the kind of voice that wins all-state auditions.
-
-The kid who sticks with singing through the awkward year is the kid who comes out with the voice that works. The kid who quits during voice change because it is embarrassing usually does not come back.
-
-Make sticking with it easier this year. The harder year is the year that pays off.
+The kid who sticks with singing through the awkward year is the kid who comes out with the voice that works. The kid who quits during voice change because it's embarrassing usually doesn't come back. Make sticking with it easier this year. The harder year is the year that pays off.

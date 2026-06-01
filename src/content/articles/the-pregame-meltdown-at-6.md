@@ -1,14 +1,18 @@
 ---
-title: "The *pregame meltdown* at 6"
-dek: "She is dressed. The car is running. She is on the floor crying. Twenty minutes to game time."
-seoDescription: "She is six. She has been excited about the game since Tuesday. It is now Saturday at 8:38am."
-topic: "game-day"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "5-7"
+title: The *pregame meltdown* at 6
+dek: She is dressed. The car is running. She is on the floor crying. Twenty minutes
+  to game time.
+seoDescription: She is six. She has been excited about the game since Tuesday. It
+  is now Saturday at 8:38am.
+topic: game-day
+format: note
+phase: drive-there
+sport: multi-sport
+age: 5-7
 publishedAt: 2026-02-26
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-09
 ---
 
 She is six. She has been excited about the game since Tuesday. It is now Saturday at 8:38am. She is on the floor next to her cleats, crying, refusing to put them on.

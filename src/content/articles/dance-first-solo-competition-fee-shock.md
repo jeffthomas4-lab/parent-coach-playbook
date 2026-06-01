@@ -12,116 +12,42 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-The director pulled you aside at pickup last week. They are offering your daughter a solo for the year.
-
-Today the invoice came. $1,400 for the season. You read it twice.
-
-Your daughter is over the moon. You are running the numbers at the kitchen table while she is upstairs practicing in front of the mirror. Here is what that money actually buys and how to decide if this is the right year for it.
+The director pulled you aside at pickup last week. They're offering your daughter a solo for the year. Today the invoice came — $1,400 for the season — and you read it twice. Your daughter is over the moon. You're running the numbers at the kitchen table while she's upstairs practicing in front of the mirror. Here's what that money actually buys and how to decide if this is the right year for it.
 
 ## What the solo fee usually includes
 
-A typical solo package at a competition studio breaks down something like this.
+A typical solo package at a competition studio breaks down something like this. Choreography fee — the choreographer creates the routine over several private sessions, usually three to six hundred depending on the choreographer and the length. Private lesson hours — six to twelve private lessons over the year to refine the solo, address corrections, and clean the performance, usually fifty to eighty per half-hour and often five to seven hundred for the year. Costume — solo costumes are usually more elaborate than group costumes and custom-fit, often a hundred and fifty to four hundred. Music editing — the song needs to be cut to competition length, usually two-thirty to three minutes, with clean fade-ins and exits, and studios often charge fifty to a hundred for this (sometimes included in the choreography fee). Competition entry fees — solo entries are charged separately from group entries, and most regional competitions charge eighty to a hundred and fifty per solo per event, times three to six events per year, that's four to nine hundred. Travel — if competitions are out of town, hotel and food add another two to five hundred over the season.
 
-Choreography fee. The choreographer creates the routine over several private sessions. Usually $300 to $600 depending on the choreographer and the length of the dance.
+Total all in, fifteen hundred to three thousand is typical for a first solo at a regional competition studio.
 
-Private lesson hours. Six to twelve private lessons over the year to refine the solo, address corrections, and clean the performance. Usually $50 to $80 per half-hour. Often $500 to $700 for the year.
+## What you're actually paying for
 
-Costume. Solo costumes are usually more elaborate than group costumes and custom-fit. Often $150 to $400.
-
-Music editing. The song needs to be cut to competition length (usually 2:30 to 3:00) with clean fade-ins and exits. Studios often charge $50 to $100 for this. Some include it in the choreography fee.
-
-Competition entry fees. Solo entries are charged separately from group entries. Most regional competitions charge $80 to $150 per solo per event. Times three to six events per year, that is $400 to $900.
-
-Travel. If competitions are out of town, hotel and food add another $200 to $500 over the season.
-
-Total all in, $1,500 to $3,000 is typical for a first solo at a regional competition studio.
-
-## What you are actually paying for
-
-A few things parents do not always realize.
-
-The private time with the choreographer. This is where most of the real technique work happens. A kid in solo prep gets one-on-one attention they cannot get in group class.
-
-The performance experience. A solo at competition is a different kind of stage time. The kid is alone in front of judges. They learn how to walk on, hit a pose, deliver a routine, and walk off.
-
-The discipline of carrying a piece of work. The solo is theirs. They are responsible for memorizing it, rehearsing it, and performing it. Most coaches will tell you this is the most growth-producing single thing in competitive dance.
-
-The bragging rights are not really the point, but they are part of why some studios push solos. A studio with a lot of solos can post a lot of awards.
+A few things parents don't always realize. The private time with the choreographer is where most of the real technique work happens, and a kid in solo prep gets one-on-one attention she can't get in group class. The performance experience — a solo at competition is a different kind of stage time, and the kid is alone in front of judges, learning how to walk on, hit a pose, deliver a routine, and walk off. The discipline of carrying a piece of work — the solo is hers, she's responsible for memorizing it, rehearsing it, and performing it, and most coaches will tell you this is the most growth-producing single thing in competitive dance. The bragging rights are not really the point but they're part of why some studios push solos — a studio with a lot of solos can post a lot of awards.
 
 ## When a solo is worth it
 
-A few signs that your kid is ready for a solo.
-
-They have been training at the studio for at least two years and the teachers are recommending it, not the parent asking for it.
-
-They can take corrections. A kid who falls apart when a teacher says "fix your toe point" is not ready for the constant correction of solo prep.
-
-They want it. Some kids do not want to be alone on stage. They are happiest in a group of 12. That is also a valid path.
-
-The family schedule has room. Solo competitions add three to six weekend events to the calendar.
+A few signs that your kid is ready. She's been training at the studio for at least two years and the teachers are recommending it, not the parent asking. She can take corrections — a kid who falls apart when a teacher says "fix your toe point" is not ready for the constant correction of solo prep. She wants it — some kids don't want to be alone on stage, they're happiest in a group of twelve, and that's also a valid path. And the family schedule has room, because solo competitions add three to six weekend events to the calendar.
 
 ## When to say no
 
-A few signs that this is not the right year.
-
-Year one or two at the studio. Too early. Most studios that push solos before year three are optimizing for revenue.
-
-The kid is overwhelmed already. If they are already doing four group dances and struggling with school, adding a solo is the wrong move.
-
-The family budget is tight. Solo fees come on top of group fees, not instead of them. The total annual dance bill for a kid with one solo at a competition studio often crosses $5,000 or $6,000.
-
-Your kid hates being looked at. Some kids freeze in front of judges. Solo work magnifies this. Some grow out of it. Most do not, on a one-year schedule.
+A few signs that this isn't the right year. Year one or two at the studio — too early, and most studios that push solos before year three are optimizing for revenue. The kid is overwhelmed already — if she's already doing four group dances and struggling with school, adding a solo is the wrong move. The family budget is tight — solo fees come on top of group fees, not instead of them, and the total annual dance bill for a kid with one solo at a competition studio often crosses five or six thousand. Your kid hates being looked at — some kids freeze in front of judges, solo work magnifies this, and some grow out of it but most don't on a one-year schedule.
 
 ## The conversation with the studio
 
-If you are unsure, ask the studio specifically why they are offering this solo.
-
-The answers you want to hear.
-
-"She is ready. Her technique can hold up to a solo. She will grow from it."
-
-"She has the personality. She projects on stage. We want to give her a chance to use that."
-
-"We have a piece of music we think fits her. The choreographer is excited to work with her on it."
-
-The answers you do not want to hear.
-
-"All the kids in her level are getting solos." (Then it is not earned.)
-
-"It will help her at college auditions." (Maybe true at the right age, but at 11 the calculus does not apply.)
-
-"It will look great on her resume." (She does not have a dance resume yet.)
+If you're unsure, ask the studio specifically why they're offering this solo. The answers you want to hear: "She's ready. Her technique can hold up to a solo. She will grow from it." "She has the personality. She projects on stage. We want to give her a chance to use that." "We have a piece of music we think fits her. The choreographer is excited to work with her on it." The answers you don't want to hear: "All the kids in her level are getting solos" (then it isn't earned). "It will help her at college auditions" (maybe true at the right age, but at eleven the calculus doesn't apply). "It will look great on her resume" (she doesn't have a dance resume yet).
 
 A good studio will be specific about why this kid, this solo, this year.
 
 ## The cheaper path
 
-If your kid is interested in solos but you are not sure about the full commitment, ask the studio about a smaller version.
-
-Some studios offer single-event solos where the kid does the routine at one local competition only. The price is lower because there are fewer competition entry fees.
-
-Some studios offer duet or trio entries, which split the choreography and private lesson costs across two or three families. The fees are lower per family and the kid gets some of the solo experience.
-
-These are often better year-one options than a full season solo.
+If your kid is interested in solos but you're not sure about the full commitment, ask the studio about a smaller version. Some studios offer single-event solos where the kid does the routine at one local competition only, with a lower price because there are fewer competition entry fees. Some offer duet or trio entries, which split the choreography and private lesson costs across two or three families — the fees are lower per family and the kid gets some of the solo experience. These are often better year-one options than a full season solo.
 
 ## What to expect during the season
 
-A few things.
-
-Saturday rehearsals. The solo gets cleaned and rehearsed at scheduled times outside of group class. Plan around them.
-
-The video. Most studios film the solo and share the recording. Watch it with your kid. Look at the corrections. Do not dwell on the small flaws.
-
-The awards. Solo awards range from "platinum" to "gold" to "high silver" and so on. The names of the rankings vary by competition company. A first-time solo placing in the platinum or high gold range is usually a real accomplishment. A first-time solo placing in the silver or below sometimes means the routine was over-leveled for the dancer. Talk to the choreographer.
-
-The growth between competitions. The solo should improve over the season. By the fifth competition, the kid should look noticeably more polished than at the first. If they do not, something is off with the prep.
+A few things. Saturday rehearsals — the solo gets cleaned and rehearsed at scheduled times outside of group class, so plan around them. The video — most studios film the solo and share the recording, so watch it with your kid, look at the corrections, and don't dwell on the small flaws. The awards — solo awards range from "platinum" to "gold" to "high silver" and so on, and the names of the rankings vary by competition company. A first-time solo placing in the platinum or high gold range is usually a real accomplishment; placing in the silver or below sometimes means the routine was over-leveled for the dancer, so talk to the choreographer. The growth between competitions — the solo should improve over the season, and by the fifth competition she should look noticeably more polished than at the first. If she doesn't, something's off with the prep.
 
 ## After the season
 
-Most kids who do their first solo want to do another one. The experience is addictive in the best sense.
-
-If your family is going to do this for multiple years, year one is the most expensive per unit of growth. By year three the kid has the skills to absorb more from each lesson and the choreography fee starts to deliver more for the dollar.
-
-If your family is going to do this for one year, you got the experience. The kid had something that was theirs. The solo number will live on competition recordings for a long time.
+Most kids who do their first solo want to do another one. The experience is addictive in the best sense. If your family is going to do this for multiple years, year one is the most expensive per unit of growth — by year three she has the skills to absorb more from each lesson and the choreography fee starts to deliver more for the dollar. If your family is going to do this for one year, you got the experience and the kid had something that was hers, and the solo number will live on competition recordings for a long time.
 
 Either way, the invoice was real. The growth was also real. Both can be true.

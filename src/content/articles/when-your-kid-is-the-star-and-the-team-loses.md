@@ -1,14 +1,18 @@
 ---
-title: "When your kid is the *star* and the team *loses*"
-dek: "She had two goals. The team lost 4-2. She is not allowed to feel good about her game. Or is she."
-seoDescription: "Your daughter scored two goals. The team lost 4 to 2. She is in the car with a confused face. Her individual game was great. The team's game was a loss."
-topic: "game-day"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
+title: When your kid is the *star* and the team *loses*
+dek: She had two goals. The team lost 4-2. She is not allowed to feel good about her
+  game. Or is she.
+seoDescription: Your daughter scored two goals. The team lost 4 to 2. She is in the
+  car with a confused face. Her individual game was great. The team's game was a loss.
+topic: game-day
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-15
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-21
 ---
 
 Your daughter scored two goals. The team lost 4 to 2. She is in the car with a confused face. Her individual game was great. The team's game was a loss.

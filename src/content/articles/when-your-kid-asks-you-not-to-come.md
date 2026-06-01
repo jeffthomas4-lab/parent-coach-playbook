@@ -1,14 +1,18 @@
 ---
-title: "When your kid asks you *not to come*"
-dek: "She is fourteen. She wants you to drop her at the field and leave. The right move."
-seoDescription: "Your daughter is fourteen. She has been quiet on the way to games lately. Friday night, she finally says it. Can you just drop me off and not stay?"
-topic: "game-day"
-format: "essay"
-phase: "drive-there"
-sport: "multi-sport"
-age: "13-14"
+title: When your kid asks you *not to come*
+dek: She is fourteen. She wants you to drop her at the field and leave. The right
+  move.
+seoDescription: Your daughter is fourteen. She has been quiet on the way to games
+  lately. Friday night, she finally says it. Can you just drop me off and not stay?
+topic: game-day
+format: essay
+phase: drive-there
+sport: multi-sport
+age: 13-14
 publishedAt: 2026-02-25
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-08
 ---
 
 Your daughter is fourteen. She has been quiet on the way to games lately. Friday night, she finally says it. *Can you just drop me off and not stay?*

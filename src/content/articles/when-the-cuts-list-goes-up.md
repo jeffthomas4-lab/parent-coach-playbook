@@ -1,14 +1,18 @@
 ---
-title: "When the *cuts list* goes up and your kid isn't on it"
-dek: "She tried out hard. The list is up. Her name isn't there. The next forty-eight hours."
-seoDescription: "The cuts list went up at 5:32pm. You were standing in the kitchen when she came out of her room. Her face told you the answer before she did."
-topic: "tryouts"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
+title: When the *cuts list* goes up and your kid isn't on it
+dek: She tried out hard. The list is up. Her name isn't there. The next forty-eight
+  hours.
+seoDescription: The cuts list went up at 5:32pm. You were standing in the kitchen
+  when she came out of her room. Her face told you the answer before she did.
+topic: tryouts
+format: essay
+phase: drive-home
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-13
 featured: true
+editorial:
+  claudeReviewedAt: 2026-04-19
 ---
 
 The cuts list went up at 5:32pm. You were standing in the kitchen when she came out of her room. Her face told you the answer before she did.

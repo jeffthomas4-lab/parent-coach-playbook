@@ -1,13 +1,15 @@
 ---
-title: "The post-tryouts wait"
-dek: "What to say (and not say) in the 48 hours between tryouts and the call. The inside of your kid's head while they wait."
-seoDescription: "The hardest part of tryouts is rarely the tryout. It's the hours and days after, when nothing is happening and the kid is in their head about it."
-topic: "tryouts"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-05-16
+title: The post-tryouts wait
+dek: What to say (and not say) in the 48 hours between tryouts and the call. The inside
+  of your kid's head while they wait.
+seoDescription: The hardest part of tryouts is rarely the tryout. It's the hours and
+  days after, when nothing is happening and the kid is in their head about it.
+topic: tryouts
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-10
   status: claude-reviewed
-  reviewerNotes: "Captures the specific dread of the post-tryouts gap. Genuinely useful for parents."
+  reviewerNotes: Captures the specific dread of the post-tryouts gap. Genuinely useful
+    for parents.
 ---
 
 The hardest part of tryouts is rarely the tryout. It's the hours and days after, when nothing is happening and the kid is in their head about it.

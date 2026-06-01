@@ -1,13 +1,16 @@
 ---
-title: "The kid you cut who is your kid's *best friend*"
-dek: "The phone call you have to make. The kid sitting on your couch on Saturday. The conversation you owe your own kid before any of it."
-seoDescription: "You knew on Tuesday. The list went up Friday. Sometime between Friday afternoon and Saturday morning, your kid figures out their best friend isn't on the..."
-topic: "the-hard-stuff"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-06-13
+title: The kid you cut who is your kid's *best friend*
+dek: The phone call you have to make. The kid sitting on your couch on Saturday. The
+  conversation you owe your own kid before any of it.
+seoDescription: You knew on Tuesday. The list went up Friday. Sometime between Friday
+  afternoon and Saturday morning, your kid figures out their best friend isn't on
+  the...
+topic: the-hard-stuff
+format: essay
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

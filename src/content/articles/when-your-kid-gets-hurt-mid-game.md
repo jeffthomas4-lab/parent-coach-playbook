@@ -1,14 +1,16 @@
 ---
-title: "When your kid *gets hurt* mid-game"
-dek: "He goes down. He's not getting up. The first ten seconds. The next ten minutes."
-seoDescription: "Your kid is on the field. He goes down hard. He is not getting up."
-topic: "game-day"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "all-ages"
+title: When your kid *gets hurt* mid-game
+dek: He goes down. He's not getting up. The first ten seconds. The next ten minutes.
+seoDescription: Your kid is on the field. He goes down hard. He is not getting up.
+topic: game-day
+format: note
+phase: game
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-17
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-25
 ---
 
 Your kid is on the field. He goes down hard. He is not getting up.

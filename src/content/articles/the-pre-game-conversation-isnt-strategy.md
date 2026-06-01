@@ -1,16 +1,20 @@
 ---
-title: "The Pre-Game Conversation Isn't Strategy"
-dek: "Ground them. Reduce stakes. Hand them one specific job. That's it."
-seoDescription: "The drive to the field is twelve minutes long. For two seasons, we used those minutes to drill the lineup, the matchups, the play installed at Wednesday..."
-format: "essay"
-topic: "game-day"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: The Pre-Game Conversation Isn't Strategy
+dek: Ground them. Reduce stakes. Hand them one specific job. That's it.
+seoDescription: The drive to the field is twelve minutes long. For two seasons, we
+  used those minutes to drill the lineup, the matchups, the play installed at Wednesday...
+format: essay
+topic: game-day
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-01-08
 featured: false
 hero: /illustrations/pregame-bench-moment.webp
-heroAlt: "A parent and child sitting on the bench before a game, the parent leaning in, the child tying a cleat."
+heroAlt: A parent and child sitting on the bench before a game, the parent leaning
+  in, the child tying a cleat.
+editorial:
+  claudeReviewedAt: 2026-03-07
 ---
 
 The drive to the field is twelve minutes long. For two seasons, we used those minutes to drill the lineup, the matchups, the play installed at Wednesday practice. Our kid in the back seat heard one thing: *Don't mess this up.*

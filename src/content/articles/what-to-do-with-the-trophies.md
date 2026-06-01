@@ -1,13 +1,15 @@
 ---
-title: "What to do with the trophies"
-dek: "Eight participation trophies in nine months. The shelf is full. The kid doesn't care about half of them. A simple system."
-seoDescription: "Most kids' rooms accumulate eight to twelve trophies, medals, and certificates per year. Within three years, the shelf cannot hold them."
-topic: "season-ops"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "5-7"
-publishedAt: 2026-05-23
+title: What to do with the trophies
+dek: Eight participation trophies in nine months. The shelf is full. The kid doesn't
+  care about half of them. A simple system.
+seoDescription: Most kids' rooms accumulate eight to twelve trophies, medals, and
+  certificates per year. Within three years, the shelf cannot hold them.
+topic: season-ops
+format: note
+phase: drive-home
+sport: multi-sport
+age: 5-7
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 7
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-03-31
   status: claude-reviewed
-  reviewerNotes: "Light, useful logistics piece."
+  reviewerNotes: Light, useful logistics piece.
 ---
 
 Most kids' rooms accumulate eight to twelve trophies, medals, and certificates per year. Within three years, the shelf cannot hold them. Within five, the kid doesn't remember what most of them were for.

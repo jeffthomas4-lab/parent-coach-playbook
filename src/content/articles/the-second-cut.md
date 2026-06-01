@@ -1,14 +1,18 @@
 ---
-title: "The *second cut* that no one warns you about"
-dek: "She made the first cut. The second cut comes a week later. The names you didn't know to brace for."
-seoDescription: "Your daughter made the first cut. The list went up Monday. She was on it. The family celebrated."
-topic: "tryouts"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "13-14"
+title: The *second cut* that no one warns you about
+dek: She made the first cut. The second cut comes a week later. The names you didn't
+  know to brace for.
+seoDescription: Your daughter made the first cut. The list went up Monday. She was
+  on it. The family celebrated.
+topic: tryouts
+format: note
+phase: drive-home
+sport: multi-sport
+age: 13-14
 publishedAt: 2026-02-09
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-12
 ---
 
 Your daughter made the first cut. The list went up Monday. She was on it. The family celebrated.

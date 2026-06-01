@@ -1,14 +1,18 @@
 ---
-title: "*Packing food* for the travel weekend"
-dek: "Tournament weekends eat money in $14 sandwiches. The cooler approach saves hundreds and feeds the team better."
-seoDescription: "Three meals out a day, four people, three days. At tournament-venue restaurant prices, that's $400 to $600 a weekend."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: '*Packing food* for the travel weekend'
+dek: Tournament weekends eat money in $14 sandwiches. The cooler approach saves hundreds
+  and feeds the team better.
+seoDescription: Three meals out a day, four people, three days. At tournament-venue
+  restaurant prices, that's $400 to $600 a weekend.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-25
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-19
 ---
 
 Three meals out a day, four people, three days. At tournament-venue restaurant prices, that's $400 to $600 a weekend. Across a season of eight tournaments, $3,200 to $4,800 just on food.

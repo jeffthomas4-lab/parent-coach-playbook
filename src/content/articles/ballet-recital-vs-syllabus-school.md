@@ -1,14 +1,19 @@
 ---
-title: "Choosing between a recital studio and a syllabus school"
-dek: "Two paths. One ends with a glitzy recital. One ends with an exam. Here is how they differ and which is right for your kid."
-seoDescription: "Recital studios and syllabus schools train ballet very differently. Here is how to choose the right one for your kid's path."
-bluf: "Recital studios focus on annual performances and student fun. Syllabus schools follow a structured curriculum (Vaganova, RAD, Cecchetti) with exams. Recital studios are usually right for casual or rec dancers. Syllabus schools are usually right for serious pre-professional dancers. A few studios offer both tracks."
-topic: "rec-vs-travel"
-format: "essay"
-phase: "team-parent"
-sport: "ballet"
-age: "8-10"
-publishedAt: "2026-05-12"
+title: Choosing between a recital studio and a syllabus school
+dek: Two paths. One ends with a glitzy recital. One ends with an exam. Here is how
+  they differ and which is right for your kid.
+seoDescription: Recital studios and syllabus schools train ballet very differently.
+  Here is how to choose the right one for your kid's path.
+bluf: Recital studios focus on annual performances and student fun. Syllabus schools
+  follow a structured curriculum (Vaganova, RAD, Cecchetti) with exams. Recital studios
+  are usually right for casual or rec dancers. Syllabus schools are usually right
+  for serious pre-professional dancers. A few studios offer both tracks.
+topic: rec-vs-travel
+format: essay
+phase: team-parent
+sport: ballet
+age: 8-10
+publishedAt: '2026-05-12'
 featured: false
 ---
 

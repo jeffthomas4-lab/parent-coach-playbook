@@ -1,14 +1,18 @@
 ---
-title: "When your kid *outgrows cleats* mid-season"
-dek: "Three weeks left in the season. The cleats don't fit. The cheap fix and the right fix."
-seoDescription: "Tuesday at 5:25pm. Your kid is putting on his cleats for practice. He says they hurt. You realize they no longer fit."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: When your kid *outgrows cleats* mid-season
+dek: Three weeks left in the season. The cleats don't fit. The cheap fix and the right
+  fix.
+seoDescription: Tuesday at 5:25pm. Your kid is putting on his cleats for practice.
+  He says they hurt. You realize they no longer fit.
+topic: equipment
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-01-23
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-16
 ---
 
 Tuesday at 5:25pm. Your kid is putting on his cleats for practice. He says they hurt. You realize they no longer fit.

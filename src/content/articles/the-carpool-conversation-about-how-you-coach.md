@@ -1,13 +1,15 @@
 ---
-title: "The *carpool conversation* about how you coach"
-dek: "What the other parents say in the back seat when you're not there. What you'll actually hear. What to do with it without losing the team."
-seoDescription: "Your kid comes home from a sleepover. They mention, casually, that Henry's mom said something about you in the carpool on Tuesday."
-topic: "communication"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-06-25
+title: The *carpool conversation* about how you coach
+dek: What the other parents say in the back seat when you're not there. What you'll
+  actually hear. What to do with it without losing the team.
+seoDescription: Your kid comes home from a sleepover. They mention, casually, that
+  Henry's mom said something about you in the carpool on Tuesday.
+topic: communication
+format: essay
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

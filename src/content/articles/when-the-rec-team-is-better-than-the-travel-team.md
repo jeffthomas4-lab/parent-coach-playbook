@@ -1,14 +1,18 @@
 ---
-title: "When the *rec team is better* than the travel team"
-dek: "It happens. The travel team is overpriced and over-promised. The rec team has the right coach. Now what."
-seoDescription: "You did travel last year. The team was a mixed bag. The coaching was thin. The cost was high. The social stuff was tense."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
+title: When the *rec team is better* than the travel team
+dek: It happens. The travel team is overpriced and over-promised. The rec team has
+  the right coach. Now what.
+seoDescription: You did travel last year. The team was a mixed bag. The coaching was
+  thin. The cost was high. The social stuff was tense.
+topic: rec-vs-travel
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-01-30
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-26
 ---
 
 You did travel last year. The team was a mixed bag. The coaching was thin. The cost was high. The social stuff was tense.

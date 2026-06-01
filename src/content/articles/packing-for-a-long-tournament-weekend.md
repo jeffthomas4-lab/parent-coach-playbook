@@ -1,13 +1,15 @@
 ---
-title: "Packing for a *long tournament weekend*"
-dek: "The list that survives three days, four games, two nights in a hotel, one rained-out morning."
-seoDescription: "Three days, four games. The kid needs more than you think and less than they pack."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-07-23
+title: Packing for a *long tournament weekend*
+dek: The list that survives three days, four games, two nights in a hotel, one rained-out
+  morning.
+seoDescription: Three days, four games. The kid needs more than you think and less
+  than they pack.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

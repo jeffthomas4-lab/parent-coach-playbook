@@ -1,14 +1,17 @@
 ---
-title: "The 11-12 Ages: The Team Meeting When Things Have Gone Sideways"
-dek: "Something broke. Here's how to talk about it without pointing fingers."
-seoDescription: "A clique forms. Someone is excluded. A kid made a mistake and got benched and now two parents are questioning your decisions."
-topic: "communication"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "11-12"
+title: 'The 11-12 Ages: The Team Meeting When Things Have Gone Sideways'
+dek: Something broke. Here's how to talk about it without pointing fingers.
+seoDescription: A clique forms. Someone is excluded. A kid made a mistake and got
+  benched and now two parents are questioning your decisions.
+topic: communication
+format: note
+phase: game
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-03
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-01
 ---
 
 A clique forms. Someone is excluded. A kid made a mistake and got benched and now two parents are questioning your decisions. Or the team lost four straight and the energy is dead.

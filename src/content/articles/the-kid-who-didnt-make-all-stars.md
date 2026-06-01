@@ -1,13 +1,15 @@
 ---
-title: "The kid who didn't make the all-star team"
-dek: "All-stars get picked, the list goes up, and your kid isn't on it. The first 24 hours, and the longer arc."
-seoDescription: "The all-star team list is one of the smaller cuts in youth sports and one of the more painful ones. The season is already over."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-05-25
+title: The kid who didn't make the all-star team
+dek: All-stars get picked, the list goes up, and your kid isn't on it. The first 24
+  hours, and the longer arc.
+seoDescription: The all-star team list is one of the smaller cuts in youth sports
+  and one of the more painful ones. The season is already over.
+topic: the-hard-stuff
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-14
   status: claude-reviewed
-  reviewerNotes: "Real and rare topic. The 24-hour structure is correct."
+  reviewerNotes: Real and rare topic. The 24-hour structure is correct.
 ---
 
 The all-star team list is one of the smaller cuts in youth sports and one of the more painful ones. The season is already over. The kid has been on the regular roster for months. The all-star list goes up, and they aren't on it. There is no game next week to focus on. Just the absence.

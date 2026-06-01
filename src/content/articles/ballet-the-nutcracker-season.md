@@ -1,14 +1,19 @@
 ---
-title: "The Nutcracker season: what December actually looks like"
-dek: "Your kid got cast in the studio's Nutcracker. From October to December the family schedule will rearrange itself. Here is the survival guide."
-seoDescription: "Nutcracker season runs October through December at most studios. Here is what to expect during rehearsals and performances."
-bluf: "Nutcracker rehearsals usually start in October and ramp up to multiple weekends in November and December. Performances are typically the second or third weekend of December. The whole family schedule pivots around the studio. Plan accordingly. Pack snacks. Take photos."
-topic: "season-ops"
-format: "essay"
-phase: "team-parent"
-sport: "ballet"
-age: "8-10"
-publishedAt: "2026-05-12"
+title: 'The Nutcracker season: what December actually looks like'
+dek: Your kid got cast in the studio's Nutcracker. From October to December the family
+  schedule will rearrange itself. Here is the survival guide.
+seoDescription: Nutcracker season runs October through December at most studios. Here
+  is what to expect during rehearsals and performances.
+bluf: Nutcracker rehearsals usually start in October and ramp up to multiple weekends
+  in November and December. Performances are typically the second or third weekend
+  of December. The whole family schedule pivots around the studio. Plan accordingly.
+  Pack snacks. Take photos.
+topic: season-ops
+format: essay
+phase: team-parent
+sport: ballet
+age: 8-10
+publishedAt: '2026-05-12'
 featured: false
 ---
 

@@ -1,14 +1,19 @@
 ---
-title: "The injury pivot at 14: when a serious injury changes the path"
-dek: "A growth plate fracture, a stress reaction, a labral tear. Some injuries at 14 mean six months off. Others mean a career change. Here is how to face the question."
-seoDescription: "Serious dance injuries at age 14 can require six months off or longer. Here is how to think about whether your kid returns to ballet."
-bluf: "A serious injury at 13 or 14 in a pre-professional ballet kid is a fork in the road. Most kids return to dancing after appropriate rest. Some do not. The right call depends on the injury, the kid's body, the kid's own desire to continue, and a clear-eyed assessment of whether the path is still viable."
-topic: "the-hard-stuff"
-format: "essay"
-phase: "drive-home"
-sport: "ballet"
-age: "13-14"
-publishedAt: "2026-05-12"
+title: 'The injury pivot at 14: when a serious injury changes the path'
+dek: A growth plate fracture, a stress reaction, a labral tear. Some injuries at 14
+  mean six months off. Others mean a career change. Here is how to face the question.
+seoDescription: Serious dance injuries at age 14 can require six months off or longer.
+  Here is how to think about whether your kid returns to ballet.
+bluf: A serious injury at 13 or 14 in a pre-professional ballet kid is a fork in the
+  road. Most kids return to dancing after appropriate rest. Some do not. The right
+  call depends on the injury, the kid's body, the kid's own desire to continue, and
+  a clear-eyed assessment of whether the path is still viable.
+topic: the-hard-stuff
+format: essay
+phase: drive-home
+sport: ballet
+age: 13-14
+publishedAt: '2026-05-12'
 featured: false
 ---
 

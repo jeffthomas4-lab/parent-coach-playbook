@@ -1,13 +1,15 @@
 ---
-title: "How to compare two summer camp options without spending three weekends on it"
-dek: "When two camps look identical on the brochure, the difference is in five questions you can answer in 20 minutes."
-seoDescription: "The two camps both look great on the website. Both have professional photos, schedule blocks that look productive, similar pricing."
-topic: "summer-camps"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-05-19
+title: How to compare two summer camp options without spending three weekends on it
+dek: When two camps look identical on the brochure, the difference is in five questions
+  you can answer in 20 minutes.
+seoDescription: The two camps both look great on the website. Both have professional
+  photos, schedule blocks that look productive, similar pricing.
+topic: summer-camps
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-26
   status: claude-reviewed
-  reviewerNotes: "Practical evaluation framework. Five questions in order."
+  reviewerNotes: Practical evaluation framework. Five questions in order.
 ---
 
 The two camps both look great on the website. Both have professional photos, schedule blocks that look productive, similar pricing. The temptation is to flip a coin or pick the one that's closer.

@@ -1,13 +1,15 @@
 ---
-title: "Trying a *new sport* at thirteen"
-dek: "The kid wants to try something new. The current sport's coach won't be happy. The honest read on whether to switch."
-seoDescription: "A 13-year-old who has played baseball since age 7 wants to try lacrosse. The baseball coach is going to be upset."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "13-14"
-publishedAt: 2026-07-29
+title: Trying a *new sport* at thirteen
+dek: The kid wants to try something new. The current sport's coach won't be happy.
+  The honest read on whether to switch.
+seoDescription: A 13-year-old who has played baseball since age 7 wants to try lacrosse.
+  The baseball coach is going to be upset.
+topic: the-hard-stuff
+format: note
+phase: drive-there
+sport: multi-sport
+age: 13-14
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

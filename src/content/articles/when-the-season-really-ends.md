@@ -1,13 +1,16 @@
 ---
-title: "When the season really ends"
-dek: "It's not the last game. It's the week after, when the schedule disappears and the family suddenly has nothing to do at 5pm on a Tuesday."
-seoDescription: "The last game of a season is not the end of the season. The end of the season is the following Tuesday, when there is no practice, the gear bag is by the door..."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-05-14
+title: When the season really ends
+dek: It's not the last game. It's the week after, when the schedule disappears and
+  the family suddenly has nothing to do at 5pm on a Tuesday.
+seoDescription: The last game of a season is not the end of the season. The end of
+  the season is the following Tuesday, when there is no practice, the gear bag is
+  by the door...
+topic: the-hard-stuff
+format: note
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +21,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-03-27
   status: claude-reviewed
-  reviewerNotes: "Useful and rare angle: the post-season void rather than the last game itself."
+  reviewerNotes: 'Useful and rare angle: the post-season void rather than the last
+    game itself.'
 ---
 
 The last game of a season is not the end of the season. The end of the season is the following Tuesday, when there is no practice, the gear bag is by the door, and nobody knows what to do with the suddenly empty 5pm hour.

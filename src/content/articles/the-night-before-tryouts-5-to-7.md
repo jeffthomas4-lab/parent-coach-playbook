@@ -1,16 +1,21 @@
 ---
-title: "What to Do the Night Before Tryouts at Age 5-7 (Which Is to Say, Almost Nothing)"
-dek: "*Normal bedtime* is the only rule."
-seoDescription: "They're 5 to 7. They don't know what tryouts are. They've never felt the weight of wanting something they might not get."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "5-7"
+title: What to Do the Night Before Tryouts at Age 5-7 (Which Is to Say, Almost Nothing)
+dek: '*Normal bedtime* is the only rule.'
+seoDescription: They're 5 to 7. They don't know what tryouts are. They've never felt
+  the weight of wanting something they might not get.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 5-7
 publishedAt: 2026-02-17
 featured: false
 hero: /illustrations/the-night-before-tryouts-5-to-7.webp
-heroAlt: "A six-year-old at kitchen table, hair damp from bath, eating small bowl of pasta in pajamas. Parent across table reading a book, not on phone. Clock on wall reads 7:50 PM."
+heroAlt: A six-year-old at kitchen table, hair damp from bath, eating small bowl of
+  pasta in pajamas. Parent across table reading a book, not on phone. Clock on wall
+  reads 7:50 PM.
+editorial:
+  claudeReviewedAt: 2026-04-24
 ---
 
 They're 5 to 7. They don't know what tryouts are. They've never felt the weight of wanting something they might not get.

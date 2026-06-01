@@ -1,13 +1,15 @@
 ---
-title: "The morning after the *all-nighter at the hotel*"
-dek: "Twelve kids, four rooms, one coach who fell asleep first. The recovery script."
-seoDescription: "You sent your kid to the team's hotel for the tournament weekend. Saturday morning at 6:45 you walk in for breakfast and your kid looks like they slept four..."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-07-18
+title: The morning after the *all-nighter at the hotel*
+dek: Twelve kids, four rooms, one coach who fell asleep first. The recovery script.
+seoDescription: You sent your kid to the team's hotel for the tournament weekend.
+  Saturday morning at 6:45 you walk in for breakfast and your kid looks like they
+  slept four...
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

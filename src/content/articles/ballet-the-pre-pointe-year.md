@@ -1,14 +1,21 @@
 ---
-title: "The pre-pointe year: what is happening and how to know if she is ready"
-dek: "Most studios start considering pointe shoes between age 10 and 12. Here is how the readiness assessment actually works and what you should be doing in the pre-pointe year."
-seoDescription: "Pre-pointe class prepares dancers for their first pointe shoes. Here is what readiness looks like and how studios decide."
-bluf: "Most studios introduce pointe somewhere between ages 10 and 13, after at least three to four years of consistent ballet training and based on physical and technical readiness. Pre-pointe class is the bridge: strengthening exercises, foot articulation work, and demonstrations of readiness. The decision should come from the teacher, not the parent."
-topic: "season-ops"
-format: "essay"
-phase: "team-parent"
-sport: "ballet"
-age: "11-12"
-publishedAt: "2026-05-12"
+title: 'The pre-pointe year: what is happening and how to know if she is ready'
+dek: Most studios start considering pointe shoes between age 10 and 12. Here is how
+  the readiness assessment actually works and what you should be doing in the pre-pointe
+  year.
+seoDescription: Pre-pointe class prepares dancers for their first pointe shoes. Here
+  is what readiness looks like and how studios decide.
+bluf: 'Most studios introduce pointe somewhere between ages 10 and 13, after at least
+  three to four years of consistent ballet training and based on physical and technical
+  readiness. Pre-pointe class is the bridge: strengthening exercises, foot articulation
+  work, and demonstrations of readiness. The decision should come from the teacher,
+  not the parent.'
+topic: season-ops
+format: essay
+phase: team-parent
+sport: ballet
+age: 11-12
+publishedAt: '2026-05-12'
 featured: false
 ---
 

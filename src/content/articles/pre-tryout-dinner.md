@@ -1,14 +1,17 @@
 ---
-title: "*Pre-tryout dinner*. What works, what doesn't"
-dek: "The food the night before. The food the morning of. Don't overthink it."
-seoDescription: "Tryouts in the morning. The night before, parents over-engineer dinner. They need carbs. They need protein. Should we do pasta. Should we skip the dairy."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: '*Pre-tryout dinner*. What works, what doesn''t'
+dek: The food the night before. The food the morning of. Don't overthink it.
+seoDescription: Tryouts in the morning. The night before, parents over-engineer dinner.
+  They need carbs. They need protein. Should we do pasta. Should we skip the dairy.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-10
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-13
 ---
 
 Tryouts in the morning. The night before, parents over-engineer dinner. *They need carbs. They need protein. Should we do pasta. Should we skip the dairy.*

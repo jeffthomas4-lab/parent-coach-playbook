@@ -1,14 +1,17 @@
 ---
-title: "The Group Chat Rule That Ends Midnight Texts"
-dek: "Schedules and weather only. Everything else goes one-on-one."
-seoDescription: "We state this in our first team email: group chat is for schedule updates and weather cancellations only."
-topic: "communication"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: The Group Chat Rule That Ends Midnight Texts
+dek: Schedules and weather only. Everything else goes one-on-one.
+seoDescription: 'We state this in our first team email: group chat is for schedule
+  updates and weather cancellations only.'
+topic: communication
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-13
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-10
 ---
 
 We state this in our first team email: group chat is for schedule updates and weather cancellations only. Questions about playing time, team decisions, or coach communication happen one-on-one. Email only. No group air.

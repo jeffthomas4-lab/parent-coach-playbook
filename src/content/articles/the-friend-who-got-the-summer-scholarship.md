@@ -1,13 +1,15 @@
 ---
-title: "The friend's kid who got the *summer scholarship*"
-dek: "The Instagram post lit up the parent group chat. Your kid is processing. Here's the conversation."
-seoDescription: "A teammate just posted that they got a scholarship to a summer elite program. Your kid saw it. Their friend's parents posted about it."
-topic: "communication"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "13-14"
-publishedAt: 2026-07-25
+title: The friend's kid who got the *summer scholarship*
+dek: The Instagram post lit up the parent group chat. Your kid is processing. Here's
+  the conversation.
+seoDescription: A teammate just posted that they got a scholarship to a summer elite
+  program. Your kid saw it. Their friend's parents posted about it.
+topic: communication
+format: note
+phase: drive-home
+sport: multi-sport
+age: 13-14
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

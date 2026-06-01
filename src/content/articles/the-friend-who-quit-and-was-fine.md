@@ -1,13 +1,15 @@
 ---
-title: "The summer the kid met someone *who quit and was fine*"
-dek: "The kid back from camp with a story about a friend who left their sport and is happier. The conversation about what that means for them."
-seoDescription: "The kid comes back from camp. They mention a new friend at the camp who quit travel ball last spring and is now doing theater."
-topic: "communication"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-07-31
+title: The summer the kid met someone *who quit and was fine*
+dek: The kid back from camp with a story about a friend who left their sport and is
+  happier. The conversation about what that means for them.
+seoDescription: The kid comes back from camp. They mention a new friend at the camp
+  who quit travel ball last spring and is now doing theater.
+topic: communication
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

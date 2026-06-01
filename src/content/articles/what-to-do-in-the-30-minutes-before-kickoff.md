@@ -1,14 +1,17 @@
 ---
-title: "What to do in the *30 minutes before kickoff*"
-dek: "You're at the field. Warm-ups have started. Your job in those thirty minutes."
-seoDescription: "You arrived at 8:30 for the 9am game. Your kid is in warm-ups. You have thirty minutes."
-topic: "game-day"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: What to do in the *30 minutes before kickoff*
+dek: You're at the field. Warm-ups have started. Your job in those thirty minutes.
+seoDescription: You arrived at 8:30 for the 9am game. Your kid is in warm-ups. You
+  have thirty minutes.
+topic: game-day
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-23
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-04
 ---
 
 You arrived at 8:30 for the 9am game. Your kid is in warm-ups. You have thirty minutes.

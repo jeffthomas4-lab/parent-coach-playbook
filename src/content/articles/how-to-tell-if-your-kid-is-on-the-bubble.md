@@ -1,14 +1,18 @@
 ---
-title: "How to tell if your kid is *on the bubble*"
-dek: "They might make the team. They might not. The signs to read before the list goes up."
-seoDescription: "Tryouts ended. The list goes up Monday. Between now and then, you're trying to read the tea leaves."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
+title: How to tell if your kid is *on the bubble*
+dek: They might make the team. They might not. The signs to read before the list goes
+  up.
+seoDescription: Tryouts ended. The list goes up Monday. Between now and then, you're
+  trying to read the tea leaves.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-07
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-09
 ---
 
 Tryouts ended. The list goes up Monday. Between now and then, you're trying to read the tea leaves.

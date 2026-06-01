@@ -1,13 +1,15 @@
 ---
-title: "The end-of-season equipment cleanup"
-dek: "An hour now saves $200 in fall replacement gear. The five-step audit before everything gets stuffed in a closet for four months."
-seoDescription: "Most families pile the gear bag in the garage after the last game and don't open it again until two weeks before the next season."
-topic: "equipment"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-05-15
+title: The end-of-season equipment cleanup
+dek: An hour now saves $200 in fall replacement gear. The five-step audit before everything
+  gets stuffed in a closet for four months.
+seoDescription: Most families pile the gear bag in the garage after the last game
+  and don't open it again until two weeks before the next season.
+topic: equipment
+format: note
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-24
   status: claude-reviewed
-  reviewerNotes: "Logistics with real money attached. Reads cleanly."
+  reviewerNotes: Logistics with real money attached. Reads cleanly.
 ---
 
 Most families pile the gear bag in the garage after the last game and don't open it again until two weeks before the next season. By then half of it has gone moldy, the cleats won't fit, and the helmet pads have collapsed.

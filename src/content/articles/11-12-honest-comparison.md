@@ -1,14 +1,17 @@
 ---
-title: "The 11-12 Honest Comparison"
-dek: "How to decide between rec and travel when it actually matters."
-seoDescription: "At eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here's how to make it without guessing."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
+title: The 11-12 Honest Comparison
+dek: How to decide between rec and travel when it actually matters.
+seoDescription: At eleven to twelve, if your kid is good and you have the budget,
+  rec versus travel is an actual choice. Here's how to make it without guessing.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-07
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-08
 ---
 
 At eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here's how to make it without guessing.

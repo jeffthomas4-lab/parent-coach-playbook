@@ -1,14 +1,17 @@
 ---
-title: "The 8-10 Tryout: What Coaches Actually Evaluate"
-dek: "Not skill. Coachability, effort, commitment, and friendliness."
-seoDescription: "At 8-10, coaches are not evaluating soccer talent or baseball technique. We're evaluating four things."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
+title: 'The 8-10 Tryout: What Coaches Actually Evaluate'
+dek: Not skill. Coachability, effort, commitment, and friendliness.
+seoDescription: At 8-10, coaches are not evaluating soccer talent or baseball technique.
+  We're evaluating four things.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-24
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-05
 ---
 
 At 8-10, coaches are not evaluating soccer talent or baseball technique. We're evaluating four things.

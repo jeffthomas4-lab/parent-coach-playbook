@@ -1,14 +1,18 @@
 ---
-title: "The kid who *scored* vs the kid who *didn't*"
-dek: "Same team. One scored the winning goal. One didn't touch the ball. Both go home with you."
-seoDescription: "Saturday game. Your son scored the winning goal. His sister, on a different field, had a tough game and barely touched the ball."
-topic: "game-day"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
+title: The kid who *scored* vs the kid who *didn't*
+dek: Same team. One scored the winning goal. One didn't touch the ball. Both go home
+  with you.
+seoDescription: Saturday game. Your son scored the winning goal. His sister, on a
+  different field, had a tough game and barely touched the ball.
+topic: game-day
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-19
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-28
 ---
 
 Saturday game. Your son scored the winning goal. His sister, on a different field, had a tough game and barely touched the ball.

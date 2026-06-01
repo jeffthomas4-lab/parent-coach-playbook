@@ -1,15 +1,18 @@
 ---
-title: "The *shared calendar* that prevents missed games"
-dek: "Two parents. Three kids. Six teams. One calendar. The setup."
-seoDescription: "You missed a game last season because you didn't have it on the calendar. The kid noticed. You felt awful."
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "logistics"
-sport: "multi-sport"
-age: "all-ages"
+title: The *shared calendar* that prevents missed games
+dek: Two parents. Three kids. Six teams. One calendar. The setup.
+seoDescription: You missed a game last season because you didn't have it on the calendar.
+  The kid noticed. You felt awful.
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: logistics
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-03-01
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-12
 ---
 
 You missed a game last season because you didn't have it on the calendar. The kid noticed. You felt awful.

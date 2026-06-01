@@ -1,13 +1,15 @@
 ---
-title: "The summer practice schedule the *kid hates*"
-dek: "What's actually wrong, what isn't, and the one conversation that fixes it more often than not."
-seoDescription: "It's July. The schedule said \"summer optional\" in May. By July it's three nights a week and your kid is dragging."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-07-03
+title: The summer practice schedule the *kid hates*
+dek: What's actually wrong, what isn't, and the one conversation that fixes it more
+  often than not.
+seoDescription: It's July. The schedule said "summer optional" in May. By July it's
+  three nights a week and your kid is dragging.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

@@ -1,13 +1,15 @@
 ---
-title: "The *grandparent* who pushes too hard"
-dek: "The post-game speech you didn't ask for. The pressure your kid feels coming from both directions. How to love them without letting it land on the kid."
-seoDescription: "Your dad has been at every game since your kid was four. He played college baseball. He has opinions. He has had opinions for sixty years."
-topic: "communication"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-06-15
+title: The *grandparent* who pushes too hard
+dek: The post-game speech you didn't ask for. The pressure your kid feels coming from
+  both directions. How to love them without letting it land on the kid.
+seoDescription: Your dad has been at every game since your kid was four. He played
+  college baseball. He has opinions. He has had opinions for sixty years.
+topic: communication
+format: essay
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

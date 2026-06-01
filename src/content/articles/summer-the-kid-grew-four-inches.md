@@ -1,13 +1,14 @@
 ---
-title: "The summer the kid *grew four inches*"
-dek: "Cleats don't fit. Coordination is gone. Confidence took a hit. The growth-spurt season nobody warns you about."
-seoDescription: "May to August. The kid grew. The sport got harder, not easier."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "13-14"
-publishedAt: 2026-07-13
+title: The summer the kid *grew four inches*
+dek: Cleats don't fit. Coordination is gone. Confidence took a hit. The growth-spurt
+  season nobody warns you about.
+seoDescription: May to August. The kid grew. The sport got harder, not easier.
+topic: the-hard-stuff
+format: note
+phase: drive-there
+sport: multi-sport
+age: 13-14
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

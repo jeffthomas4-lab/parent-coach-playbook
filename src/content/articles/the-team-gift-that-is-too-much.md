@@ -1,14 +1,16 @@
 ---
-title: "The team gift that's too much"
-dek: "When the team-mom proposal lands at $80 a family for the coach's gift, and you don't know how to push back without looking cheap."
-seoDescription: "The end-of-season group text from the team mom: \"We were thinking everyone chip in $80 for the coach's gift. Sound good?\""
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "money"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-05-21
+title: The team gift that's too much
+dek: When the team-mom proposal lands at $80 a family for the coach's gift, and you
+  don't know how to push back without looking cheap.
+seoDescription: 'The end-of-season group text from the team mom: "We were thinking
+  everyone chip in $80 for the coach''s gift. Sound good?"'
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: money
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -19,9 +21,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-08
   status: claude-reviewed
-  reviewerNotes: "Surfaces a real and under-discussed money tension."
+  reviewerNotes: Surfaces a real and under-discussed money tension.
 ---
 
 The end-of-season group text from the team mom: "We were thinking everyone chip in $80 for the coach's gift. Sound good?"

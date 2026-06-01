@@ -1,14 +1,18 @@
 ---
-title: "The *team hotel*. When you have to stay there. When you don't"
-dek: "The block is $220 a night. The motel down the street is $98. Can you opt out without burning the bridge."
-seoDescription: "The team hotel block is $220 a night. The hotel two miles away is $98. Across the tournament weekend, the difference is $244 to $366."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: The *team hotel*. When you have to stay there. When you don't
+dek: The block is $220 a night. The motel down the street is $98. Can you opt out
+  without burning the bridge.
+seoDescription: The team hotel block is $220 a night. The hotel two miles away is
+  $98. Across the tournament weekend, the difference is $244 to $366.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-26
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-20
 ---
 
 The team hotel block is $220 a night. The hotel two miles away is $98. Across the tournament weekend, the difference is $244 to $366.

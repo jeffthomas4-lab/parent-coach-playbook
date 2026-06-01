@@ -12,72 +12,32 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Your kid is staring at the cast list outside the drama room door. You are too.
+Your kid is staring at the cast list outside the drama room door, and you're standing right next to her. Something is wrong with what you're reading — either the part is smaller than what you expected based on the audition, or the part is bigger than you think she can really handle. Both of those feelings are uncomfortable in different ways, and before you say anything to her in the car, sit with the role for forty-eight hours.
 
-Something is wrong with what you are reading. Either the part is smaller than what you expected based on the audition, or the part is bigger than what you think your kid can handle.
+## Reading the role she got
 
-Both feel bad. They are different problems. Before you say anything in the car, sit with the role for 48 hours.
+Before you decide which problem you actually have, count the scenes she's in, count the lines, see whether she has a song, see whether she has a featured dance moment, see whether her character has a name. A role with no lines but three featured dance moments in a musical is a real role, and a role with twelve lines spread across two scenes might be a real role or might just be a placeholder — line count is the worst way to evaluate a part.
 
-## Reading the role they got
+If you can get hold of the script, read it. Look at what her character is actually doing in each scene. A scene with two lines where her character is the one driving the conflict is bigger than a scene with eight lines where her character is reacting to someone else.
 
-Before you decide which problem you have, sit with the role for 48 hours.
+## When the role is genuinely too small
 
-Count the scenes your kid is in. Count the lines. Note whether they have a song. Note whether they have a featured dance moment. Note whether the character has a name.
+There are real reasons a strong kid gets cast below her ability. The director may have needed a reliable kid to anchor a small role and stabilize a scene with weaker actors around her. The director may have thought she was great but wasn't sure she could carry a lead at this age. The senior who got the lead may be the same type as your kid, and there was only one of those slots. The director may not actually know your kid yet because she's new to the program.
 
-A role with no lines but three featured dance moments in a musical is a real role. A role with twelve lines spread across two scenes might be a real role or might be a placeholder. Volume of lines is the worst way to evaluate a part.
-
-Then read the script if you can get it. Look at what the character is actually doing in their scenes. A scene with two lines where the character is the one driving the conflict is bigger than a scene with eight lines where the character is reacting to someone else.
-
-## When the role is too small
-
-Sometimes a kid is cast below their ability. Reasons this happens.
-
-The director needed someone reliable in a small role to anchor a scene with weaker actors.
-
-The director thought your kid was great but was not sure they could carry the lead at this age.
-
-The senior they already cast as the lead is the same type as your kid. There was only one slot.
-
-The director does not actually know your kid yet because they are new to the program.
-
-What to do. Nothing, for the first two weeks. Have your kid attack the small part. The way to get a bigger part next time is to make a small part memorable.
-
-If your kid is consistently doing strong work in the small part for two weeks and you still think the casting was off, schedule a 10-minute conversation with the director after rehearsal. Not at the cast list reveal. Not on opening night. Quietly, midway through the run.
-
-Frame it: "I want to make sure they get the most out of this. What should they be working on so they are ready for a bigger role next year." That is not a complaint. That is a request for feedback.
+What to do about it: nothing, for the first two weeks. Have her attack the small part as if it's huge — the way to get a bigger part next time is to make a small part memorable. If after two weeks she's clearly doing strong work and you still think the casting was off, schedule a quiet ten-minute conversation with the director after rehearsal, not at the cast list reveal, not on opening night. Frame it as a question: "I want to make sure she gets the most out of this. What should she be working on so she's ready for a bigger role next year?" That's not a complaint, that's a request for feedback.
 
 ## When the role is too big
 
-This one is harder.
+This one is harder. The signs it's too big: she can't get the lines memorized on schedule, she's coming home crying after rehearsal, the director is giving her notes she can't execute, other cast members are visibly frustrated with her. This happens when a director takes a chance, or when a director sees something in a kid that the kid doesn't yet have but might develop in six weeks.
 
-Signs the role is too big. Your kid cannot get the lines memorized on schedule. They are coming home crying after rehearsal. The director is giving them notes they cannot execute. Other cast members are visibly frustrated with them.
+A few moves. First, do not pull her out — quitting a role is a much bigger deal than struggling in a role, and the theater community is small enough that quitting closes doors. Second, talk to her honestly: "I can see you're struggling. What's the hardest part of this. What would help?" Third, ask the director privately if there's any way to lighten the load. Some will cut a song or shift a scene, most won't, but ask. Fourth, if you can, hire help — a voice teacher for a few sessions, an acting coach, even a high school senior who has done the role before. One hour a week of focused work can change the trajectory.
 
-This can happen when a director takes a chance, or when a director sees something the kid does not yet have but the director thinks they can develop in six weeks.
+## When she wants to refuse the role
 
-What to do.
+Sometimes the disappointment is so big she'll want to walk away. Don't let her. Refusing a role she auditioned for makes her the kid who quits, and word travels. The next director sees the same name and has questions.
 
-First, do not pull them out. Quitting a part is a much bigger deal than struggling in a part. The theater community is small. Quitting closes doors.
+The exception is a role she genuinely cannot do for a real reason — a heavy dance role with a stress fracture in her foot, or a role with adult themes she's not ready for at her age. Those are not the situations we're usually talking about. The usual situation is that she didn't get the lead and she wants to quit the show. Hold the line. Make her play the part she signed up to play.
 
-Second, talk to your kid honestly. "I see you struggling. What is the hardest piece of this. What would help."
+## A note on the gap year
 
-Third, ask the director privately if there is any way to lighten the load. Some directors will cut a song or shift a scene. Most will not. But ask.
-
-Fourth, hire help if you can. A voice teacher for a few sessions. An acting coach. Even a high school senior who has done the role before. An hour a week of focused work can change the trajectory.
-
-## When your kid wants to refuse the role
-
-Sometimes the disappointment is so big that the kid wants to walk away.
-
-Do not let them.
-
-Refusing a role they auditioned for makes them the kid who quits. Word travels. The next director sees the same name and has questions.
-
-The exception is a role that the kid genuinely cannot do for a real reason. They got cast in a heavy dance role and they have a stress fracture in their foot. They got cast in a role with adult themes and they are 11. These are not the situations we are usually talking about.
-
-The usual situation is: they did not get the lead and they want to quit the show. Sit with them. Hold the line. Make them play the part they signed up to play.
-
-## A note on the gap year of theater
-
-If your kid is hurt enough by a bad casting that they want to step away, that can be the right call sometimes. But the step away should be at least a full year. Skipping one show in the middle of a season looks like a tantrum. Choosing not to audition for the next season because they want to focus on something else looks like a decision.
-
-Help them tell the difference.
+If your kid is hurt enough by a bad casting that she wants to step away, sometimes that's the right call. But the step away should be at least a full year. Skipping one show in the middle of a season looks like a tantrum; choosing not to audition for the next full season because she wants to focus on something else looks like a decision. Help her tell the difference.

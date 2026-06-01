@@ -1,14 +1,17 @@
 ---
-title: "Used Gear: The Insole Rule, The Helmet Rule, The Bat Rule"
-dek: "What's safe to buy secondhand. What's not."
-seoDescription: "Buying used gear saves money. Some used gear is smart. Some is a mistake. Three rules separate the two."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: 'Used Gear: The Insole Rule, The Helmet Rule, The Bat Rule'
+dek: What's safe to buy secondhand. What's not.
+seoDescription: Buying used gear saves money. Some used gear is smart. Some is a mistake.
+  Three rules separate the two.
+topic: equipment
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-03-08
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-24
 ---
 
 Buying used gear saves money. Some used gear is smart. Some is a mistake. Three rules separate the two.

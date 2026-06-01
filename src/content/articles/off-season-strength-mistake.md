@@ -1,13 +1,15 @@
 ---
-title: "The off-season *strength mistake* most parents make"
-dek: "More volume is not more progress. The age-appropriate program nobody runs and what to do instead."
-seoDescription: "The off-season strength mistake is volume. Three sessions a week, heavy weights, no supervision, copying a college program from YouTube."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "13-14"
-publishedAt: 2026-07-08
+title: The off-season *strength mistake* most parents make
+dek: More volume is not more progress. The age-appropriate program nobody runs and
+  what to do instead.
+seoDescription: The off-season strength mistake is volume. Three sessions a week,
+  heavy weights, no supervision, copying a college program from YouTube.
+topic: the-hard-stuff
+format: note
+phase: drive-there
+sport: multi-sport
+age: 13-14
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

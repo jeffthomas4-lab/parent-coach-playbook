@@ -1,13 +1,15 @@
 ---
-title: "The kid who got cut and wants to switch sports"
-dek: "When the cut from one team becomes the door to a different one. How to know if it's avoidance or growth."
-seoDescription: "The kid got cut from the soccer team. A week later, they say they want to play lacrosse instead. The parent question: is this growth or is this avoidance?"
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-06-06
+title: The kid who got cut and wants to switch sports
+dek: When the cut from one team becomes the door to a different one. How to know if
+  it's avoidance or growth.
+seoDescription: 'The kid got cut from the soccer team. A week later, they say they
+  want to play lacrosse instead. The parent question: is this growth or is this avoidance?'
+topic: the-hard-stuff
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-18
   status: claude-reviewed
-  reviewerNotes: "Distinguishes avoidance from growth carefully. The 30-day rule is helpful."
+  reviewerNotes: Distinguishes avoidance from growth carefully. The 30-day rule is
+    helpful.
 ---
 
 The kid got cut from the soccer team. A week later, they say they want to play lacrosse instead. The parent question: is this growth or is this avoidance?

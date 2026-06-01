@@ -1,14 +1,19 @@
 ---
-title: "Team fun *versus not doing things you don't want to do*"
-dek: "The Saturday-night team activity. The Sunday morning bowling. You can pass. The art of how."
-seoDescription: "Friday night arrival at the tournament hotel. The team chat lights up. Everyone meet in the lobby for bowling. Saturday afternoon. Pizza party at the suite."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: Team fun *versus not doing things you don't want to do*
+dek: The Saturday-night team activity. The Sunday morning bowling. You can pass. The
+  art of how.
+seoDescription: Friday night arrival at the tournament hotel. The team chat lights
+  up. Everyone meet in the lobby for bowling. Saturday afternoon. Pizza party at the
+  suite.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-24
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-18
 ---
 
 Friday night arrival at the tournament hotel. The team chat lights up. *Everyone meet in the lobby for bowling.* Saturday afternoon. *Pizza party at the suite.* Sunday morning before games. *Team breakfast at IHOP at 7am.*

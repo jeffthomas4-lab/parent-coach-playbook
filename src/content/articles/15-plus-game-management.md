@@ -1,14 +1,17 @@
 ---
-title: "The 15-Plus Game-Management Rule Book"
-dek: "What actually matters in serious competition."
-seoDescription: "At fifteen and up, the rules get complicated. Red cards. Ejections. Suspensions that carry into the next game. Foul limits. Technical fouls."
-topic: "rules-of-play"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "15-plus"
+title: The 15-Plus Game-Management Rule Book
+dek: What actually matters in serious competition.
+seoDescription: At fifteen and up, the rules get complicated. Red cards. Ejections.
+  Suspensions that carry into the next game. Foul limits. Technical fouls.
+topic: rules-of-play
+format: note
+phase: game
+sport: multi-sport
+age: 15-plus
 publishedAt: 2026-03-12
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-30
 ---
 
 At fifteen and up, the rules get complicated. Red cards. Ejections. Suspensions that carry into the next game. Foul limits. Technical fouls. Your kid needs to understand the consequences.

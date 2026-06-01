@@ -1,14 +1,17 @@
 ---
-title: "Used vs new gear. *The actual math*"
-dek: "When used is fine. When used is a mistake. The five-minute decision."
-seoDescription: "Some gear is fine to buy used. Some gear is a mistake to buy used. Here is how to tell."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: Used vs new gear. *The actual math*
+dek: When used is fine. When used is a mistake. The five-minute decision.
+seoDescription: Some gear is fine to buy used. Some gear is a mistake to buy used.
+  Here is how to tell.
+topic: equipment
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-01-22
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-15
 ---
 
 Some gear is fine to buy used. Some gear is a mistake to buy used. Here is how to tell.

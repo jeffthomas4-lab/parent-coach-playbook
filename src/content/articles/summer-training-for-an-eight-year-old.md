@@ -1,13 +1,15 @@
 ---
-title: "What 'summer training' actually does for an 8-year-old"
-dek: "The hard truth about $400 summer skills clinics for kids who are still losing baby teeth. What helps, what doesn't, and the cheap version that works."
-seoDescription: "A $400 summer skills clinic for an 8-year-old promises advanced footwork, position-specific training, and elite progression."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-05-28
+title: What 'summer training' actually does for an 8-year-old
+dek: The hard truth about $400 summer skills clinics for kids who are still losing
+  baby teeth. What helps, what doesn't, and the cheap version that works.
+seoDescription: A $400 summer skills clinic for an 8-year-old promises advanced footwork,
+  position-specific training, and elite progression.
+topic: the-hard-stuff
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-28
   status: claude-reviewed
-  reviewerNotes: "Honest take that pushes back on the youth-sports industrial complex without being preachy."
+  reviewerNotes: Honest take that pushes back on the youth-sports industrial complex
+    without being preachy.
 ---
 
 A $400 summer skills clinic for an 8-year-old promises advanced footwork, position-specific training, and elite progression. The brochure shows kids doing ladder drills with serious looks on their faces.

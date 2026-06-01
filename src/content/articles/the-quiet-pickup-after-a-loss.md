@@ -1,16 +1,20 @@
 ---
-title: "The *quiet pickup* after a loss"
-dek: "He played hard. The team lost. He won't talk. The first ten minutes of pickup."
-seoDescription: "Final whistle. The team lost. Your kid walks off the field with the kind of slow steps that mean he played his heart out and lost anyway."
-topic: "game-day"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
+title: The *quiet pickup* after a loss
+dek: He played hard. The team lost. He won't talk. The first ten minutes of pickup.
+seoDescription: Final whistle. The team lost. Your kid walks off the field with the
+  kind of slow steps that mean he played his heart out and lost anyway.
+topic: game-day
+format: note
+phase: drive-home
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-20
 featured: false
 hero: /illustrations/walking-home-sunset.webp
-heroAlt: "A parent and child walking away from a sports field at sunset, equipment bag over the parent's shoulder, neither one talking."
+heroAlt: A parent and child walking away from a sports field at sunset, equipment
+  bag over the parent's shoulder, neither one talking.
+editorial:
+  claudeReviewedAt: 2026-04-30
 ---
 
 Final whistle. The team lost. Your kid walks off the field with the kind of slow steps that mean he played his heart out and lost anyway.

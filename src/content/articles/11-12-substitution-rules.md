@@ -1,14 +1,17 @@
 ---
-title: "The 11-12 Substitution Rules Every Parent Should Know"
-dek: "How playing time actually works at this age."
-seoDescription: "At eleven to twelve, different leagues have different rules about substitutions. I didn't know what the rule was for years."
-topic: "rules-of-play"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "11-12"
+title: The 11-12 Substitution Rules Every Parent Should Know
+dek: How playing time actually works at this age.
+seoDescription: At eleven to twelve, different leagues have different rules about
+  substitutions. I didn't know what the rule was for years.
+topic: rules-of-play
+format: note
+phase: game
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-02-04
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-02
 ---
 
 At eleven to twelve, different leagues have different rules about substitutions. I didn't know what the rule was for years. I just got mad when my kid didn't play.

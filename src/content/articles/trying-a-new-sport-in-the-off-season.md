@@ -1,13 +1,15 @@
 ---
-title: "Trying a new sport in the off-season"
-dek: "The kid wants to try something new. The five-week test that tells you whether it sticks, and the parent traps to avoid."
-seoDescription: "The off-season is the right time to try a new sport. The kid is fresh, the competition for time is light, and the stakes are low."
-topic: "tryouts"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-05-27
+title: Trying a new sport in the off-season
+dek: The kid wants to try something new. The five-week test that tells you whether
+  it sticks, and the parent traps to avoid.
+seoDescription: The off-season is the right time to try a new sport. The kid is fresh,
+  the competition for time is light, and the stakes are low.
+topic: tryouts
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-02
   status: claude-reviewed
-  reviewerNotes: "The five-week structure is concrete and useful."
+  reviewerNotes: The five-week structure is concrete and useful.
 ---
 
 The off-season is the right time to try a new sport. The kid is fresh, the competition for time is light, and the stakes are low.

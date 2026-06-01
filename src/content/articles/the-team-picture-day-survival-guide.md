@@ -1,15 +1,18 @@
 ---
-title: "The team *picture day* survival guide"
-dek: "Six year olds. Forty minutes. Bad lighting. Here is how it goes."
-seoDescription: "Picture day is on the schedule. Six-year-olds. The photographer has 40 minutes. The lighting is whatever it is. You have one shot."
-topic: "season-ops"
-format: "note"
-phase: "team-parent"
-teamParentTopic: "picture-day"
-sport: "multi-sport"
-age: "5-7"
+title: The team *picture day* survival guide
+dek: Six year olds. Forty minutes. Bad lighting. Here is how it goes.
+seoDescription: Picture day is on the schedule. Six-year-olds. The photographer has
+  40 minutes. The lighting is whatever it is. You have one shot.
+topic: season-ops
+format: note
+phase: team-parent
+teamParentTopic: picture-day
+sport: multi-sport
+age: 5-7
 publishedAt: 2026-02-27
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-10
 ---
 
 Picture day is on the schedule. Six-year-olds. The photographer has 40 minutes. The lighting is whatever it is. You have one shot.

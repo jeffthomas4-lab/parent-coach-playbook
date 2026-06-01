@@ -1,13 +1,15 @@
 ---
-title: "Open gym etiquette in the off-season"
-dek: "Showing up to a high-school open gym at 12. The unspoken rules nobody tells you, and how to help your kid not get frozen out."
-seoDescription: "Open gym at the local high school is one of the best off-season opportunities for a kid trying to level up."
-topic: "rules-of-play"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-05-26
+title: Open gym etiquette in the off-season
+dek: Showing up to a high-school open gym at 12. The unspoken rules nobody tells you,
+  and how to help your kid not get frozen out.
+seoDescription: Open gym at the local high school is one of the best off-season opportunities
+  for a kid trying to level up.
+topic: rules-of-play
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 8
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-12
   status: claude-reviewed
-  reviewerNotes: "Underdiscussed topic: the social rules of stepping up in age."
+  reviewerNotes: 'Underdiscussed topic: the social rules of stepping up in age.'
 ---
 
 Open gym at the local high school is one of the best off-season opportunities for a kid trying to level up. It's also socially complicated for a 12-year-old walking into a gym full of 16-year-olds.

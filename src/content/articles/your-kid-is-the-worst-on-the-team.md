@@ -1,16 +1,21 @@
 ---
-title: "Your Kid Is the Worst on the Team"
-dek: "They know. The team knows. You're the only one pretending otherwise."
-seoDescription: "There's always one. The kid who is clearly several levels below everyone else. Maybe it's yours."
-topic: "the-hard-stuff"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "all-ages"
+title: Your Kid Is the Worst on the Team
+dek: They know. The team knows. You're the only one pretending otherwise.
+seoDescription: There's always one. The kid who is clearly several levels below everyone
+  else. Maybe it's yours.
+topic: the-hard-stuff
+format: note
+phase: game
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-02-12
 featured: false
 hero: /illustrations/your-kid-is-the-worst-on-the-team.webp
-heroAlt: "Child sits on end of dugout bench alone, head down on water bottle. Rest of team loosely suggested in middle distance, celebrating a goal. Honest composition showing posture over face."
+heroAlt: Child sits on end of dugout bench alone, head down on water bottle. Rest
+  of team loosely suggested in middle distance, celebrating a goal. Honest composition
+  showing posture over face.
+editorial:
+  claudeReviewedAt: 2026-04-17
 ---
 
 There's always one. The kid who is clearly several levels below everyone else. Maybe it's yours.

@@ -1,13 +1,16 @@
 ---
-title: "When the family vacation overlaps with the camp"
-dek: "The conflict every June. The camp deposit, the family beach week, the kid in the middle. How families resolve it without resentment."
-seoDescription: "The summer camp registered in February starts the same week as the family beach trip booked in November. The kid wants both. The family budget supports one."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "8-10"
-publishedAt: 2026-06-07
+title: When the family vacation overlaps with the camp
+dek: The conflict every June. The camp deposit, the family beach week, the kid in
+  the middle. How families resolve it without resentment.
+seoDescription: The summer camp registered in February starts the same week as the
+  family beach trip booked in November. The kid wants both. The family budget supports
+  one.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 8-10
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +21,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-23
   status: claude-reviewed
-  reviewerNotes: "Sits at the family-system tension well. The hierarchy is original framing."
+  reviewerNotes: Sits at the family-system tension well. The hierarchy is original
+    framing.
 ---
 
 The summer camp registered in February starts the same week as the family beach trip booked in November. The kid wants both. The family budget supports one. Somebody is going to be unhappy.

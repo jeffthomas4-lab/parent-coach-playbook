@@ -1,13 +1,15 @@
 ---
-title: "When the kid wants to specialize this summer"
-dek: "What 'I just want to focus on one sport' usually means at age 11, and the three questions that surface what they actually want."
-seoDescription: "When your kid says \"I just want to focus on one sport this summer,\" it almost never means what the words say."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-05-20
+title: When the kid wants to specialize this summer
+dek: What 'I just want to focus on one sport' usually means at age 11, and the three
+  questions that surface what they actually want.
+seoDescription: When your kid says "I just want to focus on one sport this summer,"
+  it almost never means what the words say.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-05-02
   status: claude-reviewed
-  reviewerNotes: "Important piece. The three questions structure is original framing."
+  reviewerNotes: Important piece. The three questions structure is original framing.
 ---
 
 When your kid says "I just want to focus on one sport this summer," it almost never means what the words say.

@@ -1,18 +1,24 @@
 ---
-title: "What you say in the *first 90 seconds*"
-seoTitle: "What to say to your kid in the first 90 seconds after a game"
-seoDescription: "The post-game window is shorter than parents think. The exact words that protect the relationship after a hard game, by sport and by age."
-dek: "The window after the game is shorter than you think. I waste it almost every Saturday. Here is what I am trying to do instead."
-format: "essay"
+title: What you say in the *first 90 seconds*
+seoTitle: What to say to your kid in the first 90 seconds after a game
+seoDescription: The post-game window is shorter than parents think. The exact words
+  that protect the relationship after a hard game, by sport and by age.
+dek: The window after the game is shorter than you think. I waste it almost every
+  Saturday. Here is what I am trying to do instead.
+format: essay
 issue: 1
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
-seasonPhase: "mid"
+phase: drive-home
+sport: multi-sport
+age: 8-10
+seasonPhase: mid
 publishedAt: 2026-02-19
 featured: true
 hero: /illustrations/the-90-second-rule.webp
-heroAlt: "Close-up of parent's hands on steering wheel, looking through windshield with child's head visible in rearview mirror. Dashboard clock reads 4:47 PM, late-afternoon honey light."
+heroAlt: Close-up of parent's hands on steering wheel, looking through windshield
+  with child's head visible in rearview mirror. Dashboard clock reads 4:47 PM, late-afternoon
+  honey light.
+editorial:
+  claudeReviewedAt: 2026-04-27
 ---
 
 My kid went 0 for 4 last Saturday. I was the assistant coach on his team. I was also his dad. Complicated set of facts to drive home with.

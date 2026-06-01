@@ -1,13 +1,16 @@
 ---
-title: "The kid who quit the team gracefully"
-dek: "When the decision to quit is the right one. The week to do it well, the texts to send, the conversations to skip."
-seoDescription: "Sometimes the decision is to quit. The kid has thought about it, the parent has thought about it, the family has had the conversation, and the answer is no..."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-06-01
+title: The kid who quit the team gracefully
+dek: When the decision to quit is the right one. The week to do it well, the texts
+  to send, the conversations to skip.
+seoDescription: Sometimes the decision is to quit. The kid has thought about it, the
+  parent has thought about it, the family has had the conversation, and the answer
+  is no...
+topic: the-hard-stuff
+format: note
+phase: drive-home
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +21,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-04-13
   status: claude-reviewed
-  reviewerNotes: "Quitting well is its own skill. The script-style structure helps."
+  reviewerNotes: Quitting well is its own skill. The script-style structure helps.
 ---
 
 Sometimes the decision is to quit. The kid has thought about it, the parent has thought about it, the family has had the conversation, and the answer is no, this sport is not for us anymore.

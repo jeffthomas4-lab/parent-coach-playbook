@@ -1,13 +1,15 @@
 ---
-title: "When private lessons start to backfire"
-dek: "The signs that the $80-an-hour skills coach is making your kid worse at the sport, not better. And what to do about it."
-seoDescription: "Most private lessons help. The kid gets focused reps, individual feedback, and skill work the team practice can't deliver."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
-publishedAt: 2026-05-31
+title: When private lessons start to backfire
+dek: The signs that the $80-an-hour skills coach is making your kid worse at the sport,
+  not better. And what to do about it.
+seoDescription: Most private lessons help. The kid gets focused reps, individual feedback,
+  and skill work the team practice can't deliver.
+topic: rec-vs-travel
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
+publishedAt: 2026-05-13
 featured: false
 editorial:
   qualityGrade: 9
@@ -18,9 +20,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-04
+  claudeReviewedAt: 2026-03-29
   status: claude-reviewed
-  reviewerNotes: "Original framing. The conflict-with-team-coach signal is the strongest."
+  reviewerNotes: Original framing. The conflict-with-team-coach signal is the strongest.
 ---
 
 Most private lessons help. The kid gets focused reps, individual feedback, and skill work the team practice can't deliver. For some kids in some sports, private coaching is the difference between making the next-level team and not.

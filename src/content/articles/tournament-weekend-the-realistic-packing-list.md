@@ -1,14 +1,18 @@
 ---
-title: "Tournament weekend. *The realistic packing list*"
-dek: "Three days. Five games. One hotel room. What you actually need."
-seoDescription: "A tournament weekend is its own logistics event. Three days. Multiple games. A hotel. A team dinner. Restaurant meals. Heat or rain. Recovery between games."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "11-12"
+title: Tournament weekend. *The realistic packing list*
+dek: Three days. Five games. One hotel room. What you actually need.
+seoDescription: A tournament weekend is its own logistics event. Three days. Multiple
+  games. A hotel. A team dinner. Restaurant meals. Heat or rain. Recovery between
+  games.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: 11-12
 publishedAt: 2026-03-07
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-22
 ---
 
 A tournament weekend is its own logistics event. Three days. Multiple games. A hotel. A team dinner. Restaurant meals. Heat or rain. Recovery between games.

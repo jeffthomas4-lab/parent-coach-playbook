@@ -1,14 +1,18 @@
 ---
-title: "Quitting travel. *How to do it cleanly*"
-dek: "They are fourteen. The travel commitment is too much. Here is how to step away without burning the bridge."
-seoDescription: "Your kid has played travel ball since nine. The schedule has gotten harder every year. School has gotten harder. Their body is growing."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "13-14"
+title: Quitting travel. *How to do it cleanly*
+dek: They are fourteen. The travel commitment is too much. Here is how to step away
+  without burning the bridge.
+seoDescription: Your kid has played travel ball since nine. The schedule has gotten
+  harder every year. School has gotten harder. Their body is growing.
+topic: rec-vs-travel
+format: note
+phase: drive-home
+sport: multi-sport
+age: 13-14
 publishedAt: 2026-01-27
 featured: false
+editorial:
+  claudeReviewedAt: 2026-03-21
 ---
 
 Your kid has played travel ball since nine. The schedule has gotten harder every year. School has gotten harder. Their body is growing. Their social life is getting bigger.

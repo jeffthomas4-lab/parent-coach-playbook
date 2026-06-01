@@ -1,14 +1,17 @@
 ---
-title: "The 13-14 Bat Drop Weight Check"
-dek: "Understanding drop weight and when to upgrade."
-seoDescription: "At thirteen and fourteen, your kid is getting stronger and faster. The bat they used last year might be the wrong drop now."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "baseball"
-age: "13-14"
+title: The 13-14 Bat Drop Weight Check
+dek: Understanding drop weight and when to upgrade.
+seoDescription: At thirteen and fourteen, your kid is getting stronger and faster.
+  The bat they used last year might be the wrong drop now.
+topic: equipment
+format: note
+phase: drive-there
+sport: baseball
+age: 13-14
 publishedAt: 2026-02-16
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-22
 ---
 
 At thirteen and fourteen, your kid is getting stronger and faster. The bat they used last year might be the wrong drop now. Drop is the difference between bat length and bat weight. A 30-inch, 20-ounce bat is a drop-10. The number matters.

@@ -1,14 +1,20 @@
 ---
-title: "Boys in ballet: bullying, scholarships, and how to keep them going"
-dek: "Boys are still a minority in most ballet studios. The path is different. Here is what makes it harder and what makes it worth it."
-seoDescription: "Boys in ballet face specific challenges, including bullying and isolation. Here is how to support a boy who wants to dance."
-bluf: "Boys in ballet are still a minority. Many face bullying or social pushback. But male dancers are in demand at major schools and companies, with significant scholarship and audition advantage. The right studio with male peers and male teachers makes a major difference. So does honest conversation with your son about why he is doing this."
-topic: "the-hard-stuff"
-format: "essay"
-phase: "drive-home"
-sport: "ballet"
-age: "8-10"
-publishedAt: "2026-05-12"
+title: 'Boys in ballet: bullying, scholarships, and how to keep them going'
+dek: Boys are still a minority in most ballet studios. The path is different. Here
+  is what makes it harder and what makes it worth it.
+seoDescription: Boys in ballet face specific challenges, including bullying and isolation.
+  Here is how to support a boy who wants to dance.
+bluf: Boys in ballet are still a minority. Many face bullying or social pushback.
+  But male dancers are in demand at major schools and companies, with significant
+  scholarship and audition advantage. The right studio with male peers and male teachers
+  makes a major difference. So does honest conversation with your son about why he
+  is doing this.
+topic: the-hard-stuff
+format: essay
+phase: drive-home
+sport: ballet
+age: 8-10
+publishedAt: '2026-05-12'
 featured: false
 ---
 

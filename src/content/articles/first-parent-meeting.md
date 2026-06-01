@@ -1,14 +1,17 @@
 ---
-title: "The First Parent-Meeting Agenda (Every Age)"
-dek: "Fifteen minutes of clarity beats thirty minutes of noise."
-seoDescription: "The first parent meeting should answer four questions and then finish. Not four questions plus clarifications plus sidebar stories. Four questions."
-topic: "season-ops"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
+title: The First Parent-Meeting Agenda (Every Age)
+dek: Fifteen minutes of clarity beats thirty minutes of noise.
+seoDescription: The first parent meeting should answer four questions and then finish.
+  Not four questions plus clarifications plus sidebar stories. Four questions.
+topic: season-ops
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
 publishedAt: 2026-03-03
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-14
 ---
 
 The first parent meeting should answer four questions and then finish. Not four questions plus clarifications plus sidebar stories. Four questions. Done in fifteen minutes.

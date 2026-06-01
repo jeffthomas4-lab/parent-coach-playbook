@@ -1,14 +1,18 @@
 ---
-title: "When a *friend's family* goes travel and yours doesn't"
-dek: "Their kid is on the travel team. Yours isn't. The friendship is going to feel different."
-seoDescription: "Your kid's best friend just made the travel team. Your kid is staying in rec. By April, the friendship will feel different."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
+title: When a *friend's family* goes travel and yours doesn't
+dek: Their kid is on the travel team. Yours isn't. The friendship is going to feel
+  different.
+seoDescription: Your kid's best friend just made the travel team. Your kid is staying
+  in rec. By April, the friendship will feel different.
+topic: rec-vs-travel
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-04
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-03
 ---
 
 Your kid's best friend just made the travel team. Your kid is staying in rec. By April, the friendship will feel different.

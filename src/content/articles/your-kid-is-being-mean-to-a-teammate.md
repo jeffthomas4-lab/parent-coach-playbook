@@ -1,14 +1,17 @@
 ---
-title: "Your 8-10 Kid Is Being Mean to a Teammate"
-dek: "This isn't about sports. This is about your kid's character. Handle it now."
-seoDescription: "The coach tells you. Or another parent tells you. Or you see it yourself: your kid was unkind to a teammate."
-topic: "the-hard-stuff"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "8-10"
+title: Your 8-10 Kid Is Being Mean to a Teammate
+dek: This isn't about sports. This is about your kid's character. Handle it now.
+seoDescription: 'The coach tells you. Or another parent tells you. Or you see it yourself:
+  your kid was unkind to a teammate.'
+topic: the-hard-stuff
+format: note
+phase: drive-home
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-05
 featured: false
+editorial:
+  claudeReviewedAt: 2026-04-06
 ---
 
 The coach tells you. Or another parent tells you. Or you see it yourself: your kid was unkind to a teammate. They made fun of them or excluded them or spoke harshly to them.

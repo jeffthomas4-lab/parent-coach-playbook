@@ -1,14 +1,17 @@
 ---
-title: "The 15-Plus Walking-Away Decision"
-dek: "How to quit without it being a failure."
-seoDescription: "At fifteen and up, some kids walk away from travel ball. They're burned out or ready to do something else. This is normal."
-topic: "rec-vs-travel"
-format: "note"
-phase: "drive-home"
-sport: "multi-sport"
-age: "15-plus"
+title: The 15-Plus Walking-Away Decision
+dek: How to quit without it being a failure.
+seoDescription: At fifteen and up, some kids walk away from travel ball. They're burned
+  out or ready to do something else. This is normal.
+topic: rec-vs-travel
+format: note
+phase: drive-home
+sport: multi-sport
+age: 15-plus
 publishedAt: 2026-03-10
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-26
 ---
 
 At fifteen and up, some kids walk away from travel ball. They're burned out or ready to do something else. This is normal. Treating it like a failure is the mistake.

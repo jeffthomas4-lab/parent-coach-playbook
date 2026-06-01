@@ -5,7 +5,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import ThreeDrivesNav from '../components/ThreeDrivesNav.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { PILLARS, SPORTS, AGE_BANDS, type PillarSlug } from '../data/site';
-import { isLive } from '../lib/publishFilter';
+import { isLive, freshnessDate } from '../lib/publishFilter';
 
 interface Props {
   pillar: PillarSlug;
@@ -15,7 +15,7 @@ const { pillar } = Astro.props;
 const meta = PILLARS[pillar];
 
 const articles = (await getCollection('articles', ({ data }) => isLive(data) && data.phase === pillar))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+  .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
 // Collect tags actually used in this pillar
 const sportsUsed = [...new Set(articles.map(a => a.data.sport).filter(Boolean))] as string[];

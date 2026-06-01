@@ -1,13 +1,15 @@
 ---
-title: "When your spouse *disagrees* with how you're coaching them"
-dek: "The argument that isn't really about playing time. How to keep the marriage out of the dugout, and the coaching out of the kitchen."
-seoDescription: "You both watched the same game. You came home with two different versions of what just happened."
-topic: "communication"
-format: "essay"
-phase: "drive-home"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-06-17
+title: When your spouse *disagrees* with how you're coaching them
+dek: The argument that isn't really about playing time. How to keep the marriage out
+  of the dugout, and the coaching out of the kitchen.
+seoDescription: You both watched the same game. You came home with two different versions
+  of what just happened.
+topic: communication
+format: essay
+phase: drive-home
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

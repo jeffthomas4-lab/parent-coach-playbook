@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TOPICS, AGE_BANDS, SPORTS } from '../../data/site';
 import TopicIcon from '../../components/TopicIcon.astro';
-import { isLive } from '../../lib/publishFilter';
+import { isLive, freshnessDate } from '../../lib/publishFilter';
 
 export async function getStaticPaths() {
   return TOPICS.map((t) => ({
@@ -18,7 +18,7 @@ const topicMeta = TOPICS.find(t => t.slug === topic)!;
 const articles = (await getCollection('articles', ({ data }) =>
   isLive(data) && data.topic === topic
 ))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+  .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
 // Pagination: 24 per page (can add "Load more" button later if needed)
 const ITEMS_PER_PAGE = 24;

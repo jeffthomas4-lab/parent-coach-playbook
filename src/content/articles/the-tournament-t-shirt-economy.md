@@ -1,13 +1,15 @@
 ---
-title: "The tournament *t-shirt economy*"
-dek: "Twelve t-shirts later, two of which the kid wears. The honest read on the merch table, and what to actually buy."
-seoDescription: "The tournament merch table is not for the kid. It's for the family that wants the trip to feel like a thing. That's fine. Just call it what it is."
-topic: "equipment"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-07-11
+title: The tournament *t-shirt economy*
+dek: Twelve t-shirts later, two of which the kid wears. The honest read on the merch
+  table, and what to actually buy.
+seoDescription: The tournament merch table is not for the kid. It's for the family
+  that wants the trip to feel like a thing. That's fine. Just call it what it is.
+topic: equipment
+format: note
+phase: game
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

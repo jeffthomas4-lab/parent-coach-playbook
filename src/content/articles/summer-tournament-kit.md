@@ -1,13 +1,15 @@
 ---
-title: "The summer tournament *kit*"
-dek: "Sunscreen, electrolytes, towels, the cooler. The pack list that prevents most of the meltdowns."
-seoDescription: "The summer tournament list is shorter than the winter one but the cost of forgetting an item is bigger."
-topic: "equipment"
-format: "note"
-phase: "drive-there"
-sport: "multi-sport"
-age: "all-ages"
-publishedAt: 2026-07-07
+title: The summer tournament *kit*
+dek: Sunscreen, electrolytes, towels, the cooler. The pack list that prevents most
+  of the meltdowns.
+seoDescription: The summer tournament list is shorter than the winter one but the
+  cost of forgetting an item is bigger.
+topic: equipment
+format: note
+phase: drive-there
+sport: multi-sport
+age: all-ages
+publishedAt: 2026-05-13
 featured: false
 draft: false
 ---

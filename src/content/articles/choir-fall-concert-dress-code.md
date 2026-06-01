@@ -12,90 +12,44 @@ publishedAt: "2026-05-12"
 featured: false
 ---
 
-Three weeks until the fall concert. The dress code email came home in October as an attachment titled "concert_attire_2026.pdf."
-
-Long black dress or black pants and a white shirt. Black dress shoes. No sparkly anything. You called your mom and asked her if she still had your old concert dress from 1992. She did. It does not fit your kid.
-
-Here is what to actually buy.
+Three weeks until the fall concert, and the dress code email came home in October as an attachment titled concert_attire_2026.pdf. Long black dress or black pants and a white shirt. Black dress shoes. No sparkly anything. You called your mom and asked her if she still had your old concert dress from 1992. She did. It doesn't fit your kid. So here's what to actually buy and what to skip.
 
 ## The standard dress code
 
-For most school choirs, the dress code is one of two things.
-
-Option A. A long black dress. Floor length or just below the knee. Black, plain, no patterns. Sleeves usually required, sometimes optional depending on the program. Modest neckline.
-
-Option B. Black pants, a white button-down shirt, a black bow tie or black tie. Black dress shoes, black socks.
-
-Some schools have a mix where kids can choose either A or B regardless of gender. Some schools assign one or the other based on the section. Most school choirs have moved to letting kids choose.
+For most school choirs, the dress code is one of two things. Option A is a long black dress — floor-length or just below the knee, plain black, no patterns, sleeves usually required, modest neckline. Option B is black pants with a white button-down shirt, a black bow tie or black tie, black dress shoes and black socks. Some schools have a mix where kids can choose either A or B regardless of gender, some schools assign one or the other based on section, and most school choirs have moved to letting kids choose.
 
 ## What to buy
 
-A few specifics.
+The cheapest path to the long black dress is a plain black formal dress from any retail store or department store, thirty to sixty dollars. Solid black, no embellishments, no rhinestones, no lace, no patterns — the director wants the choir to look uniform on stage, not for individuals to stand out. If she's between sizes, buy slightly larger because she's still growing, and a dress that hits mid-calf at the start of the year will be appropriate at the year's end.
 
-The long black dress. The cheapest path is a plain black formal dress from any retail store or department store. $30 to $60 will do it. Solid black, no embellishments, no rhinestones, no lace, no patterns. The director wants the choir to look uniform on stage, not for individuals to stand out.
+The white button-down: long-sleeve, plain white, cotton or cotton blend, about twenty to thirty at any department store. Don't buy a thin white shirt — stage lights make thin fabric transparent and your kid will be embarrassed. Buy something with weight.
 
-If your kid is between sizes, buy slightly larger. They are still growing. A dress that hits mid-calf at the start of the year will be appropriate at the year's end.
+The black pants: plain black dress pants, not jeans, not athletic pants, not chinos, real dress pants for twenty-five to forty.
 
-The white button-down shirt. Long sleeve, plain white. Cotton or cotton blend. About $20 to $30 at any department store. Do not buy a thin white shirt. The stage lights make thin fabric transparent. The kid will be embarrassed. Buy something with weight to it.
+The black tie or bow tie: usually provided by the school if needed, but if not, a basic black tie from any department store is ten to fifteen. Bow ties are a little harder — a pre-tied black bow tie is about fifteen and works fine for a sixth grader.
 
-The black pants. Plain black dress pants. Not jeans. Not athletic pants. Not chinos. Real dress pants. About $25 to $40.
-
-The black tie or bow tie. Usually provided by the school if needed. If not, a basic black tie at any department store is $10 to $15. Bow ties are a little harder. A pre-tied black bow tie is $15 and works fine for a 6th grader.
-
-The dress shoes. Plain black. Closed-toe. Heels under one inch for girls (or no heel). Polishable leather is preferred. $30 to $50 will do it. The dress shoes should match the rest of the uniform. Black socks if pants. Black or skin-tone tights if dress.
+The dress shoes: plain black, closed-toe, heels under one inch (or no heel), polishable leather preferred, thirty to fifty. Black socks if pants. Black or skin-tone tights if dress.
 
 ## What to skip
 
-Tuxedos. Buying a tuxedo for a middle school kid is a waste. They outgrow it by spring. If your kid wants to look more formal, a basic black suit jacket over a white shirt works.
-
-Strapless or sleeveless dresses. Most school programs require sleeves. Even if they do not require them, the kid will be cold on stage. Sleeves help.
-
-Sequins or sparkly anything. The dress code is plain black. The whole point of a concert dress is for the choir to look uniform.
-
-Sky-high heels. Even if your kid wants them, do not. They will be standing for 90 minutes. They will be moving on and off risers. The kid in three-inch heels falls off the risers eventually.
-
-Bright nail polish. Some directors do not care. Some do. Default to clear or skin-tone.
+Tuxedos — buying a tuxedo for a middle school kid is a waste since they outgrow it by spring; if she wants to look more formal, a basic black suit jacket over a white shirt works. Strapless or sleeveless dresses — most school programs require sleeves, and even if they don't, she'll be cold on stage. Sequins or sparkly anything — the dress code is plain black, the whole point being uniform appearance. Sky-high heels — even if she wants them, no, because she'll be standing for ninety minutes and moving on and off risers, and the kid in three-inch heels falls off the risers eventually. Bright nail polish — some directors don't care, some do, so default to clear or skin-tone.
 
 ## Risers and shoes
 
-A note about the risers.
-
-Choir risers are tall and narrow. Kids stand on them for the entire concert. Bad shoes equal bad concert.
-
-Test the shoes at home before the concert. Have the kid put them on and walk around for 20 minutes. If they pinch or rub by minute 20, return them.
-
-Black athletic shoes are sometimes acceptable for younger groups if specified by the director. Confirm before buying dress shoes.
+A note about the risers. Choir risers are tall and narrow, kids stand on them for the entire concert, and bad shoes equal a bad concert. Test the shoes at home before the night — have her put them on and walk around for twenty minutes, and if they pinch or rub by minute twenty, return them. Black athletic shoes are sometimes acceptable for younger groups if specified by the director, but confirm before buying dress shoes.
 
 ## What every choir parent learns the hard way
 
-A few things.
-
-The dress will get a coffee stain at the warm-up before the concert. Pack a Tide pen in the bag.
-
-The shirt will pop a button two minutes before downbeat. Pack three safety pins.
-
-The kid will discover that their dress is missing at 4:45pm for a 5pm call. Lay everything out the night before. Photograph it on the bed. Then you have proof.
-
-The shoes will be too tight after the first hour. Bring backup flats or sneakers for the post-concert family photo.
+A few things. The dress will get a coffee stain at the warm-up before the concert, so pack a Tide pen in the bag. The shirt will pop a button two minutes before downbeat, so pack three safety pins. The kid will discover that her dress is missing at four-forty-five for a five o'clock call — lay everything out the night before and photograph it on the bed so you have proof. The shoes will be too tight after the first hour, so bring backup flats or sneakers for the post-concert family photo.
 
 ## After the fall concert
 
-Concert clothes are not regular clothes. Hang them up after the concert. Wash them according to the label. The dress in particular benefits from being kept aside for choir use only.
-
-If your kid is in choir for multiple years, the same dress can usually work for two seasons. Then their growth makes it not.
-
-The white shirt will go yellow at the armpits over time. This is normal. Replace as needed.
+Concert clothes aren't regular clothes. Hang them up after the concert and wash them according to the label. The dress in particular benefits from being kept aside for choir use only. If she's in choir for multiple years, the same dress can usually work for two seasons until her growth makes it not. The white shirt will go yellow at the armpits over time — this is normal, replace as needed.
 
 ## A note for spring
 
-Most spring concerts use the same dress code as fall. A few add or change something.
-
-Spring concerts often include lighter pop pieces. Sometimes the director allows softer black or pop variations. Sometimes there is a special theme dress code (lighter colors, all white).
-
-Read each concert's specific notes. Do not assume fall and spring are identical.
+Most spring concerts use the same dress code as fall, but a few add or change something. Spring concerts often include lighter pop pieces, and sometimes the director allows softer black or pop variations, or there's a special theme dress code like lighter colors or all white. Read each concert's specific notes — don't assume fall and spring are identical.
 
 ## The bottom line
 
-Pick a plain black dress or black pants with a white shirt. Buy quality basic dress shoes. Skip the embellishments. Test the outfit a week before the concert.
-
-Then take pictures. Your kid in concert dress for the first time is one of the photos you will look at later and not believe how small they were.
+Pick a plain black dress or black pants with a white shirt. Buy quality basic dress shoes. Skip the embellishments. Test the outfit a week before the concert. Then take pictures, because your kid in concert dress for the first time is one of the photos you'll look at later and not believe how small she was.

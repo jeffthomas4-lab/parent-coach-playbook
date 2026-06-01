@@ -1,14 +1,17 @@
 ---
-title: "The cheer that *embarrasses your kid*"
-dek: "He played well. You yelled. He gave you the look. The cheer rules."
-seoDescription: "Your son made a great pass. You stood up and yelled, YES! THAT'S MY BOY!"
-topic: "game-day"
-format: "note"
-phase: "game"
-sport: "multi-sport"
-age: "8-10"
+title: The cheer that *embarrasses your kid*
+dek: He played well. You yelled. He gave you the look. The cheer rules.
+seoDescription: Your son made a great pass. You stood up and yelled, YES! THAT'S MY
+  BOY!
+topic: game-day
+format: note
+phase: game
+sport: multi-sport
+age: 8-10
 publishedAt: 2026-02-24
 featured: false
+editorial:
+  claudeReviewedAt: 2026-05-06
 ---
 
 Your son made a great pass. You stood up and yelled, *YES! THAT'S MY BOY!*
