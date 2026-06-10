@@ -15,7 +15,7 @@ hero: /illustrations/after-a-tough-day-reset-kit.webp
 heroAlt: A juice box, a small stuffed animal, and a child's batting helmet on a kitchen
   counter — the after-game reset kit.
 editorial:
-  claudeReviewedAt: 2026-03-06
+  claudeReviewedAt: 2026-06-13
 ---
 
 Our 6-year-old struck out. They walked off the field crying. We wanted to help. We wanted to say it's okay, they'll do better next time, we're proud of them anyway.

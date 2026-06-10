@@ -9,6 +9,8 @@ sport: "multi-sport"
 age: "13-14"
 publishedAt: 2026-03-14
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-25
 ---
 
 Your kid is fourteen. They're playing the same schedule they played at twelve. Their body has done a different thing in the last year. They've grown four inches. They sleep eleven hours and are still tired. Their usual snap is gone.
@@ -43,7 +45,7 @@ Most coaches will adjust. The few who won't, you have a different conversation a
 
 **Sleep is the lever**
 
-Most fourteen-year-olds need 9 to 11 hours. Most fourteen-year-olds get 6 to 8.
+Most fourteen-year-olds need 8 to 10 hours. Most get 6 to 7.
 
 The thing he can change to feel better in two weeks is sleep. Not extra protein. Not extra weights. Sleep.
 
@@ -55,7 +57,7 @@ After two weeks, the difference is visible.
 
 Growing fourteen-year-olds eat more than you remember. The fridge needs to be stocked for it. He should eat within 30 minutes of finishing practice. Real food, not sports bars.
 
-If he's tired and not eating much, talk to a doctor. Some cases of fatigue at this age are iron deficiency, which is fixable in a month with supplementation.
+If he's tired and not eating much, talk to a doctor. Some cases of fatigue at this age are iron deficiency, which a simple blood test confirms and treatment fixes over a few months.
 
 **The mental piece**
 

@@ -9,6 +9,8 @@ sport: "multi-sport"
 age: "13-14"
 publishedAt: 2026-03-13
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-21
 ---
 
 Our 13-year-old came home on a Tuesday and said they wanted to quit. Right now. Today. Done. We took a breath.

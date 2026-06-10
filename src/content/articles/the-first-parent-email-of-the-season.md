@@ -11,16 +11,16 @@ age: all-ages
 publishedAt: 2026-01-06
 featured: false
 editorial:
-  claudeReviewedAt: 2026-03-04
+  claudeReviewedAt: 2026-06-11
 ---
 
 We send this email before the first practice. Not after. Not two weeks in.
 
-We say what time practice is, where it is, and what the kids should bring. We include the schedule for the next two weeks. We say whether we'll be there, even though most parents at youth levels are. We name three things kids can work on before the season starts if they want a head start. Footwork. Arm strength. Field vision.
+We say what time practice is, where it is, and what the kids should bring. We include the schedule for the next two weeks. We say whether parents need to stay for practice, even though most at the youth levels do anyway. We name three things kids can work on before the season starts if they want a head start. Footwork. Arm strength. Field vision.
 
 We don't oversell the season. We don't promise playing time. We don't list fourteen organizational rules.
 
-We close with one sentence about what makes this team special to us as a coach. Specific. Not "we have great culture." Instead: "Last year's team went 4-6. This year half of those seniors came back. That changes what we can build."
+We close with one sentence about what makes this team special to us as a coach. Specific. Not "we have great culture." Instead: "Last year's team went 4-6 and nine starters are back. That changes what we can build."
 
 ## Why this works
 

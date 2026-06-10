@@ -11,7 +11,7 @@ age: all-ages
 publishedAt: 2026-01-13
 featured: false
 editorial:
-  claudeReviewedAt: 2026-03-10
+  claudeReviewedAt: 2026-06-17
 ---
 
 We state this in our first team email: group chat is for schedule updates and weather cancellations only. Questions about playing time, team decisions, or coach communication happen one-on-one. Email only. No group air.

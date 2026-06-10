@@ -12,7 +12,7 @@ age: 8-10
 publishedAt: 2026-01-16
 featured: false
 editorial:
-  claudeReviewedAt: 2026-03-11
+  claudeReviewedAt: 2026-06-18
 ---
 
 It was a Tuesday in October. We had a forty-minute window before the next activity. One team. One field. The goal was to keep everyone engaged without running them to death. By minute thirty-five, they were still asking to play more.
@@ -45,6 +45,6 @@ Same five reps on the same easy skill every practice. Kids need the ritual. Thei
 
 ## The structure
 
-Thirty-two minutes of actual game time is the real practice. The rest is the frame that holds it. At eight to ten, they remember the game, not the drill. If our practice has three separate drills, we're overthinking it. One game, one problem-solve, one easy close. That's the rhythm.
+The fourteen-minute game block is the real practice. The rest is the frame that holds it. At eight to ten, they remember the game, not the drill. If our practice has three separate drills, we're overthinking it. One game, one problem-solve, one easy close. That's the rhythm.
 
 We watch the clock. We end when we say we'll end. That trust matters.

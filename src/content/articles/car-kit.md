@@ -9,12 +9,14 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-03-14
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-24
 ---
 
 A car kit is not a first-aid kit. It's the stuff you forgot that you'll need three times a season. Build it once in March. Check it once in June. It saves you.
 
 **The core list**
-One roll of athletic tape. Not medical tape. Athletic tape. Two pairs of socks. A mouthguard (if your sport uses one). One elastic bandage. One small bottle of pain reliever. A hairband or two. A towel.
+One roll of [athletic tape](/go/multi-sport-athletic-tape/). Not medical tape. Athletic tape. Two pairs of socks. A spare [mouthguard](/go/multi-sport-mouthguard-youth/) (if your sport uses one). One elastic bandage. One small bottle of pain reliever. A hairband or two. A towel.
 
 That's it. Throw it in a ziplock bag. Size gallon. Put it in the trunk.
 

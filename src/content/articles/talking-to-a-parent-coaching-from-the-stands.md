@@ -11,7 +11,7 @@ age: 5-7
 publishedAt: 2026-01-20
 featured: false
 editorial:
-  claudeReviewedAt: 2026-03-13
+  claudeReviewedAt: 2026-06-20
 ---
 
 It was mid-season. One parent kept yelling coaching cues from the stands. "Keep your feet moving!" "Talk to each other!" We could feel the kids' attention split between the field and the bleachers. So we had a conversation.

@@ -9,6 +9,8 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-03-13
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-22
 ---
 
 Two real questions parents face. Should my kid play up an age group? Should my kid play down an age group?
