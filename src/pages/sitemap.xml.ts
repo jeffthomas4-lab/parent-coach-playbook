@@ -47,6 +47,7 @@ export async function GET(ctx: APIContext) {
     '/newsletter/',
     '/about/',
     '/disclosure/',
+    '/terms/',
     '/resources/',
     '/resources/what-to-say-when/',
     '/resources/practice-plan-template/',

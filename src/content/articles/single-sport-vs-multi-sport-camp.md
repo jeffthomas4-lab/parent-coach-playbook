@@ -61,4 +61,4 @@ Looking for a multi-sport camp? <a href="/camps/?sport=multi-sport">Browse multi
 
 Looking for a single-sport camp for an older kid? <a href="/camps/">Filter by sport and age</a>.
 
-Run a camp? <a href="/camps/submit/">Add your listing for free</a>. Verified listings with photos and registration links cost $79 a year.
+Run a camp? <a href="/camps/submit/">Add your listing for free</a>. Verified listings with photos and registration links are free too.

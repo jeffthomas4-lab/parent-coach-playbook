@@ -38,7 +38,16 @@ const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
       Our take: {ourTake}
     </p>
   )}
-  <a href={`/go/${affiliateSlug}/`} rel="sponsored noopener" class="btn mt-6 self-start">
+  <a href={`/go/${affiliateSlug}/`} rel="sponsored nofollow noopener" class="btn mt-6 self-start">
     See it at {retailer} ↗
   </a>
+  <!-- /disclosure/ promises non-Amazon affiliate links are marked inline.
+       The note below keeps that promise the day a CJ (or other network) link
+       ships through this card. Amazon links are covered by the sitewide
+       Associates statement and the per-page disclosure box. -->
+  {retailer !== 'Amazon' && (
+    <p class="font-display italic text-ink-soft text-xs mt-2">
+      Partner link. We earn a commission if you buy. <a href="/disclosure/" class="text-rust hover:underline">Disclosure</a>.
+    </p>
+  )}
 </article>

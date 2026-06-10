@@ -38,4 +38,19 @@ Effort: 2 hours once the email Worker is set up.
 
 ---
 
+## Compliance follow-ups (added 2026-06-10)
+
+### NOTE: claim listings are now FREE
+The $79/year claim fee was removed from the site on 2026-06-10 (compliance pass + Jeff's call). The Stripe payment link, renewal reminder, and claim_paid_until items above are obsolete unless paid claims come back. Claims still require ownership verification.
+
+### EU analytics posture (Cloudflare)
+GA4 loads for all visitors (minus DNT/GPC, which we honor). EU visitors technically need consent for GA cookies under GDPR/ePrivacy. Close it one of two ways in the Cloudflare dashboard: geo-gate GA off for EU country codes at the Cloudflare layer (Transform Rule or Worker injecting a flag), or drop GA and run Cloudflare Web Analytics alone. Low urgency for a US-audience site. Decide once.
+
+Effort: 1-2 hours for the geo-gate. 15 minutes to drop GA.
+
+### DMCA agent registration
+Register at dmca.copyright.gov ($6, three years), then add the agent email to the copyright section of /terms/. A recurring reminder is set up in Cowork until this is done.
+
+---
+
 Add new items below as they come up.

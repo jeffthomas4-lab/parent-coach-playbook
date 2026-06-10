@@ -61,4 +61,4 @@ You learn that one by reading recent reviews from parents who paid for the camp 
 
 Looking for camps near you? <a href="/camps/">Browse our camp directory</a>. Filter by sport, age, and state.
 
-Run a camp? <a href="/camps/submit/">Add your listing for free</a>. Camp directors can claim a verified listing for $79 a year and add photos, registration links, and a logo.
+Run a camp? <a href="/camps/submit/">Add your listing for free</a>. Camp directors can claim a verified listing at no cost and add photos, registration links, and a logo.

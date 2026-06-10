@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+const updated = 'June 10, 2026';
+---
+<BaseLayout
+  title="Terms of use"
+  description="Terms of use for Parent Coach Desk: the content, the camps directory, reviews, photos, and copyright."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">Terms</p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        Terms of use.
+      </h1>
+      <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}. By using this site you agree to these terms.</p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">What this site is</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>{SITE.name} publishes editorial content for parents of kids in youth sports and activities, plus a directory of camps and leagues. The content is information, not professional advice. Nothing here is medical, legal, or financial advice, and nothing here replaces the judgment of a clinician, your league's protocols, or the relevant governing body. Our <a href="/disclosure/" class="text-rust hover:underline">privacy and disclosure page</a> covers how the site is funded and what data we collect.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">The camps directory</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Listings come from public sources, camp operators, and reader submissions. We review submissions before they publish, but we do not inspect camps, verify their safety practices, or endorse them. A listing is not a recommendation. Vet any camp yourself before you send your kid.</p>
+        <p>Camp operators can claim their listing for free after we verify ownership. We can edit, decline, or remove any listing or claim at any time, including for inaccurate information or conduct that puts readers at risk.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">What you submit</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>When you submit a camp, a review, a correction, or a photo, you keep ownership of it. You grant us a non-exclusive, royalty-free license to publish, edit for length and clarity, and display it on this site. You represent that what you submit is yours to give, is honest, and is based on real experience.</p>
+        <p>Reviews are moderated before they publish. We publish honest reviews, positive and negative. We reject spam, personal attacks, reviews from competitors posing as parents, and anything we cannot in good conscience put in front of other parents. We do not pay for reviews and do not accept payment to remove them.</p>
+        <p><strong>Photos.</strong> By uploading photos you confirm you own them and have written consent from a parent or guardian for any child shown. We remove photos on request from a parent or guardian of a child pictured: email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Copyright and takedowns</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>The editorial content on this site belongs to {SITE.name}. You can share excerpts with a link back. You cannot republish whole pieces, scrape the directory for a competing product, or pass our work off as yours.</p>
+        <p>If you believe content on this site infringes your copyright, email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a> with the URL, a description of the work you own, and your contact information. We review takedown requests promptly and remove infringing material.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">No warranties, limited liability</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>The site is provided as-is. We work to keep information accurate and we post corrections when we get something wrong, but we make no warranty that any page is complete, current, or fit for your situation. Costs change, rules change, camps close.</p>
+        <p>To the fullest extent the law allows, {SITE.name} and its writers are not liable for damages arising from your use of the site, the directory, or anything you buy through links on it. Some jurisdictions do not allow these limits, so parts of this may not apply to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">The boring rest</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>These terms are governed by the laws of the State of Washington, USA. We may update these terms; the date at the top tells you when. If we change something material, we will say so plainly rather than bury it.</p>
+        <p>Questions: <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

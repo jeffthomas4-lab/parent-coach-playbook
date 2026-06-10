@@ -57,4 +57,4 @@ Don't overdo the postgame. *Tell us your favorite thing.* That's enough. They wi
 
 Looking for an overnight camp? <a href="/camps/?format=overnight">Browse overnight camps in our directory</a>. Filter by age and state.
 
-Run a camp? <a href="/camps/submit/">Add your listing</a> or <a href="/camps/">claim an existing listing for $79 a year</a> to add photos and registration details.
+Run a camp? <a href="/camps/submit/">Add your listing</a> or <a href="/camps/">claim an existing listing for free</a> to add photos and registration details.

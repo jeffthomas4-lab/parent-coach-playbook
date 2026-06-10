@@ -48,7 +48,7 @@ That's the daily protocol. It's free or near-free. Most kids do none of it.
 
 **Ice baths.** Adult athletes have used cold water immersion for decades. The science on whether it actually helps recovery vs just feeling tough is debated. For kids: probably not necessary, occasionally fun, generally safe in moderation if the temperature is reasonable (50-60°F for short durations). Don't make a 12-year-old sit in a cold tub. If they want to try it after a tournament, fine, but it's not required.
 
-**Massage guns (Theragun, Hyperice, etc.)** Useful for warm-up activation and post-workout muscle release. The physiological mechanism is similar to foam rolling, temporary increase in blood flow and reduction in muscle stiffness. The premium brands work better than the $30 Amazon knockoffs, but the difference is incremental, not order-of-magnitude.
+**Massage guns (Theragun, Hyperice, etc.)** Useful for warm-up activation and post-workout muscle release. The physiological mechanism is similar to foam rolling, temporary increase in blood flow and reduction in muscle stiffness. The premium brands work better than the $30 knockoffs, but the difference is incremental, not order-of-magnitude.
 
 **Compression boots (Normatec, Air Relax).** These are pneumatic sleeves that inflate around the legs. Used heavily by college and pro athletes. The recovery benefit is real but modest, and most useful for athletes doing high-volume training (cross country runners, distance swimmers, ECNL soccer) where leg fatigue is the limiting factor. For the average middle school multi-sport kid, this is overkill. For the high school endurance kid who trains daily, they make more sense.
 
