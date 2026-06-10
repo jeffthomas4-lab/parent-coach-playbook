@@ -1,7 +1,9 @@
 ---
 title: "Competition dance: *the actual annual cost*"
 dek: "The $3,000 costume. The $2,000 hotel. The $5,000 nationals fee. The real number nobody talks about."
-seoDescription: "Competition. As in nationals. As in real money."
+seoTitle: "How Much Does Competitive Dance Cost Per Year? (2026)"
+seoDescription: "Competitive dance costs in 2026: tuition, costumes, entry fees, solos, and nationals travel. The real annual number runs $8,500. Here is the math."
+bluf: "A typical competition dance year costs about $8,500: $3,600 in studio tuition, $800 in costumes, $800 in team fees, $600 in competition entries, $500 in optional solo fees, plus shoes, practice wear, and $1,500 in travel if the studio attends nationals."
 topic: "the-hard-stuff"
 format: "note"
 phase: "drive-home"
