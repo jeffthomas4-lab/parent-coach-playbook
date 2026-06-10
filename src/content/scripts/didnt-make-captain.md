@@ -1,5 +1,7 @@
 ---
 title: "When they *don't make captain*"
+seoTitle: "What to Say When Your Kid Didn't Make Captain"
+seoDescription: "They wanted the C and didn't get it. The script for the quiet disappointment of being passed over without being cut."
 summary: "The kid who thought they would. Sometimes they say something. Often they don't. The script for the silent disappointment."
 moment: "after-no-playing-time"
 publishedAt: 2026-05-05

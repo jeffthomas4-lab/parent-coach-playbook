@@ -385,6 +385,8 @@ const scripts = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      seoTitle: z.string().min(20).max(70).optional(),
+      seoDescription: z.string().min(40).max(180).optional(),
       summary: z.string(),
       moment: z.enum([
         'after-a-bad-game','after-a-win','after-no-playing-time','after-a-mistake',

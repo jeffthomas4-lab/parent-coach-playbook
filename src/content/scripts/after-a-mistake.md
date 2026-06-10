@@ -1,5 +1,7 @@
 ---
 title: "Your kid made a *big mistake*. Here's what to say."
+seoTitle: "What to Say When Your Kid Made the Big Mistake"
+seoDescription: "The dropped ball, the missed shot, the play that cost the game. The words that let a mistake stay a mistake instead of an identity."
 summary: "The dropped ball, the missed shot, the play that cost the game. The script that lets the mistake be a mistake without becoming an identity."
 moment: "after-a-mistake"
 publishedAt: 2026-04-26

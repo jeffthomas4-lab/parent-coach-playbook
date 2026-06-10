@@ -1,5 +1,7 @@
 ---
 title: "Your kid is *silent* in the car. Here's what to do."
+seoTitle: "When Your Kid Won't Talk After a Game: A Script"
+seoDescription: "The silent car ride, decoded. What the silence means, what to say into it, and when to just drive and say nothing."
 summary: "Headphones on. Window seat. Nothing to say. The drive home when silence is the answer, not a problem to fix."
 moment: "kid-silent"
 publishedAt: 2026-04-26

@@ -1,5 +1,7 @@
 ---
 title: "Before the *championship game*"
+seoTitle: "What to Say Before a Championship Game"
+seoDescription: "The big game needs a smaller speech than you think. The script that lowers the stakes your kid is already carrying."
 summary: "The big game looms. They can't sleep. Your job is not a pep talk. It's lower the temperature."
 moment: "before-a-game"
 publishedAt: 2026-05-05

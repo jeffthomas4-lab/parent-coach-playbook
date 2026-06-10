@@ -1,5 +1,7 @@
 ---
 title: "Your kid is *nervous* before a game. Here's what to say."
+seoTitle: "What to Say When Your Kid Is Nervous Before a Game"
+seoDescription: "Pre-game nerves are normal and squashing them backfires. The script that settles a nervous kid without dismissing the feeling."
 summary: "The morning of. Stomach in knots. Saying they don't want to go. The script that calms without dismissing."
 moment: "before-game-nerves"
 publishedAt: 2026-04-26

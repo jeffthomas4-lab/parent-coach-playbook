@@ -1,5 +1,7 @@
 ---
 title: "Your kid had a *meltdown at practice*"
+seoTitle: "What to Say After a Meltdown at Practice"
+seoDescription: "Your kid melted down in front of the team. The script for the ride home that rebuilds dignity without ignoring what happened."
 summary: "Tears, walking off, throwing equipment. The script for picking them up afterward without making it bigger or smaller than it is."
 moment: "kid-upset"
 publishedAt: 2026-05-05

@@ -1,5 +1,7 @@
 ---
 title: "What to say *after* a game at 5–7"
+seoTitle: "What to Say After a Game: Ages 5-7 Script"
+seoDescription: "What to say to a 5-to-7-year-old after a game. Short version: feed them. The script for the shortest post-game window in sports."
 summary: "Just feed them. The post-game window at this age is short, simple, and mostly about juice boxes."
 moment: "other"
 publishedAt: 2026-06-22

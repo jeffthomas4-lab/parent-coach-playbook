@@ -1,5 +1,7 @@
 ---
 title: "What to say *after* a game at 11–12"
+seoTitle: "What to Say After a Game: Ages 11-12 Script"
+seoDescription: "What to say to an 11-or-12-year-old after a game. The question that opens them up, with less talking and more space."
 summary: "The question that opens them up. A different cadence than the younger ages. Less talking. More space."
 moment: "other"
 publishedAt: 2026-06-29

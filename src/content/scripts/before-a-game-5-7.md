@@ -1,5 +1,7 @@
 ---
 title: "What to say *before* a game at 5–7"
+seoTitle: "What to Say Before a Game: Ages 5-7 Script"
+seoDescription: "Kids this age don't need a pep talk, they need the snack plan. The no-stakes script for before a game at 5 to 7."
 summary: "The no-stakes script. Kids this age don't need a pep talk. They need to know the snack situation."
 moment: "before-a-game"
 publishedAt: 2026-05-12

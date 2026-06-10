@@ -1,5 +1,7 @@
 ---
 title: "What to say *before* a game at 8–10"
+seoTitle: "What to Say Before a Game: Ages 8-10 Script"
+seoDescription: "They're starting to care about winning. The effort-not-outcome script for before a game at 8 to 10, in three sentences."
 summary: "The effort-not-outcome script. They're starting to care about winning. Don't build the conditional love around it."
 moment: "before-a-game"
 publishedAt: 2026-06-10

@@ -1,5 +1,7 @@
 ---
 title: "What to say *after* a game at 8–10"
+seoTitle: "What to Say After a Game: Ages 8-10 Script"
+seoDescription: "What to say to an 8-to-10-year-old after a game. The 90-second rule, the opening line, and what to skip on the ride home."
 summary: "The 90-second rule applied. The post-game window here decides what the rest of the week feels like."
 moment: "other"
 publishedAt: 2026-06-26

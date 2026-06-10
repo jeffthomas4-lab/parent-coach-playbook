@@ -1,5 +1,7 @@
 ---
 title: "Your kid lost the game. Here's *what to say*."
+seoTitle: "What to Say to Your Kid After Losing a Game"
+seoDescription: "What to say after a loss, which is different from a bad game. The script for when the team played hard and still came up short."
 summary: "What to say after a loss. Different from a bad game. The script for the moment when the team played hard and still came up short."
 moment: "after-a-loss"
 publishedAt: 2026-04-29

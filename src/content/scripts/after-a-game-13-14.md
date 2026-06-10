@@ -1,5 +1,7 @@
 ---
 title: "What to say *after* a game at 13–14"
+seoTitle: "What to Say After a Game: Ages 13-14 Script"
+seoDescription: "What to say to a teenager after a game when they don't want to talk. The script for the silent ride and the moment they open up."
 summary: "When they don't want to talk. The script for the silent ride. What you say. What you don't. When they finally do open up, what to say next."
 moment: "other"
 publishedAt: 2026-07-01

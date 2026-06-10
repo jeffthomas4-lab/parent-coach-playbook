@@ -1,5 +1,7 @@
 ---
 title: "What to say *before* a game at 13–14"
+seoTitle: "What to Say Before a Game: Ages 13-14 Script"
+seoDescription: "Teenagers don't want a pre-game speech. Most don't want words at all. What they actually need from you before a game."
 summary: "The silence move. They don't want a speech. Most don't want any words at all. Here's what they actually need."
 moment: "before-a-game"
 publishedAt: 2026-06-18

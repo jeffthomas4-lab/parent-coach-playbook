@@ -1,5 +1,7 @@
 ---
 title: "After a *teammate's serious injury*"
+seoTitle: "What to Say When a Teammate Gets Seriously Hurt"
+seoDescription: "Your kid watched a teammate get hurt. The script for the drive home: what they're feeling, what to say, and what not to promise."
 summary: "The kid who saw it happen. The kid who was on the play. The script for the drive home when somebody got hurt."
 moment: "injury"
 publishedAt: 2026-05-05

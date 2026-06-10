@@ -1,5 +1,7 @@
 ---
 title: "The *post-cut text* you have to send"
+seoTitle: "What to Text Your Kid After They Got Cut"
+seoDescription: "They found out by text or a list on a door. The exact message to send first, and the conversation that comes after."
 summary: "The text to the kid who got cut. The text to the kid who made it. The one to the parent of the cut kid. Three short scripts."
 moment: "tryouts-week"
 publishedAt: 2026-05-05

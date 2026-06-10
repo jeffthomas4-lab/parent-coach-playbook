@@ -1,5 +1,7 @@
 ---
 title: "Before *summer tryouts*. Here's what to say."
+seoTitle: "What to Say the Night Before Tryouts: A Script"
+seoDescription: "The night-before-tryouts conversation, scripted. What to say at dinner, what to skip, and the one line for the morning of."
 summary: "The tryout that doesn't have a season behind it. Higher stakes, less context. The script for the morning of."
 moment: "tryouts-week"
 publishedAt: 2026-05-10

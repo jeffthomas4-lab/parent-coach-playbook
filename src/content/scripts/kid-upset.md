@@ -1,5 +1,7 @@
 ---
 title: "Your kid is *upset* after the game. Here's what to do."
+seoTitle: "What to Say When Your Kid Is Upset After a Game"
+seoDescription: "Tears in the car, slammed door at home. The script for big feelings after a game, by what they need first."
 summary: "Tears in the parking lot. Slamming the car door. Shutting down. The script for the moments words don't reach yet."
 moment: "kid-upset"
 publishedAt: 2026-04-26

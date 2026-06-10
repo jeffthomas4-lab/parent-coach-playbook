@@ -1,5 +1,7 @@
 ---
 title: "After the *last game* of the season. Here's what to say."
+seoTitle: "What to Say After the Last Game of the Season"
+seoDescription: "The season just ended and your kid is processing more than the score. The script for the drive that closes a chapter."
 summary: "The season is over. Win or lose, the kid is processing more than the score. The script for the drive that closes a chapter."
 moment: "after-the-last-game"
 publishedAt: 2026-04-26

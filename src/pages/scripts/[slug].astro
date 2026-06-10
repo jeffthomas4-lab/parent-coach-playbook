@@ -79,8 +79,8 @@ const breadcrumbSchema = {
 };
 ---
 <BaseLayout
-  title={stripTitle(script.data.title)}
-  description={script.data.summary}
+  title={script.data.seoTitle ?? stripTitle(script.data.title)}
+  description={script.data.seoDescription ?? script.data.summary}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

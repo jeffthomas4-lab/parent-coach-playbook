@@ -1,5 +1,7 @@
 ---
 title: "What to say *before* a game at 11–12"
+seoTitle: "What to Say Before a Game: Ages 11-12 Script"
+seoDescription: "Real nerves arrive at this age. The pre-game script that names the feeling without inflating it. Three sentences, not a speech."
 summary: "When real nerves arrive. The script that names the feeling without inflating it. Three sentences, not a speech."
 moment: "before-a-game"
 publishedAt: 2026-06-14

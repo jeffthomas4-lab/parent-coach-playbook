@@ -1,5 +1,7 @@
 ---
 title: "Your kid *didn't play much*. Here's what to say."
+seoTitle: "What to Say When Your Kid Didn't Play in the Game"
+seoDescription: "The hardest car ride of the season. The script that doesn't make the coach the enemy and doesn't make your kid feel small."
 summary: "The hardest car ride of the season. The script that doesn't make the coach the enemy and doesn't make your kid feel small."
 moment: "after-no-playing-time"
 publishedAt: 2026-04-26
