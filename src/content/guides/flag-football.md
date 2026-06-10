@@ -16,6 +16,30 @@ Flag belts are usually team-supplied, so ask your coach before buying. Gloves ar
 
 The beauty of flag football is there's almost nothing to buy. No pads, no helmet, no armor. Lower gear cost means lower injury cost.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Flag football · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor Gel Max mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Boil-and-bite guard in youth and adult sizes. The one piece of safety gear flag actually requires.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Mold it once at home, replace it every season. Buy two; one lives in the bag.</p>
+    <a href="/go/multi-sport-mouthguard-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Flag football · Backyard</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Franklin Sports flag set (7 belts)</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Adjustable belts with pop-off flags for a full backyard game. Only needed if your league doesn't supply belts, or you want practice reps at home.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Ask the coach first. Most leagues hand out belts. This set is for the family that wants flag-pulling drills in the yard before the season.</p>
+    <a href="/go/flag-football-belt-set/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## Sizing notes
 
 Need to know what size? See our [Flag football sizing guide](/what-to-buy/flag-football/sizing/).

@@ -193,5 +193,165 @@
     "destination": "https://amzn.to/4na5Uh3",
     "retailer": "Amazon",
     "campaign": "gear-tennis-net"
+  },
+  "multi-sport-mouthguard-youth": {
+    "destination": "https://www.amazon.com/dp/B00I1BDKPC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-mouthguard"
+  },
+  "football-gloves-receiver-youth": {
+    "destination": "https://www.amazon.com/dp/B073Q8JHB6?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-gloves"
+  },
+  "football-cleats-youth": {
+    "destination": "https://www.amazon.com/dp/B0F342XBG5?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-cleats"
+  },
+  "football-girdle-youth": {
+    "destination": "https://www.amazon.com/dp/B00CPRI2BA?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-girdle"
+  },
+  "football-cup-shorts-youth": {
+    "destination": "https://www.amazon.com/dp/B00181B9TQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-cup-shorts"
+  },
+  "football-mouthguard-sisu": {
+    "destination": "https://www.amazon.com/dp/B084ZSSFZV?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-mouthguard-sisu"
+  },
+  "multi-sport-duffle-bag": {
+    "destination": "https://www.amazon.com/dp/B093LSTLVK?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-duffle"
+  },
+  "flag-football-belt-set": {
+    "destination": "https://www.amazon.com/dp/B07HTD6166?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-flag-football-belts"
+  },
+  "soccer-shin-guards-youth": {
+    "destination": "https://www.amazon.com/dp/B0C2GTB7PB?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-shin-guards"
+  },
+  "soccer-shin-guards-ankle-youth": {
+    "destination": "https://www.amazon.com/dp/B006IXH79A?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-shin-guards-ankle"
+  },
+  "soccer-ball-size3": {
+    "destination": "https://www.amazon.com/dp/B001C3O8O8?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-ball-size3"
+  },
+  "soccer-ball-size4": {
+    "destination": "https://www.amazon.com/dp/B001L3URAS?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-ball-size4"
+  },
+  "soccer-ball-size5": {
+    "destination": "https://www.amazon.com/dp/B000L2DSLK?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-ball-size5"
+  },
+  "soccer-ball-size5-match": {
+    "destination": "https://www.amazon.com/dp/B0DPRB36SK?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-ball-match"
+  },
+  "soccer-socks-youth": {
+    "destination": "https://www.amazon.com/dp/B09YCG73QQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-socks"
+  },
+  "soccer-goalie-gloves-youth": {
+    "destination": "https://www.amazon.com/dp/B00PPBC8MW?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soccer-goalie-gloves"
+  },
+  "multi-sport-shoe-bag": {
+    "destination": "https://www.amazon.com/dp/B0CYTHP5JD?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-shoe-bag"
+  },
+  "volleyball-knee-pads-youth": {
+    "destination": "https://www.amazon.com/dp/B00P9OJF9E?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-knee-pads"
+  },
+  "volleyball-shoes-upcourt": {
+    "destination": "https://www.amazon.com/dp/B0CNKVRYM7?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-shoes"
+  },
+  "volleyball-volley-lite": {
+    "destination": "https://www.amazon.com/dp/B000PGHAZW?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-volley-lite"
+  },
+  "volleyball-flistatec": {
+    "destination": "https://www.amazon.com/dp/B0063NDCGW?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-flistatec"
+  },
+  "volleyball-spandex-youth": {
+    "destination": "https://www.amazon.com/dp/B0D15MGY17?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-spandex"
+  },
+  "volleyball-ankle-brace": {
+    "destination": "https://www.amazon.com/dp/B0000E2E9U?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-ankle-brace"
+  },
+  "xc-trainers-youth": {
+    "destination": "https://www.amazon.com/dp/B0FSMY5J8B?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-xc-trainers"
+  },
+  "xc-spikes-kilkenny": {
+    "destination": "https://www.amazon.com/dp/B0DJWNR6Q3?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-xc-spikes"
+  },
+  "xc-base-layer-set-youth": {
+    "destination": "https://www.amazon.com/dp/B0841WMXDC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-xc-base-layer"
+  },
+  "xc-running-gloves": {
+    "destination": "https://www.amazon.com/dp/B07Q5V12XY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-xc-gloves"
+  },
+  "cheer-shoes-youth": {
+    "destination": "https://www.amazon.com/dp/B0BZHPFN9D?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-cheer-shoes"
+  },
+  "cheer-bow-jumbo": {
+    "destination": "https://www.amazon.com/dp/B085N94F3Z?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-cheer-bow"
+  },
+  "cheer-hair-gel": {
+    "destination": "https://www.amazon.com/dp/B005AKKSE8?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-cheer-hair-gel"
+  },
+  "multi-sport-athletic-tape": {
+    "destination": "https://www.amazon.com/dp/B00I15JOX0?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-tape"
+  },
+  "multi-sport-water-bottle": {
+    "destination": "https://www.amazon.com/dp/B08TQQ9RTS?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-bottle"
   }
 }

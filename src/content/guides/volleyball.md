@@ -13,6 +13,8 @@ Volleyball is a low-equipment sport. Shoes, knee pads, ball, water bottle. That'
 
 The catch is that the shoes matter a lot. Volleyball has a specific shoe category called court shoes or volleyball-specific shoes that are designed for the lateral movement and jumping that the sport requires. Running shoes don't work. Basketball shoes mostly work. Volleyball shoes work best.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
 ## Ages 5–7 (Mini-volley / Starter)
 
 This age plays with a softer ball on a lower net. Most leagues are recreational and provide whatever balls and equipment the kids need.
@@ -57,6 +59,17 @@ How to choose: have your kid do a quick lateral cut in the shoes (push off the r
 
 Cost range: $50–100.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Upcourt volleyball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The entry volleyball shoe from the brand half the sport wears. Gum-rubber court grip, non-marking sole, runs to small women's sizes that fit middle schoolers.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The right first volleyball shoe. Run the lateral-cut test in the kitchen before the tags come off. Save the $150 models for a kid who has made a club roster.</p>
+    <a href="/go/volleyball-shoes-upcourt/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Real volleyball knee pads**
 
 Volleyball knee pads have a thicker foam pad over the kneecap. They don't impede movement; they protect against floor impact.
@@ -65,17 +78,50 @@ How to choose: the pad should cover the kneecap and the area just below it. Snug
 
 Cost range: $15–35.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Youth T10 Plus knee pads</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth-sized version of the knee pad the older players wear. Real foam over the kneecap, stays put through a full practice.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A kid who trusts the knee pads learns to go to the floor. That's a skill, and it starts with pads that don't slide.</p>
+    <a href="/go/volleyball-knee-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **An adult volleyball (size 5)**
 
 By age 10, most leagues use the size-5 (adult) volleyball. Same brands as size-4.
 
 Cost range: $20–50.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Tachikara Volley-Lite training volleyball</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Official size, 25 percent lighter than a regulation ball. The standard training ball for youth programs, and it doesn't sting small forearms.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Kids who don't fear the ball learn to pass. The lighter ball buys a season of confident reps before the real one takes over.</p>
+    <a href="/go/volleyball-volley-lite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Spandex shorts**
 
 Many girls' programs use spandex (booty shorts) as the standard short. Boys' programs use longer athletic shorts. Check the team's policy.
 
 Cost range: $20–40.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 8–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour HeatGear Shorty (big kid sizes)</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The standard practice spandex in youth sizes. Wicks sweat, holds shape through a season of washes.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Confirm the team's required color before buying. Black is the safe bet; buy two pairs once you know.</p>
+    <a href="/go/volleyball-spandex-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 11–12 (Middle school and travel)
 
@@ -101,11 +147,33 @@ How to choose: should fit snugly inside the shoe without forcing a bigger shoe s
 
 Cost range: $40–80 each. Buy two if you want a pair.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Active Ankle T2 ankle brace</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Hinged stirrup brace that blocks the rollover without slowing the player down. Sold as a single; buy two for a pair.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Volleyball leads youth sports in ankle sprains, most of them landings at the net. Forty dollars per ankle against six weeks in a boot is easy math.</p>
+    <a href="/go/volleyball-ankle-brace/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A serious volleyball**
 
 Mikasa MVA200 (FIVB official) or Molten 5000 are the two pro-grade balls. Worth it for at-home practice.
 
 Cost range: $50–80.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Molten FLISTATEC volleyball</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The pro-grade ball many high school and club programs play with. Grippy panel surface, true flight.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Worth it once your kid is setting and serving daily at home. Practicing with the game ball removes one variable on match day.</p>
+    <a href="/go/volleyball-flistatec/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 13–14 (Middle school and serious club)
 
@@ -163,4 +231,6 @@ Most volleyball clubs have annual gear swaps. Outgrown shoes and braces are heav
 
 Sand/beach volleyball is a different sport. The gear is different (no shoes, sand-friendly knee pads, sun gear). If your kid does both, you need two sets.
 
-## Sizing 
+## Sizing notes
+
+Need to know what size? See our [Volleyball sizing guide](/what-to-buy/volleyball/sizing/).

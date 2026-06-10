@@ -13,6 +13,8 @@ Football is the most equipment-heavy youth sport. The helmet alone can cost more
 
 The most important thing to know up front: do not buy a used helmet from a non-certified source. NOCSAE recertification matters. Your kid's brain is in there.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
 ## Ages 5–7 (Flag football)
 
 This is the right age to start. Tackle football for 5-to-7-year-olds is increasingly being phased out, and most pediatric and orthopedic guidance recommends flag through age 9. Flag is the right answer.
@@ -35,6 +37,17 @@ Required by most leagues even for flag. The boil-and-bite kind is fine at this a
 
 Cost range: $5–15.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor Gel Max mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Boil-and-bite guard with a gel-fit liner. Comes in youth and adult sizes and works for football, flag, lacrosse, and hockey.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The standard answer at this age. Mold it once at home, replace it every season. Buy two; one lives in the bag.</p>
+    <a href="/go/multi-sport-mouthguard-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Athletic shorts and a t-shirt**
 
 The team usually provides a jersey. Practice gear is athletic shorts and a t-shirt.
@@ -53,6 +66,17 @@ How to choose: have your kid run forward and lateral in them. Heel should stay l
 
 Cost range: $40–80.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 8–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour Spotlight Hammer Jr football cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rubber-molded youth cleat that runs from little kid through big kid sizes. Mid support, football stud pattern, no metal.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A real football cleat at the right price for a foot that grows two sizes a year. Run the heel-lock test in the driveway before you cut the tags.</p>
+    <a href="/go/football-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Tackle gear (if playing tackle)**
 
 If your league has you in tackle at this age, the team usually provides helmet and shoulder pads. You provide:
@@ -64,6 +88,17 @@ If your league has you in tackle at this age, the team usually provides helmet a
 - Practice jersey: $15 to $25
 
 Total league-provided: helmet, shoulder pads, game jersey. Total parent-provided: mouthpiece, girdle, pants, cleats, practice jersey. About $130 to $200.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 8–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Champro Tri-Flex 5-pad integrated girdle</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Compression girdle with hip, thigh, and tail pads sewn in. No loose pads to lose, no pad pockets to fight with before practice.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Integrated beats slip-in pads at this age. The pads stay where they belong and the kid can dress himself in two minutes.</p>
+    <a href="/go/football-girdle-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A youth football (size 6 or 7)**
 
@@ -81,6 +116,17 @@ The boil-and-bite mouthpiece is fine. A custom dental-fit mouthpiece is better a
 
 Cost range: $10–150.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">SISU Aero custom-fit mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Thin moldable guard that fits tight to the teeth. Kids can talk and drink with it in, which means they actually keep it in their mouth.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The middle ground between a $10 boil-and-bite and a $150 dental guard. A mouthguard only works when it's worn, and this one gets worn.</p>
+    <a href="/go/football-mouthguard-sisu/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Better football cleats**
 
 Higher-cut, more ankle support, better stud pattern. Look for cleats designed for the position your kid plays (linemen want different cleats than skill positions).
@@ -92,6 +138,17 @@ Cost range: $60–120.
 Receivers and DBs wear sticky gloves. Linemen wear padded gloves. Quarterbacks wear thin grip gloves.
 
 Cost range: $25–80 depending on position and quality.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Cutters Game Day receiver gloves</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">High-tack silicone palm in youth sizes. The grip a receiver or DB wants without the price of the brand-name signature gloves.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: At this age gloves get lost, torn, and outgrown. Pay $15, not $60. The catch rate difference is zero.</p>
+    <a href="/go/football-gloves-receiver-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A neck roll or cowboy collar (optional)**
 
@@ -109,11 +166,33 @@ Standard underclothing for football. Wicks sweat, prevents chafing.
 
 Cost range: $20–40 each.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–15</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor compression shorts with Bio-Flex cup</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Compression shorts with the protective cup included and held in the right spot. Youth and adult sizes.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: One purchase instead of two, and the cup can't migrate mid-practice. Get a second pair so one is always clean.</p>
+    <a href="/go/football-cup-shorts-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A position-specific bag**
 
 For carrying gear to and from practice. Most teams have a recommended brand or size.
 
 Cost range: $40–80.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour Undeniable 5.0 duffle</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The duffle half the team already carries. Vented pocket for cleats, water-resistant bottom, survives being dragged across parking lots for years.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy it once in middle school and it carries gear through graduation. The medium fits everything but shoulder pads.</p>
+    <a href="/go/multi-sport-duffle-bag/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 15+ (High school)
 
@@ -216,4 +295,4 @@ The single best thing you can do for your kid in football: limit hits to the hea
 
 If your kid wants to play tackle and you are nervous, flag football is a legitimate alternative through age 12 or 13. Many of the best NFL athletes played flag through middle school. The skills transfer.
 
-Don't buy used helmets unless they're fro
+Don't buy used helmets unless they're from a certified reconditioner with current NOCSAE recertification. A garage-sale helmet with no paperwork is not protective equipment. It's a costume.
