@@ -47,6 +47,12 @@ const BASEBALL_SOURCES: CostSource[] = [
   { label: 'Little League International: League fee structure',    url: 'https://www.littleleague.org/' },
 ];
 
+const SOFTBALL_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'USA Softball: League and program structure',           url: 'https://www.usasoftball.com/' },
+  { label: 'Little League Softball: League fee structure',         url: 'https://www.littleleague.org/play-little-league/softball/' },
+];
+
 const FOOTBALL_SOURCES: CostSource[] = [
   ...BASE_SOURCES,
   { label: 'USA Football: Participation and program data',         url: 'https://usafootball.com/' },
@@ -237,6 +243,32 @@ export const PROFILES: CostProfile[] = [
     ),
     sources: BASEBALL_SOURCES,
     sourceNote: 'Travel baseball club fees average $1,500-3,000. Tournament fees, private lessons, and equipment (especially bat upgrades) compose the bulk of total cost. Tournament organizers publish entry fee schedules; budget $200-600 per weekend tournament.',
+  },
+
+  // Softball (fastpitch): mirrors baseball's tiers, but pitching lessons arrive earlier
+  // and dominate the travel budget once a kid enters the circle.
+  { sport: 'softball', level: 'rec', estimatedGames: 16,
+    lines: REC.map(l =>
+      l.key === 'equipment' ? { ...l, default: 300, hint: 'Glove, bat, helmet with facemask, cleats, fielder mask, bag.' } : l
+    ),
+    sources: SOFTBALL_SOURCES,
+    sourceNote: 'Little League Softball and USA Softball rec fees mirror baseball at $100-300. Equipment runs slightly higher than baseball because helmets with facemasks and infield fielder masks are standard in fastpitch.',
+  },
+  { sport: 'softball', level: 'school', estimatedGames: 30,
+    lines: SCHOOL.map(l =>
+      l.key === 'equipment' ? { ...l, default: 500, hint: 'Fastpitch bat, better glove, helmet with mask, cleats, bag.' } :
+      l.key === 'private-lessons' ? { ...l, default: 900, hint: 'Pitching or hitting lessons, $50-80/hr. Pitcher families spend at the top of this range.' } : l
+    ),
+    sources: SOFTBALL_SOURCES,
+    sourceNote: 'The softball middle layer: rec spring plus fall ball plus a winter clinic. Pitching lessons start earlier than the baseball equivalent because windmill mechanics are coach-taught, not playground-learned.',
+  },
+  { sport: 'softball', level: 'travel', estimatedGames: 60,
+    lines: TRAVEL.map(l =>
+      l.key === 'equipment' ? { ...l, default: 800, hint: 'Fastpitch bat upgrades, glove, helmet, cleats, full kit.' } :
+      l.key === 'private-lessons' ? { ...l, default: 2600, hint: 'Pitching lessons are the engine of travel softball: $60-90/hr, weekly for pitchers. Hitters run less.' } : l
+    ),
+    sources: SOFTBALL_SOURCES,
+    sourceNote: 'Travel fastpitch club fees average $1,500-3,000, in line with travel baseball. The differentiator is pitching instruction: windmill pitchers at the travel level typically take weekly lessons year-round, and tournament entries run $400-700 per team per event.',
   },
 
   // Lacrosse boys: stick + helmet + full pads, plus high travel exposure for serious club.

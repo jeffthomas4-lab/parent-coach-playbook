@@ -1,0 +1,114 @@
+---
+sport: "softball"
+title: "Softball pathway: tee-ball through varsity fastpitch"
+summary: "What good looks like at every age in fastpitch softball. Skill milestones, the windmill pitching timeline, the baseball-league years, and the calls that come up at each level."
+publishedAt: 2026-06-10
+ltadStage: "Through 10, softball and baseball are nearly the same sport and many girls play in baseball leagues, which is fine and often better. The fastpitch split gets real at 10U-12U when windmill pitching arrives. Specialization talk belongs at 13-14, not earlier, even though the travel softball world will start it at 9."
+notYet:
+  - "Weekly pitching lessons before age 9. The windmill motion can wait until the kid has decided she likes the sport."
+  - "Year-round fastpitch before 13. AAP guidance is two months off per year and one full day off per week, and it applies to the circle too."
+  - "Slap-hitting conversion before 11. Footwork first, switch-side projects later."
+  - "Recruiting talk before high school. College coaches cannot contact players until September 1 of junior year, and the showcase economy profits from parents who don't know that."
+  - "Unlimited innings because 'windmill is safe.' The motion is gentler than overhand, but volume injuries (shoulder, back, hip) are real at the travel level. Pitch limits are about workload, not mechanics."
+aheadBehind:
+  - "The best 10U pitcher is usually just the first kid who took lessons. By 14U, athleticism and spin beat a two-year head start."
+  - "Girls who play baseball through 10 arrive in fastpitch with better arms, not worse. The overhand throw transfers completely."
+  - "The 12U kid who can't hit a rise ball is normal. The 16U kid who can't lay off one needs swing-decision work, not more cage time."
+  - "Fastpitch develops late and rosters churn at 14U when puberty reshuffles the depth chart. Don't buy or sell a kid's future at 11."
+bands:
+  - age: "5-7"
+    skillMilestones:
+      - "Hits off a tee with two-handed contact"
+      - "Throws overhand without fear (form is rough, that's normal)"
+      - "Catches a soft ball with two hands when stationary"
+      - "Knows the bases and runs them in order, usually"
+    practiceShape:
+      - "60-minute practice, twice a week max"
+      - "Stations beat lines: five 8-10 minute rotations"
+      - "Tee or coach-pitch only, larger soft-core ball"
+      - "Many leagues run this age coed or as baseball; both are fine"
+    socialEmotional:
+      - "Every kid bats every inning. No exceptions."
+      - "The dirt is at least half the attraction. Allow it."
+      - "Tears after outs are normal and pass faster without an audience"
+    decisionPoints:
+      - "Softball league or baseball league? Whichever is closer, better run, or where her friends are. The skills are identical at this age."
+      - "All-star team? Shouldn't exist at this age."
+      - "Lessons? No."
+  - age: "8-10"
+    skillMilestones:
+      - "Hits live coach-pitch or machine pitch consistently"
+      - "Fields a ground ball with two hands and makes the throw to first"
+      - "Catches throws from teammates, not just coaches"
+      - "First exposure to kid-pitch (10U) with the 11-inch ball"
+    practiceShape:
+      - "75-minute practice, two to three times a week"
+      - "Real fundamentals: throwing mechanics, swing path, footwork"
+      - "First windmill pitching exposure for kids who want it, low volume"
+      - "Fielder's mask becomes standard for infielders"
+    socialEmotional:
+      - "Friend groups drive retention more than skill development does"
+      - "Comparison starts: she notices who pitches and who doesn't"
+      - "Girls leaving baseball leagues for softball arrive here; integrate them on purpose"
+    decisionPoints:
+      - "Stay in the baseball league or switch to fastpitch? By 10, switch if she's staying in the sport: the pitching, lead-off, and field-size rules diverge for good at 10U-12U."
+      - "Start pitching? If she asks. One lesson every few weeks, not weekly."
+      - "Travel 8U/9U offers? No. The development delta at this age is zero and the cost delta is enormous."
+  - age: "11-12"
+    skillMilestones:
+      - "Handles the 12-inch ball and the 40-foot pitching distance (12U)"
+      - "Position identity emerges: pitcher, catcher, middle infield, outfield"
+      - "Reads lead-offs and steals; fastpitch baserunning is its own sport"
+      - "Pitchers: two reliable pitches (fastball, change) thrown for strikes"
+    practiceShape:
+      - "90-minute practices, situational work and live at-bats"
+      - "Pitchers and catchers carry a real workload; track it"
+      - "Slap-hitting introduction for fast lefties"
+      - "Winter clinics or cage time keep the swing alive in the off-season"
+    socialEmotional:
+      - "The team becomes hers, not yours. Carpool talk replaces car-seat talk."
+      - "Pitching is emotionally exposed; the circle needs a short memory and a parent who doesn't re-litigate innings"
+      - "Quitting conversations here are usually about the coach or the friends, not the sport"
+    decisionPoints:
+      - "Travel/club fastpitch? This is the honest entry window if she's driving it. Run the cost first."
+      - "Weekly pitching lessons? Only for committed pitchers, and watch total weekly throws."
+      - "A-team/B-team politics arrive. The B team with innings beats the A team with bench."
+  - age: "13-14"
+    skillMilestones:
+      - "Full 43-foot pitching distance arrives (and resets every pitcher's stats)"
+      - "Hits a real changeup, or at least recognizes one"
+      - "Defensive specialization is real: catchers call some pitches, middles turn double plays"
+      - "Pitchers: movement pitch in progress (drop, rise, or screw), not mastered"
+    practiceShape:
+      - "School ball plus summer ball becomes the standard calendar"
+      - "Strength and conditioning enters: bodyweight first, bars later"
+      - "Two months fully off per year, enforced by the parent if no one else will"
+    socialEmotional:
+      - "Puberty reshuffles the depth chart; the 14U churn is real and survivable"
+      - "She knows exactly where she stands on the roster. Don't pretend otherwise; help her respond."
+      - "Multi-sport athletes are not behind. College softball rosters are full of them."
+    decisionPoints:
+      - "Specialize in softball? 14 is the earliest honest age for that conversation, and 'no' is still a fine answer."
+      - "Showcase travel orgs (PGF, USSSA nationals)? Only with a real budget conversation first."
+      - "Recruiting services? No. September 1 of junior year is the contact date; film and camps beat subscriptions."
+  - age: "15-plus"
+    skillMilestones:
+      - "Varsity-pace defense: footwork and arm strength separate levels here"
+      - "Pitchers: three-pitch mix with intent, or a defined role without one"
+      - "Approach at the plate: counts, situations, and the discipline to take a walk"
+      - "Knows her game honestly: slapper, gap hitter, defender, or arm"
+    practiceShape:
+      - "School season plus summer org ball; fall is the recruiting-visible season for committed players"
+      - "Real strength program, real recovery, real sleep"
+      - "Film becomes a tool: at-bats and innings reviewed, not just remembered"
+    socialEmotional:
+      - "The bench year happens to almost everyone at some point in high school; how she handles it is the development"
+      - "Softball ends for most players after senior year; the exit deserves as much care as the entry"
+      - "Captains are made by juniors-year habits, not senior-year speeches"
+    decisionPoints:
+      - "College softball? Honest talent assessment junior year, from coaches who don't profit from the answer."
+      - "Play summer ball or work a summer job? Both are legitimate; the sport should earn its slot."
+      - "When it ends, end it well: the last game deserves a real goodbye."
+---
+
+Softball's pathway has one fork no other sport has: the baseball years. Through age 9 or 10, the sports are interchangeable and many girls are better served by the local baseball league with its better fields, deeper coaching pools, and closer parks. The fastpitch-specific path, with the windmill circle, the lead-offs, and the 43-foot endgame, takes over from 10U on, and from there the development logic mirrors baseball with one big exception: pitching is a taught skill from day one, which makes lesson costs arrive earlier and matter more. The bands above mark what good looks like at each stop, and just as important, what can wait.
