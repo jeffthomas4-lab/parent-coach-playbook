@@ -4,6 +4,8 @@ activity: "Sideline kit"
 category: "essentials"
 sortOrder: 2
 lede: "Stadium chair, cooler, blanket, fan, and the weather-specific kit that keeps you functional on the sideline for two hours. The gear that makes watching comfortable."
+seoTitle: "The Sideline Kit: What Sports Parents Actually Need at Games"
+seoDescription: "Chairs, shade, hydration, and the small stuff that saves a tournament weekend, in one packable list."
 costSummary: "$150–350 for a full sideline kit depending on chair quality"
 seasonNote: "A basic kit works year-round. Hot seasons add fans and sunscreen. Cold seasons add blankets and hand warmers."
 publishedAt: 2026-05-01

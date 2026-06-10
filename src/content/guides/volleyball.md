@@ -4,6 +4,8 @@ activity: "Volleyball"
 category: "sport"
 sortOrder: 8
 lede: "Shoes, knee pads, ball, athletic gear. Indoor sport with low equipment overhead. The shoes really do matter."
+seoTitle: "Youth Volleyball Gear List by Age: What to Buy (and Skip)"
+seoDescription: "Volleyball shoes, knee pads, and ball sizes by age, with the universal shoe test, real prices, and what club season adds."
 costSummary: "$80–150 for starter; $200–350 by middle school for serious club"
 seasonNote: "School season runs fall (girls) or spring (boys, varies by region). Club season runs December through June."
 publishedAt: 2026-03-30

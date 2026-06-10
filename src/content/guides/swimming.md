@@ -3,6 +3,8 @@ activity: "Swimming"
 category: "sport"
 sortOrder: 10
 lede: "Swimming is the cheapest sport to outfit. A basic setup requires four items: suit, goggles, cap, and towel."
+seoTitle: "Youth Swim Team Gear: What to Buy by Age and Level"
+seoDescription: "Suits, goggles, caps, and meet gear for swim team, what a season costs, and the equipment the club already provides."
 costSummary: "$40-80 to start"
 seasonNote: "USA Swimming has teams year-round, but most recreational programs run in summer. Competitive seasons vary by region. Check with your local team."
 publishedAt: 2026-04-30

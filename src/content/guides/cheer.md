@@ -3,6 +3,8 @@ activity: "Cheer"
 category: "activity"
 sortOrder: 18
 lede: "Cheer requires functional cheer shoes, team-ordered bows, athletic tape, hair gel, and practice clothes. The competition uniform comes through the team."
+seoTitle: "Youth Cheer Gear: Shoes, Bows, and What to Buy by Season"
+seoDescription: "Cheer shoes, bows, hair gel, and tape, with prices, what the team orders for you, and why to wait on the competition uniform."
 costSummary: "$100-180 to start"
 seasonNote: "All-Star cheer runs year-round with seasons and competitions. High school cheer follows the school calendar, typically August through February."
 publishedAt: 2026-04-30

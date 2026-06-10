@@ -3,6 +3,8 @@ activity: "Golf"
 category: "sport"
 sortOrder: 14
 lede: "Junior golfers need a starter set sized for their age, a glove, and a half-dozen balls. Used clubs are perfectly fine."
+seoTitle: "Kids' Golf Gear: Club Sizing and What to Buy by Age"
+seoDescription: "Junior club sets by height, balls, bag, and shoes, with honest prices and what to skip until your kid commits."
 costSummary: "$120-200 to start"
 seasonNote: "Golf runs spring through fall in most regions. Many programs offer summer camps and after-school clinics year-round."
 publishedAt: 2026-04-30

@@ -54,8 +54,33 @@ const driveImages = [
 // UTC here, every date renders one day early for any deployer west of UTC.
 const fmtDate = (d: Date) =>
   d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+
+// WebSite schema with SearchAction, on the homepage where Google looks for it.
+// Moved here from /about/ (2026-06-10 SEO pass).
+import { SITE } from '../data/site';
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE.url}/search/?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
 ---
 <BaseLayout>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   {/* SECTION 1 of 6: HERO + latest-reads rail (top right, above the fold) */}
   <section class="border-b border-bone relative overflow-hidden">
     {/* Hero photo + paper-tinted overlay so dark hero type stays readable. */}

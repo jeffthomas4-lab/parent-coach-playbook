@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T17:50:45.478Z",
+  "generatedAt": "2026-06-10T19:12:12.438Z",
   "count": 385,
   "links": [
     {
@@ -538,15 +538,17 @@
     {
       "url": "https://schema.org",
       "sources": [
-        "src/pages/about.astro",
         "src/pages/body/[slug].astro",
         "src/pages/camps/[state]/[city]/[sport]/index.astro",
         "src/pages/camps/[state]/[city]/index.astro",
         "src/pages/camps/[state]/index.astro",
         "src/pages/coaching-tips/[slug].astro",
+        "src/pages/cost-calculator.astro",
         "src/pages/decisions/[slug].astro",
+        "src/pages/index.astro",
         "src/pages/scripts/[slug].astro",
-        "src/pages/team-parent/[slug].astro"
+        "src/pages/team-parent/[slug].astro",
+        "src/pages/what-to-buy/[slug].astro"
       ]
     },
     {

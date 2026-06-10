@@ -3,6 +3,8 @@ activity: "Tennis"
 category: "sport"
 sortOrder: 13
 lede: "Tennis requires a properly-sized racket, court-specific shoes, and a tube of balls. String tension matters more than you'd think."
+seoTitle: "Kids' Tennis Gear by Age: Racquet Sizes and What to Buy"
+seoDescription: "Racquet length by age and height, ball stages, shoes, and what a season of youth tennis really costs."
 costSummary: "$150-250 to start"
 seasonNote: "Tennis runs year-round in most regions. Spring and fall are the primary seasons, though many programs offer summer and winter play."
 publishedAt: 2026-04-30

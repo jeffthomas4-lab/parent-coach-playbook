@@ -4,6 +4,8 @@ activity: "Hockey"
 category: "sport"
 sortOrder: 6
 lede: "The most expensive youth sport, period. Skates, helmet, stick, full pads. Plan ahead and consider used gear for kids under 10."
+seoTitle: "Youth Hockey Gear List by Age: What to Buy (and Skip)"
+seoDescription: "The full pad-by-pad list for youth hockey, what it really costs by age, where used gear is smart, and what to buy new."
 costSummary: "$400–700 for starter; $1,200–2,500 by middle school. Travel hockey adds another $4,000–10,000 per year."
 seasonNote: "Season runs late August through March in most areas. Spring 3-on-3 leagues are common. Summer skills camps are optional."
 publishedAt: 2026-03-16

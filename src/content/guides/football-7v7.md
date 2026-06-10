@@ -3,6 +3,8 @@ activity: "Football — 7v7"
 category: "sport"
 sortOrder: 6
 lede: "7v7 is skill-position football: QB, WR, DB. No linemen, no pads, no helmet. The recruiting circuit lives here. Gear is closer to flag than to tackle."
+seoTitle: "7v7 Football Gear: What to Buy for the Passing Season"
+seoDescription: "The short list for 7on7: cleats, gloves, soft-shell helmet rules, and what your kid does not need for the passing circuit."
 costSummary: "$120-300 to start, plus team kit"
 seasonNote: "Most 7v7 runs spring through summer (Mar-Jul) as a complement to school football. Some indoor leagues run winter. Showcase events and recruiting tournaments cluster Apr-Jul."
 publishedAt: 2026-04-30

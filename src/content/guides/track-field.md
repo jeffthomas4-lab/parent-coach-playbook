@@ -3,6 +3,8 @@ activity: "Track and field"
 category: "sport"
 sortOrder: 11
 lede: "Track and field athletes need trainers first, then event-specific spikes. Most apparatus is shared, making this one of the cheapest sports to outfit."
+seoTitle: "Youth Track and Field Gear by Event: What to Buy"
+seoDescription: "Trainers, spikes by event, and meet-day gear for youth track, with prices by age and what to skip the first season."
 costSummary: "$100-200 to start"
 seasonNote: "Track season typically runs March through May. Cross country overlaps in fall. Check your school or local club for exact dates."
 publishedAt: 2026-04-30

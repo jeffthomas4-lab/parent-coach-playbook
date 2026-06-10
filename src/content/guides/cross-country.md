@@ -3,6 +3,8 @@ activity: "Cross country"
 category: "sport"
 sortOrder: 12
 lede: "Cross country runners need quality trainers, racing flats for meets, and a layered cold-weather kit for fall-into-winter racing."
+seoTitle: "Youth Cross Country Gear: Shoes, Spikes, and Cold-Weather Kit"
+seoDescription: "Where the money goes in cross country: real trainers, when spikes make sense, and the cold-weather kit for October and November meets."
 costSummary: "$150-250 to start"
 seasonNote: "Cross country season is fall, typically July through November, depending on your region. Most races happen September through November."
 publishedAt: 2026-04-30

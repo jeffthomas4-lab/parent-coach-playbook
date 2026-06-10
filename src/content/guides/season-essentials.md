@@ -4,6 +4,8 @@ activity: "Season essentials"
 category: "essentials"
 sortOrder: 1
 lede: "Recovery, hydration, travel logistics, and the replacement consumables that keep a season running. The kit that runs the season once cleats and equipment are handled."
+seoTitle: "Youth Sports Season Essentials: Gear Every Family Needs"
+seoDescription: "The cross-sport basics every family ends up buying: bottles, bags, tape, layers, and the labels that keep them home."
 costSummary: "$250–450 for a full essentials kit; scales with tournament travel"
 seasonNote: "Most essentials stay consistent year-round. Tour and tournament seasons push cooler and travel gear higher."
 publishedAt: 2026-05-01

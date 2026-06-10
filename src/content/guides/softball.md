@@ -4,6 +4,8 @@ activity: "Softball"
 category: "sport"
 sortOrder: 2
 lede: "Most of the gear is similar to baseball, with a few specific differences. The ball is bigger and so are the gloves."
+seoTitle: "Youth Softball Gear List by Age: What to Buy (and Skip)"
+seoDescription: "Gloves, bats, helmets, and fastpitch gear by age band, with prices, sizing checks, and what to skip until travel ball."
 costSummary: "$150–250 for tee-ball; $400–700 by middle school with travel"
 seasonNote: "Spring and summer are the main seasons. Fall ball is common. High school season runs spring."
 publishedAt: 2026-01-26

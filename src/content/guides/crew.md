@@ -3,6 +3,8 @@ activity: "Rowing / Crew"
 category: "sport"
 sortOrder: 15
 lede: "Most crew equipment is provided by the club. What you buy is the personal kit: unisuit, technical socks, windbreaker, and sun protection."
+seoTitle: "Youth Crew and Rowing Gear: What to Buy for a First Season"
+seoDescription: "What a new rower actually needs, from trou to water bottle, what the boathouse provides, and what a season costs."
 costSummary: "$150-200 to start"
 seasonNote: "Junior crew season runs spring, typically February through May. Some clubs offer summer camps or fall racing. Check your local program."
 publishedAt: 2026-04-30

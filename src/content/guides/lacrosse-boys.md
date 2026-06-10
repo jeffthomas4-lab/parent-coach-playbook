@@ -4,6 +4,8 @@ activity: "Lacrosse — Boys"
 category: "sport"
 sortOrder: 7
 lede: "Contact version. Helmet, gloves, full pads, stick. The safety gear list is real."
+seoTitle: "Boys' Lacrosse Gear List by Age: What to Buy (and Skip)"
+seoDescription: "Stick, helmet, pads, and cleats by age, what boys' lacrosse really costs, and the gear that can wait a season."
 costSummary: "$200–350 starter. Add $200–400 by middle school. Travel/club $1,500–4,000 a year."
 seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor box leagues in winter."
 publishedAt: 2026-03-23

@@ -3,6 +3,8 @@ activity: "Flag football"
 category: "sport"
 sortOrder: 5
 lede: "Flag football requires minimal gear and carries significantly less injury risk than tackle. Here's what you actually need to get started."
+seoTitle: "Flag Football Gear for Kids: The Short List of What to Buy"
+seoDescription: "Mouthguard, cleats, and almost nothing else. What flag football really costs to start, what the league provides, and what to skip."
 costSummary: "$80-150 to start"
 seasonNote: "Most flag football leagues run fall and spring. Check with your local NFL Flag or youth program for season dates in your area."
 publishedAt: 2026-04-30

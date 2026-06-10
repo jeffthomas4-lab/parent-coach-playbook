@@ -4,6 +4,8 @@ activity: "Soccer"
 category: "sport"
 sortOrder: 3
 lede: "Cleats, shin guards, ball, water bottle. The lowest-equipment outdoor sport. Most of the cost is in the league fees, not the gear."
+seoTitle: "Youth Soccer Gear List by Age: What to Buy (and Skip)"
+seoDescription: "Cleats, shin guards, and the right ball size by age, with prices, in-store fit tests, and what soccer families can skip."
 costSummary: "$100–180 for a full kit at any age, plus league fees"
 seasonNote: "Fall is the main season in most US leagues. Spring is common. Year-round in California, Texas, and Florida."
 publishedAt: 2026-02-09

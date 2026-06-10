@@ -4,6 +4,8 @@ activity: "Band"
 category: "activity"
 sortOrder: 10
 lede: "An instrument, accessories, music. The instrument is the big-ticket item. Most schools rent. Rent before you buy."
+seoTitle: "School Band Costs: Renting vs Buying Instruments, by Grade"
+seoDescription: "Instrument rent-vs-buy math, supplies, and marching season costs, with the questions to ask before you sign a rental contract."
 costSummary: "$300–600 a year to rent an instrument; $1,000–5,000 to buy a quality student instrument outright"
 seasonNote: "Concert band runs the school year (September–May). Marching band adds August/September pre-season. Jazz and chamber are year-round."
 publishedAt: 2026-04-13

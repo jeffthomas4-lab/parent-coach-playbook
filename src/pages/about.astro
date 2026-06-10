@@ -2,37 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, personSchema } from '../data/site';
 
-// WebSite schema with SearchAction for SERP search box. The site is intentionally
-// anonymous, so no Person schema. Publisher is the Organization entity rendered
-// from BaseLayout.
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: SITE.name,
-  url: SITE.url,
-  description: SITE.description,
-  publisher: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-  },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${SITE.url}/search/?q={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
-};
-
+// WebSite schema (with SearchAction) now lives on the homepage, where Google
+// looks for it. This page keeps the Person schema only.
 const personJsonLd = personSchema();
 ---
 <BaseLayout
   title="About"
   description="Parent Coach Desk is sideline notes for the parent who coaches, drives, snack-packs, and supervises the group chat. Editorial process, sources, and how we write."
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   {personJsonLd && (
     <script slot="head" type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
   )}

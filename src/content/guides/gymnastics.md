@@ -3,6 +3,8 @@ activity: "Gymnastics"
 category: "sport"
 sortOrder: 17
 lede: "Gymnastics gear is minimal: leotards, grips for advanced levels, tape, and a foam roller. The gym provides all apparatus."
+seoTitle: "Kids' Gymnastics Gear by Age: What to Buy (and Skip)"
+seoDescription: "Leotards, grips, and practice wear by level, what gymnastics really costs per year, and what to wait on."
 costSummary: "$120-180 to start"
 seasonNote: "Gymnastics programs run year-round. Most gyms offer classes multiple times per week. Competition season varies by club but typically happens winter through spring."
 publishedAt: 2026-04-30

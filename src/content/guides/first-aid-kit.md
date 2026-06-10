@@ -4,6 +4,8 @@ activity: "First aid kit"
 category: "essentials"
 sortOrder: 3
 lede: "Bandages, tape, instant cold packs, and the basics you actually use on the sideline. A youth-sports-specific first aid kit for cuts, sprains, and the small emergencies that happen every season."
+seoTitle: "Youth Sports First Aid Kit: What to Actually Pack"
+seoDescription: "The sideline first aid kit that covers real youth sports injuries, item by item, without packing a trauma bag."
 costSummary: "$40–80 to stock a small sideline kit"
 seasonNote: "Restock every four weeks during season. Keep extra tape, bandages, and cold packs in the car."
 publishedAt: 2026-05-01

@@ -3,6 +3,8 @@ activity: "Martial arts"
 category: "sport"
 sortOrder: 16
 lede: "A gi (uniform) is usually included with enrollment. What you buy depends on the style: BJJ needs a heavier gi, karate a lighter one, taekwondo a dobok."
+seoTitle: "Kids' Martial Arts Gear: What to Buy by Age and Belt"
+seoDescription: "Uniform, sparring gear, and belt-test costs for karate, taekwondo, and BJJ, with prices and what the dojo supplies."
 costSummary: "$80-150 to start"
 seasonNote: "Martial arts programs run year-round. Most gyms offer classes multiple times per week. Check your local schools for schedules."
 publishedAt: 2026-04-30

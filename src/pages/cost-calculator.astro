@@ -28,9 +28,19 @@ const levels = [
 ];
 ---
 <BaseLayout
-  title="Cost calculator"
+  title="Youth Sports Cost Calculator: What a Year Actually Costs"
   description="What does a year of youth sports actually cost? Pick a sport and level. We pre-fill national medians at every tier. Edit any line. Honest math either way."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Youth Sports Cost Calculator',
+    url: 'https://parentcoachdesk.com/cost-calculator/',
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    description: 'Estimates the real annual cost of any youth sport at rec, school, travel, and elite levels, pre-filled with national medians and editable line by line.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  })} />
   <section class="border-b border-bone relative overflow-hidden">
     {/* Cost-calc kitchen-table flatlay behind a paper-tinted wash for the hero. */}
     <img
@@ -162,8 +172,8 @@ const levels = [
             <p class="font-display italic text-rust text-xs mb-2 font-medium">See also</p>
             <ul class="grid gap-1.5">
               <li><a href="/cost-calculator/methodology/" class="font-display italic text-ink hover:text-rust text-sm font-medium">→ Methodology: where the numbers come from</a></li>
-              <li data-related-pathway style="display: none;"><a class="font-display italic text-ink hover:text-rust text-sm font-medium" href="#">→ Pathway for this sport</a></li>
-              <li data-related-calendar style="display: none;"><a class="font-display italic text-ink hover:text-rust text-sm font-medium" href="#">→ Season calendar for this sport</a></li>
+              <li data-related-pathway style="display: none;"><a class="font-display italic text-ink hover:text-rust text-sm font-medium" href="/pathways/">→ Pathway for this sport</a></li>
+              <li data-related-calendar style="display: none;"><a class="font-display italic text-ink hover:text-rust text-sm font-medium" href="/season-calendar/">→ Season calendar for this sport</a></li>
               <li><a href="/body/" class="font-display italic text-ink hover:text-rust text-sm font-medium">→ Body topics: what to spend on, what to skip</a></li>
             </ul>
           </div>

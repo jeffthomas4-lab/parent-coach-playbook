@@ -122,6 +122,8 @@ const guides = defineCollection({
       lede: z.string(),
       costSummary: z.string(),
       seasonNote: z.string().optional(),
+      seoTitle: z.string().optional(),
+      seoDescription: z.string().optional(),
       publishedAt: z.coerce.date(),
       updatedAt: z.coerce.date().optional(),
       draft: z.boolean().default(false),

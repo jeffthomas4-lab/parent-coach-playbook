@@ -3,6 +3,8 @@ activity: "Stunt"
 category: "activity"
 sortOrder: 19
 lede: "Stunt is its own NCAA emerging sport now. What you buy: mat shoes, ankle braces if injury-prone, tape, and a home stretching mat."
+seoTitle: "Stunt and Tumbling Gear for Kids: What to Buy by Level"
+seoDescription: "Shoes, practice wear, and mat costs for stunt and tumbling athletes, with prices by level and what to skip."
 costSummary: "$100-150 to start"
 seasonNote: "Stunt season follows the school calendar. Most programs run August through early spring with competitions November through February."
 publishedAt: 2026-04-30

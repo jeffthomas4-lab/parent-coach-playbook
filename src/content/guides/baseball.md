@@ -4,6 +4,8 @@ activity: "Baseball"
 category: "sport"
 sortOrder: 1
 lede: "Glove, bat, helmet, cleats. The list grows by age. Most parents buy the wrong size at least once. Here is what actually works."
+seoTitle: "Youth Baseball Gear List by Age: What to Buy (and Skip)"
+seoDescription: "Every glove, bat, helmet, and cleat a kid actually needs from tee-ball to high school, with prices, sizing tests, and the gear you can skip."
 costSummary: "$150–250 to outfit tee-ball; $350–600 by little league with travel"
 seasonNote: "Spring is the main season. Fall ball is optional and often shorter. Winter cages and lessons start in January."
 publishedAt: 2026-01-12

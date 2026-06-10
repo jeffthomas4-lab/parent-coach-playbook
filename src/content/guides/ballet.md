@@ -3,6 +3,8 @@ activity: "Ballet"
 category: "activity"
 sortOrder: 23
 lede: "Ballet requires slippers, a leotard, tights, and hair pins. Pointe shoes come only when the teacher approves, typically around age 11."
+seoTitle: "Ballet Gear for Kids: What to Buy for Class, by Age"
+seoDescription: "Leotards, tights, shoes, and the pointe conversation, with prices by age and what the studio dress code really requires."
 costSummary: "$80-130 to start"
 seasonNote: "Ballet studios run year-round with classes multiple times per week. Recitals and performances happen throughout the year, typically at least once annually."
 publishedAt: 2026-04-30

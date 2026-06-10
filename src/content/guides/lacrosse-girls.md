@@ -4,6 +4,8 @@ activity: "Lacrosse — Girls"
 category: "sport"
 sortOrder: 8
 lede: "Non-contact version. Stick, goggles, mouthpiece. Lighter kit, very different rules."
+seoTitle: "Girls' Lacrosse Gear List by Age: What to Buy (and Skip)"
+seoDescription: "Stick, goggles, mouthguard, and cleats by age, with prices and the differences from the boys' game that change what you buy."
 costSummary: "$100–225 starter. $250–500 at varsity. Travel/club $2,000–4,000 a year."
 seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor leagues in winter."
 publishedAt: 2026-03-23
