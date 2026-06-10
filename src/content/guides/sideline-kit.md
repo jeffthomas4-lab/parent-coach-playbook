@@ -25,19 +25,19 @@ A basic aluminum chair with no backrest. Lightweight, folds small, works for sho
 
 Weighs about 3 pounds. Packs tight. Your back will hurt after two hours.
 
-<a href="/go/stadium-chair-budget/">Our pick</a>. Around $15–25.
+<a href="/go/stadium-chair-budget/" rel="sponsored nofollow noopener">Our pick</a>. Around $15–25.
 
 **Mid-range chair (padded seat, low backrest)**
 
 A chair with a small backrest and padded seat. Weighs 4–5 pounds. Fits in a car. Comfortable for two hours. The sweet spot for most parents who go to 20+ games a season.
 
-<a href="/go/stadium-chair-midrange/">Our pick</a>. Around $35–60.
+<a href="/go/stadium-chair-midrange/" rel="sponsored nofollow noopener">Our pick</a>. Around $35–60.
 
 **Premium chair (backrest, armrests, cup holder)**
 
 A full-featured chair with a back, padded arms, and a built-in cup holder. Five to six pounds. You will use this for a decade. Good for parents who go to 40+ games a season or manage sideline duties like score keeping.
 
-<a href="/go/stadium-chair-premium/">Our pick</a>. Around $60–120.
+<a href="/go/stadium-chair-premium/" rel="sponsored nofollow noopener">Our pick</a>. Around $60–120.
 
 ## Cooler (drinks and snacks)
 
@@ -47,15 +47,15 @@ Pick a size based on your games. Single games? A soft cooler with ice. Tournamen
 
 See the Season Essentials guide for detailed cooler picks. For sideline duty specifically, a mid-size soft cooler works for single games, and a hard cooler justifies itself if you do weekend tournaments.
 
-<a href="/go/soft-cooler-25qt/">Soft cooler for single games</a>. Around $30–60.
+<a href="/go/soft-cooler-25qt/" rel="sponsored nofollow noopener">Soft cooler for single games</a>. Around $30–60.
 
-<a href="/go/hard-cooler-55qt/">Hard cooler for tournaments</a>. Around $90–200.
+<a href="/go/hard-cooler-55qt/" rel="sponsored nofollow noopener">Hard cooler for tournaments</a>. Around $90–200.
 
 ## Sideline blanket
 
 A lightweight blanket or fleece for when the sun goes down or the wind picks up. Doubles as a ground cloth at picnic areas or a towel if someone spills. Keep one in the car year-round.
 
-<a href="/go/sideline-blanket/">Our pick</a>. Around $20–40.
+<a href="/go/sideline-blanket/" rel="sponsored nofollow noopener">Our pick</a>. Around $20–40.
 
 ## Weather-specific gear
 
@@ -65,19 +65,19 @@ A lightweight blanket or fleece for when the sun goes down or the wind picks up.
 
 A small battery-powered fan runs for 4–6 hours and actually works. Small enough to hold or clip to a chair. Game changer on 85-degree days.
 
-<a href="/go/battery-fan-handheld/">Our pick</a>. Around $12–25.
+<a href="/go/battery-fan-handheld/" rel="sponsored nofollow noopener">Our pick</a>. Around $12–25.
 
 **Sunscreen (SPF 30+)**
 
 Reapply every 90 minutes if you are sitting in direct sun. Keep a travel size in your bag.
 
-<a href="/go/sunscreen-travel/">Our pick</a>. Around $6–12.
+<a href="/go/sunscreen-travel/" rel="sponsored nofollow noopener">Our pick</a>. Around $6–12.
 
 **Bug spray**
 
 Mosquitoes and gnats are real. A spray bottle or stick lets you stay functional without disease.
 
-<a href="/go/bug-spray-travel/">Our pick</a>. Around $5–10.
+<a href="/go/bug-spray-travel/" rel="sponsored nofollow noopener">Our pick</a>. Around $5–10.
 
 ### Cold days
 
@@ -85,13 +85,13 @@ Mosquitoes and gnats are real. A spray bottle or stick lets you stay functional 
 
 Slip them in your jacket pockets or a blanket. Work for 6–8 hours. Buy the reusable kind if cold seasons are regular.
 
-<a href="/go/hand-warmers/">Our pick</a>. Around $1–2 per pair single-use, $15–25 reusable.
+<a href="/go/hand-warmers/" rel="sponsored nofollow noopener">Our pick</a>. Around $1–2 per pair single-use, $15–25 reusable.
 
 **Rain poncho or lightweight rain jacket**
 
 A poncho stays loose over your chair and doesn't restrict movement. Lightweight and packs small.
 
-<a href="/go/rain-poncho/">Our pick</a>. Around $10–20.
+<a href="/go/rain-poncho/" rel="sponsored nofollow noopener">Our pick</a>. Around $10–20.
 
 **Thermal socks and a warm layer**
 
@@ -105,13 +105,13 @@ A small wagon hauls a cooler, chair, blanket, and whatever else you don't want t
 
 Most wagons are 30–40 pounds capacity, which is plenty for a cooler and chair.
 
-<a href="/go/folding-wagon/">Our pick</a>. Around $35–70.
+<a href="/go/folding-wagon/" rel="sponsored nofollow noopener">Our pick</a>. Around $35–70.
 
 **A small gear bag or canvas tote**
 
 Sunscreen, bug spray, hand warmers, battery for the fan, snacks, wet wipes, whatever else lives in your sideline kit. A small bag keeps it organized and portable.
 
-<a href="/go/gear-bag-small/">Our pick</a>. Around $15–30.
+<a href="/go/gear-bag-small/" rel="sponsored nofollow noopener">Our pick</a>. Around $15–30.
 
 ## Optional items
 
@@ -119,13 +119,13 @@ Sunscreen, bug spray, hand warmers, battery for the fan, snacks, wet wipes, what
 
 A small tent or pop-up canopy creates shade for a few people. Useful if your tournament field has no trees. Overkill for most suburban fields.
 
-<a href="/go/pop-up-tent-sunscreen/">Our pick</a>. Around $40–80.
+<a href="/go/pop-up-tent-sunscreen/" rel="sponsored nofollow noopener">Our pick</a>. Around $40–80.
 
 **Seat cushion (if you get the budget chair)**
 
 A foam cushion makes a no-back chair tolerable for longer games. Fits under a bag.
 
-<a href="/go/seat-cushion/">Our pick</a>. Around $12–20.
+<a href="/go/seat-cushion/" rel="sponsored nofollow noopener">Our pick</a>. Around $12–20.
 
 **Wet wipes and small trash bag**
 

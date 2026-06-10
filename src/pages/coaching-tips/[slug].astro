@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 import { EDITORIAL, SITE, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
@@ -15,6 +16,10 @@ export async function getStaticPaths() {
 
 const { tip } = Astro.props;
 const { Content } = await tip.render();
+// FTC 16 CFR Part 255: affiliate disclosure must appear before the first
+// affiliate link, not just in the footer. Render it whenever the tip body
+// contains a /go/ redirect link.
+const hasAffiliateLinks = tip.body.includes('/go/');
 const tagBits = [tip.data.sport, tip.data.age, tip.data.focus].filter(Boolean);
 
 // JSON-LD: HowTo for drill content. Steps come from the markdown body, so we
@@ -59,6 +64,7 @@ const howToSchema = {
 
   <article class="container-px py-10 md:py-14">
     <div class="article-body max-w-prose mx-auto">
+      {hasAffiliateLinks && <BuyingGuideDisclosure />}
       <Content />
       <aside class="mt-12 pt-8 border-t border-bone">
         <p class="font-display italic text-rust mb-2 font-medium">From the {EDITORIAL.byline}</p>

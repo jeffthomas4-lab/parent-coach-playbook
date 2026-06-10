@@ -119,11 +119,14 @@ const lastUpdated = topic.data.publishedAt;
       {topic.data.gearPicks && topic.data.gearPicks.length > 0 && (
         <aside class="mt-10 pt-6 border-t border-bone">
           <p class="font-display italic text-rust mb-3" style="font-weight: 500;">Gear that helps</p>
+          <p class="font-display italic text-ink-soft text-xs mb-3 leading-snug" style="font-weight: 500;">
+            Some of these are affiliate links. If you buy through them we earn a small commission; the price you pay does not change. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
+          </p>
           <ul class="grid gap-3">
             {topic.data.gearPicks.map((g) => (
               <li>
                 {g.affiliateSlug ? (
-                  <a href={`/go/${g.affiliateSlug}/`} class="font-display text-ink hover:text-rust" style="font-weight: 500;">{g.name} →</a>
+                  <a href={`/go/${g.affiliateSlug}/`} rel="sponsored nofollow noopener" class="font-display text-ink hover:text-rust" style="font-weight: 500;">{g.name} →</a>
                 ) : (
                   <span class="font-display text-ink" style="font-weight: 500;">{g.name}</span>
                 )}
@@ -133,9 +136,6 @@ const lastUpdated = topic.data.publishedAt;
               </li>
             ))}
           </ul>
-          <p class="font-display italic text-ink-soft text-xs mt-4 leading-snug" style="font-weight: 500;">
-            Some of these are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
-          </p>
         </aside>
       )}
 

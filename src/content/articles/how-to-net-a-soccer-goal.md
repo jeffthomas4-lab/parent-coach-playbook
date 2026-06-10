@@ -31,7 +31,7 @@ Dick's Sporting Goods: $30-60
 
 Academy Sports: $25-50
 
-Amazon: $20-40 (if you have time to wait for shipping)
+Online retailers: $20-40 (if you have time to wait for shipping)
 
 Local sporting goods store: $35-70
 

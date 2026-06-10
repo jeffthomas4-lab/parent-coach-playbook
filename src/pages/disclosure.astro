@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../data/site';
-const updated = 'May 10, 2026';
+const updated = 'June 10, 2026';
 ---
 <BaseLayout
   title="Privacy and disclosure"
@@ -37,6 +37,7 @@ const updated = 'May 10, 2026';
       </div>
       <div class="md:col-span-8 article-body">
         <p>Nothing on this site is sponsored. We do not accept payment to feature a product, a camp, a service, or a person. If that ever changes, the post will say so at the top.</p>
+        <p>One paid service exists in the camps directory: a camp operator can claim their own listing for a yearly fee. The fee buys self-service editing tools (updating their info, adding a logo and photos, linking their registration page). It does not buy placement, ranking, a rating, or a recommendation. Free and claimed listings are ranked the same way, and claiming a listing has no effect on reviews.</p>
         <p>If a recommendation no longer holds up, we update the piece and add a correction at the bottom.</p>
       </div>
     </div>
@@ -53,11 +54,14 @@ const updated = 'May 10, 2026';
           <li><strong>Email addresses</strong>, when you sign up for the newsletter or download a PDF. Stored at our email provider, Kit. We use your email to send you the newsletter and the resources you asked for. Unsubscribe in any email and your address is removed.</li>
           <li><strong>Anonymous traffic data</strong> via Cloudflare Web Analytics. Page views, referrer, country. No cookies, no individual tracking, no advertising profiles.</li>
           <li><strong>Aggregate audience data</strong> via Google Analytics 4. We use it to understand which pieces are useful and where readers come from. IP addresses are anonymized. We do not enable Google Signals, advertising features, or remarketing. We do not share GA data with advertisers. Google Analytics is not loaded for visitors with Do Not Track or Global Privacy Control enabled.</li>
-          <li><strong>Submissions you send us</strong>, when you email a story or submit a camp. Used only to respond and to publish if you ask us to.</li>
+          <li><strong>Submissions you send us</strong>, when you email a story or submit a camp. Used only to respond and to publish if you ask us to. Camp submissions include your email; we use it to follow up on the listing and nothing else.</li>
+          <li><strong>Camp reviews</strong>, when you review a camp in the directory. We store your email (never published) and the display name you choose, which appears publicly with your review. Reviews are held for moderation before they appear.</li>
+          <li><strong>Listing claims</strong>, when a camp operator claims a listing. We store the name, email, organization, and phone number provided, and use them only to verify and manage the claim.</li>
         </ol>
         <p>We do not sell or share your email. We do not run third-party advertising trackers. We do not run remarketing or behavioral ads.</p>
         <p>You can opt out of Google Analytics tracking site-wide by installing the <a href="https://tools.google.com/dlpage/gaoptout" class="text-rust hover:underline" rel="noopener nofollow">Google Analytics opt-out browser add-on</a>, or by enabling "Do Not Track" / "Global Privacy Control" in your browser, which we honor automatically.</p>
         <p>If you want your email removed, unsubscribe via the link in any newsletter or write to <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+        <p><strong>Your rights.</strong> Wherever you live, you can ask us what we hold about you, ask us to correct it, or ask us to delete it. Email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a> and we will handle it within 30 days. We do not sell personal information and never have, so there is nothing to opt out of under the California Consumer Privacy Act's "do not sell or share" provisions.</p>
       </div>
     </div>
   </section>

@@ -21,37 +21,37 @@ This is not a comprehensive first aid kit for wilderness or home. This is the sm
 
 Stock a few sizes. Small for splinters and small cuts. Large for scraped knees. Check the box monthly and refill when you hit half-empty.
 
-<a href="/go/adhesive-bandages/">Our pick</a>. Around $5–8 per box of 30.
+<a href="/go/adhesive-bandages/" rel="sponsored nofollow noopener">Our pick</a>. Around $5–8 per box of 30.
 
 **Gauze pads (2x2 and 4x4)**
 
 For bleeding that bandages won't cover. Non-stick gauze doesn't stick to the wound. Keep a small pack.
 
-<a href="/go/gauze-pads/">Our pick</a>. Around $4–8 per pack of 10.
+<a href="/go/gauze-pads/" rel="sponsored nofollow noopener">Our pick</a>. Around $4–8 per pack of 10.
 
 **Athletic tape (white, 1.5 inch)**
 
 Tape for ankles, fingers, or anything else that needs stabilization. Learn to cut it or keep pre-cut strips. Tape lasts longer than you think and gets used almost every week.
 
-<a href="/go/athletic-tape-roll/">Our pick</a>. Around $4–8 per roll.
+<a href="/go/athletic-tape-roll/" rel="sponsored nofollow noopener">Our pick</a>. Around $4–8 per roll.
 
 **Butterfly bandages or wound closure strips**
 
 For small cuts that are longer than they are wide. These pull the edges together and reduce scarring.
 
-<a href="/go/butterfly-bandages/">Our pick</a>. Around $4–6 per pack of 10.
+<a href="/go/butterfly-bandages/" rel="sponsored nofollow noopener">Our pick</a>. Around $4–6 per pack of 10.
 
 **Antibiotic ointment (small tube, travel size)**
 
 Apply it to scraped skin or small cuts before bandaging. Prevents infection. Most tubes last a full season or longer.
 
-<a href="/go/antibiotic-ointment-travel/">Our pick</a>. Around $3–5.
+<a href="/go/antibiotic-ointment-travel/" rel="sponsored nofollow noopener">Our pick</a>. Around $3–5.
 
 **Alcohol or saline wipes**
 
 Clean a wound before bandaging. Saline is gentler than alcohol and still kills most bacteria. Keep a small pack.
 
-<a href="/go/saline-wipes/">Our pick</a>. Around $4–7 per pack of 20.
+<a href="/go/saline-wipes/" rel="sponsored nofollow noopener">Our pick</a>. Around $4–7 per pack of 20.
 
 ## Strain and sprain
 
@@ -59,19 +59,19 @@ Clean a wound before bandaging. Saline is gentler than alcohol and still kills m
 
 Ice reduces swelling immediately. Chemical packs don't require a freezer. Keep two or three in the kit. They stay good for years.
 
-<a href="/go/instant-cold-pack/">Our pick</a>. Around $6–10 per pack of two.
+<a href="/go/instant-cold-pack/" rel="sponsored nofollow noopener">Our pick</a>. Around $6–10 per pack of two.
 
 **Elastic bandage or Ace wrap**
 
 For a mild ankle sprain or knee swelling. Wrap it snug but not cutting off circulation. Comes off after a few hours when the swelling is down.
 
-<a href="/go/ace-wrap/">Our pick</a>. Around $5–8.
+<a href="/go/ace-wrap/" rel="sponsored nofollow noopener">Our pick</a>. Around $5–8.
 
 **Pre-cut kinesio tape**
 
 Faster than learning to cut your own. Ankle, knee, or shoulder. Pre-cut strips work for most sideline tape jobs.
 
-<a href="/go/kinesio-tape-precut/">Our pick</a>. Around $8–15 per pack of 20 strips.
+<a href="/go/kinesio-tape-precut/" rel="sponsored nofollow noopener">Our pick</a>. Around $8–15 per pack of 20 strips.
 
 **Ibuprofen (children's or adult depending on kid age)**
 
@@ -87,13 +87,13 @@ Around $4–8 per bottle.
 
 For allergic reactions or bug bites. Liquid or tablet depending on what your kid will take. Ask your pediatrician first about dosage for your kid's age.
 
-<a href="/go/antihistamine-child/">Our pick</a>. Around $6–10.
+<a href="/go/antihistamine-child/" rel="sponsored nofollow noopener">Our pick</a>. Around $6–10.
 
 **Bug bite relief stick**
 
 Stops the itch immediately. Keep one in your bag.
 
-<a href="/go/bug-bite-stick/">Our pick</a>. Around $4–7.
+<a href="/go/bug-bite-stick/" rel="sponsored nofollow noopener">Our pick</a>. Around $4–7.
 
 **EpiPen note**
 
@@ -105,19 +105,19 @@ If your kid has a severe nut, bee, or medication allergy, they should have a pre
 
 For a deep cut or scrape with dirt. Saline rinse cleans without stinging.
 
-<a href="/go/saline-rinse/">Our pick</a>. Around $4–8.
+<a href="/go/saline-rinse/" rel="sponsored nofollow noopener">Our pick</a>. Around $4–8.
 
 **Tweezers (small, pointed)**
 
 For splinters or embedded grass. A small pair fits in a kit.
 
-<a href="/go/tweezers-small/">Our pick</a>. Around $3–6.
+<a href="/go/tweezers-small/" rel="sponsored nofollow noopener">Our pick</a>. Around $3–6.
 
 **Small scissors (blunt-tip)**
 
 For cutting tape or gauze. Blunt tips are safer around an injury.
 
-<a href="/go/scissors-blunt-tip/">Our pick</a>. Around $3–6.
+<a href="/go/scissors-blunt-tip/" rel="sponsored nofollow noopener">Our pick</a>. Around $3–6.
 
 ## Sun and heat
 
@@ -125,19 +125,19 @@ For cutting tape or gauze. Blunt tips are safer around an injury.
 
 Reapply every 90 minutes in direct sun. A travel size lasts most of a season.
 
-<a href="/go/sunscreen-travel/">Our pick</a>. Around $6–12.
+<a href="/go/sunscreen-travel/" rel="sponsored nofollow noopener">Our pick</a>. Around $6–12.
 
 **Lip balm with SPF**
 
 Easy to forget and causes painful burns. Keep a small stick in your kit and in your pocket.
 
-<a href="/go/lip-balm-spf/">Our pick</a>. Around $3–6.
+<a href="/go/lip-balm-spf/" rel="sponsored nofollow noopener">Our pick</a>. Around $3–6.
 
 **Electrolyte tablets**
 
 For a hot game where a kid drank too much water and not enough electrolytes. Mild dizziness or cramping usually means they need salt and potassium, not more water.
 
-<a href="/go/electrolyte-tablets/">Our pick</a>. Around $8–12.
+<a href="/go/electrolyte-tablets/" rel="sponsored nofollow noopener">Our pick</a>. Around $8–12.
 
 ## Things to know: injury decisions
 

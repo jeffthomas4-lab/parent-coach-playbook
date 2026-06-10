@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
+import BuyingGuideDisclosure from '../components/BuyingGuideDisclosure.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL, authorEntity, themeFor } from '../data/site';
@@ -13,6 +14,10 @@ interface Props {
 
 const { article } = Astro.props;
 const { data, slug } = article;
+// FTC 16 CFR Part 255: affiliate disclosure must be clear, conspicuous, and
+// placed before the first affiliate link. Computed from the raw body so it
+// only renders on articles that actually contain /go/ redirect links.
+const hasAffiliateLinks = article.body.includes('/go/');
 const pillar = PILLARS[data.phase];
 const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
@@ -193,6 +198,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         )}
 
         <div class={`article-body ${isShort ? 'mt-8' : 'mt-12'}`}>
+          {hasAffiliateLinks && <BuyingGuideDisclosure />}
           <slot />
         </div>
 
@@ -202,9 +208,11 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
           <p class="font-display text-ink-soft text-sm leading-snug">
             Written and edited by {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
           </p>
-          <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
-            Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
-          </p>
+          {hasAffiliateLinks && (
+            <p class="font-display italic text-ink-soft text-sm leading-snug mt-3">
+              Some links in this piece are affiliate links. <a href="/disclosure/" class="hover:text-rust underline-offset-2 hover:underline">Read our disclosure</a>.
+            </p>
+          )}
         </aside>
       </article>
 
