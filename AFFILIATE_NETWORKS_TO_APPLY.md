@@ -2,18 +2,23 @@
 
 Sorted by priority. Apply to tier 1 first, tier 2 next, tier 3 only if you have bandwidth. Each has a one-line note on what they're for and a typical commission range. After approval, send the agent the credentials and tracking IDs and it will wire them through `/go/`.
 
-## Status (2026-06-10)
+## Status (2026-06-11)
 
 | Network / merchant | Status |
 |---|---|
-| Amazon Associates | LIVE. Tag `parentcoachpl-20`. 71 slugs in `affiliates.json`. |
-| CJ Affiliate (network) | Account open. |
-| Dick's Sporting Goods (via CJ) | Applied, awaiting approval. |
-| GameChanger (via CJ) | Applied, awaiting approval. Covers the team-parent and scorekeeping content, not gear. |
-| Awin (ex-ShareASale) | Not yet applied. Next up. ShareASale itself shut down Oct 2025; everything moved to Awin. |
-| Impact | Not yet applied. |
+| Amazon Associates | LIVE. Tag `parentcoachpl-20`. 130+ slugs in `affiliates.json`. |
+| CJ Affiliate (network) | LIVE. CJ website ID 101798499. |
+| SoccerGarage (via CJ) | LIVE. 4 slugs live: goalie gloves, clearance cleats, $10-off coupon, shop link. Deep linking not yet enabled — email Brian Yossef (affiliate@soccergarage.com) to request. |
+| Dick's Sporting Goods (via CJ) | Pending (applied ~6/9). |
+| GameChanger (via CJ) | Pending (applied ~6/9). Covers team-parent and scorekeeping content, not gear. |
+| Columbia Sportswear (via CJ) | Pending (applied 6/10). |
+| Easton Sports (via CJ) | Pending (applied 6/10). |
+| Nike apparel (via CJ) | Pending (applied 6/10). |
+| Impact | Pending (applied 6/11). Site verification meta tag live in BaseLayout.astro. |
+| Awin (ex-ShareASale) | Pending (applied 6/11). |
+| Flex Offers | In review (applied 6/11). Site verification meta tag live. Primary target: Shutterfly for `photo-book-service` slug. When approved, swap destination in `affiliates.json`. |
+| Bookshop.org | LIVE. Store about page written. |
 | Avantlink | Not yet applied. |
-| Bookshop.org | Not yet applied. |
 
 ## CJ application list (apply inside the existing account)
 
