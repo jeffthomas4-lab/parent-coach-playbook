@@ -10,10 +10,27 @@ Sorted by priority. Apply to tier 1 first, tier 2 next, tier 3 only if you have 
 | CJ Affiliate (network) | Account open. |
 | Dick's Sporting Goods (via CJ) | Applied, awaiting approval. |
 | GameChanger (via CJ) | Applied, awaiting approval. Covers the team-parent and scorekeeping content, not gear. |
-| ShareASale | Not yet applied. Next up. |
+| Awin (ex-ShareASale) | Not yet applied. Next up. ShareASale itself shut down Oct 2025; everything moved to Awin. |
 | Impact | Not yet applied. |
 | Avantlink | Not yet applied. |
 | Bookshop.org | Not yet applied. |
+
+## CJ application list (apply inside the existing account)
+
+Search the CJ advertiser directory for each. Network rosters shift, so if one isn't there, it moved — check Impact or Awin before giving up.
+
+| Advertiser | Why | Status |
+|---|---|---|
+| Dick's Sporting Goods | Core gear, 5–8% | Pending (applied ~6/9) |
+| GameChanger | Team-parent and scorekeeping content | Pending (applied ~6/9) |
+| Columbia Sportswear | Sideline outerwear, XC base layers, cold-game apparel | Pending (applied 6/10) |
+| Easton Sports | Baseball guide already links Easton bat, pants, catcher's set via Amazon | Pending (applied 6/10) |
+| Nike apparel | Cleats and apparel across guides | Pending (applied 6/10) |
+| Soccer Garage | Soccer guide coverage | Pending (applied 6/10) |
+| Musician's Friend | NOT on CJ (checked 6/10). Band coverage moves to Sweetwater direct + Guitar Center on Impact. | Dead end |
+| adidas | Soccer guide is already adidas-heavy (shin guards, socks, shoe bag) | Apply |
+| Soccer.com | ~7.5%, 7-day cookie. If not in the CJ directory, Soccer Garage covers the slot. | Search |
+| New Balance, Academy Sports, Rawlings, Wilson, Lids | Worth a directory search; membership unverified | Search |
 
 When an approval lands, send the tracking ID and the agent wires it through `/go/` and logs it here.
 
@@ -39,13 +56,13 @@ These cover 80% of what your audience buys. All are free to apply, take 1–7 da
 **Approval:** 5–10 days. They review your site for fit.
 **What we need from you after approval:** Your Impact Radius tracking link or partner ID.
 
-### 3. ShareASale
-**Apply at:** https://www.shareasale.com/info/affiliates
-**Covers:** A network that hosts hundreds of niche programs. Once you're in, you can apply to specific merchants on their platform — many youth-sports brands run their programs here.
+### 3. Awin (absorbed ShareASale)
+**Apply at:** https://www.awin.com/us/publishers
+**Note:** ShareASale shut down October 2025. Every ShareASale merchant migrated to Awin, so one Awin application now covers what used to be two networks. Awin charges a $1 refundable deposit at signup to verify identity.
+**Covers:** Under Armour (already linked across the site at Amazon's ~3%; Awin pays ~5%), Etsy (cheer bows, team-mom gifts), plus the former ShareASale youth-sports brands: Marucci, Baseball Rampage, Leather Head, and the small lacrosse, swim, hockey, and dance merchants.
 **Commission:** Varies by merchant. 5–15% typical.
-**Approval:** 3–5 days for the network. Each merchant inside is a separate application.
-**Why this matters:** This is where most of the smaller, higher-commission brands live (lacrosse stick companies, swim brands, hockey gear shops, dance apparel).
-**What we need from you after approval:** Your ShareASale affiliate ID.
+**Approval:** Network approval in a few days. Each merchant inside is a separate application.
+**What we need from you after approval:** Your Awin publisher ID.
 
 ### 4. Bookshop.org
 **Apply at:** https://bookshop.org/info/affiliates

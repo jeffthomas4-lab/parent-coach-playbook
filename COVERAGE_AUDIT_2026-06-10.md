@@ -60,6 +60,19 @@ Lacrosse-girls has full infrastructure parity on guides but nothing else, while 
 
 Spot-checked: /start-here/ and popularReads do not lead with recruiting content. Compliant as of this audit.
 
+## Fill wave shipped same day (2026-06-10, second session)
+
+The punch list above is now substantially closed. What shipped:
+
+- **Pathways: 26/26.** 15 new files (hockey, flag-football, football-7v7, lacrosse-girls, cross-country, track-field, tennis, golf, crew, martial-arts, cheer, stunt, theater, choir, ballet). 7v7, crew, and stunt start their bands at the ages the activity actually exists, stated in ltadStage.
+- **Calendars: 26/26 sports covered.** 17 new scenario files, one per missing sport, hs-lacrosse-spring-girls named to pair with the boys' file.
+- **Cost profiles: 26/26.** 27 new profiles across the 13 missing activities, two levels each, ballet three (rec/travel/elite). New source consts per governing body; methodology page picks them up automatically.
+- **Lacrosse-girls parity:** first-season read plus goggles-and-stick rules read, both sport-tagged.
+- **The 15+ wave:** 8 sport-tagged varsity-parent reads (baseball ace workload, basketball tryout odds, soccer club-vs-school, football roster math, volleyball bench year, softball junior-year cut, hockey juniors math, track stopwatch). Six link the 4-percent rule.
+- **Theater travel packing list:** ITF/Thespys + state festivals + show trips, sport: theater, 15-plus.
+
+Punch list items 1 and 2 (basketball, softball first-season hubs) had already shipped in the morning session. Remaining known gap: nothing at the infrastructure level. Next soft spots are read depth for tennis/golf/crew/martial-arts/stunt (zero sport-tagged reads, but full structure pages now exist) and the multi-sport read library still dwarfing sport-tagged coverage, which is by design.
+
 ## Next audit
 
-Re-run after the basketball/softball waves ship. The matrix script lives in this audit's session log; rebuilding it takes one pass over content frontmatter plus site.ts.
+Re-run after the next content wave. The matrix script lives in this audit's session log; rebuilding it takes one pass over content frontmatter plus site.ts.

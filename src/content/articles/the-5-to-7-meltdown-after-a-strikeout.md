@@ -13,7 +13,7 @@ publishedAt: 2026-01-08
 featured: false
 hero: /illustrations/after-a-tough-day-reset-kit.webp
 heroAlt: A juice box, a small stuffed animal, and a child's batting helmet on a kitchen
-  counter — the after-game reset kit.
+  counter, the after-game reset kit.
 editorial:
   claudeReviewedAt: 2026-06-13
 ---
