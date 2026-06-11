@@ -4,6 +4,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle } from '../../lib/title';
 
+export const prerender = true;
+
 const scripts = (await getCollection('scripts', ({ data }) => isLive(data)))
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
 
@@ -24,6 +26,16 @@ const grouped = moments.map(g => ({
   title="Scripts: what to say in the moments that matter"
   description="Short, scriptable pages for parents in real moments. The exact words to say after a bad game, after a win, after no playing time, after a mistake. Built for the car ride."
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Parent-Coach Scripts',
+    url: 'https://parentcoachdesk.com/scripts/',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'A library of short, scriptable conversation guides for parents in real youth sports moments — what to say after a bad game, a loss, no playing time, a mistake, before nerves, and more.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  })} />
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">Scripts</p>

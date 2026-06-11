@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import ReviewedFooter from '../../components/ReviewedFooter.astro';
+
+export const prerender = true;
 import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
 
@@ -22,6 +24,16 @@ const levelAccent: Record<string, string> = {
   title="Season calendar"
   description="Twelve months at a glance. Tryouts, league windows, picture-day, peak season, off-season. Pick the canonical calendar that matches your kid's life."
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Youth Sports Season Calendar',
+    url: 'https://parentcoachdesk.com/season-calendar/',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'Browse canonical twelve-month season calendars for youth sports and performing arts by sport and level — rec, school, travel, and elite. Shows tryout windows, peak season, off-season, and key parent logistics dates.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  })} />
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">

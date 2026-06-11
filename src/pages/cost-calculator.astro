@@ -4,6 +4,8 @@ import { SPORTS } from '../data/site';
 import ReviewedFooter from '../components/ReviewedFooter.astro';
 import { PROFILES } from '../data/costDefaults';
 
+export const prerender = true;
+
 // Build the data the client needs: every profile flattened into one object the
 // browser can read without another round trip.
 const profilesPayload = PROFILES.map((p) => ({

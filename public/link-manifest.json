@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T20:59:33.225Z",
+  "generatedAt": "2026-06-11T21:05:22.488Z",
   "count": 398,
   "links": [
     {
@@ -567,8 +567,11 @@
         "src/pages/index.astro",
         "src/pages/rules/[sport].astro",
         "src/pages/scripts/[slug].astro",
+        "src/pages/scripts/index.astro",
+        "src/pages/season-calendar/index.astro",
         "src/pages/team-parent/[slug].astro",
-        "src/pages/what-to-buy/[slug].astro"
+        "src/pages/what-to-buy/[slug].astro",
+        "src/pages/youth-sports-pendulum.astro"
       ]
     },
     {

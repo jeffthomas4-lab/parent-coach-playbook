@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 
+export const prerender = true;
+
 const axes = [
   {
     label: 'Fun ↔ Performance',
@@ -41,6 +43,16 @@ const axes = [
   title="The youth sports pendulum"
   description="Fun ↔ performance. Rec ↔ travel. Growth ↔ burnout. Parent support ↔ parent pressure. Where is your family on each one right now?"
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'The Youth Sports Pendulum',
+    url: 'https://parentcoachdesk.com/youth-sports-pendulum/',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'An interactive self-assessment tool that helps families locate themselves on four youth sports spectrums: fun vs performance, rec vs travel, growth vs burnout, and parent support vs parent pressure.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  })} />
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">A way to think about it</p>
