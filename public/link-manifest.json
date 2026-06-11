@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T19:52:48.136Z",
-  "count": 397,
+  "generatedAt": "2026-06-11T19:55:45.078Z",
+  "count": 398,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -131,6 +131,12 @@
       "url": "https://bjsm.bmj.com/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/shop/ParentCoachDesk",
+      "sources": [
+        "src/pages/books/index.astro"
       ]
     },
     {
