@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard build-confidence-near-the-rim drill. Vocabulary stays in basketball lane."
@@ -44,3 +44,13 @@ Block shooting teaches the finish near the basket. The blocks are the spots righ
 **If they're struggling:** Move even closer (3 feet). Use a lower hoop. Reduce to 3 shots per block.
 
 **If they've got it:** Add a defender playing soft pressure on the shooter. Adds game-like defense.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

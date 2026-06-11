@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Step 1 mashes the cue list with steps; could split for clarity. Soccer vocab correct."
@@ -44,3 +44,15 @@ Jockeying is active defending. The defender moves toward the attacker while stay
 **If they're struggling:** Make the grid bigger. Less pressure.
 
 **If they've got it:** Shrink the grid to 12x12. Tighter space makes defending harder.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid rondo write-up; first-touch coaching point sharp."
@@ -41,3 +41,15 @@ A rondo is the best passing drill. Five players pass around one defender who's t
 **What to look for:** First-touch quality and movement. If the first touch is bad, the next pass will be bad. Also watch how attackers move to create passing angles for their teammates.
 
 **Variation:** For younger kids (11), make the square bigger (20 by 20 yards) so there's more space. For older kids (12), add a second defender to create more pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

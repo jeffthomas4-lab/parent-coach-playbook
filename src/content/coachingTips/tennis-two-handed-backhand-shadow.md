@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Two-handed backhand shadow swing for younger ages."
@@ -44,3 +44,15 @@ Two-handed backhand is the standard for kids. Both hands give support and consis
 **If they're struggling:** Have them hold the racquet still in the contact position to feel the grip and body angle.
 
 **If they've got it:** Add a balloon or beach ball to hit. Or move to a real ball at low speed.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Junior tennis racquet →](/go/tennis-racquet-junior/) — HEAD Speed, pre-strung for beginners.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

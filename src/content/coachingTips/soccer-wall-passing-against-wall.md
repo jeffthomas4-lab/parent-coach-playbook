@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Wall-as-partner framing is sharp; consistency-over-power coaching point lands."
@@ -44,3 +44,13 @@ The wall returns every pass the same speed and angle it came in. That forces the
 **If they're struggling:** Move back to 10 feet. Slower pace.
 
 **If they've got it:** Move up to 6 feet from the wall. Tighter angle, less time to react.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

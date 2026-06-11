@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,13 @@ When a fly ball is hit with less than two outs, the runner has a choice. If the 
 **If they're struggling:** Slow down the throw. Use a parent in the outfield throwing soft. Build the timing.
 
 **If they've got it:** Add a competitive element. The runner has to beat the throw home. Tell them: out or safe, score it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ In 7v7, the RB usually catches checkdowns — but if a defender blitzes through 
 **What to look for:** The RB's first step is a read step — small, into the line of scrimmage. Big committed steps mean they're guessing.
 
 **Variation:** Add a second defender who comes from the other side. Tests if the RB can pick the more dangerous threat.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth leather football →](/go/football-leather-youth/) — Wilson GST youth composite for older players.
+
+[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

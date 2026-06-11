@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Foundational keeper drill. Soccer vocab correct."
@@ -45,3 +45,13 @@ This drill is for kids who want to play goalkeeper. Rolling balls come at keeper
 **If they're struggling:** Roll slower. Get closer.
 
 **If they've got it:** Roll from different angles. Not straight at them.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

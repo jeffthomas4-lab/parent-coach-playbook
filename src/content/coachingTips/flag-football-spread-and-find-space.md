@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "5v3 space-finding game. Clean flag-pull language."
@@ -44,3 +44,15 @@ In flag football, the offense wins by spreading out the defense. If three defend
 **If they're struggling:** Reduce to 4v2. Less complexity.
 
 **If they've got it:** Add a fourth defender (4 defenders + 1 rusher). Tighter coverage.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

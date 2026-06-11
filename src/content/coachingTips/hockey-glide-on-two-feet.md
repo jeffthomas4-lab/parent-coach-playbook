@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean intro skating drill, age-appropriate."
@@ -44,3 +44,15 @@ The first hockey skill is balance. A kid who can glide on two feet is ready for 
 **If they're struggling:** Use a milk crate or skate aid. Stay close to the boards.
 
 **If they've got it:** Glide on one foot for a beat. Or glide and turn in a slight curve.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey helmet →](/go/hockey-helmet-youth/) — Bauer Lil Sport with cage.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Light hand-touch mirror drill, no impact contact."
@@ -44,3 +44,13 @@ Before they block anyone, kids need to feel what it means to keep their hands in
 **If they're struggling:** Start closer, just 2 feet apart. Go slower. Let them get comfortable with the motion first.
 
 **If they've got it:** Have them step into it. As they punch with their hands, they take a small step forward. That's the beginning of Drive.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

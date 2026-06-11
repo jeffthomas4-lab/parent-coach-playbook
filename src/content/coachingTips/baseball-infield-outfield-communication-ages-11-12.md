@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'The kid backing o'. Collision-prevention angle is safety-adjacent."
@@ -45,3 +45,13 @@ Collisions happen when kids don't talk. This drill teaches loud, clear communica
 **If they're struggling:** Drop to two fielders at a time (one infielder, one outfielder) and pop the ball straight between them. Make the call mandatory before any glove touches the ball.
 
 **If they've got it:** Add a runner tagging from third on the catch. The fielder who catches it has to plant and throw home, while the off fielder gets in line for a relay.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body rewritten by editorial agent on 2026-05-09. Original drill taught a baseball-style pre-pitch leadoff, which is illegal in fastpitch softball. Under USA Softball youth fastpitch rules, the runner must keep contact with the base until the pitcher releases the ball; leaving early is an out. Drill now teaches the legal break-on-release. USA Softball rule cited inline."
@@ -45,3 +45,15 @@ In fastpitch softball, you can't leave the base before the pitch is released. Le
 **If they're struggling:** Take the catcher's throw out of the rep. Just have the runner break on release and sprint to the next base. Build the timing first, add the read later.
 
 **If they've got it:** Add a stolen-base attempt on every release. Time the runner first to second; under 3.5 seconds is the bar at this age. Mix in pitchouts so the catcher sometimes has the ball ready and the runner has to read whether to dive back.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

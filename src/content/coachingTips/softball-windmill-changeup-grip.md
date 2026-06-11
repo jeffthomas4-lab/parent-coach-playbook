@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Off-speed grip work with pitch-count guardrails."
@@ -46,3 +46,15 @@ A changeup grip changes the ball's spin and speed without changing the arm motio
 **If they're struggling:** Start with just the changeup grip. Throw 10 changeups with the same motion. Focus on the grip, not speed difference.
 
 **If they've got it:** Add a second off-speed pitch (drop ball). Vary release points to create different spin.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

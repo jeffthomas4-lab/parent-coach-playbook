@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Generic warm-up; fine for the use."
@@ -47,3 +47,13 @@ A dynamic warm-up gets the whole body moving. Leg swings, lunges, arm circles, a
 **If they're struggling:** Cut the reps in half. Do 5 of each. Focus on good form, not quantity.
 
 **If they've got it:** Add more reps. Do 15 of each. Add a sprint finish after the circuit to get the heart rate up.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

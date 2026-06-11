@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Windmill-specific pre-throwing progression."
@@ -44,3 +44,15 @@ Total: 20 pitches from easy to game speed. This takes 20 minutes.
 **What to look for:** Smooth arm action, consistent timing, and a balanced follow-through. If the arm slot is changing or the follow-through is rough, stop and reset.
 
 **Variation:** For younger kids (11), skip the velocity progression and stick with medium-radius windmills. For advanced pitchers (12), add count work after the 20-pitch build-up (pitch in a game scenario).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

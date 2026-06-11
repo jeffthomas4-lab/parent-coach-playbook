@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Throwing mechanics; arm-care adjacent."
@@ -44,3 +44,13 @@ When a kid throws from one knee, the legs can't help and the lower body can't ch
 **If they're struggling:** Move closer to 10 feet. Slow down the throws.
 
 **If they've got it:** Add a target on the wall behind the partner. They aim for the target, not the partner's chest.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pull-up shooting drill, clear cues, sport language correct."
@@ -43,3 +43,15 @@ Pull-up shooting is how guards score in games. This drill teaches the rhythm of 
 **If they're struggling:** Move spots closer to 10 feet. Slow the dribble approach. Do just 2 spots instead of 4.
 
 **If they've got it:** Add a defender playing soft pressure. The shooter must still get their shot off clean from the plant.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

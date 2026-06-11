@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,13 @@ Most kids grip the ball with their palm, which makes throws curve and float. The
 **If they're struggling:** Use a tennis ball with a black line drawn across it as the seam. The grip is the same, the ball is easier to handle.
 
 **If they've got it:** Have them set the grip with the ball hidden in the glove. They can't look. They have to feel for the seam.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

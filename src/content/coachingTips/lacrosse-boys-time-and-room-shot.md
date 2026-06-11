@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Time-and-room shot drill; correct lacrosse mechanics."
@@ -44,3 +44,15 @@ Time and room means the shooter has space and time. No defender. Big windup, ful
 **If they're struggling:** Move closer (10 yards). Use a smaller goal or larger targets.
 
 **If they've got it:** Add a goalie. Aim for top corners only (where goalies struggle).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.
+
+[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

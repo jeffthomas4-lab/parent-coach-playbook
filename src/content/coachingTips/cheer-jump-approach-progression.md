@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -41,3 +41,13 @@ A clean jump comes from the approach, not the air. Three steps build it.
 **What to look for:** Arms hit T at the peak of the jump, not before or after. Knees lock in the toe-touch position — no soft legs.
 
 **Variation:** Film the jump from the side and review with the kid. Most flaws (early arms, soft toes) only show on tape.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth cheer shoes →](/go/cheer-shoes-youth/) — lightweight split-sole shoes for stunts and tumbling.
+
+[Full cheer gear guide →](/what-to-buy/cheer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

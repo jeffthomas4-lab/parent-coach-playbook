@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'fatigue is setting in, bu'. Sensitive flag on mile-repeat load retained."
@@ -46,3 +46,13 @@ Each mile repeat should be similar in time. If the third mile is significantly s
 **If they're struggling:** Cut to two mile repeats and stretch the recovery to 600 meters. If the second mile is more than 20 seconds off the first, end the workout.
 
 **If they've got it:** Add a fourth mile at goal pace, or shorten the recovery to 200 meters. Keep the goal time honest; don't let them coast to fit the volume.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for road and trail.
+
+[Full cross country gear guide →](/what-to-buy/cross-country/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

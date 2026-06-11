@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Foundations cradle drill, ages 5-7. Title misalignment (file says 'cradle-stationary,' title says 'Stationary Cradle') is fine."
@@ -44,3 +44,15 @@ Cradling is the rhythm that keeps the ball in the stick. Wrist rolls one way, th
 **If they're struggling:** Smaller cradle motion. Or use a heavier ball (the ball stays in better).
 
 **If they've got it:** Add a head turn (look left, look right) while cradling. Eyes have to leave the stick.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Walking pace rule is a strong cue for 5-7s."
@@ -44,3 +44,15 @@ Five-year-olds have no sense of where their feet are. This drill teaches them th
 **If they're struggling:** Stand right next to them and tap with them. Match their rhythm.
 
 **If they've got it:** Add direction. "Tap it toward the tree." Give them a target 15 feet away and have them tap it there.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

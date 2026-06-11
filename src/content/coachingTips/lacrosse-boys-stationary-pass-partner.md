@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Foundational pass-partner drill for 8-10."
@@ -44,3 +44,15 @@ The lacrosse pass is a controlled flick. Top hand pushes, bottom hand pulls. Bal
 **If they're struggling:** Move closer to 8 feet. Slower passes.
 
 **If they've got it:** Move back to 25 feet. Add accuracy targets (left shoulder, right shoulder of the partner).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.
+
+[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

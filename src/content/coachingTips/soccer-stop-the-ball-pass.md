@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Good sequencing: stop first, pass second."
@@ -44,3 +44,13 @@ This drill combines stopping and passing. Young kids need to stop the ball befor
 **If they're struggling:** Reduce distance to 8 feet. Roll slower.
 
 **If they've got it:** Increase distance to 15 feet. Remove the pause between stopping and passing. Flow continuous.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

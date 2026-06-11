@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Some will lean forwar'."
@@ -44,3 +44,13 @@ The ready position is where fielding starts. Kids who know how to stand, wait, a
 **If they're struggling:** Cut to one direction at a time and walk through it slow. Tap their knee and tell them "soft" so they remember to bend.
 
 **If they've got it:** Replace your voice with a tossed ball. Roll a tennis ball left or right and have them shuffle to it instead of reacting to a clap.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ The bow-in isn't ceremony. It's the switch from playground to dojo. Sixty second
 **What to look for:** Stillness during the eye-closed part. Younger kids will fidget — that's fine the first month, less fine the second. Focus is trainable.
 
 **Variation:** Have one student lead the bow-in once a month. Builds leadership and shows them what the instructor sees.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for flexibility, mobility, and conditioning work.
+
+[Full martial arts gear guide →](/what-to-buy/martial-arts/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

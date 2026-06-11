@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,15 @@ Static stretching cold doesn't help. Dynamic movement (moving while stretching) 
 **If they're struggling:** Cut the distance to 15 yards. Or do 3 of the 5 exercises.
 
 **If they've got it:** Add a power skip or a carioca step (legs crossing in front and behind while moving sideways) for extra athleticism.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

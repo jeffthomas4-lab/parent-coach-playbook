@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,3 +43,13 @@ Goals don't come from standing still. They come from receiving the ball and fini
 **If they're struggling:** Move the receiver closer to goal (8 feet). Give them a heavier first touch to stabilize.
 
 **If they've got it:** Add a defender who closes the receiver after the pass is released. Now it's under pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

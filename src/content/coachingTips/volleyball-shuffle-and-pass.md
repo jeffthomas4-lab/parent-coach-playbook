@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Conditioning + reads combo. No-cross-feet teaching point is correct."
@@ -44,3 +44,13 @@ Real defense is shuffling between zones, reading the play, getting set, passing.
 **If they're struggling:** Slower calls. Bigger cones (closer together).
 
 **If they've got it:** Faster calls. Or add a setter target so the pass has to be accurate, not just back to the coach.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

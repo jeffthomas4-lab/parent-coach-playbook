@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Realistic situational shooting drill. Soccer vocab correct."
@@ -43,3 +43,13 @@ Rebounding is a fundamental. Not every shot is clean. Sometimes the keeper makes
 **If they're struggling:** Move the attacker closer to the goal (8 feet). Give them more time to react.
 
 **If they've got it:** Add a defender who pressures the attacker before they shoot the rebound.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

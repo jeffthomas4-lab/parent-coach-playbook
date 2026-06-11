@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solo setting drill. Quiet-vs-slap audio cue is sharp."
@@ -44,3 +44,15 @@ The wall is the perfect setting partner. It returns every set to the same spot. 
 **If they're struggling:** Move closer to 3 feet. Bigger target.
 
 **If they've got it:** Move back to 8 feet. Or alternate hands (set, then bump, then set, etc.).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Volleyball shoes →](/go/volleyball-shoes-upcourt/) — Asics Upcourt, non-marking gum sole.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

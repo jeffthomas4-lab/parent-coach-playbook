@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Arm-swing form drill with clear cross-body fix."
@@ -44,3 +44,13 @@ Running fast starts with the arms. Bent at 90 degrees. Swing forward and back, n
 **If they're struggling:** Slow the tempo. Or have them watch in a mirror.
 
 **If they've got it:** Add running. Apply the arm form while jogging in place, then while running forward.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

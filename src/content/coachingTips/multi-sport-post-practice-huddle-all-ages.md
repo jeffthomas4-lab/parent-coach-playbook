@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'For younger '."
@@ -46,3 +46,13 @@ Kids should feel clear on what happened and what's next. If they're confused abo
 **If they're struggling:** Drop steps 2 and 3 entirely. Just close with the commitment word and a hand-in. Build the feedback habit later.
 
 **If they've got it:** Hand the huddle to a kid. Pick one player each practice to deliver the feedback statement and the focus for tomorrow. You step back.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — flat disc cones for any field drill.
+
+[Full multi sport gear guide →](/what-to-buy/training-gear/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

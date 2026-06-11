@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Setup says 50-yard zone but mark a 40-by-40 square; minor inconsistency. Soccer vocab correct."
@@ -42,3 +42,15 @@ A high press means attacking the player with the ball immediately. This drill te
 **What to look for:** Press timing. Too early and the defender has space. Too late and the ball is gone. Also watch if the attacker is closing down at the right angle (cutting off the passing lane, not just running at the player).
 
 **Variation:** For younger kids (13), press only in certain zones. For older kids (14), add a trigger call (coach calls "Press now") so they learn to react to signal.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 5 soccer ball →](/go/soccer-ball-size5/) — regulation ball for ages 13 and up.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Does the defender stay on'."
@@ -44,3 +44,15 @@ editorial:
 **If they're struggling:** Shrink the grid to 10 by 10 yards and start the attacker 5 yards closer to goal. Tell the defender to delay only, no tackles for the first round.
 
 **If they've got it:** Add a 5-second time limit. The attacker has to score or lose possession before the count. Now they can't dribble forever waiting for an opening.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

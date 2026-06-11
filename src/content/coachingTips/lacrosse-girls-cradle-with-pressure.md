@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Defender stick-checks only (no body contact described). 'Through the contact' refers to stick contact, which fits girls' rules."
@@ -44,3 +44,15 @@ In a game, the defender is hitting the stick to dislodge the ball. Good ball han
 **If they're struggling:** Slower defender. Lighter checks.
 
 **If they've got it:** Two defenders. Or open ground (no boards or sideline to lean on).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

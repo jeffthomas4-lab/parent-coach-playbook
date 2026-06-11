@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'the kid is out of posi'."
@@ -43,3 +43,15 @@ This drill teaches kids to move their feet to the ball instead of reaching. Ever
 **If they're struggling:** Slow the rolls down to 1-2 mph and only call two corners (right front, left front). Cut the reps to 8 total.
 
 **If they've got it:** Hit the ball with a fungo bat instead of rolling, and shorten the call window so they have to read direction off your bat instead of your voice.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

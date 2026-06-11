@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Contact-safety drill (catcher gear required); flagged sensitive."
@@ -43,4 +43,4 @@ A catcher who can block balls in the dirt is the difference between a runner adv
 
 **If they're struggling:** Use tennis balls or rag balls only. The block is a confidence drill before it's a skill drill.
 
-**If they've got it:** Move to real baseballs and harder bounces. Add a runner on third who tries to score on a wild pitch.
+**If they've got it:** Move to real baseballs and harder bounces. Add a runner on third

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Halfway-bounce-point cue is the right teaching detail for ages 5-7."
@@ -44,3 +44,13 @@ The bounce pass goes on the ground. It's slower than a chest pass but harder to 
 **If they're struggling:** Move closer to 8 feet. Use a bigger, softer ball. Aim for a line on the court instead of calculating the midpoint.
 
 **If they've got it:** Move back to 12 feet. Add a quick catch-and-pass. Make it a rapid fire series without stops between passes.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "QB drop-back footwork and throw timing. No contact."
@@ -45,3 +45,15 @@ A drop-back is the QB's path away from the center. The QB takes a certain number
 **If they're struggling:** Have them walk through the steps first. No throwing yet. Three steps, plant, done. Do that 5 times.
 
 **If they've got it:** Add pressure. Put a defender coming from the side to make the QB release the ball faster.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

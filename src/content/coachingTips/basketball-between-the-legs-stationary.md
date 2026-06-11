@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Specific stance width (12 inches wider than shoulders) is the kind of detail the voice rules ask for."
@@ -44,3 +44,13 @@ Between-the-legs dribbles look flashy but they're just a different bounce angle.
 **If they're struggling:** Widen the stance more. Make the path easier. Start by just practicing the hand handoff without bouncing, then add the bounce.
 
 **If they've got it:** Do between-the-legs dribbles while walking slowly forward. Keep the same wide stance and smooth hand handoff.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

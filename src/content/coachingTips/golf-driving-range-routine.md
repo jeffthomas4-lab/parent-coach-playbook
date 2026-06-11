@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ A small bucket isn't 40 balls of driver. Build a routine that warms the swing an
 **What to look for:** No mindless hitting. Every ball gets a target. If the kid hits five in a row at the same target, change the target.
 
 **Variation:** For older kids, simulate a course: imagine the first hole, hit driver. Then visualize the approach, hit 7-iron. Then chip onto the green with wedge. Trains course management thinking.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — useful for alignment and target drills.
+
+[Full golf gear guide →](/what-to-buy/golf/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

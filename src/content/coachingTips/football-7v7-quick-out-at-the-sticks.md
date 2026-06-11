@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,15 @@ Third-and-short in 7v7 lives or dies on the quick out. This drill gets the recei
 **What to look for:** A clean break, no rounding the corner. The receiver should snap their head around at the same time they plant. The ball should arrive on the outside shoulder, away from where a defender would close from inside.
 
 **Variation:** With a defender, the receiver works on selling the inside before breaking out. Without one, focus on timing.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for field setup and route markers.
+
+[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass. Strong opening rationale."
@@ -44,3 +44,13 @@ Before a kid can use a glove, they need to know that a ball rolling at them is s
 **If they're struggling:** Move closer. Roll slower. Use a softer ball.
 
 **If they've got it:** Move back to 10 feet. Roll a little harder. Aim slightly to one side so they have to step before they reach.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

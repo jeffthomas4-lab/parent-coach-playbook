@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Footwork as written has inside foot plant first, which is the opposite of the conventional outside-foot-plants layup. May want to verify intent for this age group."
@@ -44,3 +44,13 @@ This is the entry layup. Two steps from the free throw line, then finish at the 
 **If they're struggling:** Start closer to the basket (3 feet). Walk through it slowly. Practice the footwork without the ball first.
 
 **If they've got it:** Add a dribble approach. Dribble from the free throw line, then do the two-step finish.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

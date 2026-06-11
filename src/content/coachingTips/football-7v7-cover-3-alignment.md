@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,15 @@ Cover 3 is the most common 7v7 defense. Every player has to know exactly where t
 **What to look for:** Defenders don't chase. If the receiver runs through the corner's zone toward the safety, the corner stays in the zone — the safety picks them up.
 
 **Variation:** Add a third receiver running a crossing route. Tests if the defenders pass off responsibility cleanly.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for field setup and route markers.
+
+[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

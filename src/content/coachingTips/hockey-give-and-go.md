@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pass triggers the skate framing names the failure mode kids fall into."
@@ -44,3 +44,13 @@ Give and go is movement after the pass. Pass it, skate, get it back. The receive
 **If they're struggling:** Walk through the pattern slowly without a puck. Build the timing.
 
 **If they've got it:** Add a defender between Player A and Player B. The give-and-go has to beat the defender.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

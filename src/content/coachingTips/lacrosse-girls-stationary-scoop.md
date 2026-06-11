@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "'Leverage' appears once as a physical-mechanics term in illustrationBrief, not body. Foundations scoop reads clean."
@@ -44,3 +44,15 @@ Lacrosse is a ground ball game. Most teams that win possession the most win the 
 **If they're struggling:** Use a larger ball (whiffleball or street hockey ball). Or scoop a stationary ball with the stick already on the ground.
 
 **If they've got it:** Add a moving ball (rolled by coach). Or do scoops on the run.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

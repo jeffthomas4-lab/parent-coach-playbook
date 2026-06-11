@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at '**Var'."
@@ -47,3 +47,15 @@ This drill teaches first touch and passing accuracy while building movement. Kid
 **If they're struggling:** Shrink the square to 8 by 8 yards and let them take two touches: one to receive, one to pass.
 
 **If they've got it:** Add a one-touch rule. They receive and pass in the same motion, no settling. Or stretch the square to 15 by 15 yards so the pass has to travel.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

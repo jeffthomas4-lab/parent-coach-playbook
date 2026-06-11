@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Orange-ball forehand drill with USTA stage cited; clean."
@@ -44,3 +44,15 @@ USTA's orange ball is sized right for 8-10 year olds. Lower bounce, slower speed
 **If they're struggling:** Slower bounces. Or use a red ball (foam) with even less bounce.
 
 **If they've got it:** Move to a green ball (Stage 1, full court). Or hit 5 in a row to a target zone.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

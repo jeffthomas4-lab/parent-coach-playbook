@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Deep-ball tracking and catch mechanics. No contact."
@@ -44,3 +44,13 @@ A deep ball requires the receiver to run forward, look back over their shoulder,
 **If they're struggling:** Have them jog slower or even walk. It's easier to catch when you're not running full speed.
 
 **If they've got it:** Throw it deeper and make them run harder. Or put a defender behind them trying to knock it out.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

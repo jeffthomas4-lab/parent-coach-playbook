@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clear plant-and-explode framing, no AI residue."
@@ -44,3 +44,15 @@ The hesitation pull-back is when you plant your feet as if you're stopping, the 
 **If they're struggling:** Slow the approach speed. Make the hesitation hold longer (2 seconds). Practice the footwork without the ball first.
 
 **If they've got it:** Add a defender who slowly walks forward. The player reads the defender and decides whether to hesitate or cross over. Adds game reality.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Flip turn at the wall; sensitive flag for head-near-wall injury risk."
@@ -44,3 +44,13 @@ A flip turn is faster than touching and turning. The swimmer somersaults forward
 **If they're struggling:** Skip the wall. Just practice forward rolls in the middle of the pool.
 
 **If they've got it:** Time the turn. From 4 feet before the wall to fully extended push off should be under 2 seconds.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

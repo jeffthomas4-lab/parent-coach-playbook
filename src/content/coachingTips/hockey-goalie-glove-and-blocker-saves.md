@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Glove side and blocker side framing maps to right- vs left-catching goalies cleanly."
@@ -44,3 +44,13 @@ The glove and blocker are the goalie's two upper-body tools. Glove catches and h
 **If they're struggling:** Slow shots. Closer distance (12 feet). Fewer pucks per round.
 
 **If they've got it:** Add movement. Shooter moves before each shot. Goalie has to track and shuffle before saving.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

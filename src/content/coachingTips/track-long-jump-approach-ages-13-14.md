@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Long-jump approach; sensitive flag for jumping injury risk."
@@ -43,3 +43,13 @@ The long jump is about speed at the right place. This drill teaches young athlet
 The acceleration should be gradual, not sudden. If an athlete jumps too fast too early, they'll slow down by the board. The step count should be consistent rep to rep. If the athlete is off the board on one jump and too close on the next, the approach is inconsistent. The final strides should feel powerful and rhythmic, not choppy.
 
 **Variation:** Add a takeoff phase. After hitting the board, the athlete focuses on driving the legs and arms up for maximum height and distance. This teaches the jump as a continuation of the approach, not a separate movement.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

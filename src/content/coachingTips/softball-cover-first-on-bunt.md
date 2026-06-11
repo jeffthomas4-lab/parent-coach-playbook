@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Bunt coverage drill; situational. Voice clean."
@@ -44,3 +44,13 @@ On a bunt, the first baseman often fields the ball near the line and has to make
 **If they're struggling:** Do 5 reps with no runner. Just focus on the pitcher covering and receiving the throw. Add runner once the mechanics are clean.
 
 **If they've got it:** Add multiple situations (bases loaded, runner on first and third). Practice communication with both pitcher and second baseman covering.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

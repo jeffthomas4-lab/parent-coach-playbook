@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated 'scoop was too...' tail with two voice-matched sentences. Sensitive flag for contested-ball contact context."
@@ -41,3 +41,15 @@ Ground balls are 50-50s. This drill teaches young players to scoop and control l
 **What to look for:**
 
 The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too shallow and the head skipped over the top. Reset the rep and cue the player to drop the bottom hand all the way down.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.
+
+[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

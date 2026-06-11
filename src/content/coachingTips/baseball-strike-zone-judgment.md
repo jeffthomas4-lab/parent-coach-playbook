@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,15 @@ A hitter who swings at everything strikes out swinging. A hitter who knows the s
 **If they're struggling:** Throw only obvious strikes and obvious balls. No close pitches.
 
 **If they've got it:** Add the close pitches (just at the knees, just at the chest, just off the plate). Now they have to make hard calls.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Batting trainer →](/go/baseball-trainer/) — tee and trainer setup for solo swings.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

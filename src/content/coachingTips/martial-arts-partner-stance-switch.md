@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ Stance switches build the ability to change direction mid-fight. This is the fou
 **What to look for:** Feet should stay shoulder-width apart. If a kid's feet get crossed or too narrow, they'll lose balance.
 
 **Variation:** Add a quick punch on each switch. Reinforces that the stance change is a position from which to attack, not just a drill.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for flexibility, mobility, and conditioning work.
+
+[Full martial arts gear guide →](/what-to-buy/martial-arts/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

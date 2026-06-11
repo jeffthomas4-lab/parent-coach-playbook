@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Reaction is the hardest skill to teach. This drill compresses the reaction windo
 **What to look for:** The defender moves WITH the jab, not after. The slip and counter are one motion. If they're two motions, the defender is too slow.
 
 **Variation:** Attacker varies between jab, cross, and lead hook. Defender has to read which strike is coming.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for flexibility, mobility, and conditioning work.
+
+[Full martial arts gear guide →](/what-to-buy/martial-arts/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

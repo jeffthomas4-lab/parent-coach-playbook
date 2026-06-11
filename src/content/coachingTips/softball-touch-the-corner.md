@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Inside-corner base-running cue is sharp."
@@ -44,3 +44,15 @@ The shortest distance between two points is a straight line. Kids curve around f
 **If they're struggling:** Place a cone at the inside corner. Have them run to the cone, not the base. This helps them visualize the path.
 
 **If they've got it:** Add a fielder with the ball at first. Kid runs hard and touches. Fielder practices tagging.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

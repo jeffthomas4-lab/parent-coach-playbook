@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Bases who don't match stances don't stunt safely. The setup is the foundation.
 **What to look for:** Symmetry. Both bases at the same depth of squat. Both hands at the same height. If one base is higher, the stunt will tilt.
 
 **Variation:** Have a coach call "set" and time how fast both bases lock into matched position. Three seconds is the target.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth mouthguard →](/go/multi-sport-mouthguard-youth/) — required for most stunt and cheer programs.
+
+[Full stunt gear guide →](/what-to-buy/stunt/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

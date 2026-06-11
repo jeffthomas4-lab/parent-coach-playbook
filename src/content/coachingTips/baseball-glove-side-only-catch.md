@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ Two hands is the rule for game catches. But the glove hand alone has to be stron
 
 **If they're struggling:** Move closer. Throw softer.
 
-**If they've got it:** Move back to 25 feet. Or throw harder. Or have them do this drill with a tennis ball that's much smaller and harder to grip.
+**If they've got it:** Move back to 25 feet. Or throw harder. Or have them do this drill with a tennis ball that's 

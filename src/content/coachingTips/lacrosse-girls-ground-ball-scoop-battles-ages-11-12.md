@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated closing line."
@@ -43,3 +43,15 @@ Ground balls are 50-50s. This drill teaches young players to scoop and control l
 The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too light or off-target.
 
 **Variation:** Add a third player who tries to dislodge the ball after the scoop. This teaches the winner to protect the ball, not just collect it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

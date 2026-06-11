@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Strong opening. Setter cue and progression are clear."
@@ -44,3 +44,15 @@ The back set is the surprise weapon. Setter looks one direction, sets the other.
 **If they're struggling:** Drop the distance. Just back-set 5 feet behind to a parent's hands.
 
 **If they've got it:** Mix forward and back sets randomly. Setter has to decide each rep based on a coach's call.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

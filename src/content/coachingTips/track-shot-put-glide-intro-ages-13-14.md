@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Shot put glide intro; sensitive flag for throwing-event injury risk."
@@ -44,3 +44,13 @@ The glide is the foundation of shot put technique. This drill teaches young thro
 The glide should be a slide, not a jump. The athlete should stay low and drive from the back leg. If the athlete is bouncing or jumping, the glide technique is wrong. The weight transfer should happen from back leg to front leg, with the hips driving forward. If the shot is going straight down or backward, the weight isn't transferring forward.
 
 **Variation:** Use a lighter implement (medicine ball or lighter shot) and focus on distance. This builds confidence in the technique before adding the weight of regulation shot puts.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

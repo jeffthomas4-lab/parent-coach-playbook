@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Setup line has typo (defending team has 1 defender repeats). Soccer vocab correct."
@@ -44,3 +44,15 @@ Overlapping turns a 1v1 into a 2v1 in your favor. The defender runs around the m
 **If they're struggling:** Mark the pass with a cone. Midfielder must pass to that spot.
 
 **If they've got it:** Add a live defender who pressures the ball carrier. Now the pass is under time pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

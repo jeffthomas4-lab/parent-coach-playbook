@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean catch-and-shoot drill, correct sport language."
@@ -43,3 +43,13 @@ Game shots come off passes, not dribbles. This drill teaches the catch-and-shoot
 **If they're struggling:** Move spots closer to 10 feet. Have the passer pass slower or softer so the catch is easier. Reduce to 3 spots.
 
 **If they've got it:** Add game speed. Passer throws quickly and the shooter shoots quickly. Adds game-like pace.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Snowplow stop into hockey stop progression is correct for 8-10."
@@ -44,3 +44,15 @@ Hockey is start-stop. Players sprint, stop hard, sprint again. The kid who can s
 **If they're struggling:** Use only one stop direction. Build the snowplow on one side first.
 
 **If they've got it:** Add a hockey stop (sideways stop with both blades). Or do the drill carrying a puck.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Agility cones →](/go/agility-cones/) — for stickhandling courses and skating drills.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

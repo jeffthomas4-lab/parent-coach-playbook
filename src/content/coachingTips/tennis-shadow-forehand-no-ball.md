@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Shadow forehand for 5-7 with proper racquet sizing."
@@ -44,3 +44,15 @@ The first tennis swing should look right before a ball is involved. Shadow swing
 **If they're struggling:** Walk through each step slowly. Coach calls each cue word.
 
 **If they've got it:** Add a balloon or beach ball. They hit the balloon with the same motion.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Junior tennis racquet →](/go/tennis-racquet-junior/) — HEAD Speed, pre-strung for beginners.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

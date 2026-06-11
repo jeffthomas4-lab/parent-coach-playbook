@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "First-rep bump drill. Forearm-meat contact point is correct."
@@ -43,4 +43,4 @@ The first real bump rep is from a controlled toss. The coach throws to a predict
 
 **If they're struggling:** Slower tosses. Bigger ball (volleyball trainer or beach ball).
 
-**If they've got it:** Toss slightly off-center so they have to step before bumping. Or bump 10 in a row to a target.
+**If they've got it:** Toss slightly off-center so they have to step before bumping. Or

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Breaststroke separated kick-pull-glide build."
@@ -44,3 +44,13 @@ Breaststroke is the most technical stroke. Frog kick. Sweep arm pull. Glide. The
 **If they're struggling:** Just do the kick on a kickboard. Build the kick before adding arms.
 
 **If they've got it:** Time the lengths. Or add a flip turn at the end.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

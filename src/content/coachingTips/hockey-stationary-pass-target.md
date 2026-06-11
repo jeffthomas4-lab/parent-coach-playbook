@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Push not slap framing is the right diagnostic for new passers."
@@ -44,3 +44,15 @@ A pass is a controlled push of the puck to a target. The blade stays low, the pu
 **If they're struggling:** Move closer to 8 feet. Or use a street hockey ball off-ice.
 
 **If they've got it:** Move back to 25 feet. Add a tape target on the partner's stick. They have to hit the tape.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

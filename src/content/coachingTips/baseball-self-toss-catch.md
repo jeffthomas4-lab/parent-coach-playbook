@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ A kid who can't toss to themselves and catch can't play backyard catch. This is 
 
 **If they're struggling:** Lower the toss to 1 foot. Or have them toss with both hands so they don't get tangled.
 
-**If they've got it:** Higher tosses, up to 6 feet. Or they have to clap once between toss and catch.
+**If they've got it:** Higher tosses, up to 6 feet. Or they have to c

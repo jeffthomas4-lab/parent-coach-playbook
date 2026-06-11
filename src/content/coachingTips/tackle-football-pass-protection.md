@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Live blocker-vs-rusher rep at 11-12; sensitive flagged for partner contact."
@@ -44,3 +44,15 @@ Pass protection is different from run blocking. The blocker's job is to stay in 
 **If they're struggling:** Have the rusher go slower and not be too aggressive. Let the blocker feel what it's like to anchor and hold.
 
 **If they've got it:** Have the rusher get lower and faster. Now the blocker has to be stronger and more active with their hands.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

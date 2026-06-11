@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Live shield-block sheds for 13-14; sensitive flagged for live contact at older age."
@@ -43,3 +43,15 @@ By 13-14, defenders should have multiple shed techniques in their toolbox. This 
 The rip should be explosive: hands cocked, violent extension. The spin should be tight and fast, not a full 360-degree circle. Leg drive should feel like the defender is powering through the blocker, not pushing them. If a defender is taking two steps to shed, it's too slow. The transition from shed to pursuit should be immediate. No reset. No pause.
 
 **Variation:** Add a second blocker coming at a different angle after the first shed is complete. This teaches continuous movement and awareness. Defensive football is never one shed and done.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth leather football →](/go/football-leather-youth/) — Wilson GST youth composite for older players.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

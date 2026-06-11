@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -41,3 +41,13 @@ Knowing how to fall is more useful than knowing how to throw. Every grappling-ad
 **What to look for:** The chin tucks every time. Eyes look at the belt. Heads should never hit the mat.
 
 **Variation:** Progress to a backward roll after the breakfall is solid. Most kids find it harder than forward.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for flexibility, mobility, and conditioning work.
+
+[Full martial arts gear guide →](/what-to-buy/martial-arts/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

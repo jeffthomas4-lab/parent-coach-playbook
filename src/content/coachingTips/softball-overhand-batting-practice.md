@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Retitled and rewrote to use windmill/fastpitch language; original called pitches overhand, which is wrong for fastpitch. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ Live windmill pitching is game-speed for younger ages. Kids have to adjust to a 
 **If they're struggling:** Pitcher throws from 30 feet. Throw slower. Throw all strikes down the middle.
 
 **If they've got it:** Pitcher throws from full distance at full speed. Mix fastballs and change-ups. Vary the zone.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

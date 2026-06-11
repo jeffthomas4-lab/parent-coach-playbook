@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Renamed from Face-Off to Draw (girls' rule set uses draw at center, not faceoff at X). Completed truncated body."
@@ -43,3 +43,15 @@ Draws are 50-50 plays. The girls' game starts each half and restarts after each 
 Each player should be balanced with feet set. If they're leaning or off-balance, they can't react after the lift. The first move should be explosive, not cautious. The player who gets the cleanest lift and the fastest second step often wins the ball. Both players should fight for the ground ball after the initial draw. If one player is getting beaten every rep, rotation might be the right call so the matchup stays useful.
 
 **Variation:** Add wing players outside the center circle who can move on the whistle and compete for any draw ball that flies past the two centers.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Walk-jog-run-jump progression; sensitive flag for jump injury risk."
@@ -44,3 +44,13 @@ The long jump is half run-up, half jump. A bad approach means a bad jump no matt
 **If they're struggling:** Shorter approach (15 feet). Just work on the takeoff foot accuracy.
 
 **If they've got it:** Lengthen the approach to 50 feet. Full speed jumps with measured landings.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

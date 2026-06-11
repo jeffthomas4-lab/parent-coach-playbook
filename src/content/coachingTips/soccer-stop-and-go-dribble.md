@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sole-of-foot brake metaphor is concrete and age-right."
@@ -44,3 +44,13 @@ Kids need to learn they can stop the ball whenever they want. This drill teaches
 **If they're struggling:** Reduce the taps to 2 before each stop. Let them move slower.
 
 **If they've got it:** Increase to 5 taps before each stop. Add a voice call. You say "Go" or "Stop" and they respond.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

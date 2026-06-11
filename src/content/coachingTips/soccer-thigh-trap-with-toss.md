@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "See-Cushion-Settle-Move framework consistent; thigh is right surface for this age."
@@ -46,3 +46,13 @@ Air balls come at kids from crosses and long passes. They need to trap them. The
 **If they're struggling:** Toss from closer distance. Lower the toss height.
 
 **If they've got it:** Toss from 12 feet away. Higher arc so the ball is coming down at them.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

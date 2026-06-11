@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Knee-drive A-skip progression with body-position cue."
@@ -44,3 +44,13 @@ Sprinters drive the knee high. Joggers shuffle. The knee-drive pattern generates
 **If they're struggling:** Lower knee height. Or hold a wall for balance during marches.
 
 **If they've got it:** Add a B-skip (knee up, then kick the leg out before the foot lands). Or run in a zigzag pattern with high knees.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

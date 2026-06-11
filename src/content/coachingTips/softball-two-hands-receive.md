@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Two-hand catch fundamentals; ball term fixed."
@@ -44,3 +44,13 @@ Receiving a thrown ball is different from self-toss. Now the kid has to react to
 **If they're struggling:** Stand closer at 8 feet. Toss even softer. Use a bigger ball.
 
 **If they've got it:** Toss to different heights (high, low, shoulder). Make them reach and adjust.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

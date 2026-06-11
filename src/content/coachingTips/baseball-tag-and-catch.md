@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tag plays with sliding variant; flagged sensitive."
@@ -44,3 +44,13 @@ The tag is a catch and a tag. A bad catch lets the runner slide in safe. The rig
 **If they're struggling:** Skip the bag. Just have them practice the low catch position with throws to their shins.
 
 **If they've got it:** Add a runner who slides into the bag. The tag has to land before the slide.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

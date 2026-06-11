@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sliding safety topic flagged. Drill uses foam progression before dirt; note about sliding shorts is appropriate. No head-first sliding instruction."
@@ -44,3 +44,13 @@ Sliding on dirt scares most kids. Foam (a yoga mat or a furniture pad) is a soft
 **If they're struggling:** Stay on the mat. Don't move to grass yet.
 
 **If they've got it:** Move to a base on dirt. Sliding shorts under the pants prevent rash.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

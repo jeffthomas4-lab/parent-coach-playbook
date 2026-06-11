@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Progressive intensity reps make this useful, sport language clean. Lead has four sentences."
@@ -44,3 +44,15 @@ Fast dribbling is different from control dribbling. The ball bounces higher and 
 **If they're struggling:** Do half-court instead of full court. Go slower. Do 2 reps instead of 3.
 
 **If they've got it:** Add a cone at halfcourt. Change direction at the cone, cut 45 degrees left or right. Keeps speed dribble sharp.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

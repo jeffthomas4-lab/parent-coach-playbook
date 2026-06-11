@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Side-toss for live timing; softball ball term fixed."
@@ -44,3 +44,13 @@ Soft toss from the side simulates game pitching. The tosser is out of the batter
 **If they're struggling:** Stay at 10 feet. Toss slower. Throw strikes only.
 
 **If they've got it:** Move to 20 feet. Toss faster. Mix fastballs with slower off-speed pitches. Vary the zones.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,15 @@ The bottom hand controls the bat path. The top hand adds power. If the bottom ha
 **If they're struggling:** Use a lighter bat. Or have them choke up on the handle.
 
 **If they've got it:** Switch to soft toss with bottom hand only. Or extend the drill to 15 swings per round.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Batting trainer →](/go/baseball-trainer/) — tee and trainer setup for solo swings.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

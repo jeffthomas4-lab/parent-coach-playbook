@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Do they mark the'."
@@ -44,3 +44,15 @@ Defensive shape is a line. This drill teaches defenders to stay in a line while 
 **If they're struggling:** Drop to two defenders against three attackers and shrink the zone to 30 by 25. Tell the attackers to walk for the first two reps so the defenders can read the shape.
 
 **If they've got it:** Add a target line behind the defenders. If attackers dribble across it, they score. Defenders now have to defend the goal and the line, which forces them to step and recover as a unit.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

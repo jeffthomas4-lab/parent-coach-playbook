@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ The load-in is the moment the flyer's weight transfers to the bases. Get it righ
 **What to look for:** Bases' hands meet at exactly the right place. If they collide or leave gaps, the flyer's foot tips. Grip is firm but not crushing.
 
 **Variation:** Progress from chest height to prep (waist of base), then to extension. Each progression once the previous is clean.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth mouthguard →](/go/multi-sport-mouthguard-youth/) — required for most stunt and cheer programs.
+
+[Full stunt gear guide →](/what-to-buy/stunt/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

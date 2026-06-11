@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "11-12, no body checks. Defender ends with poke check or stay-in-front, fits USA Hockey age rules. Fixed dek to deke and pokechecks to poke checks for sport-language compliance."
@@ -44,3 +44,13 @@ Gap is the distance between defender and attacker. Too close, the attacker dekes
 **If they're struggling:** Slow the attacker. Or limit the deke moves.
 
 **If they've got it:** Allow the attacker to use a teammate (2v1). The defender has to read pass vs. deke.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

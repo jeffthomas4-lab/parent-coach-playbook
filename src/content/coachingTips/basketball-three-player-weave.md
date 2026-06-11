@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Classic weave pattern correctly described, sport language clean."
@@ -44,3 +44,13 @@ The three-player weave is the foundation for motion offense. Three kids move tog
 **If they're struggling:** Slow the pace. Walk instead of jog. Do half-court only. Simplify to A passes to B, B passes to C, C passes back to A.
 
 **If they've got it:** Add a finish. When they get to the other end, the last person shoots. Game-like finish builds rhythm.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

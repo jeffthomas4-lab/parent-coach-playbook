@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,15 @@ The top hand drives the bat through contact. A weak top hand means the bat slows
 **If they're struggling:** Use the lightest possible bat. Even a wiffle ball bat works for this drill.
 
 **If they've got it:** Move to soft toss with the top hand only. Or use a slightly heavier bat for resistance.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Batting trainer →](/go/baseball-trainer/) — tee and trainer setup for solo swings.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

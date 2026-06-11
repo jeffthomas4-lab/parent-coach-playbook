@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,15 @@ Hitting the ball in front of the plate (in line with the front hip, not the back
 **If they're struggling:** Move the tee slightly back. Find the spot where they make contact, then move it forward an inch at a time over multiple sessions.
 
 **If they've got it:** Move the tee further forward (a foot in front of the front hip). Now they have to step and reach to make solid contact.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Batting trainer →](/go/baseball-trainer/) — tee and trainer setup for solo swings.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

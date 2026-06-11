@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Throw-on-move drill for older fielders."
@@ -44,3 +44,13 @@ Fielders chase balls. They have to throw while moving, not standing still. This 
 **If they're struggling:** Slow down the rolling speed. Let them plant before throwing, not mid-stride yet.
 
 **If they've got it:** Add a third player. Create a chase situation where they have to run and throw to a cutoff while the runner advances.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

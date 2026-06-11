@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Minor typo in body: 'The lead the pass' should be 'They lead the pass.' Otherwise clean."
@@ -44,3 +44,13 @@ In a real game, players pass while moving. They lead the pass to where the recei
 **If they're struggling:** Walk the pace. Or pass with no lead first to build the timing.
 
 **If they've got it:** Add a defender at midfield. The passes have to beat the defender too.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

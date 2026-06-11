@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,15 @@ Squaring around tells the defense the bunt is coming. The pivot bunt hides the m
 **If they're struggling:** Drop the pivot. Use the square-around bunt for now. Add the pivot in a few weeks.
 
 **If they've got it:** Add a fake swing. Set, Load, then pivot to bunt at the last moment. Now the defense really doesn't know.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Batting trainer →](/go/baseball-trainer/) — tee and trainer setup for solo swings.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

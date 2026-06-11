@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Open-field live tackling at 11-12; Hawk Tackle and head-behind cues cited. Sensitive flagged."
@@ -45,3 +45,15 @@ In the open field, defenders have to read the ball carrier's direction, take the
 **If they've got it:** Add multiple defenders. Two or three kids working together to converge and bring down one ball carrier.
 
 Based on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program. Head behind, never across the front. Eyes up through the chest, not into the chest.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

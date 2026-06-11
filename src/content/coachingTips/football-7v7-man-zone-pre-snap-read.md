@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,15 @@ The QB has to know what's coming before the ball moves. This drill builds the pr
 **What to look for:** Right answer matters less than the habit of looking. Every snap should start with eyes scanning.
 
 **Variation:** Add motion. The receiver shifts; defenders react. If a corner follows, it's man. If a corner stays put, it's zone.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth leather football →](/go/football-leather-youth/) — Wilson GST youth composite for older players.
+
+[Agility cones →](/go/agility-cones/) — for field setup and route markers.
+
+[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

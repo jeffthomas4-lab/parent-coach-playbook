@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Glide-emphasis drill with 2-second hold."
@@ -44,3 +44,13 @@ Most breaststrokers rush the glide. The result is a slow stroke. The right move 
 **If they're struggling:** Use a kickboard for the glide phase. Build the timing first.
 
 **If they've got it:** Goal: 4 strokes per 25 feet. Or 6 strokes per 50 feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

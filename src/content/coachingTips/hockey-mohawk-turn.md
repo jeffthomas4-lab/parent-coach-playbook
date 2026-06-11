@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Hip-leads-the-foot cue is the right diagnostic for tangling feet."
@@ -44,3 +44,13 @@ The mohawk is the move that turns a forward skater into a backward skater in one
 **If they're struggling:** Walk through the footwork on the ice without speed. Just open the hip and turn the foot.
 
 **If they've got it:** Combine with a stop. Mohawk turn into a hockey stop, then explode forward.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

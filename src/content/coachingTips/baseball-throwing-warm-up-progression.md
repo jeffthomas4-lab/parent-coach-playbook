@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Arm-care content; flagged sensitive."
@@ -44,3 +44,13 @@ Cold arms are injured arms. Eight minutes of progressive warm-up tosses prevents
 **If they're struggling:** Reduce the distances. 5, 15, 25 instead of 10, 25, 45.
 
 **If they've got it:** Add a long-toss element. Stage 4 at 80 feet. Or add the shuffle-step on every throw past 30 feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

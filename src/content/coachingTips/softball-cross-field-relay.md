@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard relay drill. Changed soft baseballs to softballs."
@@ -45,3 +45,13 @@ A relay teaches kids to throw across distance and to catch incoming throws. It's
 **If they're struggling:** Keep it at 25 feet. Use underhand throws for the first round to build confidence.
 
 **If they've got it:** Move to 40 feet. Add a fourth player and make a square, throwing corner to corner.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

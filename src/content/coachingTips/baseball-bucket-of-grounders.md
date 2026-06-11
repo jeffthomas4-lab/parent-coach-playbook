@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass. Good 'reps, not lectures' framing."
@@ -43,4 +43,4 @@ Good fielders are made by reps, not by lectures. A bucket of 20 balls gets the k
 
 **If they're struggling:** Cut to 10 grounders per round. Slow the tempo to one every 6 seconds.
 
-**If they've got it:** Push to 30 reps per round. Or hit the grounders harder. Or alternate between glove side and throwing-hand side randomly.
+**If they've got it:** Push to 30 reps per round. Or hit the grounders harder. Or alternate between glove side 

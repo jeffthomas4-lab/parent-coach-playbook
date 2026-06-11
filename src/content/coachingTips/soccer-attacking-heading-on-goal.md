@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Heading drill restricted to ages 11-12 with US Soccer rule note and 5-rep cap. Flagged sensitive due to heading injury concerns. Could cite US Soccer/NFHS heading guidance directly for stronger compliance."
@@ -44,3 +44,15 @@ US Soccer guidelines limit heading before age 11-12. Attacking heading is about 
 **If they're struggling:** Passer throws instead of kicks. Easier to head.
 
 **If they've got it:** Passer crosses faster. Add a defender who pressures the header.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

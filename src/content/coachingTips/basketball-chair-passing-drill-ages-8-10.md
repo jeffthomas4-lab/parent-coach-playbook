@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body was truncated mid-Variation; completed with struggle/got-it tiers."
@@ -44,3 +44,13 @@ This drill teaches spacing and passing without the complexity of defense. Kids l
 **If they're struggling:** Move the chairs closer (6 feet apart). Slow the rotation so the passer has time to set their feet between passes.
 
 **If they've got it:** Add a defender in the middle who tries to deflect passes. Or have the chair kids cut to a new chair after each pass to add movement.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

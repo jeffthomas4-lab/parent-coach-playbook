@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Effort-percentage scaffolding (25/50/75%) is a good repeatable pattern across the basketball series."
@@ -43,3 +43,13 @@ Dribbling in practice is easy when nobody's guarding you. This drill adds a defe
 **If they're struggling:** Reduce to 15 seconds. Let the defender play 25% effort instead of 50%. Give more space.
 
 **If they've got it:** Defender plays 75% effort. Dribbler must stay in a tight half-court space instead of the full area. Higher difficulty.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

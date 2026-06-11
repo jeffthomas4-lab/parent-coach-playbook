@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Smart pre-glove drill for the youngest. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ Before a kid uses a glove, they need to feel that a rolling ball is something th
 **If they're struggling:** Move closer. Roll slower. Use a softer ball.
 
 **If they've got it:** Move back to 10 feet. Roll a little harder. Aim slightly to one side so they have to step before they reach.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Strong rebounding drill, voice has temperature. Lead has four sentences."
@@ -44,3 +44,13 @@ Rebounding is a contact sport. Practice without contact doesn't translate. Three
 **If they're struggling:** Drop to two on two. Less chaos. Same fundamentals.
 
 **If they've got it:** Score it. Defense gets a point for every rebound, offense gets a point for every offensive board. First to 5.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

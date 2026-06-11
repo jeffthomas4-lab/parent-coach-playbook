@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean voice, age-appropriate contact framing."
@@ -43,3 +43,13 @@ Game finishes happen with defenders bumping you. This drill adds light contact. 
 **If they're struggling:** Have the defender apply no contact, just presence. Let the shooter build confidence first.
 
 **If they've got it:** Increase contact intensity. Defender plays at 75% effort, still legal but more realistic.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

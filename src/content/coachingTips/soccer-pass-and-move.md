@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid passing-with-movement drill. Soccer vocab correct."
@@ -45,3 +45,13 @@ Passing is dead if the passer just stands there. This teaches kids that the pass
 **If they're struggling:** Keep distance at 15 feet. Make it slower paced.
 
 **If they've got it:** Increase distance to 20 feet. Passer must move and call for the ball.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

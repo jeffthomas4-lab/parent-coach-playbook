@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "4x50 interval; uses yards correctly."
@@ -42,3 +42,13 @@ Interval sets teach swimmers to hold consistent effort across multiple repeats. 
 Each 50-yard repeat should be similar in time. If the third and fourth are significantly slower, the effort on the first two was too hard. Swimmers should feel like they're working hard but could do one or two more repeats at the same pace. The rest interval (20 seconds) should allow heart rate to drop slightly before the next repeat.
 
 **Variation:** Change the distance or intensity. For younger swimmers (closer to 11), use 6x25 at moderate effort with 15 seconds rest. For more experienced swimmers, use 5x75 at moderate effort with 20 seconds rest.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

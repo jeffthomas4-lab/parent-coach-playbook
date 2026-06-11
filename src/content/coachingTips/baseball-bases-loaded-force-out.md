@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass. Force-out logic explained simply."
@@ -44,3 +44,15 @@ When the bases are loaded, every base is a force base. The fielder doesn't have 
 **If they're struggling:** Drop the double play attempt. Just one out per rep.
 
 **If they've got it:** Add live runners. The fielders have to make the play under real game speed.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

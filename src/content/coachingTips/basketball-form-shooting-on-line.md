@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cookie cue is a recurring phrase across the shooting set; consistent."
@@ -43,3 +43,13 @@ Shooting on a line teaches rhythm and consistency. The kid shoots from the same 
 **If they're struggling:** Move closer to 5 feet. Lower the hoop. Do 2 shots at each spot instead of 3.
 
 **If they've got it:** Move back to 10 feet or add a dribble before each shot. Adds complexity.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

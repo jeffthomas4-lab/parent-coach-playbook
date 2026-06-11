@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Step-into-throw build; ball terminology corrected."
@@ -44,3 +44,13 @@ Now the throw gets power. A step toward the target gives the kid momentum and te
 **If they're struggling:** Stand closer at 15 feet. Have them step without throwing first, just to feel the motion.
 
 **If they've got it:** Add targets. Throw to different spots (high, low, left, right) and adjust the step direction.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

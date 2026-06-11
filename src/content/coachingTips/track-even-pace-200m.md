@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Even-split pacing teach; clear specifics."
@@ -44,3 +44,13 @@ Most kids start too fast and die. Even pacing is the bedrock of distance running
 **If they're struggling:** Run a 100m at an even pace first. Build to 200m.
 
 **If they've got it:** 400m at even splits (two 200m at the same pace).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

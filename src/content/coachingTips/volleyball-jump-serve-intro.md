@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sensitive flag for jump landing risk. Drill correctly cautions to build stationary serve first."
@@ -44,3 +44,15 @@ The jump serve is the highest-level serve. Higher contact, more power, harder to
 **If they're struggling:** Stay with the stationary overhand serve. Build that to consistency before adding the jump.
 
 **If they've got it:** Add target zones. Or move to a top-spin jump serve.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

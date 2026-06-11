@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Move-after-pass cue is the key teaching point."
@@ -44,3 +44,13 @@ The triangle teaches kids spatial awareness. Each player has a passing option an
 **If they're struggling:** Move the triangle to 20 feet per side. Larger space, less pressure.
 
 **If they've got it:** Add a time limit. 15 passes in 30 seconds. Make it a speed drill.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

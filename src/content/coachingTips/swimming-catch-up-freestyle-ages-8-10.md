@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Catch-up freestyle for hand timing; uses yards correctly."
@@ -44,3 +44,13 @@ Catch-up freestyle teaches hand coordination. The swimmer must touch one hand to
 The catch-up forces a disciplined arm extension. If a swimmer is rushing and overlapping their hands, the drill isn't working. The catch-up should feel smooth and controlled. The kick should be steady underneath, not frantic. If a swimmer is struggling to make the catch-up, they might be accelerating the stroke too much early.
 
 **Variation:** Add speed. Once the catch-up feels natural, have swimmers try it at a slightly faster pace, maintaining the rhythm.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

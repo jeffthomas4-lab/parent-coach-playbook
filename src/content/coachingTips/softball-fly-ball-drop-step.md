@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Drop-step fundamentals; sport language clean. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ Fly balls require a different footwork pattern than grounders. The drop step get
 **If they're struggling:** Start 12 feet away. Throw shorter fly balls that don't require much running.
 
 **If they've got it:** Throw deeper fly balls 10 to 15 feet back. Mix fly balls with grounders so they stay sharp.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

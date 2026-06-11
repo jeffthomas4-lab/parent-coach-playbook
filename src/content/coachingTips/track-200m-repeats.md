@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard 200m repeat workout; sensitive due to high-effort intervals."
@@ -44,3 +44,13 @@ Interval training builds speed and stamina at the same time. 200m repeats are th
 **If they're struggling:** Cut to 4 reps. Or longer recovery (walk 400m between).
 
 **If they've got it:** 8 reps. Or shorter recovery (jog the recovery instead of walking).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

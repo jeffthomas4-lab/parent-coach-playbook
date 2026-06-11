@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tip is correctly defined. Useful younger-age progression off the spike."
@@ -44,3 +44,15 @@ A tip is a controlled spike. Player approaches, jumps, but instead of attacking 
 **If they're struggling:** Lower the net. Or have them hit off a tossed ball instead of a set.
 
 **If they've got it:** Add a target zone (back left corner, a cone they have to land the tip near).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

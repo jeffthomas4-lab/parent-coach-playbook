@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -41,3 +41,13 @@ Hard hands drop balls. Soft hands catch them.
 **What to look for:** Fingertips touch the ball first, then the palms. If you hear a slap, hands are too stiff.
 
 **Variation:** Use a wet football. Forces a tighter grip and harder concentration. Saved for ages 11+.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

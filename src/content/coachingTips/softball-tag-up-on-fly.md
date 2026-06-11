@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tag-up base-running drill with clear timing focus."
@@ -44,3 +44,13 @@ Tag up means advancing after a fly ball is caught. The runner stays on the base 
 **If they're struggling:** Have them practice leaving from third when you clap (simulate the catch sound). Then do it with actual fly balls.
 
 **If they've got it:** Add a relay throw. Outfielder throws to the relay cutoff at a base. Runner has to judge if they can score.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

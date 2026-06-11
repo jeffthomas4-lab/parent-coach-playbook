@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Ladder intervals; sensitive flag for distance-effort load on 11-12s."
@@ -44,3 +44,13 @@ The interval ladder teaches young distance runners pace and builds fitness. It's
 Athletes should be hitting their hard intervals at similar effort each time, not slowing down as they get tired. The easy recovery intervals should be truly easy, not another hard push. If an athlete is struggling by the descend portion, the initial effort was too hard. Teach them to save some gas for the later intervals.
 
 **Variation:** For older runners (closer to 13-14), increase distances: 400-600-800-1000-800-600-400. For younger 11-year-olds, use: 100-200-300-400-300-200-100.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

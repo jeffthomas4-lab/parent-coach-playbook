@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "'Cold muscles tear' opener has temperature without crossing into medical advice."
@@ -44,3 +44,15 @@ Cold muscles tear. Eight minutes of dynamic movement gets the body ready for cut
 **If they're struggling:** Cut to 15 feet. Or do 3 of the 5 exercises.
 
 **If they've got it:** Add a power skip or carioca step (legs crossing front and back while moving sideways).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

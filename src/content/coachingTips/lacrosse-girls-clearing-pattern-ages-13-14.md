@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated body. Removed boys'-vocab terms (defenseman, short-stick) for girls' rule set."
@@ -43,3 +43,15 @@ A clear is how a team escapes defensive pressure. At 13-14, players can learn a 
 Each pass should be crisp and on time. If the first pass is late or off-target, the wing has no room to move. The outlet player should be moving to the restraining line before the pass is made. If they're standing still, they're not a viable outlet. The second wing should be trailing, ready to continue the clear if the outlet is covered.
 
 **Variation:** Add a second defender to apply real pressure on the clear. Players have to read the pressure and pick the right outlet, not just run the pattern.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[Agility cones →](/go/agility-cones/) — for field markers, dodges, and grid work.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

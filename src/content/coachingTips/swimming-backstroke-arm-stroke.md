@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Backstroke arm cycle with pinky-first cue; uses 'length' correctly."
@@ -44,3 +44,13 @@ Backstroke arms alternate, like freestyle but on the back. One arm reaches behin
 **If they're struggling:** Drop the kick. Just do arms while standing in shallow water.
 
 **If they've got it:** Count strokes per length. Goal: fewer strokes (longer pulls).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Product price removed for affiliate compliance; product claim is generic, not a brand recommendation."
@@ -43,4 +43,4 @@ A [rebound net](/go/baseball-throwback-net/) (sometimes called a pitch-back) is 
 
 **If they're struggling:** Throw softer at the net so the rebounds are slower.
 
-**If they've got it:** Throw harder. Or stand closer to the net so they have less time to react.
+**If they've got it:** Throw harder. Or stand closer to the net so they h

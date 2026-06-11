@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Plant-Lock-Strike-Finish cue clearly explained; 5-7 appropriate."
@@ -44,3 +44,15 @@ Before kids move or receive passes, they shoot a still ball. The ball is not mov
 **If they're struggling:** Move closer to 8 feet. Use a softer ball.
 
 **If they've got it:** Move back to 15 feet. Make the goal smaller (2 feet wide instead of 4).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

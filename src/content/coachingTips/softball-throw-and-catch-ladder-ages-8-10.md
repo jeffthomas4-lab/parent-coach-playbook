@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Distance-ladder throwing; soft-hands cue is good."
@@ -44,3 +44,13 @@ Once a pair reaches their max distance, they step back in 5 feet and do a final 
 **What to look for:** Catch technique at distance. Soft hands that give way with the ball. Kids who reach for the ball with stiff arms will drop passes.
 
 **Variation:** For younger kids (8-9), start at 15 feet. For older kids (10), add a clock: time each rep and work on throwing and catching quickly as well as far.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

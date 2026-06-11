@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Feet-first principle articulated well. Solid teaching point."
@@ -44,3 +44,13 @@ In a real game, the ball never comes right to the passer. They have to move firs
 **If they're struggling:** Tosses closer to the body. Slower tempo.
 
 **If they've got it:** Vary the toss distance and direction. Or add a forward toss (passer moves forward to short ball).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

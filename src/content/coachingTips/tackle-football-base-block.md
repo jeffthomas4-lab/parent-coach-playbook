@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Live partner blocking; sensitive flagged for player-to-player contact."
@@ -44,3 +44,15 @@ A base block is a blocker going straight at a defender and driving them back. Th
 **If they're struggling:** Have the defender stay still and not resist. Just let the blocker practice the motion of planting, punching, and driving without the defender pushing back.
 
 **If they've got it:** Have the defender lean into the block a little. Now the blocker has to work harder to move them.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

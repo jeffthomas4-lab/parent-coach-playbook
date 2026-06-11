@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ The vault is won at the run-up. A consistent approach makes a consistent vault.
 **What to look for:** Acceleration through the run. Don't slow down at the springboard. Same number of steps every time (typically 8-12 for ages 11-14).
 
 **Variation:** Have a coach hold a stopwatch and time the run from start mark to springboard. Aim for consistency within 0.2 seconds across five reps.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for conditioning, stretching, and mobility work.
+
+[Full gymnastics gear guide →](/what-to-buy/gymnastics/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

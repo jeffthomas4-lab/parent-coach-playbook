@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "First-serve drill. Net height note (7-8 ft lowered from 7'4) is a typo: should be raised, not lowered. Detail flagged for Jeff."
@@ -43,4 +43,4 @@ The first serve a kid learns is underhand. Hold the ball low, swing the arm up, 
 
 **If they're struggling:** Move closer to the net. Lower the net more.
 
-**If they've got it:** Move to the regulation back line. Or aim for specific zones (corners).
+**If they've got it:** Move to the regulation back line. Or aim

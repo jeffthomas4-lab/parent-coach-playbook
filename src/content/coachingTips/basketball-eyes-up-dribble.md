@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Hold-up-fingers struggle variation is a great forced-eyes-up trick."
@@ -44,3 +44,15 @@ Ball watchers can't see the defense or where to go next. This drill forces the e
 **If they're struggling:** Have them dribble in place while you hold up fingers. They guess the number. This keeps eyes on you, not the ball.
 
 **If they've got it:** Walk at half speed now, almost jogging. Still eyes up. Still controlled. No racing yet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

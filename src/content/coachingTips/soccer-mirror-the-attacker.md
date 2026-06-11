@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Age-appropriate intro defending drill. Soccer vocab correct."
@@ -44,3 +44,13 @@ Mirroring teaches the defender to react to the attacker's movement instead of gu
 **If they're struggling:** Slow the attacker's movement. Let the defender react without rushing.
 
 **If they've got it:** Attacker moves faster. Defender has to work to keep up.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

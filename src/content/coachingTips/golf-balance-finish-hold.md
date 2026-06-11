@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ If you can't hold the finish, you swung off-balance. Simple as that.
 **What to look for:** The back foot up on the toe, not flat. The body facing the target, not still sideways. If the kid is teetering, they're not getting through the ball.
 
 **Variation:** Try it with eyes closed for the last few reps. Forces real balance instead of visual compensation.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — useful for alignment and target drills.
+
+[Full golf gear guide →](/what-to-buy/golf/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

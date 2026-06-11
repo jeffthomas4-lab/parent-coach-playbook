@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tip-after-block recovery drill. Specific and well-paced."
@@ -44,3 +44,15 @@ A block doesn't always stop the spike. Sometimes the attacker tips it over the b
 **If they're struggling:** Slow the tip. Coach holds the ball longer before dropping.
 
 **If they've got it:** Add a real attack instead of a tip. Sometimes the blocker has to play the ball off the block, sometimes turn and cover.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

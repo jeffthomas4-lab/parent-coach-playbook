@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard give-and-go, clean voice, soccer vocab correct."
@@ -44,3 +44,13 @@ The give and go is the first team move kids learn. It's pass, move, receive. Sim
 **If they're struggling:** Slow the run down. Walk through it first without the ball.
 
 **If they've got it:** Add a defender 5 feet behind the ball carrier. Defender tries to intercept the return pass.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

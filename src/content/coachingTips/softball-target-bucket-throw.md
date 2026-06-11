@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Bucket-target accuracy intro; ball term fixed."
@@ -45,3 +45,15 @@ Throwing to a target gives the throw direction and purpose. A bucket makes the t
 **If they're struggling:** Move the bucket closer to 10 feet. Make the bucket bigger by adding balls around it so they have a larger target area.
 
 **If they've got it:** Shrink the target by using a smaller cone or ball. Move back to 30 feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

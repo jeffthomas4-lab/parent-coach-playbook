@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body had been truncated; completed with struggle/got-it tiers."
@@ -44,3 +44,15 @@ A closeout is a sprint to a shooter followed by a controlled stance to contest w
 **If they're struggling:** Cut the sprint distance in half. Walk the last two steps so they feel the plant before adding speed.
 
 **If they've got it:** Shooter can shoot or drive past. Defender has to read the choice and either contest or slide back.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

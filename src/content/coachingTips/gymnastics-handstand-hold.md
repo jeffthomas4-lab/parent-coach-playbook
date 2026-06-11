@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ The handstand is the foundation of gymnastics. Hold it long, you own it.
 **What to look for:** Straight line from wrist to ankle. Hands shoulder-width. Pushing hard through the shoulders, not letting them sink toward the ears.
 
 **Variation:** Once 60 seconds is easy, do one-arm taps — shift weight to one hand and lift the other for two seconds, then switch.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for conditioning, stretching, and mobility work.
+
+[Full gymnastics gear guide →](/what-to-buy/gymnastics/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

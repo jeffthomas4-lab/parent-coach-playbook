@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Live tackle drill with ball carrier; head-behind safety cue cited (Hawk/Heads Up). Sensitive flagged for contact instruction."
@@ -45,3 +45,15 @@ An angle tackle is when the defender isn't straight in front of the ball carrier
 **If they've got it:** Have the ball carrier make a jump cut. Now the defender has to react and adjust their angle mid-run.
 
 Based on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program. Head behind, never across the front. Eyes up through the chest, not into the chest.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

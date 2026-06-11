@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sport-specific slap-bunt; cue chain works."
@@ -44,3 +44,13 @@ The slap-bunt is a softball-specific skill. The hitter takes a running step towa
 **If they're struggling:** Use a slower tee. Have them practice the step without the ball first.
 
 **If they've got it:** Remove the tee. Have a coach pitch underhand and do the slap on live pitches. Add a baserunner to make it game-speed.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

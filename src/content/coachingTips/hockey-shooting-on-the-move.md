@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Stationary shots don't happen in real games is the right framing."
@@ -44,3 +44,15 @@ Stationary shots don't happen in real games. A real shot comes off the rush, off
 **If they're struggling:** Slower skating speed. Or pre-stop the skater and let them shoot from set position first.
 
 **If they've got it:** Add a goalie. Or add a defender chasing.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solves the universal bunching problem at this age. Soccer vocab correct."
@@ -42,4 +42,4 @@ Most young teams clump together around the ball. This drill forces spacing so th
 
 **What to look for:** Spacing and movement. Do they spread out in their zones or bunch up? Bunching means no one is open.
 
-**Variation:** For younger kids (8-9), reduce zones to two (back and forward). For older kids (10), add an offside line so they practice not bunching up when receiving.
+**Variation:** For younger kids (8-9), reduce zones to two (back and forward). For older kids (10), add an offside li

@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -44,3 +44,13 @@ The lib is the next level after shoulder sit. Transition is where stunts succeed
 **What to look for:** Flyer's eyes look ahead, not down. Base's hands stay locked under the flyer's foot. Spotters' hands stay LIGHT — they're there for safety, not lifting.
 
 **Variation:** Once stable, hold for five seconds. Build to ten.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth mouthguard →](/go/multi-sport-mouthguard-youth/) — required for most stunt and cheer programs.
+
+[Full stunt gear guide →](/what-to-buy/stunt/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

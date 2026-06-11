@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid intro passing drill; stepping-back rule adds structure."
@@ -41,4 +41,4 @@ Passing is touch and accuracy. This drill teaches both by making it simple: pass
 
 **What to look for:** One-touch passing and accuracy. The ball should go directly to the partner without bouncing or rolling.
 
-**Variation:** For younger kids (5-6), reduce the distance to 8 feet. For older kids (7), increase it to 12 feet and add a rule: you can't stop the ball, you have to pass it immediately (one-touch only).
+**Variation:** For younger kids (5-6), reduce the distance to 8 feet. For older kids (7), increase it to 12 feet and add a rule: you can't stop the ball

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Football analogy ('deep ball') is fine as a reader cue; no body contact described."
@@ -44,3 +44,15 @@ The over-the-shoulder catch is the lacrosse equivalent of a deep ball. The pass 
 **If they're struggling:** Shorter passes. Or lead the pass less so the receiver doesn't have to reach.
 
 **If they've got it:** Add a defender chasing. The catch has to happen with someone on the back.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

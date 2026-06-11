@@ -805,27 +805,27 @@
     "campaign": "gear-rebounder-net"
   },
   "folding-table-6ft": {
-    "destination": "https://www.amazon.com/dp/B000WZGNYW?tag=parentcoachpl-20",
+    "destination": "https://www.amazon.com/dp/B00DOZTM3O?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-folding-table"
   },
   "portable-pa-speaker": {
-    "destination": "https://www.amazon.com/dp/B07PDFBJZD?tag=parentcoachpl-20",
+    "destination": "https://www.amazon.com/dp/B07C2GYJ1V?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-pa-speaker"
   },
   "cash-box-lockable": {
-    "destination": "https://www.amazon.com/dp/B0001MDDZU?tag=parentcoachpl-20",
+    "destination": "https://www.amazon.com/dp/B07R7D49LX?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-cash-box"
   },
   "label-maker-handheld": {
-    "destination": "https://www.amazon.com/dp/B005X9VZ74?tag=parentcoachpl-20",
+    "destination": "https://www.amazon.com/dp/B09QXYND6S?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-label-maker"
   },
   "square-card-reader": {
-    "destination": "https://squareup.com/us/en/hardware/magstripe-reader",
+    "destination": "https://squareup.com/us/en/hardware/readers",
     "retailer": "Square",
     "campaign": "gear-square-reader"
   }

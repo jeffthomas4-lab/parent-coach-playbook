@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ The Funnel step in our cue (Drop, Show, Funnel, Send) is the part most kids skip
 
 **If they're struggling:** Skip the rolls. Have them practice the Drop, Show, Funnel motion 10 times without a ball.
 
-**If they've got it:** Roll faster. Or move the cones further apart so they have to be more precise on Show.
+**If they've got it:** Roll faster. Or move the cones 

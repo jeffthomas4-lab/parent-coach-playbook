@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated What to look for paragraph. Clean coverage vocabulary."
@@ -42,3 +42,15 @@ By 11-12, defenders should be reading the offense. This drill teaches the differ
 **What to look for:**
 
 In zone, if a defender is staring at a receiver instead of feeling the ball coming, they're playing man. In man, if a defender is peeking at the ball and losing their assignment, they break. Watch foot positioning: zone defenders have shoulders square to the field, man defenders are in a backpedal or at 45 degrees. If the offense is running picks (receivers crossing in man), man defenders should feel the traffic and switch assignments before contact. Call the switch out loud so both defenders know who has whom.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

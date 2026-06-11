@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Three-point start before blocks; sensitive flag for sprint-start injury."
@@ -44,3 +44,13 @@ Sprint races are won in the first 10 yards. The start matters. Three-point start
 **If they're struggling:** Drop the hand. Use a standing start.
 
 **If they've got it:** Add starting blocks. Or add a partner racing to add competitive pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

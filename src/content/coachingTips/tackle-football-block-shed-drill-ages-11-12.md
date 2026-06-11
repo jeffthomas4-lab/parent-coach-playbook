@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Live shed work, ages 11-12; sensitive flagged for player-to-player contact."
@@ -43,3 +43,15 @@ At 11-12, defenders face blocks on every snap. This drill teaches them to recogn
 If a defender is dancing backward, they're being pushed. They should step into the blocker, feel the pressure, and shed through it. Shedding means violent hands and a short, quick step away. If the defender is following the blocker around instead of fighting off the block, they're moving laterally without power. The shed has to look angry and abrupt.
 
 **Variation:** Add a second blocker at a different angle (coming from the side). Now the defender has to shed one block and be ready for another. This teaches awareness and quick feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

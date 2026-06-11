@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid form-shooting drill, clean voice and sport language."
@@ -43,3 +43,13 @@ Knee shooting isolates the arm and hand motion. It removes legs entirely so the 
 **If they're struggling:** Move to 4 feet from the basket. Use a lower hoop. Reduce to 5 shots per round.
 
 **If they've got it:** Move back to 8 feet. Add 2-foot form shooting after kneeling. Compare the two and notice the upper body is doing the same thing.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

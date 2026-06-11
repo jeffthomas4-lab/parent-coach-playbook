@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Rounding cues are concrete; correct base-path distances."
@@ -44,3 +44,13 @@ Rounding is the next step. The runner takes a wider path around the base than th
 **If they're struggling:** Have them jog, not sprint. Walk through the rounding arc first. Then jog.
 
 **If they've got it:** Add a cutoff throw. Coach throws to a relay at third. Runner has to decide to go home or pull up.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

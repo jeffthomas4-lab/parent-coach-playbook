@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Mentions face/black-eye risk on hard line drives; safety-adjacent."
@@ -44,3 +44,13 @@ Line drives come fast. The kid has half a second to react. Slow hands or wrong s
 **If they're struggling:** Slow the throws down. Or use bigger softer balls (rag balls) so the consequences of a miss are smaller.
 
 **If they've got it:** Throw harder and add hot-shot ground balls into the mix randomly. They have to react to whatever comes.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Plant-and-break footwork with QB throw. No contact."
@@ -44,3 +44,15 @@ An out route is a break toward the sideline. The receiver runs upfield, plants a
 **If they're struggling:** Have them walk through the plant and break first. One step at a time. Once the footwork is right, add speed.
 
 **If they've got it:** Add a defender covering them. They're running the out against coverage.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

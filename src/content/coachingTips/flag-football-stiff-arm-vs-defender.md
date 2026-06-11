@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cites stiff-arm-on-flag-puller restriction implicitly via open-palm rule. Per league rules vary, may want explicit cite later."
@@ -44,3 +44,13 @@ In flag football the stiff arm is legal as long as it's open palm and not in the
 **If they're struggling:** Walk through the move at half speed. Practice the arm motion without the run.
 
 **If they've got it:** Add a juke. Stiff arm to one side, then juke the other way.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

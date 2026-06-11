@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Contested-shot drill, sport language clean. Could use more rep volume per shooter."
@@ -42,3 +42,13 @@ Game shooting happens against defenders. This drill adds a defender playing at 7
 **If they're struggling:** Defender plays at 50% intensity instead of 75%. Move the shooter spot closer to the basket.
 
 **If they've got it:** Defender plays at 90% effort. The shooter must be excellent to get clean looks.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

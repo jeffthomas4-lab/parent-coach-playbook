@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Stance description with shoulder-width skates and stick on ice is correct."
@@ -44,3 +44,15 @@ The goalie stance is the position from which every save starts. Knees bent. Glov
 **If they're struggling:** Slower shuffles. Or hold the stance off-ice for 30 seconds at a time first.
 
 **If they've got it:** Add a puck. Coach passes a puck along the ice in front of the net. Goalie shuffles to track it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

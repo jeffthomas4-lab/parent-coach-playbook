@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Load Sweep Snap Follow phases give a memorable structure."
@@ -44,3 +44,15 @@ The wrist shot is the most useful shot a young hockey player will learn. Quick, 
 **If they're struggling:** Reduce distance to 10 feet. Use a street hockey ball off-ice.
 
 **If they've got it:** Move back to 20 feet. Add target zones (top corners). They have to hit the corners, not just the net.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

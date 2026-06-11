@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Rundown drill; voice clean. 60ft base paths correct for softball."
@@ -44,3 +44,13 @@ A rundown (pickle) happens when a runner is caught between bases. The defense th
 **If they're struggling:** Start with no runner. Fielders practice throws back and forth to get timing. Add runner once throws are clean.
 
 **If they've got it:** Add a third fielder. Add time pressure: rundown must be done in 5 throws or the runner is safe.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

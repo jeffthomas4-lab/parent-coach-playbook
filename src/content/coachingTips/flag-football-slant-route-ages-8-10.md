@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated variation. Clean flag-football vocabulary."
@@ -44,3 +44,15 @@ The slant is the building block for every inside route. Kids at this age can lea
 The plant is everything. If the receiver rounds the cut or doesn't plant hard, the QB's throw timing is ruined. Make sure the QB is leading the receiver forward, not back toward the LOS. The receiver should never break stride going into the cut. If the QB is throwing high or the receiver is reaching, the angle is off. Adjust the cone position, not the throw.
 
 **Variation:** Add a defender. Once the receiver shows they can catch the slant consistently, put a defender 2 yards away shading the inside. The receiver has to sell the vertical stem before breaking, and the QB has to put the ball where only the receiver can grab it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

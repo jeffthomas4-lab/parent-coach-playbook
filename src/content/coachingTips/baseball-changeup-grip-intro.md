@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pitching grip introduction at 11-12; flagged sensitive (arm care implications)."
@@ -44,3 +44,15 @@ A changeup looks like a fastball but arrives slower. The hitter swings early and
 **If they're struggling:** Drop the changeup. Throw fastballs only at this age. Add the changeup later.
 
 **If they've got it:** Add target zones. The changeup should land low in the zone or below the knees. High changeups get hit hard.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

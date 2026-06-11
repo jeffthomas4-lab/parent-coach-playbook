@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ The catch is where the stroke starts and where bad habits hide. This drill force
 **What to look for:** Shins vertical or just past vertical at the catch. Body angled forward from the hips, not slumped. Arms straight, no early arm bend.
 
 **Variation:** Have the rower close their eyes during the catch pause. Forces body awareness of the position.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — land-based strength and conditioning supplement.
+
+[Full crew gear guide →](/what-to-buy/crew/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

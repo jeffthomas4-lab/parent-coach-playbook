@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: needs-revision
   reviewerNotes: "Drill is functional but generic; originality below 7. Could add named coaching cue or specific rotation variant to lift it."
@@ -44,3 +44,13 @@ The circle is the simplest structure for group passing. Every kid gets a touch. 
 **If they're struggling:** Make the circle bigger. Reduce the number of kids to 4 so distances are shorter.
 
 **If they've got it:** Make the circle smaller. 10 feet diameter instead of 12. Passes have to be more accurate.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

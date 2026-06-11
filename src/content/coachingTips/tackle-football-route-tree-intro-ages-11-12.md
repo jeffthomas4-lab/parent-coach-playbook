@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Five-route tree primer with QB calls. No contact."
@@ -43,3 +43,15 @@ The route tree is a language. Young receivers need to learn the five basic route
 Go route: straight up the sideline, gradual fade. Slant: 3 steps up, plant, cut inside at 45 degrees. In route: 5 steps up, plant, cut inside sharp at 90 degrees. Out route: 5 steps up, plant, cut sharp outside. Curl: 7 steps up, decelerate, plant back toward QB. Each route should have a clear plant and cut point. If a receiver is rounding a cut, the route is wrong. The QB should throw with timing, not aiming at the receiver.
 
 **Variation:** Add a defender 5 yards back in zone coverage. Now the receiver is running the route to get open, not just running a pattern. Receivers should feel the defender and adjust their depth (going deep if covered shallow, sitting down if covered deep).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

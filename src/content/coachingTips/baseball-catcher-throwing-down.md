@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ When a runner steals second, the catcher has about 3 seconds total. The catch, t
 
 **If they're struggling:** Drop the pitch. Hand the ball to the catcher in stance. They stand up and throw.
 
-**If they've got it:** Add a runner stealing from first. The catcher has to beat the runner. Throw on a line, not a rainbow.
+**If they've got it:** Add a runner stealin

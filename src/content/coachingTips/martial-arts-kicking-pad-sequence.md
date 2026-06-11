@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Kicks chain together in real sparring. Single kicks are practice. Sequences are 
 **What to look for:** Each kick chambers (knee comes up) before extending. No swinging straight legs. Hands stay up the whole time.
 
 **Variation:** Partner moves the pad between kicks. Forces the student to adjust angle, not just power.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — for flexibility, mobility, and conditioning work.
+
+[Full martial arts gear guide →](/what-to-buy/martial-arts/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

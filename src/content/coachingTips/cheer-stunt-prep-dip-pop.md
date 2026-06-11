@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ The dip-pop is the engine of every stunt. Bases get it right, the stunt goes up.
 **What to look for:** Both bases dip at the same depth and same time. Pop is explosive — no soft extension. Arms reach straight up, not forward.
 
 **Variation:** Add a coach calling "one, two, dip, POP" so bases learn to respond to a cue. Builds rhythm without a flyer.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth cheer shoes →](/go/cheer-shoes-youth/) — lightweight split-sole shoes for stunts and tumbling.
+
+[Full cheer gear guide →](/what-to-buy/cheer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

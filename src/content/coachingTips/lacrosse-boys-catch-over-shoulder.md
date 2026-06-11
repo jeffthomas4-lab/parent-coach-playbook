@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean drill; over-shoulder catch is a real lacrosse technique."
@@ -44,3 +44,15 @@ The over-the-shoulder catch is the lacrosse equivalent of a deep ball. The pass 
 **If they're struggling:** Shorter passes. Or lead the pass less so the receiver doesn't have to reach.
 
 **If they've got it:** Add a defender chasing. The catch has to happen with someone on the back.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.
+
+[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

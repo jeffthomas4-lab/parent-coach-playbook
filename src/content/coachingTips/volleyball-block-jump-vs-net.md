@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Block position basics. Clean voice and correct net vocabulary."
@@ -44,3 +44,15 @@ The block is the front line of defense. Jump straight up at the net, hands above
 **If they're struggling:** Lower the net. Or hold a stick at hand height the player has to reach.
 
 **If they've got it:** Add a hitter on the other side. Player blocks a real spike.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

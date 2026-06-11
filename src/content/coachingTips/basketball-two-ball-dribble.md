@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean two-ball drill, sport language correct."
@@ -44,3 +44,13 @@ Two-ball dribbling breaks the habit of looking down at the ball and builds indep
 **If they're struggling:** Do 10 bounces instead of 20. Stand closer to the wall. Use a softer ball in one hand so it's easier to match the rhythm.
 
 **If they've got it:** Walk forward 5 steps while dribbling two balls. Keep them in sync. Then walk back. This builds hand independence while moving.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

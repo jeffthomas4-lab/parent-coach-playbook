@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Add actual location difficulty to eac'."
@@ -46,3 +46,15 @@ Situational hitting teaches kids that the pitch doesn't determine the swing. The
 **If they're struggling:** Cut to two scenarios (just contact, fly ball) and give 6 tosses each. Tell them the swing they want before each toss.
 
 **If they've got it:** Have them call out the situation themselves before the toss. If they can name the right swing without your prompt, they've internalized it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[28-inch youth bat →](/go/baseball-bat-28in/) — drop-10 USA-stamped bat for ages 8–10.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

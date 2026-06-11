@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pitching mechanics; flagged sensitive for arm care."
@@ -44,3 +44,15 @@ The stride is what makes a pitch travel. The front foot lands toward home plate,
 **If they're struggling:** Drop the throw. Just practice the Stride and pause without releasing.
 
 **If they've got it:** Cut the pause to 1 second. Or do the drill at full speed with no pause, just focusing on the stride direction.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

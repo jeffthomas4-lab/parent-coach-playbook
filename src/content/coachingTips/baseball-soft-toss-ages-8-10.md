@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'toss from 25 feet'."
@@ -45,3 +45,15 @@ Soft toss teaches hand-eye coordination with a moving ball. The underhand toss i
 **If they're struggling:** Slow the toss to 8 mph and stay in the middle of the zone for a full set of 10 before you start moving locations.
 
 **If they've got it:** Call the location after the toss leaves your hand instead of before. Now they have to read and adjust mid-flight, which mimics real pitching.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[28-inch youth bat →](/go/baseball-bat-28in/) — drop-10 USA-stamped bat for ages 8–10.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

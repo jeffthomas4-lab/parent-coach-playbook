@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sell-the-fake cue lands."
@@ -44,3 +44,13 @@ A pass fake makes a defender move the wrong way. This opens up the real pass. Th
 **If they're struggling:** Use bigger, slower fakes. Have B close their eyes on the fake so A doesn't have to sell it as hard.
 
 **If they've got it:** Add a passive defender. B plays soft defense. A must use the fake to create space for the pass.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

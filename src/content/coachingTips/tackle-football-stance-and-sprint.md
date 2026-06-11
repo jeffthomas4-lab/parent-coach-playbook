@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Stance-to-sprint drill. No contact."
@@ -44,3 +44,15 @@ A good stance is only half the job. The other half is using it to move. This dri
 **If they're struggling:** Have them do this without the hand on the ground first. Just a 2-point stance sprint. Once they get the knee drive, add the hand back in.
 
 **If they've got it:** Add a coaching point: on the first step out of the stance, the foot that was down pushes back hard. That's where the explosion comes from.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

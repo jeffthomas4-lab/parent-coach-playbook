@@ -15,7 +15,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Generic-tagged passing drill; clean vocabulary."
@@ -39,3 +39,15 @@ Passing in lacrosse requires timing. Two lines of players passing back and forth
 The pass should be accurate and catchable. If the receiving player has to reach way out or step back, the pass is off. The catch should happen on the stick naturally, with the stick in ready position. If a player is reaching for a bad pass or dropping the ball, accuracy is the problem. Communicate about timing: players should call "Ready" or "Set" before the pass.
 
 **Variation:** Add movement. Players move laterally while passing, creating a weaving pattern. This teaches passing on the move and awareness of field space.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.
+
+[Full lacrosse gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

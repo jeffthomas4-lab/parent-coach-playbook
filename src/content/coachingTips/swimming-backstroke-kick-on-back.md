@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Backstroke kick on back; clear hip-up cue."
@@ -44,3 +44,13 @@ The backstroke kick is the freestyle kick upside down. Same flutter, same straig
 **If they're struggling:** Hold the wall and just kick. Or use a kickboard on the chest.
 
 **If they've got it:** Streamline arms overhead. Or count kicks per length to develop rhythm.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

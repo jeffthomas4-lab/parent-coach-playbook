@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Summary says 'one hand' but body teaches two-hand cradle; keep the body, summary slightly off but acceptable."
@@ -44,3 +44,13 @@ Before kids run with the ball, they need to hold it correctly. A good grip start
 **If they're struggling:** Start with a soft football or a smaller ball. Easier to grip.
 
 **If they've got it:** Have them hold the ball and walk forward slowly. Keep the grip tight the whole time.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Strong opening; specific cues. Voice is solid."
@@ -42,3 +42,13 @@ Pop-ups are the easiest outs to mess up. Kids hesitate, two fielders run at the 
 **What to look for:** Who's calling and who's backing off. The kid who calls must be loud. The kid backing off must move away visibly.
 
 **Variation:** For younger kids (8-9), you call it out: "Shortstop's got it." For older kids (10), add a base runner and a throw to a base.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

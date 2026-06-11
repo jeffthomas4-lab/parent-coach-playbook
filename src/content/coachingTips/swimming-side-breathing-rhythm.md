@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Side-breathing rhythm with body-roll cue."
@@ -44,3 +44,13 @@ Most kids hold their breath while swimming or come up to gasp. The right move is
 **If they're struggling:** Practice in shallow water. Walk and breathe to feel the rotation.
 
 **If they've got it:** Move to bilateral breathing (every 3 strokes, alternating sides).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

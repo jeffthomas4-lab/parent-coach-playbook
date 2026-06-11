@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Touches arm-care safety. Clean voice. Specific rep counts and distances are good."
@@ -44,3 +44,13 @@ A pitcher's arm has to be warm before they throw a single pitch. Cold arms get h
 **If they're struggling:** Reduce the rep count. 5 of each instead of 10.
 
 **If they've got it:** Add resistance bands for shoulder activation before the circles. Same drill, more strength work built in.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

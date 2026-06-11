@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "'Body in the lane, not just a hand' is the load-bearing teach. Minor: 'the reps stops' should be 'the rep stops' (left as-is)."
@@ -44,3 +44,13 @@ Denying the pass is active defense. The defender positions their body between th
 **If they're struggling:** Have the passer pass from only 8 feet away instead of 15. Slow the pace. Let the defender practice positioning without worrying about interception.
 
 **If they've got it:** Add game speed. Passer tries harder. Receiver tries to get open.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

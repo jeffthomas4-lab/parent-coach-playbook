@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Note uses 'yard' for a baseball field distance; that's standard plain English here, not a wrong-sport flag."
@@ -44,3 +44,15 @@ Six-year-olds don't need a sophisticated warm-up. They need movement, attention,
 **If they're struggling:** Cut to 3 exercises. Add fun: "Run like a giraffe." "Stretch like a tree."
 
 **If they've got it:** Add the dynamic warm-up circuit drill instead. They've outgrown the simple version.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

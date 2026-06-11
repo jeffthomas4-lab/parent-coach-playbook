@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'For very young kids (5'."
@@ -46,3 +46,13 @@ If water breaks turn into chat sessions where you lose the group's attention, yo
 **If they're struggling:** Cut the highlight and the question. Just say "drink, then back here in 60 seconds" and use the time to set up the next drill.
 
 **If they've got it:** Use the break to ask a tactical question that loads the next rep. "Who's covering the back side on this next set?" Now hydration time is also film-room time.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — flat disc cones for any field drill.
+
+[Full multi sport gear guide →](/what-to-buy/training-gear/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid cooperative rally drill; uses correct rally/court vocab."
@@ -44,3 +44,15 @@ Consistency is the foundation of tennis. This drill challenges young players to 
 Players should be adjusting their pace. If they're blasting every ball, they'll make errors. If they're pushing the ball too softly, it might float long. The goal is controlled pace that stays in the court. If a pair consistently misses at certain numbers (like always at 12-15), that's fatigue or losing focus. Push them to stay sharp the entire rally.
 
 **Variation:** Set a target number other than 25. For players struggling, use 15. For advanced players, use 40 or 50. The goal is building consistency, not a specific number.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

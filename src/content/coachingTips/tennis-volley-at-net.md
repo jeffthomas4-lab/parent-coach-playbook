@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Net volley with punch-not-swing distinction."
@@ -44,3 +44,15 @@ A volley is a shot hit before the ball bounces. Short, punching motion. No big s
 **If they're struggling:** Slower feeds. Bigger ball.
 
 **If they've got it:** Add a partner who feeds and the player volleys back continuously.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

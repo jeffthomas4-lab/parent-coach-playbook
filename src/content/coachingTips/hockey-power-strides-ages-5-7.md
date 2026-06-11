@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Variation was truncated. Completed it."
@@ -43,3 +43,15 @@ Young skaters often shuffle. This drill teaches them to push hard on each stride
 The back leg should extend fully on each push. If a skater is taking quick, short steps without extension, they're shuffling. A power stride has visible extension and a brief "load" phase where the skating leg is bent before the push. The torso should stay upright. If a skater is leaning forward, they're fighting gravity instead of using it.
 
 **Variation:** For kids who pick it up fast, add a finish line and time the trip. Or have them carry a stick to start building the body shape they will use with a puck later.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

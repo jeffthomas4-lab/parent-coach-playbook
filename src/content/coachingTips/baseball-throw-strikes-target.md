@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pitching volume drill; flagged sensitive for arm care and pitch counts."
@@ -44,3 +44,13 @@ Pitching is throwing strikes. A pitcher who can't throw strikes can't pitch. Thi
 **If they're struggling:** Make the target bigger. Move the mound closer.
 
 **If they've got it:** Shrink the target to 12 inches by 18 inches. Or call balls and strikes umpire-style and see how many strike-outs they can throw.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body was truncated mid-sentence; completed the variation paragraph."
@@ -41,6 +41,4 @@ The tee is where batting starts. Kids this age need to build the habit of seeing
 
 **What to look for:** Solid contact and a full follow-through. Kids this age who start making contact will want to keep going. Let them. The ball coming off the bat is their best teacher.
 
-**Variation:** For younger kids (5-6) who struggle with hand-eye, lower the tee to knee height. Closer to the ground is easier to track. Move it back up to belt height once they make consistent contact.
-
----
+**Variation:** For younger kids (5-6) who struggle with hand-eye, lower the tee to knee height. Closer to the ground is easier to track. Move it ba

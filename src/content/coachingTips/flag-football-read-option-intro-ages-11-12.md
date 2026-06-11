@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated paragraph. Replaced 'outside the tackle' (offensive tackle position not present in flag) with 'outside the QB's strong-side hip'."
@@ -41,3 +41,15 @@ The read-option is simple in theory: QB reads the dive end and keeps or pitches.
 **What to look for:**
 
 The QB's mesh with the dive man has to look live. If the dive man sees the QB pulling early, the read is obvious. The pitch should be a backward-moving spiral about waist-high. Dive man should hit their gap full speed, not worry about the mesh. The defender should vary their action: sometimes crash inside, sometimes flow outside. If the QB is good, they'll keep the pitch man moving and cut back. If the QB is struggling, the dive man isn't selling the fake hard enough or the QB is reading too slowly. Slow the action and rep the mesh until the read becomes automatic.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

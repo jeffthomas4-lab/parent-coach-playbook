@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated body with two voice-matched lines on launch step and ball off the backboard. Sport language clean."
@@ -38,3 +38,13 @@ Layups are the easiest bucket in basketball. This drill teaches the approach, th
 3. Alternate. Do 20 total reps (10 per side).
 
 **What to look for:** Footwork on the approach. A layup has two steps before the shot. First step is longer, second step is a launch off the inside foot, then lay the ball off the backboard with the outside hand. Soft touch matters more than power at this age.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

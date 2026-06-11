@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean dribbling drill. Soccer vocab correct."
@@ -44,3 +44,13 @@ Fast feet and soft touch go together. This drill trains both feet to control the
 **If they're struggling:** Slow it down. Do 5 touches per side instead of continuous.
 
 **If they've got it:** Speed it up. Count touches in 30 seconds and try to beat the count next round.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

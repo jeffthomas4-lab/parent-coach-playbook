@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ The erg is where rowing is built. Start every session with a controlled ten-stro
 **What to look for:** Smooth sequencing on the drive — legs, then back, then arms. On the recovery, reverse it: arms out, body forward, knees up.
 
 **Variation:** Do the same drill in reverse — start with full strokes, regress to arms-only — as a cool-down.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — land-based strength and conditioning supplement.
+
+[Full crew gear guide →](/what-to-buy/crew/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

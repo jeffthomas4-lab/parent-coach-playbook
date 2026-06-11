@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'between sections, th'."
@@ -41,3 +41,13 @@ A good warm-up gets kids moving, thinking about the game, and connected to each 
 Kids should be energized but not gassed. If a kid looks exhausted, the warm-up was too hard. The movement should create conversation and energy, not silence and waiting. If kids are standing around between sections, the transitions are too long. Cue the next thing while they're finishing the last.
 
 **Variation:** For ages 5-7, drop the dynamic stretching to 30 seconds and replace with a tag game. For ages 13-14, swap the group circle for individual activation work and stretch the sport-specific block to 90 seconds.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — flat disc cones for any field drill.
+
+[Full multi sport gear guide →](/what-to-buy/training-gear/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

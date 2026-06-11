@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Catching mechanics with cue mnemonic. No contact."
@@ -45,3 +45,13 @@ After the catch, the ball goes away immediately. See, Reach, Squeeze, Tuck. The 
 **If they're struggling:** Have them practice the tuck without the catch first. Hands out, squeeze, tuck. Do the motion 5 times.
 
 **If they've got it:** Throw the ball slightly off to the side so they have to reach. They still catch and tuck immediately.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

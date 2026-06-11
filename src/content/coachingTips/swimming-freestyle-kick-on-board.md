@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Flutter kick from hips; clean."
@@ -44,3 +44,13 @@ The freestyle kick is the engine. Most kids try to kick from the knees and bend 
 **If they're struggling:** Use a smaller pool or shallower water. Or kick while holding the wall instead of a board.
 
 **If they've got it:** Drop the kickboard. Kick with arms in streamline (overhead, hands stacked).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

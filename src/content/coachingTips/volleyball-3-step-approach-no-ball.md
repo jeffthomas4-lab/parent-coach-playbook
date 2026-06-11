@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean no-ball footwork drill. Volleyball vocab correct throughout."
@@ -44,3 +44,15 @@ The spike approach is a three-step rhythm: left, right, left-right. Most kids tr
 **If they're struggling:** Walk through it slowly. Mark the foot positions with chalk or tape.
 
 **If they've got it:** Add the spike motion: arm pulls back, swings forward, snaps over the imaginary ball.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

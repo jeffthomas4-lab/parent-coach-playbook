@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pursuit-angle teaching is solid. Clean flag-pull language."
@@ -44,3 +44,15 @@ A defender chasing in a straight line never catches a faster runner. The right p
 **If they're struggling:** Drop the speed. Walking pace until the angle clicks.
 
 **If they've got it:** Add a second defender taking the opposite angle. The runner has to read both pursuits.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

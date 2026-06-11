@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid intro tee drill; level swing focus."
@@ -42,3 +42,13 @@ Softball hitting starts with the tee and a single thought: level swing, follow t
 **What to look for:** A level swing and a complete follow-through. The bat should finish at shoulder height. Kids who drop the bat early are slapping instead of swinging.
 
 **Variation:** For younger kids (5-6), tee the ball slightly higher so they're more likely to make contact. For older kids (7), tee the ball lower (knee height) and work on staying level through the bottom of the zone.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

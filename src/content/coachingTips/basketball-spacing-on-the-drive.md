@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Strong spacing drill with concrete relocations. Lead paragraph runs four sentences instead of three."
@@ -44,3 +44,13 @@ When a teammate drives, the four other offensive players have a job. The kid the
 **If they're struggling:** Walk through the rotations slowly. No defender. Just work on the relocations.
 
 **If they've got it:** Add three defenders. Now the spacing creates real openings.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

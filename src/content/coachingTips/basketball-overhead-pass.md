@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard pass drill, well executed."
@@ -44,3 +44,13 @@ The overhead pass gets over a defender. It's longer than a chest pass and harder
 **If they're struggling:** Use a lighter ball. Move closer to 10 feet. Have them practice the footwork and release without passing (shadow passes).
 
 **If they've got it:** Add movement. Both kids walk forward slowly while passing. Builds skill under movement.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

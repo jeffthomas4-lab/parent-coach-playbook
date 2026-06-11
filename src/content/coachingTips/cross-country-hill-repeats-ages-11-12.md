@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Hill training builds confidence for racing,'. Sensitive flag on hill effort retained."
@@ -45,3 +45,13 @@ Runners should maintain effort on the hill, not slow down as they get tired. On 
 **If they're struggling:** Cut to 3 repeats and a shorter hill (100-150 meters). Add 30 seconds of rest at the bottom.
 
 **If they've got it:** Add a sixth repeat with a hard finish. The last 50 meters of the climb at near-sprint, then a full minute walk-down before the easy jog.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for road and trail.
+
+[Full cross country gear guide →](/what-to-buy/cross-country/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

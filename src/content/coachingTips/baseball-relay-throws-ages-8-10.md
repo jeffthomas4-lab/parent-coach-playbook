@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Variation: F'."
@@ -46,3 +46,15 @@ Relay throws teach kids to position themselves in line with the throw and catch 
 **If they're struggling:** Shorten the spacing to 20 feet and drop the reset clock. Let them catch, plant, then throw without rushing.
 
 **If they've got it:** Have the middle kid catch with the glove side foot forward and turn over the throwing shoulder in one motion. Time the relay; under 4 seconds from your throw to first base is the bar.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

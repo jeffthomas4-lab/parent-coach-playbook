@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Set-Load fundamentals for the youngest hitters."
@@ -45,3 +45,13 @@ Before the swing, the body needs to be in the right position. Stance and Load ar
 **If they're struggling:** Use a shorter bat. Use a lighter bat. Have them hold it with one hand first to feel the motion.
 
 **If they've got it:** Add a step. Cue Set, Load, Step (small step toward the pitcher), Swing. Do 5 reps.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

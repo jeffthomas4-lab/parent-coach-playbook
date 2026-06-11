@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated variation. Clean flag-pull language throughout."
@@ -44,3 +44,15 @@ Pulling a flag is different than tackling. Kids need to understand where the fla
 Defenders should be tracking the runner's hips, not staring at the feet. The flag is usually on the hip, so good defenders move to that side. Runners should be accelerating into open space, not just running away. If a runner is dancing in place, they're playing tag, not flag football. If a defender is lunging late, they're not tracking early enough.
 
 **Variation:** Older 7-year-olds can use a live ball. The runner has to carry a foam football while protecting the flag, and any drop counts as a turnover. This adds the ball-security habit on top of the flag-pulling skill.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

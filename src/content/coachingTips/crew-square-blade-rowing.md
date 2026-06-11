@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ Feathering hides bad handle height. Square-blade rowing exposes it.
 **What to look for:** Blades stay an inch or two off the water through the whole recovery. If they're scraping, handles need to come up.
 
 **Variation:** Square-blade only on one side at a time. Forces the rower to balance the boat with the feathered side.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — land-based strength and conditioning supplement.
+
+[Full crew gear guide →](/what-to-buy/crew/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

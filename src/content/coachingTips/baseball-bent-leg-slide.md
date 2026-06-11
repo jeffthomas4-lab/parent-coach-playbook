@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sliding is injury-adjacent. Sensible 'grass first, dirt later' progression."
@@ -44,3 +44,13 @@ The bent leg slide (also called the figure-4 slide) is the safest and most commo
 **If they're struggling:** Stay on grass. Stay at half speed. Sliding takes confidence.
 
 **If they've got it:** Add a fielder with a tag. The slider has to land the foot on the base before the tag.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

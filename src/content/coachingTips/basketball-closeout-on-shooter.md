@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Last-two-steps plant cue is the right teach. 'Don't reach' keeps it foul-aware."
@@ -45,3 +45,13 @@ The closeout is when you run to contest a shooter who just caught the ball. This
 **If they're struggling:** Start the defender closer (5 feet away). Slow the pace. Just focus on the final stance without the sprint.
 
 **If they've got it:** Shooter can shoot or pass out. Defender must adjust to either.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

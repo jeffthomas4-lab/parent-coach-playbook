@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -38,4 +38,4 @@ A batting cage is the only place a 13-year-old can face live pitching safely and
 3. Next 10: pitches in and out. Focus: staying balanced and hitting it where it's pitched.
 4. Final 10: your choice (fastballs up, changeups down, whatever they struggled with).
 
-**What to look for:** Swing path consistency and decision-making. Do they chase pitches out of the zone? Do they adjust when the pitch is faster or slower? The cage reveals pattern recognition problems that don't show up in soft toss.
+**What to look for:** Swing path consistency and decision-making. Do they chase pitches out of the zone? Do they adjust when the pitch is faster or slower? The cage reveals pattern recognition problems tha

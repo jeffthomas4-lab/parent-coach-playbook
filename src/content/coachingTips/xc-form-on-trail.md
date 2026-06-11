@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Trail form work with hill posture cues; sensitive flag for trail terrain."
@@ -44,3 +44,13 @@ Cross country is running over uneven ground. Uphills, downhills, roots, mud. For
 **If they're struggling:** Shorter loop. Or run a flat loop first, then add hills.
 
 **If they've got it:** Add a tempo segment. Run the middle quarter mile at race pace, then ease back.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for road and trail.
+
+[Full cross country gear guide →](/what-to-buy/cross-country/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

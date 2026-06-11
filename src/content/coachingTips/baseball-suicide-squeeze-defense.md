@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Play at the plate; flagged sensitive for contact at home."
@@ -44,3 +44,15 @@ The suicide squeeze is the boldest play in baseball. Runner on third breaks for 
 **If they're struggling:** Slow the play down. Walk through the runner break and the pitchout.
 
 **If they've got it:** Add the offense's counter: a fake squeeze where the runner breaks but the batter takes the pitch. Now the catcher has to read both options.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Low/Push/Eyes/Both cue is consistent. Time-trial extension is a smart progression."
@@ -44,3 +44,15 @@ The cone weave teaches change of direction under control. The cones are in a lin
 **If they're struggling:** Slow it down. Walk, don't jog. Use bigger cones. Space them 7 feet apart instead of 5.
 
 **If they've got it:** Time them. Run 5 reps and track the best time. Next week, beat their time. Speed will improve with repetition.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

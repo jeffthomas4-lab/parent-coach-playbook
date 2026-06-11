@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'didn\\'t happen, kids '."
@@ -44,3 +44,13 @@ Kids should feel included in the ritual, not rushed through it. If a kid is star
 **Variation:** Rotate which kid gets to share each week. By practice 6, every kid has had a turn. Pin a small chant card to the bag so they know the words.
 
 **If they're struggling:** Cut step 2 and let the coach speak only. Get the chant in, get the hands in, send them home.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — flat disc cones for any field drill.
+
+[Full multi sport gear guide →](/what-to-buy/training-gear/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

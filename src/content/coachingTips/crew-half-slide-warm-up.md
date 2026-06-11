@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Going straight to full slide on a cold body is how backs get hurt. Half slide wa
 **What to look for:** Smooth, controlled motion. No rushing the recovery. The hands and body should move at the same speed on the way up.
 
 **Variation:** Add a pause at the half-slide position for two beats. Builds patience on the recovery.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — land-based strength and conditioning supplement.
+
+[Full crew gear guide →](/what-to-buy/crew/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

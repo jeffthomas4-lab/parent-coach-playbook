@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Specific scenarios with realistic counts; voice is clean."
@@ -43,3 +43,15 @@ Run 10 pitches per scenario (or until the hitter makes an out).
 **What to look for:** Pitch selection and approach. Does the hitter adjust to the count? A 0-2 count is different from a 2-0. If they're hitting the same way, they're not reading the situation.
 
 **Variation:** For younger kids (13), reduce to two scenarios and increase the ball count in the pitcher's favor so they're forced to be aggressive. For advanced kids, add a third-base coach calling plays.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

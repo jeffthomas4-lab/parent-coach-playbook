@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Illegal-screen warning is a useful detail."
@@ -44,3 +44,13 @@ The screen and roll (or pick and roll) is the most common play in basketball. Tw
 **If they're struggling:** Walk through the timing without dribbling. Just work on screen-and-roll footwork.
 
 **If they've got it:** Add two defenders. Now the play has to actually beat someone.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

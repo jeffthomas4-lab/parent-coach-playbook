@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Diving carries impact risk; soft ground noted. Sensitive flag for injury risk."
@@ -44,3 +44,13 @@ This drill is for kids who want to play goalkeeper. Diving is the signature keep
 **If they're struggling:** Start with no shot. Just have them practice the diving motion without a ball.
 
 **If they've got it:** Shoot with more pace and accuracy. The keeper has to react faster and extend farther.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

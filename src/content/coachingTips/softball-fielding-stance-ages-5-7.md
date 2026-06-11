@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Stance teaching for 5-7; concrete cues."
@@ -42,3 +42,13 @@ Fielding in softball starts with the feet and the glove down. Young kids want to
 **What to look for:** The glove on the ground first, not the hands. Kids who reach up with their hands will miss balls they could have caught.
 
 **Variation:** For kids who catch cleanly, roll the ball slightly to the side so they have to shuffle their feet. For younger kids, just do the stance without rolling the ball, so they build the habit.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Removed a not-just-X-but-Y phrasing. Hand position teaching point is the keeper."
@@ -44,3 +44,15 @@ A line shot is a spike that travels straight down the sideline. It catches the d
 **If they're struggling:** Lower the net. Use a tossed ball. Bigger target.
 
 **If they've got it:** Alternate line shots and crosscourt shots. Hitter has to call the shot before the spike.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

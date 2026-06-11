@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Foundation drill for U7; eyes-closed variation is a nice touch."
@@ -44,3 +44,13 @@ A kid can't dribble down the court until they can control a ball bouncing in pla
 **If they're struggling:** Use a softer ball. Have them bounce standing against the wall for support. Do 10 bounces instead of 20.
 
 **If they've got it:** Have them close their eyes for 5 bounces. Then open. This trains feel instead of sight.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

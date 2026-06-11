@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'A runner'."
@@ -46,3 +46,15 @@ Run all three runners through all five scenarios. Then switch positions.
 **If they're struggling:** Drop to two scenarios at a time and walk through the read out loud before the pitch. "Ball on the ground to the right side, you advance one." Then run it.
 
 **If they've got it:** Add a real fielder making a real throw. The runner has to react to the actual play, not the scripted call. Mix the scenarios randomly so they can't anticipate.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[28-inch youth bat →](/go/baseball-bat-28in/) — drop-10 USA-stamped bat for ages 8–10.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

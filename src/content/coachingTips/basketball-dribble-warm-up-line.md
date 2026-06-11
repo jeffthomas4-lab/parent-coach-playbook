@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "'Look at the back of the kid in front of them' is a sticky concrete cue."
@@ -44,3 +44,15 @@ Practice starts with the ball in their hands. The dribble warm-up gets the muscl
 **If they're struggling:** Use a smaller ball (junior size 25 or 27). Slow the pace.
 
 **If they've got it:** Add a crossover at half court on each trip. Or have them dribble two balls at once.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -41,3 +41,13 @@ Path matters more than speed at five feet. The gate forces a straight stroke.
 **What to look for:** A miss to the left or right of the gate tells you the path is off, not the speed. The ball that clips the right tee means the face is open at impact.
 
 **Variation:** Narrow the gate to half a putter-head-width once the kid clears the standard width consistently. Reveals fine path errors.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — useful for alignment and target drills.
+
+[Full golf gear guide →](/what-to-buy/golf/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

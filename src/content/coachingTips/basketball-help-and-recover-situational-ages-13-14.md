@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body was truncated mid-sentence; completed the closing sections."
@@ -43,3 +43,13 @@ Help-and-recover is the most important team defense principle at this age. This 
 **If they're struggling:** Slow the offense to walking speed. Call out "help" and "recover" so the timing becomes obvious. Reset every 30 seconds.
 
 **If they've got it:** Add a fourth offensive player and a fourth defender. The rotations get harder when the help defender has a longer recovery.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

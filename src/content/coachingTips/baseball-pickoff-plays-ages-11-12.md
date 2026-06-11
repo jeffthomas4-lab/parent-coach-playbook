@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated ending with struggling/got-it variants."
@@ -45,3 +45,15 @@ A pickoff play teaches communication and timing. The pitcher and first baseman h
 **If they're struggling:** Walk through the count and the throw at half speed. Get the timing first, then add the runner.
 
 **If they've got it:** Add a second runner at second. Now the pitcher has two threats and has to pick which to hold.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

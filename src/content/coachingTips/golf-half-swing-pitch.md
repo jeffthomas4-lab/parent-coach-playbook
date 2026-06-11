@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ The half swing teaches feel. Most kids try to crush every wedge — this drill i
 **What to look for:** A balanced finish. If the kid falls forward or back, they swung too hard. The half swing should feel almost lazy.
 
 **Variation:** Add a 50-yard target after the 30-yard set. Same swing length — they have to club up to a longer iron to cover the distance.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — useful for alignment and target drills.
+
+[Full golf gear guide →](/what-to-buy/golf/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

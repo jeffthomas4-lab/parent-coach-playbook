@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Negative-split workout; sensitive flag for distance-effort load."
@@ -44,3 +44,13 @@ A negative split is when the second half of a run is faster than the first. It t
 **If they're struggling:** Shorter distance (400m with 200m splits).
 
 **If they've got it:** Run a 1600m with negative splits across all four 400m segments.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

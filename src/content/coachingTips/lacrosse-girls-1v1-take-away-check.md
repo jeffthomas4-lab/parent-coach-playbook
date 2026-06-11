@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Fixed 'dribbles' to 'cradles' for lacrosse vocabulary. Stick-only check; no body contact described."
@@ -44,3 +44,15 @@ A poke check is the legal way to take the ball from an attacker. Stick goes out,
 **If they're struggling:** Slow the attacker. Or drop the contact and just practice the stick extension.
 
 **If they've got it:** Add a goal. The drill becomes a 1v1 where the defender tries to strip and the attacker tries to score.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

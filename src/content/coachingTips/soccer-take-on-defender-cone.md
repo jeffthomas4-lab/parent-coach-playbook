@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Read-the-defender framing avoids fancy-move pitfall."
@@ -44,3 +44,15 @@ Now the defender doesn't chase. They're set. This teaches the attacker to read w
 **If they're struggling:** Move the starting point closer to 10 feet. Slow the defender down by having them stand still without reaching.
 
 **If they've got it:** Defender can now move to pressure. Dribbler has to read the movement and adjust.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

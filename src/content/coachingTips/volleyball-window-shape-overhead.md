@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pre-ball window shape. Forehead-touch trick is a sharp teaching aid."
@@ -44,3 +44,13 @@ The set starts with the hand shape. Both hands above the forehead, fingers sprea
 **If they're struggling:** Have them touch their own forehead with their thumbs first, then move hands up an inch above. That's the spot.
 
 **If they've got it:** Add a balloon. They set the balloon up in the air using the window position.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

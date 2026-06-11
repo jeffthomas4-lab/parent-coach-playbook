@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Classic drill, well-paced explanation, age variation good."
@@ -41,4 +41,4 @@ Dribbling starts with confidence and touch. This game forces ball control becaus
 
 **What to look for:** Ball control under pressure. Kids who are dribbling with their eyes up will see the shark coming. Kids who only look at the ball will get tagged.
 
-**Variation:** For younger kids (5-6), start with one shark. For older kids (7), add a second shark so the pace is faster.
+**Variation:** For younger kids (5-6), start with one shark. For older 

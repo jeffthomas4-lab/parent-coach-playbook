@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Three-player triangle formation. Catch-first progression is age-appropriate."
@@ -43,3 +43,15 @@ Serve-receive is when a team is in trouble most. This drill teaches positioning 
 Passers should position themselves to receive. If they're standing in the middle, they can't cover both sides. The pass should go to the setter, not over them. If serves are easy, challenge the passers by serving more difficult balls. The setter should communicate and call for the ball.
 
 **Variation:** The setter now hits or sets the ball instead of catching. This requires the passers to give the setter better passes and builds the complete skill.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

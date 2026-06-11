@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid intro drill. Lead paragraph runs five sentences and could be tightened."
@@ -44,3 +44,13 @@ Walking and bouncing at the same time is the next step. The ball stays in front.
 **If they're struggling:** Shorten the distance. Walk half a baseline (about 20 feet). Use a softer, bigger ball.
 
 **If they've got it:** Add a command: when you say "stop," they plant their feet and stop the ball immediately. Then you point left or right and they dribble that direction.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

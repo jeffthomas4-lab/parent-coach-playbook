@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Stance teaching with cue mnemonic. No contact."
@@ -45,3 +45,13 @@ Linemen win with their feet first. A solid 3-point stance is where it starts. Th
 **If they're struggling:** Have them practice without the down hand first. Just stagger and bend. Add the hand down after 3 reps.
 
 **If they've got it:** Have them hold the stance while you tap their shoulder. Their job is to stay balanced and not fall over.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

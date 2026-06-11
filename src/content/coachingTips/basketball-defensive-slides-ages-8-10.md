@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body had been truncated; completed with struggle/got-it tiers."
@@ -44,3 +44,13 @@ Defensive footwork is taught before defensive concepts. This drill isolates the 
 **If they're struggling:** Cut to 3 steps per direction. Slow the calls so they can set their feet.
 
 **If they've got it:** Add a basketball. They slide while you walk a ball side to side. Hands track the ball.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

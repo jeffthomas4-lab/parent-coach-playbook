@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Drill mentions heading or volley as finishing options at 11-12 (compliant with US Soccer 11+ heading guidance), but doesn't include rule note about heading restrictions. Volley is the safer default for younger groups."
@@ -44,3 +44,13 @@ Corner kicks are set-piece scoring opportunities. The near-post corner is the si
 **If they're struggling:** Kicker passes instead of kicks. Easier control.
 
 **If they've got it:** Add a defender who marks the attacker. Now it's contested.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

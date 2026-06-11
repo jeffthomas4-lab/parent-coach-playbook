@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "No-ball start for ages 5-7 is the right call. Stance/Slide/Mirror/Hands cue is consistent."
@@ -43,3 +43,13 @@ The defensive stance is the foundation. This drill teaches the position without 
 **If they're struggling:** Move even slower. Do 15 seconds instead of 20. Let them stand more upright while they learn the movement.
 
 **If they've got it:** Increase to 30 seconds. The offensive player moves faster.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

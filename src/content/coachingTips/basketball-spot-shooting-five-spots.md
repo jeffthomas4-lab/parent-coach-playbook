@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard five-spot drill. Lead paragraph has four sentences."
@@ -44,3 +44,15 @@ Spot shooting builds range and consistency. The spots are baseline, wing, top of
 **If they're struggling:** Move closer to 10 feet. Reduce to 2 shots per spot. Do 3 spots instead of 5.
 
 **If they've got it:** Move back to 15 feet. Time them. Track makes vs. attempts. Adds scoring to the drill.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

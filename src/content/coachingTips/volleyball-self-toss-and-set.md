@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solo set rep. Fingertip vs palm cue is the keeper detail."
@@ -44,3 +44,13 @@ The first set rep should be predictable. The ball comes from the player's own to
 **If they're struggling:** Catch the toss instead of setting it. Build the window position with the catch first.
 
 **If they've got it:** Continuous setting (don't catch, just keep setting). Goal: 5 in a row without dropping.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

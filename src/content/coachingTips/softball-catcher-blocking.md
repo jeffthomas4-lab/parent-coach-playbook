@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Catcher contact flagged sensitive. Cues correct; changed soft baseballs to softballs."
@@ -45,3 +45,15 @@ A catcher's job is to stop all pitches, even bad ones. Blocking is the skill tha
 **If they're struggling:** Start with the catcher standing. Pitcher throws waist-high pitches so they can see the motion first.
 
 **If they've got it:** Add a runner on third. Practice blocking with a runner and timing a throw home for tag plays.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Drop-the-shoulder cue is a concrete fix, lean is the whole skill."
@@ -44,3 +44,15 @@ A tight turn changes direction without slowing down. The body leans into the tur
 **If they're struggling:** Bigger square (15 feet). More room for the turn.
 
 **If they've got it:** Add a puck. Tight turn while controlling the puck. Or shrink the square to 8 feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Agility cones →](/go/agility-cones/) — for stickhandling courses and skating drills.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

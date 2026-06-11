@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Fixed garbled lead (was 'between the ball and the defender'). Profile-only positioning, no contact, but tackle-prep so flagged sensitive."
@@ -45,3 +45,13 @@ Profile means getting square to the ball carrier with your hips, shoulders, and 
 **If they've got it:** Have the ball carrier pick up speed. Now the defenders have to stay square while the ball carrier is moving faster.
 
 Note: This is the first step toward the Hawk Tackle developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

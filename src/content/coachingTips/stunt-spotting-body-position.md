@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ The spotter is the safety net. Good spotting body position prevents most injurie
 **What to look for:** Stable base. If the spotter is leaning or off-balance, they can't catch. Eyes stay up.
 
 **Variation:** Add a "fall" call where the flyer pretends to slip. Spotter's job is to immediately bring hands to the hips and steady the flyer (or catch them in a cradle motion).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth mouthguard →](/go/multi-sport-mouthguard-youth/) — required for most stunt and cheer programs.
+
+[Full stunt gear guide →](/what-to-buy/stunt/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

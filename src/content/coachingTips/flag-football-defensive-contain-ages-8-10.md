@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Fixed 'makes the tackle' to 'pulls the flag'. Completed truncated variation."
@@ -44,3 +44,15 @@ Contain is a defensive job, not a position. Young defenders think they should ru
 The outside defender should have a wide base, not be leaning forward. If they're falling forward trying to chase, they're too aggressive. The runner's cut back tells you the contain is working. If the runner reaches the corner, the defender opened the edge. If the inside defender gets there before the runner cuts, the outside defender is doing their job. The two defenders should communicate: "You take the edge, I'll clean up inside."
 
 **Variation:** For the older end of this age group, add motion or a second runner trailing the first. The contain defender has to identify which runner is the threat and stay disciplined on the edge.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

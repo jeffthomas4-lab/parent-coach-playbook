@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Touches pitch count for 11-12 year olds; flagged as sensitive (arm care). Voice clean."
@@ -44,3 +44,15 @@ A real bullpen has structure. Specific pitches at specific spots. Rest between s
 **If they're struggling:** Cut to 15 pitches total. Drop the changeup set.
 
 **If they've got it:** Add a hitter standing in the box (no swinging). The pitcher has to deal with a real batter's eye. Or track pitch results: how many strikes, how many in the desired location.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

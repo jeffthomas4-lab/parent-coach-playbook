@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ A new glove is stiff. A kid's hand inside a stiff glove can't squeeze, so balls 
 
 **If they're struggling:** Use a softer glove or a glove a size too big. Some kids' hands are not ready for their own glove yet.
 
-**If they've got it:** Have them flex the glove with their eyes closed. They have to feel the open and closed positions without looking.
+**If they've got it:** Have them flex the glove with their eyes closed. They have to feel the open and c

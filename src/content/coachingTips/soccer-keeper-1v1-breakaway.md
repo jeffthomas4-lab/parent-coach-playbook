@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean keeper drill. Soccer vocab correct."
@@ -44,3 +44,13 @@ This drill is for kids who want to play goalkeeper. The breakaway is the most cr
 **If they're struggling:** Start the attacker closer (15 feet). Keeper has more time to react.
 
 **If they've got it:** Attacker gets more time and space. Keeper has to read the situation faster.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

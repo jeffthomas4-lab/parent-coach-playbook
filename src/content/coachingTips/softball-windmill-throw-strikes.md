@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Strike-zone control work; pitch count rules called out."
@@ -46,3 +46,15 @@ Once the motion is smooth, control is the next priority. A pitcher who can throw
 **If they're struggling:** Throw from 35 feet. Focus on just hitting the zone, not speed. Do 20 pitches, not 30.
 
 **If they've got it:** Work on fastball location (corners, edges). Track pitch count closely. Ice shoulder and forearm after pitching.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

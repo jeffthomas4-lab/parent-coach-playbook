@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cone funnel teaches transfer; clean. Changed soft baseballs to softballs."
@@ -44,3 +44,15 @@ The funnel teaches the kid where the ball goes after they catch it. Two cones fo
 **If they're struggling:** Move the cones wider apart. Move closer to 8 feet.
 
 **If they've got it:** Narrow the cones to 2 feet apart. Roll from the side so they have to move their feet and still funnel.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

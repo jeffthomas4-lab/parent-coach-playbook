@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,13 @@ A slow ground ball with a fast runner is the hardest play in baseball. The field
 **If they're struggling:** Drop the throw. Just have them field the slow roller and pick it up cleanly while charging. Add the throw next time.
 
 **If they've got it:** Add a runner. The runner starts at home plate. They run to a base 60 feet away when you roll the ball. The fielder has to beat the runner with the throw.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

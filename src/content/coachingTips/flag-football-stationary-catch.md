@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "See-Reach-Squeeze-Tuck cue. Solid for ages 5-7."
@@ -44,3 +44,13 @@ Most young kids try to catch the ball against their chest. The football bounces 
 **If they're struggling:** Move closer. Use a softer ball. Throw lower so the ball is at chest height.
 
 **If they've got it:** Move back to 15 feet. Add side-to-side throws so they have to step.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

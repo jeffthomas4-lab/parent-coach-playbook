@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Variation was truncated. Completed it."
@@ -44,3 +44,15 @@ By 8-10, young players can pass and receive with control. This drill builds timi
 The pass should arrive flat on the ice, not bouncing. A bouncing pass is too hard. The receiver should be reaching forward slightly to meet the pass. The puck should stick to the receiving player's stick, not roll past. If a player is reaching backward for the pass, the passer is leading too far. Communication matters: partners should call "Ready" or "Here" to stay in sync.
 
 **Variation:** Add a third partner so passes go in a triangle. Or add a defender in the middle who tries to poke check the puck between exchanges.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

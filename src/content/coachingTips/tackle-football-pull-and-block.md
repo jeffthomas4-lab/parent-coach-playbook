@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pulling lineman to live block on edge defender; sensitive flagged for partner contact."
@@ -44,3 +44,15 @@ Pulling is when an interior lineman leaves the line to go block someone on the e
 **If they're struggling:** Slow it down. Have them walk through the pull first. Three steps lateral, three steps upfield, then plant and punch.
 
 **If they've got it:** Add movement to the defender. The defender can shuffle side to side. Now the blocker has to adjust their angle to hit them.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

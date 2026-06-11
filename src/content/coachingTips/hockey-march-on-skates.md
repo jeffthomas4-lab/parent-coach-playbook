@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid early skating drill. Knee-to-hand cue is concrete."
@@ -44,3 +44,15 @@ Marching on skates teaches kids to pick up the feet, not shuffle. A shuffler sta
 **If they're struggling:** Slow it down. Or hold a milk crate for balance.
 
 **If they've got it:** March faster. Or add a glide between each march step (march, march, glide, march, march, glide).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Agility cones →](/go/agility-cones/) — for stickhandling courses and skating drills.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

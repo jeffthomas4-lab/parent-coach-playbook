@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Good lead about priming the muscles; reads tight."
@@ -44,3 +44,13 @@ The first shot of practice should look like every other shot. Form shooting from
 **If they're struggling:** Stay at 3 feet. Or shoot one-handed (no guide hand) to feel the wrist snap clearly.
 
 **If they've got it:** Add a back-cut after each shot: shoot, cut to half court, sprint back, shoot again.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

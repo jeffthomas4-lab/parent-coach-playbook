@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean stance teaching with cue mnemonic. No contact."
@@ -45,3 +45,13 @@ DBs, receivers, and running backs don't need a hand on the ground. The 2-point s
 **If they're struggling:** Have them widen their stance a bit more so they feel more stable.
 
 **If they've got it:** Have them shuffle left and right while staying in the 2-point stance. They should stay low and balanced the whole time.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

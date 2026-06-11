@@ -15,7 +15,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Generic-tagged. Uses 'defenseman' (boys'-default for generic). Riders close space, no body checks described."
@@ -39,3 +39,15 @@ Riding is offensive pressure on the clear. This drill teaches young players to f
 Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the clear toward the sideline or toward waiting midfielders.
 
 **Variation:** Add more riders. Three offensive players now apply pressure. This teaches spacing and communication among multiple pressuring players.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[Agility cones →](/go/agility-cones/) — for clear lanes, dodges, and field markers.
+
+[Full lacrosse gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

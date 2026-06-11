@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -42,3 +42,13 @@ A boat is one body or it's eight people fighting each other. Call-and-response b
 **What to look for:** Everyone catches at the same moment when the call lands. If a rower is early or late, they hear the gap in the response.
 
 **Variation:** Add a power-ten call — "power ten in two, that's one… two…" then the boat hits ten harder strokes together.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Resistance band set →](/go/resistance-bands-set/) — land-based strength and conditioning supplement.
+
+[Full crew gear guide →](/what-to-buy/crew/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

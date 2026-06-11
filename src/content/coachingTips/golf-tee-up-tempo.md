@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Every junior golfer swings too fast. This drill resets the tempo.
 **What to look for:** A smooth transition at the top. If the kid is whipping the club down, they're skipping "and."
 
 **Variation:** Try a slower count, "one-two-three-and-four," for ages 8-9. Builds patience into the swing.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — useful for alignment and target drills.
+
+[Full golf gear guide →](/what-to-buy/golf/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

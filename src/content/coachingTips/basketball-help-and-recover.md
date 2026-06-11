@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tight, role-by-role explanation; reads cleanly."
@@ -44,3 +44,13 @@ Help defense is when you leave your player to stop a drive, then get back to you
 **If they're struggling:** Have the driver slow down the attack. Give the helper more time to recover. Reduce the distance.
 
 **If they've got it:** Driver passes faster. Helper must sprint to recover.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

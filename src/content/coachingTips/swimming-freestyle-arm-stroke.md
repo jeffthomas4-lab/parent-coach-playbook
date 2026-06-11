@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Freestyle arm stroke with high-elbow cue and lengths counted."
@@ -44,3 +44,13 @@ Freestyle arms work in alternating cycles. One arm pulls underwater while the ot
 **If they're struggling:** Drop the kick and just do arms while standing. Or do arms with a pull buoy between the legs.
 
 **If they've got it:** Add bilateral breathing (breathe every 3 strokes, alternating sides).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Sensitive flag for diving injury risk. Body-mechanics call-out (knees do NOT hit floor) is critical."
@@ -43,4 +43,4 @@ The dive is the last-resort defense. Ball is going to land 6 feet in front of th
 
 **If they're struggling:** Skip the dive. Practice forward stretch with a step instead. Build the dive when the kid is ready.
 
-**If they've got it:** Add lateral dives (left and right) instead of just forward.
+**If they've got it:** 

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Fixed yards to feet on basketball court. Body had been truncated; completed with struggle/got-it tiers."
@@ -43,3 +43,15 @@ Dribbling control improves when kids have to do it under pressure. Dribble tag f
 **If they're struggling:** Shrink the square to 20 by 20 feet so taggers are easier to spot. Allow a two-hand carry once per round if they lose the ball.
 
 **If they've got it:** Add a second tagger. Or shrink the square so traffic is denser and dribblers must change direction more often.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

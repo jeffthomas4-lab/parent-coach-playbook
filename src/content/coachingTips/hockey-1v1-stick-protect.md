@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "11-12, no body checks. Drill uses body position and shielding only, defender stick-checks. Within USA Hockey age rules."
@@ -44,3 +44,15 @@ Protecting the puck is body position. Defender on one side, puck on the other, b
 **If they're struggling:** Slower defender. Or no contact (defender just stick-checks).
 
 **If they've got it:** Two defenders. Or open ice (no boards) so the player has nothing to lean on.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

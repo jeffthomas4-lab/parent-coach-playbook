@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Minor: free throw line is 15 feet, three-point arc is much further; the 'intersection' framing is loose. Body left as-is."
@@ -43,3 +43,13 @@ The elbow is a key shooting spot for bigs and wings. It's at the intersection of
 **If they're struggling:** Move closer to 12 feet. Use a slower, softer pass. Reduce to 3 shots per elbow.
 
 **If they've got it:** Add a defender playing 50% pressure on the shooter. Simulates game-like contest.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

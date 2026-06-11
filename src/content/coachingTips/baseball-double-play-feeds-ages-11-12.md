@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -40,3 +40,13 @@ A double play starts with the shortstop making the first out at second base. The
 5. Do 12 reps. Rotate kids through all three positions.
 
 **What to look for:** Feed accuracy and timing. A bad feed that's too high, too low, or behind the second baseman kills the double play. Also watch the second baseman's footwork around the bag. They should hit the bag on the inside of the baseline so they can throw to first without getting h
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

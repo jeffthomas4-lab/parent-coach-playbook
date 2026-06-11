@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Overhand here means non-pitch throwing motion, which is correct. Pitching is windmill; this is a fielding throw drill. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ Softball throwing is the same overhand motion as baseball. Most young kids sidea
 **If they're struggling:** Move closer to 5 feet. Use a softer ball. Skip mechanics and just have them hand the ball in the right body position.
 
 **If they've got it:** Move back to 12 feet and add the Shuffle. They take a small step with the back foot toward the front foot before the throw.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

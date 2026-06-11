@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,15 @@ Timing is what makes 7v7 work. Without pads or a pass rush, the only thing that 
 **What to look for:** The ball lands in the receiver's hands at the cone, not after they've drifted past it. If the throw is consistently late, the QB is waiting too long. If it's consistently early, the receiver is rounding the cut.
 
 **Variation:** Add a defender at the line who shadows the route but doesn't break the catch. Forces both the QB and receiver to commit to the timing instead of waiting to see how the defender plays it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for field setup and route markers.
+
+[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

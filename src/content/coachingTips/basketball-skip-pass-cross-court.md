@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Skip pass drill, sport language correct. Triangle setup is clear."
@@ -44,3 +44,13 @@ The skip pass goes over a defender to hit a teammate on the opposite wing. It's 
 **If they're struggling:** Use a bigger, softer ball. Reduce the distance. Have B move further away so the pass is easier.
 
 **If they've got it:** Add a defender who plays soft pressure on B. The skip passer must time the pass and throw it before the defender can cut it off.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

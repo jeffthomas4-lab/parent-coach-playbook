@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Time-based intervals; flag sensitive for distance-effort safety."
@@ -44,3 +44,13 @@ Time-based intervals are simpler than distance-based for younger runners. 1 minu
 **If they're struggling:** 30 seconds on, 1 minute off. Build up.
 
 **If they've got it:** 90 seconds on, 1 minute off. Or 6 rounds of 2 minutes on, 1 minute off.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

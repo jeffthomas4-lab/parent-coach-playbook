@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solid drill. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ Charging eliminates extra bounces and reduces reaction time for the batter. A fi
 **If they're struggling:** Start 15 feet away. Roll slower. Have them charge without fielding first, just to feel the motion.
 
 **If they've got it:** Roll from different angles. Add a runner. Throw the runner out at a base.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

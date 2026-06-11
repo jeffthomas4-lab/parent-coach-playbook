@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clear four-phase cue and a useful diagnostic. Push-direction note is gold."
@@ -44,3 +44,13 @@ A C-cut is the basic forward skating push. The blade pushes out and around in a 
 **If they're struggling:** Slow it down. Push, hold the glide for 2 seconds, then push again. Build the rhythm.
 
 **If they've got it:** Do C-cuts on one foot only (one foot pushes, the other stays planted as the glide).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

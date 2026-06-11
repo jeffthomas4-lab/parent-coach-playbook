@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Bag-only blocking; sensitive flagged for blocking instruction with bag impact."
@@ -45,3 +45,13 @@ A blocking bag gives kids something solid to push. They get to feel what it's li
 **If they're struggling:** Let them take two steps before they punch. That gives them momentum.
 
 **If they've got it:** Do the same thing but now they have to move the bag 7 yards. Or add a second blocker to help push the bag.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

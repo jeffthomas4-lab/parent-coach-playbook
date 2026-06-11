@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Sharp motions sell every cheer. Sloppy motions read amateur. This drill builds t
 **What to look for:** Hard stops at each position. Fists closed. Elbows locked. No wobble between positions — the arms snap from one to the next.
 
 **Variation:** Run the drill with eyes closed for the last four reps. Forces muscle memory.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth cheer shoes →](/go/cheer-shoes-youth/) — lightweight split-sole shoes for stunts and tumbling.
+
+[Full cheer gear guide →](/what-to-buy/cheer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

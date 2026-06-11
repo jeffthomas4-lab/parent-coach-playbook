@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass. Good mental-toughness framing."
@@ -44,3 +44,15 @@ Real pitching isn't throwing strikes for fun. It's throwing strikes when the cou
 **If they're struggling:** Drop the walk count. Just have them try to throw 3 strikeouts in a row.
 
 **If they've got it:** Add a real batter who takes pitches but does not swing. Now the pitcher has to pitch to a hitter's eye, which moves and reacts.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[28-inch youth bat →](/go/baseball-bat-28in/) — drop-10 USA-stamped bat for ages 8–10.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

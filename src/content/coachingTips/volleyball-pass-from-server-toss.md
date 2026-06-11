@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Bridge from drill to serve receive. Platform angle teaching point is the keeper."
@@ -44,3 +44,15 @@ In a real game, the bump comes off a serve. The coach toss is the bridge. Ball c
 **If they're struggling:** Slower coach tosses. Bigger target (a chair or bucket the pass has to land in).
 
 **If they've got it:** Add real serves from across the net. Add multiple passers (rotate every 3 reps).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

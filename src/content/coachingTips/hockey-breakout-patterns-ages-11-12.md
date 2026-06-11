@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body was truncated mid-sentence at end. Completed it."
@@ -43,3 +43,15 @@ Most possessions start with a breakout from the defensive zone. At 11-12, player
 The D-to-D pass should be quick and accurate. If it's bouncing or off-target, the opposite D won't have an easy pass to the outlet. The forwards need to be positioned where they can receive and immediately pass. If an outlet is 10 yards away, the pass is too long. The center should be trailing at the blue line before the outlet pass is made, so the puck arrives to a player already moving with speed.
 
 **What to fix:** If the breakout breaks down, look at timing first. Forwards who stop and wait for the pass kill the play. They should be moving when the puck reaches them.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Agility cones →](/go/agility-cones/) — for stickhandling courses and skating drills.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

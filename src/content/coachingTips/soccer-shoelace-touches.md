@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Foot-feel work for 5-7s; coaching point on rolling vs. tapping is sharp."
@@ -44,3 +44,13 @@ Shoelace touches build feel for the ball. The top of the foot has less surface a
 **If they're struggling:** Let them hold the ball and practice the foot motion without the ball first. Then add the ball.
 
 **If they've got it:** Count how many touches in a row. Make it a friendly competition.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

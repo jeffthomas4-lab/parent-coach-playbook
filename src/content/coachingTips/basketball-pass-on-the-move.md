@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "On-rhythm vs planted-stance contrast is clear."
@@ -45,3 +45,13 @@ Passing while standing still is easy. Passing while moving is game reality. This
 **If they're struggling:** Slow to a near-stop between passes. Let them gather balance before passing. Reduce the distance.
 
 **If they've got it:** Increase the walk to a jog. Do diagonal passes (left to right, right to left) instead of straight ahead.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

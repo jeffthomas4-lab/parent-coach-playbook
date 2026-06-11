@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Changed soft baseballs to softballs in equipment line."
@@ -44,3 +44,13 @@ Backhand fielding means the ball is going away from the throwing-side arm. It re
 **If they're struggling:** Roll slower. Stay at 12 feet. Have them charge the ball instead of moving laterally.
 
 **If they've got it:** Roll from 20 feet away. Mix forehand and backhand in random order. Add a runner and throw to a base.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "First hitting drill; ball term changed to softballs."
@@ -44,3 +44,13 @@ The first hitting drill teaches the kid that the bat has to hit the ball, not th
 **If they're struggling:** Lower the tee to belt height or knee height. The closer to the ground, the easier the contact for some kids.
 
 **If they've got it:** Move the tee slightly forward (in front of the front hip). Now they have to hit the ball out in front. That's the next skill.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "First-glove drill is well-framed. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ The first time a kid uses a glove to field, they need to feel where the glove go
 **If they're struggling:** Get closer. Slower rolls. Use a bigger ball.
 
 **If they've got it:** Roll slightly to one side or the other. Now they have to step before they Drop.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

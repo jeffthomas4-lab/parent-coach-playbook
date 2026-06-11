@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -43,3 +43,13 @@ Shoulder sit is the entry stunt. Base position matters more than flyer position.
 **What to look for:** Base's back is straight, knees slightly bent. If the base is leaning back, the flyer will tip backward.
 
 **Variation:** Add a one-handed wave from the flyer to test stability.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth mouthguard →](/go/multi-sport-mouthguard-youth/) — required for most stunt and cheer programs.
+
+[Full stunt gear guide →](/what-to-buy/stunt/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

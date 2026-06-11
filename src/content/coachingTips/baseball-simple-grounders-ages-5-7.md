@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'reach for the ball with their ha'."
@@ -44,3 +44,15 @@ Fielding starts with the feet and the glove staying low. Grounders teach this fa
 **If they're struggling:** Roll the ball from 8 feet away instead of 15, and roll it slower. Use one tennis ball only so the bounce is soft and predictable.
 
 **If they've got it:** Add a target. After the catch, they throw the ball to a cone 20 feet to your right. Make the throw count too.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

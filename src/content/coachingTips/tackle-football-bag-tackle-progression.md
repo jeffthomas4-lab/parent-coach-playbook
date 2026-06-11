@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Bag-only tackling progression for ages 8-10; Hawk Tackle citation included. Sensitive flagged for tackle instruction."
@@ -46,3 +46,13 @@ A heavy bag teaches the Hawk Tackle motion without the risk of head-to-head cont
 **If they've got it:** Speed it up. Now they're sprinting full speed and need to keep low and under control.
 
 Based on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

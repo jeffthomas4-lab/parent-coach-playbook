@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ Running straight is easy. Weaving teaches them to use both feet and steer the ba
 
 **If they're struggling:** Space the cones 5 feet apart instead. Move slower through the course.
 
-**If they've got it:** Reduce spacing to 3 feet. Time them. Faster runs build confidence.
+**If they've got it:** Reduce spacing 

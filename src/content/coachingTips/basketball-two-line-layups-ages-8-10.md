@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated body with two voice-matched closing lines. Standard two-line layup drill, sport language clean."
@@ -43,3 +43,15 @@ This is the standard layup drill that teaches footwork, touch, and finishing und
 **If they're struggling:** Remove the defender. Slow down the dribble approach. Drop to 15 feet so the run-up is shorter.
 
 **If they've got it:** Defender contests harder. Add a counter: if the defender takes the layup away, the shooter pulls back for a short jumper instead.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cooperative rally; reads slightly basic but voice is clean."
@@ -44,3 +44,15 @@ Tennis is a rally game. Whoever can keep the ball in play longest wins. Rally to
 **If they're struggling:** Smaller court (service boxes only). Bigger margin for error.
 
 **If they've got it:** Add target zones. Each shot has to land in a specific zone (cross-court only, for example).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

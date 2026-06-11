@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pre-ball platform shape. Balloon progression is a good young-age fallback."
@@ -44,3 +44,13 @@ The forearm pass (the bump) starts with a platform. Arms straight, hands togethe
 **If they're struggling:** Have them lock the elbows by pressing the arms together. Or use a balloon to bump and feel the platform shape.
 
 **If they've got it:** Add a balloon or beach ball. They form the platform and bump the ball softly.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

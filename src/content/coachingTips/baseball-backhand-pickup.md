@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass. Good specifics on body position."
@@ -44,3 +44,13 @@ Most ground balls are easy because the glove gets in front of the body. The hard
 **If they're struggling:** Stay on the knee. Don't add the standing version yet. The position is the whole lesson.
 
 **If they've got it:** Roll harder and deeper to their throwing-hand side. They have to take two quick steps before they drop into the backhand.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

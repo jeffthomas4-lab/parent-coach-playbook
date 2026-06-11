@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'shoot with purpose, not'."
@@ -44,3 +44,13 @@ Finishing is a skill that improves with volume. This drill gives a shooter 20 sh
 **If they're struggling:** Drop the touch requirement and let them set the ball before shooting. Move the feed to 12 yards out so the angle is shorter.
 
 **If they've got it:** Add a defender closing from 8 yards behind. The shooter has one touch and then a shot, with pressure arriving at impact. Track the goals; the bar is 12 of 20.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 5 soccer ball →](/go/soccer-ball-size5/) — regulation ball for ages 13 and up.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

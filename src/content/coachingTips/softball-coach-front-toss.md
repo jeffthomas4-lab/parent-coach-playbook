@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Front toss is age-appropriate; underhand toss is correct vocabulary. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ Front toss is live pitching at a comfortable speed. The ball is still coming slo
 **If they're struggling:** Stand 15 feet away. Toss softer. Move the ball to the middle of the plate.
 
 **If they've got it:** Move to 25 feet. Toss slightly faster. Move the ball to different zones (high, low, inside, outside).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

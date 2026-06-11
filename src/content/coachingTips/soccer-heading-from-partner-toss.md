@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Heading drill at 11-12, includes US Soccer rule note. Sensitive flag for head-injury topic."
@@ -44,3 +44,13 @@ US Soccer guidelines limit heading before age 11-12. This is introductory headin
 **If they're struggling:** Toss from closer distance. Use a softer ball.
 
 **If they've got it:** Toss from 10 feet away. Increase the height of the toss.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

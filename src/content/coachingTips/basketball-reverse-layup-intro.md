@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Backboard reach-around explained well."
@@ -45,3 +45,13 @@ The reverse layup goes around the back of the rim. It's used when the defender i
 **If they're struggling:** Move closer to the basket (5 feet). Slow the approach. Practice the footwork without the ball first.
 
 **If they've got it:** Do reverse layups with a defender playing light pressure. Builds skill under game conditions.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Catch-on-the-run with route timing. Clean."
@@ -44,3 +44,15 @@ A receiver who slows down to catch the ball gets caught from behind. The catch h
 **If they're struggling:** Slower throws. Or pre-throw before the receiver runs (so the ball is in the air at the right time without timing pressure).
 
 **If they've got it:** Add a defender 2 yards behind. Receiver has to outrun and catch.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

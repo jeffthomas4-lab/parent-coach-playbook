@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tee progression to front-hip contact; ball term fixed."
@@ -44,3 +44,13 @@ Now the tee moves forward. Front hip contact teaches the kid to extend the arms 
 **If they're struggling:** Move the tee back to belly button. Focus on the step without the swing.
 
 **If they've got it:** Move the tee to the outside corner (further away from the body). They have to extend to reach it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

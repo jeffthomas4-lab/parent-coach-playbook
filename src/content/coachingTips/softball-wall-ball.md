@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Wall-rebound reaction drill; ball term fixed."
@@ -44,3 +44,13 @@ Wall ball teaches reaction time and foot movement. The ball bounces back unpredi
 **If they're struggling:** Stay at 8 feet. Throw harder at the wall so it bounces closer. Use a softer ball.
 
 **If they've got it:** Move to 15 feet. Throw at an angle so the rebound comes back unpredictably. Add a second ball for rapid throws.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

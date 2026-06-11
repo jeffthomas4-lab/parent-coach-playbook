@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "18-foot free kick distance is short relative to typical youth scenarios; consider verifying against age-group standards. Drill is otherwise solid."
@@ -44,3 +44,13 @@ Free kicks teach technique and strategy. A wall blocks the direct shot. The runn
 **If they're struggling:** Move the free kick to 15 feet. Closer is easier.
 
 **If they've got it:** Move back to 20 feet. Add defenders who pressure the kicker.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

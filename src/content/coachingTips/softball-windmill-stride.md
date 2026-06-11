@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Stride-and-arm timing drill; pitch-count rule included."
@@ -45,3 +45,15 @@ A stride adds power to the windmill. The pitcher steps forward with the back leg
 **If they're struggling:** Have them do wind-ups without the stride first. Add the stride after 5 reps.
 
 **If they've got it:** Increase stride length. Add a rest day rule: no pitching back-to-back days. Track pitch counts: max 35 pitches per day for youth.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

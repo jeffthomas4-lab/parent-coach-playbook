@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Good isolation drill for elbow position."
@@ -43,3 +43,13 @@ One-foot shooting teaches balance and isolation. It forces kids to focus on the 
 **If they're struggling:** Use a lower hoop (6 feet). Move closer to 3 feet. Use a softer ball. Skip the balance drill and let them stand normally while they build confidence.
 
 **If they've got it:** Add 2-foot form shooting from 6 feet. Keep the same Set, Bend, Lift, Cookie cues.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

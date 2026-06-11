@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated ending."
@@ -44,3 +44,15 @@ After 30 reps, the pitcher will have thrown 10 actual pitches from a mechanicall
 **If they're struggling:** Drop to Step 1 only. Hold the balance point for five seconds. No throws until the hold is steady.
 
 **If they've got it:** Have them throw to spots — inside corner, outside corner, low. Mechanics are a tool, not the goal.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

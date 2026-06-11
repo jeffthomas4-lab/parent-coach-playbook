@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pivot-first cue is the right teaching point."
@@ -44,3 +44,13 @@ The rebound isn't the end of the play. It's the start. Fast teams turn defensive
 **If they're struggling:** Drop the wing. Just practice rebound and pivot. Add the outlet next session.
 
 **If they've got it:** Add a defender harassing the rebounder. The pivot and outlet have to happen under pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

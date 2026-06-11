@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "DP drill with sliding contact at second flagged sensitive."
@@ -42,3 +42,13 @@ A double play is won or lost at second base and first base. The feed to second i
 **What to look for:** Feed accuracy, footwork at second, and throw to first. One breakdown anywhere and it's not a double play.
 
 **Variation:** For younger kids (13), do the drill without a runner so they focus on the mechanics. For older kids, add a runner sliding into second so they practice the finish under game conditions.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

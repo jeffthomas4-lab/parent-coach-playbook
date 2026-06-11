@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated variation line."
@@ -43,3 +43,15 @@ Cradling is a rhythm. Young players need to feel the ball staying in the pocket 
 The cradle is an active motion with the wrists and arms, not a grip. If a player is holding the stick tight, they'll lose the ball. The stick should move with the player's body, not out in front. If the ball is rolling or bouncing, the cradle is too loose or off-rhythm. By the run-through, the cradle should feel automatic.
 
 **Variation:** Add direction changes. Coach calls "left" or "right" and the player cuts that way without losing the ball. The cradle has to hold through the change of direction.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.
+
+[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

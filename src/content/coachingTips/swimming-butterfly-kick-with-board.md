@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Dolphin kick on board; clean undulation cue."
@@ -44,3 +44,13 @@ Butterfly is the hardest stroke. The dolphin kick is its foundation. Both legs t
 **If they're struggling:** Do the dolphin kick on the back instead. Easier to feel the undulation.
 
 **If they've got it:** Drop the kickboard. Streamline arms overhead. Or add a butterfly arm stroke.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

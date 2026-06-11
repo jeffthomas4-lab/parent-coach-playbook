@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean backhand build drill; correct tennis vocab."
@@ -44,3 +44,15 @@ The backhand is most kids' weaker side. Practice closes the gap. From a coach fe
 **If they're struggling:** Slower feeds. Move closer to the net.
 
 **If they've got it:** Mix forehands and backhands randomly. Player has to read the side and react.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.
+
+[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.
+
+[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

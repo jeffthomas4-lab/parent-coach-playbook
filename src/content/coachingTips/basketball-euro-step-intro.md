@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Walk-the-footwork-first cue is the right teach for an advanced finish."
@@ -45,3 +45,13 @@ The Euro step is an advanced dribble move. The player plants one foot, steps the
 **If they're struggling:** Slow the approach. Walk the footwork. Do the steps without the ball first, then add the ball and approach.
 
 **If they've got it:** Add a defender. The defender tries to stay in front. The Euro step should leave them behind.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

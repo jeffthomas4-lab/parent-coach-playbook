@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Foundational passing accuracy. Solid teaching points on platform shape."
@@ -43,3 +43,15 @@ The forearm pass is where volleyball skill begins. Young players need to hit a s
 The pass should be controlled, not hard. If the ball is being blasted, it's out of control. The platform (arms) should be flat, with hands together. The ball should leave the platform at about waist height with a smooth arc. If the ball is wobbling or spinning, the platform is off. Feet should be shoulder-width apart, knees bent, ready to move.
 
 **Variation:** Move the target to the left and right. Players now have to adjust their platform angle to redirect the ball. This teaches directional passing without introducing new skills.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

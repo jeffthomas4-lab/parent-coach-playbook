@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'tee the ball slightly for'."
@@ -47,3 +47,15 @@ Live tee work teaches kids to track the ball as if someone is throwing it, even 
 **If they're struggling:** Drop the pace. Wait three seconds between "Hit" calls and let them reset their breath. Cut the set to 10 reps total.
 
 **If they've got it:** Mix two ball heights in the same set. Put 5 balls high, 5 low, and don't tell them which is coming until you load it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Batting trainer →](/go/baseball-trainer/) — tee and trainer setup for solo swings.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

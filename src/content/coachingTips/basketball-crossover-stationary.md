@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Hands-meet-at-top-of-bounce cue is the right teach for ages 8-10."
@@ -44,3 +44,13 @@ The crossover dribble moves the ball from one side of the body to the other in o
 **If they're struggling:** Slow it down. Dribble on the right 5 times, then switch to left 5 times without crossing. Build up to the crossover.
 
 **If they've got it:** Do crossovers while slowly walking forward. Keep the same low ball and smooth hand exchange. No rushing.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Kickboard flutter for 5-7; clean."
@@ -44,3 +44,13 @@ Young swimmers need to build leg strength and rhythm before worrying about full 
 The kick should be consistent and rhythmic. If a swimmer is kicking from the knee instead of the hip, their efficiency is low. The legs should move up and down together, alternating. If the legs are moving wildly or slowly, the rhythm is off. Young swimmers should be able to kick the full length without stopping, though they may be tired.
 
 **Variation:** Add a challenge: kick faster on the second 25, maintaining control. This teaches pace variation.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

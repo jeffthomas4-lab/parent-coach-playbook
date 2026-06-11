@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Solo wall rep drill. High-volume touches in driveway setting."
@@ -43,4 +43,4 @@ Wall bump is the volleyball version of wall ball. The wall returns every bump. H
 
 **If they're struggling:** Move closer to 3 feet. Use a softer ball.
 
-**If they've got it:** Move back to 8 feet. Or bump-set-bump (alternate platform bump and overhead set).
+**If they've got it:** Move back to 8 feet. Or bump-set-bump (alternate pl

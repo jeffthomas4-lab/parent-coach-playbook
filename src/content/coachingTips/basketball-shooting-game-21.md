@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Classic shooting game. Note: 'corner threes' line is inconsistent with corner spot listed at 3 feet, not beyond the arc."
@@ -42,3 +42,13 @@ editorial:
 **If they're struggling:** Reduce winning score to 15 points. Move all spots closer. Give 2 points for makes instead of 1.
 
 **If they've got it:** Play for 25 points. Increase spot distances to three-point line.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

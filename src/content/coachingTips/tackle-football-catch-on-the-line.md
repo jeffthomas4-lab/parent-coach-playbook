@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Beginner catch drill, hands-not-body focus. No contact."
@@ -45,3 +45,13 @@ The first catching drill teaches kids to see the ball and catch it with their ha
 **If they're struggling:** Toss it softer. Throw it so it's easy to catch. Get them feeling success first.
 
 **If they've got it:** Move back to 15 feet. Throw it a little harder. Still chest height.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clap-cue progression is a nice touch. 'Real change of pace means they look like they're stopping' is a sticky cue."
@@ -44,3 +44,15 @@ Change of pace makes the defender commit to a wrong speed. You go fast, they rea
 **If they're struggling:** Use cones to mark the speed change zones so they know exactly where to shift tempo. Practice 3 tempo changes instead of 4.
 
 **If they've got it:** Add decision making. Tell them to explode when you clap. Slow when you're silent. Keeps them reacting instead of following a set pattern.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

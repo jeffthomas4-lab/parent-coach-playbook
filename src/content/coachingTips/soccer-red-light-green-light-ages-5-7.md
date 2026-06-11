@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Game-based 5-7 warm-up. Soccer vocab correct."
@@ -41,4 +41,4 @@ This is the classic game with a ball. It teaches first touch, ball control, and 
 
 **What to look for:** Deceleration and control. Kids who can stop fast will win. Kids who just kick the ball and hope won't.
 
-**Variation:** For younger kids (5-6), reduce the distance to 20 yards. For older kids (7), add a rule: once you reach the finish, you have to dribble back to start under control without it getting away from you.
+**Variation:** For younger kids (5-6), reduce the distance to 20 yards. For older kids (7), add a rule: once you reach the finish, you have to dribble back to st

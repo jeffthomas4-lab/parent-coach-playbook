@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard rotations drill, sport language clean. Minor inconsistency: setup mentions 'five spots' but only four offensive players are listed."
@@ -44,3 +44,13 @@ The shell drill teaches team defense and rotations. Four defenders guard four of
 **If they're struggling:** Slow the pace. Offense passes slowly. Offense doesn't cut. Just rotations on the perimeter.
 
 **If they've got it:** Offensive cuts. Full game-speed movement. Defenders must handle everything.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

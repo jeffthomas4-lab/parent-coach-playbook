@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cites NBA 15 ft and youth 12-13 ft, league varies."
@@ -43,3 +43,13 @@ Free throws are the only unguarded shot in basketball. Building a routine early 
 **If they're struggling:** Move to 10 feet. Reduce to 5 free throws per set. Check form (Set, Bend, Lift, Cookie).
 
 **If they've got it:** Track the percentage. Aim for 8 out of 10. Next week, beat that number.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

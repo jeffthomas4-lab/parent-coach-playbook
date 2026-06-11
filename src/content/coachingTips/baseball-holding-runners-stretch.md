@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pitching mechanics; arm-care adjacent."
@@ -44,3 +44,15 @@ When there's a runner on first, pitchers throw from the stretch instead of the w
 **If they're struggling:** Skip the pickoff. Just work on throwing strikes from the stretch.
 
 **If they've got it:** Vary the timing. Sometimes hold the set for 1 second, sometimes 4 seconds. The runner has to react to whatever the pitcher does.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

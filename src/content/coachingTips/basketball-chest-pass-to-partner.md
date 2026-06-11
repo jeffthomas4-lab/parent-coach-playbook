@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Thumbs-down release cue is the standard teach. Distances are concrete."
@@ -44,3 +44,13 @@ The chest pass is the first pass kids learn. It's the easiest to control and the
 **If they're struggling:** Move to 6 feet apart. Use a softer, bigger ball. Count only 10 passes per round instead of 15.
 
 **If they've got it:** Move back to 12 feet. Add a quick catch-and-pass (no pause between). Keep it snappy.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Grip-and-spiral fundamentals. Clean throwing vocabulary."
@@ -44,3 +44,13 @@ The football grip is finger pads on the laces, thumb under the ball, ball held b
 **If they're struggling:** Use a smaller ball (Wee or Pee Wee size). Or shorten the distance to 5 yards.
 
 **If they've got it:** Move back to 15 yards. Add a target on the wall. They have to hit the target with a spiral.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

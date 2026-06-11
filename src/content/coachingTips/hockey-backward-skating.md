@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Inverted C-cut framing connects forward and backward skating cleanly."
@@ -44,3 +44,15 @@ Defensemen skate backward most of the time. Forwards do too when they're trackin
 **If they're struggling:** Hold a stick across the ice for balance. Or just glide backward on two feet (no push) until it feels safe.
 
 **If they've got it:** Add a defender shape: chest up, hands on the stick, eyes scanning. Now they're a real defender.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

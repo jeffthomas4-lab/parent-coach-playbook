@@ -20,7 +20,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-12
   status: claude-reviewed
   reviewerNotes: "Generated as part of the per-sport content baseline. Voice may need a Jeff pass."
@@ -44,3 +44,13 @@ A stunt group that doesn't share a count doesn't share a stunt. This drill is th
 **What to look for:** Everyone hears the back spot. If a base or flyer needs to ask "wait, what count?" the cadence isn't working.
 
 **Variation:** Have the back spot use a clap on every beat instead of voice. Forces the group to lock in to a physical cue.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth mouthguard →](/go/multi-sport-mouthguard-youth/) — required for most stunt and cheer programs.
+
+[Full stunt gear guide →](/what-to-buy/stunt/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

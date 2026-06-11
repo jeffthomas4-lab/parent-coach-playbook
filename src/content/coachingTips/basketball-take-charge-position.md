@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Flagged sensitive: charge drills at age 11-12 carry collision risk. Consider adding a safety note that contact should be at controlled speeds, and that many youth leagues discourage teaching the charge. Lead has four sentences."
@@ -44,3 +44,13 @@ The charge is an advanced defensive play. The defender sets their feet in the pa
 **If they're struggling:** Have the driver slow down so the defender has time to set feet. Do just 3 reps.
 
 **If they've got it:** Driver goes at full speed. Defender must react quickly and set feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

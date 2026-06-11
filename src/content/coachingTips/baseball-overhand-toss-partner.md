@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,13 @@ Most young kids throw with a sidearm sling because that's what feels natural. Ov
 **If they're struggling:** Move closer to 5 feet. Use a softer ball. Skip the throwing motion and just have them hand the ball to you in the right body position.
 
 **If they've got it:** Move back to 12 feet and add the Shuffle. They take a small step with the back foot toward the front foot before the throw.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

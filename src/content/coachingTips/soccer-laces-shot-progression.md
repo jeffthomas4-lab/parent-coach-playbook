@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Good progression-style shooting drill. Soccer vocab correct."
@@ -43,3 +43,13 @@ Laces shots are powerful but harder to control. Kids start with inside foot shot
 **If they're struggling:** Move closer to 12 feet. Work on the inside foot for longer.
 
 **If they've got it:** Move back to 18 feet. Challenge them to use laces from distance.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

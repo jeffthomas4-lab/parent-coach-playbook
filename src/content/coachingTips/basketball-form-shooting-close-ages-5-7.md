@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body was truncated mid-sentence; completed the close with adjustments."
@@ -44,3 +44,13 @@ Form shooting teaches the mechanics early. The closer the shot, the easier it is
 **If they're struggling:** Lower the hoop to 7 feet. Move them to 4 feet. Use a smaller youth ball.
 
 **If they've got it:** Step back to 8 feet. Add a one-dribble approach before the shot.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

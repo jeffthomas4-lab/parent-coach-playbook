@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Names George Mikan; backboard-as-target is correct."
@@ -44,3 +44,13 @@ The Mikan drill is the foundation for finishing. George Mikan invented it. The p
 **If they're struggling:** Move slower. Do just 5 total layups instead of 10. Use a lower hoop.
 
 **If they've got it:** Speed it up. Do 20 layups total. Time them and track personal best.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

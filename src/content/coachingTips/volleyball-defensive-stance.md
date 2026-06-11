@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cross-sport stance comparison lands well. Clean foundations drill."
@@ -44,3 +44,13 @@ Defense in volleyball is reading and reacting fast. The starting position is a l
 **If they're struggling:** Reduce the depth of the stance. Or hold for shorter periods.
 
 **If they've got it:** Add a tossed ball. Player has to dig from the stance without standing up.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

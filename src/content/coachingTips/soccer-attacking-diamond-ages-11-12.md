@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'Do they stay in a diamond or bunch up?'"
@@ -44,3 +44,15 @@ The attacking diamond teaches movement in formation. Four attackers work togethe
 **If they're struggling:** Take the defenders out for two reps. Let the four attackers move the ball through the diamond unopposed and end with a shot. Add one defender on rep three.
 
 **If they've got it:** Add a third defender and a 12-second shot clock. They have to advance, shape, and finish before the count. Or rotate which point of the diamond starts with the ball.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

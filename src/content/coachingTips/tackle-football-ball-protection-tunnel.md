@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Light contact tunnel; intensity is controlled. Sensitive flagged for body contact."
@@ -43,3 +43,15 @@ In a game, RBs get hit. This drill teaches them to hold the ball tight and power
 **If they're struggling:** Have the defenders stand still and just be a wall. The RB runs through without contact first.
 
 **If they've got it:** Increase the intensity. Defenders can now make light contact with the arms holding the ball. The RB has to fight through and keep the ball.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

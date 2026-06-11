@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "File ended mid-sentence at 'Variation:'. Replaced with standard 'If they're struggling / If they've got it' progressions."
@@ -43,4 +43,4 @@ Base runners who understand spacing and angles beat runners who are confused abo
 
 **If they're struggling:** Move the start line closer to first. The race is shorter so they finish before they get tired.
 
-**If they've got it:** Add a second leg. After they touch first, they round and head for second. Now they have to think about the angle into the next base, not just the line to the first one.
+**If they've got it:** Add a second leg. After they touch first, they round and head for second. Now they have to think about the angle int

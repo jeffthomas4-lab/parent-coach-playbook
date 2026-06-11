@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Strong opening, clear cue. Note: 60ft is correct softball base path; the sub-bullet says 60 feet (regulation) which is right."
@@ -45,3 +45,15 @@ Kids stop at first base. That's the mistake. The cue is Eyes, Drive, Touch, Brak
 **If they're struggling:** Shorten the distance to 40 feet. Have them walk through first first, then jog, then sprint.
 
 **If they've got it:** Add a coach at first base who yells "GO" as they're running. Build the habit of not looking at the coach.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

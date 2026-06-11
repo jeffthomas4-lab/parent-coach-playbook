@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Both-feet-together cue is clear and useful."
@@ -44,3 +44,13 @@ The jump stop is when you land on both feet at the same time. It's more balanced
 **If they're struggling:** Let them walk the approach instead of dribble. Move closer to 5 feet from the basket. Reduce to 3 reps per side.
 
 **If they've got it:** Add a defender. The jump stop gets them balance to shoot over pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

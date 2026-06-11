@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -43,4 +43,4 @@ The first time a kid uses a glove to field a ball, they need to feel where the g
 
 **If they're struggling:** Get closer. Slower rolls. Use a bigger ball.
 
-**If they've got it:** Roll slightly to one side or the other. Now they have to step before they Drop.
+**If they've got it:** Roll slightly to one side or the other. Now the

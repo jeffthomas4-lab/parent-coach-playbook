@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Standard baserunning intro; works for ages 5-7."
@@ -42,3 +42,15 @@ Fast base running is about straight lines and quick feet. This drill teaches bot
 **What to look for:** Kids who run the baseline straight will be faster than kids who curve. Point it out. Show them the difference.
 
 **Variation:** For older kids (7), have them run home to home (around all bases) and time them. For younger kids (5-6), reduce the base distance to 30 feet.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Block start mechanics; sensitive due to explosive-start injury risk."
@@ -44,3 +44,13 @@ The first step out of the blocks determines sprinting momentum. This drill teach
 The front leg should drive hard at the first step, not reach. If an athlete is reaching with the front leg, they're losing power. The back leg should follow quickly. The first few steps should feel like the athlete is driving downward and forward, not upward. If an athlete is standing up too early, the acceleration phase is lost.
 
 **Variation:** Remove the blocks and teach block start mechanics without blocks. Athletes get in a 3-point stance and practice the explosive first step. This teaches muscle memory for the motion.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.
+
+[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

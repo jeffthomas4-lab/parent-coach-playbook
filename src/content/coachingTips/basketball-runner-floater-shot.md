@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Title uses runner as a shot-name synonym for floater; body stays in basketball vocab."
@@ -44,3 +44,13 @@ The floater is a touch shot between a layup and a jump shot. It's used when the 
 **If they're struggling:** Move closer (8 feet). Reduce the speed of the dribble. Practice just the floater release without the approach.
 
 **If they've got it:** Add a tall defender with hands up. The floater must go over the defender.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean flag-pull language throughout. Tight voice."
@@ -44,3 +44,13 @@ Five-year-olds learning flag football need to learn the move that wins the game:
 **If they're struggling:** Bigger box. Slower start (walking only for first round).
 
 **If they've got it:** Smaller box. Or two-flag rule (have to pull both flags off the same kid in one chase).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.
+
+[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

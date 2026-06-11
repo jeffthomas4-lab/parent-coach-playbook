@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Arm-strength progression; arm-care adjacent."
@@ -44,3 +44,15 @@ Arm strength comes from throwing further than what's comfortable, but in steps. 
 **If they're struggling:** Cap it at 60 feet. Don't push to 80. Arm strength builds slowly.
 
 **If they've got it:** Add a fifth station at 100 feet. Or have them throw from one knee at the longest distance. That tests pure arm strength.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Walk-through-to-sprint progression for QB-RB exchange. No contact."
@@ -44,3 +44,13 @@ A clean handoff needs timing and trust. The QB places the ball into the running 
 **If they're struggling:** Have them stand still first. QB hands off to RB while stationary. Get the grip and placement right first.
 
 **If they've got it:** Add a defender approaching from the side. The QB has to get the ball off before the defender arrives.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

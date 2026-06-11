@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'but they\\'r'. Sensitive flag on tempo-effort load retained."
@@ -44,3 +44,13 @@ The tempo effort should feel consistent across both segments. If the runner is s
 **If they're struggling:** Cut to a single 1.5 mile tempo and a 0.5 mile recovery. End the workout there if the pace falls off by more than 30 seconds per mile.
 
 **If they've got it:** Stretch the first tempo to 2.5 miles and hold the same pace. Or add a 30-second pickup at the end of the second tempo to practice closing strong.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for road and trail.
+
+[Full cross country gear guide →](/what-to-buy/cross-country/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

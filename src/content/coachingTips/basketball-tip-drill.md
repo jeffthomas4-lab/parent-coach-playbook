@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Lead sentence runs a triplet (strength/timing/fingers) — could trim. Otherwise solid."
@@ -44,3 +44,13 @@ Rebounding takes hands. Tip drill builds the strength to control a ball above th
 **If they're struggling:** Cut to 15 seconds per round. Or drop the second hand and only do dominant.
 
 **If they've got it:** Add a finish: after 30 seconds of tipping, last tip goes through the net. Or do it on a lower hoop and tip with two hands above the rim.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

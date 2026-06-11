@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cookie jar metaphor lands. Set/Bend/Lift/Cookie shot cue is concrete and memorable."
@@ -43,3 +43,13 @@ The cookie jar is the follow-through. Hand finishes relaxed with fingers pointin
 **If they're struggling:** Don't add the ball yet. Practice the hand position only. Do 30 repetitions of just the follow-through motion before introducing a shot.
 
 **If they've got it:** They shoot at the basket and hold the follow-through until the ball goes through the net. Trains them to stay in the shot.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

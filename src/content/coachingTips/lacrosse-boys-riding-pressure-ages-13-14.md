@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated 'funnel the' tail with two voice-matched sentences."
@@ -41,3 +41,15 @@ Riding is offensive pressure on the clear. This drill teaches young players to f
 **What to look for:**
 
 Riders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the ball toward a sideline or back into a stick-side trap. The bad pass is the goal, not the takeaway.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.
+
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.
+
+[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

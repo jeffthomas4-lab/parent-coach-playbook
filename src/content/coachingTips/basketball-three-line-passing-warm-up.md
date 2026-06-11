@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Pattern as written keeps the ball flowing through the middle rather than the classic weave (pass-and-cut-behind). Lead has four sentences."
@@ -44,3 +44,13 @@ Three line passing is the warm-up for a fast-break offense. Players run, pass, c
 **If they're struggling:** Walk through the pattern at half speed. Just work on the timing of passes.
 
 **If they've got it:** Add no-look passes or behind-the-back passes. Or finish with a kick-out instead of a layup (last pass goes back to the trailer for a jumper).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

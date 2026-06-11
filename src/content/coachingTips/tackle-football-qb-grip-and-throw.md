@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Beginner grip and throw mechanics. No contact."
@@ -45,3 +45,13 @@ A proper grip is where throwing starts. The fingers go on the laces, not the pal
 **If they're struggling:** Use a smaller football. Easier to grip.
 
 **If they've got it:** Move back to 15 feet. They're still just throwing easy. Same grip, longer throw.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

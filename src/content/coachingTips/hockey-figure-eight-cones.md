@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Off-ice with street hockey ball is a useful path for new players."
@@ -44,3 +44,15 @@ The figure 8 forces the puck to move both directions. Forehand on one side of th
 **If they're struggling:** Wider cones (6 feet apart). Slower tempo. Use a street hockey ball.
 
 **If they've got it:** Tighter cones (3 feet). Or do the figure 8 with eyes up, looking at a target on the wall.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Bilateral breathing every 3 strokes; uses correct vocab."
@@ -44,3 +44,13 @@ Most kids breathe to one side only. That creates an uneven stroke. Bilateral bre
 **If they're struggling:** Breathe every 2 strokes (only to one side) for one length, then switch sides for the next length. Build to bilateral.
 
 **If they've got it:** Every 5 strokes (longer hold between breaths). Or breathe every 3 with a streamline kick on the other side.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.
+
+[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

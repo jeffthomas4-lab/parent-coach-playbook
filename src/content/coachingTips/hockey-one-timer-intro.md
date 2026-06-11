@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Honest about misses is the right voice. Eight tries, many will miss."
@@ -44,3 +44,15 @@ A one-timer is a shot taken on a moving puck without stopping it. The pass arriv
 **If they're struggling:** Slower passes. Or have the shooter stop the puck and shoot in two motions before trying the one-timer.
 
 **If they've got it:** Add accuracy. Aim for top corners only. Or do it with a goalie.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.
+
+[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.
+
+[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean foundational dribble drill, voice strong throughout."
@@ -44,3 +44,13 @@ This is about rhythm and habit. The ball stays low. The knees stay bent. Eyes ar
 **If they're struggling:** Shorten the time. Do 5 dribbles per hand instead of 10. Use a bigger ball so bounces are more forgiving.
 
 **If they've got it:** Dribble while walking 5 steps forward, then 5 back. Keep the same low ball and low stance.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

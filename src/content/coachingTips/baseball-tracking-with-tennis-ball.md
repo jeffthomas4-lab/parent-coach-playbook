@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tennis racquet used as training tool, not as baseball vocab; sport language fine."
@@ -44,3 +44,15 @@ Before a kid can field a fly ball, they need to learn how to follow a ball throu
 **If they're struggling:** Hit shorter and softer pops. Or just toss the ball up by hand so it's slower.
 
 **If they've got it:** Hit higher pops. Or hit two in a row so they have to track one then quickly find the next.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[28-inch youth bat →](/go/baseball-bat-28in/) — drop-10 USA-stamped bat for ages 8–10.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

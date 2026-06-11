@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Inside-of-foot vs. toe-poke is the right 5-7 emphasis."
@@ -44,3 +44,15 @@ Five-year-olds don't have the foot strength to pass far. This drill teaches them
 **If they're struggling:** Move the cones 5 feet closer. Use a softer ball.
 
 **If they've got it:** Move the cones to 12 feet apart. Have them try to make the ball stop right at the cone.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 3 soccer ball →](/go/soccer-ball-size3/) — right size for ages 5–7.
+
+[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

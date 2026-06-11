@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Cutoff drill; voice fine, sport language correct."
@@ -44,3 +44,13 @@ A cutoff player is the relay between the outfield and the base. Positioning is c
 **If they're struggling:** Have the cutoff stand still. Outfielder throws and cutoff catches only. Add the relay throw after 5 reps.
 
 **If they've got it:** Add communication. Cutoff yells the direction before catching (home, second, third). Add runners to game-speed situations.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

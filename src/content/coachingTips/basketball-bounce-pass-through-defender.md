@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Graduated defender pressure tiers (25/50/75%) make the progression clear."
@@ -44,3 +44,13 @@ When a defender guards tightly, the bounce pass gets through where air passes ca
 **If they're struggling:** Have B play at 25% pressure instead of 50%. Reduce the distance to 10 feet. Use a bigger ball.
 
 **If they've got it:** B plays at 75% effort with hands in the passer's face. Add game-like pressure.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

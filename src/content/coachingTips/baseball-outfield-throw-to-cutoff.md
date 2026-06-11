@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Clean pass."
@@ -44,3 +44,13 @@ Outfielders who throw the ball over the cutoff player's head let runners advance
 **If they're struggling:** Move the cutoff player closer to the outfielder. Shorter throw, same mechanics.
 
 **If they've got it:** Add a runner who tags up from third on the catch. The throw has to beat the runner home if the cutoff lets it through, or get cut and thrown back to second if the cutoff plays it.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.
+
+[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

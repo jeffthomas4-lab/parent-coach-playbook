@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tackle-timing read on outside foot is a real coaching point."
@@ -44,3 +44,13 @@ At this age, defenders can try tackles. The key is timing. A tackle too early gi
 **If they're struggling:** Attacker moves slower. Defender has more time to read the moment.
 
 **If they've got it:** Attacker attacks at game speed. Defender has to react in real time.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.
+
+[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

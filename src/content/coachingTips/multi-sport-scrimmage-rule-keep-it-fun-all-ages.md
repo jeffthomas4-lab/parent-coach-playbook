@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body completed by editorial agent on 2026-05-09. Truncated original ended at 'must touch th'."
@@ -46,3 +46,13 @@ Kids should be looking for each other first, shooting second. If one player is h
 **If they're struggling:** Drop the touch count to two and call the rule out loud after each score. Reset the score every 3 minutes so no one falls too far behind.
 
 **If they've got it:** Add a second rule on top of the first. Now they're juggling two constraints, which is closer to game-time decision making.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Agility cones →](/go/agility-cones/) — flat disc cones for any field drill.
+
+[Full multi sport gear guide →](/what-to-buy/training-gear/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

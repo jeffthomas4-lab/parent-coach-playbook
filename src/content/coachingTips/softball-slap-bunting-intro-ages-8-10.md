@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Intro to softball-specific slap; clear grip-and-step focus."
@@ -42,3 +42,13 @@ Don't worry about perfect bunts yet. The goal is grip and footwork, not contact.
 **What to look for:** Quick feet and a short swing. The slap is an accelerated quick step into a controlled bunt. Kids who take a full swing won't get the speed needed.
 
 **Variation:** For younger kids (8-9), just work the grip and stance without bunting. For older kids (10), add a base runner so they practice laying the bunt down in a game situation.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

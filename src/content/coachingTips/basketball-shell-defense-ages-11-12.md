@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Completed truncated body with two voice-matched scaling sentences. Standard shell-defense drill, sport language clean."
@@ -44,3 +44,13 @@ Shell defense teaches the core of team defense: on-ball pressure, help-and-recov
 **If they're struggling:** Drop to three on three. Walk through the rotations first with no score, just shape.
 
 **If they've got it:** Add a 14-second shot clock. Pressure forces the offense to attack and tests whether the defenders can hold their rotations.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.
+
+[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

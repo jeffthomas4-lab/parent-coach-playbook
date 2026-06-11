@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Body contact at higher progression; sensitive flagged for press contact."
@@ -43,3 +43,15 @@ In a game, receivers don't always have open space. This drill teaches them to ca
 **If they're struggling:** Have the defender start farther away. Give the receiver time to catch before the defender arrives.
 
 **If they've got it:** Add more contact. The defender can press the receiver's body. The receiver has to shield the ball and still make the catch.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.
+
+[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.
+
+[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

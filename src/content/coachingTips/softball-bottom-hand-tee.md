@@ -19,7 +19,7 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   sportLanguageCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
   reviewerNotes: "Tee work focused on grip; voice fine. Changed soft baseballs to softballs."
@@ -44,3 +44,13 @@ The bottom hand drives the swing. When a batter gets weak, it's often because th
 **If they're struggling:** Use a lighter bat. Swing slower. Focus on mechanics, not power.
 
 **If they've got it:** Add a one-handed swing (bottom hand only). Do 5 reps to build isolated strength.
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.
+
+[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*
