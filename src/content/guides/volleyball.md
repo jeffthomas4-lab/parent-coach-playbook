@@ -33,6 +33,17 @@ Light knee pads with thin foam padding. Many starter programs don't require knee
 
 How to choose: snug at the knee, not cutting circulation.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Youth T10 Plus knee pads</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Real foam over the kneecap in youth sizing. Stays put, doesn't pinch. Works from the first season through middle school.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The same pad works at every age. Buy these in year one and they'll still be the right answer in year four.</p>
+    <a href="/go/volleyball-knee-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Athletic shorts and a t-shirt**
 
 Standard athletic gear. Most leagues provide jerseys.
@@ -40,6 +51,17 @@ Standard athletic gear. Most leagues provide jerseys.
 **A youth volleyball (size 4)**
 
 Size-4 volleyballs are softer and lighter than the adult size. Good for backyard practice.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 5–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Molten V5MU12 Light Youth Volleyball</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Official size, lighter weight, built for players 12 and under. Softer on forearms than an adult ball. The standard for youth rec programs.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A lighter ball means kids learn to pass without flinching. That matters more than brand at this age.</p>
+    <a href="/go/volleyball-ball-youth-light/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 8–10
 
@@ -117,9 +139,31 @@ Club volleyball begins for many serious players. Costs go up. Gear quality goes 
 
 Hitters and middle blockers want more cushion in the toe (for jumping). Setters want a slightly softer feel. Liberos want flat, fast shoes. Most kids don't need to be this specific.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Gel-Rocket volleyball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The upgrade from the Upcourt. More cushioning under the forefoot, same gum-rubber court grip. Available in women's sizes that fit most middle schoolers.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If your kid is practicing three days a week, the extra cushion is worth paying for. The Upcourt is fine; the Gel-Rocket is better for the volume of reps club players put in.</p>
+    <a href="/go/volleyball-shoes-gel-rocket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Pro-quality knee pads**
 
 Mizuno LR6, Asics Gel Rocket, Nike Streak. Volleyball-specific knee pads with better foam and better fit.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno LR6 volleyball knee pads</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The standard knee pad for club and high school players. Thicker foam, better fit around the knee, stays in place through a full two-hour practice.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The upgrade from the T10 Plus. Once a player is practicing four or five days a week, the better foam matters. This is what most club rosters wear.</p>
+    <a href="/go/volleyball-knee-pads-lr6/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **An ankle brace (optional but smart)**
 
@@ -161,6 +205,17 @@ Most club volleyball programs require specific team gear. Most middle-school pro
 
 Serious players replace shoes every 6 to 12 months. The grip rubber wears down and grip is the most important shoe property.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Gel-Rocket volleyball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The court shoe most serious players rotate through. Gum-rubber outsole grips gym floors, forefoot cushion handles the landing volume of a full season.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two pairs at the start of the club season. Rotate them. One pair's grip will give out before the other and you'll know it's time.</p>
+    <a href="/go/volleyball-shoes-gel-rocket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Compression sleeves (optional)**
 
 Some hitters wear arm compression sleeves. Some kids wear them because they look cool. Either is fine.
@@ -169,9 +224,31 @@ Some hitters wear arm compression sleeves. Some kids wear them because they look
 
 McDavid, Active Ankle, Aircast are the brands most players use.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Active Ankle T2 ankle brace</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Hinged stirrup brace that blocks the rollover without slowing the player down. Sold as a single; buy two for a pair.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: By 13–14, preventative bracing is the standard on serious club rosters. One ankle sprain in a tournament weekend is more expensive than two braces.</p>
+    <a href="/go/volleyball-ankle-brace/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A volleyball backpack**
 
 A specific bag that fits two pairs of shoes, knee pads, ankle braces, water bottle. Most teams have a recommended brand.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Volleyball · Ages 13+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Organizer 26 volleyball backpack</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Separate shoe compartment, dedicated knee pad and brace storage, water bottle pocket, enough room for two pairs of shoes. Built for the club travel load.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A bag designed for volleyball gear means nothing gets crushed and the shoes stay away from everything else. Worth it once your kid has a full club kit to carry.</p>
+    <a href="/go/volleyball-backpack/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 15+ (High school and serious club)
 

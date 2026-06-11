@@ -29,9 +29,9 @@ const all = (await getCollection('articles', ({ data }) => isLive(data)))
 // it falls back to the most recent article so the section always renders
 // three cards. Update weekly when the Friday Letter ships.
 const PINNED_SLUGS: string[] = [
-  'the-summer-break-conversation',
-  'summer-specialization-pressure',
-  'summer-training-for-an-eight-year-old',
+  'how-to-evaluate-a-summer-camp',
+  'when-your-kid-doesnt-want-to-go-to-camp',
+  'three-teams-in-one-summer',
 ];
 const pinned = PINNED_SLUGS
   .map(s => all.find(a => a.slug === s))
@@ -505,62 +505,4 @@ const websiteSchema = {
       </div>
 
       <div class="flex flex-wrap items-center gap-2 mb-6" data-age-filter>
-        <span class="font-display italic text-ink-soft text-sm font-medium">Filter by your kid's age:</span>
-        <button data-age="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
-        <button data-age="5-7" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">5–7</button>
-        <button data-age="8-10" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">8–10</button>
-        <button data-age="11-12" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">11–12</button>
-        <button data-age="13-14" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">13–14</button>
-        <button data-age="15-plus" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">15+</button>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-x-10" data-feed>
-        {feed.map((a) => (
-          <div data-age-tag={a.data.age ?? 'all-ages'}>
-            <ArticleCard
-              href={`/${a.data.phase}/${a.slug}/`}
-              format={a.data.format}
-              sport={a.data.sport}
-              age={a.data.age}
-              phase={a.data.phase}
-              topic={a.data.topic}
-              title={a.data.title}
-              dek={a.data.dek}
-              publishedAt={a.data.publishedAt}
-              reviewedAt={a.data.editorial?.jeffReviewedAt ?? a.data.editorial?.claudeReviewedAt}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const bar = document.querySelector('[data-age-filter]');
-    const feedEl = document.querySelector('[data-feed]');
-    if (bar && feedEl) {
-      bar.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        if (target.tagName !== 'BUTTON') return;
-        bar.querySelectorAll('button').forEach(b => {
-          b.classList.remove('bg-ink', 'text-paper', 'border-ink');
-          b.classList.add('border-bone', 'text-ink-soft');
-        });
-        target.classList.remove('border-bone', 'text-ink-soft');
-        target.classList.add('bg-ink', 'text-paper', 'border-ink');
-        const age = target.getAttribute('data-age') ?? '';
-        feedEl.querySelectorAll<HTMLElement>('[data-age-tag]').forEach((row) => {
-          const tag = row.dataset.ageTag ?? '';
-          if (!age || tag === age || tag === 'all-ages') {
-            row.style.display = '';
-          } else {
-            row.style.display = 'none';
-          }
-        });
-      });
-    }
-  </script>
-
-  {/* SECTION 6 of 6: LEAD MAGNET (component handles the layout) */}
-  <LeadMagnetCTA />
-</BaseLayout>
+        <span class="font-display italic text

@@ -828,5 +828,25 @@
     "destination": "https://squareup.com/us/en/hardware/readers",
     "retailer": "Square",
     "campaign": "gear-square-reader"
+  },
+  "volleyball-ball-youth-light": {
+    "destination": "https://www.amazon.com/dp/B00K5K0W9O?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-ball-youth-light"
+  },
+  "volleyball-shoes-gel-rocket": {
+    "destination": "https://www.amazon.com/dp/B0DPLQNWQQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-shoes-gel-rocket"
+  },
+  "volleyball-knee-pads-lr6": {
+    "destination": "https://www.amazon.com/dp/B00114T938?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-knee-pads-lr6"
+  },
+  "volleyball-backpack": {
+    "destination": "https://www.amazon.com/dp/B0FR5BXLQ7?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-volleyball-backpack"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T19:01:47.267Z",
-  "count": 395,
+  "generatedAt": "2026-06-11T19:19:43.226Z",
+  "count": 398,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -1566,7 +1566,8 @@
     {
       "url": "https://www.littleleague.org/playing-rules/pitch-count/",
       "sources": [
-        "src/content/body/youth-pitcher-arm-care.md"
+        "src/content/body/youth-pitcher-arm-care.md",
+        "src/content/news/little-league-pitch-count-2026.md"
       ]
     },
     {
@@ -1892,6 +1893,12 @@
       ]
     },
     {
+      "url": "https://www.nfhs.org/sports-resource-content/nfhs-guidance-for-minimizing-head-impact-exposure-in-soccer/",
+      "sources": [
+        "src/content/news/nfhs-soccer-heading-restrictions-2026.md"
+      ]
+    },
+    {
       "url": "https://www.nfhs.org/who-we-are/our-members",
       "sources": [
         "src/pages/governing-bodies.astro"
@@ -2054,6 +2061,12 @@
       "sources": [
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.popwarner.com/Default.aspx?tabid=1435835",
+      "sources": [
+        "src/content/news/pop-warner-weight-age-matrix-2026.md"
       ]
     },
     {
@@ -2551,6 +2564,12 @@
         "src/content/rules/swimming.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usaswimming.org/docs/default-source/governance/governance-lsc-resources/rules_policies/105-open-water.pdf",
+      "sources": [
+        "src/content/news/usa-swimming-open-water-safety-2026.md"
       ]
     },
     {
