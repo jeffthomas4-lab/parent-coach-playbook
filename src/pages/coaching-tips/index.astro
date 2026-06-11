@@ -40,23 +40,32 @@ const focusOptions = [
           <div class="grid gap-4">
             <div class="flex flex-wrap items-center gap-2" data-sport-filter>
               <span class="font-display italic text-ink-soft text-sm font-medium">Sport:</span>
-              <button data-sport="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
-              {SPORTS.slice(0, 12).map((s) => (
-                <button data-sport={s.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{s.label}</button>
-              ))}
+              <button data-sport="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+              <button data-sport="baseball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Baseball</button>
+              <button data-sport="soccer" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Soccer</button>
+              <button data-sport="basketball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Basketball</button>
+              <button data-sport="softball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Softball</button>
+              <button data-sport="football" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Football</button>
+              <button data-sport="volleyball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Volleyball</button>
+              <button data-sport="hockey" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Hockey</button>
+              <button data-sport="lacrosse" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Lacrosse</button>
+              <button data-sport="flag-football" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Flag Football</button>
+              <button data-sport="tennis" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Tennis</button>
+              <button data-sport="swimming" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Swimming</button>
+              <button data-sport="track-field" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Track &amp; Field</button>
             </div>
             <div class="flex flex-wrap items-center gap-2" data-age-filter>
               <span class="font-display italic text-ink-soft text-sm font-medium">Age:</span>
-              <button data-age="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+              <button data-age="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
               {AGE_BANDS.map((a) => (
-                <button data-age={a.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{a.label}</button>
+                <button data-age={a.slug} class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{a.label}</button>
               ))}
             </div>
             <div class="flex flex-wrap items-center gap-2" data-focus-filter>
               <span class="font-display italic text-ink-soft text-sm font-medium">Focus:</span>
-              <button data-focus="" class="font-display italic px-3 py-1 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+              <button data-focus="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
               {focusOptions.map((f) => (
-                <button data-focus={f.slug} class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{f.label}</button>
+                <button data-focus={f.slug} class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{f.label}</button>
               ))}
             </div>
             <div class="flex items-center gap-2">
@@ -124,7 +133,7 @@ const focusOptions = [
                 var focus = row.getAttribute('data-focus-tag') || '';
                 var title = row.getAttribute('data-title') || '';
                 var summ  = row.getAttribute('data-summary') || '';
-                var sOk = !s || sport === s;
+                var sOk = !s || (s === 'lacrosse' ? sport.indexOf('lacrosse') !== -1 : sport === s);
                 var aOk = !a || age === a || age === 'all-ages';
                 var fOk = !f || focus === f;
                 var qOk = !q || title.indexOf(q) !== -1 || summ.indexOf(q) !== -1;

@@ -1,0 +1,231 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { AGE_BANDS } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
+
+// Age-group hub pages. One page per band — aggregates all articles,
+// coaching tips, guides, scripts, and decisions tagged for that age.
+
+export async function getStaticPaths() {
+  return AGE_BANDS.map(b => ({ params: { group: b.slug }, props: { bandData: b } }));
+}
+
+const { bandData } = Astro.props;
+const group = bandData.slug;
+const groupLabel = bandData.label;
+
+// SEO copy per age band — written for parent search intent.
+const SEO: Record<string, { title: string; description: string }> = {
+  '5-7': {
+    title: 'Ages 5–7 Youth Sports Parent Guide',
+    description: 'Gear, drills, and what to expect in your first seasons of T-ball, soccer, and introductory sports. Everything for parents of 5- to 7-year-olds.',
+  },
+  '8-10': {
+    title: 'Ages 8–10 Youth Sports Parent Guide',
+    description: 'Coach-pitch baseball, competitive soccer, and the first travel conversations. Gear picks, drills, and decision guides for parents of 8- to 10-year-olds.',
+  },
+  '11-12': {
+    title: 'Ages 11–12 Youth Sports Parent Guide',
+    description: 'The jump to competitive play. Gear that lasts, drills that build real skills, and the decisions that define the middle school years.',
+  },
+  '13-14': {
+    title: 'Ages 13–14 Youth Sports Parent Guide',
+    description: 'High school tryouts ahead. Gear upgrades, position-specific drills, and honest recruiting timelines for parents of 13- to 14-year-olds.',
+  },
+  '15-plus': {
+    title: 'Ages 15+ Youth Sports Parent Guide',
+    description: 'High school varsity, club travel, and early recruiting. What to do, what to spend, and how to stay useful from the stands.',
+  },
+};
+
+const pageTitle = SEO[group]?.title ?? `Ages ${groupLabel} Youth Sports Parent Guide`;
+const pageDescription = SEO[group]?.description ?? `Everything on this site tagged for parents of ${groupLabel}-year-olds.`;
+
+// Helper: does an item match this age group?
+function matchesAge(age: string | undefined, ages: string[] | undefined, ageBands: string[] | undefined): boolean {
+  if (age === 'all-ages') return true;
+  if (age === group) return true;
+  if (ages && (ages.includes(group) || ages.includes('all-ages'))) return true;
+  if (ageBands && (ageBands.includes(group) || ageBands.includes('all-ages'))) return true;
+  return false;
+}
+
+// Pull collections. Guides have no age field so they are not included here;
+// parents reach gear guides via the sport hubs linked from article pages.
+const allArticles   = await getCollection('articles',      ({ data }) => isLive(data));
+const allTips       = await getCollection('coachingTips',  ({ data }) => isLive(data));
+const allScripts    = await getCollection('scripts',       ({ data }) => isLive(data));
+const allDecisions  = await getCollection('decisions',     ({ data }) => isLive(data));
+
+// Filter by age.
+const articles  = allArticles.filter(a => matchesAge(a.data.age, undefined, undefined));
+const tips      = allTips.filter(t => matchesAge(t.data.age, t.data.ages as string[] | undefined, undefined));
+const scripts   = allScripts.filter(s => matchesAge(undefined, undefined, s.data.ageBands as string[] | undefined));
+const decisions = allDecisions.filter(d => matchesAge(undefined, undefined, d.data.ageBands as string[] | undefined));
+
+// Guides have no age field — skip individual filtering, but include any
+// that are linked from scripts or decisions. For now we surface none.
+// (Gear guides are reached via the sport hubs; the age hubs link to the sport hub.)
+
+// Sort by date desc.
+articles.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+tips.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+scripts.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+decisions.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const totalCount = articles.length + tips.length + scripts.length + decisions.length;
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+  {/* Header */}
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-1 font-medium">
+        <a href="/ages/" class="hover:underline underline-offset-2">By age</a>
+        {' '}→ Ages {groupLabel}
+      </p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        Your kid is <em class="text-rust">{groupLabel}</em>. Here's everything.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        {pageDescription}
+      </p>
+      <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
+        {totalCount} pieces tagged for ages {groupLabel}.
+      </p>
+    </div>
+  </section>
+
+  {/* Articles */}
+  {articles.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12 md:py-14">
+        <p class="font-display italic text-rust mb-3 font-medium">Reads</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+          Articles for ages <em class="text-rust">{groupLabel}</em>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-x-10">
+          {articles.map((a) => (
+            <a href={`/${a.data.phase}/${a.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <p class="font-display italic text-rust text-xs font-medium">
+                {a.data.sport ? `${a.data.sport} · ` : ''}{fmtDate(a.data.publishedAt)}
+              </p>
+              <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+              {a.data.dek && (
+                <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Coaching Tips / Drills */}
+  {tips.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-12 md:py-14">
+        <p class="font-display italic text-rust mb-3 font-medium">Drills</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+          Coaching tips for ages <em class="text-rust">{groupLabel}</em>
+        </h2>
+        <p class="font-display italic text-ink-soft text-sm mb-4 font-medium">{tips.length} drills total.</p>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+          {tips.slice(0, 18).map((t) => (
+            <li class="bg-paper p-4">
+              <a href={`/coaching-tips/${t.slug}/`} class="block group">
+                <p class="font-display italic text-rust text-xs font-medium">
+                  {t.data.sport ? `${t.data.sport}` : ''}{t.data.focus ? ` · ${t.data.focus}` : ''}
+                </p>
+                <h3 class="font-display text-ink text-base leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
+                {t.data.summary && (
+                  <p class="font-display text-ink-soft text-xs mt-1 leading-snug">{t.data.summary}</p>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {tips.length > 18 && (
+          <p class="mt-5">
+            <a href={`/coaching-tips/`} class="font-display italic text-rust hover:text-ink font-medium">→ Browse all drills</a>
+          </p>
+        )}
+      </div>
+    </section>
+  )}
+
+  {/* Scripts */}
+  {scripts.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-12 md:py-14">
+        <p class="font-display italic text-rust mb-3 font-medium">Scripts</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+          What to say at ages <em class="text-rust">{groupLabel}</em>
+        </h2>
+        <ul class="grid md:grid-cols-2 gap-x-10">
+          {scripts.map((s) => (
+            <li>
+              <a href={`/scripts/${s.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
+                {s.data.summary && (
+                  <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{s.data.summary}</p>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Decisions */}
+  {decisions.length > 0 && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-12 md:py-14">
+        <p class="font-display italic text-rust mb-3 font-medium">Decisions</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+          Big calls at ages <em class="text-rust">{groupLabel}</em>
+        </h2>
+        <ul class="grid md:grid-cols-2 gap-x-10">
+          {decisions.map((d) => (
+            <li>
+              <a href={`/decisions/${d.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(d.data.title)} />
+                {d.data.summary && (
+                  <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{d.data.summary}</p>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Empty state */}
+  {totalCount === 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-16 text-center">
+        <p class="font-display italic text-ink-soft font-medium">
+          We're working on the ages {groupLabel} content. Check back soon.
+        </p>
+      </div>
+    </section>
+  )}
+
+  {/* Footer nav back to ages index */}
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-ink-soft text-sm font-medium">
+        <a href="/ages/" class="text-rust hover:underline underline-offset-2">← All age groups</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

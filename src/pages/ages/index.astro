@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { AGE_BANDS } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
+
+// Age group index. One card per band, with a live item count.
+
+function matchesGroup(
+  group: string,
+  age: string | undefined,
+  ages: string[] | undefined,
+  ageBands: string[] | undefined,
+): boolean {
+  if (age === 'all-ages') return true;
+  if (age === group) return true;
+  if (ages && (ages.includes(group) || ages.includes('all-ages'))) return true;
+  if (ageBands && (ageBands.includes(group) || ageBands.includes('all-ages'))) return true;
+  return false;
+}
+
+const allArticles   = await getCollection('articles',      ({ data }) => isLive(data));
+const allTips       = await getCollection('coachingTips',  ({ data }) => isLive(data));
+const allScripts    = await getCollection('scripts',       ({ data }) => isLive(data));
+const allDecisions  = await getCollection('decisions',     ({ data }) => isLive(data));
+
+// One-sentence description per band shown on the card.
+const DESCRIPTIONS: Record<string, string> = {
+  '5-7':     'First seasons of T-ball, soccer, and introductory sports. Gear, drills, and what to expect.',
+  '8-10':    'Coach-pitch baseball, competitive soccer, and the first travel conversations.',
+  '11-12':   'The jump to competitive play. Gear that lasts, drills that build real skills.',
+  '13-14':   'High school tryouts ahead. Gear upgrades, position-specific drills, honest recruiting timelines.',
+  '15-plus': 'High school varsity, club travel, and early recruiting. What to do and how to stay useful.',
+};
+
+// Compute counts once at build time.
+const bands = AGE_BANDS.map((b) => {
+  const articleCount  = allArticles.filter(a => matchesGroup(b.slug, a.data.age, undefined, undefined)).length;
+  const tipCount      = allTips.filter(t => matchesGroup(b.slug, t.data.age, t.data.ages as string[] | undefined, undefined)).length;
+  const scriptCount   = allScripts.filter(s => matchesGroup(b.slug, undefined, undefined, s.data.ageBands as string[] | undefined)).length;
+  const decisionCount = allDecisions.filter(d => matchesGroup(b.slug, undefined, undefined, d.data.ageBands as string[] | undefined)).length;
+  return {
+    ...b,
+    description: DESCRIPTIONS[b.slug] ?? '',
+    count: articleCount + tipCount + scriptCount + decisionCount,
+  };
+});
+---
+<BaseLayout
+  title="By Your Kid's Age"
+  description="Find everything on this site organized by how old your kid is right now."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">Browse by age</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        By your kid's <em class="text-rust">age</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Find everything on this site organized by how old your kid is right now. Pick an age group and get the articles, drills, scripts, and decision guides written for that stage.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12 md:py-16">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
+        {bands.map((b) => (
+          <a
+            href={`/ages/${b.slug}/`}
+            class="bg-paper p-6 md:p-8 group hover:bg-paper-warm transition-colors block"
+          >
+            <p class="font-display italic text-rust text-xs font-medium mb-2">Ages</p>
+            <h2 class="font-display text-ink text-3xl md:text-4xl leading-none font-medium group-hover:text-rust transition-colors">
+              {b.label}
+            </h2>
+            <p class="font-display text-ink-soft text-sm mt-3 leading-snug max-w-xs">
+              {b.description}
+            </p>
+            <p class="font-display italic text-ink-soft text-xs mt-4 font-medium">
+              {b.count > 0 ? `${b.count} pieces` : 'Coming soon'}
+            </p>
+            <p class="font-display italic text-rust text-sm mt-3 font-medium">→ Browse ages {b.label}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
