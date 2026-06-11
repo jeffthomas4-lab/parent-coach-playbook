@@ -2,17 +2,23 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import cloudflare from '@astrojs/cloudflare';
 
-// Rehype plugin: every affiliate redirect link in markdown content
-// ([text](/go/slug/)) gets rel="sponsored nofollow noopener". Markdown link
-// syntax cannot carry attributes, so this decorates them at build time.
-// HTML anchors in content already carry the rel inline; this overwrites with
-// the same value, so it is a no-op for those.
+// Rehype plugin: decorates links in markdown content at build time.
+// - External links (http/https): open in new tab, rel noopener noreferrer
+// - Affiliate redirect links (/go/...): open in new tab, rel sponsored nofollow noopener
+// HTML anchors already carrying these attributes are overwritten with the same
+// values, so the plugin is a no-op for hand-coded cards.
 function rehypeAffiliateRel() {
   const walk = (node) => {
     if (node.type === 'element' && node.tagName === 'a') {
       const href = node.properties?.href;
-      if (typeof href === 'string' && href.startsWith('/go/')) {
-        node.properties.rel = ['sponsored', 'nofollow', 'noopener'];
+      if (typeof href === 'string') {
+        if (href.startsWith('/go/')) {
+          node.properties.rel = ['sponsored', 'nofollow', 'noopener'];
+          node.properties.target = '_blank';
+        } else if (href.startsWith('http://') || href.startsWith('https://')) {
+          node.properties.rel = ['noopener', 'noreferrer'];
+          node.properties.target = '_blank';
+        }
       }
     }
     if (node.children) node.children.forEach(walk);
