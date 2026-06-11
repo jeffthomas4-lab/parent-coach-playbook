@@ -26,3 +26,13 @@ Every spring, somewhere in every town, a parent asks whether their daughter shou
 **And if she doesn't want to switch?** Then she doesn't. Girls play baseball through high school in small but growing numbers, and a kid who loves her sport outranks every development chart we publish. The honest tradeoff to name when she's old enough: the college scholarship lane runs through fastpitch. That's a conversation for 13, not a reason to move a happy 8-year-old.
 
 What we'd do: let the young years be decided by program quality and friendships, plan the fastpitch move around 10U if softball is the long game, and use [fall ball](/drive-there/first-season-of-softball/) as the soft landing for the switch. The leagues argue about this more than the kids do. The kids mostly just want to play.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+
+[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

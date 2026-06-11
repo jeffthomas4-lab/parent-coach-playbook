@@ -52,3 +52,13 @@ This list comes from the gym families in our network across levels. [Printable v
 **Warmth between rotations is performance.** Muscles cool fast in a cold venue, and beam after forty minutes of sitting is harder than beam after warmup. The layer goes on between events, every time.
 
 The bag packs the night before, the leo gets confirmed against the team's meet sheet, and the morning is for hair and nerves only. Wondering about the bigger picture? [What competitive gymnastics costs per year](/drive-there/what-youth-sports-cost/) is real money, and the [gymnastics gear guide](/what-to-buy/gymnastics/) keeps the gear part sane. Printables ship with the [Friday Letter](/newsletter/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Resistance bands set →](/go/resistance-bands-set/) — a solid pick for youth gymnastics players.
+
+[Full Gymnastics gear guide →](/what-to-buy/gymnastics/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

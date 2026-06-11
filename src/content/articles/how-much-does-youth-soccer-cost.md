@@ -28,3 +28,13 @@ These numbers come from our [cost calculator](/cost-calculator/) defaults, ancho
 The pattern to notice: from travel level up, the driving and sleeping costs more than the soccer. A club 30 minutes closer saves real money. Two skipped optional tournaments save a mortgage payment. The kid develops the same.
 
 Before the next registration window, [run your actual number](/cost-calculator/) and decide the tier on purpose. If travel is the question this year, read [should my kid play travel sports](/decisions/should-my-kid-play-travel-sports/) first, and if the answer is no for money reasons, [here's what that conversation looks like](/drive-home/when-you-cant-afford-travel/). The full cross-sport picture lives in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+
+[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

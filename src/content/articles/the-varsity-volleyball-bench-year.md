@@ -28,3 +28,13 @@ She made varsity as a sophomore, which felt like the win. Then October arrives a
 **What you never say, even once:** that the coach is playing favorites, that the starter ahead of her isn't better, that you're going to make a call. Maybe any of it is true. Saying it costs her the season's lesson, which is how to be second and keep working, and that lesson outlasts volleyball by about fifty years.
 
 The sophomore bench year ends one of three ways: she takes a job, she changes roles, or she walks with her eyes open. All three are fine. The [volleyball pathway](/pathways/volleyball/) shows what the next two seasons look like from each.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Volley-Lite training ball →](/go/volleyball-volley-lite/) — a solid pick for youth volleyball players.
+
+[Full Volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -66,3 +66,13 @@ The middle drive is the one coaches obsess over. The film, the pre-game speech, 
 Coach the team in the middle. Keep the kid on either side.
 
 The rest of the parent-coach pieces live at [/parent-coach/](/parent-coach/). The drills you'll actually run on Tuesday night live at [/coaching-tips/](/coaching-tips/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

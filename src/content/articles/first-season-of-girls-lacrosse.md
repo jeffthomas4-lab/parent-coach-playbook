@@ -32,3 +32,13 @@ Girls lacrosse is not boys lacrosse with the contact removed. Different sticks, 
 **What a good first season looks like:** she can cradle at a run by the last week, she caught one pass on the move that she'll talk about all summer, and she wants to throw against the garage. Wall ball is the driveway hoop of lacrosse. A ball and a brick wall build more stick skill than any clinic you can buy.
 
 And read the [girls lacrosse safety briefing](/body/youth-lacrosse-girls-safety-briefing/) once before the season. It covers the goggle standard, the headgear question, and the stuff worth knowing before someone in the bleachers asks why nobody wears a helmet.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Lacrosse ball →](/go/lacrosse-ball/) — a solid pick for youth girls' lacrosse players.
+
+[Full Girls' Lacrosse gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

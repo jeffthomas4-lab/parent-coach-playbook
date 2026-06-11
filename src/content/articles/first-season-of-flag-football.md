@@ -28,3 +28,13 @@ Flag football is the easiest signup in youth sports: minimal gear, short seasons
 **What a good first season looks like:** they can pull a flag without tackling the kid wearing it, they caught one pass they'll describe for a week, and they want to play again. If a coach mentions your kid should "move up to tackle" after one good season, that's a conversation to have on your timeline, not theirs.
 
 The full flag library lives on our [flag football hub](/sports/flag-football/), including [drills you can run in the backyard](/coaching-tips/) with the set of belts we picked for exactly that.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Flag football belt set →](/go/flag-football-belt-set/) — a solid pick for youth flag football players.
+
+[Full Flag Football gear guide →](/what-to-buy/flag-football/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

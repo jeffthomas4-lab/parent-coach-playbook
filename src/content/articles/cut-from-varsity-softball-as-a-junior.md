@@ -28,3 +28,13 @@ The junior-year cut is the one without a net. A sophomore who misses varsity dro
 **And done is allowed.** A junior has earned the right to close the chapter, take the job, do the spring musical, lift, whatever. [Walking away at 15-plus](/drive-home/15-plus-walking-away/) covers that conversation, and [when your kid isn't going to play in college](/drive-home/when-your-kid-isnt-going-to-play-in-college/) covers the longer one underneath it, because for nearly every kid that was already true before the cut.
 
 The question to ask her a week later, not the night of: what do you want softball to be now? Then build whichever answer she gives. The cut decided her roster status. It doesn't get to decide her relationship with the sport.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+
+[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

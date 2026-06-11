@@ -26,12 +26,14 @@ Helmet fitting matters more than most parents realize. A helmet that sits too hi
 
 What practice looks like in year one surprises most families. The first two weeks of tackle practice are almost entirely stance and footwork: how to get into a three-point stance, how to fire out low, how to move your feet before you move anything else. There are not many plays. There is a lot of repetition that looks like nothing. This is correct. The fundamentals that get drilled in August are the ones that keep kids healthy in October. A program that spends the first week running full-speed scrimmages is skipping the steps that matter.
 
-What a good program looks like versus a red flag: a good program runs a structured August schedule with water breaks every 20 to 30 minutes, uses the weight of the players to set contact groups so a 65-pound kid isn't hitting a 110-pound kid in drills, and tracks practice contact time. A red flag program has coaches who celebrate big hits in practice, runs live tackling drills without progression (no pads, walk-through, jog-through first), and treats questions about safety as disrespect. You are allowed to ask every question before you commit. A program that makes you feel bad for asking about safety protocols is a program that doesn't have good answers.
+What a good program looks like versus a red flag: a good program runs a structured August schedule with water breaks every 20 to 30 minutes, uses the weight of the players to set contact
 
-Ask every program two things before you hand over your registration check. First: what tackling method do you teach? The answer you want is shoulder tackling with eyes up, which is what USA Football's Heads Up Football program certifies. Heads Up certification means coaches completed a training program covering proper tackling mechanics, blocking technique, heat and hydration, and concussion recognition. It is free for coaches and most rec leagues require it. If a coach can't tell you how they teach tackling, or if their answer is "we just play football," that is information about the program.
+---
 
-Second: how much live contact happens at practice? USA Football's own recommendations cap full-speed, full-contact practice at 30 minutes per session at the youth level. Programs that run live scrimmages every night are giving you enthusiasm, not player development. The kids who arrive in middle school technically sound are the ones who drilled fundamentals at 9, not the ones who played tackle every Thursday.
+**Gear mentioned in this article** (affiliate)
 
-The time commitment is the part football families underestimate most. Conditioning starts in late July or early August, in the hottest weeks of the year. In-season practices run three to four days a week. Games are typically Saturday. That is a bigger family calendar commitment than any other fall rec sport, and it's worth being honest about before you sign up. Know [heat illness warning signs](/game/heat-illness-when-to-pull-them-out/) before August practices start, because that is when they matter.
+[Youth rubber football →](/go/football-rubber-youth/) — a solid pick for youth football players.
 
-The car ride home after the first tackle practice will tell you something. If your kid comes home tired and already talking about tomorrow, you have your answer. If they come home quiet, ask one question and then stop: "How did it feel?" Let them sit with it. First-year football is physically hard in a way that most kids haven't experienced, and some of them love that. Some of them don't. Both are real, and the car is not the place to decide which answer you were hoping for.
+[Full Football gear guide →](/what-to-buy/football/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

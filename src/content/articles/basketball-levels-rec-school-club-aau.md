@@ -26,3 +26,13 @@ Basketball parents get four words thrown at them, rec, school, club, AAU, often 
 **When each level makes sense.** Rec through 10, minimum, and there's no exception that survives scrutiny. Club entry makes sense around 11 to 13 for the kid who's driving it, ideally alongside school ball, not instead of it. The shoe-circuit conversation (EYBL, Gauntlet, 3SSB) belongs at 15-plus for the small number of players those circuits actually pursue, and if your kid is one of them, the circuit will find you; it doesn't work the other way. The [pathway by age](/pathways/basketball/) maps what good looks like at each stop, and [the travel decision framework](/decisions/should-my-kid-play-travel-sports/) applies to basketball with full force.
 
 **The one sentence to keep:** levels are tools, not rankings of parental commitment. The 12-year-old in rec ball with a driveway hoop and a Saturday habit is not behind the 12-year-old at her third tournament this month. By 16, the gym sorts everyone honestly anyway. Pick the level that fits the kid, the budget, and the family calendar, in that order.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+
+[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -30,3 +30,13 @@ Yes, we'll probably lose some games. We might lose the playoff game with this sy
 We post the rotation before the game so parents know what to expect. "Emma plays the first three innings in left field, then moves to first base in the second half." No surprises. No angry parents wondering why their kid was on the bench.
 
 This system takes ten minutes to build and saves us from an entire season of parent anger. We do it the night before every game.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

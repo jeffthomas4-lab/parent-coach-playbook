@@ -28,3 +28,13 @@ Basketball is the easiest team sport to start in America: one signup, one pair o
 **What a good first season looks like:** they can dribble to a spot on purpose by the last week, they made one shot they'll remember all year even if it was the only one, and they want a hoop in the driveway. Say yes to the hoop; it's the best development purchase in the sport.
 
 The full library lives on the [basketball hub](/sports/basketball/): drills by age, the [pathway](/pathways/basketball/), the season calendar, and what comes after rec, which is a longer conversation we wrote up [here](/drive-there/basketball-levels-rec-school-club-aau/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+
+[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

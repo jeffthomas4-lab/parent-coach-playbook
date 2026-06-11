@@ -20,7 +20,7 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  affiliateDisclosurePresent: false
+  affiliateDisclosurePresent: true
   claudeReviewedAt: 2026-04-26
   status: claude-reviewed
   reviewerNotes: Practical and well-targeted to a specific sport's pain point.
@@ -41,3 +41,13 @@ A two-day swim meet is 14 hours of pool deck, 90 seconds of actual racing per ki
 **The post-meet wind-down.** Swimmers are tired in a specific way after a meet. Easy dinner, early bed, no analysis of the races until at least the next morning. The "what could you have done differently" conversation has no place at 9pm Sunday.
 
 The families that survive a two-day meet without snapping at each other are the families that pre-decided who does what.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — a solid pick for youth swimming players.
+
+[Full Swimming gear guide →](/what-to-buy/swimming/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

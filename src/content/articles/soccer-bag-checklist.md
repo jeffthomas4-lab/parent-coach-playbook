@@ -49,3 +49,13 @@ The soccer bag is simple. That's also why it gets packed carelessly, and why the
 A full-size towel, three extra pairs of shorts, the foam roller from the living room. The soccer bag is a small bag. If you're hauling a rolling duffel to a recreational game, you've accumulated too much. The cleats, guards, water, snack, and the right clothing for the conditions are the bag. Everything else is weight.
 
 The shin guard rule is the only thing you need to remember from this page: shin guards live inside the cleats when they're not being worn. One habit, zero forgotten guards.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+
+[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

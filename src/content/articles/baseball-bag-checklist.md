@@ -51,3 +51,13 @@ For travel ball: a backup bat. Not a preference, a plan. Bats crack. Bats get le
 A marker for writing your athlete's name on equipment. A spare hair tie or headband for athletes who need one. An extra mouthguard in the bag beyond the one currently in their mouth.
 
 **What doesn't need to be in there:** four bats for a rec game, the batting tee that got put in the car bag three seasons ago, the old helmet with the cracked shell that's been in there "just in case" since last spring. Pull it out. The good equipment does its job better when it's not buried.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

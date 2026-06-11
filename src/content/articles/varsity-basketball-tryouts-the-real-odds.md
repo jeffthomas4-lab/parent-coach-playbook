@@ -28,3 +28,13 @@ Basketball has the cruelest roster math in high school sports. Football keeps ev
 **And keep the college math out of tryout week.** A varsity jersey is not a recruiting event; the [4 percent rule](/drive-home/the-4-percent-rule/) is the honest picture of what comes after high school ball. The reason to chase the roster spot is the season itself. The bus rides, the rivalry game, playing in front of the school.
 
 The kid who understands the math going in handles the list going up. Walk through it together the week before, not the night the email comes.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+
+[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

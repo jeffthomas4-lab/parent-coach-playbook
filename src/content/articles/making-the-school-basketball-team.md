@@ -26,3 +26,13 @@ Middle school basketball tryouts are, for most kids, the first time a roster has
 **If the cut comes:** the [24-hour rule](/drive-home/after-the-cut-the-24-hour-rule/) governs. No fixing, no coach emails, no silver linings the first night, just food and presence. The path back is real and coaches respect it: rec league or club season for game reps, a driveway habit, maybe a manager role if they want to stay close to the program, and a body that shows up next November in shape. Some of the best high school players in every town got cut in 7th grade; almost none of their parents emailed the coach about it.
 
 **The bigger truth to hold onto:** school tryouts measure one week of one year of a long athletic life. The kid is not a roster decision, and the ride home, win or lose, is where they learn whether you know that. The [scripts library](/scripts/) has the words for every version of that drive.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+
+[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

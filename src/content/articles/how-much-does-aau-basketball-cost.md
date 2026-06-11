@@ -26,3 +26,13 @@ AAU basketball has the biggest gap in youth sports between the quoted price and 
 **Where we'd spend first, in order:** shoes that fit, a driveway hoop, a rec season the kid loves, then, if she's driving it at 11-plus, one club season with a real practice schedule, evaluated honestly at the end. The $1,800 training line beats a second team's fee every time; more games against the same weaknesses is the most expensive way to stand still.
 
 Run [your real number](/cost-calculator/) before tryouts, read the [travel decision](/decisions/should-my-kid-play-travel-sports/) before the coach's pitch, and see [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/) for how basketball compares to everything else your kids play.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+
+[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -28,3 +28,13 @@ Softball's first season comes with a question no other sport asks at signup: sof
 **What a good first season looks like:** she swings without being talked into it, she has a position she claims even if the coach rotates everyone, she's learned one chant you now hear in your sleep, and she asks about fall ball. That's the whole scoreboard.
 
 The full library lives on the [softball hub](/sports/softball/): drills, the [pathway by age](/pathways/softball/), the [season calendar](/season-calendar/), and the sizing guide. Welcome to the dirt.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+
+[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

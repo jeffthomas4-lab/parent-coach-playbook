@@ -26,3 +26,13 @@ Travel softball costs what travel baseball costs, with one exception that change
 **Where the money leaks:** July. Nationals season means the longest trips, the most hotel nights, and the event fees with "PGF" or "nationals" in the name. A team's summer schedule is knowable in advance; ask for it, with locations, before you commit in the fall. The difference between a regional schedule and a fly-out nationals schedule is $2,000 to $3,000 in the same season.
 
 Run [your real numbers](/cost-calculator/), with your club's actual fees, before tryout season, and read the [travel decision](/decisions/should-my-kid-play-travel-sports/) before a coach makes it for you at all-stars. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/), and the timing question of when fastpitch even becomes its own track is in [when softball splits from baseball](/drive-there/when-softball-splits-from-baseball/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+
+[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

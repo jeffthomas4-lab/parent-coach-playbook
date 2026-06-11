@@ -47,3 +47,13 @@ This list comes from the swim families in our network who learned the natatorium
 **Feed the meet, not the moment.** Long-course meets cross two meal times. A swimmer running on concession-stand candy fades by the 200. Pack like it's a hike: real food, eaten between events, small and often.
 
 Pack the bag the night before and stage it by the door, because warmups start at 7am sharp and the natatorium doors do not care about your morning. First meet coming up? [The swim meet weekend logistics guide](/team-parent/swim-meet-weekend-logistics/) covers the parts that aren't in the bag, and the [season's real costs](/drive-there/what-youth-sports-cost/) cover the rest. Printables ship with the [Friday Letter](/newsletter/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth swim goggles →](/go/swim-goggles-youth/) — a solid pick for youth swimming players.
+
+[Full Swimming gear guide →](/what-to-buy/swimming/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

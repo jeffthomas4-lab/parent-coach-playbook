@@ -28,3 +28,13 @@ Football tells families a kindness that hides a hard truth. Almost nobody gets c
 **And keep the scholarship math where you can see it.** The [4 percent rule](/drive-home/the-4-percent-rule/) covers what comes after high school football for nearly everyone, which is nothing, and that's fine. The [football pathway](/pathways/football/) covers what development should look like at this age either way.
 
 The roster spot was never the goal. Snaps were. A kid who learns to win a depth chart has learned the thing the sport was actually for.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — a solid pick for youth football players.
+
+[Full Football gear guide →](/what-to-buy/football/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

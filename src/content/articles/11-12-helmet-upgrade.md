@@ -39,3 +39,13 @@ If they wore it last season and it still fits, check with the coach. Some progra
 May or June. Before July camp. Not in August when everyone's buying at once. You'll pay more and selection dies.
 
 Order early if you need it. Get it fitted. One less variable when season starts.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth rubber football →](/go/football-rubber-youth/) — a solid pick for youth football players.
+
+[Full Football gear guide →](/what-to-buy/football/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

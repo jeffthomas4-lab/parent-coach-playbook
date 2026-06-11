@@ -44,14 +44,14 @@ Cash for concessions. A camp chair, because the venue seating near athlete stagi
 
 ## What most people forget
 
-**The school ID.** Some competitions require it for athlete check-in. Read the event itinerary the night before and check the check-in requirements. If the ID is required, no one at the venue can substitute for it.
+**The school ID.** Some competitions require it for athlete check-in. Read the event itinerary the night before and check the check-in requireme
 
-**Extra socks.** One white pair in the bag beyond what goes in the shoe. White no-show, team-approved style.
+---
 
-**Something to do.** A competition is 20 minutes of performing inside 9 hours of waiting. Cards, a book, headphones. The athlete who has nothing at 2pm is the one who unravels before awards.
+**Gear mentioned in this article** (affiliate)
 
-## What you actually need vs. what stays in the bag
+[Youth cheer shoes →](/go/cheer-shoes-youth/) — a solid pick for youth cheer players.
 
-Every cheer bag accumulates dead weight: the full-size hair dryer, the accessories from a different routine, the spare shoes from two programs ago. None of it has earned its spot. The bag that rolls to the car is the bag you checked piece by piece the night before. The stuff you grabbed and assumed you'd sort out in the morning is what you're rummaging for at 5:45am.
+[Full Cheer gear guide →](/what-to-buy/cheer/) — all picks by age and level.
 
-The night-before pack takes 20 minutes. The morning scramble takes an hour and still ends with something missing.
+*As an Amazon Associate we earn from qualifying purchases.*

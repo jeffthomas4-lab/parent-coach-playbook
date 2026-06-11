@@ -38,3 +38,13 @@ They wear them for five minutes in the shop while they're still warm. Then they 
 Once they're baked, they're his. Buy the right socks. Keep his feet dry. Change socks if they get wet. The investment only works if you maintain it.
 
 One pair of baked skates beats three pairs of off-the-shelf. This is the one place where the investment pays for itself the first week.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Hockey puck →](/go/hockey-puck/) — a solid pick for youth hockey players.
+
+[Full Hockey gear guide →](/what-to-buy/hockey/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -25,4 +25,14 @@ These are our [cost calculator](/cost-calculator/) defaults, anchored to Little 
 
 Two places the budget actually leaks. First, the bat. An expensive bat does not fix a swing, aging certifications retire bats on a schedule, and kids outgrow lengths in 18 months; we covered [the bat your kid begged for](/drive-there/the-bat-your-kid-begged-for/). Second, tournament weekends nobody opted out of. Each one is $300 to $500 with the hotel, and a 60-game summer is a choice, not a requirement.
 
-Run [your own number](/cost-calculator/) before signup night, and read [the travel decision](/decisions/should-my-kid-play-travel-sports/) before a coach makes it for you. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/).
+Run [your own number](/cost-calculator/) before signup night, and read [the travel decision](/decisions/should-my-kid-play-travel-sports/) before a coach makes it for you. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-spor
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

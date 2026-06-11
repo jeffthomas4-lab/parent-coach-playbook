@@ -41,3 +41,13 @@ Player pitch (roughly 10-12): full count, called balls, walks. She understands p
 Don't push strikeouts earlier than the league has them. Don't tell your kid they should have hit it. Just say, "Good at-bat. We'll get the next one." Then let it go.
 
 The strikeout rule will come. Until then, celebrate that they swung.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -28,3 +28,13 @@ Soccer is the sport where the club system and the school system stopped pretendi
 **At 15-plus, the kid decides.** Not because the money is theirs, but because the cost is: the hours, the missed Fridays, the identity. Lay out both calendars on the table, side by side, with the dollar figures attached. Then ask which season they'd protect if forced to choose, and listen to the first answer, because it's usually the real one.
 
 And if the answer is that they're tired of both, that's information too. [Walking away at 15-plus](/drive-home/15-plus-walking-away/) is its own read, and it's a more common ending than the showcase brochures admit.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+
+[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

@@ -28,3 +28,13 @@ Every other sport in the building runs on a coach's opinion. Track runs on a clo
 **And honor what track gives the refugees.** Half of every track roster is kids cut from something else who found a sport that only asked them to show up and improve. Some of them fall in love with it. If your kid walks in carrying a basketball cut, let track be its own thing, not the backup plan with a number on it.
 
 The stopwatch doesn't care who your kid was last season. That's the whole pitch.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth XC trainers →](/go/xc-trainers-youth/) — a solid pick for youth track field players.
+
+[Full Track Field gear guide →](/what-to-buy/track-field/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

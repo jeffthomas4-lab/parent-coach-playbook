@@ -61,3 +61,13 @@ This list comes from hockey families who have done the drive of shame back home.
 **Jersey color is a real check.** Home white, away dark, and every hockey parent eventually packs the wrong one. The team chat will tell you tonight's color; the list makes you look.
 
 First-year family? [What you actually need for first-year hockey](/drive-there/what-you-actually-need-for-first-year-hockey/) keeps the initial spend sane, the [hockey gear guide](/what-to-buy/hockey/) covers what to buy used, and [what hockey really costs](/drive-there/how-much-does-youth-hockey-cost/) prepares you for the rest. Printables ship with the [Friday Letter](/newsletter/).
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Hockey puck →](/go/hockey-puck/) — a solid pick for youth hockey players.
+
+[Full Hockey gear guide →](/what-to-buy/hockey/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

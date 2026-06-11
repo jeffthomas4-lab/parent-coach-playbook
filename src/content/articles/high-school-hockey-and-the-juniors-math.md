@@ -28,3 +28,13 @@ Hockey hides its college math better than any sport. In basketball, the path is 
 **The high school season still counts for what it's for.** Playing in front of classmates, a state tournament run, a letter jacket. Those aren't consolation prizes; they're the parts your kid remembers at 40. The [hockey rules page](/rules/hockey/) covers the on-ice differences between levels if you're moving between them.
 
 And if the dream ends at graduation with no juniors and no ACHA, [when your kid isn't going to play in college](/drive-home/when-your-kid-isnt-going-to-play-in-college/) is the read for the car ride home from the last game. Most hockey careers end there. The good ones end with the kid still loving the ice.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Hockey puck →](/go/hockey-puck/) — a solid pick for youth hockey players.
+
+[Full Hockey gear guide →](/what-to-buy/hockey/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

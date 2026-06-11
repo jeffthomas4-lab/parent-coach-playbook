@@ -28,3 +28,13 @@ Being the ace is the best thing that happens to a high school pitcher and the mo
 **Soreness has a vocabulary. Learn it.** Muscle-tired in the shoulder the day after a start is normal. Pain on the inside of the elbow, pain that changes his mechanics, or velocity that drops mid-outing is not. Aces hide pain because aces pitch. Watch his face on the mound more than the scoreboard.
 
 The state rule book lives behind the [baseball rules page](/rules/baseball/), and the [baseball pathway](/pathways/baseball/) covers what development at this age should look like beyond the radar gun. The ace year is a privilege. Protect the arm that earned it.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

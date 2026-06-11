@@ -38,3 +38,13 @@ Used drop-tens and drop-nines are everywhere. Someone's kid upgraded. If it's fi
 January through March. Order before April camp. Not at the field before season starts.
 
 One bat that fits him today beats three bats that are wrong.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+
+[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

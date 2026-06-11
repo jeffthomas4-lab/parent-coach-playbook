@@ -39,3 +39,13 @@ They'll outgrow them in one season. Not because they're bad. Because they're eig
 Add up the season: shoes, socks, shin guards, jersey if you're buying it. Add the cleats. That's your number. Most parents are surprised it's cheaper than they thought if they don't buy status brands.
 
 Get what fits. Ignore the logo. Their foot doesn't care what swoosh you paid for.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+
+[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

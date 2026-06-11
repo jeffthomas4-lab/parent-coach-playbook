@@ -28,3 +28,13 @@ At some point around age 9, a certain kind of kid watches the pitcher get the ba
 **How to know it's working:** a year in, she practices without being reminded, she has a fastball and a changeup she trusts, and a bad inning ruins an hour instead of a weekend. That kid is a pitcher; invest accordingly. The kid who needs dragging to the bucket sessions has answered the question too, and a happy shortstop beats a miserable pitcher every season of every year.
 
 The full development map lives in the [softball pathway](/pathways/softball/), and the [gear guide](/what-to-buy/softball/) covers what the circle requires. Start small, protect the arm, and keep the car ride kind.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+
+[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

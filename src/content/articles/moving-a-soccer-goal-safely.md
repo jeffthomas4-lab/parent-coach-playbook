@@ -146,3 +146,13 @@ That's the rule.
 Follow it every time and no one gets hurt.
 
 That's it.
+
+---
+
+**Gear mentioned in this article** (affiliate)
+
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+
+[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

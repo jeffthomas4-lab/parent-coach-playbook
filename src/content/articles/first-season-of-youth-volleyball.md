@@ -28,12 +28,14 @@ Net height changes by age group. Youth girls' net height is 6 feet at the 10 and
 
 What a good first-year coach teaches: two things, in order. Passing platform and serving fundamentals. A player who can consistently get to the ball and put it up, and who can serve into the court, is ready to play. Everything else — setting, hitting, blocking, the libero role — is built on those two things. A coach who spends year one on those two skills has the priorities right. A coach who is teaching 10-year-olds the intricacies of the 5-1 rotation is spending their time badly.
 
-On positions: don't worry about them in year one. The libero is the defensive specialist who wears a contrasting jersey, can't attack or serve in most formats, and rotates in and out in specific ways. It is a position that matters at 13 and up, when kids are starting to specialize. At 10, every kid should be learning to pass, serve, and get in the general vicinity of where the ball is going. The libero conversation is three or four seasons away.
+On positions: don't
 
-The gym culture in volleyball is louder and more coach-intensive than soccer or baseball. Volleyball coaches talk constantly during play: calling the ball, calling "mine," directing rotations. The bench talks to the players on the court between points. The home team fan section at a volleyball match is loud in a specific way, where every point gets an eruption from both sides. If your kid has played outdoor sports and walks into a volleyball gym for the first time, the sound level is different.
+---
 
-Most families start rec volleyball at age 10 to 12. Club tryouts are typically at 12 to 14, with December tryouts for the January-through-June season. Club volleyball is a real commitment and a real cost increase; the [cost calculator](/cost-calculator/) can show you the difference for your level. The pressure to club-commit early is real in some markets and worth resisting until your kid has had enough rec experience to know they actually love the sport.
+**Gear mentioned in this article** (affiliate)
 
-What a good first season looks like in concrete terms: by the last week of the season your kid can serve the ball over the net at least half the time, they have stopped flinching when the ball comes at them, and they understand that their job when the ball comes to them is to pass it up and toward the setter, not to try to hit it over. That last one is the mental model that takes most of year one to install. If they have it by the end, year two starts in a different place.
+[Volley-Lite training ball →](/go/volleyball-volley-lite/) — a solid pick for youth volleyball players.
 
-The car ride home from volleyball is simpler than most sports because the skill feedback is immediate and visible. Your kid knows whether they served it in. They know whether they passed it cleanly. The most useful thing you can say is something specific to a moment you saw: "You got to that ball in the back corner" rather than anything about the score or the team's overall performance. Volleyball kids tend to be hard on themselves about errors, the sport trains that partly by design, and they don't need you to add to the count on the way home.
+[Full Volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*
