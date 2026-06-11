@@ -1,0 +1,447 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+
+export const prerender = true;
+---
+<BaseLayout
+  title="Youth sports burnout check"
+  description="Answer 9 questions about your kid. Get a clear read on whether this is a rough patch or something that needs your attention now."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Youth Sports Burnout Check',
+    url: 'https://parentcoachdesk.com/burnout-check/',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'A 9-question diagnostic that helps parents tell the difference between a rough week and real burnout, with specific next steps for each result.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  })} />
+
+  <!-- Header -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">A quick read</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        Burnout check.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Nine questions about your kid right now. Takes two minutes. The result tells you whether this is a bad week or a pattern worth acting on.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tool -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10 max-w-2xl" id="quiz-section">
+
+      <div id="quiz-form">
+        <p class="font-display text-ink-soft text-sm mb-8 leading-relaxed">
+          Think about the past two to three weeks, not just yesterday. Answer based on what you have actually seen, not what you hope is happening.
+        </p>
+
+        <form id="burnout-form" class="space-y-8">
+
+          <!-- Q1 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="1">
+            <p class="font-display text-ink font-medium leading-snug mb-4">1. When it is time to go to practice, what is your kid's typical reaction?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q1" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Grabs the bag and heads to the car. No prompting needed.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q1" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Goes, but takes a few reminders or moves slowly.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q1" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Resists, makes excuses, or says they do not feel well several times a week.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="2">
+            <p class="font-display text-ink font-medium leading-snug mb-4">2. How does your kid talk about the sport when they bring it up on their own?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q2" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Still mentions teammates, plays, or upcoming games with some energy.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q2" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Mostly complaints, but still some positive moments woven in.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q2" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Only brings it up to complain, or has stopped mentioning it at all.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="3">
+            <p class="font-display text-ink font-medium leading-snug mb-4">3. How is your kid's mood the day before or on the way to games?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q3" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Normal or a little excited. Some nerves are fine and expected.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q3" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Noticeably anxious or irritable before most games.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q3" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Flat, withdrawn, or visibly dreading it. Stomach complaints or headaches that clear up once the game is cancelled or over.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="4">
+            <p class="font-display text-ink font-medium leading-snug mb-4">4. How does your kid respond to coaching or correction at practice?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q4" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Listens, adjusts, and moves on. Normal competitive frustration sometimes.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q4" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Seems to shut down or sulk more than before when corrected.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q4" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Cries regularly at practice, freezes up, or comes home saying they are not good enough.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="5">
+            <p class="font-display text-ink font-medium leading-snug mb-4">5. In the past three weeks, how often has your kid asked to skip or quit?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q5" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Once, or not at all.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q5" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Two or three times. Did not push it, but it came up.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q5" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Most weeks. Asks to quit or skips when given any option.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="6">
+            <p class="font-display text-ink font-medium leading-snug mb-4">6. How is your kid sleeping and eating on heavy training weeks?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q6" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Tired some nights, but generally sleeping well and eating normally.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q6" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Running low on sleep most weeks. Appetite seems off sometimes.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q6" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Chronic sleep problems, visible physical exhaustion, or not eating well most days.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="7">
+            <p class="font-display text-ink font-medium leading-snug mb-4">7. How is the sport affecting their mood at home on school nights and weekends?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q7" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Roughly the same as always. Normal kid moods.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q7" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">More irritable or low after practice days, but rebounds.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q7" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Mood has shifted in a lasting way. Withdrawn, easily frustrated, or seems heavier than usual most days.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="8">
+            <p class="font-display text-ink font-medium leading-snug mb-4">8. How does your kid describe what they get out of the sport right now?</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q8" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Mentions friends, moments they liked, things they want to get better at.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q8" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Hard to say. They do not talk about it much in positive terms.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q8" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Cannot name anything good about it when asked directly.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="border border-bone p-5 bg-paper-warm" data-question="9">
+            <p class="font-display text-ink font-medium leading-snug mb-4">9. Has your kid had any real recovery time in the past month? A week with no practices, a weekend completely off from sport-related activities.</p>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q9" value="0" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">Yes, at least one real break in the past month.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q9" value="1" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">A couple of days here and there, but no full stretch off.</span>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="radio" name="q9" value="2" class="mt-1 accent-rust shrink-0">
+                <span class="font-display text-ink-soft text-sm group-hover:text-ink transition-colors">No. Continuous for more than four weeks with no real break.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="button"
+              id="get-result"
+              class="font-display font-medium bg-rust text-paper px-8 py-3 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+              disabled
+            >
+              See the result
+            </button>
+            <p id="incomplete-msg" class="font-display text-ink-soft text-sm mt-2 hidden">Answer all 9 questions to see your result.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Result panel -->
+      <div id="result-panel" class="hidden">
+
+        <!-- Low risk -->
+        <div id="result-low" class="hidden">
+          <div class="border border-bone p-6 bg-paper-warm">
+            <p class="font-display italic text-sm font-medium mb-1" style="color: #5C7459">Score 0-3</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl font-medium leading-tight mb-4">Probably a bad week.</h2>
+            <p class="font-display text-ink leading-relaxed">
+              The signals you are describing are consistent with normal seasonal stress: a hard stretch of games, a coach who got under their skin, a scheduling crunch, or just being ten and tired. Most kids go through this several times a season.
+            </p>
+            <p class="font-display text-ink leading-relaxed mt-3">
+              That does not mean ignore it. It means respond without escalating it.
+            </p>
+          </div>
+          <div class="mt-6 border border-bone p-6">
+            <p class="font-display italic text-rust font-medium text-sm mb-4">What to do this week</p>
+            <ul class="space-y-4">
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Keep the drive home quiet.</span> The fifteen minutes after a bad practice or game is the wrong time to diagnose what went wrong. Let them set the tone. If they want to talk, follow. If they want music, do music.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Ask one open question tonight.</span> Not "how was practice?" Ask "what's one thing you actually liked today?" It forces them to find something, which rewires the whole conversation.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Build in one day completely off this week.</span> Not a lighter practice. A full day with nothing sport-related on the calendar. Let them be bored. That is recovery.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Retake this check in two weeks.</span> If the score climbs, that is information. Right now it looks like noise, not a pattern.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Moderate risk -->
+        <div id="result-moderate" class="hidden">
+          <div class="border border-bone p-6 bg-paper-warm">
+            <p class="font-display italic text-sm font-medium mb-1" style="color: #C5713D">Score 4-6</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl font-medium leading-tight mb-4">Watch this.</h2>
+            <p class="font-display text-ink leading-relaxed">
+              The pattern you are describing has enough consistency to take seriously. This is not necessarily burnout, but it is the stage before burnout if nothing changes. The kid is running on lower reserves than they were a month ago.
+            </p>
+            <p class="font-display text-ink leading-relaxed mt-3">
+              What you do in the next two to three weeks matters. Early action is much easier than late action.
+            </p>
+          </div>
+          <div class="mt-6 border border-bone p-6">
+            <p class="font-display italic text-rust font-medium text-sm mb-4">What to do now</p>
+            <ul class="space-y-4">
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Have a real conversation, not a check-in.</span> Find a low-pressure moment, not right before or after a game, and say: "I want to hear how you're actually feeling about all of this. I'm not going to make any decisions tonight. I just want to know." Then listen without solving.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Contact the coach this week.</span> Email or call and say you have noticed your kid seems worn down and you want to flag it. Ask if the coach has noticed anything in practice. A good coach will appreciate the heads-up. What you learn will tell you a lot about the program.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Schedule one week of reduced load.</span> Not quitting, not skipping every practice, but a deliberate dial-back. Miss one session. Skip the optional workout. Protect one weekend. Call it rest, not avoidance.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Stop coaching from home.</span> If your kid comes home from practice and hears more analysis or instruction from you, the stress bucket does not empty. For two weeks, your home is a sport-free zone.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- High risk -->
+        <div id="result-high" class="hidden">
+          <div class="border p-6" style="background-color: #fdf4ef; border-color: #C5713D;">
+            <p class="font-display italic text-sm font-medium mb-1 text-rust">Score 7-10</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl font-medium leading-tight mb-4">Burnout territory.</h2>
+            <p class="font-display text-ink leading-relaxed">
+              What you are describing is a consistent pattern across multiple areas: motivation, mood, sleep, physical response, and what they say about the sport. That combination does not fix itself with one good game.
+            </p>
+            <p class="font-display text-ink leading-relaxed mt-3">
+              This is not a failure. It is a signal the current load, environment, or expectations are not matching what your kid needs right now. The response is concrete action, not more pushing through.
+            </p>
+          </div>
+          <div class="mt-6 border border-bone p-6">
+            <p class="font-display italic text-rust font-medium text-sm mb-4">What to do this week, specifically</p>
+            <ul class="space-y-4">
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Pull back the schedule now, not at the end of the season.</span> Talk to the coach directly: "My kid is showing signs of being worn down. We need to reduce practice attendance for the next two weeks. We want to finish the season, but not at this cost." Most coaches will work with you. If they do not, that is important information too.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Let your kid name what they need.</span> Ask them: "If you could change two things about how this season is going, what would they be?" The answers will tell you what you are dealing with. The sport itself? The coach? The schedule? Something at home bleeding into it?
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">Do not make a final decision in week one of the pullback.</span> Give the reduced load two weeks before you decide about next season or finishing this one. Burnout kids often say they want to quit entirely, then change their mind once they can breathe. Decisions made at the bottom are not the same as decisions made from a rested place.
+              </li>
+              <li class="font-display text-ink text-sm leading-relaxed">
+                <span class="font-medium">If mood changes are affecting school or relationships at home, talk to your pediatrician.</span> Physical exhaustion and chronic anxiety in a child deserve a clinical eye, not just a scheduling fix. You do not have to frame it as a sports problem. Describe what you have seen and let the doctor ask their own questions.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-bone">
+          <button
+            type="button"
+            id="retake-btn"
+            class="font-display text-sm text-ink-soft hover:text-rust transition-colors underline underline-offset-2"
+          >
+            Start over
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-4 font-medium">Related</p>
+      <div class="grid sm:grid-cols-2 gap-px bg-bone max-w-4xl">
+        <a href="/articles/is-this-burnout-or-a-bad-week/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Is this burnout, or just a bad week?</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The difference matters. The response is completely different.</p>
+        </a>
+        <a href="/pre-game-routine/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Build a pre-game routine</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Structure for the night before, morning of, and arrival.</p>
+        </a>
+        <a href="/youth-sports-pendulum/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">The youth sports pendulum</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Where are you on the growth-to-burnout axis right now?</p>
+        </a>
+        <a href="/articles/pre-game-anxiety-normal/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Pre-game anxiety: normal vs. not</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The line between healthy nerves and something to address.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <LeadMagnetCTA />
+</BaseLayout>
+
+<script>
+  (function () {
+    const form = document.getElementById('burnout-form') as HTMLFormElement;
+    const btn = document.getElementById('get-result') as HTMLButtonElement;
+    const incompleteMsg = document.getElementById('incomplete-msg') as HTMLElement;
+    const quizForm = document.getElementById('quiz-form') as HTMLElement;
+    const resultPanel = document.getElementById('result-panel') as HTMLElement;
+    const resultLow = document.getElementById('result-low') as HTMLElement;
+    const resultModerate = document.getElementById('result-moderate') as HTMLElement;
+    const resultHigh = document.getElementById('result-high') as HTMLElement;
+    const retakeBtn = document.getElementById('retake-btn') as HTMLButtonElement;
+
+    const TOTAL = 9;
+
+    function countAnswered(): number {
+      let n = 0;
+      for (let i = 1; i <= TOTAL; i++) {
+        if (form.querySelector(`input[name="q${i}"]:checked`)) n++;
+      }
+      return n;
+    }
+
+    function getScore(): number {
+      let score = 0;
+      for (let i = 1; i <= TOTAL; i++) {
+        const el = form.querySelector(`input[name="q${i}"]:checked`) as HTMLInputElement | null;
+        if (el) score += parseInt(el.value, 10);
+      }
+      return score;
+    }
+
+    form.addEventListener('change', function () {
+      btn.disabled = countAnswered() < TOTAL;
+      if (countAnswered() === TOTAL) incompleteMsg.classList.add('hidden');
+    });
+
+    btn.addEventListener('click', function () {
+      if (countAnswered() < TOTAL) {
+        incompleteMsg.classList.remove('hidden');
+        for (let i = 1; i <= TOTAL; i++) {
+          if (!form.querySelector(`input[name="q${i}"]:checked`)) {
+            const el = form.querySelector(`[data-question="${i}"]`) as HTMLElement;
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            break;
+          }
+        }
+        return;
+      }
+
+      const score = getScore();
+      quizForm.classList.add('hidden');
+      resultPanel.classList.remove('hidden');
+      resultLow.classList.add('hidden');
+      resultModerate.classList.add('hidden');
+      resultHigh.classList.add('hidden');
+
+      if (score <= 3) {
+        resultLow.classList.remove('hidden');
+      } else if (score <= 6) {
+        resultModerate.classList.remove('hidden');
+      } else {
+        resultHigh.classList.remove('hidden');
+      }
+
+      resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    retakeBtn.addEventListener('click', function () {
+      form.reset();
+      btn.disabled = true;
+      quizForm.classList.remove('hidden');
+      resultPanel.classList.add('hidden');
+      resultLow.classList.add('hidden');
+      resultModerate.classList.add('hidden');
+      resultHigh.classList.add('hidden');
+      quizForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
+</script>

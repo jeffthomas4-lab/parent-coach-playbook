@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T22:18:32.319Z",
+  "generatedAt": "2026-06-11T22:21:17.862Z",
   "count": 398,
   "links": [
     {
@@ -558,6 +558,7 @@
       "url": "https://schema.org",
       "sources": [
         "src/pages/body/[slug].astro",
+        "src/pages/burnout-check.astro",
         "src/pages/camps/[state]/[city]/[sport]/index.astro",
         "src/pages/camps/[state]/[city]/index.astro",
         "src/pages/camps/[state]/index.astro",
@@ -565,6 +566,7 @@
         "src/pages/cost-calculator.astro",
         "src/pages/decisions/[slug].astro",
         "src/pages/index.astro",
+        "src/pages/pre-game-routine.astro",
         "src/pages/rules/[sport].astro",
         "src/pages/scripts/[slug].astro",
         "src/pages/scripts/index.astro",

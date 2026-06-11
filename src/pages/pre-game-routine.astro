@@ -1,0 +1,468 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+
+export const prerender = true;
+---
+<BaseLayout
+  title="Pre-game routine builder"
+  description="Fill in your kid's preferences for the night before, morning of, and arrival. Print a routine card they can actually follow."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Pre-Game Routine Builder',
+    url: 'https://parentcoachdesk.com/pre-game-routine/',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'An interactive tool that helps parents build and print a personalized pre-game routine card for their kid, covering the night before, morning of, and arrival.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  })} />
+
+  <style>
+    @media print {
+      body * { visibility: hidden; }
+      #routine-card, #routine-card * { visibility: visible; }
+      #routine-card {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        font-family: Georgia, serif;
+        background: white;
+      }
+      .print-hide { display: none !important; }
+      .print-section {
+        margin-bottom: 1.5rem;
+        page-break-inside: avoid;
+      }
+      .print-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #888;
+        margin-bottom: 0.25rem;
+      }
+      .print-value {
+        font-size: 1rem;
+        color: #1a1a1a;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.25rem;
+        min-height: 1.5rem;
+      }
+      .print-header {
+        border-bottom: 2px solid #1a1a1a;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .print-phase-heading {
+        font-size: 0.85rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #555;
+        margin: 1rem 0 0.5rem;
+      }
+      .print-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+
+  <!-- Header -->
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">A tool for game day</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        Pre-game routine builder.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Fill in your kid's preferences. Print the card. The routine is theirs to own.
+      </p>
+    </div>
+  </section>
+
+  <!-- Builder -->
+  <section class="border-b border-bone">
+    <div class="container-px py-10 max-w-2xl print-hide">
+      <p class="font-display text-ink-soft text-sm mb-8 leading-relaxed">
+        Fill in what works for your kid, not the ideal. A routine they will actually follow beats a perfect one they will not. Leave anything blank and it will appear as a line on the printed card.
+      </p>
+
+      <div class="space-y-10" id="builder-form">
+
+        <!-- Night before -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="h-px flex-1 bg-bone"></div>
+            <p class="font-display italic text-rust font-medium text-sm shrink-0">Night before</p>
+            <div class="h-px flex-1 bg-bone"></div>
+          </div>
+
+          <div class="space-y-5">
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="bedtime">Target bedtime</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Most kids need 9-10 hours. Back-calculate from wake time.</p>
+              <input
+                type="text"
+                id="bedtime"
+                placeholder="e.g., 9:30 pm"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="dinner">Dinner choice</label>
+              <p class="font-display text-ink-soft text-xs mb-2">What does your kid eat well the night before a game? Keep it simple and familiar.</p>
+              <input
+                type="text"
+                id="dinner"
+                placeholder="e.g., pasta, grilled chicken, rice"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="gear-check">Gear check</label>
+              <p class="font-display text-ink-soft text-xs mb-2">What needs to be packed the night before? Uniform, cleats, water bottle, anything sport-specific.</p>
+              <textarea
+                id="gear-check"
+                rows="3"
+                placeholder="e.g., uniform, cleats, shin guards, water bottle, snack"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust resize-none"
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="mental-prep">Mental prep</label>
+              <p class="font-display text-ink-soft text-xs mb-2">How does your kid settle in before a big day? Reading, music, a specific conversation with you, nothing.</p>
+              <input
+                type="text"
+                id="mental-prep"
+                placeholder="e.g., read for 20 min, no screens after 8pm"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Morning of -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="h-px flex-1 bg-bone"></div>
+            <p class="font-display italic text-rust font-medium text-sm shrink-0">Morning of</p>
+            <div class="h-px flex-1 bg-bone"></div>
+          </div>
+
+          <div class="space-y-5">
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="wake-time">Wake time</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Leave enough time to eat without rushing. At minimum 90 minutes before game time.</p>
+              <input
+                type="text"
+                id="wake-time"
+                placeholder="e.g., 7:00 am"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="breakfast">Breakfast</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Something they digest well. Avoid anything new or heavy. Carbs and some protein, light on fat.</p>
+              <input
+                type="text"
+                id="breakfast"
+                placeholder="e.g., oatmeal and eggs, toast with peanut butter"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="travel-prep">Travel prep</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Bag check, departure time, anything that needs to happen before you leave the house.</p>
+              <input
+                type="text"
+                id="travel-prep"
+                placeholder="e.g., leave by 9:15, bag by door the night before"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="car-vibe">Car ride</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Music, quiet, a specific playlist, a word you say, or nothing. What works for your kid?</p>
+              <input
+                type="text"
+                id="car-vibe"
+                placeholder="e.g., their playlist, no game talk, just drive"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrival -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="h-px flex-1 bg-bone"></div>
+            <p class="font-display italic text-rust font-medium text-sm shrink-0">Arrival</p>
+            <div class="h-px flex-1 bg-bone"></div>
+          </div>
+
+          <div class="space-y-5">
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="arrive-time">Arrive by</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Most kids need 30-45 minutes before game time to settle, warmup, and connect with teammates.</p>
+              <input
+                type="text"
+                id="arrive-time"
+                placeholder="e.g., 30 min before game time"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="warmup">Warmup preference</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Does your kid like structured warmups, free play with teammates, or solo prep? Note what actually helps them feel ready.</p>
+              <input
+                type="text"
+                id="warmup"
+                placeholder="e.g., passing drills with teammates, light jog first"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="focus-mode">Focus mode</label>
+              <p class="font-display text-ink-soft text-xs mb-2">Headphones, talking with teammates, quiet time alone, stretching by themselves. What gets them in the right headspace?</p>
+              <input
+                type="text"
+                id="focus-mode"
+                placeholder="e.g., headphones until warmup starts, then off"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="parent-role">Your role at arrival</label>
+              <p class="font-display text-ink-soft text-xs mb-2">What do you say, or not say, when you drop them off? A specific phrase, a high five, or walking away quickly.</p>
+              <input
+                type="text"
+                id="parent-role"
+                placeholder='e.g., "have fun", then go find your seat'
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+
+            <div>
+              <label class="font-display text-ink font-medium text-sm block mb-1" for="kid-name">Kid's name (for the card header)</label>
+              <input
+                type="text"
+                id="kid-name"
+                placeholder="e.g., Maya"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row gap-4">
+          <button
+            type="button"
+            id="preview-btn"
+            class="font-display font-medium bg-rust text-paper px-8 py-3 hover:opacity-90 transition-opacity"
+          >
+            Preview routine card
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routine card (shown after preview, visible on print) -->
+  <section id="card-section" class="border-b border-bone hidden" aria-live="polite">
+    <div class="container-px py-10 max-w-2xl">
+
+      <div id="routine-card" class="border border-bone p-8 bg-paper-warm">
+        <div class="print-header border-b border-bone pb-5 mb-6">
+          <p class="font-display italic text-rust text-sm font-medium mb-1">Pre-game routine</p>
+          <h2 id="card-name" class="font-display text-ink text-2xl md:text-3xl font-medium"></h2>
+        </div>
+
+        <!-- Night before block -->
+        <div class="print-section mb-6">
+          <p class="print-phase-heading font-display text-ink-soft text-xs font-medium uppercase tracking-widest mb-3">Night before</p>
+          <div class="print-grid grid sm:grid-cols-2 gap-4">
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Bedtime</p>
+              <p id="card-bedtime" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Dinner</p>
+              <p id="card-dinner" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div class="sm:col-span-2">
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Gear check</p>
+              <p id="card-gear" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div class="sm:col-span-2">
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Mental prep</p>
+              <p id="card-mental" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Morning block -->
+        <div class="print-section mb-6">
+          <p class="print-phase-heading font-display text-ink-soft text-xs font-medium uppercase tracking-widest mb-3">Morning of</p>
+          <div class="print-grid grid sm:grid-cols-2 gap-4">
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Wake time</p>
+              <p id="card-wake" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Breakfast</p>
+              <p id="card-breakfast" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Travel prep</p>
+              <p id="card-travel" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Car ride</p>
+              <p id="card-car" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrival block -->
+        <div class="print-section">
+          <p class="print-phase-heading font-display text-ink-soft text-xs font-medium uppercase tracking-widest mb-3">Arrival</p>
+          <div class="print-grid grid sm:grid-cols-2 gap-4">
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Arrive by</p>
+              <p id="card-arrive" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Warmup</p>
+              <p id="card-warmup" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Focus mode</p>
+              <p id="card-focus" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+            <div>
+              <p class="print-label font-display text-ink-soft text-xs mb-1">Parent role</p>
+              <p id="card-parent" class="print-value font-display text-ink text-sm border-b border-bone pb-1 min-h-[1.5rem]"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 print-hide">
+        <button
+          type="button"
+          id="print-btn"
+          class="font-display font-medium bg-ink text-paper px-8 py-3 hover:opacity-80 transition-opacity"
+        >
+          Print this card
+        </button>
+        <button
+          type="button"
+          id="edit-btn"
+          class="font-display font-medium border border-bone text-ink px-8 py-3 hover:bg-paper-warm transition-colors"
+        >
+          Edit routine
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="border-b border-bone print-hide">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-4 font-medium">Related</p>
+      <div class="grid sm:grid-cols-2 gap-px bg-bone max-w-4xl">
+        <a href="/burnout-check/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Burnout check</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Nine questions. A clear read on where your kid actually is.</p>
+        </a>
+        <a href="/articles/pre-game-anxiety-normal/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Pre-game anxiety: normal vs. not</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The line between healthy nerves and something to address.</p>
+        </a>
+        <a href="/scripts/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Scripts for the drive there</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to say in the car. Word for word.</p>
+        </a>
+        <a href="/articles/is-this-burnout-or-a-bad-week/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Is this burnout, or a bad week?</h3>
+          <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The difference matters. The response is completely different.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="print-hide">
+    <LeadMagnetCTA />
+  </div>
+</BaseLayout>
+
+<script>
+  (function () {
+    const previewBtn = document.getElementById('preview-btn') as HTMLButtonElement;
+    const printBtn = document.getElementById('print-btn') as HTMLButtonElement;
+    const editBtn = document.getElementById('edit-btn') as HTMLButtonElement;
+    const builderForm = document.getElementById('builder-form') as HTMLElement;
+    const cardSection = document.getElementById('card-section') as HTMLElement;
+
+    function val(id: string): string {
+      const el = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | null;
+      return el ? el.value.trim() : '';
+    }
+
+    function set(id: string, value: string): void {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    previewBtn.addEventListener('click', function () {
+      const name = val('kid-name');
+      const cardNameEl = document.getElementById('card-name');
+      if (cardNameEl) {
+        cardNameEl.textContent = name ? name + "'s routine" : 'My routine';
+      }
+
+      set('card-bedtime', val('bedtime'));
+      set('card-dinner', val('dinner'));
+      set('card-gear', val('gear-check'));
+      set('card-mental', val('mental-prep'));
+      set('card-wake', val('wake-time'));
+      set('card-breakfast', val('breakfast'));
+      set('card-travel', val('travel-prep'));
+      set('card-car', val('car-vibe'));
+      set('card-arrive', val('arrive-time'));
+      set('card-warmup', val('warmup'));
+      set('card-focus', val('focus-mode'));
+      set('card-parent', val('parent-role'));
+
+      builderForm.closest('section')?.classList.add('hidden');
+      cardSection.classList.remove('hidden');
+      cardSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    printBtn.addEventListener('click', function () {
+      window.print();
+    });
+
+    editBtn.addEventListener('click', function () {
+      cardSection.classList.add('hidden');
+      builderForm.closest('section')?.classList.remove('hidden');
+      builderForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
+</script>
