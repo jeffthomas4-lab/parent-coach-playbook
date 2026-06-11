@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-throw-on-the-run.md";
+						const collection = "coachingTips";
+						const slug = "softball-throw-on-the-run";
+						const body = "\nFielders chase balls. They have to throw while moving, not standing still. This drill teaches rhythm between feet and arm so the throw doesn't lose power or accuracy on the move.\n\n**What you need:** 10 softballs (12\"), a large open field, a partner at 40 feet.\n\n**Setup:** Kid stands 40 feet from a partner. Both are spaced far enough apart to run.\n\n**How to run it:**\n\n1. Partner rolls the ball. Kid runs to field it, plants the back foot, and throws using Turn, Shuffle, Point, Fire.\n2. Do 5 rolls. After each throw, reset at the start line.\n3. Now kid runs forward (toward the partner) while fielding. Throw mid-stride without planting.\n4. Do 5 throws on the move.\n5. Switch roles so they see what good footwork looks like at game speed.\n\n**What to watch:** Does the shoulder stay level as they run? Bouncing up and down wastes arm energy.\n\n**If they're struggling:** Slow down the rolling speed. Let them plant before throwing, not mid-stride yet.\n\n**If they've got it:** Add a third player. Create a chase situation where they have to run and throw to a cutoff while the runner advances.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Throw on the Run",summary:"Throw while moving. 15 minutes. Ages 11-12.",sport:"softball",ages:["11-12"],fundamental:"throwing",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Player running toward a partner and throwing a softball overhand mid-stride, shoulders rotated.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Throw-on-move drill for older fielders."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-throw-on-the-run.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

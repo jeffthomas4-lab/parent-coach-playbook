@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-backward-skating.md";
+						const collection = "coachingTips";
+						const slug = "hockey-backward-skating";
+						const body = "\nDefensemen skate backward most of the time. Forwards do too when they're tracking play. Backward skating uses the same C-cut motion as forward, just inverted. Hard at first, fast once it clicks.\n\n**What you need:** Full gear, ice rink.\n\n**Setup:** Skater at one blue line. Open lane behind them.\n\n**How to run it:**\n\n1. Cue: knees bent, weight on the heels, hips low.\n2. Inside edges push out and forward, tracing an inverted C.\n3. The body moves backward as the feet push.\n4. Skate backward to the other blue line.\n5. Stop. Skate backward to the start. Do 5 trips.\n\n**What to watch:** Are they leaning forward? Backward skating with the chest up makes the skater fall. Lean slightly back, weight on the heels.\n\n**If they're struggling:** Hold a stick across the ice for balance. Or just glide backward on two feet (no push) until it feels safe.\n\n**If they've got it:** Add a defender shape: chest up, hands on the stick, eyes scanning. Now they're a real defender.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Backward Skating",summary:"Skate backward using inverted C-cuts. 12 minutes. Ages 8-10 and 11-12.",sport:"hockey",ages:["8-10","11-12"],fundamental:"skating",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Skater facing forward but moving backward, weight on the heels, each foot tracing an inverted C as it pushes.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Inverted C-cut framing connects forward and backward skating cleanly."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-backward-skating.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

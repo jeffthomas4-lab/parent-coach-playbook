@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-throw-and-catch-ladder-ages-8-10.md";
+						const collection = "coachingTips";
+						const slug = "softball-throw-and-catch-ladder-ages-8-10";
+						const body = "\nCatching and throwing improve together. This drill has kids throw farther each round, which teaches them to throw harder and catch with softer hands.\n\n**Equipment needed:** 20 softballs, a bucket, a wide-open space, four to six kids in pairs.\n\n**Setup:** Pair the kids up. Each pair starts 20 feet apart, facing each other.\n\n**How to run it:**\n\n1. Round 1: Throw and catch 5 reps at 20 feet.\n2. Both take one step back (now 25 feet).\n3. Round 2: Throw and catch 5 reps at 25 feet.\n4. Both take another step back (now 30 feet).\n5. Continue until someone misses or reaches 50 feet.\n\nOnce a pair reaches their max distance, they step back in 5 feet and do a final set of 5 clean reps.\n\n**What to look for:** Catch technique at distance. Soft hands that give way with the ball. Kids who reach for the ball with stiff arms will drop passes.\n\n**Variation:** For younger kids (8-9), start at 15 feet. For older kids (10), add a clock: time each rep and work on throwing and catching quickly as well as far.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Throw and Catch Ladder",summary:"Two kids throw increasing distances and catch cleanly. 20 minutes. Ages 8-10.",sport:"softball",ages:["8-10"],fundamental:"throwing",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Distance progression for throwing accuracy",publishedAt:new Date(1771286400000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Distance-ladder throwing; soft-hands cue is good."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-throw-and-catch-ladder-ages-8-10.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

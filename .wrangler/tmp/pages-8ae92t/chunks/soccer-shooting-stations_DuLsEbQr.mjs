@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-shooting-stations.md";
+						const collection = "coachingTips";
+						const slug = "soccer-shooting-stations";
+						const body = "\nStations teach kids that every shot is different. Distance changes. Angle changes. They learn to adjust. Dead-ball shooting is boring. Stations add variety and challenge.\n\n**What you need:** 1 soccer ball per child. A goal or net. 3 cones marking shooting spots.\n\n**Setup:** Mark 3 spots around the goal. Spot 1 is 12 feet directly in front. Spot 2 is 15 feet at a 45-degree angle. Spot 3 is 10 feet from the side.\n\n**How to run it:**\n\n1. Child shoots from Spot 1. Using Plant, Lock, Strike, Finish. 3 shots.\n2. Move to Spot 2. Different distance and angle. 3 shots.\n3. Move to Spot 3. Tight angle from the side. 3 shots.\n4. Rotate back to Spot 1 and repeat.\n5. 2 full rotations (18 shots total).\n\n**What to watch:** Do they adjust their plant foot and ankle lock for each angle? Or use the same motion every time?\n\n**If they're struggling:** Reduce shots per station to 2. Make the spots easier (more straight on).\n\n**If they've got it:** Add a defender at one station who pressures after the shot is released.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Shooting Stations",summary:"Rotate through 3 shooting spots at different angles and distances. 12 minutes. Ages 8-10.",sport:"soccer",ages:["8-10"],fundamental:"shooting",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Overhead view of 3 spots around a goal at different distances and angles, players rotating through each.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Three-station rotation is concrete; angle adjustments well-flagged."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-shooting-stations.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

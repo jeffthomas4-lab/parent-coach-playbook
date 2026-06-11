@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>A good stance is only half the job. The other half is using it to move. This drill teaches kids how to drive out of the 3-point stance and go forward with power, not up.</p>\n<p><strong>What you need:</strong> Open field. You can use cones to mark a start line and a finish line 15 yards away.</p>\n<p><strong>Setup:</strong> Line the kids up in a row at the start line. Space them 3 feet apart.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Review Stance: Stagger, Bend, Hand, Up. Have them get into the 3-point stance.</li>\n<li>On your whistle, they sprint forward 15 yards. Their focus is driving the knees up and keeping the pad level low.</li>\n<li>They should feel like they’re coming out of the ground, not standing up out of the stance.</li>\n<li>Do 5 reps. Rest 15 seconds between reps.</li>\n<li>On the last rep, have them stop at 10 yards and turn around so you can see if they’re staying low.</li>\n</ol>\n<p><strong>What to watch:</strong> Do their pads go up first or do their knees? If the pads go up, they’re not using the stance right. Knees first means the power is coming from the legs.</p>\n<p><strong>If they’re struggling:</strong> Have them do this without the hand on the ground first. Just a 2-point stance sprint. Once they get the knee drive, add the hand back in.</p>\n<p><strong>If they’ve got it:</strong> Add a coaching point: on the first step out of the stance, the foot that was down pushes back hard. That’s where the explosion comes from.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/football-rubber-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth rubber football →</a> — Wilson youth rubber ball for rec and practice.</p>\n<p><a href=\"/go/agility-cones/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Agility cones →</a> — for route trees, blocking lanes, and setup.</p>\n<p><a href=\"/what-to-buy/football/\">Full football gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Stance and Sprint","summary":"Come out of a 3-point stance and drive forward. 10 minutes. Ages 11-12.","sport":"football","ages":["11-12"],"fundamental":"stance","progression":"build","focus":"fundamentals","layer":"foundations","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"A player exploding out of a 3-point stance, driving forward with low pad level and knee drive.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Stance-to-sprint drill. No contact."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tackle-football-stance-and-sprint.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nA good stance is only half the job. The other half is using it to move. This drill teaches kids how to drive out of the 3-point stance and go forward with power, not up.\n\n**What you need:** Open field. You can use cones to mark a start line and a finish line 15 yards away.\n\n**Setup:** Line the kids up in a row at the start line. Space them 3 feet apart.\n\n**How to run it:**\n\n1. Review Stance: Stagger, Bend, Hand, Up. Have them get into the 3-point stance.\n2. On your whistle, they sprint forward 15 yards. Their focus is driving the knees up and keeping the pad level low.\n3. They should feel like they're coming out of the ground, not standing up out of the stance.\n4. Do 5 reps. Rest 15 seconds between reps.\n5. On the last rep, have them stop at 10 yards and turn around so you can see if they're staying low.\n\n**What to watch:** Do their pads go up first or do their knees? If the pads go up, they're not using the stance right. Knees first means the power is coming from the legs.\n\n**If they're struggling:** Have them do this without the hand on the ground first. Just a 2-point stance sprint. Once they get the knee drive, add the hand back in.\n\n**If they've got it:** Add a coaching point: on the first step out of the stance, the foot that was down pushes back hard. That's where the explosion comes from.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.\n\n[Agility cones →](/go/agility-cones/) — for route trees, blocking lanes, and setup.\n\n[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

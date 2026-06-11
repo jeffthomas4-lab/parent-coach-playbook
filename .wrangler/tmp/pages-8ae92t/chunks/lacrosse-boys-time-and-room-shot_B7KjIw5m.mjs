@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "lacrosse-boys-time-and-room-shot.md";
+						const collection = "coachingTips";
+						const slug = "lacrosse-boys-time-and-room-shot";
+						const body = "\nTime and room means the shooter has space and time. No defender. Big windup, full power, accurate aim. This is the highest-velocity shot in lacrosse. Worth practicing because in real games, time-and-room shots come from a teammate's pass that gets the defender out of position.\n\n**What you need:** Stick, balls, goal, optional goalie.\n\n**Setup:** Player at the top of the box (15 yards from the goal). Open lane to the goal.\n\n**How to run it:**\n\n1. Cue: Pull, Step, Snap, Follow.\n2. Coach passes the ball to the shooter.\n3. Shooter catches, takes one cradle, then loads the shot.\n4. Pull the stick all the way back, step into the throw, full snap.\n5. Aim for a corner. Do 8 shots, alternating corners.\n\n**What to watch:** The wind-up. A short wind-up means a soft shot. The full pull-back generates the velocity.\n\n**If they're struggling:** Move closer (10 yards). Use a smaller goal or larger targets.\n\n**If they've got it:** Add a goalie. Aim for top corners only (where goalies struggle).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.\n\n[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.\n\n[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Time and Room Shot",summary:"Open shot from outside with no defender. 10 minutes. Ages 11-12.",sport:"lacrosse-boys",ages:["11-12"],fundamental:"shooting",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Player at the top of the box with no defender pressuring, taking a full overhand shot at the goal with maximum power.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Time-and-room shot drill; correct lacrosse mechanics."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/lacrosse-boys-time-and-room-shot.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

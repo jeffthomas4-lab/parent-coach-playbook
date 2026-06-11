@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-mohawk-turn.md";
+						const collection = "coachingTips";
+						const slug = "hockey-mohawk-turn";
+						const body = "\nThe mohawk is the move that turns a forward skater into a backward skater in one step. Hips open. Feet point opposite directions for a beat. Then the skater is going backward without losing speed. Defensemen use this to track an offensive player who turned upice.\n\n**What you need:** Full gear, ice rink.\n\n**Setup:** Skater at one blue line. Open lane.\n\n**How to run it:**\n\n1. Skater starts forward skating slowly toward center ice.\n2. At center, opens the back hip and pivots the back foot 180 degrees. Feet are now heel-to-heel for a beat.\n3. Continues motion now skating backward.\n4. Backward skate to the other blue line.\n5. Skate forward back. Do the mohawk again on the other side. 4 reps each direction.\n\n**What to watch:** The hip rotation. If the hips don't open fully, the feet tangle. The hip leads, the foot follows.\n\n**If they're struggling:** Walk through the footwork on the ice without speed. Just open the hip and turn the foot.\n\n**If they've got it:** Combine with a stop. Mohawk turn into a hockey stop, then explode forward.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Mohawk Turn",summary:"Open the hips to turn from forward to backward without crossing feet. 12 minutes. Ages 11-12.",sport:"hockey",ages:["11-12"],fundamental:"skating",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Skater with feet pointing in opposite directions (like a heel-to-heel position), pivoting from forward skating to backward skating in one motion.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Hip-leads-the-foot cue is the right diagnostic for tangling feet."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-mohawk-turn.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

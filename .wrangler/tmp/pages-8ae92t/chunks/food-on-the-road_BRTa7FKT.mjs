@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Three games in a day means the kid eats five times. Two of those are the meals you control. Three are the ones the tournament gives you.</p>\n<p>Most families wing it. By Sunday, the kid is sluggish, sleeps in the car, and plays the championship game half-empty.</p>\n<h2 id=\"the-pattern-that-works\">The pattern that works</h2>\n<p>Breakfast at the hotel. Get there early. Carbs and protein. Eggs, toast, fruit, oatmeal. Skip the bacon if it’s been sitting there. The kid who can’t stomach hotel sausage at 7 a.m. is not a problem; pack a backup bagel.</p>\n<p>Between games one and two, the kid eats a bar and drinks water. Don’t try to do a meal between games. The stomach can’t process a sandwich and run hard 20 minutes later.</p>\n<p>The real meal is between games two and three. If you have an hour or more, grab a sub or a salad. Stay away from the burger-and-fries combo until after the day’s last game.</p>\n<p>Dinner is recovery. Protein, carbs, vegetables, water. Avoid the team dinner at the loud restaurant if your kid is exhausted. Hotel takeout in the room beats two hours of restaurant chairs.</p>\n<h2 id=\"the-things-that-wreck-the-day\">The things that wreck the day</h2>\n<p>The 8 a.m. donut. Sugar spike at 8, crash at 10, kid is sluggish for the 10:30 game.</p>\n<p>The Gatorade-only diet. Electrolytes are for during the game. Water and food are the rest of the day.</p>\n<p>The buffet at lunch. Kid eats too much, plays the afternoon game heavy.</p>\n<p>The post-game ice cream. After the last game of the day, fine. Between games, the body is going to feel it.</p>\n<h2 id=\"the-cooler-is-the-move\">The cooler is the move</h2>\n<p>A real cooler in the car. Bottled water, fruit, sandwich fixings, yogurt, hard-boiled eggs. The cooler is what saves you when the tournament concession stand is a 40-minute line of $9 chicken tenders.</p>\n<p><a href=\"/drive-there/summer-tournament-kit/\">The summer tournament kit</a> covers the rest of the gear list.</p>";
+
+				const frontmatter = {"title":"*Food on the road* during a tournament","dek":"Hotel breakfast, gas station snacks, the dinner reservation that never materialized. The pattern that survives a three-day weekend.","seoDescription":"Three games in a day means the kid eats five times. Two of those are the meals you control. Three are the ones the tournament gives you.","topic":"season-ops","format":"note","phase":"game","sport":"multi-sport","age":"all-ages","publishedAt":"2026-05-13T00:00:00.000Z","featured":false,"draft":false};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/food-on-the-road.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nThree games in a day means the kid eats five times. Two of those are the meals you control. Three are the ones the tournament gives you.\n\nMost families wing it. By Sunday, the kid is sluggish, sleeps in the car, and plays the championship game half-empty.\n\n## The pattern that works\n\nBreakfast at the hotel. Get there early. Carbs and protein. Eggs, toast, fruit, oatmeal. Skip the bacon if it's been sitting there. The kid who can't stomach hotel sausage at 7 a.m. is not a problem; pack a backup bagel.\n\nBetween games one and two, the kid eats a bar and drinks water. Don't try to do a meal between games. The stomach can't process a sandwich and run hard 20 minutes later.\n\nThe real meal is between games two and three. If you have an hour or more, grab a sub or a salad. Stay away from the burger-and-fries combo until after the day's last game.\n\nDinner is recovery. Protein, carbs, vegetables, water. Avoid the team dinner at the loud restaurant if your kid is exhausted. Hotel takeout in the room beats two hours of restaurant chairs.\n\n## The things that wreck the day\n\nThe 8 a.m. donut. Sugar spike at 8, crash at 10, kid is sluggish for the 10:30 game.\n\nThe Gatorade-only diet. Electrolytes are for during the game. Water and food are the rest of the day.\n\nThe buffet at lunch. Kid eats too much, plays the afternoon game heavy.\n\nThe post-game ice cream. After the last game of the day, fine. Between games, the body is going to feel it.\n\n## The cooler is the move\n\nA real cooler in the car. Bottled water, fruit, sandwich fixings, yogurt, hard-boiled eggs. The cooler is what saves you when the tournament concession stand is a 40-minute line of $9 chicken tenders.\n\n[The summer tournament kit](/drive-there/summer-tournament-kit/) covers the rest of the gear list.\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [{"depth":2,"slug":"the-pattern-that-works","text":"The pattern that works"},{"depth":2,"slug":"the-things-that-wreck-the-day","text":"The things that wreck the day"},{"depth":2,"slug":"the-cooler-is-the-move","text":"The cooler is the move"}];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

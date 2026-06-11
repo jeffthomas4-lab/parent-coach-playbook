@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-euro-step-intro.md";
+						const collection = "coachingTips";
+						const slug = "basketball-euro-step-intro";
+						const body = "\nThe Euro step is an advanced dribble move. The player plants one foot, steps the other way, then finishes. It's deceptive and hard to defend.\n\n**What you need:** Basketball. Half-court. Open paint area.\n\n**Setup:** Kid starts on the wing about 15 feet from the basket.\n\n**How to run it:**\n\n1. Dribble toward the basket.\n2. At the free throw line, plant your right foot hard.\n3. Step left with your left foot (big step away from the baseline).\n4. Immediately step right with your right foot (cutting back toward the basket).\n5. Finish with a layup. The defender is left behind.\n6. Do 5 Euro steps going right. Then 5 going left. Rest. Do 2 rounds.\n\n**What to watch:** Do they commit to each step or is it one flowing motion? Each step must be deliberate. Plant hard, then step hard.\n\n**If they're struggling:** Slow the approach. Walk the footwork. Do the steps without the ball first, then add the ball and approach.\n\n**If they've got it:** Add a defender. The defender tries to stay in front. The Euro step should leave them behind.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Euro Step Intro",summary:"Plant and step side to side to avoid a defender. 10 minutes. Ages 11-12.",sport:"basketball",ages:["11-12"],fundamental:"finishing",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"A young player driving to the basket, stepping left then right (or right then left) to avoid a defender and finish.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Walk-the-footwork-first cue is the right teach for an advanced finish."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-euro-step-intro.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

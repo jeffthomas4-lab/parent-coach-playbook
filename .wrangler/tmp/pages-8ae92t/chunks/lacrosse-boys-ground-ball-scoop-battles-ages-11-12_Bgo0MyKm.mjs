@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Ground balls are 50-50s. This drill teaches young players to scoop and control loose balls while competing for possession.</p>\n<p><strong>Equipment needed:</strong> 8 cones, 4 balls, 8 sticks.</p>\n<p><strong>Setup:</strong> Create four 10-yard by 10-yard squares with cones. Place one ball in the center of each square. Two players stand 5 yards away, facing each other.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Coach calls “Go.” Both players sprint to the ball and try to scoop it and move it away from the opponent.</li>\n<li>A successful scoop means the player gets the ball to their stick and takes two steps away from the opponent.</li>\n<li>If a player scoops and the opponent knocks it loose, it’s still a ground ball battle.</li>\n<li>Do 4 reps per pair. If one player is dominating, rotate in a new matchup.</li>\n</ol>\n<p><strong>What to look for:</strong></p>\n<p>The scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they’ll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too shallow and the head skipped over the top. Reset the rep and cue the player to drop the bottom hand all the way down.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/lacrosse-ball/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Lacrosse balls (6-pack) →</a> — NOCSAE-stamped practice balls.</p>\n<p><a href=\"/go/lacrosse-starter-kit-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">STX Stallion complete stick →</a> — shaft and head combo for new players.</p>\n<p><a href=\"/what-to-buy/lacrosse-boys/\">Full lacrosse (boys) gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Ground Ball Scoop Battles","summary":"Teach ground ball technique and compete for possession. 12 minutes.","sport":"lacrosse-boys","ages":["11-12"],"focus":"fundamentals","layer":"skills","fundamental":"ground-balls","progression":"build","illustrationBrief":"Two players converging on a loose ball, each scooping to win possession while maintaining control of the stick.","publishedAt":"2026-03-13T00:00:00.000Z","featured":false,"editorial":{"qualityGrade":7,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":true,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Completed truncated 'scoop was too...' tail with two voice-matched sentences. Sensitive flag for contested-ball contact context."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nGround balls are 50-50s. This drill teaches young players to scoop and control loose balls while competing for possession.\n\n**Equipment needed:** 8 cones, 4 balls, 8 sticks.\n\n**Setup:** Create four 10-yard by 10-yard squares with cones. Place one ball in the center of each square. Two players stand 5 yards away, facing each other.\n\n**How to run it:**\n\n1. Coach calls \"Go.\" Both players sprint to the ball and try to scoop it and move it away from the opponent.\n2. A successful scoop means the player gets the ball to their stick and takes two steps away from the opponent.\n3. If a player scoops and the opponent knocks it loose, it's still a ground ball battle.\n4. Do 4 reps per pair. If one player is dominating, rotate in a new matchup.\n\n**What to look for:**\n\nThe scoop is a downward motion into the ball, not a sideways swipe. The stick blade should be perpendicular to the ground, and the handle should scoop under the ball. If a player is swinging sideways, they'll miss. Once scooped, the player should accelerate away, not stand and battle. If the ball is bouncing, the scoop was too shallow and the head skipped over the top. Reset the rep and cue the player to drop the bottom hand all the way down.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.\n\n[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — shaft and head combo for new players.\n\n[Full lacrosse (boys) gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

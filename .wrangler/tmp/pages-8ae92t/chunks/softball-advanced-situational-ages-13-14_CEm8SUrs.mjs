@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Situational softball at this age means making decisions under pressure. This drill builds a hitter’s comfort in high-leverage spots by running real game scenarios at game speed.</p>\n<p><strong>Equipment needed:</strong> 30 softballs, a pitcher, a catcher, a full infield, one hitter.</p>\n<p><strong>Setup:</strong> Hitter at the plate. Pitcher throwing live. Infield in ready position.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Scenario 1: 0-2 count, runners on first and second, one out. Pitcher throws three pitches. Hitter is thinking contact, moving the ball.</li>\n<li>Scenario 2: 2-0 count, bases loaded, two outs. Pitcher throws three pitches. Hitter is thinking drive ball.</li>\n<li>Scenario 3: 3-1 count, runner on third, no outs. Pitcher throws one pitch. Hitter is sitting fastball.</li>\n<li>Scenario 4: 2-2 count, runner on first, one out. Pitcher throws two pitches. Game situation.</li>\n</ol>\n<p>Run 10 pitches per scenario (or until the hitter makes an out).</p>\n<p><strong>What to look for:</strong> Pitch selection and approach. Does the hitter adjust to the count? A 0-2 count is different from a 2-0. If they’re hitting the same way, they’re not reading the situation.</p>\n<p><strong>Variation:</strong> For younger kids (13), reduce to two scenarios and increase the ball count in the pitcher’s favor so they’re forced to be aggressive. For advanced kids, add a third-base coach calling plays.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/softball-glove-11in/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth softball glove →</a> — 11-inch fielder’s glove for new players.</p>\n<p><a href=\"/go/baseball-catchers-gear-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth catcher’s set →</a> — chest protector, helmet, and leg guards.</p>\n<p><a href=\"/what-to-buy/softball/\">Full softball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Advanced Situational","summary":"Run full-count and two-out scenarios with game-speed tempo. 25 minutes. Ages 13-14+.","sport":"softball","ages":["13-14"],"focus":"situational","layer":"situational","fundamental":"situational","progression":"refine","illustrationBrief":"Runner placement decisions in game scenarios","publishedAt":"2026-03-17T00:00:00.000Z","featured":false,"editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Specific scenarios with realistic counts; voice is clean."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-advanced-situational-ages-13-14.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nSituational softball at this age means making decisions under pressure. This drill builds a hitter's comfort in high-leverage spots by running real game scenarios at game speed.\n\n**Equipment needed:** 30 softballs, a pitcher, a catcher, a full infield, one hitter.\n\n**Setup:** Hitter at the plate. Pitcher throwing live. Infield in ready position.\n\n**How to run it:**\n\n1. Scenario 1: 0-2 count, runners on first and second, one out. Pitcher throws three pitches. Hitter is thinking contact, moving the ball.\n2. Scenario 2: 2-0 count, bases loaded, two outs. Pitcher throws three pitches. Hitter is thinking drive ball.\n3. Scenario 3: 3-1 count, runner on third, no outs. Pitcher throws one pitch. Hitter is sitting fastball.\n4. Scenario 4: 2-2 count, runner on first, one out. Pitcher throws two pitches. Game situation.\n\nRun 10 pitches per scenario (or until the hitter makes an out).\n\n**What to look for:** Pitch selection and approach. Does the hitter adjust to the count? A 0-2 count is different from a 2-0. If they're hitting the same way, they're not reading the situation.\n\n**Variation:** For younger kids (13), reduce to two scenarios and increase the ball count in the pitcher's favor so they're forced to be aggressive. For advanced kids, add a third-base coach calling plays.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

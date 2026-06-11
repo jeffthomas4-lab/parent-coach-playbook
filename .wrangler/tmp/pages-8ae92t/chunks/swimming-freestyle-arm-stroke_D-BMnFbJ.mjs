@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "swimming-freestyle-arm-stroke.md";
+						const collection = "coachingTips";
+						const slug = "swimming-freestyle-arm-stroke";
+						const body = "\nFreestyle arms work in alternating cycles. One arm pulls underwater while the other recovers above water with a high elbow. The pattern creates continuous propulsion. Most kids learn the kick first; this drill adds the arms.\n\n**What you need:** A pool with a shallow or medium-depth lane.\n\n**Setup:** Swimmer in the water, body horizontal.\n\n**How to run it:**\n\n1. Swim a length of freestyle (25 feet) at slow pace.\n2. Focus on the recovering arm: high elbow above the water, hand close to the surface.\n3. Focus on the pulling arm: enter the water in front of the head, pull straight back to the hip.\n4. Do 4 lengths with rest between.\n5. Last length: count strokes per length. Goal is fewer strokes (longer pull).\n\n**What to watch:** Elbow on the recovery. Many kids swing the arm out to the side. The elbow should stay high, hand close to the water.\n\n**If they're struggling:** Drop the kick and just do arms while standing. Or do arms with a pull buoy between the legs.\n\n**If they've got it:** Add bilateral breathing (breathe every 3 strokes, alternating sides).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.\n\n[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Freestyle Arm Stroke",summary:"Build the over-the-water arm cycle of freestyle. 12 minutes. Ages 8-10.",sport:"swimming",ages:["8-10"],fundamental:"freestyle",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Swimmer reaching one arm forward in the water while the other arm recovers high above the water, elbow bent.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Freestyle arm stroke with high-elbow cue and lengths counted."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/swimming-freestyle-arm-stroke.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

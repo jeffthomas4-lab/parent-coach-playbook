@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-form-shooting-one-foot.md";
+						const collection = "coachingTips";
+						const slug = "basketball-form-shooting-one-foot";
+						const body = "\nOne-foot shooting teaches balance and isolation. It forces kids to focus on the arm and hand motion without the distraction of footwork. Start close to the basket.\n\n**What you need:** 8-foot basket. Youth ball. One per kid. Flat court.\n\n**Setup:** Kids stand 5 feet from the basket, on one leg. Their other leg is up for balance.\n\n**How to run it:**\n\n1. Cue: Set, Bend, Lift, Cookie. Feet set (stand on right leg). Knees bend slightly. Lift the ball up with elbow under.\n2. Release with the cookie jar follow-through. Hand finishes relaxed forward, fingers pointing at the rim.\n3. Shoot 5 shots from the right leg. Then switch and shoot 5 from the left leg.\n4. Do 2 rounds.\n\n**What to watch:** Is the shooting arm elbow under the ball or out to the side? Under the ball is the key. If the elbow flares out, the shot will be off-line.\n\n**If they're struggling:** Use a lower hoop (6 feet). Move closer to 3 feet. Use a softer ball. Skip the balance drill and let them stand normally while they build confidence.\n\n**If they've got it:** Add 2-foot form shooting from 6 feet. Keep the same Set, Bend, Lift, Cookie cues.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Form Shooting One Foot",summary:"Shoot from one foot in place, no movement. 8 minutes. Ages 5-7.",sport:"basketball",ages:["5-7"],fundamental:"shooting",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"A young child standing on one leg, shooting a basketball toward a lower hoop with proper form.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Good isolation drill for elbow position."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-form-shooting-one-foot.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

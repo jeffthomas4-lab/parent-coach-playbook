@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "volleyball-set-against-wall.md";
+						const collection = "coachingTips";
+						const slug = "volleyball-set-against-wall";
+						const body = "\nThe wall is the perfect setting partner. It returns every set to the same spot. The kid can practice the hand shape, the push, and the target hundreds of times in a session.\n\n**What you need:** A volleyball, a flat wall, a tape mark on the wall as the target.\n\n**Setup:** Kid stands 5 feet from the wall. Tape target at 10 feet high (a shoe-length mark).\n\n**How to run it:**\n\n1. Cue: Window, Soft, Push, Target.\n2. Set the ball at the target on the wall.\n3. Catch the rebound. Reset. Set again.\n4. Goal: 10 sets in a row hitting the target.\n5. After 10, set continuously (no catching). Goal: 5 in a row.\n\n**What to watch:** Hand contact. Fingertips, not palms. Listen for the sound: a clean set is quiet. A slap is loud.\n\n**If they're struggling:** Move closer to 3 feet. Bigger target.\n\n**If they've got it:** Move back to 8 feet. Or alternate hands (set, then bump, then set, etc.).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.\n\n[Volleyball shoes →](/go/volleyball-shoes-upcourt/) — Asics Upcourt, non-marking gum sole.\n\n[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Set Against the Wall",summary:"Set the ball against a wall and catch the rebound. 10 minutes. Ages 8-10 and 11-12.",sport:"volleyball",ages:["8-10","11-12"],fundamental:"setting",progression:"build",focus:"fundamentals",layer:"foundations",illustrationBrief:"Player setting a volleyball against a brick wall above a marked target line, the ball rebounding back for another set.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Solo setting drill. Quiet-vs-slap audio cue is sharp."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/volleyball-set-against-wall.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

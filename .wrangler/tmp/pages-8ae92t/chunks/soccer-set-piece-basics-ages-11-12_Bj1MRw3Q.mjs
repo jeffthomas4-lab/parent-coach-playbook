@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-set-piece-basics-ages-11-12.md";
+						const collection = "coachingTips";
+						const slug = "soccer-set-piece-basics-ages-11-12";
+						const body = "\nSet pieces are organized chances to score. This drill teaches two basic plays: the near-post corner and the direct free kick.\n\n**Equipment needed:** One goal, 2-3 soccer balls, cones, 8 kids (6 attackers, 1 defender, 1 keeper).\n\n**Setup:** Mark a corner flag area and a free-kick area 20 yards out.\n\n**How to run it:**\n\n1. First part (10 minutes): Corner kick play. Kicker stands at corner. Four attackers in box. One defender. Kicker sends a ball to the near post. Attackers try to score. Do 5 reps.\n2. Second part (10 minutes): Free kick. Kicker stands 20 yards out. Five attackers in box. One defender. Kicker shoots or passes. Attackers finish. Do 5 reps.\n\n**What to look for:** Communication and movement. On the corner, do attackers know where the ball is going? On the free kick, do they time their runs?\n\n**Variation:** For younger kids (11), use just the corner (simpler). For older kids (12), add variations: near post, far post, short corner, different free-kick heights.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Set-Piece Basics",summary:"Practice one corner kick and one free kick play. 20 minutes. Ages 11-12.",sport:"soccer",ages:["11-12"],fundamental:"set-pieces",progression:"build",focus:"situational",layer:"situational",illustrationBrief:"Attacking corner and free kick formations",publishedAt:new Date(1774396800000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:7,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Two plays in 20 minutes is tight but workable."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-set-piece-basics-ages-11-12.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "swimming-kickboard-flutter-ages-5-7.md";
+						const collection = "coachingTips";
+						const slug = "swimming-kickboard-flutter-ages-5-7";
+						const body = "\nYoung swimmers need to build leg strength and rhythm before worrying about full strokes. The kickboard isolates the kick so they can focus on the motion.\n\n**Equipment needed:** 1 kickboard per swimmer, 1 pool.\n\n**Setup:** Swimmers line up at one end of the pool, holding the kickboard at arm's length in front of them.\n\n**How to run it:**\n\n1. Swimmer kicks from one end of the pool to the other (25 yards or 25 meters, depending on pool).\n2. The kick is a flutter kick: alternating leg beats with toes pointed, one leg down while the other is coming up.\n3. Kick should be from the hip, not the knee. Small, fast movements.\n4. Do one 25-yard kick, rest at the wall for 30 seconds.\n5. Repeat 4 times total.\n\n**What to look for:**\n\nThe kick should be consistent and rhythmic. If a swimmer is kicking from the knee instead of the hip, their efficiency is low. The legs should move up and down together, alternating. If the legs are moving wildly or slowly, the rhythm is off. Young swimmers should be able to kick the full length without stopping, though they may be tired.\n\n**Variation:** Add a challenge: kick faster on the second 25, maintaining control. This teaches pace variation.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.\n\n[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Kickboard Flutter Drill",summary:"Build flutter-kick rhythm and leg strength with a kickboard. 10 minutes.",sport:"swimming",ages:["5-7"],fundamental:"freestyle",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Flutter kick drill with kickboard",publishedAt:new Date(1777075200000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Kickboard flutter for 5-7; clean."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/swimming-kickboard-flutter-ages-5-7.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

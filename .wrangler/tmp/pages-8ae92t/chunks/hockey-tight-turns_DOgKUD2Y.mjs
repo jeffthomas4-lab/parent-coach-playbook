@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-tight-turns.md";
+						const collection = "coachingTips";
+						const slug = "hockey-tight-turns";
+						const body = "\nA tight turn changes direction without slowing down. The body leans into the turn like a motorcycle. The inside skate edge holds the curve. Players who can do this beat opponents to loose pucks and shake defenders in tight spaces.\n\n**What you need:** Full gear, ice rink, four cones.\n\n**Setup:** Cones at four spots forming a 10-foot square at center ice.\n\n**How to run it:**\n\n1. Skater starts at one cone, sprints forward.\n2. At the next cone, executes a tight 180-degree turn. Body leans, inside edge holds.\n3. Sprints to the next cone. Tight turn the other direction.\n4. Continue around the square. Do 3 laps.\n5. Last lap at full speed.\n\n**What to watch:** The lean. Without a lean, the turn is wide. With a lean, the turn is sharp. Tell them: \"Drop your inside shoulder toward the ice.\"\n\n**If they're struggling:** Bigger square (15 feet). More room for the turn.\n\n**If they've got it:** Add a puck. Tight turn while controlling the puck. Or shrink the square to 8 feet.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Agility cones →](/go/agility-cones/) — for stickhandling courses and skating drills.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Tight Turns",summary:"Turn 180 degrees in a small space without losing speed. 12 minutes. Ages 11-12.",sport:"hockey",ages:["11-12"],fundamental:"skating",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Skater leaning into a tight turn, inside leg bent deep, outside leg trailing, body angled into the turn like a motorcycle taking a corner.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Drop-the-shoulder cue is a concrete fix, lean is the whole skill."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-tight-turns.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

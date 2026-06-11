@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "volleyball-approach-and-spike-off-set.md";
+						const collection = "coachingTips";
+						const slug = "volleyball-approach-and-spike-off-set";
+						const body = "\nThe full spike is the goal of every offense. Approach, jump, snap the wrist over the ball, drive it down. Hard to learn at first. Easier once the approach footwork is solid.\n\n**What you need:** A volleyball, a net, two players (setter or coach + hitter).\n\n**Setup:** Hitter at left front. Setter at center. Empty court target.\n\n**How to run it:**\n\n1. Cue: Approach, Plant, Reach, Snap.\n2. Setter sets the ball 1-2 feet off the net, 10 feet high.\n3. Hitter does the three-step approach.\n4. Plant. Reach up with the hitting arm.\n5. Snap the wrist over the ball at the highest point of the jump. Ball drives down.\n\n**What to watch:** Wrist snap. A flat hand pushes the ball. A snapped wrist drives the ball. The wrist has to crack at contact.\n\n**If they're struggling:** Lower the net. Or hit off a tossed ball.\n\n**If they've got it:** Add a defender on the other side. Hitter has to aim around the block. Or hit from the right side instead of left.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.\n\n[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.\n\n[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Approach and Spike Off a Set",summary:"Full approach and full spike off a set ball. 12 minutes. Ages 11-12.",sport:"volleyball",ages:["11-12"],fundamental:"spiking",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Player at the peak of a jump, arm pulled back, hand high above the net, about to snap down on a set ball.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Full spike rep. Approach, plant, reach, snap cue is consistent."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/volleyball-approach-and-spike-off-set.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

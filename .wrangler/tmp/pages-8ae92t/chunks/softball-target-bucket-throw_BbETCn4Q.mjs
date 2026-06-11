@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-target-bucket-throw.md";
+						const collection = "coachingTips";
+						const slug = "softball-target-bucket-throw";
+						const body = "\nThrowing to a target gives the throw direction and purpose. A bucket makes the target big, hard to miss, and honest feedback when the ball lands in it.\n\n**What you need:** A bucket or laundry crate, 10 softballs (11\"), open space.\n\n**Setup:** Set a bucket on the ground 15 feet away. Kid stands facing the bucket with feet shoulder-width apart.\n\n**How to run it:**\n\n1. Cue: Turn, Shuffle, Point, Fire.\n2. They step toward the bucket, turn their shoulders, point the glove at the bucket, and fire.\n3. Do 5 throws. Count how many land in the bucket. That's their score.\n4. Move back to 20 feet. Do 5 more throws.\n5. Move back to 25 feet. Do 5 more.\n6. At the end, tally total throws in the bucket.\n\n**What to watch:** Are they aiming or just throwing? You want to see them look at the bucket and adjust.\n\n**If they're struggling:** Move the bucket closer to 10 feet. Make the bucket bigger by adding balls around it so they have a larger target area.\n\n**If they've got it:** Shrink the target by using a smaller cone or ball. Move back to 30 feet.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Target Bucket Throw",summary:"Throw to a stationary target. 10 minutes. T-ball and ages 5-7.",sport:"softball",ages:["t-ball","5-7"],fundamental:"throwing",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Child throwing a softball overhand into a bucket or crate sitting on the ground 15 feet away.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Bucket-target accuracy intro; ball term fixed."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-target-bucket-throw.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

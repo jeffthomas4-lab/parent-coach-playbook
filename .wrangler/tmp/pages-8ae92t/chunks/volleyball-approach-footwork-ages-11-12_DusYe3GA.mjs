@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "volleyball-approach-footwork-ages-11-12.md";
+						const collection = "coachingTips";
+						const slug = "volleyball-approach-footwork-ages-11-12";
+						const body = "\nThe approach footwork builds momentum for hitting. Young players at this age can learn to coordinate the steps and timing to the jump.\n\n**Equipment needed:** 4 cones, 1 net, 4 balls.\n\n**Setup:** Place cones about 10 feet from the net in a line across the court. Hitters line up at the cones.\n\n**How to run it:**\n\n1. Hitter starts with a small shuffle (two feet quick steps to get momentum).\n2. Then takes a full step (left foot) followed by a bound onto the right foot, then both feet land together at takeoff.\n3. That's the two-step approach. Hitter jumps toward the net, reaches, comes down.\n4. Do 4 reps per hitter at controlled speed.\n5. Second set: add a three-step approach (extra step before the two-step).\n\n**What to look for:**\n\nThe approach should feel coordinated, not choppy. The final two steps should be quick and powerful. The jump should be straight up at the net, not leaning forward or back. If a hitter is landing awkwardly, the approach footwork is off. Arms should swing forward as the jump happens, generating power.\n\n**Variation:** Add a setter. The setter tosses the ball to a spot, and the hitter approaches and attacks it. This teaches timing between approach and the ball location.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Portable volleyball net →](/go/volleyball-net/) — adjustable height for 11-12 size court. Sets up in a driveway or backyard.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Approach Footwork",summary:"Teach the two-step and three-step approach to the net. 10 minutes.",sport:"volleyball",ages:["11-12"],fundamental:"spiking",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Footwork rhythm before spiking contact",publishedAt:new Date(1774915200000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Two-step + three-step progression. Affiliate disclosure present."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/volleyball-approach-footwork-ages-11-12.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-box-out-stance.md";
+						const collection = "coachingTips";
+						const slug = "basketball-box-out-stance";
+						const body = "\nMost rebounds at this age go to the kid who jumps highest. That stops working at 11. Boxing out beats jumping when both kids know what they're doing. Teach it now and they'll have the habit.\n\n**What you need:** A hoop, a basketball, two players.\n\n**Setup:** Coach stands at the free throw line with the ball. One player is the shooter (the coach's stand-in for now). One player is the defender, one is the offensive rebounder.\n\n**How to run it:**\n\n1. Coach shoots a missed shot off the rim.\n2. Defender turns toward the offensive player, gets low, butt back, arms wide. Body between the offensive player and the rim.\n3. Defender holds the box-out for two seconds before going for the ball.\n4. Reset. Switch roles.\n5. Do 6 reps each side.\n\n**What to watch:** Are the arms wide and the butt low? A standing-up box-out gives the offensive player a path around. Low and wide is the seal.\n\n**If they're struggling:** Skip the rebound. Just practice the seal position and hold for 3 seconds.\n\n**If they've got it:** Add a second offensive player. The defender has to choose which side to seal.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Box Out Stance",summary:"Get the body between the rim and the opponent. 10 minutes. Ages 8-10.",sport:"basketball",ages:["8-10"],fundamental:"rebounding",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Two players near the rim, one with arms wide and butt low, sealing the other from the basket as the ball comes off the rim.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:9,originalityGrade:8,voiceGrade:9,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Lead has temperature: 'jumping stops working at 11.' Strong opener."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-box-out-stance.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

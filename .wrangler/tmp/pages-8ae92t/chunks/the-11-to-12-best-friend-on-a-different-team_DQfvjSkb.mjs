@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "the-11-to-12-best-friend-on-a-different-team.md";
+						const collection = "articles";
+						const slug = "the-11-to-12-best-friend-on-a-different-team";
+						const body = "\nOur kid's best friend played on the same team last year. This year they split to different teams. Our kid was upset. They wanted to switch. They were sad at practice.\n\nOur instinct was to make a call. Instead, we sat with the hard moment.\n\n## What we said\n\n\"I know you miss them. That's real. You're going to be okay. You're going to make new friends on this team. And you'll still see them outside of practice.\"\n\nWe helped them find what was good about the situation. \"This team has different players. You're going to meet people you wouldn't have met otherwise. That's actually good.\"\n\nWe arranged hangouts outside of team stuff. \"Can they come to dinner Friday?\" Not as a replacement for the team, but as a way to keep the friendship separate from sports. When friendship and team split, friendship usually wins out. We gave them a way to have both.\n\n## Why this matters\n\nAt 11-12, this is actually a good problem to have. They're learning that people they love don't have to be on all their teams. They're learning to build different friendships in different places. That's a real life skill.\n\nSome kids go through a hard transition and come out stronger. Some kids stay attached to the old team and never bond with the new one. Our job is to help them look forward, not backward.\n\n## The patience part\n\nBy the end of the season, they'll have built a place on the new team. The friendship will still be there. They'll be happier than if we'd just switched them back.\n";
+						const data = {title:"The 11-12 Best Friend on a Different Team",seoDescription:"Our kid's best friend played on the same team last year. This year they split to different teams. Our kid was upset. They wanted to switch.",dek:"You can't fix this by moving them. You can help them build resilience around it.",topic:"the-hard-stuff",format:"note",sport:"multi-sport",age:"11-12",phase:"drive-home",publishedAt:new Date(1772755200000),featured:false,draft:false,editorial:{flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:false,sportLanguageCheckPassed:false,affiliateDisclosurePresent:false,claudeReviewedAt:new Date(1779235200000),status:"draft"}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/the-11-to-12-best-friend-on-a-different-team.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

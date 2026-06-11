@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>In a real game, the bump comes off a serve. The coach toss is the bridge. Ball comes from across the net at a downward angle. Player has to get into position, form the platform, and pass to the setter target. This is the rep that translates to the game.</p>\n<p><strong>What you need:</strong> A volleyball, a net (or rope at net height), three players (coach + passer + target).</p>\n<p><strong>Setup:</strong> Coach on one side of the net at the back line. Passer on the other side at the back of the court. Setter target at the net.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Cue: Ready, Platform, Angle, Push.</li>\n<li>Coach tosses overhand (or actual serve at this level) to the passer’s area.</li>\n<li>Passer reads the ball, gets into position behind it, forms the platform.</li>\n<li>Angle the platform toward the setter target. Push the ball with the legs.</li>\n<li>Pass should arrive at setter target chest-high, 8-10 feet from the net.</li>\n</ol>\n<p><strong>What to watch:</strong> The angle of the platform. Tilt the platform toward the target, not the ceiling. The angle is what aims the ball.</p>\n<p><strong>If they’re struggling:</strong> Slower coach tosses. Bigger target (a chair or bucket the pass has to land in).</p>\n<p><strong>If they’ve got it:</strong> Add real serves from across the net. Add multiple passers (rotate every 3 reps).</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/volleyball-volley-lite/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Volley Lite training ball →</a> — lightweight ball for beginners learning to pass.</p>\n<p><a href=\"/go/volleyball-net/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Portable volleyball net →</a> — 32-ft set with adjustable steel poles.</p>\n<p><a href=\"/what-to-buy/volleyball/\">Full volleyball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Pass from Server Toss","summary":"Coach simulates a serve and player passes to the target. 12 minutes. Ages 8-10 and 11-12.","sport":"volleyball","ages":["8-10","11-12"],"fundamental":"passing","progression":"build","focus":"fundamentals","layer":"skills","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"Coach tossing a volleyball overhand from the far side of the net to simulate a serve, player on the receiving side passing the ball to a setter target.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Bridge from drill to serve receive. Platform angle teaching point is the keeper."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/volleyball-pass-from-server-toss.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nIn a real game, the bump comes off a serve. The coach toss is the bridge. Ball comes from across the net at a downward angle. Player has to get into position, form the platform, and pass to the setter target. This is the rep that translates to the game.\n\n**What you need:** A volleyball, a net (or rope at net height), three players (coach + passer + target).\n\n**Setup:** Coach on one side of the net at the back line. Passer on the other side at the back of the court. Setter target at the net.\n\n**How to run it:**\n\n1. Cue: Ready, Platform, Angle, Push.\n2. Coach tosses overhand (or actual serve at this level) to the passer's area.\n3. Passer reads the ball, gets into position behind it, forms the platform.\n4. Angle the platform toward the setter target. Push the ball with the legs.\n5. Pass should arrive at setter target chest-high, 8-10 feet from the net.\n\n**What to watch:** The angle of the platform. Tilt the platform toward the target, not the ceiling. The angle is what aims the ball.\n\n**If they're struggling:** Slower coach tosses. Bigger target (a chair or bucket the pass has to land in).\n\n**If they've got it:** Add real serves from across the net. Add multiple passers (rotate every 3 reps).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.\n\n[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.\n\n[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-shoot-from-the-dribble.md";
+						const collection = "coachingTips";
+						const slug = "soccer-shoot-from-the-dribble";
+						const body = "\nIn games, shooters don't have time to set up. They dribble, they see an opening, they shoot. This drill teaches timing and composure. Shoot before the defender arrives.\n\n**What you need:** 1 soccer ball, 2 kids, a goal, 20 feet of space.\n\n**Setup:** Attacker starts 20 feet from goal with the ball. Defender lines up 5 feet behind the attacker.\n\n**How to run it:**\n\n1. You call \"Go.\" Attacker dribbles forward using Touch, Look, Push, Go. Small touches, eyes up, push into space, accelerate.\n2. Defender closes from behind, not yet tackling.\n3. Attacker sees the space and shoots before the defender arrives, using Plant, Lock, Strike, Finish.\n4. If the attacker gets a shot off, that's a win. If the defender tackles first, they win.\n5. Do 4 attempts, then switch.\n\n**What to watch:** Does the attacker shoot too early (low xG) or wait too long (defender arrives)? Timing is the key.\n\n**If they're struggling:** Start defender farther back. Give the attacker more space.\n\n**If they've got it:** Defender can now start beside the attacker. That's a harder angle to beat.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Shoot from the Dribble",summary:"Dribble toward goal and take a shot before a defender catches up. 10 minutes. Ages 11-12.",sport:"soccer",ages:["11-12"],fundamental:"shooting",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"Player dribbling at speed toward goal with a defender closing in from behind, taking a shot.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Good timing-vs-composure framing; xG mention may be too jargon-y for some parents."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-shoot-from-the-dribble.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

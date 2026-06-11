@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "flag-football-cut-and-juke.md";
+						const collection = "coachingTips";
+						const slug = "flag-football-cut-and-juke";
+						const body = "\nA good ball carrier sells one direction and goes the other. The juke is the move that does it. Plant hard on one foot, push off it, accelerate the other way. Done well, the defender ends up in another zip code.\n\n**What you need:** A foam football. Cones. A 20-yard area.\n\n**Setup:** Runner at one cone with the ball. A second cone 10 yards away (the \"defender\" cone). Goal line at 20 yards.\n\n**How to run it:**\n\n1. Runner sprints toward the defender cone.\n2. At 5 yards from the cone, runner plants hard on one foot.\n3. Pushes off and explodes the other direction.\n4. Continues to the goal line.\n5. Do 6 reps each direction (juke right, juke left).\n\n**What to watch:** The plant. A weak plant means the juke is slow. The plant foot has to stop the body in one step. Listen for the foot hitting the ground hard.\n\n**If they're struggling:** Slow the run. Walk into the juke. Build the footwork before adding speed.\n\n**If they've got it:** Add a live defender instead of a cone. The runner has to read the defender's reaction.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Flag football belt set →](/go/flag-football-belt-set/) — 14-player set for organized flag practice.\n\n[Agility cones →](/go/agility-cones/) — for route trees, end zones, and field setup.\n\n[Full flag football gear guide →](/what-to-buy/flag-football/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Cut and Juke",summary:"Plant a foot and change direction to beat a defender. 12 minutes. Ages 8-10.",sport:"flag-football",ages:["8-10"],fundamental:"ball-carrying",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Runner planting hard on the right foot and exploding to the left, defender lunging the wrong direction.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Plant-and-cut footwork. Clean ball-carrying vocabulary."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/flag-football-cut-and-juke.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

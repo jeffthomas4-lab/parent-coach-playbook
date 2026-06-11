@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-throw-in-toss-ages-8-10.md";
+						const collection = "coachingTips";
+						const slug = "soccer-throw-in-toss-ages-8-10";
+						const body = "\nReceiving a throw-in is different from receiving a pass. The ball comes down from above, and the receiver has to be ready to move immediately.\n\n**Equipment needed:** 2-3 soccer balls, cones to mark a sideline, 6-8 kids.\n\n**Setup:** Mark a 15-yard section of sideline with cones. Two kids are on the line (throw-in position), two kids are receiving 5 yards away, and two kids are backup receivers 10 yards away.\n\n**How to run it:**\n\n1. Thrower performs a proper throw-in to the nearest receiver.\n2. Receiver takes the ball and immediately passes back to a different thrower or dribbles forward.\n3. Rotate: after each throw, players move one position (thrower becomes receiver, receiver becomes backup, backup becomes thrower).\n4. Do 10 throw-ins per group.\n\n**What to look for:** Reception quality and movement immediately after. Good receivers turn and pass or dribble in one motion.\n\n**Variation:** For younger kids (8-9), throw from 3 yards away so the pass is easier. For older kids (10), add defenders so the receiver has to turn away from pressure.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Throw-In Toss",summary:"Practice receiving a throw-in with a quick pass or dribble. 15 minutes. Ages 8-10.",sport:"soccer",ages:["8-10"],fundamental:"passing",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Receiving and passing after throw-in",publishedAt:new Date(1771977600000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:7,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Could note proper throw-in form (both feet down, hands behind head) for completeness."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-throw-in-toss-ages-8-10.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-short-hop-fielding.md";
+						const collection = "coachingTips";
+						const slug = "softball-short-hop-fielding";
+						const body = "\nA short hop is the trickiest ground ball. The ball bounces right in front of the fielder. They have to time the catch perfectly or the ball skips off the glove.\n\n**What you need:** 20 softballs (12\"), a partner at 15 feet, a glove.\n\n**Setup:** Partner stands 15 feet away. Fielder in ready position.\n\n**How to run it:**\n\n1. Partner rolls the ball hard enough that it bounces 2 feet in front of the fielder.\n2. Fielder waits for the apex of the bounce, then Drop, Show, and catch in the glove.\n3. Do 5 short-hop grounders straight ahead. Reset each time.\n4. Do 5 short-hop grounders to the forehand. Do 5 to the backhand.\n5. After the catch, throw the ball back to the partner.\n\n**What to watch:** Do they start the drop early or wait for the bounce? Wait too long and they miss. Wait too early and the ball hits them.\n\n**If they're struggling:** Have the partner roll slower so the bounce is higher. Stay at 15 feet.\n\n**If they've got it:** Roll from 20 feet. Mix short-hop with regular ground balls and fly balls in random order.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Short Hop Fielding",summary:"Field a ball right after the bounce. 12 minutes. Ages 11-12.",sport:"softball",ages:["11-12"],fundamental:"fielding",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Player bending low to field a grounder that has just bounced off the ground, catching it in mid-hop.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Solid short-hop progression; ball terminology corrected."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-short-hop-fielding.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

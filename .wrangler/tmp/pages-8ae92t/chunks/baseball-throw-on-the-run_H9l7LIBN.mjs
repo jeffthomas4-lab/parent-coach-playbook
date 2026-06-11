@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>A slow ground ball with a fast runner is the hardest play in baseball. The fielder can’t stop and set up. They have to field the ball and throw while still moving forward. This is the play that wins games and tryouts.</p>\n<p><strong>What you need:</strong> 8 baseballs, a glove, a target (a parent with a glove or a fence with a tape mark).</p>\n<p><strong>Setup:</strong> Player stands 30 feet from the target. You stand 15 feet to the side with the bucket of balls.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Cue reminder: Turn, Shuffle, Point, Fire. On the run, Turn and Shuffle become “field on the move.”</li>\n<li>Roll a slow ball in front of the player toward the target. They have to charge it.</li>\n<li>They field with the glove hand only (no time for two hands), bring the ball up to the throwing arm, and throw across the body to the target while still moving forward.</li>\n<li>Do 5 reps. Reset every time.</li>\n<li>Last 5: roll the ball faster so they can’t charge as much. Same throw on the run.</li>\n</ol>\n<p><strong>What to watch:</strong> Are they stopping to throw? If they stop, they’re not getting the runner out in a real game. The throw has to come out of the run, not after it.</p>\n<p><strong>If they’re struggling:</strong> Drop the throw. Just have them field the slow roller and pick it up cleanly while charging. Add the throw next time.</p>\n<p><strong>If they’ve got it:</strong> Add a runner. The runner starts at home plate. They run to a base 60 feet away when you roll the ball. The fielder has to beat the runner with the throw.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/baseball-glove-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth baseball glove →</a> — the first piece of gear for every new player.</p>\n<p><a href=\"/what-to-buy/baseball/\">Full baseball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Throw on the Run","summary":"Field a slow grounder and throw while still moving. 15 minutes. Ages 11-12.","sport":"baseball","ages":["11-12"],"fundamental":"throwing","progression":"refine","focus":"fundamentals","layer":"situational","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"A child charging forward toward a slowly rolling ball, then throwing across the body without stopping.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Clean pass."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-throw-on-the-run.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nA slow ground ball with a fast runner is the hardest play in baseball. The fielder can't stop and set up. They have to field the ball and throw while still moving forward. This is the play that wins games and tryouts.\n\n**What you need:** 8 baseballs, a glove, a target (a parent with a glove or a fence with a tape mark).\n\n**Setup:** Player stands 30 feet from the target. You stand 15 feet to the side with the bucket of balls.\n\n**How to run it:**\n\n1. Cue reminder: Turn, Shuffle, Point, Fire. On the run, Turn and Shuffle become \"field on the move.\"\n2. Roll a slow ball in front of the player toward the target. They have to charge it.\n3. They field with the glove hand only (no time for two hands), bring the ball up to the throwing arm, and throw across the body to the target while still moving forward.\n4. Do 5 reps. Reset every time.\n5. Last 5: roll the ball faster so they can't charge as much. Same throw on the run.\n\n**What to watch:** Are they stopping to throw? If they stop, they're not getting the runner out in a real game. The throw has to come out of the run, not after it.\n\n**If they're struggling:** Drop the throw. Just have them field the slow roller and pick it up cleanly while charging. Add the throw next time.\n\n**If they've got it:** Add a runner. The runner starts at home plate. They run to a base 60 feet away when you roll the ball. The fielder has to beat the runner with the throw.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

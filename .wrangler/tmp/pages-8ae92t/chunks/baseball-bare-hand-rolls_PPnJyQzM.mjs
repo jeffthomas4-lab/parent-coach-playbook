@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-bare-hand-rolls.md";
+						const collection = "coachingTips";
+						const slug = "baseball-bare-hand-rolls";
+						const body = "\nBefore a kid can use a glove, they need to know that a ball rolling at them is something they can stop with their hands. The glove gets in the way of that lesson. Skip it for now.\n\n**What you need:** 5 tennis balls or soft baseballs. A patch of grass.\n\n**Setup:** Kneel about 6 feet from your kid. They stand facing you, feet apart, hands out in front with the palms up.\n\n**How to run it:**\n\n1. Roll a slow ground ball straight at their feet.\n2. They reach down with both hands and stop the ball, then toss it back to you.\n3. Roll the next one as soon as the ball is back in your hand. Don't stop to coach.\n4. After 10 rolls, ask them to take one step back. Do 10 more.\n5. Last round: switch. They roll, you field. Let them see what it looks like done right.\n\n**What to watch:** Are they using both hands? At this age, lots of kids stab with one hand. Two hands is the only thing you're teaching today.\n\n**If they're struggling:** Move closer. Roll slower. Use a softer ball.\n\n**If they've got it:** Move back to 10 feet. Roll a little harder. Aim slightly to one side so they have to step before they reach.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Bare Hand Rolls",summary:"Teach kids to stop and pick up a moving ball with two hands. 8 minutes. T-ball and ages 5-7.",sport:"baseball",ages:["t-ball","5-7"],fundamental:"catching",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Adult kneeling 6 feet from a child, rolling a tennis ball on grass. Child's hands are out, palms up, ready to receive.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:9,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean pass. Strong opening rationale."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-bare-hand-rolls.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

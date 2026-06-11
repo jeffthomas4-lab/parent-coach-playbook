@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "tennis-volley-at-net.md";
+						const collection = "coachingTips";
+						const slug = "tennis-volley-at-net";
+						const body = "\nA volley is a shot hit before the ball bounces. Short, punching motion. No big swing. The racquet meets the ball in front of the body and pushes it back. Most beginners try to swing big and miss. The right volley is a punch.\n\n**What you need:** Tennis balls, racquet, tennis court.\n\n**Setup:** Player at the net. Coach across the net feeding short balls.\n\n**How to run it:**\n\n1. Player stands 3 feet from the net, racquet held in front, head ready.\n2. Coach feeds a soft ball to the volley height (chest level).\n3. Player punches the volley with a small forward motion. Almost no backswing.\n4. Ball clears back over the net.\n5. Do 8 volleys. Mix forehand volleys and backhand volleys.\n\n**What to watch:** Backswing. A long backswing is wrong. The racquet barely goes back. Punch through.\n\n**If they're struggling:** Slower feeds. Bigger ball.\n\n**If they've got it:** Add a partner who feeds and the player volleys back continuously.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.\n\n[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.\n\n[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Volley at the Net",summary:"Hit short volleys from the net without backswing. 10 minutes. Ages 8-10 and 11-12.",sport:"tennis",ages:["8-10","11-12"],fundamental:"volley",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Player at the net with the racquet held in front of the body, punching a short volley back over the net with a small forward motion.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Net volley with punch-not-swing distinction."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tennis-volley-at-net.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

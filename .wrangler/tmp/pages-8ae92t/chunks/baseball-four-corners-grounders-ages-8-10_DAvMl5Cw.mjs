@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>This drill teaches kids to move their feet to the ball instead of reaching. Every grounder comes from a different angle, so they can’t cheat or predict where it’s going.</p>\n<p><strong>Equipment needed:</strong> 16 baseballs, four cones, flat open space.</p>\n<p><strong>Setup:</strong> Place four cones in a square: two cones at home plate (your position) and two cones 20 feet away from you, creating a square 20 by 20 feet. The hitter stands in the center.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>You roll a ground ball to one of the four corners, calling it out: “Right front,” “Right back,” “Left back,” “Left front.”</li>\n<li>The kid moves to that corner and fields the ball.</li>\n<li>They throw it back to you or to a base.</li>\n<li>Repeat. Do four reps to each corner. That’s 16 total.</li>\n</ol>\n<p><strong>What to look for:</strong> Footwork, not glove work. The feet position the body. If the feet are right, the glove finds the ball. If the feet are wrong, the glove compensates and the kid is out of position by the time the ball arrives.</p>\n<p><strong>If they’re struggling:</strong> Slow the rolls down to 1-2 mph and only call two corners (right front, left front). Cut the reps to 8 total.</p>\n<p><strong>If they’ve got it:</strong> Hit the ball with a fungo bat instead of rolling, and shorten the call window so they have to read direction off your bat instead of your voice.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/baseball-glove-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth baseball glove →</a> — the first piece of gear for every new player.</p>\n<p><a href=\"/go/agility-cones/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Agility cones →</a> — for setup, base paths, and field drills.</p>\n<p><a href=\"/what-to-buy/baseball/\">Full baseball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Four-Corners Ground Balls","summary":"Roll balls to different spots so kids field from all angles. 20 minutes. Ages 8-10.","sport":"baseball","ages":["8-10"],"focus":"fundamentals","layer":"foundations","fundamental":"fielding","progression":"intro","illustrationBrief":"A child in the center of a 20-foot square with cones at each corner, moving toward a grounder rolling to one of the four directions.","publishedAt":"2026-02-16T00:00:00.000Z","featured":false,"editorial":{"qualityGrade":7,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Body completed by editorial agent on 2026-05-09. Truncated original ended at 'the kid is out of posi'."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-four-corners-grounders-ages-8-10.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nThis drill teaches kids to move their feet to the ball instead of reaching. Every grounder comes from a different angle, so they can't cheat or predict where it's going.\n\n**Equipment needed:** 16 baseballs, four cones, flat open space.\n\n**Setup:** Place four cones in a square: two cones at home plate (your position) and two cones 20 feet away from you, creating a square 20 by 20 feet. The hitter stands in the center.\n\n**How to run it:**\n\n1. You roll a ground ball to one of the four corners, calling it out: \"Right front,\" \"Right back,\" \"Left back,\" \"Left front.\"\n2. The kid moves to that corner and fields the ball.\n3. They throw it back to you or to a base.\n4. Repeat. Do four reps to each corner. That's 16 total.\n\n**What to look for:** Footwork, not glove work. The feet position the body. If the feet are right, the glove finds the ball. If the feet are wrong, the glove compensates and the kid is out of position by the time the ball arrives.\n\n**If they're struggling:** Slow the rolls down to 1-2 mph and only call two corners (right front, left front). Cut the reps to 8 total.\n\n**If they've got it:** Hit the ball with a fungo bat instead of rolling, and shorten the call window so they have to read direction off your bat instead of your voice.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

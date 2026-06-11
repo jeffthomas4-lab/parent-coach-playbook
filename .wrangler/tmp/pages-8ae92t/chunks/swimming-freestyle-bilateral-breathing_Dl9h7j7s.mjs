@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "swimming-freestyle-bilateral-breathing.md";
+						const collection = "coachingTips";
+						const slug = "swimming-freestyle-bilateral-breathing";
+						const body = "\nMost kids breathe to one side only. That creates an uneven stroke. Bilateral breathing (both sides) balances the body and tracks straight. Hard at first, easier with practice. By 11-12, kids can build this habit.\n\n**What you need:** A pool, lane lines.\n\n**Setup:** Swimmer at one end of the pool.\n\n**How to run it:**\n\n1. Swim a length of freestyle.\n2. Breathe every 3 strokes. First breath to the right, next to the left, next to the right, etc.\n3. Don't break the stroke pattern. The breath happens during the rotation of the body.\n4. Do 4 lengths with rest between.\n5. Last length: count strokes and breaths.\n\n**What to watch:** The non-dominant side breath. Most kids tilt the head too far on the weaker side, which makes them sink. Roll the body with the breath, don't lift the head.\n\n**If they're struggling:** Breathe every 2 strokes (only to one side) for one length, then switch sides for the next length. Build to bilateral.\n\n**If they've got it:** Every 5 strokes (longer hold between breaths). Or breathe every 3 with a streamline kick on the other side.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth swim goggles →](/go/swim-goggles-youth/) — Speedo Hydrospex, no-fog, fits ages 6–14.\n\n[Full swimming gear guide →](/what-to-buy/swimming/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Freestyle Bilateral Breathing",summary:"Breathe to both sides during freestyle swimming. 12 minutes. Ages 11-12.",sport:"swimming",ages:["11-12"],fundamental:"freestyle",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Swimmer turning the head to breathe during freestyle, alternating sides every three strokes, body rolling with each breath.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Bilateral breathing every 3 strokes; uses correct vocab."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/swimming-freestyle-bilateral-breathing.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

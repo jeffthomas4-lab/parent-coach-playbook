@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-wrist-shot-stationary.md";
+						const collection = "coachingTips";
+						const slug = "hockey-wrist-shot-stationary";
+						const body = "\nThe wrist shot is the most useful shot a young hockey player will learn. Quick, accurate, no big windup. This drill teaches the four phases of the shot.\n\n**What you need:** Stick, 5 pucks, a target (net or wall), ice or off-ice space.\n\n**Setup:** Player 15 feet from the target, puck on the forehand side.\n\n**How to run it:**\n\n1. Cue: Load, Sweep, Snap, Follow.\n2. Load: weight on back foot, blade cupped behind the puck.\n3. Sweep: blade pulls forward through the puck along the ice.\n4. Snap: wrists roll over at the moment of release, the heel of the blade follows the toe.\n5. Follow: blade finishes pointing at the target, weight transfers to front foot.\n\n**What to watch:** The wrist roll. Without the roll, the puck slides flat with no rise. The roll lifts the puck off the ice and adds power.\n\n**If they're struggling:** Reduce distance to 10 feet. Use a street hockey ball off-ice.\n\n**If they've got it:** Move back to 20 feet. Add target zones (top corners). They have to hit the corners, not just the net.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Wrist Shot Stationary",summary:"Basic wrist shot from a stationary position. 12 minutes. Ages 8-10.",sport:"hockey",ages:["8-10"],fundamental:"shooting",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Player in shooting stance with weight loaded on back foot, stick blade cupped behind the puck, ready to sweep forward and snap the wrist.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Load Sweep Snap Follow phases give a memorable structure."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-wrist-shot-stationary.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

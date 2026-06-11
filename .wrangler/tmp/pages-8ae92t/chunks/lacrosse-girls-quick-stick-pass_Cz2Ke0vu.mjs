@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "lacrosse-girls-quick-stick-pass.md";
+						const collection = "coachingTips";
+						const slug = "lacrosse-girls-quick-stick-pass";
+						const body = "\nThe quick stick is the lacrosse one-timer. Ball arrives, ball leaves. No cradle in between. This is a high-skill move that creates fast offense and beats defenders who haven't recovered.\n\n**What you need:** Two sticks, ball, two players.\n\n**Setup:** Two players 12 feet apart, sticks held high at face level.\n\n**How to run it:**\n\n1. Player A passes to Player B.\n2. Player B catches and releases in one motion. Stick head doesn't drop.\n3. Pass goes back to Player A.\n4. Player A does the same: catch and release.\n5. Continuous quick stick passes. Goal: 10 in a row without a drop.\n\n**What to watch:** The stick height. A drop in the stick after the catch breaks the rhythm. Stick stays high.\n\n**If they're struggling:** Slow the passes. Or allow one cradle between catch and release.\n\n**If they've got it:** Move further apart (20 feet). Or add a third player for a three-way quick stick rotation.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.\n\n[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.\n\n[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Quick Stick Pass",summary:"Receive and release the ball in one motion without cradling. 10 minutes. Ages 8-10.",sport:"lacrosse-girls",ages:["8-10"],fundamental:"passing",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Player receiving a pass and immediately redirecting it back to the partner without lowering the stick or cradling.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean quick-stick mechanics; no contact issues."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/lacrosse-girls-quick-stick-pass.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

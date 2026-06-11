@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-defensive-stance-mirror.md";
+						const collection = "coachingTips";
+						const slug = "basketball-defensive-stance-mirror";
+						const body = "\nThe defensive stance is the foundation. This drill teaches the position without the ball. Feet wide, knees bent, hands active. Just stance and simple movement.\n\n**What you need:** Open space. No ball needed. Two kids per pair.\n\n**Setup:** Partners face each other about 4 feet apart.\n\n**How to run it:**\n\n1. Cue: Stance, Slide, Mirror, Hands. Get in an athletic stance. Feet wider than shoulder-width. Knees bent. Hands up and active.\n2. Partner A moves slowly side to side. Partner B mirrors the movement, staying in stance and facing A.\n3. Do 20 seconds of mirroring. Then switch. A mirrors while B moves.\n4. Do 2 rounds of 20 seconds each.\n\n**What to watch:** Are their knees staying bent or are they standing upright? Bend those knees. Low stance = better defense.\n\n**If they're struggling:** Move even slower. Do 15 seconds instead of 20. Let them stand more upright while they learn the movement.\n\n**If they've got it:** Increase to 30 seconds. The offensive player moves faster.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Defensive Stance Mirror",summary:"Stand in defensive stance and mirror a partner's movement. 7 minutes. Ages 5-7.",sport:"basketball",ages:["5-7"],fundamental:"defending",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Two young children facing each other in defensive stances, one moving slowly while the other mirrors the movement.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:6,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"No-ball start for ages 5-7 is the right call. Stance/Slide/Mirror/Hands cue is consistent."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-defensive-stance-mirror.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Pop-ups between two fielders cause collisions. The rule: outfielders have priority over infielders. Center fielder has priority over corners. Catcher gives way to everyone. When two players call it, the priority player wins. Teach the rule and the call drill keeps them alive.</p>\n<p><strong>What you need:</strong> A bat or tennis racquet, 5 tennis balls, two players per pop-up.</p>\n<p><strong>Setup:</strong> Position the two players in spots where pop-ups land between them (shortstop and left field, or second baseman and right field, or pitcher and catcher).</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Hit or toss a pop-up that falls between the two players.</li>\n<li>Both players run toward the ball. Both call “I got it” loud.</li>\n<li>The priority player keeps calling. The other player calls “you got it” and gets out of the way.</li>\n<li>The priority rule: outfielder over infielder. Center fielder over corner outfielders. Anyone over the catcher.</li>\n<li>Do 6 reps with different player pairings.</li>\n</ol>\n<p><strong>What to watch:</strong> Did they collide? Or did one give way? If they collide, neither one called clearly. The drill is the call AND the listen.</p>\n<p><strong>If they’re struggling:</strong> Have them practice with no ball. Just run toward an imaginary spot and call for it.</p>\n<p><strong>If they’ve got it:</strong> Add a wind or have someone throw a curveball pop-up so the ball drifts. Now the call has to update mid-flight.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/baseball-glove-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth baseball glove →</a> — the first piece of gear for every new player.</p>\n<p><a href=\"/go/baseball-catchers-gear-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth catcher’s set →</a> — chest protector, helmet, and leg guards.</p>\n<p><a href=\"/what-to-buy/baseball/\">Full baseball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Pop-Up Priorities","summary":"Who has priority on a pop-up between two fielders. 12 minutes. Ages 8-10 and 11-12.","sport":"baseball","ages":["8-10","11-12"],"fundamental":"situational","progression":"build","focus":"situational","layer":"skills","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"A pop-up between the shortstop and the left fielder, both running toward it, the outfielder calling for it.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Clean pass."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-pop-up-priorities.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nPop-ups between two fielders cause collisions. The rule: outfielders have priority over infielders. Center fielder has priority over corners. Catcher gives way to everyone. When two players call it, the priority player wins. Teach the rule and the call drill keeps them alive.\n\n**What you need:** A bat or tennis racquet, 5 tennis balls, two players per pop-up.\n\n**Setup:** Position the two players in spots where pop-ups land between them (shortstop and left field, or second baseman and right field, or pitcher and catcher).\n\n**How to run it:**\n\n1. Hit or toss a pop-up that falls between the two players.\n2. Both players run toward the ball. Both call \"I got it\" loud.\n3. The priority player keeps calling. The other player calls \"you got it\" and gets out of the way.\n4. The priority rule: outfielder over infielder. Center fielder over corner outfielders. Anyone over the catcher.\n5. Do 6 reps with different player pairings.\n\n**What to watch:** Did they collide? Or did one give way? If they collide, neither one called clearly. The drill is the call AND the listen.\n\n**If they're struggling:** Have them practice with no ball. Just run toward an imaginary spot and call for it.\n\n**If they've got it:** Add a wind or have someone throw a curveball pop-up so the ball drifts. Now the call has to update mid-flight.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

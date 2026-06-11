@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-goalie-glove-and-blocker-saves.md";
+						const collection = "coachingTips";
+						const slug = "hockey-goalie-glove-and-blocker-saves";
+						const body = "\nThe glove and blocker are the goalie's two upper-body tools. Glove catches and holds the puck. Blocker deflects it away. Most goalies favor one and miss with the other. This drill builds both.\n\n**What you need:** Full goalie gear, full hockey gear for shooter, pucks, ice rink with net.\n\n**Setup:** Goalie in net. Shooter 20 feet away with a pile of pucks.\n\n**How to run it:**\n\n1. Goalie sets the stance.\n2. Shooter takes 5 wrist shots aimed at the glove side (high right for a right-catching goalie).\n3. Goalie catches each one with the glove. Hold the catch.\n4. Shooter takes 5 wrist shots aimed at the blocker side.\n5. Goalie deflects each one away from the body, away from the net.\n\n**What to watch:** Glove position. Some goalies hold the glove low (waist height). Saves above the chest require the glove up. Tell them: \"Glove up to the shoulder.\"\n\n**If they're struggling:** Slow shots. Closer distance (12 feet). Fewer pucks per round.\n\n**If they've got it:** Add movement. Shooter moves before each shot. Goalie has to track and shuffle before saving.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Goalie Glove and Blocker Saves",summary:"Goalie makes saves with the glove and the blocker. 12 minutes. Ages 11-12.",sport:"hockey",ages:["11-12"],fundamental:"goaltending",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Goalie reaching out with the glove hand to catch a puck heading for the upper corner, body square to the shooter.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Glove side and blocker side framing maps to right- vs left-catching goalies cleanly."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-goalie-glove-and-blocker-saves.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

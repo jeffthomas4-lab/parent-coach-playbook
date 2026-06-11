@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>At eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here’s how to make it without guessing.</p>\n<p><strong>The rec side</strong>\nOne practice a week. One or two games a week. Home by six on most nights. Cost: seventy-five to one fifty a season. Your kid plays with people from school. Everyone who wants to play gets in.</p>\n<p>Development is slower. Competition is lighter. But the relationship between coach and player is easier. The environment is lower-stress.</p>\n<p><strong>The travel side</strong>\nThree to four practices a week. Four to six tournaments spring through summer. Home varies. Cost: two hundred to five hundred a month for a serious program. Kids come from multiple towns. Only the best make the team.</p>\n<p>Development is faster. Competition is real. But the time commitment is enormous. The stress is higher. And if your kid doesn’t make the elite roster, you’re paying for a B team that doesn’t compete much.</p>\n<p><strong>The honest question</strong>\nIs your kid asking to move up? Or are you pushing because you think they should? Those two answers determine what happens next.</p>\n<p>If they’re begging to play travel and asking to go to extra workouts: they’re ready. If you’re suggesting it and they’re quiet: they’re not ready.</p>\n<p><strong>The schedule piece</strong>\nWalk the travel schedule. Really walk it. Spring starts in March. Tournaments every April, May, June, July. That’s your summer gone. That’s every Saturday from March through July. Some families love that. Some hate it.</p>\n<p><strong>The middle ground</strong>\nSome kids play rec in fall and winter, travel in spring and summer. Some play rec while trying out for travel in February. You don’t have to pick one forever. You can switch.</p>\n<p><strong>The call</strong>\nWatch them play. Ask them directly: “Would you rather play more games or have your weekends?” Then listen.</p>\n<p>Some kids are travel kids. Some are rec kids. Some kids change their minds at fourteen. That’s all okay.</p>\n<p>Give them the choice once they understand what both actually cost.</p>";
+
+				const frontmatter = {"title":"The 11-12 Honest Comparison","dek":"How to decide between rec and travel when it actually matters.","seoDescription":"At eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here's how to make it without guessing.","topic":"rec-vs-travel","format":"note","phase":"drive-there","sport":"multi-sport","age":"11-12","publishedAt":"2026-02-07T00:00:00.000Z","featured":false,"editorial":{"claudeReviewedAt":"2026-04-08T00:00:00.000Z"}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/11-12-honest-comparison.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nAt eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here's how to make it without guessing.\n\n**The rec side**\nOne practice a week. One or two games a week. Home by six on most nights. Cost: seventy-five to one fifty a season. Your kid plays with people from school. Everyone who wants to play gets in.\n\nDevelopment is slower. Competition is lighter. But the relationship between coach and player is easier. The environment is lower-stress.\n\n**The travel side**\nThree to four practices a week. Four to six tournaments spring through summer. Home varies. Cost: two hundred to five hundred a month for a serious program. Kids come from multiple towns. Only the best make the team.\n\nDevelopment is faster. Competition is real. But the time commitment is enormous. The stress is higher. And if your kid doesn't make the elite roster, you're paying for a B team that doesn't compete much.\n\n**The honest question**\nIs your kid asking to move up? Or are you pushing because you think they should? Those two answers determine what happens next.\n\nIf they're begging to play travel and asking to go to extra workouts: they're ready. If you're suggesting it and they're quiet: they're not ready.\n\n**The schedule piece**\nWalk the travel schedule. Really walk it. Spring starts in March. Tournaments every April, May, June, July. That's your summer gone. That's every Saturday from March through July. Some families love that. Some hate it.\n\n**The middle ground**\nSome kids play rec in fall and winter, travel in spring and summer. Some play rec while trying out for travel in February. You don't have to pick one forever. You can switch.\n\n**The call**\nWatch them play. Ask them directly: \"Would you rather play more games or have your weekends?\" Then listen.\n\nSome kids are travel kids. Some are rec kids. Some kids change their minds at fourteen. That's all okay.\n\nGive them the choice once they understand what both actually cost.\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

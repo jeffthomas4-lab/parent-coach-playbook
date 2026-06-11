@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-jog-and-stretch-line.md";
+						const collection = "coachingTips";
+						const slug = "baseball-jog-and-stretch-line";
+						const body = "\nSix-year-olds don't need a sophisticated warm-up. They need movement, attention, and three minutes of energy burn before practice starts. This is that simple version.\n\n**What you need:** Open field. Enough space for a 30-yard line.\n\n**Setup:** Kids in a line at one end of a 30-yard area.\n\n**How to run it:**\n\n1. Easy jog from one cone to the other. Walk back. 2 reps.\n2. Toe touches: 10 reps. Reach down and try to touch toes, hold 1 second, stand up.\n3. Arm circles: 10 forward, 10 backward.\n4. High knees in place: 10 each leg.\n5. One sprint, end to end. Then walk back.\n\n**What to watch:** Are they paying attention? Five-year-olds wander. Keep the warm-up moving fast and they'll stay with it.\n\n**If they're struggling:** Cut to 3 exercises. Add fun: \"Run like a giraffe.\" \"Stretch like a tree.\"\n\n**If they've got it:** Add the dynamic warm-up circuit drill instead. They've outgrown the simple version.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Jog and Stretch Line",summary:"Easy jog plus simple stretches. The youngest kids' warm-up. 6 minutes. T-ball and ages 5-7.",sport:"baseball",ages:["t-ball","5-7"],fundamental:"warm-up",progression:"intro",focus:"warm-up",layer:"foundations",illustrationBrief:"Five young children jogging in a line on a field, then stopping to do simple toe touches and arm circles.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Note uses 'yard' for a baseball field distance; that's standard plain English here, not a wrong-sport flag."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-jog-and-stretch-line.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

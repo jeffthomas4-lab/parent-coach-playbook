@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-catcher-blocking-balls.md";
+						const collection = "coachingTips";
+						const slug = "baseball-catcher-blocking-balls";
+						const body = "\nA catcher who can block balls in the dirt is the difference between a runner advancing and a runner staying put. The block is not a catch. It's the catcher's body stopping the ball and keeping it close. This is a 12-and-up skill because it requires gear and commitment.\n\n**What you need:** [Catcher's gear](/go/baseball-catchers-gear-youth/) (mask, chest protector, shin guards), 6 tennis balls, a glove.\n\n**Setup:** Catcher in stance about 8 feet from where you stand. You bounce balls toward them in the dirt.\n\n**How to run it:**\n\n1. Cue: Eyes, Hands, Squeeze, Pull. On a block, the whole body becomes the glove.\n2. Demonstrate the block: drop to both knees, glove drops to the dirt between the legs, chest angled forward and down so the ball doesn't bounce up.\n3. Throw 5 slow bounces straight at them. They block, ball drops in front, they pick it up.\n4. Throw 5 to the glove side. They angle the body to keep the ball in front of the plate.\n5. Throw 5 to the throwing-hand side. Same angle work.\n\n**What to watch:** Where the ball ends up after the block. If it bounces away 10 feet, the chest was not angled forward. If it stays within 3 feet of the catcher, the block is good.\n\n**If they're struggling:** Use tennis balls or rag balls only. The block is a confidence drill before it's a skill drill.\n\n**If they've got it:** Move to real baseballs and harder bounces. Add a runner on third";
+						const data = {title:"Catcher Blocking",summary:"Catcher blocks balls in the dirt with the body. 12 minutes. Ages 11-12.",sport:"baseball",ages:["11-12"],fundamental:"catching",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"A catcher in full gear dropping to both knees with the glove between the legs and the chest angled forward to keep the ball in front.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:true,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Contact-safety drill (catcher gear required); flagged sensitive."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-catcher-blocking-balls.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>The tournament merch table is not for the kid. It’s for the family that wants the trip to feel like a thing. That’s fine. Just call it what it is.</p>\n<p>Tournament t-shirts cost real money. The kid wears them twice and grows out of them. The family ends up with a drawer full of shirts from places they barely remember playing.</p>\n<h2 id=\"whats-actually-worth-buying\">What’s actually worth buying</h2>\n<p>If the tournament is meaningful (championship, first national event, the kid’s last one in a sport), buy one shirt and frame it. The kid will keep that one. The five others go to Goodwill in three years.</p>\n<p>If the kid likes a hat from one of these trips, the hat survives longer than the shirt does. Hats are the better buy.</p>\n<p>Skip the team-printed warm-up bag, the personalized water bottle, and the temporary tattoos. None of those last.</p>\n<h2 id=\"the-bigger-frame\">The bigger frame</h2>\n<p>The merch line at a tournament is fifteen minutes of your day, and the kid is going to ask. The right call is one item, picked by the kid, no upgrades. Make it a tradition: one thing per tournament, you pick.</p>\n<p>The discipline is for you, not them. Most kids don’t actually want twelve t-shirts. They want to be seen as part of the team. One shirt covers that.</p>\n<h2 id=\"the-ones-to-skip-on-principle\">The ones to skip on principle</h2>\n<p>Anything with the kid’s name on it. Identity tattoos, jersey-printed names, custom-personalized gear. The kid changes teams in two years. The personalization becomes a chore to explain.</p>\n<p>The hoodie that says “Champions” before the championship is played. Some teams sell these in advance. They’re cursed.</p>\n<p>The full team uniform extra (second pair of cleats, second pair of shorts). The team uniform is a uniform. The second one is a sales target.</p>\n<p><a href=\"/what-to-buy/\">What to buy</a> covers the actual gear conversations by sport. The merch table is not in any of those guides for a reason.</p>";
+
+				const frontmatter = {"title":"The tournament *t-shirt economy*","dek":"Twelve t-shirts later, two of which the kid wears. The honest read on the merch table, and what to actually buy.","seoDescription":"The tournament merch table is not for the kid. It's for the family that wants the trip to feel like a thing. That's fine. Just call it what it is.","topic":"equipment","format":"note","phase":"game","sport":"multi-sport","age":"all-ages","publishedAt":"2026-05-13T00:00:00.000Z","featured":false,"draft":false};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/the-tournament-t-shirt-economy.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nThe tournament merch table is not for the kid. It's for the family that wants the trip to feel like a thing. That's fine. Just call it what it is.\n\nTournament t-shirts cost real money. The kid wears them twice and grows out of them. The family ends up with a drawer full of shirts from places they barely remember playing.\n\n## What's actually worth buying\n\nIf the tournament is meaningful (championship, first national event, the kid's last one in a sport), buy one shirt and frame it. The kid will keep that one. The five others go to Goodwill in three years.\n\nIf the kid likes a hat from one of these trips, the hat survives longer than the shirt does. Hats are the better buy.\n\nSkip the team-printed warm-up bag, the personalized water bottle, and the temporary tattoos. None of those last.\n\n## The bigger frame\n\nThe merch line at a tournament is fifteen minutes of your day, and the kid is going to ask. The right call is one item, picked by the kid, no upgrades. Make it a tradition: one thing per tournament, you pick.\n\nThe discipline is for you, not them. Most kids don't actually want twelve t-shirts. They want to be seen as part of the team. One shirt covers that.\n\n## The ones to skip on principle\n\nAnything with the kid's name on it. Identity tattoos, jersey-printed names, custom-personalized gear. The kid changes teams in two years. The personalization becomes a chore to explain.\n\nThe hoodie that says \"Champions\" before the championship is played. Some teams sell these in advance. They're cursed.\n\nThe full team uniform extra (second pair of cleats, second pair of shorts). The team uniform is a uniform. The second one is a sales target.\n\n[What to buy](/what-to-buy/) covers the actual gear conversations by sport. The merch table is not in any of those guides for a reason.\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [{"depth":2,"slug":"whats-actually-worth-buying","text":"What’s actually worth buying"},{"depth":2,"slug":"the-bigger-frame","text":"The bigger frame"},{"depth":2,"slug":"the-ones-to-skip-on-principle","text":"The ones to skip on principle"}];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

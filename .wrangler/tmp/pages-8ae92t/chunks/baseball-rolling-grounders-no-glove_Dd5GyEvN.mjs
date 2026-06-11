@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-rolling-grounders-no-glove.md";
+						const collection = "coachingTips";
+						const slug = "baseball-rolling-grounders-no-glove";
+						const body = "\nWhen the glove is off, kids stop hiding behind it. They have to drop low and bring both hands together to catch a rolling ball. The body learns the right position because the body has no choice.\n\n**What you need:** 5 tennis balls. No gloves.\n\n**Setup:** Stand 8 feet from the kid on grass. They face you with no glove, both hands ready in front.\n\n**How to run it:**\n\n1. Cue: Drop, Show, Funnel. No throw today.\n2. They drop into a low position, both hands cupped together palms-up on the ground.\n3. Roll a slow ball into their hands. They squeeze it between both hands and bring it up to the chest.\n4. Do 10 rolls. Reset between each.\n5. Last 5: roll slightly to one side. Now they have to step before they drop.\n\n**What to watch:** Are both hands together? If one hand is in front of the other or off to the side, the catch is one-handed and ball will pop out. Hands together palm-to-palm.\n\n**If they're struggling:** Slower rolls. Bigger soft ball.\n\n**If they've got it:** Add the glove back. Same drill, now with the glove. The glove should feel easier than no glove.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Rolling Grounders No Glove",summary:"Field grounders with bare hands so the body learns the position. 8 minutes. T-ball and ages 5-7.",sport:"baseball",ages:["t-ball","5-7"],fundamental:"fielding",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"A young child crouched low with both hands together palms-up on the grass, fielding a slow tennis ball without a glove.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:8,voiceGrade:9,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean pass."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-rolling-grounders-no-glove.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-touch-the-corner.md";
+						const collection = "coachingTips";
+						const slug = "softball-touch-the-corner";
+						const body = "\nThe shortest distance between two points is a straight line. Kids curve around first. The cue is Eyes, Drive, Touch, Brake: they run at the inside corner of the bag.\n\n**What you need:** Home plate and first base (regulation 60 feet), 10 kids in a line.\n\n**Setup:** Kids at home plate. First base at 60 feet with a clear approach lane.\n\n**How to run it:**\n\n1. Cue: Eyes, Drive, Touch, Brake.\n2. Coach points to the inside corner of first base and says \"touch the corner, not the side.\"\n3. Kid sprints from home, aiming for the inside corner of the bag.\n4. They Touch the corner with their foot and Drive through.\n5. Do 5 reps. Walk back to home. Emphasize the corner angle.\n\n**What to watch:** Do they run straight from home to first? Or do they curve? Straight line with a slight inside angle is fastest.\n\n**If they're struggling:** Place a cone at the inside corner. Have them run to the cone, not the base. This helps them visualize the path.\n\n**If they've got it:** Add a fielder with the ball at first. Kid runs hard and touches. Fielder practices tagging.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Touch the Corner",summary:"Run the shortest path to first base. 10 minutes. T-ball and ages 5-7.",sport:"softball",ages:["t-ball","5-7"],fundamental:"base-running",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Runner at home plate running at an angle toward the inside corner of first base.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Inside-corner base-running cue is sharp."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-touch-the-corner.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

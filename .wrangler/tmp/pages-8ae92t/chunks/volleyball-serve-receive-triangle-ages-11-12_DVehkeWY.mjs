@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Serve-receive is when a team is in trouble most. This drill teaches positioning and coordination among three players under pressure.</p>\n<p><strong>Equipment needed:</strong> 4 cones, 2 balls, 3 sticks per group (or cones to mark positions).</p>\n<p><strong>Setup:</strong> Place three cones in a triangle formation at the net: one at the middle back (setter position), two at the back corners (passers). Server stands opposite, about 30 feet away.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Server serves the ball to one of the two back-row passers.</li>\n<li>Passer must direct the ball to the setter in the middle. The setter catches it (no hit yet, just catch for learning).</li>\n<li>Server serves 8 balls, alternating targets (left passer, right passer, left, right, etc.).</li>\n<li>Players rotate: setter becomes server, server becomes right passer, right passer becomes setter.</li>\n</ol>\n<p><strong>What to look for:</strong></p>\n<p>Passers should position themselves to receive. If they’re standing in the middle, they can’t cover both sides. The pass should go to the setter, not over them. If serves are easy, challenge the passers by serving more difficult balls. The setter should communicate and call for the ball.</p>\n<p><strong>Variation:</strong> The setter now hits or sets the ball instead of catching. This requires the passers to give the setter better passes and builds the complete skill.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/volleyball-volley-lite/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Volley Lite training ball →</a> — lightweight ball for beginners learning to pass.</p>\n<p><a href=\"/go/volleyball-net/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Portable volleyball net →</a> — 32-ft set with adjustable steel poles.</p>\n<p><a href=\"/what-to-buy/volleyball/\">Full volleyball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Serve-Receive in a Triangle","summary":"Teach serve-receive positioning with a setter and two passers. 12 minutes.","sport":"volleyball","ages":["11-12"],"focus":"fundamentals","layer":"skills","fundamental":"receiving","progression":"build","illustrationBrief":"Serve receive formation and communication","publishedAt":"2026-03-28T00:00:00.000Z","featured":false,"editorial":{"qualityGrade":7,"originalityGrade":6,"voiceGrade":7,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Three-player triangle formation. Catch-first progression is age-appropriate."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/volleyball-serve-receive-triangle-ages-11-12.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nServe-receive is when a team is in trouble most. This drill teaches positioning and coordination among three players under pressure.\n\n**Equipment needed:** 4 cones, 2 balls, 3 sticks per group (or cones to mark positions).\n\n**Setup:** Place three cones in a triangle formation at the net: one at the middle back (setter position), two at the back corners (passers). Server stands opposite, about 30 feet away.\n\n**How to run it:**\n\n1. Server serves the ball to one of the two back-row passers.\n2. Passer must direct the ball to the setter in the middle. The setter catches it (no hit yet, just catch for learning).\n3. Server serves 8 balls, alternating targets (left passer, right passer, left, right, etc.).\n4. Players rotate: setter becomes server, server becomes right passer, right passer becomes setter.\n\n**What to look for:**\n\nPassers should position themselves to receive. If they're standing in the middle, they can't cover both sides. The pass should go to the setter, not over them. If serves are easy, challenge the passers by serving more difficult balls. The setter should communicate and call for the ball.\n\n**Variation:** The setter now hits or sets the ball instead of catching. This requires the passers to give the setter better passes and builds the complete skill.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.\n\n[Portable volleyball net →](/go/volleyball-net/) — 32-ft set with adjustable steel poles.\n\n[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

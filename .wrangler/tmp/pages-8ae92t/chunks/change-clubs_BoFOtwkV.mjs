@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "";
+
+				const frontmatter = {"title":"Should we *change clubs*?","summary":"The club isn't working but switching has costs. Politics, friendships, financial deposits, and what the next club isn't telling you. The framework for the call.","theQuestion":"We're frustrated with our current club. Is the next one going to be better, or are we trading one set of problems for another?","publishedAt":"2026-05-05T00:00:00.000Z","featured":false,"draft":false,"benefits":["Better coaching, better culture, better fit for the kid.","Sometimes the rival club genuinely is run more honestly.","A clean break from a coach or environment that's hurting the kid.","Can reset a kid's relationship with the sport when the current club has soured it."],"costs":["Tryouts at the new club don't always go the way you expect. Your kid could be a starter in club A and a bench player in club B.","Friendships at the old club take a hit. Some kids handle it. Some don't.","Financial deposits don't always come back. Read the contract.","Some clubs have non-compete or club-loyalty clauses. Real legal language. Read it.","The culture you didn't like at the old club might be the culture of the sport in your area, not just that one club."],"signsItsAGoodFit":["There's a specific, fixable thing wrong at the current club that talking to the head coach hasn't resolved.","Multiple families are leaving for the same reasons. Pattern, not just your read.","The new club has been transparent about playing time, costs, and culture in your conversations with them.","Your kid has had a real conversation with the new club's coach and felt like the right fit.","The financial logistics make sense and you've read the contract."],"signsItsNot":["The reason for leaving is one bad season or one personality conflict.","Your kid hasn't been part of the conversation.","The new club is recruiting hard and promising playing time. Promised playing time at tryouts is a flag.","You haven't had the conversation with the current head coach about the specific problem.","You're moving to chase a level the kid hasn't earned."],"howToHandleIt":["Talk to the current coach first. Be specific about the problem. Sometimes it gets fixed.","Visit the new club for two practices and at least one game before committing. Watch how they treat their bench, not just their starters.","Talk to two families a year ahead of yours at the new club. Honest read on schedule, culture, money.","Read the contract twice. Pay attention to refund terms and tryout-only fees that don't apply if you don't make the team.","Have your kid spend time at both. They should walk away knowing which one feels like home.","Don't burn the old club. Even if you're leaving for cause, the youth sports world is small and parents talk."],"theRule":"Leave a club when something is structurally wrong and the new club has shown you it does that thing well. Don't leave because the grass looks greener.","relatedDecisions":["should-my-kid-play-travel-sports","leave-this-team","financial-pressure-decisions"],"relatedScripts":["kid-upset","kid-silent"],"sportTags":["multi-sport"],"ageBands":["8-10","11-12","13-14","15-plus"]};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/decisions/change-clubs.md";
+				const url = undefined;
+				function rawContent() {
+					return "";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

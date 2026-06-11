@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-crossovers-clockwise.md";
+						const collection = "coachingTips";
+						const slug = "hockey-crossovers-clockwise";
+						const body = "\nA turn without crossovers loses speed. A turn with crossovers gains speed. Hockey players cross over on every curved path. This drill builds the pattern in a controlled circle.\n\n**What you need:** Full gear, ice rink. The faceoff circle is built for this.\n\n**Setup:** Skater starts at the top of a faceoff circle.\n\n**How to run it:**\n\n1. Cue: Push, Cross, Push, Cross.\n2. Skater goes around the circle clockwise. Inside foot pushes out; outside foot crosses in front.\n3. Each push generates speed. Each crossover keeps the curve.\n4. Five laps clockwise. Then five laps counter-clockwise (the harder direction for most kids).\n5. Last 2 laps each direction at full speed.\n\n**What to watch:** The outside foot. Is it crossing in front or just stepping forward? The cross is the move that adds power.\n\n**If they're struggling:** Slow the speed. Or just walk through the footwork off the ice first (in shoes).\n\n**If they've got it:** Add a stick and puck. Do the circles while controlling a puck on the inside hand.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Youth hockey stick →](/go/hockey-stick-youth/) — Franklin Ripper, flex rated for young players.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Crossovers Clockwise",summary:"Cross one foot over the other to turn while skating. 15 minutes. Ages 8-10 and 11-12.",sport:"hockey",ages:["8-10","11-12"],fundamental:"skating",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Skater going around a circle on the ice, the outside foot crossing in front of the inside foot to maintain speed through the turn.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Faceoff circle as built-in track is a smart, real-rink detail."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-crossovers-clockwise.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

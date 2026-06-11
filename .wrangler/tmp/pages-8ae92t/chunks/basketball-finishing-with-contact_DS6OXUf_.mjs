@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-finishing-with-contact.md";
+						const collection = "coachingTips";
+						const slug = "basketball-finishing-with-contact";
+						const body = "\nGame finishes happen with defenders bumping you. This drill adds light contact. The finisher stays strong and focuses on the rim, not the defender.\n\n**What you need:** Basketball. Three kids per rep (shooter, passer, light defender). Half-court.\n\n**Setup:** Passer near the top of the key. Shooter at the wing. Defender in the lane on the shooter.\n\n**How to run it:**\n\n1. Passer passes to the shooter at the wing.\n2. Shooter drives toward the basket. Defender applies light contact (bumping, not fouling).\n3. Shooter finishes the layup through contact. Eyes on the rim, not the defender.\n4. Do 5 reps. Rest. Rotate roles.\n\n**What to watch:** Do they keep their eyes on the rim or do they look at the defender? Eyes on the rim always. That's where the finish happens.\n\n**If they're struggling:** Have the defender apply no contact, just presence. Let the shooter build confidence first.\n\n**If they've got it:** Increase contact intensity. Defender plays at 75% effort, still legal but more realistic.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Finishing With Contact",summary:"Finish around the basket against contact from a defender. 10 minutes. Ages 11-12.",sport:"basketball",ages:["11-12"],fundamental:"finishing",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"A young player driving to the basket, being jostled by a defender, and still finishing the layup.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean voice, age-appropriate contact framing."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-finishing-with-contact.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

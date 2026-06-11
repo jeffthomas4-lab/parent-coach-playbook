@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "tennis-backhand-from-feed.md";
+						const collection = "coachingTips";
+						const slug = "tennis-backhand-from-feed";
+						const body = "\nThe backhand is most kids' weaker side. Practice closes the gap. From a coach feed, the player gets predictable balls to the backhand. They can build the rhythm without having to rally.\n\n**What you need:** Green or yellow tennis balls, full racquet, full tennis court.\n\n**Setup:** Player on the baseline backhand side. Coach across the net with balls.\n\n**How to run it:**\n\n1. Cue: Turn, Drop, Lift, Follow.\n2. Coach feeds to the player's backhand side.\n3. Player turns, drops the racquet, swings up through the ball with both hands.\n4. Ball clears the net. Follow through over the front shoulder.\n5. Do 12 backhands. Mix some down the line and cross-court.\n\n**What to watch:** The non-dominant hand. The non-dominant hand drives the swing on a two-handed backhand. If only the dominant hand is working, the swing is weak.\n\n**If they're struggling:** Slower feeds. Move closer to the net.\n\n**If they've got it:** Mix forehands and backhands randomly. Player has to read the side and react.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.\n\n[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.\n\n[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Backhand from a Feed",summary:"Hit two-handed backhands from a coach feed. 12 minutes. Ages 11-12.",sport:"tennis",ages:["11-12"],fundamental:"backhand",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Player at the baseline hitting a two-handed backhand from a fed ball, racquet finishing high over the front shoulder.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean backhand build drill; correct tennis vocab."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tennis-backhand-from-feed.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

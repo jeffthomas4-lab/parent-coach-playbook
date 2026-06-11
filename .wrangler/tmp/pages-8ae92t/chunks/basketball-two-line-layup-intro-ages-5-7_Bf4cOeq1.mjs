@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-two-line-layup-intro-ages-5-7.md";
+						const collection = "coachingTips";
+						const slug = "basketball-two-line-layup-intro-ages-5-7";
+						const body = "\nLayups are the easiest bucket in basketball. This drill teaches the approach, the footsteps, and the finish from both sides.\n\n**Equipment needed:** One hoop, 12-15 basketballs, two buckets, a basket of balls near the hoop.\n\n**Setup:** Two lines of kids facing the hoop. Line 1 is on the right side, Line 2 is on the left side. Both about 15 feet away.\n\n**How to run it:**\n\n1. First kid in Line 1 dribbles toward the hoop from the right, shoots a layup, and goes to the back of Line 2.\n2. First kid in Line 2 dribbles toward the hoop from the left, shoots a layup, and goes to the back of Line 1.\n3. Alternate. Do 20 total reps (10 per side).\n\n**What to look for:** Footwork on the approach. A layup has two steps before the shot. First step is longer, second step is a launch off the inside foot, then lay the ball off the backboard with the outside hand. Soft touch matters more than power at this age.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Two-Line Layup Intro",summary:"Two lines shooting layups alternating sides. 20 minutes. Ages 5-7.",sport:"basketball",ages:["5-7"],fundamental:"finishing",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Two lines of children in a gym, each taking turns approaching the basket from the baseline and shooting a layup from one side.",publishedAt:new Date(1768867200000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Completed truncated body with two voice-matched lines on launch step and ball off the backboard. Sport language clean."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-two-line-layup-intro-ages-5-7.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

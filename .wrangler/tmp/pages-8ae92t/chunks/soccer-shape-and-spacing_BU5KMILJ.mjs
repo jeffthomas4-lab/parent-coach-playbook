@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-shape-and-spacing.md";
+						const collection = "coachingTips";
+						const slug = "soccer-shape-and-spacing";
+						const body = "\nGood teams keep their shape. Even spacing between players, defenders and forwards in their correct positions. This drill teaches players to adjust their position based on the ball location without breaking formation.\n\n**What you need:** 6 kids (one team), 1 ball, cones marking a half field.\n\n**Setup:** Team is arranged in a basic formation: 2 defenders, 2 midfielders, 2 forwards. Ball starts with one attacker.\n\n**How to run it:**\n\n1. Team possesses the ball using Plant, Open, Strike, Follow.\n2. As they pass, the whole shape shifts toward the ball side.\n3. Defenders stay back. Forwards stay up. Midfielders connect.\n4. If the ball moves left, the shape compresses left.\n5. If the ball moves right, the shape shifts right.\n6. Play for 3 minutes of continuous movement.\n\n**What to watch:** Do players stay in their lanes? Or bunch together around the ball?\n\n**If they're struggling:** Slow the pace. Let them walk through the shape changes first.\n\n**If they've got it:** Add an attacking team. Real game pressure forces better shape discipline.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Shape and Spacing",summary:"Team maintains an organized shape while moving with the ball. 12 minutes. Ages 11-12.",sport:"soccer",ages:["11-12"],fundamental:"positioning",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Overhead view of a team maintaining a defensive or offensive shape, players evenly distributed across the field.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:7,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Could use one concrete spacing distance, but overall clean."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-shape-and-spacing.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

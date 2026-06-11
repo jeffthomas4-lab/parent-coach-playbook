@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-arm-circle-warm-up.md";
+						const collection = "coachingTips";
+						const slug = "baseball-arm-circle-warm-up";
+						const body = "\nA pitcher's arm has to be warm before they throw a single pitch. Cold arms get hurt. Two minutes of arm circles and a five-minute easy catch warms the shoulder enough to handle 30 pitches. Skip this and you're playing with an injury risk.\n\n**What you need:** Open space. A baseball and partner for the catch portion.\n\n**Setup:** Kid stands with arms loose at the sides.\n\n**How to run it:**\n\n1. Slow forward circles: 10 reps each arm. Big slow circles.\n2. Slow backward circles: 10 reps each arm.\n3. Faster forward circles: 10 reps each arm.\n4. Cross-body arm swings: hug yourself with each arm 10 times.\n5. Light catch with partner from 10 feet, 6 throws each. Then 20 feet, 6 throws each. Then 30 feet, 6 throws each.\n\n**What to watch:** Are they actually warming up or rushing through? The slow circles should be slow. The fast circles should be fast. Both have a purpose.\n\n**If they're struggling:** Reduce the rep count. 5 of each instead of 10.\n\n**If they've got it:** Add resistance bands for shoulder activation before the circles. Same drill, more strength work built in.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Pitcher Arm Circle Warm-Up",summary:"Warm up the throwing arm before pitching. 8 minutes. Ages 8-10.",sport:"baseball",ages:["8-10"],fundamental:"pitching",progression:"intro",focus:"warm-up",layer:"foundations",illustrationBrief:"A young pitcher swinging the throwing arm in a slow circle, then in faster circles, with the glove arm relaxed at the side.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:true,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Touches arm-care safety. Clean voice. Specific rep counts and distances are good."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-arm-circle-warm-up.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

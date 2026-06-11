@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-wall-ball.md";
+						const collection = "coachingTips";
+						const slug = "baseball-wall-ball";
+						const body = "\nWall ball is the catching drill that doesn't need a partner. The wall returns the ball every time, and the kid can do hundreds of reps in a session. This is the drill kids should be doing in the driveway.\n\n**What you need:** A solid wall (brick, concrete, or a fence with a tarp). A glove. One tennis ball.\n\n**Setup:** Kid stands 10 feet from the wall with the glove ready.\n\n**How to run it:**\n\n1. Cue: Eyes, Hands, Squeeze, Pull.\n2. They throw the ball against the wall and catch the rebound. Two hands every time.\n3. Set a goal: 10 catches in a row without dropping. Count out loud.\n4. If they drop, they restart at zero.\n5. After they hit 10, change the rule: the ball has to bounce on the ground once before they catch it.\n\n**What to watch:** Are they getting bored after 5? That's a sign the count is too easy. Push to 15 or 20 in a row.\n\n**If they're struggling:** Move closer to the wall, 5 feet. Use a softer ball. Drop the count rule.\n\n**If they've got it:** Move back to 15 feet. Or throw to the wall with their non-dominant hand. Or throw harder so the rebounds come back faster.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Wall Ball",summary:"Throw against a wall and catch the bounce. The solo catching drill. 12 minutes. Ages 5-7 and 8-10.",sport:"baseball",ages:["5-7","8-10"],fundamental:"catching",progression:"build",focus:"fundamentals",layer:"foundations",illustrationBrief:"A child throwing a ball against a brick wall and the ball coming back at chest height for a two-hand catch.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean pass."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-wall-ball.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,10 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+async function getMod() {
+						return import('./softball-overhand-toss-partner_T0EiEIFu.mjs');
+					}
+					const collectedLinks = [];
+					const collectedStyles = [];
+					const collectedScripts = [];
+					const defaultMod = { __astroPropagation: true, getMod, collectedLinks, collectedStyles, collectedScripts };
+
+export { defaultMod as default };

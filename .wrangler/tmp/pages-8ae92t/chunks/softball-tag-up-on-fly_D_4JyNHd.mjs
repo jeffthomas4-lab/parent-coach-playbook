@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-tag-up-on-fly.md";
+						const collection = "coachingTips";
+						const slug = "softball-tag-up-on-fly";
+						const body = "\nTag up means advancing after a fly ball is caught. The runner stays on the base until the ball is caught, then sprints to the next base. This is a game situation that requires timing.\n\n**What you need:** Bases set at 60 feet, outfielder, fly ball hitter, 10 kids.\n\n**Setup:** Runner on third. Batter at home. Outfielder in the field.\n\n**How to run it:**\n\n1. Cue: Eyes, Drive, Touch, Brake (for the run home after the catch).\n2. Batter hits a fly ball to the outfield.\n3. Runner stays on third, watching the ball. When it's caught, they sprint home.\n4. Do 5 reps. Count how many score safely before the throw home.\n5. Vary the catch location: shallow outfield, deep outfield, over the runner's head.\n\n**What to watch:** Does the runner leave early or wait? They must wait for the catch. Does the runner see the catch or just run?\n\n**If they're struggling:** Have them practice leaving from third when you clap (simulate the catch sound). Then do it with actual fly balls.\n\n**If they've got it:** Add a relay throw. Outfielder throws to the relay cutoff at a base. Runner has to judge if they can score.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Tag Up on a Fly Ball",summary:"Run after a fly ball is caught. 12 minutes. Ages 8-10 and 11-12.",sport:"softball",ages:["8-10","11-12"],fundamental:"base-running",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Runner on third base waiting, then sprinting toward home as a fly ball is caught by an outfielder.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Tag-up base-running drill with clear timing focus."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-tag-up-on-fly.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

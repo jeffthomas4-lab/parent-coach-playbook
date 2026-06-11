@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>A heavy bag teaches the Hawk Tackle motion without the risk of head-to-head contact. Kids get to feel what it’s like to Profile, Sink, and Wrap. Cue: Profile, Sink, Near, Wrap.</p>\n<p><strong>What you need:</strong> One heavy bag hung at about kid shoulder height. Mark a start line 5 yards away.</p>\n<p><strong>Setup:</strong> Place the bag in the middle. Line the kids up at the start line facing the bag.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Teach Profile: Get square to the bag. Feet planted, knees bent, eyes up.</li>\n<li>Teach Sink: Lower the hips, keep the knees bent. Don’t stand up into the bag.</li>\n<li>Teach Wrap: Wrap both arms around the bag and squeeze. The head stays behind or to the side, never across the front.</li>\n<li>The first kid sprints to the bag from the start line, gets into Profile, Sinks, and Wraps.</li>\n<li>Do 5 reps. Safety note: Head behind, never across the front.</li>\n</ol>\n<p><strong>What to watch:</strong> Do the knees bend before contact or after? Bent knees before contact means they’re in control. Straight legs means they’re just falling into the bag.</p>\n<p><strong>If they’re struggling:</strong> Have them walk to the bag instead of sprint. Practice the motion slow first.</p>\n<p><strong>If they’ve got it:</strong> Speed it up. Now they’re sprinting full speed and need to keep low and under control.</p>\n<p>Based on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football’s Heads Up Football program.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/football-rubber-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth rubber football →</a> — Wilson youth rubber ball for rec and practice.</p>\n<p><a href=\"/what-to-buy/football/\">Full football gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Bag Tackle Progression","summary":"Safely practice tackling form on a heavy bag. 10 minutes. Ages 8-10.","sport":"football","ages":["8-10"],"fundamental":"tackling","progression":"build","focus":"fundamentals","layer":"skills","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"A young player driving into a heavy bag low, with arms wrapped and legs still moving.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":true,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Bag-only tackling progression for ages 8-10; Hawk Tackle citation included. Sensitive flagged for tackle instruction."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tackle-football-bag-tackle-progression.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nA heavy bag teaches the Hawk Tackle motion without the risk of head-to-head contact. Kids get to feel what it's like to Profile, Sink, and Wrap. Cue: Profile, Sink, Near, Wrap.\n\n**What you need:** One heavy bag hung at about kid shoulder height. Mark a start line 5 yards away.\n\n**Setup:** Place the bag in the middle. Line the kids up at the start line facing the bag.\n\n**How to run it:**\n\n1. Teach Profile: Get square to the bag. Feet planted, knees bent, eyes up.\n2. Teach Sink: Lower the hips, keep the knees bent. Don't stand up into the bag.\n3. Teach Wrap: Wrap both arms around the bag and squeeze. The head stays behind or to the side, never across the front.\n4. The first kid sprints to the bag from the start line, gets into Profile, Sinks, and Wraps.\n5. Do 5 reps. Safety note: Head behind, never across the front.\n\n**What to watch:** Do the knees bend before contact or after? Bent knees before contact means they're in control. Straight legs means they're just falling into the bag.\n\n**If they're struggling:** Have them walk to the bag instead of sprint. Practice the motion slow first.\n\n**If they've got it:** Speed it up. Now they're sprinting full speed and need to keep low and under control.\n\nBased on the Hawk Tackle technique developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.\n\n[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

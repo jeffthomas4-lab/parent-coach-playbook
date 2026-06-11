@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "lacrosse-riding-pressure-ages-13-14.md";
+						const collection = "coachingTips";
+						const slug = "lacrosse-riding-pressure-ages-13-14";
+						const body = "\nRiding is offensive pressure on the clear. This drill teaches young players to funnel the ball and force bad passes.\n\n**Equipment needed:** 6 cones, 2 balls, 6 sticks.\n\n**Setup:** Mark the defensive zone with cones. One defenseman has the ball. Two riders (offensive players) line up 5 yards away, ready to apply pressure.\n\n**How to run it:**\n\n1. Defenseman tries to clear the ball. Riders close on the ball carrier and the first pass option, funneling the clear toward a specific area.\n2. Riders don't hack or slash. They're closing space and forcing quick decisions.\n3. If the defenseman completes the clear, riders reset and the defenseman tries again.\n4. Do 6 reps per rider pair.\n\n**What to look for:**\n\nRiders should be closing hard but under control. If they over-commit, the defense passes around them. The riders should communicate about who covers which gaps. If both riders chase the ball, the first pass option is open. Riders should funnel the clear toward the sideline or toward waiting midfielders.\n\n**Variation:** Add more riders. Three offensive players now apply pressure. This teaches spacing and communication among multiple pressuring players.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.\n\n[Agility cones →](/go/agility-cones/) — for clear lanes, dodges, and field markers.\n\n[Full lacrosse gear guide →](/what-to-buy/lacrosse-boys/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Riding Pressure",summary:"Teach offensive players to apply and maintain pressure on the clearing defense. 12 minutes.",sport:"lacrosse",age:"13-14",focus:"situational",publishedAt:new Date(1773878400000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Generic-tagged. Uses 'defenseman' (boys'-default for generic). Riders close space, no body checks described."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/lacrosse-riding-pressure-ages-13-14.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

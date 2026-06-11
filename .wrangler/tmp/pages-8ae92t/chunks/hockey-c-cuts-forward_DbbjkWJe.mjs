@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "hockey-c-cuts-forward.md";
+						const collection = "coachingTips";
+						const slug = "hockey-c-cuts-forward";
+						const body = "\nA C-cut is the basic forward skating push. The blade pushes out and around in a C-shape, transferring power to the ice. Done right, it's the most efficient way to move on skates. Done wrong, it's the choppy step beginners do.\n\n**What you need:** Full hockey gear, an ice rink.\n\n**Setup:** Kid at one end of the ice. Open lane to skate.\n\n**How to run it:**\n\n1. Cue: Push, Glide, Recover, Repeat.\n2. Push: edge of the skate pushes outward and back, tracing a C in the ice.\n3. Glide: the other foot glides forward as the push completes.\n4. Recover: the pushing foot comes back under the body.\n5. Repeat with the other foot. Continue across the ice.\n\n**What to watch:** The push direction. Most kids will push backward (no power). The push has to be OUT to the side and back, not just back.\n\n**If they're struggling:** Slow it down. Push, hold the glide for 2 seconds, then push again. Build the rhythm.\n\n**If they've got it:** Do C-cuts on one foot only (one foot pushes, the other stays planted as the glide).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Hockey pucks (6-pack) →](/go/hockey-puck/) — regulation pucks for drills and scrimmage.\n\n[Full hockey gear guide →](/what-to-buy/hockey/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"C-Cuts Forward",summary:"Push out and around with each foot to skate forward. 12 minutes. Ages 5-7 and 8-10.",sport:"hockey",ages:["5-7","8-10"],fundamental:"skating",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Top-down view of a skater's path showing each foot tracing a C-shaped curve in the ice as the skater moves forward.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clear four-phase cue and a useful diagnostic. Push-direction note is gold."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/hockey-c-cuts-forward.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

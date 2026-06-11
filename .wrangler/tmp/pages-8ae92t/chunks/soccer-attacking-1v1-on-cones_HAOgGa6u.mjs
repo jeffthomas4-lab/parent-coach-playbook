@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-attacking-1v1-on-cones.md";
+						const collection = "coachingTips";
+						const slug = "soccer-attacking-1v1-on-cones";
+						const body = "\nAt 11-12, attackers need to score under pressure. This drill simulates that reality. The dribbler has to beat the defender and hit a target. One shot to earn it.\n\n**What you need:** 1 soccer ball, 4 cones total. 2 cones form a 4-foot wide goal 20 feet away.\n\n**Setup:** Dribbler starts at a line. Defender lines up 5 feet behind the dribbler. Goal cones are 20 feet ahead.\n\n**How to run it:**\n\n1. You call \"Go.\" Dribbler sprints forward with the ball using Touch, Look, Push, Go.\n2. Defender pressures from behind, not trying to tackle yet, just closing space.\n3. Dribbler must beat the defender and dribble through the cone goal.\n4. If the defender wins the ball, the drill ends.\n5. 4 attempts per player, then switch roles.\n\n**What to watch:** Does the attacker look for space and exploit it? Or do they just run straight and get tackled?\n\n**If they're struggling:** Move the goal back to 25 feet. Give the dribbler a 2-yard head start.\n\n**If they've got it:** Defender now starts beside the dribbler. That's a harder angle to beat.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Attacking 1v1 on Cones",summary:"Dribbler attacks a cone goal while defending against a live opponent. 12 minutes. Ages 11-12.",sport:"soccer",ages:["11-12"],fundamental:"dribbling",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"Dribbler sprinting toward 2 cones that form a small goal while a defender closes in from behind.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean pass."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-attacking-1v1-on-cones.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

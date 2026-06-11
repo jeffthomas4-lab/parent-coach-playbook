@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "football-7v7-quarterback-pump-fake.md";
+						const collection = "coachingTips";
+						const slug = "football-7v7-quarterback-pump-fake";
+						const body = "\nThe pump fake is the QB's first real weapon for moving safeties. It only works if it looks like a throw.\n\n**Equipment needed:** A football, two receivers running staggered routes (one short, one deep), one QB.\n\n**Setup:** Short receiver runs a 5-yard out. Deep receiver runs a 15-yard post behind them.\n\n**How to run it:**\n\n1. QB drops three steps. Pump the ball at the short receiver — full motion, eyes on them, weight forward.\n2. Don't actually release. Bring the ball back.\n3. Reset weight, find the deep receiver, deliver.\n4. Ten reps. Switch the pump direction every few.\n\n**What to look for:** The pump has to look real. If the QB's eyes don't sell it, no safety bites. Full follow-through halfway, then a clean recovery.\n\n**Variation:** Add a safety in the middle of the field who reacts to the pump. If they break on the short route, the deep ball is open. If they don't, throw the short.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.\n\n[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Quarterback Pump Fake",summary:"Sell the throw, hold the ball, deliver to the second read. Ten reps. Ages 11-14.",sport:"football-7v7",age:"11-12",ages:["11-12","13-14"],fundamental:"throwing",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"A youth quarterback pump-faking with the ball cocked above the shoulder, receivers running routes downfield.",publishedAt:new Date(1778544000000),featured:false,draft:false,editorial:{qualityGrade:6,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778544000000),status:"claude-reviewed",reviewerNotes:"Generated as part of the per-sport content baseline. Voice may need a Jeff pass."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/football-7v7-quarterback-pump-fake.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

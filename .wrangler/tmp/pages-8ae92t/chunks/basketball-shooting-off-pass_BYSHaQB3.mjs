@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-shooting-off-pass.md";
+						const collection = "coachingTips";
+						const slug = "basketball-shooting-off-pass";
+						const body = "\nGame shots come off passes, not dribbles. This drill teaches the catch-and-shoot mechanics. The passer delivers the ball at chest height so the shooter can shoot immediately.\n\n**What you need:** Basketball. Two kids per pair. Five-spot court.\n\n**Setup:** One kid at each of the five spots. One passer in the middle near the foul line.\n\n**How to run it:**\n\n1. Passer throws a chest pass to the first shooter.\n2. Shooter catches at chest height and shoots immediately. No dribble.\n3. Passer retrieves the ball and passes to the next shooter.\n4. Passer hits all 5 spots with one pass each. That's 5 shots. Rest. Rotate passer. Do 2 rounds.\n\n**What to watch:** Do they catch and shoot right away or do they take a dribble? Catch-and-shoot means they're ready to shoot as soon as the ball touches their hands.\n\n**If they're struggling:** Move spots closer to 10 feet. Have the passer pass slower or softer so the catch is easier. Reduce to 3 spots.\n\n**If they've got it:** Add game speed. Passer throws quickly and the shooter shoots quickly. Adds game-like pace.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Shooting Off Pass",summary:"Catch and shoot immediately after receiving a pass. 10 minutes. Ages 8-10.",sport:"basketball",ages:["8-10"],fundamental:"shooting",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"A young player catching a chest pass and immediately moving into shooting form without a dribble.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean catch-and-shoot drill, correct sport language."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-shooting-off-pass.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

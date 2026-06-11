@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "track-arm-swing-form.md";
+						const collection = "coachingTips";
+						const slug = "track-arm-swing-form";
+						const body = "\nRunning fast starts with the arms. Bent at 90 degrees. Swing forward and back, not across the body. Most kids let their arms flop or cross the chest. Eight minutes of arm swing form fixes the pattern before it becomes a habit.\n\n**What you need:** Open space.\n\n**Setup:** Kid stands in athletic stance, no movement.\n\n**How to run it:**\n\n1. Show the position: arms bent at 90 degrees, hands relaxed (not clenched), elbows close to the body.\n2. Swing the arms forward and back. Hands come from the hip up to chin level on the forward swing.\n3. Hands stay close to the body. Do NOT cross the chest.\n4. Do 30 seconds. Rest 15 seconds. Repeat 4 rounds.\n5. Last round: faster swings, like a sprint pace.\n\n**What to watch:** Cross-body swing. If the hand crosses to the other side of the chest, the arm motion is wasting energy. Forward and back only.\n\n**If they're struggling:** Slow the tempo. Or have them watch in a mirror.\n\n**If they've got it:** Add running. Apply the arm form while jogging in place, then while running forward.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.\n\n[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Arm Swing Form",summary:"Build the running arm swing without running. 8 minutes. Ages 8-10.",sport:"track-field",ages:["8-10"],fundamental:"running-form",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Young runner standing in place with arms bent at 90 degrees, swinging the arms forward and back along the body's center line.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Arm-swing form drill with clear cross-body fix."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/track-arm-swing-form.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

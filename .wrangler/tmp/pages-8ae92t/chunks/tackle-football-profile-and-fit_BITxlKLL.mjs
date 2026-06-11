@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Profile means getting square to the ball carrier with your hips, shoulders, and feet aligned. This is the first step of the Hawk Tackle. Cue: Profile, Sink, Near, Wrap.</p>\n<p><strong>What you need:</strong> Open grass or field. No equipment needed.</p>\n<p><strong>Setup:</strong> Line the kids up facing you. Space them 5 feet apart.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Teach Profile: The defender gets square to the ball carrier. Feet are planted shoulder-width apart. Knees are bent a little. Eyes are up on the chest, not the feet.</li>\n<li>Have a kid walk toward you slowly. The other kids practice getting square to them. No contact yet, just positioning.</li>\n<li>The defender should be able to see the whole person in front of them.</li>\n<li>Do 8 reps. Then add movement: the ball carrier jogs slowly left and right while the defenders practice staying square.</li>\n</ol>\n<p><strong>What to watch:</strong> Are the eyes up or looking down? Eyes down means they can’t see what’s coming. Eyes up is right.</p>\n<p><strong>If they’re struggling:</strong> Have the ball carrier stand still while the defenders just get into the Profile stance. No movement yet.</p>\n<p><strong>If they’ve got it:</strong> Have the ball carrier pick up speed. Now the defenders have to stay square while the ball carrier is moving faster.</p>\n<p>Note: This is the first step toward the Hawk Tackle developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football’s Heads Up Football program.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/football-rubber-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth rubber football →</a> — Wilson youth rubber ball for rec and practice.</p>\n<p><a href=\"/what-to-buy/football/\">Full football gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Profile and Fit","summary":"Learn the first step of the Hawk Tackle: Profile. 8 minutes. Ages 8-10.","sport":"football","ages":["8-10"],"fundamental":"tackling","progression":"intro","focus":"fundamentals","layer":"foundations","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"A young defender squared up to a ball carrier, eyes up and on the chest, feet planted and ready.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":true,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Fixed garbled lead (was 'between the ball and the defender'). Profile-only positioning, no contact, but tackle-prep so flagged sensitive."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tackle-football-profile-and-fit.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nProfile means getting square to the ball carrier with your hips, shoulders, and feet aligned. This is the first step of the Hawk Tackle. Cue: Profile, Sink, Near, Wrap.\n\n**What you need:** Open grass or field. No equipment needed.\n\n**Setup:** Line the kids up facing you. Space them 5 feet apart.\n\n**How to run it:**\n\n1. Teach Profile: The defender gets square to the ball carrier. Feet are planted shoulder-width apart. Knees are bent a little. Eyes are up on the chest, not the feet.\n2. Have a kid walk toward you slowly. The other kids practice getting square to them. No contact yet, just positioning.\n3. The defender should be able to see the whole person in front of them.\n4. Do 8 reps. Then add movement: the ball carrier jogs slowly left and right while the defenders practice staying square.\n\n**What to watch:** Are the eyes up or looking down? Eyes down means they can't see what's coming. Eyes up is right.\n\n**If they're struggling:** Have the ball carrier stand still while the defenders just get into the Profile stance. No movement yet.\n\n**If they've got it:** Have the ball carrier pick up speed. Now the defenders have to stay square while the ball carrier is moving faster.\n\nNote: This is the first step toward the Hawk Tackle developed by Pete Carroll and the Seattle Seahawks, adopted into USA Football's Heads Up Football program.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.\n\n[Full football gear guide →](/what-to-buy/football/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

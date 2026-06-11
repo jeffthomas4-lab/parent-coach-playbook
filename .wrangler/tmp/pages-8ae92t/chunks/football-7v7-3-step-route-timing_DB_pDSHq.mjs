@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>Timing is what makes 7v7 work. Without pads or a pass rush, the only thing that wins is the receiver and quarterback agreeing on when the ball arrives.</p>\n<p><strong>Equipment needed:</strong> Two cones for the line of scrimmage, one cone five yards downfield for the route stem, one football, one receiver, one quarterback.</p>\n<p><strong>Setup:</strong> Cones at the line set the receiver’s stance. The route-stem cone marks where the receiver plants and breaks.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Receiver lines up on the line cone. Quarterback five yards behind, ball in hand.</li>\n<li>Receiver counts the snap silently with the QB. Both move on the same beat.</li>\n<li>Receiver runs three quick steps, plants at the cone, breaks at 45 degrees inside or outside.</li>\n<li>Quarterback’s third step IS the throw. Ball arrives just as the receiver opens up.</li>\n<li>Five reps each direction (slant, quick out). Then switch roles.</li>\n</ol>\n<p><strong>What to look for:</strong> The ball lands in the receiver’s hands at the cone, not after they’ve drifted past it. If the throw is consistently late, the QB is waiting too long. If it’s consistently early, the receiver is rounding the cut.</p>\n<p><strong>Variation:</strong> Add a defender at the line who shadows the route but doesn’t break the catch. Forces both the QB and receiver to commit to the timing instead of waiting to see how the defender plays it.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/football-rubber-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth rubber football →</a> — Wilson youth rubber ball for rec and practice.</p>\n<p><a href=\"/go/agility-cones/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Agility cones →</a> — for field setup and route markers.</p>\n<p><a href=\"/what-to-buy/football-7v7/\">Full football 7v7 gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"3-Step Route Timing","summary":"Receiver and QB sync the snap count to a 3-step drop. Five reps per route. Ages 11-14.","sport":"football-7v7","age":"11-12","ages":["11-12","13-14"],"focus":"fundamentals","layer":"skills","fundamental":"route-running","progression":"intro","illustrationBrief":"A receiver and quarterback running a slant on a 7v7 field with cones at the line of scrimmage.","publishedAt":"2026-05-12T00:00:00.000Z","featured":false,"editorial":{"qualityGrade":6,"originalityGrade":6,"voiceGrade":7,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-12T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Generated as part of the per-sport content baseline. Voice may need a Jeff pass."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/football-7v7-3-step-route-timing.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nTiming is what makes 7v7 work. Without pads or a pass rush, the only thing that wins is the receiver and quarterback agreeing on when the ball arrives.\n\n**Equipment needed:** Two cones for the line of scrimmage, one cone five yards downfield for the route stem, one football, one receiver, one quarterback.\n\n**Setup:** Cones at the line set the receiver's stance. The route-stem cone marks where the receiver plants and breaks.\n\n**How to run it:**\n\n1. Receiver lines up on the line cone. Quarterback five yards behind, ball in hand.\n2. Receiver counts the snap silently with the QB. Both move on the same beat.\n3. Receiver runs three quick steps, plants at the cone, breaks at 45 degrees inside or outside.\n4. Quarterback's third step IS the throw. Ball arrives just as the receiver opens up.\n5. Five reps each direction (slant, quick out). Then switch roles.\n\n**What to look for:** The ball lands in the receiver's hands at the cone, not after they've drifted past it. If the throw is consistently late, the QB is waiting too long. If it's consistently early, the receiver is rounding the cut.\n\n**Variation:** Add a defender at the line who shadows the route but doesn't break the catch. Forces both the QB and receiver to commit to the timing instead of waiting to see how the defender plays it.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.\n\n[Agility cones →](/go/agility-cones/) — for field setup and route markers.\n\n[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

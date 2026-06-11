@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>The hit and run is a team play. The runner on first goes on the pitch. The batter swings at any pitch close to the zone, even bad ones. The point: the runner gets a head start, the defense has to cover the bag, and the batter can hit the ball through the hole that opens up.</p>\n<p><strong>What you need:</strong> A bat, 10 baseballs, a coach to pitch, a runner at first base, a complete defense (or 2-3 fielders).</p>\n<p><strong>Setup:</strong> Runner on first. Batter at home. Coach pitches from 30 feet behind a screen.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Coach signals “hit and run” before the pitch.</li>\n<li>Runner takes off as soon as the coach starts the throwing motion.</li>\n<li>Batter swings at anything in or close to the zone. Goal: ground ball or low line drive.</li>\n<li>Defense reacts: shortstop or second baseman covers second base, the other fielder plays the ball.</li>\n<li>Do 6 reps. Reset the runner each time.</li>\n</ol>\n<p><strong>What to watch:</strong> Does the batter take a strike? On a hit and run, taking a strike is a cardinal sin because the runner is hung out. Swing at anything reachable. Bad swing better than no swing.</p>\n<p><strong>If they’re struggling:</strong> Run the play with no defense. Just batter and runner. Build the timing first.</p>\n<p><strong>If they’ve got it:</strong> Add a steal sign so the runner is sometimes stealing without the batter knowing. Mix the two plays.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/baseball-glove-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth baseball glove →</a> — the first piece of gear for every new player.</p>\n<p><a href=\"/go/baseball-bat-28in/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">28-inch youth bat →</a> — drop-10 USA-stamped bat for ages 8–10.</p>\n<p><a href=\"/what-to-buy/baseball/\">Full baseball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Hit and Run","summary":"Runner on first runs on the pitch, batter swings at anything close. 15 minutes. Ages 11-12.","sport":"baseball","ages":["11-12"],"fundamental":"hitting","progression":"refine","focus":"fundamentals","layer":"situational","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"Runner taking off from first base while batter is mid-swing on a ball in play, defense scrambling to cover the base.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Clean pass."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-hit-and-run-cue.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nThe hit and run is a team play. The runner on first goes on the pitch. The batter swings at any pitch close to the zone, even bad ones. The point: the runner gets a head start, the defense has to cover the bag, and the batter can hit the ball through the hole that opens up.\n\n**What you need:** A bat, 10 baseballs, a coach to pitch, a runner at first base, a complete defense (or 2-3 fielders).\n\n**Setup:** Runner on first. Batter at home. Coach pitches from 30 feet behind a screen.\n\n**How to run it:**\n\n1. Coach signals \"hit and run\" before the pitch.\n2. Runner takes off as soon as the coach starts the throwing motion.\n3. Batter swings at anything in or close to the zone. Goal: ground ball or low line drive.\n4. Defense reacts: shortstop or second baseman covers second base, the other fielder plays the ball.\n5. Do 6 reps. Reset the runner each time.\n\n**What to watch:** Does the batter take a strike? On a hit and run, taking a strike is a cardinal sin because the runner is hung out. Swing at anything reachable. Bad swing better than no swing.\n\n**If they're struggling:** Run the play with no defense. Just batter and runner. Build the timing first.\n\n**If they've got it:** Add a steal sign so the runner is sometimes stealing without the batter knowing. Mix the two plays.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[28-inch youth bat →](/go/baseball-bat-28in/) — drop-10 USA-stamped bat for ages 8–10.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

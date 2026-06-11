@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-free-kick-wall-and-runner.md";
+						const collection = "coachingTips";
+						const slug = "soccer-free-kick-wall-and-runner";
+						const body = "\nFree kicks teach technique and strategy. A wall blocks the direct shot. The runner curves the ball around the wall or a teammate passes it to an open space. Both require planning.\n\n**What you need:** 1 ball, 4 kids (kicker, runner, wall players, goalkeeper), a goal marked.\n\n**Setup:** Free kick is 18 feet from goal. Wall of 2-3 defenders forms 8 feet in front of goal. Kicker prepares to shoot.\n\n**How to run it:**\n\n1. Kicker strikes the ball using Plant, Lock, Strike, Finish, curving it around the wall.\n2. Or a teammate runs alongside and the kicker passes to them in space.\n3. Runner or receiver shoots on goal using Plant, Lock, Strike, Finish.\n4. Goalkeeper defends.\n5. Do 4 free kick attempts.\n\n**What to watch:** Does the kicker curve it or hit it straight? Curved free kicks are more effective.\n\n**If they're struggling:** Move the free kick to 15 feet. Closer is easier.\n\n**If they've got it:** Move back to 20 feet. Add defenders who pressure the kicker.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Free Kick Wall and Runner",summary:"Attacking team takes a free kick with a wall defending. 12 minutes. Ages 11-12.",sport:"soccer",ages:["11-12"],fundamental:"set-pieces",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"Kicker standing 18 feet from goal with a wall of defenders between them and the goal, runner curving the ball around the wall.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:7,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"18-foot free kick distance is short relative to typical youth scenarios; consider verifying against age-group standards. Drill is otherwise solid."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-free-kick-wall-and-runner.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

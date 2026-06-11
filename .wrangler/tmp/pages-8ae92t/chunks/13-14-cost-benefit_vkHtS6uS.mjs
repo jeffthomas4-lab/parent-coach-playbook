@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>At thirteen and fourteen, if your kid is playing travel ball, you’re writing real checks. The question is whether the return makes sense for your family.</p>\n<p><strong>The actual costs</strong>\nProgram fees: two fifty to four fifty a month. Gas: fifty to hundred a month depending on distance. Tournaments: one hundred to two hundred each, and there are four to six per season. Equipment replacement: hundred to three hundred per season.</p>\n<p>Total for a serious travel program: two thousand to four thousand dollars a year. Some families do this happily. Some can’t. Both are okay.</p>\n<p><strong>What you get for that</strong>\nFour to five practices a week with competitive coaching. Thirty to forty games per season against better competition. Exposure to college coaches if she gets to elite levels. Development that’s faster than rec.</p>\n<p><strong>What you lose</strong>\nWeekends. Family dinners. Summer flexibility. Money. Stress. Your kid’s ability to just hang out.</p>\n<p><strong>The honest piece</strong>\nIf they don’t want to be there, it’s worth stopping the investment. Full stop. Some thirteen-year-olds want to play travel badly enough to work for it. Some want their weekends back. Both are legitimate.</p>\n<p><strong>The question to ask</strong>\n“If we stop paying for travel and you play rec instead, what would you miss?” If they have a real answer, they’re bought in. If they shrug, they’re not.</p>\n<p><strong>The middle path</strong>\nSome families do two seasons. Travel in fall and winter, rec in spring. Or the opposite. You’re not married to one path for four years.</p>\n<p><strong>The numbers reality</strong>\nIf you’re spending four thousand a year and your kid is not asking to go to practice, you’re making a choice for them. That choice gets expensive and resentful fast.</p>\n<p><strong>The call</strong>\nDo the math. Add it up. Then ask them: “Is this worth it to you?” Make them own the answer.</p>\n<p>If yes: write the check. If no or they’re unsure: try rec and reassess in six months.</p>\n<p>The money’s real. The time’s real. Their enthusiasm matters more than both.</p>";
+
+				const frontmatter = {"title":"The 13-14 Cost-Benefit Conversation","dek":"When it's time to actually do the math.","seoDescription":"At thirteen and fourteen, if your kid is playing travel ball, you're writing real checks. The question is whether the return makes sense for your family.","topic":"rec-vs-travel","format":"note","phase":"drive-there","sport":"multi-sport","age":"13-14","publishedAt":"2026-02-21T00:00:00.000Z","featured":false,"editorial":{"claudeReviewedAt":"2026-05-01T00:00:00.000Z"}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/13-14-cost-benefit.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nAt thirteen and fourteen, if your kid is playing travel ball, you're writing real checks. The question is whether the return makes sense for your family.\n\n**The actual costs**\nProgram fees: two fifty to four fifty a month. Gas: fifty to hundred a month depending on distance. Tournaments: one hundred to two hundred each, and there are four to six per season. Equipment replacement: hundred to three hundred per season.\n\nTotal for a serious travel program: two thousand to four thousand dollars a year. Some families do this happily. Some can't. Both are okay.\n\n**What you get for that**\nFour to five practices a week with competitive coaching. Thirty to forty games per season against better competition. Exposure to college coaches if she gets to elite levels. Development that's faster than rec.\n\n**What you lose**\nWeekends. Family dinners. Summer flexibility. Money. Stress. Your kid's ability to just hang out.\n\n**The honest piece**\nIf they don't want to be there, it's worth stopping the investment. Full stop. Some thirteen-year-olds want to play travel badly enough to work for it. Some want their weekends back. Both are legitimate.\n\n**The question to ask**\n\"If we stop paying for travel and you play rec instead, what would you miss?\" If they have a real answer, they're bought in. If they shrug, they're not.\n\n**The middle path**\nSome families do two seasons. Travel in fall and winter, rec in spring. Or the opposite. You're not married to one path for four years.\n\n**The numbers reality**\nIf you're spending four thousand a year and your kid is not asking to go to practice, you're making a choice for them. That choice gets expensive and resentful fast.\n\n**The call**\nDo the math. Add it up. Then ask them: \"Is this worth it to you?\" Make them own the answer.\n\nIf yes: write the check. If no or they're unsure: try rec and reassess in six months.\n\nThe money's real. The time's real. Their enthusiasm matters more than both.\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

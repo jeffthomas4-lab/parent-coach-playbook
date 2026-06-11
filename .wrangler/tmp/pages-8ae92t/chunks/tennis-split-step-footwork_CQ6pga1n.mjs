@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "tennis-split-step-footwork.md";
+						const collection = "coachingTips";
+						const slug = "tennis-split-step-footwork";
+						const body = "\nPro tennis players split-step before every opponent shot. Small hop, both feet off the ground, land in athletic stance. The split-step times the body to the ball and lets the player push off in any direction. Without it, the first step is slow.\n\n**What you need:** Tennis racquet (no ball needed at first).\n\n**Setup:** Player on the baseline in ready stance.\n\n**How to run it:**\n\n1. Coach calls \"go.\" Player does a small hop, both feet leave the ground.\n2. Land in athletic stance: feet shoulder-width, knees bent, weight on balls of feet.\n3. Coach calls a direction: \"right\" or \"left.\"\n4. Player pushes off the correct foot and shuffles 3 steps that direction.\n5. Reset. Do 10 reps mixing directions.\n\n**What to watch:** Land position. The split-step landing should be soft and balanced, not stiff and tall. Knees bent on landing.\n\n**If they're struggling:** Slower calls. Shorter shuffles.\n\n**If they've got it:** Add a fed ball. Player split-steps, reads the ball direction, shuffles to it, hits.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.\n\n[Junior tennis racquet →](/go/tennis-racquet-junior/) — HEAD Speed, pre-strung for beginners.\n\n[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Split Step Footwork",summary:"Small hop before each opponent shot to be ready. 8 minutes. Ages 8-10 and 11-12.",sport:"tennis",ages:["8-10","11-12"],fundamental:"footwork",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Player landing in athletic stance with feet shoulder-width apart after a small hop, ready to push off in any direction.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Split-step footwork with clear ready-position cues."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tennis-split-step-footwork.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

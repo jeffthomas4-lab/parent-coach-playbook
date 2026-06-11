@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-jockey-the-attacker.md";
+						const collection = "coachingTips";
+						const slug = "soccer-jockey-the-attacker";
+						const body = "\nJockeying is active defending. The defender moves toward the attacker while staying in control, ready to react to their move. Not diving. Not standing still. Active positioning.\n\n**What you need:** 1 soccer ball, 2 kids, 3 cones marking a 15x15 grid.\n\n**Setup:** Attacker and defender start inside the grid. Attacker has the ball.\n\n**How to run it:**\n\n1. Using Drop, Show, Stay, Win cue: drop the back foot to a staggered stance, show one direction forcing the attacker that way, stay patient don't dive in, win the ball at the right moment.\n2. Defender jockeys forward, staying on their feet, in a staggered stance.\n3. Attacker dribbles using Touch, Look, Push, Go.\n4. Defender stays close but doesn't tackle yet.\n5. Play for 30 seconds. Then switch roles.\n\n**What to watch:** Is the defender in a low staggered stance? Or upright and on their heels?\n\n**If they're struggling:** Make the grid bigger. Less pressure.\n\n**If they've got it:** Shrink the grid to 12x12. Tighter space makes defending harder.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 4 soccer ball →](/go/soccer-ball-size4/) — right size for ages 8–12.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Jockey the Attacker",summary:"Defender closes down the attacker while staying on their feet. 10 minutes. Ages 8-10.",sport:"soccer",ages:["8-10"],fundamental:"defending",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"Defender moving sideways toward an attacker with the ball, staying upright and ready.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:7,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Step 1 mashes the cue list with steps; could split for clarity. Soccer vocab correct."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-jockey-the-attacker.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

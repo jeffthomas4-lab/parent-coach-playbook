@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>At five to seven, there is no travel ball that makes sense. There’s only rec ball. Understanding why saves you from three years of pointless driving.</p>\n<p><strong>What rec ball actually is</strong>\nOne game a week. One practice a week. Maybe two games if there’s a tournament. Everyone plays. Everyone gets time. The coach is probably a parent. The goal is exposure and joy, not elite development.</p>\n<p><strong>Why this is right</strong>\nYour five-year-old doesn’t have the body for travel. They don’t have the focus. They don’t have the decision-making speed. They have the ability to run and the ability to smile. Rec ball is built for exactly that.</p>\n<p><strong>The development myth</strong>\nSome parents think travel ball at five accelerates development. It doesn’t. It accelerates selection. Travel coaches are looking for the kid who’s already bigger, already faster, already coordinated. They’re not building players. They’re sorting them.</p>\n<p>Rec ball teaches the actual fundamentals. How to move. How to listen. How to be on a team. Those three things matter at five. Elite technique matters at fourteen.</p>\n<p><strong>The math</strong>\nOne game a week at a local field. One hour of practice Tuesday night. You’re home by six. Your kid eats dinner at home. Sleeps at home. Doesn’t live in a car.</p>\n<p>Travel ball at five means four hours every Saturday. Sometimes both days. You become a chauffeur. Your kid becomes tired.</p>\n<p><strong>The social part</strong>\nRec ball is where they play with the kid from their neighborhood. The one from their school. These are the kids they’ll see in the cafeteria. These are the ones they’ll want to play with. Travel ball at this age doesn’t build friendships. It separates them from the ones they already have.</p>\n<p><strong>When to move</strong>\nEleven to twelve. That’s when travel makes sense. That’s when they can handle the commitment. That’s when they understand strategy. Not five. Not eight. Not even ten. Eleven.</p>\n<p>Keep them in rec ball. Watch them play. Clap when they get a hit. That’s the whole job right now.</p>";
+
+				const frontmatter = {"title":"Rec Ball at 5-7: Why It's the Right Answer","dek":"The foundations are here. Everything else comes later.","seoDescription":"At five to seven, there is no travel ball that makes sense. There's only rec ball. Understanding why saves you from three years of pointless driving.","topic":"rec-vs-travel","format":"note","phase":"game","sport":"multi-sport","age":"5-7","publishedAt":"2026-01-10T00:00:00.000Z","featured":false,"editorial":{"claudeReviewedAt":"2026-06-15T00:00:00.000Z"}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/rec-ball-5-7.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nAt five to seven, there is no travel ball that makes sense. There's only rec ball. Understanding why saves you from three years of pointless driving.\n\n**What rec ball actually is**\nOne game a week. One practice a week. Maybe two games if there's a tournament. Everyone plays. Everyone gets time. The coach is probably a parent. The goal is exposure and joy, not elite development.\n\n**Why this is right**\nYour five-year-old doesn't have the body for travel. They don't have the focus. They don't have the decision-making speed. They have the ability to run and the ability to smile. Rec ball is built for exactly that.\n\n**The development myth**\nSome parents think travel ball at five accelerates development. It doesn't. It accelerates selection. Travel coaches are looking for the kid who's already bigger, already faster, already coordinated. They're not building players. They're sorting them.\n\nRec ball teaches the actual fundamentals. How to move. How to listen. How to be on a team. Those three things matter at five. Elite technique matters at fourteen.\n\n**The math**\nOne game a week at a local field. One hour of practice Tuesday night. You're home by six. Your kid eats dinner at home. Sleeps at home. Doesn't live in a car.\n\nTravel ball at five means four hours every Saturday. Sometimes both days. You become a chauffeur. Your kid becomes tired.\n\n**The social part**\nRec ball is where they play with the kid from their neighborhood. The one from their school. These are the kids they'll see in the cafeteria. These are the ones they'll want to play with. Travel ball at this age doesn't build friendships. It separates them from the ones they already have.\n\n**When to move**\nEleven to twelve. That's when travel makes sense. That's when they can handle the commitment. That's when they understand strategy. Not five. Not eight. Not even ten. Eleven.\n\nKeep them in rec ball. Watch them play. Clap when they get a hit. That's the whole job right now.\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

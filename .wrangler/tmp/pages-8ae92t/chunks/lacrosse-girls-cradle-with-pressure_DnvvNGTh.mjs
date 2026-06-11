@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "lacrosse-girls-cradle-with-pressure.md";
+						const collection = "coachingTips";
+						const slug = "lacrosse-girls-cradle-with-pressure";
+						const body = "\nIn a game, the defender is hitting the stick to dislodge the ball. Good ball handlers cradle through the contact. Body between defender and stick. Cradle tight. This drill simulates that pressure.\n\n**What you need:** Two lacrosse sticks, a ball, two players, full gear.\n\n**Setup:** Ball carrier with the ball in the stick. Defender 5 feet away.\n\n**How to run it:**\n\n1. Coach calls \"go.\"\n2. Defender approaches and stick-checks (tap the ball carrier's stick).\n3. Ball carrier shields the stick with the body and continues to cradle.\n4. Goal: hold the ball for 10 seconds.\n5. Reset. Switch roles. Do 6 rounds.\n\n**What to watch:** Body position. The body should be between the defender and the stick. If the stick is exposed to the defender, every check works.\n\n**If they're struggling:** Slower defender. Lighter checks.\n\n**If they've got it:** Two defenders. Or open ground (no boards or sideline to lean on).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Lacrosse balls (6-pack) →](/go/lacrosse-ball/) — NOCSAE-stamped practice balls.\n\n[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — beginner stick for first-season players.\n\n[Full lacrosse (girls) gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Cradle with Pressure",summary:"Cradle while a defender stick-checks. 12 minutes. Ages 11-12.",sport:"lacrosse-girls",ages:["11-12"],fundamental:"cradling",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"Two players: ball carrier cradling and shielding the stick with their body, defender attempting to stick-check the ball loose.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Defender stick-checks only (no body contact described). 'Through the contact' refers to stick contact, which fits girls' rules."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/lacrosse-girls-cradle-with-pressure.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

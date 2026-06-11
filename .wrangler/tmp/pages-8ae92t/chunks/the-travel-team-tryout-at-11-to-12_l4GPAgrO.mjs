@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "the-travel-team-tryout-at-11-to-12.md";
+						const collection = "articles";
+						const slug = "the-travel-team-tryout-at-11-to-12";
+						const body = "\nTravel tryouts mean your kid is competing against 40 other kids they don't know. The coach is picking 12 to 14. Your kid knows the math.\n\nThis is the first time they feel what real selection actually is.\n\nBefore tryouts, your job is to lower the emotional stakes without lying. \"A lot of good kids are going to try out. Coaches are looking for specific things. You might make it, you might not. Either way, you're going to play. If not here, somewhere else. Our job is to see what you can learn from the tryout, not to fix whether you made it.\"\n\nDon't say \"you're definitely going to make it.\" Don't say \"the coach will see how good you are.\" Both of those things might not be true. Your kid will remember you said them.\n\nThe coach is looking at: Can this kid play up? Does this kid work hard in a bigger pond? Does this kid stay composed when things are tougher? Technical skill matters, but at 11-12, growth potential matters more.\n\nAfter tryouts, same response regardless of outcome: \"Tell me what you noticed about the way they played. What was different from your team?\" Make them analyze instead of emotionalize. It teaches them to extract information from competition.\n\nIf they don't make it, they learn that trying hard isn't enough sometimes. That's real. That's also how kids learn to actually improve, not just assume they're fine.\n\nIf they do make it, they learn that the next level expects something different. Either way, they're growing.\n";
+						const data = {title:"The Travel-Team Tryout at 11-12",seoDescription:"Travel tryouts mean your kid is competing against 40 other kids they don't know. The coach is picking 12 to 14. Your kid knows the math.",dek:"This is the first time it gets real. Here's what changes.",topic:"tryouts",format:"note",sport:"multi-sport",age:"11-12",phase:"drive-there",publishedAt:new Date(1772496000000),featured:false,draft:false,editorial:{flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:false,sportLanguageCheckPassed:false,affiliateDisclosurePresent:false,claudeReviewedAt:new Date(1778889600000),status:"draft"}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/the-travel-team-tryout-at-11-to-12.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

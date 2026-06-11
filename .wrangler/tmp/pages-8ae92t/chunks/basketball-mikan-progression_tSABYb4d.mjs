@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-mikan-progression.md";
+						const collection = "coachingTips";
+						const slug = "basketball-mikan-progression";
+						const body = "\nThe Mikan drill is the foundation for finishing. George Mikan invented it. The player bounces layups back and forth under the basket. Left hand, right hand, left hand, right hand.\n\n**What you need:** 8-foot basket. Youth ball (5-7) or regular ball (8-10). Flat court under the basket.\n\n**Setup:** Kid stands under the basket on the right side of the backboard.\n\n**How to run it:**\n\n1. Cue: Plant, Up, Lay, Land. Plant inside foot (left foot). Drive up. Lay the ball off the backboard. Land soft.\n2. Bounce layup on the right side with the right hand.\n3. Immediately move to the left side and bounce a layup with the left hand.\n4. Keep alternating. Do 10 total (5 each side). Rest.\n5. Do 2 rounds.\n\n**What to watch:** Are they using the backboard or throwing it away from the basket? The backboard is the target. The ball should tap the glass and fall.\n\n**If they're struggling:** Move slower. Do just 5 total layups instead of 10. Use a lower hoop.\n\n**If they've got it:** Speed it up. Do 20 layups total. Time them and track personal best.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Mikan Progression",summary:"Bounce layups side to side around the basket. 10 minutes. Ages 5-7, 8-10.",sport:"basketball",ages:["5-7","8-10"],fundamental:"finishing",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"A young player at the basket, making a layup on the left side, then immediately moving to the right side.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Names George Mikan; backboard-as-target is correct."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-mikan-progression.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

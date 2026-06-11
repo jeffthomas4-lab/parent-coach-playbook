@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-spot-shooting-five-spots.md";
+						const collection = "coachingTips";
+						const slug = "basketball-spot-shooting-five-spots";
+						const body = "\nSpot shooting builds range and consistency. The spots are baseline, wing, top of key, other wing, and baseline other side. All about the same distance. Shooting five spots teaches game positioning.\n\n**What you need:** Basketball. Five cones marking the five spots. Flat half-court.\n\n**Setup:** Mark five spots 12 feet from the basket in a semi-circle (baseline, wing, top, wing, baseline).\n\n**How to run it:**\n\n1. Cue: Set, Bend, Lift, Cookie.\n2. Start at spot 1 (baseline). Shoot 3 shots.\n3. Move to spot 2 (wing). Shoot 3 shots.\n4. Continue clockwise through all 5 spots. That's 15 shots total.\n5. Rest 60 seconds. Do 2 rounds.\n\n**What to watch:** Does the form stay consistent at each distance or do they adjust? The form should be the same. The only variable is distance, not technique.\n\n**If they're struggling:** Move closer to 10 feet. Reduce to 2 shots per spot. Do 3 spots instead of 5.\n\n**If they've got it:** Move back to 15 feet. Time them. Track makes vs. attempts. Adds scoring to the drill.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Spot Shooting Five Spots",summary:"Shoot from five different spots on the court. 12 minutes. Ages 8-10.",sport:"basketball",ages:["8-10"],fundamental:"shooting",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"A young player shooting from the wing, one of five shooting spots around the arc.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Standard five-spot drill. Lead paragraph has four sentences."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-spot-shooting-five-spots.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

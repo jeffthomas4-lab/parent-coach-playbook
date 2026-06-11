@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "basketball-dribble-tag-ages-5-7.md";
+						const collection = "coachingTips";
+						const slug = "basketball-dribble-tag-ages-5-7";
+						const body = "\nDribbling control improves when kids have to do it under pressure. Dribble tag forces them to keep the ball while being chased.\n\n**Equipment needed:** One basketball per child (or one per two kids in rotation), a 30-by-30-foot space marked with cones.\n\n**Setup:** Mark a square. All kids enter with a ball except one kid who is \"it.\"\n\n**How to run it:**\n\n1. The kid who is \"it\" tries to tag another kid.\n2. All other kids dribble their balls around the square, trying not to get tagged.\n3. If you're tagged, you become \"it.\"\n4. Play for 10 minutes.\n\n**What to look for:** Dribble control while moving fast. Kids who look at the ball will bump into people. Kids who keep their eyes up will see the tagger coming.\n\n**If they're struggling:** Shrink the square to 20 by 20 feet so taggers are easier to spot. Allow a two-hand carry once per round if they lose the ball.\n\n**If they've got it:** Add a second tagger. Or shrink the square so traffic is denser and dribblers must change direction more often.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber basketball →](/go/basketball-ball-rubber/) — durable rubber ball for outdoor and gym use.\n\n[Agility cones →](/go/agility-cones/) — for lane markers, footwork guides, and drills.\n\n[Full basketball gear guide →](/what-to-buy/basketball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Dribble Tag",summary:"Tag game while dribbling a ball. 12 minutes. Ages 5-7.",sport:"basketball",ages:["5-7"],fundamental:"dribbling",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"A young child dribbling a basketball while another child chases them, both moving in an open court area.",publishedAt:new Date(1768262400000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Fixed yards to feet on basketball court. Body had been truncated; completed with struggle/got-it tiers."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/basketball-dribble-tag-ages-5-7.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>A teammate just posted that they got a scholarship to a summer elite program. Your kid saw it. Their friend’s parents posted about it. Your kid’s mood is now weird.</p>\n<p>Most of these posts are part-truth. The “scholarship” is sometimes 20% off a $2,400 program. The “elite” tag is mostly marketing. The “exclusive” framing is a sales angle.</p>\n<p>That doesn’t matter to your kid. The kid is reading the social signal that their friend is somehow ahead of them.</p>\n<h2 id=\"what-to-say\">What to say</h2>\n<p>Don’t trash the program. Don’t trash the friend. Don’t explain that the scholarship is partial.</p>\n<p>The honest response is short. <em>That’s cool for them. How are you feeling about it?</em></p>\n<p>Listen. The kid will tell you whether they’re happy for the friend, jealous, sad, or mostly fine.</p>\n<p>If they’re jealous or sad, validate without escalating. <em>Yeah, those posts can hit. You’re working hard too. The path your friend is on is theirs. The path you’re on is yours.</em></p>\n<p>Don’t promise to find them a similar program to make up for it. Comparison shopping by the parent makes the kid feel worse.</p>\n<h2 id=\"what-you-dont-do\">What you don’t do</h2>\n<p>Don’t post your kid’s accomplishment in retaliation. The other parents are doing it. Don’t join the arms race.</p>\n<p>Don’t text the friend’s parent to find out details. The kid will hear about it.</p>\n<p>Don’t research the program to confirm it’s not as elite as it sounds. The kid doesn’t care about the data. They care about how it feels.</p>\n<h2 id=\"the-bigger-frame\">The bigger frame</h2>\n<p>Comparison is the constant in youth sports. Some kids get more than their friends in any given year. Some kids get less. The conversation you want is about the kid in your house, not the kid in the post.</p>\n<p>The relationship outlasts the scholarship.</p>\n<p><a href=\"/drive-home/the-carpool-conversation-about-how-you-coach/\">The carpool conversation about how you coach</a> is the parallel piece on parent-side comparison.</p>";
+
+				const frontmatter = {"title":"The friend's kid who got the *summer scholarship*","dek":"The Instagram post lit up the parent group chat. Your kid is processing. Here's the conversation.","seoDescription":"A teammate just posted that they got a scholarship to a summer elite program. Your kid saw it. Their friend's parents posted about it.","topic":"communication","format":"note","phase":"drive-home","sport":"multi-sport","age":"13-14","publishedAt":"2026-05-13T00:00:00.000Z","featured":false,"draft":false};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/the-friend-who-got-the-summer-scholarship.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nA teammate just posted that they got a scholarship to a summer elite program. Your kid saw it. Their friend's parents posted about it. Your kid's mood is now weird.\n\nMost of these posts are part-truth. The \"scholarship\" is sometimes 20% off a $2,400 program. The \"elite\" tag is mostly marketing. The \"exclusive\" framing is a sales angle.\n\nThat doesn't matter to your kid. The kid is reading the social signal that their friend is somehow ahead of them.\n\n## What to say\n\nDon't trash the program. Don't trash the friend. Don't explain that the scholarship is partial.\n\nThe honest response is short. _That's cool for them. How are you feeling about it?_\n\nListen. The kid will tell you whether they're happy for the friend, jealous, sad, or mostly fine.\n\nIf they're jealous or sad, validate without escalating. _Yeah, those posts can hit. You're working hard too. The path your friend is on is theirs. The path you're on is yours._\n\nDon't promise to find them a similar program to make up for it. Comparison shopping by the parent makes the kid feel worse.\n\n## What you don't do\n\nDon't post your kid's accomplishment in retaliation. The other parents are doing it. Don't join the arms race.\n\nDon't text the friend's parent to find out details. The kid will hear about it.\n\nDon't research the program to confirm it's not as elite as it sounds. The kid doesn't care about the data. They care about how it feels.\n\n## The bigger frame\n\nComparison is the constant in youth sports. Some kids get more than their friends in any given year. Some kids get less. The conversation you want is about the kid in your house, not the kid in the post.\n\nThe relationship outlasts the scholarship.\n\n[The carpool conversation about how you coach](/drive-home/the-carpool-conversation-about-how-you-coach/) is the parallel piece on parent-side comparison.\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [{"depth":2,"slug":"what-to-say","text":"What to say"},{"depth":2,"slug":"what-you-dont-do","text":"What you don’t do"},{"depth":2,"slug":"the-bigger-frame","text":"The bigger frame"}];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

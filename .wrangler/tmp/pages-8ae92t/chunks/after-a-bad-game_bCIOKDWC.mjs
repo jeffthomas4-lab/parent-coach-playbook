@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "";
+
+				const frontmatter = {"title":"Your kid had a *bad game*. Here's what to say.","seoTitle":"What to Say After a Bad Game: A Parent Script","seoDescription":"The first 90 seconds after a bad game decide the week. The exact words that protect the relationship, and the ones to skip.","summary":"What to say in the first 90 seconds when the game went badly. The script that protects the relationship and the rest of the week.","moment":"after-a-bad-game","publishedAt":"2026-04-26T00:00:00.000Z","featured":true,"whatTheyAreFeeling":["Embarrassed.","Replaying mistakes in their head.","Wondering how you're going to react.","Tired and exposed."],"whatToSay":["I'm glad I got to watch you play.","That looked like a tough one.","Want to grab something to eat?"],"whatNotToSay":["Why didn't you...","You should have...","Coach should have..."],"theRule":"They already know what went wrong. They don't need you to confirm it.","ifTheyBringItUp":["Listen first. Don't jump to solutions.","Reflect what they said before adding anything.","Ask one question. Maximum.","Then let them lead the conversation."],"saveBlockTitle":"After a bad game","saveBlockBullets":["Lead with one specific moment they had agency in.","Skip the score. Skip the breakdown.","If they bring it up, listen first. One question max."],"relatedScripts":["after-a-mistake","kid-upset","after-no-playing-time","after-a-game-8-10","after-a-game-11-12"],"sportTags":["multi-sport"],"ageBands":["8-10","11-12","13-14"],"editorial":{"qualityGrade":9,"originalityGrade":8,"voiceGrade":9,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"affiliateDisclosurePresent":false,"claudeReviewedAt":"2026-05-03T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Flagship script."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/scripts/after-a-bad-game.md";
+				const url = undefined;
+				function rawContent() {
+					return "";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

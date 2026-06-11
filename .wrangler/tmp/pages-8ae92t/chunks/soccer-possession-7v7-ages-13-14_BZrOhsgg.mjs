@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "soccer-possession-7v7-ages-13-14.md";
+						const collection = "coachingTips";
+						const slug = "soccer-possession-7v7-ages-13-14";
+						const body = "\nPossession soccer builds understanding of movement, positioning, and passing rhythm. This 7v7 forces players to think about how to keep the ball against pressure.\n\n**Equipment needed:** One soccer ball, cones to mark a 50-by-40-yard field with a midline, 14 kids.\n\n**Setup:** Divide kids into two teams of 7. Mark a 50-by-40-yard field with a midline.\n\n**How to run it:**\n\n1. One team starts with the ball and tries to complete 10 consecutive passes.\n2. If they reach 10, they score a point and keep the ball.\n3. If the other team intercepts, that team goes for 10 passes.\n4. No goals needed. Only possession counts.\n5. Play for 30 minutes, tracking points.\n\n**What to look for:** Movement off the ball and passing angles. Do players move to create options for the passer? Do they see passing lanes early?\n\n**Variation:** For younger kids (13), reduce to 6 passes to score. For older kids (14), add a rule: passes in the opponent's half count as 2 points instead of 1.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Size 5 soccer ball →](/go/soccer-ball-size5/) — regulation ball for ages 13 and up.\n\n[Disc cones (50-pack) →](/go/soccer-cones-12pk/) — flat cones for gates, grids, and boundary markers.\n\n[Full soccer gear guide →](/what-to-buy/soccer/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Possession 7v7",summary:"7v7 scrimmage with the goal to keep possession for 10 passes. 30 minutes. Ages 13-14+.",sport:"soccer",ages:["13-14"],fundamental:"scrimmage",progression:"refine",focus:"scrimmage",layer:"skills",illustrationBrief:"Seven v seven possession battle in constrained space",publishedAt:new Date(1775520000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Standard 7v7 possession scrimmage. Soccer vocab correct."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/soccer-possession-7v7-ages-13-14.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

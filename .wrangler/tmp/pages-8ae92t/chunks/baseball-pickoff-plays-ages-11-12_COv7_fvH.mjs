@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>A pickoff play teaches communication and timing. The pitcher and first baseman have to move in sync, and the runner has to decide whether to dive back or run.</p>\n<p><strong>Equipment needed:</strong> 6 baseballs, two bases, cones for the box around first base.</p>\n<p><strong>Setup:</strong> Set up a diamond at 60 feet per side. You’re the pitcher. One kid is the first baseman. One is a runner. One is on deck. A coach or older player is the catcher.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Runner takes a lead off first (about 8 feet).</li>\n<li>Pitcher and first baseman look at each other. Count down silently: three, two, one.</li>\n<li>On one, the pitcher spins and throws to first. The first baseman runs to the bag with their glove up.</li>\n<li>The runner decides: dive back or run to second.</li>\n<li>If the first baseman catches it, they make the tag. If they miss, they back up the catcher.</li>\n<li>Do 5 reps. Rotate runner, first baseman, pitcher.</li>\n</ol>\n<p><strong>What to look for:</strong> Timing and communication. If the pitcher throws too early or too late, the play fails. If the first baseman doesn’t sprint, they won’t be there to catch it.</p>\n<p><strong>If they’re struggling:</strong> Walk through the count and the throw at half speed. Get the timing first, then add the runner.</p>\n<p><strong>If they’ve got it:</strong> Add a second runner at second. Now the pitcher has two threats and has to pick which to hold.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/baseball-glove-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth baseball glove →</a> — the first piece of gear for every new player.</p>\n<p><a href=\"/go/agility-cones/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Agility cones →</a> — for setup, base paths, and field drills.</p>\n<p><a href=\"/what-to-buy/baseball/\">Full baseball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Pickoff Plays","summary":"Run a 1-2 pickoff at first base. 20 minutes. Ages 11-12.","sport":"baseball","ages":["11-12"],"focus":"situational","layer":"skills","fundamental":"situational","progression":"build","illustrationBrief":"Pitcher on mound, runner at first base leaning off the bag, first baseman positioned to receive a throw from the pitcher.","publishedAt":"2026-03-09T00:00:00.000Z","featured":false,"editorial":{"qualityGrade":7,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":false,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Completed truncated ending with struggling/got-it variants."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-pickoff-plays-ages-11-12.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nA pickoff play teaches communication and timing. The pitcher and first baseman have to move in sync, and the runner has to decide whether to dive back or run.\n\n**Equipment needed:** 6 baseballs, two bases, cones for the box around first base.\n\n**Setup:** Set up a diamond at 60 feet per side. You're the pitcher. One kid is the first baseman. One is a runner. One is on deck. A coach or older player is the catcher.\n\n**How to run it:**\n\n1. Runner takes a lead off first (about 8 feet).\n2. Pitcher and first baseman look at each other. Count down silently: three, two, one.\n3. On one, the pitcher spins and throws to first. The first baseman runs to the bag with their glove up.\n4. The runner decides: dive back or run to second.\n5. If the first baseman catches it, they make the tag. If they miss, they back up the catcher.\n6. Do 5 reps. Rotate runner, first baseman, pitcher.\n\n**What to look for:** Timing and communication. If the pitcher throws too early or too late, the play fails. If the first baseman doesn't sprint, they won't be there to catch it.\n\n**If they're struggling:** Walk through the count and the throw at half speed. Get the timing first, then add the runner.\n\n**If they've got it:** Add a second runner at second. Now the pitcher has two threats and has to pick which to hold.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Agility cones →](/go/agility-cones/) — for setup, base paths, and field drills.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };

@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "football-7v7-soft-hands-catch-progression.md";
+						const collection = "coachingTips";
+						const slug = "football-7v7-soft-hands-catch-progression";
+						const body = "\nHard hands drop balls. Soft hands catch them.\n\n**Equipment needed:** A football, one player, one tosser.\n\n**Setup:** Player stands ten feet from the tosser, hands up at chest height in a diamond shape (thumbs together for high balls, pinkies together for low).\n\n**How to run it:**\n\n1. **Phase 1 — Stationary.** Five throws right at the chest. Hands form the diamond, ball lands in the pocket, fingers wrap last.\n2. **Phase 2 — On the run.** Player jogs across, tosser leads them by a step. Hands meet the ball out front.\n3. **Phase 3 — Over the shoulder.** Player runs away, tosser throws a soft arc. Player catches over the shoulder without breaking stride.\n\n**What to look for:** Fingertips touch the ball first, then the palms. If you hear a slap, hands are too stiff.\n\n**Variation:** Use a wet football. Forces a tighter grip and harder concentration. Saved for ages 11+.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth rubber football →](/go/football-rubber-youth/) — Wilson youth rubber ball for rec and practice.\n\n[Full football 7v7 gear guide →](/what-to-buy/football-7v7/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Soft-Hands Catch Progression",summary:"Three progressions for receivers to absorb the ball instead of trapping it. Ages 8-12.",sport:"football-7v7",age:"8-10",ages:["8-10","11-12"],fundamental:"catching",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"A youth receiver catching a football with hands forming a diamond shape, eyes locked on the ball.",publishedAt:new Date(1778544000000),featured:false,draft:false,editorial:{qualityGrade:6,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778544000000),status:"claude-reviewed",reviewerNotes:"Generated as part of the per-sport content baseline. Voice may need a Jeff pass."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/football-7v7-soft-hands-catch-progression.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

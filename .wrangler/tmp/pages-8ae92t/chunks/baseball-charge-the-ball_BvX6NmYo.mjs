@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "baseball-charge-the-ball.md";
+						const collection = "coachingTips";
+						const slug = "baseball-charge-the-ball";
+						const body = "\nSlow ground balls die before they reach a stationary fielder. The fielder has to run forward, meet the ball, and throw on the run. Kids who wait for the ball get beat by the runner every time.\n\n**What you need:** A glove, 8 baseballs, a flat field, a target (parent with a glove or a fence).\n\n**Setup:** Kid stands 20 feet from you. Target 30 feet behind them.\n\n**How to run it:**\n\n1. Cue: Drop, Show, Funnel, Send. On a charge, all four happen while moving forward.\n2. Roll a slow ground ball that won't reach them if they wait.\n3. They charge forward, drop into fielding position at the ball, funnel it up, and throw to the target.\n4. Do 5 reps slow.\n5. Last 5: roll faster but still in front of them. They charge whatever is rolling.\n\n**What to watch:** Are they slowing down before the catch? Most kids decelerate too early. Charge through the ball, then field. The body should still be moving forward at the moment of catch.\n\n**If they're struggling:** Drop the throw. Just have them charge and field cleanly.\n\n**If they've got it:** Add a runner from home plate. The fielder has to charge, catch, throw, and beat the runner to first.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Charge the Ball",summary:"Field a slow grounder by running forward to it. 12 minutes. Ages 8-10 and 11-12.",sport:"baseball",ages:["8-10","11-12"],fundamental:"fielding",progression:"build",focus:"fundamentals",layer:"skills",illustrationBrief:"A child running forward toward a slowly rolling baseball, dropping into fielding position at the last moment.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Clean pass."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-charge-the-ball.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

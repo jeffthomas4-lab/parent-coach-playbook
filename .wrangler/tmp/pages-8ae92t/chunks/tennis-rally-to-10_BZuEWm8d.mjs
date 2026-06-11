@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "tennis-rally-to-10.md";
+						const collection = "coachingTips";
+						const slug = "tennis-rally-to-10";
+						const body = "\nTennis is a rally game. Whoever can keep the ball in play longest wins. Rally to 10 is the simplest cooperative game: two players, count every shot, restart at zero on a miss. This builds consistency, the foundation of match play.\n\n**What you need:** Tennis balls (green for 11-12), racquets, full court.\n\n**Setup:** Two players on opposite baselines.\n\n**How to run it:**\n\n1. Player A starts the rally with an underhand feed (no serve).\n2. Players rally back and forth. Each successful shot counts toward a goal of 10.\n3. If anyone misses (ball out, in the net), restart at zero.\n4. Goal: rally of 10 in a row. Then 15. Then 20.\n5. Record the longest rally of the day.\n\n**What to watch:** Are they trying to hit winners or just keep the ball in? Cooperative rally is about keeping the ball in. Don't aim for power.\n\n**If they're struggling:** Smaller court (service boxes only). Bigger margin for error.\n\n**If they've got it:** Add target zones. Each shot has to land in a specific zone (cross-court only, for example).\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Orange tennis balls (12-pack) →](/go/tennis-balls-orange/) — slower-bounce balls for learning groundstrokes.\n\n[Portable tennis net →](/go/tennis-net/) — Boulder foldable net, adjusts to regulation height.\n\n[Full tennis gear guide →](/what-to-buy/tennis/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Rally to 10",summary:"Two players rally back and forth, count to 10 without missing. 15 minutes. Ages 11-12.",sport:"tennis",ages:["11-12"],fundamental:"match-play",progression:"refine",focus:"fundamentals",layer:"situational",illustrationBrief:"Two players on opposite sides of the net rallying a green tennis ball back and forth, counting each shot they keep in play.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Cooperative rally; reads slightly basic but voice is clean."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/tennis-rally-to-10.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

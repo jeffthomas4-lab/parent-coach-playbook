@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "track-block-start-progression.md";
+						const collection = "coachingTips";
+						const slug = "track-block-start-progression";
+						const body = "\nStarting blocks let the runner push against a fixed surface, generating more force off the start. Setting them up right and getting into the position takes practice. Once mastered, blocks add 1-2 tenths to a 100m time.\n\n**What you need:** Starting blocks, a track, a starter (coach with a call).\n\n**Setup:** Place blocks on the line. Front block 2 foot-lengths behind the line, back block 1 foot-length behind the front block.\n\n**How to run it:**\n\n1. Set the blocks. Front foot in the front block, back foot in the back block.\n2. \"On your marks\": kneel on back knee, hands placed shoulder-width on the ground.\n3. \"Set\": hips lift so they're above the shoulders.\n4. \"Go\": explode out, push hard against both blocks. First step forward, not up.\n5. Sprint 30 yards. Walk back. Do 6 reps.\n\n**What to watch:** The push. Are both feet pushing equally hard? Many runners only push with the front leg. Both legs drive.\n\n**If they're struggling:** Drop the blocks. Use a three-point start.\n\n**If they've got it:** Add competition. Two runners side by side, race 30 yards.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.\n\n[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Block Start Progression",summary:"Sprint start from starting blocks. 12 minutes. Ages 11-12.",sport:"track-field",ages:["11-12"],fundamental:"starts",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Runner in starting blocks at the set position, hips raised, hands on the ground spread shoulder-width, eyes looking down.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:true,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Block-start progression; sensitive due to start-injury risk."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/track-block-start-progression.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

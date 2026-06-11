@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "softball-dynamic-warm-up-circuit.md";
+						const collection = "coachingTips";
+						const slug = "softball-dynamic-warm-up-circuit";
+						const body = "\nA dynamic warm-up gets the whole body moving. Leg swings, lunges, arm circles, and light jogging prepare muscles for the demands of softball.\n\n**What you need:** Open field, no equipment, 10+ kids.\n\n**Setup:** Kids in two lines facing each other, 15 feet apart.\n\n**How to run it:**\n\n1. Jog from one line to the other (30 feet). No sprinting.\n2. Arm circles: 10 forward, 10 backward. Both arms at once.\n3. Leg swings: 10 forward/backward each leg, 10 side-to-side each leg.\n4. Walking lunges: 10 lunges across the field.\n5. Carioca (side shuffle): 10 steps right, 10 steps left, walking backward.\n6. Butt kicks: 20 fast steps bringing heels to glutes.\n7. High knees: 20 fast steps bringing knees to chest.\n8. Final jog: one lap around the field at easy pace.\n\n**What to watch:** Are movements smooth or stiff? Stiffness means they need more reps. Are kids jogging or standing? Keep moving.\n\n**If they're struggling:** Cut the reps in half. Do 5 of each. Focus on good form, not quantity.\n\n**If they've got it:** Add more reps. Do 15 of each. Add a sprint finish after the circuit to get the heart rate up.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth softball glove →](/go/softball-glove-11in/) — 11-inch fielder's glove for new players.\n\n[Full softball gear guide →](/what-to-buy/softball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Dynamic Warm-Up Circuit",summary:"Full-body warm-up before practice or games. 10 minutes. Ages 5-7, 8-10, and 11-12.",sport:"softball",ages:["5-7","8-10","11-12"],fundamental:"warm-up",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Group of kids doing leg swings, lunges, arm circles, and jogging in a line across the field.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:7,originalityGrade:6,voiceGrade:7,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Generic warm-up; fine for the use."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/softball-dynamic-warm-up-circuit.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

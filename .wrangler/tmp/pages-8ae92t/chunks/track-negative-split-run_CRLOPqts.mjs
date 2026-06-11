@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "track-negative-split-run.md";
+						const collection = "coachingTips";
+						const slug = "track-negative-split-run";
+						const body = "\nA negative split is when the second half of a run is faster than the first. It teaches the runner to hold back early and finish strong. This is how every great distance race is won. Kids who learn it crush their PRs.\n\n**What you need:** A track or marked course, stopwatch.\n\n**Setup:** Runner at the start of an 800m course (two laps of a 400m track).\n\n**How to run it:**\n\n1. Set a target time for the 800m. Use the kid's typical pace.\n2. Goal: first 400m at 5 seconds slower than typical pace.\n3. Goal: second 400m at typical pace or faster.\n4. Coach calls splits at 200m, 400m, 600m, finish.\n5. Rest 5 minutes. Discuss the splits. If the first half was too fast, repeat.\n\n**What to watch:** Pace at 400m. If the runner has dropped the pace below target, they're paced for a negative split. If they're already at full speed, they can't speed up.\n\n**If they're struggling:** Shorter distance (400m with 200m splits).\n\n**If they've got it:** Run a 1600m with negative splits across all four 400m segments.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth running trainers →](/go/xc-trainers-youth/) — everyday training shoe for track and XC.\n\n[Full track field gear guide →](/what-to-buy/track-field/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Negative Split Run",summary:"Run the second half faster than the first half. 12 minutes. Ages 11-12.",sport:"track-field",ages:["11-12"],fundamental:"pacing",progression:"refine",focus:"fundamentals",layer:"skills",illustrationBrief:"Runner on a track with two halves marked, the second half labeled with a faster pace than the first half.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:true,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Negative-split workout; sensitive flag for distance-effort load."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/track-negative-split-run.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

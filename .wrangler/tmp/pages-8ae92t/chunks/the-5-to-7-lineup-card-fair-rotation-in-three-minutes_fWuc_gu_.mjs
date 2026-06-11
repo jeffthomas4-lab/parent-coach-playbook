@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "the-5-to-7-lineup-card-fair-rotation-in-three-minutes.md";
+						const collection = "articles";
+						const slug = "the-5-to-7-lineup-card-fair-rotation-in-three-minutes";
+						const body = "\nIt was opening day. We had 13 kids and a field. At this age, every kid should play half the game. Period. That's the deal. So we built the lineup card the night before and posted it at the field.\n\n## The system\n\nWe write down 12 kids, maybe 14. We divide our fielders into two rotations. One group plays the first three innings, the other plays the second three. With outfielders especially, five kids means two rotations of play time, not one kid sitting the whole game.\n\nWe assign positions by capability, not by favoritism. The most advanced kid plays shortstop in rotation one. The next kid plays shortstop in rotation two. This teaches everyone the position and gives everyone playing time.\n\nFor batting, we alternate: kid one bats first inning, gets subbed out bottom of second, comes back in fourth inning. It's not elegant, but every kid gets three to five at-bats.\n\n## The cost\n\nYes, we'll probably lose some games. We might lose the playoff game with this system. That's the cost of coaching 5-7.\n\n## The communication\n\nWe post the rotation before the game so parents know what to expect. \"Emma plays the first three innings in left field, then moves to first base in the second half.\" No surprises. No angry parents wondering why their kid was on the bench.\n\nThis system takes ten minutes to build and saves us from an entire season of parent anger. We do it the night before every game.\n\n---\n\n**Gear mentioned in this article** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.\n\n[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"The 5-7 Lineup Card: A Fair Rotation in Three Minutes",seoDescription:"It was opening day. We had 13 kids and a field. At this age, every kid should play half the game. Period. That's the deal.",dek:"Every kid plays half the game. Build it the night before. Post it before first pitch.",topic:"game-day",format:"note",sport:"baseball",age:"5-7",phase:"game",publishedAt:new Date(1774915200000),featured:false,draft:false};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/articles/the-5-to-7-lineup-card-fair-rotation-in-three-minutes.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

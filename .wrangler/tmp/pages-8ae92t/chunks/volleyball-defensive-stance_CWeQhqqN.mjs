@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "volleyball-defensive-stance.md";
+						const collection = "coachingTips";
+						const slug = "volleyball-defensive-stance";
+						const body = "\nDefense in volleyball is reading and reacting fast. The starting position is a low athletic stance. Lower than infield. Lower than basketball defense. The lower the stance, the easier it is to dig a hard spike.\n\n**What you need:** Open space.\n\n**Setup:** Kid in the back court of a volleyball court (or any open space).\n\n**How to run it:**\n\n1. Show the stance: feet wider than shoulders, knees deeply bent (almost a squat), chest forward, hands out in front, weight on the balls of the feet.\n2. Hold for 10 seconds. Reset. 5 reps of holding the stance.\n3. Coach calls \"right.\" Player shuffles 2 feet right while staying in the low stance.\n4. Coach calls \"left.\" Player shuffles back.\n5. 60 seconds of shuffling in the stance.\n\n**What to watch:** Does the stance break during shuffles? Some kids stand up to move. Stay low the whole time.\n\n**If they're struggling:** Reduce the depth of the stance. Or hold for shorter periods.\n\n**If they've got it:** Add a tossed ball. Player has to dig from the stance without standing up.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Volley Lite training ball →](/go/volleyball-volley-lite/) — lightweight ball for beginners learning to pass.\n\n[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+						const data = {title:"Defensive Stance",summary:"Build the basic defensive position before the dig. 8 minutes. Ages 8-10.",sport:"volleyball",ages:["8-10"],fundamental:"defending",progression:"intro",focus:"fundamentals",layer:"foundations",illustrationBrief:"Player in low defensive stance with feet wider than shoulders, knees deeply bent, chest forward, hands ready in front of the body.",publishedAt:new Date(1777680000000),featured:false,draft:false,editorial:{qualityGrade:8,originalityGrade:7,voiceGrade:8,flagInappropriateness:false,flagIpRisk:false,flagSensitiveTopic:false,citationCheckPassed:true,sportLanguageCheckPassed:true,affiliateDisclosurePresent:true,claudeReviewedAt:new Date(1778284800000),status:"claude-reviewed",reviewerNotes:"Cross-sport stance comparison lands well. Clean foundations drill."}};
+						const _internal = {
+							type: 'content',
+							filePath: "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/volleyball-defensive-stance.md",
+							rawData: undefined,
+						};
+
+export { _internal, body, collection, data, id, slug };

@@ -1,0 +1,27 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+import { a as createComponent, m as maybeRenderHead, u as unescapeHTML, r as renderTemplate } from './astro/server_CN5MjrpB.mjs';
+
+const html = "<p>When there’s a runner on first, pitchers throw from the stretch instead of the windup. The stretch is a quicker delivery that gives the runner less time to steal. Mixing in pickoff moves keeps the runner honest.</p>\n<p><strong>What you need:</strong> A pitching mound, 10 baseballs, a catcher, a partner to play first base, a base.</p>\n<p><strong>Setup:</strong> Pitcher on the mound in the stretch. Catcher behind home. Runner at first.</p>\n<p><strong>How to run it:</strong></p>\n<ol>\n<li>Cue: Set, Lift, Stride, Throw. From the stretch, the Lift is shorter.</li>\n<li>Pitcher comes set with both feet on the rubber, hands together at the chest. They have to come to a complete stop before pitching or it’s a balk.</li>\n<li>They throw to home. Catcher catches and tosses back.</li>\n<li>Every third pitch, instead of throwing home, they throw to first base for a pickoff move.</li>\n<li>Do 9 pitches: 6 to home, 3 pickoffs.</li>\n</ol>\n<p><strong>What to watch:</strong> The set position. The pitcher must come to a complete stop with hands together before going to home. If they don’t stop, the umpire calls a balk.</p>\n<p><strong>If they’re struggling:</strong> Skip the pickoff. Just work on throwing strikes from the stretch.</p>\n<p><strong>If they’ve got it:</strong> Vary the timing. Sometimes hold the set for 1 second, sometimes 4 seconds. The runner has to react to whatever the pitcher does.</p>\n<hr>\n<p><strong>Gear for this drill</strong> (affiliate)</p>\n<p><a href=\"/go/baseball-glove-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth baseball glove →</a> — the first piece of gear for every new player.</p>\n<p><a href=\"/go/baseball-catchers-gear-youth/\" rel=\"sponsored nofollow noopener\" target=\"_blank\">Youth catcher’s set →</a> — chest protector, helmet, and leg guards.</p>\n<p><a href=\"/what-to-buy/baseball/\">Full baseball gear guide →</a> — all picks by age, sport, and level.</p>\n<p><em>As an Amazon Associate we earn from qualifying purchases.</em></p>";
+
+				const frontmatter = {"title":"Holding Runners from the Stretch","summary":"Pitch from the stretch position with a runner on first. 15 minutes. Ages 11-12.","sport":"baseball","ages":["11-12"],"fundamental":"pitching","progression":"refine","focus":"fundamentals","layer":"situational","publishedAt":"2026-05-02T00:00:00.000Z","featured":false,"illustrationBrief":"Pitcher in the stretch position with both feet on the rubber side-by-side, hands together at the chest, glancing at first base.","editorial":{"qualityGrade":8,"originalityGrade":7,"voiceGrade":8,"flagInappropriateness":false,"flagIpRisk":false,"flagSensitiveTopic":true,"citationCheckPassed":true,"sportLanguageCheckPassed":true,"affiliateDisclosurePresent":true,"claudeReviewedAt":"2026-05-09T00:00:00.000Z","status":"claude-reviewed","reviewerNotes":"Pitching mechanics; arm-care adjacent."}};
+				const file = "C:/Users/jeffthomas/Desktop/Claude Cowork/Outputs/parent-coach-playbook/src/content/coachingTips/baseball-holding-runners-stretch.md";
+				const url = undefined;
+				function rawContent() {
+					return "\nWhen there's a runner on first, pitchers throw from the stretch instead of the windup. The stretch is a quicker delivery that gives the runner less time to steal. Mixing in pickoff moves keeps the runner honest.\n\n**What you need:** A pitching mound, 10 baseballs, a catcher, a partner to play first base, a base.\n\n**Setup:** Pitcher on the mound in the stretch. Catcher behind home. Runner at first.\n\n**How to run it:**\n\n1. Cue: Set, Lift, Stride, Throw. From the stretch, the Lift is shorter.\n2. Pitcher comes set with both feet on the rubber, hands together at the chest. They have to come to a complete stop before pitching or it's a balk.\n3. They throw to home. Catcher catches and tosses back.\n4. Every third pitch, instead of throwing home, they throw to first base for a pickoff move.\n5. Do 9 pitches: 6 to home, 3 pickoffs.\n\n**What to watch:** The set position. The pitcher must come to a complete stop with hands together before going to home. If they don't stop, the umpire calls a balk.\n\n**If they're struggling:** Skip the pickoff. Just work on throwing strikes from the stretch.\n\n**If they've got it:** Vary the timing. Sometimes hold the set for 1 second, sometimes 4 seconds. The runner has to react to whatever the pitcher does.\n\n---\n\n**Gear for this drill** (affiliate)\n\n[Youth baseball glove →](/go/baseball-glove-youth/) — the first piece of gear for every new player.\n\n[Youth catcher's set →](/go/baseball-catchers-gear-youth/) — chest protector, helmet, and leg guards.\n\n[Full baseball gear guide →](/what-to-buy/baseball/) — all picks by age, sport, and level.\n\n*As an Amazon Associate we earn from qualifying purchases.*\n";
+				}
+				function compiledContent() {
+					return html;
+				}
+				function getHeadings() {
+					return [];
+				}
+
+				const Content = createComponent((result, _props, slots) => {
+					const { layout, ...content } = frontmatter;
+					content.file = file;
+					content.url = url;
+
+					return renderTemplate`${maybeRenderHead()}${unescapeHTML(html)}`;
+				});
+
+export { Content, compiledContent, Content as default, file, frontmatter, getHeadings, rawContent, url };
