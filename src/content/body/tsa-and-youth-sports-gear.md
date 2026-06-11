@@ -40,7 +40,7 @@ This is what flies, what gets checked, and what stays home.
 
 **Skates.** Ice skates with blade guards: carry-on allowed by TSA, but airlines often require checked. Roller skates and inline skates: typically allowed in carry-on. Pack with blade or wheel covers either way.
 
-**Helmets.** Allowed in carry-on. Most parents check them anyway because they take a lot of suitcase volume. A helmet bag is worth the $30.
+**Helmets.** Allowed in carry-on. Most parents check them anyway because they take a lot of suitcase volume. A helmet bag is worth it.
 
 **Cleats and shoes.** Carry-on or checked, no restriction. Some teams put cleats in a separate plastic bag inside checked luggage to avoid soiling clothes.
 

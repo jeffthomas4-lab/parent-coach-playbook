@@ -27,7 +27,7 @@ editorial:
 
 Base runners who understand spacing and angles beat runners who are confused about where to go. This drill turns that into a game so kids remember it.
 
-**Equipment needed:** Four cones, two bases (or bags), a stopwatch or timer on your phone.
+**Equipment needed:** Four [cones](/go/agility-cones/), two [bases](/go/baseball-bases-rubber/) (or bags), a stopwatch or timer on your phone.
 
 **Setup:** Set up a diamond at 45 feet per side using cones at home and first base. Mark "halfway" between home and first with a cone at the 22-foot line. You stand at first base.
 

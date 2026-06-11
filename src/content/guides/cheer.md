@@ -4,17 +4,17 @@ category: "activity"
 sortOrder: 18
 lede: "Cheer requires functional cheer shoes, team-ordered bows, athletic tape, hair gel, and practice clothes. The competition uniform comes through the team."
 seoTitle: "Youth Cheer Gear: Shoes, Bows, and What to Buy by Season"
-seoDescription: "Cheer shoes, bows, hair gel, and tape, with prices, what the team orders for you, and why to wait on the competition uniform."
-costSummary: "$100-180 to start"
+seoDescription: "Cheer shoes, bows, hair gel, and tape, what the team orders for you, and why to wait on the competition uniform."
+costSummary: "Cheap to start. The real costs show up when your kid makes an All-Star team."
 seasonNote: "All-Star cheer runs year-round with seasons and competitions. High school cheer follows the school calendar, typically August through February."
 publishedAt: 2026-04-30
 ---
 
 ## What you actually need
 
-Cheer shoes ($50-80) are not optional. They're white, low-profile, and designed specifically for tumbling and stunting. They're different from sneakers, the sole and ankle support are engineered for the movement. Top brands are Nfinity, Rebel, and Cheer Athletics. Make sure you buy cheer-specific shoes, not generic white sneakers.
+Cheer shoes are not optional. They're white, low-profile, and designed specifically for tumbling and stunting. They're different from sneakers, the sole and ankle support are engineered for the movement. Top brands are Nfinity, Rebel, and Cheer Athletics. Make sure you buy cheer-specific shoes, not generic white sneakers.
 
-A bow ($15-30) comes next. Most teams order one per season, so confirm with your coach before buying. If the team doesn't supply it, get one in your team colors. Hair gel ($5-10) keeps hair in place during stunts and tumbling. Athletic tape ($5-10) gets used for wrists, ankles, and hair maintenance. Practice clothes are standard athletic wear, shorts, t-shirt, or sweatpants. Nothing special needed.
+A bow comes next. Most teams order one per season, so confirm with your coach before buying. If the team doesn't supply it, get one in your team colors. Hair gel keeps hair in place during stunts and tumbling. Athletic tape gets used for wrists, ankles, and hair maintenance. Practice clothes are standard athletic wear, shorts, t-shirt, or sweatpants. Nothing special needed.
 
 The team provides your competition uniform, so wait on that purchase. Trying to guess the colors, style, or fit is a waste of money.
 
@@ -25,7 +25,7 @@ The team provides your competition uniform, so wait on that purchase. Trying to 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cheer · Youth</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">White youth cheer shoes</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Cheer-specific shoe: white, low-profile, light, with the finger grooves for stunting. The starter answer for a first season.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: For a first season, $26 does the job. If your kid makes a competitive All-Star team, the coach will tell you which Nfinity model the team wears. Wait for that.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: For a first season, a basic pair does the job. If your kid makes a competitive All-Star team, the coach will tell you which Nfinity model the team wears. Wait for that.</p>
     <a href="/go/cheer-shoes-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -36,7 +36,7 @@ The team provides your competition uniform, so wait on that purchase. Trying to 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cheer · All ages</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Jumbo cheer bows (2 pack)</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Eight-inch bows on ponytail holders, multiple color options. Only buy after the coach confirms the team isn't ordering them.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Two bows for seven dollars beats one boutique bow for twenty-five. One lives in the cheer bag as the backup.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Two basic bows beat one boutique bow. One lives in the cheer bag as the backup.</p>
     <a href="/go/cheer-bow-jumbo/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>

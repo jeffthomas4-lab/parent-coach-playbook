@@ -49,7 +49,7 @@ That's it. 10 minutes. Done.
 
 **The foam rolling thing**
 
-If you have a foam roller, some kids will actually use it.
+If you have a [foam roller](/go/foam-roller-medium/), some kids will actually use it.
 
 It feels good. It works.
 

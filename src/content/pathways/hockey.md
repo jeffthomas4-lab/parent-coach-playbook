@@ -8,7 +8,7 @@ notYet:
   - "Full-time goalie before 10. Rotate the position. USA Hockey's ADM says the same, and the family budget will thank you."
   - "Spring and summer AAA before 13. AAP guidance is two months off per year, and it applies to ice time too."
   - "Body checking before 14U. USA Hockey moved it from peewee to bantam in 2011 and concussion rates at 12U dropped. Contact-confidence work at 12U is the on-ramp; open-ice hits are not."
-  - "A $300 stick for a 9-year-old. The flex is wrong for their weight anyway."
+  - "An expensive stick for a 9-year-old. The flex is wrong for their weight anyway."
   - "Skating-treadmill and skills-coach stacks before puberty. Free skates and stick time at the local rink buy the same touches for the cost of admission."
   - "Junior hockey talk before 15. The path exists, but it sorts itself out at 16-17, not before."
 aheadBehind:

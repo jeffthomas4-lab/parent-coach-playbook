@@ -27,7 +27,7 @@ editorial:
 
 A batting cage is the only place a 13-year-old can face live pitching safely and get 40+ swings in 30 minutes. Cage time builds confidence and teaches pitch recognition.
 
-**Equipment needed:** A batting cage, a pitching machine or a coach who can throw strikes, 50-60 baseballs, helmets, bats.
+**Equipment needed:** A batting cage, a pitching machine or a coach who can throw strikes, 50-60 baseballs, [helmets](/go/baseball-helmet-youth/), bats.
 
 **Setup:** Hitter at the plate in cage. Pitcher (machine or coach) at 50 feet (Little League distance). Balls cycle automatically or a feeder loads between pitches.
 

@@ -30,7 +30,7 @@
     "campaign": "gear-baseball-bases-rubber"
   },
   "baseball-balls-wiffle": {
-    "destination": "https://amzn.to/4w61coO",
+    "destination": "https://www.amazon.com/dp/B076VN216X?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-baseball-balls-wiffle"
   },
@@ -114,13 +114,23 @@
     "retailer": "Amazon",
     "campaign": "gear-softball-glove-11in"
   },
+  "softball-face-mask": {
+    "destination": "https://www.amazon.com/dp/B00345EAE0?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-face-mask"
+  },
   "lacrosse-ball": {
     "destination": "https://amzn.to/42MLWj7",
     "retailer": "Amazon",
     "campaign": "gear-lacrosse-ball"
   },
+  "lacrosse-goggles-youth": {
+    "destination": "https://www.amazon.com/dp/B07YNSRY9Y?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-goggles-youth"
+  },
   "lacrosse-starter-kit-youth": {
-    "destination": "https://amzn.to/4wpycsq",
+    "destination": "https://www.amazon.com/dp/B075PCS6RH?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-lacrosse-starter-kit-youth"
   },
@@ -135,9 +145,44 @@
     "campaign": "gear-soccer-rebound-net"
   },
   "soccer-cleats-youth": {
-    "destination": "https://amzn.to/4tQC1oC",
+    "destination": "https://www.amazon.com/dp/B0D2JHFYDH?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-soccer-cleats-youth"
+  },
+  "multi-sport-cleats-youth": {
+    "destination": "https://www.amazon.com/dp/B0DRC1HJN8?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-cleats-youth"
+  },
+  "basketball-ball-rubber": {
+    "destination": "https://www.amazon.com/dp/B0DHRCRTY5?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-basketball-ball-rubber"
+  },
+  "basketball-ball-forge": {
+    "destination": "https://www.amazon.com/dp/B0D86XF8LM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-basketball-ball-forge"
+  },
+  "basketball-ball-authentic": {
+    "destination": "https://www.amazon.com/dp/B0D86XNSCQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-basketball-ball-authentic"
+  },
+  "multi-sport-sunglasses-youth": {
+    "destination": "https://www.amazon.com/dp/B0BQ6868M8?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-sunglasses"
+  },
+  "multi-sport-socks-crew": {
+    "destination": "https://www.amazon.com/dp/B086CCM86Z?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-multi-sport-socks-crew"
+  },
+  "baseball-batting-gloves-adult": {
+    "destination": "https://www.amazon.com/dp/B07GJYMTCT?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-batting-gloves-adult"
   },
   "agility-cones": {
     "destination": "https://amzn.to/4d0Bw47",
@@ -174,6 +219,11 @@
     "retailer": "Amazon",
     "campaign": "gear-football-qb-throwing-net"
   },
+  "hockey-helmet-youth": {
+    "destination": "https://www.amazon.com/dp/B09KWMQ9TH?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-hockey-helmet-youth"
+  },
   "hockey-puck": {
     "destination": "https://amzn.to/4d6rTBd",
     "retailer": "Amazon",
@@ -184,10 +234,25 @@
     "retailer": "Amazon",
     "campaign": "gear-hockey-stick-youth"
   },
+  "swim-goggles-youth": {
+    "destination": "https://www.amazon.com/dp/B011PM4IRC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-swim-goggles-youth"
+  },
   "volleyball-net": {
     "destination": "https://amzn.to/4f2h4m5",
     "retailer": "Amazon",
     "campaign": "gear-volleyball-net"
+  },
+  "tennis-racquet-junior": {
+    "destination": "https://www.amazon.com/dp/B095RJ5FR8?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-tennis-racquet-junior"
+  },
+  "tennis-balls-orange": {
+    "destination": "https://www.amazon.com/dp/B00559AVBO?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-tennis-balls-orange"
   },
   "tennis-net": {
     "destination": "https://amzn.to/4na5Uh3",
@@ -270,9 +335,24 @@
     "campaign": "gear-soccer-socks"
   },
   "soccer-goalie-gloves-youth": {
-    "destination": "https://www.amazon.com/dp/B00PPBC8MW?tag=parentcoachpl-20",
-    "retailer": "Amazon",
+    "destination": "https://www.tkqlhce.com/click-101798499-11017728?sid=gear-soccer-goalie-gloves",
+    "retailer": "SoccerGarage",
     "campaign": "gear-soccer-goalie-gloves"
+  },
+  "soccer-clearance-cleats": {
+    "destination": "https://www.tkqlhce.com/click-101798499-10479717?sid=gear-soccer-clearance",
+    "retailer": "SoccerGarage",
+    "campaign": "gear-soccer-clearance"
+  },
+  "soccer-coupon-10-off-100": {
+    "destination": "https://www.tkqlhce.com/click-101798499-11017845?sid=gear-soccer-coupon10",
+    "retailer": "SoccerGarage",
+    "campaign": "gear-soccer-coupon10"
+  },
+  "soccer-garage-shop": {
+    "destination": "https://www.tkqlhce.com/click-101798499-10479697?sid=gear-soccer-garage-shop",
+    "retailer": "SoccerGarage",
+    "campaign": "gear-soccer-garage-shop"
   },
   "multi-sport-shoe-bag": {
     "destination": "https://www.amazon.com/dp/B0CYTHP5JD?tag=parentcoachpl-20",
@@ -353,5 +433,405 @@
     "destination": "https://www.amazon.com/dp/B08TQQ9RTS?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-multi-sport-bottle"
+  },
+  "adhesive-bandages": {
+    "destination": "https://www.amazon.com/dp/B09B32CSJ5?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-adhesive-bandages"
+  },
+  "gauze-pads": {
+    "destination": "https://www.amazon.com/dp/B01AKBCL3W?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-gauze-pads"
+  },
+  "athletic-tape-roll": {
+    "destination": "https://www.amazon.com/dp/B00I15JOX0?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-athletic-tape-roll"
+  },
+  "butterfly-bandages": {
+    "destination": "https://www.amazon.com/dp/B09PNTXRJB?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-butterfly-bandages"
+  },
+  "antibiotic-ointment-travel": {
+    "destination": "https://www.amazon.com/dp/B00164IIUI?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-antibiotic-ointment-travel"
+  },
+  "saline-wipes": {
+    "destination": "https://www.amazon.com/dp/B073WD7G4Q?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-saline-wipes"
+  },
+  "instant-cold-pack": {
+    "destination": "https://www.amazon.com/dp/B0GY7T8L41?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-instant-cold-pack"
+  },
+  "ace-wrap": {
+    "destination": "https://www.amazon.com/dp/B007UGK5S4?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-ace-wrap"
+  },
+  "kinesio-tape-precut": {
+    "destination": "https://www.amazon.com/dp/B002CJ62N6?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-kinesio-tape-precut"
+  },
+  "antihistamine-child": {
+    "destination": "https://www.amazon.com/dp/B004DGO3WS?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-antihistamine-child"
+  },
+  "bug-bite-stick": {
+    "destination": "https://www.amazon.com/dp/B012SAJYEM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-bug-bite-stick"
+  },
+  "saline-rinse": {
+    "destination": "https://www.amazon.com/dp/B00EC6DE7Y?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-saline-rinse"
+  },
+  "tweezers-small": {
+    "destination": "https://www.amazon.com/dp/B09J95YPXF?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-tweezers-small"
+  },
+  "scissors-blunt-tip": {
+    "destination": "https://www.amazon.com/dp/B00AVQ0J2C?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-scissors-blunt-tip"
+  },
+  "sunscreen-travel": {
+    "destination": "https://www.amazon.com/dp/B0058SXKV0?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-sunscreen-travel"
+  },
+  "lip-balm-spf": {
+    "destination": "https://www.amazon.com/dp/B009NCWNQ0?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lip-balm-spf"
+  },
+  "electrolyte-tablets": {
+    "destination": "https://www.amazon.com/dp/B074TTKL6Q?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-electrolyte-tablets"
+  },
+  "foam-roller-medium": {
+    "destination": "https://www.amazon.com/dp/B071P2MQ5D?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-foam-roller-medium"
+  },
+  "ankle-brace-reusable": {
+    "destination": "https://www.amazon.com/dp/B09VMPDNZC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-ankle-brace-reusable"
+  },
+  "compression-socks": {
+    "destination": "https://www.amazon.com/dp/B0GZ2BDKPJ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-compression-socks"
+  },
+  "water-bottle-32oz": {
+    "destination": "https://www.amazon.com/dp/B0DWPBKQ68?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-water-bottle-32oz"
+  },
+  "electrolyte-powder": {
+    "destination": "https://www.amazon.com/dp/B01IT9NLHW?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-electrolyte-powder"
+  },
+  "protein-powder-vanilla": {
+    "destination": "https://www.amazon.com/dp/B008IH1AWE?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-protein-powder-vanilla"
+  },
+  "hard-cooler-55qt": {
+    "destination": "https://www.amazon.com/dp/B08TYGMCJ8?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-hard-cooler-55qt"
+  },
+  "soft-cooler-25qt": {
+    "destination": "https://www.amazon.com/dp/B07YD4FCNM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-soft-cooler-25qt"
+  },
+  "packing-cubes": {
+    "destination": "https://www.amazon.com/dp/B0BNN4XHMD?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-packing-cubes"
+  },
+  "travel-sport-wash": {
+    "destination": "https://www.amazon.com/dp/B0BQY57Y39?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-travel-sport-wash"
+  },
+  "travel-power-strip": {
+    "destination": "https://www.amazon.com/dp/B0CKR7B9T9?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-travel-power-strip"
+  },
+  "athletic-socks-multipack": {
+    "destination": "https://www.amazon.com/dp/B0BXKX4Z9D?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-athletic-socks-multipack"
+  },
+  "mouthguard-boil-bite": {
+    "destination": "https://www.amazon.com/dp/B00I1BDKPC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-mouthguard-boil-bite"
+  },
+  "batting-gloves-pair": {
+    "destination": "https://amzn.to/4ugLk14",
+    "retailer": "Amazon",
+    "campaign": "gear-batting-gloves-pair"
+  },
+  "phone-tripod": {
+    "destination": "https://www.amazon.com/dp/B07837W5NX?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-phone-tripod"
+  },
+  "action-camera": {
+    "destination": "https://www.amazon.com/dp/B0FP5R9BDZ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-action-camera"
+  },
+  "action-camera-ORIG-TRUNCATED": {
+    "destination": "https://www.amazon.com/dp/B0FP5R9BDZ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-action-camera"
+  },
+  "shadow-box-jersey": {
+    "destination": "https://www.amazon.com/dp/B0D7C8JGPM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-shadow-box-jersey"
+  },
+  "stadium-chair-budget": {
+    "destination": "https://www.amazon.com/dp/B086BLVQGJ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-stadium-chair-budget"
+  },
+  "stadium-chair-midrange": {
+    "destination": "https://www.amazon.com/dp/B0033990ZQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-stadium-chair-midrange"
+  },
+  "stadium-chair-premium": {
+    "destination": "https://www.amazon.com/dp/B084BPQR1S?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-stadium-chair-premium"
+  },
+  "sideline-blanket": {
+    "destination": "https://www.amazon.com/dp/B09923V7NF?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-sideline-blanket"
+  },
+  "battery-fan-handheld": {
+    "destination": "https://www.amazon.com/dp/B06XWCDBTN?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-battery-fan-handheld"
+  },
+  "bug-spray-travel": {
+    "destination": "https://www.amazon.com/dp/B0009EXM3E?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-bug-spray-travel"
+  },
+  "hand-warmers": {
+    "destination": "https://www.amazon.com/dp/B072M25LW9?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-hand-warmers"
+  },
+  "rain-poncho": {
+    "destination": "https://www.amazon.com/dp/B09LLW2Q4R?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-rain-poncho"
+  },
+  "folding-wagon": {
+    "destination": "https://www.amazon.com/dp/B0FFGLHHDM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-folding-wagon"
+  },
+  "gear-bag-small": {
+    "destination": "https://www.amazon.com/dp/B0CJ2FNCTQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-bag-small"
+  },
+  "pop-up-tent-sunscreen": {
+    "destination": "https://www.amazon.com/dp/B085QBWV42?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-pop-up-tent"
+  },
+  "seat-cushion": {
+    "destination": "https://www.amazon.com/dp/B0CLG8K7QH?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-seat-cushion"
+  },
+  "frame-8x10": {
+    "destination": "https://www.amazon.com/dp/B0B1CNJL7N?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-frame-8x10"
+  },
+  "photo-book-service": {
+    "destination": "https://www.shutterfly.com/photo-books/",
+    "retailer": "Shutterfly",
+    "campaign": "gear-photo-book"
+  },
+  "coach-clipboard-dry-erase": {
+    "destination": "https://www.amazon.com/dp/B003L23NJ4?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-coach-clipboard"
+  },
+  "coach-stopwatch": {
+    "destination": "https://www.amazon.com/dp/B00Y1XJYJY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-coach-stopwatch"
+  },
+  "scrimmage-pennies": {
+    "destination": "https://www.amazon.com/dp/B004MJ0Y2Y?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-scrimmage-pennies"
+  },
+  "coach-backpack": {
+    "destination": "https://www.amazon.com/s?k=coach+backpack+athletic+equipment&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-coach-backpack"
+  },
+  "portable-whiteboard": {
+    "destination": "https://www.amazon.com/dp/B07QYJB3GS?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-portable-whiteboard"
+  },
+  "first-aid-fanny-pack": {
+    "destination": "https://www.amazon.com/dp/B09Q3P2ZJN?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-first-aid-fanny-pack"
+  },
+  "ball-pump-with-gauge": {
+    "destination": "https://www.amazon.com/dp/B07YRJPQVB?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-ball-pump"
+  },
+  "wrestling-headgear": {
+    "destination": "https://www.amazon.com/dp/B003BSRB3U?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-wrestling-headgear"
+  },
+  "wrestling-shoes-youth": {
+    "destination": "https://www.amazon.com/s?k=youth+wrestling+shoes&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-wrestling-shoes"
+  },
+  "wrestling-singlet-youth": {
+    "destination": "https://www.amazon.com/s?k=youth+wrestling+singlet&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-wrestling-singlet"
+  },
+  "wrestling-knee-pad": {
+    "destination": "https://www.amazon.com/dp/B001LJ4IQO?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-wrestling-knee-pad"
+  },
+  "wrestling-bag": {
+    "destination": "https://www.amazon.com/s?k=wrestling+gear+bag&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-wrestling-bag"
+  },
+  "pickleball-paddle-youth": {
+    "destination": "https://www.amazon.com/dp/B0CLSHQW2F?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-pickleball-paddle-youth"
+  },
+  "pickleball-balls-outdoor": {
+    "destination": "https://www.amazon.com/dp/B09BZZDC3D?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-pickleball-balls"
+  },
+  "pickleball-bag": {
+    "destination": "https://www.amazon.com/s?k=pickleball+bag&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-pickleball-bag"
+  },
+  "pickleball-shoes": {
+    "destination": "https://www.amazon.com/s?k=pickleball+court+shoes&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-pickleball-shoes"
+  },
+  "rugby-mouthguard": {
+    "destination": "https://www.amazon.com/dp/B00I1BDKPC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-rugby-mouthguard"
+  },
+  "rugby-cleats": {
+    "destination": "https://www.amazon.com/s?k=youth+rugby+cleats&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-rugby-cleats"
+  },
+  "rugby-scrum-cap": {
+    "destination": "https://www.amazon.com/s?k=youth+rugby+scrum+cap&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-rugby-scrum-cap"
+  },
+  "rugby-shoulder-pads": {
+    "destination": "https://www.amazon.com/s?k=youth+rugby+shoulder+pads&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-rugby-shoulder-pads"
+  },
+  "foam-roller-standard": {
+    "destination": "https://www.amazon.com/dp/B00XM2MRGI?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-foam-roller"
+  },
+  "resistance-bands-set": {
+    "destination": "https://www.amazon.com/dp/B01AVDVHTI?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-resistance-bands"
+  },
+  "speed-ladder-agility": {
+    "destination": "https://www.amazon.com/dp/B00BXJXO8I?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-speed-ladder"
+  },
+  "agility-cones-set": {
+    "destination": "https://www.amazon.com/dp/B01BKIQJAY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-agility-cones"
+  },
+  "jump-rope-speed": {
+    "destination": "https://www.amazon.com/dp/B00BXJXO8I?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-jump-rope"
+  },
+  "rebounder-net-baseball": {
+    "destination": "https://www.amazon.com/dp/B08B4HLQDH?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-rebounder-net"
+  },
+  "folding-table-6ft": {
+    "destination": "https://www.amazon.com/dp/B000WZGNYW?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-folding-table"
+  },
+  "portable-pa-speaker": {
+    "destination": "https://www.amazon.com/dp/B07PDFBJZD?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-pa-speaker"
+  },
+  "cash-box-lockable": {
+    "destination": "https://www.amazon.com/dp/B0001MDDZU?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-cash-box"
+  },
+  "label-maker-handheld": {
+    "destination": "https://www.amazon.com/dp/B005X9VZ74?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-label-maker"
+  },
+  "square-card-reader": {
+    "destination": "https://squareup.com/us/en/hardware/magstripe-reader",
+    "retailer": "Square",
+    "campaign": "gear-square-reader"
   }
 }

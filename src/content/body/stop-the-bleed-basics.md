@@ -82,7 +82,7 @@ For the team safety bag, the additions for bleeding control:
 
 A package of QuikClot Combat Gauze or hemostatic-impregnated gauze.
 
-A CAT tourniquet (about $30, fits in a small pouch).
+A CAT tourniquet (fits in a small pouch).
 
 A roll of compression gauze (standard rolled gauze, 4-inch).
 
@@ -104,6 +104,6 @@ The compound fracture from a tackle, where the bone has come through skin. Direc
 
 Stop the Bleed courses are listed at stopthebleed.org. The course covers the three techniques, hands-on practice with tourniquets and packing, and recognition of life-threatening bleeding. Free in most areas. Two hours of your life.
 
-**The honest read.** Most youth-sports games never see a Stop the Bleed scenario. The few that do are time-critical, and the difference between a kid who walks away and a kid who does not is whether the adult on the field knew the technique. The training is free. The kit costs about $50. The decision to learn it is the conservative, low-cost one.
+**The honest read.** Most youth-sports games never see a Stop the Bleed scenario. The few that do are time-critical, and the difference between a kid who walks away and a kid who does not is whether the adult on the field knew the technique. The training is free. The kit is cheap. The decision to learn it is the conservative, low-cost one.
 
 If this content is reaching someone in an active bleeding emergency, call 911 first, then apply direct pressure with whatever cloth you have until help arrives.

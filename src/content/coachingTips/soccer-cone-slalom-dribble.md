@@ -27,7 +27,7 @@ editorial:
 
 Running straight is easy. Weaving teaches them to use both feet and steer the ball. Five cones in a line with space between them makes it simple and repeatable.
 
-**What you need:** 5 cones or water bottles. 1 soccer ball per child. Flat area.
+**What you need:** 5 [cones](/go/soccer-cones-12pk/) or water bottles. 1 [soccer ball](/go/soccer-ball-size3/) per child. Flat area.
 
 **Setup:** Line up 5 cones in a straight line, 4 feet apart. Starting line 5 feet before the first cone.
 

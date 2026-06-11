@@ -4,7 +4,7 @@ const SPORT_ENUM = [
   'baseball','softball','soccer','basketball',
   'flag-football','football','football-7v7','hockey','field-hockey','lacrosse','lacrosse-boys','lacrosse-girls','volleyball',
   'swimming','track-field','cross-country','tennis','golf','crew',
-  'martial-arts','wrestling','gymnastics','cheer','stunt',
+  'martial-arts','wrestling','gymnastics','cheer','stunt','rugby','pickleball',
   'theater','band','choir','dance','ballet',
   'multi-sport','multi-activity','performing-arts',
 ] as const;
@@ -117,7 +117,7 @@ const guides = defineCollection({
   schema: () =>
     z.object({
       activity: z.string(),
-      category: z.enum(['sport', 'activity', 'essentials']),
+      category: z.enum(['sport', 'activity', 'essentials', 'coach-gear']),
       sortOrder: z.number().default(99),
       lede: z.string(),
       costSummary: z.string(),

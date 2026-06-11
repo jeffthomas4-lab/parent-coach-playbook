@@ -27,7 +27,7 @@ editorial:
 
 The Funnel step in our cue (Drop, Show, Funnel, Send) is the part most kids skip. Funnel means the glove and the throwing hand bring the ball up the centerline of the body to the chest. Cones on the ground show them where that path starts.
 
-**What you need:** 2 cones, a glove, 8 tennis balls or soft baseballs.
+**What you need:** 2 [cones](/go/agility-cones/), a [glove](/go/baseball-glove-9in-youth/), 8 tennis balls or soft baseballs.
 
 **Setup:** Place two cones about 18 inches apart on the grass directly in front of where the kid stands, like the start of a funnel.
 

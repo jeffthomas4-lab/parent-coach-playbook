@@ -37,7 +37,7 @@ A five-week test usually tells you whether the new sport sticks.
 
 **Week four: their honest opinion comes out.** This is the week to ask, "Do you want to keep doing this?" Their answer is usually real. Earlier than this, they don't know yet. Later than this, sunk-cost bias kicks in.
 
-**Week five: the decision.** They tell you. Honor the answer. Don't talk them into staying because you spent $150 on equipment.
+**Week five: the decision.** They tell you. Honor the answer. Don't talk them into staying because you spent money on equipment.
 
 Parent traps to avoid.
 

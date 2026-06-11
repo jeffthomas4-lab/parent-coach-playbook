@@ -17,7 +17,7 @@ Here is what we actually pack. Day camp version first, overnight version second.
 
 ## Day camp, the bag
 
-Two water bottles, both filled the night before. One stays in the bag, one goes on the field. The math is that one will get lost or set down somewhere wet. Two means your kid drinks water all week.
+Two [water bottles](/go/multi-sport-water-bottle/), both filled the night before. One stays in the bag, one goes on the field. The math is that one will get lost or set down somewhere wet. Two means your kid drinks water all week.
 
 A sun hat. Not a baseball cap. A hat with a brim that covers ears. Most camps run on fields without shade. The week-three sunburn most kids get is from camps that didn't enforce hats.
 

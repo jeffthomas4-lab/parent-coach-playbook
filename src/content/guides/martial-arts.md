@@ -4,19 +4,19 @@ category: "sport"
 sortOrder: 16
 lede: "A gi (uniform) is usually included with enrollment. What you buy depends on the style: BJJ needs a heavier gi, karate a lighter one, taekwondo a dobok."
 seoTitle: "Kids' Martial Arts Gear: What to Buy by Age and Belt"
-seoDescription: "Uniform, sparring gear, and belt-test costs for karate, taekwondo, and BJJ, with prices and what the dojo supplies."
-costSummary: "$80-150 to start"
+seoDescription: "Uniform, sparring gear, and belt-test costs for karate, taekwondo, and BJJ, plus what the dojo supplies."
+costSummary: "Cheap to start. Many schools include the gi with enrollment."
 seasonNote: "Martial arts programs run year-round. Most gyms offer classes multiple times per week. Check your local schools for schedules."
 publishedAt: 2026-04-30
 ---
 
 ## What you actually need
 
-The gi is the first purchase, but many schools include it in the enrollment fee, so ask first. If you're buying separately, expect $40-80. The style matters: Brazilian Jiu-Jitsu requires a heavier, thicker weave gi ($60-100). Karate uses a lighter cotton gi ($40-60). Taekwondo uses a dobok, which is different ($50-80). Don't cross them over, each style has its own gear.
+The gi is the first purchase, but many schools include it in the enrollment fee, so ask first. The style matters: Brazilian Jiu-Jitsu requires a heavier, thicker weave gi. Karate uses a lighter cotton gi. Taekwondo uses a dobok, which is different. Don't cross them over, each style has its own gear.
 
 A belt comes from progression. Your child starts at white belt (usually included) and earns higher belts through training. You buy them only when your child advances.
 
-A mouthguard ($10-20) is essential for any style involving sparring. Get a NOCSAE-stamped one rated for impact. Most schools don't require one until a certain belt level, but many kids spar before then.
+A mouthguard is a must for any style involving sparring. Get a NOCSAE-stamped one rated for impact. Most schools don't require one until a certain belt level, but many kids spar before then.
 
 Buy through the school until your child has trained for six months and shown commitment. School-recommended gear fits their standards and usually costs less than retail.
 

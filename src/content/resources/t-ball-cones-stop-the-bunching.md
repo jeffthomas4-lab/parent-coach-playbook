@@ -77,7 +77,7 @@ By the second half of the season, the kids will start to find their positions wi
 
 ## What you need
 
-Five sturdy cones. The 9-inch soccer training cones work. Avoid the floppy folding cones; they fall over in wind. Cost: about $15 for a 6-pack.
+Five sturdy cones. The 9-inch soccer training cones work. Avoid the floppy folding cones; they fall over in wind. A 6-pack is cheap.
 
 A clap that can be heard from second base. Develop one.
 

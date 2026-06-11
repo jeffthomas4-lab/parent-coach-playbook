@@ -75,7 +75,7 @@ Three. They learn to go back to their cone after a play. This solves the bunchin
 
 ## What you bring to practice
 
-A bin of twelve to fifteen plastic cones for the infield positions plus the outfield. They cost ten to fifteen dollars for a set on Amazon or at any local sporting goods store.
+A bin of twelve to fifteen plastic cones for the infield positions plus the outfield. A set is cheap on Amazon or at any local sporting goods store.
 
 A separate bag for hitting cones (the cones you use to set up base paths or to mark drill stations) so the position cones do not migrate.
 

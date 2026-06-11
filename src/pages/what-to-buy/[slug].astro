@@ -69,7 +69,7 @@ const itemListSchema = gearItems.length > 0 ? {
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">
-        <a href="/what-to-buy/" class="hover:underline">Gear Files</a> · {meta.category === 'sport' ? 'Sports' : 'Performing arts'}
+        <a href="/what-to-buy/" class="hover:underline">Gear Files</a> · {meta.category === 'sport' ? 'Sports' : meta.category === 'activity' ? 'Performing arts' : meta.category === 'coach-gear' ? 'Coach gear' : 'Essentials'}
       </p>
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
         Gear file for <em class="text-rust">{guide.data.activity.toLowerCase()}</em>.

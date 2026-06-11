@@ -27,7 +27,7 @@ editorial:
 
 Most young teams clump together around the ball. This drill forces spacing so they learn to spread and pass.
 
-**Equipment needed:** 6 cones, 10-12 kids, 3-4 soccer balls, a 40-by-30-yard space.
+**Equipment needed:** 6 [cones](/go/soccer-cones-12pk/), 10-12 kids, 3-4 [soccer balls](/go/soccer-ball-size4/), a 40-by-30-yard space.
 
 **Setup:** Mark three zones with cones: a back zone (20 yards wide at one end), a middle zone (20 yards wide in the middle), a forward zone (20 yards wide at the other end). Kids are divided into three groups: defenders, midfielders, forwards.
 

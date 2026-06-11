@@ -22,10 +22,10 @@ editorial:
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-09
   status: claude-reviewed
-  reviewerNotes: "Mentions $50 product price without affiliate disclosure; product claim is generic, not a brand recommendation."
+  reviewerNotes: "Product price removed for affiliate compliance; product claim is generic, not a brand recommendation."
 ---
 
-A rebound net (sometimes called a pitch-back) is the best $50 a baseball parent can spend. It returns the ball at different angles depending on where the throw hits, so the kid never gets the same catch twice. This is volume training for catching.
+A [rebound net](/go/baseball-throwback-net/) (sometimes called a pitch-back) is the best money a baseball parent can spend. It returns the ball at different angles depending on where the throw hits, so the kid never gets the same catch twice. This is volume training for catching.
 
 **What you need:** A rebound net. A glove. 1 baseball or tennis ball.
 

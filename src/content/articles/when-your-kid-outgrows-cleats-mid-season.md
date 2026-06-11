@@ -17,7 +17,7 @@ editorial:
 
 Tuesday at 5:25pm. Your kid is putting on his cleats for practice. He says they hurt. You realize they no longer fit.
 
-Three weeks left in the season. New cleats are $60. You don't want to buy them.
+Three weeks left in the season. New cleats cost real money. You don't want to buy them.
 
 **The triage**
 
@@ -39,7 +39,7 @@ The borrowed cleats are fine for three weeks. He won't notice the difference.
 
 Buy the cleat one half-size too big. Add an insole if needed. The cleat will fit for the rest of this season and the start of next.
 
-Don't buy the perfect-fitting cleat for $60 if you'll be buying another in four months.
+Don't buy the perfect-fitting cleat at full price if you'll be buying another in four months.
 
 **The sales rule**
 
@@ -49,7 +49,7 @@ If you have a week to wait, the sales are real. If you need them tomorrow, full 
 
 **The online option**
 
-Used cleats on local marketplace apps. Often $15 to $25. Inspect before buying. Look at the sole. Look at the inside. If they're clean and the sole is intact, they're fine.
+Used cleats on local marketplace apps. Often a fraction of retail. Inspect before buying. Look at the sole. Look at the inside. If they're clean and the sole is intact, they're fine.
 
 Cleats wear out at the sole, not the upper. A cosmetically scuffed cleat with good cleats is fine.
 
@@ -63,9 +63,9 @@ This stretches the life of the cleat by 50%. Saves me a buy a year.
 
 Brand-new top-tier cleats for an eight-year-old. The cleats my kid wanted because pro players wear them.
 
-The $80 to $120 cleats aren't better for a kid this age. They're often heavier, stiffer, and built for adult foot mechanics.
+The top-tier cleats aren't better for a kid this age. They're often heavier, stiffer, and built for adult foot mechanics.
 
-I get the $30 to $50 mid-tier cleat. Lighter. Softer. Fits a kid's foot better.
+I get the mid-tier cleat. Lighter. Softer. Fits a kid's foot better.
 
 **The kid who insists on the brand**
 

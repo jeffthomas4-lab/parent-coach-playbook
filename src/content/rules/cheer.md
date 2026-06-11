@@ -48,7 +48,7 @@ A few specifics.
 
 **Season structure.** All-star season runs roughly August through April. Tryouts in May/June. Practices begin June/July. Competition season starts in November/December and runs through April. Major events: NCA, UCA, The Summit, Worlds.
 
-**Equipment.** Cheer shoes ($60-100), uniform (provided by gym at significant cost, see cost calculator), bow, warm-ups, practice clothes. Mat shoes for practice (sometimes).
+**Equipment.** Cheer shoes, uniform (provided by gym at significant cost, see cost calculator), bow, warm-ups, practice clothes. Mat shoes for practice (sometimes).
 
 **Practice intensity.** Competitive all-star teams practice 6-12 hours per week, with additional tumbling, conditioning, and choreography sessions during peak season.
 

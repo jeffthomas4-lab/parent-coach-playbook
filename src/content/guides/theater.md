@@ -6,7 +6,7 @@ sortOrder: 9
 lede: "School plays, community theater, summer camps. The smallest equipment list of any youth activity. Most of the cost is time and tuition."
 seoTitle: "Kids' Theater Gear: What to Buy Before the First Rehearsal"
 seoDescription: "Rehearsal clothes, character shoes, the makeup kit, and what a production season really costs a theater family."
-costSummary: "$50–150 a year for personal gear at most school programs; $400–1,500 for community-theater tuition or summer camps"
+costSummary: "Personal gear stays cheap at most school programs. Tuition and summer camps are where the money goes."
 seasonNote: "School productions run twice a year (fall and spring). Community theater is year-round. Summer camps run June through August."
 publishedAt: 2026-04-06
 ---
@@ -23,27 +23,19 @@ Most kids start with a summer drama camp or a school program. There's almost not
 
 Black athletic pants or leggings, a black short-sleeve t-shirt, jazz shoes or character shoes if the camp requires them. Some camps will tell you what to bring.
 
-Cost range: $30–60 for the basics if you don't already have them.
-
 **A water bottle**
 
 Yes. Same rule as every other activity.
-
-Cost range: $15–35.
 
 **A binder for the script**
 
 Most programs hand out scripts. A 1-inch binder with a pencil pouch is enough.
 
-Cost range: $5–15.
-
 **A pencil**
 
 Required gear. Theater kids mark their scripts. Mechanical pencils with eraser caps are standard.
 
-Cost range: $1–5.
-
-That's the entire gear list at this age. Total: about $50 to $115.
+That's the entire gear list at this age.
 
 ## Ages 8–10 (Elementary productions and youth ensembles)
 
@@ -53,19 +45,13 @@ Auditions become a real thing. Some kids start to take voice or acting lessons. 
 
 For auditions, kids wear a fitted dance/movement-friendly outfit. Black leggings, fitted t-shirt, jazz shoes. Hair pulled back.
 
-Cost range: $40–80 if you don't already have it.
-
 **A monologue book or two**
 
-For kids who are auditioning regularly. Books of age-appropriate monologues run $15 to $25 each. Two or three is plenty.
-
-Cost range: $30–75.
+For kids who are auditioning regularly. Two or three age-appropriate books is plenty.
 
 **Optional: voice or acting lessons**
 
-Most kids who get serious about theater take private lessons. Voice lessons run $40 to $100 per half hour. Acting lessons run $60 to $150 per session in major markets.
-
-Cost range: $200–500 a month if you go this route.
+Most kids who get serious about theater take private lessons. Rates vary by market.
 
 ## Ages 11–12 (Middle school and youth theater companies)
 
@@ -75,21 +61,17 @@ Youth theater companies become more competitive. Some are auditioned-only. Tuiti
 
 Dance shoes, character shoes, jazz shoes depending on what the audition calls for. Fitted dance leotards or unitards for movement-heavy auditions.
 
-Cost range: $80–150 across multiple shoes.
-
 **Audition song books**
 
-Sheet music for auditions. Most kids accumulate a "book" of 4 to 8 songs they can sing well. Sheet music runs $5 to $10 per song. Many are available digitally.
-
-Cost range: $30–80.
+Sheet music for auditions. Most kids accumulate a "book" of 4 to 8 songs they can sing well. Many are available digitally.
 
 **Show fees**
 
-Some youth theater companies charge per-production fees ($75 to $300 per show) on top of tuition.
+Some youth theater companies charge per-production fees on top of tuition.
 
 **Tuition (community youth theater)**
 
-Annual tuition at community youth theater programs runs $500 to $2,000 a year depending on the program and how many shows your kid is in.
+Tuition at community youth theater programs depends on the program and how many shows your kid is in.
 
 ## Ages 13–14 (Middle school theater and serious youth programs)
 
@@ -97,21 +79,21 @@ This is when many theater kids decide whether they're staying in. Some kids comm
 
 **Stage makeup kit**
 
-Most school programs provide it; some don't. A basic kit (foundation, eyeliner, blush, brushes) runs $60 to $150 for a starter set.
+Most school programs provide it; some don't. A basic starter kit covers foundation, eyeliner, blush, and brushes.
 
 **Voice lessons**
 
-Voice lessons for serious singers become standard. $50 to $150 per half-hour lesson. Many kids take weekly.
+Voice lessons for serious singers become standard. Many kids take weekly.
 
 **Summer intensives or camps**
 
-Most intensives run $1,000 to $4,000 for one to four weeks of programming.
+Most intensives run one to four weeks of programming.
 
 ## Ages 15+ (High school theater)
 
 High-school theater programs typically provide everything for productions: costumes, makeup, props. Most school programs don't charge tuition.
 
-If your kid is auditioning for college programs (BFA, BA in theater), the audition season costs add up fast: $100 to $250 per school audition fee, plus travel to multiple cities. Plan on $2,000 to $5,000 in the senior year for college auditions.
+If your kid is auditioning for college programs (BFA, BA in theater), the audition season costs add up fast: audition fees for each school, plus travel to multiple cities. Plan for it in the senior year.
 
 ## A few honest notes
 
@@ -123,4 +105,6 @@ Most school theater programs welcome volunteer parents (set construction, costum
 
 The kid who tells you they want to do theater "for fun" sometimes turns into the kid who is doing eight productions a year. Pace yourself.
 
-## Sizing 
+## Sizing notes
+
+Need to know what size? See our [Theater sizing guide](/what-to-buy/theater/sizing/).

@@ -27,7 +27,7 @@ editorial:
 
 The first time a kid uses a glove to field a ball, they need to feel where the glove goes (low, on the ground) and what the body does (drop down to meet it). Flat ground means no bounces, no surprises. Just rolls.
 
-**What you need:** A glove, 5 tennis balls or soft baseballs, a flat patch of grass.
+**What you need:** A [glove](/go/baseball-glove-9in-youth/), 5 tennis balls or soft baseballs, a flat patch of grass.
 
 **Setup:** Stand 10 feet from the kid. They face you with the glove on, ready position.
 

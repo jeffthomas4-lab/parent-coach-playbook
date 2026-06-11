@@ -27,7 +27,7 @@ editorial:
 
 A kid who can't toss to themselves and catch can't play backyard catch. This is the first drill where they don't need a partner. They build hand-eye coordination on their own time, on their own.
 
-**What you need:** A glove and one tennis ball or soft baseball.
+**What you need:** A [glove](/go/baseball-glove-9in-youth/) and one tennis ball or soft baseball.
 
 **Setup:** Open space, indoors or outdoors. They stand with feet apart and the glove ready.
 

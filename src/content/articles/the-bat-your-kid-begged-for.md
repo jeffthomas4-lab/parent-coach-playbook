@@ -1,6 +1,6 @@
 ---
 title: "The bat your kid *begged for* (and whether to buy it)"
-dek: "The $250 composite. The $80 drop-5. The promise vs. what they actually need."
+dek: "The top-shelf composite. The entry-level drop-5. The promise vs. what they actually need."
 seoDescription: "Your kid has seen it. Another player walked up to the plate with it. Same brand as a pro player wears. Suddenly your kid needs it."
 topic: "equipment"
 format: "essay"
@@ -17,7 +17,7 @@ Your kid has seen it. Another player walked up to the plate with it. Same brand 
 
 **The ask always comes the same way**
 
-"Can we get the Marucci Elite? Grayson has it. It's $245." Your kid has researched. They know the model. They know the price. They've gone full sales engineer on you.
+"Can we get the Marucci Elite? Grayson has it." Your kid has researched. They know the model. They know the price. They've gone full sales engineer on you.
 
 Your instinct is no. That's a lot of money for a stick. But here's the thing: your kid is getting better. They're on a travel team now or about to be. You want to support them. And maybe, just maybe, a better bat will help.
 
@@ -33,21 +33,21 @@ League rules are real. Little League has one set of bat specs. Travel ball has a
 
 **The expensive bat math**
 
-A $250 composite bat is objectively better than a $80 composite bat. It's balanced differently. The sweet spot is bigger. The feel is refined.
+A top-shelf composite bat is objectively better than an entry-level one. It's balanced differently. The sweet spot is bigger. The feel is refined.
 
 But the difference in exit velocity for an 11-year-old? About 2-3 mph. That's measurable but small.
 
 A 60 mph exit velo with the expensive bat becomes 62-63 mph. That's not nothing. But it's not the difference between playing and not playing.
 
-The $150 bat? You're getting 80% of the performance for 60% of the cost. That's the sweet spot for a kid who's still growing into the game.
+The mid-tier bat? You're getting 80% of the performance for a fraction of the cost. That's the sweet spot for a kid who's still growing into the game.
 
 **The second bat rule**
 
 If your kid is serious about travel ball, own two bats. One is the weapon, the bat that meets the league specs and is proven. The other is the backup.
 
-Don't make the backup bat the expensive one. Make it a solid mid-tier bat. If the expensive one breaks mid-season, you don't replace it for another $250. You use the backup and regroup.
+Don't make the backup bat the expensive one. Make it a solid mid-tier bat. If the expensive one breaks mid-season, you don't replace it at full price. You use the backup and regroup.
 
-Broken bats happen. A kid swings too hard. The seam cracks. It's out of play. If that bat cost $245, you're out $245. If it cost $120, you're out $120.
+Broken bats happen. A kid swings too hard. The seam cracks. It's out of play. If that bat was the top-shelf one, you eat the whole price. If it was mid-tier, the hit is half as bad.
 
 **Why your kid actually wants it**
 
@@ -67,7 +67,7 @@ Your kid wants the pro brand. That matters at this age. It shouldn't, but it doe
 
 The no-name bats are fine. They're legal. They perform. But your kid is 11 and standing next to Grayson with his obvious brand bat. The psychology is real.
 
-Splitting the difference: buy a quality mid-tier brand bat. Not the cheapest. Not the most expensive. The one that's $120-150. Your kid recognizes the brand. It's a legitimate upgrade from the bat they're using. You didn't break the bank.
+Splitting the difference: buy a quality mid-tier brand bat. Not the cheapest. Not the most expensive. Your kid recognizes the brand. It's a legitimate upgrade from the bat they're using. You didn't break the bank.
 
 **The size question**
 
@@ -83,15 +83,15 @@ A coach or a bat specialist can tell you in 30 seconds. Use that information. It
 
 Some sports stores have a 30-day return policy on bats. Swing the bat you're thinking about buying. Keep the receipt. If the kid loves it and uses it, you're done. If it feels off after a week of practice, you return it.
 
-This is smart for $250 bats. Less critical for $120 bats, but still worth doing.
+This is smart for expensive bats. Less critical for mid-tier bats, but still worth doing.
 
 **The actual recommendation**
 
-Buy the mid-tier bat ($120-150) in the size that matches the kid's current frame, from a brand the kid recognizes. Support the upgrade. Mean it. Explain that as they grow, they get new equipment.
+Buy the [mid-tier bat](/go/baseball-bat-28in/) in the size that matches the kid's current frame, from a brand the kid recognizes. Support the upgrade. Mean it. Explain that as they grow, they get new equipment.
 
 In eighth grade, if they're still playing, revisit the expensive bats. By then, they'll be ready, and they'll have earned the upgrade.
 
-Your kid doesn't need the $250 bat to be good. They need good coaching, real practice, and the right swing path. The bat is one tool. Don't mistake it for the whole game.
+Your kid doesn't need the top-shelf bat to be good. They need good coaching, real practice, and the right swing path. The bat is one tool. Don't mistake it for the whole game.
 
 **The thing you actually say**
 

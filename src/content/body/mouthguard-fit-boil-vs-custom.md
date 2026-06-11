@@ -1,6 +1,6 @@
 ---
 title: "Mouthguard fit: *boil-and-bite vs custom*"
-summary: "The 12-dollar option works. The 200-dollar option works better. The actual difference, and when paying for custom matters."
+summary: "The boil-and-bite option works. The custom option works better. The actual difference, and when paying for custom matters."
 subhub: "safety"
 safetyCategory: "equipment-certification"
 format: "topic"
@@ -40,9 +40,9 @@ Marketed but not supported by published evidence: concussion reduction. The Amer
 
 **The three categories.**
 
-Stock mouthguards. Pre-formed, pop-in. Cheap (under $5). The fit is poor, the kid often does not wear it, and it provides minimal protection. Not appropriate for any contact sport.
+Stock mouthguards. Pre-formed, pop-in. Cheap. The fit is poor, the kid often does not wear it, and it provides minimal protection. Not appropriate for any contact sport.
 
-Boil-and-bite. The most common youth-sports mouthguard. Soften in hot water, mold to the kid's bite. $10 to $30. Properly fitted, provides meaningful dental protection. Improperly fitted (loose, gappy, never re-molded), provides much less.
+Boil-and-bite. The most common youth-sports mouthguard. Soften in hot water, mold to the kid's bite. Cheap. Properly fitted, provides meaningful dental protection. Improperly fitted (loose, gappy, never re-molded), provides much less.
 
 Custom (lab-made). Made by a dentist or sports dentist from a model of the kid's teeth. $100 to $300. Best fit, best retention, most comfortable, longest-lasting.
 

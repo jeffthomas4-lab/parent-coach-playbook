@@ -19,7 +19,7 @@ Buying used gear saves money. Some used gear is smart. Some is a mistake. Three 
 **The insole rule**
 Insoles are personal. Don't buy used insoles. Not from your cousin. Not from a yard sale. Your kid's foot is his. His arch is his. His pressure points are his. A used insole is shaped to someone else.
 
-Buy used shoes. Replace the insoles. Fifteen dollars for new ones. Problem solved. This applies to soccer, baseball, basketball, everything. New insoles, every time.
+Buy used shoes. Replace the insoles. New ones are cheap. Problem solved. This applies to soccer, baseball, basketball, everything. New insoles, every time.
 
 **The helmet rule**
 Helmets expire. Not technically. Functionally. The foam deteriorates. After three years, even if it looks fine, the protection is gone.

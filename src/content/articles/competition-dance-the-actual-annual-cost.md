@@ -77,7 +77,7 @@ Real class/coaching budget: $3,000-5,000 per year
 
 **The accessories**
 
-Dance shoes/competition shoes: $150-250 per pair (you might buy 2-3 pairs)
+Dance shoes/competition shoes: you might buy 2-3 pairs over the season
 
 Hair and makeup for competitions: $50-100 per competition (sometimes included, sometimes not)
 

@@ -82,9 +82,9 @@ The "I can't see the ball" complaint should be taken seriously. Switch to a diff
 
 **Cost.**
 
-C-flaps: $30 to $80 aftermarket attachment.
+C-flaps: the cheaper aftermarket attachment.
 
-Full cages: $40 to $120 attached or built into helmet.
+Full cages: attached or built into helmet, cost a bit more.
 
 For comparison, the cost of one urgent dental visit after a foul-ball facial injury is typically $500 to $5,000. The cost-benefit math leans toward face protection for almost any kid where it is comfortable.
 

@@ -3,7 +3,7 @@ title: Your First Season of Cross Country
 dek: The shoes are the equipment, the team is the point, and your job is to learn where mile two happens.
 seoTitle: "First Season of Cross Country: A Parent's Honest Guide"
 seoDescription: "First-year cross country parents: why trainers are the only real expense, what meets look like, how scoring works, and the cold-weather kit."
-bluf: "Cross country needs one thing: real running shoes, $60 to $90 in grade school sizes. Practices run most weekdays, meets are weekend mornings where your kid races 1 to 3 miles, and the team score counts the top five finishers, so every runner matters. It's the best team sport disguised as an individual one."
+bluf: "Cross country needs one thing: real running shoes. Practices run most weekdays, meets are weekend mornings where your kid races 1 to 3 miles, and the team score counts the top five finishers, so every runner matters. It's the best team sport disguised as an individual one."
 topic: season-ops
 format: note
 phase: drive-there

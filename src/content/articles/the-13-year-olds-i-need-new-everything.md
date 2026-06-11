@@ -45,7 +45,7 @@ Then you triage together:
 
 Shoes: Put them on. Is there a finger of space at the heel? (If not, they're too small. If yes, they're fine.) If they hurt, they're too small. New shoes.
 
-Protective gear (shin guards, gloves, etc.): Can you squeeze your hand in? Can your toes still wiggle? If yes on both, they still fit. If no on either, they're too small. But "too small" might mean you just need to adjust straps, not replace.
+Protective gear ([shin guards](/go/soccer-shin-guards-ankle-youth/), gloves, etc.): Can you squeeze your hand in? Can your toes still wiggle? If yes on both, they still fit. If no on either, they're too small. But "too small" might mean you just need to adjust straps, not replace.
 
 Shorts: Can you move your legs fully? Can you sit down and bend? If yes, they work. If they're cutting off circulation, they're too small. But most kids exaggerate here.
 
@@ -55,9 +55,9 @@ Jersey/shirts: Usually fine even if tight. They don't affect performance.
 
 **The actual budget**
 
-New cleats: $60-100
-New protective gear (whatever actually needs replacing): $80-150
-New shorts (only if totally too small): $30-50
+New cleats
+New protective gear (whatever actually needs replacing)
+New shorts (only if totally too small)
 
 Real budget: $140-300, not $600.
 
@@ -89,7 +89,7 @@ Your kid is 13. They're probably on a travel team. Someone on the team got new g
 
 Ask in the team chat: "We need new shin guards and gloves. Anyone have gear growing out of?"
 
-You'll get responses. Most families have a closet full of outgrown stuff. A $40 payment for shin guards that cost $90 is smart for both families.
+You'll get responses. Most families have a closet full of outgrown stuff. Paying a fraction of the new price for barely-used shin guards is smart for both families.
 
 This cuts your budget from $250 to $150. That changes the conversation from "we're struggling" to "we're being smart."
 

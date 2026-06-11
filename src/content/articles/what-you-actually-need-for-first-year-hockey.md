@@ -1,6 +1,6 @@
 ---
 title: "What you actually need for *first-year hockey*"
-dek: "The $800 starter kit vs. the $400 one. The skates you'll replace twice. The protection that matters."
+dek: "The $800 first year vs. the $400 one. The skates you'll replace twice. The protection that matters."
 seoDescription: "Hockey startup costs feel insane. You see families walking out of the ice rink with bags that cost more than a car payment."
 topic: "equipment"
 format: "note"
@@ -19,67 +19,67 @@ Your kid wants to try hockey. You don't know what's necessary and what's parents
 
 Here's the actual list. What you need. What you can skip. What you replace first.
 
-**The skates. $80 to $150.**
+**The skates.**
 
 Your kid's feet grow. Skating is 60% of the game. Buy decent skates, not top-tier skates.
 
-Youth skates from Bauer, CCM, or Graf in the $100-130 range are solid. They fit well. They last a season or two. Then your kid outgrows them.
+Entry-level youth skates from Bauer, CCM, or Graf are solid. They fit well. They last a season or two. Then your kid outgrows them.
 
-Don't buy $300 skates for a first-year player. Buy $120 skates. In two years, buy different ones.
+Don't buy top-tier skates for a first-year player. Buy mid-range skates. In two years, buy different ones.
 
-Rented skates are an option if you're uncertain. Most rinks offer rental programs. $20-30 per season. If your kid sticks with hockey, buy skates. If they quit, you saved $300.
+Rented skates are an option if you're uncertain. Most rinks offer rental programs. $20-30 per season. If your kid sticks with hockey, buy skates. If they quit, you saved the price of skates.
 
 **The protective gear. $200 to $280.**
 
-Helmet with face mask: $60-80. Non-negotiable. Buy new. Don't rent. Helmets expire after three years; rental helmets are ancient.
+Helmet with face mask: Non-negotiable. Buy new. Don't rent. Helmets expire after three years; rental helmets are ancient.
 
-Shoulder pads: $40-60. Adequate shoulder protection is necessary. Don't cheap out. Kids get hit.
+Shoulder pads: Adequate shoulder protection is necessary. Don't cheap out. Kids get hit.
 
-Elbow pads: $20-30. Elbows break before shoulders. Good elbow protection is worth the cost.
+Elbow pads: Elbows break before shoulders. Good elbow protection is worth the cost.
 
-Gloves: $50-70. Hockey gloves take the impact. Your kid's hands are their hands. Protect them.
+Gloves: Hockey gloves take the impact. Your kid's hands are their hands. Protect them.
 
-Shin guards: $30-50. Shins get slashed. Adequate shin protection prevents injuries.
+Shin guards: Shins get slashed. Adequate shin protection prevents injuries.
 
-Pants: $60-80. Hockey pants are thick. They protect hips, thighs, and tailbone.
+Pants: Hockey pants are thick. They protect hips, thighs, and tailbone.
 
 That's $260-370 for new gear. Most families spend $280-320. It's real money. It's also necessary.
 
-**The skate guards and bag. $30 to $50.**
+**The skate guards and bag.**
 
-Skate guards: $10-15. Thin plastic guards that go under the blades. They protect your floors and the skate blades.
+Skate guards: Thin plastic guards that go under the blades. They protect your floors and the skate blades.
 
-Hockey bag: $40-70. You need somewhere to carry wet gear and keep it from your car interior.
+Hockey bag: You need somewhere to carry wet gear and keep it from your car interior.
 
 Skip the bag if you're renting or on a tight budget. Use a gym bag temporarily. Buy a hockey bag once you're committed.
 
-**The stick. $25 to $60.**
+**The stick.**
 
-First-year players use composite or wood sticks in the $25-40 range. They break them. They lose them. Don't invest in a $100+ stick yet.
+First-year players use entry-level composite or wood sticks. They break them. They lose them. Don't buy a top-shelf stick yet.
 
 Youth sticks in the right length are the only rule. Measure your kid: they stand in street clothes, and the stick reaches their chin. Too long is worse than too short.
 
 Composite sticks are lighter and feel better. Wood sticks are durable and cheap. Start with composite if the budget allows. Switch to wood if sticks are breaking constantly.
 
-**The extras you'll be asked to buy. $50 to $100.**
+**The extras you'll be asked to buy.**
 
-Neck guard: $15-25. Some leagues require it. Check your league. Some parents skip it; some consider it essential. You decide based on your kid's risk tolerance and your league's rules.
+Neck guard: Some leagues require it. Check your league. Some parents skip it; some consider it essential. You decide based on your kid's risk tolerance and your league's rules.
 
-Mouth guard: $15-25. Check your league rules. Some require it. Some don't. If required, buy it. If not, ask your coach if they recommend it.
+Mouth guard: Check your league rules. Some require it. Some don't. If required, buy it. If not, ask your coach if they recommend it.
 
-Base layers: $30-50. Thermal underwear designed for hockey keeps your kid comfortable under the padding. You can use regular base layers from any athletic brand. Doesn't have to be hockey-specific.
+Base layers: Thermal underwear designed for hockey keeps your kid comfortable under the padding. You can use regular base layers from any athletic brand. Doesn't have to be hockey-specific.
 
 **The actual starter budget**
 
-Skates: $120
-Protective gear: $300
-Bag: $50
-Stick: $40
-Neck guard (if required): $20
-Mouth guard (if required): $20
-Base layers: $40
+Skates
+Protective gear
+Bag
+Stick
+Neck guard (if required)
+Mouth guard (if required)
+Base layers
 
-**Total: $590**
+**Total: about $590**
 
 This gets your kid on the ice with everything they actually need.
 

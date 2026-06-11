@@ -12,7 +12,7 @@ hero: /illustrations/night-before-tryouts.webp
 heroAlt: "A kid's bedroom at night. Cleats, glove, and folded jersey laid out on a chair. Soft lamp light and muted rose tones, parent silhouette in doorway."
 ---
 
-Your kid packed their bag four times tonight. Pinnies, right shoes, water bottle that doesn't leak, spare hair ties from earlier losses. You watch them line them up, pull them out, put them back.
+Your kid packed their bag four times tonight. Pinnies, right shoes, [water bottle](/go/multi-sport-water-bottle/) that doesn't leak, spare hair ties from earlier losses. You watch them line them up, pull them out, put them back.
 
 They're trying to make the A team. You pretend to have an opinion about what goes in the bag, because you think it helps to have someone in the room.
 

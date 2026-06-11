@@ -4,21 +4,21 @@ category: "sport"
 sortOrder: 15
 lede: "Most crew equipment is provided by the club. What you buy is the personal kit: unisuit, technical socks, windbreaker, and sun protection."
 seoTitle: "Youth Crew and Rowing Gear: What to Buy for a First Season"
-seoDescription: "What a new rower actually needs, from trou to water bottle, what the boathouse provides, and what a season costs."
-costSummary: "$150-200 to start"
+seoDescription: "What a new rower actually needs, from trou to water bottle, and what the boathouse provides."
+costSummary: "The club provides the expensive equipment. You buy the personal kit."
 seasonNote: "Junior crew season runs spring, typically February through May. Some clubs offer summer camps or fall racing. Check your local program."
 publishedAt: 2026-04-30
 ---
 
 ## What you actually need
 
-A unisuit ($60-100) is the main purchase. This is a one-piece athletic outfit that serves as your rower's uniform. Most clubs require a specific color or style, so confirm with your coach before buying. High-quality unisuits fit snug and last multiple seasons.
+A unisuit is the main purchase. This is a one-piece athletic outfit that serves as your rower's uniform. Most clubs require a specific color or style, so confirm with your coach before buying. High-quality unisuits fit snug and last multiple seasons.
 
-Technical socks ($15-25) matter for cold-weather practice on the water. Regular socks get wet and cause blisters. Thermal socks designed for athletic use stay dry and warm. Get at least two pairs.
+Technical socks matter for cold-weather practice on the water. Regular socks get wet and cause blisters. Thermal socks designed for athletic use stay dry and warm. Get at least two pairs.
 
-A windbreaker ($40-80) protects against wind and water spray. Your rower will be wet and cold during practice, and a good technical jacket makes a real difference. Avoid cotton, it holds water. Look for nylon or polyester blends.
+A windbreaker protects against wind and water spray. Your rower will be wet and cold during practice, and a good technical jacket makes a real difference. Avoid cotton, it holds water. Look for nylon or polyester blends.
 
-Sunscreen ($10) and sunglasses with retainers ($20-40) finish the list. Rowers spend hours on the water in direct sun, and the reflection off the water intensifies UV exposure. Sunglasses with retainers stay on during workouts.
+Sunscreen and sunglasses with retainers finish the list. Rowers spend hours on the water in direct sun, and the reflection off the water intensifies UV exposure. Sunglasses with retainers stay on during workouts.
 
 The club provides the boat, oars, and shoes.
 

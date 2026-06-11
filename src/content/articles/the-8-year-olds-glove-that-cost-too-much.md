@@ -1,6 +1,6 @@
 ---
 title: "The *8-year-old's glove* that cost too much"
-dek: "You spent $180 on a glove. They are eight. Here is what you actually needed to buy."
+dek: "You spent too much on a glove. They are eight. Here is what you actually needed to buy."
 seoDescription: "You walked into the sporting-goods store last spring. Your eight-year-old said the orange one was cool. The salesperson said it was a great glove."
 topic: "equipment"
 format: "note"
@@ -17,13 +17,13 @@ Six months later, the leather is barely broken in, the wrist strap is half-chewe
 
 Here is what you actually needed.
 
-**The $50 to $80 glove**
+**The entry-level glove**
 
-A youth-sized leather glove from a real brand (Wilson, Rawlings, Mizuno) at the entry level is what an eight-year-old needs. Eleven to eleven-and-a-half inches. Mid-flex. Pre-broken-in if the budget allows.
+A [youth-sized leather glove](/go/baseball-glove-youth/) from a real brand (Wilson, Rawlings, Mizuno) at the entry level is what an eight-year-old needs. Eleven to eleven-and-a-half inches. Mid-flex. Pre-broken-in if the budget allows.
 
 The glove is a tool. The kid is going to grow out of it in eighteen months. Spending three times the price on a glove they will outgrow does not produce a better baseball player. It produces a more expensive end-of-season donation to the team's loaner bin.
 
-**Why the $180 glove is a mistake at 8**
+**Why the top-shelf glove is a mistake at 8**
 
 Three reasons.
 
@@ -31,7 +31,7 @@ The leather is stiffer. Higher-end gloves are built for adult hands and longer b
 
 The size is often wrong. Premium gloves run larger and heavier. An eight-year-old gets fatigued by inning four. The glove is fighting them.
 
-The investment changes how parents react when the glove is left at the field. The $50 glove is a recoverable mistake. The $180 glove is a fight at dinner.
+The investment changes how parents react when the glove is left at the field. The entry-level glove is a recoverable mistake. The expensive glove is a fight at dinner.
 
 **What to do with the expensive one you already bought**
 
@@ -41,13 +41,13 @@ If they outgrow it before they fit into it, it has resale value. A clean, broken
 
 **What to buy next**
 
-For your eight-year-old right now, find a $40 to $70 glove that fits today. Use it this season. Save the premium one for when their hand has grown into it.
+For your eight-year-old right now, find an entry-level glove that fits today. Use it this season. Save the premium one for when their hand has grown into it.
 
 The kid will catch more balls. They will stop asking for a different glove every two months. The math works.
 
 **The lesson the kid learns**
 
-The glove your kid develops with is the glove they trust. A worn, well-fitting $60 glove builds confidence. A stiff, oversized $180 glove builds self-doubt every time a routine grounder bounces off the heel.
+The glove your kid develops with is the glove they trust. A worn, well-fitting entry-level glove builds confidence. A stiff, oversized top-shelf glove builds self-doubt every time a routine grounder bounces off the heel.
 
 Trust is built in repetition. Repetition needs the right tool. The right tool at eight is not the most expensive one.
 

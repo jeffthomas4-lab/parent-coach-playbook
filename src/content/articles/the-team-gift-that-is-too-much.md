@@ -36,7 +36,7 @@ Three things to know.
 
 **Push back on the dollar amount, not on the gift.** "I love the idea of a coach gift. Could we do $20 a family and still do something nice? Or a card with a contribution from each kid?" That reframes from "you're cheap" to "you're cost-conscious." Most team moms will adjust.
 
-**Suggest a different shape.** A meaningful card with notes from each kid is more valued by most coaches than a $1,000 watch. Coaches who have been doing this a while have a closet of generic gifts. The signed ball, the team picture in a frame, the kid-written notes, those land. The expensive watch sits in a drawer.
+**Suggest a different shape.** A meaningful card with notes from each kid is more valued by most coaches than an expensive watch. Coaches who have been doing this a while have a closet of generic gifts. The signed ball, the team picture in a frame, the kid-written notes, those land. The expensive watch sits in a drawer.
 
 If the team mom won't budge, you don't have to participate. "We're going to do something separately. Thank you for organizing." Done. You're not in conflict, you're not a freeloader, you're handling your own family.
 

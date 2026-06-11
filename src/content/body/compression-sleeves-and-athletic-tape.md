@@ -142,11 +142,11 @@ Persistent rash, blistering, or weeping skin after taping is a sign to stop and 
 
 **The cost-vs-benefit math.**
 
-Compression sleeves: $15 to $50. Effect modest. Worth it for kids who like the feel.
+Compression sleeves: cheap. Effect modest. Worth it for kids who like the feel.
 
-Kinesiology tape: $10 to $20 per roll. Effect mostly placebo. Worth it if the kid believes in it.
+Kinesiology tape: cheap per roll. Effect mostly placebo. Worth it if the kid believes in it.
 
-Athletic tape: $5 to $10 per roll. Effect real for the right application. Essential for many kids returning from injury.
+Athletic tape: cheap per roll. Effect real for the right application. Essential for many kids returning from injury.
 
 The pricing is generally accessible; the question is appropriate use, not cost.
 

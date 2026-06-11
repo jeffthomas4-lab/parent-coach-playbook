@@ -19,7 +19,7 @@ You have 24 hours. Here's how to actually solve it.
 
 **The panic equation**
 
-All-black uniform + last-minute notice = $60-100 in gear you're going to buy on Saturday.
+All-black uniform + last-minute notice = a cart full of gear you're going to buy on Saturday.
 
 Avoid that. Read below first. Then panic if necessary.
 
@@ -40,7 +40,7 @@ Most families are missing one thing: matching black socks that are athletic sock
 
 Dress socks are too thick. Crew socks bunch. You need athletic socks that come mid-calf, are thin and dark, and fit tight.
 
-Target, Dick's, Academy Sports: $8-12 for a three-pack. You can get these today in most places.
+Target, Dick's, Academy Sports: a cheap three-pack. You can get these today in most places.
 
 **The shirt situation**
 
@@ -50,7 +50,7 @@ Old black soccer jersey: Usually fine. Some tournaments care that it's not a jer
 
 Plain black T-shirt under a black long-sleeve shirt: Totally acceptable for most sports.
 
-Black athletic shirt from Target: $12-15. A solid backup.
+Black athletic shirt from Target: A solid backup.
 
 Check the tournament rules. Some are strict: "Plain black, no logos." Others just want the team color-coordinated. Know what "all black" actually means before you buy.
 
@@ -60,7 +60,7 @@ Black athletic shorts are black athletic shorts. Whether they say "Soccer" or ca
 
 Khaki shorts don't count. Navy shorts don't count. You need actual black.
 
-If you don't have black shorts, Target again: $18-25. You're looking at 15-20 minutes total.
+If you don't have black shorts, Target again. You're looking at 15-20 minutes total.
 
 **The shoes rule**
 
@@ -87,7 +87,7 @@ One thing is fixable in 24 hours. Five things is not.
 
 **The Saturday morning backup plan**
 
-Dicks Sporting Goods opens at 9 or 10 am. They have black athletic socks, shorts, and plain black shirts. Total cost: $50-60. You're in and out in 15 minutes.
+Dicks Sporting Goods opens at 9 or 10 am. They have black athletic socks, shorts, and plain black shirts. You're in and out in 15 minutes.
 
 Target opens at 7 am in most places. Same backup: socks, shorts, shirt. Same cost. Same 15 minutes.
 
@@ -117,7 +117,7 @@ Know the exact rule. It changes what you're solving for.
 
 Bring backup socks to the tournament. Black athletic socks are easy to stain, tear, or lose. If your kid's socks get wet mid-game or a seam splits, having a spare pair in your car means you're not freaking out between games.
 
-A $12 three-pack from Target in your car is the best tournament investment you make.
+A cheap three-pack from Target in your car is the best tournament move you make.
 
 **The final move**
 

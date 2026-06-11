@@ -27,7 +27,7 @@ editorial:
 
 The tee is where batting starts. Kids this age need to build the habit of seeing the ball, setting their feet, and following through. This drill is about repetition and a single technical point: contact in front of the plate.
 
-**Equipment needed:** One T-ball tee, 15 plastic or safety-core baseballs, a bucket, one bat appropriate for the age.
+**Equipment needed:** One T-ball tee, 15 plastic or safety-core [baseballs](/go/baseball-balls-teeball/), a bucket, one [bat](/go/baseball-bat-teeball/) appropriate for the age.
 
 **Setup:** Place the tee at home plate in your yard or field. Space yourself 20 feet away with the bucket of balls. A fence or net behind the tee catches balls and keeps the drill contained.
 

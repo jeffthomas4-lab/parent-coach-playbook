@@ -27,9 +27,9 @@ editorial:
 
 Dribbling starts with confidence and touch. This game forces ball control because getting tagged means you're out. Kids learn to protect the ball while moving fast.
 
-**Equipment needed:** One soccer ball per child (or one per three kids in rotation), a defined space about 30 by 30 yards.
+**Equipment needed:** One [soccer ball](/go/soccer-ball-size3/) per child (or one per three kids in rotation), a defined space about 30 by 30 yards.
 
-**Setup:** Mark a square with cones. All kids enter with a ball at their feet except two kids who are the "sharks."
+**Setup:** Mark a square with [cones](/go/soccer-cones-12pk/). All kids enter with a ball at their feet except two kids who are the "sharks."
 
 **How to run it:**
 

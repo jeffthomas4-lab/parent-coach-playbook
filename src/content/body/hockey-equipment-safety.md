@@ -36,7 +36,7 @@ Full face shields, not half-cages, are required for players under 18 in USA Hock
 
 **Neck guards: the BNQ standard.** USA Hockey requires goalies to wear a Bureau de normalisation du Québec (BNQ)-certified neck and collarbone protector for ages 12 and under. Many leagues mandate it for all goalies. Many also require neck guards for skaters, though the rule is league-specific.
 
-The neck guard is the piece of equipment that sounds optional and is not. Goalies catch errant skate blades to the throat in a non-trivial percentage of high-speed save sequences. The protector adds about $25 to the gear list and dramatically lowers the risk profile.
+The neck guard is the piece of equipment that sounds optional and is not. Goalies catch errant skate blades to the throat in a non-trivial percentage of high-speed save sequences. The protector adds little cost to the gear list and dramatically lowers the risk profile.
 
 **Mouthguards.** Most USA Hockey-affiliated leagues require mouthguards for skaters under 18. Boil-and-bite is the floor; custom-fit is better; a mouthguard with a tether to the helmet cage is the operational standard for most kids who would otherwise lose it.
 

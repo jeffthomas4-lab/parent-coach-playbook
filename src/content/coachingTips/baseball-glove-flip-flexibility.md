@@ -27,7 +27,7 @@ editorial:
 
 A new glove is stiff. A kid's hand inside a stiff glove can't squeeze, so balls bounce out. Five minutes a day of glove flexing fixes both problems and makes the glove feel like part of their hand.
 
-**What you need:** Their glove. One baseball or tennis ball.
+**What you need:** Their [glove](/go/baseball-glove-9in-youth/). One baseball or tennis ball.
 
 **Setup:** They sit cross-legged on the floor with the glove on their hand.
 

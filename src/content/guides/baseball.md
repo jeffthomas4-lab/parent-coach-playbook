@@ -5,8 +5,8 @@ category: "sport"
 sortOrder: 1
 lede: "Glove, bat, helmet, cleats. The list grows by age. Most parents buy the wrong size at least once. Here is what actually works."
 seoTitle: "Youth Baseball Gear List by Age: What to Buy (and Skip)"
-seoDescription: "Every glove, bat, helmet, and cleat a kid actually needs from tee-ball to high school, with prices, sizing tests, and the gear you can skip."
-costSummary: "$150–250 to outfit tee-ball; $350–600 by little league with travel"
+seoDescription: "Every glove, bat, helmet, and cleat a kid actually needs from tee-ball to high school, with sizing tests and the gear you can skip."
+costSummary: "Tee-ball is the cheap year. Costs climb once travel ball starts."
 seasonNote: "Spring is the main season. Fall ball is optional and often shorter. Winter cages and lessons start in January."
 publishedAt: 2026-01-12
 ---
@@ -19,7 +19,7 @@ Here is what you actually need, by age. We have bought the wrong thing in almost
 
 ## Ages 5–7 (Tee-ball)
 
-This is the year of *let's see if they like it*. Buy the basics. Don't buy a $200 bat for a 5-year-old who may switch to soccer in three weeks.
+This is the year of *let's see if they like it*. Buy the basics. Don't buy a top-shelf bat for a 5-year-old who may switch to soccer in three weeks.
 
 **A 9-inch glove**
 
@@ -27,14 +27,12 @@ A 9-inch glove fits a 5-to-7-year-old hand. Anything bigger is for show. Look fo
 
 How to choose: have your kid hold the glove out and squeeze it shut with one hand. If they can't close it, it is too big. If it flops around their hand like a sock, it is too small.
 
-Cost range: $20–40. Don't go higher at this age.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mizuno Prospect PowerClose Youth Glove</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">9-inch youth glove built for small hands. The PowerClose design and soft palm liner help kids actually close the glove on their first day.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Overall versatility, works with players who have small hands. Good quality for the price.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Overall versatility, works with players who have small hands. Holds up season after season.</p>
     <a href="/go/baseball-glove-9in-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -45,8 +43,6 @@ Cost range: $20–40. Don't go higher at this age.
 Tee-ball bats are aluminum, light, and short. Look for a 24-to-26 inch length and 13-to-15 ounce weight. Most leagues mark approved bats with a stamp.
 
 How to choose: the one-arm test. Have your kid extend the bat horizontally from one arm at shoulder height. If they can hold it for 5 to 10 seconds without dropping, the weight is right. If their arm sags immediately, go lighter.
-
-Cost range: $25–50.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -63,8 +59,6 @@ Cost range: $25–50.
 
 Most leagues provide team helmets. If yours doesn't, get a basic youth helmet sized to fit snugly without pinching. The helmet should not move when your kid shakes their head.
 
-Cost range: $25–40.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
@@ -80,13 +74,9 @@ Cost range: $25–40.
 
 Tee-ball can be played in regular sneakers. Plastic cleats are nice if you have them, not necessary. If you buy cleats, buy a half-size up so they last through the season.
 
-Cost range: $30–55.
-
 **Pants and a belt**
 
 Leagues usually require white or gray pants. The team provides the jersey. A simple elastic belt works. If you have a choice, pick gray or tan pants over white. White stains easily and stays stained. Way easier to keep clean if you avoid white.
-
-Cost range: $20–30 for pants, $8–12 for a belt.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -114,8 +104,6 @@ Cost range: $20–30 for pants, $8–12 for a belt.
 
 Most kids won't catch in tee-ball. If yours wants to try, or wants to play catcher in the backyard, a 32-inch youth catcher's mitt fits the hand and the role. Most leagues provide team gear; this is the at-home option.
 
-Cost range: $40–80.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
@@ -139,13 +127,11 @@ Move up from the 9-inch tee-ball glove to a 10-or-11-inch infield glove. The web
 
 How to choose: your kid should be able to fully open and close the glove with one hand. If you have to help them break it in, plan to play catch with them for a week of evenings before opening day.
 
-Cost range: $35–80. The $80 gloves last longer and feel better.
+The more expensive gloves last longer and feel better.
 
 **A 27-to-28 inch bat**
 
 The one-arm test still works. At this age, bats run 27 to 29 inches and 17 to 22 ounces. Lighter is almost always better. A bat that's too heavy turns into a slow, late swing and a frustrated kid.
-
-Cost range: $50–120.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -162,8 +148,6 @@ Cost range: $50–120.
 
 Most coach-pitch kids don't need them. By age 10, some kids want them because they see older kids wearing them. They do help with grip and they hide blisters.
 
-Cost range: $15–30.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 8–10</div>
@@ -179,8 +163,6 @@ Cost range: $15–30.
 
 Plastic-stud cleats are the standard. Metal cleats are not legal in most leagues until age 13. Look for cleats with a high enough collar to stop ankle rolls.
 
-Cost range: $40–80.
-
 ## Ages 11–12 (Player-pitch and middle-school feeder)
 
 This is when most kids decide if they're staying in the sport. The gear list gets longer. The real cost is travel ball if you go that route.
@@ -191,19 +173,15 @@ Infielders use 11-inch gloves. Outfielders use 12-inch. If your kid plays multip
 
 How to choose: position-specific gloves matter starting at this age. If your kid is a pitcher, the glove should have a closed web (the opponent shouldn't see your kid's grip on the ball).
 
-Cost range: $80–180.
-
 **A 29-to-30 inch bat**
 
 Look for the USSSA stamp if your league requires it. For Little League, use a USABat-approved bat with drop weight of -10 or -11 per USA Baseball rules. Drop weight (the difference between length and weight) usually goes from -10 to -8 in this age band. The one-arm test still works. Don't buy your kid a heavier bat to "make them stronger."
 
-Cost range: $80–250 for a decent name-brand bat. The $400 composite bats are not necessary.
+A decent name-brand bat does the job. The top-shelf composite bats are not necessary.
 
 **A protective cup**
 
 This is a conversation no parent enjoys. Buy one before the season starts. Your kid will not like it. They will get over it.
-
-Cost range: $15–25.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -218,9 +196,7 @@ Cost range: $15–25.
 
 **Catcher's gear (only if your kid is the catcher)**
 
-Most leagues provide team catcher's gear. If you go travel ball, you may need your own. Helmet, chest protector, leg guards, and a catcher's mitt run $300 to $500 as a set.
-
-Cost range: $300–500 for the full set if needed.
+Most leagues provide team catcher's gear. If you go travel ball, you may need your own. Helmet, chest protector, leg guards, and a catcher's mitt come as a set.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -237,8 +213,6 @@ Cost range: $300–500 for the full set if needed.
 
 A full catcher's setup does not fit in a regular equipment bag. Wheeled or backpack-style catcher's bags carry helmet, chest protector, leg guards, mitt, and bat in one piece. Worth the upgrade once your kid catches more than once a week.
 
-Cost range: $40–80.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
@@ -254,8 +228,6 @@ Cost range: $40–80.
 
 Sliding mitts protect the lead hand on head-first slides. Optional but cheap insurance against jammed fingers and bent thumbs. Most kids stop wearing them by 14.
 
-Cost range: $20–40.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
@@ -269,7 +241,7 @@ Cost range: $20–40.
 
 ## Ages 13–14 (Junior high / pony / travel)
 
-The bat rules change here (BBCOR for high school, USSSA for travel). The glove gets full-size. Investments start to be worth making.
+The bat rules change here (BBCOR for high school, USSSA for travel). The glove gets full-size. Upgrades start to be worth making.
 
 **A 12-inch glove**
 
@@ -277,27 +249,34 @@ Outfielders go to 12 to 12.75 inch. Infielders stay around 11.5 to 12 inch. Pitc
 
 How to choose: your kid should help pick this one. They will be using it for at least three seasons.
 
-Cost range: $150–300.
-
 **A BBCOR or USSSA bat**
 
 Check league rules before buying. BBCOR (high school) bats run -3 drop weight (heavier). USSSA (travel) bats run -8 to -10. They are not interchangeable.
 
-How to choose: the one-arm test still works, but at this age the swing speed matters more than the bat tech. Don't get talked into a $500 composite bat unless your kid is a serious hitter.
+How to choose: the one-arm test still works, but at this age the swing speed matters more than the bat tech. Don't get talked into a top-shelf composite bat unless your kid is a serious hitter.
 
-Cost range: $150–400.
+**Batting gloves (adult sizes now)**
+
+Most kids cross into adult small around 13. The youth pairs stop fitting mid-season, usually the week of a tournament.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Franklin Shok-Sorb X batting gloves (adult)</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The adult version of the same padded-palm Franklin pair we recommend at 8 to 10. Cushions mishits, runs true to the size chart, works for baseball and softball.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Measure the hand against Franklin's chart instead of guessing up from the youth size. A loose batting glove wears through in a month.</p>
+    <a href="/go/baseball-batting-gloves-adult/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Metal cleats (now legal in most leagues)**
 
 Metal cleats grip better but cost more. Plastic still works. If your kid plays travel ball on dirt infields, metal is worth the money.
 
-Cost range: $70–150.
-
 **An arm sleeve**
 
 Pitchers and outfielders wear them for warmth and light compression on the throwing arm. Common in cold-weather games and early-spring practices. Not necessary for tee-ball or rec league.
-
-Cost range: $10–20.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -314,9 +293,9 @@ Cost range: $10–20.
 
 The economics change here. Most high-school programs supply jerseys, helmets, and field gear. You buy the personal gear: glove, bat, cleats, gloves, undershirts, and any specialty equipment for their position.
 
-Buy the best glove you can afford. A $250 glove will outlast a $80 glove by three to five seasons. The bat economics are different. Composites die after a year or two of heavy use.
+Buy the best glove you can afford. A top-shelf glove will outlast a cheap one by three to five seasons. The bat economics are different. Composites die after a year or two of heavy use.
 
-Travel and showcase ball gets expensive fast: $1,500 to $4,000 per season for fees, travel, and equipment. We are not telling you that's worth it. We are telling you what it costs.
+Travel and showcase ball gets expensive fast. Fees, travel, and equipment all stack every season. We are not telling you that's worth it. We are telling you to go in with eyes open.
 
 ## Practice and at-home training
 
@@ -325,8 +304,6 @@ The gear that gets used between practices matters more than the gear that sits i
 **Soft tee-ball baseballs**
 
 Real baseballs are too hard for kids learning to track and swing. Soft-core balls weigh and look the same but won't bruise a kid or break a window.
-
-Cost range: $15–25 for a multi-pack.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -343,8 +320,6 @@ Cost range: $15–25 for a multi-pack.
 
 Rubber bases that lay flat on any surface. Useful for backyard games, driveway practice, and league-day setup when the field crew did not show.
 
-Cost range: $20–35 for a four-base set.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
@@ -359,8 +334,6 @@ Cost range: $20–35 for a four-base set.
 **Wiffle balls**
 
 The original backyard pitching tool. Plastic, perforated, breaks hard. The kid throwing learns spin; the kid hitting learns to track movement.
-
-Cost range: $10–15 for a six-pack.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -377,8 +350,6 @@ Cost range: $10–15 for a six-pack.
 
 A step up from wiffle. Plastic balls built to break harder than any wiffle ever did. Comes with a plastic bat and three balls. Best for ages 10 and up; younger kids can't track the movement and stop having fun.
 
-Cost range: $20–30.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
@@ -394,8 +365,6 @@ Cost range: $20–30.
 
 Speeds up the process of softening a new glove. Useful for stiff leather gloves that won't close in the first week of practice. Skip it if your glove came pre-broken-in.
 
-Cost range: $10–15.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
@@ -410,8 +379,6 @@ Cost range: $10–15.
 **Replacement glove laces**
 
 A glove with broken webbing isn't done; it just needs new laces. Leather lacing strips and a lacing needle are cheaper than a new glove and let you keep one that's already broken in.
-
-Cost range: $10–20.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -433,7 +400,7 @@ The reason most kids stagnate between seasons is they get zero reps at home. A f
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Backyard</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Soft-toss baseball trainer</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lets one parent feed reps without throwing. Five minutes a day in the backyard adds up to thousands of swings across a season.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The single best gear-to-reps multiplier I've found at this price.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The single best gear-to-reps multiplier I've found.</p>
     <a href="/go/baseball-trainer/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -452,7 +419,7 @@ The reason most kids stagnate between seasons is they get zero reps at home. A f
 
 ## A few honest notes
 
-Don't buy a $200 bat for a five-year-old. Don't buy metal cleats before the league allows them. Don't buy a custom glove for a kid who has played one season. The first two years of baseball are about whether the kid wants to come back. The gear that lasts is the gear that fits and gets used. Save the upgrades for the years you know they're staying.
+Don't buy a top-shelf bat for a five-year-old. Don't buy metal cleats before the league allows them. Don't buy a custom glove for a kid who has played one season. The first two years of baseball are about whether the kid wants to come back. The gear that lasts is the gear that fits and gets used. Save the upgrades for the years you know they're staying.
 
 If your kid is between sizes, go up. They will grow into it before they grow out of it. The exception is the bat, which has to fit now, not next year.
 

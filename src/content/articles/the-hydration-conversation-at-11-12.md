@@ -59,7 +59,7 @@ After the game: drink 20 ounces in the first 30 minutes.
 
 **The water bottle move**
 
-Get a water bottle your kid actually likes.
+Get a [water bottle](/go/multi-sport-water-bottle/) your kid actually likes.
 
 Not a tiny one. A 20-ounce bottle minimum.
 

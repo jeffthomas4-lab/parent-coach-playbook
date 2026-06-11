@@ -27,13 +27,13 @@ Zip ties or carabiners.
 
 **Where to buy it**
 
-Dick's Sporting Goods: $30-60
+Dick's Sporting Goods.
 
-Academy Sports: $25-50
+Academy Sports.
 
-Online retailers: $20-40 (if you have time to wait for shipping)
+Online retailers (if you have time to wait for shipping).
 
-Local sporting goods store: $35-70
+Local sporting goods store.
 
 **The actual netting installation**
 

@@ -30,7 +30,7 @@ editorial:
 
 Wet-bulb globe temperature (WBGT) is the published gold-standard for heat-modification decisions in youth sport. KSI and National Athletic Trainers' Association (NATA) both endorse it. WBGT factors in air temperature, humidity, radiant heat, and wind.
 
-The problem: most youth programs do not own a WBGT reader. They cost $200 to $1,500. Many smaller programs make heat decisions on air temperature alone, which underestimates risk meaningfully.
+The problem: most youth programs do not own a WBGT reader. Many smaller programs make heat decisions on air temperature alone, which underestimates risk meaningfully.
 
 For programs without WBGT, humidity and dew point are the backup metrics. Together with air temperature, they reproduce most of what WBGT captures. This piece is the framework.
 
@@ -116,7 +116,7 @@ Tournament-host programs that schedule multiple games in summer heat.
 
 Any program practicing in WBGT-elevated regions (Texas, Florida, Louisiana, Arkansas, Oklahoma, etc.).
 
-The cost of a basic WBGT reader (around $200 to $400 for entry-level) is small relative to the liability and safety implications. Cheaper than one preventable heat-illness emergency room (ER) visit.
+The cost of a basic WBGT reader is small relative to the liability and safety implications. Cheaper than one preventable heat-illness emergency room (ER) visit.
 
 **For coaches without WBGT.**
 

@@ -27,7 +27,7 @@ editorial:
 
 The first serve a kid learns is underhand. Hold the ball low, swing the arm up, contact the ball at waist height. Easy to teach, easy to learn. Once the underhand is consistent, they can move to overhand.
 
-**What you need:** A volleyball, a net (lowered for younger kids), open court.
+**What you need:** A [volleyball](/go/volleyball-volley-lite/), a net (lowered for younger kids), open court.
 
 **Setup:** Server at the back line. Net 7-8 feet high (lowered from regulation 7'4").
 

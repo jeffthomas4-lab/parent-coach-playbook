@@ -56,7 +56,7 @@ Milk. Cold milk is the best widely-available storage medium. The pH and ionic ba
 
 The kid's saliva, in their own cheek. Only if the kid is old enough to not swallow the tooth (roughly 10+).
 
-Hank's Balanced Salt Solution (HBSS), found in Save-A-Tooth kits. Available at pharmacies for about $20. Some sports first-aid kits include them. Best storage medium per published research.
+Hank's Balanced Salt Solution (HBSS), found in Save-A-Tooth kits. Available at pharmacies. Some sports first-aid kits include them. Best storage medium per published research.
 
 Saline solution if available.
 

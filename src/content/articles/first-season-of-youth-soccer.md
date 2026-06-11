@@ -1,32 +1,39 @@
 ---
-title: Your First Season of Youth Soccer
-dek: What nobody tells you at signup, from the gear you actually need to the email that's coming about snacks.
-seoTitle: "First Season of Youth Soccer: What Nobody Tells You"
-seoDescription: "Everything a first-time soccer parent needs: the $60 gear list, what practices look like, the snack email, and what the season really costs."
-bluf: "Your first soccer season needs about $60 of gear (cleats, shin guards, ball, water bottle), one practice and one game a week, and a Saturday morning habit. The kids will swarm the ball like bees, that's normal, and you'll get an email about the snack rotation by week two."
+title: "First Season of Youth Soccer: What Nobody Tells You"
+dek: The chaos at U6 is the point. What to buy, what to skip, and what to say on the way home.
+seoTitle: "First Season of Youth Soccer: What to Expect (2026)"
+seoDescription: "First season of youth soccer: real gear costs, ball sizes by age, shin guard rules, sideline culture, and what to expect at U6 through U10."
+bluf: "Youth soccer at U6 and U8 is small-sided, low-pressure, and deliberately chaotic — that's the design. Your kid needs shin guards (mandatory everywhere), cleats or turf shoes, and a size 3 ball if they're under 8. Budget $100 to $180 for the first year at rec level. The rest sorts itself out."
 topic: season-ops
-format: note
+format: essay
 phase: drive-there
 sport: soccer
 age: 5-7
-publishedAt: 2026-06-10
+publishedAt: 2026-06-11
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
 ---
 
-You signed your kid up for soccer. Somewhere between the registration confirmation and the first practice, a small panic sets in: what do we need, where do we go, and what have we agreed to?
+The first thing you notice at a U6 soccer game is that nobody knows where they are supposed to be. Kids are bunched around the ball like a magnet pulled them all to the same spot. Nobody is playing their position because there are no positions. The game has no goalkeeper. Nobody is keeping score, at least not officially. And the coach is smiling, which is how you know this is going exactly right.
 
-Here's the whole first season, honestly.
+US Youth Soccer runs small-sided games through the youngest age groups on purpose. U6 plays 3v3 on a small field. U8 plays 4v4 or 5v5. The keeper doesn't come in until U10. The swarm is the pedagogy: kids need a lot of touches on the ball, and a 3v3 gives every kid more time with the ball than any 11v11 ever could. If you spend the first game waiting for something to look like "real soccer," you will miss what's actually happening.
 
-**The gear takes one trip and about $60.** Cleats, shin guards, a size-3 ball, long socks, a water bottle with their name on it. That's the complete list, and the [soccer gear guide](/what-to-buy/soccer/) has the exact picks with the in-store fit tests. Don't buy more. They will outgrow the cleats by spring, which is part of [why the gear is the cheap part of the sport](/drive-there/how-much-does-youth-soccer-cost/).
+Shin guards are not optional anywhere, at any age. The league won't let your kid on the field without them, and the first time you forget them you will understand why you should keep a backup pair in the car. Go with hard-shell guards with a sleeve underneath. They stay put and take about thirty seconds to put on once a kid gets the hang of it. Spend $15 to $25 and you are done.
 
-**The soccer will look like bees.** Eleven kids chasing one ball in a single swarm, including at least one doing cartwheels in goal. This is developmentally correct five-year-old soccer, and the coaches expect it. Position play arrives years from now. The [rules at this age](/rules/soccer/) are simplified on purpose: small fields, no offside, everyone plays.
+Ball sizes are set by age. Size 3 for U8 and under. Size 4 from U8 through U12. Size 5 from U12 on up, which is the full adult ball. The league sometimes provides balls for practice; for games your kid should have their own. Write their name on it with a Sharpie before day one because every kid has the same ball and the field looks like a sporting goods clearance sale.
 
-**A week costs you two time slots.** One weekday practice, usually under an hour, and one Saturday game. The whole rec season runs eight to ten weeks. The commitment creep you've heard about in youth sports is real, but it lives at the travel level years away, and [it's a choice when it comes](/decisions/should-my-kid-play-travel-sports/).
+On shoes: regular cleats or turf shoes both work fine at the rec level. Multi-ground cleats run $25 to $50 at most sporting goods stores and last two seasons if the kid doesn't grow too fast. Real cleats do a little better on wet grass; turf shoes do a little better on artificial turf and double as everyday shoes. At U6, it doesn't matter much. The [full soccer gear guide](/what-to-buy/soccer/) has specific picks if you want them, and the [youth soccer cost breakdown](/drive-there/how-much-does-youth-soccer-cost/) shows where every dollar goes from rec through travel.
 
-**The snack email is coming.** By week two, someone organizes the rotation, and someday that someone may be you. [The snack rotation that doesn't fall apart](/team-parent/the-snack-rotation-that-doesnt-fall-apart/) is the system, and the short version is: bring orange slices and water, skip the goodie bags, nobody remembers the snack by Tuesday.
+Your total first-year cost at rec level should land between $100 and $180. That is shin guards, cleats, a ball, and the uniform your registration fee covers. Registration itself typically runs $80 to $150 depending on the league. If you are getting quoted much more than that before your kid has touched a field, look carefully at what is actually included. The [cost calculator](/cost-calculator/) can run the real number for your situation, and the [youth soccer cost breakdown](/drive-there/how-much-does-youth-soccer-cost/) covers every line item from rec through travel club.
 
-**Your sideline job is smaller than you think.** Cheer effort, not outcomes. Don't coach from the lawn chair, because your kid can hear exactly one voice out there and it should be the coach's. The whole car ride home can be one sentence: "I love watching you play." We wrote about [what to say before](/scripts/before-a-game-5-7/) and after games at this age because the words matter more than the wins.
+If your kid is starting at 8 or 9 instead of 5 or 6, almost everything above still applies. The main difference is they will be playing a bigger field with more structure, and the coach will start introducing positions around U10. The offside rule comes in around U12. Older first-timers often catch up faster than their parents expect because they understand the game better from watching. They also take instruction more literally, which is either an advantage or a disadvantage depending on what the coach is teaching.
 
-**What a good first season looks like:** your kid runs more than they stand, knows two teammates' names by October, and asks whether they can play again in spring. That's it. That's the entire scoreboard. If they ask to quit mid-season, [that's a normal conversation too](/drive-home/why-kids-quit-sports/), and it usually isn't about soccer.
+A word on what to expect from a rec coach. Most rec coaches at U6 and U8 are parent volunteers with a one-day training certificate, if that. They are not tactical tacticians. They are there to organize 45 minutes of activity, teach kids to kick with their laces instead of their toe, and make sure everyone plays. That is the whole job and it is enough. If you find yourself frustrated by the lack of sophistication in the instruction, you are watching the wrong metric. Watch whether the kids are moving, whether they are smiling, and whether your kid wants to come back next Saturday.
 
-Everything else lives on our [soccer hub](/sports/soccer/): every read, drill, and tool in one place. And if the registration form asked you to volunteer-coach and you're considering it, [the five-minute practice plan](/team-parent/the-five-minute-practice-plan/) is where every parent-coach starts.
+The sideline culture at youth rec soccer is its own thing. Most parents are fine. Every team has one person who is very loud about what the referee missed. The best thing you can do is set up your chair, cheer when something happens, and track how often your kid looks at you during the game. They look for a face that says "I'm glad you're out there," not a face that is tracking every mistake. If they are looking at you a lot, they are worried about your reaction. If they stop looking, they are in the game. The second one is what you want.
+
+What "coachability" looks like at 6 is different from what it looks like at 12. A 6-year-old who listens for 40 seconds before running off to kick something is doing well. A coachable 6-year-old stops when the coach blows the whistle, makes eye contact sometimes, and tries the thing they were asked to try at least once. That is the whole bar. Parents who watch for the focus and self-discipline that belongs to a different age group are going to have a rough season.
+
+The car ride home is where most of first-year soccer is won or lost, for the relationship between you and your kid. One question works: "What was your favorite part?" Let them answer. If they say "the snack," that is a real answer and a fine one. If they say they didn't like the game, you do not need to fix it in the car. They will know by next week whether they want to come back. Your job on the drive home is to not make the car ride the thing they remember about the day.

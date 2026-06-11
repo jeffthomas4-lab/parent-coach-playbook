@@ -27,7 +27,7 @@ editorial:
 
 When a runner steals second, the catcher has about 3 seconds total. The catch, the stand-up, the throw, all in one motion. This is the hardest defensive play a youth catcher will ever make. Worth practicing slowly.
 
-**What you need:** Catcher's gear, a glove, 6 baseballs, a second player at second base, a pitcher (or a coach) to throw the pitch.
+**What you need:** [Catcher's gear](/go/baseball-catchers-gear-youth/), a [catcher's mitt](/go/baseball-catchers-mitt-32in/), 6 baseballs, a second player at second base, a pitcher (or a coach) to throw the pitch.
 
 **Setup:** Catcher behind home plate in full gear. Second baseman at the bag. Pitcher at 46 feet from home.
 

@@ -21,7 +21,7 @@ These numbers are our [cost calculator](/cost-calculator/) defaults, anchored to
 
 **Travel: $10,000 core, $13,600 all-in.** The line items: club fee $4,500, and Tier I/II programs publish fees from $4,000 to $7,000, so check yours. Tournament entries $1,200. Hotels $1,800, and hockey travel is real travel, often across state lines for a Saturday. Travel gas $800. Equipment $1,400 a year at this level because skates get replaced annually and sticks break. Team apparel $400. That's $10,100 before private skills coaching ($1,800), camps ($600), or road food ($700).
 
-The equipment line deserves its own honesty. Skates are the one item where fit genuinely affects safety and development, and growing feet need them yearly. Sticks at travel level break, and composite sticks run $100 to $300. Budget the cycle, not the purchase. Goalie families: multiply the equipment line by three and accept our sympathy.
+The equipment line deserves its own honesty. Skates are the one item where fit genuinely affects safety and development, and growing feet need them yearly. Sticks at travel level break, and composite sticks aren't cheap. Budget the cycle, not the purchase. Goalie families: multiply the equipment line by three and accept our sympathy.
 
 Where hockey families actually save: the used market is the best in youth sports because every rink has a swap and every kid outgrows gear before wearing it out. Buy the helmet new, [check used gear properly](/drive-there/used-gear-rules/), and let someone else pay the depreciation on everything else. And ice time is the hidden cost driver behind every club fee, which means the club 25 minutes closer with one fewer practice is often the same development for thousands less.
 

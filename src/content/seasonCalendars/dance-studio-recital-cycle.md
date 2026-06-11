@@ -39,7 +39,7 @@ months:
   - key: oct
     intensity: build
     events: ["Choreography begins", "Costume orders placed"]
-    note: "Costumes get expensive. $80-200 per dance, multiplied by routines per dancer."
+    note: "Costumes get expensive. The cost multiplies by routines per dancer."
   - key: nov
     intensity: build
     events: ["Choreography continues", "First in-studio showings"]
@@ -56,4 +56,4 @@ The competition schedule is what surprises new families. Competitive dancers com
 
 The body conversation: dancers are athletes. They get hip flexor strains, knee pain, ankle sprains, back issues. Pointe work specifically requires a real conversation with the studio about readiness. Ages 11-12 is the typical starting window for pre-pointe; 12-14 for first pointe shoes. A dancer's foot needs to be ready, not just an age. The studio teacher's call on this is the one that matters.
 
-Costumes and competition fees are the line items new families don't budget for. A competitive dancer with three to five routines plus a solo is looking at $400-1,200 in costume costs per year, plus $80-150 per routine in competition entry fees, plus $200-400 in solo entry fees. The cost calculator's dance/elite preset handles the math.
+Costumes and competition fees are the line items new families don't budget for. A competitive dancer with three to five routines plus a solo is looking at a real costume bill each year, plus $80-150 per routine in competition entry fees, plus $200-400 in solo entry fees. The cost calculator's dance/elite preset handles the math.

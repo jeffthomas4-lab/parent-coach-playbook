@@ -53,7 +53,7 @@ bands:
     decisionPoints:
       - "PGA Jr. League or US Kids local tour? Jr. League first: cheaper, team-based, scramble. Individual stroke-play tours can wait."
       - "Private lessons? One a month from a pro who teaches juniors, aimed at setup and short game"
-      - "Fitted clubs? Re-size as they grow; junior fitting is mostly length and loft, not a $500 ritual"
+      - "Fitted clubs? Re-size as they grow; junior fitting is mostly length and loft, not an expensive ritual"
   - age: "11-12"
     skillMilestones:
       - "Plays 18 holes from age-appropriate tees with a real score and real rules"

@@ -59,7 +59,7 @@ Identify the kid with a known cardiac condition or seizure history (if any) on e
 
 "Is there an emergency action plan posted at the field with the AED location, EMS access, and the field's 911 address?"
 
-**Project ADAM and the school AED rules.** Project ADAM works with schools and youth-sports organizations on Heart Safe certification. Most states require AEDs in public schools; many require them at school athletic events. Youth rec leagues are a patchwork. The good news is that the cost has dropped (a unit can be purchased for under $1,500), and many leagues now have one even without state mandate.
+**Project ADAM and the school AED rules.** Project ADAM works with schools and youth-sports organizations on Heart Safe certification. Most states require AEDs in public schools; many require them at school athletic events. Youth rec leagues are a patchwork. The good news is that the cost has dropped, and many leagues now have one even without state mandate.
 
 **The honest read.** Most parents will go their whole youth-sports run never seeing a sudden cardiac arrest. The percentage who do, and whose kid is in the right field at the right moment, are saved or lost based on whether the AED is close, present, accessible, and used in those first three minutes.
 

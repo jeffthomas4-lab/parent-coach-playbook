@@ -27,13 +27,13 @@ The price isn't crazy for the first year. The problem is what happens in year tw
 
 ## The rent-to-own trap
 
-Most rental shops include a rent-to-own clause that promises your monthly payments accumulate toward eventually owning the instrument. After twenty-four or thirty months the instrument is yours. Here's what's actually happening, though: the beginner step-up instruments that school music stores rent are usually retail-priced around twelve to eighteen hundred dollars, but the actual instrument you're spending two years renting for forty dollars a month is closer to a four-hundred-dollar instrument. You're paying more than double, and you're locking yourself into one shop's repair pricing and trade-in valuation.
+Most rental shops include a rent-to-own clause that promises your monthly payments accumulate toward eventually owning the instrument. After twenty-four or thirty months the instrument is yours. Here's what's actually happening, though: the rent-to-own "retail price" on a beginner instrument is usually well over double what the same instrument actually sells for on the used market. You're paying more than double, and you're locking yourself into one shop's repair pricing and trade-in valuation.
 
 Some shops offer a discount if you pay the rental balance off in the first ninety days, which is closer to a fair price but still about fifty percent above used market.
 
 ## What to actually do in year one
 
-Rent. Use the rental as a no-commitment first year with the simplest contract you can sign, month to month, and skip the rent-to-own. This buys your kid twelve months to find out if he actually likes band, and about thirty percent of beginning band students quit by the end of year one — you do not want a fifteen-hundred-dollar used clarinet in the basement.
+Rent. Use the rental as a no-commitment first year with the simplest contract you can sign, month to month, and skip the rent-to-own. This buys your kid twelve months to find out if he actually likes band, and about thirty percent of beginning band students quit by the end of year one — you do not want an expensive used clarinet in the basement.
 
 A few rental traps to dodge while you're at it. Don't pay annual maintenance upfront; bill it monthly so you can stop. Don't pay insurance through the rental shop; add the instrument to your home insurance for a fraction of the shop's policy. And don't let the shop talk you into a step-up model in year one, no matter how nicely they try.
 
@@ -45,13 +45,13 @@ The director-referred used instrument is almost always the best option. Older st
 
 ## Instruments to never buy new from a big-box store
 
-There's a whole tier of instruments commonly sold at chain warehouse stores and online retailers that look like normal instruments but aren't. They can't be tuned by a professional repair tech, and the pads, keys, and valves aren't standard parts. The technical term band directors use is ISO, which stands for "instrument-shaped object." A flute under two hundred dollars new, a clarinet under two-fifty, a trumpet under three hundred, a violin under two hundred — these are almost always ISOs, and they'll frustrate your kid, sound wrong, and probably get him pulled aside by the director by week two.
+There's a whole tier of instruments commonly sold at chain warehouse stores and online retailers that look like normal instruments but aren't. They can't be tuned by a professional repair tech, and the pads, keys, and valves aren't standard parts. The technical term band directors use is ISO, which stands for "instrument-shaped object." A brand-new flute, clarinet, trumpet, or violin priced far below anything at a real music store is almost always an ISO, and it'll frustrate your kid, sound wrong, and probably get him pulled aside by the director by week two.
 
 The brand names every band director will recognize are listed by every band director in the country: Yamaha, Selmer, Buffet, Conn, Bach, Jupiter for student lines, plus a few others. Ask the director.
 
 ## When to consider a professional instrument
 
-You don't need one until late high school at the earliest. A kid playing a beginning band concert doesn't benefit from a four-thousand-dollar clarinet. A kid heading into the audition season for college music programs is another story — that's when the investment makes sense. Until then, the intermediate used instrument you bought in year two is fine.
+You don't need one until late high school at the earliest. A kid playing a beginning band concert doesn't benefit from a professional clarinet. A kid heading into the audition season for college music programs is another story — that's when the spend makes sense. Until then, the intermediate used instrument you bought in year two is fine.
 
 ## A short word on saxophones
 

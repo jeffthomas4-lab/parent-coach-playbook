@@ -31,7 +31,7 @@ A few real things. How to be in a room with other kids in a structured activity 
 
 ## What it does not teach
 
-A few things you should not expect. Real ballet technique — the kids don't have the bodies or the focus. Discipline — they're four, and discipline as parents think of it is years away. A path to becoming a "ballet kid" — most four-year-olds in pre-ballet drop out by age six or seven, a few stick, and even those few won't have a real ballet trajectory until nine or ten anyway. And the justification for $300 in pink dancewear — she's four, she's not a serious ballerina yet.
+A few things you should not expect. Real ballet technique — the kids don't have the bodies or the focus. Discipline — they're four, and discipline as parents think of it is years away. A path to becoming a "ballet kid" — most four-year-olds in pre-ballet drop out by age six or seven, a few stick, and even those few won't have a real ballet trajectory until nine or ten anyway. And the justification for a pile of pink dancewear — she's four, she's not a serious ballerina yet.
 
 ## Picking a class
 
@@ -43,7 +43,7 @@ Avoid programs that promise to start "serious ballet training" at age four — t
 
 ## What to buy
 
-A few essentials. A leotard, plain pink or black, fifteen to twenty-five dollars. Tights or footed leggings, ten to fifteen. Ballet shoes, pink leather or canvas slippers (the studio will tell you the brand), twenty to thirty. A hair tie — some studios require buns, but at four a high ponytail is usually fine. Total: sixty to eighty dollars. That's it.
+A short list. A leotard, plain pink or black. Tights or footed leggings. Ballet shoes, pink leather or canvas slippers (the studio will tell you the brand). A hair tie — some studios require buns, but at four a high ponytail is usually fine. That's it.
 
 Don't buy a tutu (she'll get one for the recital), a serious ballet uniform package (most studios sell these starter packages and they're usually overpriced), multiple leotards in different colors (most pre-ballet programs have a dress code — ask about it), or a character shoe or jazz shoe (not needed at this age).
 

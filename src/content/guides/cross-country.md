@@ -5,18 +5,18 @@ sortOrder: 12
 lede: "Cross country runners need quality trainers, racing flats for meets, and a layered cold-weather kit for fall-into-winter racing."
 seoTitle: "Youth Cross Country Gear: Shoes, Spikes, and Cold-Weather Kit"
 seoDescription: "Where the money goes in cross country: real trainers, when spikes make sense, and the cold-weather kit for October and November meets."
-costSummary: "$150-250 to start"
+costSummary: "Shoes are most of the cost. Everything else is layers you may already own."
 seasonNote: "Cross country season is fall, typically July through November, depending on your region. Most races happen September through November."
 publishedAt: 2026-04-30
 ---
 
 ## What you actually need
 
-Good trainers ($80-120) are where the money goes and where it matters most. Your child runs in them almost daily. Cheap shoes break down fast and cause injuries. Invest in a real running shoe from Nike, Asics, Brooks, or Saucony.
+Good trainers are where the money goes and where it matters most. Your child runs in them almost daily. Cheap shoes break down fast and cause injuries. Buy a real running shoe from Nike, Asics, Brooks, or Saucony.
 
-Racing flats ($60-100) are the second purchase, but only for kids 12 and older. Younger runners don't need them, trainers work fine for 5K races. Flats are lighter and faster, but require some baseline running fitness to use safely.
+Racing flats are the second purchase, but only for kids 12 and older. Younger runners don't need them, trainers work fine for 5K races. Flats are lighter and faster, but require some baseline running fitness to use safely.
 
-Cold weather kit comes next: thermal tights or leggings ($30-50), a long-sleeve moisture-wicking shirt ($25-40), gloves ($15-20), and a beanie ($10-15). Cross country runs through November, so you're buying for October chill and November cold. Regular cotton sweatpants and hoodies don't work, they hold moisture and make kids miserable.
+Cold weather kit comes next: thermal tights or leggings, a long-sleeve moisture-wicking shirt, gloves, and a beanie. Cross country runs through November, so you're buying for October chill and November cold. Regular cotton sweatpants and hoodies don't work, they hold moisture and make kids miserable.
 
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
@@ -47,7 +47,7 @@ Cold weather kit comes next: thermal tights or leggings ($30-50), a long-sleeve 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross country · All ages</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth thermal base layer set (top + tights)</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Fleece-lined compression top and leggings in youth sizes. Covers the October-through-November stretch of the season in one purchase.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fifteen dollars solves the cold-weather kit. Cotton hoodies hold sweat and make a November practice miserable; this doesn't.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: One cheap set solves the cold-weather kit. Cotton hoodies hold sweat and make a November practice miserable; this doesn't.</p>
     <a href="/go/xc-base-layer-set-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>

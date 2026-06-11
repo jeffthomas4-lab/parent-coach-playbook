@@ -1,53 +1,57 @@
 ---
-title: The Cheer Competition Packing List
-dek: Everything in the bag the night before, from the backup bow to the bobby pins nobody can find at 6am.
-seoTitle: "Cheer Competition Packing List: What to Bring (Printable)"
-seoDescription: "The complete cheer competition packing list: uniform, shoes, backup bow, hair kit, lashes, snacks, and the items veteran cheer moms never skip. Printable."
-bluf: "Pack the uniform, cheer shoes, backup bow, hair kit with gel and 50 bobby pins, makeup and lashes, white no-show socks, warmups, snacks that won't stain, water, phone charger, and safety pins. Pack the night before. The 6am hotel room is not a packing environment."
-topic: season-ops
+title: "Cheer Competition Packing List: What Actually Goes in the Bag"
+dek: "The uniform is the easy part. Here's everything else that needs to be in the bag before you go to sleep."
+seoTitle: "Cheer Competition Packing List: What Actually Goes in the Bag"
+seoDescription: "Cheer competition packing list: uniform, backup spankies, team-color makeup, 50+ bobby pins, rhinestone glue, blister bandages, snacks, and the most-forgotten item."
+bluf: "Pack the bag the night before, not the morning of. The uniform plus a backup pair of spankies is the foundation. From there you need makeup in team colors, 50 or more bobby pins, a mini glue gun for rhinestones, safety pins, blister bandages, tiger balm, and easy carb snacks for a 6am call time. Most-forgotten item: the school ID."
+topic: game-day
 format: note
 phase: drive-there
 sport: cheer
 age: all-ages
-publishedAt: 2026-06-10
+publishedAt: 2026-06-11
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
 ---
 
-Competition morning starts at 5:30am in a hotel room with three other families' schedules colliding in the lobby. Whatever isn't in the bag the night before isn't coming.
+Cheer competitions run long, start early, and have zero margin for the thing you forgot. Pack the night before. Every time.
 
-This list comes from the cheer parents in our network who have survived NCA weekends and learned each item the hard way. Print it, tape it to the bag, check it twice. [Grab the printable version here](/cheer-competition-packing-list.pdf).
+## Pack this the night before
 
-## The list
+**The uniform.** Lay it flat or hang it in a garment bag. Check for every piece: shell, liner, briefs. If any part stayed at practice or is sitting in the dryer, find it now. Pack a second pair of spankies, because the pair you're wearing to warm-up is not your backup.
 
-- Uniform, in a garment bag, checked for every piece
-- Cheer shoes, competition-only, wiped clean
-- Bow, plus the backup bow
-- Hair kit: gel, hairspray, brush, comb, 50 bobby pins, extra ponytail holders
-- Makeup kit and lashes, plus lash glue
-- White no-show socks, two pairs
-- Team warmups
-- Bodysuit or required underlayers
-- Clear or team-approved water bottle
-- Snacks that won't stain: pretzels, grapes, plain crackers
-- Phone charger and a portable battery
-- Safety pins, a small sewing kit, and fashion tape
-- Pain reliever, bandages, blister pads
-- Athletic tape if your athlete uses it
-- A sharpie and cash for the merch table you will not escape
-- Something quiet for the down hours: cards, a book, headphones
+**The bow.** Put it in a hard eyeglass case or a small rigid box. A crushed bow at 7am in a convention center bathroom is a problem you prevent tonight. Bring one extra in the team color.
 
-## The items that earn their spot
+**Cheer shoes.** In a separate bag inside the main bag, not loose. Wipe them clean tonight. A scuff you notice during inspection is a scuff you should have caught yesterday.
 
-**The backup bow.** Bows vanish at competitions. They fall in parking lots, get lent to teammates, and sink into hotel sofa cushions. The two-dollar insurance of a [second bow](/what-to-buy/cheer/) has saved more competition mornings than any other item on this list.
+**Hair kit.** Brush, comb, gel, hairspray (in a quart zip bag for the hotel), hairnet in team color, extra ponytail holders. Bobby pins: 50 is the floor, 100 is not excessive. Buy a new pack so you know you have them.
 
-**Fifty bobby pins.** Not ten. Competition hair survives full-out runs, warmup mats, and nine hours of arena air. Half the pins go in the hair, half go in the bag, and somehow by awards you'll have six left.
+**Makeup.** Foundation in the right shade, mascara, lip gloss in team colors. If the team uses lashes, pack them with the adhesive in a labeled case. If your athlete is doing lashes for the first time this season, practice at home first.
 
-**Snacks that won't stain.** Uniforms meet nacho cheese at every venue in America. Nothing red, nothing orange, nothing that drips. Feed the real meal after awards.
+**Safety pins.** Twenty in a small tin. They fix loose hems, broken straps, and costume malfunctions at every level of competition. This is the item veteran cheer parents never forget.
 
-**The blister pads.** New shoes plus arena concrete plus a twelve-hour day equals one predictable outcome. Veteran moms carry them; first-year moms buy them at venue prices.
+**Rhinestones and glue gun.** Stones fall off in warm-up, in the hotel, on the bus. Bring a small bag of extras in the team stone color and a mini hot glue gun. At any big competition, at least three families are trying to borrow one from a stranger. Don't be those families.
 
-**The quiet thing.** Competitions are 20 minutes of performing inside nine hours of waiting. The athletes who melt down at 4pm are usually the ones who had nothing to do at 1pm.
+## Add this the morning of
 
-The night-before rule is the whole system: bag packed, uniform checked piece by piece, shoes in the bag and not on the kid. Mornings are for hair and nerves, not inventory.
+Keep a smaller morning bag you carry into the venue. Into it goes: breath mints, travel deodorant, a blister bandage pack (Band-Aid Blister cushions, at least six), Tiger Balm for calves and ankles, pain reliever, and your phone charger.
 
-If this is your first season, the [cheer gear guide](/what-to-buy/cheer/) covers what everything costs and which versions hold up, and [the real annual cost of all-star cheer](/drive-there/how-much-does-competitive-cheer-cost/) covers the rest of the financial picture. One short read a week, plus every printable we make, comes with the [Friday Letter](/newsletter/).
+Water bottle, full, lid sealed. Snacks for the morning: a banana, a granola bar, a small bag of pretzels. Easy carbohydrates that are already digested by the time you compete. Not a gas-station breakfast sandwich. Not a protein shake. Food that is sitting quietly in your stomach by 9am.
+
+Cash for concessions. A camp chair, because the venue seating near athlete staging is never enough.
+
+## What most people forget
+
+**The school ID.** Some competitions require it for athlete check-in. Read the event itinerary the night before and check the check-in requirements. If the ID is required, no one at the venue can substitute for it.
+
+**Extra socks.** One white pair in the bag beyond what goes in the shoe. White no-show, team-approved style.
+
+**Something to do.** A competition is 20 minutes of performing inside 9 hours of waiting. Cards, a book, headphones. The athlete who has nothing at 2pm is the one who unravels before awards.
+
+## What you actually need vs. what stays in the bag
+
+Every cheer bag accumulates dead weight: the full-size hair dryer, the accessories from a different routine, the spare shoes from two programs ago. None of it has earned its spot. The bag that rolls to the car is the bag you checked piece by piece the night before. The stuff you grabbed and assumed you'd sort out in the morning is what you're rummaging for at 5:45am.
+
+The night-before pack takes 20 minutes. The morning scramble takes an hour and still ends with something missing.

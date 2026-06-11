@@ -268,11 +268,14 @@ export const BUYING_GUIDES = [
   { slug: 'soccer',        label: 'Soccer',           category: 'sport',    group: 'team',       blurb: 'Cleats, shin guards, ball, water bottle.' },
   { slug: 'softball',      label: 'Softball',         category: 'sport',    group: 'team',       blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
   { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    group: 'team',       blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
+  { slug: 'pickleball',    label: 'Pickleball',       category: 'sport',    group: 'team',       blurb: 'Paddle, balls, court shoes. Youth pickleball is growing fast.' },
+  { slug: 'rugby',         label: 'Rugby',            category: 'sport',    group: 'team',       blurb: 'Mouthguard, cleats, shoulder pads, scrum cap. Growing fast in youth.' },
   { slug: 'crew',          label: 'Crew',             category: 'sport',    group: 'individual', blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
   { slug: 'cross-country', label: 'Cross country',    category: 'sport',    group: 'individual', blurb: 'Trainers, racing flats, layered cold-weather kit.' },
   { slug: 'golf',          label: 'Golf',             category: 'sport',    group: 'individual', blurb: 'A starter set, gloves, balls. Used clubs are fine.' },
   { slug: 'gymnastics',    label: 'Gymnastics',       category: 'sport',    group: 'individual', blurb: 'Leotards, grips, tape. Most apparatus stays at the gym.' },
   { slug: 'martial-arts',  label: 'Martial arts',     category: 'sport',    group: 'individual', blurb: 'Gi, belt, mouthguard. Discipline differs by style.' },
+  { slug: 'wrestling',     label: 'Wrestling',        category: 'sport',    group: 'individual', blurb: 'Singlet, headgear, wrestling shoes. Folkstyle through high school.' },
   { slug: 'swimming',      label: 'Swimming',         category: 'sport',    group: 'individual', blurb: 'Suit, cap, goggles. The cheapest sport on the list.' },
   { slug: 'tennis',        label: 'Tennis',           category: 'sport',    group: 'individual', blurb: 'Racket, shoes, balls. Stringing matters more than you think.' },
   { slug: 'track-field',   label: 'Track and field',  category: 'sport',    group: 'individual', blurb: 'Spikes by event. Sprints, distance, hurdles, jumps, throws.' },
@@ -286,6 +289,10 @@ export const BUYING_GUIDES = [
   { slug: 'first-aid-kit',      label: 'First aid kit',       category: 'essentials', blurb: 'Bandages, tape, cold packs, and what you use on the sideline every week.' },
   { slug: 'season-essentials',  label: 'Season essentials',    category: 'essentials', blurb: 'Recovery, hydration, travel logistics. The kit that runs the season.' },
   { slug: 'sideline-kit',       label: 'Sideline kit',         category: 'essentials', blurb: 'Chair, cooler, blanket. The gear that makes watching comfortable.' },
+  { slug: 'parent-coach-gear',  label: 'Parent-coach gear',    category: 'coach-gear', blurb: 'Clipboard, timer, pennies, bag, whiteboard. The stuff you actually need on the bench.' },
+  { slug: 'video-tracking-gear',label: 'Video and tracking',   category: 'coach-gear', blurb: 'Phone tripod, action cam, ball pump. Film practice, inflate everything.' },
+  { slug: 'training-gear',      label: 'At-home training gear', category: 'coach-gear', blurb: 'Foam rollers, resistance bands, speed ladders, rebounder. The YouTube rabbit hole, organized.' },
+  { slug: 'boosters-gear',      label: 'Boosters and events',  category: 'coach-gear', blurb: 'Folding table, payment box, PA speaker. For the parent running the table.' },
 ] as const;
 
 export type BuyingGuideSlug = (typeof BUYING_GUIDES)[number]['slug'];

@@ -92,7 +92,7 @@ Pack food. Rotisserie chicken from the grocery store, sandwich supplies, snacks.
 
 Carpool. Two families share a hotel room. One driver. Splits the gas.
 
-Decline the optional gear. The team-branded backpack is $80 and is not required.
+Decline the optional gear. The team-branded backpack is not required.
 
 **The harder version**
 

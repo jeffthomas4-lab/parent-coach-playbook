@@ -1,30 +1,37 @@
 ---
-title: Your First Season of Youth Football
-dek: The helmet question, the August heat, and what tackle football actually asks of a family in year one.
-seoTitle: "First Season of Youth Football: What Nobody Tells You"
-seoDescription: "What first-year football parents need to know: what the league provides, the gear you buy, August two-a-days, safety questions, and real costs."
-bluf: "In most youth tackle leagues the team provides the helmet and shoulder pads; you buy cleats, a mouthguard, a girdle, and pants, roughly $130 to $200. Practices start in late July heat, run three to four days a week in August, and the right first question for any program is who teaches tackling and how."
+title: "First Season of Youth Football: What the Parents Need to Know"
+dek: Flag until they're ready, tackle when you're sure, and what to ask any program before your kid puts on the helmet.
+seoTitle: "First Season of Youth Football: Parent's Real Guide (2026)"
+seoDescription: "First year of youth football: flag vs tackle by age, what gear the league provides vs what you buy, Heads Up Football, and what practice actually looks like."
+bluf: "Most rec leagues run flag football until age 8 to 10, which is the right call developmentally. When tackle starts, the league usually provides the helmet and shoulder pads; you buy cleats, mouthguard, girdle, and pants for around $130 to $200. Ask every program two things before signing up: what tackling method do you teach, and are your coaches Heads Up certified."
 topic: season-ops
-format: note
+format: essay
 phase: drive-there
 sport: football
-age: 8-10
-publishedAt: 2026-06-10
+age: 5-7
+publishedAt: 2026-06-11
 featured: false
+editorial:
+  claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
 ---
 
-Football has the biggest gear pile, the earliest start, and the most questions attached of any fall sport. Here's what the first season actually involves, before the equipment handout night.
+If your kid is 5, 6, or 7, the answer is flag football, not tackle. That is not a lesser version of the sport. It is the sport at the right age. The routes, the catching, the blocking assignments, the team accountability, the heartbreak of a fumble: all of that exists in flag. What doesn't exist is the collision, which is the part that belongs later. Most rec leagues make this decision for you by not offering tackle until 8 to 10, and the ones that do are ahead of the data, not behind it.
 
-**The league provides more than you think.** Through middle school, most programs hand out the expensive items: helmet and shoulder pads. You provide cleats, mouthguard, padded girdle, practice pants, and a practice jersey, which runs $130 to $200 total. The [football gear guide](/what-to-buy/football/) has the exact list by age with our picks. The one rule that has no exceptions: never buy a used helmet without current certification. Your kid's brain is in there.
+Flag football at the youngest ages needs almost no gear. A mouthguard, athletic shorts, cleats or turf shoes, and a water bottle. The flag belt comes from the league. Your total cost is under $50, and the [flag football gear guide](/what-to-buy/flag-football/) has exactly what to buy. A season of flag football teaches a kid more about the game of football than a year of standing in line at tackle practice waiting for a turn.
 
-**It starts in July, not September.** Football's dirty secret is the calendar. Conditioning and two-a-days begin in late July or early August, in the hottest weeks of the year, and in-season practice runs three to four days a week. That's a bigger family commitment than any other rec sport, and it's worth saying out loud before signup. Know [the heat rules](/game/heat-illness-when-to-pull-them-out/) yourself, because August football is where they matter most.
+When tackle enters the picture, usually around age 8 to 10 depending on the league, the gear situation changes. The expensive items, the helmet and shoulder pads, are typically provided by the program. You are responsible for cleats, a mouthguard, a padded girdle, practice pants, and a practice jersey. Budget $130 to $200 for what you buy. The [football gear guide](/what-to-buy/football/) has the full list by age and the one rule that has no exceptions: never buy a used helmet that doesn't have a current NOCSAE certification sticker. The sticker means the foam inside still does its job. Without it, you don't know. Don't guess.
 
-**Ask the tackling question.** The single best screen for a youth program: who teaches tackling, and how? Programs that run certified shoulder-tackling instruction and limit full-contact practice time are following the data. Programs that scrimmage live every night are not. Our [football safety briefing](/body/youth-football-safety-briefing/) covers what good answers sound like, and [the rules at each level](/rules/football/) cover what's legal.
+Helmet fitting matters more than most parents realize. A helmet that sits too high on the forehead, leaves the eyebrows uncovered, or rocks side to side when you shake the kid's head is not fitted correctly. Every program should do a fitting session before the season. If yours doesn't offer one, find a local sporting goods store with staff who know how to do it.
 
-**Flag is a real answer, not a consolation.** If your kid is under 9, or you're not ready for tackle, [flag football](/what-to-buy/flag-football/) teaches the same routes, the same catching, the same team habits, with almost no gear and far less risk. Many of the best players in the NFL played flag through middle school. There's no falling behind at eight years old.
+What practice looks like in year one surprises most families. The first two weeks of tackle practice are almost entirely stance and footwork: how to get into a three-point stance, how to fire out low, how to move your feet before you move anything else. There are not many plays. There is a lot of repetition that looks like nothing. This is correct. The fundamentals that get drilled in August are the ones that keep kids healthy in October. A program that spends the first week running full-speed scrimmages is skipping the steps that matter.
 
-**The week-one reality:** your kid will come home tired in a way soccer never made them, the laundry will become a system, and the first time they get popped in practice, they'll either light up or go quiet. Both are information. The car ride home is where you'll learn which, and [the 90-second rule](/drive-home/the-90-second-rule/) applies double in this sport.
+What a good program looks like versus a red flag: a good program runs a structured August schedule with water breaks every 20 to 30 minutes, uses the weight of the players to set contact groups so a 65-pound kid isn't hitting a 110-pound kid in drills, and tracks practice contact time. A red flag program has coaches who celebrate big hits in practice, runs live tackling drills without progression (no pads, walk-through, jog-through first), and treats questions about safety as disrespect. You are allowed to ask every question before you commit. A program that makes you feel bad for asking about safety protocols is a program that doesn't have good answers.
 
-**What a good first season looks like:** they're tired but ask to go back, the coach knows their name and uses it for something besides corrections, and they finish the season healthy. Wins are a bonus at this age. The full picture of [what football costs](/drive-there/what-youth-sports-cost/) stays modest while the league provides the big gear; the time is the real bill.
+Ask every program two things before you hand over your registration check. First: what tackling method do you teach? The answer you want is shoulder tackling with eyes up, which is what USA Football's Heads Up Football program certifies. Heads Up certification means coaches completed a training program covering proper tackling mechanics, blocking technique, heat and hydration, and concussion recognition. It is free for coaches and most rec leagues require it. If a coach can't tell you how they teach tackling, or if their answer is "we just play football," that is information about the program.
 
-Everything football lives on our [football hub](/sports/football/): drills, reads, rules, and the body-and-safety library. Welcome to Friday nights, eventually.
+Second: how much live contact happens at practice? USA Football's own recommendations cap full-speed, full-contact practice at 30 minutes per session at the youth level. Programs that run live scrimmages every night are giving you enthusiasm, not player development. The kids who arrive in middle school technically sound are the ones who drilled fundamentals at 9, not the ones who played tackle every Thursday.
+
+The time commitment is the part football families underestimate most. Conditioning starts in late July or early August, in the hottest weeks of the year. In-season practices run three to four days a week. Games are typically Saturday. That is a bigger family calendar commitment than any other fall rec sport, and it's worth being honest about before you sign up. Know [heat illness warning signs](/game/heat-illness-when-to-pull-them-out/) before August practices start, because that is when they matter.
+
+The car ride home after the first tackle practice will tell you something. If your kid comes home tired and already talking about tomorrow, you have your answer. If they come home quiet, ask one question and then stop: "How did it feel?" Let them sit with it. First-year football is physically hard in a way that most kids haven't experienced, and some of them love that. Some of them don't. Both are real, and the car is not the place to decide which answer you were hoping for.

@@ -27,7 +27,7 @@ editorial:
 
 Passing is touch and accuracy. This drill teaches both by making it simple: pass to your partner and pass it back.
 
-**Equipment needed:** 10 cones (creating 5 two-cone gates), 8-10 soccer balls, open space.
+**Equipment needed:** 10 [cones](/go/soccer-cones-12pk/) (creating 5 two-cone gates), 8-10 [soccer balls](/go/soccer-ball-size3/), open space.
 
 **Setup:** Place two cones 15 feet apart. Two kids stand between the cones, facing each other, about 10 feet away from the cones.
 

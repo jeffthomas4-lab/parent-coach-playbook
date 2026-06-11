@@ -27,7 +27,7 @@ editorial:
 
 The dive is the last-resort defense. Ball is going to land 6 feet in front of the player. They dive forward, hit it with one or both hands, slide on the chest after contact. Done right, it's a clean dig. Done wrong, it's a wipeout. Worth teaching slowly.
 
-**What you need:** A volleyball, a clean court (or knee/elbow pads on grass), two players.
+**What you need:** A [volleyball](/go/volleyball-volley-lite/), a clean court (or [knee pads](/go/volleyball-knee-pads-youth/) on grass), two players.
 
 **Setup:** Defender in the back court. Coach 20 feet away with the ball.
 

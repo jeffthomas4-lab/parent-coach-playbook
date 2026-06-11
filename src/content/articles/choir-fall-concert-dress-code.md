@@ -20,15 +20,15 @@ For most school choirs, the dress code is one of two things. Option A is a long 
 
 ## What to buy
 
-The cheapest path to the long black dress is a plain black formal dress from any retail store or department store, thirty to sixty dollars. Solid black, no embellishments, no rhinestones, no lace, no patterns — the director wants the choir to look uniform on stage, not for individuals to stand out. If she's between sizes, buy slightly larger because she's still growing, and a dress that hits mid-calf at the start of the year will be appropriate at the year's end.
+The cheapest path to the long black dress is a plain black formal dress from any retail store or department store. Solid black, no embellishments, no rhinestones, no lace, no patterns — the director wants the choir to look uniform on stage, not for individuals to stand out. If she's between sizes, buy slightly larger because she's still growing, and a dress that hits mid-calf at the start of the year will be appropriate at the year's end.
 
-The white button-down: long-sleeve, plain white, cotton or cotton blend, about twenty to thirty at any department store. Don't buy a thin white shirt — stage lights make thin fabric transparent and your kid will be embarrassed. Buy something with weight.
+The white button-down: long-sleeve, plain white, cotton or cotton blend, from any department store. Don't buy a thin white shirt — stage lights make thin fabric transparent and your kid will be embarrassed. Buy something with weight.
 
-The black pants: plain black dress pants, not jeans, not athletic pants, not chinos, real dress pants for twenty-five to forty.
+The black pants: plain black dress pants, not jeans, not athletic pants, not chinos, real dress pants.
 
-The black tie or bow tie: usually provided by the school if needed, but if not, a basic black tie from any department store is ten to fifteen. Bow ties are a little harder — a pre-tied black bow tie is about fifteen and works fine for a sixth grader.
+The black tie or bow tie: usually provided by the school if needed, but if not, a basic black tie from any department store does the job. Bow ties are a little harder — a pre-tied black bow tie works fine for a sixth grader.
 
-The dress shoes: plain black, closed-toe, heels under one inch (or no heel), polishable leather preferred, thirty to fifty. Black socks if pants. Black or skin-tone tights if dress.
+The dress shoes: plain black, closed-toe, heels under one inch (or no heel), polishable leather preferred. Black socks if pants. Black or skin-tone tights if dress.
 
 ## What to skip
 

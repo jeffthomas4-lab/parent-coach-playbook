@@ -46,6 +46,6 @@ The cradle is an active motion with the wrists and arms, not a grip. If a player
 
 [Lacrosse balls →](/go/lacrosse-ball/) — official 6-pack, NOCSAE-stamped.
 
-[Youth lacrosse starter kit →](/go/lacrosse-starter-kit-youth/) — stick, gloves, and helmet bundle for first-season players.
+[STX Stallion complete stick →](/go/lacrosse-starter-kit-youth/) — complete youth stick (shaft + head) for first-season players.
 
 *As an Amazon Associate we earn from qualifying purchases.*

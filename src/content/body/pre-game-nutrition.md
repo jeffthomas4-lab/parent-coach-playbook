@@ -46,4 +46,4 @@ Pre-game nutrition for kids is one of those areas where the science is straightf
 
 **The kid who eats nothing the morning of a game.** Pre-game nerves are real. Force-feeding makes it worse. The fix is small, frequent, easy carbs. Half a bagel. A few crackers. A smoothie they can sip slowly. Any fuel is better than no fuel. Build a pre-game routine the kid actually does.
 
-The honest part: most parents over-spend on supplements and under-spend on planning. A grocery store run before the tournament is worth more than a $50 protein powder.
+The honest part: most parents over-spend on supplements and under-spend on planning. A grocery store run before the tournament is worth more than an expensive protein powder.

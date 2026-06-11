@@ -43,7 +43,7 @@ A few specifics.
 
 **Standard distances.** 50, 100, 200 yards/meters of each stroke. 100, 200, 400 IM. Distance freestyle: 500, 1000, 1650 yards (or 800, 1500 meters).
 
-**Equipment.** Suit (competition tech suit for big meets), cap, goggles. Tech suits cost $150-400 and are worn for championship meets, not practice.
+**Equipment.** Suit (competition tech suit for big meets), cap, goggles. Tech suits are expensive and are worn for championship meets, not practice.
 
 **Time standards.** USA Swimming publishes time standards for each age group: B, A, AA, AAA, AAAA. These are the metric coaches and parents track. Sectional/zone/national qualifying cuts get progressively harder as you age up.
 

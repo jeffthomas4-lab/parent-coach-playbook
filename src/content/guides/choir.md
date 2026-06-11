@@ -6,7 +6,7 @@ sortOrder: 11
 lede: "Choir is the cheapest youth activity to outfit. Concert clothes, a folder, a pencil, water. That's the whole list."
 seoTitle: "Choir for Kids: What to Buy (Less Than You Think)"
 seoDescription: "Concert dress, folder, and the short list of what choir actually costs, plus what the program provides."
-costSummary: "Under $100 a year for personal gear at most school choirs"
+costSummary: "The cheapest activity to outfit. Concert clothes and a folder cover most years."
 seasonNote: "School choir runs the school year. Summer camps and audition-only honor choirs run June–August."
 publishedAt: 2026-04-20
 ---
@@ -21,13 +21,9 @@ The investment in choir is time and lessons, not gear. Read this guide quickly b
 
 Most children's choirs have a "concert uniform" they specify: usually a white top and black bottom, or a t-shirt provided by the program with black bottoms.
 
-Cost range: $20–40 if you don't already have the basics.
-
 **A water bottle**
 
 Singing dehydrates kids fast. A water bottle is non-negotiable.
-
-Cost range: $15–35.
 
 That is the entire kit at this age. Most starter choirs are free or low-tuition through schools, churches, or community programs.
 
@@ -39,21 +35,17 @@ This is when many kids audition for community choirs. These are often regional h
 
 Most community children's chorus programs specify a uniform: usually a tuxedo shirt and black pants for boys, a black dress for girls. The program will tell you exactly what to buy.
 
-Cost range: $50–150 depending on what the program specifies.
-
 **A music folder**
 
-Most programs provide one with the program's name. Plan on $15 to $30.
+Most programs provide one with the program's name.
 
 **A pencil**
 
 Choir kids mark their music. Mechanical pencils with eraser caps are standard.
 
-Cost range: $1–5.
-
 **Tuition**
 
-Community children's choruses typically charge $300 to $1,000 a year in tuition. Some have audition fees ($25 to $75).
+Community children's choruses charge annual tuition. Some have audition fees.
 
 ## Ages 11–12 (Middle school choir)
 
@@ -63,15 +55,13 @@ Most middle schools have at least one choir program. Some have multiple (men's c
 
 Same as before. Black/white concert dress is the typical uniform. Show choir programs may have flashier outfits and require purchase.
 
-Cost range: $80–250 if show choir requires costumes.
-
 **Show choir gear (if applicable)**
 
-Show choir is its own ecosystem. Costumes, dance shoes, choreography fees, and competition fees can add $500 to $2,000 a year.
+Show choir is its own ecosystem. Costumes, dance shoes, choreography fees, and competition fees stack up every year.
 
 **Optional: private voice lessons**
 
-Voice lessons start to make sense at this age for kids who want to take it seriously. $40 to $100 per half hour, weekly.
+Voice lessons start to make sense at this age for kids who want to take it seriously. A weekly half hour is the standard cadence.
 
 ## Ages 13–14 and 15+ (High school choir)
 
@@ -81,19 +71,17 @@ High-school choirs are typically tuition-free (it's a class). The expenses come 
 
 Most high-school programs require formal concert dress: tuxedo shirt and pants for boys, full-length black dress for girls. The program may sell or recommend specific suppliers.
 
-Cost range: $100–250.
-
 **Performance fees**
 
-Some programs charge per-event fees ($25 to $75) for major performances or trips.
+Some programs charge per-event fees for major performances or trips.
 
 **Travel for honor choirs and festivals**
 
-If your kid auditions into state or regional honor choir, plan on $200 to $600 in travel and registration per event.
+If your kid auditions into state or regional honor choir, plan on travel and registration costs for each event.
 
 **Audition fees for college auditions**
 
-If your kid is auditioning for college music programs, $50 to $150 per school audition plus travel.
+If your kid is auditioning for college music programs, expect a fee for each school audition plus travel.
 
 ## How to support a choir kid (since there's no gear to choose)
 
@@ -111,4 +99,4 @@ If your kid is auditioning for honor choir or community children's chorus, the a
 
 Show choir is a different sport. If your kid does show choir, expect the costume and travel costs to dwarf the regular choir budget.
 
-## Sizing 
+## Sizing

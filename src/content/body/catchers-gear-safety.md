@@ -36,7 +36,7 @@ Hockey-style helmets reduce concussion risk from foul tips off the mask compared
 
 **The throat protector.** This is the single most-skipped piece of catcher's gear. Little League International requires a "dangling throat protector" hanging from the mask in addition to the throat coverage built into the helmet. Many parents and players assume the mask alone is enough. It is not.
 
-The dangler costs about $10. It clips on. The reason it exists is real: foul tips travel up under the mask at angles the helmet does not cover. A throat blow from a high-velocity foul tip is one of the catastrophic catcher injuries on record.
+The dangler is cheap. It clips on. The reason it exists is real: foul tips travel up under the mask at angles the helmet does not cover. A throat blow from a high-velocity foul tip is one of the catastrophic catcher injuries on record.
 
 If your league does not enforce the dangler, ask why not.
 

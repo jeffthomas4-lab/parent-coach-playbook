@@ -41,7 +41,7 @@ Share everything to the group album within 24 hours. Don't make parents wait thr
 
 ## End-of-season gift
 
-The team mom (you) takes the year-end photo collection and orders a small print for each kid. A $5 print of a candid shot from the season, in a $3 frame from the dollar store. Eleven of those for $88 total. Hand them out at the banquet.
+The team mom (you) takes the year-end photo collection and orders a small print for each kid. A print of a candid shot from the season, in a frame from the dollar store. Hand them out at the banquet.
 
 That gift will outlast the league photographer's $50 package by 20 years.
 

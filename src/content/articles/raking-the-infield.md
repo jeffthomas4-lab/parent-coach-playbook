@@ -47,8 +47,6 @@ Water (if the infield is hard-packed).
 
 **The field rake**
 
-Cost: $15-40
-
 Long handle. Multiple tines.
 
 You drag it across the infield, breaking up packed dirt and smoothing out holes.

@@ -65,7 +65,7 @@ The pitcher just stands at the pitching distance line.
 
 **The bases themselves**
 
-Each base is a square marked with chalk or a base pad.
+Each base is a square marked with chalk or a [base pad](/go/baseball-bases-rubber/).
 
 Align them so they form a perfect diamond.
 

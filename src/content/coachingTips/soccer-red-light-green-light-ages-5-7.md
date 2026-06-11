@@ -27,7 +27,7 @@ editorial:
 
 This is the classic game with a ball. It teaches first touch, ball control, and stopping power. And kids will run hard because it's a game.
 
-**Equipment needed:** One soccer ball per child, a 40-yard by 20-yard space, cones to mark start and finish lines.
+**Equipment needed:** One [soccer ball](/go/soccer-ball-size3/) per child, a 40-yard by 20-yard space, [cones](/go/soccer-cones-12pk/) to mark start and finish lines.
 
 **Setup:** Mark a start line and a finish line 40 yards apart. All kids start at the start line with a ball.
 

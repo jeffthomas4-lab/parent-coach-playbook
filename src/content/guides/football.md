@@ -6,7 +6,7 @@ sortOrder: 5
 lede: "The most equipment-heavy youth sport. Helmet, shoulder pads, cleats, mouthpiece, pads. Do not cut corners on the helmet."
 seoTitle: "Youth Football Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Helmets, cleats, girdles, and mouthguards by age, what the league provides, what football really costs, and the one place never to save money."
-costSummary: "$200–400 for tackle starter; $400–700 by middle school. Most leagues provide game uniforms."
+costSummary: "Most leagues provide helmets and pads through middle school. The bill jumps in high school."
 seasonNote: "Fall is the season everywhere. Spring 7-on-7 is optional and growing. Summer two-a-days start in late July."
 publishedAt: 2026-03-09
 ---
@@ -27,17 +27,13 @@ Standard youth football cleats are fine. Soccer cleats also work. Avoid metal-ti
 
 How to choose: thumb width gap at the toe with the kid standing. Heel snug. No-slip when they cut.
 
-Cost range: $30–55.
-
 **A flag belt (usually provided by the league)**
 
-Most flag leagues provide the belts. If yours doesn't, plan on $10 to $15.
+Most flag leagues provide the belts. If yours doesn't, they're an easy pickup.
 
 **A mouthpiece**
 
 Required by most leagues even for flag. The boil-and-bite kind is fine at this age.
-
-Cost range: $5–15.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -54,8 +50,6 @@ Cost range: $5–15.
 
 The team usually provides a jersey. Practice gear is athletic shorts and a t-shirt.
 
-Cost range: $20–30.
-
 ## Ages 8–10 (Flag or starter tackle, depending on league)
 
 Many leagues offer the choice between flag and tackle at this age. Flag is the safer choice and the developmental research supports it. If your league offers it, take it.
@@ -66,14 +60,12 @@ Football cleats have a slightly different stud pattern than soccer cleats. Mid-c
 
 How to choose: have your kid run forward and lateral in them. Heel should stay locked.
 
-Cost range: $40–80.
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 8–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour Spotlight Hammer Jr football cleats</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rubber-molded youth cleat that runs from little kid through big kid sizes. Mid support, football stud pattern, no metal.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A real football cleat at the right price for a foot that grows two sizes a year. Run the heel-lock test in the driveway before you cut the tags.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A real football cleat for a foot that grows two sizes a year. Run the heel-lock test in the driveway before you cut the tags.</p>
     <a href="/go/football-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -83,13 +75,13 @@ Cost range: $40–80.
 
 If your league has you in tackle at this age, the team usually provides helmet and shoulder pads. You provide:
 
-- Mouthpiece ($10 to $20)
-- Padded girdle (built-in hip and tail pads): $25 to $50
-- Football pants (usually issued with hips/thigh pads built in): $30 to $50
-- Cleats: $40 to $80
-- Practice jersey: $15 to $25
+- Mouthpiece
+- Padded girdle (built-in hip and tail pads)
+- Football pants (usually issued with hips/thigh pads built in)
+- Cleats
+- Practice jersey
 
-Total league-provided: helmet, shoulder pads, game jersey. Total parent-provided: mouthpiece, girdle, pants, cleats, practice jersey. About $130 to $200.
+Total league-provided: helmet, shoulder pads, game jersey. Total parent-provided: mouthpiece, girdle, pants, cleats, practice jersey.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -106,24 +98,20 @@ Total league-provided: helmet, shoulder pads, game jersey. Total parent-provided
 
 For backyard practice. The Wilson TDY (size 6) is the standard youth ball.
 
-Cost range: $25–60.
-
 ## Ages 11–12 (Tackle football, junior high feeder)
 
 Most kids who are going to play tackle are doing it by now. The gear list expands. League-provided helmets and shoulder pads still cover the most expensive items at most levels.
 
 **A custom-fit mouthpiece**
 
-The boil-and-bite mouthpiece is fine. A custom dental-fit mouthpiece is better and runs $80 to $150 from a sports dentist. Not necessary, but worth knowing about.
-
-Cost range: $10–150.
+The boil-and-bite mouthpiece is fine. A custom dental-fit mouthpiece from a sports dentist is better. Not required, but worth knowing about.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">SISU Aero custom-fit mouthguard</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Thin moldable guard that fits tight to the teeth. Kids can talk and drink with it in, which means they actually keep it in their mouth.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The middle ground between a $10 boil-and-bite and a $150 dental guard. A mouthguard only works when it's worn, and this one gets worn.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The middle ground between a basic boil-and-bite and a dental-fit guard. A mouthguard only works when it's worn, and this one gets worn.</p>
     <a href="/go/football-mouthguard-sisu/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -133,20 +121,18 @@ Cost range: $10–150.
 
 Higher-cut, more ankle support, better stud pattern. Look for cleats designed for the position your kid plays (linemen want different cleats than skill positions).
 
-Cost range: $60–120.
-
 **Padded gloves (skill positions)**
 
 Receivers and DBs wear sticky gloves. Linemen wear padded gloves. Quarterbacks wear thin grip gloves.
 
-Cost range: $25–80 depending on position and quality.
+What you pay depends on position and tier.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Cutters Game Day receiver gloves</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">High-tack silicone palm in youth sizes. The grip a receiver or DB wants without the price of the brand-name signature gloves.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: At this age gloves get lost, torn, and outgrown. Pay $15, not $60. The catch rate difference is zero.</p>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">High-tack silicone palm in youth sizes. The grip a receiver or DB wants without paying for the brand-name signature gloves.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: At this age gloves get lost, torn, and outgrown. Buy the basic pair, not the signature pair. The catch rate difference is zero.</p>
     <a href="/go/football-gloves-receiver-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -156,8 +142,6 @@ Cost range: $25–80 depending on position and quality.
 
 Some kids wear a neck roll for added neck support. The science on this is mixed but it doesn't hurt.
 
-Cost range: $15–40.
-
 ## Ages 13–14 (Junior high / freshman)
 
 Junior high programs typically provide all the major equipment. You provide cleats, mouthpieces, gloves, undergarments, and any specialty equipment.
@@ -165,8 +149,6 @@ Junior high programs typically provide all the major equipment. You provide clea
 **Compression shorts and shirts**
 
 Standard underclothing for football. Wicks sweat, prevents chafing.
-
-Cost range: $20–40 each.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -182,8 +164,6 @@ Cost range: $20–40 each.
 **A position-specific bag**
 
 For carrying gear to and from practice. Most teams have a recommended brand or size.
-
-Cost range: $40–80.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -204,21 +184,15 @@ This is where the equipment ownership conversation gets real. Most high schools 
 
 If you are buying your own helmet, do not save money on this. Look for NOCSAE certification (every legal football helmet has it), good Virginia Tech STAR rating (5-star is current best), proper fit by a certified equipment manager.
 
-Helmets need to be reconditioned every 1 to 2 years. Reconditioning runs $40 to $80. A helmet older than 10 years is almost universally too old to play in.
-
-Cost range: $200–400 new for a quality youth-to-adult helmet.
+Helmets need to be reconditioned every 1 to 2 years. A helmet older than 10 years is almost universally too old to play in.
 
 **Shoulder pads**
 
 Position-specific. Skill players wear lighter pads with more mobility. Linemen wear heavier pads with more protection. Linebackers and safeties land in the middle.
 
-Cost range: $80–250.
-
 **Quality cleats**
 
 By high school, your kid will have a strong opinion about cleats. Let them pick within budget.
-
-Cost range: $80–200.
 
 ## How to choose a youth football helmet (when you have to)
 
@@ -230,7 +204,7 @@ Two. Virginia Tech STAR rating matters. They publish a public list of helmets wi
 
 Three. Fit matters more than brand. Have a certified equipment manager fit the helmet. Most football programs have one. Most national chains do not.
 
-Four. Reconditioning every 1 to 2 years is mandatory, not optional. Reconditioning runs $40 to $80. Budget for it. Helmets older than 10 years should be replaced entirely.
+Four. Reconditioning every 1 to 2 years is mandatory, not optional. Plan for it. Helmets older than 10 years should be replaced entirely.
 
 ## Backyard practice gear
 

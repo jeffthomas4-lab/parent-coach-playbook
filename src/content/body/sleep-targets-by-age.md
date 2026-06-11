@@ -22,7 +22,7 @@ gearPicks:
   - name: "Hatch Restore (or any sunrise alarm)"
     note: "Wakes the kid with light, not noise. The teen brain hates the loud alarm."
   - name: "White noise machine"
-    note: "Hotel walls are thin. Tournament weekends get loud. This is a $30 fix."
+    note: "Hotel walls are thin. Tournament weekends get loud. This is a cheap fix."
   - name: "Blackout curtains"
     note: "For the kid's home bedroom. The single highest-ROI sleep upgrade."
 ---

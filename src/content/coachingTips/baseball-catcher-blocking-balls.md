@@ -27,7 +27,7 @@ editorial:
 
 A catcher who can block balls in the dirt is the difference between a runner advancing and a runner staying put. The block is not a catch. It's the catcher's body stopping the ball and keeping it close. This is a 12-and-up skill because it requires gear and commitment.
 
-**What you need:** Catcher's gear (mask, chest protector, shin guards), 6 tennis balls, a glove.
+**What you need:** [Catcher's gear](/go/baseball-catchers-gear-youth/) (mask, chest protector, shin guards), 6 tennis balls, a glove.
 
 **Setup:** Catcher in stance about 8 feet from where you stand. You bounce balls toward them in the dirt.
 

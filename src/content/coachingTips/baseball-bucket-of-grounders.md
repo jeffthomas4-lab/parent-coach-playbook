@@ -27,7 +27,7 @@ editorial:
 
 Good fielders are made by reps, not by lectures. A bucket of 20 balls gets the kid in the position 20 times in a row. Same body shape. Same hands. Same finish. The repetition builds the habit.
 
-**What you need:** 20 baseballs in a 5-gallon bucket, a glove, a flat field.
+**What you need:** 20 baseballs in a 5-gallon bucket, a [glove](/go/baseball-glove-9in-youth/), a flat field.
 
 **Setup:** Kid stands 20 feet from you in fielding ready position. Bucket of balls next to you.
 

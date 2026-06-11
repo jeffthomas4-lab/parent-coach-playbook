@@ -95,7 +95,7 @@ Hair is a real thing for Nutcracker.
 
 Most studios require a slick ballet bun for the show. Not the loose bun your kid wears to class. A real, tight, slick bun.
 
-Bun kits are sold at most dance stores. They include a foam donut, hair pins, hairnet, and gel. About $15. Worth it.
+Bun kits are sold at most dance stores. They include a foam donut, hair pins, hairnet, and gel. Cheap. Worth it.
 
 Some studios have makeup requirements. Stage makeup for kids 10 and up is common. Foundation, blush, eyeliner, mascara, lipstick. The kid will look surprisingly grown up. Take pictures.
 

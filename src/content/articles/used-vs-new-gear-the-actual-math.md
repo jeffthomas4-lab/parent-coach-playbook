@@ -22,9 +22,9 @@ Cleats. The sole is the only thing that matters. If the sole is intact, used is 
 
 Sticks (lacrosse, hockey). The flex degrades but slowly. A used stick from one season is fine. A used stick from three seasons is showing wear.
 
-Bats (youth, non-competitive). The bat barrel doesn't degrade fast at low usage. A $200 bat used for one rec season can be bought for $80.
+Bats (youth, non-competitive). The bat barrel doesn't degrade fast at low usage. A top-shelf bat used for one rec season sells for a fraction of the new price.
 
-Shin guards. The padding is fine. The straps wear out. Replace straps if needed for $5.
+Shin guards. The padding is fine. The straps wear out. Replace straps if needed.
 
 Backpacks and bags. They get dirty. They don't get dangerous.
 
@@ -34,7 +34,7 @@ Practice jerseys, sweat pants, base layers. Wash them. They're fine.
 
 Helmets. The internal foam degrades and breaks down silently. A helmet that looks fine on the outside may have lost 50% of its protection. Always buy new.
 
-Mouthguards. Hygiene reasons. Buy new. They're $5.
+Mouthguards. Hygiene reasons. Buy new. They're cheap.
 
 Football pads. The padding degrades. Used pads can fail in impact moments.
 
@@ -68,11 +68,11 @@ The exception. If your kid is playing at a level where gear performance affects 
 
 **The thing parents over-buy**
 
-Branded backpacks. The team-specific backpack is $80 and is a status item. A regular backpack is $30 and works.
+Branded backpacks. The team-specific backpack is a status item. A regular backpack costs a fraction and works.
 
-Branded warm-up gear. The branded zip-up is $90. A regular hooded sweatshirt is $25.
+Branded warm-up gear. The branded zip-up costs several times what a regular hooded sweatshirt does.
 
-Branded water bottles. $30 vs $8. Same water in both.
+Branded water bottles. Triple the price. Same water in both.
 
 Skip the brand on the non-essential. Save the budget for the essential.
 

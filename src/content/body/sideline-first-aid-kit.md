@@ -54,7 +54,7 @@ editorial:
 
 The team's first-aid kit lives somewhere. Sometimes it lives in a coach's car. Sometimes it lives at the bottom of the equipment bag under the cones. Sometimes it does not exist at all, and three parents have band-aids in their pockets.
 
-This is the bag every team should have on the sideline. It costs about $80 to assemble new and you reload the consumables once a year.
+This is the bag every team should have on the sideline. It is cheap to assemble new and you reload the consumables once a year.
 
 **The core items.**
 
@@ -82,7 +82,7 @@ Tweezers. Splinters happen.
 
 Triangular bandage for a sling. Light, takes no space, and turns a suspected broken arm from a panic into a manageable thing while you wait for parents.
 
-cardiopulmonary resuscitation (CPR) face shield with a one-way valve. If you ever need it, you will be very glad you carried it. About $4.
+cardiopulmonary resuscitation (CPR) face shield with a one-way valve. If you ever need it, you will be very glad you carried it. It costs almost nothing.
 
 Rescue blanket. Heat exhaustion, shock, cold-weather wait for emergency medical services (EMS). The mylar packs to nothing.
 

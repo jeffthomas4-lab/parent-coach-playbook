@@ -27,7 +27,7 @@ editorial:
 
 The first real bump rep is from a controlled toss. The coach throws to a predictable spot. The kid forms the platform and bumps the ball back. No movement, no surprise. Just feel the ball on the platform.
 
-**What you need:** A volleyball, two players (kid + coach).
+**What you need:** A [volleyball](/go/volleyball-volley-lite/), two players (kid + coach).
 
 **Setup:** Coach stands 12 feet from the kid with a ball.
 

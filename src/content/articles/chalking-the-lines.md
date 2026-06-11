@@ -21,8 +21,6 @@ This is either a 10-minute job or a 45-minute frustrating job, depending on your
 
 Get a chalk line reel.
 
-Cost: $10-20
-
 This is a hand-crank tool that holds chalk and marks straight lines.
 
 It's not fancy. It's genius.
@@ -46,8 +44,6 @@ You fill it with chalk powder, snap the line where you want it, and you've got a
 **The chalk powder**
 
 Available at any sporting goods store or online.
-
-Cost: $5-15 per container
 
 One container does multiple fields.
 
@@ -76,8 +72,6 @@ Chalk paint in a squeeze bottle.
 Still not ideal. Still takes a while.
 
 But better than a stick.
-
-Cost: $3-5 per bottle
 
 **The field prep**
 
@@ -129,7 +123,7 @@ Some fields use a field-marking machine instead of a reel.
 
 These are mechanical and mark multiple lines at once.
 
-Cost: $5,000+ to buy (most teams rent instead).
+Expensive to buy (most teams rent instead).
 
 Much faster but also much more expensive.
 
@@ -163,7 +157,7 @@ Build this into your field setup routine.
 
 **The final thing**
 
-A chalk line reel is the best $15 investment for field maintenance.
+A chalk line reel is the cheapest win in field maintenance.
 
 Straight lines. Fast job. Done right.
 

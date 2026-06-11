@@ -13,7 +13,7 @@ publishedAt: 2026-06-10
 featured: false
 ---
 
-Baseball has three honest price points and one inflated one. The inflated one is the $400 bat. The honest ones are below.
+Baseball has three honest price points and one inflated one. The inflated one is the top-shelf bat. The honest ones are below.
 
 These are our [cost calculator](/cost-calculator/) defaults, anchored to Little League fee structures, Project Play data, and tournament entry schedules. Edit any line there to fit your town.
 
@@ -23,6 +23,6 @@ These are our [cost calculator](/cost-calculator/) defaults, anchored to Little 
 
 **Travel: $7,500 core, $11,600 all-in.** The real line items: club fee $2,400, tournament entries $1,200 (budget $200 to $600 per weekend tournament), hotels $1,800, travel gas $800, equipment $900 because travel ball eats bats and gloves, team kit $400. Then the layer that separates travel baseball from travel anything-else: private hitting and pitching lessons average $2,400 a year at this level, $80 to $100 an hour, 25 to 30 sessions. Almost every travel family ends up there. We wrote about [the full travel ball economy](/drive-home/the-cost-of-travel-ball/) separately.
 
-Two places the budget actually leaks. First, the bat. A $400 bat does not fix a swing, aging certifications retire bats on a schedule, and kids outgrow lengths in 18 months; we covered [the bat your kid begged for](/drive-there/the-bat-your-kid-begged-for/). Second, tournament weekends nobody opted out of. Each one is $300 to $500 with the hotel, and a 60-game summer is a choice, not a requirement.
+Two places the budget actually leaks. First, the bat. An expensive bat does not fix a swing, aging certifications retire bats on a schedule, and kids outgrow lengths in 18 months; we covered [the bat your kid begged for](/drive-there/the-bat-your-kid-begged-for/). Second, tournament weekends nobody opted out of. Each one is $300 to $500 with the hotel, and a 60-game summer is a choice, not a requirement.
 
 Run [your own number](/cost-calculator/) before signup night, and read [the travel decision](/decisions/should-my-kid-play-travel-sports/) before a coach makes it for you. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/).

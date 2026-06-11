@@ -27,7 +27,7 @@ editorial:
 
 Wall bump is the volleyball version of wall ball. The wall returns every bump. Hundreds of touches in 10 minutes. The kid can do this in a driveway or against any flat wall.
 
-**What you need:** A volleyball, a flat wall (brick, concrete, or fence with a tarp).
+**What you need:** A [volleyball](/go/volleyball-volley-lite/), a flat wall (brick, concrete, or fence with a tarp).
 
 **Setup:** Kid stands 5 feet from the wall.
 

@@ -118,4 +118,4 @@ For the kid who has had swimmer's ear three times in a season, see the pediatric
 
 For the kid currently in pain, the pediatrician same day or next morning. The infection responds quickly to topical antibiotics; it gets worse without them.
 
-**The honest read.** Swimmer's ear is one of the most-preventable youth-sport issues. The 30 seconds after every swim with drying drops eliminates the majority of cases. The kids who keep getting it are usually kids who never adopted the prevention habit. Programs that build it into the practice end-routine see fewer kids missing meets. The cost is a $5 bottle of drops per season per kid.
+**The honest read.** Swimmer's ear is one of the most-preventable youth-sport issues. The 30 seconds after every swim with drying drops eliminates the majority of cases. The kids who keep getting it are usually kids who never adopted the prevention habit. Programs that build it into the practice end-routine see fewer kids missing meets. The cost is a bottle of drops per season per kid.

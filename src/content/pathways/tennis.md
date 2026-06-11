@@ -33,7 +33,7 @@ bands:
       - "Group energy beats parental coaching from the fence. Stay off the fence."
     decisionPoints:
       - "Club clinic or park-and-rec? Whichever has the better adults and red-ball equipment. The teaching pro's patience matters more than the facility."
-      - "Racquet? Sized to the kid (19-23 inches), under $40. Not your old one choked up."
+      - "Racquet? Sized to the kid (19-23 inches), cheap. Not your old one choked up."
       - "Privates? No."
   - age: "8-10"
     skillMilestones:

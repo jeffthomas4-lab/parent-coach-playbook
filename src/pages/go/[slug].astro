@@ -7,9 +7,12 @@ export async function getStaticPaths() {
     // Amazon Associates Operating Agreement: Special Links must be used as
     // provided. Do not append UTM (or any other) parameters to Amazon links.
     // The params land on Amazon's side, not ours, so they add zero analytics
-    // value anyway. Non-Amazon retailers still get UTMs.
-    const isAmazon = /(^|\.)amzn\.to$|(^|\.)amazon\.com$/.test(url.hostname);
-    if (!isAmazon) {
+    // value anyway. Same rule for CJ click URLs (tkqlhce/anrdoezrs/jdoqocy/
+    // kqzyfj): the redirector only understands its own params, so per-slot
+    // tracking rides the ?sid= baked into affiliates.json instead of UTMs.
+    // Other retailers still get UTMs.
+    const isTrackedNetwork = /(^|\.)amzn\.to$|(^|\.)amazon\.com$|(^|\.)tkqlhce\.com$|(^|\.)anrdoezrs\.net$|(^|\.)jdoqocy\.com$|(^|\.)kqzyfj\.com$/.test(url.hostname);
+    if (!isTrackedNetwork) {
       url.searchParams.set('utm_source', 'parentcoachdesk');
       url.searchParams.set('utm_medium', 'affiliate');
       url.searchParams.set('utm_campaign', (entry as any).campaign ?? slug);

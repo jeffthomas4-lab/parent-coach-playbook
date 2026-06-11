@@ -84,11 +84,11 @@ Get the fit right first. Then worry about socks.
 
 **The sock quality thing**
 
-Good athletic socks cost $12-15 for a three-pack. Bad athletic socks cost $4-6 for a three-pack.
+Good athletic socks cost a little more than the cheap three-packs.
 
 The difference is stitching and fiber blend. Good socks have reinforced heels. Bad socks start separating after five washes.
 
-Buy the better socks. Your kid wears them twice a week during season. One three-pack lasts the whole season. $15 total. It's not a big spend, and your kid's feet don't hurt.
+Buy the better socks. Your kid wears them twice a week during season. One three-pack lasts the whole season, it's not a big spend, and your kid's feet don't hurt.
 
 Cheap socks create problems. Then you buy better socks. You should've just bought better socks.
 
@@ -129,7 +129,7 @@ That's not placebo. That's real. Feet that hurt change how a kid moves. Feet tha
 
 Buy a three-pack of good athletic socks before season starts. Buy one more three-pack halfway through season.
 
-Total cost: $30. Total impact: huge.
+Total cost: small. Total impact: huge.
 
 Every parent at the field will be jealous of your kid's feet-comfort because they're still dealing with blisters from 2003.
 

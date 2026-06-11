@@ -27,7 +27,7 @@ editorial:
 
 Two hands is the rule for game catches. But the glove hand alone has to be strong enough to hold a ball when reaching, diving, or catching off-balance. This drill builds that hand without letting the kid cheat by snapping with the throwing hand.
 
-**What you need:** A glove. 5 baseballs or tennis balls.
+**What you need:** A [glove](/go/baseball-glove-9in-youth/). 5 baseballs or tennis balls.
 
 **Setup:** Stand 15 feet apart. The kid puts their throwing hand behind their back.
 

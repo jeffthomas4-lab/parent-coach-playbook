@@ -98,7 +98,7 @@ Multi-directional Impact Protection System (MIPS) is a technology found in some 
 
 Published evidence on MIPS effectiveness is mixed. Some lab testing supports the theory; epidemiological data showing real-world injury reduction beyond non-MIPS helmets is limited.
 
-For families: MIPS-equipped helmets are not necessary. They are not harmful. The premium ($30 to $80) is reasonable if the family wants the additional theoretical protection.
+For families: MIPS-equipped helmets are not necessary. They are not harmful. The premium is reasonable if the family wants the additional theoretical protection.
 
 **The school-team and program standards.**
 

@@ -35,6 +35,6 @@ Once a season, pull it out. Make sure the tape isn't dried out. Make sure nothin
 Not in the car where it gets hot. In the trunk. Leave it there all season. Don't borrow from it. When season ends, you're already set for next year.
 
 **The cost**
-Thirty dollars for everything. You'll spend that on one emergency stop at a gas station if you don't have a kit.
+The whole kit costs less than one emergency stop at a gas station, and you only pay it once.
 
 This takes fifteen minutes to build. It solves problems you can't predict. Do it once. Forget about it. Pull it out when you need it.

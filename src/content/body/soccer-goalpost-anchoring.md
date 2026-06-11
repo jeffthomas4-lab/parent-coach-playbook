@@ -148,7 +148,7 @@ If you see unanchored goals at a youth-soccer venue, raise the issue with the fi
 
 **For the rec league or volunteer-run program.**
 
-The fix is not expensive. A set of auger anchors costs about $30 per goal. Sandbags cost less. The training to use them is a 10-minute volunteer briefing.
+The fix is not expensive. A set of auger anchors is cheap per goal. Sandbags cost less. The training to use them is a 10-minute volunteer briefing.
 
 Programs that have not implemented anchoring usually have not because nobody has raised the issue, not because the fix is hard.
 

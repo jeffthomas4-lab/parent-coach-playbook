@@ -16,13 +16,13 @@ draft: false
 
 The tournament merch table is not for the kid. It's for the family that wants the trip to feel like a thing. That's fine. Just call it what it is.
 
-Most tournament t-shirts cost $25-35. The kid wears them twice and grows out of them. The family ends up with a drawer full of shirts from places they barely remember playing.
+Tournament t-shirts cost real money. The kid wears them twice and grows out of them. The family ends up with a drawer full of shirts from places they barely remember playing.
 
 ## What's actually worth buying
 
 If the tournament is meaningful (championship, first national event, the kid's last one in a sport), buy one shirt and frame it. The kid will keep that one. The five others go to Goodwill in three years.
 
-If the kid likes a hat from one of these trips, the hat survives longer than the shirt does. Hats are a better $25.
+If the kid likes a hat from one of these trips, the hat survives longer than the shirt does. Hats are the better buy.
 
 Skip the team-printed warm-up bag, the personalized water bottle, and the temporary tattoos. None of those last.
 

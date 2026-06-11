@@ -17,7 +17,7 @@ Here's how to keep this from being a crisis.
 
 **The label-everything rule**
 
-Before camp, label everything. Cleats, water bottles, hats, towels, jackets, lunchbox, backpack. Use a permanent marker on a piece of athletic tape inside the gear, or a stick-on name label.
+Before camp, label everything. Cleats, [water bottles](/go/multi-sport-water-bottle/), hats, towels, jackets, lunchbox, backpack. Use a permanent marker on a piece of athletic tape inside the gear, or a stick-on name label.
 
 The cost is one weekend at the kitchen table. The payoff is that 90% of the gear that gets "lost" is gear that wandered to another kid's pile and gets returned when someone reads the name.
 
@@ -29,7 +29,7 @@ If you lose nothing, your kid is in the rare 10% who keep track of their own thi
 
 **The replacement strategy**
 
-For most lost gear, the answer is a quick stop at Target or Amazon Same-Day. A $12 cleat replacement on Wednesday is not a tragedy. The full cleats from home that "must be at camp somewhere" are probably in the car or in the laundry room.
+For most lost gear, the answer is a quick stop at Target or Amazon Same-Day. A cheap cleat replacement on Wednesday is not a tragedy. The full cleats from home that "must be at camp somewhere" are probably in the car or in the laundry room.
 
 Don't drive to the camp to deliver gear unless the camp has explicitly said the gear isn't there. Most "lost" gear gets found in the cabin under another kid's bunk by Thursday.
 
@@ -57,7 +57,7 @@ That sentence makes them more likely to tell me when something is missing. I fin
 
 Water bottles. Single socks. Lunchboxes. Hats with a team logo. Sunglasses. The cheap rain jacket.
 
-I don't send my kid's favorite hat to camp. I don't send the brand-name water bottle they love. I send a $5 backup of the gear I can afford to lose.
+I don't send my kid's favorite hat to camp. I don't send the brand-name water bottle they love. I send a cheap backup of the gear I can afford to lose.
 
 **The camp's role**
 

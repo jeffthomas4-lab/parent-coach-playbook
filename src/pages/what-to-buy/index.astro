@@ -3,11 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { BUYING_GUIDES } from '../../data/site';
 
-// Split into the three top-level categories the directory uses.
+// Split into the four top-level categories the directory uses.
 const teamSports       = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'team');
 const individualSports = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'individual');
 const performingArts   = BUYING_GUIDES.filter(g => g.category === 'activity');
 const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
+const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
 ---
 <BaseLayout
   title="The Gear Files"
@@ -45,6 +46,7 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
         <a href="#individual-sports" class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Individual sports</a>
         <a href="#performing-arts"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Performing arts</a>
         <a href="#essentials"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Essentials</a>
+        <a href="#coach-gear"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Coach gear</a>
       </div>
     </div>
   </section>
@@ -106,6 +108,24 @@ const essentials       = BUYING_GUIDES.filter(g => g.category === 'essentials');
       <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Essentials</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {essentials.map((g) => (
+          <li>
+            <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{g.label}</span>
+              <span class="font-display italic text-ink-soft text-xs block mt-1 font-medium">{g.blurb}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Coach gear -->
+  <section id="coach-gear" class="border-b border-bone scroll-mt-16">
+    <div class="container-px py-8 md:py-10">
+      <p class="font-display italic text-rust mb-2 font-medium" style="font-size: 1.05rem">Coach gear</p>
+      <p class="font-display text-ink-soft text-sm mb-4 max-w-xl">For the parent who's also on the bench. Clipboard, timer, video, training gear, and event supplies.</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+        {coachGear.map((g) => (
           <li>
             <a href={`/what-to-buy/${g.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
               <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{g.label}</span>
