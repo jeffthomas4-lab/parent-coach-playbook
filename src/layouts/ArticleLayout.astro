@@ -101,6 +101,25 @@ const breadcrumbSchema = {
   ],
 };
 
+// FAQPage schema — only rendered when the article frontmatter includes a `faqs` array.
+// Targets Google's FAQ rich result (collapsible Q&A in SERPs).
+// Limit: Google renders at most 3 Q&A pairs in the rich result, but all pairs are
+// indexed. Optimal: 3-5 questions that are genuinely distinct and under 300 chars each.
+const faqSchema = data.faqs && data.faqs.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: data.faqs.map(({ question, answer }) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: answer,
+        },
+      })),
+    }
+  : null;
+
 const tagBits = [
   pillar.label,
   sportLabel,
@@ -137,6 +156,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <!-- Soft pillar tint as the page accent -->
   <div style={`background: ${pillar.accentBg};`}>

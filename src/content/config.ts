@@ -44,6 +44,19 @@ const FUNDAMENTAL_ENUM = [
 
 const PROGRESSION_ENUM = ['intro', 'build', 'refine'] as const;
 
+// FAQ pairs for FAQPage JSON-LD structured data. Add to any collection that
+// has natural Q&A content (decisions, rules, articles with a clear question focus).
+// Each entry becomes one Question/Answer node in the schema.org FAQPage block.
+// Keep answers under 300 chars for Google's featured-snippet window.
+const faqField = {
+  faqs: z.array(
+    z.object({
+      question: z.string().min(10).max(200),
+      answer:   z.string().min(20).max(500),
+    })
+  ).optional(),
+};
+
 // Shared editorial-review fields. Attach to every collection so each piece carries its
 // own quality/integrity/approval state. The /admin/editorial dashboard reads from these.
 //
@@ -100,6 +113,7 @@ const articles = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      ...faqField,
       ...editorialField,
     }).superRefine((data, ctx) => {
       if (data.hero && !data.heroAlt) {
@@ -371,6 +385,7 @@ const rules = defineCollection({
       ruleBookUrl: z.string().url().optional(),
       publishedAt: z.coerce.date(),
       draft: z.boolean().default(false),
+      ...faqField,
       ...editorialField,
     }),
 });
@@ -436,6 +451,7 @@ const decisions = defineCollection({
       publishedAt:       z.coerce.date(),
       featured:          z.boolean().default(false),
       draft:             z.boolean(),
+      ...faqField,
       ...editorialField,
     }),
 });

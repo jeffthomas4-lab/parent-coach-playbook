@@ -22,6 +22,30 @@ A hair net and hairpins keep hair neat and secure. A wrap sweater is practical f
 
 Pointe shoes are the big purchase, but only when your teacher says so. Most students don't start pointe until age 11 or later, and their teacher must evaluate them for readiness. Buying pointe shoes too early wastes money and can cause injury.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Ballet · Ages 4–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Danskin youth ballet leotard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Cotton-blend practice leotard in toddler through youth sizing. The standard practice uniform for a ballet student. Machine washable.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy three. Classes are multiple times a week. Confirm your studio's required color before ordering. Used leotards from resale shops are completely fine.</p>
+    <a href="/go/gymnastics-leotard-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Ballet · Ages 4–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Capezio youth ballet slippers</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Split-sole canvas ballet slipper with pre-sewn elastic. Lighter and more flexible than leather full-sole slippers. Ask your studio which type they require before ordering.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fit them snug — ballet slippers stretch. Try them on with tights, not socks. When in doubt, get fitted at a dancewear store.</p>
+    <a href="/go/gymnastics-slippers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## Sizing notes
 
 Need to know what size? See our [Ballet sizing guide](/what-to-buy/ballet/sizing/).

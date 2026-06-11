@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T20:30:59.241Z",
+  "generatedAt": "2026-06-11T20:58:15.828Z",
   "count": 398,
   "links": [
     {
@@ -565,6 +565,7 @@
         "src/pages/cost-calculator.astro",
         "src/pages/decisions/[slug].astro",
         "src/pages/index.astro",
+        "src/pages/rules/[sport].astro",
         "src/pages/scripts/[slug].astro",
         "src/pages/team-parent/[slug].astro",
         "src/pages/what-to-buy/[slug].astro"

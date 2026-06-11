@@ -89,6 +89,19 @@ Most marching programs provide: uniform, hat, plume, gloves. You provide:
 - Garment bag for the uniform
 - Water bottle (always)
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Insulated water bottle — 32 oz</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Wide-mouth 32-ounce insulated bottle. Marching band pre-season runs in August heat. Hydration is not optional. Label it — these disappear fast in a large band program.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The water bottle goes on the required gear list for a reason. August band camps and Friday night games both demand it.</p>
+    <a href="/go/multi-sport-water-bottle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Concert dress**
 
 Some programs require concert black for performances. Black dress pants/skirt and a white button-up. Many kids already have these.

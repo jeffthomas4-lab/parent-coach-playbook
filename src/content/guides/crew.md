@@ -46,9 +46,33 @@ Regular cotton socks get wet and cause blisters in the boat. Two pairs of moistu
 
 Rowers spend hours on open water in direct sunlight. The reflection off the water intensifies UV exposure significantly. A pair of sunglasses that won't blow off in a stroke (use a retainer strap) is practical gear, not an accessory.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Crew · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth sport sunglasses with retainer strap</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Wrap-style sport sunglasses with UV400 protection. Use a retainer strap to keep them on during the drive and stroke cycle.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Water reflection doubles UV exposure. This is not an optional accessory for a rower who is on the river six days a week.</p>
+    <a href="/go/multi-sport-sunglasses-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **Sunscreen**
 
 Same reason. Bring it to every practice and apply before you get on the water. Once you're in the shell, you're not stopping to reapply.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">SPF 50 sport sunscreen — travel size</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Water-resistant sport sunscreen in a travel-size tube. Apply before getting in the boat. Reapply on the dock during longer morning practices.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Put it in the kit, not on the maybe-I'll-bring-it list. Early spring morning sun on water is intense even when it doesn't feel hot.</p>
+    <a href="/go/sunscreen-travel/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Competitive level (Ages 15+, varsity and club racing)
 
@@ -62,9 +86,31 @@ Once your rower is practicing six days a week, one set of cold-weather layers is
 
 Camelback-style bottles with bite valves get gross in a boat and usually aren't allowed on the water. A simple 32-ounce bottle with a screw cap or flip cap goes in the boat's coxswain box or gets left dockside. You don't drink on the water — you hydrate before and after.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Insulated water bottle — 32 oz</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Wide-mouth 32-ounce insulated bottle with a screw or flip cap. Keeps water cold through a full morning practice. No bite valve to get gross in a boat bag.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Label it with your kid's name. There are fifteen identical bottles in every boathouse.</p>
+    <a href="/go/multi-sport-water-bottle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A gear bag**
 
 A medium duffel that fits unisuit, base layers, windbreaker, water bottle, sunscreen, and sunglasses. Any athletic duffel works. The bag ends up wet sometimes — avoid anything that doesn't handle moisture.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour Undeniable duffle bag</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Medium duffel with a water-resistant bottom and vented side pocket. Fits a unisuit, windbreaker, base layers, water bottle, and sunscreen without being overpacked.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The bag ends up in wet boathouses and on damp docks. Water-resistant materials are worth the slight premium here.</p>
+    <a href="/go/multi-sport-duffle-bag/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## What the club provides
 

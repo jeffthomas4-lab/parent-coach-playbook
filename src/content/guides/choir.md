@@ -25,6 +25,19 @@ Most children's choirs have a "concert uniform" they specify: usually a white to
 
 Singing dehydrates kids fast. A water bottle is non-negotiable.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Insulated water bottle — 32 oz</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Wide-mouth 32-ounce insulated bottle. Keeps water at room temperature or cool through a two-hour rehearsal. Choir kids go through more water than most parents expect.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Vocal cords need hydration before and during rehearsal, not just after. This is the one gear item every choir family actually uses.</p>
+    <a href="/go/multi-sport-water-bottle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 That is the entire kit at this age. Most starter choirs are free or low-tuition through schools, churches, or community programs.
 
 ## Ages 8–10 (Elementary choir or community children's chorus)

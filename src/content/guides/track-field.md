@@ -29,6 +29,17 @@ Good trainers are the foundation. These are what your child wears to every pract
 
 Event-specific spikes come next, but only after your child knows their event. Sprint spikes for the 100, 200, and 400. Distance flats for the mile and longer. Jumping spikes for high jump and long jump. Throwing shoes for shot put and discus. Yes, different events have different spikes. The track provides the rest: the runways, pits, equipment.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Track · Middle school and up</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Nike Zoom Rival distance spikes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight distance spike for the 800m through 5K. The standard entry-level spike used in most middle school and high school programs. Fits a removable spike plate.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't buy spikes until your kid picks an event. A distance runner needs different spikes than a sprinter. This one covers 800m through cross country and is the safe first-spike buy for most kids.</p>
+    <a href="/go/xc-spikes-kilkenny/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 Socks and moisture-wicking shorts round it out. That's genuinely all you buy.
 
 ## Sizing notes

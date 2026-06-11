@@ -27,6 +27,19 @@ Black athletic pants or leggings, a black short-sleeve t-shirt, jazz shoes or ch
 
 Yes. Same rule as every other activity.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Insulated water bottle — 32 oz</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Wide-mouth 32-ounce insulated bottle. Singing, projecting, and running lines under stage lights all drive dehydration faster than most kids expect.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Tech week is long. A good water bottle is the one piece of gear every theater kid needs and most don't prioritize.</p>
+    <a href="/go/multi-sport-water-bottle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A binder for the script**
 
 Most programs hand out scripts. A 1-inch binder with a pencil pouch is enough.

@@ -66,6 +66,32 @@ Most coaches don't introduce grips until a kid is doing full kips. Don't buy gri
 
 Kids who roll between practices recover faster. A medium foam roller at home extends what the gym does.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Gymnastics · Ages 8+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Foam roller — medium density</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard 36-inch medium-density foam roller. Works on IT band, hip flexors, thoracic spine, and calves. Medium density is right for regular daily-use maintenance rolling.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: 10 minutes before practice and 10 minutes after. Gymnasts who roll consistently through a competitive season hold up better than those who don't.</p>
+    <a href="/go/foam-roller-medium/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+**Resistance bands for conditioning**
+
+Shoulder flexibility and hip mobility are trained outside the gym as well as inside. A set of resistance bands for home conditioning covers both. Light to medium resistance is appropriate for flexibility work.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Gymnastics · Ages 8+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Resistance band set — light to heavy</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">A set of five loop bands in graduated resistance. Used for shoulder circles, hip activation, and flexibility progressions between gym sessions.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Light bands for flexibility work, medium for strength. The whole set costs less than one private coaching session and gets used daily by serious gymnasts.</p>
+    <a href="/go/resistance-bands-set/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## What gymnastics really costs
 
 The gear is the small number. Tuition is the big number — typically $300–600 per month at Level 5. Competition fees, travel, and team leotards ($150–300) add more. Plan for the tuition. The gear budget is almost irrelevant by comparison.

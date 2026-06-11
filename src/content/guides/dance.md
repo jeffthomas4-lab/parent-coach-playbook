@@ -43,6 +43,41 @@ Buy 3 to 5 pairs.
 
 Most studios have a dress code that specifies leotard color, neckline, and brand. Buy 3 to 5 leotards in the studio's specified colors.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Dance · Ages 4–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Danskin youth practice leotard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Cotton-blend practice leotard in toddler through youth sizing. Machine washable, snug through the torso, available in multiple colors to match studio dress codes.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy three to five in the studio's required color. Classes are multiple times a week and they rotate fast. Confirm the dress code before ordering.</p>
+    <a href="/go/gymnastics-leotard-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Dance · Ages 4–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Capezio youth ballet slippers</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Split-sole canvas slipper with pre-sewn elastic. The standard starter slipper for ballet and used in many lyrical and contemporary classes as well.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Try them on with tights, not bare feet — the fit is different. Buy from a dancewear shop if possible; fitting matters here.</p>
+    <a href="/go/gymnastics-slippers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Insulated water bottle — 32 oz</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Wide-mouth insulated bottle that keeps water cold through a two-hour class. Fits in any dance bag side pocket.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Dancers dehydrate faster than most parents realize. The water bottle goes in the bag every class, not just hot days.</p>
+    <a href="/go/multi-sport-water-bottle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## Style-specific items
 
 The shoes are where dance gets style-specific. Most kids do multiple styles, which means multiple shoe types.

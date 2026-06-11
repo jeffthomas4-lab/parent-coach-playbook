@@ -13,11 +13,52 @@ export async function getStaticPaths() {
 const { piece } = Astro.props;
 const { Content } = await piece.render();
 const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece.data.sport;
+
+// FAQPage JSON-LD: synthesize Q&A pairs from the structured fields.
+// "What are the scoring basics?" / "What calls will I see?" / "What do parents get wrong?"
+// Only include a section if it has content. Google shows up to 3 rich pairs.
+const faqEntries: { name: string; text: string }[] = [];
+if (piece.data.scoringBasics?.length > 0) {
+  faqEntries.push({
+    name: `How does scoring work in ${sportLabel}?`,
+    text: piece.data.scoringBasics.join(' '),
+  });
+}
+if (piece.data.commonCalls?.length > 0) {
+  faqEntries.push({
+    name: `What are the common calls parents will see at a ${sportLabel} game?`,
+    text: piece.data.commonCalls.join(' '),
+  });
+}
+if (piece.data.thingsParentsGetWrong?.length > 0) {
+  faqEntries.push({
+    name: `What do parents most often get wrong about ${sportLabel} rules?`,
+    text: piece.data.thingsParentsGetWrong.join(' '),
+  });
+}
+// Also include any explicit faqs from frontmatter
+if (piece.data.faqs?.length > 0) {
+  for (const { question, answer } of piece.data.faqs) {
+    faqEntries.push({ name: question, text: answer });
+  }
+}
+const faqSchema = faqEntries.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqEntries.map(({ name, text }) => ({
+        '@type': 'Question',
+        name,
+        acceptedAnswer: { '@type': 'Answer', text },
+      })),
+    }
+  : null;
 ---
 <BaseLayout
   title={stripTitle(piece.data.title)}
   description={piece.data.summary}
 >
+  {faqSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">

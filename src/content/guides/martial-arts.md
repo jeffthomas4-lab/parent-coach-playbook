@@ -75,7 +75,14 @@ Competitive martial arts adds tournament fees, a team uniform, and travel. The g
 Belt progression fees are common. Many schools charge a testing fee for each belt rank. Know what the full progression costs before committing.
 
 The instructor matters more than the gear. A great instructor with basic equipment beats a bad instructor with premium gear every time.
-s · Ages 10+</div>
+
+**A gear bag**
+
+A duffel large enough to fit the gi, sparring gear, water bottle, and mouthguard case. Any athletic duffel works.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Martial Arts · Ages 10+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Multi-sport duffel bag</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Medium-sized duffel that fits a gi, sparring gear, water bottle, and mouthguard case. Durable enough for daily use, opens wide enough to find the mouthguard without dumping everything out.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Sparring gear smells. A bag with a ventilated pocket or mesh panel is worth the slight premium. Leave the bag unzipped overnight after practice.</p>
