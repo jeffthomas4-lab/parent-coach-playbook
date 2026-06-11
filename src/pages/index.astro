@@ -15,7 +15,9 @@ const all = (await getCollection('articles', ({ data }) => isLive(data)))
 // it falls back to the most recent article so the section always renders
 // three cards. Update weekly when the Friday Letter ships.
 const PINNED_SLUGS: string[] = [
-  // Add 3 article slugs here. Empty list = auto-fill from the 3 newest.
+  'the-summer-break-conversation',
+  'summer-specialization-pressure',
+  'summer-training-for-an-eight-year-old',
 ];
 const pinned = PINNED_SLUGS
   .map(s => all.find(a => a.slug === s))
