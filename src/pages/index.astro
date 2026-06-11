@@ -7,6 +7,20 @@ import { PILLARS, EDITORIAL, TOPICS } from '../data/site';
 import { isLive, freshnessDate, wasUpdated } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
 
+// "This Season" news items — 3 most recent non-draft entries.
+const newsItems = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 3);
+
+const NEWS_CATEGORY_LABELS: Record<string, string> = {
+  'rule-change':  'Rule change',
+  'equipment':    'Equipment',
+  'registration': 'Registration',
+  'season-dates': 'Season dates',
+  'safety':       'Safety',
+  'general':      'General',
+};
+
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
@@ -180,6 +194,43 @@ const websiteSchema = {
       </div>
     </div>
   </section>
+
+  {/* THIS SEASON: short news updates. Shows when at least one item exists. */}
+  {newsItems.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-10 md:py-12">
+        <div class="flex items-baseline justify-between mb-6">
+          <div>
+            <p class="font-display italic text-rust mb-1 font-medium">This Season</p>
+            <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
+              What's changing <em class="text-rust">right now</em>.
+            </h2>
+          </div>
+          <a href="/news/" class="font-display italic text-rust text-sm hover:underline font-medium whitespace-nowrap ml-4">
+            All updates →
+          </a>
+        </div>
+        <ul class="grid md:grid-cols-3 gap-px bg-bone">
+          {newsItems.map((item) => (
+            <li>
+              <a
+                href={`/news/${item.slug}/`}
+                class="block bg-paper p-5 hover:bg-paper-warm transition-colors group h-full"
+              >
+                <p class="font-display italic text-rust text-xs font-medium mb-2">
+                  {NEWS_CATEGORY_LABELS[item.data.category] ?? item.data.category}
+                  {item.data.sport && <span> · {item.data.sport}</span>}
+                </p>
+                <h3 class="font-display text-ink text-base leading-snug group-hover:text-rust transition-colors font-medium">
+                  {item.data.headline}
+                </h3>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
 
   {/* SECTION 2 of 6: THE THREE DRIVES (lead visual) */}
   <section class="border-b border-bone">

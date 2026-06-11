@@ -440,6 +440,31 @@ const decisions = defineCollection({
     }),
 });
 
+// "This Season" news items. Short, dated, specific. 2-4 sentences each.
+// Covers rule changes, equipment recalls, registration windows, season
+// dates, and anything a youth sports parent needs to act on now.
+const news = defineCollection({
+  type: 'content',
+  schema: () =>
+    z.object({
+      headline: z.string().min(8).max(120),
+      summary: z.string().min(30).max(400),   // shown in list and as meta description
+      category: z.enum([
+        'rule-change',
+        'equipment',
+        'registration',
+        'season-dates',
+        'safety',
+        'general',
+      ]),
+      sport: z.enum(SPORT_ENUM).optional(),
+      sourceUrl: z.string().url().optional(),
+      sourceLabel: z.string().optional(),
+      publishedAt: z.coerce.date(),
+      draft: z.boolean().default(false),
+    }),
+});
+
 export const collections = {
   articles,
   guides,
@@ -453,4 +478,5 @@ export const collections = {
   rules,
   scripts,
   decisions,
+  news,
 };

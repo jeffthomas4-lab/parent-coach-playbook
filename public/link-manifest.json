@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T17:43:49.228Z",
-  "count": 385,
+  "generatedAt": "2026-06-11T18:00:28.954Z",
+  "count": 388,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -267,6 +267,12 @@
       ]
     },
     {
+      "url": "https://ksi.uconn.edu",
+      "sources": [
+        "src/content/news/heat-index-protocols-summer-2026.md"
+      ]
+    },
+    {
       "url": "https://ksi.uconn.edu/",
       "sources": [
         "src/content/body/aed-location-field-readiness.md"
@@ -300,6 +306,7 @@
     {
       "url": "https://nocsae.org",
       "sources": [
+        "src/content/news/nocsae-helmet-standard-football-2026.md",
         "src/pages/resources/national-organizations.astro"
       ]
     },
@@ -1061,6 +1068,12 @@
       "url": "https://www.autismspeaks.org/",
       "sources": [
         "src/content/adaptive/autistic-athlete.md"
+      ]
+    },
+    {
+      "url": "https://www.ayso.org",
+      "sources": [
+        "src/content/news/ayso-fall-2026-registration.md"
       ]
     },
     {
@@ -2289,6 +2302,12 @@
         "src/content/body/catchers-gear-safety.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usabaseball.com/pitch-smart",
+      "sources": [
+        "src/content/news/usa-baseball-pitch-smart-2026-update.md"
       ]
     },
     {

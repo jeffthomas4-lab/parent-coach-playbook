@@ -1,0 +1,72 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('news', ({ data }) => !data.draft);
+  return items.map((item) => ({ params: { slug: item.slug } }));
+}
+
+const { slug } = Astro.params;
+const item = await getEntry('news', slug);
+if (!item) return new Response('Not found', { status: 404 });
+
+const { Content } = await item.render();
+
+const CATEGORY_LABELS: Record<string, string> = {
+  'rule-change':  'Rule change',
+  'equipment':    'Equipment',
+  'registration': 'Registration',
+  'season-dates': 'Season dates',
+  'safety':       'Safety',
+  'general':      'General',
+};
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<BaseLayout
+  title={item.data.headline}
+  description={item.data.summary}
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16 max-w-3xl">
+      <p class="font-display italic text-rust mb-3 font-medium">
+        <a href="/news/" class="hover:underline">This Season</a>
+        {' '}· {CATEGORY_LABELS[item.data.category] ?? item.data.category}
+        {item.data.sport && <span> · {item.data.sport}</span>}
+      </p>
+      <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.05] font-medium">
+        {item.data.headline}
+      </h1>
+      <p class="font-display italic text-ink-soft text-sm mt-4 font-medium">
+        {fmtDate(item.data.publishedAt)}
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12 max-w-3xl">
+      <div class="article-body">
+        <p class="font-display text-ink text-lg leading-relaxed">{item.data.summary}</p>
+        <Content />
+      </div>
+
+      {item.data.sourceUrl && (
+        <p class="font-display italic text-ink-soft text-sm mt-8 pt-6 border-t border-bone font-medium">
+          Source: <a href={item.data.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">{item.data.sourceLabel ?? item.data.sourceUrl}</a>
+        </p>
+      )}
+
+      <p class="font-display italic text-ink-soft text-xs mt-4 font-medium">
+        Something here is out of date or wrong? Email <a href="mailto:parentcoachplaybook@gmail.com" class="text-rust hover:underline">parentcoachplaybook@gmail.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="Get updates like this in the Friday Letter"
+    blurb="One short read a week. Rule changes, registration windows, and what's relevant for parents in youth sports right now."
+  />
+</BaseLayout>

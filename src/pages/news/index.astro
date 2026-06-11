@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+
+const items = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const CATEGORY_LABELS: Record<string, string> = {
+  'rule-change':  'Rule change',
+  'equipment':    'Equipment',
+  'registration': 'Registration',
+  'season-dates': 'Season dates',
+  'safety':       'Safety',
+  'general':      'General',
+};
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<BaseLayout
+  title="This Season — Youth Sports News for Parents"
+  description="Short, specific updates on rule changes, registration windows, equipment recalls, and season dates. No filler. Updated when something actually matters."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">This Season</p>
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] font-medium">
+        What's changing <em class="text-rust">right now</em>.
+      </h1>
+      <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
+        Short, specific updates on rule changes, registration windows, equipment recalls, and season dates. No filler. Posted when something actually matters.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12">
+      {items.length === 0 ? (
+        <p class="font-display italic text-ink-soft font-medium">No updates yet. Check back soon.</p>
+      ) : (
+        <ul class="grid gap-px bg-bone">
+          {items.map((item) => (
+            <li>
+              <a
+                href={`/news/${item.slug}/`}
+                class="block bg-paper p-6 md:p-8 hover:bg-paper-warm transition-colors group"
+              >
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <span class="font-display italic text-rust text-xs font-medium">
+                    {CATEGORY_LABELS[item.data.category] ?? item.data.category}
+                  </span>
+                  {item.data.sport && (
+                    <span class="font-display italic text-ink-soft text-xs font-medium">
+                      · {item.data.sport}
+                    </span>
+                  )}
+                  <span class="font-display italic text-ink-soft text-xs font-medium">
+                    · {fmtDate(item.data.publishedAt)}
+                  </span>
+                </div>
+                <h2 class="font-display text-ink text-xl md:text-2xl leading-snug group-hover:text-rust transition-colors font-medium">
+                  {item.data.headline}
+                </h2>
+                <p class="font-display text-ink-soft mt-2 leading-snug max-w-3xl">
+                  {item.data.summary.slice(0, 180)}{item.data.summary.length > 180 ? '…' : ''}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  <NewsletterSignup
+    headline="Get these updates in the Friday Letter"
+    blurb="One short read a week. Covers what's relevant for parents in youth sports right now."
+  />
+</BaseLayout>
