@@ -85,7 +85,7 @@
     "campaign": "gear-baseball-catchers-bag"
   },
   "baseball-sliding-mitt": {
-    "destination": "https://amzn.to/4eXZyiR",
+    "destination": "https://www.amazon.com/dp/B08F7ZY72S?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-baseball-sliding-mitt"
   },
@@ -95,7 +95,7 @@
     "campaign": "gear-baseball-arm-sleeve"
   },
   "baseball-bat-28in": {
-    "destination": "https://amzn.to/4f1EbNy",
+    "destination": "https://www.amazon.com/dp/B0D6QPSW3X?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-baseball-bat-28in"
   },
@@ -135,7 +135,7 @@
     "campaign": "gear-lacrosse-starter-kit-youth"
   },
   "soccer-cones-12pk": {
-    "destination": "https://amzn.to/42MMEwN",
+    "destination": "https://www.amazon.com/dp/B0CPLCVK6N?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-soccer-cones-12pk"
   },
@@ -240,7 +240,7 @@
     "campaign": "gear-swim-goggles-youth"
   },
   "volleyball-net": {
-    "destination": "https://amzn.to/4f2h4m5",
+    "destination": "https://www.amazon.com/dp/B0DRCMB3W8?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-volleyball-net"
   },
@@ -255,7 +255,7 @@
     "campaign": "gear-tennis-balls-orange"
   },
   "tennis-net": {
-    "destination": "https://amzn.to/4na5Uh3",
+    "destination": "https://www.amazon.com/dp/B074RFJHB4?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-tennis-net"
   },
@@ -599,11 +599,6 @@
     "retailer": "Amazon",
     "campaign": "gear-action-camera"
   },
-  "action-camera-ORIG-TRUNCATED": {
-    "destination": "https://www.amazon.com/dp/B0FP5R9BDZ?tag=parentcoachpl-20",
-    "retailer": "Amazon",
-    "campaign": "gear-action-camera"
-  },
   "shadow-box-jersey": {
     "destination": "https://www.amazon.com/dp/B0D7C8JGPM?tag=parentcoachpl-20",
     "retailer": "Amazon",
@@ -800,7 +795,7 @@
     "campaign": "gear-agility-cones"
   },
   "jump-rope-speed": {
-    "destination": "https://www.amazon.com/dp/B00BXJXO8I?tag=parentcoachpl-20",
+    "destination": "https://www.amazon.com/dp/B07BFKRX3Y?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-jump-rope"
   },

@@ -67,7 +67,7 @@ Set up a Square account for the booster club, not your personal account. Keep th
     <div class="t-label text-ink-soft mb-2 text-xs">Square · Boosters gear · All programs</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Square contactless card reader</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Accepts chip, tap, and swipe. Pairs with the free Square app. No monthly fee, percentage per transaction. Works on any phone or tablet.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Get the chip and tap version, not just the free magstripe reader. Magstripe transactions decline more often and a failed sale at a concession stand loses the customer.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Get the chip and tap version. Magstripe transactions decline more often and a failed sale at a concession stand loses the customer.</p>
     <a href="/go/square-card-reader/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Square ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">Square is a separate service. We do not earn a commission on Square referrals.</p>
@@ -77,7 +77,7 @@ Set up a Square account for the booster club, not your personal account. Keep th
 
 For events where you need to make announcements to a crowd without shouting. Playoff games, end-of-season banquets, auction nights, outdoor performances.
 
-What to look for: rechargeable battery (no extension cord), Bluetooth connectivity so you can play music from a phone, at least 30 watts for outdoor use, and a built-in microphone input. The JBL Eon One, Bose S1 Pro, and ION Audio Tailgater are all solid mid-range options.
+What to look for: rechargeable battery (no extension cord), Bluetooth so you can play music from a phone, at least 30 watts for outdoor use, and a microphone input. The JBL Eon One Compact, Bose S1 Pro, and ION Audio Tailgater are solid mid-range options.
 
 You don't need a full PA system. You need something that fills a school gym or a parking lot without distortion.
 
@@ -86,7 +86,7 @@ You don't need a full PA system. You need something that fills a school gym or a
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boosters gear · Events</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Portable PA speaker — rechargeable with mic input</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Battery-powered portable speaker with Bluetooth and microphone input. 30+ watts for outdoor use. Carries in one hand. ION and Pyle make solid options in the $80–150 range.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If your booster club runs more than three events a year, buy the speaker. Renting a PA is $50–100 per event. The math clears in one season.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If your booster club runs more than three events a year, buy the speaker. Renting a PA runs $50–100 per event. The math clears in one season.</p>
     <a href="/go/portable-pa-speaker/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -96,7 +96,7 @@ You don't need a full PA system. You need something that fills a school gym or a
 
 Sounds minor. Actually essential once you've run two or three events without one.
 
-Labels go on the cash box key, the equipment bins, the food containers, the storage boxes, the USB cables, and anything else that gets shared among six rotating volunteers who all have different systems. A Brother P-Touch or Dymo label maker runs on AA batteries, prints in thirty seconds, and prevents the two hours of confusion that happens when nobody knows which box the receipt printer is in.
+Labels go on the cash box key, the equipment bins, the food containers, the storage boxes, the USB cables, and anything else that gets shared among six rotating volunteers who all have different systems. A Brother P-Touch runs on AA batteries, prints in thirty seconds, and prevents two hours of confusion at setup.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -113,6 +113,6 @@ Labels go on the cash box key, the equipment bins, the food containers, the stor
 
 Folding table, cash box, card reader, and label maker. These four items cover 90 percent of event logistics. Buy them once, label them with the program name, and store them in the same place after every event.
 
-The PA speaker is the one item worth renting until the event frequency justifies the purchase. Once you're at four or more events a year, buy it.
+The PA speaker is worth renting until the event frequency justifies the purchase. Once you're at four or more events a year, buy it.
 
-Everything else — concession supplies, signage, decorations — is consumable and situational. Buy it fresh each year.
+Everything else — concession supplies, signage, decorations — is consumable. Buy it fresh each year.
