@@ -23,6 +23,28 @@ That's it. Four items. This is the cheapest sport to get started in.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Swimming · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth competitive training swimsuit</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Basic nylon or polyester training suit in youth sizing. Holds shape through a full season of daily practice. Not a tech suit — the right call for any swimmer under 12 or any recreational swimmer.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: One suit is enough for most kids. Buy two if your kid is in the water six days a week. Confirm with your team whether they specify a required color or brand.</p>
+    <a href="/go/swimsuit-training-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Swimming · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Silicone swim cap — youth</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Unisex silicone cap in youth sizing. Keeps hair out of the face and out of the water. More durable than latex and easier to put on.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Most teams require a cap. Used caps are fine; new ones are a few dollars. Keep a spare in the bag — they tear at the worst moment.</p>
+    <a href="/go/swim-cap-silicone-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Swimming · Ages 6–14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Speedo Hydrospex kids goggles</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Speedo's kid-sized goggle with anti-fog lenses, UV protection, and a soft silicone frame. Sized for ages 6 to 14.</p>

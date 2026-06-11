@@ -46,7 +46,7 @@ The team provides your competition uniform, so wait on that purchase. Trying to 
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cheer · All ages</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">got2b Glued spiking gel (3 pack)</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The hair gel cheer moms actually use. Holds a high pony through a full day of stunting and comes out with one wash.</p>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The hair gel cheer parents actually use. Holds a high pony through a full day of stunting and comes out with one wash.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Ask any cheer parent what's in their competition bag. It's this. The three-pack lasts a season.</p>
     <a href="/go/cheer-hair-gel/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>

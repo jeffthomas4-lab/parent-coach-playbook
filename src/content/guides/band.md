@@ -48,9 +48,33 @@ The school will tell you which book. Standard ones: *Essential Elements*, *Sound
 
 A sturdy folder with elastic to hold music. Pencils for marking.
 
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Band · All levels</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Black performance music folder</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard black folder with elastic straps to hold sheet music in place during a concert or rehearsal. Won't blow closed mid-piece on an outdoor stage.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Cheaper than losing a page of music before the concert. Most band programs require black. Get the one with page slots so music doesn't fall out.</p>
+    <a href="/go/music-folder-performance/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A foldable music stand (for home practice)**
 
 Worth having one at home so practice is easy to set up.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Band · All levels</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Portable folding music stand</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight folding stand that sets up in 10 seconds and packs flat. Height-adjustable, stable enough for a full-sized score. Standard home practice setup.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If the stand isn't already set up when the practice window opens, it doesn't happen. This one lives out, not in a closet.</p>
+    <a href="/go/music-stand-foldable/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Reeds (woodwinds), valve oil (brass), or strings (strings)**
 
@@ -89,8 +113,6 @@ Most marching programs provide: uniform, hat, plume, gloves. You provide:
 - Garment bag for the uniform
 - Water bottle (always)
 
-*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
-
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
@@ -104,7 +126,7 @@ Most marching programs provide: uniform, hat, plume, gloves. You provide:
 
 **Concert dress**
 
-Some programs require concert black for performances. Black dress pants/skirt and a white button-up. Many kids already have these.
+Some programs require concert black for performances. Black dress pants and a white button-up shirt. Many kids already have these.
 
 ## Ages 15+ (High school)
 

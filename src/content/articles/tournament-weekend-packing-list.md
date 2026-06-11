@@ -1,10 +1,8 @@
 ---
-title: "Tournament Weekend Packing List: The Friday Night Pack"
-dek: "Two days away, one bag, and a hundred things that can go wrong. Here's what saves the weekend."
-seoTitle: "Tournament Weekend Packing List: The Friday Night Pack"
-seoDescription: "The real tournament weekend packing list: uniforms, cleats, hotel survival kit, cooler food for Sunday, first aid, and the things that fail you if you leave them home."
-bluf: "Pack Friday night, not Saturday morning. Bring the backup uniform. Bring the cooler for Sunday because Sunday food at a tournament venue is expensive and bad. The things that save a tournament weekend are cash, a portable charger, blister pads, and real food. The things that fail you are the charger you forgot and the second pair of cleats still in the mudroom."
-topic: game-day
+title: The tournament weekend *packing list*.
+dek: What to bring, what to leave, what you'll wish you had.
+seoDescription: A practical tournament weekend packing list for sports parents. Covers athlete gear, food, parent survival, sibling logistics, and car setup. Sport-specific callouts for soccer, baseball, and volleyball families.
+topic: tournament
 format: note
 phase: drive-there
 sport: multi-sport
@@ -13,51 +11,68 @@ publishedAt: 2026-06-11
 featured: false
 editorial:
   claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
 ---
 
-A tournament weekend has two failure modes: the thing you forgot and the thing you brought but couldn't find. Pack Friday night, every item in the same place it was last tournament.
+Most families pack for a tournament the way they pack for a camping trip: grab everything, throw it in, sort it out in the parking lot. Then spend the weekend digging through a gym bag to find the right cleat, or watching the kid's phone die at noon.
 
-## The gear that saves you
+The lists below are organized by category. Read the sport callouts. The differences matter.
 
-**Two uniforms.** The game-one jersey is the one your kid will spill on, tear, or leave on a bathroom hook. The backup uniform is not optional for two-day events. If your sport uses numbered jerseys issued by the team, confirm before you pack whether alternates are allowed.
+## Athlete gear
 
-**Cleats plus backup shoes.** Cleats for the field, turf shoes or running shoes for in-between. A wet pair of cleats from Saturday morning becomes a cold pair by Saturday afternoon and a wet-sock problem all day Sunday. Dry them overnight with newspaper stuffed inside if there's no dryer at the hotel.
+Two full uniform sets. Not "an extra jersey just in case." Two complete sets, clean, packed in a bag the athlete controls.
 
-**Sport-specific protection.** Shin guards, cup, mouthguard, whatever your sport requires. If it's required and it's not in the bag, you find out at check-in and you improvise badly.
+Cleats and court shoes. A backup pair if you have them. Competition footwear and warmup footwear are not the same thing.
 
-**Extra socks and a change of clothes per day.** One set of non-uniform athletic clothes per day beyond the uniform. You will be in these for 10 hours.
+Shin guards, batting gloves, kneepads: whatever your sport requires, pack two pairs. Gear gets wet. Gear gets left on a field.
 
-## The hotel survival kit
+Full change of clothes for after. Real clothes, not another uniform.
 
-Sleep at tournaments is real money. Families that sleep well Saturday night play better Sunday morning.
+**Soccer:** A ball pump and an extra valve. Fields vary. The warmup ball always goes flat.
 
-Bring a sleep mask and earplugs. Hotel rooms with four people sharing between games are not quiet environments. A small portable fan or white noise app on your phone handles the HVAC noise and the parking-lot ambient sound that hotels somehow pipe directly into rooms.
+**Baseball:** Batting helmet, batting gloves, and an extra belt. Black and navy belts in the bottom of a bag are identical until they're not. Also pack a pine tar rag, even if your kid says they don't use one.
 
-A power strip, because tournament hotels have two outlets and four families' worth of devices. A portable battery, 10,000mAh minimum, for the long Saturday between games when the outlets are all taken.
+**Volleyball:** Knee compression sleeves. Knee pads alone are not enough for a six-game day. Also pack an extra hair tie and a spare set of ankle braces if your kid wears them.
 
-## Food: the thing that determines Sunday
+## Food and water
 
-Saturday concession food is fine for one meal. Sunday concession food after two days of it will not carry a tired 12-year-old through a bracket game. Bring a soft cooler.
+Pack real food, not a bag of snacks. A 12-quart soft-sided cooler holds a full day without taking up your whole trunk.
 
-The cooler goes in Saturday afternoon. Pre-made sandwiches, cut fruit, string cheese, a bag of trail mix, a couple of Gatorades. Real food at 7am Sunday before the first game is the difference between a sharp first half and a slow one.
+For the day: peanut butter and honey on whole wheat, bananas, string cheese, turkey roll-ups, apple slices, rice cakes with almond butter. Foods that travel. Foods with protein and something that actually sticks.
 
-Cash for Saturday concessions. A $40 budget for a kid and two adults at a tournament venue is not unreasonable. Have it in actual bills because some concession stands don't reliably run cards.
+Your kid burns through food between games. Plan for 300 to 400 calories per gap. That's a real snack, not a handful of trail mix.
 
-## First aid basics that earn their spot
+Water: one full bottle per game, minimum. Add an electrolyte mix (Liquid IV or Nuun) for the afternoon games when heat and fatigue stack up.
 
-Blister pads, because tournament venues mean concrete and athletes in their second day of cleats. ibuprofen, because everyone needs it by Sunday. A reusable ice pack for the cooler, because someone will turn an ankle and venue ice is never where you need it. Pre-wrap and athletic tape if your athlete already uses them.
+Leave the fast-food run between games. The greasy burger at noon is fine until the third game.
 
-A small laundry bag for dirty and wet gear. Saturday's gear goes in the bag so it's not loose and damp at the bottom of the main bag mixing with clean Sunday clothes.
+## Parent survival
 
-## The payment logistics
+A camp chair worth sitting in for four hours. Not the folding grocery store chair that collapses when you shift your weight.
 
-Check your tournament's payment app before Friday. Some tournaments and hotels require Venmo or Zelle for last-minute fees, team meals, or shared hotel costs. Confirm before you get there.
+Sunscreen and a wide-brim hat. Not just sunglasses. Both.
 
-Team fee, if due at check-in, goes in the envelope the day before. You should not be finding a check while trying to check a roster.
+A portable battery pack, 10,000 mAh minimum (Anker or Mophie). Your phone will die by 1 PM if you're running the schedule, texting the team, and taking photos.
 
-## What actually fails people
+Cash. Some tournament parking is cash only. A lot of youth sports concession stands are cash only. Bring $40.
 
-The phone charger left on the kitchen counter. The ice pack that was back in the freezer. The sunscreen that stays in the house even though every outdoor spring tournament is a three-hour sun exposure. The umbrella for the tournament that gets rained on every May. These are not dramatic oversights. They're the things that cost real comfort over two days.
+A real rain jacket. Tournaments don't cancel for weather.
 
-The families who run smooth tournament weekends pack the same bag the same way every time. It's not a special skill. It's a checklist and a habit.
+## Sibling logistics
+
+A sibling stuck at a baseball tournament for six hours with nothing to do is a problem you solve before you leave the house.
+
+A fully charged tablet with downloaded shows. Headphones. A book. A small bag of snacks they picked themselves.
+
+For younger kids: a folding mat or blanket they can sit on. Bleachers are hard. Kids who are comfortable complain less.
+
+And if the sibling plays a different sport the same weekend, pack a separate bag for them. Don't merge gear bags. You will regret it at 7 AM in a parking garage.
+
+## Car setup
+
+Two zones: easy access and buried. Easy access is what you need in the first 30 minutes: directions, parking cash, athlete bag, water, breakfast food. Everything else goes in the trunk.
+
+A back-seat car organizer that hangs from the headrest keeps snacks, chargers, and small items from disappearing under seats.
+
+Label every bag. Not with a tag. Write the name on the bag with a Sharpie. When three families are pulling bags off the same sidewalk, unlabeled black bags go missing.
+
+One umbrella per car. Not in a checked bag. In the door pocket.

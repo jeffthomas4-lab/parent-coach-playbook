@@ -29,6 +29,17 @@ A racket is the main purchase. Size by age: 21 inches for under-9, 23 inches for
 
 Tennis shoes matter more than most parents realize. Court shoes have soles designed to grip clay, hard courts, and grass without sliding. Running shoes on a tennis court are slippery and dangerous.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Tennis · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth tennis court shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Court-specific shoes with a herringbone or hard-court outsole pattern. Designed to grip and release on hard courts without sliding or catching. Not running shoes — different sole construction.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Running shoes on a tennis court create ankle roll risk during lateral cuts. Court shoes are the one place not to cut corners in this sport.</p>
+    <a href="/go/tennis-shoes-court-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 A tube of balls is standard. Use orange dot (slower) for younger kids under 12, and regular yellow balls for older players. Stringing tension matters: a factory-strung racket loses tension within three months, and a loose-strung racket plays dead. Plan on a restringing every two to three months.
 
 <div class="my-8">
@@ -38,6 +49,17 @@ A tube of balls is standard. Use orange dot (slower) for younger kids under 12, 
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The slower 60-foot-court ball USTA youth programs actually use. Lower bounce that a kid can rally with instead of chase.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The orange ball is the difference between a rally and a fetch drill. Twelve is the right count; half will end up over the fence.</p>
     <a href="/go/tennis-balls-orange/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Tennis · Ages 12+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Penn Championship tennis balls</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard yellow pressurized balls for full-size court play. The ball used in most middle and high school programs and adult recreational leagues.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy a case, not a single can. They go dead fast with regular play. At 12 and up, yellow balls are the standard — if your kid is playing on the full court, these are the ones to use.</p>
+    <a href="/go/tennis-balls-standard/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>

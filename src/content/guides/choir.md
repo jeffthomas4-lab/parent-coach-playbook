@@ -46,11 +46,22 @@ This is when many kids audition for community choirs. These are often regional h
 
 **Concert dress (specified by program)**
 
-Most community children's chorus programs specify a uniform: usually a tuxedo shirt and black pants for boys, a black dress for girls. The program will tell you exactly what to buy.
+Most community children's chorus programs specify a uniform: usually concert black — dark dress pants or skirt and a white or black top. The program will tell you exactly what to buy.
 
 **A music folder**
 
 Most programs provide one with the program's name.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Choir · All levels</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Black performance music folder</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard black folder with elastic straps to hold sheet music flat. Required in most choir programs. Keeps pages in order through a two-hour rehearsal.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Most programs provide one, but having a backup at home for practice is worth the three dollars. Losing music the week before a concert is a bad week.</p>
+    <a href="/go/music-folder-performance/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A pencil**
 
@@ -82,7 +93,7 @@ High-school choirs are typically tuition-free (it's a class). The expenses come 
 
 **Concert dress (formal)**
 
-Most high-school programs require formal concert dress: tuxedo shirt and pants for boys, full-length black dress for girls. The program may sell or recommend specific suppliers.
+Most high-school programs require formal concert dress: concert black, typically formal dress pants and a dress shirt or formal black top. The program may sell or recommend specific suppliers.
 
 **Performance fees**
 

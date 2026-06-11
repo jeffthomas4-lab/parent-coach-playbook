@@ -120,6 +120,17 @@ Varsity cross country runners log 30 to 50 miles per week in season. One pair of
 
 Hips, IT band, and calves take the most damage in a heavy week of training. A foam roller used consistently through the season keeps things from locking up. This is the one recovery tool worth owning before high school cross country. A 10-minute routine before bed makes a real difference by October.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross country · Ages 14+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Foam roller — medium density</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard 36-inch medium-density foam roller. Works on IT band, hip flexors, calves, and thoracic spine. Medium density is right for daily-use maintenance rolling without bruising the tissue.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: 10 minutes before bed gets results. Runners who roll consistently stay healthier through October and November than runners who don't. This is the one recovery tool worth buying.</p>
+    <a href="/go/foam-roller-medium/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## What the team provides
 
 Your school provides the uniform (jersey and shorts for meets), team transportation to invitationals, and most race entry fees. Some programs provide practice jerseys.

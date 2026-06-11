@@ -157,16 +157,16 @@ How to choose: have your kid do a one-leg balance drill in the shoes (stand on o
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-**A size-6 (women's) or size-7 (men's) basketball**
+**A size-6 (youth) or size-7 (full-size) basketball**
 
-Boys' leagues at age 12 typically use a size-7 official ball. Girls' leagues use a size-6. Check your league rules.
+Most youth leagues at age 12 and under use a size-6 ball. Older players and most boys' leagues use size-7. Check your league rules.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 11–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Wilson NBA Authentic indoor/outdoor basketball</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The step up from the rubber ball, in size 6 and size 7. Composite leather feel without the indoor-only restrictions.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Match the league — size 6 for girls' ball, size 7 for boys'. Don't buy the official game ball for a 12-year-old; the gym supplies it.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Match the league — size 6 for youth play, size 7 for full-size. Don't buy the official game ball for a 12-year-old; the gym supplies it.</p>
     <a href="/go/basketball-ball-authentic/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>

@@ -21,13 +21,24 @@ Most kids start with a summer drama camp or a school program. There's almost not
 
 **Comfortable rehearsal clothes**
 
-Black athletic pants or leggings, a black short-sleeve t-shirt, jazz shoes or character shoes if the camp requires them. Some camps will tell you what to bring.
+Black athletic pants or shorts, a black short-sleeve t-shirt, jazz shoes or character shoes if the camp requires them. Some camps will tell you what to bring.
+
+*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Theater · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth black athletic shorts</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Basic black athletic shorts in youth sizing. The standard rehearsal bottom for drama camp and school productions. Movement-friendly, machine washable.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Black is the only right color. Directors use it for sight lines during blocking. Three pairs covers a full rehearsal week without laundry math.</p>
+    <a href="/go/athletic-shorts-black-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A water bottle**
 
 Yes. Same rule as every other activity.
-
-*Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
@@ -44,6 +55,17 @@ Yes. Same rule as every other activity.
 
 Most programs hand out scripts. A 1-inch binder with a pencil pouch is enough.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Theater · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">1-inch 3-ring binder</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard 1-inch 3-ring binder for holding a script. Add a pencil pouch inside so the pencil doesn't disappear between rehearsals.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A binder lays flat on a music stand or a chair and stays organized through blocking changes. Spiral notebooks don't.</p>
+    <a href="/go/script-binder-1inch/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A pencil**
 
 Required gear. Theater kids mark their scripts. Mechanical pencils with eraser caps are standard.
@@ -56,11 +78,22 @@ Auditions become a real thing. Some kids start to take voice or acting lessons. 
 
 **Audition gear**
 
-For auditions, kids wear a fitted dance/movement-friendly outfit. Black leggings, fitted t-shirt, jazz shoes. Hair pulled back.
+For auditions, kids wear a fitted dance/movement-friendly outfit. Black athletic pants or shorts, fitted t-shirt, jazz shoes. Hair pulled back.
 
 **A monologue book or two**
 
 For kids who are auditioning regularly. Two or three age-appropriate books is plenty.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Theater · Ages 8+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth theater monologue book</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Age-appropriate monologue collections for young actors. Covers comedic and dramatic options in the 1-to-2-minute range most youth auditions require.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Get two books, find three to four monologues your kid genuinely connects with, and rotate. Most directors can tell when a kid picked a monologue because it was in the book and not because they liked it.</p>
+    <a href="/go/theater-monologue-book/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Optional: voice or acting lessons**
 

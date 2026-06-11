@@ -20,7 +20,7 @@ At this level, programs are building body awareness, learning to base and fly, a
 
 **Practice clothes**
 
-Fitted athletic wear only. Loose clothing can catch on a base's hands during a stunt and create safety problems. Compression shorts or leggings under shorts for flyers. A fitted athletic top. Nothing with drawstrings, zippers, or anything that sticks out.
+Fitted athletic wear only. Loose clothing can catch on a base's hands during a stunt and create safety problems. Compression shorts or tights under shorts for flyers. A fitted athletic top. Nothing with drawstrings, zippers, or anything that sticks out.
 
 **A mouthguard**
 

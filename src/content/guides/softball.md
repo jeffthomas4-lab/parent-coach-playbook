@@ -144,7 +144,7 @@ Pitchers wear a long-sleeve jacket between innings to keep the throwing shoulder
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Pitchers all ages</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton Women's pullover pitching jacket</h3>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton pullover pitching jacket</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight pullover jacket with a hood and thumb holes. Youth and adult sizing. Keeps the throwing shoulder from tightening between innings.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy this the week your kid makes the commitment to pitch. Don't wait for the shoulder to ache first.</p>
     <a href="/go/softball-pitching-jacket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>

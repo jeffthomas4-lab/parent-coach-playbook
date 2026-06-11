@@ -1028,5 +1028,60 @@
     "destination": "https://bookshop.org/a/125074/9780345530257",
     "retailer": "Bookshop.org",
     "campaign": "books-coaching"
+  },
+  "script-binder-1inch": {
+    "destination": "https://www.amazon.com/s?k=1+inch+binder+3+ring&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-script-binder"
+  },
+  "theater-monologue-book": {
+    "destination": "https://www.amazon.com/s?k=youth+theater+audition+monologue+book&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-theater-monologue-book"
+  },
+  "music-folder-performance": {
+    "destination": "https://www.amazon.com/s?k=black+performance+music+folder+band&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-music-folder"
+  },
+  "music-stand-foldable": {
+    "destination": "https://www.amazon.com/s?k=foldable+portable+music+stand+home+practice&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-music-stand"
+  },
+  "gymnastics-grips-youth": {
+    "destination": "https://www.amazon.com/s?k=gymnastics+bar+grips+youth&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-gymnastics-grips"
+  },
+  "martial-arts-sparring-gear-youth": {
+    "destination": "https://www.amazon.com/s?k=martial+arts+sparring+gear+set+youth+helmet+chest+gloves&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-martial-arts-sparring"
+  },
+  "swim-cap-silicone-youth": {
+    "destination": "https://www.amazon.com/s?k=silicone+swim+cap+youth+unisex&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-swim-cap"
+  },
+  "swimsuit-training-youth": {
+    "destination": "https://www.amazon.com/s?k=youth+competitive+training+swimsuit+one+piece&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-swimsuit-training"
+  },
+  "tennis-shoes-court-youth": {
+    "destination": "https://www.amazon.com/s?k=youth+tennis+court+shoes&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-tennis-shoes"
+  },
+  "tennis-balls-standard": {
+    "destination": "https://www.amazon.com/s?k=penn+championship+tennis+balls&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-tennis-balls-standard"
+  },
+  "athletic-shorts-black-youth": {
+    "destination": "https://www.amazon.com/s?k=youth+black+athletic+shorts+unisex&tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-athletic-shorts-black"
   }
 }

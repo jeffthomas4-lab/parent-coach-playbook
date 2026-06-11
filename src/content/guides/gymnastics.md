@@ -62,6 +62,17 @@ If your kid moves from rec to competitive, training increases to 12–20 hours p
 
 Most coaches don't introduce grips until a kid is doing full kips. Don't buy grips for a rec gymnast.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Gymnastics · Ages 8+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Gymnastics bar grips — youth</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Dowel or non-dowel grips in youth sizing. Protect hands during bars work and improve grip on the bar during kips, casts, and release moves.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Wait for the coach to say it's time. When they do, get dowel grips — they're the standard at every competitive level. Wrong size grips are dangerous.</p>
+    <a href="/go/gymnastics-grips-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A foam roller**
 
 Kids who roll between practices recover faster. A medium foam roller at home extends what the gym does.

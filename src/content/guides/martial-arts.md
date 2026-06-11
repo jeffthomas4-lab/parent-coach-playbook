@@ -66,6 +66,17 @@ Sparring becomes regular. The school will specify what sparring gear is required
 
 Helmet, chest protector, forearm/shin guards, instep pads, and gloves. Taekwondo sparring gear is different from karate sparring gear — don't buy one for the other.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Martial Arts · Ages 10+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth martial arts sparring gear set</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Full sparring set: helmet, chest guard, forearm guards, shin guards, instep pads, and gloves. Youth sizing. Confirm with your school which style of gear they require before ordering — karate and taekwondo sets are not interchangeable.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the set, not pieces. Mixing brands creates fit issues. Ask your instructor which set the other students use — matching gear brands makes sparring safer and easier to source replacements.</p>
+    <a href="/go/martial-arts-sparring-gear-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 ## Ages 15+ (Advanced belts, competitive)
 
 Competitive martial arts adds tournament fees, a team uniform, and travel. The gear costs are fixed. The variable is how much competition your kid pursues.
