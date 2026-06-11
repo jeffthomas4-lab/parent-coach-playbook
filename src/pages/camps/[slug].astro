@@ -390,7 +390,7 @@ if (camp) {
             <summary class="font-display italic text-rust px-4 py-3 cursor-pointer font-medium">
               Leave a review (your kid attended) →
             </summary>
-            <form id="review-form" class="grid gap-4 p-4 pt-0" novalidate>
+            <form id="review-form" class="grid gap-4 p-4 pt-0" data-camp-slug={camp?.slug} novalidate>
               <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
                 <label>Website (leave empty)
                   <input type="text" name="website" tabindex="-1" autocomplete="off" />
@@ -518,7 +518,7 @@ if (camp) {
               <p>Camps that claim their listing get to self-edit info, add a logo, post a photo gallery, and embed a registration link. Free. We verify ownership before activating.</p>
               <p>By uploading photos you confirm you own them and have written consent from a parent or guardian for any child shown.</p>
             </div>
-            <form id="claim-form" class="grid gap-3 mt-3" novalidate>
+            <form id="claim-form" class="grid gap-3 mt-3" data-camp-slug={camp?.slug} novalidate>
               <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
                 <label>Website (leave empty)
                   <input type="text" name="website" tabindex="-1" autocomplete="off" />
@@ -552,11 +552,12 @@ if (camp) {
     </Fragment>
   )}
 
-  <script is:inline define:vars={{ slug: camp.slug }}>
+  <script>
     (function () {
       var form = document.getElementById('review-form');
       var status = document.querySelector('[data-review-status]');
       if (!form || !status) return;
+      var slug = form.getAttribute('data-camp-slug') || '';
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         status.classList.remove('hidden');
@@ -586,6 +587,7 @@ if (camp) {
       var form = document.getElementById('claim-form');
       var status = document.querySelector('[data-claim-status]');
       if (!form || !status) return;
+      var slug = form.getAttribute('data-camp-slug') || '';
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         status.classList.remove('hidden');

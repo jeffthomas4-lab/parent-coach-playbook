@@ -364,10 +364,17 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
   </Fragment>
 
-  <script is:inline define:vars={{ campsJson, sportsListJson }}>
+  {/* JSON data island — non-executable, exempt from script-src CSP. The
+      bundled script below reads it via getElementById so we can remove
+      is:inline + define:vars and eliminate that unsafe-inline vector. */}
+  <script type="application/json" id="camps-data" set:html={JSON.stringify({ camps: campsLite, sports: CAMP_SPORTS })} />
+
+  <script>
     (function () {
-      const camps = JSON.parse(campsJson);
-      const sportsList = JSON.parse(sportsListJson);
+      const dataEl = document.getElementById('camps-data');
+      const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
+      const camps = _data.camps || [];
+      const sportsList = _data.sports || [];
 
       // Helper: get sport label
       function sportLabel(slug) {

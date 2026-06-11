@@ -3,6 +3,7 @@ title: "The missing third option: a *rec-plus* baseball model"
 summary: "Between rec ball and travel ball is a development-first lane that almost no one runs. Three practices per game, individual skill focus, LTAD-aligned. Here's what it looks like."
 theQuestion: "My kid wants more baseball than rec gives them but travel feels like overkill. Is there a third option?"
 publishedAt: 2026-04-30
+draft: false
 featured: true
 benefits:
   - "Real skill development, not just game reps."

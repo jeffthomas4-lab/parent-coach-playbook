@@ -3,6 +3,7 @@ title: "When should my kid *specialize* in one sport?"
 summary: "AAP and AOSSM converge on the same answer: not before mid-adolescence in most sports. Here's the honest framing for the conversation."
 theQuestion: "My kid loves one sport more than the others. Should we drop the rest?"
 publishedAt: 2026-04-26
+draft: false
 featured: true
 benefits:
   - "More reps in the primary sport, sometimes faster skill gain."

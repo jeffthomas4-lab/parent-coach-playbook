@@ -3,6 +3,7 @@ title: "How many sports should my kid play?"
 summary: "Two is healthy at most ages. Three works through middle school for some. One is fine if it's the kid's call. Here's the honest framing."
 theQuestion: "What's the right number of sports for a kid this age?"
 publishedAt: 2026-04-26
+draft: false
 featured: false
 benefits:
   - "Multi-sport kids develop better overall athletic ability. Movement skill transfers across sports."

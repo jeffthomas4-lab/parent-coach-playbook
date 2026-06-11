@@ -31,7 +31,7 @@ const { destination } = Astro.props;
   <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href={destination} />
   <title>Redirecting...</title>
-  <script set:html={`window.location.replace(${JSON.stringify(destination)});`} />
+  <!-- JS redirect removed: <meta http-equiv="refresh"> above handles it without unsafe-inline -->
 </head>
 <body>
   <p>Redirecting to <a href={destination} rel="sponsored noopener">{destination}</a>...</p>
