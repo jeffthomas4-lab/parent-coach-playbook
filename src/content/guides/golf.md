@@ -28,61 +28,54 @@ Used clubs are fine at this age. Check that the grips aren't cracked or slippery
 
 **A golf glove**
 
-Worn on the non-dominant hand (left hand for a right-handed golfer). Improves grip and prevents blisters during longer range sessions. Get one that fits snugly — a floppy glove is worse than no glove. Most junior gloves are inexpensive and hold up for a full season.
+Worn on the non-dominant hand (left hand for a right-handed golfer). Improves grip consistency and prevents blisters during longer sessions. Not required but common.
 
-**Six golf balls**
+How to choose: glove should fit snugly without bunching at the knuckles. Most junior gloves come in S/M/L.
 
-Kids lose balls constantly. A sleeve of three won't get you through a nine-hole round. Start with six and plan to restock.
 
-**What about a bag?**
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Golf · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">US Kids Golf junior starter set</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Complete starter set sized by height, not age. Driver, fairway wood, irons, putter, and stand bag. Available in multiple height ranges.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Size by height, not by age. A set that fits develops the swing. A set that doesn't teaches bad habits that take years to unlearn.</p>
+    <a href="/go/golf-starter-set-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
-A drawstring bag or small stand bag works fine at this age. Skip the full-size cart bag. Your kid is carrying a starter set of five to seven clubs. A lightweight Sunday bag or a small carry bag is all they need.
 
-## Ages 8–11 (Junior leagues, First Tee, school programs)
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Golf · Ages 5+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">FootJoy junior golf glove</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Cabretta leather palm in youth sizing. Improves grip and prevents blisters in longer practice sessions.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the right size. A glove that's too big bunches and slips. Measure the hand, not the age.</p>
+    <a href="/go/golf-glove-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
-At this age, kids are starting to develop real swing mechanics and play on actual courses. The equipment decisions start to matter more.
+## Ages 8–12 (Junior programs and leagues)
 
-**An age-appropriate full set**
+The swing is developing. The gear list doesn't change — it's the same set, upgraded as your kid grows out of it.
 
-A full junior set at this level typically includes a driver, fairway wood, a couple of irons, a pitching wedge, and a putter. Eight to nine clubs total. US Kids Golf Tour Series is the step up from the entry-level sets — better feel, more consistent club faces.
+**Upgrade the set when they outgrow it**
 
-Again: used is fine. The clubs don't need to be new. The sizing needs to be right.
+US Kids Golf recommends measuring annually. A kid who grew 2 inches is playing with clubs that are too short, which forces compensation and costs shots.
 
-**A proper stand bag**
+**Golf balls — a dozen of something durable**
 
-By age 8 or 9, your kid is carrying their own bag. A lightweight stand bag with legs that pop out lets them set it down on the course without it tipping. Look for one with enough pockets for balls, tees, a glove, and a snack. Under four pounds empty is the target weight.
+Beginners lose a lot of balls. Buy a dozen recycled or inexpensive range balls. Don't buy tour-quality balls until they're not losing two per hole.
 
-**Golf shoes or athletic shoes?**
+## Ages 13+ (Competitive junior golf)
 
-Regular athletic shoes work fine through this age. Golf shoes aren't necessary until your kid is playing regularly on courses that require them, or until they're old enough to want the lateral stability that spikeless golf shoes provide. Don't rush this purchase.
+A properly fitted set, quality bag, rangefinder, and soft spikes or spikeless shoes. Most high school programs are self-supply — the team provides the shirt; you provide everything else.
 
-**Tees**
+## Sizing notes
 
-Buy a pack of 100 and keep them in the bag. They disappear constantly. Wood tees are traditional. Plastic brush tees last longer but some junior courses don't allow them. Check the local rules.
-
-## Ages 12–14 (Competitive junior golf, school teams)
-
-By now your kid has opinions about equipment. That's fine, and some of it is worth listening to. But the fitting conversation is the one that matters most at this stage.
-
-**A club fitting**
-
-At 12 or 13, a proper club fitting from a golf shop or instructor is worth the time even if you're buying used. Shaft flex, lie angle, and grip size all affect ball flight and accuracy. A fitted set doesn't have to be expensive, but it should match the player. An irons set that's too stiff for a junior swing produces weak fades and inconsistent contact.
-
-**Rangefinder**
-
-Competitive junior golfers use rangefinders to know yardage to the pin. Most junior tournaments allow them. The basic models are under $150 and accurate enough. This is the first legitimate upgrade after the clubs themselves.
-
-**A proper golf glove — multiple pairs**
-
-By this age, a kid playing three to four rounds a week goes through a glove in four to six weeks. Buy three at a time. A glove that's worn through the palm is affecting grip and needs to go.
-
-## Ages 15+ (High school teams, competitive amateur play)
-
-High school golf is where the equipment conversations get more serious. Your kid's coach will have specific opinions about what they need.
-
-**Club fitting before any new purchase**
-
-Don't buy a new set without a fitting. A 15-year-old hitting a junior flex shaft is leaving distance on the table. A 15-year-old in a stiff shaft is fighting the club through impact. The fitting costs $50 to $100 at most shops and saves you from buying the wrong thing.
+Club length is the most important sizing variable. Use the US Kids Golf chart by height. Measure annually. Too long promotes a casting swing. Too short causes crouching. Either builds habits that cost shots later.
+in a stiff shaft is fighting the club through impact. The fitting costs $50 to $100 at most shops and saves you from buying the wrong thing.
 
 **Wedges**
 

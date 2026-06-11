@@ -24,48 +24,56 @@ At this age, the sport is almost entirely about building a running habit and aer
 
 Not a cross-trainer. Not a basketball shoe. A proper running shoe from a running brand. The difference is in the midsole foam, the heel-to-toe drop, and how the shoe distributes impact across the foot. A running shoe is designed for forward motion and repetitive mileage. A cross-trainer is not.
 
-How to choose: go to a running specialty store if you have one nearby. They watch your kid run and can match the shoe to their foot. Brooks, ASICS, Saucony, and New Balance all make solid youth trainers. Avoid lifestyle sneakers that look like running shoes but aren't. If it doesn't say "running" on the box, it's not a running shoe.
+How to choose: go to a running specialty store if you have one nearby. They watch your kid run and can match the shoe to their foot. Brooks, ASICS, Saucony, and New Balance all make solid youth trainers. Avoid lifestyle sneakers and fashion shoes designed to look like running shoes. They don't have the midsole structure.
+
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross country · Ages 8–14</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth cross country trainers</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Real running shoes in youth sizing from ASICS, Brooks, or New Balance. Proper midsole cushioning, breathable upper, enough structure to handle four-plus days per week of training. Not lifestyle sneakers.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy a half size up from your kid's current shoe. Running shoes are worn with thicker socks, and feet swell on longer runs. Tight shoes cause black toenails by week three of the season.</p>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross Country · Ages 8–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">ASICS Gel-Venture youth trail running shoe</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Cushioned midsole, durable outsole, enough grip for grass and light trail. Youth sizing up through size 7.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The honest workhorse for a beginning XC runner. Replace when the midsole compresses — usually 300–400 miles, or when your kid starts feeling every crack in the pavement.</p>
     <a href="/go/xc-trainers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-**Moisture-wicking shorts and top**
+**Racing spikes (optional — ages 12+)**
 
-Cotton holds sweat and chafes on longer runs. A basic polyester athletic short and a moisture-wicking shirt are the practice uniform. Most kids already own this from other sports. If not, any athletic wear from Target or Walmart works fine. This is not a complicated purchase.
+Most youth XC programs don't require spikes before age 12. When they do matter, spikes make a real difference on soft grass and mud courses.
 
-**A water bottle**
-
-Cross country coaches run their athletes hard, especially in August and September when heat and humidity are factors. Bring a water bottle to every practice. 20 ounces is the minimum. 32 is better.
-
-## Ages 12–14 (Middle school and early JV competition)
-
-Training volume goes up. Races get more competitive. Equipment starts to matter more.
-
-**Spikes for race day**
-
-Spikes are racing shoes with metal or plastic pins that grip grass, dirt, and mud. Once your kid is racing for time rather than just finishing, spikes make a noticeable difference. They're lighter than trainers and grip the ground on turns and hills where regular shoes slide.
-
-Before buying: check with your coach. Some middle school leagues and courses don't allow metal spikes. Plastic spike inserts work on most surfaces and are easier to find in youth sizes. Spikes are race-day only — your kid trains in regular shoes.
-
-How to choose: spikes run narrow and close to true to size. The Kilkenny is the shoe coaches recommend at this level. Lightweight, aggressive grip, and built for the uneven terrain that defines most cross country courses.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross country · Ages 12+</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Nike Kilkenny XC cross country spikes</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight XC racing spike with aggressive outsole for grass and dirt courses. Available in youth and adult sizing. The Kilkenny has been a go-to for high school and collegiate cross country runners for years.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Skip spikes under age 12. Trainers race a 5K just fine at that age. Once your kid is racing for JV times, the Kilkenny is the standard first spike and won't embarrass them at the line.</p>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross Country · Ages 12+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Nike Zoom Rival XC spikes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight distance spike with a 5-spike configuration. Legal for most middle and high school XC courses.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Spikes only matter on grass. Skip them until age 12. When they do matter, the difference on a wet course is real.</p>
     <a href="/go/xc-spikes-kilkenny/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+**Cold-weather base layer**
+
+October and November races happen in 35-degree weather. A moisture-wicking base layer under the race jersey makes a real difference in warmup comfort.
+
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Cross Country · Ages 10+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour youth base layer set</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Long-sleeve compression top and tights for cold-weather training and cooldown. Youth sizing.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The uniform comes from the team. This goes under it. Buy the set in early October, not November when you're scrambling.</p>
+    <a href="/go/xc-base-layer-set-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+## Sizing notes
+
+Running shoes: size up half a size from street shoe for a proper running fit. Toes need room to splay on long runs. Too tight and they lose toenails by week four of the season.
+etter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
 **Cold-weather layers**

@@ -28,51 +28,48 @@ Used leotards are completely fine. Check for loose seams at the leg openings and
 
 **Bare feet or gymnastics slippers**
 
-Most rec programs require bare feet in the gym. Some programs use lightweight gymnastics slippers for beginner classes. Check with your gym before buying anything. If your program uses slippers, the gym will tell you exactly which kind.
+Most rec programs require bare feet in the gym. Some programs use lightweight gymnastics slippers for beginner classes. Check with your gym before buying slippers before spending money on them.
 
-**Hair up**
 
-A bun or tight ponytail. Hair has to be off the face and off the neck. This isn't optional in any gym. A simple ponytail holder is the right call, not a collection of bobby pins that could fall out onto the mat.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Gymnastics · Ages 4–9</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Danskin youth gymnastics leotard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Cotton-blend practice leotard in toddler through youth sizing. The everyday practice uniform for a rec gymnast. Machine washable.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy three. Gymnastics is multiple times a week. Used leotards from resale shops are completely fine at this stage.</p>
+    <a href="/go/gymnastics-leotard-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
-## Ages 7–10 (Compulsory levels, team intro)
 
-Kids at this stage are training more frequently — three to four days a week for team gymnasts — and the gear needs grow a little.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Gymnastics · Ages 4–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Capezio youth gymnastics slippers</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Split-sole canvas slip with a suede sole. For programs that require a slipper — most rec programs don't, so ask first.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Ask your gym before buying. If they want slippers, this is the one to get.</p>
+    <a href="/go/gymnastics-slippers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
-**Leotards — upgrade to four to five**
+## Ages 8–12 (Competitive and pre-team)
 
-With more practice days, rotation matters. Four to five leotards means you're never scrambling at 7am looking for a clean one. Team gymnasts often have a team-issued practice leotard for some sessions; check with the program first.
+If your kid moves from rec to competitive, training increases to 12–20 hours per week. The program tells you what to buy. Don't get ahead of the coach.
 
-**Grip socks or bare feet on beam**
+**Gymnastics grips (for bars work)**
 
-Some gyms use grip socks on the beam for younger gymnasts. Others don't allow them. Ask the coach. Don't buy grip socks until you know what your gym uses.
-
-**Athletic tape**
-
-Coaches use tape constantly: wrists before bars, ankles, fingers. You don't need to bring your own to every practice — the gym usually has some. But having a roll at home for pre-practice taping when you know what's coming is useful. Any 1.5-inch athletic tape works.
-
-## Ages 10–14 (Optionals, competitive levels 4–8)
-
-This is where the gear list actually expands. Two new items enter the picture.
-
-**Gymnastics grips**
-
-Palm grips are leather or synthetic pieces that protect the hands during bars work. They become necessary around level 4, when gymnasts are doing kip casts and giant swings regularly. Before level 4, grips get in the way more than they help.
-
-How to choose: buy through the gym or ask your coach first. Grip fit is specific — too small and they blister, too large and they slide and cause chalk build-up. Dowel grips (with a wooden rod across the fingers) are the standard for optionals-level bars work. Non-dowel grips come before them.
-
-Grips should be new. Used grips have conformed to someone else's hand and won't protect your kid's correctly. This is one item on this list where used doesn't make sense.
+Most coaches don't introduce grips until a kid is doing full kips. Don't buy grips for a rec gymnast.
 
 **A foam roller**
 
-Optional-level gymnasts are in the gym 15 to 20 hours a week. Hips, shoulders, and ankles accumulate tension. A foam roller used five to ten minutes before bed, especially on heavy training days, makes a real difference in how the body feels by the end of a competition week. A standard 36-inch foam roller is the right size.
+Kids who roll between practices recover faster. A medium foam roller at home extends what the gym does.
 
-**Wrist supports**
+## What gymnastics really costs
 
-Wrist pain is common in gymnastics, especially during bars and vault training. A pair of wrist supports for high-volume training weeks protects the joint without limiting range of motion the way a rigid brace does. These are not required, but once a gymnast starts logging serious hours, they earn their place in the bag.
-
-## Ages 14+ (Levels 9–10, elite, and high school gymnastics)
-
-At this level, gymnasts know exactly what they need and have usually developed specific preferences. The coach is the right person to consult on equipment — not the internet.
+The gear is the small number. Tuition is the big number — typically $300–600 per month at Level 5. Competition fees, travel, and team leotards ($150–300) add more. Plan for the tuition. The gear budget is almost irrelevant by comparison.
+ right person to consult on equipment — not the internet.
 
 **A dedicated gym bag**
 

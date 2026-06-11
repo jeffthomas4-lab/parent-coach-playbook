@@ -9,6 +9,7 @@ const isActive = (href: string) =>
 const teamSportGuides       = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'team');
 const individualSportGuides = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'individual');
 const activityGuides        = BUYING_GUIDES.filter(g => g.category === 'activity');
+const coachGearGuides       = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
 // Legacy alias kept in case anything else in the file references the old name.
 const sportGuides = [...teamSportGuides, ...individualSportGuides];
 ---
@@ -33,11 +34,11 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
 
             {item.hasDropdown === 'buying-guides' && (
               <div
-                class="absolute left-1/2 -translate-x-1/2 top-full w-[720px] bg-paper border border-bone hidden"
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[960px] bg-paper border border-bone hidden"
                 style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
                 data-dropdown-panel
               >
-                <div class="grid grid-cols-3 gap-x-6 gap-y-1">
+                <div class="grid grid-cols-4 gap-x-6 gap-y-1">
                   <div>
                     <p class="font-display italic text-rust mb-2 text-sm font-medium">Field & team sports</p>
                     <ul class="grid gap-1">
@@ -62,6 +63,16 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
                     <p class="font-display italic text-rust mb-2 text-sm font-medium">Performing arts</p>
                     <ul class="grid gap-1">
                       {activityGuides.map((g) => (
+                        <li>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="font-display italic text-rust mb-2 text-sm font-medium">For coaches</p>
+                    <ul class="grid gap-1">
+                      {coachGearGuides.map((g) => (
                         <li>
                           <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>

@@ -22,26 +22,88 @@ Most starter programs at this age provide the team gear. You buy the basics.
 Boys sticks are 37 to 42 inches at the youth level. The head is shaped specifically for boys' lacrosse (different from girls).
 
 How to choose: stick length should reach the kid's chin when they hold it head-up. The shaft should be light enough to swing easily.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boys Lacrosse · Ages 5–8</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Maverik Charger youth boys lacrosse complete stick</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">37-inch complete boys starter stick with head pre-strung with a beginner pocket. Youth shaft, legal boys' head.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the complete stick — head and shaft assembled. At this age, having it ready to play matters more than any customization.</p>
+    <a href="/go/lacrosse-stick-boys-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A youth boys helmet**
 
 Required at every age. NOCSAE certified. Includes a face cage.
 
 How to choose: helmet should sit level, not tipped back. Chin strap snug.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boys Lacrosse · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Cascade CPX-R youth lacrosse helmet</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">NOCSAE certified helmet with full face cage in youth sizing. Adjustable interior fit system.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the helmet new. NOCSAE certification is the standard and used helmets may be expired. The Cascade CPX-R is the benchmark.</p>
+    <a href="/go/lacrosse-helmet-boys-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Lacrosse gloves (youth)**
 
 Gloves protect the back of the hand and wrist. Required.
 
 How to choose: thumb should fit fully into the glove with a small amount of space at the tip.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boys Lacrosse · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">STX Cell IV youth lacrosse gloves</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth-sized palm and backhand protection, flexible enough to still feel the stick. The standard entry glove at most youth programs.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fit matters more than brand. Thumb should fit fully with room at the tip. Too tight and they can't grip the stick properly.</p>
+    <a href="/go/lacrosse-gloves-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Shoulder pads, arm pads, mouthpiece, cup**
 
-Shoulder pads and arm pads are required. Most starter programs sell a kit of all four. Mouthpiece and cup are required separately. Note: NOCSAE ND200 chest protectors have been mandatory for all boys lacrosse since the 2021-22 season. Check with your league for specific requirements.
+Shoulder pads and arm pads are required. Most starter programs sell a kit of all four. Mouthpiece and cup are required separately.Shoulder pads and arm pads are required. Most starter programs sell a kit of all four. Mouthpiece and cup are required separately.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boys Lacrosse · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Maverik Windy City youth shoulder pads</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth shoulder and chest pad set that meets NOCSAE ND200 requirements. Lightweight foam, adjustable straps.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Check with the league for exact requirements. NOCSAE ND200 compliance has been mandatory since 2022. Verify the pads you buy meet this standard.</p>
+    <a href="/go/lacrosse-shoulder-pads-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boys Lacrosse · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor boil-and-bite mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard boil-and-bite youth mouthguard. Required at every level of boys lacrosse. Mold it at home before the first practice.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two. One lives in the gear bag. One goes in the car.</p>
+    <a href="/go/mouthguard-boil-bite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div> Note: NOCSAE ND200 chest protectors have been mandatory for all boys lacrosse since the 2021-22 season. Check with your league for specific requirements.
 
 **Cleats**
 
 Soccer cleats work. Lacrosse-specific cleats exist; they're not necessary at this age.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Boys Lacrosse · Ages 5–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth molded soccer cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard plastic-stud youth cleat. Works for lacrosse and soccer. No metal, no restrictions at this age.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Soccer cleats and lacrosse cleats are the same shoe at the youth level. One pair covers both sports.</p>
+    <a href="/go/multi-sport-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ### Ages 8–10 (Junior)
 

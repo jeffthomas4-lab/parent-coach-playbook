@@ -87,10 +87,30 @@ How to choose: bigger pocket than a baseball glove. The ball is larger, so the p
 **A 27-to-29 inch bat**
 
 Drop weight (-10 to -12) is typical at this age. Composite bats start to appear at the higher end. The one-arm test still applies.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Ages 8–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings Storm youth softball bat</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">27-to-29 inch drop-10 to -12 bat in youth fastpitch sizing. One-piece aluminum, balanced swing weight for developing hitters.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The one-arm test is your guide. If they can hold it horizontal for 5 seconds, the weight is right. Size down if they can't.</p>
+    <a href="/go/softball-bat-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Sliding shorts (optional but useful)**
 
 Sliding shorts have a padded panel on the side that protects against turf burns and dirt. Once your kid starts sliding into bases (year 2 or 3 of pitch ball), these are worth it.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Ages 8+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">EvoShield youth sliding shorts</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Compression shorts with a foam pad on the outside of the hip. Covers the most common turf burn area from hook slides.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't bother in tee-ball. Once they're sliding, buy these the week they ask. Turf burns on the hip are miserable.</p>
+    <a href="/go/softball-sliding-shorts/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 11–12
 
@@ -107,10 +127,30 @@ How to choose: leather quality starts to matter. A cheap glove from a big-box st
 Drop weight (-10 to -11) at this age. USSSA or ASA stamp depending on league. Two-piece composite bats are common but not required.
 
 How to choose: the bat your kid is comfortable with is the bat your kid will hit with. Don't pick by color or by brand reputation. Pick by what feels good in their hands.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Ages 11–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">DeMarini CF Fastpitch bat</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">30-to-32 inch two-piece composite bat in drop-10 to -11 for 11-to-12-year-old fastpitch. USSSA and ASA certified.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Composite is worth it at this age if your kid is playing year-round. The feel is better and the pop is real. Make sure the stamp matches your league.</p>
+    <a href="/go/softball-bat-intermediate/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A pitching jacket (if pitching)**
 
 Pitchers wear a long-sleeve jacket between innings to keep the throwing shoulder warm. Required by most leagues for serious pitchers.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Pitchers all ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton Women's pullover pitching jacket</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight pullover jacket with a hood and thumb holes. Youth and adult sizing. Keeps the throwing shoulder from tightening between innings.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy this the week your kid makes the commitment to pitch. Don't wait for the shoulder to ache first.</p>
+    <a href="/go/softball-pitching-jacket/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 13–14
 
@@ -118,24 +158,26 @@ Travel ball and middle-school programs become more competitive at this age. Cost
 
 **A 12.5-inch glove**
 
-Buy quality. Your kid will use this glove for three to four seasons if you treat it well.
+Buy quality. Your kid will use this glove for three to four seasons if your it. A good glove bought at 13 will still be in use at 17.
 
-How to choose: professional break-in (most retailers offer it) is worth doing. A pre-broken-in glove plays better in the first month than one you break in yourself.
+**A 32-to-33 inch bat**
 
-**A 33-to-34 inch bat**
+High school fastpitch uses ASA/USA Softball stamps. BBCOR does not apply to softball. Drop-8 to -10 at this age.
 
-Drop weight (-9 to -11) at this age. Composite or hybrid is standard.
+How to choose: length and drop weight depend on your kid's strength. They should be able to swing through the zone without dropping their back elbow.
 
-How to choose: bat speed matters more than weight. If your kid is whipping a heavier bat with good speed, that beats a lighter bat with sloppy swing mechanics.
 
-**Cleats (metal allowed in most leagues by age 14)**
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Softball · Ages 13–15</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Louisville Slugger Xeno fastpitch bat</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">32-to-33 inch two-piece composite bat in drop-9 to -10. ASA stamped. The bat name high school coaches recognize.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If your kid is serious about hitting past 14, this is the investment. Buy once, swing it for two to three years.</p>
+    <a href="/go/softball-bat-hs/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
-Metal cleats grip better and last longer than plastic. Buy them.
+## Sizing notes
 
-## Ages 15+ (High school and travel)
-
-Most high-school programs provide jerseys, helmets, and team catching gear. You buy: glove, bat, cleats, sliding shorts, batting gloves, training gear.
-
-Travel softball is its own economy. Showcase tournaments charge entry fees, and national tournaments add travel and lodging. A serious 16U travel team costs more per season than all the gear combined.
-
-We are not telling you whether that's worth it. We are telling you it adds up, so go in with eyes open.
+Bats: the one-arm test works at every age. Hold the bat handle at the hip, extend the barrel horizontally. If they can hold it parallel to the ground for 5 seconds, the weight is right. Gloves: measure from the heel of the glove to the top of the index finger.

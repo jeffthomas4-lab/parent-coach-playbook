@@ -848,5 +848,185 @@
     "destination": "https://www.amazon.com/dp/B0FR5BXLQ7?tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-volleyball-backpack"
+  },
+  "baseball-bat-youth": {
+    "destination": "https://www.amazon.com/dp/B0D6Q83G6C?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-bat-youth"
+  },
+  "baseball-bat-bbcor": {
+    "destination": "https://www.amazon.com/dp/B0FJB61RH1?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-bat-bbcor"
+  },
+  "baseball-cleats-metal": {
+    "destination": "https://www.amazon.com/dp/B0CLB9NNC3?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-cleats-metal"
+  },
+  "basketball-shoes-youth": {
+    "destination": "https://www.amazon.com/dp/B0F14NVK54?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-basketball-shoes-youth"
+  },
+  "football-neck-roll": {
+    "destination": "https://www.amazon.com/dp/B0C62ZYRF3?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-neck-roll"
+  },
+  "hockey-skates-youth": {
+    "destination": "https://www.amazon.com/dp/B0CB6P2S1G?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-hockey-skates-youth"
+  },
+  "hockey-pads-starter": {
+    "destination": "https://www.amazon.com/dp/B0CQTM2SBD?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-hockey-pads-starter"
+  },
+  "softball-bat-youth": {
+    "destination": "https://www.amazon.com/dp/B0F95BWNXX?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-bat-youth"
+  },
+  "softball-bat-intermediate": {
+    "destination": "https://www.amazon.com/dp/B0D9KXBFLJ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-bat-intermediate"
+  },
+  "softball-bat-hs": {
+    "destination": "https://www.amazon.com/dp/B0CDDPHGGB?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-bat-hs"
+  },
+  "softball-sliding-shorts": {
+    "destination": "https://www.amazon.com/dp/B0C7HGFSHB?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-sliding-shorts"
+  },
+  "softball-pitching-jacket": {
+    "destination": "https://www.amazon.com/dp/B08HSJ6DNL?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-softball-pitching-jacket"
+  },
+  "wrestling-rashguard": {
+    "destination": "https://www.amazon.com/dp/B081Z2L6SW?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-wrestling-rashguard"
+  },
+  "golf-starter-set-youth": {
+    "destination": "https://www.amazon.com/dp/B07DWRX8HT?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-golf-starter-set-youth"
+  },
+  "golf-glove-youth": {
+    "destination": "https://www.amazon.com/dp/B0GKGD9FLY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-golf-glove-youth"
+  },
+  "gymnastics-leotard-youth": {
+    "destination": "https://www.amazon.com/dp/B085HG2QXD?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-gymnastics-leotard-youth"
+  },
+  "gymnastics-slippers-youth": {
+    "destination": "https://www.amazon.com/dp/B0GC3TTFQN?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-gymnastics-slippers-youth"
+  },
+  "martial-arts-gi-youth": {
+    "destination": "https://www.amazon.com/dp/B09RS69HXC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-martial-arts-gi-youth"
+  },
+  "lacrosse-stick-boys-youth": {
+    "destination": "https://www.amazon.com/dp/B075PCS6RH?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-stick-boys-youth"
+  },
+  "lacrosse-helmet-boys-youth": {
+    "destination": "https://www.amazon.com/dp/B09QNB6JNQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-helmet-boys-youth"
+  },
+  "lacrosse-gloves-youth": {
+    "destination": "https://www.amazon.com/dp/B0CK2T5XHM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-gloves-youth"
+  },
+  "lacrosse-shoulder-pads-youth": {
+    "destination": "https://www.amazon.com/dp/B0DFWMZJRS?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-shoulder-pads-youth"
+  },
+  "lacrosse-stick-girls-youth": {
+    "destination": "https://www.amazon.com/dp/B07ZDJB1TY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-stick-girls-youth"
+  },
+  "book-changing-the-game": {
+    "destination": "https://bookshop.org/a/125074/9781614486466",
+    "retailer": "Bookshop.org",
+    "campaign": "books-sports-parenting"
+  },
+  "book-whose-game-is-it-anyway": {
+    "destination": "https://bookshop.org/a/125074/9780618474608",
+    "retailer": "Bookshop.org",
+    "campaign": "books-sports-parenting"
+  },
+  "book-beyond-winning": {
+    "destination": "https://bookshop.org/a/125074/9780762786657",
+    "retailer": "Bookshop.org",
+    "campaign": "books-sports-parenting"
+  },
+  "book-positive-coaching": {
+    "destination": "https://bookshop.org/a/125074/9780982131701",
+    "retailer": "Bookshop.org",
+    "campaign": "books-sports-parenting"
+  },
+  "book-mindset": {
+    "destination": "https://bookshop.org/a/125074/9780345472328",
+    "retailer": "Bookshop.org",
+    "campaign": "books-mental-performance"
+  },
+  "book-grit": {
+    "destination": "https://bookshop.org/a/125074/9781501111105",
+    "retailer": "Bookshop.org",
+    "campaign": "books-mental-performance"
+  },
+  "book-mind-gym": {
+    "destination": "https://bookshop.org/a/125074/9780071395977",
+    "retailer": "Bookshop.org",
+    "campaign": "books-mental-performance"
+  },
+  "book-champions-mind": {
+    "destination": "https://bookshop.org/a/125074/9781623365622",
+    "retailer": "Bookshop.org",
+    "campaign": "books-mental-performance"
+  },
+  "book-talent-code": {
+    "destination": "https://bookshop.org/a/125074/9780553385335",
+    "retailer": "Bookshop.org",
+    "campaign": "books-talent-development"
+  },
+  "book-range": {
+    "destination": "https://bookshop.org/a/125074/9780735214507",
+    "retailer": "Bookshop.org",
+    "campaign": "books-talent-development"
+  },
+  "book-peak": {
+    "destination": "https://bookshop.org/a/125074/9780544947221",
+    "retailer": "Bookshop.org",
+    "campaign": "books-talent-development"
+  },
+  "book-inner-game-of-tennis": {
+    "destination": "https://bookshop.org/a/125074/9780679778318",
+    "retailer": "Bookshop.org",
+    "campaign": "books-coaching"
+  },
+  "book-little-book-of-talent": {
+    "destination": "https://bookshop.org/a/125074/9780345530257",
+    "retailer": "Bookshop.org",
+    "campaign": "books-coaching"
   }
 }

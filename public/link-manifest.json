@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T19:20:21.957Z",
-  "count": 398,
+  "generatedAt": "2026-06-11T19:46:34.268Z",
+  "count": 397,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -1887,12 +1887,6 @@
       ]
     },
     {
-      "url": "https://www.nfhs.org/activities-sports/wrestling/",
-      "sources": [
-        "src/content/guides/wrestling.md"
-      ]
-    },
-    {
       "url": "https://www.nfhs.org/sports-resource-content/nfhs-guidance-for-minimizing-head-impact-exposure-in-soccer/",
       "sources": [
         "src/content/news/nfhs-soccer-heading-restrictions-2026.md"
@@ -1993,8 +1987,7 @@
     {
       "url": "https://www.nwcaonline.com/",
       "sources": [
-        "src/content/body/youth-wrestling-safety-briefing.md",
-        "src/content/guides/wrestling.md"
+        "src/content/body/youth-wrestling-safety-briefing.md"
       ]
     },
     {
@@ -2275,7 +2268,6 @@
       "sources": [
         "src/content/body/wrestling-headgear-skin-infections.md",
         "src/content/body/youth-wrestling-safety-briefing.md",
-        "src/content/guides/wrestling.md",
         "src/pages/governing-bodies.astro"
       ]
     },

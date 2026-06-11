@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { isLive } from '../../lib/publishFilter';
+
+export async function getStaticPaths() {
+  const pillars = await getCollection('pillar', ({ data }) => isLive(data));
+  return pillars.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const pageTitle = entry.data.seoTitle ?? entry.data.title;
+const pageDescription = entry.data.seoDescription ?? '';
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+        {entry.data.title}
+      </h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12">
+      <div class="max-w-prose mx-auto article-body">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</BaseLayout>

@@ -26,6 +26,16 @@ This age plays on lowered hoops with a smaller ball. The gear list is tiny.
 Real basketball shoes have ankle support and grippy rubber soles designed for indoor courts. Running shoes don't. A 6-year-old playing on a slick gym floor in running shoes is going to slip.
 
 How to choose: ankle should sit just below the ankle bone. Heel should not slip when they push off. Indoor-specific outsoles are smoother than outdoor.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 5+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth basketball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Low or mid-cut court shoe with a flat rubber outsole for indoor gym floors. Any major brand works. The fit matters more than the name.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Try them on before you buy. Kids' feet vary wildly by brand. The shoe should hug the heel with a thumb-width at the toe.</p>
+    <a href="/go/basketball-shoes-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A size-4 (junior) basketball**
 
@@ -51,6 +61,16 @@ The team usually provides a jersey. Practice gear is a basic athletic t-shirt an
 **Water bottle**
 
 Yes, every sport. Yes, with their name on it.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">32 oz sport water bottle</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard wide-mouth water bottle in the 32 oz range. Goes to every practice, every game, every conditioning session.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Put their name on it in permanent marker before day one. The one without a name ends up in the lost-and-found by week two.</p>
+    <a href="/go/multi-sport-water-bottle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 8–10
 
@@ -61,10 +81,30 @@ The hoop comes up to regulation height (8.5 or 9 feet at this age in many league
 Mid-cut shoes are the standard at this age. The ankle support matters more as kids get faster and more aggressive.
 
 How to choose: replace the original insoles with sport-specific insoles for better arch support. The original insoles in most basketball shoes are flat foam.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 8+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth basketball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Mid-cut court shoe with ankle support and a grippy indoor-floor outsole. Replace the insole with a sport-specific one for better arch support.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The shoe that fits your kid's foot is better than the shoe with the best reviews. Try three brands if you can. The right one is obvious.</p>
+    <a href="/go/basketball-shoes-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A size-5 (intermediate) basketball**
 
 Most 8-to-10-year-old leagues use a size-5 or size-6 ball. Check league rules.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 8–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Size-5 intermediate basketball</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The step up from the junior size. Most 8-to-10 leagues use size 5 or 6. Check your league rules before buying.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the size your league plays. A size-7 ball in a size-5 league is a fumble waiting to happen.</p>
+    <a href="/go/basketball-ball-rubber/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Athletic socks (cushioned)**
 
@@ -93,7 +133,7 @@ Optional but useful. Kids who shoot 50 shots a day in their driveway get better.
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The driveway ball gets more touches than the practice ball ever will. This is the one purchase in basketball that buys reps.</p>
     <a href="/go/basketball-ball-forge/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying pu  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
 ## Ages 11–12
@@ -106,6 +146,17 @@ High-tops or mid-cuts are common at this age. The ankle support reduces sprains.
 
 How to choose: have your kid do a one-leg balance drill in the shoes (stand on one foot for 10 seconds, eyes closed). If they wobble dramatically, the shoe doesn't fit right.
 
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 11+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mid or high-cut basketball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Mid or high-top court shoes with real ankle support. At this speed of play, the ankle collar is the difference between a rolled ankle and a clean plant.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Name brand matters less than fit. Have your kid do the one-leg balance test in the store before deciding.</p>
+    <a href="/go/basketball-shoes-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 **A size-6 (women's) or size-7 (men's) basketball**
 
 Boys' leagues at age 12 typically use a size-7 official ball. Girls' leagues use a size-6. Check your league rules.
@@ -115,7 +166,7 @@ Boys' leagues at age 12 typically use a size-7 official ball. Girls' leagues use
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 11–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Wilson NBA Authentic indoor/outdoor basketball</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The step up from the rubber ball, in size 6 and size 7. Composite leather feel without the indoor-only restrictions.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Match the league: size 6 for girls' ball, size 7 for boys'. Don't buy the official game ball for a 12-year-old; the gym supplies it.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Match the league — size 6 for girls' ball, size 7 for boys'. Don't buy the official game ball for a 12-year-old; the gym supplies it.</p>
     <a href="/go/basketball-ball-authentic/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -131,9 +182,20 @@ School ball begins. AAU is in full swing. The travel circuit is its own economy.
 
 **Real basketball shoes**
 
-The cheap shoes don't last anymore. Kids practice 4-6 days a week at this age. A bargain-bin shoe will be worn through in 3 months.
+The cheap shoes don't last anymore. Kids practice 4–6 days a week at this age. A bargain-bin shoe will be worn through in 3 months.
 
-How to choose: name brand basketball shoes (Nike, Adidas, Under Armour, New Balance) all work. The shoe your kid wants is the shoe they will wear with pride. Don't fight that battle.
+How to choose: name brand basketball shoes (Nike, Adidas, Under Armour, New Balance) all work. The shoe your kid wants is the shoe they will wear with pride.
+
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Basketball · Ages 13+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Basketball shoes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Name-brand court shoes in adult sizing. Nike, Adidas, Under Armour, New Balance — the brand matters less than the fit and the ankle support.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy from a store with a return policy and have them run a full practice before the first game. Online shoe purchases for kids this age are a gamble on fit.</p>
+    <a href="/go/basketball-shoes-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Two pairs of shoes (separate practice and game)**
 

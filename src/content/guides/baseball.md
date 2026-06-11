@@ -73,6 +73,16 @@ Most leagues provide team helmets. If yours doesn't, get a basic youth helmet si
 **Cleats (optional at this age)**
 
 Tee-ball can be played in regular sneakers. Plastic cleats are nice if you have them, not necessary. If you buy cleats, buy a half-size up so they last through the season.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth plastic-stud baseball cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic-stud cleats in youth sizes. Low-cut with enough ankle collar to hold the foot. Legal in every league at this age.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Optional at tee-ball age but useful once they start running the bases in earnest. Buy a half-size up — they'll fill them in by mid-season.</p>
+    <a href="/go/multi-sport-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Pants and a belt**
 
@@ -128,6 +138,16 @@ Move up from the 9-inch tee-ball glove to a 10-or-11-inch infield glove. The web
 How to choose: your kid should be able to fully open and close the glove with one hand. If you have to help them break it in, plan to play catch with them for a week of evenings before opening day.
 
 The more expensive gloves last longer and feel better.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 8–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings 10–11 inch youth infield glove</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Step-up from the 9-inch tee-ball glove. Deeper pocket, full webbing. Sized for coach-pitch hands.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Any Rawlings or Wilson in this size range works. The more you spend, the longer it lasts. This is the glove most kids use for two seasons.</p>
+    <a href="/go/baseball-glove-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A 27-to-28 inch bat**
 
@@ -162,6 +182,16 @@ Most coach-pitch kids don't need them. By age 10, some kids want them because th
 **Cleats (now actually needed)**
 
 Plastic-stud cleats are the standard. Metal cleats are not legal in most leagues until age 13. Look for cleats with a high enough collar to stop ankle rolls.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 8–10</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth plastic-stud baseball cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic-stud cleats are the standard at this age. Metal is not legal until most leagues hit 13. Collar height matters more than brand.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fit them with the socks they'll actually wear on game day. A loose cleat at full speed turns into a twisted ankle.</p>
+    <a href="/go/multi-sport-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 11–12 (Player-pitch and middle-school feeder)
 
@@ -174,10 +204,31 @@ Infielders use 11-inch gloves. Outfielders use 12-inch. If your kid plays multip
 How to choose: position-specific gloves matter starting at this age. If your kid is a pitcher, the glove should have a closed web (the opponent shouldn't see your kid's grip on the ball).
 
 **A 29-to-30 inch bat**
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings 11–12 inch youth fielding glove</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Full-size webbing and pocket for player-pitch speeds. Closed web for pitchers; open web for outfield. Most kids use 11.5 inch as the all-position option.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: This is the glove your kid will use for multiple seasons. Spend what you can — a quality leather glove breaks in better and lasts longer.</p>
+    <a href="/go/baseball-glove-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
 
 Look for the USSSA stamp if your league requires it. For Little League, use a USABat-approved bat with drop weight of -10 or -11 per USA Baseball rules. Drop weight (the difference between length and weight) usually goes from -10 to -8 in this age band. The one-arm test still works. Don't buy your kid a heavier bat to "make them stronger."
 
 A decent name-brand bat does the job. The top-shelf composite bats are not necessary.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth baseball bat 29–30 inch (USA/USSSA)</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Drop-10 or drop-8 youth bat in the 29-to-30 inch range. USA Baseball or USSSA stamped depending on your league. Single-piece aluminum handles the reps.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Check league rules before buying — USSSA and USA stamps are not interchangeable. A name-brand aluminum bat in this range does everything a composite does at a third of the price.</p>
+    <a href="/go/baseball-bat-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A protective cup**
 
@@ -248,12 +299,32 @@ The bat rules change here (BBCOR for high school, USSSA for travel). The glove g
 Outfielders go to 12 to 12.75 inch. Infielders stay around 11.5 to 12 inch. Pitchers want a closed web. Buy quality leather; it lasts four years if you take care of it.
 
 How to choose: your kid should help pick this one. They will be using it for at least three seasons.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">12-inch adult fielding glove</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Full-size adult glove in the 12-to-12.5 inch range. This is the glove your kid keeps through high school.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the best leather you can afford here. A top-shelf glove at 13 outlasts a cheap one by four to five seasons and breaks in to fit the hand.</p>
+    <a href="/go/baseball-glove-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A BBCOR or USSSA bat**
 
 Check league rules before buying. BBCOR (high school) bats run -3 drop weight (heavier). USSSA (travel) bats run -8 to -10. They are not interchangeable.
 
 How to choose: the one-arm test still works, but at this age the swing speed matters more than the bat tech. Don't get talked into a top-shelf composite bat unless your kid is a serious hitter.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">BBCOR or USSSA baseball bat</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">BBCOR for high school (-3 drop). USSSA for travel (-8 to -10). Not interchangeable — verify league rules before purchase.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't get talked into a top-shelf composite at this age unless your kid is a serious hitter with a measurable swing speed. A solid single-piece alloy BBCOR does the job for most players.</p>
+    <a href="/go/baseball-bat-bbcor/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **Batting gloves (adult sizes now)**
 
@@ -273,6 +344,16 @@ Most kids cross into adult small around 13. The youth pairs stop fitting mid-sea
 **Metal cleats (now legal in most leagues)**
 
 Metal cleats grip better but cost more. Plastic still works. If your kid plays travel ball on dirt infields, metal is worth the money.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Metal baseball cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Metal-spike cleats legal at 13 and up in most leagues. Grip significantly better than plastic on dirt infields.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fit them with the socks they'll wear in games. Metal cleats run slightly tighter than plastic. If they play on turf or artificial surfaces, plastic is still the right call.</p>
+    <a href="/go/baseball-cleats-metal/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **An arm sleeve**
 
@@ -419,8 +500,4 @@ The reason most kids stagnate between seasons is they get zero reps at home. A f
 
 ## A few honest notes
 
-Don't buy a top-shelf bat for a five-year-old. Don't buy metal cleats before the league allows them. Don't buy a custom glove for a kid who has played one season. The first two years of baseball are about whether the kid wants to come back. The gear that lasts is the gear that fits and gets used. Save the upgrades for the years you know they're staying.
-
-If your kid is between sizes, go up. They will grow into it before they grow out of it. The exception is the bat, which has to fit now, not next year.
-
-When in doubt, ask the coach. Most coaches have seen a hundred kids in your kid's size and will tell you straight what works.
+Don't buy a top-shelf bat for

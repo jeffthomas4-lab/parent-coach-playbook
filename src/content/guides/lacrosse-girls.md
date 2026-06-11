@@ -42,50 +42,70 @@ How to choose: 35 to 38 inches is the right length for this age band. Look for a
 
 Girls lacrosse requires ASTM-certified goggles at every organized level. This is not a boys' game rule that trickled down. This is a girls-specific requirement and it exists for good reason. The ball can fly and sticks make contact. Goggles are not optional gear.
 
-How to choose: goggles should fit snugly without pressing on the cheeks or temples. The frame should not shift when your kid shakes their head. Buy youth-specific goggles, not an adult pair handed down. An adult pair that slides to her nose mid-game teaches a kid to play one-handed.
+How to choose: goggles should fit snugly without pressing on the cheeks or resting on the nose. The frame should sit about a finger-width above the eyebrow. The chin cup should be snug.
+
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Girls Lacrosse · Ages 5–9</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">STX Rookie-S Youth Goggles</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">STX's starter goggle, SEI certified to the current standard and cut for players 9 and under. The smallest cage STX makes, sized to actually fit a small face without constant adjusting.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy the youth cage, not a handed-down adult pair. A goggle that slides down mid-play teaches a kid to play with one hand on her face.</p>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Girls Lacrosse · Ages 5+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">STX 4Sight+ girls lacrosse goggles</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">ASTM F3077-certified flexible frame goggles with foam padding. The most common goggle in youth and high school girls lacrosse.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy these before the first practice. The league won't let your kid on the field without them, and they need a week to break in and feel right.</p>
     <a href="/go/lacrosse-goggles-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-**A mouthguard (required)**
+**A mouthguard**
 
-Required at most leagues at all ages. A boil-and-bite mouthguard does the job. Buy two and put one in the bag as a backup. The first one gets left at practice inside of a month.
+Required. A boil-and-bite mouthguard is all you need.
+
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Girls Lacrosse · All Ages</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor Youth Mouthguard</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Boil-and-bite youth mouthguard that molds to the teeth for a custom-enough fit. Includes a ventilated case and a strap for the helmet (useful at older ages).</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two at the start of every season. One will disappear. That is just lacrosse.</p>
-    <a href="/go/multi-sport-mouthguard-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Girls Lacrosse · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor boil-and-bite mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard boil-and-bite guard in youth sizing. Mold it once at home in hot water.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two. One lives in the stick bag. One lives in the car. Mouthguards go missing at the worst possible time.</p>
+    <a href="/go/mouthguard-boil-bite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
 **Cleats**
 
-Soccer cleats work fine. Lacrosse cleats are nice but not necessary at this age. If you already have soccer cleats in the right size, use them. If you're buying new, a multi-sport cleat covers lacrosse, soccer, and flag football without buying three pairs.
+Soccer cleats work for girls lacrosse at the youth level.
+
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Girls Lacrosse · Ages 5–10</div>
-    <h3 class="font-display text-ink text-2xl font-semibind leading-tight" style="margin: 0;">Multi-Sport Youth Cleats</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Low-profile multi-sport youth cleat that works for lacrosse, soccer, and flag football. Plastic studs, durable upper, runs true to size.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't buy sport-specific cleats until you know which sport is the main one. These cover all three at this age.</p>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Girls Lacrosse · Ages 5–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth molded soccer cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic molded studs, no metal. Works for girls lacrosse and soccer at the youth level.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If your kid already plays soccer, use those cleats. One pair covers both sports.</p>
     <a href="/go/multi-sport-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-That is the complete required kit for ages 5 to 7. Stick, goggles, mouthguard, cleats. Anything beyond that is optional.
+## Ages 8–12 (Junior / Developmental)
+
+Stick skills start to separate players. The gear list stays the same.
+
+**A better girls stick**
+
+At this age, position-specific sticks start to matter for some players. Most kids are fine with a general-purpose stick at 36–40 inches.
+
+## Ages 13+ (Middle school, high school, and travel)
+
+High school provides the team jersey. You provide stick, goggles, mouthpiece, and cleats.
+
+## A few honest notes
+
+Girls and boys lacrosse are two different sports. Different sticks, different goggles, different rules, different culture. Don't mix the gear.
+
+Used gear is plentiful. Annual gear swaps happen in February and March in lacrosse-heavy markets.
+thing beyond that is optional.
 
 ## Ages 8–10 (First real season)
 

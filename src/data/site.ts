@@ -398,7 +398,7 @@ export const BUYING_GUIDES = [
   { slug: 'soccer',        label: 'Soccer',           category: 'sport',    group: 'team',       blurb: 'Cleats, shin guards, ball, water bottle.' },
   { slug: 'softball',      label: 'Softball',         category: 'sport',    group: 'team',       blurb: 'Mostly the same as baseball, with a few specific tweaks.' },
   { slug: 'volleyball',    label: 'Volleyball',       category: 'sport',    group: 'team',       blurb: 'Shoes, knee pads, ball. Indoor and beach variants.' },
-  { slug: 'pickleball',    label: 'Pickleball',       category: 'sport',    group: 'team',       blurb: 'Paddle, balls, court shoes. Youth pickleball is growing fast.' },
+  { slug: 'pickleball',    label: 'Pickleball',       category: 'sport',    group: 'individual', blurb: 'Paddle, balls, court shoes. Youth pickleball is growing fast.' },
   { slug: 'rugby',         label: 'Rugby',            category: 'sport',    group: 'team',       blurb: 'Mouthguard, cleats, shoulder pads, scrum cap. Growing fast in youth.' },
   { slug: 'crew',          label: 'Crew',             category: 'sport',    group: 'individual', blurb: 'Most gear is club-provided. What you actually buy: a few specific things.' },
   { slug: 'cross-country', label: 'Cross country',    category: 'sport',    group: 'individual', blurb: 'Trainers, racing flats, layered cold-weather kit.' },

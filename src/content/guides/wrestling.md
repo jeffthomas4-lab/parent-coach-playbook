@@ -24,10 +24,30 @@ At this age, the sport is mostly about body awareness and contact comfort. Most 
 **Compression shorts and a rash guard**
 
 Practice clothes that stay put when someone grabs them. Loose shorts create problems on the mat. Compression shorts and a fitted top are the standard practice uniform before a team singlet.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Wrestling · Ages 5–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour youth compression rash guard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Long-sleeve compression top that stays tucked, doesn't ride up, and gives the mat nothing to grab. Moisture-wicking for high-intensity practice.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two. Wrestling practice is three to five times a week and compression shirts don't stay fresh after one session.</p>
+    <a href="/go/wrestling-rashguard/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A mouthpiece**
 
 Required at most levels, even youth. Boil-and-bite is fine.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Wrestling · All ages</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor boil-and-bite mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth and adult sizes. Mold it once in hot water. Standard protection for wrestling, lacrosse, and football.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy two. One lives in the bag. One lives in the gear drawer at home for the morning they can't find the first one.</p>
+    <a href="/go/mouthguard-boil-bite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 8–10 (Club team, folkstyle competition)
 
@@ -122,34 +142,24 @@ High school wrestling adds weight classes, cutting culture, and dual meet schedu
 
 **Skin check and hygiene gear**
 
-High school wrestling rooms are inspected before dual meets. Skin infections (ringworm, impetigo, staph) are checked at the door. Your kid needs to be washing their singlet, shorts, and rash guard after every single practice. Not every other practice. Every practice. Skin infections disqualify wrestlers from competition. This is not a small thing.
+High school wrestling rooms are inspected before dual meets. Skin infections are the reason. Ringworm, impetigo, staph — they spread on mats and the rules exist because of it.
 
-A small bottle of antifungal soap in the bag, used daily, is cheap insurance. Headgear and knee pads should be wiped down with disinfectant wipes after each session.
+Keep antiseptic wash and wipes in the gear bag. Use after every practice.
 
-**Weight class management**
 
-High school wrestling involves weight class decisions. If your kid is cutting weight, that conversation belongs with the coach and ideally a sports dietitian, not with gear. What matters on the gear side: weigh-ins at tournaments use a certified scale. Know what weight class your kid is targeting before tournament registration. Showing up overweight means no match.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Wrestling · Ages 13+</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Hibiclens antiseptic body wash + saline wound wipes</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Antimicrobial body wash used in hospital settings for skin prep. Kills the bacteria and fungi wrestlers pick up on communal mats.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: This is not optional at the high school level. Use it after every practice. The alternative is a skin check DQ the morning of a dual meet.</p>
+    <a href="/go/saline-wipes/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
-**Freestyle and Greco-Roman additions**
+## A few honest notes
 
-The off-season freestyle and Greco-Roman circuit uses different rules and some different gear. Freestyle and Greco singlets have different cut requirements than folkstyle. If your kid is going to USA Wrestling tournaments in the off-season, confirm the singlet is legal before you show up. Most folkstyle singlets are legal for freestyle as well, but verify with the event.
+Weight cutting is real in wrestling and it starts younger than most parents expect. Coaches at reputable programs don't encourage extreme cutting. If you're hearing about cutting weight for a 10-year-old, find a different program.
 
-## What the club provides
-
-Most youth wrestling clubs provide: mat time, practice instruction, and team singlets for competition. Some provide headgear for practice. Call before you buy.
-
-What you're always on your own for: shoes, mouthpiece, and the bag. Those three things, you buy.
-
-## Used gear notes
-
-Wrestling shoes are fine used if the sole isn't separated from the upper and the sole pattern still has grip. Headgear should ideally be new — used headgear may not fit properly and ear protection depends on fit. Singlets are fine used. Knee pads are fine used. Bags are obviously fine used.
-
-## What you can skip
-
-Skip weight cutting supplements, drinks, or sweat suits for youth wrestlers. The risks outweigh any benefit and the NWCA has clear guidelines against aggressive cutting at the youth level. Skip specialty recovery equipment — a foam roller is enough. Skip multiple pairs of wrestling shoes unless your kid is training six days a week.
-
-## Rules and citations
-
-- [USA Wrestling](https://www.themat.com/)
-- [NFHS Wrestling Rules](https://www.nfhs.org/activities-sports/wrestling/)
-- [National Wrestling Coaches Association](https://www.nwcaonline.com/)
+Skin infections are a part of the sport. You can reduce the risk with proper hygiene, but you cannot eliminate it entirely. The rash guard, post-practice wash, and air-drying gear between sessions are the three habits that matter most.

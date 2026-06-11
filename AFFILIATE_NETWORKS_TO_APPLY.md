@@ -17,7 +17,7 @@ Sorted by priority. Apply to tier 1 first, tier 2 next, tier 3 only if you have 
 | Impact | Pending (applied 6/11). Site verification meta tag live in BaseLayout.astro. |
 | Awin (ex-ShareASale) | Pending (applied 6/11). |
 | Flex Offers | In review (applied 6/11). Site verification meta tag live. Primary target: Shutterfly for `photo-book-service` slug. When approved, swap destination in `affiliates.json`. |
-| Bookshop.org | LIVE. Store about page written. |
+| Bookshop.org | LIVE. Store about page written. 10% commission. 48-hour cookie. Payout via Stripe Connect at $20 minimum. See BOOKSHOP_AFFILIATE.md. |
 | TeamSnap (via Flex Offers) | Not yet applied. Team management app — same audience as GameChanger (team-parent, scheduling, rostering). Apply inside Flex Offers once account is approved. |
 | Avantlink | Not yet applied. |
 

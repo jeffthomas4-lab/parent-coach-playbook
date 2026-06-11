@@ -26,10 +26,30 @@ This is the right age to start. Tackle football for 5-to-7-year-olds is increasi
 Standard youth football cleats are fine. Soccer cleats also work. Avoid metal-tipped cleats; they aren't allowed at this age anyway.
 
 How to choose: thumb width gap at the toe with the kid standing. Heel snug. No-slip when they cut.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football / Soccer · Ages 5–9</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth molded cleats</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rubber-molded plastic studs, no metal, works for flag football or soccer. Runs slightly narrow — size up if your kid is between sizes.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Flag football cleats and soccer cleats are the same shoe. If your kid already has soccer cleats, use those. If not, buy one pair that covers both.</p>
+    <a href="/go/multi-sport-cleats-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A flag belt (usually provided by the league)**
 
 Most flag leagues provide the belts. If yours doesn't, they're an easy pickup.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Flag Football · Ages 5–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Flag football belt set</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Two-flag velcro belt in youth sizing. The standard setup used in most recreational flag leagues. Buy extra flags — they go missing.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Check with the league first. Most provide these. If they don't, this is the exact setup they use.</p>
+    <a href="/go/flag-football-belt-set/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 **A mouthpiece**
 
@@ -97,6 +117,16 @@ Total league-provided: helmet, shoulder pads, game jersey. Total parent-provided
 **A youth football (size 6 or 7)**
 
 For backyard practice. The Wilson TDY (size 6) is the standard youth ball.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 8–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Wilson TDY youth football</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Size 6 composite youth football. The standard backyard and practice ball from ages 8 to 12. The right grip for smaller hands.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Backyard reps matter more than game reps at this age. Have one at home that gets thrown every day.</p>
+    <a href="/go/football-rubber-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 11–12 (Tackle football, junior high feeder)
 
@@ -141,6 +171,16 @@ What you pay depends on position and tier.
 **A neck roll or cowboy collar (optional)**
 
 Some kids wear a neck roll for added neck support. The science on this is mixed but it doesn't hurt.
+<div class="my-8">
+  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–15</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Riddell youth neck roll</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Foam neck roll that attaches to shoulder pad straps and limits lateral neck flexion. Youth sizing.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Position-specific. Linemen and linebackers use these more than skill players. If your kid asks for one, it's worth it.</p>
+    <a href="/go/football-neck-roll/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
 
 ## Ages 13–14 (Junior high / freshman)
 
@@ -170,105 +210,4 @@ For carrying gear to and from practice. Most teams have a recommended brand or s
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour Undeniable 5.0 duffle</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The duffle half the team already carries. Vented pocket for cleats, water-resistant bottom, survives being dragged across parking lots for years.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy it once in middle school and it carries gear through graduation. The medium fits everything but shoulder pads.</p>
-    <a href="/go/multi-sport-duffle-bag/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-## Ages 15+ (High school)
-
-This is where the equipment ownership conversation gets real. Most high schools provide game-day gear (helmets, shoulder pads, jerseys, pants). Some require players to buy their own. Read the program's equipment policy in the spring.
-
-**The helmet conversation**
-
-If you are buying your own helmet, do not save money on this. Look for NOCSAE certification (every legal football helmet has it), good Virginia Tech STAR rating (5-star is current best), proper fit by a certified equipment manager.
-
-Helmets need to be reconditioned every 1 to 2 years. A helmet older than 10 years is almost universally too old to play in.
-
-**Shoulder pads**
-
-Position-specific. Skill players wear lighter pads with more mobility. Linemen wear heavier pads with more protection. Linebackers and safeties land in the middle.
-
-**Quality cleats**
-
-By high school, your kid will have a strong opinion about cleats. Let them pick within budget.
-
-## How to choose a youth football helmet (when you have to)
-
-This is the most important buying decision in the sport.
-
-One. NOCSAE certification is mandatory. Every legal youth football helmet has it. This is non-negotiable.
-
-Two. Virginia Tech STAR rating matters. They publish a public list of helmets with star ratings (1 to 5). 4 and 5 star helmets are the current standard for safety. Older models drop down the list. Check Virginia Tech's official helmet ratings.
-
-Three. Fit matters more than brand. Have a certified equipment manager fit the helmet. Most football programs have one. Most national chains do not.
-
-Four. Reconditioning every 1 to 2 years is mandatory, not optional. Plan for it. Helmets older than 10 years should be replaced entirely.
-
-## Backyard practice gear
-
-Pre-season throwing reps and route running at home make game-day reps look easy. None of this is required, all of it pays back fast.
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Backyard</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth rubber football</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The right ball for ages 5-10. Rubber holds up to driveway and grass, easier on hands than leather at this age.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy this before any leather ball. It survives the season and the kid actually catches it.</p>
-    <a href="/go/football-rubber-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · Ages 11–14</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Youth leather football</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Move to leather around age 11 when the kid is ready for a real game ball. Better grip in dry conditions, more accurate spiral.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The right step up once they can throw a tight spiral. Don't rush it.</p>
-    <a href="/go/football-leather-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · QB</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">QB throwing net</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Target net with multiple holes for accuracy reps. Solo throwing without chasing the ball.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Useful from age 9 up. Trains accuracy without needing a partner.</p>
-    <a href="/go/football-qb-throwing-net/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · QB</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">QB play-call wristbands</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Play-sheet wristband for the QB. Useful from age 11 once the playbook is more than 5 calls.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Worth it the day a QB starts getting plays from the sideline. Cheaper than the team set.</p>
-    <a href="/go/football-qb-wristbands/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-<div class="my-8">
-  <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Football · College</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Full-size college leather football</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Regulation college-size game ball. For the high-school-age player who is ready for the real thing.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The ball varsity QBs throw. Don't size up too early.</p>
-    <a href="/go/football-leather-college/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
-  </article>
-  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
-</div>
-
-## A few honest notes
-
-The single best thing you can do for your kid in football: limit hits to the head in practice. The data on cumulative impact is strong. Coaches who run thudding tackling drills during the week increase risk for marginal practice value.
-
-If your kid wants to play tackle and you are nervous, flag football is a legitimate alternative through age 12 or 13. Many of the best NFL athletes played flag through middle school. The skills transfer.
-
-Don't buy used helmets unless they're from a certified reconditioner with current NOCSAE recertification. A garage-sale helmet with no paperwork is not protective equipment. It's a costume.
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy it once in middle school and 

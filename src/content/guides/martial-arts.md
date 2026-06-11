@@ -32,48 +32,50 @@ Don't mix them up. A lightweight karate gi in a BJJ class gets destroyed. A BJJ 
 
 **A mouthguard**
 
-Required for any style that includes sparring. Most beginner classes for young kids don't spar, but some programs introduce light contact earlier than others. Ask the instructor when sparring starts. Either way, own a mouthguard before the first time it's needed. Boil-and-bite works fine for beginners.
+Required in most sparring programs. Not all martial arts involve sparring at the beginner level, but most do within the first year.
+
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Martial arts · All ages</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Boil-and-bite mouthguard</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard boil-and-bite mouthguard rated for contact sports. Fits most youth mouth sizes. Custom-molds to the teeth with a 30-second soak in hot water.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't wait until sparring starts to buy one. A kid who shows up to their first sparring class without a mouthguard sits out. Buy it before you need it.</p>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Martial Arts · Ages 5–14</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor youth boil-and-bite mouthguard</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Standard boil-and-bite guard in youth and adult sizes. Works for karate, taekwondo, and BJJ sparring.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy this the week sparring starts. Don't wait for the first contact drill to realize your kid doesn't have one.</p>
     <a href="/go/mouthguard-boil-bite/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
-**Bare feet**
-
-Most martial arts styles train barefoot on the mat. No shoes required inside the dojo or gym. Flip-flops or slides to walk to the mat are courteous and standard. Don't bring street shoes onto the mat.
-
-## Ages 10–14 (Intermediate levels, yellow through purple belt)
-
-This is where training frequency increases and sparring becomes a regular part of class. The gear list grows.
-
-**Sparring gear**
-
-The specific set depends on the style, but most striking arts (karate, taekwondo, kickboxing) require a sparring kit for contact classes. A basic set typically includes:
-
-*Headgear* — open-face or full-face depending on the school's rules. Buy through the school or confirm the type required before purchasing. Headgear should fit snugly without rocking side to side.
-
-*Gloves* — bag gloves for karate or kickboxing sparring, usually 7–10 oz for youth. BJJ doesn't use gloves.
-
-*Shin guards* — for striking styles. Foam or vinyl shin guards that protect the shins and insteps during kicking exchanges.
-
-*Chest protector* — required in many taekwondo schools for any contact sparring. Tournaments almost always require them.
-
-Buy through the school whenever possible. They know what's required, what's legal for tournaments, and what fits the training style. After six months and consistent attendance, branch out if you want.
-
-**A gear bag**
-
-Once the sparring kit enters the picture, you need somewhere to put everything. A medium-sized duffel handles a gi, headgear, gloves, shin guards, and a water bottle without becoming a production to pack.
 
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
-    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Martial arts · Ages 10+</div>
+    <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Martial Arts · Ages 5–12</div>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Mooto beginner karate/taekwondo gi</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Lightweight cotton gi in youth sizing. Fits karate, taekwondo, and most beginner martial arts classes that require a white uniform.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Ask the school before buying. Many include a gi in enrollment. If they don't, this covers the first year at most styles.</p>
+    <a href="/go/martial-arts-gi-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+## Ages 10–14 (Intermediate, brown belt / purple belt)
+
+Sparring becomes regular. The school will specify what sparring gear is required.
+
+**Sparring gear set**
+
+Helmet, chest protector, forearm/shin guards, instep pads, and gloves. Taekwondo sparring gear is different from karate sparring gear — don't buy one for the other.
+
+## Ages 15+ (Advanced belts, competitive)
+
+Competitive martial arts adds tournament fees, a team uniform, and travel. The gear costs are fixed. The variable is how much competition your kid pursues.
+
+## A few honest notes
+
+Belt progression fees are common. Many schools charge a testing fee for each belt rank. Know what the full progression costs before committing.
+
+The instructor matters more than the gear. A great instructor with basic equipment beats a bad instructor with premium gear every time.
+s · Ages 10+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Multi-sport duffel bag</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Medium-sized duffel that fits a gi, sparring gear, water bottle, and mouthguard case. Durable enough for daily use, opens wide enough to find the mouthguard without dumping everything out.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Sparring gear smells. A bag with a ventilated pocket or mesh panel is worth the slight premium. Leave the bag unzipped overnight after practice.</p>

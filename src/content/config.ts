@@ -435,20 +435,17 @@ const decisions = defineCollection({
       ageBands:          z.array(z.enum(AGE_ENUM)).optional(),
       publishedAt:       z.coerce.date(),
       featured:          z.boolean().default(false),
-      draft:             z.boolean().default(false),
-      ...editorialField,
+      draft:             z.boolean()      ...editorialField,
     }),
 });
 
 // "This Season" news items. Short, dated, specific. 2-4 sentences each.
-// Covers rule changes, equipment recalls, registration windows, season
-// dates, and anything a youth sports parent needs to act on now.
 const news = defineCollection({
   type: 'content',
   schema: () =>
     z.object({
       headline: z.string().min(8).max(120),
-      summary: z.string().min(30).max(400),   // shown in list and as meta description
+      summary: z.string().min(30).max(400),
       category: z.enum([
         'rule-change',
         'equipment',
@@ -465,6 +462,20 @@ const news = defineCollection({
     }),
 });
 
+// Ultimate Parent Guide pillar pages — one per sport/activity, 3000+ words.
+const pillar = defineCollection({
+  type: 'content',
+  schema: z.object({
+    slug: z.string(),
+    title: z.string(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    sport: z.string(),
+    publishedAt: z.coerce.date(),
+    draft: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   articles,
   guides,
@@ -479,4 +490,16 @@ export const collections = {
   scripts,
   decisions,
   news,
+  pillar,
+};
+  seasonCalendars,
+  body,
+  pathways,
+  recruiting,
+  adaptive,
+  rules,
+  scripts,
+  decisions,
+  news,
+  pillar,
 };
