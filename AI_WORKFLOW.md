@@ -97,6 +97,18 @@ featured: false
 
 The `contributor` field has been removed from the schema. Don't add it back.
 
+## Affiliate pass (every new article, before it ships)
+
+Every draft gets an affiliate pass before publish. Not optional, not just gear guides.
+
+1. Open `AFFILIATE_MASTER_LIST.md` and scan the live picks for the article's sport and age band.
+2. Anywhere the article names a product type we already have a pick for (cleats, mouthguard, water bottle, ball, shin guards), link it inline with the `/go/[slug]/` redirect. Natural mentions only. Do not force a product into a sentence that wasn't about gear.
+3. Never paste a raw Amazon or retailer URL into an article body. Everything goes through `/go/`. New product, new slug: add it to `src/data/affiliates.json` first, then log it in `AFFILIATE_MASTER_LIST.md` with where it lives.
+4. Disclosure is automatic. `ArticleLayout.astro` detects `/go/` in the body and renders the FTC disclosure line above the content. Buying guides also get `BuyingGuideDisclosure`. Do not add manual disclosure text to article bodies.
+5. After publish, update the "Lives on" column in `AFFILIATE_MASTER_LIST.md` for any slug that gained a placement.
+
+A reasonable target: short reads carry 0–2 affiliate links, gear-adjacent essays 2–5, buying guides as many as the picks justify. Zero is a fine number when the topic isn't gear.
+
 ## Where to source topics
 
 `CONTENT_ROADMAP.md` has the master pipeline. As pieces ship, mark them SHIPPED in that doc. As new gaps surface from reader email, add rows.

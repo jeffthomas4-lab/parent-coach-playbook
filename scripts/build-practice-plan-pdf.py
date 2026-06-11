@@ -85,7 +85,7 @@ def cover_page(canvas, doc):
     canvas.line(MARGIN, 1.0 * inch, PAGE_W - MARGIN, 1.0 * inch)
     canvas.setFillColor(PAPER_WARM)
     canvas.setFont('Mono-Medium', 8)
-    canvas.drawString(MARGIN, 0.75 * inch, 'PARENTCOACHPLAYBOOK.COM  /  WEEKLY READS')
+    canvas.drawString(MARGIN, 0.75 * inch, 'PARENTCOACHDESK.COM  /  WEEKLY READS')
     canvas.drawRightString(PAGE_W - MARGIN, 0.75 * inch, 'FREE  ·  4 PAGES  ·  v1')
     canvas.restoreState()
 
@@ -100,13 +100,13 @@ def interior_page(canvas, doc):
     canvas.setFillColor(INK)
     canvas.setFont('Mono-Medium', 7.5)
     canvas.drawString(MARGIN, PAGE_H - 0.7 * inch, 'THE PRACTICE PLAN TEMPLATE')
-    canvas.drawRightString(PAGE_W - MARGIN, PAGE_H - 0.7 * inch, 'PARENTCOACHPLAYBOOK.COM')
+    canvas.drawRightString(PAGE_W - MARGIN, PAGE_H - 0.7 * inch, 'PARENTCOACHDESK.COM')
     canvas.setStrokeColor(BONE)
     canvas.setLineWidth(0.5)
     canvas.line(MARGIN, 0.7 * inch, PAGE_W - MARGIN, 0.7 * inch)
     canvas.setFillColor(INK_SOFT)
     canvas.setFont('Mono', 7)
-    canvas.drawString(MARGIN, 0.5 * inch, 'THE PARENT-COACH PLAYBOOK')
+    canvas.drawString(MARGIN, 0.5 * inch, 'THE PARENT COACH DESK')
     page_num = canvas.getPageNumber()
     canvas.drawRightString(PAGE_W - MARGIN, 0.5 * inch, f'PAGE {page_num} / 4')
     canvas.restoreState()
@@ -180,7 +180,7 @@ def build_story():
 
     # Page 1: Cover
     s.append(Spacer(1, 1.4 * inch))
-    s.append(Paragraph('THE PARENT-COACH PLAYBOOK', cover_eyebrow))
+    s.append(Paragraph('THE PARENT COACH DESK', cover_eyebrow))
     s.append(Paragraph('The Practice Plan <i>Template</i>.', cover_title))
     s.append(Spacer(1, 0.15 * inch))
     s.append(Paragraph('A printable practice plan parents can read. Blank template plus a filled example.', cover_dek))
@@ -265,14 +265,14 @@ def build_story():
         "One Editorial voice across the site. Cornerstone essays once a month, short reads in between.",
         body))
     s.append(Spacer(1, 6))
-    s.append(Paragraph('PARENTCOACHPLAYBOOK.COM', ParagraphStyle('cta_url',
+    s.append(Paragraph('PARENTCOACHDESK.COM', ParagraphStyle('cta_url',
         fontName='Mono-Medium', fontSize=12, textColor=INK, spaceAfter=4)))
-    s.append(Paragraph('Subscribe / read the archive / get the next playbook',
+    s.append(Paragraph('Subscribe / read the archive / get the next template',
         ParagraphStyle('cta_sub', fontName='Mono', fontSize=8, textColor=INK_SOFT,
             spaceAfter=18)))
 
     imprint = Table([
-        [Paragraph('THE PARENT-COACH PLAYBOOK', ParagraphStyle('im1',
+        [Paragraph('THE PARENT COACH DESK', ParagraphStyle('im1',
             fontName='Mono-Medium', fontSize=8, textColor=INK))],
         [Paragraph('A small site for parents who coach, drive, snack-pack, and supervise the group chat. ' +
                    'Edited by Jeff Thomas. Single Editorial byline across the site. ' +
@@ -309,12 +309,12 @@ class PCPDoc(BaseDocTemplate):
 
 
 def main():
-    out_path = "/sessions/happy-tender-gates/mnt/Claude Cowork/OUTPUTS/parent-coach-desk/public/the-practice-plan-template.pdf"
+    out_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'the-practice-plan-template.pdf')
     doc = PCPDoc(out_path, pagesize=letter,
                  leftMargin=MARGIN, rightMargin=MARGIN,
                  topMargin=MARGIN, bottomMargin=MARGIN,
                  title='The Practice Plan Template',
-                 author='PCP Editors',
+                 author='Parent Coach Desk',
                  subject='A free practice plan template for youth coaches',
                  creator='The Parent Coach Desk',
                  keywords='youth sports, practice plan, coach, template')

@@ -1,6 +1,6 @@
 # Affiliate links workflow
 
-How to add Amazon (or any retailer) affiliate links to The Parent-Coach Playbook.
+How to add Amazon (or any retailer) affiliate links to Parent Coach Desk (parentcoachdesk.com).
 
 ## Your Amazon Associates tag
 
@@ -19,7 +19,7 @@ You don't paste raw Amazon URLs into articles. Instead:
 This pattern is better than raw links for four reasons:
 
 - **One file to update.** If a product goes out of stock and you want to swap to a different one, change the destination in `affiliates.json`. Every link on the site updates.
-- **Tracking baked in.** Every outbound click carries `utm_source=parentcoachplaybook`, `utm_medium=affiliate`, `utm_campaign=[campaign-name]` automatically.
+- **Tracking baked in.** Every non-Amazon outbound click carries `utm_source=parentcoachdesk`, `utm_medium=affiliate`, `utm_campaign=[campaign-name]` automatically. Amazon links get no UTMs (the Associates agreement requires Special Links used as provided).
 - **Robots.txt friendly.** `/go/` is blocked from search indexing already, so you don't pollute your SEO with affiliate redirects.
 - **Retailer-agnostic.** If you ever switch from Amazon to Walmart for a particular product, change the destination, the same `/go/[slug]/` link works.
 

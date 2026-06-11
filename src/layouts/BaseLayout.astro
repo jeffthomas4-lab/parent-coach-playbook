@@ -49,18 +49,22 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
            as Google specifies.
          - Honors Global Privacy Control and Do-Not-Track by skipping load
            entirely when either is set. Disclosure page promises this.
+         - EU/EEA/UK/CH visitors never get GA. Cloudflare's /cdn-cgi/trace
+           endpoint (same-origin, answered at the edge) reports the visitor
+           country; gtag.js is only injected for countries outside GDPR/
+           ePrivacy scope. If the trace lookup fails we load GA (fail-open:
+           US-audience site, and DNT/GPC are already honored above).
+         - window.gtag is stubbed synchronously so the Web Vitals module
+           below can queue events; if GA never loads, the queue goes nowhere
+           and nothing is sent to Google.
          - anonymize_ip + Google Signals/ad features are disabled.
          - CSP in public/_headers whitelists googletagmanager.com and the
-           GA4 collection endpoints. -->
+           GA4 collection endpoints. /cdn-cgi/trace is same-origin ('self'). -->
     <script is:inline>
       (function () {
         var gpc = (navigator.globalPrivacyControl === true);
         var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1');
         if (gpc || dnt) return;
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-BY35JP5EN8';
-        document.head.appendChild(s);
         window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
         window.gtag = gtag;
@@ -70,6 +74,21 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
           allow_google_signals: false,
           allow_ad_personalization_signals: false
         });
+        var EU = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'];
+        function loadGA() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-BY35JP5EN8';
+          document.head.appendChild(s);
+        }
+        fetch('/cdn-cgi/trace')
+          .then(function (r) { return r.text(); })
+          .then(function (t) {
+            var m = t.match(/^loc=([A-Z]{2})$/m);
+            if (m && EU.indexOf(m[1]) !== -1) return;
+            loadGA();
+          })
+          .catch(loadGA);
       })();
     </script>
 

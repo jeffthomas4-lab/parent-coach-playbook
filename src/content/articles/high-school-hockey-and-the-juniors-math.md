@@ -1,0 +1,30 @@
+---
+title: High School Hockey and the Juniors Math
+dek: College hockey players don't come from high school teams. They come from juniors, two or three years later, through a billet family's spare bedroom.
+seoTitle: "High School Hockey to College: The Juniors Math"
+seoDescription: "Why NCAA hockey recruits 20-year-olds from junior leagues, what USHL and NAHL actually are, the billet-family reality, and the ACHA club path most families never hear about."
+bluf: "NCAA Division I men's hockey has about 60 teams, and almost every player arrives through junior hockey at age 20 or 21, not from a high school team at 18. The free-to-play routes are the USHL and NAHL; below them sit pay-to-play tiers that cost real money. Juniors means billet families and 1-3 years between high school and college. The wider path is ACHA club hockey, with hundreds of college teams."
+topic: rules-of-play
+format: note
+phase: drive-home
+sport: hockey
+age: 15-plus
+publishedAt: 2026-06-10
+featured: false
+---
+
+Hockey hides its college math better than any sport. In basketball, the path is varsity, then maybe college. In hockey, the high school season your family is living right now is barely on the path at all.
+
+**The numbers are tiny and the players are old.** NCAA Division I men's hockey has about 60 teams. Walk a D1 roster and most freshmen are 20 or 21, because nearly all of them spent two or three years in junior hockey after high school. The 18-year-old jumping straight from a high school team to D1 is a unicorn. That's the math underneath the [4 percent rule](/drive-home/the-4-percent-rule/), and in hockey the funnel is narrower and longer than in any stick-and-ball sport.
+
+**Juniors is its own world, and the tiers matter.** The USHL is the top American league, tuition-free, and stocked with future D1 players. The NAHL sits below it, also free to play. Below those, the pay-to-play tiers charge thousands a season and sell the same dream with worse odds. The free leagues drafted or tendered your kid because they want him; the leagues that invoice you want your money. Hold that sentence up against every offer that arrives.
+
+**Billet families are the part nobody explains at 15.** Junior hockey means your 17- or 18-year-old moves to another state, lives in a host family's spare bedroom, finishes high school online or plays after graduation, and rides buses through the upper Midwest in January. Some kids grow up beautifully doing it. Some are miserable and won't say so for a year. Visit the town, meet the billet family, and ask your kid the quiet version of the question before anyone signs anything.
+
+**The honest filter arrives around 16.** If USHL or NAHL scouts aren't calling by the 16U and 17U seasons, the D1 path has mostly closed, and it closed without anyone sending a letter. That's not a tragedy. It's information that arrives in time to use it.
+
+**ACHA club hockey is the path the brochures skip.** Hundreds of college club teams, real schedules, real rivalries, and rosters full of good players who didn't want to spend three years in juniors. A kid can pick a college for the education and still play serious hockey there. For most hockey families that's the actual destination, and the ones who knew it early enjoyed the ride more.
+
+**The high school season still counts for what it's for.** Playing in front of classmates, a state tournament run, a letter jacket. Those aren't consolation prizes; they're the parts your kid remembers at 40. The [hockey rules page](/rules/hockey/) covers the on-ice differences between levels if you're moving between them.
+
+And if the dream ends at graduation with no juniors and no ACHA, [when your kid isn't going to play in college](/drive-home/when-your-kid-isnt-going-to-play-in-college/) is the read for the car ride home from the last game. Most hockey careers end there. The good ones end with the kid still loving the ice.

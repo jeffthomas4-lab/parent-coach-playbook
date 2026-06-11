@@ -108,6 +108,56 @@ const TENNIS_SOURCES: CostSource[] = [
   { label: 'USTA: Junior program participation and cost data',     url: 'https://www.usta.com/en/home/play/youth-tennis.html' },
 ];
 
+const FLAG_7V7_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'USA Football: Flag and 7v7 program data',              url: 'https://usafootball.com/' },
+  { label: 'NFL Flag: League registration structure',              url: 'https://nflflag.com/' },
+];
+
+const TRACK_XC_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'NFHS: High school participation survey',               url: 'https://www.nfhs.org/articles/high-school-participation/' },
+  { label: 'USATF: Youth membership and Junior Olympic structure', url: 'https://www.usatf.org/' },
+];
+
+const GOLF_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'PGA Jr. League: Registration structure',               url: 'https://www.pgajrleague.com/' },
+  { label: 'USGA: Junior golf programs',                           url: 'https://www.usga.org/' },
+];
+
+const CREW_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'USRowing: Youth membership and regatta structure',     url: 'https://usrowing.org/' },
+];
+
+const MARTIAL_ARTS_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'USA Taekwondo: Membership and event structure',        url: 'https://www.usatkd.org/' },
+];
+
+const STUNT_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'USA Cheer: STUNT the Sport program structure',         url: 'https://www.usacheer.org/' },
+];
+
+const THEATER_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'Educational Theatre Association: School theater programs', url: 'https://schooltheatre.org/' },
+];
+
+const MUSIC_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'NAfME: Music education program data',                  url: 'https://nafme.org/' },
+  { label: 'NFHS: Music and performing arts activities',           url: 'https://www.nfhs.org/activities-performing-arts/music/' },
+];
+
+const BALLET_SOURCES: CostSource[] = [
+  ...BASE_SOURCES,
+  { label: 'Dance Studio Owners Association: Industry pricing',    url: 'https://danceshop.com/' },
+  { label: 'Youth America Grand Prix: Competition fee structure',  url: 'https://yagp.org/' },
+];
+
 const REC: CostLine[] = [
   { key: 'registration',      label: 'League/club registration',     default: 175,  hint: 'Annual rec league fee, all-in.' },
   { key: 'equipment',         label: 'Equipment (initial + replacement)', default: 200,  hint: 'Cleats, gloves, bag, water bottle. Replacement averaged across years.' },
@@ -378,6 +428,369 @@ export const PROFILES: CostProfile[] = [
     ),
     sources: TENNIS_SOURCES,
     sourceNote: 'USTA publishes junior program participation and cost data. Tennis lesson rates ($60-100/hr) are widely surveyed. School tennis equipment is family-provided.',
+  },
+
+  // Flag football: the cheapest entry point in football. One season, no pads, jersey included.
+  { sport: 'flag-football', level: 'rec', estimatedGames: 10,
+    lines: [
+      { key: 'registration',  label: 'League registration',           default: 175,  hint: 'NFL Flag and local league fees run $120-250, jersey included.' },
+      { key: 'equipment',     label: 'Cleats, mouthguard, gloves',     default: 90,   hint: 'No pads, no helmet. Cleats are most of the bill.' },
+      { key: 'team-apparel',  label: 'Extra team apparel',             default: 40,   hideable: true },
+      { key: 'gas-local',     label: 'Gas (practices/games)',          default: 120,  hideable: true },
+      { key: 'snacks',        label: 'Snacks/team treats',             default: 40,   hideable: true },
+      { key: 'photos',        label: 'Picture day package',            default: 40,   hideable: true },
+    ],
+    sources: FLAG_7V7_SOURCES,
+    sourceNote: 'NFL Flag and USA Football affiliate leagues publish registration fees: $120-250 per season with the jersey included. Add cleats and a mouthguard and the season lands between $150 and $300 before extras.',
+  },
+  { sport: 'flag-football', level: 'travel', estimatedGames: 30,
+    lines: [
+      { key: 'club-fees',        label: 'Club/team annual fee',        default: 600,  hint: 'Tournament flag teams charge $400-900 for the year.' },
+      { key: 'tournament-fees',  label: 'Tournament entry fees',       default: 450,  hint: '6-8 tournaments, entry split across the roster.' },
+      { key: 'travel-hotels',    label: 'Hotels for travel weekends',  default: 600,  hint: '2-3 overnight events.', hideable: true },
+      { key: 'travel-gas',       label: 'Gas (travel weekends)',       default: 300,  hideable: true },
+      { key: 'travel-food',      label: 'Food on the road',            default: 250,  hideable: true },
+      { key: 'equipment',        label: 'Cleats, gloves, mouthguard',  default: 150 },
+      { key: 'team-apparel',     label: 'Team apparel/uniforms',       default: 150 },
+    ],
+    sources: FLAG_7V7_SOURCES,
+    sourceNote: 'Tournament flag is growing fast and fees are settling around $400-900 per club plus entries. Cheaper than any other travel sport on this list. The hotel weekends arrive just the same.',
+  },
+
+  // 7v7: a circuit, not a season. School summer teams are cheap. Club 7v7 is travel ball in shorts.
+  { sport: 'football-7v7', level: 'school', estimatedGames: 16,
+    lines: [
+      { key: 'team-fee',      label: 'Summer 7v7 team fee',            default: 150,  hint: 'Covers tournament entries, split across the roster.' },
+      { key: 'equipment',     label: 'Cleats, gloves, mouthguard',     default: 130 },
+      { key: 'soft-shell',    label: 'Soft-shell helmet',              default: 60,   hint: 'Some events require one. Check before you buy.', hideable: true },
+      { key: 'team-apparel',  label: 'Team shirts/shorts',             default: 50 },
+      { key: 'gas-local',     label: 'Gas (tournaments)',              default: 120,  hideable: true },
+      { key: 'travel-food',   label: 'Food at all-day events',         default: 100,  hint: '7v7 days run six hours plus. The concession stand knows it.', hideable: true },
+    ],
+    sources: FLAG_7V7_SOURCES,
+    sourceNote: 'School-team summer 7v7 stays cheap because the program pools tournament entries and the kid already owns cleats. Budget $300-500 all-in. The club circuit below is a different animal.',
+  },
+  { sport: 'football-7v7', level: 'travel', estimatedGames: 28,
+    lines: [
+      { key: 'club-fees',       label: 'Club 7v7 fee',                  default: 900,  hint: 'Regional and national-circuit teams run $500-1,500.' },
+      { key: 'tournament-fees', label: 'Tournament/showcase fees',      default: 400 },
+      { key: 'travel-hotels',   label: 'Hotels for travel weekends',    default: 900,  hint: '3-4 overnight events.' },
+      { key: 'travel-gas',      label: 'Gas (travel weekends)',         default: 350,  hideable: true },
+      { key: 'travel-food',     label: 'Food on the road',              default: 300,  hideable: true },
+      { key: 'equipment',       label: 'Cleats, gloves, soft-shell helmet', default: 220 },
+      { key: 'team-apparel',    label: 'Team apparel/uniforms',         default: 180 },
+      { key: 'film-subs',       label: 'Film/highlight subscriptions',  default: 150,  hint: 'Hudl-type accounts. The circuit sells exposure, and film is the product.', hideable: true },
+    ],
+    sources: FLAG_7V7_SOURCES,
+    sourceNote: 'Club 7v7 fees run $500-1,500 with national-circuit teams at the top. Hotels and showcase entries do the rest. College coaches still recruit off fall film first, so treat the exposure pitch with a flat eye.',
+  },
+
+  // Lacrosse girls: same field, different game. No pads, but goggles are mandatory and the stick is its own line.
+  { sport: 'lacrosse-girls', level: 'school', estimatedGames: 18,
+    lines: SCHOOL.map(l =>
+      l.key === 'equipment' ? { ...l, default: 350, hint: 'Stick, goggles, mouthguard, cleats. No helmet or pads in the girls game.' } : l
+    ),
+    sources: LACROSSE_SOURCES,
+    sourceNote: 'US Lacrosse equipment guidance puts a girls starter kit at roughly half the boys number: no helmet, no shoulder or arm pads. Goggles are mandatory and a legal women\'s stick with a real pocket runs $100-250.',
+  },
+  { sport: 'lacrosse-girls', level: 'travel', estimatedGames: 45,
+    lines: TRAVEL.map(l =>
+      l.key === 'equipment' ? { ...l, default: 550, hint: 'Stick upgrades, a backup stick, goggles, cleats.' } : l
+    ),
+    sources: LACROSSE_SOURCES,
+    sourceNote: 'Girls club lacrosse fees match the boys side at $2,500-4,500, and the summer recruiting circuit drives the same hotel math. Equipment runs lower because the girls game has no pads. Stick upgrades close some of that gap.',
+  },
+
+  // Cross country: the cheapest varsity sport going. Shoes are the budget.
+  { sport: 'cross-country', level: 'school', estimatedGames: 9,
+    lines: [
+      { key: 'registration',  label: 'School athletic fee',            default: 150,  hint: 'Pay-to-play fee, varies by district.' },
+      { key: 'shoes',         label: 'Trainers + spikes',              default: 280,  hint: 'Trainers wear out around 400 miles. A varsity runner burns through two pairs plus spikes.' },
+      { key: 'team-apparel',  label: 'Spirit pack',                    default: 100 },
+      { key: 'summer-camp',   label: 'Summer running camp',            default: 300,  hint: 'Optional. Common for varsity hopefuls.', hideable: true },
+      { key: 'watch',         label: 'GPS watch',                      default: 120,  hint: 'Not required. Half the team has one anyway.', hideable: true },
+      { key: 'gas-local',     label: 'Gas (meets)',                    default: 100,  hideable: true },
+      { key: 'banquet',       label: 'End-of-season banquet',          default: 40,   hideable: true },
+    ],
+    sources: TRACK_XC_SOURCES,
+    sourceNote: 'NFHS counts cross country among the largest participation sports because the cost of entry is shoes. A school season runs $200-600 all-in: athletic fee, two pairs of trainers, spikes, spirit pack. Summer camp is the only line that moves the total much.',
+  },
+  { sport: 'cross-country', level: 'travel', estimatedGames: 12,
+    lines: [
+      { key: 'club-fees',     label: 'Club dues',                      default: 450,  hint: 'USATF youth clubs charge seasonal or annual dues.' },
+      { key: 'usatf',         label: 'USATF membership',               default: 35 },
+      { key: 'meet-fees',     label: 'Meet entry fees',                default: 150 },
+      { key: 'shoes',         label: 'Trainers + spikes',              default: 300 },
+      { key: 'team-apparel',  label: 'Club uniform/apparel',           default: 100 },
+      { key: 'travel-meets',  label: 'Travel for JO regionals/nationals', default: 700, hint: 'Only if the kid qualifies. Then it is a plane ticket.', hideable: true },
+      { key: 'gas-local',     label: 'Gas (practices/meets)',          default: 200,  hideable: true },
+    ],
+    sources: TRACK_XC_SOURCES,
+    sourceNote: 'USATF youth clubs fill the fall for kids who want more than the school schedule. Dues and entries stay modest. The Junior Olympic championship path is what adds travel cost, and only for qualifiers.',
+  },
+
+  // Track and field: cheap at school, with one wrinkle. Spikes are event-specific.
+  { sport: 'track-field', level: 'school', estimatedGames: 12,
+    lines: [
+      { key: 'registration',  label: 'School athletic fee',            default: 150,  hint: 'Pay-to-play fee, varies by district.' },
+      { key: 'shoes',         label: 'Spikes + trainers',              default: 250,  hint: 'Sprint spikes, distance spikes, jump shoes, and throwing shoes are all different. Multi-event kids pay twice.' },
+      { key: 'team-apparel',  label: 'Spirit pack',                    default: 100 },
+      { key: 'implements',    label: 'Personal implements',            default: 80,   hint: 'Schools provide shots and discs. Serious throwers buy their own anyway.', hideable: true },
+      { key: 'summer-camp',   label: 'Summer camp/clinic',             default: 250,  hideable: true },
+      { key: 'gas-local',     label: 'Gas (meets)',                    default: 120,  hideable: true },
+      { key: 'banquet',       label: 'End-of-season banquet',          default: 40,   hideable: true },
+    ],
+    sources: TRACK_XC_SOURCES,
+    sourceNote: 'School track sits in the same $200-600 band as cross country. NFHS participation data backs the low barrier. The one trap: spikes are event-specific, so a kid who sprints and jumps owns two pairs.',
+  },
+  { sport: 'track-field', level: 'travel', estimatedGames: 14,
+    lines: [
+      { key: 'club-fees',     label: 'Club dues',                      default: 500,  hint: 'USATF youth clubs charge seasonal or annual dues.' },
+      { key: 'usatf',         label: 'USATF membership',               default: 35 },
+      { key: 'meet-fees',     label: 'Meet entry fees',                default: 200,  hint: 'Per-event entries add up for multi-event kids.' },
+      { key: 'shoes',         label: 'Spikes + trainers',              default: 300 },
+      { key: 'team-apparel',  label: 'Club uniform/apparel',           default: 100 },
+      { key: 'travel-meets',  label: 'Travel for JO regionals/nationals', default: 800, hint: 'Only if the kid qualifies.', hideable: true },
+      { key: 'gas-local',     label: 'Gas (practices/meets)',          default: 200,  hideable: true },
+    ],
+    sources: TRACK_XC_SOURCES,
+    sourceNote: 'Summer USATF club track mirrors club cross country: low dues, per-event entries, and a Junior Olympic ladder that turns into real travel money for the handful who qualify out of regionals.',
+  },
+
+  // Golf: rec is friendly. The junior tournament circuit is where the wallet opens.
+  { sport: 'golf', level: 'rec', estimatedGames: 8,
+    lines: [
+      { key: 'registration',  label: 'PGA Jr. League/program fee',     default: 280,  hint: 'Season fee, jersey included.' },
+      { key: 'clubs',         label: 'Starter club set',               default: 250,  hint: 'A used set is fine. Kids outgrow clubs like cleats.' },
+      { key: 'consumables',   label: 'Balls, glove, tees',             default: 80 },
+      { key: 'range',         label: 'Range balls/practice',           default: 150,  hideable: true },
+      { key: 'gas-local',     label: 'Gas (matches/practice)',         default: 100,  hideable: true },
+      { key: 'snacks',        label: 'Snack bar money',                default: 60,   hideable: true },
+    ],
+    sources: GOLF_SOURCES,
+    sourceNote: 'PGA Jr. League publishes registration at $200-350 with the jersey included. A used starter set keeps year one near $600 all-in. Green fees stay low because junior leagues play par-3 and scramble formats.',
+  },
+  { sport: 'golf', level: 'travel', estimatedGames: 14,
+    lines: [
+      { key: 'tour-fees',       label: 'Junior tour membership',       default: 300,  hint: 'Regional junior tours. National tours cost more.' },
+      { key: 'tournament-fees', label: 'Tournament entry fees',        default: 1200, hint: '12-15 events × $75-125 each.' },
+      { key: 'clubs',           label: 'Clubs (fitted, amortized)',    default: 600,  hint: 'A fitted set every 2-3 growth spurts, averaged annually.' },
+      { key: 'lessons',         label: 'Swing lessons/coaching',       default: 1500, hint: '$80-120/hr. The biggest variable in junior golf.', hideable: true },
+      { key: 'range',           label: 'Range and practice fees',      default: 500 },
+      { key: 'travel-events',   label: 'Travel for away events',       default: 1000, hideable: true },
+      { key: 'team-apparel',    label: 'Golf apparel',                 default: 200 },
+    ],
+    sources: GOLF_SOURCES,
+    sourceNote: 'Regional junior tours publish entry fees at $75-125 per event. Coaching is the swing factor: families with weekly lessons double the budget of families without. National AJGA-level golf runs well past these defaults.',
+  },
+
+  // Crew: the boat costs more than your car, and the club fee reflects it.
+  { sport: 'crew', level: 'school', estimatedGames: 8,
+    lines: [
+      { key: 'program-fee',   label: 'Rowing program fee',             default: 1200, hint: 'Boats and coaching launches cost real money even at school programs.' },
+      { key: 'uniform',       label: 'Uni/trou + team kit',            default: 150 },
+      { key: 'regatta-fees',  label: 'Regatta entry fees',             default: 200 },
+      { key: 'gear',          label: 'Personal gear',                  default: 100,  hint: 'Water bottle, seat pad, layers for cold water mornings.' },
+      { key: 'travel-regattas', label: 'Travel for away regattas',     default: 400,  hideable: true },
+      { key: 'travel-food',   label: 'Food on regatta days',           default: 100,  hideable: true },
+      { key: 'banquet',       label: 'End-of-season banquet',          default: 60,   hideable: true },
+    ],
+    sources: CREW_SOURCES,
+    sourceNote: 'School rowing carries a higher fee than most school sports because shells, oars, and a coaching launch sit behind every seat. Program fees of $800-1,500 per season are normal and posted publicly by most scholastic programs.',
+  },
+  { sport: 'crew', level: 'travel', estimatedGames: 10,
+    lines: [
+      { key: 'club-fees',     label: 'Club annual dues',               default: 2500, hint: 'Year-round junior rowing club. $1,500-3,500 is the national band.' },
+      { key: 'usrowing',      label: 'USRowing membership',            default: 50 },
+      { key: 'regatta-fees',  label: 'Regatta entry fees',             default: 400 },
+      { key: 'uniform',       label: 'Uni/trou + team kit',            default: 150 },
+      { key: 'travel-regattas', label: 'Hotels for travel regattas',   default: 900,  hint: 'Youth Nationals and away regattas mean multi-night stays.' },
+      { key: 'travel-gas',    label: 'Gas (regatta travel)',           default: 300,  hideable: true },
+      { key: 'travel-food',   label: 'Food on the road',               default: 250,  hideable: true },
+      { key: 'summer-camp',   label: 'Summer rowing camp',             default: 700,  hideable: true },
+    ],
+    sources: CREW_SOURCES,
+    sourceNote: 'Junior club dues run $1,500-3,500 nationally, posted on most club sites. Regatta travel stacks on top: Youth Nationals qualifiers add a week of hotels. The dues look high until you price a single racing shell.',
+  },
+
+  // Martial arts: a monthly bill, not a season. Testing fees climb as the belt darkens.
+  { sport: 'martial-arts', level: 'rec', estimatedGames: 4,
+    lines: [
+      { key: 'tuition',       label: 'Monthly tuition (× 12 months)',  default: 1800, hint: '$100-200/month at most studios. Year-round, no off-season.' },
+      { key: 'gear',          label: 'Gi/uniform + sparring gear',     default: 200,  hint: 'Uniform plus pads, headgear, mouthguard as the kid advances.' },
+      { key: 'testing-fees',  label: 'Belt testing fees',              default: 150,  hint: '$40-100 per test, 2-3 tests a year. The fee climbs with the belt.' },
+      { key: 'tournament',    label: 'Local tournament entries',       default: 100,  hideable: true },
+      { key: 'summer-camp',   label: 'Studio camps/clinics',           default: 200,  hideable: true },
+      { key: 'gas-local',     label: 'Gas (classes)',                  default: 150,  hideable: true },
+    ],
+    sources: MARTIAL_ARTS_SOURCES,
+    sourceNote: 'Martial arts bills monthly and never stops: $100-200/month is the national band across taekwondo, karate, and BJJ studios. Testing fees are the line parents miss when they sign the contract. Read the contract twice.',
+  },
+  { sport: 'martial-arts', level: 'travel', estimatedGames: 8,
+    lines: [
+      { key: 'tuition',       label: 'Monthly tuition (× 12 months)',  default: 2400, hint: 'Competition-team rates run above base tuition.' },
+      { key: 'team-fee',      label: 'Competition team fee',           default: 300 },
+      { key: 'tournament-fees', label: 'Tournament entry fees',        default: 500,  hint: '6-8 events × $60-90.' },
+      { key: 'gear',          label: 'Gis, sparring kit, replacements', default: 350 },
+      { key: 'testing-fees',  label: 'Belt testing fees',              default: 200,  hint: 'Black belt tests run $300-600 on their own.', hideable: true },
+      { key: 'travel-events', label: 'Travel for regional/national events', default: 800, hideable: true },
+      { key: 'private-lessons', label: 'Private lessons',              default: 600,  hideable: true },
+    ],
+    sources: MARTIAL_ARTS_SOURCES,
+    sourceNote: 'Competition-track martial arts adds team fees, entries, and travel on top of the monthly bill. USA Taekwondo and tournament circuits publish entry fees in the $60-90 range. The black belt test, when it comes, is its own budget item.',
+  },
+
+  // Stunt: the school-sanctioned game version of cheer. The club tumbling track prices like all-star.
+  { sport: 'stunt', level: 'school', estimatedGames: 12,
+    lines: [
+      { key: 'registration',  label: 'School athletic fee',            default: 200,  hint: 'Pay-to-play fee, varies by district.' },
+      { key: 'shoes',         label: 'Mat shoes + practice wear',      default: 150 },
+      { key: 'team-apparel',  label: 'Spirit pack',                    default: 150 },
+      { key: 'summer-camp',   label: 'Summer camp',                    default: 300,  hideable: true },
+      { key: 'gas-local',     label: 'Gas (games/practices)',          default: 150,  hideable: true },
+      { key: 'banquet',       label: 'End-of-season banquet',          default: 60,   hideable: true },
+    ],
+    sources: STUNT_SOURCES,
+    sourceNote: 'STUNT is the head-to-head game format USA Cheer built from cheer skills, and it prices like a school sport, not like all-star: athletic fee, shoes, spirit pack. No competition uniforms, no choreography fee, no Worlds trip.',
+  },
+  { sport: 'stunt', level: 'travel', estimatedGames: 8,
+    lines: [
+      { key: 'tuition',       label: 'Monthly gym tuition (× 10 months)', default: 2400, hint: 'Club stunt and tumbling programs price like all-star cheer.' },
+      { key: 'competition-fees', label: 'Competition entry fees',      default: 500 },
+      { key: 'uniform',       label: 'Uniform',                        default: 400 },
+      { key: 'choreo-fee',    label: 'Choreography fee',               default: 300 },
+      { key: 'shoes',         label: 'Mat shoes + practice wear',      default: 150 },
+      { key: 'membership',    label: 'USA Cheer/USASF membership',     default: 50 },
+      { key: 'travel-comps',  label: 'Travel (regional/national events)', default: 1200, hideable: true },
+    ],
+    sources: STUNT_SOURCES,
+    sourceNote: 'Club-level stunt and tumbling runs on the all-star cheer fee model: monthly gym tuition, a uniform, a choreography fee, and competition travel. Budget against the cheer profile and you will land close.',
+  },
+
+  // Theater: cheap on paper. Then you buy tickets for everyone you have ever met.
+  { sport: 'theater', level: 'school', estimatedGames: 8,
+    lines: [
+      { key: 'participation-fee', label: 'Production/participation fee', default: 100, hint: 'Per-show fee at many schools. Some charge nothing.' },
+      { key: 'costume',       label: 'Costume pieces',                 default: 120,  hint: 'Character shoes, base layers, the specific black pants every show demands.' },
+      { key: 'makeup',        label: 'Stage makeup kit',               default: 50 },
+      { key: 'show-shirt',    label: 'Show shirt + cast dues',         default: 60 },
+      { key: 'tickets',       label: 'Tickets for family',             default: 120,  hint: 'You will buy more tickets than you planned. Grandma counts.', hideable: true },
+      { key: 'festival-trip', label: 'Thespian festival trip',         default: 300,  hideable: true },
+      { key: 'flowers-gifts', label: 'Flowers, cast gifts, cast party', default: 40,  hideable: true },
+    ],
+    sources: THEATER_SOURCES,
+    sourceNote: 'School theater runs $200-700 a year across two productions: participation fees, costume pieces the costumer asks families to cover, a makeup kit, and the ticket line nobody budgets. The state Thespian festival trip is the swing item.',
+  },
+  { sport: 'theater', level: 'travel', estimatedGames: 12,
+    lines: [
+      { key: 'production-fees', label: 'Production fees (per show)',   default: 700,  hint: 'Community and youth theater companies charge $250-450 per production.' },
+      { key: 'costume',       label: 'Costume + shoes',                default: 200 },
+      { key: 'makeup',        label: 'Stage makeup kit',               default: 75 },
+      { key: 'voice-lessons', label: 'Voice/acting lessons',           default: 900,  hint: 'Voice lessons at $50-80 per half hour. The hidden line for musical theater kids.', hideable: true },
+      { key: 'headshots',     label: 'Headshots',                      default: 150,  hideable: true },
+      { key: 'travel-festival', label: 'Festival/competition travel',  default: 500,  hideable: true },
+      { key: 'tickets',       label: 'Tickets for family',             default: 150,  hideable: true },
+    ],
+    sources: THEATER_SOURCES,
+    sourceNote: 'Youth and community theater companies post production fees of $250-450 per show, and serious kids do two or three a year. Voice lessons are where the budget actually lives. EdTA festival travel adds on top for competitive troupes.',
+  },
+
+  // Band: the fair share fee is the headline. The spring trip is the ambush.
+  { sport: 'band', level: 'school', estimatedGames: 15,
+    lines: [
+      { key: 'fair-share',    label: 'Band fair share fee',            default: 500,  hint: 'Covers uniforms, staff, show design. $300-1,500 depending on program size.' },
+      { key: 'instrument',    label: 'Instrument rental/purchase (amortized)', default: 350, hint: 'Rent before you buy. School-owned tubas beat purchased ones.' },
+      { key: 'supplies',      label: 'Reeds, oils, sticks, repairs',   default: 150,  hint: 'Reed players burn money monthly. Brass players smirk.' },
+      { key: 'shoes-gloves',  label: 'Marching shoes + gloves',        default: 60 },
+      { key: 'band-camp',     label: 'Band camp',                      default: 200 },
+      { key: 'trip',          label: 'Big trip fund',                  default: 400,  hint: 'The every-other-year trip is its own budget. Disney does not discount for woodwinds.', hideable: true },
+      { key: 'private-lessons', label: 'Private lessons',              default: 600,  hideable: true },
+    ],
+    sources: MUSIC_SOURCES,
+    sourceNote: 'Marching band fair share fees are posted by most booster programs and run $300-1,500 by program size. Add instrument rental, reeds, shoes, and camp and the national middle sits between $500 and $1,500 before the big trip.',
+  },
+  { sport: 'band', level: 'travel', estimatedGames: 8,
+    lines: [
+      { key: 'participation-fee', label: 'Indoor/honor ensemble fee',  default: 1200, hint: 'WGI indoor percussion and winter guard fees run $800-2,000.' },
+      { key: 'supplies',      label: 'Reeds, sticks, heads, repairs',  default: 200 },
+      { key: 'uniform',       label: 'Uniform/costume + shoes',        default: 150 },
+      { key: 'instrument-upkeep', label: 'Instrument upgrade/upkeep',  default: 300,  hideable: true },
+      { key: 'travel-shows',  label: 'Travel for regionals/championships', default: 800, hideable: true },
+      { key: 'private-lessons', label: 'Private lessons',              default: 900,  hint: 'Auditioned ensembles assume them.', hideable: true },
+    ],
+    sources: MUSIC_SOURCES,
+    sourceNote: 'The competitive winter circuit (WGI indoor percussion, winter guard, auditioned honor ensembles) charges participation fees of $800-2,000 and travels to regionals. Private lessons stop being optional once the ensemble is auditioned.',
+  },
+
+  // Choir: the cheapest activity on this list until the spring tour bus pulls up.
+  { sport: 'choir', level: 'school', estimatedGames: 8,
+    lines: [
+      { key: 'choir-fee',     label: 'Choir program fee',              default: 75 },
+      { key: 'attire',        label: 'Concert dress or tux',           default: 150,  hint: 'Hemmed once, worn for years if the kid stops growing. They will not stop growing.' },
+      { key: 'shoes',         label: 'Concert shoes',                  default: 50 },
+      { key: 'folder-music',  label: 'Folder + music fee',             default: 30 },
+      { key: 'tickets',       label: 'Concert tickets for family',     default: 60,   hideable: true },
+      { key: 'tour',          label: 'Festival/tour trip',             default: 300,  hideable: true },
+      { key: 'voice-lessons', label: 'Voice lessons',                  default: 500,  hideable: true },
+    ],
+    sources: MUSIC_SOURCES,
+    sourceNote: 'School choir is $150-500 a year: a program fee, the concert dress or tux, shoes, and a folder fee. The festival or tour trip is the one line that can triple the total, and it shows up on a permission slip with three weeks notice.',
+  },
+  { sport: 'choir', level: 'travel', estimatedGames: 14,
+    lines: [
+      { key: 'tuition',       label: 'Auditioned choir tuition/fees',  default: 450,  hint: 'Community and honor choirs charge annual tuition.' },
+      { key: 'tour',          label: 'Tour travel',                    default: 900,  hint: 'Spring tour is the budget item. Domestic one year, the rumored international trip the next.' },
+      { key: 'attire',        label: 'Performance attire',             default: 200 },
+      { key: 'voice-lessons', label: 'Voice lessons',                  default: 700,  hideable: true },
+      { key: 'audition-fees', label: 'Honor choir audition fees',      default: 100,  hideable: true },
+      { key: 'retreats',      label: 'Retreats/camps',                 default: 150,  hideable: true },
+    ],
+    sources: MUSIC_SOURCES,
+    sourceNote: 'Auditioned community and honor choirs post tuition of $300-600 a year. Tour travel is the real number: a domestic spring tour runs $600-1,200 per singer and the international year doubles it. Ask about the tour cycle at the audition, not after.',
+  },
+
+  // Ballet: three different sports wearing the same shoes. The tier decides the bill.
+  { sport: 'ballet', level: 'rec', estimatedGames: 3,
+    lines: [
+      { key: 'tuition',       label: 'Studio tuition (× 9 months)',    default: 1080, hint: 'One or two classes a week at $90-130/month.' },
+      { key: 'shoes',         label: 'Ballet slippers',                default: 80,   hint: 'They wear out faster than sneakers.' },
+      { key: 'dancewear',     label: 'Leotards + tights',              default: 120 },
+      { key: 'costume',       label: 'Recital costume',                default: 90 },
+      { key: 'recital-fee',   label: 'Recital fee + tickets',          default: 120,  hideable: true },
+      { key: 'summer-camp',   label: 'Summer dance camp',              default: 200,  hideable: true },
+    ],
+    sources: BALLET_SOURCES,
+    sourceNote: 'Rec ballet at a neighborhood studio runs $1,000-2,000 a year: monthly tuition for one or two classes, slippers, dancewear, and the recital package. Studio rate sheets are public and consistent nationally.',
+  },
+  { sport: 'ballet', level: 'travel', estimatedGames: 6,
+    lines: [
+      { key: 'tuition',       label: 'Studio tuition (× 10 months)',   default: 3600, hint: 'Serious-track students dance 4-6 days a week at $300-450/month.' },
+      { key: 'pointe-shoes',  label: 'Pointe shoes',                   default: 600,  hint: '$90-120 a pair. A serious dancer goes through five or more a year.' },
+      { key: 'dancewear',     label: 'Leotards, tights, warmups',      default: 250 },
+      { key: 'production-fee', label: 'Nutcracker/production fees',    default: 400 },
+      { key: 'costume',       label: 'Costumes',                       default: 200 },
+      { key: 'summer-intensive', label: 'Summer intensive',            default: 1200, hint: 'Audition-based programs run $1,000-3,000 before housing.', hideable: true },
+      { key: 'competition-fees', label: 'Competition fees (YAGP etc.)', default: 400, hideable: true },
+      { key: 'travel-comps',  label: 'Travel for competitions/auditions', default: 500, hideable: true },
+      { key: 'tickets',       label: 'Performance tickets for family', default: 100,  hideable: true },
+    ],
+    sources: BALLET_SOURCES,
+    sourceNote: 'The serious-studio tier runs $3,000-6,000: tuition for 4-6 days a week, pointe shoes on a replacement cycle nobody warns you about, production fees, and the summer intensive audition season. YAGP posts competition fees publicly.',
+  },
+  { sport: 'ballet', level: 'elite', estimatedGames: 12,
+    lines: [
+      { key: 'tuition',       label: 'Pre-professional tuition',       default: 6500, hint: '15-25 hours a week in the studio. Company-school rates posted annually.' },
+      { key: 'pointe-shoes',  label: 'Pointe shoes',                   default: 1500, hint: 'A pair every two to three weeks in heavy seasons. Some schools subsidize. Most do not.' },
+      { key: 'summer-intensive', label: 'Summer intensive + housing',  default: 3500, hint: 'Five or six weeks at a company school. Tuition plus housing plus the flight.' },
+      { key: 'dancewear',     label: 'Dancewear + warmups',            default: 400 },
+      { key: 'production-fee', label: 'Production/performance fees',   default: 500 },
+      { key: 'competition-fees', label: 'YAGP/competition fees',       default: 800,  hideable: true },
+      { key: 'travel-auditions', label: 'Travel for auditions',        default: 900,  hint: 'Company and intensive auditions cluster in January. So does the travel.', hideable: true },
+      { key: 'pt-bodywork',   label: 'PT and body work',               default: 600,  hideable: true },
+      { key: 'private-coaching', label: 'Private coaching',            default: 1000, hideable: true },
+    ],
+    sources: BALLET_SOURCES,
+    sourceNote: 'Pre-professional ballet is the most expensive activity in this calculator short of elite hockey: $8,000-15,000 a year between company-school tuition, a pointe shoe habit, and the mandatory summer intensive. The numbers come from posted company-school rate sheets and YAGP fee schedules.',
   },
 ];
 

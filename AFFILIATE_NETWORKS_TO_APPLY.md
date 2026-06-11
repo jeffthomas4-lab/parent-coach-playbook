@@ -2,6 +2,23 @@
 
 Sorted by priority. Apply to tier 1 first, tier 2 next, tier 3 only if you have bandwidth. Each has a one-line note on what they're for and a typical commission range. After approval, send the agent the credentials and tracking IDs and it will wire them through `/go/`.
 
+## Status (2026-06-10)
+
+| Network / merchant | Status |
+|---|---|
+| Amazon Associates | LIVE. Tag `parentcoachpl-20`. 71 slugs in `affiliates.json`. |
+| CJ Affiliate (network) | Account open. |
+| Dick's Sporting Goods (via CJ) | Applied, awaiting approval. |
+| GameChanger (via CJ) | Applied, awaiting approval. Covers the team-parent and scorekeeping content, not gear. |
+| ShareASale | Not yet applied. Next up. |
+| Impact | Not yet applied. |
+| Avantlink | Not yet applied. |
+| Bookshop.org | Not yet applied. |
+
+When an approval lands, send the tracking ID and the agent wires it through `/go/` and logs it here.
+
+**Domain change (June 2026):** the site is now parentcoachdesk.com. All three follow-up chores are DONE (confirmed by Jeff 2026-06-10): parentcoachdesk.com added to the Amazon Associates site list, CJ publisher profile updated to the new domain, and 301 redirect from parentcoachplaybook.com live in Cloudflare.
+
 ---
 
 ## Tier 1 — apply this week
@@ -63,15 +80,12 @@ Higher commissions on specialty gear. Approval slower. These pay off as the site
 **Approval:** 7–10 days.
 **Strategy:** Apply to all four — same family of stores, similar process. Useful when our sport-specific buying guides need precise links to high-end gear.
 
-### 8. Eastbay (Foot Locker family)
-**Apply at:** Through Impact Radius.
-**Covers:** Athletic apparel, basketball shoes, running gear.
-**Commission:** 5–10%.
-**Approval:** Variable. Sometimes 2 weeks.
+### 8. ~~Eastbay~~ — REMOVED
+Eastbay shut down in 2023. Foot Locker killed the brand. For athletic apparel and shoes, use the Fanatics and Under Armour programs on Impact instead.
 
 ### 9. CJ Affiliate (Commission Junction)
 **Apply at:** https://www.cj.com/publisher
-**Covers:** Network — gives you access to hundreds of programs including some of the above (Soccer.com, Eastbay).
+**Covers:** Network — gives you access to hundreds of programs including some of the above (Soccer.com, Dick's, GameChanger).
 **Approval:** Network is fast. Each merchant inside is its own application.
 **What we need from you:** Your CJ publisher ID.
 
