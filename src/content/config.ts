@@ -435,7 +435,8 @@ const decisions = defineCollection({
       ageBands:          z.array(z.enum(AGE_ENUM)).optional(),
       publishedAt:       z.coerce.date(),
       featured:          z.boolean().default(false),
-      draft:             z.boolean()      ...editorialField,
+      draft:             z.boolean(),
+      ...editorialField,
     }),
 });
 
