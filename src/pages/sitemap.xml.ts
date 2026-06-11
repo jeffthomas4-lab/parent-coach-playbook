@@ -32,6 +32,51 @@ export async function GET(ctx: APIContext) {
     }
   }
 
+  // Real last-modified dates for static pages that don't have content frontmatter.
+  // Update the date when you make a meaningful change to that page.
+  // DO NOT use new Date() here — that lies to Google on every deploy.
+  const STATIC_LASTMOD: Record<string, string> = {
+    '/': '2026-06-11',
+    '/start-here/': '2026-05-01',
+    '/reads/': '2026-06-01',
+    '/coaching-tips/': '2026-05-01',
+    '/camps/': '2026-06-01',
+    '/camps/submit/': '2026-05-01',
+    '/drive-there/': '2026-05-01',
+    '/game/': '2026-05-01',
+    '/drive-home/': '2026-05-01',
+    '/what-to-buy/': '2026-05-01',
+    '/team-parent/': '2026-05-01',
+    '/newsletter/': '2026-05-01',
+    '/about/': '2026-05-01',
+    '/disclosure/': '2026-04-01',
+    '/terms/': '2026-04-01',
+    '/resources/': '2026-05-01',
+    '/resources/what-to-say-when/': '2026-05-01',
+    '/resources/practice-plan-template/': '2026-05-01',
+    '/resources/national-organizations/': '2026-05-01',
+    '/search/': '2026-05-01',
+    '/tools/': '2026-05-01',
+    '/season-calendar/': '2026-05-01',
+    '/body/': '2026-05-01',
+    '/cost-calculator/': '2026-05-15',
+    '/cost-calculator/methodology/': '2026-05-15',
+    '/pathways/': '2026-05-01',
+    '/recruiting/': '2026-05-01',
+    '/adaptive/': '2026-05-01',
+    '/rules/': '2026-05-01',
+    '/scripts/': '2026-05-01',
+    '/decisions/': '2026-05-01',
+    '/youth-sports-pendulum/': '2026-05-01',
+    '/mental-skills/': '2026-05-01',
+    '/governing-bodies/': '2026-05-01',
+    '/why-we-exist/': '2026-05-01',
+    '/parent-coach/': '2026-05-01',
+    '/sports/': '2026-05-01',
+    '/about/sources/': '2026-05-01',
+    '/about/corrections/': '2026-05-01',
+  };
+
   const staticUrls = [
     '/',
     '/start-here/',
@@ -138,10 +183,13 @@ export async function GET(ctx: APIContext) {
     lastmod: d.data.publishedAt.toISOString(),
   }));
 
-  const today = new Date().toISOString();
+  // Fallback date for static pages not in STATIC_LASTMOD (e.g. buying guide
+  // and sport sub-pages generated from data). Use the earliest plausible date
+  // so Google doesn't treat them as stale — better than lying with today.
+  const STATIC_FALLBACK = '2026-05-01';
 
   const urls = [
-    ...staticUrls.map(loc => ({ loc, lastmod: today })),
+    ...staticUrls.map(loc => ({ loc, lastmod: STATIC_LASTMOD[loc] ?? STATIC_FALLBACK })),
     ...articleUrls,
     ...guideUrls,
     ...resourceUrls,
