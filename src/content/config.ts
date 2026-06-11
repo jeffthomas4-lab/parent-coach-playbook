@@ -509,14 +509,3 @@ export const collections = {
   news,
   pillar,
 };
-  seasonCalendars,
-  body,
-  pathways,
-  recruiting,
-  adaptive,
-  rules,
-  scripts,
-  decisions,
-  news,
-  pillar,
-};
