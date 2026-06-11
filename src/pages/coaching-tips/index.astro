@@ -175,6 +175,23 @@ const focusOptions = [
                 apply();
               });
             }
+
+            // Pre-select sport from URL ?sport= param (so sport hub "All drills" links work)
+            var urlSport = new URLSearchParams(window.location.search).get('sport') || '';
+            if (urlSport && sportBar) {
+              var preBtn = sportBar.querySelector('[data-sport="' + urlSport + '"]');
+              if (preBtn) {
+                var allBtns = sportBar.querySelectorAll('button');
+                for (var i = 0; i < allBtns.length; i++) {
+                  allBtns[i].classList.remove('bg-ink', 'text-paper', 'border-ink');
+                  allBtns[i].classList.add('border-bone', 'text-ink-soft');
+                }
+                preBtn.classList.remove('border-bone', 'text-ink-soft');
+                preBtn.classList.add('bg-ink', 'text-paper', 'border-ink');
+                s = urlSport;
+                apply();
+              }
+            }
           }
 
           if (document.readyState === 'loading') {

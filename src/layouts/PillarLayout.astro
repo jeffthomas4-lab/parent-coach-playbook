@@ -17,8 +17,14 @@ const meta = PILLARS[pillar];
 const articles = (await getCollection('articles', ({ data }) => isLive(data) && data.phase === pillar))
   .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
-// Collect tags actually used in this pillar
-const sportsUsed = [...new Set(articles.map(a => a.data.sport).filter(Boolean))] as string[];
+// Collect tags actually used in this pillar.
+// Exclude 'multi-sport' and 'multi-activity' from the filter chips — those
+// articles are general-purpose and should always be visible regardless of
+// which sport filter is active (handled in the client script below).
+const ALWAYS_VISIBLE_SPORTS = ['multi-sport', 'multi-activity', 'performing-arts'];
+const sportsUsed = [...new Set(
+  articles.map(a => a.data.sport).filter(s => s && !ALWAYS_VISIBLE_SPORTS.includes(s))
+)] as string[];
 const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as string[];
 ---
 <BaseLayout
@@ -147,6 +153,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
       const age = target.getAttribute('data-filter-age');
       const all = target.getAttribute('data-filter') === 'all';
 
+      const ALWAYS_VISIBLE = ['multi-sport', 'multi-activity', 'performing-arts'];
       list.querySelectorAll('[data-sport]').forEach((row) => {
         const r = row as HTMLElement;
         if (all) {
@@ -154,7 +161,9 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
           return;
         }
         if (sport) {
-          r.style.display = r.dataset.sport === sport ? '' : 'none';
+          // Always show general-purpose (multi-sport) articles alongside any specific sport
+          const isMatch = r.dataset.sport === sport || ALWAYS_VISIBLE.includes(r.dataset.sport ?? '');
+          r.style.display = isMatch ? '' : 'none';
         } else if (age) {
           r.style.display = r.dataset.age === age ? '' : 'none';
         }

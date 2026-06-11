@@ -59,7 +59,10 @@ const imageObject: Record<string, unknown> = {
     name: SITE.name,
     url: SITE.url,
   },
-  license: SITE.url,
+  copyrightNotice: `© ${new Date().getFullYear()} ${SITE.name}`,
+  creditText: SITE.name,
+  acquireLicensePage: `${SITE.url}/terms/`,
+  license: `${SITE.url}/terms/`,
   contentUrl: heroImageUrl,
 };
 // Only assert dimensions when we're confident: ogImage overrides go through
