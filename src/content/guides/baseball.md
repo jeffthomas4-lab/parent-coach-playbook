@@ -231,8 +231,8 @@ Sliding mitts protect the lead hand on head-first slides. Optional but cheap ins
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Grit Glove Baseball Sliding Mitt</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Grit Glove baseball sliding mitt with batting-glove-style finger protection. Worn on the lead hand on head-first slides to prevent jammed fingers.</p>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">EvoShield Baseball Sliding Mitt</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Hard-shell sliding mitt worn on the lead hand for head-first slides. Protects fingers and the back of the hand from jammed digits and turf burns.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
     <a href="/go/baseball-sliding-mitt/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
