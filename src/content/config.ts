@@ -483,7 +483,6 @@ const news = defineCollection({
 const pillar = defineCollection({
   type: 'content',
   schema: z.object({
-    slug: z.string(),
     title: z.string(),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
