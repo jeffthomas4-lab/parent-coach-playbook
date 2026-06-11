@@ -43,3 +43,5 @@ Watch them play. Ask them directly: "Would you rather play more games or have yo
 Some kids are travel kids. Some are rec kids. Some kids change their minds at fourteen. That's all okay.
 
 Give them the choice once they understand what both actually cost.
+
+The research on early specialization is pretty clear. David Epstein's [*Range*](/go/book-range/) makes the case in full — most elite athletes were multi-sport kids longer than you'd expect.

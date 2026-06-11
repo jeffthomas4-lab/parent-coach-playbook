@@ -205,3 +205,16 @@ Order a large team photo (8x10 or 11x14) and frame it. If you're the team parent
 ## What we'd actually buy
 
 Grab a mid-range foam roller, a hard cooler if tournaments are happening, a good insulated water bottle, and a multi-pack of athletic socks. The rest layers in over the season as you discover what your kid needs. You'll know within two weeks which items live in the car and which ones never leave the house.
+
+## What to read before the season starts
+
+Three books worth having on hand before the first practice. All link to our [Bookshop.org store](/go/book-changing-the-game/), which supports independent booksellers.
+
+**[Changing the Game](/go/book-changing-the-game/) — John O'Sullivan**
+The clearest book on the parent-coach relationship and why youth sports go sideways. Covers the cost-benefit of travel, the problem with early pressure, and what a good season actually looks like. Read it in August.
+
+**[Mindset](/go/book-mindset/) — Carol Dweck**
+Fixed versus growth. The distinction changes how you talk to your kid after a bad game, a missed shot, or a cut from a team. Short book. Worth reading before tryout season every year.
+
+**[Grit](/go/book-grit/) — Angela Duckworth**
+What separates kids who improve from kids who plateau has less to do with natural talent than most parents assume. Good read for mid-season when your kid wants to quit something they started.

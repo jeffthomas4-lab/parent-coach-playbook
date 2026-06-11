@@ -45,3 +45,5 @@ Do the math. Add it up. Then ask them: "Is this worth it to you?" Make them own 
 If yes: write the check. If no or they're unsure: try rec and reassess in six months.
 
 The money's real. The time's real. Their enthusiasm matters more than both.
+
+If you want the research behind why enthusiasm matters more than environment, David Epstein's [*Range*](/go/book-range/) is the clearest book on what actually produces good athletes. John O'Sullivan's [*Changing the Game*](/go/book-changing-the-game/) covers the cost side from the parent angle.

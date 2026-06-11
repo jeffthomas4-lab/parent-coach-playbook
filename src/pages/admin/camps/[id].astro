@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getCampById, getSubmitter, type Camp, type Submitter } from '../../../lib/camps-db';
+import { getCampById, getSubmitter, setFeatured, type Camp, type Submitter } from '../../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
 import { CAMP_SPORTS } from '../../../data/site';
 
@@ -18,6 +18,18 @@ if (env?.DB && id) {
     if (camp) submitter = await getSubmitter(env.DB, camp.submitted_by_email);
   } catch (e) {
     console.error('admin camp lookup failed', e);
+  }
+}
+
+if (Astro.request.method === 'POST') {
+  const formData = await Astro.request.formData();
+  const action = formData.get('action') as string;
+  if (action === 'set-featured' && camp && env?.DB) {
+    const featured = formData.get('featured') === '1';
+    const featuredOrder = formData.get('featured_order') ? Number(formData.get('featured_order')) : null;
+    const featuredUntil = (formData.get('featured_until') as string) || null;
+    await setFeatured(env.DB, camp.id, featured, featuredOrder, featuredUntil);
+    return Astro.redirect(`/admin/camps/${camp.id}/`);
   }
 }
 
@@ -298,6 +310,29 @@ const statusColor: Record<string, string> = {
             <input type="hidden" name="verified" value={camp.verified === 1 ? 'false' : 'true'} />
             <button type="submit" class="font-display italic px-3 py-1 border border-bone text-sm hover:bg-paper-warm font-medium">
               {camp.verified === 1 ? 'Remove verified flag' : 'Mark as verified'}
+            </button>
+          </form>
+        </div>
+
+        <div class="border border-bone bg-paper p-5 mt-6">
+          <h3 class="font-display text-ink text-base font-medium mb-3">Featured listing</h3>
+          <p class="font-display text-ink-soft text-sm mb-4">
+            Featured camps appear in the highlighted section at the top of /camps/.
+            {camp.featured ? 'Currently featured.' : 'Not currently featured.'}
+          </p>
+          <form method="POST">
+            <input type="hidden" name="action" value="set-featured" />
+            <input type="hidden" name="featured" value={camp.featured ? '0' : '1'} />
+            <div class="mb-3">
+              <label class="font-display text-ink-soft text-xs block mb-1">Display order (lower = higher)</label>
+              <input type="number" name="featured_order" value={camp.featured_order ?? ''} class="font-display border border-bone px-3 py-2 text-sm w-32" />
+            </div>
+            <div class="mb-4">
+              <label class="font-display text-ink-soft text-xs block mb-1">Featured until (YYYY-MM-DD, blank = no expiry)</label>
+              <input type="text" name="featured_until" value={camp.featured_until ?? ''} class="font-display border border-bone px-3 py-2 text-sm w-40" placeholder="2026-12-31" />
+            </div>
+            <button type="submit" class="btn">
+              {camp.featured ? 'Remove from featured' : 'Mark as featured'}
             </button>
           </form>
         </div>

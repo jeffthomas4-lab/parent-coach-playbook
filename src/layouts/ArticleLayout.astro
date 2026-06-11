@@ -186,6 +186,18 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
           </div>
         </header>
 
+        {data.hero && (
+          <div class="mt-10 rounded-lg overflow-hidden">
+            <img
+              src={typeof data.hero === 'string' ? data.hero : data.hero.src}
+              alt={data.heroAlt ?? data.title}
+              class="w-full object-cover"
+              style="max-height: 480px;"
+              loading="eager"
+            />
+          </div>
+        )}
+
         {data.bluf && (
           <aside class="mt-10 border-l-4 border-rust pl-5 py-1" aria-label="Quick answer">
             <p class="font-mono text-rust uppercase text-[0.7rem] tracking-label mb-2 font-medium">

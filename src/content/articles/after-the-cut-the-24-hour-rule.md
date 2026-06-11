@@ -94,3 +94,5 @@ The 24 hours of nothing is the move that keeps every door open.
 Don't text the coach. Don't text other parents. Don't make decisions. Eat dinner. Sleep. Wake up. Then talk.
 
 Most regrets in youth sports are made in the 24 hours after a hard moment. The rule prevents most of them.
+
+Carol Dweck's [*Mindset*](/go/book-mindset/) is worth reading before the next tryout season. The cut feels like a verdict on talent. It isn't. How your kid processes it — and how you frame it — matters more than the result.

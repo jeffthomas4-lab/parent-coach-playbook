@@ -106,6 +106,9 @@ export interface Camp {
   url_last_checked_at: string | null;
   url_last_status_code: number | null;
   awaiting_review: 0 | 1;
+  featured: 0 | 1;
+  featured_order: number | null;
+  featured_until: string | null;
 }
 
 export type ReviewStatus = 'pending' | 'approved' | 'rejected';
@@ -373,6 +376,22 @@ export async function getCampBySlug(db: D1Database, slug: string): Promise<Camp 
   // Auto-archive: past camps return null even on direct URL access.
   if (row.end_date && row.end_date < todayDateISO()) return null;
   return row;
+}
+
+export async function listFeaturedCamps(db: D1Database): Promise<Camp[]> {
+  const today = todayDateISO();
+  const result = await db
+    .prepare(
+      `SELECT * FROM camps
+         WHERE status = 'approved'
+           AND featured = 1
+           AND end_date >= ?
+           AND (featured_until IS NULL OR featured_until >= ?)
+         ORDER BY featured_order ASC NULLS LAST, start_date ASC`,
+    )
+    .bind(today, today)
+    .all<Camp>();
+  return result.results ?? [];
 }
 
 export async function listApprovedCamps(db: D1Database): Promise<Camp[]> {
@@ -775,6 +794,21 @@ export async function setVerified(db: D1Database, id: string, verified: boolean)
   await db
     .prepare('UPDATE camps SET verified = ? WHERE id = ?')
     .bind(verified ? 1 : 0, id)
+    .run();
+}
+
+export async function setFeatured(
+  db: D1Database,
+  id: string,
+  featured: boolean,
+  featuredOrder?: number | null,
+  featuredUntil?: string | null,
+): Promise<void> {
+  await db
+    .prepare(
+      `UPDATE camps SET featured = ?, featured_order = ?, featured_until = ? WHERE id = ?`,
+    )
+    .bind(featured ? 1 : 0, featuredOrder ?? null, featuredUntil ?? null, id)
     .run();
 }
 

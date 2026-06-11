@@ -41,3 +41,5 @@ It's best to avoid treating this like a betrayal. Skip bringing it up five years
 They're learning that their preferences matter. That their energy is their own. That quitting something doesn't make them weak. Those are lessons they need.
 
 If they're done, they're done. Let them be done. That's actually winning.
+
+John O'Sullivan's [*Changing the Game*](/go/book-changing-the-game/) covers this exact moment — what it looks like when a kid walks away from a sport on their own terms versus being pushed out the door.
