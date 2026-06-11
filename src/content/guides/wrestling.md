@@ -116,8 +116,40 @@ Everything goes in one place: shoes, headgear, singlet, knee pad, water bottle, 
   <p class="t-label text-ink-soft mt-3 text.xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
 
+## Ages 15+ (High school varsity, freestyle and Greco-Roman)
+
+High school wrestling adds weight classes, cutting culture, and dual meet schedules. A few things change at this level.
+
+**Skin check and hygiene gear**
+
+High school wrestling rooms are inspected before dual meets. Skin infections (ringworm, impetigo, staph) are checked at the door. Your kid needs to be washing their singlet, shorts, and rash guard after every single practice. Not every other practice. Every practice. Skin infections disqualify wrestlers from competition. This is not a small thing.
+
+A small bottle of antifungal soap in the bag, used daily, is cheap insurance. Headgear and knee pads should be wiped down with disinfectant wipes after each session.
+
+**Weight class management**
+
+High school wrestling involves weight class decisions. If your kid is cutting weight, that conversation belongs with the coach and ideally a sports dietitian, not with gear. What matters on the gear side: weigh-ins at tournaments use a certified scale. Know what weight class your kid is targeting before tournament registration. Showing up overweight means no match.
+
+**Freestyle and Greco-Roman additions**
+
+The off-season freestyle and Greco-Roman circuit uses different rules and some different gear. Freestyle and Greco singlets have different cut requirements than folkstyle. If your kid is going to USA Wrestling tournaments in the off-season, confirm the singlet is legal before you show up. Most folkstyle singlets are legal for freestyle as well, but verify with the event.
+
 ## What the club provides
 
 Most youth wrestling clubs provide: mat time, practice instruction, and team singlets for competition. Some provide headgear for practice. Call before you buy.
 
 What you're always on your own for: shoes, mouthpiece, and the bag. Those three things, you buy.
+
+## Used gear notes
+
+Wrestling shoes are fine used if the sole isn't separated from the upper and the sole pattern still has grip. Headgear should ideally be new — used headgear may not fit properly and ear protection depends on fit. Singlets are fine used. Knee pads are fine used. Bags are obviously fine used.
+
+## What you can skip
+
+Skip weight cutting supplements, drinks, or sweat suits for youth wrestlers. The risks outweigh any benefit and the NWCA has clear guidelines against aggressive cutting at the youth level. Skip specialty recovery equipment — a foam roller is enough. Skip multiple pairs of wrestling shoes unless your kid is training six days a week.
+
+## Rules and citations
+
+- [USA Wrestling](https://www.themat.com/)
+- [NFHS Wrestling Rules](https://www.nfhs.org/activities-sports/wrestling/)
+- [National Wrestling Coaches Association](https://www.nwcaonline.com/)
