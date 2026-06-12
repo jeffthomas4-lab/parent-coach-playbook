@@ -109,30 +109,39 @@ export function personSchema(): Record<string, unknown> | null {
   };
 }
 
-// Primary nav: 5 items + search button. Scripts fold into Reads (linked from
-// the Reads landing). Camps and Team Parent fold into Tools and Reads
-// respectively. Search promoted from utility nav into the main bar.
+// Primary nav: 6 items + search icon.
+// By sport promoted to top-level (was buried in Tools dropdown).
+// Reads gets a dropdown surfacing Scripts, Decisions, Body, Parent-coach.
+// The Drawer renamed to Tools in the nav label (keeps branding on /tools/ landing).
+// Drills kept as top-level — it's a high-traffic SEO surface.
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
-  { label: 'Reads', href: '/reads/' },
-  { label: 'Camps', href: '/camps/' },
-  { label: 'Drills', href: '/coaching-tips/' },
+  { label: 'Reads',      href: '/reads/',       hasDropdown: 'reads' },
+  { label: 'By sport',   href: '/sports/' },
+  { label: 'Drills',     href: '/coaching-tips/' },
   { label: 'Gear Files', href: '/what-to-buy/', hasDropdown: 'buying-guides' },
-  { label: 'The Drawer', href: '/tools/', hasDropdown: 'tools' },
+  { label: 'Tools',      href: '/tools/',       hasDropdown: 'tools' },
 ];
 
-// Items inside the Tools nav dropdown. Six items, organized by what parents are doing.
-// Body & Safety hub now lives under /reads/ as a top-line tile, not in Tools. The
-// body collection still owns /body/ as its URL home; only the navigation parent moved.
-// Adaptive, Recruiting, Rules, Camps, Governing bodies still live but moved
-// to footer or accessed via Tools landing page. Decisions and Scripts live in /reads/ flow.
+// Items inside the Reads dropdown. Surfaces the content types that live
+// under /reads/ but are hard to find without landing on the index first.
+export const READS_NAV = [
+  { slug: 'scripts',      label: 'Scripts',          href: '/scripts/',      blurb: 'What to say in the first 90 seconds. Before tryouts. After a bad game.' },
+  { slug: 'decisions',    label: 'Decisions',         href: '/decisions/',    blurb: 'Travel ball or rec. Specialize or stay multi-sport. Quit or push through.' },
+  { slug: 'body',         label: 'The Sideline File', href: '/body/',         blurb: 'Concussion, arm care, sleep, burnout. What parents Google at 11pm.' },
+  { slug: 'parent-coach', label: 'Parent-coach',      href: '/parent-coach/', blurb: 'The lineup at midnight. Coaching your own kid in front of the team.' },
+] as const;
+
+// Items inside the Tools dropdown. By sport removed (now its own top-level nav item).
+// Rules and This Season (news) added — both were footer-only before.
 export const TOOLS_NAV = [
-  { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',  blurb: 'Real annual cost of any sport. Pre-filled, edit any line, share the result.' },
-  { slug: 'sports',           label: 'By sport',          href: '/sports/',           blurb: 'Every read, drill, calendar, and tool grouped by sport. The fastest entry point.' },
-  { slug: 'season-calendar',  label: 'Season calendar',   href: '/season-calendar/',  blurb: 'Twelve months by sport and level. Tryouts, peaks, off-season.' },
-  { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',         blurb: 'What "good" looks like at 7, 10, 13, 15, by sport.' },
+  { slug: 'cost-calculator',  label: 'Cost calculator',   href: '/cost-calculator/',       blurb: 'Real annual cost of any sport. Pre-filled, edit any line, share the result.' },
+  { slug: 'season-calendar',  label: 'Season calendar',   href: '/season-calendar/',       blurb: 'Twelve months by sport and level. Tryouts, peaks, off-season.' },
+  { slug: 'pathways',         label: 'Age pathways',      href: '/pathways/',              blurb: 'What "good" looks like at 7, 10, 13, 15, by sport.' },
   { slug: 'pendulum',         label: 'The pendulum',      href: '/youth-sports-pendulum/', blurb: 'Where is your family on the fun-to-performance spectrum right now?' },
-  { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',       blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
+  { slug: 'recruiting',       label: 'Recruiting',        href: '/recruiting/',            blurb: 'College recruiting honestly, by sport and level. What parents actually need to know.' },
+  { slug: 'rules',            label: 'Rules at-a-glance', href: '/rules/',                 blurb: 'Five-minute primer on any youth sport. What parents actually ask at the game.' },
+  { slug: 'news',             label: 'This Season',       href: '/news/',                  blurb: 'Rule changes, registration deadlines, equipment updates. What\'s changing now.' },
 ] as const;
 
 export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];

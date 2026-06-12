@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T04:33:47.820Z",
+  "generatedAt": "2026-06-12T05:04:34.244Z",
   "count": 398,
   "links": [
     {
@@ -413,6 +413,7 @@
     {
       "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
       "sources": [
+        "src/pages/index.astro",
         "src/pages/newsletter.astro"
       ]
     },

@@ -5,20 +5,14 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import { isLive } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
+import { SPORTS, TOOLS_NAV } from '../data/site';
 
-// Pull the cornerstone content. Editorial principle: when a new piece earns
-// cornerstone status, surface it here. See REVIEW.md for the curation rule.
 const articles   = await getCollection('articles',  ({ data }) => isLive(data));
 const scripts    = await getCollection('scripts',   ({ data }) => isLive(data));
 const decisions  = await getCollection('decisions', ({ data }) => isLive(data));
 const body       = await getCollection('body',      ({ data }) => isLive(data));
 
-// CURATED LISTS — editorial picks, not auto-generated.
-// When a new article belongs here, add the slug. When a piece falls out of relevance, remove it.
-
-// Cornerstone pillar pieces — the deepest, most-shared content.
-// Editorial principle: cornerstones are the total-person, emotional pieces.
-// Recruiting belongs in /recruiting/, not in the cornerstone surface area.
+// Cornerstone — deepest, most-shared pieces. Edit this list to curate.
 const cornerstoneSlugs = [
   'the-real-job-of-youth-sports',
   'are-youth-sports-worth-it',
@@ -29,70 +23,104 @@ const cornerstoneSlugs = [
 ];
 const cornerstone = articles
   .filter(a => cornerstoneSlugs.includes(a.slug))
-  .map(a => ({ kind: 'article' as const, slug: a.slug, title: a.data.title, summary: a.data.dek ?? '', href: `/${a.data.phase}/${a.slug}/` }));
+  .map(a => ({
+    kind: 'article' as const,
+    slug: a.slug,
+    title: a.data.title,
+    summary: a.data.dek ?? '',
+    href: `/${a.data.phase}/${a.slug}/`,
+  }));
 
-// "If you're new" — quick-orient pieces. Lead with the emotional frame, not the pipeline.
-const newToThis = [
-  { title: 'Why we exist. Three things youth sports is for.',                    href: '/game/the-real-job-of-youth-sports/', dek: 'Have fun. Learn how to be a good teammate. Want to come back next year.' },
-  { title: 'Are youth sports worth it? An honest answer.',                       href: '/drive-there/are-youth-sports-worth-it/', dek: 'The real math, by what you\'re actually paying for.' },
-  { title: 'What age should kids start sports?',                                 href: '/drive-there/what-age-should-kids-start-sports/', dek: 'Earlier than you think for movement. Later than you think for competition.' },
-  { title: 'The youth sports pendulum',                                          href: '/youth-sports-pendulum/', dek: 'Where is your family on the fun-to-performance spectrum right now?' },
-];
+// Big decisions — featured ones only.
+const bigDecisions = decisions.filter(d => d.data.featured).slice(0, 6);
 
-// "The big decisions" — pulled from the decisions collection, featured ones.
-const bigDecisions = decisions.filter(d => d.data.featured).slice(0, 4);
-
-// "What to say in the moment" — top scripts.
+// Top scripts — featured ones.
 const topScripts = scripts.filter(s => s.data.featured).slice(0, 6);
 
-// "Common parent searches" — high-search-volume articles.
-const commonSearchSlugs = [
-  'sideline-etiquette-for-youth-sports-parents',
-  'what-parents-shouldnt-do-at-youth-sports-games',
-  'benefits-of-multi-sport-athletes',
-];
-const commonSearches = articles.filter(a => commonSearchSlugs.includes(a.slug));
-
-// Body topics with the highest parent-search interest.
+// Body topics — high-urgency, high-search parent needs.
 const bodyTopicSlugs = ['concussion-protocol-basics', 'youth-pitcher-arm-care', 'burnout-signs', 'sleep-targets-by-age'];
 const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
+
+// Sport grid — top 12 for start-here (more than homepage, less than full /sports/).
+const FEATURED_SPORTS = [
+  'baseball', 'soccer', 'basketball', 'football',
+  'softball', 'volleyball', 'swimming', 'lacrosse-girls',
+  'gymnastics', 'theater', 'track-field', 'hockey',
+];
+const featuredSports = FEATURED_SPORTS
+  .map(slug => SPORTS.find(s => s.slug === slug))
+  .filter(Boolean) as typeof SPORTS[number][];
+
+// Tools to surface — subset most useful to a first-time visitor.
+const startHereTools = TOOLS_NAV.filter(t =>
+  ['cost-calculator', 'pendulum', 'season-calendar', 'pathways', 'rules'].includes(t.slug)
+);
 ---
 <BaseLayout
   title="Start here: the parents' guide to youth sports"
-  description="If you're new to youth sports, or in the middle of a hard moment, start here. The cornerstone pieces, the big decisions, the scripts for the car ride, and the searches every parent runs."
+  description="If you're new to youth sports, or in the middle of a hard moment, start here. Cornerstone reads, the big decisions, scripts for the car, tools, and your sport."
 >
-  <!-- Hero -->
+  {/* ── HERO ─────────────────────────────────────────────────────────────── */}
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">Start here</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl font-medium">
+      <h1 class="font-display text-ink text-[2rem] md:text-[3.75rem] leading-[1.05] max-w-3xl font-medium">
         The <em class="text-rust">parents' guide</em> to youth sports.
       </h1>
       <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
-        If you're new to youth sports, or in the middle of a hard moment, this page routes you to the right pieces. Cornerstone reads, big decisions, scripts for the car ride, and the questions every parent ends up Googling.
+        New to youth sports, or deep in a hard moment — this page routes you to what matters. Pick your sport, read the cornerstones, grab the tools.
       </p>
     </div>
   </section>
 
-  <!-- Quick anchor nav -->
+  {/* ── JUMP NAV ─────────────────────────────────────────────────────────── */}
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-5">
       <p class="font-display italic text-ink-soft text-xs mb-3 font-medium">Jump to</p>
       <div class="flex flex-wrap gap-2">
-        <a href="#cornerstone"      class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Cornerstone reads</a>
-        <a href="#new-to-this"      class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">New to this</a>
-        <a href="#big-decisions"    class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Big decisions</a>
-        <a href="#scripts"          class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Scripts for the car</a>
-        <a href="#parent-searches"  class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">Common searches</a>
-        <a href="#the-body"         class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper transition-colors text-sm font-medium">The body</a>
+        <a href="#by-sport"     class="font-display italic text-ink hover:text-rust border border-bone px-3 py-2 hover:bg-paper transition-colors text-sm font-medium">Your sport</a>
+        <a href="#cornerstone"  class="font-display italic text-ink hover:text-rust border border-bone px-3 py-2 hover:bg-paper transition-colors text-sm font-medium">Cornerstone reads</a>
+        <a href="#the-body"     class="font-display italic text-ink hover:text-rust border border-bone px-3 py-2 hover:bg-paper transition-colors text-sm font-medium">Injuries & health</a>
+        <a href="#big-decisions" class="font-display italic text-ink hover:text-rust border border-bone px-3 py-2 hover:bg-paper transition-colors text-sm font-medium">Big decisions</a>
+        <a href="#scripts"      class="font-display italic text-ink hover:text-rust border border-bone px-3 py-2 hover:bg-paper transition-colors text-sm font-medium">Scripts for the car</a>
+        <a href="#tools"        class="font-display italic text-ink hover:text-rust border border-bone px-3 py-2 hover:bg-paper transition-colors text-sm font-medium">Tools</a>
       </div>
     </div>
   </section>
 
-  <!-- Cornerstone -->
+  {/* ── BY SPORT ─────────────────────────────────────────────────────────── */}
+  <section id="by-sport" class="border-b border-bone scroll-mt-16">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-2 text-sm font-medium">Find everything for your kid's sport</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-2 font-medium">
+        Start with <em class="text-rust">your sport</em>.
+      </h2>
+      <p class="font-display text-ink-soft mb-6 leading-snug max-w-xl">
+        Each sport page pulls together every article, drill, gear guide, rules primer, season calendar, and recruiting note we have. It's the fastest entry point.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-px bg-bone">
+        {featuredSports.map((sport) => (
+          <a
+            href={`/sports/${sport.slug}/`}
+            class="bg-paper px-5 py-4 group hover:bg-[#F2E2D5] transition-colors block"
+          >
+            <h3 class="font-display text-ink text-base leading-tight group-hover:text-rust transition-colors font-medium">
+              {sport.label}
+            </h3>
+            <p class="font-display italic text-rust text-xs mt-1 font-medium">→ Sport guide</p>
+          </a>
+        ))}
+      </div>
+      <p class="font-display italic text-rust text-sm mt-5 font-medium">
+        <a href="/sports/" class="hover:underline">→ All 26 sports and activities</a>
+      </p>
+    </div>
+  </section>
+
+  {/* ── CORNERSTONE ──────────────────────────────────────────────────────── */}
   {cornerstone.length > 0 && (
-    <section id="cornerstone" class="border-b border-bone scroll-mt-16">
-      <div class="container-px py-8 md:py-10">
+    <section id="cornerstone" class="border-b border-bone bg-paper-warm scroll-mt-16">
+      <div class="container-px py-10 md:py-12">
         <p class="font-display italic text-rust mb-2 text-sm font-medium">If you only read a few</p>
         <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           The <em class="text-rust">cornerstone</em> pieces.
@@ -107,34 +135,42 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
             </li>
           ))}
         </ul>
+        <p class="font-display italic text-rust text-sm mt-4 font-medium">
+          <a href="/reads/" class="hover:underline">→ Full archive</a>
+        </p>
       </div>
     </section>
   )}
 
-  <!-- New to this -->
-  <section id="new-to-this" class="border-b border-bone scroll-mt-16">
-    <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-2 text-sm font-medium">If this is all new</p>
-      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
-        Get the <em class="text-rust">lay of the land</em>.
-      </h2>
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
-        {newToThis.map((p) => (
-          <li>
-            <a href={p.href} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-              <span class="font-display text-ink text-base block group-hover:text-rust font-medium">{p.title}</span>
-              <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{p.dek}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
+  {/* ── THE BODY / INJURIES & HEALTH ─────────────────────────────────────── */}
+  {topBodyTopics.length > 0 && (
+    <section id="the-body" class="border-b border-bone scroll-mt-16">
+      <div class="container-px py-10 md:py-12">
+        <p class="font-display italic text-rust mb-2 text-sm font-medium">What parents Google at 11pm</p>
+        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
+          <em class="text-rust">Injuries, health</em>, and the hard questions.
+        </h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
+          {topBodyTopics.map((b) => (
+            <li>
+              <a href={`/body/${b.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(b.data.title)} />
+                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{b.data.summary}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="font-display italic text-rust text-sm mt-4 font-medium">
+          <a href="/body/" class="hover:underline">→ All body and health topics</a>
+        </p>
+      </div>
+    </section>
+  )}
 
-  <!-- Big decisions -->
+  {/* ── BIG DECISIONS ────────────────────────────────────────────────────── */}
   {bigDecisions.length > 0 && (
     <section id="big-decisions" class="border-b border-bone bg-paper-warm scroll-mt-16">
-      <div class="container-px py-8 md:py-10">
+      <div class="container-px py-10 md:py-12">
         <p class="font-display italic text-rust mb-2 text-sm font-medium">The conversations every family has</p>
         <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           The <em class="text-rust">big decisions</em>.
@@ -156,10 +192,10 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
     </section>
   )}
 
-  <!-- Scripts -->
+  {/* ── SCRIPTS ──────────────────────────────────────────────────────────── */}
   {topScripts.length > 0 && (
     <section id="scripts" class="border-b border-bone scroll-mt-16">
-      <div class="container-px py-8 md:py-10">
+      <div class="container-px py-10 md:py-12">
         <p class="font-display italic text-rust mb-2 text-sm font-medium">For the moment in the car</p>
         <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
           <em class="text-rust">What to say</em> when it counts.
@@ -181,56 +217,38 @@ const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
     </section>
   )}
 
-  <!-- Common parent searches -->
-  {commonSearches.length > 0 && (
-    <section id="parent-searches" class="border-b border-bone bg-paper-warm scroll-mt-16">
-      <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm font-medium">The questions every parent Googles</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
-          <em class="text-rust">Common searches</em>, real answers.
-        </h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
-          {commonSearches.map((a) => (
-            <li>
-              <a href={`/${a.data.phase}/${a.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(a.data.title)} />
-                {a.data.dek && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{a.data.dek}</span>}
-              </a>
-            </li>
-          ))}
-        </ul>
+  {/* ── TOOLS ────────────────────────────────────────────────────────────── */}
+  <section id="tools" class="border-b border-bone bg-paper-warm scroll-mt-16">
+    <div class="container-px py-10 md:py-14">
+      <p class="font-display italic text-rust mb-2 text-sm font-medium">Reference and planning</p>
+      <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-6 font-medium">
+        The <em class="text-rust">tools</em> worth bookmarking.
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-bone">
+        {startHereTools.map((t) => (
+          <a
+            href={t.href}
+            class="bg-paper p-5 group hover:bg-[#F2E2D5] transition-colors block"
+          >
+            <h3 class="font-display text-ink text-base leading-tight group-hover:text-rust transition-colors font-medium">
+              {t.label}
+            </h3>
+            <p class="font-display italic text-ink-soft text-xs mt-2 leading-snug font-medium">{t.blurb}</p>
+            <p class="font-display italic text-rust text-xs mt-3 font-medium">→ Open</p>
+          </a>
+        ))}
       </div>
-    </section>
-  )}
+      <p class="font-display italic text-rust text-sm mt-5 font-medium">
+        <a href="/tools/" class="hover:underline">→ All tools</a>
+      </p>
+    </div>
+  </section>
 
-  <!-- The body -->
-  {topBodyTopics.length > 0 && (
-    <section id="the-body" class="border-b border-bone scroll-mt-16">
-      <div class="container-px py-8 md:py-10">
-        <p class="font-display italic text-rust mb-2 text-sm font-medium">What parents Google at 11pm</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl mb-4 font-medium">
-          <em class="text-rust">The body</em>: concussion, arm care, sleep, burnout.
-        </h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
-          {topBodyTopics.map((b) => (
-            <li>
-              <a href={`/body/${b.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
-                <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(b.data.title)} />
-                <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{b.data.summary}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p class="font-display italic text-rust text-sm mt-4 font-medium">
-          <a href="/body/" class="hover:underline">→ All body topics</a>
-        </p>
-      </div>
-    </section>
-  )}
-
+  {/* ── NEWSLETTER ───────────────────────────────────────────────────────── */}
   <LeadMagnetCTA />
   <NewsletterSignup
     headline="One short note a week"
-    blurb="One read every Friday from the editorial desk. No spam."
+    blurb="The Friday Letter every Friday morning. One read, one idea, one thing worth passing on. Free, always."
+    buttonLabel="Get the Friday Letter"
   />
 </BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { NAV, UTILITY_NAV, BUYING_GUIDES, TEAM_PARENT_CATEGORIES, TOOLS_NAV } from '../data/site';
+import { NAV, UTILITY_NAV, BUYING_GUIDES, READS_NAV, TOOLS_NAV } from '../data/site';
 
 const path = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -10,13 +10,16 @@ const teamSportGuides       = BUYING_GUIDES.filter(g => g.category === 'sport' &
 const individualSportGuides = BUYING_GUIDES.filter(g => g.category === 'sport' && (g as any).group === 'individual');
 const activityGuides        = BUYING_GUIDES.filter(g => g.category === 'activity');
 const coachGearGuides       = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
-// Legacy alias kept in case anything else in the file references the old name.
-const sportGuides = [...teamSportGuides, ...individualSportGuides];
+
+// Split Tools into two columns: calculators/checks vs. calendars/planning
+const toolsCol1 = TOOLS_NAV.slice(0, 4);  // cost calc, season cal, pathways, pendulum
+const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
 ---
 <header class="border-b border-bone sticky top-0 z-50 bg-paper">
   <div class="container-px flex items-center justify-between py-5 gap-6">
     <Logo size={22} />
 
+    {/* Desktop nav */}
     <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
       {NAV.map((item) => (
         item.hasDropdown ? (
@@ -32,6 +35,28 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
               {item.label} <span aria-hidden="true" style="font-size: 0.7em; line-height: 1;">▾</span>
             </button>
 
+            {/* Reads dropdown */}
+            {item.hasDropdown === 'reads' && (
+              <div
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[480px] bg-paper border border-bone hidden"
+                style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
+                data-dropdown-panel
+              >
+                <div class="grid grid-cols-2 gap-x-6 gap-y-1">
+                  {READS_NAV.map((r) => (
+                    <a href={r.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
+                      {r.label}
+                      <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{r.blurb}</span>
+                    </a>
+                  ))}
+                </div>
+                <div class="mt-4 pt-3 border-t border-bone">
+                  <a href="/reads/" class="t-cta">Full archive →</a>
+                </div>
+              </div>
+            )}
+
+            {/* Gear Files dropdown */}
             {item.hasDropdown === 'buying-guides' && (
               <div
                 class="absolute left-1/2 -translate-x-1/2 top-full w-[960px] bg-paper border border-bone hidden"
@@ -86,41 +111,35 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
               </div>
             )}
 
-            {item.hasDropdown === 'team-parent' && (
-              <div
-                class="absolute left-1/2 -translate-x-1/2 top-full w-[600px] bg-paper border border-bone hidden"
-                style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
-                data-dropdown-panel
-              >
-                <p class="font-display italic text-rust mb-3 text-sm font-medium">Toolkit by category</p>
-                <div class="grid grid-cols-2 gap-x-8 gap-y-1">
-                  {TEAM_PARENT_CATEGORIES.map((c) => (
-                    <a href={`/team-parent/#${c.slug}`} class="font-display text-ink hover:text-rust block py-1 font-medium">
-                      {c.label}
-                      <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{c.blurb}</span>
-                    </a>
-                  ))}
-                </div>
-                <div class="mt-4 pt-3 border-t border-bone">
-                  <a href="/team-parent/" class="t-cta">See all resources →</a>
-                </div>
-              </div>
-            )}
-
+            {/* Tools dropdown — two columns */}
             {item.hasDropdown === 'tools' && (
               <div
-                class="absolute left-1/2 -translate-x-1/2 top-full w-[520px] bg-paper border border-bone hidden"
+                class="absolute left-1/2 -translate-x-1/2 top-full w-[580px] bg-paper border border-bone hidden"
                 style="padding: 1.25rem; box-shadow: 0 1px 0 rgba(45,37,32,0.08);"
                 data-dropdown-panel
               >
-                <p class="font-display italic text-rust mb-3 text-sm font-medium">Reference tools</p>
-                <div class="grid grid-cols-1 gap-y-1">
-                  {TOOLS_NAV.map((t) => (
-                    <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
-                      {t.label}
-                      <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
-                    </a>
-                  ))}
+                <div class="grid grid-cols-2 gap-x-8 gap-y-1">
+                  <div>
+                    <p class="font-display italic text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">CALCULATORS & CHECKS</p>
+                    {toolsCol1.map((t) => (
+                      <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
+                        {t.label}
+                        <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
+                      </a>
+                    ))}
+                  </div>
+                  <div>
+                    <p class="font-display italic text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">PLANNING & REFERENCE</p>
+                    {toolsCol2.map((t) => (
+                      <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
+                        {t.label}
+                        <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-bone">
+                  <a href="/tools/" class="t-cta">All tools →</a>
                 </div>
               </div>
             )}
@@ -153,29 +172,52 @@ const sportGuides = [...teamSportGuides, ...individualSportGuides];
       {UTILITY_NAV.map((item) => (
         <a
           href={item.href}
-          class="hidden md:inline font-display italic text-ink hover:text-rust transition-colors font-medium" style="font-size: 0.95rem"
+          class="hidden md:inline font-display italic text-ink hover:text-rust transition-colors font-medium"
+          style="font-size: 0.95rem"
         >{item.label}</a>
       ))}
       <button
         type="button"
-        class="lg:hidden font-display italic text-ink font-medium" style="font-size: 0.95rem"
+        class="lg:hidden font-display italic text-ink font-medium"
+        style="font-size: 0.95rem"
         aria-label="Toggle menu"
         data-menu-toggle
       >Menu</button>
     </div>
   </div>
 
+  {/* Mobile menu — flat links with section labels for orientation */}
   <div class="lg:hidden hidden border-b border-bone bg-paper-warm" data-mobile-menu>
-    <div class="container-px py-6 grid gap-4">
-      {/* Mobile menu: top-level items only. Sub-navigation lives on each landing page
-          to avoid blowing out the menu with 27 sport links. */}
-      {NAV.map((item) => (
-        <a href={item.href} class="font-display italic text-ink hover:text-rust block py-2 font-medium">{item.label}</a>
-      ))}
-      <a href="/search/" class="font-display italic text-ink hover:text-rust block py-2 font-medium">Search</a>
-      {UTILITY_NAV.map((item) => (
-        <a href={item.href} class="font-display italic text-ink hover:text-rust font-medium">{item.label}</a>
-      ))}
+    <div class="container-px py-6 grid gap-1">
+      <a href="/start-here/" class="font-display italic text-ink hover:text-rust block py-2.5 border-b border-bone font-medium">Start here</a>
+
+      <p class="font-display italic text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">READS</p>
+      <a href="/reads/"        class="font-display italic text-ink hover:text-rust block py-2 font-medium">All reads</a>
+      <a href="/scripts/"      class="font-display italic text-ink hover:text-rust block py-2 font-medium">Scripts</a>
+      <a href="/decisions/"    class="font-display italic text-ink hover:text-rust block py-2 font-medium">Decisions</a>
+      <a href="/body/"         class="font-display italic text-ink hover:text-rust block py-2 font-medium">The Sideline File</a>
+      <a href="/parent-coach/" class="font-display italic text-ink hover:text-rust block py-2 font-medium">Parent-coach</a>
+
+      <p class="font-display italic text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">SPORT & GEAR</p>
+      <a href="/sports/"       class="font-display italic text-ink hover:text-rust block py-2 font-medium">By sport</a>
+      <a href="/coaching-tips/" class="font-display italic text-ink hover:text-rust block py-2 font-medium">Drills</a>
+      <a href="/what-to-buy/"  class="font-display italic text-ink hover:text-rust block py-2 font-medium">Gear Files</a>
+      <a href="/camps/"        class="font-display italic text-ink hover:text-rust block py-2 font-medium">Camps</a>
+
+      <p class="font-display italic text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">TOOLS</p>
+      <a href="/cost-calculator/"      class="font-display italic text-ink hover:text-rust block py-2 font-medium">Cost calculator</a>
+      <a href="/season-calendar/"      class="font-display italic text-ink hover:text-rust block py-2 font-medium">Season calendar</a>
+      <a href="/pathways/"             class="font-display italic text-ink hover:text-rust block py-2 font-medium">Age pathways</a>
+      <a href="/youth-sports-pendulum/" class="font-display italic text-ink hover:text-rust block py-2 font-medium">The pendulum</a>
+      <a href="/recruiting/"           class="font-display italic text-ink hover:text-rust block py-2 font-medium">Recruiting</a>
+      <a href="/rules/"                class="font-display italic text-ink hover:text-rust block py-2 font-medium">Rules at-a-glance</a>
+      <a href="/news/"                 class="font-display italic text-ink hover:text-rust block py-2 font-medium">This Season</a>
+
+      <div class="pt-4 border-t border-bone mt-2 flex gap-5">
+        <a href="/search/"     class="font-display italic text-ink hover:text-rust font-medium">Search</a>
+        <a href="/newsletter/" class="font-display italic text-ink hover:text-rust font-medium">Friday Letter</a>
+        <a href="/about/"      class="font-display italic text-ink hover:text-rust font-medium">About</a>
+      </div>
     </div>
   </div>
 </header>
