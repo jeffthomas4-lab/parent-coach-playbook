@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
-import { EDITORIAL, SITE, authorEntity } from '../../data/site';
+import { EDITORIAL, SITE, SPORTS, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
@@ -21,6 +21,7 @@ const { Content } = await tip.render();
 // contains a /go/ redirect link.
 const hasAffiliateLinks = tip.body.includes('/go/');
 const tagBits = [tip.data.sport, tip.data.age, tip.data.focus].filter(Boolean);
+const sportLabel = SPORTS.find(s => s.slug === tip.data.sport)?.label;
 
 // JSON-LD: HowTo for drill content. Steps come from the markdown body, so we
 // emit a minimal HowTo with name/description/single step pointing at the page.
@@ -53,7 +54,11 @@ const howToSchema = {
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/coaching-tips/" class="hover:underline">Drills</a>
-        {tagBits.length > 0 && ' · ' + tagBits.join(' · ')}
+        {tip.data.sport && sportLabel && (
+          <> · <a href={`/sports/${tip.data.sport}/`} class="hover:underline">{sportLabel}</a></>
+        )}
+        {tip.data.age && <> · {tip.data.age}</>}
+        {tip.data.focus && <> · {tip.data.focus}</>}
       </p>
       <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0] max-w-3xl font-medium" set:html={renderTitle(tip.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
@@ -70,6 +75,9 @@ const howToSchema = {
         <p class="font-display italic text-rust mb-2 font-medium">From the {EDITORIAL.byline}</p>
         <p class="font-display text-ink-soft text-sm leading-snug">
           See the full <a href="/coaching-tips/" class="hover:text-rust underline-offset-2 hover:underline">drill library</a> or filter by sport and age to find what fits Tuesday's practice.
+          {tip.data.sport && sportLabel && (
+            <> More on <a href={`/sports/${tip.data.sport}/`} class="hover:text-rust underline-offset-2 hover:underline">{sportLabel}</a> — articles, gear, calendars, and recruiting in one place.</>
+          )}
         </p>
       </aside>
     </div>

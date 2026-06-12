@@ -163,16 +163,39 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
 
   <!-- Soft pillar tint as the page accent -->
   <div style={`background: ${pillar.accentBg};`}>
-    <div class="container-px pt-10 pb-4">
+    <div class="container-px pt-6 pb-4">
+      <!-- Visible breadcrumb: Home › Pillar › Article -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="flex flex-wrap items-center gap-1 font-display italic text-ink-soft font-medium" style="font-size: 0.82rem;">
+          <li><a href="/" class="hover:text-rust">Home</a></li>
+          <li aria-hidden="true" class="mx-1">›</li>
+          <li><a href={`/${data.phase}/`} class="hover:text-rust">{pillar.label}</a></li>
+          {data.sport && sportLabel && (
+            <>
+              <li aria-hidden="true" class="mx-1">›</li>
+              <li><a href={`/sports/${data.sport}/`} class="hover:text-rust">{sportLabel}</a></li>
+            </>
+          )}
+        </ol>
+      </nav>
       <span
         class="tag-pill"
         style={`--pill-accent: ${articleTheme.accent}; --pill-bg: ${articleTheme.accentBg};`}
       >
         {topicChipLabel}
       </span>
-      {(sportLabel || ageLabel) && (
-        <span class="font-display italic text-ink-soft ml-3" style="font-size: 0.95rem;">
-          {[sportLabel, ageLabel ? `age ${ageLabel}` : null].filter(Boolean).join(' · ')}
+      {sportLabel && (
+        <a
+          href={`/sports/${data.sport}/`}
+          class="font-display italic text-ink-soft hover:text-rust ml-3 transition-colors"
+          style="font-size: 0.95rem;"
+        >
+          {sportLabel}
+        </a>
+      )}
+      {ageLabel && (
+        <span class="font-display italic text-ink-soft ml-2" style="font-size: 0.95rem;">
+          {sportLabel ? '·' : ''} age {ageLabel}
         </span>
       )}
     </div>

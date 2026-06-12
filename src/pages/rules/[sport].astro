@@ -64,7 +64,7 @@ const faqSchema = faqEntries.length > 0
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/rules/" class="hover:underline">Rules at-a-glance</a> ·
-        {sportLabel}
+        <a href={`/sports/${piece.data.sport}/`} class="hover:underline">{sportLabel}</a>
       </p>
       <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
