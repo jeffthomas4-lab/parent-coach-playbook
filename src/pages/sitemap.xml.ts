@@ -20,6 +20,7 @@ export async function GET(ctx: APIContext) {
   const rules = await getCollection('rules', ({ data }) => isLive(data));
   const scripts = await getCollection('scripts', ({ data }) => isLive(data));
   const decisions = await getCollection('decisions', ({ data }) => isLive(data));
+  const news = await getCollection('news', ({ data }) => !data.draft);
 
   // Camps: pull approved slugs from D1 if the binding is available.
   const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;
@@ -75,6 +76,7 @@ export async function GET(ctx: APIContext) {
     '/sports/': '2026-05-01',
     '/about/sources/': '2026-05-01',
     '/about/corrections/': '2026-05-01',
+    '/news/': '2026-06-04',
   };
 
   const staticUrls = [
@@ -117,6 +119,7 @@ export async function GET(ctx: APIContext) {
     '/sports/',
     '/about/sources/',
     '/about/corrections/',
+    '/news/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
     ...SPORTS.map(s => `/sports/${s.slug}/`),
@@ -183,6 +186,11 @@ export async function GET(ctx: APIContext) {
     lastmod: d.data.publishedAt.toISOString(),
   }));
 
+  const newsUrls = news.map(n => ({
+    loc: `/news/${n.slug}/`,
+    lastmod: n.data.publishedAt.toISOString(),
+  }));
+
   // Fallback date for static pages not in STATIC_LASTMOD (e.g. buying guide
   // and sport sub-pages generated from data). Use the earliest plausible date
   // so Google doesn't treat them as stale — better than lying with today.
@@ -202,6 +210,7 @@ export async function GET(ctx: APIContext) {
     ...rulesUrls,
     ...scriptsUrls,
     ...decisionsUrls,
+    ...newsUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

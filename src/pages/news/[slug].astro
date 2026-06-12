@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import { SITE } from '../../data/site';
 
 export async function getStaticPaths() {
   const items = await getCollection('news', ({ data }) => !data.draft);
@@ -30,6 +32,13 @@ const fmtDate = (d: Date) =>
   title={item.data.headline}
   description={item.data.summary}
 >
+  <ArticleSchema
+    title={item.data.headline}
+    description={item.data.summary}
+    publishedAt={item.data.publishedAt}
+    url={`${SITE.url}/news/${item.slug}/`}
+    articleSection="This Season"
+  />
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16 max-w-3xl">
       <p class="font-display italic text-rust mb-3 font-medium">
