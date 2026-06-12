@@ -1,53 +1,41 @@
 ---
-sport: "flag-football"
-title: "Flag football: rules at-a-glance"
-summary: "Pull the flag instead of tackling. Same goal, different physics. The rules of youth flag in five minutes."
-fieldSetup: "Smaller field than tackle: typically 25-30 yards wide × 50-60 yards long, with end zones. NFL Flag uses a 30 × 70 field with 10-yard end zones."
-gameLength: "Two halves, 20-25 minutes each in most youth leagues. Running clock except in the final two minutes. NFL Flag uses 20-minute halves."
+sport: flag-football
+title: "Flag football rules: a five-minute primer for first-time parents"
+summary: "How youth flag football works, how the field and scoring compare to tackle football, what the common calls are, and what first-time spectators consistently get confused by."
+fieldSetup: "Flag football is played on a smaller field than tackle, typically 30 yards wide and 70 yards long for youth levels, with end zones at each end. Each player wears a belt with two flags attached at the hips. Teams have between 4 and 8 players per side depending on the league format. There are no blocking rules in most youth flag leagues."
+gameLength: "Youth flag football games typically run two 20-minute halves with a running clock, stopping for scores, out-of-bounds, and called plays. Some leagues use a play-count format rather than a game clock. Total game time is usually 45–60 minutes."
 scoringBasics:
-  - "Touchdown: 6 points."
-  - "Extra point: 1 point from the 5-yard line, 2 points from the 10-yard line."
-  - "Safety: 2 points. Defense forces a flag-pull or fumble in the offense's own end zone."
+  - "Touchdown: 6 points. Getting the ball into the end zone."
+  - "Extra point: 1 point (run or pass from the 5-yard line) or 2 points (run or pass from the 10-yard line)."
+  - "Safety: 2 points for the defense. When the offense is tackled (flag pulled) in their own end zone."
+  - "Interception returned for a touchdown: 6 points for the defense."
 commonCalls:
-  - "Flag-pull: defender removes one or both flags. Ball is dead at the spot of the pull."
-  - "Flag-guarding: offensive player uses a hand or arm to prevent the flag from being pulled. 10-yard penalty."
-  - "Holding: defender holds the offensive player rather than pulling the flag. 5-yard penalty."
-  - "Encroachment/offsides: pre-snap movement violations. 5-yard penalty."
-  - "Pass interference: defender prevents the receiver from catching. Spot foul or penalty yardage."
-  - "Illegal contact: any blocking, screening, or contact that isn't a flag-pull. 5-yard penalty."
+  - "Flag guarding: the ball carrier using their arm or hand to prevent a defender from pulling their flag. Illegal. Results in an automatic flag pull at the spot."
+  - "Offsides: a player crosses the line of scrimmage before the snap."
+  - "Pass interference: a defender makes contact with a receiver before or during their attempt to catch the ball."
+  - "Illegal flag belt removal: pulling a flag when the player does not have the ball."
+  - "Roughing the passer: making contact with the quarterback after the ball is released."
 thingsParentsGetWrong:
-  - "There is no blocking. Offensive players cannot screen, block, or use their bodies to obstruct defenders. This is the biggest rule difference from tackle."
-  - "Diving is not allowed. Offensive players cannot leave their feet to advance the ball. Diving for a flag-pull as a defender is also typically restricted."
-  - "Rushing the QB. The pass-rusher must start a specific distance from the line of scrimmage (often 7 yards in NFL Flag). Rushing earlier is a penalty."
+  - "Flag pulling is the tackle equivalent. When both flags are pulled, the play is dead at that spot."
+  - "Most youth flag leagues do not allow rushing the quarterback. The pass rush comes from behind a set line several seconds after the snap."
+  - "There is no blocking in most youth flag formats. Players run routes and the defense plays coverage only."
+  - "The quarterback cannot run past the line of scrimmage in many youth flag formats. Check the specific league rules."
 governingBody:
-  name: "NFL Flag"
-  url: "https://www.nflflag.com/"
-ruleBookUrl: "https://nflflag.com/playing-rules/"
-publishedAt: 2026-04-26
+  name: "USA Football"
+  url: "https://usafootball.com"
+ruleBookUrl: "https://usafootball.com/programs/flag-football"
+publishedAt: 2026-06-11
+draft: false
 editorial:
   qualityGrade: 8
-  originalityGrade: 7
-  voiceGrade: 7
+  originalityGrade: 8
+  voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-03
+  claudeReviewedAt: 2026-06-11
   status: claude-reviewed
-  reviewerNotes: "The 'no blocking' rule is the clearest tackle/flag distinction parents miss. Includes the 7-yard rush rule which is genuinely confusing if you don't know it."
+  reviewerNotes: ""
 ---
-
-A few things to know.
-
-**Flag football is now an Olympic sport.** Added for the 2028 Los Angeles Olympics. The rules at that level are the international 5v5 format. US national governing-body rules differ slightly.
-
-**Format varies.** NFL Flag uses 5v5 in most age groups. Some youth leagues use 7v7 or 8v8. Check your league.
-
-**Equipment requirements.** Mouthguard, cleats (rubber stud only, no metal), flag belt (usually team-supplied). Optional: gloves, padded compression shorts.
-
-**Safety profile.** Flag has dramatically lower injury rates than tackle, especially for concussion. The trade-off is no contact technique development; kids who go from flag to tackle in middle school often need to learn tackling and blocking from scratch.
-
-**Co-ed leagues.** Many youth flag leagues are co-ed through middle school. NFL Flag specifically encourages co-ed participation through age 14.
-
-**Olympic and HS adoption.** With the 2028 Olympics adding flag football, many states are now sanctioning girls' HS flag football as a varsity sport. State-by-state expansion is rapid.

@@ -1,55 +1,42 @@
 ---
-sport: "hockey"
-title: "Ice hockey: rules at-a-glance"
-summary: "Ice rink, three periods, six players per side. The rules of youth hockey in five minutes."
-fieldSetup: "Rectangular ice rink with rounded corners. Two goals at each end. Center red line, two blue lines that divide the offensive/defensive/neutral zones. Goal crease in front of each net."
-gameLength: "Three periods. Length scales with age: typically 12-15 minutes per period at youth, 17 at HS, 20 in college/pro. Stop time, so periods take longer than the clock shows."
+sport: hockey
+title: "Hockey rules: a five-minute primer for first-time parents"
+summary: "Everything a parent needs to know to follow a youth hockey game: how the rink is set up, how long games run, how scoring works, and the calls you will hear most often."
+fieldSetup: "A hockey rink is divided into three zones by two blue lines: the defensive zone, the neutral zone, and the offensive zone. The red center line bisects the rink. Each end has a crease (the blue painted area around the goal) where the goalie operates. Six players per side: three forwards, two defensemen, one goalie."
+gameLength: "Three periods of varying length depending on age level. Younger youth games (8U–10U) often run two 20-minute stop-time periods. Older levels run three 15-17 minute stop-time periods. Total game time with warmup and Zamboni breaks is typically 75–90 minutes."
 scoringBasics:
-  - "Goal: puck fully crosses the goal line between the posts and under the crossbar."
-  - "Power play: opponent in the penalty box for a minor penalty (2 minutes). Team in penalty plays short-handed."
-  - "Major penalty (5 minutes) for fighting and serious infractions. Game misconduct = ejection."
+  - "A goal is scored when the puck completely crosses the goal line between the posts and under the crossbar."
+  - "Assists are awarded to up to two players who passed to the goal scorer."
+  - "Goals called back by the referee do not count. Common reasons are goalie interference or a hand pass in the offensive zone."
 commonCalls:
-  - "Offside: an attacking player crosses the offensive blue line before the puck. Play stops, faceoff in the neutral zone."
-  - "Icing: defensive team shoots the puck from behind the center red line across the opponent's goal line without it being touched. Play stops, faceoff in the icing team's defensive zone."
-  - "Tripping: stick or leg trips an opponent. 2-minute minor."
-  - "Hooking: stick used to impede an opponent. 2-minute minor."
-  - "Slashing: stick swing at an opponent. 2-minute minor (or major if violent)."
-  - "Cross-checking: hit with both hands on the stick across an opponent. 2-minute minor (or major)."
-  - "Boarding/charging: violent hit into the boards. 2-minute or 5-minute major."
-  - "Roughing: light fight or shoving. 2-minute minor."
+  - "Icing: shooting the puck from behind the center red line all the way past the opposing goal line without it being touched. Results in a faceoff in the shooting team's defensive zone."
+  - "Offside: an attacking player enters the offensive zone before the puck. Results in a faceoff at the blue line."
+  - "Hooking: using the stick to hook or impede an opponent's movement."
+  - "Tripping: using a stick or body part to trip an opponent."
+  - "High-sticking: carrying the stick above the shoulders in a dangerous manner."
+  - "Interference: impeding a player who does not have the puck."
+  - "Cross-checking: using the shaft of the stick with both hands to check an opponent."
 thingsParentsGetWrong:
-  - "Offside is determined by where the puck is relative to the blue line, not where the player is relative to the goalkeeper (like soccer). The attacker can be deep in the offensive zone as long as the puck enters first."
-  - "Body checking is not allowed at the youngest USA Hockey levels. Checking begins at Bantam (13U) in most divisions. At younger ages, the game looks contact-heavy but legal hits are positional, not body-check style."
-  - "Goalie has special protections. Charging the goalie or interfering with them in the crease is a penalty even if the contact is incidental."
+  - "Icing is not a penalty. It just results in a faceoff in your team's zone."
+  - "Goaltender interference gets goals waved off even if the puck clearly crossed the line."
+  - "Body checking rules vary by age level and organization. Many youth levels prohibit checking entirely until Bantam (13–14)."
+  - "A delayed penalty means the team with the advantage can pull the goalie for an extra skater without fear of being scored on. The whistle blows when the penalized team touches the puck."
 governingBody:
   name: "USA Hockey"
-  url: "https://www.usahockey.com/"
-ruleBookUrl: "https://www.usahockey.com/officials"
-publishedAt: 2026-04-26
+  url: "https://www.usahockey.com"
+ruleBookUrl: "https://www.usahockey.com/rulebook"
+publishedAt: 2026-06-11
+draft: false
 editorial:
   qualityGrade: 8
-  originalityGrade: 7
-  voiceGrade: 7
+  originalityGrade: 8
+  voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-03
+  claudeReviewedAt: 2026-06-11
   status: claude-reviewed
-  reviewerNotes: "Body checking age threshold is the biggest practical safety/rules item parents miss. Offside in hockey vs soccer is a useful distinction."
+  reviewerNotes: ""
 ---
-
-A few specifics.
-
-**USA Hockey age divisions.** 8U (Mites), 10U (Squirts), 12U (Pee Wee), 14U (Bantam), 16U/18U (Midget). Check checking is introduced at Bantam (13-14) in most divisions; some leagues delay further.
-
-**Half-ice vs full-ice.** USA Hockey now mandates half-ice or cross-ice for 8U age group. More puck touches per kid, more skill development, less standing around.
-
-**Mandatory equipment.** Helmet with full cage or shield (full cage required at all youth levels). Mouthguard. Shoulder pads. Elbow pads. Hockey pants. Shin guards. Skates. Stick. Gloves. Cup. Neck guard required at most youth levels.
-
-**Penalty box and power plays.** Player who commits a minor penalty serves 2 minutes in the penalty box. Their team plays short-handed (5-on-4 or 4-on-3 if multiple penalties). If the team on power play scores, the penalty ends.
-
-**Fighting.** Not allowed at youth levels. Penalty for fighting at any youth level results in immediate ejection plus suspension. Different from older / professional levels.
-
-**Goalie equipment.** Different and more expensive than skater equipment. Mask, leg pads, blocker, glove (catcher), chest protector. Often shared at the youth level via a goalie equipment loan program.

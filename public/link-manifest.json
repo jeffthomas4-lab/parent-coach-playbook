@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-12T05:04:34.244Z",
-  "count": 398,
+  "generatedAt": "2026-06-12T15:49:47.238Z",
+  "count": 439,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -128,6 +128,20 @@
       ]
     },
     {
+      "url": "https://autismsociety.org",
+      "sources": [
+        "src/content/adaptive/finding-the-right-sport-for-a-neurodivergent-kid.md",
+        "src/content/adaptive/sensory-friendly-sports-environments.md",
+        "src/content/adaptive/swimming-for-kids-with-autism.md"
+      ]
+    },
+    {
+      "url": "https://autismsociety.org/",
+      "sources": [
+        "src/content/adaptive/when-your-kid-struggles-in-neurotypical-sports.md"
+      ]
+    },
+    {
       "url": "https://bjsm.bmj.com/",
       "sources": [
         "src/pages/about/sources.astro"
@@ -140,9 +154,18 @@
       ]
     },
     {
+      "url": "https://chadd.org",
+      "sources": [
+        "src/content/adaptive/adhd-medication-and-sports.md",
+        "src/content/adaptive/finding-the-right-sport-for-a-neurodivergent-kid.md"
+      ]
+    },
+    {
       "url": "https://chadd.org/",
       "sources": [
-        "src/content/adaptive/adhd-athlete.md"
+        "src/content/adaptive/adhd-and-youth-sports.md",
+        "src/content/adaptive/adhd-athlete.md",
+        "src/content/adaptive/when-your-kid-struggles-in-neurotypical-sports.md"
       ]
     },
     {
@@ -185,6 +208,12 @@
       "url": "https://diabetes.org/health-wellness/fitness",
       "sources": [
         "src/content/body/diabetic-emergency-on-field.md"
+      ]
+    },
+    {
+      "url": "https://disabledsportsusa.org/",
+      "sources": [
+        "src/content/adaptive/youth-sports-and-physical-disability.md"
       ]
     },
     {
@@ -307,12 +336,6 @@
       "url": "https://nfhslearn.com/",
       "sources": [
         "src/content/body/coach-coach-conflicts.md"
-      ]
-    },
-    {
-      "url": "https://nflflag.com/playing-rules/",
-      "sources": [
-        "src/content/rules/flag-football.md"
       ]
     },
     {
@@ -634,15 +657,34 @@
       ]
     },
     {
+      "url": "https://usafootball.com",
+      "sources": [
+        "src/content/adaptive/inclusion-rules-what-parents-need-to-know.md",
+        "src/content/rules/flag-football.md"
+      ]
+    },
+    {
       "url": "https://usafootball.com/heads-up-football/",
       "sources": [
         "src/content/body/youth-football-safety-briefing.md"
       ]
     },
     {
+      "url": "https://usafootball.com/health-safety",
+      "sources": [
+        "src/content/news/tackle-football-contact-age-debate-2026.md"
+      ]
+    },
+    {
       "url": "https://usafootball.com/programs/",
       "sources": [
         "src/content/rules/football-7v7.md"
+      ]
+    },
+    {
+      "url": "https://usafootball.com/programs/flag-football",
+      "sources": [
+        "src/content/rules/flag-football.md"
       ]
     },
     {
@@ -654,7 +696,6 @@
     {
       "url": "https://usagym.org/",
       "sources": [
-        "src/content/rules/gymnastics.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -663,12 +704,6 @@
       "url": "https://usagym.org/pages/home/pages/jr_olympic.html",
       "sources": [
         "src/content/guides/gymnastics.md"
-      ]
-    },
-    {
-      "url": "https://usagym.org/programs/",
-      "sources": [
-        "src/content/rules/gymnastics.md"
       ]
     },
     {
@@ -688,15 +723,8 @@
       "sources": [
         "src/content/body/volleyball-knee-pads-wrist-supports.md",
         "src/content/recruiting/volleyball.md",
-        "src/content/rules/volleyball.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
-      ]
-    },
-    {
-      "url": "https://usavolleyball.org/officials/",
-      "sources": [
-        "src/content/rules/volleyball.md"
       ]
     },
     {
@@ -795,7 +823,11 @@
         "src/content/body/recruiting-service-red-flags.md",
         "src/content/body/recruiting-visit-conduct.md",
         "src/content/body/showcase-event-vetting.md",
+        "src/content/recruiting/academic-requirements-for-college-athletes.md",
+        "src/content/recruiting/how-recruiting-actually-works.md",
+        "src/content/recruiting/ncaa-eligibility-center-explained.md",
         "src/content/recruiting/ncaa-eligibility-center.md",
+        "src/content/recruiting/recruiting-timeline-by-grade.md",
         "src/content/recruiting/timeline-by-grade.md",
         "src/content/recruiting/what-verbal-commits-mean.md",
         "src/pages/about/sources.astro",
@@ -844,6 +876,12 @@
       "url": "https://www.aao.org/eye-health/tips-prevention/protective-eyewear",
       "sources": [
         "src/content/body/nosebleed-and-eye-injury.md"
+      ]
+    },
+    {
+      "url": "https://www.aap.org",
+      "sources": [
+        "src/content/adaptive/adhd-medication-and-sports.md"
       ]
     },
     {
@@ -1043,9 +1081,16 @@
       ]
     },
     {
+      "url": "https://www.aota.org",
+      "sources": [
+        "src/content/adaptive/sensory-friendly-sports-environments.md"
+      ]
+    },
+    {
       "url": "https://www.aota.org/",
       "sources": [
-        "src/content/adaptive/sensory-needs-on-the-sideline.md"
+        "src/content/adaptive/sensory-needs-on-the-sideline.md",
+        "src/content/adaptive/sensory-processing-and-youth-sports.md"
       ]
     },
     {
@@ -1102,6 +1147,12 @@
       ]
     },
     {
+      "url": "https://www.autismspeaks.org/tool-kit/sports-recreation",
+      "sources": [
+        "src/content/adaptive/autism-and-team-sports.md"
+      ]
+    },
+    {
       "url": "https://www.ayso.org",
       "sources": [
         "src/content/news/ayso-fall-2026-registration.md"
@@ -1146,6 +1197,12 @@
       ]
     },
     {
+      "url": "https://www.cdc.gov/adhd/index.html",
+      "sources": [
+        "src/content/adaptive/adhd-and-youth-sports.md"
+      ]
+    },
+    {
       "url": "https://www.cdc.gov/drowning/",
       "sources": [
         "src/content/body/drowning-rescue-and-monitoring.md",
@@ -1184,6 +1241,12 @@
       "url": "https://www.cdc.gov/headsup",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.cdc.gov/headsup/youthsports/index.html",
+      "sources": [
+        "src/content/news/youth-concussion-protocol-updates-2026.md"
       ]
     },
     {
@@ -1231,6 +1294,12 @@
       ]
     },
     {
+      "url": "https://www.challengedathletes.org/",
+      "sources": [
+        "src/content/adaptive/youth-sports-and-physical-disability.md"
+      ]
+    },
+    {
       "url": "https://www.childhelp.org/",
       "sources": [
         "src/content/body/safesport-reporting-walkthrough.md",
@@ -1269,6 +1338,12 @@
       "url": "https://www.cpsc.gov/Safety-Education/Safety-Guides/sports-fitness-and-recreation",
       "sources": [
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.disabledsportsusa.org",
+      "sources": [
+        "src/content/adaptive/adapted-sports-programs.md"
       ]
     },
     {
@@ -1577,6 +1652,12 @@
       ]
     },
     {
+      "url": "https://www.littleleague.org/playing-rules/pitch-count",
+      "sources": [
+        "src/content/news/baseball-pitch-count-rule-changes-2026.md"
+      ]
+    },
+    {
       "url": "https://www.littleleague.org/playing-rules/pitch-count/",
       "sources": [
         "src/content/body/youth-pitcher-arm-care.md",
@@ -1659,6 +1740,19 @@
       ]
     },
     {
+      "url": "https://www.naia.org/landing/index",
+      "sources": [
+        "src/content/recruiting/d1-d2-d3-naia-what-is-the-difference.md"
+      ]
+    },
+    {
+      "url": "https://www.naia.org/membership/eligibility/index",
+      "sources": [
+        "src/content/recruiting/academic-requirements-for-college-athletes.md",
+        "src/content/recruiting/when-to-start-the-recruiting-process.md"
+      ]
+    },
+    {
       "url": "https://www.naia.org/sports/bsb/index",
       "sources": [
         "src/content/recruiting/baseball.md"
@@ -1726,9 +1820,26 @@
       ]
     },
     {
+      "url": "https://www.nata.org/practice-patient-care/health-issues/environmental-conditions",
+      "sources": [
+        "src/content/news/summer-heat-protocol-youth-sports-2026.md"
+      ]
+    },
+    {
       "url": "https://www.nata.org/professional-interests/job-settings/secondary-school",
       "sources": [
         "src/content/body/heat-and-hydration.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org",
+      "sources": [
+        "src/content/recruiting/cross-country-recruiting-guide.md",
+        "src/content/recruiting/official-visit-vs-unofficial-visit.md",
+        "src/content/recruiting/tennis-recruiting-guide.md",
+        "src/content/recruiting/track-and-field-recruiting-guide.md",
+        "src/content/recruiting/walk-on-opportunities-explained.md",
+        "src/content/recruiting/wrestling-recruiting-guide.md"
       ]
     },
     {
@@ -1743,6 +1854,12 @@
       "url": "https://www.ncaa.org/about/inclusion",
       "sources": [
         "src/content/body/racism-discrimination-on-team.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/about/what-is-the-ncaa",
+      "sources": [
+        "src/content/recruiting/d1-d2-d3-naia-what-is-the-difference.md"
       ]
     },
     {
@@ -1772,6 +1889,24 @@
       ]
     },
     {
+      "url": "https://www.ncaa.org/sports/2014/10/1/recruiting.aspx",
+      "sources": [
+        "src/content/recruiting/how-recruiting-actually-works.md",
+        "src/content/recruiting/how-to-email-a-college-coach.md",
+        "src/content/recruiting/official-visit-what-to-expect.md",
+        "src/content/recruiting/recruiting-film-what-coaches-actually-watch.md",
+        "src/content/recruiting/recruiting-timeline-by-grade.md",
+        "src/content/recruiting/when-to-start-the-recruiting-process.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/2014/10/6/initial-eligibility.aspx",
+      "sources": [
+        "src/content/recruiting/academic-requirements-for-college-athletes.md",
+        "src/content/recruiting/ncaa-eligibility-center-explained.md"
+      ]
+    },
+    {
       "url": "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx",
       "sources": [
         "src/content/body/identity-beyond-the-sport.md",
@@ -1788,6 +1923,12 @@
       "url": "https://www.ncaa.org/sports/2015/6/10/ncaa-drug-testing-program.aspx",
       "sources": [
         "src/content/body/adhd-medication-competition-rules.md"
+      ]
+    },
+    {
+      "url": "https://www.ncaa.org/sports/2021/6/18/nil-explained.aspx",
+      "sources": [
+        "src/content/news/ncaa-nil-update-for-high-schoolers.md"
       ]
     },
     {
@@ -1922,7 +2063,6 @@
       "sources": [
         "src/content/guides/flag-football.md",
         "src/content/guides/football-7v7.md",
-        "src/content/rules/flag-football.md",
         "src/pages/governing-bodies.astro"
       ]
     },
@@ -2179,8 +2319,24 @@
       ]
     },
     {
+      "url": "https://www.spdstar.org/",
+      "sources": [
+        "src/content/adaptive/sensory-processing-and-youth-sports.md"
+      ]
+    },
+    {
+      "url": "https://www.specialolympics.org",
+      "sources": [
+        "src/content/adaptive/adapted-sports-programs.md",
+        "src/content/adaptive/intellectual-disability-and-youth-sports.md",
+        "src/content/adaptive/special-olympics-guide-for-parents.md"
+      ]
+    },
+    {
       "url": "https://www.specialolympics.org/",
       "sources": [
+        "src/content/adaptive/autism-and-team-sports.md",
+        "src/content/adaptive/when-your-kid-struggles-in-neurotypical-sports.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -2193,9 +2349,28 @@
       ]
     },
     {
+      "url": "https://www.specialolympics.org/our-work/unified-sports",
+      "sources": [
+        "src/content/adaptive/inclusion-rules-what-parents-need-to-know.md",
+        "src/content/adaptive/unified-sports-what-parents-need-to-know.md"
+      ]
+    },
+    {
       "url": "https://www.specialolympics.org/programs",
       "sources": [
         "src/content/adaptive/unified-sports-explained.md"
+      ]
+    },
+    {
+      "url": "https://www.specialolympicsusa.org",
+      "sources": [
+        "src/content/adaptive/special-olympics-guide-for-parents.md"
+      ]
+    },
+    {
+      "url": "https://www.specialolympicsusa.org/",
+      "sources": [
+        "src/content/adaptive/unified-sports-what-parents-need-to-know.md"
       ]
     },
     {
@@ -2259,9 +2434,28 @@
       ]
     },
     {
+      "url": "https://www.teamusa.org/us-paralympics",
+      "sources": [
+        "src/content/adaptive/youth-sports-and-physical-disability.md"
+      ]
+    },
+    {
       "url": "https://www.teamusa.org/usa-judo",
       "sources": [
         "src/content/guides/martial-arts.md"
+      ]
+    },
+    {
+      "url": "https://www.teamusa.org/usa-wrestling",
+      "sources": [
+        "src/content/recruiting/wrestling-recruiting-guide.md",
+        "src/content/rules/wrestling.md"
+      ]
+    },
+    {
+      "url": "https://www.teamusa.org/usa-wrestling/rules",
+      "sources": [
+        "src/content/rules/wrestling.md"
       ]
     },
     {
@@ -2437,14 +2631,34 @@
       ]
     },
     {
+      "url": "https://www.usagym.org",
+      "sources": [
+        "src/content/adaptive/intellectual-disability-and-youth-sports.md",
+        "src/content/rules/gymnastics.md"
+      ]
+    },
+    {
       "url": "https://www.usagym.org/",
       "sources": [
         "src/content/guides/gymnastics.md"
       ]
     },
     {
+      "url": "https://www.usagym.org/pages/gymnastics/pages/rules_policies.html",
+      "sources": [
+        "src/content/rules/gymnastics.md"
+      ]
+    },
+    {
+      "url": "https://www.usagym.org/pages/post.html?postid=safesport",
+      "sources": [
+        "src/content/news/usa-gymnastics-reforms-2026.md"
+      ]
+    },
+    {
       "url": "https://www.usahockey.com",
       "sources": [
+        "src/content/rules/hockey.md",
         "src/pages/resources/national-organizations.astro"
       ]
     },
@@ -2453,15 +2667,8 @@
       "sources": [
         "src/content/body/ejection-and-appeals.md",
         "src/content/recruiting/hockey.md",
-        "src/content/rules/hockey.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
-      ]
-    },
-    {
-      "url": "https://www.usahockey.com/officials",
-      "sources": [
-        "src/content/rules/hockey.md"
       ]
     },
     {
@@ -2470,6 +2677,18 @@
         "src/content/body/hockey-equipment-safety.md",
         "src/content/body/travel-team-rooming-chaperones.md",
         "src/content/body/youth-hockey-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://www.usahockey.com/rulebook",
+      "sources": [
+        "src/content/rules/hockey.md"
+      ]
+    },
+    {
+      "url": "https://www.usahockey.com/safesport",
+      "sources": [
+        "src/content/news/youth-hockey-body-checking-rules-update.md"
       ]
     },
     {
@@ -2540,11 +2759,16 @@
       ]
     },
     {
+      "url": "https://www.usasoftball.com",
+      "sources": [
+        "src/content/rules/softball.md"
+      ]
+    },
+    {
       "url": "https://www.usasoftball.com/",
       "sources": [
         "src/content/body/youth-softball-safety-briefing.md",
         "src/content/recruiting/softball.md",
-        "src/content/rules/softball.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro",
         "src/pages/resources/national-organizations.astro"
@@ -2557,8 +2781,15 @@
       ]
     },
     {
+      "url": "https://www.usasoftball.com/rules-regulations",
+      "sources": [
+        "src/content/rules/softball.md"
+      ]
+    },
+    {
       "url": "https://www.usaswimming.org",
       "sources": [
+        "src/content/adaptive/swimming-for-kids-with-autism.md",
         "src/pages/resources/national-organizations.astro"
       ]
     },
@@ -2609,6 +2840,9 @@
     {
       "url": "https://www.usatf.org",
       "sources": [
+        "src/content/recruiting/cross-country-recruiting-guide.md",
+        "src/content/recruiting/track-and-field-recruiting-guide.md",
+        "src/content/rules/cross-country.md",
         "src/pages/resources/national-organizations.astro"
       ]
     },
@@ -2621,10 +2855,15 @@
         "src/content/body/youth-track-and-field-safety-briefing.md",
         "src/content/guides/cross-country.md",
         "src/content/guides/track-field.md",
-        "src/content/rules/cross-country.md",
         "src/content/rules/track-field.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usatf.org/governance/rules",
+      "sources": [
+        "src/content/rules/cross-country.md"
       ]
     },
     {
@@ -2645,6 +2884,19 @@
       "url": "https://www.usatriathlon.org/",
       "sources": [
         "src/content/body/youth-triathlon-swim-safety.md"
+      ]
+    },
+    {
+      "url": "https://www.usavolleyball.org",
+      "sources": [
+        "src/content/rules/volleyball.md"
+      ]
+    },
+    {
+      "url": "https://www.usavolleyball.org/about-usav/governance/rules-and-regulations",
+      "sources": [
+        "src/content/news/volleyball-rule-changes-2026.md",
+        "src/content/rules/volleyball.md"
       ]
     },
     {
@@ -2708,11 +2960,29 @@
       ]
     },
     {
+      "url": "https://www.uslacrosse.org",
+      "sources": [
+        "src/content/rules/lacrosse.md"
+      ]
+    },
+    {
+      "url": "https://www.uslacrosse.org/rules",
+      "sources": [
+        "src/content/rules/lacrosse.md"
+      ]
+    },
+    {
       "url": "https://www.usopc.org/",
       "sources": [
         "src/content/body/safesport-database-walkthrough.md",
         "src/pages/governing-bodies.astro",
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.usopc.org/paralympics",
+      "sources": [
+        "src/content/adaptive/adapted-sports-programs.md"
       ]
     },
     {
@@ -2759,6 +3029,12 @@
       "url": "https://www.usssa.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.usta.com",
+      "sources": [
+        "src/content/recruiting/tennis-recruiting-guide.md"
       ]
     },
     {

@@ -84,7 +84,7 @@ The math: for a strong student, academic aid at a strong-academic school often e
 
 The honest order of operations:
 
-1. **Strong GPA.** This expands college options at every level, academic, athletic, and need-based aid. The single highest-leverage move.
+1. **Strong GPA.** This expands college options at every level, academic, athletic, and need-based aid. The single highest-impact move.
 2. **Decent test scores** (or strong without if test-optional). Many merit aid programs use them.
 3. **Good film and fit with realistic schools.** Not necessarily D1.
 4. **Apply broadly across levels.** D2, D3, NAIA all have programs that may fit better than D1 anyway.

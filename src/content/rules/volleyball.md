@@ -1,58 +1,41 @@
 ---
-sport: "volleyball"
-title: "Volleyball: rules at-a-glance"
-summary: "Six players per side, three touches max, get the ball over the net. The rules of indoor volleyball in five minutes."
-fieldSetup: "Rectangular court divided by a net. Court is 18 × 9 meters. Net height is 7'4\" at 12U, 7'11.625\" at 13U+ for girls (8' for boys). Attack line 3 meters from the net."
-gameLength: "Best of 5 sets. Sets played to 25 points (must win by 2). The deciding set (5th) is played to 15. No game clock: sets continue until someone wins."
+sport: volleyball
+title: "Volleyball rules: a five-minute primer for first-time parents"
+summary: "How youth volleyball is played, how scoring works, what the calls mean, and the things parents consistently misunderstand at the sideline."
+fieldSetup: "A volleyball court is 18 meters long and 9 meters wide, divided in half by a net. Net height varies by age and gender. Six players per side arranged in two rows of three. Players rotate clockwise each time their team wins a serve back from the opposing team."
+gameLength: "Most youth and high school matches are best-of-five sets. Each set is played to 25 points, win by 2. The fifth set, if needed, goes to 15 points, win by 2. Sets take 20–30 minutes on average; matches typically last 60–90 minutes."
 scoringBasics:
-  - "Rally scoring: every play results in a point for one team."
-  - "Point scored when the ball lands in bounds on the opponent's side, hits the floor, or the opponent commits an error."
-  - "Sets played to 25 (deciding 5th set to 15), must win by 2."
+  - "Rally scoring: every rally results in a point for one team, regardless of which team served."
+  - "The team that wins the rally earns the point and serves the next ball if they did not already have serve."
+  - "A set is won at 25 points with a two-point lead. If tied 24–24, play continues until one team leads by two."
 commonCalls:
-  - "Net violation: player touches the net. Point to the opponent."
-  - "Foot fault: player crosses the centerline under the net or steps over the service line. Point to the opponent."
-  - "Double hit: same player hits the ball twice in a row (with one exception: first contact off a serve receive can be doubled)."
-  - "Carry/lift: ball is lifted or pushed rather than cleanly hit. Point to the opponent."
-  - "Four hits: team uses more than 3 contacts before sending the ball over."
-  - "Out of rotation: player serves out of order. Point to the opponent."
-  - "Back-row attack: back-row player attacks the ball above the net while in front of the attack line."
-  - "Service fault: serve goes out, hits the net, or doesn't cross."
+  - "Lift or carry: the ball rests momentarily in the hands instead of being hit cleanly. Called on sets and digs where the ball stops moving."
+  - "Double hit: a player contacts the ball twice in succession. Legal on a first touch in most circumstances."
+  - "Net violation: touching the net during play. Results in a point for the opposing team."
+  - "Foot fault: the server steps on or over the end line before contact. Side out and point to the other team."
+  - "Rotation error: a team is discovered to be out of rotation order. Point and serve to the opposing team."
+  - "Back-row attack: a back-row player attacks the ball from in front of the attack line (3-meter line) while the ball is above the top of the net."
 thingsParentsGetWrong:
-  - "The libero is a defensive specialist who wears a different-colored jersey. Liberos cannot serve (in some rule sets they can in one rotation), cannot attack, and substitute freely with back-row players outside normal substitution rules."
-  - "The block does not count as one of the three hits. After a block, the team has three more touches to send the ball over."
-  - "Three touches is the max, not the requirement. A team can return the ball on one or two touches if they choose."
+  - "Setters can lift the ball on a first touch (a dig or receive) but not on a second touch set. The rules treat first and second contacts differently."
+  - "Players can reach over the net to block a spike after the hitter has made contact. They cannot reach over to attack a ball that is still on the opponent's side."
+  - "Service rotation and defensive positioning rotation are different things. Liberos and defensive specialists can sub in and out under separate rules."
+  - "There is no 'in the net' rule the way there is in tennis. A ball that clips the top of the net and lands in bounds is still live."
 governingBody:
   name: "USA Volleyball"
-  url: "https://usavolleyball.org/"
-ruleBookUrl: "https://usavolleyball.org/officials/"
-publishedAt: 2026-04-26
+  url: "https://www.usavolleyball.org"
+ruleBookUrl: "https://www.usavolleyball.org/about-usav/governance/rules-and-regulations"
+publishedAt: 2026-06-11
+draft: false
 editorial:
   qualityGrade: 8
-  originalityGrade: 7
-  voiceGrade: 7
+  originalityGrade: 8
+  voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-05-03
+  claudeReviewedAt: 2026-06-11
   status: claude-reviewed
-  reviewerNotes: "Libero explanation is the most-confused position for new volleyball parents. The 'block doesn't count as a touch' rule is a common misconception."
+  reviewerNotes: ""
 ---
-
-A few specifics.
-
-**Position rotation.** Players rotate clockwise after winning a sideout (winning the right to serve). Each player serves until the team loses the rally. Rotation order matters; serving out of rotation is a violation.
-
-**Six positions on the court.** Three at the net (front row): outside hitter, middle blocker, opposite hitter. Three in the back row: setter, defensive specialists, libero (when in the back row). Setters can play in front or back row depending on rotation.
-
-**Beach volleyball.** Played 2v2 on sand. Different scoring (typically best-of-3 sets to 21). Different rules (no specialized positions, every player must do everything). Now an NCAA sport with growing scholarship opportunity.
-
-**Net height by age and gender.**
-- 12U girls and boys: 7'4"
-- 13U-14U girls: 7'4 1/8"; boys: 7'11 5/8"
-- 15U+ girls: 7'4 1/8"; boys: 7'11 5/8"
-
-**Tournament format.** Most club volleyball tournaments are pool play in the morning followed by bracket play in the afternoon. Long days; pack snacks.
-
-**The shoulder.** Volleyball involves more overhead motion than any other youth sport. The body hub on growth plates and shoulder care applies directly. Year-round play without a real off-season is the path to chronic shoulder issues.
