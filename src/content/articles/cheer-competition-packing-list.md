@@ -21,7 +21,6 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
   reviewerNotes: ""
   status: claude-reviewed
 ---
