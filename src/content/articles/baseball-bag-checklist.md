@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
   status: claude-reviewed
 ---
 
@@ -32,7 +42,7 @@ For travel ball: a backup bat. Not a preference, a plan. Bats crack. Bats get le
 
 **Cup.** Remind them every time. Not a discussion, a reminder. It goes in before the pants go on.
 
-**Belt.** This is the item most often wrong. The bag always has a belt. It is frequently the wrong color. Black belt, black pants, white belt, white pants — check it against the uniform before it goes in the bag. Dugout belt-swapping with teammates is a tradition that exists entirely because someone packed without checking.
+**Belt.** This is the item most often wrong. The bag always has a belt. It is frequently the wrong color. Black belt, black pants, white belt, white pants, check it against the uniform before it goes in the bag. Dugout belt-swapping with teammates is a tradition that exists entirely because someone packed without checking.
 
 ## The rest of the bag
 
@@ -56,8 +66,8 @@ A marker for writing your athlete's name on equipment. A spare hair tie or headb
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
 
-[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

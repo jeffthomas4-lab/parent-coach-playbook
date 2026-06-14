@@ -11,11 +11,23 @@ sport: lacrosse-girls
 age: 8-10
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Girls lacrosse is not boys lacrosse with the contact removed. Different sticks, different rules, different game. If your daughter starts this spring, here's what the season actually looks like.
 
-**The gear list is short and specific.** A girls stick with a legal shallow pocket, SEI-certified goggles, a mouthguard, and cleats. Soccer cleats work fine the first year, and the [girls lacrosse gear guide](/what-to-buy/lacrosse-girls/) has the picks and sizing. Plan on around $120–180 to start.
+**The gear list is short and specific.** A girls stick with a legal shallow pocket, SEI-certified goggles, a mouthguard, and cleats. Soccer cleats work fine the first year, and the [girls lacrosse gear guide](/what-to-buy/lacrosse-girls/) has the picks and sizing. Plan on around $120, 180 to start.
 
 **There is no body checking. At any level, ever.** The women's game was built around the stick and the sprint, not the hit, which is why field players wear goggles instead of helmets. Stick checking arrives gradually as girls move up the age groups; at 8U and 10U there's none at all. A defender wins with her feet and her stick position, which is harder to teach and better to watch.
 
@@ -37,8 +49,8 @@ And read the [girls lacrosse safety briefing](/body/youth-lacrosse-girls-safety-
 
 **Gear mentioned in this article** (affiliate)
 
-[Lacrosse ball →](/go/lacrosse-ball/) — a solid pick for youth girls' lacrosse players.
+[Lacrosse ball →](/go/lacrosse-ball/), a solid pick for youth girls' lacrosse players.
 
-[Full Girls' Lacrosse gear guide →](/what-to-buy/lacrosse-girls/) — all picks by age and level.
+[Full Girls' Lacrosse gear guide →](/what-to-buy/lacrosse-girls/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

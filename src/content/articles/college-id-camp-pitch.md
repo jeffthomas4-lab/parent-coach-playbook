@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "13-14"
 publishedAt: 2026-04-28
 featured: true
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The email arrives in early March, a week after a tournament where your kid had a good weekend. The subject line is friendly but specific. *Coach noticed your kid.* The body explains that the college is running an ID camp the second week of June. Limited spots. Tuition is $625. Coach will be on the field.
@@ -75,6 +87,6 @@ That work doesn't happen at ID camps. It happens at home, on the field your kid 
 
 ---
 
-Looking for camps that are worth the money? <a href="/camps/?age=13-14">Browse camps for ages 13–14</a>. Filter by sport and state.
+Looking for camps that are worth the money? <a href="/camps/?age=13-14">Browse camps for ages 13, 14</a>. Filter by sport and state.
 
 Run a camp? <a href="/camps/submit/">Add your listing</a>. Honest reviews and verified listings help parents tell ID camps apart.

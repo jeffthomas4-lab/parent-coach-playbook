@@ -14,7 +14,17 @@ hero: /illustrations/walking-home-sunset.webp
 heroAlt: A parent and child walking away from a sports field at sunset, equipment
   bag over the parent's shoulder, neither one talking.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-30
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Final whistle. The team lost. Your kid walks off the field with the kind of slow steps that mean he played his heart out and lost anyway.

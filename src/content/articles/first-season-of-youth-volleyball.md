@@ -12,7 +12,17 @@ age: 8-10
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
   status: claude-reviewed
 ---
 
@@ -26,7 +36,7 @@ The shoe situation matters more than most parents expect. Court shoes have a gum
 
 Net height changes by age group. Youth girls' net height is 6 feet at the 10 and under level and rises to 7 feet 4 inches at the adult standard. Boys' youth height starts at 6 feet and rises on a similar ladder. The height change matters because a serve that clears a 6-foot net doesn't necessarily clear the same net at 7 feet, and that adjustment is part of what happens as kids move up. If your kid is playing a summer rec league at a lower net and making 8 out of 10 serves, that's real progress.
 
-What a good first-year coach teaches: two things, in order. Passing platform and serving fundamentals. A player who can consistently get to the ball and put it up, and who can serve into the court, is ready to play. Everything else — setting, hitting, blocking, the libero role — is built on those two things. A coach who spends year one on those two skills has the priorities right. A coach who is teaching 10-year-olds the intricacies of the 5-1 rotation is spending their time badly.
+What a good first-year coach teaches: two things, in order. Passing platform and serving fundamentals. A player who can consistently get to the ball and put it up, and who can serve into the court, is ready to play. Everything else, setting, hitting, blocking, the libero role, is built on those two things. A coach who spends year one on those two skills has the priorities right. A coach who is teaching 10-year-olds the intricacies of the 5-1 rotation is spending their time badly.
 
 On positions: don't
 
@@ -34,8 +44,8 @@ On positions: don't
 
 **Gear mentioned in this article** (affiliate)
 
-[Volley-Lite training ball →](/go/volleyball-volley-lite/) — a solid pick for youth volleyball players.
+[Volley-Lite training ball →](/go/volleyball-volley-lite/), a solid pick for youth volleyball players.
 
-[Full Volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age and level.
+[Full Volleyball gear guide →](/what-to-buy/volleyball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

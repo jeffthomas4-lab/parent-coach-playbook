@@ -12,6 +12,18 @@ age: 13-14
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A 13-year-old who has played baseball since age 7 wants to try lacrosse. The baseball coach is going to be upset. The lacrosse community is going to ask why so late.

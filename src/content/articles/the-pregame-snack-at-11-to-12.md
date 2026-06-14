@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "11-12"
 publishedAt: 2026-04-14
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 An hour before game time: water and banana. Or water and a bagel. Or water and a protein bar. That's it.

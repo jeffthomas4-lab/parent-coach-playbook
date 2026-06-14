@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-02-23
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-04
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You arrived at 8:30 for the 9am game. Your kid is in warm-ups. You have thirty minutes.

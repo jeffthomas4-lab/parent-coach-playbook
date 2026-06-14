@@ -10,6 +10,18 @@ seasonPhase: "pre-season"
 publishedAt: 2026-03-19
 hero: /illustrations/night-before-tryouts.webp
 heroAlt: "A kid's bedroom at night. Cleats, glove, and folded jersey laid out on a chair. Soft lamp light and muted rose tones, parent silhouette in doorway."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid packed their bag four times tonight. Pinnies, right shoes, [water bottle](/go/multi-sport-water-bottle/) that doesn't leak, spare hair ties from earlier losses. You watch them line them up, pull them out, put them back.

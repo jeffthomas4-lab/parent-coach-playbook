@@ -2,7 +2,7 @@
 title: Hydration for Young Athletes *by the Numbers*
 dek: Actual volumes, actual timing, and the dehydration signs most parents miss.
 seoDescription: Practical hydration guide for youth athletes. How much water kids need by body weight, when to drink before during and after games, early signs of dehydration, and when electrolytes actually matter by age.
-topic: nutrition
+topic: the-hard-stuff
 format: note
 phase: game
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 "Make sure they stay hydrated" tells you nothing. Here are the actual numbers.

@@ -2,7 +2,7 @@
 title: Is this *burnout*, or just a bad week?
 dek: The difference matters. The response is completely different.
 seoDescription: Burnout and a bad week look almost identical at first. Here is how to tell them apart, and what to do differently depending on which one you are actually dealing with.
-topic: mental-health
+topic: the-hard-stuff
 format: essay
 phase: drive-home
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid does not want to go to practice. They said their stomach hurts. They came home from the game in a bad mood and did not want to talk about it. You are trying to figure out whether this is a rough patch or something that actually needs your attention.

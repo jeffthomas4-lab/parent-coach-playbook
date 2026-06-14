@@ -13,6 +13,18 @@ age: all-ages
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Grandma planned the family trip in March. The travel coach added a tournament in April. They overlap. Grandma is upset. The team is expecting your kid. You haven't slept in three nights.

@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "basketball"
 age: "all-ages"
-topic: "health"
+topic: the-hard-stuff
 publishedAt: 2026-06-11
 draft: false
 editorial:

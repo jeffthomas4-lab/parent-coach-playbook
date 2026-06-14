@@ -12,7 +12,17 @@ age: 15-plus
 publishedAt: 2026-02-10
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-14
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Our 15-year-old came home frustrated. "Coach yelled at me." "Coach doesn't like me." "Coach is unfair." Our instinct was to either defend the coach or take our kid's side.

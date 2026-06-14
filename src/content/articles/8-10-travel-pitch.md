@@ -12,7 +12,17 @@ age: 8-10
 publishedAt: 2026-01-22
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-23
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At eight to ten, you'll get the first pitch to move your kid to a travel team. A coach will tell you they're special, they're ready, the travel program is where the real development happens. Listen hard. Ask specific questions.

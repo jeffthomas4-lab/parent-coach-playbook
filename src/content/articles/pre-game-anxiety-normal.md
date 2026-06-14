@@ -2,7 +2,7 @@
 title: Pre-game anxiety is *normal*. Here's where it stops being normal.
 dek: The line between healthy nerves and something to address.
 seoDescription: Pre-game nerves are a sign your kid cares. Here is how to tell when anxiety has crossed from normal competitive stress into something that needs a different response from you.
-topic: mental-health
+topic: the-hard-stuff
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 8-10
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A quiet kid in the car on the way to the game is not a red flag. A kid who says their stomach hurts before big games is not broken. Some pre-game anxiety is a sign the sport matters to them, and that is a good thing.

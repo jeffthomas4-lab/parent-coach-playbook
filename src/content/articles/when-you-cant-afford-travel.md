@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-01-28
 featured: true
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-24
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid made the travel team. The financial commitment is $8,000 to $12,000 a year. Your family can't sustain that without major sacrifice.

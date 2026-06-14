@@ -13,6 +13,18 @@ age: all-ages
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You already know who is making the team. You decided two days ago. The kid sitting across from you at dinner does not know yet, and you are about to spend the next twelve hours pretending to be exactly as in the dark as they are.

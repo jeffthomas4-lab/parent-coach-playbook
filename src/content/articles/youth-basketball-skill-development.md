@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "basketball"
 age: "8-10"
-topic: "training"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:

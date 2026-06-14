@@ -3,7 +3,7 @@ title: "How to ask about *playing time* without torching the relationship."
 seoTitle: "How to Ask the Coach About Playing Time Without Damaging the Relationship"
 seoDescription: "The framing that works and the framing that doesn't. How to have the playing time conversation without making your kid pay for it later."
 summary: "The playing time conversation is the most common one to blow up. Here's the framing that works, the framing that backfires, and why the goal of the meeting matters more than the outcome."
-moment: "asking-about-playing-time"
+moment: after-no-playing-time
 publishedAt: 2026-06-11
 featured: false
 whatTheyAreFeeling:

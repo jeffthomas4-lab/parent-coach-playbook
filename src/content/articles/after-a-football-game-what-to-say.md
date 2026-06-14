@@ -8,7 +8,7 @@ format: "note"
 phase: "drive-home"
 sport: "football"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -51,4 +51,4 @@ After a win, the same rules apply. Winning brings its own trap, which is the ext
 
 Let them enjoy it. Do not start building it into something.
 
-One hour of quiet after the game is more valuable than 45 minutes of car analysis. Your kid's brain is still playing the game. Give it room.
+One hour of quiet after the game is more valuable than 45 minutes of car analysis. Your kid's brain is still playing the game. Give it r

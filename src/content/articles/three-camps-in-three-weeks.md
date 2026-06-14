@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "11-12"
 publishedAt: 2026-04-23
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid is eleven, plays travel baseball year-round, and loves it. You signed up for a week of skills camp in mid-June, a tournament team week in late June, and a college camp the second week of July. All three are baseball.

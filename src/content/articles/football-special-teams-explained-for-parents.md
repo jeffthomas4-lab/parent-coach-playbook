@@ -45,4 +45,4 @@ Extra point: after a touchdown, the offense can kick a one-point extra point or 
 
 Why coaches care about special teams: field position determines scoring probability in football more than any other single factor. A team that consistently starts drives at their own 40 has a structural advantage over a team starting at their own 15. Special teams is where that margin lives.
 
-If your kid is on the kickoff coverage unit, their job is to stay in their lane and make the tackle. It sounds simple. It is not.
+If your kid is on the kickoff coverage unit, their job is to stay in their lane and make the tackle. It sounds simple. It is not

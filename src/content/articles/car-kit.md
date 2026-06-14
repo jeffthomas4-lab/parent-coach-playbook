@@ -10,7 +10,17 @@ age: "all-ages"
 publishedAt: 2026-03-14
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-24
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A car kit is not a first-aid kit. It's the stuff you forgot that you'll need three times a season. Build it once in March. Check it once in June. It saves you.

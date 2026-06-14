@@ -37,4 +37,4 @@ Stick costs are an ongoing line item that parents underestimate. At the competit
 
 Summer lacrosse is separate from the spring season in most markets. Many travel programs have summer tournament schedules that run their own fees. Know whether summer is included in the program fee or priced separately before committing.
 
-One cost that applies specifically to boys lacrosse: as players move up in level, they often upgrade equipment more frequently. Better helmets, stiffer gloves, lighter shafts. That upgrade cycle can add $200 to $400 per year to the gear budget at the competitive level.
+One cost that applies specifically to boys lacrosse: as players move up in level, they often upgrade equipment more frequently. Better helmets, stiffer gloves, lighter shafts. That upgrade cycle can add $200 to $400 per year to the gear budget at the competitive le

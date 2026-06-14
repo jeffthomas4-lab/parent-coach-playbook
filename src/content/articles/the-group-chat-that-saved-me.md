@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-04-23
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 I started a chat with three other moms from my kid's team last April. It's called the u8 girls soccer thread. We're at thirty-seven hundred messages now.

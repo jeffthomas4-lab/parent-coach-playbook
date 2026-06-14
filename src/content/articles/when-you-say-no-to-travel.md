@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-02-01
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-28
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid made the travel team. You looked at the cost, the schedule, the family calendar. You said no.

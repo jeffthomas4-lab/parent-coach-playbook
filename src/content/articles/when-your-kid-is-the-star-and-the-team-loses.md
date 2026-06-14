@@ -12,7 +12,17 @@ age: 11-12
 publishedAt: 2026-02-15
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-21
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your daughter scored two goals. The team lost 4 to 2. She is in the car with a confused face. Her individual game was great. The team's game was a loss.

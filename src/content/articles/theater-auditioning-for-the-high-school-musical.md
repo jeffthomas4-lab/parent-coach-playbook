@@ -10,31 +10,43 @@ sport: "theater"
 age: "13-14"
 publishedAt: "2026-05-12"
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 She told you on the walk to school that the high school musical auditions are open and they're taking eighth graders this year. By dinner she'd picked out her song. By bedtime she had a monologue from a book on the shelf. By breakfast the next morning she'd emailed the high school drama teacher with a question. You're watching a kid commit to an audition that's going to put her up against juniors and seniors, and you want to make sure she shows up the best version of herself, knowing that the goal of this audition is probably not the lead. Here's how to think about it.
 
 ## How most schools handle this
 
-Policies vary a lot. Some high schools strictly cast within their own student body. Some allow incoming freshmen if their middle school feeds the high school. Some run open auditions and let the cast list shake out. Find out before you start preparing — call the drama department and ask. The answer determines whether you're preparing for this year or next, and if the high school won't consider eighth graders, your kid can still go to the audition as a learning experience. Some directors will say so up front; some won't.
+Policies vary a lot. Some high schools strictly cast within their own student body. Some allow incoming freshmen if their middle school feeds the high school. Some run open auditions and let the cast list shake out. Find out before you start preparing, call the drama department and ask. The answer determines whether you're preparing for this year or next, and if the high school won't consider eighth graders, your kid can still go to the audition as a learning experience. Some directors will say so up front; some won't.
 
 ## What she'll need to prepare
 
-Most high school musical auditions ask for a few specific things. The first is a song — usually sixteen to thirty-two bars, in the style of musical theater. Pop songs are usually not accepted. Your kid should pick a song she sounds great on, not the song from the show being produced. The second is a monologue, usually a minute long, contemporary unless the school specifies otherwise, real theater rather than something from a movie. The monologue should show her playing one person making one argument, not a montage of feelings.
+Most high school musical auditions ask for a few specific things. The first is a song, usually sixteen to thirty-two bars, in the style of musical theater. Pop songs are usually not accepted. Your kid should pick a song she sounds great on, not the song from the show being produced. The second is a monologue, usually a minute long, contemporary unless the school specifies otherwise, real theater rather than something from a movie. The monologue should show her playing one person making one argument, not a montage of feelings.
 
-She'll bring sheet music in a black binder, three copies, none of them loose. The accompanist will read from one, the director keeps one, she keeps one. Headshots aren't required at most school auditions but they help, and a clear photo beats a selfie every time. A resume on one page — theater experience first, training next, special skills last — looks more thoughtful than no resume, even if her credits are short.
+She'll bring sheet music in a black binder, three copies, none of them loose. The accompanist will read from one, the director keeps one, she keeps one. Headshots aren't required at most school auditions but they help, and a clear photo beats a selfie every time. A resume on one page, theater experience first, training next, special skills last, looks more thoughtful than no resume, even if her credits are short.
 
 ## The day of
 
-She should warm up before she leaves the house. Vocal warmups, a little physical warmup. She should not be cold when she walks in. Have her dress in clothes that move — not the costume of the show, not a suit, just black pants and a clean top, or a simple dress, and shoes she can dance in. Show up thirty minutes early because many auditions have dance calls or callbacks immediately after the song and monologue and your kid should not be rushed. Have her eat something an hour before — not too much, not too sugary — and put a water bottle in her bag.
+She should warm up before she leaves the house. Vocal warmups, a little physical warmup. She should not be cold when she walks in. Have her dress in clothes that move, not the costume of the show, not a suit, just black pants and a clean top, or a simple dress, and shoes she can dance in. Show up thirty minutes early because many auditions have dance calls or callbacks immediately after the song and monologue and your kid should not be rushed. Have her eat something an hour before, not too much, not too sugary, and put a water bottle in her bag.
 
 ## Walking into the room
 
-Most of the auditioners are juniors and seniors. They've done this before. They're confident. Your eighth grader is going to be the youngest person in the room, and that's fine — the director knows her age and is not comparing her audition to a senior audition. What they're watching for at this age is whether she can take direction, whether she can sing in tune, whether she makes eye contact with the panel, whether she's the kind of kid they want to work with. She doesn't need to be the best singer in the room. She needs to leave the room as someone the director wants on the cast.
+Most of the auditioners are juniors and seniors. They've done this before. They're confident. Your eighth grader is going to be the youngest person in the room, and that's fine, the director knows her age and is not comparing her audition to a senior audition. What they're watching for at this age is whether she can take direction, whether she can sing in tune, whether she makes eye contact with the panel, whether she's the kind of kid they want to work with. She doesn't need to be the best singer in the room. She needs to leave the room as someone the director wants on the cast.
 
 ## What "callback" means
 
-A callback means the director liked something. They're usually held the next day or that night, and the director will assign her material from the show to read or sing. A callback for a specific role is more meaningful than an open callback — if she's reading sides for the lead, she's being considered for the lead; if she's in a group of thirty kids doing the same dance call, she's being considered for ensemble. Both are good. Treat them both as good.
+A callback means the director liked something. They're usually held the next day or that night, and the director will assign her material from the show to read or sing. A callback for a specific role is more meaningful than an open callback, if she's reading sides for the lead, she's being considered for the lead; if she's in a group of thirty kids doing the same dance call, she's being considered for ensemble. Both are good. Treat them both as good.
 
 ## If she doesn't get cast
 

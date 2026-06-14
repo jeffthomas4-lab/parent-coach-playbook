@@ -15,6 +15,18 @@ sport: ballet
 age: 13-14
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You are sitting in an exam room with your 14-year-old. The orthopedist has the MRI up on the screen behind her.

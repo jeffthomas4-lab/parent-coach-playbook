@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-home"
 sport: "soccer"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -47,4 +47,4 @@ The player who has a safe home environment can use the car to process and let go
 
 The one thing you can say that builds resilience: "You came back after that. I noticed." Name the recovery, not the mistake.
 
-That is what you want more of. That is what you should reinforce.
+That is what you want more of. That is what you should reinfo

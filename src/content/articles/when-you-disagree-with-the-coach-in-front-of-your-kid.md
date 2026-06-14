@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-04-05
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your son's coach made a substitution Saturday that you thought was wrong. Pulled him at a moment your son was finally getting going. The team lost. The car ride was quiet.

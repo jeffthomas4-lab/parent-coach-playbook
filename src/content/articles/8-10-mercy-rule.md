@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-01-24
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-17
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It was a Saturday in March. One team came in with a complete roster and batting cages during the week. The other team was half nine-year-olds playing tee-ball for the first time. By the third inning, the score was 11-1 and one set of parents was watching their kid check out emotionally while the other set kept adding up the runs.

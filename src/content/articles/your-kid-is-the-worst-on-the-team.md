@@ -15,7 +15,17 @@ heroAlt: Child sits on end of dugout bench alone, head down on water bottle. Res
   of team loosely suggested in middle distance, celebrating a goal. Honest composition
   showing posture over face.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-17
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 There's always one. The kid who is clearly several levels below everyone else. Maybe it's yours.

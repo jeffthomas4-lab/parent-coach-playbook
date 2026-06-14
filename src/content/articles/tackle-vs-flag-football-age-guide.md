@@ -57,4 +57,4 @@ You can always add tackle in two years. You cannot unbuild habits formed with ba
 
 If you land on tackle: call the program before you register. Ask which coaching certification they use. Ask what their practice contact percentage looks like.
 
-A good program will have quick answers to both questions. One that does not is telling you something.
+A good program will have quick answers to both questions. One that does not is telling you so

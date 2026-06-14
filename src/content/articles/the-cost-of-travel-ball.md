@@ -15,7 +15,17 @@ hero: /illustrations/travel-vs-rec-diptych.webp
 heroAlt: 'A two-panel comparison: on the left, a rec field with a single chair and
   cooler; on the right, a hotel parking lot full of team SUVs at a tournament weekend.'
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-30
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Travel ball costs more than you think. The registration fee on the website is not the number. Here is the full math.

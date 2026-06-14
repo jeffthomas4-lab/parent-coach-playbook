@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "15-18"
-topic: "recruiting"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -45,4 +45,4 @@ Parents who position themselves near the coaching staff are noticed by the coach
 
 After the camp: if there is interest, the program will reach out. If there is no contact within two weeks, your kid can send a polite follow-up email asking if there are any questions.
 
-Then move on. One camp is data, not a verdict.
+Then move on. One camp is data, not a verdi

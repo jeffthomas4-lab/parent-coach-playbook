@@ -4,7 +4,7 @@ seoTitle: "Performing Arts Costs: Full Breakdown for Parents"
 seoDescription: "What does youth theater, dance, choir, or band actually cost? Tuition, fees, costumes, equipment, and travel. A real number breakdown by activity."
 dek: "Every activity looks affordable until you add up the whole year."
 bluf: "Performing arts costs range from a few hundred dollars a year for school choir to $5,000 or more for competitive dance. The base fee is rarely the whole picture. Know the full-year cost of costumes, competition fees, equipment, and travel before you commit. Studios and programs are required to tell you if you ask directly."
-topic: "money"
+topic: equipment
 format: "essay"
 phase: "drive-there"
 sport: "multi-sport"

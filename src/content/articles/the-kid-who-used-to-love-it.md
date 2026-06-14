@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "13-14"
 publishedAt: 2026-03-20
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your son loved baseball from when he was four. He'd play wiffle ball in the yard until dark. He had a game journal. He memorized stats. He talked about it constantly.

@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-02-24
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-05
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At 8-10, coaches are not evaluating soccer talent or baseball technique. We're evaluating four things.

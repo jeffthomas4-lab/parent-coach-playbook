@@ -53,4 +53,4 @@ The drive home: skip "did you have fun?" It is too easy to answer with a yes or 
 
 If they say they do not want to go back tomorrow: ask one question. "Was there anything good about today?"
 
-Usually there was. Build from there. One bad morning does not mean the whole week is wrong.
+Usually there was. Build from there. One bad morning does not mean the whole week is

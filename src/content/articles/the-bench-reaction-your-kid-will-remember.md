@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-02-22
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-03
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your son just got pulled. He's walking to the bench. He looks across the field at you.

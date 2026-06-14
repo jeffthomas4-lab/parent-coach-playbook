@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "13-14"
 publishedAt: 2026-03-27
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid is a freshman. The high school sports booster club is run by three sets of parents. They have been running it for five years. Their kids are seniors.

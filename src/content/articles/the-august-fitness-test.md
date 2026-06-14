@@ -12,6 +12,18 @@ age: 13-14
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Most fall sports tryouts include a fitness component. A timed mile, a beep test, a yo-yo, shuttle runs. The kid who skipped conditioning all summer pays for it on day one.

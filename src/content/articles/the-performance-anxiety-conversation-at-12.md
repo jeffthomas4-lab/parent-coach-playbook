@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "11-12"
 publishedAt: 2026-03-16
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your daughter has been freezing at the free throw line for three games. Stepping to the line, her body goes rigid, the shot misses badly. By the third game it has its own pattern. The whole team can see it. Her coach can see it. She can see it.

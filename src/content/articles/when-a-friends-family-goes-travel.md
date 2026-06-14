@@ -12,7 +12,17 @@ age: 8-10
 publishedAt: 2026-02-04
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-03
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid's best friend just made the travel team. Your kid is staying in rec. By April, the friendship will feel different.

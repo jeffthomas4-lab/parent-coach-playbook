@@ -15,6 +15,18 @@ sport: ballet
 age: 8-10
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Saturday morning at the recital studio on the south side of town. The lobby was full of sparkles. The recital photos on the walls were a wedding photographer's dream.

@@ -11,7 +11,17 @@ age: 5-7
 publishedAt: 2026-01-12
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-16
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Tee-ball doesn't have strikeouts. Every kid bats until they hit it. This is not soft. This is smart coaching.
@@ -46,8 +56,8 @@ The strikeout rule will come. Until then, celebrate that they swung.
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
 
-[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

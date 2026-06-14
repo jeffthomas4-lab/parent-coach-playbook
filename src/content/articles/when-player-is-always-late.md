@@ -69,4 +69,4 @@ The parent relationship around lateness is a separate question from the kid rela
 
 The underlying principle in all of this is that youth sports exists, at the base level, to get kids to participate in something physical and social and structured. A kid who shows up late is still showing up. That's worth protecting.
 
-The ones who never made it easy on themselves, who kept coming through all the friction, who walked in late and found a coach who waved them in without making it a thing — a lot of those kids remember that specifically. They remember the coach who didn't make them feel small for a situation they didn't control. That's what keeps them in sports long enough for sports to actually do the things sports can do.
+The ones who never made it easy on themselves, who kept coming through all the friction, who walked in late and found a coach who waved them in without making it a thing, a lot of those kids remember that specifically. They remember the coach who didn't make them feel small for a situation they didn't control. That's what keeps them in sports long enough for sports to actually do the things sports can do.

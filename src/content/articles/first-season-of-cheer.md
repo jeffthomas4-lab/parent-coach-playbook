@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
   status: claude-reviewed
 ---
 
@@ -32,8 +42,8 @@ Tryout culture varies by gym. Some gyms do formal skill evaluations with a score
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth cheer shoes →](/go/cheer-shoes-youth/) — a solid pick for youth cheer players.
+[Youth cheer shoes →](/go/cheer-shoes-youth/), a solid pick for youth cheer players.
 
-[Full Cheer gear guide →](/what-to-buy/cheer/) — all picks by age and level.
+[Full Cheer gear guide →](/what-to-buy/cheer/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

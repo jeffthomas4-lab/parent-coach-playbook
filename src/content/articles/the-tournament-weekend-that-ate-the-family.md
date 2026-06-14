@@ -12,6 +12,18 @@ age: 11-12
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You leave Friday at 4. You get home Sunday at 9:30 p.m. You took 14 photos. You ate at three different chain restaurants. Your other kid spent the weekend with grandma. You played eight games in three days, six of which you don't remember the score of.

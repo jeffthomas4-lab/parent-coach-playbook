@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-04-12
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your team got beat 6-1. The coach looked tired on the sideline. Your kid had a rough game.

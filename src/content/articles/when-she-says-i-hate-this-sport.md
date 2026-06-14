@@ -10,6 +10,18 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-04-23
 featured: true
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 They are nine. They are in the back seat. The game ended 25 minutes ago. They have not said a word the whole drive.

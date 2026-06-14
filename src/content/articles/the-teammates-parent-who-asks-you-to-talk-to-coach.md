@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-04-11
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Another mom corners you at pickup. Her son has been benched for two games. She thinks the coach is being unfair. She knows you have a good relationship with the coach. Could you mention it next time you talk to him?

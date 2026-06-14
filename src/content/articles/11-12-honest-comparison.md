@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-02-07
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-08
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here's how to make it without guessing.
@@ -44,4 +54,4 @@ Some kids are travel kids. Some are rec kids. Some kids change their minds at fo
 
 Give them the choice once they understand what both actually cost.
 
-The research on early specialization is pretty clear. David Epstein's [*Range*](/go/book-range/) makes the case in full — most elite athletes were multi-sport kids longer than you'd expect.
+The research on early specialization is pretty clear. David Epstein's [*Range*](/go/book-range/) makes the case in full, most elite athletes were multi-sport kids longer than you'd expect.

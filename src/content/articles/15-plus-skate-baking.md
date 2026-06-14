@@ -11,7 +11,17 @@ age: 15-plus
 publishedAt: 2026-02-25
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-07
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At fifteen and up, if your kid is serious about hockey, baked skates are non-negotiable. It's not optional. It's the single biggest difference between playing okay and playing well.
@@ -43,8 +53,8 @@ One pair of baked skates beats three pairs of off-the-shelf. This is the one pla
 
 **Gear mentioned in this article** (affiliate)
 
-[Hockey puck →](/go/hockey-puck/) — a solid pick for youth hockey players.
+[Hockey puck →](/go/hockey-puck/), a solid pick for youth hockey players.
 
-[Full Hockey gear guide →](/what-to-buy/hockey/) — all picks by age and level.
+[Full Hockey gear guide →](/what-to-buy/hockey/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

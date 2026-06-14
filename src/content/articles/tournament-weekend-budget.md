@@ -2,7 +2,7 @@
 title: What a tournament weekend *actually costs*.
 dek: The number most families underestimate by half.
 seoDescription: A real breakdown of tournament weekend costs for sports families. Entry fees, hotel, food, gas, and the hidden expenses that catch parents off guard. Includes tips for cutting costs without wrecking the experience.
-topic: tournament
+topic: season-ops
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Ask most sports parents what a tournament weekend costs and they'll say $300. The real number, for a family driving two to three hours, staying one night, and eating like normal humans, is closer to $600 to $700. Some families spend more.
@@ -23,7 +33,7 @@ The gap between the mental number and the real number is where the weekend blows
 |---|---|---|
 | Team entry fee (family share) | $40 | $100 |
 | Hotel (one night, double queen) | $120 | $220 |
-| Gas (2–3 hrs each way) | $40 | $70 |
+| Gas (2, 3 hrs each way) | $40 | $70 |
 | Food (family of 4, Friday dinner through Sunday lunch) | $120 | $180 |
 | Concessions and snacks on-site | $20 | $50 |
 | Parking | $0 | $30 |

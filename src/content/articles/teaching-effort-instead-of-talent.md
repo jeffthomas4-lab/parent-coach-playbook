@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -47,4 +47,4 @@ Effort is contagious in a way talent is not. When one player goes hard, others f
 
 When a coach stops practice to say "Did everyone see what she just did? She missed that cut on the first rep and she sprinted back and ran it again perfectly. That is what we are building here," the whole team updates their understanding of what earns recognition. The team's collective effort level tends to rise after that.
 
-The life lesson is the one worth saying plainly. Almost nothing of value in adult life rewards talent alone. The people who build good careers, good relationships, and good lives almost universally do it by working through hard things when the talented path disappears. That habit, the reflex of competing harder when things get difficult rather than checking out, starts being built or broken on a youth practice field. Which one it is depends largely on what the coaches said when things were easy.
+The life lesson is the one worth saying plainly. Almost nothing of value in adult life rewards talent alone. The people who build good careers, good relationships, and good lives almost universally do it by working through hard things when the talented path disappears. That habit, the reflex of competing harder when things get difficult rather than checking out, starts being built or broken on a youth practice field. Which one it is depends largely on what the coaches said when things were 

@@ -11,6 +11,18 @@ publishedAt: 2026-04-09
 featured: false
 hero: /illustrations/outside-gym-phone-moment.webp
 heroAlt: "A parent standing outside a gym in early morning light, looking at their phone with a coffee cup in the other hand."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You wake up at 7:02am to a text from the coach. *Practice moved to 5:30 today, can your son make it?*

@@ -13,7 +13,17 @@ age: all-ages
 publishedAt: 2026-02-18
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-26
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The ref made a bad call in the third quarter. The score change made the difference. Your team lost. Your kid is in the car saying *that ref ruined the game.*

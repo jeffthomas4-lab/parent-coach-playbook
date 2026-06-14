@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "11-12"
 publishedAt: 2026-03-24
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your daughter's teammate broke her leg in a soccer game on Saturday. The crack was audible. Her mom screamed. The ambulance came. Your daughter watched all of it from the field.

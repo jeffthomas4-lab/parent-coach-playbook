@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -45,4 +45,4 @@ What you should not do: critique specific saves or goals allowed on the drive ho
 
 What you should do: ask how they felt about their performance. Let them lead.
 
-The goalkeeper will tell you what they thought about it. Your job is to listen, not to debrief.
+The goalkeeper will tell you what they thought about it. Your job is to listen, not to debri

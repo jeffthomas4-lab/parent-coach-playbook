@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "softball"
 age: "15-18"
-topic: "recruiting"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:

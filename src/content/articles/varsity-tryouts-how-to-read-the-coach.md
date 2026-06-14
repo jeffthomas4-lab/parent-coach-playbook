@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "15-plus"
 publishedAt: 2026-03-17
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At 15-plus, tryouts reveal the coach's actual system. Watch for three things:

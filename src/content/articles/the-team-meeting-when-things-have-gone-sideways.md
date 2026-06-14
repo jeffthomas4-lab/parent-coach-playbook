@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-02-03
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-01
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A clique forms. Someone is excluded. A kid made a mistake and got benched and now two parents are questioning your decisions. Or the team lost four straight and the energy is dead.

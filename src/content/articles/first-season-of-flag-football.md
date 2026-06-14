@@ -11,6 +11,18 @@ sport: flag-football
 age: 5-7
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Flag football is the easiest signup in youth sports: minimal gear, short seasons, real football skills, none of the collision questions. Here's the whole first season.
@@ -33,8 +45,8 @@ The full flag library lives on our [flag football hub](/sports/flag-football/), 
 
 **Gear mentioned in this article** (affiliate)
 
-[Flag football belt set →](/go/flag-football-belt-set/) — a solid pick for youth flag football players.
+[Flag football belt set →](/go/flag-football-belt-set/), a solid pick for youth flag football players.
 
-[Full Flag Football gear guide →](/what-to-buy/flag-football/) — all picks by age and level.
+[Full Flag Football gear guide →](/what-to-buy/flag-football/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

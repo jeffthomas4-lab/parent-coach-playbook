@@ -8,7 +8,7 @@ format: "note"
 phase: "drive-there"
 sport: "soccer"
 age: "all-ages"
-topic: "gear"
+topic: equipment
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -43,4 +43,4 @@ A $15-$25 ball is fine for training. You do not need a match ball for backyard p
 
 Goalkeeper-specific gear: if your kid plays goalkeeper, add gloves ($30-$80) and padded goalkeeper pants for training sessions that involve a lot of diving work.
 
-What to skip: expensive branded training gear, personalized ball bags, and premium ankle socks with special compression features. None of it changes performance at the youth level. Save the money for tournament fees if you move to club soccer.
+What to skip: expensive branded training gear, personalized ball bags, and premium ankle socks with special compression features. None of it changes performance at the youth level. Save the money for tournament fees if you move to club socce

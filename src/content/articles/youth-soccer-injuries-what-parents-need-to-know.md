@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "all-ages"
-topic: "health"
+topic: the-hard-stuff
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -49,4 +49,4 @@ Mild strains heal in one to two weeks. Grade 2-3 strains need imaging and a stru
 
 When to pull your kid immediately: any head injury (follow the same concussion protocol as any contact sport), any joint that locks up or gives way, any pain they describe as sharp rather than sore, and any moment where they are limping or compensating their movement significantly.
 
-The rule worth having before the season: when in doubt, sit out and get it looked at. One week of missed practice to rule out a fracture is not a sacrifice. Playing through a stress fracture because it felt manageable at the time is.
+The rule worth having before the season: when in doubt, sit out and get it looked at. One week of missed practice to rule out a fracture is not a sacrifice. Playing through a stress fracture because it felt manageable at the tim

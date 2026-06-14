@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-04-18
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Friday afternoon. Email from the coach: "Tournament uniform is all black. Shorts, shirt, socks, shoes. Everything black."

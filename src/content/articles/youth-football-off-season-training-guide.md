@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "football"
 age: "13-14"
-topic: "training"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -51,4 +51,4 @@ Rest: four to six weeks of true rest per year, away from structured football act
 
 It allows the body to adapt to the training load from the previous season. The kid who comes into camp having rested is usually fresher and more trainable than the kid who trained through every break.
 
-The practical question: is your kid asking to train more, or are you pushing it. If they are asking, support it with structure. If they are not, do not manufacture urgency that is not there yet.
+The practical question: is your kid asking to train more, or are you pushing it. If they are asking, support it with structure. If they are not, do not manufacture urgency that is not there

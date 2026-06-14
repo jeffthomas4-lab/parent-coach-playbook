@@ -13,6 +13,18 @@ publishedAt: 2026-04-29
 featured: true
 hero: /illustrations/the-real-job-of-youth-sports.webp
 heroAlt: "A six-year-old in a tee-ball uniform running toward first base, joyful and unbothered by technique. Coach giving thumbs-up in soft background, chalk lines suggested on field."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Youth sports is for something specific. It's not what most people think it is.

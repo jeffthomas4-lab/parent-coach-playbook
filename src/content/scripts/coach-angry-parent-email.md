@@ -3,7 +3,7 @@ title: "The angry parent email arrived at 10pm. *Here's what to do.*"
 seoTitle: "How to Respond to an Angry Parent Email as a Youth Coach"
 seoDescription: "The template for responding to the late-night complaint email. What to say, what not to say, and the one rule that will save the relationship."
 summary: "The angry parent email lands at 10pm. Here's the response template, the things that blow it up further, and the rule about when to reply."
-moment: "coach-angry-parent-email"
+moment: coach-conflict
 publishedAt: 2026-06-11
 featured: false
 whatTheyAreFeeling:

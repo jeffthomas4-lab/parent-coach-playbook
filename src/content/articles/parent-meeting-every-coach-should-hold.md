@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -53,4 +53,4 @@ End with questions. Not "does anyone have questions" said in a tone that suggest
 
 The whole meeting should run twenty to thirty minutes. Not longer. Parents have places to be and you want to leave them with the sense that you respect their time. The meeting is not a lecture, and it is not a performance. It is the beginning of a working relationship, and like most working relationships, it goes better when someone took the time to establish expectations before the first hard thing happened.
 
-Ten minutes of clarity at the start prevents dozens of difficult conversations later. Every coach who skips this meeting ends up wishing they had held it.
+Ten minutes of clarity at the start prevents dozens of difficult conversations later. Every coach who skips this meeting ends up wishing they had held 

@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "all-ages"
 publishedAt: 2026-04-02
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A parent two rows down says something at the game. About a kid on the other team. The comment is racist. Not subtle. The kind of comment where every nearby parent knows it was a slur or a stereotype, and now everyone is silent.

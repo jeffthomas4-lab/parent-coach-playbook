@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "15-18"
-topic: "recruiting"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -47,4 +47,4 @@ These are not free evaluations. They cost $100-$400 per camp. Attend camps at pr
 
 Film: a clean four-minute highlight reel with your kid's name, position, graduation year, and contact information is the baseline expectation. Include full-game clips if coaches ask. Tag the clips clearly.
 
-Your role: help with logistics, proof the emails, drive to the camps, be quiet when coaches are watching. That is the whole thing.
+Your role: help with logistics, proof the emails, drive to the camps, be quiet when coaches are watching. That is the whole thi

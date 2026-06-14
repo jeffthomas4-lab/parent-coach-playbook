@@ -11,6 +11,18 @@ sport: softball
 age: 11-12
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At some point around age 9, a certain kind of kid watches the pitcher get the ball every play and decides that's the job she wants. What happens next determines several years of your family's evenings, so it's worth deciding on purpose.
@@ -33,8 +45,8 @@ The full development map lives in the [softball pathway](/pathways/softball/), a
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+[Youth softball glove →](/go/softball-glove-11in/), a solid pick for youth softball players.
 
-[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+[Full Softball gear guide →](/what-to-buy/softball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

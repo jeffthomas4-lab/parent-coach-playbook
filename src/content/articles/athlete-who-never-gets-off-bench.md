@@ -45,7 +45,7 @@ The direct conversation, delivered without cruelty and without false hope, is ki
 
 The conversation about role is different from the conversation about playing time. Playing time is what they get in games. Role is what they do for the team, and that's something the coach controls and can make real.
 
-The best bench players on any team have specific jobs. They're the first ones in warm-ups, setting the pace. They're the communicators on the sideline — the kid who actually tells the starter what the defense is doing from the bench angle. They're the teammate who gives the same energy to every drill in practice regardless of whether they're going to play Saturday. The coach who names those things explicitly and praises them publicly is building something in that kid.
+The best bench players on any team have specific jobs. They're the first ones in warm-ups, setting the pace. They're the communicators on the sideline, the kid who actually tells the starter what the defense is doing from the bench angle. They're the teammate who gives the same energy to every drill in practice regardless of whether they're going to play Saturday. The coach who names those things explicitly and praises them publicly is building something in that kid.
 
 Not every player can have a meaningful game role. Every player can have a meaningful team role. Those are different things, and the coach who is honest about that distinction without being dismissive about it is doing the kid a real service.
 
@@ -55,9 +55,9 @@ Practice is where bench players live. Games are often not their arena, but pract
 
 What happens to the 12th player in a typical practice? They cycle through drills, they get their reps, and most of the coach's feedback goes to the players who will be in the starting lineup on Saturday. Not intentionally. That's just where the attention goes, because that's where the stakes feel highest.
 
-But the bench player is watching all of this. And what they see is a coach who corrects the starter's footwork and adjusts the rotation for the top defensive unit and gives detailed feedback on the first group's execution — and then glances at the bench player's drill and moves on. Over the course of a season, that experience accumulates into a feeling: I am here but I don't really matter.
+But the bench player is watching all of this. And what they see is a coach who corrects the starter's footwork and adjusts the rotation for the top defensive unit and gives detailed feedback on the first group's execution, and then glances at the bench player's drill and moves on. Over the course of a season, that experience accumulates into a feeling: I am here but I don't really matter.
 
-The fix is specific, not general. Call the bench player by name in drills. Give them the same quality of feedback you'd give the starter — specific, technical, real. "Your hip position on that rep was better, keep that." Notice the things that are improving. Say it out loud, in front of the team, when you see it. You don't have to spend equal time on every player. You do have to make sure no one goes invisible.
+The fix is specific, not general. Call the bench player by name in drills. Give them the same quality of feedback you'd give the starter, specific, technical, real. "Your hip position on that rep was better, keep that." Notice the things that are improving. Say it out loud, in front of the team, when you see it. You don't have to spend equal time on every player. You do have to make sure no one goes invisible.
 
 ---
 
@@ -65,7 +65,7 @@ There's a thing that happens with some bench players that coaches should know ho
 
 That kid is often the most at-risk of quitting. Not because they're dramatic but because they've stopped expecting anything to change. They've stopped asking questions because they've already gotten the answer they were afraid of: that they're not being seen.
 
-The check for a coach is simple. If a player on your roster could go two full weeks without you addressing them directly — without a specific correction, a specific praise, a piece of real feedback — that's a player who is probably feeling invisible. You don't need to manufacture attention. You need to make sure no one on your team is in that category.
+The check for a coach is simple. If a player on your roster could go two full weeks without you addressing them directly, without a specific correction, a specific praise, a piece of real feedback, that's a player who is probably feeling invisible. You don't need to manufacture attention. You need to make sure no one on your team is in that category.
 
 ---
 
@@ -77,6 +77,6 @@ The one thing the parent needs to know, and the one thing the coach should make 
 
 ---
 
-Some bench players become starters. Some don't. Over the course of a youth career, the kid who spends one or two seasons watching more than playing and comes out of it still believing in the sport, still working, still showing up — that kid is building something that will carry. The coach who made that possible by treating them with dignity rather than keeping them at arm's length until their numbers improved did something that mattered.
+Some bench players become starters. Some don't. Over the course of a youth career, the kid who spends one or two seasons watching more than playing and comes out of it still believing in the sport, still working, still showing up, that kid is building something that will carry. The coach who made that possible by treating them with dignity rather than keeping them at arm's length until their numbers improved did something that mattered.
 
 It won't show up in any win-loss column. It's still the work.

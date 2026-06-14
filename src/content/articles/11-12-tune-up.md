@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-01-28
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-23
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It was late February. We'd watched three games in four weeks. In all three, we saw the same defensive collapse on the weak side. Not new skill issues. Not effort. Just a pattern that nobody had broken. So we set aside one Thursday night practice and decided to show them what they were actually doing.

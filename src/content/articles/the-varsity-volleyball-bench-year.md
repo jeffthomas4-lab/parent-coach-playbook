@@ -11,6 +11,18 @@ sport: volleyball
 age: 15-plus
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 She made varsity as a sophomore, which felt like the win. Then October arrives and she's played six points in three weeks, all of them with the match decided.
@@ -33,8 +45,8 @@ The sophomore bench year ends one of three ways: she takes a job, she changes ro
 
 **Gear mentioned in this article** (affiliate)
 
-[Volley-Lite training ball →](/go/volleyball-volley-lite/) — a solid pick for youth volleyball players.
+[Volley-Lite training ball →](/go/volleyball-volley-lite/), a solid pick for youth volleyball players.
 
-[Full Volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age and level.
+[Full Volleyball gear guide →](/what-to-buy/volleyball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

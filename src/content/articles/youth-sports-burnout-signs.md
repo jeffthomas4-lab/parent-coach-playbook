@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "all-ages"
-topic: "health"
+topic: the-hard-stuff
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -47,4 +47,4 @@ If the slowdown does not help: talk about it directly. "You seem like you're not
 
 Not as a problem to solve. As a question to answer.
 
-And if the answer is "I don't want to do this anymore": that is a real answer and deserves a real conversation, not a lecture about commitment.
+And if the answer is "I don't want to do this anymore": that is a real answer and deserves a real conversation, not a lecture about commitme

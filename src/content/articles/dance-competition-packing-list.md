@@ -11,6 +11,18 @@ sport: dance
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Dance competitions are an inventory problem disguised as a performance. Three routines means three costumes, three sets of accessories, and possibly three shoe changes, all moving through a crowded dressing room on a schedule that runs early exactly once: when you're not ready.

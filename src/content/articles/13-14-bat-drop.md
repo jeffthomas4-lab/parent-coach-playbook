@@ -11,7 +11,17 @@ age: 13-14
 publishedAt: 2026-02-16
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-22
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At thirteen and fourteen, your kid is getting stronger and faster. The bat they used last year might be the wrong drop now. Drop is the difference between bat length and bat weight. A 30-inch, 20-ounce bat is a drop-10. The number matters.
@@ -43,8 +53,8 @@ One bat that fits him today beats three bats that are wrong.
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
 
-[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

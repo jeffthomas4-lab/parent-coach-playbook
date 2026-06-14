@@ -8,7 +8,7 @@ format: "note"
 phase: "drive-home"
 sport: "basketball"
 age: "8-10"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:

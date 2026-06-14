@@ -11,6 +11,18 @@ sport: softball
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Travel softball costs what travel baseball costs, with one exception that changes everything for about a quarter of the families: the pitching lessons. Here are the honest numbers, from our [cost calculator](/cost-calculator/) defaults, anchored to USA Softball league structures and published tournament fees.
@@ -31,8 +43,8 @@ Run [your real numbers](/cost-calculator/), with your club's actual fees, before
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+[Youth softball glove →](/go/softball-glove-11in/), a solid pick for youth softball players.
 
-[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+[Full Softball gear guide →](/what-to-buy/softball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

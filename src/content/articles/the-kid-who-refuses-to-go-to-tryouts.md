@@ -12,7 +12,17 @@ age: 8-10
 publishedAt: 2026-02-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-15
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Tryouts at 9am. It's 7:50am. Your nine-year-old is in bed with the covers pulled over her head saying she doesn't want to go.

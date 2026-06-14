@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-01-26
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-20
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The team hotel block is $220 a night. The hotel two miles away is $98. Across the tournament weekend, the difference is $244 to $366.

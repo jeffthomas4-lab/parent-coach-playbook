@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-01-22
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-15
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Some gear is fine to buy used. Some gear is a mistake to buy used. Here is how to tell.

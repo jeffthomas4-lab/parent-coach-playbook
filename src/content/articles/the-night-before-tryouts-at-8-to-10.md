@@ -15,7 +15,17 @@ hero: /illustrations/night-before-tryouts-bedroom.webp
 heroAlt: A child's bedroom at night with a youth jersey laid out on the dresser, cleats
   by the door, and a glove on the bed.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-20
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid is nine. Tryouts are tomorrow morning. He is at the dinner table. He has not eaten much. He is asking too many questions.

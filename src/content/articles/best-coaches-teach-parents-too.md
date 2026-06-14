@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -57,7 +57,7 @@ Teach the players. And also teach the room they bring with them.
 
 One thing worth doing explicitly: define what good sideline behavior looks like before anyone has done it wrong. At the preseason meeting, tell parents what you want to hear from the sideline. Encouragement by name. Positive responses to effort. Quiet when the coach is talking to players. And tell them what you don't want: coaching from the stands, critiquing officials, calling out mistakes. Give them a positive thing to do rather than just a list of prohibitions. Most parents want to support the team and they'll meet a clear standard if you give them one.
 
-Follow up with recognition when parents do it right. The same principle that applies to players applies to the adults. If you notice a parent staying calm through a difficult stretch of a game, say something afterward. "I saw how you handled that — that helps the team." It takes ten seconds and it reinforces the behavior more effectively than any policy you could post. People repeat what gets noticed.
+Follow up with recognition when parents do it right. The same principle that applies to players applies to the adults. If you notice a parent staying calm through a difficult stretch of a game, say something afterward. "I saw how you handled that, that helps the team." It takes ten seconds and it reinforces the behavior more effectively than any policy you could post. People repeat what gets noticed.
 
 The harder situation is the parent who repeatedly violates the standard you set, despite the preseason meeting and despite the culture you've been building. This conversation needs to happen privately and directly. Not in the parking lot immediately after a charged moment, but soon. "What happened at Tuesday's practice isn't what we agreed to and it affects the players. I need it to change." One specific instance, stated plainly, with a clear ask. Don't soften it so much that the message gets lost.
 

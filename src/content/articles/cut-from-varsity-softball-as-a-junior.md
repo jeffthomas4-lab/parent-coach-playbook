@@ -11,6 +11,18 @@ sport: softball
 age: 15-plus
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The junior-year cut is the one without a net. A sophomore who misses varsity drops to JV and tries again. Most programs hold JV for freshmen and sophomores, so a junior who misses varsity is just out.
@@ -33,8 +45,8 @@ The question to ask her a week later, not the night of: what do you want softbal
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth softball glove →](/go/softball-glove-11in/) — a solid pick for youth softball players.
+[Youth softball glove →](/go/softball-glove-11in/), a solid pick for youth softball players.
 
-[Full Softball gear guide →](/what-to-buy/softball/) — all picks by age and level.
+[Full Softball gear guide →](/what-to-buy/softball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

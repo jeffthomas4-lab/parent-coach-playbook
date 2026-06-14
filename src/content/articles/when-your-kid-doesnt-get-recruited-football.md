@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-home"
 sport: "football"
 age: "15-18"
-topic: "recruiting"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -47,4 +47,4 @@ What your kid decides to do with that information is their call.
 
 The thing that is true and hard to say: some kids are relieved when the recruiting door closes. They were playing for the possibility of college football more than the love of the game, and they did not know it until the possibility was gone.
 
-That relief is real and worth honoring. It is not failure.
+That relief is real and worth honoring. It is not failu

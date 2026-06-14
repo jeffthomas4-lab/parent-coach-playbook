@@ -65,4 +65,4 @@ Coaching from the lobby. Some parents stand where their kid can see them and giv
 
 It communicates that the kid cannot function independently, which is the opposite of what you want the director to think.
 
-Check your kid in, wish them well, and go sit somewhere they cannot see you until it is over.
+Check your kid in, wish them well, and go sit somewhere they cannot see you until it is over

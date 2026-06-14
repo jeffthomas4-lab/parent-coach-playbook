@@ -40,4 +40,4 @@ Cost for recreational gymnastics runs $80 to $180 per month depending on market 
 
 The competitive track is a separate decision. Gymnastics gyms invite kids who show aptitude into pre-team or developmental programs, usually around age six to nine. This means more hours, more cost, and more commitment.
 
-Some families pursue it. Many do not. Rec gymnastics through middle school is a complete, worthwhile experience on its own terms.
+Some families pursue it. Many do not. Rec gymnastics through middle school is a complete, worthwhile experience on its own terms

@@ -11,6 +11,18 @@ sport: swimming
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A swim meet is nine hours of humidity for ninety seconds of racing. The kids who finish strong are the ones who stayed warm, fed, and dry between events, and that's entirely a packing problem.
@@ -52,8 +64,8 @@ Pack the bag the night before and stage it by the door, because warmups start at
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth swim goggles →](/go/swim-goggles-youth/) — a solid pick for youth swimming players.
+[Youth swim goggles →](/go/swim-goggles-youth/), a solid pick for youth swimming players.
 
-[Full Swimming gear guide →](/what-to-buy/swimming/) — all picks by age and level.
+[Full Swimming gear guide →](/what-to-buy/swimming/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

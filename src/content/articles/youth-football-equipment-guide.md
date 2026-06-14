@@ -8,7 +8,7 @@ format: "note"
 phase: "drive-there"
 sport: "football"
 age: "all-ages"
-topic: "gear"
+topic: equipment
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -51,4 +51,4 @@ Gloves: optional but commonly used by skill position players. Not required.
 
 For flag football: the gear list is much shorter. Cleats, mouth guard, athletic supporter. The league provides the flags.
 
-One number to have in your head before you start: equipping a kid for youth tackle football from scratch runs $150-$400 depending on whether you buy new or certified used. The helmet is always the biggest line item and should be.
+One number to have in your head before you start: equipping a kid for youth tackle football from scratch runs $150-$400 depending on whether you buy new or certified used. The helmet is always the biggest line item and should 

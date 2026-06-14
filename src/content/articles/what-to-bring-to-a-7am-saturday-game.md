@@ -11,7 +11,17 @@ age: 5-7
 publishedAt: 2026-03-05
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-18
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The schedule says 7am. You wake up at 5:45. You are not ready. Your kid is not ready. Here is what you need.

@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-04-26
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The brochure says ages 7 and up. So you sign up your seven-year-old. Tuesday night you get a phone call. They haven't slept since Sunday and they want to come home. You drive three hours each way to get them.

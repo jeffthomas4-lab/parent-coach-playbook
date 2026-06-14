@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -51,4 +51,4 @@ Both outcomes matter, and in the right context the win-loss record is the most i
 
 The season-end questions that map to all three boards are worth asking every year. Did players improve? That is the development board. Did players have fun? That is the experience board. Do they want to come back? That is the experience board with a future tense. And what was the record? That is the game board, and it belongs in the conversation too. Not at the top, but in the conversation.
 
-Three scoreboards. Every coach who tracks all three is doing the job. Every coach who tracks only one is leaving most of the work unmeasured.
+Three scoreboards. Every coach who tracks all three is doing the job. Every coach who tracks only one is leaving most of the work unmeasu

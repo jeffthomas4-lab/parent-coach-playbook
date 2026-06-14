@@ -14,7 +14,17 @@ hero: /illustrations/pregame-bench-moment.webp
 heroAlt: A parent and child sitting on the bench before a game, the parent leaning
   in, the child tying a cleat.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-14
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The drive to the field is twelve minutes long. For two seasons, we used those minutes to drill the lineup, the matchups, the play installed at Wednesday practice. Our kid in the back seat heard one thing: *Don't mess this up.*

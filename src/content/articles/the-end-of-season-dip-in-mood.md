@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-03-12
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-31
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The season ended Sunday. By Wednesday, your kid is in a funk. By Friday, the funk is a thing the whole family is feeling.

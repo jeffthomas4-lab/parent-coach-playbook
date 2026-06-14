@@ -11,13 +11,25 @@ sport: soccer
 age: 15-plus
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Soccer is the sport where the club system and the school system stopped pretending to share. At 15, most families hit the fork directly.
 
 **The leagues have rules about it now.** MLS NEXT, the top boys pathway, bars most of its players from high school soccer outright; a waiver process exists and clubs hate using it. ECNL and Girls Academy allow high school play and build a break into the calendar for it. Allowed is not the same as easy: club runs roughly 10 months, and a kid doing both plays nearly year-round with no off-season.
 
-**The money is not close.** Club runs around $3,000–6,000 a year before travel, and travel can double it. High school soccer costs a participation fee and cleats. The [cost calculator](/cost-calculator/) puts real numbers on your version of it; run it before the club re-commitment deadline, not after.
+**The money is not close.** Club runs around $3,000, 6,000 a year before travel, and travel can double it. High school soccer costs a participation fee and cleats. The [cost calculator](/cost-calculator/) puts real numbers on your version of it; run it before the club re-commitment deadline, not after.
 
 **Recruiting lives at the club showcases.** College coaches watch ECNL and MLS NEXT events because fifty prospects on four fields beats one prospect on a Tuesday. If your kid has a genuine college path, club is where it runs, and the [4 percent rule](/drive-home/the-4-percent-rule/) is the honest read on how many kids that actually describes. For everyone else, the recruiting argument for club is paying for a lottery ticket with weekends.
 
@@ -33,8 +45,8 @@ And if the answer is that they're tired of both, that's information too. [Walkin
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/), a solid pick for youth soccer players.
 
-[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+[Full Soccer gear guide →](/what-to-buy/soccer/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

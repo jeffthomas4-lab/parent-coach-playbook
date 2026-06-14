@@ -12,6 +12,18 @@ age: all-ages
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Saturday morning. Your daughter has a 9 a.m. soccer game across town. Your son has a 9:30 baseball game on the other side of town. You have one car and two kids and your spouse is at work.

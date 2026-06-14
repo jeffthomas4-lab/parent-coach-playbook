@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-01-25
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-19
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Three meals out a day, four people, three days. At tournament-venue restaurant prices, that's $400 to $600 a weekend. Across a season of eight tournaments, $3,200 to $4,800 just on food.

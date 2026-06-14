@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -43,4 +43,4 @@ The coaches who retain players year over year do a few things consistently. They
 
 They make practices engaging on purpose, not accidentally. And they put the relationship first, before the score, before the development, before everything. The relationship is the whole product. Without it, none of the rest of it holds.
 
-There is a simple, honest measure available at the end of every season: how many players are coming back? Not because they have no other options, but because they want to. That number is the clearest feedback a coach gets on whether what they are doing is working.
+There is a simple, honest measure available at the end of every season: how many players are coming back? Not because they have no other options, but because they want to. That number is the clearest feedback a coach gets on whether what they are doing is worki

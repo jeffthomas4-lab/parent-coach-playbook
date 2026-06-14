@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-03-08
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-23
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You have two kids. They both have games Saturday at 9am at different fields. You are two parents. You can split.

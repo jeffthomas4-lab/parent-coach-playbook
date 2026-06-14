@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "11-12"
 publishedAt: 2026-04-29
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You're looking at two camps. One is called Summer Skills Camp. The other is called Elite Performance Academy. Both cost about the same. Both are five days. Your kid is eleven and pretty good for his age.

@@ -15,21 +15,33 @@ sport: band
 age: 11-12
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 He told you in the car on the way home from rehearsal. Eight bars at the spring concert, a solo, the director picked him. He said it like it was nothing, but he was white-knuckling the seatbelt, and you both knew that "nothing" was a cover for "I can't believe this is happening." Here's how to help him over the next three weeks without making the next three weeks worse.
 
 ## What a solo really is at this age
 
-At the school band level, most solos aren't technical showcases — they're confidence moments. The director picks a kid who plays clean, who's reliable, and who won't crack under the pressure of being heard. Your kid got it because the director thinks he can handle it, and that's information worth saying out loud to him.
+At the school band level, most solos aren't technical showcases, they're confidence moments. The director picks a kid who plays clean, who's reliable, and who won't crack under the pressure of being heard. Your kid got it because the director thinks he can handle it, and that's information worth saying out loud to him.
 
 ## What he actually needs to practice
 
-There are three things, in order. The first is the entrance. The hardest part of any solo is starting, and if he nails the first note cleanly and in tune, the rest takes care of itself. Have him practice just the first two beats over and over: take a breath, set the embouchure, hit the note. The second is the dynamics. Most school solos have one or two dynamic markings — a crescendo into a forte, a diminuendo at the end — and the audience hears dynamics before they hear notes. Make sure he's actually doing them. The third is the handoff, the bar after the solo where the rest of the band comes back in. Most kids end their solo and stop listening to the room, which is when they miss the entrance and the band ends up half a bar off. Have him count out loud through the handoff.
+There are three things, in order. The first is the entrance. The hardest part of any solo is starting, and if he nails the first note cleanly and in tune, the rest takes care of itself. Have him practice just the first two beats over and over: take a breath, set the embouchure, hit the note. The second is the dynamics. Most school solos have one or two dynamic markings, a crescendo into a forte, a diminuendo at the end, and the audience hears dynamics before they hear notes. Make sure he's actually doing them. The third is the handoff, the bar after the solo where the rest of the band comes back in. Most kids end their solo and stop listening to the room, which is when they miss the entrance and the band ends up half a bar off. Have him count out loud through the handoff.
 
 ## What practice should look like the last week
 
-Two short sessions a day work better than one long session — twenty minutes morning, twenty evening. Most of it should be on the solo itself, not the rest of the show, because he has rehearsals for that. Record him on a phone once a day, and don't critique the recording, just let him listen. He'll hear things he needs to fix without you saying anything.
+Two short sessions a day work better than one long session, twenty minutes morning, twenty evening. Most of it should be on the solo itself, not the rest of the show, because he has rehearsals for that. Record him on a phone once a day, and don't critique the recording, just let him listen. He'll hear things he needs to fix without you saying anything.
 
 The day before the concert, have him play it through once in a quiet room at home. Once, not twenty times. Then put the instrument away. Over-practicing the day before a performance is the single most common way kids talk themselves out of a clean run.
 
@@ -43,14 +55,14 @@ Don't bring up the solo in front of his friends. Some kids want everyone to know
 
 ## The night of the concert
 
-Feed him dinner an hour before, nothing heavy, nothing dairy if he plays a wind instrument because dairy thickens the mouth. Get him to the venue thirty minutes early — he needs warm-up time, his seat in the band, and the bathroom, and the bathroom is more important than the warm-up. If he's nervous, don't tell him not to be. Tell him his hands are going to feel weird, that's normal, and he'll play through it.
+Feed him dinner an hour before, nothing heavy, nothing dairy if he plays a wind instrument because dairy thickens the mouth. Get him to the venue thirty minutes early, he needs warm-up time, his seat in the band, and the bathroom, and the bathroom is more important than the warm-up. If he's nervous, don't tell him not to be. Tell him his hands are going to feel weird, that's normal, and he'll play through it.
 
 ## What to say after
 
-The first words out of your mouth after the concert matter more than you think. Try "I heard you. That was clean." Or "I could hear the dynamics — the crescendo worked." Don't say "you almost cracked the high note but you got it," and don't say "next year you should try for a bigger part." The solo is over, he gets tonight, and the next solo conversation happens next month.
+The first words out of your mouth after the concert matter more than you think. Try "I heard you. That was clean." Or "I could hear the dynamics, the crescendo worked." Don't say "you almost cracked the high note but you got it," and don't say "next year you should try for a bigger part." The solo is over, he gets tonight, and the next solo conversation happens next month.
 
 ## The one mistake that doesn't matter
 
-Solos crack. Reeds fail. Valves stick. A note comes out wrong, and when it happens the kid feels like the world has stopped, but it hasn't — the audience usually doesn't even notice, the band keeps going, and most directors will give the kid a quick "got it, keep going" look and the moment passes.
+Solos crack. Reeds fail. Valves stick. A note comes out wrong, and when it happens the kid feels like the world has stopped, but it hasn't, the audience usually doesn't even notice, the band keeps going, and most directors will give the kid a quick "got it, keep going" look and the moment passes.
 
 If he does crack his solo, the most important thing you can say is "I heard you keep going. That's the part most kids can't do." Recovery is a real skill. Praising it isn't a consolation prize, it's the actual skill he's going to need at every concert for the rest of his life.

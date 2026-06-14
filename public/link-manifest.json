@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T06:37:10.504Z",
+  "generatedAt": "2026-06-14T07:23:30.837Z",
   "count": 439,
   "links": [
     {
@@ -825,7 +825,6 @@
         "src/content/body/showcase-event-vetting.md",
         "src/content/recruiting/academic-requirements-for-college-athletes.md",
         "src/content/recruiting/how-recruiting-actually-works.md",
-        "src/content/recruiting/ncaa-eligibility-center-explained.md",
         "src/content/recruiting/ncaa-eligibility-center.md",
         "src/content/recruiting/recruiting-timeline-by-grade.md",
         "src/content/recruiting/timeline-by-grade.md",
@@ -1902,8 +1901,7 @@
     {
       "url": "https://www.ncaa.org/sports/2014/10/6/initial-eligibility.aspx",
       "sources": [
-        "src/content/recruiting/academic-requirements-for-college-athletes.md",
-        "src/content/recruiting/ncaa-eligibility-center-explained.md"
+        "src/content/recruiting/academic-requirements-for-college-athletes.md"
       ]
     },
     {

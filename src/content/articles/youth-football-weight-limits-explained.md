@@ -39,4 +39,4 @@ What to do if your kid is over the limit: first, confirm the limit for your spec
 
 Many of the best football players at 14 and above came up as linemen at 9 and 10. The kids who learn to block and engage early often develop skills that skill-position kids do not.
 
-One thing to handle carefully at home: the conversation around weight in sports needs to be about function and the rules, not about the kid's body. "The league rule says players over X pounds play on the line, so that is where you will play" is the right framing. Anything that makes your kid feel like their weight is a problem they need to fix is not.
+One thing to handle carefully at home: the conversation around weight in sports needs to be about function and the rules, not about the kid's body. "The league rule says players over X pounds play on the line, so that is where you will play" is the right framing. Anything that makes your kid feel like their weight is a problem they need to fix is not

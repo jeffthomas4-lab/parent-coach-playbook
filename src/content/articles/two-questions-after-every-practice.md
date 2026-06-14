@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -69,6 +69,6 @@ This is not self-criticism for its own sake. It's the same feedback loop you're 
 
 Parent-coaches carry a particular challenge in this self-evaluation: your own child is in the group, and you will have natural blind spots about whether you're being too hard on them, too easy, or whether your relationship with them in practice is affecting the rest of the team. The honest answer is that it probably is affecting things, because it's genuinely hard to separate the parent role from the coaching role in real time. Asking yourself after practice whether you handled your kid the same way you handled everyone else is a useful check.
 
-The two primary questions — did we get better, did they have fun — and the self-evaluation question are most useful when you write the answers down rather than just thinking them. The act of writing forces a level of specificity that mental review doesn't. "We got better at transition defense" is more useful than "practice went okay." "Three players seemed disengaged in the second half" is more useful than "energy was a little low." Over a season, those notes become a record of your program and your coaching that's more honest and more useful than anything you'd get from watching film.
+The two primary questions, did we get better, did they have fun, and the self-evaluation question are most useful when you write the answers down rather than just thinking them. The act of writing forces a level of specificity that mental review doesn't. "We got better at transition defense" is more useful than "practice went okay." "Three players seemed disengaged in the second half" is more useful than "energy was a little low." Over a season, those notes become a record of your program and your coaching that's more honest and more useful than anything you'd get from watching film.
 
 Give it thirty days. One notebook. Three questions after every session. The patterns that emerge will tell you more about your coaching than any outside feedback you could seek.

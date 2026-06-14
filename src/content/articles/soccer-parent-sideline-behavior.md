@@ -8,7 +8,7 @@ format: "essay"
 phase: "game"
 sport: "soccer"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -45,4 +45,4 @@ Your kid sees that. They will make their next decision while managing your react
 
 One thing worth doing once before the season starts: ask your kid what they want to hear from you during games. Some kids want nothing but cheering. Some want their name said with encouragement.
 
-Some would prefer you stood ten yards away from the parent cluster. Their answer is the right answer.
+Some would prefer you stood ten yards away from the parent cluster. Their answer is the right answ

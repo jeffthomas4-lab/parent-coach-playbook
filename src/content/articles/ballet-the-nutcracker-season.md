@@ -15,6 +15,18 @@ sport: ballet
 age: 8-10
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 October 1. The cast list went up at the studio at 4 pm. She is a party girl. She found out the same time everyone else did, by walking up to the studio bulletin board with her dance bag still on her shoulder.

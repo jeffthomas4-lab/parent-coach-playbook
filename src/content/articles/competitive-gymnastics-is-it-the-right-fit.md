@@ -42,4 +42,4 @@ The schedule impact on the family is also real. Competitive gymnastics does not 
 
 Siblings' events get harder to attend. Vacations need to work around meet schedules. That is not a reason to say no, but it is part of the honest picture.
 
-If the answer after all of that is yes, great. Competitive gymnastics builds physical confidence, discipline, and the ability to perform under pressure in a way few sports do. Eight and nine is the right age to start if the fit is there.
+If the answer after all of that is yes, great. Competitive gymnastics builds physical confidence, discipline, and the ability to perform under pressure in a way few sports do. Eight and nine is the right age to start if the fit is ther

@@ -51,4 +51,4 @@ The parent dynamic: travel tournaments put families in close proximity for 60+ h
 
 The parent who is fine at a 90-minute home game occasionally becomes a problem by Sunday of a tournament weekend when their team is losing in bracket play. Keep perspective. It is still a kids' game.
 
-What to say to your kid Sunday morning of a tournament when they are tired and you are both over it: "Let's just play good today." That is enough.
+What to say to your kid Sunday morning of a tournament when they are tired and you are both over it: "Let's just play good today." That is en

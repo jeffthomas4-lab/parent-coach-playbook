@@ -46,8 +46,8 @@ The families that survive a two-day meet without snapping at each other are the 
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth swim goggles →](/go/swim-goggles-youth/) — a solid pick for youth swimming players.
+[Youth swim goggles →](/go/swim-goggles-youth/), a solid pick for youth swimming players.
 
-[Full Swimming gear guide →](/what-to-buy/swimming/) — all picks by age and level.
+[Full Swimming gear guide →](/what-to-buy/swimming/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

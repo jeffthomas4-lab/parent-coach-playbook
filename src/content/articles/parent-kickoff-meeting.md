@@ -2,7 +2,7 @@
 title: The parent *kickoff meeting*. Run it right.
 dek: The 30 minutes that prevents half the problems.
 seoDescription: The parent kickoff meeting before your youth sports season is the most important 30 minutes you'll spend as a volunteer coach. Here's what to cover, in what order, so you don't get the 10pm email.
-topic: coaching
+topic: the-hard-stuff
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 8-10
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Every coach who has ever gotten a 10pm text about playing time skipped this meeting. Or ran it badly. Do it right and most of that goes away.

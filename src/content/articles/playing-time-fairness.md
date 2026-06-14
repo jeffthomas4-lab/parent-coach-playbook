@@ -2,7 +2,7 @@
 title: Playing time. The *fairness* question every coach faces.
 dek: How to set it, explain it, and hold the line.
 seoDescription: Playing time is the hardest question for volunteer coaches. Here's a clear philosophy for 8-10 year olds, how to explain it before the season starts, and what to say when a parent pushes back mid-season.
-topic: coaching
+topic: the-hard-stuff
 format: note
 phase: game
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 8-10
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Playing time is where most volunteer coaches get in trouble. Not because they're unfair. Because they're vague. Pick a policy before the season starts and say it out loud. The problems come later when you haven't.

@@ -12,6 +12,18 @@ age: 5-7
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It's the third practice of the season. A six-year-old you don't know well runs up and yells _Coach, can I get water?_
@@ -34,11 +46,11 @@ This is not a wound. It's a scramble. A recalibration. She has to make room for 
 
 ## What this looks like at different ages
 
-At 5–7, it shows up as confusion. They might not let you go on the field. They might cling. They might suddenly want to call you Dad in front of the team to remind themselves you still belong to them.
+At 5, 7, it shows up as confusion. They might not let you go on the field. They might cling. They might suddenly want to call you Dad in front of the team to remind themselves you still belong to them.
 
-At 8–10, they have language for it. They know you're the coach. They might still be weird about it the first time another kid hugs you for a good play. The feeling is the same, they just have words now.
+At 8, 10, they have language for it. They know you're the coach. They might still be weird about it the first time another kid hugs you for a good play. The feeling is the same, they just have words now.
 
-At 11–12 and up, the script flips. They want you to use _Coach_ at practice. They want a clean line between the field self and the dad self. The ones who don't get a clean line are the ones who get embarrassed.
+At 11, 12 and up, the script flips. They want you to use _Coach_ at practice. They want a clean line between the field self and the dad self. The ones who don't get a clean line are the ones who get embarrassed.
 
 The age you are most likely to miss it is the youngest. The kid is not going to articulate it. They will just be slightly off for a week.
 

@@ -29,7 +29,7 @@ Memory is compressed. Ask an adult what they remember about a season they played
 
 The last practice of the season is an edge. And most coaches treat it exactly like the 27th practice: same drills, same structure, same water break, same end-of-practice huddle where someone says something about the upcoming game or tournament. That's a missed chance.
 
-The last thing a team experiences together shapes how the whole season settles in memory. If the last practice feels like any other Tuesday, the season feels like any other Tuesday. If the last practice feels like something — if it marks the end of something real that happened — the season stays with people.
+The last thing a team experiences together shapes how the whole season settles in memory. If the last practice feels like any other Tuesday, the season feels like any other Tuesday. If the last practice feels like something, if it marks the end of something real that happened, the season stays with people.
 
 ---
 
@@ -43,23 +43,23 @@ The work part of the last practice should still be work. Don't turn the whole th
 
 What you're building in the final portion of practice is three things: reflection, recognition, and a ritual send-off.
 
-Reflection means giving the team a moment to mark what actually happened this season. This can be as simple as a prompt you go around the circle with — something like "What's one thing you'll take from this season?" It doesn't have to be profound. Some kids will say something specific. Some kids will be funny about it. Some kids will give a one-word answer. All of that is fine. The point is that the team pauses together and acknowledges that this was a real thing they did, not just a sequence of practices and games they passed through.
+Reflection means giving the team a moment to mark what actually happened this season. This can be as simple as a prompt you go around the circle with, something like "What's one thing you'll take from this season?" It doesn't have to be profound. Some kids will say something specific. Some kids will be funny about it. Some kids will give a one-word answer. All of that is fine. The point is that the team pauses together and acknowledges that this was a real thing they did, not just a sequence of practices and games they passed through.
 
 ---
 
 Recognition is the part where the coach does the actual work. By the last practice of the season, you know this team. You know things about each player that you didn't know on day one. This is the time to say them out loud, by name, in front of the group.
 
-Not generic praise. Specific observation. "Maya, what I saw from you this season was that you were the first one ready in every single drill. I want you to know I noticed that and it mattered." "Owen, you had the toughest stretch of this season — you played through something that would have sidelined other kids and you never said a word about it. This team doesn't know how much you protected them just by being here." Name something true and specific about each kid. Not about their athletic performance, necessarily. About who they are on this team.
+Not generic praise. Specific observation. "Maya, what I saw from you this season was that you were the first one ready in every single drill. I want you to know I noticed that and it mattered." "Owen, you had the toughest stretch of this season, you played through something that would have sidelined other kids and you never said a word about it. This team doesn't know how much you protected them just by being here." Name something true and specific about each kid. Not about their athletic performance, necessarily. About who they are on this team.
 
 This takes longer than most coaches budget for. Go slow anyway. A player who hears their coach name something specific and true about them at the end of a season carries that further than almost anything else that happens. The cost is 15 or 20 minutes of focused attention. That's the whole investment.
 
 ---
 
-The ritual send-off is the third piece, and this is the one that varies the most by team and coach. Some teams have a thing they've done all season — a chant, a handshake sequence, a specific way of breaking the huddle — and you do it one last time with the explicit weight of "this is the last one this year." That's enough. The familiar thing done with intention is more powerful than an invented ceremony.
+The ritual send-off is the third piece, and this is the one that varies the most by team and coach. Some teams have a thing they've done all season, a chant, a handshake sequence, a specific way of breaking the huddle, and you do it one last time with the explicit weight of "this is the last one this year." That's enough. The familiar thing done with intention is more powerful than an invented ceremony.
 
 If your team doesn't have an existing ritual, the close can be simple: the team huddles together, and you say something real. Not motivational. Not a summary of the season. Something true about who this team was, said as clearly and directly as you can manage. Then you break the huddle. The season is over.
 
-Some coaches end it with a letter. Not a typed printout, a handwritten note — one per player, one or two lines, saying something specific about that individual. You hand them out at the end of the last practice. Kids put them in their bag and read them at home. That one works particularly well for the bench players, the quiet kids, the ones who might not get a lot of public recognition. The letter tells them someone saw them.
+Some coaches end it with a letter. Not a typed printout, a handwritten note, one per player, one or two lines, saying something specific about that individual. You hand them out at the end of the last practice. Kids put them in their bag and read them at home. That one works particularly well for the bench players, the quiet kids, the ones who might not get a lot of public recognition. The letter tells them someone saw them.
 
 ---
 
@@ -67,7 +67,7 @@ What the coach says in those final minutes matters more than what they say in mo
 
 Say it was real. Because it was.
 
-The coach who stands in front of the team at the end of the last practice and summarizes their win-loss record is missing the point. The coach who stands there and says, specifically and honestly, what they saw from this group over the length of a season — the thing that goes beyond the scores — is the one who gets remembered.
+The coach who stands in front of the team at the end of the last practice and summarizes their win-loss record is missing the point. The coach who stands there and says, specifically and honestly, what they saw from this group over the length of a season, the thing that goes beyond the scores, is the one who gets remembered.
 
 Most adults who played youth sports remember at least one coach who said something at the end of a season that landed. Not something inspirational. Something true. Something that felt like the coach had actually been watching. That moment lasts because the kid realized they were seen. You can create that moment deliberately. It doesn't require talent. It requires attention and the willingness to say the thing out loud.
 

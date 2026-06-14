@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-03-06
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-21
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Tournament weekend. Friday night. The team has checked in. Twelve kids hit the pool at 8pm.

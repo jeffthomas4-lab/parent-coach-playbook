@@ -11,6 +11,18 @@ sport: theater
 age: 15-plus
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The International Thespian Festival is a week at Indiana University Bloomington in late June: dorm housing, ten thousand steps a day across campus, Thespy performances in the morning and workshops until night. State festivals are the weekend version. Either way, your kid is packing for a trip where you won't be there to fix anything.

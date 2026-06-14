@@ -11,6 +11,18 @@ sport: basketball
 age: 5-7
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Basketball is the easiest team sport to start in America: one signup, one pair of shoes, a gym with heat in the winter. Here's what the first season actually looks like, from the bleachers.
@@ -33,8 +45,8 @@ The full library lives on the [basketball hub](/sports/basketball/): drills by a
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+[Youth rubber basketball →](/go/basketball-ball-rubber/), a solid pick for youth basketball players.
 
-[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+[Full Basketball gear guide →](/what-to-buy/basketball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

@@ -2,7 +2,7 @@
 title: Tournament Day Food When *You're Stuck There All Day*
 dek: What to pack, what to buy, and what to avoid when you have multiple games and no good options.
 seoDescription: Tournament day food strategy for youth sports parents. What to pack when you have 3-4 games across 8 hours, how to handle unpredictable schedules, and what to do when vending machines are the only food at the facility.
-topic: nutrition
+topic: the-hard-stuff
 format: note
 phase: game
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The tournament food problem is real. You show up at 8am, you're there until 4pm, the schedule shifts by an hour mid-day, your kid has three games, and the concession stand is selling nachos and hot dogs.

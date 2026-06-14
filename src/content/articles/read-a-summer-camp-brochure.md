@@ -12,6 +12,18 @@ age: 8-10
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The summer camp brochure is a sales document. Glossy photos, smiling kids, "elite training," and three pricing tiers. It tells you everything except what the kid will actually do for six hours a day.

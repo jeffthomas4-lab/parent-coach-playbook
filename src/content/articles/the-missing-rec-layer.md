@@ -12,6 +12,18 @@ publishedAt: 2026-04-22
 featured: false
 hero: /illustrations/the-missing-rec-layer.webp
 heroAlt: "A nearly empty soccer field at dusk. One thirteen-year-old in scrimmage gear kicking a ball alone toward an empty net, with a single backpack on empty bleachers."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Look at the graph of how Americans play sports across a lifetime and a strange shape appears. Peak at age eight. Long dive starting at thirteen. Small recovery at nineteen when college kids find intramurals and adult leagues. The dip in the middle is the thing nobody is talking about.

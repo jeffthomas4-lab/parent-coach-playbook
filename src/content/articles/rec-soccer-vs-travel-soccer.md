@@ -45,4 +45,4 @@ What travel soccer is actually good at: more technical training, more competitiv
 
 The trap: families who jump to club soccer at 8 because they are afraid of being behind, then spend the next four years building a financial and logistical commitment around a kid who would rather be doing something else. If your 8-year-old asks to play more, seeks out the ball at home, watches the sport, and talks about it, the travel question is worth having. If they like it fine and enjoy practice but would also be happy playing anything else, rec is where they belong for now.
 
-The number: club soccer at the 8-10 level runs $1,500-$4,000 per year. Rec runs $100-$300. That gap is real and worth naming before you make the decision.
+The number: club soccer at the 8-10 level runs $1,500-$4,000 per year. Rec runs $100-$300. That gap is real and worth naming before you make the decisio

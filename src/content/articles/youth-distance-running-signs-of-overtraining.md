@@ -35,4 +35,4 @@ Mood and motivation changes are real signs that get dismissed too easily. A runn
 
 In female runners, the relative energy deficiency in sport (RED-S) pattern is a specific and serious risk. It involves inadequate caloric intake relative to training load, which disrupts hormonal function and bone density. Irregular or absent periods in a teenage girl who is training heavily is a clinical sign, not a normal training adaptation. It requires a pediatrician or sports medicine physician to evaluate, not a wait-and-see approach.
 
-The right response when these signs appear: a rest week, a conversation with the coach, and a pediatrician visit if the pattern has been present for more than two or three weeks. Pushing through this pattern to stay on the training schedule produces worse outcomes, not better ones.
+The right response when these signs appear: a rest week, a conversation with the coach, and a pediatrician visit if the pattern has been present for more than two or three weeks. Pushing through this pattern to stay on the training schedule produces worse outcomes, not better 

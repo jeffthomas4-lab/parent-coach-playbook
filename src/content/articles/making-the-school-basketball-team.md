@@ -11,6 +11,18 @@ sport: basketball
 age: 13-14
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Middle school basketball tryouts are, for most kids, the first time a roster has ever told them no. Twelve to fifteen spots, sixty kids in the gym, three days. Here's what's actually being evaluated, and what your job is during the week everyone's stomach hurts.
@@ -31,8 +43,8 @@ Middle school basketball tryouts are, for most kids, the first time a roster has
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+[Youth rubber basketball →](/go/basketball-ball-rubber/), a solid pick for youth basketball players.
 
-[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+[Full Basketball gear guide →](/what-to-buy/basketball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

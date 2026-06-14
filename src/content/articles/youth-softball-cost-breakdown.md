@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "softball"
 age: "all-ages"
-topic: "money"
+topic: equipment
 publishedAt: 2026-06-11
 draft: false
 editorial:

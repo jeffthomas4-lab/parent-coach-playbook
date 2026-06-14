@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "football"
 age: "15-18"
-topic: "recruiting"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -51,4 +51,4 @@ Keep it short. Coaches read these in 90 seconds or less.
 
 What parents cannot do is call the coach on behalf of the kid. At the D1 level, the coach wants to talk to your kid, not you.
 
-The last thing: recruiting is not a measure of your kid's worth as a player or a person. The number of scholarship offers is not a reflection of how good a parent you were. The families who handle recruiting the best are the ones who kept the sport as the kid's project from the beginning.
+The last thing: recruiting is not a measure of your kid's worth as a player or a person. The number of scholarship offers is not a reflection of how good a parent you were. The families who handle recruiting the best are the ones who kept the sport as the kid's project from the begin

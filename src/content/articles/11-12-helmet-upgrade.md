@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-02-02
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-29
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters.
@@ -44,8 +54,8 @@ Order early if you need it. Get it fitted. One less variable when season starts.
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth rubber football →](/go/football-rubber-youth/) — a solid pick for youth football players.
+[Youth rubber football →](/go/football-rubber-youth/), a solid pick for youth football players.
 
-[Full Football gear guide →](/what-to-buy/football/) — all picks by age and level.
+[Full Football gear guide →](/what-to-buy/football/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

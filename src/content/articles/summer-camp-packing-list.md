@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-05-01
 featured: true
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The packing list the camp sends you is a starting point. It's also written by people who have never had to find a clean pair of socks at 6:45am for a week.

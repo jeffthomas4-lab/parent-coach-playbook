@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-03-21
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 She is nine. You signed up for the spring baseball season. Three weeks in, she's not enjoying it. She wants to play soccer instead. Her best friend is on the soccer team. Soccer registration closed last week.

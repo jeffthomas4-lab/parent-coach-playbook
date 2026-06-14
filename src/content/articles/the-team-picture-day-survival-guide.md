@@ -12,7 +12,17 @@ age: 5-7
 publishedAt: 2026-02-27
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-10
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Picture day is on the schedule. Six-year-olds. The photographer has 40 minutes. The lighting is whatever it is. You have one shot.

@@ -11,7 +11,17 @@ age: 15-plus
 publishedAt: 2026-03-12
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-10
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At fifteen and up, the rules get complicated. Red cards. Ejections. Suspensions that carry into the next game. Foul limits. Technical fouls. Your kid needs to understand the consequences, and the consequences work differently in every sport.

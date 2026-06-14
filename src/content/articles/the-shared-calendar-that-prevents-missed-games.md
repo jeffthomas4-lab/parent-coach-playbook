@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-03-01
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-12
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You missed a game last season because you didn't have it on the calendar. The kid noticed. You felt awful.

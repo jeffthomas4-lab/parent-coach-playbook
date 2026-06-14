@@ -12,7 +12,17 @@ age: 13-14
 publishedAt: 2026-02-09
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-12
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your daughter made the first cut. The list went up Monday. She was on it. The family celebrated.

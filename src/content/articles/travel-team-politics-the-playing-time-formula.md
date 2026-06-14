@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-01-31
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-27
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You assumed travel ball was a meritocracy. The best players play the most. By midseason, you've noticed the playing time doesn't match the skill rankings.

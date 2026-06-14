@@ -8,7 +8,7 @@ format: "essay"
 phase: "game"
 sport: "football"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -49,4 +49,4 @@ Do not argue with officials. Ever. At any level.
 
 A parent who argues with a 17-year-old referee at a Pop Warner game is modeling something for their kid that will follow that kid into adulthood.
 
-The thing parents underestimate: kids are embarrassed by sideline behavior in a way they will not admit until they are 22 and you ask them about it. The parent who sat down, clapped for everyone, and drove home without a debrief is almost always the one their kid remembers wanting at the games.
+The thing parents underestimate: kids are embarrassed by sideline behavior in a way they will not admit until they are 22 and you ask them about it. The parent who sat down, clapped for everyone, and drove home without a debrief is almost always the one their kid remembers wanting at the games

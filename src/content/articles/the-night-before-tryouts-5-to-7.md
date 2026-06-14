@@ -15,7 +15,17 @@ heroAlt: A six-year-old at kitchen table, hair damp from bath, eating small bowl
   pasta in pajamas. Parent across table reading a book, not on phone. Clock on wall
   reads 7:50 PM.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-24
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 They're 5 to 7. They don't know what tryouts are. They've never felt the weight of wanting something they might not get.

@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-03-04
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-17
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You opened the gym bag for Tuesday's practice. The smell hit you. Something has been in there since the last weekend. You don't want to know what.

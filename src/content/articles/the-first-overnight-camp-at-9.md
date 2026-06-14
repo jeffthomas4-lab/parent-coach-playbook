@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "8-10"
 publishedAt: 2026-04-24
 featured: true
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 She is nine. Her best friend's older sister went to this camp four years ago and loved it. She has been asking since February.
@@ -91,6 +103,6 @@ That is what overnight camp is for.
 
 ---
 
-Looking for the right first overnight camp? <a href="/camps/?format=overnight&age=8-10">Browse overnight camps for ages 8–10</a>.
+Looking for the right first overnight camp? <a href="/camps/?format=overnight&age=8-10">Browse overnight camps for ages 8, 10</a>.
 
 Run a camp? <a href="/camps/submit/">Add your listing</a>. Overnight camps that handle the Tuesday-night homesickness wave well earn loyal parent communities.

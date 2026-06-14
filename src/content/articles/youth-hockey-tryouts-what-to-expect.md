@@ -45,4 +45,4 @@ Your role during all of this is simple: sit in the stands, watch the ice, and sa
 
 The drive home after the last session is the one that matters most. Your kid already knows how they skated. They do not need analysis, scoring, or your read on who else looked good. "That looked hard and you kept competing" is the right sentence. Whatever comes next in terms of placement, that sentence will still have been true.
 
-Results typically come within a week by email or a posted list at the rink. If your kid makes the team they wanted, great. If the placement is not what they hoped for, that conversation deserves real time and a real answer, not a parking-lot pivot to what comes next. Let them feel it first.
+Results typically come within a week by email or a posted list at the rink. If your kid makes the team they wanted, great. If the placement is not what they hoped for, that conversation deserves real time and a real answer, not a parking-lot pivot to what comes next. Let them feel it firs

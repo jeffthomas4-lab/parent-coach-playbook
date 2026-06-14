@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-02-28
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The fundraiser email lands. It is asking for something. Money. Time. Your contact list. Sometimes all three.

@@ -11,6 +11,18 @@ sport: hockey
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Every rink in America has watched a family discover at 6:05am that the elbow pads are still on the garage floor. Hockey has more equipment than any youth sport, which means more ways to arrive incomplete. The fix is a bag check, run the night before, every time.
@@ -66,8 +78,8 @@ First-year family? [What you actually need for first-year hockey](/drive-there/w
 
 **Gear mentioned in this article** (affiliate)
 
-[Hockey puck →](/go/hockey-puck/) — a solid pick for youth hockey players.
+[Hockey puck →](/go/hockey-puck/), a solid pick for youth hockey players.
 
-[Full Hockey gear guide →](/what-to-buy/hockey/) — all picks by age and level.
+[Full Hockey gear guide →](/what-to-buy/hockey/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

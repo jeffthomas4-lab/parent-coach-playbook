@@ -13,7 +13,17 @@ hero: /illustrations/what-my-kid-said-in-the-car.webp
 heroAlt: Backseat of car view from back-passenger window. Nine-year-old looks out
   window in profile, breath fogging glass slightly, mid-thought expression.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-05
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You're driving home from practice. Your kid is in the back seat, helmet of hair smashed to one side, picking at a hole in his sock.
@@ -38,8 +48,8 @@ The insight we heard later was the one that should have come first: *He didn't n
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/), a solid pick for youth soccer players.
 
-[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+[Full Soccer gear guide →](/what-to-buy/soccer/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

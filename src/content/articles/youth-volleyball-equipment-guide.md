@@ -8,7 +8,7 @@ format: "note"
 phase: "drive-there"
 sport: "volleyball"
 age: "all-ages"
-topic: "gear"
+topic: equipment
 publishedAt: 2026-06-11
 draft: false
 editorial:

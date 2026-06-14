@@ -8,7 +8,7 @@ format: "essay"
 phase: "game"
 sport: "baseball"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:

@@ -33,19 +33,19 @@ This is one of the most consistent findings in sports psychology and it's also j
 
 ---
 
-The coach is the most durable figure in most people's youth sports memory. Not always in a positive way — the coach who humiliated a kid in front of the team, the one who clearly had a favorite and made it obvious, the one who made winning feel so important that losing felt like a moral failure. Those coaches are remembered too. For exactly those reasons.
+The coach is the most durable figure in most people's youth sports memory. Not always in a positive way, the coach who humiliated a kid in front of the team, the one who clearly had a favorite and made it obvious, the one who made winning feel so important that losing felt like a moral failure. Those coaches are remembered too. For exactly those reasons.
 
 The coaches who get remembered well almost always get remembered for a version of the same thing: they believed in the kid. Not in the abstract way, the "everyone has potential" speech way. In a specific way that the kid could feel. They put them in a situation that was hard enough to be real. They gave them feedback that assumed the kid could actually use it. They referenced what they saw in that player specifically, not generically. The kid felt seen.
 
-That experience — being believed in by an adult who had no obligation to believe in you — is rare enough in most kids' lives that it sticks for decades. The coach who did it was probably doing what felt natural to them. The kid was filing it away in a part of memory that doesn't fade the way practice details do.
+That experience, being believed in by an adult who had no obligation to believe in you, is rare enough in most kids' lives that it sticks for decades. The coach who did it was probably doing what felt natural to them. The kid was filing it away in a part of memory that doesn't fade the way practice details do.
 
 ---
 
-Teammates are the second layer. The teammate who made them feel included — the returning player who took the new kid under their arm in the first week, the one who waited for them after a bad game, the one who gave the kind of encouragement that only works when it comes from a peer. Adults can tell a kid they're capable. Teammates confirm it.
+Teammates are the second layer. The teammate who made them feel included, the returning player who took the new kid under their arm in the first week, the one who waited for them after a bad game, the one who gave the kind of encouragement that only works when it comes from a peer. Adults can tell a kid they're capable. Teammates confirm it.
 
-Teams that develop real internal solidarity give kids something that persists into adult social life. The capacity to be part of a group, to show up for people you're not related to, to commit to something collective at some personal cost — those are skills, and they're built in practice. The team where everyone is glad when someone succeeds and no one is glad when someone fails is building that capacity deliberately. Adults who had that experience in youth sports describe it in terms that sound more like learning a language than playing a game. They're right.
+Teams that develop real internal solidarity give kids something that persists into adult social life. The capacity to be part of a group, to show up for people you're not related to, to commit to something collective at some personal cost, those are skills, and they're built in practice. The team where everyone is glad when someone succeeds and no one is glad when someone fails is building that capacity deliberately. Adults who had that experience in youth sports describe it in terms that sound more like learning a language than playing a game. They're right.
 
-The thing coaches can do about this is what's been covered elsewhere in this site — mix the groups, build rituals, let the team develop its own identity. But the deeper point is that the teammate relationships you're protecting when you build that culture are going to matter to these kids longer than any season result.
+The thing coaches can do about this is what's been covered elsewhere in this site, mix the groups, build rituals, let the team develop its own identity. But the deeper point is that the teammate relationships you're protecting when you build that culture are going to matter to these kids longer than any season result.
 
 ---
 
@@ -53,13 +53,13 @@ Traditions are oddly durable. Ask someone about their youth sports team and at s
 
 These things feel small when they're happening. They don't feel like the important part. But they're doing something that the skill work and the game results can't do: they're creating markers that say "this team existed, it was ours, and being part of it was a specific thing." Memory attaches to specificity. A ritual that belongs to one team in one season is a specific thing. It doesn't fade into the general blur of childhood the way practice drills do.
 
-Coaches who protect team rituals — who don't cut the handshake chain because practice ran long, who start the season by establishing something that belongs to this group — are seeding something that will grow long after the season ends.
+Coaches who protect team rituals, who don't cut the handshake chain because practice ran long, who start the season by establishing something that belongs to this group, are seeding something that will grow long after the season ends.
 
 ---
 
 Lessons that stuck are the fourth category, and these are harder to predict. Every coach gives a version of the "learn from failure" speech. Most of those speeches fade. What doesn't fade are the lessons embedded in specific moments. The kid who made the mistake in the big game and had the coach sit next to them afterward and say something that reframed how they thought about it. The kid who discovered in a hard season that they were more capable of pushing through difficulty than they'd thought. The kid who saw a teammate handle adversity with grace and decided, consciously or not, that they wanted to do that too.
 
-You can't engineer these moments. You can create conditions where they're more likely to happen. The coach who handles adversity without panic, who treats mistakes as information rather than failure, who says something specific and true when the moment calls for it — that coach is in the right position to create something that lasts. Not every conversation will stick. Some will stick for a lifetime.
+You can't engineer these moments. You can create conditions where they're more likely to happen. The coach who handles adversity without panic, who treats mistakes as information rather than failure, who says something specific and true when the moment calls for it, that coach is in the right position to create something that lasts. Not every conversation will stick. Some will stick for a lifetime.
 
 ---
 

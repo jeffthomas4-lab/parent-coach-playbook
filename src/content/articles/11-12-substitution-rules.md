@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-02-04
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-02
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At eleven to twelve, different leagues have different rules about substitutions. I didn't know what the rule was for years. I just got mad when my kid didn't play.

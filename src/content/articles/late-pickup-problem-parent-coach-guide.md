@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:

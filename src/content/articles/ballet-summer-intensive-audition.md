@@ -15,41 +15,53 @@ sport: ballet
 age: 13-14
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Friday night, and you've moved the kitchen table out of the way and set up your phone on a tripod borrowed from a neighbor. Your daughter is in a black leotard and pink tights, hair in a fresh bun, and her ballet shoes have been re-tied three times because she keeps stepping on the ribbons. The light from the kitchen window is going. You're about to film the eighteen minutes of barre and center work that will be sent to four major summer intensives. Here's how to do this without making it embarrassing.
 
 ## What summer intensives are
 
-A summer intensive is a multi-week training program at a professional or pre-professional ballet school, running three to six weeks, full-day, multiple-class, immersive training. Major intensives are at well-known schools — American Ballet Theatre, School of American Ballet, Boston Ballet School, Houston Ballet Academy, San Francisco Ballet School, Pacific Northwest Ballet, Joffrey Ballet School, and many others.
+A summer intensive is a multi-week training program at a professional or pre-professional ballet school, running three to six weeks, full-day, multiple-class, immersive training. Major intensives are at well-known schools, American Ballet Theatre, School of American Ballet, Boston Ballet School, Houston Ballet Academy, San Francisco Ballet School, Pacific Northwest Ballet, Joffrey Ballet School, and many others.
 
 Each school has its own style, admissions standards, and faculty. A kid accepted to one is not automatically a fit for another. Each requires its own audition.
 
 ## How auditions work
 
-Two main paths. Live audition — the school holds in-person auditions in major cities in January and February, and the dancer travels to the audition, takes a ballet class with other auditioners, and is evaluated by the school's faculty. Video audition — for dancers who can't travel, schools accept a video submission of a set list of exercises, reviewed by the same faculty.
+Two main paths. Live audition, the school holds in-person auditions in major cities in January and February, and the dancer travels to the audition, takes a ballet class with other auditioners, and is evaluated by the school's faculty. Video audition, for dancers who can't travel, schools accept a video submission of a set list of exercises, reviewed by the same faculty.
 
 Live audition is usually preferred but video is a real option, especially for dancers in regions without nearby live audition sites.
 
 ## What the video usually requires
 
-Schools list their video requirements in detail on their website. Most require something like this. A center introduction where the dancer stands facing the camera, says her name and age, and indicates her height and any other requested info. Barre exercises — pliés, tendus, dégagés, ronds de jambe, frappés, fondus, grand battements — all in one continuous shot, right side and left side, sometimes both. Center work — adagio, pirouettes (en dehors and en dedans), petit allegro, grand allegro — each exercise on both sides. Pointe work (for female dancers in pointe level) — tendu, échappé, piqué, pirouette on pointe. A variation, sometimes — a short solo from the classical or contemporary repertoire, optional at some schools, required at others.
+Schools list their video requirements in detail on their website. Most require something like this. A center introduction where the dancer stands facing the camera, says her name and age, and indicates her height and any other requested info. Barre exercises, pliés, tendus, dégagés, ronds de jambe, frappés, fondus, grand battements, all in one continuous shot, right side and left side, sometimes both. Center work, adagio, pirouettes (en dehors and en dedans), petit allegro, grand allegro, each exercise on both sides. Pointe work (for female dancers in pointe level), tendu, échappé, piqué, pirouette on pointe. A variation, sometimes, a short solo from the classical or contemporary repertoire, optional at some schools, required at others.
 
 The whole video usually runs fifteen to twenty-five minutes.
 
 ## How to film it
 
-A few practical pieces. Use a tripod — hand-held video moves, and the faculty needs to see straight lines and balance. Use a plain background, a studio wall or a clean room with no clutter, because the faculty doesn't need to see your living room. Use good lighting — natural light from a window is best, and avoid overhead lighting that creates shadows on the face. Film in landscape mode, not portrait, wide enough to show the full body and the line of the leg. Position the camera at the dancer's mid-height, not too low, not too high.
+A few practical pieces. Use a tripod, hand-held video moves, and the faculty needs to see straight lines and balance. Use a plain background, a studio wall or a clean room with no clutter, because the faculty doesn't need to see your living room. Use good lighting, natural light from a window is best, and avoid overhead lighting that creates shadows on the face. Film in landscape mode, not portrait, wide enough to show the full body and the line of the leg. Position the camera at the dancer's mid-height, not too low, not too high.
 
-Use the studio if possible — most studios will let you book a private hour to film, and the floor, mirrors, and barre are right for the work. If you can't use the studio, set up a portable barre at home or use a sturdy piece of furniture. The angle matters, and the body language matters.
+Use the studio if possible, most studios will let you book a private hour to film, and the floor, mirrors, and barre are right for the work. If you can't use the studio, set up a portable barre at home or use a sturdy piece of furniture. The angle matters, and the body language matters.
 
-Don't edit between sections — most schools want to see continuous exercises to evaluate stamina and consistency. If she makes a mistake, don't start over — most schools value seeing how a dancer recovers from a mistake more than they value a polished take. Have her wear the studio's typical attire — solid color leotard, pink tights, hair in a neat bun, no fancy hair ornaments, no leg warmers for the video.
+Don't edit between sections, most schools want to see continuous exercises to evaluate stamina and consistency. If she makes a mistake, don't start over, most schools value seeing how a dancer recovers from a mistake more than they value a polished take. Have her wear the studio's typical attire, solid color leotard, pink tights, hair in a neat bun, no fancy hair ornaments, no leg warmers for the video.
 
 ## Picking schools to audition for
 
-A few factors. Geography — some schools are within driving distance, others are coast-to-coast travel, and travel costs are real (a four-week intensive plus airfare plus hotel can run $7,000). Style — different schools train in different traditions (Russian, French, Balanchine, Vaganova, Cecchetti), and your kid's home studio is in one of these traditions, so the summer intensive should expand her training, not jar it. Talk to her teacher about which schools complement her training.
+A few factors. Geography, some schools are within driving distance, others are coast-to-coast travel, and travel costs are real (a four-week intensive plus airfare plus hotel can run $7,000). Style, different schools train in different traditions (Russian, French, Balanchine, Vaganova, Cecchetti), and your kid's home studio is in one of these traditions, so the summer intensive should expand her training, not jar it. Talk to her teacher about which schools complement her training.
 
-Level — some intensives are aimed at advanced pre-professional dancers, some are open to a broader range, and a first-time intensive applicant at thirteen should probably not be applying to the most selective programs. Cost and financial aid — most major intensives offer some aid, but the percentage of dancers who receive it varies, so ask. Reputation — the school's reputation in the ballet world matters because training quality is correlated with reputation, and future audition prospects (year-round programs, company auditions) are sometimes shaped by where the dancer trained.
+Level, some intensives are aimed at advanced pre-professional dancers, some are open to a broader range, and a first-time intensive applicant at thirteen should probably not be applying to the most selective programs. Cost and financial aid, most major intensives offer some aid, but the percentage of dancers who receive it varies, so ask. Reputation, the school's reputation in the ballet world matters because training quality is correlated with reputation, and future audition prospects (year-round programs, company auditions) are sometimes shaped by where the dancer trained.
 
 Apply to several. Three to five schools is typical. Expect to be accepted to some and not others.
 
@@ -59,17 +71,17 @@ Major intensives open applications in October or November. Live auditions are Ja
 
 ## The cost
 
-A typical four-week residential summer intensive runs $4,000 to $8,000 in tuition plus $2,500 to $4,500 for room and board, plus travel. Many programs offer scholarships — talk to the school about financial aid, because most have processes for need-based and merit-based aid. If the cost is prohibitive, consider day-only intensives or regional intensives at strong but less famous schools. The training can be excellent and the cost can be a quarter of a major intensive.
+A typical four-week residential summer intensive runs $4,000 to $8,000 in tuition plus $2,500 to $4,500 for room and board, plus travel. Many programs offer scholarships, talk to the school about financial aid, because most have processes for need-based and merit-based aid. If the cost is prohibitive, consider day-only intensives or regional intensives at strong but less famous schools. The training can be excellent and the cost can be a quarter of a major intensive.
 
 ## When acceptances arrive
 
-If she's accepted to one or more programs, congratulate her and let her feel it for a day or two. Then sit down together and make a decision based on training fit, geography, cost, and what she wants — not on prestige alone.
+If she's accepted to one or more programs, congratulate her and let her feel it for a day or two. Then sit down together and make a decision based on training fit, geography, cost, and what she wants, not on prestige alone.
 
-If she's not accepted anywhere, the conversation is different. Some kids are crushed. Some are quiet. Either way, the rejection is information, not a verdict — many serious dancers are not accepted to their top-choice intensive at age thirteen and end up at top companies by twenty-two. Ask her home teacher to look at the video and the application. Sometimes there's a fixable issue. Sometimes she's just not ready this year.
+If she's not accepted anywhere, the conversation is different. Some kids are crushed. Some are quiet. Either way, the rejection is information, not a verdict, many serious dancers are not accepted to their top-choice intensive at age thirteen and end up at top companies by twenty-two. Ask her home teacher to look at the video and the application. Sometimes there's a fixable issue. Sometimes she's just not ready this year.
 
 ## What summer intensive is actually like
 
-If she goes, expect this. Long days — most intensives run six to nine hours of training per day, six days a week. Sore body — the training load is higher than she's used to, the first week is brutal, and by week three the body adapts. Homesickness, especially for first-time residential dancers — most kids work through it, a few don't, so if she's going residential, make sure there's a way to come home if the homesickness is overwhelming. Real growth — the dancer who returns from a summer intensive is not the dancer who left, because the training accelerates everything. A new peer group — the dancers she trains with at the intensive often become a lifelong network.
+If she goes, expect this. Long days, most intensives run six to nine hours of training per day, six days a week. Sore body, the training load is higher than she's used to, the first week is brutal, and by week three the body adapts. Homesickness, especially for first-time residential dancers, most kids work through it, a few don't, so if she's going residential, make sure there's a way to come home if the homesickness is overwhelming. Real growth, the dancer who returns from a summer intensive is not the dancer who left, because the training accelerates everything. A new peer group, the dancers she trains with at the intensive often become a lifelong network.
 
 ## A final note
 

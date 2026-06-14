@@ -16,6 +16,18 @@ sport: ballet
 age: 8-10
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 He got in the car after the homecoming dance on Friday night. He was quiet on the drive home.
@@ -42,7 +54,7 @@ The common moves.
 
 Kids ask your son if he is gay because he does ballet. The question is hostile no matter the answer. The implication is that ballet is something a boy should be embarrassed about. He is not, and ballet is not.
 
-Kids tease him about the clothing — tights, leotards, the studio uniform. This is the easiest surface to grab at. Help him separate the costume from the work: the tights are practical for what he does in the room, the same way a wrestling singlet or a swim brief is practical for what those athletes do.
+Kids tease him about the clothing, tights, leotards, the studio uniform. This is the easiest surface to grab at. Help him separate the costume from the work: the tights are practical for what he does in the room, the same way a wrestling singlet or a swim brief is practical for what those athletes do.
 
 Kids ask why he does not play a real sport. The implicit message is that ballet does not count. The truth is that ballet is one of the most physically demanding athletic disciplines on earth. Male ballet dancers train long hours, build serious strength and stamina, and execute jumps and turns that take years to learn. Ballet is a sport. The teasing is wrong on the facts.
 

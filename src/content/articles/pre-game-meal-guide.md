@@ -2,7 +2,7 @@
 title: Pre-Game Meal Timing by *Age Group*
 dek: What to feed your kid before a game, how long before, and what to skip.
 seoDescription: Pre-game meal timing for youth athletes ages 5 through 14. What to feed kids before a game, how long before they should eat, which foods cause problems, and how the answers change by age group.
-topic: nutrition
+topic: the-hard-stuff
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The pre-game meal is not complicated. The problem is that nobody tells parents what it actually looks like by age. "Eat well before the game" covers nothing.

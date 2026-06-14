@@ -11,6 +11,18 @@ sport: cheer
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Cheer doesn't bill like a season sport. It bills like a gym membership with a competition season attached, and the monthly draft is only half the story.
@@ -33,8 +45,8 @@ Run [your own number](/cost-calculator/), with your gym's real tuition, before s
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth cheer shoes →](/go/cheer-shoes-youth/) — a solid pick for youth cheer players.
+[Youth cheer shoes →](/go/cheer-shoes-youth/), a solid pick for youth cheer players.
 
-[Full Cheer gear guide →](/what-to-buy/cheer/) — all picks by age and level.
+[Full Cheer gear guide →](/what-to-buy/cheer/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

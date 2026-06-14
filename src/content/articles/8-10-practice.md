@@ -12,7 +12,17 @@ age: 8-10
 publishedAt: 2026-01-16
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-18
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It was a Tuesday in October. We had a forty-minute window before the next activity. One team. One field. The goal was to keep everyone engaged without running them to death. By minute thirty-five, they were still asking to play more.

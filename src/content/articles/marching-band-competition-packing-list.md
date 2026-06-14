@@ -11,6 +11,18 @@ sport: band
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A marching competition is a fourteen-hour day that starts in August heat and ends in October cold, sometimes on the same Saturday. The kids who survive it packed for both. The parents who survive it packed for themselves too.

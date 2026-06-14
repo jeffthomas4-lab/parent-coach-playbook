@@ -53,4 +53,4 @@ What actually works in year one: show up consistently, clap for effort rather th
 
 The question worth sitting with at the end of year one: does my kid want to do this again. Not do they have potential, not are they keeping up with the other kids, not is the investment paying off.
 
-Do they want to come back. That answer is the only one that matters going into year two.
+Do they want to come back. That answer is the only one that matters going into year

@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-02-03
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-31
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You signed up for travel. The first tournament is in two weeks. You don't know what you're walking into.

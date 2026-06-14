@@ -49,4 +49,4 @@ Positions change constantly as kids grow and develop. A guard at 9 becomes a tig
 
 Do not let the 8-year-old position assignment carry more weight than it deserves.
 
-One thing worth watching: does your kid actually know what their job is on each play. Not which position they are, but what they are doing on this specific snap. That understanding is what separates kids who are just standing on the field from kids who are actually playing football.
+One thing worth watching: does your kid actually know what their job is on each play. Not which position they are, but what they are doing on this specific snap. That understanding is what separates kids who are just standing on the field from kids who are actually playing foot

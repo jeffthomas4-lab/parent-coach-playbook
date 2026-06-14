@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-03-02
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The week ahead has two practices, a game, three school events, a doctor's appointment, and a work deadline. By Tuesday it will be on top of you.

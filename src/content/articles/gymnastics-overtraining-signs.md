@@ -39,4 +39,4 @@ Start with a pediatrician. A sports medicine physician who works with young athl
 
 Then talk to the gym. Not accusatorially, and not in the car on the way home when you are already tense. Ask the coach directly what the training plan looks like this month, how they are monitoring fatigue, and what the protocol is when an athlete reports pain. Gyms that handle this well will have answers. Programs that dismiss parent concerns about physical signs should concern you.
 
-The well-established risk in gymnastics for kids in this age range is stress fractures, particularly in the lumbar spine (spondylolysis) and the wrists. These are not rare in gymnasts and they are not catastrophic if caught early. They become a bigger problem when they are trained through.
+The well-established risk in gymnastics for kids in this age range is stress fractures, particularly in the lumbar spine (spondylolysis) and the wrists. These are not rare in gymnasts and they are not catastrophic if caught early. They become a bigger problem when they are trained 

@@ -16,7 +16,17 @@ hero: /illustrations/the-post-cut-porch.webp
 heroAlt: A teenager sitting on a porch step at dusk, head down, baseball glove on
   the boards beside them. A parent visible just inside the front door, not approaching.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-04
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The cuts list went up. Your kid wasn't on it. The next 24 hours, you will be tempted to do several things. Don't.
@@ -95,4 +105,4 @@ Don't text the coach. Don't text other parents. Don't make decisions. Eat dinner
 
 Most regrets in youth sports are made in the 24 hours after a hard moment. The rule prevents most of them.
 
-Carol Dweck's [*Mindset*](/go/book-mindset/) is worth reading before the next tryout season. The cut feels like a verdict on talent. It isn't. How your kid processes it — and how you frame it — matters more than the result.
+Carol Dweck's [*Mindset*](/go/book-mindset/) is worth reading before the next tryout season. The cut feels like a verdict on talent. It isn't. How your kid processes it, and how you frame it, matters more than the result.

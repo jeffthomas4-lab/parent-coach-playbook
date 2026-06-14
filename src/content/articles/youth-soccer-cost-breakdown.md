@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "all-ages"
-topic: "money"
+topic: equipment
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -49,4 +49,4 @@ Financial aid: most clubs have scholarship funds and do not advertise them loudl
 
 Say "does your program have financial assistance?" before you assume the answer is no. Many families who could qualify never ask.
 
-One honest question before committing to club: can you sustain this cost for five years, not one. The families who have the hardest time are the ones who stretch to do it for two years and then cannot keep going when the kid is fully invested and the peer group is established.
+One honest question before committing to club: can you sustain this cost for five years, not one. The families who have the hardest time are the ones who stretch to do it for two years and then cannot keep going when the kid is fully invested and the peer group is establis

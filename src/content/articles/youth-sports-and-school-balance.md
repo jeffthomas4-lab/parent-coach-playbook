@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "13-14"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -45,4 +45,4 @@ Most coaches, when approached respectfully and specifically, accommodate one-off
 
 The frame that helps: sports and school are not in competition. They are the same training environment. Showing up prepared, managing time, handling pressure, and performing when it matters are skills that transfer between them.
 
-Your kid building those habits at 14 is the actual point.
+Your kid building those habits at 14 is the actual poi

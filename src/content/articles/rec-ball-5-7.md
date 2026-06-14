@@ -11,7 +11,17 @@ age: 5-7
 publishedAt: 2026-01-10
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-15
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At five to seven, there is no travel ball that makes sense. There's only rec ball. Understanding why saves you from three years of pointless driving.

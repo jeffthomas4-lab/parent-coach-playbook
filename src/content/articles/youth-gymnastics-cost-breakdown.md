@@ -39,4 +39,4 @@ Regional and national meets add hotel costs. Custom competition leotards at Leve
 
 A few costs parents routinely underestimate: private coaching sessions, which are strongly encouraged at competitive levels and run $50-120 per hour; conditioning gear purchased for home training; and choreography fees for optional routine music and routine design at Level 7 and up.
 
-The honest conversation to have before the gym invites your kid to pre-team: what does the full cost look like at the level they are likely to reach in two years, not just what it costs this month? The gym can give you that projection. Ask for it directly.
+The honest conversation to have before the gym invites your kid to pre-team: what does the full cost look like at the level they are likely to reach in two years, not just what it costs this month? The gym can give you that projection. Ask for it dire

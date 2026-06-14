@@ -11,7 +11,17 @@ age: 15-plus
 publishedAt: 2026-02-06
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-07
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid is fifteen. He's tried out for rec teams, travel teams, school teams. He's now trying out for a 15+ elite club. Everything is different.

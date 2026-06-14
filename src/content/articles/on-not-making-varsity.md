@@ -10,6 +10,18 @@ seasonPhase: "pre-season"
 publishedAt: 2026-04-09
 hero: /illustrations/on-not-making-varsity.webp
 heroAlt: "A teenager on front porch in mid-afternoon, headphones in, scrolling on phone. Backpack dropped beside them, framing pulled back with warm light."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A kid did not make varsity last week. Eighth grade. He'd been on the JV roster all of seventh and most parents said he was a lock. His mom called from the parking lot.

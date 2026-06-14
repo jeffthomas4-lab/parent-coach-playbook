@@ -11,7 +11,17 @@ age: 13-14
 publishedAt: 2026-02-13
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-18
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At thirteen and fourteen, sportsmanship rules get enforced harder. Coaches are watching. Refs are watching. And there are actual penalties.

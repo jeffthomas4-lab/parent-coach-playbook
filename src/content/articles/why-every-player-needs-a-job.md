@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -51,4 +51,4 @@ Playing time and responsibility are not the same thing. This is worth saying cle
 
 Kids who are given real responsibility tend to rise to it. That is not a theory. It is what happens on teams where coaches trust players with real jobs, real expectations, and real accountability.
 
-The player who owns the water bottles and never misses is building something that follows them. The employer who hires them in fifteen years does not know about the water bottles. But they absolutely notice what that kind of practice creates.
+The player who owns the water bottles and never misses is building something that follows them. The employer who hires them in fifteen years does not know about the water bottles. But they absolutely notice what that kind of practice creat

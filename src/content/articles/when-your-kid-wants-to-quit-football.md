@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-home"
 sport: "football"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -51,4 +51,4 @@ Finishing the season is worth asking about, not requiring. "Do you think you can
 
 The honest conversation: what sport would you want to play if it wasn't this one. Ask it. Sometimes the answer surprises you and sometimes it is something worth taking seriously.
 
-What this is not: a character failure on your part. Kids leave sports. The ones who stay do so because they want to be there.
+What this is not: a character failure on your part. Kids leave sports. The ones who stay do so because they want to be the

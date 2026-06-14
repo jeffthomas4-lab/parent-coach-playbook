@@ -53,4 +53,4 @@ Watch for the child who is genuinely overwhelmed by the group environment. Most 
 
 End practice on energy. A game that gets loud. A funny team tradition. A celebration of something that happened today. The last five minutes of practice is the thing most likely to stick in the car on the way home. "How was practice today?" "We played sharks and minnows and I almost got caught by Trevor." That conversation happens if the ending was good. Make the ending good.
 
-The check for this age is simple. Four questions after every session: Did they have fun? Did they learn one small thing? Did they interact positively with at least one teammate? Do they want to come back? If yes to all four, you coached this age correctly. The complexity will come later. Right now, fun and wanting more is the whole standard. Meet it.
+The check for this age is simple. Four questions after every session: Did they have fun? Did they learn one small thing? Did they interact positively with at least one teammate? Do they want to come back? If yes to all four, you coached this age correctly. The complexity will come later. Right now, fun and wanting more is

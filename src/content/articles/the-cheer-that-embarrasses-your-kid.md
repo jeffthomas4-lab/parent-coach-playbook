@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-02-24
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-06
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your son made a great pass. You stood up and yelled, *YES! THAT'S MY BOY!*

@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -61,7 +61,7 @@ The timing of your intervention matters. Addressing the conflict immediately aft
 
 The framing of that conversation also matters. "I need to talk to you about what happened" sounds like a disciplinary meeting and puts people on the defensive. "I want to make sure we're set up for the rest of the season" is forward-looking and less charged. The goal is not to adjudicate what happened. The goal is to establish what comes next. Focus on that.
 
-There's also a version of this situation that isn't actually about two families disliking each other — it's about one family behaving inappropriately and the other family reacting to it. These look similar on the surface and require different responses. The first situation calls for the neutral, both-sides approach described above. The second situation calls for a direct conversation with the family whose behavior is the source, held clearly and without false equivalence. Treating them as symmetric problems when they aren't is unfair to the family that's on the receiving end and ineffective as a resolution.
+There's also a version of this situation that isn't actually about two families disliking each other, it's about one family behaving inappropriately and the other family reacting to it. These look similar on the surface and require different responses. The first situation calls for the neutral, both-sides approach described above. The second situation calls for a direct conversation with the family whose behavior is the source, held clearly and without false equivalence. Treating them as symmetric problems when they aren't is unfair to the family that's on the receiving end and ineffective as a resolution.
 
 Be honest with yourself about which situation you're in.
 

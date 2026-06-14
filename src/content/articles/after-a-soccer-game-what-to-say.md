@@ -8,7 +8,7 @@ format: "note"
 phase: "drive-home"
 sport: "soccer"
 age: "8-10"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -43,4 +43,4 @@ What works if they are unhappy with how they played: "What felt off?" Then liste
 
 What works after a win: enjoy it with them. You are allowed to be excited. Do not dim their energy to manage your own excitement about next week's game.
 
-The thing that gets reinforced over hundreds of car rides: your kid either learns that the drive home is safe, or they learn to stay quiet until you stop. The quiet ones are not at peace. They are managed.
+The thing that gets reinforced over hundreds of car rides: your kid either learns that the drive home is safe, or they learn to stay quiet until you stop. The quiet ones are not at peace. They are managed

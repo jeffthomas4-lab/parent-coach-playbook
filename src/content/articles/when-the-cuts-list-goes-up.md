@@ -12,7 +12,17 @@ age: 11-12
 publishedAt: 2026-02-13
 featured: true
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-19
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The cuts list went up at 5:32pm. You were standing in the kitchen when she came out of her room. Her face told you the answer before she did.

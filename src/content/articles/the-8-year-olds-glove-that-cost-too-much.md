@@ -9,6 +9,18 @@ sport: "baseball"
 age: "8-10"
 publishedAt: 2026-04-17
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You walked into the sporting-goods store last spring. Your eight-year-old said the orange one was cool. The salesperson said it was a great glove. You looked at the price tag and winced and bought it anyway.

@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -67,4 +67,4 @@ The third mistake is being vague about why. "Nice hustle today, here is a card" 
 
 Years later, the players on your team will not remember who led the team in goals. A few of them might remember that, but most will not. What they will remember is whether they felt like effort mattered.
 
-Whether showing up with the right attitude was noticed. Whether the coach saw them as more than what they could do with a ball. That is the question the A.C.E. card system answers every single practice.
+Whether showing up with the right attitude was noticed. Whether the coach saw them as more than what they could do with a ball. That is the question the A.C.E. card system answers every single pract

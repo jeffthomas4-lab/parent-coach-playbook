@@ -10,7 +10,17 @@ age: 8-10
 seasonPhase: mid
 publishedAt: 2026-03-05
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-19
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 I asked kids this question for years. *Did you have fun?* After every game. After every practice. After the school play. The kids always said yes. Even when they didn't.

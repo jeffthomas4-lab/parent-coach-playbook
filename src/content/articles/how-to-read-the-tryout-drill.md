@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-02-12
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-16
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You're at the field watching tryouts. Forty kids. Three coaches. Drills you don't fully understand. You're trying to figure out where your kid stands.

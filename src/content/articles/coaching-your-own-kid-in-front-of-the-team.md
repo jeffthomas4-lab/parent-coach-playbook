@@ -13,6 +13,18 @@ seasonPhase: "mid"
 publishedAt: 2026-04-16
 hero: /illustrations/coaching-your-own-kid-in-front-of-the-team.webp
 heroAlt: "Coach's back, viewed from behind, kneeling in front of baseball dugout talking to small group of players. One child faintly familiar, the coach's own kid."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The clinics don't cover this part. The certification doesn't cover this part. The league orientation definitely doesn't cover this part.
@@ -71,8 +83,8 @@ The rest of the parent-coach pieces live at [/parent-coach/](/parent-coach/). Th
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
 
-[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

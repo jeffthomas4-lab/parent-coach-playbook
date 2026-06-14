@@ -2,7 +2,7 @@
 title: Your *first season* coaching. What actually matters.
 dek: You said yes. Here's what to do next.
 seoDescription: You just volunteered to coach 8-year-olds and have no idea what you're doing. Here's what actually matters in your first season: what you control, what you don't, and the three things that make it survivable.
-topic: coaching
+topic: the-hard-stuff
 format: essay
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 5-7
 publishedAt: 2026-06-11
 featured: true
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Someone needed a coach. You said yes. Now you're standing in a parking lot wondering what you agreed to.

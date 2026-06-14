@@ -3,7 +3,7 @@ title: "The *first night* speech. What to say, what to skip."
 seoTitle: "First Night of the Season Speech for Volunteer Youth Coaches"
 seoDescription: "The 5-minute talk that sets the tone for your whole season. What to cover, what to cut, and the three things every parent needs to hear on night one."
 summary: "The first night of the season sets the tone for everything that follows. The five-minute version that actually works, and what to leave out."
-moment: "coach-first-night-speech"
+moment: before-a-game
 publishedAt: 2026-06-11
 featured: false
 whatTheyAreFeeling:

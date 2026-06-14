@@ -61,4 +61,4 @@ If your kid does not make the team they tried out for, find out what the next op
 
 That is not consolation. That is often where more playing time actually lives.
 
-The drive home after the last tryout day: three words. How'd it go. Then stop talking and listen.
+The drive home after the last tryout day: three words. How'd it go. Then stop talking and lis

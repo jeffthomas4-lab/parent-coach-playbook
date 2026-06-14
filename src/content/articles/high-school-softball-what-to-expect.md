@@ -47,4 +47,4 @@ That's not a cold system. It's how accountability develops in teenage athletes.
 
 **The thing to say before the season.** "I'm here to support you, not manage your season." Say it once. Then do it.
 
-**Gear check.** Confirm your kid has USA Softball-certified bats, cleats that fit, and a properly certified batting helmet with face guard before tryouts. Showing up with non-compliant gear is avoidable and creates a bad first impression.
+**Gear check.** Confirm your kid has USA Softball-certified bats, cleats that fit, and a properly certified batting helmet with face guard before tryouts. Showing up with non-compliant gear is avoidable and creates a bad first impressi

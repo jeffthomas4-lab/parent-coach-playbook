@@ -11,7 +11,17 @@ age: 8-10
 publishedAt: 2026-02-05
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-06
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The coach tells you. Or another parent tells you. Or you see it yourself: your kid was unkind to a teammate. They made fun of them or excluded them or spoke harshly to them.

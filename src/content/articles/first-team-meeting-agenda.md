@@ -2,7 +2,7 @@
 title: Your *first team meeting* agenda.
 dek: What to cover, in what order, in 30 minutes.
 seoDescription: Your first team meeting with 8-10 year old players doesn't need to be complicated. Here's a time-blocked agenda, what to say in the first five minutes, and what to skip entirely.
-topic: coaching
+topic: the-hard-stuff
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 8-10
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The first meeting sets the tone for the whole season. Keep it short. Keep it moving. The kids are nervous and so are you. That's fine. Here's what to do.

@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -47,4 +47,4 @@ The bigger lesson underneath all of this is the one most worth teaching. We do n
 
 Programs that treat injured players as full team members are teaching something different. They are teaching that commitment, presence, and identity as a teammate survive adversity. That is not a small thing.
 
-The kid who goes through a hard injury as part of a team that handled it well has one more story about what it looks like when people show up for each other. That story follows them. Coaches who create that experience do not always know they did it. But the kid knows.
+The kid who goes through a hard injury as part of a team that handled it well has one more story about what it looks like when people show up for each other. That story follows them. Coaches who create that experience do not always know they did it. But the kid kno

@@ -8,7 +8,7 @@ format: "essay"
 phase: "game"
 sport: "soccer"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -45,4 +45,4 @@ What ruins the game for your kid: parents who shout instructions. There are alre
 
 Cheer, applaud good plays, and stay quiet about mistakes. That is the whole job.
 
-After the game, ask your kid one question: what moment felt best to you. Not "did you win," not "why didn't you score," not "what was the coach doing." What felt best. That question lands differently than anything else, and the answer usually tells you a lot.
+After the game, ask your kid one question: what moment felt best to you. Not "did you win," not "why didn't you score," not "what was the coach doing." What felt best. That question lands differently than anything else, and the answer usually tells you a l

@@ -13,6 +13,18 @@ age: 11-12
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You knew on Tuesday. The list went up Friday. Sometime between Friday afternoon and Saturday morning, your kid figures out their best friend isn't on the roster, and the kid wasn't told by his own parents because they're hoping you'll fix it.

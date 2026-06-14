@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "5-7"
 publishedAt: 2026-04-18
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Monday morning. 8:53am. You're in the parking lot of your kid's first ever summer camp. Your five-year-old is in the back seat with a backpack twice his size. He has the look of a kid who is processing more than he's saying.
@@ -75,6 +87,6 @@ If they don't, by Wednesday, that's a different conversation. But almost every k
 
 ---
 
-Looking for camps for first-time campers? <a href="/camps/?age=5-7">Browse camps for ages 5–7</a>.
+Looking for camps for first-time campers? <a href="/camps/?age=5-7">Browse camps for ages 5, 7</a>.
 
 Run a camp? <a href="/camps/submit/">Add your listing</a>. Camps that publish a clear drop-off plan reduce parent anxiety.

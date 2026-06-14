@@ -11,6 +11,18 @@ publishedAt: 2026-04-25
 featured: false
 hero: /illustrations/bench-moment-during-game.webp
 heroAlt: "A high school athlete sitting on the team bench during a game, fully suited, watching teammates play."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Our 15-year-old wasn't starting. They came home frustrated and angry. Our instinct was to advocate for them. Text the coach. Tell them they were wrong. Tell our kid they're better than the starter.

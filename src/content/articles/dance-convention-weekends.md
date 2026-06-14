@@ -10,19 +10,31 @@ sport: "dance"
 age: "13-14"
 publishedAt: "2026-05-12"
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The studio sent home the fall convention schedule in a thick manila envelope, and your daughter circled the February one in pink Sharpie before you even saw it. $400 entry fee. Hotel block at $230 a night. The convention is in a city six hours away. You haven't said yes yet. Here's what a convention actually is and how to decide whether this is the year.
 
 ## What a convention is
 
-A dance convention is a weekend-long workshop where dancers take classes from a panel of guest teachers — usually well-known choreographers, professional dancers, or industry working artists. The schedule typically runs three days, Friday evening through Sunday afternoon, with dancers taking six to eight classes total across the weekend, each about an hour, covering styles like jazz, contemporary, hip hop, ballet, lyrical, tap, and improvisation.
+A dance convention is a weekend-long workshop where dancers take classes from a panel of guest teachers, usually well-known choreographers, professional dancers, or industry working artists. The schedule typically runs three days, Friday evening through Sunday afternoon, with dancers taking six to eight classes total across the weekend, each about an hour, covering styles like jazz, contemporary, hip hop, ballet, lyrical, tap, and improvisation.
 
 A convention is different from a competition. A competition is about performance and scoring; a convention is about learning. Many conventions include an optional competition element, but the workshop classes are the main draw.
 
 ## The big convention companies
 
-A handful of national convention companies run multi-city tours. Each has its own format and faculty, with some connected to media presence (television shows, social media followings) and some more focused on technical training. The names change, but the patterns are similar — most run September through May, most visit major cities for one weekend each, most attract several hundred dancers from regional studios.
+A handful of national convention companies run multi-city tours. Each has its own format and faculty, with some connected to media presence (television shows, social media followings) and some more focused on technical training. The names change, but the patterns are similar, most run September through May, most visit major cities for one weekend each, most attract several hundred dancers from regional studios.
 
 ## What your kid will do
 
@@ -38,15 +50,15 @@ All in, a convention weekend costs seven hundred to fifteen hundred per kid. The
 
 ## Why it might be worth it
 
-A few real reasons conventions are valuable. Exposure to top teachers — she spends a weekend taking classes from people she otherwise sees only on social media, and the technique she picks up is real. Cross-training in styles — a kid who normally does jazz and contemporary at the studio will take ballet, tap, and hip hop at a convention, and the exposure broadens her training. Peer benchmarking — she sees dancers from other studios across the region and learns where she stands, which is sometimes humbling, sometimes encouraging, always useful. Scholarship opportunities — many conventions offer scholarships to summer intensives or year-round programs, and some are real, so your kid might get noticed. Stamina — six classes in a weekend builds work capacity, and the kid who can dance through a convention can handle anything the studio throws at her.
+A few real reasons conventions are valuable. Exposure to top teachers, she spends a weekend taking classes from people she otherwise sees only on social media, and the technique she picks up is real. Cross-training in styles, a kid who normally does jazz and contemporary at the studio will take ballet, tap, and hip hop at a convention, and the exposure broadens her training. Peer benchmarking, she sees dancers from other studios across the region and learns where she stands, which is sometimes humbling, sometimes encouraging, always useful. Scholarship opportunities, many conventions offer scholarships to summer intensives or year-round programs, and some are real, so your kid might get noticed. Stamina, six classes in a weekend builds work capacity, and the kid who can dance through a convention can handle anything the studio throws at her.
 
 ## Why it might not be worth it
 
-A few reasons to skip. The kid is a beginner — conventions assume a level of technique, and a first or second year dancer will be in over her head and frustrated. The family budget is tight — the math is real, and if you can't afford one without straining, you can do without. The kid is overscheduled — two or three conventions a year on top of regular classes and competitions burns out most kids by fifteen. The convention is a marketing vehicle — some conventions are great, some are mostly there to sell merchandise and additional services. Ask other parents and the studio director which conventions are worth it.
+A few reasons to skip. The kid is a beginner, conventions assume a level of technique, and a first or second year dancer will be in over her head and frustrated. The family budget is tight, the math is real, and if you can't afford one without straining, you can do without. The kid is overscheduled, two or three conventions a year on top of regular classes and competitions burns out most kids by fifteen. The convention is a marketing vehicle, some conventions are great, some are mostly there to sell merchandise and additional services. Ask other parents and the studio director which conventions are worth it.
 
 ## Picking the right convention
 
-If your studio offers multiple convention options, here's how to pick. The one with the best faculty for your kid's level — some conventions specialize in younger dancers, some are best for serious teens. Ask the studio. The one closest to home — travel costs add up, and if a convention in a nearby city is competitive in quality, prefer it. The one where your kid's friends are going — convention weekends are bonding experiences, and a kid going with three studio friends has a different weekend than a kid going alone.
+If your studio offers multiple convention options, here's how to pick. The one with the best faculty for your kid's level, some conventions specialize in younger dancers, some are best for serious teens. Ask the studio. The one closest to home, travel costs add up, and if a convention in a nearby city is competitive in quality, prefer it. The one where your kid's friends are going, convention weekends are bonding experiences, and a kid going with three studio friends has a different weekend than a kid going alone.
 
 ## The scholarship question
 
@@ -56,11 +68,11 @@ If your kid receives a scholarship, that's a real validation of her work. Celebr
 
 ## What to pack
 
-A few essentials. Dance shoes for every style she'll be taking — jazz shoes, ballet flats, tap shoes, sneakers for hip hop, and some conventions have a list, so follow it. Multiple changes of dance clothes; she'll sweat through several outfits per day. A foam roller or massage ball, because she'll be sore by Saturday night and self-massage tools help. An insulated water bottle, refilled often. Snacks — bananas, protein bars, peanut butter sandwiches, electrolyte drinks — because the convention venue usually has overpriced bad food. A notebook and pen if she likes to write down corrections and choreography notes. A small first aid kit with blister bandages, athletic tape, ibuprofen.
+A few essentials. Dance shoes for every style she'll be taking, jazz shoes, ballet flats, tap shoes, sneakers for hip hop, and some conventions have a list, so follow it. Multiple changes of dance clothes; she'll sweat through several outfits per day. A foam roller or massage ball, because she'll be sore by Saturday night and self-massage tools help. An insulated water bottle, refilled often. Snacks, bananas, protein bars, peanut butter sandwiches, electrolyte drinks, because the convention venue usually has overpriced bad food. A notebook and pen if she likes to write down corrections and choreography notes. A small first aid kit with blister bandages, athletic tape, ibuprofen.
 
 ## After the convention
 
-The kid will come home wiped out. Give her Sunday night and Monday to recover; she'll be physically sore for two or three days. The growth from a convention is real but takes time to settle — sometimes the kid comes home with a new technique she just learned and uses it in class for weeks, sometimes the growth is invisible and shows up months later. Either way, don't over-evaluate the weekend immediately. Let it sit. Ask her again in a month what she remembers.
+The kid will come home wiped out. Give her Sunday night and Monday to recover; she'll be physically sore for two or three days. The growth from a convention is real but takes time to settle, sometimes the kid comes home with a new technique she just learned and uses it in class for weeks, sometimes the growth is invisible and shows up months later. Either way, don't over-evaluate the weekend immediately. Let it sit. Ask her again in a month what she remembers.
 
 ## A final note
 

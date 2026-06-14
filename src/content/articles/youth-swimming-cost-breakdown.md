@@ -37,4 +37,4 @@ Elite age-group and senior club is where cost stops having a clear ceiling. Mont
 
 Gear costs are low relative to hockey or gymnastics, but they are recurring. Competitive suits wear out faster than training suits. Tech suits (worn for major meets) cost $150 to $600 and most elite swimmers have more than one. Training suits need replacing every few months with heavy use.
 
-The one fee that surprises people consistently: USA Swimming annual membership, which is required for all sanctioned club competition, runs $70 to $90 per year.
+The one fee that surprises people consistently: USA Swimming annual membership, which is required for all sanctioned club competition, runs $70 to $90 per y

@@ -11,6 +11,18 @@ sport: basketball
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 AAU basketball has the biggest gap in youth sports between the quoted price and the real one. The program fee sounds manageable. The season costs double to triple it. Here are the honest numbers, from our [cost calculator](/cost-calculator/) defaults, anchored to published AAU program fees and Project Play survey data.
@@ -31,8 +43,8 @@ Run [your real number](/cost-calculator/) before tryouts, read the [travel decis
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth rubber basketball →](/go/basketball-ball-rubber/) — a solid pick for youth basketball players.
+[Youth rubber basketball →](/go/basketball-ball-rubber/), a solid pick for youth basketball players.
 
-[Full Basketball gear guide →](/what-to-buy/basketball/) — all picks by age and level.
+[Full Basketball gear guide →](/what-to-buy/basketball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

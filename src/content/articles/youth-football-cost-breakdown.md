@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "football"
 age: "all-ages"
-topic: "money"
+topic: equipment
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -55,4 +55,4 @@ What families do not budget for: the second kid joining the following year, gear
 
 Financial assistance programs exist at most youth league levels. Pop Warner, USA Football, and most city recreation departments have scholarship funds that rarely get tapped because families do not know to ask.
 
-Call the registrar. The money is usually there.
+Call the registrar. The money is usually the

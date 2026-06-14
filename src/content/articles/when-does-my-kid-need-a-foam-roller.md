@@ -2,7 +2,7 @@
 title: When does my kid actually need a foam roller?
 dek: The age and sport that change the answer.
 seoDescription: Most kids under 10 don't need a foam roller at all. Here's the age when it starts to matter, which sports make it more urgent, and the three signs that tell you it's time.
-topic: recovery
+topic: the-hard-stuff
 format: note
 phase: drive-home
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 11-12
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The short answer: probably not before age 10, and not urgently before 12. After that, it depends on the sport and the training load.

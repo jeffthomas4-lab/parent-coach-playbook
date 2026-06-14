@@ -2,7 +2,7 @@
 title: Managing the *tournament day* when you have three games.
 dek: The gaps between games are where it goes wrong.
 seoDescription: How to manage a tournament day with multiple games. What to do in the gaps between games, how to keep your athlete fueled and rested, how to handle siblings, and how to hold the day together without burning everyone out.
-topic: tournament
+topic: season-ops
 format: note
 phase: game
 sport: multi-sport
@@ -10,7 +10,17 @@ age: 11-12
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Three games in a day means two gaps. Those gaps are where the day either holds together or falls apart.

@@ -41,4 +41,4 @@ What you will see on the field: the assistant referee (linesperson) runs the lin
 
 The honest disclaimer: at youth levels under age 12, many leagues do not enforce offside strictly, or waive it entirely, to let players focus on other skills. If your 8-year-old was called offside and you are confused about it, the youth program may be experimenting with partial enforcement.
 
-Ask the coach what the league rules are. The answer varies.
+Ask the coach what the league rules are. The answer varies

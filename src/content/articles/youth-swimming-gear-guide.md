@@ -53,4 +53,4 @@ Only relevant for serious club swimmers competing at championship-level meets. T
 
 **Fins**
 
-Used in training. The club provides them. Do not buy fins unless your coach specifically assigns them for at-home dryland.
+Used in training. The club provides them. Do not buy fins unless your coach specifically assigns them for at-home d

@@ -15,7 +15,17 @@ hero: /illustrations/team-snack-table.webp
 heroAlt: A folding table at the side of a youth sports field set with juice boxes,
   granola bars, sliced oranges, and a printed snack rotation list.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-29
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Most rec teams of six-year-olds have a snack rotation. Most rotations fall apart by week four because no one knows whose turn it is.

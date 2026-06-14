@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -45,4 +45,4 @@ It is also less fragile. When the three-goal game does not repeat next week, the
 
 The long game here is the one that matters most. Kids who experience the car ride as safe and unconditional are more likely to stay in sports through the hard stretches, more likely to take competitive risks because failure is not followed by a debrief, and more likely to build the kind of confidence that holds up when the results do not.
 
-The car ride is not a minor variable. It is the frame around everything else the sport is trying to do.
+The car ride is not a minor variable. It is the frame around everything else the sport is trying to 

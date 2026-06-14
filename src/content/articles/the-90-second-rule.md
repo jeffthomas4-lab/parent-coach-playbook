@@ -18,7 +18,17 @@ heroAlt: Close-up of parent's hands on steering wheel, looking through windshiel
   with child's head visible in rearview mirror. Dashboard clock reads 4:47 PM, late-afternoon
   honey light.
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-27
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 My kid went 0 for 4 last Saturday. I was the assistant coach on his team. I was also his dad. Complicated set of facts to drive home with.

@@ -11,7 +11,17 @@ age: 15-plus
 publishedAt: 2026-03-10
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-26
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 At fifteen and up, some kids walk away from travel ball. They're burned out or ready to do something else. This is normal. Treating it like a failure is the mistake.
@@ -42,4 +52,4 @@ They're learning that their preferences matter. That their energy is their own. 
 
 If they're done, they're done. Let them be done. That's actually winning.
 
-John O'Sullivan's [*Changing the Game*](/go/book-changing-the-game/) covers this exact moment — what it looks like when a kid walks away from a sport on their own terms versus being pushed out the door.
+John O'Sullivan's [*Changing the Game*](/go/book-changing-the-game/) covers this exact moment, what it looks like when a kid walks away from a sport on their own terms versus being pushed out the door.

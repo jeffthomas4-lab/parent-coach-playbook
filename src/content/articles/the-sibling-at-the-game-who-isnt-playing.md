@@ -12,6 +12,18 @@ age: all-ages
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 She is six. She has been at the volleyball tournament since 8 a.m. It is now 4:15. Her sister has played four matches and is about to play a fifth. She has eaten two pretzels, watched 20 minutes of a movie on someone's phone, and asked four times when they're going home.

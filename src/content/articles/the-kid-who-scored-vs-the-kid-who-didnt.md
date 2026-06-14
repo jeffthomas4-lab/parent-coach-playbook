@@ -12,7 +12,17 @@ age: 8-10
 publishedAt: 2026-02-19
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-28
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Saturday game. Your son scored the winning goal. His sister, on a different field, had a tough game and barely touched the ball.

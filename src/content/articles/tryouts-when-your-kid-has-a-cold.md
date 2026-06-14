@@ -11,7 +11,17 @@ age: 11-12
 publishedAt: 2026-02-08
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-10
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Friday night. Tryouts are tomorrow at 9. Your kid has a runny nose and a cough. He says he feels okay-ish. You don't know what to do.

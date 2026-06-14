@@ -11,7 +11,17 @@ age: 15-plus
 publishedAt: 2026-02-20
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-04-29
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It was March and we were running twelve practices a week across three age groups. We needed help but the budget was flat. So we sent an email to our former players. We asked if anyone with a job and a car and a free Thursday evening wanted to run one drill station. Five said yes.

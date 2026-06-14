@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "5-7"
 publishedAt: 2026-04-06
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The carpool fights I see are not about who is driving. They are about confusion. Confusion gets resolved on game day, at 7:48am, when one parent realizes the other parent thought it was a different week.

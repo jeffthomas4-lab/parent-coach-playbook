@@ -45,4 +45,4 @@ The hard case: the junior who is still on JV. This is where the parent conversat
 
 A junior on JV is not automatically a story of failure. Some kids develop physically later than their peers and go from JV junior to starting senior. But it is worth having a direct conversation with the coaching staff about what the path looks like.
 
-What to ask the coach: "What does he need to do to earn a varsity role?" That question gets you an actionable answer. "Why is he not on varsity" tends to get you a defensive one.
+What to ask the coach: "What does he need to do to earn a varsity role?" That question gets you an actionable answer. "Why is he not on varsity" tends to get you a defensive o

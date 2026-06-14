@@ -12,7 +12,17 @@ age: 11-12
 publishedAt: 2026-03-03
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-15
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Travel season hits hard on laundry. Two practices a week. Two games on weekends. Tournaments. Two complete uniforms. Sweatpants for warm-up. White socks. Black socks. Game-day socks.

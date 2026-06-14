@@ -11,7 +11,17 @@ age: 5-7
 publishedAt: 2026-01-05
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-10
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Twenty-five minutes is your window. Longer and you lose them to fatigue and distraction. Shorter and the practice feels incomplete. Here's what fits into that time.

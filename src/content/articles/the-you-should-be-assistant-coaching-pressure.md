@@ -11,6 +11,18 @@ publishedAt: 2026-03-29
 featured: false
 hero: /illustrations/you-should-be-assistant-coaching-pressure.webp
 heroAlt: "A parent in the stands holding a clipboard handed up from the field, weighing whether to take it."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The head coach pulled you aside. *We could really use you as an assistant. You played in college. The team would love it.*

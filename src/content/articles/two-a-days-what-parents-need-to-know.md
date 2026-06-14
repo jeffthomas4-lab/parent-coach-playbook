@@ -45,4 +45,4 @@ The kid who stays up until midnight on his phone during two-a-day week is not re
 
 The mental side: two-a-days separate the kids who showed up in shape from the ones who did not. That is partly the point.
 
-The first week tells the coaching staff a lot about who put in work over the summer and who is starting from scratch. Your kid already knows which one they are.
+The first week tells the coaching staff a lot about who put in work over the summer and who is starting from scratch. Your kid already knows which one they a

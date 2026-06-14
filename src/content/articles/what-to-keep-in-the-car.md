@@ -2,7 +2,7 @@
 title: What to Keep in the Car *All Season*
 dek: The trunk kit that handles the 7am Saturday tournament and every game day between.
 seoDescription: Game day car kit for youth sports parents. What snacks, water bottles, electrolytes, and cooler gear to keep in the car all season so you're ready for early morning tournaments and last-minute game days.
-topic: nutrition
+topic: the-hard-stuff
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The 7am Saturday tournament scenario: alarm goes off at 5:45, your kid isn't hungry, you leave the house at 6:15, the gas station is the only stop you're making. By 9am they're in their second game and they've eaten a granola bar from the checkout aisle.

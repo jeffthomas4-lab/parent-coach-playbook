@@ -10,7 +10,17 @@ age: "all-ages"
 publishedAt: 2026-03-13
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-22
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Two real questions parents face. Should my kid play up an age group? Should my kid play down an age group?

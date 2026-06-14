@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -55,4 +55,4 @@ If the coach gives you an honest answer about what your kid needs to improve, ta
 
 Some coaches are not good at this. Not every situation is fixable from your side.
 
-What not to say to your kid: "The coach has it out for you." Once you say that, you have handed them an external explanation for their own development gaps, and those gaps do not close with external explanations.
+What not to say to your kid: "The coach has it out for you." Once you say that, you have handed them an external explanation for their own development gaps, and those gaps do not close with external explan

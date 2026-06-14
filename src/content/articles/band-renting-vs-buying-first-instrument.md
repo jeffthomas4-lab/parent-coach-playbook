@@ -15,13 +15,25 @@ sport: band
 age: 8-10
 publishedAt: '2026-05-12'
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The music store on a Saturday morning in August has a line out the door, and every kid in the district who signed up for band is in it with a parent and a flyer and a slightly confused look. The salesperson is pleasant, the rental contract is laminated, and you sign and walk out with a beginner clarinet in a hard case the size of a shoebox. Then you do the math in the car, and the numbers are bigger than you expected. Here's what the math actually says, and what most parents wish they'd known before they signed.
 
 ## What the rental usually costs
 
-A typical twelve-month school band rental for a clarinet, flute, trumpet, or trombone runs about thirty to fifty dollars a month — call it three-sixty to six hundred for year one. Some shops include "maintenance" or "insurance" in the monthly rate, and some bill it separately, so read the contract. Larger instruments like saxophones, French horns, and oboes run higher, and cello and double bass rentals run higher still and usually require a separate school orchestra contract.
+A typical twelve-month school band rental for a clarinet, flute, trumpet, or trombone runs about thirty to fifty dollars a month, call it three-sixty to six hundred for year one. Some shops include "maintenance" or "insurance" in the monthly rate, and some bill it separately, so read the contract. Larger instruments like saxophones, French horns, and oboes run higher, and cello and double bass rentals run higher still and usually require a separate school orchestra contract.
 
 The price isn't crazy for the first year. The problem is what happens in year two.
 
@@ -33,7 +45,7 @@ Some shops offer a discount if you pay the rental balance off in the first ninet
 
 ## What to actually do in year one
 
-Rent. Use the rental as a no-commitment first year with the simplest contract you can sign, month to month, and skip the rent-to-own. This buys your kid twelve months to find out if he actually likes band, and about thirty percent of beginning band students quit by the end of year one — you do not want an expensive used clarinet in the basement.
+Rent. Use the rental as a no-commitment first year with the simplest contract you can sign, month to month, and skip the rent-to-own. This buys your kid twelve months to find out if he actually likes band, and about thirty percent of beginning band students quit by the end of year one, you do not want an expensive used clarinet in the basement.
 
 A few rental traps to dodge while you're at it. Don't pay annual maintenance upfront; bill it monthly so you can stop. Don't pay insurance through the rental shop; add the instrument to your home insurance for a fraction of the shop's policy. And don't let the shop talk you into a step-up model in year one, no matter how nicely they try.
 
@@ -41,7 +53,7 @@ A few rental traps to dodge while you're at it. Don't pay annual maintenance upf
 
 If he sticks with band, this is when you buy. Ask the band director two questions: what brand and model do you recommend for an intermediate-level player on this instrument, and do you know anyone selling a used one. Most directors will give you two or three brands they prefer, and many of them know which families have kids who upgraded or graduated and are looking to sell.
 
-The director-referred used instrument is almost always the best option. Older students upgrade, parents want to sell, the director knows which instruments were taken care of, and you'll usually pay forty to sixty percent of the new price. If no referral is available, the next best option is a reputable online seller of used band instruments — look for one that includes a thirty-day return policy and has a repair tech on staff. Avoid eBay unless you can examine the instrument in person.
+The director-referred used instrument is almost always the best option. Older students upgrade, parents want to sell, the director knows which instruments were taken care of, and you'll usually pay forty to sixty percent of the new price. If no referral is available, the next best option is a reputable online seller of used band instruments, look for one that includes a thirty-day return policy and has a repair tech on staff. Avoid eBay unless you can examine the instrument in person.
 
 ## Instruments to never buy new from a big-box store
 
@@ -51,7 +63,7 @@ The brand names every band director will recognize are listed by every band dire
 
 ## When to consider a professional instrument
 
-You don't need one until late high school at the earliest. A kid playing a beginning band concert doesn't benefit from a professional clarinet. A kid heading into the audition season for college music programs is another story — that's when the spend makes sense. Until then, the intermediate used instrument you bought in year two is fine.
+You don't need one until late high school at the earliest. A kid playing a beginning band concert doesn't benefit from a professional clarinet. A kid heading into the audition season for college music programs is another story, that's when the spend makes sense. Until then, the intermediate used instrument you bought in year two is fine.
 
 ## A short word on saxophones
 

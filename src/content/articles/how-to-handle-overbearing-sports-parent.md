@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -53,4 +53,4 @@ Most of the parents who present as problems in the first month are parents who d
 
 And remind yourself regularly that this parent and you want the exact same thing: a positive experience for the kid who is connecting both of you. That shared interest is the ground you always have to work from.
 
-The goal is partnership. Not agreement on every decision. Not absence of conflict. Partnership, where both sides are pulling toward the same outcome for the same person. Most overbearing parents will land there if you give them a path to it. Some will not. But you owe them the path before you decide they are the second kind.
+The goal is partnership. Not agreement on every decision. Not absence of conflict. Partnership, where both sides are pulling toward the same outcome for the same person. Most overbearing parents will land there if you give them a path to it. Some will not. But you owe them the path before you decide they are the second ki

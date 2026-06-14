@@ -11,6 +11,18 @@ sport: gymnastics
 age: all-ages
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 A gymnastics meet is a four-hour session where your athlete competes for roughly six total minutes. The bag has one job: keep her warm, fed, taped, and calm during the other three hours and fifty-four minutes.
@@ -57,8 +69,8 @@ The bag packs the night before, the leo gets confirmed against the team's meet s
 
 **Gear mentioned in this article** (affiliate)
 
-[Resistance bands set →](/go/resistance-bands-set/) — a solid pick for youth gymnastics players.
+[Resistance bands set →](/go/resistance-bands-set/), a solid pick for youth gymnastics players.
 
-[Full Gymnastics gear guide →](/what-to-buy/gymnastics/) — all picks by age and level.
+[Full Gymnastics gear guide →](/what-to-buy/gymnastics/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

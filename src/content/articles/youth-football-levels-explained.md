@@ -53,4 +53,4 @@ This is where the sport becomes the sport. Practice runs every day during the se
 
 Where your kid fits in this map: look at who is playing at the level above your kid's current program. Ask yourself honestly whether your kid would compete there.
 
-That question is not about talent alone. It is about whether your kid actually wants to train at that intensity.
+That question is not about talent alone. It is about whether your kid actually wants to train at that inte

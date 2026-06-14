@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-home"
 sport: "soccer"
 age: "11-12"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -55,4 +55,4 @@ Something harder: occasionally the reason is something heavier, a coach who has 
 
 Finishing the season: reasonable to ask, not reasonable to demand. "Can you finish this season?" is a fair question.
 
-Requiring a miserable kid to grind through two more months while they count down the weeks is not building character. It is building resentment.
+Requiring a miserable kid to grind through two more months while they count down the weeks is not building character. It is building resent

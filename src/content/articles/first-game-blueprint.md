@@ -25,7 +25,7 @@ editorial:
   reviewerNotes: ""
 ---
 
-The first game of the season is its own category of event. The team has practiced together. They know the drills, they know the system, they know each other's names. But competition is different from practice in ways that can't fully be prepared for, and for most kids — especially the younger ones, especially the ones new to the sport — the first game contains a degree of disorientation that coaches underestimate.
+The first game of the season is its own category of event. The team has practiced together. They know the drills, they know the system, they know each other's names. But competition is different from practice in ways that can't fully be prepared for, and for most kids, especially the younger ones, especially the ones new to the sport, the first game contains a degree of disorientation that coaches underestimate.
 
 New environment. Different sounds and sight lines. Parents watching in numbers for the first time. Actual opposition. An official or referee. Scoreboard. The stakes of the thing feel different even if the outcome doesn't count for much. Kids feel all of that before the opening whistle, and some of them manage it fine and some of them go somewhere far away from their best selves before the first play.
 
@@ -37,19 +37,19 @@ The coach's job in the first game is not to win. It's to manage the experience w
 
 The most useful thing you can do in the 48 hours before the first game is name what's about to happen. Kids who know what to expect aren't surprised. Kids who are surprised shut down.
 
-At the last practice before the first game, walk the team through what game day will look like. Where to be and when. What to bring. What warm-ups will feel like. What the environment will be — the crowd, the noise level, the structure of how the game starts. If it's an unfamiliar venue, describe it or, better, let someone who's been there describe it. "The gym is louder than our gym, especially at tip-off." "The field might be wetter if it rained this week." "There will be a few hundred parents there and it's going to feel like a lot."
+At the last practice before the first game, walk the team through what game day will look like. Where to be and when. What to bring. What warm-ups will feel like. What the environment will be, the crowd, the noise level, the structure of how the game starts. If it's an unfamiliar venue, describe it or, better, let someone who's been there describe it. "The gym is louder than our gym, especially at tip-off." "The field might be wetter if it rained this week." "There will be a few hundred parents there and it's going to feel like a lot."
 
-Then address the anxiety directly. Not dismissively — "Don't worry, you'll be fine" is not an address. Something like: "Some of you will feel nervous before the first game. That's normal. Your body can't tell the difference between nervous and excited, so treat it the same way. The feeling means you care. It doesn't mean you're not ready." That framing gives kids a way to interpret the feeling rather than just experiencing it as a problem.
+Then address the anxiety directly. Not dismissively, "Don't worry, you'll be fine" is not an address. Something like: "Some of you will feel nervous before the first game. That's normal. Your body can't tell the difference between nervous and excited, so treat it the same way. The feeling means you care. It doesn't mean you're not ready." That framing gives kids a way to interpret the feeling rather than just experiencing it as a problem.
 
 ---
 
 **Pregame**
 
-The tone you set in the pregame window — the 20 to 30 minutes before the game starts — is the tone the team carries into the first play. Coaches who spend that window doing tactical reviews and giving instructions are filling up a container that's already close to full. The team doesn't need more information in the pregame. They need to feel ready.
+The tone you set in the pregame window, the 20 to 30 minutes before the game starts, is the tone the team carries into the first play. Coaches who spend that window doing tactical reviews and giving instructions are filling up a container that's already close to full. The team doesn't need more information in the pregame. They need to feel ready.
 
 Keep the pregame warm-up structured but light. The physicality should get bodies moving without putting them in high-demand situations before the game. If your warm-up looks like a 30-minute technical review, you're burning fuel. If it looks like 15 minutes of rhythm-building movement with the drills they already know, you're priming the right engine.
 
-The pregame talk is short. Not because you have nothing to say — because the talk is more for you than for them and they are not in a state to absorb much. What they can absorb in three minutes of clarity beats what they'll retain from ten minutes of thoroughness. Tell them one thing to focus on. Not the scoreboard. Something they control: "Play your game, trust what we've practiced, and don't let one mistake turn into two." That's enough. Then you go.
+The pregame talk is short. Not because you have nothing to say, because the talk is more for you than for them and they are not in a state to absorb much. What they can absorb in three minutes of clarity beats what they'll retain from ten minutes of thoroughness. Tell them one thing to focus on. Not the scoreboard. Something they control: "Play your game, trust what we've practiced, and don't let one mistake turn into two." That's enough. Then you go.
 
 ---
 
@@ -57,9 +57,9 @@ The pregame talk is short. Not because you have nothing to say — because the t
 
 The first few minutes will be rough regardless of what you've done to prepare. This is predictable and not a failure. The team is adjusting to actual competition for the first time this season. Let them adjust.
 
-The coaching mistake that shows up most often in the first game is over-correction early — stopping things at the first sign of error, making substitutions before kids have had time to find their footing, adding instructions in real time that contradict the simplicity you set up in the pregame. That kind of coaching in the first game teaches the team that they're always one mistake from getting pulled, which makes them tentative at exactly the moment they should be gaining confidence.
+The coaching mistake that shows up most often in the first game is over-correction early, stopping things at the first sign of error, making substitutions before kids have had time to find their footing, adding instructions in real time that contradict the simplicity you set up in the pregame. That kind of coaching in the first game teaches the team that they're always one mistake from getting pulled, which makes them tentative at exactly the moment they should be gaining confidence.
 
-Read the team rather than the score in the first game. If they're playing with energy, that's more valuable than whether they're executing perfectly. If they're tightening up — getting quiet, making the safe play every time, not talking to each other — that's your signal to do something that loosens the temperature. Call a timeout when they need one, not when the score dictates it. Talk to the kid who's visibly in their own head by name, on the sideline, quickly: "Hey. You're fine. Play your game." That's sometimes all it takes.
+Read the team rather than the score in the first game. If they're playing with energy, that's more valuable than whether they're executing perfectly. If they're tightening up, getting quiet, making the safe play every time, not talking to each other, that's your signal to do something that loosens the temperature. Call a timeout when they need one, not when the score dictates it. Talk to the kid who's visibly in their own head by name, on the sideline, quickly: "Hey. You're fine. Play your game." That's sometimes all it takes.
 
 ---
 
@@ -67,7 +67,7 @@ Read the team rather than the score in the first game. If they're playing with e
 
 Halftime is ten minutes, which means you have seven minutes of actual coaching time after water and whatever logistical things need to happen. Use it deliberately.
 
-Start with the positive. Not generic positive — specific. Something that actually happened in the first half that was good. "The transition defense in the third rotation was exactly what we practiced. I saw it work three times." Then one adjustment. Not three adjustments. One. Something concrete they can carry back out: "Second half, we're going to push the pace in the first thirty seconds of every possession. That's the only change." Then close with energy. The team should walk back out feeling like the second half is a clean opportunity, not a correction of the first.
+Start with the positive. Not generic positive, specific. Something that actually happened in the first half that was good. "The transition defense in the third rotation was exactly what we practiced. I saw it work three times." Then one adjustment. Not three adjustments. One. Something concrete they can carry back out: "Second half, we're going to push the pace in the first thirty seconds of every possession. That's the only change." Then close with energy. The team should walk back out feeling like the second half is a clean opportunity, not a correction of the first.
 
 The halftime where the coach is still talking when they need to be walking back out is a halftime that went wrong. Say less. Say it clearly. Let them go.
 
@@ -83,4 +83,4 @@ After a first game win: be careful here. The win can feel like confirmation that
 
 ---
 
-The first game is a foundation, not a ceiling. Whatever happened in it — however rough, however uncertain, however far from what you imagined in practice — it gave you and your team information. What they're ready for. Where the gaps are. Who is going to step up and who is going to need more time. That information is what the rest of the season is built on. Welcome it, regardless of the scoreboard.
+The first game is a foundation, not a ceiling. Whatever happened in it, however rough, however uncertain, however far from what you imagined in practice, it gave you and your team information. What they're ready for. Where the gaps are. Who is going to step up and who is going to need more time. That information is what the rest of the season is built on. Welcome it, regardless of the scoreboard.

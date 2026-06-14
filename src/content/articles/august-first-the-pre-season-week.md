@@ -12,6 +12,18 @@ age: 13-14
 publishedAt: 2026-05-13
 featured: false
 draft: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The first week of August. Pre-season is here. School is right behind it.
@@ -56,4 +68,4 @@ That's the script. Three sentences.
 
 The school year starts soon. The team forms. The season begins. Show up rested, hydrated, ready to compete with the body the kid actually has, not the body they imagined in May.
 
-[The August fitness test](/drive-there/the-august-fitness-test/) covers the conditioning prep. [Before a game at 13–14](/scripts/before-a-game-13-14/) is the pre-event script.
+[The August fitness test](/drive-there/the-august-fitness-test/) covers the conditioning prep. [Before a game at 13, 14](/scripts/before-a-game-13-14/) is the pre-event script.

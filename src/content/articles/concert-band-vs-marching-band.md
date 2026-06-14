@@ -47,7 +47,7 @@ Marching band at the high school level typically runs August through November. T
 
 Most kids encounter marching band for the first time as incoming high school freshmen. Some middle schools have a marching component, but it is less common and less demanding than the high school version.
 
-**Which one fits a 11–12 year old**
+**Which one fits a 11, 12 year old**
 
 At this age, the honest answer is concert band. It is where instrument skills get built and the ensemble habits that marching band will require later get established. Some 11 and 12-year-olds are in middle school programs with a light marching component.
 
@@ -59,4 +59,4 @@ The question to ask right now is whether your kid practices consistently at home
 
 Kids who arrive in high school band with strong foundational skills from middle school concert band are the ones who tend to get placed in higher ensembles and have better marching band experiences. The two programs are sequential in practice even when they are not formally structured that way.
 
-If your kid is serious about music, the path is clear: concert band now, build the instrument skills, ask about the high school program in eighth grade, and make the marching decision with full information.
+If your kid is serious about music, the path is clear: concert band now, build the instrument skills, ask about the high school program in eighth grade, and make the marching decision with full information

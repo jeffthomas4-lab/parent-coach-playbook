@@ -53,4 +53,4 @@ What good coaching looks like at this age: coaches who explain the why, not just
 
 Kids at 8-10 learn better when they understand the purpose of what they are doing. A coach who only yells corrections without teaching is a flag for parents to notice.
 
-What does not work: showing up early and watching practice from two feet behind the endzone. Stay by the parking lot or the bleachers. Your proximity to your kid during practice changes how they interact with their coaches, and not in a good way.
+What does not work: showing up early and watching practice from two feet behind the endzone. Stay by the parking lot or the bleachers. Your proximity to your kid during practice changes how they interact with their coaches, and not in a goo

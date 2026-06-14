@@ -9,6 +9,18 @@ sport: "soccer"
 age: "all-ages"
 publishedAt: 2026-04-25
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You need to move the soccer goal from one field to another.
@@ -151,8 +163,8 @@ That's it.
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth soccer ball (size 4) →](/go/soccer-ball-size4/) — a solid pick for youth soccer players.
+[Youth soccer ball (size 4) →](/go/soccer-ball-size4/), a solid pick for youth soccer players.
 
-[Full Soccer gear guide →](/what-to-buy/soccer/) — all picks by age and level.
+[Full Soccer gear guide →](/what-to-buy/soccer/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

@@ -29,7 +29,7 @@ Put twelve kids together and within two weeks they'll have sorted themselves. Th
 
 That's not a clique. That's a team. Clusters are normal.
 
-A clique is something different. A clique is a cluster that has organized itself around exclusion — one that has decided who is in and who is out, and that enforces the boundary actively. The look when the outside kid tries to get in the group photo. The group chat that half the team knows about and the other half doesn't. The seating arrangement at team meals that stays exactly the same every time, and everyone knows why.
+A clique is something different. A clique is a cluster that has organized itself around exclusion, one that has decided who is in and who is out, and that enforces the boundary actively. The look when the outside kid tries to get in the group photo. The group chat that half the team knows about and the other half doesn't. The seating arrangement at team meals that stays exactly the same every time, and everyone knows why.
 
 The coach's job is not to eliminate social structure. You can't do that and you shouldn't try. The job is to notice when clusters become cliques and move before it calcifies into the team's identity.
 
@@ -43,7 +43,7 @@ None of those alone are a crisis. The pattern over time is what tells you someth
 
 ---
 
-The instinct when you notice clique behavior is to address it as a culture problem — to stop practice, bring the team in, and give a speech about inclusion and team unity. That instinct is wrong, or at least incomplete.
+The instinct when you notice clique behavior is to address it as a culture problem, to stop practice, bring the team in, and give a speech about inclusion and team unity. That instinct is wrong, or at least incomplete.
 
 Speeches don't break up cliques. The kids in the clique hear the speech and nod and nothing changes, because the behavior that creates exclusion is social, not moral. They're not failing to include others because they haven't been told inclusion is good. They're excluding others because their social cluster has established its membership, and a five-minute speech doesn't restructure a social group.
 
@@ -53,13 +53,13 @@ What restructures social groups is repeated interaction in different configurati
 
 The practice move that works is deliberate reorganization of who works with whom. Not once. Every single time you call for partners or small groups, you assign them. Randomly, on purpose. "Connor, you're with Maya. Jordan, you're with Sasha. Malik, you're with Tyler." Pull names. Rotate groupings mid-drill. Set up skill competitions where the teams are scrambled differently for each round.
 
-The first time you do this, the clique kids will find each other at water breaks. Fine. The second time, they'll pair up in the next drill. You reassign. The third time, they've been working with enough different people that the habit starts to form — that practice is a place where you work with everyone, not just your cluster. The social bonding is starting to spread.
+The first time you do this, the clique kids will find each other at water breaks. Fine. The second time, they'll pair up in the next drill. You reassign. The third time, they've been working with enough different people that the habit starts to form, that practice is a place where you work with everyone, not just your cluster. The social bonding is starting to spread.
 
 This requires consistency from the coach. You have to be willing to assign groups every single time, even when it's faster to just say "find a partner." The efficiency cost is small. The culture payoff is real.
 
 ---
 
-There's a version of clique behavior that involves exclusion plus active unkindness — the eye rolls, the comments under the breath, the coordinated freeze-out of one specific teammate. That version needs a different response, and it needs a private one.
+There's a version of clique behavior that involves exclusion plus active unkindness, the eye rolls, the comments under the breath, the coordinated freeze-out of one specific teammate. That version needs a different response, and it needs a private one.
 
 The coach who catches this talking to the specific kids involved, not the team, is on the right track. "I've noticed some things in practice that I want to address directly with you. What's going on between you and Tyler?" That's the opening. Then you listen. What comes out of that conversation will tell you whether this is garden-variety social sorting or something more serious.
 

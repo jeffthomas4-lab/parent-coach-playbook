@@ -43,4 +43,4 @@ The honest answer most coaches will give you privately: choose one and commit to
 
 What high school soccer offers that club does not: team identity, representing your school, and the social experience of playing alongside your classmates. For some kids, that matters enormously.
 
-For others, the competitive development of club is what they need and the high school season is secondary. Know which one your kid is before the conflict becomes a crisis.
+For others, the competitive development of club is what they need and the high school season is secondary. Know which one your kid is before the conflict becomes a cri

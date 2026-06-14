@@ -12,7 +12,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
   status: claude-reviewed
 ---
 
@@ -46,7 +56,7 @@ Bobby pins: 100 minimum for a dancer performing multiple numbers. Buy a new pack
 
 Hair spray in a quart zip bag. Gel. A rat-tail comb for setting parts and edges. If a number requires a specific bun height or a side part or a braid, know the requirement and practice it once at home before recital day.
 
-Hair accessories per number: the flower, the headband, the clip that goes with costume one — they go in bag one. Same rule as everything else.
+Hair accessories per number: the flower, the headband, the clip that goes with costume one, they go in bag one. Same rule as everything else.
 
 ## Makeup
 

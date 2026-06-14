@@ -11,7 +11,17 @@ age: all-ages
 publishedAt: 2026-01-06
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 We send this email before the first practice. Not after. Not two weeks in.
@@ -42,7 +52,7 @@ Here's a real example. Adapt the details. Keep the structure.
 
 ---
 
-**Subject: [Team Name] — Season starts [date]. Everything you need.**
+**Subject: [Team Name], Season starts [date]. Everything you need.**
 
 Hi everyone,
 

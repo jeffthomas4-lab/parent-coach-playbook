@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -39,7 +39,7 @@ Coaches telegraph what mistakes mean with their immediate reactions. This happen
 
 Consistency here is what builds the message over time. One measured reaction to a mistake doesn't change a player's relationship with failure. A hundred of them over a season does.
 
-Teach a reset routine. The specific routine matters less than having one that is simple, repeatable, and done the same way every time. Something physical works better than something purely mental for young athletes, because the body is accessible when the mind is spinning. A breath and a physical reset — stand tall, look up, roll the shoulders — gives the athlete something to do in the moment that interrupts the spiral and signals: I'm starting the next play now. Some programs use a phrase alongside the physical reset. "Next play" said out loud does double duty: it's a self-instruction and it signals to teammates that this player is moving on.
+Teach a reset routine. The specific routine matters less than having one that is simple, repeatable, and done the same way every time. Something physical works better than something purely mental for young athletes, because the body is accessible when the mind is spinning. A breath and a physical reset, stand tall, look up, roll the shoulders, gives the athlete something to do in the moment that interrupts the spiral and signals: I'm starting the next play now. Some programs use a phrase alongside the physical reset. "Next play" said out loud does double duty: it's a self-instruction and it signals to teammates that this player is moving on.
 
 Practice the reset routine during practice specifically. Don't wait for games to introduce it. Build it into drill sequences: make a mistake, do the reset, run the next rep. The more repetitions of the full sequence the athlete has, the more automatic it becomes under pressure.
 

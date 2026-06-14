@@ -11,7 +11,17 @@ age: 5-7
 publishedAt: 2026-01-07
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-12
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The mistake every parent makes: buying a glove your five-year-old can barely close. You think you're being smart. You're actually setting them up for frustration.

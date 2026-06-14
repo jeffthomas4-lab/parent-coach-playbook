@@ -3,7 +3,7 @@ title: "How to request a meeting with your kid's *coach*."
 seoTitle: "How to Request a Meeting With Your Kid's Coach (Without Getting a Defensive Response)"
 seoDescription: "The email or text that gets a yes from the coach and sets up a real conversation. What to say, what to skip, and why the framing matters."
 summary: "The email or text that gets a yes from the coach. How to ask for a meeting without putting them on defense before you even talk."
-moment: "requesting-a-meeting-with-coach"
+moment: coach-conflict
 publishedAt: 2026-06-11
 featured: false
 whatTheyAreFeeling:

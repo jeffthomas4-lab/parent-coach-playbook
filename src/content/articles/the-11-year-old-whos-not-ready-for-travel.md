@@ -12,7 +12,17 @@ age: 11-12
 publishedAt: 2026-01-29
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-25
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid is talented. The travel coach has been recruiting. You're tempted.

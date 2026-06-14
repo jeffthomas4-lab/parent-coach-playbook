@@ -37,4 +37,4 @@ Club or academy training programs sit above independent private lessons in struc
 
 Racket and string costs are ongoing and underestimated. Competitive players break strings regularly, and restringing runs $25 to $60 per racket. A serious junior player might restring twice a month. Racket upgrades, new shoes, and bags add $300 to $600 per year at the competitive level.
 
-The honest calibration: recreational to moderately competitive tennis runs $3,000 to $8,000 per year. High-level competitive tennis for a player pursuing college recruiting runs $8,000 to $20,000 or more. That is the range before anyone discusses an academy.
+The honest calibration: recreational to moderately competitive tennis runs $3,000 to $8,000 per year. High-level competitive tennis for a player pursuing college recruiting runs $8,000 to $20,000 or more. That is the range before anyone discusses an acad

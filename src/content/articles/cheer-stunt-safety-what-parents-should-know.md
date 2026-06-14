@@ -39,4 +39,4 @@ What to ask when evaluating a cheer program: Are coaches AACCA or USASF certifie
 
 That last question is the most important one. A program where athletes are pressured to attempt skills they are not comfortable with has a safety problem that no amount of certification paperwork covers. Your kid should always be able to say "I'm not ready for that" and have the coach respond with a plan to build the skill correctly rather than a push to just try it.
 
-If your child reports feeling forced into a skill, or tells you a teammate got hurt doing something they had not fully learned, take that seriously. Talk to the coach directly. If the program culture normalizes skipping safety steps, find a different program.
+If your child reports feeling forced into a skill, or tells you a teammate got hurt doing something they had not fully learned, take that seriously. Talk to the coach directly. If the program culture normalizes skipping safety steps, find a different p

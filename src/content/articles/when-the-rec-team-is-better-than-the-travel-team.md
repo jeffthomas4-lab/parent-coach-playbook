@@ -12,7 +12,17 @@ age: 11-12
 publishedAt: 2026-01-30
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-26
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 You did travel last year. The team was a mixed bag. The coaching was thin. The cost was high. The social stuff was tense.

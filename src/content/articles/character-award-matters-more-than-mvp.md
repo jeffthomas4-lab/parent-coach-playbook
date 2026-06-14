@@ -4,7 +4,7 @@ format: essay
 phase: team-parent
 sport: multi-sport
 age: all-ages
-topic: parent-communication
+topic: communication
 draft: false
 publishedAt: 2026-06-11
 editorial:
@@ -41,4 +41,4 @@ The Sportsmanship Award honors the player who represented the team's values in h
 
 Choosing these awards requires a different kind of attention. You cannot look at the statistics. You have to remember. Who made teammates better? Who did things that were easy to miss and would have gone unnoticed if you had not been paying attention? Who represented what you want younger players on this team to grow into? Those questions have different answers than any end-of-season stat line will give you.
 
-The most meaningful awards in a player's memory are often the ones that recognized character. Not always. Some kids carry their MVP trophy with them for a long time. But the player who was told, in front of their teammates, that their presence made the team better as a group, that they showed up every day for something bigger than their own numbers, that who they are was worth recognizing specifically: that message goes deep. Because it is about them, not about what they produced.
+The most meaningful awards in a player's memory are often the ones that recognized character. Not always. Some kids carry their MVP trophy with them for a long time. But the player who was told, in front of their teammates, that their presence made the team better as a group, that they showed up every day for something bigger than their own numbers, that who they are was worth recognizing specifically: that message goes deep. Because it is about them, not about what they produc

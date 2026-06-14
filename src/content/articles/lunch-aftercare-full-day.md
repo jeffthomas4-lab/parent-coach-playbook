@@ -9,6 +9,18 @@ sport: "multi-sport"
 age: "5-7"
 publishedAt: 2026-04-19
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The website says full day, 9 to 3. You assume your kid is supervised, fed, and active for those six hours. You also assume drop-off can happen at 8:30 because of work and pickup at 5:30 because of work.

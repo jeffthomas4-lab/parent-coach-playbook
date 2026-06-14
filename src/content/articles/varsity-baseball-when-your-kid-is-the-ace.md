@@ -11,13 +11,25 @@ sport: baseball
 age: 15-plus
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Being the ace is the best thing that happens to a high school pitcher and the most dangerous. The danger isn't one start. It's the calendar.
 
-**The school season is the regulated part.** Every NFHS state association has run enforced pitch-count rules since 2017. Most cap a start around 105–110 pitches and mandate rest by tier: throw 76 or more in most states and he sits 4 days, with lower tiers stepping down from there. Coaches track it, official scorers log it, and a violation forfeits games. The system works.
+**The school season is the regulated part.** Every NFHS state association has run enforced pitch-count rules since 2017. Most cap a start around 105, 110 pitches and mandate rest by tier: throw 76 or more in most states and he sits 4 days, with lower tiers stepping down from there. Coaches track it, official scorers log it, and a violation forfeits games. The system works.
 
-**Then the season ends and the system disappears.** Travel ball, summer wood-bat leagues, showcases, fall scout ball. Pitch Smart, the USA Baseball and MLB program, sets the medical guideline: 95 pitches a day at 15–16, 105 at 17–18, and at least 4 months a year of no overhand throwing, 2 to 3 of them consecutive. No summer coach is checking what the school coach did in May. The kid who throws a complete game Friday and "just an inning or two" at Sunday's showcase is how surgeons stay busy.
+**Then the season ends and the system disappears.** Travel ball, summer wood-bat leagues, showcases, fall scout ball. Pitch Smart, the USA Baseball and MLB program, sets the medical guideline: 95 pitches a day at 15, 16, 105 at 17, 18, and at least 4 months a year of no overhand throwing, 2 to 3 of them consecutive. No summer coach is checking what the school coach did in May. The kid who throws a complete game Friday and "just an inning or two" at Sunday's showcase is how surgeons stay busy.
 
 **Tommy John is now a teenage surgery.** The biggest growth group for UCL reconstruction is 15-to-19-year-olds, and the predictor isn't one bad outing. It's months of pitching without rest, pitching while fatigued, and pitching for two teams whose coaches never talk. Velocity culture makes it worse: the showcase gun rewards the exact max-effort throwing that loads the elbow hardest.
 
@@ -33,8 +45,8 @@ The state rule book lives behind the [baseball rules page](/rules/baseball/), an
 
 **Gear mentioned in this article** (affiliate)
 
-[Youth baseball glove →](/go/baseball-glove-youth/) — a solid pick for youth baseball players.
+[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
 
-[Full Baseball gear guide →](/what-to-buy/baseball/) — all picks by age and level.
+[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

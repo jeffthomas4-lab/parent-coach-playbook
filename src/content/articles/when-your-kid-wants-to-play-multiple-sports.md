@@ -47,4 +47,4 @@ How to manage two-sport seasons: put both schedules side by side before either s
 
 "She has a baseball tournament that weekend and will miss the Saturday practice" is manageable. Calling the coach the night before is not.
 
-The question worth asking your kid: which sport do you love more. The answer often changes between 11 and 15. Let it change without treating the change as a failure.
+The question worth asking your kid: which sport do you love more. The answer often changes between 11 and 15. Let it change without treating the change as a fail

@@ -11,6 +11,18 @@ sport: hockey
 age: 15-plus
 publishedAt: 2026-06-10
 featured: false
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Hockey hides its college math better than any sport. In basketball, the path is varsity, then maybe college. In hockey, the high school season your family is living right now is barely on the path at all.
@@ -33,8 +45,8 @@ And if the dream ends at graduation with no juniors and no ACHA, [when your kid 
 
 **Gear mentioned in this article** (affiliate)
 
-[Hockey puck →](/go/hockey-puck/) — a solid pick for youth hockey players.
+[Hockey puck →](/go/hockey-puck/), a solid pick for youth hockey players.
 
-[Full Hockey gear guide →](/what-to-buy/hockey/) — all picks by age and level.
+[Full Hockey gear guide →](/what-to-buy/hockey/), all picks by age and level.
 
 *As an Amazon Associate we earn from qualifying purchases.*

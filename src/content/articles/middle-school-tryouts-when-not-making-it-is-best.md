@@ -11,7 +11,17 @@ age: 13-14
 publishedAt: 2026-03-10
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-05-28
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It was March and the roster list went up. Our kid made B team. Not A. We sat with the disappointment for a night, then watched what happened next.

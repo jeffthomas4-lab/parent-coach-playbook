@@ -8,7 +8,7 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
-topic: "parent-communication"
+topic: communication
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -59,7 +59,7 @@ The vocabulary also shapes how players talk to each other about failure, which i
 
 Building peer-to-peer language use is the highest expression of a well-developed team vocabulary. It means the culture is running on its own, that the values are held by the group rather than enforced by the coach. A culture the coach is managing is fragile. A culture the team manages is durable. It shows up when the coach isn't watching. It shows up when the team is on a bus and nobody from the program is in earshot. That's where the real test is.
 
-One thing coaches underestimate: vocabulary erodes during losing streaks. When the results are bad and the mood is low, the team language starts disappearing from practice because nobody feels like it. Players stop saying "next play" because it starts feeling hollow when the losses pile up. This is exactly when the vocabulary matters most, and exactly when coaches need to be most intentional about using it. Model it yourself. Name it when you see it. "That was next play right there, even when it's hard — that's what we're building."
+One thing coaches underestimate: vocabulary erodes during losing streaks. When the results are bad and the mood is low, the team language starts disappearing from practice because nobody feels like it. Players stop saying "next play" because it starts feeling hollow when the losses pile up. This is exactly when the vocabulary matters most, and exactly when coaches need to be most intentional about using it. Model it yourself. Name it when you see it. "That was next play right there, even when it's hard, that's what we're building."
 
 A vocabulary that survives adversity is a vocabulary that means something. If your team phrases only show up when things are going well, they're decoration. If they show up when the team is down and struggling and still using the language, they're load-bearing. That's the version worth building.
 

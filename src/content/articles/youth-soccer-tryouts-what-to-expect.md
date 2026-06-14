@@ -47,4 +47,4 @@ The kids who play simply, compete hard, and make good decisions with the ball te
 
 What you should do after drop-off: nothing visible. Stay in the parking lot if the field is open to parents. Do not position yourself near the coaching group.
 
-Do not give instructions from the fence. They already have coaches.
+Do not give instructions from the fence. They already have coach

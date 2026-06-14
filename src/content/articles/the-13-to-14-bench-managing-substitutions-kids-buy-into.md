@@ -11,6 +11,18 @@ publishedAt: 2026-04-21
 featured: false
 hero: /illustrations/bench-moment-backlit-sunset.webp
 heroAlt: "Backlit silhouettes of teenage athletes on a bench at sunset, one cleaning a glove, the others watching the field."
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 It was February and we had a kid who wasn't playing. Not because they were bad. Because the matchup didn't favor them. We could see the frustration building at practice. So we sat them down before the next game.

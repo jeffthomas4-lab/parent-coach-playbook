@@ -2,7 +2,7 @@
 title: The *hotel room* the night before a tournament.
 dek: What works, what doesn't, and what to ask for when you book.
 seoDescription: Hotel room logistics for sports families the night before a tournament. Bed assignments, wake time planning, gear management in a small room, what to request at booking, and the restaurant vs. room food question.
-topic: tournament
+topic: season-ops
 format: note
 phase: drive-there
 sport: multi-sport
@@ -10,7 +10,17 @@ age: all-ages
 publishedAt: 2026-06-11
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 The hotel room the night before a tournament is one of the most underplanned parts of the weekend. You've thought about packing, about the schedule, about the drive. Most families haven't thought about who sleeps where, when the alarm goes off, or where the gear lives when four people are in a space the size of a large bathroom.

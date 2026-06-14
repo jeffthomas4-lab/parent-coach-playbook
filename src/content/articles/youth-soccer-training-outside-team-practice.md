@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "soccer"
 age: "11-12"
-topic: "training"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -45,4 +45,4 @@ Recovery, sleep, and physical development require time that overtraining consume
 
 The signs that extra training is working: your kid asks for it. They practice at home without being told. They ask questions about things they worked on.
 
-Training that a parent is pushing harder than the kid is pushing is not building a player. It is building a reason to quit.
+Training that a parent is pushing harder than the kid is pushing is not building a player. It is building a reason to qui

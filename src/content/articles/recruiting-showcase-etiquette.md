@@ -8,7 +8,7 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "15-18"
-topic: "recruiting"
+topic: season-ops
 publishedAt: 2026-06-11
 draft: false
 editorial:
@@ -57,4 +57,4 @@ After the showcase: if coaches approached your kid to talk, that is a positive s
 
 One email. Then wait. Following up four times in two weeks reads as pressure, not enthusiasm.
 
-One thing that is true across every sport: coaches recruit players, not families. The family that stays out of the way lets the player make their own impression.
+One thing that is true across every sport: coaches recruit players, not families. The family that stays out of the way lets the player make their own impre

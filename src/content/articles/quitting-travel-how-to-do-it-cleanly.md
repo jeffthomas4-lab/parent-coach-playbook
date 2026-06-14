@@ -12,7 +12,17 @@ age: 13-14
 publishedAt: 2026-01-27
 featured: false
 editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-03-21
+  status: claude-reviewed
+  reviewerNotes: ""
 ---
 
 Your kid has played travel ball since nine. The schedule has gotten harder every year. School has gotten harder. Their body is growing. Their social life is getting bigger.
