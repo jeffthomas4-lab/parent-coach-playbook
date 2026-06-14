@@ -18,16 +18,16 @@
 --             missing but contact listed, etc.)
 --    low    = pulled from an aggregator, several fields inferred, or the
 --             submitter explicitly flagged uncertainty
-ALTER TABLE camps ADD COLUMN confidence TEXT NOT NULL DEFAULT 'medium'
+-- ALTER TABLE camps ADD COLUMN confidence TEXT NOT NULL DEFAULT 'medium'
   CHECK (confidence IN ('high', 'medium', 'low'));
 
 -- 2. The domain the camp was scraped from (or 'manual' for direct submissions).
 --    Used by the source-quality dashboard and to attribute approvals/rejections.
-ALTER TABLE camps ADD COLUMN source_domain TEXT;
+-- ALTER TABLE camps ADD COLUMN source_domain TEXT;
 
 -- 3. Structured rejection reason. Filled in when an admin rejects a camp.
 --    Lets us track top failure modes per quarter without parsing free-text notes.
-ALTER TABLE camps ADD COLUMN reject_reason_code TEXT
+-- ALTER TABLE camps ADD COLUMN reject_reason_code TEXT
   CHECK (reject_reason_code IS NULL OR reject_reason_code IN (
     'duplicate',
     'dead-url',
@@ -43,10 +43,10 @@ ALTER TABLE camps ADD COLUMN reject_reason_code TEXT
 
 -- 4. URL health for the registration / website link.
 --    Set on submission (initial check) and refreshed by a periodic sweep.
-ALTER TABLE camps ADD COLUMN url_health_status TEXT NOT NULL DEFAULT 'unchecked'
+-- ALTER TABLE camps ADD COLUMN url_health_status TEXT NOT NULL DEFAULT 'unchecked'
   CHECK (url_health_status IN ('unchecked', 'live', 'dead', 'timeout', 'redirect'));
-ALTER TABLE camps ADD COLUMN url_last_checked_at TEXT;
-ALTER TABLE camps ADD COLUMN url_last_status_code INTEGER;
+-- ALTER TABLE camps ADD COLUMN url_last_checked_at TEXT;
+-- ALTER TABLE camps ADD COLUMN url_last_status_code INTEGER;
 
 -- 5. Per-source aggregated quality. Updated on every submit/approve/reject.
 --    The source-quality dashboard reads from this table.

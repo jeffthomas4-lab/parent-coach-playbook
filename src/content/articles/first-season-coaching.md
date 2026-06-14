@@ -1,7 +1,7 @@
 ---
 title: Your *first season* coaching. What actually matters.
 dek: You said yes. Here's what to do next.
-seoDescription: You just volunteered to coach 8-year-olds and have no idea what you're doing. Here's what actually matters in your first season: what you control, what you don't, and the three things that make it survivable.
+seoDescription: "You just volunteered to coach 8-year-olds and have no idea what you're doing. Here's what actually matters in your first season: what you control, what you don't, and the three things that make it survivable."
 topic: the-hard-stuff
 format: essay
 phase: drive-there

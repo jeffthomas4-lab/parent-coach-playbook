@@ -13,4 +13,4 @@
 -- ALTER TABLE camps ADD COLUMN registration_deadline TEXT; -- column already exists
 -- ALTER TABLE camps ADD COLUMN schedule_text TEXT; -- column already exists
 
-CREATE INDEX idx_camps_program_type ON camps(program_type);
+-- CREATE INDEX idx_camps_program_type ON camps(program_type); -- index already exists

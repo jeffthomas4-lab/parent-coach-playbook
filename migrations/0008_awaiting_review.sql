@@ -14,7 +14,7 @@
 -- Apply with:
 --   npx wrangler d1 execute parent-coach-playbook --file=./migrations/0008_awaiting_review.sql --remote
 
-ALTER TABLE camps ADD COLUMN awaiting_review INTEGER NOT NULL DEFAULT 0
+-- ALTER TABLE camps ADD COLUMN awaiting_review INTEGER NOT NULL DEFAULT 0
   CHECK (awaiting_review IN (0, 1));
 
 CREATE INDEX IF NOT EXISTS idx_camps_awaiting_review ON camps(awaiting_review);
