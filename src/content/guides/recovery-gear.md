@@ -1,6 +1,6 @@
 ---
 activity: "Recovery"
-category: "recovery"
+category: essentials
 sortOrder: 99
 lede: "Foam rollers, percussion massagers, resistance bands, ice packs, and sleep tools. What your kid actually needs by age, and what's overkill until high school."
 seoTitle: "Recovery Gear for Youth Athletes: What to Buy and When"
