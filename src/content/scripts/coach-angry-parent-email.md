@@ -16,11 +16,11 @@ whatToSay:
   - "I hear you. I don't want [kid's name] to feel like [the thing they described]. Let's talk in person so I can actually respond to what you're raising."
   - "I got your message. I'm taking it seriously. I'd rather have this conversation than not — can we set up a time?"
 whatNotToSay:
-  - "With all due respect..." (Nothing after this goes well.)
-  - "My decision was based on..." (Defending the decision over email never works. It just adds fuel.)
-  - "Other parents have said..." (Never. Under any circumstances.)
-  - "I think you may have misunderstood..." (This is the fastest way to double the anger.)
-  - A point-by-point rebuttal of every claim in their email.
+  - '"With all due respect..." (Nothing after this goes well.)'
+  - '"My decision was based on..." (Defending the decision over email never works. It just adds fuel.)'
+  - '"Other parents have said..." (Never. Under any circumstances.)'
+  - '"I think you may have misunderstood..." (This is the fastest way to double the anger.)'
+  - "A point-by-point rebuttal of every claim in their email."
 theRule: "Do not defend yourself over email. Get it to a phone call or a meeting, then have the real conversation."
 saveBlockTitle: "Responding to the angry parent email"
 saveBlockBullets:

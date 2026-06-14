@@ -18,10 +18,10 @@ whatToSay:
   - "I make decisions about playing time. I'll explain my reasoning to your kid directly. If you want to talk about it, I'm available Tuesday before practice."
   - "This is going to be a good season. Let's go."
 whatNotToSay:
-  - "I expect you all to be positive at games." (You'll sound defensive. Show them, don't tell them.)
-  - "I'm not a real coach, I just volunteered." (Undercuts everything you're about to say.)
-  - "Playing time will be based on merit." (Every coach says this and nobody agrees on what it means. Skip it.)
-  - "I have an open door policy." (You don't need to say it. Just be reachable.)
+  - '"I expect you all to be positive at games." (You''ll sound defensive. Show them, don''t tell them.)'
+  - '"I''m not a real coach, I just volunteered." (Undercuts everything you''re about to say.)'
+  - '"Playing time will be based on merit." (Every coach says this and nobody agrees on what it means. Skip it.)'
+  - '"I have an open door policy." (You don''t need to say it. Just be reachable.)'
 theRule: "Tell them what to expect and how to reach you. Everything else is noise."
 saveBlockTitle: "First night parent speech"
 saveBlockBullets:
