@@ -6,6 +6,7 @@ sportTags: ["multi-sport"]
 ageBands: ["5-7","8-10","11-12","13-14","15-plus"]
 publishedAt: 2026-04-23
 featured: true
+draft: false
 governingBodies:
   - name: "Autism Speaks: Sports Resources"
     url: "https://www.autismspeaks.org/"

@@ -1,7 +1,7 @@
 ---
 title: "Tennis Recruiting Guide: What Parents and Athletes Need to Know"
 summary: "How college tennis recruiting works, the role of UTR ratings in the process, what division-level programs look for, and how to contact coaches the right way."
-category: general
+category: sport-specific
 gradeLevels: ["9","10","11","12"]
 divisions: ["d1","d2","d3","naia","juco"]
 sportTags: ["tennis"]

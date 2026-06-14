@@ -37,9 +37,9 @@ A good early ballet teacher is patient, uses imagery rather than demanding perfe
 
 If your 6-year-old is nervous about going to ballet class, that is a signal worth paying attention to.
 
-Technical vocabulary is introduced gradually. Plié, relevé, tendu, chassé. The French terms are not decoration. They are a shared language that kids carry into every studio they ever enter.
+Technical vocabulary is introduced gradually. Plié, relevé, tendu, chassé. The French terms are not decoration.
 
-Learning them correctly at 6 means building on a real foundation later.
+They are a shared language that kids carry into every studio they ever enter. Learning them correctly at 6 means building on a real foundation later.
 
 **What to avoid at this age**
 
@@ -55,7 +55,9 @@ Any teacher who discusses a child's body shape or weight in front of the child d
 
 Most beginner ballet programs include a spring recital. Recital participation is one of the great early performing arts experiences: costume, lights, an audience, and the feeling of executing something publicly that you worked on for months. Most kids love it.
 
-The cost is real. Recital costumes typically run $50 to $150, depending on the studio. There are often recital fees added to spring tuition. Get the full cost picture before spring arrives.
+The cost is real. Recital costumes typically run $50 to $150, depending on the studio. There are often recital fees added to spring tuition.
+
+Get the full cost picture before spring arrives.
 
 **How much class is enough**
 

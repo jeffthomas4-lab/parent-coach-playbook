@@ -29,7 +29,9 @@ Parents watching 8-10 year old basketball often focus on scoring. The kid who pu
 
 Here's what actually matters at 8-10.
 
-**Ball handling with both hands.** The most important skill at this age, and the one most kids avoid because it's harder. Dribbling confidently with the non-dominant hand in live situations, not just in isolation drills, is what separates players who can run an offense at 13 from ones who are stuck going one direction. If your kid does any home practice, this is where to spend the time. Five minutes a day of left-hand dribbling (or right, if they're left-handed) compounds over a season.
+**Ball handling with both hands.** The most important skill at this age, and the one most kids avoid because it's harder. Dribbling confidently with the non-dominant hand in live situations, not just in isolation drills, is what separates players who can run an offense at 13 from ones who are stuck going one direction. If your kid does any home practice, this is where to spend the time.
+
+Five minutes a day of left-hand dribbling (or right, if they're left-handed) compounds over a season.
 
 **Catching passes.** Sounds basic. It is basic. At 8-10, a lot of games get disrupted by kids who aren't ready for the ball when it arrives. The habit of finding a target before asking for the ball, and having hands ready before the pass gets there, is coachable and transferable.
 
@@ -39,6 +41,8 @@ Here's what actually matters at 8-10.
 
 **Playing hard.** The single most coachable trait at this age is effort on defense, in transition, and on loose balls. A kid who hustles for every ball at 9 is building a habit that's worth more than any specific skill set.
 
-**What to avoid.** Private skills training is largely wasted before age 10. The game itself provides enough reps. Specialized training at this age mostly means an adult watching a kid do things they'd do in practice anyway. The better investment is more touches, more games, more time just playing basketball in an unstructured way.
+**What to avoid.** Private skills training is largely wasted before age 10. The game itself provides enough reps. Specialized training at this age mostly means an adult watching a kid do things they'd do in practice anyway.
+
+The better investment is more touches, more games, more time just playing basketball in an unstructured way.
 
 The parents who support development best at this age are the ones who get their kid to practice consistently, make sure there's a ball at home if the kid wants to shoot around, and stay out of the way during games. That's actually the whole job.

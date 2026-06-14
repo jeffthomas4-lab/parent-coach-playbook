@@ -51,6 +51,8 @@ Your prep in the days before tryouts is mostly logistics and calm. Make sure you
 
 Don't hold a two-hour practice session the night before. Don't give a pregame speech in the car. If you've been coaching your kid hard the week before tryouts, you've probably made things worse, not better.
 
-One thing that does help: tell your kid that coaches are going to coach them during tryouts and that the right response is to nod and fix it immediately. That's not a natural instinct for every kid. The ones who adjust quickly look like they want to be coached. That impression matters.
+One thing that does help: tell your kid that coaches are going to coach them during tryouts and that the right response is to nod and fix it immediately. That's not a natural instinct for every kid.
+
+The ones who adjust quickly look like they want to be coached. That impression matters.
 
 The rest of it is on them. Your job in the parking lot is to be someone they're glad to see when they come out.

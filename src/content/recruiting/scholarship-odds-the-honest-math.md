@@ -6,6 +6,7 @@ gradeLevels: ["9","10","11","12"]
 divisions: ["d1","d2","d3","naia","juco","all"]
 publishedAt: 2026-04-29
 featured: true
+draft: false
 governingBodies:
   - name: "NCAA Recruiting Facts"
     url: "https://www.ncaa.org/sports/2015/3/2/estimated-probability-of-competing-in-college-athletics.aspx"

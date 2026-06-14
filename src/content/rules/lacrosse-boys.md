@@ -40,7 +40,7 @@ editorial:
 
 A few specifics.
 
-**Equipment for boys lacrosse.** Helmet (with cage and chin strap), mouthguard, shoulder pads, arm pads, gloves, athletic cup, mouthguard, cleats. The full kit. Goalies wear a chest pad and throat protector additionally.
+**Equipment for boys lacrosse.** Helmet (with cage and chin strap), mouthguard, shoulder pads, arm pads, gloves, athletic cup, mouthguard, cleats. The full kit. Goalies also wear a chest pad and throat protector.
 
 **Field positions.** 10 players per side: 3 attackers (offense only), 3 midfielders (both), 3 defenders (defense only), 1 goalie. The midfielders are the only players who run the full field.
 

@@ -1,7 +1,7 @@
 ---
 title: "Wrestling Recruiting Guide: What Parents and Athletes Need to Know"
 summary: "How college wrestling recruiting works, when coaches start watching, what roster spots look like at each division level, and how to put together a recruiting profile that gets attention."
-category: general
+category: sport-specific
 gradeLevels: ["9","10","11","12"]
 divisions: ["d1","d2","d3","naia","juco"]
 sportTags: ["wrestling"]

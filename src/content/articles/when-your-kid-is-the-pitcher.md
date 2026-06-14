@@ -31,13 +31,23 @@ Every walk loads the bases in front of everyone. Every hit is the pitcher's resp
 
 The pitcher's parent has a specific set of responsibilities that differ from every other parent in the bleachers. Here's what they are.
 
-**Know the pitch count rules and follow them.** Youth baseball pitch count limits exist to protect developing arms. At ages 11-12, the limit is 85 pitches per day with mandatory rest days after exceeding thresholds. These rules apply regardless of score, tournament stakes, or how good your kid looks. If the coach doesn't seem to be tracking pitch counts carefully, you should be. A verbal, non-confrontational "He's at 73 pitches" at the right moment is within bounds. Demanding your kid get pulled is not your call. Knowing the number and mentioning it once is.
+**Know the pitch count rules and follow them.** Youth baseball pitch count limits exist to protect developing arms. At ages 11-12, the limit is 85 pitches per day with mandatory rest days after exceeding thresholds. These rules apply regardless of score, tournament stakes, or how good your kid looks.
 
-**Arm care outside of games.** Rest days between outings matter. Throwing every day, or pitching two days in a row, is how arm problems develop. If your kid wants to throw between outings, light catch with no breaking balls is fine. Avoid long-toss sessions or bullpen work the day before pitching. Talk to the coach about how the week between starts is managed.
+If the coach doesn't seem to be tracking pitch counts carefully, you should be. A verbal, non-confrontational "He's at 73 pitches" at the right moment is within bounds. Demanding your kid get pulled is not your call.
 
-**What to say in the stands during a rough outing.** Nothing you haven't already been saying. "Come on, let's go!" after a walk is fine. Visible frustration, audible sighing, or commentary on mechanics from the bleachers makes it worse. Your kid can see you. If their pitching performance correlates with whether or not you look happy, you're in their head. Stay flat.
+Knowing the number and mentioning it once is.
 
-**After a rough outing.** This is the moment that matters most. Your kid just got knocked around. Maybe they gave up four runs in an inning. Maybe they walked six batters. They know it went badly. They don't need the recap.
+**Arm care outside of games.** Rest days between outings matter. Throwing every day, or pitching two days in a row, is how arm problems develop. If your kid wants to throw between outings, light catch with no breaking balls is fine.
+
+Avoid long-toss sessions or bullpen work the day before pitching. Talk to the coach about how the week between starts is managed.
+
+**What to say in the stands during a rough outing.** Nothing you haven't already been saying. "Come on, let's go!" after a walk is fine. Visible frustration, audible sighing, or commentary on mechanics from the bleachers makes it worse.
+
+Your kid can see you. If their pitching performance correlates with whether or not you look happy, you're in their head. Stay flat.
+
+**After a rough outing.** This is the moment that matters most. Your kid just got knocked around. Maybe they gave up four runs in an inning.
+
+Maybe they walked six batters. They know it went badly. They don't need the recap.
 
 "I love watching you compete out there." That's the opener. If they want to talk about it, they'll bring it up. If they're quiet, match the quiet.
 

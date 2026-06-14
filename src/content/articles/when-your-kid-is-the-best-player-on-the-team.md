@@ -39,7 +39,7 @@ The developmental research on this is consistent. Players who spend too long in 
 
 The practical question: is it time to move up. Not move up the club's age group, but move to a higher-quality team or a more competitive program. An 11-year-old who is dominating a D3 club environment and getting looks from a D1 or D2 club should be having that conversation with their coach, not waiting until the problem is obvious to everyone.
 
-The mistakes parents make in this situation: telling other families their kid is the best, expecting special treatment from the coach because of it, and most importantly, not pushing for harder competition because the current situation feels good. The current situation feeling good is the signal that it is time to make it harder.
+The mistakes parents make in this situation: telling other families their kid is the best, expecting special treatment from the coach because of it, and above all not pushing for harder competition because the current situation feels good. The current situation feeling good is the signal that it is time to make it harder.
 
 One honest thing to say to your kid: "You're the best on this team. That's going to stop being good for you soon. Let's find out what happens when you're not anymore."
 

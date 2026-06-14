@@ -31,15 +31,23 @@ Serving for match point without your hands shaking. Playing well when playing po
 
 At 13 and 14, these qualities are developing. They're not fixed. And parents either accelerate that development or slow it down, usually without knowing which one they're doing.
 
-**What builds mental toughness.** Experiencing failure without it being catastrophic. Making an error on match point and then having to serve the next ball. Losing a tournament and coming back the following weekend. The accumulation of hard moments that end and don't define you. Kids build this slowly, one situation at a time. You can't install it. You can only create conditions where it grows.
+**What builds mental toughness.** Experiencing failure without it being catastrophic. Making an error on match point and then having to serve the next ball. Losing a tournament and coming back the following weekend.
 
-**What parents do that accidentally works against it.** Rescuing too fast. A player comes off the court upset and her parent jumps in with explanation, comfort, and reassurance before she's had thirty seconds to sit with the feeling. The skill being developed there is processing difficulty. Cutting it short by immediately making it better skips the development.
+The accumulation of hard moments that end and don't define you. Kids build this slowly, one situation at a time.
+
+You can't install it. You can only create conditions where it grows.
+
+**What parents do that accidentally works against it.** Rescuing too fast. A player comes off the court upset and her parent jumps in with explanation, comfort, and reassurance before she's had thirty seconds to sit with the feeling.
+
+The skill being built there is learning to handle difficulty. Cutting it short by immediately making it better skips the work.
 
 Secondly: making every hard moment a coaching discussion. "Let me tell you what I saw" after a tough match turns an experience that needed to stay in the body into an analytical problem. The player doesn't need analysis.
 
 She needs to feel the outcome, then regroup. The analysis can come later, if she asks.
 
-Third: catastrophizing or minimizing. "That was your worst tournament all year" and "it doesn't matter, it's just volleyball" are equally useless. One amplifies pressure, one invalidates the experience. Neither one helps a 14-year-old learn to regulate.
+Third: catastrophizing or minimizing. "That was your worst tournament all year" and "it doesn't matter, it's just volleyball" are equally useless.
+
+One amplifies pressure, one dismisses what just happened. Neither one helps a 14-year-old learn to regulate.
 
 **What actually works.** Staying neutral after hard matches while being present. "Tough day out there. How are you feeling?" and then actually listening rather than pivoting to your own read.
 

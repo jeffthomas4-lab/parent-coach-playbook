@@ -37,7 +37,9 @@ Your kid will come home looking confused for the first two or three weeks. That 
 
 The cast will have leads and ensemble members. At the 8–10 age level, most directors cast kids in the ensemble first and move stronger performers into speaking roles as they advance through the program. If your kid gets chorus parts for their first one or two shows, that is the system working, not the director ignoring them.
 
-Lines, songs, and blocking are the kid's responsibility to memorize at home. Most programs will give you a week-by-week memorization schedule. Take it seriously. A kid who shows up unprepared slows down every rehearsal for every other kid in the cast.
+Lines, songs, and blocking are the kid's responsibility to memorize at home. Most programs will give you a week-by-week memorization schedule. Take it seriously.
+
+A kid who shows up unprepared slows down every rehearsal for every other kid in the cast.
 
 **Costume and fee expectations**
 

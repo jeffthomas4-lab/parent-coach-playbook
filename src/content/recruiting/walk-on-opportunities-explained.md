@@ -1,7 +1,7 @@
 ---
 title: "Walk-On Opportunities Explained: What Parents Need to Know"
 summary: "What walk-on opportunities actually look like, the difference between a preferred walk-on and a tryout walk-on, and how to pursue a spot without burning bridges."
-category: general
+category: walk-on
 gradeLevels: ["11","12"]
 divisions: ["d1","d2","d3","naia"]
 sportTags: []

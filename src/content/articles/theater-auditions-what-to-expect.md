@@ -37,11 +37,13 @@ After the prepared piece, most auditions include a cold read. The director hands
 
 When the director gives a note between readings, the kid who actually changes something gets the call.
 
-Dance calls are common in musical theater auditions. If the show has dance requirements, there will often be a separate dance portion where a choreographer teaches a short combination and asks the group to run it. Your kid does not need to be a trained dancer. They need to watch carefully and try hard.
+Dance calls are common in musical theater auditions. If the show has dance requirements, there will often be a separate dance portion where a choreographer teaches a short combination and asks the group to run it.
+
+Your kid does not need to be a trained dancer. They need to watch carefully and try hard.
 
 **How to prepare without overdoing it**
 
-Song choice matters. Pick something your kid can sing well, not something that showcases the song. A song in the wrong key or a belt range that is too high will hurt more than a simpler song sung cleanly.
+Song choice matters. Pick something your kid can sing well, not something that makes the song the star. A song in the wrong key or a belt range that is too high will hurt more than a simpler song sung cleanly.
 
 If your family does not have a music background, many theater programs can point you to a voice teacher who does one-time audition prep sessions. One session is usually enough.
 

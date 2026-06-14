@@ -1,7 +1,7 @@
 ---
 title: "Cross Country Recruiting Guide: What Parents and Athletes Need to Know"
 summary: "How college cross country and distance running recruiting works, what times coaches care about at each division level, and how to build a profile that gets a response."
-category: general
+category: sport-specific
 gradeLevels: ["9","10","11","12"]
 divisions: ["d1","d2","d3","naia","juco"]
 sportTags: ["cross-country"]

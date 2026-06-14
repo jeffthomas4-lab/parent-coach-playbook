@@ -63,7 +63,9 @@ Know which track your kid is in before you respond to the urgency signals, wheth
 
 **What parents get wrong most often**
 
-Funding the ambition before the commitment shows up. Private lessons are expensive. Summer intensives are expensive. Pre-professional programs are expensive.
+Funding the ambition before the commitment shows up. Private lessons are expensive. Summer intensives are expensive.
+
+Pre-professional programs are expensive.
 
 A 13-year-old who says they want to get serious is not the same thing as a 13-year-old who will show up to the work when it stops being fun.
 

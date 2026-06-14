@@ -27,15 +27,23 @@ editorial:
 
 Volleyball has more distinct competitive levels than almost any other youth sport. A kid can play for a parks and rec league on Saturday mornings or spend 40 weekends a year chasing national qualifier points, and both are technically "playing volleyball." Understanding the levels before you commit to one saves a lot of confusion.
 
-**Recreational volleyball.** Parks and rec programs, YMCA leagues, church leagues, and school intramurals. The entry point. Low fees, no tryouts, minimal travel, and structured around making the sport accessible and fun. Coaches are often volunteers. Competition stays local. For a kid who wants to try volleyball without a major commitment, this is the right starting place.
+**Recreational volleyball.** Parks and rec programs, YMCA leagues, church leagues, and school intramurals. The entry point. Low fees, no tryouts, minimal travel, and structured around making the sport accessible and fun. Coaches are often volunteers.
+
+Competition stays local. For a kid who wants to try volleyball without a major commitment, this is the right starting place.
 
 **School volleyball.** Middle school and high school interscholastic programs. Tryouts exist and competition is real. The season is defined by the school calendar, usually fall for most states.
 
-School ball has a coach, practice five days a week, and a schedule of matches against other schools. The level varies widely depending on school size and program history. A large suburban school with a strong program can be highly competitive. A small rural school might be rec-level competition in a more formal structure.
+School ball has a coach, practice five days a week, and a schedule of matches against other schools. The level varies widely depending on school size and program history.
 
-**Regional club volleyball.** This is where most serious youth volleyball development happens. Clubs form teams by age group, practice two to three times a week in rented gym space, and compete in regional tournaments from January through June. The coaching is more structured, the skill development is faster, and the competition level is higher than rec or most school programs. Fees run $1,000 to $2,500 per year before travel.
+A large suburban school with a strong program can be highly competitive. A small rural school might be rec-level competition in a more formal structure.
 
-**National-track club volleyball.** The top end of the club system. Teams pursue points through USA Volleyball's Junior National qualifier structure, competing at events around the country to earn bids to Junior National Championships. The time and financial commitment is significant. Families on national-track teams spend weekends at tournaments in different cities across the season. Total costs routinely exceed $5,000 per year and can approach $10,000 when travel is fully accounted for.
+**Regional club volleyball.** This is where most serious youth volleyball development happens. Clubs form teams by age group, practice two to three times a week in rented gym space, and compete in regional tournaments from January through June. The coaching is more structured, the skill development is faster, and the competition level is higher than rec or most school programs.
+
+Fees run $1,000 to $2,500 per year before travel.
+
+**National-track club volleyball.** The top end of the club system. Teams pursue points through USA Volleyball's Junior National qualifier structure, competing at events around the country to earn bids to Junior National Championships. The time and financial commitment is significant.
+
+Families on national-track teams spend weekends at tournaments in different cities across the season. Total costs routinely exceed $5,000 per year and can approach $10,000 when travel is fully accounted for.
 
 **Elite and high-performance.** National teams, high-performance training programs, and Olympic development pipelines. Relevant for a very small number of players.
 

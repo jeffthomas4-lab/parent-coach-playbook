@@ -29,9 +29,13 @@ If you've been wondering why one player is wearing a completely different color 
 
 **The jersey.** The libero must wear a jersey that contrasts with the team. This is a rule, not a team choice. It makes them easier for referees and scorers to identify in real time, since they have special substitution rules.
 
-**The role.** The libero is the best passer on the team, usually one of the quicker and more agile players. They play exclusively in the back row. When a front-row player rotates to the back row, the libero can substitute for them. When that player rotates to the front again, the libero comes back off. None of this counts against the team's 12-substitution limit.
+**The role.** The libero is the best passer on the team, usually one of the quicker and more agile players. They play exclusively in the back row. When a front-row player rotates to the back row, the libero can substitute for them.
 
-**What they can and can't do.** They cannot attack the ball when it's above the net height. They cannot serve (in most youth and most high school formats). They cannot set the ball with an overhand motion from in front of the 10-foot attack line if a teammate then attacks it above net height. That last rule trips people up at games.
+When that player rotates to the front again, the libero comes back off. None of this counts against the team's 12-substitution limit.
+
+**What they can and can't do.** They cannot attack the ball when it's above the net height. They cannot serve (in most youth and most high school formats). They cannot set the ball with an overhand motion from in front of the 10-foot attack line if a teammate then attacks it above net height.
+
+That last rule trips people up at games.
 
 **Why it matters.** The libero frees the middle blockers from having to pass in the back row. Middle blockers are usually the tallest players on the team, and they're most valuable at the net. The libero-middle blocker swap keeps the best athletes in the positions where they create the most value.
 

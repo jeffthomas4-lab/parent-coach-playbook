@@ -27,9 +27,13 @@ editorial:
 
 The first week of high school softball tryouts tends to sort out who was ready for the jump and who thought they were. The players who arrive knowing what to expect are usually the ones who handle it best.
 
-**Tryouts cut players.** Every spot on the roster is contested. Incoming freshmen are evaluated alongside returning players who already know the system, the coaches, and each other. A strong travel ball career or dominant middle school season doesn't guarantee anything. Some talented freshmen don't make the JV. That's a real outcome and it happens every year at good programs.
+**Tryouts cut players.** Every spot on the roster is contested. Incoming freshmen are evaluated alongside returning players who already know the system, the coaches, and each other. A strong travel ball career or dominant middle school season doesn't guarantee anything.
 
-**Pitchers have a different experience.** If your kid pitches, she's being evaluated against every other pitcher in the school. Velocity, movement, command, and poise all factor in. A freshman pitcher who can throw strikes consistently and adds something beyond a fastball is competitive at most programs. One who relies on speed alone often runs into upperclassmen with more developed arsenals.
+Some talented freshmen don't make the JV. That's a real outcome and it happens every year at good programs.
+
+**Pitchers have a different experience.** If your kid pitches, she's being evaluated against every other pitcher in the school. Velocity, movement, command, and poise all factor in.
+
+A freshman pitcher who can throw strikes consistently and adds something beyond a fastball is competitive at most programs. One who relies on speed alone often runs into upperclassmen with more developed arsenals.
 
 **Practice load is the biggest adjustment.** High school programs typically practice two hours a day, five days a week during the season. Add weight room requirements, film review at some programs, and two or three games per week, and the total time commitment is 12 to 15 hours per week. Your kid needs to understand what she's signing up for before tryouts, not after she's made the team and the schedule hits.
 
@@ -37,7 +41,9 @@ The first week of high school softball tryouts tends to sort out who was ready f
 
 **Your role has changed.** The high school coach is running a program. They're not obligated to update you after every practice, explain lineup decisions, or take your input on the pitching rotation.
 
-Communication flows through your kid. If your kid has a question about her development or role, she asks. That's not a cold system. It's how accountability develops in teenage athletes.
+Communication flows through your kid. If your kid has a question about her development or role, she asks.
+
+That's not a cold system. It's how accountability develops in teenage athletes.
 
 **The thing to say before the season.** "I'm here to support you, not manage your season." Say it once. Then do it.
 

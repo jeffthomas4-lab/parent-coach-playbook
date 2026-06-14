@@ -1,7 +1,7 @@
 ---
 title: "Official Visit vs. Unofficial Visit: What Parents Need to Know"
 summary: "The difference between official and unofficial college visits, what each one costs, what NCAA rules govern them, and how to use each type of visit effectively in the recruiting process."
-category: visits
+category: commits
 gradeLevels: ["10","11","12"]
 divisions: ["d1","d2","d3","naia"]
 sportTags: []

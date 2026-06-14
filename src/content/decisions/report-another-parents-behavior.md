@@ -42,4 +42,16 @@ relatedScripts:
   - "after-a-bad-game"
 sportTags: ["multi-sport"]
 ageBands: ["5-7","8-10","11-12","13-14","15-plus"]
+editorial:
+  qualityGrade: 8
+  originalityGrade: 8
+  voiceGrade: 8
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: true
+  citationCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-06-13
+  status: claude-reviewed
+  reviewerNotes: "Sensitive: parent conduct and reporting behavior."
 ---

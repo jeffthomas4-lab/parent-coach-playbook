@@ -6,6 +6,7 @@ sportTags: ["multi-sport"]
 ageBands: ["5-7","8-10","11-12","13-14","15-plus"]
 publishedAt: 2026-04-22
 featured: true
+draft: false
 governingBodies:
   - name: "CHADD: Children and Adults with ADHD"
     url: "https://chadd.org/"

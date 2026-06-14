@@ -27,13 +27,19 @@ editorial:
 
 The gap between 8th grade baseball and high school baseball is bigger than most kids expect. Here's what changes.
 
-**Tryouts cut players.** Every slot on the roster is contested. A player who was the best kid on his travel team at 13 is now in a gym or on a field with every other incoming freshman plus returning sophomores, juniors, and seniors. Some talented kids don't make the varsity. A good number of freshmen don't make the JV. That's not a broken system. That's a competitive environment.
+**Tryouts cut players.** Every slot on the roster is contested. A player who was the best kid on his travel team at 13 is now in a gym or on a field with every other incoming freshman plus returning sophomores, juniors, and seniors. Some talented kids don't make the varsity.
 
-**Equipment standards change.** High school baseball requires BBCOR-certified bats. The BBCOR stamp limits the trampoline effect of the bat, which means balls don't jump off metal bats the way they did in youth leagues. Freshmen who haven't swung BBCOR bats before sometimes struggle early in the transition. Get the right bat before tryouts start.
+A good number of freshmen don't make the JV. That's not a broken system. That's a competitive environment.
+
+**Equipment standards change.** High school baseball requires BBCOR-certified bats. The BBCOR stamp limits the trampoline effect of the bat, which means balls don't jump off metal bats the way they did in youth leagues. Freshmen who haven't swung BBCOR bats before sometimes struggle early in the transition.
+
+Get the right bat before tryouts start.
 
 **Practice intensity goes up.** High school programs practice two or more hours daily during the season, often with morning workouts or weight room requirements added. Coaches expect players to arrive having already done individual work: soft toss, tee work, long toss. The player who shows up to practice as their only development time is behind the players who are putting in extra work.
 
-**JV is the right place for most freshmen.** More at-bats, more innings, more meaningful reps. A freshman playing full JV games is developing faster than one sitting on a varsity bench behind four older players at the same position. Programs that are honest about development know this and place freshmen accordingly. The families who push for varsity placement when JV would serve the player better are optimizing for optics, not development.
+**JV is the right place for most freshmen.** More at-bats, more innings, more meaningful reps. A freshman playing full JV games is developing faster than one sitting on a varsity bench behind four older players at the same position. Programs that are honest about development know this and place freshmen accordingly.
+
+The families who push for varsity placement when JV would serve the player better are optimizing for optics, not development.
 
 **Communication goes through your kid.** The coach is running a program, not providing individual status reports. If your kid has a question about their role or development, they ask the coach. You are not in that loop unless something is genuinely wrong.
 

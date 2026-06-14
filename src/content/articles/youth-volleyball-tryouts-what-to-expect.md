@@ -43,8 +43,12 @@ Coaches notice the players who are already doing this without being told.
 
 **Positions at tryouts.** Most coaches don't assign positions during tryouts at the 11-12 level. They're evaluating who can pass, who can set, who moves well, who competes. Position conversations come after roster formation.
 
-**Placement, not just cuts.** Many volleyball programs at this age have multiple teams, A and B or varsity and JV equivalents. A kid who doesn't make the top team often has a spot on a development squad. That's not a failure. Development team ball with real practice time is better than sitting on a roster they're not ready for.
+**Placement, not just cuts.** Many volleyball programs at this age have multiple teams, A and B or varsity and JV equivalents. A kid who doesn't make the top team often has a spot on a development squad. That's not a failure.
 
-**Your role on tryout day.** Drop your kid off calm. Don't give a locker room speech in the car. If you watch from the bleachers, watch quietly. No coaching from the stands during tryouts. Coaches notice that too, and it rarely creates a good first impression for the player.
+Development team ball with real practice time is better than sitting on a roster they're not ready for.
 
-The conversation on the drive home matters less than you think if you keep it simple. "How do you feel about how it went?" is the right question. What they say next tells you everything.
+**Your role on tryout day.** Drop your kid off calm. Don't give a locker room speech in the car. If you watch from the bleachers, watch quietly.
+
+No coaching from the stands during tryouts. Coaches notice that too, and it rarely creates a good first impression for the player.
+
+The conversation on the drive home matters less than you think if you keep it simple. "How do you feel about how it went?" is the right question. What they say next tells you everything

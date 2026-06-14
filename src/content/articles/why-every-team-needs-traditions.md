@@ -39,7 +39,9 @@ The team ball is a season-long tradition. One ball, used in practice, that every
 
 Birthday recognition is so small it barely counts as a tradition, and it lands every time. Thirty seconds. The team chants the name. Everyone knows the date is marked. For a young player who is still figuring out whether they are valued on this team, knowing the coach knows their birthday is not nothing.
 
-The best traditions share a few qualities. They are consistent. One tradition done every day for a full season beats five events that happened once and were never repeated. They reinforce values. If effort matters, create a tradition that celebrates effort. If the team is about inclusiveness, create a tradition where everyone participates equally. They are owned by the players, not just performed for them. The team that names their own cheer and then changes the words when they decide the old version was not right has more invested in that cheer than the team who arrived and learned what the coach had pre-built.
+The best traditions share a few qualities. They are consistent. One tradition done every day for a full season beats five events that happened once and were never repeated. They reinforce values. If effort matters, create a tradition that celebrates effort. If the team is about inclusiveness, create a tradition where everyone participates equally.
+
+They are owned by the players, not just performed for them. The team that names their own cheer and then changes the words when they decide the old version was not right has more invested in that cheer than the team who arrived and learned what the coach had pre-built.
 
 Let players help create traditions. Bring the idea to the team in week two. "We are going to build something that is ours. What should it be?" The suggestions will be chaotic and some of them will be impractical. That is fine. Let players vote. Let them name it. Let them own it. The buy-in you get from a tradition players created is different from the buy-in you get from a tradition they were assigned.
 

@@ -37,6 +37,8 @@ The game just ended. Your kid is walking toward the car. Here's what works.
 
 **After they played great.** Keep it proportional. "You really played hard out there" is better than a full debrief of every good thing they did. Let them feel it. They already know.
 
-**The real goal.** Your kid should want to get in the car with you after games. That's the whole thing. If they're dreading it, something is off. If they're glad you were there, you're doing it right.
+**The real goal.** Your kid should want to get in the car with you after games. That's the whole thing. If they're dreading it, something is off.
+
+If they're glad you were there, you're doing it right.
 
 Wait until tomorrow for the feedback conversation, if it's even needed. It usually isn't.

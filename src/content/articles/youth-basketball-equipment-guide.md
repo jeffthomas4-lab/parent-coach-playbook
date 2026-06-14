@@ -27,11 +27,17 @@ editorial:
 
 Basketball is one of the least gear-dependent sports. Here's the actual list.
 
-**Court shoes.** The one place to spend real money. Basketball shoes provide ankle support and court grip that running shoes don't. For a kid who plays more than one season, a $65 to $90 pair from Nike, Adidas, or Under Armour holds up well. Don't play in running shoes if you can avoid it, especially on hardwood. The ankle risk isn't worth saving $30.
+**Court shoes.** The one place to spend real money. Basketball shoes provide ankle support and court grip that running shoes don't. For a kid who plays more than one season, a $65 to $90 pair from Nike, Adidas, or Under Armour holds up well.
+
+Don't play in running shoes if you can avoid it, especially on hardwood. The ankle risk isn't worth saving $30.
 
 **Shorts and socks.** Athletic shorts work. The league usually provides a game jersey. For practice, any moisture-wicking shorts are fine. Bring two pairs of socks to every practice, or just wear longer athletic socks that don't slide around in the shoe.
 
-**A ball.** Not required if your kid is only practicing with the team, but useful for home practice. A size 5 ball is standard for ages 9 and under. Size 6 for ages 9-12 (and women's basketball). Size 7 is the adult/men's standard. A quality rubber ball for outdoor use runs $25 to $40. A composite leather ball for indoor use is $50 to $70. Start with rubber unless your kid is practicing inside regularly.
+**A ball.** Not required if your kid is only practicing with the team, but useful for home practice. A size 5 ball is standard for ages 9 and under. Size 6 for ages 9-12 (and women's basketball).
+
+Size 7 is the adult/men's standard. A quality rubber ball for outdoor use runs $25 to $40. A composite leather ball for indoor use is $50 to $70.
+
+Start with rubber unless your kid is practicing inside regularly.
 
 **A bag.** Any athletic bag works. You don't need a branded basketball bag. Something that fits the shoes, a water bottle, and a snack is all you need.
 

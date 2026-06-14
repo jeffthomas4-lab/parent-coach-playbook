@@ -5,6 +5,7 @@ category: "unified-sports"
 sportTags: ["multi-sport"]
 ageBands: ["8-10","11-12","13-14","15-plus"]
 publishedAt: 2026-04-24
+draft: false
 governingBodies:
   - name: "Special Olympics: Unified Sports"
     url: "https://www.specialolympics.org/our-work/sports/unified-sports"

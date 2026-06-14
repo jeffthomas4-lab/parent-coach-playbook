@@ -49,7 +49,9 @@ Signs of a healthy studio: the director talks about improvement and artistry alo
 
 Signs to watch for: coaches who yell in a demeaning way; studios where only certain body types get solos; a culture where competition scores are posted and compared in front of kids; parent pressure that mirrors the coach pressure.
 
-Visit a practice. Sit and watch. Talk to three or four current parents, not the ones the studio suggests. Ask them honestly what the culture is like when things go badly at a competition.
+Visit a practice. Sit and watch. Talk to three or four current parents, not the ones the studio suggests.
+
+Ask them honestly what the culture is like when things go badly at a competition.
 
 **What the competition day actually looks like**
 

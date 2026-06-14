@@ -31,7 +31,9 @@ Here's what works.
 
 **Say this.** "I love watching you play." And then let it sit. You don't need to add anything.
 
-**If they bring it up.** Let them lead. "I keep getting jammed on that pitch" is an opening for a real conversation. "That was a tough at-bat" is all you need in response before asking if they want to talk through it. Some kids want to vent. Others want silence. Ask before you assume.
+**If they bring it up.** Let them lead. "I keep getting jammed on that pitch" is an opening for a real conversation. "That was a tough at-bat" is all you need in response before asking if they want to talk through it. Some kids want to vent.
+
+Others want silence. Ask before you assume.
 
 **Skip these.** "Your front shoulder was flying open." "You should have laid off that pitch." "That's the same mistake from last week." All of this is coaching, and it lands in a car at 9pm after a loss as criticism, not help, even if you mean it as help.
 
@@ -39,4 +41,6 @@ Here's what works.
 
 **After a rough game overall.** "That one was hard" and silence is a complete response. You don't have to make it better. You just have to not make it worse.
 
-**The rule.** The car ride home should not feel like a second loss. Your kid just went through whatever happened out there. They don't need to debrief it on the way home unless they want to. Let the game stay at the field.
+**The rule.** The car ride home should not feel like a second loss. Your kid just went through whatever happened out there. They don't need to debrief it on the way home unless they want to.
+
+Let the game stay at the field.

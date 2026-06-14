@@ -42,4 +42,6 @@ editorial:
 
 **Jump ball.** At the start of the game, a referee tosses the ball up between two players who jump to tap it to their team. After that, possession alternates by an arrow at the scorer's table.
 
-**The thing parents get wrong most often.** Calling out fouls from the stands that weren't called. The ref's job is to call what they see. Your kid's job is to keep playing. Yelling "foul!" on every contact doesn't help either of them.
+**The thing parents get wrong most often.** Calling out fouls from the stands that weren't called. The ref's job is to call what they see. Your kid's job is to keep playing.
+
+Yelling "foul!" on every contact doesn't help either of them.

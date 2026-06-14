@@ -33,9 +33,13 @@ Six positions on the court, quick version.
 
 **Middle blocker (positions 3 and 6).** The tallest players on the team. They anchor the block and attack quick sets in the middle of the net. They rotate out of the back row and are usually replaced by the libero when they move to position 6.
 
-**Setter (position 1 in the back row, or position 2 front row).** The player who delivers the second contact to the hitters. Every offense runs through the setter. They need fast hands, excellent footwork, and the ability to read the game quickly. The equivalent of a point guard in basketball.
+**Setter (position 1 in the back row, or position 2 front row).** The player who delivers the second contact to the hitters. Every offense runs through the setter. They need fast hands, excellent footwork, and the ability to read the game quickly.
 
-**Libero.** The defensive specialist in the back row who wears a different colored jersey. Substitutes freely for any back-row player without counting against the substitution limit. Cannot serve (in most youth formats), attack above the net, or set from in front of the attack line using an overhand motion. The best passer on the team.
+The equivalent of a point guard in basketball.
+
+**Libero.** The defensive specialist in the back row who wears a different colored jersey. Substitutes freely for any back-row player without counting against the substitution limit. Cannot serve (in most youth formats), attack above the net, or set from in front of the attack line using an overhand motion.
+
+The best passer on the team.
 
 **Defensive specialist (DS).** Similar to the libero but serves as a rotational substitute. Not required by rule but common in competitive programs. Usually a strong serve receiver and passer who comes in for specific rotational matchups.
 

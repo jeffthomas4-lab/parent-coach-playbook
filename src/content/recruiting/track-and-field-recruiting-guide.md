@@ -1,7 +1,7 @@
 ---
 title: "Track and Field Recruiting Guide: What Parents and Athletes Need to Know"
 summary: "How college track and field recruiting works across throwing, jumping, sprinting, and distance events. What marks coaches need to see, when to reach out, and what division programs look like."
-category: general
+category: sport-specific
 gradeLevels: ["9","10","11","12"]
 divisions: ["d1","d2","d3","naia","juco"]
 sportTags: ["track-field"]

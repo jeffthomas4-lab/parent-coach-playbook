@@ -47,7 +47,9 @@ At $50 average per entry, that is $1,200 just in entry fees for the season.
 
 **Competition admission tickets**
 
-You pay to watch. Most competitions charge parents $20 to $40 per day to attend. Siblings cost the same. A two-day competition weekend with two family members attending runs $80 to $160.
+You pay to watch. Most competitions charge parents $20 to $40 per day to attend. Siblings cost the same.
+
+A two-day competition weekend with two family members attending runs $80 to $160.
 
 **Travel and hotel**
 
@@ -55,7 +57,9 @@ Regional competitions are usually day trips or one-night hotel stays. Nationals,
 
 **Shoes and accessories**
 
-Different styles require different shoes: jazz, tap, ballet, lyrical. Each pair runs $30 to $80. Some studios require branded bags, jackets, or warm-up suits. Add $50 to $200 for that gear.
+Different styles require different shoes: jazz, tap, ballet, lyrical. Each pair runs $30 to $80.
+
+Some studios require branded bags, jackets, or warm-up suits. Add $50 to $200 for that gear.
 
 **Hair and makeup**
 

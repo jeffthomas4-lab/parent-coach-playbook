@@ -27,7 +27,9 @@ editorial:
 
 Nine positions, quick version. Same layout as baseball, with some differences in how the positions work given the underhand pitching and smaller field.
 
-**Pitcher (P).** Throws underhand from a circle on the field, not from a mound. The pitching circle is 40 to 43 feet from home plate in youth softball, shorter than baseball's 60 feet. Windmill mechanics are the standard form. The pitcher also fields bunts, covers first base on grounders, and backs up plays at the plate.
+**Pitcher (P).** Throws underhand from a circle on the field, not from a mound. The pitching circle is 40 to 43 feet from home plate in youth softball, shorter than baseball's 60 feet. Windmill mechanics are the standard form.
+
+The pitcher also fields bunts, covers first base on grounders, and backs up plays at the plate.
 
 **Catcher (C).** Receives pitches, frames the zone, and handles plays at home plate. Full protective gear required. Quick reflexes and a strong arm for throwing out base stealers.
 

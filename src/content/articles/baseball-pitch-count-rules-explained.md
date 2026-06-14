@@ -40,8 +40,12 @@ Pitch count rules exist because young pitchers have been getting hurt at increas
 - 51 to 65 pitches: 3 calendar days of rest
 - 66 or more pitches: 4 calendar days of rest
 
-**Why this matters.** The growth plates in a young pitcher's elbow and shoulder are not fully formed. Repetitive throwing stress under fatigue damages those structures in ways that don't show up immediately but show up later as ulnar collateral ligament injuries and labrum problems. Youth Tommy John surgeries have increased roughly fivefold since the early 2000s. Pitch count compliance is one of the few structural protections that actually works.
+**Why this matters.** The growth plates in a young pitcher's elbow and shoulder are not fully formed. Repetitive throwing stress under fatigue damages those structures in ways that don't show up immediately but show up later as ulnar collateral ligament injuries and labrum problems. Youth Tommy John surgeries have increased roughly fivefold since the early 2000s.
 
-**What this means in practice.** If your kid threw 72 pitches on Saturday, they need four days of rest before pitching again. They can still throw, catch, and field. They just can't pitch competitively. A coach who asks a player to pitch around these limits is asking too much.
+Pitch count compliance is one of the few structural protections that actually works.
+
+**What this means in practice.** If your kid threw 72 pitches on Saturday, they need four days of rest before pitching again. They can still throw, catch, and field. They just can't pitch competitively.
+
+A coach who asks a player to pitch around these limits is asking too much.
 
 **Travel baseball and tournaments.** The multi-day tournament format creates pressure to push limits. Know your program's pitch count policy before the season starts. Ask specifically how they handle tournament weekends when your kid might be asked to pitch in three games in two days.
