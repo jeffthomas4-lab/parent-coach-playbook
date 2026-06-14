@@ -2,49 +2,50 @@
 /**
  * bundle-worker.mjs
  *
- * The @astrojs/cloudflare adapter v11 removed the esbuild bundling step that
- * previously collapsed the multi-file Worker output into a single minified file.
- * Without it, the dist/_worker.js/ directory totals 26+ MiB, exceeding
- * Cloudflare Pages' 25 MiB uncompressed limit.
+ * The @astrojs/cloudflare adapter v11 removed esbuild bundling, so
+ * dist/_worker.js/ ends up as 5000+ loose modules totaling 26+ MiB,
+ * just over Cloudflare Pages' 25 MiB uncompressed limit.
  *
- * This script restores that step:
- *   1. Runs esbuild on dist/_worker.js/index.js (all dynamic imports inlined)
- *   2. Outputs a single minified dist/_worker.js file
- *   3. Removes the now-redundant dist/_worker.js/ directory
- *
- * Run after `astro build`, before `wrangler pages deploy`.
+ * This script bundles everything into a single minified index.js inside
+ * the existing _worker.js/ directory, then deletes all the chunk files.
+ * Wrangler then sees 1 file instead of 5000+, well under 25 MiB.
  */
 
 import * as esbuild from 'esbuild';
-import { rmSync, renameSync, statSync } from 'fs';
-import { resolve } from 'path';
+import { rmSync, readdirSync, statSync, renameSync, writeFileSync } from 'fs';
+import { resolve, join, extname } from 'path';
 
 const workerDir  = resolve('./dist/_worker.js');
-const entryPoint = resolve('./dist/_worker.js/index.js');
-const outFile    = resolve('./dist/_worker.js.bundle');
-const finalPath  = resolve('./dist/_worker.js');
+const entryPoint = join(workerDir, 'index.js');
+const tempOut    = join(workerDir, '_bundled_index.js');
 
-console.log('📦 Bundling + minifying Worker with esbuild…');
+console.log('Bundling Worker with esbuild...');
 
 await esbuild.build({
-  entryPoints: [entryPoint],
-  bundle:      true,
-  minify:      true,
-  format:      'esm',
-  outfile:     outFile,
-  platform:    'browser',
-  target:      'es2022',
-  conditions:  ['workerd', 'worker', 'browser'],
-  // Don't try to bundle wasm or other binary assets
-  external:    ['*.wasm', '*.png', '*.jpg', '*.jpeg', '*.svg', '*.webp'],
-  logLevel:    'info',
+  entryPoints:  [entryPoint],
+  bundle:       true,
+  minify:       true,
+  format:       'esm',
+  outfile:      tempOut,
+  platform:     'browser',
+  target:       'es2022',
+  conditions:   ['workerd', 'worker', 'browser'],
+  external:     ['*.wasm'],
+  logLevel:     'warning',
 });
 
-const { size } = statSync(outFile);
-console.log(`✅ Bundled size: ${(size / 1024 / 1024).toFixed(2)} MiB (limit 25 MiB)`);
+const bundledSize = statSync(tempOut).size;
+console.log(`Bundled: ${(bundledSize / 1024 / 1024).toFixed(2)} MiB (limit 25 MiB)`);
 
-// Swap: remove directory, rename bundle → _worker.js
-rmSync(workerDir, { recursive: true, force: true });
-renameSync(outFile, finalPath);
+// Delete everything in _worker.js/ EXCEPT our bundled output
+const entries = readdirSync(workerDir, { withFileTypes: true });
+for (const entry of entries) {
+  if (entry.name === '_bundled_index.js') continue; // keep our output
+  const fullPath = join(workerDir, entry.name);
+  rmSync(fullPath, { recursive: true, force: true });
+}
 
-console.log('✅ dist/_worker.js replaced with bundled output.');
+// Rename bundled output → index.js
+renameSync(tempOut, join(workerDir, 'index.js'));
+
+console.log('Done. dist/_worker.js/ now contains 1 bundled file.');
