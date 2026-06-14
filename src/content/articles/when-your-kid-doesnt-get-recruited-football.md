@@ -7,7 +7,7 @@ bluf: "Most high school football players, including very good ones, do not recei
 format: "essay"
 phase: "drive-home"
 sport: "football"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

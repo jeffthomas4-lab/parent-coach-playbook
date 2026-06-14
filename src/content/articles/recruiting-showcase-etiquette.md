@@ -7,7 +7,7 @@ bluf: "Recruiting showcases are evaluation events. College coaches attend to wat
 format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

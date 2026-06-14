@@ -7,7 +7,7 @@ bluf: "College soccer ID camps are evaluation events run by college programs. Co
 format: "essay"
 phase: "drive-there"
 sport: "soccer"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

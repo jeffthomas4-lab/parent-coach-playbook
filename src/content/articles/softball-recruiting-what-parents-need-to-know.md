@@ -7,7 +7,7 @@ bluf: "College softball recruiting starts earlier than most parents expect. Divi
 format: "essay"
 phase: "drive-there"
 sport: "softball"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

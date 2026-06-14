@@ -7,7 +7,7 @@ bluf: "College baseball recruiting is position-dependent and starts later than m
 format: "essay"
 phase: "drive-there"
 sport: "baseball"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

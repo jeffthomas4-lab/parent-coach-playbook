@@ -7,7 +7,7 @@ bluf: "College volleyball recruiting starts earlier than most parents expect. Di
 format: "essay"
 phase: "drive-there"
 sport: "volleyball"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

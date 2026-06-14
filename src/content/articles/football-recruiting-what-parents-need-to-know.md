@@ -7,7 +7,7 @@ bluf: "College football recruiting starts earlier than most families expect and 
 format: "essay"
 phase: "drive-there"
 sport: "football"
-age: "15-18"
+age: 15-plus
 topic: season-ops
 publishedAt: 2026-06-11
 draft: false

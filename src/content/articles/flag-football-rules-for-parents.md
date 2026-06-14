@@ -7,7 +7,7 @@ bluf: "Flag football replaces tackling with flag-pulling. Two flags on a belt. P
 format: "note"
 phase: "drive-there"
 sport: "football"
-age: "6-7"
+age: 5-7
 topic: "rules-of-play"
 publishedAt: 2026-06-11
 draft: false
