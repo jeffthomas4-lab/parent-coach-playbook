@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-basketball"
 title: "Ultimate Youth Basketball Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Basketball Parent Guide: Gear, Costs, Seasons, and What to Expect"
+seoTitle: "Youth Basketball Parent Guide: Gear, Costs, Seasons, and What to..."
 seoDescription: "From rec leagues to AAU: gear lists, real costs, age pathways, and what youth basketball actually demands from parents."
 sport: "basketball"
 publishedAt: 2026-06-11

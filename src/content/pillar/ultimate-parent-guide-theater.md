@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-theater"
 title: "Ultimate Youth Theater Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Theater Parent Guide: School Plays, Community Theater, Competitive Theater, and College Auditions"
+seoTitle: "Youth Theater Parent Guide: School Plays, Community Theater,..."
 seoDescription: "School plays, community theater, and competitive programs are three different things. Real info on costs, auditions, and the college theater audition process."
 sport: "theater"
 publishedAt: 2026-06-11

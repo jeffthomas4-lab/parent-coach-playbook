@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-band"
 title: "Ultimate Youth Band Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Band Parent Guide: Marching vs Concert Band, Instrument Costs, Lessons, and What to Expect"
+seoTitle: "Youth Band Parent Guide: Marching vs Concert Band, Instrument..."
 seoDescription: "Marching band and concert band are two different commitments. Real numbers on instrument rental vs buying, private lessons ROI, and what band asks of families."
 sport: "band"
 publishedAt: 2026-06-11

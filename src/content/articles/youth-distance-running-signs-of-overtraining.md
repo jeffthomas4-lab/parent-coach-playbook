@@ -1,6 +1,6 @@
 ---
 title: "Youth distance running: signs of overtraining"
-seoTitle: "Youth Distance Running Overtraining Signs: What Parents Should Watch For"
+seoTitle: "Youth Distance Running Overtraining Signs: What Parents Should..."
 seoDescription: "How do you know if your teenage runner is overtrained? These are the physical and behavioral warning signs parents should recognize — and what to do about them."
 dek: "The warning signs that training load has crossed a line for a teenage distance runner."
 bluf: "Overtraining in teenage distance runners shows up as persistent fatigue, declining race times despite consistent training, recurring minor injuries, mood changes, and loss of motivation. Girls are at higher risk for the relative energy deficiency in sport (RED-S) pattern. These signs deserve medical attention, not a training push-through."

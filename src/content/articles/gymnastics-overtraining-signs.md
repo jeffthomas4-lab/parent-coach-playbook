@@ -1,6 +1,6 @@
 ---
 title: "Gymnastics overtraining signs parents should watch for"
-seoTitle: "Gymnastics Overtraining Signs in Young Athletes: What Parents Should Know"
+seoTitle: "Gymnastics Overtraining Signs in Young Athletes: What Parents..."
 seoDescription: "How do you know if your gymnast is overtrained? These are the physical and behavioral signs parents should watch for — and what to do when you see them."
 dek: "The signs that training load has crossed a line, and what to do when you see them."
 bluf: "Overtraining in gymnastics often shows up as persistent fatigue, declining performance despite effort, mood changes, and recurring minor injuries. At 11-12, these signs deserve a pediatrician visit and an honest conversation with the gym. Do not wait for a stress fracture to take it seriously."

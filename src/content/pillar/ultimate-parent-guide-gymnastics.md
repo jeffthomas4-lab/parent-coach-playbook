@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-gymnastics"
 title: "Ultimate Youth Gymnastics Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Gymnastics Parent Guide: Levels, Costs, Burnout, and What to Expect"
+seoTitle: "Youth Gymnastics Parent Guide: Levels, Costs, Burnout, and What to..."
 seoDescription: "Gymnastics has the earliest competitive pressure and the highest burnout rate of any youth sport. Real numbers on costs, levels, and what the sport asks of families."
 sport: "gymnastics"
 publishedAt: 2026-06-11

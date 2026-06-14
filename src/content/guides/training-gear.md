@@ -4,7 +4,7 @@ activity: "At-home training gear"
 category: "coach-gear"
 sortOrder: 3
 lede: "Foam rollers, resistance bands, speed ladders, rebounder. The YouTube rabbit hole, organized."
-seoTitle: "Youth At-Home Training Gear Guide: What's Worth Buying (and What Isn't)"
+seoTitle: "Youth At-Home Training Gear Guide: What's Worth Buying (and What..."
 seoDescription: "Foam rollers, resistance bands, speed ladders, agility cones, and rebounders for youth athletes. What actually improves performance and what's just equipment sitting in the garage."
 costSummary: "$50–150 buys a solid home training setup. The rebounder is the one high-ticket item worth considering."
 publishedAt: 2026-06-11

@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-football"
 title: "Ultimate Youth Tackle Football Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Tackle Football Parent Guide: Gear, Costs, Safety, and What to Expect"
+seoTitle: "Youth Tackle Football Parent Guide: Gear, Costs, Safety, and What..."
 seoDescription: "From first pads to varsity: gear lists, real costs, safety research, age pathways, and what youth tackle football actually demands of families."
 sport: "football"
 publishedAt: 2026-06-11

@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-dance"
 title: "Ultimate Youth Dance Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Dance Parent Guide: Recital vs Competition, Costs, Costumes, and Studio Politics"
+seoTitle: "Youth Dance Parent Guide: Recital vs Competition, Costs, Costumes,..."
 seoDescription: "Recital dance and competition dance are completely different commitments. Real costs, costume budgets, and what dance actually asks of families at every level."
 sport: "dance"
 publishedAt: 2026-06-11

@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-softball"
 title: "Ultimate Youth Softball Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Softball Parent Guide: Gear, Costs, Travel Ball, and What to Expect"
+seoTitle: "Youth Softball Parent Guide: Gear, Costs, Travel Ball, and What to..."
 seoDescription: "Travel ball starts earlier than most parents expect. Real costs, pitcher development timelines, and what softball asks of families at every level."
 sport: "softball"
 publishedAt: 2026-06-11

@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-wrestling"
 title: "Ultimate Youth Wrestling Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Wrestling Parent Guide: Weight Classes, Costs, Season Structure, and What to Expect"
+seoTitle: "Youth Wrestling Parent Guide: Weight Classes, Costs, Season..."
 seoDescription: "Weight management, skin checks, folkstyle vs freestyle: what wrestling actually asks of families and how to support your kid the right way."
 sport: "wrestling"
 publishedAt: 2026-06-11

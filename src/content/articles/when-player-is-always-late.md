@@ -1,6 +1,6 @@
 ---
 title: "When a Player Is Always Late"
-seoTitle: "When a Youth Athlete Is Always Late to Practice: What Coaches Should Know"
+seoTitle: "When a Youth Athlete Is Always Late to Practice: What Coaches..."
 seoDescription: "Chronic lateness from a youth athlete almost always signals something at home. Here's how to handle it without embarrassing the kid or burning the parent relationship."
 dek: "Chronic lateness almost always means something is happening at home. Here's how to handle it right."
 bluf: "Don't treat chronic lateness as a discipline problem until you know what's behind it. For most kids, it's transportation, work schedules, or family chaos—not attitude. The coach who handles this with quiet grace keeps the kid in sports. The coach who makes it a public issue often loses them."

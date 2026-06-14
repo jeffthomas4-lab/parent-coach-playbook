@@ -1,7 +1,7 @@
 ---
 slug: "ultimate-parent-guide-volleyball"
 title: "Ultimate Youth Volleyball Parent Guide: Everything You Need to Know"
-seoTitle: "Youth Volleyball Parent Guide: Gear, Costs, Club vs School, and What to Expect"
+seoTitle: "Youth Volleyball Parent Guide: Gear, Costs, Club vs School, and..."
 seoDescription: "From first practice to club ball: gear, real costs, season structure, and what youth volleyball actually asks of parents."
 sport: "volleyball"
 publishedAt: 2026-06-11
