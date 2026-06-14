@@ -256,11 +256,28 @@ const popularReads = [
           </a>`).join('');
       };
 
-      const runSearch = (raw: string) => {
+      // Debounced logging: fires after the user stops typing for 600 ms, only
+      // when the query is more than 2 characters. Fire-and-forget — errors are
+      // swallowed so they never surface to the user.
+      let logTimer: ReturnType<typeof setTimeout>;
+      const logSearch = (q: string, resultCount: number) => {
+        if (q.length <= 2) return;
+        clearTimeout(logTimer);
+        logTimer = setTimeout(() => {
+          fetch('/api/search-event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: q, resultCount }),
+          }).catch(() => {});
+        }, 600);
+      };
+
+      const runSearchAndLog = (raw: string) => {
         const q = raw.trim().toLowerCase();
         if (!q) {
           defaultState.classList.remove('hidden');
           resultsState.classList.add('hidden');
+          clearTimeout(logTimer);
           return;
         }
         defaultState.classList.add('hidden');
@@ -272,16 +289,17 @@ const popularReads = [
         );
         resultsLabel.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'} for "${q}"`;
         render(hits, q);
+        logSearch(q, hits.length);
       };
 
-      input.addEventListener('input', () => runSearch(input.value));
+      input.addEventListener('input', () => runSearchAndLog(input.value));
 
       // Pre-fill from ?q= URL parameter so inline searches from /reads/ land on results.
       const urlParams = new URLSearchParams(window.location.search);
       const initialQ = urlParams.get('q');
       if (initialQ) {
         input.value = initialQ;
-        runSearch(initialQ);
+        runSearchAndLog(initialQ);
         input.focus();
       }
     }

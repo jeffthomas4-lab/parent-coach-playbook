@@ -5,6 +5,8 @@ import { SPORTS } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
+// Pillar collection — loaded once here and filtered per-sport below.
+
 // Sport landing pages: aggregate everything tagged with this sport into one
 // reference hub. Replaces the SEO-leaky model where each piece of content
 // for a sport lived in five different surfaces with no consolidated entry.
@@ -22,6 +24,10 @@ const pageTitle = 'seoTitle' in sportData && sportData.seoTitle
 const pageDescription = 'seoDescription' in sportData && sportData.seoDescription
   ? sportData.seoDescription
   : `Every read, drill, calendar, pathway, rule, and recruiting note we have on ${sportLabel.toLowerCase()}, in one place. Built for the parent who is in it.`;
+
+// Pull the pillar collection and find a matching guide for this sport.
+const allPillars    = await getCollection('pillar',        ({ data }) => isLive(data));
+const matchedPillar = allPillars.find((p) => p.data.sport === sportSlug);
 
 // Pull every collection that has a sport tag.
 const articles      = await getCollection('articles',      ({ data }) => isLive(data));
@@ -76,6 +82,28 @@ const fmtDate = (d: Date) =>
       </p>
     </div>
   </section>
+
+  {/* Complete Parent Guide banner — only shown when a pillar page exists for this sport */}
+  {matchedPillar && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-8 md:py-10">
+        <a href={`/pillar/${matchedPillar.slug}/`} class="block group max-w-3xl">
+          <p class="font-display italic text-rust mb-1 font-medium text-sm">Complete Parent Guide</p>
+          <h2 class="font-display text-ink text-xl md:text-2xl leading-tight group-hover:text-rust transition-colors font-medium">
+            {matchedPillar.data.title}
+          </h2>
+          {matchedPillar.data.seoDescription && (
+            <p class="font-display text-ink-soft mt-2 leading-snug text-base">
+              {matchedPillar.data.seoDescription}
+            </p>
+          )}
+          <p class="font-display italic text-rust text-sm mt-3 font-medium group-hover:underline">
+            → Read the full guide
+          </p>
+        </a>
+      </div>
+    </section>
+  )}
 
   {/* Tools row: cost calculator + pathway + calendar + rules */}
   <section class="border-b border-bone bg-paper-warm">

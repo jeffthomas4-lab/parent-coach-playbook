@@ -1,0 +1,178 @@
+---
+// /admin/search-signals
+//
+// Shows the top 20 most-searched queries and a raw log of the last 500 events.
+// Uses D1 binding `DB` — same binding used by the camps directory.
+// Wrap this route behind Cloudflare Access in production.
+
+export const prerender = false;
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+
+type RawEvent = {
+  id: number;
+  query: string;
+  result_count: number | null;
+  collection: string | null;
+  sport: string | null;
+  age: string | null;
+  created_at: string;
+};
+
+type TopQuery = {
+  query: string;
+  count: number;
+  avg_results: number | null;
+};
+
+let topQueries: TopQuery[] = [];
+let recentEvents: RawEvent[] = [];
+let dbAvailable = !!env?.DB;
+let tableReady = false;
+
+if (env?.DB) {
+  try {
+    // Top 20 by frequency
+    const topResult = await env.DB.prepare(
+      `SELECT query, COUNT(*) as count, ROUND(AVG(result_count), 0) as avg_results
+       FROM search_events
+       GROUP BY lower(query)
+       ORDER BY count DESC
+       LIMIT 20`
+    ).all<TopQuery>();
+    topQueries = topResult.results ?? [];
+
+    // Last 500 raw events
+    const rawResult = await env.DB.prepare(
+      `SELECT id, query, result_count, collection, sport, age, created_at
+       FROM search_events
+       ORDER BY created_at DESC
+       LIMIT 500`
+    ).all<RawEvent>();
+    recentEvents = rawResult.results ?? [];
+    tableReady = true;
+  } catch (e) {
+    // Table doesn't exist yet — migration 0010 hasn't been applied.
+    console.error('[search-signals] D1 query failed:', e);
+    tableReady = false;
+  }
+}
+
+const fmt = (s: string) =>
+  new Date(s).toLocaleString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric',
+    hour: 'numeric', minute: '2-digit',
+  });
+---
+<BaseLayout title="Search signals" description="Admin: search event log" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">
+        Admin · <a href="/admin/camps/" class="hover:underline">Camps</a> · <a href="/admin/editorial/" class="hover:underline">Editorial</a> · Search signals
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+        Search signals
+      </h1>
+      <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
+        What parents and coaches are looking for. Logged from /search, no PII stored.
+      </p>
+    </div>
+  </section>
+
+  {!dbAvailable && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-8">
+        <p class="font-display italic text-rust font-medium">Database not available. Run locally with <code>wrangler pages dev</code> to access D1.</p>
+      </div>
+    </section>
+  )}
+
+  {dbAvailable && !tableReady && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-8">
+        <p class="font-display italic text-rust font-medium">
+          The <code>search_events</code> table does not exist yet. Apply migration 0010:
+        </p>
+        <pre class="mt-3 bg-paper border border-bone p-4 text-sm font-mono overflow-x-auto">npx wrangler d1 migrations apply parent-coach-playbook --remote</pre>
+      </div>
+    </section>
+  )}
+
+  {tableReady && topQueries.length === 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-8">
+        <p class="font-display italic text-ink-soft font-medium">No search events logged yet.</p>
+      </div>
+    </section>
+  )}
+
+  {tableReady && topQueries.length > 0 && (
+    <>
+      <section class="border-b border-bone">
+        <div class="container-px py-10">
+          <p class="font-display italic text-rust mb-4 font-medium">Top 20 queries</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm font-display">
+              <thead>
+                <tr class="border-b border-bone text-left text-ink-soft font-medium italic">
+                  <th class="pb-2 pr-6">#</th>
+                  <th class="pb-2 pr-6">Query</th>
+                  <th class="pb-2 pr-6">Searches</th>
+                  <th class="pb-2">Avg results</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topQueries.map((row, i) => (
+                  <tr class="border-b border-bone hover:bg-paper-warm transition-colors">
+                    <td class="py-2 pr-6 text-ink-soft">{i + 1}</td>
+                    <td class="py-2 pr-6 text-ink font-medium">{row.query}</td>
+                    <td class="py-2 pr-6 text-ink">{row.count}</td>
+                    <td class="py-2 text-ink-soft">
+                      {row.avg_results !== null ? row.avg_results : '—'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container-px py-10">
+          <p class="font-display italic text-rust mb-4 font-medium">
+            Recent events (last {recentEvents.length})
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm font-display">
+              <thead>
+                <tr class="border-b border-bone text-left text-ink-soft font-medium italic">
+                  <th class="pb-2 pr-4">Query</th>
+                  <th class="pb-2 pr-4">Results</th>
+                  <th class="pb-2 pr-4">Collection</th>
+                  <th class="pb-2 pr-4">Sport</th>
+                  <th class="pb-2 pr-4">Age</th>
+                  <th class="pb-2">When</th>
+                </tr>
+              </thead>
+              <tbody>
+                {recentEvents.map(e => (
+                  <tr class="border-b border-bone hover:bg-paper-warm transition-colors">
+                    <td class="py-1.5 pr-4 text-ink font-medium">{e.query}</td>
+                    <td class="py-1.5 pr-4 text-ink-soft">{e.result_count ?? '—'}</td>
+                    <td class="py-1.5 pr-4 text-ink-soft">{e.collection ?? '—'}</td>
+                    <td class="py-1.5 pr-4 text-ink-soft">{e.sport ?? '—'}</td>
+                    <td class="py-1.5 pr-4 text-ink-soft">{e.age ?? '—'}</td>
+                    <td class="py-1.5 text-ink-soft whitespace-nowrap">{fmt(e.created_at)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>

@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE, SPORTS, authorEntity } from '../../data/site';
+import { isLive } from '../../lib/publishFilter';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const entries = await getCollection('pillar', ({ data }) => isLive(data));
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await entry.render();
+
+// SEO
+const pageTitle = data.seoTitle ?? data.title;
+const rawDesc = data.seoDescription ?? entry.body.replace(/^---[\s\S]*?---\s*/, '').replace(/#+[^\n]*/g, '').replace(/\n+/g, ' ').trim().slice(0, 160);
+const pageDescription = rawDesc.length > 155 ? rawDesc.slice(0, 155) + '...' : rawDesc;
+
+// Sport landing link
+const sportSlug = data.sport;
+const sportEntry = SPORTS.find((s) => s.slug === sportSlug);
+const sportLabel = sportEntry?.label ?? sportSlug;
+
+// Article JSON-LD for this pillar
+const canonicalUrl = new URL(`/pillar/${entry.slug}/`, SITE.url).toString();
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description: pageDescription,
+  image: {
+    '@type': 'ImageObject',
+    url: new URL('/og-default.jpg', SITE.url).toString(),
+    copyrightNotice: `© ${new Date().getFullYear()} ${SITE.name}`,
+    creditText: SITE.name,
+    acquireLicensePage: `${SITE.url}/terms/`,
+    license: `${SITE.url}/terms/`,
+  },
+  datePublished: data.publishedAt.toISOString(),
+  dateModified: data.publishedAt.toISOString(),
+  author: authorEntity(),
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+  articleSection: 'Complete Parent Guide',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE.url}/sports/` },
+    ...(sportEntry ? [{ '@type': 'ListItem', position: 3, name: sportLabel, item: `${SITE.url}/sports/${sportSlug}/` }] : []),
+    { '@type': 'ListItem', position: sportEntry ? 4 : 3, name: data.title },
+  ],
+};
+
+const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' } as const;
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogType="article"
+  canonical={canonicalUrl}
+  publishedAt={data.publishedAt.toISOString()}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="bg-paper-warm border-b border-bone">
+    <div class="container-px pt-6 pb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1 font-display italic text-ink-soft font-medium" style="font-size: 0.82rem;">
+          <li><a href="/" class="hover:text-rust">Home</a></li>
+          <li aria-hidden="true" class="mx-1">›</li>
+          {sportEntry ? (
+            <>
+              <li><a href={`/sports/${sportSlug}/`} class="hover:text-rust">{sportLabel}</a></li>
+              <li aria-hidden="true" class="mx-1">›</li>
+            </>
+          ) : (
+            <>
+              <li><a href="/sports/" class="hover:text-rust">Sports</a></li>
+              <li aria-hidden="true" class="mx-1">›</li>
+            </>
+          )}
+          <li class="text-ink" aria-current="page">Complete Parent Guide</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">
+        Complete Parent Guide
+        {sportEntry && (
+          <> · <a href={`/sports/${sportSlug}/`} class="hover:underline">{sportLabel}</a></>
+        )}
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.05] max-w-3xl font-medium">
+        {data.title}
+      </h1>
+      {data.seoDescription && (
+        <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+          {data.seoDescription}
+        </p>
+      )}
+      <p class="font-display italic text-ink-soft text-sm mt-5 font-medium">
+        Published {data.publishedAt.toLocaleDateString('en-US', dateOpts)}
+      </p>
+    </div>
+  </section>
+
+  <div class="container-px py-10 md:py-14">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <article class="lg:col-span-8 article-body">
+        <Content />
+
+        {sportEntry && (
+          <aside class="mt-14 pt-8 border-t border-bone">
+            <p class="font-display italic text-rust mb-2 font-medium">More {sportLabel} content</p>
+            <p class="font-display text-ink-soft leading-snug">
+              Every article, drill, calendar, and recruiting note we have on {sportLabel.toLowerCase()} is aggregated in one place.
+            </p>
+            <a
+              href={`/sports/${sportSlug}/`}
+              class="font-display italic text-rust hover:text-ink font-medium mt-3 inline-block"
+            >
+              → All {sportLabel.toLowerCase()} content
+            </a>
+          </aside>
+        )}
+
+        <p class="font-display italic text-ink-soft text-xs mt-10 pt-6 border-t border-bone font-medium">
+          Last updated {data.publishedAt.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}.
+          Written and edited by the {SITE.name} editorial team. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust">{SITE.email}</a>.
+        </p>
+      </article>
+
+      <aside class="lg:col-span-4 lg:sticky lg:top-8 lg:self-start space-y-6">
+        {sportEntry && (
+          <div class="border border-bone bg-paper-warm p-5">
+            <p class="font-display italic text-rust mb-3 font-medium" style="font-size: 0.95rem;">
+              {sportLabel} hub
+            </p>
+            <p class="font-display text-ink-soft text-sm leading-snug mb-4">
+              Drills, articles, gear guides, season calendar, and recruiting notes for {sportLabel.toLowerCase()} families.
+            </p>
+            <a
+              href={`/sports/${sportSlug}/`}
+              class="font-display italic text-rust hover:text-ink font-medium"
+              style="font-size: 0.95rem;"
+            >
+              → {sportLabel} sport hub
+            </a>
+          </div>
+        )}
+
+        <div class="border border-bone bg-paper-warm p-5">
+          <p class="font-display italic text-rust mb-2 font-medium" style="font-size: 0.95rem;">
+            All sports
+          </p>
+          <a
+            href="/sports/"
+            class="font-display italic text-rust hover:text-ink font-medium"
+            style="font-size: 0.95rem;"
+          >
+            → Browse every sport guide
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
