@@ -9,7 +9,7 @@
 -- Camp-specific fields (day_or_overnight, lunch_included, aftercare_available) stay
 -- on the table but are ignored when program_type='league'.
 
-ALTER TABLE camps ADD COLUMN program_type TEXT NOT NULL DEFAULT 'camp';
+-- ALTER TABLE camps ADD COLUMN program_type TEXT NOT NULL DEFAULT 'camp'; -- column already exists
 ALTER TABLE camps ADD COLUMN registration_deadline TEXT;
 ALTER TABLE camps ADD COLUMN schedule_text TEXT;
 
