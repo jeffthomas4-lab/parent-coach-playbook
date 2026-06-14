@@ -27,6 +27,8 @@ editorial:
 
 The registration confirmation will usually include a gear list. Here is how to read it without overspending.
 
+*Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
 Helmet: buy new or buy NOCSAE-certified reconditioned. Do not buy a used helmet from a garage sale or a sporting goods store's clearance rack. The helmet is the only piece of football equipment where the condition of the foam liner is not visible.
 
 A helmet that has taken real hits may look fine and not be fine. Riddell, Schutt, and Xenith all make youth models in the $80-$150 range.
@@ -37,17 +39,17 @@ Shoulder pads: new or certified reconditioned here too. Fit matters. The pads sh
 
 If your kid's arms cannot move freely, they are too big. Most sporting goods stores will fit them if you bring the kid.
 
-Mouth guard: buy new every season. They run $5-$15. This is not an area to economize.
+Mouth guard: [buy new every season](/go/football-mouthguard-sisu/). They run $5-$15. This is not an area to economize.
 
-Cleats: used is fine. Football cleats with detachable molded rubber cleats are the standard. Metal cleats are typically not allowed at youth levels.
+Cleats: used is fine. [Football cleats with detachable molded rubber cleats](/go/football-cleats-youth/) are the standard. Metal cleats are typically not allowed at youth levels.
 
 Your kid's foot will grow faster than the cleats wear out, so buy a half-size up.
 
-Girdle with integrated pads: this is the padded compression shorts that protect hips, thighs, and tailbone. Used is fine. They take no real impact.
+Girdle with integrated pads: this is the [padded compression shorts](/go/football-girdle-youth/) that protect hips, thighs, and tailbone. Used is fine. They take no real impact.
 
-Athletic cup: required for boys in most programs. Used is not fine.
+Athletic cup: [required for boys](/go/football-cup-shorts-youth/) in most programs. Used is not fine.
 
-Gloves: optional but commonly used by skill position players. Not required.
+Gloves: [optional but commonly used](/go/football-gloves-receiver-youth/) by skill position players. Not required.
 
 For flag football: the gear list is much shorter. Cleats, mouth guard, athletic supporter. The league provides the flags.
 

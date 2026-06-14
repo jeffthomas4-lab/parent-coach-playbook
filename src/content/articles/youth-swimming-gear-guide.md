@@ -25,19 +25,21 @@ editorial:
   reviewerNotes: ""
 ---
 
+*Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+
 **Training suit**
 
-For girls: a one-piece competitive practice suit, not a recreational swimsuit. Practice suits are made from polyester or polyester blends that hold up to daily chlorine exposure. Recreational suits degrade fast. Budget $25-50. Speedo, TYR, and Arena all make solid training suits in youth sizes.
+For girls: a one-piece competitive practice suit, not a recreational swimsuit. Practice suits are made from polyester or polyester blends that hold up to daily chlorine exposure. Recreational suits degrade fast. Budget $25-50. Speedo, TYR, and Arena all make [solid training suits](/go/swimsuit-training-youth/) in youth sizes.
 
 For boys: competitive brief (jammer) or swim trunks are both acceptable at the rec level. Jammers (knee-length compression shorts) are standard at competitive club. Budget $20-40.
 
 **Goggles**
 
-Buy two pairs. Goggles break and seals fail at the worst times. Fit matters more than brand. Have your kid try them on in the store if possible. They should create a seal without the strap. Budget $12-25 per pair. Swedish goggles are low-profile with minimal gasket and are used by serious competitive swimmers but take getting used to. Start with a standard gasket style for younger swimmers.
+[Buy two pairs](/go/swim-goggles-youth/). Goggles break and seals fail at the worst times. Fit matters more than brand. Have your kid try them on in the store if possible. They should create a seal without the strap. Budget $12-25 per pair. Swedish goggles are low-profile with minimal gasket and are used by serious competitive swimmers but take getting used to. Start with a standard gasket style for younger swimmers.
 
 **Cap**
 
-Silicone caps ($5-10) last longer than latex. Most club programs have a team cap, but having a personal practice cap prevents the team cap from wearing out before meets.
+[Silicone caps](/go/swim-cap-silicone-youth/) ($5-10) last longer than latex. Most club programs have a team cap, but having a personal practice cap prevents the team cap from wearing out before meets.
 
 **Bag**
 

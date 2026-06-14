@@ -6,18 +6,21 @@
  * dist/_worker.js/ ends up as 5000+ loose modules totaling 26+ MiB,
  * just over Cloudflare Pages' 25 MiB uncompressed limit.
  *
- * This script bundles everything into a single minified index.js inside
- * the existing _worker.js/ directory, then deletes all the chunk files.
- * Wrangler then sees 1 file instead of 5000+, well under 25 MiB.
+ * FIX: bundle everything into a single minified file at dist/_worker.js
+ * (a FILE, not a directory). When wrangler sees _worker.js as a file, it
+ * uploads it directly with no Pages Functions compilation overhead (~1 MiB
+ * of overhead is added when _worker.js is a directory). This keeps us under
+ * the 25 MiB limit.
  */
 
 import * as esbuild from 'esbuild';
-import { rmSync, readdirSync, statSync, renameSync, writeFileSync } from 'fs';
-import { resolve, join, extname } from 'path';
+import { rmSync, statSync, renameSync } from 'fs';
+import { execSync } from 'child_process';
+import { resolve, join } from 'path';
 
-const workerDir  = resolve('./dist/_worker.js');
+const workerDir  = resolve('./dist/_worker.js');   // currently a directory
 const entryPoint = join(workerDir, 'index.js');
-const tempOut    = join(workerDir, '_bundled_index.js');
+const tempOut    = resolve('./dist/_worker_bundle_temp.js'); // write OUTSIDE the dir
 
 console.log('Bundling Worker with esbuild...');
 
@@ -35,17 +38,35 @@ await esbuild.build({
 });
 
 const bundledSize = statSync(tempOut).size;
-console.log(`Bundled: ${(bundledSize / 1024 / 1024).toFixed(2)} MiB (limit 25 MiB)`);
+const mib = bundledSize / 1024 / 1024;
+console.log(`Bundled: ${mib.toFixed(2)} MiB (limit 25 MiB)`);
 
-// Delete everything in _worker.js/ EXCEPT our bundled output
-const entries = readdirSync(workerDir, { withFileTypes: true });
-for (const entry of entries) {
-  if (entry.name === '_bundled_index.js') continue; // keep our output
-  const fullPath = join(workerDir, entry.name);
-  rmSync(fullPath, { recursive: true, force: true });
+if (mib > 25) {
+  rmSync(tempOut, { force: true });
+  console.error('ERROR: Bundle exceeds 25 MiB limit even after minification.');
+  process.exit(1);
 }
 
-// Rename bundled output → index.js
-renameSync(tempOut, join(workerDir, 'index.js'));
+// Brief pause so Windows releases any file locks from astro build
+await new Promise(r => setTimeout(r, 500));
 
-console.log('Done. dist/_worker.js/ now contains 1 bundled file.');
+// Delete the _worker.js/ DIRECTORY entirely
+try {
+  rmSync(workerDir, { recursive: true, force: true });
+} catch (e) {
+  // Windows file-lock fallback: use PowerShell to force-remove
+  if (process.platform === 'win32') {
+    console.log('rmSync blocked (likely Windows lock); retrying via PowerShell...');
+    execSync(`powershell -Command "Remove-Item -Path '${workerDir}' -Recurse -Force"`, { stdio: 'inherit' });
+  } else {
+    throw e;
+  }
+}
+
+// Place the bundle at dist/_worker.js as a FILE (not a directory).
+// Wrangler treats a _worker.js FILE as a direct upload — no module
+// compilation step, no extra overhead, file size = upload size.
+renameSync(tempOut, workerDir);
+
+console.log(`Done. dist/_worker.js is now a ${mib.toFixed(2)} MiB file (not a directory).`);
+console.log('Wrangler will upload it directly — no Pages Functions compilation overhead.');
