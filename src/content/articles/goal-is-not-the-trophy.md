@@ -1,7 +1,7 @@
 ---
 title: "The Goal Is Not the Trophy"
 seoTitle: "The Goal of Youth Sports Is Not the Trophy"
-seoDescription: "End-of-season trophies are in attic boxes by February. What lasts is how the season felt, what kids learned, and whether they believe in themselves more. Here's the case for measuring differently."
+seoDescription: "End-of-season trophies are in attic boxes by February. What lasts is how the season felt, what kids learned, and whether they believe in themselves more. Here's the case for..."
 dek: "Trophies are in attic boxes by February. What lasts is something else entirely."
 bluf: "A youth sports trophy is decorating an attic box within six months. What lasts is how the season felt, whether kids made real friends, whether they learned something about themselves, and whether they believe in their own capacity more than they did when the season started. Measuring a season by what kids carry out of it—not what they carry home—changes how coaches and parents approach everything."
 topic: "communication"

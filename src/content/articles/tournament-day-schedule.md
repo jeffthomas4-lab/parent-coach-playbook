@@ -1,7 +1,7 @@
 ---
 title: Managing the *tournament day* when you have three games.
 dek: The gaps between games are where it goes wrong.
-seoDescription: How to manage a tournament day with multiple games. What to do in the gaps between games, how to keep your athlete fueled and rested, how to handle siblings, and how to hold the day together without burning everyone out.
+seoDescription: "How to manage a tournament day with multiple games. What to do in the gaps between games, how to keep your athlete fueled and rested, how to handle siblings, and how to hold..."
 topic: season-ops
 format: note
 phase: game

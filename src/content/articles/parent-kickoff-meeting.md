@@ -1,7 +1,7 @@
 ---
 title: The parent *kickoff meeting*. Run it right.
 dek: The 30 minutes that prevents half the problems.
-seoDescription: The parent kickoff meeting before your youth sports season is the most important 30 minutes you'll spend as a volunteer coach. Here's what to cover, in what order, so you don't get the 10pm email.
+seoDescription: "The parent kickoff meeting before your youth sports season is the most important 30 minutes you'll spend as a volunteer coach. Here's what to cover, in what order, so you don't..."
 topic: the-hard-stuff
 format: note
 phase: drive-there

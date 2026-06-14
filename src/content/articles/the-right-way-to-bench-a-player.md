@@ -1,7 +1,7 @@
 ---
 title: "The right way to bench a player"
 seoTitle: "The right way to bench a youth sports player"
-seoDescription: "Benching a player for attitude or performance is one of the hardest coaching decisions. Here's how to do it in a way that's fair, clear, and actually produces the result you're after."
+seoDescription: "Benching a player for attitude or performance is one of the hardest coaching decisions. Here's how to do it in a way that's fair, clear, and actually produces the result you're..."
 dek: "Benching is a coaching tool. Handle it right and it changes behavior. Handle it wrong and you've just damaged a relationship."
 bluf: "Bench a player when the behavior or performance needs to change and other approaches haven't worked. Tell them specifically why, what would change it, and how long the situation will last. A bench decision that's clear and fair is one the player can respond to. A vague one produces resentment."
 topic: "the-hard-stuff"

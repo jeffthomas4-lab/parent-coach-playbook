@@ -1,7 +1,7 @@
 ---
 title: Playing time. The *fairness* question every coach faces.
 dek: How to set it, explain it, and hold the line.
-seoDescription: Playing time is the hardest question for volunteer coaches. Here's a clear philosophy for 8-10 year olds, how to explain it before the season starts, and what to say when a parent pushes back mid-season.
+seoDescription: "Playing time is the hardest question for volunteer coaches. Here's a clear philosophy for 8-10 year olds, how to explain it before the season starts, and what to say when a..."
 topic: the-hard-stuff
 format: note
 phase: game

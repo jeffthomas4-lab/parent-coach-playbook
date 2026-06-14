@@ -1,7 +1,7 @@
 ---
 title: The *hotel room* the night before a tournament.
 dek: What works, what doesn't, and what to ask for when you book.
-seoDescription: Hotel room logistics for sports families the night before a tournament. Bed assignments, wake time planning, gear management in a small room, what to request at booking, and the restaurant vs. room food question.
+seoDescription: "Hotel room logistics for sports families the night before a tournament. Bed assignments, wake time planning, gear management in a small room, what to request at booking, and..."
 topic: season-ops
 format: note
 phase: drive-there
