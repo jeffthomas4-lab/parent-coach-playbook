@@ -428,6 +428,7 @@ export const BUYING_GUIDES = [
   { slug: 'first-aid-kit',      label: 'First aid kit',       category: 'essentials', blurb: 'Bandages, tape, cold packs, and what you use on the sideline every week.' },
   { slug: 'season-essentials',  label: 'Season essentials',    category: 'essentials', blurb: 'Recovery, hydration, travel logistics. The kit that runs the season.' },
   { slug: 'sideline-kit',       label: 'Sideline kit',         category: 'essentials', blurb: 'Chair, cooler, blanket. The gear that makes watching comfortable.' },
+  { slug: 'recovery-gear',      label: 'Recovery gear',        category: 'essentials', blurb: 'Foam rollers, massagers, bands, ice. What helps by age and what to skip until high school.' },
   { slug: 'parent-coach-gear',  label: 'Parent-coach gear',    category: 'coach-gear', blurb: 'Clipboard, timer, pennies, bag, whiteboard. The stuff you actually need on the bench.' },
   { slug: 'video-tracking-gear',label: 'Video and tracking',   category: 'coach-gear', blurb: 'Phone tripod, action cam, ball pump. Film practice, inflate everything.' },
   { slug: 'training-gear',      label: 'At-home training gear', category: 'coach-gear', blurb: 'Foam rollers, resistance bands, speed ladders, rebounder. The YouTube rabbit hole, organized.' },
