@@ -2,43 +2,43 @@
 // Admin preview route. Renders any content entry — including drafts and
 // future-dated posts — without going through the public site's isLive() filter.
 //
-// Behind Cloudflare Access on /admin/* (same as the editorial dashboard).
+// Behind Cloudflare Access on /admin/* (same as the editorial dashboard). Access
+// gates at the network edge, so prerendering these pages keeps them protected.
+//
+// Prerendered (getStaticPaths) on purpose: doing the content lookup at build
+// time keeps Astro's content store OUT of the runtime worker, which must stay
+// under Cloudflare's free-plan size limit.
 //
 // URL: /admin/preview/<collection>/<slug>
-// Used by the editorial dashboard when a piece's public URL would 404
-// (because draft: true or publishedAt is in the future).
 
-import { getEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
-export const prerender = false;
+export const prerender = true;
 
-const VALID_COLLECTIONS = new Set([
-  'articles',
-  'body',
-  'pathways',
-  'seasonCalendars',
-  'guides',
-  'resources',
-  'coachingTips',
-  'recruiting',
-  'adaptive',
-  'rules',
-  'scripts',
-  'decisions',
-]);
-
-const collection = Astro.params.collection;
-const slug = Astro.params.slug;
-
-if (!collection || !slug || !VALID_COLLECTIONS.has(collection)) {
-  return new Response('Unknown collection', { status: 404 });
+export async function getStaticPaths() {
+  // Defined inside getStaticPaths: Astro runs this hook before module-level
+  // const declarations initialize, so a top-level const would hit a TDZ error.
+  const VALID_COLLECTIONS = [
+    'articles', 'body', 'pathways', 'seasonCalendars', 'guides', 'resources',
+    'coachingTips', 'recruiting', 'adaptive', 'rules', 'scripts', 'decisions',
+  ] as const;
+  const paths = [];
+  for (const col of VALID_COLLECTIONS) {
+    const entries = await getCollection(col as any);
+    for (const entry of entries) {
+      paths.push({
+        params: { collection: col, slug: entry.slug },
+        props: { entry },
+      });
+    }
+  }
+  return paths;
 }
 
-const entry = await getEntry(collection as any, slug);
-if (!entry) {
-  return new Response(`Not found: ${collection}/${slug}`, { status: 404 });
-}
+const { entry } = Astro.props as { entry: CollectionEntry<any> };
+const collection = Astro.params.collection as string;
+const slug = Astro.params.slug as string;
 
 const data = entry.data as any;
 const { Content } = await entry.render();
