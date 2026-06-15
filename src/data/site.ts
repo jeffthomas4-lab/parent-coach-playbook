@@ -117,6 +117,7 @@ export function personSchema(): Record<string, unknown> | null {
 export const NAV = [
   { label: 'Start here', href: '/start-here/' },
   { label: 'Reads',      href: '/reads/',       hasDropdown: 'reads' },
+  { label: 'Camps',      href: '/camps/' },
   { label: 'By sport',   href: '/sports/' },
   { label: 'Drills',     href: '/coaching-tips/' },
   { label: 'Gear Files', href: '/what-to-buy/', hasDropdown: 'buying-guides' },

@@ -57,6 +57,14 @@ export default defineConfig({
     domains: ['cdn.sanity.io'],
   },
   vite: {
+    build: {
+      // Astro 5 inlines small bundled <script> tags by default. The site CSP only
+      // allows 'self' plus explicit is:inline hashes, so an inlined bundled script
+      // (e.g. the nav dropdown) has no matching hash and the browser blocks it.
+      // Forcing assetsInlineLimit to 0 keeps every bundled script as an external
+      // /_astro/*.js file, which 'self' covers — the Astro 4 behavior the CSP expects.
+      assetsInlineLimit: 0,
+    },
     ssr: {
       noExternal: ['@fontsource/*'],
     },
