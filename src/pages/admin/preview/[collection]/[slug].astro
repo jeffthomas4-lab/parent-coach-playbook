@@ -8,12 +8,18 @@
 // Used by the editorial dashboard when a piece's public URL would 404
 // (because draft: true or publishedAt is in the future).
 
-import { getEntry } from 'astro:content';
+// Prerendered (static): paths are enumerated at build time via getStaticPaths
+// so the content collections are NOT bundled into the SSR Worker. Importing
+// astro:content from an SSR (prerender=false) page pulled every content chunk
+// into the Worker and pushed it past Cloudflare's 25 MiB limit, breaking
+// deploys. Trade-off: a brand-new draft is previewable only after the next
+// build/deploy (scheduled/future-dated posts already in the repo are fine).
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
-export const prerender = false;
+export const prerender = true;
 
-const VALID_COLLECTIONS = new Set([
+const COLLECTIONS = [
   'articles',
   'body',
   'pathways',
@@ -26,19 +32,22 @@ const VALID_COLLECTIONS = new Set([
   'rules',
   'scripts',
   'decisions',
-]);
+] as const;
 
-const collection = Astro.params.collection;
-const slug = Astro.params.slug;
-
-if (!collection || !slug || !VALID_COLLECTIONS.has(collection)) {
-  return new Response('Unknown collection', { status: 404 });
+export async function getStaticPaths() {
+  const paths: any[] = [];
+  for (const col of COLLECTIONS) {
+    // No isLive() filter — previews must include drafts and future-dated posts.
+    const entries = await getCollection(col as any);
+    for (const entry of entries) {
+      paths.push({ params: { collection: col, slug: entry.slug }, props: { entry, collection: col } });
+    }
+  }
+  return paths;
 }
 
-const entry = await getEntry(collection as any, slug);
-if (!entry) {
-  return new Response(`Not found: ${collection}/${slug}`, { status: 404 });
-}
+const { entry, collection } = Astro.props as { entry: any; collection: string };
+const slug = entry.slug as string;
 
 const data = entry.data as any;
 const { Content } = await entry.render();

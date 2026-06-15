@@ -4,8 +4,14 @@ import { listAllCampSlugsApproved } from '../lib/camps-db';
 import { isLive } from '../lib/publishFilter';
 import type { APIContext } from 'astro';
 
-// SSR so we can include approved camps from D1 at request time.
-export const prerender = false;
+// Prerendered (static) so the content collections are NOT bundled into the
+// SSR Worker — those getCollection() imports were pulling every article chunk
+// into the Worker and pushing it past Cloudflare's 25 MiB limit, which broke
+// deploys. Camp URLs are now captured at build time: newly approved camps
+// appear in the sitemap on the next deploy rather than instantly. (If instant
+// indexing is needed later, add a tiny D1-only SSR endpoint and list it as a
+// second Sitemap: line in robots.txt.)
+export const prerender = true;
 
 export async function GET(ctx: APIContext) {
   const articles = await getCollection('articles', ({ data }) => isLive(data));
