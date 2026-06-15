@@ -60,15 +60,15 @@ Parents watching a Level 5 meet and a Level 8 meet at the same gym will see the 
 
 ## Gear
 
-**Recreational gymnastics:** The gym usually provides grips and chalk. Parents buy a leotard ($20 to $50 for a good one) and bare feet are standard.
+**Recreational gymnastics:** The gym usually provides grips and chalk. Parents buy a [leotard](/go/gymnastics-leotard-youth/) (a value option is all you need for a good one) and bare feet are standard.
 
-**Competitive gymnastics:** Competition leotards are a real cost. A competition leo from a reputable vendor runs $60 to $200. Many gyms require custom or team leos at the $150 to $300 range. A gymnast competing at several meets per year may need two or three competition leos.
+**Competitive gymnastics:** Competition leotards are a real cost. A competition leo from a reputable vendor is moderately priced. Many gyms require custom or team leos in the premium range. A gymnast competing at several meets per year may need two or three competition leos.
 
-**Grips:** Gymnasts on bars use leather grips to protect their palms and improve grip security. Good youth grips run $30 to $60 and wear out. Expect to replace them once or twice per year.
+**Grips:** Gymnasts on bars use leather [grips](/go/gymnastics-grips-youth/) to protect their palms and improve grip security. Good youth grips are value-priced and wear out. Expect to replace them once or twice per year.
 
-**Wrist supports and tape:** Standard gym expense. Athletic tape goes fast. Budget $20 to $40 per year.
+**Wrist supports and tape:** Standard gym expense. [Athletic tape](/go/multi-sport-athletic-tape/) goes fast. A value option is all you need per year.
 
-**Practice leos:** Girls wear leos to every practice. Having five to six practice leos in rotation is normal. Budget $100 to $200 for a stock of practice leos that hold up.
+**Practice leos:** Girls wear leos to every practice. Having five to six practice leos in rotation is normal. Budget for a moderately priced stock of practice leos that hold up.
 
 Shoes are not part of gymnastics for women's events. No footwear cost there.
 

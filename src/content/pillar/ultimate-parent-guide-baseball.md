@@ -48,39 +48,39 @@ This is where baseball gets expensive. Go through this section carefully before 
 
 **Tee-ball and coach-pitch (ages 4 to 8).**
 
-- **Bat:** Tee-ball bats are 24 to 26 inches, light, and forgiving. Spend $20 to $40. Do not buy an expensive bat for a 5-year-old. The bat gets outgrown in one season.
-- **Helmet:** A batting helmet with a face guard (C-flap or cage). Required at this age in most leagues. A decent helmet runs $25 to $50. It must fit snugly.
-- **Glove:** A tee-ball glove is 9 to 10 inches, designed for small hands. Spend $20 to $40. At this age, it's about comfort and sizing, not quality.
-- **Cleats:** Baseball-specific molded cleats (no metal at this age). $20 to $45.
-- **Protective cup:** Required for boys in most leagues. Baseball-specific athletic supporter with a hard cup. $10 to $20.
-- **Baseball pants:** Most leagues provide a jersey. You provide the pants. $15 to $25.
-- **Belt and socks:** $10 to $15 combined.
+- **Bat:** [Tee-ball bats](/go/baseball-bat-teeball/) are 24 to 26 inches, light, and forgiving. A value option is all you need. Do not buy an expensive bat for a 5-year-old. The bat gets outgrown in one season.
+- **Helmet:** A [batting helmet](/go/baseball-helmet-youth/) with a face guard (C-flap or cage). Required at this age in most leagues. A moderately priced helmet is fine. It must fit snugly.
+- **Glove:** A [tee-ball glove](/go/baseball-glove-9in-youth/) is 9 to 10 inches, designed for small hands. A value option is all you need. At this age, it's about comfort and sizing, not quality.
+- **Cleats:** Baseball-specific [molded cleats](/go/multi-sport-cleats-youth/) (no metal at this age). A value pair works.
+- **Protective cup:** Required for boys in most leagues. A baseball-specific [athletic supporter with a hard cup](/go/baseball-cup-youth/). A value option works.
+- **Baseball pants:** Most leagues provide a jersey. You provide the [pants](/go/baseball-pants-youth/). A value option works.
+- **Belt and socks:** A value option covers both.
 
 **Recreational (ages 9 to 12, Little League level).**
 
-- **Bat:** USA Baseball certified (marked "USABat"). Required in Little League and most recreational leagues. A solid USA bat runs $50 to $100. The drop weight matters: for a 10-year-old, a drop 10 or 11 (-10 or -11) is appropriate. Do not buy a BBCOR bat for a 10-year-old. It will underperform at this level.
-- **Helmet:** Same as above but sized for the current player. Optional face guard, though highly recommended for younger players. $25 to $60.
-- **Glove:** An 11 to 11.5 inch glove for most infield positions. An 11.5 to 12 inch glove for outfield. Brand matters less than fit and break-in at this age. Rawlings, Wilson, Mizuno, and Nokona all make solid youth gloves. Budget $40 to $100. A good glove properly oiled and broken in will last two to three seasons.
-- **Catcher's gear:** If your kid is going to catch, the league may supply gear or you may need to buy it. A full catcher's set (helmet/mask, chest protector, leg guards) runs $80 to $150 for a youth set. Do not skip any piece.
-- **Cleats:** Metal cleats are legal in some 11- and 12-year-old leagues. Check your league rules. Molded cleats work everywhere. Budget $30 to $60.
-- **Batting gloves:** Optional but popular. $15 to $30.
+- **Bat:** USA Baseball certified (marked "USABat"). Required in Little League and most recreational leagues. A moderately priced [USA bat](/go/baseball-bat-youth/) does the job. The drop weight matters: for a 10-year-old, a drop 10 or 11 (-10 or -11) is appropriate. Do not buy a BBCOR bat for a 10-year-old. It will underperform at this level.
+- **Helmet:** Same as above but sized for the current player. Optional face guard, though highly recommended for younger players. A moderately priced model is fine.
+- **Glove:** An 11 to 11.5 inch [glove](/go/baseball-glove-youth/) for most infield positions. An 11.5 to 12 inch glove for outfield. Brand matters less than fit and break-in at this age. Rawlings, Wilson, Mizuno, and Nokona all make solid youth gloves. Budget for a moderately priced model. A good glove properly oiled and broken in will last two to three seasons.
+- **Catcher's gear:** If your kid is going to catch, the league may supply gear or you may need to buy it. A full [catcher's set](/go/baseball-catchers-gear-youth/) (helmet/mask, chest protector, leg guards) is a moderately priced youth purchase. Do not skip any piece.
+- **Cleats:** Metal cleats are legal in some 11- and 12-year-old leagues. Check your league rules. Molded cleats work everywhere. Budget for a moderately priced pair.
+- **Batting gloves:** Optional but popular. A [value pair](/go/baseball-batting-gloves-youth/) works.
 
 **Travel/Select Baseball (ages 9 to 14).**
 
 The gear quality level increases at the travel level, and the culture around gear is more competitive. Kids will notice brand names.
 
-- **Bat:** USSSA certified (marked "USSSABat" with the 1.15 BPF stamp) for most travel tournaments. Budget $100 to $300. The DeMarini CF, Louisville Slugger Meta, and Easton Maxum are commonly used in this price range. Parents buy expensive bats at this level and it is not purely status: USSSA bats perform measurably better than USA bats in terms of exit velocity. Buy one season behind if budget is tight. Last year's model at a discount performs identically.
-- **Glove:** A quality glove becomes more important at travel level because fielding expectations are higher. Budget $80 to $200. Rawlings Heart of the Hide and Wilson A2000 are the standards in this range. A properly cared-for glove at this price point lasts four to five years.
+- **Bat:** USSSA certified (marked "USSSABat" with the 1.15 BPF stamp) for most travel tournaments. Budget for a premium model. The DeMarini CF, Louisville Slugger Meta, and Easton Maxum are commonly used at this level. Parents buy expensive bats at this level and it is not purely status: USSSA bats perform measurably better than USA bats in terms of exit velocity. Buy one season behind if budget is tight. Last year's model at a discount performs identically.
+- **Glove:** A quality glove becomes more important at travel level because fielding expectations are higher. Budget for a premium model. Rawlings Heart of the Hide and Wilson A2000 are the standards here. A properly cared-for glove at this level lasts four to five years.
 - **Batting helmet:** Same requirements. Some travel players prefer helmets without face cages. Check tournament rules and your comfort level.
-- **Bag:** A double-decker bat bag ($40 to $80) is standard at the travel level. You need somewhere to put two bats, a helmet, batting gloves, a water bottle, and extra gear.
-- **Sliding shorts with padding:** Optional but increasingly common for kids who are learning to steal bases aggressively. $20 to $40.
-- **Sunglasses:** A flip-down style worn under a baseball cap. Rawlings and Oakley make baseball-specific options. $15 to $50.
+- **Bag:** A double-decker [bat bag](/go/baseball-bat-backpack/) is standard at the travel level. A moderately priced model works. You need somewhere to put two bats, a helmet, batting gloves, a water bottle, and extra gear.
+- **Sliding shorts with padding:** Optional but increasingly common for kids who are learning to steal bases aggressively. A value pair works.
+- **Sunglasses:** A flip-down style worn under a baseball cap. Rawlings and Oakley make baseball-specific options. A value to moderately priced pair works.
 
 **High School Level.**
 
-- **Bat:** BBCOR certified (marked "BBCOR .50"). Required in high school baseball in all 50 states. A solid BBCOR bat runs $100 to $350. The Marucci CAT X, Louisville Slugger Meta, and Easton Ghost X are common choices. This is the one bat purchase worth spending real money on because a good BBCOR bat will last through high school.
-- **Glove:** A serious high school player should own a quality adult glove, 11.5 to 12.75 inches depending on position. Pitchers often prefer 12-inch closed-web gloves to hide grip signs. Budget $150 to $350 at this level. A glove in this range will outlast high school if cared for.
-- **Everything else:** The school provides game jerseys and pants in most programs. You provide batting gloves, batting helmet (check school requirements), cleats (metal cleats are universal at this level), and practice gear.
+- **Bat:** BBCOR certified (marked "BBCOR .50"). Required in high school baseball in all 50 states. A [BBCOR bat](/go/baseball-bat-bbcor/) is a premium purchase. The Marucci CAT X, Louisville Slugger Meta, and Easton Ghost X are common choices. This is the one bat purchase worth spending real money on because a good BBCOR bat will last through high school.
+- **Glove:** A serious high school player should own a quality adult glove, 11.5 to 12.75 inches depending on position. Pitchers often prefer 12-inch closed-web gloves to hide grip signs. Budget for a premium model at this level. A glove in this range will outlast high school if cared for.
+- **Everything else:** The school provides game jerseys and pants in most programs. You provide batting gloves, batting helmet (check school requirements), [metal cleats](/go/baseball-cleats-metal/) (universal at this level), and practice gear.
 
 ---
 
@@ -94,13 +94,13 @@ The gear quality level increases at the travel level, and the culture around gea
 
 Add hotel and gas. A weekend tournament with one overnight runs $200 to $400 in travel costs for the family. If your team plays a national event in a different state, budget $600 to $1,200 for that trip alone.
 
-Gear at the travel level: USSSA bat ($150 to $300), quality glove ($100 to $200), cleats ($40 to $80), bag ($50 to $80), batting helmet ($40 to $80), batting gloves ($20 to $40). First year all-in: $400 to $780 on gear. Subsequent years replace what's outgrown.
+Gear at the travel level: USSSA bat (premium tier), quality glove (premium tier), cleats (moderately priced), bag (moderately priced), batting helmet (moderately priced), batting gloves (value tier). First year all-in: a meaningful first-year gear outlay. Subsequent years replace what's outgrown.
 
 **Total annual travel baseball budget: $2,500 to $6,000 for most families.** Elite programs in major markets can run $8,000 to $12,000 when you include all costs.
 
 **What surprises parents.** Bat costs are the biggest shock. When a 12-year-old transitions from Little League (USA bat) to a tournament team (USSSA bat), parents buy a new $250 bat and discover six months later that the kid has grown two inches and the bat doesn't fit. Then they buy another one. Budget for one bat per season at the travel level, not one bat for the childhood.
 
-The second surprise is catcher costs. If your kid becomes a catcher, the gear budget doubles. Quality catcher's gear at the travel level runs $150 to $350 for a full set. Catchers also go through equipment faster due to wear.
+The second surprise is catcher costs. If your kid becomes a catcher, the gear budget doubles. Quality catcher's gear at the travel level is a premium purchase for a full set. Catchers also go through equipment faster due to wear.
 
 Use the [cost calculator](/cost-calculator/) to build a realistic annual budget before committing to any level.
 
@@ -160,7 +160,7 @@ Playing time decisions are the most common parent complaint in baseball. Your ki
 
 ## Common Parent Mistakes
 
-**Buying the wrong bat.** The certification matters more than the brand. A USA bat does not perform the same as a USSSA bat. A BBCOR bat is wrong for a 10-year-old rec player. Read the bat stamp and match it to the league before you spend $200.
+**Buying the wrong bat.** The certification matters more than the brand. A USA bat does not perform the same as a USSSA bat. A BBCOR bat is wrong for a 10-year-old rec player. Read the bat stamp and match it to the league before you spend premium money.
 
 **Specializing in pitching too early.** Parents who identify their 10-year-old as "a pitcher" and build the entire baseball life around pitching are taking a real risk. Youth pitchers throw more innings at younger ages than Major League Baseball ever intended. Arm injuries at 14 are not rare in kids who were pitching year-round since 9. Let your kid pitch and also play short, outfield, and catcher. A well-rounded player is a healthier player.
 

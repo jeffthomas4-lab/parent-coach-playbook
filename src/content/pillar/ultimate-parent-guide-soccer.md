@@ -42,11 +42,11 @@ The skill floor is low. Any kid can kick a ball around a field. The skill ceilin
 
 ## Gear List by Age and Level
 
-**Recreational (all ages).** The entry list is short: cleats, shin guards, soccer socks, and shorts or athletic pants. Cleats should fit and be designed for grass (molded studs, not metal). A new pair runs $25 to $60 from Nike or Adidas at the recreational tier. Shin guards matter more than most parents think. They should cover the bone from ankle to just below the knee. A ball of their own is worth having: size 3 for ages 5 to 8, size 4 for ages 8 to 12, size 5 for 12 and up.
+**Recreational (all ages).** The entry list is short: [cleats](/go/soccer-cleats-youth/), [shin guards](/go/soccer-shin-guards-youth/), [soccer socks](/go/soccer-socks-youth/), and shorts or athletic pants. Cleats should fit and be designed for grass (molded studs, not metal). A value pair from Nike or Adidas at the recreational tier is plenty. Shin guards matter more than most parents think. They should cover the bone from ankle to just below the knee. A ball of their own is worth having: [size 3](/go/soccer-ball-size3/) for ages 5 to 8, [size 4](/go/soccer-ball-size4/) for ages 8 to 12, [size 5](/go/soccer-ball-size5/) for 12 and up.
 
-**Travel/Club Level.** The club provides the uniform (jersey, shorts, socks), but you buy it through them. Budget $80 to $150 for the kit. Many club coaches prefer turf shoes for practice and cleats for games, so budget for both. A decent pair of training cleats runs $50 to $90. Better options from the Nike Mercurial or Adidas Predator lines run $90 to $160. A size 5 training ball is expected at every practice. Decent options run $30 to $50 (Adidas Tiro, Select Numero 10). A bag with a separate ball compartment runs $30 to $50.
+**Travel/Club Level.** The club provides the uniform (jersey, shorts, socks), but you buy it through them. Budget $80 to $150 for the kit. Many club coaches prefer turf shoes for practice and cleats for games, so budget for both. A moderately priced pair of training cleats works fine. Better options from the Nike Mercurial or Adidas Predator lines run premium. A size 5 training ball is expected at every practice. Moderately priced options like the Adidas Tiro or Select Numero 10 do the job. A bag with a separate ball compartment is a moderately priced add.
 
-**High School Level.** The school provides the game uniform. You provide practice gear, which most coaches require to be in team colors. Budget $50 to $100 for practice shirts, shorts, and socks. Goalkeepers at any level above recreational need gloves ($20 to $60), padded pants or shorts ($30 to $50), and a long-sleeve compression base layer ($25 to $40).
+**High School Level.** The school provides the game uniform. You provide practice gear, which most coaches require to be in team colors. Budget $50 to $100 for practice shirts, shorts, and socks. Goalkeepers at any level above recreational need [gloves](/go/soccer-goalie-gloves-youth/) (a value to moderately priced pair), padded pants or shorts (moderately priced), and a long-sleeve compression base layer (value tier).
 
 The gear guides on this site cover specific products with buying context. What you need to know here is that recreational gear is genuinely cheap and the upgrade to club gear is a real but manageable bump. Don't spend high school money on a 7-year-old's first season.
 
@@ -54,13 +54,13 @@ The gear guides on this site cover specific products with buying context. What y
 
 ## Real Cost Breakdown
 
-**Recreational soccer.** Registration fees run $75 to $200 for a season depending on your region and whether the league provides uniforms. Add $50 for cleats and shin guards if you're starting from scratch. Total for a first season: $125 to $250. Subsequent seasons: $75 to $150 if the gear still fits.
+**Recreational soccer.** Registration fees run $75 to $200 for a season depending on your region and whether the league provides uniforms. Add a value run at cleats and shin guards if you're starting from scratch. Total for a first season: $125 to $250. Subsequent seasons: $75 to $150 if the gear still fits.
 
 **Travel/Club soccer.** Club fees run $1,200 to $3,500 per year for most programs, with elite academies hitting $4,000 to $6,000. That typically covers coaching, field time, and league registration. It does not cover travel.
 
 Travel costs vary by team and region. Budget $500 to $2,000 per year in tournament entry fees, hotel stays, and gas or flights. Most travel teams play 6 to 12 tournaments annually. A local tournament weekend might cost $150 in gas and food. A regional tournament with an overnight stay runs $400 to $600 for the family. A national showcase or out-of-state event can easily hit $1,000 for a single trip.
 
-Add the kit ($80 to $150), training gear, a practice ball ($35 to $50), and the bag, and you're looking at $2,000 to $5,000 per year for most travel families before you hit the high end.
+Add the kit, training gear, a practice ball, and the bag, and you're looking at $2,000 to $5,000 per year for most travel families before you hit the high end.
 
 **What surprises parents.** The club fee is not the whole cost. Families who budget based on the registration number alone get hit hard in October when the third out-of-state tournament appears on the schedule. Ask the club coordinator before you commit: how many tournaments, how far, what's the typical overnight requirement? Get that in writing if you can.
 
@@ -168,7 +168,7 @@ Good goalkeepers at the youth level are not just athletic. They are emotionally 
 
 Goalkeeper-specific training is available at most serious club programs, either through a dedicated goalkeeper coach or through specialty goalkeeper camps. If your kid is committed to the position, that specific training is worth pursuing from around age 11 or 12 onward. General field player training does not adequately develop goalkeeper footwork, diving technique, or distribution.
 
-The gear additions for goalkeepers beyond the standard kit are not expensive. Gloves are the primary investment. A decent pair of youth goalkeeper gloves with some palm protection runs $20 to $50. Higher-end options from Reusch, Uhlsport, or Nike run $40 to $80. The gloves should fit with fingertips just at the end of the glove, not with extra room. Goalkeeper-specific padded shorts or training pants ($30 to $50) protect hips and knees during diving practice.
+The gear additions for goalkeepers beyond the standard kit are not expensive. Gloves are the primary investment. A moderately priced pair of youth goalkeeper gloves with some palm protection covers most kids. Higher-end options from Reusch, Uhlsport, or Nike run premium. The gloves should fit with fingertips just at the end of the glove, not with extra room. Goalkeeper-specific padded shorts or training pants (moderately priced) protect hips and knees during diving practice.
 
 ---
 

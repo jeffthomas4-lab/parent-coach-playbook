@@ -46,27 +46,27 @@ The men's and women's games have different rules maintained by different rule bo
 ## Boys vs. Girls Lacrosse Gear
 
 **Boys lacrosse gear, recreational level.**
-**Helmet:** Required. Entry-level youth boys lacrosse helmets run $50 to $130. The cascade and Warrior lines make solid youth options. Fit must be checked by a knowledgeable adult, not just pulled on in a parking lot. **Shoulder pads:** $40 to $80. **Arm pads:** $25 to $50. **Gloves:** $30 to $70. **Mouthguard:** Required. $5 to $20 for a boil-and-bite. **Cleats:** Lacrosse or football-style molded cleats. $35 to $80. **Stick:** A complete youth stick (head and shaft combined) runs $30 to $100 at the beginner level. **Athletic cup:** Required for boys. $10 to $20.
+**[Helmet](/go/lacrosse-helmet-boys-youth/):** Required. Entry-level youth boys lacrosse helmets are moderately priced. The cascade and Warrior lines make solid youth options. Fit must be checked by a knowledgeable adult, not just pulled on in a parking lot. **[Shoulder pads](/go/lacrosse-shoulder-pads-youth/):** A value option is all you need. **[Arm pads](/go/lacrosse-arm-pads-youth/):** A value buy. **[Gloves](/go/lacrosse-gloves-youth/):** A value option. **[Mouthguard](/go/mouthguard-boil-bite/):** Required. A value buy for a boil-and-bite. **[Cleats](/go/multi-sport-cleats-youth/):** Lacrosse or football-style molded cleats. A value buy. **[Stick](/go/lacrosse-stick-boys-youth/):** A complete youth stick (head and shaft combined) is a value buy at the beginner level. **Athletic cup:** Required for boys. A value buy.
 
-Total boys starter package: $225 to $550.
+Total boys starter package: a value-tier outlay.
 
 **Boys lacrosse gear, club/competitive level.**
-Gear quality upgrades at the competitive level. Helmet: $150 to $250 (Cascade XRS, Chrome, or similar). Gloves: $60 to $120. Shaft and head: $120 to $250 for a quality stick setup. Shoulder pads and arm pads: $80 to $150 combined. A complete club-level boys setup runs $500 to $900. Stick customization (restringing the mesh for specific pocket depth and feel) is an additional $40 to $80 per restring and serious players do this regularly.
+Gear quality upgrades at the competitive level. Helmet: premium (Cascade XRS, Chrome, or similar). Gloves: moderately priced. Shaft and head: premium for a quality stick setup. Shoulder pads and arm pads: moderately priced combined. A complete club-level boys setup is a premium outlay. Stick customization (restringing the mesh for specific pocket depth and feel) is a value add-on per restring and serious players do this regularly.
 
 **Girls lacrosse gear, all levels.**
-**Stick:** A complete girls lacrosse stick runs $35 to $80 at the beginner level, $80 to $200 for a quality club-level setup. **Mouthguard:** Required at all levels. $5 to $15. **Protective goggles:** Required. $25 to $60. **Cleats:** $35 to $80. Girls lacrosse has the lowest gear entry cost of any competitive team sport with contact.
+**[Stick](/go/lacrosse-stick-girls-youth/):** A complete girls lacrosse stick is a value buy at the beginner level, moderately priced for a quality club-level setup. **Mouthguard:** Required at all levels. A value buy. **Protective [goggles](/go/lacrosse-goggles-youth/):** Required. A value buy. **Cleats:** A value buy. Girls lacrosse has the lowest gear entry cost of any competitive team sport with contact.
 
-Total girls starter package: $100 to $235.
+Total girls starter package: a value-tier outlay.
 
 **Goalie gear, both versions.**
-Boys and girls goalies both require specialized gear: helmet, chest protector, and goalie-specific stick and pads. Budget $200 to $400 for youth boys goalie setup, $200 to $350 for youth girls goalie setup. Some teams supply goalie gear. Confirm before buying.
+Boys and girls goalies both require specialized gear: helmet, chest protector, and goalie-specific stick and pads. Budget for a premium setup for either youth boys or youth girls goalie gear. Some teams supply goalie gear. Confirm before buying.
 
 ---
 
 ## Real Cost Breakdown
 
 **Recreational lacrosse (boys or girls).**
-League registration: $100 to $200. Gear: $100 to $235 for girls, $225 to $550 for boys. Total first season: $200 to $750 depending on gender and gear requirements.
+League registration: $100 to $200. Gear: a value-tier outlay for girls, a moderately priced outlay for boys. Total first season: $200 to $750 depending on gender and gear requirements.
 
 **Regional club lacrosse, limited travel.**
 Girls: Club dues and tournament fees combined: $1,200 to $2,500 per year. Local or regional travel. Boys: $1,500 to $3,000 per year due to higher gear costs. Both include club fees, regional tournament entry, and gear maintenance.
@@ -131,7 +131,7 @@ Help with logistics. Club lacrosse tournaments involve carpools, equipment manag
 
 ## Common Parent Mistakes
 
-**Buying high-end gear for a beginning player.** A 10-year-old who is trying lacrosse for the first time does not need a $250 helmet and $150 gloves. Entry-level gear that fits correctly serves the purpose. Wait until the player commits to the sport and needs performance equipment before spending at that level.
+**Buying high-end gear for a beginning player.** A 10-year-old who is trying lacrosse for the first time does not need a premium helmet and premium gloves. Entry-level gear that fits correctly serves the purpose. Wait until the player commits to the sport and needs performance equipment before spending at that level.
 
 **Ignoring the recruiting timeline.** The single most consequential mistake in lacrosse. Parents who wait until junior year to engage with the recruiting process often find that the programs they wanted have already filled their roster through earlier verbal commits. Start the [recruiting conversation](/recruiting/) no later than the end of 9th grade.
 

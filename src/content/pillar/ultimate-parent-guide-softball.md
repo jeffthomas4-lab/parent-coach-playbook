@@ -38,13 +38,13 @@ The pitcher situation adds a layer most families don't expect. Pitchers are the 
 
 ## Gear by Level
 
-**Rec/Beginner:** Helmet, batting gloves (optional), cleats, and a glove. Everything else the team or league provides. A starter glove runs $30 to $60. Cleats cost $35 to $70. A batting helmet with a face mask (required at youth levels) is $30 to $60. A rec player does not need her own bat.
+**Rec/Beginner:** Helmet, batting gloves (optional), cleats, and a glove. Everything else the team or league provides. A starter [glove](/go/softball-glove-11in/) is a value to moderately priced buy. [Cleats](/go/multi-sport-cleats-youth/) are a value to moderately priced buy. A batting helmet with a [face mask](/go/softball-face-mask/) (required at youth levels) is a value to moderately priced buy. A rec player does not need her own bat.
 
-**Competitive/Travel:** A bat becomes necessary. Softball bats are ASA/USA Softball or USSSA certified depending on the league, and this matters because bats certified for one organization may not be legal in another. A quality youth softball bat runs $100 to $350. Cleats upgrade to molded or metal depending on field rules (metal cleats are usually allowed starting at 12U or 14U). Add a batting helmet with a face cage, a glove appropriate to position, and a batting bag.
+**Competitive/Travel:** A bat becomes necessary. Softball bats are ASA/USA Softball or USSSA certified depending on the league, and this matters because bats certified for one organization may not be legal in another. A quality [youth softball bat](/go/softball-bat-youth/) ranges from moderately priced to premium. Cleats upgrade to molded or metal depending on field rules (metal cleats are usually allowed starting at 12U or 14U). Add a batting helmet with a face cage, a glove appropriate to position, and a batting bag.
 
-Catchers have a separate gear cost: helmet/mask, chest protector, leg guards, and throat guard. A youth catcher's set runs $100 to $250. The team sometimes provides gear, sometimes doesn't. Confirm this before spending.
+Catchers have a separate gear cost: helmet/mask, chest protector, leg guards, and throat guard. A youth catcher's set is a moderately priced buy. The team sometimes provides gear, sometimes doesn't. Confirm this before spending.
 
-**Pitchers:** Pitchers need a quality glove, usually closed web, running $80 to $200. Some pitchers use wrist snaps and practice equipment at home. Budget $30 to $60 for training aids.
+**Pitchers:** Pitchers need a quality glove, usually closed web, at a moderately priced tier. Some pitchers use wrist snaps and practice equipment at home. Budget a value amount for training aids.
 
 ---
 

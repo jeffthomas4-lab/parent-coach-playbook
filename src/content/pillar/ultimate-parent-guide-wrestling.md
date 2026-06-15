@@ -80,11 +80,11 @@ Keep your wrestler's gear clean. Singlets, headgear straps, knee pads, and shoes
 
 ## Gear
 
-**Beginner/Youth:** A singlet ($25 to $60), wrestling shoes ($35 to $80), and a headgear ($15 to $40). That's a functional starter setup. Most youth programs have spares or loaners for kids just trying the sport.
+**Beginner/Youth:** A [singlet](/go/wrestling-singlet-youth/) (value-priced), [wrestling shoes](/go/wrestling-shoes-youth/) (value-priced), and a [headgear](/go/wrestling-headgear/) (value-priced). That's a functional starter setup. Most youth programs have spares or loaners for kids just trying the sport.
 
-**Competitive/High School:** Wrestling shoes are the primary investment. Quality shoes run $50 to $150 and affect foot feel, grip, and ankle support in ways that matter. A good singlet is $50 to $100. Headgear at this level should fit well and stay put: $30 to $60.
+**Competitive/High School:** Wrestling shoes are the primary investment. Quality shoes are moderately priced and affect foot feel, grip, and ankle support in ways that matter. A good singlet is moderately priced. Headgear at this level should fit well and stay put: a value buy.
 
-**Optional but common:** Knee sleeve or knee pad ($15 to $40) for a wrestler who works from the knees a lot. Some wrestlers use a mouth guard. Some use compression shorts under the singlet.
+**Optional but common:** [Knee sleeve or knee pad](/go/wrestling-knee-pad/) (value-priced) for a wrestler who works from the knees a lot. Some wrestlers use a mouth guard. Some use compression shorts under the singlet.
 
 **Club/freestyle tournaments:** Club programs typically have a singlet you wear. USA Wrestling freestyle singlets follow international rules (blue or red, lighter material than folkstyle). Your club will specify.
 

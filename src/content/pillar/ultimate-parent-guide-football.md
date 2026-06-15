@@ -63,50 +63,50 @@ The American Academy of Pediatrics recommends that parents be informed about the
 Football has the longest and most expensive gear list of any youth sport. Go through this section before buying anything.
 
 **Flag Football (ages 5 to 8).**
-- **Flag belt and flags:** The league usually provides these. If not, a set runs $10 to $20.
-- **Cleats:** Football-specific or soccer cleats (molded studs). $20 to $50.
+- **Flag belt and flags:** The league usually provides these. If not, a value [set](/go/flag-football-belt-set/) covers it.
+- **Cleats:** Football-specific or soccer cleats (molded studs). A value pair works.
 - **Athletic shorts and shirt:** Whatever the kid is comfortable in. The league provides jerseys or pinnies.
-- **Mouthguard:** Required in most flag programs. $5 to $15 for a basic boil-and-bite.
+- **Mouthguard:** Required in most flag programs. A value [boil-and-bite](/go/mouthguard-boil-bite/) is fine.
 
 **Youth Tackle (ages 8 to 12).**
 
 This is where the gear list gets serious. Safety equipment is not optional and not where to cut costs.
 
-- **Helmet:** The most important piece of equipment. A helmet that doesn't fit properly is dangerous regardless of its quality rating. The helmet must be fitted by someone who knows what they're doing, ideally a coach or equipment manager with fitting experience. The NOCSAE certification is a baseline requirement. Riddell and Schutt both make youth-specific helmets. The Riddell SpeedFlex Youth and Schutt F7 Youth are well-regarded. Budget $80 to $200 for a quality youth helmet. Don't buy used helmets from unknown sources: you cannot verify whether a used helmet has been reconditioned or has hidden damage from a previous impact.
-- **Shoulder pads:** Must fit the position. Skill position players (quarterback, running back, wide receiver) use smaller, lighter pads that allow arm mobility. Linemen use larger pads that cover more surface area. Youth shoulder pads run $30 to $80. The pads should sit flat on the shoulders with the sternum pad centered on the chest and the pad edges at the shoulder tips.
-- **Girdle with pads:** A padded girdle covers the hips, tailbone, and thighs. Required by most youth programs. Budget $30 to $60 for a youth padded girdle or separate hip and thigh pads.
-- **Knee pads:** Inserted into the football pants. Often included with the pants or sold separately for $10 to $20.
-- **Football pants:** Game pants with pockets for knee pads (and sometimes thigh pads). Budget $25 to $50.
-- **Jersey:** The team provides game jerseys. You may need to buy practice jerseys. $15 to $30.
-- **Cleats:** Football-specific cleats with better ankle support than soccer cleats. At youth level, molded cleats only (no detachable metal cleats until high school). Budget $30 to $60.
-- **Mouthguard:** Required at every level of tackle football. A boil-and-bite works fine. $5 to $15. Some programs require a specific color (often bright) so it's visible during play.
-- **Athletic cup:** Required for most youth programs. Baseball-style cup with an athletic supporter. $10 to $20.
-- **Gloves:** Linemen typically don't wear gloves at youth level. Skill players often do. Receiver gloves run $20 to $50.
+- **[Helmet](/go/football-helmet-youth/):** The most important piece of equipment. A helmet that doesn't fit properly is dangerous regardless of its quality rating. The helmet must be fitted by someone who knows what they're doing, ideally a coach or equipment manager with fitting experience. The NOCSAE certification is a baseline requirement. Riddell and Schutt both make youth-specific helmets. The Riddell SpeedFlex Youth and Schutt F7 Youth are well-regarded. Budget for a moderately priced to premium youth helmet. Don't buy used helmets from unknown sources: you cannot verify whether a used helmet has been reconditioned or has hidden damage from a previous impact.
+- **[Shoulder pads](/go/football-shoulder-pads-youth/):** Must fit the position. Skill position players (quarterback, running back, wide receiver) use smaller, lighter pads that allow arm mobility. Linemen use larger pads that cover more surface area. Youth shoulder pads run moderately priced. The pads should sit flat on the shoulders with the sternum pad centered on the chest and the pad edges at the shoulder tips.
+- **Girdle with pads:** A padded [girdle](/go/football-girdle-youth/) covers the hips, tailbone, and thighs. Required by most youth programs. Budget for a moderately priced youth padded girdle or separate hip and thigh pads.
+- **Knee pads:** Inserted into the football pants. Often included with the pants or sold separately at a value price.
+- **Football pants:** Game pants with pockets for knee pads (and sometimes thigh pads). Budget for a value pair.
+- **Jersey:** The team provides game jerseys. You may need to buy practice jerseys. A value option works.
+- **Cleats:** Football-specific [cleats](/go/football-cleats-youth/) with better ankle support than soccer cleats. At youth level, molded cleats only (no detachable metal cleats until high school). Budget for a value to moderately priced pair.
+- **Mouthguard:** Required at every level of tackle football. A boil-and-bite works fine, value tier. Some programs require a specific color (often bright) so it's visible during play.
+- **Athletic cup:** Required for most youth programs. Baseball-style [cup](/go/football-cup-shorts-youth/) with an athletic supporter, value tier.
+- **Gloves:** Linemen typically don't wear gloves at youth level. Skill players often do. Receiver [gloves](/go/football-gloves-receiver-youth/) run value to moderately priced.
 
 **High School Level.**
 
-- **Helmet:** High school programs provide helmets in most cases. If not, a quality varsity helmet runs $150 to $350. The Riddell SpeedFlex and Xenith X2E are commonly used at the high school level. Fit is everything. Have it fitted by the equipment staff.
-- **Shoulder pads:** School-provided at most programs. If purchasing personally, budget $100 to $200 for quality pads.
-- **Practice gear:** Schools provide game uniforms. You provide practice shorts, compression gear, and practice jersey in team colors. Budget $75 to $150.
-- **Cleats:** Metal detachable cleats become available at most high school programs. Budget $50 to $120. Nike Vapor Edge, Adidas Adizero, and Under Armour Highlight are common choices.
-- **Hand and arm protection:** Some positions at the high school level use wrist braces, hand warmers (for cold-weather games), or turf tape. Budget $20 to $50 for any of this.
+- **Helmet:** High school programs provide helmets in most cases. If not, a quality varsity helmet runs premium. The Riddell SpeedFlex and Xenith X2E are commonly used at the high school level. Fit is everything. Have it fitted by the equipment staff.
+- **Shoulder pads:** School-provided at most programs. If purchasing personally, budget for moderately priced to premium pads.
+- **Practice gear:** Schools provide game uniforms. You provide practice shorts, compression gear, and practice jersey in team colors. Budget for a moderately priced set.
+- **Cleats:** Metal detachable cleats become available at most high school programs. Budget for a moderately priced pair. Nike Vapor Edge, Adidas Adizero, and Under Armour Highlight are common choices.
+- **Hand and arm protection:** Some positions at the high school level use wrist braces, hand warmers (for cold-weather games), or turf tape. Budget a value amount for any of this.
 
 **Position-specific additions at all levels:**
-- **Quarterback:** Under-jersey compression with built-in rib protection is common. $30 to $60.
-- **Linemen:** Flak jacket (additional rib and back padding) is standard at high school and above. $40 to $80.
-- **Kicker/Punter:** Kicking tee (for kickoffs at youth level), $5 to $15.
+- **Quarterback:** Under-jersey compression with built-in rib protection is common, moderately priced.
+- **Linemen:** Flak jacket (additional rib and back padding) is standard at high school and above, moderately priced.
+- **Kicker/Punter:** Kicking tee (for kickoffs at youth level), value tier.
 
 ---
 
 ## Real Cost Breakdown
 
-**Flag football.** Registration $50 to $150. Cleats and mouthguard: $30 to $65. Total first season: $80 to $215.
+**Flag football.** Registration $50 to $150. Cleats and mouthguard: a value run. Total first season: $80 to $215.
 
-**Youth tackle, recreational (ages 8 to 12).** Registration $75 to $200. First-year gear (helmet, shoulder pads, girdle, pants, cleats, mouthguard, cup): $175 to $430. Many programs have gear libraries or loaner programs that reduce this significantly. Ask before you buy. Total first season including registration: $250 to $630.
+**Youth tackle, recreational (ages 8 to 12).** Registration $75 to $200. First-year gear (helmet, shoulder pads, girdle, pants, cleats, mouthguard, cup): plan for a value to moderately priced setup. Many programs have gear libraries or loaner programs that reduce this significantly. Ask before you buy. Total first season including registration: $250 to $630.
 
 **Travel/select youth football.** Less common than travel baseball or AAU basketball, but regional and national youth football leagues exist (National Youth Football Championships, American Youth Football). Fees run $200 to $800 for team registration. Travel costs for tournaments vary widely. Most families entering this level of youth football spend $500 to $2,000 per year total.
 
-**High school football.** The school provides most major equipment. Family costs are primarily practice gear ($75 to $150), cleats ($50 to $120), and any personal protection items ($20 to $80). Total family investment: $145 to $350 per year, plus weight room or summer camp fees if applicable. Many programs charge a participation fee of $50 to $300.
+**High school football.** The school provides most major equipment. Family costs are primarily practice gear (moderately priced), cleats (moderately priced), and any personal protection items (value tier). Total family investment: $145 to $350 per year, plus weight room or summer camp fees if applicable. Many programs charge a participation fee of $50 to $300.
 
 **What surprises parents.** The gear fitting process is more involved than any other sport. Helmets must be fitted properly, not just purchased in a size. If your kid's program doesn't have an equipment manager who fits helmets individually, find out how it gets done. A helmet that rides high on the forehead or tilts back offers minimal protection compared to one that sits correctly.
 

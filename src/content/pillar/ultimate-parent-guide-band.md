@@ -74,7 +74,7 @@ This is the most common decision families face at the beginning. The honest answ
 
 **Step-up instruments:** By year three or four, a serious student may outgrow a student-model instrument. A step-up or intermediate instrument runs $700 to $2,000. Professional-level instruments run $2,000 to $10,000 or more. Students pursuing college music programs on a serious path often need a step-up instrument before senior year.
 
-**Percussion exception:** Drum pads and practice kits for home are separate from the school's percussion equipment. A beginner practice pad and sticks run $30 to $80. Serious percussionists eventually need a keyboard mallet instrument at home for practice. A decent practice marimba or xylophone runs $300 to $1,000.
+**Percussion exception:** Drum pads and practice kits for home are separate from the school's percussion equipment. A beginner [practice pad](/go/band-practice-pad/) and sticks are a value to moderately priced buy. Serious percussionists eventually need a keyboard mallet instrument at home for practice. A decent practice marimba or xylophone is a premium buy.
 
 ---
 
@@ -125,11 +125,11 @@ Solo and Ensemble festivals run in winter and spring. Students prepare a solo pi
 **Serious student pursuing college music on instrument that requires step-up:** Factor in a one-time instrument upgrade of $1,000 to $3,000 somewhere in high school.
 
 **Hidden costs:**
-- Marching shoes (typically required in a specific style): $40 to $80.
+- [Marching shoes](/go/band-marching-shoes/) (typically required in a specific style): a value to moderately priced buy.
 - Uniform components beyond what the school provides. Some programs require black dress shoes, black gloves, or other accessories purchased by students.
-- Reed costs for woodwinds. A clarinet or saxophone player goes through reeds constantly. Budget $40 to $100 per year.
-- Valve oil, slide cream, cork grease. Small costs but recurring.
-- Music stands and practice materials for home.
+- [Reed costs](/go/band-reeds-clarinet/) for woodwinds. A clarinet or saxophone player goes through reeds constantly. A value to moderately priced cost per year.
+- [Valve oil](/go/band-valve-oil/), slide cream, cork grease. Small costs but recurring.
+- [Music stands](/go/music-stand-foldable/) and practice materials for home.
 - Method books and solo literature. A private teacher assigns materials that the student buys.
 
 ---

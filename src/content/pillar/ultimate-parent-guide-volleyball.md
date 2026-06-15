@@ -40,9 +40,9 @@ At 11, a good player can serve overhand consistently, can pass a straight serve 
 
 ## Gear by Level
 
-**Rec/Beginner:** Athletic shorts or spandex shorts, court shoes or clean cross-trainers, and knee pads. That's it. A decent pair of knee pads runs $15 to $25. Don't buy volleyball-specific shoes until your daughter has played a full season and wants to keep going. Court shoes matter for ankle support and traction, but a sixth grader in a Wednesday night rec league does not need $120 Mizunos.
+**Rec/Beginner:** Athletic shorts or spandex shorts, court shoes or clean cross-trainers, and [knee pads](/go/volleyball-knee-pads-youth/). That's it. A decent pair of knee pads is a value buy. Don't buy volleyball-specific shoes until your daughter has played a full season and wants to keep going. Court shoes matter for ankle support and traction, but a sixth grader in a Wednesday night rec league does not need premium Mizunos.
 
-**Club/Competitive:** Court shoes are non-negotiable. Asics, Mizuno, and Nike all make volleyball-specific shoes in the $70 to $130 range. These have the lateral support and cushioning that generic cross-trainers lack. Add quality knee pads ($30 to $50 for Mizuno or ASICS brand), spandex shorts for practice, and your club's required uniform. Clubs usually sell a uniform package that runs $80 to $150.
+**Club/Competitive:** Court [shoes](/go/volleyball-shoes-upcourt/) are non-negotiable. Asics, Mizuno, and Nike all make volleyball-specific shoes that are moderately priced. These have the lateral support and cushioning that generic cross-trainers lack. Add quality knee pads (moderately priced for Mizuno or ASICS brand), spandex shorts for practice, and your club's required uniform. Clubs usually sell a uniform package that is moderately priced.
 
 **High School:** Schools provide the game uniform. Players are responsible for practice gear and shoes. If your daughter is playing both high school and club, she's wearing out shoes fast. Budget a replacement pair every season.
 
@@ -62,7 +62,7 @@ One item parents miss: liberos wear a different colored jersey and often their c
 
 **Hidden costs parents don't see coming:**
 - Bid tournaments. Some clubs enter their teams into qualifier tournaments that cost $200 to $400 per event, on top of regular club fees.
-- Warm-up gear. Clubs often sell or require matching warm-up jackets and pants. Budget $80 to $150.
+- Warm-up gear. Clubs often sell or require matching warm-up jackets and pants. Budget for a moderately priced set.
 - Private lessons. Not required, but prevalent. Hitting or setting lessons run $50 to $80 per hour. Dedicated club families often do one per week.
 - Hotel room-sharing math. Hotels near big volleyball tournaments charge $180 to $250 a night during peak tournament weekends. Parents try to split rooms. Do the math before committing.
 

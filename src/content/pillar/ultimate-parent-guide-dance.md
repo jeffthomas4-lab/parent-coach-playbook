@@ -56,9 +56,9 @@ These two worlds require different commitment levels, different budgets, and dif
 
 ## Gear
 
-**Recreational class:** Dance shoes for the style (ballet slippers run $10 to $30, jazz shoes $20 to $50, tap shoes $25 to $60), a leotard or fitted clothing, tights for ballet. A beginner's annual gear cost is $75 to $200.
+**Recreational class:** Dance shoes for the style ([ballet slippers](/go/ballet-slippers-canvas-youth/) are a value buy, [jazz shoes](/go/dance-jazz-shoes-youth/) and [tap shoes](/go/dance-tap-shoes-youth/) cost a bit more), a [leotard](/go/gymnastics-leotard-youth/) or fitted clothing, [tights](/go/ballet-tights-youth/) for ballet. A beginner's annual gear cost runs value to moderately priced.
 
-**Competition dancer:** Multiple dance shoes for multiple styles. Ballet shoes, jazz shoes, character shoes, tap shoes, and possibly jazz sneakers for hip-hop. Total shoe investment for a competition dancer: $150 to $350 depending on how many styles she takes. Add class wear (leotards, shorts, fitted tops) for the year: $100 to $200.
+**Competition dancer:** Multiple dance shoes for multiple styles. Ballet shoes, jazz shoes, [character shoes](/go/dance-character-shoes-youth/), tap shoes, and possibly jazz sneakers for hip-hop. Total shoe investment for a competition dancer is moderately priced depending on how many styles she takes. Add class wear (leotards, shorts, fitted tops) for the year, a value to moderately priced buy.
 
 **Competition shoes for performance:** Heels are required in some production-style routines for older dancers. Show taps are different from regular tap shoes. These are separate purchases.
 

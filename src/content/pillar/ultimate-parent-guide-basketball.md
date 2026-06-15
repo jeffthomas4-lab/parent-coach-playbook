@@ -47,25 +47,25 @@ Basketball also has the shortest physical requirement of any team sport. You can
 Basketball has the simplest gear list of any team sport.
 
 **Recreational (all ages).**
-- **Shoes:** Basketball-specific shoes with ankle support. This matters more than parents realize. Running shoes are fine for pickup, but a kid playing structured basketball multiple times per week in running shoes is at real risk for ankle sprains. Budget $40 to $80 for a solid pair at the recreational level. Nike, Adidas, Under Armour, and New Balance all make serviceable rec-level basketball shoes in this range.
-- **Ball:** A personal practice ball is worth having. Size 5 for ages 9 to 11, size 6 for girls' leagues at most ages, size 7 (full-size) for boys 12 and up. A decent ball runs $20 to $40 (Spalding TF-150, Wilson Evolution indoor/outdoor). The gym provides game balls; a personal ball is for driveway and park work.
-- **Shorts and jersey:** The league provides the jersey (or the family buys it through the league). You provide shorts. Athletic shorts that don't restrict movement. $15 to $30.
-- **Socks:** Basketball-specific cushioned socks prevent blisters better than regular athletic socks. $10 to $20 for a three-pack.
+- **Shoes:** Basketball-specific [shoes](/go/basketball-shoes-youth/) with ankle support. This matters more than parents realize. Running shoes are fine for pickup, but a kid playing structured basketball multiple times per week in running shoes is at real risk for ankle sprains. Budget for a moderately priced pair at the recreational level. Nike, Adidas, Under Armour, and New Balance all make serviceable rec-level basketball shoes in this range.
+- **Ball:** A personal practice [ball](/go/basketball-ball-rubber/) is worth having. Size 5 for ages 9 to 11, size 6 for girls' leagues at most ages, size 7 (full-size) for boys 12 and up. A value to moderately priced ball works (Spalding TF-150, Wilson Evolution indoor/outdoor). The gym provides game balls; a personal ball is for driveway and park work.
+- **Shorts and jersey:** The league provides the jersey (or the family buys it through the league). You provide [shorts](/go/athletic-shorts-black-youth/). Athletic shorts that don't restrict movement. A value option works.
+- **Socks:** Basketball-specific cushioned [socks](/go/multi-sport-socks-crew/) prevent blisters better than regular athletic socks. A value three-pack works.
 
 **Travel/AAU Level.**
-- **Shoes:** The shoe matters more here. Players are practicing two to four times per week and playing tournaments that can run six to eight games over a weekend. Ankle support and cushioning become real factors. Budget $70 to $130. Nike LeBron, Jordan Brand, Adidas Harden, and similar performance lines all have options in this range. Shoes at the AAU level also function as identity markers in a way they don't at the rec level. This is the reality, not a recommendation.
-- **Ball bag or backpack:** Players carry gear to and from multiple gym sessions. A simple backpack works. Budget $25 to $50.
-- **Compression shorts/tights:** Standard at the travel level for both injury prevention and comfort. $20 to $40.
-- **Ankle braces:** Many coaches and athletic trainers recommend ankle braces for players with any history of ankle sprains. McDavid and ASO make the standard options. $20 to $40 per brace.
-- **Team uniforms:** The AAU program provides them. You pay for them. Budget $60 to $120 for the set.
+- **Shoes:** The shoe matters more here. Players are practicing two to four times per week and playing tournaments that can run six to eight games over a weekend. Ankle support and cushioning become real factors. Budget for a moderately priced to premium pair. Nike LeBron, Jordan Brand, Adidas Harden, and similar performance lines all have options in this range. Shoes at the AAU level also function as identity markers in a way they don't at the rec level. This is the reality, not a recommendation.
+- **Ball bag or backpack:** Players carry gear to and from multiple gym sessions. A simple [backpack](/go/multi-sport-duffle-bag/) works. A value to moderately priced option does the job.
+- **Compression shorts/tights:** Standard at the travel level for both injury prevention and comfort. A value option works.
+- **Ankle braces:** Many coaches and athletic trainers recommend [ankle braces](/go/ankle-brace-reusable/) for players with any history of ankle sprains. McDavid and ASO make the standard options. A value to moderately priced brace works.
+- **Team uniforms:** The AAU program provides them. You pay for them. Budget for a moderately priced set.
 
-**High School Level.** The school provides game uniforms. You provide practice gear (check the program requirements for colors), quality shoes ($80 to $130), and any personal items. Some high school programs require compression shorts, knee pads, or specific color shooting shirts for practice.
+**High School Level.** The school provides game uniforms. You provide practice gear (check the program requirements for colors), quality shoes at a moderately priced to premium tier, and any personal items. Some high school programs require compression shorts, knee pads, or specific color shooting shirts for practice.
 
 ---
 
 ## Real Cost Breakdown
 
-**Recreational basketball.** Registration $60 to $175 per season. Shoes if starting from scratch: $40 to $80. Ball: $25 to $40. Total first season: $125 to $295. Subsequent seasons: $60 to $175 plus replacement shoes when outgrown.
+**Recreational basketball.** Registration $60 to $175 per season. Shoes if starting from scratch: moderately priced. Ball: value to moderately priced. Total first season runs registration plus that gear. Subsequent seasons: $60 to $175 plus replacement shoes when outgrown.
 
 **AAU/Travel basketball.** This is where basketball gets expensive fast. AAU team fees run $500 to $2,000 for the season at the local level, and $2,000 to $5,000 for regional or national-level programs. Those fees cover coaching, gym time, and some tournament registration.
 

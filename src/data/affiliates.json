@@ -1133,5 +1133,90 @@
     "destination": "https://www.amazon.com/s?k=lectrofan+classic+white+noise+machine&tag=parentcoachpl-20",
     "retailer": "Amazon",
     "campaign": "gear-white-noise-lectrofan"
+  },
+  "ballet-slippers-canvas-youth": {
+    "destination": "https://www.amazon.com/dp/B002CQTYK2?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-ballet-slippers-canvas-youth"
+  },
+  "ballet-tights-youth": {
+    "destination": "https://www.amazon.com/dp/B00KM2MT28?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-ballet-tights-youth"
+  },
+  "dance-jazz-shoes-youth": {
+    "destination": "https://www.amazon.com/dp/B002CQTZAG?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-dance-jazz-shoes-youth"
+  },
+  "dance-tap-shoes-youth": {
+    "destination": "https://www.amazon.com/dp/B0039NNBWE?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-dance-tap-shoes-youth"
+  },
+  "dance-character-shoes-youth": {
+    "destination": "https://www.amazon.com/dp/B002G9UFPS?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-dance-character-shoes-youth"
+  },
+  "dance-bun-kit": {
+    "destination": "https://www.amazon.com/dp/B0DZHJRYJ1?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-dance-bun-kit"
+  },
+  "dance-leg-warmers": {
+    "destination": "https://www.amazon.com/dp/B00UZT3FYO?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-dance-leg-warmers"
+  },
+  "stage-makeup-kit": {
+    "destination": "https://www.amazon.com/dp/B00C4239TG?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-stage-makeup-kit"
+  },
+  "band-reeds-clarinet": {
+    "destination": "https://www.amazon.com/dp/B0002FONKQ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-band-reeds-clarinet"
+  },
+  "band-valve-oil": {
+    "destination": "https://www.amazon.com/dp/B000RVYN46?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-band-valve-oil"
+  },
+  "band-practice-pad": {
+    "destination": "https://www.amazon.com/dp/B09S3452MM?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-band-practice-pad"
+  },
+  "band-marching-shoes": {
+    "destination": "https://www.amazon.com/dp/B00L1DCFQ2?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-band-marching-shoes"
+  },
+  "football-helmet-youth": {
+    "destination": "https://www.amazon.com/dp/B08ZKR5PDJ?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-helmet-youth"
+  },
+  "football-shoulder-pads-youth": {
+    "destination": "https://www.amazon.com/dp/B07MW25GBC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-football-shoulder-pads-youth"
+  },
+  "lacrosse-arm-pads-youth": {
+    "destination": "https://www.amazon.com/dp/B00S1BHHWY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-lacrosse-arm-pads-youth"
+  },
+  "baseball-bat-backpack": {
+    "destination": "https://www.amazon.com/dp/B0711RWGTX?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-baseball-bat-backpack"
+  },
+  "cheer-poms": {
+    "destination": "https://www.amazon.com/dp/B075F38MDY?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-cheer-poms"
   }
 }
