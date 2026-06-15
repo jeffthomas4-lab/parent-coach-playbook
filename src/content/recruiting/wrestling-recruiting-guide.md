@@ -29,9 +29,9 @@ editorial:
 
 → New here? Start with [The Recruiting Process](/recruiting/the-recruiting-process/) for the cross-sport basics, then come back.
 
-Wrestling recruiting runs on one currency more than any other: what your kid did at the state and national level, against names the coach already knows. There is no radar gun and no 60-yard dash. There is a bracket, a placement, and a record against ranked opponents.
+If you are a wrestling parent, you already know this sport keeps its own books. There is no running clock to hide in and no stat line to dress up. There is a scale at 7 a.m., a bracket on the wall, and a record against names the coach can already place.
 
-That makes wrestling one of the more honest recruiting sports. It also makes it one of the most weight-class-dependent, which is the part most families miss.
+That is the currency in recruiting too. What your kid did at state and at the national tournaments, against ranked kids, is the whole conversation. The part most families miss is that it is also a weight-class conversation, and that is where good wrestlers get passed over.
 
 ## What each level actually looks like
 
@@ -55,9 +55,9 @@ Programs are being added faster than elite female wrestlers are being produced. 
 
 Wrestling coaches look at four things: placement, the names on your schedule, the weight class, and the body.
 
-**Placement.** State qualifying, state placing, and state titles are the baseline. National results at NHSCA Nationals, Super 32, and the USA Wrestling 16U and Junior Nationals in Fargo carry weight because the brackets are stacked and the coach trusts them.
+**Placement.** State qualifying, state placing, and state titles are the baseline. National results at NHSCA Nationals, Super 32, and the USA Wrestling 16U and Junior Nationals in Fargo carry weight because the brackets are stacked and the coach trusts them. A blood-round win at the right tournament says more than a title at a local open, and coaches know exactly which is which.
 
-**Schedule.** A 40-2 record means little if the two losses are the only ranked kids on the card. A 28-8 record where every loss is to a ranked opponent tells a coach more. They read the names, not just the number.
+**Schedule.** A 40-2 record means little if the two losses are the only ranked kids on the card. A 28-8 record where the losses are all to ranked opponents and the kid wrestled back to place tells a coach more. They read the names and the bonus points, not just the win-loss. A kid who pins and tech-falls his way through a bracket projects differently than one who grinds out 3-2 decisions.
 
 **Weight class.** Coaches recruit to fill specific weights in specific years. A program set at 149 for the next three seasons may pass on a great 149 and chase a thin 184. Where your kid projects to wrestle in college matters as much as how good he is.
 
