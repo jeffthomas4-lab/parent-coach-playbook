@@ -200,4 +200,3 @@ Non-sport-specific pieces parents ask about most:
 - [What verbal commits actually mean (and don't)](/recruiting/what-verbal-commits-mean/)
 
 This guide was written by the Parent Coach Desk editorial team with input from coaches across every NCAA division and from families navigating offers from D1 through JUCO. It is published for parents, not for sale.
-                                  

@@ -149,4 +149,3 @@ That is roughly the whole list. The recruit's social media should be the cleanes
 Social media is a small piece of the recruiting infrastructure. Done well, it removes friction. Done badly, it ends conversations before they start. The bar is not "be impressive on social." The bar is "do not get yourself eliminated." Most of the work is restraint.
 
 , Parent Coach Desk editorial team
- 

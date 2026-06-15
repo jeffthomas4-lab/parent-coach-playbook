@@ -29,9 +29,10 @@ function rehypeAffiliateRel() {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://parentcoachdesk.com',
-  // Hybrid: most pages prerender (static). Pages with `export const prerender = false`
-  // run server-side at the edge. Used by the camps repo for SSR + D1 access.
-  output: 'hybrid',
+  // Astro 5 removed the 'hybrid' output. 'static' is now the default and keeps the
+  // same behavior: most pages prerender, and any page with `export const prerender = false`
+  // runs server-side at the edge. Used for SSR + D1 access.
+  output: 'static',
   adapter: cloudflare({
     platformProxy: { enabled: true },
   }),

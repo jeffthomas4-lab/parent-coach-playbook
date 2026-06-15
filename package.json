@@ -11,7 +11,7 @@
     "build:og": "python3 scripts/build-og-images.py",
     "build:og:force": "python3 scripts/build-og-images.py --force",
     "build:og:safe": "python3 scripts/build-og-images.py || echo 'OG image build skipped (python/Pillow unavailable). Existing committed cards in public/og/ will ship.'",
-    "build": "npm run build:manifest && npm run build:og:safe && astro build && node scripts/bundle-worker.mjs",
+    "build": "npm run build:manifest && npm run build:og:safe && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "illustrations:dry": "python3 scripts/build-illustrations.py --dry-run",
@@ -23,13 +23,13 @@
     "illustrations:wire:dry": "python3 scripts/wire-illustrations.py --dry-run"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^11.2.0",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/tailwind": "^5.1.5",
     "@fontsource/fraunces": "^5.0.20",
     "@fontsource/jetbrains-mono": "^5.0.20",
     "@fontsource/mulish": "^5.0.20",
-    "astro": "^4.16.0",
+    "astro": "^5.18.2",
     "tailwindcss": "^3.4.13"
   },
   "devDependencies": {
