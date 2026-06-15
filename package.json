@@ -11,7 +11,7 @@
     "build:og": "python3 scripts/build-og-images.py",
     "build:og:force": "python3 scripts/build-og-images.py --force",
     "build:og:safe": "python3 scripts/build-og-images.py || echo 'OG image build skipped (python/Pillow unavailable). Existing committed cards in public/og/ will ship.'",
-    "build": "npm run build:manifest && npm run build:og:safe && astro build",
+    "build": "npm run build:manifest && npm run build:og:safe && astro build && node scripts/bundle-worker.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "illustrations:dry": "python3 scripts/build-illustrations.py --dry-run",

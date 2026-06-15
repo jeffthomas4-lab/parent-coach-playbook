@@ -2,21 +2,34 @@
 /**
  * bundle-worker.mjs
  *
- * The @astrojs/cloudflare adapter v11 removed esbuild bundling, so
- * dist/_worker.js/ ends up as 5000+ loose modules totaling 26+ MiB,
- * just over Cloudflare Pages' 25 MiB uncompressed limit.
+ * Astro 5 + @astrojs/cloudflare v12 emit dist/_worker.js/ as a DIRECTORY.
+ * When wrangler sees a directory it compiles a Pages *Function*, which is
+ * capped at 3 MiB (free) / 10 MiB (paid). Astro 5's Content Layer serializes
+ * every content entry into the server bundle (~14 MiB here), so the Function
+ * blows that cap.
  *
- * FIX: bundle everything into a single minified file at dist/_worker.js
- * (a FILE, not a directory). When wrangler sees _worker.js as a file, it
- * uploads it directly with no Pages Functions compilation overhead (~1 MiB
- * of overhead is added when _worker.js is a directory). This keeps us under
- * the 25 MiB limit.
+ * FIX: bundle the worker into a single minified file at dist/_worker.js (a
+ * FILE, not a directory). wrangler then uploads it directly as a Pages
+ * Advanced-mode worker under the 25 MiB limit, with no Function compilation.
+ *
+ * v12 notes: the adapter entry now imports `cloudflare:workers` and the image
+ * service pulls in `sharp` (+ detect-libc -> node builtins). None of those are
+ * bundleable for workerd, so they're marked external. nodejs_compat is enabled
+ * in wrangler.jsonc, so the left-as-import node builtins resolve at runtime.
  */
 
 import * as esbuild from 'esbuild';
 import { rmSync, statSync, renameSync } from 'fs';
 import { execSync } from 'child_process';
 import { resolve, join } from 'path';
+
+const NODE_BUILTINS = [
+  'assert','async_hooks','buffer','child_process','console','constants','crypto',
+  'diagnostics_channel','dns','events','fs','fs/promises','http','http2','https',
+  'inspector','module','net','os','path','perf_hooks','process','punycode',
+  'querystring','readline','stream','stream/web','string_decoder','timers',
+  'timers/promises','tls','tty','url','util','v8','vm','worker_threads','zlib',
+];
 
 const workerDir  = resolve('./dist/_worker.js');   // currently a directory
 const entryPoint = join(workerDir, 'index.js');
@@ -33,7 +46,14 @@ await esbuild.build({
   platform:     'browser',
   target:       'es2022',
   conditions:   ['workerd', 'worker', 'browser'],
-  external:     ['*.wasm'],
+  external: [
+    'cloudflare:*',
+    'node:*',
+    'sharp',
+    'detect-libc',
+    '*.wasm',
+    ...NODE_BUILTINS,
+  ],
   logLevel:     'warning',
 });
 
@@ -47,14 +67,11 @@ if (mib > 25) {
   process.exit(1);
 }
 
-// Brief pause so Windows releases any file locks from astro build
 await new Promise(r => setTimeout(r, 500));
 
-// Delete the _worker.js/ DIRECTORY entirely
 try {
   rmSync(workerDir, { recursive: true, force: true });
 } catch (e) {
-  // Windows file-lock fallback: use PowerShell to force-remove
   if (process.platform === 'win32') {
     console.log('rmSync blocked (likely Windows lock); retrying via PowerShell...');
     execSync(`powershell -Command "Remove-Item -Path '${workerDir}' -Recurse -Force"`, { stdio: 'inherit' });
@@ -63,9 +80,6 @@ try {
   }
 }
 
-// Place the bundle at dist/_worker.js as a FILE (not a directory).
-// Wrangler treats a _worker.js FILE as a direct upload — no module
-// compilation step, no extra overhead, file size = upload size.
 renameSync(tempOut, workerDir);
 
 console.log(`Done. dist/_worker.js is now a ${mib.toFixed(2)} MiB file (not a directory).`);
