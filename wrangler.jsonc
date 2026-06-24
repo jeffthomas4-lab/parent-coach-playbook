@@ -14,23 +14,25 @@
   // Tells wrangler this is a Pages project and where the build output lives.
   "pages_build_output_dir": "./dist",
 
-  // D1 database for the camps repository.
-  // Bind name `DB` is what server code uses (e.g. `runtime.env.DB.prepare(...)`).
+  // Shared activity database. parentcoachdesk.com and activityradar.com both bind
+  // the same D1 by database_id. A record change on one front door is immediately
+  // visible on the other. Migrations live in ActivityRadar/migrations/ — apply
+  // new ones with: npx wrangler d1 execute activity-radar --file=... --remote
+  // (from the ActivityRadar repo root, not from here).
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "parent-coach-playbook",
-      "database_id": "8336fa9f-cc4f-4475-8284-e75658e26399",
-      "migrations_dir": "migrations"
+      "database_name": "activity-radar",
+      "database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
     }
   ],
 
-  // R2 bucket for camp hero photos.
-  // Provision once with: npx wrangler r2 bucket create parent-coach-playbook-photos
+  // Shared R2 bucket for org logos, program hero photos, and gallery images.
+  // Same bucket as ActivityRadar — both sites read from activityradar-photos.
   "r2_buckets": [
     {
       "binding": "PHOTOS",
-      "bucket_name": "parent-coach-playbook-photos"
+      "bucket_name": "activityradar-photos"
     }
   ],
 
