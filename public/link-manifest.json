@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-27T17:27:43.887Z",
-  "count": 439,
+  "generatedAt": "2026-06-27T17:42:20.026Z",
+  "count": 437,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -635,20 +635,6 @@
       "url": "https://truesport.org/",
       "sources": [
         "src/pages/about/sources.astro"
-      ]
-    },
-    {
-      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
-      "sources": [
-        "src/pages/camps/[slug].astro",
-        "src/pages/camps/index.astro"
-      ]
-    },
-    {
-      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
-      "sources": [
-        "src/pages/camps/[slug].astro",
-        "src/pages/camps/index.astro"
       ]
     },
     {
