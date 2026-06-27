@@ -1,0 +1,59 @@
+---
+// Consent banner for Google Analytics.
+// Shows once for visitors who have not yet made a decision.
+// Sets localStorage key 'pcd_consent' to 'yes' or 'no'.
+// The analytics script in BaseLayout listens for the 'pcd_consent_granted' event.
+---
+
+<div
+  id="consent-banner"
+  role="dialog"
+  aria-label="Analytics consent"
+  aria-live="polite"
+  style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--ink); color: var(--paper);"
+>
+  <div class="container-px py-4">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; justify-content: space-between;">
+      <p class="font-display text-sm" style="color: var(--paper); max-width: 640px; margin: 0;">
+        We use Google Analytics to see which articles help parents most. No ads, no profiles, no selling your data.
+        <a href="/disclosure/" style="color: var(--bone); text-decoration: underline;">Full details.</a>
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-shrink: 0;">
+        <button
+          type="button"
+          id="consent-accept"
+          style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; padding: 0.6rem 1.1rem; background: var(--paper); color: var(--ink); border: 1px solid var(--paper); cursor: pointer;"
+        >
+          Accept
+        </button>
+        <button
+          type="button"
+          id="consent-decline"
+          style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; padding: 0.6rem 1.1rem; background: transparent; color: var(--bone); border: 1px solid var(--bone); cursor: pointer;"
+        >
+          No thanks
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('consent-banner');
+  const stored = localStorage.getItem('pcd_consent');
+
+  if (banner && stored === null) {
+    banner.style.display = 'block';
+  }
+
+  document.getElementById('consent-accept')?.addEventListener('click', () => {
+    localStorage.setItem('pcd_consent', 'yes');
+    if (banner) banner.style.display = 'none';
+    window.dispatchEvent(new Event('pcd_consent_granted'));
+  });
+
+  document.getElementById('consent-decline')?.addEventListener('click', () => {
+    localStorage.setItem('pcd_consent', 'no');
+    if (banner) banner.style.display = 'none';
+  });
+</script>

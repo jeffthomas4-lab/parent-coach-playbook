@@ -212,12 +212,6 @@ if (camp) {
   title={camp.name}
   description={`${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
 >
-  {hasGeo && (
-    <Fragment slot="head">
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    </Fragment>
-  )}
 
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
@@ -545,12 +539,6 @@ if (camp) {
     </div>
   </section>
 
-  {hasGeo && (
-    <Fragment slot="head">
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    </Fragment>
-  )}
 
   <script>
     (function () {
@@ -614,35 +602,24 @@ if (camp) {
     })();
   </script>
 
-  {hasGeo && (
-    <script is:inline>
-      (function () {
-        function init() {
-          var el = document.getElementById('camp-map');
-          if (!el || typeof L === 'undefined') {
-            return setTimeout(init, 80);
-          }
-          var lat = parseFloat(el.getAttribute('data-lat'));
-          var lon = parseFloat(el.getAttribute('data-lon'));
-          var name = el.getAttribute('data-name') || 'Camp';
-          if (!isFinite(lat) || !isFinite(lon)) return;
-          var map = L.map(el, {
-            scrollWheelZoom: false,
-            attributionControl: true,
-          }).setView([lat, lon], 13);
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
-          }).addTo(map);
-          L.marker([lat, lon]).addTo(map).bindPopup(name);
-        }
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', init);
-        } else {
-          init();
-        }
-      })();
-    </script>
-  )}
+  <script>
+    import L from 'leaflet';
+    import 'leaflet/dist/leaflet.css';
+    const mapEl = document.getElementById('camp-map') as HTMLElement | null;
+    if (mapEl) {
+      const lat = parseFloat(mapEl.getAttribute('data-lat') ?? '');
+      const lon = parseFloat(mapEl.getAttribute('data-lon') ?? '');
+      const name = mapEl.getAttribute('data-name') || 'Camp';
+      if (isFinite(lat) && isFinite(lon)) {
+        const map = L.map(mapEl, { scrollWheelZoom: false, attributionControl: true })
+          .setView([lat, lon], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+        }).addTo(map);
+        L.marker([lat, lon]).addTo(map).bindPopup(name);
+      }
+    }
+  </script>
 </BaseLayout>
 )}

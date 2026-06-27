@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import { SITE } from '../data/site';
 
 interface Props {
@@ -47,73 +48,74 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta name="theme-color" content="#FAF6EE" />
 
-    <!-- Google Analytics 4 (gtag.js).
-         - is:inline keeps Astro from bundling so the snippet ships exactly
-           as Google specifies.
-         - Honors Global Privacy Control and Do-Not-Track by skipping load
-           entirely when either is set. Disclosure page promises this.
-         - EU/EEA/UK/CH visitors never get GA. Cloudflare's /cdn-cgi/trace
-           endpoint (same-origin, answered at the edge) reports the visitor
-           country; gtag.js is only injected for countries outside GDPR/
-           ePrivacy scope. If the trace lookup fails we load GA (fail-open:
-           US-audience site, and DNT/GPC are already honored above).
-         - window.gtag is stubbed synchronously so the Web Vitals module
-           below can queue events; if GA never loads, the queue goes nowhere
-           and nothing is sent to Google.
-         - anonymize_ip + Google Signals/ad features are disabled.
-         - CSP in public/_headers whitelists googletagmanager.com and the
-           GA4 collection endpoints. /cdn-cgi/trace is same-origin ('self'). -->
-    <script is:inline>
-      (function () {
-        var gpc = (navigator.globalPrivacyControl === true);
-        var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1');
-        if (gpc || dnt) return;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        window.gtag = gtag;
+    <!-- Google Analytics 4 + Web Vitals.
+         Bundled script (not is:inline) so no CSP hash is needed — served from
+         'self' under /_astro/. Loads only when the user has granted consent
+         via the ConsentBanner (localStorage key 'pcd_consent' === 'yes').
+         EU/EEA/UK/CH visitors are geo-fenced via /cdn-cgi/trace. DNT and GPC
+         signals skip loading entirely. No signals, no remarketing, no ad
+         personalisation. anonymize_ip is on. -->
+    <script>
+      import { onCLS, onINP, onLCP, onFCP, onTTFB } from 'web-vitals/attribution';
+
+      const GA_ID = 'G-1BSML6KEJK';
+      const EU = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR',
+                  'HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK',
+                  'SI','ES','SE','IS','LI','NO','GB','CH'];
+
+      function initGtag() {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        const gtag = (...args: unknown[]) => { (window as any).dataLayer.push(args); };
+        (window as any).gtag = gtag;
         gtag('js', new Date());
-        gtag('config', 'G-1BSML6KEJK', {
+        gtag('config', GA_ID, {
           anonymize_ip: true,
           allow_google_signals: false,
-          allow_ad_personalization_signals: false
+          allow_ad_personalization_signals: false,
         });
-        var EU = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'];
-        function loadGA() {
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1BSML6KEJK';
-          document.head.appendChild(s);
-        }
-        fetch('/cdn-cgi/trace')
-          .then(function (r) { return r.text(); })
-          .then(function (t) {
-            var m = t.match(/^loc=([A-Z]{2})$/m);
-            if (m && EU.indexOf(m[1]) !== -1) return;
-            loadGA();
-          })
-          .catch(loadGA);
-      })();
-    </script>
-
-    <!-- Web Vitals (LCP, INP, CLS, FCP, TTFB) -> GA4 events. -->
-    <script is:inline type="module">
-      if (window.gtag) {
-        import('https://cdn.jsdelivr.net/npm/web-vitals@4/dist/web-vitals.attribution.js')
-          .then(({ onCLS, onINP, onLCP, onFCP, onTTFB }) => {
-            function send(metric) {
-              gtag('event', metric.name, {
-                value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-                metric_id: metric.id,
-                metric_value: metric.value,
-                metric_delta: metric.delta,
-                metric_rating: metric.rating,
-                non_interaction: true
-              });
-            }
-            onCLS(send); onINP(send); onLCP(send); onFCP(send); onTTFB(send);
-          })
-          .catch(() => {});
       }
+
+      function loadGAScript() {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+        document.head.appendChild(s);
+      }
+
+      function initVitals() {
+        const send = (metric: any) => {
+          if (!(window as any).gtag) return;
+          (window as any).gtag('event', metric.name, {
+            value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+            metric_id: metric.id,
+            metric_value: metric.value,
+            metric_delta: metric.delta,
+            metric_rating: metric.rating,
+            non_interaction: true,
+          });
+        };
+        onCLS(send); onINP(send); onLCP(send); onFCP(send); onTTFB(send);
+      }
+
+      function launchAnalytics() {
+        if ((window as any).gtag) return;
+        const gpc = (navigator as any).globalPrivacyControl === true;
+        const dnt = navigator.doNotTrack === '1' || (window as any).doNotTrack === '1';
+        if (gpc || dnt) return;
+        initGtag();
+        fetch('/cdn-cgi/trace')
+          .then(r => r.text())
+          .then(t => {
+            const m = t.match(/^loc=([A-Z]{2})$/m);
+            if (m && EU.includes(m[1])) return;
+            loadGAScript();
+            initVitals();
+          })
+          .catch(() => { loadGAScript(); initVitals(); });
+      }
+
+      if (localStorage.getItem('pcd_consent') === 'yes') launchAnalytics();
+      window.addEventListener('pcd_consent_granted', launchAnalytics);
     </script>
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -159,5 +161,6 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
       <slot />
     </main>
     <Footer />
+    <ConsentBanner />
   </body>
 </html>

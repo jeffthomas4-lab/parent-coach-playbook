@@ -133,10 +133,6 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   description="Youth camps and league signups we know about. Starting in the Pacific Northwest where we can verify programs personally. National listings welcome."
   ogImage="/illustrations/og-camps.jpg"
 >
-  <Fragment slot="head">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  </Fragment>
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">Camps & Leagues</p>
@@ -359,10 +355,6 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
     blurb="Subscribe and we'll send a Friday note when new camps land in the directory."
   />
 
-  <Fragment slot="head">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-  </Fragment>
 
   {/* JSON data island — non-executable, exempt from script-src CSP. The
       bundled script below reads it via getElementById so we can remove
@@ -370,6 +362,8 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   <script type="application/json" id="camps-data" set:html={JSON.stringify({ camps: campsLite, sports: CAMP_SPORTS })} />
 
   <script>
+    import L from 'leaflet';
+    import 'leaflet/dist/leaflet.css';
     (function () {
       const dataEl = document.getElementById('camps-data');
       const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
