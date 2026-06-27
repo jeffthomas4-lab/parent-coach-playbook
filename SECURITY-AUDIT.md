@@ -1,6 +1,6 @@
 # Security Audit — parent-coach-desk (parentcoachdesk.com)
 
-Date: 2026-06-25
+Date: 2026-06-27 (re-confirmed; no changes since 2026-06-25 audit)
 Stack: Cloudflare Pages + Astro SSR (Cloudflare adapter), D1, R2.
 Data home: D1 `activity-radar` (database_id 8cc3694a-26f8-4a56-b131-d5d3a68c49ef, shared with ActivityRadar) holds organizations, programs, camp_claims, camp_reviews, submitters, search_events, geocoded_addresses, domain_quality. R2 `activityradar-photos` holds org logos and program photos. No KV.
 
