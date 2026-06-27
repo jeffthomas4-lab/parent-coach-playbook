@@ -2,13 +2,13 @@
 
 Tracks this project against the Website Build Standard (`About Me/Website-Build-Standard.md`). One row per pillar. Status values: pass, fail, fixed, waived, not yet run. No site reaches the Deployment norm with an open Critical in any pillar.
 
-Last updated: 2026-06-27 (full /web:audit pass via 15 reviewers).
+Last updated: 2026-06-27 (full /web:audit pass; consent, Leaflet, web-vitals fixes applied).
 
 | # | Pillar | Status | Note |
 |---|--------|--------|------|
 | 1 | Security | pass | No Critical/High. 11-point gate confirmed. Admin behind CF Access + allowlist. D1 queries parameterized. See `SECURITY-AUDIT.md`. |
 | 2 | Privacy | fixed | DATA-MAP.md completed: retention windows and deletion paths documented for every store. `/disclosure/` serves as the privacy policy; matches the map. |
-| 3 | Consent & Analytics | open HIGH | GA4 fires for US non-DNT/GPC users without a consent banner. Mitigations: EU geo-fence, DNT/GPC honored, anonymize_ip, no signals. Cloudflare Web Analytics (cookieless) runs in parallel. Decision needed: add banner OR remove GA4 and rely on CF Analytics only. Not a legal violation for US-audience site but out of spec with the standard. Leaflet CSS/JS loaded from unpkg.com CDN (MEDIUM). web-vitals from cdn.jsdelivr.net (LOW, gated on GA4). |
+| 3 | Consent & Analytics | fixed | ConsentBanner component added to BaseLayout — GA4 loads only after localStorage `pcd_consent=yes`. EU geo-fence and DNT/GPC still apply. Leaflet and web-vitals moved from CDN (unpkg.com, cdn.jsdelivr.net) to npm bundles; both domains removed from CSP. Cloudflare Web Analytics runs consent-free. |
 | 4 | UI & Design System | pass | CSS custom properties for all 9 color tokens. Self-hosted fonts (Fraunces, Mulish, JetBrains Mono via @fontsource). Metric-adjusted fallbacks eliminate swap-CLS. Button variants (.btn, .btn-soft, .btn-ghost), tag pills, focus ring (*:focus-visible) all defined. Tokens extracted to TEMPLATES/web/design-tokens.css. |
 | 5 | Terms & Legal | fixed | Terms of Service at /terms/, privacy at /disclosure/. Both linked in footer. Field & Forge Ventures operator name added to both pages. Governing law (Washington, USA) stated. Templates written to TEMPLATES/web/. |
 | 6 | Accessibility | fixed | prefers-reduced-motion: added to global.css (was on accessibility page but not in CSS). Skip link, focus ring, semantic landmarks, ARIA on nav dropdowns all present. WCAG 2.1 AA conformance target stated on /accessibility/. |
@@ -18,11 +18,8 @@ Last updated: 2026-06-27 (full /web:audit pass via 15 reviewers).
 
 | # | Severity | Pillar | Item |
 |---|----------|--------|------|
-| 1 | HIGH | 3 — Consent | GA4 loads without consent banner for US users. Fix: add a lightweight banner that gates GA4, or remove GA4 and rely on Cloudflare Web Analytics alone (preferred per the standard). |
-| 2 | MEDIUM | 3 — Consent | Leaflet CSS and JS loaded from unpkg.com CDN. SRI hash present. Fix: `npm install leaflet`, import CSS in component, switch map init from global `L` to bundled import, remove unpkg.com from CSP. |
-| 3 | LOW | 3 — Consent / 7 — Tech | web-vitals loaded from cdn.jsdelivr.net. Only loads when GA4 loads. Fix: add `web-vitals` to package.json and import from bundle, or remove (GA4 tracks core metrics natively). |
-| 4 | LOW | 4 — UI | NavBar uses hardcoded hex in inline style attributes (`color: '#C5713D'` / `'#2D2520'`) instead of CSS vars. Values match tokens. Fix before any rebranding. |
-| 5 | INFO | 1 — Security | Admin-auth.ts decodes CF Access JWT without signature verification (trusts Access policy, not the token). Acceptable while Access policy is attached. Harden in phase 2: verify against JWKS. |
+| 1 | LOW | 4 — UI | NavBar uses hardcoded hex in inline style attributes (`color: '#C5713D'` / `'#2D2520'`) instead of CSS vars. Values match tokens. Fix before any rebranding. |
+| 2 | INFO | 1 — Security | Admin-auth.ts decodes CF Access JWT without signature verification (trusts Access policy, not the token). Acceptable while Access policy is attached. Harden in phase 2: verify against JWKS. |
 
 ## Code-quality reviewers (non-pillar)
 
@@ -33,10 +30,10 @@ Last updated: 2026-06-27 (full /web:audit pass via 15 reviewers).
 | /web:naming | pass | Routes match URL patterns. Components PascalCase, utils camelCase. |
 | /web:states | pass | DB availability check + try/catch + empty-state renders in camps/index.astro and SSR pages. |
 | /web:errors | pass | Generic messages to client, detailed errors to console.error only. No stack traces in responses. |
-| /web:performance | pass/open | Cache headers solid (1yr immutable for hashed bundles, edge cache for HTML). Fonts self-hosted. CLS fallbacks present. Open: Leaflet + web-vitals CDN (see open items 2–3 above). |
+| /web:performance | pass | Cache headers solid (1yr immutable for hashed bundles, edge cache for HTML). Fonts self-hosted. CLS fallbacks present. Leaflet and web-vitals now bundled — no CDN deps remaining. |
 | /web:mobile | pass | Mobile-first nav with hamburger at lg:hidden. article-body responsive font. container-px 24px mobile padding. clamp() type scale. |
 | /web:deploy | pass | Deploy commands match Deployments.md. wrangler.jsonc correct project/database bindings. |
-| /web:demo-test | pass | npm run build passes cleanly (Astro build + worker bundle). OG images cached and unchanged. |
+| /web:demo-test | pass | npm run build (astro build + worker bundle) passes cleanly on all changes. |
 
 ## Definition of done checklist
 
@@ -46,6 +43,6 @@ Last updated: 2026-06-27 (full /web:audit pass via 15 reviewers).
 - [x] Privacy policy and Terms of Service live and linked in footer.
 - [x] Accessibility pass (skip link, focus ring, ARIA, prefers-reduced-motion fixed).
 - [x] Build compiles and deploys through Deployment norm.
-- [ ] Open HIGH: GA4 consent banner or GA4 removal — must be resolved before international expansion.
+- [x] No open Critical or High items.
 
-No open Critical. Site is shippable for US audience.
+All pillars pass or fixed. No open Criticals or Highs. Site is shippable.
