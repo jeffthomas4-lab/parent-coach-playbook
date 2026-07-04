@@ -1,36 +1,26 @@
+import { pcdTokens, tailwindColorsFrom, tailwindFontsFrom } from './src/styles/pcd-tokens.mjs';
+
+// Colors, fonts, and layout now derive from src/styles/pcd-tokens.mjs
+// (item 123 / ADR-049) instead of a hand-copied list here. Values are
+// unchanged from before this switch — same hex codes, same font stacks —
+// so this is a no-op visually. See pcd-tokens.mjs for the single source.
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
-      colors: {
-        // Brand tokens — warm editorial. Do not invent new shades.
-        ink: '#2D2520',          // Warm Ink (was Stadium Ink)
-        paper: '#FAF6EE',        // Cream Paper (was Field Paper)
-        'paper-warm': '#F2EAD9', // card backgrounds, warmer cream
-        rust: '#C5713D',         // Terracotta (was Drive Rust)
-        turf: '#8FA68C',         // Sage (was Turf)
-        bone: '#DDD2BD',         // Linen (was Bone) — borders/dividers
-        trophy: '#D4AB6A',       // Honey (was Trophy) — highlight
-        'ink-soft': '#5F5448',   // Walnut — body text
-        rose: '#B8908F',         // Dusty rose — tertiary accent for pull quotes / soft callouts
-        'rose-bg': '#EDDBD9',    // Light rose tint for backgrounds
-      },
+      colors: tailwindColorsFrom(pcdTokens),
       fontFamily: {
         // Real font first, metric-adjusted fallback (defined in src/styles/global.css), then system fonts.
-        display: ['"Fraunces"', '"Fraunces Fallback"', 'Georgia', 'serif'],
-        // Soft display: Mulish at heavy weight. Used on landing pages where the
-        // editorial-but-stern Fraunces reads too heavy for a mom-audience first impression.
-        'display-soft': ['"Mulish"', '"Mulish Fallback"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-        body: ['"Mulish"', '"Mulish Fallback"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'Menlo', 'monospace'],
+        ...tailwindFontsFrom(pcdTokens),
       },
       letterSpacing: {
-        label: '0.18em',
+        label: pcdTokens.extensions?.letterSpacing?.label ?? '0.18em',
       },
       maxWidth: {
-        prose: '680px',
-        container: '1200px',
+        prose: pcdTokens.layout.prose,
+        container: pcdTokens.layout.maxWidth,
       },
       typography: () => ({
         DEFAULT: {
