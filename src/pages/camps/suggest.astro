@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CAMP_SPORTS } from '../../data/site';
+
+// Static page. Form posts to /api/camps/suggest which is SSR.
+export const prerender = true;
+
+const sportOptions = CAMP_SPORTS;
+
+const US_STATES = [
+  ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+  ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
+  ['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],['IA','Iowa'],
+  ['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],['MD','Maryland'],
+  ['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],['MO','Missouri'],
+  ['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],['NJ','New Jersey'],
+  ['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],
+  ['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],
+  ['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],
+  ['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],
+  ['DC','District of Columbia'],
+] as const;
+---
+<BaseLayout
+  title="Suggest an organization"
+  description="Know a camp, league, or club that isn't in our directory yet? Point us at it and we'll research it."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">
+        <a href="/camps/" class="hover:underline">Camps</a> · Suggest
+      </p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        Know an <em class="text-rust">organization</em> we're missing?
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
+        Don't have the full details on a specific camp or session? Point us at the organization and we'll research it. If you have the actual dates, price, and address for a specific program, <a href="/camps/submit/" class="text-rust hover:underline">submit it directly</a> instead, it goes live faster.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10 md:py-14">
+      <form id="suggest-form" class="max-w-2xl grid gap-6" novalidate>
+        <!-- Honeypot. Hidden from users via CSS. Bots will fill it. -->
+        <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+          <label>Website (leave empty)
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
+        <fieldset class="grid gap-4">
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">Organization name</span>
+            <input name="org_name" required maxlength="200" placeholder='e.g. "Tacoma Hawks Youth Club"' class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">Website (if you know it)</span>
+            <input name="org_website" type="url" placeholder="https://..." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm font-medium">City</span>
+              <input name="org_city" maxlength="100" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm font-medium">State</span>
+              <select name="org_state" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+                <option value="">Not sure</option>
+                {US_STATES.map(([code, name]) => (
+                  <option value={code}>{name}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">Sport or activity</span>
+            <select name="activity_type" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+              <option value="">Not sure / multiple</option>
+              {sportOptions.map((s) => (
+                <option value={s.slug}>{s.label}</option>
+              ))}
+            </select>
+          </label>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">Anything else that helps us find it</span>
+            <textarea name="notes" rows="3" maxlength="1000" placeholder="Runs summer and fall sessions, my kid did their day camp last July, etc." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none"></textarea>
+          </label>
+        </fieldset>
+
+        <fieldset class="grid gap-4 border-t border-bone pt-6">
+          <legend class="font-display italic text-rust mb-1 font-medium">Who is suggesting (optional)</legend>
+          <label class="grid gap-1 max-w-sm">
+            <span class="font-display italic text-ink text-sm font-medium">Your email</span>
+            <input name="submitter_email" type="email" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+          <p class="font-display italic text-ink-soft text-xs font-medium">
+            Only if you want us to follow up. Not required.
+          </p>
+        </fieldset>
+
+        <div class="flex items-center gap-4 pt-2">
+          <button type="submit" class="btn">Suggest it</button>
+          <p class="font-display italic text-ink-soft text-sm hidden font-medium" data-status></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('suggest-form') as HTMLFormElement | null;
+    const status = document.querySelector<HTMLElement>('[data-status]');
+    if (form && status) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.classList.remove('hidden');
+        status.textContent = 'Sending...';
+        status.style.color = '#5F5448';
+
+        const fd = new FormData(form);
+        try {
+          const res = await fetch('/api/camps/suggest', { method: 'POST', body: fd });
+          const data = (await res.json()) as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) {
+            status.textContent = data.error ? `Couldn't send: ${data.error}` : 'Something went wrong. Try again or email parentcoachplaybook@gmail.com.';
+            status.style.color = '#C5713D';
+            return;
+          }
+          form.reset();
+          status.textContent = "Thanks. We'll look into it.";
+          status.style.color = '#5C7459';
+        } catch (err) {
+          status.textContent = 'Network error. Try again.';
+          status.style.color = '#C5713D';
+        }
+      });
+    }
+  </script>
+</BaseLayout>

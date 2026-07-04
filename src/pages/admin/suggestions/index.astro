@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { listPendingOrgSuggestions, type OrgSuggestion } from '../../../lib/camps-db';
+import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+
+export const prerender = false;
+
+const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const adminEmail = getAdminEmailFromRequest(Astro.request);
+
+let suggestions: OrgSuggestion[] = [];
+let dbAvailable = !!env?.DB;
+if (env?.DB) {
+  try {
+    suggestions = await listPendingOrgSuggestions(env.DB);
+  } catch (e) {
+    console.error('listPendingOrgSuggestions failed', e);
+  }
+}
+
+const fmt = (s: string) =>
+  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+---
+<BaseLayout title="Suggested organizations" description="Admin queue for suggested organizations" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">
+        <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Suggestions
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Suggested organizations</h1>
+      <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
+        Leads from the public "suggest an organization" form. Research each one, then either build the full listing through the normal camps pipeline and mark <strong>imported</strong>, or mark <strong>reviewed</strong> if it's not actionable yet.
+      </p>
+      {!adminEmail && (
+        <p class="font-display italic text-rust text-sm mt-2 font-medium">
+          Cloudflare Access header not detected. Action endpoints will fail until /admin/* is wired through Access.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      {!dbAvailable ? (
+        <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
+      ) : suggestions.length === 0 ? (
+        <p class="font-display italic text-ink-soft font-medium">No suggestions awaiting review.</p>
+      ) : (
+        <ul class="grid gap-4">
+          {suggestions.map((s) => (
+            <li class="border border-bone p-5 bg-paper">
+              <p class="font-display italic text-rust text-xs font-medium">
+                {s.status} · {fmt(s.submitted_at)}
+              </p>
+              <h3 class="font-display text-ink text-lg leading-tight mt-1 font-medium">
+                {s.org_website ? <a href={s.org_website} class="hover:text-rust" target="_blank" rel="noopener">{s.org_name}</a> : s.org_name}
+              </h3>
+              <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
+                {[s.org_city, s.org_state].filter(Boolean).join(', ')}
+                {s.activity_type && <> · {s.activity_type}</>}
+                {s.submitter_email && <> · from {s.submitter_email}</>}
+              </p>
+              {s.notes && (
+                <p class="font-display text-ink text-sm mt-3 leading-snug" style="white-space: pre-wrap;"><strong>Notes:</strong> {s.notes}</p>
+              )}
+
+              <div class="mt-4 grid gap-2 sm:grid-cols-2 max-w-md">
+                <form method="POST" action={`/api/admin/suggestions/${s.id}/update`}>
+                  <input type="hidden" name="status" value="imported" />
+                  <button type="submit" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;">Mark imported</button>
+                </form>
+                <form method="POST" action={`/api/admin/suggestions/${s.id}/update`}>
+                  <input type="hidden" name="status" value="reviewed" />
+                  <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark reviewed</button>
+                </form>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

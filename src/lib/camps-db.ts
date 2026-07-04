@@ -953,6 +953,87 @@ export function generateClaimId(): string {
   return crypto.randomUUID();
 }
 
+// ---------- Org suggestions ----------
+// Lighter-weight intake than insertCamp: someone knows an org runs camps or
+// leagues but doesn't have full program detail (exact dates, address). Admin
+// reviews the queue and either researches it into a full camps/submit-quality
+// listing (status 'imported') or logs that it was looked at and isn't
+// actionable yet (status 'reviewed'). Shares the `org_suggestions` table with
+// ActivityRadar (same D1); this project only reads/writes it independently.
+
+export type OrgSuggestionStatus = 'pending' | 'reviewed' | 'imported';
+
+export interface OrgSuggestion {
+  id: string;
+  org_name: string;
+  org_website: string | null;
+  org_city: string | null;
+  org_state: string | null;
+  activity_type: string | null;
+  submitter_email: string | null;
+  notes: string | null;
+  status: OrgSuggestionStatus;
+  submitted_at: string;
+}
+
+export interface NewOrgSuggestionInput {
+  id: string;
+  org_name: string;
+  org_website: string | null;
+  org_city: string | null;
+  org_state: string | null;
+  activity_type: string | null;
+  submitter_email: string | null;
+  notes: string | null;
+  submitted_at: string;
+}
+
+export function generateOrgSuggestionId(): string {
+  return crypto.randomUUID();
+}
+
+export async function insertOrgSuggestion(db: D1Database, s: NewOrgSuggestionInput): Promise<void> {
+  await db
+    .prepare(
+      `INSERT INTO org_suggestions
+         (id, org_name, org_website, org_city, org_state, activity_type, submitter_email, notes, status, submitted_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
+    )
+    .bind(
+      s.id,
+      s.org_name,
+      s.org_website,
+      s.org_city,
+      s.org_state,
+      s.activity_type,
+      s.submitter_email,
+      s.notes,
+      s.submitted_at,
+    )
+    .run();
+}
+
+export async function listPendingOrgSuggestions(db: D1Database): Promise<OrgSuggestion[]> {
+  const result = await db
+    .prepare("SELECT * FROM org_suggestions WHERE status = 'pending' ORDER BY submitted_at ASC")
+    .all<OrgSuggestion>();
+  return result.results ?? [];
+}
+
+export async function getOrgSuggestionById(db: D1Database, id: string): Promise<OrgSuggestion | null> {
+  const row = await db.prepare('SELECT * FROM org_suggestions WHERE id = ?').bind(id).first<OrgSuggestion>();
+  return row ?? null;
+}
+
+export async function updateOrgSuggestionStatus(
+  db: D1Database,
+  id: string,
+  status: OrgSuggestionStatus,
+): Promise<OrgSuggestion | null> {
+  await db.prepare('UPDATE org_suggestions SET status = ? WHERE id = ?').bind(status, id).run();
+  return getOrgSuggestionById(db, id);
+}
+
 // ---------- Shared-address handling ----------
 
 export async function listOtherCampsAtAddress(
