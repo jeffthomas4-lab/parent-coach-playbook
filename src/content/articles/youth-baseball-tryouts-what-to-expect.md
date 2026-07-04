@@ -41,7 +41,7 @@ Swing and miss at everything, and that's noted. Make hard contact on a few balls
 
 **Coachability check.** Coaches often give small adjustments during tryout drills to see how players respond. A kid who processes the correction and tries to apply it immediately signals coachability. A kid who argues, ignores it, or looks at their parent in the stands signals a different pattern.
 
-**Your role.** Bring the right glove, cleats that fit, and a helmet if batting is included. Don't coach from the sideline during tryouts. Don't make eye contact every time something goes wrong.
+**Your role.** Bring the right glove, cleats that fit, and a helmet if batting is included; the [baseball gear guide](/what-to-buy/baseball/) has sizing notes if any of that needs replacing before tryout day. Don't coach from the sideline during tryouts. Don't make eye contact every time something goes wrong.
 
 Let the tryout belong to your kid. If they look for you when they make an error, give them a neutral nod and let them get back to work.
 

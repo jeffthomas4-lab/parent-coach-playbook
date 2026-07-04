@@ -25,7 +25,7 @@ editorial:
   reviewerNotes: ""
 ---
 
-Basketball is one of the least gear-dependent sports. Here's the actual list.
+Basketball is one of the least gear-dependent sports. Here's the actual list; the [basketball gear guide](/what-to-buy/basketball/) has the full picks by age if you want to skip straight to the products.
 
 *Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 

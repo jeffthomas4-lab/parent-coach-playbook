@@ -33,7 +33,7 @@ Your kid picked this. Or the coach saw something and moved them there, and they 
 
 What that means practically: do not analyze goals-against on the drive home. Do not compare your goalie to the other team's goalie out loud. Do not have a visible physical reaction in the stands every time the puck crosses the line. That last one is harder than it sounds when you are watching in real time.
 
-Goalie gear is its own budget line. A full set of youth goalie pads, blocker, glove, goalie skates, mask, chest protector, and stick runs $800 to $2,000 new. Used goalie equipment is available and safe if you inspect the mask carefully. Most rinks will loan gear for the first few sessions of a novice goalie trying out the position.
+Goalie gear is its own budget line. A full set of youth goalie pads, blocker, glove, goalie skates, mask, chest protector, and stick runs $800 to $2,000 new. Used goalie equipment is available and safe if you inspect the mask carefully, and the [hockey gear guide](/what-to-buy/hockey/) covers what to buy new versus used at the position. Most rinks will loan gear for the first few sessions of a novice goalie trying out the position.
 
 Goalie-specific coaching is worth finding at the Peewee level and above. General skating coaches work on edges and footwork, but goalie technique, reading the play, post integration, and rebound control, requires someone who played the position. Many programs have a dedicated goalie coach on staff. If yours does not, standalone goalie clinics run in most hockey markets.
 

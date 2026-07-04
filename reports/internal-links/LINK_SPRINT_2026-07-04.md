@@ -1,0 +1,720 @@
+# Internal Linking Sprint — Articles to Gear Guides
+
+Date: 2026-07-04
+
+Goal: add natural inline links from src/content/articles/ to /what-to-buy/[slug]/ gear guides, matching the existing house style (a low-key inline link inside an existing sentence about gear, cost, sizing, or equipment). Baseline: 55 of 713 articles linked to a gear guide before this sprint.
+
+## Summary
+
+- Articles modified (new inline gear-guide link added): **99**
+- Articles reviewed and deliberately skipped, no natural fit: **599**
+- Total articles now linking to a gear guide (grep count, includes the original 55): **145** of 713
+- Net new articles linked this sprint: **90** (145 total minus 55 baseline)
+
+Work proceeded sport-by-sport as instructed (baseball, soccer, basketball, football, softball, hockey, volleyball, then the remaining tagged sports, then the 440-article "multi-sport" pool), followed by two gap-fill passes and an independent audit re-check of the two lowest-hit-rate batches to confirm the skip decisions were editorially sound rather than overly conservative.
+
+Sub-logs for each batch (kept for detail) live alongside this file in reports/internal-links/: log-baseball.md, log-soccer.md, log-basketball.md, log-football.md, log-softball.md, log-hockey.md, log-volleyball.md, log-smallbatch1.md (dance/ballet/cheer/gymnastics/cross-country/swimming), log-smallbatch2.md (band/theater/choir/lacrosse/wrestling/track/tennis/golf/martial-arts/crew/flag-football/stunt), log-multisport-1.md through log-multisport-4.md, log-secondpass.md, log-audit-recheck.md.
+
+## Modified articles (link(s) added)
+
+- `11-12-helmet-upgrade.md` — added link: [football gear guide](/what-to-buy/football/) — new clause appended to the end of the "brand question" paragraph (Schutt/Riddell discussion), pointing to current model picks by age. Bottom affiliate block (already present, links to the same guide plus a `/go/` link) left untouched.
+- `13-14-bat-drop.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "What to buy" section, after the bat brand/drop-weight sentence
+- `15-plus-skate-baking.md` — added link: [hockey gear guide](/what-to-buy/hockey/) — inserted into the "The cost" section, appended a sentence pointing to skate picks before the baking step.
+- `5-year-old-glove.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "The investment" section, replacing the vague "our full baseball buying guide" reference with a real link
+- `8-10-cleat-conversation.md` — added link(s): [soccer gear guide](/what-to-buy/soccer/) — inserted into the "The spend" section, after the $40-60 cleat price range sentence
+- `ballet-the-first-class-at-four.md` — added link: [ballet gear guide](/what-to-buy/ballet/) — inserted into the "What to buy" section listing leotard, tights, and first ballet shoes.
+- `ballet-the-nutcracker-season.md` — added link: [ballet gear guide](/what-to-buy/ballet/) — inserted into the "Hair and makeup" section, sentence about bun kits sold at dance stores.
+- `ballet-the-pre-pointe-year.md` — added link: [ballet gear guide](/what-to-buy/ballet/) — inserted into the "What pointe shoes cost" section discussing toe pads, spacers, ribbons, and pointe tights.
+- `band-marching-band-uniform-fitting.md` — added link: [band gear guide](/what-to-buy/band/) — appended to the "not-included extras" paragraph about gloves, shoes, and socks.
+- `band-renting-vs-buying-first-instrument.md` — added link: [band gear guide](/what-to-buy/band/) — appended to the paragraph on buying a used instrument in year two, tying the director-referral advice to the accessory/budget list.
+- `baseball-bag-checklist.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "Batting gloves" item of the six-things checklist
+- `car-kit.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted at the end of the core car-kit list sentence, pointing readers to the broader season-essentials guide for what else lives in the trunk.
+- `cheer-competition-packing-list.md` — added link: [cheer gear guide](/what-to-buy/cheer/) — inserted into the "Cheer shoes" packing-list entry.
+- `choir-fall-concert-dress-code.md` — added link: [choir gear guide](/what-to-buy/choir/) — appended to the paragraph on buying the black formal dress.
+- `choir-the-choir-tour.md` — added link: [choir gear guide](/what-to-buy/choir/) — appended to the tour-packing paragraph, next to the concert-dress packing item.
+- `competition-dance-the-actual-annual-cost.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted into the existing "Accessories" cost paragraph discussing dance/competition shoes.
+- `dance-competition-costs-breakdown.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted after the sentence on shoe costs by style (jazz, tap, ballet, lyrical), since this piece is functionally a single-activity (dance) cost breakdown despite the multi-sport tag.
+- `dance-convention-weekends.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted into the "What to pack" section listing shoes per style (jazz, ballet flats, tap, hip hop sneakers).
+- `dance-first-solo-competition-fee-shock.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted into the solo fee breakdown, in the sentence about custom solo costume costs.
+- `dance-recital-packing-list.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted into the "Shoes" section discussing different shoe types needed per routine.
+- `dance-studio-shopping-year-one.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted into the "After the trial" paragraph on first-year dancewear costs (leotard, tights, shoes).
+- `dance-tap-jazz-ballet-contemporary.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted into the "Tap" section sentence about tap shoes and fit.
+- `end-of-season-equipment-cleanup.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted after the "next season needs list" sentence, tying the budget-and-list habit to the guide.
+- `first-season-of-school-band.md` — added link: [band gear guide](/what-to-buy/band/) — appended to the first-year total-cost paragraph, after the line about concert attire.
+- `first-wrestling-practice-what-to-expect.md` — added link: [wrestling gear guide](/what-to-buy/wrestling/) — appended to the paragraph explaining that singlets and headgear come later, not on day one.
+- `first-year-sports-parent-guide.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted after the sentence on budgeting an extra $50-$100 for first-season gear the registration email doesn't mention.
+- `food-on-the-road.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted after the "real cooler in the car" sentence under the "cooler is the move" section.
+- `goalie-parent-survival-guide.md` — added link: [hockey gear guide](/what-to-buy/hockey/) — inserted into the existing sentence about goalie gear cost ($800–$2,000) and used-equipment safety.
+- `high-school-baseball-what-to-expect.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "Equipment standards change" section, after the BBCOR explanation
+- `high-school-softball-what-to-expect.md` — added link(s): [softball gear guide](/what-to-buy/softball/) — inserted into the "Gear check" section, after the bats/cleats/helmet reminder
+- `hockey-game-bag-checklist.md` — added link: [hockey gear guide](/what-to-buy/hockey/) — inserted at the end of the "The smell" section, tied to bag/drying-gear picks.
+- `hotel-room-tournament.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted after the sentence about requesting a ground-floor room for hauling gear/cooler.
+- `how-much-does-aau-basketball-cost.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — inserted after the "Equipment stays light, $400" line in the club/AAU cost breakdown.
+- `junior-golf-cost-breakdown.md` — added link: [golf gear guide](/what-to-buy/golf/) — appended to the equipment/junior-club-set cost paragraph.
+- `making-the-school-basketball-team.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — inserted parenthetically into the existing "shoes that fit" sentence in the tryout-week logistics paragraph.
+- `off-season-strength-program-question.md` — added link: [training gear guide](/what-to-buy/training-gear/) — inserted parenthetically into the existing sentence listing dumbbells/resistance bands/medicine balls
+- `packing-food-for-the-travel-weekend.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted into the existing "a real cooler" sentence
+- `packing-for-a-long-tournament-weekend.md` — added link: [folding chair](/what-to-buy/sideline-kit/) — turned "a folding chair" in the packing list into a link
+- `packing-for-tournament-weekend.md` — added link: [folding camp chair](/what-to-buy/sideline-kit/) — turned item 11 of the packing list into a link
+- `performing-arts-cost-breakdown.md` — added 2 links: [band gear guide](/what-to-buy/band/) in the instrument rent-vs-buy sentence, and [theater gear guide](/what-to-buy/theater/) in the production-shoes sentence
+- `running-your-first-practice.md` — added link: [parent-coach gear guide](/what-to-buy/parent-coach-gear/) — inserted a new sentence into the existing "On equipment" paragraph, right after the cones/ball pump/clipboard list
+- `soccer-bag-checklist.md` — added link(s): [soccer gear guide](/what-to-buy/soccer/) — inserted into the "Cleats" bullet of the practice bag checklist
+- `soccer-goalkeeper-parent-guide.md` — added link(s): [soccer gear guide](/what-to-buy/soccer/) — inserted into the "Gear" paragraph discussing goalkeeper gloves and pants
+- `sock-and-underwear-rules.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted into the existing "buy the better socks" sentence
+- `summer-camp-packing-list.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted into the "six pairs of socks for a five-day camp" sentence
+- `summer-tournament-heat-safety-packing-list.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted into the battery-fan paragraph
+- `summer-tournament-kit.md` — added 2 links: [sideline kit guide](/what-to-buy/sideline-kit/) in the folding-chair sentence, and [first aid kit guide](/what-to-buy/first-aid-kit/) in the first-aid-pouch sentence
+- `tackle-vs-flag-football-age-guide.md` — added link: [flag football gear guide](/what-to-buy/flag-football/) — appended to the "start with flag, it is cheaper" sentence.
+- `the-13-year-olds-i-need-new-everything.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted into "The actual budget" section, after the triage list and before the dollar figure.
+- `the-8-year-olds-glove-that-cost-too-much.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "What to buy next" section, alongside the entry-level glove recommendation
+- `the-bat-your-kid-begged-for.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "Splitting the difference" mid-tier bat recommendation paragraph
+- `the-cost-of-travel-ball.md` — added link(s): [training gear guide](/what-to-buy/training-gear/) — appended a clause to the existing cost-breakdown sentence about uniforms/equipment/training gear.
+- `the-first-travel-tournament.md` — added link(s): [first aid kit guide](/what-to-buy/first-aid-kit/) — appended a clause to the existing sentence about packing ibuprofen/kinesiology tape/ice packs.
+- `the-real-job-of-youth-sports.md` — added link(s): [training gear guide](/what-to-buy/training-gear/) — inserted into the existing "we cover the equipment" sentence describing site-wide gear coverage.
+- `the-recovery-talk-at-13-14.md` — added link(s): [recovery gear guide](/what-to-buy/recovery-gear/) — appended to the existing foam-roller sentence.
+- `the-sunday-night-reset.md` — added link(s): [season essentials guide](/what-to-buy/season-essentials/) — appended to the existing "restock the gym bag / check cleats and water bottles" sentence.
+- `the-tournament-weekend-that-ate-the-family.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "pack a real cooler" sentence in the three-habits fix section.
+- `theater-auditions-what-to-expect.md` — added link(s): [theater gear guide](/what-to-buy/theater/) — new clause on the existing "song choice matters" sentence about building an audition song/monologue book.
+- `tournament-day-food.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "bring a small soft-sided cooler" sentence in The Cooler Rule section.
+- `tournament-day-schedule.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "bring a chair, bring food" sentence in the Parent Sanity section.
+- `tournament-weekend-budget.md` — added link(s): [season essentials guide](/what-to-buy/season-essentials/) — inserted into the existing "don't replace gear at the venue" sentence.
+- `tournament-weekend-packing-list.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "camp chair worth sitting in for four hours" sentence in the Parent Survival section.
+- `tournament-weekend-the-realistic-packing-list.md` — added link(s): [recovery gear guide](/what-to-buy/recovery-gear/) — attached to the existing "Foam roller. Yes really." sentence in the Recovery section.
+- `used-gear-rules.md` — added link(s): [season essentials guide](/what-to-buy/season-essentials/) — attached to the existing "what to always buy new" (mouthguards/socks) sentence.
+- `used-vs-new-gear-the-actual-math.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted before "The cost math" section, in a new transition sentence pointing to the cross-sport basics guide for non-sport-specific items.
+- `what-to-bring-to-a-7am-saturday-game.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted after the "A folding chair" line.
+- `what-to-keep-in-the-car.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted into the existing "The cooler" section, appended a sentence after the cooler description pointing to the sideline kit guide for chair/cooler picks.
+- `what-you-actually-need-for-first-year-hockey.md` — added link: [hockey gear guide](/what-to-buy/hockey/) — inserted into the existing sentence about entry-level Bauer/CCM/Graf skates.
+- `when-does-my-kid-need-a-foam-roller.md` — added link: [recovery gear guide](/what-to-buy/recovery-gear/) — inserted into the existing "reasonable buy" sentence about ages 11-12.
+- `when-the-team-says-wear-all-black.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted before "The shirt situation" section, tying the generic-basics scramble to the cross-sport essentials guide.
+- `when-your-kid-outgrows-cleats-mid-season.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted just before "The sales rule" section, since the article is multi-sport/cleats-generic and no single sport slug fits.
+- `youth-baseball-cost-breakdown.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the opening paragraph, after the glove/bat cost figures
+- `youth-baseball-equipment-guide.md` — added link(s): [full baseball gear guide](/what-to-buy/baseball/) — inserted into the opening sentence, alongside the article's existing per-item affiliate links
+- `youth-baseball-tryouts-what-to-expect.md` — added link(s): [baseball gear guide](/what-to-buy/baseball/) — inserted into the "Your role" section, after the glove/cleats/helmet reminder
+- `youth-basketball-cost-breakdown.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — appended to the end of the shoe-budgeting sentence in the "Gear costs at any level" section.
+- `youth-basketball-equipment-guide.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — inserted into the opening line, pointing readers to the full picks-by-age guide alongside the in-article product list.
+- `youth-basketball-injuries-what-parents-need-to-know.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — inserted after the sentence on high-top shoes and ankle sprain protection.
+- `youth-basketball-skill-development.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — inserted parenthetically into the closing sentence about keeping a right-sized ball at home.
+- `youth-basketball-tryouts-what-to-expect.md` — added link(s): [basketball gear guide](/what-to-buy/basketball/) — inserted into the pre-tryout logistics sentence about making sure the shoes fit, with a new short clause pointing to sizing notes.
+- `youth-cross-country-what-parents-need-to-know.md` — added link: [cross country gear guide](/what-to-buy/cross-country/) — inserted into the closing "Gear is minimal" paragraph about running shoes.
+- `youth-football-cost-breakdown.md` — added link: [football gear guide](/what-to-buy/football/) — replaced the plain-text mention "See the equipment guide for what to buy new versus used" with a linked version, in the Equipment budget-line paragraph.
+- `youth-football-equipment-guide.md` — added link: [flag football gear guide](/what-to-buy/flag-football/) — inserted into the existing "For flag football" sentence about the shorter gear list.
+- `youth-golf-what-parents-need-to-know.md` — added link: [golf gear guide](/what-to-buy/golf/) — appended to the closing gear paragraph about starter club sets.
+- `youth-gymnastics-cost-breakdown.md` — added link: [gymnastics gear guide](/what-to-buy/gymnastics/) — inserted into the pre-team cost paragraph discussing team leotard and warm-up suit purchases.
+- `youth-hockey-cost-breakdown.md` — added link: [hockey gear guide](/what-to-buy/hockey/) — inserted into the existing sentence about stick replacement cost/composite vs. wood.
+- `youth-hockey-equipment-guide-parents.md` — added link: [hockey gear guide](/what-to-buy/hockey/) — appended a sentence after the gear-rentals closing line, pointing to picks for the items just listed.
+- `youth-lacrosse-cost-breakdown.md` — added link: [girls lacrosse gear guide](/what-to-buy/lacrosse-girls/) — inserted into the recreational-cost paragraph next to the girls gear-cost figure. (Shared file with Lacrosse Boys list above — two separate links, one per gender, since the article covers both.)
+- `youth-lacrosse-equipment-guide.md` — added link: [girls lacrosse gear guide](/what-to-buy/lacrosse-girls/) — appended to the girls stick paragraph. (Shared file with Lacrosse Boys list above.)
+- `youth-marching-band-what-parents-need-to-know.md` — added link: [band gear guide](/what-to-buy/band/) — inserted after the sentence on marching shoe ("dinkles") cost, since the article is clearly band-specific despite multi-sport frontmatter tagging.
+- `youth-soccer-cost-breakdown.md` — added link(s): [soccer gear guide](/what-to-buy/soccer/) — inserted into the "gear escalation" paragraph about rec vs. club cleat pricing
+- `youth-soccer-equipment-guide.md` — added link(s): [full soccer gear guide](/what-to-buy/soccer/) — inserted into the opening sentence, alongside the article's existing per-item affiliate links
+- `youth-softball-cost-breakdown.md` — added link(s): [softball gear guide](/what-to-buy/softball/) — inserted into the "Recreational softball" section, after the cleats/glove/helmet sentence
+- `youth-softball-equipment-guide.md` — added link(s): [softball gear guide](/what-to-buy/softball/) — inserted into the "Glove" section, after the brand/price sentence
+- `youth-swimming-cost-breakdown.md` — added link: [swim gear guide](/what-to-buy/swimming/) — inserted into the gear-cost paragraph discussing tech suits versus training suits.
+- `youth-swimming-gear-guide.md` — added link: [full swimming gear guide](/what-to-buy/swimming/) — inserted after the affiliate disclosure line, before the "Training suit" section (this note already had inline `/go/` product links but no guide-level link).
+- `youth-tennis-cost-breakdown.md` — added link: [tennis gear guide](/what-to-buy/tennis/) — appended to the racket/string/shoes cost paragraph.
+- `youth-tennis-what-parents-need-to-know.md` — added link: [tennis gear guide](/what-to-buy/tennis/) — appended to the closing gear-list paragraph (racket size, shoes, balls).
+- `youth-volleyball-cost-breakdown.md` — added link(s): [volleyball gear guide](/what-to-buy/volleyball/) — inserted a new sentence at the end of the existing "Gear costs at any level" paragraph, right after the court shoes cost/lifespan sentence, tying the guide to the cost figures already being discussed.
+- `youth-volleyball-equipment-guide.md` — added link: [full volleyball gear guide](/what-to-buy/volleyball/) — inserted after the "Skip these" closing paragraph (same situation: inline product links existed, no guide link).
+
+## Reviewed, no natural fit (deliberately skipped)
+
+- 10-minute-parent-meeting-script.md
+- 10-things-kids-wish-coaches-knew.md
+- 11-12-honest-comparison.md
+- 11-12-substitution-rules.md
+- 11-12-tune-up.md
+- 13-14-cost-benefit.md
+- 13-14-practice.md
+- 13-14-sportsmanship.md
+- 15-plus-game-management.md
+- 15-plus-volunteer-team.md
+- 15-plus-walking-away.md
+- 25-ways-to-recognize-players-without-spending-money.md
+- 5k-time-family-obsession.md
+- 60-minute-practice-blueprint.md
+- 8-10-mercy-rule.md
+- 8-10-practice.md
+- 8-10-travel-pitch.md
+- aau-basketball-what-parents-need-to-know.md
+- ace-card-system-rewarding-attitude-character-effort.md
+- ace-team-store-turning-character-into-culture.md
+- after-a-bad-at-bat-what-to-say.md
+- after-a-basketball-game-what-to-say.md
+- after-a-football-game-what-to-say.md
+- after-a-penalty-what-to-say-hockey.md
+- after-a-soccer-game-what-to-say.md
+- after-a-softball-game-what-to-say.md
+- after-a-volleyball-match-what-to-say.md
+- after-the-cut-the-24-hour-rule.md
+- anxious-athlete-how-coaches-can-help.md
+- are-youth-sports-worth-it.md
+- athlete-who-cries-after-games.md
+- athlete-who-is-afraid-to-fail.md
+- athlete-who-never-gets-off-bench.md
+- august-first-the-pre-season-week.md
+- back-to-school-sport-balance.md
+- ballet-boys-in-ballet.md
+- ballet-injury-pivot-at-fourteen.md
+- ballet-pre-professional-placement.md
+- ballet-recital-vs-syllabus-school.md
+- ballet-summer-intensive-audition.md
+- ballet-the-audition-season-for-year-round-programs.md
+- band-chairs-and-sectionals.md
+- band-honor-band-audition-season.md
+- band-jazz-band-vs-concert-band.md
+- band-marching-band-camp.md
+- band-practice-time-problem.md
+- band-quitting-lessons-keeping-band.md
+- band-the-first-solo-at-the-spring-concert.md
+- baseball-parent-sideline-behavior.md
+- baseball-pitch-count-rules-explained.md
+- baseball-recruiting-what-parents-need-to-know.md
+- basketball-coach-communication-guide.md
+- basketball-levels-rec-school-club-aau.md
+- basketball-parent-sideline-behavior.md
+- basketball-recruiting-what-parents-need-to-know.md
+- basketball-rules-for-parents.md
+- belt-test-nerves-are-yours-not-kids.md
+- benefits-of-multi-sport-athletes.md
+- best-coaches-teach-parents-too.md
+- boys-lacrosse-vs-girls-lacrosse-rules.md
+- boys-team-better-practice-slot-again.md
+- building-a-winning-culture-without-winning-yet.md
+- building-confidence-after-a-mistake.md
+- building-team-identity-on-a-shoestring-budget.md
+- calendar-negotiation-with-grandparents.md
+- camp-counselor-the-kid-hates.md
+- car-ride-home-what-parents-should-say.md
+- chalking-the-lines.md
+- character-award-matters-more-than-mvp.md
+- chasing-a-cut-time-three-tenths-away.md
+- cheer-placement-week-what-to-expect.md
+- cheer-stunt-safety-what-parents-should-know.md
+- cheer-tryouts-what-to-expect.md
+- child-dropped-off-30-minutes-early.md
+- choir-all-state-audition-prep.md
+- choir-eighth-grade-shy-singer.md
+- choir-show-choir-vs-concert-choir.md
+- choir-singing-in-foreign-languages.md
+- choir-solo-and-ensemble-festival.md
+- choir-voice-change-at-13.md
+- choir-when-the-choir-teacher-is-the-worship-leader.md
+- choosing-a-late-summer-camp-vetting-questions.md
+- club-volleyball-what-parents-need-to-know.md
+- club-vs-high-school-soccer-the-conflict.md
+- coach-every-kid-deserves.md
+- coaching-10-12-year-olds-competitive-prep.md
+- coaching-5-6-year-olds-what-matters.md
+- coaching-7-9-year-olds-golden-age-youth-sports.md
+- coaching-from-the-car.md
+- coaching-your-own-kid-fairly.md
+- coaching-your-own-kid-in-front-of-the-team.md
+- college-id-camp-pitch.md
+- comparing-two-summer-camp-options.md
+- competitive-cheer-vs-sideline-cheer.md
+- competitive-dance-vs-recreational-dance.md
+- competitive-dance-what-parents-need-to-know.md
+- competitive-gymnastics-is-it-the-right-fit.md
+- concert-band-vs-marching-band.md
+- crew-5am-different-clock-family.md
+- cross-country-august-heat-first-season.md
+- cross-country-training-guide-parents.md
+- cross-country-vs-track-which-is-better.md
+- cross-training-that-keeps-the-body-fresh.md
+- cut-from-varsity-softball-as-a-junior.md
+- dance-being-the-good-dance-parent.md
+- dance-competition-packing-list.md
+- dance-hip-injury-at-11.md
+- dance-tryouts-what-to-expect.md
+- dance-when-she-is-bigger-than-other-girls.md
+- daughter-asks-why-brothers-lacrosse-different.md
+- day-camp-vs-overnight-camp.md
+- dealing-with-early-specialization-pressure.md
+- disinfecting-equipment-end-of-season.md
+- elite-camp-label.md
+- end-of-game-snack-what-actually-works.md
+- end-of-practice-circle.md
+- end-of-season-banquet-toolkit.md
+- end-of-season-celebration-that-actually-matters.md
+- family-vacation-overlaps-with-camp.md
+- feedback-that-builds-kids-up-instead-of-shutting-them-down.md
+- fireworks-the-night-before-a-tournament.md
+- first-48-hours-season-ending-injury.md
+- first-game-blueprint.md
+- first-overnight-camp-packing-list.md
+- first-overnight-camp-the-night-before.md
+- first-parent-meeting.md
+- first-practice-blueprint.md
+- first-practice-plan.md
+- first-season-coaching.md
+- first-season-of-cross-country.md
+- first-season-of-youth-football.md
+- first-season-of-youth-volleyball.md
+- first-team-meeting-agenda.md
+- first-time-a-teammate-calls-you-coach.md
+- first-time-parent-coach-checklist.md
+- flag-football-rules-for-parents.md
+- football-concussion-what-parents-need-to-know.md
+- football-film-study-for-parents.md
+- football-parent-sideline-behavior.md
+- football-positions-explained-for-parents.md
+- football-recruiting-what-parents-need-to-know.md
+- football-special-teams-explained-for-parents.md
+- forgotten-player-bench-players-stay-engaged.md
+- friend-group-camp-vs-the-right-camp.md
+- game-time-conflicts-when-you-have-two-kids.md
+- girls-lacrosse-recruiting-starts-freshman-year.md
+- goal-is-not-the-trophy.md
+- golf-recruiting-guide-parents.md
+- golf-silent-gallery-cheering-energy.md
+- gymnastics-levels-xcel-and-jol-explained.md
+- gymnastics-meet-doesnt-land-routine.md
+- gymnastics-meet-packing-list.md
+- gymnastics-meets-run-all-day-survive.md
+- gymnastics-overtraining-signs.md
+- gymnastics-recruiting-what-parents-need-to-know.md
+- heat-illness-when-to-pull-them-out.md
+- high-school-basketball-what-to-expect.md
+- high-school-football-varsity-vs-jv.md
+- high-school-soccer-what-to-expect.md
+- high-school-volleyball-what-to-expect.md
+- hockey-levels-explained-house-travel-aaa.md
+- how-much-does-travel-softball-cost.md
+- how-much-does-youth-baseball-cost.md
+- how-much-does-youth-soccer-cost.md
+- how-to-ask-for-playing-time.md
+- how-to-build-confidence-in-young-athletes.md
+- how-to-build-leadership-on-youth-team.md
+- how-to-build-team-chemistry.md
+- how-to-build-team-culture-for-young-kids.md
+- how-to-build-trust-with-young-athletes.md
+- how-to-coach-your-own-child.md
+- how-to-create-a-season-theme.md
+- how-to-create-belonging-on-your-team.md
+- how-to-evaluate-a-summer-camp.md
+- how-to-give-feedback-kids-actually-hear.md
+- how-to-handle-a-losing-season.md
+- how-to-handle-cliques-on-team.md
+- how-to-handle-losing-without-crushing-confidence.md
+- how-to-handle-overbearing-sports-parent.md
+- how-to-handle-parent-complaints.md
+- how-to-handle-playing-time-complaints.md
+- how-to-handle-winning-without-entitlement.md
+- how-to-measure-success-as-a-coach.md
+- how-to-motivate-a-kid-who-doesnt-care.md
+- how-to-net-a-soccer-goal.md
+- how-to-read-the-tryout-drill.md
+- how-to-run-a-preseason-parent-meeting.md
+- how-to-talk-to-the-coach-about-playing-time.md
+- how-to-talk-to-the-coach.md
+- how-to-talk-to-your-kid-after-a-bad-game.md
+- how-to-tell-if-your-kid-is-on-the-bubble.md
+- how-to-vet-a-camp-for-safety.md
+- how-to-watch-a-soccer-game-as-a-parent.md
+- how-youth-sports-teach-responsibility.md
+- hydration-by-the-numbers.md
+- individual-sport-team-uniform-wrestling.md
+- injured-players-are-still-teammates.md
+- is-this-burnout-or-a-bad-week.md
+- junior-golf-tournament-guide.md
+- kid-cut-wants-to-switch-sports.md
+- lacrosse-recruiting-guide-parents.md
+- last-practice-of-the-season.md
+- last-time-youll-watch-them-play.md
+- late-pickup-problem-parent-coach-guide.md
+- libero-position-explained-for-parents.md
+- lightning-delay-the-30-minute-wait.md
+- little-kids-first-summer-camp.md
+- little-league-vs-travel-baseball.md
+- lost-art-of-encouragement.md
+- lunch-aftercare-full-day.md
+- middle-school-tryouts-when-not-making-it-is-best.md
+- mom-and-dad-disagree-on-a-youth-sports-decision.md
+- morning-after-the-all-nighter.md
+- most-important-conversation-with-every-player.md
+- most-important-word-in-youth-sports-yet.md
+- moving-a-soccer-goal-safely.md
+- night-before-tryouts-when-youre-the-coach.md
+- night-before-tryouts.md
+- off-season-strength-mistake.md
+- on-not-making-varsity.md
+- open-gym-etiquette.md
+- opening-night-nerves-at-12.md
+- parent-coach-manifesto.md
+- parent-kickoff-meeting.md
+- parent-meeting-every-coach-should-hold.md
+- parent-who-argues-with-officials.md
+- parent-who-never-comes-to-games.md
+- parent-who-thinks-child-is-the-star.md
+- parents-coaching-from-sideline-what-to-do.md
+- performing-arts-vs-team-sports.md
+- playing-time-fairness.md
+- playing-time-how-to-have-the-conversation.md
+- pointe-shoes-and-the-year-of-waiting.md
+- post-practice-dinner-when-driving-past-fast-food.md
+- postgame-ritual-what-works.md
+- power-of-team-language-shared-vocabulary.md
+- practice-scheduled-on-a-holiday.md
+- pre-game-anxiety-normal.md
+- pre-game-meal-guide.md
+- pre-season-meeting-with-the-new-coach.md
+- pre-tryout-dinner.md
+- pregame-talk-what-coaches-should-say.md
+- quarterfinal-week-when-the-match-overlaps-your-kids-game.md
+- quitting-travel-how-to-do-it-cleanly.md
+- raking-the-infield.md
+- read-a-summer-camp-brochure.md
+- reading-the-ref-when-to-say-something.md
+- rec-ball-5-7.md
+- rec-basketball-vs-aau.md
+- rec-soccer-vs-travel-soccer.md
+- rec-softball-vs-travel-softball.md
+- recruiting-email-that-means-nothing.md
+- recruiting-showcase-etiquette.md
+- ride-home-rule-every-sports-parent.md
+- running-a-team-with-mixed-skill-levels.md
+- season-you-want-to-quit.md
+- semifinal-week-talking-about-the-players-theyre-watching.md
+- setting-up-a-baseball-field.md
+- should-my-child-specialize-in-one-sport.md
+- sibling-different-sport-conflict.md
+- sideline-behavior-that-actually-helps.md
+- sideline-coaching-why-it-hurts-your-kid.md
+- sideline-etiquette-for-youth-sports-parents.md
+- signs-a-kid-is-burning-out.md
+- single-sport-vs-multi-sport-camp.md
+- soccer-club-vs-high-school-team.md
+- soccer-college-id-camp-guide.md
+- soccer-offside-rule-explained-for-parents.md
+- soccer-parent-sideline-behavior.md
+- soccer-recruiting-what-parents-need-to-know.md
+- softball-positions-explained-for-parents.md
+- softball-recruiting-what-parents-need-to-know.md
+- specialty-camp-decision-window.md
+- specialty-camp-question.md
+- sport-specialization-the-honest-conversation.md
+- stage-parents-the-dance-mom-dynamic.md
+- stunt-scholarship-sport-cheer-parents.md
+- summer-practice-schedule-the-kid-hates.md
+- summer-reading-they-should-still-be-doing.md
+- summer-showcase-question.md
+- summer-skills-camp-five-questions.md
+- summer-specialization-pressure.md
+- summer-the-kid-grew-four-inches.md
+- summer-tournament-vacation.md
+- summer-training-for-an-eight-year-old.md
+- summer-your-kid-asks-not-to-play-for-you-again.md
+- swim-meet-packing-list.md
+- swim-meet-weekend-logistics.md
+- swim-team-vs-club-swimming.md
+- swimming-recruiting-guide-parents.md
+- swimming-strokes-explained-for-parents.md
+- talking-about-the-coach-they-dont-like.md
+- talking-to-a-parent-coaching-from-the-stands.md
+- teaching-effort-instead-of-talent.md
+- teaching-kids-to-lose-with-grace.md
+- team-bbq-holiday-weekend-whose-job-is-the-cooler.md
+- team-captain-what-it-means-at-youth-level.md
+- team-fun-versus-not-doing-things-you-dont-want-to-do.md
+- team-goals-vs-individual-goals.md
+- team-jobs-system-complete-guide.md
+- team-social-media-rules-summer.md
+- tee-ball-strikeouts.md
+- teenager-doesnt-want-you-at-practice.md
+- telling-the-coach-your-kid-is-being-bullied.md
+- tennis-no-sideline-cheering-from-distance.md
+- tennis-recruiting-guide-parents.md
+- text-to-the-coach-you-should-never-send.md
+- texting-the-new-coach.md
+- the-11-to-12-best-friend-on-a-different-team.md
+- the-11-year-old-who-quit-her-best-sport.md
+- the-11-year-old-whos-not-ready-for-travel.md
+- the-13-to-14-bench-managing-substitutions-kids-buy-into.md
+- the-13-to-14-quit-mid-season-call.md
+- the-14-year-old-who-wants-to-quit-the-instrument.md
+- the-14-year-old-whos-tired.md
+- the-15-plus-club-tryout.md
+- the-15-plus-game-day-when-your-kid-is-on-the-bench.md
+- the-15-plus-kid-who-is-bored.md
+- the-4-percent-rule.md
+- the-4th-of-july-is-halfway-through-summer-sports.md
+- the-5-to-7-lineup-card-fair-rotation-in-three-minutes.md
+- the-5-to-7-meltdown-after-a-strikeout.md
+- the-7am-coach-text.md
+- the-8-to-10-game-day-when-to-call-timeout.md
+- the-8-to-10-tryout-the-four-things-coaches-evaluate.md
+- the-90-second-rule.md
+- the-age-appropriate-sleep-talk.md
+- the-assistant-coach-relationship.md
+- the-audition-that-didnt-go-your-way.md
+- the-august-fitness-test.md
+- the-bad-call-that-didnt-go-your-way.md
+- the-banquet-speech-that-doesnt-suck.md
+- the-bench-reaction-your-kid-will-remember.md
+- the-booster-club-power-plays.md
+- the-bored-off-season-kid.md
+- the-camp-counselor-your-kid-hates.md
+- the-carpool-conversation-about-how-you-coach.md
+- the-carpool-spreadsheet-that-saves-marriages.md
+- the-carpool-text-that-prevents-fights.md
+- the-case-for-one-sport-per-season.md
+- the-cheer-that-embarrasses-your-kid.md
+- the-coach-who-ignores-the-heat-advisory.md
+- the-dad-who-corners-coach-in-the-parking-lot.md
+- the-double-header-recovery-plan.md
+- the-end-of-season-carpool-conversation.md
+- the-end-of-season-coach-thank-you.md
+- the-end-of-season-dip-in-mood.md
+- the-final-is-sunday-your-kids-best-soccer-memory.md
+- the-first-overnight-camp-at-9.md
+- the-first-parent-email-of-the-season.md
+- the-friend-who-got-the-summer-scholarship.md
+- the-friend-who-made-the-team-your-kid-didnt.md
+- the-friend-who-quit-and-was-fine.md
+- the-grandparent-who-pushes-too-hard.md
+- the-group-chat-parent-who-wont-stop-venting.md
+- the-group-chat-rule-that-ends-midnight-texts.md
+- the-group-chat-that-saved-me.md
+- the-hotel-pool-is-the-practice.md
+- the-hotel-pool-rule.md
+- the-hydration-conversation-at-11-12.md
+- the-kid-in-the-back-row-of-the-choir.md
+- the-kid-who-didnt-make-all-stars.md
+- the-kid-who-gets-cut-every-year.md
+- the-kid-who-isnt-athletic.md
+- the-kid-who-never-tries.md
+- the-kid-who-quit-gracefully.md
+- the-kid-who-refuses-to-go-to-tryouts.md
+- the-kid-who-says-theyre-not-trying-out.md
+- the-kid-who-scored-vs-the-kid-who-didnt.md
+- the-kid-who-used-to-love-it.md
+- the-kid-who-wants-to-switch-to-soccer-after-the-world-cup.md
+- the-kid-you-cut-who-is-your-kids-friend.md
+- the-kids-letter-to-teammates.md
+- the-last-free-weekend-before-fall-signups.md
+- the-last-game-car-ride.md
+- the-laundry-rotation-for-travel-season.md
+- the-minute-before-warm-ups.md
+- the-missing-rec-layer.md
+- the-mom-who-texts-about-her-kids-real-talent.md
+- the-monday-after-the-world-cup-final.md
+- the-night-before-tryouts-5-to-7.md
+- the-night-before-tryouts-at-8-to-10.md
+- the-nutrition-talk-at-13-14.md
+- the-nutrition-talk-at-8-10.md
+- the-olympic-dream-conversation-at-12.md
+- the-other-team-parent-yelling.md
+- the-parent-ruining-the-team-chat.md
+- the-parent-thank-you-note.md
+- the-parent-who-screams-at-their-own-kid.md
+- the-performance-anxiety-conversation-at-12.md
+- the-pitching-circle-decision.md
+- the-post-tryout-family-conversation.md
+- the-post-tryouts-wait.md
+- the-pre-game-conversation-isnt-strategy.md
+- the-pregame-meltdown-at-6.md
+- the-pregame-snack-at-11-to-12.md
+- the-quiet-pickup-after-a-loss.md
+- the-recital-meltdown-at-5.md
+- the-recruiter-at-rec-ball.md
+- the-right-way-to-bench-a-player.md
+- the-science-fair-question.md
+- the-second-cut.md
+- the-shared-calendar-that-prevents-missed-games.md
+- the-sibling-at-the-game-who-isnt-playing.md
+- the-sleep-talk-at-11-12.md
+- the-snack-rotation-that-doesnt-fall-apart.md
+- the-summer-break-conversation.md
+- the-summer-parent-meeting.md
+- the-team-gift-that-is-too-much.md
+- the-team-hotel-opt-out.md
+- the-team-meeting-when-things-have-gone-sideways.md
+- the-team-mom-you-dont-want-to-be.md
+- the-team-picture-day-survival-guide.md
+- the-teammate-who-got-hurt-and-your-kid-is-shaken.md
+- the-teammates-parent-who-asks-you-to-talk-to-coach.md
+- the-tournament-organizer-mistake.md
+- the-tournament-t-shirt-economy.md
+- the-tournament-that-falls-on-the-4th-of-july-weekend.md
+- the-travel-team-tryout-at-11-to-12.md
+- the-varsity-volleyball-bench-year.md
+- the-you-should-be-assistant-coaching-pressure.md
+- theater-and-sports-at-the-same-time.md
+- theater-auditioning-for-the-high-school-musical.md
+- theater-post-show-depression.md
+- theater-tech-week-survival.md
+- theater-the-ensemble-question.md
+- theater-the-first-read-through-week-one.md
+- theater-when-the-role-is-too-small.md
+- three-camps-in-three-weeks.md
+- three-drives-one-relationship.md
+- three-scoreboards-every-parent-coach-tracks.md
+- three-teams-in-one-summer.md
+- track-meet-no-sideline-watching.md
+- track-times-dont-lie-chasing-a-number.md
+- travel-ball-summer-tournament-guide.md
+- travel-politics.md
+- travel-team-politics-the-playing-time-formula.md
+- trying-a-new-sport-at-thirteen.md
+- trying-a-new-sport-in-the-off-season.md
+- tryouts-when-your-kid-has-a-cold.md
+- two-a-days-what-parents-need-to-know.md
+- two-kids-in-two-sports-in-two-directions.md
+- two-questions-after-every-practice.md
+- understanding-lacrosse-positions.md
+- unwritten-rules.md
+- usta-junior-tennis-levels-explained.md
+- varsity-baseball-when-your-kid-is-the-ace.md
+- varsity-basketball-tryouts-the-real-odds.md
+- varsity-football-roster-math.md
+- varsity-tryouts-how-to-read-the-coach.md
+- volleyball-mental-toughness-parent-guide.md
+- volleyball-parent-sideline-behavior.md
+- volleyball-positions-explained-for-parents.md
+- volleyball-recruiting-what-parents-need-to-know.md
+- volleyball-rules-for-parents.md
+- volleyball-setter-parent-guide.md
+- volunteer-army-getting-parents-to-help.md
+- walking-away-from-travel-ball-at-16.md
+- week-one-camp-drop-off.md
+- weigh-in-morning-what-wrestling-parents-need-to-know.md
+- what-a-great-teammate-looks-like.md
+- what-a-shootout-teaches-about-the-drive-home.md
+- what-age-should-kids-start-sports.md
+- what-coaches-actually-want-from-parents-at-practice.md
+- what-every-new-sports-parent-needs-to-hear.md
+- what-full-ride-actually-means.md
+- what-great-coaches-do-differently.md
+- what-great-teammates-do-differently.md
+- what-kids-are-actually-learning-in-youth-sports.md
+- what-kids-remember-20-years-later.md
+- what-my-kid-said-in-the-car.md
+- what-off-season-actually-means.md
+- what-parents-shouldnt-do-at-youth-sports-games.md
+- what-sports-gives-kids-that-nothing-else-does.md
+- what-to-do-in-the-30-minutes-before-kickoff.md
+- what-to-do-when-player-doesnt-listen.md
+- what-to-do-with-the-trophies.md
+- what-to-say-before-a-big-game.md
+- what-to-text-the-coach-after-a-hard-game.md
+- what-track-event-is-right-for-my-kid.md
+- what-youth-sports-cost.md
+- when-a-coach-crosses-the-line.md
+- when-a-friends-family-goes-travel.md
+- when-a-parent-corners-you-about-your-kids-behavior.md
+- when-a-parent-crosses-the-line.md
+- when-a-parent-emails-about-playing-time.md
+- when-a-parent-undermines-your-coaching.md
+- when-a-parent-yells-at-the-ref.md
+- when-a-player-cries-at-practice.md
+- when-a-player-quits-mid-season.md
+- when-another-parent-says-something-racist.md
+- when-child-wants-to-quit-mid-season.md
+- when-fall-tryout-prep-actually-starts.md
+- when-hes-crying-in-the-locker-room.md
+- when-kids-dont-listen-at-practice.md
+- when-parents-dont-like-each-other.md
+- when-player-is-always-late.md
+- when-players-have-conflict-with-each-other.md
+- when-private-lessons-backfire.md
+- when-she-says-everyone-hates-me.md
+- when-she-says-i-hate-this-sport.md
+- when-softball-splits-from-baseball.md
+- when-the-body-says-no-in-july.md
+- when-the-coach-doesnt-like-your-kid.md
+- when-the-coach-replies-short.md
+- when-the-cuts-list-goes-up.md
+- when-the-director-plays-favorites.md
+- when-the-fundraiser-email-arrives.md
+- when-the-rec-team-is-better-than-the-travel-team.md
+- when-the-season-really-ends.md
+- when-the-team-needs-to-talk-to-a-parent-collectively.md
+- when-they-ask-am-i-any-good.md
+- when-to-let-them-sleep-in.md
+- when-to-move-up-in-hockey-levels.md
+- when-to-raise-your-voice-and-when-not-to.md
+- when-you-cant-afford-travel.md
+- when-you-disagree-with-the-coach-in-front-of-your-kid.md
+- when-you-dont-feel-like-coaching.md
+- when-you-have-to-confront-a-parent-yourself.md
+- when-you-say-no-to-travel.md
+- when-your-athlete-quits-senior-year.md
+- when-your-best-player-is-also-your-biggest-problem.md
+- when-your-gym-bag-stinks.md
+- when-your-kid-asks-you-not-to-come.md
+- when-your-kid-doesnt-get-recruited-football.md
+- when-your-kid-doesnt-want-to-go-to-camp.md
+- when-your-kid-forgets-gear-at-camp.md
+- when-your-kid-gets-a-small-role-in-theater.md
+- when-your-kid-gets-hurt-mid-game.md
+- when-your-kid-is-always-on-the-bench.md
+- when-your-kid-is-jealous-of-their-siblings-success.md
+- when-your-kid-is-the-best-player-on-the-team.md
+- when-your-kid-is-the-new-kid.md
+- when-your-kid-is-the-pitcher.md
+- when-your-kid-is-the-star-and-the-team-loses.md
+- when-your-kid-isnt-going-to-play-in-college.md
+- when-your-kid-loses-the-part-to-their-best-friend.md
+- when-your-kid-says-theyre-not-as-good-as-their-teammate.md
+- when-your-kid-wants-to-play-multiple-sports.md
+- when-your-kid-wants-to-play-up.md
+- when-your-kid-wants-to-pursue-performing-arts-seriously.md
+- when-your-kid-wants-to-quit-basketball.md
+- when-your-kid-wants-to-quit-football.md
+- when-your-kid-wants-to-quit-soccer.md
+- when-your-kid-wants-to-quit-volleyball.md
+- when-your-kid-wants-to-quit.md
+- when-your-kid-wants-to-switch-sports-mid-season.md
+- when-your-kid-wants-you-to-email-the-coach.md
+- when-your-kids-friend-quit-and-your-kid-is-asking-why.md
+- when-your-spouse-disagrees-with-how-youre-coaching.md
+- when-youre-the-one-whos-too-invested.md
+- why-coaching-is-worth-it.md
+- why-every-coach-should-know-players-story.md
+- why-every-player-needs-a-job.md
+- why-every-team-needs-traditions.md
+- why-fun-is-not-enemy-of-development.md
+- why-i-stopped-asking-did-you-have-fun.md
+- why-kids-need-unstructured-play.md
+- why-kids-quit-sports-how-coaches-prevent-it.md
+- why-kids-quit-sports.md
+- why-swimming-doesnt-feel-like-a-team-sport.md
+- why-winning-at-8-doesnt-mean-what-you-think.md
+- why-wrestling-parents-sit-differently.md
+- world-cup-making-practice-feel-small.md
+- wrestling-season-month-by-month.md
+- you-should-be-harder-on-your-own-kid.md
+- your-kid-and-the-world-cup-round-of-16.md
+- your-kid-is-being-mean-to-a-teammate.md
+- your-kid-is-the-worst-on-the-team.md
+- youth-ballet-what-parents-need-to-know.md
+- youth-baseball-mental-game.md
+- youth-baseball-positions-explained.md
+- youth-basketball-positions-explained.md
+- youth-cheerleading-what-parents-need-to-know.md
+- youth-choir-what-parents-need-to-know.md
+- youth-distance-running-signs-of-overtraining.md
+- youth-football-levels-explained.md
+- youth-football-off-season-training-guide.md
+- youth-football-practice-what-to-expect.md
+- youth-football-tryouts-what-to-expect.md
+- youth-football-weight-limits-explained.md
+- youth-gymnastics-what-parents-need-to-know.md
+- youth-hockey-recruiting-guide.md
+- youth-hockey-tryouts-what-to-expect.md
+- youth-lacrosse-tryouts-what-to-expect.md
+- youth-soccer-injuries-what-parents-need-to-know.md
+- youth-soccer-levels-explained.md
+- youth-soccer-mental-toughness.md
+- youth-soccer-positions-explained.md
+- youth-soccer-training-outside-team-practice.md
+- youth-soccer-tryouts-what-to-expect.md
+- youth-softball-tryouts-what-to-expect.md
+- youth-sports-and-school-balance.md
+- youth-sports-burnout-signs.md
+- youth-swimming-tryouts-what-to-expect.md
+- youth-theater-what-parents-need-to-know.md
+- youth-track-and-field-events-explained.md
+- youth-volleyball-levels-explained.md
+- youth-volleyball-tryouts-what-to-expect.md

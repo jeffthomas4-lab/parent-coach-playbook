@@ -51,4 +51,4 @@ Required gear, in the order parents usually get confused about it.
 
 **Bag.** You need something that fits all of it. A dedicated hockey bag runs $30-60 used. Something with ventilation pockets saves you from the smell problem, which is real.
 
-Gear rentals are available at most rinks for the first season if you want to test the commitment before spending. Worth considering for kids under eight.
+Gear rentals are available at most rinks for the first season if you want to test the commitment before spending. Worth considering for kids under eight. When you're ready to buy instead of rent, the [hockey gear guide](/what-to-buy/hockey/) has picks by age for each item above.

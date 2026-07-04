@@ -39,7 +39,7 @@ Training: field practice covers positioning and basic shot-stopping. It does not
 
 If your kid is serious about playing goalkeeper beyond the casual youth level, a goalkeeper-specific trainer or goalkeeper camp is worth the investment. Most clubs have a goalkeeper coach as part of their staff.
 
-Gear: a ball, goalkeeper gloves ($30-$80 for a good youth pair), and padded goalkeeper pants for diving practice. Gloves matter. Cheap gloves do not grip correctly and teach bad habits.
+Gear: a ball, goalkeeper gloves ($30-$80 for a good youth pair), and padded goalkeeper pants for diving practice. Gloves matter. Cheap gloves do not grip correctly and teach bad habits. The [soccer gear guide](/what-to-buy/soccer/) has the keeper-specific picks if you are buying for the first time.
 
 What you should not do: critique specific saves or goals allowed on the drive home. "You should have come out on that cross" or "why didn't you dive right" is coaching from a position of less information than the goalkeeper coach has. It also plants a second voice in your kid's head during the next game.
 

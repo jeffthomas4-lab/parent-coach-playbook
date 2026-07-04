@@ -40,7 +40,7 @@ When you do buy, go molded firm-ground. Rubber studs, no metal. Molded works on 
 This matters more than the brand. Half a size larger than their normal shoe. Their foot grows. You want room. Take them to the store. Have them wear the socks they'll wear to soccer. Try them on. Walk around. If they say they're tight, they're too tight.
 
 **The spend**
-Forty to sixty dollars. That's the actual range for eight-to-ten. Anything above that is marketing.
+Forty to sixty dollars. That's the actual range for eight-to-ten. Anything above that is marketing. The [soccer gear guide](/what-to-buy/soccer/) has specific picks by age if you want a shortcut past the wall of options at the store.
 
 **The problem**
 They'll outgrow them in one season. Not because they're bad. Because they're eight and they grow fast. This is not your fault. Plan for that.

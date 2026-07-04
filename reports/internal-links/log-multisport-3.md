@@ -1,0 +1,117 @@
+## Multi-sport batch 3
+
+### Modified
+- `the-cost-of-travel-ball.md` — added link(s): [training gear guide](/what-to-buy/training-gear/) — appended a clause to the existing cost-breakdown sentence about uniforms/equipment/training gear.
+- `the-first-travel-tournament.md` — added link(s): [first aid kit guide](/what-to-buy/first-aid-kit/) — appended a clause to the existing sentence about packing ibuprofen/kinesiology tape/ice packs.
+- `the-real-job-of-youth-sports.md` — added link(s): [training gear guide](/what-to-buy/training-gear/) — inserted into the existing "we cover the equipment" sentence describing site-wide gear coverage.
+- `the-recovery-talk-at-13-14.md` — added link(s): [recovery gear guide](/what-to-buy/recovery-gear/) — appended to the existing foam-roller sentence.
+- `the-sunday-night-reset.md` — added link(s): [season essentials guide](/what-to-buy/season-essentials/) — appended to the existing "restock the gym bag / check cleats and water bottles" sentence.
+- `tournament-weekend-budget.md` — added link(s): [season essentials guide](/what-to-buy/season-essentials/) — inserted into the existing "don't replace gear at the venue" sentence.
+- `tournament-weekend-packing-list.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "camp chair worth sitting in for four hours" sentence in the Parent Survival section.
+- `tournament-weekend-the-realistic-packing-list.md` — added link(s): [recovery gear guide](/what-to-buy/recovery-gear/) — attached to the existing "Foam roller. Yes really." sentence in the Recovery section.
+- `tournament-day-schedule.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "bring a chair, bring food" sentence in the Parent Sanity section.
+- `tournament-day-food.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "bring a small soft-sided cooler" sentence in The Cooler Rule section.
+- `the-tournament-weekend-that-ate-the-family.md` — added link(s): [sideline kit guide](/what-to-buy/sideline-kit/) — attached to the existing "pack a real cooler" sentence in the three-habits fix section.
+- `theater-auditions-what-to-expect.md` — added link(s): [theater gear guide](/what-to-buy/theater/) — new clause on the existing "song choice matters" sentence about building an audition song/monologue book.
+- `used-gear-rules.md` — added link(s): [season essentials guide](/what-to-buy/season-essentials/) — attached to the existing "what to always buy new" (mouthguards/socks) sentence.
+
+### Reviewed, no natural fit
+- the-booster-club-power-plays.md
+- the-bored-off-season-kid.md
+- the-camp-counselor-your-kid-hates.md
+- the-carpool-conversation-about-how-you-coach.md
+- the-carpool-spreadsheet-that-saves-marriages.md
+- the-carpool-text-that-prevents-fights.md
+- the-case-for-one-sport-per-season.md
+- the-cheer-that-embarrasses-your-kid.md
+- the-coach-who-ignores-the-heat-advisory.md
+- the-dad-who-corners-coach-in-the-parking-lot.md
+- the-double-header-recovery-plan.md
+- the-end-of-season-carpool-conversation.md
+- the-end-of-season-coach-thank-you.md
+- the-end-of-season-dip-in-mood.md
+- the-first-overnight-camp-at-9.md
+- the-first-parent-email-of-the-season.md
+- the-friend-who-got-the-summer-scholarship.md
+- the-friend-who-made-the-team-your-kid-didnt.md
+- the-friend-who-quit-and-was-fine.md
+- the-grandparent-who-pushes-too-hard.md
+- the-group-chat-parent-who-wont-stop-venting.md
+- the-group-chat-rule-that-ends-midnight-texts.md
+- the-group-chat-that-saved-me.md
+- the-hotel-pool-is-the-practice.md
+- the-hotel-pool-rule.md
+- the-hydration-conversation-at-11-12.md
+- the-kid-who-didnt-make-all-stars.md
+- the-kid-who-gets-cut-every-year.md
+- the-kid-who-isnt-athletic.md
+- the-kid-who-never-tries.md
+- the-kid-who-quit-gracefully.md
+- the-kid-who-refuses-to-go-to-tryouts.md
+- the-kid-who-says-theyre-not-trying-out.md
+- the-kid-who-scored-vs-the-kid-who-didnt.md
+- the-kid-who-used-to-love-it.md
+- the-kid-who-wants-to-switch-to-soccer-after-the-world-cup.md
+- the-kid-you-cut-who-is-your-kids-friend.md
+- the-kids-letter-to-teammates.md
+- the-last-free-weekend-before-fall-signups.md
+- the-last-game-car-ride.md
+- the-laundry-rotation-for-travel-season.md
+- the-minute-before-warm-ups.md
+- the-missing-rec-layer.md
+- the-mom-who-texts-about-her-kids-real-talent.md
+- the-monday-after-the-world-cup-final.md
+- the-night-before-tryouts-5-to-7.md
+- the-night-before-tryouts-at-8-to-10.md
+- the-nutrition-talk-at-13-14.md
+- the-nutrition-talk-at-8-10.md
+- the-olympic-dream-conversation-at-12.md
+- the-other-team-parent-yelling.md
+- the-parent-ruining-the-team-chat.md
+- the-parent-thank-you-note.md
+- the-parent-who-screams-at-their-own-kid.md
+- the-performance-anxiety-conversation-at-12.md
+- the-post-tryout-family-conversation.md
+- the-post-tryouts-wait.md
+- the-pre-game-conversation-isnt-strategy.md
+- the-pregame-meltdown-at-6.md
+- the-pregame-snack-at-11-to-12.md
+- the-quiet-pickup-after-a-loss.md
+- the-recruiter-at-rec-ball.md
+- the-right-way-to-bench-a-player.md
+- the-science-fair-question.md
+- the-second-cut.md
+- the-shared-calendar-that-prevents-missed-games.md
+- the-sibling-at-the-game-who-isnt-playing.md
+- the-sleep-talk-at-11-12.md
+- the-snack-rotation-that-doesnt-fall-apart.md
+- the-summer-break-conversation.md
+- the-summer-parent-meeting.md
+- the-team-gift-that-is-too-much.md
+- the-team-hotel-opt-out.md
+- the-team-meeting-when-things-have-gone-sideways.md
+- the-team-mom-you-dont-want-to-be.md
+- the-team-picture-day-survival-guide.md
+- the-teammate-who-got-hurt-and-your-kid-is-shaken.md
+- the-teammates-parent-who-asks-you-to-talk-to-coach.md
+- the-tournament-organizer-mistake.md
+- the-tournament-t-shirt-economy.md
+- the-tournament-that-falls-on-the-4th-of-july-weekend.md
+- the-travel-team-tryout-at-11-to-12.md
+- the-you-should-be-assistant-coaching-pressure.md
+- theater-and-sports-at-the-same-time.md
+- three-camps-in-three-weeks.md
+- three-drives-one-relationship.md
+- three-scoreboards-every-parent-coach-tracks.md
+- three-teams-in-one-summer.md
+- travel-ball-summer-tournament-guide.md
+- travel-politics.md
+- travel-team-politics-the-playing-time-formula.md
+- trying-a-new-sport-at-thirteen.md
+- trying-a-new-sport-in-the-off-season.md
+- tryouts-when-your-kid-has-a-cold.md
+- two-kids-in-two-sports-in-two-directions.md
+- two-questions-after-every-practice.md
+- unwritten-rules.md
+- used-vs-new-gear-the-actual-math.md
+- varsity-tryouts-how-to-read-the-coach.md

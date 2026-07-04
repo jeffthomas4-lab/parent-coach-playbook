@@ -37,7 +37,7 @@ Tournament registration fees are usually not included in the club fee and averag
 
 Mid-to-upper club: the top club programs in most metro areas run $3,000-$5,000 in base fees. Add tournament travel (hotels, gas, food), showcase events, and you are at $5,000-$8,000 before extras. Families who travel to out-of-state events routinely spend $10,000+ in a year across registration, travel, and gear.
 
-The gear escalation: cleats are the main variable here. At rec level, $30-$60 cleats are fine. At club level, peer pressure moves families toward $100-$200 boots.
+The gear escalation: cleats are the main variable here. At rec level, $30-$60 cleats are fine. At club level, peer pressure moves families toward $100-$200 boots. The [soccer gear guide](/what-to-buy/soccer/) has picks at both ends if you want to see what the extra money actually buys.
 
 Goalkeepers add gloves ($30-$80). Shin guards get upgraded. Training balls get added.
 

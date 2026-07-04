@@ -55,7 +55,7 @@ Avoid programs that promise to start "serious ballet training" at age four, they
 
 ## What to buy
 
-A short list. A leotard, plain pink or black. Tights or footed leggings. Ballet shoes, pink leather or canvas slippers (the studio will tell you the brand). A hair tie, some studios require buns, but at four a high ponytail is usually fine. That's it.
+A short list. A leotard, plain pink or black. Tights or footed leggings. Ballet shoes, pink leather or canvas slippers (the studio will tell you the brand). A hair tie, some studios require buns, but at four a high ponytail is usually fine. That's it. The [ballet gear guide](/what-to-buy/ballet/) has picks for all of it if you'd rather not guess at the dance store.
 
 Don't buy a tutu (she'll get one for the recital), a serious ballet uniform package (most studios sell these starter packages and they're usually overpriced), multiple leotards in different colors (most pre-ballet programs have a dress code, ask about it), or a character shoe or jazz shoe (not needed at this age).
 

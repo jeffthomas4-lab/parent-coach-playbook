@@ -25,7 +25,7 @@ editorial:
   reviewerNotes: ""
 ---
 
-Baseball gear list, with the certification detail that catches people off guard.
+Baseball gear list, with the certification detail that catches people off guard; the [full baseball gear guide](/what-to-buy/baseball/) has the complete picks by age if you want them all in one place.
 
 *Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 

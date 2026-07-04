@@ -37,4 +37,4 @@ Scoring in team cross country uses the finishing places of the top five finisher
 
 The thing that matters most in a first cross country season: pacing. Young runners almost always go out too fast because the crowd and competition energy push them to sprint at the start. The kid who learns to run even splits and build through a race will pass people in the second half and have a better experience. That lesson takes a full season to learn for most kids, and it is worth learning.
 
-Gear is minimal. A pair of running shoes with decent outsole grip, a moisture-wicking shirt, and running shorts. Racing spikes are available but not necessary until the high school level. Cross country shoes exist but are not required.
+Gear is minimal. A pair of running shoes with decent outsole grip, a moisture-wicking shirt, and running shorts; the [cross country gear guide](/what-to-buy/cross-country/) has picks if you're buying that first pair new. Racing spikes are available but not necessary until the high school level. Cross country shoes exist but are not required.

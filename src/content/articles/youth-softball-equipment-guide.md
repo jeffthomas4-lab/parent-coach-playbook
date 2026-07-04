@@ -29,7 +29,7 @@ Softball gear list with the details that trip people up.
 
 **Glove.** Required. Softball gloves are sized differently from baseball gloves. Infield gloves for youth players typically run 11 to 12 inches. Outfield gloves are 12 to 13 inches.
 
-First base mitts are a separate style. Brands like Rawlings, Wilson, and Mizuno make quality youth models in the $50 to $100 range. Real leather holds its shape and lasts.
+First base mitts are a separate style. Brands like Rawlings, Wilson, and Mizuno make quality youth models in the $50 to $100 range, and the [softball gear guide](/what-to-buy/softball/) has picks by age if you'd rather start from a shortlist. Real leather holds its shape and lasts.
 
 Avoid synthetic "starter" gloves from big-box stores.
 

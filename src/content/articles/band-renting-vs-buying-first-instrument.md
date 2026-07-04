@@ -53,7 +53,7 @@ A few rental traps to dodge while you're at it. Don't pay annual maintenance upf
 
 If he sticks with band, this is when you buy. Ask the band director two questions: what brand and model do you recommend for an intermediate-level player on this instrument, and do you know anyone selling a used one. Most directors will give you two or three brands they prefer, and many of them know which families have kids who upgraded or graduated and are looking to sell.
 
-The director-referred used instrument is almost always the best option. Older students upgrade, parents want to sell, the director knows which instruments were taken care of, and you'll usually pay forty to sixty percent of the new price. If no referral is available, the next best option is a reputable online seller of used band instruments, look for one that includes a thirty-day return policy and has a repair tech on staff. Avoid eBay unless you can examine the instrument in person.
+The director-referred used instrument is almost always the best option. Older students upgrade, parents want to sell, the director knows which instruments were taken care of, and you'll usually pay forty to sixty percent of the new price. If no referral is available, the next best option is a reputable online seller of used band instruments, look for one that includes a thirty-day return policy and has a repair tech on staff. Avoid eBay unless you can examine the instrument in person. The [band gear guide](/what-to-buy/band/) covers what else to budget for once the instrument question is settled, reeds, valve oil, and the accessories that never stop needing replacing.
 
 ## Instruments to never buy new from a big-box store
 

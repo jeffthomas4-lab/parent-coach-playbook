@@ -43,7 +43,7 @@ Figure $300 to $600 a year for school ball, more at a competitive program with s
 
 Families on the national circuit routinely spend $3,000 to $6,000 or more per year when you add registration, tournaments, travel, hotels, and food. Some families are at $10,000 and know it. Others are at $10,000 and don't.
 
-**Gear costs at any level.** Basketball shoes are the main ongoing cost. Kids at 11-13 are burning through shoes quickly because their feet are still growing. Budget $80 to $120 per pair and expect to replace them every four to six months if your kid plays year-round.
+**Gear costs at any level.** Basketball shoes are the main ongoing cost. Kids at 11-13 are burning through shoes quickly because their feet are still growing. Budget $80 to $120 per pair and expect to replace them every four to six months if your kid plays year-round; the [basketball gear guide](/what-to-buy/basketball/) breaks down what's worth the extra money and what isn't.
 
 A ball for home practice is $25 to $60. A gear bag is nice but not required.
 

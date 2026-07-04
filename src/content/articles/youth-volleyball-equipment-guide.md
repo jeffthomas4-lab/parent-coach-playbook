@@ -46,3 +46,5 @@ For practice, any moisture-wicking top works.
 **A ball.** Nice to have for home practice but not required. A [Molten or Mikasa recreational volleyball](/go/volleyball-volley-lite/) runs $25 to $45. Make sure the size matches the level: size 5 is standard for most youth and adult play.
 
 **Skip these.** Jumping trainers, setting targets, and branded volleyball bags are marketed heavily in club circles. Most of it is optional until your kid is training seriously three or four days a week at the club level. Start with the shoes and knee pads and add from there.
+
+The [full volleyball gear guide](/what-to-buy/volleyball/) has these picks broken out by age if you want more than the short list.

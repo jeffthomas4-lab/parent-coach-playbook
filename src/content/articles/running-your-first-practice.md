@@ -47,7 +47,7 @@ Two things will tell you how day one went. The first is body language at the end
 
 The second is the parent drop-off on day two. Kids who talk about practice at home come back with parents who ask you how it went. The parents who are silent at drop-off usually had a kid who said "it was fine" and left it at that. "Fine" means they were not engaged enough to have a story about it.
 
-On equipment: do not assume anything is set up. Bring your own cones. Bring a pump for balls. Bring a clipboard with your session plan written out but do not stare at it. Know the plan well enough to run it without checking the paper every five minutes.
+On equipment: do not assume anything is set up. Bring your own cones. Bring a pump for balls. Bring a clipboard with your session plan written out but do not stare at it. The [parent-coach gear guide](/what-to-buy/parent-coach-gear/) covers what's actually worth having in that bag beyond the basics. Know the plan well enough to run it without checking the paper every five minutes.
 
 On injuries: know the location of a first aid kit before practice starts. Know who to call if something serious happens. Know which parents will be present. Youth sports leagues have emergency protocols and you are responsible for knowing yours before you need them.
 

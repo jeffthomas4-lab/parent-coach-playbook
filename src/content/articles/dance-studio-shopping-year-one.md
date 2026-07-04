@@ -58,7 +58,7 @@ Most studios offer a free trial class, and you should take it. Your kid needs to
 
 ## After the trial
 
-If the trial went well, enroll. Pay the registration fee. Get the dancewear list. Most year-one rec students need basic leotard, tights, ballet shoes (pink or black depending on style), and a hair bun kit, about eighty to a hundred and twenty dollars all in for the first year. Resist the urge to buy extra dancewear; wait until she's been in classes for two months before adding things, because she'll outgrow it.
+If the trial went well, enroll. Pay the registration fee. Get the dancewear list. Most year-one rec students need basic leotard, tights, ballet shoes (pink or black depending on style), and a hair bun kit, about eighty to a hundred and twenty dollars all in for the first year; the [dance gear guide](/what-to-buy/dance/) has picks by age before you buy from the studio store at retail. Resist the urge to buy extra dancewear; wait until she's been in classes for two months before adding things, because she'll outgrow it.
 
 ## The longer view
 

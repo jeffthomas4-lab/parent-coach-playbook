@@ -61,7 +61,7 @@ That's it. 10 minutes. Done.
 
 **The foam rolling thing**
 
-If you have a [foam roller](/go/foam-roller-medium/), some kids will actually use it.
+If you have a [foam roller](/go/foam-roller-medium/), some kids will actually use it — the [recovery gear guide](/what-to-buy/recovery-gear/) covers what else is worth having on hand at this age, and what's still overkill.
 
 It feels good. It works.
 

@@ -93,7 +93,7 @@ Leagues usually require white or gray pants. The team provides the jersey. A sim
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton Youth Standard Baseball Pants</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Easton youth-cut baseball pants. Standard build, multiple color options, sized down for tee-ball and coach-pitch bodies.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy a size up. Tee-ballers grow fast and these are getting slid in, so gray or tan hides more than white ever will.</p>
     <a href="/go/baseball-pants-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -104,7 +104,7 @@ Leagues usually require white or gray pants. The team provides the jersey. A sim
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Champion Sports Elastic Uniform Belt</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Elastic uniform belt sized for youth waists. Stretches with movement, clips closed, holds up without re-tying every inning.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A cheap fix for a real problem. Skip the buckle belt that a five-year-old can't work alone and get this instead.</p>
     <a href="/go/baseball-belt-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -119,7 +119,7 @@ Most kids won't catch in tee-ball. If yours wants to try, or wants to play catch
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 5–7</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings Renegade RCM325B Catcher's Mitt</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rawlings Renegade Series catcher's mitt, 32.5 inches. Entry-level full-size mitt for kids ready to take catcher reps in coach-pitch.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't overspend here — this is a backyard-and-driveway mitt, not a travel-ball investment. It does the job until the position gets serious.</p>
     <a href="/go/baseball-catchers-mitt-32in/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -173,7 +173,7 @@ Most coach-pitch kids don't need them. By age 10, some kids want them because th
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 8–10</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Franklin Sports Shok-Sorb Youth Batting Gloves</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Franklin Shok-Sorb youth batting gloves. Padded palm cushions the sting of mishit balls. Sized for ages 6 to 10.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Not a must-buy at this age, but a $15 way to stop the complaints about stinging hands on cold-weather mishits.</p>
     <a href="/go/baseball-batting-gloves-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -239,7 +239,7 @@ This is a conversation no parent enjoys. Buy one before the season starts. Your 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Davion Youth Athletic Cup Underwear</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Youth athletic underwear with a built-in protective cup. Multi-sport (baseball, football, lacrosse), removes the separate cup-and-supporter step.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: The built-in style beats a separate cup and jock for this age — one less thing to forget in the bag. Size up as they grow, not down.</p>
     <a href="/go/baseball-cup-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -254,7 +254,7 @@ Most leagues provide team catcher's gear. If you go travel ball, you may need yo
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Easton Black Magic Youth Catcher's Set</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Easton Black Magic youth catcher's set. Helmet, chest protector, and leg guards in matching color. Sized for ages 9 to 12.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Check with the coach before you buy — most rec leagues still own a set your kid can borrow. Save this for travel ball, where they need their own.</p>
     <a href="/go/baseball-catchers-gear-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -269,7 +269,7 @@ A full catcher's setup does not fit in a regular equipment bag. Wheeled or backp
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Kioqiear Catcher's Equipment Bag</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Catcher's equipment bag with multiple compartments. Carries helmet, chest protector, leg guards, mitt, and bat in one piece.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Worth it the first time you watch a kid try to stuff full catcher's gear into a regular bat bag before an early game.</p>
     <a href="/go/baseball-catchers-bag/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -284,7 +284,7 @@ Sliding mitts protect the lead hand on head-first slides. Optional but cheap ins
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 11–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">EvoShield Baseball Sliding Mitt</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Hard-shell sliding mitt worn on the lead hand for head-first slides. Protects fingers and the back of the hand from jammed digits and turf burns.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Cheap insurance if your kid slides head-first, which most kids this age do whether you want them to or not.</p>
     <a href="/go/baseball-sliding-mitt/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -364,7 +364,7 @@ Pitchers and outfielders wear them for warmth and light compression on the throw
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13–14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Newcotte Compression Baseball Arm Sleeve</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Compression baseball arm sleeve. Light support and warmth for pitchers, throwers, and cold-weather games.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: More about looking the part than protecting the arm. Fine to buy if your kid wants one, but it won't prevent overuse injuries — rest does that.</p>
     <a href="/go/baseball-arm-sleeve/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -391,7 +391,7 @@ Real baseballs are too hard for kids learning to track and swing. Soft-core ball
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Poosue Youth T-Ball Safety Baseballs</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Soft-core youth t-ball baseballs. Same size and look as a regulation ball, soft enough that taking one off the shin or the bat handle does not end practice.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy a bucket of these before you buy real baseballs. Backyard practice goes a lot smoother when a mishit doesn't draw blood.</p>
     <a href="/go/baseball-balls-teeball/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -406,7 +406,7 @@ Rubber bases that lay flat on any surface. Useful for backyard games, driveway p
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">GoSports Rubber Throw-Down Bases</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rubber throw-down bases. Lay flat on grass, dirt, or concrete, and roll up small enough to throw in a bag.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Turns any patch of grass into a diamond. The kind of cheap gear that gets more use than half the stuff in the equipment bag.</p>
     <a href="/go/baseball-bases-rubber/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -421,7 +421,7 @@ The original backyard pitching tool. Plastic, perforated, breaks hard. The kid t
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Champion Sports Plastic Wiffle Baseballs</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic perforated baseballs in the classic wiffle pattern. Curve hard for the kid throwing, break harmlessly off a bat.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A few bucks for a whole summer of driveway games. Buy a dozen — they end up in the neighbor's yard, the gutter, and occasionally the dog's mouth.</p>
     <a href="/go/baseball-balls-wiffle/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -436,7 +436,7 @@ A step up from wiffle. Plastic balls built to break harder than any wiffle ever 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Blitzball Bat & 3-Ball Starter Pack</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Plastic bat plus three Blitzballs built to move more aggressively than wiffle balls. Backyard upgrade for kids old enough to track real movement on the ball.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Good for teaching a kid to actually pick up spin, not just guess. Wait until 10 — younger kids just get frustrated chasing the movement.</p>
     <a href="/go/baseball-blitzball-set/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -451,7 +451,7 @@ Speeds up the process of softening a new glove. Useful for stiff leather gloves 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Rawlings BRKIT Glove Break-In Kit</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Rawlings BRKIT glove break-in kit. Speeds up the process of softening a new glove so it actually closes.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Skip it if the glove already closes by hand. Worth the few dollars only for a stiff leather glove that's fighting you the first week.</p>
     <a href="/go/baseball-glove-breakin-kit/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -466,7 +466,7 @@ A glove with broken webbing isn't done; it just needs new laces. Leather lacing 
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Practice</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Baseball Glove Lacing Repair Kit</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Replacement leather laces with a lacing needle. Fixes the failure mode that ends most gloves before the leather body wears out.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: <!-- TODO: Jeff's take --></p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: A broken lace doesn't mean a new glove. Ten minutes with this kit saves you from replacing a glove that's already broken in and fits right.</p>
     <a href="/go/baseball-glove-laces/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
@@ -500,4 +500,8 @@ The reason most kids stagnate between seasons is they get zero reps at home. A f
 
 ## A few honest notes
 
-Don't buy a top-shelf bat for
+Don't buy a top-shelf bat for a kid who hasn't finished a season yet. The $400 composite does not fix a slow swing, and half the kids who start tee-ball are playing something else in two years. Spend on the glove instead — a good one breaks in, fits the hand, and lasts through multiple seasons. A bat gets outgrown by next spring no matter what you paid.
+
+Buy used where you can. Gloves, cleats, and catcher's gear turn over constantly on Facebook Marketplace and at Play It Again Sports, usually because a kid grew, not because anything wore out. The two exceptions: helmets (you don't know what a used one has been through) and anything with a certification stamp your league requires — check the stamp before you hand over money.
+
+And nobody needs the full list on opening day. Glove, bat, helmet if the league doesn't provide one. Everything else can wait until your kid asks for it, which is how you find out what they actually need.

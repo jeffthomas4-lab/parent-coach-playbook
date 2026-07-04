@@ -48,7 +48,7 @@ A contemporary class teaches a kid to express something through movement, which 
 
 Tap is music made with the feet, tap dancers are also percussionists. Tap classes teach rhythm, syncopation, time signatures, and the relationship between music and movement, and a kid who takes tap for years develops a rhythmic sense that helps her in every other dance style and also in life.
 
-Tap shoes are loud, the classroom is loud, and tap is the most physically distinctive of the dance styles in terms of sound and floor contact. Most studios offer tap as an add-on, often as the second class a kid takes if she started with ballet or jazz. It doesn't require the same physical conditioning as ballet, and many adult dancers come back to tap because they can do it without the joint stress of ballet.
+Tap shoes are loud, the classroom is loud, and tap is the most physically distinctive of the dance styles in terms of sound and floor contact; the [dance gear guide](/what-to-buy/dance/) has fit notes for tap shoes specifically, since a loose pair changes the sound. Most studios offer tap as an add-on, often as the second class a kid takes if she started with ballet or jazz. It doesn't require the same physical conditioning as ballet, and many adult dancers come back to tap because they can do it without the joint stress of ballet.
 
 ## Hip hop
 

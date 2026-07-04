@@ -36,7 +36,7 @@ If they're hitting line drives at the end of games instead of early, the bat mig
 Have them take their current bat. If they can hold it at chest height with one hand for ten seconds without shaking, it's probably still fine. If their arm shakes after three seconds, it's too heavy.
 
 **What to buy**
-Easton, Louisville Slugger, Marucci. Those three build bats that last. Drop-10 through drop-8 depending on where he is. Two-piece composite bats are expensive and don't last long at this age because he's still growing. Hybrid bats (composite barrel, alloy handle) last longer and cost less.
+Easton, Louisville Slugger, Marucci. Those three build bats that last. Drop-10 through drop-8 depending on where he is. Two-piece composite bats are expensive and don't last long at this age because he's still growing. Hybrid bats (composite barrel, alloy handle) last longer and cost less. The [baseball gear guide](/what-to-buy/baseball/) has current picks by drop weight if you want a shortlist instead of a store aisle.
 
 **The price**
 Expect three hundred to four-fifty. That's the actual range for a bat that will last two years. If you're spending more, you're buying cosmetics. If you're spending less, you're buying something that will break midseason.

@@ -43,4 +43,4 @@ They are playing a high-repetition sport like swimming, baseball, or cross-count
 
 Do not buy a foam roller and hand it to a kid without showing them how to use it. The instinct is to roll over whatever hurts. That is the wrong approach. Foam rolling works on the muscle belly, not on joints, not on areas that are actually injured, and not on the spine of a kid under 12. Five minutes of instruction makes the difference between a useful tool and a thing that sits in the corner of the room.
 
-If your kid is 11 or 12, playing two or more sports per week, and starting to notice tightness that sticks around, a foam roller is a reasonable buy. If they are 9 and playing recreational soccer once a week, save the money.
+If your kid is 11 or 12, playing two or more sports per week, and starting to notice tightness that sticks around, a foam roller is a reasonable buy, and the [recovery gear guide](/what-to-buy/recovery-gear/) has the sizing and firmness picks by age. If they are 9 and playing recreational soccer once a week, save the money.

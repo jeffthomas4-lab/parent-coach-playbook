@@ -52,6 +52,6 @@ The post-game ice cream. After the last game of the day, fine. Between games, th
 
 ## The cooler is the move
 
-A real cooler in the car. Bottled water, fruit, sandwich fixings, yogurt, hard-boiled eggs. The cooler is what saves you when the tournament concession stand is a 40-minute line of $9 chicken tenders.
+A real cooler in the car. Bottled water, fruit, sandwich fixings, yogurt, hard-boiled eggs. The cooler is what saves you when the tournament concession stand is a 40-minute line of $9 chicken tenders. The [sideline kit guide](/what-to-buy/sideline-kit/) has cooler picks that actually hold ice through a tournament day.
 
 [The summer tournament kit](/drive-there/summer-tournament-kit/) covers the rest of the gear list.

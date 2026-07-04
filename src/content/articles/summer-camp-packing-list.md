@@ -47,7 +47,7 @@ A laminated card with your phone number. In the front zip pocket. Most camps hav
 
 ## Overnight, the trunk
 
-Six pairs of socks for a five-day camp. They will lose two and ruin one. Six gets you through.
+Six pairs of socks for a five-day camp. They will lose two and ruin one. Six gets you through, and the [season essentials guide](/what-to-buy/season-essentials/) has the moisture-wicking multi-packs that hold up better than the cotton ones in the drawer.
 
 Five t-shirts and three pairs of shorts. Don't pack their good clothes. The good clothes will come home stained.
 

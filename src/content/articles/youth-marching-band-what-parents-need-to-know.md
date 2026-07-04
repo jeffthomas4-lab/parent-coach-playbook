@@ -49,7 +49,7 @@ If your kid already plays an instrument, their school instrument may or may not 
 
 Marching percussion instruments are typically provided by the school program. Wind players usually bring their own. Uniform, hat, and gauntlets are usually provided with a deposit.
 
-Marching shoes, called dinkles or similar styles depending on the director's preference, are purchased by families and run $35 to $60 a pair.
+Marching shoes, called dinkles or similar styles depending on the director's preference, are purchased by families and run $35 to $60 a pair. The [band gear guide](/what-to-buy/band/) walks through the rent-versus-buy math on the instrument itself along with the accessories families end up paying for.
 
 Some programs charge a participation fee ranging from $100 to $400 per season to cover competition entry fees, transportation, and equipment maintenance. Ask the director for a complete fee schedule at the pre-season parent meeting.
 

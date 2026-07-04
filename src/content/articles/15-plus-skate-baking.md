@@ -36,7 +36,7 @@ Most kids at this age are in skates that don't fit right. Skates that don't fit 
 Any hockey pro shop. Not Dick's. Not a general sporting goods store. An actual hockey shop. They have the oven. They know the process. It takes ten minutes of internet searching to find one.
 
 **The cost**
-Twenty to forty dollars. That's the full cost. Go in the summer before the season, not two weeks before tryouts. If the season's coming up, the shop will be slammed.
+Twenty to forty dollars. That's the full cost. Go in the summer before the season, not two weeks before tryouts. If the season's coming up, the shop will be slammed. If you're still shopping for the skates themselves, the [hockey gear guide](/what-to-buy/hockey/) has picks by age before you get to the baking step.
 
 **The requirement**
 Bring the socks they'll wear. Bring the insoles they'll use. Bring the shin guard they'll wear because thickness changes the fit. The shop needs to bake with the full setup.

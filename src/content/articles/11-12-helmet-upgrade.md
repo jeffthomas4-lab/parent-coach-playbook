@@ -37,7 +37,7 @@ If the helmet is two years old or older: buy new. Helmet foam deteriorates. It l
 If it's under two years and still fits: a refurbished helmet from a sporting goods store is fine. They clean the old padding, check the shell for damage, and put new foam in. Seventy-five dollars instead of one-fifty.
 
 **The brand question**
-Schutt and Riddell are the standards. Don't go cheaper. A helmet is the one piece of equipment you don't go budget on. The fit matters more than anything else. Cheap helmets don't fit right on multiple head shapes.
+Schutt and Riddell are the standards. Don't go cheaper. A helmet is the one piece of equipment you don't go budget on. The fit matters more than anything else. Cheap helmets don't fit right on multiple head shapes. The [football gear guide](/what-to-buy/football/) has the current models worth the money by age.
 
 **What you're paying**
 New helmet: one fifty to two hundred. Refurbished: seventy-five to one hundred. Don't buy at the mall. Don't buy at a big-box store. Go to a sporting goods specialty shop. They fit it right. They'll adjust it when he shows up in August if it shifts.

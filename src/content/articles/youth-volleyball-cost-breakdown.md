@@ -45,7 +45,7 @@ Travel is where the real cost lives. Club volleyball tournaments are often multi
 
 A family running a national qualifier track can easily spend $5,000 to $8,000 in flights, hotels, and meals over a season, on top of program fees.
 
-**Gear costs at any level.** Court shoes are the main recurring item. Volleyball-specific shoes have gum soles for gym floor traction and extra cushioning for landing. A quality pair runs $70 to $110 and should last one to two seasons depending on play volume.
+**Gear costs at any level.** Court shoes are the main recurring item. Volleyball-specific shoes have gum soles for gym floor traction and extra cushioning for landing. A quality pair runs $70 to $110 and should last one to two seasons depending on play volume. The [volleyball gear guide](/what-to-buy/volleyball/) breaks down what's worth the money at each level and what isn't.
 
 Knee pads are $15 to $40 and last several seasons. A personal volleyball for home practice is $25 to $50 for a recreational model.
 

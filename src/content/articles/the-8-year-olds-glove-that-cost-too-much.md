@@ -53,7 +53,7 @@ If they outgrow it before they fit into it, it has resale value. A clean, broken
 
 **What to buy next**
 
-For your eight-year-old right now, find an entry-level glove that fits today. Use it this season. Save the premium one for when their hand has grown into it.
+For your eight-year-old right now, find an entry-level glove that fits today. The [baseball gear guide](/what-to-buy/baseball/) has current picks in that range if you want a shortlist instead of the store wall. Use it this season. Save the premium one for when their hand has grown into it.
 
 The kid will catch more balls. They will stop asking for a different glove every two months. The math works.
 

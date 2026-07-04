@@ -43,7 +43,7 @@ Your kid does not need to be a trained dancer. They need to watch carefully and 
 
 **How to prepare without overdoing it**
 
-Song choice matters. Pick something your kid can sing well, not something that makes the song the star. A song in the wrong key or a belt range that is too high will hurt more than a simpler song sung cleanly.
+Song choice matters. Pick something your kid can sing well, not something that makes the song the star. A song in the wrong key or a belt range that is too high will hurt more than a simpler song sung cleanly. If your kid is auditioning regularly, the [theater gear guide](/what-to-buy/theater/) has notes on building a small book of songs and monologues to pull from.
 
 If your family does not have a music background, many theater programs can point you to a voice teacher who does one-time audition prep sessions. One session is usually enough.
 

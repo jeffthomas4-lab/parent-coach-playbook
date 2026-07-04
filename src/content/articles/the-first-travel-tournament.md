@@ -72,7 +72,7 @@ See the hotel pool rule post. Two adults at all times.
 
 Tournaments have more injuries than league games. Tired bodies, hot weather, multiple games. The trainer at the venue is real but limited.
 
-Bring ibuprofen, kinesiology tape, ice packs. You'll use them.
+Bring ibuprofen, kinesiology tape, ice packs. You'll use them. The [first aid kit guide](/what-to-buy/first-aid-kit/) has the packing list we actually use for tournament weekends.
 
 **The mental fatigue**
 

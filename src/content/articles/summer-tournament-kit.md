@@ -46,9 +46,9 @@ A second uniform. Field uniforms get wrecked in muddy or wet conditions. The tea
 
 Shoes for between games. Slides, flip-flops, sandals. Anything that's not cleats. The kid in cleats for eight hours is the kid with blisters tomorrow.
 
-A folding chair for you. The bleachers are hot. The chair is the difference between watching three games and being a wreck by Sunday morning.
+A folding chair for you. The bleachers are hot. The chair is the difference between watching three games and being a wreck by Sunday morning. The [sideline kit guide](/what-to-buy/sideline-kit/) has picks for the chair and the cooler both.
 
-A small first-aid pouch: bandages, blister tape, ibuprofen, instant cold pack. Most teams have one but it's never where you are.
+A small first-aid pouch: bandages, blister tape, ibuprofen, instant cold pack. Most teams have one but it's never where you are. The [first aid kit guide](/what-to-buy/first-aid-kit/) covers what's actually worth stocking.
 
 ## The thing nobody packs
 

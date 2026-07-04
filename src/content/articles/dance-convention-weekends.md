@@ -68,7 +68,7 @@ If your kid receives a scholarship, that's a real validation of her work. Celebr
 
 ## What to pack
 
-A few essentials. Dance shoes for every style she'll be taking, jazz shoes, ballet flats, tap shoes, sneakers for hip hop, and some conventions have a list, so follow it. Multiple changes of dance clothes; she'll sweat through several outfits per day. A foam roller or massage ball, because she'll be sore by Saturday night and self-massage tools help. An insulated water bottle, refilled often. Snacks, bananas, protein bars, peanut butter sandwiches, electrolyte drinks, because the convention venue usually has overpriced bad food. A notebook and pen if she likes to write down corrections and choreography notes. A small first aid kit with blister bandages, athletic tape, ibuprofen.
+A few essentials. Dance shoes for every style she'll be taking, jazz shoes, ballet flats, tap shoes, sneakers for hip hop, and some conventions have a list, so follow it; the [dance gear guide](/what-to-buy/dance/) breaks down which shoe goes with which style if her bag isn't already full. Multiple changes of dance clothes; she'll sweat through several outfits per day. A foam roller or massage ball, because she'll be sore by Saturday night and self-massage tools help. An insulated water bottle, refilled often. Snacks, bananas, protein bars, peanut butter sandwiches, electrolyte drinks, because the convention venue usually has overpriced bad food. A notebook and pen if she likes to write down corrections and choreography notes. A small first aid kit with blister bandages, athletic tape, ibuprofen.
 
 ## After the convention
 

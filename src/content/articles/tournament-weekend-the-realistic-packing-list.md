@@ -51,7 +51,7 @@ A small cooler in the car. Holds the perishables. Holds drinks. Worth the trunk 
 
 **The recovery**
 
-Foam roller. Yes really. The eleven-year-old who used a foam roller Friday night plays better Saturday morning.
+Foam roller. Yes really. The eleven-year-old who used a foam roller Friday night plays better Saturday morning. The [recovery gear guide](/what-to-buy/recovery-gear/) has the size that actually fits in a tournament bag.
 
 A small bag of ice or instant cold packs. For minor knocks.
 

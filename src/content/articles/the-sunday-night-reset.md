@@ -45,7 +45,7 @@ Friday, the system has been checked. The week runs.
 
 **The gear check**
 
-Open the kid's gym bag. Restock with clean gear. Check the cleats. Check the water bottles. Check the snack supply.
+Open the kid's gym bag. Restock with clean gear. Check the cleats. Check the water bottles. Check the snack supply. The [season essentials guide](/what-to-buy/season-essentials/) is a decent checklist if you're not sure what belongs in the bag year-round.
 
 If something is missing, this is the time to fix it. Not Tuesday at 5:25.
 

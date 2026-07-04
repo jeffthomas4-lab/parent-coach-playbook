@@ -36,7 +36,7 @@ The "is it safe" question is not the right question. The right question is "what
 
 **Bodyweight work is the foundation.** Push-ups, pull-ups, squats, lunges, planks, single-leg balance work, jumping mechanics. Most kids 7 to 12 should be doing primarily bodyweight work. The strength gains come from teaching the nervous system, not from external load.
 
-**External load can be added with proper supervision.** Light dumbbells, resistance bands, medicine balls. The key word is *light*. Form-first, low rep, high attention to mechanics. A kid who can't do a clean bodyweight squat should not be doing a barbell squat.
+**External load can be added with proper supervision.** Light dumbbells, resistance bands, medicine balls (the [training gear guide](/what-to-buy/training-gear/) covers what's actually worth buying for this kind of work). The key word is *light*. Form-first, low rep, high attention to mechanics. A kid who can't do a clean bodyweight squat should not be doing a barbell squat.
 
 **Olympic lifting (cleans, snatches) is appropriate for some kids 12 and up with quality coaching.** It requires a coach who actually knows what they're doing, not a high-school assistant who watched a YouTube video. If your kid's program includes Olympic lifts, ask the coach about their certification (USA Weightlifting credentials are the standard).
 

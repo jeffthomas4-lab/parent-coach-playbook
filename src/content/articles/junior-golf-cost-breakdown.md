@@ -31,7 +31,7 @@ Entry-level programs are affordable. The First Tee charges low or nominal fees b
 
 Once a kid is playing independently, green fees and range costs become the ongoing expense. A junior green fee at a public course runs $10 to $30 depending on the facility. Range buckets run $5 to $15. A kid who plays 18 holes twice a week and hits a bucket of balls at the range regularly is spending $100 to $200 per month in green fees alone.
 
-Equipment is a significant cost that resets every few years as kids grow. A quality junior club set (driver through putter, appropriate length for the child's height) runs $200 to $500 new. Good used sets are available for $75 to $150. Budget for a set upgrade every two to three years through middle school, then potentially a set of clubs fitted for a high-schooler.
+Equipment is a significant cost that resets every few years as kids grow. A quality junior club set (driver through putter, appropriate length for the child's height) runs $200 to $500 new. Good used sets are available for $75 to $150. Budget for a set upgrade every two to three years through middle school, then potentially a set of clubs fitted for a high-schooler. The [golf gear guide](/what-to-buy/golf/) has sizing by height and age.
 
 Private lessons run $60 to $150 per hour. Serious junior players typically take at least one lesson per month, more during active improvement phases.
 

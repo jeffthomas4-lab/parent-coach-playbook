@@ -57,7 +57,7 @@ Hockey gear is heavy, hockey locker rooms are cold, and you are putting 14 piece
 
 ## The smell
 
-Hockey bags develop a smell. It is not subtle. A bag deodorizer is not a luxury: a hockey puck deodorizer like the Rocket Pure charcoal bags or the Remfresh disc runs under $15 and lives in the bag permanently. Replace or recharge it every month or two.
+Hockey bags develop a smell. It is not subtle. A bag deodorizer is not a luxury: a hockey puck deodorizer like the Rocket Pure charcoal bags or the Remfresh disc runs under $15 and lives in the bag permanently. Replace or recharge it every month or two. The [hockey gear guide](/what-to-buy/hockey/) has picks for the bag itself and the drying gear, if yours is still a gym bag pressed into service.
 
 The root cause is wet gear sealed in a dark bag. The habit that prevents it: when you get home from practice, pull the pads out and hang them. Gloves and skates especially. A ventilated boot dryer for skates is worth the $30. The pads that get dried and re-aired last three times as long as the pads that stay in the bag.
 

@@ -33,7 +33,7 @@ Here's what parents should know.
 
 Grade 2 sprains are more significant: real swelling, difficulty bearing weight, pain that doesn't settle in 24 hours. Grade 3 is a full tear. If the ankle swells significantly, turns purple, and can't hold weight, get it imaged.
 
-High-top basketball shoes provide some protection but don't prevent all sprains.
+High-top basketball shoes provide some protection but don't prevent all sprains; the [basketball gear guide](/what-to-buy/basketball/) covers what actually helps versus what's marketing.
 
 **Knee pain.** The one to watch carefully in kids ages 10 to 14 is Osgood-Schlatter syndrome, a growth-related condition where the patellar tendon pulls on the tibial tuberosity (the bump just below the kneecap) during rapid growth. It's painful during activity and tender to the touch. It's not dangerous but it does need management.
 

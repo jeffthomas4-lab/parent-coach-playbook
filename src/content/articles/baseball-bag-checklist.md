@@ -31,7 +31,7 @@ Baseball bags accumulate equipment fast and get checked carefully never. Once a 
 
 **Helmet.** In the bag, not in the backseat. A helmet rolling around in the back of an SUV is a helmet with a cracked shell you haven't noticed yet. If your league requires a face guard, confirm it's attached and tight.
 
-**Batting gloves.** One pair minimum, two pairs if your athlete goes through them. Worn batting gloves shred in one at-bat. A second pair in the bag takes up no space and saves a trip to the dugout equipment pile where things go missing.
+**Batting gloves.** One pair minimum, two pairs if your athlete goes through them. Worn batting gloves shred in one at-bat. A second pair in the bag takes up no space and saves a trip to the dugout equipment pile where things go missing. If you're restocking the whole bag at once, the [baseball gear guide](/what-to-buy/baseball/) has picks for all of this by age.
 
 **Bat.** Check the bat stamp before travel ball games. USA Baseball, USSSA, and BBCOR are not interchangeable. The umpire will pull an illegal bat at the plate and the game has already started. Know which stamp your league requires and confirm the bat has it.
 

@@ -33,7 +33,7 @@ Cheer competitions run long, start early, and have zero margin for the thing you
 
 **The bow.** Put it in a hard eyeglass case or a small rigid box. A crushed bow at 7am in a convention center bathroom is a problem you prevent tonight. Bring one extra in the team color.
 
-**Cheer shoes.** In a separate bag inside the main bag, not loose. Wipe them clean tonight. A scuff you notice during inspection is a scuff you should have caught yesterday.
+**Cheer shoes.** In a separate bag inside the main bag, not loose. Wipe them clean tonight. A scuff you notice during inspection is a scuff you should have caught yesterday. The [cheer gear guide](/what-to-buy/cheer/) has the picks if this season's pair is finally done.
 
 **Hair kit.** Brush, comb, gel, hairspray (in a quart zip bag for the hotel), hairnet in team color, extra ponytail holders. Bobby pins: 50 is the floor, 100 is not excessive. Buy a new pack so you know you have them.
 

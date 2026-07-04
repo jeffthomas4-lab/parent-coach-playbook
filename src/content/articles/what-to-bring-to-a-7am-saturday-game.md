@@ -52,7 +52,7 @@ Not for the kid. For you. Two of them. One in each pocket. They make the differe
 
 **A folding chair**
 
-If the field has no bleachers. Most early-morning fields don't.
+If the field has no bleachers. Most early-morning fields don't. The [sideline kit guide](/what-to-buy/sideline-kit/) has picks that hold up in cold, wet grass, which is the actual test at 7am.
 
 **A real jacket**
 

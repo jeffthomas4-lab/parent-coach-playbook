@@ -29,7 +29,7 @@ Softball shares a cost structure with baseball, with a few differences at the eq
 
 **Recreational softball.** Parks and rec leagues, church leagues, and YMCA programs. Registration runs $75 to $175 for a season. Most leagues provide a jersey.
 
-You add cleats, a glove, and a batting helmet. A reliable youth fielding glove runs $40 to $90. Cleats are $30 to $60.
+You add cleats, a glove, and a batting helmet; the [softball gear guide](/what-to-buy/softball/) has picks by age if you want vetted options instead of guessing at the store. A reliable youth fielding glove runs $40 to $90. Cleats are $30 to $60.
 
 Total first year: $200 to $400. After year one, annual cost is registration plus whatever wears out.
 

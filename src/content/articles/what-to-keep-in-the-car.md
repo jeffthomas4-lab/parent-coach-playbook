@@ -35,7 +35,7 @@ What goes in it: a 12-pack of water bottles (restock when low), a box of granola
 That's your baseline. It handles forgotten snacks, teammate emergencies, and the gap between early wake-up and first game.
 
 **The cooler**
-A soft-sided cooler lives in the trunk next to the bin on game days. Not all week. Game day only.
+A soft-sided cooler lives in the trunk next to the bin on game days. Not all week. Game day only. If you're building out the rest of the sideline setup too, the [sideline kit guide](/what-to-buy/sideline-kit/) covers the chair and cooler picks that actually hold up over a season.
 
 Friday night: fill it. Two ice packs, not loose ice. What goes in: cut fruit in a sealed container, string cheese, a few PB&J quarters wrapped in foil, water bottles if your bin is low.
 

@@ -27,7 +27,7 @@ editorial:
 
 Lacrosse has grown fast over the past fifteen years, and the travel program infrastructure has grown with it. Costs have followed that trajectory upward. Here is the honest picture by level.
 
-Recreational lacrosse (town leagues, school programs) runs $150 to $400 in program fees. Add first-year gear and you are at $450 to $800 for boys (more gear required) or $300 to $600 for girls. After the first year, gear costs drop significantly because most of it lasts several seasons.
+Recreational lacrosse (town leagues, school programs) runs $150 to $400 in program fees. Add first-year gear and you are at $450 to $800 for boys (more gear required, see the [boys lacrosse gear guide](/what-to-buy/lacrosse-boys/)) or $300 to $600 for girls (the [girls lacrosse gear guide](/what-to-buy/lacrosse-girls/) has the picks). After the first year, gear costs drop significantly because most of it lasts several seasons.
 
 Club and travel lacrosse is where the cost structure changes. Program fees for a competitive travel team run $1,500 to $3,500 per season. Tournament entry fees are separate, typically $300 to $600 per tournament, and travel programs attend four to eight tournaments per year. Add hotel stays for away events, and a travel lacrosse year runs $3,500 to $7,000 or more. The specific number depends heavily on how far tournaments are and whether the team is competing in major national showcase events.
 

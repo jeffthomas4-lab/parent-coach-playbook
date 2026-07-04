@@ -35,7 +35,7 @@ Here's the actual list. What you need. What you can skip. What you replace first
 
 Your kid's feet grow. Skating is 60% of the game. Buy decent skates, not top-tier skates.
 
-Entry-level youth skates from Bauer, CCM, or Graf are solid. They fit well. They last a season or two. Then your kid outgrows them.
+Entry-level youth skates from Bauer, CCM, or Graf are solid. They fit well. They last a season or two. Then your kid outgrows them. The [hockey gear guide](/what-to-buy/hockey/) has specific model picks by age if you want to skip the pro-shop guesswork.
 
 Don't buy top-tier skates for a first-year player. Buy mid-range skates. In two years, buy different ones.
 

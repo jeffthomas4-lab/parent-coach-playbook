@@ -35,7 +35,7 @@ The registration process is more complicated than it looks. Most programs requir
 
 Do all of this early. Programs that fill up enforce their rosters and late registrations sometimes miss the window.
 
-The gear list: expect to spend more than the registration email suggests. Budget an extra $50-$100 for things the list does not mention. The first season's gear adds up fast.
+The gear list: expect to spend more than the registration email suggests. Budget an extra $50-$100 for things the list does not mention. The first season's gear adds up fast, and the [season essentials guide](/what-to-buy/season-essentials/) covers most of what the registration email leaves out.
 
 Practice logistics: most youth programs practice two to three times per week. The schedule gets set before the season starts and changes rarely, but it will occasionally conflict with something else.
 

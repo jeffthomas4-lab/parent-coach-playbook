@@ -29,7 +29,7 @@ Gymnastics costs scale with hours and level in a way that catches a lot of famil
 
 Recreational gymnastics runs $80 to $180 per month for one class per week. Two classes bumps that to $140 to $280. This is the stable, affordable part of the sport.
 
-Pre-team is where hours multiply. Pre-team programs typically run six to ten hours of training per week and cost $300 to $600 per month in tuition. Add a team leotard ($80-200), warm-up suit, and first meet registration fees, and the first year of competitive gymnastics adds up fast.
+Pre-team is where hours multiply. Pre-team programs typically run six to ten hours of training per week and cost $300 to $600 per month in tuition. Add a team leotard ($80-200), warm-up suit, and first meet registration fees, and the first year of competitive gymnastics adds up fast; the [gymnastics gear guide](/what-to-buy/gymnastics/) is worth checking before you buy grips and other basics at the gym pro shop markup.
 
 Level 3 and 4 competition involves travel to sanctioned meets, entry fees, judges' fees, and often a booster contribution to the gym program. A realistic Level 3-4 year runs $3,000 to $6,000 when you add tuition, meet fees, apparel, and travel.
 

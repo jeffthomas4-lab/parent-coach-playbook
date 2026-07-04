@@ -69,7 +69,7 @@ That sentence makes them more likely to tell me when something is missing. I fin
 
 Water bottles. Single socks. Lunchboxes. Hats with a team logo. Sunglasses. The cheap rain jacket.
 
-I don't send my kid's favorite hat to camp. I don't send the brand-name water bottle they love. I send a cheap backup of the gear I can afford to lose.
+I don't send my kid's favorite hat to camp. I don't send the brand-name water bottle they love. I send a cheap backup of the gear I can afford to lose; the [season essentials guide](/what-to-buy/season-essentials/) has decent options for exactly this, the stuff you buy twice on purpose.
 
 **The camp's role**
 

@@ -55,7 +55,7 @@ Gatorade or electrolyte drinks. A 6-pack. Not for general drinking. For after ga
 
 **The cooler**
 
-A real cooler. Not a soft lunch bag. The 48-quart hard cooler holds three days of food for a family of four.
+A real cooler. Not a soft lunch bag. The [sideline kit guide](/what-to-buy/sideline-kit/) has the picks; the 48-quart hard cooler holds three days of food for a family of four.
 
 Plus a smaller cooler for the field. Holds the next two meals plus drinks.
 

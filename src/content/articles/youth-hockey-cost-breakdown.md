@@ -34,7 +34,7 @@ Many travel programs also require players to buy team jerseys and apparel packag
 
 AAA is a different category. These are regional elite programs running full tournament schedules, skills academies, and optional additional ice time. Committed AAA families often spend $10,000 to $20,000 annually when you build the full picture: ice fees, travel, hotel blocks, equipment upgrades every season, and camps in the summer.
 
-Two costs that surprise first-year parents regardless of level: skate sharpening ($5-10 per session, and you need it roughly every six to eight hours of ice time) and stick replacement. A mid-range composite stick at the travel level runs $60 to $150 and breaks. Budget for at least two per season.
+Two costs that surprise first-year parents regardless of level: skate sharpening ($5-10 per session, and you need it roughly every six to eight hours of ice time) and stick replacement. A mid-range composite stick at the travel level runs $60 to $150 and breaks. Budget for at least two per season, and the [hockey gear guide](/what-to-buy/hockey/) has stick picks by age if you're choosing between composite and wood.
 
 The other variable nobody explains clearly is ice time outside of team practice. Skills sessions, power skating clinics, and extra freestyle sessions cost separately, and in competitive programs there is quiet pressure to be on the ice more than the team schedule requires.
 

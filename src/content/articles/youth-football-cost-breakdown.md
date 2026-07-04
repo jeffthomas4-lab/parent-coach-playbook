@@ -33,7 +33,7 @@ Registration fees: rec league programs typically run $100-$300. The program usua
 
 Read the confirmation email carefully before you go buy anything.
 
-Equipment: if you are buying your own gear, budget $150-$300 for a first-year setup. Helmet and shoulder pads are the big items. See the equipment guide for what to buy new versus used.
+Equipment: if you are buying your own gear, budget $150-$300 for a first-year setup. Helmet and shoulder pads are the big items. The [football gear guide](/what-to-buy/football/) has the full breakdown of what to buy new versus used.
 
 In subsequent seasons, you are mostly replacing what wore out or what your kid grew out of.
 

@@ -66,7 +66,7 @@ The fix is not to skip the next tournament. The fix is to plan it differently.
 
 Three habits that work.
 
-One. Plan the food before you leave. Pack a real cooler. Keep at least two of the meals from being chain restaurants. The food saves $40, the kid feels better, and you don't lose a full hour finding parking at a Chili's between games. The cooler is the single best thing you can pack.
+One. Plan the food before you leave. Pack a real cooler (the [sideline kit guide](/what-to-buy/sideline-kit/) has the ones that actually hold ice for the whole weekend). Keep at least two of the meals from being chain restaurants. The food saves $40, the kid feels better, and you don't lose a full hour finding parking at a Chili's between games. The cooler is the single best thing you can pack.
 
 Two. Carve out a 90-minute block that is not about baseball. Sometime Saturday, between games or after the last one. Walk to a park. Sit at a coffee shop. Call your other kid. Anything that breaks the rhythm of game-recover-game.
 

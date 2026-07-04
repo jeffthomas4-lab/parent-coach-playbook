@@ -100,7 +100,7 @@ Good athletic socks cost a little more than the cheap three-packs.
 
 The difference is stitching and fiber blend. Good socks have reinforced heels. Bad socks start separating after five washes.
 
-Buy the better socks. Your kid wears them twice a week during season. One three-pack lasts the whole season, it's not a big spend, and your kid's feet don't hurt.
+Buy the better socks. Your kid wears them twice a week during season. One three-pack lasts the whole season, it's not a big spend, and your kid's feet don't hurt. The [season essentials guide](/what-to-buy/season-essentials/) has the moisture-wicking multi-packs worth restocking before season starts.
 
 Cheap socks create problems. Then you buy better socks. You should've just bought better socks.
 

@@ -45,4 +45,4 @@ Five minutes a day of left-hand dribbling (or right, if they're left-handed) com
 
 The better investment is more touches, more games, more time just playing basketball in an unstructured way.
 
-The parents who support development best at this age are the ones who get their kid to practice consistently, make sure there's a ball at home if the kid wants to shoot around, and stay out of the way during games. That's actually the whole job.
+The parents who support development best at this age are the ones who get their kid to practice consistently, make sure there's a right-sized ball at home if the kid wants to shoot around (the [basketball gear guide](/what-to-buy/basketball/) has the sizing chart by age), and stay out of the way during games. That's actually the whole job.

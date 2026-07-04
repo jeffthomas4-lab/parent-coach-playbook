@@ -1,0 +1,134 @@
+## Multi-sport batch 1
+
+### Modified
+- `car-kit.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted at the end of the core car-kit list sentence, pointing readers to the broader season-essentials guide for what else lives in the trunk.
+- `dance-competition-costs-breakdown.md` — added link: [dance gear guide](/what-to-buy/dance/) — inserted after the sentence on shoe costs by style (jazz, tap, ballet, lyrical), since this piece is functionally a single-activity (dance) cost breakdown despite the multi-sport tag.
+- `end-of-season-equipment-cleanup.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted after the "next season needs list" sentence, tying the budget-and-list habit to the guide.
+- `first-year-sports-parent-guide.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted after the sentence on budgeting an extra $50-$100 for first-season gear the registration email doesn't mention.
+- `food-on-the-road.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted after the "real cooler in the car" sentence under the "cooler is the move" section.
+- `hotel-room-tournament.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted after the sentence about requesting a ground-floor room for hauling gear/cooler.
+
+### Reviewed, no natural fit
+- 10-minute-parent-meeting-script.md
+- 10-things-kids-wish-coaches-knew.md
+- 11-12-honest-comparison.md
+- 11-12-substitution-rules.md
+- 11-12-tune-up.md
+- 13-14-cost-benefit.md
+- 13-14-practice.md
+- 13-14-sportsmanship.md
+- 15-plus-game-management.md
+- 15-plus-volunteer-team.md
+- 15-plus-walking-away.md
+- 25-ways-to-recognize-players-without-spending-money.md
+- 60-minute-practice-blueprint.md
+- 8-10-mercy-rule.md
+- 8-10-practice.md
+- 8-10-travel-pitch.md
+- ace-card-system-rewarding-attitude-character-effort.md
+- ace-team-store-turning-character-into-culture.md
+- after-the-cut-the-24-hour-rule.md
+- anxious-athlete-how-coaches-can-help.md
+- are-youth-sports-worth-it.md
+- athlete-who-cries-after-games.md
+- athlete-who-is-afraid-to-fail.md
+- athlete-who-never-gets-off-bench.md
+- august-first-the-pre-season-week.md
+- back-to-school-sport-balance.md
+- benefits-of-multi-sport-athletes.md
+- best-coaches-teach-parents-too.md
+- building-a-winning-culture-without-winning-yet.md
+- building-confidence-after-a-mistake.md
+- building-team-identity-on-a-shoestring-budget.md
+- calendar-negotiation-with-grandparents.md
+- camp-counselor-the-kid-hates.md
+- car-ride-home-what-parents-should-say.md
+- chalking-the-lines.md
+- character-award-matters-more-than-mvp.md
+- child-dropped-off-30-minutes-early.md
+- choosing-a-late-summer-camp-vetting-questions.md
+- coach-every-kid-deserves.md
+- coaching-10-12-year-olds-competitive-prep.md
+- coaching-5-6-year-olds-what-matters.md
+- coaching-7-9-year-olds-golden-age-youth-sports.md
+- coaching-from-the-car.md
+- coaching-your-own-kid-fairly.md
+- college-id-camp-pitch.md
+- comparing-two-summer-camp-options.md
+- competitive-dance-vs-recreational-dance.md
+- competitive-dance-what-parents-need-to-know.md
+- concert-band-vs-marching-band.md
+- cross-training-that-keeps-the-body-fresh.md
+- dance-tryouts-what-to-expect.md
+- day-camp-vs-overnight-camp.md
+- dealing-with-early-specialization-pressure.md
+- disinfecting-equipment-end-of-season.md
+- elite-camp-label.md
+- end-of-game-snack-what-actually-works.md
+- end-of-practice-circle.md
+- end-of-season-banquet-toolkit.md
+- end-of-season-celebration-that-actually-matters.md
+- family-vacation-overlaps-with-camp.md
+- feedback-that-builds-kids-up-instead-of-shutting-them-down.md
+- fireworks-the-night-before-a-tournament.md
+- first-48-hours-season-ending-injury.md
+- first-game-blueprint.md
+- first-overnight-camp-packing-list.md
+- first-overnight-camp-the-night-before.md
+- first-parent-meeting.md
+- first-practice-blueprint.md
+- first-practice-plan.md
+- first-season-coaching.md
+- first-team-meeting-agenda.md
+- first-time-a-teammate-calls-you-coach.md
+- first-time-parent-coach-checklist.md
+- forgotten-player-bench-players-stay-engaged.md
+- friend-group-camp-vs-the-right-camp.md
+- game-time-conflicts-when-you-have-two-kids.md
+- goal-is-not-the-trophy.md
+- heat-illness-when-to-pull-them-out.md
+- how-to-ask-for-playing-time.md
+- how-to-build-confidence-in-young-athletes.md
+- how-to-build-leadership-on-youth-team.md
+- how-to-build-team-chemistry.md
+- how-to-build-team-culture-for-young-kids.md
+- how-to-build-trust-with-young-athletes.md
+- how-to-coach-your-own-child.md
+- how-to-create-a-season-theme.md
+- how-to-create-belonging-on-your-team.md
+- how-to-evaluate-a-summer-camp.md
+- how-to-give-feedback-kids-actually-hear.md
+- how-to-handle-a-losing-season.md
+- how-to-handle-cliques-on-team.md
+- how-to-handle-losing-without-crushing-confidence.md
+- how-to-handle-overbearing-sports-parent.md
+- how-to-handle-parent-complaints.md
+- how-to-handle-playing-time-complaints.md
+- how-to-handle-winning-without-entitlement.md
+- how-to-measure-success-as-a-coach.md
+- how-to-motivate-a-kid-who-doesnt-care.md
+- how-to-read-the-tryout-drill.md
+- how-to-run-a-preseason-parent-meeting.md
+- how-to-talk-to-the-coach.md
+- how-to-tell-if-your-kid-is-on-the-bubble.md
+- how-to-vet-a-camp-for-safety.md
+- how-youth-sports-teach-responsibility.md
+- hydration-by-the-numbers.md
+- injured-players-are-still-teammates.md
+- is-this-burnout-or-a-bad-week.md
+- kid-cut-wants-to-switch-sports.md
+- last-practice-of-the-season.md
+- last-time-youll-watch-them-play.md
+- late-pickup-problem-parent-coach-guide.md
+
+### Notes on borderline calls
+- `chalking-the-lines.md` is entirely about a field-marking tool (chalk line reel), but no valid gear-guide slug covers field-marking equipment (parent-coach-gear covers clipboard/stopwatch/pennies/bag/whiteboard/first-aid only). Left unlinked rather than force a mismatched guide.
+- `heat-illness-when-to-pull-them-out.md` and `hydration-by-the-numbers.md` mention water bottles/electrolytes but are safety/medical pieces, not gear-purchase discussions — left unlinked.
+- `disinfecting-equipment-end-of-season.md` discusses cleaning/maintaining existing gear, not buying it — left unlinked despite heavy equipment-keyword density.
+- `end-of-game-snack-what-actually-works.md` mentions a "small cooler" in passing but is a snack-logistics piece, not a gear discussion — left unlinked.
+- `first-time-parent-coach-checklist.md` is a coaching-behavior checklist with no discussion of the physical gear a coach carries — left unlinked despite topical adjacency to parent-coach-gear.
+
+### Summary
+- Files processed: 117
+- Modified: 6
+- Reviewed, no natural fit: 111

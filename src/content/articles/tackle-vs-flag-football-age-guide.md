@@ -51,7 +51,7 @@ The practical factor that rarely shows up in articles: how much does your kid ac
 
 The kid who wants tackle football and understands what it involves is going to learn to tackle correctly because they care. The kid who is ambivalent is not.
 
-If you are genuinely undecided: start with flag. It is cheaper, lower risk, and a real version of the sport.
+If you are genuinely undecided: start with flag. It is cheaper, lower risk, and a real version of the sport, and the [flag football gear guide](/what-to-buy/flag-football/) shows just how short that shopping list is.
 
 You can always add tackle in two years. You cannot unbuild habits formed with bad tackle technique in year one.
 

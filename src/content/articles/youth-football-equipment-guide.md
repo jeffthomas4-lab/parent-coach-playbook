@@ -51,6 +51,6 @@ Athletic cup: [required for boys](/go/football-cup-shorts-youth/) in most progra
 
 Gloves: [optional but commonly used](/go/football-gloves-receiver-youth/) by skill position players. Not required.
 
-For flag football: the gear list is much shorter. Cleats, mouth guard, athletic supporter. The league provides the flags.
+For flag football: the gear list is much shorter. Cleats, mouth guard, athletic supporter. The league provides the flags. The [flag football gear guide](/what-to-buy/flag-football/) covers that shorter list if tackle is a year or two off.
 
 One number to have in your head before you start: equipping a kid for youth tackle football from scratch runs $150-$400 depending on whether you buy new or certified used. The helmet is always the biggest line item and should 

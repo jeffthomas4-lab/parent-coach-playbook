@@ -79,7 +79,7 @@ Your kid wants the pro brand. That matters at this age. It shouldn't, but it doe
 
 The no-name bats are fine. They're legal. They perform. But your kid is 11 and standing next to Grayson with his obvious brand bat. The psychology is real.
 
-Splitting the difference: buy a quality mid-tier brand bat. Not the cheapest. Not the most expensive. Your kid recognizes the brand. It's a legitimate upgrade from the bat they're using. You didn't break the bank.
+Splitting the difference: buy a quality mid-tier brand bat. Not the cheapest. Not the most expensive. Your kid recognizes the brand. It's a legitimate upgrade from the bat they're using. You didn't break the bank. The [baseball gear guide](/what-to-buy/baseball/) has current mid-tier picks by drop weight if you want a shortlist.
 
 **The size question**
 

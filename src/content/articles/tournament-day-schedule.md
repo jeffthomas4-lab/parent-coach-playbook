@@ -59,7 +59,7 @@ But don't send the sibling off alone and forget about them. Check in every 45 mi
 
 You will be at this venue for six to eight hours. Plan for that length, not the length of a single game.
 
-Bring a chair, bring food, bring something to read or listen to during the gaps. Don't stand at the sideline for the entire day. Your kid doesn't need you watching every warmup drill, and you'll be sharper and calmer by game three if you've actually rested between games.
+Bring a chair, bring food, bring something to read or listen to during the gaps (the [sideline kit guide](/what-to-buy/sideline-kit/) covers the chairs worth owning for a six-hour day). Don't stand at the sideline for the entire day. Your kid doesn't need you watching every warmup drill, and you'll be sharper and calmer by game three if you've actually rested between games.
 
 Talk to the other parents. Or don't. But sitting in your car on your phone for the entire second gap is not recovery, and you'll feel it.
 

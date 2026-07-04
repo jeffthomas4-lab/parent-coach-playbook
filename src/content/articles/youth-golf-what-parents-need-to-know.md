@@ -32,7 +32,7 @@ The curriculum for beginners starts on the range and the putting green, not the 
 
 The USGA has its own junior program network, and The First Tee is a widely available organization that runs youth golf programs with a character-development emphasis at low cost. First Tee programs are in most markets and are worth looking into if cost is a factor.
 
-Gear for a first-year golfer does not need to be expensive. A starter set of junior clubs matched to the kid's height runs $100 to $200 new and is available used for less. Do not buy full adult clubs for a kid because they will grow into them. Clubs that are too long or too heavy hurt the swing development and the enjoyment. Matching the equipment to the player is the rule in golf.
+Gear for a first-year golfer does not need to be expensive. A starter set of junior clubs matched to the kid's height runs $100 to $200 new and is available used for less. Do not buy full adult clubs for a kid because they will grow into them. Clubs that are too long or too heavy hurt the swing development and the enjoyment. Matching the equipment to the player is the rule in golf, and the [golf gear guide](/what-to-buy/golf/) has the sizing chart.
 
 The one expectation to reset before the first round of actual holes: golf is hard. Most eight-year-olds who go to a real nine-hole course for the first time will not break 60. Some will not break 80.
 

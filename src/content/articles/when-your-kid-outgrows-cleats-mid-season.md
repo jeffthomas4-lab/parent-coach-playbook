@@ -51,6 +51,8 @@ Buy the cleat one half-size too big. Add an insole if needed. The cleat will fit
 
 Don't buy the perfect-fitting cleat at full price if you'll be buying another in four months.
 
+The [season essentials guide](/what-to-buy/season-essentials/) covers the cross-sport basics worth buying new, if cleats aren't the only thing on the list this week.
+
 **The sales rule**
 
 End-of-season sale at the sporting goods store. 30 to 50 percent off cleats from the previous year. Same quality. Same brand. Different colorway.

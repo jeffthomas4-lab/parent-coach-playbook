@@ -38,7 +38,7 @@ Get a padded palm. They're going to get hit in the hand before they get comforta
 Don't let the laces stay loose. When you buy it, take it to a sporting goods store and ask them to tighten the heel. Most of them will do it free. A loose glove is useless.
 
 **The investment**
-Twenty-five to forty-five dollars. That's the range. Spending more buys stiffer leather and a label, neither of which helps a five-year-old close the glove. Our full baseball buying guide breaks this down by age.
+Twenty-five to forty-five dollars. That's the range. Spending more buys stiffer leather and a label, neither of which helps a five-year-old close the glove. The [baseball gear guide](/what-to-buy/baseball/) breaks this down by age if you want the full range before you head to the store.
 
 **What's coming**
 They're going to outgrow this glove in two years. Don't feel bad. That's the system. They'll be ready for a 10-inch glove at seven. You can buy used then. Someone's kid aged out and needs to move it.

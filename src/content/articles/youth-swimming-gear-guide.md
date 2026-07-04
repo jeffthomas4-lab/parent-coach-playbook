@@ -27,6 +27,8 @@ editorial:
 
 *Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
+The [full swimming gear guide](/what-to-buy/swimming/) has the picks below organized by age, if you want the short version.
+
 **Training suit**
 
 For girls: a one-piece competitive practice suit, not a recreational swimsuit. Practice suits are made from polyester or polyester blends that hold up to daily chlorine exposure. Recreational suits degrade fast. Budget $25-50. Speedo, TYR, and Arena all make [solid training suits](/go/swimsuit-training-youth/) in youth sizes.

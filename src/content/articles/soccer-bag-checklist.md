@@ -29,7 +29,7 @@ The soccer bag is simple. That's also why it gets packed carelessly, and why the
 
 ## The practice bag
 
-**Cleats.** In the bag, not in your hand, not on your feet until you're at the field. Cleats worn from the car to the field and back destroy the studs faster than the actual practice does.
+**Cleats.** In the bag, not in your hand, not on your feet until you're at the field. Cleats worn from the car to the field and back destroy the studs faster than the actual practice does. If you're still deciding what to buy, the [soccer gear guide](/what-to-buy/soccer/) has the picks by age and surface.
 
 **Shin guards.** Required at practice. Required at games. Required every time a ball is being kicked near other people. These are the item left home more than any other item in youth soccer. If you need a system: shin guards live inside one of the cleats in the bag when not in play. They don't go on the floor, they don't go on the counter. Inside the cleat.
 

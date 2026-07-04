@@ -25,7 +25,7 @@ editorial:
   reviewerNotes: ""
 ---
 
-Soccer has a short required gear list. Here is what to buy and where to spend carefully.
+Soccer has a short required gear list. Here is what to buy and where to spend carefully; the [full soccer gear guide](/what-to-buy/soccer/) has the complete picks by age if you want them all in one place.
 
 *Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 

@@ -25,7 +25,7 @@ editorial:
   reviewerNotes: ""
 ---
 
-Baseball has real gear costs that other sports don't. A glove alone runs $40 to $150 depending on the level. A bat that meets current standards at the competitive level can cost $300 to $400.
+Baseball has real gear costs that other sports don't. A glove alone runs $40 to $150 depending on the level. A bat that meets current standards at the competitive level can cost $300 to $400. The [baseball gear guide](/what-to-buy/baseball/) has current picks at every price point if you want specifics before you shop.
 
 Parents entering youth baseball for the first time are often surprised by the gap between sign-up fees and actual total cost.
 

@@ -46,7 +46,7 @@ Pretzels. Fast carbs between games for quick energy. Not a meal but a good 30-mi
 String cheese or sliced turkey. Protein that travels well.
 
 **The cooler rule**
-Bring a small soft-sided cooler. Ice pack, not loose ice. This is the difference between food that works and food that gets thrown away by noon. Turkey, cheese, and cut fruit don't survive without it.
+Bring a small soft-sided cooler (the [sideline kit guide](/what-to-buy/sideline-kit/) has picks that hold up over a full tournament day). Ice pack, not loose ice. This is the difference between food that works and food that gets thrown away by noon. Turkey, cheese, and cut fruit don't survive without it.
 
 Pack enough for your kid plus one teammate. Tournament days always involve someone who forgot to eat.
 

@@ -89,7 +89,7 @@ Everything on this site exists to help with one of those three things, or with t
 
 We cover the logistics: practice plans, lineups, snack signups, group chats, fundraising, hotel blocks, picture day, the GameChanger setup, the parent-meeting agenda. The operational scaffolding that makes a season possible.
 
-We cover the equipment: what to buy, what to skip, where to buy it used, the right size, the certifications that matter. From baseball to ballet, swimming to swim caps, mouthguards to pointe shoes.
+We cover the equipment: what to buy, what to skip, where to buy it used, the right size, the certifications that matter, starting with the basics in the [training gear guide](/what-to-buy/training-gear/). From baseball to ballet, swimming to swim caps, mouthguards to pointe shoes.
 
 We cover the relationship void. The drive to practice when the kid is dreading it. The first ninety seconds after a bad game. The kid who quits mid-season. The other parent who emails you about playing time. The teammate who is mean to your kid. The car ride after they don't make varsity.
 

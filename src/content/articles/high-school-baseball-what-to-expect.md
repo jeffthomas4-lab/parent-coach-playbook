@@ -33,7 +33,7 @@ A good number of freshmen don't make the JV. That's not a broken system. That's 
 
 **Equipment standards change.** High school baseball requires BBCOR-certified bats. The BBCOR stamp limits the trampoline effect of the bat, which means balls don't jump off metal bats the way they did in youth leagues. Freshmen who haven't swung BBCOR bats before sometimes struggle early in the transition.
 
-Get the right bat before tryouts start.
+Get the right bat before tryouts start; the [baseball gear guide](/what-to-buy/baseball/) has current BBCOR picks so you're not guessing at the store.
 
 **Practice intensity goes up.** High school programs practice two or more hours daily during the season, often with morning workouts or weight room requirements added. Coaches expect players to arrive having already done individual work: soft toss, tee work, long toss. The player who shows up to practice as their only development time is behind the players who are putting in extra work.
 

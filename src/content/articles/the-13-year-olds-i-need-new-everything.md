@@ -71,6 +71,8 @@ New cleats
 New protective gear (whatever actually needs replacing)
 New shorts (only if totally too small)
 
+The [season essentials guide](/what-to-buy/season-essentials/) has the cross-sport basics worth budgeting for at this age, separate from whatever sport-specific gear is on the list.
+
 Real budget: $140-300, not $600.
 
 That still hurts. But it's half what you thought.

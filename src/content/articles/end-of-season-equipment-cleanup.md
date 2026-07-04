@@ -37,6 +37,6 @@ Take an hour now. Five steps.
 
 **Inspect protective gear.** Helmets, pads, shin guards, masks. Check for cracks, foam compression, broken straps. Anything questionable is replaced now, not in the parking lot before week one.
 
-**Make a "next season needs" list.** What you noticed all year that the kid outgrew or wore through. Tape it to the bag. When summer sales hit, you have a list and a budget.
+**Make a "next season needs" list.** What you noticed all year that the kid outgrew or wore through. Tape it to the bag. When summer sales hit, you have a list and a budget. The [season essentials guide](/what-to-buy/season-essentials/) is a reasonable starting point for what usually needs replacing.
 
 The total time investment is about an hour. The cost of skipping it is a week of October scrambling and one or two duplicated purchases.

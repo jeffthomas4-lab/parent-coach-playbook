@@ -37,7 +37,7 @@ Gloves. Used is fine if the palms are not worn through. Budget $25-50.
 
 Rib pads and arm pads. Required in some programs, optional in others. Check with the league.
 
-Stick. Starter complete sticks (head with shaft) run $40-80. Do not buy the cheapest option; the pocket on very cheap sticks strung out of the factory are often too deep to pass a referee stick check. Buy a mid-range starter or have a local shop restring a used head.
+Stick. Starter complete sticks (head with shaft) run $40-80. Do not buy the cheapest option; the pocket on very cheap sticks strung out of the factory are often too deep to pass a referee stick check. Buy a mid-range starter or have a local shop restring a used head. The [boys lacrosse gear guide](/what-to-buy/lacrosse-boys/) has picks by age.
 
 **Girls lacrosse: required gear**
 
@@ -47,7 +47,7 @@ Mouthguard. Required. Buy new.
 
 Gloves. Light padded gloves are required in most youth programs. Budget $20-40.
 
-Stick. Girls starter sticks run $50-90. The pocket depth rules in girls lacrosse mean a freshly strung legal pocket matters. Have a local shop check the pocket if you buy used.
+Stick. Girls starter sticks run $50-90. The pocket depth rules in girls lacrosse mean a freshly strung legal pocket matters. Have a local shop check the pocket if you buy used. The [girls lacrosse gear guide](/what-to-buy/lacrosse-girls/) has picks and the sizing chart.
 
 **Both**
 

@@ -58,6 +58,6 @@ Pack your own breakfast and lunch. A cooler with sandwiches, fruit, and real sna
 
 Split a room with another family if the kids are close enough. Two families, one double-queen room with a rollaway costs less than two separate rooms and gets you four adults who can cover each other during games.
 
-Don't replace gear at the venue. The tournament merch table charges retail plus convenience. Pack a backup or buy from Amazon before you leave.
+Don't replace gear at the venue. The tournament merch table charges retail plus convenience. Pack a backup or buy from Amazon before you leave; the [season essentials guide](/what-to-buy/season-essentials/) covers the replacement basics worth keeping on hand.
 
 But don't cut the hotel quality trying to save $30. A bad night's sleep in a bad room costs more in performance and mood than the $30 saves in cash.

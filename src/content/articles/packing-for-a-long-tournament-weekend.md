@@ -54,7 +54,7 @@ Three favorite snacks the kid eats no matter what. Whatever those are. Don't exp
 
 ## Parent kit
 
-A folding chair. Big sunscreen for you. A hat. Cash for the entry fee parking lot. A power bank for your phone. A book or downloaded show because you'll have a 90-minute window between games.
+A [folding chair](/what-to-buy/sideline-kit/). Big sunscreen for you. A hat. Cash for the entry fee parking lot. A power bank for your phone. A book or downloaded show because you'll have a 90-minute window between games.
 
 A small plastic bag for the wet uniform pieces.
 

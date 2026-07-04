@@ -107,7 +107,7 @@ Most studios have a list of recommended fitters in the area. Use that list.
 
 ## What pointe shoes cost
 
-A first pair of pointe shoes is not cheap. Then add accessories: toe pads, spacers, ribbons, elastic. Plus pointe tights if the dancer does not have them.
+A first pair of pointe shoes is not cheap. Then add accessories: toe pads, spacers, ribbons, elastic. Plus pointe tights if the dancer does not have them. The [ballet gear guide](/what-to-buy/ballet/) covers what those accessories actually do before you buy a full set at the fitting.
 
 First pointe shoes last 8 to 30 hours of dancing. So depending on how much pointe work the dancer is doing, they might go through 3 to 12 pairs in their first year.
 

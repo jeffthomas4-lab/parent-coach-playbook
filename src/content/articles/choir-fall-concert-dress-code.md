@@ -32,7 +32,7 @@ For most school choirs, the dress code is one of two things. Option A is a long 
 
 ## What to buy
 
-The cheapest path to the long black dress is a plain black formal dress from any retail store or department store. Solid black, no embellishments, no rhinestones, no lace, no patterns, the director wants the choir to look uniform on stage, not for individuals to stand out. If she's between sizes, buy slightly larger because she's still growing, and a dress that hits mid-calf at the start of the year will be appropriate at the year's end.
+The cheapest path to the long black dress is a plain black formal dress from any retail store or department store. Solid black, no embellishments, no rhinestones, no lace, no patterns, the director wants the choir to look uniform on stage, not for individuals to stand out. If she's between sizes, buy slightly larger because she's still growing, and a dress that hits mid-calf at the start of the year will be appropriate at the year's end. The [choir gear guide](/what-to-buy/choir/) has picks that hold up across a full concert season.
 
 The white button-down: long-sleeve, plain white, cotton or cotton blend, from any department store. Don't buy a thin white shirt, stage lights make thin fabric transparent and your kid will be embarrassed. Buy something with weight.
 

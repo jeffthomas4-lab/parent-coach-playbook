@@ -54,6 +54,8 @@ Dress socks are too thick. Crew socks bunch. You need athletic socks that come m
 
 Target, Dick's, Academy Sports: a cheap three-pack. You can get these today in most places.
 
+The [season essentials guide](/what-to-buy/season-essentials/) covers the cross-sport basics worth keeping a spare set of, so this scramble happens less often.
+
 **The shirt situation**
 
 If your kid doesn't have a black athletic shirt, you have options.

@@ -62,6 +62,8 @@ For 13+, new starts to matter more. The kid is playing harder and the equipment 
 
 **The cost math**
 
+For the non-sport-specific stuff, the [season essentials guide](/what-to-buy/season-essentials/) has the picks worth buying new versus the ones nobody needs to buy at all.
+
 Used gear from local marketplace apps or team families. 40% to 70% off retail.
 
 Used gear from sporting goods consignment stores. 30% to 50% off retail.

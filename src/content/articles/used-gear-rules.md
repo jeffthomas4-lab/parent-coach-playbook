@@ -47,6 +47,6 @@ Bats are made of wood or composite. Both last. Neither expires. Ignore the year.
 Gloves. Spikes. Cleats. Shin guards. Shoulder pads. Football pants. Any piece of protection that hasn't deteriorated gets a second life. Check the seams. Check for damage. If it's clean and intact, buy it.
 
 **What to always buy new**
-Mouthguards. Socks. Undergarments. Anything that goes on skin. The cost is low. The hygiene is real. Buy new.
+Mouthguards. Socks. Undergarments. Anything that goes on skin. The cost is low. The hygiene is real. Buy new. The [season essentials guide](/what-to-buy/season-essentials/) has the replacement basics worth buying in bulk before the season starts.
 
 Used gear is smart. Used gear rules are the difference between saving money and making a mistake. Know the three rules. Use them.

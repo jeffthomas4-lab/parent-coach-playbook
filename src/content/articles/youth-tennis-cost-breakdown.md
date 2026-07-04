@@ -35,6 +35,6 @@ Tournament play adds entry fees, transportation, and equipment costs. USTA tourn
 
 Club or academy training programs sit above independent private lessons in structure and cost. A competitive junior tennis academy program, typically a full-day training environment, runs $1,000 to $3,000 per month depending on the hours and facility. Residential academies (where the player lives and trains) run $30,000 to $60,000 per year at the high end.
 
-Racket and string costs are ongoing and underestimated. Competitive players break strings regularly, and restringing runs $25 to $60 per racket. A serious junior player might restring twice a month. Racket upgrades, new shoes, and bags add $300 to $600 per year at the competitive level.
+Racket and string costs are ongoing and underestimated. Competitive players break strings regularly, and restringing runs $25 to $60 per racket. A serious junior player might restring twice a month. Racket upgrades, new shoes, and bags add $300 to $600 per year at the competitive level, and the [tennis gear guide](/what-to-buy/tennis/) has picks by age and level.
 
 The honest calibration: recreational to moderately competitive tennis runs $3,000 to $8,000 per year. High-level competitive tennis for a player pursuing college recruiting runs $8,000 to $20,000 or more. That is the range before anyone discusses an acad

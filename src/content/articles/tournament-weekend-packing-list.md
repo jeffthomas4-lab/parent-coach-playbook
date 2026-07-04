@@ -57,7 +57,7 @@ Leave the fast-food run between games. The greasy burger at noon is fine until t
 
 ## Parent survival
 
-A camp chair worth sitting in for four hours. Not the folding grocery store chair that collapses when you shift your weight.
+A camp chair worth sitting in for four hours. Not the folding grocery store chair that collapses when you shift your weight; the [sideline kit guide](/what-to-buy/sideline-kit/) has the chairs that hold up for a full tournament day.
 
 Sunscreen and a wide-brim hat. Not just sunglasses. Both.
 

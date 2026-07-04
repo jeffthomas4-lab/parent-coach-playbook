@@ -31,7 +31,7 @@ Performing arts activities are not all priced the same, and the range is wide en
 
 School-based choir and band programs are usually the most affordable entry point. Tuition is often included in school fees. The main costs are an instrument rental or purchase and, for band, a participation fee if the program runs one.
 
-Instrument rental typically runs $20 to $40 per month through school music programs or local music stores. Buying a beginner instrument outright costs $150 to $400 for most band instruments. If your kid sticks with it, buying is usually more economical after the first year.
+Instrument rental typically runs $20 to $40 per month through school music programs or local music stores. Buying a beginner instrument outright costs $150 to $400 for most band instruments; the [band gear guide](/what-to-buy/band/) walks through the rent-vs-buy math by grade. If your kid sticks with it, buying is usually more economical after the first year.
 
 If they quit in February, renting protects you.
 
@@ -45,7 +45,7 @@ Community youth theater programs typically charge a participation fee ranging fr
 
 On top of the participation fee, expect costume costs. These are sometimes provided by the program, sometimes partially provided, and sometimes charged to families in full. Get clarity before you sign.
 
-Most productions also require specific shoes (character shoes, jazz shoes, or sneakers in a specific color) that families buy and keep. Add $30 to $80.
+Most productions also require specific shoes (character shoes, jazz shoes, or sneakers in a specific color) that families buy and keep, and the [theater gear guide](/what-to-buy/theater/) covers what those actually cost. Add $30 to $80.
 
 A year with two productions: $200 to $700 in total program costs, plus any private acting or singing lessons if you choose to add them.
 

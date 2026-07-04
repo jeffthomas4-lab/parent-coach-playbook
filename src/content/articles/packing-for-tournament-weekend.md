@@ -45,7 +45,7 @@ The team email lists uniforms, water bottles, and the practice schedule. It does
 
 **For the family:**
 
-11. A folding camp chair or two for the sideline
+11. A [folding camp chair](/what-to-buy/sideline-kit/) or two for the sideline
 12. A small cooler with ice
 13. Cash for parking, snack bar, or vending machines
 14. The hotel address and phone written on paper (the GPS will fail)

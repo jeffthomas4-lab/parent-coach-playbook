@@ -29,7 +29,7 @@ That stuff matters. A bad night's sleep in a chaotic room shows up the next morn
 
 ## What to ask for when you book
 
-Request a ground-floor room if you have a lot of gear. Hauling a baseball bag plus two duffels plus a cooler up a stairwell at 10 PM is annoying.
+Request a ground-floor room if you have a lot of gear. Hauling a baseball bag plus two duffels plus a cooler up a stairwell at 10 PM is annoying. The [sideline kit guide](/what-to-buy/sideline-kit/) has the cooler and bag picks that make that hauling less miserable.
 
 Ask for a room away from the elevator and ice machine. Tournaments mean families coming and going at all hours. The hallway noise at 11 PM is real.
 

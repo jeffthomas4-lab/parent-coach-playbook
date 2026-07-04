@@ -35,6 +35,6 @@ Mid-level club (competitive age-group) runs $150 to $300 per month in tuition. M
 
 Elite age-group and senior club is where cost stops having a clear ceiling. Monthly tuition at top programs runs $300 to $500. Travel to invitational meets and championship meets adds $500 to $1,500 per trip. A full year of high-level club swimming for a 14-18-year-old who is competing at regional or national meets can run $8,000 to $12,000.
 
-Gear costs are low relative to hockey or gymnastics, but they are recurring. Competitive suits wear out faster than training suits. Tech suits (worn for major meets) cost $150 to $600 and most elite swimmers have more than one. Training suits need replacing every few months with heavy use.
+Gear costs are low relative to hockey or gymnastics, but they are recurring. Competitive suits wear out faster than training suits. Tech suits (worn for major meets) cost $150 to $600 and most elite swimmers have more than one. Training suits need replacing every few months with heavy use, and the [swim gear guide](/what-to-buy/swimming/) breaks down when a tech suit is actually worth it versus when it's just an upsell.
 
 The one fee that surprises people consistently: USA Swimming annual membership, which is required for all sanctioned club competition, runs $70 to $90 per y

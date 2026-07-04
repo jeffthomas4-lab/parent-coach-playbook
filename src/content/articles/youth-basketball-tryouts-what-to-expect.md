@@ -47,7 +47,7 @@ Cuts, when they happen, are usually announced by a posted list or a call the sam
 
 School-based and club programs do. If your kid gets cut, the conversation on the drive home matters. "I'm proud of how you competed today" is better than a 20-minute analysis of what the coaches missed.
 
-Your prep in the days before tryouts is mostly logistics and calm. Make sure your kid is rested. Make sure the shoes fit and they've shot around in the last few days so the ball doesn't feel foreign.
+Your prep in the days before tryouts is mostly logistics and calm. Make sure your kid is rested. Make sure the shoes fit, since a pair that's a season old and half a size small is its own distraction, and they've shot around in the last few days so the ball doesn't feel foreign. The [basketball gear guide](/what-to-buy/basketball/) has sizing notes if you're not sure whether this is the trip to replace them.
 
 Don't hold a two-hour practice session the night before. Don't give a pregame speech in the car. If you've been coaching your kid hard the week before tryouts, you've probably made things worse, not better.
 

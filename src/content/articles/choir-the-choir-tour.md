@@ -56,7 +56,7 @@ The conversation with the director is private. Other parents don't know. Your ki
 
 ## The packing
 
-For the tour, she'll need concert dress (formal black) for performance days, casual matching team gear for travel days, comfortable shoes for walking, not new shoes, broken-in shoes, a small day bag for tourist activities, a waist pouch for pocket money and a phone, and a printed packing list from the choir director. Most programs send one. Follow it exactly. Tour rooms are full of "I forgot to bring socks" moments. Bring less than you think you need, hotel rooms aren't big, and three pairs of jeans is plenty for a week.
+For the tour, she'll need concert dress (formal black) for performance days, casual matching team gear for travel days, comfortable shoes for walking, not new shoes, broken-in shoes, a small day bag for tourist activities, a waist pouch for pocket money and a phone, and a printed packing list from the choir director. The [choir gear guide](/what-to-buy/choir/) covers the concert-dress basics if you're buying from scratch. Most programs send one. Follow it exactly. Tour rooms are full of "I forgot to bring socks" moments. Bring less than you think you need, hotel rooms aren't big, and three pairs of jeans is plenty for a week.
 
 ## After the tour
 

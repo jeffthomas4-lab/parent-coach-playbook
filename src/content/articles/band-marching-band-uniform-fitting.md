@@ -41,7 +41,7 @@ The undergarments are his to keep all season. They will get sweaty. He'll wear t
 
 Most uniforms require a few things the program doesn't provide. Tall black socks that come well above the boot top, calf-high or knee-high crew socks, not ankle, not athletic. Black gloves, which some bands order collectively and some make you buy. Black athletic shoes, sometimes specifically marching band shoes that look like dress shoes with a sole made for rolling, sometimes any clean black athletic shoe, confirm.
 
-These are his responsibility, not the school's. Buy two pairs of gloves because they get lost.
+These are his responsibility, not the school's. Buy two pairs of gloves because they get lost, and the [band gear guide](/what-to-buy/band/) has picks for the marching shoes and socks so you're not guessing at the uniform store.
 
 ## The uniform itself
 

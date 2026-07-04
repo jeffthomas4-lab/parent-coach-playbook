@@ -28,7 +28,7 @@ A car kit is not a first-aid kit. It's the stuff you forgot that you'll need thr
 **The core list**
 One roll of [athletic tape](/go/multi-sport-athletic-tape/). Not medical tape. Athletic tape. Two pairs of socks. A spare [mouthguard](/go/multi-sport-mouthguard-youth/) (if your sport uses one). One elastic bandage. One small bottle of pain reliever. A hairband or two. A towel.
 
-That's it. Throw it in a ziplock bag. Size gallon. Put it in the trunk.
+That's it. Throw it in a ziplock bag. Size gallon. Put it in the trunk. The [season essentials guide](/what-to-buy/season-essentials/) covers the rest of what tends to live in the trunk once the car kit is handled.
 
 **What not to include**
 Don't pack extra shoes. Don't pack a full change of clothes. Don't pack ice packs or medical supplies. Your trunk is not an athletic training room. This is for the small things.

@@ -43,7 +43,7 @@ Label both pairs.
 
 ## Shoes
 
-Each number may require a different shoe: ballet flat, character heel, jazz oxford, tap shoe, hip-hop sneaker. Each shoe goes in the numbered bag for that routine. Confirm the correct shoe for each number with the studio before recital week. If two numbers use the same shoe, keep them in both bags anyway. Tracking shoes backstage between numbers is harder than it sounds.
+Each number may require a different shoe: ballet flat, character heel, jazz oxford, tap shoe, hip-hop sneaker. The [dance gear guide](/what-to-buy/dance/) covers shoes by style if you're still filling gaps in the shoe bag. Each shoe goes in the numbered bag for that routine. Confirm the correct shoe for each number with the studio before recital week. If two numbers use the same shoe, keep them in both bags anyway. Tracking shoes backstage between numbers is harder than it sounds.
 
 Bring a shoe bag or a gallon zip bag for each pair to keep them from scuffing the costume in transit.
 

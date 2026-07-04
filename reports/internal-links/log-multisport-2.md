@@ -1,0 +1,120 @@
+## Multi-sport batch 2
+
+### Modified
+- `off-season-strength-program-question.md` — added link: [training gear guide](/what-to-buy/training-gear/) — inserted parenthetically into the existing sentence listing dumbbells/resistance bands/medicine balls
+- `packing-food-for-the-travel-weekend.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted into the existing "a real cooler" sentence
+- `packing-for-a-long-tournament-weekend.md` — added link: [folding chair](/what-to-buy/sideline-kit/) — turned "a folding chair" in the packing list into a link
+- `packing-for-tournament-weekend.md` — added link: [folding camp chair](/what-to-buy/sideline-kit/) — turned item 11 of the packing list into a link
+- `performing-arts-cost-breakdown.md` — added 2 links: [band gear guide](/what-to-buy/band/) in the instrument rent-vs-buy sentence, and [theater gear guide](/what-to-buy/theater/) in the production-shoes sentence
+- `running-your-first-practice.md` — added link: [parent-coach gear guide](/what-to-buy/parent-coach-gear/) — inserted a new sentence into the existing "On equipment" paragraph, right after the cones/ball pump/clipboard list
+- `sock-and-underwear-rules.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted into the existing "buy the better socks" sentence
+- `summer-camp-packing-list.md` — added link: [season essentials guide](/what-to-buy/season-essentials/) — inserted into the "six pairs of socks for a five-day camp" sentence
+- `summer-tournament-heat-safety-packing-list.md` — added link: [sideline kit guide](/what-to-buy/sideline-kit/) — inserted into the battery-fan paragraph
+- `summer-tournament-kit.md` — added 2 links: [sideline kit guide](/what-to-buy/sideline-kit/) in the folding-chair sentence, and [first aid kit guide](/what-to-buy/first-aid-kit/) in the first-aid-pouch sentence
+
+### Reviewed, no natural fit
+- lightning-delay-the-30-minute-wait.md
+- little-kids-first-summer-camp.md
+- lost-art-of-encouragement.md
+- lunch-aftercare-full-day.md
+- middle-school-tryouts-when-not-making-it-is-best.md
+- mom-and-dad-disagree-on-a-youth-sports-decision.md
+- morning-after-the-all-nighter.md
+- most-important-conversation-with-every-player.md
+- most-important-word-in-youth-sports-yet.md
+- night-before-tryouts-when-youre-the-coach.md
+- night-before-tryouts.md
+- off-season-strength-mistake.md
+- on-not-making-varsity.md
+- open-gym-etiquette.md
+- parent-coach-manifesto.md
+- parent-kickoff-meeting.md
+- parent-meeting-every-coach-should-hold.md
+- parent-who-argues-with-officials.md
+- parent-who-never-comes-to-games.md
+- parent-who-thinks-child-is-the-star.md
+- parents-coaching-from-sideline-what-to-do.md
+- performing-arts-vs-team-sports.md
+- playing-time-fairness.md
+- playing-time-how-to-have-the-conversation.md
+- post-practice-dinner-when-driving-past-fast-food.md
+- postgame-ritual-what-works.md
+- power-of-team-language-shared-vocabulary.md
+- practice-scheduled-on-a-holiday.md
+- pre-game-anxiety-normal.md
+- pre-game-meal-guide.md
+- pre-season-meeting-with-the-new-coach.md
+- pre-tryout-dinner.md
+- pregame-talk-what-coaches-should-say.md
+- quarterfinal-week-when-the-match-overlaps-your-kids-game.md
+- quitting-travel-how-to-do-it-cleanly.md
+- read-a-summer-camp-brochure.md
+- reading-the-ref-when-to-say-something.md
+- rec-ball-5-7.md
+- recruiting-email-that-means-nothing.md
+- recruiting-showcase-etiquette.md
+- ride-home-rule-every-sports-parent.md
+- running-a-team-with-mixed-skill-levels.md
+- season-you-want-to-quit.md
+- semifinal-week-talking-about-the-players-theyre-watching.md
+- should-my-child-specialize-in-one-sport.md
+- sibling-different-sport-conflict.md
+- sideline-behavior-that-actually-helps.md
+- sideline-coaching-why-it-hurts-your-kid.md
+- sideline-etiquette-for-youth-sports-parents.md
+- signs-a-kid-is-burning-out.md
+- single-sport-vs-multi-sport-camp.md
+- specialty-camp-decision-window.md
+- specialty-camp-question.md
+- sport-specialization-the-honest-conversation.md
+- summer-practice-schedule-the-kid-hates.md
+- summer-reading-they-should-still-be-doing.md
+- summer-showcase-question.md
+- summer-skills-camp-five-questions.md
+- summer-specialization-pressure.md
+- summer-the-kid-grew-four-inches.md
+- summer-tournament-vacation.md
+- summer-training-for-an-eight-year-old.md
+- summer-your-kid-asks-not-to-play-for-you-again.md
+- talking-about-the-coach-they-dont-like.md
+- talking-to-a-parent-coaching-from-the-stands.md
+- teaching-effort-instead-of-talent.md
+- teaching-kids-to-lose-with-grace.md
+- team-bbq-holiday-weekend-whose-job-is-the-cooler.md
+- team-captain-what-it-means-at-youth-level.md
+- team-fun-versus-not-doing-things-you-dont-want-to-do.md
+- team-goals-vs-individual-goals.md
+- team-jobs-system-complete-guide.md
+- team-social-media-rules-summer.md
+- teenager-doesnt-want-you-at-practice.md
+- telling-the-coach-your-kid-is-being-bullied.md
+- text-to-the-coach-you-should-never-send.md
+- texting-the-new-coach.md
+- the-11-to-12-best-friend-on-a-different-team.md
+- the-11-year-old-who-quit-her-best-sport.md
+- the-11-year-old-whos-not-ready-for-travel.md
+- the-13-to-14-bench-managing-substitutions-kids-buy-into.md
+- the-13-to-14-quit-mid-season-call.md
+- the-13-year-olds-i-need-new-everything.md
+- the-14-year-old-whos-tired.md
+- the-15-plus-club-tryout.md
+- the-15-plus-game-day-when-your-kid-is-on-the-bench.md
+- the-15-plus-kid-who-is-bored.md
+- the-4-percent-rule.md
+- the-4th-of-july-is-halfway-through-summer-sports.md
+- the-7am-coach-text.md
+- the-8-to-10-game-day-when-to-call-timeout.md
+- the-8-to-10-tryout-the-four-things-coaches-evaluate.md
+- the-90-second-rule.md
+- the-age-appropriate-sleep-talk.md
+- the-assistant-coach-relationship.md
+- the-august-fitness-test.md
+- the-bad-call-that-didnt-go-your-way.md
+- the-banquet-speech-that-doesnt-suck.md
+- the-bench-reaction-your-kid-will-remember.md
+
+### Notes
+- Total: 109 files reviewed, 10 modified (11 links added), 99 skipped as no natural gear tie-in.
+- Two guide slugs used beyond the "general" set were `band` and `theater`, both applied to `performing-arts-cost-breakdown.md`, which explicitly discusses per-activity costs (instruments, production shoes) across several performing-arts disciplines — a genuine fit, not a stretch.
+- Files double-checked closely per reviewer judgment but confirmed as no-fit: `sideline-behavior-that-actually-helps.md` and `sideline-coaching-why-it-hurts-your-kid.md` (pure emotional/behavioral content, no physical items mentioned), `pre-game-meal-guide.md` (nutrition only), `the-13-year-olds-i-need-new-everything.md` (multi-sport gear-replacement piece already using specific per-sport affiliate product links, no single guide slug fits), `the-august-fitness-test.md` (bodyweight/running conditioning, no equipment named), `the-8-to-10-game-day-when-to-call-timeout.md` and `the-15-plus-club-tryout.md` (coach-strategy and recruiting-cost content, no equipment discussion).
+- No bottom "Gear mentioned in this article (affiliate)" blocks were touched; none of the 10 modified files even had one.

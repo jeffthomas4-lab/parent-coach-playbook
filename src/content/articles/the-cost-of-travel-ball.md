@@ -58,7 +58,7 @@ $300 to $800 per ticket, two to four people, one or two events a year. $600 to $
 
 **Gear**
 
-Two uniforms, sport-specific equipment, training gear. $400 to $1,500 a year. More for sports like hockey or lacrosse.
+Two uniforms, sport-specific equipment, training gear. $400 to $1,500 a year. More for sports like hockey or lacrosse. The [training gear guide](/what-to-buy/training-gear/) covers the at-home stuff worth owning if the family is committing to a full travel season.
 
 **Private lessons**
 

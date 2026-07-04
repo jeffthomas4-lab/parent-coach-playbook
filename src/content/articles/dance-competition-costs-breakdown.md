@@ -57,7 +57,7 @@ Regional competitions are usually day trips or one-night hotel stays. Nationals,
 
 **Shoes and accessories**
 
-Different styles require different shoes: jazz, tap, ballet, lyrical. Each pair runs $30 to $80.
+Different styles require different shoes: jazz, tap, ballet, lyrical. Each pair runs $30 to $80. The [dance gear guide](/what-to-buy/dance/) breaks down what each style actually needs, since a competitive dancer usually owns three or four pairs at once.
 
 Some studios require branded bags, jackets, or warm-up suits. Add $50 to $200 for that gear.
 
