@@ -6,13 +6,13 @@ This is a plan, not a build. Numbers below are pulled directly from `src/content
 
 | Sport | Total articles | 15+ articles | Gap to 5 |
 |---|---|---|---|
-| soccer | 32 | 3 | 2 |
-| football | 23 | 3 | 2 |
-| hockey | 14 | 3 | 2 |
-| baseball | 25 | 2 | 3 |
-| softball | 13 | 2 | 3 |
-| basketball | 20 | 2 | 3 |
-| volleyball | 17 | 2 | 3 |
+| soccer | 34 | 5 | 0 — DONE 2026-07-06 |
+| football | 25 | 5 | 0 — DONE 2026-07-06 |
+| hockey | 16 | 5 | 0 — DONE 2026-07-06 |
+| baseball | 28 | 5 | 0 — DONE 2026-07-06 |
+| softball | 16 | 5 | 0 — DONE 2026-07-06 |
+| basketball | 23 | 5 | 0 — DONE 2026-07-06 |
+| volleyball | 20 | 5 | 0 — DONE 2026-07-06 |
 | swimming | 14 | 5 | 0 — DONE 2026-07-06 |
 | track-field | 9 | 5 | 0 — DONE 2026-07-06 |
 | tennis | 9 | 5 | 0 — DONE 2026-07-06 |
@@ -33,7 +33,7 @@ This is a plan, not a build. Numbers below are pulled directly from `src/content
 | dance | 17 | 5 | 0 — DONE 2026-07-06 |
 | ballet | 15 | 5 | 0 — DONE 2026-07-06 |
 
-Batch 1 (25 articles) closed the gap for cross-country, lacrosse-girls, cheer, band, and dance. Batch 2 (20 articles) closed the gap for crew, martial-arts, stunt, and choir. Batch 3 (5 articles) closed the gap for ballet, the last Tier 1 zero-article sport that didn't need a whole-sport rebuild. Batch 4 (24 articles) closed Tier 2 sub-group A: swimming, track-field, tennis, golf, gymnastics, theater, each topped up from 1 to 5. See `SEO-RECOVERY-PROGRESS.md` for all four file lists. Only flag-football, football-7v7, and lacrosse-boys remain at zero 15+ articles, and all three need a whole-sport scope first (see below), not a simple 5-article top-up. Tier 2 sub-group B remains: soccer, football, hockey (2 more each), baseball, softball, basketball, volleyball (3 more each) — 18 articles.
+Batch 1 (25 articles) closed the gap for cross-country, lacrosse-girls, cheer, band, and dance. Batch 2 (20 articles) closed the gap for crew, martial-arts, stunt, and choir. Batch 3 (5 articles) closed the gap for ballet, the last Tier 1 zero-article sport that didn't need a whole-sport rebuild. Batch 4 (24 articles) closed Tier 2 sub-group A: swimming, track-field, tennis, golf, gymnastics, theater. Batch 5 (18 articles) closed Tier 2 sub-group B: soccer, football, hockey, baseball, softball, basketball, volleyball. See `SEO-RECOVERY-PROGRESS.md` for all five file lists. Every sport on the site now carries 5 age-15-plus articles except flag-football, football-7v7, and lacrosse-boys, which remain at zero and need a whole-sport content scope first (see below), not a simple top-up.
 
 `football-7v7` and `lacrosse-boys` currently have zero articles at any age, not just 15+. Those two need a broader look before a 15+-specific plan makes sense, the age-band gap is really a whole-sport content gap.
 
