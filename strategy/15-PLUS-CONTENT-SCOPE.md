@@ -31,9 +31,9 @@ This is a plan, not a build. Numbers below are pulled directly from `src/content
 | band | 18 | 5 | 0 — DONE 2026-07-06 |
 | choir | 15 | 5 | 0 — DONE 2026-07-06 |
 | dance | 17 | 5 | 0 — DONE 2026-07-06 |
-| ballet | 10 | 0 | 5 |
+| ballet | 15 | 5 | 0 — DONE 2026-07-06 |
 
-Batch 1 (25 articles) closed the gap for cross-country, lacrosse-girls, cheer, band, and dance. Batch 2 (20 articles) closed the gap for crew, martial-arts, stunt, and choir. See `SEO-RECOVERY-PROGRESS.md` for both file lists. 9 of 26 sports still have zero 15+ articles: flag-football, football-7v7, lacrosse-boys (need a whole-sport scope first, see below) and ballet (Tier 1, not yet batched). The other 13 have 1 to 3, thin against a 4 to 6 article count in the younger bands for the same sport. Target depth: 5 articles per sport, matching the density already built for ages 11-12 and 13-14. That's 96 articles to write across the roster, not a small lift, and worth batching the way Task 3 was batched this session, not attempted in one pass.
+Batch 1 (25 articles) closed the gap for cross-country, lacrosse-girls, cheer, band, and dance. Batch 2 (20 articles) closed the gap for crew, martial-arts, stunt, and choir. Batch 3 (5 articles) closed the gap for ballet, the last Tier 1 zero-article sport that didn't need a whole-sport rebuild. See `SEO-RECOVERY-PROGRESS.md` for all three file lists. Only flag-football, football-7v7, and lacrosse-boys remain at zero 15+ articles, and all three need a whole-sport scope first (see below), not a simple 5-article top-up. The other 13 sports have 1 to 3 15+ articles, thin against a 4 to 6 article count in the younger bands for the same sport. Target depth: 5 articles per sport, matching the density already built for ages 11-12 and 13-14. Tier 2 (the 13 thin sports) is next.
 
 `football-7v7` and `lacrosse-boys` currently have zero articles at any age, not just 15+. Those two need a broader look before a 15+-specific plan makes sense, the age-band gap is really a whole-sport content gap.
 
