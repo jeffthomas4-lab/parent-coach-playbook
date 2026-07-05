@@ -7,7 +7,16 @@ import type { APIContext } from 'astro';
 
 // Feed is capped to the most recent items so the XML stays a reasonable size
 // and readers aren't asked to pull years of back-catalog on every poll.
-const MAX_ITEMS = 100;
+//
+// Each content type gets its own reserved slice before merging. With 713
+// articles and only 100 total slots, a single global sort-then-slice starved
+// coaching tips and gear guides out of the feed entirely — they never showed
+// up because articles alone filled every slot. Readers who want just tips or
+// just guides can also subscribe to /rss-tips.xml or /rss-guides.xml, which
+// aren't capped by article volume at all.
+const MAX_ARTICLES = 60;
+const MAX_TIPS = 25;
+const MAX_GUIDES = 15;
 
 export async function GET(context: APIContext) {
   const articles = (await getCollection('articles', ({ data }) => isLive(data)))
@@ -18,7 +27,9 @@ export async function GET(context: APIContext) {
       author: EDITORIAL.byline,
       link: `/${a.data.phase}/${a.slug}/`,
       categories: ['Read'],
-    }));
+    }))
+    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
+    .slice(0, MAX_ARTICLES);
 
   const coachingTips = (await getCollection('coachingTips', ({ data }) => isLive(data)))
     .map((t) => ({
@@ -28,7 +39,9 @@ export async function GET(context: APIContext) {
       author: EDITORIAL.byline,
       link: `/coaching-tips/${t.slug}/`,
       categories: ['Drill'],
-    }));
+    }))
+    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
+    .slice(0, MAX_TIPS);
 
   const guides = (await getCollection('guides', ({ data }) => isLive(data)))
     .map((g) => ({
@@ -38,11 +51,12 @@ export async function GET(context: APIContext) {
       author: EDITORIAL.byline,
       link: `/what-to-buy/${g.slug}/`,
       categories: ['Gear guide'],
-    }));
+    }))
+    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
+    .slice(0, MAX_GUIDES);
 
   const items = [...articles, ...coachingTips, ...guides]
-    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
-    .slice(0, MAX_ITEMS);
+    .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
   return rss({
     title: SITE.name,

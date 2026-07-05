@@ -141,6 +141,8 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
 
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — Coaching Tips`} href="/rss-tips.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — Gear Guides`} href="/rss-guides.xml" />
 
     <!-- JSON-LD: Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({

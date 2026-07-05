@@ -104,4 +104,8 @@ Required. A boil-and-bite mouthguard works fine.
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Hockey · All Ages</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Shock Doctor Youth Mouthguard</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Boil-and-bite youth mouthguard with a strap that attaches to the helmet cage. The strap matters — a loose mouthguard ends up on the ice or in a pocket inside of a week.</p>
-    <
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Get the strap version, not the loose kind. A $10 mouthguard sitting in a locker room three towns away does nothing for your kid's teeth.</p>
+    <a href="/go/hockey-mouthguard/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>

@@ -24,12 +24,12 @@
 The pattern is one sentence: **the product is 90% built and distribution is 10% built.**
 
 1. **Zero external backlinks** — your own business plan calls this "the single biggest authority bottleneck." Nothing has moved on it.
-2. **No measurement.** GSC access has been broken since at least June 29 (jeffthomas4@gmail.com not an owner of the property). You are flying blind on the only channel in the plan (70% SEO by month 24).
+2. ~~**No measurement.** GSC access has been broken since at least June 29 (jeffthomas4@gmail.com not an owner of the property). You are flying blind on the only channel in the plan (70% SEO by month 24).~~ **[Corrected 2026-07-05]** GSC access works — the jeffthomas owner profile sees all three properties (parentcoachdesk.com, coachjeffthomas.com, parentcoachplaybook.com). The real problem was data, not access: `sitemap-camps.xml` served empty for two-plus weeks because a June 14 migration reset 1,701 approved camps to pending. Fixed and verified same-day — see `SEO-RECOVERY-PROGRESS.md`.
 3. **No social presence at all.** No Facebook, Pinterest, or Instagram — Pinterest is the highest-leverage untouched channel for this audience (packing lists, gear checklists, cost graphics are pin-native formats).
 4. **Email is a form, not a system.** Drip sequence still not wired despite KIT_DRIP_SETUP.md. Signup links go to `parent-coach-playbook.kit.com` — the dead brand name, on a third-party domain.
 5. **Internal linking is half-done.** Drills are wired (542 of 577 tips link to gear guides) but only 55 of 713 articles do — your editorial pages, the ones most likely to rank and get shared, don't feed your money pages. No `/ages/[band]/` hubs.
 6. **Monetization is a single point of failure.** Only Amazon (3–4% rates) is truly live; 10 networks pending since mid-June with no follow-up cadence. Display ads: nothing. Camps claims ($79/yr): live but legally incomplete (no lawyer-reviewed terms, no DMCA agent, no minor-photo consent language).
-7. **Quality gaps visible on the live site.** Multiple gear cards ship with empty "Our take:" fields (confirmed on /what-to-buy/baseball/). Sport hub pages use generic SEO titles/descriptions. RSS covers articles only.
+7. ~~**Quality gaps visible on the live site.** Multiple gear cards ship with empty "Our take:" fields (confirmed on /what-to-buy/baseball/). Sport hub pages use generic SEO titles/descriptions. RSS covers articles only.~~ **[Corrected 2026-07-05]** Sport hub metadata was already bespoke for all 26 hubs — verified live, this claim was stale before this doc was even written. The "Our take" gap was real but isolated to one card (hockey's mouthguard, not baseball) — fixed. RSS was fixed: it already merged tips and guides in code but a shared item cap starved them out; now each type gets a reserved slice, plus dedicated `/rss-tips.xml` and `/rss-guides.xml` feeds.
 8. **The 15+ age band is empty for 25 of 26 sports** — deliberate, but high-school parents are the highest spenders (BBCOR bats, recruiting, showcase fees) and the gap undercuts "go-to for youth activity."
 9. **Anonymous author until November** gates E-E-A-T, backlink outreach, and podcast/PR — i.e., gates the entire authority strategy.
 
@@ -40,14 +40,14 @@ The pattern is one sentence: **the product is 90% built and distribution is 10% 
 ### Next 30 days (unblock + wire what's built)
 | # | Action | Why |
 |---|---|---|
-| 1 | **Fix GSC access** (add jeffthomas4@gmail.com as owner, or verify sc-domain property) | Blocks all SEO measurement; 5-minute fix |
+| 1 | ~~**Fix GSC access** (add jeffthomas4@gmail.com as owner, or verify sc-domain property)~~ **Done — access was never broken.** Camps sitemap recovery + resubmit done 2026-07-05. | Blocks all SEO measurement; 5-minute fix |
 | 2 | **Wire the Kit drip sequence** (spec already written in KIT_DRIP_SETUP.md) and move signup to a branded form/domain instead of parent-coach-playbook.kit.com | Email is the one channel you own; the old brand name leaks trust |
 | 3 | **Internal-linking sprint on articles:** tips are done (542/577); articles are at 55/713. Start with top 50 by traffic once GSC works; also cross-link guides ↔ pathways ↔ calendars per sport | Feeds money pages; biggest on-site SEO win available |
-| 4 | **Fill every empty "Our take:" field** and hand-write seoTitle/seoDescription for the 26 sport hubs | Live quality gap; sport hubs are your best SERP entry points |
+| 4 | ~~**Fill every empty "Our take:" field** and hand-write seoTitle/seoDescription for the 26 sport hubs~~ **Done 2026-07-05.** Sport hub metadata was already live and bespoke. One real "Our take" gap found and fixed (hockey mouthguard). | Live quality gap; sport hubs are your best SERP entry points |
 | 5 | **Follow up on all 10 pending affiliate networks**; activate Dick's/CJ links the day they approve; swap Amazon links where a higher-rate merchant carries the item | Amazon 3–4% vs 8–12% typical at CJ/Awin/Impact |
 | 6 | **Launch Pinterest** (business account, 10 boards by sport/season, pin the packing lists, cost pages, gear checklists — templates already approved June 10) | Pin-native content already exists; compounding, low-maintenance channel |
 | 7 | **Ship the July 50-post plan on schedule** — World Cup pieces are time-boxed (Jul 4–19) | Timely content = first realistic earned-link window |
-| 8 | Expand RSS to coaching tips + guides | Trivial; already flagged by growth agent |
+| 8 | ~~Expand RSS to coaching tips + guides~~ **Done 2026-07-05.** Per-type item caps plus dedicated `/rss-tips.xml` and `/rss-guides.xml` feeds. | Trivial; already flagged by growth agent |
 
 ### 60–90 days (authority + second revenue leg)
 1. **Move the author reveal up from November.** Every week anonymous is a week of no backlink outreach, no podcasts, no HARO/Connectively quotes, no local-press "UPS head coach builds parent resource" story — which is a layup. The JSON-LD flip is already coded. This is the single highest-leverage strategic change available.

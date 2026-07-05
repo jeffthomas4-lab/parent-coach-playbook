@@ -884,6 +884,11 @@
     "retailer": "Amazon",
     "campaign": "gear-hockey-pads-starter"
   },
+  "hockey-mouthguard": {
+    "destination": "https://www.amazon.com/dp/B00I1BDKPC?tag=parentcoachpl-20",
+    "retailer": "Amazon",
+    "campaign": "gear-hockey-mouthguard"
+  },
   "softball-bat-youth": {
     "destination": "https://www.amazon.com/dp/B0F95BWNXX?tag=parentcoachpl-20",
     "retailer": "Amazon",
