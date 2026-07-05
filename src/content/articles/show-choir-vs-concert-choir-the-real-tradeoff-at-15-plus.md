@@ -1,7 +1,7 @@
 ---
 title: "Show Choir vs. Concert Choir: The Real Tradeoff at 15-Plus"
 seoTitle: "Show Choir vs. Concert Choir for High Schoolers"
-seoDescription: "The real cost and time tradeoffs between show choir and concert choir for a high schooler, and how to help a kid choose without losing either college prospects or a season they'd love."
+seoDescription: "The real cost and time tradeoffs between show choir and concert choir at 15-plus, and how to help a kid choose without losing college prospects or a season they'd love."
 dek: "Same choir room, two completely different seasons, and the schools that run both make a kid pick."
 bluf: "Show choir builds performance stamina, choreography skills, and a tight-knit competition team, but costs real money and time: costumes, competition fees, and weekend travel stack up fast. Concert choir builds the sight-reading and ensemble musicianship that honor choirs and college auditions actually reward. Neither is the wrong choice, but the costs are different enough that a family should run the math before September, not after the first invoice."
 format: "essay"

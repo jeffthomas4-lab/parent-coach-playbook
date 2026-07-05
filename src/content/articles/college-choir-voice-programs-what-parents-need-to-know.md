@@ -1,7 +1,7 @@
 ---
 title: "College choir and voice programs: what parents need to know"
 seoTitle: "College choir scholarships vs. voice performance auditions"
-seoDescription: "Two different doors into college singing: non-major choral scholarships open to any student who auditions, and formal vocal performance admission requiring prepared rep, scales, and sight-reading for faculty."
+seoDescription: "Two different doors into college singing: non-major choral scholarships open to any auditioning student, versus formal vocal performance admission requiring a full audition."
 dek: "Two different doors into college singing, and most families only know about one of them."
 bluf: "Many universities offer choral scholarships to any student who auditions, music major or not. That is a separate system from vocal performance or music education admission, which requires a formal audition with prepared repertoire, scales, and sight-reading judged by voice faculty. Knowing which door your kid is walking through changes what senior year looks like."
 format: "essay"

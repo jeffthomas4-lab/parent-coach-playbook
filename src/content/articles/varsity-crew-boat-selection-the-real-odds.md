@@ -1,7 +1,7 @@
 ---
 title: "Varsity Crew Boat Selection: The Real Odds and How Seat Racing Works"
 seoTitle: "How Crew Boat Selection Actually Works: Seat Racing Explained"
-seoDescription: "How high school and club crews actually pick the first eight: novice versus varsity boats, what seat racing measures, and why the coach's decision is more honest than in most sports."
+seoDescription: "How high school and club crews pick the first eight: novice versus varsity boats, what seat racing measures, and why the coach's decision is unusually honest."
 dek: "Eight seats in the fast boat, forty kids in the boathouse, and a system that settles the argument on the water instead of in a meeting."
 bluf: "A varsity crew program runs multiple boats: a first eight or four, a second boat, and novice boats for newer rowers. Seat racing decides who moves up, swapping rowers between boats and timing the results. It is the most transparent selection method in youth sports, and it is still brutal for the kid who loses by half a second."
 format: "note"

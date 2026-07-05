@@ -1,7 +1,7 @@
 ---
 title: "When Your Kid Doesn't Make All-State (Or Doesn't Get the Ensemble They Wanted)"
 seoTitle: "When Your Choir Kid Doesn't Make All-State"
-seoDescription: "How to handle the honest disappointment when a choir kid doesn't make All-State or gets placed in the entry ensemble instead of the top choir, and why the four-year arc still matters."
+seoDescription: "How to handle the disappointment when a choir kid doesn't make All-State or lands in the entry ensemble instead of the top choir, and why the four-year arc still matters."
 dek: "The list goes up, the name isn't on it, and there is no version of tonight where that doesn't sting."
 bluf: "Choir placement hierarchies sting exactly like a depth chart, even though nobody calls it that. A kid who doesn't make All-State, or lands in the entry ensemble instead of the top choir, needs the loss named honestly before anyone offers a plan. The four-year arc, not one audition, is the actual measure of whether this activity is working for your kid."
 format: "essay"

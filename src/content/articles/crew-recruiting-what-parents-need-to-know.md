@@ -1,7 +1,7 @@
 ---
 title: "Crew recruiting: what parents need to know"
 seoTitle: "Crew Recruiting for Parents: The Honest Guide"
-seoDescription: "How college rowing recruiting actually works: the 2K erg score, height, women's rowing scholarships being unusually deep, and the walk-on culture that makes crew different from every other sport."
+seoDescription: "How college rowing recruiting actually works: the 2K erg score, height, deep women's scholarships, and the walk-on culture that makes crew different from every other sport."
 dek: "The 2K score, the height chart, and why women's rowing is the biggest scholarship anomaly in college sports."
 bluf: "College rowing recruiting runs on 2K erg score, height, and grades, roughly in that order. NCAA women's rowing carries one of the largest roster limits in college sports and scholarship money that other women's sports don't get close to. Walk-ons are not a backup plan in crew. They are half the sport."
 format: "essay"
