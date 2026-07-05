@@ -125,3 +125,5 @@ If you choose tackle, the gear conversation matters. Helmets are the most import
 The recruiting reality is that the path is real for kids with the talent and the work ethic. Highlight tape (Hudl) is what coaches watch. ID camps at target schools are how relationships start. Recruiting services are usually not needed for high school football specifically; the high school coaching network and Hudl handle most of it.
 
 The single most underrated factor in long-term football development is academic performance. Football scholarships at all NCAA levels combined fund roughly 20,000 athletes. Academic scholarships fund roughly 1.7 million students. The math says GPA is the bigger career investment than any extra workout.
+
+The [gear guide](/what-to-buy/football/) covers what to actually buy at each age, and the one place never to cut corners: the helmet.

@@ -19,6 +19,8 @@ Goggles with anti-fog coating make the difference between liking and hating prac
 
 That's it. Four items. This is the cheapest sport to get started in.
 
+If you want to know what to expect at each age, not just what to buy, the [age-by-age pathway](/pathways/swimming/) covers that. The [year-round club season calendar](/season-calendar/year-round-club-swimming/) is worth a look too before you commit to a team.
+
 *Some links on this page are affiliate links to Amazon. We earn a commission if you buy; the price you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 <div class="my-8">

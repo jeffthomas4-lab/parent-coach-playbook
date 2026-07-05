@@ -78,3 +78,5 @@ bands:
 Crew's pathway is short and steep: nothing before middle school, novice at 13-14, varsity speed two years later, and a college recruiting market that rewards a tall kid's erg score over a decade of anyone else's tournament travel. Families coming from baseball or soccer keep waiting for the pay-to-play trap doors, and crew mostly doesn't have them. The club fee is real; the rest is showing up at dawn.
 
 The watch items are the back, the ribs, and the weight talk. Handle those three and rowing gives back more than it takes.
+
+For the actual shopping list, the [crew gear guide](/what-to-buy/crew/) covers the unisuit, the layers, and what the club provides so you don't buy anything twice.

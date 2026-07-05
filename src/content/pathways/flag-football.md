@@ -116,3 +116,5 @@ bands:
 Flag football spent decades as tackle's waiting room and stopped being that. The girls' varsity wave through NFHS, the NAIA scholarship programs, and the LA 2028 Olympic slot make flag a destination sport with its own pathway. The bands above treat it that way.
 
 The tackle decision still sits in the middle of this pathway for boys, and it deserves a calm, informed call at 12-14 rather than a default. Ask the kid alone, away from the carpool.
+
+The [gear guide](/what-to-buy/flag-football/) covers what to actually buy at each of these stages. It isn't much.

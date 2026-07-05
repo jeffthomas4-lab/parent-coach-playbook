@@ -13,7 +13,7 @@ publishedAt: 2026-04-06
 
 Theater has the lightest equipment list of any youth activity we cover. Most of what your kid needs is provided by the program: scripts, costumes, sets, makeup, props. You provide the kid, the tuition, and a few personal items.
 
-The real cost in theater is tuition and time. Auditions, callbacks, weekly rehearsals, tech week, performances. Plan for it.
+The real cost in theater is tuition and time. Auditions, callbacks, weekly rehearsals, tech week, performances. Plan for it. If you want to know what a full production year looks like on the calendar, from auditions to strike, see the [school theater season calendar](/season-calendar/school-theater-production-year/). And if you want to know what to expect at each age, not just what to buy, the [theater pathway](/pathways/theater/) covers that.
 
 ## Ages 5–7 (Starter / drama camp)
 

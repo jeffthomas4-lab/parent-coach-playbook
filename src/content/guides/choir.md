@@ -13,7 +13,7 @@ publishedAt: 2026-04-20
 
 Choir is the easiest activity in this guide to outfit. The whole list fits on one hand. Concert clothes, a folder, a pencil, a water bottle.
 
-The investment in choir is time and lessons, not gear. Read this guide quickly because there isn't much to read.
+The investment in choir is time and lessons, not gear. Read this guide quickly because there isn't much to read. If you want to know what good singing looks like at each age, not just what to buy, the [choir pathway](/pathways/choir/) covers that, and the [school choir season calendar](/season-calendar/hs-choir-school-year/) covers when it all happens.
 
 ## Ages 5–7 (Children's choir or starter)
 

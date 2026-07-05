@@ -14,6 +14,8 @@ Martial arts has more styles than almost any other activity in youth sports, and
 
 One more thing first: many schools include a beginner gi in the enrollment fee. Ask before you buy. You may not need to purchase one at all for the first few months.
 
+If you want the age-by-age picture, not just the gear list, the [martial arts pathway](/pathways/martial-arts/) covers belt progression, when sparring actually starts, and the contract traps to avoid at sign-up.
+
 ## Ages 5–9 (Beginner classes, white and yellow belt)
 
 The early levels are about body awareness, listening skills, coordination, and basic technique. The gear list is minimal.

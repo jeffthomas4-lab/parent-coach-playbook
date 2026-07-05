@@ -43,4 +43,14 @@ Wall bump is the volleyball version of wall ball. The wall returns every bump. H
 
 **If they're struggling:** Move closer to 3 feet. Use a softer ball.
 
-**If they've got it:** Move back to 8 feet. Or bump-set-bump (alternate pl
+**If they've got it:** Move back to 8 feet. Or bump-set-bump (alternate platform and overhead contact on consecutive reps without letting the ball hit the ground).
+
+---
+
+**Gear for this drill** (affiliate)
+
+[Volleyball →](/go/volleyball-volley-lite/) — a soft-touch training ball that holds up against a wall for hundreds of reps.
+
+[Full volleyball gear guide →](/what-to-buy/volleyball/) — all picks by age and level.
+
+*As an Amazon Associate we earn from qualifying purchases.*

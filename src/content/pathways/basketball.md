@@ -121,3 +121,5 @@ Basketball is the most over-coached and over-trained sport in youth athletics. E
 The pattern that produces high school varsity players is boring: play in school programs, play AAU at a moderate level, work on skills consistently in the off-season, lift in high school, sleep enough. The high-end private trainer at $150/hour is rarely the variable.
 
 The exception is shooting. Shooting form does benefit from a trained eye early, especially around 11-13 when bodies change and old habits start showing up as misses. One good shooting trainer at this age is worth more than a year of skills work.
+
+The [gear guide](/what-to-buy/basketball/) covers what to actually buy at each age, and the shoe fit test that matters more than the brand name.

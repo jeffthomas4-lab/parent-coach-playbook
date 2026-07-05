@@ -121,3 +121,5 @@ US Soccer revamped its small-sided games progression for a reason: more touches 
 The biggest mistake parents make in soccer is committing to one club at 9 or 10. The market for early club soccer is built to capture parent money, not to develop players. The kids who play in college overwhelmingly came from multi-sport households and didn't pick a serious club track until 12-13. Hold the line.
 
 The second-biggest mistake is paying for ID camps at 13. They are not what they advertise. Pick ID camps at 15-16, at schools your kid actually wants to attend.
+
+The [gear guide](/what-to-buy/soccer/) covers what to actually buy at each age, cleats, shin guards, and the ball size your kid's league actually uses.

@@ -116,3 +116,5 @@ bands:
 Girls' lacrosse deserves its own pathway because it is its own sport. The pocket is different, the field rules are different, the contact rules are different, and a parent who learned the boys' game will misread half of what they see. USA Lacrosse writes the youth rules, and the checkless years through 10U are by design, not timidity.
 
 The cheapest development tool in this sport is a wall. Ten minutes a day on a brick wall outruns any clinic invoice you will ever pay.
+
+The [gear guide](/what-to-buy/lacrosse-girls/) covers the stick, goggles, and mouthguard list by age, and where it differs from the boys' game.

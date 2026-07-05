@@ -124,3 +124,5 @@ The yardage progression is gradual and supervised. Volume ramps from 1,500-2,500
 The stroke specialization conversation should not happen before 14. Most age-group programs have kids swimming all four strokes regularly. The IM (individual medley) requires technique in all four. Specialization happens organically based on which strokes the kid loves and which times come down fastest. Forcing specialization at 11 or 12 creates one-event swimmers who struggle with the IM and never develop full versatility.
 
 The recruiting reality in swimming is unique because times are objective. Coaches care about your times relative to NCAA standards. Highlight tape doesn't matter; your times do. The Swim Cloud and USA Swimming databases make this transparent. The recruiting conversation can happen entirely on times.
+
+If you're still working out what to buy for the pool, the [swimming gear guide](/what-to-buy/swimming/) covers suits, goggles, and caps by age.

@@ -116,3 +116,5 @@ bands:
 Cheer is three sports wearing one uniform: rec cheer's seasonal fun, school cheer's Friday-night civic job, and All Star's level-based competitive machine. The lanes cost wildly different amounts and build different athletes, and the family's honest budget conversation should happen before the first gym tour, because gym tours are excellent at selling.
 
 The level system is the safety architecture. Respect it, pick gyms that respect it, and the sport's scariest headlines mostly stay headlines.
+
+For shoes, bows, and the rest of the actual shopping list, the [cheer gear guide](/what-to-buy/cheer/) covers what the team orders for you and what you buy yourself.

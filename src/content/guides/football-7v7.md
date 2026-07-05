@@ -63,3 +63,5 @@ Cleats are the only line item with a meaningful used market. Play It Again Sport
 ## Recruiting note
 
 7v7 is the recruiting circuit for high school skill-position players. Showcase events (Pylon, Adidas 7on7, Under Armour Future 50, regional combine series) run April through July and attract college coaches in the older age groups (15-18). For 10-14 year-olds, 7v7 is mostly skill development; the recruiting weight starts at high school age.
+
+For what good looks like at each of those ages, the [7v7 pathway](/pathways/football-7v7/) breaks it down band by band, and the [season calendar](/season-calendar/hs-7v7-football-spring-summer/) lays out the spring-summer circuit month by month.

@@ -35,7 +35,7 @@ Ball sizes are set by age. Size 3 for U8 and under. Size 4 from U8 through U12. 
 
 On shoes: regular cleats or turf shoes both work fine at the rec level. Multi-ground cleats run $25 to $50 at most sporting goods stores and last two seasons if the kid doesn't grow too fast. Real cleats do a little better on wet grass; turf shoes do a little better on artificial turf and double as everyday shoes. At U6, it doesn't matter much. The [full soccer gear guide](/what-to-buy/soccer/) has specific picks if you want them, and the [youth soccer cost breakdown](/drive-there/how-much-does-youth-soccer-cost/) shows where every dollar goes from rec through travel.
 
-Your total first-year cost at rec level should land between $100 and $180. That is shin guards, cleats, a ball, and the uniform your registration fee covers. Registration itself typically runs $80 to $150 depending on the league. If you are getting quoted much more than that before your kid has touched a field, look carefully at what is actually included. The [cost calculator](/cost-calculator/) can run the real number for your situation, and the [youth soccer cost breakdown](/drive-there/ho
+Your total first-year cost at rec level should land between $100 and $180. That is shin guards, cleats, a ball, and the uniform your registration fee covers. Registration itself typically runs $80 to $150 depending on the league. If you are getting quoted much more than that before your kid has touched a field, look carefully at what is actually included. The [cost calculator](/cost-calculator/) can run the real number for your situation, and the [youth soccer cost breakdown](/drive-there/how-much-does-youth-soccer-cost/) shows where the money goes from rec through club.
 
 ---
 

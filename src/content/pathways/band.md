@@ -137,3 +137,5 @@ Marching band is a uniquely intense fall commitment. Programs vary, but a compet
 The body conversation in music is smaller than in sport but real. Carrying a heavy instrument bag, sustained playing posture, vocal strain (for singers), and high-intensity rehearsal blocks all create injury risk. The body hub on growth plates and recovery applies. Add: hearing protection (especially for percussion and brass), and ear health is a real long-term consideration.
 
 The strength of music training as a developmental activity is in the durable skills. Reading, ensemble awareness, performing under pressure, working hard at something with no immediate external reward, finding identity in collaborative work. Those are useful for any next direction.
+
+For the instrument rent-versus-buy math and the full gear list by age, see the [band buying guide](/what-to-buy/band/).

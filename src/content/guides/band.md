@@ -15,7 +15,7 @@ Band looks complicated until you realize the school does most of the work. They 
 
 Your job is to pay for the instrument (rent or buy), the accessories that wear out (reeds, valve oil, strings), and the lessons if you go that route.
 
-Two universal rules. Rent before you buy. Get private lessons if you can swing it.
+Two universal rules. Rent before you buy. Get private lessons if you can swing it. If you want to know what good progress looks like at each age, not just what to buy, the [band and music pathway](/pathways/band/) covers that.
 
 ## How to think about the instrument decision
 
@@ -103,7 +103,7 @@ Private lessons are the single best spend in music. Once a week is the standard 
 
 ## Ages 13–14 (Middle school upper grades)
 
-Marching band or jazz band may begin depending on the school. Different gear lists.
+Marching band or jazz band may begin depending on the school. Different gear lists. For how the whole marching season lays out, from August camp through the last Friday night game, see the [marching band season calendar](/season-calendar/hs-marching-band-fall/).
 
 **Marching band gear (if applicable)**
 

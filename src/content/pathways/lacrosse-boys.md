@@ -125,3 +125,5 @@ Wall ball is the development hack of youth lacrosse. Fifteen to thirty minutes a
 The recruiting calendar is summer-heavy. The biggest events (Crab Feast, Naptown Brawl, Inside Lacrosse 100, Champions League) happen June through August. ID camps at target schools fill the same window. If your kid is on the recruiting track, summer travel becomes the dominant family logistics issue.
 
 The position-fit conversation matters in lacrosse. Many kids who play attack in HS end up at midfield or defense in college based on size, speed, and team needs. Don't anchor too hard to a position identity. The transferable skills (stick work, lacrosse IQ, work ethic) carry across positions.
+
+The [gear guide](/what-to-buy/lacrosse-boys/) covers the full pad list by age, including where the safety gear is non-negotiable.

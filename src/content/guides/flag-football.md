@@ -29,6 +29,8 @@ Flag belts are usually team-supplied, so ask your coach before buying. Gloves ar
 
 The beauty of flag football is there's almost nothing to buy. No pads, no helmet, no armor. Lower gear cost means lower injury cost.
 
+If you want to know what to expect at each age, not just what to buy, the [age-by-age pathway](/pathways/flag-football/) covers that, and the [season calendar](/season-calendar/rec-flag-football-fall/) has the month-by-month rundown for a typical fall league.
+
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
 <div class="my-8">

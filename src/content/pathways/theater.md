@@ -116,3 +116,5 @@ bands:
 Theater's pathway looks like sports if you squint: skills build in bands, auditions are tryouts, cast lists are rosters, and tech week is playoffs. The difference is that nobody rides the bench; every kid cast or crewed has a job the show fails without.
 
 The parent's biggest contribution is casting-day composure. Your reaction to the cast list teaches more about handling life than any role they'll ever play.
+
+For the gear list by age, from rehearsal clothes to a stage makeup kit, see the [theater buying guide](/what-to-buy/theater/).

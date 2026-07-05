@@ -15,7 +15,7 @@ Dance is the activity where the gear list is the most style-specific. A ballerin
 
 Most studios will give you a list at registration that tells you exactly what to buy and where. Use that list. Dance shoes are tricky to fit and the studio's recommended supplier (often a local dancewear shop) saves you the return runs.
 
-The annual surprise is the recital costume bill. Plan for it. It's coming.
+The annual surprise is the recital costume bill. Plan for it. It's coming. If you want to know what good technique looks like at each age, not just what to buy, the [dance pathway](/pathways/dance/) covers that, and the [studio recital cycle calendar](/season-calendar/dance-studio-recital-cycle/) shows how the year builds to it.
 
 ## Universal items (every style, every age)
 

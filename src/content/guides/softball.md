@@ -15,6 +15,8 @@ If your kid is starting softball, most of the gear list looks like baseball. The
 
 The ball is bigger (12 inch versus 9 inch in baseball). The gloves are bigger to match. The bats are similar but tend to be a half-inch longer at the same age. Beyond that, most of the same buying advice applies.
 
+If you want the bigger picture, the [age-by-age pathway](/pathways/softball/) covers what good looks like at each stage, and the [season calendar](/season-calendar/rec-fastpitch-softball-spring/) lays out the spring season month by month.
+
 *Some links on this page are affiliate links to Amazon. We earn a commission if you buy; the price you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Tee-ball or coach-pitch)

@@ -116,3 +116,5 @@ bands:
 Golf's pathway runs on access and patience. The kid with a junior set, a putting green habit, and a parent willing to walk nine at twilight develops; the kid with a swing coach at 8 and no rounds played stalls. Short game first, scoring later, distance whenever puberty says so.
 
 The financial trap is tournament travel, which arrives dressed as opportunity around age 10 and never stops asking. Scores at local rated events build the same resume for a tenth of the spend.
+
+For club sizing and what a starter set should cost, see the [golf gear guide](/what-to-buy/golf/).

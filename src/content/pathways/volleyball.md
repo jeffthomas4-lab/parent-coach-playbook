@@ -125,3 +125,5 @@ The shoulder is the body part that asks the most of you in volleyball. Year-roun
 Sand volleyball is now a legitimate parallel path. Beach (sand) is a separate NCAA sport with growing scholarship opportunity. Many indoor club kids cross-train in beach during the summer, and some specialize completely. It's worth knowing about as an alternative path, especially if your kid is in a region where it's accessible.
 
 The recruiting reality: club volleyball is the watched track for college recruiting. ECNL and the major club tournaments (President's Day, Show Me Showdown, Sunshine, AAU Nationals) are where college coaches scout. The school team matters socially and for HS identity but not as much for recruiting.
+
+The [gear guide](/what-to-buy/volleyball/) covers shoes, knee pads, and the ball sizes that change by age.

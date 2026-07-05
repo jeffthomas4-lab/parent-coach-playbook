@@ -135,3 +135,5 @@ The honest career arc looks different from sport. Most competitive dancers will 
 The body conversation in dance deserves real care. The combination of high training volume, body composition culture, and aesthetic judgment creates risk for under-fueling, RED-S, and disordered eating. Studios that emphasize fueling and body health vs. studios that emphasize body composition produce very different outcomes for dancers' long-term wellbeing. Pick the studio carefully.
 
 The strength of dance as a developmental activity is real. Body control, musicality, performance comfort, work ethic, ability to receive correction, all transfer. A kid who dances seriously through 14 has athletic and personal advantages that show up in any next direction they take.
+
+For shoes by style and the gear list by age, see the [dance buying guide](/what-to-buy/dance/).

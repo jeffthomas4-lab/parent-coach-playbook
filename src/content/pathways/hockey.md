@@ -117,3 +117,5 @@ bands:
 Hockey's pathway has a structure most sports lack: USA Hockey's ADM actually dictates how young ages play, with cross-ice games at 8U and checking held until 14U. That structure is your friend. Programs that brag about ignoring it are selling something.
 
 The cost curve is the other thing to plan for. Ice time makes hockey the most expensive mainstream youth sport, and the spending decisions arrive earlier and bigger than in baseball or soccer. Used gear, rotated goalies, and skipped spring seasons are how families survive to bantam with money and enthusiasm intact.
+
+The [gear guide](/what-to-buy/hockey/) covers the pad-by-pad list and where used gear makes sense at each age.

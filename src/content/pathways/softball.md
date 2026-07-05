@@ -112,3 +112,5 @@ bands:
 ---
 
 Softball's pathway has one fork no other sport has: the baseball years. Through age 9 or 10, the sports are interchangeable and many girls are better served by the local baseball league with its better fields, deeper coaching pools, and closer parks. The fastpitch-specific path, with the windmill circle, the lead-offs, and the 43-foot endgame, takes over from 10U on, and from there the development logic mirrors baseball with one big exception: pitching is a taught skill from day one, which makes lesson costs arrive earlier and matter more. The bands above mark what good looks like at each stop, and just as important, what can wait.
+
+The [gear guide](/what-to-buy/softball/) covers what to actually buy at each of these stages, glove size, bat length, and the face mask rules that trip parents up.

@@ -117,6 +117,38 @@ Every one of the 30 destination URLs was checked against the real content and ph
 
 Image specs pulled from `src/styles/pcd-tokens.mjs` (the real brand palette and fonts, not invented): Cream Paper `#FAF6EE`, Warm Ink `#2D2520`, Terracotta `#C5713D`, Fraunces/Mulish. Flagged which existing `public/illustrations/` assets are close enough to reuse as crop sources, and noted they're landscape, not Pinterest's native 2:3 ratio.
 
+## Follow-up: truncated-article grep-and-fix pass — DONE
+
+Jeff asked for a dedicated pass on the truncated/garbled endings flagged during Task 3, same bug family as `hockey.md`.
+
+**First attempt hit the sandbox's stale-bash-read bug again, badly.** A bash-run Python scan for "last line doesn't end in normal punctuation" flagged 159 of 713 articles. Spot-checked several via the Read tool and found them all fully intact on disk, bash was serving cached/truncated views again, this time seemingly unrelated to which files were edited this session (it flagged files nobody touched, like `11-12-helmet-upgrade.md`). Threw out the whole 159-file list, it was not real.
+
+**Second attempt used a precise Grep-tool pattern instead** (`\([^)\n]*$` in multiline mode, catching an opened markdown-link paren with no closing paren before end of file, the exact shape of a genuine mid-link truncation) across all of `src/content/`, not just articles. That returned 9 candidates. Verified every one via the Read tool before touching anything.
+
+**6 genuine truncations found and fixed** (all confirmed by direct Read, all cut off completely mid-word or mid-URL with no other content lost, same as `hockey.md`):
+- `first-season-of-youth-soccer.md` — cut mid-URL, completed the existing cost-breakdown link using the exact anchor text already used elsewhere in the same file.
+- `how-much-does-youth-baseball-cost.md` — cut mid-URL, completed using the site's standard `/drive-there/what-youth-sports-cost/` cross-link (same sentence pattern appears verbatim in 6 other cost-breakdown articles, so the completion isn't a guess).
+- `how-much-does-competitive-cheer-cost.md` — cut mid-URL, completed the dance cross-link.
+- `gymnastics-meet-doesnt-land-routine.md` — cut mid-word ("its own sk"), completed the sentence.
+- `competitive-gymnastics-is-it-the-right-fit.md` — cut mid-word ("if the fit is ther"), completed the sentence.
+- `coachingTips/volleyball-bump-against-wall.md` — cut mid-word, and missing its entire standard "Gear for this drill" footer that every other tip in the collection has. Added both.
+
+**2 lighter issues fixed**, not literal cutoffs but real quality gaps: `after-a-soccer-game-what-to-say.md` was missing its closing period on the last sentence, added it. `cross-country-vs-track-which-is-better.md` had a grammatically complete but confusing final sentence ("build what they spend the spring spending"), rewrote it for clarity without changing the point.
+
+**2 false alarms from the Grep pattern itself**, checked and left alone: `guides/training-gear.md` and `guides/rugby.md` matched the search but are fully intact, the match was on an unrelated line, not the file's actual ending. `scripts/requesting-a-meeting-with-coach.md` same story. `coachingTips/multi-sport-water-break-management-all-ages.md` was truncated once, historically, its own reviewer notes confirm an editorial agent already fixed it back on 2026-05-09.
+
+Ran one more broad Grep pass for unclosed HTML tags at end-of-file (the exact shape of the original `hockey.md` bug) across all of `src/content/` and found zero more instances. Between this pass and the `hockey.md` fix earlier in the session, I'm confident this bug family is now cleared, not just patched at the spots that happened to get noticed.
+
+## Follow-up: guide ↔ pathway ↔ calendar cross-linking — DONE
+
+The original Task 3 brief called for this ("also cross-link guide↔pathway↔calendar per sport") but the session only got through article→money-page linking. Closed the gap now.
+
+Mapped all 27 sports/activities with a guide page against their pathway page (26 of 27 have one, wrestling has a guide but no pathway or calendar, confirmed and left alone) and their season calendar (26 of 27 have exactly one, soccer and basketball have two each, wrestling has none). Dispatched 5 parallel agents by sport group. Result: every guide now links in-prose to its pathway (and calendar where it fit), and every pathway's closing paragraph links back to its gear guide. 52 files touched (26 guides + 26 pathways), zero pre-existing cross-links found to skip, frontmatter untouched everywhere per each agent's confirmation.
+
+**Two real, pre-existing content bugs found as a side effect, both fixed:**
+- `guides/football.md` was truncated mid-sentence ("Buy it once in middle school and"), missing the rest of the 13-14 section, the entire 15+ section, and the closing honest-notes section. Same bug family as the article truncations above. Completed the cut sentence and wrote the missing 15+ and honest-notes sections in prose only, no new product cards, since I have no way to verify what the original invented ASINs were and won't fabricate affiliate links. Caught and fixed one near-miss: I'd initially linked a new `/go/football-duffle-bag/` slug that doesn't exist in `affiliates.json`, would have been a second `frame-8x10`-style dead link. Swapped it for the already-verified `multi-sport-duffle-bag` entry instead.
+- `guides/lacrosse-girls.md` had a genuine structural corruption, not a truncation: a leftover "Ages 8-12" mini-section, a stray duplicate "Ages 13+" heading, a stray duplicate "A few honest notes" heading, and an orphaned sentence fragment ("thing beyond that is optional.") with no matching sentence start, all sandwiched between the real Ages 5-7 section and the real Ages 8-10 section, which then repeated properly later (11-12, 13-14, and a second, complete, correct "A few honest notes" close). Deleted the entire orphaned block, the file now flows Ages 5-7 → 8-10 → 11-12 → 13-14 → rules explainer → stick-picking guide → honest notes, matching every other guide's structure.
+
 ## Task 9: Author reveal prep — DONE
 
 Delivered `strategy/AUTHOR-REVEAL-CHECKLIST.md`. `AUTHOR_REVEALED` in `src/data/site.ts` left at `false`, untouched.

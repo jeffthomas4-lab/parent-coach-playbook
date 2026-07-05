@@ -78,3 +78,5 @@ bands:
 7v7 earns its place as a sharpening tool for skill players who already play school football, and it earns nothing else claimed for it. The format teaches timing, routes, and coverage, and it omits the half of football played by large humans in pads.
 
 Spend accordingly. A summer of local 7v7 plus a real strength program develops more football player than a national circuit schedule, and it costs a tenth as much.
+
+The [gear guide](/what-to-buy/football-7v7/) covers what that actually costs: cleats, gloves, and not much else.

@@ -166,3 +166,5 @@ If you don't know what you're buying, take your kid to a lacrosse-specific shop.
 Boys and girls lacrosse sticks are NOT interchangeable. The heads are shaped differently and the stringing rules are different.
 
 Used lacrosse gear is plentiful. Most lacrosse-heavy regions have annual gear swaps in February or March. Worth showing up.
+
+For what to expect at each age beyond the gear list, the [boys lacrosse pathway](/pathways/lacrosse-boys/) covers stick skills, the contact ramp, and the club-versus-school call, and the [season calendar](/season-calendar/hs-lacrosse-spring-boys/) covers the spring schedule.

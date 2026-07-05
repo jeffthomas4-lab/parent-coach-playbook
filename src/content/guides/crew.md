@@ -14,6 +14,8 @@ Crew is unique. The most expensive equipment in the sport — the shell, the oar
 
 One thing to understand before buying anything: your club will have specific uniform requirements. Most junior programs require a unisuit (also called "trou" in rowing culture) in the club's colors. Buy nothing until you've confirmed what your program needs.
 
+If you want to know what a novice year actually looks like, not just what's in the bag, the [age-by-age crew pathway](/pathways/crew/) covers the erg scores, the coxswain question, and when racing starts. The [spring racing calendar](/season-calendar/hs-crew-spring-racing/) lays out when head races give way to sprint season.
+
 ## First season (Ages 12–15, novice rowers)
 
 The first season is mostly on the water learning technique, with some erg (rowing machine) time mixed in. The gear list is short.

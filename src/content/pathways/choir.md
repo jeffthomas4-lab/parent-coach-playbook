@@ -116,3 +116,5 @@ bands:
 Choir develops on the body's schedule more than any activity on this site: the ear wires itself by 8, the instrument rebuilds itself at 13, and no amount of parental spending accelerates either. The spending lever that does exist (a good voice teacher at the right age, which is later than the recital-industrial complex says) is cheap by youth-sports standards.
 
 The voice change is the pathway's one cliff, and it claims mostly boys. Get the kid a director who makes the croaking year normal, keep him singing through it, and the other side is a section that needs him badly.
+
+For the short list of what choir actually costs, concert dress and a folder mostly, see the [choir buying guide](/what-to-buy/choir/).

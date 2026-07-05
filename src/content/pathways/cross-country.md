@@ -116,3 +116,5 @@ bands:
 Cross country is the rare sport where doing less, longer, wins. The kids who arrive at 14 healthy, multi-sport, and curious beat the kids who arrive with four years of training logs, and the gap widens every season after.
 
 The watchpoint for parents is the body stuff. This sport's culture has a thin-equals-fast lie embedded in it, and your kid will meet it eventually. Get to the fueling-and-sleep message before the internet gets to them.
+
+When you're ready to buy shoes and cold-weather layers, the [cross-country gear guide](/what-to-buy/cross-country/) breaks it down by age.

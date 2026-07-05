@@ -14,6 +14,8 @@ Cross country is the cheapest sport to get into at almost any age. Two pairs of 
 
 But the shoes matter here more than in almost any other sport. Your kid runs four to six days a week in training. Cheap shoes compress fast, lose cushioning, and cause the kind of shin and knee problems that end seasons early. This is not the place to cut the budget.
 
+If you want the age-by-age picture, the [cross-country pathway](/pathways/cross-country/) covers what mileage and racing look like at each stage. The [fall season calendar](/season-calendar/hs-cross-country-fall/) has the month-by-month rundown.
+
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 8–11 (Introduction, rec and middle school programs)

@@ -116,3 +116,5 @@ bands:
 Martial arts has no league, no season, and no governing body with real power over your local school, which means the parent does the quality control. Watch a class, count the smiles and the standards, read the contract twice, and check what a black belt takes. The style matters less than whether the adults in the room deserve your kid's trust.
 
 Done right, this is the longest-running activity on the site: the same kid who bowed in at 6 can be training, teaching, or competing at 60. Few sports can say that with a straight face.
+
+For the gi, sparring gear, and belt-testing costs, the [martial arts gear guide](/what-to-buy/martial-arts/) breaks it down by style. The [year-round martial arts calendar](/season-calendar/year-round-martial-arts-belts/) shows how belt testing and tournaments actually stack across the year.

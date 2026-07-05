@@ -58,3 +58,5 @@ bands:
 STUNT exists because cheer's competitive athletes deserved a format that counts as a sport everywhere sports are counted: seasons, quarters, scoreboards, varsity letters, Title IX rosters, scholarships. USA Cheer built it, the sanctioned-state list keeps growing, and the college lane is the most under-the-radar scholarship opportunity in this entire collection.
 
 For a parent, the move is simple. Build the skill base in cheer or gymnastics through middle school, then check whether your state and your school sanction STUNT the spring she hits ninth grade. If the answer is no, ask the athletic director why not; the program costs less than the javelin budget.
+
+For the mat shoes, tape, and what the program actually covers, the [STUNT gear guide](/what-to-buy/stunt/) has the full list by level.

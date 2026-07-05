@@ -15,6 +15,8 @@ Football is the most equipment-heavy youth sport. The helmet alone can cost more
 
 The most important thing to know up front: do not buy a used helmet from a non-certified source. NOCSAE recertification matters. Your kid's brain is in there.
 
+If you want to know what to expect at each age, not just what to buy, the [age-by-age pathway](/pathways/football/) covers that, and the [fall season calendar](/season-calendar/hs-football-fall-pnw/) has the month-by-month rundown.
+
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Flag football)
@@ -210,4 +212,24 @@ For carrying gear to and from practice. Most teams have a recommended brand or s
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Multi-sport · Ages 11+</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Under Armour Undeniable 5.0 duffle</h3>
     <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">The duffle half the team already carries. Vented pocket for cleats, water-resistant bottom, survives being dragged across parking lots for years.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy it once in middle school and 
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Buy it once in middle school and it holds up through high school. Get the size that fits a full set of shoulder pads, not just cleats and a mouthguard.</p>
+    <a href="/go/multi-sport-duffle-bag/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
+  </article>
+  <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
+</div>
+
+## Ages 15+ (High school and club)
+
+The economics change here. Most high school programs supply the helmet, shoulder pads, game jersey, and pants. You buy the personal gear: cleats, gloves, mouthpiece, compression gear, and a bag big enough to carry all of it.
+
+Buy the best cleats you can afford for the position your kid plays. A lineman's cleat and a skill-position cleat are not the same shoe, and the wrong one shows up as a wasted step on film. Gloves and mouthpieces are cheap enough to replace every season without thinking twice.
+
+Camps and combines get expensive fast, entry fees, travel, and the gear brands that sponsor them all stack up. Go in with eyes open about which ones are actually seen by college coaches and which ones are just a weekend of drills.
+
+## A few honest notes
+
+Do not buy a used helmet from anyone who cannot show you the NOCSAE recertification. This is the one place on this entire list where the used-gear rule does not apply. A cracked or expired helmet shell is not a place to save forty dollars.
+
+Buy used for everything else where you can. Cleats, gloves, and practice gear turn over constantly because kids outgrow them, not because they wear out. Girdles and pants with built-in pads are usually fine secondhand once you've checked the pads haven't compressed flat.
+
+And nobody needs the full list before the first practice. Cleats, a mouthpiece, and whatever the league requires you to bring on day one. Everything else can wait until a coach tells you it's needed. 

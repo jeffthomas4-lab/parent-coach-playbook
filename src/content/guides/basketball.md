@@ -15,6 +15,8 @@ Basketball is one of the cheapest youth sports to outfit. The shoes are the only
 
 That said, the shoes matter a lot. Bad shoes lead to ankle sprains, which lead to a kid who doesn't want to play.
 
+If you want to know what to expect at each age, not just what to buy, the [age-by-age pathway](/pathways/basketball/) covers that, and the [winter season calendar](/season-calendar/hs-basketball-winter-boys/) has the month-by-month rundown.
+
 *Some links on this page are affiliate links to Amazon. We earn a commission if you buy; what you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Bitty / mini league)

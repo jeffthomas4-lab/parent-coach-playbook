@@ -14,6 +14,8 @@ Junior golf has a short gear list and a long learning curve. The gear isn't what
 
 One truth before anything else: club length matters more than brand. A kid swinging a club that's too long can't develop good mechanics, no matter how much it costs. Properly sized junior clubs let kids actually learn the swing. Undersized adult clubs don't.
 
+If you want the age-by-age picture, the [golf pathway](/pathways/golf/) covers what to expect from first contact through varsity. The [junior summer season calendar](/season-calendar/junior-golf-summer/) is worth checking before you book lessons.
+
 ## Ages 5–7 (Starter and intro programs)
 
 At this age, golf is mostly about grip, stance, and making contact. Nobody is keeping score in a way that matters. The gear list is very short.

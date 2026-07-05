@@ -116,3 +116,5 @@ bands:
 Ballet's pathway is the strictest in this collection because the method is centuries old and the body's timeline is non-negotiable: technique at 8, pre-pointe strength at 10-11, pointe at 11-13 on a teacher's sign-off, pre-professional hours at 13-15. Studios that respect that sequence produce dancers; studios that sell shortcuts produce injuries and recital photos.
 
 The parent's two jobs are picking the studio that respects the timeline and guarding the kid's relationship with her own body inside a culture that has historically done that badly. Do both and ballet gives back discipline and beauty in amounts few activities can match.
+
+For slippers, leotards, and the pointe shoe conversation by age, see the [ballet buying guide](/what-to-buy/ballet/).

@@ -127,3 +127,5 @@ RED-S (Relative Energy Deficiency in Sport) is the body topic gymnastics familie
 The Xcel Program (the lower-commitment competitive track within USAG) is worth knowing about. It allows competitive participation with less time commitment than the Junior Olympic levels. For families who love gymnastics but can't or don't want to do 20+ hours a week, Xcel is a real and legitimate option.
 
 The strength of gymnastics as a developmental sport is real. The body control, spatial awareness, work ethic, and athleticism gymnasts develop transfer to almost every other physical activity. A kid who does gymnastics through 12 and then transitions to cheer, dance, diving, or track usually has a significant athletic advantage in the new sport. The "wasted years" framing is wrong; gymnastics is never wasted.
+
+For the leotards, grips, and what the gym actually supplies, the [gymnastics gear guide](/what-to-buy/gymnastics/) breaks down the real cost by level. The [year-round gymnastics calendar](/season-calendar/year-round-gymnastics/) maps out the training and competition rhythm across the season.

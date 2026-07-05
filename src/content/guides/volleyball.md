@@ -278,6 +278,8 @@ Most volleyball clubs have annual gear swaps. Outgrown shoes and braces are heav
 
 Sand/beach volleyball is a different sport. The gear is different (no shoes, sand-friendly knee pads, sun gear). If your kid does both, you need two sets.
 
+For what good looks like at each age, not just what to buy, the [volleyball pathway](/pathways/volleyball/) covers that, and the [season calendar](/season-calendar/club-volleyball-14s/) has the club-season month-by-month for a 14s team.
+
 ## Sizing notes
 
 Need to know what size? See our [Volleyball sizing guide](/what-to-buy/volleyball/sizing/).

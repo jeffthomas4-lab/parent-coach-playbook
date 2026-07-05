@@ -18,6 +18,8 @@ A bow comes next. Most teams order one per season, so confirm with your coach be
 
 The team provides your competition uniform, so wait on that purchase. Trying to guess the colors, style, or fit is a waste of money.
 
+For what to expect by age, from rec cheer through All Star levels, the [cheer pathway](/pathways/cheer/) covers the tumbling progressions and the cost cliff most families hit around age 8 to 11. The [All Star year-round calendar](/season-calendar/all-star-cheer-year-round/) lays out how tryouts, tumbling class, and competition season stack.
+
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
 <div class="my-8">

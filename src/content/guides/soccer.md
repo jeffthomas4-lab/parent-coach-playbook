@@ -15,6 +15,8 @@ Soccer is the easiest youth sport to outfit. There is almost nothing to buy. Cle
 
 The cost is in the league fees, the travel, and the year-round commitments. The gear is the cheapest part.
 
+If you want to know what to expect at each age, not just what to buy, the [age-by-age pathway](/pathways/soccer/) covers that, and the [fall season calendar](/season-calendar/hs-soccer-fall/) has the month-by-month rundown.
+
 *Some links on this page are affiliate links to Amazon and SoccerGarage.com. We earn a commission if you buy; the price you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Mini-league or U6/U8)

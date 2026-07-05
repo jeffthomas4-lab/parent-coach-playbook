@@ -15,6 +15,8 @@ Girls lacrosse is a non-contact sport (with rule-defined stick contact and minim
 
 One more thing before the list: girls lacrosse requires goggles. Not optional. Not "recommended." Required at every organized level. Buy them at the same time as the stick.
 
+For what good looks like at each age beyond the gear list, the [girls lacrosse pathway](/pathways/lacrosse-girls/) covers stick skills, the checking rules, and the club-versus-town call, and the [season calendar](/season-calendar/hs-lacrosse-spring-girls/) covers the spring schedule.
+
 *Some links on this page are affiliate links to Amazon. We earn a commission if you buy; the price you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Starter / Intro)
@@ -87,25 +89,6 @@ Soccer cleats work for girls lacrosse at the youth level.
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>
 </div>
-
-## Ages 8–12 (Junior / Developmental)
-
-Stick skills start to separate players. The gear list stays the same.
-
-**A better girls stick**
-
-At this age, position-specific sticks start to matter for some players. Most kids are fine with a general-purpose stick at 36–40 inches.
-
-## Ages 13+ (Middle school, high school, and travel)
-
-High school provides the team jersey. You provide stick, goggles, mouthpiece, and cleats.
-
-## A few honest notes
-
-Girls and boys lacrosse are two different sports. Different sticks, different goggles, different rules, different culture. Don't mix the gear.
-
-Used gear is plentiful. Annual gear swaps happen in February and March in lacrosse-heavy markets.
-thing beyond that is optional.
 
 ## Ages 8–10 (First real season)
 

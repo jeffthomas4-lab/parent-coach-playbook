@@ -14,6 +14,8 @@ Gymnastics has the shortest gear list of almost any sport and one of the highest
 
 The gym provides everything else: bars, beams, floor, vault, spring floor, foam pit, and mats. You show up and pay tuition. That's the structure.
 
+If you want the age-by-age picture behind that tuition bill, the [gymnastics pathway](/pathways/gymnastics/) covers the level system, the time commitment at each stage, and the honest career arc most families don't see coming until it's late.
+
 ## Ages 4–7 (Recreational and beginner classes)
 
 At this age, most programs are once or twice a week. The goal is body awareness, flexibility, and basic movement patterns. The gear list is three items.

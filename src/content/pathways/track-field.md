@@ -116,3 +116,5 @@ bands:
 Track and field is youth sports' best calibration tool and worst trap, because everything is measured and public from age 8. The measurements are real; their predictive value before puberty is close to zero. USATF and AAU rankings pages have no column for 'hasn't hit their growth spurt yet.'
 
 Protect the sampling years. The sport will narrow your kid's events eventually, and it does that job better at 15 than any parent does at 10.
+
+For the trainers and event-specific spikes that go with each stage, see the [track and field gear guide](/what-to-buy/track-field/).

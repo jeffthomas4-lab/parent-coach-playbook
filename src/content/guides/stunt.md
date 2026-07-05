@@ -14,6 +14,8 @@ Stunt became an NCAA emerging sport in 2020. It's structured differently from ch
 
 The gear list is short. The physical demands are not.
 
+If you want to know how the sport actually develops by age, not just what's in the bag, the [STUNT pathway](/pathways/stunt/) covers where it starts, how it differs from cheer, and the college scholarship lane most families never hear about. The [spring STUNT calendar](/season-calendar/hs-stunt-spring/) shows how the season runs opposite traditional cheer.
+
 ## Beginner level (Ages 8–12, intro programs)
 
 At this level, programs are building body awareness, learning to base and fly, and establishing tumbling progressions. Equipment needs are minimal.

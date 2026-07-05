@@ -42,6 +42,8 @@ Event-specific spikes come next, but only after your child knows their event. Sp
 
 Socks and moisture-wicking shorts round it out. That's genuinely all you buy.
 
+If you want to know what your kid should be able to do at each age, not just what's in the bag, the [track and field pathway](/pathways/track-field/) walks through it. The [spring track season calendar](/season-calendar/hs-track-field-spring/) lays out the months to plan around.
+
 ## Sizing notes
 
 Need to know what size? See our [Track and field sizing guide](/what-to-buy/track-field/sizing/).

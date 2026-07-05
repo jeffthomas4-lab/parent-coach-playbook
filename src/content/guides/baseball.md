@@ -15,6 +15,8 @@ So your kid wants to play baseball. Or your kid signed up because their friend s
 
 Here is what you actually need, by age. We have bought the wrong thing in almost every category at least once. Learn from us.
 
+If you want to know what to expect at each age, not just what to buy, the [age-by-age pathway](/pathways/baseball/) covers that, and the [season calendar](/season-calendar/little-league-rec-baseball-spring/) has the month-by-month rundown for a typical spring season.
+
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Tee-ball)

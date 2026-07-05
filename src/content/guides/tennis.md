@@ -14,6 +14,8 @@ publishedAt: 2026-04-30
 
 A racket is the main purchase. Size by age: 21 inches for under-9, 23 inches for ages 10-12, and full size (27 inches) at 13 and up. Don't buy an adult racket for a small child, improper size leads to bad habits and injuries.
 
+For what to expect on court at each age, from the red ball through varsity, see the [tennis pathway](/pathways/tennis/). The [year-round USTA junior calendar](/season-calendar/junior-tennis-usta-year-round/) shows how the seasons actually stack up.
+
 *Some links on this page are affiliate links to Amazon. We earn a commission if you buy; the price you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 <div class="my-8">

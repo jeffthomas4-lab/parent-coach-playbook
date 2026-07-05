@@ -20,7 +20,7 @@ Tights are a must. Younger dancers wear footed tights in whatever color the scho
 
 A hair net and hairpins keep hair neat and secure. A wrap sweater is practical for keeping warm during class and helps with the ballet aesthetic.
 
-Pointe shoes are the big purchase, but only when your teacher says so. Most students don't start pointe until age 11 or later, and their teacher must evaluate them for readiness. Buying pointe shoes too early wastes money and can cause injury.
+Pointe shoes are the big purchase, but only when your teacher says so. Most students don't start pointe until age 11 or later, and their teacher must evaluate them for readiness. Buying pointe shoes too early wastes money and can cause injury. For the real pointe-readiness timeline and what training looks like at each age, see the [ballet pathway](/pathways/ballet/). For how the year builds toward performances like Nutcracker, see the [studio ballet season calendar](/season-calendar/studio-ballet-nutcracker-year/).
 
 *Some links on this page are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
 

@@ -39,7 +39,7 @@ What makes cheer budgeting different from field sports: almost nothing is option
 
 One honest place to save: the first season. A first-year athlete on a novice or prep team does not need the expensive shoes or the boutique bow, and we [picked the budget versions that hold up](/what-to-buy/cheer/). Spend on the gym, not the accessories.
 
-Run [your own number](/cost-calculator/), with your gym's real tuition, before signing the season contract. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/), and competitive dance families will recognize [almost the same math](/drive-home/competition-dance-the-actual-annual-cos
+Run [your own number](/cost-calculator/), with your gym's real tuition, before signing the season contract. The cross-sport picture is in [what a year of youth sports actually costs](/drive-there/what-youth-sports-cost/), and competitive dance families will recognize [almost the same math](/drive-home/competition-dance-the-actual-annual-cost/).
 
 ---
 

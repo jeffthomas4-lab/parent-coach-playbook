@@ -35,4 +35,4 @@ The sports also develop different social environments. Cross country is almost a
 
 For a 13-14-year-old runner who is just deciding whether to commit to the sport: doing both seasons is the standard path and the right one if the athlete has the interest and the physical capacity. Taking a season off running to play another sport is fine if the runner wants to and the coach knows. Skipping cross country to avoid high mileage and then underperforming in track because the aerobic base is not there is the pattern coaches see regularly.
 
-Cross country is how distance track runners build what they spend the spring spending. [The age-by-age progression](/pathways/cross-country/) shows what that buildup looks like from middle school through the varsity years.
+Cross country is how distance runners build the aerobic base they spend all spring drawing down on the track. [The age-by-age progression](/pathways/cross-country/) shows what that buildup looks like from middle school through the varsity years.

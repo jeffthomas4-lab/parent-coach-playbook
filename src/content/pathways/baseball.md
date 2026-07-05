@@ -119,3 +119,5 @@ bands:
 The pathway maps a typical American baseball journey from tee-ball through varsity. Use it as a calibration tool. Compare to your kid honestly. Most "ahead" or "behind" judgments at 9 don't predict what happens at 16.
 
 The single best thing you can do at every age is keep the kid healthy and keep them loving the game. Both of those things are easier to break than to build. Read the body hub on arm care. Take the off-season seriously. Don't add lessons to fix a problem that's actually about reps, sleep, or growth timing.
+
+The [gear guide](/what-to-buy/baseball/) covers what to actually buy at each of these stages, glove size, bat length, and the stuff you can skip.

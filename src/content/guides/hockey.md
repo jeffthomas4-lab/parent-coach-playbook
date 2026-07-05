@@ -17,6 +17,8 @@ Compared to the other sports on this site, hockey is in a category of its own. A
 
 That said, there is a clear order of priority. Skates first. Helmet second. Then stick. Then everything else. Cut corners on the gear list, never on the safety equipment.
 
+If you want to know what your kid should actually be able to do at each age, the [hockey pathway](/pathways/hockey/) covers that, and the [season calendar](/season-calendar/youth-travel-hockey-winter/) lays out the winter travel schedule month by month.
+
 *Some links on this page are affiliate links to Amazon. We earn a commission if you buy; the price you pay does not change. As an Amazon Associate we earn from qualifying purchases.*
 
 ## Ages 5–7 (Learn to skate + intro hockey)

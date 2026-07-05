@@ -116,3 +116,5 @@ bands:
 Tennis's pathway has the clearest scaffolding in youth sports: red, orange, green, yellow, each stage earning the next. The parents who fight the progression, pushing yellow balls and full courts early, buy plateaus. The ones who let rallies develop on scaled courts get kids who can actually play.
 
 The other tennis-specific trap is the lesson treadmill. This sport sells private instruction harder than any other, and the fix for most junior players is more match play, not more technique. Count the competitive sets per month before adding another invoice.
+
+For racquet sizing and what a season of gear actually costs, see the [tennis gear guide](/what-to-buy/tennis/).
