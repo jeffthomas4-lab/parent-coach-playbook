@@ -14,9 +14,18 @@ export async function GET(ctx: APIContext) {
   if (env?.DB) {
     try {
       campSlugs = await listAllCampSlugsApproved(env.DB);
-    } catch {
-      // sitemap should still render even if D1 is unavailable
+    } catch (e) {
+      // Sitemap still renders even if D1 is unavailable, but log loud —
+      // this used to fail silently and the camps sitemap went empty for two
+      // weeks before anyone noticed (2026-07-05 incident).
+      console.error('[sitemap-camps] D1 query failed, serving empty urlset:', e);
     }
+  } else {
+    console.error('[sitemap-camps] no D1 binding on request, serving empty urlset');
+  }
+
+  if (campSlugs.length === 0) {
+    console.error('[sitemap-camps] ALERT: 0 approved+future camps. Either the camps queue is genuinely empty or pcd_status got reset again. Check /api/cron/camps-sweep logs and the programs table.');
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

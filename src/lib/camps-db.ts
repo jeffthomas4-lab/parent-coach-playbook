@@ -581,6 +581,22 @@ export async function listAllCampSlugsApproved(db: D1Database): Promise<string[]
   return (result.results ?? []).map((r) => r.slug);
 }
 
+// Health check for the camps pipeline. Used by /api/cron/camps-sweep so a
+// silent blackout (migration wipes pcd_status, D1 outage, etc.) shows up in
+// the worker-cron logs instead of running unnoticed for weeks. See the
+// 2026-07-05 incident: a migration default reset 1,701 approved camps to
+// 'pending' and nothing alerted until GSC impressions had already fallen.
+export async function countApprovedFutureCamps(db: D1Database): Promise<number> {
+  const result = await db
+    .prepare(
+      `SELECT COUNT(*) AS n FROM programs
+       WHERE pcd_status = 'approved' AND session_end_date >= ?`,
+    )
+    .bind(todayDateISO())
+    .first<{ n: number }>();
+  return result?.n ?? 0;
+}
+
 export function slugifyCity(s: string): string {
   return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }

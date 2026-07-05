@@ -1,0 +1,454 @@
+=== concussion-protocol-basics.md ===
+7:publishedAt: 2026-05-03
+10:  - name: "CDC HEADS UP to Youth Sports"
+12:  - name: "CDC HEADS UP: Return to Play Guidance"
+33:**The first ten minutes belong to the trainer or coach.** If your kid takes a hit and shows any of these signs, they are done for the day: dazed look, confusion about where they are or what just happened, slurred speech, balance problems, vomiting, headache, sensitivity to light or noise. The U.S. Centers for Disease Control and Prevention (CDC)'s HEADS UP program is the standard youth-sports concussion training; every coach and athletic trainer should have completed it.
+39:**Return to play is a six-step process, not a single decision.** Once symptoms have resolved at rest, the standard CDC return-to-play progression goes: light aerobic activity, sport-specific exercise, non-contact training drills, full-contact practice, return to game. Each step is at least 24 hours. If symptoms come back at any step, drop back to the previous step.
+
+=== suspected-concussion-right-now.md ===
+9:publishedAt: 2026-04-15
+12:  - name: "CDC HEADS UP to Youth Sports"
+14:  - name: "CDC HEADS UP: Return to Play"
+36:  claudeReviewedAt: 2026-04-15
+38:  reviewerNotes: "Sensitive flagged. Companion to concussion-protocol-basics. CDC HEADS UP and Concussion Legacy Foundation cited. Designed as moment-of-need page."
+82:The U.S. Centers for Disease Control and Prevention (CDC) return-to-play progression is six steps: light aerobic, sport-specific exercise, non-contact drills, full-contact practice, return to game. Each step is at least 24 hours. If symptoms come back at any step, drop to the previous step.
+
+=== helmet-bat-mouthguard-certification.md ===
+2:title: "Helmet, bat, and mouthguard certification: *the stamps that matter*"
+3:summary: "NOCSAE for helmets. USA Baseball and USA Softball for bats. State-by-state rules for mouthguards. What stamps to look for, what's expired, and what used gear is fine."
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-01-22
+12:  - name: "NOCSAE: National Operating Committee on Standards for Athletic Equipment"
+29:  claudeReviewedAt: 2026-01-22
+31:  reviewerNotes: "Pre-spring season prep. Concrete on what stamps to find. NOCSAE, USA Baseball/Softball directly cited."
+34:Most parents have never read the inside of their kid's helmet. There are stamps in there that mean things, and the ones that are missing or expired are the ones that should pull a piece of equipment out of the bag.
+36:**Helmets: the NOCSAE stamp.** The National Operating Committee on Standards for Athletic Equipment certifies football, lacrosse, baseball/softball batting, and pole-vault helmets. Look inside the helmet shell. The stamp reads "Meets NOCSAE Standard" with a date or a recertification window. No NOCSAE stamp, the helmet is not legal for organized play. Period.
+38:For football helmets, NOCSAE certification expires. Helmets reconditioned by an NAERA-licensed reconditioner can be recertified up to 10 years after manufacture. After that, the helmet is done. Look inside the shell for the recondition date sticker. If the helmet is older than 10 years from manufacture, replace it.
+40:**Bats: the USA Baseball mark.** Since 2018, USA Baseball requires bats in most youth divisions to carry the USA Baseball mark, a circular stamp with "USA Baseball" wrapped around it. The Big Barrel and BBCOR standards apply to older age groups. The old "BPF 1.15" stamp from before 2018 is no longer compliant for most leagues.
+42:USA Softball runs its own certification and publishes a list of approved and disapproved bat models. The "ASA 2004" certification carries forward; the newer USA Softball certification is the current standard. Check the league's rule packet for which standard applies to your kid's division. The list updates annually.
+48:**Hockey, lacrosse, and the sport-specific stuff.** USA Hockey requires HECC-certified helmets with full face shields for players under 18 and BNQ-certified throat protectors for goalies. World Lacrosse / USA Lacrosse requires NOCSAE-certified helmets in boys lacrosse. Girls lacrosse requires ASTM-F3137-certified eyewear; helmet rules vary by state and level.
+50:**Used gear: what's fine and what's not.** Used cleats, gloves, jerseys, pads with no certification dates: fine, if they fit. Used helmets: only if you can verify the NOCSAE recertification date, the manufacture date, and the absence of cracks or interior padding compression. Used bats: fine if they carry the current certification stamp for your kid's league.
+
+=== helmet-recertification.md ===
+2:title: "Helmet recertification: *the dates inside the shell*"
+3:summary: "NOCSAE-certified helmets get reconditioned every year or two. After 10 years, they're done. How to read the stickers and when to replace."
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-02-01
+11:  - name: "NOCSAE"
+26:  claudeReviewedAt: 2026-02-01
+28:  reviewerNotes: "Specifically about the recert sticker and the 10-year cap. NAERA and NOCSAE direct sources."
+31:A football helmet has two dates inside it. The manufacture date and the recertification date. Both matter, and parents who have never looked rarely know which their kid is wearing.
+33:**The NOCSAE certification window.** A helmet is NOCSAE-certified at manufacture. After that, it must be reconditioned and recertified by an NAERA-licensed reconditioner, typically every one to two years, depending on the league. The recondition involves stripping the helmet, replacing padding, repainting, and re-testing.
+35:A helmet can be recertified up to 10 years after the manufacture date. After 10 years, no reconditioner will recertify it. The helmet is retired.
+37:**Where to find the dates.** Pull the helmet liner. Inside the shell or on the inside crown, there are two stickers. The first reads "Manufacture Date" with a month and year. The second reads "Reconditioned" or "Recertified" with a month, year, and the name of the NAERA-licensed reconditioner.
+41:**What gets a helmet failed at recondition.** Cracks in the shell, even small ones. Compressed padding that does not return to shape. Stripped or missing hardware. A face mask that has been bent or replaced with a non-matching one. Modifications to the shell, including drilled holes, painted-over decals, or stickers that obscure certification markings.
+45:**The league's role.** Programs that take helmet certification seriously have a yearly recondition cycle, contract with an NAERA-licensed reconditioner, and check helmets at the start of each season. Programs that do not are programs that hand out helmets with whatever stickers are inside.
+47:**Lacrosse, baseball, and softball helmets.** NOCSAE certifies lacrosse and batting helmets too. Recertification cycles are different by sport and by manufacturer. The same principle applies: look inside, find the dates, replace if you cannot verify.
+51:"Are all team-issued helmets reconditioned and recertified annually by an NAERA-licensed reconditioner?" The answer should be yes.
+
+=== batting-helmet-face-guards.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-03-07
+13:  - name: "NOCSAE"
+26:  claudeReviewedAt: 2026-03-07
+28:  reviewerNotes: "USA Baseball, NOCSAE, NFHS cited. Honest framing of where data is mixed."
+41:Both are NOCSAE-certified for the helmet model they attach to. A non-certified add-on cage may compromise the helmet's overall certification.
+55:College baseball: face guards (typically C-flaps) are increasingly common after several high-profile facial injuries. National Collegiate Athletic Association (NCAA) does not require.
+79:Some kids report that cages distort or reduce visual clarity. Newer cage designs (lighter, wider gaps, anti-glare coatings) address most of this. The C-flap leaves the dominant eye unobstructed and is preferred by some kids who tried full cages and disliked the visual restriction.
+89:For comparison, the cost of one urgent dental visit after a foul-ball facial injury is typically $500 to $5,000. The cost-benefit math leans toward face protection for almost any kid where it is comfortable.
+91:**The fit and certification.**
+95:NOCSAE-certified for the specific helmet model.
+101:A kid wearing an aftermarket cage that does not match the helmet model is wearing gear that may have failed certification testing. Verify before installing.
+
+=== catchers-gear-safety.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-01-15
+15:  - name: "NOCSAE"
+26:  claudeReviewedAt: 2026-01-15
+28:  reviewerNotes: "Little League rule on the dangling throat protector is the most useful actionable piece. NOCSAE on the mask, USA Baseball on the system."
+33:**The catcher's helmet/mask.** Two configurations exist. The traditional "skull cap with mask" lets the kid keep their hat backward and put the mask over it. The hockey-style helmet covers the whole head including the back, in one piece. NOCSAE certifies both for catcher's use; the stamp is inside the helmet shell or on the mask.
+45:The published data on whether commercial chest protectors prevent commotio cordis is mixed; some products carry NOCSAE chest-protector certification specifically for this risk, others do not. The NOCSAE-certified chest protector for catchers carries a stamp. Worth the upgrade if your kid is catching at 11 and up.
+73:**Used gear caveats.** Used catcher's helmets are fine if the NOCSAE date and condition check out. Used throat danglers are fine if the clip works. Used chest protectors are conditional on padding compression. Used shin guards are conditional on hinges. The rule of "buy the helmet new" applies to catchers as much as to football.
+77:**The honest read.** Catcher is one of the most-protected positions in youth baseball and softball when the gear is right. The injuries that show up are nearly always traceable to a piece of gear that was wrong (too small, too old, missing the dangler, no NOCSAE certification). Buy good gear. Inspect it. Make the kid wear it correctly. The math comes out fine.
+
+=== goalkeeper-gear-safety.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-02-12
+15:  - name: "ASTM International"
+26:  claudeReviewedAt: 2026-02-12
+49:*Helmet.* NOCSAE-certified lacrosse helmet, standard for the position. Same recertification windows apply.
+53:*Chest protector.* Boys lacrosse goalie chest protectors must meet NOCSAE ND200 commotio cordis standard as of recent rule changes. Girls lacrosse chest protectors meet ASTM F3137. The standards address the chest-impact cardiac risk specifically. Older non-certified protectors are no longer compliant in National Collegiate Athletic Association (NCAA) play and most high-school competition; check your league rules.
+65:Helmet certification stamp visible and in date.
+69:Chest protector covers sternum to lower ribs, no gap at the neck, NOCSAE ND200 stamp for boys lacrosse goalies.
+81:**The honest read.** Soccer goalie gear is mostly comfort and minor impact reduction; the headgear question is genuinely uncertain. Lacrosse goalie gear is real protective equipment with specific certification standards that have tightened in the last few years. Get the right gear, fit it correctly, replace it on schedule. The position will still take impacts. The gear is what keeps the impacts from becoming injuries that change a kid's path.
+
+=== hockey-equipment-safety.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-02-14
+26:  claudeReviewedAt: 2026-02-14
+31:Hockey is the most equipment-heavy youth sport. The gear catalog is long, the certifications are specific, and "it'll fit later" is a phrase that gets kids hurt.
+33:**The HECC stamp.** USA Hockey requires Hockey Equipment Certification Council (HECC) certification on helmets for all youth players. The stamp lives on the back of the helmet. Helmets carry an expiration date printed on the certification sticker, typically six and a half years from manufacture for HECC. After that date, the helmet is no longer compliant for organized play and should be replaced.
+35:Full face shields, not half-cages, are required for players under 18 in USA Hockey. The cage or shield must be HECC-certified for the helmet model.
+37:**Neck guards: the BNQ standard.** USA Hockey requires goalies to wear a Bureau de normalisation du Québec (BNQ)-certified neck and collarbone protector for ages 12 and under. Many leagues mandate it for all goalies. Many also require neck guards for skaters, though the rule is league-specific.
+51:Helmet: HECC sticker visible, expiration date in window, no shell cracks, padding intact.
+53:Cage or shield: HECC certified for the helmet, no warps, all clips functional.
+61:For goalies: BNQ-certified neck and collarbone protector, mask cage with no welding cracks, throat dangler.
+
+=== mouthguard-fit-boil-vs-custom.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-01-14
+26:  claudeReviewedAt: 2026-01-14
+28:  reviewerNotes: "ADA, AAPD, ASD direct sources. Honest about the concussion-marketing gap."
+47:Custom (lab-made). Made by a dentist or sports dentist from a model of the kid's teeth. $100 to $300. Best fit, best retention, most comfortable, longest-lasting.
+
+=== used-gear-safety.md ===
+3:summary: "The hand-me-down soccer cleats are fine. The hand-me-down football helmet is not, unless it's been recertified. A category-by-category guide."
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-01-27
+11:  - name: "NOCSAE"
+26:  claudeReviewedAt: 2026-01-27
+28:  reviewerNotes: "Practical buy-vs-skip guide. Cites NOCSAE and CPSC for the load-bearing categories."
+47:Bats. Used bats are fine if they carry the current certification stamp for your kid's league: USA Baseball mark for most youth baseball, current USA Softball mark for softball, BBCOR for older age groups. A bat with the pre-2018 BPF 1.15 stamp is not legal in USA Baseball play. Check the league rule packet before you buy.
+49:Shin guards, batting helmets without certification dates, soft padding. Inspect padding for compression. If the foam does not spring back, replace.
+53:Lacrosse helmets, hockey helmets, lacrosse goggles. These have certification windows and condition that matters. NOCSAE for boys lacrosse, HECC for hockey, ASTM-F3137 for girls lacrosse goggles. If the gear shows the certification stamp and a date inside the window, it is fine. If not, replace.
+57:Football helmets without verified NOCSAE recertification. The NOCSAE program allows reconditioning by an NAERA-licensed reconditioner up to 10 years from manufacture. A used football helmet without a current recondition date is gear you should not put on a kid's head. The shell is plastic that fatigues and the padding is foam that compresses.
+65:Look for cracks in any plastic. Compress any foam padding with a thumb; it should spring back fully. Sniff for mold in helmets, gloves, and shoulder pads. Check certification stamps and dates. Try it on the kid before you commit to it.
+
+=== knee-braces-youth-sport.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-03-18
+26:  claudeReviewedAt: 2026-03-18
+
+=== ski-snowboard-helmets.md ===
+3:summary: "Helmets reduce head-injury rates in skiing and snowboarding by 30 to 50 percent in published data. What certifications matter and when fit fails."
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-01-03
+15:  - name: "American Society for Testing and Materials (ASTM) International"
+17:  - name: "Consumer Product Safety Commission (CPSC)"
+28:  claudeReviewedAt: 2026-01-03
+30:  reviewerNotes: "Sensitive flagged. U.S. Ski & Snowboard, NSAA, ASTM, CPSC cited. The 30 to 50 percent reduction figure is well-published."
+49:The American Academy of Pediatrics (AAP) and the National Ski Areas Association (NSAA) both endorse helmet use for all skiers and snowboarders.
+51:**The certification standards.**
+53:Ski and snowboard helmets sold in the U.S. typically carry one or more certifications:
+55:ASTM F2040 is the most-common standard for snow-sport helmets sold in the U.S.
+61:For most family use, ASTM F2040 certification is the baseline. Snell-certified helmets exceed the standard but cost more.
+63:The certification ensures the helmet has passed impact-attenuation testing at velocities relevant to recreational skiing. Higher-velocity racing impacts may exceed the certification's tested range, which is why competitive racers sometimes use additional protection (chin guards, FIS-approved harder shells).
+79:A helmet that fits loosely provides much less protection than the certification implies. The "buy a size up to grow into" approach is wrong for snow helmets.
+105:Junior ski racing through U.S. Ski & Snowboard programs typically requires helmets. The standards may exceed the recreational ASTM F2040 for high-velocity disciplines (downhill, super-G).
+113:Helmet effectiveness varies by speed and impact angle. High-speed impacts (typical of advanced skiing on steep terrain) exceed the certification range and produce more-severe injuries even with helmets.
+145:**The honest read.** Ski and snowboard helmets are one of the strongest-evidence-supported safety interventions in youth sport. The 30 to 50 percent head-injury reduction is robust across published studies. The certification, fit, and replacement protocols are well-published. Programs and families that follow them produce kids who ski and snowboard with substantially lower head-injury risk than kids who do not.
+
+=== soccer-headgear-data.md ===
+5:safetyCategory: "equipment-certification"
+9:publishedAt: 2026-03-09
+26:  claudeReviewedAt: 2026-03-09
+39:**What the field studies show.** Several published cohort studies have tracked headgear use against concussion incidence in youth soccer. The results are mixed. A multi-year study published in the Journal of Athletic Training found no significant difference in concussion rates between headgear-wearing and non-wearing youth soccer players. Other studies have found small reductions or, in some cases, slight increases (possibly due to the "risk compensation" hypothesis: kids wearing headgear play more aggressively and head the ball more often).
+43:**What headgear does well.** Reduces superficial scalp lacerations from head-to-head and head-to-elbow contact. Reduces minor bumps and bruises. Some kids report it makes them feel more confident in aerial duels.
+67:**What the American Academy of Pediatrics (AAP) says.** The American Academy of Pediatrics' position is that the strongest evidence-based prevention measures in youth soccer are: rule enforcement on heading by age, neuromuscular warm-up programs (FIFA 11+) for anterior cruciate ligament (ACL) prevention, immediate concussion management (CDC HEADS UP), and proper goalkeeper technique training. Headgear is not on the list of strongly recommended prevention.
+
+=== sideline-first-aid-kit.md ===
+9:publishedAt: 2026-02-10
+50:  claudeReviewedAt: 2026-02-10
+52:  reviewerNotes: "Practical checklist. Red Cross and NATA cited. The tampon-for-nosebleed line is a well-documented EMT trick that parents will appreciate hearing once."
+
+=== tournament-packing-list-master.md ===
+9:publishedAt: 2026-04-17
+11:  - name: "American Academy of Pediatrics (AAP)"
+66:  claudeReviewedAt: 2026-04-17
+68:  reviewerNotes: "Practical master list. AAP and TSA cited where relevant for specific items."
+97:Cash. Concession stands, vending machines, lost items. $20 to $40 in cash for unexpected situations.
+
+=== emergency-action-plan-template.md ===
+9:publishedAt: 2026-01-12
+11:  - name: "NATA: Inter-Association Task Force EAP Recommendations"
+22:  - "Names and phone numbers of CPR/AED-certified adults present"
+39:  claudeReviewedAt: 2026-01-12
+41:  reviewerNotes: "NATA EAP framework is the source. Practical template every program should adapt. Companion to AED-location and CPR pieces."
+44:National Athletic Trainers' Association (NATA), KSI, and the American Academy of Pediatrics (AAP) all converge on the same framework: every athletic venue should have a written Emergency Action Plan (EAP), reviewed before each season, practiced at least once, and posted at the venue. Most youth programs do not have one. Programs that do see meaningfully better outcomes when emergencies happen.
+58:5. cardiopulmonary resuscitation (CPR)/AED-certified adults. Named roster of every adult on-site at practices and games who is currently certified. Phone numbers. The kid in cardiac arrest needs the certified adult identifiable in 30 seconds.
+74:NATA recommends programs run through the EAP at least once per season. Even a 15-minute walkthrough at the first parent meeting:
+120:**The honest read.** Most youth-sports emergencies are handled successfully by improvisation. The few that are not, the difference between the kid who recovers and the kid who does not is usually the EAP. NATA and KSI are direct: the cost of writing one is small. The cost of not having one is real, and shows up at the worst moment.
+
+=== aed-location-field-readiness.md ===
+9:publishedAt: 2026-02-24
+27:  claudeReviewedAt: 2026-02-24
+48:Identify two adults at every practice and game who are CPR/AED certified. Names and phone numbers in a shared note.
+62:**Project ADAM and the school AED rules.** Project ADAM works with schools and youth-sports organizations on Heart Safe certification. Most states require AEDs in public schools; many require them at school athletic events. Youth rec leagues are a patchwork. The good news is that the cost has dropped, and many leagues now have one even without state mandate.
+
+=== cpr-for-parents.md ===
+2:title: "CPR for parents: *what level of certification is realistic*"
+9:publishedAt: 2026-02-19
+26:  claudeReviewedAt: 2026-02-19
+28:  reviewerNotes: "Clear-eyed on the certifications. AHA and Red Cross direct sources. Hands-Only CPR is the realistic floor for most parents."
+39:**Heartsaver CPR/automated external defibrillator (AED).** AHA's Heartsaver and Red Cross's Adult/Pediatric CPR/AED courses run about four to five hours. They cover Hands-Only, conventional CPR for adults and children, AED use, and choking response. They certify for two years. Cost is typically $50 to $90.
+43:**Basic Life Support (BLS).** BLS is the level for healthcare providers and lifeguards. Adds two-rescuer CPR, advanced ventilation devices, and team-based response. Five to six hours, certifies for two years, $80 to $120. Overkill for most parents but appropriate if you are the team's designated medical lead.
+45:**Online vs in-person.** Pure-online certifications exist but most state youth-sports requirements call for a "blended" course with in-person skills check, which is the AHA standard. The hands-on portion catches things the video does not, like compression depth.
+47:**What your league should require.** The bar varies by NGB. Most NGB-affiliated programs require at least one CPR/AED-certified adult at every practice and game. Some require all coaches. Most do not require parents to be certified, but a parent on the sideline who is certified is a meaningful safety addition.
+49:**AED + CPR is the combination that matters.** Sudden cardiac arrest survival drops 7 to 10 percent for every minute without defibrillation, per AHA. CPR alone keeps the kid alive long enough for an AED to do its job. Knowing where the AED lives at your kid's field, and knowing how to use it, is at least as important as the CPR certification.
+51:**Refresh cadence.** Both major certifications run two years. People forget the compression rhythm and the AED sequence faster than they remember. The two-year cycle exists because skill decay is real.
+53:**The honest read.** Most parents will not get certified. Hands-Only CPR is the floor and you can learn it in 60 seconds from the AHA video. The first thing you do in any cardiac emergency is call 911 and start compressions. Anything past that is upside.
+
+=== stop-the-bleed-basics.md ===
+9:publishedAt: 2026-02-17
+26:  claudeReviewedAt: 2026-02-17
+
+=== spinal-injury-cervical-spine-protocol.md ===
+9:publishedAt: 2026-02-06
+11:  - name: "NATA: Cervical Spine Injury Position Statement"
+35:  claudeReviewedAt: 2026-02-06
+37:  reviewerNotes: "Sensitive flagged. NATA, ACEP, AAOS cited. The 'do not remove helmet' rule is the published standard for football-equipped athletes."
+70:For football-equipped athletes, the helmet stays on. National Athletic Trainers' Association (NATA)'s position statement is direct: do not remove the helmet at the field for a suspected spinal injury. The helmet and shoulder pads form a unit that maintains cervical alignment. EMS removes them together at the hospital, with trained personnel, on a backboard.
+78:If the athlete is not breathing or has airway compromise, the face mask can be removed (cut, with a tool kept in the team's first-aid bag) without removing the helmet itself. The mask comes off; the shell stays on. This is a NATA-published technique that requires training.
+
+=== heatstroke-right-now.md ===
+9:publishedAt: 2026-04-22
+14:  - name: "NATA: Inter-Association Task Force on Exertional Heatstroke"
+36:  claudeReviewedAt: 2026-04-22
+38:  reviewerNotes: "Sensitive flagged. Companion to heat-and-hydration. KSI, NATA, AAP cited. The cool-first-transport-second protocol is the published lifesaver."
+63:The Korey Stringer Institute and National Athletic Trainers' Association (NATA) both publish the same protocol. A tub, a livestock stock tank, a kiddie pool, a large cooler, anything that can hold a kid submerged to the neck. Cold water, not just cool. Ice if available. Submerge the kid to the neck, keep the head up. Continue for 15 to 20 minutes or until temperature drops below 102°F.
+67:**The cool-first-transport-second protocol.** This is the part most ambulance services and emergency departments now follow under NATA and KSI guidance. The published recovery rate when cooling begins on-site and continues in transit approaches 100 percent. The recovery rate when transport happens before cooling drops sharply because brain damage from sustained hyperthermia is rapid.
+71:**Programs that have a cooling tub on site.** Football programs in heat-belt states should have a tub or stock tank set up before practice during the August window. Any program in any sport that practices in heat over 90°F WBGT should have a cooling-immersion plan. The American Academy of Pediatrics, KSI, and NATA all endorse this as the standard of care.
+
+=== heat-exhaustion-vs-heatstroke.md ===
+9:publishedAt: 2026-05-07
+13:  - name: "NATA: Exertional Heatstroke Position Statement"
+15:  - name: "AAP: Climatic Heat Stress and Exercising Children"
+26:  claudeReviewedAt: 2026-05-07
+28:  reviewerNotes: "Sensitive flagged. KSI, NATA, AAP cited. The mental-state distinction is the load-bearing diagnostic difference."
+107:Kids who are deep into heat illness sometimes report feeling fine. The mental clouding affects self-assessment. Coaches and parents should not rely on the kid's self-report when symptoms are present. Pull and assess, do not negotiate.
+117:National Athletic Trainers' Association (NATA)'s Inter-Association Task Force on Preseason Heat-Acclimatization Guidelines covers the prevention. Day-by-day intensity progression, WBGT-based practice modification, hydration, cooling stations on the field. Programs that follow this see fewer heat events. Programs that do not are the source of most preventable heat fatalities.
+
+=== anaphylaxis-and-epipen-on-field.md ===
+9:publishedAt: 2026-01-07
+26:  claudeReviewedAt: 2026-01-07
+28:  reviewerNotes: "Sensitive flagged. AAP, FARE, AAAAI cited. The epi-first-then-911 protocol is the published standard."
+44:A kid with a known allergy who reports "I feel weird" or "my throat feels funny" is a kid you treat as if anaphylaxis is starting. Wait-and-see costs minutes that matter.
+
+=== diabetic-emergency-on-field.md ===
+9:publishedAt: 2026-02-07
+26:  claudeReviewedAt: 2026-02-07
+28:  reviewerNotes: "Sensitive flagged. ADA, Breakthrough T1D, AAP cited. The 15-15 rule and glucagon trigger are the published standards."
+
+=== protein-powder-safety.md ===
+3:summary: "The supplement industry is regulated less than food. Independent testing has found undisclosed substances in many products. What certifications matter."
+9:publishedAt: 2026-02-20
+28:  claudeReviewedAt: 2026-02-20
+30:  reviewerNotes: "Sensitive flagged. USADA, NSF, Informed Sport, AAP cited. The contamination data is well-documented and the third-party-cert framework is the consumer protection."
+33:Protein powder is one of the most-used supplements among youth athletes. Most kids do not need it. The ones who use it should know that the industry produces a non-trivial percentage of contaminated products, and the certifications that matter are not displayed on the front of the can.
+65:The FDA regulates dietary supplements (including protein powder) under DSHEA (Dietary Supplement Health and Education Act of 1994). The framework is much lighter than for pharmaceutical products.
+67:Supplements do not require FDA approval before sale. The FDA can take action after a problem is identified but rarely acts preemptively.
+83:**The certifications that matter.**
+85:Three major third-party testing certifications verify supplement content:
+89:Informed-Sport / Informed-Choice. Same idea, different certifying body. Used widely in the UK and U.S. The logo is on the product.
+93:Banned-substances testing matters most for athletes subject to drug testing (NCAA athletes, Olympic-track athletes, some HS state-level athletes). For non-tested athletes, the contamination concern (heavy metals, undisclosed ingredients) still applies.
+99:Without endorsing specific brands, the protein-powder category has well-known third-party-certified options. The list changes over time. The principle: if the product does not carry NSF Certified for Sport, Informed-Sport, or USP Verified, do not buy it for a youth athlete.
+103:"Lab tested" claims without certification body identified.
+107:"Pharmaceutical grade" (no FDA definition; marketing).
+113:NSF Certified for Sport products typically cost 20 to 50 percent more than uncertified equivalents. The premium is the third-party testing.
+115:For a youth athlete using protein powder regularly, the cost difference over a year is real but small relative to the contamination risk. The math favors certification.
+133:Creatine (covered in its own piece). Reasonable for adolescent athletes 14+ with third-party certification.
+135:Pre-workout. American Academy of Pediatrics (AAP)-aligned recommendation is no. The combination of caffeine plus other stimulants does not fit youth-athlete needs.
+145:A team policy on supplement use. Most National Collegiate Athletic Association (NCAA)-aligned HS programs prohibit supplements other than basic vitamins. Most rec and club programs are silent.
+147:Education on third-party certification at the start of each season.
+149:Awareness of the SafeSport and NGB-specific banned-substances list for competitive athletes.
+155:If a supplement is used, third-party certification worth not skipping.
+157:For competitive athletes (NCAA recruits, USA-team-track athletes), the conversation with a registered dietitian who specializes in sport nutrition is the right pathway.
+159:**The honest read.** Most youth athletes who use protein powder do not need it. Of those who do, the third-party-certification framework is the only consistent protection against contamination and undisclosed ingredients. The supplement industry's regulatory light touch means the consumer carries the verification burden. Five extra minutes checking for NSF or Informed-Sport certification before purchase is the difference between a useful nutritional supplement and a potential contamination problem.
+
+=== creatine-youth-athletes.md ===
+2:title: "Creatine in youth athletes: *the AAP position and the published data*"
+3:summary: "The most-studied performance supplement. What it does, what it doesn't, the AAP's position, and the actual conversation with a youth athlete who wants it."
+9:publishedAt: 2026-02-13
+26:  claudeReviewedAt: 2026-02-13
+28:  reviewerNotes: "Sensitive flagged. AAP, NSCA, ISSN cited. Honest framing of the contested adolescent question."
+55:**The American Academy of Pediatrics (AAP) position on supplements broadly.**
+57:The American Academy of Pediatrics' position on performance-enhancing supplements in youth athletes has historically been conservative. The published statement: pediatric and adolescent athletes should not use performance-enhancing supplements, and the AAP recommends that pediatricians counsel families against supplement use.
+73:The International Society of Sports Nutrition's position stand (2017) supports creatine use in adolescent athletes under specific conditions (educated supervision, established maturity, safe practices). The AAP has not formally updated its position to align with this view.
+103:For competitive athletes (NCAA, professional, Olympic-tested), this matters legally as well as health-wise. The USADA's "Supplement 411" resource is the standard reference.
+105:NSF Certified for Sport, Informed-Sport, and USP Verified are the third-party certifications that verify content.
+109:In some high-school sports cultures, creatine use is normalized as part of training. Parents whose kids report "everyone takes it" should know:
+117:A team policy on supplement use clearly communicated to athletes and families. Most National Collegiate Athletic Association (NCAA)-aligned high school programs prohibit creatine. Most rec and club programs are silent.
+119:Education on third-party certification. Athletes who choose to use any supplement should use Certified for Sport, Informed-Sport, or USP Verified products only.
+123:The decision is yours. The published evidence is reassuring at the high-school age. The AAP remains conservative. The dietary and sleep approaches produce most of the available benefit.
+125:If you decide to allow creatine, the third-party certification is worth not skipping. Walmart-brand or online-cheap creatine without certification is a contamination risk.
+129:**The honest read.** Creatine sits in a complicated space between published-research support and pediatric-society caution. For adolescent athletes 14 and up, the choice is reasonable either way with appropriate supervision and certified product. For younger kids, no. The performance edge is real and modest; the sleep-nutrition-training fundamentals matter more.
+
+=== pre-workout-supplements-red-flags.md ===
+9:publishedAt: 2026-01-26
+11:  - name: "American Academy of Pediatrics (AAP)"
+15:  - name: "Food and Drug Administration (FDA)"
+26:  claudeReviewedAt: 2026-01-26
+28:  reviewerNotes: "Sensitive flagged. AAP, USADA, FDA cited. Direct on the no-for-kids position."
+31:Pre-workout supplements are aggressively marketed to youth athletes through social media, influencer partnerships, and team-store displays. The American Academy of Pediatrics (AAP) position is clear: pre-workout supplements are not appropriate for children or adolescents.
+33:Most parents have not read the AAP statement. Many kids on competitive teams use pre-workout products. The case for not using them is direct.
+41:Caffeine, 150 to 400 milligrams per scoop. (AAP recommends adolescents limit caffeine to under 100 milligrams per day total.)
+67:Dependence and rebound fatigue. Athletes who use pre-workout regularly often report severe fatigue on days they skip the supplement, leading to escalating use.
+81:For competitive athletes (NCAA, Olympic-track), this matters legally. Athletes have tested positive for banned substances after using pre-workout products with undisclosed ingredients.
+85:Third-party certification (NSF Certified for Sport, Informed Sport, USP Verified) addresses contamination. The vast majority of pre-workout products on the market are not certified.
+113:Most NCAA-aligned high school programs prohibit pre-workout use. Most rec and club programs are silent.
+117:"Pre-workout supplements are not permitted at team practices or games. Athletes who use them outside of team activities should know that contamination is a documented risk, and that AAP-aligned medical guidance is against use for kids."
+123:The conversation is direct without being punitive: "The AAP says this is not appropriate for your age. Here is why. Here is what you can have instead [adequate sleep, real pre-game food, hydration]."
+133:"The AAP recommends against these for kids your age. Here is what they actually do, here is the risk, here is what works better. Let's set this up the right way."
+139:At 18 or 19, the conversation shifts. Adult-aged athletes have more latitude. But the contamination risk does not change with age. Third-party certification is the minimum standard for any supplement use.
+141:**The honest read.** Pre-workout supplements are aggressively marketed to youth athletes and the AAP position is consistently against their use for kids. The performance benefits are modest; the cardiovascular, sleep, anxiety, and contamination risks are real and documented. The kids who skip pre-workout and focus on the fundamentals perform as well or better long-term.
+143:For the family of a youth athlete who has been using pre-workout, the conversation about why to stop is reasonable. For the family considering whether to allow it: no, per AAP, and the case is clear.
+
+=== caffeine-youth-athletes.md ===
+2:title: "Caffeine in youth athletes: *the AAP limit and what coaches should know*"
+3:summary: "The AAP says no caffeine for kids under 12 and limit it for teens. The energy-drink question. What 'pre-workout' actually contains."
+9:publishedAt: 2026-02-04
+13:  - name: "FDA: Caffeine and Kids"
+26:  claudeReviewedAt: 2026-02-04
+28:  reviewerNotes: "AAP and FDA cited directly. The under-12 zero recommendation is the load-bearing AAP position. Filed under nutrition-substance, the new safetyCategory shipped with this piece."
+31:The American Academy of Pediatrics' position on caffeine in kids is direct. No caffeine for children under 12. For adolescents 12 to 18, American Academy of Pediatrics (AAP) recommends limiting caffeine to less than 100 mg per day, which is roughly one cup of coffee or one 8-ounce energy drink.
+53:Under 100 mg/day for adolescents per AAP: roughly one 8-ounce coffee or one 16-ounce iced tea or one 8-ounce energy drink (smaller cans, like Red Bull or Celsius).
+55:200 mg/day: AAP labels this excessive for adolescents. Most large coffee drinks (16-ounce / "venti" coffee), a 16-ounce energy drink, or two of either combined.
+57:400 mg/day: the FDA's adult limit. Should never be approached by anyone under 18.
+81:The AAP's stance on energy drinks is direct: not recommended for children or adolescents. The combination of caffeine, sugar, and other stimulants exceeds safe levels for young athletes routinely.
+83:Cardiac events linked to energy drink consumption in adolescents are well-documented in the medical literature. The FDA has investigated multiple deaths linked to high-dose energy drinks. The events are rare but the risk profile is real.
+89:Pre-workout supplements marketed to athletes typically combine caffeine (150 to 400 mg) with stimulants (beta-alanine, citrulline, sometimes yohimbine), nitric-oxide precursors, and creatine. The caffeine alone exceeds AAP recommendations for adolescents.
+109:By 14, kids are exposed to caffeine marketing aggressively. The conversation is direct: caffeine is a drug, the AAP says under 100 mg/day for teens, energy drinks routinely exceed that. You are not anti-coffee; you are pro-knowing-the-dose.
+119:**The honest read.** Caffeine is everywhere in youth-athlete culture and the published medical guidance is largely ignored. The kids who follow the AAP guidelines have better sleep, lower anxiety, and better long-term cardiovascular profiles than the kids who don't. The conversation costs nothing. The products that exceed the limits are the ones that look most like adult-athlete culture, which is the marketing point and the risk.
+
+=== rdn-vs-nutritionist-credentials.md ===
+9:publishedAt: 2026-04-9
+15:  - name: "American Academy of Pediatrics (AAP)"
+26:  claudeReviewedAt: 2026-04-09
+28:  reviewerNotes: "Sensitive flagged. Academy of Nutrition and Dietetics, CDR, AAP cited. The RDN vs unregulated 'nutritionist' distinction matters for kids."
+45:Continuing education and recertification.
+113:RDN consultations: $80 to $200 per session. Insurance often covers medical nutrition therapy with physician referral.
+
+=== private-trainer-vetting.md ===
+3:summary: "Skills coaches, hitting instructors, speed trainers. The credentials that mean something, the SafeSport gap, and the conversation to have before the first session."
+9:publishedAt: 2026-01-06
+11:  - name: "U.S. Center for SafeSport"
+26:  claudeReviewedAt: 2026-01-06
+28:  reviewerNotes: "Sensitive flagged. SafeSport gap for private coaches is the load-bearing point. NSCA cited for credentialing."
+31:The private trainer industry runs parallel to youth-sports teams and operates under almost no shared oversight. Anyone can rent a batting cage, buy business cards, and start charging $80 an hour to teach 10-year-olds. There is no licensing requirement in any U.S. state for "skills coach" or "personal trainer for athletes."
+33:This is the gap most parents do not realize. Team coaches in NGB-affiliated programs go through SafeSport training and background checks. The private hitting instructor your kid sees twice a week often goes through neither.
+39:Personal trainers (general): NSCA-CPT, NASM-CPT, ACSM-CPT, ACE-CPT are the major certifications. Personal training does not require a degree.
+49:**The SafeSport question.**
+51:A private trainer is not required to complete SafeSport training because they do not operate under an NGB-affiliated organization. Whether they have done it voluntarily is the question to ask.
+53:For private trainers who work with multiple kids, especially in 1-on-1 settings, the SafeSport-aligned standards still apply: observable settings, parent-on-CC communication, no inappropriate physical contact, no closed-door isolated sessions.
+61:3. "Have you completed SafeSport training, even though it is not required?" The answer "I don't need to" is different from "yes, last year." Both are legal. One is more conservative.
+63:4. "What is your communication policy with kids, particularly regarding text messaging and social media?" SafeSport-aligned trainers will say the parent is on every message. Trainers who say they DM the kid directly are different.
+97:**The honest read.** Most private trainers are good. The industry's lack of standardization means parents have to do the vetting work that the SafeSport-affiliated youth-sports system does for team coaches. Five questions, observation of a session, ongoing conversation with the kid. The bar is low, but it is on the parent to set it.
+
+=== recruiting-service-red-flags.md ===
+9:publishedAt: 2026-01-28
+11:  - name: "NCAA: Recruiting"
+26:  claudeReviewedAt: 2026-01-28
+28:  reviewerNotes: "NCAA, FTC, BBB direct sources. The contract red flags are concrete."
+31:The recruiting-services industry sits in the middle of one of the highest-emotion, lowest-information markets in youth sports. Parents desperate for college-recruiting clarity, kids with athletic dreams, and a long list of vendors charging $500 to $5,000 to "help."
+57:Recruiting databases used by coaching staffs (often free or low-cost services like the NCAA's own resources or sport-specific scouting platforms).
+71:Aggressive sales calls or in-home visits. Legitimate companies do not pressure with "sign tonight or lose your spot." National Collegiate Athletic Association (NCAA)-affiliated services do not operate this way.
+77:Pressure on younger kids. Services targeting 8th-graders or 9th-graders with "early evaluation" packages are pulling the recruiting timeline forward inappropriately. Most college coaches do not seriously evaluate athletes until late sophomore or junior year of high school per NCAA contact rules.
+91:Free NCAA Eligibility Center. The NCAA's own portal is the actual eligibility tool. Free or low cost.
+111:"How does this differ from what I could do for free through NCAA Eligibility Center, my high school coach, and direct outreach to college programs?"
+125:1. Register with the NCAA Eligibility Center (sophomore year of high school).
+
+=== showcase-event-vetting.md ===
+9:publishedAt: 2026-04-26
+11:  - name: "National Collegiate Athletic Association (NCAA): Recruiting"
+13:  - name: "U.S. Center for SafeSport"
+26:  claudeReviewedAt: 2026-04-26
+28:  reviewerNotes: "Sensitive flagged. NCAA, SafeSport, FTC cited. Companion to recruiting-service-red-flags piece."
+77:Operators that imply NCAA endorsement when there is no such relationship.
+83:Per published surveys of college coaches across major sports, the events that produce real recruiting outcomes include:
+87:Major NCAA-compliant showcases with established multi-year track records.
+113:**The SafeSport question.**
+115:Major showcase events sometimes involve overnight accommodations, particularly for travel-required events. The SafeSport Minor Athlete Abuse Prevention Policies (MAAPP) apply:
+127:Showcase costs vary widely: $200 to $2,000+ for individual events.
+129:For families budgeting recruiting expenses, the cost-per-likely-outcome math matters. The $1,000 spent on a pay-to-play showcase that produces no meaningful exposure is $1,000 that could have funded direct college outreach, video production, or college campus visits.
+131:The NCAA Eligibility Center registration is the only required spend (modest fee). Beyond that, recruiting expenses are discretionary.
+
+=== safesport-basics-for-parents.md ===
+2:title: "SafeSport basics: what every youth sports parent should know"
+3:summary: "U.S. Center for SafeSport: what it is, what training your kid's coaches should have completed, and what to do if something feels wrong."
+10:publishedAt: 2026-04-30
+13:  - name: "U.S. Center for SafeSport"
+15:  - name: "USOPC SafeSport resources"
+30:  claudeReviewedAt: 2026-05-04
+32:  reviewerNotes: "Sensitive flagged. Stays in parent-to-parent informational lane. Cites SafeSport. Clear actionable steps for parents."
+35:The U.S. Center for SafeSport is the federally-authorized organization that handles abuse and misconduct cases in the U.S. Olympic and Paralympic movements, plus most NGB-affiliated youth sports. Most coaches in NGB-affiliated programs (USA Hockey, USA Swimming, USA Gymnastics, U.S. Soccer, USA Volleyball, etc.) are required to complete SafeSport training before working with athletes.
+37:For parents, the basics matter. Knowing the system exists, knowing what to ask, knowing where to report.
+39:**What SafeSport requires of coaches.**
+41:Coaches in covered organizations must complete SafeSport's online training (initially ~90 minutes, plus annual refreshers). The training covers recognizing and reporting abuse, appropriate physical contact, communication boundaries with minors, and the responsibility to report.
+49:1. "Are your coaches SafeSport-trained, and how recently?"
+57:SafeSport requires coaches to limit one-on-one electronic communication with minors. Practical translation: a coach should not be texting your 12-year-old privately. Group chats, email to parents, and texts copied to parents are appropriate. Direct DMs with no parent visibility are not.
+63:SafeSport guidance: contact should be limited to what's necessary for instruction (spotting in gymnastics, demonstrating a stance, etc.), should happen in observable settings, and should never involve private body areas. Hugs, "good game" pats, and similar brief positive contact in observable settings are generally fine; closed-door private interactions are not.
+65:**How to report.**
+67:If your kid or another athlete describes something that crosses these lines, the SafeSport Helpline is available 24/7. The number is 720-531-0340; online reporting at uscenterforsafesport.org. Reports can be anonymous. SafeSport investigates and refers to law enforcement when appropriate.
+69:For non-NGB youth programs (rec leagues, school sports), report to the program's leadership and to local law enforcement directly. The school's Title IX coordinator handles reports involving school staff.
+79:Most coaches are good. The systems exist because the rare ones who cause harm cause significant damage when no one is watching. The combination of SafeSport training, background checks, parent awareness, and kid-empowering conversations meaningfully shifts the risk profile. None of it is a guarantee. All of it is the responsible baseline.
+
+=== youth-football-safety-briefing.md ===
+8:publishedAt: 2026-03-21
+13:  - name: "CDC HEADS UP"
+17:  - name: "NATA: Preseason Heat-Acclimatization Guidelines"
+28:  claudeReviewedAt: 2026-03-21
+30:  reviewerNotes: "Sensitive flagged. Pilot for the per-sport safety briefing format. Ranks by frequency and severity per published youth-football epidemiology. Sourced to USA Football, CDC, KSI, NATA."
+37:National Athletic Trainers' Association (NATA)'s Preseason Heat-Acclimatization Guidelines lay out the protocol. Day 1 to 2: helmets only, no pads. Day 3: helmets and shoulder pads. Day 6: full pads earliest. Two-a-days: not on consecutive days, ever, and not before day 6. Programs that follow this protocol see the heat fatality risk drop dramatically.
+43:USA Football's Heads Up program, paired with U.S. Centers for Disease Control and Prevention (CDC) HEADS UP for parents and coaches, is the published protocol. Same-day removal for any suspected concussion. Written clearance from a licensed health care provider before return. Six-step graduated return-to-play.
+59:"What is your heat-acclimatization plan and how does it line up with NATA?"
+
+=== single-sport-specialization.md ===
+3:summary: "What the AAP, AOSSM, and IOC actually say about single-sport play. Why 'after 14' is the consensus and what early specialization costs in injury, burnout, and ceiling."
+7:publishedAt: 2026-04-19
+10:  - name: "AAP: Sports Specialization and Intensive Training in Young Athletes"
+11:    url: "https://publications.aap.org/pediatrics/article/138/3/e20162148/52359"
+14:  - name: "Project Play (Aspen Institute): State of Play 2025"
+15:    url: "https://projectplay.org/state-of-play-2025/introduction"
+30:**What the data says about the recruiting argument.** A 2017 National Collegiate Athletic Association (NCAA) survey of D1 athletes found that the majority played multiple sports through high school. Of football D1 recruits, 87% played a second varsity sport. Of basketball D1 recruits, 72%. Coaches at the highest level specifically value multi-sport athletes for their athletic literacy, durability, and lower burnout risk.
+38:**The two-month rule.** American Academy of Pediatrics (AAP)'s guidance on this is specific: at least 2-3 months per year away from competitive single-sport activity. Spread across the year (a few weeks here and there) or in one block. The block is easier to enforce. The break is not optional. It is when the body recovers from accumulated stress and when the kid recovers from the psychological grind of competition.
+
+=== instagram-privacy-settings.md ===
+9:publishedAt: 2026-01-10
+28:  claudeReviewedAt: 2026-01-10
+81:- Receive notifications about reports the kid files.
+101:"Sarah | Class of 2027 | Soccer | [Region/State]"
+137:For severely abusive interactions, Meta's reporting tools and (if criminal) local law enforcement.
+
+=== discord-servers-youth-teams.md ===
+9:publishedAt: 2026-02-09
+11:  - name: "U.S. Center for SafeSport"
+28:  claudeReviewedAt: 2026-02-09
+30:  reviewerNotes: "Sensitive flagged. SafeSport, Discord safety, NCMEC, Common Sense cited. The team-server pattern is increasingly common in older youth sport."
+61:Direct messages between members. Unless restricted, any kid on the server can DM any other kid or any adult on the server. This is the SafeSport-violating configuration: a coach with the ability to DM a minor athlete privately, with no parent visibility.
+79:Direct messages between coaches and individual athletes disabled. Discord's settings allow restricting DMs between specific roles. The SafeSport-aligned configuration: coaches cannot DM individual minor athletes.
+93:Discord's DM-restriction feature is the load-bearing setting for SafeSport alignment. The configuration:
+103:This is the SafeSport Minor Athlete Abuse Prevention Policy applied to Discord. Most team servers do not have this configured. The configuration takes 5 minutes.
+107:Voice channels do not produce text logs. Conversations are ephemeral. The SafeSport one-on-one rule applies:
+125:"What is the escalation procedure if a parent or athlete reports a concern?"
+127:A coach with thoughtful answers is one who has done the work. A coach who has not configured these settings is operating outside SafeSport-aligned norms even if unintentionally.
+161:SafeSport-aligned settings:
+171:The 30 minutes to configure correctly is the difference between a useful tool and a SafeSport violation.
+187:**The honest read.** Discord is increasingly common as a youth-sports team communication platform. The configuration work to make it SafeSport-aligned is real and not always done. The risks are documented in non-sports contexts and apply to sports settings.
+191:If something on a team Discord server raises concern, the SafeSport reporting line (720-531-0340) and Discord's own reporting tools both exist.
+
+=== bullying-and-hazing.md ===
+9:publishedAt: 2026-03-02
+14:  - name: "U.S. Center for SafeSport"
+27:  claudeReviewedAt: 2026-03-02
+29:  reviewerNotes: "Sensitive flagged. Definitions sourced to StopBullying.gov and SafeSport. Walks through escalation path without listing every state law."
+44:**What an AD or league director is obligated to do.** Mandatory-reporter obligations vary by state. Most school-based ADs are mandatory reporters for child abuse, which captures severe hazing and physical bullying. Most NGB-affiliated club programs require coaches to report bullying and hazing to SafeSport for covered behavior, and to local authorities for criminal acts.
+54:For NGB-affiliated programs, SafeSport investigates hazing and bullying involving covered behavior. The reporting line is 720-531-0340 or uscenterforsafesport.org.
+64:If this content is reaching a kid in distress, the StopBullying.gov resource pages and the SafeSport Helpline at 720-531-0340 are both available.
+
+=== mental-health-crisis-conversation.md ===
+9:publishedAt: 2026-03-15
+28:  claudeReviewedAt: 2026-03-15
+30:  reviewerNotes: "Sensitive flagged. 988, AAP, AFSP, JED cited. Follows user-wellbeing guidance: no safety-assessment questions, no categorical confidentiality assurances, directs to professionals for crisis support."
+35:The next 30 minutes is one of the most important parental moments you will have. The script below is what the published research and clinical guidance from American Academy of Pediatrics (AAP), AFSP, and JED Foundation (JED) Foundation converges on. It is not therapy. It is what a thoughtful parent does to support a kid while connecting them to professional help.
+99:The published guidance from AAP, AFSP, and JED Foundation supports asking directly about suicidal thoughts when the conversation indicates concern. The research is clear: asking does not increase risk and often reduces it by acknowledging the topic.
+125:Lock up medications that could be used in overdose, including over-the-counter analgesics in large quantities. The AAP supports keeping medications in a locked cabinet for any household with a kid expressing concern.
+139:For immediate crisis: 988 Lifeline. Call or text. Free, 24/7, confidential within mandatory reporting limits.
+141:For ongoing care without active crisis: the AAP's Find a Pediatric Mental Health Professional tool, or insurance provider directories.
+
+=== lightning-at-the-field.md ===
+9:publishedAt: 2026-04-18
+16:  - name: "NCAA Sports Medicine Handbook: Lightning Safety"
+35:  claudeReviewedAt: 2026-04-18
+37:  reviewerNotes: "NWS, NFHS, NCAA all sourced. The 30/30 rule is the published standard. Concise moment-page format."
+42:The 30/30 rule is the standard from the National Weather Service, the National Federation of State High School Associations (NFHS), and the National Collegiate Athletic Association (NCAA) Sports Medicine Handbook. It is the cleanest rule in youth-sports weather safety because it is a count and a clock.
+

@@ -15,6 +15,7 @@ import {
   listCampsForUrlSweep,
   updateUrlHealth,
   archiveStaleCamps,
+  countApprovedFutureCamps,
 } from '../../../lib/camps-db';
 import { checkUrlHealth } from '../../../lib/url-health';
 
@@ -74,6 +75,21 @@ export const POST: APIRoute = async ({ request, locals }) => {
     console.error('[cron] stale archive failed', e);
   }
 
+  // 3. Blackout guard. If approved-and-future drops to 0, the camps sitemap
+  // and /camps/ index go empty and GSC starts losing pages, silently, for as
+  // long as nobody happens to look. This ran for two-plus weeks in June/July
+  // 2026 before anyone caught it. Log loud so `npx wrangler tail` on
+  // worker-cron (which hits this endpoint daily) shows it same-day.
+  let approvedFutureCount: number | null = null;
+  try {
+    approvedFutureCount = await countApprovedFutureCamps(env.DB);
+    if (approvedFutureCount === 0) {
+      console.error('[cron] CAMPS ALERT: approved+future camp count is 0. Sitemap and /camps/ are serving empty. Check pcd_status on the programs table — a migration or bulk write may have reset approvals.');
+    }
+  } catch (e) {
+    console.error('[cron] camps health check failed', e);
+  }
+
   return json({
     ok: true,
     today,
@@ -85,5 +101,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
       redirect: urlRedirect,
     },
     stale_archived: staleArchived,
+    approved_future_count: approvedFutureCount,
   });
 };
