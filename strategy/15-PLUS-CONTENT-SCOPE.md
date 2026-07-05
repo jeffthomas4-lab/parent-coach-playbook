@@ -24,16 +24,16 @@ This is a plan, not a build. Numbers below are pulled directly from `src/content
 | lacrosse-boys | 0 | 0 | 5 |
 | lacrosse-girls | 10 | 5 | 0 — DONE 2026-07-06 |
 | cross-country | 12 | 5 | 0 — DONE 2026-07-06 |
-| crew | 1 | 0 | 5 |
-| martial-arts | 1 | 0 | 5 |
+| crew | 6 | 5 | 0 — DONE 2026-07-06 |
+| martial-arts | 6 | 5 | 0 — DONE 2026-07-06 |
 | cheer | 13 | 5 | 0 — DONE 2026-07-06 |
-| stunt | 1 | 0 | 5 |
+| stunt | 6 | 5 | 0 — DONE 2026-07-06 |
 | band | 18 | 5 | 0 — DONE 2026-07-06 |
-| choir | 10 | 0 | 5 |
+| choir | 15 | 5 | 0 — DONE 2026-07-06 |
 | dance | 17 | 5 | 0 — DONE 2026-07-06 |
 | ballet | 10 | 0 | 5 |
 
-Batch 1 (25 articles) closed the gap for cross-country, lacrosse-girls, cheer, band, and dance. See `SEO-RECOVERY-PROGRESS.md` for the file list. 13 of 26 sports have zero 15+ articles. The other 13 have 1 to 3, thin against a 4 to 6 article count in the younger bands for the same sport. Target depth: 5 articles per sport, matching the density already built for ages 11-12 and 13-14. That's 96 articles to write across the roster, not a small lift, and worth batching the way Task 3 was batched this session, not attempted in one pass.
+Batch 1 (25 articles) closed the gap for cross-country, lacrosse-girls, cheer, band, and dance. Batch 2 (20 articles) closed the gap for crew, martial-arts, stunt, and choir. See `SEO-RECOVERY-PROGRESS.md` for both file lists. 9 of 26 sports still have zero 15+ articles: flag-football, football-7v7, lacrosse-boys (need a whole-sport scope first, see below) and ballet (Tier 1, not yet batched). The other 13 have 1 to 3, thin against a 4 to 6 article count in the younger bands for the same sport. Target depth: 5 articles per sport, matching the density already built for ages 11-12 and 13-14. That's 96 articles to write across the roster, not a small lift, and worth batching the way Task 3 was batched this session, not attempted in one pass.
 
 `football-7v7` and `lacrosse-boys` currently have zero articles at any age, not just 15+. Those two need a broader look before a 15+-specific plan makes sense, the age-band gap is really a whole-sport content gap.
 
