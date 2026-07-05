@@ -37,6 +37,6 @@ The result is that a player trying to fully commit to both ends up in scheduling
 
 The kids who handle this best: they pick one as primary, communicate it clearly to both programs at the start of the season, and accept the consequences on the secondary side. The kids who handle it worst: they try to split the schedule without telling either program, miss games for both, and get labeled as uncommitted by coaches in both environments.
 
-One factor that actually matters: where is your kid in the college process. A junior who is serious about playing college soccer and has identified target programs needs to be in front of college coaches, which means club. A freshman who loves the sport but is not yet thinking about college probably benefits from the high school experience without the pressure of the recruiting calendar.
+One factor that actually matters: where is your kid in the college process. A junior who is serious about playing college soccer and has identified target programs needs to be in front of college coaches, which means club. A freshman who loves the sport but is not yet thinking about college probably benefits from the high school experience without the pressure of the recruiting calendar, and [the full soccer pathway](/pathways/soccer/) shows how that pressure builds year by year.
 
 Ask your kid which one they would be sad to miss if they had to choose one. That answer is usually close to the right one.

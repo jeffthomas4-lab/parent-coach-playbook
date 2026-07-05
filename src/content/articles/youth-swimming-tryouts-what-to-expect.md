@@ -35,7 +35,7 @@ Club programs typically divide practice groups by ability level rather than by a
 
 Before the tryout, get your kid's current times if they have competed before. The club will often ask for this on the registration form. If your kid has never competed and has no times, say so honestly. Coaches handle this regularly.
 
-The day of: arrive early, be in the locker room with enough time to not be rushing onto the deck. Have a water bottle. Goggles that fit and do not leak.
+The day of: arrive early, be in the locker room with enough time to not be rushing onto the deck. Have a water bottle. Goggles that fit and do not leak matter more than anything else in the bag, and [the swim starter gear list](/what-to-buy/swimming/) covers what's actually worth buying new versus used.
 
 The kid should eat something light two hours before, not right before. And leave the coaching to the coach. A parent standing at the end of the lane calling out cues is the version of tryout day that makes coaches quietly dread parent season.
 

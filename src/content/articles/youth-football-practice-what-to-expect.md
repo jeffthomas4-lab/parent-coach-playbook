@@ -47,7 +47,7 @@ The last 30-40 minutes is team period, where the offense and defense work togeth
 
 Game week practices lean toward cleanup and review. Early-season practices lean toward installation.
 
-Contact: most youth programs at this age follow USA Football's contact guidelines, which limit live tackling to a percentage of total practice time. You will see full-speed drills without live tackling, form-tackling work against blocking pads or bags, and controlled contact periods. Full-speed live tackling in a full-pads practice is less common than parents expect.
+Contact: most youth programs at this age follow USA Football's contact guidelines, which limit live tackling to a percentage of total practice time. You will see full-speed drills without live tackling, form-tackling work against blocking pads or bags, and controlled contact periods. Full-speed live tackling in a full-pads practice is less common than parents expect, and [what the pads and helmet actually need to fit right](/what-to-buy/football/) matters more at this stage than the brand name on them.
 
 What good coaching looks like at this age: coaches who explain the why, not just the what. "Step with your outside foot because that cuts off the defender's path" lands differently than "step outside."
 

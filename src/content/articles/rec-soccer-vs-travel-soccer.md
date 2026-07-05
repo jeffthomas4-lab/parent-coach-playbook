@@ -41,7 +41,7 @@ The coaching quality varies more between programs than between rec and club cate
 
 What rec soccer is actually good at: low stakes, lots of play, friends who live nearby, a game on Saturday that does not require five hours of driving. For a kid who is still figuring out whether they love soccer, this is exactly the right environment. The fun-to-pressure ratio is favorable.
 
-What travel soccer is actually good at: more technical training, more competitive games, exposure to coaching that takes the sport seriously. These advantages matter more as the player develops and starts to have real positions, tactical awareness, and things to work on technically. At 10, most of those aren't there yet.
+What travel soccer is actually good at: more technical training, more competitive games, exposure to coaching that takes the sport seriously. These advantages matter more as the player develops and starts to have real positions, tactical awareness, and things to work on technically. At 10, most of those aren't there yet, which [the age-by-age soccer pathway](/pathways/soccer/) lays out in more detail.
 
 The trap: families who jump to club soccer at 8 because they are afraid of being behind, then spend the next four years building a financial and logistical commitment around a kid who would rather be doing something else. If your 8-year-old asks to play more, seeks out the ball at home, watches the sport, and talks about it, the travel question is worth having. If they like it fine and enjoy practice but would also be happy playing anything else, rec is where they belong for now.
 

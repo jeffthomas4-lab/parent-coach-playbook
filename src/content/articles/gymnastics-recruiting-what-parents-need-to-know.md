@@ -28,7 +28,7 @@ Division I gymnastics programs at major universities are small. A roster might c
 
 The realistic skill floor for D1 consideration is Level 9 or Level 10 with a strong all-around score. Elite (Level 10-plus) gymnasts get the most attention from the top programs. Coaches are looking for athletes who can contribute immediately and stay healthy through a college season, which means they want to see event-specific skill sets that project to college difficulty requirements.
 
-For gymnasts at Level 7 or 8, Division II and Division III programs are realistic options. D2 gymnastics programs are fewer in number but athletically serious. D3 gymnastics exists at a handful of colleges and typically does not offer athletic scholarships, but a strong academic school with a D3 gymnastics program can be an excellent fit for an athlete who loves the sport and the academic environment.
+For gymnasts at Level 7 or 8, the levels the [gymnastics pathway by age](/pathways/gymnastics/) maps out well before high school, Division II and Division III programs are realistic options. D2 gymnastics programs are fewer in number but athletically serious. D3 gymnastics exists at a handful of colleges and typically does not offer athletic scholarships, but a strong academic school with a D3 gymnastics program can be an excellent fit for an athlete who loves the sport and the academic environment.
 
 NCSA and gymnastics recruiting services are marketed heavily to gymnastics families. They are not required. A targeted email to a coaching staff with a competition video, scores, academic profile, and graduation year is the starting point. Coaches want to hear from prospective athletes directly.
 

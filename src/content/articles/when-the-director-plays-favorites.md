@@ -224,4 +224,4 @@ If it's a biased program, find a different one.
 
 And help your kid see: you belong here. You're part of this. Whether you're in the lead or the ensemble, you're valued.
 
-That's the message that matters most.
+That's the message that matters most. The [theater pathway by age](/pathways/theater/) is worth reading too, so you know what a fair casting pattern actually looks like at her age.

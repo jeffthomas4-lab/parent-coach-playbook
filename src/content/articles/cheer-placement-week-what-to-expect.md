@@ -42,3 +42,5 @@ We watched other cheer parents handle the week better than we did just by knowin
 The placements went up Friday night by email, not a taped list, which felt anticlimactic after a week that had built up so much. Our kid got assigned to a level 3 team as a backspot instead of the flyer position she'd hoped for, on a stunt group with two kids she didn't know yet. We'd braced for a hard conversation about disappointment, and what we got instead was a kid immediately texting a friend to ask who else was in her group, already moving on to the part of the sport that was actually in front of her.
 
 If your gym runs placement week this way, the useful thing to tell your kid before day one is that no single day decides anything, and no single skill either. It's the whole week, plus a stunt-group puzzle nobody in the family can see the pieces of. That's a strange thing to sit with for five days. It's just how this particular sport builds a team.
+
+[The cheer pathway](/pathways/cheer/) covers how levels and stunt groups keep shifting year to year, which helps explain why this week never gets less confusing the second or third time around.

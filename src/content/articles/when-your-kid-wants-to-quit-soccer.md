@@ -49,7 +49,7 @@ Is it the whole team, or one situation. Is it something a conversation could fix
 
 Not getting playing time: being benched or seeing limited minutes is the most common catalyst for a quit conversation at 11-12. The question here is not "did the coach make the right decision." The question is whether your kid is willing to work for more playing time, or whether the experience has stopped being worth it to them.
 
-Actually not interested anymore: some kids played soccer because their friends played, or because you signed them up at 7, or because it was the sport their family did. By 11 or 12, they sometimes realize they would rather be doing something else. That preference is legitimate.
+Actually not interested anymore: some kids played soccer because their friends played, or because you signed them up at 7, or because it was the sport their family did. By 11 or 12, they sometimes realize they would rather be doing something else. That preference is legitimate. Before you settle it, [the age-by-age soccer path](/pathways/soccer/) is worth a look, so you know whether the boredom is about soccer itself or just this season.
 
 Something harder: occasionally the reason is something heavier, a coach who has made them feel bad, a social situation that is painful, a fear they have not named. If the conversation keeps hitting a wall, try asking "is there something you haven't told me yet." Sometimes that opens the door.
 

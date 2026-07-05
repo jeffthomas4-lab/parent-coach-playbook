@@ -31,7 +31,7 @@ The basic structure: one morning practice, one afternoon practice, usually separ
 
 What state regulations typically cover: the number of days before a player can wear full pads (usually four to five days minimum in shells or helmets-only first), the maximum practice time per session, the required rest period between sessions, and wet-bulb globe temperature limits that suspend or modify practice in extreme heat. Your state's athletic association website has the specifics. Look them up before camp starts.
 
-What your kid needs to bring every single day: a full water bottle and a way to refill it, their own snacks for the break period (a lunch, not a bag of chips), sunscreen, and any prescribed medications. The program will not remind them about any of this.
+What your kid needs to bring every single day: a full water bottle and a way to refill it, their own snacks for the break period (a lunch, not a bag of chips), sunscreen, and any prescribed medications. The program will not remind them about any of this. [What actually holds up through two-a-days](/what-to-buy/football/) is worth checking before camp starts.
 
 The heat piece is serious. Exertional heat stroke is the leading cause of preventable death in high school athletics, and football in August is when it happens most often.
 

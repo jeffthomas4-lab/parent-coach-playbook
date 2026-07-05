@@ -27,7 +27,7 @@ editorial:
 
 Gymnastics training volume at the competitive levels is real. A Level 5 gymnast is often training 12 to 16 hours per week. That is on top of school, homework, and the rest of childhood. For most kids, that load is manageable. For some, it tips over into something that leaves marks.
 
-The physical signs are the more obvious ones. Persistent soreness that does not resolve with a rest day. Wrist pain, shin pain, or lower back pain that keeps coming back.
+The physical signs are the more obvious ones. Persistent soreness that does not resolve with a rest day, even with the foam rolling and recovery work [what to buy for gymnastics](/what-to-buy/gymnastics/) recommends between sessions, is not normal soreness. Wrist pain, shin pain, or lower back pain that keeps coming back is not normal either.
 
 Repeated minor injuries in the same spot. Fatigue that looks different from normal tired: the kind where the kid falls asleep in the car and cannot get up in the morning and the pattern holds week after week. Growth plate injuries, which gymnastics training can stress, often present first as vague localized pain that parents attribute to normal soreness. They are not always normal soreness.
 

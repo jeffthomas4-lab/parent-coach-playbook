@@ -143,7 +143,7 @@ Base pads (or mark with chalk).
 
 Home plate (or chalk).
 
-Rakes to level (optional but helpful).
+Rakes to level (optional but helpful). The [gear guide](/what-to-buy/baseball/) covers the rest of what's worth owning for backyard practice, throw-down bases and soft tee-ball balls included.
 
 **The setup time**
 

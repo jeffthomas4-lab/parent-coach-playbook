@@ -45,6 +45,6 @@ ID camps: most programs run ID camps during the summer. Your kid registers and a
 
 These are not free evaluations. They cost $100-$400 per camp. Attend camps at programs where there is genuine interest on both sides, not as a collection exercise.
 
-Film: a clean four-minute highlight reel with your kid's name, position, graduation year, and contact information is the baseline expectation. Include full-game clips if coaches ask. Tag the clips clearly.
+Film: a clean four-minute highlight reel with your kid's name, position, graduation year, and contact information is the baseline expectation. Include full-game clips if coaches ask. Tag the clips clearly, and if you want to see how this stage fits with what came before it, [the full soccer pathway](/pathways/soccer/) walks through it.
 
 Your role: help with logistics, proof the emails, drive to the camps, be quiet when coaches are watching. That is the whole thi

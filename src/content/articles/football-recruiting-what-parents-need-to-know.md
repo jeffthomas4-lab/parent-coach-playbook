@@ -43,7 +43,7 @@ Unofficial visits (you pay, you visit a campus) can happen at any age. Official 
 
 Film is the most important recruiting tool for a high school football player. A clean four-minute highlight film with position-specific clips, clearly labeled, gets watched. A 12-minute film that requires sorting through a lot of running time does not.
 
-Your kid's high school program usually produces this. If they do not, it is worth paying an editor $100-$200 to make a proper cut.
+Your kid's high school program usually produces this. If they do not, it is worth paying an editor $100-$200 to make a proper cut. [The football pathway by age](/pathways/football/) is worth a look too, so you know what benchmarks actually matter before recruiting season starts.
 
 What parents can do: send an introductory email to coaches at programs your kid is interested in. Attach the film. Include GPA, measurables, and a direct statement of interest.
 

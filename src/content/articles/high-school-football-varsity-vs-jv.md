@@ -43,6 +43,6 @@ The ones who come up to varsity as juniors with 20-30 JV games under their belt 
 
 The hard case: the junior who is still on JV. This is where the parent conversation gets difficult, and the right answer depends on the honest assessment of the kid's development versus the program depth at their position.
 
-A junior on JV is not automatically a story of failure. Some kids develop physically later than their peers and go from JV junior to starting senior. But it is worth having a direct conversation with the coaching staff about what the path looks like.
+A junior on JV is not automatically a story of failure. Some kids develop physically later than their peers and go from JV junior to starting senior. But it is worth having a direct conversation with the coaching staff about what the path looks like, and [the full football pathway](/pathways/football/) shows how common that late jump actually is.
 
 What to ask the coach: "What does he need to do to earn a varsity role?" That question gets you an actionable answer. "Why is he not on varsity" tends to get you a defensive o

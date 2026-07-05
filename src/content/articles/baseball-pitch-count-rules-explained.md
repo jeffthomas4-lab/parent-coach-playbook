@@ -48,4 +48,4 @@ Pitch count compliance is one of the few structural protections that actually wo
 
 A coach who asks a player to pitch around these limits is asking too much.
 
-**Travel baseball and tournaments.** The multi-day tournament format creates pressure to push limits. Know your program's pitch count policy before the season starts. Ask specifically how they handle tournament weekends when your kid might be asked to pitch in three games in two days.
+**Travel baseball and tournaments.** The multi-day tournament format creates pressure to push limits. Know your program's pitch count policy before the season starts. Ask specifically how they handle tournament weekends when your kid might be asked to pitch in three games in two days. The [gear guide by age](/what-to-buy/baseball/) covers what a pitcher actually needs at each stop, arm sleeve included once your kid hits travel ball.

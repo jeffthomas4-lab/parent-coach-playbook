@@ -39,7 +39,7 @@ Xcel was created specifically for athletes who want competitive gymnastics witho
 
 **Which track?**
 
-The gym recommends which track based on skill level, physical development, and hours available. Most families do not choose between JO and Xcel until the competitive track begins, usually around Level 3 or the pre-team assessment. A good gym will be direct about what they see and which path fits the athlete in front of them.
+The gym recommends which track based on skill level, physical development, and hours available. Most families do not choose between JO and Xcel until the competitive track begins, usually around Level 3 or the pre-team assessment. A good gym will be direct about what they see and which path fits the athlete in front of them, and the [gymnastics pathway by age](/pathways/gymnastics/) lays out what to expect at each stop on either track.
 
 **College gymnastics**
 

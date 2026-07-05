@@ -38,3 +38,5 @@ Tumbling requirements vary by program level. School sideline squads at the middl
 What to wear: comfortable athletic clothes that allow movement, hair secured so it does not fall in the face, and no jewelry. Tryout clinics usually specify whether shoes are required. Clean sneakers are standard.
 
 Your job as a parent: run the tryout material with them at home if they ask for a partner, help them memorize the counts, and stay out of the evaluation space on tryout day. The most common parent mistake at cheer tryouts is hovering too close to the gym door during the evaluation, visible to the kid, and creating a performance-pressure dynamic that was not there before you showed up.
+
+[The gear guide for cheer](/what-to-buy/cheer/) is worth a look before tryout day too, so shoes and hair supplies are not a last-minute scramble.

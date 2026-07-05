@@ -137,7 +137,7 @@ If a studio claims to offer both, ask to see the schedules. The teachers in the 
 
 ## The longer view
 
-Most kids who do ballet seriously end up doing it at a syllabus school by the time they are 11 or 12. The deeper technique is necessary for pre-professional training.
+Most kids who do ballet seriously end up doing it at a syllabus school by the time they are 11 or 12. The deeper technique is necessary for pre-professional training. The [ballet pathway by age](/pathways/ballet/) shows why that window matters and what comes next.
 
 Most kids who do ballet for fun stay at recital studios their whole dance lives. They have wonderful experiences and learn meaningful skills.
 

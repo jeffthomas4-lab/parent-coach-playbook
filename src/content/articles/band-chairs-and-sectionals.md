@@ -65,4 +65,4 @@ In high school, chair numbers tend to ossify. First chair is often the senior wh
 
 ## A small thing
 
-In most middle school bands, the chair number gets mentioned in the concert program. Her name is going to be listed with her chair, and she's going to compare to siblings, friends, and to her last concert. That's part of band. It's fine. The number means less than she thinks it does. Tell her that. Mean it.
+In most middle school bands, the chair number gets mentioned in the concert program. Her name is going to be listed with her chair, and she's going to compare to siblings, friends, and to her last concert. That's part of band. It's fine. The number means less than she thinks it does. Tell her that. Mean it. The [pathway by age](/pathways/band/) covers how chair placement tends to shift year over year, if you want the longer view.

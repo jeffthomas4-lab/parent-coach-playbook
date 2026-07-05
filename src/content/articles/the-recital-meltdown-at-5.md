@@ -220,4 +220,4 @@ The recital is just one option.
 
 If your kid's nervous system says not ready, listen to that.
 
-There's always next year.
+There's always next year. If dance is the activity in question, [the dance pathway](/pathways/dance/) shows how much room there is to start slow and build toward performance later.

@@ -40,3 +40,5 @@ STUNT, it turns out, is its own competitive discipline, built out of cheerleadin
 **None of this requires a decision at thirteen or fourteen.** The right move for most families at this age is information gathering, not commitment. Ask club coaches what they know about STUNT. Look at what a handful of target colleges currently offer, understanding that rosters and scholarship structures shift. Keep doing what the kid already loves, whether that's sideline cheer, competitive cheer, or some blend, and treat STUNT as one more option on a widening map rather than a verdict on whether the sport she's been doing for years was the wrong one all along.
 
 The camp coach's question stuck with us mostly because it opened a door we didn't know existed, not because it demanded an answer that day. We're still figuring out what fits our daughter best. What we know now, that we didn't know before that conversation, is that the option is real, growing, and worth a real look before anyone decides anything.
+
+[The stunt pathway](/pathways/stunt/) is a good next stop if you want to see how the discipline actually develops from club level through college recruiting.

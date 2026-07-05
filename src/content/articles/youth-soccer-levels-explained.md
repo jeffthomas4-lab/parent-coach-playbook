@@ -49,4 +49,4 @@ MLS Next: Major League Soccer's youth academy system. Invitation-only, attached 
 
 High school soccer: runs parallel to club for ages 14-18. The spring high school season does not typically conflict with fall club. The fall high school season can conflict with club commitments, which is a real decision families face at the club-school intersection.
 
-Where most kids fit: rec or developmental club through age 12, then a decision point. The families who make the decision too early (before the kid is ready) and the ones who make it too late (after the kid has fallen behind technically) both pay a cost. Match the level to the actual player, not the projected player.
+Where most kids fit: rec or developmental club through age 12, then a decision point. The families who make the decision too early (before the kid is ready) and the ones who make it too late (after the kid has fallen behind technically) both pay a cost. Match the level to the actual player, not the projected player, and [the age-by-age benchmarks](/pathways/soccer/) give you something more concrete to match against than a gut feeling.

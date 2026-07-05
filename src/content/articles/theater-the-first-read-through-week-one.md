@@ -59,3 +59,5 @@ The other version of a problem looks different. If her script is pristine two we
 ## The week-one rule of thumb
 
 If she comes home tired, a little bored, and carrying a marked-up script, you're exactly where you should be. The fun part doesn't start until tech week, and that's six weeks away. Pace yourselves.
+
+The [theater pathway by age](/pathways/theater/) is a useful read here too, since what "normal" looks like in week one shifts depending on her age and experience.

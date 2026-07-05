@@ -35,7 +35,7 @@ What mental toughness actually is in soccer: recovering attention quickly after 
 
 The psychological skill is focus and recovery, not numbness.
 
-How it develops: through reps in competitive situations where the outcome matters. A player who has been in high-pressure situations repeatedly, has made mistakes in those situations, and has come back and competed anyway, is building the real version of mental toughness. It is built on the field and in training, not in conversation.
+How it develops: through reps in competitive situations where the outcome matters. A player who has been in high-pressure situations repeatedly, has made mistakes in those situations, and has come back and competed anyway, is building the real version of mental toughness. It is built on the field and in training, not in conversation, and [what that competitive pressure should look like at 11-12](/pathways/soccer/) is worth knowing before you judge whether your kid is getting enough of it.
 
 What parents do that undermines it: the critique-in-the-car approach. A parent who spends the drive home reviewing every mistake their kid made is creating a second psychological environment that the kid has to manage during the next game. "Don't mess that up again" adds weight to the mistake rather than reducing it.
 

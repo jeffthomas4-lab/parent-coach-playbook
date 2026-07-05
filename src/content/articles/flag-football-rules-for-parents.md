@@ -45,4 +45,4 @@ What parents get wrong: the offside line. In flag football, neither team can mov
 
 Also, the no-contact rule applies to both teams. Defenders can pull flags but cannot push, trip, or grab clothing. If your kid is getting grabbed by the jersey instead of the flag, that is a flag-guarding or illegal contact call on the defense.
 
-The point of flag football at this age is not wins. It is touches. Every kid who goes through a full flag football season and actually touches the ball regularly is ready for a real football education when tackle becomes an opti
+The point of flag football at this age is not wins. It is touches. Every kid who goes through a full flag football season and actually touches the ball regularly is ready for a real football education when tackle becomes an option, and [the age-by-age football pathway](/pathways/football/) shows what that next step actually looks like.

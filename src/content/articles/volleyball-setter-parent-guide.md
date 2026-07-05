@@ -50,3 +50,5 @@ Your job is energy, not mechanics.
 **The mental side.** Setters at this age are often the players most susceptible to performance anxiety because their errors are the most visible. If your kid starts dreading matches or shutting down after mistakes in a way that's new, that's worth a conversation. Not about technique. About what volleyball feels like right now.
 
 The setter who makes it to high school and beyond is almost always the one who figured out how to play through the bad touches. That skill develops in environments where the adults around her make it safe to fail.
+
+The [volleyball pathway by age](/pathways/volleyball/) shows how the setter role tends to change as she moves from club to high school ball.

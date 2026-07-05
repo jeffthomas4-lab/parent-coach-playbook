@@ -51,4 +51,4 @@ Other sports get harder to maintain. Summer looks different. Some families manag
 
 A kid who asks to play catch in the backyard every night and watches baseball on his own is showing you something. A kid who goes to practice fine but never initiates anything is telling you something different. Both point toward different programs.
 
-At 8-10, there is no version of this decision that's irreversible. A kid who starts in Little League and develops quickly can move to travel at 11 or 12 with no lasting disadvantage. The kids who get hurt are the ones pushed into travel at 9 by parents who misread enthusiasm for readiness.
+At 8-10, there is no version of this decision that's irreversible. A kid who starts in Little League and develops quickly can move to travel at 11 or 12 with no lasting disadvantage. The kids who get hurt are the ones pushed into travel at 9 by parents who misread enthusiasm for readiness. The [age-by-age pathway](/pathways/baseball/) maps out what typically comes next either way, so you can see past this one decision.

@@ -58,4 +58,4 @@ Some kids panic at foreign language pieces. They feel like they'll mess up the w
 
 A kid who learns to sing in five languages by the end of high school has done something most adults never do. She's engaged with the literature of multiple cultures, learned that meaning is not the same as words, learned that beauty doesn't need a translator. A few of these kids will keep singing as adults, most won't, but all of them will remember the pieces. Foreign language repertoire is sticky in a way that English pop songs aren't, the Latin Kyrie from seventh grade is still in their head when they're forty.
 
-That's the gift. That's what choir is teaching her, even when she doesn't realize it.
+That's the gift. That's what choir is teaching her, even when she doesn't realize it. The [pathway by age](/pathways/choir/) shows how repertoire gets harder year over year, foreign languages included.

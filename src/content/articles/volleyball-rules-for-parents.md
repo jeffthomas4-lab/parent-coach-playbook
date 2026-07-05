@@ -44,3 +44,5 @@ Net serves are legal and in play in most current rule sets.
 **The libero jersey.** The player wearing the contrasting jersey is the libero, a back-row defensive specialist. They can substitute freely but can't attack the ball from above the net or set from the front zone using overhand finger action.
 
 **The thing parents get wrong most often.** Thinking the team scored a point when the other team's ball lands out. That is a point. Also: the rotation. Players can move anywhere once the serve is contacted, but they must be in the correct rotational order at the moment of service.
+
+Once the rules make sense, our [volleyball gear guide](/what-to-buy/volleyball/) covers what your kid actually needs to show up ready to play.

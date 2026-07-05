@@ -49,7 +49,7 @@ And then the bond, which is the part that will surprise you the most. Two weeks 
 
 Two refillable water bottles, because she needs sixty-four ounces a day minimum and more in real heat. Tap-water filled and frozen the night before will stay cold most of the day. A hat with an actual brim, not a backwards cap, sun in the eyes is a major source of headaches. Sunscreen, SPF 50, in a stick rather than a tube because she'll actually reapply it. Athletic shoes that are broken in, brand-new sneakers cause blisters by Wednesday, so if she needs new shoes for camp, buy them two weeks early and wear them every day.
 
-A pencil and a small binder for the drill sheets that get changed daily. A small towel for the back of her neck, for sweat, for sitting on hot bleachers. And salty snacks in the car for the ride home, pretzels, beef jerky, peanut butter sandwich, because she's been sweating salt all day and her body needs it back.
+A pencil and a small binder for the drill sheets that get changed daily. A small towel for the back of her neck, for sweat, for sitting on hot bleachers. And salty snacks in the car for the ride home, pretzels, beef jerky, peanut butter sandwich, because she's been sweating salt all day and her body needs it back. The [gear guide](/what-to-buy/band/) has the rest of the marching season list, garment bag and marching shoes included.
 
 ## Heat safety
 

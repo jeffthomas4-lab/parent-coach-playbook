@@ -50,3 +50,5 @@ Learn what to cheer for before the first match of the season.
 **What coaches remember.** Youth volleyball coaches pay attention to parent sections. The parent who is consistently disruptive in the stands becomes a factor in the coach's mental load, and that's not fair to the player. The parent who cheers and stays out of the way is the easiest kind of parent to coach a kid for.
 
 The short version: positive cheering, no coaching, no officiating from the bleachers. That's the entire job description for the stands.
+
+If you want the fuller picture of how the position mix on the floor works, the [volleyball positions breakdown](/pathways/volleyball/) explains why some kids rack up kills and others rack up digs.

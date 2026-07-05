@@ -53,4 +53,4 @@ Is the practice time real development time or just scrimmaging? The programs wor
 
 **What to ask before joining.** Total cost including travel estimates. Coaching staff background. Practice schedule. How many tournaments, and which ones are local versus travel. Whether there are academic requirements or team commitments that conflict with school schedules.
 
-The families who have the best club experience are usually the ones who went in knowing what they were buying.
+The families who have the best club experience are usually the ones who went in knowing what they were buying. Our [volleyball gear guide](/what-to-buy/volleyball/) covers what club actually costs once knee pads, shoes, and travel gear are added on top of the tryout fee.

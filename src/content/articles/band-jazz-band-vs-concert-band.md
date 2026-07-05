@@ -69,4 +69,4 @@ Most kids can't do all three forever. The kid who tries to do all three plus AP 
 
 ## The bottom line
 
-Concert band is the must. Marching band is the experience. Jazz band is the bonus. Help him pick the combination that fits the season he's in. Then take the pictures and let the music room change him. It will.
+Concert band is the must. Marching band is the experience. Jazz band is the bonus. Help him pick the combination that fits the season he's in. The [pathway by age](/pathways/band/) breaks down which of these tends to matter most at each grade, if you want a head start on next year's sign-up sheet. Then take the pictures and let the music room change him. It will.

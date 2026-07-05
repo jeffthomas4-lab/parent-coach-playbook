@@ -29,7 +29,9 @@ Distance running is a sport where the line between productive hard training and 
 
 The performance signal is the clearest one. A runner who is training consistently and working hard but whose race times are getting slower or flat across six weeks is not in a productive training phase. Performance should trend up with consistent training over a season. When it does not, the load or the recovery is wrong, and more training will make it worse, not better.
 
-Injury pattern is the second signal. One injury in a season is part of distance running. Recurring minor problems in the same area, shin pain that keeps coming back, IT band tightness that never fully resolves, metatarsal soreness that flares with every race, is a pattern. Runners who have a chronic low-level issue that their body is managing rather than healing are at elevated risk for a stress fracture. Stress fractures in the shin, foot, and femur are the severe end of a continuum that starts with these recurring warnings.
+Injury pattern is the second signal. One injury in a season is part of distance running. Recurring minor problems in the same area, shin pain that keeps coming back, IT band tightness that never fully resolves, metatarsal soreness that flares with every race, is a pattern.
+
+Runners who have a chronic low-level issue that their body is managing rather than healing are at elevated risk for a stress fracture. Stress fractures in the shin, foot, and femur are the severe end of a continuum that starts with these recurring warnings. Rotating shoes and [building actual recovery tools into the routine](/what-to-buy/cross-country/) cuts down on the repetitive-impact problems that start this pattern in the first place.
 
 Mood and motivation changes are real signs that get dismissed too easily. A runner who used to love the daily run and now has to be pushed out the door every day, who is more irritable or emotionally flat, who has lost the competitive interest they had six months ago, is telling you something. That pattern, alongside physical fatigue, is consistent with overreaching and in its more serious form with overtraining syndrome.
 

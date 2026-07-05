@@ -37,3 +37,5 @@ Unofficial visits are available before official contact opens. Attending a colle
 Walk-on opportunities exist in tennis at both D1 and D3 programs. A player who did not get recruited out of high school but who develops significantly in college is sometimes invited to join the team. Ask about this directly when visiting.
 
 Academic eligibility registration through the NCAA Eligibility Center is required for D1 and D2. D3 has different requirements. Get registered sophomore year and stay on track with core course requirements.
+
+[The tennis pathway](/pathways/tennis/) is worth reading too, especially for families still working out how local, sectional, and national tournament levels connect to that UTR number coaches care about.

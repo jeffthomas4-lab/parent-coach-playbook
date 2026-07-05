@@ -53,4 +53,4 @@ Maybe they walked six batters. They know it went badly. They don't need the reca
 
 The pitcher who learns to flush bad outings and show up for the next one is developing something that transfers far beyond baseball. The parent who helps that happen, instead of narrating every bad inning on the drive home, is doing real work.
 
-**One thing to ask the coach before the season.** "What does your arm care plan look like between starts?" A coach who has a clear answer is worth trusting with your kid's arm. A coach who hasn't thought about it is a reason to stay more involved.
+**One thing to ask the coach before the season.** "What does your arm care plan look like between starts?" A coach who has a clear answer is worth trusting with your kid's arm. A coach who hasn't thought about it is a reason to stay more involved. The [gear guide](/what-to-buy/baseball/) has the arm sleeve and other items worth adding once your kid is pitching at the travel level.

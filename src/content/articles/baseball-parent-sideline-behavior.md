@@ -53,4 +53,4 @@ Think about what that teaches.
 
 The easiest parents to coach for are the ones who never have to be addressed.
 
-One sentence, before every game: "I'm here to cheer for you." Then do exactly that.
+One sentence, before every game: "I'm here to cheer for you." Then do exactly that. The [pathway by age](/pathways/baseball/) has more on what's normal to expect from your kid's game at each stop, so you know what you're actually watching.

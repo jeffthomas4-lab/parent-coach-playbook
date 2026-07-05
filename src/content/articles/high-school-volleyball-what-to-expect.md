@@ -50,3 +50,5 @@ You don't consult on lineup decisions. You show up to matches, cheer, and drive 
 It's how development at this level actually works.
 
 **The one conversation to have before tryouts.** Sit down and ask your kid what she wants out of this season. Not what you want for her. What she wants. That answer tells you how to support her when things get hard.
+
+The [volleyball pathway by age](/pathways/volleyball/) walks through what comes after high school too, if you're wondering how this season fits the bigger picture.

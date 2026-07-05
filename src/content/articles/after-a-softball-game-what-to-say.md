@@ -40,3 +40,5 @@ Neither one needs you to fill the car with analysis.
 **After a great game.** Keep it proportional. "You were locked in at the plate tonight" is specific and real. A full highlight reel recap from the passenger seat is too much, even when it's well-intentioned.
 
 **The rule.** Your kid should want to get in the car with you after games. If she's dreading what's coming on the drive home, the ride is costing her something. Keep it easy. The game belongs to her.
+
+If you're still building out her bag, [the softball gear guide](/what-to-buy/softball/) covers what actually gets used versus what sits in the closet.

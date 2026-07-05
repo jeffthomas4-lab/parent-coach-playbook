@@ -66,4 +66,4 @@ Most kids go through voice change without medical concerns. A few don't. Signs t
 
 Most kids who sing through voice change end up with a more powerful, expressive voice than they had as children. Boy sopranos become tenors or baritones with real range, some end up basses with bottom notes that boy sopranos can only dream of. Girls who were thin sopranos in middle school sometimes become full mezzos in high school with the kind of voice that wins all-state auditions.
 
-The kid who sticks with singing through the awkward year is the kid who comes out with the voice that works. The kid who quits during voice change because it's embarrassing usually doesn't come back. Make sticking with it easier this year. The harder year is the year that pays off.
+The kid who sticks with singing through the awkward year is the kid who comes out with the voice that works. The kid who quits during voice change because it's embarrassing usually doesn't come back. Make sticking with it easier this year. The harder year is the year that pays off. The [pathway by age](/pathways/choir/) shows what tends to come after the voice settles, around 16 or 17 for most kids.

@@ -41,6 +41,6 @@ Others want silence. Ask before you assume.
 
 **After a rough game overall.** "That one was hard" and silence is a complete response. You don't have to make it better. You just have to not make it worse.
 
-**The rule.** The car ride home should not feel like a second loss. Your kid just went through whatever happened out there. They don't need to debrief it on the way home unless they want to.
+**The rule.** The car ride home should not feel like a second loss. Your kid just went through whatever happened out there. They don't need to debrief it on the way home unless they want to. The [age-by-age pathway](/pathways/baseball/) covers what a normal 11-12 season looks like, strikeouts included, if you want the bigger picture beyond one bad night.
 
 Let the game stay at the field.

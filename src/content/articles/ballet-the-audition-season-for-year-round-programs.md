@@ -104,7 +104,7 @@ The family cannot afford it without strain. Going into significant debt for a ye
 
 The current studio is meeting the kid's needs. Sometimes a strong local pre-professional studio is sufficient. Year-round is not the only path to a career.
 
-The kid is too young to be away from home. Most schools start year-round at age 14 or 15. Some accept younger. Be honest with yourself about whether your kid is ready to live away from family.
+The kid is too young to be away from home. Most schools start year-round at age 14 or 15. Some accept younger. Check the [ballet pathway by age](/pathways/ballet/) against where your kid actually is before you decide whether she is ready to live away from family.
 
 ## The academic question
 

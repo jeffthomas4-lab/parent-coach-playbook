@@ -187,4 +187,4 @@ If you dismissed it and said everything is fine, they learned not to trust their
 
 If you let them be disappointed while believing in them anyway, they learned resilience.
 
-That's the audition that matters.
+That's the audition that matters. The [theater pathway by age](/pathways/theater/) is a good next read if you want to know what casting and involvement tend to look like as she keeps going.

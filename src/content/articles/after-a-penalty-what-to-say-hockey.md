@@ -37,4 +37,4 @@ If they bring up the call themselves and think it was wrong, you can agree or di
 
 The rule: the drive home is not practice. Save any technical conversation for when the kid brings it up at the dinner table two days later, when the emotional charge is gone.
 
-One thing worth saying at some point, not in the car but soon: taking a penalty at eleven and twelve is normal. The best players in the game take penalties. Compete hard enough and sometimes you get caught. That is the game.
+One thing worth saying at some point, not in the car but soon: taking a penalty at eleven and twelve is normal. The best players in the game take penalties. Compete hard enough and sometimes you get caught. That is the game, and [how the levels break out](/pathways/hockey/) shows that even AAA players rack up penalty minutes on the way to getting good.

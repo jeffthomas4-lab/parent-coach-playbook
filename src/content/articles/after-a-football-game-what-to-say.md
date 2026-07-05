@@ -47,7 +47,7 @@ If they played terribly and they know it: "Those games are miserable. You'll fig
 
 They do not need a plan. They need to know you are still there.
 
-After a win, the same rules apply. Winning brings its own trap, which is the extended celebration that turns into unrealistic expectations about the next game.
+After a win, the same rules apply. Winning brings its own trap, which is the extended celebration that turns into unrealistic expectations about the next game. If you are still sorting out what is normal at your kid's age, [the football pathway by age](/pathways/football/) is a better guide than the car ride.
 
 Let them enjoy it. Do not start building it into something.
 

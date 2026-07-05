@@ -29,7 +29,7 @@ The first question is what gap you are actually trying to close. Extra training 
 
 At 11-12, the most common gaps: weak foot, first touch under pressure, finishing, and speed of decision-making. All four are real and all four can be worked on outside of team practice.
 
-None of them require expensive sessions. Most of them require a ball, a wall, and 20 minutes a day.
+None of them require expensive sessions. Most of them require a ball, a wall, and 20 minutes a day, and [what's actually worth buying for that kind of work](/what-to-buy/soccer/) is a shorter list than most parents think.
 
 Individual ball work at home: this is the most effective thing a developing soccer player can do. Juggling is the most basic version, and it builds touch, coordination, and ball familiarity in a way that team training cannot replicate because team training never gives an individual player enough repetitions.
 

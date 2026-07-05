@@ -19,7 +19,7 @@ export interface Env {
 type ManifestEntry = { url: string; sources: string[] };
 type Manifest = { generatedAt: string; count: number; links: ManifestEntry[] };
 
-const USER_AGENT = 'Mozilla/5.0 (compatible; ParentCoachPlaybookLinkChecker/1.0; +https://parentcoachplaybook.com/about/)';
+const USER_AGENT = 'Mozilla/5.0 (compatible; ParentCoachDeskLinkChecker/1.0; +https://parentcoachdesk.com/about/)';
 
 // Hosts we throttle aggressively because they bot-detect.
 const SLOW_HOSTS = new Set(['amazon.com', 'amzn.to', 'www.amazon.com', 'twitter.com', 'x.com', 'linkedin.com']);

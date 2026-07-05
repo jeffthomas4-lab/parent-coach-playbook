@@ -37,3 +37,5 @@ The recruiting profile matters. Your player needs a highlight film, their curren
 NCAA contact rules limit when college coaches can initiate communication. Parents and athletes can always initiate. Sending an email, filling out a program's online recruiting questionnaire, and attending college camps are all available before official contact opens.
 
 One thing worth saying clearly: early commitments in lacrosse are verbal and not binding. Players and programs have backed out of verbal commitments. Taking time to visit, understand the academic fit, and not rush a decision under pressure from a coach who is "closing the class" is reasonable and appropriate.
+
+[The full boys lacrosse pathway](/pathways/lacrosse-boys/) is worth reading alongside this, especially if you are still mapping out which club and showcase circuit fits your kid's level.

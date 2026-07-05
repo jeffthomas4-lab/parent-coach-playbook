@@ -48,7 +48,7 @@ Sort the classes by flexibility. Most English and history teachers will move a r
 
 ## Feeding her
 
-She isn't going to sit down for dinner during tech week. Pack food in the car: sandwiches, fruit, water bottles, protein bars. She'll eat in the parking lot between school and rehearsal. Avoid sugar bombs and caffeine in the second half of the week, she's already running on adrenaline, and a nine-pm soda turns into a one-am wake-up.
+She isn't going to sit down for dinner during tech week. Pack food in the car: sandwiches, fruit, water bottles, protein bars. She'll eat in the parking lot between school and rehearsal. Avoid sugar bombs and caffeine in the second half of the week, she's already running on adrenaline, and a nine-pm soda turns into a one-am wake-up. Our [theater gear guide](/what-to-buy/theater/) covers the dance bag basics worth packing before tech week starts, so you're not scrambling for a costume kit at 9pm.
 
 The night before opening, feed her something normal. Pasta, rice, something familiar. Not Chipotle, not anything she has to chew through. She needs fuel and sleep.
 

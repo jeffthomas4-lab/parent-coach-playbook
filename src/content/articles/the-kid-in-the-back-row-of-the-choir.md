@@ -157,7 +157,7 @@ After, you say: "I loved hearing all of you together. You sounded great."
 
 Simple. True. Done.
 
-Your kid might feel invisible. But you're telling them: being part of something is visible. It matters.
+Your kid might feel invisible. But you're telling them: being part of something is visible. It matters. The [pathway by age](/pathways/choir/) covers how solo chances tend to open up in later grades, if that's something your kid starts asking about.
 
 **The thing you tell yourself**
 

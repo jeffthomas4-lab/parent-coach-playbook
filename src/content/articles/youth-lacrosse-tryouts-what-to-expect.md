@@ -36,3 +36,5 @@ What coaches at the 11-12 level are actually weighing: stick skills first, athle
 One thing worth knowing: travel and club lacrosse tryouts often happen in January or February for spring programs, which means your kid is competing against players who have been in fall lacrosse leagues, winter wall-ball routines, and indoor clinics. Showing up to a February tryout having only played the previous spring is a real gap. The kids who make competitive teams in this sport almost always have a year-round relationship with their stick.
 
 Your job on tryout day: get them there on time, warm up together in the parking lot if you want to throw, and then step back. Do not stand on the sideline coaching. Do not make eye contact with them through the fence every time something goes wrong. Let the eval be the eval. Then on the drive home, lead with "how do you think it went?" and follow their lead.
+
+Before tryout season, [what actually matters for a boys lacrosse stick and pads](/what-to-buy/lacrosse-boys/) is worth a read so equipment is not the reason your kid looks unprepared.

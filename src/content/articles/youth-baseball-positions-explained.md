@@ -45,4 +45,4 @@ Nine positions, quick version.
 
 **Right fielder (RF).** Covers the right side. Throws to third base on hits, backs up first base on grounders. At youth levels this is where coaches sometimes put players still developing confidence.
 
-At 8-10, rotating kids through positions is good coaching. If your kid plays four spots in a season, that's development, not indecision.
+At 8-10, rotating kids through positions is good coaching. If your kid plays four spots in a season, that's development, not indecision. Once a position starts to stick, the [gear guide](/what-to-buy/baseball/) breaks down what's specific to it, catcher's gear and the right glove size included.

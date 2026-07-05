@@ -37,3 +37,5 @@ Parent rules during a round vary by tournament. Some events prohibit any parent 
 What to do when something goes wrong on the course: let your kid handle it. If there is a rules question, the player asks for a ruling from an official or figures it out with their playing partners. The parent on the course calling out distance numbers or suggesting club selection is interfering with the competition and, depending on the event, can cause a penalty.
 
 First tournament expectations: most kids play over their handicap in the first event. The nerves, the unfamiliar course, and the formality of competition scoring all push scores up. This is normal. Focus the debrief on what the experience taught them, not where they finished.
+
+Before that first event, [the golf gear guide](/what-to-buy/golf/) is worth checking so clubs and bag are dialed in and not a distraction on tournament day.

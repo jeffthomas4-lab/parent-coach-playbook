@@ -44,4 +44,4 @@ editorial:
 
 **The thing parents get wrong most often.** Calling out fouls from the stands that weren't called. The ref's job is to call what they see. Your kid's job is to keep playing.
 
-Yelling "foul!" on every contact doesn't help either of them.
+Yelling "foul!" on every contact doesn't help either of them. Once the rules click, our [basketball gear guide](/what-to-buy/basketball/) covers what's actually worth buying for practice and game day.

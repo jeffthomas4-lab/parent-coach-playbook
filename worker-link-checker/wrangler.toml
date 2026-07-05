@@ -21,7 +21,7 @@ preview_database_id = "REPLACE_WITH_YOUR_PREVIEW_D1_ID"
 
 # Optional: configure the manifest URL via env var so we can point at staging in dev.
 [vars]
-MANIFEST_URL = "https://parentcoachplaybook.com/link-manifest.json"
+MANIFEST_URL = "https://parentcoachdesk.com/link-manifest.json"
 LINKS_PER_RUN = "50"
 ROTATION_DAYS = "180"
 

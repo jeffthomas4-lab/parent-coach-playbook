@@ -41,4 +41,6 @@ We're not saying the fixation goes away after one car ride. He still checks his 
 
 A few weeks after that first car ride, he asked us to help him build his own version of the list, times from every meet going back to his first season the year before. He wanted it typed up, not just scrolled through on the app, said it was easier to see the shape of it that way. We sat at the kitchen table one evening and typed his times into a note on the phone while he called them out from memory, correcting us twice when we mistyped a tenth of a second. Watching him build that list himself, instead of us pulling it up for him in the car, felt like the actual turn. He wasn't asking us to prove the trend to him anymore. He wanted to see it laid out in his own words.
 
-That list came in handy a month later when he had a genuinely bad meet, a 70.3 that was slower than almost everything he'd run all seas
+That list came in handy a month later when he had a genuinely bad meet, a 70.3 that was slower than almost everything he'd run all season, and he pulled it up himself before we could say a word.
+
+[The gear guide for track and field](/what-to-buy/track-field/) is worth a look too. The right spikes will not fix a fixation on one number, but bad ones can cost real tenths.

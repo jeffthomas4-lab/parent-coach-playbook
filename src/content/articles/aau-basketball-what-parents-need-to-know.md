@@ -54,3 +54,5 @@ Summer looks different than it did before. Some families handle this fine. Other
 **Cost.** Program fees typically cover registration, uniforms, and sometimes tournament entry. Add hotel, meals, and gas for every travel weekend and the real cost is higher than the listed fee. Budget $1,500 to $3,000 for a regional-level program and $3,000 to $6,000 for a national one before you commit.
 
 **The question to ask yourself.** Is your kid driving this, or are you? The parents who are most satisfied with the AAU experience are the ones whose kid asked for it and kept asking after the first hard tournament weekend. The families who struggle are the ones where the kid is going through the motions while the parent manages the schedule.
+
+The [basketball pathway by age](/pathways/basketball/) is worth reading before you commit, since it maps out when AAU actually starts to matter for development and when rec still does the job fine.

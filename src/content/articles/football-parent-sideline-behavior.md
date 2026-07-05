@@ -43,7 +43,7 @@ Cheer for the whole team, not just your kid. The parent who only makes noise whe
 
 Do not coach from the sideline during the game. Save observations for the drive home, and even then, ask questions rather than delivering analysis.
 
-Do not talk to the coach during the game unless someone is hurt. The coach is working. They will talk to you after.
+Do not talk to the coach during the game unless someone is hurt. The coach is working. They will talk to you after. If your energy on the sideline needs somewhere else to go, [what to actually pack and wear](/what-to-buy/football/) is a more useful project than critiquing the officials.
 
 Do not argue with officials. Ever. At any level.
 

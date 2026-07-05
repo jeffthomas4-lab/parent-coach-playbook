@@ -40,3 +40,5 @@ Tennis asks two things of parents that most other youth sports don't: physical d
 **What we found ourselves doing instead was tracking the emotional arc of the match rather than the score.** Since we couldn't always tell exactly what was happening ball by ball, we started paying attention to body language between points, whether our kid's shoulders were up or down, how fast she walked back to the baseline, whether she took a breath before serving. That became its own way of watching a match, less precise than knowing every point, but genuinely engaging in a different way.
 
 By the third tournament we had a system: quiet during play, applause and a small nod between points, real conversation saved for the changeover, and binoculars in the bag without embarrassment. The sideline instinct never fully goes away. It just gets rerouted into a smaller, quieter, more patient version of itself, delivered from two hundred feet away instead of five.
+
+[The tennis gear guide](/what-to-buy/tennis/) covers what actually belongs in that tournament bag, binoculars included.

@@ -73,3 +73,5 @@ If you see any of these, talk to the pediatrician. Early intervention is the dif
 Most kids who notice their bodies in dance class grow up to have a complicated but not destructive relationship with their bodies. They learn to dance in the body they have. They make peace with the comparisons over time. A few don't, and the signs above tell you when you're in that smaller group.
 
 The single biggest variable is the adults around them. A studio with healthy culture, a family with healthy language, and a teacher who sees the kid as a kid first and a body second produces dancers who can keep dancing for life. That's the goal. Not a particular body. A body that can keep moving.
+
+[The dance pathway](/pathways/dance/) is worth reading too, since knowing what different tracks actually ask of a body helps this conversation land with real information instead of just reassurance.

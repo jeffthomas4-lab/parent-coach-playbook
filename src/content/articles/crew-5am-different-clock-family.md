@@ -40,3 +40,5 @@ Nobody in our family had rowed before, and nobody had warned us that crew runs o
 **Weekends don't offer a break, which surprised us more than the weekday mornings did.** Regattas often start even earlier than practice, with boats needing to launch and warm up before a full day of racing that can run until early afternoon. A Saturday regatta might mean a 4am alarm, a drive to another town, hours of watching heats from a riverbank, and a drive home in the dark. We learned to treat regatta weekends as their own category of exhausting rather than expecting them to feel like a normal weekend with a sports event tacked onto it.
 
 By the end of the first full season, the early clock had stopped feeling like an emergency and started feeling like just what our family did during rowing months. The alarm still goes off at 4:40. The dog still barks once and gives up. But dinner's earlier, breakfast travels in the car, and the ninety minutes in a dark parking lot has become, unexpectedly, one of the more peaceful parts of our week.
+
+[The crew gear guide](/what-to-buy/crew/) covers what actually makes those cold, dark mornings more bearable, layers included.

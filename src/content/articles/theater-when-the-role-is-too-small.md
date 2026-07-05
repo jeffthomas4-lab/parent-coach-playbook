@@ -53,3 +53,5 @@ The exception is a role she genuinely cannot do for a real reason, a heavy dance
 ## A note on the gap year
 
 If your kid is hurt enough by a bad casting that she wants to step away, sometimes that's the right call. But the step away should be at least a full year. Skipping one show in the middle of a season looks like a tantrum; choosing not to audition for the next full season because she wants to focus on something else looks like a decision. Help her tell the difference.
+
+The [theater pathway by age](/pathways/theater/) can help you judge whether the role she got is actually a mismatch for her age and stage, or just a hard year.

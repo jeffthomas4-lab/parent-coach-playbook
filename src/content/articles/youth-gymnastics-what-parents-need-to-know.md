@@ -36,7 +36,7 @@ How do you pick a gym? Visit before enrolling. Watch a class in the age group yo
 
 The gym should be clean, the equipment well-maintained, and the coaches interacting with kids rather than watching from the corner. Ask whether coaches are USA Gymnastics SafeSport certified. That certification matters and reputable gyms have it.
 
-Cost for recreational gymnastics runs $80 to $180 per month depending on market and program. That is for once-a-week classes. More sessions cost more.
+Cost for recreational gymnastics runs $80 to $180 per month depending on market and program, and that number is nearly the whole budget since [what to buy for gymnastics](/what-to-buy/gymnastics/) is short: a leotard, and not much else at this age. That is for once-a-week classes. More sessions cost more.
 
 The competitive track is a separate decision. Gymnastics gyms invite kids who show aptitude into pre-team or developmental programs, usually around age six to nine. This means more hours, more cost, and more commitment.
 

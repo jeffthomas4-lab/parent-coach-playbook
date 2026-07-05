@@ -33,7 +33,9 @@ When a parent pushes a kid to run the easy days harder, either by jogging alongs
 
 The second thing parents often misunderstand is mileage buildup. Injury risk in distance running is directly tied to too much, too fast. The standard guideline is not increasing weekly mileage by more than 10 percent per week.
 
-A kid who goes from summer break to training 40 miles per week in the first week of cross country practice is at real risk for shin splints, stress reactions, and IT band problems. Good programs build carefully. Families who add extra miles on top of team training without coordinating with the coach are taking on risk they may not realize they are taking on.
+A kid who goes from summer break to training 40 miles per week in the first week of cross country practice is at real risk for shin splints, stress reactions, and IT band problems. Good programs build carefully. Worn-out trainers make that risk worse, so check [what actually holds up at this mileage](/what-to-buy/cross-country/) before the shoes become the injury.
+
+Families who add extra miles on top of team training without coordinating with the coach are taking on risk they may not realize they are taking on.
 
 What parents can actually do to help: prioritize sleep, which is when adaptation happens. Make sure the kid is eating enough, because teenage distance runners have high caloric needs that do not always match their appetite. Keep morning race-day routines calm. And leave the pace discussion to the coach.
 

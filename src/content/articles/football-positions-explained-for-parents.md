@@ -45,7 +45,7 @@ The positions kids at 8-10 are most likely to play: receiver, running back, line
 
 A word on what position means at this age. At 8-10, position assignment is mostly logistics. A coach putting your kid at guard is not closing a door.
 
-Positions change constantly as kids grow and develop. A guard at 9 becomes a tight end at 13 all the time. The kid who learns to block early often becomes the most technically sound offensive lineman on the field at 14.
+Positions change constantly as kids grow and develop. A guard at 9 becomes a tight end at 13 all the time. The kid who learns to block early often becomes the most technically sound offensive lineman on the field at 14, and [the football pathway by age](/pathways/football/) walks through how those position shifts tend to play out.
 
 Do not let the 8-year-old position assignment carry more weight than it deserves.
 

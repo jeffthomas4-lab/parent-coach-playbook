@@ -39,6 +39,6 @@ When offside cannot be called: on a throw-in, corner kick, or goal kick. These a
 
 What you will see on the field: the assistant referee (linesperson) runs the line with the flag ready. When they judge a player to be offside, they raise the flag and the referee stops play. The other team gets an indirect free kick from where the offside player was when they received the ball.
 
-The honest disclaimer: at youth levels under age 12, many leagues do not enforce offside strictly, or waive it entirely, to let players focus on other skills. If your 8-year-old was called offside and you are confused about it, the youth program may be experimenting with partial enforcement.
+The honest disclaimer: at youth levels under age 12, many leagues do not enforce offside strictly, or waive it entirely, to let players focus on other skills. If your 8-year-old was called offside and you are confused about it, the youth program may be experimenting with partial enforcement, and [the age-by-age soccer pathway](/pathways/soccer/) explains what each level tends to prioritize.
 
 Ask the coach what the league rules are. The answer varies

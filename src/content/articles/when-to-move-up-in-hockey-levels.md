@@ -37,3 +37,5 @@ Age and birth year matter more at eleven and twelve than at fifteen and sixteen.
 The cost of moving too early is underrated. A player who moves from house B to travel AA before they are ready and spends a season getting outskated and outmuscled at every shift is not developing. They are surviving. That experience at eleven can stick. A kid who loses confidence in the game at that age sometimes does not get it back.
 
 Moving down is also available. If your kid moved up and it is clearly not working after two months, find out if the lower-level roster still has a spot. Programs handle this differently, but it happens. There is no shame in it, and framing it as adjusting to what the kid needs rather than as failure matters when you have that conversation with them.
+
+If you are still sorting out what house, travel, and AAA actually mean before you make this call, [the level-by-level breakdown](/pathways/hockey/) is worth reading first.

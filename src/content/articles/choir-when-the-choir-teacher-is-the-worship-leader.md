@@ -66,4 +66,4 @@ A few specific moves. Praise her for the work, not for the volume: "I heard you 
 
 Most kids who do both church and school choir in middle school don't keep both up in high school, the schedule gets crushed by other commitments. Some pick school choir for the four years of high school and let church choir lapse, then sometimes come back to it in college. Some go the other way, keeping church choir as the steady thing and letting school choir take whatever shape the schedule allows. A few keep both, and those are the kids who go to college music programs.
 
-You don't have to know which one she'll be. She doesn't have to know either. Let the seasons play out. She'll pick the one that's hers.
+You don't have to know which one she'll be. She doesn't have to know either. Let the seasons play out. She'll pick the one that's hers. The [pathway by age](/pathways/choir/) has more on how the school-choir track builds year over year, if that's the one she leans toward.

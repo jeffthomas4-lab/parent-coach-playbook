@@ -43,6 +43,6 @@ The midfielder who touches the ball forty times and loses it twelve times may be
 
 What ruins the game for your kid: parents who shout instructions. There are already two coaches on the sideline. Adding a third from the parent section creates a second conversation in your kid's head that does not belong there.
 
-Cheer, applaud good plays, and stay quiet about mistakes. That is the whole job.
+Cheer, applaud good plays, and stay quiet about mistakes. That is the whole job. If you are new enough to the sport that you are still not sure what your kid actually needs on the field, [the soccer gear breakdown](/what-to-buy/soccer/) covers it without the sales pitch.
 
 After the game, ask your kid one question: what moment felt best to you. Not "did you win," not "why didn't you score," not "what was the coach doing." What felt best. That question lands differently than anything else, and the answer usually tells you a l

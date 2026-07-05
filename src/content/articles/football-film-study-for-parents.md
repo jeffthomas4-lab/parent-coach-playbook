@@ -41,4 +41,4 @@ The brain retains the feel of the play and film shows the reality of it. That ga
 
 What parents should not do: use film as evidence in a conversation with the coach about why your kid should get more playing time. Coaches use film that way too, and they see the same footage you do. If you want to discuss your kid's development, do it without the film analysis.
 
-One honest thing: a 13-14 year old who independently watches film, asks questions about it, and brings observations to practice is a player that coaching staffs notice. Not because it is flashy. Because it is rare.
+One honest thing: a 13-14 year old who independently watches film, asks questions about it, and brings observations to practice is a player that coaching staffs notice. Not because it is flashy. Because it is rare, and [the football pathway by age](/pathways/football/) shows what habits like this build toward at the next level.

@@ -39,7 +39,7 @@ The most technical stroke and the one that generates the most disqualifications 
 
 **Butterfly**
 
-Both arms pull simultaneously over the water and recover together. Dolphin kick: both legs together in an undulating wave movement. No flutter kick is allowed. Turns and finish require simultaneous two-hand touch, same as breaststroke. Butterfly is physically the most demanding and is usually the last stroke young swimmers add.
+Both arms pull simultaneously over the water and recover together. Dolphin kick: both legs together in an undulating wave movement. No flutter kick is allowed. Turns and finish require simultaneous two-hand touch, same as breaststroke. Butterfly is physically the most demanding and is usually the last stroke young swimmers add, right around the stage [the swimming pathway](/pathways/swimming/) marks as the move into full four-stroke racing.
 
 **Individual medley (IM)**
 

@@ -38,4 +38,4 @@ Division III and NAIA hockey programs do recruit more directly from high school 
 
 Academic eligibility runs through the NCAA Eligibility Center the same way it does for other sports. The GPA and course requirements apply regardless of how the hockey pathway goes. Players who spend two years in junior hockey and then arrive at a D1 program with a weak academic transcript have a problem.
 
-Families of serious hockey players should understand the USHL draft and the implications of being selected by a junior team, which affects amateur status and future options. Get a clear picture of those rules from a player agent or USA Hockey before a player commits to any junior program.
+Families of serious hockey players should understand the USHL draft and the implications of being selected by a junior team, which affects amateur status and future options. Get a clear picture of those rules from a player agent or USA Hockey before a player commits to any junior program. [The full pathway from house league to college](/pathways/hockey/) is worth reviewing early, before any junior commitment gets made.

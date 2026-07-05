@@ -41,4 +41,6 @@ We caught ourselves whispering "good luck, buddy" to him one more time as he wal
 
 We talked to another parent afterward, whose daughter had tested for her third belt a year earlier, and she said something that stuck with us. She'd made herself a rule after her daughter's first test: sit on your hands if you have to, but don't let your kid see your face doing anything other than watching normally. She said her daughter, at the first test, had actually turned around mid-form to check her mother's expression, and the sight of her mother's white-knuckled grip had visibly rattled her for a second before she recovered. Kids that age are reading the room constantly, even mid-performance, and a parent's tension is one of the most legible things in it.
 
-That conversation changed how we sat for the rest of the test, not just that day but for the ones that followed months later. We started keeping our hands folded loosely in our lap instead of gripping anything, mostly as a physical reminder to ourselves rather than a performance 
+That conversation changed how we sat for the rest of the test, not just that day but for the ones that followed months later. We started keeping our hands folded loosely in our lap instead of gripping anything, mostly as a physical reminder to ourselves rather than a performance for him.
+
+If you are still working out what belt tests actually require in the way of gear, [the martial arts gear guide](/what-to-buy/martial-arts/) is worth a look before the next one comes up. 

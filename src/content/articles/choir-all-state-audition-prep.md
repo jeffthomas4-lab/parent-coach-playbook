@@ -73,4 +73,4 @@ If she doesn't make it, here's the truth: most kids who eventually make all-stat
 
 If your kid is intimidated by the audition, don't minimize it. Tell her this is a real test. Some of the kids in the room have been preparing for this since sixth grade. The audition is hard. Then help her practice the sight-reading every day. The kid who does five minutes a day for six months walks into the room ready. The kid who crammed two weeks before walks in nervous.
 
-This is one of the few skills where consistency beats intensity. Five minutes a day, every day, through the holidays, through illness, through any other practice slowdown. The kids who make all-state are the kids who did the boring daily thing.
+This is one of the few skills where consistency beats intensity. Five minutes a day, every day, through the holidays, through illness, through any other practice slowdown. The kids who make all-state are the kids who did the boring daily thing. The [pathway by age](/pathways/choir/) covers how the all-state track builds from middle school on, if this is the first of several tries.

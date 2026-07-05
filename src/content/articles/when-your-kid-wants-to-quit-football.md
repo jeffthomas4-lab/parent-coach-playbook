@@ -43,7 +43,7 @@ If the reason is the team: a coach who makes them feel bad, teammates who are no
 
 A coach who communicates poorly is a temporary condition. A coach who singles your kid out for humiliation is not.
 
-If the reason is the sport itself: they are bored, they liked it more when it was flag, they want to try something else. This is the most common real answer at this age and the one parents push back on the hardest.
+If the reason is the sport itself: they are bored, they liked it more when it was flag, they want to try something else. This is the most common real answer at this age and the one parents push back on the hardest. [What each age and level actually asks of a kid](/pathways/football/) is worth a look before you decide whether the fit is really gone.
 
 But a kid who has genuinely lost interest in a sport is not going to rediscover it by being told to finish the season. They are going to hate the sport by the end and never come back.
 

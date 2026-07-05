@@ -27,7 +27,9 @@ editorial:
 
 We were at a red light on a Tuesday, nowhere near a track or a course, checking the results app to see if the times from Saturday's meet had been corrected. They hadn't changed. We knew they hadn't changed, because we had checked twelve hours earlier and the times don't get revised, they just get posted and sit there. We checked anyway. The light turned green and we were still holding the phone when the car behind us honked.
 
-Nobody warns a family about this part of cross-country. The sport itself is straightforward: kids run a course, a clock records a time, the time goes on a website. What we didn't expect was how quickly refreshing that website became a habit that had almost nothing to do with our actual kid and everything to do with us. By October we knew the results app better than we knew our own kid's homework schedule. We could recite her season progression to the second. We could not have said what she was reading for language arts.
+Nobody warns a family about this part of cross-country. The sport itself is straightforward: kids run a course, a clock records a time, the time goes on a website. What we didn't expect was how quickly refreshing that website became a habit that had almost nothing to do with our actual kid and everything to do with us.
+
+By October we knew the results app better than we knew our own kid's homework schedule. We could recite her season progression to the second, when [what actually matters at eleven](/pathways/cross-country/) has almost nothing to do with a single Saturday's number. We could not have said what she was reading for language arts.
 
 It started innocently enough. The first meet, we checked once, to see how she did, the way we'd check any score. Then we noticed we could see her ranked against every other sixth grader in the meet, then against every sixth grader in the district, then, if we clicked one more link, against the whole state list for her age group. That last click was the mistake. Once we saw the state list, we started checking to see if she'd moved up it, which she had no real interest in and had never asked us to track.
 

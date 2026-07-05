@@ -54,3 +54,5 @@ It just means your planning should account for the realistic range.
 A 6'2" guard who can shoot, plays hard on defense, and has a 3.4 GPA gets a lot of D3 calls. That player is more common than people think, and there are more spots for that player than the D1 obsession implies.
 
 The families who handle this well are the ones who research schools realistically, start outreach early, and let their kid drive the process. The ones who struggle tend to be chasing a level that doesn't fit the player.
+
+The [basketball pathway by age](/pathways/basketball/) covers what the years before high school should look like if college ball is a real goal.

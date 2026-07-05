@@ -27,7 +27,7 @@ npm run secret:key
 Always `npm install` first. Without a local `node_modules`, Wrangler walks up the directory tree and detects the parent Astro project as a Pages project, then refuses to deploy.
 
 ```powershell
-cd "$HOME\Desktop\Claude Cowork\Outputs\parent-coach-playbook\worker-cron"
+cd "$HOME\Desktop\Claude Cowork\Outputs\parent-coach-desk\worker-cron"
 npm install
 npm run deploy
 ```

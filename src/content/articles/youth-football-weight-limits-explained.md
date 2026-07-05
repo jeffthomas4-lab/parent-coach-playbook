@@ -37,6 +37,6 @@ Weigh-ins: most programs weigh players before the season. Some leagues require w
 
 What to do if your kid is over the limit: first, confirm the limit for your specific league before you assume. Second, understand that playing offensive or defensive line at this age is not a consolation position.
 
-Many of the best football players at 14 and above came up as linemen at 9 and 10. The kids who learn to block and engage early often develop skills that skill-position kids do not.
+Many of the best football players at 14 and above came up as linemen at 9 and 10. The kids who learn to block and engage early often develop skills that skill-position kids do not, and [what linemen actually go on to do at the high school level](/pathways/football/) backs that up.
 
 One thing to handle carefully at home: the conversation around weight in sports needs to be about function and the rules, not about the kid's body. "The league rule says players over X pounds play on the line, so that is where you will play" is the right framing. Anything that makes your kid feel like their weight is a problem they need to fix is not

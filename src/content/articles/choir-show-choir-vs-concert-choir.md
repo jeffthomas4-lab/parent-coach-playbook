@@ -68,6 +68,6 @@ A kid can move between concert choir and show choir if she needs to. Some kids f
 
 ## Where to put your bet
 
-If she's a strong singer with no dance background and she wants to sing seriously, concert choir is the path. She'll probably audition for all-state, work on her voice, and look at college choir programs. If she wants the social and performance side of choir and she likes to move, show choir is the path, she'll travel, compete, perform in matching outfits, and have a peer group that's wildly close. If she wants both, she'll do both, since most show choir kids are also in concert choir during the day. Concert choir is the class. Show choir is the extracurricular.
+If she's a strong singer with no dance background and she wants to sing seriously, concert choir is the path. She'll probably audition for all-state, work on her voice, and look at college choir programs. If she wants the social and performance side of choir and she likes to move, show choir is the path, she'll travel, compete, perform in matching outfits, and have a peer group that's wildly close. If she wants both, she'll do both, since most show choir kids are also in concert choir during the day. Concert choir is the class. Show choir is the extracurricular. The [gear guide](/what-to-buy/choir/) covers what concert choir actually costs to outfit, which is a useful contrast once you've seen the show choir number above.
 
 Either way, she's singing. That's the win.

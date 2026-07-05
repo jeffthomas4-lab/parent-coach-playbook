@@ -36,7 +36,7 @@ The email came on a Tuesday afternoon. Your eleven-year-old just got offered a s
 
 A pre-professional ballet program is a multi-class-per-week training track at a serious studio. The goal is to prepare dancers for the audition rooms of professional company schools or directly for professional careers.
 
-A pre-pro schedule for a ten-to-thirteen-year-old usually looks like this. Ballet technique class four to five times per week. Pointe class one to two times per week (for kids who are on pointe). Variations class once a week. Stretch or conditioning class once a week. Sometimes character dance, contemporary, or modern as supporting styles. Performance opportunities, most pre-pro programs include a year-end student production, often a ballet like The Nutcracker for the holiday season and a spring concert.
+A pre-pro schedule for a ten-to-thirteen-year-old usually looks like this. Ballet technique class four to five times per week. Pointe class one to two times per week (for kids who are on pointe, a step [the gear guide](/what-to-buy/ballet/) covers in more depth). Variations class once a week. Stretch or conditioning class once a week. Sometimes character dance, contemporary, or modern as supporting styles. Performance opportunities, most pre-pro programs include a year-end student production, often a ballet like The Nutcracker for the holiday season and a spring concert.
 
 Total classroom time is usually ten to sixteen hours per week at the younger end and sixteen to twenty-two hours at the upper end.
 

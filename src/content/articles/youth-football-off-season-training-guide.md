@@ -37,7 +37,7 @@ A program designed by a qualified strength coach or a knowledgeable high school 
 
 Speed and agility: sprinting, change-of-direction drills, first-step work. This is the training category with the clearest transfer to football performance.
 
-It does not require expensive equipment or a private coach. A stopwatch, some cones, and a flat surface work fine. Two sessions per week in the off-season is realistic.
+It does not require expensive equipment or a private coach. A stopwatch, some cones, and a flat surface work fine, and [what's actually worth buying for training at this age](/what-to-buy/football/) is a short list. Two sessions per week in the off-season is realistic.
 
 Skill work: position-specific reps. Routes and catching for receivers. Footwork and hand placement for linemen.
 

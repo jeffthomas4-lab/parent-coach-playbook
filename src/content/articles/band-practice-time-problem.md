@@ -51,7 +51,7 @@ If you can hear the same eight bars three times in a row, that's good practice. 
 
 ## The metronome question
 
-A metronome is the single most useful thing a beginning band kid can have on her music stand. Most students play their pieces faster than they can actually play them and then slow down at the hard parts, and that's the single most common cause of slow progress in early band. The fix is to play with a metronome at a tempo slow enough that she can play the whole section cleanly, then advance two clicks at a time. Phones have free metronome apps. She'll resist using one. She's right that it's annoying. She's wrong that she doesn't need it.
+A metronome is the single most useful thing a beginning band kid can have on her music stand. The [gear guide](/what-to-buy/band/) covers the foldable stand worth keeping at home so practice is easy to set up in the first place. Most students play their pieces faster than they can actually play them and then slow down at the hard parts, and that's the single most common cause of slow progress in early band. The fix is to play with a metronome at a tempo slow enough that she can play the whole section cleanly, then advance two clicks at a time. Phones have free metronome apps. She'll resist using one. She's right that it's annoying. She's wrong that she doesn't need it.
 
 ## When the teacher says she isn't progressing
 

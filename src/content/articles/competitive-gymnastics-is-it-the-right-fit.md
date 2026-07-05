@@ -28,7 +28,7 @@ The gym calls and says your eight-year-old has been invited to pre-team. It is a
 
 Competitive gymnastics is not just more gymnastics. It is a different category of commitment. Pre-team programs for eight and nine-year-olds typically run six to ten hours of training per week.
 
-By Level 4, that number is often twelve to sixteen hours per week. That is three or four afternoons of the week, every week, for most of the year. Summers have intensives. Meets are on weekends.
+By Level 4, that number is often twelve to sixteen hours per week. That is three or four afternoons of the week, every week, for most of the year. Summers have intensives, meets are on weekends, and the [age-by-age path through the levels](/pathways/gymnastics/) shows what that climb looks like from here.
 
 The kid who thrives in competitive gymnastics at this age has a few things in common. They ask to go to extra open gym time. They work on skills at home without being told to.
 

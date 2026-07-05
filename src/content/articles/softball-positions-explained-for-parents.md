@@ -48,3 +48,5 @@ The pitcher also fields bunts, covers first base on grounders, and backs up play
 **Right fielder (RF).** Covers the right side of the outfield. Throws to third on hits and backs up first base.
 
 At 8-10, rotating kids through multiple positions is smart coaching. Don't read too much into where your kid plays in their first season.
+
+Once you know the position, [the softball gear guide](/what-to-buy/softball/) breaks down what glove, bat, and protective gear actually fits it.

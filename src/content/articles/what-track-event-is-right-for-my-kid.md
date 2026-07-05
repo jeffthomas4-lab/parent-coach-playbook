@@ -38,3 +38,5 @@ The best first season of track is one where a kid runs at least one short race, 
 Where parents most often go wrong: deciding before the season which event their kid is going to focus on and then pushing them toward that one event when the coach is suggesting they try others. The coach is watching the kid move and respond to different athletic demands in real time. That information is worth more than what you see at Saturday soccer games.
 
 Let the first season be exploratory. By the second year, the event picture gets clearer, the kid has opinions, and event specialization starts to make more sense.
+
+Once you have a better read on their event, [the track and field gear guide](/what-to-buy/track-field/) covers what actually helps versus what is just a name-brand upsell.

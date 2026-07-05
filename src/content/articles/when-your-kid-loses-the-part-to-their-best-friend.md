@@ -184,4 +184,4 @@ Your kid will remember this.
 
 Not the disappointment as much as the fact that you saw them handle something hard and believed they could.
 
-That's what stays.
+That's what stays. The [theater pathway by age](/pathways/theater/) is worth a look too, for a sense of how casting and competition for parts tend to shift as she gets older.

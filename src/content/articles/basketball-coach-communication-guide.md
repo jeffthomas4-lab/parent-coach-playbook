@@ -54,3 +54,5 @@ The cleaner you keep that boundary, the better the relationship works for your k
 **If there's a real problem.** Genuine safety issues, inappropriate behavior by a coach, or situations where your kid is being treated unfairly deserve a direct conversation. Bring a specific incident with dates, stay calm, and listen to the response before deciding on the next step. Most youth programs have an administrator above the coach if the issue isn't resolved at the coach level.
 
 The families whose kids thrive over a long season are usually the ones whose parents the coach never has to think about. Not because they're disengaged, but because the contact they make is productive and well-timed.
+
+The [basketball pathway by age](/pathways/basketball/) covers what development actually looks like at each stage, which helps when you're deciding whether a concern is worth raising with the coach at all.

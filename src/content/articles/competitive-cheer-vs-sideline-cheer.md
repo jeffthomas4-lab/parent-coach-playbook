@@ -36,3 +36,5 @@ All-star cheer is intense. Programs practice two to four times per week year-rou
 The athlete profile is also different. All-star cheer at the higher levels requires strong tumbling skills, including back handsprings and layouts. Stunting requires trust, physical strength, and team chemistry. These skills are developed over years in the gym, not in a semester.
 
 For an 11-12-year-old deciding between the two: sideline cheer is the lower-stakes entry point and has a clear home base in school. All-star is the choice for the kid who is already in a gym program, loves the gymnastic and performance aspects, and wants the competition experience. Both are real activities that develop real skills. They just are not the same activity.
+
+[The cheer pathway](/pathways/cheer/) lays out how kids typically move between the two as they get older and their skills grow.

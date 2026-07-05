@@ -58,3 +58,5 @@ Girls: two 25-minute halves in high school. Youth programs vary by local rules.
 Boys: technical fouls (push in the back, crease violation) and personal fouls (slashing, cross-checking, illegal body check). Personal fouls result in suspension time.
 
 Girls: major fouls (dangerous contact, shooting space violation) and minor fouls (illegal stick, 3-second crease violation). The free position shot is the primary penalty outcome in girls lacrosse.
+
+If your son is the one switching in, [the gear guide for boys lacrosse](/what-to-buy/lacrosse-boys/) covers what protective equipment is actually required versus what is optional.

@@ -52,3 +52,5 @@ Yelling at a youth ref teaches your kid that rules are optional when you disagre
 The easiest parent to coach for is the one the coach never has to think about.
 
 **The rule that works.** One sentence in the car before the game: "I'm here to cheer, not coach." Then do that. Your kid will feel the difference.
+
+Our [basketball gear guide](/what-to-buy/basketball/) covers what's actually worth bringing to the gym, so game day logistics aren't part of what you're managing from the stands.

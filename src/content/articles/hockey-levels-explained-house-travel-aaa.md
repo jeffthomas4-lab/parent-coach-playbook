@@ -39,6 +39,6 @@ The exact meanings vary by state association, but the general ladder is that AA 
 
 AAA is the elite tier. These are regional programs that pull players from a wide geographic area and compete at the highest youth level in the country. Most AAA programs run full tournament schedules that include national-level events.
 
-Players at AAA programs often skate four or more times per week between team practice, individual skills work, and off-ice training. The commitment is real and the cost is high. A small percentage of players at this level go on to junior hockey and college programs.
+Players at AAA programs often skate four or more times per week between team practice, individual skills work, and off-ice training. The commitment is real and the cost is high. A small percentage of players at this level go on to junior hockey and college programs, and [the full pathway from house to college](/pathways/hockey/) lays out exactly how thin that pipeline gets.
 
 The thing the system does not advertise clearly is that development happens at all levels. A Squirt B house player who loves the game, practices at home, and has a good coach will develop. The level is not the development. The effort and the coaching environment are the development. Parents who move kids up before they are ready create a mismatch that costs kids confidence before it costs them anything el

@@ -108,7 +108,7 @@ Major summer intensives often have boys' scholarship funds specifically designed
 
 Some pre-professional programs offer free or heavily discounted training to qualified male students. The schools know that male dancers are scarce.
 
-If your son is serious about ballet at age 12 or older, ask about scholarship opportunities at every major school he is considering. The financial picture is different for boys.
+If your son is serious about ballet at age 12 or older, ask about scholarship opportunities at every major school he is considering. The financial picture is different for boys. The [age-by-age ballet pathway](/pathways/ballet/) shows where boys typically hit these scholarship and audition windows so you are not caught off guard.
 
 ## When he wants to quit
 

@@ -40,3 +40,5 @@ The match is over. Your kid is walking to the car, still in knee pads, hair fall
 **After they played really well.** Keep the energy proportional. "You were locked in on defense tonight" is specific and real. A five-minute highlight commentary from the passenger seat is too much, even when it's positive.
 
 **The rule that holds.** Your kid should look forward to the car ride home. If they're dreading what you're going to say, the ride is costing them something. Keep it easy. The game was theirs, not yours.
+
+If you want to know what's coming next as she grows in the sport, the [volleyball pathway by age](/pathways/volleyball/) lays out what changes year to year.

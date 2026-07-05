@@ -39,4 +39,6 @@ Nobody explains before a first track meet that the whole point of the sport, fro
 
 **The upside of a sport nobody can fully watch is that nobody's kid gets the parental spotlight either.** There's no single set of bleachers where all eyes point at once. Parents wander the infield, sit on portable chairs near whichever event matters to them that hour, and miss things constantly, evenly, across every family in the stadium. It's a strange kind of fairness. Every kid's race gets exactly as much undivided parental attention as everyone else's, which is to say, less than most families would prefer, and that's just how the sport works.
 
-By the third meet we had a system: heat sheet on arrival, alarm set, finish line for anything under a mile, wander for field events, and a working truce with the fact that we'd probably miss something. Our kid stopped expecting us to have seen everything and started just telling us the t
+By the third meet we had a system: heat sheet on arrival, alarm set, finish line for anything under a mile, wander for field events, and a working truce with the fact that we'd probably miss something. Our kid stopped expecting us to have seen everything and started just telling us the time himself.
+
+If you are still figuring out which events fit your kid, [the track and field pathway](/pathways/track-field/) is a good place to start before the season gets moving.

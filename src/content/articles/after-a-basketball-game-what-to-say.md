@@ -42,3 +42,5 @@ The game just ended. Your kid is walking toward the car. Here's what works.
 If they're glad you were there, you're doing it right.
 
 Wait until tomorrow for the feedback conversation, if it's even needed. It usually isn't.
+
+The [basketball pathway by age](/pathways/basketball/) is a good next read if you're wondering what changes as she gets older.

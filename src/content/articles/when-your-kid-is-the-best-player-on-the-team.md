@@ -37,7 +37,7 @@ What they do not do is solve hard problems. Hard problems require harder competi
 
 The developmental research on this is consistent. Players who spend too long in under-challenging environments develop habits, taking extra touches when a quicker decision was available, not making runs because they do not need to, settling for easier passes because the harder ones are not required. Those habits are real and they persist.
 
-The practical question: is it time to move up. Not move up the club's age group, but move to a higher-quality team or a more competitive program. An 11-year-old who is dominating a D3 club environment and getting looks from a D1 or D2 club should be having that conversation with their coach, not waiting until the problem is obvious to everyone.
+The practical question: is it time to move up. Not move up the club's age group, but move to a higher-quality team or a more competitive program. An 11-year-old who is dominating a D3 club environment and getting looks from a D1 or D2 club should be having that conversation with their coach, not waiting until the problem is obvious to everyone. [What good looks like at each age](/pathways/soccer/) is worth checking before that conversation, so you know if the jump you are considering actually matches where your kid should be.
 
 The mistakes parents make in this situation: telling other families their kid is the best, expecting special treatment from the coach because of it, and above all not pushing for harder competition because the current situation feels good. The current situation feeling good is the signal that it is time to make it harder.
 

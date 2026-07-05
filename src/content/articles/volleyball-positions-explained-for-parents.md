@@ -44,3 +44,5 @@ The best passer on the team.
 **Defensive specialist (DS).** Similar to the libero but serves as a rotational substitute. Not required by rule but common in competitive programs. Usually a strong serve receiver and passer who comes in for specific rotational matchups.
 
 At ages 11-12, many coaches rotate kids through positions to develop complete players. If your kid plays multiple spots, that's intentional development, not uncertainty.
+
+The [volleyball pathway by age](/pathways/volleyball/) covers when position specialization usually starts to lock in for good.

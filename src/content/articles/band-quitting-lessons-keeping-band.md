@@ -65,4 +65,4 @@ This is fine for a kid playing band for the social experience. It's a slow ceili
 
 Most adult musicians have a story about the time they quit lessons in middle school, and many of them also have a story about the teacher who got them back into it in high school. The pattern is common. If your kid wants to quit, you can let him. If he comes back to it on his own, he comes back hungrier. If he doesn't, the years he had were still real.
 
-A short break from lessons is not a tragedy. A new teacher might be the better answer. A monthly check-in is a good middle ground. The kid still in band is still a band kid, keep that part going, and let the lessons take whatever shape they need to take.
+A short break from lessons is not a tragedy. A new teacher might be the better answer. A monthly check-in is a good middle ground. The kid still in band is still a band kid, keep that part going, and let the lessons take whatever shape they need to take. The [pathway by age](/pathways/band/) has more on how private lessons tend to fit into each stage, if you're weighing this decision.

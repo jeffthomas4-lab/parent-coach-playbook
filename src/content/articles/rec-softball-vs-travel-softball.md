@@ -49,4 +49,6 @@ Some families build their lives around it without friction. Others find that it 
 
 The kid who is already showing you that softball is important to them is a candidate for more. The kid who plays fine but doesn't seek it out is probably not.
 
-You can always move up. A kid who dominates rec at 10 and joins travel at 11 hasn't fallen behind. The families who go the other direction, into travel before the kid is ready, are the ones who end up with burned-out kids at 13
+You can always move up. A kid who dominates rec at 10 and joins travel at 11 hasn't fallen behind. The families who go the other direction, into travel before the kid is ready, are the ones who end up with burned-out kids at 13.
+
+[The full softball pathway](/pathways/softball/) walks through what each level actually asks of a kid, from rec through college.

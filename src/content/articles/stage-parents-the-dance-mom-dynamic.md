@@ -249,4 +249,4 @@ Your kid will age out. Another parent will take over the organizing. The communi
 
 You don't need to save it.
 
-You just need 
+You just need to show up for your kid. [The dance gear guide](/what-to-buy/dance/) can at least take the costume and shoe scramble off your plate so you have more room for the rest of it. 

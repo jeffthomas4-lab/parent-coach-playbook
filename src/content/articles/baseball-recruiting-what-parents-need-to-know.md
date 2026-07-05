@@ -51,4 +51,4 @@ Division III offers no athletic scholarships. The total financial aid package at
 
 **What families do wrong most often.** Waiting until senior year to start outreach. Targeting only D1 programs. Not accounting for academics in the fit equation.
 
-A junior who has done the research, built a realistic list, and sent professional outreach emails is months ahead of most of the competition.
+A junior who has done the research, built a realistic list, and sent professional outreach emails is months ahead of most of the competition. The [pathway by age](/pathways/baseball/) lays out what leads to this point, from tee-ball through high school, if you're trying to see the whole arc instead of just the recruiting window.

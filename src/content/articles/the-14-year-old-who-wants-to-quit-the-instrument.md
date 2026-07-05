@@ -167,7 +167,7 @@ Your kid is telling you they're done.
 
 Whether that's a phase or permanent, they're telling you they need something different right now.
 
-Respecting that is more important than the instrument.
+Respecting that is more important than the instrument. If you're weighing whether this is a normal 14-year-old moment or something bigger, the [pathway by age](/pathways/band/) shows what's typical at this stage.
 
 **What you actually say**
 

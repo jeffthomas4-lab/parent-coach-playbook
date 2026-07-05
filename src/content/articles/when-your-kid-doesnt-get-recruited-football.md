@@ -35,7 +35,7 @@ Walk-ons at D1 programs see the field rarely. Walk-ons at D2 and D3 programs oft
 
 D3 football: no athletic scholarships, but strong programs where players who love the game can compete at a high level through college. The commitment level at competitive D3 programs is comparable to D2.
 
-The question is whether your kid wants to keep playing, not whether they can win a scholarship. Many D3 schools offer significant merit or need-based financial aid that can make them genuinely affordable.
+The question is whether your kid wants to keep playing, not whether they can win a scholarship. Many D3 schools offer significant merit or need-based financial aid that can make them genuinely affordable, and [the full path from flag to varsity](/pathways/football/) shows how many kids reach this stage without ever chasing a scholarship in the first place.
 
 NAIA football: smaller schools, athletic scholarships available, and a legitimate competitive level. NAIA gets overlooked because families are not familiar with it. Some NAIA programs are excellent.
 

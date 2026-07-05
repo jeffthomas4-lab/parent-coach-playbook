@@ -57,4 +57,6 @@ Keeping volleyball in proportion. A 14-year-old who hears regularly that her val
 
 But she needs it to be true in how the household operates. The kid who can see that her parents are fine whether the team wins or loses can afford to take competitive risks.
 
-**The useful thing to say after any hard match.** "I'm proud of how you competed." Not "I'm proud of you for trying," which is patronizing. Competed is the right word. It names the thing that was hard and acknowledg
+**The useful thing to say after any hard match.** "I'm proud of how you competed." Not "I'm proud of you for trying," which is patronizing. Competed is the right word. It names the thing that was hard and acknowledges it without turning it into a lesson.
+
+The [volleyball pathway by age](/pathways/volleyball/) shows how this kind of pressure shifts year to year, so you can tell what's normal for 13 and 14 versus what needs a closer look.

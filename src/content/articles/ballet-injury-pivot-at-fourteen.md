@@ -157,7 +157,7 @@ Contemporary or modern dance. Different demands on the body. Some kids with ball
 
 Pilates or barre fitness. Many adults who were dancers as kids find their way back through these. The ballet body remembers.
 
-College dance. Many colleges have strong dance programs that admit dancers who are not on the pre-professional track. The training is real. The community is rich.
+College dance. Many colleges have strong dance programs that admit dancers who are not on the pre-professional track. The training is real. The community is rich. The [age-by-age ballet pathway](/pathways/ballet/) lays out what these later stages look like for kids who step off the pre-pro track and land somewhere else.
 
 Teaching. Some kids who stop dancing seriously at 14 or 15 end up teaching younger kids by 16 or 17. The teaching is a way to stay in the studio without the body demands.
 

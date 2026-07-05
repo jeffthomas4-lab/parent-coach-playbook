@@ -50,3 +50,5 @@ Start at local or entry-level sectional events. A new competitive player enterin
 **10 and Under Tennis**
 
 The USTA 10U format (red ball, orange ball, green ball) has its own tournament structure that runs parallel to the full-court adult format. 10U tournaments are the starting point for competitive kids in the 8-10 age range.
+
+Once your kid starts entering tournaments, [the tennis gear guide](/what-to-buy/tennis/) covers what racket and stringing setup actually fits their level.

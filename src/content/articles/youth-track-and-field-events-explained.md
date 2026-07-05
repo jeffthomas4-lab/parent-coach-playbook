@@ -60,3 +60,5 @@ Throws for distance from a circle. Youth implements are lighter than adult stand
 **Pole vault**
 
 Not common at younger youth levels. Requires coaching and trained facilities.
+
+Once your kid settles into an event, [the pathway for track and field](/pathways/track-field/) shows how that first event choice tends to develop over the following seasons.

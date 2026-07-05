@@ -37,3 +37,5 @@ Golf-specific recruiting services exist and are marketed heavily. They are not r
 College golf usually requires five qualifying players per team for a competitive match. Rosters are small. Programs recruit selectively and carry smaller classes than most sports. Getting in contact early and following up consistently matters.
 
 Athletic scholarships in golf are partial at most programs. D3 does not offer athletic scholarships. Merit aid and need-based financial aid can add up significantly at strong academic D3 schools and is worth calculating as part of the total cost comparison against a partial scholarship at a D1 school.
+
+[The golf pathway](/pathways/golf/) is worth reading alongside this, especially for families still mapping out the junior tournament path that feeds into recruiting.

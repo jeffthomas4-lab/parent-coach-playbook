@@ -37,7 +37,7 @@ The most common thing soccer parents say that they should not: "shoot," "cross i
 
 Saying them is not encouragement. It is interference.
 
-What actually helps from the sideline: applauding good effort. "Good run." "Way to work back." "Nice." Short, effort-focused, not outcome-focused. A player who hears you notice the run they made without the ball understands that you are watching the whole game, not just the score.
+What actually helps from the sideline: applauding good effort. "Good run." "Way to work back." "Nice." Short, effort-focused, not outcome-focused. A player who hears you notice the run they made without the ball understands that you are watching the whole game, not just the score, and showing up with [what to buy by age](/what-to-buy/soccer/) sorted out ahead of time means you are not distracted by gear when the game starts.
 
 What makes things worse for your kid: negative noise when they make a mistake. A groan, a loud "oh come on," a visible frustration reaction.
 

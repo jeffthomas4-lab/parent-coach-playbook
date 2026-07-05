@@ -38,3 +38,5 @@ Five positions, quick version.
 **Center (5).** The tallest kid. Plays at the rim, boxes out, and finishes close to the basket. At ages 8-10 this is basically the tallest kid in the gym.
 
 One note: at this age, good coaches rotate kids through multiple spots so they develop a full game. If your kid plays three different positions in a season, that's a good sign, not a sign they don't have a position.
+
+The [basketball pathway by age](/pathways/basketball/) covers when position specialization tends to start for real.

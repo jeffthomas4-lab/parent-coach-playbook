@@ -76,4 +76,4 @@ The kids who keep auditioning year after year, fail, fail, then make it junior y
 
 ## A small thing
 
-If she makes the band, the honor band concert is a big deal. Family will want to come, and some kids feel pressure from a big audience. Tell the family: come, sit, listen. Don't film. Don't coach. She worked for this. Let her have it.
+If she makes the band, the honor band concert is a big deal. Family will want to come, and some kids feel pressure from a big audience. Tell the family: come, sit, listen. Don't film. Don't coach. She worked for this. Let her have it. The [pathway by age](/pathways/band/) covers how the all-state track builds year over year, if she's thinking past this one audition.

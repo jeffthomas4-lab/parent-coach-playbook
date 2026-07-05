@@ -29,7 +29,7 @@ Soccer involves running, cutting, jumping, and physical contact. Injuries happen
 
 Some are not minor. Here is what parents need to know before the season starts.
 
-Ankle sprains: the most common soccer injury. A lateral ankle sprain from a cut or collision usually involves swelling, pain on the outside of the ankle, and difficulty bearing weight. Most recover in one to three weeks with RICE protocol (rest, ice, compression, elevation) and appropriate rehabilitation.
+Ankle sprains: the most common soccer injury. A lateral ankle sprain from a cut or collision usually involves swelling, pain on the outside of the ankle, and difficulty bearing weight. Most recover in one to three weeks with RICE protocol (rest, ice, compression, elevation) and appropriate rehabilitation, and [the right cleats and ankle support](/what-to-buy/soccer/) cut down how often this happens in the first place.
 
 An ankle that is still swollen and painful after a week of rest needs imaging to rule out a fracture. Return to play too soon after an ankle sprain significantly increases re-injury risk.
 

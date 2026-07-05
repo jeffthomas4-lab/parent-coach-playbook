@@ -43,6 +43,6 @@ Forwards (also called strikers or attackers): they play closest to the other tea
 
 The center forward plays centrally. Wide forwards stay wider and look for opportunities to cut in or cross.
 
-At 8-10 years old, position assignments are mostly organizational. Coaches are trying to make sure everyone gets reps in different areas. A kid who plays forward one season and defensive midfielder the next is getting a broader soccer education, not getting moved down a peg.
+At 8-10 years old, position assignments are mostly organizational. Coaches are trying to make sure everyone gets reps in different areas. A kid who plays forward one season and defensive midfielder the next is getting a broader soccer education, not getting moved down a peg, and [the full age-by-age path](/pathways/soccer/) shows why that rotation matters more now than it will later.
 
 The players who end up in permanent positions at 13-14 almost always benefit from having played multiple roles at 8-10. It is how they develop the full-field understanding that coaches need from them la

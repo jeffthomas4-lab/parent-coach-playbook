@@ -48,3 +48,5 @@ Before paying, verify which specific coaches are scheduled to attend and whether
 Division III offers no athletic scholarships. Academic merit aid at D3 often makes total packages competitive with partial D2 athletic aid. Run full cost-of-attendance numbers before eliminating any division from the list.
 
 **The thing that moves the needle most.** A player who has identified schools she would genuinely attend, built a recruiting video that shows pitching and defense and hitting, and is sending thoughtful outreach starting sophomore or junior year is ahead of most families. The recruiting process rewards organized, early effort.
+
+[The full softball pathway](/pathways/softball/) is worth reading alongside this, especially for families still deciding between rec, travel, and the showcase circuit.

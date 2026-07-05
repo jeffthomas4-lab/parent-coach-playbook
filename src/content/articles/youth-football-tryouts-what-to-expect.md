@@ -57,7 +57,7 @@ Then step back. Way back. Your presence near the fence during drills changes how
 
 After the last day, cuts or roster decisions usually come within 48 hours. Some leagues post a list. Others call families directly.
 
-If your kid does not make the team they tried out for, find out what the next option is before you leave the parking lot. Most organizations have a developmental program or a second-tier team.
+If your kid does not make the team they tried out for, find out what the next option is before you leave the parking lot. Most organizations have a developmental program or a second-tier team, and [where second-tier teams actually lead by high school](/pathways/football/) shows why that spot is not a dead end.
 
 That is not consolation. That is often where more playing time actually lives.
 

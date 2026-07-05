@@ -39,7 +39,7 @@ What coaches are not evaluating: how nervous your kid looks walking onto the fie
 
 Size and speed are factors, but a technically skilled, intelligent player at 11 beats an athletic player with poor technique in almost every evaluator's book.
 
-What your kid should wear: shin guards, cleats, socks pulled over the shin guards, and whatever they usually train in. Not new gear that hasn't been worn before. Cleats that pinch or slip change how someone moves and not subtly.
+What your kid should wear: shin guards, cleats, socks pulled over the shin guards, and whatever they usually train in. Not new gear that hasn't been worn before. Cleats that pinch or slip change how someone moves and not subtly, which is why [getting the right pair before tryout season](/what-to-buy/soccer/) beats buying them the week of.
 
 What to tell your kid the night before: play your game. Do not try to do things you cannot do consistently in training. Tryouts reveal who you are as a player, not who you wish you were.
 

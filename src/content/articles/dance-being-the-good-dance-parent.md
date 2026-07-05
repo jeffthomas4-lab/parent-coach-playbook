@@ -67,3 +67,5 @@ Competition weekends compress all of the lobby dynamics into forty-eight hours. 
 Most dance parents do their best. A few don't. You're going to spend years with these people, at the same recitals, the same competitions, the same fundraisers. Some of them will become close friends. A few will be people you avoid.
 
 The default move is to be kind, on time, and a little bit quiet. That goes a long way. The kid is the one doing the dancing. Your job is to make the path easier. Not to win the lobby.
+
+If you are still working out which studio track fits your kid, [the dance pathway](/pathways/dance/) walks through how recreational, competition, and pre-professional tracks actually differ.

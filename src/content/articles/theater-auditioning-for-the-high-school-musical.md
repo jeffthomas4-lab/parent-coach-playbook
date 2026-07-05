@@ -55,3 +55,5 @@ This is the most likely outcome. Most eighth graders auditioning at high schools
 ## The long game
 
 Even if she does get cast this year, treat it as the first audition of a four-year run. Most freshman cast members end up in ensemble, and most leads at the high school musical are juniors and seniors. The kid who shows up to every audition for four years, takes every part she's offered, and learns the show every time is the kid who plays the lead senior year. Not the kid who got the biggest part as a ninth grader and coasted.
+
+The [theater pathway by age](/pathways/theater/) walks through what that four-year arc from ensemble to lead usually looks like.

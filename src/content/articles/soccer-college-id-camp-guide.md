@@ -37,7 +37,7 @@ How to choose which camps to attend: start with programs your kid is genuinely i
 
 Research the program before you register: look at the coach's roster, their recent recruiting classes, and the position depth at your kid's position. If a program has three goalkeepers in the current class and your kid is a goalkeeper, that camp is probably not a useful investment this season.
 
-Before the camp: your kid should email the coaching staff directly to introduce themselves, confirm their attendance, and state their interest. This is a courtesy that coaches notice and that distinguishes players who are genuinely interested from those filling a seat. Keep it short: name, position, graduation year, club team, and one specific sentence about why they want to attend this program.
+Before the camp: your kid should email the coaching staff directly to introduce themselves, confirm their attendance, and state their interest. This is a courtesy that coaches notice and that distinguishes players who are genuinely interested from those filling a seat. Keep it short: name, position, graduation year, club team, and one specific sentence about why they want to attend this program, and pack according to [what actually matters gear-wise](/what-to-buy/soccer/) so equipment is not a distraction that weekend.
 
 During the camp: your kid competes. That is the whole job. Coaches are watching how players handle competitive situations, how they communicate with teammates, and how they respond to coaching.
 

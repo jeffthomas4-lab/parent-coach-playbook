@@ -60,3 +60,5 @@ Watch a practice before you join. Ask about the coaches' background. Ask what th
 The structure matters as much as the level.
 
 Your kid playing well in rec is a reason to consider the next level. It is not a reason to panic about falling behind.
+
+The [basketball pathway by age](/pathways/basketball/) lays out what a reasonable progression looks like if you want a longer view than just this decision.

@@ -41,6 +41,6 @@ What works if they are upset about a loss: "That one stings. You okay?" Then sil
 
 What works if they are unhappy with how they played: "What felt off?" Then listen. Do not solve it for them. The act of putting it into words is part of how they process it.
 
-What works after a win: enjoy it with them. You are allowed to be excited. Do not dim their energy to manage your own excitement about next week's game.
+What works after a win: enjoy it with them. You are allowed to be excited. Do not dim their energy to manage your own excitement about next week's game, and if you are still sorting out [what actually belongs in the bag](/what-to-buy/soccer/), handle that away from the car ride, not in it.
 
 The thing that gets reinforced over hundreds of car rides: your kid either learns that the drive home is safe, or they learn to stay quiet until you stop. The quiet ones are not at peace. They are managed

@@ -40,3 +40,5 @@ That last rule trips people up at games.
 **Why it matters.** The libero frees the middle blockers from having to pass in the back row. Middle blockers are usually the tallest players on the team, and they're most valuable at the net. The libero-middle blocker swap keeps the best athletes in the positions where they create the most value.
 
 **If your kid is the libero.** She is touching the ball on nearly every rally and her job is to make other people's attacking easier. It's a high-value position that shows up in the stat sheet as digs and passing ratings, not kills. If she loves competing on the defensive end and handling the ball constantly, it's a great fit.
+
+Our [rundown of every position](/what-to-buy/volleyball/) also covers the knee pads and padded shorts liberos tend to go through faster than anyone else on the roster.

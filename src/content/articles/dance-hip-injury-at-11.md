@@ -81,3 +81,5 @@ The challenge is telling growth pain from injury pain. They feel similar. The do
 Most kids who have one hip injury recover and continue dancing. A few don't, but most do. The biggest predictor of whether a kid keeps dancing after a hip injury is how the family and studio handle the injury, patient recovery, real imaging if needed, honest conversations about whether the training load is sustainable.
 
 Pushed-through injuries become career-ending. Treated injuries become temporary setbacks. Take the hip pain seriously. She will thank you when she's twenty-five.
+
+The right shoes and support gear matter here too. [The dance gear guide](/what-to-buy/dance/) covers what actually helps a dancer's joints versus what is just marketing.

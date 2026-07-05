@@ -43,4 +43,6 @@ Wrestling does something to a crowd that team sports don't, and it comes down to
 
 **What helped us most was naming the quiet out loud, once, early in the season.** We told our kid, matter-of-factly, that we noticed the gym gets quiet during matches and that we were working on not looking as tense as we felt. It wasn't a big conversation. It just meant our kid didn't have to wonder whether our silence during a tough second period meant something was wrong. It was just the room. It's always the room.
 
-**We noticed the same posture in parents whose kids we didn't even know yet.** By our second tournament, we could pick out a wrestling parent from across a crowded gym lobby before we ever saw their kid compete, just from the way they carried a program rolled up tight in one hand and checked the schedule board every few minutes. There's a specific kind of alert stillness that comes from a full day of no
+**We noticed the same posture in parents whose kids we didn't even know yet.** By our second tournament, we could pick out a wrestling parent from across a crowded gym lobby before we ever saw their kid compete, just from the way they carried a program rolled up tight in one hand and checked the schedule board every few minutes. There's a specific kind of alert stillness that comes from a full day of not knowing which mat matters next.
+
+If you are still assembling the bag for that first tournament, [the wrestling gear guide](/what-to-buy/wrestling/) covers what actually gets used on a meet day versus what stays home.

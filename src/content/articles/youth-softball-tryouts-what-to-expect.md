@@ -46,3 +46,5 @@ The goal isn't to see your kid's best at-bat of the year. It's to see a reliable
 Don't try to catch the coach's eye to make sure they see your kid's good moments. They're watching. That's their job.
 
 **After the tryout.** Ask how they feel about it before you share any observations. Their answer tells you what kind of conversation they need.
+
+Before tryout day arrives, [what actually matters for softball gear](/what-to-buy/softball/) can save you from showing up with the wrong glove or bat.

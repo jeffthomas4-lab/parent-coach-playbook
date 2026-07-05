@@ -167,7 +167,7 @@ Let it be a normal part of their dance life, not the defining issue.
 
 **The actual progression**
 
-Most dancers go on pointe between 11 and 13, depending on when they started, how often they take class, and how they develop.
+Most dancers go on pointe between 11 and 13, depending on when they started, how often they take class, and how they develop. The [ballet pathway by age](/pathways/ballet/) shows where that milestone usually lands, and [the gear guide](/what-to-buy/ballet/) explains why the shoes themselves wait until the teacher says so.
 
 It's not a race. It's not a verdict on talent.
 

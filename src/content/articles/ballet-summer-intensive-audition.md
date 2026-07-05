@@ -55,7 +55,7 @@ A few practical pieces. Use a tripod, hand-held video moves, and the faculty nee
 
 Use the studio if possible, most studios will let you book a private hour to film, and the floor, mirrors, and barre are right for the work. If you can't use the studio, set up a portable barre at home or use a sturdy piece of furniture. The angle matters, and the body language matters.
 
-Don't edit between sections, most schools want to see continuous exercises to evaluate stamina and consistency. If she makes a mistake, don't start over, most schools value seeing how a dancer recovers from a mistake more than they value a polished take. Have her wear the studio's typical attire, solid color leotard, pink tights, hair in a neat bun, no fancy hair ornaments, no leg warmers for the video.
+Don't edit between sections, most schools want to see continuous exercises to evaluate stamina and consistency. If she makes a mistake, don't start over, most schools value seeing how a dancer recovers from a mistake more than they value a polished take. Have her wear the studio's typical attire, solid color leotard, pink tights, hair in a neat bun, no fancy hair ornaments, no leg warmers for the video. [What to buy for ballet class](/what-to-buy/ballet/) covers what that attire should actually look like by age, pointe shoes included.
 
 ## Picking schools to audition for
 

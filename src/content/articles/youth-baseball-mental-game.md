@@ -51,4 +51,4 @@ And at 11 and 12, in a sport built on failure, that framing is the most useful t
 
 **If your kid is struggling with the mental side more seriously.** A player who freezes at the plate, stops throwing strikes after one error, or has started dreading games rather than looking forward to them is showing you something beyond normal failure. A conversation with the coach is a reasonable step. A sports psychologist or mental performance coach is a real option at this age for players who need more than the usual support.
 
-The mental game is mostly built at home, on the drive home, in the small moments after hard ones. That's yours to shape.
+The mental game is mostly built at home, on the drive home, in the small moments after hard ones. That's yours to shape. The [age-by-age pathway](/pathways/baseball/) covers what's normal at each stop, which helps if you're trying to tell a rough patch from a real problem.

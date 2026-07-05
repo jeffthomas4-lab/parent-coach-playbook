@@ -51,4 +51,4 @@ Division III offers no athletic aid. Academic scholarships at D3 schools often m
 
 **The best thing a family can do.** Build a list of schools that fit academically and athletically, and start reaching out. The player writes the email. The player makes the call.
 
-Coaches recruit people, not parents.
+Coaches recruit people, not parents. The [volleyball pathway by age](/pathways/volleyball/) is worth a look too, since the foundation for a recruiting profile gets built well before high school.

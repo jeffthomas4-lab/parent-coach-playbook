@@ -65,3 +65,5 @@ You can't rush this for her. You can sit with her while it passes. That's the jo
 ## The next show
 
 Most theater kids are looking at the spring audition cuts by week three. By week four they're off-book on a new monologue. The cycle starts again. Trust the cycle. It works.
+
+The [theater pathway by age](/pathways/theater/) is worth a look too, since knowing what's coming next at her age makes the empty week after closing easier to sit through.

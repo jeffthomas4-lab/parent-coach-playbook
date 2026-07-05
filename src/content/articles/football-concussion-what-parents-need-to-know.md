@@ -49,4 +49,4 @@ Your practical checklist: know your program's concussion protocol before the fir
 
 Have the conversation with your kid now, not in the parking lot after a game: if you get hit and you have any of these symptoms, you tell a coach, you do not hide it. That conversation matters because kids hide concussions.
 
-They hide them because they want to keep playing. Change that math by making it clear that telling you is the thing that gets them back on the field fast
+They hide them because they want to keep playing. Change that math by making it clear that telling you is the thing that gets them back on the field fastest, and a properly fitted helmet from [what actually matters gear-wise](/what-to-buy/football/) is part of the same conversation.

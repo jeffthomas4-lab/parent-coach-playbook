@@ -53,4 +53,6 @@ Not analysis of the game. Not suggestions for the coach. Availability.
 
 Programs that are thoughtful about development know this. The families who push for varsity minutes for a 14-year-old who isn't ready usually don't get what they want, and sometimes complicate their kid's relationship with the program in the process.
 
-One thing to say before the season starts: "This year is about learning the system. Playing time will come." Say it once. Mean it
+One thing to say before the season starts: "This year is about learning the system. Playing time will come." Say it once. Mean it.
+
+The [basketball pathway by age](/pathways/basketball/) is worth reading before that conversation, so you know what a realistic freshman year actually looks like.

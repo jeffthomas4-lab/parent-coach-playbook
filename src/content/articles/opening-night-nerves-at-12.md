@@ -91,7 +91,7 @@ Treat it like a normal day, even though it's not.
 
 **What to bring to the venue**
 
-Water bottle. The costume (if your kid is bringing it). A snack.
+Water bottle. The costume (if your kid is bringing it). A snack. Our [theater gear guide](/what-to-buy/theater/) covers the small kit worth keeping ready for show nights.
 
 Some kids want to eat before they go on. Some don't.
 

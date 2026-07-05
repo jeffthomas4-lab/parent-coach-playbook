@@ -68,4 +68,4 @@ If any of these, talk to her about taking a break. Not forever. A semester. Some
 
 Most kids who are quiet eighth graders become confident high school singers. Not all, but most. The ninth grade voice is different from the eighth grade voice. The high school social environment is different. The new peer cohort is different. A lot of the things that made being seen unbearable in middle school ease by sophomore year.
 
-Your job in eighth grade is to keep the door open. Not to push her through it. Just to keep it open. She'll walk through when she's ready.
+Your job in eighth grade is to keep the door open. Not to push her through it. Just to keep it open. She'll walk through when she's ready. The [pathway by age](/pathways/choir/) covers what tends to change by high school, if you want to know what's coming next.

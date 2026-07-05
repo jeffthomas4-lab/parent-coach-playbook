@@ -50,3 +50,5 @@ Pushing through burnout at 12 is how you get a kid who is done with sports at 15
 The question that cuts through the noise: "If practices were optional this week, would you go?" The kid who says yes but hates tournaments is different from the kid who doesn't want any of it. That answer tells you where to focus.
 
 Finishing the season is a reasonable expectation in most situations, assuming the environment is healthy. Signing up for another year when the kid has clearly told you she's done is the version that costs you both something.
+
+If the issue is fit rather than burnout, the [volleyball pathway by age](/pathways/volleyball/) can help you tell whether a different level or program solves it.

@@ -39,7 +39,7 @@ Kickoff return: same play from the other side. The returner catches the ball and
 
 Punt: the offense punts on 4th down when they do not think they can convert and do not want to give the other team good field position. The punter kicks the ball downfield. The coverage team runs down to tackle the returner.
 
-Field goal: three points for kicking the ball between the upright posts. At the youth level, this is less common because the kicking skill takes time to develop. Many programs do not attempt field goals until 13-14.
+Field goal: three points for kicking the ball between the upright posts. At the youth level, this is less common because the kicking skill takes time to develop. Many programs do not attempt field goals until 13-14, which [the football pathway by age](/pathways/football/) covers along with the rest of what changes at that stage.
 
 Extra point: after a touchdown, the offense can kick a one-point extra point or run a two-point conversion. The two-point conversion is more common at youth levels where kickers are still developing.
 

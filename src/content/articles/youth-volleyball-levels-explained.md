@@ -50,3 +50,5 @@ Families on national-track teams spend weekends at tournaments in different citi
 **How to decide.** The right level is the one where your kid's ability, interest, and commitment match the program's demands. A kid who loves volleyball and is one of the better players in her school might thrive in a regional club environment. That same kid on a national-track team might burn out by March because the commitment is more than either of you was ready for.
 
 The mistake families make most often is moving up a level based on potential rather than current readiness. A kid who shows promise in rec is not necessarily ready for elite club, and skipping a level of development to chase competition often backfires.
+
+The [volleyball pathway by age](/pathways/volleyball/) maps these levels against age so you can see what a realistic track looks like year to year.

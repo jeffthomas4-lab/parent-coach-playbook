@@ -44,3 +44,5 @@ The goalie carries a wider stick and directs the defense. Youth goalies develop 
 **On-field numbers**
 
 Boys field lacrosse: 10 players per side (3 attack, 3 midfield, 3 defense, 1 goalie). Girls field lacrosse: 12 players per side at the full game level. Youth programs may use modified numbers and field sizes.
+
+Once you know your kid's position, [the gear guide for boys lacrosse](/what-to-buy/lacrosse-boys/) breaks down stick length and pads by exactly that spot on the field.

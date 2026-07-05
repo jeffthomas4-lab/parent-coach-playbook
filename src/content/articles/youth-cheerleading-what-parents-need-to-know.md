@@ -37,3 +37,5 @@ What kids learn in a well-run cheer program at 8-10: body awareness, counts (che
 Safety standards matter in cheer. Look for programs that follow AACCA (American Association of Cheerleading Coaches and Administrators) safety rules and whose coaches are certified. Stunting at the youth level requires specific rules about what is and is not allowed, and programs that follow the standards have better safety records.
 
 What you are actually committing to in all-star: a year-round schedule, significant fees, competition travel, and a uniform package. Know that before the conversation with your kid gets too far.
+
+[The gear guide for cheer](/what-to-buy/cheer/) breaks down what a first season actually costs beyond the program fee, and [the pathway](/pathways/cheer/) shows how recreational, all-star, and school cheer connect as your kid gets older.

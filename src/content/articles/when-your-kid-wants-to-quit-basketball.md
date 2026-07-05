@@ -50,3 +50,5 @@ Burnout at 12 is real and it's worth treating seriously.
 Here's the question that cuts through most of it: "If practice was today and you could go or not go, what would you want?" The kid who still wants to go but hates games is different from the kid who doesn't want either. The answer tells you a lot.
 
 Finishing the season after a real conversation is a reasonable ask at 11 or 12, as long as the environment is healthy. Forcing a second season after a kid has clearly told you they're done is where things start to go wrong.
+
+If the mismatch is about level rather than the sport itself, the [basketball pathway by age](/pathways/basketball/) can help you figure out where the right fit actually is.

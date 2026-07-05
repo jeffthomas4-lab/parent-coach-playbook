@@ -59,3 +59,5 @@ When you're sitting in the audience, watch the group numbers, not the leads. Wat
 ## One last thing
 
 Senior leads graduate. Casting changes from year to year. Your kid is one season closer than she was last year. That's not a small thing.
+
+The [theater pathway by age](/pathways/theater/) covers how that climb from ensemble to bigger roles usually plays out year over year.

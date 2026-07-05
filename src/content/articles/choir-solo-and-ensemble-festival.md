@@ -44,7 +44,7 @@ The judge is usually a working music professional, often a college vocal teacher
 
 ## What she needs to bring
 
-The music, two original copies (not photocopies, since most states require originals for the judge). Photocopies are fine for the accompanist's working copy and her own. A black folder or binder for the original to go in for handing to the judge. A pencil for taking notes on the critique afterward. A water bottle, because the warm-up area is often hot. An accompanist, where some schools provide a paid one and some require the kid to bring her own, confirm with the director. And a snack for after, because she'll be tired and a little wired.
+The music, two original copies (not photocopies, since most states require originals for the judge). Photocopies are fine for the accompanist's working copy and her own. A black folder or binder for the original to go in for handing to the judge. A pencil for taking notes on the critique afterward. A water bottle, because the warm-up area is often hot. An accompanist, where some schools provide a paid one and some require the kid to bring her own, confirm with the director. And a snack for after, because she'll be tired and a little wired. The [gear guide](/what-to-buy/choir/) covers the folder and water bottle worth keeping on hand for every performance, not just this one.
 
 ## The accompanist question
 

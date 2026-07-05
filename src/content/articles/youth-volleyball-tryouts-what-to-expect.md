@@ -51,4 +51,6 @@ Development team ball with real practice time is better than sitting on a roster
 
 No coaching from the stands during tryouts. Coaches notice that too, and it rarely creates a good first impression for the player.
 
-The conversation on the drive home matters less than you think if you keep it simple. "How do you feel about how it went?" is the right question. What they say next tells you everything
+The conversation on the drive home matters less than you think if you keep it simple. "How do you feel about how it went?" is the right question. What they say next tells you everything.
+
+Before tryout day, our [volleyball gear guide](/what-to-buy/volleyball/) covers the shoes and knee pads worth having broken in ahead of time.

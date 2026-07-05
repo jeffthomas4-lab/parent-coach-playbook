@@ -65,4 +65,4 @@ The first words out of your mouth after the concert matter more than you think. 
 
 Solos crack. Reeds fail. Valves stick. A note comes out wrong, and when it happens the kid feels like the world has stopped, but it hasn't, the audience usually doesn't even notice, the band keeps going, and most directors will give the kid a quick "got it, keep going" look and the moment passes.
 
-If he does crack his solo, the most important thing you can say is "I heard you keep going. That's the part most kids can't do." Recovery is a real skill. Praising it isn't a consolation prize, it's the actual skill he's going to need at every concert for the rest of his life.
+If he does crack his solo, the most important thing you can say is "I heard you keep going. That's the part most kids can't do." Recovery is a real skill. Praising it isn't a consolation prize, it's the actual skill he's going to need at every concert for the rest of his life. The [pathway by age](/pathways/band/) covers how solo opportunities tend to build from here through high school, if he's got the bug for it now.
