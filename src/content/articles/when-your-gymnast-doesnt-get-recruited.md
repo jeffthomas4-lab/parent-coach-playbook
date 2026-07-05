@@ -1,6 +1,6 @@
 ---
 title: "When Your Gymnast Doesn't Get Recruited"
-seoTitle: "When Your High School Gymnast Doesn't Get Recruited to Compete in College"
+seoTitle: "When Your High School Gymnast Doesn't Get Recruited"
 seoDescription: "Most competitive gymnasts never compete in college. What actually happens to the rest, and the real options after the leotard comes off."
 dek: "Recruiting math on top of injury math on top of attrition math. Here is what to say to the gymnast who trained for a decade and won't wear a college leotard."
 bluf: "NCAA women's gymnastics carries roughly 60 Division I programs and a handful of D2 and D3 programs on top of that, which means only a small slice of competitive gymnasts ever compete in college. Most gymnasts stop competing well before recruiting age, and most of the ones still training at 15-17 still will not land a roster spot. Club gymnastics ending, walking on, and other sports that reward gymnastics-trained bodies are all real, good next chapters."

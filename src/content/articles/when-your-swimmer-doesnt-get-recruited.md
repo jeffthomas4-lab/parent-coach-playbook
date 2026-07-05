@@ -1,6 +1,6 @@
 ---
 title: "When Your Swimmer Doesn't Get Recruited"
-seoTitle: "When Your High School Swimmer Doesn't Get Recruited to Swim in College"
+seoTitle: "When Your High School Swimmer Doesn't Get Recruited for College"
 seoDescription: "Most high school swimmers never swim in college. The honest ladder from D1 to club swimming, and how to talk to a kid who trained for years."
 dek: "Seven percent of high school swimmers end up on an NCAA roster. Here's what to say to the other ninety-three."
 bluf: "Roughly 7 percent of high school swimmers compete at the NCAA level across D1, D2, and D3 combined, and a much smaller slice reach D1. That means most swimmers who trained hard for years, some of them for a decade, will not swim in college on a varsity roster. Club swimming, intramural swimming, and simply swimming for life are real, good landing spots, and framing them as a downgrade is the mistake to avoid."

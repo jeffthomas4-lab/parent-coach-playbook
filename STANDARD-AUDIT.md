@@ -14,6 +14,8 @@ Last updated: 2026-06-27 (full /web:audit pass; consent, Leaflet, web-vitals fix
 | 6 | Accessibility | fixed | prefers-reduced-motion: added to global.css (was on accessibility page but not in CSS). Skip link, focus ring, semantic landmarks, ARIA on nav dropdowns all present. WCAG 2.1 AA conformance target stated on /accessibility/. |
 | 7 | Tech Stack Norms | pass | Cloudflare Pages + Astro SSR. D1 (activity-radar), R2 (activityradar-photos). CF Access on admin routes. No keys in frontend. Build + wrangler per Deployments.md. GitHub backup under jeffthomas4-lab. |
 | 8 | Operations & Reliability | not yet run | New pillar added 2026-07-05 from the best-practices intake (`About Me/Website-Build-Standard.md`). This is the reference site for the standard — run `/web:ops` here first so its patterns (logging, monitoring, backup testing) become what the other sites copy, same as Pillar 4's tokens and Pillar 5's legal templates. |
+| 9 | Testing & CI | not yet run | Pillar added 2026-07-05 (consultant pass). Data app: Vitest suite (happy/failure/auth per API route), npm audit gate, ci.yml. As the reference site, its `/web:test` output becomes TEMPLATES/web/ci.yml. |
+| 10 | SEO & Discoverability | not yet run | Pillar added 2026-07-05. Public marketing + directory site: full baseline (titles, meta, OG, sitemap, robots, JSON-LD, Search Console). |
 
 ## Open items
 
@@ -22,6 +24,7 @@ Last updated: 2026-06-27 (full /web:audit pass; consent, Leaflet, web-vitals fix
 | 1 | LOW | 4 — UI | NavBar uses hardcoded hex in inline style attributes (`color: '#C5713D'` / `'#2D2520'`) instead of CSS vars. Values match tokens. Fix before any rebranding. |
 | 2 | INFO | 1 — Security | Admin-auth.ts decodes CF Access JWT without signature verification (trusts Access policy, not the token). Acceptable while Access policy is attached. Harden in phase 2: verify against JWKS. |
 | 3 | NOT YET RUN | 8 — Operations | Pillar 8 added 2026-07-05. Run `/web:ops` — as the reference site, do this one first. |
+| 4 | NOT YET RUN | 9, 10 | Pillars 9 (Testing & CI) and 10 (SEO) added 2026-07-05 in the consultant pass, which also tightened 1, 2, 4, 7, 8 (secrets inventory + gitleaks date, Lighthouse numbers, /web:stack, monitoring/cost/continuity). Re-check those rows on the next pass. |
 
 ## Code-quality reviewers (non-pillar)
 
