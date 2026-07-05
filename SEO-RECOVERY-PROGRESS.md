@@ -178,5 +178,37 @@ QA: this session touched code (sitemap guard, cron alert, RSS, 2 worker files) a
 2. The contact-email decision from Task 2 (keep `parentcoachplaybook@gmail.com` or swap it, 15+ references waiting).
 3. Author-reveal fork: one person or two, before the About page rewrite happens.
 4. `frame-8x10` ASIN reconciliation above.
-5. A handful of pre-existing truncated/garbled article endings surfaced during Task 3 (listed in that section above), same family of bug as the `hockey.md` fix, worth a dedicated grep-and-fix pass.
-6. Guide↔pathway↔calendar cross-linking (mentioned in the original brief for Task 3, not done this session, only article→money-page linking was in scope for the 165).
+5. ~~A handful of pre-existing truncated/garbled article endings surfaced during Task 3~~ — DONE, see follow-up section above.
+6. ~~Guide↔pathway↔calendar cross-linking~~ — DONE, see follow-up section above.
+
+## Two more truncated articles found and fixed (opportunistic, while pulling reference files for the 15+ content push)
+
+While reading existing 15+ recruiting articles as reference material for new content (see below), found two more genuinely truncated files, same bug family as everything above, missed by the earlier grep pass because these cut off mid-plain-word with no markdown-link syntax to catch:
+- `football-recruiting-what-parents-need-to-know.md` — cut mid-word ("...kept the sport as the kid's project from the begin"). Completed: "...kept the sport as the kid's project from the beginning, and let the letters be a bonus on top of a season they were always going to enjoy."
+- `soccer-recruiting-what-parents-need-to-know.md` — cut mid-word ("...That is the whole thi"). Completed: "...That is the whole thing."
+
+Did not launch a fresh exhaustive re-scan for this specific pattern (mid-plain-word, no link syntax), prioritized moving on to the content-writing task instead. This is a known, still-open gap: the corpus likely has more instances of this pattern that the earlier paren-based Grep would not catch. Worth a dedicated pass with a different detection method (e.g., flag any article whose last sentence has no terminal punctuation and doesn't end in a real word) next session.
+
+## 15+ content gap: scoping — DONE
+
+Jeff asked whether the SEO page infrastructure was complete (yes — hub/guide/pathway/calendar built for all 26 sports, verified by direct Glob/Read, not assumption) and about a page-type strategy to capture parent search intent, which surfaced the 15+ age-band gap: 13 of 26 sports had zero 15+ articles, the other 13 had 1-3 against a 4-6 count at younger ages. Delivered `strategy/15-PLUS-CONTENT-SCOPE.md`: verified current-state table, a 5-template content structure (recruiting overview, varsity "real odds," "didn't get recruited," sport-specific structural quirk, recruiting-adjacent tool piece) with an arts variant for band/choir/theater/dance/ballet, a 3-tier sequencing plan, batch-sizing guidance (20-25 articles per session, 4-5 session project total for all 96).
+
+## 15+ content gap: batch 1 — DONE (25 articles: cross-country, lacrosse-girls, cheer, band, dance)
+
+First Tier 1 batch, 5 sports × 5 articles, dispatched to 5 parallel agents, each given the full anti-AI voice/banned-word rules, the exact frontmatter schema, sport-specific topic assignments, a research requirement (verify any specific rule/stat via WebSearch rather than invent one), the in-prose pathway-linking convention, and an explicit warning against inventing new `/go/` affiliate links.
+
+**Cross-country (5 new):** `cross-country-recruiting-what-parents-need-to-know.md`, `varsity-cross-country-the-real-odds.md`, `when-your-kid-doesnt-get-recruited-cross-country.md`, `why-almost-nobody-gets-cut-from-cross-country.md`, `college-cross-country-recruiting-how-coaches-actually-find-runners.md`. Verified via search: Athletic.net/MileSplit are results-tracking platforms coaches actively cross-check (not formal recruiting databases), D1 XC/track contact opens June 15 after sophomore year, varsity XC scoring caps at 7 runners (top 5 score) with unlimited JV/reserve entries — the real basis for the "no-cut" reputation. No affiliate footer added (no clean gear-slug fit).
+
+**Girls lacrosse (5 new):** `girls-lacrosse-recruiting-what-parents-need-to-know.md`, `varsity-girls-lacrosse-the-real-odds.md`, `when-your-kid-doesnt-get-recruited-girls-lacrosse.md`, `club-vs-high-school-girls-lacrosse.md`, `girls-lacrosse-recruiting-video-what-coaches-actually-watch.md`. Verified via search: the September 1 junior-year contact rule is now unified across men's and women's lacrosse (2022 rule change), matches what the site's existing pathway page already states. `sport: lacrosse-girls` used correctly throughout (not `lacrosse`). No affiliate footer added.
+
+**Cheer (5 new):** `cheer-scholarships-what-parents-need-to-know.md`, `varsity-cheer-tryouts-the-real-odds.md`, `when-your-kid-doesnt-make-the-competitive-cheer-squad-she-wanted.md`, `sideline-cheer-vs-all-star-vs-stunt-the-three-tracks.md`, `college-cheer-and-stunt-recruiting-how-it-actually-works.md`. STUNT facts (NCAA emerging sport status, NAIA sponsorship, head-to-head format) pulled from the site's own existing `guides/stunt.md`/`pathways/stunt.md`, no invented school counts or scholarship figures. Files 1, 4, 5 link both `/pathways/cheer/` and `/pathways/stunt/`, files 2-3 link `/pathways/cheer/` only.
+
+**Band (5 new):** `band-scholarships-what-parents-need-to-know.md`, `drum-major-and-section-leader-the-real-odds.md`, `when-your-kid-doesnt-get-first-chair-or-all-state.md`, `marching-band-vs-concert-band-vs-music-major-the-three-paths.md`, `college-band-audition-prep-what-programs-actually-want.md`. Arts variant of the template (auditions instead of recruiting, chair/section-leader placement instead of roster cuts). No affiliate footer added.
+
+**Dance (5 new):** `college-dance-programs-what-parents-need-to-know.md`, `company-placement-and-team-tryouts-the-real-odds.md`, `when-your-kid-doesnt-get-into-the-dance-program-she-wanted.md`, `studio-competition-dance-vs-pre-professional-track-the-two-paths.md`, `college-dance-audition-prep-what-programs-actually-want.md`. Kept scope to competitive/studio dance (jazz, contemporary, hip hop, competition teams) and deliberately did not re-tread ballet's pre-professional pipeline, already covered separately under `sport: ballet`; the structural-quirk piece links out to `/pathways/ballet/` as the deeper resource instead of duplicating it.
+
+**Result: 25/25 written.** Every file carries the required in-prose pathway link. Each agent independently grepped `src/data/affiliates.json` before considering a "Gear mentioned" footer and found no sport-specific slug that genuinely fit these recruiting/tryout/audition topics for any of the 5 sports, so no footer was added anywhere in this batch, avoiding any risk of a dead `/go/` link. Each agent ran its own banned-word/em-dash sweep and fixed what it found (typically 1-3 words per batch: "typically," "rather," "unlock," "relatively").
+
+**Updated `strategy/15-PLUS-CONTENT-SCOPE.md`** current-state table: cross-country, lacrosse-girls, cheer, band, dance now show 5/5 15+ articles (were 0/5 each).
+
+**Next batch (Tier 1 remainder):** flag-football, football-7v7, lacrosse-boys need a whole-sport content look first (zero articles at any age, not just 15+), then crew, martial-arts, stunt, choir round out Tier 1's zero-article sports. Tier 2 (13 thin sports) comes after.
