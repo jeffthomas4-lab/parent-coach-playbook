@@ -13,7 +13,7 @@ Work in `Outputs/parent-coach-desk` (parentcoachdesk.com, Astro 5 + Cloudflare P
 - `sitemap-camps.xml` serves an empty urlset (110 bytes). GSC shows "1 error", 0 discovered URLs.
 - Root cause: the shared `activity-radar` D1 (id `8cc3694a-26f8-4a56-b131-d5d3a68c49ef`) has **0 approved camps**. 2,105 pending (1,245 with `session_end_date >= today`), 44 rejected. The live `/camps/` index lists nothing.
 - Fallout: GSC discovered pages fell 3,261 → 1,873 (June 22 → July 4). Indexed fell 390 → 288. Camp pages were earning most of the site's early impressions.
-- parentcoachplaybook.com does not resolve (NXDOMAIN). The June 10 change of address depends on live 301s. This one is mostly Jeff's to fix; your job is Task 2.
+- parentcoachplaybook.com does not resolve (NXDOMAIN). Jeff's decision, July 5: the old domain stays dead. Nothing revives it. Task 2 is a purge, not a rescue.
 - Distribution gaps from `SITE_REVIEW_ACTION_PLAN_2026-07-04.md`: articles link to money pages in only 55 of 713 cases (tips are done, 542/577), 26 sport hubs carry generic seoTitle/seoDescription, gear cards ship empty "Our take:" fields, RSS covers articles only, Kit drip unwired, no Pinterest.
 
 ## Ground rules
@@ -37,9 +37,17 @@ Work in `Outputs/parent-coach-desk` (parentcoachdesk.com, Astro 5 + Cloudflare P
 
 **GSC.** After the deploy, resubmit `https://parentcoachdesk.com/sitemap.xml` in Search Console for parentcoachdesk.com and confirm sitemap-camps.xml re-reads without error. Use the Chrome tools; Jeff's profile has owner access.
 
-## Task 2. Old domain (investigate, then hand off)
+## Task 2. Purge the old brand (parentcoachplaybook.com)
 
-You cannot renew a domain. Determine what died: run `nslookup parentcoachplaybook.com`, check whether the zone still exists in the Cloudflare dashboard (ask Jeff to look if you cannot), and check registrar status via whois. Then give Jeff a numbered fix list: restore registration or re-add the zone, recreate the bulk redirect rule (301, all paths, path-preserving, to parentcoachdesk.com), re-serve robots.txt. After Jeff confirms, verify three old URLs 301 correctly and note in GSC that the change of address is still active. Redirects need to stay live into 2027.
+The old domain is dead and stays dead. Every public-facing reference points to parentcoachdesk.com only.
+
+Grep the whole repo for `parentcoachplaybook`, `parent-coach-playbook.kit.com`, and `Parent Coach Playbook` across `src/`, `public/`, `kit-emails/`, `templates/`, `docs/`, `strategy/`, `scripts/`, `worker-cron/`, `worker-link-checker/`. Replace anything a reader, crawler, or subscriber can see: links, copy, metadata, email footers, structured data.
+
+Exceptions that keep the old name: the Cloudflare project name `parent-coach-playbook` in deploy commands and wrangler config (CLAUDE.md says this stays), D1 binding names, and historical audit or planning docs, which record what happened and do not get rewritten. The Kit form on parent-coach-playbook.kit.com moves as part of Task 7's checklist for Jeff.
+
+GSC: leave the old parentcoachplaybook.com property untouched. No sitemap, no new actions. It ages out on its own.
+
+Verify: `grep -ri parentcoachplaybook src public` returns zero hits after the pass.
 
 ## Task 3. Internal-linking sprint (articles to money pages)
 
