@@ -41,12 +41,14 @@ There are roughly one million high school football players in the United States 
 
 Of that 75,000, the breakdown is approximately:
 
-- D1 FBS: ~12,000 roster spots across 134 schools (full headcount scholarships, 85 per school)
-- D1 FCS: ~14,000 roster spots across 128 schools (equivalency, 63 scholarships divided)
+- D1 FBS: ~12,000 roster spots across 134 schools (full headcount scholarships, historically 85 per school)
+- D1 FCS: ~14,000 roster spots across 128 schools (equivalency, historically 63 scholarships divided)
 - D2: ~13,000 roster spots across 169 schools (equivalency, 36 scholarships divided)
 - D3: ~24,000 roster spots across 246 schools (no athletic scholarships)
 - NAIA: ~9,000 roster spots across 91 schools (scholarships allowed, equivalency)
 - NJCAA: ~3,000 roster spots across 65 schools (scholarships at most levels)
+
+A note on the numbers above: the 85-scholarship FBS figure was the rule through 2024-25. As of July 2025, the House settlement replaced it for schools that opt in — instead of a fixed scholarship count, FBS/FCS rosters are now capped at 105 total players, and opted-in schools can fund scholarships for any or all of that roster. Most programs are phasing that in gradually rather than jumping straight to 105 funded scholarships, so the practical scholarship math below is still a reasonable guide for now, but ask a specific program whether it has opted in and how many of its 105 spots are currently funded.
 
 The takeaway: more kids play football at D3 than at D1 FBS and FCS combined. Almost twice as many. If your son is a serious player who wants to keep playing, the math overwhelmingly says the answer is below D1.
 
@@ -62,7 +64,7 @@ If your son is a legitimate FBS prospect, you will know. The first sign is not a
 
 If you are wondering whether your son is FBS-track, he is probably not. The kids who are at this level have been on the radar of the right people since seventh or eighth grade through 7-on-7, combine circuits, and elite camp invites. The rest of the system runs on volume mailers and questionnaires that mean almost nothing.
 
-What an FBS offer actually means: A committable scholarship. Either full ride or nothing. Roster spots are fixed at 85 across four classes, so each year carries about 25 to 30 scholarship slots. The competition for those is intense.
+What an FBS offer actually means: A committable scholarship. Either full ride or nothing. Under the pre-2025-26 model, roster spots were fixed at 85 across four classes, so each year carried about 25 to 30 scholarship slots; under the new 105-roster-limit model (for opted-in schools), the year-to-year slot count varies by program depending on how many of the 105 spots are funded. Either way, the competition for those spots is intense.
 
 ### D1 FCS
 

@@ -24,6 +24,12 @@ export const prerender = false;
 interface CronEnv {
   DB?: D1Database;
   CRON_KEY?: string;
+  // Optional UptimeRobot heartbeat URL (Pillar 8 business-metric alert). When
+  // set, this route pings it once a day only when approved_future_count is
+  // healthy (> 0). A missed ping (site down, or the count fell to zero and
+  // this route stopped pinging on purpose) fires the UptimeRobot alert with
+  // no email plumbing on our end. Leave unset and the ping is skipped, no error.
+  OPS_HEARTBEAT_URL?: string;
 }
 
 const json = (body: unknown, status = 200) =>
@@ -85,6 +91,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
     approvedFutureCount = await countApprovedFutureCamps(env.DB);
     if (approvedFutureCount === 0) {
       console.error('[cron] CAMPS ALERT: approved+future camp count is 0. Sitemap and /camps/ are serving empty. Check pcd_status on the programs table — a migration or bulk write may have reset approvals.');
+    } else if (env.OPS_HEARTBEAT_URL) {
+      // Business-metric alert (Pillar 8): ping the heartbeat monitor only when
+      // the number is healthy. If this run fails, throws, or the count drops
+      // to 0, the ping does not fire and the monitor's own missed-check alert
+      // does the rest. Fire-and-forget: a heartbeat failure should never fail
+      // the sweep itself.
+      try {
+        await fetch(env.OPS_HEARTBEAT_URL, { method: 'GET' });
+      } catch (e) {
+        console.error('[cron] heartbeat ping failed', e);
+      }
     }
   } catch (e) {
     console.error('[cron] camps health check failed', e);

@@ -19,7 +19,7 @@ export const pcdTokens = {
     inkSoft: '#5F5448', // Walnut — body text
     paper: '#FAF6EE', // Cream Paper (was Field Paper)
     paperWarm: '#F2EAD9', // card backgrounds, warmer cream
-    rust: '#C5713D', // Terracotta (was Drive Rust)
+    rust: '#9E5228', // Terracotta — darkened from #C5713D 2026-07-07 for WCAG AA (5.3:1 on paper, 4.8:1 on paper-warm, 5.3:1 with paper text on rust bg; must stay in sync with global.css --rust)
     bone: '#DDD2BD', // Linen — borders/dividers
     turf: '#8FA68C', // Sage
     trophy: '#D4AB6A', // Honey — highlight

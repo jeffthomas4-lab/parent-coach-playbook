@@ -64,7 +64,7 @@ SafeSport guidance: contact should be limited to what's necessary for instructio
 
 **How to report.**
 
-If your kid or another athlete describes something that crosses these lines, the SafeSport Helpline is available 24/7. The number is 720-531-0340; online reporting at uscenterforsafesport.org. Reports can be anonymous. SafeSport investigates and refers to law enforcement when appropriate.
+If your kid or another athlete describes something that crosses these lines, the SafeSport Helpline is available 24/7. The number is 833-587-7233; online reporting at uscenterforsafesport.org. Reports can be anonymous. SafeSport investigates and refers to law enforcement when appropriate.
 
 For non-NGB youth programs (rec leagues, school sports), report to the program's leadership and to local law enforcement directly. The school's Title IX coordinator handles reports involving school staff.
 

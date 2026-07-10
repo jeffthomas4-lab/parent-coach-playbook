@@ -50,8 +50,12 @@ export default defineConfig({
   // Permanent redirects for renamed URLs. Preserves inbound links from emails,
   // social, and articles published before the slug changed.
   redirects: {
+    // Only the no-trailing-slash form is declared. Astro's default
+    // trailingSlash behavior ('ignore') already matches the '/...' and
+    // '/.../ ' variants to the same route, so declaring both here produced
+    // a duplicate-route warning ("defined in both X and X/") that a future
+    // Astro version will turn into a hard build error.
     '/resources/drive-home-playbook': '/resources/what-to-say-when',
-    '/resources/drive-home-playbook/': '/resources/what-to-say-when/',
   },
   image: {
     domains: ['cdn.sanity.io'],

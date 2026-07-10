@@ -27,7 +27,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
             <button
               type="button"
               class="font-display italic text-[1.05rem] hover:text-rust transition-colors inline-flex items-center gap-1"
-              style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
+              style={`font-weight: 500; color: ${isActive(item.href) ? 'var(--rust)' : 'var(--ink)'};`}
               data-dropdown-trigger
               aria-haspopup="true"
               aria-expanded="false"
@@ -148,7 +148,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
           <a
             href={item.href}
             class="font-display italic text-[1.05rem] hover:text-rust transition-colors"
-            style={`font-weight: 500; color: ${isActive(item.href) ? '#C5713D' : '#2D2520'};`}
+            style={`font-weight: 500; color: ${isActive(item.href) ? 'var(--rust)' : 'var(--ink)'};`}
           >
             {item.label}
           </a>

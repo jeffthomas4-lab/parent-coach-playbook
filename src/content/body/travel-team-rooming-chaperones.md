@@ -81,6 +81,6 @@ A team manager who has answers is one who has done the work. A team manager who 
 
 "The chaperones are the people you go to first if I am not there."
 
-**For the parent who is also the chaperone.** Read MAAPP before you go. Read your NGB's travel policy before you go. Know the SafeSport reporting line (720-531-0340). The role is bigger than "chaperone" implies.
+**For the parent who is also the chaperone.** Read MAAPP before you go. Read your NGB's travel policy before you go. Know the SafeSport reporting line (833-587-7233). The role is bigger than "chaperone" implies.
 
 The trip is supposed to be fun. The policies do not get in the way of fun. They make sure the trip is one a kid can look back on without anything that should not have happened.

@@ -46,6 +46,6 @@ A few specifics.
 
 **Draw to start.** Like a faceoff but standing, two players hold sticks together and the ball is set between them. Whistle releases. The midfielders battle for possession.
 
-**Rules vary at youth.** US Lacrosse publishes age-appropriate modifications for U13 and below. Younger ages may use modified field sizes and stick-check restrictions.
+**Rules vary at youth.** USA Lacrosse publishes age-appropriate modifications for U13 and below. Younger ages may use modified field sizes and stick-check restrictions.
 
 **Concussion rules apply.** Even though girls lacrosse is non-contact in concept, head injuries happen (incidental stick contact, ground contact). Same protocols as other contact sports.

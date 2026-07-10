@@ -70,6 +70,6 @@ Single-occupancy or curtained changing options for any kid who requests them, no
 
 You are not asking because you are paranoid. You are asking because the locker room is the place adults do not see, and the kids who go through hazing or persistent bullying often do not bring it up unless asked.
 
-**What to do if your kid is the one being targeted.** Document. Talk to the head coach with the documentation. If the coach does not address it within a week, escalate to the AD or program director. For NGB programs, SafeSport investigates locker-room hazing involving covered behavior at 720-531-0340.
+**What to do if your kid is the one being targeted.** Document. Talk to the head coach with the documentation. If the coach does not address it within a week, escalate to the AD or program director. For NGB programs, SafeSport investigates locker-room hazing involving covered behavior at 833-587-7233.
 
 The locker room can be one of the best parts of a kid's youth-sports experience or one of the worst. The difference is almost always whether the adults running the program have done the work to set the culture, or whether they hoped the kids would set it themselves.

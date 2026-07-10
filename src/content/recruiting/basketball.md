@@ -35,7 +35,7 @@ The numbers tell the real story. Roughly 540,000 boys play high-school basketbal
 
 ## What each level actually looks like
 
-**D1.** Roughly 360 men's programs and 350 women's programs. 13 scholarships per team in men's, 15 in women's. Basketball is "headcount" at D1: every scholarship is full, no partials. That sounds great until you realize it means the staff offers exactly 4 to 5 scholarships per recruiting class. Nationwide. Across all 350-odd schools.
+**D1.** Roughly 360 men's programs and 350 women's programs. Basketball was already "headcount" — every scholarship full, no partials — and that hasn't changed. What did change: as of July 2025, the House settlement moved D1 to a roster-limit model for schools that opt in. Men's and women's rosters are now capped at 15, and opted-in schools can fund scholarships up to that full roster (up from the old cap of 13 men's / 15 women's), a real increase, especially on the women's side. It still works out to roughly 4 to 5 scholarships offered per recruiting class, nationwide, across all 350-odd schools — better math than before, not fundamentally different.
 
 **D2.** About 310 programs each side. 10 scholarships available per team, but they're "equivalency", schools split them into partials. Most rosters carry 12 to 15 players, very few on a full ride.
 

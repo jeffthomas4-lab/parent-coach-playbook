@@ -37,7 +37,7 @@ About 360,000 girls play high-school softball each year. Roughly 22,000 play col
 
 ## What each level actually looks like
 
-**D1.** About 300 programs. 12 scholarships per team, equivalency. Same partial-scholarship math as baseball. Most starters at top D1 programs are on substantial scholarships. The bench and developmental players often piece together athletic and academic aid.
+**D1.** About 300 programs. The 12-scholarship equivalency cap was the rule through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 25-player roster limit and scholarships fundable up to that full roster — a bigger jump than baseball got, proportionally. Most starters at top D1 programs are on substantial scholarships. The bench and developmental players often piece together athletic and academic aid.
 
 **D2.** About 290 programs. 7.2 scholarships, equivalency. Partial scholarships are the norm.
 

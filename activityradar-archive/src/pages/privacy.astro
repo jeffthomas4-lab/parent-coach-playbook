@@ -1,0 +1,96 @@
+---
+export const prerender = true;
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Privacy — ActivityRadar"
+  description="How ActivityRadar collects and uses data."
+>
+  <div class="max-w-2xl mx-auto px-4 py-14">
+    <h1 class="text-2xl font-bold text-navy mb-8">Privacy</h1>
+
+    <div class="prose-content text-navy/80 leading-relaxed flex flex-col gap-6">
+
+      <section>
+        <p>
+          ActivityRadar is a directory of youth activity organizations in the Puget Sound region.
+          We collect a small amount of data — only what we need to run the site.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">What we collect</h2>
+        <p class="mb-3">
+          <strong>Claim and suggestion submissions.</strong> When you claim a listing or suggest
+          an organization, we collect your name and email address (and, optionally, your role and
+          any notes you add). This goes into our database so we can review and respond to your
+          request. We use it for no other purpose.
+        </p>
+        <p class="mb-3">
+          <strong>Search events.</strong> When you search, we log the query, filters, and result
+          count. We do not log your IP address or link searches to an individual. This data tells
+          us where the directory has gaps so we can add more organizations.
+        </p>
+        <p>
+          <strong>Aggregate traffic data</strong> via Cloudflare Web Analytics. Page views,
+          referrer, and country — no cookies, no individual tracking, no advertising profiles.
+          Cloudflare processes this data on our behalf and does not sell it.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">What we do not collect</h2>
+        <p>
+          No user accounts. No passwords. No payment information. No device fingerprints.
+          No advertising IDs. No cross-site tracking pixels. No behavioral data.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">Who sees your data</h2>
+        <p>
+          Cloudflare runs the hosting, database, and analytics infrastructure. They do not sell
+          customer data. No other third party receives data from this site.
+        </p>
+        <p class="mt-3">
+          We do not sell personal information and never have.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">How long we keep it</h2>
+        <p>
+          Claim and suggestion records: kept until the request is resolved, then archived
+          for 12 months and deleted. Search events: 90 days. Analytics: 30 days (Cloudflare).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">Your rights</h2>
+        <p>
+          You can ask us what we hold about you, ask us to correct it, or ask us to delete it.
+          Email <a href="mailto:jeffthomas@pugetsound.edu" class="text-rust hover:underline">jeffthomas@pugetsound.edu</a>
+          and we will handle it within 30 days.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">Children</h2>
+        <p>
+          ActivityRadar is for parents finding youth activities. We do not knowingly collect
+          information from children under 13.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold text-navy text-base mb-3">Contact</h2>
+        <p>
+          ActivityRadar is published by Field &amp; Forge Ventures.
+          Questions: <a href="mailto:jeffthomas@pugetsound.edu" class="text-rust hover:underline">jeffthomas@pugetsound.edu</a>.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</Base>

@@ -30,7 +30,7 @@ governingBodies:
 
 NIL (Name, Image, Likeness) is the legal framework that lets athletes earn money from their name, image, and likeness. Since June 2021, NCAA athletes can do this without losing eligibility. Whether high school athletes can also do it depends on state law, and the state-by-state map keeps changing.
 
-**The basics for HS athletes.** As of 2026, roughly 35 states allow high school athletes to participate in NIL deals without losing high school eligibility, with various restrictions. Roughly 15 states still prohibit it or require waivers. The map is shifting as more state athletic associations update their rules.
+**The basics for HS athletes.** As of mid-2026, roughly 41 states allow high school athletes to participate in NIL deals without losing high school eligibility, with various restrictions. A handful of states (including Alabama, Indiana, Mississippi, Hawaii, and Wyoming) still restrict or heavily limit it, and a few others (like Texas, through the UIL) impose their own special limitations. The map is shifting as more state athletic associations update their rules.
 
 Check your state's high school athletic association (NFHS member). They publish the current rule. If your state allows HS NIL, the rule almost always includes specific restrictions: no school-uniform appearances, no use of school logos, no in-school promotion, no products related to alcohol/gambling/CBD.
 

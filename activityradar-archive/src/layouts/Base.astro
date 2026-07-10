@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: string;
+}
+
+const {
+  title = 'ActivityRadar',
+  description = 'Find youth activities, sports programs, camps, and classes near you.',
+  canonical,
+  ogType = 'website',
+} = Astro.props;
+
+const siteUrl = (Astro.locals as any).runtime?.env?.SITE_URL ?? 'https://activityradar.com';
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <slot name="head" />
+  </head>
+  <body class="bg-cream text-navy min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-2 focus:left-2 focus:bg-navy focus:text-cream focus:px-4 focus:py-3 focus:no-underline"
+    >
+      Skip to main content
+    </a>
+    <!-- Nav -->
+    <header class="bg-navy text-cream border-b border-navy/20">
+      <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
+        <a
+          href="/"
+          class="font-semibold text-sm uppercase tracking-widest text-cream hover:text-cream/80 transition-colors no-underline min-h-0"
+        >
+          ActivityRadar
+        </a>
+        <nav aria-label="Primary" class="flex items-center gap-1 text-xs uppercase tracking-wider">
+          <a
+            href="/search"
+            class="px-3 py-2 text-cream/70 hover:text-cream transition-colors min-h-0 no-underline"
+          >
+            Search
+          </a>
+          <a
+            href="/soccer-camp/tacoma-wa"
+            class="px-3 py-2 text-cream/70 hover:text-cream transition-colors min-h-0 no-underline"
+          >
+            Browse
+          </a>
+          <a
+            href="/claim"
+            class="ml-2 px-4 py-2 bg-rust text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#a05429] transition-colors min-h-0 no-underline"
+          >
+            List Your Org
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-cream/60 text-xs py-8 mt-16">
+      <div class="max-w-6xl mx-auto px-4 flex flex-wrap gap-6 justify-between items-start">
+        <div>
+          <p class="text-cream font-semibold uppercase tracking-wider text-sm mb-1">ActivityRadar</p>
+          <p>Find youth activities near you.</p>
+        </div>
+        <div class="flex gap-6 text-xs uppercase tracking-wider">
+          <a href="/search" class="hover:text-cream transition-colors min-h-0 no-underline">Search</a>
+          <a href="/claim" class="hover:text-cream transition-colors min-h-0 no-underline">Claim Listing</a>
+          <a href="/suggest" class="hover:text-cream transition-colors min-h-0 no-underline">Suggest an Org</a>
+        </div>
+        <div class="flex gap-6 text-xs uppercase tracking-wider">
+          <a href="/privacy" class="hover:text-cream transition-colors min-h-0 no-underline">Privacy</a>
+          <a href="/terms" class="hover:text-cream transition-colors min-h-0 no-underline">Terms</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Cloudflare Web Analytics — cookieless, no consent banner needed -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "REPLACE_WITH_BEACON_TOKEN"}'></script>
+  </body>
+</html>

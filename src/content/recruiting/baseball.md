@@ -35,7 +35,7 @@ About 480,000 boys play high-school baseball each year. About 36,000 play colleg
 
 ## What each level actually looks like
 
-**D1.** About 300 programs. 11.7 scholarships per team, equivalency. That's the famous number. Twenty-seven roster spots, 11.7 scholarships split into partials. Most freshmen at D1 baseball are on 25 to 50 percent rides. Full scholarships exist but are rare and usually reserved for top-end Friday-night starters and elite power hitters.
+**D1.** About 300 programs. The old math — 27 roster spots, 11.7 scholarships split into partials — was the rule through 2024-25. As of July 2025, the House settlement replaced that model for schools that opt in: no more sport-specific scholarship cap, but a 34-player roster limit, with scholarships allowed up to that full roster if a school chooses to fund it. In practice, most programs are phasing the extra scholarship money in gradually, so partial rides (25 to 50 percent) are still the norm for most freshmen, and full rides are still concentrated on top-end Friday-night starters and elite power hitters. Not every school opted in — ask directly whether a program is on the new roster-limit model or the old 11.7-scholarship model.
 
 **D2.** About 270 programs. 9 scholarships per team, equivalency. Same partial-scholarship math, smaller pieces.
 

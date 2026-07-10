@@ -47,7 +47,7 @@ That compresses the opportunity for American juniors, especially at the D1 level
 
 ## What each level actually looks like
 
-**D1.** About 250 men's and 300-plus women's programs. Men's tennis is equivalency at roughly 4.5 scholarships split across the roster. Women's tennis is a headcount sport at 8 full scholarships, which makes it one of the better scholarship deals in women's college athletics.
+**D1.** About 250 men's and 300-plus women's programs. The old model — men's equivalency at roughly 4.5 scholarships split across the roster, women's headcount at 8 full scholarships — was the rule through 2024-25. As of July 2025, the House settlement replaced both for opted-in schools with a shared roster limit of 10 players per team, with scholarships fundable up to that full roster for both men's and women's tennis. That's a real scholarship increase on both sides, especially men's.
 
 **D2.** Scholarships across both, equivalency, often stacked with academic aid.
 

@@ -47,6 +47,6 @@ What this does not look like: a coach who Snapchats with players. A coach who fo
 
 **What to do if it is happening.** Two paths. First, ask the coach to add you to the thread, and watch how they respond. A coach who explains the rule and apologizes is fine. A coach who pushes back, deflects, or asks the kid not to tell you is the wrong coach.
 
-Second, if the response feels off, the SafeSport Helpline takes reports at 720-531-0340 and at uscenterforsafesport.org. Reports can be anonymous.
+Second, if the response feels off, the SafeSport Helpline takes reports at 833-587-7233 and at uscenterforsafesport.org. Reports can be anonymous.
 
 The system is layered. Background checks plus SafeSport training plus communication rules plus parent attention. None of these alone protect a kid. All of them together change the math.

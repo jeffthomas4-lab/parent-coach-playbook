@@ -1,0 +1,1019 @@
+org_id,name,city,state,engine,website_url,social_url,website_confidence,needs_review,website_discovery_reason
+org-7b380a90-1925-51ed-a8da-bf84f9c14a08,Highland Music Booster Club,Cowiche,WA,bing,,,0,True,Only nonprofit directories. No own website.
+org-cd82a30e-69d6-518d-aca3-2917bd049a26,Leavenworth Ski Hill Heritage Foundation,Leavenworth,WA,duckduckgo,https://skileavenworth.com,,70,True,Leavenworth Winter Sports Club runs the Ski Hill; foundation-vs-club name mismatch.
+org-e0829353-c5b5-5a8a-9cbd-351357c4d071,Bellevue Girls Basketball Booster Club,Medina,WA,yahoo,,,50,True,Only directories; bellevuegsb.org is a different sibling org.
+org-c60aaef9-3302-578d-82cd-d8d45f87537f,Jet City Jumpers Inc,Issaquah,WA,duckduckgo,,,0,True,"501(c)(7) flyball social club; only directories, no own website."
+org-0e9979d6-26ea-5389-a1ca-2dc9c12e17a4,Wolverton Mountain Peacekeepers Inc,Vancouver,WA,bing,,,0,False,"Only nonprofit directories found, no owned website"
+org-e756bc34-c08f-54dc-8b53-03267866f69b,Camas-washougal Flying Club Inc,Camas,WA,brave,,,0,True,Brave returned no results - possible block
+org-57575e5e-0384-5d46-b0e7-36d8b2620c59,Two Rivers Riding Club,Burbank,WA,mojeek,,,0,True,Mojeek 403 block - automated query detection
+org-704b33c1-f5b0-51de-9455-ea54db979569,Woodland Park Lawn Bowling Club,Seattle,WA,ecosia,,,0,True,"Only city parks page found, no owned website"
+org-754eef6b-74a0-5759-8331-ef9ba68f19aa,Pacific Nw Vintage Snowmobile Club,Camas,WA,startpage,,,0,True,"Only IRS CSV data found, no owned website"
+org-16b0113d-23c2-5566-899a-318e9cde97b2,Boeing Employees Ski Club Inc,Milton,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-04012ff3-0fd8-50c4-9838-5fd2656c0aed,Rainshadow Chorale,Port Townsend,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-ec5f2283-c4bc-5c0c-822e-559232ddec63,Equanimity Foundation,Enumclaw,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-039ed8ca-9242-5f8c-a3e0-89b3fb9560c9,Winlock Boys Baseball,Winlock,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-45a898bf-3c48-5c02-ad56-c29134afaeb7,Dalmatian Club Of America Inc,Port Orchard,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-d3e555ea-e7a9-5634-bb32-b25661f1ec93,Salish Sea Early Music Festival,Anacortes,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-6bb37c90-fd2d-5ae2-9828-e37196e78e3e,Pro Baseball Club,Puyallup,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-c8be1be3-91c3-5b56-ac79-6bf160075c24,United States Bowling Congress Inc,Ocean Shores,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-af10011c-3b4e-51e5-8dfb-4269d540a74e,Thurston County Youth Soccer Association,Lacey,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-5c4a7137-e9d4-5423-a0a1-b72064defddc,Washington State University,Colville,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-35db65ad-d8b4-523c-82fe-4e2649397612,Puget Sound Folk Harp Society,Shoreline,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-cd28af36-99ba-544c-ae14-a176df25d109,Washington State University,Ellensburg,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-18d38861-5dfe-541c-90a3-3f7f8c467ab8,Mukilteo Lighthouse Festival Association,Mukilteo,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-7d2153b4-e190-56cc-83f5-0268b5fbae89,Bellevue Boys Lacrosse Club,Bellevue,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-20ca062b-035d-5831-9449-3f1adf849d9c,Parker Youth And Sports Foundation,Yakima,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-9572558a-5f5d-51db-ad67-449c10c4e435,States 4-H International Exchange Programs,Seattle,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-e964a505-a254-53ec-8dc1-d5908dd5b5bd,Washington State University,Vancouver,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-f62e0de8-f775-5875-97f7-1dcfd99dc4ad,Washington State University,Tacoma,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-b0968876-0ef9-5c70-ac9d-2915e952f569,Ancora,Burien,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-1b7839e3-caf3-569d-b6c6-db65cd846b85,Everett July Fourth Foundation,Mukilteo,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-41b25bad-5179-5032-9455-da1fc430fc66,Friends Of Luther Burbank Park,Mercer Island,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-f7675108-91cc-5ec8-a166-e164694c9968,Granger Swimming Pool Committee,Granger,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-08ae66ba-b9ec-50ba-8d49-9b16344b9419,West End Thunder,Forks,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-2ace0617-f3ff-562a-b8b8-e1193148b3b5,National Federation Of Music Clubs,Vancouver,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-6f7a583c-d0f2-55a6-a743-e6dfe5c10a9b,Pomeroy Community Center,Pomeroy,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-8616fd9a-163d-5e81-a52f-b39d6dfcd6c7,Bellevuew Girls Lacrosse Associatio N,Edmonds,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-7332fcd8-37fd-5df1-9c71-895d548c0897,Bremerton Football Booster Club,Bremerton,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-eae507c4-e48f-58a4-861e-318758c97731,Kitsap Junior Rodeo Association,Port Orchard,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-2cc25536-786d-5aa1-a070-5c421c723e88,Reality Sports Foundation,Sumner,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-76aa0799-d94c-5560-b6e0-246fd8b1d395,Seattle Select Baseball Club,Shoreline,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-c04bd43d-eb2b-5008-92a8-e3f57c4a4294,Academic Link Outreach Nfp,Kirkland,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-74dcad4b-f694-5bca-a8e8-f147e85f4394,Go Girl Golf,Bainbridge Is,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-e3463a97-9030-5e9d-9c71-4e220e358212,Washington Atv Association,Kent,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-c463f9c0-eaa4-5098-9eee-c9c2325db10b,Colfax Golf Course Foundation,Colfax,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-b1aa49e1-274e-59cc-b3c9-5dce4fdb35e2,Seattle Mountaineers,Monroe,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-4feb5c48-70ba-5cf4-b452-48c70f6a691c,Pacific Premier FC,Everett,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-03f9354d-e992-544d-b507-4ff0480c3f40,Little League Baseball Inc,Greenacres,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-631a74c6-cddc-5eb5-a92d-ac4c927dc119,Pacific Northwest Soccer Club,Renton,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-991ffbfa-0edc-585f-ba53-57552ebde7db,Puget Sound Flyfishers Club,Gig Harbor,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-8b022c20-a321-56b5-bc9e-09557af873b3,Onalaska Fastpitch Association,Onalaska,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-de0fd23e-339b-56d3-9797-c37cedad220e,Pacific Northwest Interclub Association,Pasco,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-4eceab73-d9cd-506f-9505-5c8258b2b3d9,West Seattle Soccer Club,Seattle,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-ad925b4c-ff54-59f0-9af2-e7205842180e,Lake Merwin Campers Hideaway,Amboy,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-528d0b4c-20b1-50a4-8050-a4f1a894c0c4,Eastside Music Festival Foundation,Woodinville,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-b5fd3302-e743-5066-b7bc-066f02448861,Intiman Theatre,Seattle,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-1c28f0e4-ffa9-5a52-b9fd-866f32e09600,Seattle Junior Hockey Association,Mountlake Ter,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-0a58fc56-9dec-5ee3-ad6f-354e3593507a,Educational Resources Ukraine,Anacortes,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-ddc31460-2d1f-5f21-84eb-7d5c4a35df08,North Bank Artists Community Project,Vancouver,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-22403eec-5b54-5973-8655-a94b0c624f29,Eastern Washington Atv Associationincorporated,Airway Heights,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-a15932c9-931d-5a09-8fdd-21b58d37be9e,Inland Northwest Woodturners Association,Spokane,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-939af69e-6311-5bb6-8a82-545e32305368,Kalama Community Learn To Swim,Kalama,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-7a0fad6e-e950-5492-a1f5-fada857779ff,Rmd Community Sports Association,Ravensdale,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-0957ee3e-1646-5a8a-87b5-5516fb7a0383,Redmond Select Girls Basketball,Redmond,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-1039452d-3927-5db5-bb51-88ca4c9dd12e,Artrails Of Southwest Washington,Centralia,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-3bba0cd1-147b-524d-86fe-5e9215b18d30,Outdoor Youth Connections,Lake Stevens,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-dc1e3f1a-9195-57fa-a1e3-d045346352de,Seattle Derby Brats,Shoreline,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-c308dec9-76ab-5038-ad2f-2ca4fa02cb94,David Harsh Ministries,Marysville,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-f37aa645-bcca-5fe7-909d-38d5b6f0195d,University High School Wrestling Booster Club,Spokane Vly,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-e31dc18e-34b3-5460-aca3-dde13fb060f3,Boeing Employees Karate Association - Seattle,Bellevue,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-659e64a7-c43c-5897-8826-269c27a638a0,Washington Timbers Football Club,Vancouver,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-e8816125-6051-5099-a43d-4448d438d6c7,East County Girls Swim Teams Booster Club,Vancouver,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-f9c8df87-35f0-5145-9204-b77b35dcc4b5,Seattle English Country Dance,Shoreline,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-825f9a96-16f7-5eb8-af5b-070452758087,Skate Like A Girl,Seattle,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-2510bdda-d043-570f-9ecc-4f48382cd149,Mercer Island Womens Lacrosse Club,Mercer Island,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-79f57c1c-e8d5-5934-aae4-909e731a0884,Conway Youth Soccer Association,Mount Vernon,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-08937804-ac72-5295-af92-2855bd6b701e,Kingston Grad Night,Poulsbo,WA,mojeek,,,0,True,Mojeek 403 blocked for session - skipped
+org-24f1f509-9135-5579-b5db-984ff2009024,Lynden Junior Livestock Show And Auction,Lynden,WA,bing,https://sites.google.com/lyndenjrlivestock.org/sale/home,,75,True,"Google Sites page referencing lyndenjrlivestock.org domain, Lynden WA confirmed"
+org-aa23793e-0357-5899-803e-da9ae4c75e89,Big Cat Wrestling,Spokane,WA,ecosia,,,0,True,Ecosia returned no results
+org-e815e8ee-ba43-569c-b92e-0399ef1c5356,Northshore Lacrosse Club,Bothell,WA,startpage,,,0,True,"No owned website found; laxbothell.org is Bothell Lacrosse Club (different entity), nsglax.org is girls program only"
+org-f3d8e8c9-79d1-5f00-907f-f26c76f00f04,Covington Community Sports Inc,Covington,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-f499b669-5be6-5438-9377-7b3f739cc99d,Unified Shito Ryu Academy,Kent,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-b0fb9e0f-a7ad-5c8c-8530-aac28f59db2d,Lynden Youth Sports Inc,Lynden,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-bac0e4c6-0208-5a7a-9f05-847ef21eb764,Washington State Potato Conference And Trade Show,Moses Lake,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-98bd8e78-06bb-5180-bf26-c3580b516bab,National Federation Of Music Clubs,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-3ab5f95b-6b33-52d8-97f6-c8ea97c36035,Bremerton Figure Skating Club,Bremerton,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-ffdc9796-097d-5120-87af-fd7ddebcdaaa,Market Street Singers,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-e180ae5d-d4b1-5e6c-b391-35e17afb6501,Mercer Island Track Club,Mercer Island,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-1dc276b9-f309-5e0a-93bb-bf25061f67a3,Ars Nova Press Inc,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-bd9ea42a-8376-5b88-bb44-1ea78ff9cca7,Narrows Baseball Club,Gig Harbor,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-48f0b907-34d9-5401-999d-c16b40197b2e,Service Board,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-e3d344ea-548f-5cfc-9d98-7b2c93b62caf,Whidbey Island Fly Fishing Club,Langley,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-ab392c74-e615-50f2-ae37-99511c125093,Tri-cities Soccer Referees Association,Richland,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-fa996ff6-001b-5f6d-81c8-562066853d4d,Graham Ballet Theater,Pullman,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-2cd43775-788f-5618-bd89-154bfe5bbd05,Full Circle Theatre,Leavenworth,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-777409a0-c11c-571c-9895-28d05b8fb92b,Washington State University,Spokane,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-bef23372-9b3f-50d5-8d17-d7cd83d15f5f,Seattle Womens Hockey Club,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-93237d43-dd87-5606-94e0-347c562e7c80,Sound Of Swing,Sammamish,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-0d4fb285-4506-58c0-99d3-b8026c760fe2,Parkland-spanaway Kiwanis Foundation,Tacoma,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-043ba4b6-761c-5429-8055-0ae61c3d63d7,United States Bowling Congress Inc,Lynden,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-14a77666-d923-532c-8d19-5ffd1045e5ba,Mercer Island Girls Basketball Booster Club,Mercer Island,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-23d6524a-83ac-502a-877f-4f765cdc5cea,Illahee Garden Club,Randle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-05844a67-77e0-5873-8596-8a595741820e,North Spokane Homeschool Co-op,Spokane,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-3f9a4ca6-ea3d-5714-8d6e-52893840919f,Ram Booster Club,Deer Park,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-38a28250-8892-511e-a119-02bd95db0b21,United States Bowling Congress Inc,Chelan,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-b0da2f8a-f9b3-5080-adaa-81bcc299a644,49 Degrees North Winter Sportsfoundation,Chewelah,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-58ad225c-09dd-5d0a-9aa7-2792fb087e25,Jerry Mastas Racing Sponsor-a-youthprogram,Colville,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-32b21104-ec13-59a0-8d83-c0682f363657,Tri-cities Sports Officialsassociation--football,Kennewick,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-4dfdc73b-8d34-5a9a-b57d-125a85d7e45d,United States Bowling Congress Inc,Clarkston,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-30637c58-5075-5f24-831e-99576b61cfa4,Toastmasters International,Sequim,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-796af557-c2a2-5bd6-ace3-c34a18e88cdf,Kitsap Youth Lacrosse Association,Poulsbo,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-617a99c1-fb30-5ffb-855a-5ed841dde137,Sammamish Lacrosse Club,Bellevue,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-e68c7529-4a02-5fa5-ae37-2a1c3bf0dc6a,Woodstock Farm Concervancy,Bellingham,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-5837c616-d414-5867-80f1-fa2c9c3f21aa,Snohomish Shock,Snohomish,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-8df627b3-643e-52d8-8497-a3cf5f0cbe09,Seattle Youth Sailing Society,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-f31c5f0d-d446-5298-99f2-cda1f16056cd,Courts For Kids,Vancouver,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-304de73f-93b5-5b66-af12-a3161a5e7575,Skinner Releasing Institute,Bothell,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-3794a27d-176a-5db6-8dcb-2a24709924e3,Go Play Nw,Seattle,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-305fff5a-77b4-53e6-9595-7142ba5c2c65,Kennewick National Youth Baseball,Kennewick,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-d3989a0b-ee9c-5771-89af-c7e95f9f7abe,Spokane Art School Inc,Spokane,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-75daf7f8-b64a-555c-8736-805dd7e8672f,Ballet Northwest,Olympia,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-f27c9f32-feb1-518e-900c-9a222fd68707,Inland Empire Bass Club,Spokane Vly,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-8623c096-4cc9-56cb-90e9-f08accea3438,Mid-columbia Musical Theatre,Richland,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-9c25408f-819e-5b03-95c5-45e2cfe1d2dc,Washington State University,Union Gap,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-adab6e70-4eed-5e7e-b63c-cac365589f4e,Upper Kittitas County Snowmobilers,Easton,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-28303cfc-9235-5071-b8c9-c316cc6c0d2c,Maryfest Inc,Marysville,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-f23c1db8-ad58-5a09-96ec-dc72674c11bf,Washington State University,Ritzville,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-b750f8ca-fbdc-5854-bf0c-8a175d994602,Spokane Valley Hub,Liberty Lake,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-716d2290-7471-5950-88dc-295a2b37abf8,Boeing Rueda De Casino Club,Everett,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-dd854ad8-a1f3-56ed-af3b-41866feeb07a,Home Course Mens Golf Club,Dupont,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-06f38ebe-9811-5725-af53-9888760f8402,Paradosi Christian Ballet,Tacoma,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-8950729a-2a29-5824-97f6-300039edeb0e,West Valley Little League,Yakima,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-1e410d44-dce6-56d9-8d70-6b74f91f9ffa,Washington State Fair Foundation,Puyallup,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-00c33a02-1bd9-52df-bded-d3f186613fda,Partners For Baptismal Living Inc,Tacoma,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-bf48e856-b6a6-5619-81d1-d24e31672c76,Lakewood Youth Football Athletic Association,Arlington,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-783f2c2e-ae14-5592-8a35-783e7de35548,Freedom 13,Kingston,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-ce77c377-6d63-5c3e-ba3e-0accb10c753b,Spokane Youth Lacrosse Association,Spokane,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-5bdc538e-b6a1-572b-821b-deefc3143062,Issaquah Select Basketball Association,Issaquah,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-a6d3a957-cb49-560a-8e6f-88219d7c785c,Kennewick American Legion Baseball,Kennewick,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-5fec7026-7a7d-5765-9ce5-b0aa9fab9682,Sno-valley Wildcats Junior Football And Cheerleading Association,North Bend,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-4387c0e0-e99d-5722-b5ed-b6c13ec53253,Chewelah Cougar Boosters,Addy,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-f346443f-7e22-506a-925c-550b6cd69358,Pierce County Firefighters Pipes & Drums Band,Kent,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-4f11d8d9-1aa3-586c-8d31-93b7a82b8daa,Klahanie Swim Team,Sammamish,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-abc0d9a5-f07b-5d61-8f9a-482d12bcb343,Holiday Rambler Recreational Vehicle Club Inc,Rochester,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-3c609f36-1e62-51ac-9d85-bee8ea748984,Vertical World Climbing Team Fund,Lynnwood,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-6b6eaf5d-aca6-5ab9-9b46-dabe8eccabd6,Jet City Rollerderby,Everett,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-2fe86c2c-bb79-5cbb-b28b-0870abcdb751,National Charity League - Lake Sammamish Chapter,Sammamish,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-ee8d2a24-81a2-5c14-b70c-03de2a7b12af,Ignite Worldwide,Brier,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-ad412aba-d57c-52f4-95ec-cd5791f888f1,South King County Puget Sound Anglers Inc,Des Moines,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-db05ff77-f812-5618-a1dc-77cd3ad092e8,Studio Del Creador,Bothell,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-c8ae4485-0a99-5594-b77c-bf5c637f46ba,Womens Service League Of Ncw,Wenatchee,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-7675f2a0-adbe-57f7-99a6-ebdc741b484f,Vashon Island Junior Wrestling,Vashon,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-75814f24-0e1c-5a69-bebb-7670951ec6f5,Jackson High Scholl Girls Basketball Boosters,Mill Creek,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-891c8350-22c9-534f-9971-7028ef5f7a8e,Glacier Peak Fastpitch Boosters,Mill Creek,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-6e24db2e-5fd9-5c52-b598-d87eda9c8f1f,Pacific Northwest Qualifier,Cheney,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-8367620e-a4a2-53ac-b350-039889891186,Army Sgt Justin D Norton Post 100 Endowment Foundation,Lacey,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-c3139da1-40a0-54cf-898b-02f22c6851ed,Boys & Girls Club Of Lewis County,Centralia,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-fd640ac3-5202-54da-a99d-17a6d3cfb8de,Inland Northwest Golf Foundation,Spokane Vly,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-2e086a5e-0602-58b8-ae4d-65802fde4f10,Anacortes Small Boat Center,Anacortes,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-0387b74b-4e35-546e-ad6f-7f49d0995db4,Evergreen Athletic Fund,Ferndale,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-50dccbdb-1eeb-5d36-8d9f-adc0f1ef228f,International Youth Soccer Exchange Association,Poulsbo,WA,duckduckgo,,,0,True,DuckDuckGo blocked (permission_required) for session - skipped
+org-15c8a4a0-8caf-5869-bb73-b43846932c42,Deborah Birrane-dance,Seattle,WA,ecosia,,,0,True,"Only CauseIQ directory listing found, no owned website"
+org-a5ffed74-3ee2-5f4a-8176-64d84f144eaa,Tumwater Soccer Club,Tumwater,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-d3794625-000b-5f83-9440-d8eee66331dd,Irish Soccer Club,Everett,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-05a13bd8-ad76-57f5-813d-8c5a9ecb005d,Graham Eagles Football,Graham,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-ee8b8310-7533-54e7-ba5d-1cd66be74cd7,Wenatchee Youth Baseball Club,Wenatchee,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-7ed77905-c3a6-5cb7-8e6a-e1284eb215ec,Lake Chelan Sailing Association,Chelan,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-011e6c8a-a0da-5d36-af3e-5d5440069370,Rain Ross Dance,Bainbridge Is,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-a04dabd1-7355-5572-a751-b3eafe89a3a3,Federal Way Knights Baseball Club,Federal Way,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-fc8d3013-9a74-5ae3-aae8-cbec9494287b,Rat Island Rowing And Sculling Club,Port Townsend,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-b243adeb-0de3-5d52-85e3-2d81c054e934,Sudden Impact Volleyball Club,Bellevue,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-603930cf-c9b2-5ad5-a47e-dd51001f9809,Richland Youth Football,West Richland,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-13766f9d-876e-53f5-b572-b17096f9169e,Washington Youth Rugby,Covington,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-f57f1639-c5fd-5185-ac7a-e4e4928bc048,Mt Clemans Archery Club,Naches,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-47a5a7ea-0edc-5965-80ed-ddac2474f472,Leavenworth Soccer Club,Leavenworth,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-9e9d4f0a-9128-5b0f-81ee-3fd64efb393c,Tacoma Rowing,University Pl,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-df59bd5f-3d7a-5a5b-a8c0-30afdbff014f,Yakima Youth Golf Organization,Yakima,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-322de3df-13c4-5dd1-816c-42a0499a72e4,Lake Tapps Lacrosse,Bonney Lake,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-281a9feb-4da1-5490-980e-3db7465d0f89,Ohana Swim Team,Tacoma,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-a5fda6e5-1b2b-5786-a796-d59a42fd27ca,Omak Rodeo And Native American Center Association,Omak,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-817e0d12-5759-5790-ab2c-ca954b089e61,Yakima Ski Benders Snowmobile,Yakima,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-e940d115-6eb2-58a4-a6e8-2373cd887f3e,Washington State Youth Soccer Association,Federal Way,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-ce93f828-078e-5c25-a952-12daeb42d267,Magnolia United Lacrosse Association,Seattle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-6fd2a4c6-3f71-5e84-a821-a955c3bab1c3,Rain Country Dance Association,Seattle,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-491e4ef6-cbfb-582c-b5c1-6083af0442bc,Arlington Gridiron Club,Arlington,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-16f2b36a-db2f-5330-9175-bf6fd4f9170f,West Seattle Jr Football And Cheer Association,Seattle,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-33dbb1f9-fbc9-5b4f-ac33-ec0b4f8e3777,Gphs Girls Soccer Booster Club,Mill Creek,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-4493d9b1-ee35-594c-9e13-f9ad7b5b869d,Eastside Crusaders Youth Lacrosse,Sammamish,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-468669cb-6eef-5511-848c-f53c311f5c2a,Skate Journeys,Seattle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-0aa28442-e439-569c-a3a7-81abb8fdc0a4,Schoolhouse Rugby,Wenatchee,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-fa4774b7-dcfb-5c8e-9ccb-17c40a612895,Taekwondo For Kids,Bellevue,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-0b250303-a2d0-50bc-bf26-ea0b8f40b158,Kirkland Merchants Baseball Club,Seattle,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-3f1ca4ec-7a40-52a7-b17e-57c6ac26a54b,Bellingham Sailing Foundation Inc,Bellingham,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-fb03149b-7f55-5f2a-ae29-d9df74e85e72,South End Hurricanes Baseball Club,Milton,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-6926b7e5-88dc-5cdd-ba77-0ce3859ac3f8,Husky Masters Swim Team,Seattle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-77462677-a742-5bf6-a5d1-4db700728be0,Mount Vernon Wrestling Association,Mount Vernon,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-b0e41649-6cc6-5c15-b13f-b33d5895ba8a,Prairie Wrestling Booster Club,Vancouver,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-22724bbd-6be1-5657-b851-d5c1d2670396,International Rhythmic Gymnastics And Ballet,Renton,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-7a63fba3-2156-5781-997f-df9f8ef86955,Academy Of Soccer Excellence,Kennewick,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-b0793ca7-cfb1-581c-9825-8a6f5b26944d,Xtreme Speed Track Club,Covington,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-af2016dc-f3ee-5ead-b785-4ed4c44dd804,Karate Ka Advanced Training Association Fund,Seattle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-b6d00722-b772-5a3f-ab40-7be247a73216,Family Friendly Soccer,West Richland,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-2d2bc7fc-9032-5984-ae62-94ac39782b34,Rodeo City Roller Derby,Ellensburg,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-543f87c1-3faa-56d3-9b92-3d0ca99198e5,Tumwater Girls Soccer Booster Club,Olympia,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-c77ee284-e00f-5c4c-a40e-e50f88527cf3,Edmonds Warriors Junior Football,Edmonds,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-522c5619-443e-5d7d-b2ad-11b6593d3151,Avanti Racing Team,Seattle,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-03581bb7-ae85-537c-b0ee-886264ae076e,Northwest Amateur Sailing And Racing Association,Seattle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-82a64716-0ef5-5154-8e1b-b1e4cc6b8ea4,Eisenhower Football Booster,Yakima,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-c1dbbb9f-3597-58f6-b496-ebbe1689c015,Enertia Dance,Mountlake Ter,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-267a6be0-f4eb-5abd-ba4e-fe6a96cbc7b9,Excel Nw Volleyball Club,Camas,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-0b44bf9c-017d-55f8-911d-663b85258a59,Pullman Youth Baseball Association,Pullman,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-3f5706af-f8cf-5765-8254-b3a67e608e6e,Blue Mountain Square Dance Council,Richland,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-eeaaa9fe-a0a6-5b5a-87ff-5a67c02f75ee,Mason County Disc Golf Association,Olympia,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-7cd3c821-4999-5164-8117-36c995876960,United States Masters Swimming Inc,Olympia,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-897e2659-a7d9-556f-ae39-6cd3e76248f6,Tacoma Country Dance Society,Tacoma,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-9fca1a84-3f03-543b-93ef-a73b354fbb2b,United States Bowling Congress Inc,Olympia,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-3e444c92-1fc1-56e5-83c9-c422c5d6cdb0,Whidbey Island Youth Soccer Association,Langley,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-0fb6c737-8989-521a-a9b6-4bdd2eff93a1,Mt Si Lacrosse Club,Snoqualmie,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-53810bdb-da97-53da-893b-00ab5c2cad34,Washington State Judo,Yelm,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-6d66c463-974d-5b15-8fee-f25e07889a36,Club Selah Volleyball,Selah,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-cc7dc882-3df5-55f1-92d2-c9472910c46e,South Whidbey Youth Select Hoops,Freeland,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-43be1c1f-f69b-5049-aff4-d5c029599bc3,Glacier Peak Girls Wrestling Booster Club,Mill Creek,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-2f73f73b-9481-5a91-8659-a5d9373de02a,Royal Hoops,E Wenatchee,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-efd00eba-6f72-5f05-b24d-bcddfad29fa3,North Coast Basketball,Maple Valley,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-25df936f-e3bf-5212-8fbb-c30dbe66ed3d,Mat Rats Rebooted Wrestling Club,Rochester,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-66359892-e84c-5271-87b6-cc03548902f6,Eaglestone Boxing Club,Spokane,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-61da311c-73f3-5811-a171-ab1b763a78e1,Ephrata Enforcers Softball Club,Ephrata,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-5b941b4a-7c16-5411-9deb-355d9c768eb1,Impact Baseball Club,Lake Stevens,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-a57df672-f259-565f-aaa9-e3c8ea14052b,Little League Baseball Inc,Spokane,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-6584ca18-72e7-50c5-baab-ce0918322881,Mill Creek Youth Football League,Mill Creek,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-d94f969b-0d14-5820-b5d0-7baa7f8e2e1f,Purpose Boxing,Malaga,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-bd3faa34-07ec-5714-98a6-4598471bc923,Snoqualmie Valley Rugby Club,Fall City,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-8278369e-ef8c-5194-9061-893b18dbc80e,Valley Phantoms Baseball,Spokane Vly,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-fa7b663e-b0d3-5ed4-adf2-da4de6b8d058,Evergreen Football Boosters,Vancouver,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-0d014b81-c7d5-51f9-8ca4-479efc59efc1,Itz United Basketball Club,Greenacres,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-fc4d8db3-172e-51ec-b6c3-f416a4f5fe33,Hoop Dreams Basketball Club,Kennewick,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-95530054-d1df-525c-b255-7e8b922ccaa7,Chewelah Mat Cats Wrestling Club,Chewelah,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-7d9538bd-4002-501c-8364-36384ea29246,Voltage Dance Seattle,Fife,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-d7dcd038-8e16-5408-8fe9-4fca0782f558,Kelso Wrestling Booster Club,Castle Rock,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-4d8b5c57-7c1c-5b81-ba81-3860d92814ab,Grays Harbor Haylofters Square & Round Dance Club,Pe Ell,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-65baf1a1-d2cf-5883-b167-88a9e4b18ef4,Outlaw Wrestling Club Foundation,University Pl,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-75ff09ea-aad8-536d-9d18-4b4563418bba,Eclipse Volleyball,Snohomish,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-b59ff7cb-ac1f-55ab-9c62-5e7508936148,Central Washington Universtiy Rugby Association,Covington,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-933ec5af-29ba-550a-88d7-91c24437eb3f,United States Bowling Congress Inc,Vancouver,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-ad67eeb8-1337-53be-9997-001be8678657,Moses Lake Wrestling Club,Moses Lake,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-ed940460-ea83-5c48-85b6-39c2f58e98cd,Elma Wrestling Booster Club,Elma,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-d0c3f0fe-6da9-58b3-bf85-19afce31b677,Spokane Baseball Club,Spokane,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-8d6eeaf9-78b4-5d5c-8c08-026e4058f1ce,Professional Football Writers Of America,Spanaway,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-32fc6c08-ebdf-508e-8367-4b8f41b02a33,Lewis County Tennis Association,Chehalis,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-f8ddb38e-6c76-58f2-8481-c8550427f368,Knights Basketball Club,Mukilteo,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-bd0ac754-4dc7-5941-8b41-db4f5aed31eb,Aces Baseball Club,Puyallup,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-de3b4f84-dfd9-5163-bd0a-04c8b2e9558b,United States Bowling Congress Inc,Arlington,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-336dbad2-0858-5827-a9c4-092deddfccbc,South Whidbey Yacht Club Youth Sailing Association,Greenbank,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-18fabc17-b63d-5a3e-8d24-0f5fc6b89ea9,South Kitsap Wrestling Club,Port Orchard,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-179792f2-4fbc-5782-94a4-73936255b508,Cougar Football Club,Olympia,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-2c8e9e57-9269-5679-9af1-d391c94224c3,Colville Shooting Stars,Colville,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-399b57a7-a6d0-5a11-bca6-c3b70b4cea44,Slugger Baseball,Silverdale,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-f8ba053a-9007-59e6-a78a-ff4eb3d1defd,Empower Taekwondo Project,Lynnwood,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-9e08ebd8-863b-5e37-bf0b-fa87e1c67d55,Northwest Blaze Baseball,Olalla,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-9f2ead94-29ec-5410-bfa1-dd8eb5566cae,Little League Baseball Inc,Goldendale,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-f40f0628-bb3f-5c72-ad6c-adb03518304d,Winlock Youth Cheer,Winlock,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-633b05c0-f776-5632-a05a-3cbf0897880c,Bulldog Baseball Club,Okanogan,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-3bb8810f-16fd-5d3f-8aac-96097ec8ff45,Toutle Lake Youth Cheer,Castle Rock,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-4ad1356d-088b-50e9-89c4-99ebe9b47b2d,Youth Surf Club,Westport,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-e9d1da9d-22a2-5cb4-bac2-1364a49f6b67,Bigfoot Walk Soccer Club,Snohomish,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-1f709f62-fd01-558e-86a2-d93d6900334e,Shelton Hs Cheer Booster,Shelton,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-748b0cf5-f61c-5fc6-b685-4b4055391424,Whidbey Pickleball Association,Oak Harbor,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-f2eeafeb-b458-5b92-a829-4d576aef6ae5,Youth Cricket For Parks And Schools Inc,Bellevue,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-7856c337-62a5-5043-bc6d-dabb717bd4d5,Pickleball Forward Foundation,Seattle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-a5f01648-22e4-5ccc-b4b6-74411b3bdf65,Dynamite Baseball Club Of Dupont Steilacoom,Dupont,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-855924e8-e2e4-59aa-b6be-3562ef7c3bcd,Lady Dukes Softball Club - Klippert,Puyallup,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-ec43ed69-a887-5039-af9a-60d27fd1718a,Hockinson Select Baseball Club,Brush Prairie,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-4451939c-188c-5739-ad3c-e7b1f817e703,Net Rippers Basketball Club,Spanaway,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-1d937a13-3e3b-5785-8797-bab7a95aa45e,Simply Tennis,Issaquah,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-76a140c5-9474-5885-90a3-683c54a718c0,Seattle Badgers Softball,Tacoma,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-86111f29-bdd0-5ce1-b065-1d38ed1a6f39,Send It Racing Association,Port Angeles,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-f7db4bba-4fcd-523e-8219-86c746d05d83,Seattle Sea Otters Hockey Association,Edmonds,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-e5e77840-1c7a-5a79-93b3-e67d30cedd1c,Jaguar Dance Team Booster Club,Puyallup,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-55657f55-eaea-533d-8899-09ceafba0a6a,Philippines National Womens Curling Team,Kirkland,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-17b5a4cc-5261-54a5-8d61-9f0dc55ac8ac,Rmg Soccer Academy,Issaquah,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-25a0a5a9-be25-524a-9421-b1d90cb75710,Forks Youth Girls Basketball,Forks,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-f516300f-364d-54d0-ae35-17c2a58966e2,Cascadia Running Camp,Bainbridge Is,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-f15127c0-4ff3-54e6-aad9-4560f4cf641e,Quincy Valley Youth Basketball,Quincy,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-c3ccff26-2a21-598d-88b8-f46fa82d5f1b,Republic Pickleball Club,Republic,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-fdb2bdb1-a5fb-5b34-8753-4a0a2d2dcc25,Bethel Youth Football,Spanaway,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-4a73c910-2146-57ad-8c2c-fa1237f6074f,Sno Valley Youth Baseball Associati On,Snohomish,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-6a5e6bba-8817-5e76-abd7-09ae105facb8,509 Dynasty Basketball,Sunnyside,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-1be723ab-8b0c-5a8e-9db8-c1bd799906be,Club Elevate Volleyball Club,Kennewick,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-61b727c6-b1bd-5c46-91ef-225f4fd65f03,Behs Girls Golf Booster,Burlington,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-b3396866-2bae-5299-a2e6-66b0439bdff2,Wenatchee Valley Mat Cats Youth Wrestling,East Wenatchee,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-057c37fd-0d32-5967-b581-de6563954459,Willapa Harbor Youth Soccer Club,South Bend,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-a52fa766-5b98-5128-9db8-2fdf3267b174,Ellensburg Youth Baseball 2016 And 2017,Ellensburg,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-b9b135dc-3a63-5bd5-9a13-4e63d4cd9fbe,Diamondhands Boxing Academy,Othello,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-554b4851-06bb-5c95-b45e-acee4b0548c9,Seattle Seals Gymnastics Club,Redmond,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-d31918ab-25ec-5ef4-ad3c-944df6ac3f1d,Mcp Archery,Kennewick,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-fc226613-6cd0-5330-affb-162d3dcb2ae3,Tri-cities Hockey Operations And Ri Nk,Pasco,WA,mojeek,,,0,True,mojeek blocked this session - skipped
+org-5d0917d4-5cc1-51fa-8c35-f3f8dfaf27f9,White River High School Baseball Bo Oster Club,Buckley,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-90804e16-1a88-5579-b093-84589198ec6c,Level Up Lax,Orting,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-44e735d9-3baa-590f-9ea7-855f26181758,Puyallup Falcons Wrestling,Puyallup,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-7d0c80cf-4ecd-5add-936c-729dab46eaf9,Jalapenos Baseball Club,Olympia,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-875404f4-ddd4-5d4e-aef2-15c1db656622,Okinawa Karate-do Shorinji-ryu Shinkokai USA Branch,Poulsbo,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-61d2cb38-5d8c-5963-a91b-217a864003ed,Northside Youth Cheer,Elk,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-6e3a47e8-905f-5b16-95b7-958307dbccc0,Vietnam Wrestling Federation,Yakima,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-631e2a0e-f565-5153-b2af-b27e77bae4cb,Hockinson Hoops Club,Brush Prairie,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-5ba29ec1-a564-552f-85c9-245e79ed84ff,Richland Bombers Wrestling Club,West Richland,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-19a25226-9f35-5b6e-ad4c-02582424c58c,Kalama Boys Basketball Booster,Kalama,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-fc63fdf4-083a-50d2-bddf-6ff52a3070ca,North Kitsap Next Basketball Associ Ation,Poulsbo,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-d34d1e24-a1e1-55ef-990e-ee59ef911617,Amity Fencing Foundation,Woodinville,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-f90efb64-0399-5361-8c0d-adc3f66fc75c,Kittitas County Flag Football,Ellensburg,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-6b88e9ce-9abd-5be1-8b66-a257b5aa0450,Pacific Basketball Scholarship,Newcastle,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-ccfc6f69-9583-59a6-b7b7-26813b134121,Granite Select Baseball And Softbal L,Granite Falls,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-2e6de93b-7baf-5e5f-a527-11c1e0becd13,Olympia Contra Dance,Olympia,WA,duckduckgo,,,0,True,duckduckgo blocked this session - skipped
+org-4744612f-78e5-5e1c-ad69-0af669d76f92,Poulsbo Piranhas Swim Team Booster Club,Poulsbo,WA,ecosia,,,0,True,"Only IRS CSV listing found, no owned website"
+org-05b7bf4c-bd57-55e0-bc3a-5d1c7fc67be2,Ellensburg Bulldog Gridiron Club,Ellensburg,WA,startpage,,https://www.facebook.com/p/Ellensburg-Bulldog-Gridiron-Club-100054241820468,0,True,"Only Facebook page found, no owned website"
+org-8ad3768d-1266-5036-96d4-d0e9e73c3561,United States Bowling Congress Inc,Ritzville,WA,bing,,,0,True,"Local chapter of USBC (Ritzville Bowling Association), no local owned website, national parent is bowl.com"
+org-29446427-056b-5122-87b9-e035edb16f87,Seattle Blue Angels Baseball Club,Lynnwood,WA,bing,,,0,True,"No owned website found, only nonprofit directories"
+org-b151d372-70ae-5894-ab7e-e4fdc1c3aa23,Washington State Cheer Judges Association,Edmonds,WA,bing,,,0,True,No owned website found; wscca.org is coaches association not judges association
+org-baff4a2c-31cb-5aa1-a32b-7a5db81f891b,Little League Baseball Inc,Vancouver,WA,brave,,,0,True,"National parent org; multiple local leagues in Vancouver (fortvancouverlittleleague.org, cascadelittleleague.org) but no single match for this EIN"
+org-1a85ae3d-4da5-56d0-8e05-039425babf89,Jackson Boys Basketball Booster Club,Bellevue,WA,bing,,,0,True,No clear owned website; jacksonbasketball.com may be related program but not confirmed as this specific booster club
+org-7e7c4fc0-80d9-59ba-b851-b56d7221aaa3,Mercer Island Judo Dojo,Kent,WA,brave,,https://www.facebook.com/groups/151216805056300/,0,True,No owned website found; Facebook group and nwjudo.org listing only
+org-3e2cc0f9-3d80-5477-b4bc-adc34da12629,United States Bowling Congress Inc,Tacoma,WA,bing,,,0,True,"Local USBC chapter, national parent is bowl.com, no local owned website found"
+org-532c65ae-3c83-5bc2-b375-3ca669cc3e49,Buzz Select Baseball Fastpitch Club,Auburn,WA,startpage,,,0,True,No owned website found in search results
+org-fbd3a3ee-251e-503a-8cce-c388f895ca04,United States Bowling Congress Inc,Kelso,WA,startpage,,,0,True,"Local USBC chapter, no local owned website found"
+org-37b36da5-5024-5e3d-95e9-8cf6749de2bf,Tumwater High School Boys Soccer Boosters,Olympia,WA,websearch,,,0,True,No dedicated booster club site found; school athletics at tumwaterthunderbirds.com but that is not this org
+org-555cb12a-90f4-5e48-9176-1641614dc0a3,Spokane Shadow Youth Soccer Club A Nonprofit Corporation,Spokane,WA,duckduckgo,,,0,True,"All results are nonprofit directories (ProPublica, GuideStar, Benevity) - no official club website found in results"
+org-648e22f6-55d2-5608-8f96-02042b2e6944,Shorewood Select Hoops,Shoreline,WA,mojeek,,,0,True,Mojeek returned CAPTCHA block - no results available
+org-93c11045-0677-5c77-a470-94216d01d86a,Cascade Volleyball Club Of Seattle,Seattle,WA,ecosia,,,0,True,Ecosia returned empty/JS-only page - no results available
+org-58fef59b-9152-58e6-b9b8-90cf424361ec,Beacon Hill Youth Soccer,Seattle,WA,startpage,,,0,True,Startpage access denied
+org-df31b4e9-f3f9-5379-bd66-eebb02639597,Colville Valley Swim Club,Colville,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8ab77931-dfc3-589f-a15a-5d708942bc87,Union Cheer Boosters,Camas,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-39cc2f88-225d-5b5c-90c2-089899874a0b,Skagit Valley Flyers Lacrosse Club,Burlington,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-3b29c164-bb08-5c58-bea1-96eb8cf41af0,Cowlitz Youth Soccer Association,Longview,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e6e4bb0c-7c1b-5f5c-88e8-55c6be1ac525,Columbia River Swim Team Booster Club,Vancouver,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-06ef305e-c0ba-553f-88a8-e2e5cbd7741e,Enumclaw Football Foundation,Enumclaw,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-eb23ae88-dda7-5203-8777-15b25ca83eef,Liberty Lacrosse Club,Issaquah,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-60978d5a-2b49-52bf-b9de-b3cbb2cca0a6,Bellingham Repertory Dance,Bellingham,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-d2d26201-a961-55ce-94fd-e954ccf92b0b,Three Rivers Soccer Club,Pasco,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-524504c6-4f2c-5871-a6a2-c45ed6bcd957,Kodiak Club Volleyball,Leavenworth,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ffdca693-d3f5-522c-a785-9707561c5203,Wrestling Supporting Wrestling,Bremerton,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ea5f3e2f-7ca8-5773-81c1-6b298585dc54,Pin City Wrestling Club,Lake Stevens,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ade98900-5017-509f-8870-89e8a5b9d7c5,Union Hs Tennis Booster Club,Vancouver,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b18d6053-23c2-532e-bafb-c280aed43db6,Fife Junior Football,Milton,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e4b3b0e2-2edb-5bf7-9edb-e27a999967fc,Mount Baker - Lakewood Soccer Club,Seattle,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8a7029d4-b0b3-5721-aa17-1b7274914cf7,Anderson Island Community Fitness Center,Anderson Is,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-04fe3f1e-a58c-50ef-9597-2d4952a6ddc6,Bowling Academy,Snohomish,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a6510509-6a34-52ae-a861-235f1e8ea26b,R & C Boxing Club,Pasco,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-06e50145-8784-59f8-9032-eb50de7122aa,Garfield Mens Lacrosse Club,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ea72978f-787a-5080-a688-9437306efaa2,Issaquah Baseball Club,Bellevue,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-82c670da-3d4c-5b00-94fb-97ef8752fb0d,Karin Stevens Dance,Seattle,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7dac6c23-d628-5035-94af-7024df7902b0,Evergreen Lacrosse Club,Vancouver,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-252f892e-bcf8-5cc4-bcbb-14062bf73d0e,Rydershowtime Baseball,Battle Ground,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4b2bcca5-dca3-52f8-b6f5-8068b34ed40d,Arlington Youth Football,Arlington,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e319b396-d1e2-55b4-826f-a4304b72b02b,Olympic Peninsula Rowing Association,Port Angeles,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a1d24d5e-e054-5db0-b134-8f1e9855927a,Dance Evolution,Camas,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b9992836-819f-5044-9982-65ae7d3cca92,Republic Youth Baseball,Republic,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-9cf72ff3-0ed3-5922-943c-d51095ce7d66,Clark County Youth Football League,Vancouver,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-28ed7d87-d83f-520e-be2c-12d5de7483c1,Orcas Island Rowing Association,Eastsound,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-3a1cdaf2-f19a-5616-b6c8-b1ae0bd81b63,Wenatchee Youth Basketball,Wenatchee,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a74a5595-2abf-5c4c-bbcb-ad4ac4632811,Coriolis Dance Collective,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-f915a368-18d3-518f-8185-9ef24e6215e3,Harbor Fire Lacrosse Association,Gig Harbor,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-50c3e20e-70e6-533f-9031-70eaff1fb26e,Inland Empire Amateur Hockey Association,Spokane,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-772dfd29-9400-5f24-a1f8-2303e2d00e04,Sound Velo Cycling,Renton,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7ad698db-cf58-59e0-b432-ef5b9562be1e,Eastlake Sammamish Baseball Association,Duvall,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-36957d51-d31e-59f0-882e-3960b1339aaa,Rainier Beach Track Club,Seattle,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-da5eb052-bed4-50e9-a0c3-a24202e02433,Pedali Inc Dba Hagens Berman Racing Seattle,Sammamish,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4059ff79-a4d5-5233-be0a-3b375cdfb1b1,Pnw Native Lax,Tacoma,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-36bc288c-872e-58be-86b2-1cbdb05b934d,Snoking Youth Lacrosse League,Bothell,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a6afbb76-ab09-5aa5-a978-bebab685c38d,Methow Valley Youth Soccer,Winthrop,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-c41ba0bd-d0ba-5140-9282-09023183e32f,Kaizen Hoops,Renton,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-404b907e-936b-500e-9d82-b57fc12c842c,Lady Wolves Basketball Booster Club,Port Orchard,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-21246e22-b214-5dd3-a942-bfea91d8313a,Pickleball International University,Spokane,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-27c36694-ea0b-514d-ba75-504937a8eb63,Fencing Together,Kirkland,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-d00a85bf-fe32-5e35-a68f-4b34390674b0,Chuckanut Tide Football Club,Bellingham,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-333527f9-a36d-531f-a334-e13f3930aaee,Rain City Powerlifting Union,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ac14faa4-2fa4-5ecb-b69e-57e3f3d04ab2,Monroe High School Baseball Booster S,Monroe,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-9164ec16-f358-57a2-9f48-f188b57b585c,Vashon Baseball Academy,Vashon,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-960f4d8b-0faa-5709-a58a-c39ed3bcb70d,Thunder Mountain Wrestling Club,Castle Rock,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b77c3240-c054-5bc8-aedf-c101f472cac2,Vashon Island Track And Field Booster Club,Vashon,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b2104674-33d3-54f3-999f-373c1ce38ad9,Ellensburg Jr Bulldogs Football,Ellensburg,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-fb86ef44-1f3c-589e-87df-f40b358c64f4,Family Volleyball Club,Spokane,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7b1f5d1c-6e65-5b2e-a496-5ea5d675c2b4,Whatcom Girls Lacrosse,Bellingham,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-79af868e-6fa1-55e1-89bf-f7a2968b6575,Mid-columbia Contemporary Dance,Kennewick,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-0d9e8151-b58d-5632-be4e-3f4f249e1e63,Snohomish Judo Association,Snohomish,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-c7be93cd-bcb7-55fa-8a35-9ba008f8b22a,Epic Motion Dance Studio,Wenatchee,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-acb4bc8a-f41e-5da3-bd89-2ca69551535f,Dedicated Gymnastics Athletes Booster Club,Colbert,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-eaa1225b-0d56-56bd-8944-92b97c316cf9,Inland Northwest Track & Field,Kennewick,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4ca5a50b-243d-5699-9d82-4bc783f67180,Enumclaw Junior Wrestling,Enumclaw,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-c547182e-61c9-5b5a-8e19-9ed9626c0c0a,Spokane Elite Basketball Club,Spokane,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-3ee69743-7aa8-5e25-9572-cb7c5f6da901,Kai Pana Outrigger Canoe Club,Bellingham,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7265cb6b-ee9f-5e75-b4f1-2cae49781b6a,Hoquiam Youth Baseball,Hoquiam,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-1187ef4b-ed2c-5ea8-8dee-0efcf18837ae,Oak Harbor Wrestling Club,Oak Harbor,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-51c9d4a0-15e9-507a-b96e-80af080cc52a,Seattle Baseball Academy,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-f1a1ca0a-d479-52c1-8fdf-24430eb7311d,I-5 Basketball Club,Issaquah,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-c4754955-72b9-5cca-8eed-40864492bd44,Seattle Handball Club,Woodinville,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-5210fd14-a25e-598e-a22b-c977543cdcd7,Twin Lakes Swim Team,Federal Way,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-72359154-2c26-5ed8-9b6d-fa77e749264e,Dazzler Dance Team Booster Club,Kent,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-1230879f-db5c-5171-9dda-8214e4999bd3,Thurston County Baseball Club,Tacoma,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-56df14e4-adac-5db3-b72e-33d36edc7a03,Premier Baseball Club,Battle Ground,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7849be7f-3999-544f-889f-1bbea086eaa9,Columbia Basin Youth Football,Pasco,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-9ace4d46-ee89-5802-830d-ce7fdacb3e25,Duwamish Rowing Club,Seattle,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-3a9eb559-3363-5064-a5ae-85a5d7a73459,Legends Baseball Club,Monroe,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a2518ec1-267a-5a2a-b921-4c105e24b7f2,West Valley Girls Basketball Club,Yakima,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a0f4f3c6-d3fd-52db-a9c4-8cd1e8551792,Bellevue High School Football Club,Bellevue,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b44b9700-ae24-533c-bef3-c6f910c81b9a,Prosser Wrestling Academy,Prosser,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8536b3d6-8dea-5868-87e1-323953339671,Snohomish County Baseball Club,Lake Stevens,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ab652322-aafe-550c-9084-c4359464037c,Wildcat Football Booster,Toppenish,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e2c70dab-1826-5150-bf27-6f0e1ab9b483,Rainier Youth Volleyball,Rainier,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-36408ef2-6f27-587d-a05f-284a5ae75ab2,Tonasket Youth Flag Football,Tonasket,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4ccf0e71-eae7-52cc-aa92-19b1aa781347,Tri-cities Savage Wrestling Club,Spokane,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-5d940667-0367-5124-b783-d4579d05a7d9,Coalition Cycling,Spokane,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-c3643081-9951-5bf5-b0db-4fd2db7c2723,Westminster Mens Lacrosse Club,University Pl,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8b75cde9-6495-544f-8a2e-1cb3f51fecd5,Huskies Softball,Othello,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-69ff2e94-707c-5cf6-b21e-68ec9faae8a7,Seahawks Shooting Sports Booster,Anacortes,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b1140d24-a97e-5436-a92b-78f28356e4e8,Quad-county Soccer Referee Associat Ion,Olympia,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-445c8b18-66fb-50ea-a0bd-74d25f942f7f,Selah Spartan Baseball Club,Selah,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-40e2605c-464b-5c0a-b1ed-910af7ddc4f3,Palouse Elite Wrestling Club,Pullman,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-fbd76c52-a652-5106-870c-d14c7a1fa877,Electric Works Youth Baseball Leagu E,Port Angeles,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-9e0c682a-f9fe-5994-aa2b-ab6de1c75c15,Southwestern Washington Paddling Sp Orts,Ridgefield,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-24c9bc1d-baef-5496-bb18-e63b96366a61,Yard Goats Baseball,Greenacres,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-cc5253c2-4bcb-551a-808d-91953b916c09,Mount Vernon Youth Basketball Assoc Iation,Mount Vernon,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-eeea98c7-1b6f-5206-acb2-d6563a6db751,Sw Wa Baseball 1,Ridgefield,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-5769582d-41e3-571a-a0f4-ee89b003ef4c,Longview Cobras Youth Football,Longview,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-93f6b568-73f4-5479-89f2-1c8db1150fa2,Moses Lake Adult Hockey,Moses Lake,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-9639524b-42df-5a35-9817-f986937a596c,Mhs Swim Team Booster,Monroe,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-2f6abf94-df4c-59b4-8bab-a66b55d5dbfb,Cascadia Morgan Horse Alliance,Snohomish,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-36d8aadb-128b-5354-8489-576912d8570e,Chess & Bowling Scholastics Foundation,Lacey,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-50cfd63d-7e83-5432-87bf-24554db5f5e9,Jr Lobos Youth Football And Cheer,Pasco,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4a3c40f5-59b2-5d55-b35a-3bec4239467c,Hustle Hoops,Kirkland,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-171c7eb5-f467-5fc3-baef-0d8d0eb569e1,Moses Lake Basketball Association,Moses Lake,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-2ea1f084-defc-5150-ac59-c75bbc64c89e,Ellensburg Bulldog Golf Boosters,Ellensburg,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4ecf2ccd-1965-50be-809e-f8d36769a186,Gemini Elite Cheer Club,Shelton,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-939f587b-f849-5746-a108-84671d8e8777,Vancouver Elite Track Club,Vancouver,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-bb4b09c2-f47f-5c25-b991-8adac39ae82d,Coastal Cheer Boosters,Forks,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-c5f78bd2-1864-5c3f-9415-d546d9473f0f,Seattle Swing Dance Club,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-aa35a337-f250-5c29-b140-6159475cf442,Midlakes Swimming League,Cle Elum,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-3babc10f-d201-5213-aad1-ffe98b790d0d,American Youth Football Inc,Ellensburg,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7a955af5-2d95-5b8f-9fab-b370304b816a,Edge Basketball League,Vancouver,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-72bb3d0f-5e03-569b-aedf-6c7acf72691c,Enchantment Dance Alliance,Leavenworth,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-63c08a2b-a416-5a17-bba2-5cb63491a130,San Juan Soccer,Friday Harbor,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4ce459c5-b51e-5e93-9c87-0ffc426cb736,Peninsula Basketball Officials Association,Bremerton,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-89e7424e-6e26-5ee2-b309-c9f103804170,Washington Reining Horse Association,Lake Stevens,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-6181a262-8a5e-5a97-861a-f5aa5b3f1db7,Ok Football Club,Okanogan,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-764bec7e-9dc2-535e-870f-7f8c0f0e7e17,Sunnyside Rotary Swim Team,Sunnyside,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-63a538c4-3635-53bb-9be3-cb298cd5d7fd,Tracyton Pee Wee Sports Association,Tracyton,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-33a915a2-31f4-5bf2-b926-ad6f5eca0b01,Whatcom Community Sailing,Bellingham,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-37e53fba-0d09-5d81-965a-ea8a38cf411c,Eatonville Junior Cruisers Football,Eatonville,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-2ec76ff8-7928-5655-a418-1b8f14a8988e,Desna Soccer Club,Federal Way,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-3ef86b8d-285a-5718-b4be-2612db28f362,Mill Creek Mayhem Fastpitch Softball Club,Mountlake Ter,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-9a477e9e-68d5-53c4-b0fc-ba260673bca0,Friends Of Bainbridge Island High School Sailing,Bainbridge Is,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-f57c13da-65aa-5866-b65f-f590cbc9e773,Tahoma Wrestling,Ravensdale,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b76b9ac0-24ec-530f-a259-abcb6e9b03d4,Klineline Kids Fishing Nonprofit,Vancouver,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-f9f30d68-4af7-5ec3-8b35-d978648c48cd,Seattle Metropolitan Youth Lacrosse Association,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-07c97807-3623-5457-a2ec-d3bcd66153c9,Chewelah Little League,Chewelah,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4d1cba22-11b9-5fb1-a21a-c0641fc52508,South Beach Softball Club,Westport,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-385eabc8-c0ee-5074-8747-4cac63daa4bc,Columbia River Pickleball Club,Washougal,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b8ed9eab-f319-5f3a-be39-13b8526c6161,Inland Northwest Curling Club,Liberty Lake,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7d90404b-aed7-59d7-b20b-a10d81bf99bc,Bellingham Warriors Lacrosse,Bellingham,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-0e20a1c8-dbd1-574d-b3ca-58a9e0421eeb,Tiger Football Booster Club,Battle Ground,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-61045294-be68-518c-b96e-7947f219f627,Newport Select Boys Basketball Club,Bellevue,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-494c3dcd-33f8-562f-9857-996505688842,Birch Bay Village Golf Club,Blaine,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e7ad8fc7-634c-5460-99d1-51078de19c45,Innis Arden Ski Bus,Brier,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-dfbcaf0e-88fb-52e8-92f2-ea9512547dba,Westsound Youth Basketball Assoc,Port Orchard,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-7a40011d-455b-532f-a75a-86a83590d755,Msga Gymnastics Booster Club,North Bend,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-73d257b0-64a7-5eb3-ad08-9f6fb9e4f426,Blue Dolphin Swim Booster Club,Sammamish,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-cdb57cba-400c-5bc7-8f9d-cfbe5297414f,Washington State High School Boys Volleyball Association,Spokane Vly,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-4d99c36e-d33c-50ce-ac79-a0838c6a2dc2,Night Turtle Dance Foundation,Seattle,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-5f1e2d6a-7c5d-5e8a-9218-9910563a9fdf,Eastlake Girls Select Basketball,Sammamish,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-88e95fe8-b965-5c55-95d4-a2715ab02d07,Redmond Rebels Baseball Club,Redmond,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-2599ed13-c75e-5cd9-aaae-4922b7c79bdc,Snohomish Panther Junior Football Association,Snohomish,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-639dc782-750c-571a-8fb3-eb741dddd671,Bellingham Bmx Racing,Bellingham,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-74783c15-290a-537c-b139-b6bc1a322699,Bushido Wrestling Club,Yakima,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8844dcba-2dc7-5d92-aac1-944d067b9ac6,Patriot Baseball League,Dupont,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8b2923da-3571-59cf-a2a6-06ab72f7d33b,Northwest Volleyball Foundation,Bellevue,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-06d9576d-b49d-52b2-9e85-e32a9bd7a8f9,American Youth Football Inc,Vancouver,WA,ecosia,,,0,True,ecosia blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-8afb305d-ae56-51c7-8c95-79d416d31a10,Flying Irish Running Club,Spokane,WA,startpage,,,0,True,startpage blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b9242c41-b78f-53f7-97b1-5c7fd80c0628,Deer Park Baseball Booster Club,Deer Park,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-00cb4e29-5ea8-5286-b0a6-38a3db03f581,Alchemy Indoor Skate Park & Education Center,Tacoma,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-b1e2dcd6-f681-554a-8ffe-a3ea3e2fa7e5,Cheney High Wrestling Association,Cheney,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ec1a4f15-839e-59f6-ad08-fc18f185b16e,Chs Cheer Booster Club,Carnation,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-a558aa6d-f1d8-5782-9fe8-01c6c824655d,Kitsap Fliers Track & Field Club,Silverdale,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-780aecfc-da00-5a93-9869-87d99350db13,Burlington-edison High School Girls Soccer Booster Club,Burlington,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-73689833-34cc-5907-bf86-e17908aa8ab3,University Place Lacrosse Club,Tacoma,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-ef4cb9a0-badb-5b1e-9051-16b7b879c2ab,East Valley Youth Softball,Moxee,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-99511d3b-7d72-5416-b9c2-446ef7e3521d,Pioneer Football Booster Club,Nooksack,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-1f7571ad-2627-5d97-b691-aa7bc945064e,Sand Point Paddling Club,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-30732a22-bc79-53ad-b8b0-bc0e2cdbef98,North End Otters Masters Swimming,Shoreline,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-f8359449-922f-5f4a-ace2-cd045a372d3a,Hoops Association,Royal City,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-10553987-d149-5e11-ba4b-63e1179a73ac,Seattle Quake Rugby Football Club,Seattle,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e18deea8-7370-58cb-903e-1c0b5d414b01,Inspirations Dance Studio,Spokane,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-2c6db222-4352-5b8d-986c-b00b1253504a,Yushido Judo Club,Tacoma,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-25d1db04-0512-500b-a5bc-a42fdb2a38c4,Penninsula Lacrosse Association,Gig Harbor,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-55d00862-328c-539b-96db-c83acbf78693,Mt Baker Youth Baseball Association,Everson,WA,mojeek,,,0,True,mojeek blocked (CAPTCHA/JS-only/permission denied) - needs retry
+org-e19a94ee-e7d9-5edf-b5ae-622c30e6f231,North County Wrestling Bobcats,Kelso,WA,duckduckgo,,,0,True,"Only nonprofit directories found (ProPublica, Bizapedia) - no official website in results"
+org-0ef61868-d3a9-5662-8c21-e2d169063327,Queen Anne Quick Styx Lacrosse Club,Shoreline,WA,brave,,,0,True,"Only nonprofit directories found (Charity Navigator, GuideStar) - no official website in results"
+org-f42a8083-be50-5a57-8174-57028941c856,Thorp Volleyball Parent Booster Club,Thorp,WA,brave,,,0,True,Brave returned no results - only navigation/footer content
+org-d5eb76ee-a65a-543a-8cc0-08aa4b271b8d,Falcon Baseball Academy,Vancouver,WA,duckduckgo,,,0,True,"Only directories found; org appears to be a booster club for Prairie HS, no standalone website found"
+org-ac03b228-246d-540e-b203-21e024a72938,South Snohomish County Youth Soccer Organization,Mountlake Ter,WA,brave,,,0,True,Only MapQuest and Charity Navigator directories found - no official website
+org-1d6f0c1f-aac8-5729-aece-2d65b4fa1795,Spokane Bmx,Spokane,WA,duckduckgo,,https://www.facebook.com/SPOKANE.BMX,0,True,"No owned domain found; org uses USA BMX listing, presign.me for registration, and Facebook - no official .org or .com site"
+org-e5925318-e5ca-5122-87b6-f02ceea6097a,Everett Lacrosse Club,Everett,WA,brave,,,0,True,Brave returned no text content
+org-18c98156-6071-5134-a472-59efbe720a84,Kentlake Football Booster Club,Black Diamond,WA,bing,,https://www.facebook.com/KentlakeFootball,0,True,"Only Facebook, SportsEngine, and nonprofit directories found - no owned website"
+org-a151c199-c950-5368-bab7-d04603609353,Surf N Saddle,Long Beach,WA,brave,,,0,True,Brave returned no text content
+org-6d0be66f-988a-556f-8f57-ee98d7acfd72,Whatcom Rowing Association,Bellingham,WA,brave,,,0,True,Brave returned no text content
+org-8bea48c4-e90a-503d-a332-a356bb5e391b,Hoquiam Youth Football,Hoquiam,WA,bing,,https://www.facebook.com/profile.php,0,True,Only Facebook and nonprofit directories found - no owned website
+org-2b73d3b1-aac9-575c-a595-06df5477ae96,Tonasket Junior Rodeo Association,Tonasket,WA,brave,,,0,True,Brave engine unreliable this session - returned no content
+org-af6b5ca4-f504-567a-839c-47e096ebe7c2,Eatonville Equestrian Team,Eatonville,WA,bing,,,0,True,"Only directories (Bizapedia, OpenGovWA, Instagram) found - no owned website"
+org-a3d84e99-6f6e-57c8-8e4e-4b37c9ed4f0d,Longview Pickleball Club,Longview,WA,brave,,,0,True,Brave engine unreliable this session
+org-d8e4a25f-af8f-5426-b0b0-bc45e1541d23,Tennis Outreach Programs Of Puget Sound,Kirkland,WA,duckduckgo,,,0,True,Multiple directories reference org at 10822 117th Pl NE Kirkland WA but no official website URL in results
+org-3da57838-6ea8-56e9-952c-99d0f9cdc754,Seattle Wheelchair Rugby,Port Orchard,WA,bing,,,0,True,"Only Benevity, Bizapedia, and nonprofit directories - no official website found"
+org-4e754c6b-3097-5c6c-bc20-c00a9df4dab7,Penn State Softball Booster Club,Bellevue,WA,brave,,,0,True,Brave engine unreliable this session
+org-ec229233-9569-55d4-98b5-2f356ae0f40c,Forza Dragon Martial Arts,Renton,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-1d62693c-4af4-5c9a-8b47-602ae3b265dd,Ehs Womens Soccer Boosters,Enumclaw,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-61455360-a52c-5c05-a4b4-d7d6df6f0887,Seattle Community Baseball Academy,Mercer Island,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-7eededcd-7901-564c-a99f-b2136136afc9,Washougal High School Boys Basketball,Washougal,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-56f6db86-5602-5e38-8f12-89dea8462445,Crown Equestrian Vaulting Association,Yacolt,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-b738bfd7-5078-5882-b7f8-505c4b48649d,Redmond Wrestling Academy,Redmond,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-377c9fe5-2568-5eff-b983-9358df56e7ac,Wolfpack Wrestling,Wapato,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-59c7ce76-41b6-5382-b863-b28188322c61,Northwest Cricket League Nwcl,Spokane,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-571cc20a-a9fd-5279-b0ec-3cb7831d9edf,Island Rowing Association,Langley,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-b3945973-ed18-5a40-9195-9a6893492b3f,Tumwater Valley Mens Golf Club,Tumwater,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-2fa35a17-8cc4-5a7b-b5c5-88f6a4262bcc,East County Little League,Washougal,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-953c08ab-fd22-5070-9a21-b441950af706,Washington Womens Lacrosse Officials Association,Bellevue,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-106f1d29-7af8-55e1-9f44-4ee619ca2a34,Longview Soccer Club,Longview,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-3b61809f-e422-520e-bc36-32950628a1e0,Mount Misery Drifters Snowmobile Club,Pomeroy,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-c3211d9f-7ef8-5a77-9a58-371efebcaa09,Sugar Bowl Rodeo Association,Inchelium,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-d166bcdc-9f3e-5f43-8382-e48fb1244b79,Cascade Judo Academy,Bellingham,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-4ad88ff6-e162-5d8d-966d-63b9abae9aa0,Yelm Basketball Club,Yelm,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-fa03dee1-6a44-5641-a8ae-c42e458c3387,Gateway To Golf,Sedro Woolley,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-a855553e-1688-5678-9ba4-e1f874ede685,Spokane Valley Youth Football And C Heer,Spokane Vly,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-290ba21e-a3f2-5143-9533-3bef71aa28b3,Oil Kings Hockey Club,Sumas,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-c253e4c7-2658-54d5-bf96-4143a97e8e78,Mudhounds Baseball Club,Battle Ground,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-e1cbbc61-a123-515c-ba6c-e1cc679aa71f,Puget Sound Phantoms Baseball Club,Tumwater,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-e3563af8-f0db-579b-a7dd-0b7c711807b5,Olympics Edge Track And Field,Bremerton,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-923edb53-e57e-5df5-bfc9-9f73e8fb52f2,Castle Rock Youth Football League,Castle Rock,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-e9238f28-b88e-5c5a-90c8-df71426dac47,Everett Soccer Association,Everett,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-4f20e89b-38b9-5ad9-9f49-316a16754bd9,Wheatfield Wrestling,Endicott,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-322ed4be-8327-59eb-b3a3-fb7d6453bcb8,Skagit Quarter Midget Racing Club,Burlington,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-8af6c1d7-e4b1-5d2b-abf7-4afd421ee385,Pearce Forcier Memorial Hockey Scholarship,Poulsbo,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-09f7a74d-14ea-5e9b-8a81-911beddae9de,Liberty Select Basketball Association,Newcastle,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-6f8bcf39-41c5-5361-8f81-70623235429e,Valley View Volleyball Club,Duvall,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-3ac9cf8b-21c6-5064-b7b4-6ce466c3b6b9,Kitsap Rowing Association,Indianola,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-fba6ae00-7eaa-560e-8b65-43c35cf8d701,Southwest Lacrosse Club,Seatac,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-cae7e256-cd78-575b-b135-4d36344a8b40,Washington East Soccer Club,Spokane,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-daa0e308-0a27-57ce-9ba1-1c225e08d73b,Aberdeen Girls Softball Association,Aberdeen,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-0d456bdd-98bb-502c-b152-e2b6aecbcccb,Cedarcrest Redwolves Boys Basketball Boosters,Duvall,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-4c6325b3-8ab7-5504-92c1-1f0eb3516538,Juanita Baseball Club,Bellevue,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-ce2b61e3-0228-52fc-b89a-e70508f006bb,Skykomish Ski Team Foundation,Skykomish,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-3000daa7-256a-5955-9f73-979f4eae4025,Columbia Basin Baseball,Moses Lake,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-855f3b98-bf40-50f8-934f-5e65317de03c,Lewis & Clark Lacrosse,Spokane,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-ad5402ea-6a25-5947-80e8-434d4924fd7d,Seattle Interbay Eagles Football Club,Seattle,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-fa98f710-00e2-523b-b3ff-65feeceae282,Downs Lake Hunting Club,Spokane Vly,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-58b67f3e-7296-518e-8339-04da29348bf7,Northshore Canoe And Kayak Club,Kenmore,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-9aa8e341-8264-52c4-a414-e4aa865c9e00,Richland Lacrosse Club,Richland,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-1d3d52a0-1e3c-5f33-b3f8-9e10e6e270e3,Red Wolves Football Booster Club,Duvall,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-f72c6e01-242e-5d61-ab08-097e207cbfd3,Jaguar Track And Field Booster Club,Puyallup,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-c13e5b46-77e4-55d9-8057-c8863314fa03,Raptor Wrestling Club,Woodinville,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-99d3a73d-899f-5ecb-b472-8b976a6d2776,Valley Wolfpack Football & Cheer Association,Puyallup,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-ad2918c1-dc98-5927-a8f0-4658b176d11b,Piranha Wrestling Club,Deming,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-3091a9f7-d7ba-545b-92e2-65bcac42911b,Society Of Vintage Racing Enthusiasts,Lakebay,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-65a304a1-0b4e-55b9-9f97-4aa48ffdec0b,Baseball Beyond Borders,Kent,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-4cae5e94-2fdf-50fa-985f-92ce4146c10a,Oak Harbor Football And Cheer League,Oak Harbor,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-db0a7e03-4660-5e15-96b4-82da3b68c0d8,Monroe Bearcat Basketball Boosters,Monroe,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-7dca4d9e-e131-5022-b13a-0cdc864a9408,Mid Columbia Tennis Association,Kennewick,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-6db84b16-2902-5a54-b417-984521c478d5,Kf Baseball Booster,Kettle Falls,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-4bf6969a-15f8-5b21-af50-504779fe4bc7,Lake Washington Lacrosse Club,Kirkland,WA,brave,,,0,True,Brave engine unreliable this session - returned no content or blocked
+org-8e291d1e-d36d-5595-baf9-a97f5b99aa8a,Colville Baseball,Colville,WA,duckduckgo,,https://www.facebook.com/groups/491592657567655,0,True,Only Facebook group and news/MaxPreps results - no owned website
+org-fe93e943-e68e-5cf0-ab90-6683f9016dda,Dragon Flight Archery A Nonprofit Corporation,Spokane,WA,duckduckgo,,,0,True,"Only ProPublica and GuideStar directories - newly formed 2025, no website yet"
+org-67f95a54-e35c-56e0-917f-75482a3d73ea,Seattle Rowing Foundation,Seattle,WA,bing,,,0,True,Only Bizapedia and GuideStar found - no official website
+org-725624c8-527f-54b4-8318-a4760b5a3525,Yakima Griffins Mens Rugby Club,Selah,WA,duckduckgo,,https://www.facebook.com/p/Yakima-Griffins-Mens-Rugby-Club-61564982613405,0,True,"Newly formed 2024/2025; only ProPublica, Charity Navigator, Facebook found - no owned website"
+org-4a2322e9-8fcd-54d0-9d68-4e31dceac704,Colville Basement Boys Wrestling,Colville,WA,bing,,,0,True,"Only charityscoop, Facebook group, and directories found - no owned website"
+org-96dc3941-5d14-5612-998a-a82fd0a864a5,Peninsula High School Wrestling Booster Club,Gig Harbor,WA,duckduckgo,,,0,True,Newly formed 2024; only directories found - no owned website
+org-0aed514f-22be-5969-a5c1-f6c26fc3fbdb,Grays Harbor Disc Golf Association,Aberdeen,WA,duckduckgo,,https://www.facebook.com/61574542242680,0,True,"Only Facebook and DiscGolfScene found; newly formed 2025, no owned website"
+org-9f81b3c1-a123-5597-8442-4ac832fc1152,Little League Baseball Inc,Rainier,WA,bing,,,0,True,Results show national Little League org at littleleague.org - this is a local chapter; no local chapter website found
+org-5d5afd63-14ac-55f3-bcac-0176ffa3d9bb,Shooting Stars Youth Square Dance Club,Monroe,WA,duckduckgo,https://www.sqdance.org/shootingstarsyouth,,75,True,sqdance.org/shootingstarsyouth page names the club with Mill Creek/Monroe WA location; GuideStar confirms Monroe WA address
+org-f72e2d86-ce1e-53c1-965b-50c8152b7a97,Simmons Racing,Elma,WA,bing,,,0,True,simmons-racing.com is a speed skates/cycling shoes retailer unrelated to this WA nonprofit; no official org site found
+org-1f57f7d0-bc9a-58ed-87ed-9ab38d274507,Bethel Bison High School Football Booster Club,Tacoma,WA,duckduckgo,,,0,True,Newly formed 2025; only nonprofit directories found - no owned website
+org-097a9c39-9a03-52c2-8f0f-c0ae1a17e41b,Tough Enough Equestrian Drill Team,Colville,WA,duckduckgo,,https://www.facebook.com/ToughEnoughEquestrianDrillTeam,0,True,"Only Facebook, Manta, and directories found; no owned website"
+org-34dbe2db-76d7-56ca-a3ca-54547fdb6133,East Valley Wrestling Booster Club,Yakima,WA,duckduckgo,,https://www.facebook.com/61583606259409,0,True,Newly formed 2026; only Facebook and nonprofit directories found
+org-055d384f-f47f-5d26-a9ee-c164e711d659,Horse Activities Sponsorship Club Of Lewis County,Winlock,WA,bing,,,0,True,Only directories found - no owned website
+org-73760102-2f80-5dc6-9b7e-602cf8a10dab,Waitsburg Little Guy Wrestling,Walla Walla,WA,bing,,,0,True,Only nonprofit directories found - no owned website
+org-d39a71bb-3c5f-5cb6-9422-8db25adef676,Titans Baseball,Aberdeen,WA,duckduckgo,,,0,True,Multiple unrelated Titans Baseball orgs found; cannot confirm which website belongs to Aberdeen WA chapter
+org-8a59a29d-0e06-52f6-8184-008af2420fcb,United States Bowling Congress Inc,Wenatchee,WA,bing,,,0,True,"Results show only directories; this is a local chapter of national USBC org, no local chapter website found"
+org-d13e5d9f-cc3b-54e2-919c-6fe61c29e2cf,Sequim Baseball Boosters,Sequim,WA,duckduckgo,,https://www.facebook.com/SequimBaseballBoosters,0,True,Only Facebook and directories found; no owned website confirmed
+org-c3fb9b07-fabb-5720-9ea1-6e900a284152,Vikings Community Cheer Rec,University Pl,WA,bing,,,0,True,"Only Bizapedia, MapQuest, and nonprofit directories found - no website"
+org-104a1f27-6601-555f-a140-cf537d2ff650,Seattle Thai Soccer Club,Lake Stevens,WA,duckduckgo,,,0,True,"Only Facebook (22 likes) and Bizapedia found; newly formed 2025, no owned website"
+org-3393d7b9-e79c-552c-b9a5-1cb3afc4938d,Sky Valley Archery Academy Foundation,Monroe,WA,bing,https://skyvalleyarcheryacademy.wordpress.com,,75,True,"WordPress site for Sky Valley Archery Academy (Ed Eliason JOAD) in Monroe WA; Foundation supports this program, no separate owned domain found"
+org-77a517f7-3f0c-5f91-8984-3f7a7e0a8c9b,Boeing Employee Everett Basketball Association,Olympia,WA,duckduckgo,,,0,True,Only GuideStar and ProPublica nonprofit registry results; no owned website found
+org-b5a8b0ad-c46b-5448-8141-14b57a7af168,Tri City Fallout Baseball,Kennewick,WA,bing,,,0,True,Only Bizapedia and GuideStar directory results; no owned website found
+org-4286a0ca-d980-5952-85cf-f72db551f0f6,Shelton High School Volleyball Boos Ter Club,Shelton,WA,bing,,,0,True,Only GuideStar and school district results; no owned website for the booster club found
+org-1ace0e30-f55b-5f51-80b2-cfd79def0d21,Dugout Dawgs Baseball Club,Colbert,WA,duckduckgo,,,0,True,No results found on DuckDuckGo
+org-3e531eed-4ec4-5837-b182-397cfaade6c0,Running Brave Distance Project,Spokane,WA,bing,,,0,True,Only GuideStar and ProPublica nonprofit registry results; no owned website found
+org-e842c300-0477-592f-a9d2-10f2b0174477,Washington Roller Hockey Association,Seattle,WA,bing,,https://www.instagram.com/warollerhockey,0,True,No owned website found; only Instagram and nonprofit registry results
+org-1804a95b-5d40-570c-bd6c-fc62209d9a90,Darrington Baseball Booster Club,Darrington,WA,duckduckgo,,,0,True,Only Bizapedia and getholdings directory results; no owned website found
+org-c53d3171-a7dd-5bd1-86b3-b60ccd509bde,River Warriors Girls Wrestling Club,Coulee Dam,WA,bing,,,0,True,No results found; only school district and general Coulee Dam local results
+org-07aa2eab-d4f9-5f08-8e79-87d9798a73e8,Community Hoops & Wellness Foundati On,Seattle,WA,duckduckgo,,,0,True,"No results found; org name appears malformed (split ""Foundation"") causing zero matches"
+org-68068a84-6e52-5e43-9300-d64bb115b0a8,Naches Boys Soccer Booster,Yakima,WA,duckduckgo,,,0,True,No results found on DuckDuckGo
+org-5fab256b-0c47-59cd-8c6c-005087600937,Reaper Softball,Spokane,WA,bing,,,0,True,Only Facebook and YouTube results; no match specific to Spokane WA; no owned website found
+org-d72811bc-ec2a-58bc-84b5-5872a9f49169,Kitsap Sailing & Rowing Foundation,Silverdale,WA,duckduckgo,https://kitsap-sailing-and-rowing-foundation.square.site,https://www.facebook.com/kitsapsailing/,75,True,Square site is their active web presence; Port of Silverdale WA confirmed; no owned domain found
+org-f5699b4c-c783-566c-a7d2-aea2fae5d55c,Tacoma City Running Club Llc,Tacoma,WA,bing,,,0,True,Only nonprofit registry and directory results; no owned website found
+org-f971264e-5206-54fd-8ef3-bc45a8af2a1a,Chico Pee Wee Association Nfp,Silverdale,WA,duckduckgo,,,0,True,"Only nonprofit directory results (MapQuest, CauseIQ, EIN registries); no owned website found"
+org-12e1fb84-0356-5965-82ab-d9ed813521e4,Bellingham Youth Baseball,Bellingham,WA,bing,https://www.bellinghamyouthbaseball.com,,60,True,bellinghamyouthbaseball.com exists but Bing map shows Bellingham MA; may be wrong state - needs verification
+org-ce9a9872-c42e-5d0f-8185-adfe877587bd,Mid State Volleyball Club,Quincy,WA,duckduckgo,https://www.sportsengine.com/org/mid-state-volleyball-club,https://www.facebook.com/MSVBC/,75,True,SportsEngine registration page confirmed for Mid State Volleyball Club Quincy WA 98848; no owned domain found
+org-7d0dceaf-4ebf-5a2f-84c7-32727f1eaa14,Single Track Alliance Of Yakima,Yakima,WA,duckduckgo,,https://www.facebook.com/Stay.trails/,0,True,"Only Facebook, Trailforks, and nonprofit directory results; no owned website found"
+org-f9a49b85-c26f-524f-b851-af5f888a457b,Kempo Karate Foundation Of Washington,Bellevue,WA,bing,,,0,True,Only Bizapedia and nonprofit locator results; no owned website found
+org-7136303d-a5a7-5183-beb3-afcfa3384817,Kentlake High School Falcon Flames Dance Team Booster Club,Kent,WA,duckduckgo,,,0,True,Only nonprofit registries and directories; no owned website found for the booster club
+org-8a27ab46-ca5e-5e9e-9024-7b9b19613ad9,Cascade Collegiate Womens Rugby Conference,Seattle,WA,duckduckgo,,,0,True,Only nonprofitfacts.com registry result; no owned website found
+org-0747b870-367b-541f-947d-b5e570698d0a,Bullpup Legion Baseball Club,Spokane,WA,bing,,,0,True,Only ProPublica and GuideStar nonprofit registry results; no owned website found
+org-038969e7-6d50-5e9f-a0e8-96ad9d1b1970,Sequim Softball Boosters,Sequim,WA,bing,,,0,True,Only MapQuest and nonprofit directory results; no owned website found
+org-891f86ee-8c8c-55f0-8173-142ce3e51e8e,Seattle Youth Lacrosse Club,Seattle,WA,duckduckgo,https://www.sportsengine.com/org/seattle-youth-lacrosse-club,,75,True,SportsEngine registration page confirmed for Seattle Youth Lacrosse Club Seattle WA; no owned domain found
+org-470b44bb-35eb-5412-a4d0-6aa9027e9c9a,Hui Heihei Waa Outrigger Canoe Association,Silverdale,WA,bing,https://hhwsilverdale.usetopscore.com,https://www.facebook.com/HuiHeiHeiWaa,75,True,TopScore registration site for Hui Heihei Waa Silverdale; PNWORCA directory confirms Silverdale WA location; no owned domain
+org-bd9fe33b-306e-5e26-94fc-6d5e42d1d9c5,Nooksack Youth Baseball,Everson,WA,duckduckgo,,,0,True,Only OpenGovWA and nonprofit directory results plus Facebook group; no owned website found
+org-907f5aee-b9a8-5de0-9e7c-ab1525752810,Rhs Track & Field Booster Club,Redmond,WA,bing,https://redmondtrackfield.blogspot.com,,60,True,Blogspot page for Redmond High School Track & Field Booster Club; no owned domain found
+org-dafcec40-4008-5ae1-a64e-4438d9b6835c,Wenatchee Valley United Soccer Club,Wenatchee,WA,bing,https://wenatcheeunitedsc.com,,60,True,wenatcheeunitedsc.com mentions merger of Wenatchee United and Wenatchee FC; may be successor org; needs verification
+org-2353f8c9-427e-5342-a42e-ec3a278a2579,Everett Junior Wildcat Football,Everett,WA,bing,https://www.sportsengine.com/org/everett-junior-wildcat-football-cheer,,75,True,SportsEngine registration page for Everett Junior Wildcat Football & Cheer Everett WA; no owned domain found
+org-f99d3055-afcd-5dcb-b494-51b08c4f1b6d,Vashon Stingrays Swim Club Parent Advisory Board,Vashon,WA,duckduckgo,,,0,True,Only nonprofit directories and ProPublica; no owned website found
+org-0ceca7da-0335-5de7-8265-659318060341,Kentwood Baseball Booster Club,Kent,WA,bing,,https://www.facebook.com/kwbaseballboosters,0,True,Only Facebook and Bizapedia; no owned website found
+org-9efb610a-1e1b-5ad5-9432-1f4dfeaa757d,Puget Sound Cricket Club,Seattle,WA,duckduckgo,https://pscc-mu.vercel.app,https://www.facebook.com/PugetSoundCricketClub/,75,True,Vercel app pscc-mu.vercel.app is their member portal; MapQuest confirms PO Box Seattle WA 98111; pugetsoundcc.org mentioned historically
+org-d8ceef7f-da1f-5e27-ada9-35305ee93de9,Lacrosse Scholarship Foundation,Lacrosse,WA,bing,,,0,True,Only CauseIQ and LaCrosse School District page references; no independent owned website found
+org-48bff674-3d43-5469-a4df-0ee4ee5adcfc,Frontier Dance Team Boosters,Vancouver,WA,bing,https://frontiermsdancetea.wixsite.com/frontier-dance-team,,75,True,Wix site for Frontier MS Dance Team in Vancouver WA; Facebook confirms Vancouver WA location; no owned domain
+org-51d43b6d-2888-582e-9d7f-5a67d1dff201,Southridge Lacrosse Club,Kennewick,WA,duckduckgo,https://www.southridgelacrosse.com,,60,True,USA Lacrosse lists southridgelacrosse.com; entity shows administratively dissolved Jul 2022; site may be inactive
+org-db4c2ea5-fbd8-5d80-b548-2d7dd028e156,Colville Wrestling,Kettle Falls,WA,bing,,,0,True,"Only MapQuest, GuideStar, and getholdings directory results; no owned website found"
+org-672c016b-6513-5332-b549-f64d8f1e3af4,Redmond Basketball Booster Club,Woodinville,WA,duckduckgo,,,0,True,"Only Bizapedia, GuideStar and nonprofit directories; no owned website found"
+org-e36cba5c-de1c-566a-aa7b-58338015c143,Gig Harbor Tides Basketball Club,Fox Island,WA,bing,https://www.harborhoopsbasketball.org,,50,True,harborhoopsbasketball.org appeared in results alongside Gig Harbor Tides Basketball Club; possible successor or related org; needs verification
+org-2344b923-6975-5482-b439-78ca29807848,Golf Teaches Integrity,Otis Orchards,WA,duckduckgo,,,0,True,"Only nonprofit directories (Bizapedia, GuideStar, getholdings); no owned website found"
+org-53769766-74f9-554b-984b-e784fcbfc505,Seattle Basketball Youth Association,Shoreline,WA,duckduckgo,,,0,True,Only nonprofit directories; no owned website found
+org-4eaefc75-3752-57df-894b-42b8b0d92778,Lakeview Ladies Golf Club,Soap Lake,WA,bing,,,0,True,Only nonprofit directories and OpenGovWA; no owned website found
+org-c5660a6e-7945-5e34-8e49-6a0cfeb78217,Chewelah Baseball,Chewelah,WA,duckduckgo,,,0,True,"Results show Chewelah Cougars high school team (MaxPreps, Spokesman); no youth org website found"
+org-403678d2-5792-58ac-afcd-40755fc7c297,Bremerton Wrestling Booster Club,Bremerton,WA,duckduckgo,,,0,True,Only directories; entity status Delinquent; no owned website found
+org-6ffdfd5a-b899-55be-84ec-1ab48efcce56,Mid-columbia Elite Lacrosse Club,Kennewick,WA,bing,,,0,True,"Only CauseIQ, Bizapedia, and GuideStar nonprofit directories; no owned website found"
+org-a38ac590-780d-5e49-98dc-d723da125a66,Kentwood Football Boosters Club,Covington,WA,duckduckgo,,,0,True,"Only getholdings, GuideStar, and ProPublica nonprofit directories; no owned website found"
+org-2522dacc-dfc1-5617-9031-d209bc74f0d6,Mind Fitness Attitude Boxing,Vancouver,WA,bing,https://mfaboxing.weebly.com,https://www.facebook.com/MFAboxing,75,True,Weebly site mfaboxing.weebly.com matches name; Facebook confirms Vancouver WA youth boxing nonprofit; no owned domain
+org-aa2b69e2-3fe7-5448-8090-1f5a247c97d9,Seattle Green Lake Triathlon Group,Seattle,WA,duckduckgo,https://www.seattletri.org,,75,True,seattletri.org founded by SGLTG leaders as successor; original SGLTG has no independent domain; Seattle area confirmed
+org-ce6562ba-3e2f-5072-bc9c-d647b8235e2e,White River Lacrosse Booster Club,Buckley,WA,bing,,,0,True,"Only Bizapedia, OpenGovWA, and nonprofit directories; no owned website found"
+org-866b4d8a-bb70-50df-8c90-ee7930d9128c,Twin Valley Equestrian Team,Aberdeen,WA,duckduckgo,,,0,True,Only nonprofit directories; no owned website found
+org-f6674ea3-cc0a-5345-81b0-e061c4eec9cd,Elma High School Equestrian Booster Club,Elma,WA,bing,,,0,True,"Only Bizapedia, OpenGovWA, and charity directories; no owned website found"
+org-9e527681-f818-5443-9bd1-9ca90b148472,Maple Valley Wrestling Club,Maple Valley,WA,duckduckgo,,,0,True,Only Facebook and nonprofit directories; no owned website found
+org-81be2771-ab6b-501a-8836-3c53e50981aa,Kahiau Volleyball Club,Manson,WA,duckduckgo,https://kahiauvolleyballclub.sportngin.com,,75,True,SportsNgin page for Kahiau Volleyball Club; 950 Boetzkes Ave Manson WA 98831 confirmed; no owned domain
+org-14a658f2-f2aa-5f67-900b-bcd2376ef7e2,Emerald Racing Club,Auburn,WA,bing,https://emeralddowns.com/emerald-racing-club/emerald-club,,60,True,Emerald Racing Club page found at Emerald Downs racetrack Auburn WA; may be horse racing loyalty club not youth org; needs verification
+org-87cdb851-3bc3-55e9-98ff-666e96dd8251,Orting Lacrosse Club,Orting,WA,bing,https://ortinglacrosseclub.leagueapps.com,https://www.facebook.com/OrtingLacrosseClulb,75,True,LeagueApps registration page for Orting Lacrosse Club; Facebook confirms Orting Valley youth nonprofit; no owned domain
+org-1020c7ff-f650-5d32-acf7-66d0b2fe7226,Cedarcrest Wrestling Booster Club,Duvall,WA,duckduckgo,,,0,True,"Only Bizapedia, OpenGovWA, and nonprofit directories; no owned website found"
+org-94c0fb83-9a79-56b6-b71e-5f4633d2667e,Evergreen High School Boys Basketball Booster Club,Vancouver,WA,bing,,,0,True,"Only MapQuest, GuideStar, and nonprofit directories; no owned website found"
+org-91b8422d-aa80-5748-a71f-56906d03b359,Tahoma Water Polo Booster Club,Maple Valley,WA,duckduckgo,,,0,True,"Only Bizapedia, OpenGovWA, and nonprofit directories; no owned website found"
+org-8c174c22-be19-5251-86cf-b545cf3b9b1d,Falcon Volleyball Club,Woodinville,WA,bing,https://fevavolleyball.org,,60,True,fevavolleyball.org is Falcon Elite Volleyball Alliance (FEVA) based Bothell WA; may be same org under different name; needs verification
+org-b4838f64-2537-54b2-b894-66ee19d20621,Olympia Lacrosse Club,Olympia,WA,bing,,https://www.facebook.com/olylacrosse,0,True,"Only Facebook, Instagram, EezyLeague, and OpenGovWA; no owned website found"
+org-163afa95-4a5b-5586-b10a-e37eb05b5bc6,Seattle Bmx Club,Seattle,WA,duckduckgo,,https://www.youtube.com/@seattlebmxclub5654,0,True,"No owned website found; results are directories (opengovwa, bizapedia, nonprofitfacts) only"
+org-46724b27-32db-521a-a6ee-1af3155bef89,Evergreen United High School Equestrian Team Booster Club Inc,Vancouver,WA,duckduckgo,,,0,True,"No owned website found; results are charity directories only (GuideStar, CharityNavigator, ProPublica)"
+org-772e266b-5951-50f9-a270-3dfe2de25998,Adventure Soccer,Arlington,WA,bing,https://adventuresoccer.org,,75,True,Domain and title match Adventure Soccer; site mentions WA local outreaches but snippet says Missing: Arlington so city not confirmed
+org-8c6a78aa-53c7-52aa-ae3f-4f650fcac0cd,Moses Lake Bmx Association,Moses Lake,WA,duckduckgo,,,0,True,"No owned website found; results are directories only (chamberofcommerce, bizapedia, causeiq, alignable)"
+org-a7260c50-77a4-524b-8f5f-3465c9205ee0,South Skagit Little League,Mount Vernon,WA,bing,https://tshq.bluesombrero.com/southskagitll,,75,True,Blue Sombrero registration platform page confirmed for this org; snippet shows Mount Vernon WA address and baseball/softball for ages 4-14; no independent owned domain confirmed
+org-e96bc781-3976-5783-a72a-30c43dcaa934,Thriller Track And Field Club,South Colby,WA,duckduckgo,,,0,True,"No owned website found; results are 501c3 directories only (501c3lookup, charitynavigator, propublica, guidestar)"
+org-bcfe4117-0e8e-5558-af4f-cc28ae2fc962,Cougar Baseball Booster Club,Olympia,WA,bing,,https://www.facebook.com/cougarbaseballbooster,0,True,No owned website found; Facebook and charity directories only; Facebook shows Olympia WA 501c3 supporting Capital Cougar Baseball
+org-06152421-5903-52ec-ad1b-3c0624ddea61,Lady Viks Lacrosse Booster Club,University Pl,WA,bing,,,0,True,"No owned website found; results are business/charity directories only (bizapedia, plaincharity, opengovwa)"
+org-294e5899-2a3c-5ca2-bd39-75d25b52348a,Nooksack Youth Football,Nooksack,WA,duckduckgo,,https://www.facebook.com/groups/651395584955651/,0,True,No owned website found; Facebook group is the main presence; registration handled via school district form
+org-0e16372e-608c-5c24-9294-4d5c65ff65d2,Drive Basketball,Poulsbo,WA,bing,https://www.drivebasketball.org,,75,True,Domain and title match Drive Basketball; Facebook confirms non-profit in Greater North Kitsap region (consistent with Poulsbo); city not explicitly stated in snippets
+org-0a213b71-31e1-579f-a403-ee5dc378593a,South Whidbey Parks And Aquatics Foundation,Langley,WA,mojeek,,,0,True,Mojeek CAPTCHA block; no results readable
+org-d103b11b-8242-52f0-bdbc-1200653b5cfa,Mountain View Community Center,Edgewood,WA,ecosia,,https://mtviewcc.galaxydigital.com,60,True,Only a Galaxy Digital volunteer-platform subdomain (mtviewcc.galaxydigital.com) found at 3607 122nd Ave E Edgewood WA; no clear owned domain
+org-09cee2e5-d91b-56f9-a8dc-a3df3a62b1ce,Hanford Employee Recreation Organization,Richland,WA,duckduckgo,,https://www.facebook.com/groups/HanfordEmployeeRecreationAssociation/,0,True,"Only directory/aggregator listings (MapQuest, Bizapedia, CauseIQ, D&B) and a private Facebook group; no owned domain"
+org-ab18549e-93db-57cc-92b9-50dc5616a10b,Boys And Girls Club Of The Yakama Nation Inc,Toppenish,WA,brave,,,0,True,Only Charity Navigator and ProPublica nonprofit-directory profiles; no owned domain or social found
+org-c245f920-bbd0-5a62-b455-e8b824374928,Palouse Empire Recreation Organization,Thornton,WA,mojeek,,,0,True,Mojeek CAPTCHA block; results not readable
+org-32f403fe-b0fb-546e-81ef-6850553d9f1b,Washington State Boys & Girls Clubs Association,Olympia,WA,ecosia,,,0,True,Only a WA SOS commercial-fundraiser report PDF mentions the org; no owned domain found
+org-8e7d3ccf-1c44-5f30-b71d-e9b2ef9d0d80,Friends Of The Parks,Colfax,WA,duckduckgo,,https://www.facebook.com/Friends-of-the-Parks-Colfax-WA-456617518165176/,0,True,"No owned website; only Facebook page and directory listings (GuideStar, Bizapedia, MapQuest)"
+org-eede06bd-85c6-595a-b3a0-654a0e0c7f7a,American Academy For Park And Recreation Administration,Lacey,WA,mojeek,,,0,True,"Mojeek CAPTCHA block, no results retrieved"
+org-c0f2f3b9-f92a-5a04-a0ec-585bc1860a80,Step It Up Camp,Mill Creek,WA,ecosia,,,0,True,"Ecosia returned no parseable results (JS-rendered, empty body)"
+org-b21e7fa1-f5fc-599a-8e7d-8809d99e4fc8,Randall And Marie Martin Scout Camp Llc,Kennewick,WA,startpage,,,0,True,"Only Cause IQ directory listing found, no owned website"
+org-e0571c96-b6f0-5880-b10a-4bfa1415f2ed,Apple Hill Art Camps,Tonasket,WA,brave,,https://instagram.com/p/DFLn6wKJ0DG,60,True,Only presence is a Tonasket School District PTO subpage (tonasket.wednet.edu) and Instagram; no owned domain
+org-8155354f-b1b9-5504-9839-efee0d671ece,Citizens Associated For Recreation Education And Social Equity,Spokane,WA,mojeek,,,0,True,"Mojeek CAPTCHA block, no results retrieved"
+org-6f80ef37-2352-5691-8edb-7f306700e7b5,National Recreation And Park Ethnic Minority Society,Lacey,WA,ecosia,,,0,True,"Ecosia returned no parseable results (JS-rendered, empty body)"
+org-31a0d331-72ed-5777-bc99-459b11594333,Bethel Recreation Association,Spanaway,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run after 3 consecutive blocks)
+org-fa23cf5c-c40d-5e24-ac51-a683745c8f24,Partners For Parks,Lacey,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run after 3 consecutive empties)
+org-a5355ca5-dea1-501f-8675-a2a0900f62db,Big Blue Football Camp,Puyallup,WA,startpage,,,0,True,"Only a WA company directory (registered LLC) listing, no owned website"
+org-ed1d4a2f-0f20-59ff-8fb7-9b45d1f8ec47,Enumclaw Specialized Recreation,Enumclaw,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-0bfa946c-7176-5910-84ba-146275213508,Go Odessa Recreation,Odessa,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-c95668e4-e8e4-5306-9530-19298e2e35e8,Yakima YMCA Qalicb,Yakima,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-1d8d4170-1c16-5ae1-b733-b1c7f44eb992,Family First Community Center,Lynnwood,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-e938db92-41a8-5ccf-861e-9611683adf0b,Seabeck Community Center,Seabeck,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-8d839281-82bd-5aaf-914b-d7f069305971,Camp Journey Nw,Spokane,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-476f5bb9-3431-55bb-8369-bd32872e1a41,Friends Of Sequoia Therapeutic Recreation,Tacoma,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-bc7b20e5-7e9f-56f7-8233-9ef057e3135e,Ocean Shores Parks And Conservation Foundation,Ocean Shores,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-19a509f4-04ac-555c-bbed-4f681caf5c49,Camp Fire,Bellingham,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-621404ce-bcad-5bff-b40d-3651b05b5277,Camp Fire,Everett,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-1248be9d-89b5-52af-a8ed-711e2f345a51,Boys & Girls Clubs Of South Puget Sound,Tacoma,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-533b3040-f333-5273-af7c-27fc3f0b2656,Mayfield Lake Youth Camp Incorporated,Kelso,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-283ceb8e-b61d-559b-9111-057bce8b2731,Methow Valley Community Center Association,Twisp,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-4b482a92-f96d-50fd-b1db-20fa3afe24d1,Washington Recreation & Park Association,Seattle,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-00b3589d-2b38-55dd-9c3f-502d6e0c99b2,Anacortes Parks Foundation,Anacortes,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-fe2480ab-499e-55c7-ba22-638fe23abebe,Boys And Girls Clubs Of Skagit County,Mount Vernon,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-b5cc0986-f978-50ad-a48b-5c6eba74bdf2,Friends Of Camp Bow-isle,Bothell,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-a5356a9b-cab4-5c23-87cb-4d65dba48a30,Henderson-norwester Camp,Seattle,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-8b5581bd-a94f-521d-8e7f-455d796c02d3,Seattle Parks Foundation,Seattle,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-66200ae2-5c49-593f-9ad0-1db455e0e78b,Montesano Community Center,Montesano,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-0b2e90e6-80fa-5b98-afcc-167e3d73c556,Camp Solomon Schechter Inc,Seattle,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-1137388d-d74a-57bf-94e6-3c63e7d6b0df,Nw Film Camp,Seattle,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-3942de1d-e801-5bac-b5a7-170183345038,Community Recreation Coalition,Walla Walla,WA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-4588466f-cbcf-5b13-a37d-eaacc692fcab,Rain City Rock Camp For Girls,Seattle,WA,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-a4266934-daf5-513a-b28f-a7ec216402ee,Medford Parks & Recreation Foundation,Medford,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-5aba434b-c698-5cb5-b530-51dee22421df,Lone Tree Ranch Youth Camp,Roseburg,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-f77ed3a4-09c8-5290-a21f-56816b87bf74,Western Star Recreation Club,Portland,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-d1780bc3-979c-5ada-891b-e190154d927d,Edgewood Pool & Community Center,Eugene,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-5be5e55c-37e7-5bae-a42e-77d37b0b7e71,Camp Tamarack,Bend,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-fc8f2cd0-fe21-5f6a-8880-1ec284483299,3cf Employee Entertainment And Recreation Club,Tualatin,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-a33ae4b9-d178-5973-aeaf-70463ff107be,Friends Of Corvallis Parks And Recreation,Corvallis,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-6b52798b-709b-5d24-901a-5289c75245c9,Friends Of Newport Parks And Recreation Inc,Newport,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-f18ae4f4-bd5f-5c29-8c66-67a3d32a7c1c,Boys And Girls Club Of The Greater Santiam,Lebanon,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-ebffa594-994a-527c-974f-ad2e889b58b2,Eugene Parks Foundation,Eugene,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-35244895-083b-58d4-a112-f738fca0f8a2,Douglas County Oregon Patriot Camp,Roseburg,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-d3564ad1-e337-5ac6-9a29-eac78564a029,Camp Elso Incorporated,Portland,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-edd42a0d-07b5-5912-91a8-13cad59f3c9d,Evans Creeks Up Camp,Lyons,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-7e67a1b7-2c94-509f-b40e-b2d7f8ba444a,Camp Namanu,Sandy,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-629ca6e4-9c8f-57ff-8888-061cfac5c05b,B Nai Brith Mens Camp Association,Portland,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-1f8d57e8-f81d-5ccf-85e0-0673dea7756e,Umpqua Community Center,Umpqua,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-38713458-b773-5434-9b6e-b32bf2cc3e6e,Eagle Fern Camp,Estacada,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-4937c960-1d72-576f-ae18-8282f247fd3a,Boys & Girls Club Of Salem Marion & Polk Counties Inc,Salem,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-f61757c9-c081-5890-ad36-a8b9748c01aa,Upper Rogue Community Center Inc,Shady Cove,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-44a74648-853e-5c1e-82e3-e1521add601b,Milwaukie Community Center Foundation,Milwaukie,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-8d72b6bf-60cb-5bf7-975a-0d86c036d9c6,Chief Joseph Summer Camp,Enterprise,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-cdc54182-f50c-5c11-b905-7569b618b10d,Sisters Organization For Activities And Recreation,Sisters,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-6249c6dc-f19c-594f-a629-ac4be62cad73,Sunset Empire Park & Recreation District Foundation,Seaside,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-896cdee6-68e7-5083-91d3-e135dca046a1,Camp Rosenbaum Fund,Portland,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-7d66c942-57d0-5b5b-81a7-6639189a0a80,Gales Creek Camp Foundation For Children With Diabetes,Portland,OR,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-5d108b08-08b5-59d2-8c88-5372ef63bb8a,Camp Fire,Bend,OR,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-74dc3c9a-f7fe-5460-b7ae-9b9ec3f728f1,Kuna Youth Recreation Association Inc,Meridian,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-f09596b4-b203-54cd-9aab-257dde4e4d8f,Blackfoot Community Center Inc,Blackfoot,ID,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-b2697fc2-fae4-5d21-96b3-54f54e2923f5,Commission Youth Camp Inc,Meridian,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-c7e771e1-64f5-5fd7-9ca0-9011e24ec119,Arrow-heart Adventure Camps Inc,Weiser,ID,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-a8b9284e-7a8f-5bf9-8eeb-f6f25aee04be,Boys And Girls Clubs Of The Lewis Clark Valley Inc Endowment Trust,Lewiston,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-cee67bf7-1e68-52e8-bd37-671159ab16c2,Specialized Needs Recreation Inc,Coeur D Alene,ID,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-118db1fc-a183-5c71-8b8d-f9c8627ced30,Boys And Girls Clubs Of Canyon County Inc,Nampa,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-f40a986f-7087-5051-9b33-f43ef50f12df,Valley Recreation District,Hazelton,ID,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-3eba7f84-5c2e-5494-a42f-b06c44c40f54,Boys & Girls Club Of Kootenai,Post Falls,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-7cddcd49-3e9e-506b-ad63-ce28b96632f3,Vallivue Summer Recreation Program Inc,Caldwell,ID,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-b6009943-0989-5bf5-aa1d-715687351625,Camp Hilo Inc,Spirit Lake,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-e3488a1d-83ef-5673-8f20-fae09b98594d,Girls Rock Camp Alliance,Garden City,ID,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-e8db89db-be59-5ad7-9700-3ec84745001c,Bern Community Recreation District,Bern,ID,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-529d74da-627f-58c9-a9de-b686c38a7efc,Friends Of Caines Head State Recreation Area,Seward,AK,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-3eda9318-420d-5758-b054-775fcf1bad98,Globe Creek Camp Inc,Fairbanks,AK,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-bafb52d9-9f58-5d69-86e0-f5314b0c9c2c,Friends Of Ketchikan Area State Parks Education And Recreation,Ketchikan,AK,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-c12df0d3-f5a9-5cd7-8cab-5f2c83c57795,Bingle Camp Ministries,Fairbanks,AK,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-04f52746-14f5-56aa-99dc-178a7282bfdd,Camp Fire,Anchorage,AK,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-403dfba1-8de0-51ec-93ea-b8b883a7c89f,Friends Of State Parks Mat-su,Willow,AK,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-9e19c038-fbf7-5081-bbd6-bc6013da53f3,Sitka Recreation Foundation Inc,Sitka,AK,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-36aba2ac-3db6-5224-b11c-990f620f8569,Community Outdoor Recreation Association,Bozeman,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-6ac491f6-a58e-5eb5-96e9-fc9018199423,Helena Recreation Foundation,Clancy,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-df4fff20-5f6b-5d88-9f38-b2d9d16b57e5,Broadview Community Center Inc,Broadview,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-7aaed275-818b-5a08-b92a-528b4245442c,Boys And Girls Club Of The Northern Cheyenne Nation,Lame Deer,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-88ebed45-5729-5da3-8870-6c5f4ec9bea0,Shawmut Community Center Inc,Shawmut,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-f787e657-3198-5db8-9fb1-5f125a3c49b2,Foothills Boys & Girls Club Of Glacier County,Cut Bank,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-c454b375-0ce5-54ad-947c-57fce7d4feb1,Fairfield Community Civic And Recreation Inc,Fairfield,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-1b4e68cf-2985-5b41-a8b6-1383d3340604,Boys And Girls Club Of Yellowstone County Endowment Foundation,Billings,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-5d1d2e10-d72d-51fa-af24-d7f8bdece323,Boys & Girls Club Of The Flathead Reservation,Ronan,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-2f801c9d-f2ee-5978-ba4b-57a0d7caee93,Missouri River Recreation Area,Glasgow,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-56cddafc-a31a-5dd7-b7ae-bc44de7a23d8,Racetrack Valley Community Center,Deer Lodge,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-740056ea-46f0-59e8-9e97-1238b661b317,Smelter City Recreation Complex,Anaconda,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-0e7ec721-1dd7-5642-9b46-8796b82cae57,Montana Intensive Wrestling Camp,Kalispell,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-fa2c261c-d9a9-5851-9e81-f2281bbfb284,Broncs Bulls And Bibles Camp,Miles City,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-86aead40-b9cb-54da-bdac-39ac2c62c72e,Friends Of Parks,Bozeman,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-6ca03338-9e9c-5bda-8683-44812dc7392e,Granite County Parks Foundation,Philipsburg,MT,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-4bf0d606-8819-584c-8f0b-d53055fe83be,Custer County Recreation,Miles City,MT,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-83d4594d-d695-58ae-ad6a-b2bd3446ae7a,Youth Camp Education,Las Vegas,NV,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-1f1fc4ce-f506-5969-b6cd-7b83c93de8e0,Northern Nevada Sports And Recreation,Sparks,NV,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-2b7a9bf4-756c-549a-b867-406d5d14941a,Truckee Meadows Parks Foundation,Reno,NV,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-98649001-d7a7-5d16-a301-635c8983b3c4,Boys & Girls Clubs Of Southern Nevada,Las Vegas,NV,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-41bccf31-e018-5d68-bd1c-c4e42bf2f81d,Blue Diamond Recreation Association,Blue Diamond,NV,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-51c14e72-36f9-545a-94c3-7b67a1510190,Boys & Girls Clubs Of Southern Nevada Foundation Inc,Las Vegas,NV,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-6722eda1-a603-58f1-b5d9-1bd9b0a0cc94,Lions Camp Dat So La Lee Inc,Henderson,NV,ecosia,,,0,True,Ecosia returned no parseable results (engine disabled this run)
+org-2bed2f28-9eae-55f3-be30-51e3af5f815a,Future Stars Camp Inc,Pasadena,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-45e9bd12-3c63-5650-994c-7070a8b87e83,Ibd Summer Camp Foundation,San Francisco,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-c1dc965d-83ce-5ee5-af43-39e8a0d5af61,Kids Outdoor Sports Camp,Oakland,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-921879fe-62cc-5cab-9047-038d4960a329,Lost Coast Camp,Petrolia,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-4b4fef01-cbfa-57ad-8cb2-3c62a6e95b33,Bay Area Girls Rock Camp,Oakland,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-2bd6d209-54d2-55be-a2fb-1c62edf53ae3,Recreation And Team Sports,Berkeley,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-65008e26-a73d-5164-8d48-f6f9b440fac1,The Lillie & Bobby Wayne Anderson Sr Foundation Camp Boweevel,Pasadena,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-4ea62805-78c7-54e5-bc86-0bd00fff3e1b,Bear Valley Springs Community Recreation Facilities Foundation,Tehachapi,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-be264092-2886-5809-8197-b5541ef20ca6,San Jose Parks Foundation,San Jose,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-065b6b04-50c4-5f5e-9877-4462b954c378,Stone Cellar Homestead Camp Inc,Placerville,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-5c83d9dc-7f9c-5e34-87ba-2c2b5500b6f7,Divide Recreation Association,Georgetown,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-de872d96-f4a9-5663-842a-7c32061a52fb,Friends Of Chula Vista Park And Recreation,Chula Vista,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-3192ce64-9d7f-50ad-b6ac-9057fec47773,Homestead Valley Park & Recreation Inc,Landers,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-50881c77-a02b-5488-8f66-1d5094fb1a3d,Boys & Girls Club Of Carson,Carson,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-ddf8ef9f-63a8-55ab-8c7c-56ad48745000,Boys & Girls Clubs Of Central Orange Coast Foundation,Irvine,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-3f447d39-d57e-59fe-8678-457345cbb828,Lions Camp At Teresita Pines,Wrightwood,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-30c43863-2542-5520-a9b3-5b3f8cd4a3d0,Law Enforcement And Public Safety Museum And Recreation Fund,Riverside,CA,mojeek,,,0,True,Mojeek CAPTCHA block (engine disabled this run)
+org-06e30c36-8ef3-549d-aace-a4707d36992e,Ghormley Meadow Christian Camp & Conference Center,Yakima,WA,duckduckgo,,,50,True,"Only directory/990 aggregator results (charitynavigator, intellispect, plaincharity); no owned site found"
+org-7a10dbe0-4ce5-5a03-b4b9-0a3a1cadec83,Bremerton Parks Foundation,Bremerton,WA,bing,,https://www.facebook.com/people/Bremerton-Parks-Foundation,60,True,"No owned site; Facebook page top result plus directories (opengovwa, bizapedia)"
+org-3c8cdbe7-a370-51a4-b02f-0644516ada0b,Camp Curran Community Association,Puyallup,WA,brave,,https://www.facebook.com/groups/1394171430599649,60,True,"No owned site; only directories (charitynavigator, guidestar, candid) and a Facebook group"
+org-2f8a3deb-0251-5262-8983-0554d810149d,Friends Of Whidbey State Parks,Coupeville,WA,mojeek,,,0,True,Mojeek CAPTCHA block (ALTCHA verification)
+org-646796f8-4e2a-5055-9a8f-0cec67737235,Vashon Parks And Recreation Foundation,Vashon,WA,ecosia,,,50,True,Only causeiq directory result visible; no owned site found
+org-eea51740-4413-5d1b-a5c5-4de518fbf7ca,Eastside Community Center Qalicb,Tacoma,WA,startpage,,,50,True,"Only getholdings/causeiq directory results; QALICB financing entity, no owned site"
+org-476080cb-0fb6-51b7-b295-8038dd9a9590,Longview Parks And Recreation Foundation,Longview,WA,duckduckgo,,,50,True,"Only directory results (Cause IQ, Mightycause, bizapedia); foundation supports City of Longview Parks & Rec, no owned site found"
+org-8791b1c7-ab28-5bb1-92f6-b415d1f17b7c,Grace Gymnastics Center Lakewood Fa Mily YMCA Compulsiry And Optional,Lakewood,WA,brave,,,50,True,Only Charity Navigator and intellispect directory results; no owned site found
+org-8765effb-6728-55a4-8672-0840def532d8,Friends Of Camp Fife,Yakima,WA,mojeek,,,0,True,"Mojeek CAPTCHA/verification block, no results readable"
+org-9e9126f2-813d-5cdb-8003-e72045f38ea2,Camp With Pride Scholarship Foundation,Ferndale,WA,ecosia,,,0,True,"Ecosia results did not render in headless read (JS-only), no data"
+org-9a70ba14-bc15-5c97-a708-62425b8154ac,Family Camp At Lake Wenatchee Llc,Bellevue,WA,startpage,,,0,True,"Startpage CAPTCHA block, no results readable"
+org-cd30c7da-8704-56a9-b61b-619460fb4871,Arian Carpio Camps,Federal Way,WA,duckduckgo,,https://www.eventbrite.com/o/arian-carpio-camps-68225074733,50,True,"Only nonprofit directory results (GuideStar, ProPublica, Charity Navigator) and an Eventbrite organizer page; no owned website found"
+org-efa29460-a4d4-513e-9442-dc305e5af0c4,Community Center,Wilbur,WA,bing,https://www.wilburwa.gov,,55,True,"Generic org name; best match is Town of Wilbur community center page (wilburwa.gov); municipal page, unclear if the nonprofit entity"
+org-1db98006-249c-5447-815c-dea63f3d5072,Frenchtown Recreation Club,Walla Walla,WA,brave,,,45,True,Only directory results; org operates Frenchtown Hall in Lowden but no owned website found; frenchtownwa.org is a separate Historical Foundation explicitly not connected
+org-ffc54a52-54c0-5000-83c2-27787dab888e,Boys & Girls Clubs Of Whatcom Co,Bellingham,WA,duckduckgo,,,50,True,"First page all nonprofit directories (ProPublica, Charity Navigator, Benevity); owned site not surfaced"
+org-6cbac4d4-87c3-5c07-ad57-32ff80b6eed5,Boys And Girls Club Of The Olympic Peninsula,Sequim,WA,duckduckgo,,,50,True,"Only an OpenGovWA registration record (400 W Fir St, Sequim WA); owned website not surfaced"
+org-6ba48e00-39e4-52d0-8f30-feb75e6f7e54,Howat Recreation Retreat,Home,WA,bing,,,45,True,"Only directory results (OrgCouncil, OpenGovUS, GuideStar); social/pleasure club in Lakebay, no owned website"
+org-d840f7df-09f2-59ed-abd9-87461ab0dba4,Continental Camp Corporation,Chelan,WA,duckduckgo,,,45,True,"501(c)(7) social club, only directory results (GuideStar, ProPublica, OrgCouncil); no owned website, $0 revenue"
+org-bbf79796-4214-5f49-a397-f2a510ee5ff9,Parks Arts Recreation And Cultural Foundation Of Thurston County,Olympia,WA,duckduckgo,,,50,True,"PARC Foundation, Olympia WA; first page all nonprofit directories (GuideStar, Cause IQ, Benevity), owned site not surfaced"
+org-76aa363b-a951-55af-b638-f1b8f6124afe,Washington State Kiwanis Youth Law Enforcement Camp,Olympia,WA,duckduckgo,,,45,True,"KYLEC, Olympia WA; only directory results (SearchCharities, MapQuest, D&B), $0 revenue, no owned site surfaced"
+org-318f0fdd-c58f-5eca-aa18-6ce934df311d,Central Cascades Recreation Association,Seattle,WA,duckduckgo,,https://groups.io/g/CCRA,50,True,"WA nonprofit reg 2022, 10116 4th Ave NW Seattle; presence is a Facebook group + groups.io/g/CCRA, no owned website"
+org-9cf589c9-b8f8-53d4-bdc4-d259faf4af8d,Community Recreation Foundation Of Pacific,Pacific,WA,bing,,,50,True,"Only directory results (Intellispect, SearchCharities, Cause IQ, Bizapedia); no owned website surfaced"
+org-9f1907c2-1596-559e-be9f-383ca504f182,Penmet Parks Foundation,Gig Harbor,WA,bing,https://penmetparks.org,,60,True,"Foundation is fundraising arm of Peninsula Metropolitan Park District (penmetparks.org, 2416 14th Ave NW Gig Harbor); Foundation has no separate owned site, only directory listings"
+org-f9060e25-b1c4-51d7-86b8-a078eacbb14c,Special Hoop Camp Incorporated,Beaverton,OR,bing,,https://www.facebook.com/Hoop.Camp,55,True,Directory results + Facebook page Hoop.Camp (Beaverton OR); no owned website clearly surfaced
+org-54b42eda-55be-5955-afab-1bc93de75824,Boys & Girls Clubs Of The Western Treasure Valley,Ontario,OR,duckduckgo,https://bgcwtv.org,https://www.facebook.com/BGCWTV/,70,True,"Owned site not directly in results but staff emails use @bgcwtv.org; Ontario/Payette/Weiser clubs, Facebook BGCWTV confirms Ontario OR"
+org-c1a467dd-a8ef-5d12-a6f2-28d7e693ad1c,Friends Of Camp Cone Inc,Corvallis,OR,bing,,,45,True,"Only directory results (Cause IQ, Bizapedia, ProPublica); tied to First United Methodist Corvallis, no owned site"
+org-b87e52fd-27cf-5333-84cb-df37a93032d1,La Pine Park & Recreation Foundation,La Pine,OR,bing,https://www.lapineparks.org,,55,True,"Foundation supports La Pine Park & Recreation District (lapineparks.org, 16405 1st St La Pine OR); Foundation itself only has a Facebook page, no separate owned site"
+org-53d66a2b-9f64-5a4b-aafe-970f19005e40,Friends Of Camp Baker,Roseburg,OR,bing,,,45,True,Only directory results; supports Camp Baker (Boy Scouts OTC camp); no owned website for the Friends group
+org-02a46e85-fad6-5646-9eb3-7d8b73e08299,Gallop With God Rodeo Bible Camp,Sutherlin,OR,bing,,https://www.facebook.com/,50,True,"Presence is a Facebook page (Christian horsemanship camp, Sutherlin/Cottage Grove OR); no owned website found"
+org-c636a212-07a8-580c-a3f0-a1c4ab8f99c4,Eagle Point Parks Foundation Inc,Eagle Point,OR,duckduckgo,,,45,True,"Only directory results (ProPublica, Charity Navigator, OrgCouncil, GuideStar); no owned website surfaced"
+org-4f8a647b-5baa-5e18-bf51-d811c7f2608f,Agri-camp USA,Klamath Falls,OR,bing,,https://www.facebook.com/AGRICAMPUSA,50,True,"Presence is Facebook (AGRICAMPUSA) + Youth Shooting Sports Alliance listing; youth ag/firearms-safety camp, no owned website"
+org-681c06ff-16d9-5006-86ef-5c2ff89bb8a6,Dallas Oregon Recreation Inc,Dallas,OR,duckduckgo,https://tshq.bluesombrero.com/Default.aspx?tabid=1593349,https://www.facebook.com/DallasOrRecInc/,60,True,"DORI (K-8 youth rec, Dallas OR) uses a Blue Sombrero registration site as its home; recorded as registration source, also active Facebook page"
+org-e75974e0-32e0-510b-8825-938a26bfba0f,Friends Of Sheridan Parks & Recreation,Sheridan,OR,bing,,https://www.facebook.com/FriendsofSheridanParks,50,True,"No owned site found, only Facebook (Friends of Sheridan OR City Parks, 355 followers) plus nonprofit directory listings"
+org-3c1b13aa-f13a-5aa2-95b4-f815229c78e5,Happy Valley Parks And Recreation Foundation,Clackamas,OR,mojeek,,,0,True,"Mojeek returned a CAPTCHA challenge page, no results retrieved"
+org-065e9fe2-e56f-5429-b30e-924866883bf7,Tigard Recreation For Everyone,Tigard,OR,ecosia,,,0,True,"Ecosia page returned only a consent/feedback banner, no search results retrieved"
+org-15ee7586-4d4b-5c72-b677-047a6c76bb25,Yows Hunting Camps,Fort Rock,OR,startpage,,,0,True,"Startpage returned a CAPTCHA challenge page, no results retrieved"
+org-40f976de-7554-5c0e-99cd-88c43f491ff0,Panther Creek Senior And Community Center Inc,Otis,OR,brave,,,50,True,"No owned site found, only GuideStar/ProPublica/Candid nonprofit directory listings, EIN 91-1830023"
+org-3878095a-2133-506f-9faf-7344d1a63126,Friends Of Lincoln City Parks & Recreation,Lincoln City,OR,mojeek,,,0,True,"Mojeek returned a CAPTCHA challenge page, no results retrieved"
+org-440a9552-9c9e-5ac9-8954-a16bd72db1c2,Lake Of The Woods Recreation Association,Medford,OR,ecosia,,,0,True,"Only a tangential 2017 radio-station article mentioning the association, no owned site surfaced"
+org-1b98be45-be11-5fee-a434-dcca50760003,Boys & Girls Clubs Of Portland Metropolitan Area,Portland,OR,startpage,,,0,True,"Startpage returned a CAPTCHA challenge page, no results retrieved"
+org-2c8b14e7-76f2-50d1-bde3-8cd1b6a88192,Camp Smith Corporation,Mcminnville,OR,brave,,,50,True,"No owned site found, only GreatNonprofits/nonprofitlocator directory listings, Mcminnville OR PO Box 480"
+org-c4ba9c51-8b96-5500-babd-fca88308f09b,Powell Butte Community Center Inc,Powell Butte,OR,mojeek,,,0,True,"Mojeek returned a CAPTCHA challenge page (3rd block this run), no results retrieved"
+org-2bc69de9-1d7c-58a3-8589-feda61952404,Camp Emerald Forest,Saint Helens,OR,ecosia,,,50,True,"Only a tangential blog mention of the retreat, no clear official domain surfaced"
+org-fdb7d269-5db3-5a46-8478-90ee2abebed6,Douglas Recreation Association Inc,Winston,OR,startpage,,,0,True,"Startpage returned a CAPTCHA challenge page, no results retrieved"
+org-0afcd680-2111-550b-84ad-df57b5d2457c,Camp Koinonia Inc,Sweet Home,OR,duckduckgo,,,50,True,"Only charity-directory listings (Simpli, GiveFreely, Holdings, NonProfitFacts), no owned domain surfaced"
+org-0d9e25eb-6fee-5962-9877-bc35f7cf8c0b,Boys And Girls Clubs Of Bend Inc,Bend,OR,bing,https://www.bgcbend.org,https://www.facebook.com/bgcbend,75,True,"Bend OR address confirmed in Bing panel, but org is mid-rebrand to Boys & Girls Clubs of Central Oregon (bgcco.org) so needs verification"
+org-7b1f12dc-24bf-5b15-8fed-aa38c74e581a,Four Seasons Sports & Recreation Club Inc,Dallas,OR,ecosia,,,0,True,"Ecosia page returned only a consent/feedback banner, no search results retrieved"
+org-c3a29454-0575-5fd4-a6b2-1566231e1ad1,Knappa Summer Recreation,Astoria,OR,startpage,,,0,True,"Startpage returned a CAPTCHA challenge page, no results retrieved"
+org-49c5b3f6-b633-5683-ab5f-b4e006c3ac50,Tenmile Community Center,Tenmile,OR,brave,,https://www.facebook.com/TenmileCommunityCenter,50,True,"No owned domain found; tenmilefire.org belongs to the separate Rural Fire District, only Facebook and directory listings for the community center itself"
+org-d3cd7b8e-de33-5d9c-91cd-385d3193532c,Portland Parks Foundation,Portland,OR,ecosia,,,50,True,"Only a portland.gov news article about the foundation surfaced, no owned domain in results"
+org-2fc65bc9-561b-5477-9eb5-9048d5c26741,Recreation Foundation Of Elmore County Inc,Mountain Home,ID,duckduckgo,,https://www.facebook.com/rfecidaho/,50,True,"No clear owned domain, only Facebook and nonprofit-directory bio pages (wecrd.org, getholdings.com)"
+org-846bba57-3943-5e26-ae1b-5ff97b486b48,Streamliner Aquatic Recreation Incorporated,Meridian,ID,brave,,,50,True,"No owned site found, only ProPublica/Charity Navigator/NonProfitFacts nonprofit directory listings"
+org-d4ef1e63-500f-54b4-9b73-d154093246fd,Friends Of Mountain Community Center District Inc,Donnelly,ID,ecosia,,,0,True,"Only an IRS EO BMF data file surfaced, no website found"
+org-6b22d491-ff55-57e8-ab18-a047ac7c4401,Play On Recreation Fund,Boise,ID,duckduckgo,,,50,True,"No owned site found, only Bizapedia and ProPublica listings"
+org-0aff6aa3-d4db-5698-923d-60e773f7ae8e,Marsing Youth Recreation Inc,Marsing,ID,brave,https://leagues.bluesombrero.com/marsing,,70,True,"No owned domain; uses Blue Sombrero registration platform footer confirms Marsing Youth Recreation Inc, Marsing Idaho 83639 - recorded as registration source"
+org-184812ec-fbc4-5087-a975-7a5198e22956,Cascade Lake 4-H Camp,Parma,ID,ecosia,,,0,True,"Ecosia page returned only a consent/feedback banner, no search results retrieved"
+org-dc0f8830-b191-5453-8edc-cfe3687a4d74,Challis Golf & Recreation Assoc,Challis,ID,duckduckgo,,,50,True,"No owned site found, only IRS/nonprofit directory listings (501c3lookup, plaincharity, opengovus)"
+org-2bc8c8a1-2f4d-5bfe-a290-126fb4cd5816,Ironwood Throwers Camp Inc,Rathdrum,ID,bing,,,50,True,"No owned site found, only directory/grant profiles (searchcharities.org, grantbay.org) describing the Rathdrum ID facility"
+org-8d2b4afe-4d89-5029-af52-b7a88ab41417,Central Idaho 4-H Club Camp Inc,Shoshone,ID,ecosia,,,50,True,"Only a philanthropy.org 990 directory profile surfaced, no owned domain"
+org-5d9f70a6-f9e1-5516-b782-4962b67f12ca,Idaho Bluegrass Camp Inc,Boise,ID,brave,https://idahobluegrasscamp.org,https://www.facebook.com/Idaho.Bluegrass.Association,70,True,"Domain matches org name exactly, but camp events are held in Weiser ID via partner Idaho Bluegrass Association (Boise-based); needs verification of which entity is which"
+org-fc22e9fd-4891-5982-af3e-279090d5902a,Camp Wittman Outdoor Center Ltd,Lewiston,ID,ecosia,,,0,True,"Ecosia page returned only a consent/feedback banner, no search results retrieved"
+org-e386f602-d1a1-5362-a1f5-4011ba2cde97,Alaska Solstice Football Camp,Eagle River,AK,ecosia,,,0,True,"Ecosia page returned only a consent/feedback banner, no search results retrieved"
+org-71e4535b-bc34-59dd-ad2a-34dcc4183f75,Juneau Climbing And Recreation,Juneau,AK,duckduckgo,,,50,True,"Runs the Rock Dump climbing gym in Juneau but no owned domain surfaced, only directory/fund listings"
+org-3072cdae-d2c8-5c73-9bf1-26877e4697e6,Delta Recreation Inc,Bethel,AK,brave,,https://www.facebook.com/100082731338429,50,True,"Only a Facebook page (Delta Recreation, Bethel AK) found; other Delta-named results in Bethel are unrelated entities"
+org-1f64b1e1-200b-5821-b5d4-c14732fd2a13,Friends Of Kodiak State Parks,Kodiak,AK,ecosia,,,0,True,"Ecosia page returned only a consent/feedback banner, no search results retrieved"
+org-1cc4a10a-6899-5c5b-bc05-9a613e1d4500,Camp Northwest Inc,Eugene,OR,duckduckgo,,,0,True,"Only nonprofit directory/990 database results (intellispect, 501c3lookup, nonprofitfacts, taxexemptworld); no owned site found"
+org-e1e75739-64fc-5b2c-8f78-54970b4f77ee,Irondyke Camp Inc,Hermiston,OR,brave,https://campirondyke.com,,50,True,"Name matches (Camp Irondyke) but site describes camp near Union/La Grande OR, not Hermiston - city mismatch, unverified"
+org-1ce6ae56-e735-5db0-adee-9cb3d2678a97,North Idaho Catholic Youth Camp,Post Falls,ID,mojeek,,,0,True,"Mojeek returned a CAPTCHA challenge, no results retrieved"
+org-ba8a16ee-261c-5cf3-be3d-d7d148783529,Idaho Speed And Skills Camp,Nampa,ID,ecosia,,,0,True,"Only IRS BMF CSV listing found, no owned site"
+org-a2b1bf2e-6b67-5771-8fcf-d5ff6c592b71,Camp Magical Moments Cancer Camp For Kids Inc,Shelley,ID,startpage,,,0,True,"Startpage returned a CAPTCHA challenge, no results retrieved"
+org-28ad84df-ddbd-5ae3-b752-a1852eba348a,Camp Perkins Lutheran Outdoor Ministries Incorporated,Ketchum,ID,duckduckgo,,,0,True,"Only nonprofit directory/990 database results (intellispect, charitynavigator, taxexemptworld, propublica); no owned site found"
+org-f0d6d041-f47b-51ef-adfd-4725e5a6248a,Kootenai Youth Recreation Organization Inc,Post Falls,ID,brave,,,0,True,Only Charity Navigator and GuideStar results; no owned site found
+org-2cfea1fd-f7dd-5922-a3f1-2b6d553aa4af,Camp Wilson Barbeque Inc,Mountain Home,ID,mojeek,,,0,True,"Mojeek returned a CAPTCHA challenge, no results retrieved"
+org-e27d57b1-405a-528b-b337-004fd83e2f65,Camp Rainbow Gold Inc,Boise,ID,ecosia,,,0,True,"Ecosia returned only a consent/feedback interstitial, no result listing rendered"
+org-62f11e89-7024-5ea6-b7d8-acf49291f175,Prince Of Wales Recreation Associat Ion,Craig,AK,startpage,,,0,True,"Startpage returned a CAPTCHA challenge, no results retrieved"
+org-7fb3b961-bfbe-505b-b7f6-c21e49aaee45,Catholic Camp And Conference Ministries Of Alaska Inc,Wasilla,AK,duckduckgo,,,0,True,Only nonprofit directory/990 database results; no owned site found
+org-6e990a62-2fbd-5d89-86a8-cdbbfc2ee366,Boys & Girls Clubs Of Southcentral Alaska,Anchorage,AK,brave,https://bgcalaska.org,https://www.facebook.com/BGCAK,85,True,"Exact title match, Anchorage AK address confirmed on site; news coverage (Alaska News Source, ADN, Dec 2025) reports org ceased operations - flagging for review on active status"
+org-08715098-e2ce-5763-8b6c-87ec461502c3,Eagle River United Methodist Camp,Juneau,AK,mojeek,,,0,True,Mojeek CAPTCHA-blocked 3rd time in a row this run; engine dropped for remainder of session
+org-b5debc2e-900d-52e5-88f1-ef0976cf9c86,Ketchikan Outdoor Recreation And Trails Coalition Inc,Ketchikan,AK,ecosia,,,0,True,Only a third-party Facebook post mentioning the org; no owned site or page found
+org-fa5cdd7f-ba61-5ca3-87d9-0724302fadad,Friends Of Kachemak Bay State Parks,Homer,AK,startpage,,,0,True,Startpage CAPTCHA-blocked 3rd time in a row this run; engine dropped for remainder of session
+org-90a2e021-235f-51e0-bdac-83d0abaf4b33,Indian Youth Camp Inc,Bigfork,MT,brave,,,0,True,Only nonprofit directory/990 database results found; no owned site
+org-f6c25c4e-fb55-51a4-894d-2890459a4375,Gardiner Recreation Club,Gardiner,MT,ecosia,,,0,True,"Only IRS BMF CSV listing found, no owned site"
+org-4e961252-c055-523f-a9af-85890cbc5a8a,Hi-line Pool & Recreation Foundation Inc,Chester,MT,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-5586bdcb-b298-5574-86bf-4b09d6bda8ed,Friends Of Park County Mt Fairgrounds & Parks,Clyde Park,MT,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-44d72f79-6540-5482-924e-b1098f5222e9,Memorial Park Rink & Recreation Assn,Helena,MT,duckduckgo,,,0,True,"Only nonprofit directory/990 database results found, org tax-exempt since Nov 2025 and likely too new to have a site indexed"
+org-3a6da4b4-9ce3-5b1c-a5b9-e6f455673b91,Bozeman Parks And Recreation Foundation Inc,Bozeman,MT,bing,,,0,True,"Only nonprofit directory results (propublica, bizapedia, guidestar); no owned site found"
+org-ad42fe12-8df0-5637-bbc6-25a145d7077a,Madison Valley Community Center,Ennis,MT,brave,https://www.ennismontana.org/madison-valley-community-center,,60,True,"Only a project page on the Town of Ennis site; local news (Madisonian, Feb 2026) indicates the center is still in planning, not yet an independently-sited org"
+org-509f4d56-f3c2-568b-bd04-725c019e4e59,Montana State Parks Foundation Inc,Missoula,MT,ecosia,,,0,True,Only a state DMV specialty-plate PDF result; no owned site found
+org-a7c809d9-c653-569f-aaea-69ecab61839d,Bozeman Sports Parks Foundation Inc,Bozeman,MT,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-1a760024-7c28-5b21-8d59-78fe78f21d09,Laurel Aquatic Recreation Complex,Laurel,MT,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-12b40ac4-4e65-5f14-913b-0b49521a2b33,Potomac-greenough Community Center Corp,Potomac,MT,brave,,,0,True,"Only nonprofit directory results (candid, charitynavigator, guidestar); no owned site found"
+org-2e82ae48-f22f-536a-be81-bf57bc2a118b,Lions Bitterroot Youth Camp,Kalispell,MT,ecosia,,,0,True,"Ecosia returned only a feedback interstitial, no result listing rendered"
+org-cd7b7d24-4e9a-5d17-b9b1-de4fe1693990,Partners For Parks Foundation,Billings,MT,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-e7cdb13b-a90e-5ce9-b39b-d8ff4fb1ab0b,Childrens Oncology Camp Foundation,Missoula,MT,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-f19d1dcc-a782-551f-aed7-032861a62a60,Boys & Girls Clubs Of Cascade County,Great Falls,MT,duckduckgo,,https://www.facebook.com/BGCCascadeCounty/,0,True,"Only Facebook and directory results found; bgca.org is the national parent, not the local site"
+org-cf9159bf-4fa8-5019-a9db-7c32fdc7e4de,Hyalite Youth Camp,Bozeman,MT,bing,https://gallatinempirelions.org/our-work/hyalite-youth-camp,,80,True,"Dedicated page confirms Hyalite Youth Camp Inc is a project of Gallatin Empire Lions Club, Bozeman MT; a separate hyalitekids.com domain also appeared but unconfirmed as primary"
+org-1d914be3-97f4-5741-9b4a-5e1dc0596517,Helena Area Sport And Recreation Foundation Inc,Helena,MT,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-7e822dfc-7e6c-59a7-827b-b06b11bcfac5,Ravalli County Park District 2,Hamilton,MT,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-c0dd01eb-f638-50a7-9511-5f102cb2cb5b,Boys & Girls Club Of Missoula County,Missoula,MT,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-a7262e0f-ce4a-586c-8d9b-8c983ca7963e,Camp Awesomesauce,Bozeman,MT,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-c128c62e-7d78-53a5-b5dc-82a143523b9d,Boys & Girls Club Of Glacier Country,Columbia Fls,MT,ecosia,,,0,True,"Ecosia returned only a feedback interstitial, no result listing rendered"
+org-781b7eeb-4e6d-5024-a6f3-fad9db884c0d,Colt Anderson Skills Camp,Butte,MT,duckduckgo,,,0,True,Only nonprofit directory results and a news article about a related Dream Big Foundation event; no owned site found
+org-4edac22a-2083-5ea6-ab2d-54fb4df5d831,Camp Marty Inc,Missoula,MT,bing,,,0,True,Only nonprofit directory/grant-database results; no owned site found
+org-dd8a9fb9-0e73-5011-bf6a-cdf92c5cc3bc,Amp Camp,Billings,MT,ecosia,,,0,True,Ecosia CAPTCHA/interstitial-blocked 3rd time in a row this run; engine dropped for remainder of session
+org-7ffcb85f-e4dc-52d5-a4d3-805ab09e3a73,Florence Community Center,Florence,MT,duckduckgo,,,0,True,Only nonprofit directory/grant-database results found; no owned site found
+org-670229dd-181c-5a74-88dd-d062bd637669,Granite Recreation Project,Philipsburg,MT,brave,,https://www.facebook.com/people/Granite-Recreation-Project/100095060899444,0,True,"Only a Facebook page found, no owned site"
+org-636147b2-4004-5abb-a9e1-f55c08b36f5f,Camp Brotherhood,North Las Vegas,NV,duckduckgo,,,0,True,Only nonprofit directory/Yelp results found; no owned site
+org-ce134540-9119-518a-a0b6-1cf48d04804d,Northern Nevada Recreation Coalition,Winnemucca,NV,bing,,https://www.facebook.com/YurtNNRC,0,True,"Only Facebook and directory results; nnsr.org is a different, unrelated organization name"
+org-bb011320-227e-5ab2-b553-0e8ebf2e4b37,Camp Rendezvous Inc,Minden,NV,brave,,,0,True,Only Charity Navigator and Candid results; no owned site found
+org-5cbc6885-ece4-5abf-a9c0-178f35ab36b4,Ancient Traditions Summer Camp,Whitefish,MT,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-8b8a804f-f2c0-5765-9901-6e4adcf28539,Missoula Adaptive Recreation And Sports,Missoula,MT,ecosia,,,0,True,Ecosia dropped this run (3 consecutive interstitial blocks); not queried
+org-8a4797c4-c8aa-5254-a1fa-ae012d2c7888,Ggmc Camp 3 Mt,Roundup,MT,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-71827f99-266e-5e16-ac45-2f11e19a20fd,Tcg Football Camp,Las Vegas,NV,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-7434e403-cec7-5bc7-97a9-0eacadf592f5,District 46 Lions Camp Lotza Fun,Las Vegas,NV,ecosia,,,0,True,Ecosia dropped this run (3 consecutive interstitial blocks); not queried
+org-5426b849-d1d7-5875-bf1b-ad3c368e50ef,Foundation For The Carson City Parks And Recreation,Carson City,NV,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-56232872-ec22-5e70-ad52-8c2798f9a719,Donna Street Community Center Inc Robert Strawder Jr,Henderson,NV,duckduckgo,,,0,True,No search results found for org name + city + state on DuckDuckGo
+org-2ad44f75-7d8a-59a2-8732-f8ae932491ea,Boys And Girls Club Of Truckee Meadows,Reno,NV,brave,,,0,True,"Only directory/nonprofit-database results (Idealist, GuideStar, ProPublica, Cause IQ, MapQuest, Benevity); no owned site in top results"
+org-0b4e0017-5ead-5b1b-a93e-b32320ef9ae1,Galilee Episcopal Camp & Conference Center Inc,Glenbrook,NV,mojeek,,,0,True,"Mojeek CAPTCHA block (ALTCHA challenge), query not executed"
+org-fc9b2cb1-5047-5ae1-b0af-05cbe556e5e0,Cowboys Rest Christian Camp & Retreat Center,Spring Creek,NV,ecosia,,,0,True,"Ecosia returned interstitial feedback prompt only, no result content rendered"
+org-bc6dfc3d-e6f8-5b73-b8f6-3123bbe89abb,Boys & Girls Club Of Mason Valley Inc,Yerington,NV,startpage,,,0,True,"Startpage CAPTCHA block, query not executed"
+org-10707ffa-e5fb-5923-8ae3-01bf1e2b42b2,Camp Riva-lake Inc,San Diego,CA,mojeek,,,0,True,"Mojeek CAPTCHA block (ALTCHA challenge), query not executed"
+org-0f2e50b4-fc75-5f85-9d75-b19857aabc23,Reedley Parks Recreation Foundation,Reedley,CA,ecosia,,,0,True,"Ecosia returned interstitial feedback prompt only, no result content rendered"
+org-ae97555f-b96a-5d0e-9b6b-8a16b549f600,Nipomo Parks Conservancy,Nipomo,CA,startpage,,,0,True,"Startpage CAPTCHA block, query not executed"
+org-3ef70c0a-0649-53d2-88a1-9e1409867312,Stockton Parks And Recreation Foundation,Stockton,CA,duckduckgo,,,0,True,"Only filing/directory results (bizprofile, bizapedia, nonprofitfacts, ProPublica, orgcouncil, instrumentl); no owned site found"
+org-c03bd0b2-7377-57cc-8950-d366b953ac6d,Riverside Community Parks Association Inc,Riverside,CA,bing,,,0,True,"Only filing/directory results (Bizapedia, bizprofile, cacompanyregistry, nonprofitfacts, orgcouncil); no owned site found"
+org-d0d8a469-78a1-5cc3-afd5-9715e484431a,Camp San Joaquin,Visalia,CA,brave,http://www.campsanjoaquin.com,https://www.facebook.com/events/camp-san-joaquin/camp-san-joaquin/1708977646023038,60,True,"Domain mentioned as org's site inside an ACA camp forum post body, not itself a ranked search result; unverified"
+org-f938cfff-bef2-544c-8910-f607226458e3,Sierra Mountain Music Camp,Carmichael,CA,mojeek,,,0,True,Mojeek dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-54bbcec1-ad1f-5818-b737-ed1e01289881,Friends Of Camp El-o-win,Fresno,CA,ecosia,,,0,True,Ecosia dropped this run (3 consecutive interstitial blocks); not queried
+org-e5030084-a125-51bc-b953-b527a8f24169,Siskiyou Outdoor Recreation Alliance,Mount Shasta,CA,startpage,,,0,True,Startpage dropped this run (3 consecutive CAPTCHA blocks); not queried
+org-c7a036e5-6b32-5ea7-9bb8-6518fbd36e53,Soledad Recreation Foundation Inc,Soledad,CA,duckduckgo,,,0,True,"Only charity-directory results (Simpli, 501c3lookup, nonprofitfacts, orgcouncil, eintaxid, ProPublica, charityscoop); no owned site found"
+org-78d22761-7f06-560a-a478-40129f569db5,United Boys And Girls Clubs Of Greater Santa Barbara County,Santa Barbara,CA,brave,,,0,True,"Only directory/charity-rating results (GuideStar, Charity Navigator, ProPublica, Daffy, philanthropy.org); no owned site in top results"
+org-0a2fa822-eae8-591d-b5e0-549633a51a07,Lompoc Valley Parks Recreation & Pool Foundation Inc,Lompoc,CA,brave,,,0,True,"Only directory/charity-rating results (Charity Navigator, Holdings, GuideStar, ProPublica, Candid, Idealist); no owned site found"
+org-33b636e0-d4f2-56de-9839-ec6863daf87f,Camp Wastahi Incorporated,San Jose,CA,duckduckgo,,,0,True,"Only nonprofit-database results (Cause IQ, orgcouncil, taxexemptworld, GuideStar, eintaxid, ProPublica, Holdings, plaincharity); no owned site found"
+org-5ae1fc41-e234-57d0-b3e7-238d201cdc14,Outside Recreation Advocacy Inc,Chico,CA,bing,https://www.chico-outsiders.org,,65,True,"chico-outsiders.org about/contact pages appear in results for this org; plausible DBA ""Chico Outsiders"" for legal name, but not a direct title match, unverified"
+org-24c69169-3a94-5de0-b8d2-f2effc2190fd,Potrero Community Center Foundation,Potrero,CA,duckduckgo,https://potrerocommunitycenter.weebly.com,,65,True,"Weebly contact page explicitly describes Potrero Community Center Foundation; a separate ZoomInfo listing also names potrerocenter.org for the same org, so two candidate domains exist, unverified"
+org-713917ec-c8a5-56d6-af3a-0833a59d06a3,San Mateo City Parks And Recreation Foundation,San Mateo,CA,bing,,,0,True,"Only directory results plus the City of San Mateo's own government site (parks dept page, not the private foundation's own domain); no owned foundation site found"
+org-2ecc2b38-7f16-5e3b-b762-f8c6655ea357,Pacific Coast Apostolic Youth And Family Camp Inc,Atwater,CA,brave,,,0,True,"Only nonprofit-directory and donation-platform pages (Gudsy, Zeffy); no owned site found"
+org-0d779444-bf98-56e2-84a7-b61b8f9d2414,Donner Mine Music Camp Inc,Woodland,CA,duckduckgo,,,0,True,"Only nonprofit-database results (intellispect, givalgo, nonprofitfacts); no owned site found"
+org-efd110ff-3435-5ea8-b220-7dd140bf6352,Hesperia Area Recreation District Foundation,Hesperia,CA,bing,,https://www.hesperiaparks.gov,50,True,"Foundation meetings are listed on hesperiaparks.gov (Hesperia Recreation and Park District's own site); no dedicated foundation domain found, district site used instead"
+org-bb25a9b7-445c-5657-b70e-fc8dd47c569a,Greater San Diego Boys & Girls Clubs Foundation,San Diego,CA,brave,,,0,True,Brave results page returned no extractable text content on this pass; not resolved
+org-937fd118-bc87-541d-a37b-322ab2aae1fd,Friends Of Del Mar Parks,Del Mar,CA,mojeek,,,0,True,"Mojeek returned CAPTCHA, not searched"
+org-dafc49f7-7d01-5c5d-a546-b903b2f38422,Camp Yeshurun Incorporated,North Hollywood,CA,ecosia,,,0,True,"No website found; only hit is CA FTB revoked-charities list (revoked 2014), org likely defunct"
+org-a7ce4669-fbd6-5016-80d3-bdf5c9181860,Carmichael Recreation And Park District Foundation,Carmichael,CA,duckduckgo,,,0,True,"Only nonprofit directory/filing listings (bizprofile, bizapedia, causeiq, propublica, nonprofitfacts); no owned site surfaced"
+org-66573654-3fce-55c4-abf9-b57fef205867,YWCA Gla Urban Campus Development Corporation,Los Angeles,CA,bing,,,0,True,"Only nonprofit directory/filing listings (bizprofile, causeiq, opengovus); this is a YWCA real-estate subsidiary, no consumer site"
+org-7596880d-0577-5b8a-aa8a-8d67c5e7fadc,Martin-fontana Parks Association,San Jose,CA,mojeek,,,0,True,"Mojeek returned CAPTCHA, not searched"
+org-09d39d89-300a-505d-bcef-043e0854ecd5,Citizens For Green Recreation And Transportation In West Sacramento,W Sacramento,CA,ecosia,,,0,True,"Only hit is CA FTB revoked-charities CSV list; org appears defunct/revoked, no website"
+org-522b9bd6-b354-5c83-ae02-4320865da323,Connected Camps,Capo Beach,CA,startpage,,,0,True,"Startpage returned CAPTCHA, not searched"
+org-4c914ba3-0c4e-5cc2-b8b6-04c0f28f2918,Hayfork Community Center Inc,Hayfork,CA,duckduckgo,,,0,True,"Only nonprofit directory listings (nonprofitscan, guidestar, 501c3lookup); no owned site surfaced"
+org-cc345eb0-1e37-5c94-8589-2230c7d818ee,Boys & Girls Club Of Carlsbad Foundation,Carlsbad,CA,brave,,,0,True,"Only charity-rating/directory listings (charitynavigator, propublica, guidestar); no owned site surfaced"
+org-4307f0ce-502c-5e42-9040-b24e641918ab,Carmel Valley Recreation Council,San Diego,CA,mojeek,,,0,True,"Mojeek returned CAPTCHA, not searched"
+org-73d534ed-bb9e-5e3c-9e1b-60c8ac196f22,Rancho Bernardo Recreation Council,San Diego,CA,ecosia,,,0,True,Only hit is a San Diego city council resolution PDF reference; no owned site surfaced
+org-e47e9f8a-552e-5630-ac1e-1e31ac9c9a18,Boys & Girls Club Of Capistrano Valley,San Juan Capo,CA,startpage,,,0,True,"Startpage returned an error page, not searched"
+org-4caab051-6e57-5d44-9556-d027a8fff586,Corona Partners For Parks And Recreation,Corona,CA,duckduckgo,,,0,True,"Only nonprofit directory listings (bizprofile, searchcharities, candid); no owned site surfaced"
+org-dfeccce0-b336-5bd6-adcd-de28d282d617,Ramona Parks And Recreation Association Inc,Ramona,CA,bing,,,0,True,"Bing local card and directory hits only, no owned website link surfaced"
+org-649f90e4-7f30-5f21-bb17-b9f53027b111,Southern Sudanese Community Center Of San Diego,San Diego,CA,mojeek,,,0,True,"Mojeek returned CAPTCHA 3rd time running, not searched; engine paused for rest of run"
+org-c2a77133-488d-5756-9da2-82b8de90675d,Friends Of La Jolla Recreation Center,La Jolla,CA,ecosia,,,0,True,Only hit is a San Diego Union-Tribune news article confirming org exists; no owned site surfaced
+org-24044fba-92c9-55b7-bdb4-26b65860e046,Rositas Ranch Recreation Club,El Centro,CA,startpage,,,0,True,"Startpage returned CAPTCHA 3rd time running, not searched; engine paused for rest of run"
+org-f032fe35-61a9-5e3d-aa62-bf695d000f02,Cycling Club At University Of Santa Barbara Recreation Center,Goleta,CA,brave,,,0,True,Only Charity Navigator listing surfaced; likely a campus club with no standalone site
+org-042432c2-0929-5f58-9d64-1e79aa8dc445,Mattole River Camp And Retreat,Petrolia,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-b94392a8-5c49-51d1-ab23-17d910b6ba3b,Kern River Valley Health & Recreation Foundation Inc,Lake Isabella,CA,ecosia,,,0,True,Ecosia returned no organic results on primary query or camp-registration fallback
+org-12576b84-eb13-5ec6-abd7-c13a9bb83258,Silicon Valley Dance Community Center Inc,Los Altos Hls,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-05c30547-afb8-5fce-ac2c-3f842a8a697c,Camp Pico Blanco Inc,Boulder Creek,CA,duckduckgo,,,0,True,"Only nonprofit directory listings (propublica, eintaxid, guidestar); no owned site surfaced"
+org-99dc4f41-8e10-54e7-80c3-c0e8f7932cb1,Camp Lee Poof,Hawthorne,CA,ecosia,,,0,True,Ecosia returned no organic results on primary query or camp-registration fallback
+org-c87f8255-2703-5c3a-a2e5-e1f423265fb8,Foothill Horizons Summer Camp Alumni Association,Grass Valley,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-fb52fc78-a911-5bcc-94ad-92611ac6f163,Boys & Girls Clubs In California,Long Beach,CA,duckduckgo,,,0,True,"Only directory listings; nearby BGCLA Harbor result is a differently named separate org, rejected as not a match"
+org-29f1ac23-c59e-5797-978e-bfcc6525753b,Bass Camp,Redlands,CA,bing,,,0,True,Only directory listings; no domain clearly matching org name surfaced
+org-cd33f29f-ba3e-56b5-8aae-a7017e240f8c,Boys & Girls Club Of Windsor Foundation,Santa Rosa,CA,brave,,,0,True,Only nonprofit directory listings; foundation supports Boys & Girls Clubs of Sonoma-Marin but has no standalone site surfaced
+org-92f50312-5ce7-5c0c-bc6e-56beda30e8e5,North County Adaptive Sports And Recreation Program,Atascadero,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-ccb4b444-6ec1-5f23-a629-feeabeb7ed3f,Boulder Creek Recreation & Park Foundation,Boulder Creek,CA,ecosia,,,0,True,Ecosia returned no organic results on primary query or fallback
+org-783cf1a7-0385-5755-b5c4-c5be184d61e3,Junior Guides Raft Camp,Coloma,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-b0d86e3d-2da3-52d2-8f40-5be2e2de9d4b,Camp New Journey,Hawthorne,CA,duckduckgo,,https://www.facebook.com/campnewjourney/,0,True,No owned domain surfaced (idealist/bizapedia/bizprofile only); Facebook page appears to be primary online presence
+org-194a283c-e26c-5687-b31e-8b7922563f7b,Endeavors Youth And Community Center,Long Beach,CA,bing,,,0,True,"Only nonprofit directory listings (charityscoop, nonprofitfacts, bizapedia); no owned site surfaced"
+org-4878d3c1-d896-590f-bc59-39950c0e32bd,Jurupa Area Parks Foundation,Jurupa Valley,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-d29369db-0d81-5a32-9012-26dda3e1ced9,Camp Pnw Corporation,Foster City,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-feff14ae-675e-5ef9-9cbe-40ce74186a00,Camp Celiac Of Northern California,Orinda,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-68c1dd29-8c88-5075-8f94-75ba802e4672,Benefit Everyone Assist Recreation & Sports,Victorville,CA,duckduckgo,,,0,True,Only nonprofit directory listings surfaced; no owned site
+org-ebeb8877-1738-58d8-b5de-165333f2126e,Stockton Silver Lake Family Camp Foundation,Stockton,CA,brave,,,0,True,"Brave bot-check triggered, not searched"
+org-bb2ed5f2-5703-5cf7-b2bf-63e968cad3e2,Baller To Builder Camp,Los Angeles,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-c84a6f82-40fc-52d3-a8c8-6f88d33ac2d2,St Francis Hopland Community Center,Hopland,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-781e9222-f423-5f2e-89d2-a3a56d5a9de8,Escalon Parks Foundation,Escalon,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-d2e4a6d1-f674-5ad5-9cea-c91444951153,La Jolla Parks And Beaches Incorporated,La Jolla,CA,bing,,,0,True,Only directory listings and unrelated La Jolla tourism content; no owned site surfaced
+org-a1fb32f8-df8c-52b0-bac8-001c173d3d12,Friends Of Camp Silverado,Sacramento,CA,brave,,,0,True,"Brave returned no text/likely bot-check, not searched"
+org-c12b3115-b8a4-5a35-b1b0-d53e92165354,Community Center Of Mendocino,Mendocino,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-f855b66c-8e7c-557a-b112-8bba7a60de5d,Redwood Adventure Camp Inc,Sonoma,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-f547c977-6a68-5ca9-895a-f49838ff1ff0,Redwood City Parks And Arts Foundation,Redwood City,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-a7423a3b-2d08-5d13-89bf-414acc7fde93,We Play Hard Basketball Camps,Ventura,CA,duckduckgo,,,0,True,Only directory listings and a Facebook event page; no owned site surfaced
+org-55fd730b-0478-5c08-be62-e770aff32e3f,Camp Phoenix,Oakland,CA,brave,,,0,True,"Brave returned no text/likely bot-check 3rd time running, not searched; engine paused for rest of run"
+org-07a86b78-d0ba-5e23-a362-de663cc34288,World Parks Inc,Richmond,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-cdde271e-98b9-5cf0-a236-8ff2b579ea24,Menifee Valley Boys & Girls Club,Menifee,CA,ecosia,,,0,True,Only an unrelated personal Facebook post surfaced; no owned site
+org-f10a1b2f-dc21-5d4e-aa64-009a5bacc2c8,Camp Hope California Bethel Ranch Inc,San Diego,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-2ef2bec3-1868-5c49-aa72-3dd2c0cfabf0,Tehachapi Parks Foundation,Bakersfield,CA,duckduckgo,https://www.tvrpd.org/donate,,65,True,"No standalone Foundation site; donate page on tvrpd.org (Tehachapi Valley Recreation & Park District, its supported agency) describes the Foundation directly"
+org-454b58b2-dd41-5c08-8b6b-4497b99d8448,Alpine Outdoor Recreation Association,Markleeville,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-a6c82654-a756-52ba-9183-353b6c37493d,Rad Camp Inc,Irvine,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-e3e8b5a2-4124-5e24-ba86-4fcc277cdb45,Sae Jong Camp,Burlingame,CA,ecosia,,,0,True,Only an unrelated LinkedIn profile mention surfaced; no owned site
+org-60376ff1-7911-507a-a74d-353c62745576,Ayala Summer Camp Booster Club,Chino Hills,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-ed31ef2a-2aab-5dfa-88f6-f342c4e0dc72,US Naval Sea Cadets Corps Radm Charles W Parks Battalion,Dublin,CA,duckduckgo,,,0,True,Only directory listings and GoFundMe fundraisers; no owned site surfaced
+org-ba86675b-acab-57c6-ab2d-5a9dc7101b54,Chowchilla Adult Recreation,Chowchilla,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-ba95032d-b9b2-57cd-9e13-3a43a4743089,Muslim Educational Community Center Association,Stockton,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-1a3b6891-8103-5f37-86d0-9f0f62a01871,Pacific Deaf-blind Camp,Roseville,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-7321e755-6772-5f48-b088-a7ca12352951,American Canyon Community & Parks Foundation,American Canyon,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-d1c6f5a5-d7c7-5efa-8f63-bf3efc3ccc2d,Otay Mesa Cargo Morale Welfare & Recreation Association,San Diego,CA,duckduckgo,,,0,True,Only nonprofit directory listings and a GoFundMe charity page; no owned site surfaced
+org-54291fe9-6eac-5b5f-94a9-4ec4282224c1,Dusty Rhodes Park And Recreation Council,San Diego,CA,bing,,,0,True,Only nonprofit directory listings; no owned site surfaced
+org-bfd48891-4d28-5fe5-b729-111c998eda37,Ocean Beach Park And Recreation Council,San Diego,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-a9438754-4ff2-56e3-87b4-9c2b4d3e6d3a,Pink Onion Camp,Redwood City,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-44a32d31-c4a2-5b47-a82d-d3f252af6c6d,Janesville Bible Camp Inc,Janesville,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-b0e54662-1d65-5d7c-9b84-1aa8b972164b,Bbmj Youth Health Sports Camp,Sacramento,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-7bedbcbc-4f7c-506e-b476-0bd50900008a,Rock N Roll Camp For Girls San Diego,Encinitas,CA,duckduckgo,,,0,True,Only an arts.ca.gov grantee profile confirms the org; no owned site domain surfaced
+org-a84b84a0-86ba-552c-8a75-c8a15e07180b,Community Center Advisory Council,Forbestown,CA,bing,,,0,True,Only nonprofit directory listings; no owned site surfaced
+org-5bc1ee3a-54b3-53ac-a2bb-b31eb7045961,Triumphant Life Camp,Eureka,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-8f0ea372-99e5-55fe-9999-3925e4646621,Friends Of The Palo Alto Parks,Palo Alto,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-1566c6ab-4322-545f-ae10-2d169daa48a0,Life Camp Ministries Inc,Atascadero,CA,ecosia,,,0,True,Ecosia returned an unrelated org (Child Evangelism Fellowship); no match
+org-e7563f09-0681-513f-a4fd-b6f22d366483,Hayward La Honda Music Camp,Union City,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-871ce6b9-241b-54ee-a984-bee2131ce016,Boys & Girls Club Of Tracy Inc,Tracy,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-9ec6715d-4d94-507d-893c-723ef4bc3ae9,Foothills Recreation Club,Auburn,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-45fa5f3e-4947-55d0-bdd3-b132cb337833,Mendocino Area Parks Association,Mendocino,CA,ecosia,,,0,True,Ecosia returned an unrelated Tripadvisor listing for Mendocino Headlands State Park; no match
+org-01771aa2-a5b4-5f4a-bff0-b87e165269d1,Boys & Girls Clubs Of St Helena & Calistoga Inc,Saint Helena,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-28426c17-8470-5376-934f-3476ca8324b1,Williams Community Center Association,Williams,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-d94ed953-9363-521c-a5b0-e61e9ba50fe5,Boys And Girls Clubs Of Greater Sacramento,Sacramento,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-2f0a21fb-3067-5045-a904-0fd65de366b9,Greater Vallejo Park Recreation And Open Space Foundation,Vallejo,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-f729286c-7c3f-5a67-9954-e90ad682883b,Boys & Girls Club Of Ukiah,Ukiah,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-74af31d4-dea0-5f89-b52a-e3d9ef9283d8,Tracy Friends For Parks Recreation And Community Services,Tracy,CA,bing,,https://www.facebook.com/tracyfriendsfoundation,0,True,No owned site; Facebook page is primary online presence
+org-ad959038-bb78-533a-a753-df1e9d83467e,Rainbow Community Center Of Contra Costa County,Concord,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-2210477a-9c6a-52b2-8776-0ae429ae48b2,Humboldt Trinity Recreation Alliance,Mad River,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-9f6aa22a-6385-5b61-a314-59bb70c2b5f5,Sonoma County Regional Parks Foundation,Santa Rosa,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-89885bad-a86e-5e0a-a9f1-6d82b39b6810,Sonoma Valley Health & Recreation Association,Sonoma,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-b9dda38c-86ce-597f-a15f-da8aca4bedb1,Western Yolo Recreation Association,Esparto,CA,bing,,,0,True,Only directory listings; no owned site surfaced
+org-7d46b641-e9e1-5702-962a-91c461936712,Potter Valley Community Parks And Recreation,Potter Valley,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-15a1d27a-e73c-5324-815e-3335da1a0c70,Valley Jewish Community Center,Granada Hills,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-bd9ab3e3-7cf4-5c68-932f-db16b8827a79,Golden Valley Camp Inc,Volcano,CA,ecosia,,,0,True,Only a Form 990 financials listing (philanthropy.org) surfaced; no owned site
+org-a2f200c5-5587-5c79-b197-5921a2cd5e81,Positive Alternative Recreation Teambuilding Impacting Program,San Jose,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-e195771d-768f-5444-a61e-c9809c237884,Morro Shores Recreation Fund,Los Osos,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-99025dff-71e8-588b-8423-8da22113b56c,Boys & Girls Club Of Moorpark & Simi Valley Inc,Simi Valley,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-6c2823d7-82e7-56fc-b3f2-3434118daa55,Friends Of San Jose Family Camp,San Jose,CA,ecosia,,,0,True,Only a Tripadvisor aggregator listing for the camp (Groveland CA location) surfaced; no owned site
+org-64b6ead7-a076-5370-b1c0-1d7f4b5fb06b,Palo Alto Recreation Foundation,Palo Alto,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"
+org-3c971ad2-e983-5915-8b3e-eb89250c6685,California Lions Camp,Ceres,CA,duckduckgo,,,0,True,Only nonprofit directory listings; no owned site surfaced
+org-4fe29057-aa22-5d94-bdab-f027d5812c92,Boys & Girls Clubs Of The Central Coast Foundation,Santa Maria,CA,bing,https://centralcoastkids.org,https://www.facebook.com/bgccentralcoast,60,True,"Bing local card for Boys & Girls Clubs of Mid Central Coast at Santa Maria address; likely same operating org under a different public-facing name, needs confirmation"
+org-072b3893-26ba-5ac2-b1c2-0f3cf2ee00b2,Boys & Girls Club Foundation Of Bakersfield,Bakersfield,CA,brave,,,0,True,"Brave paused this run (3 consecutive blocks), not searched"
+org-d81f8f15-673c-558e-a6d3-9edd55916cdc,North Of The River Recreation Foundation,Bakersfield,CA,mojeek,,,0,True,"Mojeek paused this run (3 consecutive blocks), not searched"
+org-1f2f484c-7ee7-5832-87bc-5a295f4419b2,Boys & Girls Club Of Merced County,Merced,CA,ecosia,,,0,True,Ecosia returned no organic results
+org-faafe26e-fd6a-5b89-8832-2a752ce6caf2,Boys & Girls Club Of South San Luis Obispo County,Oceano,CA,startpage,,,0,True,"Startpage paused this run (3 consecutive blocks), not searched"

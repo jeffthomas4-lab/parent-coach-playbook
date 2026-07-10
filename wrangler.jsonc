@@ -14,11 +14,12 @@
   // Tells wrangler this is a Pages project and where the build output lives.
   "pages_build_output_dir": "./dist",
 
-  // Shared activity database. parentcoachdesk.com and activityradar.com both bind
-  // the same D1 by database_id. A record change on one front door is immediately
-  // visible on the other. Migrations live in ActivityRadar/migrations/ — apply
-  // new ones with: npx wrangler d1 execute activity-radar --file=... --remote
-  // (from the ActivityRadar repo root, not from here).
+  // Shared activity database. ActivityRadar was retired as a separate product on
+  // 2026-07-10; this is now the only front door. Org/program schema history lives
+  // in migrations-activity-radar/ (this repo) — apply new ones with:
+  // npx wrangler d1 execute activity-radar --file=... --remote
+  // The daily org-discovery pipeline lives in buildout/hit-rate-test/, also this
+  // repo. See activityradar-archive/README.md for the full migration record.
   "d1_databases": [
     {
       "binding": "DB",

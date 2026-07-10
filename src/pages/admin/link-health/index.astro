@@ -59,7 +59,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
         </div>
         <div class="bg-paper p-4">
           <p class="font-display italic text-ink-soft text-xs font-medium">Broken</p>
-          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? '#C5713D' : '#5C7459'};`}>{totals.broken ?? 0}</p>
+          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? 'var(--rust)' : '#5C7459'};`}>{totals.broken ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
           <p class="font-display italic text-ink-soft text-xs font-medium">Redirected</p>
@@ -89,11 +89,11 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
       <table class="w-full text-sm" data-link-table>
         <thead>
           <tr class="border-b border-bone">
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">URL</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Last checked</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Used in</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Replacement help</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">URL</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Last checked</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Used in</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Replacement help</th>
           </tr>
         </thead>
         <tbody>
@@ -105,7 +105,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
           {rows.map((r) => {
             const status = r.is_broken === 1 ? 'broken' : (r.is_redirect === 1 ? 'redirected' : (r.last_checked ? 'ok' : 'never'));
             const statusLabel = status === 'broken' ? `BROKEN ${r.last_status_code ?? ''}` : (status === 'redirected' ? `${r.last_status_code} (redirect)` : (status === 'ok' ? `${r.last_status_code}` : '—'));
-            const statusColor = status === 'broken' ? '#C5713D' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
+            const statusColor = status === 'broken' ? '#9E5228' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
             let sourceFiles: string[] = [];
             try { sourceFiles = JSON.parse(r.source_files || '[]'); } catch {}
             return (

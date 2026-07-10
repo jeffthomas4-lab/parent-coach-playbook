@@ -1,0 +1,23 @@
+# Cloudflare Pages reads this file at deploy time and applies the listed
+# headers to every matching response. Added 2026-06-25 in the pre-launch
+# security audit (item 4: security headers).
+#
+# CSP note: script-src uses 'unsafe-inline' because several pages ship inline
+# scripts (define:vars on org/[slug].astro, JSON-LD set:html blocks, and the
+# search/suggest/claim page scripts). Tightening to hashed CSP is a future
+# hardening step — run a hash-csp pass and swap 'unsafe-inline' for the hashes.
+
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'
+
+# Admin paths: never index, never cache. Belt-and-suspenders on top of the
+# ADMIN_TOKEN gate in admin/gaps.astro.
+/admin/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store

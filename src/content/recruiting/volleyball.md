@@ -37,9 +37,9 @@ About 460,000 girls and 65,000 boys play high-school volleyball. Roughly 20,000 
 
 ## What each level actually looks like
 
-**D1 (women).** About 340 programs. 12 scholarships per team, headcount. Headcount means full scholarships only, no partials. Top programs offer 4 to 6 scholarships per recruiting class.
+**D1 (women).** About 340 programs. The 12-scholarship headcount cap was the rule through 2024-25 (headcount meant full scholarships only, no partials). As of July 2025, the House settlement replaced it for opted-in schools with an 18-player roster limit, scholarships fundable up to that full roster — a meaningful increase from 12. Top programs still concentrate scholarships on 4 to 6 signees per recruiting class rather than spreading them thin.
 
-**D1 (men).** About 25 programs. 4.5 scholarships per team, equivalency. Tiny footprint, mostly West Coast, Big Ten, and a few Eastern programs.
+**D1 (men).** About 25 programs. The old 4.5-scholarship equivalency cap is being replaced for opted-in schools by a roster-limit model as well; men's volleyball's exact new roster number wasn't independently confirmed this cycle, so check current figures with a target program. Tiny footprint regardless, mostly West Coast, Big Ten, and a few Eastern programs.
 
 **D2.** About 280 programs (women), 20 (men). 8 scholarships, equivalency.
 

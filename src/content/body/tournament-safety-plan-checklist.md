@@ -28,7 +28,7 @@ checklistItems:
   - "AQI plan for outdoor venues with smoke risk"
   - "Photo and video policy distributed to parents (no images of minors without consent)"
   - "Communication channel set with parents back home (group thread, daily update)"
-  - "SafeSport reporting line saved in chaperones' phones (720-531-0340)"
+  - "SafeSport reporting line saved in chaperones' phones (833-587-7233)"
 checklistPdf: "/printables/tournament-safety-plan.pdf"
 editorial:
   qualityGrade: 8
@@ -72,7 +72,7 @@ The trip is supposed to be fun. The checklist exists so the fun is not interrupt
 
 **Communication thread.** A designated parent thread for daily updates while the team is away. Photos approved by the rooming policy, not freelance shots. One short update per day from the head coach or team manager.
 
-**SafeSport reporting line.** 720-531-0340 saved in every chaperone's phone. The number is for use during the trip if a chaperone needs to make a report or get guidance.
+**SafeSport reporting line.** 833-587-7233 saved in every chaperone's phone. The number is for use during the trip if a chaperone needs to make a report or get guidance.
 
 **The night-before run-through.** The Friday before the team leaves, the team manager runs through this list with the chaperones and the head coach in 15 minutes. Anything not checked, addressed.
 

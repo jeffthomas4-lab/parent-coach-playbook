@@ -78,7 +78,7 @@ Step one: a direct conversation with the head coach. Specific, not accusatory. "
 
 Step two: if the conversation does not produce change, escalate to the program director or athletic director. In writing.
 
-Step three: for NGB-affiliated programs, SafeSport investigates emotional misconduct. The reporting line is 720-531-0340 or uscenterforsafesport.org. Pattern-based reporting (multiple incidents over time) is the most effective format.
+Step three: for NGB-affiliated programs, SafeSport investigates emotional misconduct. The reporting line is 833-587-7233 or uscenterforsafesport.org. Pattern-based reporting (multiple incidents over time) is the most effective format.
 
 Step four: pulling your kid from the program is always on the table. The math of "we already paid the registration" does not outweigh the cost of a kid being damaged by a bad coach for a season.
 

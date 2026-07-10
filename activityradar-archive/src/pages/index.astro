@@ -1,0 +1,233 @@
+---
+// D2: Home search page. Autocomplete via /api/suggest. Submits to /search.
+export const prerender = false;
+import Base from '../layouts/Base.astro';
+
+// Category list for quick-filter pills on home
+const CATEGORY_PILLS = [
+  { slug: 'soccer',     label: 'Soccer' },
+  { slug: 'basketball', label: 'Basketball' },
+  { slug: 'swimming',   label: 'Swimming' },
+  { slug: 'dance',      label: 'Dance' },
+  { slug: 'gymnastics', label: 'Gymnastics' },
+  { slug: 'coding_stem',label: 'Coding & STEM' },
+  { slug: 'martial_arts',label: 'Martial Arts' },
+  { slug: 'camp_general',label: 'Camps' },
+];
+---
+
+<Base
+  title="ActivityRadar — Find Youth Activities Near You"
+  description="Search thousands of youth sports programs, camps, classes, and leagues. Filter by age, location, price, and activity type."
+>
+  <!-- Hero -->
+  <section class="bg-navy text-cream">
+    <div class="max-w-3xl mx-auto px-4 py-16 md:py-24">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+        Find what kids do around here.
+      </h1>
+      <p class="text-cream/70 text-lg mb-10">
+        Sports leagues, camps, classes, and programs — all in one place.
+      </p>
+
+      <!-- Search form -->
+      <form
+        id="search-form"
+        action="/search"
+        method="get"
+        class="flex flex-col gap-3"
+      >
+        <!-- Activity autocomplete -->
+        <div class="relative" id="suggest-wrapper">
+          <label class="sr-only" for="search-q">Activity or organization</label>
+          <input
+            id="search-q"
+            name="q"
+            type="search"
+            autocomplete="off"
+            role="combobox"
+            aria-expanded="false"
+            aria-controls="suggest-list"
+            aria-autocomplete="list"
+            placeholder="Soccer, swimming, dance camp…"
+            class="w-full bg-white text-navy px-4 h-14 text-base border-0 placeholder-navy/40 focus:outline-none focus:ring-2 focus:ring-rust"
+          />
+          <!-- Autocomplete dropdown -->
+          <ul
+            id="suggest-list"
+            role="listbox"
+            aria-label="Suggestions"
+            class="hidden absolute z-50 top-full left-0 right-0 bg-white border-t border-bone text-navy"
+          ></ul>
+        </div>
+
+        <!-- Location + filters row -->
+        <div class="flex flex-col sm:flex-row gap-2">
+          <label class="sr-only" for="search-location">City or ZIP code</label>
+          <input
+            id="search-location"
+            name="location"
+            type="text"
+            placeholder="City or ZIP (e.g. Tacoma, 98402)"
+            class="flex-1 bg-white/10 text-cream px-4 h-12 text-sm border border-cream/20 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-rust"
+          />
+          <label class="sr-only" for="search-age">Child's age</label>
+          <input
+            id="search-age"
+            name="age"
+            type="number"
+            min="2"
+            max="18"
+            placeholder="Age"
+            class="w-24 bg-white/10 text-cream px-4 h-12 text-sm border border-cream/20 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-rust"
+          />
+          <button type="submit" class="btn-primary px-8 h-12 min-h-[48px]">
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Quick-filter pills -->
+  <section class="bg-bone border-b border-bone/80">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap gap-2">
+      {CATEGORY_PILLS.map((c) => (
+        <a
+          href={`/search?category=${c.slug}`}
+          class="tag hover:bg-rust hover:text-white transition-colors cursor-pointer min-h-[36px] no-underline"
+        >
+          {c.label}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="label mb-8">How it works</h2>
+    <div class="grid md:grid-cols-3 gap-px bg-bone">
+      {[
+        { n: '01', h: 'Search by activity', b: 'Type what you are looking for. Filter by age, distance, price, and availability.' },
+        { n: '02', h: 'Browse the org', b: 'Each organization page shows all programs it runs, contact info, and trust signals.' },
+        { n: '03', h: 'Register directly', b: 'Click the registration link and sign up with the organization. No middleman.' },
+      ].map((step) => (
+        <div class="bg-cream p-7">
+          <p class="font-mono text-rust text-xs font-semibold mb-3">{step.n}</p>
+          <h3 class="font-semibold text-navy mb-2">{step.h}</h3>
+          <p class="text-navy/70 text-sm leading-relaxed">{step.b}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Browse by area -->
+  <section class="bg-white border-t border-bone">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <h2 class="label mb-6">Browse Puget Sound</h2>
+      <div class="flex flex-wrap gap-3">
+        {[
+          ['Tacoma', 'tacoma-wa'],
+          ['Seattle', 'seattle-wa'],
+          ['Bellevue', 'bellevue-wa'],
+          ['Everett', 'everett-wa'],
+          ['Olympia', 'olympia-wa'],
+          ['Puyallup', 'puyallup-wa'],
+          ['Gig Harbor', 'gig-harbor-wa'],
+          ['Kirkland', 'kirkland-wa'],
+          ['Renton', 'renton-wa'],
+          ['Redmond', 'redmond-wa'],
+        ].map(([city, slug]) => (
+          <a
+            href={`/soccer-camp/${slug}`}
+            class="px-4 py-2 border border-bone text-sm text-navy hover:border-navy transition-colors no-underline min-h-[40px]"
+          >
+            {city}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Autocomplete: fetches /api/suggest as user types; populates dropdown.
+  const input = document.getElementById('search-q') as HTMLInputElement;
+  const list  = document.getElementById('suggest-list') as HTMLUListElement;
+  let timer: number;
+
+  function hideList() {
+    list.classList.add('hidden');
+    input?.setAttribute('aria-expanded', 'false');
+  }
+  function showList() {
+    list.classList.remove('hidden');
+    input?.setAttribute('aria-expanded', 'true');
+  }
+
+  input?.addEventListener('input', () => {
+    clearTimeout(timer);
+    const q = input.value.trim();
+    if (q.length < 2) { hideList(); list.innerHTML = ''; return; }
+    timer = window.setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/suggest?q=${encodeURIComponent(q)}`);
+        const data: { label: string; kind: string; slug: string }[] = await res.json();
+        if (!data.length) { hideList(); return; }
+        list.innerHTML = data.map((d) =>
+          `<li role="option" tabindex="-1" class="px-4 py-3 text-sm cursor-pointer hover:bg-bone focus:bg-bone flex items-center justify-between min-h-[48px]"
+               data-label="${d.label}" data-kind="${d.kind}">
+            <span>${d.label}</span>
+            <span class="text-xs uppercase tracking-wider text-navy/70">${d.kind}</span>
+          </li>`
+        ).join('');
+        showList();
+      } catch {}
+    }, 180);
+  });
+
+  function chooseOption(li: HTMLElement) {
+    input.value = li.getAttribute('data-label') ?? '';
+    hideList();
+    list.innerHTML = '';
+    // Auto-submit
+    (document.getElementById('search-form') as HTMLFormElement)?.submit();
+  }
+
+  list?.addEventListener('click', (e) => {
+    const li = (e.target as Element).closest('li');
+    if (!li) return;
+    chooseOption(li as HTMLElement);
+  });
+
+  // Keyboard support inside the option list
+  list?.addEventListener('keydown', (e) => {
+    const li = (e.target as Element).closest('li') as HTMLElement | null;
+    if (!li) return;
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseOption(li); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); (li.nextElementSibling as HTMLElement | null)?.focus(); }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const prev = li.previousElementSibling as HTMLElement | null;
+      if (prev) prev.focus(); else input.focus();
+    }
+    if (e.key === 'Escape') { hideList(); input.focus(); }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('#suggest-wrapper')) {
+      hideList();
+    }
+  });
+
+  // Keyboard nav from the input
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { hideList(); }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const first = list.querySelector('li') as HTMLElement | null;
+      first?.focus();
+    }
+  });
+</script>

@@ -208,9 +208,9 @@ const popularReads = [
       <div class="grid md:grid-cols-2 gap-px bg-bone">
         {popularReads.map(r => (
           <a href={r.href} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-            <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+            <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
               {r.title}
-            </h3>
+            </h2>
             <p class="font-display text-ink-soft mt-2 leading-snug text-sm">
               {r.dek}
             </p>
@@ -224,8 +224,8 @@ const popularReads = [
   <!-- Search results: populated by JS when the user types -->
   <section class="hidden" data-results-state>
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4 font-medium" data-results-label>Results</p>
-      <div data-search-results></div>
+      <p class="font-display italic text-rust mb-4 font-medium" data-results-label aria-live="polite">Results</p>
+      <div data-search-results aria-live="polite"></div>
     </div>
   </section>
 
@@ -251,7 +251,7 @@ const popularReads = [
         out.innerHTML = hits.map(h => `
           <a href="${h.href}" class="block border-b border-bone py-5 hover:bg-paper-warm transition-colors">
             <div class="font-display italic text-rust text-xs font-medium">${escape(h.meta)}</div>
-            <h3 class="font-display text-ink text-xl mt-1 leading-tight font-medium">${escape(h.title)}</h3>
+            <h2 class="font-display text-ink text-xl mt-1 leading-tight font-medium">${escape(h.title)}</h2>
             ${h.dek ? `<p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escape(h.dek)}</p>` : ''}
           </a>`).join('');
       };

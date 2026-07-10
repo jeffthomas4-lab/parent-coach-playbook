@@ -1,0 +1,132 @@
+/* ActivityRadar global styles — Navy v2 design system */
+/* applyBaseStyles:false is set in astro.config.mjs; this file IS the base. */
+
+/* Self-hosted JetBrains Mono — weights 400 and 600 */
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Typeface: system stack + JetBrains Mono for mono */
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif;
+    background-color: #faf5f1; /* cream */
+    color: #0c273c; /* navy */
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Flat design: strip all border radii and shadows by default */
+  *:not(input):not(select):not(textarea) {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* 48px minimum tap targets */
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Remove default a styling */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Focus ring — navy outline, flat */
+  :focus-visible {
+    outline: 2px solid #0c273c;
+    outline-offset: 2px;
+  }
+
+  /* Inputs */
+  input,
+  select,
+  textarea {
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  /* Respect reduced-motion preferences (WCAG 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Uppercase label utility — navy/70 (not /60) so 12px text meets WCAG AA 4.5:1 on cream and white */
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wider text-navy/70;
+  }
+
+  /* Primary button: rust */
+  .btn-primary {
+    @apply bg-rust text-white px-6 py-3 text-sm font-semibold uppercase tracking-wider
+           min-h-[48px] inline-flex items-center justify-center
+           hover:bg-[#a05429] transition-colors cursor-pointer border-0;
+  }
+
+  /* Secondary button: navy outline */
+  .btn-secondary {
+    @apply border border-navy text-navy px-5 py-3 text-sm font-semibold uppercase tracking-wider
+           min-h-[48px] inline-flex items-center justify-center
+           hover:bg-navy hover:text-cream transition-colors cursor-pointer;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply text-navy px-5 py-3 text-sm font-semibold uppercase tracking-wider
+           min-h-[48px] inline-flex items-center justify-center
+           hover:bg-bone transition-colors cursor-pointer;
+  }
+
+  /* Card: flat white with bone border */
+  .card {
+    @apply bg-white border border-bone p-5;
+  }
+
+  /* Section divider */
+  .divider {
+    @apply border-t border-bone;
+  }
+
+  /* Mono number/code display */
+  .mono {
+    @apply font-mono text-sm;
+  }
+
+  /* Tag chip */
+  .tag {
+    @apply inline-block bg-bone text-navy text-xs font-semibold uppercase
+           tracking-wider px-2 py-1;
+  }
+}

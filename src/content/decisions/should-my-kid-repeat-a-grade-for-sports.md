@@ -6,7 +6,7 @@ benefits:
   - "A physically or emotionally late-developing kid gets more time to catch up."
   - "In contact sports, an extra year of physical maturation reduces injury risk."
   - "A redshirt year can mean the difference between playing JV and earning a varsity spot."
-  - "In some cases, adds a year of recruiting eligibility."
+  - "Used to sometimes add a year of college eligibility. Since the NCAA's June 2026 switch to an age-based eligibility clock (effective for college enrollment fall 2027 and later), the clock starts at age 19 or the year after high school graduation, whichever comes first, so reclassifying no longer reliably buys an extra year. Don't hold a kid back for this reason alone."
 costs:
   - "It's a social decision, not just an athletic one. The kid spends a year with younger peers."
   - "Colleges and college coaches are aware of reclassification. It doesn't automatically improve recruiting outcomes."

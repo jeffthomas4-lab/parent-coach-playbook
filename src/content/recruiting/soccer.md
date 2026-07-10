@@ -37,9 +37,9 @@ About 850,000 boys and girls play high-school soccer combined each year. About 5
 
 ## What each level actually looks like
 
-**D1 (men).** About 200 programs. 9.9 scholarships per team, equivalency. Almost no full rides, typical starter at a mid-major might be on a 30 to 50 percent scholarship. Top high-major programs have more flexibility but still split.
+**D1 (men).** About 200 programs. The 9.9-scholarship equivalency cap was the rule through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a roster limit and scholarships fundable up to that full roster (check the current NCAA figure with your target program — men's soccer's exact roster number has moved around during the settlement's rollout). Almost no full rides still, typical starter at a mid-major might be on a 30 to 50 percent scholarship; top high-major programs have more flexibility but still split.
 
-**D1 (women).** About 330 programs. 14 scholarships per team, equivalency. Better aid environment than men's D1 because of Title IX implications.
+**D1 (women).** About 330 programs. Same shift — the old 14-scholarship equivalency cap is replaced, for opted-in schools, by a 28-player roster limit with scholarships fundable up to that roster. Better aid environment than men's D1 because of Title IX implications.
 
 **D2.** About 230 programs each. 9 scholarships men's, 9.9 women's, equivalency.
 

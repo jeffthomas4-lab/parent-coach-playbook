@@ -1,0 +1,209 @@
+---
+// Suggest an organization — public submission form.
+// Route: /suggest
+export const prerender = false;
+
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Suggest an Organization — ActivityRadar"
+  description="Tell us about an organization offering youth activities in your area. We review suggestions weekly."
+>
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+  <div class="max-w-2xl mx-auto px-4 py-12">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-navy/70 mb-8 flex items-center gap-2">
+      <a href="/search" class="hover:text-navy no-underline min-h-0">Search</a>
+      <span>/</span>
+      <span class="text-navy">Suggest an Org</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-2xl font-bold text-navy mb-3">Know one we missed?</h1>
+      <p class="text-navy/70 leading-relaxed">
+        Tell us about an organization offering youth activities in your area. We review suggestions weekly.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form id="suggest-form" class="flex flex-col gap-6">
+
+      <!-- Org name -->
+      <div>
+        <label class="label mb-2 block" for="org_name">
+          Organization name <span class="text-rust">*</span>
+        </label>
+        <input
+          id="org_name"
+          name="org_name"
+          type="text"
+          required
+          placeholder="e.g. Tacoma Youth Soccer Club"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        />
+      </div>
+
+      <!-- Website -->
+      <div>
+        <label class="label mb-2 block" for="org_website">Website</label>
+        <input
+          id="org_website"
+          name="org_website"
+          type="url"
+          placeholder="https://"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        />
+      </div>
+
+      <!-- City / State -->
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="label mb-2 block" for="org_city">City</label>
+          <input
+            id="org_city"
+            name="org_city"
+            type="text"
+            placeholder="Tacoma"
+            class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+          />
+        </div>
+        <div>
+          <label class="label mb-2 block" for="org_state">State</label>
+          <input
+            id="org_state"
+            name="org_state"
+            type="text"
+            value="WA"
+            placeholder="WA"
+            class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+          />
+        </div>
+      </div>
+
+      <!-- Activity type -->
+      <div>
+        <label class="label mb-2 block" for="activity_type">Activity type</label>
+        <select
+          id="activity_type"
+          name="activity_type"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        >
+          <option value="">Select a category</option>
+          <option value="Soccer">Soccer</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Swimming">Swimming</option>
+          <option value="Dance">Dance</option>
+          <option value="Gymnastics">Gymnastics</option>
+          <option value="Coding & STEM">Coding &amp; STEM</option>
+          <option value="Martial Arts">Martial Arts</option>
+          <option value="Summer Camp">Summer Camp</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Submitter email -->
+      <div>
+        <label class="label mb-2 block" for="submitter_email">
+          Your email (optional — we'll notify you when it's added)
+        </label>
+        <input
+          id="submitter_email"
+          name="submitter_email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        />
+      </div>
+
+      <!-- Notes -->
+      <div>
+        <label class="label mb-2 block" for="notes">Anything else we should know?</label>
+        <textarea
+          id="notes"
+          name="notes"
+          rows={4}
+          placeholder="Program details, contact info, why you're recommending them…"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy resize-none"
+        ></textarea>
+      </div>
+
+      <!-- Error message -->
+      <div id="form-error" role="alert" class="hidden border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-rust"></div>
+
+      <!-- Turnstile bot protection -->
+      <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAAA_TURNSTILE_SITE_KEY"
+        data-size="invisible"
+        data-callback="onTurnstileSuccess"
+      ></div>
+
+      <!-- Submit -->
+      <div class="pt-2">
+        <button
+          type="submit"
+          id="submit-btn"
+          class="btn-primary w-full justify-center"
+        >
+          Submit suggestion
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</Base>
+
+<script>
+  const form = document.getElementById('suggest-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const errorDiv = document.getElementById('form-error') as HTMLDivElement;
+
+  const ERROR_MESSAGES: Record<string, string> = {
+    missing_org_name: 'Organization name is required.',
+    invalid_json: 'Something went wrong. Please try again.',
+    db_error: 'We could not save your suggestion. Please try again.',
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorDiv.classList.add('hidden');
+    errorDiv.textContent = '';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    // Turnstile adds cf-turnstile-response hidden field automatically.
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+
+    try {
+      const res = await fetch('/api/suggest-org', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json() as { ok: boolean; error?: string };
+
+      if (json.ok) {
+        window.location.href = '/suggest/success';
+      } else {
+        const msg = ERROR_MESSAGES[json.error ?? ''] ?? 'Something went wrong. Please try again.';
+        errorDiv.textContent = msg;
+        errorDiv.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit suggestion';
+      }
+    } catch {
+      errorDiv.textContent = 'Network error. Please check your connection and try again.';
+      errorDiv.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit suggestion';
+    }
+  });
+</script>

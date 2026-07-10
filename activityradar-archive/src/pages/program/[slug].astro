@@ -1,0 +1,234 @@
+---
+// D5: Program detail page.
+// Route: /program/[slug]
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+import { getProgram } from '../../lib/db';
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/search');
+
+const db = (Astro.locals as any).runtime.env.DB as D1Database;
+const result = await getProgram(db, slug);
+
+if (!result) {
+  return new Response(null, { status: 404 });
+}
+
+const { program: prog, organization: org } = result;
+
+const CATEGORIES: Record<string, string> = {
+  soccer: 'Soccer', basketball: 'Basketball', swimming: 'Swimming',
+  gymnastics: 'Gymnastics', martial_arts: 'Martial Arts',
+  baseball_softball: 'Baseball / Softball', volleyball: 'Volleyball',
+  football: 'Football', tennis: 'Tennis', track_field: 'Track & Field',
+  dance: 'Dance', arts_crafts: 'Arts & Crafts', music: 'Music',
+  theater: 'Theater', coding_stem: 'Coding & STEM',
+  camp_general: 'General Camp', camp_sports: 'Sports Camp',
+  camp_stem: 'STEM Camp', camp_arts: 'Arts Camp',
+};
+
+const PROG_TYPE_LABELS: Record<string, string> = {
+  camp: 'Camp', league: 'League', class: 'Class', clinic: 'Clinic',
+};
+
+const AVAIL_LABELS: Record<string, string> = {
+  open: 'Open', waitlist: 'Waitlist', full: 'Full', unknown: 'Check with org',
+};
+
+const siteUrl = (Astro.locals as any).runtime?.env?.SITE_URL ?? 'https://activityradar.com';
+const canonicalUrl = `${siteUrl}/program/${prog.slug}`;
+
+const schemaEvent = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: prog.name,
+  description: prog.description ?? undefined,
+  url: prog.registration_url ?? canonicalUrl,
+  ...(prog.session_start_date ? { startDate: prog.session_start_date } : {}),
+  ...(prog.session_end_date   ? { endDate: prog.session_end_date }   : {}),
+  organizer: org ? {
+    '@type': 'Organization',
+    name: org.name,
+    url: org.website_url ?? undefined,
+  } : undefined,
+  location: org?.address ? {
+    '@type': 'Place',
+    name: org.name,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: org.address,
+      addressLocality: org.city ?? undefined,
+      addressRegion: org.state ?? undefined,
+      postalCode: org.zip ?? undefined,
+      addressCountry: 'US',
+    },
+  } : undefined,
+};
+---
+
+<Base
+  title={`${prog.name} — ${org?.name ?? 'ActivityRadar'}`}
+  description={prog.description ?? `${prog.name} offered by ${org?.name ?? 'a local organization'}.`}
+  canonical={canonicalUrl}
+  ogType="event"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaEvent)}></script>
+  </Fragment>
+
+  <div class="max-w-3xl mx-auto px-4 py-10">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-navy/70 mb-6 flex items-center gap-2">
+      {org && (
+        <>
+          <a href={`/org/${org.slug}`} class="hover:text-navy no-underline min-h-0">{org.name}</a>
+          <span>/</span>
+        </>
+      )}
+      <span class="text-navy">{prog.name}</span>
+    </nav>
+
+    <!-- Program header -->
+    <div class="mb-8">
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="tag">{PROG_TYPE_LABELS[prog.program_type] ?? prog.program_type}</span>
+        <span class="tag">{CATEGORIES[prog.activity_category] ?? prog.activity_category}</span>
+        {(() => {
+          const s = prog.availability_status;
+          if (s === 'open')     return <span class="tag bg-green-50 text-green-800">Open</span>;
+          if (s === 'waitlist') return <span class="tag bg-yellow-50 text-yellow-800">Waitlist</span>;
+          if (s === 'full')     return <span class="tag bg-destructive/10 text-destructive">Full</span>;
+          return null;
+        })()}
+      </div>
+      <h1 class="text-2xl font-bold text-navy mb-2">{prog.name}</h1>
+      {org && (
+        <p class="text-navy/70 text-sm">
+          Offered by{' '}
+          <a href={`/org/${org.slug}`} class="text-rust hover:underline min-h-0">{org.name}</a>
+          {org.city ? ` · ${org.city}, ${org.state}` : ''}
+        </p>
+      )}
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Main content -->
+      <div class="md:col-span-2">
+        {prog.description && (
+          <div class="mb-6">
+            <p class="label mb-3">About this program</p>
+            <p class="text-navy/80 leading-relaxed">{prog.description}</p>
+          </div>
+        )}
+
+        <!-- Details grid -->
+        <div class="card mb-6">
+          <p class="label mb-4">Details</p>
+          <dl class="grid grid-cols-2 gap-4 text-sm">
+            {prog.age_min != null && prog.age_max != null && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Ages</dt>
+                <dd class="text-navy font-medium">{prog.age_min}–{prog.age_max}</dd>
+              </div>
+            )}
+            {prog.session_start_date && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Starts</dt>
+                <dd class="text-navy font-medium mono">{prog.session_start_date}</dd>
+              </div>
+            )}
+            {prog.session_end_date && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Ends</dt>
+                <dd class="text-navy font-medium mono">{prog.session_end_date}</dd>
+              </div>
+            )}
+            {prog.price != null && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Price</dt>
+                <dd class="text-navy font-medium">${prog.price.toFixed(0)}{prog.price_type ? ` / ${prog.price_type.replace(/_/g, ' ')}` : ''}</dd>
+              </div>
+            )}
+            {!prog.price && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Price</dt>
+                <dd class="text-navy font-medium">{prog.price_type === 'free' ? 'Free' : 'Contact org'}</dd>
+              </div>
+            )}
+            <div>
+              <dt class="label text-navy/70 mb-0.5">Availability</dt>
+              <dd class="text-navy font-medium">{AVAIL_LABELS[prog.availability_status] ?? prog.availability_status}</dd>
+            </div>
+            {prog.skill_level && prog.skill_level !== 'all' && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Level</dt>
+                <dd class="text-navy font-medium capitalize">{prog.skill_level}</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        {prog.schedule_text && (
+          <div class="card mb-6">
+            <p class="label mb-3">Schedule</p>
+            <p class="text-sm text-navy/80 leading-relaxed">{prog.schedule_text}</p>
+          </div>
+        )}
+      </div>
+
+      <!-- CTA sidebar -->
+      <aside>
+        <div class="card bg-navy text-cream border-none mb-4">
+          {prog.registration_url ? (
+            <>
+              <p class="font-semibold mb-1 text-sm">Register</p>
+              <p class="text-cream/60 text-xs mb-4 leading-relaxed">
+                Registration happens directly with {org?.name ?? 'the organization'}.
+              </p>
+              <a
+                href={prog.registration_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary w-full justify-center text-xs px-4 py-3 min-h-[48px] no-underline"
+              >
+                Register now →
+              </a>
+            </>
+          ) : (
+            <>
+              <p class="font-semibold mb-1 text-sm">Interested?</p>
+              <p class="text-cream/60 text-xs mb-4 leading-relaxed">
+                Contact {org?.name ?? 'the organization'} directly to register.
+              </p>
+              {org?.website_url && (
+                <a
+                  href={org.website_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary w-full justify-center text-xs px-4 py-3 min-h-[48px] no-underline"
+                >
+                  Visit website →
+                </a>
+              )}
+              {org?.phone && (
+                <a href={`tel:${org.phone}`} class="btn-ghost w-full justify-center text-xs mt-2 text-cream hover:bg-cream/10 min-h-[40px] no-underline">
+                  {org.phone}
+                </a>
+              )}
+            </>
+          )}
+        </div>
+
+        {org && (
+          <a href={`/org/${org.slug}`} class="card block hover:border-navy transition-colors no-underline">
+            <p class="label text-navy/70 mb-2">Organization</p>
+            <p class="font-semibold text-navy text-sm">{org.name}</p>
+            {org.city && <p class="text-xs text-navy/70 mt-0.5">{org.city}, {org.state}</p>}
+            <p class="text-xs text-rust mt-2">View all programs →</p>
+          </a>
+        )}
+      </aside>
+    </div>
+  </div>
+</Base>

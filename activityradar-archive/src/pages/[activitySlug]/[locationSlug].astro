@@ -1,0 +1,241 @@
+---
+// K1-K3: SEO landing pages.
+// Route: /[activitySlug]/[locationSlug]
+// Example: /soccer-camp/tacoma-wa
+//
+// Server-rendered (prerender=false) so content is fresh and correct at edge.
+// Full HTML output — Googlebot sees complete structured data on first request.
+// schema.org ItemList markup + canonical URL included on every page.
+//
+// getStaticPaths defines the URL space for Astro's router to recognize these
+// routes. At build time the paths are hardcoded (DB is not available at build
+// time in Cloudflare Pages). Data is fetched fresh at edge request time.
+export const prerender = false;
+
+import Base from '../../layouts/Base.astro';
+import { searchOrganizations, logSearchEvent, enqueueOrgsForEnrichment } from '../../lib/db';
+import type { Organization } from '../../lib/db';
+
+// --- Static path definitions ---
+// Covers the key activity+programtype combos and Puget Sound cities.
+// Extend this list to add more SEO pages without any DB dependency.
+const ACTIVITY_SLUGS: Record<string, { category: string; programType?: string; label: string }> = {
+  'soccer-camp':        { category: 'soccer',       programType: 'camp',   label: 'Soccer Camps' },
+  'soccer-league':      { category: 'soccer',       programType: 'league', label: 'Soccer Leagues' },
+  'basketball-camp':    { category: 'basketball',   programType: 'camp',   label: 'Basketball Camps' },
+  'basketball-league':  { category: 'basketball',   programType: 'league', label: 'Basketball Leagues' },
+  'swimming-lessons':   { category: 'swimming',     programType: 'class',  label: 'Swimming Lessons' },
+  'swimming-camp':      { category: 'swimming',     programType: 'camp',   label: 'Swimming Camps' },
+  'gymnastics-classes': { category: 'gymnastics',   programType: 'class',  label: 'Gymnastics Classes' },
+  'gymnastics-camp':    { category: 'gymnastics',   programType: 'camp',   label: 'Gymnastics Camps' },
+  'dance-classes':      { category: 'dance',        programType: 'class',  label: 'Dance Classes' },
+  'dance-camp':         { category: 'dance',        programType: 'camp',   label: 'Dance Camps' },
+  'martial-arts':       { category: 'martial_arts', programType: 'class',  label: 'Martial Arts Classes' },
+  'coding-camp':        { category: 'coding_stem',  programType: 'camp',   label: 'Coding Camps' },
+  'stem-camp':          { category: 'camp_stem',    programType: 'camp',   label: 'STEM Camps' },
+  'sports-camp':        { category: 'camp_sports',  programType: 'camp',   label: 'Sports Camps' },
+  'summer-camp':        { category: 'camp_general', programType: 'camp',   label: 'Summer Camps' },
+  'football-camp':      { category: 'football',     programType: 'camp',   label: 'Football Camps' },
+  'football-camps':     { category: 'football',     programType: 'camp',   label: 'Football Camps' },
+  'football-league':    { category: 'football',     programType: 'league', label: 'Football Leagues' },
+  'tennis-lessons':     { category: 'tennis',       programType: 'class',  label: 'Tennis Lessons' },
+  'baseball-camp':      { category: 'baseball_softball', programType: 'camp', label: 'Baseball Camps' },
+  'volleyball-camp':    { category: 'volleyball',   programType: 'camp',   label: 'Volleyball Camps' },
+};
+
+const LOCATION_SLUGS: Record<string, { city: string; state: string; lat: number; lng: number; label: string }> = {
+  'tacoma-wa':      { city: 'Tacoma',      state: 'WA', lat: 47.2529, lng: -122.4443, label: 'Tacoma, WA' },
+  'seattle-wa':     { city: 'Seattle',     state: 'WA', lat: 47.6062, lng: -122.3321, label: 'Seattle, WA' },
+  'bellevue-wa':    { city: 'Bellevue',    state: 'WA', lat: 47.6101, lng: -122.2015, label: 'Bellevue, WA' },
+  'everett-wa':     { city: 'Everett',     state: 'WA', lat: 47.9790, lng: -122.2021, label: 'Everett, WA' },
+  'olympia-wa':     { city: 'Olympia',     state: 'WA', lat: 47.0379, lng: -122.9007, label: 'Olympia, WA' },
+  'puyallup-wa':    { city: 'Puyallup',    state: 'WA', lat: 47.1854, lng: -122.2929, label: 'Puyallup, WA' },
+  'gig-harbor-wa':  { city: 'Gig Harbor',  state: 'WA', lat: 47.3290, lng: -122.5793, label: 'Gig Harbor, WA' },
+  'kirkland-wa':    { city: 'Kirkland',    state: 'WA', lat: 47.6815, lng: -122.2087, label: 'Kirkland, WA' },
+  'renton-wa':      { city: 'Renton',      state: 'WA', lat: 47.4829, lng: -122.2171, label: 'Renton, WA' },
+  'redmond-wa':     { city: 'Redmond',     state: 'WA', lat: 47.6740, lng: -122.1215, label: 'Redmond, WA' },
+  'kent-wa':        { city: 'Kent',        state: 'WA', lat: 47.3809, lng: -122.2348, label: 'Kent, WA' },
+  'federal-way-wa': { city: 'Federal Way', state: 'WA', lat: 47.3223, lng: -122.3126, label: 'Federal Way, WA' },
+  'auburn-wa':      { city: 'Auburn',      state: 'WA', lat: 47.3073, lng: -122.2284, label: 'Auburn, WA' },
+  'bothell-wa':     { city: 'Bothell',     state: 'WA', lat: 47.7601, lng: -122.2054, label: 'Bothell, WA' },
+  'shoreline-wa':   { city: 'Shoreline',   state: 'WA', lat: 47.7557, lng: -122.3415, label: 'Shoreline, WA' },
+};
+
+// Validate params
+const { activitySlug, locationSlug } = Astro.params;
+
+const activityDef = ACTIVITY_SLUGS[activitySlug ?? ''];
+const locationDef = LOCATION_SLUGS[locationSlug ?? ''];
+
+if (!activityDef || !locationDef) {
+  return new Response(null, { status: 404 });
+}
+
+const db = (Astro.locals as any).runtime.env.DB as D1Database;
+
+let orgs: Organization[] = [];
+try {
+  orgs = await searchOrganizations(db, {
+    lat: locationDef.lat,
+    lng: locationDef.lng,
+    radiusMiles: 20,
+    category: activityDef.category,
+    programType: activityDef.programType,
+    limit: 30,
+  });
+} catch (err) {
+  console.error('SEO page search error', err);
+}
+
+// Queue result orgs for enrichment — priority climbs with each search hit
+enqueueOrgsForEnrichment(db, orgs.map(o => o.id)).catch(() => {/* non-blocking */});
+
+// Log this SEO page view as a demand signal (N1)
+logSearchEvent(db, {
+  query: `${activityDef.label} in ${locationDef.label}`,
+  location_searched: locationDef.label,
+  latitude: locationDef.lat,
+  longitude: locationDef.lng,
+  radius_miles: 20,
+  categories_searched: [activityDef.category],
+  result_count: orgs.length,
+  source: 'seo_landing',
+}).catch(() => {/* non-blocking */});
+
+const pageTitle = `${activityDef.label} in ${locationDef.label} — ActivityRadar`;
+const pageDesc  = `Find ${activityDef.label.toLowerCase()} in ${locationDef.label}. Browse ${orgs.length} local organizations offering ${activityDef.label.toLowerCase()} for youth.`;
+
+const siteUrl = (Astro.locals as any).runtime?.env?.SITE_URL ?? 'https://activityradar.com';
+const canonicalUrl = `${siteUrl}/${activitySlug}/${locationSlug}`;
+
+// schema.org ItemList
+const schemaItemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: pageTitle,
+  description: pageDesc,
+  url: canonicalUrl,
+  numberOfItems: orgs.length,
+  itemListElement: orgs.slice(0, 10).map((org, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'LocalBusiness',
+      name: org.name,
+      url: `${siteUrl}/org/${org.slug}`,
+      address: org.city ? {
+        '@type': 'PostalAddress',
+        addressLocality: org.city,
+        addressRegion: org.state ?? 'WA',
+        addressCountry: 'US',
+      } : undefined,
+    },
+  })),
+};
+
+// Breadcrumb schema
+const schemaBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'ActivityRadar', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: activityDef.label, item: `${siteUrl}/${activitySlug}` },
+    { '@type': 'ListItem', position: 3, name: locationDef.label, item: canonicalUrl },
+  ],
+};
+---
+
+<Base title={pageTitle} description={pageDesc} canonical={canonicalUrl}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaItemList)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)}></script>
+  </Fragment>
+
+  <div class="max-w-5xl mx-auto px-4 py-10">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-navy/70 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-navy no-underline min-h-0">ActivityRadar</a>
+      <span>/</span>
+      <span>{activityDef.label}</span>
+      <span>/</span>
+      <span class="text-navy">{locationDef.label}</span>
+    </nav>
+
+    <!-- Page header -->
+    <div class="mb-10">
+      <h1 class="text-2xl md:text-3xl font-bold text-navy mb-2">
+        {activityDef.label} in {locationDef.label}
+      </h1>
+      <p class="text-navy/70">
+        {orgs.length} organization{orgs.length !== 1 ? 's' : ''} within 20 miles
+      </p>
+    </div>
+
+    <!-- Related activity links -->
+    <div class="bg-bone p-4 mb-8">
+      <p class="label mb-3">Browse nearby</p>
+      <div class="flex flex-wrap gap-2">
+        {Object.entries(LOCATION_SLUGS).filter(([s]) => s !== locationSlug).slice(0, 8).map(([s, loc]) => (
+          <a
+            href={`/${activitySlug}/${s}`}
+            class="text-xs text-navy/70 hover:text-navy hover:underline min-h-0 no-underline"
+          >
+            {loc.city}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Results -->
+    {orgs.length === 0 ? (
+      <div class="card py-12 text-center">
+        <p class="font-semibold text-navy mb-2">No results yet</p>
+        <p class="text-sm text-navy/70 mb-5">
+          We do not have {activityDef.label.toLowerCase()} listed in {locationDef.label} yet.
+          Try a nearby city or search more broadly.
+        </p>
+        <a
+          href={`/search?category=${activityDef.category}&location=${locationDef.city}`}
+          class="btn-primary text-xs px-5 py-3 min-h-[48px] no-underline"
+        >
+          Search all activities near {locationDef.city}
+        </a>
+      </div>
+    ) : (
+      <ul class="flex flex-col gap-3">
+        {orgs.map((org) => (
+          <li>
+            <a href={`/org/${org.slug}`} class="card block hover:border-navy transition-colors no-underline">
+              <div class="flex items-start justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                  <p class="font-semibold text-navy mb-1">{org.name}</p>
+                  {(org.city || org.state) && (
+                    <p class="text-sm text-navy/70 mb-2">
+                      {[org.address, org.city, org.state].filter(Boolean).join(', ')}
+                    </p>
+                  )}
+                  {org.description && (
+                    <p class="text-sm text-navy/70 line-clamp-2">{org.description}</p>
+                  )}
+                </div>
+                {org.distance_miles != null && (
+                  <p class="mono text-navy/70 text-xs shrink-0">{org.distance_miles.toFixed(1)} mi</p>
+                )}
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t border-bone text-center">
+      <p class="text-sm text-navy/70 mb-4">
+        Know an organization we missed?
+      </p>
+      <a href="/suggest" class="btn-secondary text-xs px-5 py-3 min-h-[48px] no-underline">
+        Suggest an organization
+      </a>
+    </div>
+  </div>
+</Base>

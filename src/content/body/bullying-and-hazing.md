@@ -51,7 +51,7 @@ Start with the head coach if the situation is recoverable at that level. Documen
 
 If the coach minimizes, deflects, or asks you to drop it, escalate to the program director or athletic director. Put it in writing.
 
-For NGB-affiliated programs, SafeSport investigates hazing and bullying involving covered behavior. The reporting line is 720-531-0340 or uscenterforsafesport.org.
+For NGB-affiliated programs, SafeSport investigates hazing and bullying involving covered behavior. The reporting line is 833-587-7233 or uscenterforsafesport.org.
 
 For school-based teams, the Title IX coordinator handles harassment with a protected-class component. The district anti-bullying policy handles the rest.
 
@@ -61,4 +61,4 @@ If physical harm has occurred, or if the conduct involves alcohol, drugs, or sex
 
 The kid who was hazed is often instructed by the older athletes not to tell. The kid who was bullied is often told that telling will make it worse. Both messages need to be neutralized in advance.
 
-If this content is reaching a kid in distress, the StopBullying.gov resource pages and the SafeSport Helpline at 720-531-0340 are both available.
+If this content is reaching a kid in distress, the StopBullying.gov resource pages and the SafeSport Helpline at 833-587-7233 are both available.

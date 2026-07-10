@@ -102,7 +102,7 @@ If the first conversation does not produce change within 2 to 3 weeks of the nex
 
 Step one: program director or AD. Bring the log. Specific, dated, factual.
 
-Step two: for NGB-affiliated programs, SafeSport investigates patterns of emotional misconduct. The reporting line is 720-531-0340 or uscenterforsafesport.org. Pattern documentation is the kind of report SafeSport processes well.
+Step two: for NGB-affiliated programs, SafeSport investigates patterns of emotional misconduct. The reporting line is 833-587-7233 or uscenterforsafesport.org. Pattern documentation is the kind of report SafeSport processes well.
 
 Step three: for school-based teams, the Title IX coordinator handles patterns with a protected-class component (race, gender, disability, etc.). The school's general anti-bullying or anti-harassment policy handles others.
 

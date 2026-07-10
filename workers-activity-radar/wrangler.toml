@@ -1,0 +1,19 @@
+# Enrichment scheduled worker for ActivityRadar.
+# Separate from the Pages project because Pages does not support cron triggers.
+# Shares the same D1 database (activity-radar) as the Pages front door.
+#
+# Deploy:  cd workers && npx wrangler deploy
+# Run now: cd workers && npx wrangler dev --test-scheduled
+
+name = "activityradar-enrichment"
+main = "enrichment-worker.ts"
+compatibility_date = "2026-04-30"
+compatibility_flags = ["nodejs_compat"]
+
+[triggers]
+crons = ["0 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "activity-radar"
+database_id = "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"

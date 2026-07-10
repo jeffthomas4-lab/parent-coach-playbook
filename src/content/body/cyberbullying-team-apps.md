@@ -88,7 +88,7 @@ Step two: head coach. Bring the documentation. Specific incidents with dates. As
 
 Step three: program director or AD. If the head coach does not address it within a week, escalate.
 
-Step four: SafeSport for NGB-affiliated programs. Cyberbullying that involves emotional misconduct, sexual harassment, or grooming patterns falls under SafeSport's jurisdiction. Reporting line 720-531-0340 or uscenterforsafesport.org.
+Step four: SafeSport for NGB-affiliated programs. Cyberbullying that involves emotional misconduct, sexual harassment, or grooming patterns falls under SafeSport's jurisdiction. Reporting line 833-587-7233 or uscenterforsafesport.org.
 
 Step five: school authorities. For school-based teams, the district's anti-bullying policy applies. Title IX coordinator handles harassment with a protected-class component.
 
@@ -112,4 +112,4 @@ A coach who addresses cyberbullying in the team meeting, names what is and is no
 
 **The honest read.** Cyberbullying in youth sports is one of the most-underreported and slowest-addressed categories of harm. The kids being targeted often do not have language for it. The adults running the team app often cannot see it. The protocol that works is documentation early, escalation through the right channels, and a willingness to act on consequences when the pattern is established.
 
-If this content is reaching a parent whose kid is currently in a cyberbullying situation, the StopBullying.gov resource pages and the SafeSport Helpline (720-531-0340) are both available.
+If this content is reaching a parent whose kid is currently in a cyberbullying situation, the StopBullying.gov resource pages and the SafeSport Helpline (833-587-7233) are both available.

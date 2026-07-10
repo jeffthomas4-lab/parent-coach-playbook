@@ -6,6 +6,15 @@ Method: full-text scan of all guides/rules/recruiting/seasonCalendars files + a 
 
 Frontmatter check first: every file across all six directories carries `publishedAt`/`claudeReviewedAt` dates in 2026-01-01 through 2026-06-20 range. **Nothing is older than 12 months** — the "stale stamp" risk tier is essentially empty this cycle. One malformed date was found (see Tier 3).
 
+**2026-07-05 update — all findings below have been corrected in content.** Summary of fixes applied:
+- SafeSport reporting number corrected from 720-531-0340 to 833-587-7233 across all 14 affected `body/*.md` files.
+- Stale "US Lacrosse" naming/URLs updated to "USA Lacrosse" / usalacrosse.com in `rules/lacrosse.md`, `rules/lacrosse-boys.md`, `rules/lacrosse-girls.md`, `pathways/lacrosse-boys.md`, and `pillar/ultimate-parent-guide-lacrosse.md`.
+- Malformed date fixed in `body/rdn-vs-nutritionist-credentials.md` (`2026-04-9` → `2026-04-09`).
+- NIL state count updated in `recruiting/nil-basics-for-hs.md` (~35 states → ~41 states, with an updated restricted-states list).
+- USSSA 14U bat-standard change (Jan 1, 2026, national move to BBCOR -3/wood) added to `guides/baseball.md`'s 13-14 age section.
+- All 11 `recruiting/*.md` sport files (baseball, basketball, football, hockey, lacrosse, soccer, softball, tennis, track & field, volleyball, wrestling) updated to reflect the July 2025 House v. NCAA settlement's shift from sport-specific scholarship caps to roster limits, with current roster-limit figures added where independently confirmed (baseball 34, softball 25, basketball 15/15, football 105, hockey 26/26, women's soccer 28, women's volleyball 18, wrestling 30, tennis 10/10, track & field 45/45, men's lacrosse 49, women's lacrosse 40). Men's soccer and men's volleyball roster numbers were not independently confirmed this cycle — flagged in-line for a follow-up check rather than guessed.
+- Not touched this cycle (flagged as lower-confidence/lower-risk in the original audit, recommend revisiting next quarter): exact price ranges across guides/seasonCalendars, the GoPro HERO and Theragun/Cascade CPX-R named-product references, and the NCAA recruiting contact-period date claims repeated across ~15 files.
+
 ---
 
 ## Tier 1 — Wrong / unsafe / illegal-equipment or wrong-authority info (fix first)

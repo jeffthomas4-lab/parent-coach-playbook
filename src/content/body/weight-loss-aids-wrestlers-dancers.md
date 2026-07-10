@@ -86,7 +86,7 @@ Wrestling has a long cultural history of weight-cutting. USA Wrestling and most 
 
 Body-composition assessment at season start.
 
-Calculation of minimum weight class based on minimum body fat percentage (typically 7 percent for males, 12 percent for females).
+Calculation of minimum weight class based on minimum body fat percentage (typically 7 percent for males; 19 percent for females under the NFHS standard updated for the 2026-27 season, raised from the prior 12 percent minimum).
 
 Weekly weight-loss limits (typically 1.5 to 2 percent of body weight per week).
 

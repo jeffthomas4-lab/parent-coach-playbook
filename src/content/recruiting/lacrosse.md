@@ -37,9 +37,9 @@ Lacrosse is also one of the most regionally concentrated college sports. The Nor
 
 ## What each level actually looks like
 
-**D1 (men).** About 75 programs. 12.6 scholarships per team, equivalency. Most D1 lacrosse rosters carry 40+ players, so scholarship splits can be small.
+**D1 (men).** About 75 programs. The 12.6-scholarship equivalency model was the rule through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 49-player roster limit and scholarships fundable up to that full roster. Most D1 lacrosse rosters already carried 40+ players, so this is more of a scholarship-funding change than a roster-size change — splits can still be small since not every school funds all 49 spots.
 
-**D1 (women).** About 125 programs. 12 scholarships per team, equivalency.
+**D1 (women).** About 125 programs. Same shift — the old 12-scholarship equivalency cap is replaced, for opted-in schools, by a 40-player roster limit with scholarships fundable up to that roster.
 
 **D2.** About 80 programs men's, 115 women's. 10.8 scholarships, equivalency.
 

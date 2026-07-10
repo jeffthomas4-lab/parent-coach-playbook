@@ -1,0 +1,32 @@
+name: Camps daily sweep
+
+# Pillar 8 (Operations & Reliability): the site's business-metric check
+# (approved-and-future camp count) and the URL-liveness/stale-archive jobs
+# all live behind one endpoint, /api/cron/camps-sweep. Cloudflare Pages has
+# no built-in cron trigger, so this workflow is what actually calls it once
+# a day. Before this file existed, nothing did — the endpoint was written
+# and ready but never invoked on a schedule.
+#
+# Requires a repo secret CRON_KEY that matches the CRON_KEY Pages secret
+# (see About Me/Deployments.md). Set both with:
+#   npx wrangler pages secret put CRON_KEY --project-name parent-coach-playbook
+#   gh secret set CRON_KEY --repo jeffthomas4-lab/<this-repo>
+# If CRON_KEY is not yet set as a Pages secret, this workflow will run and
+# get a 403 every day until it is — check the Actions tab if the camps
+# count alert (OPS_HEARTBEAT_URL) ever fires unexpectedly.
+
+on:
+  schedule:
+    - cron: '17 9 * * *'  # 09:17 UTC daily — off the hour to avoid GitHub's top-of-hour cron pile-up
+  workflow_dispatch: {}
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call camps sweep endpoint
+        run: |
+          curl -sS -X POST "https://parentcoachdesk.com/api/cron/camps-sweep" \
+            -H "x-cron-key: ${{ secrets.CRON_KEY }}" \
+            -H "Content-Type: application/json" \
+            --fail-with-body

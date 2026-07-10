@@ -105,7 +105,7 @@ const US_STATES = [
 
         <div class="flex items-center gap-4 pt-2">
           <button type="submit" class="btn">Suggest it</button>
-          <p class="font-display italic text-ink-soft text-sm hidden font-medium" data-status></p>
+          <p class="font-display italic text-ink-soft text-sm hidden font-medium" data-status aria-live="polite"></p>
         </div>
       </form>
     </div>
@@ -127,7 +127,7 @@ const US_STATES = [
           const data = (await res.json()) as { ok: boolean; error?: string };
           if (!res.ok || !data.ok) {
             status.textContent = data.error ? `Couldn't send: ${data.error}` : 'Something went wrong. Try again or email parentcoachplaybook@gmail.com.';
-            status.style.color = '#C5713D';
+            status.style.color = '#9E5228';
             return;
           }
           form.reset();
@@ -135,7 +135,7 @@ const US_STATES = [
           status.style.color = '#5C7459';
         } catch (err) {
           status.textContent = 'Network error. Try again.';
-          status.style.color = '#C5713D';
+          status.style.color = '#9E5228';
         }
       });
     }

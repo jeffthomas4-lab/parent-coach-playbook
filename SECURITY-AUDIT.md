@@ -1,8 +1,20 @@
 # Security Audit — parent-coach-desk (parentcoachdesk.com)
 
-Date: 2026-06-27 (re-confirmed; no changes since 2026-06-25 audit)
+Date: 2026-07-05 (re-check pass per the consultant-tightened Pillar 1; prior full confirm 2026-06-27, no changes since 2026-06-25 audit)
 Stack: Cloudflare Pages + Astro SSR (Cloudflare adapter), D1, R2.
 Data home: D1 `activity-radar` (database_id 8cc3694a-26f8-4a56-b131-d5d3a68c49ef, shared with ActivityRadar) holds organizations, programs, camp_claims, camp_reviews, submitters, search_events, geocoded_addresses, domain_quality. R2 `activityradar-photos` holds org logos and program photos. No KV.
+
+## Secrets inventory (added 2026-07-05, per the tightened Pillar 1)
+
+| Secret | Where it lives | Last rotated | Note |
+|--------|----------------|--------------|------|
+| `BULK_IMPORT_TOKEN` | Pages secret (`parent-coach-playbook`) | Unknown — needs Jeff to confirm the date it was set and rotate if past a year | Used by `scripts/import-camps-csv.mjs --auto-approve`. Compared with plain `===`, not constant-time (existing LOW finding below). |
+| `CRON_KEY` | Referenced in `src/pages/api/cron/camps-sweep.ts` as `env.CRON_KEY`, but not listed in `About Me/Deployments.md`'s secrets list for this project | Unconfirmed whether it has been set at all | Open item — see Pillar 8 note in `STANDARD-AUDIT.md`. If it was never set as a Pages secret, the cron route 403s on every call, which is a functional problem, not a security one (fails closed). |
+| `ADMIN_EMAILS` | Plaintext var in `wrangler.jsonc` (not a secret — this is an allowlist, not a credential) | N/A | Correctly a var, not a secret. No action needed. |
+
+**Gitleaks scan:** not run this session. A full-history scan (`gitleaks git .`) needs a working shell in this repo's git history, which was not available in this session. Flagged as an open item — run it and log the scan date here before this row can go back to a clean pass.
+
+## Findings from the 2026-07-05 re-check
 
 ## Critical / High findings
 None. This repo is in good shape. The admin surface is gated by Cloudflare Access + an email allowlist + a same-origin (CSRF) check, every D1 query is parameterized, and error responses are generic.
@@ -24,5 +36,11 @@ None. This repo is in good shape. The admin surface is gated by Cloudflare Acces
 10. Turnstile + CORS — PARTIAL. CORS: PASS — no route emits `Access-Control-Allow-Origin`, and admin/mutating POSTs enforce same-origin via `requireSameOrigin`. Turnstile: WAIVED — public forms rely on a honeypot today; adding a Turnstile widget needs site keys and is out of scope for this safe-fix pass. Recommend adding before launch.
 11. Generic errors to user — PASS. Client sees `{ ok:false, error:'forbidden' }`-style generic messages; SQL/stack stays in server logs.
 
-## Changes made this session
+## Changes made this session (2026-06-27)
 None. No code changes were needed in this repo.
+
+## Changes made this session (2026-07-05)
+- Added the secrets inventory table above (Pillar 1 was tightened 2026-07-05 to require one).
+- Found that `CRON_KEY` is referenced in code but was never documented as a configured secret. Not a vulnerability (the route fails closed), but it means the Pillar 8 business-metric alert and stale-camp sweep have likely never actually run on a schedule. See `STANDARD-AUDIT.md` Pillar 8 open items.
+- No gitleaks scan run this session (no shell access). Flagged as an open item, not marked pass.
+- No Critical or High findings. The 11-point gate below is unchanged from the 2026-06-27 pass.

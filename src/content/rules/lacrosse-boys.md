@@ -20,7 +20,7 @@ thingsParentsGetWrong:
   - "Boys lacrosse is a contact sport with full pads and helmet. It's not the same as girls' lacrosse, which is no-contact (mostly) and uses minimal equipment."
   - "The faceoff is a legitimate position with specialized players (FOGOs - face-off, get off). Faceoffs determine possession after every goal."
 governingBody:
-  name: "US Lacrosse (now USA Lacrosse)"
+  name: "USA Lacrosse"
   url: "https://www.usalacrosse.com/"
 ruleBookUrl: "https://www.usalacrosse.com/rules"
 publishedAt: 2026-04-26
@@ -50,4 +50,4 @@ A few specifics.
 
 **Concussion rules.** Same as football and other contact sports, same-day removal if a concussion is suspected, written clearance from a licensed health care provider before return-to-play. Helmet and mouthguard fit matters; the body hub on concussion applies.
 
-**Youth modifications.** US Lacrosse publishes age-appropriate rules at the U13 and below levels. Limited body checking, smaller fields, modified equipment requirements.
+**Youth modifications.** USA Lacrosse publishes age-appropriate rules at the U13 and below levels. Limited body checking, smaller fields, modified equipment requirements.

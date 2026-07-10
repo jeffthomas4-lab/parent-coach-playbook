@@ -37,7 +37,7 @@ SafeSport does not investigate every youth-sports complaint. Complaints about re
 
 **Three ways to report.**
 
-The SafeSport Helpline at 720-531-0340 takes calls 24 hours a day. The line is staffed by trained intake specialists.
+The SafeSport Helpline at 833-587-7233 takes calls 24 hours a day. The line is staffed by trained intake specialists.
 
 The online reporting form at uscenterforsafesport.org allows submissions any time. Reports can include attachments.
 
@@ -61,4 +61,4 @@ You do not need a complete picture to file. Intake specialists are used to parti
 
 The reporting system exists. It is imperfect. It still works far better than silence.
 
-If this content is reaching someone in personal distress, the SafeSport Helpline (720-531-0340) and the ChildHelp Hotline (1-800-422-4453) are both staffed around the clock.
+If this content is reaching someone in personal distress, the SafeSport Helpline (833-587-7233) and the ChildHelp Hotline (1-800-422-4453) are both staffed around the clock.

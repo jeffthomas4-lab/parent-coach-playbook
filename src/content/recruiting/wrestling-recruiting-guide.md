@@ -35,7 +35,7 @@ That is the currency in recruiting too. What your kid did at state and at the na
 
 ## What each level actually looks like
 
-**D1.** About 80 programs. 9.9 scholarships per team, equivalency, split across a roster of 30-plus. The famous full ride is rare and usually goes to a returning state champion or a national-level placer. Most recruited freshmen are on partial scholarships, and many talented kids are on none.
+**D1.** About 80 programs. The 9.9-scholarship equivalency cap was the rule through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a 30-player roster limit and scholarships fundable up to that full roster — roughly triple the old scholarship count, though full funding is being phased in gradually at most programs. The famous full ride is still rare in practice and usually goes to a returning state champion or a national-level placer. Most recruited freshmen are still on partial scholarships for now, though the ceiling has moved up.
 
 **D2.** About 60 programs. 9 scholarships, equivalency. Strong regional programs, smaller pieces of the same partial-scholarship math.
 

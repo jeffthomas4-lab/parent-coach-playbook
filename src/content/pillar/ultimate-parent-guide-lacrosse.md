@@ -85,7 +85,7 @@ Use the [cost calculator](/cost-calculator/) for a full seasonal budget.
 
 **Spring (February to May).** High school lacrosse season runs here for both boys and girls in most states. Youth rec leagues also run spring seasons in many markets.
 
-**Summer (May to August).** This is the primary club and recruiting visibility season. The major showcase events (Trilogy, Top Gun, National Club Lacrosse Association nationals, US Lacrosse events) happen in the summer. College coaches attend summer events specifically to evaluate prospects. This is the window that matters for recruiting.
+**Summer (May to August).** This is the primary club and recruiting visibility season. The major showcase events (Trilogy, Top Gun, National Club Lacrosse Association nationals, USA Lacrosse events) happen in the summer. College coaches attend summer events specifically to evaluate prospects. This is the window that matters for recruiting.
 
 **Fall.** Some club programs run fall preview tournaments or conditioning sessions. Not universal but common at the serious level.
 

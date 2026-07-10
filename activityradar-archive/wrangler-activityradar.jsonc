@@ -1,0 +1,42 @@
+{
+	// Wrangler config for ActivityRadar.
+	// Deploys as a Cloudflare PAGES site (matches the Parent Coach Desk stack).
+	// The Astro Cloudflare adapter writes static + SSR output to ./dist.
+	//
+	// SHARED DATABASE: ActivityRadar and parent-coach-playbook both bind the SAME
+	// D1 (`activity-radar`) by database_id. Neither site owns the data. A change to
+	// an org record shows on both front doors at once.
+	//
+	// First-time D1 setup (run once on the Windows dev machine):
+	//   npx wrangler d1 create activity-radar
+	// Paste the returned database_id below AND into parent-coach-playbook/wrangler.jsonc
+	// as a second d1_databases binding when /camps is re-pointed (phase 5).
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "activityradar",
+	"compatibility_date": "2026-04-30",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"pages_build_output_dir": "./dist",
+	// Shared activity database. Bind name `DB` matches the camps code convention.
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "activity-radar",
+			"database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef",
+			"migrations_dir": "migrations"
+		}
+	],
+	// R2 bucket for organization logos and program hero photos.
+	// Provision once: npx wrangler r2 bucket create activityradar-photos
+	"r2_buckets": [
+		{
+			"binding": "PHOTOS",
+			"bucket_name": "activityradar-photos"
+		}
+	],
+	"vars": {
+		"SITE_URL": "https://activityradar.com",
+		"ADMIN_EMAILS": "jeffthomas@pugetsound.edu"
+	}
+}

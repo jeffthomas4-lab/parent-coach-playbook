@@ -90,7 +90,7 @@ const statusColor: Record<string, string> = {
   'claude-reviewed':  '#D4AB6A',
   'jeff-approved':    '#5C7459',
   'published':        '#5C7459',
-  'needs-revision':   '#C5713D',
+  'needs-revision':   '#9E5228',
 };
 ---
 <BaseLayout title="Editorial dashboard" description="Per-piece editorial state across the site.">
@@ -145,16 +145,16 @@ const statusColor: Record<string, string> = {
       <table class="w-full text-sm" data-editorial-table>
         <thead>
           <tr class="border-b border-bone">
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Title</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Section</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Q</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">O</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">V</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Flags</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Claude</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Jeff</th>
-            <th class="text-left py-2 pr-3 font-display italic text-rust font-medium">Action</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Title</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Section</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Status</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Q</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">O</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">V</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Flags</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Claude</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Jeff</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Action</th>
           </tr>
         </thead>
         <tbody>

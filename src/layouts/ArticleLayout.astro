@@ -206,8 +206,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
       <article class="lg:col-span-8">
         <header>
           <h1
-            class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
-            class="font-medium"
+            class={`font-display text-ink leading-[1.05] font-medium ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
             set:html={titleHtml}
           />
           {data.dek && !isShort && (
@@ -309,4 +308,5 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
     </div>
   </div>
 
-  <RelatedArticles articles={related}
+  <RelatedArticles articles={related} pillarLabel={pillar.label} />
+</BaseLayout>

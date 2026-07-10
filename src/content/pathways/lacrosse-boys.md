@@ -5,7 +5,7 @@ summary: "What good looks like at every age in boys lacrosse. The stick skills f
 publishedAt: 2026-04-12
 ltadStage: "Through 11, the job is stick skills, ground balls, basic team concepts, and whether the kid still loves it. Contact ramps progressively from 11 to 14. Club becomes a real conversation at 12-13. The recruiting calendar lives in summer. The kid with the best stick skills at 13 is usually the kid who plays in college. Highlight athleticism without stick skills doesn't transfer."
 notYet:
-  - "Full-contact lacrosse before age 11. US Lacrosse rules limit contact at younger ages for a reason."
+  - "Full-contact lacrosse before age 11. USA Lacrosse rules limit contact at younger ages for a reason."
   - "Year-round single-sport lacrosse before 14. Cross-training (basketball, hockey, football) is common and beneficial."
   - "Heavy lifting before puberty. Bodyweight work is plenty."
   - "Specialization to one position before 12. Most kids should play attack and defense at this age."
@@ -33,7 +33,7 @@ bands:
     decisionPoints:
       - "Rec only at this age"
       - "Equipment: stick, mouthguard, gloves are common but not always required at U8"
-      - "Coaching: parent volunteer with US Lacrosse online certification is fine"
+      - "Coaching: parent volunteer with USA Lacrosse online certification is fine"
   - age: "8-10"
     skillMilestones:
       - "Cradles while moving"
@@ -43,7 +43,7 @@ bands:
     practiceShape:
       - "60-75 minute practice, 1-2x per week"
       - "10U typically uses small-sided format (7v7 or 8v8)"
-      - "Limited body contact per US Lacrosse rules"
+      - "Limited body contact per USA Lacrosse rules"
       - "Position rotation is appropriate"
     socialEmotional:
       - "Kids start identifying as 'good at lacrosse' or not"
@@ -118,7 +118,7 @@ bands:
 
 Boys lacrosse has the strongest East Coast geography in American youth sports. The recruiting density is highest in Maryland, Long Island, New Jersey, Massachusetts, and increasingly the rest of the Northeast and Mid-Atlantic. Outside that geography, pathways exist but require more effort to find good club programs.
 
-The contact ramp is the part US Lacrosse has worked hardest on. Body checking is introduced gradually based on age and certified coach training. Concussion concerns are real in lacrosse, and the protocols around heads-up checking, stick checks, and proper helmet fit matter. Read the body hub on concussion before the first contact season.
+The contact ramp is the part USA Lacrosse has worked hardest on. Body checking is introduced gradually based on age and certified coach training. Concussion concerns are real in lacrosse, and the protocols around heads-up checking, stick checks, and proper helmet fit matter. Read the body hub on concussion before the first contact season.
 
 Wall ball is the development hack of youth lacrosse. Fifteen to thirty minutes a day of wall ball at home compounds dramatically. Stick skills are the most predictive variable for long-term success and they get built through volume of touches. The kid who does wall ball daily from 11 to 14 will pass kids with raw athleticism but no stick work.
 

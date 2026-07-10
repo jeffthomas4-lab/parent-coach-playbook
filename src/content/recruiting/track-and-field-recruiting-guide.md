@@ -49,7 +49,7 @@ That is good news for families. Some event groups are perpetually thin. Coaches 
 
 Track scholarships are shared across indoor, outdoor, and cross country, and split among every event group.
 
-**D1.** About 300 programs. Men share 12.6 scholarships, women 18, both equivalency across a large roster. Most recruited athletes are on partials, and walk-ons who hit marks earn money later.
+**D1.** About 300 programs. The old model — men sharing 12.6 scholarships, women 18, both equivalency across a large roster — was the rule through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools with a shared roster limit of 45 athletes per team (men's and women's each), scholarships fundable up to that full roster across indoor, outdoor, and cross country combined. Most recruited athletes are still on partials in practice, and walk-ons who hit marks can still earn funding later.
 
 **D2.** Around 250 programs. Smaller pools, same shared math, often stacked with academic aid.
 

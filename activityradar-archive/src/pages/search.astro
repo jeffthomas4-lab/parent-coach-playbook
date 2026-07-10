@@ -1,0 +1,344 @@
+---
+// D3 + N1: Search results page.
+// Reads query params, resolves location to lat/lng via zip_centroids,
+// calls searchOrganizations, calls logSearchEvent (N1).
+export const prerender = false;
+import Base from '../layouts/Base.astro';
+import { searchOrganizations, logSearchEvent } from '../lib/db';
+import type { Organization } from '../lib/db';
+
+const db = (Astro.locals as any).runtime.env.DB as D1Database;
+
+// --- Parse query params ---
+const sp  = Astro.url.searchParams;
+const q          = sp.get('q')?.trim() ?? '';
+const locationStr= sp.get('location')?.trim() ?? '';
+const age        = sp.get('age')  ? parseInt(sp.get('age')!)  : undefined;
+const category   = sp.get('category') ?? undefined;
+const radiusMiles= sp.get('radius') ? parseFloat(sp.get('radius')!) : 25;
+const minPrice   = sp.get('price_min') ? parseFloat(sp.get('price_min')!) : undefined;
+const maxPrice   = sp.get('price_max') ? parseFloat(sp.get('price_max')!) : undefined;
+const availableNow = sp.get('available') === '1';
+// event_id passed from a previous search page load (for N2 click tracking)
+const existingEventId = sp.get('eid') ?? null;
+
+// --- Resolve location to lat/lng ---
+let lat: number | undefined;
+let lng: number | undefined;
+let resolvedCity: string | undefined;
+let resolvedState: string | undefined;
+
+if (locationStr) {
+  // Try ZIP first (5 digits)
+  const isZip = /^\d{5}$/.test(locationStr);
+  if (isZip) {
+    const row = await db
+      .prepare('SELECT latitude, longitude, city, state FROM zip_centroids WHERE zip = ? LIMIT 1')
+      .bind(locationStr)
+      .first<{ latitude: number; longitude: number; city: string; state: string }>();
+    if (row) { lat = row.latitude; lng = row.longitude; resolvedCity = row.city; resolvedState = row.state; }
+  } else {
+    // Try "City, ST" or "City ST" or just "City"
+    const parts = locationStr.split(/,\s*|\s{2,}/);
+    const city  = parts[0]?.trim();
+    const state = parts[1]?.trim() ?? 'WA'; // default to WA (Puget Sound)
+    const row = await db
+      .prepare('SELECT latitude, longitude, city, state FROM zip_centroids WHERE LOWER(city) = LOWER(?) AND LOWER(state) = LOWER(?) ORDER BY zip LIMIT 1')
+      .bind(city, state)
+      .first<{ latitude: number; longitude: number; city: string; state: string }>();
+    if (row) { lat = row.latitude; lng = row.longitude; resolvedCity = row.city; resolvedState = row.state; }
+    else {
+      // Try city-only within WA as a final fallback (avoid cross-country matches).
+      const row2 = await db
+        .prepare("SELECT latitude, longitude, city, state FROM zip_centroids WHERE LOWER(city) = LOWER(?) AND LOWER(state) = 'wa' ORDER BY zip LIMIT 1")
+        .bind(city)
+        .first<{ latitude: number; longitude: number; city: string; state: string }>();
+      if (row2) { lat = row2.latitude; lng = row2.longitude; resolvedCity = row2.city; resolvedState = row2.state; }
+    }
+  }
+}
+
+// --- Query organizations ---
+const CATEGORIES: Record<string, string> = {
+  soccer: 'Soccer', basketball: 'Basketball', swimming: 'Swimming',
+  gymnastics: 'Gymnastics', martial_arts: 'Martial Arts',
+  baseball_softball: 'Baseball / Softball', volleyball: 'Volleyball',
+  football: 'Football', tennis: 'Tennis', track_field: 'Track & Field',
+  dance: 'Dance', arts_crafts: 'Arts & Crafts', music: 'Music',
+  theater: 'Theater', coding_stem: 'Coding & STEM',
+  camp_general: 'General Camp', camp_sports: 'Sports Camp',
+  camp_stem: 'STEM Camp', camp_arts: 'Arts Camp',
+  sports: 'Sports', arts: 'Arts', stem: 'STEM', camp: 'Camps', other: 'Other',
+};
+
+let orgs: Organization[] = [];
+let searchError = false;
+let eventId = '';
+
+try {
+  orgs = await searchOrganizations(db, {
+    q: q || undefined,
+    lat,
+    lng,
+    radiusMiles: lat != null ? radiusMiles : undefined,
+    age,
+    category,
+    minPrice,
+    maxPrice,
+    availableNow: availableNow || undefined,
+    limit: 50,
+    offset: 0,
+  });
+
+  // N1 — log every search; capture returned UUID for N2 click tracking
+  eventId = await logSearchEvent(db, {
+    query: q || null,
+    location_searched: locationStr || null,
+    latitude: lat ?? null,
+    longitude: lng ?? null,
+    radius_miles: radiusMiles,
+    age_searched: age ?? null,
+    categories_searched: category ? [category] : null,
+    price_min: minPrice ?? null,
+    price_max: maxPrice ?? null,
+    available_now: availableNow ? 1 : null,
+    result_count: orgs.length,
+    source: 'activityradar',
+  });
+} catch (err) {
+  console.error('search error', err);
+  searchError = true;
+}
+
+// Title
+const categoryLabel = category ? (CATEGORIES[category] ?? category) : null;
+const locationLabel = resolvedCity ? `${resolvedCity}${resolvedState ? ', ' + resolvedState : ''}` : locationStr;
+const pageTitle = [
+  q || categoryLabel || 'Youth Activities',
+  locationLabel || 'Puget Sound',
+].filter(Boolean).join(' near ') + ' — ActivityRadar';
+---
+
+<Base title={pageTitle} description={`Find ${q || 'youth activities'} near ${locationLabel || 'you'}.`}>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Search bar (compact re-search) -->
+    <form action="/search" method="get" class="flex flex-wrap gap-2 mb-8 pb-6 border-b border-bone">
+      <input type="hidden" name="eid" value={eventId} />
+      <label class="sr-only" for="top-q">Activity or organization</label>
+      <input
+        id="top-q"
+        name="q"
+        type="search"
+        value={q}
+        placeholder="Activity or organization"
+        class="flex-1 min-w-[180px] px-4 h-12 border border-bone text-sm bg-white focus:outline-none focus:ring-2 focus:ring-rust"
+      />
+      <label class="sr-only" for="top-location">City or ZIP code</label>
+      <input
+        id="top-location"
+        name="location"
+        type="text"
+        value={locationStr}
+        placeholder="City or ZIP"
+        class="w-40 px-4 h-12 border border-bone text-sm bg-white focus:outline-none focus:ring-2 focus:ring-rust"
+      />
+      <button type="submit" class="btn-primary h-12 px-6 min-h-[48px]">Search</button>
+    </form>
+
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Filter sidebar -->
+      <aside class="md:w-56 shrink-0">
+        <p class="label mb-4">Filters</p>
+        <form action="/search" method="get" class="flex flex-col gap-5">
+          <input type="hidden" name="q" value={q} />
+          <input type="hidden" name="location" value={locationStr} />
+
+          <div>
+            <label class="label block mb-2" for="f-category">Category</label>
+            <select
+              id="f-category"
+              name="category"
+              class="w-full px-3 h-12 border border-bone text-sm bg-white focus:outline-none"
+            >
+              <option value="">All activities</option>
+              {Object.entries(CATEGORIES).map(([slug, label]) => (
+                <option value={slug} selected={category === slug}>{label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label class="label block mb-2" for="f-age">Child's age</label>
+            <input
+              id="f-age"
+              name="age"
+              type="number"
+              min="2"
+              max="18"
+              value={age}
+              placeholder="Any age"
+              class="w-full px-3 h-12 border border-bone text-sm bg-white focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="label block mb-2" for="f-radius">Distance</label>
+            <select
+              id="f-radius"
+              name="radius"
+              class="w-full px-3 h-12 border border-bone text-sm bg-white focus:outline-none"
+            >
+              {[5, 10, 25, 50].map((r) => (
+                <option value={r} selected={radiusMiles === r}>{r} miles</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <p class="label mb-2" id="price-label">Price</p>
+            <div class="flex gap-2" role="group" aria-labelledby="price-label">
+              <input
+                name="price_min"
+                type="number"
+                min="0"
+                value={minPrice}
+                placeholder="Min $"
+                aria-label="Minimum price"
+                class="w-full px-3 h-11 border border-bone text-sm bg-white focus:outline-none"
+              />
+              <input
+                name="price_max"
+                type="number"
+                min="0"
+                value={maxPrice}
+                placeholder="Max $"
+                aria-label="Maximum price"
+                class="w-full px-3 h-11 border border-bone text-sm bg-white focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <input
+              id="f-available"
+              name="available"
+              type="checkbox"
+              value="1"
+              checked={availableNow}
+              class="w-5 h-5 border border-bone"
+            />
+            <label for="f-available" class="text-sm">Open now</label>
+          </div>
+
+          <button type="submit" class="btn-secondary w-full h-12 min-h-[48px]">Apply</button>
+        </form>
+      </aside>
+
+      <!-- Results -->
+      <section class="flex-1 min-w-0">
+        {searchError ? (
+          <div class="card">
+            <p class="text-destructive font-semibold mb-1">Search failed</p>
+            <p class="text-sm text-navy/70">Something went wrong. Try again in a moment.</p>
+          </div>
+        ) : (
+          <>
+            <!-- Result count header -->
+            <div class="flex items-baseline justify-between mb-5">
+              <h1 class="text-lg font-semibold text-navy">
+                {orgs.length} organization{orgs.length !== 1 ? 's' : ''}
+                {categoryLabel ? ` · ${categoryLabel}` : ''}
+                {locationLabel ? ` near ${locationLabel}` : ''}
+              </h1>
+              {orgs.length > 0 && lat != null && (
+                <span class="text-xs text-navy/70 mono">within {radiusMiles} mi</span>
+              )}
+            </div>
+
+            {/* Empty state */}
+            {orgs.length === 0 && (
+              <div class="card py-10 text-center">
+                <p class="font-semibold text-navy mb-2">No results</p>
+                <p class="text-sm text-navy/70 mb-5">
+                  {locationStr && !lat
+                    ? `We could not find "${locationStr}". Try a ZIP code or a nearby city.`
+                    : lat != null
+                      ? `Our data is sparse near ${locationLabel} right now. Try a larger radius, a different activity, or remove some filters.`
+                      : 'Try a different activity or remove some filters.'}
+                </p>
+                {lat != null && (
+                  <p class="text-xs text-navy/70 mb-5">
+                    Know an organization that should be here?{' '}
+                    <a href="/suggest" class="text-rust hover:underline">Suggest it</a>.
+                  </p>
+                )}
+                <a href="/search" class="btn-secondary text-sm px-5 py-2 min-h-0">Clear filters</a>
+              </div>
+            )}
+
+            {/* Org cards */}
+            <ul class="flex flex-col gap-3" id="results-list" data-event-id={eventId}>
+              {orgs.map((org) => (
+                <li>
+                  <a
+                    href={`/org/${org.slug}`}
+                    class="card block hover:border-navy transition-colors no-underline org-result"
+                    data-org-id={org.id}
+                  >
+                    <div class="flex items-start justify-between gap-4">
+                      <div class="min-w-0 flex-1">
+                        <p class="font-semibold text-navy text-base leading-snug mb-1">{org.name}</p>
+                        {(org.city || org.state) && (
+                          <p class="text-sm text-navy/70 mb-2">
+                            {[org.address, org.city, org.state].filter(Boolean).join(', ')}
+                          </p>
+                        )}
+                        {org.description && (
+                          <p class="text-sm text-navy/70 line-clamp-2">{org.description}</p>
+                        )}
+                        <div class="flex flex-wrap gap-1 mt-3">
+                          {org.categories.slice(0, 3).map((c) => (
+                            <span class="tag">{CATEGORIES[c] ?? c}</span>
+                          ))}
+                          {org.program_types.slice(0, 2).map((pt) => (
+                            <span class="tag bg-rust/10 text-rust">{pt}</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div class="shrink-0 text-right">
+                        {org.distance_miles != null && (
+                          <p class="mono text-navy/70 text-xs mb-1">{org.distance_miles.toFixed(1)} mi</p>
+                        )}
+                        {org.age_min != null && org.age_max != null && (
+                          <p class="text-xs text-navy/70">Ages {org.age_min}–{org.age_max}</p>
+                        )}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // N2: Log org click-through into the search event.
+  const list = document.getElementById('results-list');
+  const eventId = list?.getAttribute('data-event-id');
+
+  list?.querySelectorAll('.org-result').forEach((el) => {
+    el.addEventListener('click', () => {
+      const orgId = el.getAttribute('data-org-id');
+      if (!orgId || !eventId) return;
+      // Fire-and-forget: we don't block navigation
+      navigator.sendBeacon(
+        '/api/log-click',
+        JSON.stringify({ event_id: eventId, org_id: orgId }),
+      );
+    });
+  });
+</script>

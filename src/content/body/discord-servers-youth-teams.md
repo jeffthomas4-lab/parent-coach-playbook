@@ -188,4 +188,4 @@ Reporting channels for concerns.
 
 For families with kids in Discord-based team servers, the configuration questions are worth asking the coach. For coaches considering Discord, the setup time is worth the result.
 
-If something on a team Discord server raises concern, the SafeSport reporting line (720-531-0340) and Discord's own reporting tools both exist.
+If something on a team Discord server raises concern, the SafeSport reporting line (833-587-7233) and Discord's own reporting tools both exist.

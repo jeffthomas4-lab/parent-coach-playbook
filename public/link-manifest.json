@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-05T23:35:41.980Z",
-  "count": 437,
+  "generatedAt": "2026-07-10T16:40:20.233Z",
+  "count": 675,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -109,6 +109,193 @@
       ]
     },
     {
+      "url": "https://amzn.to/3OE8ob3",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-bat-teeball)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/3OUH9Ji",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-glove-9in-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/3QNrCeO",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-cup-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/3R3rmIG",
+      "sources": [
+        "src/data/affiliates.json (slug: football-leather-college)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/3Rg9Gtn",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-pants-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/42MLWj7",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-ball)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/48Cigc0",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-catchers-bag)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4cVoDbx",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-helmet-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4d0Bw47",
+      "sources": [
+        "src/data/affiliates.json (slug: agility-cones)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4d1wJzo",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-balls-teeball)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4d2y5Kj",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-trainer)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4d43PyS",
+      "sources": [
+        "src/data/affiliates.json (slug: football-rubber-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4d6rTBd",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-puck)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4dgicRP",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-catchers-gear-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4eiz9fr",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-bases-rubber)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4eSZeBW",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-glove-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4eYBhZX",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-catchers-mitt-32in)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4f1x87E",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-glove-11in)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4n67PTW",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-stick-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4n9wS8w",
+      "sources": [
+        "src/data/affiliates.json (slug: agility-training-pole)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4na1MxB",
+      "sources": [
+        "src/data/affiliates.json (slug: football-qb-wristbands)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4t3YfCl",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-blitzball-set)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4tb7Fw8",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-glove-laces)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4tpBWaI",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-rebound-net)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4u5CHqB",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-belt-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4ugLk14",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-batting-gloves-youth)",
+        "src/data/affiliates.json (slug: batting-gloves-pair)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4unojJK",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-arm-sleeve)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4uup8R7",
+      "sources": [
+        "src/data/affiliates.json (slug: football-leather-youth)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4uymTfL",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-throwback-net)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4wazlny",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-glove-breakin-kit)"
+      ]
+    },
+    {
+      "url": "https://amzn.to/4wb7ELi",
+      "sources": [
+        "src/data/affiliates.json (slug: football-qb-throwing-net)"
+      ]
+    },
+    {
       "url": "https://appliedsportpsych.org",
       "sources": [
         "src/pages/resources/national-organizations.astro"
@@ -145,6 +332,84 @@
       "url": "https://bjsm.bmj.com/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780071395977",
+      "sources": [
+        "src/data/affiliates.json (slug: book-mind-gym)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780345472328",
+      "sources": [
+        "src/data/affiliates.json (slug: book-mindset)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780345530257",
+      "sources": [
+        "src/data/affiliates.json (slug: book-little-book-of-talent)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780544947221",
+      "sources": [
+        "src/data/affiliates.json (slug: book-peak)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780553385335",
+      "sources": [
+        "src/data/affiliates.json (slug: book-talent-code)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780618474608",
+      "sources": [
+        "src/data/affiliates.json (slug: book-whose-game-is-it-anyway)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780679778318",
+      "sources": [
+        "src/data/affiliates.json (slug: book-inner-game-of-tennis)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780735214507",
+      "sources": [
+        "src/data/affiliates.json (slug: book-range)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780762786657",
+      "sources": [
+        "src/data/affiliates.json (slug: book-beyond-winning)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9780982131701",
+      "sources": [
+        "src/data/affiliates.json (slug: book-positive-coaching)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9781501111105",
+      "sources": [
+        "src/data/affiliates.json (slug: book-grit)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9781614486466",
+      "sources": [
+        "src/data/affiliates.json (slug: book-changing-the-game)"
+      ]
+    },
+    {
+      "url": "https://bookshop.org/a/125074/9781623365622",
+      "sources": [
+        "src/data/affiliates.json (slug: book-champions-mind)"
       ]
     },
     {
@@ -608,6 +873,12 @@
       ]
     },
     {
+      "url": "https://squareup.com/us/en/hardware/readers",
+      "sources": [
+        "src/data/affiliates.json (slug: square-card-reader)"
+      ]
+    },
+    {
       "url": "https://teammanager.zendesk.com/hc/en-us",
       "sources": [
         "src/content/resources/setting-up-gamechanger.md"
@@ -1046,6 +1317,1145 @@
         "src/content/body/weight-loss-aids-wrestlers-dancers.md",
         "src/content/body/youth-cross-country-safety-briefing.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0000E2E9U?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-ankle-brace)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0002FONKQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: band-reeds-clarinet)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0009EXM3E?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: bug-spray-travel)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B000L2DSLK?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-ball-size5)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B000PGHAZW?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-volley-lite)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B000RVYN46?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: band-valve-oil)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00114T938?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-knee-pads-lr6)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00164IIUI?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: antibiotic-ointment-travel)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00181B9TQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-cup-shorts-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B001C3O8O8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-ball-size3)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B001L3URAS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-ball-size4)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B001LJ4IQO?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-knee-pad)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B002CJ62N6?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: kinesio-tape-precut)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B002CQTYK2?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ballet-slippers-canvas-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B002CQTZAG?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: dance-jazz-shoes-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B002G9UFPS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: dance-character-shoes-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0033990ZQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: stadium-chair-midrange)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00345EAE0?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-face-mask)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0039NNBWE?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: dance-tap-shoes-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B003BSRB3U?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-headgear)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B003L23NJ4?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: coach-clipboard-dry-erase)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B004DGO3WS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: antihistamine-child)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B004MJ0Y2Y?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: scrimmage-pennies)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00559AVBO?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: tennis-balls-orange)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0058SXKV0?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: sunscreen-travel)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B005AKKSE8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: cheer-hair-gel)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0063NDCGW?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-flistatec)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B006IXH79A?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-shin-guards-ankle-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B007UGK5S4?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ace-wrap)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B008IH1AWE?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: protein-powder-vanilla)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B009NCWNQ0?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lip-balm-spf)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00AVQ0J2C?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: scissors-blunt-tip)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00BXJXO8I?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: speed-ladder-agility)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00C4239TG?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: stage-makeup-kit)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00CPRI2BA?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-girdle-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00DOZTM3O?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: folding-table-6ft)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00EC6DE7Y?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: saline-rinse)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00I15JOX0?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: athletic-tape-roll)",
+        "src/data/affiliates.json (slug: multi-sport-athletic-tape)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00I1BDKPC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-mouthguard)",
+        "src/data/affiliates.json (slug: mouthguard-boil-bite)",
+        "src/data/affiliates.json (slug: multi-sport-mouthguard-youth)",
+        "src/data/affiliates.json (slug: rugby-mouthguard)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00K5K0W9O?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-ball-youth-light)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00KM2MT28?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ballet-tights-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00L1DCFQ2?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: band-marching-shoes)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00P9OJF9E?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-knee-pads-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00S1BHHWY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-arm-pads-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00UZT3FYO?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: dance-leg-warmers)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00XM2MRGI?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: foam-roller-standard)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00Y1XJYJY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: coach-stopwatch)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B011PM4IRC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: swim-goggles-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B012SAJYEM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: bug-bite-stick)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01AKBCL3W?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gauze-pads)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01AVDVHTI?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: resistance-bands-set)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01BKIQJAY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: agility-cones-set)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B01IT9NLHW?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: electrolyte-powder)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B06XWCDBTN?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: battery-fan-handheld)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0711RWGTX?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-bat-backpack)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B071P2MQ5D?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: foam-roller-medium)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B072M25LW9?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hand-warmers)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B073Q8JHB6?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-gloves-receiver-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B073WD7G4Q?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: saline-wipes)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B074RFJHB4?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: tennis-net)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B074TTKL6Q?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: electrolyte-tablets)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B075F38MDY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: cheer-poms)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B075PCS6RH?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-starter-kit-youth)",
+        "src/data/affiliates.json (slug: lacrosse-stick-boys-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B076VN216X?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-balls-wiffle)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07837W5NX?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: phone-tripod)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07BFKRX3Y?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: jump-rope-speed)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07C2GYJ1V?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: portable-pa-speaker)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07DWRX8HT?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: golf-starter-set-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07GJYMTCT?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-batting-gloves-adult)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07HTD6166?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: flag-football-belt-set)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07MW25GBC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-shoulder-pads-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07Q5V12XY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: xc-running-gloves)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07QYJB3GS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: portable-whiteboard)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07R7D49LX?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: cash-box-lockable)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07YD4FCNM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soft-cooler-25qt)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07YNSRY9Y?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-goggles-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07YRJPQVB?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ball-pump-with-gauge)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07ZDJB1TY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-stick-girls-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B081Z2L6SW?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-rashguard)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0841WMXDC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: xc-base-layer-set-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B084BPQR1S?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: stadium-chair-premium)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B084ZSSFZV?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-mouthguard-sisu)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B085HG2QXD?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gymnastics-leotard-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B085N94F3Z?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: cheer-bow-jumbo)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B085QBWV42?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: pop-up-tent-sunscreen)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B086BLVQGJ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: stadium-chair-budget)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B086CCM86Z?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: multi-sport-socks-crew)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08B4HLQDH?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: rebounder-net-baseball)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08F7ZY72S?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-sliding-mitt)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08HSJ6DNL?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-pitching-jacket)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08TQQ9RTS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: multi-sport-water-bottle)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08TYGMCJ8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hard-cooler-55qt)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B08ZKR5PDJ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-helmet-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B093LSTLVK?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: multi-sport-duffle-bag)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B095RJ5FR8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: tennis-racquet-junior)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09923V7NF?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: sideline-blanket)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09B32CSJ5?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: adhesive-bandages)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09BZZDC3D?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: pickleball-balls-outdoor)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09J95YPXF?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: tweezers-small)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09KWMQ9TH?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-helmet-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09LLW2Q4R?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: rain-poncho)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09PNTXRJB?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: butterfly-bandages)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09Q3P2ZJN?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: first-aid-fanny-pack)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09QNB6JNQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-helmet-boys-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09QXYND6S?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: label-maker-handheld)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09RS69HXC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: martial-arts-gi-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09S3452MM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: band-practice-pad)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09VMPDNZC?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ankle-brace-reusable)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B09YCG73QQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-socks-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0B1CNJL7N?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: frame-8x10)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0BNN4XHMD?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: packing-cubes)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0BQ6868M8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: multi-sport-sunglasses-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0BQY57Y39?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: travel-sport-wash)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0BXKX4Z9D?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: athletic-socks-multipack)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0BZHPFN9D?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: cheer-shoes-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0C2GTB7PB?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-shin-guards-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0C62ZYRF3?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-neck-roll)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0C7HGFSHB?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-sliding-shorts)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CB6P2S1G?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-skates-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CDDPHGGB?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-bat-hs)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CJ2FNCTQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gear-bag-small)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CK2T5XHM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-gloves-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CKR7B9T9?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: travel-power-strip)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CLB9NNC3?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-cleats-metal)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CLG8K7QH?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: seat-cushion)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CLSHQW2F?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: pickleball-paddle-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CNKVRYM7?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-shoes-upcourt)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CPLCVK6N?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-cones-12pk)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CQTM2SBD?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-pads-starter)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0CYTHP5JD?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: multi-sport-shoe-bag)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D15MGY17?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-spandex-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D2JHFYDH?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-cleats-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D6Q83G6C?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-bat-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D6QPSW3X?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-bat-28in)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D7C8JGPM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: shadow-box-jersey)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D86XF8LM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: basketball-ball-forge)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D86XNSCQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: basketball-ball-authentic)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0D9KXBFLJ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-bat-intermediate)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DFWMZJRS?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: lacrosse-shoulder-pads-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DHRCRTY5?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: basketball-ball-rubber)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DJWNR6Q3?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: xc-spikes-kilkenny)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DPLQNWQQ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-shoes-gel-rocket)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DPRB36SK?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-ball-size5-match)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DRC1HJN8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: multi-sport-cleats-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DRCMB3W8?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-net)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DWPBKQ68?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: water-bottle-32oz)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0DZHJRYJ1?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: dance-bun-kit)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0F14NVK54?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: basketball-shoes-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0F342XBG5?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: football-cleats-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0F95BWNXX?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: softball-bat-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FFGLHHDM?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: folding-wagon)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FJB61RH1?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: baseball-bat-bbcor)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FP5R9BDZ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: action-camera)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FR5BXLQ7?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: volleyball-backpack)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0FSMY5J8B?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: xc-trainers-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GC3TTFQN?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gymnastics-slippers-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GKGD9FLY?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: golf-glove-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GY7T8L41?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: instant-cold-pack)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B0GZ2BDKPJ?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: compression-socks)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=1+inch+binder+3+ring&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: script-binder-1inch)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=ace+elastic+bandage+3+inch+hook+closure&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ace-bandage-3inch-set)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=amazon+basics+high+density+foam+roller+24+inch&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: foam-roller-basics-24)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=arctic+flex+reusable+gel+ice+pack&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: ice-pack-arctic-flex-gel)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=black+performance+music+folder+band&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: music-folder-performance)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=coach+backpack+athletic+equipment&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: coach-backpack)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=fit+simplify+resistance+loop+bands+set+of+5&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: resistance-bands-loop-fit-simplify)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=foldable+portable+music+stand+home+practice&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: music-stand-foldable)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=gymnastics+bar+grips+youth&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gymnastics-grips-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=lectrofan+classic+white+noise+machine&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: white-noise-lectrofan-classic)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=martial+arts+sparring+gear+set+youth+helmet+chest+gloves&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: martial-arts-sparring-gear-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=nicetown+blackout+curtains&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: blackout-curtains-nicetown)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=penn+championship+tennis+balls&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: tennis-balls-standard)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=pickleball+bag&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: pickleball-bag)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=pickleball+court+shoes&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: pickleball-shoes)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=renpho+r3+massage+gun&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: percussion-massager-renpho-r3)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=silicone+swim+cap+youth+unisex&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: swim-cap-silicone-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=theraband+resistance+band+light+medium+roll&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: theraband-flat-band-light-medium)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=theragun+relief+massage+gun&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: theragun-relief)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=triggerpoint+grid+foam+roller+13+inch&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: foam-roller-triggerpoint-13)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=wrestling+gear+bag&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-bag)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+black+athletic+shorts+unisex&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: athletic-shorts-black-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+competitive+training+swimsuit+one+piece&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: swimsuit-training-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+rugby+cleats&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: rugby-cleats)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+rugby+scrum+cap&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: rugby-scrum-cap)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+rugby+shoulder+pads&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: rugby-shoulder-pads)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+tennis+court+shoes&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: tennis-shoes-court-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+theater+audition+monologue+book&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: theater-monologue-book)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+wrestling+shoes&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-shoes-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/s?k=youth+wrestling+singlet&tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-singlet-youth)"
       ]
     },
     {
@@ -1855,6 +3265,12 @@
       ]
     },
     {
+      "url": "https://www.ncaa.org/news/2026/6/23/media-center-division-i-adopts-age-based-eligibility-model.aspx",
+      "sources": [
+        "src/content/news/ncaa-five-year-eligibility-rule-2026.md"
+      ]
+    },
+    {
       "url": "https://www.ncaa.org/recruiting",
       "sources": [
         "src/content/body/recruiting-dms.md"
@@ -2297,6 +3713,12 @@
       ]
     },
     {
+      "url": "https://www.shutterfly.com/photo-books/",
+      "sources": [
+        "src/data/affiliates.json (slug: photo-book-service)"
+      ]
+    },
+    {
       "url": "https://www.skincancer.org/",
       "sources": [
         "src/content/body/sun-and-skin.md",
@@ -2467,6 +3889,30 @@
       "url": "https://www.tiktok.com/safety/en-us/",
       "sources": [
         "src/content/body/tiktok-privacy-settings.md"
+      ]
+    },
+    {
+      "url": "https://www.tkqlhce.com/click-101798499-10479697?sid=gear-soccer-garage-shop",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-garage-shop)"
+      ]
+    },
+    {
+      "url": "https://www.tkqlhce.com/click-101798499-10479717?sid=gear-soccer-clearance",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-clearance-cleats)"
+      ]
+    },
+    {
+      "url": "https://www.tkqlhce.com/click-101798499-11017728?sid=gear-soccer-goalie-gloves",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-goalie-gloves-youth)"
+      ]
+    },
+    {
+      "url": "https://www.tkqlhce.com/click-101798499-11017845?sid=gear-soccer-coupon10",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-coupon-10-off-100)"
       ]
     },
     {
@@ -2689,6 +4135,7 @@
         "src/content/recruiting/lacrosse.md",
         "src/content/rules/lacrosse-boys.md",
         "src/content/rules/lacrosse-girls.md",
+        "src/content/rules/lacrosse.md",
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
       ]
@@ -2697,7 +4144,8 @@
       "url": "https://www.usalacrosse.com/rules",
       "sources": [
         "src/content/rules/lacrosse-boys.md",
-        "src/content/rules/lacrosse-girls.md"
+        "src/content/rules/lacrosse-girls.md",
+        "src/content/rules/lacrosse.md"
       ]
     },
     {
@@ -2942,18 +4390,6 @@
         "src/content/guides/golf.md",
         "src/content/rules/golf.md",
         "src/pages/governing-bodies.astro"
-      ]
-    },
-    {
-      "url": "https://www.uslacrosse.org",
-      "sources": [
-        "src/content/rules/lacrosse.md"
-      ]
-    },
-    {
-      "url": "https://www.uslacrosse.org/rules",
-      "sources": [
-        "src/content/rules/lacrosse.md"
       ]
     },
     {

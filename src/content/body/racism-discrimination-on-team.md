@@ -72,7 +72,7 @@ Step two: program director or AD. If the head coach minimizes, deflects, or fail
 
 Step three: depends on the program type.
 
-For NGB-affiliated programs: SafeSport investigates emotional misconduct including racial harassment. Reporting line 720-531-0340 or uscenterforsafesport.org. The CDD database (Centralized Disciplinary Database) lists individuals with current sanctions; checking it before signing up for clinics or camps is a reasonable safety move.
+For NGB-affiliated programs: SafeSport investigates emotional misconduct including racial harassment. Reporting line 833-587-7233 or uscenterforsafesport.org. The CDD database (Centralized Disciplinary Database) lists individuals with current sanctions; checking it before signing up for clinics or camps is a reasonable safety move.
 
 For school-based teams: the school district's Title VI coordinator handles racial discrimination in federally-funded education programs (which includes athletics). The Office for Civil Rights (OCR) at the U.S. Department of Education investigates Title VI complaints if the district does not.
 

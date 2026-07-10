@@ -314,14 +314,14 @@ How to choose: your kid should help pick this one. They will be using it for at 
 
 **A BBCOR or USSSA bat**
 
-Check league rules before buying. BBCOR (high school) bats run -3 drop weight (heavier). USSSA (travel) bats run -8 to -10. They are not interchangeable.
+Check league rules before buying. BBCOR (high school) bats run -3 drop weight (heavier). USSSA (travel) bats for younger ages in this band run -8 to -10, but not at 14U anymore — as of January 1, 2026, USSSA's national standard for 14U events requires BBCOR -3 or wood, same as high school. A handful of state or local -5/-8 events may still exist, so confirm with your specific league or tournament before buying, but don't assume a 14U travel team is still on the old USSSA drop-weight rule.
 
 How to choose: the one-arm test still works, but at this age the swing speed matters more than the bat tech. Don't get talked into a top-shelf composite bat unless your kid is a serious hitter.
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Baseball · Ages 13–14</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">BBCOR or USSSA baseball bat</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">BBCOR for high school (-3 drop). USSSA for travel (-8 to -10). Not interchangeable — verify league rules before purchase.</p>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">BBCOR for high school (-3 drop), also now the national standard for USSSA 14U as of 2026. Younger USSSA travel ages may still run -8 to -10. Verify league/tournament rules before purchase.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Don't get talked into a top-shelf composite at this age unless your kid is a serious hitter with a measurable swing speed. A solid single-piece alloy BBCOR does the job for most players.</p>
     <a href="/go/baseball-bat-bbcor/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>

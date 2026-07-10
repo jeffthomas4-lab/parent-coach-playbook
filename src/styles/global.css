@@ -53,7 +53,7 @@
   --paper-warm: #F2EAD9;     /* warmer cream for cards */
   --ink: #2D2520;            /* warm dark brown */
   --ink-soft: #5F5448;       /* walnut for body */
-  --rust: #C5713D;           /* terracotta */
+  --rust: #9E5228;           /* terracotta — darkened from #C5713D 2026-07-07 for WCAG AA: rust-on-paper 5.3:1, rust-on-paper-warm 4.8:1, paper-on-rust 5.3:1 (old value was 3.4:1 all three ways) */
   --turf: #8FA68C;           /* sage */
   --bone: #DDD2BD;           /* linen */
   --trophy: #D4AB6A;         /* honey */

@@ -6,7 +6,7 @@ safetyCategory: "coach-vetting"
 format: "topic"
 sportTags: ["multi-sport"]
 ageBands: ["all-ages"]
-publishedAt: 2026-04-9
+publishedAt: 2026-04-09
 governingBodies:
   - name: "Academy of Nutrition and Dietetics"
     url: "https://www.eatright.org/"

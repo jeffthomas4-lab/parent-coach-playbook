@@ -80,7 +80,7 @@ For non-LGBTQ+ kids on the team: the conversation is about language norms and be
 
 A specific incident: head coach, with documentation. AD or program director if the head coach does not act.
 
-A pattern: SafeSport for NGB-affiliated programs (720-531-0340). Title IX coordinator for school-based programs. State-level human rights or anti-discrimination commissions for non-school programs.
+A pattern: SafeSport for NGB-affiliated programs (833-587-7233). Title IX coordinator for school-based programs. State-level human rights or anti-discrimination commissions for non-school programs.
 
 Severe harassment or threats: local law enforcement. Federal hate-crime statutes apply in some states.
 

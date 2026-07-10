@@ -1,0 +1,47 @@
+{
+  "_comment": "Tunable thresholds for the website-resolution hit-rate gate. Set BEFORE running so the number decides, not the mood after. Spec: WEBSITE-RESOLUTION-HIT-RATE-TEST-2026-06-15.md.",
+
+  "sample": {
+    "size": 2000,
+    "states": ["WA", "OR"],
+    "source_dataset": "irs_eo_bmf",
+    "stratify_by_ntee_group": true,
+    "random_seed": 615
+  },
+
+  "search": {
+    "query_format": "\"{name}\" {city} {state}",
+    "top_n_results": 3,
+    "capture_maps_website": true
+  },
+
+  "scoring": {
+    "name_accept_min": 85,
+    "name_review_min": 60,
+    "drop_corporate_suffixes": ["inc", "incorporated", "foundation", "association", "assn", "club", "org", "organization", "corp", "co", "llc", "ltd", "trust", "fund", "society", "intl", "international"],
+    "stopwords": ["the", "of", "and", "a", "an", "for", "to", "in", "at", "on"],
+    "directory_domains": ["yelp.com", "yellowpages.com", "guidestar.org", "causeiq.com", "propublica.org", "datanyze.com", "manta.com", "bbb.org", "mapquest.com", "chamberofcommerce.com", "nonprofitlight.com", "taxexemptworld.com"],
+    "social_domains": ["facebook.com", "instagram.com", "twitter.com", "x.com", "linkedin.com", "tiktok.com", "youtube.com"],
+    "registration_platforms": ["teamsnap.com", "leagueapps.com", "sportsengine.com", "sportngin.com", "activenet.active.com", "active.com", "activecommunities.com", "civicrec.com", "rectrac.com", "daxko.com", "playmetrics.com", "gotsport.com", "demosphere.com", "bluesombrero.com", "leaguelineup.com", "jerseywatch.com", "crossbar.org", "tourneymachine.com", "eventbrite.com"],
+    "news_tld_hints": ["news", "tribune", "times", "herald", "gazette", "patch.com", "komonews.com", "kiro7.com", "seattletimes.com", "oregonlive.com"]
+  },
+
+  "gate": {
+    "_comment": "Decision thresholds from the spec. Read after the run; do not change to fit the result.",
+    "go_full_enrichment_at": 60,
+    "go_scoped_band_low": 40,
+    "go_scoped_band_high": 60,
+    "no_go_below": 40,
+    "wrong_match_letthrough_ceiling": 10,
+    "classifier_spotcheck_size": 200,
+    "classifier_spotcheck_error_ceiling": 5
+  },
+
+  "provider": {
+    "name": "serper",
+    "_options": ["serper", "serpapi", "outscraper"],
+    "requests_per_minute": 60,
+    "max_retries": 3,
+    "timeout_seconds": 20
+  }
+}

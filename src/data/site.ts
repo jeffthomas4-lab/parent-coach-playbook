@@ -19,7 +19,7 @@ export const EDITORIAL = {
   byline: 'the Parent Coach Desk',
   short: 'PCD',
   // Mark color used wherever a small accent dot or pill renders.
-  accent: '#C5713D',
+  accent: '#9E5228',
   accentBg: '#F2E2D5',
 };
 
@@ -162,7 +162,7 @@ export const PILLARS = {
     slug: 'drive-there',
     label: 'Before the game',
     eyebrow: 'Before',
-    accent: '#8FA68C',
+    accent: '#4F6B4C',
     accentBg: '#EAEFE7',
     blurb: 'The conversation on the way to practice. The night before tryouts. What gets done before anyone steps on the field.',
   },
@@ -170,7 +170,7 @@ export const PILLARS = {
     slug: 'game',
     label: 'In the game',
     eyebrow: 'During',
-    accent: '#C5713D',
+    accent: '#9E5228',
     accentBg: '#F2E2D5',
     blurb: 'Coaching execution, in-the-moment decisions, and the strange job of coaching your own kid in front of the team.',
   },
@@ -178,7 +178,7 @@ export const PILLARS = {
     slug: 'drive-home',
     label: 'After the game',
     eyebrow: 'After',
-    accent: '#D4AB6A',
+    accent: '#7A5C24',
     accentBg: '#F5E9D2',
     blurb: 'The post-game conversation, the car ride, the dinner table. The relationship aftermath.',
   },
@@ -460,14 +460,14 @@ export const TRACK_EVENTS = [
 export type TrackEventSlug = (typeof TRACK_EVENTS)[number]['slug'];
 
 export const TEAM_PARENT_CATEGORIES = [
-  { slug: 'tech-setup',    label: 'Tech setup',         blurb: 'GameChanger, MaxPreps, TeamSnap. What to use, what to skip.', accent: '#5C7459' },
-  { slug: 'communication', label: 'Communication',      blurb: 'Group chats. Snack signups. The hard-parent email.',          accent: '#C5713D' },
-  { slug: 'practice',      label: 'Practice',           blurb: 'Practice plans. Drills by age. Why parents need to see it.',  accent: '#B0894A' },
-  { slug: 'game-day',      label: 'Game day',           blurb: 'Lineup spreadsheets. Fair rotations. Bench management.',      accent: '#5C7459' },
-  { slug: 'photos-events', label: 'Photos and events',  blurb: 'Picture day choices. Banquet checklists. Team gifts.',        accent: '#B0894A' },
-  { slug: 'fundraising',   label: 'Fundraising',        blurb: 'Sponsor scripts. Snap Raise reality. Pizza-night models.',    accent: '#C5713D' },
-  { slug: 'volunteering',  label: 'Volunteering',       blurb: 'Recruiting assistants. Snack signups that actually fill.',     accent: '#5C7459' },
-  { slug: 'travel',        label: 'Travel team logistics', blurb: 'Tournament packing. Hotel rotations. Travel budgets.',     accent: '#C5713D' },
+  { slug: 'tech-setup',    label: 'Tech setup',         blurb: 'GameChanger, MaxPreps, TeamSnap. What to use, what to skip.', accent: '#4F6B4C' },
+  { slug: 'communication', label: 'Communication',      blurb: 'Group chats. Snack signups. The hard-parent email.',          accent: '#9E5228' },
+  { slug: 'practice',      label: 'Practice',           blurb: 'Practice plans. Drills by age. Why parents need to see it.',  accent: '#7A5C24' },
+  { slug: 'game-day',      label: 'Game day',           blurb: 'Lineup spreadsheets. Fair rotations. Bench management.',      accent: '#4F6B4C' },
+  { slug: 'photos-events', label: 'Photos and events',  blurb: 'Picture day choices. Banquet checklists. Team gifts.',        accent: '#7A5C24' },
+  { slug: 'fundraising',   label: 'Fundraising',        blurb: 'Sponsor scripts. Snap Raise reality. Pizza-night models.',    accent: '#9E5228' },
+  { slug: 'volunteering',  label: 'Volunteering',       blurb: 'Recruiting assistants. Snack signups that actually fill.',     accent: '#4F6B4C' },
+  { slug: 'travel',        label: 'Travel team logistics', blurb: 'Tournament packing. Hotel rotations. Travel budgets.',     accent: '#9E5228' },
 ] as const;
 
 export type TeamParentCategorySlug = (typeof TEAM_PARENT_CATEGORIES)[number]['slug'];
@@ -479,41 +479,41 @@ export interface Theme {
 }
 
 export const SECTION_THEMES: Record<string, Theme> = {
-  'drive-there':     { accent: '#8FA68C', accentBg: '#EAEFE7', label: 'Before the game' },
-  'game':            { accent: '#C5713D', accentBg: '#F2E2D5', label: 'In the game' },
-  'drive-home':      { accent: '#D4AB6A', accentBg: '#F5E9D2', label: 'After the game' },
-  'body':            { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'The Sideline File' },
-  'mental-skills':   { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Mental skills' },
-  'recruiting':      { accent: '#A66A8E', accentBg: '#EFE0E8', label: 'Recruiting' },
-  'coaching-tips':   { accent: '#C5713D', accentBg: '#F2E2D5', label: 'Drills' },
-  'decisions':       { accent: '#6F8AA8', accentBg: '#E2EAF2', label: 'Decisions' },
-  'pathways':        { accent: '#B0894A', accentBg: '#F0E5CE', label: 'Age pathways' },
+  'drive-there':     { accent: '#4F6B4C', accentBg: '#EAEFE7', label: 'Before the game' },
+  'game':            { accent: '#9E5228', accentBg: '#F2E2D5', label: 'In the game' },
+  'drive-home':      { accent: '#7A5C24', accentBg: '#F5E9D2', label: 'After the game' },
+  'body':            { accent: '#44625A', accentBg: '#E5EFEB', label: 'The Sideline File' },
+  'mental-skills':   { accent: '#44625A', accentBg: '#E5EFEB', label: 'Mental skills' },
+  'recruiting':      { accent: '#7E4A66', accentBg: '#EFE0E8', label: 'Recruiting' },
+  'coaching-tips':   { accent: '#9E5228', accentBg: '#F2E2D5', label: 'Drills' },
+  'decisions':       { accent: '#44607E', accentBg: '#E2EAF2', label: 'Decisions' },
+  'pathways':        { accent: '#7A5C24', accentBg: '#F0E5CE', label: 'Age pathways' },
   'reads':           { accent: '#2D2520', accentBg: '#F2EAD9', label: 'Reads' },
-  'rules':           { accent: '#6B7B6F', accentBg: '#E8ECE8', label: 'Rules at-a-glance' },
-  'scripts':         { accent: '#B8908F', accentBg: '#EDDBD9', label: 'Scripts' },
-  'season-calendar': { accent: '#9E7B4E', accentBg: '#EFE3D2', label: 'Season calendar' },
-  'team-parent':     { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'Team parent' },
-  'tools':           { accent: '#5C7459', accentBg: '#E3EAE2', label: 'The Drawer' },
-  'what-to-buy':     { accent: '#C5713D', accentBg: '#F2E2D5', label: 'The Gear Files' },
+  'rules':           { accent: '#4D5A50', accentBg: '#E8ECE8', label: 'Rules at-a-glance' },
+  'scripts':         { accent: '#7E5150', accentBg: '#EDDBD9', label: 'Scripts' },
+  'season-calendar': { accent: '#7A5C24', accentBg: '#EFE3D2', label: 'Season calendar' },
+  'team-parent':     { accent: '#655084', accentBg: '#E8E1F0', label: 'Team parent' },
+  'tools':           { accent: '#4F6B4C', accentBg: '#E3EAE2', label: 'The Drawer' },
+  'what-to-buy':     { accent: '#9E5228', accentBg: '#F2E2D5', label: 'The Gear Files' },
   'sports':          { accent: '#2D2520', accentBg: '#F2EAD9', label: 'By sport' },
-  'camps':           { accent: '#7C9E5E', accentBg: '#E8EFE0', label: 'Summer camps' },
-  'cost-calculator': { accent: '#9C7A4A', accentBg: '#F0E5D2', label: 'Cost calculator' },
-  'adaptive':        { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'Adaptive' },
+  'camps':           { accent: '#4E6B35', accentBg: '#E8EFE0', label: 'Summer camps' },
+  'cost-calculator': { accent: '#7A5C24', accentBg: '#F0E5D2', label: 'Cost calculator' },
+  'adaptive':        { accent: '#655084', accentBg: '#E8E1F0', label: 'Adaptive' },
 };
 
 export const TOPIC_THEMES: Record<TopicSlug, Theme> = {
-  'communication':  { accent: '#6F8AA8', accentBg: '#E2EAF2', label: 'Communication' },
-  'tryouts':        { accent: '#A66A8E', accentBg: '#EFE0E8', label: 'Tryouts and teams' },
-  'game-day':       { accent: '#C5713D', accentBg: '#F2E2D5', label: 'Game day' },
-  'the-hard-stuff': { accent: '#8E7AA8', accentBg: '#E8E1F0', label: 'The hard moments' },
-  'season-ops':     { accent: '#5C7459', accentBg: '#E3EAE2', label: 'Season operations' },
-  'equipment':      { accent: '#9E7B4E', accentBg: '#EFE3D2', label: 'Equipment' },
-  'rec-vs-travel':  { accent: '#7C9E94', accentBg: '#E5EFEB', label: 'Rec vs travel' },
-  'rules-of-play':  { accent: '#6B7B6F', accentBg: '#E8ECE8', label: 'Rules of play' },
-  'summer-camps':   { accent: '#7C9E5E', accentBg: '#E8EFE0', label: 'Summer camps' },
+  'communication':  { accent: '#44607E', accentBg: '#E2EAF2', label: 'Communication' },
+  'tryouts':        { accent: '#7E4A66', accentBg: '#EFE0E8', label: 'Tryouts and teams' },
+  'game-day':       { accent: '#9E5228', accentBg: '#F2E2D5', label: 'Game day' },
+  'the-hard-stuff': { accent: '#655084', accentBg: '#E8E1F0', label: 'The hard moments' },
+  'season-ops':     { accent: '#4F6B4C', accentBg: '#E3EAE2', label: 'Season operations' },
+  'equipment':      { accent: '#7A5C24', accentBg: '#EFE3D2', label: 'Equipment' },
+  'rec-vs-travel':  { accent: '#44625A', accentBg: '#E5EFEB', label: 'Rec vs travel' },
+  'rules-of-play':  { accent: '#4D5A50', accentBg: '#E8ECE8', label: 'Rules of play' },
+  'summer-camps':   { accent: '#4E6B35', accentBg: '#E8EFE0', label: 'Summer camps' },
 };
 
-const DEFAULT_THEME: Theme = { accent: '#C5713D', accentBg: '#F2E2D5' };
+const DEFAULT_THEME: Theme = { accent: '#9E5228', accentBg: '#F2E2D5' };
 
 export function themeFor(slug: string | undefined | null): Theme {
   if (!slug) return DEFAULT_THEME;

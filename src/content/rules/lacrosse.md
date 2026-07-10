@@ -21,9 +21,9 @@ thingsParentsGetWrong:
   - "An offsides call has nothing to do with where the ball is. It is about how many players are on each half of the field."
   - "Cradling is not traveling. The stick rocks back and forth while running. That is how the ball stays in the pocket."
 governingBody:
-  name: "US Lacrosse"
-  url: "https://www.uslacrosse.org"
-ruleBookUrl: "https://www.uslacrosse.org/rules"
+  name: "USA Lacrosse"
+  url: "https://www.usalacrosse.com/"
+ruleBookUrl: "https://www.usalacrosse.com/rules"
 publishedAt: 2026-06-11
 draft: false
 editorial:

@@ -3,6 +3,18 @@
 // URL, and writes public/link-manifest.json. The link-checker worker reads this manifest
 // and validates each URL on a rolling schedule.
 //
+// Also pulls in affiliate destination URLs from src/data/affiliates.json. Those never
+// appear as raw URLs in content/pages (posts link through /go/[slug]/, which is on our
+// own domain and gets filtered out by shouldSkip below), so without this step the daily
+// worker never sees them at all — confirmed 2026-07: 0 Amazon URLs in a 437-URL manifest.
+//
+// NOTE: the worker only checks HTTP status codes (see worker-link-checker/src/index.ts,
+// isBroken = 4xx). Amazon's CAPTCHA/bot-block page returns 200, and so does a genuine
+// "currently unavailable" product page — neither trips isBroken. So this addition catches
+// true 404s / dead redirects on affiliate links automatically, but it does NOT replace the
+// content-based checks (out-of-stock text, generic search-page redirects) that the weekly
+// pcd-link-health-monitor scheduled task does with a real browser. Keep running both.
+//
 // Run from project root:  node scripts/build-link-manifest.mjs
 // Wired into npm run build via package.json prebuild step.
 
@@ -11,6 +23,7 @@ import { join, relative, resolve } from 'node:path';
 
 const ROOT = resolve(process.cwd());
 const SCAN_DIRS = [join(ROOT, 'src/content'), join(ROOT, 'src/pages')];
+const AFFILIATES_PATH = join(ROOT, 'src/data/affiliates.json');
 const OUT_PATH = join(ROOT, 'public/link-manifest.json');
 
 // Match http(s) URLs. Stops at whitespace, quotes, brackets, parens, angle brackets, backticks.
@@ -64,6 +77,25 @@ for (const dir of SCAN_DIRS) {
       links.get(cleaned).sources.add(relPath);
     }
   }
+}
+
+// Pull in affiliate destination URLs (amzn.to / amazon.com / etc.) from affiliates.json.
+// These are real external URLs even though they're never written literally in content —
+// posts link to /go/[slug]/, which resolves to these at request time.
+try {
+  const raw = await readFile(AFFILIATES_PATH, 'utf8');
+  const affiliates = JSON.parse(raw);
+  const relPath = relative(ROOT, AFFILIATES_PATH).replace(/\\/g, '/');
+  for (const [slug, entry] of Object.entries(affiliates)) {
+    const dest = entry?.destination;
+    if (!dest || shouldSkip(dest)) continue;
+    if (!links.has(dest)) {
+      links.set(dest, { sources: new Set() });
+    }
+    links.get(dest).sources.add(`${relPath} (slug: ${slug})`);
+  }
+} catch (err) {
+  console.warn(`⚠ could not read affiliates.json for link manifest: ${err.message}`);
 }
 
 // Output sorted manifest. Each entry has the URL and the source files where it appears.

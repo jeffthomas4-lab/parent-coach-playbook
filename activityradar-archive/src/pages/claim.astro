@@ -1,0 +1,330 @@
+---
+// D5: Claim portal — org owners claim their listing.
+// Route: /claim?org={organization_id}
+// Shows org name pre-filled when ?org= is present. Submits via fetch to /api/claim.
+export const prerender = false;
+
+import Base from '../layouts/Base.astro';
+
+const db = (Astro.locals as any).runtime.env.DB as D1Database;
+
+const orgId = Astro.url.searchParams.get('org') ?? '';
+
+let orgName = '';
+let orgSlug = '';
+if (orgId) {
+  const row = await db
+    .prepare('SELECT name, slug, is_claimed FROM organizations WHERE id = ? LIMIT 1')
+    .bind(orgId)
+    .first<{ name: string; slug: string; is_claimed: number }>();
+  if (row) {
+    orgName = row.name;
+    orgSlug = row.slug;
+    if (row.is_claimed) {
+      return Astro.redirect(`/org/${row.slug}?claimed=1`);
+    }
+  }
+}
+---
+
+<Base
+  title={orgName ? `Claim ${orgName} — ActivityRadar` : 'Claim Your Listing — ActivityRadar'}
+  description="Claim your organization's listing on ActivityRadar to update contact info, add programs, and manage your profile."
+>
+  <Fragment slot="head">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  </Fragment>
+  <div class="max-w-2xl mx-auto px-4 py-12">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-navy/70 mb-8 flex items-center gap-2">
+      {orgSlug ? (
+        <>
+          <a href={`/org/${orgSlug}`} class="hover:text-navy no-underline min-h-0">{orgName}</a>
+          <span>/</span>
+        </>
+      ) : (
+        <>
+          <a href="/search" class="hover:text-navy no-underline min-h-0">Search</a>
+          <span>/</span>
+        </>
+      )}
+      <span class="text-navy">Claim Listing</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="text-2xl font-bold text-navy mb-3">
+        {orgName ? `Claim ${orgName}` : 'Claim Your Listing'}
+      </h1>
+      <p class="text-navy/70 leading-relaxed">
+        Tell us who you are and how you're connected to this organization. We review every claim
+        and will reach out within two business days.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form id="claim-form" class="flex flex-col gap-6">
+      <input type="hidden" name="organization_id" value={orgId} />
+
+      <!-- Org search (shown when no ?org= param) -->
+      {!orgId && (
+        <div>
+          <label class="label mb-2 block" for="org-search">Organization</label>
+          <p class="text-xs text-navy/70 mb-3">
+            Type your organization's name to find it in our directory.
+          </p>
+          <div class="relative" id="claim-suggest-wrapper">
+            <input
+              id="org-search"
+              type="text"
+              autocomplete="off"
+              role="combobox"
+              aria-expanded="false"
+              aria-controls="claim-suggest-list"
+              aria-autocomplete="list"
+              placeholder="Start typing your organization's name…"
+              class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+            />
+            <ul
+              id="claim-suggest-list"
+              role="listbox"
+              aria-label="Matching organizations"
+              class="hidden absolute z-50 top-full left-0 right-0 bg-white border border-bone border-t-0 text-navy shadow"
+            ></ul>
+          </div>
+          <div id="selected-org-display" class="hidden mt-2 border border-navy bg-white px-4 py-3 text-sm font-semibold text-navy"></div>
+          <p class="text-xs text-navy/70 mt-2">
+            Not listed yet?{' '}
+            <a href="/suggest" class="text-rust hover:underline min-h-0">Suggest your organization</a>{' '}
+            and we will add it.
+          </p>
+        </div>
+      )}
+
+      {orgId && orgName && (
+        <div>
+          <p class="label mb-2">Organization</p>
+          <div class="border border-bone bg-white px-4 py-3 text-sm font-semibold text-navy">
+            {orgName}
+          </div>
+        </div>
+      )}
+
+      <!-- Name -->
+      <div>
+        <label class="label mb-2 block" for="claimant_name">Your name <span class="text-rust">*</span></label>
+        <input
+          id="claimant_name"
+          name="claimant_name"
+          type="text"
+          required
+          autocomplete="name"
+          placeholder="First and last name"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="label mb-2 block" for="claimant_email">Your email <span class="text-rust">*</span></label>
+        <input
+          id="claimant_email"
+          name="claimant_email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="you@yourorg.com"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        />
+        <p class="text-xs text-navy/70 mt-1.5">Use the email address connected to your organization.</p>
+      </div>
+
+      <!-- Role -->
+      <div>
+        <label class="label mb-2 block" for="claimant_role">Your role at this organization</label>
+        <select
+          id="claimant_role"
+          name="claimant_role"
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy"
+        >
+          <option value="">Select a role</option>
+          <option value="owner">Owner / Founder</option>
+          <option value="director">Director / Executive Director</option>
+          <option value="coach">Head Coach</option>
+          <option value="administrator">Administrator</option>
+          <option value="marketing">Marketing / Communications</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Evidence -->
+      <div>
+        <label class="label mb-2 block" for="evidence">How can we verify your connection?</label>
+        <textarea
+          id="evidence"
+          name="evidence"
+          rows={4}
+          placeholder="e.g., I am listed as director on our website, my email matches our domain, or I can provide our EIN or 501(c)(3) documents."
+          class="w-full border border-bone bg-white px-4 py-3 text-sm focus:outline-none focus:border-navy resize-none"
+        ></textarea>
+        <p class="text-xs text-navy/70 mt-1.5">Optional but speeds up review.</p>
+      </div>
+
+      <!-- Error message -->
+      <div id="form-error" role="alert" class="hidden border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-rust"></div>
+
+      <!-- Turnstile bot protection -->
+      <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAAA_TURNSTILE_SITE_KEY"
+        data-size="invisible"
+        data-callback="onTurnstileSuccess"
+      ></div>
+
+      <!-- Submit -->
+      <div class="pt-2">
+        <button
+          type="submit"
+          id="submit-btn"
+          class="btn-primary w-full justify-center"
+          disabled={!orgId || undefined}
+        >
+          Submit claim
+        </button>
+      </div>
+    </form>
+
+  </div>
+</Base>
+
+<script>
+  const form = document.getElementById('claim-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const errorDiv = document.getElementById('form-error') as HTMLDivElement;
+
+  // Org search autocomplete (only active when no ?org= param pre-filled)
+  const orgInput = document.getElementById('org-search') as HTMLInputElement | null;
+  const suggestList = document.getElementById('claim-suggest-list') as HTMLUListElement | null;
+  const selectedOrgDisplay = document.getElementById('selected-org-display') as HTMLDivElement | null;
+  const orgIdField = form?.querySelector('[name="organization_id"]') as HTMLInputElement | null;
+
+  if (orgInput && suggestList) {
+    let timer: number;
+
+    const hideList = () => { suggestList.classList.add('hidden'); orgInput.setAttribute('aria-expanded', 'false'); };
+    const showList = () => { suggestList.classList.remove('hidden'); orgInput.setAttribute('aria-expanded', 'true'); };
+
+    orgInput.addEventListener('input', () => {
+      clearTimeout(timer);
+      const q = orgInput.value.trim();
+      if (q.length < 2) { hideList(); suggestList.innerHTML = ''; return; }
+      timer = window.setTimeout(async () => {
+        try {
+          const res = await fetch(`/api/suggest?q=${encodeURIComponent(q)}`);
+          const data: { id: string; label: string; kind: string; slug: string }[] = await res.json();
+          const orgs = data.filter((d) => d.kind === 'organization');
+          if (!orgs.length) { hideList(); return; }
+          suggestList.innerHTML = orgs.map((d) =>
+            `<li role="option" tabindex="-1" class="px-4 py-3 text-sm cursor-pointer hover:bg-bone focus:bg-bone min-h-[48px] flex items-center"
+                 data-id="${d.id}" data-label="${d.label}">${d.label}</li>`
+          ).join('');
+          showList();
+        } catch {}
+      }, 180);
+    });
+
+    const chooseOption = (li: HTMLElement) => {
+      const id = li.getAttribute('data-id') ?? '';
+      const label = li.getAttribute('data-label') ?? '';
+      if (orgIdField) orgIdField.value = id;
+      if (selectedOrgDisplay) {
+        selectedOrgDisplay.textContent = label;
+        selectedOrgDisplay.classList.remove('hidden');
+      }
+      orgInput.value = label;
+      hideList();
+      suggestList.innerHTML = '';
+      if (submitBtn) submitBtn.disabled = !id;
+      orgInput.focus();
+    };
+
+    suggestList.addEventListener('click', (e) => {
+      const li = (e.target as Element).closest('li') as HTMLElement | null;
+      if (!li) return;
+      chooseOption(li);
+    });
+
+    // Keyboard support for the option list
+    suggestList.addEventListener('keydown', (e) => {
+      const li = (e.target as Element).closest('li') as HTMLElement | null;
+      if (!li) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chooseOption(li); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); (li.nextElementSibling as HTMLElement | null)?.focus(); }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = li.previousElementSibling as HTMLElement | null;
+        if (prev) prev.focus(); else orgInput.focus();
+      }
+      if (e.key === 'Escape') { hideList(); orgInput.focus(); }
+    });
+
+    orgInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { hideList(); }
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        (suggestList.querySelector('li') as HTMLElement | null)?.focus();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!(e.target as Element).closest('#claim-suggest-wrapper')) {
+        hideList();
+      }
+    });
+  }
+
+  const ERROR_MESSAGES: Record<string, string> = {
+    missing_fields: 'Please fill in your name and email.',
+    org_not_found: 'Organization not found. Please try again from the org page.',
+    already_claimed: 'This listing has already been claimed.',
+    duplicate_claim: 'You already have a pending claim for this organization. We will be in touch.',
+    invalid_json: 'Something went wrong. Please try again.',
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorDiv.classList.add('hidden');
+    errorDiv.textContent = '';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    // Collect form data; Turnstile adds cf-turnstile-response hidden field automatically.
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+
+    try {
+      const res = await fetch('/api/claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json() as { ok: boolean; error?: string; claim_id?: string };
+
+      if (json.ok) {
+        window.location.href = `/claim/success?name=${encodeURIComponent(data.claimant_name ?? '')}`;
+      } else {
+        const msg = ERROR_MESSAGES[json.error ?? ''] ?? 'Something went wrong. Please try again.';
+        errorDiv.textContent = msg;
+        errorDiv.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit claim';
+      }
+    } catch {
+      errorDiv.textContent = 'Network error. Please check your connection and try again.';
+      errorDiv.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit claim';
+    }
+  });
+</script>

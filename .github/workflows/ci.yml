@@ -1,0 +1,37 @@
+name: CI
+
+# Pillar 9 (Testing and CI) of the Website Build Standard. Runs on every push
+# and PR: install with a locked lockfile, audit gate, build, unit tests.
+# A red run here is the signal to stop before wrangler ever runs.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install (locked)
+        run: npm ci
+
+      - name: npm audit gate (fail on high or critical)
+        run: npm audit --audit-level=high
+
+      - name: Build
+        run: npm run build
+
+      - name: Unit tests
+        run: npm test
+
+      - name: astro check
+        run: npm run check

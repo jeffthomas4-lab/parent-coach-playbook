@@ -37,9 +37,9 @@ About 35,000 boys and 10,000 girls play high-school hockey in the United States.
 
 ## What each level actually looks like
 
-**D1 (men).** About 60 programs. 18 scholarships per team, equivalency. Concentrated in the Northeast, Midwest, and Upper Plains.
+**D1 (men).** About 60 programs. The 18-scholarship equivalency cap was the rule through 2024-25. As of July 2025, the House settlement replaced it for opted-in schools: rosters are capped at 26 players, and a school can fund scholarships for up to all 26. Concentrated in the Northeast, Midwest, and Upper Plains.
 
-**D1 (women).** About 35 programs. 18 scholarships per team, equivalency. Smaller footprint than men's, but the scholarship-per-roster math is more favorable.
+**D1 (women).** About 35 programs. Same change as men's — roster cap of 26, with scholarships fundable up to that full roster for opted-in schools, versus the old 18-scholarship equivalency cap. Smaller footprint than men's, but the scholarship-per-roster math is more favorable.
 
 **D2.** Effectively does not exist for hockey. Two or three programs total nationally.
 

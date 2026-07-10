@@ -1,0 +1,268 @@
+---
+// D4: Organization profile page.
+// Route: /org/[slug]
+// Calls getOrganization, shows org details + programs list + claim CTA.
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+import { getOrganization } from '../../lib/db';
+import type { Program } from '../../lib/db';
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/search');
+
+const db = (Astro.locals as any).runtime.env.DB as D1Database;
+const result = await getOrganization(db, slug);
+
+if (!result) {
+  return new Response(null, { status: 404 });
+}
+
+const { organization: org, programs, trust_signals } = result;
+
+const CATEGORIES: Record<string, string> = {
+  soccer: 'Soccer', basketball: 'Basketball', swimming: 'Swimming',
+  gymnastics: 'Gymnastics', martial_arts: 'Martial Arts',
+  baseball_softball: 'Baseball / Softball', volleyball: 'Volleyball',
+  football: 'Football', tennis: 'Tennis', track_field: 'Track & Field',
+  dance: 'Dance', arts_crafts: 'Arts & Crafts', music: 'Music',
+  theater: 'Theater', coding_stem: 'Coding & STEM',
+  camp_general: 'General Camp', camp_sports: 'Sports Camp',
+  camp_stem: 'STEM Camp', camp_arts: 'Arts Camp',
+};
+
+const PROG_TYPE_LABELS: Record<string, string> = {
+  camp: 'Camp', league: 'League', class: 'Class', clinic: 'Clinic',
+};
+
+function formatPrice(p: Program): string {
+  if (!p.price) return p.price_type === 'free' ? 'Free' : 'Contact for pricing';
+  const label = p.price_type ? PROG_TYPE_LABELS[p.price_type] ?? p.price_type : '';
+  return `$${p.price.toFixed(0)}${label ? ' / ' + label.toLowerCase() : ''}`;
+}
+
+const locationParts = [org.address, org.city, org.state, org.zip].filter(Boolean);
+const siteUrl = (Astro.locals as any).runtime?.env?.SITE_URL ?? 'https://activityradar.com';
+const canonicalUrl = `${siteUrl}/org/${org.slug}`;
+
+// schema.org LocalBusiness markup
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: org.name,
+  url: org.website_url ?? undefined,
+  telephone: org.phone ?? undefined,
+  email: org.email ?? undefined,
+  address: org.address ? {
+    '@type': 'PostalAddress',
+    streetAddress: org.address,
+    addressLocality: org.city ?? undefined,
+    addressRegion: org.state ?? undefined,
+    postalCode: org.zip ?? undefined,
+    addressCountry: 'US',
+  } : undefined,
+};
+---
+
+<Base
+  title={`${org.name} — ActivityRadar`}
+  description={org.description ?? `Programs and activities offered by ${org.name} in ${org.city ?? 'your area'}.`}
+  canonical={canonicalUrl}
+  ogType="place"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)}></script>
+  </Fragment>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-navy/70 mb-6 flex items-center gap-2">
+      <a href="/search" class="hover:text-navy no-underline min-h-0">Search</a>
+      <span>/</span>
+      <span class="text-navy">{org.name}</span>
+    </nav>
+
+    <!-- Org header -->
+    <div class="mb-8">
+      <div class="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <h1 class="text-2xl font-bold text-navy mb-1">{org.name}</h1>
+          {locationParts.length > 0 && (
+            <p class="text-navy/70 text-sm mb-3">{locationParts.join(', ')}</p>
+          )}
+          <div class="flex flex-wrap gap-2">
+            {org.categories.map((c) => (
+              <span class="tag">{CATEGORIES[c] ?? c}</span>
+            ))}
+            {org.program_types.map((pt) => (
+              <span class="tag bg-rust/10 text-rust">{pt}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Claim CTA -->
+        {!org.is_claimed && (
+          <a
+            href={`/claim?org=${org.id}`}
+            class="btn-secondary text-xs px-4 py-2 min-h-[40px] no-underline shrink-0"
+          >
+            Claim this listing
+          </a>
+        )}
+        {org.is_claimed && (
+          <span class="tag bg-green-50 text-green-800">Verified</span>
+        )}
+      </div>
+
+      {org.description && (
+        <p class="mt-5 text-navy/80 leading-relaxed max-w-2xl">{org.description}</p>
+      )}
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Programs list -->
+      <div class="md:col-span-2">
+        <h2 class="label mb-4">Programs ({programs.length})</h2>
+
+        {programs.length === 0 && (
+          <div class="card py-8 text-center">
+            <p class="text-sm text-navy/70">No programs listed yet.</p>
+          </div>
+        )}
+
+        <ul class="flex flex-col gap-3">
+          {(programs as Program[]).map((prog) => (
+            <li>
+              <div class="card relative hover:border-navy transition-colors">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="min-w-0 flex-1">
+                    <a
+                      href={`/program/${prog.slug}`}
+                      class="font-semibold text-navy mb-1 no-underline min-h-0 after:absolute after:inset-0 after:content-['']"
+                    >
+                      {prog.name}
+                    </a>
+                    <div class="flex flex-wrap gap-1 mb-2">
+                      <span class="tag">{PROG_TYPE_LABELS[prog.program_type] ?? prog.program_type}</span>
+                      <span class="tag">{CATEGORIES[prog.activity_category] ?? prog.activity_category}</span>
+                      {prog.availability_status === 'open' && (
+                        <span class="tag bg-green-50 text-green-800">Open</span>
+                      )}
+                      {prog.availability_status === 'waitlist' && (
+                        <span class="tag bg-yellow-50 text-yellow-800">Waitlist</span>
+                      )}
+                      {prog.availability_status === 'full' && (
+                        <span class="tag bg-destructive/10 text-destructive">Full</span>
+                      )}
+                    </div>
+                    {prog.description && (
+                      <p class="text-sm text-navy/70 line-clamp-2">{prog.description}</p>
+                    )}
+                    {(prog.session_start_date || prog.session_end_date) && (
+                      <p class="text-xs text-navy/70 mt-2 mono">
+                        {prog.session_start_date ?? '?'} → {prog.session_end_date ?? '?'}
+                      </p>
+                    )}
+                    {prog.registration_url && (
+                      <a
+                        href={prog.registration_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-reg="1"
+                        class="relative z-10 inline-block mt-2 text-xs text-rust hover:underline min-h-0 no-underline"
+                      >
+                        Register <span aria-hidden="true">→</span><span class="sr-only">(opens {org.name} registration in a new tab)</span>
+                      </a>
+                    )}
+                  </div>
+                  <div class="shrink-0 text-right">
+                    <p class="text-sm font-semibold text-navy">{formatPrice(prog)}</p>
+                    {prog.age_min != null && prog.age_max != null && (
+                      <p class="text-xs text-navy/70 mt-1">Ages {prog.age_min}–{prog.age_max}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Org contact + trust sidebar -->
+      <aside>
+        <div class="card mb-4">
+          <p class="label mb-4">Contact</p>
+          <dl class="flex flex-col gap-3 text-sm">
+            {org.website_url && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Website</dt>
+                <dd>
+                  <a
+                    href={org.website_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-rust hover:underline break-all min-h-0"
+                  >
+                    {org.website_url.replace(/^https?:\/\//, '')}
+                  </a>
+                </dd>
+              </div>
+            )}
+            {org.phone && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Phone</dt>
+                <dd><a href={`tel:${org.phone}`} class="min-h-0">{org.phone}</a></dd>
+              </div>
+            )}
+            {org.email && (
+              <div>
+                <dt class="label text-navy/70 mb-0.5">Email</dt>
+                <dd><a href={`mailto:${org.email}`} class="text-rust min-h-0 break-all">{org.email}</a></dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        {trust_signals.length > 0 && (
+          <div class="card mb-4">
+            <p class="label mb-4">Trust signals</p>
+            <ul class="flex flex-col gap-2 text-sm">
+              {(trust_signals as { signal_type: string; signal_value: string }[]).map((ts) => (
+                <li class="flex items-center gap-2">
+                  <span class="text-green-700">✓</span>
+                  <span class="text-navy/80">{ts.signal_type.replace(/_/g, ' ')}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Claim CTA (sidebar) -->
+        {!org.is_claimed && (
+          <div class="card bg-bone border-none">
+            <p class="font-semibold text-navy text-sm mb-2">Is this your organization?</p>
+            <p class="text-xs text-navy/70 mb-4 leading-relaxed">
+              Claim this listing to update your contact info, add programs, and mark registration open.
+            </p>
+            <a href={`/claim?org=${org.id}`} class="btn-primary text-xs px-4 py-2 min-h-[40px] no-underline w-full justify-center">
+              Claim listing
+            </a>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+
+  <script define:vars={{ orgId: org.id }}>
+    document.querySelectorAll('a[href]').forEach((a) => {
+      const href = (a as HTMLAnchorElement).href;
+      if (href.includes('registration') || a.closest('[data-reg]')) {
+        a.addEventListener('click', () => {
+          navigator.sendBeacon('/api/log-click', JSON.stringify({
+            event_id: 'conversion',
+            org_id: orgId,
+          }));
+        });
+      }
+    });
+  </script>
+</Base>

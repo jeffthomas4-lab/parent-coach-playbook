@@ -1,0 +1,281 @@
+---
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+
+const db = (Astro.locals as any).runtime.env.DB as D1Database;
+const adminToken = (Astro.locals as any).runtime?.env?.ADMIN_TOKEN as string | undefined;
+
+const token = Astro.url.searchParams.get('token') ?? '';
+
+if (!adminToken || token !== adminToken) {
+  return new Response(
+    '<!doctype html><html lang="en"><head><title>Unauthorized</title></head><body><h1>Unauthorized</h1></body></html>',
+    { status: 401, headers: { 'Content-Type': 'text/html' } }
+  );
+}
+
+// 1. Zero-result searches
+const zeroRows = await db
+  .prepare(`
+    SELECT
+      query,
+      location_searched,
+      categories_searched,
+      COUNT(*) as search_count,
+      MAX(created_at) as last_searched
+    FROM search_events
+    WHERE result_count = 0 OR result_count IS NULL
+    GROUP BY query, location_searched, categories_searched
+    ORDER BY search_count DESC
+    LIMIT 50
+  `)
+  .all<{
+    query: string | null;
+    location_searched: string | null;
+    categories_searched: string | null;
+    search_count: number;
+    last_searched: string | null;
+  }>();
+
+// 2. Low-result searches
+const lowRows = await db
+  .prepare(`
+    SELECT
+      query,
+      location_searched,
+      categories_searched,
+      AVG(result_count) as avg_results,
+      COUNT(*) as search_count,
+      MAX(created_at) as last_searched
+    FROM search_events
+    WHERE result_count > 0 AND result_count < 5
+    GROUP BY query, location_searched, categories_searched
+    ORDER BY search_count DESC
+    LIMIT 50
+  `)
+  .all<{
+    query: string | null;
+    location_searched: string | null;
+    categories_searched: string | null;
+    avg_results: number | null;
+    search_count: number;
+    last_searched: string | null;
+  }>();
+
+// 3. Top search terms overall
+const topTermRows = await db
+  .prepare(`
+    SELECT
+      query,
+      COUNT(*) as search_count,
+      AVG(result_count) as avg_results
+    FROM search_events
+    WHERE query IS NOT NULL AND query != ''
+    GROUP BY query
+    ORDER BY search_count DESC
+    LIMIT 20
+  `)
+  .all<{
+    query: string;
+    search_count: number;
+    avg_results: number | null;
+  }>();
+
+// 4. Pending org suggestions (may not exist)
+let pendingSuggestions = 0;
+try {
+  const sugRow = await db
+    .prepare(`SELECT COUNT(*) as count FROM org_suggestions WHERE status = 'pending'`)
+    .first<{ count: number }>();
+  pendingSuggestions = sugRow?.count ?? 0;
+} catch {
+  // table doesn't exist yet
+}
+
+// 5. Pending claims
+let pendingClaims = 0;
+try {
+  const claimRow = await db
+    .prepare(`SELECT COUNT(*) as count FROM org_claims WHERE status = 'pending'`)
+    .first<{ count: number }>();
+  pendingClaims = claimRow?.count ?? 0;
+} catch {
+  // table doesn't exist yet
+}
+
+// Helpers
+function parseCategories(raw: string | null): string {
+  if (!raw) return '—';
+  try {
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) return arr.join(', ') || '—';
+  } catch {}
+  return raw;
+}
+
+function shortDate(iso: string | null): string {
+  if (!iso) return '—';
+  return iso.slice(0, 10);
+}
+
+function fmtAvg(n: number | null): string {
+  if (n == null) return '—';
+  return n.toFixed(1);
+}
+
+const zeroTotal = zeroRows.results?.reduce((s, r) => s + (r.search_count ?? 0), 0) ?? 0;
+const tokenParam = `?token=${encodeURIComponent(token)}`;
+---
+
+<Base title="Admin — Supply Gaps" description="Supply gap report for ActivityRadar admin.">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs uppercase tracking-wider text-navy/70 mb-6 flex items-center gap-2">
+      <span>Admin</span>
+      <span>/</span>
+      <span class="text-navy font-semibold">Supply Gaps</span>
+    </nav>
+
+    <!-- Header + Admin bar -->
+    <div class="flex flex-col gap-4 mb-8 md:flex-row md:items-start md:justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-navy uppercase tracking-tight">Supply Gaps</h1>
+        <p class="text-sm text-navy/70 mt-1">
+          <span class="font-semibold text-navy">{zeroTotal.toLocaleString()}</span> zero-result searches logged
+        </p>
+      </div>
+
+      <!-- Admin status bar -->
+      <div class="flex flex-wrap gap-3 items-center">
+        {pendingClaims > 0 && (
+          <span class="label bg-rust text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+            {pendingClaims} Pending Claim{pendingClaims !== 1 ? 's' : ''}
+          </span>
+        )}
+        {pendingSuggestions > 0 && (
+          <span class="label bg-navy text-cream px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+            {pendingSuggestions} Pending Suggestion{pendingSuggestions !== 1 ? 's' : ''}
+          </span>
+        )}
+        <a
+          href={`/admin/gaps${tokenParam}`}
+          class="btn-secondary text-xs px-3 py-1 uppercase tracking-wider no-underline"
+        >
+          Refresh
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1: Zero-result searches -->
+    <section class="card mb-8 p-0 overflow-hidden">
+      <div class="bg-navy px-5 py-3 flex items-center justify-between">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-cream">Zero-result searches</h2>
+        <span class="mono text-cream/60 text-xs">{zeroRows.results?.length ?? 0} groups</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-bone bg-cream/60">
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Query</th>
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Location</th>
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Categories</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Searches</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Last seen</th>
+            </tr>
+          </thead>
+          <tbody>
+            {(zeroRows.results ?? []).length === 0 ? (
+              <tr>
+                <td colspan="5" class="px-4 py-6 text-center text-navy/70 text-sm">No zero-result searches on record.</td>
+              </tr>
+            ) : (zeroRows.results ?? []).map((row, i) => (
+              <tr class={`border-b border-bone ${i % 2 === 1 ? 'bg-cream/30' : ''} hover:bg-rust/5 transition-colors`}>
+                <td class="px-4 py-3 font-medium text-navy">{row.query || <span class="text-navy/70 italic">empty</span>}</td>
+                <td class="px-4 py-3 text-navy/70 mono text-xs">{row.location_searched || '—'}</td>
+                <td class="px-4 py-3 text-navy/70 text-xs">{parseCategories(row.categories_searched)}</td>
+                <td class="px-4 py-3 text-right mono font-semibold text-rust">{row.search_count.toLocaleString()}</td>
+                <td class="px-4 py-3 text-right mono text-xs text-navy/70">{shortDate(row.last_searched)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Low-result searches -->
+    <section class="card mb-8 p-0 overflow-hidden">
+      <div class="bg-navy px-5 py-3 flex items-center justify-between">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-cream">Low-result searches <span class="text-cream/60 font-normal normal-case tracking-normal">(fewer than 5 results)</span></h2>
+        <span class="mono text-cream/60 text-xs">{lowRows.results?.length ?? 0} groups</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-bone bg-cream/60">
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Query</th>
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Location</th>
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Categories</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Avg Results</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Searches</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Last seen</th>
+            </tr>
+          </thead>
+          <tbody>
+            {(lowRows.results ?? []).length === 0 ? (
+              <tr>
+                <td colspan="6" class="px-4 py-6 text-center text-navy/70 text-sm">No low-result searches on record.</td>
+              </tr>
+            ) : (lowRows.results ?? []).map((row, i) => (
+              <tr class={`border-b border-bone ${i % 2 === 1 ? 'bg-cream/30' : ''} hover:bg-rust/5 transition-colors`}>
+                <td class="px-4 py-3 font-medium text-navy">{row.query || <span class="text-navy/70 italic">empty</span>}</td>
+                <td class="px-4 py-3 text-navy/70 mono text-xs">{row.location_searched || '—'}</td>
+                <td class="px-4 py-3 text-navy/70 text-xs">{parseCategories(row.categories_searched)}</td>
+                <td class="px-4 py-3 text-right mono text-xs text-navy/70">{fmtAvg(row.avg_results)}</td>
+                <td class="px-4 py-3 text-right mono font-semibold text-rust">{row.search_count.toLocaleString()}</td>
+                <td class="px-4 py-3 text-right mono text-xs text-navy/70">{shortDate(row.last_searched)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: Top search terms -->
+    <section class="card mb-8 p-0 overflow-hidden">
+      <div class="bg-navy px-5 py-3 flex items-center justify-between">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-cream">Top search terms</h2>
+        <span class="mono text-cream/60 text-xs">top 20 by volume</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-bone bg-cream/60">
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">#</th>
+              <th scope="col" class="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Query</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Searches</th>
+              <th scope="col" class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider text-navy/70">Avg Results</th>
+            </tr>
+          </thead>
+          <tbody>
+            {(topTermRows.results ?? []).length === 0 ? (
+              <tr>
+                <td colspan="4" class="px-4 py-6 text-center text-navy/70 text-sm">No search data yet.</td>
+              </tr>
+            ) : (topTermRows.results ?? []).map((row, i) => (
+              <tr class={`border-b border-bone ${i % 2 === 1 ? 'bg-cream/30' : ''} hover:bg-rust/5 transition-colors`}>
+                <td class="px-4 py-3 mono text-xs text-navy/70">{i + 1}</td>
+                <td class="px-4 py-3 font-medium text-navy">{row.query}</td>
+                <td class="px-4 py-3 text-right mono font-semibold text-navy">{row.search_count.toLocaleString()}</td>
+                <td class={`px-4 py-3 text-right mono text-xs ${(row.avg_results ?? 0) < 5 ? 'text-rust font-semibold' : 'text-navy/70'}`}>
+                  {fmtAvg(row.avg_results)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</Base>

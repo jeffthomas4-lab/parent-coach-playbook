@@ -104,7 +104,7 @@ The CDD entries arrive from USCSS investigations or NGB referrals. Parents who s
 
 Online at uscenterforsafesport.org.
 
-By phone at 720-531-0340.
+By phone at 833-587-7233.
 
 Reports can be anonymous, though investigation may be limited if follow-up information cannot be obtained.
 
