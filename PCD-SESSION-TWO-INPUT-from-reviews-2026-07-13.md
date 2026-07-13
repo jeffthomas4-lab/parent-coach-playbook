@@ -21,7 +21,7 @@ Phase 4 should design this as a refinement of the existing gate, not a replaceme
 - **Stage:** a prepared change set sitting in a review queue, ready to commit with one approval. This is new. It fits S4 (deletion) and S8 (camp data quality bulk fixes) better than a flat Draft, because the change is already fully formed and just needs a yes.
 - **Act:** the one existing exception, S7 camp discovery, which writes enrichment data autonomously inside a confidence threshold instead of per-run approval.
 
-Open question carried from GEM-13: does Stage live as local markdown files, or a Notion Review Queue database page. Not decided. Jeff's call before Phase 4 design starts.
+**Staging destination, resolved (Jeff's call, 2026-07-13):** GEM-13 asked whether Stage lives as local markdown files or a Notion Review Queue database page. Neither. Staged drafts and reports post a notification to the existing Slack channel Jeff already checks, with a link to the markdown draft. One place to check. Notion Review Queue and scattered local files are both out. Phase 4 builds the Stage class against this destination, not an open question.
 
 ---
 
@@ -96,10 +96,10 @@ This is not purely deferred. It fed the new Open Item 10 in the manual (camp-dat
 
 GEM-9 proposed a global `PCD_MAINTENANCE_MODE` toggle with an S4 bypass. CD-9 proposed a per-task pause-versus-degrade matrix.
 
-Both are now recorded as proposed inputs to Open Item 5 in the manual (v1.1 edit, 2026-07-13). Restated here for Phase 7 design work:
+**The underlying question is now resolved (Jeff's call, 2026-07-13, Open Item 5 in the manual).** During the fall idle every PCD scheduled task runs maintenance-only: it pauses or degrades to report-only, with no writes and no active build work, S7's autonomous camp writes included. The only exceptions are the year-round S4 deletion watch and the critical escalations (lapsed domain, failed payment, uptime, security). What's left for Phase 7 is the build, not the decision:
 
 - **Global toggle:** one flag that idles PCD's scheduled tasks during the August-through-November football season, with S4 exempted so the deletion and opt-out monitor keeps running.
-- **Per-task matrix:** which of the ten scheduled tasks fully pause versus degrade to report-only during the idle. Not decided. The manual names this as Jeff's call before fall camp (section 3.4, Open Item 5).
+- **Per-task matrix:** since the resolved rule applies the same treatment to all ten tasks (pause or degrade, no writes), CD's per-task matrix is mostly moot as a design question. Kept as a build checklist so Phase 7 can confirm each task's actual behavior matches the rule, not as an open decision.
 - **Phase 7 dependency:** this needs Phase 6 logging live first, so a paused or degraded task still shows its state in the run log instead of going silent.
 
 ---
