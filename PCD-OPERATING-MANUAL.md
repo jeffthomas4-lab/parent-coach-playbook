@@ -2,9 +2,10 @@
 
 **Venture:** ParentCoachDesk.com (Field & Forge Ventures, Forge Command Track V2)
 **Source of truth:** this markdown file. Notion mirrors it under the PCD Command Center page.
-**Version:** 1.0, 2026-07-13. Design session, first pass.
+**Version:** 1.1, 2026-07-13. Design session, first pass (v1.0), then a three-source feedback reconciliation (v1.1).
 **Scope this session:** Phases 1 to 3 (business architecture, SOP documentation, workflow mapping). Phases 4 to 10 are stubbed with prerequisites. Prompt architecture and agent design are session two.
 **Governed by:** Forge Command Master Plan v2.1, the ten named rules, the section 10 failure modes, and the Personal AI Organization Blueprint. Where any of those conflict with this manual, they win.
+**v1.1 changes:** Adjudicated 46 feedback items from three external reviews (Gemini, ChatGPT review, ChatGPT full-draft rewrite). Rejected the build-the-AI-OS-now direction and the roughly thirty-agent, six-department expansion; routed the Phase 4 and 5 material to a Session Two input file. Accepted: workflow-driven agent growth, the July build of the S4 monitor, and a new Open Item for camp-database safety. Full adjudication in PCD-MANUAL-RECONCILIATION-MEMO-2026-07-13.md.
 
 This is a design document. It builds no agents, no automations, and no schedules. It maps how ParentCoachDesk already runs, names the standing processes, and sets the order the work should mature in.
 
@@ -124,7 +125,7 @@ Every SOP names its approval gate. The HUMAN GATE rule holds across all of them:
 **Trigger:** any deletion request landing at `parentcoachplaybook@gmail.com`.
 **Steps:** Acknowledge, locate the record in the `activity-radar` D1, delete or anonymize, confirm to the requester, log the action. The DATA-MAP.md SLA is 30 days and does not pause for football season.
 **Approval gate:** Jeff approves the deletion. This is the one standing watch that runs year-round.
-**Backing task:** none, and that is the risk. Nothing currently monitors that inbox for a request. Building this monitor is the one PCD automation that maintenance mode does not idle (section 3.4).
+**Backing task:** none yet, and that is the risk. Nothing currently monitors that inbox for a request. Building this monitor is the one PCD automation that maintenance mode does not idle (section 3.4), and it is scheduled to be built in July 2026 before the idle (Jeff's call, 2026-07-13). It is a monitor-and-draft: it watches the inbox, locates the record, and stages the deletion for Jeff. The deletion itself stays behind the HUMAN GATE, so this does not require the manual-3x clearance that an autonomous action would.
 
 ### S5. Affiliate link health
 
@@ -261,7 +262,7 @@ Phases 1 to 3 are complete above. The rest are stubbed. Each names what has to b
 
 # 4. AI org chart
 
-Each function is tagged as either a member of the Forge Command year-one working set or a future-menu candidate. The working set is capped at about eight agents portfolio-wide and does not grow until Jeff promotes something. Every future-menu row states its existence test (time, decision quality, risk, or revenue) and its manual-3x status.
+Each function is tagged as either a member of the Forge Command year-one working set or a future-menu candidate. The working set is capped at about eight agents portfolio-wide and does not grow until Jeff promotes something. Promotion is workflow-driven. The set grows one agent at a time, and only when a specific workflow is being built for automation, never speculatively and never as a batch. Each new agent still clears the existence test and the manual-3x gate before it earns a row. This is the standing answer to the three external reviews that proposed roughly thirty agents and six new departments at once (Jeff's call, 2026-07-13). Every future-menu row states its existence test (time, decision quality, risk, or revenue) and its manual-3x status.
 
 | Function | Workstream | Tag | Existence test | Manual 3x | Approval posture |
 |---|---|---|---|---|---|
@@ -283,7 +284,7 @@ The honest tension: several future-menu functions already run as scheduled tasks
 
 The order follows one rule from the binding: traffic and revenue-moving work ranks ahead of internal elegance, and everything respects the August-through-November idle. The audit's own 30/60/90 plan is the distribution spine; the internal wiring waits behind it.
 
-**Now to fall camp (July, before the idle):** distribution first. Run the audit's day-0-to-30 fixes as sessions: the mojibake fix, the www-to-bare 301, the dead-brand link purge, the camp-page 301 policy, and the author reveal and first outreach push. These are the only work that moves causes 1 and 2 from the audit, and they are low effort. Nothing internal competes with them for July.
+**Now to fall camp (July, before the idle):** distribution first. Run the audit's day-0-to-30 fixes as sessions: the mojibake fix, the www-to-bare 301, the dead-brand link purge, the camp-page 301 policy, and the author reveal and first outreach push. These are the only work that moves causes 1 and 2 from the audit, and they are low effort. One internal build joins them, and only one. The S4 data-deletion and opt-out monitor gets built in July before the idle, because its 30-day compliance SLA runs year-round and nothing watches the inbox today. Everything else internal still waits behind distribution.
 
 **The idle (August through November):** hold. PCD runs on its schedule at report-and-draft level or paused per section 3.4. Football season and LegisRadar (portfolio Priority 1) own the calendar. The only live watch is the data-deletion SLA.
 
@@ -314,13 +315,15 @@ The rules are the constitution and they hold here without exception. The four th
 1. **The venture file is out of date on automation.** `ventures/parentcoachdesk.md` (2026-07-12) says marketing, SEO, and camp lead-gen are not registry candidates and that the camp pipeline has never run. Ten PCD scheduled tasks are live, including the daily autonomous camp discovery agent. Reconcile the venture file against section 3.2.
 2. **Two overlapping GSC tasks.** `weekly-gsc-review` and `pcd-gsc-analytics-report` both fire Monday morning and both cover GSC. Confirm what each does and consolidate.
 3. **No PCD task writes to `agent_runs`.** The logging contract says agents that do not log do not exist, and `agent_runs` and `agent_registry` do not exist in D1 yet. Nothing PCD runs is logged. This blocks Phase 6.
-4. **Camp discovery writes live with no periodic human audit.** S7 pushes enrichment to the parent-facing database daily. Set a cadence for a human to audit its confidence threshold, its accept rate, and its guardrail compliance.
-5. **Maintenance-mode pause-versus-degrade is undecided per task.** Section 3.4 names the idle but not which of the ten tasks pause fully and which degrade to report-only. Decide before fall camp.
+4. **Camp discovery writes live with no periodic human audit.** S7 pushes enrichment to the parent-facing database daily. Set a cadence for a human to audit its confidence threshold, its accept rate, and its guardrail compliance. All three external reviews (2026-07-13) independently landed on this gap, which raises its priority for the December close.
+5. **Maintenance-mode pause-versus-degrade is undecided per task.** Section 3.4 names the idle but not which of the ten tasks pause fully and which degrade to report-only. Decide before fall camp. Two proposed inputs for that Phase 7 decision are on the table: a global PCD_MAINTENANCE_MODE toggle that idles the crons with an S4 bypass, and a per-task pause-versus-degrade matrix drafted in the ChatGPT full-draft review. The per-task call stays Jeff's before fall camp.
 6. **Two D1 database names for what may be one database.** `wrangler.jsonc` binds `activity-radar`; Deployments.md targets `parent-coach-playbook`. Confirm before the next migration (carried from the venture file).
 7. **One compliance Critical open.** No terms of use for the camps directory's $79/yr listings, no UGC license, refund terms, or liability cap. Flagged for a lawyer pass. The paid-listings feature stays unlaunched until this closes.
 8. **The camp lead-gen sub-plan is still unscoped as a staged plan.** S7 runs, but the staged rollout (hit-rate gate test, Ring 1 geocode, batch sizing) named in CAMP_DISCOVERY_PIPELINE_REVIEW.md is not written up as its own plan.
 
 9. **ActivityRadar merge (2026-07-13): in progress, most code/docs work done this session.** Track V9 in the Forge Command Master Plan is resolved: ActivityRadar is PCD's camp data layer, not a standalone product. Full work-package status and evidence: `ACTIVITYRADAR-MERGE-PLAN.md` phase reports. Still open: Jeff's manual Cloudflare dashboard steps (activityradar.com 301, old Pages project delete, GitHub repo archive), the D1 backfill paste, and the final build/test/deploy/commit paste (see that file's Deploy block).
+
+10. **No backup, rollback, or error recovery for the camp database S7 writes to.** `org-discovery-daily-worklist` mutates the `activity-radar` D1 autonomously every day, but there is no documented backup cadence, restore path, rollback procedure, or error-recovery plan if a batch writes bad data. Site source has git backup and a git rollback path; the database a daily autonomous agent changes has neither. Because the writes are already daily, stand up a D1 backup cadence now, and document a restore-and-rollback procedure before the discovery pass scales (Jeff's call, 2026-07-13). Surfaced independently by all three external reviews.
 
 ---
 
@@ -329,3 +332,4 @@ The rules are the constitution and they hold here without exception. The four th
 | Date | By | Notes |
 |---|---|---|
 | 2026-07-13 | Forge Command design session (PCD Operating Manual v1.0) | First pass. Phases 1 to 3 written; 4 to 10 stubbed with prerequisites. Five workstreams mapped to Blueprint departments; no new departments invented. Org chart tags each function working-set or future-menu with existence test and manual-3x status. Ten live PCD scheduled tasks inventoried in section 3.2 at Jeff's request; discrepancy with the venture file logged as Open Item 1. Maturity roadmap sequences distribution first, football-season idle respected. Decision to adopt per-venture Operating Manuals logged to the Field & Forge Decision Journal. |
+| 2026-07-13 | Reconciliation pass, v1.1. Sources: Gemini review, ChatGPT review, ChatGPT full-draft rewrite | Adjudicated 46 items across 3 sources against the constitution. Rejected the build-the-AI-OS-now direction and the roughly thirty-agent, six-department expansion as violations of failure mode 5, the working-set cap, and section 1.4; the recursive inter-agent-handoff idea rejected under failure mode 2. Routed the Phase 4 and 5 material (prompt frames, agent spec template, Class A/B/C/D matrix, eval questions, intake taxonomy) to PCD-SESSION-TWO-INPUT-from-reviews-2026-07-13.md. Accepted: workflow-driven agent growth (section 4), the July build of the S4 monitor (S4, section 5), Open Item 5 annotation, Open Item 4 reinforcement, and new Open Item 10 for camp-database safety. Still open for Jeff: FTC disclosure coverage, the staging destination, and the maintenance-mode per-task decision. Full adjudication in PCD-MANUAL-RECONCILIATION-MEMO-2026-07-13.md. |

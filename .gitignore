@@ -36,3 +36,6 @@ imports/out/
 
 buildout/bmf/*.csv
 activityradar-archive/seed/0006_orgs_irs_r*.sql
+
+# D1 backups (local snapshots, too large for git, GitHub's 100MB limit)
+backups/
