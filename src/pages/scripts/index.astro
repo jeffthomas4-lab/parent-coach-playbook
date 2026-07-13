@@ -12,14 +12,21 @@ const scripts = (await getCollection('scripts', ({ data }) => isLive(data)))
 // Group scripts by moment phase for the hub layout.
 const moments = [
   { group: 'After the game', slugs: ['after-a-bad-game','after-a-loss','after-a-win','after-no-playing-time','after-a-mistake','kid-upset','kid-silent','after-the-last-game'] },
-  { group: 'Before the game', slugs: ['before-game-nerves','before-a-game','tryouts-week'] },
+  { group: 'Before the game', slugs: ['before-game-nerves','before-a-game','before-a-game-5-7','tryouts-week'] },
   { group: 'During the game', slugs: ['during-a-game'] },
   { group: 'Hard moments',    slugs: ['coach-conflict','teammate-conflict','injury'] },
 ];
 
+// Several scripts share the same `moment` value (e.g. sport-specific
+// "after a bad game" variants). Prefer an exact slug match first so a
+// curated slug that is also a real filename (after-a-win, after-a-bad-game,
+// before-a-game-5-7) always resolves to that specific page, not whichever
+// same-moment script happens to sort first alphabetically.
 const grouped = moments.map(g => ({
   ...g,
-  items: g.slugs.map(s => scripts.find(x => x.data.moment === s)).filter(Boolean) as typeof scripts,
+  items: g.slugs
+    .map(s => scripts.find(x => x.slug === s) ?? scripts.find(x => x.data.moment === s))
+    .filter(Boolean) as typeof scripts,
 })).filter(g => g.items.length > 0);
 ---
 <BaseLayout

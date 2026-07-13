@@ -1,5 +1,6 @@
 ---
 title: 'The summer intensive audition: what an audition video actually needs'
+seoTitle: 'Ballet Summer Intensive Audition: The Video Guide'
 dek: Summer intensives at major schools require an audition video. Here is what they
   look for and how to film one that does not embarrass your kid.
 seoDescription: Summer ballet intensive auditions require a video submission. Here

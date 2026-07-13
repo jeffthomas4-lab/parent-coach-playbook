@@ -1,0 +1,19 @@
+{
+  // Standalone Worker — deliberately separate from the parent-coach-desk
+  // Pages project. Its only job is 301ing the retired parentcoachplaybook.com
+  // domain to parentcoachdesk.com, path for path, so the old domain's link
+  // equity and crawl history pass through Google's Change of Address move
+  // instead of dying with the old brand.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "parentcoachplaybook-redirect",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-30"
+
+  // After first deploy, attach the old domain in the Cloudflare dashboard:
+  // Workers & Pages -> parentcoachplaybook-redirect -> Settings -> Domains &
+  // Routes -> Add Custom Domain -> parentcoachplaybook.com AND
+  // www.parentcoachplaybook.com. That attachment is the one step this session
+  // could not do from here (no zone/custom-domain API tool available) — it
+  // takes about two minutes in the dashboard and is the only thing standing
+  // between this file and the old domain actually redirecting.
+}

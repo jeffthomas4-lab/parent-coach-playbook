@@ -520,6 +520,20 @@ export async function getCampBySlug(db: D1Database, slug: string): Promise<Camp 
   return row;
 }
 
+// Unfiltered lookup — returns the row regardless of pcd_status or whether
+// session_end_date has passed. Used only by the /camps/[slug] route to decide
+// what a dead slug should do (410 gone vs 301 to a hub) instead of letting a
+// real, once-public camp fall through to a bare 404 (2026-07 SEO audit:
+// expired/demoted camps were 404ing, including the site's best-performing
+// page). getCampBySlug above stays filtered for every other caller.
+export async function getCampBySlugAny(db: D1Database, slug: string): Promise<Camp | null> {
+  const row = await db
+    .prepare(`${CAMP_SELECT} WHERE p.slug = ?`)
+    .bind(slug)
+    .first<Camp>();
+  return row ?? null;
+}
+
 export async function listFeaturedCamps(db: D1Database): Promise<Camp[]> {
   const today = todayDateISO();
   const result = await db
@@ -570,15 +584,15 @@ export async function listApprovedUnverifiedCamps(db: D1Database): Promise<Camp[
   return result.results ?? [];
 }
 
-export async function listAllCampSlugsApproved(db: D1Database): Promise<string[]> {
+export async function listAllCampSlugsApproved(db: D1Database): Promise<{ slug: string; lastmod: string }[]> {
   const result = await db
     .prepare(
-      `SELECT p.slug FROM programs p
+      `SELECT p.slug, COALESCE(p.updated_at, p.created_at) AS lastmod FROM programs p
        WHERE p.pcd_status = 'approved' AND p.session_end_date >= ?`,
     )
     .bind(todayDateISO())
-    .all<{ slug: string }>();
-  return (result.results ?? []).map((r) => r.slug);
+    .all<{ slug: string; lastmod: string }>();
+  return result.results ?? [];
 }
 
 // Health check for the camps pipeline. Used by /api/cron/camps-sweep so a

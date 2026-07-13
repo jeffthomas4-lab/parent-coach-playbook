@@ -1,6 +1,6 @@
 ---
-title: "1-on-1 Forecheck"
-summary: "Teach forwards to pressure the puck in the offensive zone. 10 minutes."
+title: "Hockey 1-on-1 Forecheck Drill (Ages 11-12)"
+summary: "A 10-minute hockey drill that teaches forwards to pressure the puck in the offensive zone at ages 11-12."
 sport: "hockey"
 ages: ["11-12"]
 focus: "fundamentals"

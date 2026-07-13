@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCampBySlug, listApprovedReviewsForCamp, listOtherCampsAtAddress, slugifyCity, type Camp, type CampReview } from '../../lib/camps-db';
+import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherCampsAtAddress, slugifyCity, type Camp, type CampReview } from '../../lib/camps-db';
 import { SPORTS, BUYING_GUIDES } from '../../data/site';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
@@ -42,7 +42,37 @@ if (!stateCities || stateCities.length === 0) {
     }
   }
   if (!camp || camp.status !== 'approved') {
-    return new Response('Not found', { status: 404 });
+    // A live approved+future camp always takes the branch above. Anything
+    // else falls here, and a bare 404 used to be the only outcome — including
+    // for camps that were once public and indexed (2026-07 SEO audit: expired
+    // camps must never 404; they either 301 to a hub or 410, so Google keeps
+    // the URL's signal instead of the page rotting into a dead end).
+    let any: Camp | null = null;
+    if (env?.DB && slug) {
+      try {
+        any = await getCampBySlugAny(env.DB, slug);
+      } catch (e) {
+        console.error('getCampBySlugAny failed', e);
+      }
+    }
+    if (!any) {
+      // Slug never existed. A real 404 is the correct response.
+      return new Response('Not found', { status: 404 });
+    }
+    const today = new Date().toISOString().slice(0, 10);
+    if (any.end_date && any.end_date < today) {
+      // The event already happened, approved or not. 301 to the sport hub
+      // (a static page that always renders) so the URL's link/impression
+      // signal lands somewhere permanent instead of dying.
+      const sportGuide = SPORTS.find((s) => s.slug === any!.sport);
+      const dest = sportGuide ? `/sports/${sportGuide.slug}/` : '/camps/';
+      return Astro.redirect(dest, 301);
+    }
+    // Future-dated but not approved (pending review, or rejected for cause:
+    // duplicate, dead URL, spam, etc.). Never indexed as a live page, but the
+    // slug is real and may be crawled — 410 says so is permanently gone
+    // rather than a bare, ambiguous 404.
+    return new Response('Gone', { status: 410 });
   }
 }
 

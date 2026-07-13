@@ -1,5 +1,5 @@
 ---
-title: "Transporting other people's kids: *consent, insurance, exposure*"
+title: "Transporting other people's kids: *consent and insurance*"
 summary: "The signed permission slip, what your auto policy actually covers, and the SafeSport rule about adult-minor solo car rides."
 subhub: "safety"
 safetyCategory: "travel-logistics"

@@ -1,9 +1,7 @@
 ---
 title: The 8-10 First Travel-Team Pitch
 dek: What to listen for. What to ask.
-seoDescription: At eight to ten, you'll get the first pitch to move your kid to a
-  travel team. A coach will tell you they're special, they're ready, the travel program
-  is...
+seoDescription: "At eight to ten, you'll get the first pitch to move your kid to a travel team. What to ask before you say yes, and the real cost."
 topic: rec-vs-travel
 format: note
 phase: drive-there

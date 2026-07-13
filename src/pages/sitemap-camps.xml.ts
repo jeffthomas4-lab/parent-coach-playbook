@@ -10,7 +10,7 @@ export const prerender = false;
 
 export async function GET(ctx: APIContext) {
   const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;
-  let campSlugs: string[] = [];
+  let campSlugs: { slug: string; lastmod: string }[] = [];
   if (env?.DB) {
     try {
       campSlugs = await listAllCampSlugsApproved(env.DB);
@@ -30,8 +30,9 @@ export async function GET(ctx: APIContext) {
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${campSlugs.map(slug => `  <url>
-    <loc>${SITE.url}/camps/${slug}/</loc>
+${campSlugs.map(c => `  <url>
+    <loc>${SITE.url}/camps/${c.slug}/</loc>
+    <lastmod>${(c.lastmod || '').slice(0, 10)}</lastmod>
   </url>`).join('\n')}
 </urlset>`;
 

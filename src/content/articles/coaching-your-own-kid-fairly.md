@@ -2,8 +2,7 @@
 title: How to know if you're *actually* coaching your kid fairly
 seoTitle: How to coach your own kid fairly — the test that works
 seoDescription: Most parent-coaches drift toward overcorrecting or undercorrecting
-  their own kid. The simple test that tells you which one you're doing and how to
-  fix it in two weeks.
+  their own kid. The test that tells you which one, and how to fix it in two weeks.
 dek: Most parent-coaches go one of two ways. Neither one is fair. Here's the test
   that tells you which side you're on, and the small habits that move you back to
   the middle.
