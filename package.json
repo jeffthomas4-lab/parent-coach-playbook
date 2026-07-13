@@ -30,7 +30,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/tailwind": "^6.0.2",
     "@fontsource/fraunces": "^5.0.20",
     "@fontsource/jetbrains-mono": "^5.0.20",
     "@fontsource/mulish": "^5.0.20",
