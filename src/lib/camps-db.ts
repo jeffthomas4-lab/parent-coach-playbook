@@ -378,6 +378,9 @@ export async function insertCamp(
   const orgId = crypto.randomUUID();
 
   // Derive record_status from pcd_status so ActivityRadar display stays consistent.
+  // Mapping is documented in CAMPS_APPROVAL_THRESHOLD.md: approved->active,
+  // rejected->inactive, pending->unverified. pcd_status is the source of truth;
+  // record_status is a derived mirror that nothing here reads for visibility.
   const recordStatus = status === 'approved' ? 'active' : status === 'rejected' ? 'inactive' : 'unverified';
 
   // Insert the organization.

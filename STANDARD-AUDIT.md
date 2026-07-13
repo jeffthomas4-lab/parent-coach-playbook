@@ -6,6 +6,8 @@ Tracks this project against the Website Build Standard (`About Me/Website-Build-
 
 Last updated: 2026-07-07 (Pillars 8, 9, 10 run for the first time on 2026-07-05; Pillars 1, 4, 7 re-checked per the 2026-07-05 consultant tightening. Session ran without shell/build access — see the verification note at the bottom before shipping.) Pillar 6 re-verified 2026-07-07 — see its row and note below.
 
+**2026-07-13 note (ActivityRadar merge):** the surface this audit covers grew. ActivityRadar folded in as this repo's camp data layer: the org/program/session schema history (`migrations-activity-radar/`), the daily discovery pipeline (`buildout/`), and two Cloudflare Workers (`activityradar-enrichment` hourly, `activityradar-yelp` daily) that write to the same shared `activity-radar` D1 this site reads. ActivityRadar's own pillar audits (`SECURITY-AUDIT.md`, `STANDARD-AUDIT.md`, `DATA-MAP.md`) are archived at `activityradar-archive/` — historical record only, no longer maintained separately. Pillars 8-10 stay open exactly as already flagged below; this merge didn't touch Ops/CI/SEO status, it just widened what those pillars now need to eventually cover (the two Workers have no monitoring, no CI, and aren't in the sitemap conversation).
+
 | # | Pillar | Status | Note |
 |---|--------|--------|------|
 | 1 | Security | fixed | No Critical/High. 11-point gate holds. Secrets inventory added to `SECURITY-AUDIT.md` per the tightened pillar. Found `CRON_KEY` is referenced in code but not documented as ever configured — not a hole (fails closed) but likely means the cron sweep has never run. Gitleaks full-history scan not run this session (no shell access) — open item. |

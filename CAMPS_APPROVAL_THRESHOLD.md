@@ -32,3 +32,21 @@ The discovery and scan pipeline was producing pending rows nobody worked, so the
 ## Standing instruction
 
 This threshold should move into the enrichment worker so newly scraped camps are created already approved (or auto-approved on a nightly pass) instead of piling up pending again. Clearing the backlog once does not stop it from refilling.
+
+Status: done. `campApproval()` in `workers-activity-radar/enrichment-worker.ts` applies this threshold at scrape time.
+
+## Status model (added 2026-07-13, ActivityRadar merge WP-8)
+
+Two status fields exist on `programs`. `pcd_status` (`pending`/`approved`/`rejected`) is the single source of truth. `record_status` (`active`/`unverified`/`inactive`) is a derived mirror, ActivityRadar-era naming kept for the shared schema. No code in this repo reads `record_status` to decide what a parent sees; every public query (`listApprovedCamps`, `CAMP_SELECT`, etc. in `src/lib/camps-db.ts`) filters on `pcd_status`.
+
+The mapping, applied everywhere a program's status is set:
+
+| pcd_status | record_status |
+|---|---|
+| approved | active |
+| rejected | inactive |
+| pending | unverified |
+
+Where it's enforced: `campApproval()` in the enrichment worker (creation time), `approveCamp()`/`rejectCamp()` in `src/lib/camps-db.ts` (admin review). `insertCamp()` derives the same mapping for manual submissions.
+
+One known drift, not fixed this session: `workers-activity-radar/enrichment-worker.ts`'s `writeCamp()` unconditionally sets the *organization's* `record_status = 'active'` whenever `camp_detected = 1`, even when the program it just wrote is `pcd_status = 'pending'`. This doesn't affect parent-facing visibility (nothing reads org-level `record_status`), so it's a data-quality note, not a bug — flagged for Jeff to decide whether to gate it on the program's approval status too.

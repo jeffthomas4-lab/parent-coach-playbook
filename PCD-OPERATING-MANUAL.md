@@ -216,6 +216,8 @@ Jeff asked for this explicitly, and it is the most important correction the manu
 
 One more task touches PCD files without owning PCD work: `cowork-folder-weekly-scan` (Sun 10 PM) hashes the whole Cowork folder, including the PCD outputs, and stages changed files as Notion Raw Sources for the Second Brain. It is a knowledge-ingest task, not a PCD process, and it is listed here only so its file access is not mistaken for a PCD agent.
 
+**Two Cloudflare Worker crons, not Cowork scheduled tasks (added 2026-07-13, ActivityRadar merge WP-9).** `activityradar-enrichment` (hourly) and `activityradar-yelp` (daily 3:00 AM) run as Cloudflare Workers against the shared `activity-radar` D1, not as Cowork scheduled tasks, so they don't appear in the table above. They are part of the same standing operating picture: `activityradar-enrichment` is the low-level camp-scan/scrape worker that S7's daily discovery agent feeds queue rows to, and `activityradar-yelp` enriches camp records with Yelp data. Both worker names are historical identifiers kept unchanged on purpose (see ACTIVITYRADAR-MERGE-PLAN.md); they are PCD's camp data layer, not a separate product's infrastructure.
+
 ## 3.3 The weekly cadence
 
 The PCD scheduled load is front-loaded onto Monday and spread thin across the rest of the week. This is the shape of the week as it fires today:
@@ -317,6 +319,8 @@ The rules are the constitution and they hold here without exception. The four th
 6. **Two D1 database names for what may be one database.** `wrangler.jsonc` binds `activity-radar`; Deployments.md targets `parent-coach-playbook`. Confirm before the next migration (carried from the venture file).
 7. **One compliance Critical open.** No terms of use for the camps directory's $79/yr listings, no UGC license, refund terms, or liability cap. Flagged for a lawyer pass. The paid-listings feature stays unlaunched until this closes.
 8. **The camp lead-gen sub-plan is still unscoped as a staged plan.** S7 runs, but the staged rollout (hit-rate gate test, Ring 1 geocode, batch sizing) named in CAMP_DISCOVERY_PIPELINE_REVIEW.md is not written up as its own plan.
+
+9. **ActivityRadar merge (2026-07-13): in progress, most code/docs work done this session.** Track V9 in the Forge Command Master Plan is resolved: ActivityRadar is PCD's camp data layer, not a standalone product. Full work-package status and evidence: `ACTIVITYRADAR-MERGE-PLAN.md` phase reports. Still open: Jeff's manual Cloudflare dashboard steps (activityradar.com 301, old Pages project delete, GitHub repo archive), the D1 backfill paste, and the final build/test/deploy/commit paste (see that file's Deploy block).
 
 ---
 

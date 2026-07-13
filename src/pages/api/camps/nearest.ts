@@ -47,10 +47,16 @@ export const GET: APIRoute = async ({ request, locals }) => {
   // Pull every (city, state, latitude, longitude) we have. At 50K rows this would
   // be a lot to scan; for now D1 is small enough that this is fine. Future: build
   // a cities-with-centroid materialized view.
+  //
+  // Schema note: this reads the shared activity-radar organizations/programs graph,
+  // not the retired flat `camps` table (folded in via the ActivityRadar merge,
+  // 2026-07). city/state/latitude/longitude live on organizations; approval status
+  // lives on programs.pcd_status.
   const result = await env.DB
-    .prepare(`SELECT city, state, latitude, longitude
-              FROM camps
-              WHERE status = 'approved' AND latitude IS NOT NULL AND longitude IS NOT NULL`)
+    .prepare(`SELECT o.city AS city, o.state AS state, o.latitude AS latitude, o.longitude AS longitude
+              FROM programs p
+              JOIN organizations o ON p.organization_id = o.id
+              WHERE p.pcd_status = 'approved' AND o.latitude IS NOT NULL AND o.longitude IS NOT NULL`)
     .all<{ city: string; state: string; latitude: number; longitude: number }>();
   const rows = result.results ?? [];
   if (rows.length === 0) return json({ ok: false, error: 'no camps' }, 404);
