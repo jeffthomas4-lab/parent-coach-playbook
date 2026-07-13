@@ -7,7 +7,7 @@ export const SITE = {
   shortPitch: 'Sideline notes from the editorial desk for parents who coach, organize, drive, and supervise the snack rotation.',
   url: 'https://parentcoachdesk.com',
   description:
-    'Sideline notes for parents who are deep in their kid\'s youth sports, theater, band, or whatever else is on the schedule this week. Short, honest, occasionally funny.',
+    'For every parent driving a kid to practice, rehearsal, or the meet. Find the camps, get the gear right, and win the drive home. Any activity, any age.',
   byline: 'the Parent Coach Desk',
   bylineShort: 'PCD',
   email: 'parentcoachplaybook@gmail.com',

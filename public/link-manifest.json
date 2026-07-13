@@ -1,11 +1,10 @@
 {
-  "generatedAt": "2026-07-13T04:26:48.205Z",
-  "count": 675,
+  "generatedAt": "2026-07-13T04:48:03.429Z",
+  "count": 674,
   "links": [
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       "sources": [
-        "src/pages/camps/[slug].astro",
         "src/pages/camps/index.astro"
       ]
     },
@@ -3556,12 +3555,6 @@
       "url": "https://www.olympic.org/athlete365/health/relative-energy-deficiency-in-sport/",
       "sources": [
         "src/content/body/eating-disorders-in-sport.md"
-      ]
-    },
-    {
-      "url": "https://www.openstreetmap.org/copyright",
-      "sources": [
-        "src/pages/camps/[slug].astro"
       ]
     },
     {
