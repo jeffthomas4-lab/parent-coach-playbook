@@ -28,7 +28,7 @@
     "audit:gate": "npm audit --audit-level=high"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/cloudflare": "^14.1.3",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/tailwind": "^5.1.5",
     "@fontsource/fraunces": "^5.0.20",
