@@ -19,7 +19,7 @@ If your hard drive dies tomorrow, every line of code is recoverable from `git cl
 
 Cloudflare D1 has no built-in backups on the free tier. If a table gets dropped or rows get deleted by accident, the only path to recovery is your own snapshots.
 
-The script `scripts\backup-d1-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`, commits the file, and pushes to GitHub. (Updated 2026-07-13, ActivityRadar merge: the old `backup-d1.ps1` dumped the retired flat `camps` table and is retired — see `activityradar-archive/README.md`.)
+The script `scripts\backup-d1-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`. **Local only — it does not commit or push.** (Changed 2026-07-13: the dump is now 245MB+ and growing with the org table at ~198,000 rows, well past GitHub's 100MB file limit. Committing it broke `git push` for the whole repo, not just the backup commit. `backups/` is `.gitignore`'d; recovering from a live incident where this file exceeds "local disk only" isn't currently solved — see Open items below.) The old `backup-d1.ps1` dumped the retired flat `camps` table and is retired — see `activityradar-archive/README.md`.
 
 Run manually any time:
 
@@ -67,6 +67,7 @@ Versioning is free for the first 30 days of object history. Old versions count a
 - Cloudflare account itself: if you lose access to the account, everything Cloudflare-hosted (Pages, D1, R2) goes with it. Document your billing email and 2FA recovery codes somewhere safe (1Password, Bitwarden, or even a paper printout in a fireproof box).
 - The Coach Jeff Thomas site: doesn't use D1 or R2, so layer 1 (GitHub) covers it fully.
 - Notion content: separate system, separate backup. Notion has built-in version history but no offline export by default. Periodically export your Notion workspace to ZIP via Notion → Settings → Workspace → Export.
+- **D1 snapshots are local-only as of 2026-07-13** (see Layer 2 above) — if this machine's hard drive dies the same day as a bad D1 write, there's no offsite copy of the dump. D1's own Time Travel (30-day point-in-time restore, no export needed) covers the "bad write" case without depending on this machine at all, which is probably the real answer here. If you want a true offsite copy of the full dump, that needs somewhere other than this GitHub repo — an R2 bucket (`wrangler r2 object put`) or a cloud drive folder, not decided yet.
 
 ## Quick check
 
