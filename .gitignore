@@ -33,3 +33,6 @@ sanity-cli.json
 
 # generated SQL imports (don't commit)
 imports/out/
+
+buildout/bmf/*.csv
+activityradar-archive/seed/0006_orgs_irs_r*.sql
