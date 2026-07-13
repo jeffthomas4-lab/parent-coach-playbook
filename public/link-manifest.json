@@ -1,7 +1,14 @@
 {
-  "generatedAt": "2026-07-13T22:13:56.814Z",
-  "count": 675,
+  "generatedAt": "2026-07-13T22:50:32.370Z",
+  "count": 676,
   "links": [
+    {
+      "url": "http://www.w3.org/2000/svg",
+      "sources": [
+        "src/pages/camps/[slug].astro",
+        "src/pages/camps/index.astro"
+      ]
+    },
     {
       "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       "sources": [

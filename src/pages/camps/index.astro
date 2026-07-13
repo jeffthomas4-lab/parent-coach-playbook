@@ -364,20 +364,32 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   <script>
     import L from 'leaflet';
     import 'leaflet/dist/leaflet.css';
-    // Leaflet's default marker PNGs resolve off a CDN path that breaks once
-    // Leaflet is bundled through Vite. Import the images so Vite gives them
-    // real hashed URLs, then point the default icon at them, otherwise every
-    // pin renders with no image.
-    import markerIcon from 'leaflet/dist/images/marker-icon.png';
-    import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-    import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+    import 'leaflet.markercluster';
+    import 'leaflet.markercluster/dist/MarkerCluster.css';
+    import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconUrl: markerIcon,
-      iconRetinaUrl: markerIcon2x,
-      shadowUrl: markerShadow,
-    });
+    // Self-contained inline-SVG pin. The prior fix imported Leaflet's default
+    // marker PNGs and pointed L.Icon.Default at them, but pins still didn't
+    // render on the deployed site — the icon request resolved to the literal
+    // URL /camps/[object%20Object] (a 404), because the imported PNG module
+    // wasn't unwrapped to a plain string URL inside this bundled script. A
+    // divIcon sidesteps the problem entirely: it's inline HTML/SVG, so
+    // there's no image asset to resolve, hash, or 404 on.
+    function campPinIcon() {
+      const w = 26;
+      const h = 38;
+      return L.divIcon({
+        className: 'camp-pin',
+        html: `<svg width="${w}" height="${h}" viewBox="0 0 26 38" xmlns="http://www.w3.org/2000/svg" style="display:block; filter: drop-shadow(0 1px 2px rgba(45,37,32,0.45));">
+          <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="#9E5228"/>
+          <circle cx="13" cy="13" r="5" fill="#FAF6EE"/>
+        </svg>`,
+        iconSize: [w, h],
+        iconAnchor: [w / 2, h],
+        popupAnchor: [0, -h + 4],
+      });
+    }
+
     (function () {
       const dataEl = document.getElementById('camps-data');
       const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
@@ -446,7 +458,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       };
 
       let map = null;
-      let markers = [];
+      let clusterGroup = null;
       let visibleCamps = [];
 
       // Initialize map
@@ -467,6 +479,17 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           attribution: '&copy; OpenStreetMap',
         }).addTo(map);
 
+        // Cluster group replaces loose markers. Zoomed out shows count
+        // bubbles; zooming in (or clicking a bubble) splits them down to
+        // individual pins. Default cluster icons are pure CSS (no external
+        // images), themed to the site's rust palette below.
+        clusterGroup = L.markerClusterGroup({
+          maxClusterRadius: 60,
+          spiderfyOnMaxZoom: true,
+          showCoverageOnHover: false,
+        });
+        map.addLayer(clusterGroup);
+
         // Then fit to actual camp bounds. fitBounds beats centroid+zoom because it
         // frames every pin regardless of how skewed the distribution is.
         if (campsWithGeo.length > 0) {
@@ -477,11 +500,11 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
       // Render map markers
       function renderMap() {
-        if (!map) return;
+        if (!map || !clusterGroup) return;
 
-        // Clear old markers
-        markers.forEach(m => map.removeLayer(m));
-        markers = [];
+        // Clear old markers — clearLayers empties the whole cluster group in
+        // one call instead of removing pins one at a time.
+        clusterGroup.clearLayers();
 
         // Track positions we've already pinned. Camps at the exact same coords get nudged
         // a tiny amount so all pins stay clickable instead of stacking under one another.
@@ -502,7 +525,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         visibleCamps.forEach(c => {
           if (typeof c.latitude === 'number' && typeof c.longitude === 'number') {
             const [latJ, lonJ] = jitterFor(c.latitude, c.longitude);
-            const marker = L.marker([latJ, lonJ]).addTo(map);
+            const marker = L.marker([latJ, lonJ], { icon: campPinIcon() });
             const popup = `<div style="font-size: 14px;">
               <strong>${c.name}</strong><br/>
               ${c.city}, ${c.state}<br/>
@@ -510,7 +533,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
               <a href="/camps/${c.slug}/" style="color: var(--rust); text-decoration: none;">View camp ↗</a>
             </div>`;
             marker.bindPopup(popup);
-            markers.push(marker);
+            clusterGroup.addLayer(marker);
             pinnedCoords.push([c.latitude, c.longitude]);
           }
         });
@@ -766,6 +789,25 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       applyFilters();
     })();
   </script>
+
+  <style is:global>
+    /* Cluster bubbles themed to the site's rust palette instead of
+       leaflet.markercluster's default green/yellow/orange. Pure CSS —
+       no external images, so nothing here can 404 like the old marker did. */
+    .marker-cluster-small,
+    .marker-cluster-medium,
+    .marker-cluster-large {
+      background-color: rgba(158, 82, 40, 0.25);
+    }
+    .marker-cluster-small div,
+    .marker-cluster-medium div,
+    .marker-cluster-large div {
+      background-color: #9E5228;
+      color: #FAF6EE;
+      font-family: inherit;
+      font-weight: 600;
+    }
+  </style>
 
 <script is:inline>
 (function () {

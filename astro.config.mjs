@@ -61,6 +61,7 @@ export default defineConfig({
     domains: ['cdn.sanity.io'],
   },
   vite: {
+    cacheDir: '/tmp/pcd-vite-verify-cache',
     build: {
       // Astro 5 inlines small bundled <script> tags by default. The site CSP only
       // allows 'self' plus explicit is:inline hashes, so an inlined bundled script
