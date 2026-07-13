@@ -7,10 +7,13 @@
 //   - repeated camp/session blocks in the HTML.
 // It writes one program row per camp with all the data the page yields (name, dates,
 // price, ages, times, registration link, location, day/overnight, etc.), marks the
-// org camp_detected, and promotes it to active so it shows in parent search.
+// org camp_detected, and sets the program's pcd_status via campApproval(). Under the
+// low threshold a camp with a name, a location, and one actionable or readable field
+// is created pcd_status='approved' (record_status='active'), so it shows in parent
+// search right away. Thin or placeless records are created 'pending' for a human.
 //
-// Deploy: cd workers && npx wrangler deploy --config wrangler.toml
-// Test:   cd workers && npx wrangler dev --test-scheduled
+// Deploy: cd workers-activity-radar && npx wrangler deploy --config wrangler.toml
+// Test:   cd workers-activity-radar && npx wrangler dev --test-scheduled
 
 export interface Env {
   DB: D1Database;
@@ -417,12 +420,46 @@ function findCampLink(html: string, baseUrl: string): string | null {
 // DB writes
 // ---------------------------------------------------------------------------
 
-async function writeCamp(db: D1Database, org: { id: string; name: string; slug: string; categories: string | null }, c: CampData, sourceDomain: string, now: string): Promise<void> {
+// Low-threshold auto-approval for scraped camps. Mirrors CAMPS_APPROVAL_THRESHOLD.md.
+// Default is to go live: a scraped camp is approved when it has a real name, a
+// location on its org, and at least one thing a parent can act on or read. Only
+// empty or placeless records are held pending for a human. Reruns never override a
+// human decision, because the INSERT's ON CONFLICT clause leaves pcd_status untouched.
+function campApproval(
+  org: { city: string | null; state: string | null },
+  c: CampData,
+): { status: 'approved' | 'pending'; confidence: 'low' | 'medium' | 'high' } {
+  const hasLocation = !!(org.city && org.state);
+  const hasName = !!c.name && c.name.trim().toLowerCase() !== 'camp';
+  const hasDate = !!(c.sessionStart || c.sessionEnd);
+  const hasReg = !!c.registrationUrl;
+  const hasPrice = c.price != null || !!c.priceText;
+  const hasDescription = !!c.description && c.description.trim().length >= 120;
+  const actionable = hasDate || hasReg || hasPrice;
+  if (!hasLocation || !hasName || !(actionable || hasDescription)) {
+    return { status: 'pending', confidence: 'low' };
+  }
+  const isFuture = !!c.sessionEnd && c.sessionEnd >= new Date().toISOString().slice(0, 10);
+  if (isFuture && (hasReg || hasPrice)) return { status: 'approved', confidence: 'high' };
+  if (actionable) return { status: 'approved', confidence: 'medium' };
+  return { status: 'approved', confidence: 'low' };
+}
+
+async function writeCamp(db: D1Database, org: { id: string; name: string; slug: string; categories: string | null; city: string | null; state: string | null }, c: CampData, sourceDomain: string, now: string): Promise<void> {
   let fallbackCat = 'camp_sports';
   try { const cats: string[] = org.categories ? JSON.parse(org.categories) : []; if (cats.length) fallbackCat = cats[0]; } catch { /* default */ }
   const activityCategory = categoryFromName(c.name, fallbackCat);
   const datePart = c.sessionStart ?? '';
   const slug = `${org.slug}-${slugify(c.name + '-' + datePart, 'camp-' + Math.random().toString(36).slice(2, 8))}`.slice(0, 120);
+
+  const approval = campApproval(org, c);
+  const pcdStatus = approval.status;
+  const pcdConfidence = approval.confidence;
+  const recordStatus = pcdStatus === 'approved' ? 'active' : 'unverified';
+  const awaitingReview = pcdStatus === 'approved' ? 0 : 1;
+  const reviewedBy = pcdStatus === 'approved' ? 'enrichment-worker (auto-approve)' : null;
+  const reviewedAt = pcdStatus === 'approved' ? now : null;
+  const reviewNotes = pcdStatus === 'approved' ? 'low-threshold auto-approve' : 'held: below info threshold';
 
   await db.prepare(`
     INSERT INTO programs (
@@ -436,9 +473,10 @@ async function writeCamp(db: D1Database, org: { id: string; name: string; slug: 
       schedule_text, days_of_week, start_time, end_time,
       skill_level, source_domain, url_health_status,
       availability_status, record_source, record_status, confidence_score,
+      pcd_status, pcd_confidence, awaiting_review, reviewed_by, reviewed_at, review_notes,
       created_at, last_verified_at, updated_at
     )
-    VALUES (?, ?, ?, ?, 'camp', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'live', 'open', 'scraped', 'active', ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, 'camp', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'live', 'open', 'scraped', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(slug) DO UPDATE SET
       session_start_date = excluded.session_start_date,
       session_end_date   = excluded.session_end_date,
@@ -457,7 +495,9 @@ async function writeCamp(db: D1Database, org: { id: string; name: string; slug: 
     c.lunchIncluded, c.aftercareAvail,
     c.scheduleText, c.daysOfWeek, c.startTime, c.endTime,
     c.skillLevel, sourceDomain,
+    recordStatus,
     c.price || c.sessionStart ? 60 : 40,
+    pcdStatus, pcdConfidence, awaitingReview, reviewedBy, reviewedAt, reviewNotes,
     now, now, now
   ).run();
 }

@@ -77,12 +77,78 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 | soccer-ball-size3 | 2026-07-08 |
 | soccer-ball-size4 | 2026-07-08 |
 | soccer-ball-size5 | 2026-07-08 |
+| soccer-ball-size5-match | 2026-07-13 |
+| soccer-socks-youth | 2026-07-13 |
+| soccer-goalie-gloves-youth | 2026-07-13 |
+| soccer-clearance-cleats | 2026-07-13 |
+| soccer-coupon-10-off-100 | 2026-07-13 |
+| soccer-garage-shop | 2026-07-13 |
+| multi-sport-shoe-bag | 2026-07-13 |
+| volleyball-knee-pads-youth | 2026-07-13 |
+| volleyball-shoes-upcourt | 2026-07-13 |
+| volleyball-volley-lite | 2026-07-13 |
+| volleyball-flistatec | 2026-07-13 |
+| volleyball-spandex-youth | 2026-07-13 |
+| volleyball-ankle-brace | 2026-07-13 |
+| xc-trainers-youth | 2026-07-13 |
+| xc-spikes-kilkenny | 2026-07-13 |
+| xc-base-layer-set-youth | 2026-07-13 |
+| xc-running-gloves | 2026-07-13 |
+| cheer-shoes-youth | 2026-07-13 |
+| cheer-bow-jumbo | 2026-07-13 |
+| cheer-hair-gel | 2026-07-13 |
+| multi-sport-athletic-tape | 2026-07-13 |
+| multi-sport-water-bottle | 2026-07-13 |
+| adhesive-bandages | 2026-07-13 |
+| gauze-pads | 2026-07-13 |
+| athletic-tape-roll | 2026-07-13 |
+| butterfly-bandages | 2026-07-13 |
+| antibiotic-ointment-travel | 2026-07-13 |
+| saline-wipes | 2026-07-13 |
+| instant-cold-pack | 2026-07-13 |
+| ace-wrap | 2026-07-13 |
+| kinesio-tape-precut | 2026-07-13 |
+| antihistamine-child | 2026-07-13 |
+| bug-bite-stick | 2026-07-13 |
+| saline-rinse | 2026-07-13 |
+| tweezers-small | 2026-07-13 |
+| scissors-blunt-tip | 2026-07-13 |
+| sunscreen-travel | 2026-07-13 |
+| lip-balm-spf | 2026-07-13 |
+| electrolyte-tablets | 2026-07-13 |
+| foam-roller-medium | 2026-07-13 |
+| ankle-brace-reusable | 2026-07-13 |
+| compression-socks | 2026-07-13 |
+| water-bottle-32oz | 2026-07-13 |
+| electrolyte-powder | 2026-07-13 |
+| protein-powder-vanilla | 2026-07-13 |
+| hard-cooler-55qt | 2026-07-13 |
+| soft-cooler-25qt | 2026-07-13 |
+| packing-cubes | 2026-07-13 |
+| travel-sport-wash | 2026-07-13 |
+| travel-power-strip | 2026-07-13 |
+| athletic-socks-multipack | 2026-07-13 |
+| mouthguard-boil-bite | 2026-07-13 |
+| batting-gloves-pair | 2026-07-13 |
+| phone-tripod | 2026-07-13 |
+| action-camera | 2026-07-13 |
+| shadow-box-jersey | 2026-07-13 |
+| stadium-chair-budget | 2026-07-13 |
+| stadium-chair-midrange | 2026-07-13 |
+| stadium-chair-premium | 2026-07-13 |
+| sideline-blanket | 2026-07-13 |
+| battery-fan-handheld | 2026-07-13 |
+| bug-spray-travel | 2026-07-13 |
+| hand-warmers | 2026-07-13 |
+| rain-poncho | 2026-07-13 |
+| folding-wagon | 2026-07-13 |
 
 ## Run log
 
-| Date | Slugs checked | Report |
-|---|---|---|
-| 2026-07-08 | 65 (see table above) | LINK_HEALTH_2026-07-08.md |
+| Date | Slugs checked | Report | Issues |
+|---|---|---|---|
+| 2026-07-08 | 65 (see table above) | LINK_HEALTH_2026-07-08.md | 0 confirmed (6 bot-detection false positives) |
+| 2026-07-13 | 65 (see table above) | LINK_HEALTH_2026-07-13.md | 2 confirmed: foam-roller-medium (unavailable), stadium-chair-premium (temp OOS) |
 
 ## Next run
 
