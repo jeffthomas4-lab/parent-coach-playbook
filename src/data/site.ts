@@ -10,7 +10,7 @@ export const SITE = {
     'For every parent driving a kid to practice, rehearsal, or the meet. Find the camps, get the gear right, and win the drive home. Any activity, any age.',
   byline: 'the Parent Coach Desk',
   bylineShort: 'PCD',
-  email: 'parentcoachplaybook@gmail.com',
+  email: 'support@parentcoachdesk.com',
 };
 
 // Single editorial voice. Used for byline rendering on cards, articles, and feeds.

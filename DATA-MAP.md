@@ -52,7 +52,7 @@ One database, one map (updated 2026-07-13, ActivityRadar merge): this file now c
 
 ## Deletion path
 
-A user who wants their data removed should email parentcoachplaybook@gmail.com. We handle it within 30 days.
+A user who wants their data removed should email support@parentcoachdesk.com. We handle it within 30 days. (Changed 2026-07-13 from the retired parentcoachplaybook@gmail.com brand address; support@ already forwards to jeff@coachjeffthomas.com per Cloudflare Email Routing, PCD Operating Manual S12.)
 
 | Store | What gets purged | How |
 |-------|-----------------|-----|

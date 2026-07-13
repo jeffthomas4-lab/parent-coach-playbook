@@ -364,6 +364,20 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
   <script>
     import L from 'leaflet';
     import 'leaflet/dist/leaflet.css';
+    // Leaflet's default marker PNGs resolve off a CDN path that breaks once
+    // Leaflet is bundled through Vite. Import the images so Vite gives them
+    // real hashed URLs, then point the default icon at them, otherwise every
+    // pin renders with no image.
+    import markerIcon from 'leaflet/dist/images/marker-icon.png';
+    import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+    import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+    delete (L.Icon.Default.prototype as any)._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconUrl: markerIcon,
+      iconRetinaUrl: markerIcon2x,
+      shadowUrl: markerShadow,
+    });
     (function () {
       const dataEl = document.getElementById('camps-data');
       const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};

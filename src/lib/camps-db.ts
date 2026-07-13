@@ -1350,7 +1350,7 @@ export async function geocode(
 
   const res = await fetch(url.toString(), {
     headers: {
-      'User-Agent': 'parentcoachdesk.com camps directory (parentcoachplaybook@gmail.com)',
+      'User-Agent': 'parentcoachdesk.com camps directory (support@parentcoachdesk.com)',
       'Accept-Language': 'en',
     },
   });
