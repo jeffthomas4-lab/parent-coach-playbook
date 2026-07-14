@@ -37,7 +37,7 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="impact-site-verification" value="04a8c1e8-b026-4996-926e-bf13ca8bba02" />
+    <meta {...({ name: 'impact-site-verification', value: '04a8c1e8-b026-4996-926e-bf13ca8bba02' } as any)} />
     <meta name="fo-verify" content="f7446405-2866-493b-a08d-5c5f098a5c34" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />

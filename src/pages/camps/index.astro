@@ -391,20 +391,43 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
     }
 
     (function () {
+      interface LiteCamp {
+        id: string;
+        name: string;
+        slug: string;
+        sport: string;
+        age_min: number;
+        age_max: number;
+        start_date: string;
+        end_date: string;
+        city: string;
+        state: string;
+        day_or_overnight: string;
+        spots_status: string;
+        program_type: string | null;
+        latitude: number | null;
+        longitude: number | null;
+        description: string;
+      }
+      interface SportOption {
+        slug: string;
+        label: string;
+      }
+
       const dataEl = document.getElementById('camps-data');
       const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
-      const camps = _data.camps || [];
-      const sportsList = _data.sports || [];
+      const camps: LiteCamp[] = _data.camps || [];
+      const sportsList: SportOption[] = _data.sports || [];
 
       // Helper: get sport label
-      function sportLabel(slug) {
+      function sportLabel(slug: string): string {
         const match = sportsList.find(s => s.slug === slug);
         return match ? match.label : slug.split(/[\s-]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       }
 
       // Helper: haversine distance in miles
-      function haversineMiles(lat1, lon1, lat2, lon2) {
-        const toRad = d => d * Math.PI / 180;
+      function haversineMiles(lat1: number, lon1: number, lat2: number, lon2: number): number {
+        const toRad = (d: number) => d * Math.PI / 180;
         const R = 3958.8;
         const dLat = toRad(lat2 - lat1);
         const dLon = toRad(lon2 - lon1);
@@ -417,7 +440,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       // when paired with free-text `q=`, which was causing "98101" to
       // resolve to a French postcode about 50% of the time. Falls back to
       // "ZIP, USA" free-text if structured returns nothing.
-      async function geocodeZip(zip) {
+      async function geocodeZip(zip: string): Promise<{ lat: number; lon: number } | null> {
         const tries = [
           `https://nominatim.openstreetmap.org/search?postalcode=${encodeURIComponent(zip)}&countrycodes=us&format=json&limit=1`,
           `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(zip + ', USA')}&format=json&limit=1`,
@@ -426,7 +449,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
           try {
             const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
             if (!r.ok) continue;
-            const data = await r.json();
+            const data = (await r.json()) as Array<{ lat: string; lon: string }>;
             if (!data.length) continue;
             const lat = parseFloat(data[0].lat);
             const lon = parseFloat(data[0].lon);
@@ -441,13 +464,28 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
       // Filter state. showLeagues and showFull default to false so the page
       // opens with only camps that parents can actually sign up for right now.
-      let state = {
+      interface FilterState {
+        search: string;
+        sport: string;
+        ageMin: number | null;
+        ageMax: number | null;
+        dateStart: string;  // ISO YYYY-MM-DD; empty means no lower bound
+        dateEnd: string;    // ISO YYYY-MM-DD; empty means no upper bound
+        dayOvernight: string;
+        state: string;
+        zipLat: number | null;
+        zipLon: number | null;
+        zipRadius: number;
+        showLeagues: boolean;
+        showFull: boolean;
+      }
+      let state: FilterState = {
         search: '',
         sport: '',
         ageMin: null,
         ageMax: null,
-        dateStart: '',  // ISO YYYY-MM-DD; empty means no lower bound
-        dateEnd: '',    // ISO YYYY-MM-DD; empty means no upper bound
+        dateStart: '',
+        dateEnd: '',
         dayOvernight: 'all',
         state: '',
         zipLat: null,
@@ -457,9 +495,9 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         showFull: false,
       };
 
-      let map = null;
-      let clusterGroup = null;
-      let visibleCamps = [];
+      let map: L.Map | null = null;
+      let clusterGroup: L.MarkerClusterGroup | null = null;
+      let visibleCamps: LiteCamp[] = [];
 
       // Initialize map
       function initMap() {
@@ -493,7 +531,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         // Then fit to actual camp bounds. fitBounds beats centroid+zoom because it
         // frames every pin regardless of how skewed the distribution is.
         if (campsWithGeo.length > 0) {
-          const bounds = L.latLngBounds(campsWithGeo.map(c => [c.latitude, c.longitude]));
+          const bounds = L.latLngBounds(campsWithGeo.map(c => [c.latitude, c.longitude] as [number, number]));
           map.fitBounds(bounds, { padding: [40, 40], maxZoom: 10 });
         }
       }
@@ -501,15 +539,17 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       // Render map markers
       function renderMap() {
         if (!map || !clusterGroup) return;
+        const activeMap = map;
+        const activeClusterGroup = clusterGroup;
 
         // Clear old markers — clearLayers empties the whole cluster group in
         // one call instead of removing pins one at a time.
-        clusterGroup.clearLayers();
+        activeClusterGroup.clearLayers();
 
         // Track positions we've already pinned. Camps at the exact same coords get nudged
         // a tiny amount so all pins stay clickable instead of stacking under one another.
-        const positionCounts = {};
-        const jitterFor = (lat, lon) => {
+        const positionCounts: Record<string, number> = {};
+        const jitterFor = (lat: number, lon: number): [number, number] => {
           const key = `${lat.toFixed(6)},${lon.toFixed(6)}`;
           const idx = positionCounts[key] || 0;
           positionCounts[key] = idx + 1;
@@ -521,7 +561,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         };
 
         // Add markers for visible camps
-        const pinnedCoords = [];
+        const pinnedCoords: [number, number][] = [];
         visibleCamps.forEach(c => {
           if (typeof c.latitude === 'number' && typeof c.longitude === 'number') {
             const [latJ, lonJ] = jitterFor(c.latitude, c.longitude);
@@ -533,7 +573,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
               <a href="/camps/${c.slug}/" style="color: var(--rust); text-decoration: none;">View camp ↗</a>
             </div>`;
             marker.bindPopup(popup);
-            clusterGroup.addLayer(marker);
+            activeClusterGroup.addLayer(marker);
             pinnedCoords.push([c.latitude, c.longitude]);
           }
         });
@@ -543,7 +583,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         // existing zoom alone. Otherwise frame the visible set.
         if (pinnedCoords.length > 0 && state.zipLat == null) {
           const bounds = L.latLngBounds(pinnedCoords);
-          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 12 });
+          activeMap.fitBounds(bounds, { padding: [40, 40], maxZoom: 12 });
         }
       }
 
@@ -597,7 +637,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         });
 
         // Hide/show camp cards
-        document.querySelectorAll('.camp-card').forEach(card => {
+        document.querySelectorAll<HTMLElement>('.camp-card').forEach(card => {
           const campId = card.getAttribute('data-camp-id');
           const isVisible = visibleCamps.some(c => c.id === campId);
           card.style.display = isVisible ? '' : 'none';
@@ -609,7 +649,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       // Populate dropdowns
       function populateFilters() {
         // Sport options
-        const sportSelect = document.getElementById('filter-sport');
+        const sportSelect = document.getElementById('filter-sport') as unknown as HTMLSelectElement;
         const uniqueSports = [...new Set(camps.map(c => c.sport))].sort();
         uniqueSports.forEach(sport => {
           const opt = document.createElement('option');
@@ -619,7 +659,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         });
 
         // State options
-        const stateSelect = document.getElementById('filter-state');
+        const stateSelect = document.getElementById('filter-state') as unknown as HTMLSelectElement;
         const uniqueStates = [...new Set(camps.map(c => c.state))].sort();
         uniqueStates.forEach(st => {
           const opt = document.createElement('option');
@@ -632,38 +672,40 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
       // Event listeners
       function attachListeners() {
         // Free-text search
-        document.getElementById('filter-search').addEventListener('input', (e) => {
-          state.search = e.target.value.trim();
+        (document.getElementById('filter-search') as HTMLInputElement).addEventListener('input', (e) => {
+          state.search = (e.target as HTMLInputElement).value.trim();
           applyFilters();
         });
 
         // Sport
-        document.getElementById('filter-sport').addEventListener('change', (e) => {
-          state.sport = e.target.value;
+        (document.getElementById('filter-sport') as unknown as HTMLSelectElement).addEventListener('change', (e) => {
+          state.sport = (e.target as HTMLSelectElement).value;
           applyFilters();
         });
 
         // Age min
-        document.getElementById('filter-age-min').addEventListener('input', (e) => {
-          state.ageMin = e.target.value ? parseInt(e.target.value, 10) : null;
+        (document.getElementById('filter-age-min') as HTMLInputElement).addEventListener('input', (e) => {
+          const v = (e.target as HTMLInputElement).value;
+          state.ageMin = v ? parseInt(v, 10) : null;
           applyFilters();
         });
 
         // Age max
-        document.getElementById('filter-age-max').addEventListener('input', (e) => {
-          state.ageMax = e.target.value ? parseInt(e.target.value, 10) : null;
+        (document.getElementById('filter-age-max') as HTMLInputElement).addEventListener('input', (e) => {
+          const v = (e.target as HTMLInputElement).value;
+          state.ageMax = v ? parseInt(v, 10) : null;
           applyFilters();
         });
 
         // Date start
-        document.getElementById('filter-date-start').addEventListener('change', (e) => {
-          state.dateStart = e.target.value || '';
+        (document.getElementById('filter-date-start') as HTMLInputElement).addEventListener('change', (e) => {
+          state.dateStart = (e.target as HTMLInputElement).value || '';
           applyFilters();
         });
 
         // Date end
-        document.getElementById('filter-date-end').addEventListener('change', (e) => {
-          state.dateEnd = e.target.value || '';
+        (document.getElementById('filter-date-end') as HTMLInputElement).addEventListener('change', (e) => {
+          state.dateEnd = (e.target as HTMLInputElement).value || '';
           applyFilters();
         });
 
@@ -671,7 +713,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         // pressed. Swap an inline style so the user gets feedback without
         // needing a CSS file change.
         const ACTIVE_STYLE = 'background: var(--rust); color: white; border-color: var(--rust);';
-        function setToggleActive(btn, active) {
+        function setToggleActive(btn: HTMLElement, active: boolean) {
           if (active) {
             btn.setAttribute('data-active', 'true');
             btn.style.cssText = ACTIVE_STYLE;
@@ -682,27 +724,27 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         }
 
         // Day/overnight — single-select group
-        document.querySelectorAll('[data-filter-dayovernght]').forEach(btn => {
+        document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach(btn => {
           btn.addEventListener('click', () => {
-            document.querySelectorAll('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
+            document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
             setToggleActive(btn, true);
-            state.dayOvernight = btn.getAttribute('data-filter-dayovernght');
+            state.dayOvernight = btn.getAttribute('data-filter-dayovernght') || 'all';
             applyFilters();
           });
         });
 
         // State
-        document.getElementById('filter-state').addEventListener('change', (e) => {
-          state.state = e.target.value;
+        (document.getElementById('filter-state') as unknown as HTMLSelectElement).addEventListener('change', (e) => {
+          state.state = (e.target as HTMLSelectElement).value;
           applyFilters();
         });
 
         // Zip form. The submit button does the geocode; clearing the input
         // releases the filter automatically; changing the radius after a
         // successful search re-filters without requiring another click.
-        document.getElementById('filter-zip-form').addEventListener('submit', async (e) => {
+        (document.getElementById('filter-zip-form') as HTMLFormElement).addEventListener('submit', async (e) => {
           e.preventDefault();
-          const zip = document.getElementById('filter-zip').value.trim();
+          const zip = (document.getElementById('filter-zip') as HTMLInputElement).value.trim();
           if (!zip) {
             state.zipLat = null;
             state.zipLon = null;
@@ -710,7 +752,7 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
             return;
           }
 
-          const submitBtn = e.target.querySelector('button[type="submit"]');
+          const submitBtn = (e.target as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement | null;
           const originalLabel = submitBtn ? submitBtn.textContent : null;
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Searching...'; }
 
@@ -725,14 +767,15 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
 
           state.zipLat = geo.lat;
           state.zipLon = geo.lon;
-          const radiusVal = document.getElementById('filter-radius').value;
+          const radiusVal = (document.getElementById('filter-radius') as unknown as HTMLSelectElement).value;
           state.zipRadius = radiusVal === 'all' ? Infinity : parseInt(radiusVal, 10);
           applyFilters();
         });
 
         // Clearing the zip input releases the radius filter immediately.
-        document.getElementById('filter-zip').addEventListener('input', (e) => {
-          if (!e.target.value.trim() && state.zipLat !== null) {
+        (document.getElementById('filter-zip') as HTMLInputElement).addEventListener('input', (e) => {
+          const v = (e.target as HTMLInputElement).value;
+          if (!v.trim() && state.zipLat !== null) {
             state.zipLat = null;
             state.zipLon = null;
             applyFilters();
@@ -740,43 +783,44 @@ const sportsListJson = JSON.stringify(CAMP_SPORTS);
         });
 
         // Changing the radius after a successful zip search re-filters in place.
-        document.getElementById('filter-radius').addEventListener('change', (e) => {
+        (document.getElementById('filter-radius') as unknown as HTMLSelectElement).addEventListener('change', (e) => {
           if (state.zipLat === null) return; // no active zip filter, nothing to do
-          state.zipRadius = e.target.value === 'all' ? Infinity : parseInt(e.target.value, 10);
+          const v = (e.target as HTMLSelectElement).value;
+          state.zipRadius = v === 'all' ? Infinity : parseInt(v, 10);
           applyFilters();
         });
 
         // Show leagues toggle (independent on/off)
-        document.getElementById('filter-show-leagues').addEventListener('click', (e) => {
+        (document.getElementById('filter-show-leagues') as HTMLButtonElement).addEventListener('click', (e) => {
           state.showLeagues = !state.showLeagues;
-          setToggleActive(e.currentTarget, state.showLeagues);
+          setToggleActive(e.currentTarget as HTMLElement, state.showLeagues);
           applyFilters();
         });
 
         // Show full toggle (independent on/off)
-        document.getElementById('filter-show-full').addEventListener('click', (e) => {
+        (document.getElementById('filter-show-full') as HTMLButtonElement).addEventListener('click', (e) => {
           state.showFull = !state.showFull;
-          setToggleActive(e.currentTarget, state.showFull);
+          setToggleActive(e.currentTarget as HTMLElement, state.showFull);
           applyFilters();
         });
 
         // Clear filters — resets to default which hides leagues + full programs.
-        document.getElementById('clear-filters').addEventListener('click', () => {
+        document.getElementById('clear-filters')!.addEventListener('click', () => {
           state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false };
-          document.getElementById('filter-search').value = '';
-          document.getElementById('filter-sport').value = '';
-          document.getElementById('filter-age-min').value = '';
-          document.getElementById('filter-age-max').value = '';
-          document.getElementById('filter-date-start').value = '';
-          document.getElementById('filter-date-end').value = '';
-          document.getElementById('filter-state').value = '';
-          document.getElementById('filter-zip').value = '';
-          document.getElementById('filter-radius').value = '10';
-          document.querySelectorAll('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
-          const allBtn = document.querySelector('[data-filter-dayovernght="all"]');
+          (document.getElementById('filter-search') as HTMLInputElement).value = '';
+          (document.getElementById('filter-sport') as unknown as HTMLSelectElement).value = '';
+          (document.getElementById('filter-age-min') as HTMLInputElement).value = '';
+          (document.getElementById('filter-age-max') as HTMLInputElement).value = '';
+          (document.getElementById('filter-date-start') as HTMLInputElement).value = '';
+          (document.getElementById('filter-date-end') as HTMLInputElement).value = '';
+          (document.getElementById('filter-state') as unknown as HTMLSelectElement).value = '';
+          (document.getElementById('filter-zip') as HTMLInputElement).value = '';
+          (document.getElementById('filter-radius') as unknown as HTMLSelectElement).value = '10';
+          document.querySelectorAll<HTMLElement>('[data-filter-dayovernght]').forEach(b => setToggleActive(b, false));
+          const allBtn = document.querySelector<HTMLElement>('[data-filter-dayovernght="all"]');
           if (allBtn) setToggleActive(allBtn, true);
-          setToggleActive(document.getElementById('filter-show-leagues'), false);
-          setToggleActive(document.getElementById('filter-show-full'), false);
+          setToggleActive(document.getElementById('filter-show-leagues') as HTMLElement, false);
+          setToggleActive(document.getElementById('filter-show-full') as HTMLElement, false);
           applyFilters();
         });
       }

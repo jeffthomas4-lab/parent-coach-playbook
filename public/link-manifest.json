@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-14T13:38:46.941Z",
-  "count": 676,
+  "generatedAt": "2026-07-14T15:10:23.013Z",
+  "count": 678,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -602,6 +602,12 @@
       "url": "https://nccsir.unc.edu/",
       "sources": [
         "src/content/body/youth-cheer-stunt-safety-briefing.md"
+      ]
+    },
+    {
+      "url": "https://nfhs.org/stories/rules-changes-approved-for-high-school-track-and-field-cross-country",
+      "sources": [
+        "src/content/news/nfhs-track-field-throwing-warmup-safety-2027.md"
       ]
     },
     {
@@ -4498,6 +4504,12 @@
       "sources": [
         "src/pages/about/sources.astro",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.usyouthsoccer.org/news/2025/06/10/updated-decision-on-age-group-formation/",
+      "sources": [
+        "src/content/news/youth-soccer-age-cutoff-shifts-to-school-year-2026.md"
       ]
     },
     {

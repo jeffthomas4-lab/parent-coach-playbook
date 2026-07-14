@@ -37,8 +37,8 @@ if (piece.data.thingsParentsGetWrong?.length > 0) {
   });
 }
 // Also include any explicit faqs from frontmatter
-if (piece.data.faqs?.length > 0) {
-  for (const { question, answer } of piece.data.faqs) {
+if ((piece.data.faqs?.length ?? 0) > 0) {
+  for (const { question, answer } of piece.data.faqs ?? []) {
     faqEntries.push({ name: question, text: answer });
   }
 }

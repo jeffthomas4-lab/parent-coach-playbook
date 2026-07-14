@@ -43,7 +43,10 @@ const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? 
 // Latest 5 for the hero right-rail — excludes featured.
 const latestRail = all.filter(a => a.slug !== featured?.slug).slice(0, 5);
 
-const drives = Object.values(PILLARS);
+// The "three drives" homepage section is specifically about the original
+// drive-there/game/drive-home phases — team-parent is a separate content
+// vertical with its own section elsewhere on this page, not a fourth drive.
+const drives = [PILLARS['drive-there'], PILLARS.game, PILLARS['drive-home']];
 
 const driveImages = [
   {

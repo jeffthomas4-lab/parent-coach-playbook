@@ -196,7 +196,7 @@ const levels = [
     type Source = { label: string; url: string };
     type Profile = { sport: string; level: 'rec'|'school'|'travel'|'elite'; estimatedGames: number; lines: Line[]; sources?: Source[]; sourceNote?: string };
 
-    const $ = <T extends HTMLElement = HTMLElement>(sel: string) => document.querySelector(sel) as T | null;
+    const $ = <T = HTMLElement,>(sel: string) => document.querySelector(sel) as T | null;
 
     const profilesEl = document.getElementById('cost-profiles') as HTMLScriptElement | null;
     const blurbsEl   = document.getElementById('level-blurbs') as HTMLScriptElement | null;

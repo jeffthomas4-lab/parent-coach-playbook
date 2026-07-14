@@ -81,7 +81,7 @@ if (props.kind === 'article') {
   const rendered = await article.render();
   ArticleContent = rendered.Content;
   topicMeta = TEAM_PARENT_TOPICS.find((t) => t.slug === article!.data.teamParentTopic);
-  sportLabel = SPORTS.find((s) => s.slug === article.data.sport)?.label;
+  sportLabel = SPORTS.find((s) => s.slug === article!.data.sport)?.label;
   ageLabel = AGE_BANDS.find((a) => a.slug === article!.data.age)?.label;
   isShort = article.data.format === 'note';
   titleHtml = article.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');

@@ -255,7 +255,7 @@ if (camp) {
       </div>
     </section>
   </BaseLayout>
-) : (
+) : camp && (
 <BaseLayout
   title={camp.name}
   description={`${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
@@ -605,18 +605,18 @@ if (camp) {
 
   <script>
     (function () {
-      var form = document.getElementById('review-form');
-      var status = document.querySelector('[data-review-status]');
+      const form = document.getElementById('review-form') as HTMLFormElement | null;
+      const status = document.querySelector('[data-review-status]') as HTMLElement | null;
       if (!form || !status) return;
-      var slug = form.getAttribute('data-camp-slug') || '';
+      const slug = form.getAttribute('data-camp-slug') || '';
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         status.classList.remove('hidden');
         status.textContent = 'Submitting...';
         status.style.color = '#5F5448';
-        var fd = new FormData(form);
+        const fd = new FormData(form);
         fetch('/api/camps/' + slug + '/reviews/submit', { method: 'POST', body: fd })
-          .then(function (r) { return r.json(); })
+          .then(function (r) { return r.json() as Promise<{ ok: boolean; error?: string }>; })
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
@@ -635,18 +635,18 @@ if (camp) {
     })();
 
     (function () {
-      var form = document.getElementById('claim-form');
-      var status = document.querySelector('[data-claim-status]');
+      const form = document.getElementById('claim-form') as HTMLFormElement | null;
+      const status = document.querySelector('[data-claim-status]') as HTMLElement | null;
       if (!form || !status) return;
-      var slug = form.getAttribute('data-camp-slug') || '';
+      const slug = form.getAttribute('data-camp-slug') || '';
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         status.classList.remove('hidden');
         status.textContent = 'Submitting...';
         status.style.color = '#5F5448';
-        var fd = new FormData(form);
+        const fd = new FormData(form);
         fetch('/api/camps/' + slug + '/claim', { method: 'POST', body: fd })
-          .then(function (r) { return r.json(); })
+          .then(function (r) { return r.json() as Promise<{ ok: boolean; error?: string; message?: string }>; })
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';

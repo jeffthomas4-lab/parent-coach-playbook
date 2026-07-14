@@ -182,6 +182,14 @@ export const PILLARS = {
     accentBg: '#F5E9D2',
     blurb: 'The post-game conversation, the car ride, the dinner table. The relationship aftermath.',
   },
+  'team-parent': {
+    slug: 'team-parent',
+    label: 'Team Parent',
+    eyebrow: 'Team parent',
+    accent: EDITORIAL.accent,
+    accentBg: EDITORIAL.accentBg,
+    blurb: 'Running the group chat, the snack schedule, the tournament weekend — the job nobody hands you a manual for.',
+  },
 } as const;
 
 // Topic taxonomy: the new homepage organization. Replaces three-drives as the front-door grid.

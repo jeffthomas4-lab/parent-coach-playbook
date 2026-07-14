@@ -41,7 +41,7 @@ const hasOgOverride = !!(data as any).ogImage;
 // previews are unique per article without a runtime image service.
 const ogImagePath = (data as any).ogImage ?? `/og/${slug}.jpg`;
 const ogImageUrl = new URL(ogImagePath, SITE.url).toString();
-const heroImage = (data as any).ogImage ?? (data.hero ? (typeof data.hero === 'string' ? data.hero : data.hero.src) : '/og-default.jpg');
+const heroImage = (data as any).ogImage ?? (data.hero ? data.hero : '/og-default.jpg');
 const heroImageUrl = new URL(heroImage, SITE.url).toString();
 const heroAlt = (data as any).heroAlt ?? data.title.replace(/\*/g, '');
 const imageObject: Record<string, unknown> = {
@@ -234,7 +234,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         {data.hero && (
           <div class="mt-10 rounded-lg overflow-hidden">
             <img
-              src={typeof data.hero === 'string' ? data.hero : data.hero.src}
+              src={data.hero}
               alt={data.heroAlt ?? data.title}
               class="w-full object-cover"
               style="max-height: 480px;"

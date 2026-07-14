@@ -6,7 +6,9 @@ interface Props {
   variant?: 'sidebar' | 'inline';
 }
 const { active, variant = 'sidebar' } = Astro.props;
-const items = Object.values(PILLARS);
+// This nav is specifically "the three drives" (drive-there/game/drive-home);
+// team-parent is a separate content vertical, not a fourth drive.
+const items = [PILLARS['drive-there'], PILLARS.game, PILLARS['drive-home']];
 ---
 <nav
   aria-label="The Three Drives"
