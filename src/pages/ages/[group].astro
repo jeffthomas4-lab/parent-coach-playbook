@@ -113,7 +113,7 @@ const fmtDate = (d: Date) =>
         </h2>
         <div class="grid md:grid-cols-2 gap-x-10">
           {articles.map((a) => (
-            <a href={`/${a.data.phase}/${a.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+            <a href={`/${a.data.phase}/${a.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-rust text-xs font-medium">
                 {a.data.sport ? `${a.data.sport} · ` : ''}{fmtDate(a.data.publishedAt)}
               </p>
@@ -140,7 +140,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {tips.slice(0, 18).map((t) => (
             <li class="bg-paper p-4">
-              <a href={`/coaching-tips/${t.slug}/`} class="block group">
+              <a href={`/coaching-tips/${t.id}/`} class="block group">
                 <p class="font-display italic text-rust text-xs font-medium">
                   {t.data.sport ? `${t.data.sport}` : ''}{t.data.focus ? ` · ${t.data.focus}` : ''}
                 </p>
@@ -172,7 +172,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {scripts.map((s) => (
             <li>
-              <a href={`/scripts/${s.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <a href={`/scripts/${s.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
                 <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
                 {s.data.summary && (
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{s.data.summary}</p>
@@ -196,7 +196,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {decisions.map((d) => (
             <li>
-              <a href={`/decisions/${d.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <a href={`/decisions/${d.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
                 <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(d.data.title)} />
                 {d.data.summary && (
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{d.data.summary}</p>

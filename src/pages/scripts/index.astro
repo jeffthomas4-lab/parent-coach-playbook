@@ -25,7 +25,7 @@ const moments = [
 const grouped = moments.map(g => ({
   ...g,
   items: g.slugs
-    .map(s => scripts.find(x => x.slug === s) ?? scripts.find(x => x.data.moment === s))
+    .map(s => scripts.find(x => x.id === s) ?? scripts.find(x => x.data.moment === s))
     .filter(Boolean) as typeof scripts,
 })).filter(g => g.items.length > 0);
 ---
@@ -69,7 +69,7 @@ const grouped = moments.map(g => ({
           <p class="font-display italic text-rust mb-4 font-medium">{g.group}</p>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
             {g.items.map((s) => (
-              <a href={`/scripts/${s.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+              <a href={`/scripts/${s.id}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
                 <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{s.data.summary}</p>
                 <p class="t-cta mt-3">30-second read →</p>

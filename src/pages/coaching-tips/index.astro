@@ -85,7 +85,7 @@ const focusOptions = [
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" data-tips-grid>
             {tips.map((t) => (
               <a
-                href={`/coaching-tips/${t.slug}/`}
+                href={`/coaching-tips/${t.id}/`}
                 class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
                 data-sport-tag={t.data.sport ?? ''}
                 data-age-tag={t.data.age ?? 'all-ages'}

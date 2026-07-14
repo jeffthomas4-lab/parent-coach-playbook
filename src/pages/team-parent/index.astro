@@ -105,7 +105,7 @@ const recentArticles = teamParentArticles.slice(0, 6);
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {recentArticles.map((a) => (
             <li>
-              <a href={`/team-parent/${a.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <a href={`/team-parent/${a.id}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
                 <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(a.data.title)} />
                 {a.data.dek && <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{a.data.dek}</span>}
               </a>
@@ -153,7 +153,7 @@ const recentArticles = teamParentArticles.slice(0, 6);
                 <a
                   href={r.data.type === 'external' && r.data.externalUrl
                     ? r.data.externalUrl
-                    : `/team-parent/${r.slug}/`}
+                    : `/team-parent/${r.id}/`}
                   class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group"
                   rel={r.data.type === 'external' ? 'noopener' : undefined}
                   target={r.data.type === 'external' ? '_blank' : undefined}

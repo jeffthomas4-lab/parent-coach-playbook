@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { isLive } from '../../lib/publishFilter';
@@ -7,13 +7,13 @@ import { isLive } from '../../lib/publishFilter';
 export async function getStaticPaths() {
   const pillars = await getCollection('pillar', ({ data }) => isLive(data));
   return pillars.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const pageTitle = entry.data.seoTitle ?? entry.data.title;
 const pageDescription = entry.data.seoDescription ?? '';

@@ -102,7 +102,7 @@ const ageLabel = (a: string | undefined) =>
               <ul class="grid gap-px bg-bone" data-articles-grid>
                 {articles.slice(0, ITEMS_PER_PAGE).map((a) => (
                   <li class="bg-paper" data-age-tag={a.data.age ?? 'all-ages'} data-sport-tag={a.data.sport ?? ''} data-format-tag={a.data.format} data-title={a.data.title.toLowerCase()} data-dek={a.data.dek?.toLowerCase() || ''}>
-                    <a href={`/${a.data.phase}/${a.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
+                    <a href={`/${a.data.phase}/${a.id}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
                       {a.data.hero && (
                         <img
                           src={a.data.hero}

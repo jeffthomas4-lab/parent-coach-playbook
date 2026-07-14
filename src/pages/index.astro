@@ -33,7 +33,7 @@ const PINNED_SLUGS: string[] = [
   'three-teams-in-one-summer',
 ];
 const pinned = PINNED_SLUGS
-  .map(s => all.find(a => a.slug === s))
+  .map(s => all.find(a => a.id === s))
   .filter(Boolean) as typeof all;
 const pinnedFinal = pinned.length === 3 ? pinned : all.slice(0, 3);
 
@@ -41,7 +41,7 @@ const pinnedFinal = pinned.length === 3 ? pinned : all.slice(0, 3);
 const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
 
 // Latest 5 for the hero right-rail — excludes featured.
-const latestRail = all.filter(a => a.slug !== featured?.slug).slice(0, 5);
+const latestRail = all.filter(a => a.id !== featured?.id).slice(0, 5);
 
 // The "three drives" homepage section is specifically about the original
 // drive-there/game/drive-home phases — team-parent is a separate content
@@ -150,7 +150,7 @@ const websiteSchema = {
           <ul class="border-t border-bone">
             {latestRail.map((a) => (
               <li>
-                <a href={`/${a.data.phase}/${a.slug}/`} class="block py-3 border-b border-bone hover:bg-paper-warm transition-colors group">
+                <a href={`/${a.data.phase}/${a.id}/`} class="block py-3 border-b border-bone hover:bg-paper-warm transition-colors group">
                   <p class="font-display italic text-rust text-xs font-medium">
                     {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {wasUpdated(a.data) ? 'Updated ' : ''}{fmtDate(freshnessDate(a.data))}
                   </p>
@@ -186,7 +186,7 @@ const websiteSchema = {
           {newsItems.map((item) => (
             <li>
               <a
-                href={`/news/${item.slug}/`}
+                href={`/news/${item.id}/`}
                 class="block bg-paper p-5 hover:bg-paper-warm transition-colors group h-full"
               >
                 <p class="font-display italic text-rust text-xs font-medium mb-2">
@@ -214,7 +214,7 @@ const websiteSchema = {
       <div class="mt-7 grid md:grid-cols-3 gap-px bg-bone">
         {pinnedFinal.map((p, i) => (
           <a
-            href={`/${p.data.phase}/${p.slug}/`}
+            href={`/${p.data.phase}/${p.id}/`}
             class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
             style={`transform: rotate(${(i - 1) * 0.4}deg);`}
           >
@@ -454,7 +454,7 @@ const websiteSchema = {
     <section class="border-b border-bone">
       <div class="container-px py-14 md:py-16">
         <p class="font-display italic text-rust mb-3 font-medium">If you only read one thing</p>
-        <a href={`/${featured.data.phase}/${featured.slug}/`} class="block group max-w-3xl">
+        <a href={`/${featured.data.phase}/${featured.id}/`} class="block group max-w-3xl">
           <h2
             class="font-display text-ink text-4xl md:text-[3.5rem] leading-[1.05] group-hover:text-rust transition-colors font-medium"
             set:html={renderTitle(featured.data.title)}

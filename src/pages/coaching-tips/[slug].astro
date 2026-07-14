@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 import { EDITORIAL, SITE, SPORTS, authorEntity } from '../../data/site';
@@ -9,13 +9,13 @@ import { renderTitle, stripTitle } from '../../lib/title';
 export async function getStaticPaths() {
   const tips = await getCollection('coachingTips', ({ data }) => isLive(data));
   return tips.map((t) => ({
-    params: { slug: t.slug },
+    params: { slug: t.id },
     props: { tip: t },
   }));
 }
 
 const { tip } = Astro.props;
-const { Content } = await tip.render();
+const { Content } = await render(tip);
 // FTC 16 CFR Part 255: affiliate disclosure must appear before the first
 // affiliate link, not just in the footer. Render it whenever the tip body
 // contains a /go/ redirect link.
@@ -41,7 +41,7 @@ const howToSchema = {
     '@type': 'HowToStep',
     name: 'Run the drill',
     text: tip.data.summary,
-    url: `${SITE.url}/coaching-tips/${tip.slug}/`,
+    url: `${SITE.url}/coaching-tips/${tip.id}/`,
   }],
 };
 ---

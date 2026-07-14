@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE, SPORTS, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
@@ -9,14 +9,14 @@ export const prerender = true;
 export async function getStaticPaths() {
   const entries = await getCollection('pillar', ({ data }) => isLive(data));
   return entries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // SEO
 const pageTitle = data.seoTitle ?? data.title;
@@ -29,7 +29,7 @@ const sportEntry = SPORTS.find((s) => s.slug === sportSlug);
 const sportLabel = sportEntry?.label ?? sportSlug;
 
 // Article JSON-LD for this pillar
-const canonicalUrl = new URL(`/pillar/${entry.slug}/`, SITE.url).toString();
+const canonicalUrl = new URL(`/pillar/${entry.id}/`, SITE.url).toString();
 
 const articleSchema = {
   '@context': 'https://schema.org',

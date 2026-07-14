@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
 import FAQPageSchema from '../../components/FAQPageSchema.astro';
@@ -10,21 +10,21 @@ import { renderTitle, stripTitle } from '../../lib/title';
 
 export async function getStaticPaths() {
   const decisions = await getCollection('decisions', ({ data }) => isLive(data));
-  return decisions.map((d) => ({ params: { slug: d.slug }, props: { decision: d } }));
+  return decisions.map((d) => ({ params: { slug: d.id }, props: { decision: d } }));
 }
 
 const { decision } = Astro.props;
-const { Content } = await decision.render();
+const { Content } = await render(decision);
 
 // Related scripts and other decisions
 const allScripts = await getCollection('scripts', ({ data }) => isLive(data));
 const relatedScripts = (decision.data.relatedScripts ?? [])
-  .map(slug => allScripts.find(s => s.slug === slug))
+  .map(slug => allScripts.find(s => s.id === slug))
   .filter(Boolean) as typeof allScripts;
 
 const allDecisions = await getCollection('decisions', ({ data }) => isLive(data));
 const relatedDecisions = (decision.data.relatedDecisions ?? [])
-  .map(slug => allDecisions.find(d => d.slug === slug))
+  .map(slug => allDecisions.find(d => d.id === slug))
   .filter(Boolean) as typeof allDecisions;
 
 const breadcrumbSchema = {
@@ -186,7 +186,7 @@ const breadcrumbSchema = {
               <p class="font-display text-ink text-sm mb-3 font-medium">Scripts</p>
               <ul class="grid gap-2">
                 {relatedScripts.map(s => (
-                  <li><a href={`/scripts/${s.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(s.data.title)} /></a></li>
+                  <li><a href={`/scripts/${s.id}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(s.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
@@ -196,7 +196,7 @@ const breadcrumbSchema = {
               <p class="font-display text-ink text-sm mb-3 font-medium">Other decisions</p>
               <ul class="grid gap-2">
                                 {relatedDecisions.map(d => (
-                  <li><a href={`/decisions/${d.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(d.data.title)} /></a></li>
+                  <li><a href={`/decisions/${d.id}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(d.data.title)} /></a></li>
                 ))}
               </ul>
             </div>

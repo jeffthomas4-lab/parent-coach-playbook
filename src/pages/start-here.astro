@@ -22,13 +22,13 @@ const cornerstoneSlugs = [
   'what-age-should-kids-start-sports',
 ];
 const cornerstone = articles
-  .filter(a => cornerstoneSlugs.includes(a.slug))
+  .filter(a => cornerstoneSlugs.includes(a.id))
   .map(a => ({
     kind: 'article' as const,
-    slug: a.slug,
+    slug: a.id,
     title: a.data.title,
     summary: a.data.dek ?? '',
-    href: `/${a.data.phase}/${a.slug}/`,
+    href: `/${a.data.phase}/${a.id}/`,
   }));
 
 // Big decisions — featured ones only.
@@ -39,7 +39,7 @@ const topScripts = scripts.filter(s => s.data.featured).slice(0, 6);
 
 // Body topics — high-urgency, high-search parent needs.
 const bodyTopicSlugs = ['concussion-protocol-basics', 'youth-pitcher-arm-care', 'burnout-signs', 'sleep-targets-by-age'];
-const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.slug));
+const topBodyTopics = body.filter(b => bodyTopicSlugs.includes(b.id));
 
 // Sport grid — top 12 for start-here (more than homepage, less than full /sports/).
 const FEATURED_SPORTS = [
@@ -153,7 +153,7 @@ const startHereTools = TOOLS_NAV.filter(t =>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {topBodyTopics.map((b) => (
             <li>
-              <a href={`/body/${b.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <a href={`/body/${b.id}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
                 <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(b.data.title)} />
                 <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{b.data.summary}</span>
               </a>
@@ -178,7 +178,7 @@ const startHereTools = TOOLS_NAV.filter(t =>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {bigDecisions.map((d) => (
             <li>
-              <a href={`/decisions/${d.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <a href={`/decisions/${d.id}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
                 <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(d.data.title)} />
                 <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{d.data.summary}</span>
               </a>
@@ -203,7 +203,7 @@ const startHereTools = TOOLS_NAV.filter(t =>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
           {topScripts.map((s) => (
             <li>
-              <a href={`/scripts/${s.slug}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
+              <a href={`/scripts/${s.id}/`} class="font-display block py-3 border-b border-bone hover:text-rust transition-colors group">
                 <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(s.data.title)} />
                 <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{s.data.summary}</span>
               </a>

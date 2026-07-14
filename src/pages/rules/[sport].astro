@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { piece } = Astro.props;
-const { Content } = await piece.render();
+const { Content } = await render(piece);
 const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece.data.sport;
 
 // FAQPage JSON-LD: synthesize Q&A pairs from the structured fields.

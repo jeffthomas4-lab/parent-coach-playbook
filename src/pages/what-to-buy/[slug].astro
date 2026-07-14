@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
@@ -9,14 +9,14 @@ import { isLive } from '../../lib/publishFilter';
 export async function getStaticPaths() {
   const guides = await getCollection('guides', ({ data }) => isLive(data));
   return guides.map((g) => ({
-    params: { slug: g.slug },          // filename-derived slug, e.g. "baseball"
+    params: { slug: g.id },          // filename-derived slug, e.g. "baseball"
     props: { guide: g },
   }));
 }
 
 const { guide } = Astro.props;
-const { Content, headings } = await guide.render();
-const meta = BUYING_GUIDES.find(g => g.slug === guide.slug)!;
+const { Content, headings } = await render(guide);
+const meta = BUYING_GUIDES.find(g => g.slug === guide.id)!;
 
 // Pull only top-level (h2) headings for the in-page jump nav
 const jumpNav = headings.filter((h) => h.depth === 2);
@@ -29,7 +29,7 @@ const pageDescription = guide.data.seoDescription ?? guide.data.lede;
 // Structured data. BreadcrumbList for every guide; ItemList built from the
 // gear-pick cards in the markdown body (h3 title + /go/ slug pairs).
 import { SITE } from '../../data/site';
-const pageUrl = `${SITE.url}/what-to-buy/${guide.slug}/`;
+const pageUrl = `${SITE.url}/what-to-buy/${guide.id}/`;
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -114,7 +114,7 @@ const itemListSchema = gearItems.length > 0 ? {
               Updated {(guide.data.updatedAt ?? guide.data.publishedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}
             </p>
             <p class="font-display italic text-ink-soft text-xs mt-3 leading-snug">
-              Need to know what size? <a href={`/what-to-buy/${guide.slug}/sizing/`} class="text-rust hover:underline">{guide.data.activity} sizing guide →</a>
+              Need to know what size? <a href={`/what-to-buy/${guide.id}/sizing/`} class="text-rust hover:underline">{guide.data.activity} sizing guide →</a>
             </p>
           </div>
         </aside>

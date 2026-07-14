@@ -25,7 +25,7 @@ export async function GET(context: APIContext) {
       pubDate: a.data.publishedAt,
       description: a.data.dek ?? '',
       author: EDITORIAL.byline,
-      link: `/${a.data.phase}/${a.slug}/`,
+      link: `/${a.data.phase}/${a.id}/`,
       categories: ['Read'],
     }))
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
@@ -37,7 +37,7 @@ export async function GET(context: APIContext) {
       pubDate: t.data.publishedAt,
       description: t.data.summary ?? '',
       author: EDITORIAL.byline,
-      link: `/coaching-tips/${t.slug}/`,
+      link: `/coaching-tips/${t.id}/`,
       categories: ['Drill'],
     }))
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())
@@ -49,7 +49,7 @@ export async function GET(context: APIContext) {
       pubDate: g.data.publishedAt,
       description: g.data.lede ?? '',
       author: EDITORIAL.byline,
-      link: `/what-to-buy/${g.slug}/`,
+      link: `/what-to-buy/${g.id}/`,
       categories: ['Gear guide'],
     }))
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())

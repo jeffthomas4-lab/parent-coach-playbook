@@ -132,7 +132,7 @@ const formatLabel = (f: string | undefined) => {
                       data-title={b.data.title.toLowerCase()}
                       data-summary={(b.data.summary ?? '').toLowerCase()}
                     >
-                      <a href={`/body/${b.slug}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
+                      <a href={`/body/${b.id}/`} class="block p-5 hover:bg-paper-warm transition-colors group">
                         <div class="flex items-baseline justify-between gap-3 flex-wrap mb-1">
                           <p class="font-display italic text-ink-soft text-xs font-medium">
                             {[

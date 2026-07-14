@@ -1,18 +1,23 @@
 {
-  // Wrangler config for Parent Coach Desk.
-  // Deploys as a Cloudflare PAGES site (not a Worker).
-  // The Astro Cloudflare adapter writes static + SSR output to ./dist.
-  //
-  // First-time D1 setup:
-  //   npx wrangler d1 create parent-coach-playbook
-  // Then paste the returned database_id below.
+  // STAGING-ONLY wrangler config for the Pages -> Workers migration proof (Card M1).
+  // Deploys as a Cloudflare WORKER, not a Pages project. This is a throwaway
+  // resource named separately from "parent-coach-playbook" (the live Pages
+  // project) so this card carries zero live risk. Do not attach a custom
+  // domain to this Worker. See PAGES-TO-WORKERS-MIGRATION-BRIEF.md.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "parent-coach-playbook",
+  "name": "parent-coach-desk-staging",
   "compatibility_date": "2026-04-30",
   "compatibility_flags": ["nodejs_compat"],
 
-  // Tells wrangler this is a Pages project and where the build output lives.
-  "pages_build_output_dir": "./dist",
+  // Astro 6+'s Cloudflare adapter (v13+) ships its own Workers entrypoint —
+  // "main" points at that package export, not a dist/_worker.js build output
+  // (that path was the old v12/Pages-era adapter shape). "assets" replaces
+  // the old "pages_build_output_dir".
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
 
   // Shared activity database. ActivityRadar was retired as a separate product on
   // 2026-07-10; this is now the only front door. Org/program schema history lives
@@ -37,8 +42,23 @@
     }
   ],
 
+  // The Astro Cloudflare adapter auto-detects Astro's built-in sessions
+  // feature and requires a SESSION KV binding to exist. Auto-provisioned by
+  // `wrangler deploy` on the first run of this staging card (namespace
+  // "parent-coach-desk-staging-session"); pinned here by id so redeploys
+  // reuse it instead of trying to recreate it. Not present anywhere else in
+  // this repo or account before this card — see the migration brief for
+  // whether the app actually uses Astro sessions before carrying this
+  // forward past the staging proof.
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "59cbf275ba16459c8f76ff39b033f748"
+    }
+  ],
+
   // Vars shared across local + production. Anything secret goes via
-  // `npx wrangler pages secret put` instead.
+  // `npx wrangler secret put` instead.
   //
   // ADMIN_EMAILS: comma-separated allowlist for /admin/ and /api/admin/ routes.
   // Read by src/lib/admin-auth.ts. Add or remove emails here, redeploy, done.

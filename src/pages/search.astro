@@ -27,7 +27,7 @@ const articleIndex = articles.map(a => ({
   type: 'Reads',
   title: stripTitle(a.data.title),
   dek: a.data.dek ?? '',
-  href: `/${a.data.phase}/${a.slug}/`,
+  href: `/${a.data.phase}/${a.id}/`,
   meta: ['Reads', a.data.phase, a.data.sport, a.data.age].filter(Boolean).join(' · '),
 }));
 
@@ -35,7 +35,7 @@ const guideIndex = guides.map(g => ({
   type: 'Gear Files',
   title: `Gear File: ${g.data.activity.toLowerCase()}`,
   dek: g.data.lede,
-  href: `/what-to-buy/${g.slug}/`,
+  href: `/what-to-buy/${g.id}/`,
   meta: g.data.category === 'sport' ? 'Gear Files · sport' : g.data.category === 'activity' ? 'Gear Files · activity' : 'Gear Files · essentials',
 }));
 
@@ -43,7 +43,7 @@ const resourceIndex = resources.map(r => ({
   type: 'Team Parent',
   title: stripTitle(r.data.title),
   dek: r.data.summary,
-  href: `/team-parent/${r.slug}/`,
+  href: `/team-parent/${r.id}/`,
   meta: 'Team Parent · ' + r.data.category.replace('-', ' '),
 }));
 
@@ -51,7 +51,7 @@ const tipsIndex = tips.map(t => ({
   type: 'Drills',
   title: stripTitle(t.data.title),
   dek: t.data.summary,
-  href: `/coaching-tips/${t.slug}/`,
+  href: `/coaching-tips/${t.id}/`,
   meta: ['Drills', t.data.sport, t.data.age, t.data.focus].filter(Boolean).join(' · '),
 }));
 
@@ -62,7 +62,7 @@ const bodyIndex = bodyTopics.map(b => {
     type: subhub === 'Safety' ? 'Safety' : 'The Body',
     title: stripTitle(b.data.title),
     dek: b.data.summary,
-    href: `/body/${b.slug}/`,
+    href: `/body/${b.id}/`,
     meta: `${subhub === 'Safety' ? 'Safety' : 'The Body'} · ${cat.toString().replace(/-/g, ' ')}`.trim(),
   };
 });
@@ -79,7 +79,7 @@ const calendarIndex = calendars.map(c => ({
   type: 'Season calendar',
   title: stripTitle(c.data.title),
   dek: c.data.summary,
-  href: `/season-calendar/${c.slug}/`,
+  href: `/season-calendar/${c.id}/`,
   meta: 'Season calendar · ' + sportLabel(c.data.sport),
 }));
 
@@ -87,7 +87,7 @@ const recruitingIndex = recruiting.map(r => ({
   type: 'Recruiting',
   title: stripTitle(r.data.title),
   dek: r.data.summary,
-  href: `/recruiting/${r.slug}/`,
+  href: `/recruiting/${r.id}/`,
   meta: 'Recruiting · ' + r.data.category,
 }));
 
@@ -95,7 +95,7 @@ const adaptiveIndex = adaptive.map(a => ({
   type: 'Adaptive',
   title: stripTitle(a.data.title),
   dek: a.data.summary,
-  href: `/adaptive/${a.slug}/`,
+  href: `/adaptive/${a.id}/`,
   meta: 'Adaptive · ' + a.data.category.replace('-', ' '),
 }));
 
@@ -111,7 +111,7 @@ const scriptsIndex = scripts.map(s => ({
   type: 'Scripts',
   title: stripTitle(s.data.title),
   dek: s.data.summary,
-  href: `/scripts/${s.slug}/`,
+  href: `/scripts/${s.id}/`,
   meta: 'Scripts · ' + s.data.moment.replace(/-/g, ' '),
 }));
 
@@ -119,7 +119,7 @@ const decisionsIndex = decisions.map(d => ({
   type: 'Decisions',
   title: stripTitle(d.data.title),
   dek: d.data.summary,
-  href: `/decisions/${d.slug}/`,
+  href: `/decisions/${d.id}/`,
   meta: 'Decisions',
 }));
 

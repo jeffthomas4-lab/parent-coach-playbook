@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { data, slug } = article;
+const { data, id: slug } = article;
 // FTC 16 CFR Part 255: affiliate disclosure must be clear, conspicuous, and
 // placed before the first affiliate link. Computed from the raw body so it
 // only renders on articles that actually contain /go/ redirect links.
@@ -23,7 +23,7 @@ const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
 
 // Related: same phase, exclude this article, top 3
-const related = (await getCollection('articles', ({ data: d, slug: s }) =>
+const related = (await getCollection('articles', ({ data: d, id: s }) =>
   isLive(d) && d.phase === data.phase && s !== slug
 )).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
@@ -294,7 +294,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
               {sidebarRelated.map((r) => (
                 <li>
                   <a
-                    href={`/${r.data.phase}/${r.slug}/`}
+                    href={`/${r.data.phase}/${r.id}/`}
                     class="font-display text-ink hover:text-rust block leading-snug"
                     style="font-size: 1rem; font-weight: 500;"
                     set:html={r.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { pathway } = Astro.props;
-const { Content } = await pathway.render();
+const { Content } = await render(pathway);
 const sportLabel = SPORTS.find(s => s.slug === pathway.data.sport)?.label ?? pathway.data.sport;
 
 // Related: body topics tagged for this sport, season calendars for this sport.
@@ -189,7 +189,7 @@ const bandAccent: Record<string, string> = {
               <p class="font-display text-ink text-sm mb-3 font-medium">From The body</p>
               <ul class="grid gap-2">
                 {relatedBody.map(b => (
-                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(b.data.title)} /></a></li>
+                  <li><a href={`/body/${b.id}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(b.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
@@ -199,7 +199,7 @@ const bandAccent: Record<string, string> = {
               <p class="font-display text-ink text-sm mb-3 font-medium">Season calendars</p>
               <ul class="grid gap-2">
                 {relatedCalendars.map(c => (
-                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(c.data.title)} /></a></li>
+                  <li><a href={`/season-calendar/${c.id}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug font-medium">→ <span set:html={renderTitle(c.data.title)} /></a></li>
                 ))}
               </ul>
             </div>

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
 import HowToSchema from '../../components/HowToSchema.astro';
@@ -9,16 +9,16 @@ import { renderTitle, stripTitle } from '../../lib/title';
 
 export async function getStaticPaths() {
   const scripts = await getCollection('scripts', ({ data }) => isLive(data));
-  return scripts.map((s) => ({ params: { slug: s.slug }, props: { script: s } }));
+  return scripts.map((s) => ({ params: { slug: s.id }, props: { script: s } }));
 }
 
 const { script } = Astro.props;
-const { Content } = await script.render();
+const { Content } = await render(script);
 
 // Pull the related scripts the author flagged.
 const allScripts = await getCollection('scripts', ({ data }) => isLive(data));
 const related = (script.data.relatedScripts ?? [])
-  .map(slug => allScripts.find(s => s.slug === slug))
+  .map(slug => allScripts.find(s => s.id === slug))
   .filter(Boolean) as typeof allScripts;
 
 // Article + Breadcrumb schema for SERP visibility. Author entity is resolved
@@ -35,7 +35,7 @@ const articleSchema = {
     url: SITE.url,
   },
   datePublished: script.data.publishedAt.toISOString(),
-  mainEntityOfPage: `${SITE.url}/scripts/${script.slug}/`,
+  mainEntityOfPage: `${SITE.url}/scripts/${script.id}/`,
 };
 
 // HowTo schema models the conversation playbook as ordered steps:
@@ -212,7 +212,7 @@ const breadcrumbSchema = {
         <p class="font-display italic text-rust mb-4 font-medium">You might also need</p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {related.map((r) => (
-            <a href={`/scripts/${r.slug}/`} class="bg-paper p-5 group block hover:bg-paper-warm transition-colors">
+            <a href={`/scripts/${r.id}/`} class="bg-paper p-5 group block hover:bg-paper-warm transition-colors">
               <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{r.data.summary}</p>
             </a>

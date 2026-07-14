@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
@@ -7,14 +7,14 @@ import { SITE } from '../../data/site';
 
 export async function getStaticPaths() {
   const items = await getCollection('news', ({ data }) => !data.draft);
-  return items.map((item) => ({ params: { slug: item.slug } }));
+  return items.map((item) => ({ params: { slug: item.id } }));
 }
 
 const { slug } = Astro.params;
 const item = await getEntry('news', slug);
 if (!item) return new Response('Not found', { status: 404 });
 
-const { Content } = await item.render();
+const { Content } = await render(item);
 
 const CATEGORY_LABELS: Record<string, string> = {
   'rule-change':  'Rule change',
@@ -36,7 +36,7 @@ const fmtDate = (d: Date) =>
     title={item.data.headline}
     description={item.data.summary}
     publishedAt={item.data.publishedAt}
-    url={`${SITE.url}/news/${item.slug}/`}
+    url={`${SITE.url}/news/${item.id}/`}
     articleSection="This Season"
   />
   <section class="border-b border-bone">

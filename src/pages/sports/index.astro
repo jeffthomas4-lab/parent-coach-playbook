@@ -20,7 +20,7 @@ const counts = SPORTS.map(s => {
   const n =
     articles.filter(a => a.data.sport === s.slug).length +
     tips.filter(t => t.data.sport === s.slug).length +
-    (guides.find(g => g.slug === s.slug) ? 1 : 0) +
+    (guides.find(g => g.id === s.slug) ? 1 : 0) +
     (pathways.find(p => p.data.sport === s.slug) ? 1 : 0) +
     (calendars.find(c => c.data.sport === s.slug) ? 1 : 0) +
     (rules.find(r => r.data.sport === s.slug) ? 1 : 0) +

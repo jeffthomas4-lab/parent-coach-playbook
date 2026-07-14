@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
@@ -32,21 +32,21 @@ export async function getStaticPaths() {
   );
 
   const resourcePaths = resources.map((r) => ({
-    params: { slug: r.slug },
+    params: { slug: r.id },
     props: { kind: 'resource' as const, resource: r },
   }));
 
   // Avoid collisions: if an article slug somehow matches a resource slug or a
   // topic slug, the resource/topic wins. (No collisions today, but cheap to guard.)
   const taken = new Set<string>([
-    ...resources.map((r) => r.slug),
+    ...resources.map((r) => r.id),
     ...TEAM_PARENT_TOPICS.map((t) => t.slug),
   ]);
 
   const articlePaths = articles
-    .filter((a) => !taken.has(a.slug))
+    .filter((a) => !taken.has(a.id))
     .map((a) => ({
-      params: { slug: a.slug },
+      params: { slug: a.id },
       props: { kind: 'article' as const, article: a },
     }));
 
@@ -78,7 +78,7 @@ let breadcrumbSchema: any = null;
 
 if (props.kind === 'article') {
   article = props.article;
-  const rendered = await article.render();
+  const rendered = await render(article);
   ArticleContent = rendered.Content;
   topicMeta = TEAM_PARENT_TOPICS.find((t) => t.slug === article!.data.teamParentTopic);
   sportLabel = SPORTS.find((s) => s.slug === article!.data.sport)?.label;
@@ -87,8 +87,8 @@ if (props.kind === 'article') {
   titleHtml = article.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 
   related = (
-    await getCollection('articles', ({ data: d, slug: s }) =>
-      isLive(d) && d.phase === 'team-parent' && s !== article!.slug
+    await getCollection('articles', ({ data: d, id: s }) =>
+      isLive(d) && d.phase === 'team-parent' && s !== article!.id
     )
   )
     .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
@@ -106,7 +106,7 @@ if (props.kind === 'article') {
       logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
     },
     datePublished: article.data.publishedAt.toISOString(),
-    mainEntityOfPage: `${SITE.url}/team-parent/${article.slug}/`,
+    mainEntityOfPage: `${SITE.url}/team-parent/${article.id}/`,
   };
 
   breadcrumbSchema = {
@@ -122,7 +122,7 @@ if (props.kind === 'article') {
 
 // Resource branch values (only used when kind === 'resource')
 const resource = props.kind === 'resource' ? props.resource : null;
-const ResourceContent = resource ? (await resource.render()).Content : null;
+const ResourceContent = resource ? (await render(resource)).Content : null;
 const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.data.category)! : null;
 ---
 {props.kind === 'resource' && resource && cat && ResourceContent && (

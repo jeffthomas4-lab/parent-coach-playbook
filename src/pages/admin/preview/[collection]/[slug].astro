@@ -11,7 +11,7 @@
 //
 // URL: /admin/preview/<collection>/<slug>
 
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
 export const prerender = true;
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
     const entries = (await getCollection(col as any)) as any[];
     for (const entry of entries) {
       paths.push({
-        params: { collection: col, slug: entry.slug },
+        params: { collection: col, slug: entry.id },
         props: { entry },
       });
     }
@@ -41,7 +41,7 @@ const collection = Astro.params.collection as string;
 const slug = Astro.params.slug as string;
 
 const data = entry.data as any;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const fmt = (d: any) =>
   d ? new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—';
@@ -53,19 +53,19 @@ const editorial = data.editorial as any;
 // Public URL the piece will live at once it's live.
 const publicUrlFor = (col: string, item: any): string => {
   switch (col) {
-    case 'articles':        return `/${item.data.phase}/${item.slug}/`;
-    case 'body':            return `/body/${item.slug}/`;
+    case 'articles':        return `/${item.data.phase}/${item.id}/`;
+    case 'body':            return `/body/${item.id}/`;
     case 'pathways':        return `/pathways/${item.data.sport}/`;
-    case 'seasonCalendars': return `/season-calendar/${item.slug}/`;
-    case 'guides':          return `/what-to-buy/${item.slug}/`;
-    case 'resources':       return `/team-parent/${item.slug}/`;
-    case 'coachingTips':    return `/coaching-tips/${item.slug}/`;
-    case 'recruiting':      return `/recruiting/${item.slug}/`;
-    case 'adaptive':        return `/adaptive/${item.slug}/`;
+    case 'seasonCalendars': return `/season-calendar/${item.id}/`;
+    case 'guides':          return `/what-to-buy/${item.id}/`;
+    case 'resources':       return `/team-parent/${item.id}/`;
+    case 'coachingTips':    return `/coaching-tips/${item.id}/`;
+    case 'recruiting':      return `/recruiting/${item.id}/`;
+    case 'adaptive':        return `/adaptive/${item.id}/`;
     case 'rules':           return `/rules/${item.data.sport}/`;
-    case 'scripts':         return `/scripts/${item.slug}/`;
-    case 'decisions':       return `/decisions/${item.slug}/`;
-    default:                return `/${item.slug}/`;
+    case 'scripts':         return `/scripts/${item.id}/`;
+    case 'decisions':       return `/decisions/${item.id}/`;
+    default:                return `/${item.id}/`;
   }
 };
 const publicUrl = publicUrlFor(collection, entry);

@@ -32,7 +32,7 @@ const decisions = (await getCollection('decisions', ({ data }) => isLive(data)))
       ) : (
         <div class="grid sm:grid-cols-2 gap-px bg-bone">
           {decisions.map((d) => (
-            <a href={`/decisions/${d.slug}/`} class="bg-paper p-7 group block hover:bg-paper-warm transition-colors">
+            <a href={`/decisions/${d.id}/`} class="bg-paper p-7 group block hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-rust text-xs mb-2 font-medium">The question</p>
               <h2 class="font-display text-ink text-2xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(d.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-3 leading-snug">{d.data.summary}</p>

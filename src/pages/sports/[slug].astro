@@ -42,7 +42,7 @@ const scripts       = await getCollection('scripts',       ({ data }) => isLive(
 
 // Filter for this sport.
 const matchedArticles   = articles.filter(a => a.data.sport === sportSlug);
-const matchedGuide      = guides.find(g => g.slug === sportSlug);
+const matchedGuide      = guides.find(g => g.id === sportSlug);
 const matchedTips       = tips.filter(t => t.data.sport === sportSlug);
 const matchedPathway    = pathways.find(p => p.data.sport === sportSlug);
 const matchedCalendar   = calendars.find(c => c.data.sport === sportSlug);
@@ -87,7 +87,7 @@ const fmtDate = (d: Date) =>
   {matchedPillar && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-8 md:py-10">
-        <a href={`/pillar/${matchedPillar.slug}/`} class="block group max-w-3xl">
+        <a href={`/pillar/${matchedPillar.id}/`} class="block group max-w-3xl">
           <p class="font-display italic text-rust mb-1 font-medium text-sm">Complete Parent Guide</p>
           <h2 class="font-display text-ink text-xl md:text-2xl leading-tight group-hover:text-rust transition-colors font-medium">
             {matchedPillar.data.title}
@@ -131,7 +131,7 @@ const fmtDate = (d: Date) =>
           </a>
         )}
         {matchedCalendar && (
-          <a href={`/season-calendar/${matchedCalendar.slug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
+          <a href={`/season-calendar/${matchedCalendar.id}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
             <p class="font-display italic text-rust text-xs font-medium">Calendar</p>
             <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
               The {sportLabel.toLowerCase()} year
@@ -182,7 +182,7 @@ const fmtDate = (d: Date) =>
         </h2>
         <div class="grid md:grid-cols-2 gap-x-10">
           {matchedArticles.slice(0, 12).map((a) => (
-            <a href={`/${a.data.phase}/${a.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+            <a href={`/${a.data.phase}/${a.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-rust text-xs font-medium">
                 {a.data.age ? `age ${a.data.age} · ` : ''}{fmtDate(a.data.publishedAt)}
               </p>
@@ -209,7 +209,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {matchedTips.slice(0, 12).map((t) => (
             <li class="bg-paper p-4">
-              <a href={`/coaching-tips/${t.slug}/`} class="block group">
+              <a href={`/coaching-tips/${t.id}/`} class="block group">
                 <p class="font-display italic text-rust text-xs font-medium">
                   {t.data.age ? `age ${t.data.age}` : ''}{t.data.focus ? ` · ${t.data.focus}` : ''}
                 </p>
@@ -233,7 +233,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedBody.map((b) => (
             <li>
-              <a href={`/body/${b.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <a href={`/body/${b.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
                 <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(b.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{b.data.summary}</p>
               </a>
@@ -252,7 +252,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedRecruiting.map((r) => (
             <li>
-              <a href={`/recruiting/${r.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <a href={`/recruiting/${r.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
                 <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{r.data.summary}</p>
               </a>
@@ -271,7 +271,7 @@ const fmtDate = (d: Date) =>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedScripts.map((s) => (
             <li>
-              <a href={`/scripts/${s.slug}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
+              <a href={`/scripts/${s.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
                 <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{s.data.summary}</p>
               </a>

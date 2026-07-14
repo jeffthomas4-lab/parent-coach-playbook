@@ -20,7 +20,7 @@ const { articles, pillarLabel } = Astro.props;
         {articles.slice(0, 3).map((a) => (
           <div class="bg-paper">
             <ArticleCard
-              href={`/${a.data.phase}/${a.slug}/`}
+              href={`/${a.data.phase}/${a.id}/`}
               format={a.data.format}
               sport={a.data.sport}
               age={a.data.age}

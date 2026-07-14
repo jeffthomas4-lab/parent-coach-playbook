@@ -105,7 +105,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
           {articles.map((a) => (
             <div data-sport={a.data.sport ?? ''} data-age={a.data.age ?? ''}>
               <ArticleCard
-                href={`/${a.data.phase}/${a.slug}/`}
+                href={`/${a.data.phase}/${a.id}/`}
                 format={a.data.format}
                 sport={a.data.sport}
                 age={a.data.age}

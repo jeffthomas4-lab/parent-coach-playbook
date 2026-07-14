@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
 import { isLive } from '../../lib/publishFilter';
@@ -8,11 +8,11 @@ import { SPORTS, SITE, authorEntity } from '../../data/site';
 
 export async function getStaticPaths() {
   const topics = await getCollection('body', ({ data }) => isLive(data));
-  return topics.map((t) => ({ params: { slug: t.slug }, props: { topic: t } }));
+  return topics.map((t) => ({ params: { slug: t.id }, props: { topic: t } }));
 }
 
 const { topic } = Astro.props;
-const { Content } = await topic.render();
+const { Content } = await render(topic);
 
 // JSON-LD: Article schema for the body topic (medical / training reference reads).
 // Author entity resolved via authorEntity() — Organization until November, Person
@@ -31,7 +31,7 @@ const bodyArticleSchema = {
   },
   datePublished: topic.data.publishedAt.toISOString(),
   dateModified: topic.data.publishedAt.toISOString(),
-  mainEntityOfPage: `${SITE.url}/body/${topic.slug}/`,
+  mainEntityOfPage: `${SITE.url}/body/${topic.id}/`,
   articleSection: 'The body',
   ...(topic.data.governingBodies && topic.data.governingBodies.length > 0
     ? { citation: topic.data.governingBodies.map((g: { name: string; url: string }) => ({ '@type': 'CreativeWork', name: g.name, url: g.url })) }
@@ -59,7 +59,7 @@ const relatedCalendars = calendars.filter(c => sportTags.includes(c.data.sport))
 
 const allBody = await getCollection('body', ({ data }) => isLive(data));
 const siblingBody = allBody
-  .filter(b => b.slug !== topic.slug && (b.data.category === topic.data.category || b.data.sportTags?.some(s => sportTags.includes(s))))
+  .filter(b => b.id !== topic.id && (b.data.category === topic.data.category || b.data.sportTags?.some(s => sportTags.includes(s))))
   .slice(0, 4);
 
 const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
@@ -178,7 +178,7 @@ const lastUpdated = topic.data.publishedAt;
               <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">More from The body</p>
               <ul class="grid gap-2">
                 {siblingBody.map(b => (
-                  <li><a href={`/body/${b.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(b.data.title)} /></a></li>
+                  <li><a href={`/body/${b.id}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(b.data.title)} /></a></li>
                 ))}
               </ul>
             </div>
@@ -198,7 +198,7 @@ const lastUpdated = topic.data.publishedAt;
               <p class="font-display text-ink text-sm mb-3" style="font-weight: 500;">Season calendars</p>
               <ul class="grid gap-2">
                 {relatedCalendars.map(c => (
-                  <li><a href={`/season-calendar/${c.slug}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(c.data.title)} /></a></li>
+                  <li><a href={`/season-calendar/${c.id}/`} class="font-display italic text-ink hover:text-rust text-sm leading-snug" style="font-weight: 500;">→ <span set:html={renderTitle(c.data.title)} /></a></li>
                 ))}
               </ul>
             </div>

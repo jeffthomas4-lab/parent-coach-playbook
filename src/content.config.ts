@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const SPORT_ENUM = [
   'baseball','softball','soccer','basketball',
@@ -85,7 +86,7 @@ const editorialField = {
 };
 
 const articles = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/articles' }),
   schema: ({ image }) =>
     z.object({
       title: z.string().min(8, 'title too short for SERP').max(120, 'title too long for SERP'),
@@ -127,7 +128,7 @@ const articles = defineCollection({
 });
 
 const guides = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/guides' }),
   schema: () =>
     z.object({
       activity: z.string(),
@@ -146,7 +147,7 @@ const guides = defineCollection({
 });
 
 const resources = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/resources' }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -165,7 +166,7 @@ const resources = defineCollection({
 });
 
 const coachingTips = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/coachingTips' }),
   schema: ({ image }) =>
     z.object({
       title: z.string().min(4).max(120),
@@ -195,7 +196,7 @@ const coachingTips = defineCollection({
 // One file = one shape parents can pick from. Future builder layer will overlay multiple
 // calendars on the same twelve-month view.
 const seasonCalendars = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/seasonCalendars' }),
   schema: () =>
     z.object({
       title: z.string(),                        // "Club volleyball 14s — National qualifier track"
@@ -245,7 +246,7 @@ const SAFETY_CATEGORY_ENUM = [
 ] as const;
 
 const body = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/body' }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -296,7 +297,7 @@ const body = defineCollection({
 // Pathways: per-sport age timeline. What good looks like at 7, 10, 13, 15.
 // Same template, sport-specific evidence.
 const pathways = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/pathways' }),
   schema: () =>
     z.object({
       sport: z.enum(SPORT_ENUM),
@@ -323,7 +324,7 @@ const pathways = defineCollection({
 // Recruiting: HS-to-college funnel content. Timeline by grade, NCAA Eligibility Center,
 // NIL basics, what verbal commits actually mean. Strict factual, sourced framing.
 const recruiting = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/recruiting' }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -347,7 +348,7 @@ const recruiting = defineCollection({
 // Adaptive & neurodivergent athletes. Inclusive sports content. Uses similar structure
 // to the body collection but framed for a different audience (parent of an adaptive kid).
 const adaptive = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/adaptive' }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -370,7 +371,7 @@ const adaptive = defineCollection({
 // Rules at-a-glance. One file per sport. Five-minute primer parents can scan during
 // a tournament or before their first game.
 const rules = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/rules' }),
   schema: () =>
     z.object({
       sport: z.enum(SPORT_ENUM),
@@ -396,7 +397,7 @@ const rules = defineCollection({
 //
 // Each script lives at /scripts/[slug]/. Hub at /scripts/.
 const scripts = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/scripts' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -432,7 +433,7 @@ const scripts = defineCollection({
 // Same pattern as Rules at-a-glance. Question → benefits → costs → signs it fits →
 // signs it doesn't → the rule → how to handle it.
 const decisions = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/decisions' }),
   schema: () =>
     z.object({
       title: z.string(),                                  // "Should My Kid Play Travel Sports?"
@@ -458,7 +459,7 @@ const decisions = defineCollection({
 
 // "This Season" news items. Short, dated, specific. 2-4 sentences each.
 const news = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/news' }),
   schema: () =>
     z.object({
       headline: z.string().min(8).max(120),
@@ -481,7 +482,7 @@ const news = defineCollection({
 
 // Ultimate Parent Guide pillar pages — one per sport/activity, 3000+ words.
 const pillar = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/pillar' }),
   schema: z.object({
     title: z.string(),
     seoTitle: z.string().optional(),

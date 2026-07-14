@@ -32,44 +32,44 @@ type Row = {
 
 const urlFor = (collection: string, item: any): string => {
   switch (collection) {
-    case 'articles':       return `/${item.data.phase}/${item.slug}/`;
-    case 'body':           return `/body/${item.slug}/`;
+    case 'articles':       return `/${item.data.phase}/${item.id}/`;
+    case 'body':           return `/body/${item.id}/`;
     case 'pathways':       return `/pathways/${item.data.sport}/`;
-    case 'seasonCalendars':return `/season-calendar/${item.slug}/`;
-    case 'guides':         return `/what-to-buy/${item.slug}/`;
-    case 'resources':      return `/team-parent/${item.slug}/`;
-    case 'coachingTips':   return `/coaching-tips/${item.slug}/`;
-    case 'recruiting':     return `/recruiting/${item.slug}/`;
-    case 'adaptive':       return `/adaptive/${item.slug}/`;
+    case 'seasonCalendars':return `/season-calendar/${item.id}/`;
+    case 'guides':         return `/what-to-buy/${item.id}/`;
+    case 'resources':      return `/team-parent/${item.id}/`;
+    case 'coachingTips':   return `/coaching-tips/${item.id}/`;
+    case 'recruiting':     return `/recruiting/${item.id}/`;
+    case 'adaptive':       return `/adaptive/${item.id}/`;
     case 'rules':          return `/rules/${item.data.sport}/`;
-    case 'scripts':        return `/scripts/${item.slug}/`;
-    case 'decisions':      return `/decisions/${item.slug}/`;
-    default:               return `/${item.slug}/`;
+    case 'scripts':        return `/scripts/${item.id}/`;
+    case 'decisions':      return `/decisions/${item.id}/`;
+    default:               return `/${item.id}/`;
   }
 };
 
-const titleFor = (item: any): string => item.data.title || item.data.activity || item.slug;
+const titleFor = (item: any): string => item.data.title || item.data.activity || item.id;
 
 // If the piece is live, link to its public URL. Otherwise, link to the
 // admin preview route so Jeff can read drafts and queued pieces.
 const linkFor = (collection: string, item: any): string => {
   if (isLive(item.data)) return urlFor(collection, item);
-  return `/admin/preview/${collection}/${item.slug}/`;
+  return `/admin/preview/${collection}/${item.id}/`;
 };
 
 const rows: Row[] = [
-  ...articles.map(i =>   ({ collection: 'articles',       slug: i.slug, title: titleFor(i), url: linkFor('articles', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...body.map(i =>       ({ collection: 'body',           slug: i.slug, title: titleFor(i), url: linkFor('body', i),           publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...pathways.map(i =>   ({ collection: 'pathways',       slug: i.slug, title: titleFor(i), url: linkFor('pathways', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...calendars.map(i =>  ({ collection: 'seasonCalendars',slug: i.slug, title: titleFor(i), url: linkFor('seasonCalendars', i),publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...guides.map(i =>     ({ collection: 'guides',         slug: i.slug, title: titleFor(i), url: linkFor('guides', i),         publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...resources.map(i =>  ({ collection: 'resources',      slug: i.slug, title: titleFor(i), url: linkFor('resources', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...tips.map(i =>       ({ collection: 'coachingTips',   slug: i.slug, title: titleFor(i), url: linkFor('coachingTips', i),   publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...recruiting.map(i => ({ collection: 'recruiting',     slug: i.slug, title: titleFor(i), url: linkFor('recruiting', i),     publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...adaptive.map(i =>   ({ collection: 'adaptive',       slug: i.slug, title: titleFor(i), url: linkFor('adaptive', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...rules.map(i =>      ({ collection: 'rules',          slug: i.slug, title: titleFor(i), url: linkFor('rules', i),          publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...scripts.map(i =>    ({ collection: 'scripts',        slug: i.slug, title: titleFor(i), url: linkFor('scripts', i),        publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
-  ...decisions.map(i =>  ({ collection: 'decisions',      slug: i.slug, title: titleFor(i), url: linkFor('decisions', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...articles.map(i =>   ({ collection: 'articles',       slug: i.id, title: titleFor(i), url: linkFor('articles', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...body.map(i =>       ({ collection: 'body',           slug: i.id, title: titleFor(i), url: linkFor('body', i),           publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...pathways.map(i =>   ({ collection: 'pathways',       slug: i.id, title: titleFor(i), url: linkFor('pathways', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...calendars.map(i =>  ({ collection: 'seasonCalendars',slug: i.id, title: titleFor(i), url: linkFor('seasonCalendars', i),publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...guides.map(i =>     ({ collection: 'guides',         slug: i.id, title: titleFor(i), url: linkFor('guides', i),         publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...resources.map(i =>  ({ collection: 'resources',      slug: i.id, title: titleFor(i), url: linkFor('resources', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...tips.map(i =>       ({ collection: 'coachingTips',   slug: i.id, title: titleFor(i), url: linkFor('coachingTips', i),   publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...recruiting.map(i => ({ collection: 'recruiting',     slug: i.id, title: titleFor(i), url: linkFor('recruiting', i),     publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...adaptive.map(i =>   ({ collection: 'adaptive',       slug: i.id, title: titleFor(i), url: linkFor('adaptive', i),       publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...rules.map(i =>      ({ collection: 'rules',          slug: i.id, title: titleFor(i), url: linkFor('rules', i),          publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...scripts.map(i =>    ({ collection: 'scripts',        slug: i.id, title: titleFor(i), url: linkFor('scripts', i),        publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
+  ...decisions.map(i =>  ({ collection: 'decisions',      slug: i.id, title: titleFor(i), url: linkFor('decisions', i),      publishedAt: i.data.publishedAt, draft: !!i.data.draft, editorial: (i.data as any).editorial })),
 ].sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
 
 // Top-line stats

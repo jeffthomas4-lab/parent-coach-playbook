@@ -29,14 +29,14 @@ const articles  = await getCollection('articles',  ({ data }) => isLive(data));
 const scripts   = await getCollection('scripts',   ({ data }) => isLive(data));
 
 const cornerstone = articles
-  .filter(a => cornerstoneSlugs.includes(a.slug))
-  .sort((a, b) => cornerstoneSlugs.indexOf(a.slug) - cornerstoneSlugs.indexOf(b.slug));
+  .filter(a => cornerstoneSlugs.includes(a.id))
+  .sort((a, b) => cornerstoneSlugs.indexOf(a.id) - cornerstoneSlugs.indexOf(b.id));
 
 const decisionReads = articles
-  .filter(a => decisionSlugs.includes(a.slug));
+  .filter(a => decisionSlugs.includes(a.id));
 
 const scriptReads = scripts
-  .filter(s => scriptSlugs.includes(s.slug));
+  .filter(s => scriptSlugs.includes(s.id));
 ---
 <BaseLayout
   title="The parent-coach"
@@ -79,7 +79,7 @@ const scriptReads = scripts
         <ul class="grid md:grid-cols-3 gap-px bg-bone">
           {cornerstone.map((c) => (
             <li class="bg-paper p-6 hover:bg-paper-warm transition-colors group">
-              <a href={`/${c.data.phase}/${c.slug}/`} class="block">
+              <a href={`/${c.data.phase}/${c.id}/`} class="block">
                 <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(c.data.title)} />
                 {c.data.dek && (
                   <p class="font-display text-ink-soft text-sm mt-3 leading-snug">{c.data.dek}</p>
@@ -140,7 +140,7 @@ const scriptReads = scripts
         <ul class="grid md:grid-cols-2 gap-x-6 gap-y-1 max-w-3xl">
           {decisionReads.map((a) => (
             <li>
-              <a href={`/${a.data.phase}/${a.slug}/`} class="font-display block py-4 border-b border-bone hover:text-rust transition-colors group">
+              <a href={`/${a.data.phase}/${a.id}/`} class="font-display block py-4 border-b border-bone hover:text-rust transition-colors group">
                 <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(a.data.title)} />
                 {a.data.dek && (
                   <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{a.data.dek}</span>
@@ -164,7 +164,7 @@ const scriptReads = scripts
         <ul class="grid md:grid-cols-2 gap-x-6 gap-y-1 max-w-3xl">
           {scriptReads.map((s) => (
             <li>
-              <a href={`/scripts/${s.slug}/`} class="font-display block py-4 border-b border-bone hover:text-rust transition-colors group">
+              <a href={`/scripts/${s.id}/`} class="font-display block py-4 border-b border-bone hover:text-rust transition-colors group">
                 <span class="font-display text-ink text-base block group-hover:text-rust font-medium" set:html={renderTitle(s.data.title)} />
                 {s.data.summary && (
                   <span class="font-display italic text-ink-soft text-xs block mt-1 leading-snug font-medium">{s.data.summary}</span>

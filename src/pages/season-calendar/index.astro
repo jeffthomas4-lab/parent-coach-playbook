@@ -60,7 +60,7 @@ const levelAccent: Record<string, string> = {
       ) : (
         <div class="grid md:grid-cols-2 gap-px bg-bone">
           {calendars.map((c) => (
-            <a href={`/season-calendar/${c.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <a href={`/season-calendar/${c.id}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-xs mb-2" style={`color: ${levelAccent[c.data.level]}; font-weight: 500;`}>
                 {sportLabel(c.data.sport)} · {levelLabel[c.data.level]}{c.data.region ? ` · ${c.data.region}` : ''}
               </p>

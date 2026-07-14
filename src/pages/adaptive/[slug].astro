@@ -1,16 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
 export async function getStaticPaths() {
   const pieces = await getCollection('adaptive', ({ data }) => isLive(data));
-  return pieces.map((p) => ({ params: { slug: p.slug }, props: { piece: p } }));
+  return pieces.map((p) => ({ params: { slug: p.id }, props: { piece: p } }));
 }
 
 const { piece } = Astro.props;
-const { Content } = await piece.render();
+const { Content } = await render(piece);
 ---
 <BaseLayout
   title={stripTitle(piece.data.title)}

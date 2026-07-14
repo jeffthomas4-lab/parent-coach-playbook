@@ -17,7 +17,7 @@ export async function GET(context: APIContext) {
       pubDate: g.data.publishedAt,
       description: g.data.lede ?? '',
       author: EDITORIAL.byline,
-      link: `/what-to-buy/${g.slug}/`,
+      link: `/what-to-buy/${g.id}/`,
       categories: ['Gear guide'],
     }))
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime())

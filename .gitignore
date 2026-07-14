@@ -27,6 +27,9 @@ pnpm-debug.log*
 # astro
 .astro/
 
+# wrangler local dev/build state (miniflare D1/KV/R2/cache simulation)
+.wrangler/
+
 # sanity
 .sanity/
 sanity-cli.json

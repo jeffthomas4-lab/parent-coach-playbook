@@ -84,19 +84,19 @@ export async function GET() {
 
   const urls = [
     ...staticUrls.map(loc => ({ loc, lastmod: STATIC_LASTMOD[loc] ?? STATIC_FALLBACK })),
-    ...articles.map(a => ({ loc: `/${a.data.phase}/${a.slug}/`, lastmod: a.data.publishedAt.toISOString() })),
-    ...guides.map(g => ({ loc: `/what-to-buy/${g.slug}/`, lastmod: (g.data.updatedAt ?? g.data.publishedAt).toISOString() })),
-    ...resources.map(r => ({ loc: `/team-parent/${r.slug}/`, lastmod: r.data.publishedAt.toISOString() })),
-    ...tips.map(t => ({ loc: `/coaching-tips/${t.slug}/`, lastmod: t.data.publishedAt.toISOString() })),
-    ...calendars.map(c => ({ loc: `/season-calendar/${c.slug}/`, lastmod: (c.data.updatedAt ?? c.data.publishedAt).toISOString() })),
-    ...bodyTopics.map(t => ({ loc: `/body/${t.slug}/`, lastmod: t.data.publishedAt.toISOString() })),
+    ...articles.map(a => ({ loc: `/${a.data.phase}/${a.id}/`, lastmod: a.data.publishedAt.toISOString() })),
+    ...guides.map(g => ({ loc: `/what-to-buy/${g.id}/`, lastmod: (g.data.updatedAt ?? g.data.publishedAt).toISOString() })),
+    ...resources.map(r => ({ loc: `/team-parent/${r.id}/`, lastmod: r.data.publishedAt.toISOString() })),
+    ...tips.map(t => ({ loc: `/coaching-tips/${t.id}/`, lastmod: t.data.publishedAt.toISOString() })),
+    ...calendars.map(c => ({ loc: `/season-calendar/${c.id}/`, lastmod: (c.data.updatedAt ?? c.data.publishedAt).toISOString() })),
+    ...bodyTopics.map(t => ({ loc: `/body/${t.id}/`, lastmod: t.data.publishedAt.toISOString() })),
     ...pathways.map(p => ({ loc: `/pathways/${p.data.sport}/`, lastmod: p.data.publishedAt.toISOString() })),
-    ...recruiting.map(r => ({ loc: `/recruiting/${r.slug}/`, lastmod: r.data.publishedAt.toISOString() })),
-    ...adaptive.map(a => ({ loc: `/adaptive/${a.slug}/`, lastmod: a.data.publishedAt.toISOString() })),
+    ...recruiting.map(r => ({ loc: `/recruiting/${r.id}/`, lastmod: r.data.publishedAt.toISOString() })),
+    ...adaptive.map(a => ({ loc: `/adaptive/${a.id}/`, lastmod: a.data.publishedAt.toISOString() })),
     ...rules.map(r => ({ loc: `/rules/${r.data.sport}/`, lastmod: r.data.publishedAt.toISOString() })),
-    ...scripts.map(s => ({ loc: `/scripts/${s.slug}/`, lastmod: s.data.publishedAt.toISOString() })),
-    ...decisions.map(d => ({ loc: `/decisions/${d.slug}/`, lastmod: d.data.publishedAt.toISOString() })),
-    ...news.map(n => ({ loc: `/news/${n.slug}/`, lastmod: n.data.publishedAt.toISOString() })),
+    ...scripts.map(s => ({ loc: `/scripts/${s.id}/`, lastmod: s.data.publishedAt.toISOString() })),
+    ...decisions.map(d => ({ loc: `/decisions/${d.id}/`, lastmod: d.data.publishedAt.toISOString() })),
+    ...news.map(n => ({ loc: `/news/${n.id}/`, lastmod: n.data.publishedAt.toISOString() })),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

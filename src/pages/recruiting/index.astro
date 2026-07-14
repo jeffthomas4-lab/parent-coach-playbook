@@ -58,7 +58,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-12 md:py-16">
         <p class="font-display italic text-rust mb-3 font-medium">Read this first</p>
-        <a href={`/recruiting/${pillar.slug}/`} class="block group max-w-3xl">
+        <a href={`/recruiting/${pillar.id}/`} class="block group max-w-3xl">
           <h2 class="font-display text-ink text-3xl md:text-[3rem] leading-[1.05] group-hover:text-rust transition-colors font-medium" set:html={renderTitle(pillar.data.title)} />
           <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
             {pillar.data.summary}
@@ -79,7 +79,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
         </h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {sportPieces.map((p) => (
-            <a href={`/recruiting/${p.slug}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
+            <a href={`/recruiting/${p.id}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-rust text-xs mb-2 font-medium">
                 {(p.data.sportTags ?? []).map(s => sportLabel(s)).join(' · ') || 'Sport'}
               </p>
@@ -119,7 +119,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
             <ul class="grid gap-4">
               {g.items.map((p) => (
                 <li class="border border-bone bg-paper-warm p-5">
-                  <a href={`/recruiting/${p.slug}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(p.data.title)} />
+                  <a href={`/recruiting/${p.id}/`} class="font-display text-ink hover:text-rust text-xl leading-tight block font-medium" set:html={renderTitle(p.data.title)} />
                   <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
                 </li>
               ))}

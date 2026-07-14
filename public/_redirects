@@ -1,8 +1,10 @@
-# Permanent redirect for the renamed lead magnet.
-# Astro's redirects: config in astro.config.mjs doesn't fire under the
-# Cloudflare adapter; this file is read natively by Cloudflare Pages.
-/resources/drive-home-playbook /resources/what-to-say-when 301
-/resources/drive-home-playbook/ /resources/what-to-say-when/ 301
+# The redirect for the renamed lead magnet (/resources/drive-home-playbook)
+# used to live here because Astro's redirects: config in astro.config.mjs
+# didn't fire under the old Pages-targeting Cloudflare adapter (v12). The
+# Workers-targeting adapter (v13+) does honor redirects:, so it now emits
+# that rule itself — keeping it here too produced a literal duplicate line
+# in the generated _redirects file, which Cloudflare Workers' static-assets
+# deploy validation rejects outright (Pages was more lenient about it).
 
 # Common URLs ad networks, link checkers, and partner programs probe for.
 # /privacy/ maps to our combined privacy and disclosure page.
