@@ -2,9 +2,10 @@
 
 **Venture:** ParentCoachDesk.com (Field & Forge Ventures, Forge Command Track V2)
 **Source of truth:** this markdown file. Notion mirrors it under the PCD Command Center page.
-**Version:** 1.1, 2026-07-13. Design session, first pass (v1.0), then a three-source feedback reconciliation (v1.1).
-**Scope this session:** Phases 1 to 3 (business architecture, SOP documentation, workflow mapping). Phases 4 to 10 are stubbed with prerequisites. Prompt architecture and agent design are session two.
+**Version:** 1.2, 2026-07-13. Design session, first pass (v1.0), a three-source feedback reconciliation (v1.1), then Session Two adding Phases 4 and 5 (v1.2).
+**Scope so far:** Phases 1 to 5 (business architecture, SOP documentation, workflow mapping, prompt architecture, agent design). Phases 6 to 10 are stubbed with prerequisites.
 **Governed by:** Forge Command Master Plan v2.1, the ten named rules, the section 10 failure modes, and the Personal AI Organization Blueprint. Where any of those conflict with this manual, they win.
+**v1.2 changes:** Session Two wrote Phases 4 and 5, grounded in the ten live PCD SKILL.md files read from the scheduled-tasks store, not a hypothetical library. Phase 4 is the prompt-management framework: the real inventory, naming convention, storage and version control (the prompts live outside git, a named finding), versioning, ownership, the frame-and-class content standard, testing and regression, evaluation, and lifecycle. Phase 5 is the operational org chart: every agent with the skill-template fields plus supervisor, human owner, and an R1/R2/R3 risk class, each tagged live, working-set, or future-menu, with the nightly `org-discovery-daily-worklist` (R3) given the strictest treatment and an honest guardrail-by-guardrail read against section 7. Appendix A drafts the unapplied Open Item 1 venture-file fix. Design only, no agent built or scheduled.
 **v1.1 changes:** Adjudicated 46 feedback items from three external reviews (Gemini, ChatGPT review, ChatGPT full-draft rewrite). Rejected the build-the-AI-OS-now direction and the roughly thirty-agent, six-department expansion; routed the Phase 4 and 5 material to a Session Two input file. Accepted: workflow-driven agent growth, the July build of the S4 monitor, and a new Open Item for camp-database safety. Full adjudication in PCD-MANUAL-RECONCILIATION-MEMO-2026-07-13.md.
 
 This is a design document. It builds no agents, no automations, and no schedules. It maps how ParentCoachDesk already runs, names the standing processes, and sets the order the work should mature in.
@@ -13,7 +14,7 @@ This is a design document. It builds no agents, no automations, and no schedules
 
 ## 0. How to read this manual
 
-The manual has three working phases and a set of reference sections. Phase 1 is the business architecture: what PCD is, what constrains it, and which departments hold the work. Phase 2 is the SOPs: the standing processes, each with a trigger, an owner, steps, and an approval gate. Phase 3 is the workflow map: how work moves, what already runs on a schedule, and what idles during football season.
+The manual has five working phases and a set of reference sections. Phase 1 is the business architecture: what PCD is, what constrains it, and which departments hold the work. Phase 2 is the SOPs: the standing processes, each with a trigger, an owner, steps, and an approval gate. Phase 3 is the workflow map: how work moves, what already runs on a schedule, and what idles during football season. Phase 4 is the prompt architecture: how the ten live agent prompts are named, stored, versioned, owned, tested, evaluated, and retired. Phase 5 is the agent design: the operational org chart, every agent with its skill-template fields, supervisor, human owner, and risk class.
 
 Two rules sit above every design choice here. No agent exists unless it saves real time, improves a decision, reduces risk, or increases revenue (Master Plan section 1). No agent gets built until its recurring task has been done by hand at least three times (decision 6). Every proposed agent below states how it clears both.
 
@@ -244,14 +245,158 @@ What does not pause: the data-deletion watch (S4), because its 30-day SLA runs y
 
 ---
 
-# Phase 4 onward: table of contents and prerequisites
+# Phase 4: Prompt architecture
 
-Phases 1 to 3 are complete above. The rest are stubbed. Each names what has to be true before it can start. Prompt architecture and agent design (Phases 4 and 5) are the next session.
+Phase 4 governs how PCD's agent prompts are named, stored, versioned, owned, tested, evaluated, and retired. It describes the real inventory, not a hypothetical library. The honest headline is that these prompts run in production today but sit outside most of the discipline this phase defines, and closing that gap is sequenced, not immediate.
+
+## 4.1 The current prompt inventory
+
+Every PCD agent is a `SKILL.md` file behind a Cowork scheduled task. There are ten PCD prompts, plus the two Barnabus portfolio prompts that also read PCD state. Each file is YAML frontmatter (name, description) over a prose body; the scheduler injects an autonomous-run preamble and expects a closing `<run-summary>`.
+
+| Task (SKILL.md) | SOP | Cadence | Action class | Writes live? | Logs to agent_runs? |
+|---|---|---|---|---|---|
+| `org-discovery-daily-worklist` | S7 | Daily 9:02 PM | Act | Yes, `activity-radar` D1 | No |
+| `weekly-gsc-review` | S1 | Mon 8:08 AM | Analyze | No | No |
+| `pcd-gsc-analytics-report` | S1 | Mon 7:40 AM | Analyze | No | No |
+| `pcd-link-health-monitor` | S5 | Mon 7:04 AM | Analyze | No | No |
+| `pcd-rules-watcher` | S9 | Tue 7:08 AM | Draft | No | No |
+| `pcd-friday-letter-draft` | S10 | Wed 8:03 AM | Draft | No | No |
+| `pcd-camps-data-steward` | S8 | Thu 4:07 AM | Stage | No | No |
+| `pcd-seasonal-content-scheduler` | S9 | Monthly d1 | Draft | No | No |
+| `pcd-affiliate-reconciler` | S6 | Monthly d2 | Analyze | No | No |
+| `pcd-freshness-audit` | S11 | Quarterly | Analyze | No | No |
+| `barnabus-morning-briefing` | portfolio | Daily 6:31 AM | Draft | Log only | Yes |
+| `barnabus-weekly-review` | portfolio | Sun 4:30 PM | Draft | Log only | Yes |
+
+Barnabus is the reference build. It opens a run record, writes exactly one `agent_runs` row even on failure, dedupes before posting, and carries the voice, Red Wall, family, and source rules in the prompt. None of the ten PCD prompts does any of that yet, and that difference is the spine of the gaps below.
+
+## 4.2 Naming convention
+
+The convention is `pcd-<function>`, and eight of the ten follow it. Two do not: `weekly-gsc-review` predates the prefix and overlaps `pcd-gsc-analytics-report` on the same Monday (Open Item 2), and `org-discovery-daily-worklist` predates the merge and keeps its historical name on purpose, like the `activity-radar` and `parent-coach-playbook` identifiers. New PCD prompts take the `pcd-` prefix from creation, and renaming the two legacy tasks waits for Phase 7, because a scheduled-task rename changes the stored path in 4.3.
+
+## 4.3 Storage and version control
+
+The prompts do not live where the manual's "markdown is the source of truth" rule assumes. Each `SKILL.md` sits at `C:\Users\jeffthomas\Documents\Claude\Scheduled\<taskId>\SKILL.md`, outside the git-backed `Claude Cowork\Outputs` tree. So the design docs are versioned and the running prompts are not: they have no history, no diff, and no backup beyond the live file.
+
+The fix is to make `Outputs/parent-coach-desk/agents/` the git-tracked source for each PCD prompt, and treat the scheduled-task copy as a deployment of that source. A prompt change lands in the repo first, gets committed, then is copied to the scheduled-task path. This is a Phase 6 build item; naming it is Phase 4's job.
+
+## 4.4 Versioning
+
+No PCD prompt carries a version today. The standard is a `version` and `last_edited` line in the frontmatter, bumped on every change, with the change recorded in this manual's review log or the decision log. Versioning stays manual and fragile until the git mirror in 4.3 exists, which is the real mechanism.
+
+## 4.5 Ownership
+
+Every prompt maps to one of the five workstreams (section 1.3), and through the workstream to a human owner. That owner is Jeff today and becomes Editorial, Support/Ops, or Finance as those working-set agents go live. Barnabus is the standing supervisor: it reads the run log and carries each agent's state into the briefing, so a failing prompt surfaces without Jeff hunting for it. The owner belongs in the frontmatter so a broken run has a name attached, not just a red status.
+
+## 4.6 What a prompt contains: the frame and the action class
+
+Two content standards sit inside every prompt. The action class sets output governance, and the six-slot frame sets structure.
+
+The four action classes refine the HUMAN GATE rather than replace it. **Analyze** is read-only and hands back a report. **Draft** produces a document a human may act on, and nothing ships. **Stage** is a fully-formed change set waiting on one approval, which posts to the existing Slack channel with a link to the markdown (Jeff's call, 2026-07-13), not a Notion queue and not scattered files. **Act** is the one autonomous exception, org-discovery writing enrichment inside a confidence threshold. Nine of the ten PCD prompts are Analyze or Draft, `pcd-camps-data-steward` is the Stage case, and org-discovery is the lone Act.
+
+The frame is the six things every prompt states: **purpose** (one sentence tied to the SOP), **inputs** (the live source, the prior run, the governing file), **reasoning steps** (the real decision points, not just mechanics), **guardrails** (the manual's thresholds restated so the agent cannot drift: 75 confidence, never store PII, no Amazon links in email, the 30-day SLA), **output shape** (report, draft, or staged set), and **logging** (the `agent_runs` row). Every prompt also carries the VOICE, RED WALL, and FAMILY FIREWALL rules, and any prompt that drafts outbound copy reads `About Me/About Me.txt` and `About Me/Anti AI Writing.txt` first. A review checks a prompt against these six slots plus its class.
+
+## 4.7 Testing and regression
+
+There is no test pass on any PCD prompt today. They are trusted because their output is inert for the Analyze and Draft nine, and self-checked for the one Act prompt, which runs a post-write count query to confirm the push landed. That is thin but not reckless, because the worst a Draft prompt can do is produce a bad draft a human discards at the gate.
+
+The standard before a prompt change ships: run it once by hand against live data and read the output, and for the one Act prompt, run it against a capped batch and diff the database effect before trusting a full run. Regression risk is concentrated almost entirely in org-discovery, because it is the only prompt that mutates production. Phase 9 formalizes this into happy-path, failure-path, voice, and Red Wall and family checks.
+
+## 4.8 Evaluation
+
+Evaluation asks whether a prompt still earns its slot, not just whether it ran. The measure is the SOP's success metric read against the run log, once logging exists: did the GSC review catch the real regression, did the Friday Letter draft need heavy editing, did org-discovery's accept rate hold. Until `agent_runs` logging is wired (Open Item 3), evaluation is Jeff reading outputs, which works at ten tasks and will not scale. skill-creator's eval tooling is the Phase 9 anchor for turning this into a repeatable pass.
+
+## 4.9 Lifecycle and approval
+
+A PCD prompt's life runs in one line: a task done by hand at least three times (decision 6), promoted to a `SKILL.md` and a schedule, run under the frame, evaluated at the December close, and retired when its end state is reached (RETIREMENT RULE). Creating or changing a PCD prompt is Jeff's approval, and the change gets logged. The next prompt due is `pcd-deletion-monitor`, the S4 build cleared for July, written to the frame in 4.6 as a Stage-class agent and specced in Phase 5.
+
+---
+
+# Phase 5: Agent design
+
+Phase 5 is the PCD operational org chart. It lists every agent that touches PCD, gives each the skill-template fields plus a supervisor, a human owner, and a risk classification, and tags each as one of three kinds. It reads alongside the function-level working-set view in section 4; this is the running-agent view, keyed by the actual scheduled task.
+
+## 5.1 Risk classification
+
+Risk is set by what an agent can change without a human in the loop, and it drives how much logging, testing, and audit each one needs.
+
+- **R3, highest.** Writes to a production system autonomously with no per-run human gate. One agent qualifies: `org-discovery-daily-worklist`.
+- **R2.** Prepares or hands over a change a human then commits: a deploy, a bulk data fix, a staged deletion. `pcd-camps-data-steward` and the planned `pcd-deletion-monitor`.
+- **R1.** Produces a draft or report only; the worst case is a document a human discards. The other eight PCD prompts.
+
+## 5.2 The org chart
+
+Each row is one agent. The three tags are **live** (one of the ten PCD scheduled tasks running today), **working set** (a shared Forge Command agent PCD draws on: Editorial, Support/Ops, Finance), and **future-menu** (a candidate not yet built, with a decision-6 path). The supervisor for every PCD agent is Barnabus, which carries its state in the briefing from the run log; the human owner is Jeff until a working-set agent takes the workstream.
+
+| Agent | Workstream / human owner | Tag | Class | Risk | Logs? | Meets section 7? |
+|---|---|---|---|---|---|---|
+| `org-discovery-daily-worklist` | Camp lead gen / Jeff | Live | Act | R3 | No | No, see 5.3 |
+| `pcd-camps-data-steward` | Camp lead gen / Jeff | Live | Stage | R2 | No | Partial |
+| `weekly-gsc-review` | Marketing / Jeff | Live | Analyze | R1 | No | Partial |
+| `pcd-gsc-analytics-report` | Marketing / Jeff | Live | Analyze | R1 | No | Partial |
+| `pcd-link-health-monitor` | Affiliate / Jeff | Live | Analyze | R1 | No | Partial |
+| `pcd-affiliate-reconciler` | Affiliate, Finance / Jeff | Live | Analyze | R1 | No | Partial |
+| `pcd-rules-watcher` | Editorial / Jeff | Live | Draft | R1 | No | Partial |
+| `pcd-friday-letter-draft` | Marketing / Jeff | Live | Draft | R1 | No | Partial |
+| `pcd-seasonal-content-scheduler` | Editorial / Jeff | Live | Draft | R1 | No | Partial |
+| `pcd-freshness-audit` | Editorial / Jeff | Live | Analyze | R1 | No | Partial |
+| `pcd-deletion-monitor` (planned) | Support/Ops / Jeff | Live, July build | Stage | R2 | Will | By design, see 5.4 |
+| Editorial | Editorial, Affiliate / Jeff | Working set, paused | Draft | R1 | Pending | On build |
+| Support/Ops | Inbound triage / Jeff | Working set, Sept | Draft | R1 | Pending | On build |
+| Finance | Affiliate revenue / Jeff | Working set, Sept | Analyze | R1 | Pending | On build |
+| SEO and traffic monitor | Marketing / Jeff | Future-menu | Analyze | R1 | n/a | On build |
+| Barnabus | Portfolio / Jeff | Working set, live | Draft | R1 | Yes | Yes |
+
+Every PCD agent carries the same skill-template fields: purpose, success metric, approval gates, kill switch, logging contract to `agent_runs`, idempotency, and the evidence rule, plus the two Phase-5 additions, a rollback path and a named owner workstream. The ten live prompts share one honest gap against those fields: none writes to `agent_runs` (Open Item 3), and their kill switch is only the scheduled-task enable flag, not an independent `agent_registry.status` with CANARY auto-pause. That is why every live row reads "Partial" and only Barnabus reads a clean "Yes." The two agents worth a full field-by-field treatment are the highest-risk live one and the one being built next.
+
+## 5.3 The strictest case: org-discovery against the section 7 bar
+
+`org-discovery-daily-worklist` is the only R3 agent in the portfolio and gets the strictest treatment. It runs unattended every night, searches org websites in the browser, and writes accepted results straight to the shared production `activity-radar` D1 with no per-run approval. Here is where it stands against each section 7 guardrail, honestly.
+
+- **One purpose and a measurable success metric.** Pass on purpose: find and attach org websites. Partial on metric: it reports a confident-website rate and accepted-row count per run, but nothing tracks those over time, because it does not log.
+- **Human approval for customer, money, legal, published.** It publishes nothing customer-facing and touches no money, but it does change what parents see in search by writing to the live org table without a gate. This is its weakest point, justified today only as data enrichment inside a 75-confidence, needs-review-false threshold.
+- **Kill switch.** Fail against the template. The only control is the scheduled-task enable flag; there is no independent `agent_registry.status` and no CANARY auto-pause on repeated failure.
+- **Version-controlled prompt.** Fail. The `SKILL.md` lives outside git (4.3), and the live file even carries a duplicated frontmatter block, a defect a review would catch.
+- **Evidence on every recommendation.** Partial. It records a discovery reason and a confidence score per org, which is real evidence, but it is not linked anywhere durable for a later audit.
+- **Every run logged, no silent failure.** Fail. No `agent_runs` row, only a run-summary line. A silently failed push is caught only by its own count query, which is good practice but not logging.
+- **Idempotent, safe to retry.** Near pass. `results.jsonl` skips completed orgs, the importer recomputes ids from name, city, and state so a re-run does not double-write, and it unsticks orphaned queue rows each run.
+- **Justifies its existence.** Pass. It is the only path that turns the 195,342 hidden stubs into searchable inventory, which is the venture's main unbuilt asset.
+
+The verdict is that org-discovery earns its place and does not meet the section 7 bar. It fails on logging, kill switch, and version control, and its autonomous production write has no backup or rollback (Open Item 10). Until those close it stays a running script under watch, not an owned agent, and it keeps the strictest treatment: a capped daily batch, the 75-confidence floor, the never-store-PII guardrail, the post-write confirmation query, and a required periodic human audit of accept rate and guardrail compliance (Open Item 4). Wiring its logging, giving it an independent kill switch, and standing up the D1 backup and rollback are the three moves that would let it graduate.
+
+## 5.4 The next build: pcd-deletion-monitor
+
+This is the one agent cleared to build in July, and it is designed to meet the section 7 bar from day one. It is monitor-and-draft behind the HUMAN GATE, so it does not need the manual-3x clearance an autonomous action would.
+
+- **Purpose.** Watch `support@parentcoachdesk.com` for deletion and opt-out requests, locate the record in `activity-radar`, and stage a ready-to-commit deletion inside the 30-day DATA-MAP SLA.
+- **Success metric.** No deletion request ages past its 30-day SLA unstaged, measured by a zero-count of overdue requests at each run.
+- **Approval gates.** Unsupervised: read the inbox, search the database, stage the change, post to Slack. Never without Jeff: the delete or anonymize itself, and any reply to the requester.
+- **Kill switch.** Independent enable and disable at the scheduled-task toggle and `agent_registry.status`, with CANARY auto-pause on two failures in 24 hours. This is the one agent maintenance mode never idles, so the switch is manual only.
+- **Logging contract.** One `agent_runs` row per run, no silent failure. A failed inbox or database read is logged as failed, because a missed run burns SLA days.
+- **Idempotency.** It checks its prior run and the existing staged file by request id before staging, so a re-run never duplicates.
+- **Evidence rule.** The staged item links to the source email and the matched record by id, so Jeff approves against evidence, not a summary.
+- **Rollback path.** Deletion runs as anonymize-then-purge with a 30-day soft-delete window, pending Open Item 10's D1 backup; until that exists it anonymizes rather than hard-deletes so nothing is unrecoverable.
+- **Supervisor and owner.** Supervisor Barnabus, human owner Support/Ops, risk R2, action class Stage.
+
+Voice, Red Wall, and family firewall bind it like every PCD agent: any acknowledgment is drafted not sent, a request naming a child routes to Jeff only and stages nothing, and no PII enters the Slack post or the run log.
+
+## 5.5 Future-menu and the decision-6 paths
+
+The functions not yet agents each carry a decision-6 status, which names the manual task and how many times it has been done by hand.
+
+- **SEO and traffic monitor (S1).** The weekly GSC review has four dated instances on file, so it clears manual-3x. It is future-menu, first in line at the December close once the July distribution work gives it real numbers to read.
+- **The running eight (S5, S6, S8, S9, S10, S11).** These fire on schedule but were never run three times by hand as a deliberate test; their clearance is "running," which is not the same as a passed manual-3x. Each gets its full spec at promotion, wired to logging and a kill switch first, in the distribution-first order: affiliate and newsletter before editorial and data quality.
+
+The working set stays capped at about eight portfolio-wide. Growth is workflow-driven, one agent at a time, only when a specific workflow is being built for automation, never speculative and never batched.
+
+---
+
+# Phases 6 to 10: table of contents and prerequisites
+
+Phases 1 to 5 are complete above. The rest are stubbed. Each names what has to be true before it can start.
 
 | Phase | Title | What it produces | Prerequisites |
 |---|---|---|---|
-| 4 | Prompt architecture | The reusable prompt shape every PCD agent is built from, tied to the skill template | Phases 1 to 3 signed off; the working-set cap decision (section 4) made |
-| 5 | Agent design | Skill files for any PCD process Jeff promotes, each built to the skill template | Phase 4 done; the promoted process has cleared manual 3x; a named owner assigned |
 | 6 | Logging and run-log wiring | Every PCD scheduled task writing to `agent_runs`; `agent_registry` rows for owned agents | `agent_runs` and `agent_registry` created in D1 (they do not exist yet); Open Item 3 closed |
 | 7 | Scheduling and kill switches | Documented enable and disable per task, CANARY auto-pause on double failure, maintenance-mode toggles | Phase 6 logging live; section 3.4 pause-versus-degrade calls made |
 | 8 | Dashboard and visibility | PCD's slice of the Forge Command command center, fed by the run log | Master Plan Phase D2 web app built; Phase 6 data flowing |
@@ -312,7 +457,7 @@ The rules are the constitution and they hold here without exception. The four th
 
 # 7. Open items
 
-1. **The venture file is out of date on automation.** `ventures/parentcoachdesk.md` (2026-07-12) says marketing, SEO, and camp lead-gen are not registry candidates and that the camp pipeline has never run. Ten PCD scheduled tasks are live, including the daily autonomous camp discovery agent. Reconcile the venture file against section 3.2.
+1. **The venture file is out of date on automation.** `ventures/parentcoachdesk.md` (2026-07-12) says marketing, SEO, and camp lead-gen are not registry candidates and that the camp pipeline has never run. Ten PCD scheduled tasks are live, including the daily autonomous camp discovery agent. Reconcile the venture file against section 3.2. A proposed diff for the two stale statements is drafted in Appendix A; applying it to `ventures/parentcoachdesk.md` is the orchestrator's call, not this session's.
 2. **Two overlapping GSC tasks.** `weekly-gsc-review` and `pcd-gsc-analytics-report` both fire Monday morning and both cover GSC. Confirm what each does and consolidate.
 3. **No PCD task writes to `agent_runs`.** The logging contract says agents that do not log do not exist, and `agent_runs` and `agent_registry` do not exist in D1 yet. Nothing PCD runs is logged. This blocks Phase 6.
 4. **Camp discovery writes live with no periodic human audit.** S7 pushes enrichment to the parent-facing database daily. Set a cadence for a human to audit its confidence threshold, its accept rate, and its guardrail compliance. All three external reviews (2026-07-13) independently landed on this gap, which raises its priority for the December close.
@@ -332,4 +477,35 @@ The rules are the constitution and they hold here without exception. The four th
 | Date | By | Notes |
 |---|---|---|
 | 2026-07-13 | Forge Command design session (PCD Operating Manual v1.0) | First pass. Phases 1 to 3 written; 4 to 10 stubbed with prerequisites. Five workstreams mapped to Blueprint departments; no new departments invented. Org chart tags each function working-set or future-menu with existence test and manual-3x status. Ten live PCD scheduled tasks inventoried in section 3.2 at Jeff's request; discrepancy with the venture file logged as Open Item 1. Maturity roadmap sequences distribution first, football-season idle respected. Decision to adopt per-venture Operating Manuals logged to the Field & Forge Decision Journal. |
+| 2026-07-13 | Forge Command design session (PCD Operating Manual v1.2, Session Two) | Wrote Phases 4 and 5, grounded in the ten live PCD SKILL.md files (read via the scheduled-tasks tool), not a hypothetical library. Phase 4 is the prompt-management framework: the real inventory table, the naming convention (eight of ten carry the `pcd-` prefix), the storage finding (SKILL.md files live under `Documents\Claude\Scheduled\`, outside git, so the running prompts are not version-controlled), versioning, ownership, the frame-and-class content standard, testing and regression, evaluation, and lifecycle. Phase 5 is the operational org chart: every agent with skill-template fields plus supervisor (Barnabus), human owner, and an R1/R2/R3 risk class; each tagged live, working-set, or future-menu with its decision-6 path. The nightly `org-discovery-daily-worklist` (R3) gets the strictest treatment and an honest guardrail-by-guardrail read: it earns its place but does not meet the section 7 bar (fails logging, kill switch, version control; no DB backup or rollback). Added Appendix A: a proposed, unapplied diff reconciling Open Item 1's two stale venture-file statements. Design only; nothing built or scheduled. Decision logged; Notion mirror updated; the ventures file left untouched per the Session Two binding. |
 | 2026-07-13 | Reconciliation pass, v1.1. Sources: Gemini review, ChatGPT review, ChatGPT full-draft rewrite | Adjudicated 46 items across 3 sources against the constitution. Rejected the build-the-AI-OS-now direction and the roughly thirty-agent, six-department expansion as violations of failure mode 5, the working-set cap, and section 1.4; the recursive inter-agent-handoff idea rejected under failure mode 2. Routed the Phase 4 and 5 material (prompt frames, agent spec template, Class A/B/C/D matrix, eval questions, intake taxonomy) to PCD-SESSION-TWO-INPUT-from-reviews-2026-07-13.md. Accepted: workflow-driven agent growth (section 4), the July build of the S4 monitor (S4, section 5), Open Item 4 reinforcement, new Open Item 10 for camp-database safety, and the resolution of Open Item 5 (fall idle runs maintenance-only). Jeff's other calls (2026-07-13): FTC disclosure confirmed covered on the site, and staged drafts surface in the existing Slack channel with a link to the markdown, one place to check. Full adjudication in PCD-MANUAL-RECONCILIATION-MEMO-2026-07-13.md. |
+
+---
+
+# Appendix A: proposed reconciliation fix for Open Item 1 (not applied)
+
+Open Item 1 is the stale venture file. `ventures/parentcoachdesk.md` still states in two places that the camp pipeline has never run and that marketing has no registry candidate. Ten scheduled tasks run live, including the nightly autonomous camp discovery agent, so both statements are false as written.
+
+Below is the proposed edit. It is not applied here. Per the Session Two binding, edits to `ventures/parentcoachdesk.md` are the orchestrator's call, so this appendix drafts the change and leaves the apply to that session.
+
+**Change 1, the Camp lead generation workstream (the closing sentence).**
+
+Current:
+
+> Nothing in this pipeline has been run yet, so it clears none of the manual-three-times test and is not registered in `agent_registry`.
+
+Proposed:
+
+> This pipeline is live: the `org-discovery-daily-worklist` scheduled task runs it every night, searching org websites and writing accepted enrichments to the shared `activity-radar` D1 autonomously (see the PCD Operating Manual, section 3.2 and 5.3). It runs ahead of governance: no `agent_runs` logging, no independent kill switch, no database backup or rollback, so the manual grandfathers it as a running script under watch, not an owned `agent_registry` agent, until Phases 6 and 7 wire it. It does not clear the manual-three-times gate as a deliberate test; it clears it only as a thing already running.
+
+**Change 2, the Marketing workstream.**
+
+Current:
+
+> No workstream document scopes this beyond the distribution gap named in Status. No recurring marketing task has been done three times anywhere in the file tree. Not a registry candidate yet.
+
+Proposed:
+
+> No workstream document scopes this beyond the distribution gap named in Status. Three marketing tasks do run live on a schedule: `weekly-gsc-review` and `pcd-gsc-analytics-report` (Monday) and `pcd-friday-letter-draft` (Wednesday), all report-or-draft only. The weekly GSC review has four dated instances on file, clearing the manual-three-times gate; it is the SEO and traffic monitor named as the first future-menu promotion at the December close (PCD Operating Manual, section 5.5). None is a registered `agent_registry` agent yet.
+
+Both changes only bring the venture file into line with the live scheduled-task inventory and the Operating Manual. Neither adds scope, an agent, or a schedule.

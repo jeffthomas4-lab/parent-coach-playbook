@@ -61,11 +61,29 @@ if (!stateCities || stateCities.length === 0) {
     }
     const today = new Date().toISOString().slice(0, 10);
     if (any.end_date && any.end_date < today) {
-      // The event already happened, approved or not. 301 to the sport hub
-      // (a static page that always renders) so the URL's link/impression
-      // signal lands somewhere permanent instead of dying.
-      const sportGuide = SPORTS.find((s) => s.slug === any!.sport);
-      const dest = sportGuide ? `/sports/${sportGuide.slug}/` : '/camps/';
+      // The event already happened, approved or not. 301 to a hub (a static
+      // page that always renders) so the URL's link/impression signal lands
+      // somewhere permanent instead of dying.
+      //
+      // `any.sport` is `programs.activity_category`, and the 2026-07 org
+      // migration left most rows (59% of approved programs as of the 2026-07
+      // indexation-recovery audit) on generic buckets ('camp_sports',
+      // 'camp_general', 'other') instead of a real sport slug — those never
+      // match SPORTS and used to fall through to the generic /camps/ hub even
+      // when the record's state was known and specific. `any.state` is
+      // always populated (it comes from the organization row, not the
+      // uncategorized scrape), so it's the more reliable fallback: prefer a
+      // real sport-guide match, then the camp's own state hub, then /camps/
+      // only if neither resolves.
+      const GENERIC_CATEGORIES = new Set(['camp_sports', 'camp_general', 'other']);
+      const sportGuide = any.sport && !GENERIC_CATEGORIES.has(any.sport)
+        ? SPORTS.find((s) => s.slug === any!.sport)
+        : undefined;
+      const dest = sportGuide
+        ? `/sports/${sportGuide.slug}/`
+        : any.state
+          ? `/camps/${any.state.toLowerCase()}/`
+          : '/camps/';
       return Astro.redirect(dest, 301);
     }
     // Future-dated but not approved (pending review, or rejected for cause:

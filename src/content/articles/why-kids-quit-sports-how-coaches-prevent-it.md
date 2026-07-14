@@ -1,5 +1,7 @@
 ---
 title: "Why Kids Quit Sports and How Coaches Can Prevent It"
+dek: "It is rarely about hating the sport. It is about the costs outrunning the benefits, and a coach can change that math."
+seoDescription: "Kids quit sports when the costs (time, pressure, discomfort) outrun the benefits. What coaches can actually do to stop it before the kid stops showing up."
 format: essay
 phase: team-parent
 sport: multi-sport
