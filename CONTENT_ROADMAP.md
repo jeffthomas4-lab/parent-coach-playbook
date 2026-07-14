@@ -144,6 +144,17 @@ Plus: each guide gets a final paragraph linking to the National Organizations pa
 
 ---
 
+## Rules Watch queue (auto-fed weekly by pcd-rules-watcher)
+
+Genuinely new rule/equipment/deadline items the weekly rules watch turns up, queued here so a future short read or cornerstone piece can be drafted from them without re-researching. Each row carries the citation the eventual post needs. When a topic ships as an article, move it into the relevant lane above and change status to SHIPPED with the URL, same as everywhere else in this doc.
+
+| Topic | Source | Source URL | Date found | Status |
+|---|---|---|---|---|
+| NFHS bans backward/over-the-head warmup throws in shot put and discus; must face the sector from inside the circle. Effective 2027 outdoor season. | NFHS | https://nfhs.org/stories/rules-changes-approved-for-high-school-track-and-field-cross-country | 2026-07-14 | NEWS-DRAFTED (src/content/news/nfhs-track-field-throwing-warmup-safety-2027.md) |
+| US Youth Soccer, AYSO, and US Club Soccer drop the Jan-Dec birth-year age cutoff for an Aug-Jul school-year cutoff, starting with the 2026-27 season on August 1, 2026. Kids born Aug-Dec most likely to shift age groups. | US Youth Soccer | https://www.usyouthsoccer.org/news/2025/06/10/updated-decision-on-age-group-formation/ | 2026-07-14 | NEWS-DRAFTED (src/content/news/youth-soccer-age-cutoff-shifts-to-school-year-2026.md) |
+
+---
+
 ## Camps and activities (your idea, see CAMPS_PROPOSAL.md)
 
 Separate planning doc. The repository is a real engineering effort and lives in its own track.
