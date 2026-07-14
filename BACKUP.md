@@ -19,11 +19,11 @@ If your hard drive dies tomorrow, every line of code is recoverable from `git cl
 
 Cloudflare D1 has no built-in backups on the free tier. If a table gets dropped or rows get deleted by accident, the only path to recovery is your own snapshots.
 
-The script `scripts\backup-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`, keeps the 8 most recent runs, and deletes older ones. **Local only — it does not commit or push.** (The dump runs 200MB+ and growing with the org table at ~198,000 rows, well past GitHub's 100MB file limit. Committing it broke `git push` for the whole repo once already. `backups/` is `.gitignore`'d; recovering from a live incident where this file exceeds "local disk only" isn't currently solved — see Open items below.)
+The script `scripts\backup-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`, keeps the 8 most recent runs, and deletes older ones. **Local only. It does not commit or push.** (The dump runs 200MB+ and growing with the org table at ~198,000 rows, well past GitHub's 100MB file limit. Committing it broke `git push` for the whole repo once already. `backups/` is `.gitignore`'d; recovering from a live incident where this file exceeds "local disk only" isn't currently solved — see Open items below.)
 
 This is the Open Item 10 fix (PCD-OPERATING-MANUAL.md): `org-discovery-daily-worklist` writes to this database every night with no prior backup path. Per decision 6, the script stays manual-run only until it has run by hand three times, then a Cowork scheduled task gets proposed. See the script's own header for the run count and the MedConfRadar D-026 precedent it follows.
 
-The prior script, `scripts\backup-d1-activity-radar.ps1`, had no retention rule and no restore doc. It is retired in favor of the one above and kept only for history. The `backup-d1.ps1` before that dumped the retired flat `camps` table and is also retired — see `activityradar-archive/README.md`.
+The prior script, `scripts\backup-d1-activity-radar.ps1`, had no retention rule and no restore doc. It is retired in favor of the one above and kept only for history. The `backup-d1.ps1` before that dumped the retired flat `camps` table and is also retired. See `activityradar-archive/README.md`.
 
 Run manually any time:
 
