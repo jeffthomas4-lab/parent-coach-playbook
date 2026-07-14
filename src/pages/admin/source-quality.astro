@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { listDomainQuality, type DomainQuality } from '../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — reads from D1 each request. Cloudflare Access protects /admin/*.
 export const prerender = false;
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 const adminEmail = getAdminEmailFromRequest(Astro.request);
 
 let rows: DomainQuality[] = [];

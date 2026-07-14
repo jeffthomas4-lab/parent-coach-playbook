@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherCampsAtAddress, slugifyCity, type Camp, type CampReview } from '../../lib/camps-db';
 import { SPORTS, BUYING_GUIDES } from '../../data/site';
+import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
 // since individual camp detail pages change less often than the directory.
@@ -12,7 +13,7 @@ Astro.response.headers.set(
   'public, s-maxage=3600, stale-while-revalidate=86400',
 );
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 const slug = Astro.params.slug;
 
 // State-code dispatch. Astro's routing prefers /camps/[slug].astro over

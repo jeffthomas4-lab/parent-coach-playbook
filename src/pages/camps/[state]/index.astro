@@ -7,6 +7,7 @@
 // SSR. Cached at the edge for 30 minutes since state-level rollups change slowly.
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listCitiesInState, listCampsByState, slugifyCity, type Camp } from '../../../lib/camps-db';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=86400');
@@ -14,7 +15,7 @@ Astro.response.headers.set('Cache-Control', 'public, s-maxage=1800, stale-while-
 const stateParam = (Astro.params.state || '').toLowerCase();
 const stateCode = stateParam.toUpperCase();
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 let cities: { city: string; count: number }[] = [];
 let recent: Camp[] = [];
 

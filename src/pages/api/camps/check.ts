@@ -6,6 +6,7 @@
 
 import type { APIRoute } from 'astro';
 import { findFuzzyCampMatches, getDomainQuality, extractDomain } from '../../../lib/camps-db';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -46,8 +47,8 @@ async function readPayload(req: Request): Promise<CheckPayload> {
   }
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB: D1Database } | undefined;
+export const POST: APIRoute = async ({ request }) => {
+  const env = cfEnv as { DB: D1Database } | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const data = await readPayload(request);

@@ -2,11 +2,12 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listPendingCamps, type Camp } from '../../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR. Pulls live from D1 each request. Wrap in Cloudflare Access policy.
 export const prerender = false;
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 const adminEmail = getAdminEmailFromRequest(Astro.request);
 
 // If Access is not configured (dev mode), still render the queue but warn.

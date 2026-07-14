@@ -10,6 +10,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { listCampsByCity, slugifyCity, type Camp } from '../../../../lib/camps-db';
 import { CAMP_SPORTS, AGE_BANDS } from '../../../../data/site';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
@@ -18,7 +19,7 @@ const stateParam = (Astro.params.state || '').toLowerCase();
 const cityParam = (Astro.params.city || '').toLowerCase();
 const stateCode = stateParam.toUpperCase();
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 let camps: Camp[] = [];
 if (env?.DB && stateCode && cityParam) {
   try { camps = await listCampsByCity(env.DB, stateCode, cityParam); }

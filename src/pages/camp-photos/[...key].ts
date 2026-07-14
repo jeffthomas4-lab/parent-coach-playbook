@@ -2,11 +2,12 @@
 // Serves R2-stored hero photos. Public. Cached at the edge.
 
 import type { APIRoute } from 'astro';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ params, locals }) => {
-  const env = (locals as any).runtime?.env as { PHOTOS?: R2Bucket } | undefined;
+export const GET: APIRoute = async ({ params }) => {
+  const env = cfEnv as { PHOTOS?: R2Bucket } | undefined;
   if (!env?.PHOTOS) return new Response('R2 not bound', { status: 500 });
 
   const keyParam = params.key;

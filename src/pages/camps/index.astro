@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps-db';
 import { CAMP_SPORTS } from '../../data/site';
+import { env as cfEnv } from 'cloudflare:workers';
 
 const sportLabel = (slug: string): string => {
   const match = CAMP_SPORTS.find((s) => s.slug === slug);
@@ -24,7 +25,7 @@ Astro.response.headers.set(
   'public, s-maxage=600, stale-while-revalidate=86400',
 );
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 let camps: Camp[] = [];
 let dbAvailable = !!env?.DB;
 if (env?.DB) {

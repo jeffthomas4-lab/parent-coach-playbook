@@ -2,20 +2,26 @@
 // calling an API route's exported POST handler directly, without spinning up
 // a dev server or a Workers runtime.
 //
-// Each route reads its env via `(locals as any).runtime?.env`, so this
-// mirrors that shape. Pass whatever fake env (DB, ADMIN_EMAILS, CRON_KEY,
-// etc.) the test needs; routes that never touch env.DB can pass an empty
-// object and it still satisfies the `env?.DB` guard check (undefined -> the
-// route's own 500 "database not available" branch, which is itself a test
-// case for the happy-path suites below).
+// Each route now imports its env from 'cloudflare:workers', which vitest.config.ts
+// aliases to tests/mocks/cloudflare-workers.ts — a single mutable object.
+// makeContext() repopulates that shared object on every call, so pass
+// whatever fake env (DB, ADMIN_EMAILS, CRON_KEY, etc.) the test needs; routes
+// that never touch env.DB can pass an empty object and it still satisfies the
+// `env?.DB` guard check (undefined -> the route's own 500 "database not
+// available" branch, which is itself a test case for the happy-path suites
+// below).
 
 import type { APIContext } from 'astro';
+import { env as cfEnvMock } from 'cloudflare:workers';
 
 export function makeContext(opts: {
   request: Request;
   params?: Record<string, string | undefined>;
   env?: Record<string, unknown>;
 }): APIContext {
+  for (const key of Object.keys(cfEnvMock)) delete (cfEnvMock as any)[key];
+  Object.assign(cfEnvMock, opts.env ?? {});
+
   return {
     request: opts.request,
     params: opts.params ?? {},

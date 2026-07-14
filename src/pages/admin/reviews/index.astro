@@ -2,10 +2,11 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listPendingReviews, getCampById, type CampReview, type Camp } from '../../../lib/camps-db';
 import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 const adminEmail = getAdminEmailFromRequest(Astro.request);
 
 let pending: CampReview[] = [];

@@ -18,6 +18,7 @@ import {
   listSkipDomains,
   slimNote,
 } from '../../../lib/search-registry';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -32,8 +33,8 @@ const json = (body: unknown, status = 200, cache = true) =>
 
 const today = () => new Date().toISOString().slice(0, 10);
 
-export const GET: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB?: D1Database } | undefined;
+export const GET: APIRoute = async ({ request }) => {
+  const env = cfEnv as { DB?: D1Database } | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500, false);
 
   const url = new URL(request.url);

@@ -8,8 +8,9 @@
 export const prerender = false;
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { env as cfEnv } from 'cloudflare:workers';
 
-const env = (Astro.locals as any).runtime?.env as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database } | undefined;
 
 type RawEvent = {
   id: number;

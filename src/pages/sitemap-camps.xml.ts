@@ -1,6 +1,7 @@
 import { SITE } from '../data/site';
 import { listAllCampSlugsApproved } from '../lib/camps-db';
 import type { APIContext } from 'astro';
+import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR (on-demand) so approved camps from D1 appear in the sitemap at request
 // time. Deliberately imports NO content collections — keeping the 14 MiB Astro
@@ -9,7 +10,7 @@ import type { APIContext } from 'astro';
 export const prerender = false;
 
 export async function GET(ctx: APIContext) {
-  const env = (ctx.locals as any).runtime?.env as { DB: D1Database } | undefined;
+  const env = cfEnv as { DB: D1Database } | undefined;
   let campSlugs: { slug: string; lastmod: string }[] = [];
   if (env?.DB) {
     try {

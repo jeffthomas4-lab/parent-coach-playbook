@@ -8,6 +8,7 @@
 
 import type { APIRoute } from 'astro';
 import { slugifyCity } from '../../../lib/camps-db';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -33,8 +34,8 @@ function distMiles(lat1: number, lon1: number, lat2: number, lon2: number): numb
 
 const MAX_MILES = 75;
 
-export const GET: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB?: D1Database } | undefined;
+export const GET: APIRoute = async ({ request }) => {
+  const env = cfEnv as { DB?: D1Database } | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const url = new URL(request.url);
