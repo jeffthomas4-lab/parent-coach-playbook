@@ -1,3 +1,10 @@
+# RETIRED 2026-07-13. Superseded by scripts\backup-activity-radar.ps1, which adds
+# a keep-last-8 retention rule and a documented restore procedure
+# (scripts\RESTORE-activity-radar.md). This file has neither. Kept for history
+# per the RETIREMENT RULE, not deleted. Use the new script.
+#
+# Original header below.
+#
 # Backup the shared activity-radar D1 to a timestamped SQL dump. Local-only —
 # does NOT commit or push. Fixed 2026-07-13: this database is now 245MB+
 # exported, well past GitHub's 100MB file limit, so committing the dump broke

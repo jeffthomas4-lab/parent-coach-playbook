@@ -1,7 +1,7 @@
 ---
 name: pcd-deletion-monitor
 description: PCD data-deletion and opt-out monitor. Watches support@parentcoachdesk.com (portfolio inbox jeff@coachjeffthomas.com only, never pugetsound.edu), locates the matching record in the activity-radar D1, and stages a ready-to-commit deletion for Jeff inside the 30-day DATA-MAP SLA. Monitor-and-draft behind the HUMAN GATE: it never deletes, anonymizes, or replies on its own.
-version: 1.0
+version: 1.1
 last_edited: 2026-07-13
 owner_workstream: Support/Ops
 supervisor: Barnabus
@@ -49,7 +49,7 @@ For each confirmed request with a single matched record, write ONE staged-change
 - the request: sender, received date, and the exact ask, quoted briefly.
 - the matched record by internal id and org name only. No emails, no PII beyond what is needed to identify the row.
 - days remaining on the 30-day SLA.
-- the exact action queued: `anonymize` (default, until the Open Item 10 D1 backup exists) or `delete`, and the precise D1 statement that would run, written out but NOT executed.
+- the exact action queued: always `anonymize`, never `delete`, until the Open Item 10 D1 backup exists (rollback path, skill template compliance below), with the precise D1 statement that would run, written out but NOT executed.
 - a one-line "approve to commit" instruction for Jeff.
 
 Idempotency: before writing, check `reports/deletions/` for an existing staged file for the same request id. If one exists and is unchanged, do nothing for that request rather than staging a duplicate.
@@ -74,3 +74,25 @@ Write exactly one row to `agent_runs` in the `forge-command` D1 (database_id `74
 - The 30-day SLA does not pause for football season. This is the one PCD agent maintenance mode never idles.
 - Kill switch: this task's enable flag and its `agent_registry.status`. If it fails twice in 24 hours it should be paused and flagged in Barnabus's briefing (CANARY RULE).
 - Red Wall and family-adjacent requests route to Jeff only, staged for no one, flagged in the report.
+
+## Skill template compliance (PCD Operating Manual section 5.4, master plan section 7)
+
+**Purpose.** Watch `support@parentcoachdesk.com` for deletion and opt-out requests, locate the record in `activity-radar`, and stage a ready-to-commit deletion for Jeff inside the 30-day DATA-MAP SLA.
+
+**Success metric.** No deletion request ages past its 30-day SLA unstaged, measured by a zero-count of overdue requests at each run.
+
+**Approval gates.** Unsupervised: read the inbox, search the database, stage the change, post to Slack. Never without Jeff: the delete or anonymize itself, and any reply to the requester.
+
+**Kill switch.** Independent enable and disable at the scheduled-task toggle and `agent_registry.status`, with CANARY auto-pause on two failures in 24 hours. This is the one agent maintenance mode never idles, so the switch is manual only.
+
+**Logging contract.** One `agent_runs` row per run, no silent failure (STEP 6). A failed inbox or database read is logged as failed, because a missed run burns SLA days.
+
+**Idempotency.** Checks its prior run and the existing staged file by request id before staging (STEP 4), so a re-run never duplicates.
+
+**Evidence rule.** The staged item links to the source email and the matched record by id, so Jeff approves against evidence, not a summary.
+
+**Rollback path.** Deletion runs as anonymize-then-purge with a 30-day soft-delete window, pending Open Item 10's D1 backup; until that backup exists this agent always queues `anonymize`, never `delete`, so nothing staged is unrecoverable.
+
+**Supervisor and owner.** Supervisor Barnabus. Human owner Support/Ops (Jeff today). Risk R2. Action class Stage.
+
+**Voice, Red Wall, family firewall.** Bind this agent like every PCD agent: any acknowledgment is drafted, not sent; a request naming a child routes to Jeff only and stages nothing; no PII enters the Slack post or the run log.

@@ -19,40 +19,24 @@ If your hard drive dies tomorrow, every line of code is recoverable from `git cl
 
 Cloudflare D1 has no built-in backups on the free tier. If a table gets dropped or rows get deleted by accident, the only path to recovery is your own snapshots.
 
-The script `scripts\backup-d1-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`. **Local only — it does not commit or push.** (Changed 2026-07-13: the dump is now 245MB+ and growing with the org table at ~198,000 rows, well past GitHub's 100MB file limit. Committing it broke `git push` for the whole repo, not just the backup commit. `backups/` is `.gitignore`'d; recovering from a live incident where this file exceeds "local disk only" isn't currently solved — see Open items below.) The old `backup-d1.ps1` dumped the retired flat `camps` table and is retired — see `activityradar-archive/README.md`.
+The script `scripts\backup-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`, keeps the 8 most recent runs, and deletes older ones. **Local only — it does not commit or push.** (The dump runs 200MB+ and growing with the org table at ~198,000 rows, well past GitHub's 100MB file limit. Committing it broke `git push` for the whole repo once already. `backups/` is `.gitignore`'d; recovering from a live incident where this file exceeds "local disk only" isn't currently solved — see Open items below.)
+
+This is the Open Item 10 fix (PCD-OPERATING-MANUAL.md): `org-discovery-daily-worklist` writes to this database every night with no prior backup path. Per decision 6, the script stays manual-run only until it has run by hand three times, then a Cowork scheduled task gets proposed. See the script's own header for the run count and the MedConfRadar D-026 precedent it follows.
+
+The prior script, `scripts\backup-d1-activity-radar.ps1`, had no retention rule and no restore doc. It is retired in favor of the one above and kept only for history. The `backup-d1.ps1` before that dumped the retired flat `camps` table and is also retired — see `activityradar-archive/README.md`.
 
 Run manually any time:
 
 ```powershell
 cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk"
-.\scripts\backup-d1-activity-radar.ps1
+.\scripts\backup-activity-radar.ps1
 ```
 
-Or schedule it nightly via Windows Task Scheduler:
-
-1. Open Task Scheduler. Create Basic Task.
-2. Name: "Parent Coach Desk D1 backup". Trigger: Daily at 2:00 AM.
-3. Action: Start a program.
-4. Program: `powershell.exe`
-5. Arguments: `-NoProfile -ExecutionPolicy Bypass -File "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk\scripts\backup-d1-activity-radar.ps1"`
-6. Start in: `C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk`
-7. Finish. Right-click the task, Properties, Run whether user is logged on or not, Run with highest privileges.
-
-The task only runs when the machine is on. If you go three days without a backup, the next run picks up where it left off, no harm.
+Do not schedule this yet. Once three manual runs are logged clean, scheduling instructions go here (Windows Task Scheduler, daily 2:00 AM, same pattern as the retired script used).
 
 ### Restoring from a snapshot
 
-If you need to restore from a specific date:
-
-```powershell
-# Inspect the backup first
-cat backups\d1\activity-radar-2026-07-13.sql
-
-# Full restore of the shared D1 (destructive — only for real disaster recovery)
-npx wrangler@latest d1 execute activity-radar --remote --file=backups\d1\activity-radar-2026-07-13.sql
-```
-
-For restoring a single table rather than the whole database, extract just that table's statements from the dump before running it, or use D1 Time Travel (`npx wrangler d1 time-travel restore activity-radar`) for point-in-time recovery within its retention window, usually faster than a manual dump replay.
+Full restore steps, single-table restore, D1 Time Travel, and post-restore verification all live in `scripts\RESTORE-activity-radar.md`, next to the backup script. Read that before restoring anything; a full restore overwrites live data.
 
 ## Layer 3: R2 photo bucket
 
@@ -74,7 +58,7 @@ Versioning is free for the first 30 days of object history. Old versions count a
 Right now, before you walk away from this:
 
 1. Both repos pushed to GitHub? `git status` shows clean, `git remote -v` shows a github.com URL.
-2. Did `.\scripts\backup-d1-activity-radar.ps1` run successfully today? Check `backups\d1\` has today's file.
+2. Did `.\scripts\backup-activity-radar.ps1` run successfully today? Check `backups\d1\` has today's file.
 3. R2 versioning enabled?
 
 If yes to all three, your work is recoverable from at least two different machines/services if anything fails.
