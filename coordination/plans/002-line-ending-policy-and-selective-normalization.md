@@ -3,7 +3,13 @@
 **Plan ID:** 002
 **Author:** Codex
 **Date:** 2026-07-15
-**Status:** Approved by Jeff, 2026-07-15
+**Status:** Complete, 2026-07-15
+
+## Implementation result
+
+The policy-only `.gitattributes` commit is `d30cdf0`. Jeff approved mechanical normalization of four PowerShell paths. `git add --renormalize` produced no cached changes because Git correctly stores their canonical blobs as LF and applies `eol=crlf` only when materializing a working tree. No mechanical commit was created; manufacturing one would have required changing content rather than line-ending policy.
+
+Post-policy validation passed: 233 tests, both TypeScript checks, and the dependency audit. Three active PowerShell scripts in the approved set parse successfully. The fourth path, retired `scripts/backup-d1-activity-radar.ps1`, has a pre-existing UTF-8 em-dash parsing defect under Windows PowerShell 5.1. It was not changed because encoding repair is a non-goal of this plan and the file is explicitly retired.
 
 ## Objective **[required]**
 

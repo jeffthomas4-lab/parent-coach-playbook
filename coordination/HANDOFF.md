@@ -13,14 +13,12 @@ This is the only place active status lives. Do not duplicate it elsewhere.
 **Tier:** 3
 **Branch:** `migration/pages-to-workers-staging` (no dedicated branch; see handoff for why)
 **Commit range:** None. Files are uncommitted, pending Jeff's approval.
-**Status:** Plan 001 implementation is complete through Phase 6. Substantive work is checkpointed locally; D1 evidence is recorded; Plan 002 awaits Jeff.
-**Human approval required:** Yes. Jeff decides D-001 and Plan 002 separately. Nothing authorizes normalization, pushing, deployment, migration, production access, secret changes, publishing, or outbound communication.
+**Status:** Plan 001 and Plan 002 are complete. D-001 is Approved. The line-ending policy is committed; approved renormalization was correctly a no-op.
+**Human approval required:** No for the completed baseline work. Pushing, deployment, migration, production access, secret changes, publishing, and outbound communication remain separately gated.
 
 **Blocking Jeff's attention:**
 
-1. Decide whether D-001 should be Approved, revised, or remain Proposed now that its writer inventory is traced.
-2. Review and approve or revise `plans/002-line-ending-policy-and-selective-normalization.md`; it has not been implemented.
-3. Decide whether `tests/probe.txt` may be deleted as scratch; it remains untouched.
-4. The in-repo instruction-file question (`AGENTS.md` / `CLAUDE.md`) remains Proposed as D-004.
+1. Decide whether the retired `scripts/backup-d1-activity-radar.ps1` should receive a separate encoding-compatibility cleanup or remain untouched as historical material.
+2. The in-repo instruction-file question (`AGENTS.md` / `CLAUDE.md`) remains Proposed as D-004.
 
-**Next step:** Jeff reviews D-001 and Plan 002. Codex continues acting as implementer until Jeff says otherwise, but will observe every remaining approval gate.
+**Next step:** Begin the next approved ParentCoachDesk task. Codex continues acting as implementer until Jeff says otherwise and will observe all remaining approval gates.
