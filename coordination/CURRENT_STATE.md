@@ -4,6 +4,10 @@
 **Verified by:** Claude Code (initial evidence-based snapshot)
 **Independent verification:** Performed by Codex for the Cloudflare and D1 recovery scope on 2026-07-15; other baseline claims remain scoped by their own evidence labels.
 
+## Production/staging matrix update
+
+The read-only comparison is recorded in `coordination/PRODUCTION_STAGING_MATRIX.md` under Plan 005. **Confirmed live, 2026-07-15:** production Pages is sourced from older commit `3e125bc51f339e47f11ca17cd7a5264a6a693ee6`, not the current migration branch. **Confirmed live:** staging lacks current admin Access settings and all Worker secrets. **Confirmed live plus verified in code:** the scheduled Yelp Worker lacks its required `YELP_API_KEY` and aborts on the resulting authorization failure. No remote configuration was changed.
+
 ## Cloudflare and recovery verification update
 
 **Confirmed live, 2026-07-15:** `parentcoachdesk.com` and `www.parentcoachdesk.com` are attached to the `parent-coach-playbook` Pages project. The `parent-coach-desk-staging` Worker is deployed separately and has `SESSION`, `DB`, `PHOTOS`, `ASSETS`, `ADMIN_EMAILS`, and `SITE_URL` bindings. Its `DB` is `activity-radar`; `PHOTOS` is `activityradar-photos`. Secret values were not accessed.
