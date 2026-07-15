@@ -5,7 +5,7 @@
 #
 # Original header below.
 #
-# Backup the shared activity-radar D1 to a timestamped SQL dump. Local-only —
+# Backup the shared activity-radar D1 to a timestamped SQL dump. Local-only --
 # does NOT commit or push. Fixed 2026-07-13: this database is now 245MB+
 # exported, well past GitHub's 100MB file limit, so committing the dump broke
 # `git push` for every change in the repo, not just this script's own commit.
@@ -24,4 +24,4 @@ $out = Join-Path $dir "activity-radar-$date.sql"
 # wrangler d1 export dumps schema + data for the whole database.
 npx wrangler d1 export activity-radar --remote --output $out
 
-Write-Host "Backed up activity-radar to $out (local only, not committed — see BACKUP.md Layer 2)."
+Write-Host "Backed up activity-radar to $out (local only, not committed -- see BACKUP.md Layer 2)."
