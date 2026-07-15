@@ -1,5 +1,7 @@
 # ActivityRadar Merge Plan
 
+> **Operational update, 2026-07-15:** This is a historical merge record. The `activityradar-yelp` Worker described below was subsequently retired and deleted; its source and config were removed. `activityradar-enrichment` remains active.
+
 **Date:** 2026-07-10. **Owner:** Jeff Thomas. **Executors:** Sonnet subagents, one work package each, run from an orchestrator session in this repo.
 
 ActivityRadar folds back into parent-coach-desk. One camp database location, one repo, one front door. Most of the file move already happened in this working tree on the morning of 2026-07-10 (uncommitted), and the old `Outputs/ActivityRadar` folder was deleted the same day. This plan verifies that move, finishes the leftovers, decommissions the old surfaces, and updates the norms.

@@ -1,5 +1,7 @@
 # Camp Discovery Pipeline: Outside Review + Corrected Plan
 
+> **Operational update, 2026-07-15:** The Yelp enrichment Worker described in this dated review was subsequently retired and deleted. `activityradar-enrichment` remains active.
+
 Date: 2026-06-23
 Scope: the pasted "ParentCoachDesk Camp Discovery + Cloudflare Worker" plan, reviewed against everything already built across parent-coach-playbook and ActivityRadar.
 Posture: outside consultant, website infrastructure. Direct read.

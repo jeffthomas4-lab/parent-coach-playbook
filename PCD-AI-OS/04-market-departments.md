@@ -21,7 +21,7 @@ Turn the 198,287-organization ActivityRadar database into a directory a parent c
 
 Ranger runs two live SOPs today. S7 (`org-discovery-daily-worklist`, daily 9:02 PM) is the enrichment engine: it takes a batch of unverified IRS Business Master File stubs, searches each org's website, scores confidence, and writes accepted rows (75 confidence or higher, no needs-review flag) straight to `activity-radar` as an organization website update plus a camp-scan queue insert. S8 (`pcd-camps-data-steward`, weekly Thursday) is the housekeeping pass: stale listings, expired sessions that should redirect instead of 404, duplicate records, orphaned queue rows.
 
-Two Cloudflare Workers do the low-level work S7 feeds. `activityradar-enrichment` runs hourly against the scan queue S7 fills. `activityradar-yelp` runs daily and layers Yelp data onto records that already have a website. Everything downstream of discovery, quality scoring, coverage analysis, owner-requested changes, removal requests, is designed in this file and not yet built as a named workflow, even where a table for it already exists.
+One Cloudflare Worker does the low-level work S7 feeds. `activityradar-enrichment` runs hourly against the scan queue S7 fills. The former Yelp enrichment Worker was retired on 2026-07-15. Everything downstream of discovery, quality scoring, coverage analysis, owner-requested changes, and removal requests is designed in this file and not yet built as a named workflow, even where a table for it already exists.
 
 ### SOPs required
 
@@ -40,7 +40,7 @@ Two Cloudflare Workers do the low-level work S7 feeds. `activityradar-enrichment
 
 ### Fully automated tasks
 
-S7's enrichment write is the one fully automated, no-per-run-approval task on the entire PCD roster. Inside the 75-confidence, needs-review-false threshold, Ranger writes the website and queues the scan without asking. The hourly enrichment worker and the daily Yelp worker also run unattended, because they only add data to records already in the pipeline, never publish a new listing on their own.
+S7's enrichment write is the one fully automated, no-per-run-approval task on the entire PCD roster. Inside the 75-confidence, needs-review-false threshold, Ranger writes the website and queues the scan without asking. The hourly enrichment Worker also runs unattended because it only adds data to records already in the pipeline and never publishes a new listing on its own.
 
 ### AI-recommends tasks
 
@@ -92,7 +92,7 @@ Camp Directory consumes coverage-gap analysis and confidence-scoring intelligenc
 
 ### The enrichment funnel, the department's core asset
 
-The funnel is the whole department in one shape: 198,287 raw stubs in, roughly 3,000 enriched and visible out today. Every sub-function above is a stage in that funnel, not a separate program. Discovery finds a website. Enrichment and Yelp add detail. Quality scoring decides whether the record clears the bar a parent should see. Duplicate and closed-camp detection remove what should never have been counted as inventory in the first place. The department's real job is widening the funnel's exit without widening its entrance faster than quality can keep up, because a directory with 198,287 unreliable rows is worse than one with 3,000 trustworthy ones.
+The funnel is the whole department in one shape: 198,287 raw stubs in, roughly 3,000 enriched and visible out today. Every sub-function above is a stage in that funnel, not a separate program. Discovery finds a website. Enrichment adds detail. Quality scoring decides whether the record clears the bar a parent should see. Duplicate and closed-camp detection remove what should never have been counted as inventory in the first place. The department's real job is widening the funnel's exit without widening its entrance faster than quality can keep up, because a directory with 198,287 unreliable rows is worse than one with 3,000 trustworthy ones.
 
 ```mermaid
 flowchart TD
@@ -100,8 +100,7 @@ flowchart TD
     B -->|"website found, high confidence"| C["activity-radar D1: organizations, programs"]
     B -->|"low confidence or needs review"| Z["Logged, no write, surfaced in weekly review"]
     C --> D["activityradar-enrichment worker, hourly"]
-    D --> E["activityradar-yelp worker, daily"]
-    E --> F["Quality scoring: confidence, url_health, completeness"]
+    D --> F["Quality scoring: confidence, url_health, completeness"]
     F --> G{"Meets parent-facing bar?"}
     G -->|yes| H["Visible in camps search"]
     G -->|no| I["Held, flagged for enrichment or reject"]

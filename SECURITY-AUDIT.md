@@ -6,6 +6,8 @@ Data home: D1 `activity-radar` (database_id 8cc3694a-26f8-4a56-b131-d5d3a68c49ef
 
 **2026-07-13 note (ActivityRadar merge):** ActivityRadar folded into this repo as its camp data layer (schema history, discovery pipeline, two Cloudflare Workers — `activityradar-enrichment`, `activityradar-yelp` — writing to this same D1). ActivityRadar's own `SECURITY-AUDIT.md` is archived at `activityradar-archive/`, historical record only. Neither Worker has a secrets inventory or gitleaks pass of its own yet — flagged as an open item, not a Critical (they don't touch customer email or handle payment data).
 
+**2026-07-15 retirement note:** `activityradar-yelp` was deleted from Cloudflare and its source/config removed. `activityradar-enrichment` is now the only Worker in this pair. Historical Yelp-derived D1 fields were not deleted.
+
 ## Secrets inventory (added 2026-07-05, per the tightened Pillar 1)
 
 | Secret | Where it lives | Last rotated | Note |

@@ -3,7 +3,7 @@
 **Plan ID:** 006  
 **Author:** Codex  
 **Date:** 2026-07-15  
-**Status:** In progress — cron repaired and staging prepared; external values required
+**Status:** In progress — cron repaired, Yelp retired, staging prepared; Access values required
 
 ## Objective
 
@@ -21,9 +21,9 @@ Staging can exercise authenticated administration and the approved automation su
 
 - Confirmed live, 2026-07-15: staging shares production `activity-radar` D1 and `activityradar-photos` R2 and has no secrets.
 - Verified in code, 2026-07-15: `FORGE_DB` must bind `forge-command` for agent-run logging.
-- Confirmed live plus verified in code, 2026-07-15: Yelp lacks required `YELP_API_KEY` and aborts.
-- Confirmed live, 2026-07-15: cron's deployed version predates the fail-loud code and repository `SWEEP_URL` variable.
-- Not available locally, 2026-07-15: Access team domain, Access application AUD, Yelp key, Slack credentials, and agent-run shared token.
+- Confirmed live, 2026-07-15: Yelp was retired and its Worker deleted after verification found its required key absent.
+- Confirmed live, 2026-07-15: cron's prior deployed version predated the fail-loud code and repository `SWEEP_URL` variable; version `9af6e107-1a51-402f-9748-884326ca1445` repaired that drift.
+- Not available locally, 2026-07-15: Access team domain, Access application AUD, Slack credentials, and agent-run shared token.
 
 ## Scope
 
@@ -32,7 +32,7 @@ Staging can exercise authenticated administration and the approved automation su
 - Validate the site and cron Worker.
 - Deploy the reviewed cron repair after validation.
 - Deploy staging only after Access identifiers are available.
-- Repair Yelp only if Jeff confirms it remains intended and supplies a valid API key.
+- Retire Yelp after Jeff's explicit decision, without deleting historical D1 fields.
 
 ## Non-goals
 
@@ -51,7 +51,7 @@ No production Pages deploy, migration, D1/R2 write, synthetic staging data, doma
 4. Obtain `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD`; add them as staging variables.
 5. Obtain/generate only the approved staging secrets and set them interactively without logging values.
 6. Deploy staging and test public/admin/API failure modes without mutating shared data.
-7. Decide Yelp disposition; either supply its key and verify it or disable/retire it in a separately recorded change.
+7. Retire Yelp in a separately recorded change after Jeff's decision.
 
 ## Testing strategy
 
@@ -63,15 +63,14 @@ Run Astro check, tests, build, Wrangler dry-runs, cron tests, and active-version
 - Cron active version contains fail-loud behavior and plain `SWEEP_URL` variable.
 - Staging is not deployed without both Access identifiers.
 - No outbound communication or shared-data mutation occurs in acceptance tests.
-- Yelp is not described as repaired without a successful authenticated provider response.
+- Yelp Worker, schedule, source, and deploy configuration are absent after retirement.
 
 ## Human approval gates
 
-Jeff authorized this phase, including required staging/cron deployment. Production Pages deploy, migrations, shared-data writes, outbound communication, and any decision to retire Yelp remain gated. Jeff must provide or securely enter unavailable third-party credentials.
+Jeff authorized this phase, including required staging/cron deployment, and separately approved Yelp retirement. Production Pages deploy, migrations, shared-data writes, and outbound communication remain gated. Jeff must provide or securely enter unavailable third-party credentials.
 
 ## Open questions
 
-- Yelp: retain and supply a key, or retire/disable?
 - Which Slack channel/app and token should staging use?
 
 ## Dependencies
@@ -92,7 +91,7 @@ Admin auth remains fail-closed. Secrets are entered through Wrangler's secure se
 
 ## Failure modes
 
-Missing Access configuration yields 503 on admin routes, so deployment stops before that point. Missing Yelp key aborts its job. A cron secret mismatch produces a visible failed invocation after the fail-loud deployment.
+Missing Access configuration yields 503 on admin routes, so deployment stops before that point. A cron secret mismatch produces a visible failed invocation after the fail-loud deployment. Yelp has no remaining runtime path.
 
 ## Observability
 
@@ -113,4 +112,8 @@ Use the prior Worker version if cron behavior regresses. Staging can roll back t
 - Deployed cron version `9af6e107-1a51-402f-9748-884326ca1445`. It has fetch and scheduled handlers, plain `SWEEP_URL`, and retained secret names `CRON_KEY`, `DEPLOY_HOOK_URL`, and `MANUAL_TRIGGER_KEY`.
 - The former remote `SWEEP_URL` secret was replaced by the repository's plain variable as intended.
 - Staging was not deployed because `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` are unavailable; doing so would leave current admin routes unavailable.
-- Yelp was not changed because no valid `YELP_API_KEY` is available and retirement has not been approved.
+- Yelp was subsequently retired with Jeff's approval; see the addendum below.
+
+### Yelp retirement addendum
+
+Jeff approved retirement on 2026-07-15. The live `activityradar-yelp` Worker and schedule were deleted, its source/config were removed, and current operational documentation was updated. Historical D1 fields were intentionally retained.

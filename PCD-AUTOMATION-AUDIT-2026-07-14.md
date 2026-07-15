@@ -1,4 +1,6 @@
 # Parent Coach Desk — Full Automation Audit
+> **Operational update, 2026-07-15:** The `activityradar-yelp` Worker referenced in this dated audit was retired and deleted. Historical Yelp-derived D1 fields remain but are no longer refreshed.
+
 **Date:** July 14, 2026
 **Sources:** Live site crawl, Cloudflare account (Workers/D1/KV/R2), local project docs (`Outputs/parent-coach-desk`), all 11 PCD scheduled tasks, imagegen skill. Verified directly against D1 where findings conflicted.
 

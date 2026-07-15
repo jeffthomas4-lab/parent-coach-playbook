@@ -225,7 +225,7 @@ Jeff asked for this explicitly, and it is the most important correction the manu
 
 One more task touches PCD files without owning PCD work: `cowork-folder-weekly-scan` (Sun 10 PM) hashes the whole Cowork folder, including the PCD outputs, and stages changed files as Notion Raw Sources for the Second Brain. It is a knowledge-ingest task, not a PCD process, and it is listed here only so its file access is not mistaken for a PCD agent.
 
-**Two Cloudflare Worker crons, not Cowork scheduled tasks (added 2026-07-13, ActivityRadar merge WP-9).** `activityradar-enrichment` (hourly) and `activityradar-yelp` (daily 3:00 AM) run as Cloudflare Workers against the shared `activity-radar` D1, not as Cowork scheduled tasks, so they don't appear in the table above. They are part of the same standing operating picture: `activityradar-enrichment` is the low-level camp-scan/scrape worker that S7's daily discovery agent feeds queue rows to, and `activityradar-yelp` enriches camp records with Yelp data. Both worker names are historical identifiers kept unchanged on purpose (see ACTIVITYRADAR-MERGE-PLAN.md); they are PCD's camp data layer, not a separate product's infrastructure.
+**Cloudflare Worker cron, not a Cowork scheduled task (updated 2026-07-15).** `activityradar-enrichment` runs hourly against the shared `activity-radar` D1 and does not appear in the table above. It is the low-level camp-scan/scrape worker that S7's daily discovery agent feeds queue rows to. The former daily `activityradar-yelp` Worker was retired and deleted on 2026-07-15; historical Yelp-derived fields already in D1 remain data provenance, but no Yelp job, key, or schedule remains.
 
 ## 3.3 The weekly cadence
 

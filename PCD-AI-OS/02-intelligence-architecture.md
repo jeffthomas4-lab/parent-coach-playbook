@@ -13,9 +13,9 @@ A one-founder site does not beat a funded competitor on output. Bigger sites pub
 
 So the bet is not more output. The bet is a proprietary picture of youth-sports supply and demand that nobody else is assembling, and that gets sharper every week whether Jeff is at his desk or on a sideline. Content and links are consumed the day they ship; data compounds.
 
-PCD already sits on three inputs no competitor holds together in one place. The first is a 198,287-org camp and activity database (per the 2026-07-14 audit: 3,287 with websites, 2,411 programs, growing nightly through the autonomous discovery agent). The second is parent search behavior, which will arrive as Google Search Console query data and on-site camp-search logs the moment distribution works. The third is camp market signals: enrichment rates, price points, session dates, capacity, and Yelp presence flowing through the enrichment workers.
+PCD already sits on three inputs no competitor holds together in one place. The first is a 198,287-org camp and activity database (per the 2026-07-14 audit: 3,287 with websites, 2,411 programs, growing nightly through the autonomous discovery agent). The second is parent search behavior, which will arrive as Google Search Console query data and on-site camp-search logs the moment distribution works. The third is camp market signals: enrichment rates, price points, session dates, capacity, and historical provider metadata already stored in the database.
 
-Held apart, each of those is a commodity. A directory is a directory, GSC is free, and Yelp data is scrapeable. Held together and scored over time, they become a map of where parents are looking, what supply exists to meet that demand, and where the gap between the two is widest. That gap is where PCD publishes, where it ranks, and where it earns.
+Held apart, each of those is a commodity. A directory is a directory, GSC is free, and public business data is widely available. Held together and scored over time, they become a map of where parents are looking, what supply exists to meet that demand, and where the gap between the two is widest. That gap is where PCD publishes, where it ranks, and where it earns.
 
 The moat is not the database. It is the accumulating record of demand-versus-supply-versus-price across PNW youth sports, keyed to geography and season, that only PCD has been watching. A competitor can copy an article in an afternoon. They cannot copy two years of scored signals about which lacrosse market in the Puget Sound is underserved every March. That is the strategic asset this file designs, and it is why Jeff calls the Intelligence Layer the moat.
 
@@ -107,7 +107,7 @@ Three tables carry the layer. Field lists are indicative, not a migration.
 
 Five stages, each a distinct agent step, each logging one `agent_runs` row.
 
-1. **Capture.** A collector pulls from a source (GSC API, site-search logs, org DB query, Yelp table, affiliate report, SERP fetch) and writes the raw bytes to R2 plus one `signals` row per observation at `status=new`. Capture never interprets.
+1. **Capture.** A collector pulls from a source (GSC API, site-search logs, org DB query, affiliate report, SERP fetch) and writes the raw bytes to R2 plus one `signals` row per observation at `status=new`. Capture never interprets.
 2. **Normalize.** Units, geo slugs, sport tags, and season tags are standardized so a lacrosse query from GSC and a lacrosse listing from the org DB key on the same `sport` value. Duplicates collapse.
 3. **Score.** Each signal gets a baseline and a signed deviation (section 4.4), and a confidence. Signals under 50 confidence log and stop. This is where noise dies.
 4. **Correlate.** Scored signals join across functions. A demand spike (GSC) plus a supply gap (org DB) plus a price point (enrichment) in the same metro and sport is one correlated finding, not three loose numbers. Correlation is where the moat lives.
@@ -122,7 +122,6 @@ flowchart TD
         SS[On-site camp search logs]
         PIN[Pinterest trends]
         ODB[(activity-radar D1: 198k orgs)]
-        YLP[Yelp enrichment]
         AFF[Affiliate network reports]
         SERP[SERP + competitor pages]
         GA4[GA4 aggregate]
@@ -182,7 +181,7 @@ A note on honesty before the list. Most of these are years away. Three get built
 - **Business value:** Tells Editorial and Marketing what to write and fix next, ranked by real parent demand, not guesses. This is a first-build function because demand routing is the front half of the distribution problem. Grows from `weekly-gsc-review` (running).
 
 ### 3.2 Supply Intelligence
-- **Inputs:** The `activity-radar` org database (198,287 orgs, 3,287 with websites, 2,411 programs); nightly discovery-agent enrichment output; Yelp enrichment worker; session dates, capacity, and format where enriched.
+- **Inputs:** The `activity-radar` org database (198,287 orgs, 3,287 with websites, 2,411 programs); nightly discovery-agent enrichment output; session dates, capacity, and format where enriched. Historical Yelp-derived fields may remain in D1 but are no longer refreshed after the Worker retirement on 2026-07-15.
 - **Outputs:** Enrichment-rate trend; supply density by sport and metro; new-org detection; stale-listing detection; supply that has no matching content or affiliate coverage.
 - **Storage:** `signals` (source `org_db`, `yelp`), `metrics_daily` keyed by metro and sport.
 - **Reports:** Weekly supply-coverage report (enriched vs stub, by metro). Monthly new-supply digest.
@@ -349,7 +348,7 @@ Jeff asked these questions directly. Answers are binding for the layer.
 
 ### 4.1 What data should be captured
 
-Capture only what feeds a decision, and only in the form the decision needs. Concretely: GSC query and page metrics; on-site camp-search terms (the query string and result count, not who searched); Pinterest and public trend data; the org database's own fields and enrichment rates; Yelp business data already in the pipeline; affiliate network revenue and click aggregates; SERP positions and competitor page content; GA4 aggregate metrics; the `agent_runs` health log; and Jeff's own calendar and queue state for Founder Intelligence.
+Capture only what feeds a decision, and only in the form the decision needs. Concretely: GSC query and page metrics; on-site camp-search terms (the query string and result count, not who searched); Pinterest and public trend data; the org database's own fields and enrichment rates; affiliate network revenue and click aggregates; SERP positions and competitor page content; GA4 aggregate metrics; the `agent_runs` health log; and Jeff's own calendar and queue state for Founder Intelligence. Historical Yelp-derived fields may be analyzed as existing provenance but are not a live capture source.
 
 Every captured field must trace to a function that acts on it. If no function consumes a field, it is not captured. This is the existence test applied to data.
 
@@ -511,7 +510,7 @@ The Intelligence Layer answered as a department against foundations section 7's 
 
 **Mission.** Give PCD a proprietary, compounding picture of youth-sports demand, supply, and price, and turn it into one ranked list of evidence-backed actions that move traffic, links, subscribers, or revenue.
 
-**Work performed.** Capture signals from GSC, site search, the org database, Yelp, affiliate networks, SERPs, GA4, and the run log; normalize, score, correlate, and surface them; produce the weekly intelligence brief; maintain the ranked Approval Queue; keep the hit-rate ledger.
+**Work performed.** Capture signals from GSC, site search, the org database, affiliate networks, SERPs, GA4, and the run log; normalize, score, correlate, and surface them; produce the weekly intelligence brief; maintain the ranked Approval Queue; keep the hit-rate ledger.
 
 **SOPs required.** A capture SOP per source; a scoring SOP (baseline + deviation + seasonal decomposition); an opportunity-card SOP (score, evidence, action class, consumer); a weekly-brief SOP; a hit-rate scoring SOP (grade acted-on cards against their prediction); a governance-drop SOP (Red Wall / family / PII signals dropped and flagged, never surfaced).
 

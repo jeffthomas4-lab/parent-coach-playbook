@@ -135,3 +135,20 @@ The open questions for Jeff:
 **Alternatives considered.** None proposed. This record is a question for Jeff, not a recommendation from either agent.
 
 **Approval.** Pending Jeff.
+
+---
+
+## D-005: Retire Yelp enrichment
+
+**Status:** Accepted
+**Date:** 2026-07-15
+
+**Context.** Live verification found the daily `activityradar-yelp` Worker deployed without its required `YELP_API_KEY`. Its deterministic response was to receive an authorization failure and abort. The Worker was optional metadata enrichment, not a dependency of site serving, camp discovery, search, publishing, or the primary hourly enrichment queue.
+
+**Decision.** Retire the Yelp integration completely. Delete the Cloudflare Worker and schedule, remove its implementation and Wrangler config, and remove Yelp from current operational architecture. Preserve historical Yelp-derived fields already stored in D1 as provenance; do not delete or rewrite production data merely because its source is retired.
+
+**Consequences.** No future Yelp lookups or refreshes occur, no Yelp credential is required, and previously stored Yelp metadata can become stale. Any reintroduction is a new integration requiring a plan, provider credential, data contract, paid-API controls, and explicit deployment approval.
+
+**Alternatives considered.** Add a new Yelp key and resume the schedule. Rejected by Jeff in favor of retirement. Disable only the trigger but keep dead source/config. Rejected because it leaves misleading operational surface and an accidental redeploy path.
+
+**Approval.** Jeff approved retirement on 2026-07-15.

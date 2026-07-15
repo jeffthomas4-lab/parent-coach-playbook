@@ -1,5 +1,7 @@
 # ActivityRadar archive
 
+> **Operational update, 2026-07-15:** `activityradar-yelp` was retired and deleted after this archive was written. References below describe historical merge state, not a live Worker.
+
 ActivityRadar was retired as a separate product on 2026-07-10. It never shipped a
 public search UI. Everything from that repo has been folded into parent-coach-desk,
 which was always the live front door and already bound the same shared D1

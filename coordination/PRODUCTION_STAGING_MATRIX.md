@@ -50,7 +50,7 @@ Staging currently shares the production `activity-radar` D1 and `activityradar-p
 | Worker/config | Confirmed live state | Gap or drift |
 |---|---|---|
 | `activityradar-enrichment` | Scheduled and fetch handlers; `DB` present; secret list empty | `RUN_KEY` is optional. Scheduled execution can operate; protected manual trigger is unavailable without it. |
-| `activityradar-yelp` | Scheduled version has `DB`; secret list empty | **Live defect:** code requires `YELP_API_KEY`. The first request uses the missing credential, treats HTTP 401 as `bad_api_key`, logs an error, and aborts. |
+| `activityradar-yelp` | **Retired 2026-07-15; Worker deleted** | Source/config removed. Historical Yelp-derived D1 fields remain but are no longer refreshed. |
 | `parent-coach-playbook-cron` | Secret names: `CRON_KEY`, `DEPLOY_HOOK_URL`, `MANUAL_TRIGGER_KEY`, `SWEEP_URL` | Active deployment predates the repo change making `SWEEP_URL` a plain variable; live and repository config have drifted. |
 | `parent-coach-playbook-link-checker` | Worker does not exist | Config contains placeholder D1 IDs and must not be deployed. |
 | `parentcoachplaybook-redirect` | Worker does not exist | Deployment intent is not verified. |
@@ -59,12 +59,10 @@ Staging currently shares the production `activity-radar` D1 and `activityradar-p
 
 Each item is a separate approval gate because it changes Cloudflare state.
 
-1. Decide whether Yelp enrichment remains part of the product. If yes, add/rotate `YELP_API_KEY` and perform controlled verification before relying on the schedule. If no, disable or retire the Worker.
-2. Configure staging Access authentication (`ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`) and verify authorized, unauthorized, and missing-claim behavior.
-3. Decide which automation surfaces belong in staging acceptance: sweep, agent-run logging, Slack, publishing, email, and Kit.
-4. Provision only approved staging configuration, redeploy staging, and run acceptance tests. Treat shared D1/R2 as production data.
-5. Resolve cron drift by choosing the intended `SWEEP_URL` storage type, deploying the reviewed config, and verifying the scheduled path.
-6. Create the production cutover checklist from the approved staging set; never copy staging values blindly.
+1. Configure staging Access authentication (`ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`) and verify authorized, unauthorized, and missing-claim behavior.
+2. Decide which automation surfaces belong in staging acceptance: sweep, agent-run logging, Slack, publishing, email, and Kit.
+3. Provision only approved staging configuration, redeploy staging, and run acceptance tests. Treat shared D1/R2 as production data.
+4. Create the production cutover checklist from the approved staging set; never copy staging values blindly.
 
 ## Still not verified
 

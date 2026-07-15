@@ -10,6 +10,8 @@ The read-only comparison is recorded in `coordination/PRODUCTION_STAGING_MATRIX.
 
 **Confirmed live, 2026-07-15, Plan 006:** cron Worker version `9af6e107-1a51-402f-9748-884326ca1445` is active with fail-loud code, scheduled and fetch handlers, plain `SWEEP_URL`, and retained `CRON_KEY`, `DEPLOY_HOOK_URL`, and `MANUAL_TRIGGER_KEY` secret names. **Verified in code and by build:** staging config now includes `FORGE_DB` -> `forge-command`; the staging deployment remains pending the unavailable Access team domain and application AUD. Production Pages and staging were not deployed.
 
+**Confirmed live, 2026-07-15:** Jeff retired Yelp enrichment. The `activityradar-yelp` Worker and its daily schedule were deleted from Cloudflare, and `workers-activity-radar/yelp-worker.ts` plus `yelp-wrangler.toml` were removed. No D1 data was deleted; existing Yelp-derived fields are historical and no longer refreshed.
+
 ## Cloudflare and recovery verification update
 
 **Confirmed live, 2026-07-15:** `parentcoachdesk.com` and `www.parentcoachdesk.com` are attached to the `parent-coach-playbook` Pages project. The `parent-coach-desk-staging` Worker is deployed separately and has `SESSION`, `DB`, `PHOTOS`, `ASSETS`, `ADMIN_EMAILS`, and `SITE_URL` bindings. Its `DB` is `activity-radar`; `PHOTOS` is `activityradar-photos`. Secret values were not accessed.
