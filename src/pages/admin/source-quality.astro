@@ -1,14 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { listDomainQuality, type DomainQuality } from '../../lib/camps-db';
-import { getAdminEmailFromRequest } from '../../lib/admin-auth';
+import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — reads from D1 each request. Cloudflare Access protects /admin/*.
 export const prerender = false;
 
-const env = cfEnv as { DB: D1Database } | undefined;
-const adminEmail = getAdminEmailFromRequest(Astro.request);
+const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+
+const auth = requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+const adminEmail = auth.email;
 
 let rows: DomainQuality[] = [];
 let dbAvailable = !!env?.DB;

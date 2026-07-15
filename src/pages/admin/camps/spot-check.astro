@@ -1,35 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listApprovedUnverifiedCamps, setVerified, rejectCamp, type Camp } from '../../../lib/camps-db';
-import { getAdminEmailFromRequest } from '../../../lib/admin-auth';
+import { requireAdmin, requireSameOrigin } from '../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR. Pulls live from D1 each request. Behind Cloudflare Access.
 export const prerender = false;
 
-const env = cfEnv as { DB: D1Database } | undefined;
-const adminEmail = getAdminEmailFromRequest(Astro.request);
+const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+
+const auth = requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+const adminEmail = auth.email;
 
 // Handle verify/reject POSTs in-page. Form posts to this same URL with a
-// hidden `action` field. The page itself is gated by Cloudflare Access; if a
-// POST reaches this handler, Access already let it through. We don't require
-// the Cf-Access-Authenticated-User-Email header here because Cloudflare's
-// Access cookie scope can be inconsistent on POST in some configurations and
-// the same-origin check below is the actual defense against forged requests.
+// hidden `action` field. requireAdmin() above already gates both GET and
+// POST on the same ADMIN_EMAILS allowlist the API routes use; the
+// same-origin check below is additional CSRF defense, not the primary gate.
 let actionBanner: { ok: boolean; text: string } | null = null;
 if (Astro.request.method === 'POST') {
-  // Same-origin check: browsers set Origin based on the page that initiated
-  // the request. A POST originating outside parentcoachdesk.com cannot
-  // forge a matching Origin header. Combined with Access gating GET, only
-  // Jeff's logged-in browser can produce a valid same-origin POST.
-  const origin = Astro.request.headers.get('origin') ?? '';
-  const referer = Astro.request.headers.get('referer') ?? '';
-  const reqUrl = new URL(Astro.request.url);
-  const sameOrigin =
-    (origin && new URL(origin).host === reqUrl.host) ||
-    (referer && new URL(referer).host === reqUrl.host);
-
-  if (!sameOrigin) {
+  const originErr = requireSameOrigin(Astro.request);
+  if (originErr) {
     actionBanner = { ok: false, text: 'Cross-origin request blocked.' };
   } else if (!env?.DB) {
     actionBanner = { ok: false, text: 'Database not bound; action ignored.' };

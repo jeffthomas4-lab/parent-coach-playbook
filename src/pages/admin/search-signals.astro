@@ -8,9 +8,13 @@
 export const prerender = false;
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
-const env = cfEnv as { DB: D1Database } | undefined;
+const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+
+const auth = requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
 
 type RawEvent = {
   id: number;

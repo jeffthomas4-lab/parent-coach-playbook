@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { requireAdmin } from '../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls from D1 at request time so the dashboard is always current.
 export const prerender = false;
 
-const env = cfEnv as { DB?: D1Database } | undefined;
+const env = cfEnv as { DB?: D1Database; ADMIN_EMAILS?: string } | undefined;
+
+const auth = requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
 
 let rows: any[] = [];
 let totals = { total: 0, broken: 0, redirected: 0, neverChecked: 0, dueSoon: 0 };
