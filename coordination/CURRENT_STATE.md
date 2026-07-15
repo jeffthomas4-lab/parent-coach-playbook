@@ -4,6 +4,16 @@
 **Verified by:** Claude Code (initial evidence-based snapshot)
 **Independent verification:** Not yet performed. Codex owns independent verification and future architectural reconciliation.
 
+## Plan 001 baseline recovery update
+
+**Verified in code, 2026-07-15:** the previously dirty working set was preserved in bounded local commits `1a9b122` through `5c4c56f` on `migration/pages-to-workers-staging`. Only the explicitly excluded scratch path `tests/probe.txt` remains untracked. No push or deployment was performed.
+
+**Verified by tests, after checkpointing:** 27 test files and 233 tests pass; `tsconfig.verify.json` and `worker-cron/tsconfig.json` type checks pass; `npm audit --audit-level=high` reports zero vulnerabilities. `astro check` remains failing with four content-body errors, 352 hints, and the duplicate dynamic camps-route warning.
+
+**Verified in code:** D1 mutation entrypoints are now inventoried in D-001. **Not verified:** deployed/enabled state, current production bindings, successful backup exports, or an exercised restore.
+
+Sections below preserve the initial snapshot evidence and may describe the pre-checkpoint dirty state. Where they conflict with this update, this newer dated update governs local repository state only.
+
 Every claim below carries an evidence label: Verified in code, Verified by tests, Documented as deployed, Confirmed live, or Not verified. Documentation is not proof of deployment.
 
 ## Freshness

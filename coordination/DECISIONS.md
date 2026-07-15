@@ -25,19 +25,22 @@ Nothing here is Approved until Jeff says so explicitly. Neither agent may promot
 
 **Context.**
 
-**The autonomous D1 writer inventory is Not verified.** A previous draft of this record named `worker-cron`, the agent definitions under `automation/agents/`, and `src/lib/publish.ts` as autonomous D1 writers. Those write paths were not traced, and the claim is withdrawn. Naming a component as a writer without proving the write path is the same error this protocol exists to prevent, made inside the protocol's own governance.
+The executable writer inventory below is **Verified in code** as of 2026-07-15. Deployed or enabled state remains **Not verified** unless separately labeled; a Wrangler schedule proves configured intent, not a live deployment.
 
-What is **Verified in code**:
+| Entrypoint and trigger | Bound database | Mutations | Gate and batch behavior | D-001 class |
+|---|---|---|---|---|
+| `POST /api/search-event` | `DB` | Append to `search_events` | Public HTTP; validates and bounds fields; one row per request. No human gate. | Append-only, discardable telemetry. |
+| `POST /api/agent-runs` | `FORGE_DB` | Insert/upsert `agent_runs`; update `agent_registry.last_run_at`; CANARY may set registry status to `paused` | Requires `AGENT_RUNS_TOKEN`; one reported run per request. Pausing is automated except for exempt agents. | Run rows are append/reconstructible; registry updates are reconstructible control state. |
+| `worker-link-checker/src/index.ts` scheduled daily at `0 9 * * *`, or manual HTTP | Worker `DB` | Insert/upsert and update `link_health` | Cron has no human gate; manual HTTP requires `ADMIN_API_KEY`; configured batch defaults to 50 and a 180-day rotation. | Reconstructible external-check results. |
+| `workers-activity-radar/enrichment-worker.ts` scheduled hourly, or manual HTTP | `activity-radar` as `DB` | Insert/upsert `programs`; update `organizations`; update queue status/attempts in `camp_scan_queue` | Cron has no human gate; manual HTTP requires `RUN_KEY`; up to 20 pending queue rows per run; retries up to three. | Bulk, externally derived, difficult to reconstruct exactly. |
+| `workers-activity-radar/yelp-worker.ts` scheduled daily at `0 3 * * *` | `activity-radar` as `DB` | Update organization Yelp/enrichment/status fields; insert `trust_signals` | No human gate in the scheduled handler; capped by `DAILY_LIMIT`; skips rows with an existing `yelp_id`. | Bulk, paid/external and difficult to reconstruct exactly. |
+| `worker-cron` scheduled daily at `0 13 * * *` calls `POST /api/cron/camps-sweep` | Site `DB` through the HTTP endpoint | Updates program URL-health fields; bulk archives past-date approved camps by changing status to rejected | Endpoint requires matching `CRON_KEY`; up to 25 URL checks, then an uncapped date-based archive query. No human approval per run. `worker-cron` invokes but does not bind D1 directly. | URL health is reconstructible; stale archive is bulk/destructive status mutation. |
+| Public/admin camp APIs through `src/lib/camps-db.ts` | Site `DB` | Inserts/updates submitters, organizations, programs, claims, suggestions, reviews, geocodes, domain quality and moderation fields | Public submission/review/suggestion routes validate inputs; admin mutations call `requireAdmin`; cron path is separately keyed. Human gate exists for admin moderation, not public intake or cron archive. | Mixed: append-only intake, curated human updates, and destructive/bulk cron status changes. |
+| `buildout/hit-rate-test/import_results.py` | None directly | Generates SQL that updates organization website fields | Manual command creates SQL; no execution path is present in the script. Applying generated SQL is a separate, **Not verified** action. | Bulk if applied; generation alone is not a D1 mutation. |
 
-- A cron worker exists (`worker-cron`, `parent-coach-playbook-cron`, schedule `0 13 * * *`).
-- Agent definitions exist under `automation/agents/` and `agents/`.
-- Modules named `src/lib/publish.ts`, `src/lib/agent-runs.ts`, and `src/lib/camps-db.ts` exist.
-- A backup script exists at `scripts/backup-activity-radar.ps1`.
-- Structured event tables exist: `migrations/0010_search_events.sql`, and an agent runs surface at `src/pages/api/agent-runs.ts`.
+`src/lib/publish.ts`, agent specification files, and the deploy-hook branch of `worker-cron` do not directly write D1 (**Verified in code**). They must not be labeled D1 writers merely because they participate in automation.
 
-What is **Not verified**: which of these actually mutate D1, on what trigger, with what human in the loop, and whether the backup script has ever run or ever been restored from.
-
-The camp discovery and enrichment path is the likely subject of this record, given `migrations-activity-radar/0009_enrichment_queue.sql` and `0010_enrichment_org_fields.sql` (**Verified in code**). Whether it writes autonomously is **Not verified**. Tracing the real writer inventory is a prerequisite of approving this record, and belongs in the first stabilization plan.
+The backup script at `scripts/backup-activity-radar.ps1` now parses successfully under Windows PowerShell after checkpoint `e547357` (**Verified in code**). **Not verified:** that it has completed a real export, that three proving runs exist, or that any restore has been exercised. Therefore the autonomous enrichment, Yelp, and bulk stale-archive paths do not yet have the demonstrated rollback evidence this proposed decision would require.
 
 The Pre-Launch Security Gate governs who may trigger an action. It does not govern whether a mutation can be undone. That is the gap this record fills.
 
