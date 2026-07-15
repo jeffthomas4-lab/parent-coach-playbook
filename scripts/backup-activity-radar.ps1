@@ -13,10 +13,17 @@
 #
 # Decision 6 (manual-three-times gate): a recurring task does not get a schedule
 # until it has been run by hand three times. This script stays manual-only until
-# that gate clears:
-#   Run 1: tonight, 2026-07-13.
-#   Run 2 and Run 3: two more manual runs this week.
-# Once all three are logged clean, propose a Cowork scheduled task. Not before.
+# that gate clears.
+#
+# PROVING-RUN COUNT AS OF 2026-07-15: ZERO. The 2026-07-13 session wrote this
+# script but could not run it (the Cowork sandbox holds no Cloudflare
+# credentials), so the "Run 1: tonight" note in the original header was a plan,
+# not a fact. agent_registry.pcd-backup.last_run_at is still null. The clock has
+# not started. Three clean runs are still owed before any schedule.
+#
+# The count is no longer tracked by memory. Every successful run appends one row
+# to scripts\BACKUP-PROVING-LOG.md (git-tracked). Read that file for the real
+# count; if it has fewer than three rows, this script does not get scheduled.
 # Do not schedule this script yet.
 #
 # Restore procedure: RESTORE-activity-radar.md, same folder as this script.
@@ -93,6 +100,37 @@ try {
 
   $remaining = (Get-ChildItem $dir -Filter "activity-radar-*.sql" -File).Count
   Write-Host "Done. $remaining backup(s) on disk in $dir (keeping last $keep)."
+
+  # Proving-run ledger (decision 6). Append one row per clean run. This file is
+  # git-tracked, unlike backups\ and its transcripts, so the three-run gate is
+  # auditable from the repo instead of from memory. Only a run that got all the
+  # way here -- real export, size sanity check passed -- counts.
+  $ledger = Join-Path $PSScriptRoot "BACKUP-PROVING-LOG.md"
+  if (-not (Test-Path $ledger)) {
+    @(
+      "# activity-radar backup: proving-run log",
+      "",
+      "Appended to automatically by ``backup-activity-radar.ps1`` on each clean run.",
+      "Decision 6: three clean manual runs before this script may be scheduled.",
+      "Do not hand-edit. Do not schedule until this table has three rows.",
+      "",
+      "| # | Run (local) | Size MB | Attempts | Backups on disk |",
+      "|---|---|---|---|---|"
+    ) | Set-Content -Path $ledger -Encoding UTF8
+  }
+  $priorRuns = (Select-String -Path $ledger -Pattern '^\| \d+ \|' -AllMatches).Count
+  $runNo = $priorRuns + 1
+  $mb = [math]::Round($bytes / 1MB, 1)
+  $when = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  Add-Content -Path $ledger -Value "| $runNo | $when | $mb | $attempt | $remaining |" -Encoding UTF8
+
+  Write-Host ""
+  Write-Host "Proving run $runNo of 3 logged to $ledger"
+  if ($runNo -lt 3) {
+    Write-Host "GATE: $((3 - $runNo)) more clean manual run(s) before this script may be scheduled. Do not schedule yet." -ForegroundColor Yellow
+  } else {
+    Write-Host "GATE CLEARED: three clean runs logged. Scheduling is now allowed -- see BACKUP.md for the Task Scheduler command." -ForegroundColor Green
+  }
 }
 finally {
   Stop-Transcript | Out-Null

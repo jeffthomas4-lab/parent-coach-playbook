@@ -7,11 +7,13 @@ Three layers. Each protects against a different failure.
 Both site source trees push to private GitHub repos. After every change session, commit and push.
 
 ```powershell
-cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-playbook"
+cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk"
 git add -A
 git commit -m "describe what changed"
 git push
 ```
+
+(The folder is `parent-coach-desk`. The Cloudflare project and D1 database keep the older `parent-coach-playbook` name, so `--project-name parent-coach-playbook` in the deploy commands is correct and not a typo.)
 
 If your hard drive dies tomorrow, every line of code is recoverable from `git clone`.
 
@@ -21,7 +23,11 @@ Cloudflare D1 has no built-in backups on the free tier. If a table gets dropped 
 
 The script `scripts\backup-activity-radar.ps1` dumps the whole shared `activity-radar` D1 (the one camp database) to `backups\d1\activity-radar-YYYY-MM-DD.sql`, keeps the 8 most recent runs, and deletes older ones. **Local only. It does not commit or push.** (The dump runs 200MB+ and growing with the org table at ~198,000 rows, well past GitHub's 100MB file limit. Committing it broke `git push` for the whole repo once already. `backups/` is `.gitignore`'d; recovering from a live incident where this file exceeds "local disk only" isn't currently solved — see Open items below.)
 
-This is the Open Item 10 fix (PCD-OPERATING-MANUAL.md): `org-discovery-daily-worklist` writes to this database every night with no prior backup path. Per decision 6, the script stays manual-run only until it has run by hand three times, then a Cowork scheduled task gets proposed. See the script's own header for the run count and the MedConfRadar D-026 precedent it follows.
+This is the Open Item 10 fix (PCD-OPERATING-MANUAL.md): `org-discovery-daily-worklist` writes to this database every night with no prior backup path. Per decision 6, the script stays manual-run only until it has run by hand three times, then a Cowork scheduled task gets proposed. It follows the MedConfRadar D-026 precedent.
+
+**Proving-run count as of 2026-07-15: zero.** The script was written on 2026-07-13 but has never run. That session had no Cloudflare credentials in the sandbox, so its "Run 1: tonight" header line was a plan that did not happen, and `agent_registry.pcd-backup.last_run_at` is still null. Every night since, `org-discovery-daily-worklist` has written to a database with no backup.
+
+The count is now tracked in `scripts\BACKUP-PROVING-LOG.md`, which the script appends to on each clean run. That file is git-tracked; `backups\` and its transcripts are not. Read the ledger for the true count rather than trusting a header comment. Three rows in that table is the gate. Nothing schedules before then.
 
 The prior script, `scripts\backup-d1-activity-radar.ps1`, had no retention rule and no restore doc. It is retired in favor of the one above and kept only for history. The `backup-d1.ps1` before that dumped the retired flat `camps` table and is also retired. See `activityradar-archive/README.md`.
 
@@ -32,7 +38,28 @@ cd "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk"
 .\scripts\backup-activity-radar.ps1
 ```
 
-Do not schedule this yet. Once three manual runs are logged clean, scheduling instructions go here (Windows Task Scheduler, daily 2:00 AM, same pattern as the retired script used).
+### Starting the clock (Jeff, by hand)
+
+Run that same command on three separate days. The script prints which run it just logged and how many remain. Nothing else is needed; it appends to the ledger itself.
+
+Each run takes a few minutes and writes ~200 MB to `backups\d1\`. Watch for: an export under 1 MB (the script throws rather than overwrite a good backup), and the retry loop firing more than once (wrangler's "Not currently exporting anything" race — harmless, but note it if it happens every time).
+
+The runs must be on different days to be worth anything. Three runs in one afternoon prove the script works; they do not prove it survives a fresh shell, an expired wrangler session, or a machine that has been rebooted. That is the failure the gate exists to catch.
+
+### After the gate clears (not before)
+
+Once `scripts\BACKUP-PROVING-LOG.md` has three rows, schedule it. Windows Task Scheduler, daily 2:00 AM, same pattern as the retired script:
+
+```powershell
+$action  = New-ScheduledTaskAction -Execute "powershell.exe" `
+  -Argument '-NoProfile -ExecutionPolicy Bypass -File "C:\Users\jeffthomas\Desktop\Claude Cowork\Outputs\parent-coach-desk\scripts\backup-activity-radar.ps1"'
+$trigger = New-ScheduledTaskTrigger -Daily -At 2:00AM
+Register-ScheduledTask -TaskName "pcd-backup-activity-radar" -Action $action -Trigger $trigger -Description "Nightly activity-radar D1 export. Open Item 10."
+```
+
+Then flip `agent_registry.pcd-backup.status` from `paused` to `active` in the `forge-command` D1.
+
+A note on what this schedule does and does not buy you. Task Scheduler only fires when this machine is on, so a laptop that is closed at 2 AM silently skips the backup, and the failure looks exactly like a success from the repo's point of view. D1 Time Travel (30-day point-in-time restore, no export required, no dependency on this machine) is the stronger protection for the bad-write case and is already on by default. This script's real job is the offline dump Time Travel cannot give you, not primary protection.
 
 ### Restoring from a snapshot
 
