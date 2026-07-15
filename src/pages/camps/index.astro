@@ -128,12 +128,40 @@ const campsLite = camps.map(c => ({
 const campsJson = JSON.stringify(campsLite);
 // CAMP_SPORTS already includes the camp-only options (multi-sport, outdoor, stem, general, etc).
 const sportsListJson = JSON.stringify(CAMP_SPORTS);
+
+// JSON-LD: this directory hub emitted nothing before this fix (2026-07
+// audit: "Schema.org emission is unverified across the site" -- verified
+// live 2026-07-15, this page had zero <script type="application/ld+json">
+// tags). BreadcrumbList is free. ItemList covers the featured camps when
+// any exist (a curated, stable subset -- the right fit for ItemList, which
+// wants a meaningful ranked/ordered list, not a raw dump of 1,300+ rows
+// that reshuffles every 10 minutes as D1 changes).
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://parentcoachdesk.com' },
+    { '@type': 'ListItem', position: 2, name: 'Camps & Leagues' },
+  ],
+};
+const itemListSchema = featuredCamps.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: featuredCamps.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    url: `https://parentcoachdesk.com/camps/${c.slug}/`,
+  })),
+} : null;
 ---
 <BaseLayout
   title="Camps & Leagues"
   description="Youth camps and league signups we know about. Starting in the Pacific Northwest where we can verify programs personally. National listings welcome."
   ogImage="/illustrations/og-camps.jpg"
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {itemListSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />}
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">Camps & Leagues</p>

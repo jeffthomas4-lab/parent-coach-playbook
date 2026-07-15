@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherCampsAtAddress, slugifyCity, type Camp, type CampReview } from '../../lib/camps-db';
-import { SPORTS, BUYING_GUIDES } from '../../data/site';
+import { SPORTS, BUYING_GUIDES, CAMP_SPORTS, SITE } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
@@ -145,12 +145,28 @@ if (camp) {
 // Parse YYYY-MM-DD as local date (not UTC) so dates display correctly in
 // Pacific time. new Date('2026-08-03') would be Aug 2 5pm Pacific.
 const MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const fmtDate = (s: string) => {
+// Null-safe. 296 approved programs carry a null session_start_date or
+// session_end_date (verified in activity-radar D1, 2026-07-15), and the
+// expired-camp redirect above only fires on a non-null end_date, so those rows
+// fall through to render here. Calling .split() on a null threw a TypeError in
+// SSR frontmatter and returned a live HTTP 500 on every one of them.
+const fmtDate = (s: string | null | undefined): string | null => {
+  if (!s) return null;
   const [y, m, d] = s.split('-').map(Number);
+  if (!y || !m || !d || !MONTHS_LONG[m - 1]) return null;
   return `${MONTHS_LONG[m - 1]} ${d}, ${y}`;
 };
 
-const fmtRange = (start: string, end: string) => `${fmtDate(start)} – ${fmtDate(end)}`;
+// Degrade in stages rather than crash: both dates, one date, or an honest
+// placeholder. Never invent a date we do not have.
+const fmtRange = (start: string | null | undefined, end: string | null | undefined): string => {
+  const a = fmtDate(start);
+  const b = fmtDate(end);
+  if (a && b) return `${a} – ${b}`;
+  if (a) return `Starts ${a}`;
+  if (b) return `Through ${b}`;
+  return 'Dates to be announced';
+};
 
 // Sport label: prefer the SPORTS array's title-cased label; fall back to capitalizing.
 const sportLabel = (slug: string): string => {
@@ -215,12 +231,95 @@ if (camp) {
     ? `https://www.google.com/maps/search/?api=1&query=${camp.latitude},${camp.longitude}`
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${camp.address}, ${camp.city}, ${camp.state} ${camp.zip}`)}`;
 }
+
+// Canonical: explicit and slash-consistent. BaseLayout's own fallback now
+// normalizes to a trailing slash too (2026-07-15 fix), but this route is
+// SSR (prerender = false) and was the exact route where the live duplicate-
+// canonical bug was confirmed (both /camps/[slug] and /camps/[slug]/
+// returned 200 with different self-referencing canonicals). Building the
+// canonical from camp.slug rather than the request path removes any doubt.
+const campCanonical = camp ? `${SITE.url}/camps/${camp.slug}/` : undefined;
+
+// OG image: no per-listing photo exists for most of the ~1,700 camps (and
+// generating one per listing isn't worth it -- these are thin, ephemeral
+// pages the Organic Search Audit already flags for consolidation, not
+// individual investment). Use the per-sport template card generated this
+// session (2026-07-15 proof batch, public/og-camps/, zero API cost -- same
+// brand system as scripts/build-og-images.py) when the camp's sport is one
+// of the 37 known SPORTS/CAMP_SPORTS slugs. Falls back to the existing
+// generic camps-directory image for the ~41% of rows still on
+// migration-era generic categories (camp_sports/camp_general/other -- see
+// the sport-guide fallback note above).
+const hasOgCampImage = camp ? CAMP_SPORTS.some((s) => s.slug === camp!.sport) : false;
+const campOgImage = camp
+  ? (hasOgCampImage ? `/og-camps/${camp.sport}.jpg` : '/illustrations/og-camps.jpg')
+  : undefined;
+
+// JSON-LD: Event. Camps are literally dated, located events -- Event is the
+// correct schema type here, not Article (2026-07 audit: JSON-LD unverified
+// across the site; camps/[slug].astro emitted none at all before this fix).
+// No `offers` block: camp.price_text is free text ("$350/wk", "Free",
+// call for pricing), not a clean number, and Article Layout's own
+// convention here is not to assert structured data we're not sure of --
+// lying to Google about a price is worse than omitting it.
+const eventSchema = camp ? {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: camp.name,
+  // Omit rather than emit null. schema.org Event requires a real startDate;
+  // `startDate: null` is invalid markup and worse than no date field, same
+  // discipline as the omitted `offers` block below.
+  ...(camp.start_date ? { startDate: camp.start_date } : {}),
+  ...(camp.end_date ? { endDate: camp.end_date } : {}),
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  eventStatus: 'https://schema.org/EventScheduled',
+  description: camp.description ? camp.description.slice(0, 500) : `${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}.`,
+  location: {
+    '@type': 'Place',
+    name: camp.name,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: camp.address,
+      addressLocality: camp.city,
+      addressRegion: camp.state,
+      postalCode: camp.zip,
+      addressCountry: 'US',
+    },
+  },
+  ...(camp.hero_photo_key ? { image: [`${SITE.url}/camp-photos/${camp.hero_photo_key}`] } : {}),
+  organizer: { '@type': 'Organization', name: camp.name, ...(websiteHref ? { url: websiteHref } : {}) },
+} : null;
+
+const campStateName = camp ? (STATE_NAMES_BY_CODE[camp.state] ?? camp.state) : undefined;
+const campBreadcrumbSchema = camp ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Camps', item: `${SITE.url}/camps/` },
+    { '@type': 'ListItem', position: 3, name: campStateName, item: `${SITE.url}/camps/${camp.state.toLowerCase()}/` },
+    { '@type': 'ListItem', position: 4, name: camp.name },
+  ],
+} : null;
+
+const stateBreadcrumbSchema = (stateCities && stateCities.length > 0) ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Camps', item: `${SITE.url}/camps/` },
+    { '@type': 'ListItem', position: 3, name: stateNameForSlug },
+  ],
+} : null;
+const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/camps/${(slug || '').toLowerCase()}/` : undefined;
 ---
 {stateCities && stateCities.length > 0 ? (
   <BaseLayout
     title={`Summer camps in ${stateNameForSlug}`}
     description={`${stateTotalCamps} verified camps across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
+    canonical={stateCanonical}
   >
+    {stateBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(stateBreadcrumbSchema)} />}
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-14">
         <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
@@ -260,7 +359,11 @@ if (camp) {
 <BaseLayout
   title={camp.name}
   description={`${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
+  canonical={campCanonical}
+  ogImage={campOgImage}
 >
+  {eventSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(eventSchema)} />}
+  {campBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(campBreadcrumbSchema)} />}
 
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">

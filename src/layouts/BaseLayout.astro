@@ -28,7 +28,22 @@ const {
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${SITE.name}` : `${SITE.name}: ${SITE.tagline}`;
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE.url).toString();
+const rawCanonical = canonical ?? new URL(Astro.url.pathname, SITE.url).toString();
+// Force one canonical form site-wide: trailing slash, matching how every
+// internal link on the site is written (ArticleLayout, camp pages, nav,
+// footer). Prerendered routes already normalize Astro.url.pathname to the
+// trailing-slash form at build/route-match time, so this was a no-op there.
+// SSR routes (prerender = false: camps/*, camps/index, camps/[state]/*)
+// mirror the literal incoming request path, so the same URL crawled with
+// and without a trailing slash was self-referencing two different
+// canonicals -- confirmed live 2026-07-15 on /camps/[slug] (both forms
+// return 200 with distinct canonical tags). This is the trailing-slash
+// canonical inconsistency named in the 2026-07-12 Organic Search Audit.
+// Skip file-type routes (sitemap.xml, .jpg, etc.) -- none of them render
+// through BaseLayout today, but the guard costs nothing.
+const canonicalUrl = /\.[a-z0-9]+$/i.test(rawCanonical) || rawCanonical.endsWith('/')
+  ? rawCanonical
+  : `${rawCanonical}/`;
 const ogImageUrl = new URL(ogImage, SITE.url).toString();
 ---
 <!doctype html>
