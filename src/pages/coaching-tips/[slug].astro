@@ -19,7 +19,7 @@ const { Content } = await render(tip);
 // FTC 16 CFR Part 255: affiliate disclosure must appear before the first
 // affiliate link, not just in the footer. Render it whenever the tip body
 // contains a /go/ redirect link.
-const hasAffiliateLinks = tip.body.includes('/go/');
+const hasAffiliateLinks = (tip.body ?? '').includes('/go/');
 const tagBits = [tip.data.sport, tip.data.age, tip.data.focus].filter(Boolean);
 const sportLabel = SPORTS.find(s => s.slug === tip.data.sport)?.label;
 

@@ -20,7 +20,7 @@ const { Content } = await render(entry);
 
 // SEO
 const pageTitle = data.seoTitle ?? data.title;
-const rawDesc = data.seoDescription ?? entry.body.replace(/^---[\s\S]*?---\s*/, '').replace(/#+[^\n]*/g, '').replace(/\n+/g, ' ').trim().slice(0, 160);
+const rawDesc = data.seoDescription ?? (entry.body ?? '').replace(/^---[\s\S]*?---\s*/, '').replace(/#+[^\n]*/g, '').replace(/\n+/g, ' ').trim().slice(0, 160);
 const pageDescription = rawDesc.length > 155 ? rawDesc.slice(0, 155) + '...' : rawDesc;
 
 // Sport landing link

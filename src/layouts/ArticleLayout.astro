@@ -17,7 +17,7 @@ const { data, id: slug } = article;
 // FTC 16 CFR Part 255: affiliate disclosure must be clear, conspicuous, and
 // placed before the first affiliate link. Computed from the raw body so it
 // only renders on articles that actually contain /go/ redirect links.
-const hasAffiliateLinks = article.body.includes('/go/');
+const hasAffiliateLinks = (article.body ?? '').includes('/go/');
 const pillar = PILLARS[data.phase];
 const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;

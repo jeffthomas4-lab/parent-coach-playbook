@@ -40,7 +40,7 @@ const breadcrumbSchema = {
   ],
 };
 // Each gear-pick card renders <h3 ...>Product name</h3> ... href="/go/slug/".
-const cardBlocks = guide.body.match(/<h3[^>]*>[^<]+<\/h3>[\s\S]*?href="\/go\/[a-z0-9-]+\/"/g) ?? [];
+const cardBlocks = (guide.body ?? '').match(/<h3[^>]*>[^<]+<\/h3>[\s\S]*?href="\/go\/[a-z0-9-]+\/"/g) ?? [];
 const gearItems = cardBlocks.map((block) => {
   const name = block.match(/<h3[^>]*>([^<]+)<\/h3>/)?.[1]?.trim();
   const goSlug = block.match(/href="\/go\/([a-z0-9-]+)\/"/)?.[1];

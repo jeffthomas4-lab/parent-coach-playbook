@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-15T05:43:51.912Z",
-  "count": 678,
+  "generatedAt": "2026-07-15T21:24:28.285Z",
+  "count": 680,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -861,9 +861,10 @@
       "sources": [
         "src/pages/body/[slug].astro",
         "src/pages/burnout-check.astro",
+        "src/pages/camps/[slug].astro",
         "src/pages/camps/[state]/[city]/[sport]/index.astro",
         "src/pages/camps/[state]/[city]/index.astro",
-        "src/pages/camps/[state]/index.astro",
+        "src/pages/camps/index.astro",
         "src/pages/coaching-tips/[slug].astro",
         "src/pages/cost-calculator.astro",
         "src/pages/decisions/[slug].astro",
@@ -877,6 +878,18 @@
         "src/pages/team-parent/[slug].astro",
         "src/pages/what-to-buy/[slug].astro",
         "src/pages/youth-sports-pendulum.astro"
+      ]
+    },
+    {
+      "url": "https://schema.org/EventScheduled",
+      "sources": [
+        "src/pages/camps/[slug].astro"
+      ]
+    },
+    {
+      "url": "https://schema.org/OfflineEventAttendanceMode",
+      "sources": [
+        "src/pages/camps/[slug].astro"
       ]
     },
     {
