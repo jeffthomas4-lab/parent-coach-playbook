@@ -35,6 +35,11 @@ export default defineConfig({
   output: 'static',
   adapter: cloudflare({
     platformProxy: { enabled: true },
+    // This site never calls astro:assets' Cloudflare Images runtime (confirmed:
+    // zero usage of Astro.session or astro:assets in src/). Passthrough skips
+    // provisioning the auto-detected IMAGES binding entirely -- Card M3,
+    // Decision B. See PAGES-TO-WORKERS-MIGRATION-BRIEF.md.
+    imageService: { build: 'compile', runtime: 'passthrough' },
   }),
   integrations: [
     tailwind({
