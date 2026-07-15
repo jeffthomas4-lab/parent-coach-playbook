@@ -8,6 +8,8 @@
 
 The read-only comparison is recorded in `coordination/PRODUCTION_STAGING_MATRIX.md` under Plan 005. **Confirmed live, 2026-07-15:** production Pages is sourced from older commit `3e125bc51f339e47f11ca17cd7a5264a6a693ee6`, not the current migration branch. **Confirmed live:** staging lacks current admin Access settings and all Worker secrets. **Confirmed live plus verified in code:** the scheduled Yelp Worker lacks its required `YELP_API_KEY` and aborts on the resulting authorization failure. No remote configuration was changed.
 
+**Confirmed live, 2026-07-15, Plan 006:** cron Worker version `9af6e107-1a51-402f-9748-884326ca1445` is active with fail-loud code, scheduled and fetch handlers, plain `SWEEP_URL`, and retained `CRON_KEY`, `DEPLOY_HOOK_URL`, and `MANUAL_TRIGGER_KEY` secret names. **Verified in code and by build:** staging config now includes `FORGE_DB` -> `forge-command`; the staging deployment remains pending the unavailable Access team domain and application AUD. Production Pages and staging were not deployed.
+
 ## Cloudflare and recovery verification update
 
 **Confirmed live, 2026-07-15:** `parentcoachdesk.com` and `www.parentcoachdesk.com` are attached to the `parent-coach-playbook` Pages project. The `parent-coach-desk-staging` Worker is deployed separately and has `SESSION`, `DB`, `PHOTOS`, `ASSETS`, `ADMIN_EMAILS`, and `SITE_URL` bindings. Its `DB` is `activity-radar`; `PHOTOS` is `activityradar-photos`. Secret values were not accessed.

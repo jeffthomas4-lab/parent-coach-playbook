@@ -1,0 +1,116 @@
+# Plan: Staging configuration remediation
+
+**Plan ID:** 006  
+**Author:** Codex  
+**Date:** 2026-07-15  
+**Status:** In progress — cron repaired and staging prepared; external values required
+
+## Objective
+
+Prepare and validate the current Worker branch for staging acceptance, repair deployable configuration drift, and leave unavailable third-party credentials as explicit human-supplied gates.
+
+## Tier
+
+Tier 3. This changes Cloudflare Worker configuration and may deploy supporting/staging Workers, but does not authorize production Pages deployment, data mutation, or secret invention.
+
+## Business outcome
+
+Staging can exercise authenticated administration and the approved automation surfaces without ambiguous bindings or silent scheduled failures.
+
+## Current-state evidence
+
+- Confirmed live, 2026-07-15: staging shares production `activity-radar` D1 and `activityradar-photos` R2 and has no secrets.
+- Verified in code, 2026-07-15: `FORGE_DB` must bind `forge-command` for agent-run logging.
+- Confirmed live plus verified in code, 2026-07-15: Yelp lacks required `YELP_API_KEY` and aborts.
+- Confirmed live, 2026-07-15: cron's deployed version predates the fail-loud code and repository `SWEEP_URL` variable.
+- Not available locally, 2026-07-15: Access team domain, Access application AUD, Yelp key, Slack credentials, and agent-run shared token.
+
+## Scope
+
+- Add known `FORGE_DB` staging binding to repository configuration.
+- Keep outbound email in its fail-safe default stage mode.
+- Validate the site and cron Worker.
+- Deploy the reviewed cron repair after validation.
+- Deploy staging only after Access identifiers are available.
+- Repair Yelp only if Jeff confirms it remains intended and supplies a valid API key.
+
+## Non-goals
+
+No production Pages deploy, migration, D1/R2 write, synthetic staging data, domain attachment, outbound email, Slack message, secret generation for third-party systems, or push.
+
+## Files likely affected
+
+- `wrangler.jsonc`
+- Coordination plan/current-state/review records.
+
+## Step-by-step implementation
+
+1. Add the verified `forge-command` D1 binding to staging config.
+2. Validate Wrangler configuration, Astro checks/tests/build, and cron tests/dry-run.
+3. Deploy the reviewed cron Worker and confirm active metadata.
+4. Obtain `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD`; add them as staging variables.
+5. Obtain/generate only the approved staging secrets and set them interactively without logging values.
+6. Deploy staging and test public/admin/API failure modes without mutating shared data.
+7. Decide Yelp disposition; either supply its key and verify it or disable/retire it in a separately recorded change.
+
+## Testing strategy
+
+Run Astro check, tests, build, Wrangler dry-runs, cron tests, and active-version inspection. Staging HTTP verification is read-only. Admin tests cover authorized, unauthorized, and missing-claim paths once Access is configured.
+
+## Acceptance criteria
+
+- Known bindings are version-controlled and types/build pass.
+- Cron active version contains fail-loud behavior and plain `SWEEP_URL` variable.
+- Staging is not deployed without both Access identifiers.
+- No outbound communication or shared-data mutation occurs in acceptance tests.
+- Yelp is not described as repaired without a successful authenticated provider response.
+
+## Human approval gates
+
+Jeff authorized this phase, including required staging/cron deployment. Production Pages deploy, migrations, shared-data writes, outbound communication, and any decision to retire Yelp remain gated. Jeff must provide or securely enter unavailable third-party credentials.
+
+## Open questions
+
+- Yelp: retain and supply a key, or retire/disable?
+- Which Slack channel/app and token should staging use?
+
+## Dependencies
+
+Cloudflare Access team domain and application AUD; credentials for any enabled third-party integration.
+
+## Architecture and data flow
+
+Staging Worker -> shared read/write bindings (treated as production) and separately bound `forge-command`; supporting cron -> production site's protected sweep endpoint and deploy hook.
+
+## Data model or migration changes
+
+None.
+
+## Security and privacy requirements
+
+Admin auth remains fail-closed. Secrets are entered through Wrangler's secure secret mechanism and never committed or printed. Acceptance requests are read-only against shared resources. Email modes remain staged.
+
+## Failure modes
+
+Missing Access configuration yields 503 on admin routes, so deployment stops before that point. Missing Yelp key aborts its job. A cron secret mismatch produces a visible failed invocation after the fail-loud deployment.
+
+## Observability
+
+Cron observability is enabled. Active version/binding metadata and HTTP status evidence are recorded after deployment. No secret values enter logs.
+
+## Deployment plan
+
+Supporting cron first after tests; staging second only after Access configuration. Production Pages remains untouched.
+
+## Rollback plan
+
+Use the prior Worker version if cron behavior regresses. Staging can roll back to its prior version; no schema/data rollback is required because this plan adds no data changes.
+
+## 2026-07-15 execution evidence
+
+- Added the verified `FORGE_DB` -> `forge-command` binding to staging configuration.
+- Astro check completed with 0 errors; full build completed; fresh staging Wrangler dry-run included both D1 bindings.
+- Deployed cron version `9af6e107-1a51-402f-9748-884326ca1445`. It has fetch and scheduled handlers, plain `SWEEP_URL`, and retained secret names `CRON_KEY`, `DEPLOY_HOOK_URL`, and `MANUAL_TRIGGER_KEY`.
+- The former remote `SWEEP_URL` secret was replaced by the repository's plain variable as intended.
+- Staging was not deployed because `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` are unavailable; doing so would leave current admin routes unavailable.
+- Yelp was not changed because no valid `YELP_API_KEY` is available and retirement has not been approved.

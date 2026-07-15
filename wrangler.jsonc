@@ -30,6 +30,11 @@
       "binding": "DB",
       "database_name": "activity-radar",
       "database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
+    },
+    {
+      "binding": "FORGE_DB",
+      "database_name": "forge-command",
+      "database_id": "747cf988-a557-48bd-9d03-bea09e184f94"
     }
   ],
 
