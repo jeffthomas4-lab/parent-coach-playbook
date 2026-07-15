@@ -10,7 +10,7 @@
 // read. Keys are cached in module scope for KEY_TTL_MS so a warm isolate does
 // not refetch on every admin request.
 //
-// Config (both required, or verification is skipped — see admin-auth.ts):
+// Config (both required; admin authentication fails closed without them):
 //   ACCESS_TEAM_DOMAIN — e.g. "jeffthomas.cloudflareaccess.com"
 //   ACCESS_AUD         — the Application Audience tag from the Access app
 //
@@ -31,7 +31,7 @@ export interface AccessClaims {
   nbf?: number;
 }
 
-interface Jwk {
+export interface Jwk {
   kid: string;
   kty: string;
   alg?: string;
@@ -56,6 +56,17 @@ const keyCache = new Map<string, KeyCacheEntry>();
 /** Test seam: drop the cached JWKS so a test can control what gets fetched. */
 export function __resetAccessKeyCache(): void {
   keyCache.clear();
+}
+
+/** Test seam: install real imported public keys without a network request. */
+export async function __primeAccessKeyCache(teamDomain: string, jwks: Jwk[]): Promise<void> {
+  const keys = new Map<string, CryptoKey>();
+  for (const jwk of jwks) {
+    if (!jwk.kid) continue;
+    const key = await importJwk(jwk);
+    if (key) keys.set(jwk.kid, key);
+  }
+  keyCache.set(normalizeTeamDomain(teamDomain), { keys, fetchedAt: Date.now() });
 }
 
 function normalizeTeamDomain(raw: string): string {

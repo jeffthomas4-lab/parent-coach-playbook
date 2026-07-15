@@ -6,6 +6,8 @@
 // Two key pairs: the "team" pair whose public half is served as the JWKS, and a
 // second "attacker" pair used to sign a token that must be refused.
 
+import type { Jwk } from '../../src/lib/access-jwt';
+
 export const TEAM_DOMAIN = 'jefftest.cloudflareaccess.com';
 export const AUD = 'test-audience-tag-0123456789abcdef';
 export const KID = 'test-kid-1';
@@ -41,14 +43,15 @@ function b64url(bytes: Uint8Array | string): string {
 }
 
 /** The public half of the team key, in the JWK shape Access publishes. */
-export async function getPublicJwk(): Promise<Record<string, unknown>> {
+export async function getPublicJwk(): Promise<Jwk> {
   const pair = await getTeamPair();
-  const jwk = (await crypto.subtle.exportKey('jwk', pair.publicKey)) as Record<string, unknown>;
-  return { ...jwk, kid: KID, alg: 'RS256', use: 'sig' };
+  const jwk = await crypto.subtle.exportKey('jwk', pair.publicKey);
+  if (!jwk.kty || !jwk.n || !jwk.e) throw new Error('exported RSA JWK is incomplete');
+  return { kty: jwk.kty, n: jwk.n, e: jwk.e, kid: KID, alg: 'RS256', use: 'sig' };
 }
 
 /** A Response shaped like `https://<team>/cdn-cgi/access/certs`. */
-export function jwksResponse(jwk: Record<string, unknown>): Response {
+export function jwksResponse(jwk: Jwk): Response {
   return new Response(JSON.stringify({ keys: [jwk] }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' },

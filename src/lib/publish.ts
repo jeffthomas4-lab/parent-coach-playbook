@@ -19,10 +19,12 @@
 export interface PublishEnv {
   GITHUB_TOKEN?: string;
   DEPLOY_HOOK_URL?: string;
+  PUBLISH_COMMITTER_EMAIL?: string;
 }
 
-export const REPO = 'jeffthomas4-lab/parent-coach-desk';
+export const REPO = 'jeffthomas4-lab/parent-coach-playbook';
 export const BRANCH = 'main';
+export const DEFAULT_COMMITTER_EMAIL = 'parentcoachplaybook@gmail.com';
 
 // Map content collections to their on-disk directories. Kept in sync with
 // src/pages/api/admin/editorial/approve.ts — the same allowlist gates both
@@ -205,6 +207,10 @@ export async function publishDraft(
 
   const path = `${dir}/${input.slug}.md`;
   const headers = ghHeaders(env.GITHUB_TOKEN);
+  const committerEmail = env.PUBLISH_COMMITTER_EMAIL?.trim() || DEFAULT_COMMITTER_EMAIL;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(committerEmail)) {
+    return { ok: false, code: 500, error: 'PUBLISH_COMMITTER_EMAIL is invalid' };
+  }
 
   let getRes: Response;
   try {
@@ -243,7 +249,7 @@ export async function publishDraft(
         // since we read it, and GitHub refuses rather than clobbering them.
         sha: fileData.sha,
         branch: BRANCH,
-        committer: { name: 'Parent Coach Desk Editorial', email: input.approvedBy },
+        committer: { name: 'Parent Coach Desk Editorial', email: committerEmail },
       }),
       signal: AbortSignal.timeout(GH_TIMEOUT_MS),
     });

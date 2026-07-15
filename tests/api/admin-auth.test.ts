@@ -4,9 +4,8 @@
 // credentials is refused, and a caller who is actually allowed gets through.
 //
 // requireAdmin went async on 2026-07-15 when Access JWT signature verification
-// landed. The LEGACY blocks below cover the unverified fallback that runs when
-// ACCESS_TEAM_DOMAIN / ACCESS_AUD are unset; the VERIFIED blocks cover the mode
-// production should be in.
+// landed. Missing verification settings fail closed; no unsigned fallback is
+// permitted.
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
@@ -23,51 +22,32 @@ const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu,parentcoachplaybook@gmail.com';
 const ADMIN = 'jeffthomas@pugetsound.edu';
 const URL_ADMIN = 'https://parentcoachdesk.com/api/admin/camps/abc/approve';
 
-describe('requireAdmin (legacy mode: Access vars unset)', () => {
-  it('refuses a request with no Access header or cookie (unauthenticated)', async () => {
+describe('requireAdmin (Access vars unset)', () => {
+  it('fails closed when verification configuration is missing', async () => {
     const req = new Request(URL_ADMIN, { method: 'POST' });
     const result = await requireAdmin(req, { ADMIN_EMAILS });
     expect(result).toBeInstanceOf(Response);
-    expect((result as Response).status).toBe(401);
+    expect((result as Response).status).toBe(503);
   });
 
-  it('refuses an authenticated email that is not on the allowlist (forbidden)', async () => {
-    const req = new Request(URL_ADMIN, {
-      method: 'POST',
-      headers: { 'Cf-Access-Authenticated-User-Email': 'not-an-admin@example.com' },
-    });
-    const result = await requireAdmin(req, { ADMIN_EMAILS });
-    expect(result).toBeInstanceOf(Response);
-    expect((result as Response).status).toBe(403);
-  });
-
-  it('allows an email on the allowlist through, flagged unverified', async () => {
+  it('SECURITY: never trusts a spoofed Access email header when configuration is missing', async () => {
     const req = new Request(URL_ADMIN, {
       method: 'POST',
       headers: { 'Cf-Access-Authenticated-User-Email': ADMIN },
     });
     const result = await requireAdmin(req, { ADMIN_EMAILS });
-    expect(result).not.toBeInstanceOf(Response);
-    if (!(result instanceof Response)) {
-      expect(result.email).toBe(ADMIN);
-      expect(result.verified).toBe(false);
-    }
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(503);
   });
 
-  it('is case-insensitive on the allowlist match', async () => {
+  it('SECURITY: never trusts an unsigned cookie when configuration is missing', async () => {
     const req = new Request(URL_ADMIN, {
       method: 'POST',
-      headers: { 'Cf-Access-Authenticated-User-Email': 'JeffThomas@PugetSound.edu' },
+      headers: { cookie: 'CF_Authorization=header.unsigned.signature' },
     });
-    expect(await requireAdmin(req, { ADMIN_EMAILS })).not.toBeInstanceOf(Response);
-  });
-
-  it('falls back to the hardcoded default allowlist when ADMIN_EMAILS is missing', async () => {
-    const req = new Request(URL_ADMIN, {
-      method: 'POST',
-      headers: { 'Cf-Access-Authenticated-User-Email': 'parentcoachplaybook@gmail.com' },
-    });
-    expect(await requireAdmin(req, {})).not.toBeInstanceOf(Response);
+    const result = await requireAdmin(req, { ADMIN_EMAILS });
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(503);
   });
 });
 
@@ -185,14 +165,14 @@ describe('getAccessToken', () => {
 });
 
 describe('getAdminEmailFromRequest', () => {
-  it('prefers the Access header over the cookie in legacy mode', async () => {
+  it('returns null rather than trusting an Access header without verification config', async () => {
     const req = new Request('https://parentcoachdesk.com/admin/', {
       headers: {
         'Cf-Access-Authenticated-User-Email': 'header@example.com',
         cookie: 'CF_Authorization=not-a-real-jwt',
       },
     });
-    expect(await getAdminEmailFromRequest(req)).toBe('header@example.com');
+    expect(await getAdminEmailFromRequest(req)).toBeNull();
   });
 
   it('returns null when neither header nor cookie is present', async () => {

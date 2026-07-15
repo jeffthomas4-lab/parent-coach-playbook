@@ -247,7 +247,7 @@ export async function alertRun(
       } else {
         lines.push(
           canary.paused
-            ? `CANARY: ${canary.failures24h} failures in 24h — agent set to *paused* in agent_registry. It will not run again until you flip it back.`
+            ? `CANARY: ${canary.failures24h} failures in 24h — agent set to *paused* in agent_registry. Registry-aware runs should stop; independently scheduled raw tasks must be disabled separately.`
             : `CANARY: ${canary.failures24h} failures in 24h — agent already paused.`,
         );
       }

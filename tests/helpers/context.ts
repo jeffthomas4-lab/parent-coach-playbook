@@ -13,21 +13,51 @@
 
 import type { APIContext } from 'astro';
 import { env as cfEnvMock } from 'cloudflare:workers';
+import { __primeAccessKeyCache } from '../../src/lib/access-jwt';
+import { makeAccessToken, getPublicJwk, TEAM_DOMAIN, AUD } from './access-token';
+
+const TEST_ACCESS_EMAILS = [
+  'jeffthomas@pugetsound.edu',
+  'stranger@example.com',
+  'nobody@example.com',
+] as const;
+const TEST_ACCESS_TOKENS = new Map<string, string>();
+for (const email of TEST_ACCESS_EMAILS) {
+  TEST_ACCESS_TOKENS.set(email, await makeAccessToken({ email }));
+}
+await __primeAccessKeyCache(TEAM_DOMAIN, [await getPublicJwk()]);
 
 export function makeContext(opts: {
   request: Request;
   params?: Record<string, string | undefined>;
   env?: Record<string, unknown>;
 }): APIContext {
+  const testEnv = { ...(opts.env ?? {}) };
+  if ('ADMIN_EMAILS' in testEnv) {
+    testEnv.ACCESS_TEAM_DOMAIN ??= TEAM_DOMAIN;
+    testEnv.ACCESS_AUD ??= AUD;
+  }
+
+  const legacyEmail = opts.request.headers.get('Cf-Access-Authenticated-User-Email')?.toLowerCase();
+  let request = opts.request;
+  if (legacyEmail) {
+    const token = TEST_ACCESS_TOKENS.get(legacyEmail);
+    if (!token) throw new Error(`No signed Access test token registered for ${legacyEmail}`);
+    const headers = new Headers(opts.request.headers);
+    headers.delete('Cf-Access-Authenticated-User-Email');
+    headers.set('Cf-Access-Jwt-Assertion', token);
+    request = new Request(opts.request, { headers });
+  }
+
   for (const key of Object.keys(cfEnvMock)) delete (cfEnvMock as any)[key];
-  Object.assign(cfEnvMock, opts.env ?? {});
+  Object.assign(cfEnvMock, testEnv);
 
   return {
-    request: opts.request,
+    request,
     params: opts.params ?? {},
     locals: {
       runtime: {
-        env: opts.env ?? {},
+        env: testEnv,
       },
     },
     // Fields below are unused by every route under test today. Cast through

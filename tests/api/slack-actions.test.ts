@@ -177,7 +177,8 @@ describe('POST /api/slack/actions', () => {
 
     const putBody = JSON.parse(fetchMock.mock.calls[1][1].body);
     expect(Buffer.from(putBody.content, 'base64').toString('utf-8')).toContain('draft: false');
-    expect(putBody.committer.email).toBe('slack:jeff');
+    expect(putBody.committer.email).toBe('parentcoachplaybook@gmail.com');
+    expect(putBody.message).toContain('approved by slack:jeff');
     expect(fetchMock.mock.calls[2][0]).toBe(ENV.DEPLOY_HOOK_URL);
     // And it reports back to the Slack message it came from.
     expect(fetchMock.mock.calls[3][0]).toBe('https://hooks.slack.com/actions/response/abc');

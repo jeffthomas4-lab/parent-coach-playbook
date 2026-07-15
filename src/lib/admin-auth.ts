@@ -6,20 +6,14 @@
 //   Cf-Access-Authenticated-User-Email — the verified email address
 // and the browser also carries a CF_Authorization cookie holding the same JWT.
 //
-// Two modes, chosen by whether ACCESS_TEAM_DOMAIN and ACCESS_AUD are set:
-//
-// VERIFIED (both set): the JWT is pulled from the Cf-Access-Jwt-Assertion header
+// The JWT is pulled from the Cf-Access-Jwt-Assertion header
 // or the CF_Authorization cookie and its RS256 signature is checked against the
 // Access team's published keys, along with iss, aud, and exp. The email is read
 // only from the verified payload. Headers alone prove nothing in this mode, so
 // a spoofed Cf-Access-Authenticated-User-Email gets nowhere.
 //
-// LEGACY (either unset): the pre-2026-07-15 behavior — trust the Access header,
-// fall back to decoding the cookie without checking its signature. This is the
-// old hole, kept only so an unconfigured deploy does not lock the admin out on
-// the way to setting the two vars. It logs a warning on every request, and the
-// handoff treats setting the vars as the P0 item. Delete this branch once
-// production has run verified for a week.
+// Missing verification configuration fails closed. An unset variable is a
+// service configuration error, never permission to trust unsigned identity.
 //
 // The allowlist is read from the ADMIN_EMAILS env var (comma-separated) and is
 // enforced in both modes. Falls back to a single hardcoded address only if the
@@ -48,13 +42,6 @@ export interface AdminAuthEnv extends AccessJwtConfig {
 /**
  * Decode a base64url string (no padding) to a UTF-8 string.
  */
-function b64urlDecode(input: string): string {
-  const pad = input.length % 4 === 2 ? '==' : input.length % 4 === 3 ? '=' : '';
-  const b64 = input.replace(/-/g, '+').replace(/_/g, '/') + pad;
-  // atob exists in the Workers runtime.
-  return atob(b64);
-}
-
 /** Pull the raw Access JWT from the assertion header or the CF_Authorization cookie. */
 export function getAccessToken(request: Request): string | null {
   const assertion = request.headers.get('Cf-Access-Jwt-Assertion');
@@ -71,23 +58,6 @@ export function getAccessToken(request: Request): string | null {
  * ACCESS_TEAM_DOMAIN / ACCESS_AUD are unset. Returns null on any parse
  * failure or if the JWT is expired.
  */
-function getAdminEmailFromCookieUnverified(request: Request): string | null {
-  const token = getAccessToken(request);
-  if (!token) return null;
-  const parts = token.split('.');
-  if (parts.length !== 3) return null;
-  try {
-    const payload = JSON.parse(b64urlDecode(parts[1])) as { email?: string; exp?: number };
-    if (payload.exp && payload.exp * 1000 < Date.now()) return null;
-    if (typeof payload.email === 'string' && payload.email.includes('@')) {
-      return payload.email.toLowerCase();
-    }
-    return null;
-  } catch {
-    return null;
-  }
-}
-
 /** True when the env carries everything verifyAccessJwt needs. */
 export function accessVerificationConfigured(env?: AdminAuthEnv): boolean {
   return Boolean(env?.ACCESS_TEAM_DOMAIN?.trim() && env?.ACCESS_AUD?.trim());
@@ -106,26 +76,21 @@ export async function getAdminIdentity(
   request: Request,
   env?: AdminAuthEnv,
 ): Promise<IdentityResult> {
-  if (accessVerificationConfigured(env)) {
-    const token = getAccessToken(request);
-    if (!token) return { email: null, verified: false };
-    const result = await verifyAccessJwt(token, {
-      teamDomain: env!.ACCESS_TEAM_DOMAIN!,
-      aud: env!.ACCESS_AUD!,
-    });
-    if (!result.ok) {
-      console.warn('[admin-auth] Access JWT rejected:', result.reason);
-      return { email: null, verified: false };
-    }
-    return { email: result.claims.email, verified: true };
+  if (!accessVerificationConfigured(env)) {
+    console.error('[admin-auth] ACCESS_TEAM_DOMAIN/ACCESS_AUD not set; refusing authentication');
+    return { email: null, verified: false };
   }
-
-  console.warn(
-    '[admin-auth] ACCESS_TEAM_DOMAIN/ACCESS_AUD not set — running unverified legacy auth. Set both.',
-  );
-  const headerEmail = request.headers.get('Cf-Access-Authenticated-User-Email');
-  if (headerEmail) return { email: headerEmail.toLowerCase(), verified: false };
-  return { email: getAdminEmailFromCookieUnverified(request), verified: false };
+  const token = getAccessToken(request);
+  if (!token) return { email: null, verified: false };
+  const result = await verifyAccessJwt(token, {
+    teamDomain: env!.ACCESS_TEAM_DOMAIN!,
+    aud: env!.ACCESS_AUD!,
+  });
+  if (!result.ok) {
+    console.warn('[admin-auth] Access JWT rejected:', result.reason);
+    return { email: null, verified: false };
+  }
+  return { email: result.claims.email, verified: true };
 }
 
 /**
@@ -150,6 +115,12 @@ export async function requireAdmin(
   request: Request,
   env?: AdminAuthEnv,
 ): Promise<AdminContext | Response> {
+  if (!accessVerificationConfigured(env)) {
+    return new Response(JSON.stringify({ ok: false, error: 'admin authentication not configured' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    });
+  }
   const { email, verified } = await getAdminIdentity(request, env);
   if (!email) {
     return new Response(JSON.stringify({ ok: false, error: 'unauthenticated' }), {

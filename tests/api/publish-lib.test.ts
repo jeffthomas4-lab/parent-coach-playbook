@@ -113,6 +113,8 @@ describe('publishDraft', () => {
 
     const putBody = JSON.parse(fetchMock.mock.calls[1][1].body);
     expect(unb64(putBody.content)).toContain('draft: false');
+    expect(putBody.committer.email).toBe('parentcoachplaybook@gmail.com');
+    expect(fetchMock.mock.calls[0][0]).toContain('/repos/jeffthomas4-lab/parent-coach-playbook/');
     // Optimistic concurrency: the sha we read must be the sha we write against.
     expect(putBody.sha).toBe('sha1');
     expect(fetchMock.mock.calls[2][0]).toBe(ENV.DEPLOY_HOOK_URL);
@@ -146,6 +148,17 @@ describe('publishDraft', () => {
       slug: 'a-test-post',
       approvedBy: 'a@b.com',
     });
+    expect(result).toMatchObject({ ok: false, code: 500 });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('refuses invalid configured committer metadata before calling GitHub', async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    const result = await publishDraft(
+      { ...ENV, PUBLISH_COMMITTER_EMAIL: 'slack:jeff' },
+      { collection: 'articles', slug: 'a-test-post', approvedBy: 'slack:jeff' },
+    );
     expect(result).toMatchObject({ ok: false, code: 500 });
     expect(fetchMock).not.toHaveBeenCalled();
   });
