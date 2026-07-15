@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 
 // Rehype plugin: decorates links in markdown content at build time.
@@ -41,11 +41,6 @@ export default defineConfig({
     // Decision B. See PAGES-TO-WORKERS-MIGRATION-BRIEF.md.
     imageService: { build: 'compile', runtime: 'passthrough' },
   }),
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-  ],
   build: {
     format: 'directory',
   },
@@ -66,6 +61,7 @@ export default defineConfig({
     domains: ['cdn.sanity.io'],
   },
   vite: {
+    plugins: [tailwindcss()],
     cacheDir: '/tmp/pcd-vite-verify-cache',
     build: {
       // Astro 5 inlines small bundled <script> tags by default. The site CSP only

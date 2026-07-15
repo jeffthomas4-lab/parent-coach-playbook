@@ -43,9 +43,8 @@
   line-gap-override: 0%;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
 
 /* ---------- Base reset ---------- */
 :root {
