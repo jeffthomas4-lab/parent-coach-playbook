@@ -13,7 +13,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 
 const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
 
-const auth = requireAdmin(Astro.request, env);
+const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
 
 type RawEvent = {

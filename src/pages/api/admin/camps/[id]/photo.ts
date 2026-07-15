@@ -25,7 +25,7 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
   if (!env?.PHOTOS) return json({ ok: false, error: 'r2 bucket not bound (PHOTOS)' }, 500);
 
-  const auth = requireAdmin(request, env);
+  const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
 
   const originErr = requireSameOrigin(request);

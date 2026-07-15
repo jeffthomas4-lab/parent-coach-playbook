@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ params, request }) => {
   const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
-  const auth = requireAdmin(request, env);
+  const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
 
   const originErr = requireSameOrigin(request);

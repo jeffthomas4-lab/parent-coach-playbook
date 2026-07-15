@@ -132,7 +132,7 @@ export const POST: APIRoute = async ({ request }) => {
     | { ADMIN_EMAILS?: string; GITHUB_TOKEN?: string }
     | undefined;
 
-  const auth = requireAdmin(request, env);
+  const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
 
   const originErr = requireSameOrigin(request);

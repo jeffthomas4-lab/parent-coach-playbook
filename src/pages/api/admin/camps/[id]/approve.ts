@@ -17,7 +17,7 @@ export const POST: APIRoute = async ({ params, request }) => {
     });
   }
 
-  const auth = requireAdmin(request, env);
+  const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
 
   const originErr = requireSameOrigin(request);

@@ -1,21 +1,31 @@
-// Cloudflare Access JWT verification for admin routes.
+// Cloudflare Access authentication for admin routes.
 //
 // When a request reaches a /admin/ or /api/admin/ route through Cloudflare Access,
 // Access injects two headers:
 //   Cf-Access-Jwt-Assertion — the signed JWT
 //   Cf-Access-Authenticated-User-Email — the verified email address
+// and the browser also carries a CF_Authorization cookie holding the same JWT.
 //
-// In phase 1 we do a light-weight verification: presence of the headers, and the
-// email matches an allowlist. Cloudflare has already verified the JWT signature
-// before the request reached us, so checking the email header is sufficient when
-// the route is wired through an Access policy.
+// Two modes, chosen by whether ACCESS_TEAM_DOMAIN and ACCESS_AUD are set:
 //
-// Hardening for phase 2: verify the JWT signature against Access JWKs.
+// VERIFIED (both set): the JWT is pulled from the Cf-Access-Jwt-Assertion header
+// or the CF_Authorization cookie and its RS256 signature is checked against the
+// Access team's published keys, along with iss, aud, and exp. The email is read
+// only from the verified payload. Headers alone prove nothing in this mode, so
+// a spoofed Cf-Access-Authenticated-User-Email gets nowhere.
 //
-// The allowlist is read from the ADMIN_EMAILS Cloudflare Pages env var
-// (comma-separated). Falls back to a single hardcoded address only if that var
-// is missing — that fallback exists so local dev and build never fail outright,
-// but production should always set ADMIN_EMAILS.
+// LEGACY (either unset): the pre-2026-07-15 behavior — trust the Access header,
+// fall back to decoding the cookie without checking its signature. This is the
+// old hole, kept only so an unconfigured deploy does not lock the admin out on
+// the way to setting the two vars. It logs a warning on every request, and the
+// handoff treats setting the vars as the P0 item. Delete this branch once
+// production has run verified for a week.
+//
+// The allowlist is read from the ADMIN_EMAILS env var (comma-separated) and is
+// enforced in both modes. Falls back to a single hardcoded address only if the
+// var is missing, so local dev and build never fail outright.
+
+import { verifyAccessJwt, type AccessJwtConfig } from './access-jwt';
 
 const FALLBACK_ALLOWED_EMAILS = 'parentcoachplaybook@gmail.com';
 
@@ -27,6 +37,12 @@ function parseAllowList(raw: string): Set<string> {
 
 export interface AdminContext {
   email: string;
+  /** True when the email came from a signature-verified Access JWT. */
+  verified: boolean;
+}
+
+export interface AdminAuthEnv extends AccessJwtConfig {
+  ADMIN_EMAILS?: string;
 }
 
 /**
@@ -39,23 +55,25 @@ function b64urlDecode(input: string): string {
   return atob(b64);
 }
 
-/**
- * Read the email claim from the CF_Authorization cookie's JWT payload.
- *
- * Important security note: this decodes the JWT without verifying its
- * signature. We rely on Cloudflare Access being the only entity that can mint
- * a CF_Authorization cookie for parentcoachdesk.com (browsers enforce
- * cookie domain scoping, so foreign sites cannot set this cookie). For phase 2
- * we should verify the signature against the Access JWKs.
- *
- * Returns null on any parse failure or if the JWT is expired.
- */
-function getAdminEmailFromCookie(request: Request): string | null {
+/** Pull the raw Access JWT from the assertion header or the CF_Authorization cookie. */
+export function getAccessToken(request: Request): string | null {
+  const assertion = request.headers.get('Cf-Access-Jwt-Assertion');
+  if (assertion) return assertion.trim();
   const cookieHeader = request.headers.get('cookie') ?? '';
   if (!cookieHeader) return null;
   const match = cookieHeader.match(/(?:^|;\s*)CF_Authorization=([^;]+)/);
-  if (!match) return null;
-  const token = match[1];
+  return match ? match[1] : null;
+}
+
+/**
+ * LEGACY ONLY. Read the email claim from the CF_Authorization cookie's JWT
+ * payload without verifying the signature. Reachable only when
+ * ACCESS_TEAM_DOMAIN / ACCESS_AUD are unset. Returns null on any parse
+ * failure or if the JWT is expired.
+ */
+function getAdminEmailFromCookieUnverified(request: Request): string | null {
+  const token = getAccessToken(request);
+  if (!token) return null;
   const parts = token.split('.');
   if (parts.length !== 3) return null;
   try {
@@ -70,30 +88,69 @@ function getAdminEmailFromCookie(request: Request): string | null {
   }
 }
 
-/**
- * Pull the verified admin email from the Cloudflare Access header. If that
- * header is missing (which happens in some Access path configurations on
- * Cloudflare Pages), fall back to decoding the CF_Authorization cookie.
- *
- * Returns null if neither source yields an email — does NOT enforce the
- * allowlist. Use requireAdmin for full auth + allowlist enforcement.
- */
-export function getAdminEmailFromRequest(request: Request): string | null {
-  const headerEmail = request.headers.get('Cf-Access-Authenticated-User-Email');
-  if (headerEmail) return headerEmail.toLowerCase();
-  return getAdminEmailFromCookie(request);
+/** True when the env carries everything verifyAccessJwt needs. */
+export function accessVerificationConfigured(env?: AdminAuthEnv): boolean {
+  return Boolean(env?.ACCESS_TEAM_DOMAIN?.trim() && env?.ACCESS_AUD?.trim());
+}
+
+export interface IdentityResult {
+  email: string | null;
+  verified: boolean;
 }
 
 /**
- * Full admin gate: pulls the verified email from the Access header and checks
- * it against ADMIN_EMAILS (or the fallback). Pass `env` from the route handler
- * so we can read the Cloudflare Pages env var.
+ * Resolve the caller's admin identity. Does NOT enforce the allowlist — use
+ * requireAdmin for the full gate.
  */
-export function requireAdmin(
+export async function getAdminIdentity(
   request: Request,
-  env?: { ADMIN_EMAILS?: string },
-): AdminContext | Response {
-  const email = getAdminEmailFromRequest(request);
+  env?: AdminAuthEnv,
+): Promise<IdentityResult> {
+  if (accessVerificationConfigured(env)) {
+    const token = getAccessToken(request);
+    if (!token) return { email: null, verified: false };
+    const result = await verifyAccessJwt(token, {
+      teamDomain: env!.ACCESS_TEAM_DOMAIN!,
+      aud: env!.ACCESS_AUD!,
+    });
+    if (!result.ok) {
+      console.warn('[admin-auth] Access JWT rejected:', result.reason);
+      return { email: null, verified: false };
+    }
+    return { email: result.claims.email, verified: true };
+  }
+
+  console.warn(
+    '[admin-auth] ACCESS_TEAM_DOMAIN/ACCESS_AUD not set — running unverified legacy auth. Set both.',
+  );
+  const headerEmail = request.headers.get('Cf-Access-Authenticated-User-Email');
+  if (headerEmail) return { email: headerEmail.toLowerCase(), verified: false };
+  return { email: getAdminEmailFromCookieUnverified(request), verified: false };
+}
+
+/**
+ * Back-compat shim for callers that only want the email string.
+ * Prefer getAdminIdentity, which also reports whether the email was verified.
+ */
+export async function getAdminEmailFromRequest(
+  request: Request,
+  env?: AdminAuthEnv,
+): Promise<string | null> {
+  return (await getAdminIdentity(request, env)).email;
+}
+
+/**
+ * Full admin gate: resolves the caller's identity (signature-verified when the
+ * Access vars are configured) and checks it against ADMIN_EMAILS.
+ *
+ * Async as of 2026-07-15 — signature verification needs a key fetch. Callers
+ * must await it.
+ */
+export async function requireAdmin(
+  request: Request,
+  env?: AdminAuthEnv,
+): Promise<AdminContext | Response> {
+  const { email, verified } = await getAdminIdentity(request, env);
   if (!email) {
     return new Response(JSON.stringify({ ok: false, error: 'unauthenticated' }), {
       status: 401,
@@ -107,7 +164,7 @@ export function requireAdmin(
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
     });
   }
-  return { email };
+  return { email, verified };
 }
 
 /**

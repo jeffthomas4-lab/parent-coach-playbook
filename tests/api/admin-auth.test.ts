@@ -2,85 +2,207 @@
 // depends on. Covers the three things Pillar 9 requires for an auth check:
 // a caller with no credentials is refused, a caller with the wrong
 // credentials is refused, and a caller who is actually allowed gets through.
+//
+// requireAdmin went async on 2026-07-15 when Access JWT signature verification
+// landed. The LEGACY blocks below cover the unverified fallback that runs when
+// ACCESS_TEAM_DOMAIN / ACCESS_AUD are unset; the VERIFIED blocks cover the mode
+// production should be in.
 
-import { describe, it, expect } from 'vitest';
-import { requireAdmin, requireSameOrigin, getAdminEmailFromRequest } from '../../src/lib/admin-auth';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import {
+  requireAdmin,
+  requireSameOrigin,
+  getAdminEmailFromRequest,
+  getAccessToken,
+  accessVerificationConfigured,
+} from '../../src/lib/admin-auth';
+import { __resetAccessKeyCache } from '../../src/lib/access-jwt';
+import { makeAccessToken, getPublicJwk, jwksResponse, TEAM_DOMAIN, AUD } from '../helpers/access-token';
 
 const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu,parentcoachplaybook@gmail.com';
+const ADMIN = 'jeffthomas@pugetsound.edu';
+const URL_ADMIN = 'https://parentcoachdesk.com/api/admin/camps/abc/approve';
 
-describe('requireAdmin', () => {
-  it('refuses a request with no Access header or cookie (unauthenticated)', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', { method: 'POST' });
-    const result = requireAdmin(req, { ADMIN_EMAILS });
+describe('requireAdmin (legacy mode: Access vars unset)', () => {
+  it('refuses a request with no Access header or cookie (unauthenticated)', async () => {
+    const req = new Request(URL_ADMIN, { method: 'POST' });
+    const result = await requireAdmin(req, { ADMIN_EMAILS });
     expect(result).toBeInstanceOf(Response);
-    if (result instanceof Response) {
-      expect(result.status).toBe(401);
-    }
+    expect((result as Response).status).toBe(401);
   });
 
-  it('refuses an authenticated email that is not on the allowlist (forbidden)', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', {
+  it('refuses an authenticated email that is not on the allowlist (forbidden)', async () => {
+    const req = new Request(URL_ADMIN, {
       method: 'POST',
       headers: { 'Cf-Access-Authenticated-User-Email': 'not-an-admin@example.com' },
     });
-    const result = requireAdmin(req, { ADMIN_EMAILS });
+    const result = await requireAdmin(req, { ADMIN_EMAILS });
     expect(result).toBeInstanceOf(Response);
-    if (result instanceof Response) {
-      expect(result.status).toBe(403);
-    }
+    expect((result as Response).status).toBe(403);
   });
 
-  it('allows an email on the allowlist through', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', {
+  it('allows an email on the allowlist through, flagged unverified', async () => {
+    const req = new Request(URL_ADMIN, {
       method: 'POST',
-      headers: { 'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu' },
+      headers: { 'Cf-Access-Authenticated-User-Email': ADMIN },
     });
-    const result = requireAdmin(req, { ADMIN_EMAILS });
+    const result = await requireAdmin(req, { ADMIN_EMAILS });
     expect(result).not.toBeInstanceOf(Response);
     if (!(result instanceof Response)) {
-      expect(result.email).toBe('jeffthomas@pugetsound.edu');
+      expect(result.email).toBe(ADMIN);
+      expect(result.verified).toBe(false);
     }
   });
 
-  it('is case-insensitive on the allowlist match', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', {
+  it('is case-insensitive on the allowlist match', async () => {
+    const req = new Request(URL_ADMIN, {
       method: 'POST',
       headers: { 'Cf-Access-Authenticated-User-Email': 'JeffThomas@PugetSound.edu' },
     });
-    const result = requireAdmin(req, { ADMIN_EMAILS });
-    expect(result).not.toBeInstanceOf(Response);
+    expect(await requireAdmin(req, { ADMIN_EMAILS })).not.toBeInstanceOf(Response);
   });
 
-  it('falls back to the hardcoded default allowlist when ADMIN_EMAILS is missing', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', {
+  it('falls back to the hardcoded default allowlist when ADMIN_EMAILS is missing', async () => {
+    const req = new Request(URL_ADMIN, {
       method: 'POST',
       headers: { 'Cf-Access-Authenticated-User-Email': 'parentcoachplaybook@gmail.com' },
     });
-    const result = requireAdmin(req, {});
+    expect(await requireAdmin(req, {})).not.toBeInstanceOf(Response);
+  });
+});
+
+describe('requireAdmin (verified mode: Access vars set)', () => {
+  const env = { ADMIN_EMAILS, ACCESS_TEAM_DOMAIN: TEAM_DOMAIN, ACCESS_AUD: AUD };
+
+  beforeEach(async () => {
+    __resetAccessKeyCache();
+    const jwk = await getPublicJwk();
+    vi.stubGlobal('fetch', vi.fn(async () => jwksResponse(jwk)));
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('SECURITY: a spoofed Cf-Access-Authenticated-User-Email header alone gets nothing', async () => {
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { 'Cf-Access-Authenticated-User-Email': ADMIN },
+    });
+    const result = await requireAdmin(req, env);
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(401);
+  });
+
+  it('SECURITY: a JWT signed by someone other than the Access team is refused', async () => {
+    const token = await makeAccessToken({ email: ADMIN, signWithWrongKey: true });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { cookie: `CF_Authorization=${token}` },
+    });
+    const result = await requireAdmin(req, env);
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(401);
+  });
+
+  it('allows a properly signed Access JWT from the cookie', async () => {
+    const token = await makeAccessToken({ email: ADMIN });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { cookie: `CF_Authorization=${token}` },
+    });
+    const result = await requireAdmin(req, env);
     expect(result).not.toBeInstanceOf(Response);
+    if (!(result instanceof Response)) {
+      expect(result.email).toBe(ADMIN);
+      expect(result.verified).toBe(true);
+    }
+  });
+
+  it('allows a properly signed Access JWT from the assertion header', async () => {
+    const token = await makeAccessToken({ email: ADMIN });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { 'Cf-Access-Jwt-Assertion': token },
+    });
+    expect(await requireAdmin(req, env)).not.toBeInstanceOf(Response);
+  });
+
+  it('a valid signature for a non-allowlisted email is still forbidden', async () => {
+    const token = await makeAccessToken({ email: 'someone-else@example.com' });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { cookie: `CF_Authorization=${token}` },
+    });
+    const result = await requireAdmin(req, env);
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(403);
+  });
+
+  it('an expired but correctly signed token is refused', async () => {
+    const token = await makeAccessToken({ email: ADMIN, expiresInSec: -3600 });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { cookie: `CF_Authorization=${token}` },
+    });
+    const result = await requireAdmin(req, env);
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(401);
+  });
+});
+
+describe('accessVerificationConfigured', () => {
+  it('is false when either var is missing or blank', () => {
+    expect(accessVerificationConfigured({})).toBe(false);
+    expect(accessVerificationConfigured({ ACCESS_TEAM_DOMAIN: TEAM_DOMAIN })).toBe(false);
+    expect(accessVerificationConfigured({ ACCESS_AUD: AUD })).toBe(false);
+    expect(accessVerificationConfigured({ ACCESS_TEAM_DOMAIN: '  ', ACCESS_AUD: AUD })).toBe(false);
+  });
+
+  it('is true when both are set', () => {
+    expect(accessVerificationConfigured({ ACCESS_TEAM_DOMAIN: TEAM_DOMAIN, ACCESS_AUD: AUD })).toBe(true);
+  });
+});
+
+describe('getAccessToken', () => {
+  it('prefers the assertion header over the cookie', () => {
+    const req = new Request('https://parentcoachdesk.com/admin/', {
+      headers: { 'Cf-Access-Jwt-Assertion': 'from-header', cookie: 'CF_Authorization=from-cookie' },
+    });
+    expect(getAccessToken(req)).toBe('from-header');
+  });
+
+  it('reads the CF_Authorization cookie when there is no assertion header', () => {
+    const req = new Request('https://parentcoachdesk.com/admin/', {
+      headers: { cookie: 'other=1; CF_Authorization=from-cookie; more=2' },
+    });
+    expect(getAccessToken(req)).toBe('from-cookie');
+  });
+
+  it('returns null when neither is present', () => {
+    expect(getAccessToken(new Request('https://parentcoachdesk.com/admin/'))).toBeNull();
   });
 });
 
 describe('getAdminEmailFromRequest', () => {
-  it('prefers the Access header over the cookie', () => {
+  it('prefers the Access header over the cookie in legacy mode', async () => {
     const req = new Request('https://parentcoachdesk.com/admin/', {
       headers: {
         'Cf-Access-Authenticated-User-Email': 'header@example.com',
         cookie: 'CF_Authorization=not-a-real-jwt',
       },
     });
-    expect(getAdminEmailFromRequest(req)).toBe('header@example.com');
+    expect(await getAdminEmailFromRequest(req)).toBe('header@example.com');
   });
 
-  it('returns null when neither header nor cookie is present', () => {
-    const req = new Request('https://parentcoachdesk.com/admin/');
-    expect(getAdminEmailFromRequest(req)).toBeNull();
+  it('returns null when neither header nor cookie is present', async () => {
+    expect(await getAdminEmailFromRequest(new Request('https://parentcoachdesk.com/admin/'))).toBeNull();
   });
 });
 
 describe('requireSameOrigin', () => {
   it('rejects a request with a cross-origin Origin header', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', {
+    const req = new Request(URL_ADMIN, {
       method: 'POST',
       headers: { origin: 'https://evil.example.com' },
     });
@@ -90,14 +212,13 @@ describe('requireSameOrigin', () => {
   });
 
   it('rejects a request with no Origin and no Referer', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', { method: 'POST' });
-    const result = requireSameOrigin(req);
+    const result = requireSameOrigin(new Request(URL_ADMIN, { method: 'POST' }));
     expect(result).toBeInstanceOf(Response);
     expect(result?.status).toBe(403);
   });
 
   it('allows a same-origin Origin header through', () => {
-    const req = new Request('https://parentcoachdesk.com/api/admin/camps/abc/approve', {
+    const req = new Request(URL_ADMIN, {
       method: 'POST',
       headers: { origin: 'https://parentcoachdesk.com' },
     });
