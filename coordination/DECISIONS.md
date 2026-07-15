@@ -20,7 +20,7 @@ Nothing here is Approved until Jeff says so explicitly. Neither agent may promot
 
 ## D-001: Autonomous D1 mutations require rollback proportionate to the mutation
 
-**Status:** Proposed
+**Status:** Approved
 **Date:** 2026-07-15
 
 **Context.**
@@ -58,7 +58,7 @@ Append-only telemetry does not require a full database restore exercise before o
 
 **Alternatives considered.** A blanket restore requirement on every autonomous write. Rejected as disproportionate: it would gate `search_events` behind a database restore drill. No requirement, relying on the existing backup script. Rejected: an untested backup is an assumption, not a rollback path.
 
-**Approval.** Pending Jeff. Approving this record should follow tracing the actual writer inventory, not precede it.
+**Approval.** Approved by Jeff on 2026-07-15 after review of the traced writer inventory.
 
 ---
 
