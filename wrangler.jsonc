@@ -64,6 +64,6 @@
   // Read by src/lib/admin-auth.ts. Add or remove emails here, redeploy, done.
   "vars": {
     "SITE_URL": "https://parentcoachdesk.com",
-    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas@pugetsound.edu"
+    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas4@gmail.com"
   }
 }
