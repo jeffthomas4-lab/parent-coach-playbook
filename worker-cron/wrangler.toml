@@ -1,8 +1,12 @@
-# Cloudflare Worker that fires the Pages deploy hook on a schedule.
-# Purpose: rebuild parentcoachplaybook.com daily so queued posts (publishedAt in the future)
-# go live on their date without anyone pushing a button.
+# Cloudflare Worker that fires the Pages deploy hook on a schedule and runs the
+# daily camps-quality sweep.
 #
-# Deploy commands and the rest of the operator manual live in QUEUE.md at the project root.
+# Purpose: rebuild parentcoachdesk.com daily so queued posts (publishedAt in the
+# future) go live on their date without anyone pushing a button, and keep the
+# camps URL-health and stale-archive jobs running.
+#
+# Deploy commands and the rest of the operator manual live in QUEUE.md at the
+# project root.
 
 name = "parent-coach-playbook-cron"
 main = "src/index.ts"
@@ -17,8 +21,36 @@ compatibility_date = "2025-04-01"
 [triggers]
 crons = ["0 13 * * *"]
 
-# Set the Pages deploy hook URL as a secret, NOT in this file:
-#   npx wrangler secret put DEPLOY_HOOK_URL
-# Get the hook URL from the Cloudflare dashboard:
-#   Pages → parent-coach-playbook → Settings → Builds & deployments → Deploy hooks → Add deploy hook
-# Name the hook "scheduled-publish" and point it at the main branch.
+# Observability: this worker's only alarm channel is its logs, and as of
+# 2026-07-15 every failure path in src/index.ts throws so a broken run is
+# recorded as errored rather than green. That is only useful if logs are on.
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+# SWEEP_URL is a plain var, not a secret — it is a public URL. It used to be a
+# secret, which meant an unset secret silently disabled the sweep with no
+# warning (see the 2026-07-15 failure policy note in src/index.ts). Pinning it
+# here means the only thing that can now be missing is CRON_KEY, and that now
+# fails loudly.
+[vars]
+SWEEP_URL = "https://parentcoachdesk.com/api/cron/camps-sweep"
+
+# Secrets are NOT set in this file. Set each with `npx wrangler secret put <NAME>`
+# from the worker-cron/ directory:
+#
+#   DEPLOY_HOOK_URL    The Pages deploy hook URL. Cloudflare dashboard →
+#                      Pages → parent-coach-playbook → Settings → Builds &
+#                      deployments → Deploy hooks → Add deploy hook. Name it
+#                      "scheduled-publish" and point it at the main branch.
+#
+#   MANUAL_TRIGGER_KEY Any long random string. Guards the manual GET ?key= path.
+#
+#   CRON_KEY           Must match the CRON_KEY secret on the site app that
+#                      serves SWEEP_URL. Confirmed present on the Pages project
+#                      2026-07-14 (SECURITY-AUDIT.md); NOT confirmed on this
+#                      worker. If they disagree the sweep gets a 403, which now
+#                      throws instead of logging quietly.
+#
+# Check what is actually set on this worker:
+#   cd worker-cron && npx wrangler secret list

@@ -10,7 +10,7 @@
     "secret:hook": "wrangler secret put DEPLOY_HOOK_URL    --config ./wrangler.toml",
     "secret:key": "wrangler secret put MANUAL_TRIGGER_KEY --config ./wrangler.toml",
     "secret:cron": "wrangler secret put CRON_KEY           --config ./wrangler.toml",
-    "secret:sweep": "wrangler secret put SWEEP_URL          --config ./wrangler.toml"
+    "secret:list": "wrangler secret list --config ./wrangler.toml"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250101.0",
