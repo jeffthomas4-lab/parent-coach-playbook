@@ -345,6 +345,28 @@ export async function upsertSubmitterOnSubmission(
   return updated;
 }
 
+/**
+ * How many programs this email has submitted since `sinceIso`.
+ *
+ * Used as the rate limit on the submission confirmation email: the submit
+ * endpoint is public, so without a cap one script could make us send an
+ * unbounded number of messages from our own domain and burn its sending
+ * reputation along with the bill.
+ */
+export async function countRecentSubmissionsByEmail(
+  db: D1Database,
+  email: string,
+  sinceIso: string,
+): Promise<number> {
+  const row = await db
+    .prepare(
+      `SELECT COUNT(*) AS n FROM programs WHERE submitted_by_email = ? AND submitted_at >= ?`,
+    )
+    .bind(email.toLowerCase(), sinceIso)
+    .first<{ n: number }>();
+  return row?.n ?? 0;
+}
+
 export async function incrementSubmitterApproved(db: D1Database, email: string): Promise<void> {
   await db
     .prepare('UPDATE submitters SET approved_count = approved_count + 1 WHERE email = ?')

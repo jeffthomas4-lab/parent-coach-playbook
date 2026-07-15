@@ -20,6 +20,7 @@ import {
   updateUrlHealth,
   extractDomain,
   findFuzzyCampMatches,
+  countRecentSubmissionsByEmail,
   type ConfidenceLevel,
   type DayOrOvernight,
   type ProgramType,
@@ -27,9 +28,20 @@ import {
   type SpotsStatus,
 } from '../../../lib/camps-db';
 import { checkUrlHealth } from '../../../lib/url-health';
+import {
+  sendSubmissionConfirmation,
+  sendAdminAlert,
+  type EmailEnv,
+} from '../../../lib/email';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
+
+// Confirmation-email rate limit. Somebody filing more than this many programs
+// in an hour is running a bulk import, not waiting on a courtesy note, so the
+// row still lands and the email stops. A public endpoint that can trigger
+// outbound mail needs a ceiling (Pre-Launch Security Gate item 9).
+const CONFIRMATION_MAX_PER_HOUR = 5;
 
 interface SubmitPayload {
   // honeypot
@@ -120,7 +132,9 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const env = cfEnv as { DB: D1Database; BULK_IMPORT_TOKEN?: string } | undefined;
+  const env = cfEnv as
+    | ({ DB: D1Database; BULK_IMPORT_TOKEN?: string; SITE_URL?: string } & EmailEnv)
+    | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const data = await readPayload(request);
@@ -336,6 +350,45 @@ export const POST: APIRoute = async ({ request }) => {
     } catch {
       // ignore
     }
+  }
+
+  // Confirmation to the submitter, and an alert to the admin queue.
+  //
+  // Both are staged, not sent, until Jeff flips EMAIL_MODE / EMAIL_ADMIN_MODE —
+  // see src/lib/email.ts. Until then the rendered message goes to Slack instead.
+  // Either way the row is already written, so nothing below may throw: a mail
+  // problem must never turn a good submission into an error for the parent.
+  const emailStatus = autoApprove ? ('approved' as const) : ('pending' as const);
+  try {
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const recent = await countRecentSubmissionsByEmail(env.DB, submitterEmail, oneHourAgo);
+    if (recent <= CONFIRMATION_MAX_PER_HOUR && !bulkImportApprove) {
+      await sendSubmissionConfirmation(env, {
+        campName: data.name!,
+        city: data.city!,
+        state: data.state!.toUpperCase(),
+        slug,
+        status: emailStatus,
+        submitterEmail,
+        siteUrl: env.SITE_URL,
+      });
+    }
+  } catch (e) {
+    console.error('[submit] confirmation email failed', e);
+  }
+
+  try {
+    await sendAdminAlert(env, {
+      subject: `New camp submission: ${data.name!} (${emailStatus})`,
+      body: [
+        `${data.name!} — ${data.city!}, ${data.state!.toUpperCase()}`,
+        `Sport: ${data.sport!}`,
+        `Status: ${emailStatus}${bulkImportApprove ? ' (bulk import, awaiting review)' : ''}`,
+        `Review: ${env.SITE_URL ?? 'https://parentcoachdesk.com'}/admin/camps/${id}`,
+      ].join('\n'),
+    });
+  } catch (e) {
+    console.error('[submit] admin alert failed', e);
   }
 
   return ok({
