@@ -1,5 +1,7 @@
 # Kit free-tier welcome sequence — six drafts
 
+> **SUPERSEDED 2026-07-15.** Old branding (Parent Coach Playbook), old domain, gmail sender, pre-rebrand voice. Do not paste these into Kit. The current paste-ready sequence is `WELCOME-SEQUENCE-FINAL.md` in this folder. Kept for reference only.
+
 Six emails over four weeks. No automation set up yet — paste each one into Kit when ready, set the trigger, do not send live until you've reviewed.
 
 Voice: warm, mom-friendly, declarative-but-soft. Same rules as `EDITORIAL_STANDARDS.md`. Keep emails short. Each one ends with a single clear next step.

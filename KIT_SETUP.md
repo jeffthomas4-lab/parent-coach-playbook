@@ -1,5 +1,7 @@
 # Kit (newsletter) setup
 
+> **Updated 2026-07-15 (distribution lane).** Old `parentcoachplaybook.com` URLs corrected to the live domain. The current, ordered runbook for the full Kit build (incentive email, welcome sequence, Friday Letter No. 1) is the HANDOFF section of `reports/DISTRIBUTION-LANE-2026-07-15.md`. Paste-ready copy: `kit-emails/WELCOME-SEQUENCE-FINAL.md` and `kit-emails/FRIDAY-LETTER-001-2026-07-17.md`.
+
 How the lead-magnet flow works and the one-time configuration you need to do in Kit.
 
 ## The architecture
@@ -8,7 +10,7 @@ You have one Kit form (ID `9388648`). It's used everywhere on the site: homepage
 
 After someone subscribes, Kit can do one thing: redirect them to a single URL or show a single success message. We use the redirect, and we point it at a universal welcome page on your site (`/welcome/`). That page lists every free download and tells them how the newsletter works.
 
-This means: every subscriber, no matter where they signed up, lands on `parentcoachplaybook.com/welcome/` and sees ALL your downloads. You add a new freebie, you update one page, every existing subscriber can come back and grab it. New subscribers see it on day one.
+This means: every subscriber, no matter where they signed up, lands on `parentcoachdesk.com/welcome/` and sees ALL your downloads. You add a new freebie, you update one page, every existing subscriber can come back and grab it. New subscribers see it on day one.
 
 ## The one-time setup in Kit
 
@@ -20,7 +22,7 @@ Do this once. After this, every new lead magnet just gets added to the welcome p
 4. Click **Settings** (top of the form editor) and look for **After subscribe** or **Incentive** settings
 5. Find the option labeled something like "What happens after subscribe?"
 6. Set it to **Redirect to URL** (instead of "Show success message")
-7. Paste this URL: `https://parentcoachplaybook.com/welcome/`
+7. Paste this URL: `https://parentcoachdesk.com/welcome/`
 8. **Save** the form
 
 That's the entire setup. From now on, anyone who subscribes anywhere on your site lands on `/welcome/` with both PDFs available for download.
@@ -35,7 +37,7 @@ After this setup, the PDF is gated behind the email. Anyone who wants the playbo
 
 When you ship a new free download, do these three things:
 
-1. Drop the new PDF into `public/` (the file name becomes the URL — e.g. `the-tryouts-rubric.pdf` → reachable at `parentcoachplaybook.com/the-tryouts-rubric.pdf`)
+1. Drop the new PDF into `public/` (the file name becomes the URL, e.g. `the-tryouts-rubric.pdf` → reachable at `parentcoachdesk.com/the-tryouts-rubric.pdf`)
 2. Edit `src/pages/welcome/index.astro` — add a new card in the same format as the two that exist
 3. Edit `src/pages/resources/index.astro` — add a card so it appears in the public Resources index too
 
@@ -54,6 +56,4 @@ Takes about 5 minutes to write. Worth doing every time you ship a new freebie. R
 
 ## What this doesn't do (and why that's fine)
 
-It doesn't auto-deliver the PDF to the subscriber's inbox. Kit's free plan doesn't support automated sequences. The subscriber lands on `/welcome/` and clicks the download. That's a reasonable substitute and doesn't cost you $30/month.
-
-If your list grows past 1,000 subscribers and you want fancy email automation (welcome sequences, drip campaigns, segmentation), revisit the paid plan. Until then, this setup is right.
+**Correction, 2026-07-15:** the "free plan can't auto-deliver" claim above is out of date in two ways. First, Kit's form incentive email delivers the PDF to the inbox on every plan, free included; turn it on (runbook step 2 in `reports/DISTRIBUTION-LANE-2026-07-15.md`). Second, Kit's free plan has shipped limited sequence/automation support since this file was written; confirm what your plan shows under Send → Sequences before assuming you need the paid tier. The welcome sequence copy is written and waiting in `kit-emails/WELCOME-SEQUENCE-FINAL.md` either way.

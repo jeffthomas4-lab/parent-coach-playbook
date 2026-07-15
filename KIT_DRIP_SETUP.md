@@ -1,5 +1,7 @@
 # What to Say When drip series: Kit setup spec
 
+> **Status 2026-07-15 (distribution lane): this tag-gated design is v2, not what ships first.** The tag it depends on (`drive-home-playbook-downloaded`) is applied by nothing, because the site runs one form for every signup (see `kit-emails/KIT-WIRING-CHECKLIST.md`, step 0). V1 ships as a universal welcome sequence attached to that one form, copy in `kit-emails/WELCOME-SEQUENCE-FINAL.md`, runbook in `reports/DISTRIBUTION-LANE-2026-07-15.md`. Come back to this spec when a second, magnet-specific form exists.
+
 Single doc covering the form-to-sequence wiring in Kit. Email content is yours
 to write. This file specifies the plumbing.
 
