@@ -9,6 +9,7 @@
 
 import type { APIRoute } from 'astro';
 import { requireAdmin, requireSameOrigin } from '../../../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -126,8 +127,8 @@ function updateEditorialFrontmatter(content: string, today: string): string | nu
   return openMarker + newFmBody + closeMarker + rest;
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as
+export const POST: APIRoute = async ({ request }) => {
+  const env = cfEnv as
     | { ADMIN_EMAILS?: string; GITHUB_TOKEN?: string }
     | undefined;
 

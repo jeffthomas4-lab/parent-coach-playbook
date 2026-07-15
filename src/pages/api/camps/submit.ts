@@ -27,6 +27,7 @@ import {
   type SpotsStatus,
 } from '../../../lib/camps-db';
 import { checkUrlHealth } from '../../../lib/url-health';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -118,8 +119,8 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
   }
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB: D1Database; BULK_IMPORT_TOKEN?: string } | undefined;
+export const POST: APIRoute = async ({ request }) => {
+  const env = cfEnv as { DB: D1Database; BULK_IMPORT_TOKEN?: string } | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const data = await readPayload(request);

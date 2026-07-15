@@ -4,11 +4,12 @@
 import type { APIRoute } from 'astro';
 import { approveCamp, getCampById, upsertDomainQuality } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ params, request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+export const POST: APIRoute = async ({ params, request }) => {
+  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
   if (!env?.DB) {
     return new Response(JSON.stringify({ ok: false, error: 'database not available' }), {
       status: 500,

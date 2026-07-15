@@ -8,6 +8,7 @@
 // user-agent are included as standard technical context, not for tracking.
 
 import type { APIRoute } from 'astro';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -25,8 +26,8 @@ const respond = (body: unknown, status = 200) =>
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as { DB: D1Database } | undefined;
+export const POST: APIRoute = async ({ request }) => {
+  const env = cfEnv as { DB: D1Database } | undefined;
   if (!env?.DB) {
     return respond({ ok: false, error: 'database not available' }, 500);
   }

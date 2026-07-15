@@ -18,6 +18,7 @@ import {
   countApprovedFutureCamps,
 } from '../../../lib/camps-db';
 import { checkUrlHealth } from '../../../lib/url-health';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -38,8 +39,8 @@ const json = (body: unknown, status = 200) =>
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = (locals as any).runtime?.env as CronEnv | undefined;
+export const POST: APIRoute = async ({ request }) => {
+  const env = cfEnv as CronEnv | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const headerKey = request.headers.get('x-cron-key') ?? '';
