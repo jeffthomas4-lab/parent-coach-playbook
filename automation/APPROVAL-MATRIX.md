@@ -47,3 +47,24 @@ No agent gets Class D status without Jeff naming the confidence threshold and th
 | Sunny | B | Drafts only, a human sends. |
 
 This table is a summary, not a substitute for each agent's own spec. Each agent's build session confirms and details its own class assignment.
+
+---
+
+## Worker paths and their class (added 2026-07-15)
+
+The agents above are people doing jobs. These are the machine paths the Worker exposes for them. Same matrix, same rules.
+
+| Path | Class | What it does | What Jeff has to touch |
+|---|---|---|---|
+| `POST /api/agent-runs` | A | Writes one `agent_runs` row, alerts Slack on failure, CANARY-pauses on a double failure | Nothing. It changes no live content, sends nothing to anyone, spends nothing. Machine token only. |
+| `POST /api/admin/editorial/approve` | C | Moves a piece to `jeff-approved`. Editorial sign-off, not a publication | The click, behind Cloudflare Access |
+| `POST /api/admin/editorial/publish` | C | Flips `draft: false`, commits to main, fires the deploy hook. The post goes live | The click, behind Cloudflare Access |
+| `POST /api/slack/actions` | C | Same publish, reached from the Slack button | The click. Signature-verified as coming from Slack, and the clicker's Slack ID must be on `SLACK_APPROVER_IDS` |
+| `sendEmail(..., 'outbound')` | B today, C on the flip | Parent- and operator-facing mail | Everything. Staged to Slack, not sent, until `EMAIL_MODE=send` |
+| `sendEmail(..., 'internal')` | B today, C on the flip | Admin alerts to an address on `ADMIN_EMAILS` | Staged to Slack until `EMAIL_ADMIN_MODE=send` |
+
+**Approve and publish are two routes on purpose.** Signing off on a draft and putting it in front of parents are different decisions, so they take different clicks. Nothing about the approve route publishes.
+
+**On the two email flips.** Neither is the Worker lane's to make. They are named here so the horizon in the build plan ("the gate has a horizon") is a switch someone can actually find, rather than a rewrite. The order they should go live in is admin first, parent-facing second, once admin mail has run clean for a while. Payments stay gated permanently and no flag exists for them.
+
+**What no flag can do.** There is no env var that publishes without a click. The publish path has no unattended caller by construction: both routes that reach it require a human identity, and there is no cron or queue wired to it.
