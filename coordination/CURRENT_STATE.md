@@ -2,7 +2,19 @@
 
 **Verified as of:** 2026-07-15
 **Verified by:** Claude Code (initial evidence-based snapshot)
-**Independent verification:** Not yet performed. Codex owns independent verification and future architectural reconciliation.
+**Independent verification:** Performed by Codex for the Cloudflare and D1 recovery scope on 2026-07-15; other baseline claims remain scoped by their own evidence labels.
+
+## Cloudflare and recovery verification update
+
+**Confirmed live, 2026-07-15:** `parentcoachdesk.com` and `www.parentcoachdesk.com` are attached to the `parent-coach-playbook` Pages project. The `parent-coach-desk-staging` Worker is deployed separately and has `SESSION`, `DB`, `PHOTOS`, `ASSETS`, `ADMIN_EMAILS`, and `SITE_URL` bindings. Its `DB` is `activity-radar`; `PHOTOS` is `activityradar-photos`. Secret values were not accessed.
+
+**Confirmed live, 2026-07-15:** `activityradar-enrichment` is deployed with scheduled and fetch handlers and binds the same `activity-radar` D1. `parent-coach-playbook-cron` is deployed and has `CRON_KEY`, `DEPLOY_HOOK_URL`, `MANUAL_TRIGGER_KEY`, and `SWEEP_URL` as secrets by name. The deployed cron version predates the repository change that makes `SWEEP_URL` a plain variable, so that change is not live.
+
+**Confirmed live, 2026-07-15:** Pages production has secret names `BULK_IMPORT_TOKEN`, `CRON_KEY`, and `GITHUB_TOKEN`. `parent-coach-playbook-link-checker` and `parentcoachplaybook-redirect` do not exist as Workers in the account. The link-checker config still contains placeholder D1 IDs and must not be deployed.
+
+**Verified by recovery exercise, 2026-07-15:** `activity-radar` had 23 tables, size 185,696,256 bytes, 198,287 organizations, and 2,411 programs at the read-only snapshot. Backup proving run 1 exported 245.3 MB on its first attempt. A fresh isolated SQLite restore passed `PRAGMA integrity_check` and matched both key counts exactly. Raw Wrangler-local replay did not complete in a practical time and is not claimed as proven. Two separate-day backup proving runs remain before scheduling is allowed.
+
+**Not verified:** Pages production non-secret binding inventory, matching values of the two `CRON_KEY` secrets, a successful fresh remote non-production D1 import, and any custom-domain attachment for the absent redirect Worker.
 
 ## Plan 001 baseline recovery update
 
