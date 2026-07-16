@@ -3,7 +3,7 @@
 **Plan ID:** 006  
 **Author:** Codex  
 **Date:** 2026-07-15  
-**Status:** In progress — cron repaired, Yelp retired, staging prepared; Access values required
+**Status:** Complete — cron repaired, Yelp retired, staging deployed and authenticated
 
 ## Objective
 
@@ -23,7 +23,8 @@ Staging can exercise authenticated administration and the approved automation su
 - Verified in code, 2026-07-15: `FORGE_DB` must bind `forge-command` for agent-run logging.
 - Confirmed live, 2026-07-15: Yelp was retired and its Worker deleted after verification found its required key absent.
 - Confirmed live, 2026-07-15: cron's prior deployed version predated the fail-loud code and repository `SWEEP_URL` variable; version `9af6e107-1a51-402f-9748-884326ca1445` repaired that drift.
-- Not available locally, 2026-07-15: Access team domain, Access application AUD, Slack credentials, and agent-run shared token.
+- Confirmed live, 2026-07-15: the staging Access application protects `/admin` and `/api/admin`; its team domain and application audience are now version-controlled as non-secret variables.
+- Not available locally, 2026-07-15: Slack credentials and agent-run shared token.
 
 ## Scope
 
@@ -111,7 +112,11 @@ Use the prior Worker version if cron behavior regresses. Staging can roll back t
 - Astro check completed with 0 errors; full build completed; fresh staging Wrangler dry-run included both D1 bindings.
 - Deployed cron version `9af6e107-1a51-402f-9748-884326ca1445`. It has fetch and scheduled handlers, plain `SWEEP_URL`, and retained secret names `CRON_KEY`, `DEPLOY_HOOK_URL`, and `MANUAL_TRIGGER_KEY`.
 - The former remote `SWEEP_URL` secret was replaced by the repository's plain variable as intended.
-- Staging was not deployed because `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` are unavailable; doing so would leave current admin routes unavailable.
+- Added the Access team domain and application audience as non-secret staging variables.
+- Deployed staging Worker version `a95f7b5d-74a8-4b1e-a1da-4f96eb285e04` with the expected KV, D1, R2, assets, site, admin allowlist, and Access bindings.
+- Anonymous acceptance checks returned 200 for `/` and a Cloudflare Access 302 for both `/admin` and `/api/admin/editorial`.
+- After email-OTP authentication, `/admin/editorial/` rendered the live editorial dashboard and read its content inventory. No mutation endpoint was invoked.
+- `/admin` itself reaches the application after authentication but returns the site's 404 because no `src/pages/admin/index.astro` route exists. This is an application navigation gap, not an Access failure, and is recorded for a follow-up plan.
 - Yelp was subsequently retired with Jeff's approval; see the addendum below.
 
 ### Yelp retirement addendum

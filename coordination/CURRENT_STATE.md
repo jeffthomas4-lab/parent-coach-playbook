@@ -194,3 +194,12 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - Binding and secret presence in each environment.
 - Whether the `parent-coach-playbook` Cloudflare project and the `activity-radar` D1 database are the production instances.
 - Whether the daily `0 13 * * *` cron is live, and against which environment.
+
+## 2026-07-15 live staging verification update
+
+- **Confirmed live:** `parent-coach-desk-staging` version `a95f7b5d-74a8-4b1e-a1da-4f96eb285e04` is deployed with `SESSION`, `DB` (`activity-radar`), `FORGE_DB` (`forge-command`), `PHOTOS`, `ASSETS`, `SITE_URL`, `ADMIN_EMAILS`, `ACCESS_TEAM_DOMAIN`, and `ACCESS_AUD` bindings.
+- **Confirmed live:** anonymous `/` returns 200; anonymous `/admin` and `/api/admin/editorial` are redirected to Cloudflare Access.
+- **Confirmed live:** after email-OTP authentication, `/admin/editorial/` renders the editorial dashboard. The authenticated test was read-only.
+- **Verified in code/live:** `/admin` has no index route and therefore returns the site's own 404 after Access succeeds. Existing admin entry points are subroutes such as `/admin/editorial/` and `/admin/camps/`.
+- **Confirmed live:** cron version `9af6e107-1a51-402f-9748-884326ca1445` is deployed with fetch and scheduled handlers and the intended `SWEEP_URL` variable.
+- **Confirmed live:** the former `activityradar-yelp` Worker is retired. Historical Yelp-derived database fields remain intact.

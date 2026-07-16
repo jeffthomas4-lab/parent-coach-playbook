@@ -72,3 +72,12 @@ None. No code changes were needed in this repo.
 - Bookshop.org: `/go/book-changing-the-game/` → landed on the correct book's Bookshop page with `affiliate=125074` (matching the account ID in `src/data/affiliates.json`) and `utm_source=parentcoachdesk&utm_medium=affiliate&utm_campaign=books-sports-parenting` attached, per the non-Amazon/non-CJ UTM rule in `src/pages/go/[slug].astro`.
 
 No missing or wrong tag on any of the three. This corroborates (independently, via live browser navigation rather than reading the automation's own report) what `pcd-link-health-monitor`'s 2026-07-13 report already claimed. **Verdict: the revenue mechanism works end to end for all three live networks. No P0 finding here.**
+
+## 2026-07-15 Cloudflare Security Insights review
+
+The supplied Cloudflare export contained 141 active findings: 0 Critical, 0 High, 65 Moderate, and 76 Low. Thirteen rows related to Parent Coach Desk or its Workers account surfaces.
+
+- The three duplicated `DMARC Record Error detected` rows are not supported by live DNS. `_dmarc.parentcoachdesk.com` publishes a syntactically valid DMARC TXT record. Its policy is monitoring-only (`p=none`), so moving to `quarantine` or `reject` remains a separate deliverability decision after report review.
+- A missing `security.txt` is a legitimate low-risk hardening opportunity and should be handled as a small, separately validated public-file change.
+- Bot Fight Mode, AI bot blocking, and AI Labyrinth were not enabled during this review. Each can affect APIs, search discovery, or legitimate automation and therefore requires an explicit product/security decision and staging verification.
+- Cloudflare Access was verified live on staging: anonymous admin and admin-API requests redirect to Access, and an authenticated email-OTP session reached `/admin/editorial/`. The test made no shared-data mutation.

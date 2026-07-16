@@ -69,6 +69,8 @@
   // Read by src/lib/admin-auth.ts. Add or remove emails here, redeploy, done.
   "vars": {
     "SITE_URL": "https://parentcoachdesk.com",
-    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas4@gmail.com"
+    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas4@gmail.com",
+    "ACCESS_TEAM_DOMAIN": "fieldforge.cloudflareaccess.com",
+    "ACCESS_AUD": "e271a2858edec490fbe3995e6b201f66333d7975b92f01541fe0f912463f7737"
   }
 }
