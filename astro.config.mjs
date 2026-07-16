@@ -34,6 +34,10 @@ export default defineConfig({
   // runs server-side at the edge. Used for SSR + D1 access.
   output: 'static',
   adapter: cloudflare({
+    // The adapter bakes the selected Wrangler configuration into dist/server.
+    // Normal builds remain staging-safe; the production wrapper sets this to
+    // wrangler.production.jsonc explicitly for an auditable release artifact.
+    configPath: process.env.WRANGLER_CONFIG_PATH || undefined,
     platformProxy: { enabled: true },
     // This static-heavy site prerenders thousands of content and protected preview
     // pages. Running that work through the adapter's workerd bridge exhausted the

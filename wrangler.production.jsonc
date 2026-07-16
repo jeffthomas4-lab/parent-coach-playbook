@@ -1,0 +1,48 @@
+{
+  // Production Worker configuration for the approved Pages -> Workers cutover.
+  // Keep wrangler.jsonc staging-only; production commands must name this file.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "parent-coach-desk",
+  "compatibility_date": "2026-04-30",
+  "compatibility_flags": ["nodejs_compat"],
+
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "activity-radar",
+      "database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
+    },
+    {
+      "binding": "FORGE_DB",
+      "database_name": "forge-command",
+      "database_id": "747cf988-a557-48bd-9d03-bea09e184f94"
+    }
+  ],
+
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS",
+      "bucket_name": "activityradar-photos"
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "1e0eb975e7784b799ecedc05ab754096"
+    }
+  ],
+
+  "vars": {
+    "SITE_URL": "https://parentcoachdesk.com",
+    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas4@gmail.com",
+    "ACCESS_TEAM_DOMAIN": "fieldforge.cloudflareaccess.com",
+    "ACCESS_AUD": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23"
+  }
+}
