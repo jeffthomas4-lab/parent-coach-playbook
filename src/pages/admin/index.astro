@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const prerender = true;
+
+const sections = [
+  {
+    href: '/admin/editorial/',
+    title: 'Editorial review',
+    description: 'Review content status, flags, scores, previews, and approvals.',
+  },
+  {
+    href: '/admin/camps/',
+    title: 'Camps moderation',
+    description: 'Review pending camp submissions and moderation queues.',
+  },
+  {
+    href: '/admin/claims/',
+    title: 'Claims',
+    description: 'Review organization ownership claims.',
+  },
+  {
+    href: '/admin/suggestions/',
+    title: 'Suggestions',
+    description: 'Review proposed corrections and listing changes.',
+  },
+  {
+    href: '/admin/link-health/',
+    title: 'Link health',
+    description: 'Inspect external-link checks and broken-link candidates.',
+  },
+  {
+    href: '/admin/source-quality',
+    title: 'Source quality',
+    description: 'Inspect source reliability and verification status.',
+  },
+  {
+    href: '/admin/search-signals',
+    title: 'Search signals',
+    description: 'Review search activity and unmet reader needs.',
+  },
+];
+---
+
+<BaseLayout title="Admin desk" description="Parent Coach Desk administration" noindex={true}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">Admin</p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+        Desk operations
+      </h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Choose a workspace. Cloudflare Access protects this page and every linked administrative route.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      <ul class="grid gap-4 md:grid-cols-2">
+        {sections.map((section) => (
+          <li>
+            <a
+              href={section.href}
+              class="block h-full border border-bone bg-paper p-5 transition-colors hover:bg-paper-warm"
+            >
+              <h2 class="font-display text-ink text-xl font-medium">{section.title}</h2>
+              <p class="font-display text-ink-soft mt-2 text-sm leading-snug">{section.description}</p>
+              <p class="font-display italic text-rust mt-4 text-sm font-medium">Open workspace →</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

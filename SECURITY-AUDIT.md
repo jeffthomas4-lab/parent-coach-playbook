@@ -78,6 +78,6 @@ No missing or wrong tag on any of the three. This corroborates (independently, v
 The supplied Cloudflare export contained 141 active findings: 0 Critical, 0 High, 65 Moderate, and 76 Low. Thirteen rows related to Parent Coach Desk or its Workers account surfaces.
 
 - The three duplicated `DMARC Record Error detected` rows are not supported by live DNS. `_dmarc.parentcoachdesk.com` publishes a syntactically valid DMARC TXT record. Its policy is monitoring-only (`p=none`), so moving to `quarantine` or `reject` remains a separate deliverability decision after report review.
-- A missing `security.txt` is a legitimate low-risk hardening opportunity and should be handled as a small, separately validated public-file change.
+- The missing `security.txt` finding is resolved in repository code and verified on staging. The public file uses `support@parentcoachdesk.com`, declares English as the preferred language, has a canonical production URL, and expires on 2027-07-15. Production remains unchanged until an explicitly approved production deployment.
 - Bot Fight Mode, AI bot blocking, and AI Labyrinth were not enabled during this review. Each can affect APIs, search discovery, or legitimate automation and therefore requires an explicit product/security decision and staging verification.
 - Cloudflare Access was verified live on staging: anonymous admin and admin-API requests redirect to Access, and an authenticated email-OTP session reached `/admin/editorial/`. The test made no shared-data mutation.

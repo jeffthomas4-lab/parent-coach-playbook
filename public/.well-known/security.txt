@@ -1,0 +1,4 @@
+Contact: mailto:support@parentcoachdesk.com
+Expires: 2027-07-15T23:59:59Z
+Preferred-Languages: en
+Canonical: https://parentcoachdesk.com/.well-known/security.txt
