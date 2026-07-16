@@ -95,13 +95,14 @@ describe('POST /api/admin/editorial/publish', () => {
   });
 
   it('failure path: an already-published post returns 409', async () => {
-    const live = `---\ntitle: Live\ndraft: false\neditorial:\n  status: published\n  jeffReviewedAt: 2026-07-15\n---\nBody.\n`;
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(live), sha: 's' }), { status: 200 })),
-    );
+    const live = `---\ntitle: Live\ndraft: false\neditorial:\n  status: published\n  jeffReviewedAt: 2020-01-01\n---\nBody.\n`;
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(live), sha: 's' }), { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
     const res = await POST(makeContext({ request: adminRequest({ collection: 'articles', slug: 'live' }), env: ENV }));
     expect(res.status).toBe(409);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   it('failure path: a missing draft returns 404', async () => {

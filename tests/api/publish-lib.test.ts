@@ -172,7 +172,7 @@ describe('publishDraft', () => {
   });
 
   it('a double-clicked button does not produce a second commit', async () => {
-    const published = `---\ntitle: Live\ndraft: false\neditorial:\n  status: published\n  jeffReviewedAt: ${OPTS.today}\n---\nBody.\n`;
+    const published = `---\ntitle: Live\ndraft: false\neditorial:\n  status: published\n  jeffReviewedAt: 2020-01-01\n---\nBody.\n`;
     const fetchMock = vi
       .fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(published), sha: 'sha1' }), { status: 200 }));

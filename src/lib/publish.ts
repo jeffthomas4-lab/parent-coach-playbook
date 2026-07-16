@@ -97,6 +97,11 @@ export function flipDraftFrontmatter(
     if (draftLine[1] === 'true') {
       newFm = newFm.replace(/^draft:\s*true\s*$/m, 'draft: false');
       changed = true;
+    } else {
+      // Publishing is idempotent even across UTC date boundaries. A repeated
+      // approval must not refresh editorial metadata, create another commit,
+      // or fire the deploy hook after the draft has already gone live.
+      return { content, changed: false };
     }
   } else {
     // No draft key at all: the file is already publishable. Adding
