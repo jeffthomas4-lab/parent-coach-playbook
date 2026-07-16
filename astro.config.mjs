@@ -35,6 +35,11 @@ export default defineConfig({
   output: 'static',
   adapter: cloudflare({
     platformProxy: { enabled: true },
+    // This static-heavy site prerenders thousands of content and protected preview
+    // pages. Running that work through the adapter's workerd bridge exhausted the
+    // default Node heap; Node prerendering keeps the build in one runtime. On-demand
+    // routes remain workerd-rendered, while prerendered pages remain static assets.
+    prerenderEnvironment: 'node',
     // This site never calls astro:assets' Cloudflare Images runtime (confirmed:
     // zero usage of Astro.session or astro:assets in src/). Passthrough skips
     // provisioning the auto-detected IMAGES binding entirely -- Card M3,

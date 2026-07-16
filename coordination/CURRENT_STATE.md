@@ -203,3 +203,11 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Verified in code/live:** `/admin` has no index route and therefore returns the site's own 404 after Access succeeds. Existing admin entry points are subroutes such as `/admin/editorial/` and `/admin/camps/`.
 - **Confirmed live:** cron version `9af6e107-1a51-402f-9748-884326ca1445` is deployed with fetch and scheduled handlers and the intended `SWEEP_URL` variable.
 - **Confirmed live:** the former `activityradar-yelp` Worker is retired. Historical Yelp-derived database fields remain intact.
+
+## 2026-07-15 build-stability update
+
+- **Verified in code:** the build contains 4,060 prerendered HTML pages, including 1,816 protected admin preview pages, from 1,852 Markdown content entries. Astro uses its default build concurrency of one, and the application does not use `astro:assets`.
+- **Verified in code:** `@astrojs/cloudflare` now uses its supported `prerenderEnvironment: 'node'` option. This affects build-time generation only; on-demand routes continue to execute in workerd and prerendered pages remain static assets.
+- **Verified by tests:** `npm run check` passes with 0 errors. Two consecutive full `npm run build` runs passed with `NODE_OPTIONS` explicitly absent, in 95.4 and 68.3 seconds. Both retained 4,060 HTML files and 1,816 admin preview files.
+- **Verified by build evidence:** the prior default-heap failures were caused by workerd-based prerendering across the large static route set, not elevated build concurrency, admin preview expansion alone, or Astro image processing. Admin previews materially increase scale but remain intentionally prerendered to keep the runtime Worker small.
+- **Confirmed live, unchanged:** staging remains version `88711555-7f3b-4123-bec6-098075f2a095`. Plan 008 did not deploy because the change affects only the build-time prerender environment and generated route counts were unchanged. Production was not deployed.
