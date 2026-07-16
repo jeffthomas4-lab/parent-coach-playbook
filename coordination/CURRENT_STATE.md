@@ -1,5 +1,14 @@
 # Current State
 
+## 2026-07-15 production cutover preflight update
+
+- **Verified in code:** branch `migration/pages-to-workers-staging` is clean at commit `b7afc2e` before Plan 011 implementation.
+- **Confirmed live:** production remains Pages project `parent-coach-playbook`, deployment `3ee0e373-04ef-4540-90ac-b8f41e8ebec5`; no `parent-coach-desk` production Worker exists.
+- **Confirmed live:** production apex returns 200, `www` redirects to apex, while `/admin`, `/api/admin/editorial`, and `/.well-known/security.txt` return 404.
+- **Confirmed live:** no Access application protects `parentcoachdesk.com`. Existing relevant applications protect staging, workers.dev, or the legacy `parentcoachplaybook.com` hostname. This is a hard gate before domain cutover because the current build contains static protected admin pages.
+- **Confirmed live:** Pages exposes secret names `BULK_IMPORT_TOKEN`, `CRON_KEY`, and `GITHUB_TOKEN`, but Cloudflare does not expose their values. Secure value transfer is a cutover dependency; values must never enter repository evidence or chat.
+- **Approved by Jeff:** production Access setup, Worker deployment, Pages-to-Workers domain cutover, validation, rollback if required, and local evidence commit under Plan 011. No production data mutation or Git push is approved.
+
 **Verified as of:** 2026-07-15
 **Verified by:** Claude Code (initial evidence-based snapshot)
 **Independent verification:** Performed by Codex for the Cloudflare and D1 recovery scope on 2026-07-15; other baseline claims remain scoped by their own evidence labels.
