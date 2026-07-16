@@ -9,6 +9,17 @@
 - **Confirmed live:** Pages exposes secret names `BULK_IMPORT_TOKEN`, `CRON_KEY`, and `GITHUB_TOKEN`, but Cloudflare does not expose their values. Secure value transfer is a cutover dependency; values must never enter repository evidence or chat.
 - **Approved by Jeff:** production Access setup, Worker deployment, Pages-to-Workers domain cutover, validation, rollback if required, and local evidence commit under Plan 011. No production data mutation or Git push is approved.
 
+## 2026-07-15 production Pages-to-Workers cutover update
+
+- **Verified in code:** production build selection is explicit and cross-platform through `npm run build:production`, which directs the Astro Cloudflare adapter to `wrangler.production.jsonc` while leaving the root staging config unchanged.
+- **Verified by tests/build:** 27 files and 232 tests passed; both TypeScript checks passed; Astro check reported 0 errors; npm audit reported 0 vulnerabilities; the production build passed without `NODE_OPTIONS` in 62.5 seconds; the exact generated Worker dry run read 9,233 assets and showed the expected bindings.
+- **Confirmed live, 2026-07-15:** Access application `Parent Coach Desk Production Admin` protects `parentcoachdesk.com/admin*` and `parentcoachdesk.com/api/admin*` with the proven owner-email allow policy and application AUD used by Worker JWT validation.
+- **Confirmed live:** production Worker `parent-coach-desk` is active at 100% on version `92516f62-b891-4903-94e1-204a972ee2ae` (code upload `dd8c1d17-f81e-41e9-b116-f56bae3eb318` plus three secret-change versions). Secret names are `BULK_IMPORT_TOKEN`, `CRON_KEY`, and `GITHUB_TOKEN`; values were not inspected or recorded.
+- **Confirmed live:** `parentcoachdesk.com` and `www.parentcoachdesk.com` are Worker Custom Domains. Apex returns 200, `www` returns 301 to apex, and `/.well-known/security.txt` returns 200 as `text/plain`.
+- **Confirmed live:** anonymous `/admin`, `/admin/`, and `/api/admin/editorial` return Cloudflare Access 302 redirects. Authenticated read-only checks rendered `Desk operations`, `Editorial review board`, and an article preview.
+- **Confirmed live:** Pages project `parent-coach-playbook` remains available at `parent-coach-playbook.pages.dev` with rollback deployment `3ee0e373-04ef-4540-90ac-b8f41e8ebec5`; its custom domains were removed but the project was not deleted.
+- **Confirmed unchanged:** no D1/R2 write, migration, cron invocation, publish/email/Slack action, bot/DMARC change, Git push, or Pages deletion occurred.
+
 **Verified as of:** 2026-07-15
 **Verified by:** Claude Code (initial evidence-based snapshot)
 **Independent verification:** Performed by Codex for the Cloudflare and D1 recovery scope on 2026-07-15; other baseline claims remain scoped by their own evidence labels.
