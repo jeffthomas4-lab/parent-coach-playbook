@@ -12,12 +12,12 @@ This is the only place active status lives. Do not duplicate it elsewhere.
 **Task:** Plan 011 production Pages-to-Workers cutover
 **Tier:** 3
 **Branch:** `migration/pages-to-workers-staging`
-**Commit range:** `c600a48..9bea6cf` plus the pending coordination-evidence commit.
-**Status:** Production cutover complete. Worker version `92516f62-b891-4903-94e1-204a972ee2ae` is active at 100% on apex and `www`; acceptance passed.
-**Human approval required:** Yes. Pushing and merging remain gated.
+**Commit range:** Plan 011 implementation and evidence are complete through `8ca6185`; status cleanup is `e7e7faf`.
+**Status:** Complete. Production is healthy, the migration branch is published, and its reviewed history has been fast-forwarded and pushed to `main`.
+**Human approval required:** No remaining approval gate for Plan 011.
 
 **Blocking Jeff's attention:**
 
-Decide whether and when to push or merge the completed branch.
+None for Plan 011.
 
-**Next step:** No production deployment work remains under Plan 011. Preserve the Pages rollback target and do not push or merge without Jeff's instruction.
+**Next step:** Preserve the Pages rollback target during the Worker soak period. Plan 004's remaining separate-day D1 recovery proofs are a distinct follow-on workstream.
