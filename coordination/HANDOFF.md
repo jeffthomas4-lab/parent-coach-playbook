@@ -6,18 +6,18 @@ This is the only place active status lives. Do not duplicate it elsewhere.
 
 ---
 
-**Active handoff:** `handoffs/2026-07-15-plan-008-build-stability.md`
+**Active handoff:** `handoffs/2026-07-15-plans-009-010-staging-release-rehearsal.md`
 **From:** Codex
 **To:** Jeff
-**Task:** Plan 008 build stability
-**Tier:** 2
+**Task:** Plans 009 and 010 staging release rehearsal and publish idempotency
+**Tier:** 3
 **Branch:** `migration/pages-to-workers-staging`
-**Commit range:** This Plan 008 commit.
-**Status:** Implementation and independent review complete; two default-heap full builds passed.
-**Human approval required:** None for the completed local work. Pushing, production deployment, merge, production configuration, and shared-data mutation remain separately gated.
+**Commit range:** `13bfec6` plus the pending coordination-evidence commit.
+**Status:** Staging rehearsal complete and approved for the production approval gate. Staging version `6078f32b-bfde-4c43-bb94-20601702d9c0` is active at 100%.
+**Human approval required:** Yes. Production Pages-to-Workers cutover requires a separate explicit plan and Jeff approval. Pushing and merging also remain gated.
 
 **Blocking Jeff's attention:**
 
-None for Plan 008.
+Decide whether to authorize production cutover planning and execution.
 
-**Next step:** Await the next approved ParentCoachDesk task.
+**Next step:** Present the production cutover gate to Jeff; do not alter production without explicit authorization.

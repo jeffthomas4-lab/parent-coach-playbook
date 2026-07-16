@@ -3,7 +3,7 @@
 **Plan ID:** 010
 **Author:** Codex
 **Date:** 2026-07-15
-**Status:** Approved by Jeff on 2026-07-15
+**Status:** Complete
 
 ## Objective
 
@@ -103,3 +103,11 @@ No independent deployment. Include the fix in the Plan 009 staging rehearsal aft
 ## Rollback plan
 
 Roll back the focused source/test commit if draft publishing regresses. No data rollback is involved.
+
+## Execution evidence
+
+- Commit `13bfec6` returns immediately with `changed: false` for explicit `draft: false` content before editorial-date stamping.
+- Both already-published fixtures use `jeffReviewedAt: 2020-01-01`, proving behavior across a date boundary rather than only within one UTC day.
+- The library and API tests assert exactly one fetch, proving no GitHub PUT or deploy-hook request occurs.
+- Focused publish tests passed 32/32; the full suite passed 232/232.
+- The full Plan 009 release gate passed before staging deployment.

@@ -3,7 +3,7 @@
 **Plan ID:** 009
 **Author:** Codex
 **Date:** 2026-07-15
-**Status:** Approved by Jeff on 2026-07-15
+**Status:** Complete
 
 ## Objective
 
@@ -118,3 +118,18 @@ Deploy only the root Worker configuration to `parent-coach-desk-staging` after a
 ## Rollback plan
 
 If staging acceptance fails, roll back `parent-coach-desk-staging` to version `88711555-7f3b-4123-bec6-098075f2a095` and repeat the failing read-only check. No schema or data rollback is needed.
+
+## Execution evidence
+
+- Release candidate: clean commit `13bfec6c2f13e77f31e2d17832018e05d50863f4`.
+- `npm.cmd audit --audit-level=high`: exit 0; 0 vulnerabilities. Jeff explicitly approved sending dependency metadata to npm after the environment disclosed that behavior.
+- Focused publish tests: 32/32 passed. Full unit suite: 27 files and 232/232 tests passed.
+- `npx.cmd tsc -p tsconfig.verify.json --noEmit`: exit 0.
+- `npx.cmd tsc -p worker-cron/tsconfig.json --noEmit`: exit 0.
+- `npm.cmd run check` with `NODE_OPTIONS` absent: exit 0; 0 errors, 0 warnings, 349 hints.
+- `npm.cmd run build` with `NODE_OPTIONS` absent: exit 0 in 58.6 seconds; 4,060 HTML pages and 1,816 admin previews retained. Timestamp-only manifest churn was reverted.
+- `npx.cmd wrangler deploy --dry-run`: exit 0; 9,233 assets and all expected bindings present.
+- Staging deployment: version `6078f32b-bfde-4c43-bb94-20601702d9c0`, active at 100%; Worker startup time 23 ms. Rollback target remains `88711555-7f3b-4123-bec6-098075f2a095`.
+- Anonymous `/` and `/.well-known/security.txt`: 200. Anonymous `/admin` and `/api/admin/editorial`: Cloudflare Access 302.
+- Authenticated read-only checks: `/admin/` rendered `Desk operations` with seven workspace links; `/admin/editorial/` rendered `Editorial review board`; `/admin/preview/articles/night-before-tryouts/` rendered `The night before tryouts`.
+- No production deployment, push, migration, shared-data write, outbound publish action, secret/binding change, cron invocation, bot change, or DMARC change occurred.

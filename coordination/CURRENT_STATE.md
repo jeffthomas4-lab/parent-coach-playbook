@@ -211,3 +211,13 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Verified by tests:** `npm run check` passes with 0 errors. Two consecutive full `npm run build` runs passed with `NODE_OPTIONS` explicitly absent, in 95.4 and 68.3 seconds. Both retained 4,060 HTML files and 1,816 admin preview files.
 - **Verified by build evidence:** the prior default-heap failures were caused by workerd-based prerendering across the large static route set, not elevated build concurrency, admin preview expansion alone, or Astro image processing. Admin previews materially increase scale but remain intentionally prerendered to keep the runtime Worker small.
 - **Confirmed live, unchanged:** staging remains version `88711555-7f3b-4123-bec6-098075f2a095`. Plan 008 did not deploy because the change affects only the build-time prerender environment and generated route counts were unchanged. Production was not deployed.
+
+## 2026-07-15 staging release rehearsal update
+
+- **Verified in code:** commit `13bfec6` makes explicit `draft: false` publishing idempotent before editorial-date stamping, preventing a later repeated approval from issuing a second GitHub PUT or deploy-hook request.
+- **Verified by tests:** focused publish tests pass 32/32; the full suite passes 232/232; both TypeScript checks pass; Astro check reports 0 errors; dependency audit reports 0 vulnerabilities.
+- **Verified by build:** the exact clean commit built without `NODE_OPTIONS` in 58.6 seconds and retained 4,060 HTML pages, including 1,816 admin previews. The Wrangler dry run read 9,233 assets and contained every expected binding.
+- **Confirmed live, 2026-07-15:** `parent-coach-desk-staging` version `6078f32b-bfde-4c43-bb94-20601702d9c0` is active at 100% with fetch handler, 23 ms startup, and the expected `SESSION`, `DB`, `FORGE_DB`, `PHOTOS`, `ASSETS`, `SITE_URL`, `ADMIN_EMAILS`, `ACCESS_TEAM_DOMAIN`, and `ACCESS_AUD` names. Prior version `88711555-7f3b-4123-bec6-098075f2a095` is the rollback target.
+- **Confirmed live:** anonymous `/` and `/.well-known/security.txt` return 200; anonymous `/admin` and `/api/admin/editorial` return Cloudflare Access 302 responses.
+- **Confirmed live, authenticated and read-only:** `/admin/` renders `Desk operations` with seven links, `/admin/editorial/` renders `Editorial review board`, and an article preview renders successfully.
+- **Confirmed live, unchanged:** production Pages was not deployed or altered. No shared D1/R2 write, migration, outbound publish action, secret/binding change, cron invocation, bot change, or DMARC change occurred.
