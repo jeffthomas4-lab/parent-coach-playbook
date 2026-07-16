@@ -1,8 +1,8 @@
 # Plan: build stability
 
-**Plan ID:** 008  
-**Author:** Codex  
-**Date:** 2026-07-15  
+**Plan ID:** 008
+**Author:** Codex
+**Date:** 2026-07-15
 **Status:** Complete
 
 ## Objective

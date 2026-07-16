@@ -1,8 +1,8 @@
 # Review: build stability
 
-**Date:** 2026-07-15  
-**Reviewer:** Codex  
-**Plan:** 008  
+**Date:** 2026-07-15
+**Reviewer:** Codex
+**Plan:** 008
 **Verdict:** Approved
 
 ## Independent assessment

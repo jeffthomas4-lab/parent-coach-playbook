@@ -1,9 +1,9 @@
 # Handoff: Plan 008 build stability
 
-**Date:** 2026-07-15  
-**From:** Codex  
-**To:** Jeff  
-**Plan:** `coordination/plans/008-build-stability.md`  
+**Date:** 2026-07-15
+**From:** Codex
+**To:** Jeff
+**Plan:** `coordination/plans/008-build-stability.md`
 **Branch:** `migration/pages-to-workers-staging`
 
 ## Completed
