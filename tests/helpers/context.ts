@@ -17,6 +17,8 @@ import { __primeAccessKeyCache } from '../../src/lib/access-jwt';
 import { makeAccessToken, getPublicJwk, TEAM_DOMAIN, AUD } from './access-token';
 
 const TEST_ACCESS_EMAILS = [
+  'eepskalla@gmail.com',
+  'jeffthomas4@gmail.com',
   'jeffthomas@pugetsound.edu',
   'stranger@example.com',
   'nobody@example.com',

@@ -6,7 +6,7 @@ import { makeContext, readJson } from '../helpers/context';
 
 import { POST } from '../../src/pages/api/admin/editorial/approve';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'eepskalla@gmail.com,jeffthomas4@gmail.com';
 const GITHUB_TOKEN = 'gh_fake_token';
 
 const SAMPLE_MD = `---
@@ -27,7 +27,7 @@ function adminRequest(body: unknown = { collection: 'articles', slug: 'test-arti
     headers: {
       'content-type': 'application/json',
       origin: 'https://parentcoachdesk.com',
-      'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      'Cf-Access-Authenticated-User-Email': 'eepskalla@gmail.com',
       ...headers,
     },
     body: JSON.stringify(body),
@@ -52,6 +52,18 @@ describe('POST /api/admin/editorial/approve', () => {
     const ctx = makeContext({ request: req, params: {}, env: { ADMIN_EMAILS, GITHUB_TOKEN } });
     const res = await POST(ctx);
     expect(res.status).toBe(401);
+  });
+
+  it('auth: rejects the retired test identity when production allowlist values are used', async () => {
+    const ctx = makeContext({
+      request: adminRequest(undefined, {
+        'Cf-Access-Authenticated-User-Email': 'jeffthomas@pugetsound.edu',
+      }),
+      params: {},
+      env: { ADMIN_EMAILS, GITHUB_TOKEN },
+    });
+    const res = await POST(ctx);
+    expect(res.status).toBe(403);
   });
 
   it('happy path: approving an article updates frontmatter and commits via GitHub', async () => {
