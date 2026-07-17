@@ -9,12 +9,8 @@ import json
 import sqlite3
 from pathlib import Path
 
-EXPECTED_MIGRATIONS = [
-    "0011_trust_cases.sql",
-    "0012_trust_drafts_and_notification_outbox.sql",
-    "0013_demand_events_v1.sql",
-    "0014_trust_intake_idempotency.sql",
-]
+MIGRATIONS_DIR = Path(__file__).resolve().parent.parent / "migrations-pcd-ops"
+EXPECTED_MIGRATIONS = sorted(path.name for path in MIGRATIONS_DIR.glob("*.sql"))
 EXPECTED_TABLES = {
     "content_suppressions",
     "demand_events_v1",

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T03:05:00Z",
+  "environment": "staging",
+  "deployment": {
+    "worker": "parent-coach-desk-staging",
+    "url": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+    "previous_version_id": "4ff8371d-d460-4652-9eb3-c37d4d2e0b9c",
+    "current_version_id": "ca65a346-9624-4cfc-b570-05a4c0d8e8c8",
+    "generated_configuration": "dist/server/wrangler.json",
+    "bindings_verified": ["SESSION", "DB", "PCD_OPS_DB", "PHOTOS", "ASSETS"],
+    "application_admin_allowlist": ["eepskalla@gmail.com", "jeffthomas4@gmail.com"]
+  },
+  "read_only_acceptance": {
+    "home": 200,
+    "security_txt": 200,
+    "privacy_redirect": 301,
+    "terms": 200,
+    "anonymous_admin": 302,
+    "anonymous_admin_api": 302
+  },
+  "accessibility_recheck": {
+    "skip_link_present": true,
+    "skip_target": "main",
+    "skip_target_tabindex": "-1",
+    "native_keyboard_activation_verified": false,
+    "limitation": "The browser automation click did not dispatch a native fragment navigation. Treat end-to-end keyboard activation as pending until it is observed in a browser that dispatches it."
+  },
+  "backup_restore_rehearsal": {
+    "source_database": "parent-coach-desk-ops-staging",
+    "source_database_id": "7f0da00d-bc98-464f-8702-ce0fb381dd5e",
+    "export_destination": "local temporary storage",
+    "export_bytes": 33122,
+    "export_sha256": "a8fe330d119903c57ec259bdc83e10dcdaa0a9d4a93e3dd1e55fe69dd43bae96",
+    "restored_to": "new isolated local SQLite verification file",
+    "integrity_check": "ok",
+    "foreign_key_violation_count": 0,
+    "migration_range": "0011 through 0022",
+    "expected_tables_present": true,
+    "remote_restore_target_created": false
+  },
+  "safety_boundary": {
+    "production_worker_deployed": false,
+    "production_database_exported": false,
+    "production_database_restored": false,
+    "production_r2_accessed": false,
+    "customer_or_payment_data_used": false
+  },
+  "remaining_limits": [
+    "This is an isolated staging operations-database restore, not a representative production directory or customer-data restore.",
+    "No Worker rollback exercise has executed.",
+    "No native keyboard skip-link activation has yet been observed in the available browser automation surface."
+  ]
+}
