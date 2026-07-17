@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T07:10:48.775Z",
+  "environment": "production",
+  "method": "Read-only in-app browser navigation and DOM layout measurement at a temporary 640x320 CSS-pixel landscape viewport. No consent decision, form submission, authentication, administrative action, or production data write occurred. The viewport was reset and the temporary tab was closed after testing.",
+  "directory": {
+    "path": "/camps/",
+    "viewport_width": 640,
+    "viewport_height": 320,
+    "document_client_width": 625,
+    "document_scroll_width": 625,
+    "body_scroll_width": 625,
+    "h1_count": 1,
+    "main_tabindex": "-1",
+    "visible_primary_controls": [
+      { "label": "Toggle menu", "width": 55, "height": 44 },
+      { "label": "Accept", "width": 88, "height": 37 },
+      { "label": "No thanks", "width": 113, "height": 37 }
+    ],
+    "note": "The analytics-consent dialog was visible. It was not interacted with; its informational inline link is not counted as a primary control."
+  },
+  "detail": {
+    "path": "/camps/boys-and-girls-club-al-davies-summer-program/",
+    "viewport_width": 640,
+    "viewport_height": 320,
+    "document_client_width": 625,
+    "document_scroll_width": 625,
+    "body_scroll_width": 625,
+    "h1_count": 1,
+    "main_tabindex": "-1",
+    "source_or_registration_links_observed": 3
+  },
+  "conclusion": "No horizontal page overflow was observed in the measured populated directory or representative detail route at the landscape viewport. This is narrow visual evidence only.",
+  "limitations": [
+    "This does not prove native 200% browser zoom, real or emulated touch, keyboard dispatch, screen-reader behavior, safe-area insets, reduced motion, virtual-keyboard behavior, constrained-network behavior, or complete form journeys.",
+    "This does not establish WCAG conformance or close the customer_journeys release gate by itself."
+  ]
+}
