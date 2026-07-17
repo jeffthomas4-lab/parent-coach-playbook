@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T06:20:00Z",
+  "environment": "production",
+  "method": "Read-only in-app browser navigation and DOM layout measurement. No consent decision, form submission, authentication, administrative action, or production data write occurred.",
+  "deployment": {
+    "worker_version_id": "35449367-a085-4096-bb7b-6886c048cea5",
+    "source_commit": "bf4c424"
+  },
+  "directory": {
+    "path": "/camps/",
+    "populated_listing_state_observed": true,
+    "measurements": [
+      { "viewport_width": 320, "document_client_width": 305, "document_scroll_width": 305, "body_scroll_width": 305, "undersized_visible_form_targets": 0 },
+      { "viewport_width": 360, "document_client_width": 345, "document_scroll_width": 345, "body_scroll_width": 345, "undersized_visible_form_targets": 0 },
+      { "viewport_width": 390, "document_client_width": 375, "document_scroll_width": 375, "body_scroll_width": 375, "undersized_visible_form_targets": 0 },
+      { "viewport_width": 430, "document_client_width": 415, "document_scroll_width": 415, "body_scroll_width": 415, "undersized_visible_form_targets": 0 }
+    ],
+    "main_tabindex": "-1"
+  },
+  "detail": {
+    "path": "/camps/boys-and-girls-club-al-davies-summer-program/",
+    "viewport_width": 320,
+    "document_client_width": 305,
+    "document_scroll_width": 305,
+    "body_scroll_width": 305,
+    "h1_count": 1,
+    "main_tabindex": "-1",
+    "authoritative_source_or_registration_links_observed": 2
+  },
+  "conclusion": "The prior production populated-directory horizontal-overflow finding is closed for the measured portrait widths. Native keyboard skip-link activation, screen-reader behavior, touch, 200% zoom, landscape, constrained-network, correction/removal, subscription, and payment journeys remain unproved."
+}
