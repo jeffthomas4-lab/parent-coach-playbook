@@ -39,4 +39,19 @@ describe('owner D1 store', () => {
     await expect(transitionProposedEditByStaff(dbWithChanges([1, 1], []), { proposedEditId: 'edit-1', eventId: 'event-2', verifiedStaffRef: 'staff:1', expectedFromStatus: 'under_review', nextStatus: 'approved', reasonCode: 'supported', occurredAt: '2026-07-16T00:00:00Z', idempotencyKey: 'edit-decision-1' })).resolves.toBe('created');
     await expect(transitionProposedEditByCustomer(dbWithChanges([0, 0], []), { proposedEditId: 'edit-1', eventId: 'event-2', customerUserId: 'user-1', expectedFromStatus: 'submitted', nextStatus: 'withdrawn', reasonCode: 'withdraw', occurredAt: '2026-07-16T00:00:00Z', idempotencyKey: 'edit-withdraw-1' })).resolves.toBe('denied');
   });
+
+  it('rejects invalid state transitions before any owner workflow write', async () => {
+    const sql: string[] = [];
+    await expect(decideOwnerClaim(dbWithChanges([1, 1], sql), {
+      claimId: 'claim-1', eventId: 'event-invalid-claim', verifiedStaffRef: 'staff:1',
+      expectedFromStatus: 'under_review', decision: 'suspended', reasonCode: 'invalid_path',
+      occurredAt: '2026-07-16T00:00:00Z', idempotencyKey: 'invalid-claim-transition',
+    })).resolves.toBe('denied');
+    await expect(transitionProposedEditByStaff(dbWithChanges([1, 1], sql), {
+      proposedEditId: 'edit-1', eventId: 'event-invalid-edit', verifiedStaffRef: 'staff:1',
+      expectedFromStatus: 'submitted', nextStatus: 'approved', reasonCode: 'invalid_path',
+      occurredAt: '2026-07-16T00:00:00Z', idempotencyKey: 'invalid-edit-transition',
+    })).resolves.toBe('denied');
+    expect(sql).toEqual([]);
+  });
 });

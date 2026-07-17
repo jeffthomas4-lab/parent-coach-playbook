@@ -1,5 +1,5 @@
 import type { D1Database, D1Result } from '@cloudflare/workers-types';
-import { validateProposedPatch } from './owner-workflows';
+import { canTransitionOwnerClaim, canTransitionProposedEdit, validateProposedPatch } from './owner-workflows';
 
 const OWNER_WRITE_ROLES = "'owner','admin'";
 const EDIT_ROLES = "'owner','admin','editor'";
@@ -143,6 +143,7 @@ export async function decideOwnerClaim(db: D1Database, input: {
   idempotencyKey: string;
 }): Promise<'created' | 'denied'> {
   if (!input.verifiedStaffRef.trim() || !input.reasonCode.trim()) return 'denied';
+  if (!canTransitionOwnerClaim(input.expectedFromStatus, input.decision)) return 'denied';
   const update = db.prepare(
     `UPDATE owner_claims
         SET status = ?1, decided_at = ?2, decided_by_staff_ref = ?3,
@@ -179,6 +180,7 @@ async function transitionProposedEditInternal(db: D1Database, input: {
   const staffOnly = new Set(['under_review', 'approved', 'rejected', 'conflict', 'superseded']);
   if (staffOnly.has(input.nextStatus) && input.actorType !== 'staff') return 'denied';
   if (['approved', 'rejected', 'conflict'].includes(input.nextStatus) && !input.reasonCode?.trim()) return 'denied';
+  if (!canTransitionProposedEdit(input.expectedFromStatus, input.nextStatus)) return 'denied';
   const update = db.prepare(
     `UPDATE owner_proposed_edits
         SET status = ?1, submitted_at = CASE WHEN ?1 = 'submitted' THEN ?2 ELSE submitted_at END,
