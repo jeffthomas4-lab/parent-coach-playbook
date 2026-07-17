@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T06:31:00Z",
+  "environment": "production",
+  "operation": "read_only_trust_intake_preflight",
+  "database": {
+    "binding": "PCD_OPS_DB",
+    "name": "parent-coach-desk-ops-production",
+    "id": "b38d5f37-54df-4e0f-9706-023edc12c7fe",
+    "remote_execution": true,
+    "served_by_region": "WNAM"
+  },
+  "migration_inventory": {
+    "applied": [],
+    "pending": [
+      "0011_trust_cases.sql",
+      "0012_trust_drafts_and_notification_outbox.sql",
+      "0013_demand_events_v1.sql",
+      "0014_trust_intake_idempotency.sql",
+      "0015_privacy_request_lifecycle.sql",
+      "0016_customer_identity_and_tenancy.sql",
+      "0017_owner_claims_and_proposed_edits.sql",
+      "0018_customer_invitations_and_recovery.sql",
+      "0019_owner_workflow_hardening.sql",
+      "0020_recovery_and_dispute_audit.sql",
+      "0021_privacy_execution_evidence.sql",
+      "0022_commerce_test_mode_ledger.sql"
+    ]
+  },
+  "schema_metadata": {
+    "matching_tables_or_indexes": ["d1_migrations"],
+    "trust_tables_present": false,
+    "notification_outbox_present": false,
+    "trust_case_count": "not queried because trust_cases is absent"
+  },
+  "live_public_surface": {
+    "url": "https://parentcoachdesk.com/trust/",
+    "rendered_form_count": 0,
+    "email_fallback_visible": true,
+    "effective_trust_intake_enabled": false
+  },
+  "safety_boundary": {
+    "commands": ["wrangler d1 migrations list --remote", "wrangler d1 execute --remote with SELECT against sqlite_master"],
+    "migrations_applied": false,
+    "database_rows_written": 0,
+    "feature_flag_changed": false,
+    "public_submission_sent": false,
+    "customer_data_read": false
+  },
+  "next_required_gate": "Provide immutable offsite backup and retrieval coverage for this exact database before requesting any production migration or feature enablement."
+}

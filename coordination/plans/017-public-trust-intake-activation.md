@@ -3,7 +3,7 @@
 **Plan ID:** 017
 **Author:** Codex
 **Date:** 2026-07-17
-**Status:** Awaiting exact production-write and feature-activation approval
+**Status:** Production read-only preflight complete; awaiting recovery coverage, rehearsal, and exact production-write/feature-activation approval
 **Tier:** 3
 
 ## Objective
@@ -16,7 +16,7 @@ Enable the public correction, removal, privacy, copyright, accessibility, and sa
 - The production browser currently renders the safety notice, explicit sensitive-data warning, and `support@parentcoachdesk.com` fallback. It has no enabled form, so the correction/removal journey does not yet satisfy the structured-intake requirement.
 - `src/pages/api/trust/request.ts` is default-off, requires `PCD_OPS_DB`, enforces request-size/origin protections and rate limiting, validates only `parentcoachdesk.com` target URLs, writes an idempotent `trust_cases` record, and enqueues a notification. It never changes a directory listing itself.
 - Unit tests cover enabled/disabled behavior, validation, honeypot, and idempotency. The migration lineage includes the trust-case and idempotency schema but requires exact-target review before any remote application.
-- The current production Worker declares `PCD_OPS_DB`, but the activation state and migration level must be verified read-only before any feature flag change. Do not infer migration state from configuration or stale documentation.
+- The current production Worker declares `PCD_OPS_DB`. A 2026-07-17 read-only preflight proved that its exact production database exists in WNAM, has only the `d1_migrations` ledger, and has all migrations `0011` through `0022` pending. The trust and notification tables are absent; no customer operational data was read. The live `/trust/` page renders the email fallback with zero forms. See `coordination/release-evidence/production-pcd-ops-preflight-2026-07-17.json`.
 
 ## Non-goals
 
