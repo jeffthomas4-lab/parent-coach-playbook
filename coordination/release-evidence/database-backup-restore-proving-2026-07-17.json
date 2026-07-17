@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T04:21:58.818565Z",
+  "environment": "production_data_read_only_export",
+  "exercise": "third_manual_backup_proving_run_and_local_restore",
+  "source": {
+    "database": "activity-radar",
+    "export_bytes": 257196189,
+    "export_sha256": "eba17cb3fab2f1907f7f18fe141675ef1b4de556ea39026634c277da4fc078c6",
+    "local_backup_retention_count": 6,
+    "manual_proving_runs_completed": 3
+  },
+  "local_restore": {
+    "integrity_check": "ok",
+    "foreign_key_violation_count": 5,
+    "aggregate_foreign_key_violations": [
+      {
+        "child_table": "camp_scan_queue",
+        "parent_table": "organizations",
+        "foreign_key_index": 0,
+        "count": 5
+      }
+    ],
+    "representative_table_counts": {
+      "organizations": 198287,
+      "programs": 2411
+    }
+  },
+  "safety_boundary": {
+    "remote_restore_attempted": false,
+    "remote_database_mutated": false,
+    "customer_rows_disclosed": false,
+    "backup_contents_committed": false
+  },
+  "result": "blocked",
+  "required_follow_up": [
+    "Investigate and reconcile the five orphaned camp_scan_queue references in a separately approved data-repair plan.",
+    "Repeat the export and local restore rehearsal with zero foreign-key violations before accepting database backup or restore readiness.",
+    "Establish approved immutable offsite backup storage; the current successful exports remain local-only."
+  ]
+}
