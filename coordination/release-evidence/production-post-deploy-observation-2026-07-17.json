@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T06:29:04.839Z",
+  "environment": "production",
+  "method": "independent_bounded_get_only_customer_journey_monitor",
+  "target_origin": "https://parentcoachdesk.com",
+  "result": "pass",
+  "checks": [
+    { "id": "home", "status": 200, "duration_ms": 234 },
+    { "id": "directory", "status": 200, "duration_ms": 824 },
+    { "id": "privacy", "status": 200, "duration_ms": 188 },
+    { "id": "terms", "status": 200, "duration_ms": 148 },
+    { "id": "health", "status": 200, "duration_ms": 26 },
+    { "id": "readiness", "status": 200, "duration_ms": 45 }
+  ],
+  "safety_boundary": {
+    "method": "HTTPS GET only",
+    "authenticated": false,
+    "form_submissions": 0,
+    "production_data_mutated": false,
+    "credentials_or_response_bodies_recorded": false
+  },
+  "scope_boundary": "This is an immediate post-deploy availability observation. It does not prove end-to-end notification receipt, authenticated Access behavior, backup recovery, trust-intake activation, or all customer journeys."
+}
