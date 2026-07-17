@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "state": "pending",
+  "channel_class": "independent_operator_alert",
+  "event_class": "synthetic_camp_submission_notification_drill",
+  "created_at": "2026-07-17T03:55:55.811Z",
+  "sent_at": "2026-07-17T03:55:55.811Z",
+  "received_at": null,
+  "recipient_role": "first approved staging administrator",
+  "provider_event_id": "f4688951-e9cc-42b4-9087-ca31c3818f35",
+  "acknowledgement_reference": null,
+  "approved_by": "Jeff Thomas",
+  "contains_requester_content": false,
+  "contains_secret_material": false,
+  "external_changes": [
+    "isolated staging synthetic camp submission",
+    "staging-only internal email provider delivery"
+  ],
+  "provider_observation": {
+    "source": "Resend dashboard",
+    "status": "delivered",
+    "observed_at": "2026-07-17T03:58:00Z"
+  },
+  "slack_observation": {
+    "status": "accepted by configured webhook (inferred from fail-closed email path)",
+    "configured_channel_receipt": "not observed in #pcd-alerts"
+  },
+  "remaining_requirement": "Jeff Thomas must acknowledge receipt and the Slack webhook destination must be reconciled before this receipt can become received evidence."
+}
