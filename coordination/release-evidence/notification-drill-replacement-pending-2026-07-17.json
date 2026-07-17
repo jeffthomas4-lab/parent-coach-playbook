@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "state": "pending_receipt_verification",
+  "channel_class": "independent_operator_alert",
+  "event_class": "synthetic_camp_submission_notification_drill",
+  "submitted_at": "2026-07-17T04:57:29.422Z",
+  "environment": "staging",
+  "target_origin": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+  "idempotency_key": "pcd-notification-drill-dc147773-aea2-46c8-9c5b-fbc70395d689",
+  "synthetic_submission": {
+    "status": "pending",
+    "camp_slug": "pcd-notification-drill-20260717045727"
+  },
+  "expected_delivery": {
+    "slack": "one privacy-safe post to the corrected staging #pcd-alerts webhook destination",
+    "email": "one internal administrator email through Resend"
+  },
+  "application_observation": {
+    "status": "accepted",
+    "evidence": "The drill command exited 0 only after the ordinary staging submission path returned { ok: true, status: pending }."
+  },
+  "provider_observation": {
+    "resend": "not yet observed after the replacement drill",
+    "slack": "not yet observed in the configured destination"
+  },
+  "safety_boundary": {
+    "production_touched": false,
+    "customer_records_created": false,
+    "contains_requester_content": false,
+    "contains_secret_material": false
+  },
+  "remaining_requirement": "Obtain provider/channel receipt observations and a human acknowledgement before marking notification receipt as passed."
+}
