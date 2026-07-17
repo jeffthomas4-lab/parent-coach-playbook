@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T06:16:00Z",
+  "environment": "production",
+  "change": {
+    "plan_id": "015",
+    "source_commit": "bf4c424",
+    "worker_name": "parent-coach-desk",
+    "worker_version_id": "35449367-a085-4096-bb7b-6886c048cea5",
+    "traffic_percentage": 100,
+    "deployment_message": "bf4c424 editorial approval repository repair"
+  },
+  "implementation": {
+    "canonical_repository": "jeffthomas4-lab/parent-coach-playbook",
+    "branch": "main",
+    "shared_configuration_source": "src/lib/publish.ts",
+    "provider_error_responses": [
+      "github_read_rejected",
+      "github_write_rejected"
+    ],
+    "provider_response_bodies_returned_to_browser": false,
+    "provider_response_bodies_logged": false
+  },
+  "validation": {
+    "focused_route_tests": "passed: 1 file, 8 tests",
+    "unit_coverage": "passed: 104 files, 554 tests; 70.12% statements, 61.67% branches, 71.02% functions, 73.68% lines",
+    "integration": "passed: 10 files, 44 tests",
+    "astro_check": "passed: 0 errors, 354 pre-existing hints",
+    "production_manifest": "passed",
+    "release_evidence_structure": "passed; unrelated release gates remain pending",
+    "secret_scan": "passed for current files and Git history",
+    "dependency_audit": "passed: 0 high-severity vulnerabilities",
+    "generated_worker_dry_run": "passed: 85 modules, 9235 assets, expected production bindings"
+  },
+  "post_deploy_get_only": {
+    "apex": "200 text/html",
+    "www": "301 to apex",
+    "security_txt": "200 text/plain",
+    "admin": "302 Cloudflare Access",
+    "editorial_approval_api": "302 Cloudflare Access"
+  },
+  "safety_boundary": {
+    "production_d1_or_r2_mutated": false,
+    "migration_run": false,
+    "secret_changed": false,
+    "github_content_write_invoked": false,
+    "outbound_email_or_slack_sent": false,
+    "access_or_dns_changed": false,
+    "access_redirect_token_recorded": false
+  },
+  "remaining_gate": "Jeff must choose a designated non-customer test article and perform the protected approval click before the live GitHub-write path can be claimed as verified."
+}

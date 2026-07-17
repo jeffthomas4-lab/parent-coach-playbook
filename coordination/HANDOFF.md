@@ -6,18 +6,18 @@ This is the only place active status lives. Do not duplicate it elsewhere.
 
 ---
 
-**Active handoff:** `handoffs/2026-07-15-plan-011-production-cutover.md`
+**Active handoff:** `handoffs/2026-07-17-plan-015-editorial-approval-repair-deployed.md`
 **From:** Codex
 **To:** Jeff
-**Task:** Plan 011 production Pages-to-Workers cutover
-**Tier:** 3
-**Branch:** `migration/pages-to-workers-staging`
-**Commit range:** Plan 011 implementation and evidence are complete through `8ca6185`; status cleanup is `e7e7faf`.
-**Status:** Complete. Production is healthy, the migration branch is published, and its reviewed history has been fast-forwarded and pushed to `main`.
-**Human approval required:** No remaining approval gate for Plan 011.
+**Task:** Plan 015 designated live editorial-approval verification
+**Tier:** 2
+**Branch:** `main`
+**Commit range:** `bf4c424` deployed as Worker version `35449367-a085-4096-bb7b-6886c048cea5`.
+**Status:** Source repair implemented, verified, and deployed; one human-gated GitHub-write verification remains.
+**Human approval required:** Yes: choose a non-customer test article and perform the one approval click.
 
 **Blocking Jeff's attention:**
 
-None for Plan 011.
+Choose a non-customer article for the one live approval click. This creates a GitHub content commit and is intentionally not an automated test.
 
-**Next step:** Preserve the Pages rollback target during the Worker soak period. Plan 004's remaining separate-day D1 recovery proofs are a distinct follow-on workstream.
+**Next step:** Use the deployed Admin Editorial screen to approve the selected test article once. Record only the bounded UI result and resulting GitHub commit ID; do not paste provider details or credentials.
