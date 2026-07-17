@@ -16,6 +16,8 @@
     "security_txt": 200,
     "privacy_redirect": 301,
     "terms": 200,
+    "api_health": 200,
+    "api_ready": 200,
     "anonymous_admin": 302,
     "anonymous_admin_api": 302
   },
