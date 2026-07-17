@@ -178,6 +178,29 @@ async function stageToSlack(
   return await postToSlack(env, { text });
 }
 
+/**
+ * Internal alerts are a dual-channel operator control: the approved
+ * administrator receives the email, and Slack gets a privacy-safe signal that
+ * an alert was sent. Slack failure never changes a successful email outcome;
+ * it is recorded separately so a transient chat outage cannot trigger a retry
+ * that duplicates the email.
+ */
+async function notifyInternalEmailSentToSlack(env: EmailEnv | undefined): Promise<void> {
+  const slack = await postToSlack(env, {
+    text: [
+      ':envelope: *Internal Parent Coach Desk email sent*',
+      'A protected administrator alert was delivered by email.',
+      '_Recipient, subject, and body are withheld from Slack._',
+    ].join('\n'),
+  });
+  if (!slack.ok) {
+    console.error(JSON.stringify({
+      event: 'internal_email_slack_notify_failed',
+      code: slack.skipped ? 'not_configured' : 'provider_rejected',
+    }));
+  }
+}
+
 // ---------- The two paths that use the primitive ----------
 
 export interface SubmissionDetails {
@@ -242,11 +265,13 @@ export async function sendAdminAlert(
 ): Promise<EmailResult> {
   const to = alert.to ?? (env?.ADMIN_EMAILS ?? '').split(',')[0]?.trim();
   if (!to) return { outcome: 'suppressed', error: 'no admin recipient configured' };
-  return sendEmail(env, {
+  const result = await sendEmail(env, {
     to,
     subject: alert.subject,
     text: alert.body,
     emailClass: 'internal',
     reason: 'Admin alert',
   });
+  if (result.outcome === 'sent') await notifyInternalEmailSentToSlack(env);
+  return result;
 }

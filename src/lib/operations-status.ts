@@ -189,7 +189,9 @@ export async function readOperationsStatus(env: {
   const providerConfigured = Boolean(env.RESEND_API_KEY && env.EMAIL_FROM);
   const stagingConfigured = Boolean(env.SLACK_WEBHOOK_URL);
   const outboundBroken = outboundMode === 'send' ? !providerConfigured : !stagingConfigured;
-  const internalBroken = internalMode === 'send' ? !providerConfigured : !stagingConfigured;
+  // Internal alerts are intentionally dual-channel: send mode requires both
+  // Resend (email) and Slack (the privacy-safe operator signal).
+  const internalBroken = internalMode === 'send' ? !providerConfigured || !stagingConfigured : !stagingConfigured;
   components.push(result(
     'Support notification delivery',
     outboundBroken || internalBroken ? 'failing' : 'unknown',

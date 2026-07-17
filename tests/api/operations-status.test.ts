@@ -23,9 +23,20 @@ describe('operations status', () => {
     const rows = await readOperationsStatus({
       EMAIL_MODE: 'send', EMAIL_ADMIN_MODE: 'send',
       RESEND_API_KEY: 'configured', EMAIL_FROM: 'PCD <support@example.com>',
+      SLACK_WEBHOOK_URL: 'configured',
     });
     expect(rows).toEqual(expect.arrayContaining([
       expect.objectContaining({ component: 'Support notification delivery', state: 'unknown', code: 'notification_delivery_unproven' }),
+    ]));
+  });
+
+  it('treats internal send mode as failing until both email and Slack are configured', async () => {
+    const rows = await readOperationsStatus({
+      EMAIL_MODE: 'stage', EMAIL_ADMIN_MODE: 'send',
+      RESEND_API_KEY: 'configured', EMAIL_FROM: 'PCD <support@example.com>',
+    });
+    expect(rows).toEqual(expect.arrayContaining([
+      expect.objectContaining({ component: 'Support notification delivery', state: 'failing', code: 'notification_path_not_configured' }),
     ]));
   });
 
