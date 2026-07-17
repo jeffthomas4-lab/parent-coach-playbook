@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T05:24:17.195864Z",
+  "environment": "production_activity_radar",
+  "authorization": "Jeff explicitly approved the five-row queue repair after a fresh pre-repair backup.",
+  "pre_repair_backup": {
+    "sha256": "eba17cb3fab2f1907f7f18fe141675ef1b4de556ea39026634c277da4fc078c6",
+    "manual_proving_runs_completed": 4
+  },
+  "precondition": {
+    "query_scope": "aggregate count of camp_scan_queue rows lacking an organizations parent",
+    "orphan_count": 5,
+    "remote_rows_written": 0
+  },
+  "repair": {
+    "operation": "delete camp_scan_queue rows lacking an organizations parent only when the aggregate orphan count is exactly five",
+    "remote_rows_written": 5,
+    "organization_rows_written": 0,
+    "customer_rows_written": 0
+  },
+  "postcondition": {
+    "orphan_count": 0,
+    "remote_rows_written": 0
+  },
+  "post_repair_backup_and_restore": {
+    "export_sha256": "0cce41392b34f08cf64008182ac3a43e51daf30f68e007e4c88cbf5e76db609b",
+    "export_bytes": 257233230,
+    "manual_proving_runs_completed": 5,
+    "integrity_check": "ok",
+    "foreign_key_violation_count": 0,
+    "aggregate_table_counts": {
+      "organizations": 198287,
+      "programs": 2428
+    }
+  },
+  "safety_boundary": {
+    "remote_restore_attempted": false,
+    "production_schema_changed": false,
+    "backup_contents_committed": false,
+    "customer_rows_disclosed": false
+  },
+  "result": "production_queue_repaired_and_fresh_restore_proved",
+  "remaining_requirement": "Establish and exercise immutable offsite backup storage before marking database backup readiness as passed."
+}
