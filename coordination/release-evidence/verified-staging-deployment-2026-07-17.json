@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "deployment": {
+    "worker": "parent-coach-desk-staging",
+    "version": "b66d47cc-7531-4d1d-99b4-4b194eeee61b",
+    "deployed_at_utc": "2026-07-17T07:31:18.054Z",
+    "message": "verified staging deployment"
+  },
+  "pre_deploy_guard": {
+    "source_config": "wrangler.jsonc",
+    "worker_name": "parent-coach-desk-staging",
+    "site_url": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+    "d1_databases": [
+      "parent-coach-desk-directory-staging",
+      "parent-coach-desk-ops-staging"
+    ],
+    "r2_bucket": "parent-coach-desk-staging-photos",
+    "feature_flags": {
+      "CAMP_CLAIMS_ENABLED": "false",
+      "CAMP_REVIEWS_ENABLED": "false",
+      "TRUST_INTAKE_ENABLED": "false",
+      "DEMAND_TELEMETRY_ENABLED": "false",
+      "IDEMPOTENCY_CLEANUP_ENABLED": "false",
+      "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
+      "PCD_COMMERCE_TEST_MODE_ENABLED": "false"
+    }
+  },
+  "post_deploy_monitor": {
+    "observed_at_utc": "2026-07-17T07:32:04.8815445Z",
+    "method": "Bounded GET-only public monitor",
+    "results": [
+      { "path": "/", "status": 200 },
+      { "path": "/camps/", "status": 200 },
+      { "path": "/api/health", "status": 200 },
+      { "path": "/api/ready", "status": 200 }
+    ]
+  },
+  "scope": "This deployment used the fail-closed staging helper. It did not deploy to production, migrate data, send email or Slack, or enable customer workflow features."
+}
