@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "target_origin": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+  "observed_at": "2026-07-17T02:06:06.0372824Z",
+  "method": "Browser navigation and layout measurements only. The browser selected the no-analytics preference so the consent dialog would not mask keyboard testing; no form, subscription, authentication, or production action was invoked.",
+  "checks": {
+    "directory_fixture_listing": {
+      "path": "/camps/",
+      "result": "pass",
+      "evidence": "The directory rendered the search controls and both populated synthetic fixture listings."
+    },
+    "directory_mobile_overflow": {
+      "path": "/camps/",
+      "result": "pass",
+      "measurements": [
+        { "viewport_width": 320, "document_scroll_width": 305, "document_client_width": 305, "body_scroll_width": 305 },
+        { "viewport_width": 360, "document_scroll_width": 345, "document_client_width": 345, "body_scroll_width": 345 },
+        { "viewport_width": 390, "document_scroll_width": 375, "document_client_width": 375, "body_scroll_width": 375 },
+        { "viewport_width": 430, "document_scroll_width": 415, "document_client_width": 415, "body_scroll_width": 415 }
+      ],
+      "evidence": "At every requested viewport, the document and body scroll widths equaled the client width; no horizontal page overflow was present."
+    },
+    "keyboard_skip_link": {
+      "result": "inconclusive",
+      "evidence": "The automated browser harness located the unique Skip to content link and sent Enter, but neither the URL fragment nor active-element target changed. This is not enough to distinguish a harness limitation from an application defect; manual keyboard verification remains required."
+    }
+  },
+  "conclusion": "This strengthens the staging mobile layout evidence but does not close the full customer-journey gate. Manual keyboard, screen-reader, touch, 200% zoom, constrained-network, error, subscription, and payment journeys remain required."
+}
