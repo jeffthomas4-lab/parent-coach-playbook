@@ -2,8 +2,8 @@
   "schema_version": 1,
   "environment": "staging",
   "target_origin": "https://parent-coach-desk-staging.eepskalla.workers.dev",
-  "observed_at": "2026-07-17T02:06:06.0372824Z",
-  "method": "Browser navigation and layout measurements only. The browser selected the no-analytics preference so the consent dialog would not mask keyboard testing; no form, subscription, authentication, or production action was invoked.",
+  "observed_at": "2026-07-17T02:32:00Z",
+  "method": "Read-only browser navigation, layout measurement, a client-side directory filter selection, and skip-link activation. No form, subscription, authentication, deployment, or production action was invoked.",
   "checks": {
     "directory_fixture_listing": {
       "path": "/camps/",
@@ -21,10 +21,20 @@
       ],
       "evidence": "At every requested viewport, the document and body scroll widths equaled the client width; no horizontal page overflow was present."
     },
+    "directory_sport_filter": {
+      "path": "/camps/",
+      "result": "pass",
+      "evidence": "At 430px, selecting Basketball updated the native Sport control and filtered the two synthetic fixture cards out of the directory. The document and body remained free of horizontal overflow."
+    },
+    "fixture_detail_320px_reflow": {
+      "path": "/camps/fixture-soccer-summer-camp/",
+      "result": "pass",
+      "evidence": "At 320px, document and body scroll widths equaled their 305px client widths, and the fixture detail title rendered."
+    },
     "keyboard_skip_link": {
-      "result": "inconclusive",
-      "evidence": "The automated browser harness located the unique Skip to content link and sent Enter, but neither the URL fragment nor active-element target changed. This is not enough to distinguish a harness limitation from an application defect; manual keyboard verification remains required."
+      "result": "fail",
+      "evidence": "A direct activation of the unique Skip to content link on the current staging fixture detail page left the URL fragment empty and focus on BODY; the staging main element has no tabindex. The local release candidate includes a focus-target fix, but this deployed staging version does not."
     }
   },
-  "conclusion": "This strengthens the staging mobile layout evidence but does not close the full customer-journey gate. Manual keyboard, screen-reader, touch, 200% zoom, constrained-network, error, subscription, and payment journeys remain required."
+  "conclusion": "Current staging has sound mobile reflow and working directory filtering, but it fails the skip-link check and therefore cannot close the customer-journey gate. An approved staging deployment of the local focus fix is required before a fresh keyboard test; screen-reader, touch, 200% zoom, constrained-network, error, subscription, and payment journeys also remain required."
 }
