@@ -6,12 +6,11 @@ Current state: an isolated staging database is migrated and rehearsed through `0
 
 Until the legacy `migrations/` lineage is retired or split through a separately reviewed repository migration, CI requires migrations `0011` through `0014` to remain byte-identical to their legacy locations. New PCD operational migrations, beginning with `0015`, belong only here and must not be added to the directory-data lineage.
 
-Required activation sequence:
+Remaining activation sequence:
 
 1. Approve the database name, account, region/jurisdiction assumptions, retention policy, owners, and recovery class.
-2. Create a dedicated D1 database without customer data.
-3. Add `PCD_OPS_DB` with `migrations_dir: "migrations-pcd-ops"` to staging only.
-4. Apply and rehearse this lineage in that isolated target.
-5. Run Access, failure-isolation, backup/restore, retention, and customer-journey gates.
-6. Add the production binding only in a separately approved release.
-7. Keep `TRUST_INTAKE_ENABLED` and `DEMAND_TELEMETRY_ENABLED` false until their independent launch gates pass.
+2. Maintain the isolated staging rehearsal and exact migration inventory; the production binding already exists, but it has no applied PCD migration.
+3. Run Access, failure-isolation, independent backup/retrieval, retention, and customer-journey gates.
+4. Obtain exact-target approval for the production migration range, backup identifier, observation window, and any feature flag change.
+5. Apply only the approved production migration range, then prove schema and a bounded synthetic workflow before public enablement.
+6. Keep `TRUST_INTAKE_ENABLED` and `DEMAND_TELEMETRY_ENABLED` false until their independent launch gates pass.

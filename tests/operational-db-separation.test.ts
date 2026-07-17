@@ -24,7 +24,7 @@ describe('PCD operational database separation', () => {
     }
   });
 
-  it('keeps staged and production operational database bindings distinct before production deployment', async () => {
+  it('keeps staged and production operational database bindings distinct', async () => {
     const staging = await readFile(new URL('../wrangler.jsonc', import.meta.url), 'utf8');
     expect(staging).toContain('"binding": "PCD_OPS_DB"');
     expect(staging).toContain('"database_name": "parent-coach-desk-ops-staging"');
@@ -59,8 +59,9 @@ describe('PCD operational database separation', () => {
     }
     const readme = await readFile(new URL('../migrations-pcd-ops/README.md', import.meta.url), 'utf8');
     expect(readme).toContain('must never be applied to the shared Activity Radar `DB` binding');
-    expect(readme).toContain('binding is not live on a staging Worker');
-    expect(readme).toContain('Migration `0015` is local preparation only');
+    expect(readme).toContain('production Worker now declares the separate `PCD_OPS_DB` binding');
+    expect(readme).toContain('all migrations `0011` through `0022` pending');
+    expect(readme).toContain('Adding a production migration or enabling a feature requires exact-target review and explicit approval');
   });
 
   it('makes the rehearsal config local-only and impossible to confuse with production', async () => {
