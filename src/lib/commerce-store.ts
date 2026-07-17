@@ -124,11 +124,27 @@ export async function requestRefundByStaff(db: D1Database, input: {
   idempotencyKey: string;
 }): Promise<'requested' | 'replay' | 'denied'> {
   if (!input.staffRef.trim() || input.amountMinor <= 0 || !input.reasonCode.trim()) return 'denied';
+  const existingRefund = await db.prepare(
+    `SELECT order_id, provider_code, provider_request_reference, amount_minor, state
+       FROM commerce_refunds WHERE id=?1`,
+  ).bind(input.refundId).first<{ order_id: string; provider_code: string; provider_request_reference: string; amount_minor: number; state: string }>();
+  if (existingRefund) {
+    return existingRefund.order_id === input.orderId
+      && existingRefund.provider_code === input.providerCode
+      && existingRefund.provider_request_reference === input.providerRequestReference
+      && existingRefund.amount_minor === input.amountMinor
+      && existingRefund.state === 'requested'
+      ? 'replay' : 'denied';
+  }
+  const eligibleOrder = await db.prepare(
+    `SELECT amount_minor, state FROM commerce_orders WHERE id=?1`,
+  ).bind(input.orderId).first<{ amount_minor: number; state: string }>();
+  if (!eligibleOrder || eligibleOrder.amount_minor !== input.amountMinor || !['paid', 'fulfillment_pending', 'fulfilled'].includes(eligibleOrder.state)) return 'denied';
   const refund = db.prepare(
     `INSERT OR IGNORE INTO commerce_refunds (id, order_id, provider_code, provider_request_reference,
-      amount_minor, state, reason_code, requested_by_staff_ref, requested_at)
+     amount_minor, state, reason_code, requested_by_staff_ref, requested_at)
      SELECT ?1, id, ?2, ?3, ?4, 'requested', ?5, ?6, ?7 FROM commerce_orders
-      WHERE id=?8 AND amount_minor>=?4 AND state IN ('paid','fulfillment_pending','fulfilled','disputed')`,
+      WHERE id=?8 AND amount_minor=?4 AND state IN ('paid','fulfillment_pending','fulfilled')`,
   ).bind(input.refundId, input.providerCode, input.providerRequestReference, input.amountMinor,
     input.reasonCode, input.staffRef, input.requestedAt, input.orderId);
   const order = db.prepare(
@@ -138,9 +154,10 @@ export async function requestRefundByStaff(db: D1Database, input: {
   const audit = db.prepare(
     `INSERT OR IGNORE INTO commerce_events (id, organization_id, order_id, event_type, actor_type,
       actor_ref, outcome, reason_code, occurred_at, idempotency_key)
-     SELECT ?1, organization_id, id, 'refund_requested', 'staff', ?2, 'approved', ?3, ?4, ?5
-       FROM commerce_orders WHERE id=?6 AND state='disputed'`,
-  ).bind(input.auditEventId, input.staffRef, input.reasonCode, input.requestedAt, input.idempotencyKey, input.orderId);
+     SELECT ?1, o.organization_id, o.id, 'refund_requested', 'staff', ?2, 'approved', ?3, ?4, ?5
+       FROM commerce_orders o JOIN commerce_refunds r ON r.order_id=o.id
+      WHERE o.id=?6 AND r.id=?7 AND o.state='disputed'`,
+  ).bind(input.auditEventId, input.staffRef, input.reasonCode, input.requestedAt, input.idempotencyKey, input.orderId, input.refundId);
   const results = await db.batch([refund, order, audit]);
   const [refundChanges, orderChanges, auditChanges] = results.map(changes);
   if (refundChanges === 1 && orderChanges === 1 && auditChanges === 1) return 'requested';

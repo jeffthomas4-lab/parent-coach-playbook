@@ -190,8 +190,10 @@ describe('disposable D1 customer lifecycle', () => {
     await expect(grantVerifiedEntitlement(commerceDb, grant)).resolves.toBe('replay');
 
     const refund = { refundId: 'refund-1', orderId: 'order-1', providerCode: 'disposable', providerRequestReference: 'refund-request:test-1', amountMinor: 5000, reasonCode: 'test_refund', staffRef: 'staff:test', requestedAt: '2026-07-16T07:04:00Z', auditEventId: 'commerce-audit-refund-request-1', idempotencyKey: 'commerce-refund-request-1' };
+    await expect(requestRefundByStaff(commerceDb, { ...refund, refundId: 'refund-partial', providerRequestReference: 'refund-request:partial', amountMinor: 1, auditEventId: 'commerce-audit-refund-partial', idempotencyKey: 'commerce-refund-partial' })).resolves.toBe('denied');
     await expect(requestRefundByStaff(commerceDb, refund)).resolves.toBe('requested');
     await expect(requestRefundByStaff(commerceDb, refund)).resolves.toBe('replay');
+    await expect(requestRefundByStaff(commerceDb, { ...refund, refundId: 'refund-second', providerRequestReference: 'refund-request:second', auditEventId: 'commerce-audit-refund-second', idempotencyKey: 'commerce-refund-second' })).resolves.toBe('denied');
     const settlement = { refundId: 'refund-1', providerRefundReference: 'refund:test-1', settledAt: '2026-07-16T07:05:00Z', auditEventId: 'commerce-audit-refund-settled-1', idempotencyKey: 'commerce-refund-settled-1' };
     await expect(settleVerifiedRefund(commerceDb, settlement)).resolves.toBe('settled');
     await expect(settleVerifiedRefund(commerceDb, settlement)).resolves.toBe('replay');
