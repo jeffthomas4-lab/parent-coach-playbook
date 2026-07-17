@@ -28,5 +28,11 @@
     "main_tabindex": "-1",
     "authoritative_source_or_registration_links_observed": 2
   },
-  "conclusion": "The prior production populated-directory horizontal-overflow finding is closed for the measured portrait widths. Native keyboard skip-link activation, screen-reader behavior, touch, 200% zoom, landscape, constrained-network, correction/removal, subscription, and payment journeys remain unproved."
+  "skip_link": {
+    "path": "/camps/",
+    "link_target": "#main",
+    "direct_activation": "passed: URL fragment became #main and focus moved to MAIN#main",
+    "synthetic_enter": "inconclusive: the browser automation focused the unique link but did not dispatch fragment navigation; this is not treated as a product failure"
+  },
+  "conclusion": "The prior production populated-directory horizontal-overflow finding is closed for the measured portrait widths, and the skip-link target functions on direct activation. Native keyboard dispatch, screen-reader behavior, touch, 200% zoom, landscape, constrained-network, correction/removal, subscription, and payment journeys remain unproved."
 }
