@@ -2,7 +2,7 @@
   "schema_version": 1,
   "provider": "Resend",
   "domain": "parentcoachdesk.com",
-  "observed_at": "2026-07-17T02:20:14.9309304Z",
+  "observed_at": "2026-07-17T02:27:00Z",
   "provider_changes": [
     "Created the parentcoachdesk.com sending domain in Resend (us-east-1).",
     "Used Cloudflare's one-time Domain Connect authorization to add only Resend's DKIM TXT, sending SPF TXT, and sending MX records."
@@ -27,8 +27,8 @@
       "evidence": "Public DNS resolved v=spf1 include:amazonses.com ~all with TTL 3600."
     }
   ],
-  "provider_verification_state": "unconfirmed",
-  "provider_verification_note": "Immediately after the Domain Connect callback, the authenticated Resend dashboard remained on a loading screen. No API key was created, no Worker configuration changed, and no email was sent; provider-domain verification must be rechecked before mail is enabled.",
+  "provider_verification_state": "pending",
+  "provider_verification_note": "A fresh authenticated Resend dashboard check confirmed all three expected records and accepted an explicit Verify DNS Records request. Resend is checking the records and advises that Cloudflare propagation may take a few hours. No API key was created, no Worker configuration changed, and no email was sent; provider-domain verification must reach verified before mail is enabled.",
   "secrets_created": [],
   "emails_sent": [],
   "next_required_approval": "Create one PCD-specific Resend sending-only staging API key, store it as a staging Worker secret, deploy only to staging, and send one controlled internal receipt test to eepskalla@gmail.com."
