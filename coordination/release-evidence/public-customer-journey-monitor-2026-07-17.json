@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "method": "Existing bounded GET-only public customer-journey monitor. No form submission, authentication, administrative action, cookie/consent decision, or data write occurred.",
+  "production": {
+    "target_origin": "https://parentcoachdesk.com",
+    "observed_at": "2026-07-17T07:07:25.712Z",
+    "ok": true,
+    "results": [
+      { "id": "home", "status": 200, "duration_ms": 195 },
+      { "id": "directory", "status": 200, "duration_ms": 756 },
+      { "id": "privacy", "status": 200, "duration_ms": 29 },
+      { "id": "terms", "status": 200, "duration_ms": 30 },
+      { "id": "health", "status": 200, "duration_ms": 22 },
+      { "id": "readiness", "status": 200, "duration_ms": 48 }
+    ]
+  },
+  "staging": {
+    "target_origin": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+    "observed_at": "2026-07-17T07:07:38.770Z",
+    "ok": true,
+    "results": [
+      { "id": "home", "status": 200, "duration_ms": 215 },
+      { "id": "directory", "status": 200, "duration_ms": 643 },
+      { "id": "privacy", "status": 200, "duration_ms": 180 },
+      { "id": "terms", "status": 200, "duration_ms": 28 },
+      { "id": "health", "status": 200, "duration_ms": 29 },
+      { "id": "readiness", "status": 200, "duration_ms": 80 }
+    ]
+  },
+  "limitations": [
+    "This proves public availability and bounded response content only.",
+    "It does not prove mobile accessibility, keyboard, screen-reader, touch, constrained-network, form error/retry, subscription, payment, authenticated Access, or customer-owner journeys.",
+    "It does not close the customer_journeys release gate by itself."
+  ]
+}
