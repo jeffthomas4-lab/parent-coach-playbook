@@ -16,6 +16,7 @@
     "build:og:safe": "python3 scripts/build-og-images.py || echo 'OG image build skipped (python/Pillow unavailable). Existing committed cards in public/og/ will ship.'",
     "build": "npm run build:manifest && npm run build:og:safe && astro build",
     "build:production": "node scripts/build-production.mjs",
+    "deploy:staging:verified": "node scripts/deploy-staging-verified.mjs",
     "check:production-manifest": "npm run build:production && node scripts/check-deployment-manifest.mjs",
     "check:secrets": "node scripts/scan-secrets.mjs --history",
     "check:protected-routes": "node scripts/check-protected-routes.mjs",

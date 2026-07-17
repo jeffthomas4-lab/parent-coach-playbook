@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "incident_type": "unintended_production_deployment_target",
+  "detected_at_utc": "2026-07-17T07:18:23.112Z",
+  "scope": "A command intended for the isolated staging Worker used Astro's generated production deployment configuration after a production-artifact build. It deployed Worker version 8dd97cde-3dfc-410b-b458-6bf6d9848e52 to parent-coach-desk for approximately 56 seconds before restoration.",
+  "intended_target": "parent-coach-desk-staging",
+  "actual_target": "parent-coach-desk",
+  "unintended_version": "8dd97cde-3dfc-410b-b458-6bf6d9848e52",
+  "approved_restored_version": "35449367-a085-4096-bb7b-6886c048cea5",
+  "restore_deployment_at_utc": "2026-07-17T07:19:19.529Z",
+  "runtime_controls_observed_on_unintended_version": {
+    "CAMP_CLAIMS_ENABLED": "false",
+    "CAMP_REVIEWS_ENABLED": "false",
+    "TRUST_INTAKE_ENABLED": "false",
+    "DEMAND_TELEMETRY_ENABLED": "false",
+    "IDEMPOTENCY_CLEANUP_ENABLED": "false",
+    "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
+    "PCD_COMMERCE_TEST_MODE_ENABLED": "false"
+  },
+  "operator_actions_not_performed": [
+    "No D1 migration, D1 query, R2 operation, KV operation, rate-limit operation, secret read, secret write, form submission, email send, Slack send, or administrative workflow action was initiated by the operator during the incident or restoration."
+  ],
+  "post_restore_observation": {
+    "observed_at_utc": "2026-07-17T07:19:42.659Z",
+    "method": "Bounded GET-only public monitor",
+    "results": [
+      { "path": "/", "status": 200 },
+      { "path": "/camps/", "status": 200 },
+      { "path": "/disclosure/", "status": 200 },
+      { "path": "/terms/", "status": 200 },
+      { "path": "/api/health", "status": 200 },
+      { "path": "/api/ready", "status": 200 }
+    ]
+  },
+  "limitations": [
+    "The operator did not initiate any data mutation, but this receipt does not prove that no third-party request reached the short-lived version.",
+    "Worker-version rollback does not roll back bound resources. No bound-resource rollback was needed because none was initiated by the operator.",
+    "The generated link-manifest asset was uploaded during the unintended deploy; the approved Worker version was restored, but this receipt does not treat the static-asset implementation detail as proof of no external cache observation."
+  ],
+  "containment": "The exact previously approved Plan 015 Worker version was restored to 100% of production traffic. Production health, readiness, and public routes returned 200 after restoration.",
+  "prevention": "Introduce a fail-closed staging deployment helper that rebuilds with the root staging configuration and rejects any generated manifest whose source configuration, Worker name, bindings, site origin, or feature flags do not prove staging isolation. Do not run a generic deploy after a production-artifact build."
+}
