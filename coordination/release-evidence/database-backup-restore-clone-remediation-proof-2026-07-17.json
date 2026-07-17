@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T00:00:00Z",
+  "environment": "local_disposable_recovery_clones",
+  "exercise": "derived_queue_orphan_disposition_candidate",
+  "source_restore": "activity-radar-restore-2026-07-16-212024.sqlite3",
+  "known_source_condition": {
+    "foreign_key_violation_count": 5,
+    "relationship": "camp_scan_queue.org_id -> organizations.id"
+  },
+  "candidate_disposition": {
+    "operation": "delete only camp_scan_queue rows whose parent organization does not exist",
+    "rationale": "The queue is defined in migrations-activity-radar/0012_camp_scan.sql as a secondary, website-derived scan queue.",
+    "precondition_orphan_count": 5
+  },
+  "independent_clones": [
+    {
+      "clone": "a",
+      "precondition_orphan_count": 5,
+      "deleted_queue_rows": 5,
+      "remaining_orphan_count": 0,
+      "integrity_check": "ok",
+      "foreign_key_violation_count": 0
+    },
+    {
+      "clone": "b",
+      "precondition_orphan_count": 5,
+      "deleted_queue_rows": 5,
+      "remaining_orphan_count": 0,
+      "integrity_check": "ok",
+      "foreign_key_violation_count": 0
+    }
+  ],
+  "safety_boundary": {
+    "remote_database_mutated": false,
+    "remote_restore_attempted": false,
+    "customer_rows_disclosed": false,
+    "backup_contents_committed": false,
+    "production_repair_authorized": false
+  },
+  "result": "candidate_validated_locally",
+  "required_follow_up": [
+    "Obtain separately scoped approval for any production D1 transaction, including an exact current orphan-count precondition and fresh backup checksum.",
+    "Run a fresh post-repair export and local restore with zero foreign-key violations before passing the database restore gate.",
+    "Establish and exercise immutable offsite backup storage before passing the database backup gate."
+  ]
+}
