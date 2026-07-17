@@ -33,6 +33,15 @@ export function makeContext(opts: {
   env?: Record<string, unknown>;
 }): APIContext {
   const testEnv = { ...(opts.env ?? {}) };
+  // Route tests model a fully bound deployed Worker unless a test explicitly
+  // supplies a limiter override. Missing-binding fail-closed behavior is
+  // exercised directly in rate-limit-contract.test.ts.
+  const allow = { limit: async () => ({ success: true }) };
+  testEnv.PUBLIC_SUBMISSION_RATE_LIMITER ??= allow;
+  testEnv.TRUST_RATE_LIMITER ??= allow;
+  testEnv.COMMUNITY_RATE_LIMITER ??= allow;
+  testEnv.DEMAND_RATE_LIMITER ??= allow;
+  testEnv.OWNER_RATE_LIMITER ??= allow;
   if ('ADMIN_EMAILS' in testEnv) {
     testEnv.ACCESS_TEAM_DOMAIN ??= TEAM_DOMAIN;
     testEnv.ACCESS_AUD ??= AUD;

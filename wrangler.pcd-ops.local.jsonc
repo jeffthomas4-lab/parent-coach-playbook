@@ -1,0 +1,15 @@
+{
+  // Local migration-rehearsal configuration only. This file is not a deploy
+  // target and contains no remote database id, route, domain, secret, or data.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pcd-ops-local-proof-do-not-deploy",
+  "compatibility_date": "2026-04-30",
+  "d1_databases": [
+    {
+      "binding": "PCD_OPS_DB",
+      "database_name": "pcd-ops-local-proof",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations-pcd-ops"
+    }
+  ]
+}

@@ -13,12 +13,13 @@ import * as campsDb from '../../src/lib/camps-db';
 
 const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
 const mockCamp = { id: 'camp_1', slug: 'test-camp', name: 'Test Camp' };
+const JPEG_BYTES = new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46]);
 
 function fileRequest(opts: { withAuth?: boolean; origin?: string; file?: File | null } = {}) {
   const { withAuth = true, origin = 'https://parentcoachdesk.com', file } = opts;
   const fd = new FormData();
   if (file !== null) {
-    fd.set('file', file ?? new File([new Uint8Array([1, 2, 3])], 'hero.jpg', { type: 'image/jpeg' }));
+    fd.set('file', file ?? new File([JPEG_BYTES], 'hero.jpg', { type: 'image/jpeg' }));
   }
   const headers: Record<string, string> = { origin };
   if (withAuth) headers['Cf-Access-Authenticated-User-Email'] = 'jeffthomas@pugetsound.edu';
@@ -78,6 +79,27 @@ describe('POST /api/admin/camps/:id/photo', () => {
     const body = await readJson(res);
     expect(res.status).toBe(400);
     expect(body.error).toMatch(/unsupported type/);
+  });
+
+  it('failure path: a spoofed jpeg MIME type is rejected before touching R2 or the DB', async () => {
+    const spoofed = new File([new TextEncoder().encode('<script>alert(1)</script>')], 'hero.jpg', { type: 'image/jpeg' });
+    const env = makeEnv();
+    const ctx = makeContext({ request: fileRequest({ file: spoofed }), params: { id: 'camp_1' }, env });
+    const res = await POST(ctx);
+    const body = await readJson(res);
+    expect(res.status).toBe(400);
+    expect(body.error).toMatch(/content does not match/);
+    expect(env.PHOTOS.put).not.toHaveBeenCalled();
+    expect(campsDb.setHeroPhotoKey).not.toHaveBeenCalled();
+  });
+
+  it('failure path: declared image type must match the detected signature', async () => {
+    const mismatched = new File([JPEG_BYTES], 'hero.png', { type: 'image/png' });
+    const env = makeEnv();
+    const ctx = makeContext({ request: fileRequest({ file: mismatched }), params: { id: 'camp_1' }, env });
+    const res = await POST(ctx);
+    expect(res.status).toBe(400);
+    expect(env.PHOTOS.put).not.toHaveBeenCalled();
   });
 
   it('failure path: a camp id that does not exist returns 404', async () => {

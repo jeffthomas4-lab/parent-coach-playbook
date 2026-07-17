@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { requireAdmin } from '../../../lib/admin-auth';
+import { listActiveTrustCases, type TrustCase } from '../../../lib/trust-cases';
+import { env as cfEnv } from 'cloudflare:workers';
+
+export const prerender = false;
+const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+let cases: TrustCase[] = [];
+let error = '';
+try { if (env?.PCD_OPS_DB) cases = await listActiveTrustCases(env.PCD_OPS_DB); else error = 'Operational database not bound.'; }
+catch { error = 'Trust-case table unavailable or query failed.'; }
+const now = Date.now();
+const ageHours = (value: string) => Math.max(0, Math.floor((now - Date.parse(value)) / 3_600_000));
+const overdue = (value: string) => Number.isFinite(Date.parse(value)) && Date.parse(value) < now;
+---
+<BaseLayout title="Trust cases" description="Protected correction, removal, and rights-request queue" noindex={true}>
+  <section class="border-b border-bone"><div class="container-px py-10">
+    <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · Trust</p>
+    <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Open trust cases</h1>
+    <p class="font-display italic text-ink-soft text-sm mt-2 max-w-3xl">Corrections, removals, privacy, copyright, accessibility, and safety-related content reports. Production changes, deletion, and outbound responses remain separately approved.</p>
+    <p class="mt-3 flex flex-wrap gap-4"><a href="/admin/trust/drafts/" class="text-rust hover:underline">Review protected response drafts →</a><a href="/admin/trust/deliveries/" class="text-rust hover:underline">Reconcile ambiguous deliveries →</a></p>
+  </div></section>
+  <section><div class="container-px py-10">
+    {error ? <p class="text-rust">{error}</p> : cases.length === 0 ? <p class="text-ink-soft">No active cases.</p> : (
+      <ul class="grid gap-4">{cases.map((item) => <li class="border border-bone bg-paper p-5">
+        <p class="font-display italic text-rust text-sm">{item.category} · {item.priority} · {item.status} · submitted {new Date(item.submitted_at).toLocaleString()}</p>
+        <p class:list={["font-mono text-xs mt-1", overdue(item.due_at) ? "text-red-700" : "text-ink-soft"]}>Target: {new Date(item.due_at).toLocaleString()} · age {ageHours(item.submitted_at)}h{overdue(item.due_at) ? ' · OVERDUE' : ''}</p>
+        <p class="mt-2"><strong>Reference:</strong> {item.id}</p>
+        {item.target_url && <p><a href={item.target_url} target="_blank" rel="noopener" class="text-rust hover:underline">Affected page ↗</a></p>}
+        <p class="mt-2 whitespace-pre-wrap">{item.description}</p>
+        {item.desired_resolution && <p class="mt-2 text-ink-soft"><strong>Requested:</strong> {item.desired_resolution}</p>}
+        <p class="mt-2 text-sm text-ink-soft">Contact: {item.requester_email}{item.requester_name ? ` · ${item.requester_name}` : ''}</p>
+        <form method="POST" action={`/api/admin/trust/${item.id}/draft`} class="grid gap-2 mt-4 max-w-xl border-t border-bone pt-4">
+          <p class="text-sm text-ink-soft">Create a protected response draft. Saving does not approve or send it.</p>
+          <label class="grid gap-1"><span class="text-sm">Subject</span><input name="subject" minlength="3" maxlength="200" required class="px-2 py-1 border border-bone bg-paper" /></label>
+          <label class="grid gap-1"><span class="text-sm">Response draft</span><textarea name="body_text" minlength="20" maxlength="10000" rows="6" required class="px-2 py-1 border border-bone bg-paper"></textarea></label>
+          <button class="btn btn-ghost" type="submit">Save protected draft</button>
+        </form>
+        <form method="POST" action={`/api/admin/trust/${item.id}/update`} class="grid gap-2 mt-4 max-w-xl">
+          <label class="grid gap-1"><span class="text-sm">Next state</span><select name="status" class="px-2 py-1 border border-bone bg-paper"><option value="in_review">Mark in review</option><option value="resolved">Resolve</option><option value="closed">Close</option></select></label>
+          <label class="grid gap-1"><span class="text-sm">Resolution code (required for resolve/close)</span><select name="resolution_code" class="px-2 py-1 border border-bone bg-paper"><option value="">Not terminal</option><option value="corrected">Corrected</option><option value="removed">Removed</option><option value="fulfilled">Rights request fulfilled</option><option value="no_action">No action</option><option value="duplicate">Duplicate</option><option value="out_of_scope">Out of scope</option><option value="referred">Referred</option></select></label>
+          <label class="grid gap-1"><span class="text-sm">Internal notes (minimum 10 characters for resolve/close)</span><textarea name="notes" maxlength="2000" rows="2" placeholder="Evidence reviewed, decision, action/proposal, and follow-up." class="px-2 py-1 border border-bone bg-paper"></textarea></label>
+          <button class="btn" type="submit">Update case</button>
+        </form>
+        {(item.camp_slug || item.target_url) && <form method="POST" action={`/api/admin/trust/${item.id}/suppression`} class="grid gap-2 mt-4 pt-4 border-t border-bone max-w-xl">
+          <p class="text-sm text-ink-soft">Create an inert suppression proposal so approved removals cannot be silently reimported. This does not remove content or activate suppression.</p>
+          <label class="grid gap-1"><span class="text-sm">Suppression reason</span><select name="reason_code" required class="px-2 py-1 border border-bone bg-paper"><option value="">Choose reason</option><option value="rights_request">Rights request</option><option value="operator_request">Operator request</option><option value="duplicate">Duplicate</option><option value="unsafe_source">Unsafe source</option><option value="legal_hold">Legal hold</option><option value="other">Other</option></select></label>
+          <button class="btn btn-ghost" type="submit">Propose suppression</button>
+        </form>}
+      </li>)}</ul>
+    )}
+  </div></section>
+</BaseLayout>

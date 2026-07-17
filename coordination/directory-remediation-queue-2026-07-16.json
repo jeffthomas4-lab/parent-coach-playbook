@@ -1,0 +1,110 @@
+{
+  "status": "proposal_only",
+  "generated_at": "2026-07-16T09:20:00Z",
+  "last_investigated_at": "2026-07-16T19:30:00Z",
+  "production_writes_authorized": false,
+  "approval_scope": "Each item requires current-source re-review and a separate item-level decision. Approval to investigate is not approval to mutate D1.",
+  "items": [
+    {
+      "program_id": "233da2ca-e81a-4a55-aa5b-79a93035a50a",
+      "priority": "stop_ship",
+      "action_class": "customer_harm_correction",
+      "recommended_decision": "approve_reverification_and_bounded_correction_proposal",
+      "finding": "Stored $50 appears to be a registration fee, while the official Everett club page lists summer camp at $270/week full time or $180/week part time plus a $50 registration fee.",
+      "proposal": "Remove the standalone $50 camp-price claim and re-review the exact Everett program, date scope, ages, and full price from the provider page before approval.",
+      "source_url": "https://bgcsc.org/clubs/everett/"
+    },
+    {
+      "program_id": "prog-012121b5-d68b-59ff-b05e-1dd841b8582c",
+      "priority": "high",
+      "action_class": "stale_or_inferred_fact",
+      "recommended_decision": "approve_reverification_and_bounded_correction_proposal",
+      "finding": "Official page supports $245 and grades 3-8, but not the stored $196 early-bird qualifier or exact ages 8-14.",
+      "proposal": "Remove the unsupported promotional qualifier; represent grade eligibility directly or label any age conversion approximate with provenance.",
+      "source_url": "https://www.breakthroughbasketball.com/camps/basketball-camp/tacoma-wa"
+    },
+    {
+      "program_id": "prog-81d5fb25-2c8c-5785-9c4d-26d8630706c0",
+      "priority": "high",
+      "action_class": "stale_or_inferred_fact",
+      "recommended_decision": "approve_reverification_and_bounded_correction_proposal",
+      "finding": "Stored $119-$349 range reflects struck-through prices; the current official registration page displays early-bird prices of $99-$309 across program variants.",
+      "proposal": "Refresh price text with explicit variant/discount context and recheck after the early-bird window; do not imply one product spans every age and price.",
+      "source_url": "https://challenger.configio.com/pd/269906/dupont-park-recreations-week-2?org=1069&returncom=orglandingpage&source=search"
+    },
+    {
+      "program_id": "prog-0ef04da3-56e4-5625-be62-50f292747d94",
+      "priority": "medium",
+      "action_class": "material_fact_not_reproduced",
+      "recommended_decision": "approve_investigation_only",
+      "finding": "Official Parks Tacoma page supports name, dates, and ages and currently shows waitlist, but the sampled registration page did not reproduce price.",
+      "proposal": "Confirm the $250 price in a provider-controlled detail view and reconcile availability before the next release audit.",
+      "source_url": "https://www.parkstacoma.gov/activities-and-sports/camps/",
+      "investigation_result": "The current official camps and arts-camps pages reproduce Around the World Cooking Camp at STAR Center, Aug. 24-28, 2026, ages 13-17, with zero openings and waitlist status. They still do not reproduce the stored $250 price.",
+      "evidence_state": "official_partial_material_fields_price_unreproduced"
+    },
+    {
+      "program_id": "prog-bd522796-5a77-5b77-b20d-82f0ae9419c7",
+      "priority": "medium",
+      "action_class": "source_inaccessible",
+      "recommended_decision": "approve_investigation_only",
+      "finding": "Client-rendered Homeroom page did not expose enough public evidence to reproduce material fields.",
+      "proposal": "Obtain a provider-controlled accessible detail page or manual evidence review; do not grant verified status from HTTP reachability.",
+      "source_url": "https://www.homeroom.com/sites/charles-wright-academy-university-place/camp/sports-camps",
+      "alternate_official_source_url": "https://charleswright.org/community/camps/",
+      "investigation_result": "A stable provider-controlled 2026 camp page now reproduces the overall Jun. 15-Aug. 7 season, rising grades 1-10, soccer as an offered sport, and price floors. It does not identify the exact sampled soccer session, dates, grade band, or price, so record-level material fields remain unverified.",
+      "evidence_state": "official_program_family_found_exact_record_unreproduced"
+    },
+    {
+      "program_id": "prog-2b0bc22a-a9d2-5882-8e1f-1eb6b60e2a07",
+      "priority": "medium",
+      "action_class": "source_inaccessible",
+      "recommended_decision": "approve_investigation_only",
+      "finding": "The i9 venue page did not expose public material fields in the audit client.",
+      "proposal": "Reproduce dates, ages, price and early-bird deadline through an accessible official detail flow before verified status.",
+      "source_url": "https://www.i9sports.com/venues/puyallup-heritage-recreation-center-youth-sports-programs/9746"
+    },
+    {
+      "program_id": "b6868faf-cf6b-46f0-93eb-4107aaf89d49",
+      "priority": "medium",
+      "action_class": "source_inaccessible",
+      "recommended_decision": "approve_investigation_only",
+      "finding": "The TeamSnap registration target was login/client-rendered and did not reproduce the stored Kirkland camp fields.",
+      "proposal": "Require an official public program page or a documented manual provider review before verified status.",
+      "source_url": "https://go.teamsnap.com/forms/518675"
+    },
+    {
+      "program_id": "prog-01f0da82-13cc-58d0-a489-2ec10d8c7c8f",
+      "priority": "medium",
+      "action_class": "source_inaccessible",
+      "recommended_decision": "approve_investigation_only",
+      "finding": "The generic Puyallup catalog did not expose the sampled Week 9 material fields in the audit client.",
+      "proposal": "Capture a stable provider detail URL or perform a dated manual review before verified status.",
+      "source_url": "https://secure.rec1.com/WA/puyallup-parks-recreation/catalog",
+      "alternate_official_source_url": "https://www.puyallupwa.gov/DocumentCenter/View/25380/Day-Camp-Scholarship-Form-2026?bidId=",
+      "investigation_result": "An official 2026 city scholarship form reproduces Camp Yougottawanna Week 9 as Color Wars, Aug. 17-21, at Puyallup Recreation Center. It does not reproduce the sampled record's ages or price, and the generic Rec1 catalog remains an unstable detail destination.",
+      "evidence_state": "official_partial_material_fields_age_price_unreproduced"
+    },
+    {
+      "program_id": "prog-1226d6cf-6279-5106-9a83-ef49bb6004cd",
+      "priority": "medium",
+      "action_class": "source_inaccessible",
+      "recommended_decision": "approve_investigation_only",
+      "finding": "The official Sound Life URL was not inspectable in the audit client, so dates, ages and price were not reproduced.",
+      "proposal": "Reproduce through an accessible official page or dated manual provider evidence before verified status.",
+      "source_url": "https://www.soundlifedaycamp.com/tacoma",
+      "investigation_result": "The queued Tacoma URL remains unverified. The currently discoverable provider-branded 2026 Sound Life site is explicitly for Port Angeles at 120 West 8th Street and therefore cannot support the Tacoma record. Treat this as a possible entity/location mismatch, not as substitute evidence.",
+      "alternate_candidate_url": "https://pasoundlifedaycamp.com/",
+      "evidence_state": "possible_entity_location_mismatch"
+    },
+    {
+      "program_id": "policy-auburn-minimum-age-rounding",
+      "priority": "medium",
+      "action_class": "transformation_policy",
+      "recommended_decision": "approve_policy_review_only",
+      "finding": "The official Auburn guide states a minimum age of 11.5 while the directory broadens it to age 11; the stored program identifier must be re-established before any record-level proposal.",
+      "proposal": "Choose and document a half-year age representation rule. Until the schema can represent 11.5 accurately, do not label the transformed minimum as source-verified and do not mutate a record from this policy placeholder.",
+      "source_url": "https://www.auburnwa.gov/city_hall/parks_arts_recreation/recreation/camps"
+    }
+  ]
+}

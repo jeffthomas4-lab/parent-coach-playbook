@@ -1,7 +1,8 @@
 ---
 // /admin/search-signals
 //
-// Shows the top 20 most-searched queries and a raw log of the last 500 events.
+// Shows aggregate search signals only. Individual events can contain sensitive
+// free text, including legacy rows collected before redaction was added.
 // Uses D1 binding `DB` — same binding used by the camps directory.
 // Wrap this route behind Cloudflare Access in production.
 
@@ -16,16 +17,6 @@ const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
 
-type RawEvent = {
-  id: number;
-  query: string;
-  result_count: number | null;
-  collection: string | null;
-  sport: string | null;
-  age: string | null;
-  created_at: string;
-};
-
 type TopQuery = {
   query: string;
   count: number;
@@ -33,7 +24,6 @@ type TopQuery = {
 };
 
 let topQueries: TopQuery[] = [];
-let recentEvents: RawEvent[] = [];
 let dbAvailable = !!env?.DB;
 let tableReady = false;
 
@@ -49,14 +39,6 @@ if (env?.DB) {
     ).all<TopQuery>();
     topQueries = topResult.results ?? [];
 
-    // Last 500 raw events
-    const rawResult = await env.DB.prepare(
-      `SELECT id, query, result_count, collection, sport, age, created_at
-       FROM search_events
-       ORDER BY created_at DESC
-       LIMIT 500`
-    ).all<RawEvent>();
-    recentEvents = rawResult.results ?? [];
     tableReady = true;
   } catch (e) {
     // Table doesn't exist yet — migration 0010 hasn't been applied.
@@ -65,11 +47,6 @@ if (env?.DB) {
   }
 }
 
-const fmt = (s: string) =>
-  new Date(s).toLocaleString('en-US', {
-    month: 'short', day: 'numeric', year: 'numeric',
-    hour: 'numeric', minute: '2-digit',
-  });
 ---
 <BaseLayout title="Search signals" description="Admin: search event log" noindex={true}>
   <section class="border-b border-bone">
@@ -81,7 +58,7 @@ const fmt = (s: string) =>
         Search signals
       </h1>
       <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
-        What parents and coaches are looking for. Logged from /search, no PII stored.
+        Aggregate demand signals from sanitized searches. Telemetry remains default-off until its retention and disclosure gates are approved.
       </p>
     </div>
   </section>
@@ -98,9 +75,8 @@ const fmt = (s: string) =>
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-8">
         <p class="font-display italic text-rust font-medium">
-          The <code>search_events</code> table does not exist yet. Apply migration 0010:
+          Search telemetry storage is not ready. Use the reviewed release runbook; do not apply a production migration from this page.
         </p>
-        <pre class="mt-3 bg-paper border border-bone p-4 text-sm font-mono overflow-x-auto">npx wrangler d1 migrations apply parent-coach-playbook --remote</pre>
       </div>
     </section>
   )}
@@ -137,40 +113,6 @@ const fmt = (s: string) =>
                     <td class="py-2 text-ink-soft">
                       {row.avg_results !== null ? row.avg_results : '—'}
                     </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container-px py-10">
-          <p class="font-display italic text-rust mb-4 font-medium">
-            Recent events (last {recentEvents.length})
-          </p>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm font-display">
-              <thead>
-                <tr class="border-b border-bone text-left text-ink-soft font-medium italic">
-                  <th scope="col" class="pb-2 pr-4">Query</th>
-                  <th scope="col" class="pb-2 pr-4">Results</th>
-                  <th scope="col" class="pb-2 pr-4">Collection</th>
-                  <th scope="col" class="pb-2 pr-4">Sport</th>
-                  <th scope="col" class="pb-2 pr-4">Age</th>
-                  <th scope="col" class="pb-2">When</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentEvents.map(e => (
-                  <tr class="border-b border-bone hover:bg-paper-warm transition-colors">
-                    <td class="py-1.5 pr-4 text-ink font-medium">{e.query}</td>
-                    <td class="py-1.5 pr-4 text-ink-soft">{e.result_count ?? '—'}</td>
-                    <td class="py-1.5 pr-4 text-ink-soft">{e.collection ?? '—'}</td>
-                    <td class="py-1.5 pr-4 text-ink-soft">{e.sport ?? '—'}</td>
-                    <td class="py-1.5 pr-4 text-ink-soft">{e.age ?? '—'}</td>
-                    <td class="py-1.5 text-ink-soft whitespace-nowrap">{fmt(e.created_at)}</td>
                   </tr>
                 ))}
               </tbody>

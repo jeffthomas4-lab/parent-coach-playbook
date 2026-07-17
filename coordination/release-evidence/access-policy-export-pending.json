@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "state": "pending",
+  "required_origin": "https://parentcoachdesk.com",
+  "required_paths": ["/admin*", "/api/admin*"],
+  "expected_team_domain": "fieldforge.cloudflareaccess.com",
+  "expected_audience_tag": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23",
+  "exported_at": null,
+  "team_domain": null,
+  "audience_tag": null,
+  "export_method": null,
+  "export_hash": null,
+  "applications": [],
+  "contains_tokens": false,
+  "contains_secret_values": false,
+  "remaining_action": "Export the live Access application and ordered policies through an authenticated read-only Cloudflare path; redact identity values but retain selector classes and counts.",
+  "external_changes": []
+}

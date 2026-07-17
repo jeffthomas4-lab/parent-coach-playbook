@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-16T14:04:00Z",
+  "scope": "isolated_local_d1",
+  "remote": false,
+  "production_data_used": false,
+  "external_changes": [],
+  "wrangler_version": "4.110.0",
+  "database_binding": "DB",
+  "persist_path_label": "pcd-d1-rehearsal-20260716-1345",
+  "candidate_migrations": [
+    "0011_trust_cases.sql",
+    "0012_trust_drafts_and_notification_outbox.sql",
+    "0013_demand_events_v1.sql",
+    "0014_trust_intake_idempotency.sql"
+  ],
+  "candidate_result": "pass_on_fresh_local_bootstrap",
+  "fresh_chain_result": "pass_after_bootstrap_repair",
+  "prior_fresh_chain_failure": {
+    "migration": "0006_camp_quality_framework.sql",
+    "error_class": "missing_legacy_out_of_band_column",
+    "redacted_error": "no such column: source_domain",
+    "additional_reproduced_dependency": "0008_awaiting_review.sql requires the out-of-band awaiting_review column"
+  },
+  "bootstrap_repair": {
+    "file": "migrations/0001_init_camps.sql",
+    "scope": "databases_where_0001_has_never_run",
+    "method": "define_legacy_out_of_band_columns_in_initial_table_schema",
+    "existing_database_effect": "none_without_a_separately_approved_new_migration"
+  },
+  "legacy_baseline_method": "first failure used schema-only reconstructed columns; final proof used an empty local database and the repaired repository chain; no row data imported",
+  "applied_migration_count": 15,
+  "checks": {
+    "candidate_migrations_applied": true,
+    "full_chain_applied_from_empty_database": true,
+    "required_legacy_columns_present": 15,
+    "trust_tables_present": 7,
+    "intake_columns_present": 2,
+    "intake_unique_index_present": true,
+    "foreign_key_check_clean": true,
+    "synthetic_exact_replay_retained_original": true,
+    "synthetic_changed_payload_did_not_create_second_case": true,
+    "synthetic_case_count_for_key": 1
+  },
+  "synthetic_identity_domain": "example.invalid",
+  "limitations": [
+    "The initial failure proved the historical chain depended on legacy out-of-band columns; the local 0001 bootstrap repair now makes the full chain pass from empty.",
+    "A fresh empty database is not a current production schema export or a restored production backup.",
+    "No rollback, remote non-production rehearsal, load test, or production migration was performed.",
+    "This receipt does not authorize migration, telemetry collection, expiry maintenance, deployment, or outbound work."
+  ],
+  "operational_migration_gate_complete": false,
+  "production_migration_approved": false
+}

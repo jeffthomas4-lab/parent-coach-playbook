@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { renderTitle } from '../lib/title';
 
 // Newsletter archive. Will list actual Friday Letter issues once they ship.
 // Until then, the archive is empty and the page leads with the signup CTA.
@@ -54,7 +55,7 @@ const fmt = (d: Date) =>
             Get the Friday Letter
           </a>
           <p class="font-display italic text-ink-soft text-xs mt-3 font-medium">
-            Unsubscribe in one click. We don't share or sell your address.
+            Subscription is handled on Kit’s hosted page, which shows an unsubscribe option.
           </p>
         </aside>
       </div>
@@ -93,7 +94,7 @@ const fmt = (d: Date) =>
                 <div>
                   <h3
                     class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium"
-                    set:html={a.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                    set:html={renderTitle(a.title)}
                   />
                   {a.dek && (
                     <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
@@ -123,7 +124,7 @@ const fmt = (d: Date) =>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to Say When, the Practice Plan Template, the Pre-Game Pocket Card. Subscribers get them first.</p>
         </div>
         <div>
-          <h3 class="font-display text-ink text-xl leading-tight font-medium">Reply, real people read it.</h3>
+          <h3 class="font-display text-ink text-xl leading-tight font-medium">Questions and corrections are welcome.</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Hit reply on any issue. The Parent Coach Desk writes back.</p>
         </div>
       </div>

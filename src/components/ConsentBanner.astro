@@ -15,7 +15,7 @@
   <div class="container-px py-4">
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; justify-content: space-between;">
       <p class="font-display text-sm" style="color: var(--paper); max-width: 640px; margin: 0;">
-        We use Google Analytics to see which articles help parents most. No ads, no profiles, no selling your data.
+        We use Google Analytics to see which articles help parents most. No ads, no profiles, no selling your data.{' '}
         <a href="/disclosure/" style="color: var(--bone); text-decoration: underline;">Full details.</a>
       </p>
       <div style="display: flex; gap: 0.75rem; flex-shrink: 0;">
@@ -54,6 +54,15 @@
 
   document.getElementById('consent-decline')?.addEventListener('click', () => {
     localStorage.setItem('pcd_consent', 'no');
+    window.dispatchEvent(new Event('pcd_consent_denied'));
     if (banner) banner.style.display = 'none';
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-privacy-choices]').forEach((control) => {
+    control.addEventListener('click', () => {
+      if (!banner) return;
+      banner.style.display = 'block';
+      document.getElementById('consent-accept')?.focus();
+    });
   });
 </script>

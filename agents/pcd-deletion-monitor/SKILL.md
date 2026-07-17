@@ -1,6 +1,6 @@
 ---
 name: pcd-deletion-monitor
-description: PCD data-deletion and opt-out monitor. Watches support@parentcoachdesk.com (portfolio inbox jeff@coachjeffthomas.com only, never pugetsound.edu), locates the matching record in the activity-radar D1, and stages a ready-to-commit deletion for Jeff inside the 30-day DATA-MAP SLA. Monitor-and-draft behind the HUMAN GATE: it never deletes, anonymizes, or replies on its own.
+description: PCD privacy-request monitor. Watches the approved intake, locates or proposes the authoritative request record, and stages bounded work against its configured deadline. Monitor-and-draft behind the HUMAN GATE: it never decides legal applicability, approves exceptions, deletes, anonymizes, or replies on its own.
 version: 1.2
 last_edited: 2026-07-15
 owner_workstream: Support/Ops
@@ -39,14 +39,14 @@ Capture `started_at` (America/Los_Angeles, ISO 8601) and generate a `run_id` (uu
 
 ## STEP 2 — find deletion and opt-out requests
 
-Search the portfolio inbox for recent mail to `support@parentcoachdesk.com` (the Gmail filter labels these; also check any `PCD/Support` label if present). Look at anything from roughly the last 45 days so nothing inside the 30-day SLA is missed.
+Search the approved portfolio privacy intake for recent requests. Reconcile messages to authoritative `privacy_requests` state; do not invent a deadline from message age. If no record exists, stage an intake/escalation item rather than a deletion action.
 
 For each message, reason through four questions before acting:
 
 1. Is this actually a deletion or opt-out request, or ordinary support mail? A clear "delete my data", "remove my listing", "take me off your list", or a GDPR/CCPA-style request counts. A content question, a partnership pitch, or a general question does not.
 2. Which record does it match? Search the `activity-radar` D1 (see STEP 3) by email, organization name, and website domain. If more than one record plausibly matches, or none clearly does, stage nothing and flag it for Jeff with what you found. Do not guess.
 3. Is any of this Red Wall or family data? A parent naming their child, a player writing about themselves, anything touching a recruit, prospect, current player, or family. If so, flag it to Jeff only and stage nothing automatically. RED WALL and FAMILY FIREWALL both apply.
-4. How many days are left on the clock? Compute days remaining from the message received date against the 30-day SLA in `DATA-MAP.md` (repo root: the mounted Claude Cowork folder, then `Outputs/parent-coach-desk/DATA-MAP.md`). Put the days-remaining number at the top of the staged item.
+4. How much time remains? Read `statutory_due_at`, `internal_target_at`, extension, exception, and identity state from the authoritative request. If absent or contradictory, escalate for human/counsel review; do not calculate a universal deadline.
 
 ## STEP 3 — locate the record (read only)
 

@@ -6,7 +6,6 @@ import { makeContext, readJson } from '../helpers/context';
 vi.mock('../../src/lib/camps-db', () => ({
   getClaimById: vi.fn(),
   updateClaimStatus: vi.fn(),
-  markCampClaimed: vi.fn(),
 }));
 
 import { POST } from '../../src/pages/api/admin/claims/[id]/update';
@@ -33,7 +32,6 @@ describe('POST /api/admin/claims/:id/update', () => {
     vi.clearAllMocks();
     (campsDb.getClaimById as any).mockResolvedValue(mockClaim);
     (campsDb.updateClaimStatus as any).mockResolvedValue({ ...mockClaim, status: 'verified' });
-    (campsDb.markCampClaimed as any).mockResolvedValue(undefined);
   });
 
   it('auth: refuses a request with no Cloudflare Access identity', async () => {
@@ -49,29 +47,27 @@ describe('POST /api/admin/claims/:id/update', () => {
   });
 
   it('happy path: an allowed admin marking a claim verified succeeds', async () => {
-    const ctx = makeContext({ request: adminRequest({ status: 'verified' }), params: { id: 'claim_1' }, env: { DB: {}, ADMIN_EMAILS } });
+    const ctx = makeContext({ request: adminRequest({ status: 'verified' }), params: { id: 'claim_1' }, env: { DB: {}, ADMIN_EMAILS, CAMP_CLAIMS_ENABLED: 'true' } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(200);
     expect(body.ok).toBe(true);
     expect(campsDb.updateClaimStatus).toHaveBeenCalledWith(expect.anything(), 'claim_1', 'verified', 'jeffthomas@pugetsound.edu', null);
-    expect(campsDb.markCampClaimed).not.toHaveBeenCalled();
   });
 
-  it('happy path: marking a claim paid also flips the camp claimed flag', async () => {
-    (campsDb.updateClaimStatus as any).mockResolvedValue({ ...mockClaim, status: 'paid' });
+  it('security: cannot convert a claim into paid ownership without a payment and entitlement ledger', async () => {
     const ctx = makeContext({
       request: adminRequest({ status: 'paid', paid_until: '2027-01-01' }),
       params: { id: 'claim_1' },
-      env: { DB: {}, ADMIN_EMAILS },
+      env: { DB: {}, ADMIN_EMAILS, CAMP_CLAIMS_ENABLED: 'true' },
     });
     const res = await POST(ctx);
-    expect(res.status).toBe(200);
-    expect(campsDb.markCampClaimed).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'owner@example.com', '2027-01-01');
+    expect(res.status).toBe(400);
+    expect(campsDb.updateClaimStatus).not.toHaveBeenCalled();
   });
 
   it('failure path: an invalid status value is rejected', async () => {
-    const ctx = makeContext({ request: adminRequest({ status: 'bogus' }), params: { id: 'claim_1' }, env: { DB: {}, ADMIN_EMAILS } });
+    const ctx = makeContext({ request: adminRequest({ status: 'bogus' }), params: { id: 'claim_1' }, env: { DB: {}, ADMIN_EMAILS, CAMP_CLAIMS_ENABLED: 'true' } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(400);
@@ -81,7 +77,7 @@ describe('POST /api/admin/claims/:id/update', () => {
 
   it('failure path: a claim id that does not exist returns 404', async () => {
     (campsDb.getClaimById as any).mockResolvedValue(null);
-    const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS } });
+    const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS, CAMP_CLAIMS_ENABLED: 'true' } });
     const res = await POST(ctx);
     expect(res.status).toBe(404);
   });

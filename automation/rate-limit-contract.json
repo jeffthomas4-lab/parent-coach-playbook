@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "missing_binding_behavior": "503_fail_closed",
+  "classes": [
+    { "binding": "PUBLIC_SUBMISSION_RATE_LIMITER", "routes": ["POST /api/camps/submit", "POST /api/camps/suggest"], "staging_namespace": "910101", "production_namespace": "910201", "limit": 10, "period_seconds": 60, "key": "route plus normalized claimed email else trusted edge IP", "capacity_action": "degrade or disable when moderation queue crosses threshold" },
+    { "binding": "TRUST_RATE_LIMITER", "routes": ["POST /api/trust/request"], "staging_namespace": "910102", "production_namespace": "910202", "limit": 5, "period_seconds": 60, "key": "route plus normalized requester email else trusted edge IP", "capacity_action": "preserve alternative monitored rights channel; never silently discard" },
+    { "binding": "COMMUNITY_RATE_LIMITER", "routes": ["POST /api/camps/:slug/reviews/submit"], "staging_namespace": "910103", "production_namespace": "910203", "limit": 5, "period_seconds": 60, "key": "route plus normalized reviewer email else trusted edge IP", "capacity_action": "feature remains disabled until moderation capacity is proved" },
+    { "binding": "DEMAND_RATE_LIMITER", "routes": ["POST /api/search-event"], "staging_namespace": "910104", "production_namespace": "910204", "limit": 30, "period_seconds": 60, "key": "route plus trusted edge IP; no retained raw IP", "capacity_action": "drop telemetry without affecting search; collection remains disabled until policy gate" },
+    { "binding": "OWNER_RATE_LIMITER", "routes": ["POST /api/camps/:slug/claim"], "staging_namespace": "910105", "production_namespace": "910205", "limit": 5, "period_seconds": 60, "key": "route plus normalized claimant email else trusted edge IP", "capacity_action": "feature remains disabled until identity and support gates" }
+  ],
+  "shared_controls": [
+    "body and field bounds",
+    "content type and origin validation where applicable",
+    "honeypot or equivalent low-friction abuse signal",
+    "durable idempotency for retryable writes",
+    "queue age and volume circuit breaker",
+    "edge WAF and bot policy remains a separate live evidence gate"
+  ],
+  "known_limitations": [
+    "claimed email is not verified identity on anonymous forms",
+    "Cloudflare binding counters do not replace durable idempotency or authorization",
+    "distributed attackers and shared networks require WAF/bot/capacity evidence",
+    "production namespace configuration is source-only until separately deployed"
+  ]
+}

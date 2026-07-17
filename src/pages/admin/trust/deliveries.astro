@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { requireAdmin } from '../../../lib/admin-auth';
+import { listTrustDeliveryReconciliationQueue, type TrustDraftDeliveryAttempt } from '../../../lib/trust-cases';
+import { env as cfEnv } from 'cloudflare:workers';
+
+export const prerender = false;
+const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+let attempts: TrustDraftDeliveryAttempt[] = [];
+let error = '';
+try { if (env?.PCD_OPS_DB) attempts = await listTrustDeliveryReconciliationQueue(env.PCD_OPS_DB); else error = 'Operational database not bound.'; }
+catch { error = 'Delivery reconciliation tables unavailable or query failed.'; }
+---
+<BaseLayout title="Trust delivery reconciliation" description="Protected ambiguous delivery queue" noindex={true}>
+  <section class="border-b border-bone"><div class="container-px py-10">
+    <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · <a href="/admin/trust/" class="hover:underline">Trust</a> · Deliveries</p>
+    <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Delivery reconciliation</h1>
+    <p class="font-display italic text-ink-soft text-sm mt-2 max-w-3xl">These attempts are ambiguous, failed, stuck, or inconsistent. Check authoritative provider evidence before deciding. This queue never retries a message.</p>
+  </div></section>
+  <section><div class="container-px py-10">
+    {error ? <p class="text-rust">{error}</p> : attempts.length === 0 ? <p class="text-ink-soft">No delivery attempts require reconciliation.</p> : (
+      <ul class="grid gap-4">{attempts.map((attempt) => <li class="border border-bone bg-paper p-5">
+        <p class="font-mono text-xs text-ink-soft">{attempt.id} · case {attempt.case_id} · draft {attempt.draft_id}</p>
+        <p class="mt-1 text-sm text-red-700">Attempt: {attempt.status} · draft: {attempt.draft_status} · provider: {attempt.provider}</p>
+        <p class="mt-1 text-sm text-ink-soft">Claimed {new Date(attempt.claimed_at).toLocaleString()}{attempt.error_code ? ` · ${attempt.error_code}` : ''}</p>
+        <p class="mt-3"><strong>To:</strong> {attempt.recipient_email}</p>
+        <p><strong>Subject:</strong> {attempt.subject}</p>
+        <pre class="mt-3 whitespace-pre-wrap font-body border border-bone p-3 bg-white">{attempt.body_text}</pre>
+        <form method="POST" action={`/api/admin/trust/${attempt.case_id}/deliveries/${attempt.id}/reconcile`} class="grid gap-2 mt-4 max-w-xl">
+          <label class="grid gap-1"><span class="text-sm">Provider finding</span><select name="outcome" required class="px-2 py-1 border border-bone bg-paper"><option value="">Choose only after provider review</option><option value="confirmed_sent">Provider confirms sent</option><option value="confirmed_not_sent">Provider confirms not sent — void and redraft</option></select></label>
+          <label class="grid gap-1"><span class="text-sm">Provider message/event evidence ID or protected evidence URL</span><input name="evidence_reference" minlength="3" maxlength="500" required class="px-2 py-1 border border-bone bg-paper" /></label>
+          <label class="grid gap-1"><span class="text-sm">Reconciliation note</span><textarea name="note" minlength="10" maxlength="1000" rows="3" required class="px-2 py-1 border border-bone bg-paper" placeholder="What was checked, result, and why this decision is supported. Do not paste customer content."></textarea></label>
+          <label class="flex gap-2 items-start text-sm"><input type="checkbox" name="confirm_no_retry" value="yes" required class="mt-1" /><span>I reviewed authoritative provider evidence. This action will not retry delivery; confirmed-not-sent requires a new draft and approval.</span></label>
+          <button class="btn" type="submit">Record reconciliation</button>
+        </form>
+      </li>)}</ul>
+    )}
+  </div></section>
+</BaseLayout>

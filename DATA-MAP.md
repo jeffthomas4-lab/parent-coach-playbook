@@ -52,7 +52,7 @@ One database, one map (updated 2026-07-13, ActivityRadar merge): this file now c
 
 ## Deletion path
 
-A user who wants their data removed should email support@parentcoachdesk.com. We handle it within 30 days. (Changed 2026-07-13 from the retired parentcoachplaybook@gmail.com brand address; support@ already forwards to jeff@coachjeffthomas.com per Cloudflare Email Routing, PCD Operating Manual S12.)
+A user who wants access, correction, restriction, export, or deletion should use the approved privacy contact. Each validated request receives a recorded jurisdiction, statutory deadline, internal target, extension/exception state, and accountable owner. The response period is not a universal 30-day deletion rule: GDPR requests generally use one month subject to lawful extensions and exceptions, and other laws or contracts may differ. Customer-facing language and the configured workflow require counsel review before launch. (The current documented contact is support@parentcoachdesk.com; routing and human receipt still require live proof.)
 
 | Store | What gets purged | How |
 |-------|-----------------|-----|

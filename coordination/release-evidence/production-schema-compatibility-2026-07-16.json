@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-16T14:09:00Z",
+  "inspection_mode": "remote_read_only_schema_metadata",
+  "binding": "DB",
+  "database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef",
+  "changed_db": false,
+  "rows_written": 0,
+  "customer_rows_selected": false,
+  "current_lineage": "activity_radar_graph",
+  "applied_migration_count": 11,
+  "applied_migration_name_range": {
+    "first": "0001_core_graph.sql",
+    "last": "0012_camp_scan.sql"
+  },
+  "pcd_exact_migration_names_present": 0,
+  "camps_table_present": false,
+  "existing_collision_tables": ["camp_claims", "camp_reviews", "org_suggestions", "search_events"],
+  "candidate_operational_tables_present": [],
+  "compatibility_result": "incompatible_for_pcd_migration_chain",
+  "reason_codes": [
+    "different_migration_lineage",
+    "pcd_base_table_absent",
+    "preexisting_table_name_collisions",
+    "shared_directory_data_boundary"
+  ],
+  "required_architecture": {
+    "directory_binding": "DB",
+    "directory_role": "shared_read_and_explicitly_approved_directory_writes",
+    "operational_binding": "PCD_OPS_DB",
+    "operational_role": "trust_support_demand_and_agent_operational_state",
+    "staging_provisioned": true,
+    "staging_migration_applied": true,
+    "staging_worker_binding_live": false,
+    "production_provisioned": false,
+    "production_migration_applied": false
+  },
+  "local_operational_lineage_proof": {
+    "config": "wrangler.pcd-ops.local.jsonc",
+    "migrations_dir": "migrations-pcd-ops",
+    "empty_local_database": true,
+    "applied_migration_count": 4,
+    "applied_through": "0014_trust_intake_idempotency.sql",
+    "remote": false,
+    "external_changes": []
+  },
+  "prohibited_conclusion": "Do not run the repository PCD migration chain against the current DB binding.",
+  "external_changes": [],
+  "production_migration_approved": false
+}

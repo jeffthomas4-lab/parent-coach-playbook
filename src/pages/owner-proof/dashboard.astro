@@ -1,0 +1,31 @@
+---
+export const prerender = false;
+
+if (import.meta.env.PCD_OWNER_AUTH_PROOF_ENABLED !== 'true') {
+  return new Response('Not found', {
+    status: 404,
+    headers: { 'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex, nofollow' },
+  });
+}
+
+const auth = Astro.locals.auth;
+if (!auth?.user) return new Response('Authentication proof unavailable', { status: 401 });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>PCD disposable identity proof</title>
+  </head>
+  <body>
+    <main>
+      <h1>Disposable identity proof</h1>
+      <p>Authenticated provider subject: <code>{auth.user.id}</code></p>
+      <p>No organization access is granted by this page.</p>
+      <p><a href="/owner-proof/logout">Sign out</a></p>
+    </main>
+  </body>
+</html>

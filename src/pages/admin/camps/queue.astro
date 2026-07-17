@@ -13,11 +13,14 @@ import {
   type FuzzyMatchResult,
 } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
+import { featureEnabled } from '../../../lib/feature-flags';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
-const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string; CAMP_CLAIMS_ENABLED?: string; CAMP_REVIEWS_ENABLED?: string } | undefined;
+const claimsEnabled = featureEnabled(env?.CAMP_CLAIMS_ENABLED);
+const reviewsEnabled = featureEnabled(env?.CAMP_REVIEWS_ENABLED);
 
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
@@ -33,8 +36,8 @@ let dbAvailable = !!env?.DB;
 if (env?.DB) {
   try {
     pendingCamps = await listPendingCamps(env.DB);
-    pendingReviews = await listPendingReviews(env.DB);
-    pendingClaims = await listPendingClaims(env.DB);
+    if (reviewsEnabled) pendingReviews = await listPendingReviews(env.DB);
+    if (claimsEnabled) pendingClaims = await listPendingClaims(env.DB);
 
     const allCampIds = new Set<string>();
     pendingReviews.forEach((r) => allCampIds.add(r.camp_id));
@@ -361,12 +364,9 @@ const fmtRange = (start: string, end: string) => {
                         </p>
                       </div>
 
-                      <div class="grid gap-2 sm:grid-cols-3">
+                      <div class="grid gap-2 sm:grid-cols-2">
                         <button type="button" class="font-display italic px-3 py-2 border border-paper-warm bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="mark-verified">
                           Mark verified
-                        </button>
-                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium" data-action="mark-paid">
-                          Mark paid
                         </button>
                         <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
@@ -541,7 +541,6 @@ const fmtRange = (start: string, end: string) => {
           let status;
 
           if (action === 'mark-verified') status = 'verified';
-          else if (action === 'mark-paid') status = 'paid';
           else if (action === 'reject') status = 'rejected';
           else return;
 

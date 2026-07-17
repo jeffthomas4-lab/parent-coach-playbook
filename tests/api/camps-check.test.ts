@@ -12,10 +12,12 @@ vi.mock('../../src/lib/camps-db', () => ({
 import { POST } from '../../src/pages/api/camps/check';
 import * as campsDb from '../../src/lib/camps-db';
 
-function jsonReq(body: unknown) {
+const ENV = { DB: {}, BULK_IMPORT_TOKEN: 'test-import-token' };
+
+function jsonReq(body: unknown, token = 'test-import-token') {
   return new Request('https://parentcoachdesk.com/api/camps/check', {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
+    headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
     body: JSON.stringify(body),
   });
 }
@@ -29,7 +31,7 @@ describe('POST /api/camps/check', () => {
   });
 
   it('happy path: a request with no matches returns an empty match list', async () => {
-    const ctx = makeContext({ request: jsonReq({ name: 'Tacoma Soccer Camp', city: 'Tacoma', state: 'wa' }), env: { DB: {} } });
+    const ctx = makeContext({ request: jsonReq({ name: 'Tacoma Soccer Camp', city: 'Tacoma', state: 'wa' }), env: ENV });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(200);
@@ -46,7 +48,7 @@ describe('POST /api/camps/check', () => {
     (campsDb.getDomainQuality as any).mockResolvedValue({ domain: 'example.com', quality: 'good' });
     const ctx = makeContext({
       request: jsonReq({ name: 'Tacoma Soccer Camp', city: 'Tacoma', state: 'WA', website_url: 'https://example.com' }),
-      env: { DB: {} },
+      env: ENV,
     });
     const res = await POST(ctx);
     const body = await readJson(res);
@@ -57,7 +59,7 @@ describe('POST /api/camps/check', () => {
   });
 
   it('failure path: missing required fields is rejected without querying the DB', async () => {
-    const ctx = makeContext({ request: jsonReq({ name: 'Tacoma Soccer Camp' }), env: { DB: {} } });
+    const ctx = makeContext({ request: jsonReq({ name: 'Tacoma Soccer Camp' }), env: ENV });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(400);
@@ -69,5 +71,20 @@ describe('POST /api/camps/check', () => {
     const ctx = makeContext({ request: jsonReq({ name: 'X', city: 'Y', state: 'WA' }), env: {} });
     const res = await POST(ctx);
     expect(res.status).toBe(500);
+  });
+
+  it('does not expose duplicate or domain-quality data without the import credential', async () => {
+    const ctx = makeContext({ request: jsonReq({ name: 'X', city: 'Y', state: 'WA' }, 'wrong'), env: ENV });
+    const res = await POST(ctx);
+    expect(res.status).toBe(404);
+    expect(campsDb.findFuzzyCampMatches).not.toHaveBeenCalled();
+    expect(campsDb.getDomainQuality).not.toHaveBeenCalled();
+  });
+
+  it('rejects oversized requests before querying internal match data', async () => {
+    const ctx = makeContext({ request: jsonReq({ name: 'X'.repeat(9000), city: 'Y', state: 'WA' }), env: ENV });
+    const res = await POST(ctx);
+    expect(res.status).toBe(413);
+    expect(campsDb.findFuzzyCampMatches).not.toHaveBeenCalled();
   });
 });

@@ -9,7 +9,7 @@ const sportLabel = (slug: string): string => {
   const match = CAMP_SPORTS.find((s) => s.slug === slug);
   if (match) return match.label;
   return slug
-    .split(/[\s-]+/)
+    .split(/[\s_-]+/)
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
 };
@@ -68,6 +68,7 @@ const elsewhere = camps.filter(c => !PNW.has(c.state));
 const escHtml = (s: unknown) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+const ageLabel = (c: Camp) => c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided';
 
 const renderCardHtml = (c: Camp): string => {
   const photo = c.hero_photo_key
@@ -79,9 +80,9 @@ const renderCardHtml = (c: Camp): string => {
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
   const price = c.price_text
-    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">${escHtml(c.price_text)}</p>`
+    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`
     : '';
-  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ages ${c.age_min}–${c.age_max} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
 };
 const pnwHtml = pnw.map(renderCardHtml).join('');
 const nationalHtml = elsewhere.map(renderCardHtml).join('');
@@ -96,10 +97,10 @@ const renderFeaturedCardHtml = (c: Camp): string => {
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
   const price = c.price_text
-    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">${escHtml(c.price_text)}</p>`
+    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`
     : '';
   const featuredBadge = `<span class="t-label text-rust border border-rust px-2 py-0.5 text-xs font-medium">Featured</span>`;
-  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ages ${c.age_min}–${c.age_max} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
 };
 const featuredCardsHtml = featuredCamps.map(renderFeaturedCardHtml).join('');
 
@@ -114,6 +115,7 @@ const campsLite = camps.map(c => ({
   sport: c.sport,
   age_min: c.age_min,
   age_max: c.age_max,
+  age_known: c.age_known,
   start_date: c.start_date,
   end_date: c.end_date,
   city: c.city,
@@ -171,6 +173,9 @@ const itemListSchema = featuredCamps.length > 0 ? {
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
         Youth camps and league signups, with the dates, ages, prices, and contact info you actually need to plan. Submitted by parents and program directors. Reviewed before they go live. Full programs and leagues are hidden by default. Flip the toggles to see them.
       </p>
+      <p class="font-body text-ink-soft text-sm mt-4 max-w-2xl leading-relaxed">
+        A “Verified” badge means our team compared the listed program details with its cited source. It does not mean PCD inspected the program or endorses its safety, quality, staff, insurance, or suitability for your child.
+      </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="/camps/submit/" class="btn">Submit a program</a>
         <a href="#all-camps" class="btn btn-ghost">Browse the directory</a>
@@ -220,7 +225,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
             No camps in the directory yet.
           </h2>
           <p class="font-display text-ink-soft mt-4 max-w-2xl leading-snug">
-            We launched the directory recently. The first batch of Pacific-Northwest camps is being verified. If you run a camp or send your kid to one, you can <a href="/camps/submit/" class="text-rust hover:underline">submit it</a> and we'll review it within a few days.
+            We launched the directory recently. The first batch of Pacific-Northwest camps is being reviewed. If you run a camp or send your kid to one, you can <a href="/camps/submit/" class="text-rust hover:underline">submit it</a>. Submissions stay pending until a person reviews the available source evidence.
           </p>
         </div>
       ) : (
@@ -262,18 +267,20 @@ const itemListSchema = featuredCamps.length > 0 ? {
                   <input
                     type="number"
                     id="filter-age-min"
+                    aria-label="Minimum age"
                     placeholder="Min"
-                    min="0"
-                    max="120"
+                    min="3"
+                    max="22"
                     class="font-display px-3 py-2 border border-bone bg-paper w-16"
                   />
                   <span class="text-ink-soft px-1">to</span>
                   <input
                     type="number"
                     id="filter-age-max"
+                    aria-label="Maximum age"
                     placeholder="Max"
-                    min="0"
-                    max="120"
+                    min="3"
+                    max="22"
                     class="font-display px-3 py-2 border border-bone bg-paper w-16"
                   />
                 </div>
@@ -282,19 +289,19 @@ const itemListSchema = featuredCamps.length > 0 ? {
               {/* Date Range */}
               <div>
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">Date range</p>
-                <div class="flex gap-2 items-center">
+                <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-2 items-center max-w-full">
                   <input
                     type="date"
                     id="filter-date-start"
                     aria-label="Earliest start date"
-                    class="font-display px-3 py-2 border border-bone bg-paper"
+                    class="font-display px-2 sm:px-3 py-2 border border-bone bg-paper w-full min-w-0"
                   />
                   <span class="text-ink-soft px-1">to</span>
                   <input
                     type="date"
                     id="filter-date-end"
                     aria-label="Latest end date"
-                    class="font-display px-3 py-2 border border-bone bg-paper"
+                    class="font-display px-2 sm:px-3 py-2 border border-bone bg-paper w-full min-w-0"
                   />
                 </div>
               </div>
@@ -327,20 +334,20 @@ const itemListSchema = featuredCamps.length > 0 ? {
               </div>
 
               {/* Zip + Radius */}
-              <form id="filter-zip-form" class="flex gap-2 items-end">
-                <div>
+              <form id="filter-zip-form" class="grid grid-cols-2 sm:flex gap-2 items-end w-full max-w-full">
+                <div class="min-w-0">
                   <label for="filter-zip" class="font-display italic text-rust text-xs block mb-2 font-medium">Zip code</label>
                   <input
                     type="text"
                     id="filter-zip"
                     placeholder="e.g. 98101"
                     maxlength="10"
-                    class="font-display px-3 py-2 border border-bone bg-paper w-32"
+                    class="font-display px-3 py-2 border border-bone bg-paper w-full sm:w-32 min-w-0 max-w-full"
                   />
                 </div>
-                <div>
+                <div class="min-w-0">
                   <label for="filter-radius" class="font-display italic text-rust text-xs block mb-2 font-medium">Radius</label>
-                  <select id="filter-radius" class="font-display px-3 py-2 border border-bone bg-paper">
+                  <select id="filter-radius" class="font-display px-3 py-2 border border-bone bg-paper w-full min-w-0 max-w-full">
                     <option value="10">10 miles</option>
                     <option value="25">25 miles</option>
                     <option value="50">50 miles</option>
@@ -348,12 +355,12 @@ const itemListSchema = featuredCamps.length > 0 ? {
                     <option value="all">Any distance</option>
                   </select>
                 </div>
-                <button type="submit" class="font-display px-4 py-2 border border-rust bg-rust text-white hover:opacity-90 transition-opacity">Search</button>
+                <button type="submit" class="font-display px-4 py-2 border border-rust bg-rust text-white hover:opacity-90 transition-opacity col-span-2 sm:w-auto">Search</button>
               </form>
             </div>
 
             {/* Clear Filters */}
-            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium">Clear all filters</button>
+            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2 py-2">Clear all filters</button>
           </div>
 
           {/* Camps Grid — cards are pre-rendered as an HTML string in the
@@ -427,6 +434,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
         sport: string;
         age_min: number;
         age_max: number;
+        age_known: 0 | 1;
         start_date: string;
         end_date: string;
         city: string;
@@ -451,7 +459,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
       // Helper: get sport label
       function sportLabel(slug: string): string {
         const match = sportsList.find(s => s.slug === slug);
-        return match ? match.label : slug.split(/[\s-]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        return match ? match.label : slug.split(/[\s_-]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       }
 
       // Helper: haversine distance in miles
@@ -470,23 +478,20 @@ const itemListSchema = featuredCamps.length > 0 ? {
       // resolve to a French postcode about 50% of the time. Falls back to
       // "ZIP, USA" free-text if structured returns nothing.
       async function geocodeZip(zip: string): Promise<{ lat: number; lon: number } | null> {
-        const tries = [
-          `https://nominatim.openstreetmap.org/search?postalcode=${encodeURIComponent(zip)}&countrycodes=us&format=json&limit=1`,
-          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(zip + ', USA')}&format=json&limit=1`,
-        ];
-        for (const url of tries) {
-          try {
-            const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
-            if (!r.ok) continue;
-            const data = (await r.json()) as Array<{ lat: string; lon: string }>;
-            if (!data.length) continue;
-            const lat = parseFloat(data[0].lat);
-            const lon = parseFloat(data[0].lon);
-            if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
-            return { lat, lon };
-          } catch {
-            // try the next URL
-          }
+        // One user-triggered request only. Do not turn this into autocomplete
+        // or add fallbacks: the public Nominatim service caps the application
+        // at one request per second across all visitors.
+        const url = `https://nominatim.openstreetmap.org/search?postalcode=${encodeURIComponent(zip)}&countrycodes=us&format=json&limit=1`;
+        try {
+          const r = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+          if (!r.ok) return null;
+          const data = (await r.json()) as Array<{ lat: string; lon: string }>;
+          if (!data.length) return null;
+          const lat = parseFloat(data[0].lat);
+          const lon = parseFloat(data[0].lon);
+          if (Number.isFinite(lat) && Number.isFinite(lon)) return { lat, lon };
+        } catch {
+          // The directory remains usable through state and other filters.
         }
         return null;
       }
@@ -554,6 +559,15 @@ const itemListSchema = featuredCamps.length > 0 ? {
           maxClusterRadius: 60,
           spiderfyOnMaxZoom: true,
           showCoverageOnHover: false,
+          iconCreateFunction(cluster) {
+            const count = cluster.getChildCount();
+            const size = count < 10 ? 'small' : count < 100 ? 'medium' : 'large';
+            return L.divIcon({
+              html: `<span aria-label="${count} programs in this map area">${count}</span>`,
+              className: `marker-cluster marker-cluster-${size}`,
+              iconSize: L.point(40, 40),
+            });
+          },
         });
         map.addLayer(clusterGroup);
 
@@ -639,6 +653,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
           if (state.sport && c.sport !== state.sport) return false;
 
           // Age range
+          if ((state.ageMin !== null || state.ageMax !== null) && c.age_known !== 1) return false;
           if (state.ageMin !== null && c.age_max < state.ageMin) return false;
           if (state.ageMax !== null && c.age_min > state.ageMax) return false;
 
@@ -882,34 +897,4 @@ const itemListSchema = featuredCamps.length > 0 ? {
     }
   </style>
 
-<script is:inline>
-(function () {
-  try {
-    if (!navigator.geolocation) return;
-    if (sessionStorage.getItem('pcp:camps:geo-tried') === '1') return;
-    sessionStorage.setItem('pcp:camps:geo-tried', '1');
-
-    // Don't redirect if the URL already has a query (filter applied).
-    if (location.search) return;
-
-    navigator.geolocation.getCurrentPosition(
-      function (pos) {
-        var lat = pos.coords.latitude;
-        var lon = pos.coords.longitude;
-        // Hit a server endpoint that resolves lat/lng to nearest covered city.
-        fetch('/api/camps/nearest?lat=' + lat + '&lon=' + lon)
-          .then(function (r) { return r.ok ? r.json() : null; })
-          .then(function (j) {
-            if (j && j.state && j.city_slug) {
-              location.replace('/camps/' + j.state.toLowerCase() + '/' + j.city_slug + '/');
-            }
-          })
-          .catch(function () { /* stay put */ });
-      },
-      function () { /* permission denied - stay put */ },
-      { timeout: 4000, maximumAge: 600000 }
-    );
-  } catch (e) { /* swallow */ }
-})();
-</script>
 </BaseLayout>

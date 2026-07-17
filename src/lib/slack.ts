@@ -40,7 +40,7 @@ export async function postToSlack(
 ): Promise<SlackPostResult> {
   const url = env?.SLACK_WEBHOOK_URL?.trim();
   if (!url) {
-    console.warn('[slack] SLACK_WEBHOOK_URL not set — message dropped:', message.text);
+    console.warn(JSON.stringify({ event: 'slack_post_skipped', code: 'not_configured' }));
     return { ok: false, skipped: true, error: 'not configured' };
   }
   try {
@@ -53,12 +53,13 @@ export async function postToSlack(
       signal: AbortSignal.timeout(POST_TIMEOUT_MS),
     });
     if (!res.ok) {
-      console.error('[slack] post failed', res.status);
+      console.error(JSON.stringify({ event: 'slack_post_failed', code: 'provider_rejected', status: res.status }));
       return { ok: false, error: `slack returned ${res.status}` };
     }
     return { ok: true };
-  } catch (e) {
-    console.error('[slack] post threw', e);
+  } catch {
+    // Fetch exceptions may include the secret webhook URL.
+    console.error(JSON.stringify({ event: 'slack_post_failed', code: 'fetch_failed' }));
     return { ok: false, error: 'post failed' };
   }
 }

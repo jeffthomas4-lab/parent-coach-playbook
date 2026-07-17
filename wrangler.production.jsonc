@@ -5,11 +5,16 @@
   "name": "parent-coach-desk",
   "compatibility_date": "2026-04-30",
   "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
 
-  "main": "@astrojs/cloudflare/entrypoints/server",
+  "main": "./src/worker.ts",
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": ["/admin", "/admin/*", "/api/admin", "/api/admin/*"]
   },
 
   "d1_databases": [
@@ -22,6 +27,12 @@
       "binding": "FORGE_DB",
       "database_name": "forge-command",
       "database_id": "747cf988-a557-48bd-9d03-bea09e184f94"
+    },
+    {
+      "binding": "PCD_OPS_DB",
+      "database_name": "parent-coach-desk-ops-production",
+      "database_id": "b38d5f37-54df-4e0f-9706-023edc12c7fe",
+      "migrations_dir": "migrations-pcd-ops"
     }
   ],
 
@@ -29,6 +40,33 @@
     {
       "binding": "PHOTOS",
       "bucket_name": "activityradar-photos"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "PUBLIC_SUBMISSION_RATE_LIMITER",
+      "namespace_id": "910201",
+      "simple": { "limit": 10, "period": 60 }
+    },
+    {
+      "name": "TRUST_RATE_LIMITER",
+      "namespace_id": "910202",
+      "simple": { "limit": 5, "period": 60 }
+    },
+    {
+      "name": "COMMUNITY_RATE_LIMITER",
+      "namespace_id": "910203",
+      "simple": { "limit": 5, "period": 60 }
+    },
+    {
+      "name": "DEMAND_RATE_LIMITER",
+      "namespace_id": "910204",
+      "simple": { "limit": 30, "period": 60 }
+    },
+    {
+      "name": "OWNER_RATE_LIMITER",
+      "namespace_id": "910205",
+      "simple": { "limit": 5, "period": 60 }
     }
   ],
 
@@ -41,8 +79,15 @@
 
   "vars": {
     "SITE_URL": "https://parentcoachdesk.com",
-    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas4@gmail.com",
+    "ADMIN_EMAILS": "eepskalla@gmail.com,jeffthomas4@gmail.com",
     "ACCESS_TEAM_DOMAIN": "fieldforge.cloudflareaccess.com",
-    "ACCESS_AUD": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23"
+    "ACCESS_AUD": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23",
+    "CAMP_CLAIMS_ENABLED": "false",
+    "CAMP_REVIEWS_ENABLED": "false",
+    "TRUST_INTAKE_ENABLED": "false",
+    "DEMAND_TELEMETRY_ENABLED": "false",
+    "IDEMPOTENCY_CLEANUP_ENABLED": "false",
+    "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
+    "PCD_COMMERCE_TEST_MODE_ENABLED": "false"
   }
 }

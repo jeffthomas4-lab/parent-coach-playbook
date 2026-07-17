@@ -99,7 +99,7 @@ const US_STATES = [
             <input name="submitter_email" type="email" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
           </label>
           <p class="font-display italic text-ink-soft text-xs font-medium">
-            Only if you want us to follow up. Not required.
+            Only if you want us to follow up. Not required, not used for marketing, and handled under our <a href="/disclosure/" class="text-rust hover:underline">privacy notice</a>.
           </p>
         </fieldset>
 
@@ -121,9 +121,16 @@ const US_STATES = [
         status.textContent = 'Sending...';
         status.style.color = '#5F5448';
 
+        const storageKey = 'pcd:camps:suggest:idempotency-key';
+        let idempotencyKey = sessionStorage.getItem(storageKey);
+        if (!idempotencyKey) {
+          idempotencyKey = crypto.randomUUID();
+          sessionStorage.setItem(storageKey, idempotencyKey);
+        }
         const fd = new FormData(form);
+        fd.set('idempotency_key', idempotencyKey);
         try {
-          const res = await fetch('/api/camps/suggest', { method: 'POST', body: fd });
+          const res = await fetch('/api/camps/suggest', { method: 'POST', body: fd, headers: { 'Idempotency-Key': idempotencyKey } });
           const data = (await res.json()) as { ok: boolean; error?: string };
           if (!res.ok || !data.ok) {
             status.textContent = data.error ? `Couldn't send: ${data.error}` : 'Something went wrong. Try again or email support@parentcoachdesk.com.';
@@ -131,6 +138,7 @@ const US_STATES = [
             return;
           }
           form.reset();
+          sessionStorage.removeItem(storageKey);
           status.textContent = "Thanks. We'll look into it.";
           status.style.color = '#5C7459';
         } catch (err) {

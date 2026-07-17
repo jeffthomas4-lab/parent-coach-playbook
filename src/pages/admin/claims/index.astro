@@ -2,11 +2,13 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listPendingClaims, getCampById, type CampClaim, type Camp } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
+import { featureEnabled } from '../../../lib/feature-flags';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
-const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string; CAMP_CLAIMS_ENABLED?: string } | undefined;
+const claimsEnabled = featureEnabled(env?.CAMP_CLAIMS_ENABLED);
 
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
@@ -15,7 +17,7 @@ const adminEmail = auth.email;
 let claims: CampClaim[] = [];
 const campLookup = new Map<string, Camp>();
 let dbAvailable = !!env?.DB;
-if (env?.DB) {
+if (claimsEnabled && env?.DB) {
   try {
     claims = await listPendingClaims(env.DB);
     for (const c of claims) {
@@ -40,7 +42,9 @@ const fmt = (s: string) =>
       </p>
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Pending claims</h1>
       <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
-        Two-step flow: <strong>verify</strong> after confirming the claimant runs the camp, then send a Stripe payment link or invoice. Once paid, mark <strong>paid</strong>: the camp's listing flips to "claimed" and the owner gets self-edit access.
+        {claimsEnabled
+          ? 'Claim operations are enabled for this environment. Follow the approved ownership and entitlement procedures.'
+          : 'Camp claims are disabled for the public-directory stage. The queue is read-suppressed and mutation endpoints fail closed until the owner product passes its launch gate.'}
       </p>
       {!adminEmail && (
         <p class="font-display italic text-rust text-sm mt-2 font-medium">
@@ -52,7 +56,9 @@ const fmt = (s: string) =>
 
   <section>
     <div class="container-px py-10">
-      {!dbAvailable ? (
+      {!claimsEnabled ? (
+        <p class="font-display italic text-ink-soft font-medium">Claims workflow disabled.</p>
+      ) : !dbAvailable ? (
         <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
       ) : claims.length === 0 ? (
         <p class="font-display italic text-ink-soft font-medium">No claims awaiting action.</p>
@@ -76,16 +82,11 @@ const fmt = (s: string) =>
                 </p>
                 <p class="font-display text-ink text-sm mt-3 leading-snug" style="white-space: pre-wrap;"><strong>Notes:</strong> {cl.notes}</p>
 
-                <div class="mt-4 grid gap-2 sm:grid-cols-3">
+                <div class="mt-4 grid gap-2 sm:grid-cols-2">
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="verified" />
                     <textarea name="notes" rows="2" placeholder="Verification notes (called school, confirmed role)" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
                     <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper font-medium">Mark verified</button>
-                  </form>
-                  <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
-                    <input type="hidden" name="status" value="paid" />
-                    <input name="paid_until" type="date" class="px-2 py-1 font-body bg-paper border border-bone text-xs" placeholder="Paid until (defaults to 1 year)" />
-                    <button type="submit" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Mark paid + activate claim</button>
                   </form>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="rejected" />
@@ -93,6 +94,7 @@ const fmt = (s: string) =>
                     <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">Reject</button>
                   </form>
                 </div>
+                <p class="font-display italic text-ink-soft text-xs mt-3 font-medium">Payment and account activation are unavailable until customer identity, entitlement, reconciliation, and paid-product launch gates pass.</p>
               </li>
             );
           })}

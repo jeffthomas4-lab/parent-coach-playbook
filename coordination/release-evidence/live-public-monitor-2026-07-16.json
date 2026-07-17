@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "monitor": "pcd-public-customer-journey",
+  "target_origin": "https://parentcoachdesk.com",
+  "observed_at": "2026-07-16T10:08:36.074Z",
+  "ok": false,
+  "results": [
+    { "id": "home", "ok": true, "code": "ok", "status": 200, "duration_ms": 204 },
+    { "id": "directory", "ok": true, "code": "ok", "status": 200, "duration_ms": 693 },
+    { "id": "privacy", "ok": true, "code": "ok", "status": 200, "duration_ms": 30 },
+    { "id": "terms", "ok": true, "code": "ok", "status": 200, "duration_ms": 24 },
+    { "id": "health", "ok": false, "code": "http_404", "status": 404, "duration_ms": 43 },
+    { "id": "readiness", "ok": false, "code": "http_404", "status": 404, "duration_ms": 37 }
+  ],
+  "interpretation": "Public production pages responded successfully. The current production deployment does not include the local candidate health/readiness endpoints; this is evidence against marking live monitoring or post-deploy observation complete, not evidence that the local implementation is broken."
+}

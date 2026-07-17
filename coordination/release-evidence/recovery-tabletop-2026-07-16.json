@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "exercised_at": "2026-07-16T13:35:00Z",
+  "exercise_type": "no_side_effect_tabletop",
+  "facilitator": "Codex local review",
+  "rollback_executed": false,
+  "data_restore_executed": false,
+  "operational_rehearsal_complete": false,
+  "scenarios": [
+    {
+      "id": "worker_code_regression",
+      "state": "tabletop_pass",
+      "detection": "Post-deploy customer, health, readiness, Access, and error-rate checks identify regression while D1/R2 integrity remains unchanged.",
+      "containment": "Stop rollout and all unrelated releases; do not change storage or use Pages.",
+      "recovery_path": "With explicit rollback approval, target exact fully bound Worker version 92516f62-b891-4903-94e1-204a972ee2ae and record the resulting deployment.",
+      "approval_boundary": "Jeff approves the exact Worker/version and incident commander confirms this is code-only.",
+      "verification": "Verify version traffic, public journeys, Access routes, health/readiness, schedules, bindings by name/type, and logs.",
+      "residual_gap": "No Worker rollback was executed; an approved operational rehearsal remains required."
+    },
+    {
+      "id": "d1_bad_write",
+      "state": "operational_gap",
+      "detection": "Integrity, reconciliation, audit events, or customer reports identify a bounded bad-write window.",
+      "containment": "Stop every D1 writer, preserve a fresh export and current bookmark, and prevent imports/schedules from replaying the fault.",
+      "recovery_path": "Choose either D1 Time Travel from an incident-supported bookmark or a fresh target restored from a verified SQL export; never paste a dump over live tables.",
+      "approval_boundary": "Jeff separately approves database ID, recovery point, method, writer shutdown, and any binding cutover.",
+      "verification": "Integrity, foreign keys, schema, critical counts, sampled reads, application reads, and writer re-enable checklist.",
+      "residual_gap": "Only two separate-day exports exist; offsite copy and remote non-production restoration remain unproved."
+    },
+    {
+      "id": "d1_schema_failure",
+      "state": "operational_gap",
+      "detection": "Migration or application smoke checks show missing/incompatible schema or partial behavior.",
+      "containment": "Keep affected feature flags off, stop writers that depend on the schema, and preserve pre-change evidence.",
+      "recovery_path": "Prefer an approved forward migration tested on a representative restore; use Time Travel or fresh-target recovery only when incident evidence supports full data rollback.",
+      "approval_boundary": "Migration, database restore, binding change, and application rollback are distinct approvals.",
+      "verification": "Migration ledger, constraints, counts, old/new application reads, and reconciliation against the release packet.",
+      "residual_gap": "Candidate-specific migration rehearsal and remote non-production proof are absent."
+    },
+    {
+      "id": "r2_object_loss",
+      "state": "operational_gap",
+      "detection": "Missing object responses, D1-to-R2 inventory mismatch, upload audit, or customer report identifies loss/corruption.",
+      "containment": "Disable photo writes, preserve bucket inventory and affected D1 keys, and avoid clearing references until evidence is captured.",
+      "recovery_path": "Restore only from an independently hashed encrypted copy into a separate non-production prefix/bucket, then use an approved promotion plan.",
+      "approval_boundary": "Bucket creation, credentials, copy/export, restore, deletion, and D1 reference changes each require explicit approval.",
+      "verification": "Object count, key/hash/content-type/size comparison, representative image reads, D1 reference reconciliation, and access controls.",
+      "residual_gap": "No independent R2 inventory/export or representative restore exists; this remains a stop-ship for autonomous deletion and customer media."
+    },
+    {
+      "id": "kv_session_loss",
+      "state": "tabletop_pass",
+      "detection": "Binding/runtime checks show KV loss or unavailability.",
+      "containment": "Do not treat KV as authoritative data and keep public browsing available.",
+      "recovery_path": "Current code does not read or write SESSION; verify that remains true, then restore/rebind only under an approved future feature-specific plan.",
+      "approval_boundary": "Any namespace creation, rebind, copy, or customer-session behavior requires explicit configuration approval.",
+      "verification": "Repository search, deployment binding check, public journeys, and absence of customer identity/session dependency.",
+      "residual_gap": "Live key contents were not inspected; future SESSION use must introduce its own retention and recovery contract."
+    },
+    {
+      "id": "pages_fallback_request",
+      "state": "rejected",
+      "detection": "An operator proposes routing traffic to the retained Pages project during an incident.",
+      "containment": "Reject Pages as a rollback target and keep its hostname out of customer recovery instructions.",
+      "recovery_path": "Use the pinned fully bound Worker version or a separately built and protected Worker recovery deployment.",
+      "approval_boundary": "Any Pages retirement/protection, DNS/routing, or recovery deployment requires explicit approval.",
+      "verification": "Anonymous admin-path probe, public journey checks, Access coverage, and exact Worker version receipt.",
+      "residual_gap": "The Pages hostname still exposes historical administrative artifacts and requires owner-approved containment."
+    }
+  ],
+  "evidence": [
+    "coordination/release-evidence/worker-rollback-target-2026-07-16.json",
+    "scripts/BACKUP-PROVING-LOG.md",
+    "scripts/RESTORE-activity-radar.md",
+    "BACKUP.md",
+    "wrangler.production.jsonc"
+  ],
+  "external_changes": []
+}

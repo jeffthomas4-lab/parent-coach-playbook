@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "purpose": "Fail closed when a new dynamic HTML sink appears without an explicit source and encoding review.",
+  "approved_title_renderer": "src/lib/title.ts#renderTitle",
+  "forbidden_patterns": [
+    ".replace(/\\*([^*]+)\\*/g, '<em>$1</em>')"
+  ],
+  "reviewed_inner_html_files": {
+    "src/pages/admin/editorial/index.astro": "Protected operator UI; action markup is constructed from fixed labels and encoded identifiers.",
+    "src/pages/cost-calculator.astro": "Local calculator state; labels and source metadata are encoded before interpolation. Retain focused adversarial tests.",
+    "src/pages/search.astro": "Repository-built search index and user query; displayed fields are escaped before interpolation."
+  },
+  "reviewed_html_string_files": {
+    "src/pages/camps/index.astro": "Server-built directory cards; database-derived values and attributes pass through escHtml before set:html."
+  },
+  "json_script_rule": "JSON script payloads must use JSON.stringify and must never be executable script content.",
+  "agent_content_rule": "Agent-authored, imported, customer-derived, or database-derived values are untrusted even behind Access. Prefer Astro text interpolation; otherwise use a reviewed contextual encoder."
+}

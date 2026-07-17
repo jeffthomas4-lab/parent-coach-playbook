@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "contentRegistryComplete": false,
+  "contentItems": [
+    {
+      "query": "baseball rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/baseball/"
+    },
+    {
+      "query": "basketball rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/basketball/"
+    },
+    {
+      "query": "flag football rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/flag-football/"
+    },
+    {
+      "query": "soccer rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/soccer/"
+    },
+    {
+      "query": "volleyball rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/volleyball/"
+    }
+  ],
+  "directoryItems": []
+}

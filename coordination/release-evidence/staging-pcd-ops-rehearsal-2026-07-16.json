@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-16T14:23:00Z",
+  "environment": "staging",
+  "database_name": "parent-coach-desk-ops-staging",
+  "database_id": "7f0da00d-bc98-464f-8702-ce0fb381dd5e",
+  "region": "WNAM",
+  "binding_name": "PCD_OPS_DB",
+  "binding_in_staging_source_config": true,
+  "binding_live_on_staging_worker": false,
+  "production_binding_added": false,
+  "migrations_dir": "migrations-pcd-ops",
+  "applied_migrations": [
+    "0011_trust_cases.sql",
+    "0012_trust_drafts_and_notification_outbox.sql",
+    "0013_demand_events_v1.sql",
+    "0014_trust_intake_idempotency.sql"
+  ],
+  "remote_verification": {
+    "changed_db": false,
+    "rows_written": 0,
+    "trust_case_rows": 0,
+    "demand_event_rows": 0,
+    "foreign_key_violation_count": 0,
+    "database_size_bytes": 172032
+  },
+  "export_restore": {
+    "export_bytes": 8128,
+    "export_sha256": "c997e44c27437c2aa6f4025e83f1188e7a08333e380caccef8d17ddbf29fc5bc",
+    "restored_to_isolated_sqlite": true,
+    "integrity_check": "ok",
+    "foreign_key_violation_count": 0,
+    "expected_tables_present": true,
+    "all_operational_table_counts_zero": true
+  },
+  "feature_state": {
+    "trust_intake_enabled": false,
+    "demand_telemetry_enabled": false,
+    "notification_delivery_enabled": false
+  },
+  "failure_isolation": {
+    "missing_binding_returns_503_in_local_contract": true,
+    "directory_db_remains_separate": true,
+    "forge_db_remains_separate": true,
+    "live_staging_worker_drill_complete": false
+  },
+  "external_changes": [
+    "created isolated staging D1 database",
+    "applied four approved staging operational migrations"
+  ],
+  "authorized_scope": "staging_pcd_ops_provisioning_and_rehearsal",
+  "production_migration_approved": false,
+  "feature_activation_approved": false
+}

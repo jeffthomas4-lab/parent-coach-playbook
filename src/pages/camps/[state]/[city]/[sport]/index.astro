@@ -42,7 +42,7 @@ if (filterAges) {
     '5-7': [5, 7], '8-10': [8, 10], '11-12': [11, 12], '13-14': [13, 14], '15-plus': [15, 22],
   };
   const range = ageMap[filterAges];
-  if (range) visible = visible.filter((c) => c.age_max >= range[0] && c.age_min <= range[1]);
+  if (range) visible = visible.filter((c) => c.age_known === 1 && c.age_max >= range[0] && c.age_min <= range[1]);
 }
 
 const fmtDateRange = (start: string, end: string) => {
@@ -54,7 +54,7 @@ const fmtDateRange = (start: string, end: string) => {
 };
 
 const title = `${sportInfo.label} camps in ${cityLabel}, ${stateCode}`;
-const description = `${camps.length} verified ${sportInfo.label.toLowerCase()} camp${camps.length === 1 ? '' : 's'} in ${cityLabel}.`;
+const description = `${camps.length} reviewed ${sportInfo.label.toLowerCase()} camp listing${camps.length === 1 ? '' : 's'} in ${cityLabel}. Confirm details with each provider.`;
 
 const itemListSchema = {
   '@context': 'https://schema.org',
@@ -95,7 +95,7 @@ const breadcrumbSchema = {
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {visible.length === camps.length
-          ? `${camps.length} verified camp${camps.length === 1 ? '' : 's'}.`
+          ? `${camps.length} reviewed camp listing${camps.length === 1 ? '' : 's'}.`
           : `${visible.length} of ${camps.length} match your age filter.`}
         <a href={`/camps/${stateParam}/${cityParam}/`} class="text-rust hover:underline ml-2">All sports in {cityLabel} →</a>
       </p>
@@ -131,7 +131,7 @@ const breadcrumbSchema = {
           {visible.map((c) => (
             <li class="border border-bone p-5 rounded">
               <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
-                {fmtDateRange(c.start_date, c.end_date)} · ages {c.age_min}–{c.age_max}
+                {fmtDateRange(c.start_date, c.end_date)} · {c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided'}
               </p>
               <h3 class="font-display text-ink text-lg leading-snug mb-2" style="font-weight: 500;">
                 <a href={`/camps/${c.slug}/`} class="hover:text-rust">{c.name}</a>

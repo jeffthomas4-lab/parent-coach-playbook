@@ -56,7 +56,7 @@ The agents above are people doing jobs. These are the machine paths the Worker e
 
 | Path | Class | What it does | What Jeff has to touch |
 |---|---|---|---|
-| `POST /api/agent-runs` | A | Writes one `agent_runs` row, alerts Slack on failure, CANARY-pauses on a double failure | Nothing. It changes no live content, sends nothing to anyone, spends nothing. Machine token only. |
+| `POST /api/agent-runs` | D (legacy internal operations) | Writes `agent_runs`, updates registry state, can pause an agent, and projects a minimized failure alert to Slack | Jeff preauthorized only this bounded operational scope. It is **not Class A/read-only**. The shared token cannot provide workflow-scoped identity and must be replaced by Forge Command executor grants before expansion. |
 | `POST /api/admin/editorial/approve` | C | Moves a piece to `jeff-approved`. Editorial sign-off, not a publication | The click, behind Cloudflare Access |
 | `POST /api/admin/editorial/publish` | C | Flips `draft: false`, commits to main, fires the deploy hook. The post goes live | The click, behind Cloudflare Access |
 | `POST /api/slack/actions` | C | Same publish, reached from the Slack button | The click. Signature-verified as coming from Slack, and the clicker's Slack ID must be on `SLACK_APPROVER_IDS` |

@@ -5,6 +5,7 @@
 // We only care about reachable vs. dead — not full HTML.
 
 import type { UrlHealthStatus } from './camps-db';
+import { normalizeExternalHttpUrl } from './public-input';
 
 export interface UrlHealthResult {
   status: UrlHealthStatus;
@@ -13,6 +14,34 @@ export interface UrlHealthResult {
 }
 
 const DEFAULT_TIMEOUT_MS = 6000;
+const MAX_REDIRECTS = 5;
+
+async function fetchWithValidatedRedirects(
+  startUrl: string,
+  init: RequestInit,
+): Promise<{ response: Response; finalUrl: string; redirected: boolean }> {
+  let current = normalizeExternalHttpUrl(startUrl);
+  if (!current) throw new Error('URL is required');
+  let redirected = false;
+
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop += 1) {
+    const response = await fetch(current, { ...init, redirect: 'manual' });
+    if (response.status < 300 || response.status >= 400) {
+      return { response, finalUrl: current, redirected };
+    }
+
+    const location = response.headers.get('location');
+    if (!location) return { response, finalUrl: current, redirected };
+    if (hop === MAX_REDIRECTS) throw new Error('too many redirects');
+
+    const resolved = new URL(location, current).toString();
+    current = normalizeExternalHttpUrl(resolved);
+    if (!current) throw new Error('redirect URL is invalid');
+    redirected = true;
+  }
+
+  throw new Error('too many redirects');
+}
 
 /**
  * Check whether a URL is reachable. Returns a normalized health status.
@@ -32,33 +61,29 @@ export async function checkUrlHealth(
   rawUrl: string,
   timeoutMs: number = DEFAULT_TIMEOUT_MS,
 ): Promise<UrlHealthResult> {
-  let url: URL;
+  let normalizedUrl: string | null;
   try {
-    url = new URL(rawUrl.trim());
+    normalizedUrl = normalizeExternalHttpUrl(rawUrl);
   } catch {
     return { status: 'dead', statusCode: null, finalUrl: null };
   }
-  if (url.protocol !== 'http:' && url.protocol !== 'https:') {
-    return { status: 'dead', statusCode: null, finalUrl: null };
-  }
+  if (!normalizedUrl) return { status: 'dead', statusCode: null, finalUrl: null };
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
     // Try HEAD first — cheap, no body.
-    let res = await fetch(url.toString(), {
+    let result = await fetchWithValidatedRedirects(normalizedUrl, {
       method: 'HEAD',
-      redirect: 'follow',
       signal: controller.signal,
       headers: { 'User-Agent': 'parentcoachdesk.com link checker' },
     });
 
     // Some servers don't support HEAD properly. Fall back to GET on 4xx/5xx.
-    if (res.status >= 400) {
-      res = await fetch(url.toString(), {
+    if (result.response.status >= 400) {
+      result = await fetchWithValidatedRedirects(normalizedUrl, {
         method: 'GET',
-        redirect: 'follow',
         signal: controller.signal,
         headers: { 'User-Agent': 'parentcoachdesk.com link checker' },
       });
@@ -66,10 +91,10 @@ export async function checkUrlHealth(
 
     clearTimeout(timer);
 
-    const code = res.status;
-    const finalUrl = res.url || url.toString();
+    const code = result.response.status;
+    const finalUrl = result.finalUrl;
     if (code >= 200 && code < 300) {
-      return { status: 'live', statusCode: code, finalUrl };
+      return { status: result.redirected ? 'redirect' : 'live', statusCode: code, finalUrl };
     }
     if (code >= 300 && code < 400) {
       return { status: 'redirect', statusCode: code, finalUrl };

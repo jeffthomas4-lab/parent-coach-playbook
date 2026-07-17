@@ -43,14 +43,19 @@ describe('postToSlack', () => {
   });
 
   it('reports skipped, not an error, when no webhook is configured', async () => {
-    const result = await postToSlack({}, { text: 'hello' });
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const result = await postToSlack({}, { text: 'private approval evidence' });
     expect(result).toMatchObject({ ok: false, skipped: true });
+    expect(JSON.stringify(warnSpy.mock.calls)).not.toContain('private approval evidence');
   });
 
   it('does not throw when Slack is down', async () => {
-    vi.stubGlobal('fetch', vi.fn(async () => { throw new Error('down'); }));
-    const result = await postToSlack({ SLACK_WEBHOOK_URL: 'https://hooks.slack.com/x' }, { text: 'hi' });
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const secretUrl = 'https://hooks.slack.com/services/secret-value';
+    vi.stubGlobal('fetch', vi.fn(async () => { throw new Error(`down: ${secretUrl}`); }));
+    const result = await postToSlack({ SLACK_WEBHOOK_URL: secretUrl }, { text: 'hi' });
     expect(result.ok).toBe(false);
+    expect(JSON.stringify(errorSpy.mock.calls)).not.toContain('secret-value');
   });
 });
 

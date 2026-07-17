@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "source": "src/pages/api/camps/submit.ts", "exposure": "public", "requires": ["enforcePublicRequestBoundary", "enforcePublicWriteRateLimit", "data.website", "Cache-Control", "suppliedIdempotencyKey", "lookupIdempotentWrite", "executeIdempotentWrite", "directory.program.submit.v1"] },
+    { "source": "src/pages/api/camps/suggest.ts", "exposure": "public", "requires": ["enforcePublicRequestBoundary", "enforcePublicWriteRateLimit", "data.website", "Cache-Control", "suppliedIdempotencyKey", "executeIdempotentWrite", "directory.organization.suggest.v1"] },
+    { "source": "src/pages/api/trust/request.ts", "exposure": "default-off", "requires": ["TRUST_INTAKE_ENABLED", "enforcePublicRequestBoundary", "enforcePublicWriteRateLimit", "data.website"] },
+    { "source": "src/pages/api/camps/[slug]/claim.ts", "exposure": "default-off", "requires": ["CAMP_CLAIMS_ENABLED", "enforcePublicRequestBoundary", "enforcePublicWriteRateLimit", "payload.website", "suppliedIdempotencyKey", "executeIdempotentWrite", "directory.claim.submit.v1"] },
+    { "source": "src/pages/api/camps/[slug]/reviews/submit.ts", "exposure": "default-off", "requires": ["CAMP_REVIEWS_ENABLED", "enforcePublicRequestBoundary", "enforcePublicWriteRateLimit", "payload.website", "suppliedIdempotencyKey", "executeIdempotentWrite", "directory.review.submit.v1"] },
+    { "source": "src/pages/api/search-event.ts", "exposure": "default-off", "requires": ["DEMAND_TELEMETRY_ENABLED", "isSameOriginRequest", "readBoundedJson", "enforcePublicWriteRateLimit"] },
+    { "source": "src/pages/api/camps/check.ts", "exposure": "internal", "requires": ["BULK_IMPORT_TOKEN", "bearerCredential", "secretsMatch", "enforcePublicRequestBoundary", "firstOversizedField"] }
+  ]
+}

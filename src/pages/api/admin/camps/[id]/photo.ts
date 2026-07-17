@@ -5,12 +5,13 @@
 import type { APIRoute } from 'astro';
 import { setHeroPhotoKey, getCampById } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { sniffAllowedImageType, type AllowedImageType } from '../../../../../lib/image-upload';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
 const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
-const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
+const ALLOWED_TYPES = new Set<AllowedImageType>(['image/jpeg', 'image/png', 'image/webp']);
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -42,15 +43,20 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (!(file instanceof File)) return json({ ok: false, error: 'no file uploaded' }, 400);
 
   if (file.size > MAX_BYTES) return json({ ok: false, error: 'file too large (5 MB max)' }, 400);
-  if (!ALLOWED_TYPES.has(file.type)) {
+  if (!ALLOWED_TYPES.has(file.type as AllowedImageType)) {
     return json({ ok: false, error: 'unsupported type. Use jpg, png, or webp.' }, 400);
   }
 
-  const ext = file.type === 'image/jpeg' ? 'jpg' : file.type === 'image/png' ? 'png' : 'webp';
+  const detectedType = await sniffAllowedImageType(file);
+  if (!detectedType || detectedType !== file.type) {
+    return json({ ok: false, error: 'file content does not match an allowed image type' }, 400);
+  }
+
+  const ext = detectedType === 'image/jpeg' ? 'jpg' : detectedType === 'image/png' ? 'png' : 'webp';
   const key = `camps/${camp.slug}/hero-${Date.now()}.${ext}`;
 
   await env.PHOTOS.put(key, file.stream(), {
-    httpMetadata: { contentType: file.type },
+    httpMetadata: { contentType: detectedType, contentDisposition: 'inline' },
   });
 
   await setHeroPhotoKey(env.DB, id, key);

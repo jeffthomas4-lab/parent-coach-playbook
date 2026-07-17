@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-16T10:15:12.514Z",
+  "actions": "read-only",
+  "worker": {
+    "name": "parent-coach-desk",
+    "active_version": "92516f62-b891-4903-94e1-204a972ee2ae",
+    "traffic_percentage": 100,
+    "available_versions": 4,
+    "code_upload_versions": ["dd8c1d17-f81e-41e9-b116-f56bae3eb318"],
+    "secret_change_versions": 3,
+    "finding": "There is no prior fully configured Worker code deployment that has been proven as a rollback target."
+  },
+  "pages": {
+    "project": "parent-coach-playbook",
+    "deployment": "3ee0e373-04ef-4540-90ac-b8f41e8ebec5",
+    "source": "3e125bc",
+    "public_core_pages": { "home": 200, "directory": 200, "disclosure": 200, "terms": 200 },
+    "health": 404,
+    "readiness": 404,
+    "anonymous_admin_contract_paths": 32,
+    "anonymous_admin_200_count": 11,
+    "anonymous_admin_404_count": 21,
+    "largest_exposed_page": ">2000000 bytes",
+    "sensitive_pattern_note": "Counts-only audit found email-like patterns on 9 bounded pages; values were not retained. The editorial page exceeded the 2 MB inspection bound.",
+    "finding": "The Pages deployment exists and serves core public pages, but its pages.dev hostname exposes historical admin artifacts without Access and is not an approved rollback target."
+  },
+  "external_changes": []
+}

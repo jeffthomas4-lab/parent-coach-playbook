@@ -34,7 +34,7 @@ Never run a restore without a bookmark or timestamp chosen from incident evidenc
 
 ### 2. SQL export for recovery outside the Time Travel window
 
-Exports live under ignored `backups\d1\activity-radar-YYYY-MM-DD.sql` files. They
+Exports live under ignored timestamped `backups\d1\activity-radar-YYYY-MM-DD-HHMMSS.sql` files with SHA-256 sidecars. They
 are standard SQLite SQL dumps containing `CREATE TABLE`, `INSERT`, and index
 statements. They do **not** begin by dropping an existing schema.
 
@@ -58,17 +58,24 @@ a fresh local SQLite database in one transaction. `PRAGMA integrity_check` retur
 
 The raw dump took an impractical amount of time through `wrangler d1 execute
 --local`, even after wrapping it in a transaction, and that route was stopped
-without a successful D1-local result. The tested local proof used Python's standard
-SQLite driver because D1 exports standard SQLite SQL:
+without a successful D1-local result. The reusable local proof command has no
+Cloudflare client, refuses to overwrite proof artifacts, and records the source
+hash, integrity result, foreign-key result, and aggregate counts:
 
 ```powershell
-python -c "import sqlite3,pathlib; src=pathlib.Path(r'backups\d1\activity-radar-YYYY-MM-DD.sql'); dst=pathlib.Path(r'backups\d1\restore-proof.sqlite3'); sql=src.read_text(encoding='utf-8'); con=sqlite3.connect(dst); con.execute('PRAGMA journal_mode=OFF'); con.execute('PRAGMA synchronous=OFF'); con.executescript('BEGIN;\n'+sql+'\nCOMMIT;'); con.close()"
+python scripts\prove-d1-restore.py `
+  --input backups\d1\activity-radar-YYYY-MM-DD-HHMMSS.sql `
+  --output backups\d1\proof\activity-radar-restore.sqlite3 `
+  --report backups\d1\proof\activity-radar-restore.json `
+  --table organizations --table programs
 ```
 
-Then verify aggregate facts, not row contents:
+Verify the emitted JSON records `integrity_check: ok`, zero foreign-key
+violations, the expected table counts, and the same SHA-256 as the sidecar.
+Do not copy row contents into the evidence binder:
 
 ```powershell
-python -c "import sqlite3; con=sqlite3.connect(r'backups\d1\restore-proof.sqlite3'); print(con.execute('PRAGMA integrity_check').fetchone()); print(con.execute('SELECT COUNT(id) FROM organizations').fetchone()); print(con.execute('SELECT COUNT(id) FROM programs').fetchone()); con.close()"
+Get-Content backups\d1\proof\activity-radar-restore.json
 ```
 
 The proof database stays under ignored `backups\d1`. It is not a substitute for a

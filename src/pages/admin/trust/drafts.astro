@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { requireAdmin } from '../../../lib/admin-auth';
+import { listPendingTrustResponseDrafts, type TrustResponseDraft } from '../../../lib/trust-cases';
+import { env as cfEnv } from 'cloudflare:workers';
+
+export const prerender = false;
+const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+let drafts: TrustResponseDraft[] = [];
+let error = '';
+try { if (env?.PCD_OPS_DB) drafts = await listPendingTrustResponseDrafts(env.PCD_OPS_DB); else error = 'Operational database not bound.'; }
+catch { error = 'Response-draft table unavailable or query failed.'; }
+const expired = (value: string) => Date.parse(value) <= Date.now();
+---
+<BaseLayout title="Trust response drafts" description="Protected response draft approval queue" noindex={true}>
+  <section class="border-b border-bone"><div class="container-px py-10">
+    <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · <a href="/admin/trust/" class="hover:underline">Trust</a> · Drafts</p>
+    <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Pending response drafts</h1>
+    <p class="font-display italic text-ink-soft text-sm mt-2 max-w-3xl">Approval is bound to the displayed recipient, subject, body, hash, and expiry. Approval does not send the message.</p>
+  </div></section>
+  <section><div class="container-px py-10">
+    {error ? <p class="text-rust">{error}</p> : drafts.length === 0 ? <p class="text-ink-soft">No pending drafts.</p> : (
+      <ul class="grid gap-4">{drafts.map((draft) => <li class="border border-bone bg-paper p-5">
+        <p class="font-mono text-xs text-ink-soft">{draft.id} · case {draft.case_id} · revision {draft.revision}</p>
+        <p class:list={["mt-1 text-sm", expired(draft.expires_at) ? "text-red-700" : "text-ink-soft"]}>Expires {new Date(draft.expires_at).toLocaleString()}{expired(draft.expires_at) ? ' · EXPIRED' : ''}</p>
+        <p class="mt-3"><strong>To:</strong> {draft.recipient_email}</p>
+        <p><strong>Subject:</strong> {draft.subject}</p>
+        <pre class="mt-3 whitespace-pre-wrap font-body border border-bone p-3 bg-white">{draft.body_text}</pre>
+        <p class="font-mono text-xs break-all mt-3 text-ink-soft">SHA-256: {draft.content_hash}</p>
+        {!expired(draft.expires_at) && <form method="POST" action={`/api/admin/trust/${draft.case_id}/drafts/${draft.id}/approve`} class="grid gap-2 mt-4 max-w-xl">
+          <label class="grid gap-1"><span class="text-sm">Approval note</span><textarea name="note" minlength="10" maxlength="1000" rows="2" required class="px-2 py-1 border border-bone bg-paper" placeholder="Evidence reviewed and reason this response is appropriate."></textarea></label>
+          <label class="flex gap-2 items-start text-sm"><input type="checkbox" name="confirm_payload" value="yes" required class="mt-1" /><span>I reviewed the recipient, subject, body, hash, and expiry. I understand approval does not send.</span></label>
+          <button class="btn" type="submit">Approve immutable draft</button>
+        </form>}
+      </li>)}</ul>
+    )}
+  </div></section>
+</BaseLayout>

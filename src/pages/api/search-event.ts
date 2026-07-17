@@ -4,11 +4,27 @@
 // client — the search page calls this without awaiting a response, so a failure
 // here is invisible to the user.
 //
-// No PII is stored: no user ID, no email, no session token. The referrer and
-// user-agent are included as standard technical context, not for tracking.
+// Collection is default-off until the data contract, retention period, public
+// disclosure, and production migration are separately approved.
 
 import type { APIRoute } from 'astro';
 import { env as cfEnv } from 'cloudflare:workers';
+import { featureEnabled } from '../../lib/feature-flags';
+import {
+  boundedDimension,
+  classifyDemandActor,
+  DEMAND_EVENT_SCHEMA_VERSION,
+  demandExpiry,
+  demandResultBand,
+  demandRetentionDays,
+  isSameOriginRequest,
+  readBoundedJson,
+  sanitizeDemandQuery,
+} from '../../lib/demand-telemetry';
+import {
+  enforcePublicWriteRateLimit,
+  type PublicRateLimiter,
+} from '../../lib/public-rate-limit';
 
 export const prerender = false;
 
@@ -18,57 +34,98 @@ interface SearchEventPayload {
   collection?: unknown;
   sport?: unknown;
   age?: unknown;
+  surface?: unknown;
 }
 
 const respond = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+    },
   });
 
 export const POST: APIRoute = async ({ request }) => {
-  const env = cfEnv as { DB: D1Database } | undefined;
-  if (!env?.DB) {
-    return respond({ ok: false, error: 'database not available' }, 500);
+  const env = cfEnv as {
+    PCD_OPS_DB?: D1Database;
+    DEMAND_TELEMETRY_ENABLED?: string;
+    DEMAND_EVENT_RETENTION_DAYS?: string;
+    DEMAND_RATE_LIMITER?: PublicRateLimiter;
+  } | undefined;
+  if (!featureEnabled(env?.DEMAND_TELEMETRY_ENABLED)) {
+    return respond({ ok: false, error: 'not found' }, 404);
+  }
+  if (!env?.PCD_OPS_DB) {
+    return respond({ ok: false, error: 'operational database not available' }, 503);
+  }
+  const retentionDays = demandRetentionDays(env.DEMAND_EVENT_RETENTION_DAYS);
+  if (!retentionDays) {
+    // A flag alone cannot activate collection. Retention is a required part of
+    // the approved data contract and must be explicit and bounded.
+    return respond({ ok: false, error: 'telemetry unavailable' }, 503);
+  }
+  if (!isSameOriginRequest(request)) {
+    return respond({ ok: false, error: 'origin not allowed' }, 403);
   }
 
   let payload: SearchEventPayload = {};
   try {
-    payload = (await request.json()) as SearchEventPayload;
-  } catch {
+    payload = (await readBoundedJson(request)) as SearchEventPayload;
+  } catch (error) {
+    if (error instanceof RangeError) return respond({ ok: false, error: 'payload too large' }, 413);
     return respond({ ok: false, error: 'invalid JSON' }, 400);
   }
 
-  const query = typeof payload.query === 'string' ? payload.query.trim() : '';
-  if (!query) {
+  const sanitized = sanitizeDemandQuery(payload.query);
+  if (!sanitized) {
     return respond({ ok: false, error: 'query is required' }, 400);
   }
 
-  const resultCount =
-    typeof payload.resultCount === 'number' ? Math.floor(payload.resultCount) : null;
-  const collection =
-    typeof payload.collection === 'string' && payload.collection.trim()
-      ? payload.collection.trim().slice(0, 100)
-      : null;
-  const sport =
-    typeof payload.sport === 'string' && payload.sport.trim()
-      ? payload.sport.trim().slice(0, 100)
-      : null;
-  const age =
-    typeof payload.age === 'string' && payload.age.trim()
-      ? payload.age.trim().slice(0, 50)
-      : null;
+  const limited = await enforcePublicWriteRateLimit(
+    env.DEMAND_RATE_LIMITER,
+    request,
+    'demand-telemetry',
+  );
+  if (limited) return limited;
 
-  const referrer = (request.headers.get('referer') ?? '').slice(0, 500) || null;
-  const userAgent = (request.headers.get('user-agent') ?? '').slice(0, 200) || null;
+  const resultBand = demandResultBand(payload.resultCount);
+  const collection = boundedDimension(payload.collection, 50);
+  const sport = boundedDimension(payload.sport, 50);
+  const age = boundedDimension(payload.age, 30);
+  const surface = payload.surface === 'camp_directory' ? 'camp_directory' : 'site_search';
+  const botClass = classifyDemandActor(request);
   const createdAt = new Date().toISOString();
+  const expiresAt = demandExpiry(createdAt, retentionDays);
+  const eventId = crypto.randomUUID();
 
   try {
-    await env.DB.prepare(
-      `INSERT INTO search_events (query, result_count, collection, sport, age, referrer, user_agent, created_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+    await env.PCD_OPS_DB.prepare(
+      `INSERT INTO demand_events_v1 (
+         event_id, schema_version, event_type, query, query_redacted,
+         result_band, surface, collection, sport, age_band, geography,
+         bot_class, sampled, created_at, expires_at
+       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     )
-      .bind(query, resultCount, collection, sport, age, referrer, userAgent, createdAt)
+      // User-agent is classified ephemerally and discarded. IP and referrer are
+      // never bound. Geography remains null until its policy is approved.
+      .bind(
+        eventId,
+        DEMAND_EVENT_SCHEMA_VERSION,
+        'search',
+        sanitized.query,
+        sanitized.redacted ? 1 : 0,
+        resultBand,
+        surface,
+        collection,
+        sport,
+        age,
+        null,
+        botClass,
+        1,
+        createdAt,
+        expiresAt,
+      )
       .run();
 
     return respond({ ok: true });

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "evidence_type": "local_directory_idempotency_rehearsal",
+  "environment": "disposable_local_d1",
+  "remote_access": false,
+  "production_mutation": false,
+  "performed_at": "2026-07-16T15:38:00Z",
+  "wrangler_version": "4.110.0",
+  "persistence_path": "C:\\tmp\\pcd-idempotency-rehearsal-20260716",
+  "migration_result": {
+    "first": "0001_init_camps.sql",
+    "last": "0015_public_write_idempotency.sql",
+    "applied_count": 16,
+    "all_applied": true,
+    "foreign_key_check_rows": 0
+  },
+  "constraint_result": {
+    "initial_insert": "pass",
+    "readback": "pass",
+    "duplicate_compound_key": "rejected",
+    "sqlite_error_class": "SQLITE_CONSTRAINT_PRIMARYKEY"
+  },
+  "cleanup_result": {
+    "expired_before": 2,
+    "batch_limit": 1,
+    "deleted": 1,
+    "expired_after": 1,
+    "future_record_preserved": true,
+    "deterministic_order": "expires_at, route_scope, key_hash"
+  },
+  "not_proved": [
+    "simultaneous Worker requests against isolated staging D1",
+    "remote migration or restore",
+    "rendered mobile retry journey",
+    "scheduled cleanup invocation",
+    "production readiness"
+  ]
+}

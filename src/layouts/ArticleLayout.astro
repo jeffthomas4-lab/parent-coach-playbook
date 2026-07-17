@@ -7,6 +7,7 @@ import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL, authorEntity, themeFor } from '../data/site';
 import { isLive } from '../lib/publishFilter';
+import { renderTitle } from '../lib/title';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -128,7 +129,7 @@ const tagBits = [
   sportLabel,
   ageLabel ? `age ${ageLabel}` : null,
 ].filter(Boolean);
-const titleHtml = data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const titleHtml = renderTitle(data.title);
 const isShort = data.format === 'note';
 
 // Theme for the topic chip in the article header. Prefer the explicit topic
@@ -297,7 +298,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
                     href={`/${r.data.phase}/${r.id}/`}
                     class="font-display text-ink hover:text-rust block leading-snug"
                     style="font-size: 1rem; font-weight: 500;"
-                    set:html={r.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                    set:html={renderTitle(r.data.title)}
                   />
                 </li>
               ))}

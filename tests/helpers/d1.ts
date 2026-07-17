@@ -14,12 +14,15 @@ export interface FakeD1 {
   queueFirst: (value: unknown) => void;
   /** Queue a result for the next .run() call. */
   queueRun: (value: unknown) => void;
+  /** Queue a results array for the next .all() call. */
+  queueAll: (value: unknown[]) => void;
 }
 
 export function makeFakeD1(opts: { throwOn?: RegExp } = {}): FakeD1 {
   const calls: D1Call[] = [];
   const firstQueue: unknown[] = [];
   const runQueue: unknown[] = [];
+  const allQueue: unknown[][] = [];
 
   const db = {
     prepare(sql: string) {
@@ -41,10 +44,13 @@ export function makeFakeD1(opts: { throwOn?: RegExp } = {}): FakeD1 {
         },
         async all() {
           calls.push({ sql, params: stmt._params });
-          return { results: [] };
+          return { results: allQueue.shift() ?? [] };
         },
       };
       return stmt;
+    },
+    async batch(statements: Array<{ run: () => Promise<unknown> }>) {
+      return await Promise.all(statements.map((statement) => statement.run()));
     },
   };
 
@@ -53,5 +59,6 @@ export function makeFakeD1(opts: { throwOn?: RegExp } = {}): FakeD1 {
     calls,
     queueFirst: (v) => firstQueue.push(v),
     queueRun: (v) => runQueue.push(v),
+    queueAll: (v) => allQueue.push(v),
   };
 }

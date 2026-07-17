@@ -58,8 +58,7 @@ const tagBits = [
   dateLabel,
 ].filter(Boolean);
 
-// Italicize the conceptual hinge in the headline
-const renderTitle = (t: string) => t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+import { renderTitle } from '../lib/title';
 
 const titleSize = format === 'essay'
   ? 'text-2xl md:text-[1.65rem]'

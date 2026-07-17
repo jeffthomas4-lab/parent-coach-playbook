@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "environment": "production",
+  "observed_at": "2026-07-17T01:12:33Z",
+  "database": {
+    "name": "parent-coach-desk-ops-production",
+    "id": "b38d5f37-54df-4e0f-9706-023edc12c7fe",
+    "region": "WNAM",
+    "table_count": 0,
+    "database_size": "12.3 kB",
+    "read_queries_24h": 0,
+    "write_queries_24h": 0,
+    "rows_read_24h": 0,
+    "rows_written_24h": 0
+  },
+  "source_configuration": {
+    "binding": "PCD_OPS_DB",
+    "migrations_dir": "migrations-pcd-ops",
+    "deployed": false
+  },
+  "prohibited_conclusions": [
+    "No migration has been applied to this database.",
+    "No production Worker has been deployed with this binding.",
+    "No customer feature, payment, email, or identity function has been enabled.",
+    "This does not prove production backup, restore, migration, or customer readiness."
+  ],
+  "external_changes": [
+    "Created the empty dedicated production operational D1 database with explicit approval."
+  ]
+}

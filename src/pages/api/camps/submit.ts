@@ -8,13 +8,12 @@
 
 import type { APIRoute } from 'astro';
 import {
-  insertCamp,
+  prepareCampInsertStatements,
+  prepareSubmitterSubmissionUpsert,
+  insertCampSubmission,
   geocodeCached,
   generateCampId,
   uniqueSlug,
-  upsertSubmitterOnSubmission,
-  shouldAutoApprove,
-  incrementSubmitterApproved,
   listCampsAtAddressForSubmit,
   upsertDomainQuality,
   updateUrlHealth,
@@ -27,6 +26,7 @@ import {
   type SkillLevel,
   type SpotsStatus,
 } from '../../../lib/camps-db';
+import { executeIdempotentWrite, lookupIdempotentWrite, sha256Hex, suppliedIdempotencyKey } from '../../../lib/public-idempotency';
 import { checkUrlHealth } from '../../../lib/url-health';
 import {
   sendSubmissionConfirmation,
@@ -34,6 +34,8 @@ import {
   type EmailEnv,
 } from '../../../lib/email';
 import { env as cfEnv } from 'cloudflare:workers';
+import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHttpUrl } from '../../../lib/public-input';
+import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
 
 export const prerender = false;
 
@@ -46,12 +48,9 @@ const CONFIRMATION_MAX_PER_HOUR = 5;
 interface SubmitPayload {
   // honeypot
   website?: string;
+  idempotency_key?: string;
   // duplicate-address ack ("yes, this is a different program at the same address")
   confirm_duplicate?: string;
-  // bulk-import shared secret (matched against env.BULK_IMPORT_TOKEN). When
-  // present and correct, the row is inserted as status='approved' with
-  // awaiting_review=1 — public on the site immediately, still in admin queue.
-  import_token?: string;
   // public
   name?: string;
   sport?: string;
@@ -102,10 +101,10 @@ const isInt = (s: string | undefined): boolean => !!s && /^[0-9]+$/.test(s);
 const isIsoDate = (s: string | undefined): boolean => !!s && /^\d{4}-\d{2}-\d{2}$/.test(s);
 const isEmail = (s: string | undefined): boolean => !!s && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
-const ok = (body: unknown, status = 200) =>
+const ok = (body: unknown, status = 200, extraHeaders?: Record<string, string>) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', ...extraHeaders },
   });
 
 const fail = (message: string, status = 400) =>
@@ -133,15 +132,26 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
 
 export const POST: APIRoute = async ({ request }) => {
   const env = cfEnv as
-    | ({ DB: D1Database; BULK_IMPORT_TOKEN?: string; SITE_URL?: string } & EmailEnv)
+    | ({ DB: D1Database; SITE_URL?: string; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter } & EmailEnv)
     | undefined;
   if (!env?.DB) return fail('database not available', 500);
+
+  const boundary = await enforcePublicRequestBoundary(request, 32_768);
+  if (boundary) return boundary;
 
   const data = await readPayload(request);
 
   if (data.website && data.website.trim().length > 0) {
     return ok({ ok: true });
   }
+
+  const oversized = firstOversizedField(data as Record<string, unknown>, {
+    name: 200, sport: 80, address: 300, city: 120, state: 40, zip: 20,
+    description: 4000, price_text: 120, contact_email: 320, contact_phone: 60,
+    website_url: 2048, submitted_by_email: 320, source_domain: 253,
+    schedule_text: 2000,
+  });
+  if (oversized) return fail(`${oversized} too long`);
 
   const missing = REQUIRED.filter((k) => !data[k] || String(data[k]).trim() === '');
   if (missing.length) {
@@ -168,6 +178,8 @@ export const POST: APIRoute = async ({ request }) => {
   if (data.contact_email && !isEmail(data.contact_email)) {
     return fail('contact_email is not a valid email');
   }
+  const limited = await enforcePublicWriteRateLimit(env.PUBLIC_SUBMISSION_RATE_LIMITER, request, 'camp-submit', data.submitted_by_email);
+  if (limited) return limited;
 
   const dayOrOvernight = ((data.day_or_overnight as DayOrOvernight) ?? 'day') as DayOrOvernight;
   if (!['day', 'overnight'].includes(dayOrOvernight)) {
@@ -193,6 +205,39 @@ export const POST: APIRoute = async ({ request }) => {
     return fail('description must be between 30 and 4000 characters');
   }
   if (data.name!.length > 200) return fail('name too long');
+
+  const submitterEmail = data.submitted_by_email!.toLowerCase();
+  const rawConfidence = (data.confidence ?? '').toLowerCase().trim();
+  const confidence: ConfidenceLevel =
+    rawConfidence === 'high' || rawConfidence === 'low' || rawConfidence === 'medium'
+      ? (rawConfidence as ConfidenceLevel)
+      : 'medium';
+  let normalizedWebsite: string | null;
+  try {
+    normalizedWebsite = normalizeExternalHttpUrl(data.website_url);
+  } catch (error) {
+    return fail(error instanceof Error ? error.message : 'website_url is invalid');
+  }
+  const sourceDomain = (data.source_domain && data.source_domain.trim().toLowerCase()) || extractDomain(normalizedWebsite);
+  const idempotency = suppliedIdempotencyKey(request, data.idempotency_key);
+  if (idempotency.error) return fail(idempotency.error);
+  if (!idempotency.key) return fail('Idempotency-Key is required');
+  const canonicalPayload = {
+    version: 1, name: data.name!.trim(), sport: data.sport!.trim(), age_min: ageMin, age_max: ageMax,
+    start_date: data.start_date!, end_date: data.end_date!, address: data.address!.trim(), city: data.city!.trim(),
+    state: data.state!.trim().toUpperCase(), zip: data.zip!.trim(), description: data.description!.trim(),
+    price_text: data.price_text?.trim() || null, day_or_overnight: dayOrOvernight, skill_level: skillLevel,
+    spots_status: spotsStatus, contact_email: data.contact_email?.trim().toLowerCase() || null,
+    contact_phone: data.contact_phone?.trim() || null, website_url: normalizedWebsite,
+    lunch_included: data.lunch_included === 'true' || data.lunch_included === 'on',
+    aftercare_available: data.aftercare_available === 'true' || data.aftercare_available === 'on',
+    submitted_by_email: submitterEmail, confidence, source_domain: sourceDomain, program_type: programType,
+    registration_deadline: data.registration_deadline?.trim() || null, schedule_text: data.schedule_text?.trim() || null,
+  };
+  const payloadHash = await sha256Hex(canonicalPayload);
+  const existingResult = await lookupIdempotentWrite(env.DB, 'directory.program.submit.v1', idempotency.key, payloadHash);
+  if (existingResult?.outcome === 'conflict') return fail('Idempotency-Key was already used for a different request', 409);
+  if (existingResult?.outcome === 'replayed') return ok(existingResult.body, existingResult.status, { 'Idempotency-Replayed': 'true' });
 
   if (data.confirm_duplicate !== 'true' && data.confirm_duplicate !== 'on') {
     const existing = await listCampsAtAddressForSubmit(env.DB, data.address!, data.city!, data.zip!);
@@ -227,34 +272,9 @@ export const POST: APIRoute = async ({ request }) => {
   const slug = await uniqueSlug(env.DB, data.name!);
   const submittedAt = new Date().toISOString();
 
-  const submitterEmail = data.submitted_by_email!.toLowerCase();
-  await upsertSubmitterOnSubmission(env.DB, submitterEmail);
-  const trustedAutoApprove = await shouldAutoApprove(env.DB, submitterEmail);
-
-  // Bulk-import auto-approve: when the caller presents the right shared secret,
-  // the row goes live immediately AND is flagged for admin review. This is the
-  // CSV import flow's "--auto-approve" path. Constant-time-ish compare; the
-  // token isn't a password so plain equality is acceptable here.
-  const bulkImportApprove =
-    Boolean(env.BULK_IMPORT_TOKEN) &&
-    typeof data.import_token === 'string' &&
-    data.import_token.length > 0 &&
-    data.import_token === env.BULK_IMPORT_TOKEN;
-
-  const autoApprove = trustedAutoApprove || bulkImportApprove;
-
-  const rawConfidence = (data.confidence ?? '').toLowerCase().trim();
-  const confidence: ConfidenceLevel =
-    rawConfidence === 'high' || rawConfidence === 'low' || rawConfidence === 'medium'
-      ? (rawConfidence as ConfidenceLevel)
-      : 'medium';
-
-  const normalizedWebsite = data.website_url
-    ? (/^https?:\/\//i.test(data.website_url.trim()) ? data.website_url.trim() : `https://${data.website_url.trim()}`)
-    : null;
-  const sourceDomain =
-    (data.source_domain && data.source_domain.trim().toLowerCase()) ||
-    extractDomain(normalizedWebsite);
+  // Every submission, including authenticated bulk imports, enters pending.
+  // Import authority is not publication authority; approval uses the separate
+  // Access-protected, date-guarded domain transition.
 
   // Pre-flight URL gate: refuse submissions whose website_url has previously been
   // killed as dead, OR whose URL doesn't load right now. This prevents the LLM
@@ -300,7 +320,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
   }
 
-  await insertCamp(env.DB, {
+  const campInput = {
     id,
     slug,
     name: data.name!,
@@ -332,16 +352,27 @@ export const POST: APIRoute = async ({ request }) => {
     program_type: programType,
     registration_deadline: data.registration_deadline?.trim() ? data.registration_deadline.trim() : null,
     schedule_text: data.schedule_text?.trim() ? data.schedule_text.trim() : null,
-  }, autoApprove ? 'approved' : 'pending', bulkImportApprove);
-
-  if (autoApprove) {
-    await incrementSubmitterApproved(env.DB, submitterEmail);
+  };
+  const responseBody = { ok: true, id, slug, status: 'pending', awaiting_review: false };
+  const domainStatements = [
+    prepareSubmitterSubmissionUpsert(env.DB, submitterEmail, submittedAt),
+    ...prepareCampInsertStatements(env.DB, campInput, 'pending', false),
+  ];
+  let replayed = false;
+  const result = await executeIdempotentWrite({
+      db: env.DB, scope: 'directory.program.submit.v1', key: idempotency.key,
+      payloadHash, resourceId: id,
+      status: 200, body: responseBody, now: submittedAt,
+      expiresAt: new Date(Date.parse(submittedAt) + 30 * 24 * 60 * 60 * 1000).toISOString(),
+      domainStatements,
+  });
+  if (result.outcome === 'conflict') return fail('Idempotency-Key was already used for a different request', 409);
+  if (result.outcome === 'replayed') {
+    replayed = true;
+    return ok(result.body, result.status, { 'Idempotency-Replayed': 'true' });
   }
 
   await upsertDomainQuality(env.DB, sourceDomain, 'submitted', confidence);
-  if (autoApprove) {
-    await upsertDomainQuality(env.DB, sourceDomain, 'approved');
-  }
 
   if (normalizedWebsite) {
     try {
@@ -358,11 +389,11 @@ export const POST: APIRoute = async ({ request }) => {
   // see src/lib/email.ts. Until then the rendered message goes to Slack instead.
   // Either way the row is already written, so nothing below may throw: a mail
   // problem must never turn a good submission into an error for the parent.
-  const emailStatus = autoApprove ? ('approved' as const) : ('pending' as const);
+  const emailStatus = 'pending' as const;
   try {
     const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
     const recent = await countRecentSubmissionsByEmail(env.DB, submitterEmail, oneHourAgo);
-    if (recent <= CONFIRMATION_MAX_PER_HOUR && !bulkImportApprove) {
+    if (recent <= CONFIRMATION_MAX_PER_HOUR) {
       await sendSubmissionConfirmation(env, {
         campName: data.name!,
         city: data.city!,
@@ -383,7 +414,7 @@ export const POST: APIRoute = async ({ request }) => {
       body: [
         `${data.name!} — ${data.city!}, ${data.state!.toUpperCase()}`,
         `Sport: ${data.sport!}`,
-        `Status: ${emailStatus}${bulkImportApprove ? ' (bulk import, awaiting review)' : ''}`,
+        `Status: ${emailStatus}`,
         `Review: ${env.SITE_URL ?? 'https://parentcoachdesk.com'}/admin/camps/${id}`,
       ].join('\n'),
     });
@@ -391,11 +422,5 @@ export const POST: APIRoute = async ({ request }) => {
     console.error('[submit] admin alert failed', e);
   }
 
-  return ok({
-    ok: true,
-    id,
-    slug,
-    status: autoApprove ? 'approved' : 'pending',
-    awaiting_review: bulkImportApprove,
-  });
+  return ok(responseBody, 200, { 'Idempotency-Replayed': String(replayed) });
 };

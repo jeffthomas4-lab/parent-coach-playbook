@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { TOPICS, AGE_BANDS, SPORTS } from '../../data/site';
 import TopicIcon from '../../components/TopicIcon.astro';
 import { isLive, freshnessDate } from '../../lib/publishFilter';
+import { renderTitle } from '../../lib/title';
 
 export async function getStaticPaths() {
   return TOPICS.map((t) => ({
@@ -126,7 +127,7 @@ const ageLabel = (a: string | undefined) =>
                       </div>
                       <h3
                         class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium"
-                        set:html={a.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}
+                        set:html={renderTitle(a.data.title)}
                       />
                       {a.data.dek && (
                         <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>

@@ -19,6 +19,8 @@ import {
 } from '../../../lib/camps-db';
 import { checkUrlHealth } from '../../../lib/url-health';
 import { env as cfEnv } from 'cloudflare:workers';
+import { deleteExpiredIdempotencyRecords } from '../../../lib/public-idempotency';
+import { featureEnabled } from '../../../lib/feature-flags';
 
 export const prerender = false;
 
@@ -31,6 +33,7 @@ interface CronEnv {
   // this route stopped pinging on purpose) fires the UptimeRobot alert with
   // no email plumbing on our end. Leave unset and the ping is skipped, no error.
   OPS_HEARTBEAT_URL?: string;
+  IDEMPOTENCY_CLEANUP_ENABLED?: string;
 }
 
 const json = (body: unknown, status = 200) =>
@@ -58,6 +61,7 @@ export const POST: APIRoute = async ({ request }) => {
   let urlDead = 0;
   let urlTimeout = 0;
   let urlRedirect = 0;
+  const failures: string[] = [];
   try {
     const due = await listCampsForUrlSweep(env.DB, oneWeekAgoIso, 25);
     for (const c of due) {
@@ -70,19 +74,41 @@ export const POST: APIRoute = async ({ request }) => {
       else if (result.status === 'timeout') urlTimeout += 1;
       else if (result.status === 'redirect') urlRedirect += 1;
     }
-  } catch (e) {
-    console.error('[cron] url sweep failed', e);
+  } catch {
+    failures.push('url_sweep_failed');
+    console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'url_sweep_failed' }));
   }
 
   // 2. Stale-archive — move past-date approved camps to rejected.
   let staleArchived = 0;
+  let staleArchiveHasMore = false;
   try {
-    staleArchived = await archiveStaleCamps(env.DB, today, 'cron');
-  } catch (e) {
-    console.error('[cron] stale archive failed', e);
+    const archive = await archiveStaleCamps(env.DB, today, 'cron', 25);
+    staleArchived = archive.archived;
+    staleArchiveHasMore = archive.hasMore;
+    if (archive.hasMore) {
+      console.warn(JSON.stringify({ event: 'camps_sweep_backlog', code: 'stale_archive_has_more', archived: archive.archived }));
+    }
+  } catch {
+    failures.push('stale_archive_failed');
+    console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'stale_archive_failed' }));
   }
 
-  // 3. Blackout guard. If approved-and-future drops to 0, the camps sitemap
+  // 3. Expired retry metadata cleanup. Default-off until migration 0015 and
+  // its restore/release evidence are approved together. A configured cleanup
+  // failure is a failed sweep stage; it never silently reports healthy.
+  const idempotencyCleanupEnabled = featureEnabled(env.IDEMPOTENCY_CLEANUP_ENABLED);
+  let idempotencyExpiredDeleted = 0;
+  if (idempotencyCleanupEnabled) {
+    try {
+      idempotencyExpiredDeleted = await deleteExpiredIdempotencyRecords(env.DB, new Date().toISOString(), 100);
+    } catch {
+      failures.push('idempotency_cleanup_failed');
+      console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'idempotency_cleanup_failed' }));
+    }
+  }
+
+  // 4. Blackout guard. If approved-and-future drops to 0, the camps sitemap
   // and /camps/ index go empty and GSC starts losing pages, silently, for as
   // long as nobody happens to look. This ran for two-plus weeks in June/July
   // 2026 before anyone caught it. Log loud so `npx wrangler tail` on
@@ -91,8 +117,9 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     approvedFutureCount = await countApprovedFutureCamps(env.DB);
     if (approvedFutureCount === 0) {
-      console.error('[cron] CAMPS ALERT: approved+future camp count is 0. Sitemap and /camps/ are serving empty. Check pcd_status on the programs table — a migration or bulk write may have reset approvals.');
-    } else if (env.OPS_HEARTBEAT_URL) {
+      failures.push('directory_blackout');
+      console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'directory_blackout' }));
+    } else if (failures.length === 0 && env.OPS_HEARTBEAT_URL) {
       // Business-metric alert (Pillar 8): ping the heartbeat monitor only when
       // the number is healthy. If this run fails, throws, or the count drops
       // to 0, the ping does not fire and the monitor's own missed-check alert
@@ -100,16 +127,19 @@ export const POST: APIRoute = async ({ request }) => {
       // the sweep itself.
       try {
         await fetch(env.OPS_HEARTBEAT_URL, { method: 'GET' });
-      } catch (e) {
-        console.error('[cron] heartbeat ping failed', e);
+      } catch {
+        failures.push('heartbeat_failed');
+        console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'heartbeat_failed' }));
       }
     }
-  } catch (e) {
-    console.error('[cron] camps health check failed', e);
+  } catch {
+    failures.push('directory_probe_failed');
+    console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'directory_probe_failed' }));
   }
 
   return json({
-    ok: true,
+    ok: failures.length === 0,
+    ...(failures.length > 0 ? { code: 'partial_failure', failures } : {}),
     today,
     url_sweep: {
       checked: urlChecked,
@@ -119,6 +149,12 @@ export const POST: APIRoute = async ({ request }) => {
       redirect: urlRedirect,
     },
     stale_archived: staleArchived,
+    stale_archive_has_more: staleArchiveHasMore,
+    idempotency_cleanup: {
+      enabled: idempotencyCleanupEnabled,
+      deleted: idempotencyExpiredDeleted,
+      limit: 100,
+    },
     approved_future_count: approvedFutureCount,
-  });
+  }, failures.length === 0 ? 200 : 500);
 };

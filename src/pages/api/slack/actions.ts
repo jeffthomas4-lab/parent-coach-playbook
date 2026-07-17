@@ -64,8 +64,9 @@ async function respond(responseUrl: string | undefined, message: string): Promis
       body: JSON.stringify({ replace_original: false, text: message }),
       signal: AbortSignal.timeout(5000),
     });
-  } catch (e) {
-    console.error('[slack-actions] response_url post failed', e);
+  } catch {
+    // Fetch exceptions may include Slack's secret response URL.
+    console.error(JSON.stringify({ event: 'slack_action_response_failed', code: 'fetch_failed' }));
   }
 }
 
@@ -114,7 +115,7 @@ export const POST: APIRoute = async (ctx) => {
     return ephemeral('Publishing is not configured yet: no approver allowlist is set.');
   }
   if (!allowed.has(userId)) {
-    console.warn('[slack-actions] publish attempted by non-approver', userId);
+    console.warn(JSON.stringify({ event: 'slack_publish_blocked', code: 'unauthorized_approver' }));
     return ephemeral('You are not on the approver list for publishing.');
   }
 

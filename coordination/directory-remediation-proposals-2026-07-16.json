@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "status": "proposal_only",
+  "generatedAt": "2026-07-16T13:07:51.126Z",
+  "productionWritesAuthorized": false,
+  "sourceQueue": "coordination/directory-remediation-queue-2026-07-16.json",
+  "liveRead": {
+    "databaseBinding": "DB",
+    "databaseName": "activity-radar",
+    "databaseId": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef",
+    "readAt": "2026-07-16T13:03:00.000Z",
+    "rowsRead": 27,
+    "rowsWritten": 0,
+    "changedDb": false
+  },
+  "items": [
+    {
+      "itemId": "everett-price",
+      "programId": "233da2ca-e81a-4a55-aa5b-79a93035a50a",
+      "decisionState": "needs_owner_reverification_and_change_approval",
+      "actionClass": "bounded_field_correction",
+      "sourceEvidenceState": "live_official_conflict_material_price",
+      "sourceVerifiedAt": "2026-07-16T13:07:00.000Z",
+      "currentState": { "price_text": "$50", "session_start_date": "2026-04-13", "session_end_date": "2026-08-28", "pcd_status": "approved", "reviewed_at": "2026-07-13T16:09:49Z", "last_verified_at": "2026-07-08T15:01:45.280Z" },
+      "proposedChanges": { "price_text": null },
+      "reason": "The official club page identifies $50 as a registration fee, not the camp price; the broad stored record cannot safely map the provider's attendance variants.",
+      "sourceUrl": "https://bgcsc.org/clubs/everett/"
+    },
+    {
+      "itemId": "breakthrough-price",
+      "programId": "prog-012121b5-d68b-59ff-b05e-1dd841b8582c",
+      "decisionState": "needs_owner_reverification_and_change_approval",
+      "actionClass": "bounded_field_correction",
+      "sourceEvidenceState": "live_official_price_exact_grade_age_conversion_unresolved",
+      "sourceVerifiedAt": "2026-07-16T13:07:00.000Z",
+      "currentState": { "price_text": "$245 ($196 early bird with 20% discount)", "age_min": 8, "age_max": 14, "session_start_date": "2026-08-11", "session_end_date": "2026-08-13", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": { "price_text": "$245" },
+      "reason": "The official page reproduces $245 but not the stored $196 promotion. Grade eligibility remains unresolved and is not changed by this proposal.",
+      "sourceUrl": "https://www.breakthroughbasketball.com/camps/basketball-camp/tacoma-wa"
+    },
+    {
+      "itemId": "challenger-price",
+      "programId": "prog-81d5fb25-2c8c-5785-9c4d-26d8630706c0",
+      "decisionState": "needs_owner_reverification_and_change_approval",
+      "actionClass": "bounded_field_correction",
+      "sourceEvidenceState": "live_official_conflict_volatile_variant_promotion",
+      "sourceVerifiedAt": "2026-07-16T13:07:00.000Z",
+      "currentState": { "price_text": "$119-$349", "session_start_date": "2026-07-20", "session_end_date": "2026-07-24", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": { "price_text": null },
+      "reason": "The stored range reflects struck-through prices and the observed replacement is a volatile promotion across variants; omission is safer than replacing one unsupported range with another.",
+      "sourceUrl": "https://challenger.configio.com/pd/269906/dupont-park-recreations-week-2?org=1069&returncom=orglandingpage&source=search"
+    },
+    {
+      "itemId": "parks-tacoma-price-availability",
+      "programId": "prog-0ef04da3-56e4-5625-be62-50f292747d94",
+      "decisionState": "investigation_only",
+      "actionClass": "investigation",
+      "sourceEvidenceState": "official_partial_material_fields_price_unreproduced",
+      "currentState": { "price_text": "$250", "availability_status": "open", "session_start_date": "2026-08-24", "session_end_date": "2026-08-28", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": {},
+      "reason": "The official page reproduced dates, ages and waitlist state but not price. The queue authorizes investigation only, so even apparently supported availability is not proposed for mutation.",
+      "sourceUrl": "https://www.parkstacoma.gov/activities-and-sports/camps/"
+    },
+    {
+      "itemId": "charles-wright-soccer",
+      "programId": "prog-bd522796-5a77-5b77-b20d-82f0ae9419c7",
+      "decisionState": "investigation_only",
+      "actionClass": "investigation",
+      "sourceEvidenceState": "official_program_family_found_exact_record_unreproduced",
+      "currentState": { "price_text": "$250", "age_min": 8, "age_max": 11, "session_start_date": "2026-07-13", "session_end_date": "2026-07-17", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": {},
+      "reason": "Provider-family evidence does not reproduce the exact soccer session, dates, grade band or price.",
+      "sourceUrl": "https://charleswright.org/community/camps/"
+    },
+    {
+      "itemId": "i9-puyallup",
+      "programId": "prog-2b0bc22a-a9d2-5882-8e1f-1eb6b60e2a07",
+      "decisionState": "investigation_only",
+      "actionClass": "investigation",
+      "sourceEvidenceState": "official_detail_unreproduced",
+      "currentState": { "price_text": "$158 early bird (paid by 6/19), late fees apply after", "age_min": 3, "age_max": 6, "session_start_date": "2026-09-13", "session_end_date": "2026-10-18", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": {},
+      "reason": "The official venue flow did not reproduce the material record fields, including the expired early-bird claim.",
+      "sourceUrl": "https://www.i9sports.com/venues/puyallup-heritage-recreation-center-youth-sports-programs/9746"
+    },
+    {
+      "itemId": "juanita-lacrosse",
+      "programId": "b6868faf-cf6b-46f0-93eb-4107aaf89d49",
+      "decisionState": "investigation_only",
+      "actionClass": "investigation",
+      "sourceEvidenceState": "official_public_detail_unavailable",
+      "currentState": { "price_text": "$200", "age_min": 6, "age_max": 12, "session_start_date": "2026-07-13", "session_end_date": "2026-07-17", "pcd_status": "approved", "reviewed_at": "2026-07-13T16:09:49Z", "last_verified_at": "2026-06-24T19:01:55.554Z" },
+      "proposedChanges": {},
+      "reason": "The TeamSnap target did not provide stable public material-field evidence.",
+      "sourceUrl": "https://go.teamsnap.com/forms/518675"
+    },
+    {
+      "itemId": "puyallup-week-9",
+      "programId": "prog-01f0da82-13cc-58d0-a489-2ec10d8c7c8f",
+      "decisionState": "investigation_only",
+      "actionClass": "investigation",
+      "sourceEvidenceState": "official_partial_material_fields_age_price_unreproduced",
+      "currentState": { "price_text": "$225", "age_min": 6, "age_max": 12, "session_start_date": "2026-08-17", "session_end_date": "2026-08-21", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": {},
+      "reason": "The official scholarship form reproduces week, theme, dates and location but not ages or price.",
+      "sourceUrl": "https://www.puyallupwa.gov/DocumentCenter/View/25380/Day-Camp-Scholarship-Form-2026?bidId="
+    },
+    {
+      "itemId": "sound-life-tacoma",
+      "programId": "prog-1226d6cf-6279-5106-9a83-ef49bb6004cd",
+      "decisionState": "investigation_and_possible_withhold_only",
+      "actionClass": "investigation",
+      "sourceEvidenceState": "possible_entity_location_mismatch",
+      "currentState": { "price_text": "$220/week plus $30 registration", "age_min": 6, "age_max": 13, "session_start_date": "2026-07-13", "session_end_date": "2026-07-17", "pcd_status": "approved", "reviewed_at": "2026-07-05T00:00:00Z", "last_verified_at": "2026-06-14T23:10:30Z" },
+      "proposedChanges": {},
+      "reason": "The discoverable provider-branded 2026 site is for Port Angeles and cannot validate or replace the Tacoma entity.",
+      "sourceUrl": "https://www.soundlifedaycamp.com/tacoma"
+    },
+    {
+      "itemId": "auburn-half-year-age-policy",
+      "programId": null,
+      "decisionState": "policy_review_only",
+      "actionClass": "policy",
+      "sourceEvidenceState": "provider_minimum_age_fraction_not_representable",
+      "currentState": {},
+      "proposedChanges": {},
+      "reason": "The source states 11.5 and no exact record ID is preserved. Choose a provider-native/fractional representation policy before any record proposal.",
+      "sourceUrl": "https://www.auburnwa.gov/city_hall/parks_arts_recreation/recreation/camps"
+    }
+  ]
+}

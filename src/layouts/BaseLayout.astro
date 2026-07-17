@@ -126,11 +126,23 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
             loadGAScript();
             initVitals();
           })
-          .catch(() => { loadGAScript(); initVitals(); });
+          // The public notice promises that GA is not loaded in the listed
+          // regions. If Cloudflare's location signal is unavailable, fail
+          // closed instead of guessing that the visitor is outside them.
+          .catch(() => {});
       }
 
       if (localStorage.getItem('pcd_consent') === 'yes') launchAnalytics();
       window.addEventListener('pcd_consent_granted', launchAnalytics);
+      window.addEventListener('pcd_consent_denied', () => {
+        (window as any)[`ga-disable-${GA_ID}`] = true;
+        for (const cookie of document.cookie.split(';')) {
+          const name = cookie.split('=')[0]?.trim();
+          if (!name?.startsWith('_ga')) continue;
+          document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+          document.cookie = `${name}=; Max-Age=0; Path=/; Domain=.${location.hostname}; SameSite=Lax`;
+        }
+      });
     </script>
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}

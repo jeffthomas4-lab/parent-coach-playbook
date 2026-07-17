@@ -2,11 +2,13 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listPendingReviews, getCampById, type CampReview, type Camp } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
+import { featureEnabled } from '../../../lib/feature-flags';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
-const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string; CAMP_REVIEWS_ENABLED?: string } | undefined;
+const reviewsEnabled = featureEnabled(env?.CAMP_REVIEWS_ENABLED);
 
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
@@ -15,7 +17,7 @@ const adminEmail = auth.email;
 let pending: CampReview[] = [];
 const campLookup = new Map<string, Camp>();
 let dbAvailable = !!env?.DB;
-if (env?.DB) {
+if (reviewsEnabled && env?.DB) {
   try {
     pending = await listPendingReviews(env.DB);
     for (const r of pending) {
@@ -39,6 +41,11 @@ const fmt = (s: string) =>
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Reviews
       </p>
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Pending reviews</h1>
+      <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
+        {reviewsEnabled
+          ? 'Review moderation is enabled for this environment.'
+          : 'Public reviews are disabled. The queue is read-suppressed and mutation endpoints fail closed until the review product passes its moderation, privacy, and legal-risk gate.'}
+      </p>
       {!adminEmail && (
         <p class="font-display italic text-rust text-sm mt-2 font-medium">
           Cloudflare Access header not detected. Approve/reject will fail until /admin/* is wired through Access.
@@ -49,7 +56,9 @@ const fmt = (s: string) =>
 
   <section>
     <div class="container-px py-10">
-      {!dbAvailable ? (
+      {!reviewsEnabled ? (
+        <p class="font-display italic text-ink-soft font-medium">Reviews workflow disabled.</p>
+      ) : !dbAvailable ? (
         <p class="font-display italic text-ink-soft font-medium">Database not bound.</p>
       ) : pending.length === 0 ? (
         <p class="font-display italic text-ink-soft font-medium">Queue is empty.</p>

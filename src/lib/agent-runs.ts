@@ -7,11 +7,11 @@
 // nothing wrote to it. This file plus /api/agent-runs is that wire.
 //
 // The rule from automation/RUN-LOG.md: agents that do not log do not exist.
-// Every run writes a start row and a finish row. A failure is logged with the
-// real error, alerted to Slack, and — on a second failure inside 24 hours —
+// Every run writes a start row and a finish row. A failure stores bounded detail
+// in protected D1, alerts Slack without that detail, and — on a second failure inside 24 hours —
 // pauses the agent per the CANARY rule in the constitution. One exception, with
-// its reasoning at CANARY_EXEMPT_AGENTS below: the compliance watch on the legal
-// deletion SLA never gets paused, because its failure is the alarm.
+// its reasoning at CANARY_EXEMPT_AGENTS below: the privacy-request deadline
+// watch never gets paused, because its failure is the alarm.
 //
 // Binding: FORGE_DB, the `forge-command` D1 database
 // (747cf988-a557-48bd-9d03-bea09e184f94). Every statement below uses bound
@@ -57,8 +57,9 @@ const CANARY_THRESHOLD = 2;
  *
  * CANARY stops an agent that is failing repeatedly, on the theory that a stopped
  * agent is safer than a broken one. That theory inverts for a compliance watch.
- * Vera is the only thing watching a legal 30-day deletion SLA
- * (`automation/agents/vera/SPEC.md` section 8, `DATA-MAP.md`), so pausing her
+ * Vera is the only thing watching the configured privacy-request response target.
+ * The actual statutory deadline and exceptions are request-specific and require
+ * counsel-approved policy; the monitor reads the authoritative request deadline. Pausing her
  * does not stop the risk, it stops the alarm. Her failure is the alarm.
  *
  * That is not hypothetical. On 2026-07-14 her account guard tripped, the task
@@ -70,7 +71,7 @@ const CANARY_THRESHOLD = 2;
  * inbox is connected, not an edge case.
  *
  * An exempt agent loses the pause and nothing else. It still logs `failed`,
- * still alerts Slack with the real error, and still sets `needs_you`. Escalation
+ * still alerts Slack with a protected-history pointer, and still sets `needs_you`. Escalation
  * replaces the pause; it does not go quiet.
  *
  * Both keys are Vera. `pcd-deletion-monitor` is her live registry key today;
@@ -235,7 +236,7 @@ export async function alertRun(
   const lines: string[] = [];
   if (input.status === 'failed') {
     lines.push(`:rotating_light: *${input.agent}* run failed (${input.venture}).`);
-    if (input.error) lines.push(`Error: ${clamp(input.error, 400)}`);
+    if (input.error) lines.push('Error detail recorded in the protected run history.');
     if (canary?.tripped) {
       if (canary.exempt) {
         // Louder, not quieter. An exempt agent is exempt because its failure is

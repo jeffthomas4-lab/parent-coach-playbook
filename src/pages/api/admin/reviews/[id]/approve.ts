@@ -4,6 +4,7 @@
 import type { APIRoute } from 'astro';
 import { approveReview } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { featureEnabled } from '../../../../../lib/feature-flags';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -15,7 +16,7 @@ const json = (body: unknown, status = 200) =>
   });
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string; CAMP_REVIEWS_ENABLED?: string } | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const auth = await requireAdmin(request, env);
@@ -23,6 +24,10 @@ export const POST: APIRoute = async ({ params, request }) => {
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
+
+  if (!featureEnabled(env.CAMP_REVIEWS_ENABLED)) {
+    return json({ ok: false, error: 'camp reviews are not currently available' }, 404);
+  }
 
   const id = params.id;
   if (!id) return json({ ok: false, error: 'missing id' }, 400);

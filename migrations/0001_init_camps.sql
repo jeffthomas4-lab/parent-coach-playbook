@@ -3,6 +3,13 @@
 -- Two tables: submitters (the people who add camps) and camps (the records themselves).
 -- Trust-tier on submitters supports a future upgrade from manual moderation to
 -- auto-approve-trusted/queue-new without a schema change.
+--
+-- Fresh-database bootstrap repair (2026-07-16): several legacy columns were
+-- originally added to production outside Wrangler's migration ledger. Later
+-- migrations 0006 and 0008 create indexes against those columns while their
+-- ALTER statements remain commented to protect existing databases. Defining
+-- the columns here is intentionally limited to databases where 0001 has never
+-- run; it does not alter or authorize changes to an existing remote database.
 
 CREATE TABLE submitters (
   email TEXT PRIMARY KEY,
@@ -48,6 +55,30 @@ CREATE TABLE camps (
   reviewed_by TEXT,
   reviewed_at TEXT,
   review_notes TEXT,
+
+  -- Legacy columns required by later migrations. Existing databases received
+  -- these outside the migration framework; new databases receive them here.
+  last_edited_at TEXT,
+  last_edited_by TEXT,
+  program_type TEXT NOT NULL DEFAULT 'camp',
+  registration_deadline TEXT,
+  schedule_text TEXT,
+  confidence TEXT NOT NULL DEFAULT 'medium'
+    CHECK (confidence IN ('high', 'medium', 'low')),
+  source_domain TEXT,
+  reject_reason_code TEXT
+    CHECK (reject_reason_code IS NULL OR reject_reason_code IN (
+      'duplicate', 'dead-url', 'unverifiable-address', 'missing-required-field',
+      'off-brand', 'past-date', 'aggregator-source', 'low-confidence', 'spam', 'other'
+    )),
+  url_health_status TEXT NOT NULL DEFAULT 'unchecked'
+    CHECK (url_health_status IN ('unchecked', 'live', 'dead', 'timeout', 'redirect')),
+  url_last_checked_at TEXT,
+  url_last_status_code INTEGER,
+  awaiting_review INTEGER NOT NULL DEFAULT 0 CHECK (awaiting_review IN (0, 1)),
+  featured INTEGER NOT NULL DEFAULT 0,
+  featured_order INTEGER,
+  featured_until TEXT,
 
   FOREIGN KEY (submitted_by_email) REFERENCES submitters(email)
 );

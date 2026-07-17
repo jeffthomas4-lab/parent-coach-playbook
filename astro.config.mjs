@@ -1,6 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
+import authkit from '@workos/authkit-astro';
+
+const ownerAuthProofEnabled = process.env.PCD_OWNER_AUTH_PROOF_ENABLED === 'true';
 
 // Rehype plugin: decorates links in markdown content at build time.
 // - External links (http/https): open in new tab, rel noopener noreferrer
@@ -50,6 +53,22 @@ export default defineConfig({
     // Decision B. See PAGES-TO-WORKERS-MIGRATION-BRIEF.md.
     imageService: { build: 'compile', runtime: 'passthrough' },
   }),
+  integrations: ownerAuthProofEnabled
+    ? [
+        authkit({
+          protectedRoutes: ['/owner-proof/dashboard(.*)'],
+          signInPath: '/owner-proof/login',
+          loginPath: '/owner-proof/login',
+          signUpPath: '/owner-proof/signup',
+          callbackPath: '/owner-proof/callback',
+          logoutPath: '/owner-proof/logout',
+          afterSignOutUrl: '/owner-proof/signed-out',
+          errorRedirect: '/owner-proof/login',
+          sessionEndpoint: '/owner-proof/session',
+          hydrateClient: false,
+        }),
+      ]
+    : [],
   build: {
     format: 'directory',
   },
@@ -71,7 +90,10 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    cacheDir: '/tmp/pcd-vite-verify-cache',
+    // Astro's Cloudflare adapter can initialize more than one Vite process.
+    // A shared cold cache races on dependency-file replacement after lockfile
+    // changes, so each process gets an isolated disposable cache directory.
+    cacheDir: `/tmp/pcd-vite-verify-cache-${process.pid}`,
     build: {
       // Astro 5 inlines small bundled <script> tags by default. The site CSP only
       // allows 'self' plus explicit is:inline hashes, so an inlined bundled script

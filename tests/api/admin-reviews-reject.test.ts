@@ -45,7 +45,7 @@ describe('POST /api/admin/reviews/:id/reject', () => {
   });
 
   it('happy path: an allowed admin rejecting a pending review succeeds', async () => {
-    const ctx = makeContext({ request: adminRequest({ notes: 'off-topic' }), params: { id: 'review_1' }, env: { DB: {}, ADMIN_EMAILS } });
+    const ctx = makeContext({ request: adminRequest({ notes: 'off-topic' }), params: { id: 'review_1' }, env: { DB: {}, ADMIN_EMAILS, CAMP_REVIEWS_ENABLED: 'true' } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(200);
@@ -55,7 +55,7 @@ describe('POST /api/admin/reviews/:id/reject', () => {
 
   it('failure path: a review id that does not exist returns 404', async () => {
     (campsDb.rejectReview as any).mockResolvedValue(null);
-    const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS } });
+    const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS, CAMP_REVIEWS_ENABLED: 'true' } });
     const res = await POST(ctx);
     expect(res.status).toBe(404);
   });

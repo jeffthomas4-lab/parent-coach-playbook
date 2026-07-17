@@ -14,12 +14,13 @@ import {
   getAdminEmailFromRequest,
   getAccessToken,
   accessVerificationConfigured,
+  adminAllowListConfigured,
 } from '../../src/lib/admin-auth';
 import { __resetAccessKeyCache } from '../../src/lib/access-jwt';
 import { makeAccessToken, getPublicJwk, jwksResponse, TEAM_DOMAIN, AUD } from '../helpers/access-token';
 
-const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu,parentcoachplaybook@gmail.com';
-const ADMIN = 'jeffthomas@pugetsound.edu';
+const ADMIN_EMAILS = 'eepskalla@gmail.com,jeffthomas4@gmail.com';
+const ADMIN = 'jeffthomas4@gmail.com';
 const URL_ADMIN = 'https://parentcoachdesk.com/api/admin/camps/abc/approve';
 
 describe('requireAdmin (Access vars unset)', () => {
@@ -74,6 +75,17 @@ describe('requireAdmin (verified mode: Access vars set)', () => {
     expect((result as Response).status).toBe(401);
   });
 
+  it('fails closed when the administrator allowlist is missing', async () => {
+    const token = await makeAccessToken({ email: ADMIN });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { cookie: `CF_Authorization=${token}` },
+    });
+    const result = await requireAdmin(req, { ACCESS_TEAM_DOMAIN: TEAM_DOMAIN, ACCESS_AUD: AUD });
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(503);
+  });
+
   it('SECURITY: a JWT signed by someone other than the Access team is refused', async () => {
     const token = await makeAccessToken({ email: ADMIN, signWithWrongKey: true });
     const req = new Request(URL_ADMIN, {
@@ -119,6 +131,17 @@ describe('requireAdmin (verified mode: Access vars set)', () => {
     expect((result as Response).status).toBe(403);
   });
 
+  it('does not restore the retired administrator when configuration is valid', async () => {
+    const token = await makeAccessToken({ email: 'parentcoachplaybook@gmail.com' });
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { cookie: `CF_Authorization=${token}` },
+    });
+    const result = await requireAdmin(req, env);
+    expect(result).toBeInstanceOf(Response);
+    expect((result as Response).status).toBe(403);
+  });
+
   it('an expired but correctly signed token is refused', async () => {
     const token = await makeAccessToken({ email: ADMIN, expiresInSec: -3600 });
     const req = new Request(URL_ADMIN, {
@@ -141,6 +164,17 @@ describe('accessVerificationConfigured', () => {
 
   it('is true when both are set', () => {
     expect(accessVerificationConfigured({ ACCESS_TEAM_DOMAIN: TEAM_DOMAIN, ACCESS_AUD: AUD })).toBe(true);
+  });
+});
+
+describe('adminAllowListConfigured', () => {
+  it('is false when the allowlist is absent or blank', () => {
+    expect(adminAllowListConfigured({})).toBe(false);
+    expect(adminAllowListConfigured({ ADMIN_EMAILS: ' , ' })).toBe(false);
+  });
+
+  it('is true only for a non-empty administrator list', () => {
+    expect(adminAllowListConfigured({ ADMIN_EMAILS })).toBe(true);
   });
 });
 

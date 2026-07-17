@@ -14,17 +14,12 @@
 //   --email <addr>   submitter email (default: parentcoachplaybook@gmail.com)
 //   --base <url>     site base (default: https://parentcoachdesk.com)
 //   --dry-run        parse + validate only, do not POST
-//   --auto-approve   submit each row with status='approved' AND awaiting_review=1
-//                    so the camps go LIVE on the public site immediately while
-//                    still showing in the admin queue for a per-row review pass.
-//                    Requires BULK_IMPORT_TOKEN env var (must match the worker
-//                    secret of the same name). Set the secret once with:
-//                      npx wrangler secret put BULK_IMPORT_TOKEN
-//                    Then export the same value locally before each run:
-//                      $env:BULK_IMPORT_TOKEN = "your-token"
+// All imports enter the pending moderation queue. Publication is a separate,
+// Access-protected per-record decision; this tool has no publish authority.
 
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const args = process.argv.slice(2);
 const positional = args.filter((a) => !a.startsWith('--'));
@@ -36,20 +31,15 @@ const flag = (name, fallback) => {
 
 const csvPath = positional[0];
 if (!csvPath) {
-  console.error('Usage: node scripts/import-camps-csv.mjs <csv-path> [--email addr] [--base url] [--dry-run] [--auto-approve]');
+  console.error('Usage: node scripts/import-camps-csv.mjs <csv-path> [--email addr] [--base url] [--dry-run]');
   process.exit(1);
 }
 
 const SUBMITTER_EMAIL = flag('email', 'parentcoachplaybook@gmail.com');
 const BASE_URL = flag('base', 'https://parentcoachdesk.com');
 const DRY = args.includes('--dry-run');
-const AUTO_APPROVE = args.includes('--auto-approve');
-const BULK_TOKEN = process.env.BULK_IMPORT_TOKEN || '';
-
-if (AUTO_APPROVE && !BULK_TOKEN) {
-  console.error('--auto-approve requires the BULK_IMPORT_TOKEN env var to be set.');
-  console.error('First time setup: npx wrangler secret put BULK_IMPORT_TOKEN');
-  console.error('Then before each import: $env:BULK_IMPORT_TOKEN = "your-token"');
+if (args.includes('--auto-approve')) {
+  console.error('--auto-approve has been retired: bulk imports must enter pending moderation.');
   process.exit(1);
 }
 
@@ -57,7 +47,7 @@ console.log(`Importing ${csvPath}`);
 console.log(`  submitter: ${SUBMITTER_EMAIL}`);
 console.log(`  endpoint:  ${BASE_URL}/api/camps/submit`);
 if (DRY) console.log('  mode:      DRY RUN (no POSTs)');
-if (AUTO_APPROVE) console.log('  mode:      AUTO-APPROVE (rows go live, flagged for review)');
+console.log('  mode:      PENDING MODERATION (no publish authority)');
 console.log('');
 
 const text = await readFile(resolve(csvPath), 'utf8');
@@ -109,8 +99,9 @@ for (let i = 0; i < rows.length; i += 1) {
     registration_deadline: row.registration_deadline || '',
     schedule_text: row.schedule_text || '',
     confirm_duplicate: 'true', // pre-acknowledge; the dedup probe still runs server-side
-    ...(AUTO_APPROVE ? { import_token: BULK_TOKEN } : {}),
   };
+  const idempotencyKey = `csv_${createHash('sha256').update(JSON.stringify(payload)).digest('hex')}`;
+  payload.idempotency_key = idempotencyKey;
 
   if (DRY) {
     console.log(`[dry] ${row.name} → would POST`);
@@ -121,7 +112,10 @@ for (let i = 0; i < rows.length; i += 1) {
   try {
     const res = await fetch(`${BASE_URL}/api/camps/submit`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Idempotency-Key': idempotencyKey,
+      },
       body: JSON.stringify(payload),
     });
     const body = await res.json().catch(() => ({}));

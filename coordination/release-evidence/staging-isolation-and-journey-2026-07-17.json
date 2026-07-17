@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T00:49:27.372Z",
+  "environment": "staging",
+  "worker": {
+    "name": "parent-coach-desk-staging",
+    "url": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+    "version_id": "4ff8371d-d460-4652-9eb3-c37d4d2e0b9c",
+    "directory_db": "parent-coach-desk-directory-staging",
+    "operations_db": "parent-coach-desk-ops-staging",
+    "photo_bucket": "parent-coach-desk-staging-photos",
+    "production_directory_binding": false,
+    "production_photo_binding": false,
+    "customer_foundation_enabled": false,
+    "commerce_test_mode_enabled": false,
+    "application_admin_allowlist": ["eepskalla@gmail.com", "jeffthomas4@gmail.com"],
+    "missing_application_admin_allowlist_fails_closed": true
+  },
+  "operations_migration": {
+    "pre_migration_export_sha256": "c997e44c27437c2aa6f4025e83f1188e7a08333e380caccef8d17ddbf29fc5bc",
+    "applied_through": "0022_commerce_test_mode_ledger.sql",
+    "recovery_database": "parent-coach-desk-ops-recovery-staging",
+    "recovery_restored_pre_migration_ledger": [
+      "0011_trust_cases.sql",
+      "0012_trust_drafts_and_notification_outbox.sql",
+      "0013_demand_events_v1.sql",
+      "0014_trust_intake_idempotency.sql"
+    ],
+    "recovery_foreign_key_check": "ok",
+    "post_migration_export_sha256": "a8fe330d119903c57ec259bdc83e10dcdaa0a9d4a93e3dd1e55fe69dd43bae96",
+    "post_migration_recovery_database": "parent-coach-desk-ops-post0022-recovery-staging",
+    "post_migration_recovery_restored_through": "0022_commerce_test_mode_ledger.sql",
+    "post_migration_recovery_foreign_key_check": "ok"
+  },
+  "next_staging_candidate": {
+    "configuration": "wrangler.jsonc",
+    "directory_db": "parent-coach-desk-directory-staging",
+    "operations_db": "parent-coach-desk-ops-staging",
+    "photo_bucket": "parent-coach-desk-staging-photos",
+    "forge_database_binding_present": false,
+    "dry_run_passed": true,
+    "deployment_version_id": "4ff8371d-d460-4652-9eb3-c37d4d2e0b9c",
+    "deployment_status": "deployed and verified by a fresh read-only public monitor and anonymous Access probe"
+  },
+  "synthetic_directory_fixture": {
+    "organizations": 3,
+    "approved_programs": 3,
+    "zip_centroids": 3,
+    "uses_production_directory_data": false
+  },
+  "r2_recovery": {
+    "source_bucket": "parent-coach-desk-staging-photos",
+    "recovery_bucket": "parent-coach-desk-r2-recovery-staging",
+    "object_key": "recovery-probes/2026-07-16.txt",
+    "source_sha256": "0dbe86b818d4b7781e841406723e5b8943b4f147ef3873e8398c8d27b7acd625",
+    "restored_sha256": "0dbe86b818d4b7781e841406723e5b8943b4f147ef3873e8398c8d27b7acd625",
+    "hash_match": true,
+    "production_media_copied": false
+  },
+  "public_monitor": {
+    "report": "live command output at 2026-07-17T00:49:26.465Z",
+    "passed": true,
+    "checks": ["home", "directory", "privacy", "terms", "health", "readiness"]
+  },
+  "anonymous_access": {
+    "report": "live command output at 2026-07-17T00:49:27.372Z",
+    "route_count": 37,
+    "passed": true,
+    "method": "GET only"
+  },
+  "rendered_customer_journey": {
+    "fixture_directory_portrait_widths": [320, 360, 390, 430],
+    "fixture_directory_page_overflow": false,
+    "fixture_detail_widths": [320, 568],
+    "fixture_detail_page_overflow": false,
+    "filters_exercised": ["sport", "league", "full program", "zip radius"],
+    "detail_route_rendered": true,
+    "limitations": [
+      "200 percent browser zoom was not controllable in the in-app test surface",
+      "screen-reader output and real-touch hardware were not independently sampled",
+      "the test surface focused but did not dispatch native keyboard activation for the mobile menu",
+      "constrained-network and completed form/subscription/payment journeys remain unproved"
+    ]
+  },
+  "external_changes": [
+    "applied operations migrations 0015 through 0022 to the dedicated staging operations D1",
+    "created isolated staging directory D1 and loaded a synthetic fixture",
+    "created isolated staging photo and recovery R2 buckets and restored a synthetic probe",
+    "deployed the initial isolated staging Worker version 4e71310b-e3a5-4ca7-8200-346e4cf4946c",
+    "deployed fully resource-isolated staging Worker version b2264767-b54b-4a20-938a-aba59f715ff3 with the two-email application administrator allowlist",
+    "deployed fully resource-isolated staging Worker version 4ff8371d-d460-4652-9eb3-c37d4d2e0b9c after removing the legacy hardcoded administrator fallback"
+  ],
+  "prohibited_conclusions": [
+    "This does not prove production migration, backup, restore, R2 recovery, or customer readiness.",
+    "This does not enable customer identity, checkout, payment, email delivery, or marketing sends.",
+    "This does not prove that Cloudflare Access itself allows only these two identities, because the live Access policy could not be exported or tested with allowed and denied identities.",
+    "This does not prove authenticated Access behavior, legal approval, insurance, or provider configuration."
+  ]
+}

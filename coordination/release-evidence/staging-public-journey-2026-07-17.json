@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "target_origin": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+  "observed_at": "2026-07-17T01:40:00Z",
+  "method": "Read-only browser navigation; no authentication, submission, consent decision, or mutation.",
+  "checks": {
+    "directory_fixture_listing": {
+      "path": "/camps/",
+      "result": "pass",
+      "evidence": "The directory rendered its search controls and the PCD Fixture Soccer Summer Camp listing."
+    },
+    "fixture_detail_route": {
+      "path": "/camps/fixture-soccer-summer-camp/",
+      "result": "pass",
+      "evidence": "The fixture detail route rendered one matching page heading."
+    },
+    "fixture_detail_320px_reflow": {
+      "path": "/camps/fixture-soccer-summer-camp/",
+      "result": "pass",
+      "viewport": { "width": 320, "height": 700 },
+      "evidence": "documentElement scrollWidth and clientWidth were both 305; body scrollWidth and clientWidth were both 305."
+    },
+    "keyboard_activation": {
+      "result": "incomplete",
+      "evidence": "The fixture listing link received focus, but Enter did not navigate while the analytics-consent dialog remained pending. No consent choice was made during this read-only check."
+    }
+  },
+  "conclusion": "This supplements, but does not replace, full keyboard, screen-reader, touch, constrained-network, form, subscription, and payment journey evidence."
+}

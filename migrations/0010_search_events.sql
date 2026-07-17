@@ -1,9 +1,9 @@
 -- Migration 0010: search event logging
 --
--- Captures every search query fired on /search, with result count and
--- optional filter context (collection, sport, age). No PII: no user ID,
--- no email, no session token. Used to understand what parents and coaches
--- are looking for and to prioritise content production.
+-- Legacy-compatible storage for sanitized, short-retention search signals.
+-- New writes intentionally leave referrer and user_agent null. A reviewed
+-- follow-up migration must define schema versioning and enforce retention
+-- before collection is enabled in production.
 
 CREATE TABLE IF NOT EXISTS search_events (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

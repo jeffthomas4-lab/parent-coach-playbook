@@ -28,6 +28,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const args = process.argv.slice(2);
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -546,14 +547,19 @@ function csvCell(v) {
 const RETRY_STATUSES = new Set([429, 502, 503, 504]);
 const RETRY_BACKOFFS_MS = [30000, 60000, 120000];
 
-async function postWithRetry(url, body) {
+async function postWithRetry(url, body, bearerToken = '') {
+  const idempotencyKey = `harvest_${createHash('sha256').update(JSON.stringify(body)).digest('hex')}`;
   for (let attempt = 0; attempt <= RETRY_BACKOFFS_MS.length; attempt += 1) {
     let res;
     try {
       res = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+          'Idempotency-Key': idempotencyKey,
+          ...(bearerToken ? { Authorization: `Bearer ${bearerToken}` } : {}),
+        },
+        body: JSON.stringify({ ...body, idempotency_key: idempotencyKey }),
       });
     } catch (e) {
       // Network error (connection reset, DNS, etc.) — treat like a retryable
@@ -597,10 +603,13 @@ async function submitRows(rows, misses) {
       confirm_duplicate: 'true',
       lunch_included: r.lunch_included === 'TRUE' ? 'true' : 'false',
       aftercare_available: r.aftercare_available === 'TRUE' ? 'true' : 'false',
-      ...(HAS_SUBMIT ? { import_token: BULK_TOKEN } : {}),
     };
     try {
-      const res = await postWithRetry(`${BASE_URL}/api/camps/submit`, payload);
+      const res = await postWithRetry(
+        `${BASE_URL}/api/camps/submit`,
+        payload,
+        HAS_SUBMIT ? BULK_TOKEN : '',
+      );
       const body = await res.json().catch(() => ({}));
       if (res.ok && body.ok) {
         ok += 1;

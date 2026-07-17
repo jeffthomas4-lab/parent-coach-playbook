@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "state": "pending",
+  "target_origin": "https://parentcoachdesk.com",
+  "contract_route_count": 37,
+  "observed_at": null,
+  "allowed_identity_class": null,
+  "denied_identity_class": null,
+  "allowed_results": [],
+  "denied_results": [],
+  "evidence_hash": null,
+  "tokens_retained": false,
+  "cookies_retained": false,
+  "probe_rules": [
+    "GET or HEAD only; never invoke a mutation method or submit a form.",
+    "Record route, edge decision, status class, cache policy and origin reachability; do not retain identity values, cookies or tokens.",
+    "Allowed identity proves edge passage and application authorization separately; denied identity must not reach origin."
+  ],
+  "external_changes": []
+}

@@ -186,8 +186,9 @@ export async function fireDeployHook(env: PublishEnv | undefined): Promise<'fire
       return 'failed';
     }
     return 'fired';
-  } catch (e) {
-    console.error('[publish] deploy hook threw', e);
+  } catch {
+    // Fetch exceptions may include the secret deploy-hook URL.
+    console.error(JSON.stringify({ event: 'deploy_hook_failed', code: 'fetch_failed' }));
     return 'failed';
   }
 }
@@ -223,13 +224,12 @@ export async function publishDraft(
       headers,
       signal: AbortSignal.timeout(GH_TIMEOUT_MS),
     });
-  } catch (e) {
-    console.error('[publish] github get threw', e);
+  } catch {
+    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'read', code: 'fetch_failed' }));
     return { ok: false, code: 502, error: 'could not reach GitHub' };
   }
   if (!getRes.ok) {
-    // Full GitHub error goes to the log; the caller gets a status only.
-    console.error('[publish] github get failed', getRes.status, await getRes.text());
+    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'read', code: 'provider_rejected', status: getRes.status }));
     return getRes.status === 404
       ? { ok: false, code: 404, error: 'draft not found' }
       : { ok: false, code: 502, error: 'github read failed' };
@@ -258,12 +258,12 @@ export async function publishDraft(
       }),
       signal: AbortSignal.timeout(GH_TIMEOUT_MS),
     });
-  } catch (e) {
-    console.error('[publish] github put threw', e);
+  } catch {
+    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'write', code: 'fetch_failed' }));
     return { ok: false, code: 502, error: 'could not reach GitHub' };
   }
   if (!putRes.ok) {
-    console.error('[publish] github put failed', putRes.status, await putRes.text());
+    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'write', code: 'provider_rejected', status: putRes.status }));
     return { ok: false, code: 502, error: 'github commit failed' };
   }
   const putBody = (await putRes.json().catch(() => ({}))) as { commit?: { sha?: string } };

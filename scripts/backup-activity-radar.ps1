@@ -15,11 +15,9 @@
 # until it has been run by hand three times. This script stays manual-only until
 # that gate clears.
 #
-# PROVING-RUN COUNT AS OF 2026-07-15: ZERO. The 2026-07-13 session wrote this
-# script but could not run it (the Cowork sandbox holds no Cloudflare
-# credentials), so the "Run 1: tonight" note in the original header was a plan,
-# not a fact. agent_registry.pcd-backup.last_run_at is still null. The clock has
-# not started. Three clean runs are still owed before any schedule.
+# PROVING-RUN COUNT AS OF 2026-07-16: TWO. The authoritative count is the
+# append-only ledger below; one clean run on a separate day remains before any
+# schedule may be proposed.
 #
 # The count is no longer tracked by memory. Every successful run appends one row
 # to scripts\BACKUP-PROVING-LOG.md (git-tracked). Read that file for the real
@@ -31,8 +29,9 @@
 # Usage:
 #   powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup-activity-radar.ps1
 #
-# Retention: keeps the 8 most recent dated backups in backups\d1\ and deletes the
-# rest. Local only, same as the old script. backups\ is .gitignore'd (the export
+# Retention: keeps the 8 most recent timestamped backups in backups\d1\ and
+# deletes the rest plus their checksum sidecars. Local only. backups\ is
+# .gitignore'd (the export
 # runs 200MB+, past GitHub's 100MB limit).
 #
 # Supersedes scripts\backup-d1-activity-radar.ps1 (retired, no retention rule, no
@@ -47,7 +46,6 @@ $env:CI = "true"
 $repo = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $repo
 
-$stamp = Get-Date -Format "yyyy-MM-dd"
 $dir = Join-Path $repo "backups\d1"
 $logDir = Join-Path $dir "logs"
 New-Item -ItemType Directory -Force -Path $dir | Out-Null
@@ -57,7 +55,8 @@ $timeStamp = Get-Date -Format "yyyy-MM-dd-HHmmss"
 Start-Transcript -Path (Join-Path $logDir "backup-$timeStamp.log") | Out-Null
 
 try {
-  $out = Join-Path $dir "activity-radar-$stamp.sql"
+  $out = Join-Path $dir "activity-radar-$timeStamp.sql"
+  $partial = "$out.partial"
   Write-Host "Exporting activity-radar to $out ..."
 
   # wrangler d1 export --remote intermittently returns "Not currently exporting
@@ -68,9 +67,9 @@ try {
   $ok = $false
   while (-not $ok -and $attempt -lt 4) {
     $attempt++
-    if (Test-Path $out) { Remove-Item $out -Force }
-    npx wrangler d1 export activity-radar --remote --output $out
-    if ($LASTEXITCODE -eq 0 -and (Test-Path $out) -and (Get-Item $out).Length -ge 1MB) {
+    if (Test-Path $partial) { Remove-Item $partial -Force }
+    npx wrangler d1 export activity-radar --remote --output $partial
+    if ($LASTEXITCODE -eq 0 -and (Test-Path $partial) -and (Get-Item $partial).Length -ge 1MB) {
       $ok = $true
     } else {
       Write-Host "  export attempt $attempt failed, retrying in 20s ..."
@@ -78,14 +77,22 @@ try {
     }
   }
   if (-not $ok) {
+    if (Test-Path $partial) { Remove-Item $partial -Force }
     throw "wrangler export failed for activity-radar after $attempt attempts. Prior backups left intact."
   }
 
-  $bytes = (Get-Item $out).Length
+  $bytes = (Get-Item $partial).Length
   Write-Host ("  export: {0} MB" -f [math]::Round($bytes / 1MB, 1))
   if ($bytes -lt 1MB) {
     throw "Export is under 1 MB. Almost certainly a failure. Keeping prior backups."
   }
+
+  # Publish only a complete, size-checked artifact. A retry never touches any
+  # prior .sql file, including one created earlier on the same day.
+  Move-Item -LiteralPath $partial -Destination $out
+  $digest = (Get-FileHash -LiteralPath $out -Algorithm SHA256).Hash.ToLowerInvariant()
+  Set-Content -LiteralPath "$out.sha256" -Value "$digest  $([IO.Path]::GetFileName($out))" -Encoding Ascii
+  Write-Host "  sha256: $digest"
 
   # Keep the 8 most recent dated backups, delete the rest.
   $keep = 8
@@ -94,7 +101,9 @@ try {
     $toDelete = $all | Select-Object -Skip $keep
     foreach ($f in $toDelete) {
       Write-Host "  pruning old backup: $($f.Name)"
-      Remove-Item $f.FullName -Force
+      Remove-Item -LiteralPath $f.FullName -Force
+      $sidecar = "$($f.FullName).sha256"
+      if (Test-Path -LiteralPath $sidecar) { Remove-Item -LiteralPath $sidecar -Force }
     }
   }
 

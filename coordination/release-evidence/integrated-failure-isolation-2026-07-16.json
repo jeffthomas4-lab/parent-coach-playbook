@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "exercised_at": "2026-07-16T13:45:00Z",
+  "exercise_type": "local_integrated_simulation",
+  "scenarios": [
+    {
+      "id": "d1_unavailable",
+      "state": "pass",
+      "invariant": "Process liveness stays available, readiness returns 503, operations become unknown rather than healthy, and private exception text is not exposed.",
+      "evidence": ["tests/integrated-failure-isolation.test.ts", "tests/api/health.test.ts", "tests/api/operations-status.test.ts"]
+    },
+    {
+      "id": "forge_unavailable",
+      "state": "pass",
+      "invariant": "Agent and scheduler health become unknown, and the scheduler refuses to call the mutating endpoint before a durable attempt can be opened.",
+      "evidence": ["tests/integrated-failure-isolation.test.ts", "tests/worker-cron.test.ts"]
+    },
+    {
+      "id": "scheduler_target_unhealthy",
+      "state": "pass",
+      "invariant": "An ok:false or non-success target response rejects the awaited scheduled invocation and cannot be recorded as successful.",
+      "evidence": ["tests/integrated-failure-isolation.test.ts", "tests/worker-cron.test.ts"]
+    },
+    {
+      "id": "notification_delivery_uncertain",
+      "state": "pass",
+      "invariant": "Provider exceptions or ambiguous results enter reconciliation-required state and are not retried or marked sent automatically.",
+      "evidence": ["tests/integrated-failure-isolation.test.ts", "tests/api/trust-cases-lib.test.ts"]
+    },
+    {
+      "id": "public_monitor_dependency_failure",
+      "state": "pass",
+      "invariant": "The independent monitor reports component failure using bounded GETs without mutating customer or production state.",
+      "evidence": ["tests/integrated-failure-isolation.test.ts", "tests/customer-journey-monitor.test.ts"]
+    }
+  ],
+  "human_alert_received": false,
+  "release_gate_closed": false,
+  "remaining_evidence": [
+    "Approved environment-level failure drill",
+    "Independent provider receipt and human acknowledgement",
+    "Post-deploy health/readiness and customer-monitor observation"
+  ],
+  "external_changes": []
+}

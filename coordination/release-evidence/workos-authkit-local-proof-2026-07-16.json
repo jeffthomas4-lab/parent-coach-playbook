@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-16",
+  "scope": "local_default_off_compile_and_artifact_proof",
+  "decision": "partial_compile_only",
+  "provider_selected": false,
+  "production_authority": false,
+  "packages": {
+    "@workos/authkit-astro": "0.2.0",
+    "@workos-inc/node": "10.7.0"
+  },
+  "verified": {
+    "astro_7_peer_compatibility": true,
+    "default_off_astro_check": true,
+    "synthetic_config_enabled_astro_check": true,
+    "default_off_production_build": true,
+    "default_off_deployment_manifest": true,
+    "default_off_injected_auth_routes_absent_from_artifact_search": true,
+    "production_wrapper_forces_proof_flag_off_even_when_parent_shell_sets_true": true,
+    "production_manifest_rejects_workos_variables_and_injected_proof_routes": true,
+    "runtime_proof_preflight_is_localhost_test_key_and_non_production_config_only": true,
+    "proof_page_returns_404_when_compile_flag_is_not_true": "source_contract_only",
+    "proof_routes_are_isolated_from_admin_routes": true,
+    "provider_organization_claims_are_not_used_for_authorization": "source_contract_only"
+  },
+  "not_verified": [
+    "external WorkOS environment or account",
+    "real credentials or network authentication",
+    "Worker runtime login and callback",
+    "subject mapping to a PCD membership",
+    "cookie behavior at a production-style proxy boundary",
+    "logout, revocation, recovery, deletion, or export",
+    "forged, expired, replayed, or changed-identity behavior",
+    "lifecycle event authenticity and deduplication",
+    "provider outage behavior",
+    "hosted-flow accessibility",
+    "runtime token-free observability"
+  ],
+  "external_changes": [],
+  "sources": [
+    "https://workos.com/changelog/authkit-for-astro",
+    "https://workos.com/docs/authkit/sessions",
+    "https://workos.com/docs/authkit/overview",
+    "https://workos.com/docs/reference/authkit/authentication"
+  ],
+  "next_gate": "explicit approval for a disposable external WorkOS environment, credentials, and runtime proof configuration"
+}

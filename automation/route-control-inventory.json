@@ -1,0 +1,1369 @@
+{
+  "schema_version": 1,
+  "generated_from": "src/pages",
+  "route_count": 136,
+  "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
+  "routes": [
+    {
+      "route": "/404",
+      "methods": [
+        "GET"
+      ],
+      "source": "404.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/about",
+      "methods": [
+        "GET"
+      ],
+      "source": "about.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/about/corrections",
+      "methods": [
+        "GET"
+      ],
+      "source": "about/corrections.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/about/sources",
+      "methods": [
+        "GET"
+      ],
+      "source": "about/sources.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/accessibility",
+      "methods": [
+        "GET"
+      ],
+      "source": "accessibility.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/adaptive/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "adaptive/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/adaptive",
+      "methods": [
+        "GET"
+      ],
+      "source": "adaptive/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/api/camps/:id/reject",
+      "methods": [
+        "POST"
+      ],
+      "source": "admin/api/camps/[id]/reject.ts",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/api/camps/:id/verify",
+      "methods": [
+        "POST"
+      ],
+      "source": "admin/api/camps/[id]/verify.ts",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/camps/:id",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/camps/[id].astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/camps",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/camps/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/camps/queue",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/camps/queue.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/camps/spot-check",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/camps/spot-check.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/claims",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/claims/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/editorial",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/editorial/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/image-needs",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/image-needs.md",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/link-health",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/link-health/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/operations",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/operations.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/preview/:collection/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/preview/[collection]/[slug].astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/retention",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/retention.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/reviews",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/reviews/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/search-signals",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/search-signals.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/source-quality",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/source-quality.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/suggestions",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/suggestions/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/trust/deliveries",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/trust/deliveries.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/trust/drafts",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/trust/drafts.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/trust",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/trust/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/ages/:group",
+      "methods": [
+        "GET"
+      ],
+      "source": "ages/[group].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/ages",
+      "methods": [
+        "GET"
+      ],
+      "source": "ages/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/camps/:id/approve",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/camps/[id]/approve.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/camps/:id/photo",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/camps/[id]/photo.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/camps/:id/reject",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/camps/[id]/reject.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/camps/:id/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/camps/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/camps/:id/verify",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/camps/[id]/verify.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/claims/:id/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/claims/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/approve",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/approve.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/publish",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/publish.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/reviews/:id/approve",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/reviews/[id]/approve.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/reviews/:id/reject",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/reviews/[id]/reject.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/suggestions/:id/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/suggestions/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/trust/:id/deliveries/:attemptId/reconcile",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/trust/[id]/deliveries/[attemptId]/reconcile.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/trust/:id/draft",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/trust/[id]/draft.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/trust/:id/drafts/:draftId/approve",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/trust/[id]/drafts/[draftId]/approve.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/trust/:id/suppression",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/trust/[id]/suppression.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/trust/:id/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/trust/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/agent-runs",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/agent-runs.ts",
+      "cache_class": "api",
+      "auth_boundary": "shared_secret",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/camps/:slug/claim",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/camps/[slug]/claim.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "OWNER_RATE_LIMITER"
+    },
+    {
+      "route": "/api/camps/:slug/reviews/submit",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/camps/[slug]/reviews/submit.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "COMMUNITY_RATE_LIMITER"
+    },
+    {
+      "route": "/api/camps/check",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/camps/check.ts",
+      "cache_class": "api",
+      "auth_boundary": "shared_secret",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/camps/nearest",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/camps/nearest.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/camps/search-priority",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/camps/search-priority.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/camps/submit",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/camps/submit.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "PUBLIC_SUBMISSION_RATE_LIMITER"
+    },
+    {
+      "route": "/api/camps/suggest",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/camps/suggest.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "PUBLIC_SUBMISSION_RATE_LIMITER"
+    },
+    {
+      "route": "/api/cron/camps-sweep",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/cron/camps-sweep.ts",
+      "cache_class": "api",
+      "auth_boundary": "shared_secret",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/health",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "source": "api/health.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/ready",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/ready.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/search-event",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/search-event.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "DEMAND_RATE_LIMITER"
+    },
+    {
+      "route": "/api/slack/actions",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/slack/actions.ts",
+      "cache_class": "api",
+      "auth_boundary": "provider_signature",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/trust/request",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/trust/request.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "TRUST_RATE_LIMITER"
+    },
+    {
+      "route": "/body/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "body/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/body",
+      "methods": [
+        "GET"
+      ],
+      "source": "body/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/books",
+      "methods": [
+        "GET"
+      ],
+      "source": "books/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/burnout-check",
+      "methods": [
+        "GET"
+      ],
+      "source": "burnout-check.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camp-photos/:key*",
+      "methods": [
+        "GET"
+      ],
+      "source": "camp-photos/[...key].ts",
+      "cache_class": "public_media_dynamic",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps/:state/:city/:sport",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/[state]/[city]/[sport]/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps/:state/:city",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/[state]/[city]/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps/submit",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/submit.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps/suggest",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/suggest.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/coaching-tips/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "coaching-tips/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/coaching-tips",
+      "methods": [
+        "GET"
+      ],
+      "source": "coaching-tips/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/contributors",
+      "methods": [
+        "GET"
+      ],
+      "source": "contributors.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/cost-calculator",
+      "methods": [
+        "GET"
+      ],
+      "source": "cost-calculator.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/cost-calculator/methodology",
+      "methods": [
+        "GET"
+      ],
+      "source": "cost-calculator/methodology.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/decisions/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "decisions/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/decisions",
+      "methods": [
+        "GET"
+      ],
+      "source": "decisions/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/disclosure",
+      "methods": [
+        "GET"
+      ],
+      "source": "disclosure.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/drive-home/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "drive-home/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/drive-home",
+      "methods": [
+        "GET"
+      ],
+      "source": "drive-home/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/drive-there/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "drive-there/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/drive-there",
+      "methods": [
+        "GET"
+      ],
+      "source": "drive-there/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/game/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "game/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/game",
+      "methods": [
+        "GET"
+      ],
+      "source": "game/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/go/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "go/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/governing-bodies",
+      "methods": [
+        "GET"
+      ],
+      "source": "governing-bodies.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/guides/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "guides/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/index",
+      "methods": [
+        "GET"
+      ],
+      "source": "index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/mental-skills",
+      "methods": [
+        "GET"
+      ],
+      "source": "mental-skills.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/news/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "news/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/news",
+      "methods": [
+        "GET"
+      ],
+      "source": "news/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/newsletter",
+      "methods": [
+        "GET"
+      ],
+      "source": "newsletter.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/owner-proof/dashboard",
+      "methods": [
+        "GET"
+      ],
+      "source": "owner-proof/dashboard.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/owner",
+      "methods": [
+        "GET"
+      ],
+      "source": "owner/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/parent-coach",
+      "methods": [
+        "GET"
+      ],
+      "source": "parent-coach.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/pathways/:sport",
+      "methods": [
+        "GET"
+      ],
+      "source": "pathways/[sport].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/pathways",
+      "methods": [
+        "GET"
+      ],
+      "source": "pathways/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/pillar/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "pillar/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/pre-game-routine",
+      "methods": [
+        "GET"
+      ],
+      "source": "pre-game-routine.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/reads/:topic",
+      "methods": [
+        "GET"
+      ],
+      "source": "reads/[topic].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/reads",
+      "methods": [
+        "GET"
+      ],
+      "source": "reads/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/recruiting/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "recruiting/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/recruiting",
+      "methods": [
+        "GET"
+      ],
+      "source": "recruiting/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/resources",
+      "methods": [
+        "GET"
+      ],
+      "source": "resources/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/resources/national-organizations",
+      "methods": [
+        "GET"
+      ],
+      "source": "resources/national-organizations.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/resources/practice-plan-template",
+      "methods": [
+        "GET"
+      ],
+      "source": "resources/practice-plan-template.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/resources/what-to-say-when",
+      "methods": [
+        "GET"
+      ],
+      "source": "resources/what-to-say-when.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/rss-guides.xml",
+      "methods": [
+        "GET"
+      ],
+      "source": "rss-guides.xml.ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/rss-tips.xml",
+      "methods": [
+        "GET"
+      ],
+      "source": "rss-tips.xml.ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/rss.xml",
+      "methods": [
+        "GET"
+      ],
+      "source": "rss.xml.ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/rules/:sport",
+      "methods": [
+        "GET"
+      ],
+      "source": "rules/[sport].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/rules",
+      "methods": [
+        "GET"
+      ],
+      "source": "rules/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/scripts/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "scripts/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/scripts",
+      "methods": [
+        "GET"
+      ],
+      "source": "scripts/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/search",
+      "methods": [
+        "GET"
+      ],
+      "source": "search.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/season-calendar/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "season-calendar/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/season-calendar",
+      "methods": [
+        "GET"
+      ],
+      "source": "season-calendar/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/sitemap-camps.xml",
+      "methods": [
+        "GET"
+      ],
+      "source": "sitemap-camps.xml.ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/sitemap-content.xml",
+      "methods": [
+        "GET"
+      ],
+      "source": "sitemap-content.xml.ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/sitemap.xml",
+      "methods": [
+        "GET"
+      ],
+      "source": "sitemap.xml.ts",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/sports/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "sports/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/sports",
+      "methods": [
+        "GET"
+      ],
+      "source": "sports/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/start-here",
+      "methods": [
+        "GET"
+      ],
+      "source": "start-here.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/team-parent/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "team-parent/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/team-parent/:topic",
+      "methods": [
+        "GET"
+      ],
+      "source": "team-parent/[topic].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/team-parent",
+      "methods": [
+        "GET"
+      ],
+      "source": "team-parent/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/terms",
+      "methods": [
+        "GET"
+      ],
+      "source": "terms.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/tools",
+      "methods": [
+        "GET"
+      ],
+      "source": "tools/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/trust",
+      "methods": [
+        "GET"
+      ],
+      "source": "trust.astro",
+      "cache_class": "trust_customer_payment",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/welcome",
+      "methods": [
+        "GET"
+      ],
+      "source": "welcome/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/what-to-buy/:slug",
+      "methods": [
+        "GET"
+      ],
+      "source": "what-to-buy/[slug].astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/what-to-buy/:slug/sizing",
+      "methods": [
+        "GET"
+      ],
+      "source": "what-to-buy/[slug]/sizing.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/what-to-buy",
+      "methods": [
+        "GET"
+      ],
+      "source": "what-to-buy/index.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/why-we-exist",
+      "methods": [
+        "GET"
+      ],
+      "source": "why-we-exist.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/youth-sports-pendulum",
+      "methods": [
+        "GET"
+      ],
+      "source": "youth-sports-pendulum.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    }
+  ]
+}

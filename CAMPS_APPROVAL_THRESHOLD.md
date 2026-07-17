@@ -31,7 +31,7 @@ The discovery and scan pipeline was producing pending rows nobody worked, so the
 
 ## Standing instruction
 
-This threshold should move into the enrichment worker so newly scraped camps are created already approved (or auto-approved on a nightly pass) instead of piling up pending again. Clearing the backlog once does not stop it from refilling.
+Historical proposal, superseded 2026-07-16: enrichment confidence must not create already-approved records or auto-approve a nightly backlog. New scraped/imported camps enter pending moderation. Confidence, provenance, date validity and source reproduction may prioritize review, but publication requires the separate Access-protected approval transition. Queue capacity must be solved through bounded intake, staffing, prioritization and shutdown controls rather than removing the human publication gate.
 
 Status: done. `campApproval()` in `workers-activity-radar/enrichment-worker.ts` applies this threshold at scrape time.
 

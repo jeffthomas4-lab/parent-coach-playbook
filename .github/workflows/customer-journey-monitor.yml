@@ -1,0 +1,38 @@
+name: Public customer journey monitor
+
+# Independent, read-only production evidence. The schedule must remain commented
+# until Jeff explicitly approves activating external polling and notification.
+on:
+  workflow_dispatch: {}
+  # schedule:
+  #   - cron: "17,47 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pcd-public-customer-journey
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/setup-node@1e60f620b9541d5e5b7b47a29ee4079e9f40f8e1 # v4.0.3
+        with:
+          node-version: 22
+      - name: Run read-only public journey
+        env:
+          PCD_MONITOR_BASE_URL: https://parentcoachdesk.com
+          PCD_MONITOR_REPORT: customer-journey-report.json
+        run: node scripts/run-customer-journey-monitor.mjs
+      - name: Preserve monitor evidence
+        if: always()
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        with:
+          name: customer-journey-${{ github.run_id }}
+          path: customer-journey-report.json
+          if-no-files-found: error
+          retention-days: 30

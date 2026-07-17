@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { env as cfEnv } from 'cloudflare:workers';
+import { featureEnabled } from '../lib/feature-flags';
+
+export const prerender = false;
+const env = cfEnv as { TRUST_INTAKE_ENABLED?: string } | undefined;
+const intakeEnabled = featureEnabled(env?.TRUST_INTAKE_ENABLED);
+const requestedUrl = Astro.url.searchParams.get('url') ?? '';
+const campSlug = Astro.url.searchParams.get('camp') ?? '';
+const requestedCategory = Astro.url.searchParams.get('category') ?? '';
+---
+<BaseLayout title="Corrections, removals, and privacy requests" description="Ask Parent Coach Desk to correct or remove a listing, or submit a privacy, copyright, or accessibility request.">
+  <section class="border-b border-bone">
+    <div class="container-px py-12 max-w-4xl">
+      <p class="font-display italic text-rust mb-2 font-medium">Trust and support</p>
+      <h1 class="font-display text-ink text-4xl md:text-5xl leading-tight font-medium">Tell us what needs attention</h1>
+      <div class="article-body mt-5 max-w-3xl">
+        <p>Use this form to correct or remove a directory listing, make a privacy or copyright request, report an accessibility problem, or flag another concern. A person reviews every request before changing production data.</p>
+        <p><strong>Do not include information about a child, medical details, passwords, payment information, government identification, or other sensitive documents.</strong> This form is not monitored as an emergency service. If someone is in immediate danger, contact local emergency services.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-12 max-w-4xl">
+      {!intakeEnabled ? (
+        <div class="article-body max-w-2xl"><p>The structured request form is not currently available. Email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a> with the affected URL and a concise description of the request.</p></div>
+      ) : <form id="trust-form" class="grid gap-5 max-w-2xl" novalidate>
+        <div class="sr-only" aria-hidden="true">
+          <label>Website <input name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <label class="grid gap-1">
+          <span class="font-display italic text-ink font-medium">What kind of request?</span>
+          <select name="category" required class="px-3 py-2 bg-paper border border-bone focus:border-rust focus:outline-none">
+            <option value="">Choose one</option>
+            <option value="listing_correction" selected={requestedCategory === 'listing_correction'}>Correct a camp or organization listing</option>
+            <option value="listing_removal" selected={requestedCategory === 'listing_removal'}>Remove a camp or organization listing</option>
+            <option value="privacy">Privacy: access, correction, deletion, or opt-out</option>
+            <option value="copyright">Copyright or media concern</option>
+            <option value="accessibility">Accessibility problem</option>
+            <option value="safety_concern">Safety concern about information on this site</option>
+            <option value="other">Something else</option>
+          </select>
+        </label>
+        <label class="grid gap-1">
+          <span class="font-display italic text-ink font-medium">PCD page involved (optional)</span>
+          <input name="target_url" type="url" maxlength="2048" value={requestedUrl} placeholder="https://parentcoachdesk.com/camps/..." class="px-3 py-2 bg-paper border border-bone focus:border-rust focus:outline-none" />
+        </label>
+        <input name="camp_slug" type="hidden" value={campSlug} />
+        <label class="grid gap-1">
+          <span class="font-display italic text-ink font-medium">Your email</span>
+          <input name="requester_email" type="email" maxlength="320" required class="px-3 py-2 bg-paper border border-bone focus:border-rust focus:outline-none" />
+          <span class="text-ink-soft text-xs">Used to investigate and respond. It is not published or used for marketing. See our <a href="/disclosure/" class="text-rust hover:underline">privacy notice</a>.</span>
+        </label>
+        <label class="grid gap-1">
+          <span class="font-display italic text-ink font-medium">Your name (optional)</span>
+          <input name="requester_name" maxlength="120" autocomplete="name" class="px-3 py-2 bg-paper border border-bone focus:border-rust focus:outline-none" />
+        </label>
+        <label class="grid gap-1">
+          <span class="font-display italic text-ink font-medium">What is wrong or what are you requesting?</span>
+          <textarea name="description" minlength="20" maxlength="4000" rows="7" required class="px-3 py-2 bg-paper border border-bone focus:border-rust focus:outline-none"></textarea>
+        </label>
+        <label class="grid gap-1">
+          <span class="font-display italic text-ink font-medium">Preferred resolution (optional)</span>
+          <textarea name="desired_resolution" maxlength="1000" rows="3" class="px-3 py-2 bg-paper border border-bone focus:border-rust focus:outline-none"></textarea>
+        </label>
+        <div class="flex items-center gap-4">
+          <button type="submit" class="btn">Submit request</button>
+          <p id="trust-status" class="font-display italic text-ink-soft text-sm hidden" aria-live="polite"></p>
+        </div>
+        <p class="text-ink-soft text-sm">If this form does not work, email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+      </form>}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('trust-form') as HTMLFormElement | null;
+  const status = document.getElementById('trust-status');
+  let intakeKey = crypto.randomUUID();
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || !status) return;
+    status.classList.remove('hidden');
+    status.textContent = 'Submitting...';
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (button) button.disabled = true;
+    try {
+      const response = await fetch('/api/trust/request', {
+        method: 'POST', body: new FormData(form), headers: { 'Idempotency-Key': intakeKey },
+      });
+      const body = await response.json() as { ok?: boolean; id?: string; error?: string };
+      if (!response.ok || !body.ok) throw new Error(body.error || 'Request failed');
+      status.textContent = `Request received. Reference: ${body.id}`;
+      form.reset();
+      intakeKey = crypto.randomUUID();
+    } catch (error) {
+      status.textContent = error instanceof Error ? error.message : 'Could not submit. Please email support.';
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+</script>

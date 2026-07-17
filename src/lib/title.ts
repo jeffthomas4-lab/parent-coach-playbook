@@ -10,10 +10,20 @@
 
 const STAR_RE = /\*([^*]+)\*/g;
 
+function escapeHtml(t: string): string {
+  return t.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  })[character] ?? character);
+}
+
 // Returns HTML with *word* replaced by <em>word</em>. Use with set:html.
 export function renderTitle(t: string): string {
   if (!t) return '';
-  return t.replace(STAR_RE, '<em>$1</em>');
+  return escapeHtml(t).replace(STAR_RE, '<em>$1</em>');
 }
 
 // Returns plain text with the asterisks stripped. Use in head, og tags, JSON-LD.

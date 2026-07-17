@@ -2,7 +2,7 @@
 // Approves a pending camp. Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { approveCamp, getCampById, upsertDomainQuality } from '../../../../../lib/camps-db';
+import { approveCamp, CampApprovalBlockedError, getCampById, upsertDomainQuality } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -56,7 +56,18 @@ export const POST: APIRoute = async ({ params, request }) => {
   const wasAlreadyApproved =
     before?.status === 'approved' && before?.awaiting_review === 1;
 
-  const camp = await approveCamp(env.DB, id, auth.email, notes);
+  let camp;
+  try {
+    camp = await approveCamp(env.DB, id, auth.email, notes);
+  } catch (error) {
+    if (error instanceof CampApprovalBlockedError) {
+      return new Response(JSON.stringify({ ok: false, error: 'camp is not eligible for approval', code: error.code }), {
+        status: 409,
+        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
+      });
+    }
+    throw error;
+  }
   if (!camp) {
     return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
       status: 404,

@@ -1,12 +1,13 @@
 // POST /api/camps/check
 //
-// Pre-submission dedup probe. Used by the Claude in Chrome import flow and by
-// future client-side submit forms to ask "is this likely already in the DB?"
-// before doing the full submit. Cheap to call. Returns matches grouped by reason.
+// Authenticated bulk-import dedup probe. Returns internal match and domain
+// quality details, so it must never be exposed as a public client-side helper.
 
 import type { APIRoute } from 'astro';
 import { findFuzzyCampMatches, getDomainQuality, extractDomain } from '../../../lib/camps-db';
 import { env as cfEnv } from 'cloudflare:workers';
+import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHttpUrl } from '../../../lib/public-input';
+import { bearerCredential, secretsMatch } from '../../../lib/secrets';
 
 export const prerender = false;
 
@@ -22,7 +23,7 @@ interface CheckPayload {
 const ok = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
   });
 
 const fail = (message: string, status = 400) => ok({ ok: false, error: message }, status);
@@ -48,13 +49,25 @@ async function readPayload(req: Request): Promise<CheckPayload> {
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const env = cfEnv as { DB: D1Database } | undefined;
+  const env = cfEnv as { DB: D1Database; BULK_IMPORT_TOKEN?: string } | undefined;
   if (!env?.DB) return fail('database not available', 500);
+  if (!env.BULK_IMPORT_TOKEN) return fail('service not configured', 503);
+  if (!await secretsMatch(bearerCredential(request), env.BULK_IMPORT_TOKEN)) return fail('not found', 404);
+  const boundary = await enforcePublicRequestBoundary(request, 8_192);
+  if (boundary) return boundary;
 
   const data = await readPayload(request);
+  const oversized = firstOversizedField(data as Record<string, unknown>, {
+    name: 200, city: 120, state: 40, zip: 20, address: 300, website_url: 2048,
+  });
+  if (oversized) return fail(`${oversized} too long`);
   if (!data.name || !data.city || !data.state) {
     return fail('name, city, and state are required');
   }
+
+  let websiteUrl: string | null = null;
+  try { websiteUrl = normalizeExternalHttpUrl(data.website_url); }
+  catch (error) { return fail(error instanceof Error ? error.message : 'website_url is invalid'); }
 
   const matches = await findFuzzyCampMatches(env.DB, {
     name: data.name,
@@ -62,11 +75,11 @@ export const POST: APIRoute = async ({ request }) => {
     state: data.state.toUpperCase(),
     zip: data.zip ?? null,
     address: data.address ?? null,
-    website_url: data.website_url ?? null,
+    website_url: websiteUrl,
   });
 
   // Domain reputation, if we know this source.
-  const domain = extractDomain(data.website_url ?? null);
+  const domain = extractDomain(websiteUrl);
   const domainStats = domain ? await getDomainQuality(env.DB, domain) : null;
 
   return ok({

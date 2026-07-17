@@ -24,7 +24,7 @@
 // Worker secret and is never exposed to the browser — this module is only ever
 // imported by server-side route handlers.
 
-import { postToSlack, type SlackEnv } from './slack';
+import { postToSlack, type SlackEnv, type SlackPostResult } from './slack';
 
 export interface EmailEnv extends SlackEnv {
   /** "stage" (default) or "send". Governs mail to people outside the system. */
@@ -114,14 +114,18 @@ export async function sendEmail(
   }
 
   if (modeFor(env, message.emailClass) === 'stage') {
-    await stageToSlack(env, message, to);
-    return { outcome: 'staged' };
+    const staged = await stageToSlack(env, message, to);
+    return staged.ok
+      ? { outcome: 'staged' }
+      : { outcome: 'failed', error: staged.skipped ? 'staging not configured' : 'staging delivery failed' };
   }
 
   if (!env?.RESEND_API_KEY || !env?.EMAIL_FROM) {
     console.error('[email] mode is send but RESEND_API_KEY/EMAIL_FROM are not set — staging instead');
-    await stageToSlack(env, message, to);
-    return { outcome: 'staged', error: 'send mode not configured' };
+    const staged = await stageToSlack(env, message, to);
+    return staged.ok
+      ? { outcome: 'staged', error: 'send mode not configured' }
+      : { outcome: 'failed', error: 'send and staging are not configured' };
   }
 
   try {
@@ -142,48 +146,36 @@ export async function sendEmail(
       signal: AbortSignal.timeout(SEND_TIMEOUT_MS),
     });
     if (!res.ok) {
-      // The provider's error text can echo the recipient back. Log it, don't return it.
-      console.error('[email] provider rejected send', res.status, await res.text());
+      // Provider bodies can echo recipient or message content. Never persist them.
+      console.error(JSON.stringify({ event: 'email_send_failed', code: 'provider_rejected', status: res.status }));
       return { outcome: 'failed', error: 'provider rejected the message' };
     }
     const body = (await res.json().catch(() => ({}))) as { id?: string };
     return { outcome: 'sent', id: body.id };
-  } catch (e) {
-    console.error('[email] send threw', e);
+  } catch {
+    console.error(JSON.stringify({ event: 'email_send_failed', code: 'fetch_failed' }));
     return { outcome: 'failed', error: 'send failed' };
   }
 }
 
-/** Redact all but the first character and the domain: j***@example.com. */
-function maskEmail(address: string): string {
-  const [local, domain] = address.split('@');
-  if (!domain) return '***';
-  return `${local.slice(0, 1)}***@${domain}`;
-}
-
 /**
- * Stage mode: the whole message goes to Slack so Jeff can read exactly what
- * would have been sent, then send it himself or flip the switch. The recipient
- * is masked — the staging channel is not a place to pile up parent emails.
+ * Stage mode emits only a pointer-free notification. Recipient, subject,
+ * reason, and body may contain personal data and are withheld.
  */
 async function stageToSlack(
   env: EmailEnv | undefined,
   message: EmailMessage,
-  to: string,
-): Promise<void> {
+  _to: string,
+): Promise<SlackPostResult> {
   const text = [
     `:envelope_with_arrow: *Staged email — not sent* (${message.emailClass})`,
-    `${message.reason}`,
-    `To: ${maskEmail(to)}`,
-    `Subject: ${message.subject}`,
-    '```',
-    message.text.length > 1500 ? `${message.text.slice(0, 1500)}...` : message.text,
-    '```',
+    'A protected email draft requires human review.',
+    '_Body withheld from Slack. Review the authoritative protected record._',
     message.emailClass === 'internal'
       ? '_Set EMAIL_ADMIN_MODE=send to let these go out on their own._'
       : '_Set EMAIL_MODE=send to let these go out on their own._',
   ].join('\n');
-  await postToSlack(env, { text });
+  return await postToSlack(env, { text });
 }
 
 // ---------- The two paths that use the primitive ----------
@@ -214,14 +206,14 @@ export async function sendSubmissionConfirmation(
           ``,
           `It is live now: ${site}/camps/${details.slug}/`,
           ``,
-          `We review every listing after it posts. If anything looks wrong, reply to this email and we will fix it.`,
+          `We review every listing after it posts. If anything looks wrong, reply to this email so we can investigate it.`,
           ``,
           `Parent Coach Desk`,
         ].join('\n')
       : [
           `Thanks for submitting ${details.campName} in ${details.city}, ${details.state}.`,
           ``,
-          `It is in the review queue. We check the dates, the ages, and the registration link before anything goes live, which usually takes a few days.`,
+          `It is in the review queue. We check the dates, ages, and registration link before anything goes live. Review timing depends on the evidence and current queue.`,
           ``,
           `You will hear from us when it posts. If you need to change something before then, reply to this email.`,
           ``,

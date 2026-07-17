@@ -1,24 +1,51 @@
 name: CI
 
-# Pillar 9 (Testing and CI) of the Website Build Standard. Runs on every push
-# and PR: install with a locked lockfile, audit gate, build, unit tests.
-# A red run here is the signal to stop before wrangler ever runs.
+# Every push runs the fast unit/coverage floor. Pull requests and merges to
+# main additionally run the integration and release-contract job below.
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
   pull_request:
     branches: [main]
 
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+permissions:
+  contents: read
 
-      - uses: actions/setup-node@v4
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-and-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
+
+      - name: Install (locked)
+        run: npm ci
+
+      - name: Fast unit tests and four-axis 60% coverage floor
+        run: npm run test:unit:coverage
+
+  build-and-test:
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
           cache: npm
 
       - name: Install (locked)
@@ -27,11 +54,59 @@ jobs:
       - name: npm audit gate (fail on high or critical)
         run: npm audit --audit-level=high
 
-      - name: Build
-        run: npm run build
+      - name: Verify third-party actions are commit-pinned
+        run: npm run check:workflow-pins
 
-      - name: Unit tests
-        run: npm test
+      - name: Scan current files and complete Git history for secrets
+        run: npm run check:secrets
+
+      - name: Verify every protected route's authorization contract
+        run: npm run check:protected-routes
+
+      - name: Verify public policy and data-collection contracts
+        run: npm run check:public-policy
+
+      - name: Verify content coverage registry and committed evidence artifact
+        run: npm run check:coverage
+
+      - name: Verify directory remediation proposal stays complete and non-executable
+        run: npm run check:directory-remediation
+
+      - name: Verify every public intake boundary
+        run: npm run check:public-intake
+
+      - name: Verify release evidence packet structure
+        run: npm run check:release-evidence
+
+      - name: Verify exact Worker rollback target receipt
+        run: npm run check:rollback-target
+
+      - name: Verify storage-aware recovery tabletop
+        run: npm run check:recovery-tabletop
+
+      - name: Verify integrated failure-isolation evidence
+        run: npm run check:failure-isolation
+
+      - name: Verify Access export and authenticated-probe evidence structure
+        run: npm run check:access-evidence
+
+      - name: Preserve bounded trust migration rehearsal evidence
+        run: npm run check:trust-migration-rehearsal
+
+      - name: Fail closed on incompatible production migration target
+        run: npm run check:production-schema-compatibility
+
+      - name: Verify staging PCD operational database rehearsal evidence
+        run: npm run check:staging-pcd-ops-rehearsal
+
+      - name: Build and verify exact production deployment manifest
+        run: npm run check:production-manifest
+
+      - name: Verify representative customer artifacts and discovery boundaries
+        run: npm run check:customer-artifact
+
+      - name: Integration paths
+        run: npm run test:integration
 
       - name: astro check
         run: npm run check

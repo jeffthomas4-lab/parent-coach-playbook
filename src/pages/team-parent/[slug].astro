@@ -84,7 +84,7 @@ if (props.kind === 'article') {
   sportLabel = SPORTS.find((s) => s.slug === article!.data.sport)?.label;
   ageLabel = AGE_BANDS.find((a) => a.slug === article!.data.age)?.label;
   isShort = article.data.format === 'note';
-  titleHtml = article.data.title.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  titleHtml = renderTitle(article.data.title);
 
   related = (
     await getCollection('articles', ({ data: d, id: s }) =>

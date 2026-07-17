@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "environment": "production",
+  "observed_at": "2026-07-17T01:40:14.511Z",
+  "method": "read-only public customer-journey monitor plus Wrangler version inspection",
+  "deployed_worker": {
+    "version_id": "92516f62-b891-4903-94e1-204a972ee2ae",
+    "created_at": "2026-07-16T04:03:56.836828Z",
+    "source": "secret change",
+    "application_admin_allowlist": [
+      "parentcoachplaybook@gmail.com",
+      "jeffthomas4@gmail.com"
+    ],
+    "dedicated_pcd_operations_binding_present": false,
+    "worker_first_asset_routing": false
+  },
+  "customer_journey_monitor": {
+    "target_origin": "https://parentcoachdesk.com",
+    "method": "GET only; redirects rejected; no credentials; no mutation",
+    "results": {
+      "home": 200,
+      "directory": 200,
+      "privacy": 200,
+      "terms": 200,
+      "health": 404,
+      "readiness": 404
+    }
+  },
+  "conclusion": "Production is serving an older Worker runtime, not the locally validated release candidate. Do not treat the local two-email application allowlist, health/readiness routes, or dedicated PCD operations database binding as deployed production state."
+}

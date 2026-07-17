@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T21:24:28.285Z",
+  "generatedAt": "2026-07-17T01:35:46.342Z",
   "count": 680,
   "links": [
     {
@@ -645,12 +645,6 @@
       ]
     },
     {
-      "url": "https://nominatim.openstreetmap.org/search?q=${encodeURIComponent",
-      "sources": [
-        "src/pages/camps/index.astro"
-      ]
-    },
-    {
       "url": "https://on3.com/nil/news/",
       "sources": [
         "src/content/recruiting/nil-basics-for-hs.md"
@@ -709,6 +703,12 @@
       "url": "https://orthoinfo.aaos.org/en/diseases--conditions/osgood-schlatter-disease-knee-pain/",
       "sources": [
         "src/content/body/growth-plates-basics.md"
+      ]
+    },
+    {
+      "url": "https://osmfoundation.org/wiki/Privacy_Policy",
+      "sources": [
+        "src/pages/disclosure.astro"
       ]
     },
     {

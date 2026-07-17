@@ -1,0 +1,50 @@
+---
+import type { D1Database } from '@cloudflare/workers-types';
+import { requireCustomerFoundation } from '../../lib/customer-foundation';
+import { listAuthorizedOrganizations } from '../../lib/customer-store';
+
+export const prerender = false;
+
+const gate = requireCustomerFoundation({
+  enabled: import.meta.env.PCD_CUSTOMER_FOUNDATION_ENABLED,
+  localPrincipal: (Astro.locals as { customer?: unknown }).customer,
+});
+if (!gate.allowed) {
+  return new Response(gate.status === 404 ? 'Not found' : 'Authentication required', {
+    status: gate.status,
+    headers: { 'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex, nofollow' },
+  });
+}
+
+const env = (Astro.locals as { runtime?: { env?: { PCD_OPS_DB?: D1Database } } }).runtime?.env;
+if (!env?.PCD_OPS_DB) {
+  return new Response('Service unavailable', {
+    status: 503,
+    headers: { 'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex, nofollow' },
+  });
+}
+const organizations = await listAuthorizedOrganizations(env.PCD_OPS_DB, gate.principal.customerUserId);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Owner dashboard | Parent Coach Desk</title>
+  </head>
+  <body>
+    <main>
+      <h1>Owner dashboard</h1>
+      <p>Manage verified organization relationships and proposed listing updates.</p>
+      {organizations.length === 0 ? (
+        <p>No active organizations are available for this account.</p>
+      ) : (
+        <ul>
+          {organizations.map((organization) => <li>{organization.displayName} — {organization.role}</li>)}
+        </ul>
+      )}
+    </main>
+  </body>
+</html>

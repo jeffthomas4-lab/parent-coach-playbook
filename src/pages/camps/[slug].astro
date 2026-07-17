@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherCampsAtAddress, slugifyCity, type Camp, type CampReview } from '../../lib/camps-db';
 import { SPORTS, BUYING_GUIDES, CAMP_SPORTS, SITE } from '../../data/site';
+import { featureEnabled } from '../../lib/feature-flags';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
@@ -13,7 +14,13 @@ Astro.response.headers.set(
   'public, s-maxage=3600, stale-while-revalidate=86400',
 );
 
-const env = cfEnv as { DB: D1Database } | undefined;
+const env = cfEnv as {
+  DB: D1Database;
+  CAMP_CLAIMS_ENABLED?: string;
+  CAMP_REVIEWS_ENABLED?: string;
+} | undefined;
+const claimsEnabled = featureEnabled(env?.CAMP_CLAIMS_ENABLED);
+const reviewsEnabled = featureEnabled(env?.CAMP_REVIEWS_ENABLED);
 const slug = Astro.params.slug;
 
 // State-code dispatch. Astro's routing prefers /camps/[slug].astro over
@@ -124,7 +131,7 @@ let avgRating: number | null = null;
 let otherAtAddress: Camp[] = [];
 if (camp) {
   try {
-    if (env?.DB) reviews = await listApprovedReviewsForCamp(env.DB, camp.id);
+    if (reviewsEnabled && env?.DB) reviews = await listApprovedReviewsForCamp(env.DB, camp.id);
   } catch (e) {
     console.error('listApprovedReviewsForCamp failed', e);
   }
@@ -167,6 +174,13 @@ const fmtRange = (start: string | null | undefined, end: string | null | undefin
   if (b) return `Through ${b}`;
   return 'Dates to be announced';
 };
+const formatReviewedAt = (value: string | null | undefined): string | null => {
+  if (!value) return null;
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return null;
+  return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(date);
+};
+const reviewedLabel = formatReviewedAt(camp?.reviewed_at);
 
 // Sport label: prefer the SPORTS array's title-cased label; fall back to capitalizing.
 const sportLabel = (slug: string): string => {
@@ -273,7 +287,7 @@ const eventSchema = camp ? {
   ...(camp.end_date ? { endDate: camp.end_date } : {}),
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   eventStatus: 'https://schema.org/EventScheduled',
-  description: camp.description ? camp.description.slice(0, 500) : `${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}.`,
+  description: camp.description ? camp.description.slice(0, 500) : `${sportPretty} camp${camp.age_known === 1 ? ` for ages ${camp.age_min}-${camp.age_max}` : ''} in ${camp.city}, ${camp.state}.`,
   location: {
     '@type': 'Place',
     name: camp.name,
@@ -316,7 +330,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
 {stateCities && stateCities.length > 0 ? (
   <BaseLayout
     title={`Summer camps in ${stateNameForSlug}`}
-    description={`${stateTotalCamps} verified camps across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
+    description={`${stateTotalCamps} reviewed camp listings across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
     canonical={stateCanonical}
   >
     {stateBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(stateBreadcrumbSchema)} />}
@@ -329,7 +343,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           Summer camps in {stateNameForSlug}
         </h1>
         <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
-          {stateTotalCamps} verified camp{stateTotalCamps === 1 ? '' : 's'} across {stateCities.length}{' '}{stateCities.length === 1 ? 'city' : 'cities'}.
+          {stateTotalCamps} reviewed camp listing{stateTotalCamps === 1 ? '' : 's'} across {stateCities.length}{' '}{stateCities.length === 1 ? 'city' : 'cities'}.
         </p>
       </div>
     </section>
@@ -358,7 +372,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
 ) : camp && (
 <BaseLayout
   title={camp.name}
-  description={`${sportPretty} camp for ages ${camp.age_min}-${camp.age_max} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
+  description={`${sportPretty} camp${camp.age_known === 1 ? ` for ages ${camp.age_min}-${camp.age_max}` : ''} in ${camp.city}, ${camp.state}. ${fmtRange(camp.start_date, camp.end_date)}.`}
   canonical={campCanonical}
   ogImage={campOgImage}
 >
@@ -371,7 +385,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         <a href="/camps/" class="hover:underline">Camps</a> · {sportPretty}
       </p>
       <div class="flex items-start gap-4 max-w-3xl">
-        {camp.is_claimed === 1 && camp.logo_key && (
+{claimsEnabled && camp.is_claimed === 1 && camp.logo_key && (
           <img
             src={`/camp-photos/${camp.logo_key}`}
             alt={`${camp.name} logo`}
@@ -385,20 +399,25 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] font-medium">
           {camp.name}
           {camp.verified === 1 && (
-            <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5 font-medium" title="Verified by the Parent Coach Desk editorial">
+            <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5 font-medium" title="Listed details compared with the cited source; not a safety or quality endorsement">
               Verified ✓
             </span>
           )}
         </h1>
       </div>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
-        {sportPretty} · ages {camp.age_min}–{camp.age_max} · {fmtRange(camp.start_date, camp.end_date)}
-        {avgRating !== null && (
+        {sportPretty} · {camp.age_known === 1 ? `ages ${camp.age_min}–${camp.age_max}` : 'ages not provided'} · {fmtRange(camp.start_date, camp.end_date)}
+          {reviewsEnabled && avgRating !== null && (
           <span class="inline-block ml-2 font-display italic text-rust text-base font-medium">
             · {avgRating.toFixed(1)}/5 ({reviews.length} {reviews.length === 1 ? 'review' : 'reviews'})
           </span>
         )}
       </p>
+      {camp.verified === 1 && (
+        <p class="font-body text-ink-soft text-sm mt-3 max-w-2xl leading-relaxed">
+          Verified means PCD compared the listed details with the cited source. It is not an inspection or endorsement of safety, quality, staff, insurance, or suitability.
+        </p>
+      )}
 
       {camp.hero_photo_key && (
         <div class="mt-8 max-w-3xl border border-bone bg-paper-warm" style="aspect-ratio: 16/9; overflow: hidden;">
@@ -430,13 +449,13 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         </div>
         {camp.price_text && (
           <div class="border border-bone p-3 bg-paper-warm">
-            <p class="font-display italic text-rust text-xs font-medium">Price</p>
+            <p class="font-display italic text-rust text-xs font-medium">Listed price — confirm with provider</p>
             <p class="font-display text-ink mt-0.5 font-medium">{camp.price_text}</p>
           </div>
         )}
       </div>
 
-      {camp.is_claimed === 1 && registrationHref && camp.spots_status !== 'full' && (
+{claimsEnabled && camp.is_claimed === 1 && registrationHref && camp.spots_status !== 'full' && (
         <div class="mt-6 max-w-3xl">
           <a
             href={registrationHref}
@@ -465,7 +484,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           {' '}{camp.aftercare_available ? 'Aftercare available.' : 'No aftercare.'}
         </p>
 
-        {camp.is_claimed === 1 && galleryKeys.length > 0 && (
+{claimsEnabled && camp.is_claimed === 1 && galleryKeys.length > 0 && (
           <section class="mt-10 pt-8 border-t border-bone">
             <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4 font-medium">
               Photos
@@ -510,7 +529,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           </section>
         )}
 
-        <!-- Reviews -->
+        {reviewsEnabled && (
         <section class="mt-12 pt-8 border-t border-bone">
           <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mt-0 mb-4 font-medium">
             What parents say
@@ -582,6 +601,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
             </form>
           </details>
         </section>
+        )}
       </div>
 
       <aside class="lg:col-span-4 lg:pl-8 lg:border-l lg:border-bone">
@@ -643,7 +663,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
                     {c.name}
                   </a>
                   <p class="font-display italic text-ink-soft text-xs mt-0.5 font-medium">
-                    {c.sport} · ages {c.age_min}–{c.age_max}
+                    {c.sport} · {c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided'}
                   </p>
                 </li>
               ))}
@@ -651,7 +671,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           </div>
         )}
 
-        {camp.is_claimed === 1 ? (
+        {claimsEnabled && (camp.is_claimed === 1 ? (
           <p class="font-display italic text-rust text-xs mt-8 font-medium">
             ✓ Claimed by the camp. Information self-managed.
           </p>
@@ -693,14 +713,14 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
               <button type="submit" class="btn">Submit claim request</button>
               <p data-claim-status class="font-display italic text-ink-soft text-xs hidden font-medium" aria-live="polite"></p>
               <p class="font-display italic text-ink-soft text-xs font-medium">
-                We review every claim. Verification takes ~2 business days.
+                Every claim stays pending until identity and authority evidence is reviewed. Timing varies with the evidence and dispute queue.
               </p>
             </form>
           </details>
-        )}
+        ))}
 
         <p class="font-display italic text-ink-soft text-xs mt-8 font-medium">
-          Listing reviewed by the Parent Coach Desk. Something off? Email <a href="mailto:support@parentcoachdesk.com" class="text-rust hover:underline">support@parentcoachdesk.com</a>.
+          Listing reviewed by the Parent Coach Desk{reviewedLabel ? ` on ${reviewedLabel}` : ''}. Dates, prices, ages, and availability can change; confirm them with the provider before paying or traveling. Something off? <a href={`/trust/?category=listing_correction&camp=${encodeURIComponent(camp.slug)}&url=${encodeURIComponent(campCanonical ?? `/camps/${camp.slug}/`)}`} class="text-rust hover:underline">Request a correction or removal</a>.
         </p>
       </aside>
     </div>
@@ -718,8 +738,15 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         status.classList.remove('hidden');
         status.textContent = 'Submitting...';
         status.style.color = '#5F5448';
+        const storageKey = 'pcd:camps:review:' + slug + ':idempotency-key';
+        let idempotencyKey = sessionStorage.getItem(storageKey);
+        if (!idempotencyKey) {
+          idempotencyKey = crypto.randomUUID();
+          sessionStorage.setItem(storageKey, idempotencyKey);
+        }
         const fd = new FormData(form);
-        fetch('/api/camps/' + slug + '/reviews/submit', { method: 'POST', body: fd })
+        fd.set('idempotency_key', idempotencyKey);
+        fetch('/api/camps/' + slug + '/reviews/submit', { method: 'POST', body: fd, headers: { 'Idempotency-Key': idempotencyKey } })
           .then(function (r) { return r.json() as Promise<{ ok: boolean; error?: string }>; })
           .then(function (data) {
             if (!data.ok) {
@@ -728,6 +755,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
               return;
             }
             form.reset();
+            sessionStorage.removeItem(storageKey);
             status.textContent = 'Thanks. Review queued for moderation.';
             status.style.color = '#5C7459';
           })
@@ -748,8 +776,15 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         status.classList.remove('hidden');
         status.textContent = 'Submitting...';
         status.style.color = '#5F5448';
+        const storageKey = 'pcd:camps:claim:' + slug + ':idempotency-key';
+        let idempotencyKey = sessionStorage.getItem(storageKey);
+        if (!idempotencyKey) {
+          idempotencyKey = crypto.randomUUID();
+          sessionStorage.setItem(storageKey, idempotencyKey);
+        }
         const fd = new FormData(form);
-        fetch('/api/camps/' + slug + '/claim', { method: 'POST', body: fd })
+        fd.set('idempotency_key', idempotencyKey);
+        fetch('/api/camps/' + slug + '/claim', { method: 'POST', body: fd, headers: { 'Idempotency-Key': idempotencyKey } })
           .then(function (r) { return r.json() as Promise<{ ok: boolean; error?: string; message?: string }>; })
           .then(function (data) {
             if (!data.ok) {
@@ -758,6 +793,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
               return;
             }
             form.reset();
+            sessionStorage.removeItem(storageKey);
             status.textContent = data.message || 'Claim request received.';
             status.style.color = '#5C7459';
           })

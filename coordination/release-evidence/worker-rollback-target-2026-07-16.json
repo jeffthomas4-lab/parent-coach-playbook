@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-16T13:28:16.411Z",
+  "expires_at": "2026-07-23T13:28:16.411Z",
+  "worker_name": "parent-coach-desk",
+  "active_deployment_id": "beb94c1a-be6b-4000-8d45-2223d5699b67",
+  "active_version_id": "92516f62-b891-4903-94e1-204a972ee2ae",
+  "target_version_id": "92516f62-b891-4903-94e1-204a972ee2ae",
+  "traffic_percentage": 100,
+  "script_etag": "448021af9cd36bff8913dd156ba1befdec5dba7424f7f010179854e7a64eb63d",
+  "candidate_usage": "next_release_only",
+  "bindings": {
+    "ACCESS_AUD": "plain_text",
+    "ACCESS_TEAM_DOMAIN": "plain_text",
+    "ADMIN_EMAILS": "plain_text",
+    "ASSETS": "assets",
+    "BULK_IMPORT_TOKEN": "secret_text",
+    "CRON_KEY": "secret_text",
+    "DB": "d1",
+    "FORGE_DB": "d1",
+    "GITHUB_TOKEN": "secret_text",
+    "PHOTOS": "r2_bucket",
+    "SESSION": "kv_namespace",
+    "SITE_URL": "plain_text"
+  },
+  "health_evidence": [
+    "coordination/release-evidence/anonymous-access-2026-07-16.json",
+    "coordination/release-evidence/live-public-monitor-2026-07-16.json"
+  ],
+  "predecessor_finding": {
+    "version_id": "dd8c1d17-f81e-41e9-b116-f56bae3eb318",
+    "same_script_etag": true,
+    "safe": false,
+    "missing_binding_names": ["BULK_IMPORT_TOKEN", "CRON_KEY", "GITHUB_TOKEN"]
+  },
+  "storage_rollback_included": false,
+  "pages_is_rollback_target": false,
+  "limitations": [
+    "This receipt proves a fully bound exact Worker version for rollback after the next approved release; it does not authorize or execute rollback.",
+    "Worker versions do not roll back D1, R2, KV, Durable Object, or other stored state.",
+    "A separately approved tabletop or non-production rehearsal and candidate-specific data recovery evidence remain required."
+  ],
+  "external_changes": []
+}

@@ -30,30 +30,26 @@ import {
   type AgentRunsEnv,
   type RunStatus,
 } from '../../lib/agent-runs';
+import { readBoundedJson } from '../../lib/demand-telemetry';
+import { bearerCredential, secretsMatch } from '../../lib/secrets';
 
 export const prerender = false;
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+    },
   });
 
 const VALID_STATUS: RunStatus[] = ['success', 'partial', 'failed'];
 const MAX_ID_LEN = 200;
+const MAX_AGENT_RUN_BODY_BYTES = 65_536;
+const SAFE_ID = /^[a-zA-Z0-9][a-zA-Z0-9._:-]*$/;
 
-/** Constant-time string compare so a wrong token cannot be found byte by byte. */
-function secretsMatch(a: string, b: string): boolean {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
-}
-
-function bearer(request: Request): string {
-  const header = request.headers.get('authorization') ?? '';
-  return header.toLowerCase().startsWith('bearer ') ? header.slice(7).trim() : '';
-}
+const stringField = (value: unknown): string => typeof value === 'string' ? value.trim() : '';
 
 interface Payload {
   phase?: string;
@@ -77,7 +73,7 @@ export const POST: APIRoute = async ({ request }) => {
     console.error('[agent-runs] AGENT_RUNS_TOKEN not configured — refusing all writes');
     return json({ ok: false, error: 'not configured' }, 503);
   }
-  if (!secretsMatch(bearer(request), env.AGENT_RUNS_TOKEN)) {
+  if (!(await secretsMatch(bearerCredential(request), env.AGENT_RUNS_TOKEN))) {
     return json({ ok: false, error: 'forbidden' }, 403);
   }
   if (!env.FORGE_DB) {
@@ -87,22 +83,26 @@ export const POST: APIRoute = async ({ request }) => {
 
   let body: Payload;
   try {
-    body = (await request.json()) as Payload;
-  } catch {
+    body = (await readBoundedJson(request, MAX_AGENT_RUN_BODY_BYTES)) as Payload;
+  } catch (error) {
+    if (error instanceof RangeError) return json({ ok: false, error: 'payload too large' }, 413);
     return json({ ok: false, error: 'invalid json body' }, 400);
   }
 
   // Server-side validation. The client's word on any of this counts for nothing.
-  const runId = (body.run_id ?? '').trim();
-  const agent = (body.agent ?? '').trim();
-  const venture = (body.venture ?? '').trim();
+  const runId = stringField(body.run_id);
+  const agent = stringField(body.agent);
+  const venture = stringField(body.venture);
   if (!runId || !agent || !venture) {
     return json({ ok: false, error: 'run_id, agent, and venture are required' }, 400);
   }
   if (runId.length > MAX_ID_LEN || agent.length > MAX_ID_LEN || venture.length > MAX_ID_LEN) {
     return json({ ok: false, error: 'run_id, agent, or venture too long' }, 400);
   }
-  const phase = (body.phase ?? '').trim().toLowerCase();
+  if (!SAFE_ID.test(runId) || !SAFE_ID.test(agent) || !SAFE_ID.test(venture)) {
+    return json({ ok: false, error: 'run_id, agent, or venture has invalid characters' }, 400);
+  }
+  const phase = stringField(body.phase).toLowerCase();
   if (phase !== 'start' && phase !== 'finish') {
     return json({ ok: false, error: 'phase must be "start" or "finish"' }, 400);
   }
@@ -118,9 +118,18 @@ export const POST: APIRoute = async ({ request }) => {
       return json({ ok: true, phase: 'start', run_id: runId });
     }
 
-    const status = (body.status ?? '').trim().toLowerCase() as RunStatus;
+    const status = stringField(body.status).toLowerCase() as RunStatus;
     if (!VALID_STATUS.includes(status)) {
       return json({ ok: false, error: 'status must be success, partial, or failed' }, 400);
+    }
+    if (body.summary !== undefined && typeof body.summary !== 'string') {
+      return json({ ok: false, error: 'summary must be a string' }, 400);
+    }
+    if (body.error !== undefined && typeof body.error !== 'string') {
+      return json({ ok: false, error: 'error must be a string' }, 400);
+    }
+    if (body.needs_you !== undefined && typeof body.needs_you !== 'boolean') {
+      return json({ ok: false, error: 'needs_you must be a boolean' }, 400);
     }
 
     const finishInput = {
@@ -129,7 +138,7 @@ export const POST: APIRoute = async ({ request }) => {
       venture,
       status,
       summary: body.summary ?? null,
-      needs_you: Boolean(body.needs_you),
+      needs_you: body.needs_you ?? false,
       needs_you_items: body.needs_you_items,
       outputs: body.outputs,
       error: body.error ?? null,

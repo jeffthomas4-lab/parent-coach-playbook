@@ -1,0 +1,3 @@
+Parent Coach Desk staging R2 recovery probe
+Fixture class: synthetic and non-production
+Purpose: verify isolated export and restore integrity

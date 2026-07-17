@@ -107,13 +107,24 @@ describe('the gate', () => {
     expect(result.outcome).toBe('staged');
   });
 
-  it('masks the recipient in the Slack staging post', async () => {
+  it('does not copy recipient, subject, reason, or body into Slack', async () => {
     const fetchMock = vi.fn<typeof fetch>(async () => new Response('ok'));
     vi.stubGlobal('fetch', fetchMock);
     await sendEmail(STAGE_ENV, message);
     const posted = jsonBodyOf(fetchMock).text;
     expect(posted).not.toContain('parent@example.com');
-    expect(posted).toContain('p***@example.com');
+    expect(posted).not.toContain(message.subject);
+    expect(posted).not.toContain(message.reason);
+    expect(posted).not.toContain(message.text);
+  });
+
+  it('fails closed when staging is not configured or delivery fails', async () => {
+    const noWebhook = await sendEmail({}, message);
+    expect(noWebhook).toEqual({ outcome: 'failed', error: 'staging not configured' });
+
+    vi.stubGlobal('fetch', vi.fn(async () => new Response('no', { status: 500 })));
+    const rejected = await sendEmail(STAGE_ENV, message);
+    expect(rejected).toEqual({ outcome: 'failed', error: 'staging delivery failed' });
   });
 });
 
@@ -153,6 +164,7 @@ describe('sendEmail validation', () => {
   });
 
   it('does not leak the provider error text to the caller', async () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     vi.stubGlobal(
       'fetch',
       vi.fn(async () => new Response('{"message":"API key rs_live_secret is invalid"}', { status: 401 })),
@@ -160,6 +172,7 @@ describe('sendEmail validation', () => {
     const result = await sendEmail(SEND_ENV, message);
     expect(result.outcome).toBe('failed');
     expect(result.error).not.toContain('rs_live_secret');
+    expect(JSON.stringify(errorSpy.mock.calls)).not.toContain('rs_live_secret');
   });
 
   it('never throws when the provider is unreachable', async () => {

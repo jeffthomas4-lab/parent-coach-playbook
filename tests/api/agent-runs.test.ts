@@ -187,7 +187,8 @@ describe('POST /api/agent-runs', () => {
     const body = await readJson(res);
     expect(body.canary).toMatchObject({ failures_24h: 1, paused: false });
     expect(slack).toHaveBeenCalledTimes(1);
-    expect(slackText(slack)).toContain('GSC API returned 500');
+    expect(slackText(slack)).toContain('Error detail recorded in the protected run history.');
+    expect(slackText(slack)).not.toContain('GSC API returned 500');
     expect(fake.calls.some((c) => c.sql.includes("SET status = 'paused'"))).toBe(false);
   });
 
@@ -267,6 +268,49 @@ describe('POST /api/agent-runs', () => {
     expect((await POST(ctx)).status).toBe(400);
   });
 
+  it('validation: rejects an oversized body before touching D1', async () => {
+    const { db, calls } = makeFakeD1();
+    const ctx = makeContext({
+      request: req({
+        phase: 'finish',
+        run_id: 'run-oversized',
+        agent: 'ed',
+        venture: 'pcd',
+        status: 'success',
+        outputs: { text: 'x'.repeat(70_000) },
+      }),
+      env: { FORGE_DB: db, AGENT_RUNS_TOKEN: TOKEN },
+    });
+    expect((await POST(ctx)).status).toBe(413);
+    expect(calls).toHaveLength(0);
+  });
+
+  it('validation: rejects type confusion rather than throwing or coercing truthy values', async () => {
+    const { db, calls } = makeFakeD1();
+    for (const body of [
+      { phase: 'start', run_id: 123, agent: 'ed', venture: 'pcd' },
+      { phase: 'finish', run_id: 'r', agent: 'ed', venture: 'pcd', status: 'failed', needs_you: 'false' },
+      { phase: 'finish', run_id: 'r', agent: 'ed', venture: 'pcd', status: 'failed', error: { secret: true } },
+    ]) {
+      const res = await POST(makeContext({
+        request: req(body),
+        env: { FORGE_DB: db, AGENT_RUNS_TOKEN: TOKEN },
+      }));
+      expect(res.status).toBe(400);
+    }
+    expect(calls).toHaveLength(0);
+  });
+
+  it('validation: rejects control characters and whitespace in machine identities', async () => {
+    const { db, calls } = makeFakeD1();
+    const res = await POST(makeContext({
+      request: req({ phase: 'start', run_id: 'run 1', agent: 'ed\nspoof', venture: 'pcd' }),
+      env: { FORGE_DB: db, AGENT_RUNS_TOKEN: TOKEN },
+    }));
+    expect(res.status).toBe(400);
+    expect(calls).toHaveLength(0);
+  });
+
   it('rejects an invalid JSON body', async () => {
     const { db } = makeFakeD1();
     const request = new Request(URL, {
@@ -297,7 +341,7 @@ describe('POST /api/agent-runs', () => {
   });
 });
 
-// The CANARY exemption. Vera watches a legal 30-day deletion SLA and is the only
+// The CANARY exemption. Vera watches configured privacy-request deadlines and is the only
 // thing watching it, so pausing her turns a loud failure into a silent one. Her
 // real failures already sit 23h59m apart in agent_runs, which means the window
 // below is her steady state rather than a contrived case. These tests exist so
@@ -342,7 +386,7 @@ describe('CANARY exemption (Vera)', () => {
       expect(fake.calls.every((c) => !c.params.includes('paused'))).toBe(true);
     });
 
-    it(`${agent}: still logs failed, still alerts Slack with the real error`, async () => {
+    it(`${agent}: stores the failure detail but alerts Slack without copying it`, async () => {
       const fake = makeFakeD1();
       fake.queueFirst({ n: 2 });
       const slack = makeFetchSpy();
@@ -368,7 +412,8 @@ describe('CANARY exemption (Vera)', () => {
       expect(slack).toHaveBeenCalledTimes(1);
       const text = slackText(slack);
       expect(text).toContain(agent);
-      expect(text).toContain(GUARD_ERROR);
+      expect(text).toContain('Error detail recorded in the protected run history.');
+      expect(text).not.toContain(GUARD_ERROR);
       // The alert says it tripped and says it was not paused. An exemption that
       // reads as a clean run is the silent failure wearing a different hat.
       expect(text).toContain('CANARY');

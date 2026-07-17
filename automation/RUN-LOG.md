@@ -87,7 +87,7 @@ Both are idempotent on `run_id`. A task that retries the same id updates its row
 
 **The CANARY exemption list (added 2026-07-15).** `applyCanary()` in `src/lib/agent-runs.ts` carries a `CANARY_EXEMPT_AGENTS` set. An agent in it trips the threshold, gets alerted, and never gets paused. Today that is Vera and only Vera, under both `pcd-deletion-monitor` (her live registry key) and `vera` (the key after her deferred rename).
 
-The reasoning, because the next person to read `applyCanary()` will want to tidy the special case away. CANARY assumes a stopped agent is safer than a broken one, and that holds for every agent whose failure costs a missed post or a stale row. It inverts for Vera, who is the only watch on a legal 30-day deletion SLA, because pausing her leaves the risk in place and removes the alarm on it.
+The reasoning, because the next person to read `applyCanary()` will want to tidy the special case away. CANARY assumes a stopped agent is safer than a broken one, and that holds for every agent whose failure costs a missed post or a stale row. It inverts for Vera, who watches configured privacy-request deadlines, because pausing her leaves the risk in place and removes the alarm. Deadlines are request-specific and counsel-governed, not a universal 30-day legal deletion rule.
 
 That is the 2026-07-14 incident exactly. It was also already armed rather than theoretical: her daily 7:04 AM schedule means consecutive account-guard failures always land just under 24 hours apart, and two of them were sitting in `agent_runs` when the exemption went in.
 

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "release_blocking": true,
+  "target": "WCAG 2.2 AA",
+  "viewports_css_px": [320, 360, 390, 430],
+  "conditions": [
+    "portrait",
+    "landscape",
+    "200_percent_zoom",
+    "reduced_motion",
+    "virtual_keyboard_open",
+    "safe_area_insets",
+    "slow_mobile_network",
+    "touch_only"
+  ],
+  "prohibited_patterns": [
+    "horizontal_page_scroll",
+    "clipped_primary_control",
+    "hover_only_action",
+    "desktop_only_recovery",
+    "unlabeled_icon_control"
+  ],
+  "journeys": [
+    "browse_and_filter_camps",
+    "open_camp_detail_and_source",
+    "submit_or_suggest_camp",
+    "request_correction_or_removal",
+    "submit_review",
+    "claim_camp",
+    "newsletter_consent",
+    "staff_admin_triage",
+    "future_owner_account_and_recovery",
+    "future_checkout_and_cancellation"
+  ],
+  "required_evidence": [
+    "automated_accessibility_scan",
+    "keyboard_and_focus_review",
+    "screen_reader_sample",
+    "real_or_emulated_touch_run",
+    "mobile_core_web_vitals",
+    "form_error_and_retry_run",
+    "screenshot_or_trace_reference",
+    "named_reviewer_and_date"
+  ],
+  "current_evidence_status": "pending",
+  "claim_boundary": "Automated checks and this contract do not establish WCAG conformance or customer readiness."
+}

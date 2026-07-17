@@ -1,11 +1,11 @@
 ---
 // Newsletter signup CTA.
 //
-// We link out to Kit's hosted form rather than embed our own. Kit's own
-// page handles the subscription end-to-end (validation, confirmation
-// email, redirect to /welcome/) which is more reliable than posting to
-// their endpoint ourselves. The visitor briefly sees a Kit-hosted page,
-// then lands back on parentcoachdesk.com/welcome/ with the downloads.
+// We link out to Kit's hosted form rather than embed our own. The provider
+// owns the subscription workflow. Read-only review on 2026-07-16 confirmed
+// visible name/email fields and an unsubscribe notice; confirmation, redirect,
+// suppression, delivery, and failure behavior remain launch-gated until a
+// controlled provider proof is approved.
 //
 // To swap the destination form, change KIT_HOSTED_URL.
 
@@ -23,7 +23,7 @@ interface Props {
 const {
   variant = 'inline',
   headline = 'The Friday Letter',
-  blurb = 'One short read every Friday from the Parent Coach Desk. Easy unsubscribe.',
+  blurb = 'One short read every Friday from the Parent Coach Desk.',
   buttonLabel = 'Get the Friday Letter',
 } = Astro.props;
 
@@ -49,7 +49,7 @@ const isCompact = variant === 'compact';
       {buttonLabel}
     </a>
     <p class="font-display italic text-ink-soft text-xs mt-3">
-      Easy unsubscribe. By subscribing you agree to receive emails from
+      Kit shows an unsubscribe option. By subscribing you agree to receive emails from
       Parent Coach Desk and to our <a href="/disclosure/" class="text-rust hover:underline">privacy notice</a>.
     </p>
   </aside>
@@ -92,7 +92,7 @@ const isCompact = variant === 'compact';
           {buttonLabel}
         </a>
         <p class={`font-display italic text-xs mt-3 ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
-          We won't send you spam. Unsubscribe whenever. By subscribing you
+          Kit shows an unsubscribe option. By subscribing you
           agree to our <a href="/disclosure/" class={`underline ${isCard ? 'text-paper' : 'text-rust'} hover:opacity-80`}>privacy notice</a>.
         </p>
       </div>

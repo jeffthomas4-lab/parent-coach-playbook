@@ -13,6 +13,7 @@
 
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { renderTitle } from '../../../../lib/title';
 
 export const prerender = true;
 
@@ -115,7 +116,7 @@ const publicUrl = publicUrlFor(collection, entry);
 
   <section>
     <div class="container-px py-8 max-w-3xl">
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium" set:html={title.replace(/\*([^*]+)\*/g, '<em>$1</em>')}></h1>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium" set:html={renderTitle(title)}></h1>
       {dek && <p class="font-display text-ink-soft mt-3 leading-snug max-w-2xl">{dek}</p>}
 
       <article class="mt-6 prose prose-ink max-w-none">

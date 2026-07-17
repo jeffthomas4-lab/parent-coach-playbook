@@ -41,7 +41,7 @@ if (filterAges) {
     '5-7': [5, 7], '8-10': [8, 10], '11-12': [11, 12], '13-14': [13, 14], '15-plus': [15, 22],
   };
   const range = ageMap[filterAges];
-  if (range) visible = visible.filter((c) => c.age_max >= range[0] && c.age_min <= range[1]);
+  if (range) visible = visible.filter((c) => c.age_known === 1 && c.age_max >= range[0] && c.age_min <= range[1]);
 }
 
 const sportsInCity = [...new Set(camps.map((c) => c.sport))];
@@ -58,7 +58,7 @@ const fmtDateRange = (start: string, end: string) => {
 const sportLabel = (slug: string) => CAMP_SPORTS.find((x) => x.slug === slug)?.label || slug;
 
 const title = `Summer camps in ${cityLabel}, ${stateCode}`;
-const description = `${camps.length} verified camp${camps.length === 1 ? '' : 's'} in ${cityLabel}. Filter by sport and age.`;
+const description = `${camps.length} reviewed camp listing${camps.length === 1 ? '' : 's'} in ${cityLabel}. Filter by sport and age.`;
 
 const itemListSchema = {
   '@context': 'https://schema.org',
@@ -99,7 +99,7 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {visible.length === camps.length
-          ? `${camps.length} verified camp${camps.length === 1 ? '' : 's'} in ${cityLabel}.`
+          ? `${camps.length} reviewed camp listing${camps.length === 1 ? '' : 's'} in ${cityLabel}.`
           : `${visible.length} of ${camps.length} camps match your filters.`}
       </p>
     </div>
@@ -154,7 +154,7 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
           {visible.map((c) => (
             <li class="border border-bone p-5 rounded">
               <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
-                {sportLabel(c.sport)} · {fmtDateRange(c.start_date, c.end_date)} · ages {c.age_min}–{c.age_max}
+                {sportLabel(c.sport)} · {fmtDateRange(c.start_date, c.end_date)} · {c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided'}
               </p>
               <h3 class="font-display text-ink text-lg leading-snug mb-2" style="font-weight: 500;">
                 <a href={`/camps/${c.slug}/`} class="hover:text-rust">{c.name}</a>

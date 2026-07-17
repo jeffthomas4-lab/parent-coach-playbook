@@ -237,8 +237,10 @@ describe('fireDeployHook', () => {
   });
 
   it('reports failed rather than throwing when the hook is unreachable', async () => {
-    vi.stubGlobal('fetch', vi.fn(async () => { throw new Error('network'); }));
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.stubGlobal('fetch', vi.fn(async () => { throw new Error(`network ${ENV.DEPLOY_HOOK_URL}`); }));
     expect(await fireDeployHook(ENV)).toBe('failed');
+    expect(JSON.stringify(errorSpy.mock.calls)).not.toContain(ENV.DEPLOY_HOOK_URL);
   });
 });
 

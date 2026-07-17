@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "default_policy": "uncategorized routes fail review; no implicit shared caching",
+  "classes": [
+    { "id": "versioned_assets", "patterns": ["/_astro/*", "/fonts/*"], "privacy": "public", "cache_control": "public, max-age=31536000, immutable", "invalidation": "content-addressed filename", "state": "platform_asset_policy_requires_live_verification" },
+    { "id": "public_html", "patterns": ["public non-admin HTML"], "privacy": "public", "cache_control": "public, max-age=0, must-revalidate", "invalidation": "origin revalidation on every reuse", "state": "implemented_in_worker_security_headers" },
+    { "id": "public_directory_dynamic", "patterns": ["/camps*"], "privacy": "public_integrity_sensitive", "cache_control": "public, max-age=0, must-revalidate", "invalidation": "no stale serving until listing/list/search purge contract is proved", "state": "conservative_baseline" },
+    { "id": "public_media_dynamic", "patterns": ["/camp-photos/*"], "privacy": "public_integrity_sensitive", "cache_control": "no-store until object authorization, content type, missing-object and purge behavior are proved", "invalidation": "not cached by Worker policy", "state": "pending_route_evidence" },
+    { "id": "api", "patterns": ["/api*"], "privacy": "dynamic_or_sensitive", "cache_control": "no-store", "invalidation": "not cached", "state": "implemented_in_worker_security_headers" },
+    { "id": "admin_preview", "patterns": ["/admin*", "/api/admin*"], "privacy": "confidential", "cache_control": "private, no-store", "invalidation": "not cached", "state": "implemented_in_worker_security_headers" },
+    { "id": "trust_customer_payment", "patterns": ["/trust*", "future owner/account/payment surfaces"], "privacy": "personal_or_financial", "cache_control": "private, no-store", "invalidation": "not cached", "state": "trust API covered; future routes require contract update" },
+    { "id": "health_readiness", "patterns": ["/api/health", "/api/ready"], "privacy": "public_operational", "cache_control": "no-store", "invalidation": "not cached", "state": "implemented_in_worker_security_headers" },
+    { "id": "redirects", "patterns": ["redirect responses"], "privacy": "public", "cache_control": "unset until redirect class is reviewed", "invalidation": "temporary by default; permanent only with rollback evidence", "state": "pending_route_inventory" },
+    { "id": "errors", "patterns": ["4xx", "5xx"], "privacy": "varies", "cache_control": "no-store by default", "invalidation": "not cached", "state": "API/admin enforced; public HTML error audit pending" }
+  ],
+  "promotion_requirements": [
+    "bounded cache key includes every representation-changing input",
+    "anonymous and authorized representations cannot share",
+    "correction removal suppression expiry price date and entitlement invalidation tested",
+    "poisoning and unbounded-cardinality tests pass",
+    "declared maximum stale window has an owner and live evidence"
+  ]
+}

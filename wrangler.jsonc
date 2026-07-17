@@ -8,42 +8,72 @@
   "name": "parent-coach-desk-staging",
   "compatibility_date": "2026-04-30",
   "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
 
   // Astro 6+'s Cloudflare adapter (v13+) ships its own Workers entrypoint —
   // "main" points at that package export, not a dist/_worker.js build output
   // (that path was the old v12/Pages-era adapter shape). "assets" replaces
   // the old "pages_build_output_dir".
-  "main": "@astrojs/cloudflare/entrypoints/server",
+  "main": "./src/worker.ts",
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": ["/admin", "/admin/*", "/api/admin", "/api/admin/*"]
   },
 
-  // Shared activity database. ActivityRadar was retired as a separate product on
-  // 2026-07-10; this is now the only front door. Org/program schema history lives
-  // in migrations-activity-radar/ (this repo) — apply new ones with:
-  // npx wrangler d1 execute activity-radar --file=... --remote
-  // The daily org-discovery pipeline lives in buildout/hit-rate-test/, also this
-  // repo. See activityradar-archive/README.md for the full migration record.
+  // Isolated staging directory database. It contains only the synthetic journey
+  // fixture, never a copied production directory export. The production
+  // activity-radar database is not reachable from this staging Worker.
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "activity-radar",
-      "database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
+      "database_name": "parent-coach-desk-directory-staging",
+      "database_id": "6aa26d4d-d545-4eb7-bf50-34d45f2182ad"
     },
     {
-      "binding": "FORGE_DB",
-      "database_name": "forge-command",
-      "database_id": "747cf988-a557-48bd-9d03-bea09e184f94"
+      "binding": "PCD_OPS_DB",
+      "database_name": "parent-coach-desk-ops-staging",
+      "database_id": "7f0da00d-bc98-464f-8702-ce0fb381dd5e",
+      "migrations_dir": "migrations-pcd-ops"
     }
   ],
 
-  // Shared R2 bucket for org logos, program hero photos, and gallery images.
-  // Same bucket as ActivityRadar — both sites read from activityradar-photos.
+  // Dedicated empty R2 bucket for staging media. It is deliberately separate
+  // from the production activityradar-photos bucket.
   "r2_buckets": [
     {
       "binding": "PHOTOS",
-      "bucket_name": "activityradar-photos"
+      "bucket_name": "parent-coach-desk-staging-photos"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "PUBLIC_SUBMISSION_RATE_LIMITER",
+      "namespace_id": "910101",
+      "simple": { "limit": 10, "period": 60 }
+    },
+    {
+      "name": "TRUST_RATE_LIMITER",
+      "namespace_id": "910102",
+      "simple": { "limit": 5, "period": 60 }
+    },
+    {
+      "name": "COMMUNITY_RATE_LIMITER",
+      "namespace_id": "910103",
+      "simple": { "limit": 5, "period": 60 }
+    },
+    {
+      "name": "DEMAND_RATE_LIMITER",
+      "namespace_id": "910104",
+      "simple": { "limit": 30, "period": 60 }
+    },
+    {
+      "name": "OWNER_RATE_LIMITER",
+      "namespace_id": "910105",
+      "simple": { "limit": 5, "period": 60 }
     }
   ],
 
@@ -68,9 +98,16 @@
   // ADMIN_EMAILS: comma-separated allowlist for /admin/ and /api/admin/ routes.
   // Read by src/lib/admin-auth.ts. Add or remove emails here, redeploy, done.
   "vars": {
-    "SITE_URL": "https://parentcoachdesk.com",
-    "ADMIN_EMAILS": "parentcoachplaybook@gmail.com,jeffthomas4@gmail.com",
+    "SITE_URL": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+    "ADMIN_EMAILS": "eepskalla@gmail.com,jeffthomas4@gmail.com",
     "ACCESS_TEAM_DOMAIN": "fieldforge.cloudflareaccess.com",
-    "ACCESS_AUD": "e271a2858edec490fbe3995e6b201f66333d7975b92f01541fe0f912463f7737"
+    "ACCESS_AUD": "e271a2858edec490fbe3995e6b201f66333d7975b92f01541fe0f912463f7737",
+    "CAMP_CLAIMS_ENABLED": "false",
+    "CAMP_REVIEWS_ENABLED": "false",
+    "TRUST_INTAKE_ENABLED": "false",
+    "DEMAND_TELEMETRY_ENABLED": "false",
+    "IDEMPOTENCY_CLEANUP_ENABLED": "false",
+    "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
+    "PCD_COMMERCE_TEST_MODE_ENABLED": "false"
   }
 }

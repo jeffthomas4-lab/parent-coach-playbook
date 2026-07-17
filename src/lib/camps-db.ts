@@ -90,6 +90,7 @@ export interface Camp {
   sport: string;
   age_min: number;
   age_max: number;
+  age_known: 0 | 1;
   start_date: string;
   end_date: string;
   address: string;
@@ -115,6 +116,7 @@ export interface Camp {
   reviewed_at: string | null;
   review_notes: string | null;
   verified: 0 | 1;
+  last_verified_at: string | null;
   hero_photo_key: string | null;
   is_claimed: 0 | 1;
   claimed_by_email: string | null;
@@ -137,6 +139,30 @@ export interface Camp {
   featured: 0 | 1;
   featured_order: number | null;
   featured_until: string | null;
+}
+
+export type CampApprovalBlockCode = 'dates_missing' | 'dates_invalid' | 'dates_reversed' | 'session_ended' | 'approval_state_changed';
+
+export class CampApprovalBlockedError extends Error {
+  readonly code: CampApprovalBlockCode;
+
+  constructor(code: CampApprovalBlockCode) {
+    super(`camp approval blocked: ${code}`);
+    this.name = 'CampApprovalBlockedError';
+    this.code = code;
+  }
+}
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const validIsoDate = (value: string) => ISO_DATE.test(value)
+  && new Date(`${value}T00:00:00Z`).toISOString().slice(0, 10) === value;
+
+export function campApprovalBlock(camp: Pick<Camp, 'start_date' | 'end_date'>, today = todayDateISO()): CampApprovalBlockCode | null {
+  if (!camp.start_date || !camp.end_date) return 'dates_missing';
+  if (!validIsoDate(camp.start_date) || !validIsoDate(camp.end_date) || !validIsoDate(today)) return 'dates_invalid';
+  if (camp.start_date > camp.end_date) return 'dates_reversed';
+  if (camp.end_date < today) return 'session_ended';
+  return null;
 }
 
 export type ReviewStatus = 'pending' | 'approved' | 'rejected';
@@ -213,6 +239,7 @@ const CAMP_SELECT = `
     p.activity_category                                   AS sport,
     COALESCE(p.age_min,  0)                               AS age_min,
     COALESCE(p.age_max, 99)                               AS age_max,
+    (p.age_min IS NOT NULL AND p.age_max IS NOT NULL)     AS age_known,
     p.session_start_date                                  AS start_date,
     p.session_end_date                                    AS end_date,
     o.address,
@@ -241,6 +268,7 @@ const CAMP_SELECT = `
     p.reviewed_at,
     p.review_notes,
     COALESCE(p.verified, 0)                               AS verified,
+    p.last_verified_at,
     p.hero_photo_key,
     o.is_claimed,
     o.claimed_by_email,
@@ -330,19 +358,20 @@ export async function upsertSubmitterOnSubmission(
   notes: string | null = null,
 ): Promise<Submitter> {
   const now = nowIso();
-  await db
-    .prepare(
-      `INSERT INTO submitters (email, trust_level, submission_count, approved_count, first_submitted_at, last_submitted_at, notes)
-       VALUES (?, 'new', 1, 0, ?, ?, ?)
-       ON CONFLICT(email) DO UPDATE SET
-         submission_count = submission_count + 1,
-         last_submitted_at = excluded.last_submitted_at`,
-    )
-    .bind(email, now, now, notes)
-    .run();
+  await prepareSubmitterSubmissionUpsert(db, email, now, notes).run();
   const updated = await getSubmitter(db, email);
   if (!updated) throw new Error(`Submitter upsert failed for ${email}`);
   return updated;
+}
+
+export function prepareSubmitterSubmissionUpsert(db: D1Database, email: string, at: string, notes: string | null = null): D1PreparedStatement {
+  return db.prepare(
+    `INSERT INTO submitters (email, trust_level, submission_count, approved_count, first_submitted_at, last_submitted_at, notes)
+     VALUES (?, 'new', 1, 0, ?, ?, ?)
+     ON CONFLICT(email) DO UPDATE SET
+       submission_count = submission_count + 1,
+       last_submitted_at = excluded.last_submitted_at`,
+  ).bind(email, at, at, notes);
 }
 
 /**
@@ -395,6 +424,19 @@ export async function insertCamp(
   status: CampStatus = 'pending',
   awaitingReview: boolean = false,
 ): Promise<void> {
+  await db.batch(prepareCampInsertStatements(db, camp, status, awaitingReview));
+}
+
+export function prepareCampInsertStatements(
+  db: D1Database,
+  camp: NewCampInput,
+  status: CampStatus = 'pending',
+  awaitingReview: boolean = false,
+): D1PreparedStatement[] {
+  if (status === 'approved') {
+    const blocked = campApprovalBlock(camp);
+    if (blocked) throw new CampApprovalBlockedError(blocked);
+  }
   const sourceDomain = camp.source_domain ?? extractDomain(camp.website_url);
   const now = nowIso();
   const orgId = crypto.randomUUID();
@@ -405,8 +447,8 @@ export async function insertCamp(
   // record_status is a derived mirror that nothing here reads for visibility.
   const recordStatus = status === 'approved' ? 'active' : status === 'rejected' ? 'inactive' : 'unverified';
 
-  // Insert the organization.
-  await db
+  // Prepare the organization insert without executing it independently.
+  const organizationInsert = db
     .prepare(
       `INSERT INTO organizations (
          id, slug, name, organization_type,
@@ -437,11 +479,10 @@ export async function insertCamp(
       camp.confidence === 'high' ? 80 : camp.confidence === 'low' ? 20 : 50,
       now,
       now,
-    )
-    .run();
+    );
 
   // Insert the program linked to that org.
-  await db
+  const programInsert = db
     .prepare(
       `INSERT INTO programs (
          id, organization_id, slug, name,
@@ -519,8 +560,18 @@ export async function insertCamp(
       awaitingReview ? 1 : 0,
       now,
       now,
-    )
-    .run();
+    );
+
+  // D1 batch executes transactionally. Never leave an orphan organization if
+  // the program insert fails, and never report a partially accepted intake.
+  return [organizationInsert, programInsert];
+}
+
+export async function insertCampSubmission(db: D1Database, camp: NewCampInput): Promise<void> {
+  await db.batch([
+    prepareSubmitterSubmissionUpsert(db, camp.submitted_by_email, camp.submitted_at),
+    ...prepareCampInsertStatements(db, camp, 'pending', false),
+  ]);
 }
 
 export async function getCampById(db: D1Database, id: string): Promise<Camp | null> {
@@ -721,24 +772,30 @@ export async function approveCamp(
 ): Promise<Camp | null> {
   const camp = await getCampById(db, id);
   if (!camp) return null;
+  const blocked = campApprovalBlock(camp);
+  if (blocked) throw new CampApprovalBlockedError(blocked);
   const now = nowIso();
-  await db
-    .prepare(
+  const results = await db.batch([
+    db.prepare(
       `UPDATE programs
        SET pcd_status = 'approved', record_status = 'active',
            awaiting_review = 0, reviewed_by = ?, reviewed_at = ?, review_notes = ?
-       WHERE id = ?`,
+       WHERE id = ? AND session_start_date = ? AND session_end_date = ?`,
     )
-    .bind(reviewer, now, notes, id)
-    .run();
-  // Sync org record_status to active.
-  await db
-    .prepare(
+    .bind(reviewer, now, notes, id, camp.start_date, camp.end_date),
+    // Sync org only when the guarded program transition succeeded in the same
+    // D1 batch. D1 batches are transactional, preventing a half-approved row.
+    db.prepare(
       `UPDATE organizations SET record_status = 'active'
-       WHERE id = (SELECT organization_id FROM programs WHERE id = ?)`,
+       WHERE id = (SELECT organization_id FROM programs
+                    WHERE id = ? AND pcd_status = 'approved'
+                      AND session_start_date = ? AND session_end_date = ?)`,
     )
-    .bind(id)
-    .run();
+    .bind(id, camp.start_date, camp.end_date),
+  ]);
+  if (Number(results[0]?.meta?.changes ?? 0) !== 1) {
+    throw new CampApprovalBlockedError('approval_state_changed');
+  }
   if (!(camp.status === 'approved' && camp.awaiting_review === 1)) {
     await incrementSubmitterApproved(db, camp.submitted_by_email);
   }
@@ -930,14 +987,14 @@ export interface NewClaimInput {
   submitted_at: string;
 }
 
-export async function insertClaim(db: D1Database, claim: NewClaimInput): Promise<void> {
+export async function prepareClaimInsert(db: D1Database, claim: NewClaimInput): Promise<D1PreparedStatement> {
   // Resolve the organization_id so the camp_claims row can be queried by org too.
   const prog = await db
     .prepare('SELECT organization_id FROM programs WHERE id = ?')
     .bind(claim.camp_id)
     .first<{ organization_id: string }>();
 
-  await db
+  return db
     .prepare(
       `INSERT INTO camp_claims
          (id, camp_id, organization_id, claimant_email, claimant_name, organization, phone, notes, status, submitted_at)
@@ -954,7 +1011,11 @@ export async function insertClaim(db: D1Database, claim: NewClaimInput): Promise
       claim.notes,
       claim.submitted_at,
     )
-    .run();
+    ;
+}
+
+export async function insertClaim(db: D1Database, claim: NewClaimInput): Promise<void> {
+  await (await prepareClaimInsert(db, claim)).run();
 }
 
 export async function listPendingClaims(db: D1Database): Promise<CampClaim[]> {
@@ -983,25 +1044,6 @@ export async function updateClaimStatus(
     .bind(status, reviewer, nowIso(), notes, id)
     .run();
   return getClaimById(db, id);
-}
-
-export async function markCampClaimed(
-  db: D1Database,
-  campId: string,
-  claimantEmail: string,
-  paidUntilISO?: string,
-): Promise<void> {
-  const oneYear = new Date();
-  oneYear.setFullYear(oneYear.getFullYear() + 1);
-  const paidUntil = paidUntilISO ?? oneYear.toISOString().slice(0, 10);
-  await db
-    .prepare(
-      `UPDATE organizations
-       SET is_claimed = 1, claimed_by_email = ?, claim_paid_until = ?
-       WHERE id = (SELECT organization_id FROM programs WHERE id = ?)`,
-    )
-    .bind(claimantEmail, paidUntil, campId)
-    .run();
 }
 
 export function generateClaimId(): string {
@@ -1047,25 +1089,18 @@ export function generateOrgSuggestionId(): string {
   return crypto.randomUUID();
 }
 
-export async function insertOrgSuggestion(db: D1Database, s: NewOrgSuggestionInput): Promise<void> {
-  await db
+export function prepareOrgSuggestionInsert(db: D1Database, s: NewOrgSuggestionInput): D1PreparedStatement {
+  return db
     .prepare(
       `INSERT INTO org_suggestions
          (id, org_name, org_website, org_city, org_state, activity_type, submitter_email, notes, status, submitted_at)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)`,
     )
-    .bind(
-      s.id,
-      s.org_name,
-      s.org_website,
-      s.org_city,
-      s.org_state,
-      s.activity_type,
-      s.submitter_email,
-      s.notes,
-      s.submitted_at,
-    )
-    .run();
+    .bind(s.id, s.org_name, s.org_website, s.org_city, s.org_state, s.activity_type, s.submitter_email, s.notes, s.submitted_at);
+}
+
+export async function insertOrgSuggestion(db: D1Database, s: NewOrgSuggestionInput): Promise<void> {
+  await prepareOrgSuggestionInsert(db, s).run();
 }
 
 export async function listPendingOrgSuggestions(db: D1Database): Promise<OrgSuggestion[]> {
@@ -1281,23 +1316,18 @@ export interface NewReviewInput {
   submitted_at: string;
 }
 
-export async function insertReview(db: D1Database, review: NewReviewInput): Promise<void> {
-  await db
+export function prepareReviewInsert(db: D1Database, review: NewReviewInput): D1PreparedStatement {
+  return db
     .prepare(
       `INSERT INTO camp_reviews
          (id, camp_id, reviewer_email, reviewer_display_name, rating, body, status, submitted_at)
        VALUES (?, ?, ?, ?, ?, ?, 'pending', ?)`,
     )
-    .bind(
-      review.id,
-      review.camp_id,
-      review.reviewer_email,
-      review.reviewer_display_name,
-      review.rating,
-      review.body,
-      review.submitted_at,
-    )
-    .run();
+    .bind(review.id, review.camp_id, review.reviewer_email, review.reviewer_display_name, review.rating, review.body, review.submitted_at);
+}
+
+export async function insertReview(db: D1Database, review: NewReviewInput): Promise<void> {
+  await prepareReviewInsert(db, review).run();
 }
 
 export async function listApprovedReviewsForCamp(db: D1Database, campId: string): Promise<CampReview[]> {
@@ -1526,14 +1556,18 @@ export async function listCampsForUrlSweep(
 export async function listStaleCamps(
   db: D1Database,
   beforeDate: string,
+  limit = 25,
 ): Promise<Camp[]> {
+  // 101 permits archiveStaleCamps to fetch a 100-row batch plus one backlog sentinel.
+  const boundedLimit = Math.min(101, Math.max(1, Math.floor(limit)));
   const result = await db
     .prepare(
       `${CAMP_SELECT}
        WHERE p.pcd_status = 'approved' AND p.session_end_date < ?
-       ORDER BY p.session_end_date ASC`,
+       ORDER BY p.session_end_date ASC, p.id ASC
+       LIMIT ?`,
     )
-    .bind(beforeDate)
+    .bind(beforeDate, boundedLimit)
     .all<Camp>();
   return result.results ?? [];
 }
@@ -1542,12 +1576,16 @@ export async function archiveStaleCamps(
   db: D1Database,
   todayDate: string,
   reviewer: string,
-): Promise<number> {
-  const stale = await listStaleCamps(db, todayDate);
-  for (const c of stale) {
+  limit = 25,
+): Promise<{ archived: number; hasMore: boolean }> {
+  const boundedLimit = Math.min(100, Math.max(1, Math.floor(limit)));
+  // Fetch one extra row to signal backlog without a second count query.
+  const stale = await listStaleCamps(db, todayDate, boundedLimit + 1);
+  const batch = stale.slice(0, boundedLimit);
+  for (const c of batch) {
     await rejectCamp(db, c.id, reviewer, 'auto-archived past-date', 'past-date');
   }
-  return stale.length;
+  return { archived: batch.length, hasMore: stale.length > boundedLimit };
 }
 
 // ---------- Domain quality ----------

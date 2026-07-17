@@ -27,9 +27,9 @@ So the roster's naming convention bends here, on purpose:
 
 ## 1. Purpose and success metric
 
-**Purpose.** Vera watches `support@parentcoachdesk.com` for deletion and opt-out requests, finds the matching record in the `activity-radar` D1, and stages a ready-to-commit fix for Jeff inside the 30-day DATA-MAP SLA.
+**Purpose.** Vera watches the approved privacy intake for access, correction, restriction, export, deletion, and opt-out requests, locates the authoritative request record, and stages bounded work against its configured deadline. Deadlines and exceptions are request-specific and counsel-governed; Vera does not interpret law.
 
-**Success metric.** No deletion request ages past its 30-day SLA unstaged, measured by a zero-count of overdue requests at each run. One number, checked daily, and the only success metric on the roster that is a legal obligation rather than a preference.
+**Success metric.** No validated privacy request ages past its recorded statutory deadline or approved internal target without assignment and escalation, measured from authoritative request state.
 
 ## 2. Trigger
 
@@ -41,7 +41,7 @@ Year-round. Every other cadence on this roster has an August-through-November ho
 
 - The portfolio inbox `jeff@coachjeffthomas.com`, where `support@parentcoachdesk.com` forwards. Mail from roughly the last 45 days, so nothing inside a 30-day window is missed.
 - The shared `activity-radar` D1 (`8cc3694a-26f8-4a56-b131-d5d3a68c49ef`), read-only for her: `organizations` and any contact tables, searched by email, org name, city, and website domain.
-- `DATA-MAP.md` — the 30-day SLA and the named home of every category of data. The privacy contact there reads `support@parentcoachdesk.com` as of 2026-07-13, corrected from the retired `parentcoachplaybook@gmail.com` brand address.
+- `DATA-MAP.md` and the privacy-request control plane — the cascade, configured deadline, extension/exception state, owner, and evidence contract. Inbox messages are intake evidence, not authoritative workflow state.
 - `reports/deletions/` — her own staged files, read before staging so a re-run never duplicates a request.
 - `PCD-OPERATING-MANUAL.md` SOP S4, section 3.4 (the maintenance-mode exception that names her), section 5.4 (her full field-by-field design), section 6 (HUMAN GATE, RED WALL, FAMILY FIREWALL).
 - `About Me/About Me.txt` and `About Me/Anti AI Writing.txt`, before drafting any acknowledgment in Jeff's voice.
@@ -83,7 +83,7 @@ A missed run is not a neutral event here. It burns SLA days, so a failed inbox o
 
 ## 8. Kill switch
 
-Independent enable and disable at the scheduled-task toggle and `agent_registry.status`. **Manual only. CANARY does not apply to Vera**, and she is the only exception on the roster. Auto-pausing the one thing watching a legal 30-day SLA converts a loud failure into a silent one, which is precisely the failure that already happened. Repeated failures escalate through `needs_you` instead of pausing.
+Independent enable and disable at the scheduled-task toggle and `agent_registry.status`. **Manual only. CANARY does not apply to Vera**, and she is the only exception on the roster. Auto-pausing the deadline monitor converts a loud failure into a silent one. Repeated failures escalate through `needs_you` instead of pausing.
 
 **Built 2026-07-15, and this section now describes code rather than a request.** `applyCanary()` in `src/lib/agent-runs.ts` holds a `CANARY_EXEMPT_AGENTS` set, and an agent in it never reaches `pauseAgent()`. No `UPDATE agent_registry SET status = 'paused'` is issued for her at all.
 

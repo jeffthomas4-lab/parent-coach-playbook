@@ -366,7 +366,6 @@ export const SPORTS = [
 
 const CAMP_ONLY_SPORTS = [
   { slug: 'multi-sport',    label: 'Multi-sport' },
-  { slug: 'football-7v7',   label: 'Football — 7v7' },
   { slug: 'wrestling',      label: 'Wrestling' },
   { slug: 'rugby',          label: 'Rugby' },
   { slug: 'field-hockey',   label: 'Field hockey' },
@@ -379,7 +378,7 @@ const CAMP_ONLY_SPORTS = [
   { slug: 'general',        label: 'General day camp' },
 ] as const;
 
-export const CAMP_SPORTS = [...SPORTS, ...CAMP_ONLY_SPORTS]
+export const CAMP_SPORTS = [...new Map([...SPORTS, ...CAMP_ONLY_SPORTS].map((sport) => [sport.slug, sport])).values()]
   .slice()
   .sort((a, b) => a.label.localeCompare(b.label));
 

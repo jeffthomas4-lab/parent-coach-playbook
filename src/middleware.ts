@@ -1,5 +1,6 @@
 import { defineMiddleware } from 'astro:middleware';
 import { SITE } from './data/site';
+import { withWorkerSecurityHeaders } from './lib/security-headers';
 
 // Canonical-host redirect. GSC's coverage report was choosing the www host as
 // canonical for a chunk of pages ("Duplicate, Google chose different
@@ -11,7 +12,7 @@ import { SITE } from './data/site';
 // this Worker, so those still need a host-level Cloudflare Redirect Rule
 // (www.parentcoachdesk.com/* -> https://parentcoachdesk.com/$1, dashboard,
 // not code) as a companion to this middleware, not a replacement for it.
-export const onRequest = defineMiddleware((context, next) => {
+export const onRequest = defineMiddleware(async (context, next) => {
   const url = new URL(context.request.url);
   const host = url.hostname;
 
@@ -19,8 +20,8 @@ export const onRequest = defineMiddleware((context, next) => {
     const dest = new URL(SITE.url);
     dest.pathname = url.pathname;
     dest.search = url.search;
-    return context.redirect(dest.toString(), 301);
+    return withWorkerSecurityHeaders(context.redirect(dest.toString(), 301), url.pathname);
   }
 
-  return next();
+  return withWorkerSecurityHeaders(await next(), url.pathname);
 });

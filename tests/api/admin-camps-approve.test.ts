@@ -9,6 +9,10 @@ import { makeContext, readJson } from '../helpers/context';
 // referencing an outer const here throws a temporal-dead-zone error.
 vi.mock('../../src/lib/camps-db', () => ({
   approveCamp: vi.fn(),
+  CampApprovalBlockedError: class CampApprovalBlockedError extends Error {
+    code: string;
+    constructor(code: string) { super(code); this.code = code; }
+  },
   getCampById: vi.fn(),
   upsertDomainQuality: vi.fn().mockResolvedValue(undefined),
 }));
@@ -81,6 +85,17 @@ describe('POST /api/admin/camps/:id/approve', () => {
     const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS } });
     const res = await POST(ctx);
     expect(res.status).toBe(404);
+  });
+
+  it('failure path: a domain approval guard returns a no-store conflict without quality credit', async () => {
+    const { CampApprovalBlockedError } = await import('../../src/lib/camps-db');
+    (campsDb.approveCamp as any).mockRejectedValue(new CampApprovalBlockedError('session_ended' as any));
+    const ctx = makeContext({ request: adminRequest(), params: { id: 'camp_1' }, env: { DB: {}, ADMIN_EMAILS } });
+    const res = await POST(ctx);
+    expect(res.status).toBe(409);
+    expect(res.headers.get('cache-control')).toBe('no-store');
+    expect(await readJson(res)).toEqual({ ok: false, error: 'camp is not eligible for approval', code: 'session_ended' });
+    expect(campsDb.upsertDomainQuality).not.toHaveBeenCalled();
   });
 
   it('failure path: a cross-origin request is rejected even with valid admin auth', async () => {

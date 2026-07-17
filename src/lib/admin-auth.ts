@@ -16,12 +16,10 @@
 // service configuration error, never permission to trust unsigned identity.
 //
 // The allowlist is read from the ADMIN_EMAILS env var (comma-separated) and is
-// enforced in both modes. Falls back to a single hardcoded address only if the
-// var is missing, so local dev and build never fail outright.
+// enforced in both modes. A missing or empty allowlist is a deployment
+// configuration error and fails closed; it must never restore a former admin.
 
 import { verifyAccessJwt, type AccessJwtConfig } from './access-jwt';
-
-const FALLBACK_ALLOWED_EMAILS = 'parentcoachplaybook@gmail.com';
 
 function parseAllowList(raw: string): Set<string> {
   return new Set(
@@ -37,6 +35,10 @@ export interface AdminContext {
 
 export interface AdminAuthEnv extends AccessJwtConfig {
   ADMIN_EMAILS?: string;
+}
+
+export function adminAllowListConfigured(env?: AdminAuthEnv): boolean {
+  return parseAllowList(env?.ADMIN_EMAILS ?? '').size > 0;
 }
 
 /**
@@ -121,6 +123,12 @@ export async function requireAdmin(
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
     });
   }
+  if (!adminAllowListConfigured(env)) {
+    return new Response(JSON.stringify({ ok: false, error: 'admin allowlist not configured' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    });
+  }
   const { email, verified } = await getAdminIdentity(request, env);
   if (!email) {
     return new Response(JSON.stringify({ ok: false, error: 'unauthenticated' }), {
@@ -128,7 +136,7 @@ export async function requireAdmin(
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
     });
   }
-  const allowList = parseAllowList(env?.ADMIN_EMAILS ?? FALLBACK_ALLOWED_EMAILS);
+  const allowList = parseAllowList(env!.ADMIN_EMAILS!);
   if (!allowList.has(email)) {
     return new Response(JSON.stringify({ ok: false, error: 'forbidden' }), {
       status: 403,

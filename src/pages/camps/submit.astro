@@ -36,7 +36,7 @@ const sportOptions = CAMP_SPORTS;
         Tell us about a <em class="text-rust">camp</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
-        Whether you run it or your kid attended last summer. We review every submission before it goes live, usually within a few days.
+        Whether you run it or your kid attended last summer. Every submission stays pending until it is reviewed; review timing varies with source evidence and queue capacity.
       </p>
       <p class="font-display italic text-ink-soft text-sm mt-3 max-w-2xl font-medium">
         Don't have the exact dates or address handy? <a href="/camps/suggest/" class="text-rust hover:underline">Just point us at the organization instead</a>, we'll research it.
@@ -210,7 +210,7 @@ const sportOptions = CAMP_SPORTS;
             <input name="submitted_by_email" type="email" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
           </label>
           <p class="font-display italic text-ink-soft text-xs font-medium">
-            We use it to ask follow-ups. We do not subscribe you to anything.
+            We use it to review and follow up on this listing. We do not subscribe you to marketing. See our <a href="/disclosure/" class="text-rust hover:underline">privacy notice</a> and <a href="/terms/" class="text-rust hover:underline">submission terms</a>.
           </p>
         </fieldset>
 
@@ -232,11 +232,19 @@ const sportOptions = CAMP_SPORTS;
         status.textContent = 'Submitting...';
         status.style.color = '#5F5448';
 
+        const storageKey = 'pcd:camps:submit:idempotency-key';
+        let idempotencyKey = sessionStorage.getItem(storageKey);
+        if (!idempotencyKey) {
+          idempotencyKey = crypto.randomUUID();
+          sessionStorage.setItem(storageKey, idempotencyKey);
+        }
         const fd = new FormData(form);
+        fd.set('idempotency_key', idempotencyKey);
         try {
           const res = await fetch('/api/camps/submit', {
             method: 'POST',
             body: fd,
+            headers: { 'Idempotency-Key': idempotencyKey },
           });
           const data = (await res.json()) as {
             ok: boolean;
@@ -258,7 +266,7 @@ const sportOptions = CAMP_SPORTS;
               return;
             }
             fd.set('confirm_duplicate', 'true');
-            const res2 = await fetch('/api/camps/submit', { method: 'POST', body: fd });
+            const res2 = await fetch('/api/camps/submit', { method: 'POST', body: fd, headers: { 'Idempotency-Key': idempotencyKey } });
             const data2 = (await res2.json()) as { ok: boolean; error?: string };
             if (!res2.ok || !data2.ok) {
               status.textContent = data2.error ? `Couldn't submit: ${data2.error}` : 'Something went wrong. Try again.';
@@ -266,6 +274,7 @@ const sportOptions = CAMP_SPORTS;
               return;
             }
             form.reset();
+            sessionStorage.removeItem(storageKey);
             status.textContent = 'Submitted. We will review and follow up if needed.';
             status.style.color = '#5C7459';
             return;
@@ -277,6 +286,7 @@ const sportOptions = CAMP_SPORTS;
             return;
           }
           form.reset();
+          sessionStorage.removeItem(storageKey);
           status.textContent = 'Submitted. We will review and follow up if needed.';
           status.style.color = '#5C7459';
         } catch (err) {

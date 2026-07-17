@@ -1,169 +1,181 @@
-// Tiny Cloudflare Worker. Three jobs.
+// Parent Coach Desk camps-sweep scheduler.
 //
-// 1. On the cron trigger declared in wrangler.toml, POST the Pages deploy hook
-//    so the site rebuilds and any queued post whose publishedAt has now passed
-//    goes live.
-//
-// 2. Same cron, fire the camps-quality sweep on the Pages app.
-//
-// 3. On a manual GET with the right ?key=, do (1).
-//
-// FAILURE POLICY (2026-07-15). This worker used to swallow a missing CRON_KEY
-// or SWEEP_URL with console.warn and return, so a misconfigured sweep looked
-// exactly like a healthy one. It cost roughly nine weeks: URL-health
-// timestamps in the live activity-radar D1 froze at 2026-05-09 and nothing
-// said a word. The rule now: config that is missing is a hard failure, not a
-// skip. Every failure path below throws, which marks the cron invocation
-// errored in the Cloudflare dashboard, surfaces in `npx wrangler tail`, and is
-// alertable via Workers observability. Loud beats quiet.
+// One job: fire the camps-quality sweep on the production Worker. The obsolete
+// Pages deploy hook was removed after the Pages-to-Workers cutover. Publishing
+// is a separate protected workflow.
 
 export interface Env {
-  DEPLOY_HOOK_URL: string;
-  MANUAL_TRIGGER_KEY: string;
   // Secret. Must match the CRON_KEY on the site app that serves SWEEP_URL.
   CRON_KEY?: string;
-  // Plain var, set in wrangler.toml — it is a public URL, not a secret. Kept
-  // optional in the type only so a bad deploy is caught by the check below
-  // instead of failing to typecheck against an older config.
+  // Plain public URL set in wrangler.toml. Optional in the type so a bad deploy
+  // is caught explicitly and recorded as a failed scheduled invocation.
   SWEEP_URL?: string;
+  // Canonical Forge Command runtime database. A scheduled mutation is not
+  // allowed to run unless its attempt can first be recorded durably.
+  FORGE_DB?: D1Database;
 }
 
-async function fireDeploy(env: Env, source: string): Promise<Response> {
-  if (!env.DEPLOY_HOOK_URL) {
-    console.error(`[${source}] DEPLOY_HOOK_URL secret is missing`);
-    return new Response('DEPLOY_HOOK_URL not configured', { status: 500 });
-  }
-  const res = await fetch(env.DEPLOY_HOOK_URL, { method: 'POST' });
-  const body = await res.text();
-  console.log(`[${source}] deploy hook returned ${res.status}: ${body}`);
-  return new Response(
-    JSON.stringify({ source, status: res.status, body }),
-    { status: res.ok ? 200 : 502, headers: { 'content-type': 'application/json' } },
-  );
-}
+const WORKFLOW_ID = 'pcd-camps-sweep';
 
-// Throws on any failure. The caller lets it propagate so the cron run is
-// recorded as errored rather than quietly succeeding.
-async function fireCampsSweep(env: Env, source: string): Promise<void> {
-  // 1. Config gate. Missing config is a failure, never a skip.
+type SweepMetrics = {
+  approved_future_count: number;
+  stale_archived: number | null;
+  stale_archive_has_more: boolean;
+};
+
+// Throws on every failure. The scheduled handler awaits this promise so
+// Cloudflare records the invocation as failed instead of silently green.
+export async function fireCampsSweep(env: Env, source: string): Promise<SweepMetrics> {
   const missing: string[] = [];
-  if (!env.CRON_KEY) missing.push('CRON_KEY (secret: npx wrangler secret put CRON_KEY)');
+  if (!env.CRON_KEY) missing.push('CRON_KEY (secret: wrangler secret put CRON_KEY)');
   if (!env.SWEEP_URL) missing.push('SWEEP_URL (var: set in worker-cron/wrangler.toml)');
   if (missing.length > 0) {
     const msg =
-      `[${source}] CAMPS SWEEP MISCONFIGURED — not run. Missing: ${missing.join(', ')}. ` +
-      `The camps URL-health sweep and the stale-camp archive are both DOWN until this is set. ` +
-      `This is the silent-skip that froze URL health from 2026-05-09.`;
+      `[${source}] CAMPS SWEEP MISCONFIGURED - not run. Missing: ${missing.join(', ')}. ` +
+      'The URL-health sweep and stale-camp archive are down until configuration is restored.';
     console.error(msg);
     throw new Error(msg);
   }
 
-  // 2. Call the sweep.
-  let res: Response;
+  // The configuration gate above proves both values. Copy them into narrowed
+  // locals so later async work cannot observe optional properties.
+  const sweepUrl = env.SWEEP_URL as string;
+  const cronKey = env.CRON_KEY as string;
+
+  let response: Response;
   try {
-    res = await fetch(env.SWEEP_URL as string, {
+    response = await fetch(sweepUrl, {
       method: 'POST',
       headers: {
-        'x-cron-key': env.CRON_KEY as string,
+        'x-cron-key': cronKey,
         'content-type': 'application/json',
-        // The sweep route sits behind Astro's cross-site POST protection, which
-        // rejects a POST with no Origin before the route's own auth runs.
-        origin: new URL(env.SWEEP_URL as string).origin,
+        origin: new URL(sweepUrl).origin,
       },
     });
-  } catch (e) {
-    const msg = `[${source}] CAMPS SWEEP UNREACHABLE at ${env.SWEEP_URL}: ${String(e)}`;
+  } catch (error) {
+    const msg = `[${source}] CAMPS SWEEP UNREACHABLE at ${sweepUrl}: ${String(error)}`;
     console.error(msg);
     throw new Error(msg);
   }
 
-  const body = await res.text();
-
-  // 3. A non-2xx is a failure. 403 means CRON_KEY here and CRON_KEY on the site
-  //    app disagree — the single most likely misconfiguration, and previously
-  //    logged as a bland console.log nobody would ever read.
-  if (!res.ok) {
-    const hint =
-      res.status === 403
-        ? ' — CRON_KEY does not match the value on the site app. Rotate both together.'
-        : '';
-    const msg = `[${source}] CAMPS SWEEP FAILED: HTTP ${res.status}${hint}. Body: ${body}`;
+  // The response is a bounded first-party JSON status document.
+  const body = await response.text();
+  if (!response.ok) {
+    const hint = response.status === 403 ? ' - CRON_KEY values do not match.' : '';
+    const msg = `[${source}] CAMPS SWEEP FAILED: HTTP ${response.status}${hint} Body: ${body}`;
     console.error(msg);
     throw new Error(msg);
   }
 
-  // 4. A 200 with ok:false is still a failure. Parse and check.
-  let parsed: { ok?: boolean; error?: string; approved_future_count?: number | null } | null = null;
+  let parsed: {
+    ok?: boolean;
+    error?: string;
+    approved_future_count?: number | null;
+    stale_archive_has_more?: boolean;
+    stale_archived?: number;
+  };
   try {
-    parsed = JSON.parse(body);
+    parsed = JSON.parse(body) as typeof parsed;
   } catch {
-    const msg = `[${source}] CAMPS SWEEP returned non-JSON on a ${res.status}: ${body.slice(0, 300)}`;
+    const msg = `[${source}] CAMPS SWEEP returned non-JSON: ${body.slice(0, 300)}`;
     console.error(msg);
     throw new Error(msg);
   }
 
-  if (parsed?.ok !== true) {
-    const msg = `[${source}] CAMPS SWEEP returned ok:false — ${parsed?.error ?? 'no error given'}. Body: ${body}`;
+  if (parsed.ok !== true) {
+    const msg = `[${source}] CAMPS SWEEP returned ok:false - ${parsed.error ?? 'no error given'}`;
     console.error(msg);
     throw new Error(msg);
   }
-
-  // 5. Blackout guard. The sweep route logs this too, but it logs into the site
-  //    app's stream; this worker is the thing on a schedule, so it repeats the
-  //    alarm here where the cron failure is actually visible.
   if (parsed.approved_future_count === 0) {
-    const msg =
-      `[${source}] CAMPS ALERT: approved+future camp count is 0. /camps/ and the camps sitemap ` +
-      `are serving empty. Check pcd_status on the programs table in the activity-radar D1.`;
+    const msg = `[${source}] CAMPS ALERT: approved+future camp count is 0.`;
     console.error(msg);
     throw new Error(msg);
   }
 
-  console.log(`[${source}] camps sweep ok: ${body}`);
+  if (parsed.stale_archive_has_more) {
+    console.warn(JSON.stringify({
+      event: 'camps_sweep_backlog',
+      code: 'stale_archive_has_more',
+      archived: parsed.stale_archived ?? null,
+      source,
+    }));
+  }
+
+  console.log(JSON.stringify({ event: 'camps_sweep_ok', source, approvedFuture: parsed.approved_future_count }));
+  return {
+    approved_future_count: parsed.approved_future_count as number,
+    stale_archived: parsed.stale_archived ?? null,
+    stale_archive_has_more: parsed.stale_archive_has_more === true,
+  };
+}
+
+export async function runScheduledSweep(env: Env, scheduledTime: number): Promise<void> {
+  if (!env.FORGE_DB) throw new Error('[cron] CAMPS SWEEP MISCONFIGURED - FORGE_DB binding missing.');
+
+  const scheduledAt = new Date(scheduledTime).toISOString();
+  const attemptId = `${WORKFLOW_ID}:${scheduledAt}`;
+  const startedAt = new Date().toISOString();
+  const opened = await env.FORGE_DB.prepare(
+    `INSERT INTO scheduler_attempts
+       (attempt_id, venture, workflow_id, trigger_type, scheduled_at, started_at, status)
+     VALUES (?, 'pcd', ?, 'cron', ?, ?, 'running')
+     ON CONFLICT(attempt_id) DO NOTHING`,
+  ).bind(attemptId, WORKFLOW_ID, scheduledAt, startedAt).run();
+
+  if (Number(opened.meta?.changes ?? 0) !== 1) {
+    console.warn(JSON.stringify({ event: 'scheduler_attempt_duplicate', workflowId: WORKFLOW_ID, attemptId }));
+    return;
+  }
+
+  try {
+    const metrics = await fireCampsSweep(env, 'cron');
+    const completed = await env.FORGE_DB.prepare(
+      `UPDATE scheduler_attempts
+          SET finished_at = ?, status = 'succeeded', result_code = 'sweep_completed',
+              metrics_json = ?, updated_at = ?
+        WHERE attempt_id = ? AND status = 'running'`,
+    ).bind(new Date().toISOString(), JSON.stringify(metrics), new Date().toISOString(), attemptId).run();
+    if (Number(completed.meta?.changes ?? 0) !== 1) {
+      throw new Error('[cron] CAMPS SWEEP completed but its durable attempt could not be finalized.');
+    }
+  } catch (error) {
+    try {
+      await env.FORGE_DB.prepare(
+        `UPDATE scheduler_attempts
+            SET finished_at = ?, status = 'failed', result_code = 'sweep_failed', updated_at = ?
+          WHERE attempt_id = ? AND status = 'running'`,
+      ).bind(new Date().toISOString(), new Date().toISOString(), attemptId).run();
+    } catch {
+      console.error(JSON.stringify({ event: 'scheduler_attempt_finalize_failed', workflowId: WORKFLOW_ID, attemptId }));
+    }
+    throw error;
+  }
 }
 
 export default {
-  async fetch(req: Request, env: Env): Promise<Response> {
-    const url = new URL(req.url);
-    const key = url.searchParams.get('key');
-    if (!env.MANUAL_TRIGGER_KEY || key !== env.MANUAL_TRIGGER_KEY) {
-      return new Response('Forbidden', { status: 403 });
-    }
-    return fireDeploy(env, 'manual');
-  },
-
-  async scheduled(_event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
-    // fireDeploy returns a Response (the fetch handler needs one) rather than
-    // throwing, so on the cron path a 502 from the deploy hook would resolve
-    // and count as a healthy run. Wrap it so a bad deploy fails the invocation
-    // the same way a bad sweep does.
-    const deploy = async (): Promise<void> => {
-      const res = await fireDeploy(env, 'cron');
-      if (!res.ok) {
-        const msg = `[cron] DEPLOY HOOK FAILED: HTTP ${res.status}. Body: ${await res.text()}`;
-        console.error(msg);
-        throw new Error(msg);
-      }
-    };
-
-    // Awaited, not ctx.waitUntil'd. waitUntil detaches the work from the
-    // handler's promise, so a rejection inside it never marks the cron run
-    // failed. Awaiting both is what makes a broken sweep show up as a red run
-    // instead of a green one.
-    const results = await Promise.allSettled([
-      deploy(),
-      fireCampsSweep(env, 'cron'),
-    ]);
-
-    // Run both jobs even if the first fails (allSettled), then fail the whole
-    // invocation if either did. The deploy and the sweep are independent; one
-    // being broken should never silently cancel the other.
-    const failures = results.filter((r): r is PromiseRejectedResult => r.status === 'rejected');
-    if (failures.length > 0) {
-      throw new Error(
-        `cron: ${failures.length} of ${results.length} job(s) failed. ` +
-          failures.map((f) => String(f.reason)).join(' | '),
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const pathname = new URL(request.url).pathname;
+    if (pathname === '/ready') {
+      const ready = Boolean(env.CRON_KEY && env.SWEEP_URL && env.FORGE_DB);
+      return Response.json(
+        {
+          ok: ready,
+          service: 'pcd-camps-sweep-scheduler',
+          check: 'readiness',
+          ...(ready ? {} : { code: 'required_configuration_missing' }),
+        },
+        { status: ready ? 200 : 503, headers: { 'Cache-Control': 'no-store' } },
       );
     }
+
+    return Response.json(
+      { ok: true, service: 'pcd-camps-sweep-scheduler', check: 'liveness' },
+      { headers: { 'Cache-Control': 'no-store' } },
+    );
+  },
+
+  async scheduled(event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
+    await runScheduledSweep(env, event.scheduledTime);
   },
 };

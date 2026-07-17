@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { env as cfEnv } from 'cloudflare:workers';
+import { requireAdmin } from '../../lib/admin-auth';
+import { runRetentionAudit } from '../../lib/retention-audit';
+
+export const prerender = false;
+const auth = await requireAdmin(Astro.request);
+if (auth instanceof Response) return auth;
+const env = cfEnv as { PCD_OPS_DB?: D1Database } | undefined;
+const results = env?.PCD_OPS_DB ? await runRetentionAudit(env.PCD_OPS_DB) : [];
+---
+<BaseLayout title="Retention aging report" noindex={true}>
+  <section class="border-b border-bone"><div class="container-px py-10">
+    <p class="font-display italic text-rust mb-2">Admin · Privacy operations</p>
+    <h1 class="font-display text-ink text-4xl font-medium">Retention aging report</h1>
+    <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only counts of data domains crossing a review horizon. A row never authorizes deletion. Approved schedules, legal holds, backup propagation, a dry run, recovery proof, and explicit production approval remain required.</p>
+    <p class="font-mono text-xs text-ink-soft mt-3">Authenticated as {auth.email}</p>
+  </div></section>
+  <section class="container-px py-10">
+    {!env?.PCD_OPS_DB ? <p class="text-rust">Operational database unavailable. No retention conclusion can be drawn.</p> : <div class="overflow-x-auto"><table class="w-full border-collapse text-left">
+      <thead><tr class="border-b border-bone"><th class="p-3">Domain</th><th class="p-3">Table</th><th class="p-3">Horizon</th><th class="p-3">Total</th><th class="p-3">Past horizon</th><th class="p-3">Oldest</th><th class="p-3">State</th></tr></thead>
+      <tbody>{results.map((row) => <tr class="border-b border-bone align-top">
+        <td class="p-3">{row.domain}</td><td class="p-3 font-mono text-xs">{row.table}</td><td class="p-3">{row.reviewAfterDays} days</td>
+        <td class="p-3">{row.totalPersonalRecords ?? '—'}</td><td class="p-3">{row.recordsPastReviewHorizon ?? '—'}</td><td class="p-3">{row.oldestRecordAt ?? '—'}</td>
+        <td class="p-3">{!row.tablePresent ? 'Not installed' : row.error ? 'Query unavailable' : row.disposition === 'proposal-only' ? 'Policy proposal' : 'Counsel decision required'}</td>
+      </tr>)}</tbody>
+    </table></div>}
+  </section>
+</BaseLayout>
