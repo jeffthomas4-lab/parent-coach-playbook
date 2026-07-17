@@ -12,6 +12,8 @@ describe('recovery batch export runner', () => {
     expect(script).toContain('forge-command');
     expect(script).toContain('parent-coach-desk-ops-production');
     expect(script).toContain('wrangler d1 export');
+    expect(script).toContain('2>&1');
+    expect(script).toContain("RequiredMarker = 'd1_migrations'");
     expect(script).toContain('build-recovery-batch-manifest.mjs');
     expect(script).not.toMatch(/r2\s+object\s+put|aws\s+s3|b2\s+upload|d1\s+time-travel\s+restore/i);
   });

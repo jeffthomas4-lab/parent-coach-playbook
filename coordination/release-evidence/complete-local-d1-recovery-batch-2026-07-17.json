@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-07-17T06:47:48.899343Z",
+  "environment": "production_source_to_isolated_local_recovery",
+  "batch_id": "2026-07-17-064545Z",
+  "batch_manifest": {
+    "artifact_count": 3,
+    "total_bytes": 257390896,
+    "provider_upload_attempted": false,
+    "retention_changed": false,
+    "offsite_copy_exists": false
+  },
+  "d1_exports": [
+    {
+      "artifact_id": "activity_radar",
+      "bytes": 257249764,
+      "sha256": "c4fc1f20454c6c000849e86505293bbf2ea1ad452e7088376296ec8d6d0872c9",
+      "isolated_restore": {
+        "integrity_check": "ok",
+        "foreign_key_violation_count": 0,
+        "aggregate_counts": { "organizations": 198287, "programs": 2434 }
+      }
+    },
+    {
+      "artifact_id": "forge_command",
+      "bytes": 140892,
+      "sha256": "ef8e41e385f37bacb8eb822476e522bc9a96b8a1504fb04743f2f5d5c9fb6f61",
+      "isolated_restore": {
+        "integrity_check": "ok",
+        "foreign_key_violation_count": 0,
+        "aggregate_table_count": 12
+      }
+    },
+    {
+      "artifact_id": "pcd_ops",
+      "bytes": 240,
+      "sha256": "12b4d609d563571a2bbe9615dadd52fa835ee6f0e29cdf77ef6c64ca8ec3cb68",
+      "isolated_restore": {
+        "integrity_check": "ok",
+        "foreign_key_violation_count": 0,
+        "aggregate_counts": { "d1_migrations": 0 },
+        "expected_empty_pre_migration_state": true
+      }
+    }
+  ],
+  "safety_boundary": {
+    "remote_restore_executed": false,
+    "production_rows_written": 0,
+    "r2_objects_exported": 0,
+    "provider_credentials_recorded": false,
+    "export_contents_or_customer_rows_recorded": false
+  },
+  "remaining_requirement": "Create an independent immutable offsite copy of this complete D1 batch, include the required R2 inventory/payload scope, retrieve it with a separate verifier identity, and repeat separate-day proving runs before the backup gate can pass."
+}

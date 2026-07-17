@@ -17,6 +17,7 @@ Close the release-evidence database-backup and R2-recovery gates with an indepen
 - The recorded fresh export is 257,196,189 bytes and was locally restored successfully; release evidence still explicitly requires immutable offsite storage before the backup gate can pass.
 - Cloudflare R2 bucket locks are useful storage controls, but an account administrator can remove lock rules. They do not meet the independent-account requirement when used as the only recovery copy.
 - `scripts/build-recovery-batch-manifest.mjs` now builds a checksum-verified, provider-neutral manifest for approved local exports. `scripts/backup-pcd-recovery-batch.ps1` can make a new local batch for all three authoritative D1 databases only after an explicit `-Confirm`; otherwise it is a no-side-effect plan. Neither script uploads, restores, schedules, or changes provider configuration. Both are documented in `scripts/RECOVERY-BATCH.md` and covered by focused tests.
+- A 2026-07-17 complete local batch exported all three production D1 databases (257,390,896 aggregate bytes) and restored each one into isolated local SQLite with `integrity_check=ok` and zero foreign-key violations. This improves source/recovery proof but remains same-device, local-only evidence; it does not close the independent-backup or R2-recovery gates. See `coordination/release-evidence/complete-local-d1-recovery-batch-2026-07-17.json`.
 
 ## Recommended design
 

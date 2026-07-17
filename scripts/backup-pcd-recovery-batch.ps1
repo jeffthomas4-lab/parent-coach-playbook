@@ -19,9 +19,11 @@ if ($BatchId -notmatch '^[A-Za-z0-9][A-Za-z0-9._-]{2,127}$') {
 }
 
 $databases = @(
-  @{ Id = 'activity_radar'; Name = 'activity-radar'; MinimumBytes = 1MB },
-  @{ Id = 'forge_command'; Name = 'forge-command'; MinimumBytes = 1KB },
-  @{ Id = 'pcd_ops'; Name = 'parent-coach-desk-ops-production'; MinimumBytes = 1KB }
+  @{ Id = 'activity_radar'; Name = 'activity-radar'; MinimumBytes = 1MB; RequiredMarker = $null },
+  @{ Id = 'forge_command'; Name = 'forge-command'; MinimumBytes = 1KB; RequiredMarker = $null },
+  # This dedicated database is intentionally empty apart from its migration
+  # ledger. Its complete schema export is smaller than a general 1 KB floor.
+  @{ Id = 'pcd_ops'; Name = 'parent-coach-desk-ops-production'; MinimumBytes = 1; RequiredMarker = 'd1_migrations' }
 )
 
 if ($PlanOnly -or -not $Confirm) {
@@ -53,8 +55,15 @@ try {
     $complete = $false
     for ($attempt = 1; $attempt -le 3 -and -not $complete; $attempt++) {
       if (Test-Path -LiteralPath $partial) { Remove-Item -LiteralPath $partial -Force }
-      & npx.cmd wrangler d1 export $database.Name --remote --config wrangler.production.jsonc --output $partial
-      if ($LASTEXITCODE -eq 0 -and (Test-Path -LiteralPath $partial) -and (Get-Item -LiteralPath $partial).Length -ge $database.MinimumBytes) {
+      # Wrangler prints a temporary signed download URL while exporting. Capture
+      # all provider output so it cannot reach a terminal transcript or chat.
+      $providerOutput = & npx.cmd wrangler d1 export $database.Name --remote --config wrangler.production.jsonc --output $partial 2>&1
+      $sizeOk = (Test-Path -LiteralPath $partial) -and (Get-Item -LiteralPath $partial).Length -ge $database.MinimumBytes
+      $markerOk = $false
+      if ($sizeOk) {
+        $markerOk = -not $database.RequiredMarker -or ((Get-Content -LiteralPath $partial -Raw) -match [regex]::Escape($database.RequiredMarker))
+      }
+      if ($LASTEXITCODE -eq 0 -and $sizeOk -and $markerOk) {
         $complete = $true
       }
     }
