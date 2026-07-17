@@ -9,6 +9,7 @@
 
 import type { APIRoute } from 'astro';
 import { requireAdmin, requireSameOrigin } from '../../../../lib/admin-auth';
+import { BRANCH, COLLECTION_PATHS, REPO } from '../../../../lib/publish';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -18,25 +19,6 @@ const json = (body: unknown, status = 200) =>
     status,
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });
-
-// Map content collections to their on-disk directories.
-const COLLECTION_PATHS: Record<string, string> = {
-  articles:        'src/content/articles',
-  body:            'src/content/body',
-  pathways:        'src/content/pathways',
-  seasonCalendars: 'src/content/seasonCalendars',
-  guides:          'src/content/guides',
-  resources:       'src/content/resources',
-  coachingTips:    'src/content/coachingTips',
-  recruiting:      'src/content/recruiting',
-  adaptive:        'src/content/adaptive',
-  rules:           'src/content/rules',
-  scripts:         'src/content/scripts',
-  decisions:       'src/content/decisions',
-};
-
-const REPO = 'jeffthomas4-lab/parent-coach-desk';
-const BRANCH = 'main';
 
 // UTF-8 safe base64 helpers — atob/btoa alone only handle Latin-1.
 function encodeBase64(str: string): string {
@@ -178,9 +160,13 @@ export const POST: APIRoute = async ({ request }) => {
     { headers: ghHeaders },
   );
   if (!getRes.ok) {
-    const errText = await getRes.text();
+    console.error(JSON.stringify({
+      event: 'github_editorial_approval_rejected',
+      operation: 'read',
+      status: getRes.status,
+    }));
     return json(
-      { ok: false, error: `github get failed: ${getRes.status}`, detail: errText },
+      { ok: false, error: 'github_read_rejected' },
       getRes.status === 404 ? 404 : 502,
     );
   }
@@ -216,11 +202,12 @@ export const POST: APIRoute = async ({ request }) => {
     },
   );
   if (!putRes.ok) {
-    const errText = await putRes.text();
-    return json(
-      { ok: false, error: `github put failed: ${putRes.status}`, detail: errText },
-      502,
-    );
+    console.error(JSON.stringify({
+      event: 'github_editorial_approval_rejected',
+      operation: 'write',
+      status: putRes.status,
+    }));
+    return json({ ok: false, error: 'github_write_rejected' }, 502);
   }
 
   return json({
