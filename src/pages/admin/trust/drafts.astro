@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { listPendingTrustResponseDrafts, type TrustResponseDraft } from '../../../lib/trust-cases';
 import { env as cfEnv } from 'cloudflare:workers';
@@ -14,7 +14,7 @@ try { if (env?.PCD_OPS_DB) drafts = await listPendingTrustResponseDrafts(env.PCD
 catch { error = 'Response-draft table unavailable or query failed.'; }
 const expired = (value: string) => Date.parse(value) <= Date.now();
 ---
-<BaseLayout title="Trust response drafts" description="Protected response draft approval queue" noindex={true}>
+<AdminLayout title="Trust response drafts" description="Protected response draft approval queue" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · <a href="/admin/trust/" class="hover:underline">Trust</a> · Drafts</p>
     <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Pending response drafts</h1>
@@ -37,4 +37,4 @@ const expired = (value: string) => Date.parse(value) <= Date.now();
       </li>)}</ul>
     )}
   </div></section>
-</BaseLayout>
+</AdminLayout>

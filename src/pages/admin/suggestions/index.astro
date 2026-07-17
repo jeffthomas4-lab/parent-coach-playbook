@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { listPendingOrgSuggestions, type OrgSuggestion } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
@@ -25,7 +25,7 @@ if (env?.DB) {
 const fmt = (s: string) =>
   new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 ---
-<BaseLayout title="Suggested organizations" description="Admin queue for suggested organizations" noindex={true}>
+<AdminLayout title="Suggested organizations" description="Admin queue for suggested organizations" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -84,4 +84,4 @@ const fmt = (s: string) =>
       )}
     </div>
   </section>
-</BaseLayout>
+</AdminLayout>

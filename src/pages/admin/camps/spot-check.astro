@@ -1,8 +1,7 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { listApprovedUnverifiedCamps, setVerified, rejectCamp, type Camp } from '../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../lib/admin-auth';
-import AdminBar from '../../../components/AdminBar.astro';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR. Pulls live from D1 each request. Behind Cloudflare Access.
@@ -70,7 +69,7 @@ const fmtRange = (start: string, end: string) => {
   return `${MONTHS[sm - 1]} ${sd}–${MONTHS[em - 1]} ${ed}, ${ey}`;
 };
 ---
-<BaseLayout title="Spot check" description="Approved-but-unverified camps awaiting personal review" noindex={true}>
+<AdminLayout title="Spot check" description="Approved-but-unverified camps awaiting personal review" email={adminEmail} detail={`${camps.length} camps awaiting spot check.`}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -82,7 +81,6 @@ const fmtRange = (start: string, end: string) => {
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
         Camps that are live on the site but haven't been personally verified yet. Click each one's website link, confirm the details still match, then mark verified. Once verified the camp drops off this list and gets the Verified ✓ badge on the public page.
       </p>
-      <AdminBar email={adminEmail} detail={`${camps.length} camps awaiting spot check.`} />
       {actionBanner && (
         <p class={`font-display text-sm mt-2 font-medium ${actionBanner.ok ? 'text-sage' : 'text-rust'}`}>
           {actionBanner.text}
@@ -143,4 +141,4 @@ const fmtRange = (start: string, end: string) => {
       )}
     </div>
   </section>
-</BaseLayout>
+</AdminLayout>

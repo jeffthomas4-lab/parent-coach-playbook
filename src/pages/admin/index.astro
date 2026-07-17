@@ -1,6 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import AdminBar from '../../components/AdminBar.astro';
+import AdminLayout from '../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -69,7 +68,7 @@ const sections = [
 ];
 ---
 
-<BaseLayout title="Admin desk" description="Parent Coach Desk administration" noindex={true}>
+<AdminLayout title="Admin desk" description="Parent Coach Desk administration" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">Admin</p>
@@ -79,7 +78,6 @@ const sections = [
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
         Choose a workspace. Cloudflare Access protects this page and every linked administrative route.
       </p>
-      <AdminBar email={adminEmail} />
     </div>
   </section>
 
@@ -101,4 +99,4 @@ const sections = [
       </ul>
     </div>
   </section>
-</BaseLayout>
+</AdminLayout>

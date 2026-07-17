@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import {
   listPendingCamps,
   listPendingReviews,
@@ -92,7 +92,7 @@ const fmtRange = (start: string, end: string) => {
 };
 ---
 
-<BaseLayout title="Admin queue" description="Unified moderation dashboard" noindex={true}>
+<AdminLayout title="Admin queue" description="Unified moderation dashboard" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -384,7 +384,7 @@ const fmtRange = (start: string, end: string) => {
       </section>
     </>
   )}
-</BaseLayout>
+</AdminLayout>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {

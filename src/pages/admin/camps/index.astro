@@ -1,8 +1,7 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { listPendingCamps, type Camp } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
-import AdminBar from '../../../components/AdminBar.astro';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR. Pulls live from D1 each request. Wrap in Cloudflare Access policy.
@@ -35,7 +34,7 @@ const fmtRange = (start: string, end: string) => {
   return `${MONTHS[sm - 1]} ${sd}–${MONTHS[em - 1]} ${ed}, ${ey}`;
 };
 ---
-<BaseLayout title="Camps moderation" description="Admin queue" noindex={true}>
+<AdminLayout title="Camps moderation" description="Admin queue" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -44,7 +43,6 @@ const fmtRange = (start: string, end: string) => {
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Pending camps
       </h1>
-      <AdminBar email={adminEmail} />
     </div>
   </section>
 
@@ -87,4 +85,4 @@ const fmtRange = (start: string, end: string) => {
       )}
     </div>
   </section>
-</BaseLayout>
+</AdminLayout>

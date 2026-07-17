@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { listActiveTrustCases, type TrustCase } from '../../../lib/trust-cases';
 import { env as cfEnv } from 'cloudflare:workers';
@@ -16,7 +16,7 @@ const now = Date.now();
 const ageHours = (value: string) => Math.max(0, Math.floor((now - Date.parse(value)) / 3_600_000));
 const overdue = (value: string) => Number.isFinite(Date.parse(value)) && Date.parse(value) < now;
 ---
-<BaseLayout title="Trust cases" description="Protected correction, removal, and rights-request queue" noindex={true}>
+<AdminLayout title="Trust cases" description="Protected correction, removal, and rights-request queue" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · Trust</p>
     <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Open trust cases</h1>
@@ -53,4 +53,4 @@ const overdue = (value: string) => Number.isFinite(Date.parse(value)) && Date.pa
       </li>)}</ul>
     )}
   </div></section>
-</BaseLayout>
+</AdminLayout>

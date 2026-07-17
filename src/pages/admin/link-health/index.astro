@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -46,7 +46,7 @@ const fmtDate = (s: string | null | undefined) =>
 
 const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' : s;
 ---
-<BaseLayout title="Link health" description="External-link health dashboard.">
+<AdminLayout title="Link health" description="External-link health dashboard." email={auth.email}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">Admin · Link health</p>
@@ -180,4 +180,4 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
       });
     }
   </script>
-</BaseLayout>
+</AdminLayout>

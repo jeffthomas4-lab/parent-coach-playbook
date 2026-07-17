@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { getCampById, getSubmitter, setFeatured, type Camp, type Submitter } from '../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../lib/admin-auth';
 import { CAMP_SPORTS } from '../../../data/site';
@@ -61,7 +61,7 @@ const statusColor: Record<string, string> = {
   rejected: '#9E5228',
 };
 ---
-<BaseLayout title={`Review: ${camp.name}`} description="Admin review" noindex={true}>
+<AdminLayout title={`Review: ${camp.name}`} description="Admin review" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -365,4 +365,4 @@ const statusColor: Record<string, string> = {
       </aside>
     </div>
   </section>
-</BaseLayout>
+</AdminLayout>

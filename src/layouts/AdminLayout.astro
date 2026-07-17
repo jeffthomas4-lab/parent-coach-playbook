@@ -1,0 +1,29 @@
+---
+// Shared chrome for authenticated, server-rendered /admin pages.
+//
+// Wraps BaseLayout (always noindex) and renders the AdminBar once at the top,
+// so every admin subsection shows the same signature-verified Cloudflare Access
+// identity and the same Log out control. Authentication itself stays in each
+// page's frontmatter — it must be able to short-circuit with a 503 Response
+// before any render — so this layout only ever receives an already-verified
+// email. Static admin pages (editorial, preview) do NOT use this layout; their
+// posture is governed separately by the Access wildcard policy.
+import BaseLayout from './BaseLayout.astro';
+import AdminBar from '../components/AdminBar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Signature-verified Access email from requireAdmin(); null only in the fail-closed fallback. */
+  email: string | null;
+  /** Optional extra text appended after the identity line (e.g. queue counts). */
+  detail?: string;
+}
+const { title, description, email, detail } = Astro.props;
+---
+<BaseLayout title={title} description={description} noindex={true}>
+  <div class="container-px pt-6">
+    <AdminBar email={email} detail={detail} />
+  </div>
+  <slot />
+</BaseLayout>

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { listTrustDeliveryReconciliationQueue, type TrustDraftDeliveryAttempt } from '../../../lib/trust-cases';
 import { env as cfEnv } from 'cloudflare:workers';
@@ -13,7 +13,7 @@ let error = '';
 try { if (env?.PCD_OPS_DB) attempts = await listTrustDeliveryReconciliationQueue(env.PCD_OPS_DB); else error = 'Operational database not bound.'; }
 catch { error = 'Delivery reconciliation tables unavailable or query failed.'; }
 ---
-<BaseLayout title="Trust delivery reconciliation" description="Protected ambiguous delivery queue" noindex={true}>
+<AdminLayout title="Trust delivery reconciliation" description="Protected ambiguous delivery queue" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · <a href="/admin/trust/" class="hover:underline">Trust</a> · Deliveries</p>
     <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Delivery reconciliation</h1>
@@ -38,4 +38,4 @@ catch { error = 'Delivery reconciliation tables unavailable or query failed.'; }
       </li>)}</ul>
     )}
   </div></section>
-</BaseLayout>
+</AdminLayout>

@@ -1,25 +1,24 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdminLayout from '../../layouts/AdminLayout.astro';
 import { env as cfEnv } from 'cloudflare:workers';
 import { requireAdmin } from '../../lib/admin-auth';
 import { readOperationsStatus } from '../../lib/operations-status';
 
 export const prerender = false;
-const auth = await requireAdmin(Astro.request);
+const env = cfEnv as { DB?: D1Database; FORGE_DB?: D1Database; EMAIL_MODE?: string; EMAIL_ADMIN_MODE?: string; RESEND_API_KEY?: string; EMAIL_FROM?: string; SLACK_WEBHOOK_URL?: string; ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
-const env = cfEnv as { DB?: D1Database; FORGE_DB?: D1Database; EMAIL_MODE?: string; EMAIL_ADMIN_MODE?: string; RESEND_API_KEY?: string; EMAIL_FROM?: string; SLACK_WEBHOOK_URL?: string } | undefined;
 const components = await readOperationsStatus(env ?? {});
 const color = (state: string) => state === 'healthy' ? 'text-green-700' : state === 'degraded' ? 'text-amber-700' : state === 'failing' ? 'text-red-700' : 'text-ink-soft';
 ---
-<BaseLayout title="Operations status" noindex={true}>
+<AdminLayout title="Operations status" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2">Admin · Operations</p><h1 class="font-display text-ink text-4xl font-medium">Operational status</h1>
     <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only evidence, not a control panel. Unknown is intentional when durable or independent proof does not exist. This page cannot trigger jobs, pause agents, mutate data, or certify customer readiness.</p>
-    <p class="font-mono text-xs text-ink-soft mt-3">Authenticated as {auth.email}</p>
   </div></section>
   <section class="container-px py-10"><ul class="grid gap-5">{components.map((item) => <li class="border border-bone bg-paper p-5">
     <div class="flex flex-wrap justify-between gap-3"><h2 class="font-display text-xl font-medium">{item.component}</h2><p class:list={["font-mono text-xs uppercase", color(item.state)]}>{item.state}</p></div>
     <p class="mt-2 text-ink-soft">{item.summary}</p><p class="font-mono text-xs mt-2">{item.code}</p>
     <dl class="grid md:grid-cols-3 gap-2 mt-4">{Object.entries(item.metrics).map(([key, value]) => <div><dt class="font-mono text-xs text-ink-soft">{key}</dt><dd>{value ?? '—'}</dd></div>)}</dl>
   </li>)}</ul></section>
-</BaseLayout>
+</AdminLayout>

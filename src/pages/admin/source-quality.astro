@@ -1,8 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdminLayout from '../../layouts/AdminLayout.astro';
 import { listDomainQuality, type DomainQuality } from '../../lib/camps-db';
 import { requireAdmin } from '../../lib/admin-auth';
-import AdminBar from '../../components/AdminBar.astro';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — reads from D1 each request. Cloudflare Access protects /admin/*.
@@ -68,7 +67,7 @@ const rateTone = (rate: number, decided: number): string => {
   return 'text-rust';
 };
 ---
-<BaseLayout title="Source quality" description="Per-domain submission quality dashboard" noindex={true}>
+<AdminLayout title="Source quality" description="Per-domain submission quality dashboard" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -81,7 +80,6 @@ const rateTone = (rate: number, decided: number): string => {
         Per-domain track record. High volume + low approval rate is the signal we want to react to.
         That domain is probably an aggregator or has stopped maintaining its listings. Skip it next sweep.
       </p>
-      <AdminBar email={adminEmail} />
     </div>
   </section>
 
@@ -185,4 +183,4 @@ const rateTone = (rate: number, decided: number): string => {
       </section>
     </>
   )}
-</BaseLayout>
+</AdminLayout>

@@ -1,21 +1,20 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdminLayout from '../../layouts/AdminLayout.astro';
 import { env as cfEnv } from 'cloudflare:workers';
 import { requireAdmin } from '../../lib/admin-auth';
 import { runRetentionAudit } from '../../lib/retention-audit';
 
 export const prerender = false;
-const auth = await requireAdmin(Astro.request);
+const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
-const env = cfEnv as { PCD_OPS_DB?: D1Database } | undefined;
 const results = env?.PCD_OPS_DB ? await runRetentionAudit(env.PCD_OPS_DB) : [];
 ---
-<BaseLayout title="Retention aging report" noindex={true}>
+<AdminLayout title="Retention aging report" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2">Admin · Privacy operations</p>
     <h1 class="font-display text-ink text-4xl font-medium">Retention aging report</h1>
     <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only counts of data domains crossing a review horizon. A row never authorizes deletion. Approved schedules, legal holds, backup propagation, a dry run, recovery proof, and explicit production approval remain required.</p>
-    <p class="font-mono text-xs text-ink-soft mt-3">Authenticated as {auth.email}</p>
   </div></section>
   <section class="container-px py-10">
     {!env?.PCD_OPS_DB ? <p class="text-rust">Operational database unavailable. No retention conclusion can be drawn.</p> : <div class="overflow-x-auto"><table class="w-full border-collapse text-left">
@@ -27,4 +26,4 @@ const results = env?.PCD_OPS_DB ? await runRetentionAudit(env.PCD_OPS_DB) : [];
       </tr>)}</tbody>
     </table></div>}
   </section>
-</BaseLayout>
+</AdminLayout>

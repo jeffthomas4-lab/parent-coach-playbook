@@ -8,7 +8,7 @@
 
 export const prerender = false;
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdminLayout from '../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -48,7 +48,7 @@ if (env?.DB) {
 }
 
 ---
-<BaseLayout title="Search signals" description="Admin: search event log" noindex={true}>
+<AdminLayout title="Search signals" description="Admin: search event log" email={auth.email}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -122,4 +122,4 @@ if (env?.DB) {
       </section>
     </>
   )}
-</BaseLayout>
+</AdminLayout>

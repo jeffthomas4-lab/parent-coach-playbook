@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { listPendingClaims, getCampById, type CampClaim, type Camp } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { featureEnabled } from '../../../lib/feature-flags';
@@ -34,7 +34,7 @@ if (claimsEnabled && env?.DB) {
 const fmt = (s: string) =>
   new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 ---
-<BaseLayout title="Claims moderation" description="Admin queue for camp claims" noindex={true}>
+<AdminLayout title="Claims moderation" description="Admin queue for camp claims" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -102,4 +102,4 @@ const fmt = (s: string) =>
       )}
     </div>
   </section>
-</BaseLayout>
+</AdminLayout>
