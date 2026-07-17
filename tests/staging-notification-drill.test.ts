@@ -29,6 +29,7 @@ describe('staging notification drill', () => {
     const payload = JSON.parse(init.body);
     expect(payload.submitted_by_email).toBe('notification-drill@invalid.test');
     expect(payload.description).toContain('Synthetic staging notification drill');
+    expect(payload.address).toBe('1 Staging Drill Way 20300102030405');
     expect(payload.website_url).toBeUndefined();
     expect(result).toMatchObject({ environment: 'staging', camp_id: 'camp_drill' });
   });

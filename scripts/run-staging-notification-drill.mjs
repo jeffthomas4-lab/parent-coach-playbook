@@ -31,7 +31,7 @@ export async function runStagingNotificationDrill({
     age_max: '12',
     start_date: '2030-08-01',
     end_date: '2030-08-02',
-    address: '1 Staging Drill Way',
+    address: `1 Staging Drill Way ${suffix}`,
     city: 'Tacoma',
     state: 'WA',
     zip: '98402',
