@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "deployment": {
+    "worker": "parent-coach-desk-staging",
+    "version": "b8ebadfb-aab3-4b66-a395-774e600f39b8",
+    "deployed_at_utc": "2026-07-17T07:46:47Z",
+    "scope": "Editorial Approve button interaction hardening only"
+  },
+  "manifest_guard": {
+    "worker_name": "parent-coach-desk-staging",
+    "directory_d1": "parent-coach-desk-directory-staging",
+    "operations_d1": "parent-coach-desk-ops-staging",
+    "r2_bucket": "parent-coach-desk-staging-photos",
+    "customer_feature_flags": "all false"
+  },
+  "post_deploy_monitor": {
+    "observed_at_utc": "2026-07-17T07:47:11.0916291Z",
+    "method": "Bounded GET-only public monitor",
+    "results": [
+      { "path": "/", "status": 200 },
+      { "path": "/api/health", "status": 200 },
+      { "path": "/api/ready", "status": 200 }
+    ]
+  },
+  "verification_limit": "The protected editorial interface remained behind Cloudflare Access in the available browser session. No Approve POST or GitHub content write was attempted."
+}
