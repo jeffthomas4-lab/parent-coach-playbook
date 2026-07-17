@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T06:51:20.1942564Z",
+  "environment": "production",
+  "method": "authenticated_cloudflare_dashboard_read_only_inventory",
+  "scope": {
+    "binding": "PHOTOS",
+    "bucket": "activityradar-photos",
+    "source_of_truth": "wrangler.production.jsonc plus live R2 dashboard"
+  },
+  "inventory": {
+    "object_count": 0,
+    "total_bytes": 0,
+    "object_keys_recorded": false
+  },
+  "classification": {
+    "current_production_payload_present": false,
+    "r2_payload_export_required_today": false,
+    "proposed_release_gate_disposition": "await explicit owner approval to mark empty production PHOTOS scope not_applicable; do not infer approval from this observation"
+  },
+  "safety_boundary": {
+    "objects_read": 0,
+    "objects_written": 0,
+    "objects_deleted": 0,
+    "bucket_settings_changed": false,
+    "credentials_or_object_keys_recorded": false
+  },
+  "remaining_requirement": "Maintain the existing staging synthetic restore proof, and obtain owner approval for the empty-production-scope disposition before changing the R2 recovery gate state. If production objects are later added, require a new inventory, independent offsite copy, and representative retrieval proof."
+}
