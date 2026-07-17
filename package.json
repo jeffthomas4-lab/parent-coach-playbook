@@ -49,6 +49,7 @@
     "test:links": "node scripts/check-customer-artifact.mjs",
     "check:customer-artifact": "node scripts/check-customer-artifact.mjs",
     "monitor:customer-journey": "node scripts/run-customer-journey-monitor.mjs",
+    "drill:staging-notification": "node scripts/run-staging-notification-drill.mjs --confirm",
     "audit:gate": "npm audit --audit-level=high"
   },
   "dependencies": {
