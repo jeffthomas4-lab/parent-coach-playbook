@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T06:35:00Z",
+  "environment": "staging",
+  "channel_class": "independent_operator_alert",
+  "channel": "#pcd-alerts",
+  "method": "read_only_connected_slack_channel_history",
+  "result": "no_matching_notification_observed",
+  "bounded_observation": {
+    "visible_message_count": 1,
+    "visible_message_kind": "channel_join_event",
+    "synthetic_drill_alert_present": false
+  },
+  "corroborating_email_observation": {
+    "provider": "Resend",
+    "status": "delivered",
+    "event_class": "original staging notification drill",
+    "recipient_role": "first approved staging administrator"
+  },
+  "interpretation": "An accepted application response and a delivered internal email do not prove delivery to the approved Slack channel. The current webhook destination must be reconciled or rotated before this gate can pass.",
+  "safety_boundary": {
+    "slack_messages_sent": 0,
+    "slack_messages_modified": 0,
+    "email_sent": 0,
+    "secrets_read_or_recorded": false,
+    "customer_data_read": false
+  }
+}
