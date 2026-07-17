@@ -3,7 +3,7 @@
 **Plan ID:** 016
 **Author:** Codex
 **Date:** 2026-07-16
-**Status:** Awaiting provider, retention, and external-account approval
+**Status:** Local manifest tooling implemented; awaiting provider, retention, and external-account approval
 **Tier:** 3
 
 ## Objective
@@ -16,6 +16,7 @@ Close the release-evidence database-backup and R2-recovery gates with an indepen
 - The existing `scripts/backup-activity-radar.ps1` produces a size-checked, SHA-256 sidecar-backed local SQL export of `activity-radar` and retains eight local copies. It is not an offsite copy and does not cover every production D1 binding or R2.
 - The recorded fresh export is 257,196,189 bytes and was locally restored successfully; release evidence still explicitly requires immutable offsite storage before the backup gate can pass.
 - Cloudflare R2 bucket locks are useful storage controls, but an account administrator can remove lock rules. They do not meet the independent-account requirement when used as the only recovery copy.
+- `scripts/build-recovery-batch-manifest.mjs` now builds a checksum-verified, provider-neutral manifest for approved local exports. It writes only below ignored `backups/recovery/`, records no source paths/object names, and makes no network or provider call. Its use is documented in `scripts/RECOVERY-BATCH.md` and covered by `tests/recovery-batch-manifest.test.ts`.
 
 ## Recommended design
 
@@ -48,7 +49,7 @@ Backblaze B2 Object Lock is an acceptable lower-cost independent alternative wit
 
 ## Expected files
 
-- A new narrowly scoped backup orchestration script and a restore-verification script under `scripts/`
+- A local provider-neutral batch-manifest helper at `scripts/build-recovery-batch-manifest.mjs` and recovery instructions at `scripts/RECOVERY-BATCH.md`; the provider-specific source/export/upload runner remains intentionally unimplemented until account and credential approval
 - `scripts/RESTORE-activity-radar.md` or a new cross-database recovery runbook
 - A sanitized immutable handoff and `coordination/release-evidence/` JSON evidence
 - `.gitignore` only if required to ensure generated archives/manifests with sensitive object names remain ignored
@@ -62,7 +63,7 @@ Backblaze B2 Object Lock is an acceptable lower-cost independent alternative wit
    - Cloudflare read-only source access limited to required D1 export and R2 list/get actions;
    - provider write-only backup access limited to the named recovery prefix and unable to delete objects or alter retention;
    - provider read-only recovery-verifier access.
-4. Define a batch layout such as `YYYY/MM/DD/<batch-id>/` containing database exports, R2 object payloads, a machine-readable manifest, and hash sidecars. Write only to a new batch prefix; never update a prior recovery point.
+4. Define a batch layout such as `YYYY/MM/DD/<batch-id>/` containing database exports, R2 object payloads, a machine-readable manifest, and hash sidecars. Build the local manifest with `npm run recovery:manifest -- ...`; write only to a new batch prefix later and never update a prior recovery point.
 5. Extend the existing local export safeguards to each authoritative D1 database: partial-file staging, minimum-size/schema sanity checks appropriate to that database, SHA-256, and a failure path that preserves the last known-good backup.
 6. Back up R2 with a deterministic inventory and checksum manifest. Copy objects to new immutable destination keys; do not mirror deletions from the source. Record only aggregate count/bytes in tracked evidence.
 7. Upload a manual first batch, validate the provider reports active Compliance/Object Lock retention for every object, then retrieve a small random verification set using only the recovery-verifier identity.
