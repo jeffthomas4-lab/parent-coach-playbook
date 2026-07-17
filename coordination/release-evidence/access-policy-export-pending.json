@@ -1,18 +1,36 @@
 {
   "schema_version": 1,
-  "state": "pending",
+  "state": "exported",
   "required_origin": "https://parentcoachdesk.com",
   "required_paths": ["/admin*", "/api/admin*"],
   "expected_team_domain": "fieldforge.cloudflareaccess.com",
   "expected_audience_tag": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23",
-  "exported_at": null,
-  "team_domain": null,
-  "audience_tag": null,
-  "export_method": null,
-  "export_hash": null,
-  "applications": [],
+  "exported_at": "2026-07-17T02:00:08.0903466Z",
+  "team_domain": "fieldforge.cloudflareaccess.com",
+  "audience_tag": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23",
+  "export_method": "Cloudflare dashboard read-only application and reusable-policy detail views",
+  "export_hash": "86a51ce0e81b278d4fdff4ff21adfc213ef0ac0026037a56b8e8549627614495",
+  "applications": [
+    {
+      "application_id": "e343d1cc-d67e-4118-83c0-0127e55368e0",
+      "application_name": "Parent Coach Desk Production Admin",
+      "domain": "parentcoachdesk.com",
+      "paths": ["/admin*", "/api/admin*"],
+      "policies": [
+        {
+          "policy_id": "9ddbb96d-94a9-4133-aee8-8087010402ce",
+          "policy_name": "Jeff Emaill Allow",
+          "decision": "allow",
+          "include_everyone": false,
+          "include_selector_count": 2,
+          "include_selector": "emails",
+          "included_emails": ["jeffthomas4@gmail.com", "eepskalla@gmail.com"]
+        }
+      ]
+    }
+  ],
   "contains_tokens": false,
   "contains_secret_values": false,
-  "remaining_action": "Export the live Access application and ordered policies through an authenticated read-only Cloudflare path; redact identity values but retain selector classes and counts.",
+  "remaining_action": null,
   "external_changes": []
 }

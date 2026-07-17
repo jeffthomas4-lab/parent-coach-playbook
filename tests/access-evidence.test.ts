@@ -4,8 +4,8 @@ import probes from '../coordination/release-evidence/authenticated-access-probes
 import { validateAccessPolicyEvidence, validateAuthenticatedAccessEvidence } from '../scripts/access-evidence.mjs';
 
 describe('live Access evidence contracts', () => {
-  it('accepts pending packets without confusing them for completed evidence', () => {
-    expect(validateAccessPolicyEvidence(policy)).toEqual({ errors: [], valid: true, complete: false });
+  it('accepts the exported policy packet and keeps separate pending authenticated probes incomplete', () => {
+    expect(validateAccessPolicyEvidence(policy)).toEqual({ errors: [], valid: true, complete: true });
     expect(validateAuthenticatedAccessEvidence(probes)).toEqual({ errors: [], valid: true, complete: false });
   });
 
