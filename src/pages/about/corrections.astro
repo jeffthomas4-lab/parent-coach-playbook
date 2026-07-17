@@ -6,7 +6,12 @@ import { correctionsSorted as sorted, lastCorrectionISO } from '../../data/corre
 // Corrections data lives in src/data/corrections.ts (single source of truth).
 // To log a correction, add an entry there — this page re-sorts and refreshes
 // its "last updated" date automatically.
-const fmt = (iso: string) => new Date(iso).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+// Parse YYYY-MM-DD as a LOCAL date (not UTC midnight) so the displayed day
+// never shifts back one in timezones behind UTC.
+const fmt = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+};
 const updated = lastCorrectionISO ? fmt(lastCorrectionISO) : null;
 ---
 <BaseLayout
