@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "executed_at_utc": "2026-07-17T07:02:49Z",
+  "completed_at_utc": "2026-07-17T07:05:22Z",
+  "scope": "Controlled Worker-version traffic rollback and restoration only. No D1, R2, KV, rate-limit, feature-flag, production, form, email, or notification mutation was performed. The rollback temporarily restored the earlier version-bound staging Slack secret configuration; no secret value was read, written, logged, or used.",
+  "worker": "parent-coach-desk-staging",
+  "staging_origin": "https://parent-coach-desk-staging.eepskalla.workers.dev",
+  "initial_version": "3cad4f7a-2b4f-491a-b37d-61880f221bd0",
+  "rollback_version": "f4eae0f6-b4a8-4917-b852-cd4fc7ece698",
+  "restored_version": "3cad4f7a-2b4f-491a-b37d-61880f221bd0",
+  "preflight": {
+    "method": "Read-only Wrangler version metadata inspection.",
+    "result": "Both versions expose the same D1, R2, KV, rate-limit, asset, Access, and feature-flag bindings. Both declare the same two staging secret names; secret values were neither read nor recorded."
+  },
+  "actions": [
+    {
+      "operation": "rollback",
+      "target_version": "f4eae0f6-b4a8-4917-b852-cd4fc7ece698",
+      "traffic": "100% staging only",
+      "result": "success"
+    },
+    {
+      "operation": "restore",
+      "target_version": "3cad4f7a-2b4f-491a-b37d-61880f221bd0",
+      "traffic": "100% staging only",
+      "result": "success"
+    }
+  ],
+  "health_checks": {
+    "after_rollback": [
+      { "path": "/", "status": 200, "content_type": "text/html" },
+      { "path": "/api/health", "status": 200, "content_type": "application/json" },
+      { "path": "/api/ready", "status": 200, "content_type": "application/json" }
+    ],
+    "after_restore_checked_at_utc": "2026-07-17T07:05:22.1078352Z",
+    "after_restore": [
+      { "path": "/", "status": 200, "content_type": "text/html" },
+      { "path": "/api/health", "status": 200, "content_type": "application/json" },
+      { "path": "/api/ready", "status": 200, "content_type": "application/json" }
+    ]
+  },
+  "result": "pass",
+  "limitations": [
+    "This proves staging Worker traffic rollback and restoration only; it does not roll back or test restoration of D1, R2, KV, rate-limit, or secret values.",
+    "The older version temporarily carried its prior staging Slack configuration; the exact current version was restored before the rehearsal completed, and no notification was sent.",
+    "Production Worker traffic was not changed.",
+    "No customer journey, authenticated Access, email, Slack, or production migration gate is closed by this rehearsal."
+  ]
+}
