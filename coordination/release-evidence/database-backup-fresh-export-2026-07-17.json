@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-17T04:58:59.2658914Z",
+  "environment": "production_data_read_only_export",
+  "exercise": "fresh_pre_repair_backup",
+  "source": {
+    "database": "activity-radar",
+    "export_file": "activity-radar-2026-07-16-215829.sql",
+    "export_bytes": 257196189,
+    "export_sha256": "eba17cb3fab2f1907f7f18fe141675ef1b4de556ea39026634c277da4fc078c6",
+    "local_backup_retention_count": 7,
+    "manual_proving_runs_completed": 4
+  },
+  "comparison": {
+    "matches_previous_restored_export_sha256": true,
+    "previous_export_sha256": "eba17cb3fab2f1907f7f18fe141675ef1b4de556ea39026634c277da4fc078c6",
+    "meaning": "The fresh export is byte-identical to the export used by the controlled local restore and two-clone repair-candidate proof."
+  },
+  "safety_boundary": {
+    "remote_database_mutated": false,
+    "remote_restore_attempted": false,
+    "customer_rows_disclosed": false,
+    "backup_contents_committed": false,
+    "production_repair_authorized": false
+  },
+  "result": "fresh_backup_completed",
+  "required_follow_up": [
+    "Obtain separately scoped approval before any production repair transaction.",
+    "After any approved repair, export again and prove a zero-violation local restore.",
+    "Establish and exercise immutable offsite backup storage before passing the database backup gate."
+  ]
+}
