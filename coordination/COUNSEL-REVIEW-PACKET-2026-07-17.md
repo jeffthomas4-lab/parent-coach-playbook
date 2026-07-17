@@ -26,7 +26,9 @@ The staging Worker has an application administrator allowlist limited to `eepska
 - Camp-owner claims, owner-managed profiles, public reviews, and photo uploads.
 - Marketing-email delivery and newsletter-provider activation proof.
 - Search-demand telemetry.
-- Production migration, production deployment, and production customer-data writes.
+- Production operational-database migration and production customer-data writes.
+
+The public directory and the narrowly scoped Plan 015 editorial-approval repair are deployed to production. That deployment is not a customer-readiness certification: the independent backup/recovery, notification-receipt, complete customer-journey, authenticated Access, risk-disposition, and operational-migration release gates remain open. No customer operational data has been written to the dedicated production PCD operations database.
 
 ## Materials for review
 
@@ -56,7 +58,7 @@ The packet intentionally identifies these discrepancies as unresolved. They must
 - Current staging Worker deployed separately from production, with dedicated staging D1/R2/KV bindings and the two-address application allowlist.
 - Fresh staging public checks passed for home, directory, privacy, terms, `/api/health`, and `/api/ready`; anonymous admin paths redirect through Cloudflare Access.
 - Staging operations D1 export restored into an isolated local SQLite verification target: integrity check passed and foreign-key violation count was zero.
-- Current local candidate passed 550 unit tests, 44 integration tests, Astro diagnostics with zero errors, and the exact production build/manifest contract.
+- Current local candidate passed 560 unit tests, 44 integration tests, Astro diagnostics with zero errors, and the exact production build/manifest contract.
 
 These are engineering observations only. They are not a privacy, security, accessibility, insurance, legal, or customer-readiness certification.
 
