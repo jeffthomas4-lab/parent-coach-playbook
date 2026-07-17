@@ -62,7 +62,13 @@ export const POST: APIRoute = async ({ params, request }) => {
     // ignore
   }
 
-  const camp = await rejectCamp(env.DB, id, auth.email, notes, reasonCode);
+  // rejectCamp performs a single atomic conditional UPDATE and reports
+  // whether THIS call transitioned the row (WHERE pcd_status != 'rejected').
+  // Gating the domain-quality upsert on that reported change count — not a
+  // prior read of camp state — is what makes a repeat reject on an
+  // already-rejected camp, or two concurrent reject requests racing on the
+  // same id, a no-op for the second caller instead of a double decrement.
+  const { camp, transitioned } = await rejectCamp(env.DB, id, auth.email, notes, reasonCode);
   if (!camp) {
     return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
       status: 404,
@@ -70,7 +76,9 @@ export const POST: APIRoute = async ({ params, request }) => {
     });
   }
 
-  await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
+  if (transitioned) {
+    await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
+  }
 
   return new Response(null, {
     status: 303,

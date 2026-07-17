@@ -7,6 +7,7 @@ import ReviewedFooter from '../../components/ReviewedFooter.astro';
 export const prerender = true;
 import { renderTitle } from '../../lib/title';
 import { SPORTS } from '../../data/site';
+import { serializeJsonLd } from '../../lib/jsonld';
 
 const calendars = (await getCollection('seasonCalendars', ({ data }) => isLive(data)))
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
@@ -24,7 +25,7 @@ const levelAccent: Record<string, string> = {
   title="Season calendar"
   description="Twelve months at a glance. Tryouts, league windows, picture-day, peak season, off-season. Pick the canonical calendar that matches your kid's life."
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd({
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Youth Sports Season Calendar',

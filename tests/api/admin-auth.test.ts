@@ -238,4 +238,43 @@ describe('requireSameOrigin', () => {
     });
     expect(requireSameOrigin(req)).toBeNull();
   });
+
+  // SECURITY: comparing only .host (not the full .origin) would let an
+  // Origin header with the wrong scheme sail through against an https
+  // deployment, since URL.host ignores the protocol entirely.
+  it('SECURITY: rejects a same-host Origin header whose scheme does not match the request', () => {
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { origin: 'http://parentcoachdesk.com' },
+    });
+    const result = requireSameOrigin(req);
+    expect(result).toBeInstanceOf(Response);
+    expect(result?.status).toBe(403);
+  });
+
+  it('allows an Origin header that matches scheme, host, AND port exactly', () => {
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { origin: 'https://parentcoachdesk.com' },
+    });
+    expect(requireSameOrigin(req)).toBeNull();
+  });
+
+  it('SECURITY: rejects a same-host Referer fallback whose scheme does not match the request', () => {
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { referer: 'http://parentcoachdesk.com/admin/camps/' },
+    });
+    const result = requireSameOrigin(req);
+    expect(result).toBeInstanceOf(Response);
+    expect(result?.status).toBe(403);
+  });
+
+  it('allows a same-origin Referer fallback when there is no Origin header', () => {
+    const req = new Request(URL_ADMIN, {
+      method: 'POST',
+      headers: { referer: 'https://parentcoachdesk.com/admin/camps/' },
+    });
+    expect(requireSameOrigin(req)).toBeNull();
+  });
 });

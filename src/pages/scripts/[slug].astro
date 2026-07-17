@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
 import HowToSchema from '../../components/HowToSchema.astro';
 import { SITE, EDITORIAL, authorEntity } from '../../data/site';
+import { serializeJsonLd } from '../../lib/jsonld';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
 
@@ -82,8 +83,8 @@ const breadcrumbSchema = {
   title={script.data.seoTitle ?? stripTitle(script.data.title)}
   description={script.data.seoDescription ?? script.data.summary}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(articleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
   {howToSteps.length >= 2 && (
     <HowToSchema
       slot="head"

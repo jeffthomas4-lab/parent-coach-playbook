@@ -1,0 +1,23 @@
+{
+  "_note": "FILL-IN TEMPLATE. This is NOT real evidence. Copy this file to a dated filename (e.g. offsite-backup-proving-2026-07-20.json) and replace every placeholder value below with the real result of one offsite-backup-upload.mjs + offsite-backup-retrieve-verify.mjs proving run, per scripts/OFFSITE-RECOVERY-RUNBOOK.md section 4. Never put object names, credential values, or backup contents in this file -- aggregate counts and hashes only.",
+  "schema_version": 1,
+  "provider": "REPLACE_WITH_aws_s3_or_backblaze_b2",
+  "bucket": "REPLACE_WITH_bucket_identifier_or_alias_not_a_secret",
+  "retention_mode": "REPLACE_WITH_COMPLIANCE_or_GOVERNANCE",
+  "retention_days": 90,
+  "monthly_retention_count": 12,
+  "manifest_hash": "REPLACE_WITH_sha256_of_the_batch_manifest_json",
+  "object_count": 0,
+  "aggregate_bytes": 0,
+  "proving_run_dates": [
+    "REPLACE_WITH_YYYY-MM-DD_run_1",
+    "REPLACE_WITH_YYYY-MM-DD_run_2",
+    "REPLACE_WITH_YYYY-MM-DD_run_3"
+  ],
+  "retrieval_verified": false,
+  "restore_integrity_ok": false,
+  "foreign_key_violations": 0,
+  "verifier_identity_used": "REPLACE_WITH_recovery-verifier_identity_label_e.g._aws-iam-role-name_not_the_access_key",
+  "contains_secret_values": false,
+  "external_changes": []
+}

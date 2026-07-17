@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 import { EDITORIAL, SITE, SPORTS, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
+import { serializeJsonLd } from '../../lib/jsonld';
 import { renderTitle, stripTitle } from '../../lib/title';
 
 export async function getStaticPaths() {
@@ -49,7 +50,7 @@ const howToSchema = {
   title={stripTitle(tip.data.title)}
   description={tip.data.summary}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(howToSchema)} />
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">

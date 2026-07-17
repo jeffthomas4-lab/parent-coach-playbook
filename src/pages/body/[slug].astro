@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BodyDisclaimer from '../../components/BodyDisclaimer.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
+import { serializeJsonLd } from '../../lib/jsonld';
 import { SPORTS, SITE, authorEntity } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -70,8 +71,8 @@ const lastUpdated = topic.data.publishedAt;
   title={stripTitle(topic.data.title)}
   description={topic.data.summary}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(bodyArticleSchema)} />
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(bodyBreadcrumbSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(bodyArticleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(bodyBreadcrumbSchema)} />
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">

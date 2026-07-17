@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const requiredBindings = {
   ACCESS_AUD: 'plain_text', ACCESS_TEAM_DOMAIN: 'plain_text', ADMIN_EMAILS: 'plain_text',
   ASSETS: 'assets', BULK_IMPORT_TOKEN: 'secret_text', CRON_KEY: 'secret_text',
-  DB: 'd1', FORGE_DB: 'd1', GITHUB_TOKEN: 'secret_text', PHOTOS: 'r2_bucket',
+  DB: 'd1', FORGE_DB: 'd1', GITHUB_TOKEN: 'secret_text', PCD_OPS_DB: 'd1', PHOTOS: 'r2_bucket',
   SESSION: 'kv_namespace', SITE_URL: 'plain_text',
 };
 

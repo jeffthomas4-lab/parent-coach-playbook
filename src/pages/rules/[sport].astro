@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle, stripTitle } from '../../lib/title';
+import { serializeJsonLd } from '../../lib/jsonld';
 import { SPORTS } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -58,7 +59,7 @@ const faqSchema = faqEntries.length > 0
   title={stripTitle(piece.data.title)}
   description={piece.data.summary}
 >
-  {faqSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  {faqSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(faqSchema)} />}
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">

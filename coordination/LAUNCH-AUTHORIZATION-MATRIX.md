@@ -5,13 +5,13 @@
 
 ## Current release state
 
-The public directory and Plan 015 editorial-repository repair are deployed. The production release packet remains **not ready**: eight gates are unpassed. The attached release evidence is authoritative: `coordination/release-evidence/rc01.json`.
+The public directory and Plan 015 editorial-repository repair are deployed. The production release packet remains **not ready**: seven gates pending; `r2_recovery` accepted as `not_applicable` by owner disposition on 2026-07-17. The attached release evidence is authoritative: `coordination/release-evidence/rc01.json`.
 
 ## Decisions and approvals needed
 
 | Gate | Decision / action needed from Jeff | What Codex may do after the approval | Proof that closes or advances the gate |
 |---|---|---|---|
-| `r2_recovery` | Choose one: **(A)** accept the empty production `PHOTOS` bucket (0 objects / 0 B) as `not_applicable`, or **(B)** require an offsite R2 copy process now despite its empty scope. | Record the owner disposition; for B, include R2 in the immutable batch/retrieval rehearsal. | Signed owner disposition, or immutable copy plus retrieval/hash proof. |
+| `r2_recovery` | **Resolved 2026-07-17.** Jeff selected disposition **(A)**: accept the empty production `PHOTOS` bucket (0 objects / 0 B) as `not_applicable`. No further decision needed unless production R2 media is later added — adding media reopens this row and requires a fresh independent offsite export plus retrieval/hash proof before the gate can be marked `not_applicable` or `pass` again. | Owner disposition recorded in release evidence; no further Codex action required while the bucket stays empty. | Owner disposition recorded: `coordination/release-evidence/r2-recovery-owner-disposition-2026-07-17.json`. Gate state `not_applicable` in `rc01.json`. |
 | `database_backup` | Choose the provider and approve the model. Recommended: a **separate AWS recovery account**, S3 Versioning + Object Lock Compliance mode, 90 daily recovery points plus 12 monthly. | Create the approved account/bucket/roles; upload production-derived encrypted-in-transit exports; retrieve and restore into isolated local targets. | Immutable-retention settings, separated permissions, manifest checks, retrieval/restore proof on three separate days. |
 | `notification_receipt` | Create or repoint a **fresh staging-only** Slack incoming webhook to `#pcd-alerts`; store it as the staging Worker secret `SLACK_WEBHOOK_URL`. Do not paste its value into chat or Git. Then say “staging Slack ready.” | Run one already-approved synthetic staging notification drill; inspect Resend and `#pcd-alerts`; record human acknowledgement. | Provider delivery, visible channel receipt, and Jeff acknowledgement for the same drill ID. |
 | `authenticated_access_probes` | Sign into Cloudflare Access in the in-app browser using each allowed and denied identity as appropriate, then say “Access probe ready.” | Perform only the prepared 37-route allowed/denied **GET-only** probe; do not submit forms or call mutation endpoints. | Redacted live allowed/denied results for the protected-route contract. |

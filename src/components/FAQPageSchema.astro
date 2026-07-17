@@ -6,6 +6,8 @@
 //
 // FAQPage schema lets Google show rich expandable Q&A in SERPs.
 
+import { serializeJsonLd } from '../lib/jsonld';
+
 interface Props {
   question: string;
   summary: string;
@@ -44,4 +46,4 @@ const schema = {
   ],
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={serializeJsonLd(schema)} />

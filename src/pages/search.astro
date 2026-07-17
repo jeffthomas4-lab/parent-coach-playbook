@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import { isLive } from '../lib/publishFilter';
 import { stripTitle } from '../lib/title';
 import { SPORTS } from '../data/site';
+import { serializeJsonLd } from '../lib/jsonld';
 
 // Pull every public collection so search covers the whole site.
 const articles    = (await getCollection('articles',       ({ data }) => isLive(data)));
@@ -229,7 +230,7 @@ const popularReads = [
     </div>
   </section>
 
-  <script type="application/json" id="search-index" set:html={JSON.stringify(fullIndex)} />
+  <script type="application/json" id="search-index" set:html={serializeJsonLd(fullIndex)} />
   <script>
     type Hit = { type: string; title: string; dek: string; href: string; meta: string };
     const idxEl = document.getElementById('search-index') as HTMLScriptElement | null;

@@ -3,6 +3,8 @@
 // A drill page typically includes setup, coaching cue, common mistake, variation.
 // We map those into HowTo steps.
 
+import { serializeJsonLd } from '../lib/jsonld';
+
 interface Props {
   name: string;
   description: string;
@@ -29,4 +31,4 @@ if (totalTime) {
   schema.totalTime = totalTime;
 }
 ---
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={serializeJsonLd(schema)} />

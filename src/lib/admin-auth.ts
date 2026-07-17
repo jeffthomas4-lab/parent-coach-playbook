@@ -147,10 +147,13 @@ export async function requireAdmin(
 }
 
 /**
- * Verify the request's Origin header matches the site's own host. Defends
- * against cross-site request forgery on admin POST endpoints — even with
- * Cloudflare Access in front, a malicious page elsewhere can't trick a
- * logged-in admin's browser into submitting because the Origin will be wrong.
+ * Verify the request's Origin header matches the site's own origin — scheme,
+ * host, AND port, not just host. Defends against cross-site request forgery
+ * on admin POST endpoints — even with Cloudflare Access in front, a
+ * malicious page elsewhere can't trick a logged-in admin's browser into
+ * submitting because the Origin will be wrong. Comparing only .host would
+ * let an `Origin: http://parentcoachdesk.com` header (wrong scheme) pass
+ * against an https:// deployment, so this compares full `.origin` values.
  *
  * Returns null on success, or a Response on failure.
  */
@@ -167,9 +170,9 @@ export function requireSameOrigin(request: Request): Response | null {
       });
     }
     try {
-      const refUrl = new URL(referer);
-      const reqUrl = new URL(request.url);
-      if (refUrl.host !== reqUrl.host) {
+      const refOrigin = new URL(referer).origin;
+      const reqOrigin = new URL(request.url).origin;
+      if (refOrigin !== reqOrigin) {
         return new Response(JSON.stringify({ ok: false, error: 'cross-origin referer' }), {
           status: 403,
           headers: { 'Content-Type': 'application/json; charset=utf-8' },
@@ -184,9 +187,9 @@ export function requireSameOrigin(request: Request): Response | null {
     }
   }
   try {
-    const originHost = new URL(origin).host;
-    const requestHost = new URL(request.url).host;
-    if (originHost !== requestHost) {
+    const originOrigin = new URL(origin).origin;
+    const requestOrigin = new URL(request.url).origin;
+    if (originOrigin !== requestOrigin) {
       return new Response(JSON.stringify({ ok: false, error: 'cross-origin' }), {
         status: 403,
         headers: { 'Content-Type': 'application/json; charset=utf-8' },

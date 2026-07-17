@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import BuyingGuideDisclosure from '../../components/BuyingGuideDisclosure.astro';
 import { BUYING_GUIDES, EDITORIAL } from '../../data/site';
+import { serializeJsonLd } from '../../lib/jsonld';
 import { isLive } from '../../lib/publishFilter';
 
 export async function getStaticPaths() {
@@ -62,9 +63,9 @@ const itemListSchema = gearItems.length > 0 ? {
   title={pageTitle}
   description={pageDescription}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
   {itemListSchema && (
-    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+    <script type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />
   )}
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">

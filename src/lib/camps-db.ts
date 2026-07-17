@@ -802,25 +802,41 @@ export async function approveCamp(
   return getCampById(db, id);
 }
 
+export interface RejectCampResult {
+  camp: Camp | null;
+  // True only when THIS call performed the pending/approved -> rejected
+  // transition. Derived solely from the conditional UPDATE's own reported
+  // change count — never from a prior SELECT — so two concurrent reject
+  // requests racing on the same id can't both see "not yet rejected" and
+  // both trigger a domain-quality decrement (TOCTOU).
+  transitioned: boolean;
+}
+
 export async function rejectCamp(
   db: D1Database,
   id: string,
   reviewer: string,
   notes: string | null = null,
   reasonCode: RejectReasonCode | null = null,
-): Promise<Camp | null> {
+): Promise<RejectCampResult> {
   const now = nowIso();
-  await db
+  // Single atomic conditional UPDATE: the WHERE clause both selects the
+  // target row AND guards the transition, so the "did this call actually
+  // change anything" answer comes from D1's own reported change count
+  // rather than a separate read-then-write race window.
+  const result = await db
     .prepare(
       `UPDATE programs
        SET pcd_status = 'rejected', record_status = 'inactive',
            awaiting_review = 0, reviewed_by = ?, reviewed_at = ?, review_notes = ?,
            reject_reason_code = ?
-       WHERE id = ?`,
+       WHERE id = ? AND pcd_status != 'rejected'`,
     )
     .bind(reviewer, now, notes, reasonCode, id)
     .run();
-  return getCampById(db, id);
+  const transitioned = Number(result?.meta?.changes ?? 0) > 0;
+  const camp = await getCampById(db, id);
+  return { camp, transitioned };
 }
 
 // ---------- Admin edit ----------

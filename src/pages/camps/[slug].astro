@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherCampsAtAddress, slugifyCity, type Camp, type CampReview } from '../../lib/camps-db';
 import { SPORTS, BUYING_GUIDES, CAMP_SPORTS, SITE } from '../../data/site';
 import { featureEnabled } from '../../lib/feature-flags';
+import { serializeJsonLd } from '../../lib/jsonld';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
@@ -333,7 +334,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
     description={`${stateTotalCamps} reviewed camp listings across ${stateCities.length} ${stateCities.length === 1 ? 'city' : 'cities'}.`}
     canonical={stateCanonical}
   >
-    {stateBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(stateBreadcrumbSchema)} />}
+    {stateBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(stateBreadcrumbSchema)} />}
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-14">
         <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
@@ -376,8 +377,8 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
   canonical={campCanonical}
   ogImage={campOgImage}
 >
-  {eventSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(eventSchema)} />}
-  {campBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(campBreadcrumbSchema)} />}
+  {eventSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(eventSchema)} />}
+  {campBreadcrumbSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(campBreadcrumbSchema)} />}
 
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">

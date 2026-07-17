@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, personSchema } from '../data/site';
+import { serializeJsonLd } from '../lib/jsonld';
 
 // WebSite schema (with SearchAction) now lives on the homepage, where Google
 // looks for it. This page keeps the Person schema only.
@@ -11,7 +12,7 @@ const personJsonLd = personSchema();
   description="Parent Coach Desk is sideline notes for the parent who coaches, drives, snack-packs, and supervises the group chat. Editorial process, sources, and how we write."
 >
   {personJsonLd && (
-    <script slot="head" type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+    <script slot="head" type="application/ld+json" set:html={serializeJsonLd(personJsonLd)} />
   )}
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24">

@@ -35,6 +35,11 @@ const isInt = (s: string): boolean => /^[0-9]+$/.test(s);
 const isIsoDate = (s: string): boolean => /^\d{4}-\d{2}-\d{2}$/.test(s);
 const isEmail = (s: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 const isZip = (s: string): boolean => /^\d{5}(-\d{4})?$/.test(s);
+// Same-origin relative path only — a single leading slash, never a
+// protocol-relative (`//`) or backslash-disguised (`/\`) target, so an
+// admin-only endpoint can't be used to bounce a browser off-site.
+const isSafeRedirect = (s: string): boolean =>
+  s.startsWith('/') && !s.startsWith('//') && !s.startsWith('/\\');
 
 const normalizeUrl = (s: string): string => {
   const t = s.trim();
@@ -235,8 +240,9 @@ export const POST: APIRoute = async ({ params, request }) => {
 
   const updated = await updateCamp(env.DB, id, fields, auth.email);
 
-  // If the form requested a redirect (browser submission), send them back.
-  if (data.redirect) {
+  // If the form requested a redirect (browser submission), send them back —
+  // but only to a safe same-origin relative path, never an arbitrary URL.
+  if (data.redirect && isSafeRedirect(data.redirect)) {
     return new Response(null, {
       status: 303,
       headers: { Location: data.redirect },

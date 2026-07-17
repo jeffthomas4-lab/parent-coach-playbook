@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { serializeJsonLd } from '../lib/jsonld';
 import { PILLARS, EDITORIAL, TOPICS, SPORTS, SITE } from '../data/site';
 import { isLive, freshnessDate, wasUpdated } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
@@ -100,7 +101,7 @@ const websiteSchema = {
 };
 ---
 <BaseLayout>
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(websiteSchema)} />
 
   {/* ── HERO ─────────────────────────────────────────────────────────────── */}
   <section class="border-b border-bone relative overflow-hidden">

@@ -8,6 +8,7 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL, authorEntity, themeFor } from '../data/site';
 import { isLive } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
+import { serializeJsonLd } from '../lib/jsonld';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -158,9 +159,9 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
   publishedAt={data.publishedAt.toISOString()}
   modifiedAt={showReviewed && reviewedDate ? reviewedDate.toISOString() : undefined}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  {faqSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(articleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
+  {faqSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(faqSchema)} />}
 
   <!-- Soft pillar tint as the page accent -->
   <div style={`background: ${pillar.accentBg};`}>

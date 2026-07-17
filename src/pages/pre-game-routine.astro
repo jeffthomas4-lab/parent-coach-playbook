@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import { serializeJsonLd } from '../lib/jsonld';
 
 export const prerender = true;
 ---
@@ -8,7 +9,7 @@ export const prerender = true;
   title="Pre-game routine builder"
   description="Fill in your kid's preferences for the night before, morning of, and arrival. Print a routine card they can actually follow."
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd({
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Pre-Game Routine Builder',

@@ -114,6 +114,43 @@ describe('POST /api/admin/camps/:id/update', () => {
     expect(campsDb.updateCamp).not.toHaveBeenCalled();
   });
 
+  it('happy path: a safe relative redirect target is honored', async () => {
+    const ctx = makeContext({
+      request: adminRequest({ description: 'Updated description that is long enough to pass.', redirect: '/admin/camps/camp_1/' }),
+      params: { id: 'camp_1' },
+      env: { DB: {}, ADMIN_EMAILS },
+    });
+    const res = await POST(ctx);
+    expect(res.status).toBe(303);
+    expect(res.headers.get('location')).toBe('/admin/camps/camp_1/');
+  });
+
+  it('failure path: a protocol-relative redirect target is ignored, falling back to JSON', async () => {
+    const ctx = makeContext({
+      request: adminRequest({ description: 'Updated description that is long enough to pass.', redirect: '//evil.example.com/' }),
+      params: { id: 'camp_1' },
+      env: { DB: {}, ADMIN_EMAILS },
+    });
+    const res = await POST(ctx);
+    const body = await readJson(res);
+    expect(res.status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(res.headers.get('location')).toBeNull();
+  });
+
+  it('failure path: an absolute-URL redirect target is ignored, falling back to JSON', async () => {
+    const ctx = makeContext({
+      request: adminRequest({ description: 'Updated description that is long enough to pass.', redirect: 'https://evil.example.com/' }),
+      params: { id: 'camp_1' },
+      env: { DB: {}, ADMIN_EMAILS },
+    });
+    const res = await POST(ctx);
+    const body = await readJson(res);
+    expect(res.status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(res.headers.get('location')).toBeNull();
+  });
+
   it('failure path: a camp id that does not exist returns 404', async () => {
     (campsDb.getCampById as any).mockResolvedValue(null);
     const ctx = makeContext({ request: adminRequest({ name: 'X' }), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS } });

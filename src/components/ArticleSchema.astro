@@ -9,6 +9,7 @@
 // the JSON-LD author identity flips.
 
 import { SITE, authorEntity } from '../data/site';
+import { serializeJsonLd } from '../lib/jsonld';
 
 interface Props {
   title: string;
@@ -66,4 +67,4 @@ const schema = {
   ...(articleSection ? { articleSection } : {}),
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={serializeJsonLd(schema)} />

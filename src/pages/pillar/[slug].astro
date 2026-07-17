@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE, SPORTS, authorEntity } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
+import { serializeJsonLd } from '../../lib/jsonld';
 
 export const prerender = true;
 
@@ -80,8 +81,8 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
   canonical={canonicalUrl}
   publishedAt={data.publishedAt.toISOString()}
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(articleSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
 
   <div class="bg-paper-warm border-b border-bone">
     <div class="container-px pt-6 pb-4">

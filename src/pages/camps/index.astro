@@ -4,6 +4,7 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps-db';
 import { CAMP_SPORTS } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
+import { serializeJsonLd } from '../../lib/jsonld';
 
 const sportLabel = (slug: string): string => {
   const match = CAMP_SPORTS.find((s) => s.slug === slug);
@@ -162,8 +163,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
   description="Youth camps and league signups we know about. Starting in the Pacific Northwest where we can verify programs personally. National listings welcome."
   ogImage="/illustrations/og-camps.jpg"
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  {itemListSchema && <script slot="head" type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />}
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
+  {itemListSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />}
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">Camps & Leagues</p>
@@ -395,7 +396,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
   {/* JSON data island — non-executable, exempt from script-src CSP. The
       bundled script below reads it via getElementById so we can remove
       is:inline + define:vars and eliminate that unsafe-inline vector. */}
-  <script type="application/json" id="camps-data" set:html={JSON.stringify({ camps: campsLite, sports: CAMP_SPORTS })} />
+  <script type="application/json" id="camps-data" set:html={serializeJsonLd({ camps: campsLite, sports: CAMP_SPORTS })} />
 
   <script>
     import L from 'leaflet';

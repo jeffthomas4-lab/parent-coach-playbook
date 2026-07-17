@@ -7,6 +7,7 @@ import BaseLayout from '../../../../../layouts/BaseLayout.astro';
 import { listCampsByCitySport, slugifyCity, type Camp } from '../../../../../lib/camps-db';
 import { CAMP_SPORTS, AGE_BANDS } from '../../../../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
+import { serializeJsonLd } from '../../../../../lib/jsonld';
 
 export const prerender = false;
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
@@ -80,8 +81,8 @@ const breadcrumbSchema = {
 };
 ---
 <BaseLayout title={title} description={description}>
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />
+  <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
 
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-14">

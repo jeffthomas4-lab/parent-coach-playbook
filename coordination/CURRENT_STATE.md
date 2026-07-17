@@ -1,5 +1,13 @@
 # Current State
 
+## 2026-07-17 (session 2) — worktree repair, code hardening, and gate-progress update
+
+- **Repaired:** the corrupted working tree (48 truncated files restored in place from HEAD; 8 genuine edits preserved). `check:release-evidence` and `check:secrets` pass again. Commit is a Windows-host step (git write fails over the cloud bridge).
+- **Release state:** rc01 gate tally is now 11 pass / 1 not_applicable / 7 pending. `r2_recovery` accepted by owner as an empty-scope not_applicable exception (disposition A, 2026-07-17). Remaining seven gates stay owner/human/counsel-gated.
+- **Hardening (unverified until Windows suite run):** JSON-LD output escaping (26 files + helper + test), Worker-based incident runbook, idempotent camp reject, admin open-redirect validation, timing-safe cron key compare.
+- **Gate prep:** offsite backup tooling + runbook + template; exact production-migration change request (Plan 018); 19-risk counsel disposition worksheet; readiness runbooks for the access probe, notification receipt, and failure-isolation rehearsal. Full detail + per-gate remaining actions in `coordination/GATE-PROGRESS-2026-07-17-claude.md`.
+- **Next:** hand to Codex for independent critique, then Jeff-gated live actions, then deploy.
+
 ## 2026-07-17 current release-readiness update
 
 - **Confirmed live, read-only:** production Worker `parent-coach-desk` is back on the approved Plan 015 version `35449367-a085-4096-bb7b-6886c048cea5` at 100% traffic. Bounded GET checks of `/`, `/api/health`, and `/api/ready` returned 200. The brief unintended deployment target at `8dd97cde-3dfc-410b-b458-6bf6d9848e52` was restored; its scope, limitations, and prevention control are recorded in `coordination/release-evidence/production-deployment-scope-incident-2026-07-17.json`.

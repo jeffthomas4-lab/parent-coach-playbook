@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "gate": "r2_recovery",
+  "disposition": "not_applicable",
+  "decided_by": "Jeff Thomas (owner)",
+  "decided_at": "2026-07-17",
+  "decision_channel": "Cowork production-readiness session; owner selected disposition A (accept empty-scope not-applicable)",
+  "scope": "Production PHOTOS binding bucket 'activityradar-photos' verified empty at 0 objects / 0 bytes per production-r2-inventory-preflight-2026-07-17.json. There is no production R2 payload to export, sample, or retrieve today.",
+  "conditions": [
+    "This disposition is void the moment any production R2 media is added. Adding media requires a fresh independent offsite export plus a representative retrieval and SHA-256 match proof before r2_recovery may be marked not_applicable or pass again.",
+    "The synthetic staging R2 object restore with matching SHA-256 (staging-isolation-and-journey-2026-07-17.json) remains the proof that the recovery mechanism itself works."
+  ],
+  "references": [
+    "coordination/release-evidence/production-r2-inventory-preflight-2026-07-17.json",
+    "coordination/release-evidence/staging-isolation-and-journey-2026-07-17.json",
+    "coordination/LAUNCH-AUTHORIZATION-MATRIX.md"
+  ],
+  "contains_secret_values": false,
+  "external_changes": []
+}

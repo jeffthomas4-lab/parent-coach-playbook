@@ -21,6 +21,7 @@ import { checkUrlHealth } from '../../../lib/url-health';
 import { env as cfEnv } from 'cloudflare:workers';
 import { deleteExpiredIdempotencyRecords } from '../../../lib/public-idempotency';
 import { featureEnabled } from '../../../lib/feature-flags';
+import { secretsMatch } from '../../../lib/secrets';
 
 export const prerender = false;
 
@@ -47,7 +48,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const headerKey = request.headers.get('x-cron-key') ?? '';
-  if (!env.CRON_KEY || headerKey !== env.CRON_KEY) {
+  if (!env.CRON_KEY || !(await secretsMatch(headerKey, env.CRON_KEY))) {
     return json({ ok: false, error: 'forbidden' }, 403);
   }
 

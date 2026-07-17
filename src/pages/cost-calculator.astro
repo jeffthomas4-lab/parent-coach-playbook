@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SPORTS } from '../data/site';
 import ReviewedFooter from '../components/ReviewedFooter.astro';
 import { PROFILES } from '../data/costDefaults';
+import { serializeJsonLd } from '../lib/jsonld';
 
 export const prerender = true;
 
@@ -33,7 +34,7 @@ const levels = [
   title="Youth Sports Cost Calculator: What a Year Actually Costs"
   description="What does a year of youth sports actually cost? Pick a sport and level. We pre-fill national medians at every tier. Edit any line. Honest math either way."
 >
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script type="application/ld+json" set:html={serializeJsonLd({
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Youth Sports Cost Calculator',
@@ -188,8 +189,8 @@ const levels = [
     </div>
   </section>
 
-  <script type="application/json" id="cost-profiles" set:html={JSON.stringify(profilesPayload)} />
-  <script type="application/json" id="level-blurbs" set:html={JSON.stringify(levels)} />
+  <script type="application/json" id="cost-profiles" set:html={serializeJsonLd(profilesPayload)} />
+  <script type="application/json" id="level-blurbs" set:html={serializeJsonLd(levels)} />
 
   <script>
     type Line = { key: string; label: string; default: number; hint?: string; hideable?: boolean };

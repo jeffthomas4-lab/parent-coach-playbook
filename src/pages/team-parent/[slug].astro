@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import LeadMagnetCTA from '../../components/LeadMagnetCTA.astro';
+import { serializeJsonLd } from '../../lib/jsonld';
 import {
   TEAM_PARENT_CATEGORIES,
   TEAM_PARENT_TOPICS,
@@ -175,8 +176,8 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
     ogImage={(article.data as any).ogImage}
     publishedAt={article.data.publishedAt.toISOString()}
   >
-    <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-    <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script slot="head" type="application/ld+json" set:html={serializeJsonLd(articleSchema)} />
+    <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
 
     <div style={`background: ${EDITORIAL.accentBg};`}>
       <div class="container-px pt-10 pb-2">
