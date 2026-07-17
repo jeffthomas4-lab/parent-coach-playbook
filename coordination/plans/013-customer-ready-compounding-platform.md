@@ -3,7 +3,7 @@
 **Plan ID:** 013
 **Author:** Codex
 **Date:** 2026-07-16
-**Status:** Architecture decisions approved; implementation not started
+**Status:** Public-directory and default-off operational foundations implemented; customer launch, external identity, and payment activation remain gated
 **Tier:** 3
 
 ## Objective

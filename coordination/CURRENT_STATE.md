@@ -1,5 +1,16 @@
 # Current State
 
+## 2026-07-17 current release-readiness update
+
+- **Confirmed live, read-only:** production Worker `parent-coach-desk` is back on the approved Plan 015 version `35449367-a085-4096-bb7b-6886c048cea5` at 100% traffic. Bounded GET checks of `/`, `/api/health`, and `/api/ready` returned 200. The brief unintended deployment target at `8dd97cde-3dfc-410b-b458-6bf6d9848e52` was restored; its scope, limitations, and prevention control are recorded in `coordination/release-evidence/production-deployment-scope-incident-2026-07-17.json`.
+- **Confirmed live, read-only:** isolated staging Worker `parent-coach-desk-staging` is version `b66d47cc-7531-4d1d-99b4-4b194eeee61b`. Its generated manifest was verified before deployment to use only its staging directory and operations D1 databases, staging R2 bucket, staging origin, and default-off customer feature flags. See `coordination/release-evidence/verified-staging-deployment-2026-07-17.json`.
+- **Verified locally:** Plan 015's canonical editorial repository-target repair is deployed. Its one intentional live verification remains a human-selected, protected GitHub content write; it has not been automated. See `coordination/plans/015-editorial-approval-repository-target-repair.md`.
+- **Verified locally:** the complete current suite passed with 109 unit files / 565 tests and 10 integration files / 44 tests; Astro check reported 0 errors and 354 existing hints. The release-evidence structure is valid but correctly reports eight unpassed gates.
+- **Release state:** Parent Coach Desk is not yet customer-ready. The authoritative current gate packet is `coordination/release-evidence/rc01.json`; `coordination/LAUNCH-AUTHORIZATION-MATRIX.md` names every remaining owner choice and external proof. Pending items include authenticated Access results, independent immutable backup/retrieval, R2 disposition, manual accessibility/journey evidence, notification provider/channel receipt, environment-level failure rehearsal, counsel/risk disposition, and production migration approval.
+- **Implementation status:** the public-directory, trust-intake, owner-authorization, demand-loop, and commerce foundations are implemented as default-off and separately scoped local/staging capabilities. No camp-owner customer authentication, paid checkout, payment provider, production operational migration, or customer workflow has been activated.
+
+The older dated sections below are historical snapshots. When they conflict with this release-readiness update, the dated evidence packet above controls.
+
 ## 2026-07-16 rollback exposure and Worker defense-in-depth update
 
 - **Confirmed live, read-only:** the active `parent-coach-desk` Worker version is `92516f62-b891-4903-94e1-204a972ee2ae` at 100%; it is the only fully configured Worker code line currently proven.
