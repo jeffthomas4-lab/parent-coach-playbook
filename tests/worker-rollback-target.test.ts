@@ -6,7 +6,7 @@ import { validateWorkerRollbackTarget } from '../scripts/worker-rollback-target.
 // intentionally NOT regenerated here (that needs a separately approved fresh live read).
 // The happy-path test therefore validates the validator against a completed fixture; the
 // real stale-receipt gap is surfaced (correctly, as a failure) by `npm run check:rollback-target`.
-const withOpsDb = (r) => ({ ...r, bindings: { ...r.bindings, PCD_OPS_DB: 'd1' } });
+const withOpsDb = (r: any) => ({ ...r, bindings: { ...r.bindings, PCD_OPS_DB: 'd1' } });
 
 describe('Worker rollback target receipt', () => {
   it('pins a fully bound active Worker version for the next release only', () => {

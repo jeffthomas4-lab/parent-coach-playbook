@@ -1,0 +1,37 @@
+---
+// Admin identity + session control bar.
+//
+// Renders the signature-verified Cloudflare Access identity and a Log out
+// control. Logout points at Access's per-application logout endpoint
+// (/cdn-cgi/access/logout), which Cloudflare serves on the app hostname and
+// which clears the CF_Authorization cookie. The next request to any /admin
+// route then re-triggers the Access login flow, so "log in" needs no code of
+// its own — Access owns it. data-astro-reload forces a full browser
+// navigation so the edge (not the client router) handles the cdn-cgi path.
+interface Props {
+  email: string | null;
+  /** Optional extra text appended after the identity line (e.g. queue counts). */
+  detail?: string;
+}
+const { email, detail } = Astro.props;
+const LOGOUT_URL = '/cdn-cgi/access/logout';
+---
+{email ? (
+  <div class="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+    <p class="font-display italic text-ink-soft text-sm font-medium">
+      Signed in as {email}.{detail ? ` ${detail}` : ''}
+    </p>
+    <a
+      href={LOGOUT_URL}
+      data-astro-reload
+      rel="nofollow"
+      class="font-display italic text-rust text-sm font-medium hover:underline"
+    >
+      Log out
+    </a>
+  </div>
+) : (
+  <p class="font-display italic text-rust text-sm mt-2 font-medium">
+    Cloudflare Access identity not detected. Configure /admin/* behind Access before deploying.
+  </p>
+)}

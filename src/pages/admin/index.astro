@@ -1,7 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdminBar from '../../components/AdminBar.astro';
+import { requireAdmin } from '../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
 
-export const prerender = true;
+// SSR so the desk landing can show the signed-in Access identity and offer a
+// Log out control. Access already gates every /admin route; requireAdmin also
+// enforces the ADMIN_EMAILS allowlist and fails closed when unconfigured.
+export const prerender = false;
+
+const env = cfEnv as { ADMIN_EMAILS?: string } | undefined;
+
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+const adminEmail = auth.email;
 
 const sections = [
   {
@@ -67,6 +79,7 @@ const sections = [
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
         Choose a workspace. Cloudflare Access protects this page and every linked administrative route.
       </p>
+      <AdminBar email={adminEmail} />
     </div>
   </section>
 

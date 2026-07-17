@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { listPendingCamps, type Camp } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
+import AdminBar from '../../../components/AdminBar.astro';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR. Pulls live from D1 each request. Wrap in Cloudflare Access policy.
@@ -43,15 +44,7 @@ const fmtRange = (start: string, end: string) => {
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Pending camps
       </h1>
-      {adminEmail ? (
-        <p class="font-display italic text-ink-soft text-sm mt-2 font-medium">
-          Logged in as {adminEmail}.
-        </p>
-      ) : (
-        <p class="font-display italic text-rust text-sm mt-2 font-medium">
-          Cloudflare Access header not detected. Approve/reject will fail. Configure /admin/* behind Access before deploying.
-        </p>
-      )}
+      <AdminBar email={adminEmail} />
     </div>
   </section>
 

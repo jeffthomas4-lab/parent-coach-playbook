@@ -165,7 +165,7 @@ describe('create-only upload protection', () => {
     const a = deriveRunPrefix({ batchId: 'batch-1', manifestSha256: VALID_SHA256, timestamp });
     const b = deriveRunPrefix({ batchId: 'batch-1', manifestSha256: VALID_SHA256, timestamp });
     expect(a).toBe(b);
-    expect(() => deriveRunPrefix({ batchId: 'batch-1', manifestSha256: VALID_SHA256 })).toThrow(/timestamp/);
+    expect(() => deriveRunPrefix({ batchId: 'batch-1', manifestSha256: VALID_SHA256 } as any)).toThrow(/timestamp/);
 
     const artifact = { id: 'x', type: 'd1_export' as const };
     const keyRunA = objectKeyFor('prefix', a, artifact);

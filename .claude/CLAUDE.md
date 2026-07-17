@@ -29,6 +29,14 @@ Apply these on every piece of writing without being asked:
 - Anchor text: query-shaped, not title-shaped
 - Acronyms expanded on first use in body copy
 
+## Corrections log
+
+When you change an already-published piece in a way a returning reader should know about, log it. The public log is /about/corrections/ and its single source of truth is `src/data/corrections.ts`.
+
+- What gets logged: factual fixes, source/link replacements that carried real weight (a citation, not a "see also"), and substantive rewrites that change the argument or recommendation.
+- What does NOT get logged: typos, copy edits, and rewrites that don't change the substance.
+- How: add one `Correction` object (`date`, `piece`, `url`, `change`, `reason`) to the top of the array in `src/data/corrections.ts`, and add the on-page correction note at the bottom of the piece. The page re-sorts and refreshes its "last updated" date on its own — do not hand-edit dates in the page.
+
 ## Affiliate rules
 
 - Amazon Associates tag: `parentcoachpl-20` — every Amazon URL needs `?tag=parentcoachpl-20`
