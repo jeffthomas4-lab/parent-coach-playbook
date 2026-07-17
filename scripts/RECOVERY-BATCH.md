@@ -8,6 +8,16 @@ The manifest is written only below ignored `backups/recovery/<batch-id>/`. It st
 
 First create complete local exports and an R2 inventory/payload-manifest using separately approved source-read steps. Do not place credentials or an inventory containing customer object names in Git.
 
+For the three authoritative D1 databases, `scripts/backup-pcd-recovery-batch.ps1` provides the approved local-export shape. With no switch (or with `-PlanOnly`), it only prints the intended batch and touches neither Cloudflare nor disk. It refuses to export unless a human supplies `-Confirm`, writes each complete export to a new ignored batch, emits SHA-256 sidecars, and calls the manifest helper. It never uploads, restores, schedules, or changes provider retention.
+
+```powershell
+# Safe inspection only: no export, no local files, no provider action.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup-pcd-recovery-batch.ps1 -PlanOnly
+
+# Requires a separately approved source-read backup run.
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup-pcd-recovery-batch.ps1 -Confirm
+```
+
 Artifacts use `type:id=path` notation. Valid types are:
 
 - `d1_export` — a complete SQL export.

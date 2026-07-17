@@ -16,7 +16,7 @@ Close the release-evidence database-backup and R2-recovery gates with an indepen
 - The existing `scripts/backup-activity-radar.ps1` produces a size-checked, SHA-256 sidecar-backed local SQL export of `activity-radar` and retains eight local copies. It is not an offsite copy and does not cover every production D1 binding or R2.
 - The recorded fresh export is 257,196,189 bytes and was locally restored successfully; release evidence still explicitly requires immutable offsite storage before the backup gate can pass.
 - Cloudflare R2 bucket locks are useful storage controls, but an account administrator can remove lock rules. They do not meet the independent-account requirement when used as the only recovery copy.
-- `scripts/build-recovery-batch-manifest.mjs` now builds a checksum-verified, provider-neutral manifest for approved local exports. It writes only below ignored `backups/recovery/`, records no source paths/object names, and makes no network or provider call. Its use is documented in `scripts/RECOVERY-BATCH.md` and covered by `tests/recovery-batch-manifest.test.ts`.
+- `scripts/build-recovery-batch-manifest.mjs` now builds a checksum-verified, provider-neutral manifest for approved local exports. `scripts/backup-pcd-recovery-batch.ps1` can make a new local batch for all three authoritative D1 databases only after an explicit `-Confirm`; otherwise it is a no-side-effect plan. Neither script uploads, restores, schedules, or changes provider configuration. Both are documented in `scripts/RECOVERY-BATCH.md` and covered by focused tests.
 
 ## Recommended design
 
