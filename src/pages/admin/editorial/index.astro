@@ -186,6 +186,7 @@ const statusColor: Record<string, string> = {
                 <td class="py-2 pr-3" data-action-cell>
                   {(status === 'claude-reviewed' || status === 'draft' || status === 'ready-for-jeff') ? (
                     <button
+                      type="button"
                       class="approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
                       data-collection={r.collection}
                       data-slug={r.slug}
@@ -237,13 +238,12 @@ const statusColor: Record<string, string> = {
     // row optimistically. The committed change shows up after the next build.
     if (table) {
       table.addEventListener('click', async (e) => {
-        const target = e.target as HTMLElement;
-        if (!target.classList.contains('approve-btn')) return;
-        const collection = target.getAttribute('data-collection');
-        const slug = target.getAttribute('data-slug');
+        const btn = (e.target as Element).closest<HTMLButtonElement>('.approve-btn');
+        if (!btn) return;
+        const collection = btn.getAttribute('data-collection');
+        const slug = btn.getAttribute('data-slug');
         if (!collection || !slug) return;
 
-        const btn = target as HTMLButtonElement;
         btn.disabled = true;
         const originalText = btn.textContent;
         btn.textContent = 'Approving…';
