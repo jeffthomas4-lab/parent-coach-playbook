@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "environment": "staging",
+  "database": "parent-coach-desk-directory-staging",
+  "database_id": "6aa26d4d-d545-4eb7-bf50-34d45f2182ad",
+  "recorded_at": "2026-07-17T03:55:55.811Z",
+  "purpose": "Repair the isolated staging-only public submission path before the approved notification drill.",
+  "backup": {
+    "completed_at": "2026-07-17T03:55:18Z",
+    "artifact_location": "local temporary recovery artifact (not committed)",
+    "sha256": "284af8f0259764d3229e05b52ce2fcb741e9270774e0247ef3d782e29e1441d5",
+    "restore_rehearsed": false
+  },
+  "migration": {
+    "source": "migrations/0015_public_write_idempotency.sql",
+    "scope": "single additive staging migration only",
+    "remote_queries_processed": 2,
+    "verification": "public_write_idempotency exists after application"
+  },
+  "notification_drill": {
+    "event_class": "synthetic_camp_submission_notification_drill",
+    "submitted_at": "2026-07-17T03:55:55.811Z",
+    "camp_id": "b940f8db-0c40-45c2-b074-c124a3b757fd",
+    "camp_slug": "pcd-notification-drill-20260717035553",
+    "request_outcome": "accepted",
+    "delivery_receipt_state": "pending",
+    "notes": "The public submission route accepted the synthetic record. Provider and human receipt evidence remains required; no customer recipient was used."
+  }
+}
