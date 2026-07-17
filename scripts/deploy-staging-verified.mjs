@@ -71,7 +71,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   if (!confirmed) {
     console.log('No deploy performed. Re-run with --confirm after reviewing the generated staging manifest.');
   } else {
-    const npx = process.platform === 'win32' ? 'npx.cmd' : 'npx';
-    run(npx, ['wrangler', 'deploy', '--config', 'dist/server/wrangler.json', '--keep-vars', '--message', 'verified staging deployment'], { cwd: process.cwd() });
+    const npmCli = process.env.npm_execpath;
+    if (!npmCli) throw new Error('deploy-staging-verified.mjs must be run through npm');
+    run(process.execPath, [npmCli, 'exec', '--', 'wrangler', 'deploy', '--config', 'dist/server/wrangler.json', '--keep-vars', '--message', 'verified staging deployment'], { cwd: process.cwd() });
   }
 }
