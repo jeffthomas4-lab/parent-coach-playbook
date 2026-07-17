@@ -9,25 +9,30 @@ import { openOwnerDisputeByCustomer, resolveOwnerDisputeByStaff } from '../src/l
 import { claimPrivacyCascadeExecution, recordPrivacyExportArtifact, settlePrivacyCascadeExecution } from '../src/lib/privacy-execution-store';
 import { grantVerifiedEntitlement, reconcileVerifiedPayment, recordVerifiedCommerceEvent, requestRefundByStaff, settleVerifiedRefund } from '../src/lib/commerce-store';
 
-const mf = new Miniflare({
-  modules: true,
-  script: 'export default { fetch() { return new Response("test only"); } }',
-  compatibilityDate: '2026-07-15',
-  d1Databases: { DB: '00000000-0000-0000-0000-000000000001' },
-});
-
 let db: D1Database;
+let mf: Miniflare;
 
-beforeAll(async () => {
-  db = await mf.getD1Database('DB') as unknown as D1Database;
+async function createDisposableOpsDatabase(): Promise<{ mf: Miniflare; db: D1Database }> {
+  const isolated = new Miniflare({
+    modules: true,
+    script: 'export default { fetch() { return new Response("test only"); } }',
+    compatibilityDate: '2026-07-15',
+    d1Databases: { DB: '00000000-0000-0000-0000-000000000001' },
+  });
+  const isolatedDb = await isolated.getD1Database('DB') as unknown as D1Database;
   const directory = new URL('../migrations-pcd-ops/', import.meta.url);
   const migrations = (await readdir(directory)).filter((name) => name.endsWith('.sql')).sort();
   for (const migration of migrations) {
     const sql = (await readFile(new URL(migration, directory), 'utf8')).replace(/^--.*$/gm, '');
     for (const statement of sql.split(';').map((value) => value.trim()).filter(Boolean)) {
-      await db.prepare(statement).run();
+      await isolatedDb.prepare(statement).run();
     }
   }
+  return { mf: isolated, db: isolatedDb };
+}
+
+beforeAll(async () => {
+  ({ mf, db } = await createDisposableOpsDatabase());
 
   await db.batch([
     db.prepare(`INSERT INTO customer_users (id,status,primary_email_normalized,email_verified_at,created_at,updated_at) VALUES (?1,'active',?2,?3,?3,?3)`).bind('user-owner', 'owner@example.com', '2026-07-16T00:00:00Z'),
@@ -154,29 +159,46 @@ describe('disposable D1 customer lifecycle', () => {
   });
 
   it('reconciles a verified test payment, grants no customer authority, and reverses entitlement only after a verified refund', async () => {
+    // This scenario performs a dense sequence of D1 write batches. Keep it
+    // isolated from the lifecycle fixture so Windows/Miniflare worker cleanup
+    // cannot terminate the entire integration suite after a partial pass.
+    const commerce = await createDisposableOpsDatabase();
+    const commerceDb = commerce.db;
+    try {
+      await commerceDb.batch([
+        commerceDb.prepare(`INSERT INTO customer_users (id,status,primary_email_normalized,email_verified_at,created_at,updated_at) VALUES (?1,'active',?2,?3,?3,?3)`).bind('user-owner', 'owner@example.com', '2026-07-16T00:00:00Z'),
+        commerceDb.prepare(`INSERT INTO customer_organizations (id,display_name,status,created_by_customer_user_id,created_at,updated_at) VALUES (?1,?2,'active',?3,?4,?4)`).bind('org-1', 'Example Camp', 'user-owner', '2026-07-16T00:00:00Z'),
+        commerceDb.prepare(`INSERT INTO commerce_products (id,product_code,display_name,status,fulfillment_kind,created_at,updated_at) VALUES (?1,?2,?3,'active','featured_placement',?4,?4)`).bind('product-1', 'featured', 'Featured placement', '2026-07-16T00:00:00Z'),
+        commerceDb.prepare(`INSERT INTO commerce_prices (id,product_id,currency,amount_minor,status,created_at,updated_at) VALUES (?1,?2,'USD',5000,'active',?3,?3)`).bind('price-1', 'product-1', '2026-07-16T00:00:00Z'),
+        commerceDb.prepare(`INSERT INTO commerce_checkout_attempts (id,organization_id,customer_user_id,price_id,provider_code,provider_checkout_reference,state,idempotency_key,created_at,completed_at) VALUES (?1,?2,?3,?4,'disposable',?5,'completed',?6,?7,?7)`).bind('checkout-1', 'org-1', 'user-owner', 'price-1', 'checkout:test-1', 'checkout-key-1', '2026-07-16T00:00:00Z'),
+        commerceDb.prepare(`INSERT INTO commerce_orders (id,organization_id,customer_user_id,checkout_attempt_id,price_id,provider_code,provider_order_reference,amount_minor,currency,state,created_at) VALUES (?1,?2,?3,?4,?5,'disposable',?6,5000,'USD','pending',?7)`).bind('order-1', 'org-1', 'user-owner', 'checkout-1', 'price-1', 'order:test-1', '2026-07-16T00:00:00Z'),
+      ]);
     const paymentEvent = { id: 'commerce-payment-event-1', providerCode: 'disposable', providerEventId: 'payment:test-1', payloadSha256: '5'.repeat(64), eventType: 'payment.succeeded', signatureVerifiedAt: '2026-07-16T07:00:00Z', receivedAt: '2026-07-16T07:00:00Z' };
-    await expect(recordVerifiedCommerceEvent(db, paymentEvent)).resolves.toBe('created');
-    await expect(recordVerifiedCommerceEvent(db, { ...paymentEvent, id: 'commerce-payment-event-replay' })).resolves.toBe('replay');
-    await expect(recordVerifiedCommerceEvent(db, { ...paymentEvent, id: 'commerce-payment-event-conflict', payloadSha256: '6'.repeat(64) })).resolves.toBe('payload_conflict');
+    await expect(recordVerifiedCommerceEvent(commerceDb, paymentEvent)).resolves.toBe('created');
+    await expect(recordVerifiedCommerceEvent(commerceDb, { ...paymentEvent, id: 'commerce-payment-event-replay' })).resolves.toBe('replay');
+    await expect(recordVerifiedCommerceEvent(commerceDb, { ...paymentEvent, id: 'commerce-payment-event-conflict', payloadSha256: '6'.repeat(64) })).resolves.toBe('payload_conflict');
     // A conflict is visible for reconciliation; a separate verified event is used for the valid order.
     const reconciled = { ...paymentEvent, id: 'commerce-payment-event-2', providerEventId: 'payment:test-2', payloadSha256: '7'.repeat(64) };
-    await expect(recordVerifiedCommerceEvent(db, reconciled)).resolves.toBe('created');
+    await expect(recordVerifiedCommerceEvent(commerceDb, reconciled)).resolves.toBe('created');
     const reconciliation = { orderId: 'order-1', paymentEventId: reconciled.id, providerCode: 'disposable', providerEventId: reconciled.providerEventId, paidAt: '2026-07-16T07:01:00Z', auditEventId: 'commerce-audit-payment-1', idempotencyKey: 'commerce-payment-1' };
-    await expect(reconcileVerifiedPayment(db, reconciliation)).resolves.toBe('processed');
-    await expect(reconcileVerifiedPayment(db, reconciliation)).resolves.toBe('replay');
+    await expect(reconcileVerifiedPayment(commerceDb, reconciliation)).resolves.toBe('processed');
+    await expect(reconcileVerifiedPayment(commerceDb, reconciliation)).resolves.toBe('replay');
 
-    await expect(grantVerifiedEntitlement(db, { entitlementId: 'entitlement-denied', orderId: 'order-1', actorType: 'customer', actorRef: 'user-owner', providerPaymentVerified: true, grantedAt: '2026-07-16T07:02:00Z', auditEventId: 'commerce-audit-denied', idempotencyKey: 'commerce-entitlement-denied' })).resolves.toBe('denied');
+    await expect(grantVerifiedEntitlement(commerceDb, { entitlementId: 'entitlement-denied', orderId: 'order-1', actorType: 'customer', actorRef: 'user-owner', providerPaymentVerified: true, grantedAt: '2026-07-16T07:02:00Z', auditEventId: 'commerce-audit-denied', idempotencyKey: 'commerce-entitlement-denied' })).resolves.toBe('denied');
     const grant = { entitlementId: 'entitlement-1', orderId: 'order-1', actorType: 'system' as const, actorRef: 'test-fulfillment', providerPaymentVerified: true, grantedAt: '2026-07-16T07:03:00Z', auditEventId: 'commerce-audit-entitlement-1', idempotencyKey: 'commerce-entitlement-1' };
-    await expect(grantVerifiedEntitlement(db, grant)).resolves.toBe('granted');
-    await expect(grantVerifiedEntitlement(db, grant)).resolves.toBe('replay');
+    await expect(grantVerifiedEntitlement(commerceDb, grant)).resolves.toBe('granted');
+    await expect(grantVerifiedEntitlement(commerceDb, grant)).resolves.toBe('replay');
 
     const refund = { refundId: 'refund-1', orderId: 'order-1', providerCode: 'disposable', providerRequestReference: 'refund-request:test-1', amountMinor: 5000, reasonCode: 'test_refund', staffRef: 'staff:test', requestedAt: '2026-07-16T07:04:00Z', auditEventId: 'commerce-audit-refund-request-1', idempotencyKey: 'commerce-refund-request-1' };
-    await expect(requestRefundByStaff(db, refund)).resolves.toBe('requested');
-    await expect(requestRefundByStaff(db, refund)).resolves.toBe('replay');
+    await expect(requestRefundByStaff(commerceDb, refund)).resolves.toBe('requested');
+    await expect(requestRefundByStaff(commerceDb, refund)).resolves.toBe('replay');
     const settlement = { refundId: 'refund-1', providerRefundReference: 'refund:test-1', settledAt: '2026-07-16T07:05:00Z', auditEventId: 'commerce-audit-refund-settled-1', idempotencyKey: 'commerce-refund-settled-1' };
-    await expect(settleVerifiedRefund(db, settlement)).resolves.toBe('settled');
-    await expect(settleVerifiedRefund(db, settlement)).resolves.toBe('replay');
-    const evidence = await db.prepare(`SELECT o.state AS order_state, e.state AS entitlement_state, r.state AS refund_state, r.provider_refund_reference FROM commerce_orders o JOIN commerce_entitlements e ON e.order_id=o.id JOIN commerce_refunds r ON r.order_id=o.id WHERE o.id=?1`).bind('order-1').first();
+    await expect(settleVerifiedRefund(commerceDb, settlement)).resolves.toBe('settled');
+    await expect(settleVerifiedRefund(commerceDb, settlement)).resolves.toBe('replay');
+    const evidence = await commerceDb.prepare(`SELECT o.state AS order_state, e.state AS entitlement_state, r.state AS refund_state, r.provider_refund_reference FROM commerce_orders o JOIN commerce_entitlements e ON e.order_id=o.id JOIN commerce_refunds r ON r.order_id=o.id WHERE o.id=?1`).bind('order-1').first();
     expect(evidence).toEqual(expect.objectContaining({ order_state: 'refunded', entitlement_state: 'revoked', refund_state: 'succeeded', provider_refund_reference: 'refund:test-1' }));
-  });
+    } finally {
+      await commerce.mf.dispose();
+    }
+  }, 20_000);
 });

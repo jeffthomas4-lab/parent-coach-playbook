@@ -244,24 +244,34 @@ describe('sendAdminAlert', () => {
     vi.stubGlobal('fetch', fetchMock);
     const result = await sendAdminAlert(SEND_ENV, { subject: 'New submission', body: 'One camp.' });
     expect(result.outcome).toBe('sent');
-    expect(jsonBodyOf(fetchMock).to).toEqual(['jeffthomas@pugetsound.edu']);
     expect(fetchMock).toHaveBeenCalledTimes(2);
-    expect(fetchMock.mock.calls[1][0]).toBe(SEND_ENV.SLACK_WEBHOOK_URL);
-    const slackPost = jsonBodyOf(fetchMock, 1).text;
-    expect(slackPost).toContain('Internal Parent Coach Desk email sent');
+    expect(fetchMock.mock.calls[0][0]).toBe(SEND_ENV.SLACK_WEBHOOK_URL);
+    const slackPost = jsonBodyOf(fetchMock, 0).text;
+    expect(slackPost).toContain('Internal Parent Coach Desk alert routing');
     expect(slackPost).not.toContain('New submission');
     expect(slackPost).not.toContain('One camp.');
+    expect(fetchMock.mock.calls[1][0]).toBe('https://api.resend.com/emails');
+    expect(jsonBodyOf(fetchMock, 1).to).toEqual(['jeffthomas@pugetsound.edu']);
   });
 
-  it('preserves a sent email outcome when the secondary Slack signal is unavailable', async () => {
+  it('fails closed without sending email when the required Slack signal is unavailable', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     const fetchMock = vi.fn<typeof fetch>(async () => new Response(JSON.stringify({ id: 'm' })));
     vi.stubGlobal('fetch', fetchMock);
     const result = await sendAdminAlert({ ...SEND_ENV, SLACK_WEBHOOK_URL: undefined }, { subject: 'New submission', body: 'One camp.' });
-    expect(result).toMatchObject({ outcome: 'sent', id: 'm' });
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(result).toEqual({ outcome: 'failed', error: 'internal alert Slack relay unavailable' });
+    expect(fetchMock).not.toHaveBeenCalled();
     expect(JSON.stringify(errorSpy.mock.calls)).not.toContain('New submission');
     expect(JSON.stringify(errorSpy.mock.calls)).not.toContain('One camp.');
+  });
+
+  it('fails closed without sending email when Slack rejects the required relay', async () => {
+    const fetchMock = vi.fn<typeof fetch>(async () => new Response('no', { status: 500 }));
+    vi.stubGlobal('fetch', fetchMock);
+    const result = await sendAdminAlert(SEND_ENV, { subject: 'New submission', body: 'One camp.' });
+    expect(result).toEqual({ outcome: 'failed', error: 'internal alert Slack relay unavailable' });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock.mock.calls[0][0]).toBe(SEND_ENV.SLACK_WEBHOOK_URL);
   });
 
   it('is suppressed when no admin recipient is configured', async () => {

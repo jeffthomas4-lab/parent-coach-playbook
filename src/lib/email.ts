@@ -179,26 +179,19 @@ async function stageToSlack(
 }
 
 /**
- * Internal alerts are a dual-channel operator control: the approved
- * administrator receives the email, and Slack gets a privacy-safe signal that
- * an alert was sent. Slack failure never changes a successful email outcome;
- * it is recorded separately so a transient chat outage cannot trigger a retry
- * that duplicates the email.
+ * Internal alerts are a dual-channel operator control: Slack receives a
+ * privacy-safe routing signal before the approved administrator receives the
+ * email. A missing or failed Slack channel prevents the email from being sent,
+ * so send mode can never silently degrade to email-only delivery.
  */
-async function notifyInternalEmailSentToSlack(env: EmailEnv | undefined): Promise<void> {
-  const slack = await postToSlack(env, {
+async function stageInternalEmailRelayInSlack(env: EmailEnv | undefined): Promise<SlackPostResult> {
+  return await postToSlack(env, {
     text: [
-      ':envelope: *Internal Parent Coach Desk email sent*',
-      'A protected administrator alert was delivered by email.',
+      ':envelope: *Internal Parent Coach Desk alert routing*',
+      'A protected administrator alert is being delivered by email.',
       '_Recipient, subject, and body are withheld from Slack._',
     ].join('\n'),
   });
-  if (!slack.ok) {
-    console.error(JSON.stringify({
-      event: 'internal_email_slack_notify_failed',
-      code: slack.skipped ? 'not_configured' : 'provider_rejected',
-    }));
-  }
 }
 
 // ---------- The two paths that use the primitive ----------
@@ -265,6 +258,18 @@ export async function sendAdminAlert(
 ): Promise<EmailResult> {
   const to = alert.to ?? (env?.ADMIN_EMAILS ?? '').split(',')[0]?.trim();
   if (!to) return { outcome: 'suppressed', error: 'no admin recipient configured' };
+
+  if (modeFor(env, 'internal') === 'send') {
+    const slack = await stageInternalEmailRelayInSlack(env);
+    if (!slack.ok) {
+      console.error(JSON.stringify({
+        event: 'internal_alert_suppressed',
+        code: slack.skipped ? 'slack_not_configured' : 'slack_provider_rejected',
+      }));
+      return { outcome: 'failed', error: 'internal alert Slack relay unavailable' };
+    }
+  }
+
   const result = await sendEmail(env, {
     to,
     subject: alert.subject,
@@ -272,6 +277,5 @@ export async function sendAdminAlert(
     emailClass: 'internal',
     reason: 'Admin alert',
   });
-  if (result.outcome === 'sent') await notifyInternalEmailSentToSlack(env);
   return result;
 }
