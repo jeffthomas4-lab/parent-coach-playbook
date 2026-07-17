@@ -1,6 +1,6 @@
 # PCD Slack Staging Convention
 
-**Status:** foundation document, Session 0. Resolves the staging-destination question from PCD-SESSION-TWO-INPUT-from-reviews-2026-07-13.md item 1 (Jeff's call, 2026-07-13).
+**Status:** dedicated private alert channel created 2026-07-17; incoming webhook still pending.
 
 ---
 
@@ -47,8 +47,8 @@ No PII in a Slack post, ever, from any agent. Vera and Sunny read mail from real
 
 A Class C line says what happens if Jeff approves. "4 fixes staged" is not enough when one of them is a delete. Ranger's line names the delete because the cost of Jeff skimming past it is a row nobody gets back.
 
-## Open item
+## Delivery configuration
 
-The actual channel is not wired yet for the roster's own posts. Confirm the exact PCD Slack channel with Jeff before the first agent posts to it. Until that's confirmed, no agent should assume a channel ID and post blind.
+The dedicated private channel is `#pcd-alerts` (`C0BJT2194E4`). It is the approved destination for Parent Coach Desk operational alerts; it is not a destination for personally identifiable information.
 
-Two things partly close this. Vera already posts to the portfolio channel `#command` (`C0BGMPKT3GT`, fieldforgeventures.slack.com), which is a working answer for her and may or may not be the right one for six agents' drafts. And `POST /api/agent-runs` now posts to `SLACK_WEBHOOK_URL` on its own for any `failed` or `needs_you` run, so the run log's alerting has a channel the moment that secret is set, whatever the staging channel turns out to be. The question left for Jeff is whether the roster's drafts land in `#command` alongside Barnabus, or in a PCD channel of their own.
+The channel still needs a Slack Incoming Webhook scoped only to `#pcd-alerts`. Store its full webhook URL as the staging Worker secret `SLACK_WEBHOOK_URL`; do not place it in this repository, a message, or a dashboard variable. `POST /api/agent-runs` will then post only `failed` and `needs_you` run signals, and internal email alerts will require that Slack relay before sending.
