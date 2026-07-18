@@ -27,7 +27,7 @@ export async function runDeploymentSmoke({ origin, target, assetProof, fetchImpl
   if (!origin || !['staging', 'production'].includes(target)) throw new Error('target must be staging or production');
   const base = new URL(origin);
   if (base.protocol !== 'https:' || base.pathname !== '/' || base.search || base.hash) throw new Error('origin must be a bare HTTPS origin');
-  if (!assetProof || !/^\/_astro\/[A-Za-z0-9._-]+$/.test(assetProof.path ?? '') || !/^[0-9a-f]{64}$/.test(assetProof.sha256 ?? '') || !(assetProof.bytes > 0)) throw new Error('a valid exact static-asset proof is required');
+  if (!assetProof || !/^[0-9a-f]{40}$/.test(assetProof.git_sha ?? '') || !/^\/_astro\/[A-Za-z0-9._-]+$/.test(assetProof.path ?? '') || !/^[0-9a-f]{64}$/.test(assetProof.sha256 ?? '') || !(assetProof.bytes > 0)) throw new Error('a valid exact static-asset proof is required');
   const results = [];
   for (const check of deploymentSmokeChecks(target, assetProof.path)) {
     const response = await fetchImpl(new URL(check.path, base), {
@@ -46,9 +46,15 @@ export async function runDeploymentSmoke({ origin, target, assetProof, fetchImpl
     if (!passed) throw new Error(`${target} smoke failed: ${check.path} returned ${response.status}; expected ${check.statuses.join(' or ')}`);
   }
   return {
-    schema_version: 1,
+    schema_version: 2,
     target,
     origin: base.origin,
+    artifact: {
+      git_sha: assetProof.git_sha,
+      path: assetProof.path,
+      bytes: assetProof.bytes,
+      sha256: assetProof.sha256,
+    },
     observed_at: now().toISOString(),
     mutation_methods_used: false,
     credentials_retained: false,

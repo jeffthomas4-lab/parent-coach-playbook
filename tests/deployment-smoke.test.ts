@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { deploymentSmokeChecks, runDeploymentSmoke } from '../scripts/smoke-worker-deployment.mjs';
 
 describe('deployment smoke evidence', () => {
-  const assetProof = { path: '/_astro/app.abcdefgh.css', bytes: 5, sha256: '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824' };
+  const assetProof = { git_sha: '1'.repeat(40), path: '/_astro/app.abcdefgh.css', bytes: 5, sha256: '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824' };
   it('covers the complete non-mutating production health set', () => {
     expect(deploymentSmokeChecks('production', assetProof.path).map((item) => item.kind)).toEqual([
       'public_html', 'camp_directory', 'health', 'readiness', 'exact_static_asset', 'non_mutating_api', 'access_redirect',
@@ -17,13 +17,17 @@ describe('deployment smoke evidence', () => {
       fetchImpl: async (url) => new Response(String(url).includes('/_astro/') ? 'hello' : null, { status: statuses.shift() }),
       now: () => new Date('2026-07-18T09:00:00Z'),
     });
-    expect(report).toMatchObject({ target: 'staging', mutation_methods_used: false, credentials_retained: false, passed: true });
+    expect(report).toMatchObject({
+      schema_version: 2, target: 'staging', mutation_methods_used: false, credentials_retained: false, passed: true,
+      artifact: assetProof,
+    });
     expect(report.results).toHaveLength(6);
     expect(JSON.stringify(report)).not.toMatch(/cookie|authorization|location/i);
   });
 
   it('fails on a missing health surface or unsafe origin', async () => {
     await expect(runDeploymentSmoke({ origin: 'http://example.com', target: 'production', assetProof })).rejects.toThrow('bare HTTPS origin');
+    await expect(runDeploymentSmoke({ origin: 'https://example.com', target: 'production', assetProof: { ...assetProof, git_sha: undefined } })).rejects.toThrow('exact static-asset proof');
     await expect(runDeploymentSmoke({
       origin: 'https://example.com', target: 'production', assetProof,
       fetchImpl: async () => new Response(null, { status: 500 }),

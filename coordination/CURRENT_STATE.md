@@ -589,3 +589,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 
 - **Implemented locally:** both protected deployment jobs now create a detached SHA-256 sidecar for the sanitized post-deploy smoke receipt, verify the sidecar before upload, and retain the receipt and checksum together. This extends the immutable build-artifact chain through the observation record itself.
 - **Verified locally:** focused deployment-authority and smoke coverage passes 2 files / 6 tests, and the complete verbose single-worker suite passes 157 files / 797 tests. This does not claim a workflow ran, a deployment occurred, or a remote receipt exists.
+# 2026-07-18 - self-contained smoke artifact identity
+
+- **Implemented locally:** the smoke runner now rejects an asset proof without a full lowercase commit SHA and embeds that SHA together with the exact asset path, byte length, and SHA-256 in the sanitized receipt. A retained receipt can therefore be tied directly to the immutable build and deployed bytes without depending on an adjacent filename or prose claim.
+- **Verified locally:** focused smoke and deployment-authority coverage passes 2 files / 6 tests, and the complete verbose single-worker suite passes 157 files / 797 tests.
+- **External boundary:** this strengthens receipt structure only. No remote request was made during implementation, and a passing receipt still requires an approved deployment-time smoke run against the selected environment.
