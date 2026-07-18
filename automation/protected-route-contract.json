@@ -9,7 +9,7 @@
     { "source": "src/pages/admin/claims/index.astro", "control": "app-auth" },
     { "source": "src/pages/admin/editorial/index.astro", "control": "access-only" },
     { "source": "src/pages/admin/image-needs.md", "control": "access-only" },
-    { "source": "src/pages/admin/index.astro", "control": "access-only" },
+    { "source": "src/pages/admin/index.astro", "control": "app-auth" },
     { "source": "src/pages/admin/link-health/index.astro", "control": "app-auth" },
     { "source": "src/pages/admin/operations.astro", "control": "app-auth" },
     { "source": "src/pages/admin/preview/[collection]/[slug].astro", "control": "access-only" },

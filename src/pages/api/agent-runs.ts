@@ -49,6 +49,22 @@ const MAX_ID_LEN = 200;
 const MAX_AGENT_RUN_BODY_BYTES = 65_536;
 const SAFE_ID = /^[a-zA-Z0-9][a-zA-Z0-9._:-]*$/;
 
+/**
+ * Non-mutating caller preflight. Scheduled tasks can prove that their bearer
+ * token matches and that the run-log binding exists without manufacturing a
+ * synthetic agent_runs row. HEAD deliberately returns no credential or
+ * binding detail in its body.
+ */
+export const HEAD: APIRoute = async ({ request }) => {
+  const env = cfEnv as AgentRunsEnv | undefined;
+  if (!env?.AGENT_RUNS_TOKEN) return new Response(null, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+  if (!(await secretsMatch(bearerCredential(request), env.AGENT_RUNS_TOKEN))) {
+    return new Response(null, { status: 403, headers: { 'Cache-Control': 'no-store' } });
+  }
+  if (!env.FORGE_DB) return new Response(null, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+  return new Response(null, { status: 204, headers: { 'Cache-Control': 'no-store' } });
+};
+
 const stringField = (value: unknown): string => typeof value === 'string' ? value.trim() : '';
 
 interface Payload {

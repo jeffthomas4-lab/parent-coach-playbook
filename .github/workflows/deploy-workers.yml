@@ -1,0 +1,175 @@
+name: Deploy Workers
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Full commit SHA to redeploy through the normal gates
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: parent-coach-desk-production
+  cancel-in-progress: false
+
+env:
+  DEPLOY_SHA: ${{ inputs.commit_sha || github.sha }}
+
+jobs:
+  verify-ref:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Require an immutable commit already contained in main
+        run: |
+          test "${#DEPLOY_SHA}" -eq 40
+          git cat-file -e "$DEPLOY_SHA^{commit}"
+          git merge-base --is-ancestor "$DEPLOY_SHA" origin/main
+
+  build-staging:
+    needs: verify-ref
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build and verify isolated staging artifact
+        run: |
+          npm run build
+          node scripts/check-staging-deployment-manifest.mjs
+          tar -czf staging-dist.tgz dist
+          sha256sum staging-dist.tgz > staging-dist.tgz.sha256
+          printf '%s\n' "$DEPLOY_SHA" > staging-dist.git-sha
+      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        with:
+          name: pcd-staging-${{ env.DEPLOY_SHA }}
+          path: |
+            staging-dist.tgz
+            staging-dist.tgz.sha256
+            staging-dist.git-sha
+          if-no-files-found: error
+          retention-days: 14
+
+  build-production:
+    needs: verify-ref
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Run the full existing release contract
+        run: npm run ci:release
+      - name: Package the verified production artifact
+        run: |
+          tar -czf production-dist.tgz dist
+          sha256sum production-dist.tgz > production-dist.tgz.sha256
+          printf '%s\n' "$DEPLOY_SHA" > production-dist.git-sha
+      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        with:
+          name: pcd-production-${{ env.DEPLOY_SHA }}
+          path: |
+            production-dist.tgz
+            production-dist.tgz.sha256
+            production-dist.git-sha
+          if-no-files-found: error
+          retention-days: 30
+
+  deploy-staging:
+    needs: [build-staging, build-production]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: staging
+      url: https://parent-coach-desk-staging.eepskalla.workers.dev
+    steps:
+      - name: Refuse an unconfigured staging Environment
+        env:
+          DEPLOY_GATE_CONFIGURED: ${{ vars.DEPLOY_GATE_CONFIGURED }}
+        run: test "$DEPLOY_GATE_CONFIGURED" = "true"
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: pcd-staging-${{ env.DEPLOY_SHA }}
+      - name: Verify immutable artifact and SHA
+        run: |
+          sha256sum -c staging-dist.tgz.sha256
+          test "$(cat staging-dist.git-sha)" = "$DEPLOY_SHA"
+          tar -xzf staging-dist.tgz
+          node scripts/check-staging-deployment-manifest.mjs
+      - name: Dry-run and deploy the exact generated manifest
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
+          npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --message "$DEPLOY_SHA"
+      - run: node scripts/smoke-worker-deployment.mjs --origin https://parent-coach-desk-staging.eepskalla.workers.dev --target staging
+
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://parentcoachdesk.com
+    steps:
+      - name: Refuse an unconfigured production Environment
+        env:
+          DEPLOY_GATE_CONFIGURED: ${{ vars.DEPLOY_GATE_CONFIGURED }}
+        run: test "$DEPLOY_GATE_CONFIGURED" = "true"
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: pcd-production-${{ env.DEPLOY_SHA }}
+      - name: Verify immutable artifact and SHA
+        run: |
+          sha256sum -c production-dist.tgz.sha256
+          test "$(cat production-dist.git-sha)" = "$DEPLOY_SHA"
+          tar -xzf production-dist.tgz
+          node scripts/check-deployment-manifest.mjs
+      - name: Dry-run and deploy the exact generated manifest
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
+          npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --message "$DEPLOY_SHA"
+          npm exec wrangler -- versions list --config wrangler.production.jsonc
+          npm exec wrangler -- secret list --config wrangler.production.jsonc
+      - run: node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production

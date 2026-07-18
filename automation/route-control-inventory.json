@@ -467,6 +467,7 @@
     {
       "route": "/api/agent-runs",
       "methods": [
+        "HEAD",
         "POST"
       ],
       "source": "api/agent-runs.ts",

@@ -8,11 +8,46 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { makeContext, jsonRequest, readJson } from '../helpers/context';
 import { makeFakeD1 } from '../helpers/d1';
-import { POST } from '../../src/pages/api/agent-runs';
+import { HEAD, POST } from '../../src/pages/api/agent-runs';
 import { applyCanary, isCanaryExempt } from '../../src/lib/agent-runs';
 
 const TOKEN = 'test-agent-runs-token';
 const URL = 'https://parentcoachdesk.com/api/agent-runs';
+
+describe('HEAD /api/agent-runs readiness', () => {
+  it('returns 204 for a valid token and binding without writing', async () => {
+    const { db } = makeFakeD1();
+    const prepare = vi.spyOn(db, 'prepare');
+    const response = await HEAD(makeContext({
+      request: new Request(URL, { method: 'HEAD', headers: { authorization: `Bearer ${TOKEN}` } }),
+      env: { FORGE_DB: db, AGENT_RUNS_TOKEN: TOKEN },
+    }));
+    expect(response.status).toBe(204);
+    expect(prepare).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    ['missing-token', 503],
+    ['wrong-token', 403],
+    ['missing-db', 503],
+  ] as const)('fails closed without disclosing configuration: %s', async (scenario, expected) => {
+    const { db } = makeFakeD1();
+    const env = scenario === 'missing-token'
+      ? { FORGE_DB: db }
+      : scenario === 'wrong-token'
+        ? { FORGE_DB: db, AGENT_RUNS_TOKEN: TOKEN }
+        : { AGENT_RUNS_TOKEN: TOKEN };
+    const response = await HEAD(makeContext({
+      request: new Request(URL, {
+        method: 'HEAD',
+        headers: { authorization: `Bearer ${scenario === 'missing-db' ? TOKEN : 'wrong'}` },
+      }),
+      env,
+    }));
+    expect(response.status).toBe(expected);
+    expect(await response.text()).toBe('');
+  });
+});
 
 function req(body: unknown, token: string | null = TOKEN) {
   return jsonRequest(URL, body, {

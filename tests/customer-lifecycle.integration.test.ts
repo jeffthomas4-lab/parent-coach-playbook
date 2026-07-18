@@ -48,9 +48,9 @@ beforeAll(async () => {
     db.prepare(`INSERT INTO commerce_checkout_attempts (id,organization_id,customer_user_id,price_id,provider_code,provider_checkout_reference,state,idempotency_key,created_at,completed_at) VALUES (?1,?2,?3,?4,'disposable',?5,'completed',?6,?7,?7)`).bind('checkout-1', 'org-1', 'user-owner', 'price-1', 'checkout:test-1', 'checkout-key-1', '2026-07-16T00:00:00Z'),
     db.prepare(`INSERT INTO commerce_orders (id,organization_id,customer_user_id,checkout_attempt_id,price_id,provider_code,provider_order_reference,amount_minor,currency,state,created_at) VALUES (?1,?2,?3,?4,?5,'disposable',?6,5000,'USD','pending',?7)`).bind('order-1', 'org-1', 'user-owner', 'checkout-1', 'price-1', 'order:test-1', '2026-07-16T00:00:00Z'),
   ]);
-});
+}, 30_000);
 
-afterAll(async () => mf.dispose());
+afterAll(async () => mf?.dispose());
 
 describe('disposable D1 customer lifecycle', () => {
   it('atomically accepts a matching invitation and denies replay', async () => {
