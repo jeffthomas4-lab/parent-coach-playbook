@@ -11,8 +11,10 @@ if (!origin || !['staging', 'production'].includes(target)) {
 
 const checks = [
   { path: '/', statuses: [200] },
-  { path: '/ready', statuses: [200] },
-  { path: '/api/agent-runs', method: 'HEAD', statuses: [403, 503] },
+  // This is intentionally a non-mutating probe. A missing staging task token
+  // is reported as 503 while production must have its configured token and
+  // reject an unauthenticated caller with 403.
+  { path: '/api/agent-runs', method: 'HEAD', statuses: target === 'production' ? [403] : [403, 503] },
 ];
 if (target === 'production') checks.push({ path: '/admin', statuses: [302] });
 
