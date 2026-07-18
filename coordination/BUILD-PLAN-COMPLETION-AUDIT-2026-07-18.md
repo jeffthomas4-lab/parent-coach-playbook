@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 144 files / 759 tests |
+| Full Vitest suite | PASS on clean rerun — 145 files / 763 tests (the immediately prior run passed 144 files but failed overall when one Vitest fork exited unexpectedly) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -39,6 +39,8 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Trusted relationships | Implemented as an inert research workflow | `926da5b` distinguishes candidates from actual relationships, gates outreach, enforces do-not-contact, and exposes a protected read-only workspace. `c0f79fc` proves all 38 protected routes redirect anonymously through Access. |
 | Deployment authority | Implemented and verified locally | `b484da7` retires the dangerous legacy Pages guide and preserves one protected Worker release authority. |
 | Production Access gate | Implemented and verified locally | `a68765c` allows pending evidence in normal CI but blocks the production job until policy and full authenticated allow/deny evidence are complete. |
+| Runtime secret preservation | Implemented and verified locally | `682bd79` declares exactly four required production secret names and validates the generated manifest without storing values. |
+| Post-deploy health evidence | Implemented and verified locally | `f8e1bfb` covers public HTML, camps, health, readiness, static assets, non-mutating API, and Access redirect and retains sanitized SHA-addressed smoke receipts. |
 | Evidence log | Updated | `79253ca` and `6fd3f7f` record the overnight slices and distribution/maintenance controls. |
 
 ## Requirement reconciliation
