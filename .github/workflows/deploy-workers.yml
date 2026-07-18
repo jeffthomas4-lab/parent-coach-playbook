@@ -154,6 +154,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Require complete Access policy and authenticated allow/deny evidence
+        run: npm run check:access-evidence:production
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: pcd-production-${{ env.DEPLOY_SHA }}

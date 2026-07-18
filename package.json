@@ -38,6 +38,7 @@
     "check:recovery-tabletop": "node scripts/check-recovery-tabletop.mjs coordination/release-evidence/recovery-tabletop-2026-07-16.json",
     "check:failure-isolation": "node scripts/check-failure-isolation-evidence.mjs coordination/release-evidence/integrated-failure-isolation-2026-07-16.json",
     "check:access-evidence": "node scripts/check-access-evidence.mjs coordination/release-evidence/access-policy-export-pending.json coordination/release-evidence/authenticated-access-probes-pending.json",
+    "check:access-evidence:production": "node scripts/check-access-evidence.mjs --require-complete coordination/release-evidence/access-policy-export-pending.json coordination/release-evidence/authenticated-access-probes-pending.json",
     "check:trust-migration-rehearsal": "node scripts/check-trust-migration-rehearsal.mjs coordination/release-evidence/trust-migration-rehearsal-2026-07-16.json",
     "check:production-schema-compatibility": "node scripts/check-production-schema-compatibility.mjs coordination/release-evidence/production-schema-compatibility-2026-07-16.json",
     "check:staging-pcd-ops-rehearsal": "node scripts/check-staging-pcd-ops-rehearsal.mjs coordination/release-evidence/staging-pcd-ops-rehearsal-2026-07-16.json",

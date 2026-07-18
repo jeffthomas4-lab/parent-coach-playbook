@@ -17,6 +17,7 @@ describe('deployment authority', () => {
     expect(workflow).toContain('DEPLOY_SHA: ${{ inputs.commit_sha || github.sha }}');
     expect(workflow).toContain('git merge-base --is-ancestor "$DEPLOY_SHA" origin/main');
     expect(workflow).toContain('name: production');
+    expect(workflow).toContain('npm run check:access-evidence:production');
     expect(workflow).toContain('name: pcd-production-${{ env.DEPLOY_SHA }}');
     expect(workflow).toContain('test "$(cat production-dist.git-sha)" = "$DEPLOY_SHA"');
     expect(workflow).toContain('deploy --config dist/server/wrangler.json --keep-vars --dry-run');
