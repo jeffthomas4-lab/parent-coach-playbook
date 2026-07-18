@@ -12,9 +12,10 @@ production data mutation.
 ## 1. Implemented and verified locally
 
 - Repository organization: canonical ownership plus an exhaustive registry for
-  all 85 tracked root artifacts (`68141ad`, `67504e0`), followed by developer
-  entrypoint reconciliation that removes obsolete Pages, Kit fallback, and
-  dual-CMS guidance.
+  all 85 tracked root artifacts (`68141ad`, `67504e0`), machine-enforced roles
+  for all 36 tracked top-level directories, and developer entrypoint
+  reconciliation that removes obsolete Pages, Kit fallback, and dual-CMS
+  guidance.
 - Coaching and trust: evidence-qualified HowTo markup and a public camp
   verification methodology (`cf8f8a0`, `ecb125e`, `6d3ab2a`), plus stable
   Organization/WebSite/author/publisher identifiers across shared Article
@@ -42,7 +43,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 151 test files / 777 tests passed.
+Latest clean validation before this handoff: 151 test files / 778 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.

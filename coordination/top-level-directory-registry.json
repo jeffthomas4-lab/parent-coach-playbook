@@ -1,0 +1,52 @@
+{
+  "product_runtime": [
+    "public",
+    "src"
+  ],
+  "independently_deployed_runtime": [
+    "legacy-domain-redirect",
+    "worker-cron",
+    "worker-link-checker",
+    "workers-activity-radar"
+  ],
+  "data_lineage_and_fixtures": [
+    "buildout",
+    "imports",
+    "migrations",
+    "migrations-activity-radar",
+    "migrations-pcd-ops",
+    "samples",
+    "sport-vocab",
+    "staging-fixtures"
+  ],
+  "tests_and_quality_evidence": [
+    ".audit_tmp",
+    "audit",
+    "tests"
+  ],
+  "operations_governance_and_coordination": [
+    ".claude",
+    ".github",
+    "agents",
+    "automation",
+    "coordination",
+    "prompts",
+    "scripts"
+  ],
+  "business_editorial_and_reports": [
+    "affiliate-picks",
+    "artifacts",
+    "docs",
+    "gsc-reviews",
+    "kit-emails",
+    "PCD-AI-OS",
+    "reports",
+    "strategy",
+    "templates"
+  ],
+  "inactive_or_historical": [
+    "activityradar-archive",
+    "studio",
+    "wip-archive"
+  ]
+}

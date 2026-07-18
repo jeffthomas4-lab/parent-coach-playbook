@@ -87,12 +87,21 @@ check:root-organization` fails when a new root artifact bypasses this policy or
 when a registry entry becomes stale. Classification is not an endorsement of
 content freshness; it establishes ownership and the safe migration queue.
 
+Every tracked top-level directory is likewise classified exactly once in
+`coordination/top-level-directory-registry.json`. This includes active runtime,
+independently deployed Workers, data lineages, fixtures, quality evidence,
+operations, business/editorial work, and retained historical systems. Generated
+or dependency directories with no tracked files are outside that registry. A
+new tracked top-level directory fails `check:root-organization` until its owner
+and role are explicit.
+
 ## Cleanup queue
 
 These are organization tasks, not permission to delete:
 
-1. Classify every tracked root Markdown file as current authority, historical
-   record, business/editorial working document, or superseded artifact.
+1. ~~Classify every tracked root artifact and top-level directory by ownership
+   and operational role.~~ Completed 2026-07-18 and enforced in the release
+   contract.
 2. Migrate unreferenced historical reports into dated subfolders in one
    path-update commit per topic.
 3. Add ignore coverage or deterministic retention rules for scratch outputs in
