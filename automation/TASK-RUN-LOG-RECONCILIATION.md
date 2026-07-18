@@ -32,6 +32,11 @@ Worker scheduler, not a scheduled-task prompt using this bearer contract.
 
 1. Confirm the external task ID and cadence match the row without changing it.
 2. Confirm its deployed prompt references the listed committed caller source.
+   The committed side of this comparison is hashed: `npm run check:caller-hashes`
+   recomputes the SHA-256 of every committed caller source in this table and
+   matches it against `coordination/release-evidence/scheduled-task-caller-hashes.json`,
+   so a caller source that drifts without updating this reconciliation fails
+   instead of passing an eyeball check.
 3. Confirm, by name only, that its protected runtime exposes
    `PCD_AGENT_RUNS_TOKEN`; never print or paste the value.
 4. Run exactly one canary task. Its authenticated `HEAD /api/agent-runs`
