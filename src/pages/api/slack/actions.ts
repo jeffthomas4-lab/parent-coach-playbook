@@ -10,11 +10,11 @@
 //   4. the action is the publish button, with a well-formed collection + slug
 // Any one missing and the answer is no.
 //
-// Slack wants a response in 3 seconds and the publish (two GitHub calls plus a
-// deploy hook) can outrun that, so the work runs behind waitUntil where the
+// Slack wants a response in 3 seconds and the publish (two GitHub calls) can
+// outrun that, so the work runs behind waitUntil where the
 // runtime offers it and the result is posted back to Slack's response_url.
 //
-// Env: SLACK_SIGNING_SECRET, SLACK_APPROVER_IDS, GITHUB_TOKEN, DEPLOY_HOOK_URL.
+// Env: SLACK_SIGNING_SECRET, SLACK_APPROVER_IDS, GITHUB_TOKEN.
 
 import type { APIRoute } from 'astro';
 import { verifySlackSignature } from '../../../lib/slack';
@@ -140,13 +140,10 @@ export const POST: APIRoute = async (ctx) => {
       await respond(responseUrl, `Did not publish \`${collection}/${slug}\`: ${result.error}`);
       return;
     }
-    const deployNote =
-      result.deploy === 'fired'
-        ? 'Deploy hook fired — live in a couple of minutes.'
-        : result.deploy === 'skipped'
-          ? 'Committed, but no deploy hook is configured, so no build started.'
-          : 'Committed, but the deploy hook failed. Trigger a build by hand.';
-    await respond(responseUrl, `Published \`${collection}/${slug}\`. ${deployNote}`);
+    await respond(
+      responseUrl,
+      `Published \`${collection}/${slug}\`. The protected CI/CD workflow was queued from the main-branch commit; production still requires its configured approval.`,
+    );
   };
 
   // Ack inside Slack's 3-second window and finish the work in the background

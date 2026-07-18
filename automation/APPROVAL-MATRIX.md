@@ -58,7 +58,7 @@ The agents above are people doing jobs. These are the machine paths the Worker e
 |---|---|---|---|
 | `POST /api/agent-runs` | D (legacy internal operations) | Writes `agent_runs`, updates registry state, can pause an agent, and projects a minimized failure alert to Slack | Jeff preauthorized only this bounded operational scope. It is **not Class A/read-only**. The shared token cannot provide workflow-scoped identity and must be replaced by Forge Command executor grants before expansion. |
 | `POST /api/admin/editorial/approve` | C | Moves a piece to `jeff-approved`. Editorial sign-off, not a publication | The click, behind Cloudflare Access |
-| `POST /api/admin/editorial/publish` | C | Flips `draft: false`, commits to main, fires the deploy hook. The post goes live | The click, behind Cloudflare Access |
+| `POST /api/admin/editorial/publish` | C | Flips `draft: false` and commits to main. Protected CI/CD deploys only after its configured production approval. | The click, behind Cloudflare Access; deployment remains separately gated |
 | `POST /api/slack/actions` | C | Same publish, reached from the Slack button | The click. Signature-verified as coming from Slack, and the clicker's Slack ID must be on `SLACK_APPROVER_IDS` |
 | `sendEmail(..., 'outbound')` | B today, C on the flip | Parent- and operator-facing mail | Everything. Staged to Slack, not sent, until `EMAIL_MODE=send` |
 | `sendEmail(..., 'internal')` | B today, C on the flip | Admin alerts to an address on `ADMIN_EMAILS` | Staged to Slack until `EMAIL_ADMIN_MODE=send` |

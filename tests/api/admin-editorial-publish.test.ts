@@ -6,7 +6,7 @@ import { makeContext, readJson } from '../helpers/context';
 import { POST } from '../../src/pages/api/admin/editorial/publish';
 
 const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
-const ENV = { ADMIN_EMAILS, GITHUB_TOKEN: 'gh_fake', DEPLOY_HOOK_URL: 'https://hook.example/deploy' };
+const ENV = { ADMIN_EMAILS, GITHUB_TOKEN: 'gh_fake' };
 
 const DRAFT_MD = `---
 title: A Test Post
@@ -74,13 +74,13 @@ describe('POST /api/admin/editorial/publish', () => {
     expect(res.status).toBe(403);
   });
 
-  it('happy path: publishes and reports the deploy hook fired', async () => {
+  it('happy path: publishes and reports protected CI/CD queued', async () => {
     const fetchMock = githubOk();
     vi.stubGlobal('fetch', fetchMock);
     const res = await POST(makeContext({ request: adminRequest(), env: ENV }));
     const body = await readJson(res);
     expect(res.status).toBe(200);
-    expect(body).toMatchObject({ ok: true, status: 'published', deploy: 'fired', publishedBy: ADMIN_EMAILS });
+    expect(body).toMatchObject({ ok: true, status: 'published', deploy: 'queued', publishedBy: ADMIN_EMAILS });
     const putBody = JSON.parse(fetchMock.mock.calls[1][1].body);
     expect(Buffer.from(putBody.content, 'base64').toString('utf-8')).toContain('draft: false');
     expect(putBody.message).toContain('Publish: articles/a-test-post');

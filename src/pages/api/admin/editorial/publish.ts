@@ -2,7 +2,7 @@
 //
 // The second half of the approve-to-publish pipeline, reachable from the admin
 // UI. Flips `draft: false`, stamps the editorial block, commits to main, and
-// fires the deploy hook.
+// queues the protected CI/CD workflow from that main-branch commit.
 //
 // The sibling route, ./approve.ts, moves a piece to `jeff-approved` — that is
 // the editorial sign-off and it does NOT publish. This route is the publish.
@@ -12,7 +12,7 @@
 // Auth: Cloudflare Access identity + admin allowlist + same-origin. The Slack
 // button path to the same action lives at /api/slack/actions.
 //
-// Env: GITHUB_TOKEN (contents:write), DEPLOY_HOOK_URL.
+// Env: GITHUB_TOKEN (contents:write).
 
 import type { APIRoute } from 'astro';
 import { requireAdmin, requireSameOrigin, type AdminAuthEnv } from '../../../../lib/admin-auth';

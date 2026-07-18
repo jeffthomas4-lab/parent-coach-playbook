@@ -2,18 +2,17 @@
 //
 // The thing this file has to prove is not just "the happy path publishes." It
 // is that the pipeline refuses to do anything on its own: no valid target, no
-// publish; already published, no second commit; GitHub says no, no deploy hook.
+// publish; already published, no second commit; GitHub says no, no deployment.
 
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import {
   flipDraftFrontmatter,
   publishDraft,
-  fireDeployHook,
   isSafeSlug,
   buildApprovalBlocks,
 } from '../../src/lib/publish';
 
-const ENV = { GITHUB_TOKEN: 'gh_fake', DEPLOY_HOOK_URL: 'https://api.cloudflare.com/hook/fake' };
+const ENV = { GITHUB_TOKEN: 'gh_fake' };
 const OPTS = { today: '2026-07-15', approvedBy: 'jeffthomas@pugetsound.edu' };
 
 const DRAFT_MD = `---
@@ -95,12 +94,11 @@ describe('publishDraft', () => {
     vi.unstubAllGlobals();
   });
 
-  it('happy path: reads, commits, and fires the deploy hook', async () => {
+  it('happy path: reads and commits, queuing protected CI/CD from the main push', async () => {
     const fetchMock = vi
       .fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(DRAFT_MD), sha: 'sha1' }), { status: 200 }))
-      .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'sha2' } }), { status: 200 }))
-      .mockResolvedValueOnce(new Response('{}', { status: 200 }));
+      .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'sha2' } }), { status: 200 }));
     vi.stubGlobal('fetch', fetchMock);
 
     const result = await publishDraft(ENV, {
@@ -108,8 +106,8 @@ describe('publishDraft', () => {
       slug: 'a-test-post',
       approvedBy: 'jeffthomas@pugetsound.edu',
     });
-    expect(result).toMatchObject({ ok: true, path: 'src/content/articles/a-test-post.md', deploy: 'fired' });
-    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(result).toMatchObject({ ok: true, path: 'src/content/articles/a-test-post.md', deploy: 'queued' });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
 
     const putBody = JSON.parse(fetchMock.mock.calls[1][1].body);
     expect(unb64(putBody.content)).toContain('draft: false');
@@ -117,7 +115,6 @@ describe('publishDraft', () => {
     expect(fetchMock.mock.calls[0][0]).toContain('/repos/jeffthomas4-lab/parent-coach-playbook/');
     // Optimistic concurrency: the sha we read must be the sha we write against.
     expect(putBody.sha).toBe('sha1');
-    expect(fetchMock.mock.calls[2][0]).toBe(ENV.DEPLOY_HOOK_URL);
   });
 
   it('refuses an unknown collection without calling GitHub', async () => {
@@ -143,7 +140,7 @@ describe('publishDraft', () => {
   it('refuses when GITHUB_TOKEN is not configured', async () => {
     const fetchMock = vi.fn();
     vi.stubGlobal('fetch', fetchMock);
-    const result = await publishDraft({ DEPLOY_HOOK_URL: 'x' }, {
+    const result = await publishDraft({}, {
       collection: 'articles',
       slug: 'a-test-post',
       approvedBy: 'a@b.com',
@@ -182,7 +179,7 @@ describe('publishDraft', () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
-  it('failure path: a rejected commit does not fire the deploy hook', async () => {
+  it('failure path: a rejected commit does not report a deployment', async () => {
     const fetchMock = vi
       .fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(DRAFT_MD), sha: 'stale' }), { status: 200 }))
@@ -206,41 +203,19 @@ describe('publishDraft', () => {
     }
   });
 
-  it('commits even when no deploy hook is configured, and says so', async () => {
+  it('commits and queues the protected workflow without a Worker-held deploy hook', async () => {
     const fetchMock = vi
       .fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(DRAFT_MD), sha: 'sha1' }), { status: 200 }))
       .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'sha2' } }), { status: 200 }));
     vi.stubGlobal('fetch', fetchMock);
-    const result = await publishDraft({ GITHUB_TOKEN: 'gh_fake' }, {
+    const result = await publishDraft(ENV, {
       collection: 'articles',
       slug: 'a-test-post',
       approvedBy: 'a@b.com',
     });
-    expect(result).toMatchObject({ ok: true, deploy: 'skipped' });
+    expect(result).toMatchObject({ ok: true, deploy: 'queued' });
     expect(fetchMock).toHaveBeenCalledTimes(2);
-  });
-});
-
-describe('fireDeployHook', () => {
-  afterEach(() => {
-    vi.unstubAllGlobals();
-  });
-
-  it('skips without an error when no hook is configured', async () => {
-    expect(await fireDeployHook({})).toBe('skipped');
-  });
-
-  it('reports failed when the hook returns an error status', async () => {
-    vi.stubGlobal('fetch', vi.fn(async () => new Response('nope', { status: 500 })));
-    expect(await fireDeployHook(ENV)).toBe('failed');
-  });
-
-  it('reports failed rather than throwing when the hook is unreachable', async () => {
-    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-    vi.stubGlobal('fetch', vi.fn(async () => { throw new Error(`network ${ENV.DEPLOY_HOOK_URL}`); }));
-    expect(await fireDeployHook(ENV)).toBe('failed');
-    expect(JSON.stringify(errorSpy.mock.calls)).not.toContain(ENV.DEPLOY_HOOK_URL);
   });
 });
 

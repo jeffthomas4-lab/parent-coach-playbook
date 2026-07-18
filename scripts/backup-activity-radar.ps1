@@ -15,13 +15,12 @@
 # until it has been run by hand three times. This script stays manual-only until
 # that gate clears.
 #
-# PROVING-RUN COUNT AS OF 2026-07-16: TWO. The authoritative count is the
-# append-only ledger below; one clean run on a separate day remains before any
-# schedule may be proposed.
+# PROVING-RUN GATE: three clean runs on three separate local calendar days. The
+# authoritative evidence is the append-only ledger below.
 #
 # The count is no longer tracked by memory. Every successful run appends one row
 # to scripts\BACKUP-PROVING-LOG.md (git-tracked). Read that file for the real
-# count; if it has fewer than three rows, this script does not get scheduled.
+# count; repeated runs on one local calendar day count once.
 # Do not schedule this script yet.
 #
 # Restore procedure: RESTORE-activity-radar.md, same folder as this script.
@@ -120,8 +119,8 @@ try {
       "# activity-radar backup: proving-run log",
       "",
       "Appended to automatically by ``backup-activity-radar.ps1`` on each clean run.",
-      "Decision 6: three clean manual runs before this script may be scheduled.",
-      "Do not hand-edit. Do not schedule until this table has three rows.",
+      "Decision 6: three clean manual runs on three separate local dates before scheduling.",
+      "Do not hand-edit. Do not schedule until this table has entries for three local dates.",
       "",
       "| # | Run (local) | Size MB | Attempts | Backups on disk |",
       "|---|---|---|---|---|"
@@ -133,10 +132,19 @@ try {
   $when = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
   Add-Content -Path $ledger -Value "| $runNo | $when | $mb | $attempt | $remaining |" -Encoding UTF8
 
+  $completedDates = @(
+    Get-Content -LiteralPath $ledger |
+      ForEach-Object {
+        if ($_ -match '^\| \d+ \| (\d{4}-\d{2}-\d{2}) ') { $Matches[1] }
+      } |
+      Sort-Object -Unique
+  )
+  $completedDays = $completedDates.Count
+
   Write-Host ""
-  Write-Host "Proving run $runNo of 3 logged to $ledger"
-  if ($runNo -lt 3) {
-    Write-Host "GATE: $((3 - $runNo)) more clean manual run(s) before this script may be scheduled. Do not schedule yet." -ForegroundColor Yellow
+  Write-Host "Proving run $runNo logged to $ledger ($completedDays of 3 distinct local days)"
+  if ($completedDays -lt 3) {
+    Write-Host "GATE: $((3 - $completedDays)) more clean manual run day(s) before this script may be scheduled. Do not schedule yet." -ForegroundColor Yellow
   } else {
     Write-Host "GATE CLEARED: three clean runs logged. Scheduling is now allowed -- see BACKUP.md for the Task Scheduler command." -ForegroundColor Green
   }

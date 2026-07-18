@@ -16,7 +16,6 @@ const ENV = {
   SLACK_SIGNING_SECRET: SIGNING_SECRET,
   SLACK_APPROVER_IDS: `${JEFF},U_OTHER_ADMIN`,
   GITHUB_TOKEN: 'gh_fake',
-  DEPLOY_HOOK_URL: 'https://hook.example/deploy',
 };
 
 const DRAFT_MD = `---
@@ -64,7 +63,6 @@ function githubOk() {
     .fn()
     .mockResolvedValueOnce(new Response(JSON.stringify({ content: b64(DRAFT_MD), sha: 'sha1' }), { status: 200 }))
     .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'sha2' } }), { status: 200 }))
-    .mockResolvedValueOnce(new Response('{}', { status: 200 })) // deploy hook
     .mockResolvedValueOnce(new Response('{}', { status: 200 })); // response_url
 }
 
@@ -179,10 +177,9 @@ describe('POST /api/slack/actions', () => {
     expect(Buffer.from(putBody.content, 'base64').toString('utf-8')).toContain('draft: false');
     expect(putBody.committer.email).toBe('parentcoachplaybook@gmail.com');
     expect(putBody.message).toContain('approved by slack:jeff');
-    expect(fetchMock.mock.calls[2][0]).toBe(ENV.DEPLOY_HOOK_URL);
     // And it reports back to the Slack message it came from.
-    expect(fetchMock.mock.calls[3][0]).toBe('https://hooks.slack.com/actions/response/abc');
-    expect(JSON.parse(fetchMock.mock.calls[3][1].body).text).toContain('Published');
+    expect(fetchMock.mock.calls[2][0]).toBe('https://hooks.slack.com/actions/response/abc');
+    expect(JSON.parse(fetchMock.mock.calls[2][1].body).text).toContain('Published');
   });
 
   it('reports back to Slack when the publish fails instead of failing silently', async () => {
@@ -219,6 +216,6 @@ describe('POST /api/slack/actions', () => {
     expect(body.text).toContain('Publishing');
     expect(pending).toHaveLength(1);
     await Promise.all(pending);
-    expect(fetchMock).toHaveBeenCalledTimes(4);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
   });
 });

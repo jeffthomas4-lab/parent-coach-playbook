@@ -7,18 +7,17 @@
 //     -> Jeff clicks it                    (THE HUMAN GATE — this file does not click)
 //     -> /api/slack/actions verifies the click really came from Slack
 //     -> publishDraft(): flip draft:false, stamp the editorial block, commit to
-//        GitHub, fire the deploy hook
+//        GitHub; the protected deploy workflow is triggered by that push
 //
 // Everything on either side of the click is automated. The click is not. There
 // is no code path in this file that publishes without a caller having proven a
 // human asked for it.
 //
-// Env: GITHUB_TOKEN (contents:write on the repo), DEPLOY_HOOK_URL (the
-// Cloudflare deploy hook). Both are Worker secrets.
+// Env: GITHUB_TOKEN (contents:write on the repo). The repository's protected
+// deploy workflow builds and deploys the resulting main-branch commit.
 
 export interface PublishEnv {
   GITHUB_TOKEN?: string;
-  DEPLOY_HOOK_URL?: string;
   PUBLISH_COMMITTER_EMAIL?: string;
 }
 
@@ -100,7 +99,7 @@ export function flipDraftFrontmatter(
     } else {
       // Publishing is idempotent even across UTC date boundaries. A repeated
       // approval must not refresh editorial metadata, create another commit,
-      // or fire the deploy hook after the draft has already gone live.
+      // or trigger another protected deployment after the draft has gone live.
       return { content, changed: false };
     }
   } else {
@@ -156,7 +155,7 @@ export function flipDraftFrontmatter(
 }
 
 export type PublishOutcome =
-  | { ok: true; path: string; commitSha?: string; deploy: 'fired' | 'skipped' | 'failed' }
+  | { ok: true; path: string; commitSha?: string; deploy: 'queued' }
   | { ok: false; code: number; error: string };
 
 function ghHeaders(token: string): Record<string, string> {
@@ -169,32 +168,8 @@ function ghHeaders(token: string): Record<string, string> {
 }
 
 /**
- * Fire the Cloudflare deploy hook. Best-effort by design: the commit is the
- * source of truth and a missed hook can be re-fired, so a hook failure reports
- * rather than rolls anything back.
- */
-export async function fireDeployHook(env: PublishEnv | undefined): Promise<'fired' | 'skipped' | 'failed'> {
-  const url = env?.DEPLOY_HOOK_URL?.trim();
-  if (!url) {
-    console.warn('[publish] DEPLOY_HOOK_URL not set — commit landed, no build triggered');
-    return 'skipped';
-  }
-  try {
-    const res = await fetch(url, { method: 'POST', signal: AbortSignal.timeout(GH_TIMEOUT_MS) });
-    if (!res.ok) {
-      console.error('[publish] deploy hook returned', res.status);
-      return 'failed';
-    }
-    return 'fired';
-  } catch {
-    // Fetch exceptions may include the secret deploy-hook URL.
-    console.error(JSON.stringify({ event: 'deploy_hook_failed', code: 'fetch_failed' }));
-    return 'failed';
-  }
-}
-
-/**
- * Publish one draft: read the file, flip it, commit it, fire the deploy hook.
+ * Publish one draft: read the file, flip it, and commit it to main. GitHub's
+ * protected workflow observes that commit and is the only deployment trigger.
  *
  * The caller is responsible for proving a human asked for this. Callers today:
  * POST /api/admin/editorial/publish (Cloudflare Access identity) and
@@ -268,8 +243,7 @@ export async function publishDraft(
   }
   const putBody = (await putRes.json().catch(() => ({}))) as { commit?: { sha?: string } };
 
-  const deploy = await fireDeployHook(env);
-  return { ok: true, path, commitSha: putBody.commit?.sha, deploy };
+  return { ok: true, path, commitSha: putBody.commit?.sha, deploy: 'queued' };
 }
 
 /**
@@ -307,7 +281,7 @@ export function buildApprovalBlocks(input: {
             title: { type: 'plain_text', text: 'Publish this post?' },
             text: {
               type: 'mrkdwn',
-              text: `This flips \`draft: false\`, commits to main, and fires the deploy hook. It goes live.`,
+              text: `This flips \`draft: false\` and commits to main. Protected CI/CD then builds it; production still requires its configured approval.`,
             },
             confirm: { type: 'plain_text', text: 'Publish it' },
             deny: { type: 'plain_text', text: 'Not yet' },
