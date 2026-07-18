@@ -470,5 +470,5 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 # 2026-07-18 - public camp verification methodology
 
 - **Implemented locally:** `/camps/verification/` now explains the Parent Coach Approved concept through the existing public `Verified` badge: minimum evidence, recorded review date, explicit non-endorsement limits, freshness triggers, moderated correction/removal workflow, and commercial separation. Directory badges and verified detail pages link to the methodology.
-- **Verified locally:** focused camp methodology, truthfulness, and verification-governance coverage passes 3 files / 10 tests. Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing hints.
+- **Verified locally:** focused camp methodology, truthfulness, and verification-governance coverage passes 3 files / 10 tests. The regenerated route-control inventory classifies the new page as public, cacheable, read-only HTML. The post-change full suite passes 141 files / 752 tests; Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing hints.
 - **Claim boundary:** this documents and exposes the existing governed verification workflow. It does not assert inspection, accreditation, safety, quality, provider identity proof, or live deployment.
