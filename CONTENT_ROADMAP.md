@@ -154,6 +154,8 @@ Genuinely new rule/equipment/deadline items the weekly rules watch turns up, que
 |---|---|---|---|---|
 | NFHS bans backward/over-the-head warmup throws in shot put and discus; must face the sector from inside the circle. Effective 2027 outdoor season. | NFHS | https://nfhs.org/stories/rules-changes-approved-for-high-school-track-and-field-cross-country | 2026-07-14 | NEWS-DRAFTED (src/content/news/nfhs-track-field-throwing-warmup-safety-2027.md) |
 | US Youth Soccer, AYSO, and US Club Soccer drop the Jan-Dec birth-year age cutoff for an Aug-Jul school-year cutoff, starting with the 2026-27 season on August 1, 2026. Kids born Aug-Dec most likely to shift age groups. | US Youth Soccer | https://www.usyouthsoccer.org/news/2025/06/10/updated-decision-on-age-group-formation/ | 2026-07-14 | NEWS-DRAFTED (src/content/news/youth-soccer-age-cutoff-shifts-to-school-year-2026.md) |
+| USSSA travel baseball caps every team at 3 grade-exception players (rostered by school grade, not strict age), effective 8/12/2026; individual events/showcases exempt. Confirmed against the primary USSSA rulebook (Rule 3.00 header). | USSSA Baseball | https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf | 2026-07-18 | NEWS-DRAFTED (src/content/news/usssa-grade-exception-limit-2026.md) |
+| NOCSAE finalized ND006, the first-ever youth-specific football helmet performance standard (distinct from the ND002 recert already covered); effective date pushed to Sept 1, 2027. Not parent-actionable yet, but the day youth helmets need a separate stamp is coming. Candidate for a future explainer. | NOCSAE | https://nocsae.org/overview-nocsae-youth-football-helmet-standard/ | 2026-07-18 | PIPELINE |
 
 ---
 
