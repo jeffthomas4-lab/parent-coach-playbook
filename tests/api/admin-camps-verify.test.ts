@@ -4,6 +4,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { makeContext, readJson } from '../helpers/context';
 
 vi.mock('../../src/lib/camps-db', () => ({
+  CampVerificationBlockedError: class CampVerificationBlockedError extends Error {},
   setVerified: vi.fn(),
   getCampById: vi.fn(),
 }));
@@ -12,7 +13,7 @@ import { POST } from '../../src/pages/api/admin/camps/[id]/verify';
 import * as campsDb from '../../src/lib/camps-db';
 
 const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
-const mockCamp = { id: 'camp_1', verified: 1 };
+const mockCamp = { id: 'camp_1', verified: 1, status: 'approved', source_domain: 'example.com', registration_url: 'https://example.com/camp' };
 
 function adminRequest(body: unknown = { verified: true }, headers: Record<string, string> = {}) {
   return new Request('https://parentcoachdesk.com/api/admin/camps/camp_1/verify', {
@@ -60,6 +61,7 @@ describe('POST /api/admin/camps/:id/verify', () => {
     const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS } });
     const res = await POST(ctx);
     expect(res.status).toBe(404);
+    expect(campsDb.setVerified).not.toHaveBeenCalled();
   });
 
   it('failure path: a cross-origin request is rejected even with valid admin auth', async () => {

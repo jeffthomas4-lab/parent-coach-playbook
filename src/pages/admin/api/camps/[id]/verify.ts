@@ -9,7 +9,7 @@
 // and the just-verified row drops off naturally. On error, returns JSON.
 
 import type { APIRoute } from 'astro';
-import { setVerified, getCampById } from '../../../../../lib/camps-db';
+import { CampVerificationBlockedError, setVerified, getCampById } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -49,9 +49,17 @@ export const POST: APIRoute = async ({ params, request }) => {
     // default to true
   }
 
-  await setVerified(env.DB, id, verified);
+  const existing = await getCampById(env.DB, id);
+  if (!existing) return json({ ok: false, error: 'camp not found' }, 404);
+  try {
+    await setVerified(env.DB, id, verified);
+  } catch (error) {
+    if (error instanceof CampVerificationBlockedError) {
+      return json({ ok: false, error: error.code }, 409);
+    }
+    throw error;
+  }
   const camp = await getCampById(env.DB, id);
-  if (!camp) return json({ ok: false, error: 'camp not found' }, 404);
 
   // Redirect back to the spot-check queue so the row drops off and the page
   // reloads. 303 is the standard "after POST, navigate to a GET" status.

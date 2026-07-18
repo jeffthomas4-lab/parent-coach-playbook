@@ -1188,10 +1188,39 @@ export async function listCampsAtAddressForSubmit(
 
 // ---------- Verified flag + hero photo ----------
 
+export type CampVerificationBlockCode = 'not_found' | 'not_approved' | 'source_missing' | 'source_not_https';
+
+export class CampVerificationBlockedError extends Error {
+  constructor(readonly code: CampVerificationBlockCode) {
+    super(`camp verification blocked: ${code}`);
+    this.name = 'CampVerificationBlockedError';
+  }
+}
+
+export function campVerificationBlock(camp: Camp | null): CampVerificationBlockCode | null {
+  if (!camp) return 'not_found';
+  if (camp.status !== 'approved') return 'not_approved';
+  const source = camp.registration_url || camp.website_url;
+  if (!camp.source_domain || !source) return 'source_missing';
+  try {
+    if (new URL(source).protocol !== 'https:') return 'source_not_https';
+  } catch {
+    return 'source_not_https';
+  }
+  return null;
+}
+
 export async function setVerified(db: D1Database, id: string, verified: boolean): Promise<void> {
+  if (verified) {
+    const blocked = campVerificationBlock(await getCampById(db, id));
+    if (blocked) throw new CampVerificationBlockedError(blocked);
+  }
   await db
-    .prepare('UPDATE programs SET verified = ? WHERE id = ?')
-    .bind(verified ? 1 : 0, id)
+    .prepare(`UPDATE programs
+                SET verified = ?,
+                    last_verified_at = CASE WHEN ? = 1 THEN ? ELSE last_verified_at END
+              WHERE id = ?`)
+    .bind(verified ? 1 : 0, verified ? 1 : 0, nowIso(), id)
     .run();
 }
 

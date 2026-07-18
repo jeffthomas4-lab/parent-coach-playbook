@@ -3,7 +3,7 @@
 // Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { setVerified, getCampById } from '../../../../../lib/camps-db';
+import { CampVerificationBlockedError, setVerified, getCampById } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -45,9 +45,17 @@ export const POST: APIRoute = async ({ params, request }) => {
     // default to true
   }
 
-  await setVerified(env.DB, id, verified);
+  const existing = await getCampById(env.DB, id);
+  if (!existing) return json({ ok: false, error: 'camp not found' }, 404);
+  try {
+    await setVerified(env.DB, id, verified);
+  } catch (error) {
+    if (error instanceof CampVerificationBlockedError) {
+      return json({ ok: false, error: error.code }, 409);
+    }
+    throw error;
+  }
   const camp = await getCampById(env.DB, id);
-  if (!camp) return json({ ok: false, error: 'camp not found' }, 404);
 
   // Browser form submissions get redirected back to the camp's admin page.
   // Programmatic JSON callers still receive the JSON response.
