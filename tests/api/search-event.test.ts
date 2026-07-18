@@ -43,6 +43,20 @@ describe('POST /api/search-event', () => {
     );
   });
 
+  it('records a minimized camp filter event without location dimensions', async () => {
+    const db = makeDb();
+    const ctx = makeContext({ request: jsonReq({
+      query: 'camp directory filters', eventType: 'filter', resultCount: 2,
+      surface: 'camp_directory', collection: 'camps', sport: 'soccer', age: '8-12',
+    }), env: enabledEnv(db) });
+    const res = await POST(ctx);
+    expect(res.status).toBe(200);
+    expect(db._bind).toHaveBeenCalledWith(
+      expect.any(String), 1, 'filter', 'camp directory filters', 0, 'one_to_five', 'camp_directory',
+      'camps', 'soccer', '8-12', null, 'unknown', 1, expect.any(String), expect.any(String),
+    );
+  });
+
   it('failure path: a missing query is rejected before touching the DB', async () => {
     const db = makeDb();
     const ctx = makeContext({ request: jsonReq({ resultCount: 1 }), env: enabledEnv(db) });

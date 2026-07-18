@@ -27,7 +27,9 @@ production data mutation.
 - Camps provenance: evidence-grade source requirements and governed review
   state before a listing can be represented as verified (`ddcc887`).
 - Demand intelligence: privacy-minimized reporting, retention boundaries, and
-  content-coverage opportunity scoring (`a6fe763`, `e7685b5`).
+  content-coverage opportunity scoring (`a6fe763`, `e7685b5`), plus default-off
+  camp-directory search/filter events that discard precise location before the
+  telemetry boundary.
 - Affiliate integrity: destination inventory validation and a release gate
   (`371cce5`, `b2461d7`).
 - Newsletter and social: fail-closed provider journey proof plus draft-only,
@@ -43,7 +45,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 151 test files / 778 tests passed.
+Latest clean validation before this handoff: 152 test files / 782 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.
@@ -54,6 +56,8 @@ as green. The new scheduled-task inventory contract passes 1 file / 2 tests.
   error-rate observation, exact-asset match, secret-name preservation, and
   rollback rehearsal.
 - Production camp sitemap population after the Worker-first deployment.
+- Camp demand collection, retention, and reporting evidence after an explicitly
+  approved telemetry activation; no event was collected locally.
 - Authenticated Cloudflare Access allowlisted login, protected admin read, and
   non-allowlisted denial. Anonymous redirect coverage is proven for 38 routes.
 - Newsletter consent, confirmation, welcome, unsubscribe, suppression, and

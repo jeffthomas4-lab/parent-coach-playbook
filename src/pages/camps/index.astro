@@ -241,7 +241,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
           ></div>
 
           {/* Filter Bar */}
-          <div class="mb-8 border border-bone bg-paper-warm p-6">
+          <div id="camp-filters" class="mb-8 border border-bone bg-paper-warm p-6">
             <div class="flex flex-wrap items-end gap-4 mb-6">
               {/* Search by name */}
               <div>
@@ -413,6 +413,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
     import 'leaflet.markercluster';
     import 'leaflet.markercluster/dist/MarkerCluster.css';
     import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+    import { buildCampDemandPayload } from '../../lib/camp-demand';
 
     // Self-contained inline-SVG pin. The prior fix imported Leaflet's default
     // marker PNGs and pointed L.Icon.Default at them, but pins still didn't
@@ -547,6 +548,23 @@ const itemListSchema = featuredCamps.length > 0 ? {
       let map: L.Map | null = null;
       let clusterGroup: L.MarkerClusterGroup | null = null;
       let visibleCamps: LiteCamp[] = [];
+      let demandTimer: ReturnType<typeof setTimeout> | undefined;
+
+      // Default-off at the endpoint. The client sends only the minimized
+      // payload returned by buildCampDemandPayload; precise location state is
+      // deliberately used for filtering and discarded before this boundary.
+      function scheduleDemandEvent() {
+        if (demandTimer) clearTimeout(demandTimer);
+        demandTimer = setTimeout(() => {
+          const payload = buildCampDemandPayload(state, visibleCamps.length);
+          if (!payload) return;
+          fetch('/api/search-event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          }).catch(() => {});
+        }, 600);
+      }
 
       // Initialize map
       function initMap() {
@@ -831,6 +849,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
           const radiusVal = (document.getElementById('filter-radius') as unknown as HTMLSelectElement).value;
           state.zipRadius = radiusVal === 'all' ? Infinity : parseInt(radiusVal, 10);
           applyFilters();
+          scheduleDemandEvent();
         });
 
         // Clearing the zip input releases the radius filter immediately.
@@ -898,6 +917,14 @@ const itemListSchema = featuredCamps.length > 0 ? {
           setToggleActive(document.getElementById('filter-open-only') as HTMLElement, false);
           applyFilters();
         });
+
+        // Delegation observes user-driven filter changes after each control's
+        // own handler updates state. Clear-all produces no event because the
+        // minimized payload builder returns null for an unfiltered directory.
+        const filterPanel = document.getElementById('camp-filters')!;
+        filterPanel.addEventListener('input', scheduleDemandEvent);
+        filterPanel.addEventListener('change', scheduleDemandEvent);
+        filterPanel.addEventListener('click', scheduleDemandEvent);
       }
 
       // Initial setup

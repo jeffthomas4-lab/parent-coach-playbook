@@ -30,6 +30,7 @@ export const prerender = false;
 
 interface SearchEventPayload {
   query?: unknown;
+  eventType?: unknown;
   resultCount?: unknown;
   collection?: unknown;
   sport?: unknown;
@@ -90,6 +91,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (limited) return limited;
 
   const resultBand = demandResultBand(payload.resultCount);
+  const eventType = payload.eventType === 'filter' ? 'filter' : 'search';
   const collection = boundedDimension(payload.collection, 50);
   const sport = boundedDimension(payload.sport, 50);
   const age = boundedDimension(payload.age, 30);
@@ -112,7 +114,7 @@ export const POST: APIRoute = async ({ request }) => {
       .bind(
         eventId,
         DEMAND_EVENT_SCHEMA_VERSION,
-        'search',
+        eventType,
         sanitized.query,
         sanitized.redacted ? 1 : 0,
         resultBand,
