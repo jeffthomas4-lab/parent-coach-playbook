@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "contentRegistryComplete": false,
+  "registryAsOf": "2026-07-16T00:00:00.000Z",
+  "scope": {
+    "surfaces": ["site_search"],
+    "languages": ["en"],
+    "normalizationVersion": 1
+  },
+  "items": [
+    {
+      "query": "baseball rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/baseball/",
+      "evidencePath": "src/content/rules/baseball.md"
+    },
+    {
+      "query": "basketball rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/basketball/",
+      "evidencePath": "src/content/rules/basketball.md"
+    },
+    {
+      "query": "flag football rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/flag-football/",
+      "evidencePath": "src/content/rules/flag-football.md"
+    },
+    {
+      "query": "soccer rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/soccer/",
+      "evidencePath": "src/content/rules/soccer.md"
+    },
+    {
+      "query": "volleyball rules",
+      "status": "current",
+      "asOf": "2026-07-16T00:00:00.000Z",
+      "route": "/rules/volleyball/",
+      "evidencePath": "src/content/rules/volleyball.md"
+    }
+  ]
+}
