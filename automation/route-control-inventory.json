@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 136,
+  "route_count": 137,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -712,6 +712,16 @@
         "GET"
       ],
       "source": "camps/suggest.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/camps/verification",
+      "methods": [
+        "GET"
+      ],
+      "source": "camps/verification.astro",
       "cache_class": "public_html",
       "auth_boundary": "public",
       "public_write_limiter": null
