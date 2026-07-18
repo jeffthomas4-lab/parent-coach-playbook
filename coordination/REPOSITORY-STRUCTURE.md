@@ -97,8 +97,10 @@ These are organization tasks, not permission to delete:
    path-update commit per topic.
 3. Add ignore coverage or deterministic retention rules for scratch outputs in
    `buildout/`, `.audit_tmp/`, and generated manifests.
-4. Reconcile `DEPLOY.md` with the production runbook, retaining only resource
-   bootstrap and historical instructions that remain valid.
+4. ~~Reconcile `DEPLOY.md` with the production runbook.~~ Completed 2026-07-18:
+   the path is now a short retired-guide pointer with safe local preparation
+   and external resource-bootstrap boundaries; obsolete Pages and destructive
+   repository setup instructions were removed.
 5. Retire stale duplicated build plans only after all live references point to
    their successor and the history remains discoverable.
 
