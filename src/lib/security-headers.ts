@@ -4,7 +4,7 @@ export const CONTENT_SECURITY_POLICY = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com",
+  "connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io",
   "frame-ancestors 'none'",
   "form-action 'self' https://app.kit.com",
   "base-uri 'self'",

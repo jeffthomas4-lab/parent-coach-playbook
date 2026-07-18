@@ -324,12 +324,11 @@ Do not compress this against the idle. The maintenance-mode constraint is in the
 
 ## 9. The one decision, and the immediate next action
 
-**The decision.** My Company.md names LegisRadar as Priority 1 "until fully working." This program is portable. Two clean options:
+**The decision, made 2026-07-18.** PCD is Priority 1, LegisRadar 2, SightSmash 3. This resolves the earlier fork to Option A and My Company.md is updated to match.
 
-- **A. Keep PCD as the teaching ground.** PCD is the healthiest place to learn, because the estate is already 70% built and the loops are half-wired, so you close loops instead of scaffolding from scratch. Every pattern (approval queue, run log, event bus, AI gateway, deploy pipeline) is built PCD-first and reused on LegisRadar the moment it is proven. You learn on PCD, LegisRadar inherits.
-- **B. Point the same program at LegisRadar now.** Honor the stated priority literally. The phase structure and the rules are identical; only the application layer changes. The cost is that LegisRadar is closer to greenfield, so you scaffold more and close fewer existing loops, which is slower learning.
+Option A means PCD is the teaching ground. The estate is already ~70% built and the loops are half-wired, so the work is closing loops instead of scaffolding from scratch, which is more learning per hour. Every pattern (approval queue, run log, event bus, AI gateway, deploy pipeline) is built PCD-first and handed to LegisRadar the moment it is proven. You learn on PCD, LegisRadar inherits, SightSmash after that.
 
-My read: A. You get more learning per hour on PCD because the wiring is already there to finish, and LegisRadar gets the proven pattern handed to it rather than a first draft. But this is your priority call to make, not mine to assume.
+The option not taken (point the same program at LegisRadar first) is retired, not deleted: the phase structure and rules are identical, so LegisRadar runs this same program at Priority 2 with its application layer swapped in. Its one open Critical (a leaked `ANTHROPIC_API_KEY` pushed to GitHub) gets rotated and purged before its Phase 0.
 
 **The immediate next action, either way:** Phase 0, and inside Phase 0, the 296-page 500 fix, because it is the one thing a parent can hit today. It ships through the standard deploy path, it teaches the pipeline end to end, and it is already written and waiting in `src/pages/camps/[slug].astro`. That is the first Monday-morning task.
 

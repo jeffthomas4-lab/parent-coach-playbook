@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 import authkit from '@workos/authkit-astro';
+import sentry from '@sentry/astro';
 
 const ownerAuthProofEnabled = process.env.PCD_OWNER_AUTH_PROOF_ENABLED === 'true';
 
@@ -29,6 +30,20 @@ function rehypeAffiliateRel() {
   return (tree) => walk(tree);
 }
 
+// Sentry (client SDK + optional build-time source map upload). The browser SDK
+// reads its DSN from PUBLIC_SENTRY_DSN in sentry.client.config.ts and stays
+// disabled when that is unset. Source maps upload only when a build-time
+// SENTRY_AUTH_TOKEN (plus org/project) is present, so credential-less builds
+// (local, CI) still pass — the upload step is skipped, not failed. The server
+// side is wrapped separately with @sentry/cloudflare in src/worker.ts.
+const sentryIntegration = sentry({
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  // Disable the Sentry build plugin's own telemetry ping to Sentry.
+  telemetry: false,
+});
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://parentcoachdesk.com',
@@ -53,8 +68,13 @@ export default defineConfig({
     // Decision B. See PAGES-TO-WORKERS-MIGRATION-BRIEF.md.
     imageService: { build: 'compile', runtime: 'passthrough' },
   }),
+  // authkit stays compile-time gated on PCD_OWNER_AUTH_PROOF_ENABLED; the Sentry
+  // client integration is always present (it self-disables without a DSN). The
+  // `integrations: ownerAuthProofEnabled` ternary shape is asserted verbatim by
+  // tests/workos-authkit-proof-contract.test.ts, so keep that literal intact.
   integrations: ownerAuthProofEnabled
     ? [
+        sentryIntegration,
         authkit({
           protectedRoutes: ['/owner-proof/dashboard(.*)'],
           signInPath: '/owner-proof/login',
@@ -68,7 +88,7 @@ export default defineConfig({
           hydrateClient: false,
         }),
       ]
-    : [],
+    : [sentryIntegration],
   build: {
     format: 'directory',
   },

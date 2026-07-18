@@ -2,6 +2,12 @@
 import AdminLayout from '../../../layouts/AdminLayout.astro';
 import { listApprovedUnverifiedCamps, setVerified, rejectCamp, type Camp } from '../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../lib/admin-auth';
+import {
+  formatCampDateRange,
+  formatImportedAt,
+  formatCampLocation,
+  formatCampDescription,
+} from '../../../lib/camps-display';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR. Pulls live from D1 each request. Behind Cloudflare Access.
@@ -50,26 +56,34 @@ if (Astro.request.method === 'POST') {
 
 let camps: Camp[] = [];
 let dbAvailable = !!env?.DB;
+// Distinguish "the query failed" from "the queue is genuinely empty". The
+// existing catch is preserved (a query error must never take the route down),
+// but a failure now surfaces a visible operator notice instead of silently
+// rendering the all-caught-up state, which would hide a real outage.
+let queryError = false;
 if (env?.DB) {
   try {
     camps = await listApprovedUnverifiedCamps(env.DB);
   } catch (e) {
     console.error('listApprovedUnverifiedCamps failed', e);
+    queryError = true;
   }
 }
 
-const fmtDateTime = (s: string) =>
-  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
-
-// Parse YYYY-MM-DD as local date (not UTC) to avoid the off-by-one timezone bug.
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const fmtRange = (start: string, end: string) => {
-  const [, sm, sd] = start.split('-').map(Number);
-  const [ey, em, ed] = end.split('-').map(Number);
-  return `${MONTHS[sm - 1]} ${sd}–${MONTHS[em - 1]} ${ed}, ${ey}`;
-};
+// Build a null-safe view model per camp up front, so the template never calls
+// .split / .length / Date parsing on a nullable legacy directory row. Legacy
+// rows migrated from the shared activity-radar D1 can have NULL start_date,
+// end_date, description, address, and submitted_at even though the Camp type
+// says otherwise; the helpers in camps-display.ts absorb that.
+const campViews = camps.map((c) => ({
+  camp: c,
+  dateRange: formatCampDateRange(c.start_date, c.end_date),
+  importedAt: formatImportedAt(c.submitted_at),
+  location: formatCampLocation(c),
+  description: formatCampDescription(c.description),
+}));
 ---
-<AdminLayout title="Spot check" description="Approved-but-unverified camps awaiting personal review" email={adminEmail} detail={`${camps.length} camps awaiting spot check.`}>
+<AdminLayout title="Spot check" description="Approved-but-unverified camps awaiting personal review" email={adminEmail} detail={queryError ? 'Queue query failed — see notice below.' : `${campViews.length} camps awaiting spot check.`}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
       <p class="font-display italic text-rust mb-2 font-medium">
@@ -93,44 +107,52 @@ const fmtRange = (start: string, end: string) => {
     <div class="container-px py-10">
       {!dbAvailable ? (
         <p class="font-display italic text-ink-soft font-medium">Database is not bound. Confirm D1 binding in wrangler.jsonc.</p>
-      ) : camps.length === 0 ? (
+      ) : queryError ? (
+        <p class="font-display italic text-rust font-medium">
+          Couldn't load the spot-check queue — the camps query failed. This is a server-side error, not an empty queue; check the server logs and retry. Nothing has been changed.
+        </p>
+      ) : campViews.length === 0 ? (
         <p class="font-display italic text-ink-soft font-medium">All caught up. Every approved camp has been spot-checked.</p>
       ) : (
         <ul class="grid gap-4">
-          {camps.map((c) => (
+          {campViews.map((v) => (
             <li class="border border-bone p-5 bg-paper">
               <div class="flex items-baseline justify-between flex-wrap gap-3">
                 <div class="flex-1 min-w-0">
                   <p class="font-display italic text-rust text-xs font-medium">
-                    {c.sport} · ages {c.age_min}–{c.age_max} · {fmtRange(c.start_date, c.end_date)}{c.program_type === 'league' ? ' · league' : ''}{c.spots_status === 'full' ? ' · full' : c.spots_status === 'waitlist' ? ' · waitlist' : ''}
+                    {v.camp.sport} · ages {v.camp.age_min}–{v.camp.age_max} · {v.dateRange}{v.camp.program_type === 'league' ? ' · league' : ''}{v.camp.spots_status === 'full' ? ' · full' : v.camp.spots_status === 'waitlist' ? ' · waitlist' : ''}
                   </p>
-                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5 font-medium">{c.name}</h3>
+                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5 font-medium">{v.camp.name}</h3>
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
-                    {c.address}, {c.city}, {c.state} {c.zip} · imported {fmtDateTime(c.submitted_at)}
+                    {v.location} · imported {v.importedAt}
                   </p>
-                  {c.website_url && (
+                  {v.camp.website_url && (
                     <p class="font-display text-sm mt-1">
-                      <a href={c.website_url} target="_blank" rel="noopener noreferrer" class="text-rust hover:underline font-medium">{c.website_url} ↗</a>
+                      <a href={v.camp.website_url} target="_blank" rel="noopener noreferrer" class="text-rust hover:underline font-medium">{v.camp.website_url} ↗</a>
                     </p>
                   )}
-                  {c.price_text && (
-                    <p class="font-display italic text-rust text-xs mt-1 font-medium">{c.price_text}</p>
+                  {v.camp.price_text && (
+                    <p class="font-display italic text-rust text-xs mt-1 font-medium">{v.camp.price_text}</p>
                   )}
-                  <p class="font-display text-ink-soft text-sm mt-2 leading-snug max-w-3xl" style="white-space: pre-wrap;">
-                    {c.description.length > 320 ? c.description.slice(0, 320) + '…' : c.description}
-                  </p>
+                  {v.description.empty ? (
+                    <p class="font-display italic text-ink-soft text-sm mt-2 leading-snug font-medium">No description provided.</p>
+                  ) : (
+                    <p class="font-display text-ink-soft text-sm mt-2 leading-snug max-w-3xl" style="white-space: pre-wrap;">
+                      {v.description.text}
+                    </p>
+                  )}
                 </div>
                 <div class="flex flex-col gap-2 items-end">
-                  <a href={`/camps/${c.slug}/`} target="_blank" rel="noopener noreferrer" class="font-display italic text-rust text-sm hover:underline font-medium">View on site ↗</a>
-                  <a href={`/admin/camps/${c.id}/`} class="t-cta">Edit →</a>
+                  <a href={`/camps/${v.camp.slug}/`} target="_blank" rel="noopener noreferrer" class="font-display italic text-rust text-sm hover:underline font-medium">View on site ↗</a>
+                  <a href={`/admin/camps/${v.camp.id}/`} class="t-cta">Edit →</a>
                   <form method="POST" action="/admin/camps/spot-check" class="inline">
                     <input type="hidden" name="action" value="verify" />
-                    <input type="hidden" name="camp_id" value={c.id} />
+                    <input type="hidden" name="camp_id" value={v.camp.id} />
                     <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium">Mark verified ✓</button>
                   </form>
                   <form method="POST" action="/admin/camps/spot-check" class="inline">
                     <input type="hidden" name="action" value="reject" />
-                    <input type="hidden" name="camp_id" value={c.id} />
+                    <input type="hidden" name="camp_id" value={v.camp.id} />
                     <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>
