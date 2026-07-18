@@ -46,30 +46,25 @@ npm run build:production
 
 ---
 
-## Legacy layout snapshot (obsolete)
+## Current layout
 
-The tree below is retained temporarily because this README still contains
-historical authoring instructions. Do not use it for placement decisions. The
-current ownership map is `coordination/REPOSITORY-STRUCTURE.md`.
+The complete placement and ownership rules live in
+`coordination/REPOSITORY-STRUCTURE.md`. This is the working map, not a claim
+that retained historical material is current authority.
 
 ```
 .
-├── astro.config.mjs            # site config, integrations
-├── tailwind.config.mjs         # brand tokens
-├── src/
-│   ├── components/             # Logo, NavBar, Footer, ArticleCard, etc.
-│   ├── content/
-│   │   ├── articles/           # markdown articles (the workhorse)
-│   │   └── gear/               # markdown gear items
-│   │   └── config.ts           # collection schemas (Zod)
-│   ├── data/
-│   │   ├── site.ts             # nav, pillars, sports, age bands
-│   │   └── affiliates.json     # /go/[slug] redirect targets
-│   ├── layouts/                # BaseLayout, ArticleLayout, PillarLayout
-│   ├── pages/                  # routes
-│   └── styles/global.css       # tokens + editorial type primitives
-├── public/                     # robots.txt, favicon.svg, og-default.png
-└── studio/                     # Sanity Studio (optional CMS, see studio/README.md)
+├── src/                        # Worker-hosted Astro application
+├── public/                     # shipped static assets
+├── tests/                      # behavioral and policy contracts
+├── migrations-activity-radar/ # shared camp graph (DB)
+├── migrations-pcd-ops/        # isolated operations/trust data (PCD_OPS_DB)
+├── automation/                 # machine-consumed policy and agent contracts
+├── coordination/               # plans, evidence, reviews, and handoffs
+├── scripts/                    # deterministic operator/build tooling
+├── worker-cron/                # independently deployed scheduler Worker
+├── worker-link-checker/        # independently deployed link-check Worker
+└── studio/                     # inactive optional Sanity scaffold
 ```
 
 ---
@@ -100,7 +95,9 @@ Wrap one phrase per headline in *single asterisks* to make it italic in rust.
 That's the brand's only display italic rule. Don't sprinkle.
 ```
 
-3. Save. The dev server picks it up immediately. Push the file and Cloudflare rebuilds.
+3. Save. The dev server picks it up immediately. Release changes only through
+   the protected workflow in `DEPLOYMENT-RUNBOOK.md`; a local save or Git push
+   is not deployment authorization.
 
 The article is reachable at `/{phase}/{slug}/`.
 Example: `/drive-home/the-90-second-rule/`.
@@ -149,7 +146,8 @@ Open `src/data/site.ts` and add to `SPORTS`. Then add the same value to the
 - `src/content/config.ts` (article + gear)
 - `studio/schemas/article.ts` and `studio/schemas/gear.ts` (if using Sanity)
 
-Cloudflare rebuild picks it up.
+The local build picks it up. Production changes only through the protected
+release workflow.
 
 ---
 
@@ -160,7 +158,7 @@ That's the single source of truth. Header and footer both read from it.
 
 ---
 
-## How to wire Kit (newsletter)
+## Newsletter provider boundary
 
 > Historical setup notes follow. The current authority is `KIT_SETUP.md`,
 > `KIT_DRIP_SETUP.md`, and `kit-emails/KIT-WIRING-CHECKLIST.md`. Do not infer
@@ -168,15 +166,12 @@ That's the single source of truth. Header and footer both read from it.
 > live from the presence of a hosted form. Provider changes and sends remain
 > explicit approval gates.
 
-1. Create an inline form in Kit. Pick the "Naked" template.
-2. Look at the form URL. The numeric ID at the end is your form ID.
-3. Set environment variables in Cloudflare Pages:
-   - `PUBLIC_KIT_FORM_ID` — main subscribe form
-   - `PUBLIC_KIT_LEAD_MAGNET_FORM_ID` — Drive Home Playbook form
-4. Redeploy. The forms now POST to Kit.
-
-Until you set them, the form falls back to a stub that `console.log`s the email
-so the layout still works during review.
+The current UI links to a hosted Kit form; it does not collect or log email
+addresses inside this application. Provider activation remains fail-closed
+until `KIT_SETUP.md`, `KIT_DRIP_SETUP.md`,
+`kit-emails/KIT-WIRING-CHECKLIST.md`, and the controlled lifecycle evidence
+agree. Changes to forms, sender authentication, automations, suppression, or
+delivery are external approval-gated actions.
 
 ---
 
@@ -190,7 +185,8 @@ markdown from `src/content/articles/`. To migrate:
 3. Swap `getCollection('articles')` calls in `src/pages/` to read from
    `src/lib/sanityClient.ts` (helper file is stubbed and ready)
 
-You can also keep both running — markdown for legacy issues, Sanity for new ones.
+Do not run both as competing current authorities. Markdown is canonical today;
+activating Sanity requires a separately reviewed migration and cutover plan.
 
 ---
 

@@ -520,3 +520,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Verified locally:** the focused inventory contract passes 1 file / 2 tests and prevents a return to the placeholder or manufactured start/finish/failure evidence. The first full-suite attempt failed overall after one Vitest worker exited unexpectedly despite 147 files completing; an immediate clean rerun passed 148 files / 769 tests.
 - **Handoff:** `coordination/handoffs/2026-07-18-overnight-build-handoff.md` separates verified local work, runtime-evidence gaps, owner/external gates, and the next ten highest-value tasks, with specific Claude review questions.
 - **External boundary:** no scheduled-task prompt, cadence, secret, run, registry row, or external system was read or changed. The recorded live inventory is repository evidence dated 2026-07-15 and must be refreshed against the external scheduler before runtime rollout.
+# 2026-07-18 - current developer entrypoint reconciliation
+
+- **Implemented locally:** `README.md` now presents the canonical directory map instead of an explicitly obsolete tree, points every release statement to the protected Worker workflow, documents the hosted Kit boundary without the removed email-logging fallback, and keeps Markdown as the sole current editorial authority unless a reviewed Sanity cutover occurs.
+- **Verified locally:** the focused entrypoint contract passes 1 file / 2 tests; the complete suite passes 149 files / 771 tests.
+- **Organization boundary:** retained historical plans and inactive tooling remain discoverable under the repository structure policy; this change removes misleading instructions without deleting historical evidence or activating any external system.
