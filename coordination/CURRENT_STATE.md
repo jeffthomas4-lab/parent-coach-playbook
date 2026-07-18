@@ -1,5 +1,11 @@
 # Current State
 
+## 2026-07-18 — camp sitemap Worker-first routing repair
+
+- **Confirmed live/read-only:** production `activity-radar` contains 1,588 approved programs, including 507 with `session_end_date` on or after 2026-07-18; the sitemap query's referenced columns exist and the same query succeeds remotely with zero writes. The live empty sitemap is therefore inconsistent with authoritative D1 supply.
+- **Implemented locally:** staging and production asset manifests now require `/sitemap-camps.xml` to invoke the Worker before static-asset resolution. The production-manifest verifier fails if that route is omitted. This follows Cloudflare's documented `assets.run_worker_first` contract and prevents a colliding or stale asset from bypassing the D1-backed handler.
+- **Gate:** this is build/config evidence, not live recovery proof. The protected staging deployment must show a populated sitemap from its own fixture (or an intentional retryable 503 if its isolated DB has no approved supply), and production deployment must then show the 507-record query surface rather than an empty 200 response.
+
 ## 2026-07-18 — governed demand-opportunity reporting slice
 
 - **Implemented locally:** `/admin/search-signals` now reads the same isolated `PCD_OPS_DB.demand_events_v1` model used by the default-off telemetry endpoint instead of the obsolete `DB.search_events` table. It renders aggregates only, excludes expired and likely-bot events, and prioritizes zero-result queries before overall frequency.

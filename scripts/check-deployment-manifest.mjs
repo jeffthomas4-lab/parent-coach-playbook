@@ -42,8 +42,8 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
   ], 'name');
   expectEqual('assets binding', manifest.assets?.binding, 'ASSETS');
   const workerFirst = [...(manifest.assets?.run_worker_first ?? [])].sort();
-  const expectedWorkerFirst = ['/admin', '/admin/*', '/api/admin', '/api/admin/*'].sort();
-  expectEqual('administrative Worker-first routes', JSON.stringify(workerFirst), JSON.stringify(expectedWorkerFirst));
+  const expectedWorkerFirst = ['/admin', '/admin/*', '/api/admin', '/api/admin/*', '/sitemap-camps.xml'].sort();
+  expectEqual('required Worker-first routes', JSON.stringify(workerFirst), JSON.stringify(expectedWorkerFirst));
   expectEqual('site URL', manifest.vars?.SITE_URL, 'https://parentcoachdesk.com');
   expectEqual('observability enabled', manifest.observability?.enabled, true);
   expectEqual('observability sampling', manifest.observability?.head_sampling_rate, 1);
