@@ -43,6 +43,14 @@ A failed canary restores the prior caller secret reference while the Worker
 value is reconciled. Never paste either value into Git, chat, evidence, or a
 skill file.
 
+Record only redacted rollout evidence in
+`coordination/release-evidence/agent-token-rollout-pending.json`. Validate it
+with `node scripts/agent-token-rollout-evidence.mjs`. A complete packet must
+prove the 204 preflight, Nora start/finish/controlled-failure receipts, exact
+coverage of the current reconciliation inventory, and prior-value revocation
+only after every caller is reconciled. A rolled-back packet must prove the
+prior credential was preserved.
+
 ## Rollout
 
 Nora is the one-agent canary. The remaining roster is wired only after Nora has

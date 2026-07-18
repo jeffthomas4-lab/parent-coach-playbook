@@ -41,7 +41,10 @@ production data mutation.
   gate (`4f5acbd`, `99a6c91`).
 - Operations: seasonal zero-write behavior, secure agent-run caller contracts,
   all roster skills wired to the source contract, and the ten-task
-  reconciliation inventory (`c47cdcb`, `4cd322d`, `aa3ace7`).
+  reconciliation inventory (`c47cdcb`, `4cd322d`, `aa3ace7`). A redacted,
+  versioned rollout packet now fails closed on missing 204 preflight, Nora
+  canary receipts, exact caller coverage, evidence hash, revocation ordering,
+  or incoherent rollback state without storing credential values.
 - Trust operations: protected dashboard evidence metrics and an inert,
   source-backed relationship research registry (`a734e0a`, `926da5b`). The
   dashboard also exposes current/due verification-review counts and fails on
@@ -54,10 +57,10 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 156 test files / 794 tests passed.
-The immediately prior attempt failed overall after a Vitest worker exited even
-though 147 files completed; that failed attempt is retained rather than counted
-as green. The new scheduled-task inventory contract passes 1 file / 2 tests.
+Latest clean validation before this handoff: 157 test files / 797 tests passed.
+Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints. The
+agent-token rollout contract passes its focused 3 files / 8 tests and the
+committed pending packet passes its standalone release check.
 
 ## 2. Implemented but awaiting staging or production evidence
 
@@ -72,7 +75,8 @@ as green. The new scheduled-task inventory contract passes 1 file / 2 tests.
 - Newsletter consent, confirmation, welcome, unsubscribe, suppression, and
   failure receipts against the selected provider.
 - Agent-run token delivery to the external scheduled-task store, one canary,
-  and distinct start/finish/failure evidence for each of ten PCD callers.
+  and distinct start/finish/failure evidence for each of ten PCD callers. The
+  local redacted evidence mechanism is ready; the live receipt remains pending.
 - Deployed seasonal maintenance behavior for the site and cron Workers.
 
 ## 3. Blocked on owner credentials, approval, or external systems

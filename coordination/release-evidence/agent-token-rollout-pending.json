@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "state": "pending",
+  "contains_secret_values": false,
+  "caller_secret_name": "PCD_AGENT_RUNS_TOKEN",
+  "worker_secret_name": "AGENT_RUNS_TOKEN",
+  "canary_task_id": "weekly-gsc-review",
+  "expected_caller_count": 10,
+  "observed_at": null,
+  "preflight_status": null,
+  "canary_start_ref": null,
+  "canary_finish_ref": null,
+  "canary_failure_ref": null,
+  "reconciled_task_ids": [],
+  "prior_credential_revoked": false,
+  "rollback_performed": false,
+  "rollback_ref": null,
+  "evidence_hash": null,
+  "external_changes": []
+}
