@@ -1,5 +1,17 @@
 # Current State
 
+## 2026-07-18 - seasonal zero-write maintenance enforcement
+
+- **Implemented locally:** both the authoritative camp-sweep scheduler and the protected site mutation endpoint now hold before any D1 write or outbound sweep request from August 1 through November 30 UTC. An operator `PCD_MAINTENANCE_MODE` switch can impose the same hold year-round; setting it false cannot override the calendar boundary.
+- **Observable behavior:** scheduler readiness reports maintenance state, held scheduled runs emit a structured zero-write event, and direct/manual endpoint calls return `{ held: true, code: "maintenance_mode", writes: 0 }`. Liveness and readiness remain available.
+- **Verified locally:** 29 focused scheduler, endpoint, maintenance, and failure-isolation tests pass; the cron Worker TypeScript project compiles; Astro diagnostics report zero errors. Deployment of the reviewed cron revision and production configuration remains a protected external action.
+
+## 2026-07-18 - newsletter provider activation proof contract
+
+- **Implemented locally:** a redacted evidence contract and release check now require consent notice, confirmation, welcome delivery, redirect, unsubscribe, suppression, failure handling, provider receipt reference, and Jeff approval before newsletter activation may be called verified.
+- **Privacy boundary:** the evidence record must contain neither subscriber data nor secret material. The current receipt is valid but intentionally `pending`; the hosted Kit form is not represented as end-to-end proven.
+- **Verified locally:** the proof structure check and four focused newsletter tests pass. A controlled provider test remains an external approval gate in the launch authorization matrix.
+
 ## 2026-07-18 - evidence-backed camp discovery and verification
 
 - **Implemented locally:** the public directory can now combine verified-only and open-only filters with its existing age, date, state, ZIP, and radius controls. Verification status is included in the minimized client-side directory projection, and the detail page displays `last_verified_at` rather than conflating verification with editorial review.
