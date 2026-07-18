@@ -137,10 +137,14 @@ jobs:
           npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --dry-run
           npm exec wrangler -- deploy --config dist/server/wrangler.json --keep-vars --message "$DEPLOY_SHA"
       - name: Run and checksum the sanitized staging smoke receipt
+        id: smoke-staging
         run: |
           node scripts/smoke-worker-deployment.mjs --origin https://parent-coach-desk-staging.eepskalla.workers.dev --target staging --asset-proof staging-static-asset.json --report staging-smoke.json
           sha256sum staging-smoke.json > staging-smoke.json.sha256
           sha256sum -c staging-smoke.json.sha256
+      - name: Halt and alert on staging smoke failure
+        if: always() && steps.smoke-staging.outcome == 'failure'
+        run: node scripts/deploy-remediation.mjs --target staging --halt-only
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: pcd-staging-smoke-${{ env.DEPLOY_SHA }}
@@ -191,10 +195,17 @@ jobs:
           npm exec wrangler -- versions list --config wrangler.production.jsonc
           npm exec wrangler -- secret list --config wrangler.production.jsonc
       - name: Run and checksum the sanitized production smoke receipt
+        id: smoke-production
         run: |
           node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production --asset-proof production-static-asset.json --report production-smoke.json
           sha256sum production-smoke.json > production-smoke.json.sha256
           sha256sum -c production-smoke.json.sha256
+      - name: Auto-remediate on production smoke failure (rollback to recorded good version)
+        if: always() && steps.smoke-production.outcome == 'failure'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: node scripts/deploy-remediation.mjs --target production --rollback-target coordination/release-evidence/worker-rollback-target-2026-07-16.json --config wrangler.production.jsonc
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: pcd-production-smoke-${{ env.DEPLOY_SHA }}
