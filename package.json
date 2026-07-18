@@ -50,6 +50,8 @@
     "test:watch": "vitest",
     "test:links": "node scripts/check-customer-artifact.mjs",
     "check:customer-artifact": "node scripts/check-customer-artifact.mjs",
+    "check:affiliates": "node scripts/check-affiliate-inventory.mjs",
+    "report:affiliates": "node scripts/check-affiliate-inventory.mjs --report",
     "monitor:customer-journey": "node scripts/run-customer-journey-monitor.mjs",
     "recovery:manifest": "node scripts/build-recovery-batch-manifest.mjs",
     "drill:staging-notification": "node scripts/run-staging-notification-drill.mjs --confirm",

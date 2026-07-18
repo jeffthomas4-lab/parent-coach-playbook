@@ -1,0 +1,3260 @@
+{
+  "inventoryCount": 245,
+  "referencedCount": 236,
+  "unreferencedCount": 9,
+  "errorCount": 0,
+  "errors": [],
+  "links": [
+    {
+      "slug": "ace-bandage-3inch-set",
+      "retailer": "Amazon",
+      "campaign": "gear-ace-bandage-3inch",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "ace-wrap",
+      "retailer": "Amazon",
+      "campaign": "gear-ace-wrap",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "action-camera",
+      "retailer": "Amazon",
+      "campaign": "gear-action-camera",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/basketball-reading-recruiting-rankings-services-critically.md",
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/video-tracking-gear.md"
+      ]
+    },
+    {
+      "slug": "adhesive-bandages",
+      "retailer": "Amazon",
+      "campaign": "gear-adhesive-bandages",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "agility-cones",
+      "retailer": "Amazon",
+      "campaign": "gear-agility-cones",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/baseball-base-running-game-ages-5-7.md",
+        "src/content/coachingTips/baseball-bases-loaded-force-out.md",
+        "src/content/coachingTips/baseball-bunt-square-around.md",
+        "src/content/coachingTips/baseball-cone-funnel-grounder.md",
+        "src/content/coachingTips/baseball-cutoff-positioning.md",
+        "src/content/coachingTips/baseball-dynamic-warm-up-circuit.md",
+        "src/content/coachingTips/baseball-four-corners-grounders-ages-8-10.md",
+        "src/content/coachingTips/baseball-grounder-and-throw-first.md",
+        "src/content/coachingTips/baseball-jog-and-stretch-line.md",
+        "src/content/coachingTips/baseball-long-toss-ladder.md",
+        "src/content/coachingTips/baseball-opposite-field-hitting.md",
+        "src/content/coachingTips/baseball-pickoff-plays-ages-11-12.md",
+        "src/content/coachingTips/baseball-pitcher-fielder-throw-first.md",
+        "src/content/coachingTips/baseball-relay-throws-ages-8-10.md",
+        "src/content/coachingTips/baseball-rounding-the-base.md",
+        "src/content/coachingTips/baseball-simple-grounders-ages-5-7.md",
+        "src/content/coachingTips/baseball-soft-toss-side.md",
+        "src/content/coachingTips/baseball-touch-the-corner.md",
+        "src/content/coachingTips/basketball-change-of-pace-dribble.md",
+        "src/content/coachingTips/basketball-closeout-drill-ages-11-12.md",
+        "src/content/coachingTips/basketball-cone-weave-dribble.md",
+        "src/content/coachingTips/basketball-dribble-tag-ages-5-7.md",
+        "src/content/coachingTips/basketball-dribble-warm-up-line.md",
+        "src/content/coachingTips/basketball-dynamic-stretch-circuit.md",
+        "src/content/coachingTips/basketball-eyes-up-dribble.md",
+        "src/content/coachingTips/basketball-five-out-spacing.md",
+        "src/content/coachingTips/basketball-hesitation-pull-back.md",
+        "src/content/coachingTips/basketball-shooting-off-dribble.md",
+        "src/content/coachingTips/basketball-speed-dribble-full-court.md",
+        "src/content/coachingTips/basketball-spot-shooting-five-spots.md",
+        "src/content/coachingTips/basketball-two-line-layups-ages-8-10.md",
+        "src/content/coachingTips/basketball-zigzag-defensive-slide.md",
+        "src/content/coachingTips/flag-football-3-step-route-tree.md",
+        "src/content/coachingTips/flag-football-angle-pursuit-pull.md",
+        "src/content/coachingTips/flag-football-catch-on-the-run.md",
+        "src/content/coachingTips/flag-football-cone-route-stems.md",
+        "src/content/coachingTips/flag-football-cut-and-juke.md",
+        "src/content/coachingTips/flag-football-deep-ball-catch.md",
+        "src/content/coachingTips/flag-football-defensive-contain-ages-8-10.md",
+        "src/content/coachingTips/flag-football-flag-pulling-tag-drill-ages-5-7.md",
+        "src/content/coachingTips/flag-football-open-field-pull.md",
+        "src/content/coachingTips/flag-football-protect-the-flag.md",
+        "src/content/coachingTips/flag-football-read-option-intro-ages-11-12.md",
+        "src/content/coachingTips/flag-football-route-running-on-cones-ages-5-7.md",
+        "src/content/coachingTips/flag-football-screen-pass-ages-8-10.md",
+        "src/content/coachingTips/flag-football-slant-route-ages-8-10.md",
+        "src/content/coachingTips/flag-football-spread-and-find-space.md",
+        "src/content/coachingTips/flag-football-throw-on-the-run.md",
+        "src/content/coachingTips/flag-football-zone-vs-man-recognition-ages-11-12.md",
+        "src/content/coachingTips/football-7v7-3-step-route-timing.md",
+        "src/content/coachingTips/football-7v7-cover-3-alignment.md",
+        "src/content/coachingTips/football-7v7-man-zone-pre-snap-read.md",
+        "src/content/coachingTips/football-7v7-quick-out-at-the-sticks.md",
+        "src/content/coachingTips/golf-alignment-stick-stance.md",
+        "src/content/coachingTips/golf-balance-finish-hold.md",
+        "src/content/coachingTips/golf-driving-range-routine.md",
+        "src/content/coachingTips/golf-half-swing-pitch.md",
+        "src/content/coachingTips/golf-putting-gate.md",
+        "src/content/coachingTips/golf-tee-up-tempo.md",
+        "src/content/coachingTips/hockey-breakout-patterns-ages-11-12.md",
+        "src/content/coachingTips/hockey-edge-work-ages-8-10.md",
+        "src/content/coachingTips/hockey-march-on-skates.md",
+        "src/content/coachingTips/hockey-stop-and-go.md",
+        "src/content/coachingTips/hockey-tight-turns.md",
+        "src/content/coachingTips/lacrosse-girls-clearing-pattern-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-girls-riding-pressure-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-riding-pressure-ages-13-14.md",
+        "src/content/coachingTips/multi-sport-4-minute-game-warm-up-all-ages.md",
+        "src/content/coachingTips/multi-sport-post-practice-huddle-all-ages.md",
+        "src/content/coachingTips/multi-sport-practice-ending-culture-moment-ages-5-7.md",
+        "src/content/coachingTips/multi-sport-scrimmage-rule-keep-it-fun-all-ages.md",
+        "src/content/coachingTips/multi-sport-water-break-management-all-ages.md",
+        "src/content/coachingTips/softball-base-running-ages-5-7.md",
+        "src/content/coachingTips/softball-cone-funnel-grounder.md",
+        "src/content/coachingTips/softball-run-through-first.md",
+        "src/content/coachingTips/softball-target-bucket-throw.md",
+        "src/content/coachingTips/softball-touch-the-corner.md",
+        "src/content/coachingTips/t-ball-cones-positions.md",
+        "src/content/coachingTips/tackle-football-3-point-stance-ages-8-10.md",
+        "src/content/coachingTips/tackle-football-angle-tackle.md",
+        "src/content/coachingTips/tackle-football-ball-protection-tunnel.md",
+        "src/content/coachingTips/tackle-football-base-block.md",
+        "src/content/coachingTips/tackle-football-block-shed-drill-ages-11-12.md",
+        "src/content/coachingTips/tackle-football-contested-catch.md",
+        "src/content/coachingTips/tackle-football-defensive-shed-ages-13-14.md",
+        "src/content/coachingTips/tackle-football-near-shoulder-fit.md",
+        "src/content/coachingTips/tackle-football-open-field-tackle.md",
+        "src/content/coachingTips/tackle-football-out-route-on-cone.md",
+        "src/content/coachingTips/tackle-football-pass-protection.md",
+        "src/content/coachingTips/tackle-football-pull-and-block.md",
+        "src/content/coachingTips/tackle-football-qb-drop-back-throw.md",
+        "src/content/coachingTips/tackle-football-route-tree-intro-ages-11-12.md",
+        "src/content/coachingTips/tackle-football-route-tree-stems.md",
+        "src/content/coachingTips/tackle-football-running-back-cuts.md",
+        "src/content/coachingTips/tackle-football-stance-and-sprint.md",
+        "src/content/coachingTips/tennis-target-hitting-at-corners-ages-8-10.md"
+      ]
+    },
+    {
+      "slug": "agility-cones-set",
+      "retailer": "Amazon",
+      "campaign": "gear-agility-cones",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/training-gear.md"
+      ]
+    },
+    {
+      "slug": "agility-training-pole",
+      "retailer": "Amazon",
+      "campaign": "gear-agility-training-pole",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/tackle-football-running-back-footwork-ages-13-14.md"
+      ]
+    },
+    {
+      "slug": "ankle-brace-reusable",
+      "retailer": "Amazon",
+      "campaign": "gear-ankle-brace-reusable",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/stunt.md",
+        "src/content/pillar/ultimate-parent-guide-basketball.md"
+      ]
+    },
+    {
+      "slug": "antibiotic-ointment-travel",
+      "retailer": "Amazon",
+      "campaign": "gear-antibiotic-ointment-travel",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "antihistamine-child",
+      "retailer": "Amazon",
+      "campaign": "gear-antihistamine-child",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "athletic-shorts-black-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-athletic-shorts-black",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/theater.md",
+        "src/content/pillar/ultimate-parent-guide-basketball.md"
+      ]
+    },
+    {
+      "slug": "athletic-socks-multipack",
+      "retailer": "Amazon",
+      "campaign": "gear-athletic-socks-multipack",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "athletic-tape-roll",
+      "retailer": "Amazon",
+      "campaign": "gear-athletic-tape-roll",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md",
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "ball-pump-with-gauge",
+      "retailer": "Amazon",
+      "campaign": "gear-ball-pump",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/video-tracking-gear.md"
+      ]
+    },
+    {
+      "slug": "ballet-slippers-canvas-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-ballet-slippers-canvas-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-ballet.md",
+        "src/content/pillar/ultimate-parent-guide-dance.md"
+      ]
+    },
+    {
+      "slug": "ballet-tights-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-ballet-tights-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-ballet.md",
+        "src/content/pillar/ultimate-parent-guide-dance.md"
+      ]
+    },
+    {
+      "slug": "band-marching-shoes",
+      "retailer": "Amazon",
+      "campaign": "gear-band-marching-shoes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-band.md"
+      ]
+    },
+    {
+      "slug": "band-practice-pad",
+      "retailer": "Amazon",
+      "campaign": "gear-band-practice-pad",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-band.md"
+      ]
+    },
+    {
+      "slug": "band-reeds-clarinet",
+      "retailer": "Amazon",
+      "campaign": "gear-band-reeds-clarinet",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-band.md"
+      ]
+    },
+    {
+      "slug": "band-valve-oil",
+      "retailer": "Amazon",
+      "campaign": "gear-band-valve-oil",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-band.md"
+      ]
+    },
+    {
+      "slug": "baseball-arm-sleeve",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-arm-sleeve",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-balls-teeball",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-balls-teeball",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/baseball-tee-work-ages-5-7.md",
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-balls-wiffle",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-balls-wiffle",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-bases-rubber",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-bases-rubber",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/setting-up-a-baseball-field.md",
+        "src/content/coachingTips/baseball-base-running-game-ages-5-7.md",
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-bat-28in",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-bat-28in",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/the-bat-your-kid-begged-for.md",
+        "src/content/coachingTips/baseball-color-coded-ball-recognition.md",
+        "src/content/coachingTips/baseball-fielders-choice-decision.md",
+        "src/content/coachingTips/baseball-fly-ball-drop-step.md",
+        "src/content/coachingTips/baseball-hit-and-run-cue.md",
+        "src/content/coachingTips/baseball-inside-outside-pitch-recognition.md",
+        "src/content/coachingTips/baseball-pitch-count-game.md",
+        "src/content/coachingTips/baseball-popup-call-it.md",
+        "src/content/coachingTips/baseball-rapid-fire-soft-toss.md",
+        "src/content/coachingTips/baseball-read-ball-off-bat.md",
+        "src/content/coachingTips/baseball-runner-on-second-where-to-throw.md",
+        "src/content/coachingTips/baseball-situational-base-running-ages-13-14.md",
+        "src/content/coachingTips/baseball-situational-hitting-ages-11-12.md",
+        "src/content/coachingTips/baseball-soft-toss-ages-8-10.md",
+        "src/content/coachingTips/baseball-stance-and-load.md",
+        "src/content/coachingTips/baseball-tracking-with-tennis-ball.md",
+        "src/content/coachingTips/baseball-two-strike-approach.md",
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-bat-backpack",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-bat-backpack",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-bat-bbcor",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-bat-bbcor",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-bat-teeball",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-bat-teeball",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/baseball-tee-work-ages-5-7.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-bat-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-bat-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-batting-gloves-adult",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-batting-gloves-adult",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-batting-gloves-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-batting-gloves-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-belt-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-belt-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-blitzball-set",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-blitzball-set",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-catchers-bag",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-catchers-bag",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-catchers-gear-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-catchers-gear-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md",
+        "src/content/coachingTips/baseball-bullpen-rhythm.md",
+        "src/content/coachingTips/baseball-bunt-coverage-roles.md",
+        "src/content/coachingTips/baseball-catcher-blocking-balls.md",
+        "src/content/coachingTips/baseball-catcher-throwing-down.md",
+        "src/content/coachingTips/baseball-changeup-grip-intro.md",
+        "src/content/coachingTips/baseball-cover-first-on-bunt.md",
+        "src/content/coachingTips/baseball-do-or-die-grounder.md",
+        "src/content/coachingTips/baseball-double-cut-relay.md",
+        "src/content/coachingTips/baseball-fielding-position-after-pitch.md",
+        "src/content/coachingTips/baseball-first-and-third-decisions.md",
+        "src/content/coachingTips/baseball-first-and-third-defense.md",
+        "src/content/coachingTips/baseball-holding-runners-stretch.md",
+        "src/content/coachingTips/baseball-knee-pitching.md",
+        "src/content/coachingTips/baseball-pitching-mechanics-drill-ages-13-14.md",
+        "src/content/coachingTips/baseball-pop-up-priorities.md",
+        "src/content/coachingTips/baseball-secondary-lead.md",
+        "src/content/coachingTips/baseball-stealing-progression.md",
+        "src/content/coachingTips/baseball-stride-and-pause.md",
+        "src/content/coachingTips/baseball-suicide-squeeze-defense.md",
+        "src/content/coachingTips/baseball-tag-up-defense.md",
+        "src/content/coachingTips/softball-advanced-situational-ages-13-14.md",
+        "src/content/coachingTips/softball-baserunning-leadoffs-ages-11-12.md",
+        "src/content/coachingTips/softball-catcher-blocking.md",
+        "src/content/coachingTips/softball-windmill-changeup-grip.md",
+        "src/content/coachingTips/softball-windmill-pitching-warm-up-ages-11-12.md",
+        "src/content/coachingTips/softball-windmill-stride.md",
+        "src/content/coachingTips/softball-windmill-throw-strikes.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-catchers-mitt-32in",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-catchers-mitt-32in",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/baseball-catcher-throwing-down.md",
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-cleats-metal",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-cleats-metal",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-cup-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-cup-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-glove-9in-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-glove-9in",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/5-year-old-glove.md",
+        "src/content/coachingTips/baseball-bucket-of-grounders.md",
+        "src/content/coachingTips/baseball-cone-funnel-grounder.md",
+        "src/content/coachingTips/baseball-flat-ground-rollers.md",
+        "src/content/coachingTips/baseball-glove-flip-flexibility.md",
+        "src/content/coachingTips/baseball-glove-side-only-catch.md",
+        "src/content/coachingTips/baseball-self-toss-catch.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-glove-breakin-kit",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-glove-breakin-kit",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-glove-laces",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-glove-laces",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-glove-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-glove",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/13-14-bat-drop.md",
+        "src/content/articles/baseball-bag-checklist.md",
+        "src/content/articles/coaching-your-own-kid-in-front-of-the-team.md",
+        "src/content/articles/how-much-does-youth-baseball-cost.md",
+        "src/content/articles/raking-the-infield.md",
+        "src/content/articles/tee-ball-strikeouts.md",
+        "src/content/articles/the-5-to-7-lineup-card-fair-rotation-in-three-minutes.md",
+        "src/content/articles/the-5-to-7-meltdown-after-a-strikeout.md",
+        "src/content/articles/the-8-year-olds-glove-that-cost-too-much.md",
+        "src/content/articles/varsity-baseball-when-your-kid-is-the-ace.md",
+        "src/content/articles/youth-baseball-equipment-guide.md",
+        "src/content/coachingTips/baseball-arm-circle-warm-up.md",
+        "src/content/coachingTips/baseball-arm-slot-mirror.md",
+        "src/content/coachingTips/baseball-backhand-pickup.md",
+        "src/content/coachingTips/baseball-bare-hand-rolls.md",
+        "src/content/coachingTips/baseball-bases-loaded-force-out.md",
+        "src/content/coachingTips/baseball-bent-leg-slide.md",
+        "src/content/coachingTips/baseball-bottom-hand-tee.md",
+        "src/content/coachingTips/baseball-bullpen-rhythm.md",
+        "src/content/coachingTips/baseball-bunt-coverage-roles.md",
+        "src/content/coachingTips/baseball-bunt-pivot.md",
+        "src/content/coachingTips/baseball-bunt-square-around.md",
+        "src/content/coachingTips/baseball-changeup-grip-intro.md",
+        "src/content/coachingTips/baseball-charge-the-ball.md",
+        "src/content/coachingTips/baseball-coach-toss-front.md",
+        "src/content/coachingTips/baseball-color-coded-ball-recognition.md",
+        "src/content/coachingTips/baseball-cover-first-on-bunt.md",
+        "src/content/coachingTips/baseball-cross-field-relay-throw.md",
+        "src/content/coachingTips/baseball-cutoff-positioning.md",
+        "src/content/coachingTips/baseball-deep-fly-over-the-shoulder.md",
+        "src/content/coachingTips/baseball-do-or-die-grounder.md",
+        "src/content/coachingTips/baseball-double-cut-relay.md",
+        "src/content/coachingTips/baseball-double-play-feeds-ages-11-12.md",
+        "src/content/coachingTips/baseball-dynamic-warm-up-circuit.md",
+        "src/content/coachingTips/baseball-end-of-inning-score-check.md",
+        "src/content/coachingTips/baseball-fielders-choice-decision.md",
+        "src/content/coachingTips/baseball-fielding-position-after-pitch.md",
+        "src/content/coachingTips/baseball-first-and-third-decisions.md",
+        "src/content/coachingTips/baseball-first-and-third-defense.md",
+        "src/content/coachingTips/baseball-fly-ball-drop-step.md",
+        "src/content/coachingTips/baseball-forehand-glove-only.md",
+        "src/content/coachingTips/baseball-four-corners-grounders-ages-8-10.md",
+        "src/content/coachingTips/baseball-four-seam-grip-intro.md",
+        "src/content/coachingTips/baseball-game-call-the-play.md",
+        "src/content/coachingTips/baseball-grounder-and-throw-first.md",
+        "src/content/coachingTips/baseball-hit-and-run-cue.md",
+        "src/content/coachingTips/baseball-holding-runners-stretch.md",
+        "src/content/coachingTips/baseball-infield-outfield-communication-ages-11-12.md",
+        "src/content/coachingTips/baseball-inside-outside-pitch-recognition.md",
+        "src/content/coachingTips/baseball-jog-and-stretch-line.md",
+        "src/content/coachingTips/baseball-knee-pitching.md",
+        "src/content/coachingTips/baseball-knee-throwing.md",
+        "src/content/coachingTips/baseball-launch-position-pause.md",
+        "src/content/coachingTips/baseball-line-drive-reaction.md",
+        "src/content/coachingTips/baseball-live-tee-work-ages-8-10.md",
+        "src/content/coachingTips/baseball-long-toss-ladder.md",
+        "src/content/coachingTips/baseball-opposite-field-hitting.md",
+        "src/content/coachingTips/baseball-outfield-throw-to-cutoff.md",
+        "src/content/coachingTips/baseball-overhand-batting-practice.md",
+        "src/content/coachingTips/baseball-overhand-toss-partner.md",
+        "src/content/coachingTips/baseball-pickle-rundown.md",
+        "src/content/coachingTips/baseball-pickoff-plays-ages-11-12.md",
+        "src/content/coachingTips/baseball-pitch-count-game.md",
+        "src/content/coachingTips/baseball-pitcher-fielder-throw-first.md",
+        "src/content/coachingTips/baseball-pitching-mechanics-drill-ages-13-14.md",
+        "src/content/coachingTips/baseball-pitching-stance-balance.md",
+        "src/content/coachingTips/baseball-pop-up-priorities.md",
+        "src/content/coachingTips/baseball-popup-call-it.md",
+        "src/content/coachingTips/baseball-quick-release-catch-throw.md",
+        "src/content/coachingTips/baseball-rapid-fire-soft-toss.md",
+        "src/content/coachingTips/baseball-read-ball-off-bat.md",
+        "src/content/coachingTips/baseball-ready-position-drill-ages-5-7.md",
+        "src/content/coachingTips/baseball-relay-throws-ages-8-10.md",
+        "src/content/coachingTips/baseball-rolling-grounders-no-glove.md",
+        "src/content/coachingTips/baseball-rounding-the-base.md",
+        "src/content/coachingTips/baseball-run-through-first.md",
+        "src/content/coachingTips/baseball-rundown-cover-base.md",
+        "src/content/coachingTips/baseball-runner-on-second-where-to-throw.md",
+        "src/content/coachingTips/baseball-secondary-lead.md",
+        "src/content/coachingTips/baseball-short-hop-fielding.md",
+        "src/content/coachingTips/baseball-shuffle-and-react.md",
+        "src/content/coachingTips/baseball-shuffle-step-throw.md",
+        "src/content/coachingTips/baseball-simple-grounders-ages-5-7.md",
+        "src/content/coachingTips/baseball-situational-base-running-ages-13-14.md",
+        "src/content/coachingTips/baseball-situational-hitting-ages-11-12.md",
+        "src/content/coachingTips/baseball-sliding-foam-pad.md",
+        "src/content/coachingTips/baseball-slow-roller-bare-hand.md",
+        "src/content/coachingTips/baseball-soft-hands-glove-flips.md",
+        "src/content/coachingTips/baseball-soft-toss-ages-8-10.md",
+        "src/content/coachingTips/baseball-soft-toss-side.md",
+        "src/content/coachingTips/baseball-stance-and-load.md",
+        "src/content/coachingTips/baseball-station-to-station.md",
+        "src/content/coachingTips/baseball-stealing-progression.md",
+        "src/content/coachingTips/baseball-step-and-throw.md",
+        "src/content/coachingTips/baseball-stride-and-pause.md",
+        "src/content/coachingTips/baseball-strike-zone-judgment.md",
+        "src/content/coachingTips/baseball-suicide-squeeze-defense.md",
+        "src/content/coachingTips/baseball-tag-and-catch.md",
+        "src/content/coachingTips/baseball-tag-up-defense.md",
+        "src/content/coachingTips/baseball-tag-up-on-fly.md",
+        "src/content/coachingTips/baseball-target-bucket-throw.md",
+        "src/content/coachingTips/baseball-tee-belly-button-contact.md",
+        "src/content/coachingTips/baseball-tee-front-hip-contact.md",
+        "src/content/coachingTips/baseball-throw-on-the-run.md",
+        "src/content/coachingTips/baseball-throw-strikes-target.md",
+        "src/content/coachingTips/baseball-throwing-target-stations.md",
+        "src/content/coachingTips/baseball-throwing-warm-up-progression.md",
+        "src/content/coachingTips/baseball-top-hand-tee.md",
+        "src/content/coachingTips/baseball-touch-the-corner.md",
+        "src/content/coachingTips/baseball-tracking-with-tennis-ball.md",
+        "src/content/coachingTips/baseball-triangle-grounder.md",
+        "src/content/coachingTips/baseball-two-hands-receive.md",
+        "src/content/coachingTips/baseball-two-strike-approach.md",
+        "src/content/coachingTips/baseball-wall-ball.md",
+        "src/content/coachingTips/t-ball-cones-positions.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-helmet-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-helmet-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md",
+        "src/content/coachingTips/baseball-cage-work-with-coach-ages-13-14.md",
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-pants-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-pants-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/baseball.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-sliding-mitt",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-sliding-mitt",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-throwback-net",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-throwback-net",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/baseball-rebound-net-catch.md",
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "baseball-trainer",
+      "retailer": "Amazon",
+      "campaign": "gear-baseball-trainer",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/baseball-bottom-hand-tee.md",
+        "src/content/coachingTips/baseball-bunt-pivot.md",
+        "src/content/coachingTips/baseball-coach-toss-front.md",
+        "src/content/coachingTips/baseball-launch-position-pause.md",
+        "src/content/coachingTips/baseball-live-tee-work-ages-8-10.md",
+        "src/content/coachingTips/baseball-overhand-batting-practice.md",
+        "src/content/coachingTips/baseball-strike-zone-judgment.md",
+        "src/content/coachingTips/baseball-tee-belly-button-contact.md",
+        "src/content/coachingTips/baseball-tee-front-hip-contact.md",
+        "src/content/coachingTips/baseball-top-hand-tee.md",
+        "src/content/guides/baseball.md"
+      ]
+    },
+    {
+      "slug": "basketball-ball-authentic",
+      "retailer": "Amazon",
+      "campaign": "gear-basketball-ball-authentic",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-basketball-equipment-guide.md",
+        "src/content/guides/basketball.md"
+      ]
+    },
+    {
+      "slug": "basketball-ball-forge",
+      "retailer": "Amazon",
+      "campaign": "gear-basketball-ball-forge",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/basketball.md"
+      ]
+    },
+    {
+      "slug": "basketball-ball-rubber",
+      "retailer": "Amazon",
+      "campaign": "gear-basketball-ball-rubber",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/basketball-levels-rec-school-club-aau.md",
+        "src/content/articles/basketball-when-your-kid-doesnt-get-recruited.md",
+        "src/content/articles/first-season-of-youth-basketball.md",
+        "src/content/articles/how-much-does-aau-basketball-cost.md",
+        "src/content/articles/making-the-school-basketball-team.md",
+        "src/content/articles/varsity-basketball-tryouts-the-real-odds.md",
+        "src/content/articles/youth-basketball-equipment-guide.md",
+        "src/content/coachingTips/basketball-1v1-on-the-wing.md",
+        "src/content/coachingTips/basketball-between-the-legs-stationary.md",
+        "src/content/coachingTips/basketball-block-to-block-finish.md",
+        "src/content/coachingTips/basketball-bounce-pass-target.md",
+        "src/content/coachingTips/basketball-bounce-pass-through-defender.md",
+        "src/content/coachingTips/basketball-box-out-stance.md",
+        "src/content/coachingTips/basketball-chair-passing-drill-ages-8-10.md",
+        "src/content/coachingTips/basketball-change-of-pace-dribble.md",
+        "src/content/coachingTips/basketball-chest-pass-to-partner.md",
+        "src/content/coachingTips/basketball-closeout-drill-ages-11-12.md",
+        "src/content/coachingTips/basketball-closeout-on-shooter.md",
+        "src/content/coachingTips/basketball-cone-weave-dribble.md",
+        "src/content/coachingTips/basketball-cookie-jar-finish.md",
+        "src/content/coachingTips/basketball-crossover-stationary.md",
+        "src/content/coachingTips/basketball-defensive-slides-ages-8-10.md",
+        "src/content/coachingTips/basketball-defensive-stance-mirror.md",
+        "src/content/coachingTips/basketball-deny-the-pass.md",
+        "src/content/coachingTips/basketball-dribble-pressure-1v1.md",
+        "src/content/coachingTips/basketball-dribble-tag-ages-5-7.md",
+        "src/content/coachingTips/basketball-dribble-warm-up-line.md",
+        "src/content/coachingTips/basketball-dynamic-stretch-circuit.md",
+        "src/content/coachingTips/basketball-elbow-shooting.md",
+        "src/content/coachingTips/basketball-euro-step-intro.md",
+        "src/content/coachingTips/basketball-eyes-up-dribble.md",
+        "src/content/coachingTips/basketball-finishing-with-contact.md",
+        "src/content/coachingTips/basketball-five-out-spacing.md",
+        "src/content/coachingTips/basketball-form-shooting-close-ages-5-7.md",
+        "src/content/coachingTips/basketball-form-shooting-on-line.md",
+        "src/content/coachingTips/basketball-form-shooting-one-foot.md",
+        "src/content/coachingTips/basketball-form-shooting-warm-up.md",
+        "src/content/coachingTips/basketball-free-throw-routine.md",
+        "src/content/coachingTips/basketball-give-and-go-cuts.md",
+        "src/content/coachingTips/basketball-help-and-recover-situational-ages-13-14.md",
+        "src/content/coachingTips/basketball-help-and-recover.md",
+        "src/content/coachingTips/basketball-hesitation-pull-back.md",
+        "src/content/coachingTips/basketball-jump-stop-finish.md",
+        "src/content/coachingTips/basketball-mikan-progression.md",
+        "src/content/coachingTips/basketball-motion-offense-intro-ages-13-14.md",
+        "src/content/coachingTips/basketball-overhead-pass.md",
+        "src/content/coachingTips/basketball-pass-fake-then-pass.md",
+        "src/content/coachingTips/basketball-pass-on-the-move.md",
+        "src/content/coachingTips/basketball-pound-dribble-station.md",
+        "src/content/coachingTips/basketball-rebound-and-outlet.md",
+        "src/content/coachingTips/basketball-reverse-layup-intro.md",
+        "src/content/coachingTips/basketball-right-and-left-layups.md",
+        "src/content/coachingTips/basketball-runner-floater-shot.md",
+        "src/content/coachingTips/basketball-screen-and-roll-intro.md",
+        "src/content/coachingTips/basketball-shell-defense-ages-11-12.md",
+        "src/content/coachingTips/basketball-shell-defense-rotations.md",
+        "src/content/coachingTips/basketball-shooting-from-knee.md",
+        "src/content/coachingTips/basketball-shooting-game-21.md",
+        "src/content/coachingTips/basketball-shooting-off-dribble.md",
+        "src/content/coachingTips/basketball-shooting-off-pass.md",
+        "src/content/coachingTips/basketball-shooting-with-defender.md",
+        "src/content/coachingTips/basketball-skip-pass-cross-court.md",
+        "src/content/coachingTips/basketball-spacing-on-the-drive.md",
+        "src/content/coachingTips/basketball-speed-dribble-full-court.md",
+        "src/content/coachingTips/basketball-spot-shooting-five-spots.md",
+        "src/content/coachingTips/basketball-stationary-control-dribble.md",
+        "src/content/coachingTips/basketball-step-step-layup.md",
+        "src/content/coachingTips/basketball-take-charge-position.md",
+        "src/content/coachingTips/basketball-three-line-passing-warm-up.md",
+        "src/content/coachingTips/basketball-three-on-three-rebound.md",
+        "src/content/coachingTips/basketball-three-player-weave.md",
+        "src/content/coachingTips/basketball-tip-drill.md",
+        "src/content/coachingTips/basketball-two-ball-dribble.md",
+        "src/content/coachingTips/basketball-two-line-layup-intro-ages-5-7.md",
+        "src/content/coachingTips/basketball-two-line-layups-ages-8-10.md",
+        "src/content/coachingTips/basketball-walking-dribble-line.md",
+        "src/content/coachingTips/basketball-zigzag-defensive-slide.md",
+        "src/content/guides/basketball.md",
+        "src/content/pillar/ultimate-parent-guide-basketball.md"
+      ]
+    },
+    {
+      "slug": "basketball-shoes-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-basketball-shoes-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-basketball-equipment-guide.md",
+        "src/content/guides/basketball.md",
+        "src/content/pillar/ultimate-parent-guide-basketball.md"
+      ]
+    },
+    {
+      "slug": "battery-fan-handheld",
+      "retailer": "Amazon",
+      "campaign": "gear-battery-fan-handheld",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "batting-gloves-pair",
+      "retailer": "Amazon",
+      "campaign": "gear-batting-gloves-pair",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "blackout-curtains-nicetown",
+      "retailer": "Amazon",
+      "campaign": "gear-blackout-curtains-nicetown",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "book-beyond-winning",
+      "retailer": "Bookshop.org",
+      "campaign": "books-sports-parenting",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-champions-mind",
+      "retailer": "Bookshop.org",
+      "campaign": "books-mental-performance",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-changing-the-game",
+      "retailer": "Bookshop.org",
+      "campaign": "books-sports-parenting",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/content/articles/13-14-cost-benefit.md",
+        "src/content/articles/15-plus-walking-away.md",
+        "src/content/guides/season-essentials.md",
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-grit",
+      "retailer": "Bookshop.org",
+      "campaign": "books-mental-performance",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/content/guides/season-essentials.md",
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-inner-game-of-tennis",
+      "retailer": "Bookshop.org",
+      "campaign": "books-coaching",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-little-book-of-talent",
+      "retailer": "Bookshop.org",
+      "campaign": "books-coaching",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-mind-gym",
+      "retailer": "Bookshop.org",
+      "campaign": "books-mental-performance",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-mindset",
+      "retailer": "Bookshop.org",
+      "campaign": "books-mental-performance",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/content/articles/after-the-cut-the-24-hour-rule.md",
+        "src/content/guides/season-essentials.md",
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-peak",
+      "retailer": "Bookshop.org",
+      "campaign": "books-talent-development",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-positive-coaching",
+      "retailer": "Bookshop.org",
+      "campaign": "books-sports-parenting",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-range",
+      "retailer": "Bookshop.org",
+      "campaign": "books-talent-development",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/content/articles/11-12-honest-comparison.md",
+        "src/content/articles/13-14-cost-benefit.md",
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-talent-code",
+      "retailer": "Bookshop.org",
+      "campaign": "books-talent-development",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "book-whose-game-is-it-anyway",
+      "retailer": "Bookshop.org",
+      "campaign": "books-sports-parenting",
+      "destinationHost": "bookshop.org",
+      "sources": [
+        "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "slug": "bug-bite-stick",
+      "retailer": "Amazon",
+      "campaign": "gear-bug-bite-stick",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "bug-spray-travel",
+      "retailer": "Amazon",
+      "campaign": "gear-bug-spray-travel",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "butterfly-bandages",
+      "retailer": "Amazon",
+      "campaign": "gear-butterfly-bandages",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "cash-box-lockable",
+      "retailer": "Amazon",
+      "campaign": "gear-cash-box",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/boosters-gear.md"
+      ]
+    },
+    {
+      "slug": "cheer-bow-jumbo",
+      "retailer": "Amazon",
+      "campaign": "gear-cheer-bow",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/cheer.md",
+        "src/content/pillar/ultimate-parent-guide-cheer.md"
+      ]
+    },
+    {
+      "slug": "cheer-hair-gel",
+      "retailer": "Amazon",
+      "campaign": "gear-cheer-hair-gel",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/cheer.md"
+      ]
+    },
+    {
+      "slug": "cheer-poms",
+      "retailer": "Amazon",
+      "campaign": "gear-cheer-poms",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-cheer.md"
+      ]
+    },
+    {
+      "slug": "cheer-shoes-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-cheer-shoes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/cheer-competition-packing-list.md",
+        "src/content/articles/first-season-of-cheer.md",
+        "src/content/articles/how-much-does-competitive-cheer-cost.md",
+        "src/content/coachingTips/cheer-count-out-timing.md",
+        "src/content/coachingTips/cheer-jump-approach-progression.md",
+        "src/content/coachingTips/cheer-motion-drill-t-to-high-v.md",
+        "src/content/coachingTips/cheer-stunt-prep-dip-pop.md",
+        "src/content/guides/cheer.md",
+        "src/content/guides/stunt.md",
+        "src/content/pillar/ultimate-parent-guide-cheer.md"
+      ]
+    },
+    {
+      "slug": "coach-backpack",
+      "retailer": "Amazon",
+      "campaign": "gear-coach-backpack",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/parent-coach-gear.md"
+      ]
+    },
+    {
+      "slug": "coach-clipboard-dry-erase",
+      "retailer": "Amazon",
+      "campaign": "gear-coach-clipboard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/parent-coach-gear.md"
+      ]
+    },
+    {
+      "slug": "coach-stopwatch",
+      "retailer": "Amazon",
+      "campaign": "gear-coach-stopwatch",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/parent-coach-gear.md"
+      ]
+    },
+    {
+      "slug": "compression-socks",
+      "retailer": "Amazon",
+      "campaign": "gear-compression-socks",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "dance-bun-kit",
+      "retailer": "Amazon",
+      "campaign": "gear-dance-bun-kit",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-ballet.md"
+      ]
+    },
+    {
+      "slug": "dance-character-shoes-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-dance-character-shoes-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-choir.md",
+        "src/content/pillar/ultimate-parent-guide-dance.md"
+      ]
+    },
+    {
+      "slug": "dance-jazz-shoes-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-dance-jazz-shoes-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-dance.md"
+      ]
+    },
+    {
+      "slug": "dance-leg-warmers",
+      "retailer": "Amazon",
+      "campaign": "gear-dance-leg-warmers",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-ballet.md"
+      ]
+    },
+    {
+      "slug": "dance-tap-shoes-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-dance-tap-shoes-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-dance.md"
+      ]
+    },
+    {
+      "slug": "electrolyte-powder",
+      "retailer": "Amazon",
+      "campaign": "gear-electrolyte-powder",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "electrolyte-tablets",
+      "retailer": "Amazon",
+      "campaign": "gear-electrolyte-tablets",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "first-aid-fanny-pack",
+      "retailer": "Amazon",
+      "campaign": "gear-first-aid-fanny-pack",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/parent-coach-gear.md"
+      ]
+    },
+    {
+      "slug": "flag-football-belt-set",
+      "retailer": "Amazon",
+      "campaign": "gear-flag-football-belts",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/first-season-of-flag-football.md",
+        "src/content/coachingTips/flag-football-3-step-route-tree.md",
+        "src/content/coachingTips/flag-football-angle-pursuit-pull.md",
+        "src/content/coachingTips/flag-football-catch-on-the-run.md",
+        "src/content/coachingTips/flag-football-cone-route-stems.md",
+        "src/content/coachingTips/flag-football-cut-and-juke.md",
+        "src/content/coachingTips/flag-football-deep-ball-catch.md",
+        "src/content/coachingTips/flag-football-defensive-contain-ages-8-10.md",
+        "src/content/coachingTips/flag-football-flag-pulling-tag-drill-ages-5-7.md",
+        "src/content/coachingTips/flag-football-grip-and-throw.md",
+        "src/content/coachingTips/flag-football-mirror-and-pull.md",
+        "src/content/coachingTips/flag-football-open-field-pull.md",
+        "src/content/coachingTips/flag-football-protect-the-flag.md",
+        "src/content/coachingTips/flag-football-read-option-intro-ages-11-12.md",
+        "src/content/coachingTips/flag-football-screen-pass-ages-8-10.md",
+        "src/content/coachingTips/flag-football-slant-route-ages-8-10.md",
+        "src/content/coachingTips/flag-football-spread-and-find-space.md",
+        "src/content/coachingTips/flag-football-stationary-catch.md",
+        "src/content/coachingTips/flag-football-stiff-arm-vs-defender.md",
+        "src/content/coachingTips/flag-football-tag-and-pull-game.md",
+        "src/content/coachingTips/flag-football-throw-on-the-run.md",
+        "src/content/coachingTips/flag-football-zone-vs-man-recognition-ages-11-12.md",
+        "src/content/guides/flag-football.md",
+        "src/content/guides/football.md",
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "foam-roller-basics-24",
+      "retailer": "Amazon",
+      "campaign": "gear-foam-roller-basics",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "foam-roller-medium",
+      "retailer": "Amazon",
+      "campaign": "gear-foam-roller-medium",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/the-recovery-talk-at-13-14.md",
+        "src/content/guides/cross-country.md",
+        "src/content/guides/gymnastics.md",
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/stunt.md"
+      ]
+    },
+    {
+      "slug": "foam-roller-standard",
+      "retailer": "Amazon",
+      "campaign": "gear-foam-roller",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/training-gear.md"
+      ]
+    },
+    {
+      "slug": "foam-roller-triggerpoint-13",
+      "retailer": "Amazon",
+      "campaign": "gear-foam-roller-triggerpoint",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "folding-table-6ft",
+      "retailer": "Amazon",
+      "campaign": "gear-folding-table",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/boosters-gear.md"
+      ]
+    },
+    {
+      "slug": "folding-wagon",
+      "retailer": "Amazon",
+      "campaign": "gear-folding-wagon",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "football-cleats-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-cleats",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-football-equipment-guide.md",
+        "src/content/guides/football.md",
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "football-cup-shorts-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-cup-shorts",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-football-equipment-guide.md",
+        "src/content/guides/football.md",
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "football-girdle-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-girdle",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-football-equipment-guide.md",
+        "src/content/guides/football-7v7.md",
+        "src/content/guides/football.md",
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "football-gloves-receiver-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-gloves",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-football-equipment-guide.md",
+        "src/content/guides/football-7v7.md",
+        "src/content/guides/football.md",
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "football-helmet-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-helmet-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "football-leather-college",
+      "retailer": "Amazon",
+      "campaign": "gear-football-leather-college",
+      "destinationHost": "amzn.to",
+      "sources": []
+    },
+    {
+      "slug": "football-leather-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-leather-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/football-7v7-blitz-pickup-footwork.md",
+        "src/content/coachingTips/football-7v7-man-zone-pre-snap-read.md",
+        "src/content/coachingTips/tackle-football-defensive-shed-ages-13-14.md",
+        "src/content/guides/football-7v7.md"
+      ]
+    },
+    {
+      "slug": "football-mouthguard-sisu",
+      "retailer": "Amazon",
+      "campaign": "gear-football-mouthguard-sisu",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-football-equipment-guide.md",
+        "src/content/guides/football.md"
+      ]
+    },
+    {
+      "slug": "football-neck-roll",
+      "retailer": "Amazon",
+      "campaign": "gear-football-neck-roll",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/football.md"
+      ]
+    },
+    {
+      "slug": "football-qb-throwing-net",
+      "retailer": "Amazon",
+      "campaign": "gear-football-qb-throwing-net",
+      "destinationHost": "amzn.to",
+      "sources": []
+    },
+    {
+      "slug": "football-qb-wristbands",
+      "retailer": "Amazon",
+      "campaign": "gear-football-qb-wristbands",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/flag-football-7v7-scrimmage-ages-13-14.md"
+      ]
+    },
+    {
+      "slug": "football-rubber-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-rubber-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/11-12-helmet-upgrade.md",
+        "src/content/articles/first-season-of-youth-football.md",
+        "src/content/articles/varsity-football-roster-math.md",
+        "src/content/coachingTips/flag-football-7v7-scrimmage-ages-13-14.md",
+        "src/content/coachingTips/flag-football-route-running-on-cones-ages-5-7.md",
+        "src/content/coachingTips/football-7v7-3-step-route-timing.md",
+        "src/content/coachingTips/football-7v7-cover-3-alignment.md",
+        "src/content/coachingTips/football-7v7-flag-pull-angle.md",
+        "src/content/coachingTips/football-7v7-quarterback-pump-fake.md",
+        "src/content/coachingTips/football-7v7-quick-out-at-the-sticks.md",
+        "src/content/coachingTips/football-7v7-soft-hands-catch-progression.md",
+        "src/content/coachingTips/tackle-football-2-point-stance.md",
+        "src/content/coachingTips/tackle-football-3-point-stance-ages-8-10.md",
+        "src/content/coachingTips/tackle-football-3-point-stance.md",
+        "src/content/coachingTips/tackle-football-angle-tackle.md",
+        "src/content/coachingTips/tackle-football-bag-tackle-progression.md",
+        "src/content/coachingTips/tackle-football-ball-protection-tunnel.md",
+        "src/content/coachingTips/tackle-football-ball-security-grip.md",
+        "src/content/coachingTips/tackle-football-base-block.md",
+        "src/content/coachingTips/tackle-football-block-shed-drill-ages-11-12.md",
+        "src/content/coachingTips/tackle-football-blocking-mirror.md",
+        "src/content/coachingTips/tackle-football-catch-and-tuck.md",
+        "src/content/coachingTips/tackle-football-catch-on-the-line.md",
+        "src/content/coachingTips/tackle-football-contested-catch.md",
+        "src/content/coachingTips/tackle-football-drive-block-on-bag.md",
+        "src/content/coachingTips/tackle-football-form-tackling-on-a-bag-ages-8-10.md",
+        "src/content/coachingTips/tackle-football-handoff-progression.md",
+        "src/content/coachingTips/tackle-football-near-shoulder-fit.md",
+        "src/content/coachingTips/tackle-football-open-field-tackle.md",
+        "src/content/coachingTips/tackle-football-out-route-on-cone.md",
+        "src/content/coachingTips/tackle-football-over-the-shoulder-catch.md",
+        "src/content/coachingTips/tackle-football-pass-protection.md",
+        "src/content/coachingTips/tackle-football-profile-and-fit.md",
+        "src/content/coachingTips/tackle-football-pull-and-block.md",
+        "src/content/coachingTips/tackle-football-qb-drop-back-throw.md",
+        "src/content/coachingTips/tackle-football-qb-grip-and-throw.md",
+        "src/content/coachingTips/tackle-football-route-tree-intro-ages-11-12.md",
+        "src/content/coachingTips/tackle-football-route-tree-stems.md",
+        "src/content/coachingTips/tackle-football-running-back-cuts.md",
+        "src/content/coachingTips/tackle-football-running-back-footwork-ages-13-14.md",
+        "src/content/coachingTips/tackle-football-stance-and-sprint.md",
+        "src/content/guides/football.md"
+      ]
+    },
+    {
+      "slug": "football-shoulder-pads-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-football-shoulder-pads-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-football.md"
+      ]
+    },
+    {
+      "slug": "frame-8x10",
+      "retailer": "Amazon",
+      "campaign": "gear-frame-8x10",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "gauze-pads",
+      "retailer": "Amazon",
+      "campaign": "gear-gauze-pads",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "gear-bag-small",
+      "retailer": "Amazon",
+      "campaign": "gear-bag-small",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "golf-glove-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-golf-glove-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/golf.md"
+      ]
+    },
+    {
+      "slug": "golf-starter-set-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-golf-starter-set-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/golf.md"
+      ]
+    },
+    {
+      "slug": "gymnastics-grips-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-gymnastics-grips",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/gymnastics.md",
+        "src/content/pillar/ultimate-parent-guide-gymnastics.md"
+      ]
+    },
+    {
+      "slug": "gymnastics-leotard-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-gymnastics-leotard-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/ballet.md",
+        "src/content/guides/dance.md",
+        "src/content/guides/gymnastics.md",
+        "src/content/pillar/ultimate-parent-guide-ballet.md",
+        "src/content/pillar/ultimate-parent-guide-dance.md",
+        "src/content/pillar/ultimate-parent-guide-gymnastics.md"
+      ]
+    },
+    {
+      "slug": "gymnastics-slippers-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-gymnastics-slippers-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/ballet.md",
+        "src/content/guides/dance.md",
+        "src/content/guides/gymnastics.md"
+      ]
+    },
+    {
+      "slug": "hand-warmers",
+      "retailer": "Amazon",
+      "campaign": "gear-hand-warmers",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "hard-cooler-55qt",
+      "retailer": "Amazon",
+      "campaign": "gear-hard-cooler-55qt",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "hockey-helmet-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-hockey-helmet-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/hockey-glide-on-two-feet.md",
+        "src/content/guides/hockey.md",
+        "src/content/pillar/ultimate-parent-guide-hockey.md"
+      ]
+    },
+    {
+      "slug": "hockey-mouthguard",
+      "retailer": "Amazon",
+      "campaign": "gear-hockey-mouthguard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/hockey.md"
+      ]
+    },
+    {
+      "slug": "hockey-pads-starter",
+      "retailer": "Amazon",
+      "campaign": "gear-hockey-pads-starter",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/hockey.md",
+        "src/content/pillar/ultimate-parent-guide-hockey.md"
+      ]
+    },
+    {
+      "slug": "hockey-puck",
+      "retailer": "Amazon",
+      "campaign": "gear-hockey-puck",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/15-plus-skate-baking.md",
+        "src/content/articles/high-school-hockey-and-the-juniors-math.md",
+        "src/content/articles/hockey-game-bag-checklist.md",
+        "src/content/articles/hockey-game-day-packing-list.md",
+        "src/content/articles/how-much-does-youth-hockey-cost.md",
+        "src/content/articles/what-you-actually-need-for-first-year-hockey.md",
+        "src/content/coachingTips/hockey-1on1-forecheck-ages-11-12.md",
+        "src/content/coachingTips/hockey-1v1-gap-control.md",
+        "src/content/coachingTips/hockey-1v1-stick-protect.md",
+        "src/content/coachingTips/hockey-backward-skating.md",
+        "src/content/coachingTips/hockey-breakout-patterns-ages-11-12.md",
+        "src/content/coachingTips/hockey-c-cuts-forward.md",
+        "src/content/coachingTips/hockey-crossovers-clockwise.md",
+        "src/content/coachingTips/hockey-edge-work-ages-8-10.md",
+        "src/content/coachingTips/hockey-figure-eight-cones.md",
+        "src/content/coachingTips/hockey-give-and-go.md",
+        "src/content/coachingTips/hockey-glide-on-two-feet.md",
+        "src/content/coachingTips/hockey-goalie-glove-and-blocker-saves.md",
+        "src/content/coachingTips/hockey-goalie-stance-and-shuffle.md",
+        "src/content/coachingTips/hockey-march-on-skates.md",
+        "src/content/coachingTips/hockey-mohawk-turn.md",
+        "src/content/coachingTips/hockey-one-timer-intro.md",
+        "src/content/coachingTips/hockey-partner-passing-ages-8-10.md",
+        "src/content/coachingTips/hockey-pass-on-the-move.md",
+        "src/content/coachingTips/hockey-power-strides-ages-5-7.md",
+        "src/content/coachingTips/hockey-saucer-pass-intro.md",
+        "src/content/coachingTips/hockey-shooting-on-the-move.md",
+        "src/content/coachingTips/hockey-snap-shot-intro.md",
+        "src/content/coachingTips/hockey-stationary-pass-target.md",
+        "src/content/coachingTips/hockey-stick-handle-while-skating.md",
+        "src/content/coachingTips/hockey-stick-handling-cones-ages-5-7.md",
+        "src/content/coachingTips/hockey-stick-on-puck-poke-check.md",
+        "src/content/coachingTips/hockey-stop-and-go.md",
+        "src/content/coachingTips/hockey-tap-tap-stick-handle.md",
+        "src/content/coachingTips/hockey-tight-turns.md",
+        "src/content/coachingTips/hockey-toe-drag-intro.md",
+        "src/content/coachingTips/hockey-wrist-shot-stationary.md"
+      ]
+    },
+    {
+      "slug": "hockey-skates-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-hockey-skates-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-hockey.md"
+      ]
+    },
+    {
+      "slug": "hockey-stick-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-hockey-stick-youth",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/coachingTips/hockey-1on1-forecheck-ages-11-12.md",
+        "src/content/coachingTips/hockey-1v1-stick-protect.md",
+        "src/content/coachingTips/hockey-backward-skating.md",
+        "src/content/coachingTips/hockey-crossovers-clockwise.md",
+        "src/content/coachingTips/hockey-figure-eight-cones.md",
+        "src/content/coachingTips/hockey-goalie-stance-and-shuffle.md",
+        "src/content/coachingTips/hockey-one-timer-intro.md",
+        "src/content/coachingTips/hockey-partner-passing-ages-8-10.md",
+        "src/content/coachingTips/hockey-pass-on-the-move.md",
+        "src/content/coachingTips/hockey-power-strides-ages-5-7.md",
+        "src/content/coachingTips/hockey-saucer-pass-intro.md",
+        "src/content/coachingTips/hockey-shooting-on-the-move.md",
+        "src/content/coachingTips/hockey-snap-shot-intro.md",
+        "src/content/coachingTips/hockey-stationary-pass-target.md",
+        "src/content/coachingTips/hockey-stick-handle-while-skating.md",
+        "src/content/coachingTips/hockey-stick-handling-cones-ages-5-7.md",
+        "src/content/coachingTips/hockey-stick-on-puck-poke-check.md",
+        "src/content/coachingTips/hockey-tap-tap-stick-handle.md",
+        "src/content/coachingTips/hockey-toe-drag-intro.md",
+        "src/content/coachingTips/hockey-wrist-shot-stationary.md",
+        "src/content/guides/hockey.md",
+        "src/content/pillar/ultimate-parent-guide-hockey.md"
+      ]
+    },
+    {
+      "slug": "ice-pack-arctic-flex-gel",
+      "retailer": "Amazon",
+      "campaign": "gear-ice-pack-gel",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "instant-cold-pack",
+      "retailer": "Amazon",
+      "campaign": "gear-instant-cold-pack",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md",
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "jump-rope-speed",
+      "retailer": "Amazon",
+      "campaign": "gear-jump-rope",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/training-gear.md"
+      ]
+    },
+    {
+      "slug": "kinesio-tape-precut",
+      "retailer": "Amazon",
+      "campaign": "gear-kinesio-tape-precut",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md",
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "label-maker-handheld",
+      "retailer": "Amazon",
+      "campaign": "gear-label-maker",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/boosters-gear.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-arm-pads-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-arm-pads-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-ball",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-ball",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/first-season-of-girls-lacrosse.md",
+        "src/content/coachingTips/lacrosse-boys-1v1-ground-ball-battle.md",
+        "src/content/coachingTips/lacrosse-boys-1v1-take-away-check.md",
+        "src/content/coachingTips/lacrosse-boys-catch-on-the-run.md",
+        "src/content/coachingTips/lacrosse-boys-catch-over-shoulder.md",
+        "src/content/coachingTips/lacrosse-boys-catch-with-soft-hands.md",
+        "src/content/coachingTips/lacrosse-boys-clearing-pattern-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-boys-cradle-on-the-run.md",
+        "src/content/coachingTips/lacrosse-boys-cradle-stationary.md",
+        "src/content/coachingTips/lacrosse-boys-cradle-with-pressure.md",
+        "src/content/coachingTips/lacrosse-boys-cradling-on-the-move-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-boys-face-off-intro-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-boys-give-and-go-pass.md",
+        "src/content/coachingTips/lacrosse-boys-goalie-stance-arc.md",
+        "src/content/coachingTips/lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-boys-pass-on-the-move.md",
+        "src/content/coachingTips/lacrosse-boys-quick-stick-pass.md",
+        "src/content/coachingTips/lacrosse-boys-riding-pressure-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-boys-scoop-on-the-run.md",
+        "src/content/coachingTips/lacrosse-boys-shot-from-x.md",
+        "src/content/coachingTips/lacrosse-boys-shot-on-cones-stationary.md",
+        "src/content/coachingTips/lacrosse-boys-stationary-pass-partner.md",
+        "src/content/coachingTips/lacrosse-boys-stationary-scoop.md",
+        "src/content/coachingTips/lacrosse-boys-stick-position-defense.md",
+        "src/content/coachingTips/lacrosse-boys-time-and-room-shot.md",
+        "src/content/coachingTips/lacrosse-boys-two-line-passing-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-boys-walk-and-cradle.md",
+        "src/content/coachingTips/lacrosse-clearing-pattern-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-cradling-on-the-move-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-face-off-intro-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-girls-1v1-ground-ball-battle.md",
+        "src/content/coachingTips/lacrosse-girls-1v1-take-away-check.md",
+        "src/content/coachingTips/lacrosse-girls-catch-on-the-run.md",
+        "src/content/coachingTips/lacrosse-girls-catch-over-shoulder.md",
+        "src/content/coachingTips/lacrosse-girls-catch-with-soft-hands.md",
+        "src/content/coachingTips/lacrosse-girls-clearing-pattern-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-girls-cradle-on-the-run.md",
+        "src/content/coachingTips/lacrosse-girls-cradle-stationary.md",
+        "src/content/coachingTips/lacrosse-girls-cradle-with-pressure.md",
+        "src/content/coachingTips/lacrosse-girls-cradling-on-the-move-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-girls-face-off-intro-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-girls-give-and-go-pass.md",
+        "src/content/coachingTips/lacrosse-girls-goalie-stance-arc.md",
+        "src/content/coachingTips/lacrosse-girls-ground-ball-scoop-battles-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-girls-pass-on-the-move.md",
+        "src/content/coachingTips/lacrosse-girls-quick-stick-pass.md",
+        "src/content/coachingTips/lacrosse-girls-riding-pressure-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-girls-scoop-on-the-run.md",
+        "src/content/coachingTips/lacrosse-girls-shot-from-x.md",
+        "src/content/coachingTips/lacrosse-girls-shot-on-cones-stationary.md",
+        "src/content/coachingTips/lacrosse-girls-stationary-pass-partner.md",
+        "src/content/coachingTips/lacrosse-girls-stationary-scoop.md",
+        "src/content/coachingTips/lacrosse-girls-stick-position-defense.md",
+        "src/content/coachingTips/lacrosse-girls-time-and-room-shot.md",
+        "src/content/coachingTips/lacrosse-girls-two-line-passing-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-girls-walk-and-cradle.md",
+        "src/content/coachingTips/lacrosse-ground-ball-scoop-battles-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-riding-pressure-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-two-line-passing-ages-8-10.md",
+        "src/content/guides/lacrosse-girls.md",
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-gloves-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-gloves-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/lacrosse-boys.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-goggles-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-goggles-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/lacrosse-girls.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-helmet-boys-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-helmet-boys-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/lacrosse-boys.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-shoulder-pads-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-shoulder-pads-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/lacrosse-boys.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-starter-kit-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-starter-kit-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/lacrosse-boys-1v1-ground-ball-battle.md",
+        "src/content/coachingTips/lacrosse-boys-1v1-take-away-check.md",
+        "src/content/coachingTips/lacrosse-boys-catch-on-the-run.md",
+        "src/content/coachingTips/lacrosse-boys-catch-over-shoulder.md",
+        "src/content/coachingTips/lacrosse-boys-catch-with-soft-hands.md",
+        "src/content/coachingTips/lacrosse-boys-clearing-pattern-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-boys-cradle-on-the-run.md",
+        "src/content/coachingTips/lacrosse-boys-cradle-stationary.md",
+        "src/content/coachingTips/lacrosse-boys-cradle-with-pressure.md",
+        "src/content/coachingTips/lacrosse-boys-cradling-on-the-move-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-boys-face-off-intro-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-boys-goalie-stance-arc.md",
+        "src/content/coachingTips/lacrosse-boys-ground-ball-scoop-battles-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-boys-quick-stick-pass.md",
+        "src/content/coachingTips/lacrosse-boys-riding-pressure-ages-13-14.md",
+        "src/content/coachingTips/lacrosse-boys-scoop-on-the-run.md",
+        "src/content/coachingTips/lacrosse-boys-shot-from-x.md",
+        "src/content/coachingTips/lacrosse-boys-shot-on-cones-stationary.md",
+        "src/content/coachingTips/lacrosse-boys-stationary-pass-partner.md",
+        "src/content/coachingTips/lacrosse-boys-stationary-scoop.md",
+        "src/content/coachingTips/lacrosse-boys-stick-position-defense.md",
+        "src/content/coachingTips/lacrosse-boys-time-and-room-shot.md",
+        "src/content/coachingTips/lacrosse-boys-two-line-passing-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-boys-walk-and-cradle.md",
+        "src/content/coachingTips/lacrosse-cradling-on-the-move-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-girls-1v1-ground-ball-battle.md",
+        "src/content/coachingTips/lacrosse-girls-1v1-take-away-check.md",
+        "src/content/coachingTips/lacrosse-girls-catch-on-the-run.md",
+        "src/content/coachingTips/lacrosse-girls-catch-over-shoulder.md",
+        "src/content/coachingTips/lacrosse-girls-catch-with-soft-hands.md",
+        "src/content/coachingTips/lacrosse-girls-cradle-on-the-run.md",
+        "src/content/coachingTips/lacrosse-girls-cradle-stationary.md",
+        "src/content/coachingTips/lacrosse-girls-cradle-with-pressure.md",
+        "src/content/coachingTips/lacrosse-girls-cradling-on-the-move-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-girls-face-off-intro-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-girls-goalie-stance-arc.md",
+        "src/content/coachingTips/lacrosse-girls-ground-ball-scoop-battles-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-girls-quick-stick-pass.md",
+        "src/content/coachingTips/lacrosse-girls-scoop-on-the-run.md",
+        "src/content/coachingTips/lacrosse-girls-shot-from-x.md",
+        "src/content/coachingTips/lacrosse-girls-shot-on-cones-stationary.md",
+        "src/content/coachingTips/lacrosse-girls-stationary-pass-partner.md",
+        "src/content/coachingTips/lacrosse-girls-stationary-scoop.md",
+        "src/content/coachingTips/lacrosse-girls-stick-position-defense.md",
+        "src/content/coachingTips/lacrosse-girls-time-and-room-shot.md",
+        "src/content/coachingTips/lacrosse-girls-two-line-passing-ages-8-10.md",
+        "src/content/coachingTips/lacrosse-girls-walk-and-cradle.md",
+        "src/content/coachingTips/lacrosse-ground-ball-scoop-battles-ages-11-12.md",
+        "src/content/coachingTips/lacrosse-two-line-passing-ages-8-10.md",
+        "src/content/guides/lacrosse-girls.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-stick-boys-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-stick-boys-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/lacrosse-boys.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lacrosse-stick-girls-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-lacrosse-stick-girls-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "lip-balm-spf",
+      "retailer": "Amazon",
+      "campaign": "gear-lip-balm-spf",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "martial-arts-gi-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-martial-arts-gi-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/martial-arts.md"
+      ]
+    },
+    {
+      "slug": "martial-arts-sparring-gear-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-martial-arts-sparring",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/martial-arts.md"
+      ]
+    },
+    {
+      "slug": "mouthguard-boil-bite",
+      "retailer": "Amazon",
+      "campaign": "gear-mouthguard-boil-bite",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/lacrosse-boys.md",
+        "src/content/guides/lacrosse-girls.md",
+        "src/content/guides/martial-arts.md",
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/wrestling.md",
+        "src/content/pillar/ultimate-parent-guide-football.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-athletic-tape",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-tape",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/car-kit.md",
+        "src/content/guides/cheer.md",
+        "src/content/guides/stunt.md",
+        "src/content/pillar/ultimate-parent-guide-gymnastics.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-cleats-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-cleats-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-baseball-equipment-guide.md",
+        "src/content/guides/baseball.md",
+        "src/content/guides/flag-football.md",
+        "src/content/guides/football.md",
+        "src/content/guides/lacrosse-boys.md",
+        "src/content/guides/lacrosse-girls.md",
+        "src/content/pillar/ultimate-parent-guide-baseball.md",
+        "src/content/pillar/ultimate-parent-guide-lacrosse.md",
+        "src/content/pillar/ultimate-parent-guide-softball.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-duffle-bag",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-duffle",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/crew.md",
+        "src/content/guides/football.md",
+        "src/content/guides/martial-arts.md",
+        "src/content/pillar/ultimate-parent-guide-ballet.md",
+        "src/content/pillar/ultimate-parent-guide-basketball.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-mouthguard-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-mouthguard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/car-kit.md",
+        "src/content/articles/girls-lacrosse-goggles-and-stick-rules.md",
+        "src/content/coachingTips/stunt-base-loading-position.md",
+        "src/content/coachingTips/stunt-base-partner-stance.md",
+        "src/content/coachingTips/stunt-count-out-call.md",
+        "src/content/coachingTips/stunt-cradle-dismount-timing.md",
+        "src/content/coachingTips/stunt-extension-prep.md",
+        "src/content/coachingTips/stunt-lib-transition.md",
+        "src/content/coachingTips/stunt-shoulder-sit-base-position.md",
+        "src/content/coachingTips/stunt-spotting-body-position.md",
+        "src/content/guides/flag-football.md",
+        "src/content/guides/football-7v7.md",
+        "src/content/guides/football.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-shoe-bag",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-shoe-bag",
+      "destinationHost": "www.amazon.com",
+      "sources": []
+    },
+    {
+      "slug": "multi-sport-socks-crew",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-socks-crew",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/basketball.md",
+        "src/content/pillar/ultimate-parent-guide-basketball.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-sunglasses-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-sunglasses",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/crew.md"
+      ]
+    },
+    {
+      "slug": "multi-sport-water-bottle",
+      "retailer": "Amazon",
+      "campaign": "gear-multi-sport-bottle",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/night-before-tryouts.md",
+        "src/content/articles/summer-camp-packing-list.md",
+        "src/content/articles/the-hydration-conversation-at-11-12.md",
+        "src/content/articles/when-your-kid-forgets-gear-at-camp.md",
+        "src/content/guides/band.md",
+        "src/content/guides/basketball.md",
+        "src/content/guides/choir.md",
+        "src/content/guides/crew.md",
+        "src/content/guides/dance.md",
+        "src/content/guides/soccer.md",
+        "src/content/guides/theater.md"
+      ]
+    },
+    {
+      "slug": "music-folder-performance",
+      "retailer": "Amazon",
+      "campaign": "gear-music-folder",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/band.md",
+        "src/content/guides/choir.md"
+      ]
+    },
+    {
+      "slug": "music-stand-foldable",
+      "retailer": "Amazon",
+      "campaign": "gear-music-stand",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/band.md",
+        "src/content/pillar/ultimate-parent-guide-band.md"
+      ]
+    },
+    {
+      "slug": "packing-cubes",
+      "retailer": "Amazon",
+      "campaign": "gear-packing-cubes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "percussion-massager-renpho-r3",
+      "retailer": "Amazon",
+      "campaign": "gear-percussion-massager-renpho",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "phone-tripod",
+      "retailer": "Amazon",
+      "campaign": "gear-phone-tripod",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/basketball-reading-recruiting-rankings-services-critically.md",
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/video-tracking-gear.md"
+      ]
+    },
+    {
+      "slug": "photo-book-service",
+      "retailer": "Shutterfly",
+      "campaign": "gear-photo-book",
+      "destinationHost": "www.shutterfly.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "pickleball-bag",
+      "retailer": "Amazon",
+      "campaign": "gear-pickleball-bag",
+      "destinationHost": "www.amazon.com",
+      "sources": []
+    },
+    {
+      "slug": "pickleball-balls-outdoor",
+      "retailer": "Amazon",
+      "campaign": "gear-pickleball-balls",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/pickleball.md"
+      ]
+    },
+    {
+      "slug": "pickleball-paddle-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-pickleball-paddle-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/pickleball.md"
+      ]
+    },
+    {
+      "slug": "pickleball-shoes",
+      "retailer": "Amazon",
+      "campaign": "gear-pickleball-shoes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/pickleball.md"
+      ]
+    },
+    {
+      "slug": "pop-up-tent-sunscreen",
+      "retailer": "Amazon",
+      "campaign": "gear-pop-up-tent",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "portable-pa-speaker",
+      "retailer": "Amazon",
+      "campaign": "gear-pa-speaker",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/boosters-gear.md"
+      ]
+    },
+    {
+      "slug": "portable-whiteboard",
+      "retailer": "Amazon",
+      "campaign": "gear-portable-whiteboard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/parent-coach-gear.md"
+      ]
+    },
+    {
+      "slug": "protein-powder-vanilla",
+      "retailer": "Amazon",
+      "campaign": "gear-protein-powder-vanilla",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "rain-poncho",
+      "retailer": "Amazon",
+      "campaign": "gear-rain-poncho",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "rebounder-net-baseball",
+      "retailer": "Amazon",
+      "campaign": "gear-rebounder-net",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/training-gear.md"
+      ]
+    },
+    {
+      "slug": "resistance-bands-loop-fit-simplify",
+      "retailer": "Amazon",
+      "campaign": "gear-resistance-bands-loop",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "resistance-bands-set",
+      "retailer": "Amazon",
+      "campaign": "gear-resistance-bands",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/gymnastics-meet-packing-list.md",
+        "src/content/coachingTips/crew-balance-pause.md",
+        "src/content/coachingTips/crew-catch-position-pause.md",
+        "src/content/coachingTips/crew-coxswain-call-and-response.md",
+        "src/content/coachingTips/crew-erg-ten-stroke-build.md",
+        "src/content/coachingTips/crew-half-slide-warm-up.md",
+        "src/content/coachingTips/crew-release-tap-down.md",
+        "src/content/coachingTips/crew-square-blade-rowing.md",
+        "src/content/coachingTips/gymnastics-bar-pullover-progression.md",
+        "src/content/coachingTips/gymnastics-beam-line-walk.md",
+        "src/content/coachingTips/gymnastics-handstand-hold.md",
+        "src/content/coachingTips/gymnastics-vault-run-up-tempo.md",
+        "src/content/coachingTips/martial-arts-bow-in-routine.md",
+        "src/content/coachingTips/martial-arts-footwork-box.md",
+        "src/content/coachingTips/martial-arts-kicking-pad-sequence.md",
+        "src/content/coachingTips/martial-arts-partner-stance-switch.md",
+        "src/content/coachingTips/martial-arts-partner-timing-reaction.md",
+        "src/content/coachingTips/martial-arts-roll-fall-progression.md",
+        "src/content/coachingTips/martial-arts-three-step-combo-shadow.md",
+        "src/content/guides/gymnastics.md",
+        "src/content/guides/training-gear.md",
+        "src/content/pillar/ultimate-parent-guide-swimming.md"
+      ]
+    },
+    {
+      "slug": "rugby-cleats",
+      "retailer": "Amazon",
+      "campaign": "gear-rugby-cleats",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/rugby.md"
+      ]
+    },
+    {
+      "slug": "rugby-mouthguard",
+      "retailer": "Amazon",
+      "campaign": "gear-rugby-mouthguard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/rugby.md"
+      ]
+    },
+    {
+      "slug": "rugby-scrum-cap",
+      "retailer": "Amazon",
+      "campaign": "gear-rugby-scrum-cap",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/rugby.md"
+      ]
+    },
+    {
+      "slug": "rugby-shoulder-pads",
+      "retailer": "Amazon",
+      "campaign": "gear-rugby-shoulder-pads",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/rugby.md"
+      ]
+    },
+    {
+      "slug": "saline-rinse",
+      "retailer": "Amazon",
+      "campaign": "gear-saline-rinse",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "saline-wipes",
+      "retailer": "Amazon",
+      "campaign": "gear-saline-wipes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md",
+        "src/content/guides/wrestling.md"
+      ]
+    },
+    {
+      "slug": "scissors-blunt-tip",
+      "retailer": "Amazon",
+      "campaign": "gear-scissors-blunt-tip",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "scrimmage-pennies",
+      "retailer": "Amazon",
+      "campaign": "gear-scrimmage-pennies",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/parent-coach-gear.md"
+      ]
+    },
+    {
+      "slug": "script-binder-1inch",
+      "retailer": "Amazon",
+      "campaign": "gear-script-binder",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/theater.md"
+      ]
+    },
+    {
+      "slug": "seat-cushion",
+      "retailer": "Amazon",
+      "campaign": "gear-seat-cushion",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "shadow-box-jersey",
+      "retailer": "Amazon",
+      "campaign": "gear-shadow-box-jersey",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "sideline-blanket",
+      "retailer": "Amazon",
+      "campaign": "gear-sideline-blanket",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "soccer-ball-size3",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-ball-size3",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/coachingTips/soccer-circle-passing.md",
+        "src/content/coachingTips/soccer-cone-slalom-dribble.md",
+        "src/content/coachingTips/soccer-dynamic-with-ball-warm-up.md",
+        "src/content/coachingTips/soccer-mirror-the-attacker.md",
+        "src/content/coachingTips/soccer-red-light-green-light-ages-5-7.md",
+        "src/content/coachingTips/soccer-sharks-and-minnows-ages-5-7.md",
+        "src/content/coachingTips/soccer-shoelace-touches.md",
+        "src/content/coachingTips/soccer-shoot-the-cone.md",
+        "src/content/coachingTips/soccer-simple-two-cone-passing-ages-5-7.md",
+        "src/content/coachingTips/soccer-stationary-shot-on-goal.md",
+        "src/content/coachingTips/soccer-stay-between-ball-and-goal.md",
+        "src/content/coachingTips/soccer-stop-and-go-dribble.md",
+        "src/content/coachingTips/soccer-stop-the-ball-pass.md",
+        "src/content/coachingTips/soccer-stop-the-roll.md",
+        "src/content/coachingTips/soccer-tap-and-run.md",
+        "src/content/coachingTips/soccer-two-cone-pass-back-and-forth.md",
+        "src/content/guides/soccer.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soccer-ball-size4",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-ball-size4",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/8-10-cleat-conversation.md",
+        "src/content/articles/club-vs-high-school-soccer-the-conflict.md",
+        "src/content/articles/first-season-of-youth-soccer.md",
+        "src/content/articles/how-much-does-youth-soccer-cost.md",
+        "src/content/articles/how-to-net-a-soccer-goal.md",
+        "src/content/articles/moving-a-soccer-goal-safely.md",
+        "src/content/articles/soccer-bag-checklist.md",
+        "src/content/articles/what-my-kid-said-in-the-car.md",
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/coachingTips/soccer-1v1-defending-channel.md",
+        "src/content/coachingTips/soccer-1v1-finishing-on-keeper.md",
+        "src/content/coachingTips/soccer-1v1-shielding.md",
+        "src/content/coachingTips/soccer-1v1-to-a-goal-ages-8-10.md",
+        "src/content/coachingTips/soccer-2v1-defending.md",
+        "src/content/coachingTips/soccer-attacking-1v1-on-cones.md",
+        "src/content/coachingTips/soccer-attacking-diamond-ages-11-12.md",
+        "src/content/coachingTips/soccer-attacking-heading-on-goal.md",
+        "src/content/coachingTips/soccer-chest-trap-from-toss.md",
+        "src/content/coachingTips/soccer-corner-kick-near-post.md",
+        "src/content/coachingTips/soccer-cushion-the-ball.md",
+        "src/content/coachingTips/soccer-defending-shape-ages-11-12.md",
+        "src/content/coachingTips/soccer-defensive-heading.md",
+        "src/content/coachingTips/soccer-defensive-shape-recovery.md",
+        "src/content/coachingTips/soccer-driven-pass-vs-inside.md",
+        "src/content/coachingTips/soccer-figure-eight-dribble.md",
+        "src/content/coachingTips/soccer-finishing-after-pass.md",
+        "src/content/coachingTips/soccer-first-touch-into-space.md",
+        "src/content/coachingTips/soccer-four-corner-passing-ages-8-10.md",
+        "src/content/coachingTips/soccer-free-kick-wall-and-runner.md",
+        "src/content/coachingTips/soccer-give-and-go-with-partner.md",
+        "src/content/coachingTips/soccer-heading-from-partner-toss.md",
+        "src/content/coachingTips/soccer-heading-from-self-toss.md",
+        "src/content/coachingTips/soccer-inside-outside-touch.md",
+        "src/content/coachingTips/soccer-jockey-the-attacker.md",
+        "src/content/coachingTips/soccer-juggling-ladder.md",
+        "src/content/coachingTips/soccer-keeper-1v1-breakaway.md",
+        "src/content/coachingTips/soccer-keeper-catch-at-chest.md",
+        "src/content/coachingTips/soccer-keeper-distribution-throw.md",
+        "src/content/coachingTips/soccer-keeper-diving-to-side.md",
+        "src/content/coachingTips/soccer-keeper-low-roll-pickup.md",
+        "src/content/coachingTips/soccer-keeper-w-stance.md",
+        "src/content/coachingTips/soccer-laces-shot-progression.md",
+        "src/content/coachingTips/soccer-no-bunching-drill-ages-8-10.md",
+        "src/content/coachingTips/soccer-numbered-passing-3v0.md",
+        "src/content/coachingTips/soccer-overlapping-runs.md",
+        "src/content/coachingTips/soccer-pass-and-move.md",
+        "src/content/coachingTips/soccer-pressure-cover-balance.md",
+        "src/content/coachingTips/soccer-quick-change-direction.md",
+        "src/content/coachingTips/soccer-rebound-shooting.md",
+        "src/content/coachingTips/soccer-receive-and-turn.md",
+        "src/content/coachingTips/soccer-rondo-3v1.md",
+        "src/content/coachingTips/soccer-rondo-ages-11-12.md",
+        "src/content/coachingTips/soccer-set-piece-basics-ages-11-12.md",
+        "src/content/coachingTips/soccer-shape-and-spacing.md",
+        "src/content/coachingTips/soccer-shoot-from-the-dribble.md",
+        "src/content/coachingTips/soccer-shooting-stations.md",
+        "src/content/coachingTips/soccer-stay-in-your-zone.md",
+        "src/content/coachingTips/soccer-stay-on-feet-no-dive.md",
+        "src/content/coachingTips/soccer-step-and-tackle.md",
+        "src/content/coachingTips/soccer-take-on-defender-cone.md",
+        "src/content/coachingTips/soccer-thigh-trap-with-toss.md",
+        "src/content/coachingTips/soccer-three-player-passing-triangle.md",
+        "src/content/coachingTips/soccer-throw-in-toss-ages-8-10.md",
+        "src/content/coachingTips/soccer-wall-passing-against-wall.md",
+        "src/content/guides/soccer.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soccer-ball-size5",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-ball-size5",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/coachingTips/soccer-finishing-reps-ages-13-14.md",
+        "src/content/coachingTips/soccer-high-press-triggers-ages-13-14.md",
+        "src/content/coachingTips/soccer-possession-7v7-ages-13-14.md",
+        "src/content/guides/soccer.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soccer-ball-size5-match",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-ball-match",
+      "destinationHost": "www.amazon.com",
+      "sources": []
+    },
+    {
+      "slug": "soccer-clearance-cleats",
+      "retailer": "SoccerGarage",
+      "campaign": "gear-soccer-clearance",
+      "destinationHost": "www.tkqlhce.com",
+      "sources": []
+    },
+    {
+      "slug": "soccer-cleats-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-cleats-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/guides/soccer.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soccer-cones-12pk",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-cones-12pk",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/soccer-1v1-defending-channel.md",
+        "src/content/coachingTips/soccer-1v1-shielding.md",
+        "src/content/coachingTips/soccer-1v1-to-a-goal-ages-8-10.md",
+        "src/content/coachingTips/soccer-attacking-1v1-on-cones.md",
+        "src/content/coachingTips/soccer-attacking-diamond-ages-11-12.md",
+        "src/content/coachingTips/soccer-attacking-heading-on-goal.md",
+        "src/content/coachingTips/soccer-cone-slalom-dribble.md",
+        "src/content/coachingTips/soccer-defending-shape-ages-11-12.md",
+        "src/content/coachingTips/soccer-defensive-heading.md",
+        "src/content/coachingTips/soccer-defensive-shape-recovery.md",
+        "src/content/coachingTips/soccer-figure-eight-dribble.md",
+        "src/content/coachingTips/soccer-first-touch-into-space.md",
+        "src/content/coachingTips/soccer-four-corner-passing-ages-8-10.md",
+        "src/content/coachingTips/soccer-gates-dribbling-ages-5-7.md",
+        "src/content/coachingTips/soccer-high-press-triggers-ages-13-14.md",
+        "src/content/coachingTips/soccer-jockey-the-attacker.md",
+        "src/content/coachingTips/soccer-keeper-distribution-throw.md",
+        "src/content/coachingTips/soccer-no-bunching-drill-ages-8-10.md",
+        "src/content/coachingTips/soccer-numbered-passing-3v0.md",
+        "src/content/coachingTips/soccer-overlapping-runs.md",
+        "src/content/coachingTips/soccer-possession-7v7-ages-13-14.md",
+        "src/content/coachingTips/soccer-pressure-cover-balance.md",
+        "src/content/coachingTips/soccer-quick-change-direction.md",
+        "src/content/coachingTips/soccer-receive-and-turn.md",
+        "src/content/coachingTips/soccer-red-light-green-light-ages-5-7.md",
+        "src/content/coachingTips/soccer-rondo-3v1.md",
+        "src/content/coachingTips/soccer-rondo-ages-11-12.md",
+        "src/content/coachingTips/soccer-set-piece-basics-ages-11-12.md",
+        "src/content/coachingTips/soccer-shape-and-spacing.md",
+        "src/content/coachingTips/soccer-sharks-and-minnows-ages-5-7.md",
+        "src/content/coachingTips/soccer-shoot-the-cone.md",
+        "src/content/coachingTips/soccer-shooting-stations.md",
+        "src/content/coachingTips/soccer-simple-two-cone-passing-ages-5-7.md",
+        "src/content/coachingTips/soccer-stationary-shot-on-goal.md",
+        "src/content/coachingTips/soccer-stay-between-ball-and-goal.md",
+        "src/content/coachingTips/soccer-stay-in-your-zone.md",
+        "src/content/coachingTips/soccer-stay-on-feet-no-dive.md",
+        "src/content/coachingTips/soccer-take-on-defender-cone.md",
+        "src/content/coachingTips/soccer-tap-and-run.md",
+        "src/content/coachingTips/soccer-throw-in-toss-ages-8-10.md",
+        "src/content/coachingTips/soccer-two-cone-pass-back-and-forth.md"
+      ]
+    },
+    {
+      "slug": "soccer-coupon-10-off-100",
+      "retailer": "SoccerGarage",
+      "campaign": "gear-soccer-coupon10",
+      "destinationHost": "www.tkqlhce.com",
+      "sources": []
+    },
+    {
+      "slug": "soccer-garage-shop",
+      "retailer": "SoccerGarage",
+      "campaign": "gear-soccer-garage-shop",
+      "destinationHost": "www.tkqlhce.com",
+      "sources": []
+    },
+    {
+      "slug": "soccer-goalie-gloves-youth",
+      "retailer": "SoccerGarage",
+      "campaign": "gear-soccer-goalie-gloves",
+      "destinationHost": "www.tkqlhce.com",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soccer-rebound-net",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-rebound-net",
+      "destinationHost": "amzn.to",
+      "sources": []
+    },
+    {
+      "slug": "soccer-shin-guards-ankle-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-shin-guards-ankle",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/the-13-year-olds-i-need-new-everything.md",
+        "src/content/articles/youth-soccer-equipment-guide.md"
+      ]
+    },
+    {
+      "slug": "soccer-shin-guards-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-shin-guards",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/guides/soccer.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soccer-socks-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-soccer-socks",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-soccer-equipment-guide.md",
+        "src/content/guides/soccer.md",
+        "src/content/pillar/ultimate-parent-guide-soccer.md"
+      ]
+    },
+    {
+      "slug": "soft-cooler-25qt",
+      "retailer": "Amazon",
+      "campaign": "gear-soft-cooler-25qt",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md",
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "softball-bat-hs",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-bat-hs",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/softball.md"
+      ]
+    },
+    {
+      "slug": "softball-bat-intermediate",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-bat-intermediate",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/softball.md"
+      ]
+    },
+    {
+      "slug": "softball-bat-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-bat-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/softball.md",
+        "src/content/pillar/ultimate-parent-guide-softball.md"
+      ]
+    },
+    {
+      "slug": "softball-face-mask",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-face-mask",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/softball.md",
+        "src/content/pillar/ultimate-parent-guide-softball.md"
+      ]
+    },
+    {
+      "slug": "softball-glove-11in",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-glove-11in",
+      "destinationHost": "amzn.to",
+      "sources": [
+        "src/content/articles/cut-from-varsity-softball-as-a-junior.md",
+        "src/content/articles/first-season-of-softball.md",
+        "src/content/articles/how-much-does-travel-softball-cost.md",
+        "src/content/articles/the-pitching-circle-decision.md",
+        "src/content/articles/when-softball-splits-from-baseball.md",
+        "src/content/coachingTips/softball-advanced-situational-ages-13-14.md",
+        "src/content/coachingTips/softball-backhand-pickup.md",
+        "src/content/coachingTips/softball-bare-hand-rolls.md",
+        "src/content/coachingTips/softball-base-running-ages-5-7.md",
+        "src/content/coachingTips/softball-baserunning-leadoffs-ages-11-12.md",
+        "src/content/coachingTips/softball-bent-leg-slide.md",
+        "src/content/coachingTips/softball-bottom-hand-tee.md",
+        "src/content/coachingTips/softball-catcher-blocking.md",
+        "src/content/coachingTips/softball-charge-the-ball.md",
+        "src/content/coachingTips/softball-coach-front-toss.md",
+        "src/content/coachingTips/softball-cone-funnel-grounder.md",
+        "src/content/coachingTips/softball-cover-first-on-bunt.md",
+        "src/content/coachingTips/softball-cross-field-relay.md",
+        "src/content/coachingTips/softball-cutoff-positioning.md",
+        "src/content/coachingTips/softball-double-play-finish-ages-13-14.md",
+        "src/content/coachingTips/softball-dynamic-warm-up-circuit.md",
+        "src/content/coachingTips/softball-fielding-stance-ages-5-7.md",
+        "src/content/coachingTips/softball-flat-ground-rollers.md",
+        "src/content/coachingTips/softball-fly-ball-drop-step.md",
+        "src/content/coachingTips/softball-overhand-batting-practice.md",
+        "src/content/coachingTips/softball-overhand-toss-partner.md",
+        "src/content/coachingTips/softball-pop-up-communication-ages-8-10.md",
+        "src/content/coachingTips/softball-rounding-the-base.md",
+        "src/content/coachingTips/softball-run-through-first.md",
+        "src/content/coachingTips/softball-rundown-cover-base.md",
+        "src/content/coachingTips/softball-self-toss-catch.md",
+        "src/content/coachingTips/softball-short-hop-fielding.md",
+        "src/content/coachingTips/softball-shuffle-throw.md",
+        "src/content/coachingTips/softball-slap-bunt-progression.md",
+        "src/content/coachingTips/softball-slap-bunting-intro-ages-8-10.md",
+        "src/content/coachingTips/softball-soft-toss-side.md",
+        "src/content/coachingTips/softball-stance-and-load.md",
+        "src/content/coachingTips/softball-step-and-throw.md",
+        "src/content/coachingTips/softball-tag-up-on-fly.md",
+        "src/content/coachingTips/softball-target-bucket-throw.md",
+        "src/content/coachingTips/softball-tee-belly-button.md",
+        "src/content/coachingTips/softball-tee-front-hip.md",
+        "src/content/coachingTips/softball-tee-work-ages-5-7.md",
+        "src/content/coachingTips/softball-throw-and-catch-ladder-ages-8-10.md",
+        "src/content/coachingTips/softball-throw-on-the-run.md",
+        "src/content/coachingTips/softball-throwing-warm-up-progression.md",
+        "src/content/coachingTips/softball-touch-the-corner.md",
+        "src/content/coachingTips/softball-triangle-grounder.md",
+        "src/content/coachingTips/softball-two-hands-receive.md",
+        "src/content/coachingTips/softball-wall-ball.md",
+        "src/content/coachingTips/softball-windmill-arm-circle.md",
+        "src/content/coachingTips/softball-windmill-changeup-grip.md",
+        "src/content/coachingTips/softball-windmill-pitching-warm-up-ages-11-12.md",
+        "src/content/coachingTips/softball-windmill-stride.md",
+        "src/content/coachingTips/softball-windmill-throw-strikes.md",
+        "src/content/guides/softball.md",
+        "src/content/pillar/ultimate-parent-guide-softball.md"
+      ]
+    },
+    {
+      "slug": "softball-pitching-jacket",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-pitching-jacket",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/softball.md"
+      ]
+    },
+    {
+      "slug": "softball-sliding-shorts",
+      "retailer": "Amazon",
+      "campaign": "gear-softball-sliding-shorts",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/softball.md"
+      ]
+    },
+    {
+      "slug": "speed-ladder-agility",
+      "retailer": "Amazon",
+      "campaign": "gear-speed-ladder",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/training-gear.md"
+      ]
+    },
+    {
+      "slug": "square-card-reader",
+      "retailer": "Square",
+      "campaign": "gear-square-reader",
+      "destinationHost": "squareup.com",
+      "sources": [
+        "src/content/guides/boosters-gear.md"
+      ]
+    },
+    {
+      "slug": "stadium-chair-budget",
+      "retailer": "Amazon",
+      "campaign": "gear-stadium-chair-budget",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "stadium-chair-midrange",
+      "retailer": "Amazon",
+      "campaign": "gear-stadium-chair-midrange",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "stadium-chair-premium",
+      "retailer": "Amazon",
+      "campaign": "gear-stadium-chair-premium",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "stage-makeup-kit",
+      "retailer": "Amazon",
+      "campaign": "gear-stage-makeup-kit",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/pillar/ultimate-parent-guide-choir.md"
+      ]
+    },
+    {
+      "slug": "sunscreen-travel",
+      "retailer": "Amazon",
+      "campaign": "gear-sunscreen-travel",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/crew.md",
+        "src/content/guides/first-aid-kit.md",
+        "src/content/guides/sideline-kit.md"
+      ]
+    },
+    {
+      "slug": "swim-cap-silicone-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-swim-cap",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-swimming-gear-guide.md",
+        "src/content/guides/swimming.md",
+        "src/content/pillar/ultimate-parent-guide-swimming.md"
+      ]
+    },
+    {
+      "slug": "swim-goggles-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-swim-goggles-youth",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/swim-meet-packing-list.md",
+        "src/content/articles/swim-meet-weekend-logistics.md",
+        "src/content/articles/youth-swimming-gear-guide.md",
+        "src/content/coachingTips/swimming-backstroke-arm-stroke.md",
+        "src/content/coachingTips/swimming-backstroke-kick-on-back.md",
+        "src/content/coachingTips/swimming-breaststroke-kick-pull.md",
+        "src/content/coachingTips/swimming-breaststroke-pull-glide.md",
+        "src/content/coachingTips/swimming-butterfly-kick-with-board.md",
+        "src/content/coachingTips/swimming-catch-up-freestyle-ages-8-10.md",
+        "src/content/coachingTips/swimming-flip-turn-progression.md",
+        "src/content/coachingTips/swimming-freestyle-arm-stroke.md",
+        "src/content/coachingTips/swimming-freestyle-bilateral-breathing.md",
+        "src/content/coachingTips/swimming-freestyle-kick-on-board.md",
+        "src/content/coachingTips/swimming-interval-set-4x50-ages-11-12.md",
+        "src/content/coachingTips/swimming-kickboard-flutter-ages-5-7.md",
+        "src/content/coachingTips/swimming-side-breathing-rhythm.md",
+        "src/content/guides/swimming.md",
+        "src/content/pillar/ultimate-parent-guide-swimming.md"
+      ]
+    },
+    {
+      "slug": "swimsuit-training-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-swimsuit-training",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-swimming-gear-guide.md",
+        "src/content/guides/swimming.md",
+        "src/content/pillar/ultimate-parent-guide-swimming.md"
+      ]
+    },
+    {
+      "slug": "tennis-balls-orange",
+      "retailer": "Amazon",
+      "campaign": "gear-tennis-balls-orange",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/tennis-backhand-from-feed.md",
+        "src/content/coachingTips/tennis-consistency-rally-to-25-ages-11-12.md",
+        "src/content/coachingTips/tennis-forehand-cross-court-target.md",
+        "src/content/coachingTips/tennis-forehand-from-bounce-feed.md",
+        "src/content/coachingTips/tennis-rally-to-10.md",
+        "src/content/coachingTips/tennis-serve-full-motion.md",
+        "src/content/coachingTips/tennis-serve-toss-only.md",
+        "src/content/coachingTips/tennis-shadow-forehand-no-ball.md",
+        "src/content/coachingTips/tennis-split-step-footwork.md",
+        "src/content/coachingTips/tennis-two-handed-backhand-shadow.md",
+        "src/content/coachingTips/tennis-volley-at-net.md",
+        "src/content/guides/tennis.md"
+      ]
+    },
+    {
+      "slug": "tennis-balls-standard",
+      "retailer": "Amazon",
+      "campaign": "gear-tennis-balls-standard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/tennis.md"
+      ]
+    },
+    {
+      "slug": "tennis-net",
+      "retailer": "Amazon",
+      "campaign": "gear-tennis-net",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/tennis-backhand-from-feed.md",
+        "src/content/coachingTips/tennis-consistency-rally-to-25-ages-11-12.md",
+        "src/content/coachingTips/tennis-forehand-cross-court-target.md",
+        "src/content/coachingTips/tennis-forehand-from-bounce-feed.md",
+        "src/content/coachingTips/tennis-rally-to-10.md",
+        "src/content/coachingTips/tennis-red-ball-groundstroke-rally-ages-5-7.md",
+        "src/content/coachingTips/tennis-target-hitting-at-corners-ages-8-10.md",
+        "src/content/coachingTips/tennis-volley-at-net.md"
+      ]
+    },
+    {
+      "slug": "tennis-racquet-junior",
+      "retailer": "Amazon",
+      "campaign": "gear-tennis-racquet-junior",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/tennis-serve-full-motion.md",
+        "src/content/coachingTips/tennis-serve-toss-only.md",
+        "src/content/coachingTips/tennis-shadow-forehand-no-ball.md",
+        "src/content/coachingTips/tennis-split-step-footwork.md",
+        "src/content/coachingTips/tennis-two-handed-backhand-shadow.md",
+        "src/content/guides/tennis.md"
+      ]
+    },
+    {
+      "slug": "tennis-shoes-court-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-tennis-shoes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/tennis.md"
+      ]
+    },
+    {
+      "slug": "theater-monologue-book",
+      "retailer": "Amazon",
+      "campaign": "gear-theater-monologue-book",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/theater.md"
+      ]
+    },
+    {
+      "slug": "theraband-flat-band-light-medium",
+      "retailer": "Amazon",
+      "campaign": "gear-theraband-flat",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md",
+        "src/content/pillar/ultimate-parent-guide-ballet.md"
+      ]
+    },
+    {
+      "slug": "theragun-relief",
+      "retailer": "Amazon",
+      "campaign": "gear-theragun-relief",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "travel-power-strip",
+      "retailer": "Amazon",
+      "campaign": "gear-travel-power-strip",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "travel-sport-wash",
+      "retailer": "Amazon",
+      "campaign": "gear-travel-sport-wash",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "tweezers-small",
+      "retailer": "Amazon",
+      "campaign": "gear-tweezers-small",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/first-aid-kit.md"
+      ]
+    },
+    {
+      "slug": "volleyball-ankle-brace",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-ankle-brace",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-volleyball-equipment-guide.md",
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-backpack",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-backpack",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-ball-youth-light",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-ball-youth-light",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-flistatec",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-flistatec",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-knee-pads-lr6",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-knee-pads-lr6",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-volleyball-equipment-guide.md",
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-knee-pads-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-knee-pads",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/volleyball-emergency-dive-intro.md",
+        "src/content/guides/volleyball.md",
+        "src/content/pillar/ultimate-parent-guide-volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-net",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-net",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/coachingTips/volleyball-3-step-approach-no-ball.md",
+        "src/content/coachingTips/volleyball-6v6-controlled-scrimmage-ages-13-14.md",
+        "src/content/coachingTips/volleyball-approach-and-spike-off-set.md",
+        "src/content/coachingTips/volleyball-approach-and-tip.md",
+        "src/content/coachingTips/volleyball-approach-footwork-ages-11-12.md",
+        "src/content/coachingTips/volleyball-back-set-progression.md",
+        "src/content/coachingTips/volleyball-block-and-cover-ages-13-14.md",
+        "src/content/coachingTips/volleyball-block-and-cover-game.md",
+        "src/content/coachingTips/volleyball-block-jump-vs-net.md",
+        "src/content/coachingTips/volleyball-dig-from-coach-toss.md",
+        "src/content/coachingTips/volleyball-double-block-with-partner.md",
+        "src/content/coachingTips/volleyball-forearm-pass-to-target-ages-8-10.md",
+        "src/content/coachingTips/volleyball-jump-serve-intro.md",
+        "src/content/coachingTips/volleyball-overhand-serve-stationary.md",
+        "src/content/coachingTips/volleyball-pass-from-server-toss.md",
+        "src/content/coachingTips/volleyball-peppering-with-partner-ages-8-10.md",
+        "src/content/coachingTips/volleyball-serve-receive-triangle-ages-11-12.md",
+        "src/content/coachingTips/volleyball-serve-target-zone.md",
+        "src/content/coachingTips/volleyball-set-from-bump.md",
+        "src/content/coachingTips/volleyball-spike-on-line.md"
+      ]
+    },
+    {
+      "slug": "volleyball-shoes-gel-rocket",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-shoes-gel-rocket",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-shoes-upcourt",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-shoes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-volleyball-equipment-guide.md",
+        "src/content/coachingTips/volleyball-set-against-wall.md",
+        "src/content/guides/volleyball.md",
+        "src/content/pillar/ultimate-parent-guide-volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-spandex-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-spandex",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/youth-volleyball-equipment-guide.md",
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "volleyball-volley-lite",
+      "retailer": "Amazon",
+      "campaign": "gear-volleyball-volley-lite",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/first-season-of-youth-volleyball.md",
+        "src/content/articles/the-varsity-volleyball-bench-year.md",
+        "src/content/articles/youth-volleyball-equipment-guide.md",
+        "src/content/coachingTips/volleyball-3-step-approach-no-ball.md",
+        "src/content/coachingTips/volleyball-approach-and-spike-off-set.md",
+        "src/content/coachingTips/volleyball-approach-and-tip.md",
+        "src/content/coachingTips/volleyball-back-set-progression.md",
+        "src/content/coachingTips/volleyball-block-and-cover-game.md",
+        "src/content/coachingTips/volleyball-block-jump-vs-net.md",
+        "src/content/coachingTips/volleyball-bump-against-wall.md",
+        "src/content/coachingTips/volleyball-bump-on-the-move.md",
+        "src/content/coachingTips/volleyball-defensive-stance.md",
+        "src/content/coachingTips/volleyball-dig-from-coach-toss.md",
+        "src/content/coachingTips/volleyball-double-block-with-partner.md",
+        "src/content/coachingTips/volleyball-emergency-dive-intro.md",
+        "src/content/coachingTips/volleyball-forearm-pass-to-target-ages-8-10.md",
+        "src/content/coachingTips/volleyball-jump-serve-intro.md",
+        "src/content/coachingTips/volleyball-overhand-serve-stationary.md",
+        "src/content/coachingTips/volleyball-pass-from-server-toss.md",
+        "src/content/coachingTips/volleyball-peppering-with-partner-ages-8-10.md",
+        "src/content/coachingTips/volleyball-platform-shape-no-ball.md",
+        "src/content/coachingTips/volleyball-self-toss-and-set.md",
+        "src/content/coachingTips/volleyball-serve-receive-triangle-ages-11-12.md",
+        "src/content/coachingTips/volleyball-serve-target-zone.md",
+        "src/content/coachingTips/volleyball-set-against-wall.md",
+        "src/content/coachingTips/volleyball-set-from-bump.md",
+        "src/content/coachingTips/volleyball-shuffle-and-pass.md",
+        "src/content/coachingTips/volleyball-spike-on-line.md",
+        "src/content/coachingTips/volleyball-toss-and-bump-back.md",
+        "src/content/coachingTips/volleyball-underhand-serve.md",
+        "src/content/coachingTips/volleyball-window-shape-overhead.md",
+        "src/content/guides/volleyball.md"
+      ]
+    },
+    {
+      "slug": "water-bottle-32oz",
+      "retailer": "Amazon",
+      "campaign": "gear-water-bottle-32oz",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/season-essentials.md"
+      ]
+    },
+    {
+      "slug": "white-noise-lectrofan-classic",
+      "retailer": "Amazon",
+      "campaign": "gear-white-noise-lectrofan",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/recovery-gear.md"
+      ]
+    },
+    {
+      "slug": "wrestling-bag",
+      "retailer": "Amazon",
+      "campaign": "gear-wrestling-bag",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/wrestling.md"
+      ]
+    },
+    {
+      "slug": "wrestling-headgear",
+      "retailer": "Amazon",
+      "campaign": "gear-wrestling-headgear",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/wrestling.md",
+        "src/content/pillar/ultimate-parent-guide-wrestling.md"
+      ]
+    },
+    {
+      "slug": "wrestling-knee-pad",
+      "retailer": "Amazon",
+      "campaign": "gear-wrestling-knee-pad",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/wrestling.md",
+        "src/content/pillar/ultimate-parent-guide-wrestling.md"
+      ]
+    },
+    {
+      "slug": "wrestling-rashguard",
+      "retailer": "Amazon",
+      "campaign": "gear-wrestling-rashguard",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/wrestling.md"
+      ]
+    },
+    {
+      "slug": "wrestling-shoes-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-wrestling-shoes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/wrestling.md",
+        "src/content/pillar/ultimate-parent-guide-wrestling.md"
+      ]
+    },
+    {
+      "slug": "wrestling-singlet-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-wrestling-singlet",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/wrestling.md",
+        "src/content/pillar/ultimate-parent-guide-wrestling.md"
+      ]
+    },
+    {
+      "slug": "xc-base-layer-set-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-xc-base-layer",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/cross-country.md"
+      ]
+    },
+    {
+      "slug": "xc-running-gloves",
+      "retailer": "Amazon",
+      "campaign": "gear-xc-gloves",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/cross-country.md"
+      ]
+    },
+    {
+      "slug": "xc-spikes-kilkenny",
+      "retailer": "Amazon",
+      "campaign": "gear-xc-spikes",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/guides/cross-country.md",
+        "src/content/guides/track-field.md"
+      ]
+    },
+    {
+      "slug": "xc-trainers-youth",
+      "retailer": "Amazon",
+      "campaign": "gear-xc-trainers",
+      "destinationHost": "www.amazon.com",
+      "sources": [
+        "src/content/articles/first-season-of-cross-country.md",
+        "src/content/articles/varsity-track-the-stopwatch-doesnt-politick.md",
+        "src/content/coachingTips/cross-country-hill-repeats-ages-11-12.md",
+        "src/content/coachingTips/cross-country-interval-work-ages-13-14.md",
+        "src/content/coachingTips/cross-country-race-pace-tempo-ages-13-14.md",
+        "src/content/coachingTips/track-1-minute-on-1-minute-off.md",
+        "src/content/coachingTips/track-200m-repeats.md",
+        "src/content/coachingTips/track-arm-swing-form.md",
+        "src/content/coachingTips/track-block-start-ages-13-14.md",
+        "src/content/coachingTips/track-block-start-progression.md",
+        "src/content/coachingTips/track-even-pace-200m.md",
+        "src/content/coachingTips/track-interval-ladder-ages-11-12.md",
+        "src/content/coachingTips/track-knee-drive-form.md",
+        "src/content/coachingTips/track-long-jump-approach-ages-13-14.md",
+        "src/content/coachingTips/track-long-jump-approach-progression.md",
+        "src/content/coachingTips/track-negative-split-run.md",
+        "src/content/coachingTips/track-shot-put-glide-intro-ages-13-14.md",
+        "src/content/coachingTips/track-three-point-start.md",
+        "src/content/coachingTips/xc-form-on-trail.md",
+        "src/content/guides/cross-country.md",
+        "src/content/guides/track-field.md"
+      ]
+    }
+  ]
+}

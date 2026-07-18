@@ -40,7 +40,7 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: guide.data.activity, item: pageUrl },
   ],
 };
-// Each gear-pick card renders <h3 ...>Product name</h3> ... href="/go/slug/".
+// Each gear-pick card renders a product heading followed by its affiliate redirect.
 const cardBlocks = (guide.body ?? '').match(/<h3[^>]*>[^<]+<\/h3>[\s\S]*?href="\/go\/[a-z0-9-]+\/"/g) ?? [];
 const gearItems = cardBlocks.map((block) => {
   const name = block.match(/<h3[^>]*>([^<]+)<\/h3>/)?.[1]?.trim();
