@@ -25,7 +25,9 @@ production data mutation.
   emitted public-link contract that repaired retired phase paths and missing
   Wrestling/Lacrosse hub targets (`2f85417`, `5255939`, `d2b914b`, `cec8d0c`).
 - Camps provenance: evidence-grade source requirements and governed review
-  state before a listing can be represented as verified (`ddcc887`).
+  state before a listing can be represented as verified (`ddcc887`), plus a
+  public 90-day current/due/unavailable freshness label that preserves the
+  distinction between historical verification and current facts.
 - Demand intelligence: privacy-minimized reporting, retention boundaries, and
   content-coverage opportunity scoring (`a6fe763`, `e7685b5`), plus default-off
   camp-directory search/filter events that discard precise location before the
@@ -45,7 +47,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 152 test files / 782 tests passed.
+Latest clean validation before this handoff: 153 test files / 785 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.

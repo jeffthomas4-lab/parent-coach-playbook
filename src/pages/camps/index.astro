@@ -5,6 +5,7 @@ import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps
 import { CAMP_SPORTS } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../lib/jsonld';
+import { campFreshnessLabel, campVerificationFreshness } from '../../lib/camp-freshness';
 
 const sportLabel = (slug: string): string => {
   const match = CAMP_SPORTS.find((s) => s.slug === slug);
@@ -70,13 +71,14 @@ const escHtml = (s: unknown) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const ageLabel = (c: Camp) => c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided';
+const verificationLabel = (c: Camp) => campFreshnessLabel(campVerificationFreshness(c.verified, c.last_verified_at));
 
 const renderCardHtml = (c: Camp): string => {
   const photo = c.hero_photo_key
     ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
-    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing; read the verification methodology">Verified ✓</a>`
+    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing, ${escHtml(verificationLabel(c))}; read the verification methodology">Verified ✓ · ${escHtml(verificationLabel(c))}</a>`
     : '';
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
@@ -93,7 +95,7 @@ const renderFeaturedCardHtml = (c: Camp): string => {
     ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
-    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing; read the verification methodology">Verified ✓</a>`
+    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing, ${escHtml(verificationLabel(c))}; read the verification methodology">Verified ✓ · ${escHtml(verificationLabel(c))}</a>`
     : '';
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';

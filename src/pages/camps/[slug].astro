@@ -4,6 +4,7 @@ import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherC
 import { SPORTS, BUYING_GUIDES, CAMP_SPORTS, SITE } from '../../data/site';
 import { featureEnabled } from '../../lib/feature-flags';
 import { serializeJsonLd } from '../../lib/jsonld';
+import { CAMP_VERIFICATION_REVIEW_DAYS, campFreshnessLabel, campVerificationFreshness } from '../../lib/camp-freshness';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
@@ -183,6 +184,8 @@ const formatReviewedAt = (value: string | null | undefined): string | null => {
 };
 const reviewedLabel = formatReviewedAt(camp?.reviewed_at);
 const verifiedLabel = formatReviewedAt(camp?.last_verified_at);
+const verificationFreshness = camp ? campVerificationFreshness(camp.verified, camp.last_verified_at) : 'missing';
+const verificationFreshnessLabel = campFreshnessLabel(verificationFreshness);
 
 // Sport label: prefer the SPORTS array's title-cased label; fall back to capitalizing.
 const sportLabel = (slug: string): string => {
@@ -417,7 +420,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
       </p>
       {camp.verified === 1 && (
         <p class="font-body text-ink-soft text-sm mt-3 max-w-2xl leading-relaxed">
-          Verified{verifiedLabel ? ` on ${verifiedLabel}` : ''} means PCD compared the listed details with the cited source. It is not an inspection or endorsement of safety, quality, staff, insurance, or suitability. <a href="/camps/verification/" class="text-rust hover:underline">Read the methodology</a>.
+          Verified{verifiedLabel ? ` on ${verifiedLabel}` : ''}. <strong>{verificationFreshnessLabel}</strong>{verificationFreshness === 'review_due' ? ` under the ${CAMP_VERIFICATION_REVIEW_DAYS}-day review policy` : ''}. PCD compared the listed details with the cited source; this is not an inspection or endorsement of safety, quality, staff, insurance, or suitability. <a href="/camps/verification/" class="text-rust hover:underline">Read the methodology</a>.
         </p>
       )}
 
