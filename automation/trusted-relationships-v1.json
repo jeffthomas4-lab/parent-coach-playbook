@@ -30,6 +30,76 @@
       "outreach_approved": false,
       "contact_attempted": false,
       "notes": "Research candidate only. No outreach draft or contact authority."
+    },
+    {
+      "id": "usa-football",
+      "organization_name": "USA Football",
+      "relationship_type": "governing_body",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://www.usafootball.com",
+      "source_basis": "Listed on the Parent Coach Desk national-organizations resource page (src/pages/resources/national-organizations.astro).",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
+    },
+    {
+      "id": "us-youth-soccer",
+      "organization_name": "US Youth Soccer",
+      "relationship_type": "governing_body",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://www.usyouthsoccer.org",
+      "source_basis": "Listed on the Parent Coach Desk national-organizations resource page (src/pages/resources/national-organizations.astro).",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
+    },
+    {
+      "id": "usa-baseball",
+      "organization_name": "USA Baseball",
+      "relationship_type": "governing_body",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://www.usabaseball.com",
+      "source_basis": "Listed on the Parent Coach Desk national-organizations resource page (src/pages/resources/national-organizations.astro).",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
+    },
+    {
+      "id": "usa-hockey",
+      "organization_name": "USA Hockey",
+      "relationship_type": "governing_body",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://www.usahockey.com",
+      "source_basis": "Listed on the Parent Coach Desk national-organizations resource page (src/pages/resources/national-organizations.astro).",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
+    },
+    {
+      "id": "positive-coaching-alliance",
+      "organization_name": "Positive Coaching Alliance",
+      "relationship_type": "community",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://positivecoach.org",
+      "source_basis": "Listed on the Parent Coach Desk national-organizations resource page (src/pages/resources/national-organizations.astro).",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
     }
   ]
 }
