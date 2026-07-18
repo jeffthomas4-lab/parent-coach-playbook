@@ -22,7 +22,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { deleteExpiredIdempotencyRecords } from '../../../lib/public-idempotency';
 import { featureEnabled } from '../../../lib/feature-flags';
 import { secretsMatch } from '../../../lib/secrets';
-import { pcdMaintenanceModeActive } from '../../../lib/maintenance-mode';
+import { writeHeldDuringMaintenance } from '../../../lib/maintenance-mode';
 
 export const prerender = false;
 
@@ -52,7 +52,9 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ ok: false, error: 'forbidden' }, 403);
   }
 
-  if (pcdMaintenanceModeActive(env.PCD_MAINTENANCE_MODE)) {
+  // Ranger's S7 autonomous camp writes are an ordinary (non-exempt) write class,
+  // so they are held whenever maintenance mode is active.
+  if (writeHeldDuringMaintenance('camps_sweep', env.PCD_MAINTENANCE_MODE)) {
     return json({ ok: true, held: true, code: 'maintenance_mode', writes: 0 });
   }
 

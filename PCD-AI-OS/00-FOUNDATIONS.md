@@ -42,6 +42,12 @@ These come from the Forge Command constitution and the v1.x manual. They bind ev
 9. **RETIREMENT RULE.** Every agent and SOP has a defined end state. No zombie tasks survive a quarterly close.
 10. **Maintenance mode.** A global PCD_MAINTENANCE_MODE toggle degrades every agent to report-only August through November, with a named bypass list (S4 deletion watch, security incidents, domain/payment failures).
 
+    *Enforcement status (Q3 audit, 2026-07-18).* The bypass list is now code-enforced for the `deletion_opt_out_proposal` write class in `src/lib/maintenance-mode.ts` (`writeHeldDuringMaintenance` and `MAINTENANCE_EXEMPT_WRITE_CLASSES`). The S4 path is never held inside the August through November window and the operator override cannot suppress it, proven in `tests/maintenance-mode.test.ts`.
+
+    The freeze itself is code-enforced only where a write flows through a code path: Ranger's S7 autonomous camp writes, held by the `camps-sweep` cron guard. The other eight tasks' report-only posture during the freeze is prompt-only. Each agent SKILL self-checks the calendar and there is no runtime guard behind them, so their report-only behavior is honor-system, not enforced.
+
+    Vera's S4 deletion opt-out path does not route through the protected site mutation endpoints. Those admin routes gate on admin auth plus same-origin and never call the maintenance guard, and Vera only stages a markdown proposal, posts a link-only Slack message, and logs an agent run. There is no shared mutation endpoint to exempt, so the exemption lives at the write-class primitive above.
+
 ## 4. Stack primitives
 
 Design against these and nothing else unless a department makes the case for an addition:
