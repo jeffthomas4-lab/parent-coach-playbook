@@ -51,7 +51,7 @@ Install dependencies and verify the build runs cleanly:
 
 ```bash
 npm install
-npm run build
+npm run build:production
 ```
 
 If the build succeeds, you'll see `dist/` appear. Open `dist/index.html` in a browser to confirm the homepage renders.
@@ -106,7 +106,7 @@ You should now see your code at https://github.com/jeffthomas4-lab/parent-coach-
    - Project name: `parent-coach-playbook`
    - Production branch: `main`
    - Framework preset: **Astro**
-   - Build command: `npm run build`
+   - Build command: `npm run build:production` (production config; plain `npm run build` bakes the staging `wrangler.jsonc` and ships without `FORGE_DB`)
    - Build output directory: `dist`
    - Root directory: leave blank
 5. **Environment variables** (click to expand). Add:
