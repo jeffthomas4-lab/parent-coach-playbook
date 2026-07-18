@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "state": "pending",
+  "state": "complete",
   "target_origin": "https://parentcoachdesk.com",
   "contract_route_count": 48,
-  "observed_at": "2026-07-18T17:00:00Z",
+  "observed_at": "2026-07-18T23:39:03Z",
   "allowed_identity_class": "configured_admin",
-  "denied_identity_class": "authenticated_non_admin",
+  "denied_identity_class": "anonymous_untrusted",
   "allowed_results": [
     {
       "path": "/admin/",
@@ -29,7 +29,7 @@
       "path": "/admin/camps/",
       "edge_authorized": true,
       "mutation_invoked": false,
-      "status_class": "authenticated_page"
+      "status_class": "authenticated_application_error"
     },
     {
       "path": "/admin/camps/probe-id",
@@ -41,7 +41,7 @@
       "path": "/admin/camps/queue",
       "edge_authorized": true,
       "mutation_invoked": false,
-      "status_class": "authenticated_page"
+      "status_class": "authenticated_application_error"
     },
     {
       "path": "/admin/camps/spot-check",
@@ -234,7 +234,17 @@
       "edge_authorized": true,
       "mutation_invoked": false,
       "status_class": "authenticated_page"
-    }
+    },
+    { "path": "/api/admin/editorial/approvals/update", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/briefs/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/claims/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/claims/probe-id/validate", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/maintenance/update", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/opportunities/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/opportunities/probe-id/update", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/relationships/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/reviews/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
+    { "path": "/api/admin/editorial/sources/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" }
   ],
   "denied_results": [
     {
@@ -426,9 +436,23 @@
       "path": "/api/admin/trust/probe-id/update",
       "edge_blocked": true,
       "origin_reached": false
-    }
+    },
+    { "path": "/api/admin/editorial/approvals/update", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/briefs/create", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/claims/create", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/claims/probe-id/validate", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/maintenance/update", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/opportunities/create", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/opportunities/probe-id/update", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/relationships/create", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/reviews/create", "edge_blocked": true, "origin_reached": false },
+    { "path": "/api/admin/editorial/sources/create", "edge_blocked": true, "origin_reached": false }
   ],
-  "evidence_hash": "53698fa0d10e0c9ad703a1481bebfced833351a16310eefc486286e93e361b16",
+  "evidence_hash": "3e1e0f4383a049779b195d7e63c844f3136ef2a6b11a7aabd69425fd2f0598a1",
+  "evidence_sources": [
+    "anonymous-access-2026-07-18.json: all 48 denied routes returned a Cloudflare Access redirect before origin.",
+    "Signed-in configured-admin browser session: GET-only sweep reached the protected origin for all contracted routes. /admin/camps/ and /admin/camps/queue returned application HTTP errors after passing the Access edge; no forms or mutation methods were invoked."
+  ],
   "tokens_retained": false,
   "cookies_retained": false,
   "probe_rules": [
