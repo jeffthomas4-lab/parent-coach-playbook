@@ -23,6 +23,12 @@ describe('deployment authority', () => {
     expect(workflow).toContain('deploy --config dist/server/wrangler.json --keep-vars --dry-run');
     expect(workflow).toContain('build-static-asset-proof.mjs --sha "$DEPLOY_SHA" --output production-static-asset.json');
     expect(workflow).toContain('--target production --asset-proof production-static-asset.json --report production-smoke.json');
+    expect(workflow).toContain('sha256sum production-smoke.json > production-smoke.json.sha256');
+    expect(workflow).toContain('sha256sum -c production-smoke.json.sha256');
+    expect(workflow).toContain('sha256sum staging-smoke.json > staging-smoke.json.sha256');
+    expect(workflow).toContain('sha256sum -c staging-smoke.json.sha256');
+    expect(workflow).toContain('production-smoke.json.sha256');
+    expect(workflow).toContain('staging-smoke.json.sha256');
     expect(workflow).toContain('pcd-production-smoke-${{ env.DEPLOY_SHA }}');
     expect(workflow).not.toMatch(/wrangler\s+pages|git\s+add\s+-A|checkout[^\n]*refs\/heads\/main/i);
   });

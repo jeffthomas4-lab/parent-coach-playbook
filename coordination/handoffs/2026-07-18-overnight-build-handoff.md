@@ -55,7 +55,8 @@ production data mutation.
   secret-name preservation, durable smoke receipts,
   three-day local backup proof validation, and exact deployed static-asset byte
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
-  `08e6647`).
+  `08e6647`). Staging and production smoke receipts are now retained with
+  detached SHA-256 sidecars verified before upload.
 
 Latest clean validation before this handoff: 157 test files / 797 tests passed.
 Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints. The
