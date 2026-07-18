@@ -48,7 +48,13 @@ function isSafeSourceUrl(value: string): boolean {
     const url = new URL(value);
     if (url.protocol !== 'https:' && url.protocol !== 'http:') return false;
     const host = url.hostname.toLowerCase();
-    return host !== 'localhost' && host !== '::1' && host !== '127.0.0.1' && !host.startsWith('127.') && !host.startsWith('10.') && !host.startsWith('192.168.') && !host.endsWith('.local');
+    if (host === 'localhost' || host.endsWith('.local') || host === '::1' || host === '::' || host.startsWith('fc') || host.startsWith('fd') || host.startsWith('fe80:')) return false;
+    const ipv4 = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+    if (!ipv4) return true;
+    const octets = ipv4.slice(1).map(Number);
+    if (octets.some((octet) => octet > 255)) return false;
+    const [a, b] = octets;
+    return !(a === 0 || a === 10 || a === 127 || (a === 100 && b >= 64 && b <= 127) || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || (a === 198 && (b === 18 || b === 19)) || a >= 224);
   } catch { return false; }
 }
 
