@@ -10,8 +10,18 @@ main = "enrichment-worker.ts"
 compatibility_date = "2026-04-30"
 compatibility_flags = ["nodejs_compat"]
 
+[observability]
+enabled = true
+head_sampling_rate = 1
+
 [triggers]
 crons = ["0 * * * *"]
+
+[vars]
+# Default-off until an approved deployment explicitly enables the reviewed
+# enrichment path. Maintenance mode is an independent emergency hold.
+CAMP_ENRICHMENT_ENABLED = "false"
+PCD_MAINTENANCE_MODE = "false"
 
 [[d1_databases]]
 binding = "DB"

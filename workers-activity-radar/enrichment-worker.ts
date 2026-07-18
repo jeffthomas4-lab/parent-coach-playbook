@@ -17,9 +17,11 @@
 
 export interface Env {
   DB: D1Database;
-  // Optional shared secret for the manual /?key=... trigger. Set with:
+  // Optional shared secret for the manual bearer-authenticated trigger. Set with:
   //   npx wrangler secret put RUN_KEY --config wrangler.toml
   RUN_KEY?: string;
+  CAMP_ENRICHMENT_ENABLED?: string;
+  PCD_MAINTENANCE_MODE?: string;
 }
 
 interface CampQueueRow {
@@ -33,14 +35,49 @@ interface CampQueueRow {
 // Fetch (direct, no API)
 // ---------------------------------------------------------------------------
 
+const FETCH_TIMEOUT_MS = 15_000;
+const MAX_SOURCE_BYTES = 2 * 1024 * 1024;
+const encoder = new TextEncoder();
+
+function enabled(value: string | undefined): boolean {
+  return value?.trim().toLowerCase() === 'true';
+}
+
+function isSafeSourceUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' && url.protocol !== 'http:') return false;
+    const host = url.hostname.toLowerCase();
+    return host !== 'localhost' && host !== '::1' && host !== '127.0.0.1' && !host.startsWith('127.') && !host.startsWith('10.') && !host.startsWith('192.168.') && !host.endsWith('.local');
+  } catch { return false; }
+}
+
+function bearerCredential(request: Request): string {
+  const header = request.headers.get('authorization') ?? '';
+  return header.toLowerCase().startsWith('bearer ') ? header.slice(7).trim() : '';
+}
+
+async function secretsMatch(presented: string, expected: string): Promise<boolean> {
+  const [a, b] = await Promise.all([crypto.subtle.digest('SHA-256', encoder.encode(presented)), crypto.subtle.digest('SHA-256', encoder.encode(expected))]);
+  const left = new Uint8Array(a); const right = new Uint8Array(b); let difference = 0;
+  for (let i = 0; i < left.length; i += 1) difference |= left[i] ^ right[i];
+  return difference === 0;
+}
+
 async function fetchText(url: string): Promise<string | null> {
+  if (!isSafeSourceUrl(url)) return null;
   try {
     const res = await fetch(url, {
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ActivityRadar/1.0; +https://activityradar.com)' },
       redirect: 'follow',
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
-    if (!res.ok) return null;
-    return await res.text();
+    if (!res.ok || !res.body || !isSafeSourceUrl(res.url)) return null;
+    const reader = res.body.getReader(); const chunks: Uint8Array[] = []; let total = 0;
+    while (true) { const { done, value } = await reader.read(); if (done) break; total += value.byteLength; if (total > MAX_SOURCE_BYTES) { await reader.cancel(); return null; } chunks.push(value); }
+    const joined = new Uint8Array(total); let offset = 0;
+    for (const chunk of chunks) { joined.set(chunk, offset); offset += chunk.byteLength; }
+    return new TextDecoder().decode(joined);
   } catch {
     return null;
   }
@@ -420,29 +457,15 @@ function findCampLink(html: string, baseUrl: string): string | null {
 // DB writes
 // ---------------------------------------------------------------------------
 
-// Low-threshold auto-approval for scraped camps. Mirrors CAMPS_APPROVAL_THRESHOLD.md.
-// Default is to go live: a scraped camp is approved when it has a real name, a
-// location on its org, and at least one thing a parent can act on or read. Only
-// empty or placeless records are held pending for a human. Reruns never override a
-// human decision, because the INSERT's ON CONFLICT clause leaves pcd_status untouched.
+// Scraped material is evidence, not publication authority. New records remain
+// pending until a governed review approves them; reruns never override a human
+// decision because the conflict update leaves pcd_status untouched.
 function campApproval(
   org: { city: string | null; state: string | null },
   c: CampData,
 ): { status: 'approved' | 'pending'; confidence: 'low' | 'medium' | 'high' } {
-  const hasLocation = !!(org.city && org.state);
-  const hasName = !!c.name && c.name.trim().toLowerCase() !== 'camp';
-  const hasDate = !!(c.sessionStart || c.sessionEnd);
-  const hasReg = !!c.registrationUrl;
-  const hasPrice = c.price != null || !!c.priceText;
-  const hasDescription = !!c.description && c.description.trim().length >= 120;
-  const actionable = hasDate || hasReg || hasPrice;
-  if (!hasLocation || !hasName || !(actionable || hasDescription)) {
-    return { status: 'pending', confidence: 'low' };
-  }
-  const isFuture = !!c.sessionEnd && c.sessionEnd >= new Date().toISOString().slice(0, 10);
-  if (isFuture && (hasReg || hasPrice)) return { status: 'approved', confidence: 'high' };
-  if (actionable) return { status: 'approved', confidence: 'medium' };
-  return { status: 'approved', confidence: 'low' };
+  void org; void c;
+  return { status: 'pending', confidence: 'low' };
 }
 
 async function writeCamp(db: D1Database, org: { id: string; name: string; slug: string; categories: string | null; city: string | null; state: string | null }, c: CampData, sourceDomain: string, now: string): Promise<void> {
@@ -571,6 +594,10 @@ async function processCampRow(db: D1Database, row: CampQueueRow): Promise<'done'
 // ---------------------------------------------------------------------------
 
 async function runCampScan(env: Env): Promise<number> {
+  if (!enabled(env.CAMP_ENRICHMENT_ENABLED) || enabled(env.PCD_MAINTENANCE_MODE)) {
+    console.log(JSON.stringify({ event: 'camp_enrichment_held', enabled: enabled(env.CAMP_ENRICHMENT_ENABLED), maintenance_mode: enabled(env.PCD_MAINTENANCE_MODE) }));
+    return 0;
+  }
   const { results: campRows } = await env.DB
     .prepare(`SELECT id, org_id, website_url, attempts FROM camp_scan_queue WHERE status = 'pending' LIMIT 20`)
     .all<CampQueueRow>();
@@ -598,13 +625,13 @@ export default {
     await runCampScan(env);
   },
 
-  // Manual trigger for the deployed worker. Hit:
-  //   https://<worker-url>/?key=YOUR_RUN_KEY
+  // Manual trigger for the deployed worker. Use POST with:
+  //   Authorization: Bearer <RUN_KEY>
   // Runs one scan batch (up to 20 sites) and returns a JSON summary so you can
   // watch data come in without waiting for the cron. Repeat to drain the queue.
   async fetch(req: Request, env: Env): Promise<Response> {
-    const url = new URL(req.url);
-    if (!env.RUN_KEY || url.searchParams.get('key') !== env.RUN_KEY) {
+    if (req.method !== 'POST') return new Response('method not allowed', { status: 405, headers: { Allow: 'POST' } });
+    if (!env.RUN_KEY || !(await secretsMatch(bearerCredential(req), env.RUN_KEY))) {
       return new Response('forbidden', { status: 403 });
     }
     const scanned = await runCampScan(env);
