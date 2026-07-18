@@ -74,6 +74,7 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
     <script>
       import { onCLS, onINP, onLCP, onFCP, onTTFB } from 'web-vitals/attribution';
       import { affiliateClickEvent, affiliateSlugFromHref } from '../lib/affiliate-analytics';
+      import { newsletterCtaFromHref, newsletterSignupIntentEvent } from '../lib/newsletter-analytics';
 
       const GA_ID = 'G-1BSML6KEJK';
       const EU = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR',
@@ -155,8 +156,8 @@ const ogImageUrl = new URL(ogImage, SITE.url).toString();
         const target = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href]') : null;
         if (!target) return;
         const slug = affiliateSlugFromHref(target.href, location.origin);
-        if (!slug) return;
-        const measured = affiliateClickEvent(slug);
+        const newsletterCta = newsletterCtaFromHref(target.href, target.dataset.newsletterCta);
+        const measured = slug ? affiliateClickEvent(slug) : newsletterCta ? newsletterSignupIntentEvent(newsletterCta) : null;
         if (measured) (window as any).gtag('event', measured.name, measured.parameters);
       });
     </script>

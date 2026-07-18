@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 158 files / 800 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS — 159 files / 803 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -36,7 +36,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Verification freshness operations | Implemented and verified locally | The protected aggregate dashboard counts current/due reviews and fails directory quality on missing, invalid, or future-dated verification evidence without exposing contact data. |
 | Continuous duplicate visibility | Implemented and verified locally | The protected quality aggregate flags conservative exact approved-record duplicate candidates for human review without automatically merging or deleting records. |
 | Camp verification governance | Implemented and verified locally | `ddcc887` requires approved status and evidence-grade HTTPS organizational/registration provenance before verification. No record was changed. |
-| Newsletter lifecycle proof | Implemented as a fail-closed release gate | `4f5acbd` requires controlled evidence for consent, confirmation, welcome, redirect, unsubscribe, suppression, failure handling, receipt, and Jeff approval. Provider journey remains pending. |
+| Newsletter lifecycle and intent measurement | Implemented locally; provider proof pending | `4f5acbd` requires controlled evidence for consent, confirmation, welcome, redirect, unsubscribe, suppression, failure handling, receipt, and Jeff approval. Direct hosted-form links now emit only a consented allowlisted CTA placement—not email, URL, identity, or subscription outcome. Provider journey remains pending. |
 | Seasonal maintenance | Implemented and verified locally | `c47cdcb` prevents the site and cron sweep paths from reaching D1 or outbound writes during August–November or an explicit maintenance switch. Deployment remains gated. |
 | Agent-run secret distribution | Implemented as a secure caller and evidence contract | `4cd322d` adds allowlisted HEAD preflight and runtime-only token handling; `aa3ace7` wires all tracked skills to the client. A versioned redacted packet now derives all ten callers from the reconciliation inventory and fails closed unless the canary, exact caller coverage, revocation ordering, and rollback state are coherent. Live delivery remains owner-controlled and pending. |
 | Distribution foundation | Implemented and verified locally | `99a6c91` enforces draft-only Pinterest staging, first-party measured links, credential exclusion, and a human publication gate. No account or post was created. |

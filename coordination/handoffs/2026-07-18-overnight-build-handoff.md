@@ -43,7 +43,8 @@ production data mutation.
   on the existing read-only admin desk (`371cce5`, `b2461d7`).
 - Newsletter and social: fail-closed provider journey proof plus draft-only,
   measured Pinterest and Facebook group-help staging with a human publication
-  gate (`4f5acbd`, `99a6c91`).
+  gate (`4f5acbd`, `99a6c91`). Hosted newsletter links now measure only
+  consented allowlisted CTA placement and never claim a subscription outcome.
 - Operations: seasonal zero-write behavior, secure agent-run caller contracts,
   all roster skills wired to the source contract, and the ten-task
   reconciliation inventory (`c47cdcb`, `4cd322d`, `aa3ace7`). A redacted,
@@ -63,7 +64,7 @@ production data mutation.
   `08e6647`). Staging and production smoke receipts are now retained with
   detached SHA-256 sidecars verified before upload.
 
-Latest clean validation before this handoff: 158 test files / 800 tests passed.
+Latest clean validation before this handoff: 159 test files / 803 tests passed.
 Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints. The
 agent-token rollout contract passes its focused 3 files / 8 tests and the
 committed pending packet passes its standalone release check.
