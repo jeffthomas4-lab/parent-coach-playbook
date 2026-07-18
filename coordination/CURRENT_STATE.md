@@ -1,5 +1,22 @@
 # Current State
 
+## 2026-07-18 - evidence-backed camp discovery and verification
+
+- **Implemented locally:** the public directory can now combine verified-only and open-only filters with its existing age, date, state, ZIP, and radius controls. Verification status is included in the minimized client-side directory projection, and the detail page displays `last_verified_at` rather than conflating verification with editorial review.
+- **Trust control:** setting `verified = 1` now requires an approved record, a source domain, and an HTTPS registration or organization source. The verification flag and `last_verified_at` timestamp are written together. Missing records are rejected before mutation, and evidence-policy failures return a bounded conflict response from both protected verification endpoints.
+- **Verified locally:** focused camp discovery, API, and verification-governance tests pass (3 files / 9 tests); `astro check` completes with zero errors (existing repository hints remain). No directory record, migration, deployment, or external system was changed.
+
+## 2026-07-18 - governed affiliate inventory and release control
+
+- **Implemented locally:** a deterministic inventory control maps every referenced `/go/` slug to its content sources, requires HTTPS destinations plus retailer/campaign metadata, and enforces the associate tag on direct Amazon URLs. The report contains destination hosts and content paths, not reader or click identifiers.
+- **Current evidence:** 245 affiliate destinations validate; 236 are currently referenced; no content slug is missing from the inventory and no direct-Amazon tag-policy error remains. The control is part of `ci:release`.
+- **Boundary:** this is repository integrity and attribution metadata, not proof of live merchant availability, redirect expansion, conversion receipt, or revenue. Those remain provider/live-account gates.
+
+## 2026-07-18 - overnight implementation validation baseline
+
+- **Verified locally:** after the repository, SEO, sitemap, demand, and affiliate increments, the complete Vitest suite passed 132 files / 721 tests. Later camp-trust increments passed their focused suites and Astro diagnostics at zero errors.
+- **Worktree boundary:** unrelated hit-rate-test outputs and scratch files remain unmodified by this program. Focused commits stage only the files owned by each slice.
+
 ## 2026-07-18 — camp sitemap Worker-first routing repair
 
 - **Confirmed live/read-only:** production `activity-radar` contains 1,588 approved programs, including 507 with `session_end_date` on or after 2026-07-18; the sitemap query's referenced columns exist and the same query succeeds remotely with zero writes. The live empty sitemap is therefore inconsistent with authoritative D1 supply.
