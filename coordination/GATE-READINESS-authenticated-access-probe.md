@@ -9,8 +9,8 @@
 ## What already exists
 
 - **Policy side — done.** `coordination/release-evidence/access-policy-export-pending.json` is `state: "exported"` and passes `validateAccessPolicyEvidence`. It records the Cloudflare Access application (`Parent Coach Desk Production Admin`, domain `parentcoachdesk.com`, paths `/admin*` and `/api/admin*`) with one bounded allow policy covering exactly `jeffthomas4@gmail.com` and `eepskalla@gmail.com`. Nothing to do here.
-- **Route contract — done.** `automation/protected-route-contract.json` lists 37 routes under `/admin*` and `/api/admin*`, each classified `access-only`, `app-auth`, or `mutation`. `scripts/access-evidence.mjs` reads this file at import time and derives `PROTECTED_ROUTE_COUNT = 37` directly from it — this is a live count, not a hardcoded number, so the runbook and the code cannot drift out of sync.
-- **Anonymous baseline — done.** `scripts/probe-anonymous-admin.mjs` already ran against production and staging (`coordination/release-evidence/anonymous-access-2026-07-16.json`, `staging-anonymous-access-2026-07-17.json`): all 37 routes returned `protected: true` — every unauthenticated GET was redirected (301/302/303/307/308) to `fieldforge.cloudflareaccess.com` before reaching origin. This proves the *unauthenticated* case. It does **not** prove the *authenticated-but-not-allowlisted* (denied) case or the *authenticated-and-allowlisted* (allowed) case — those require a real Access session, which cannot be scripted here (no credentials, no live probing allowed in this environment).
+- **Route contract — done.** `automation/protected-route-contract.json` is the only route-count authority for `/admin*` and `/api/admin*`; every entry is classified `access-only`, `app-auth`, or `mutation`. `scripts/access-evidence.mjs` reads that file at import time and derives `PROTECTED_ROUTE_COUNT` from its current length. Never copy a remembered count into a probe packet.
+- **Anonymous baseline — done for the contract snapshot recorded in each receipt.** `scripts/probe-anonymous-admin.mjs` already ran against production and staging (`coordination/release-evidence/anonymous-access-2026-07-16.json`, `staging-anonymous-access-2026-07-17.json`). Every route in those dated receipts returned `protected: true` and redirected to `fieldforge.cloudflareaccess.com` before origin. If the current contract length differs from a receipt's `route_count`, the receipt is stale and must be refreshed before it supports the current gate. Anonymous evidence does **not** prove the authenticated-denied or authenticated-allowed cases.
 - **Probe evidence — pending.** `coordination/release-evidence/authenticated-access-probes-pending.json` is the template that the live results replace in place (same filename, same path — the file is overwritten with real data, `state` moves from `pending` to `complete`).
 
 ## What the gate still needs
@@ -20,24 +20,24 @@ Two live browser sessions against `https://parentcoachdesk.com`, one per identit
 ### Step 1 — Allowed identity pass
 
 1. Jeff signs into Cloudflare Access in the in-app browser using `eepskalla@gmail.com` or `jeffthomas4@gmail.com` (either allowlisted identity).
-2. For each of the 37 routes in `automation/protected-route-contract.json`, load the corresponding URL with a plain GET (page navigation). Use `scripts/probe-anonymous-admin.mjs`'s `routeSourceToPath()` logic as the source-to-path mapping (same function, same rules: strip `src/pages`, strip `.astro`/`.ts`/`.md`, `/index` → `/`, `[param]` → `probe-param`) so the authenticated path list matches the anonymous baseline exactly.
+2. For every current route in `automation/protected-route-contract.json`, load the corresponding URL with a plain GET. Use `scripts/probe-anonymous-admin.mjs`'s `routeSourceToPath()` logic so the authenticated path list matches the contract exactly.
 3. Record per route: `path`, `edge_authorized: true`, `mutation_invoked: false`, plus enough of the observed status/redirect chain to justify the classification (status class, whether the app-auth check inside the route itself also passed for `app-auth`/`mutation` routes, not just the edge).
-4. Confirm none of the 37 loads triggered a mutation — no button clicks, no `Idempotency-Key` requests, no POST/PUT/PATCH/DELETE.
+4. Confirm none of the loads triggered a mutation — no button clicks, no `Idempotency-Key` requests, no POST/PUT/PATCH/DELETE.
 
 ### Step 2 — Denied identity pass
 
 1. Sign in (or attempt to sign in) with an identity that is **not** on the Access allowlist — any Google/email identity other than the two allowed addresses. If Access itself blocks the sign-in attempt before a session exists, that is itself a valid "denied" observation for every route (the identity never reaches an authorized session, so it never reaches origin).
-2. For each of the same 37 routes, confirm the edge stops the request before origin — Access should either refuse the sign-in outright or, if a session exists, return the same class of redirect the anonymous probe already observed (redirect to `fieldforge.cloudflareaccess.com`), never a 200 from the app.
+2. For the same complete current route set, confirm the edge stops the request before origin — Access should either refuse the sign-in outright or, if a session exists, return the same class of redirect the anonymous probe observed, never a 200 from the app.
 3. Record per route: `path`, `edge_blocked: true`, `origin_reached: false`.
 
 ## What `scripts/access-evidence.mjs` consumes and produces
 
 `validateAuthenticatedAccessEvidence(value)` is the function that judges the probe file. It requires, when `state: "complete"`:
 
-- `contract_route_count` === 38 (read live from `automation/protected-route-contract.json`, so if the contract ever grows or shrinks this number moves with it — recount before filling the evidence file).
+- `contract_route_count` equals the current `automation/protected-route-contract.json` route-array length. Read it at execution time; do not copy a count from this document.
 - `observed_at`, `allowed_identity_class`, `denied_identity_class`, `evidence_hash` — non-empty strings. `allowed_identity_class` and `denied_identity_class` are class labels, not raw emails (e.g. `"configured_admin"` / `"authenticated_non_admin"`, matching the vocabulary already used in `tests/access-evidence.test.ts`) — do not put the actual email addresses in this file.
-- `allowed_results`: array of exactly 37 items, every item `edge_authorized: true` and `mutation_invoked: false`.
-- `denied_results`: array of exactly 37 items, every item `edge_blocked: true` and `origin_reached: false`.
+- `allowed_results`: exactly one item for every current contract route, each with `edge_authorized: true` and `mutation_invoked: false`.
+- `denied_results`: exactly one item for every current contract route, each with `edge_blocked: true` and `origin_reached: false`.
 - `tokens_retained: false`, `cookies_retained: false` at the top level — never record session cookies or Access JWTs in this file.
 
 `evidence_hash`: compute a SHA-256 over the redacted `allowed_results`/`denied_results` arrays (e.g. `sha256(JSON.stringify({allowed_results, denied_results}))`) so the evidence file is independently checkable without re-running the probe. No script currently computes this automatically — hash it by hand with `node -e "console.log(require('crypto').createHash('sha256').update(JSON.stringify(payload)).digest('hex'))"` once the two result arrays are final.
@@ -49,7 +49,7 @@ Overwrite `coordination/release-evidence/authenticated-access-probes-pending.jso
 - `state`: `"pending"` → `"complete"`
 - `observed_at`: ISO timestamp of the probe session
 - `allowed_identity_class` / `denied_identity_class`: filled in (see above, class labels not raw emails)
-- `allowed_results` / `denied_results`: the 37-item arrays from Steps 1–2
+- `allowed_results` / `denied_results`: the complete, one-per-current-route arrays from Steps 1–2
 - `evidence_hash`: the computed hash
 - Leave `tokens_retained: false`, `cookies_retained: false`, `probe_rules`, and `external_changes: []` as they are
 

@@ -48,12 +48,13 @@ production data mutation.
   invalid or future-dated verification evidence. Conservative exact duplicate
   candidates are counted for human review without automatic record mutation.
 - Release engineering: single Worker deployment authority, complete Access
-  evidence gate, required secret-name preservation, durable smoke receipts,
+  evidence gate with a drift-proof current-contract operator runbook, required
+  secret-name preservation, durable smoke receipts,
   three-day local backup proof validation, and exact deployed static-asset byte
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 155 test files / 792 tests passed.
+Latest clean validation before this handoff: 156 test files / 794 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.

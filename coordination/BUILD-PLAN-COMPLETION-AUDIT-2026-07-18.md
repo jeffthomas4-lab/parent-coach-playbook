@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 155 files / 792 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS — 156 files / 794 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -48,6 +48,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Trusted relationships | Implemented as an inert research workflow | `926da5b` distinguishes candidates from actual relationships, gates outreach, enforces do-not-contact, and exposes a protected read-only workspace. `c0f79fc` proves all 38 protected routes redirect anonymously through Access. |
 | Deployment authority | Implemented and verified locally | `b484da7` retires the dangerous legacy Pages guide and preserves one protected Worker release authority. |
 | Production Access gate | Implemented and verified locally | `a68765c` allows pending evidence in normal CI but blocks the production job until policy and full authenticated allow/deny evidence are complete. |
+| Access operator runbook | Corrected and verified locally | The runbook no longer hardcodes a stale route count; the current protected-route contract alone determines allowed/denied probe scope and dated receipt freshness. Live authenticated evidence remains pending. |
 | Runtime secret preservation | Implemented and verified locally | `682bd79` declares exactly four required production secret names and validates the generated manifest without storing values. |
 | Post-deploy health evidence | Implemented and verified locally | `f8e1bfb` covers public HTML, camps, health, readiness, static assets, non-mutating API, and Access redirect and retains sanitized SHA-addressed smoke receipts. |
 | Exact deployed asset/version-skew gate | Implemented and verified locally | Each build records one content-hashed Astro asset's path, byte length, SHA-256, and Git SHA; smoke fails unless the deployed bytes match. Gradual or mixed-version delivery remains prohibited pending a separate design and rehearsal. |
