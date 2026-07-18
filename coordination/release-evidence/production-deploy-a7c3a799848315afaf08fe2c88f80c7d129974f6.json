@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "worker_name": "parent-coach-desk",
+  "deployed_sha": "a7c3a799848315afaf08fe2c88f80c7d129974f6",
+  "version_id": "13c91a30-ac31-4824-ad36-ef77b980757a",
+  "bindings": {
+    "DB": "d1",
+    "FORGE_DB": "d1",
+    "PCD_OPS_DB": "d1",
+    "PHOTOS": "r2_bucket",
+    "SESSION": "kv_namespace",
+    "ASSETS": "assets"
+  },
+  "deployed_at": "2026-07-18T18:10:00-07:00",
+  "post_deploy_get_checks": [
+    { "path": "/", "status": 200 },
+    { "path": "/api/health", "status": 200 },
+    { "path": "/api/ready", "status": 200 },
+    { "path": "/disclosure/", "status": 200 },
+    { "path": "/terms/", "status": 200 },
+    { "path": "/what-to-buy/", "status": 200 }
+  ],
+  "trust_intake_enabled": false,
+  "migrations_applied": false
+}
