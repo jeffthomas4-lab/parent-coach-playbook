@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { probeAnonymousAdmin, routeSourceToPath } from '../scripts/probe-anonymous-admin.mjs';
-import evidence from '../coordination/release-evidence/anonymous-access-2026-07-16.json';
+import evidence from '../coordination/release-evidence/anonymous-access-2026-07-18.json';
 import protectedRoutes from '../automation/protected-route-contract.json';
 
 describe('anonymous administrative Access probe', () => {
