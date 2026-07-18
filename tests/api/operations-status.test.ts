@@ -45,7 +45,7 @@ describe('operations status', () => {
       DB: db([
         { n: 25 },
         { approved_records: 25, never_checked: 2, last_checked_at: '2026-07-14T00:00:00.000Z' },
-        { approved: 25, age_missing: 2, age_impossible: 0, dates_missing: 0, dates_reversed: 0, negative_price: 0, registration_url_missing: 0, registration_url_non_https: 0, source_domain_missing: 0, verified_without_timestamp: 0, verified_with_evidence: 10, distinct_source_domains: 7, oldest_verified_at: '2026-07-01T00:00:00Z', latest_verified_at: '2026-07-15T00:00:00Z', url_never_checked: 2 },
+        { approved: 25, age_missing: 2, age_impossible: 0, dates_missing: 0, dates_reversed: 0, negative_price: 0, registration_url_missing: 0, registration_url_non_https: 0, source_domain_missing: 0, verified_without_timestamp: 0, verified_future_timestamp: 0, verified_with_evidence: 10, verification_review_current: 8, verification_review_due: 2, distinct_source_domains: 7, oldest_verified_at: '2026-07-01T00:00:00Z', latest_verified_at: '2026-07-15T00:00:00Z', url_never_checked: 2 },
         { pending: 0, oldest: null },
         { pending: 0, oldest: null },
         { pending: 0, oldest: null },
@@ -63,7 +63,7 @@ describe('operations status', () => {
       expect.objectContaining({ component: 'Public directory supply', state: 'healthy' }),
       expect.objectContaining({ component: 'Directory URL freshness', state: 'degraded', code: 'url_checks_stale' }),
       expect.objectContaining({ component: 'Directory data quality', state: 'degraded', code: 'approved_data_incomplete' }),
-      expect.objectContaining({ component: 'Directory data quality', metrics: expect.objectContaining({ verified_with_evidence: 10, verification_coverage_percent: 40, distinct_source_domains: 7, latest_verified_at: '2026-07-15T00:00:00Z', verification_confidence_basis: expect.stringContaining('recorded human review') }) }),
+      expect.objectContaining({ component: 'Directory data quality', metrics: expect.objectContaining({ verified_with_evidence: 10, verification_review_current: 8, verification_review_due: 2, verification_coverage_percent: 40, distinct_source_domains: 7, latest_verified_at: '2026-07-15T00:00:00Z', verification_confidence_basis: expect.stringContaining('recorded human review') }) }),
       expect.objectContaining({ component: 'Trust and rights case SLA', state: 'degraded', code: 'trust_cases_due_soon', metrics: expect.objectContaining({ resolved_correction_cases: 5, corrections_applied: 4, latest_correction_resolved_at: '2026-07-15T00:00:00Z' }) }),
       expect.objectContaining({ component: 'PCD agent runtime', state: 'failing', code: 'recent_agent_failures' }),
       expect.objectContaining({ component: 'Scheduler execution freshness', state: 'healthy', code: 'scheduler_attempt_recent' }),
@@ -98,6 +98,21 @@ describe('operations status', () => {
     expect(rows).toEqual(expect.arrayContaining([
       expect.objectContaining({ component: 'Directory data quality', state: 'failing', code: 'invalid_approved_data' }),
       expect.objectContaining({ component: 'Trust and rights case SLA', state: 'failing', code: 'trust_cases_overdue' }),
+    ]));
+  });
+
+  it('fails directory quality when a verification timestamp is in the future', async () => {
+    const rows = await readOperationsStatus({
+      DB: db([
+        { n: 1 },
+        { approved_records: 1, never_checked: 0, last_checked_at: '2026-07-16T00:00:00.000Z' },
+        { approved: 1, verified_future_timestamp: 1, verified_with_evidence: 1 },
+        { pending: 0, oldest: null }, { pending: 0, oldest: null },
+        { pending: 0, oldest: null }, { pending: 0, oldest: null },
+      ]),
+    }, new Date('2026-07-16T01:00:00.000Z'));
+    expect(rows).toEqual(expect.arrayContaining([
+      expect.objectContaining({ component: 'Directory data quality', state: 'failing', code: 'invalid_approved_data', metrics: expect.objectContaining({ verified_future_timestamp: 1 }) }),
     ]));
   });
 

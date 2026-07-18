@@ -63,6 +63,10 @@ export async function readOperationsStatus(env: {
                 SUM(CASE WHEN registration_url IS NOT NULL AND lower(registration_url) NOT LIKE 'https://%' THEN 1 ELSE 0 END) AS registration_url_non_https,
                 SUM(CASE WHEN source_domain IS NULL OR trim(source_domain) = '' THEN 1 ELSE 0 END) AS source_domain_missing,
                 SUM(CASE WHEN verified = 1 AND last_verified_at IS NULL THEN 1 ELSE 0 END) AS verified_without_timestamp,
+                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) IS NULL THEN 1 ELSE 0 END) AS verified_invalid_timestamp,
+                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) > datetime('now') THEN 1 ELSE 0 END) AS verified_future_timestamp,
+                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) <= datetime('now') AND datetime(last_verified_at) >= datetime('now', '-90 days') THEN 1 ELSE 0 END) AS verification_review_current,
+                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) < datetime('now', '-90 days') THEN 1 ELSE 0 END) AS verification_review_due,
                 SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL THEN 1 ELSE 0 END) AS verified_with_evidence,
                 COUNT(DISTINCT CASE WHEN source_domain IS NOT NULL AND trim(source_domain) <> '' THEN lower(trim(source_domain)) END) AS distinct_source_domains,
                 MIN(CASE WHEN verified = 1 THEN last_verified_at END) AS oldest_verified_at,
@@ -71,15 +75,17 @@ export async function readOperationsStatus(env: {
            FROM programs WHERE pcd_status = 'approved'`,
       ).first<Record<string, number | string | null>>();
       const metric = (name: string) => Number(quality?.[name] ?? 0);
-      const critical = metric('age_impossible') + metric('dates_reversed') + metric('negative_price') + metric('verified_without_timestamp');
+      const critical = metric('age_impossible') + metric('dates_reversed') + metric('negative_price') + metric('verified_without_timestamp') + metric('verified_invalid_timestamp') + metric('verified_future_timestamp');
       const incomplete = metric('age_missing') + metric('dates_missing') + metric('registration_url_missing') + metric('registration_url_non_https') + metric('source_domain_missing') + metric('url_never_checked');
       const approved = metric('approved');
       const verifiedWithEvidence = metric('verified_with_evidence');
       const verificationCoveragePercent = approved > 0 ? Math.round((verifiedWithEvidence / approved) * 1000) / 10 : 0;
       const state: OperationalState = critical > 0 ? 'failing' : incomplete > 0 ? 'degraded' : 'healthy';
       components.push(result('Directory data quality', state, critical > 0 ? 'invalid_approved_data' : incomplete > 0 ? 'approved_data_incomplete' : 'approved_data_contract_passed', critical > 0 ? 'Approved listings contain impossible or unsupported truth claims.' : incomplete > 0 ? 'Approved listings have material completeness or freshness gaps.' : 'Approved listings pass the aggregate quality contract.', observedAt, {
-        approved, age_missing: metric('age_missing'), age_impossible: metric('age_impossible'), dates_missing: metric('dates_missing'), dates_reversed: metric('dates_reversed'), negative_price: metric('negative_price'), registration_url_missing: metric('registration_url_missing'), registration_url_non_https: metric('registration_url_non_https'), source_domain_missing: metric('source_domain_missing'), verified_without_timestamp: metric('verified_without_timestamp'), url_never_checked: metric('url_never_checked'),
+        approved, age_missing: metric('age_missing'), age_impossible: metric('age_impossible'), dates_missing: metric('dates_missing'), dates_reversed: metric('dates_reversed'), negative_price: metric('negative_price'), registration_url_missing: metric('registration_url_missing'), registration_url_non_https: metric('registration_url_non_https'), source_domain_missing: metric('source_domain_missing'), verified_without_timestamp: metric('verified_without_timestamp'), verified_invalid_timestamp: metric('verified_invalid_timestamp'), verified_future_timestamp: metric('verified_future_timestamp'), url_never_checked: metric('url_never_checked'),
         verified_with_evidence: verifiedWithEvidence,
+        verification_review_current: metric('verification_review_current'),
+        verification_review_due: metric('verification_review_due'),
         verification_coverage_percent: verificationCoveragePercent,
         distinct_source_domains: metric('distinct_source_domains'),
         oldest_verified_at: (quality?.oldest_verified_at as string | null | undefined) ?? null,

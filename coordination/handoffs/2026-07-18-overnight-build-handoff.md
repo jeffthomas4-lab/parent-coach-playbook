@@ -40,14 +40,16 @@ production data mutation.
   all roster skills wired to the source contract, and the ten-task
   reconciliation inventory (`c47cdcb`, `4cd322d`, `aa3ace7`).
 - Trust operations: protected dashboard evidence metrics and an inert,
-  source-backed relationship research registry (`a734e0a`, `926da5b`).
+  source-backed relationship research registry (`a734e0a`, `926da5b`). The
+  dashboard also exposes current/due verification-review counts and fails on
+  invalid or future-dated verification evidence.
 - Release engineering: single Worker deployment authority, complete Access
   evidence gate, required secret-name preservation, durable smoke receipts,
   three-day local backup proof validation, and exact deployed static-asset byte
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 153 test files / 785 tests passed.
+Latest clean validation before this handoff: 153 test files / 786 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.
