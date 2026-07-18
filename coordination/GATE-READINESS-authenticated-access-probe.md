@@ -34,7 +34,7 @@ Two live browser sessions against `https://parentcoachdesk.com`, one per identit
 
 `validateAuthenticatedAccessEvidence(value)` is the function that judges the probe file. It requires, when `state: "complete"`:
 
-- `contract_route_count` === 37 (read live from `automation/protected-route-contract.json`, so if the contract ever grows or shrinks this number moves with it — recount before filling the evidence file).
+- `contract_route_count` === 38 (read live from `automation/protected-route-contract.json`, so if the contract ever grows or shrinks this number moves with it — recount before filling the evidence file).
 - `observed_at`, `allowed_identity_class`, `denied_identity_class`, `evidence_hash` — non-empty strings. `allowed_identity_class` and `denied_identity_class` are class labels, not raw emails (e.g. `"configured_admin"` / `"authenticated_non_admin"`, matching the vocabulary already used in `tests/access-evidence.test.ts`) — do not put the actual email addresses in this file.
 - `allowed_results`: array of exactly 37 items, every item `edge_authorized: true` and `mutation_invoked: false`.
 - `denied_results`: array of exactly 37 items, every item `edge_blocked: true` and `origin_reached: false`.

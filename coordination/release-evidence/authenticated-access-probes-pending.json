@@ -2,7 +2,7 @@
   "schema_version": 1,
   "state": "pending",
   "target_origin": "https://parentcoachdesk.com",
-  "contract_route_count": 37,
+  "contract_route_count": 38,
   "observed_at": null,
   "allowed_identity_class": null,
   "denied_identity_class": null,

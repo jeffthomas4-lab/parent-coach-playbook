@@ -2,9 +2,9 @@
   "schema_version": 1,
   "probe": "pcd-anonymous-admin-access",
   "target_origin": "https://parentcoachdesk.com",
-  "observed_at": "2026-07-16T15:07:26.793Z",
+  "observed_at": "2026-07-18T08:58:03.676Z",
   "ok": true,
-  "route_count": 37,
+  "route_count": 38,
   "results": [
     {
       "path": "/admin/",
@@ -80,6 +80,12 @@
     },
     {
       "path": "/admin/preview/probe-collection/probe-slug",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/admin/relationships",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
