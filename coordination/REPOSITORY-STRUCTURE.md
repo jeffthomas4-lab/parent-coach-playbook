@@ -81,6 +81,12 @@ operator notes. New files follow these rules:
    likely to use the old path.
 5. Do not create parallel current-state, deployment, or approval authorities.
 
+Every tracked root document, spreadsheet, CSV, and text artifact is classified
+exactly once in `coordination/root-file-registry.json`. `npm run
+check:root-organization` fails when a new root artifact bypasses this policy or
+when a registry entry becomes stale. Classification is not an endorsement of
+content freshness; it establishes ownership and the safe migration queue.
+
 ## Cleanup queue
 
 These are organization tasks, not permission to delete:

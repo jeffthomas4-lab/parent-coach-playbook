@@ -462,3 +462,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Verified locally:** after all overnight slices, the full Vitest suite passes 139 files / 749 tests. Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing non-blocking hints.
 - **Reconciled:** `coordination/BUILD-PLAN-COMPLETION-AUDIT-2026-07-18.md` maps the pasted brief, the Codex build plan, and the 24-month business plan into implemented/verified, awaiting runtime evidence, and Jeff/external-gated categories. It records D1 as the verified generated-manifest path and D2 as Cloudflare-cron ownership with GitHub manual-only diagnostics.
 - **Claim boundary:** the bounded local overnight build is complete. Production deployment, secrets/provider actions, authenticated Access proof, multi-day/multi-deployment clocks, and 24-month business outcomes are not represented as complete.
+# 2026-07-18 - exhaustive root ownership registry
+
+- **Implemented locally:** all 85 tracked root documents, spreadsheets, CSVs, and text artifacts are classified exactly once as current authority, current business input, active work queue, historical/superseded, or generated/diagnostic. The registry check fails on new unclassified root artifacts, duplicate classifications, and stale entries, and is included in `ci:release`.
+- **Verified locally:** the exhaustive current registry passes and its focused contract test passes 1 file / 1 test.
+- **Organization boundary:** classification makes ownership and future migrations safe; it does not silently move referenced legacy files or delete user scratch outputs. Existing unrelated `buildout/hit-rate-test/out` changes, `body.json`, and `worker-cron/schema/` remain untouched.
