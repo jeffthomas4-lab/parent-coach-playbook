@@ -32,8 +32,9 @@ production data mutation.
   content-coverage opportunity scoring (`a6fe763`, `e7685b5`), plus default-off
   camp-directory search/filter events that discard precise location before the
   telemetry boundary.
-- Affiliate integrity: destination inventory validation and a release gate
-  (`371cce5`, `b2461d7`).
+- Affiliate integrity: destination inventory validation, a release gate, and
+  consent-gated first-party click intent that records only the governed
+  `/go/{slug}/` identifier (`371cce5`, `b2461d7`).
 - Newsletter and social: fail-closed provider journey proof plus draft-only,
   measured social staging with a human publication gate (`4f5acbd`, `99a6c91`).
 - Operations: seasonal zero-write behavior, secure agent-run caller contracts,
@@ -50,7 +51,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 153 test files / 787 tests passed.
+Latest clean validation before this handoff: 154 test files / 789 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.
