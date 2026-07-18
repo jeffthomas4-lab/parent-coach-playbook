@@ -504,3 +504,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Workflow evidence:** successful staging receipts are retained for 30 days and production receipts for 90 days under SHA-addressed artifact names. Missing receipts fail the job; all upload actions remain commit-pinned.
 - **Verified locally:** focused smoke and deployment-workflow coverage passes 2 files / 6 tests, including staging's intentional token-absent 503 and failure on unsafe origins or unhealthy responses. The first full-suite attempt passed 144 files but failed overall when one Vitest fork exited unexpectedly; an immediate clean rerun passed 145 files / 763 tests. The failed attempt is retained in the evidence narrative rather than hidden.
 - **External boundary:** this builds the evidence mechanism; it does not claim any deployment or post-deploy health observation occurred.
+# 2026-07-18 - local backup proving clock reconciled
+
+- **Corrected from current evidence:** `scripts/BACKUP-PROVING-LOG.md` contains six positive activity-radar export runs across three separate local dates: July 15, 16, and 17. The local export proving clock is satisfied and no longer belongs in the pending list.
+- **Implemented locally:** a release check parses the append-only table, requires positive artifact size/attempt/retained-backup evidence, contiguous run numbering, and at least three distinct clean dates. Focused coverage passes 1 file / 2 tests and the check is part of `ci:release`.
+- **Remaining boundary:** this does not satisfy the independent immutable offsite gate, multi-database/R2 recovery scope, separate-verifier retrieval, or offsite restore proof. Those remain pending and owner/provider gated.

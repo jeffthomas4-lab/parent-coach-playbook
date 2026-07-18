@@ -66,7 +66,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 - Authenticated Access success for an allowlisted identity, a safe authenticated admin read, and denial of a non-allowlisted identity.
 - Same-SHA staging and production artifact/deployment evidence, secret preservation, health checks, version/SHA receipt, error-rate observation, and static-asset skew handling.
 - Staging rollback drill and three clean production pipeline deployments.
-- Three backup proving rows on separate days.
+- Independent immutable offsite upload/retrieval/restore proof on three separate days. The narrower local activity-radar export clock is complete for July 15, 16, and 17 and is now CI-validated.
 
 ### Blocked on Jeff or external systems
 
