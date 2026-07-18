@@ -53,6 +53,7 @@
     "check:affiliates": "node scripts/check-affiliate-inventory.mjs",
     "report:affiliates": "node scripts/check-affiliate-inventory.mjs --report",
     "check:newsletter-proof": "node scripts/newsletter-provider-proof.mjs coordination/release-evidence/newsletter-provider-proof-pending.json",
+    "preflight:agent-runs": "node scripts/agent-run-client.mjs preflight",
     "monitor:customer-journey": "node scripts/run-customer-journey-monitor.mjs",
     "recovery:manifest": "node scripts/build-recovery-batch-manifest.mjs",
     "drill:staging-notification": "node scripts/run-staging-notification-drill.mjs --confirm",
