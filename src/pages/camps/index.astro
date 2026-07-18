@@ -123,6 +123,7 @@ const campsLite = camps.map(c => ({
   state: c.state,
   day_or_overnight: c.day_or_overnight,
   spots_status: c.spots_status,
+  verified: c.verified,
   program_type: c.program_type,
   latitude: c.latitude,
   longitude: c.longitude,
@@ -326,6 +327,14 @@ const itemListSchema = featuredCamps.length > 0 ? {
                 </div>
               </div>
 
+              <div>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium">Trust & availability</p>
+                <div class="flex gap-2">
+                  <button type="button" id="filter-verified-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Verified only</button>
+                  <button type="button" id="filter-open-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Open only</button>
+                </div>
+              </div>
+
               {/* State Dropdown */}
               <div>
                 <label for="filter-state" class="font-display italic text-rust text-xs block mb-2 font-medium">State</label>
@@ -442,6 +451,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
         state: string;
         day_or_overnight: string;
         spots_status: string;
+        verified: 0 | 1;
         program_type: string | null;
         latitude: number | null;
         longitude: number | null;
@@ -513,6 +523,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
         zipRadius: number;
         showLeagues: boolean;
         showFull: boolean;
+        verifiedOnly: boolean;
+        openOnly: boolean;
       }
       let state: FilterState = {
         search: '',
@@ -528,6 +540,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
         zipRadius: 10,
         showLeagues: false,
         showFull: false,
+        verifiedOnly: false,
+        openOnly: false,
       };
 
       let map: L.Map | null = null;
@@ -641,6 +655,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
 
           // Hide full programs unless toggled on.
           if (c.spots_status === 'full' && !state.showFull) return false;
+          if (state.verifiedOnly && c.verified !== 1) return false;
+          if (state.openOnly && c.spots_status !== 'open') return false;
 
           // Free-text search across name, city, and description. Case-insensitive
           // substring match. Empty string matches everything.
@@ -849,9 +865,21 @@ const itemListSchema = featuredCamps.length > 0 ? {
           applyFilters();
         });
 
+        (document.getElementById('filter-verified-only') as HTMLButtonElement).addEventListener('click', (e) => {
+          state.verifiedOnly = !state.verifiedOnly;
+          setToggleActive(e.currentTarget as HTMLElement, state.verifiedOnly);
+          applyFilters();
+        });
+
+        (document.getElementById('filter-open-only') as HTMLButtonElement).addEventListener('click', (e) => {
+          state.openOnly = !state.openOnly;
+          setToggleActive(e.currentTarget as HTMLElement, state.openOnly);
+          applyFilters();
+        });
+
         // Clear filters — resets to default which hides leagues + full programs.
         document.getElementById('clear-filters')!.addEventListener('click', () => {
-          state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false };
+          state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false, verifiedOnly: false, openOnly: false };
           (document.getElementById('filter-search') as HTMLInputElement).value = '';
           (document.getElementById('filter-sport') as unknown as HTMLSelectElement).value = '';
           (document.getElementById('filter-age-min') as HTMLInputElement).value = '';
@@ -866,6 +894,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
           if (allBtn) setToggleActive(allBtn, true);
           setToggleActive(document.getElementById('filter-show-leagues') as HTMLElement, false);
           setToggleActive(document.getElementById('filter-show-full') as HTMLElement, false);
+          setToggleActive(document.getElementById('filter-verified-only') as HTMLElement, false);
+          setToggleActive(document.getElementById('filter-open-only') as HTMLElement, false);
           applyFilters();
         });
       }

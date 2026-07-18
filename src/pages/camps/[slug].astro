@@ -182,6 +182,7 @@ const formatReviewedAt = (value: string | null | undefined): string | null => {
   return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(date);
 };
 const reviewedLabel = formatReviewedAt(camp?.reviewed_at);
+const verifiedLabel = formatReviewedAt(camp?.last_verified_at);
 
 // Sport label: prefer the SPORTS array's title-cased label; fall back to capitalizing.
 const sportLabel = (slug: string): string => {
@@ -416,7 +417,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
       </p>
       {camp.verified === 1 && (
         <p class="font-body text-ink-soft text-sm mt-3 max-w-2xl leading-relaxed">
-          Verified means PCD compared the listed details with the cited source. It is not an inspection or endorsement of safety, quality, staff, insurance, or suitability.
+          Verified{verifiedLabel ? ` on ${verifiedLabel}` : ''} means PCD compared the listed details with the cited source. It is not an inspection or endorsement of safety, quality, staff, insurance, or suitability.
         </p>
       )}
 
