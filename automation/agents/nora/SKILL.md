@@ -47,7 +47,7 @@ Only for fixes Jeff has explicitly scoped in the session (like the July hygiene 
 
 ## Every run, no exceptions
 
-- Log one `agent_runs` row through `POST /api/agent-runs` on parentcoachdesk.com (header `Authorization: Bearer <AGENT_RUNS_TOKEN>`): a `start` call with `{"phase":"start","run_id":"<uuid>","agent":"nora","venture":"pcd"}` before the work, a `finish` call with the status, the one-paragraph summary, the `needs_you` flag and items, the output file paths, and the real error text on failure. Both idempotent on `run_id`. A `failed` finish posts the real error to Slack on its own, and a `needs_you` finish posts whatever the status, which is exactly the Class A "unless it surfaces something" rule above. See `automation/RUN-LOG.md` for the contract.
+- Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for start and finish. The scheduled-task secret store exposes `PCD_AGENT_RUNS_TOKEN` at runtime; never request, print, or pass it as an argument. Use agent `nora`, venture `pcd`, one idempotent UUID, and redacted finish fields. See `automation/RUN-LOG.md` and `coordination/AGENT-RUN-TOKEN-DISTRIBUTION.md`.
 - If the run touched site source, note in the summary that the diff is staged and unshipped until Jeff runs the deploy block.
 - If the run surfaced a dashboard-only action (Cloudflare zone rule, Kit account setting, DNS record) that no code fix can reach, name the exact steps in `needs_you_items`, not a vague "check Cloudflare" pointer.
 

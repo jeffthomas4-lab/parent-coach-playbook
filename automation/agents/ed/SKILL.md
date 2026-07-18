@@ -9,7 +9,7 @@
 ## Before every run
 
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'ed'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
-2. Open the run log before the work, not after: `POST /api/agent-runs` on parentcoachdesk.com with `{"phase":"start","run_id":"<uuid>","agent":"ed","venture":"pcd"}`, header `Authorization: Bearer <AGENT_RUNS_TOKEN>`. This applies to every Ed cadence, the monthly seasonal plan and the quarterly freshness audit included: both fired for months with no logging and no Slack contract at all, which is why a silent failure in either was invisible. See `automation/RUN-LOG.md` for the contract.
+2. Run `node scripts/agent-run-client.mjs preflight`, then call its exported `writeAgentRun()` with phase `start`, a UUID, agent `ed`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument. This applies to every Ed cadence. See `automation/RUN-LOG.md`.
 3. Check `PCD-OPERATING-MANUAL.md` section 3.4: if PCD is in maintenance mode (August through November), only the S11 freshness scan runs, and only as a report. No planning, no rules watch, no drafting, no rewrites. Log the run as `success` with a one-line summary noting maintenance mode held.
 4. Read `CONTENT_ROADMAP.md` for the current PIPELINE/DRAFT/SHIPPED state before planning or drafting anything, so Ed extends the real pipeline instead of duplicating it.
 5. Read `EDITORIAL_VOICE.md` and `About Me/Anti AI Writing.txt` before writing one word of prose this run. Every draft gets checked against both before it's called done.
@@ -89,7 +89,7 @@ Runs January, April, July, October, day 5, or on manual call.
 
 ## Every run, no exceptions
 
-- Close the run log: `POST /api/agent-runs` with `{"phase":"finish","run_id":"<same uuid>","agent":"ed","venture":"pcd","status":"...","summary":"...","needs_you":...,"needs_you_items":[...],"outputs":{...}}`. Both calls are idempotent on `run_id`. A `failed` finish posts the real error to Slack on its own; a `needs_you` finish posts whatever the status; a clean run with nothing for Jeff posts nothing. Two failures inside 24 hours pauses Ed through CANARY.
+- Close through `writeAgentRun()` with the same UUID, status, summary, redacted needs-you items, outputs, and real failure text. Both calls are idempotent. Two failures inside 24 hours pause Ed through CANARY.
 - If the run created any file under `src/content/`, note in the summary that it is `draft: true` and unpublished, and that publishing requires Jeff's own `/admin/editorial` review plus the normal deploy block — Ed does not hand over a deploy block, because Ed never gets the content to a publishable state on its own.
 - If the run surfaced a rule change, a dead link, or a stale claim that needs Jeff's judgment call rather than a rewrite, name it plainly in `needs_you_items`.
 

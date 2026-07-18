@@ -25,13 +25,13 @@ So the convention bends and the file stays where it runs. `SPEC.md` in this fold
 
 The git-tracked file is the source. The scheduled-task copy is a deployment of it. Edit the source, commit, then redeploy, per that file's own header and the manual's section 4.3.
 
-## The three deltas owed
+## Reconciliation status
 
 Full reasoning in `SPEC.md`. In short:
 
-1. **Wire the run log to `POST /api/agent-runs`** instead of the direct D1 `INSERT` in STEP 6. The endpoint stamps `last_run_at` on its own and posts a real error to Slack on a `failed` finish, which is exactly what the 2026-07-14 incident lacked.
-2. **Exempt Vera from CANARY at the endpoint.** Her spec forbids auto-pause; the endpoint auto-pauses on two failures in 24 hours. One of them has to give, and it cannot be her spec, because auto-pausing the SLA watch is the incident that already happened.
-3. **Rename the registry key to `vera`** in the same commit that changes the `agent` value her skill writes, never separately.
+1. **Complete in source:** the running skill uses the redacted preflight and shared caller instead of direct D1 run-log writes.
+2. **Complete in code:** the endpoint's tested CANARY exemption prevents automatic pause for the deletion monitor.
+3. **Still externally reconciled:** the scheduled-task deployment must receive the v1.3 skill and runtime secret reference. The registry key remains `pcd-deletion-monitor`; any future rename must update the registry and caller identity together.
 
 ## The one rule that governs everything above
 

@@ -9,7 +9,7 @@
 ## Before every run
 
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'frida'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
-2. Open the run log before the work, not after: `POST /api/agent-runs` on parentcoachdesk.com with `{"phase":"start","run_id":"<uuid>","agent":"frida","venture":"pcd"}`, header `Authorization: Bearer <AGENT_RUNS_TOKEN>`. A run that dies mid-draft still leaves a start row this way. See `automation/RUN-LOG.md` for the contract.
+2. Run `node scripts/agent-run-client.mjs preflight`, then call its exported `writeAgentRun()` with phase `start`, a UUID, agent `frida`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
 3. Check `PCD-OPERATING-MANUAL.md` section 3.4: if PCD is in maintenance mode (August through November), do not draft. Log the run as `success` with a one-line summary noting maintenance mode held and no letter was produced.
 3. Read every file in `reports/friday-letters/` before picking anything this week. This is the check against repeating an archive resurface: no piece resurfaced in the prior 8 weeks of letters on file goes back in this week.
 
@@ -60,7 +60,7 @@ Per `SLACK-STAGING.md`'s Class B convention: one short message when the draft is
 
 ## Every run, no exceptions
 
-- Close the run log: `POST /api/agent-runs` with `{"phase":"finish","run_id":"<same uuid>","agent":"frida","venture":"pcd","status":"...","summary":"...","needs_you":true,"needs_you_items":[...],"outputs":{...}}`. Both calls are idempotent on `run_id`, so a retry updates the row instead of doubling it. A `failed` finish posts the real error to Slack on its own, and a `needs_you` finish posts whatever the status, so the Class B staging line and the run log are the same call rather than two things to remember. Two failures inside 24 hours pauses Frida through CANARY.
+- Close through `writeAgentRun()` with the same UUID and redacted finish fields. A retry is idempotent; failed and needs-you finishes retain the endpoint's alert behavior. Two failures inside 24 hours pause Frida through CANARY.
 - Every completed run sets `needs_you = true`, since a Friday Letter draft always needs Jeff's read and paste-into-Kit before Friday, no exceptions.
 - If the Amazon-link scan caught and cut anything, say so plainly in the run summary and in "Notes for Jeff," not just silently fixed.
 - If no new content shipped that week, say so plainly rather than overstating what's new.

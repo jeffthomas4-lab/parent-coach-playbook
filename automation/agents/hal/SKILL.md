@@ -9,7 +9,7 @@
 ## Before every run
 
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'hal'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
-2. Open the run log: `POST /api/agent-runs` with `{"phase":"start","run_id":"<uuid>","agent":"hal","venture":"pcd"}`, bearer `AGENT_RUNS_TOKEN`. Do this before the work, not after, so a run that dies mid-way still has a start row.
+2. Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for a start with a UUID, agent `hal`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
 3. Check `PCD-OPERATING-MANUAL.md` section 3.4. During maintenance mode (August through November) the checks still run, because they are read-only and they watch the only revenue surface PCD has. No follow-up drafting, no swap proposals; those become `needs_you` items for the December close.
 4. Read the prior run's file (`reports/link-health/` or `reports/affiliate/`) so this run reports a delta and a repeat, not a fresh discovery of last week's problem.
 
@@ -43,7 +43,7 @@
 
 ## Every run, no exceptions
 
-- Close the run log: `POST /api/agent-runs` with `{"phase":"finish","run_id":"<same uuid>","agent":"hal","venture":"pcd","status":"...","summary":"...","needs_you":...,"needs_you_items":[...],"outputs":{...}}`. A failed finish posts the real error to Slack on its own; a `needs_you` finish posts whatever the status. A clean run with nothing for Jeff posts nothing, per `SLACK-STAGING.md`'s Class A rule.
+- Close through `writeAgentRun()` with the same UUID, status, summary, redacted needs-you items, outputs, and real failure text. A clean run with nothing for Jeff posts nothing.
 - Post the Class B Slack line only when a draft is actually ready: agent name, one line, the link. Example: "Hal has follow-up drafts for 3 networks pending over 30 days. reports/affiliate/AFFILIATE_REVIEW_2026-08.md" The channel is not wired yet per `SLACK-STAGING.md`'s open item, so do not assume a channel ID and post blind.
 - Say plainly when a flag was a false positive. A report that quietly drops last week's six flags teaches Jeff to distrust the number.
 - Say plainly when there is no revenue to report. There has never been any, and writing that sentence honestly every month is the point of the metric.

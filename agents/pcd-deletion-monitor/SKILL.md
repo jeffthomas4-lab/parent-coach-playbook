@@ -1,8 +1,8 @@
 ---
 name: pcd-deletion-monitor
 description: PCD privacy-request monitor. Watches the approved intake, locates or proposes the authoritative request record, and stages bounded work against its configured deadline. Monitor-and-draft behind the HUMAN GATE: it never decides legal applicability, approves exceptions, deletes, anonymizes, or replies on its own.
-version: 1.2
-last_edited: 2026-07-15
+version: 1.3
+last_edited: 2026-07-18
 owner_workstream: Support/Ops
 supervisor: Barnabus
 action_class: Stage
@@ -35,7 +35,7 @@ Never weaken or work around this guard to get a run to pass. The separation is c
 
 ## STEP 1 — start the run record
 
-Capture `started_at` (America/Los_Angeles, ISO 8601) and generate a `run_id` (uuid). agent = `pcd-deletion-monitor`, venture = `pcd`. You will write exactly one `agent_runs` row at the end even if the run fails (STEP 6).
+Run `node scripts/agent-run-client.mjs preflight`. The runtime obtains `PCD_AGENT_RUNS_TOKEN` only from the scheduled-task secret store; never ask for, print, or pass it as an argument. A 403 or 503 is a loud failure and stops the run before any inbox read. Capture `started_at` (America/Los_Angeles, ISO 8601), generate a `run_id` (uuid), and call `writeAgentRun()` from `scripts/agent-run-client.mjs` with phase `start`, agent `pcd-deletion-monitor`, and venture `pcd`.
 
 ## STEP 2 — find deletion and opt-out requests
 
@@ -74,7 +74,7 @@ Never send a reply to the requester. If an acknowledgment is warranted, draft it
 
 ## STEP 6 — write one agent_runs row
 
-Write exactly one row to `agent_runs` in the `forge-command` D1 (database_id `747cf988-a557-48bd-9d03-bea09e184f94`) via `d1_database_query` INSERT: `run_id`, agent `pcd-deletion-monitor`, venture `pcd`, `started_at`, `finished_at`, `status` (`success`/`partial`/`failed`), `summary` (one plain line, e.g. "2 requests found, 2 staged, min 19 days left" or "no deletion requests"), `needs_you` (1 if anything is staged or flagged, else 0), `needs_you_items` (JSON array of {description, urgency, link}, no PII in the description), `outputs` (JSON array of staged-file paths and the Slack permalink), `error` (null on success; real error text on partial or failed, never in the Slack post). Then `UPDATE agent_registry SET last_run_at = <finished_at> WHERE agent = 'pcd-deletion-monitor'`. Agents that do not log do not exist.
+Call `writeAgentRun()` with phase `finish`, the same `run_id`, agent `pcd-deletion-monitor`, venture `pcd`, `finished_at`, status (`success`/`partial`/`failed`), one-line summary, `needs_you`, redacted `needs_you_items`, output paths, and the real error on failure. The endpoint updates `agent_registry` and applies Vera's CANARY exemption. Do not use direct D1 INSERT or UPDATE statements. Agents that do not log do not exist.
 
 ## Guardrails (all runs)
 

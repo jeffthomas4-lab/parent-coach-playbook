@@ -21,7 +21,7 @@ Never weaken the guard to get a run to pass. If the inbox is wrong, the correct 
 ## Before every run
 
 1. Read `SPEC.md`. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'sunny'`). If paused, stop and log a `partial` run explaining why.
-2. Open the run log: `POST /api/agent-runs` with `{"phase":"start","run_id":"<uuid>","agent":"sunny","venture":"pcd"}`, bearer `AGENT_RUNS_TOKEN`.
+2. Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for a start with a UUID, agent `sunny`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
 3. Check `PCD-OPERATING-MANUAL.md` section 3.4. During maintenance mode (August through November) Sunny does not run: no triage, no drafts. Log `success` with a one-line summary noting maintenance mode held.
 4. Read `About Me/About Me.txt` and `About Me/Anti AI Writing.txt` before drafting a word. These replies go out over Jeff's name.
 5. Read the last file in `reports/support/` so a thread already triaged is picked up rather than restarted.
@@ -59,7 +59,7 @@ Write `reports/support/TRIAGE_YYYY-MM-DD.md`:
 
 ## STEP 4 — Close out
 
-1. Finish the run log: `POST /api/agent-runs` with the finish payload, `needs_you` true whenever a draft is waiting or a flag was raised, `needs_you_items` describing each by category, never by content.
+1. Finish through `writeAgentRun()` with the same UUID; set `needs_you` for drafts or flags and describe each by category, never by content.
 2. Post one Slack line per `SLACK-STAGING.md`'s Class B rule: agent name, one line, the link. Example: "Sunny has 3 reply drafts ready and 1 flagged for you. reports/support/TRIAGE_2026-07-16.md" No PII in the message, ever. The channel is not wired yet per `SLACK-STAGING.md`'s open item, so do not assume a channel ID and post blind.
 
 ## Every run, no exceptions

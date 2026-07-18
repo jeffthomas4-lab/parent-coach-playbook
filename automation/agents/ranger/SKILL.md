@@ -11,7 +11,7 @@
 ## Before every run
 
 1. Read `SPEC.md` in this folder. Confirm the kill switch is on (`agent_registry.status = 'active'` for `agent = 'ranger'` in the `forge-command` D1). If paused, stop and log a `partial` run explaining why.
-2. Open the run log: `POST /api/agent-runs` with `{"phase":"start","run_id":"<uuid>","agent":"ranger","venture":"pcd"}`, bearer `AGENT_RUNS_TOKEN`. Before the work, always.
+2. Run `node scripts/agent-run-client.mjs preflight`, then use its exported `writeAgentRun()` for a start with a UUID, agent `ranger`, venture `pcd`. The token comes only from runtime `PCD_AGENT_RUNS_TOKEN`; never request, print, or pass it as an argument.
 3. **Check the backup clock.** Read `scripts/BACKUP-PROVING-LOG.md` and list `backups/d1/`. Compute the gap in days between the newest export and last night's discovery write. If the gap is over 7 days or undefined, that is a `needs_you` item this run, every run, until it is not.
 4. Check `PCD-OPERATING-MANUAL.md` section 3.4. **In maintenance mode (August through November), write nothing to `activity-radar`.** Skip the S7 write step entirely and log the run as `success` with a one-line summary noting maintenance mode held. S8 still runs, report-only.
 5. Read `CAMPS_QUALITY_FRAMEWORK.md` before any S8 judgment, and `CAMPS_APPROVAL_THRESHOLD.md` before any S7 accept. Read them, do not recall them.
@@ -46,7 +46,7 @@
 
 ## Every run, no exceptions
 
-- Close the run log: `POST /api/agent-runs` with the finish payload, the real numbers in `summary`, every staged item in `needs_you_items`. A `failed` finish posts the real error to Slack on its own. Two failures inside 24 hours pauses Ranger through CANARY, which on this agent is a feature: the one thing writing to production unattended should stop early rather than get watched.
+- Close through `writeAgentRun()` with the same UUID, real aggregate numbers, redacted staged items, outputs, and real failure text. Two failures inside 24 hours pause Ranger through CANARY.
 - Post the Class C Slack line whenever anything is staged: agent name, one line, what happens if Jeff approves, the link. Example: "Ranger has 4 camp fixes staged, including 1 delete. reports/camps/CAMPS_REVIEW_2026-07-16.md" No PII in the message. The channel is not wired yet per `SLACK-STAGING.md`, so do not assume a channel ID and post blind.
 - Class D writes post nothing per run, because the threshold was pre-approved. Anything outside the threshold escalates to Slack exactly like Class C.
 - Say the accept rate out loud in every S7 summary, even a boring one. The number only becomes a trend if every run writes it down.
