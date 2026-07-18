@@ -457,3 +457,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Implemented locally:** the existing Pinterest draft-and-stage pattern now has an executable release contract. It requires one governed first-party HTTPS link per staged pin, Pinterest/social/campaign attribution, an explicit human publication gate, and the documented prohibitions on account creation and auto-posting. It rejects credential material and executable publication calls.
 - **Verified locally:** the current five-pin seasonal queue passes the contract and its focused Vitest suite passes 1 file / 3 tests. The check is included in `ci:release`.
 - **External boundary preserved:** no social account was created, no credential was accessed, and no post was published or scheduled.
+# 2026-07-18 - overnight completion audit and final validation
+
+- **Verified locally:** after all overnight slices, the full Vitest suite passes 139 files / 749 tests. Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing non-blocking hints.
+- **Reconciled:** `coordination/BUILD-PLAN-COMPLETION-AUDIT-2026-07-18.md` maps the pasted brief, the Codex build plan, and the 24-month business plan into implemented/verified, awaiting runtime evidence, and Jeff/external-gated categories. It records D1 as the verified generated-manifest path and D2 as Cloudflare-cron ownership with GitHub manual-only diagnostics.
+- **Claim boundary:** the bounded local overnight build is complete. Production deployment, secrets/provider actions, authenticated Access proof, multi-day/multi-deployment clocks, and 24-month business outcomes are not represented as complete.
