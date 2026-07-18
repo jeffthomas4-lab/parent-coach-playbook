@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "owner": "Jeff Thomas",
+  "trust_rule": "recommendation_before_link",
+  "default_account_state": "unverified",
+  "merchants": [
+    {
+      "id": "amazon_us",
+      "display_name": "Amazon",
+      "program": "Amazon Associates US",
+      "account_state": "active_evidenced_by_existing_special_links",
+      "hosts": ["amazon.com", "www.amazon.com", "amzn.to"],
+      "tracking_mode": "preserve_special_link",
+      "required_query": { "host": "www.amazon.com", "key": "tag", "value": "parentcoachpl-20" },
+      "external_account_action": "owner_only",
+      "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
+    },
+    {
+      "id": "bookshop_us",
+      "display_name": "Bookshop.org",
+      "program": "Bookshop.org Affiliates",
+      "account_state": "destination_present_account_status_unverified",
+      "hosts": ["bookshop.org", "www.bookshop.org"],
+      "tracking_mode": "append_first_party_utm",
+      "external_account_action": "owner_only",
+      "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
+    },
+    {
+      "id": "soccer_garage_cj",
+      "display_name": "SoccerGarage",
+      "program": "CJ publisher link",
+      "account_state": "destination_present_account_status_unverified",
+      "hosts": ["tkqlhce.com", "www.tkqlhce.com", "anrdoezrs.net", "www.anrdoezrs.net", "jdoqocy.com", "www.jdoqocy.com", "kqzyfj.com", "www.kqzyfj.com"],
+      "tracking_mode": "preserve_special_link",
+      "external_account_action": "owner_only",
+      "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
+    },
+    {
+      "id": "shutterfly",
+      "display_name": "Shutterfly",
+      "program": "Unverified destination relationship",
+      "account_state": "destination_present_program_status_unverified",
+      "hosts": ["shutterfly.com", "www.shutterfly.com"],
+      "tracking_mode": "append_first_party_utm",
+      "external_account_action": "owner_only",
+      "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
+    },
+    {
+      "id": "square",
+      "display_name": "Square",
+      "program": "Unverified destination relationship",
+      "account_state": "destination_present_program_status_unverified",
+      "hosts": ["squareup.com", "www.squareup.com"],
+      "tracking_mode": "append_first_party_utm",
+      "external_account_action": "owner_only",
+      "price_claim_policy": "no_dynamic_price_or_availability_claim_without_approved_provider_evidence"
+    }
+  ],
+  "publication_gates": {
+    "human_editorial_approval_required": true,
+    "affiliate_account_action_owner_only": true,
+    "direct_merchant_url_in_content_allowed": false,
+    "automatic_recommendation_publication_allowed": false,
+    "automatic_recommendation_retirement_allowed": false,
+    "affiliate_compensation_may_change_recommendation": false
+  }
+}

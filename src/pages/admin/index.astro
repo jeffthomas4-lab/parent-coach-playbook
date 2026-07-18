@@ -3,6 +3,7 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 import affiliateReport from '../../../reports/affiliate/inventory.json';
+import affiliateLifecycle from '../../../reports/affiliate/lifecycle.json';
 
 // SSR so the desk landing can show the signed-in Access identity and offer a
 // Log out control. Access already gates every /admin route; requireAdmin also
@@ -123,6 +124,20 @@ const sections = [
         <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Unreferenced</dt><dd class="font-display text-2xl">{affiliateReport.unreferencedCount}</dd></div>
         <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Errors</dt><dd class="font-display text-2xl">{affiliateReport.errorCount}</dd></div>
       </dl>
+      <div class="border-t border-bone mt-8 pt-8">
+        <h3 class="font-display text-xl font-medium">Recommendation lifecycle baseline</h3>
+        <p class="text-sm text-ink-soft mt-1">Legacy destinations are not treated as vetted products. They remain queued until product evidence, weaknesses, alternatives, audience fit, and human editorial approval exist.</p>
+        <dl class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+          <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Product mapping queue</dt><dd class="font-display text-2xl">{affiliateLifecycle.queues.researchAndProductMapping.length}</dd></div>
+          <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Need review first</dt><dd class="font-display text-2xl">{affiliateLifecycle.queues.needReviewBeforeResearch.length}</dd></div>
+          <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Approved recommendations</dt><dd class="font-display text-2xl">{affiliateLifecycle.counts.approvedRecommendations}</dd></div>
+          <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Account verification</dt><dd class="font-display text-2xl">{affiliateLifecycle.queues.ownerAccountVerification.length}</dd></div>
+        </dl>
+        <div class="overflow-x-auto mt-5"><table class="w-full border-collapse text-left text-sm">
+          <thead><tr class="border-b border-bone"><th class="p-3">Merchant</th><th class="p-3">Account evidence</th><th class="p-3">Offers</th><th class="p-3">Gate</th></tr></thead>
+          <tbody>{affiliateLifecycle.merchantRollup.map((merchant) => <tr class="border-b border-bone"><td class="p-3 font-medium">{merchant.merchantName}</td><td class="p-3 font-mono text-xs">{merchant.accountState}</td><td class="p-3">{merchant.offerCount}</td><td class="p-3">{merchant.ownerActionRequired ? 'Owner verification required' : 'Existing-link evidence only'}</td></tr>)}</tbody>
+        </table></div>
+      </div>
       {unreferencedAffiliateLinks.length > 0 && (
         <div class="mt-6">
           <h3 class="font-display text-lg font-medium">Unreferenced inventory candidates</h3>
