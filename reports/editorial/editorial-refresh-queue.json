@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-07-18",
+  "inventory_sha256": "099819c8f833b7bb1851792fbf7d69322375a6a47781ee93acc9aaeabd3ef284",
+  "policy": {
+    "refresh_months": 18,
+    "source_reference_scope": "literal contextual references only; generated hub links require emitted-artifact evidence",
+    "automatic_redirects": false,
+    "automatic_deletions": false,
+    "traffic_data_included": false,
+    "decommission_requires": [
+      "live traffic below reviewed threshold",
+      "emitted incoming-link audit",
+      "human supersession review"
+    ]
+  },
+  "summary": {
+    "live_articles": 804,
+    "refresh_due": 0,
+    "fact_check_due": 0,
+    "refresh_due_without_explicit_source_reference": 0,
+    "affiliate_link_review": 72
+  },
+  "items": [],
+  "next_refreshes": [
+    {
+      "route": "/game/first-practice-plan/",
+      "refresh_due_at": "2027-07-05",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/the-first-parent-email-of-the-season/",
+      "refresh_due_at": "2027-07-06",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/5-year-old-glove/",
+      "refresh_due_at": "2027-07-07",
+      "contains_affiliate_redirect": true
+    },
+    {
+      "route": "/drive-home/the-5-to-7-meltdown-after-a-strikeout/",
+      "refresh_due_at": "2027-07-08",
+      "contains_affiliate_redirect": true
+    },
+    {
+      "route": "/drive-there/the-pre-game-conversation-isnt-strategy/",
+      "refresh_due_at": "2027-07-08",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/game/rec-ball-5-7/",
+      "refresh_due_at": "2027-07-10",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/game/tee-ball-strikeouts/",
+      "refresh_due_at": "2027-07-12",
+      "contains_affiliate_redirect": true
+    },
+    {
+      "route": "/drive-there/the-group-chat-rule-that-ends-midnight-texts/",
+      "refresh_due_at": "2027-07-13",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/game/8-10-practice/",
+      "refresh_due_at": "2027-07-16",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/8-10-cleat-conversation/",
+      "refresh_due_at": "2027-07-19",
+      "contains_affiliate_redirect": true
+    },
+    {
+      "route": "/game/talking-to-a-parent-coaching-from-the-stands/",
+      "refresh_due_at": "2027-07-20",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/8-10-travel-pitch/",
+      "refresh_due_at": "2027-07-22",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/used-vs-new-gear-the-actual-math/",
+      "refresh_due_at": "2027-07-22",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/when-your-kid-outgrows-cleats-mid-season/",
+      "refresh_due_at": "2027-07-23",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/team-fun-versus-not-doing-things-you-dont-want-to-do/",
+      "refresh_due_at": "2027-07-24",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/game/8-10-mercy-rule/",
+      "refresh_due_at": "2027-07-24",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/packing-food-for-the-travel-weekend/",
+      "refresh_due_at": "2027-07-25",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-there/the-team-hotel-opt-out/",
+      "refresh_due_at": "2027-07-26",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-home/quitting-travel-how-to-do-it-cleanly/",
+      "refresh_due_at": "2027-07-27",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-home/when-a-parent-emails-about-playing-time/",
+      "refresh_due_at": "2027-07-27",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-home/when-you-cant-afford-travel/",
+      "refresh_due_at": "2027-07-28",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/game/11-12-tune-up/",
+      "refresh_due_at": "2027-07-28",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-home/the-11-year-old-whos-not-ready-for-travel/",
+      "refresh_due_at": "2027-07-29",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-home/when-the-rec-team-is-better-than-the-travel-team/",
+      "refresh_due_at": "2027-07-30",
+      "contains_affiliate_redirect": false
+    },
+    {
+      "route": "/drive-home/travel-team-politics-the-playing-time-formula/",
+      "refresh_due_at": "2027-07-31",
+      "contains_affiliate_redirect": false
+    }
+  ]
+}

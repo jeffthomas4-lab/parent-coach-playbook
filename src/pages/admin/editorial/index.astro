@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { isLive } from '../../../lib/publishFilter';
+import refreshQueue from '../../../../reports/editorial/editorial-refresh-queue.json';
 
 export const prerender = true;
 
@@ -126,6 +127,22 @@ const statusColor: Record<string, string> = {
           <p class="font-display italic text-ink-soft text-xs font-medium">Needs revision</p>
           <p class="font-display text-ink text-2xl mt-1 font-medium">{needsRevision}</p>
         </div>
+      </div>
+
+      <div class="mt-6 border border-bone bg-paper-warm p-4" data-refresh-summary>
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 class="font-display text-ink text-lg font-medium">18-month refresh queue</h2>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Snapshot {refreshQueue.as_of}</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Live articles</p><p class="font-display text-ink text-xl font-medium">{refreshQueue.summary.live_articles}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Refresh due</p><p class="font-display text-ink text-xl font-medium">{refreshQueue.summary.refresh_due}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Fact check due</p><p class="font-display text-ink text-xl font-medium">{refreshQueue.summary.fact_check_due}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Affiliate review set</p><p class="font-display text-ink text-xl font-medium">{refreshQueue.summary.affiliate_link_review}</p></div>
+        </div>
+        <p class="font-display text-ink-soft text-xs mt-3 leading-relaxed">
+          This queue never redirects or deletes content. Decommissioning still requires reviewed live traffic, an emitted-link audit, supersession evidence, and a human decision.
+        </p>
       </div>
 
       <!-- Filter bar -->

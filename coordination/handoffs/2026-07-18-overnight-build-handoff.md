@@ -20,6 +20,11 @@ production data mutation.
   verification methodology (`cf8f8a0`, `ecb125e`, `6d3ab2a`), plus stable
   Organization/WebSite/author/publisher identifiers across shared Article
   variants while preserving the default-off Person reveal.
+- Editorial operations: a deterministic 18-month refresh snapshot covers 804
+  currently live articles, excludes drafts and scheduled content, records
+  fact-check and affiliate-review context, and surfaces aggregate status on
+  the protected editorial desk. Redirects and deletions remain human-gated and
+  require live traffic plus emitted-link evidence.
 - Search and discovery: expanded live-404 contract, fail-closed camp sitemap,
   Worker-first sitemap routing, trusted local camp filters, and a release-gated
   emitted public-link contract that repaired retired phase paths and missing
@@ -58,7 +63,7 @@ production data mutation.
   `08e6647`). Staging and production smoke receipts are now retained with
   detached SHA-256 sidecars verified before upload.
 
-Latest clean validation before this handoff: 157 test files / 797 tests passed.
+Latest clean validation before this handoff: 158 test files / 800 tests passed.
 Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints. The
 agent-token rollout contract passes its focused 3 files / 8 tests and the
 committed pending packet passes its standalone release check.

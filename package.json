@@ -53,6 +53,8 @@
     "check:customer-artifact": "node scripts/check-customer-artifact.mjs",
     "check:affiliates": "node scripts/check-affiliate-inventory.mjs",
     "report:affiliates": "node scripts/check-affiliate-inventory.mjs --report",
+    "report:editorial-refresh": "node scripts/editorial-refresh-queue.mjs",
+    "check:editorial-refresh": "node scripts/editorial-refresh-queue.mjs --check",
     "check:newsletter-proof": "node scripts/newsletter-provider-proof.mjs coordination/release-evidence/newsletter-provider-proof-pending.json",
     "check:social-stage": "node scripts/check-social-stage.mjs",
     "check:agent-token-rollout": "node scripts/agent-token-rollout-evidence.mjs",
@@ -64,7 +66,7 @@
     "recovery:manifest": "node scripts/build-recovery-batch-manifest.mjs",
     "drill:staging-notification": "node scripts/run-staging-notification-drill.mjs --confirm",
     "audit:gate": "npm audit --audit-level=high",
-    "ci:release": "npm run audit:gate && npm run check:workflow-pins && npm run check:secrets && npm run check:protected-routes && npm run check:public-policy && npm run check:coverage && npm run check:directory-remediation && npm run check:public-intake && npm run check:affiliates && npm run check:newsletter-proof && npm run check:social-stage && npm run check:agent-token-rollout && npm run check:root-organization && npm run check:backup-proving-log && npm run check:release-evidence && npm run check:rollback-target && npm run check:recovery-tabletop && npm run check:failure-isolation && npm run check:access-evidence && npm run check:trust-migration-rehearsal && npm run check:production-schema-compatibility && npm run check:staging-pcd-ops-rehearsal && npm run check:production-manifest && npm run check:built-links && npm run check:customer-artifact && npm run test:integration && npm run check"
+    "ci:release": "npm run audit:gate && npm run check:workflow-pins && npm run check:secrets && npm run check:protected-routes && npm run check:public-policy && npm run check:coverage && npm run check:directory-remediation && npm run check:public-intake && npm run check:affiliates && npm run check:editorial-refresh && npm run check:newsletter-proof && npm run check:social-stage && npm run check:agent-token-rollout && npm run check:root-organization && npm run check:backup-proving-log && npm run check:release-evidence && npm run check:rollback-target && npm run check:recovery-tabletop && npm run check:failure-isolation && npm run check:access-evidence && npm run check:trust-migration-rehearsal && npm run check:production-schema-compatibility && npm run check:staging-pcd-ops-rehearsal && npm run check:production-manifest && npm run check:built-links && npm run check:customer-artifact && npm run test:integration && npm run check"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.3",
