@@ -1,0 +1,30 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { env as cfEnv } from 'cloudflare:workers';
+import { requireAdmin } from '../../lib/admin-auth';
+import { relationshipMetrics, validateRelationshipRegistry, type RelationshipRecord } from '../../lib/relationship-governance';
+import registry from '../../../automation/trusted-relationships-v1.json';
+
+export const prerender = false;
+const env = cfEnv as { ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+const errors = validateRelationshipRegistry(registry);
+const records = registry.records as RelationshipRecord[];
+const metrics = relationshipMetrics(records);
+---
+<AdminLayout title="Trusted relationships" description="Read-only research candidates and human-gated relationship evidence" email={auth.email}>
+  <section class="border-b border-bone"><div class="container-px py-10">
+    <p class="font-display italic text-rust mb-2">Admin · Relationships</p><h1 class="font-display text-ink text-4xl font-medium">Trusted relationship registry</h1>
+    <p class="font-display text-ink-soft mt-4 max-w-3xl">Research candidates are not relationships. This page cannot contact anyone, approve outreach, or turn a citation into an endorsement.</p>
+  </div></section>
+  <section class="container-px py-8">
+    {errors.length > 0 && <div class="border border-red-700 p-4 text-red-800">Registry invalid; relationship claims are unavailable.</div>}
+    <dl class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-8">{Object.entries(metrics).map(([key, value]) => <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">{key}</dt><dd class="font-display text-2xl">{value}</dd></div>)}</dl>
+    <div class="grid gap-4">{records.map((record) => <article class="border border-bone bg-paper p-5">
+      <div class="flex flex-wrap justify-between gap-3"><h2 class="font-display text-xl font-medium">{record.organization_name}</h2><span class="font-mono text-xs uppercase">{record.stage}</span></div>
+      <p class="mt-2 text-ink-soft">{record.notes}</p>
+      <p class="font-mono text-xs mt-3"><a href={record.source_url} rel="noreferrer" class="text-rust hover:underline">Public research source</a> · next review {record.next_review_on ?? 'not scheduled'} · human review {record.last_human_review_at ?? 'not completed'}</p>
+    </article>)}</div>
+  </section>
+</AdminLayout>

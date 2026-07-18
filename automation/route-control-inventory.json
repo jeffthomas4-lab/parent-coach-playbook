@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 137,
+  "route_count": 138,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -200,6 +200,16 @@
         "GET"
       ],
       "source": "admin/preview/[collection]/[slug].astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/relationships",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/relationships.astro",
       "cache_class": "admin_preview",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null

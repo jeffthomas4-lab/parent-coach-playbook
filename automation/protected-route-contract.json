@@ -12,6 +12,7 @@
     { "source": "src/pages/admin/index.astro", "control": "app-auth" },
     { "source": "src/pages/admin/link-health/index.astro", "control": "app-auth" },
     { "source": "src/pages/admin/operations.astro", "control": "app-auth" },
+    { "source": "src/pages/admin/relationships.astro", "control": "app-auth" },
     { "source": "src/pages/admin/preview/[collection]/[slug].astro", "control": "access-only" },
     { "source": "src/pages/admin/reviews/index.astro", "control": "app-auth" },
     { "source": "src/pages/admin/retention.astro", "control": "app-auth" },

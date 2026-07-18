@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-18T00:00:00.000Z",
+  "claim_boundary": "A registry entry is a research candidate, not proof of a relationship, endorsement, permission to contact, or approval to publish.",
+  "records": [
+    {
+      "id": "little-league-international",
+      "organization_name": "Little League International",
+      "relationship_type": "governing_body",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://www.littleleague.org/",
+      "source_basis": "Existing first-party cost-calculator source registry",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
+    },
+    {
+      "id": "ncaa",
+      "organization_name": "National Collegiate Athletic Association",
+      "relationship_type": "governing_body",
+      "stage": "identified",
+      "relationship_claim": false,
+      "source_url": "https://www.ncaa.org/",
+      "source_basis": "Existing first-party editorial and cost-calculator source registry",
+      "last_human_review_at": null,
+      "next_review_on": "2026-08-01",
+      "outreach_approved": false,
+      "contact_attempted": false,
+      "notes": "Research candidate only. No outreach draft or contact authority."
+    }
+  ]
+}

@@ -477,3 +477,9 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Implemented locally:** the protected read-only operations dashboard now exposes verified-listing coverage, distinct cited source domains, oldest/latest recorded verification review, and an explicit evidence-based confidence basis. Trust metrics now include resolved correction cases, corrections actually applied, and the latest correction resolution time.
 - **Verified locally:** focused operations and failure-isolation coverage passes 2 files / 9 tests; Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing hints.
 - **Claim boundary:** metrics are computed from directory and protected trust records. No public unexplained confidence score was added, no correction content or requester identity is exposed, and no remote database was queried or changed.
+# 2026-07-18 - trusted relationship research registry
+
+- **Implemented locally:** a protected, read-only relationship workspace now distinguishes public-source research candidates from actual relationships. The versioned registry requires HTTPS evidence, blocks relationship claims before an active stage, blocks contact attempts without human outreach approval, enforces inert do-not-contact state, and rejects direct email/phone/credential fields.
+- **Current honest state:** two existing first-party source references (Little League International and NCAA) are classified as unreviewed research candidates. Both show zero outreach approval, zero contact attempts, and zero claimed active relationships.
+- **Verified locally:** the protected-route contract covers 38 routes; focused relationship, protected-route, and generated route-inventory coverage passes 2 files / 7 tests; Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing hints.
+- **External boundary:** no relationship, endorsement, contact identity, outreach draft, message, account, or external mutation was created.
