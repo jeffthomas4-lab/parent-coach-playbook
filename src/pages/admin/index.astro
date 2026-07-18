@@ -2,6 +2,7 @@
 import AdminLayout from '../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
+import affiliateReport from '../../../reports/affiliate/inventory.json';
 
 // SSR so the desk landing can show the signed-in Access identity and offer a
 // Log out control. Access already gates every /admin route; requireAdmin also
@@ -13,6 +14,7 @@ const env = cfEnv as { ADMIN_EMAILS?: string } | undefined;
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
 const adminEmail = auth.email;
+const unreferencedAffiliateLinks = affiliateReport.links.filter((link) => link.sources.length === 0);
 
 const sections = [
   {
@@ -102,6 +104,39 @@ const sections = [
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <section class="border-t border-bone bg-paper-warm">
+    <div class="container-px py-10">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="font-display italic text-rust font-medium">Affiliate editorial inventory</p>
+          <h2 class="font-display text-ink text-2xl mt-1 font-medium">Destination coverage snapshot</h2>
+          <p class="font-display text-ink-soft mt-2 max-w-3xl text-sm leading-snug">Read-only build evidence from the release-gated inventory. Update destinations in <code>src/data/affiliates.json</code> and placements in reviewed content; this desk cannot activate an account, change a destination, or publish a link.</p>
+        </div>
+        <p class="font-mono text-xs text-ink-soft">{affiliateReport.errorCount === 0 ? 'Inventory contract passing' : `${affiliateReport.errorCount} blocking errors`}</p>
+      </div>
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+        <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Destinations</dt><dd class="font-display text-2xl">{affiliateReport.inventoryCount}</dd></div>
+        <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Referenced</dt><dd class="font-display text-2xl">{affiliateReport.referencedCount}</dd></div>
+        <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Unreferenced</dt><dd class="font-display text-2xl">{affiliateReport.unreferencedCount}</dd></div>
+        <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">Errors</dt><dd class="font-display text-2xl">{affiliateReport.errorCount}</dd></div>
+      </dl>
+      {unreferencedAffiliateLinks.length > 0 && (
+        <div class="mt-6">
+          <h3 class="font-display text-lg font-medium">Unreferenced inventory candidates</h3>
+          <p class="text-sm text-ink-soft mt-1">These are not automatically approved for placement. Confirm reader need, disclosure position, destination accuracy, and editorial fit first.</p>
+          <ul class="grid md:grid-cols-2 gap-2 mt-3">
+            {unreferencedAffiliateLinks.map((link) => (
+              <li class="border border-bone bg-paper px-4 py-3">
+                <p class="font-mono text-sm text-ink">{link.slug}</p>
+                <p class="font-mono text-xs text-ink-soft mt-1">{link.retailer} · {link.destinationHost} · {link.campaign}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   </section>
 </AdminLayout>
