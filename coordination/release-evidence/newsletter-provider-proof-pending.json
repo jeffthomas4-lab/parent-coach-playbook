@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "state": "pending",
+  "form_url": "https://parent-coach-playbook.kit.com/4b28f916b5",
+  "observed_at": null,
+  "test_run_id": null,
+  "provider_receipt_reference": null,
+  "consent_notice_observed": false,
+  "confirmation_verified": false,
+  "welcome_delivery_verified": false,
+  "unsubscribe_verified": false,
+  "suppression_verified": false,
+  "failure_handling_verified": false,
+  "redirect_verified": false,
+  "approved_by": null,
+  "contains_subscriber_data": false,
+  "contains_secret_material": false,
+  "external_changes": []
+}
