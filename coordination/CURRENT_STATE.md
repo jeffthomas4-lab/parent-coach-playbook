@@ -1,5 +1,11 @@
 # Current State
 
+## 2026-07-18 — evidence-based coaching-tip HowTo schema
+
+- **Implemented locally:** coaching-tip `HowTo` JSON-LD now uses the numbered instructions visibly published under each article's `How to run it` section. Markdown presentation syntax and link destinations are removed from step text; extraction stops at the next visible section.
+- **Truthfulness boundary:** tips without that section or with fewer than two real instructions emit no `HowTo` claim. The former generic one-step `Run the drill` claim and its invented step URL were removed.
+- **Verified locally:** focused Vitest coverage passes (1 file / 3 tests), and `astro check` completes with 0 errors and 0 warnings (existing hints remain). No deployment, external validation, content mutation, or production action occurred.
+
 ## 2026-07-17 (session 2) — worktree repair, code hardening, and gate-progress update
 
 - **Repaired:** the corrupted working tree (48 truncated files restored in place from HEAD; 8 genuine edits preserved). `check:release-evidence` and `check:secrets` pass again. Commit is a Windows-host step (git write fails over the cloud bridge).
