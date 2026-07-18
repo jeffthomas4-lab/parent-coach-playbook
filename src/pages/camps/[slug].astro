@@ -5,6 +5,7 @@ import { SPORTS, BUYING_GUIDES, CAMP_SPORTS, SITE } from '../../data/site';
 import { featureEnabled } from '../../lib/feature-flags';
 import { serializeJsonLd } from '../../lib/jsonld';
 import { CAMP_VERIFICATION_REVIEW_DAYS, campFreshnessLabel, campVerificationFreshness } from '../../lib/camp-freshness';
+import { buildCampEventSchema } from '../../lib/camp-event-schema';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR — pulls live from D1 each request, but cached at the edge for 1 hour
@@ -281,33 +282,12 @@ const campOgImage = camp
 // call for pricing), not a clean number, and Article Layout's own
 // convention here is not to assert structured data we're not sure of --
 // lying to Google about a price is worse than omitting it.
-const eventSchema = camp ? {
-  '@context': 'https://schema.org',
-  '@type': 'Event',
-  name: camp.name,
-  // Omit rather than emit null. schema.org Event requires a real startDate;
-  // `startDate: null` is invalid markup and worse than no date field, same
-  // discipline as the omitted `offers` block below.
-  ...(camp.start_date ? { startDate: camp.start_date } : {}),
-  ...(camp.end_date ? { endDate: camp.end_date } : {}),
-  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-  eventStatus: 'https://schema.org/EventScheduled',
-  description: camp.description ? camp.description.slice(0, 500) : `${sportPretty} camp${camp.age_known === 1 ? ` for ages ${camp.age_min}-${camp.age_max}` : ''} in ${camp.city}, ${camp.state}.`,
-  location: {
-    '@type': 'Place',
-    name: camp.name,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: camp.address,
-      addressLocality: camp.city,
-      addressRegion: camp.state,
-      postalCode: camp.zip,
-      addressCountry: 'US',
-    },
-  },
-  ...(camp.hero_photo_key ? { image: [`${SITE.url}/camp-photos/${camp.hero_photo_key}`] } : {}),
-  organizer: { '@type': 'Organization', name: camp.name, ...(websiteHref ? { url: websiteHref } : {}) },
-} : null;
+// Legacy approved rows can still lack dates or a complete address. Do not
+// publish a partial Event claim for them. The builder also omits organizer:
+// the directory has a program name and organization URL, but not a separately
+// verified organization name, so treating the program as its own organizer
+// would invent an entity relationship.
+const eventSchema = camp ? buildCampEventSchema(camp, { siteUrl: SITE.url, sportLabel: sportPretty }) : null;
 
 const campStateName = camp ? (STATE_NAMES_BY_CODE[camp.state] ?? camp.state) : undefined;
 const campBreadcrumbSchema = camp ? {

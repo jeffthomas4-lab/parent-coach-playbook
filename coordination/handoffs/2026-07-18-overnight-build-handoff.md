@@ -32,7 +32,9 @@ production data mutation.
 - Camps provenance: evidence-grade source requirements and governed review
   state before a listing can be represented as verified (`ddcc887`), plus a
   public 90-day current/due/unavailable freshness label that preserves the
-  distinction between historical verification and current facts.
+  distinction between historical verification and current facts. Camp Event
+  schema now fails closed on missing/invalid dates or incomplete locations and
+  omits unverified organizer and commerce claims.
 - Demand intelligence: privacy-minimized reporting, retention boundaries, and
   content-coverage opportunity scoring (`a6fe763`, `e7685b5`), plus default-off
   camp-directory search/filter events that discard precise location before the
@@ -64,7 +66,7 @@ production data mutation.
   `08e6647`). Staging and production smoke receipts are now retained with
   detached SHA-256 sidecars verified before upload.
 
-Latest clean validation before this handoff: 159 test files / 803 tests passed.
+Latest clean validation before this handoff: 160 test files / 806 tests passed.
 Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints. The
 agent-token rollout contract passes its focused 3 files / 8 tests and the
 committed pending packet passes its standalone release check.

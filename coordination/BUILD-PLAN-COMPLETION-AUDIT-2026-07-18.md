@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 159 files / 803 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS — 160 files / 806 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -28,6 +28,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Live 404 audit coverage | Implemented and verified | `2f85417` expands the bounded live audit and fails loudly on bad coverage. |
 | Emitted internal-link integrity | Implemented and verified | Six retired-phase links were repaired, Wrestling gained its missing canonical hub, generic Lacrosse rules now route to both supported hubs, and `ci:release` fails on unresolved public root-relative targets in the built artifact. |
 | Camp sitemap correctness | Implemented and verified locally | `5255939` fails closed on empty/unavailable supply; `d2b914b` routes it through the Worker-first deployment shape. Live population awaits deployment. |
+| Camp Event structured data | Corrected and verified locally | Event JSON-LD now requires valid ordered dates and a complete postal location, omits unverified organizer and commerce claims, and fails closed for incomplete legacy rows rather than emitting misleading partial schema. |
 | Demand privacy and reporting | Implemented and verified | `a6fe763` adds governed demand reporting; `e7685b5` joins minimized demand signals to content coverage and opportunity scoring. |
 | Affiliate integrity | Implemented and verified locally | `371cce5` validates the destination inventory; `b2461d7` makes it a release gate. Consent-gated `/go/{slug}/` click intent records only the governed slug, and the existing protected admin desk exposes aggregate coverage plus unreferenced editorial candidates without retailer URLs or mutations. Latest recorded inventory: 245 destinations, 236 referenced, 0 errors. Network applications and runtime analytics proof remain external. |
 | Camp discovery | Implemented and verified locally | `cec8d0c` adds verified/open/age/date/state/ZIP/radius filtering and visible verification dates. |
