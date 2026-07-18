@@ -3,7 +3,7 @@
 //
 // Shows aggregate search signals only. Individual events can contain sensitive
 // free text, including legacy rows collected before redaction was added.
-// Uses D1 binding `DB` — same binding used by the camps directory.
+// Uses the isolated PCD operations database. Raw event rows never render.
 // Wrap this route behind Cloudflare Access in production.
 
 export const prerender = false;
@@ -11,37 +11,23 @@ export const prerender = false;
 import AdminLayout from '../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
+import { listDemandOpportunities, type DemandOpportunity } from '../../lib/demand-reporting';
 
-const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string } | undefined;
 
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
 
-type TopQuery = {
-  query: string;
-  count: number;
-  avg_results: number | null;
-};
-
-let topQueries: TopQuery[] = [];
-let dbAvailable = !!env?.DB;
+let topQueries: DemandOpportunity[] = [];
+let dbAvailable = !!env?.PCD_OPS_DB;
 let tableReady = false;
 
-if (env?.DB) {
+if (env?.PCD_OPS_DB) {
   try {
-    // Top 20 by frequency
-    const topResult = await env.DB.prepare(
-      `SELECT query, COUNT(*) as count, ROUND(AVG(result_count), 0) as avg_results
-       FROM search_events
-       GROUP BY lower(query)
-       ORDER BY count DESC
-       LIMIT 20`
-    ).all<TopQuery>();
-    topQueries = topResult.results ?? [];
-
+    topQueries = await listDemandOpportunities(env.PCD_OPS_DB, new Date().toISOString());
     tableReady = true;
   } catch (e) {
-    // Table doesn't exist yet — migration 0010 hasn't been applied.
+    // The governed v1 table may not exist until its reviewed migration lands.
     console.error('[search-signals] D1 query failed:', e);
     tableReady = false;
   }
@@ -101,7 +87,8 @@ if (env?.DB) {
                   <th scope="col" class="pb-2 pr-6">#</th>
                   <th scope="col" class="pb-2 pr-6">Query</th>
                   <th scope="col" class="pb-2 pr-6">Searches</th>
-                  <th scope="col" class="pb-2">Avg results</th>
+                  <th scope="col" class="pb-2 pr-6">No results</th>
+                  <th scope="col" class="pb-2">Last seen</th>
                 </tr>
               </thead>
               <tbody>
@@ -109,10 +96,9 @@ if (env?.DB) {
                   <tr class="border-b border-bone hover:bg-paper-warm transition-colors">
                     <td class="py-2 pr-6 text-ink-soft">{i + 1}</td>
                     <td class="py-2 pr-6 text-ink font-medium">{row.query}</td>
-                    <td class="py-2 pr-6 text-ink">{row.count}</td>
-                    <td class="py-2 text-ink-soft">
-                      {row.avg_results !== null ? row.avg_results : '—'}
-                    </td>
+                    <td class="py-2 pr-6 text-ink">{row.searches}</td>
+                    <td class="py-2 pr-6 text-ink">{row.zero_result_searches}</td>
+                    <td class="py-2 text-ink-soft">{row.last_seen_at.slice(0, 10)}</td>
                   </tr>
                 ))}
               </tbody>

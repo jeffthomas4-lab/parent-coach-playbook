@@ -1,5 +1,11 @@
 # Current State
 
+## 2026-07-18 — governed demand-opportunity reporting slice
+
+- **Implemented locally:** `/admin/search-signals` now reads the same isolated `PCD_OPS_DB.demand_events_v1` model used by the default-off telemetry endpoint instead of the obsolete `DB.search_events` table. It renders aggregates only, excludes expired and likely-bot events, and prioritizes zero-result queries before overall frequency.
+- **Privacy boundary:** the dashboard does not fetch or expose event IDs, user agents, referrers, IP addresses, or raw event rows. Collection remains default-off and still requires an explicit bounded retention value and separate activation approval.
+- **Verified by tests:** focused reporting tests cover the SQL privacy/retention contract, binding parameters, result mapping, and input bounds. Live telemetry activation and customer-data collection did not occur.
+
 ## 2026-07-18 — camp sitemap blackout fail-closed response
 
 - **Implemented locally:** the D1-backed camp sitemap now returns retryable HTTP 503 with `Cache-Control: no-store` and `Retry-After: 3600` when it cannot produce any approved current/future camp URLs. A populated sitemap remains HTTP 200 with a bounded five-minute cache.
