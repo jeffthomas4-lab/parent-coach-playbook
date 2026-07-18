@@ -555,3 +555,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Implemented locally:** the protected operations status now reports aggregate counts for current and due verification reviews and separately detects missing, invalid, and future-dated verification timestamps. Future or invalid evidence makes the directory-quality component fail instead of being counted as current.
 - **Verified locally:** focused operations/freshness coverage passes 2 files / 11 tests; the complete suite passes 153 files / 786 tests; Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints.
 - **Data boundary:** this is a read-only aggregate over the existing directory binding. It exposes no provider contact data, performs no automatic reverification or badge removal, and does not claim the production backlog has been observed until the protected dashboard runs against live D1.
+# 2026-07-18 - continuous exact-duplicate candidate visibility
+
+- **Implemented locally:** the protected directory-quality aggregate now reports excess approved records sharing the same normalized name, city, state, address, and session dates. Any candidate degrades the component and creates an operator-visible cleanup signal.
+- **Verified locally:** focused operations coverage passes 1 file / 9 tests and the complete suite passes 153 files / 787 tests.
+- **Safety boundary:** this is a conservative read-only candidate count, not proof that two programs are duplicates. It performs no merge, rejection, suppression, rank change, or deletion; an operator must inspect source evidence and distinct-session context before acting. Live candidate counts remain unobserved until the protected dashboard queries production D1.
