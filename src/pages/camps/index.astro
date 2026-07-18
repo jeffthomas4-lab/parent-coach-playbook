@@ -5,6 +5,7 @@ import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps
 import { CAMP_SPORTS } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../lib/jsonld';
+import { campFreshnessLabel, campVerificationFreshness } from '../../lib/camp-freshness';
 
 const sportLabel = (slug: string): string => {
   const match = CAMP_SPORTS.find((s) => s.slug === slug);
@@ -70,13 +71,14 @@ const escHtml = (s: unknown) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const ageLabel = (c: Camp) => c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided';
+const verificationLabel = (c: Camp) => campFreshnessLabel(campVerificationFreshness(c.verified, c.last_verified_at));
 
 const renderCardHtml = (c: Camp): string => {
   const photo = c.hero_photo_key
     ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
-    ? `<span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>`
+    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing, ${escHtml(verificationLabel(c))}; read the verification methodology">Verified ✓ · ${escHtml(verificationLabel(c))}</a>`
     : '';
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
@@ -93,7 +95,7 @@ const renderFeaturedCardHtml = (c: Camp): string => {
     ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
-    ? `<span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>`
+    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing, ${escHtml(verificationLabel(c))}; read the verification methodology">Verified ✓ · ${escHtml(verificationLabel(c))}</a>`
     : '';
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
@@ -123,6 +125,7 @@ const campsLite = camps.map(c => ({
   state: c.state,
   day_or_overnight: c.day_or_overnight,
   spots_status: c.spots_status,
+  verified: c.verified,
   program_type: c.program_type,
   latitude: c.latitude,
   longitude: c.longitude,
@@ -240,7 +243,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
           ></div>
 
           {/* Filter Bar */}
-          <div class="mb-8 border border-bone bg-paper-warm p-6">
+          <div id="camp-filters" class="mb-8 border border-bone bg-paper-warm p-6">
             <div class="flex flex-wrap items-end gap-4 mb-6">
               {/* Search by name */}
               <div>
@@ -326,6 +329,14 @@ const itemListSchema = featuredCamps.length > 0 ? {
                 </div>
               </div>
 
+              <div>
+                <p class="font-display italic text-rust text-xs mb-2 font-medium">Trust & availability</p>
+                <div class="flex gap-2">
+                  <button type="button" id="filter-verified-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Verified only</button>
+                  <button type="button" id="filter-open-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Open only</button>
+                </div>
+              </div>
+
               {/* State Dropdown */}
               <div>
                 <label for="filter-state" class="font-display italic text-rust text-xs block mb-2 font-medium">State</label>
@@ -404,6 +415,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
     import 'leaflet.markercluster';
     import 'leaflet.markercluster/dist/MarkerCluster.css';
     import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+    import { buildCampDemandPayload } from '../../lib/camp-demand';
 
     // Self-contained inline-SVG pin. The prior fix imported Leaflet's default
     // marker PNGs and pointed L.Icon.Default at them, but pins still didn't
@@ -442,6 +454,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
         state: string;
         day_or_overnight: string;
         spots_status: string;
+        verified: 0 | 1;
         program_type: string | null;
         latitude: number | null;
         longitude: number | null;
@@ -513,6 +526,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
         zipRadius: number;
         showLeagues: boolean;
         showFull: boolean;
+        verifiedOnly: boolean;
+        openOnly: boolean;
       }
       let state: FilterState = {
         search: '',
@@ -528,11 +543,30 @@ const itemListSchema = featuredCamps.length > 0 ? {
         zipRadius: 10,
         showLeagues: false,
         showFull: false,
+        verifiedOnly: false,
+        openOnly: false,
       };
 
       let map: L.Map | null = null;
       let clusterGroup: L.MarkerClusterGroup | null = null;
       let visibleCamps: LiteCamp[] = [];
+      let demandTimer: ReturnType<typeof setTimeout> | undefined;
+
+      // Default-off at the endpoint. The client sends only the minimized
+      // payload returned by buildCampDemandPayload; precise location state is
+      // deliberately used for filtering and discarded before this boundary.
+      function scheduleDemandEvent() {
+        if (demandTimer) clearTimeout(demandTimer);
+        demandTimer = setTimeout(() => {
+          const payload = buildCampDemandPayload(state, visibleCamps.length);
+          if (!payload) return;
+          fetch('/api/search-event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          }).catch(() => {});
+        }, 600);
+      }
 
       // Initialize map
       function initMap() {
@@ -564,7 +598,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
             const count = cluster.getChildCount();
             const size = count < 10 ? 'small' : count < 100 ? 'medium' : 'large';
             return L.divIcon({
-              html: `<span aria-label="${count} programs in this map area">${count}</span>`,
+              html: `<div><span aria-label="${count} programs in this map area">${count}</span></div>`,
               className: `marker-cluster marker-cluster-${size}`,
               iconSize: L.point(40, 40),
             });
@@ -641,6 +675,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
 
           // Hide full programs unless toggled on.
           if (c.spots_status === 'full' && !state.showFull) return false;
+          if (state.verifiedOnly && c.verified !== 1) return false;
+          if (state.openOnly && c.spots_status !== 'open') return false;
 
           // Free-text search across name, city, and description. Case-insensitive
           // substring match. Empty string matches everything.
@@ -815,6 +851,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
           const radiusVal = (document.getElementById('filter-radius') as unknown as HTMLSelectElement).value;
           state.zipRadius = radiusVal === 'all' ? Infinity : parseInt(radiusVal, 10);
           applyFilters();
+          scheduleDemandEvent();
         });
 
         // Clearing the zip input releases the radius filter immediately.
@@ -849,9 +886,21 @@ const itemListSchema = featuredCamps.length > 0 ? {
           applyFilters();
         });
 
+        (document.getElementById('filter-verified-only') as HTMLButtonElement).addEventListener('click', (e) => {
+          state.verifiedOnly = !state.verifiedOnly;
+          setToggleActive(e.currentTarget as HTMLElement, state.verifiedOnly);
+          applyFilters();
+        });
+
+        (document.getElementById('filter-open-only') as HTMLButtonElement).addEventListener('click', (e) => {
+          state.openOnly = !state.openOnly;
+          setToggleActive(e.currentTarget as HTMLElement, state.openOnly);
+          applyFilters();
+        });
+
         // Clear filters — resets to default which hides leagues + full programs.
         document.getElementById('clear-filters')!.addEventListener('click', () => {
-          state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false };
+          state = { search: '', sport: '', ageMin: null, ageMax: null, dateStart: '', dateEnd: '', dayOvernight: 'all', state: '', zipLat: null, zipLon: null, zipRadius: 10, showLeagues: false, showFull: false, verifiedOnly: false, openOnly: false };
           (document.getElementById('filter-search') as HTMLInputElement).value = '';
           (document.getElementById('filter-sport') as unknown as HTMLSelectElement).value = '';
           (document.getElementById('filter-age-min') as HTMLInputElement).value = '';
@@ -866,8 +915,18 @@ const itemListSchema = featuredCamps.length > 0 ? {
           if (allBtn) setToggleActive(allBtn, true);
           setToggleActive(document.getElementById('filter-show-leagues') as HTMLElement, false);
           setToggleActive(document.getElementById('filter-show-full') as HTMLElement, false);
+          setToggleActive(document.getElementById('filter-verified-only') as HTMLElement, false);
+          setToggleActive(document.getElementById('filter-open-only') as HTMLElement, false);
           applyFilters();
         });
+
+        // Delegation observes user-driven filter changes after each control's
+        // own handler updates state. Clear-all produces no event because the
+        // minimized payload builder returns null for an unfiltered directory.
+        const filterPanel = document.getElementById('camp-filters')!;
+        filterPanel.addEventListener('input', scheduleDemandEvent);
+        filterPanel.addEventListener('change', scheduleDemandEvent);
+        filterPanel.addEventListener('click', scheduleDemandEvent);
       }
 
       // Initial setup
@@ -895,6 +954,10 @@ const itemListSchema = featuredCamps.length > 0 ? {
       color: #FAF6EE;
       font-family: inherit;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
     }
   </style>
 
