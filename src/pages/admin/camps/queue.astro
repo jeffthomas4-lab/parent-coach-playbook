@@ -14,6 +14,7 @@ import {
 } from '../../../lib/camps-db';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { featureEnabled } from '../../../lib/feature-flags';
+import { formatCampDateRange, formatImportedAt } from '../../../lib/camps-display';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -82,14 +83,9 @@ const urlHealthTone: Record<string, string> = {
 };
 
 const fmt = (s: string) =>
-  new Date(s).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+  formatImportedAt(s);
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const fmtRange = (start: string, end: string) => {
-  const [, sm, sd] = start.split('-').map(Number);
-  const [ey, em, ed] = end.split('-').map(Number);
-  return `${MONTHS[sm - 1]} ${sd}–${MONTHS[em - 1]} ${ed}, ${ey}`;
-};
+const fmtRange = (start: string, end: string) => formatCampDateRange(start, end);
 ---
 
 <AdminLayout title="Admin queue" description="Unified moderation dashboard" email={adminEmail}>
