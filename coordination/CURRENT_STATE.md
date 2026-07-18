@@ -498,3 +498,9 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Implemented locally:** production now declares exactly four required runtime secret names (`AGENT_RUNS_TOKEN`, `BULK_IMPORT_TOKEN`, `CRON_KEY`, `GITHUB_TOKEN`) through Wrangler's value-free `secrets.required` contract. Wrangler validates presence before deploy; the generated production-manifest verifier independently rejects missing, extra, or changed names. Staging remains intentionally secret-optional.
 - **Verified locally:** focused deployment-authority and manifest coverage passes 2 files / 6 tests. An exact non-deploying production build preserved the required-secret declaration in the generated manifest and passed the production manifest verifier.
 - **External boundary:** secret values were not read, printed, changed, or stored. This control prevents a deploy with missing names; the first approved CI deployment still needs a before/after operational receipt.
+# 2026-07-18 - durable post-deploy smoke evidence
+
+- **Implemented locally:** staging and production smoke checks now cover homepage HTML, the camp directory, `/api/health`, `/api/ready`, a static asset, the non-mutating `HEAD /api/agent-runs` boundary, and the production Access redirect. Checks use only GET/HEAD and produce sanitized JSON receipts that retain no credentials or redirect locations.
+- **Workflow evidence:** successful staging receipts are retained for 30 days and production receipts for 90 days under SHA-addressed artifact names. Missing receipts fail the job; all upload actions remain commit-pinned.
+- **Verified locally:** focused smoke and deployment-workflow coverage passes 2 files / 6 tests, including staging's intentional token-absent 503 and failure on unsafe origins or unhealthy responses.
+- **External boundary:** this builds the evidence mechanism; it does not claim any deployment or post-deploy health observation occurred.
