@@ -1,5 +1,11 @@
 # Current State
 
+## 2026-07-18 — repository ownership and operator-entrypoint repair
+
+- **Verified in code:** the tracked root contains multiple runtime systems, three non-interchangeable migration lineages, generated evidence, archives, and many referenced historical root documents. A canonical placement policy now names the authority for current state, plans, handoffs, releases, approvals, and business priorities without pretending the legacy tree has already moved.
+- **Repaired locally:** the root README now identifies Astro 7 and Cloudflare Workers, points releases to `DEPLOYMENT-RUNBOOK.md`, points status to this ledger, and marks its old layout/Kit/status sections as historical. Two embedded NUL bytes were removed so future diffs are text-reviewable.
+- **Verified by tests:** the repository-structure contract passes 3 tests covering operator authority and the separation of `DB`, `PCD_OPS_DB`, and the legacy camps migrations. No file was deleted or bulk-moved, and no runtime or external state changed.
+
 ## 2026-07-18 — evidence-based coaching-tip HowTo schema
 
 - **Implemented locally:** coaching-tip `HowTo` JSON-LD now uses the numbered instructions visibly published under each article's `How to run it` section. Markdown presentation syntax and link destinations are removed from step text; extraction stops at the next visible section.
