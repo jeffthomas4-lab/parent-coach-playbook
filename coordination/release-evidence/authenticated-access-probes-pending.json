@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "state": "complete",
+  "state": "pending",
   "target_origin": "https://parentcoachdesk.com",
-  "contract_route_count": 38,
+  "contract_route_count": 48,
   "observed_at": "2026-07-18T17:00:00Z",
   "allowed_identity_class": "configured_admin",
   "denied_identity_class": "authenticated_non_admin",
