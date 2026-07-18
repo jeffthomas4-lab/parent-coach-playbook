@@ -63,15 +63,28 @@ export async function readOperationsStatus(env: {
                 SUM(CASE WHEN registration_url IS NOT NULL AND lower(registration_url) NOT LIKE 'https://%' THEN 1 ELSE 0 END) AS registration_url_non_https,
                 SUM(CASE WHEN source_domain IS NULL OR trim(source_domain) = '' THEN 1 ELSE 0 END) AS source_domain_missing,
                 SUM(CASE WHEN verified = 1 AND last_verified_at IS NULL THEN 1 ELSE 0 END) AS verified_without_timestamp,
+                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL THEN 1 ELSE 0 END) AS verified_with_evidence,
+                COUNT(DISTINCT CASE WHEN source_domain IS NOT NULL AND trim(source_domain) <> '' THEN lower(trim(source_domain)) END) AS distinct_source_domains,
+                MIN(CASE WHEN verified = 1 THEN last_verified_at END) AS oldest_verified_at,
+                MAX(CASE WHEN verified = 1 THEN last_verified_at END) AS latest_verified_at,
                 SUM(CASE WHEN url_last_checked_at IS NULL THEN 1 ELSE 0 END) AS url_never_checked
            FROM programs WHERE pcd_status = 'approved'`,
-      ).first<Record<string, number>>();
+      ).first<Record<string, number | string | null>>();
       const metric = (name: string) => Number(quality?.[name] ?? 0);
       const critical = metric('age_impossible') + metric('dates_reversed') + metric('negative_price') + metric('verified_without_timestamp');
       const incomplete = metric('age_missing') + metric('dates_missing') + metric('registration_url_missing') + metric('registration_url_non_https') + metric('source_domain_missing') + metric('url_never_checked');
+      const approved = metric('approved');
+      const verifiedWithEvidence = metric('verified_with_evidence');
+      const verificationCoveragePercent = approved > 0 ? Math.round((verifiedWithEvidence / approved) * 1000) / 10 : 0;
       const state: OperationalState = critical > 0 ? 'failing' : incomplete > 0 ? 'degraded' : 'healthy';
       components.push(result('Directory data quality', state, critical > 0 ? 'invalid_approved_data' : incomplete > 0 ? 'approved_data_incomplete' : 'approved_data_contract_passed', critical > 0 ? 'Approved listings contain impossible or unsupported truth claims.' : incomplete > 0 ? 'Approved listings have material completeness or freshness gaps.' : 'Approved listings pass the aggregate quality contract.', observedAt, {
-        approved: metric('approved'), age_missing: metric('age_missing'), age_impossible: metric('age_impossible'), dates_missing: metric('dates_missing'), dates_reversed: metric('dates_reversed'), negative_price: metric('negative_price'), registration_url_missing: metric('registration_url_missing'), registration_url_non_https: metric('registration_url_non_https'), source_domain_missing: metric('source_domain_missing'), verified_without_timestamp: metric('verified_without_timestamp'), url_never_checked: metric('url_never_checked'),
+        approved, age_missing: metric('age_missing'), age_impossible: metric('age_impossible'), dates_missing: metric('dates_missing'), dates_reversed: metric('dates_reversed'), negative_price: metric('negative_price'), registration_url_missing: metric('registration_url_missing'), registration_url_non_https: metric('registration_url_non_https'), source_domain_missing: metric('source_domain_missing'), verified_without_timestamp: metric('verified_without_timestamp'), url_never_checked: metric('url_never_checked'),
+        verified_with_evidence: verifiedWithEvidence,
+        verification_coverage_percent: verificationCoveragePercent,
+        distinct_source_domains: metric('distinct_source_domains'),
+        oldest_verified_at: (quality?.oldest_verified_at as string | null | undefined) ?? null,
+        latest_verified_at: (quality?.latest_verified_at as string | null | undefined) ?? null,
+        verification_confidence_basis: 'approved + HTTPS source + recorded human review',
       }));
     } catch {
       components.push(result('Directory data quality', 'unknown', 'quality_query_failed', 'Directory quality query failed.', observedAt));
@@ -116,19 +129,28 @@ export async function readOperationsStatus(env: {
   } else {
     try {
       const cases = await env.PCD_OPS_DB.prepare(
-        `SELECT COUNT(*) AS active,
-                SUM(CASE WHEN datetime(due_at) < datetime('now') THEN 1 ELSE 0 END) AS overdue,
-                SUM(CASE WHEN datetime(due_at) >= datetime('now') AND datetime(due_at) < datetime('now', '+72 hours') THEN 1 ELSE 0 END) AS due_72h,
-                SUM(CASE WHEN priority = 'urgent' THEN 1 ELSE 0 END) AS urgent,
-                MIN(submitted_at) AS oldest_submitted_at
-           FROM trust_cases WHERE status IN ('open', 'in_review')`,
-      ).first<{ active: number; overdue: number; due_72h: number; urgent: number; oldest_submitted_at: string | null }>();
+        `SELECT SUM(CASE WHEN status IN ('open', 'in_review') THEN 1 ELSE 0 END) AS active,
+                SUM(CASE WHEN status IN ('open', 'in_review') AND datetime(due_at) < datetime('now') THEN 1 ELSE 0 END) AS overdue,
+                SUM(CASE WHEN status IN ('open', 'in_review') AND datetime(due_at) >= datetime('now') AND datetime(due_at) < datetime('now', '+72 hours') THEN 1 ELSE 0 END) AS due_72h,
+                SUM(CASE WHEN status IN ('open', 'in_review') AND priority = 'urgent' THEN 1 ELSE 0 END) AS urgent,
+                MIN(CASE WHEN status IN ('open', 'in_review') THEN submitted_at END) AS oldest_submitted_at,
+                SUM(CASE WHEN category = 'listing_correction' AND status IN ('resolved', 'closed') THEN 1 ELSE 0 END) AS resolved_correction_cases,
+                SUM(CASE WHEN category = 'listing_correction' AND resolution_code = 'corrected' THEN 1 ELSE 0 END) AS corrections_applied,
+                MAX(CASE WHEN category = 'listing_correction' AND status IN ('resolved', 'closed') THEN resolved_at END) AS latest_correction_resolved_at
+           FROM trust_cases`,
+      ).first<{ active: number; overdue: number; due_72h: number; urgent: number; oldest_submitted_at: string | null; resolved_correction_cases: number; corrections_applied: number; latest_correction_resolved_at: string | null }>();
       const active = Number(cases?.active ?? 0);
       const overdueCount = Number(cases?.overdue ?? 0);
       const dueSoon = Number(cases?.due_72h ?? 0);
       const urgent = Number(cases?.urgent ?? 0);
       const state: OperationalState = overdueCount > 0 ? 'failing' : urgent > 0 || dueSoon > 0 ? 'degraded' : 'healthy';
-      components.push(result('Trust and rights case SLA', state, overdueCount > 0 ? 'trust_cases_overdue' : urgent > 0 ? 'urgent_trust_cases_open' : dueSoon > 0 ? 'trust_cases_due_soon' : 'trust_case_sla_clear', overdueCount > 0 ? 'One or more trust or rights cases are overdue.' : urgent > 0 || dueSoon > 0 ? 'Urgent or near-due trust cases require attention.' : 'No active trust case is urgent, near due, or overdue.', observedAt, { active, overdue: overdueCount, due_72h: dueSoon, urgent, oldest_submitted_at: cases?.oldest_submitted_at ?? null }));
+      components.push(result('Trust and rights case SLA', state, overdueCount > 0 ? 'trust_cases_overdue' : urgent > 0 ? 'urgent_trust_cases_open' : dueSoon > 0 ? 'trust_cases_due_soon' : 'trust_case_sla_clear', overdueCount > 0 ? 'One or more trust or rights cases are overdue.' : urgent > 0 || dueSoon > 0 ? 'Urgent or near-due trust cases require attention.' : 'No active trust case is urgent, near due, or overdue.', observedAt, {
+        active, overdue: overdueCount, due_72h: dueSoon, urgent,
+        oldest_submitted_at: cases?.oldest_submitted_at ?? null,
+        resolved_correction_cases: Number(cases?.resolved_correction_cases ?? 0),
+        corrections_applied: Number(cases?.corrections_applied ?? 0),
+        latest_correction_resolved_at: cases?.latest_correction_resolved_at ?? null,
+      }));
     } catch {
       components.push(result('Trust and rights case SLA', 'unknown', 'trust_case_query_failed', 'Trust-case aging query failed or the operational schema is not live.', observedAt));
     }
