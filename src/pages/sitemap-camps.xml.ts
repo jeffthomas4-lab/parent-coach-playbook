@@ -2,6 +2,7 @@ import { SITE } from '../data/site';
 import { listAllCampSlugsApproved } from '../lib/camps-db';
 import type { APIContext } from 'astro';
 import { env as cfEnv } from 'cloudflare:workers';
+import { campSitemapResponseMeta } from '../lib/sitemap-health';
 
 // SSR (on-demand) so approved camps from D1 appear in the sitemap at request
 // time. Deliberately imports NO content collections — keeping the 14 MiB Astro
@@ -37,5 +38,6 @@ ${campSlugs.map(c => `  <url>
   </url>`).join('\n')}
 </urlset>`;
 
-  return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
+  const responseMeta = campSitemapResponseMeta(campSlugs.length);
+  return new Response(xml, responseMeta);
 }

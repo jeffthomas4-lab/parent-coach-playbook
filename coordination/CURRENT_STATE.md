@@ -1,5 +1,11 @@
 # Current State
 
+## 2026-07-18 — camp sitemap blackout fail-closed response
+
+- **Implemented locally:** the D1-backed camp sitemap now returns retryable HTTP 503 with `Cache-Control: no-store` and `Retry-After: 3600` when it cannot produce any approved current/future camp URLs. A populated sitemap remains HTTP 200 with a bounded five-minute cache.
+- **Behavioral boundary:** this prevents an empty operational/data state from being published and cached as an authoritative successful sitemap. It does not restore camp supply, change any camp record, or prove how a search engine will react.
+- **Verified by tests:** three focused tests cover empty, populated, and invalid-count behavior. Deployment and live recovery evidence remain pending behind the protected release workflow.
+
 ## 2026-07-18 — full content crawl and camp-sitemap blackout evidence
 
 - **Confirmed live/read-only:** all 1,971 URLs in `sitemap-content.xml` returned 200 during a full crawl with zero timeouts, redirects, or 404/410 responses. This proves only the current content sitemap surface.
