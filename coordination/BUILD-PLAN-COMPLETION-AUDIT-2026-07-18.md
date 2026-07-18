@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 139 files / 749 tests |
+| Full Vitest suite | PASS — 142 files / 755 tests |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -33,6 +33,10 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Seasonal maintenance | Implemented and verified locally | `c47cdcb` prevents the site and cron sweep paths from reaching D1 or outbound writes during August–November or an explicit maintenance switch. Deployment remains gated. |
 | Agent-run secret distribution | Implemented as a secure caller contract | `4cd322d` adds allowlisted HEAD preflight and runtime-only token handling; `aa3ace7` wires all tracked skills to the client. Canary/runtime secret delivery remains owner-controlled. |
 | Distribution foundation | Implemented and verified locally | `99a6c91` enforces draft-only Pinterest staging, first-party measured links, credential exclusion, and a human publication gate. No account or post was created. |
+| Repository root ownership | Implemented and verified | `67504e0` classifies all 85 tracked root artifacts exactly once and makes unclassified root growth a release failure. |
+| Parent Coach Approved methodology | Implemented and verified locally | `ecb125e` publishes evidence, freshness, non-endorsement, correction, and commercial-separation rules for the existing Verified badge. |
+| Trust dashboard evidence | Implemented and verified locally | `a734e0a` adds verified coverage, distinct sources, review range, confidence basis, and correction outcome metrics without exposing requester data. |
+| Trusted relationships | Implemented as an inert research workflow | `926da5b` distinguishes candidates from actual relationships, gates outreach, enforces do-not-contact, and exposes a protected read-only workspace. `c0f79fc` proves all 38 protected routes redirect anonymously through Access. |
 | Evidence log | Updated | `79253ca` and `6fd3f7f` record the overnight slices and distribution/maintenance controls. |
 
 ## Requirement reconciliation
