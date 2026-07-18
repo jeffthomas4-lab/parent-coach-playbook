@@ -39,7 +39,7 @@ Two years at a JUCO, a real academic record, and continued development can make 
 
 **What "didn't get recruited" actually means at 17 or 18.** It usually means no D1 program built a scholarship offer around him by senior fall. It rarely means no college program anywhere wants him on a roster. Those are different sentences, and the first one is the one that gets said out loud at the dinner table.
 
-A JUCO coach, a D3 coach, or an NAIA coach looking for a role player is a real phone call away for most kids who've played varsity baseball. The outreach just has to go out. Nobody comes looking at this level. The [recruiting overview](/season-ops/baseball-recruiting-what-parents-need-to-know/) walks through how that direct-outreach process actually works if you haven't started it yet.
+A JUCO coach, a D3 coach, or an NAIA coach looking for a role player is a real phone call away for most kids who've played varsity baseball. The outreach just has to go out. Nobody comes looking at this level. The [recruiting overview](/drive-there/baseball-recruiting-what-parents-need-to-know/) walks through how that direct-outreach process actually works if you haven't started it yet.
 
 **The conversation with your kid.** Don't lead with the divisions and the transfer stats. Lead with what's true: he put in years of early mornings and cage work because he loves this game, and that's not undone by one recruiting cycle going quiet.
 

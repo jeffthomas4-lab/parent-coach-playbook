@@ -108,4 +108,4 @@ The kids will be fine in any of these configurations. Soccer and baseball. Just 
 
 Run the math at the start of every season. Not just the brochure version. The Sunday version. The labor version. The sibling version. The marriage version. If the math doesn't add up, drop something before the season starts, not in October when you are all already tired.
 
-[The tournament weekend that ate the family](/drive-home/the-tournament-weekend-that-ate-the-family/) is the related read. [The case for one sport per season](/drive-there/the-case-for-one-sport-per-season/) is the deeper argument for compressing the calendar.
+[The tournament weekend that ate the family](/drive-home/the-tournament-weekend-that-ate-the-family/) is the related read. [The case for one sport per season](/drive-home/the-case-for-one-sport-per-season/) is the deeper argument for compressing the calendar.

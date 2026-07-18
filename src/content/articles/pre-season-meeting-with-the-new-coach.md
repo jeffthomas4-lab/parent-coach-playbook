@@ -55,4 +55,4 @@ One thing they should know about your kid. Not a brag. A practical thing. _He's 
 
 That's the meeting. Twenty minutes. Done.
 
-[Texting the new coach](/game/texting-the-new-coach/) is the related communication piece.
+[Texting the new coach](/team-parent/texting-the-new-coach/) is the related communication piece.

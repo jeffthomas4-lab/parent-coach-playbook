@@ -78,4 +78,4 @@ You don't have to make the tournament about them. You do have to make sure the r
 
 The siblings who do best in athletic families are the ones who got the same number of dinner-table questions as the athlete. Not the same number of trophies. The same number of questions. That part is free.
 
-The [drive-home pieces](/drive-home/) cover the parent-side of post-game conversations. [The case for one sport per season](/drive-there/the-case-for-one-sport-per-season/) is partly an argument for keeping the family schedule survivable for everyone in it.
+The [drive-home pieces](/drive-home/) cover the parent-side of post-game conversations. [The case for one sport per season](/drive-home/the-case-for-one-sport-per-season/) is partly an argument for keeping the family schedule survivable for everyone in it.

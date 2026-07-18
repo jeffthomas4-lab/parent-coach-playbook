@@ -373,6 +373,12 @@ export const SPORTS = [
     seoTitle: 'Ballet Parent Guide: Training Levels, Gear and Cost',
     seoDescription: 'Gear by age and level, how training levels and summer intensives work, what to look for in a school, and the path to pre-professional ballet.',
   },
+  {
+    slug: 'wrestling',
+    label: 'Wrestling',
+    seoTitle: 'Youth Wrestling for Parents: Rules, Gear and What to Expect',
+    seoDescription: 'How matches and scoring work, gear to have ready, what practices and tournaments demand, and the wrestling pathway from youth through high school.',
+  },
 ] as const;
 
 const CAMP_ONLY_SPORTS = [

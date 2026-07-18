@@ -20,8 +20,9 @@ production data mutation.
   Organization/WebSite/author/publisher identifiers across shared Article
   variants while preserving the default-off Person reveal.
 - Search and discovery: expanded live-404 contract, fail-closed camp sitemap,
-  Worker-first sitemap routing, and trusted local camp filters (`2f85417`,
-  `5255939`, `d2b914b`, `cec8d0c`).
+  Worker-first sitemap routing, trusted local camp filters, and a release-gated
+  emitted public-link contract that repaired retired phase paths and missing
+  Wrestling/Lacrosse hub targets (`2f85417`, `5255939`, `d2b914b`, `cec8d0c`).
 - Camps provenance: evidence-grade source requirements and governed review
   state before a listing can be represented as verified (`ddcc887`).
 - Demand intelligence: privacy-minimized reporting, retention boundaries, and
@@ -41,7 +42,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 150 test files / 774 tests passed.
+Latest clean validation before this handoff: 151 test files / 777 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.

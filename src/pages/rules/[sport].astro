@@ -14,6 +14,12 @@ export async function getStaticPaths() {
 const { piece } = Astro.props;
 const { Content } = await render(piece);
 const sportLabel = SPORTS.find(s => s.slug === piece.data.sport)?.label ?? piece.data.sport;
+const sportHubs = piece.data.sport === 'lacrosse'
+  ? [
+      { href: '/sports/lacrosse-boys/', label: 'Boys lacrosse' },
+      { href: '/sports/lacrosse-girls/', label: 'Girls lacrosse' },
+    ]
+  : [{ href: `/sports/${piece.data.sport}/`, label: sportLabel }];
 
 // FAQPage JSON-LD: synthesize Q&A pairs from the structured fields.
 // "What are the scoring basics?" / "What calls will I see?" / "What do parents get wrong?"
@@ -65,7 +71,9 @@ const faqSchema = faqEntries.length > 0
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/rules/" class="hover:underline">Rules at-a-glance</a> ·
-        <a href={`/sports/${piece.data.sport}/`} class="hover:underline">{sportLabel}</a>
+        {sportHubs.map((hub, index) => (
+          <><a href={hub.href} class="hover:underline">{hub.label}</a>{index < sportHubs.length - 1 && ' / '}</>
+        ))}
       </p>
       <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">

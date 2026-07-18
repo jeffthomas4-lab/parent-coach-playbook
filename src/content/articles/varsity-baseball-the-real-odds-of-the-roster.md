@@ -41,7 +41,7 @@ It does not buy him the shortstop job if he can't turn a double play at the high
 
 **The bullpen runs on a different clock than the lineup.** Position battles mostly resolve in the first month. Pitching roles keep shifting all season because pitch counts and rest days force it. The freshman who throws strikes in relief in April can be starting a conference series by May if the rotation gets thin.
 
-That's real opportunity, and it's also why a pitcher's role at this level is never fully settled. Watch the [pitch counts and arm care](/season-ops/varsity-baseball-when-your-kid-is-the-ace/) piece if your kid is in that mix.
+That's real opportunity, and it's also why a pitcher's role at this level is never fully settled. Watch the [pitch counts and arm care](/drive-there/varsity-baseball-when-your-kid-is-the-ace/) piece if your kid is in that mix.
 
 **How lineup spots actually get held.** A starting job in high school baseball is rarely lost to one bad week. Coaches look at swing decisions, at-bat quality, and defense over a rolling two or three week window. A 2-for-20 slump with good at-bats and hard contact reads differently than a 2-for-20 slump full of chases and errors.
 
