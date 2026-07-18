@@ -37,7 +37,8 @@ production data mutation.
   `/go/{slug}/` identifier, plus aggregate coverage and unreferenced candidates
   on the existing read-only admin desk (`371cce5`, `b2461d7`).
 - Newsletter and social: fail-closed provider journey proof plus draft-only,
-  measured social staging with a human publication gate (`4f5acbd`, `99a6c91`).
+  measured Pinterest and Facebook group-help staging with a human publication
+  gate (`4f5acbd`, `99a6c91`).
 - Operations: seasonal zero-write behavior, secure agent-run caller contracts,
   all roster skills wired to the source contract, and the ten-task
   reconciliation inventory (`c47cdcb`, `4cd322d`, `aa3ace7`).
@@ -52,7 +53,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 155 test files / 791 tests passed.
+Latest clean validation before this handoff: 155 test files / 792 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.

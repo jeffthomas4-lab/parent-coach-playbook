@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 155 files / 791 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS — 155 files / 792 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -39,6 +39,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Seasonal maintenance | Implemented and verified locally | `c47cdcb` prevents the site and cron sweep paths from reaching D1 or outbound writes during August–November or an explicit maintenance switch. Deployment remains gated. |
 | Agent-run secret distribution | Implemented as a secure caller contract | `4cd322d` adds allowlisted HEAD preflight and runtime-only token handling; `aa3ace7` wires all tracked skills to the client. Canary/runtime secret delivery remains owner-controlled. |
 | Distribution foundation | Implemented and verified locally | `99a6c91` enforces draft-only Pinterest staging, first-party measured links, credential exclusion, and a human publication gate. No account or post was created. |
+| Facebook distribution foundation | Implemented and verified locally | Three group-help drafts require thread fit, standalone value, Facebook-attributed first-party links, disclosed affiliation, and a human gate; the release check rejects missing fields, credentials, executable posting, or wrong attribution. |
 | Repository root ownership | Implemented and verified | `67504e0` classifies all 85 tracked root artifacts exactly once and makes unclassified root growth a release failure. |
 | Top-level directory ownership | Implemented and verified | All 36 tracked top-level directories have one operational role; the release contract rejects unclassified, duplicate, stale, invalid, or nested registry entries. |
 | Developer entrypoint reconciliation | Implemented and verified | `README.md` now reflects the canonical directory map, protected Worker release authority, hosted Kit boundary, and Markdown-only current editorial authority; focused coverage rejects the retired Pages and dual-CMS guidance. |
