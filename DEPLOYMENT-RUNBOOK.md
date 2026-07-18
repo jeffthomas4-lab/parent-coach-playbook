@@ -17,6 +17,12 @@ separately governed rollback target, not the normal deployment path.
 6. Production dry-runs and deploys the same verified generated manifest, then
    records version and secret-name evidence and runs public smoke tests.
 
+Each build also selects one content-hashed Astro CSS/JS asset and records its
+exact byte length and SHA-256 next to the artifact. Post-deploy smoke must fetch
+that exact path and match those bytes. The workflow performs a full deploy only;
+gradual or mixed-version traffic is prohibited until a separate asset-skew
+design and rehearsal are approved.
+
 The GitHub Environments must restrict deployment to `main`. Disable protection
 bypass where the repository plan supports it. Store separate
 `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` values in `staging` and

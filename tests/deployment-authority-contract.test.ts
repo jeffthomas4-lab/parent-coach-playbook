@@ -21,7 +21,8 @@ describe('deployment authority', () => {
     expect(workflow).toContain('name: pcd-production-${{ env.DEPLOY_SHA }}');
     expect(workflow).toContain('test "$(cat production-dist.git-sha)" = "$DEPLOY_SHA"');
     expect(workflow).toContain('deploy --config dist/server/wrangler.json --keep-vars --dry-run');
-    expect(workflow).toContain('--target production --report production-smoke.json');
+    expect(workflow).toContain('build-static-asset-proof.mjs --sha "$DEPLOY_SHA" --output production-static-asset.json');
+    expect(workflow).toContain('--target production --asset-proof production-static-asset.json --report production-smoke.json');
     expect(workflow).toContain('pcd-production-smoke-${{ env.DEPLOY_SHA }}');
     expect(workflow).not.toMatch(/wrangler\s+pages|git\s+add\s+-A|checkout[^\n]*refs\/heads\/main/i);
   });

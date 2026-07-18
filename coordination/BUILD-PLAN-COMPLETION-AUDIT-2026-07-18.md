@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS on clean rerun — 145 files / 763 tests (the immediately prior run passed 144 files but failed overall when one Vitest fork exited unexpectedly) |
+| Full Vitest suite | PASS — 147 files / 767 tests (the earlier transient fork exit remains documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -41,6 +41,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Production Access gate | Implemented and verified locally | `a68765c` allows pending evidence in normal CI but blocks the production job until policy and full authenticated allow/deny evidence are complete. |
 | Runtime secret preservation | Implemented and verified locally | `682bd79` declares exactly four required production secret names and validates the generated manifest without storing values. |
 | Post-deploy health evidence | Implemented and verified locally | `f8e1bfb` covers public HTML, camps, health, readiness, static assets, non-mutating API, and Access redirect and retains sanitized SHA-addressed smoke receipts. |
+| Exact deployed asset/version-skew gate | Implemented and verified locally | Each build records one content-hashed Astro asset's path, byte length, SHA-256, and Git SHA; smoke fails unless the deployed bytes match. Gradual or mixed-version delivery remains prohibited pending a separate design and rehearsal. |
 | Evidence log | Updated | `79253ca` and `6fd3f7f` record the overnight slices and distribution/maintenance controls. |
 
 ## Requirement reconciliation
