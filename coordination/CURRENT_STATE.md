@@ -452,3 +452,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 ## 2026-07-17 production operational database provisioned
 
 - **Executed with explicit approval:** created empty dedicated D1 `parent-coach-desk-ops-production` (`b38d5f37-54df-4e0f-9706-023edc12c7fe`) in WNAM. Read-only inspection immediately after creation found zero tables, zero reads/writes and 12.3 kB of platform metadata. The source production configuration now declares `PCD_OPS_DB` with the isolated operational migration directory; it has not been deployed, migrated or used by the production Worker. No customer data or existing production database was changed. Evidence: `coordination/release-evidence/production-pcd-ops-provisioning-2026-07-17.json`.
+# 2026-07-18 - human-gated social distribution contract
+
+- **Implemented locally:** the existing Pinterest draft-and-stage pattern now has an executable release contract. It requires one governed first-party HTTPS link per staged pin, Pinterest/social/campaign attribution, an explicit human publication gate, and the documented prohibitions on account creation and auto-posting. It rejects credential material and executable publication calls.
+- **Verified locally:** the current five-pin seasonal queue passes the contract and its focused Vitest suite passes 1 file / 3 tests. The check is included in `ci:release`.
+- **External boundary preserved:** no social account was created, no credential was accessed, and no post was published or scheduled.
