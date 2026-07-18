@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-18T19:10:00Z",
+  "scope": "isolated_local_d1",
+  "remote": false,
+  "production_data_used": false,
+  "external_changes": [],
+  "wrangler_version": "miniflare-embedded",
+  "database_binding": "DB",
+  "new_migration": ["0024_editorial_opportunity_lifecycle.sql"],
+  "full_chain_migrations": [
+    "0011_trust_cases.sql",
+    "0012_trust_drafts_and_notification_outbox.sql",
+    "0013_demand_events_v1.sql",
+    "0014_trust_intake_idempotency.sql",
+    "0015_privacy_request_lifecycle.sql",
+    "0016_customer_identity_and_tenancy.sql",
+    "0017_owner_claims_and_proposed_edits.sql",
+    "0018_customer_invitations_and_recovery.sql",
+    "0019_owner_workflow_hardening.sql",
+    "0020_recovery_and_dispute_audit.sql",
+    "0021_privacy_execution_evidence.sql",
+    "0022_commerce_test_mode_ledger.sql",
+    "0023_affiliate_recommendation_lifecycle.sql",
+    "0024_editorial_opportunity_lifecycle.sql"
+  ],
+  "full_chain_result": "pass",
+  "checks": {
+    "full_chain_migration_count": 14,
+    "editorial_tables_present": 10,
+    "editorial_table_names": [
+      "editorial_approvals",
+      "editorial_briefs",
+      "editorial_claim_sources",
+      "editorial_claims",
+      "editorial_lifecycle_events",
+      "editorial_maintenance_proposals",
+      "editorial_opportunities",
+      "editorial_relationships",
+      "editorial_reviews",
+      "editorial_sources"
+    ],
+    "foreign_key_check_clean": true,
+    "full_lifecycle_walkthrough_passed": true,
+    "evidence_gate_rejection_proven": true,
+    "insufficient_evidence_stop_proven": true,
+    "maintenance_propose_never_executes_retirement": true,
+    "maintenance_decide_requires_human_actor": true
+  },
+  "test_suite_reference": "tests/editorial-records-migration.test.ts",
+  "test_result": "9/9 passing",
+  "walkthrough_summary": "A synthetic opportunity moved through opportunity_discovered -> scored -> classified -> briefed -> (claims_validated fast-forward, gated on all brief claims validated and at least one recorded source) -> editorial_review -> seo_review -> relationship_mapped -> approval_ready -> approved, with monetization classification recorded before the terminal human-approval call. A second opportunity was proven to stop at insufficient_evidence and could not be briefed. A third opportunity was proven to be rejected from human approval with a named, specific set of missing evidence gates when review, relationship mapping, and monetization classification were skipped. A fourth opportunity proved a retirement proposal requires an incoming-link audit reference, does not itself change opportunity status, and only the separate human decision call can move it to retired.",
+  "limitations": [
+    "A fresh empty local D1 (via Miniflare) is not a staging or production schema export or a restored backup.",
+    "No rollback, remote non-production rehearsal, load test, or production migration was performed.",
+    "This receipt does not authorize staging or production migration, telemetry collection, feature-flag activation, or any outbound work.",
+    "The seven opportunity-intake sources without a real adapter (gsc, camp_gap, affiliate_gap, seasonal, newsletter, support, competitor, emerging_trend) were not exercised because no adapter exists yet; they throw a descriptive NotImplementedAdapterError rather than being silently untested."
+  ],
+  "operational_migration_gate_complete": false,
+  "production_migration_approved": false
+}

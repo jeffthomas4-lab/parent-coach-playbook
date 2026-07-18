@@ -66,6 +66,7 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
     'IDEMPOTENCY_CLEANUP_ENABLED',
     'PCD_CUSTOMER_FOUNDATION_ENABLED',
     'PCD_COMMERCE_TEST_MODE_ENABLED',
+    'EDITORIAL_LIFECYCLE_ENABLED',
   ]) {
     expectEqual(`${key} safe default`, manifest.vars?.[key], 'false');
   }

@@ -2,6 +2,7 @@ export const integrationTests = [
   'tests/customer-lifecycle.integration.test.ts',
   'tests/customer-journey-monitor.test.ts',
   'tests/directory-idempotency-rehearsal.test.ts',
+  'tests/editorial-records-migration.test.ts',
   'tests/integrated-failure-isolation.test.ts',
   'tests/middleware.test.ts',
   'tests/trust-migration-rehearsal.test.ts',

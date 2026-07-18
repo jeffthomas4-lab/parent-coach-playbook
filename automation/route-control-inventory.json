@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 139,
+  "route_count": 149,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -375,6 +375,16 @@
       "public_write_limiter": null
     },
     {
+      "route": "/api/admin/editorial/approvals/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/approvals/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
       "route": "/api/admin/editorial/approve",
       "methods": [
         "POST"
@@ -385,11 +395,101 @@
       "public_write_limiter": null
     },
     {
+      "route": "/api/admin/editorial/briefs/create",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/briefs/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/claims/:id/validate",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/claims/[id]/validate.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/claims/create",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/claims/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/maintenance/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/maintenance/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/opportunities/:id/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/opportunities/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/opportunities/create",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/opportunities/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
       "route": "/api/admin/editorial/publish",
       "methods": [
         "POST"
       ],
       "source": "api/admin/editorial/publish.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/relationships/create",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/relationships/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/reviews/create",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/reviews/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/editorial/sources/create",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/sources/create.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
