@@ -9,6 +9,9 @@
     "enabled": true,
     "head_sampling_rate": 1
   },
+  "secrets": {
+    "required": ["AGENT_RUNS_TOKEN", "BULK_IMPORT_TOKEN", "CRON_KEY", "GITHUB_TOKEN"]
+  },
 
   "main": "./src/worker.ts",
   "assets": {

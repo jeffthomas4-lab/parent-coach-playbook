@@ -23,4 +23,16 @@ describe('deployment authority', () => {
     expect(workflow).toContain('deploy --config dist/server/wrangler.json --keep-vars --dry-run');
     expect(workflow).not.toMatch(/wrangler\s+pages|git\s+add\s+-A|checkout[^\n]*refs\/heads\/main/i);
   });
+
+  it('declares production runtime secret names without values and keeps staging optional', async () => {
+    const [production, staging] = await Promise.all([
+      readFile('wrangler.production.jsonc', 'utf8'),
+      readFile('wrangler.jsonc', 'utf8'),
+    ]);
+    const expected = ['AGENT_RUNS_TOKEN', 'BULK_IMPORT_TOKEN', 'CRON_KEY', 'GITHUB_TOKEN'];
+    expect(production).toContain('"secrets"');
+    for (const name of expected) expect(production).toContain(`"${name}"`);
+    expect(staging).not.toContain('"secrets"');
+    expect(production).not.toMatch(/(?:AGENT_RUNS_TOKEN|BULK_IMPORT_TOKEN|CRON_KEY|GITHUB_TOKEN)"\s*:\s*"/);
+  });
 });

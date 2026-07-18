@@ -41,6 +41,12 @@ does not carry their values. The first CI deployment must compare secret names
 before and after deployment. Never print or place secret values in artifacts,
 logs, prompts, skill files, or GitHub variables.
 
+`wrangler.production.jsonc` declares the four required runtime secret names.
+Current Wrangler validates their presence before deploy; the declaration never
+contains values and does not create, rotate, or retrieve a secret. Staging
+intentionally has no required-secret declaration because its secret-dependent
+features remain unavailable or fail closed.
+
 ## Rollback
 
 Before enabling production deployment, rehearse rollback on staging and record

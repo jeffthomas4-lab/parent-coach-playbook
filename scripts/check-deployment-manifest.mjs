@@ -47,6 +47,11 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
   expectEqual('site URL', manifest.vars?.SITE_URL, 'https://parentcoachdesk.com');
   expectEqual('observability enabled', manifest.observability?.enabled, true);
   expectEqual('observability sampling', manifest.observability?.head_sampling_rate, 1);
+  expectEqual(
+    'required production secret names',
+    JSON.stringify([...(manifest.secrets?.required ?? [])].sort()),
+    JSON.stringify(['AGENT_RUNS_TOKEN', 'BULK_IMPORT_TOKEN', 'CRON_KEY', 'GITHUB_TOKEN']),
+  );
 
   for (const key of ['ADMIN_EMAILS', 'ACCESS_TEAM_DOMAIN', 'ACCESS_AUD']) {
     if (typeof manifest.vars?.[key] !== 'string' || manifest.vars[key].trim() === '') {

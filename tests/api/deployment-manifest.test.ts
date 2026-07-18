@@ -17,6 +17,7 @@ const VALID_MANIFEST = {
     { name: 'OWNER_RATE_LIMITER' },
   ],
   observability: { enabled: true, head_sampling_rate: 1 },
+  secrets: { required: ['AGENT_RUNS_TOKEN', 'BULK_IMPORT_TOKEN', 'CRON_KEY', 'GITHUB_TOKEN'] },
   vars: {
     SITE_URL: 'https://parentcoachdesk.com',
     ADMIN_EMAILS: 'admin@example.com',
@@ -46,6 +47,7 @@ describe('production deployment manifest contract', () => {
     unsafe.ratelimits = [];
     unsafe.assets.run_worker_first = [];
     unsafe.observability.enabled = false;
+    unsafe.secrets.required = ['AGENT_RUNS_TOKEN'];
     unsafe.vars.CAMP_CLAIMS_ENABLED = 'true';
     unsafe.vars.PCD_CUSTOMER_FOUNDATION_ENABLED = 'true';
     unsafe.vars.PCD_COMMERCE_TEST_MODE_ENABLED = 'true';
@@ -56,6 +58,7 @@ describe('production deployment manifest contract', () => {
       expect.stringContaining('rate-limit bindings'),
       expect.stringContaining('required Worker-first routes'),
       expect.stringContaining('observability enabled'),
+      expect.stringContaining('required production secret names'),
       expect.stringContaining('CAMP_CLAIMS_ENABLED'),
       expect.stringContaining('PCD_CUSTOMER_FOUNDATION_ENABLED'),
       expect.stringContaining('PCD_COMMERCE_TEST_MODE_ENABLED'),
