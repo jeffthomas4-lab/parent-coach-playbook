@@ -22,6 +22,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { deleteExpiredIdempotencyRecords } from '../../../lib/public-idempotency';
 import { featureEnabled } from '../../../lib/feature-flags';
 import { secretsMatch } from '../../../lib/secrets';
+import { pcdMaintenanceModeActive } from '../../../lib/maintenance-mode';
 
 export const prerender = false;
 
@@ -35,6 +36,7 @@ interface CronEnv {
   // no email plumbing on our end. Leave unset and the ping is skipped, no error.
   OPS_HEARTBEAT_URL?: string;
   IDEMPOTENCY_CLEANUP_ENABLED?: string;
+  PCD_MAINTENANCE_MODE?: string;
 }
 
 const json = (body: unknown, status = 200) =>
@@ -45,12 +47,16 @@ const json = (body: unknown, status = 200) =>
 
 export const POST: APIRoute = async ({ request }) => {
   const env = cfEnv as CronEnv | undefined;
-  if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
-
   const headerKey = request.headers.get('x-cron-key') ?? '';
-  if (!env.CRON_KEY || !(await secretsMatch(headerKey, env.CRON_KEY))) {
+  if (!env?.CRON_KEY || !(await secretsMatch(headerKey, env.CRON_KEY))) {
     return json({ ok: false, error: 'forbidden' }, 403);
   }
+
+  if (pcdMaintenanceModeActive(env.PCD_MAINTENANCE_MODE)) {
+    return json({ ok: true, held: true, code: 'maintenance_mode', writes: 0 });
+  }
+
+  if (!env.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const today = new Date().toISOString().slice(0, 10);
   const oneWeekAgoIso = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();

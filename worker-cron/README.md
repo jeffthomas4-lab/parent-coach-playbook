@@ -19,6 +19,12 @@ archiving, directory-count probing, blackout detection, or healthy-heartbeat
 delivery fails. Completed earlier writes are not rolled back, but the partial
 run is visibly failed and retried only through the bounded scheduler policy.
 
+From August 1 through November 30 UTC, the scheduler and the site endpoint
+return a maintenance hold before any D1 write or outbound sweep request. The
+same zero-write hold can be enabled year-round with `PCD_MAINTENANCE_MODE`.
+Setting the variable false never overrides the calendar boundary. Camps sweep
+is not on the narrowly approved deletion/security bypass list.
+
 The fetch handler is non-mutating. `/health` (and other non-`/ready` paths)
 reports process liveness without checking configuration. `/ready` returns 200
 only when both required settings are present, or a generic 503 without naming
@@ -27,6 +33,8 @@ which setting is missing. Neither route can invoke a sweep or deployment.
 ## Configuration
 
 - `SWEEP_URL` is a public variable in `wrangler.toml`.
+- `PCD_MAINTENANCE_MODE` is the operator kill switch; the calendar idle is an
+  independent fail-safe.
 - `CRON_KEY` is the only required secret and must match the production site
   Worker. Set it interactively with `npm run secret:cron`.
 - Observability is enabled at full sampling because this low-volume scheduler

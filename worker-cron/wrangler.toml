@@ -15,6 +15,7 @@ head_sampling_rate = 1
 
 [vars]
 SWEEP_URL = "https://parentcoachdesk.com/api/cron/camps-sweep"
+PCD_MAINTENANCE_MODE = "false"
 
 [[d1_databases]]
 binding = "FORGE_DB"

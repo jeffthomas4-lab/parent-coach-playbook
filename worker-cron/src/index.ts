@@ -13,9 +13,19 @@ export interface Env {
   // Canonical Forge Command runtime database. A scheduled mutation is not
   // allowed to run unless its attempt can first be recorded durably.
   FORGE_DB?: D1Database;
+  // Operator kill switch. The August-November calendar boundary also applies
+  // even if this variable is accidentally left false.
+  PCD_MAINTENANCE_MODE?: string;
 }
 
 const WORKFLOW_ID = 'pcd-camps-sweep';
+
+export function maintenanceModeActive(env: Pick<Env, 'PCD_MAINTENANCE_MODE'>, at: number): boolean {
+  const explicit = env.PCD_MAINTENANCE_MODE?.trim().toLowerCase();
+  if (explicit === 'true' || explicit === '1' || explicit === 'on') return true;
+  const month = new Date(at).getUTCMonth() + 1;
+  return month >= 8 && month <= 11;
+}
 
 type SweepMetrics = {
   approved_future_count: number;
@@ -111,6 +121,16 @@ export async function fireCampsSweep(env: Env, source: string): Promise<SweepMet
 }
 
 export async function runScheduledSweep(env: Env, scheduledTime: number): Promise<void> {
+  if (maintenanceModeActive(env, scheduledTime)) {
+    console.log(JSON.stringify({
+      event: 'camps_sweep_held',
+      workflowId: WORKFLOW_ID,
+      reason: 'maintenance_mode',
+      scheduledAt: new Date(scheduledTime).toISOString(),
+      writes: 0,
+    }));
+    return;
+  }
   if (!env.FORGE_DB) throw new Error('[cron] CAMPS SWEEP MISCONFIGURED - FORGE_DB binding missing.');
 
   const scheduledAt = new Date(scheduledTime).toISOString();
@@ -163,6 +183,7 @@ export default {
           ok: ready,
           service: 'pcd-camps-sweep-scheduler',
           check: 'readiness',
+          maintenance_mode: maintenanceModeActive(env, Date.now()),
           ...(ready ? {} : { code: 'required_configuration_missing' }),
         },
         { status: ready ? 200 : 503, headers: { 'Cache-Control': 'no-store' } },

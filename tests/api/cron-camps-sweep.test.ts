@@ -41,6 +41,7 @@ describe('POST /api/cron/camps-sweep', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
+    vi.useRealTimers();
   });
 
   it('auth: refuses a request with no x-cron-key header', async () => {
@@ -160,5 +161,23 @@ describe('POST /api/cron/camps-sweep', () => {
     const ctx = makeContext({ request: cronRequest('anything'), env: { DB: {} } });
     const res = await POST(ctx);
     expect(res.status).toBe(403);
+  });
+
+  it('returns a zero-write hold during the August-November idle', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-08-01T13:00:00Z'));
+    const db = { prepare: vi.fn() };
+    const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: db, CRON_KEY } }));
+    expect(res.status).toBe(200);
+    expect(await readJson(res)).toEqual({ ok: true, held: true, code: 'maintenance_mode', writes: 0 });
+    expect(db.prepare).not.toHaveBeenCalled();
+    expect(campsDb.listCampsForUrlSweep).not.toHaveBeenCalled();
+  });
+
+  it('honors the operator kill switch outside the calendar idle', async () => {
+    const db = { prepare: vi.fn() };
+    const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: db, CRON_KEY, PCD_MAINTENANCE_MODE: 'true' } }));
+    expect(await readJson(res)).toMatchObject({ held: true, writes: 0 });
+    expect(db.prepare).not.toHaveBeenCalled();
   });
 });
