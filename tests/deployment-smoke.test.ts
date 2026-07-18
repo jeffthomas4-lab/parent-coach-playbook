@@ -25,6 +25,18 @@ describe('deployment smoke evidence', () => {
     expect(JSON.stringify(report)).not.toMatch(/cookie|authorization|location/i);
   });
 
+  it('retries a not-yet-propagated static asset without weakening exact-byte verification', async () => {
+    const statuses = [200, 200, 200, 200, 404, 200, 403];
+    const delays: number[] = [];
+    const report = await runDeploymentSmoke({
+      origin: 'https://staging.example.com', target: 'staging', assetProof,
+      fetchImpl: async (url) => new Response(String(url).includes('/_astro/') ? 'hello' : null, { status: statuses.shift() }),
+      sleep: async (milliseconds) => { delays.push(milliseconds); },
+    });
+    expect(report.results.find((item) => item.kind === 'exact_static_asset')).toMatchObject({ status: 200, attempts: 2, passed: true });
+    expect(delays).toEqual([2_000]);
+  });
+
   it('fails on a missing health surface or unsafe origin', async () => {
     await expect(runDeploymentSmoke({ origin: 'http://example.com', target: 'production', assetProof })).rejects.toThrow('bare HTTPS origin');
     await expect(runDeploymentSmoke({ origin: 'https://example.com', target: 'production', assetProof: { ...assetProof, git_sha: undefined } })).rejects.toThrow('exact static-asset proof');
