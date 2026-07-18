@@ -57,6 +57,8 @@
     "check:affiliate-lifecycle": "node scripts/build-affiliate-lifecycle-snapshot.mjs --check",
     "report:editorial-refresh": "node scripts/editorial-refresh-queue.mjs",
     "check:editorial-refresh": "node scripts/editorial-refresh-queue.mjs --check",
+    "report:editorial-lifecycle": "node scripts/build-editorial-lifecycle-snapshot.mjs",
+    "check:editorial-lifecycle": "node scripts/build-editorial-lifecycle-snapshot.mjs && git diff --exit-code -- reports/editorial/lifecycle.json",
     "check:newsletter-proof": "node scripts/newsletter-provider-proof.mjs coordination/release-evidence/newsletter-provider-proof-pending.json",
     "check:social-stage": "node scripts/check-social-stage.mjs",
     "check:agent-token-rollout": "node scripts/agent-token-rollout-evidence.mjs",

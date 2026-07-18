@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { isLive } from '../../../lib/publishFilter';
 import refreshQueue from '../../../../reports/editorial/editorial-refresh-queue.json';
+import lifecycle from '../../../../reports/editorial/lifecycle.json';
 
 export const prerender = true;
 
@@ -143,6 +144,21 @@ const statusColor: Record<string, string> = {
         <p class="font-display text-ink-soft text-xs mt-3 leading-relaxed">
           This queue never redirects or deletes content. Decommissioning still requires reviewed live traffic, an emitted-link audit, supersession evidence, and a human decision.
         </p>
+      </div>
+
+      <div class="mt-4 border border-bone bg-paper p-4" data-lifecycle-summary>
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 class="font-display text-ink text-lg font-medium">Editorial lifecycle control plane</h2>
+          <p class="font-display italic text-ink-soft text-xs font-medium">Baseline {lifecycle.as_of}</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-3">
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Corpus items</p><p class="font-display text-ink text-xl font-medium">{lifecycle.counts.content_items}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Legacy baseline</p><p class="font-display text-ink text-xl font-medium">{lifecycle.counts.legacy_items}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Approval ready</p><p class="font-display text-ink text-xl font-medium">{lifecycle.counts.approval_ready}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Research queue</p><p class="font-display text-ink text-xl font-medium">{lifecycle.counts.research_queue}</p></div>
+          <div><p class="font-display italic text-ink-soft text-xs font-medium">Retirement queue</p><p class="font-display text-ink text-xl font-medium">{lifecycle.counts.retirement_queue}</p></div>
+        </div>
+        <p class="font-display text-ink-soft text-xs mt-3 leading-relaxed">No item is auto-published, redirected, consolidated, or retired. Existing content remains a legacy baseline until source, claim, relationship, and human-approval evidence is recorded.</p>
       </div>
 
       <!-- Filter bar -->

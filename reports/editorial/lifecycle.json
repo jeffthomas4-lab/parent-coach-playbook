@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-07-18",
+  "inventory_sha256": "2f5621919837dccd906fb37433d8eeb54bda2309ff0332b1c9f185594371854c",
+  "policy": {
+    "auto_publish": false,
+    "auto_retire": false,
+    "opportunity_intake_requires_signal": true,
+    "legacy_corpus_is_not_evidence_complete": true
+  },
+  "counts": {
+    "content_items": 1852,
+    "live_items": 1850,
+    "drafts": 2,
+    "published": 1850,
+    "legacy_items": 1852,
+    "approval_ready": 0,
+    "research_queue": 0,
+    "maintenance_queue": 0,
+    "retirement_queue": 0
+  },
+  "collection_rollup": [
+    {
+      "collection": "adaptive",
+      "items": 18,
+      "live": 18
+    },
+    {
+      "collection": "articles",
+      "items": 805,
+      "live": 805
+    },
+    {
+      "collection": "body",
+      "items": 177,
+      "live": 177
+    },
+    {
+      "collection": "coachingTips",
+      "items": 577,
+      "live": 577
+    },
+    {
+      "collection": "decisions",
+      "items": 26,
+      "live": 26
+    },
+    {
+      "collection": "guides",
+      "items": 37,
+      "live": 37
+    },
+    {
+      "collection": "news",
+      "items": 19,
+      "live": 17
+    },
+    {
+      "collection": "pathways",
+      "items": 26,
+      "live": 26
+    },
+    {
+      "collection": "pillar",
+      "items": 17,
+      "live": 17
+    },
+    {
+      "collection": "recruiting",
+      "items": 29,
+      "live": 29
+    },
+    {
+      "collection": "resources",
+      "items": 18,
+      "live": 18
+    },
+    {
+      "collection": "rules",
+      "items": 22,
+      "live": 22
+    },
+    {
+      "collection": "scripts",
+      "items": 53,
+      "live": 53
+    },
+    {
+      "collection": "seasonCalendars",
+      "items": 28,
+      "live": 28
+    }
+  ],
+  "queues": {
+    "research_and_briefing": [],
+    "claim_validation": [],
+    "human_approval": [],
+    "maintenance": [],
+    "retirement": []
+  }
+}

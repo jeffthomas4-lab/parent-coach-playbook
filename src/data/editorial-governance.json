@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "owner": "Parent Coach Desk editorial owner",
+  "states": ["opportunity_discovered","scored","classified","briefed","researching","sourced","outlined","drafting","claims_validated","editorial_review","seo_review","relationship_mapped","approval_ready","approved","published","monitoring","maintenance_due","update_proposed","consolidation_proposed","retired"],
+  "content_types": ["pillar","guide","article","directory","comparison","newsletter","correction"],
+  "opportunity_sources": ["search","no_result","gsc","camp_gap","affiliate_gap","seasonal","newsletter","support","correction","competitor","emerging_trend"],
+  "publication_gates": ["brief_and_intent","source_registry","claim_validation","editorial_review","seo_ai_review","relationship_map","monetization_classification","human_approval"],
+  "maintenance": {"refresh_months": 18, "fact_check_required": true, "automatic_deletion": false, "automatic_redirects": false, "retirement_requires_human_review": true},
+  "privacy": {"no_child_pii": true, "no_raw_search_queries_in_public_content": true, "affiliate_disclosure_required": true},
+  "forge_boundary": "Lifecycle states, evidence gates, source registry, QA and maintenance rules are reusable Forge OS. Collection names, parent coaching taxonomy, routes and monetization mappings remain PCD-specific."
+}
