@@ -29,6 +29,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { loadWatchlistFile, parseSitemapUrls, redirectReportFileName, requiredSitemapFailures } from './redirect-watchlist.mjs';
 
 const ROOT = path.resolve(fileURLToPath(import.meta.url), '../../../../..');
 const SITE = 'https://parentcoachdesk.com';
@@ -39,6 +40,8 @@ const args = process.argv.slice(2);
 const sampleArg = args.find(function (a) { return a.startsWith('--sample='); });
 const SAMPLE_SIZE = sampleArg ? parseInt(sampleArg.split('=')[1], 10) : 250;
 const CRAWL_ALL = args.includes('--all');
+const watchlistArg = args.find(function (a) { return a.startsWith('--watchlist='); });
+const WATCHLIST_FILE = watchlistArg ? watchlistArg.slice('--watchlist='.length) : null;
 
 // Known additional watch-list entries, seeded from gsc-reviews/ and
 // ORGANIC-SEARCH-AUDIT.md: URLs GSC has specifically named as 404 or
@@ -59,10 +62,9 @@ function fetchWithTimeout(url, opts) {
 
 async function getSitemapUrls(sitemapPath) {
   const res = await fetchWithTimeout(SITE + sitemapPath);
-  if (!res.ok) return [];
+  if (!res.ok) return { path: sitemapPath, status: res.status, urls: [] };
   const xml = await res.text();
-  const matches = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g));
-  return matches.map(function (m) { return m[1]; });
+  return { path: sitemapPath, status: res.status, urls: parseSitemapUrls(xml) };
 }
 
 function shuffle(arr) {
@@ -141,12 +143,17 @@ async function main() {
     getSitemapUrls('/sitemap-content.xml'),
     getSitemapUrls('/sitemap-camps.xml'),
   ]);
-  const contentUrls = sitemaps[0];
-  const campUrls = sitemaps[1];
+  const contentUrls = sitemaps[0].urls;
+  const campUrls = sitemaps[1].urls;
+  const sitemapFailures = requiredSitemapFailures(sitemaps);
   console.log('sitemap-content.xml: ' + contentUrls.length + ' urls');
   console.log('sitemap-camps.xml: ' + campUrls.length + ' urls');
 
   const allLive = contentUrls.concat(campUrls);
+  const importedWatchlist = WATCHLIST_FILE
+    ? loadWatchlistFile(WATCHLIST_FILE, ROOT, SITE)
+    : [];
+  if (WATCHLIST_FILE) console.log('Imported watchlist: ' + importedWatchlist.length + ' same-origin URLs');
 
   let toCheck;
   if (CRAWL_ALL) {
@@ -154,7 +161,7 @@ async function main() {
   } else {
     const campSample = shuffle(campUrls).slice(0, Math.min(campUrls.length, Math.round(SAMPLE_SIZE * 0.7)));
     const contentSample = shuffle(contentUrls).slice(0, Math.round(SAMPLE_SIZE * 0.3));
-    const watchlistFull = WATCHLIST.map(function (p) { return SITE + p; });
+    const watchlistFull = WATCHLIST.map(function (p) { return SITE + p; }).concat(importedWatchlist);
     toCheck = Array.from(new Set(watchlistFull.concat(campSample, contentSample)));
   }
   console.log('Checking ' + toCheck.length + ' URLs (concurrency ' + CONCURRENCY + ')...');
@@ -188,7 +195,7 @@ async function main() {
 
   const dateStr = new Date().toISOString().slice(0, 10);
   const outDir = path.join(ROOT, 'reports', 'seo');
-  const outPath = path.join(outDir, 'redirect-candidates-' + dateStr + '.md');
+  const outPath = path.join(outDir, redirectReportFileName(dateStr, CRAWL_ALL ? 'full' : 'sample', toCheck.length));
 
   const configSnippet = proposals.map(function (p) {
     const fromPath = p.dead.replace(SITE, '').replace(/\/$/, '');
@@ -214,17 +221,24 @@ async function main() {
   lines.push('- Already redirecting (fine, already handled, e.g. the expired-camp 301 policy): ' + redirecting.length);
   lines.push('- Errored / timed out (network issue this run, not necessarily a real problem, re-run to confirm): ' + errored.length);
   lines.push('- Confirmed dead (404/410): ' + dead.length);
+  lines.push('- Required sitemap failures: ' + sitemapFailures.length);
   lines.push('');
+
+  if (sitemapFailures.length > 0) {
+    lines.push('## Required sitemap coverage failure');
+    lines.push('');
+    sitemapFailures.forEach(function (failure) { lines.push('- ' + failure); });
+    lines.push('');
+    lines.push('This run is not a clean 404 audit. An empty or unavailable required sitemap leaves that surface untested and must not be reported as zero broken URLs.');
+    lines.push('');
+  }
 
   if (dead.length === 0) {
     lines.push('## No dead URLs found in this run');
     lines.push('');
     lines.push('Every checked URL either returned 200 or was already redirecting. This is a real, positive signal, not a tool failure: the expired-camp 301 policy in src/pages/camps/[slug].astro (getCampBySlugAny + end_date check) is confirmed live and working. A page GSC and this session both independently found returning 404 on 2026-07-12 (/camps/soccer-camp-full-day-at-sera-sports-complex/) now 301s to /camps/wa/ when re-checked 2026-07-15.');
     lines.push('');
-    const coverageText = CRAWL_ALL
-      ? 'crawled all ' + allLive.length + ' current sitemap URLs'
-      : 'sampled ' + toCheck.length + ' of ' + allLive.length + ' sitemap URLs';
-    lines.push('This does not mean the site has zero 404s. GSC\'s Page Indexing report showed 53 as of 2026-07-08, up from 15 on 2026-06-15. This tool ' + coverageText + ', not the specific 53 GSC flagged (GSC\'s exact list requires signing into Search Console; this tool has no API credential for that). A URL GSC flagged as 404 that has since fallen out of the sitemap entirely (an expired camp removed from D1 rather than redirected, for example) would not be checked here by definition, since the sitemap only lists what is currently live. Close that gap by exporting the Page Indexing "Not found (404)" table from Search Console by hand and feeding it to this script as a watchlist. The WATCHLIST array at the top of the file is exactly that hook.');
+    lines.push('This does not mean the site has zero 404s. GSC\'s exact list requires a Search Console export or API credential. A URL that has fallen out of the sitemap is checked only when supplied through the built-in WATCHLIST or --watchlist=<project-relative CSV-or-text-file>.');
   } else {
     lines.push('## Proposed redirects');
     lines.push('');
@@ -265,6 +279,7 @@ async function main() {
   lines.push('node automation/agents/nora/tools/redirect-fixer.mjs                 # sampled, ~250 URLs, camps-biased');
   lines.push('node automation/agents/nora/tools/redirect-fixer.mjs --sample=500    # bigger sample');
   lines.push('node automation/agents/nora/tools/redirect-fixer.mjs --all           # full sitemap crawl, slower');
+  lines.push('node automation/agents/nora/tools/redirect-fixer.mjs --watchlist=reports/seo/gsc-404-export.csv');
   lines.push('```');
   lines.push('');
 
@@ -272,6 +287,10 @@ async function main() {
   console.log('');
   console.log('Wrote ' + outPath);
   console.log('Dead URLs: ' + dead.length + '. ' + (dead.length > 0 ? 'Review the proposals before pasting anything into astro.config.mjs.' : 'Nothing to stage this run.'));
+  if (sitemapFailures.length > 0) {
+    console.error('Required sitemap coverage failed: ' + sitemapFailures.join('; '));
+    process.exitCode = 2;
+  }
 }
 
 main().catch(function (e) {

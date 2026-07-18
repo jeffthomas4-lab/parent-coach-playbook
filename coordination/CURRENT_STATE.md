@@ -1,5 +1,11 @@
 # Current State
 
+## 2026-07-18 — full content crawl and camp-sitemap blackout evidence
+
+- **Confirmed live/read-only:** all 1,971 URLs in `sitemap-content.xml` returned 200 during a full crawl with zero timeouts, redirects, or 404/410 responses. This proves only the current content sitemap surface.
+- **Confirmed live/read-only critical gap:** `sitemap-camps.xml` returns HTTP 200 but contains zero URLs. The known SERA Sports Complex camp URL returns 404; `/camps/wa/` also returns 404 while `/camps/` returns 200. The staged redirect therefore targets the honest directory landing page, not an invented equivalent camp or unavailable state hub.
+- **Implemented locally:** Nora's redirect auditor accepts project-contained GSC CSV/text watchlists, rejects external origins and path escapes, and fails loudly when a required sitemap is empty or unavailable. Five focused tests pass. The SERA redirect is code-complete but not deployed; the empty camp supply/sitemap remains a live data/operations incident, not fixed by this redirect.
+
 ## 2026-07-18 — repository ownership and operator-entrypoint repair
 
 - **Verified in code:** the tracked root contains multiple runtime systems, three non-interchangeable migration lineages, generated evidence, archives, and many referenced historical root documents. A canonical placement policy now names the authority for current state, plans, handoffs, releases, approvals, and business priorities without pretending the legacy tree has already moved.

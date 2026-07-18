@@ -104,6 +104,10 @@ export default defineConfig({
     // a duplicate-route warning ("defined in both X and X/") that a future
     // Astro version will turn into a hard build error.
     '/resources/drive-home-playbook': '/resources/what-to-say-when',
+    // GSC watchlist regression confirmed live 2026-07-18. No equivalent
+    // current listing or live state hub exists, so use the stable directory
+    // landing page rather than inventing a replacement camp.
+    '/camps/soccer-camp-full-day-at-sera-sports-complex': '/camps/',
   },
   image: {
     domains: ['cdn.sanity.io'],
