@@ -68,6 +68,7 @@
     "check:company-os": "node scripts/check-company-operating-system.mjs",
     "check:built-links": "node scripts/check-built-internal-links.mjs",
     "check:backup-proving-log": "node scripts/check-backup-proving-log.mjs",
+    "backup:prune:dry": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/prune-local-backups.ps1",
     "preflight:agent-runs": "node scripts/agent-run-client.mjs preflight",
     "monitor:customer-journey": "node scripts/run-customer-journey-monitor.mjs",
     "recovery:manifest": "node scripts/build-recovery-batch-manifest.mjs",

@@ -65,6 +65,28 @@ A note on what this schedule does and does not buy you. Task Scheduler only fire
 
 Full restore steps, single-table restore, D1 Time Travel, and post-restore verification all live in `scripts\RESTORE-activity-radar.md`, next to the backup script. Read that before restoring anything; a full restore overwrites live data.
 
+### Local recovery-test retention
+
+`scripts\prune-local-backups.ps1` manages only dated packages under
+`backups\recovery\`. It deliberately does **not** delete the eight active
+`backups\d1\activity-radar-*.sql` exports or their checksum sidecars; the
+export script owns that retention policy.
+
+The cleanup script is dry-run by default and retains the newest two recovery
+packages plus every package from the last 30 days. Review its JSON candidate
+list first:
+
+```powershell
+npm run backup:prune:dry
+```
+
+After a separately approved post-deployment retention review, apply exactly
+that policy with:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\prune-local-backups.ps1 -Apply
+```
+
 ## Layer 3: R2 photo bucket
 
 Camp hero photos live in the `activityradar-photos` R2 bucket (bound as `PHOTOS`; corrected 2026-07-13 — this file previously named it `parent-coach-playbook-photos`, which was never the real bucket name).
