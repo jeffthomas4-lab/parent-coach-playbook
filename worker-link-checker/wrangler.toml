@@ -6,7 +6,12 @@
 
 name = "parent-coach-playbook-link-checker"
 main = "src/index.ts"
-compatibility_date = "2025-04-01"
+compatibility_date = "2026-07-18"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
 
 # Daily at 09:00 UTC = 1am PST / 2am PDT. Off-peak for both us and most external hosts.
 [triggers]
@@ -25,5 +30,9 @@ MANIFEST_URL = "https://parentcoachdesk.com/link-manifest.json"
 LINKS_PER_RUN = "50"
 ROTATION_DAYS = "180"
 
-# Secrets to set with `wrangler secret put`:
-#   ADMIN_API_KEY (used by /admin/link-health/ to authenticate ad-hoc check requests)
+# This Worker is PAUSED until the placeholder D1 identifiers are replaced through
+# an approved deployment plan. Do not attach a route or configure its cron in a
+# production account before that review.
+#
+# Secret to set with `wrangler secret put` only when it is approved for use:
+#   ADMIN_API_KEY (Bearer credential for an ad-hoc check request)

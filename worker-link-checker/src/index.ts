@@ -18,6 +18,7 @@ export interface Env {
 
 type ManifestEntry = { url: string; sources: string[] };
 type Manifest = { generatedAt: string; count: number; links: ManifestEntry[] };
+type WaybackResponse = { archived_snapshots?: { closest?: { url?: string } } };
 
 const USER_AGENT = 'Mozilla/5.0 (compatible; ParentCoachDeskLinkChecker/1.0; +https://parentcoachdesk.com/about/)';
 
@@ -25,6 +26,26 @@ const USER_AGENT = 'Mozilla/5.0 (compatible; ParentCoachDeskLinkChecker/1.0; +ht
 const SLOW_HOSTS = new Set(['amazon.com', 'amzn.to', 'www.amazon.com', 'twitter.com', 'x.com', 'linkedin.com']);
 const SLOW_HOST_DELAY_MS = 30_000;
 const NORMAL_DELAY_MS = 1_000;
+const FETCH_TIMEOUT_MS = 15_000;
+const encoder = new TextEncoder();
+
+function bearerCredential(request: Request): string {
+  const header = request.headers.get('authorization') ?? '';
+  return header.toLowerCase().startsWith('bearer ') ? header.slice(7).trim() : '';
+}
+
+/** Compare fixed-size hashes without early exit on a secret byte. */
+async function secretsMatch(presented: string, expected: string): Promise<boolean> {
+  const [presentedHash, expectedHash] = await Promise.all([
+    crypto.subtle.digest('SHA-256', encoder.encode(presented)),
+    crypto.subtle.digest('SHA-256', encoder.encode(expected)),
+  ]);
+  const left = new Uint8Array(presentedHash);
+  const right = new Uint8Array(expectedHash);
+  let difference = 0;
+  for (let index = 0; index < left.length; index += 1) difference |= left[index] ^ right[index];
+  return difference === 0;
+}
 
 // --- D1 helpers ---
 
@@ -78,6 +99,7 @@ async function checkLink(url: string): Promise<{
       method: 'HEAD',
       redirect: 'follow',
       headers: { 'User-Agent': USER_AGENT, Accept: '*/*' },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
     if (response.status === 405 || response.status === 501) {
       // Server doesn't support HEAD; retry with GET.
@@ -85,6 +107,7 @@ async function checkLink(url: string): Promise<{
         method: 'GET',
         redirect: 'follow',
         headers: { 'User-Agent': USER_AGENT, Accept: 'text/html,*/*' },
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       });
       notes.push('HEAD not supported; checked via GET');
     }
@@ -123,9 +146,12 @@ async function checkLink(url: string): Promise<{
 async function lookupWayback(url: string): Promise<string | null> {
   try {
     const apiUrl = `https://archive.org/wayback/available?url=${encodeURIComponent(url)}`;
-    const resp = await fetch(apiUrl, { headers: { 'User-Agent': USER_AGENT } });
+    const resp = await fetch(apiUrl, {
+      headers: { 'User-Agent': USER_AGENT },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
     if (!resp.ok) return null;
-    const data = await resp.json() as any;
+    const data = await resp.json() as WaybackResponse;
     return data?.archived_snapshots?.closest?.url ?? null;
   } catch {
     return null;
@@ -164,7 +190,7 @@ function isSlowHost(url: string): boolean {
 
 async function runChecks(env: Env): Promise<{ checked: number; broken: number; redirected: number }> {
   // 1. Pull manifest from the deployed site.
-  const manifestRes = await fetch(env.MANIFEST_URL);
+  const manifestRes = await fetch(env.MANIFEST_URL, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
   if (!manifestRes.ok) {
     console.error(`Failed to fetch manifest at ${env.MANIFEST_URL}: ${manifestRes.status}`);
     return { checked: 0, broken: 0, redirected: 0 };
@@ -175,8 +201,14 @@ async function runChecks(env: Env): Promise<{ checked: number; broken: number; r
   await syncManifestToDb(env, manifest);
 
   // 3. Pick the next batch of due links.
-  const n = parseInt(env.LINKS_PER_RUN || '50', 10);
-  const rotationDays = parseInt(env.ROTATION_DAYS || '180', 10);
+  const requestedBatchSize = Number.parseInt(env.LINKS_PER_RUN || '50', 10);
+  const requestedRotationDays = Number.parseInt(env.ROTATION_DAYS || '180', 10);
+  const n = Number.isInteger(requestedBatchSize) && requestedBatchSize >= 1 && requestedBatchSize <= 50
+    ? requestedBatchSize
+    : 50;
+  const rotationDays = Number.isInteger(requestedRotationDays) && requestedRotationDays >= 1 && requestedRotationDays <= 365
+    ? requestedRotationDays
+    : 180;
   const due = await pickDueLinks(env, n, rotationDays);
 
   let broken = 0, redirected = 0;
@@ -234,11 +266,11 @@ async function runChecks(env: Env): Promise<{ checked: number; broken: number; r
 // --- Worker entry points ---
 
 export default {
-  // Manual trigger for ad-hoc check. Open the worker URL with ?key=ADMIN_API_KEY.
+  // Manual trigger for an ad-hoc check. A query-string secret is deliberately
+  // not accepted because URLs leak into history, logs, referrers, and proxies.
   async fetch(req: Request, env: Env): Promise<Response> {
-    const url = new URL(req.url);
-    const key = url.searchParams.get('key');
-    if (!env.ADMIN_API_KEY || key !== env.ADMIN_API_KEY) {
+    if (req.method !== 'POST') return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'POST' } });
+    if (!env.ADMIN_API_KEY || !(await secretsMatch(bearerCredential(req), env.ADMIN_API_KEY))) {
       return new Response('Forbidden', { status: 403 });
     }
     const result = await runChecks(env);
@@ -248,9 +280,8 @@ export default {
     });
   },
 
-  async scheduled(_event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
-    ctx.waitUntil(runChecks(env).then(r => {
-      console.log(`[link-checker] checked=${r.checked} broken=${r.broken} redirected=${r.redirected}`);
-    }));
+  async scheduled(_event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
+    const result = await runChecks(env);
+    console.log(`[link-checker] checked=${result.checked} broken=${result.broken} redirected=${result.redirected}`);
   },
 };
