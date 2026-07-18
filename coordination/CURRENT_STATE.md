@@ -467,3 +467,8 @@ Coverage skews to admin and API surfaces: admin auth, admin camps approve/reject
 - **Implemented locally:** all 85 tracked root documents, spreadsheets, CSVs, and text artifacts are classified exactly once as current authority, current business input, active work queue, historical/superseded, or generated/diagnostic. The registry check fails on new unclassified root artifacts, duplicate classifications, and stale entries, and is included in `ci:release`.
 - **Verified locally:** the exhaustive current registry passes and its focused contract test passes 1 file / 1 test.
 - **Organization boundary:** classification makes ownership and future migrations safe; it does not silently move referenced legacy files or delete user scratch outputs. Existing unrelated `buildout/hit-rate-test/out` changes, `body.json`, and `worker-cron/schema/` remain untouched.
+# 2026-07-18 - public camp verification methodology
+
+- **Implemented locally:** `/camps/verification/` now explains the Parent Coach Approved concept through the existing public `Verified` badge: minimum evidence, recorded review date, explicit non-endorsement limits, freshness triggers, moderated correction/removal workflow, and commercial separation. Directory badges and verified detail pages link to the methodology.
+- **Verified locally:** focused camp methodology, truthfulness, and verification-governance coverage passes 3 files / 10 tests. Astro diagnostics complete with 0 errors, 0 warnings, and 356 existing hints.
+- **Claim boundary:** this documents and exposes the existing governed verification workflow. It does not assert inspection, accreditation, safety, quality, provider identity proof, or live deployment.

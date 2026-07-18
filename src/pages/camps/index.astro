@@ -76,7 +76,7 @@ const renderCardHtml = (c: Camp): string => {
     ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
-    ? `<span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>`
+    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing; read the verification methodology">Verified ✓</a>`
     : '';
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
@@ -93,7 +93,7 @@ const renderFeaturedCardHtml = (c: Camp): string => {
     ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
     : '';
   const verified = c.verified === 1
-    ? `<span class="font-display text-rust text-xs font-medium" style="white-space: nowrap">Verified ✓</span>`
+    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing; read the verification methodology">Verified ✓</a>`
     : '';
   const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
   const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
