@@ -1,4 +1,6 @@
 # Parent Coach Playbook: 24-month business plan
+
+> **Company-OS status (2026-07-18):** This plan is preserved as the strategic assumptions and target source. Its company-wide priorities, gates, cadences, discovery portfolio, maintenance rules, and current implementation boundary are consolidated into `strategy/PARENT-COACH-PLAYBOOK-COMPANY-OPERATING-SYSTEM.md`, which is the single current human-readable company operating authority.
 **May 9, 2026 → May 9, 2028**
 
 Single doc that captures every decision from the May 8 strategy conversations and folds them into the existing strategy stack (STRATEGIC_AUDIT_2026-05-05, OWNERSHIP_ACTION_LIST_2026-05-05, AFFILIATES, CAMPS_PROPOSAL, CONTENT_ROADMAP, KIT_DRIP_SETUP). Owner is Jeff. The plan assumes 15-20 hrs/week solo through month 12, then one freelance writer added. No outside capital.

@@ -2,6 +2,7 @@
 
 **Version:** draft 0.1, 2026-07-15
 **Status:** North-star design. Nothing in this folder builds an agent, a schedule, or a queue.
+**Company-OS status (2026-07-18):** The parts of this design that govern the company today are consolidated into `strategy/PARENT-COACH-PLAYBOOK-COMPANY-OPERATING-SYSTEM.md`. This folder remains the detailed future-state AI design and cannot expand current authority on its own.
 **Relationship to PCD-OPERATING-MANUAL.md:** That manual (v1.4) governs how PCD runs today. This folder designs where it is going: the full AI operating system Jeff commissioned on 2026-07-15. The v1.1 reconciliation rejected building the AI OS immediately, and that call stands. What changed is that Jeff ordered the design layer written now, so the build gates below become the adoption mechanism, not a reason to leave the destination unmapped. Pieces of this design graduate into the operating manual one workflow at a time, through the same gates everything else clears.
 
 Every design agent writing a file in this folder reads this file first and treats it as canonical. Where a department design conflicts with this file, this file wins until Jeff amends it.

@@ -1,7 +1,7 @@
 # ParentCoachDesk Operating Manual
 
 **Venture:** ParentCoachDesk.com (Field & Forge Ventures, Forge Command Track V2)
-**Source of truth:** this markdown file. Notion mirrors it under the PCD Command Center page.
+**Source of truth:** this file remains the detailed SOP, workflow, prompt, and agent-history reference. `strategy/PARENT-COACH-PLAYBOOK-COMPANY-OPERATING-SYSTEM.md` is the consolidated company-level authority for priorities, gates, discovery, maintenance, finance, cadence, and decision rights. Notion may mirror this manual but is not authoritative.
 **Version:** 1.5, 2026-07-16. Design session, first pass (v1.0), a three-source feedback reconciliation (v1.1), Session Two adding Phases 4 and 5 (v1.2), the Open Item 10 backup build (v1.3), the roster completion and drift pass (v1.4), then the production-Worker and Business OS reconciliation (v1.5).
 **Scope so far:** Phases 1 to 5 (business architecture, SOP documentation, workflow mapping, prompt architecture, agent design). Phases 6 to 10 are stubbed with prerequisites.
 **Governed by:** Forge Command Master Plan v2.1, the ten named rules, the section 10 failure modes, and the Personal AI Organization Blueprint. Where any of those conflict with this manual, they win.

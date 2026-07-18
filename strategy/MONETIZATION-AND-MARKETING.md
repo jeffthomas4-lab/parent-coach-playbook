@@ -1,5 +1,7 @@
 # Parent Coach Playbook: Monetization and Marketing Plan
 
+> **Company-OS status (2026-07-18):** This document remains supporting strategy. The governing discovery portfolio, revenue sequencing, experiment rules, approval boundaries, and operating cadence are consolidated into `PARENT-COACH-PLAYBOOK-COMPANY-OPERATING-SYSTEM.md`.
+
 **Date:** May 2026
 **Premise:** Site is content-complete enough to monetize. Question is what makes money without consuming the time you've allocated to Chain Reaction and the football season.
 

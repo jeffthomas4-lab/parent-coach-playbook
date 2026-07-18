@@ -1,5 +1,7 @@
 # Content roadmap
 
+> **Company-OS status (2026-07-18):** This remains the detailed editorial backlog. Portfolio mix, capacity, discovery inputs, quality gates, refresh rules, and company priorities are governed by `strategy/PARENT-COACH-PLAYBOOK-COMPANY-OPERATING-SYSTEM.md`.
+
 The full topic pipeline. What's published, what's next, what's queued for the longer arc. Pulls from Jeff's expansion list, the audit gap analysis, and the NotebookLM research report.
 
 Each topic has a contributor recommendation and a destination section. As we publish, we update status from PIPELINE → DRAFT → SHIPPED.

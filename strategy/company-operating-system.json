@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "company": "Parent Coach Playbook",
+  "owner": "Jeff Thomas",
+  "effective_date": "2026-07-18",
+  "master_document": "strategy/PARENT-COACH-PLAYBOOK-COMPANY-OPERATING-SYSTEM.md",
+  "founder_capacity_hours_per_week": { "minimum": 15, "maximum": 20 },
+  "protected_priorities": ["Chain Reaction", "UPS football"],
+  "review_cadence": {
+    "weekly": { "duration_minutes": 30, "owner": "Jeff Thomas" },
+    "monthly": { "duration_minutes": 90, "owner": "Jeff Thomas" },
+    "quarterly": { "duration_minutes": 240, "owner": "Jeff Thomas" },
+    "annual": { "duration_minutes": 480, "owner": "Jeff Thomas" }
+  },
+  "approval_classes": ["analyze", "draft", "stage", "act"],
+  "external_gate_categories": [
+    "production",
+    "credential",
+    "remote_data_mutation",
+    "money",
+    "customer",
+    "legal",
+    "public_publish",
+    "external_communication",
+    "provider_configuration"
+  ],
+  "milestone_gates": [
+    {
+      "id": "gate_1",
+      "review_date": "2026-11-30",
+      "monthly_unique_visitors": { "minimum": 8000, "target": 12000 },
+      "active_subscribers": { "status": "target_not_quantified_in_source" },
+      "monthly_revenue_usd": { "status": "target_not_quantified_in_source" },
+      "decision": "pending"
+    },
+    {
+      "id": "gate_2",
+      "review_date": "2027-05-31",
+      "monthly_unique_visitors": { "minimum": 35000, "target": 50000 },
+      "active_subscribers": { "minimum": 5000, "target": 8000 },
+      "monthly_revenue_usd": { "minimum": 1500, "target": 3500 },
+      "decision": "pending"
+    },
+    {
+      "id": "gate_3",
+      "review_date": "2027-11-30",
+      "monthly_unique_visitors": { "minimum": 65000, "target": 80000 },
+      "active_subscribers": { "minimum": 12000, "target": 15000 },
+      "monthly_revenue_usd": { "minimum": 3000, "target": 5000 },
+      "decision": "pending"
+    },
+    {
+      "id": "gate_4",
+      "review_date": "2028-05-31",
+      "monthly_unique_visitors": { "minimum": 95000, "target": 115000 },
+      "active_subscribers": { "minimum": 20000, "target": 20000 },
+      "monthly_revenue_usd": { "minimum": 4500, "target": 6500 },
+      "decision": "pending"
+    }
+  ],
+  "metric_definitions": [
+    { "id": "monthly_unique_visitors", "domain": "discovery", "owner": "Jeff Thomas", "cadence": "monthly", "source": "approved web analytics", "current": { "status": "pending" } },
+    { "id": "organic_clicks", "domain": "discovery", "owner": "Nora", "cadence": "weekly", "source": "Google Search Console", "current": { "status": "pending" } },
+    { "id": "indexed_public_pages", "domain": "discovery", "owner": "Nora", "cadence": "weekly", "source": "Google Search Console", "current": { "status": "pending" } },
+    { "id": "qualified_sessions_by_intent", "domain": "discovery", "owner": "Jeff Thomas", "cadence": "monthly", "source": "approved analytics plus governed content taxonomy", "current": { "status": "pending" } },
+    { "id": "new_referring_domains", "domain": "authority", "owner": "Jeff Thomas", "cadence": "monthly", "source": "approved backlink source", "current": { "status": "pending" } },
+    { "id": "active_email_subscribers", "domain": "audience", "owner": "Frida", "cadence": "monthly", "source": "selected email provider", "current": { "status": "pending" } },
+    { "id": "email_net_growth", "domain": "audience", "owner": "Frida", "cadence": "weekly", "source": "selected email provider", "current": { "status": "pending" } },
+    { "id": "email_engagement", "domain": "audience", "owner": "Frida", "cadence": "weekly", "source": "selected email provider", "current": { "status": "pending" } },
+    { "id": "content_published", "domain": "editorial", "owner": "Ed", "cadence": "weekly", "source": "content repository", "current": { "status": "pending" } },
+    { "id": "content_refreshed", "domain": "editorial", "owner": "Ed", "cadence": "monthly", "source": "editorial refresh snapshot", "current": { "status": "pending" } },
+    { "id": "voice_audit_pass_rate", "domain": "trust", "owner": "Jeff Thomas", "cadence": "quarterly", "source": "human sample audit", "current": { "status": "pending" } },
+    { "id": "camp_records_current", "domain": "directory", "owner": "Ranger", "cadence": "weekly", "source": "protected directory quality aggregate", "current": { "status": "pending" } },
+    { "id": "camp_records_review_due", "domain": "directory", "owner": "Ranger", "cadence": "weekly", "source": "protected directory quality aggregate", "current": { "status": "pending" } },
+    { "id": "affiliate_revenue_usd", "domain": "revenue", "owner": "Hal", "cadence": "monthly", "source": "affiliate network statements", "current": { "status": "pending" } },
+    { "id": "camps_revenue_usd", "domain": "revenue", "owner": "Jeff Thomas", "cadence": "monthly", "source": "approved payment ledger", "current": { "status": "not_activated" } },
+    { "id": "display_revenue_usd", "domain": "revenue", "owner": "Jeff Thomas", "cadence": "monthly", "source": "advertising provider statement", "current": { "status": "not_activated" } },
+    { "id": "operating_expense_usd", "domain": "finance", "owner": "Jeff Thomas", "cadence": "monthly", "source": "accounting ledger", "current": { "status": "pending" } },
+    { "id": "founder_hours", "domain": "capacity", "owner": "Jeff Thomas", "cadence": "weekly", "source": "founder time log", "current": { "status": "pending" } },
+    { "id": "open_privacy_deadlines", "domain": "risk", "owner": "Vera", "cadence": "daily", "source": "protected trust case system", "current": { "status": "pending" } },
+    { "id": "release_evidence_health", "domain": "operations", "owner": "Jeff Thomas", "cadence": "per_release", "source": "governed release evidence", "current": { "status": "pending" } },
+    { "id": "backup_restore_evidence_health", "domain": "operations", "owner": "Jeff Thomas", "cadence": "quarterly", "source": "governed recovery evidence", "current": { "status": "pending" } }
+  ],
+  "standing_risks": [
+    { "id": "voice_degradation", "owner": "Jeff Thomas", "cadence": "quarterly", "status": "open" },
+    { "id": "search_concentration", "owner": "Jeff Thomas", "cadence": "monthly", "status": "open" },
+    { "id": "founder_capacity_conflict", "owner": "Jeff Thomas", "cadence": "weekly", "status": "open" },
+    { "id": "camp_moderation_overload", "owner": "Ranger", "cadence": "monthly", "status": "open" },
+    { "id": "affiliate_suspension_or_concentration", "owner": "Hal", "cadence": "monthly", "status": "open" },
+    { "id": "premature_monetization", "owner": "Jeff Thomas", "cadence": "quarterly", "status": "open" },
+    { "id": "premature_inventory_product", "owner": "Jeff Thomas", "cadence": "quarterly", "status": "open" },
+    { "id": "legal_privacy_safety_accessibility_insurance", "owner": "Jeff Thomas", "cadence": "monthly", "status": "open" },
+    { "id": "production_or_vendor_failure", "owner": "Jeff Thomas", "cadence": "weekly", "status": "open" },
+    { "id": "automation_authority_drift", "owner": "Jeff Thomas", "cadence": "monthly", "status": "open" },
+    { "id": "stale_claims_or_relationships", "owner": "Ed", "cadence": "monthly", "status": "open" },
+    { "id": "costs_ahead_of_durable_revenue", "owner": "Jeff Thomas", "cadence": "monthly", "status": "open" }
+  ],
+  "implementation_status": {
+    "local_operating_foundation": "implemented",
+    "live_company_scorecard": "pending_external_sources",
+    "professional_readiness": "pending_owner_and_external",
+    "customer_and_commerce_activation": "not_authorized"
+  }
+}
