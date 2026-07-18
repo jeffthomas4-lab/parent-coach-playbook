@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 147 files / 767 tests (the earlier transient fork exit remains documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS on clean rerun — 148 files / 769 tests (the immediately prior attempt failed overall when one Vitest worker exited; both results are documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -42,6 +42,8 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Runtime secret preservation | Implemented and verified locally | `682bd79` declares exactly four required production secret names and validates the generated manifest without storing values. |
 | Post-deploy health evidence | Implemented and verified locally | `f8e1bfb` covers public HTML, camps, health, readiness, static assets, non-mutating API, and Access redirect and retains sanitized SHA-addressed smoke receipts. |
 | Exact deployed asset/version-skew gate | Implemented and verified locally | Each build records one content-hashed Astro asset's path, byte length, SHA-256, and Git SHA; smoke fails unless the deployed bytes match. Gradual or mixed-version delivery remains prohibited pending a separate design and rehearsal. |
+| Scheduled-task reconciliation | Implemented and verified locally | All ten PCD-owned scheduled tasks map to their committed caller source and maintenance behavior; every unobserved runtime receipt remains explicitly pending. Focused coverage prevents placeholder regression or manufactured execution proof. |
+| Final overnight review handoff | Implemented | `coordination/handoffs/2026-07-18-overnight-build-handoff.md` separates verified work, runtime gaps, external gates, and the next ten business-aligned tasks with review questions. |
 | Evidence log | Updated | `79253ca` and `6fd3f7f` record the overnight slices and distribution/maintenance controls. |
 
 ## Requirement reconciliation
