@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 142 files / 755 tests |
+| Full Vitest suite | PASS — 144 files / 759 tests |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -37,6 +37,8 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Parent Coach Approved methodology | Implemented and verified locally | `ecb125e` publishes evidence, freshness, non-endorsement, correction, and commercial-separation rules for the existing Verified badge. |
 | Trust dashboard evidence | Implemented and verified locally | `a734e0a` adds verified coverage, distinct sources, review range, confidence basis, and correction outcome metrics without exposing requester data. |
 | Trusted relationships | Implemented as an inert research workflow | `926da5b` distinguishes candidates from actual relationships, gates outreach, enforces do-not-contact, and exposes a protected read-only workspace. `c0f79fc` proves all 38 protected routes redirect anonymously through Access. |
+| Deployment authority | Implemented and verified locally | `b484da7` retires the dangerous legacy Pages guide and preserves one protected Worker release authority. |
+| Production Access gate | Implemented and verified locally | `a68765c` allows pending evidence in normal CI but blocks the production job until policy and full authenticated allow/deny evidence are complete. |
 | Evidence log | Updated | `79253ca` and `6fd3f7f` record the overnight slices and distribution/maintenance controls. |
 
 ## Requirement reconciliation
