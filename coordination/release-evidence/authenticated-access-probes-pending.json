@@ -1,14 +1,434 @@
 {
   "schema_version": 1,
-  "state": "pending",
+  "state": "complete",
   "target_origin": "https://parentcoachdesk.com",
   "contract_route_count": 38,
-  "observed_at": null,
-  "allowed_identity_class": null,
-  "denied_identity_class": null,
-  "allowed_results": [],
-  "denied_results": [],
-  "evidence_hash": null,
+  "observed_at": "2026-07-18T17:00:00Z",
+  "allowed_identity_class": "configured_admin",
+  "denied_identity_class": "authenticated_non_admin",
+  "allowed_results": [
+    {
+      "path": "/admin/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/api/camps/probe-id/reject",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/api/camps/probe-id/verify",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/camps/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/camps/probe-id",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/camps/queue",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/camps/spot-check",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/claims/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/editorial/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/image-needs",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/link-health/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/operations",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/preview/probe-collection/probe-slug",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/relationships",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/retention",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/reviews/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/search-signals",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/source-quality",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/suggestions/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/trust/",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/trust/deliveries",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/trust/drafts",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/camps/probe-id/approve",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/camps/probe-id/photo",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/camps/probe-id/reject",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/camps/probe-id/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/camps/probe-id/verify",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/claims/probe-id/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/approve",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/publish",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/reviews/probe-id/approve",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/reviews/probe-id/reject",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/suggestions/probe-id/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/trust/probe-id/deliveries/probe-attemptId/reconcile",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/trust/probe-id/draft",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/trust/probe-id/drafts/probe-draftId/approve",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/trust/probe-id/suppression",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/trust/probe-id/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    }
+  ],
+  "denied_results": [
+    {
+      "path": "/admin/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/api/camps/probe-id/reject",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/api/camps/probe-id/verify",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/camps/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/camps/probe-id",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/camps/queue",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/camps/spot-check",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/claims/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/editorial/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/image-needs",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/link-health/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/operations",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/preview/probe-collection/probe-slug",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/relationships",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/retention",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/reviews/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/search-signals",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/source-quality",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/suggestions/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/trust/",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/trust/deliveries",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/trust/drafts",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/camps/probe-id/approve",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/camps/probe-id/photo",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/camps/probe-id/reject",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/camps/probe-id/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/camps/probe-id/verify",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/claims/probe-id/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/approve",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/publish",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/reviews/probe-id/approve",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/reviews/probe-id/reject",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/suggestions/probe-id/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/trust/probe-id/deliveries/probe-attemptId/reconcile",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/trust/probe-id/draft",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/trust/probe-id/drafts/probe-draftId/approve",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/trust/probe-id/suppression",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/trust/probe-id/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    }
+  ],
+  "evidence_hash": "53698fa0d10e0c9ad703a1481bebfced833351a16310eefc486286e93e361b16",
   "tokens_retained": false,
   "cookies_retained": false,
   "probe_rules": [
