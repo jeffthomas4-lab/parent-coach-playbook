@@ -5,7 +5,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { serializeJsonLd } from '../lib/jsonld';
-import { PILLARS, EDITORIAL, TOPICS, SPORTS, SITE } from '../data/site';
+import { PILLARS, EDITORIAL, TOPICS, SPORTS, SITE, SCHEMA_IDS } from '../data/site';
 import { isLive, freshnessDate, wasUpdated } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
 
@@ -82,13 +82,13 @@ const fmtDate = (d: Date) =>
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': SCHEMA_IDS.website,
   name: SITE.name,
   url: SITE.url,
   description: SITE.description,
   publisher: {
     '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
+    '@id': SCHEMA_IDS.organization,
   },
   potentialAction: {
     '@type': 'SearchAction',

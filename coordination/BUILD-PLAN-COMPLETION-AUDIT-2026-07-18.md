@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 149 files / 771 tests (the earlier transient worker exit and clean recovery remain documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS — 150 files / 774 tests (the earlier transient worker exit and clean recovery remain documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -23,6 +23,7 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 |---|---|---|
 | Repository ownership and organization | Implemented and verified | `68141ad` establishes canonical repository ownership and documents the structure without moving user scratch data. |
 | Evidence-based coaching schema | Implemented and verified | `cf8f8a0` adds governed HowTo schema for qualifying coaching content. |
+| Connected structured-data graph | Implemented and verified | Stable absolute identifiers connect Organization, WebSite, publisher, anonymous author, gated Person, and all shared Article variants. Existing FAQPage, HowTo, and breadcrumbs remain limited to semantically supporting pages. |
 | Live 404 audit coverage | Implemented and verified | `2f85417` expands the bounded live audit and fails loudly on bad coverage. |
 | Camp sitemap correctness | Implemented and verified locally | `5255939` fails closed on empty/unavailable supply; `d2b914b` routes it through the Worker-first deployment shape. Live population awaits deployment. |
 | Demand privacy and reporting | Implemented and verified | `a6fe763` adds governed demand reporting; `e7685b5` joins minimized demand signals to content coverage and opportunity scoring. |

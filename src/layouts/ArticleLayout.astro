@@ -5,7 +5,7 @@ import RelatedArticles from '../components/RelatedArticles.astro';
 import BuyingGuideDisclosure from '../components/BuyingGuideDisclosure.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-import { PILLARS, SPORTS, AGE_BANDS, SITE, EDITORIAL, authorEntity, themeFor } from '../data/site';
+import { PILLARS, SPORTS, AGE_BANDS, SITE, SCHEMA_IDS, EDITORIAL, authorEntity, themeFor } from '../data/site';
 import { isLive } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
 import { serializeJsonLd } from '../lib/jsonld';
@@ -86,9 +86,7 @@ const articleSchema = {
   author: authorEntity(),
   publisher: {
     '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
+    '@id': SCHEMA_IDS.organization,
   },
   datePublished: data.publishedAt.toISOString(),
   dateModified: new Date(reviewedAt ?? data.publishedAt).toISOString(),

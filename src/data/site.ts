@@ -13,6 +13,14 @@ export const SITE = {
   email: 'support@parentcoachdesk.com',
 };
 
+// Stable identifiers connect separately emitted JSON-LD nodes into one graph.
+// Keep these URLs stable even when individual templates are reorganized.
+export const SCHEMA_IDS = {
+  organization: `${SITE.url}/#organization`,
+  website: `${SITE.url}/#website`,
+  person: `${SITE.url}/about/#person`,
+} as const;
+
 // Single editorial voice. Used for byline rendering on cards, articles, and feeds.
 // The site is intentionally anonymous. The byline is the team, not any one person.
 export const EDITORIAL = {
@@ -64,12 +72,14 @@ export function authorEntity(): Record<string, unknown> {
   if (!AUTHOR_REVEALED) {
     return {
       '@type': 'Organization',
+      '@id': SCHEMA_IDS.organization,
       name: SITE.name,
       url: SITE.url,
     };
   }
   return {
     '@type': 'Person',
+    '@id': SCHEMA_IDS.person,
     name: AUTHOR.name,
     jobTitle: AUTHOR.jobTitle,
     description: AUTHOR.description,
@@ -91,6 +101,7 @@ export function personSchema(): Record<string, unknown> | null {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': SCHEMA_IDS.person,
     name: AUTHOR.name,
     jobTitle: AUTHOR.jobTitle,
     description: AUTHOR.description,

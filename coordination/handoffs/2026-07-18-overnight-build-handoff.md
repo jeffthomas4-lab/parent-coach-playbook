@@ -16,7 +16,9 @@ production data mutation.
   entrypoint reconciliation that removes obsolete Pages, Kit fallback, and
   dual-CMS guidance.
 - Coaching and trust: evidence-qualified HowTo markup and a public camp
-  verification methodology (`cf8f8a0`, `ecb125e`, `6d3ab2a`).
+  verification methodology (`cf8f8a0`, `ecb125e`, `6d3ab2a`), plus stable
+  Organization/WebSite/author/publisher identifiers across shared Article
+  variants while preserving the default-off Person reveal.
 - Search and discovery: expanded live-404 contract, fail-closed camp sitemap,
   Worker-first sitemap routing, and trusted local camp filters (`2f85417`,
   `5255939`, `d2b914b`, `cec8d0c`).
@@ -39,7 +41,7 @@ production data mutation.
   verification (`b484da7`, `a68765c`, `682bd79`, `f8e1bfb`, `7e0ca6c`,
   `08e6647`).
 
-Latest clean validation before this handoff: 149 test files / 771 tests passed.
+Latest clean validation before this handoff: 150 test files / 774 tests passed.
 The immediately prior attempt failed overall after a Vitest worker exited even
 though 147 files completed; that failed attempt is retained rather than counted
 as green. The new scheduled-task inventory contract passes 1 file / 2 tests.

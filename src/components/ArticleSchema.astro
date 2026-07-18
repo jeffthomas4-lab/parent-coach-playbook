@@ -8,7 +8,7 @@
 // bylines on cards and articles always stay editorial-branded — only
 // the JSON-LD author identity flips.
 
-import { SITE, authorEntity } from '../data/site';
+import { SITE, SCHEMA_IDS, authorEntity } from '../data/site';
 import { serializeJsonLd } from '../lib/jsonld';
 
 interface Props {
@@ -53,12 +53,7 @@ const schema = {
   author: authorEntity(),
   publisher: {
     '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-    logo: {
-      '@type': 'ImageObject',
-      url: new URL('/og-default.jpg', SITE.url).toString(),
-    },
+    '@id': SCHEMA_IDS.organization,
   },
   mainEntityOfPage: {
     '@type': 'WebPage',

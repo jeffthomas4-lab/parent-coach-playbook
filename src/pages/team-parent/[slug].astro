@@ -12,6 +12,7 @@ import {
   AGE_BANDS,
   EDITORIAL,
   SITE,
+  SCHEMA_IDS,
   authorEntity,
 } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
@@ -103,8 +104,7 @@ if (props.kind === 'article') {
     author: authorEntity(),
     publisher: {
       '@type': 'Organization',
-      name: SITE.name,
-      logo: { '@type': 'ImageObject', url: `${SITE.url}/og-default.jpg` },
+      '@id': SCHEMA_IDS.organization,
     },
     datePublished: article.data.publishedAt.toISOString(),
     mainEntityOfPage: `${SITE.url}/team-parent/${article.id}/`,
