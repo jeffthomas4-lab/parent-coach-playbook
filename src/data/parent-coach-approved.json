@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "mark": "Parent Coach Approved",
+  "state": "foundation_no_awards",
+  "minimum_use_weeks": 12,
+  "minimum_alternatives": 2,
+  "paid_placement_allowed": false,
+  "products": []
+}

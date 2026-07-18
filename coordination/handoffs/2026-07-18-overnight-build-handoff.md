@@ -17,7 +17,10 @@ production data mutation.
   reconciliation that removes obsolete Pages, Kit fallback, and dual-CMS
   guidance.
 - Coaching and trust: evidence-qualified HowTo markup and a public camp
-  verification methodology (`cf8f8a0`, `ecb125e`, `6d3ab2a`), plus stable
+  verification methodology (`cf8f8a0`, `ecb125e`, `6d3ab2a`), plus a separate
+  empty-by-default Parent Coach Approved product-mark methodology requiring 12
+  weeks of use, two alternatives, wear evidence, candid fit/skip guidance,
+  human approval, and no paid placement. Stable
   Organization/WebSite/author/publisher identifiers across shared Article
   variants while preserving the default-off Person reveal.
 - Editorial operations: a deterministic 18-month refresh snapshot covers 804
@@ -66,7 +69,7 @@ production data mutation.
   `08e6647`). Staging and production smoke receipts are now retained with
   detached SHA-256 sidecars verified before upload.
 
-Latest clean validation before this handoff: 160 test files / 806 tests passed.
+Latest clean validation before this handoff: 161 test files / 809 tests passed.
 Astro diagnostics report 0 errors, 0 warnings, and 356 existing hints. The
 agent-token rollout contract passes its focused 3 files / 8 tests and the
 committed pending packet passes its standalone release check.

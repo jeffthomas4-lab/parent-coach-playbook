@@ -61,6 +61,7 @@ export async function GET() {
     '/sports/': '2026-05-01',
     '/about/sources/': '2026-05-01',
     '/about/corrections/': '2026-05-01',
+    '/parent-coach-approved/': '2026-07-18',
     '/news/': '2026-06-04',
   };
 
@@ -74,7 +75,7 @@ export async function GET() {
     '/recruiting/', '/adaptive/', '/rules/', '/scripts/', '/decisions/',
     '/youth-sports-pendulum/', '/mental-skills/', '/governing-bodies/',
     '/why-we-exist/', '/parent-coach/', '/sports/', '/about/sources/',
-    '/about/corrections/', '/news/',
+    '/about/corrections/', '/parent-coach-approved/', '/news/',
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/`),
     ...BUYING_GUIDES.map(g => `/what-to-buy/${g.slug}/sizing/`),
     ...SPORTS.map(s => `/sports/${s.slug}/`),

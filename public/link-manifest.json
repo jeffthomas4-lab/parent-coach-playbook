@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-18T01:27:40.520Z",
-  "count": 680,
+  "generatedAt": "2026-07-18T11:19:31.218Z",
+  "count": 678,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -878,18 +878,6 @@
         "src/pages/team-parent/[slug].astro",
         "src/pages/what-to-buy/[slug].astro",
         "src/pages/youth-sports-pendulum.astro"
-      ]
-    },
-    {
-      "url": "https://schema.org/EventScheduled",
-      "sources": [
-        "src/pages/camps/[slug].astro"
-      ]
-    },
-    {
-      "url": "https://schema.org/OfflineEventAttendanceMode",
-      "sources": [
-        "src/pages/camps/[slug].astro"
       ]
     },
     {

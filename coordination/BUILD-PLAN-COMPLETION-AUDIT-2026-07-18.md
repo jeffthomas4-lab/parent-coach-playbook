@@ -10,7 +10,7 @@ This audit reconciles the business-plan priorities, the pasted overnight brief, 
 
 | Check | Result |
 |---|---|
-| Full Vitest suite | PASS — 160 files / 806 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
+| Full Vitest suite | PASS — 161 files / 809 tests (the transient worker exits and clean recoveries remain documented in `coordination/CURRENT_STATE.md`) |
 | Astro diagnostics | PASS — 0 errors, 0 warnings, 356 hints |
 | Social draft-stage contract | PASS — 5 pins / 5 governed links |
 | External mutations in this final pass | None |
@@ -45,7 +45,8 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 | Repository root ownership | Implemented and verified | `67504e0` classifies all 85 tracked root artifacts exactly once and makes unclassified root growth a release failure. |
 | Top-level directory ownership | Implemented and verified | All 36 tracked top-level directories have one operational role; the release contract rejects unclassified, duplicate, stale, invalid, or nested registry entries. |
 | Developer entrypoint reconciliation | Implemented and verified | `README.md` now reflects the canonical directory map, protected Worker release authority, hosted Kit boundary, and Markdown-only current editorial authority; focused coverage rejects the retired Pages and dual-CMS guidance. |
-| Parent Coach Approved methodology | Implemented and verified locally | `ecb125e` publishes evidence, freshness, non-endorsement, correction, and commercial-separation rules for the existing Verified badge. |
+| Camp verification methodology | Implemented and verified locally | `ecb125e` publishes evidence, freshness, non-endorsement, correction, and commercial-separation rules for the camp directory's existing Verified badge. The page now names that badge accurately instead of conflating it with the product mark. |
+| Parent Coach Approved product mark | Implemented as an empty, governed foundation | `/parent-coach-approved/` and its versioned registry require 12 weeks of use, two alternatives, wear evidence, an honest verdict, wrong-for and skip-category guidance, explicit human approval, and no paid placement. No product is currently awarded the mark. |
 | Trust dashboard evidence | Implemented and verified locally | `a734e0a` adds verified coverage, distinct sources, review range, confidence basis, and correction outcome metrics without exposing requester data. |
 | Trusted relationships | Implemented as an inert research workflow | `926da5b` distinguishes candidates from actual relationships, gates outreach, enforces do-not-contact, and exposes a protected read-only workspace. `c0f79fc` proves all 38 protected routes redirect anonymously through Access. |
 | Deployment authority | Implemented and verified locally | `b484da7` retires the dangerous legacy Pages guide and preserves one protected Worker release authority. |

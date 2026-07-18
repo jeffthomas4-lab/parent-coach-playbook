@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import registry from '../data/parent-coach-approved.json';
+import type { ApprovedRegistry } from '../lib/parent-coach-approved';
+import { validateApprovedRegistry } from '../lib/parent-coach-approved';
+
+const approvedRegistry = registry as ApprovedRegistry;
+const validation = validateApprovedRegistry(approvedRegistry);
+if (!validation.valid) {
+  throw new Error(`Parent Coach Approved registry invalid: ${validation.errors.join('; ')}`);
+}
+const approved = approvedRegistry.products.filter((product) => product.status === 'approved');
+---
+
+<BaseLayout
+  title="Parent Coach Approved methodology"
+  description="The evidence, testing, commercial separation, and correction rules behind the Parent Coach Approved product mark."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <p class="font-display italic text-rust mb-3 font-medium">Product testing methodology</p>
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        Parent Coach Approved is earned through use, not placement.
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-3xl leading-snug">
+        The mark means we used a product for a full season, compared it with real alternatives, documented how it wore, and can say plainly who should skip it. It is not yet awarded to any product.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4"><p class="font-display italic text-rust font-medium">The minimum evidence</p></div>
+      <div class="md:col-span-8 article-body">
+        <ul>
+          <li>At least {approvedRegistry.minimum_use_weeks} weeks of regular first-hand use by a parent-coach.</li>
+          <li>Comparison with at least {approvedRegistry.minimum_alternatives} alternatives in the same category and price range.</li>
+          <li>Dated wear or breakdown evidence at meaningful checkpoints.</li>
+          <li>An honest verdict, including who it is wrong for and when to skip the category.</li>
+          <li>Explicit human editorial approval. No automated badge awards.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4"><p class="font-display italic text-rust font-medium">What it does not mean</p></div>
+      <div class="md:col-span-8 article-body">
+        <p>It is not a safety certification, accreditation, guarantee, or universal "best." Governing standards remain the relevant authorities. A manufacturer cannot buy the mark, and affiliate commission cannot create or preserve it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4"><p class="font-display italic text-rust font-medium">Loss, correction, and response</p></div>
+      <div class="md:col-span-8 article-body">
+        <p>A recall, material product change, later-season failure, contrary evidence, or an unsupported claim can move a product back to review or revoke the mark.</p>
+        <p><a href="/trust/?category=content_correction" class="text-rust hover:underline">Submit a correction or manufacturer response</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-px py-10">
+      <h2 class="font-display text-ink text-2xl font-medium">Current marked products</h2>
+      {approved.length === 0 ? (
+        <p class="font-display text-ink-soft mt-3">None. The framework exists before the first badge, so the evidence bar cannot be written around a product afterward.</p>
+      ) : (
+        <ul>{approved.map((product) => <li>{product.name}</li>)}</ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>
