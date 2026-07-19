@@ -79,6 +79,6 @@ Glad you're here. See you next Friday.
 - "The Monday After the World Cup Final" is dated 7-20 in the repo. Not linked here because it isn't live at send time. Strong candidate for issue No. 2's lead.
 - Amazon scan: clean. Zero Amazon links in the body. Every link is a parentcoachdesk.com page or the PDF. The archive piece contains a Bookshop `/go/` link (Mindset) inside the article on the site, not repeated in this email.
 - Every URL verified HTTP 200 on 2026-07-15, including the PDF (application/pdf, live).
-- Sign-off updated from "PCP Editorial / Parent Coach Playbook" to "The Parent Coach Desk" to match the live brand and the newsletter page copy. Your call; if you keep the old sign-off, change it in the welcome sequence too so the two match.
+- Sign-off updated from "PCP Editorial / Parent Coach Desk" to "The Parent Coach Desk" to match the live brand and the newsletter page copy. Your call; if you keep the old sign-off, change it in the welcome sequence too so the two match.
 - Lead word count: ~180.
 - After sending: `/newsletter/` still says "We haven't sent an issue yet." That page needs the empty-state block replaced with issue No. 1. That's `src/pages/newsletter.astro`, which belongs to the site lane, flagged in the distribution report.
