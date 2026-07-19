@@ -91,7 +91,7 @@ Every SOP names its approval gate. The HUMAN GATE rule holds across all of them:
 | S2 | Deploy and backup | Site ops | On source change | none (manual, per Deployments.md) | Cleared |
 | S3 | Standard audit pass | Site ops | On source change | none (`/web:` slash commands) | Cleared |
 | S4 | Data-deletion request handling | Support/Ops | On request | none (unmonitored today) | Not cleared |
-| S5 | Affiliate link health | Affiliate | Weekly | `pcd-link-health-monitor` | Running |
+| S5 | Affiliate link health | Affiliate | Weekly | `pcd-link-health-monitor` (detect, Mon), `pcd-affiliate-replacement-sourcer` (source + validate replacements, Tue) | Running |
 | S6 | Affiliate revenue reconcile | Affiliate, Finance | Monthly | `pcd-affiliate-reconciler` | Running |
 | S7 | Camp discovery and enrichment | Camp lead gen | Daily | `org-discovery-daily-worklist` | Running (autonomous) |
 | S8 | Camps directory data quality | Camp lead gen | Weekly | `pcd-camps-data-steward` | Running |
@@ -133,10 +133,10 @@ Every SOP names its approval gate. The HUMAN GATE rule holds across all of them:
 
 ### S5. Affiliate link health
 
-**Trigger:** weekly.
-**Steps:** Crawl every `/go/` affiliate redirect, check for dead targets, redirects, and broken destinations, and report failures with the article they sit in.
-**Approval gate:** Report only. Link fixes route to Editorial or Site ops.
-**Backing task:** `pcd-link-health-monitor` (Mon 7:04).
+**Trigger:** weekly, two-stage (detect Monday, source Tuesday).
+**Steps:** Stage 1 (detect) — the monitor checks affiliate destinations for content degradation (out-of-stock, category/search redirect, changed merchant) beyond the daily worker's 404 sweep, browser-confirms each issue, and writes a clean confirmed-broken handoff list to `reports/link-health/LINK_HEALTH_[date].md`. Stage 2 (source) — the replacement sourcer reads that report, skips any slug the governance/lifecycle system owns, sources 1-3 candidate products, browser-validates each ASIN (live + in-stock + matching), and writes a ready-to-apply diff proposal to `reports/affiliate/REPLACEMENTS_[date].md`. The monitor no longer sources replacements itself; that is the sourcer's job.
+**Approval gate:** Report only, both stages. No writes to `affiliates.json`, no commits, no deploys. Every proposed swap is flagged PENDING JEFF REVIEW; Jeff pushes. No-replacement slugs are surfaced as retire candidates.
+**Backing tasks:** `pcd-link-health-monitor` (Mon 7:04, detect) and `pcd-affiliate-replacement-sourcer` (Tue 7:39, source + validate). Coordinates with S6 (reconciler owns revenue swaps only) and the affiliate governance/lifecycle system (`src/data/affiliate-governance.json`, `reports/affiliate/lifecycle.json`).
 
 ### S6. Affiliate revenue reconcile
 
@@ -212,6 +212,7 @@ Jeff asked for this explicitly, and it is the most important correction the manu
 | `pcd-deletion-monitor` | Daily 7:04 AM | Vera | Support/Ops (S4) | Stage | No |
 | `pcd-link-health-monitor` | Mon 7:04 AM | Hal | Affiliate (S5) | Report | No |
 | `weekly-gsc-review` | Mon 8:08 AM | Nora | Marketing (S1) | Report | No |
+| `pcd-affiliate-replacement-sourcer` | Tue 7:39 AM | Hal | Affiliate (S5) | Proposal (diff) | No |
 | `pcd-rules-watcher` | Tue 7:08 AM | Ed | Editorial (S9) | Draft | No |
 | `pcd-friday-letter-draft` | Wed 8:03 AM | Frida | Marketing (S10) | Draft | No |
 | `pcd-camps-data-steward` | Thu 4:07 AM | Ranger | Camp lead gen (S8) | Report or stage | No |
@@ -270,6 +271,7 @@ Every PCD agent is a `SKILL.md` file behind a Cowork scheduled task. There are t
 | `pcd-deletion-monitor` | Vera | S4 | Daily 7:04 AM | Stage | No | Yes, direct D1 insert |
 | `weekly-gsc-review` | Nora | S1 | Mon 8:08 AM | Analyze | No | No |
 | `pcd-link-health-monitor` | Hal | S5 | Mon 7:04 AM | Analyze | No | No |
+| `pcd-affiliate-replacement-sourcer` | Hal | S5 | Tue 7:39 AM | Analyze, Draft | No | No |
 | `pcd-rules-watcher` | Ed | S9 | Tue 7:08 AM | Draft | No | No |
 | `pcd-friday-letter-draft` | Frida | S10 | Wed 8:03 AM | Draft | No | No |
 | `pcd-camps-data-steward` | Ranger | S8 | Thu 4:07 AM | Stage | No | No |
@@ -354,7 +356,7 @@ Each row is one agent. The three tags are **live** (one of the ten PCD scheduled
 | **Nora** | S1 `weekly-gsc-review` | Marketing / Jeff | active | Analyze, Draft, Stage | R1 | Wired in spec, not in the deployed prompt | Partial |
 | **Ed** | S9 `pcd-rules-watcher`, `pcd-seasonal-content-scheduler`; S11 `pcd-freshness-audit` | Editorial / Jeff | active | Draft, Analyze | R1 | Wired in spec, not in the deployed prompt | Partial |
 | **Frida** | S10 `pcd-friday-letter-draft` | Marketing / Jeff | active | Draft | R1 | Wired in spec, not in the deployed prompt | Partial |
-| **Hal** | S5 `pcd-link-health-monitor`, S6 `pcd-affiliate-reconciler` | Affiliate, Finance / Jeff | active | Analyze, Draft | R1 | Wired in spec, not in the deployed prompt | Partial |
+| **Hal** | S5 `pcd-link-health-monitor`, S5 `pcd-affiliate-replacement-sourcer`, S6 `pcd-affiliate-reconciler` | Affiliate, Finance / Jeff | active | Analyze, Draft | R1 | Wired in spec, not in the deployed prompt | Partial |
 | **Sunny** | S12, no task yet | Support/Ops / Jeff | paused | Draft | R1 | Wired in spec | On enable |
 | `pcd-backup` | Open Item 10 script | Camp lead gen / Jeff | paused | n/a, manual | R2 | Build logged | Three runs owed |
 | Finance | Affiliate revenue / Jeff | portfolio | paused | Analyze | R1 | Pending | On build |

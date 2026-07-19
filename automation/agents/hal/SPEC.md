@@ -16,7 +16,7 @@
 
 ## 2. Trigger
 
-- **S5 link health:** Monday morning (matches `pcd-link-health-monitor`, Mon 7:04 AM). A rotation of roughly 65 slugs per run, so the full list of 135 turns over about monthly.
+- **S5 link health:** two stages. Monday morning detect (matches `pcd-link-health-monitor`, Mon 7:04 AM) — a rotation of roughly 65 slugs per run, so the full list turns over about monthly. Tuesday morning source (matches `pcd-affiliate-replacement-sourcer`, Tue 7:39 AM) — reads the Monday report and proposes browser-validated replacements for confirmed-broken slugs. Detection and sourcing are separate tasks so a false positive never triggers an un-validated swap.
 - **S6 revenue reconcile:** monthly, day 2 (matches `pcd-affiliate-reconciler`).
 - **Disclosure and application status:** rides along with the monthly S6 run, not a separate cadence.
 - Manual runs allowed any time Jeff wants a fresh read, and specifically after any deploy that touches `/what-to-buy/` or `src/data/affiliates.json`.
@@ -81,7 +81,7 @@ One `agent_runs` row per run, written through `POST /api/agent-runs` (bearer `AG
 
 Independent enable/disable flag scoped to `agent = 'hal'` in `agent_registry`. Flipping Hal off does not touch Nora, Ed, Frida, Ranger, Vera, or Sunny. CANARY applies normally: two failed runs inside 24 hours pauses Hal and says so in Slack, per the endpoint's behavior. Hal is a report agent watching a revenue surface that earns nothing today, so an auto-pause here costs a week of link checks, not a legal SLA. That is the opposite of Vera's case and the reason her switch is manual and his is not.
 
-The underlying scheduled tasks `pcd-link-health-monitor` and `pcd-affiliate-reconciler` keep firing as raw tasks until they are wired to Hal's run-log calls. Same gap pattern Nora, Ed, and Frida each carry, named in the handoff.
+The underlying scheduled tasks `pcd-link-health-monitor`, `pcd-affiliate-replacement-sourcer`, and `pcd-affiliate-reconciler` keep firing as raw tasks until they are wired to Hal's run-log calls. Same gap pattern Nora, Ed, and Frida each carry, named in the handoff.
 
 ## 9. Existence test
 

@@ -142,6 +142,71 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 | hand-warmers | 2026-07-13 |
 | rain-poncho | 2026-07-13 |
 | folding-wagon | 2026-07-13 |
+| gear-bag-small | 2026-07-18 |
+| pop-up-tent-sunscreen | 2026-07-18 |
+| seat-cushion | 2026-07-18 |
+| frame-8x10 | 2026-07-18 |
+| photo-book-service | 2026-07-18 |
+| coach-clipboard-dry-erase | 2026-07-18 |
+| coach-stopwatch | 2026-07-18 |
+| scrimmage-pennies | 2026-07-18 |
+| coach-backpack | 2026-07-18 |
+| portable-whiteboard | 2026-07-18 |
+| first-aid-fanny-pack | 2026-07-18 |
+| ball-pump-with-gauge | 2026-07-18 |
+| wrestling-headgear | 2026-07-18 |
+| wrestling-shoes-youth | 2026-07-18 |
+| wrestling-singlet-youth | 2026-07-18 |
+| wrestling-knee-pad | 2026-07-18 |
+| wrestling-bag | 2026-07-18 |
+| pickleball-paddle-youth | 2026-07-18 |
+| pickleball-balls-outdoor | 2026-07-18 |
+| pickleball-bag | 2026-07-18 |
+| pickleball-shoes | 2026-07-18 |
+| rugby-mouthguard | 2026-07-18 |
+| rugby-cleats | 2026-07-18 |
+| rugby-scrum-cap | 2026-07-18 |
+| rugby-shoulder-pads | 2026-07-18 |
+| foam-roller-standard | 2026-07-18 |
+| resistance-bands-set | 2026-07-18 |
+| speed-ladder-agility | 2026-07-18 |
+| agility-cones-set | 2026-07-18 |
+| jump-rope-speed | 2026-07-18 |
+| rebounder-net-baseball | 2026-07-18 |
+| folding-table-6ft | 2026-07-18 |
+| portable-pa-speaker | 2026-07-18 |
+| cash-box-lockable | 2026-07-18 |
+| label-maker-handheld | 2026-07-18 |
+| square-card-reader | 2026-07-18 |
+| volleyball-ball-youth-light | 2026-07-18 |
+| volleyball-shoes-gel-rocket | 2026-07-18 |
+| volleyball-knee-pads-lr6 | 2026-07-18 |
+| volleyball-backpack | 2026-07-18 |
+| baseball-bat-youth | 2026-07-18 |
+| baseball-bat-bbcor | 2026-07-18 |
+| baseball-cleats-metal | 2026-07-18 |
+| basketball-shoes-youth | 2026-07-18 |
+| football-neck-roll | 2026-07-18 |
+| hockey-skates-youth | 2026-07-18 |
+| hockey-pads-starter | 2026-07-18 |
+| hockey-mouthguard | 2026-07-18 |
+| softball-bat-youth | 2026-07-18 |
+| softball-bat-intermediate | 2026-07-18 |
+| softball-bat-hs | 2026-07-18 |
+| softball-sliding-shorts | 2026-07-18 |
+| softball-pitching-jacket | 2026-07-18 |
+| wrestling-rashguard | 2026-07-18 |
+| golf-starter-set-youth | 2026-07-18 |
+| golf-glove-youth | 2026-07-18 |
+| gymnastics-leotard-youth | 2026-07-18 |
+| gymnastics-slippers-youth | 2026-07-18 |
+| martial-arts-gi-youth | 2026-07-18 |
+| lacrosse-stick-boys-youth | 2026-07-18 |
+| lacrosse-helmet-boys-youth | 2026-07-18 |
+| lacrosse-gloves-youth | 2026-07-18 |
+| lacrosse-shoulder-pads-youth | 2026-07-18 |
+| lacrosse-stick-girls-youth | 2026-07-18 |
+| book-changing-the-game | 2026-07-18 |
 
 ## Run log
 
@@ -149,7 +214,10 @@ Only slugs that have been checked at least once are listed. Anything in `affilia
 |---|---|---|---|
 | 2026-07-08 | 65 (see table above) | LINK_HEALTH_2026-07-08.md | 0 confirmed (6 bot-detection false positives) |
 | 2026-07-13 | 65 (see table above) | LINK_HEALTH_2026-07-13.md | 2 confirmed: foam-roller-medium (unavailable), stadium-chair-premium (temp OOS) |
+| 2026-07-18 | 65 (never-checked backlog) | LINK_HEALTH_2026-07-18.md | 23 confirmed: 14 dead ASINs, 3 OOS, 5 product mismatches, 1 non-Amazon 404 (square-card-reader). 0 false positives, 0 unconfirmed. High degradation rate — never-checked backlog appears bulk-added with unvalidated ASINs. |
 
 ## Next run
 
 Pick the ~65 slugs with the oldest last-checked date (all slugs not in the table above first, since they've never been checked), check them, then update their dates here.
+
+**~50 never-checked slugs remain** as of 2026-07-18 (195 of 245 now dated). Continue draining the never-checked backlog before returning to the 2026-07-08 dated slugs. Given the ~35% degradation rate found in the backlog, expect more dead/mismatched ASINs next run.
