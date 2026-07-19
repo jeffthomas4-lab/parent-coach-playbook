@@ -1,33 +1,73 @@
 ---
 import affiliates from '../../data/affiliates.json';
-import governance from '../../data/affiliate-governance.json';
-import { governedAffiliateDestination } from '../../lib/affiliate-routing';
-import type { AffiliateGovernance } from '../../lib/affiliate-routing';
+import { env as cfEnv } from 'cloudflare:workers';
 
-export async function getStaticPaths() {
-  return Object.entries(affiliates).map(([slug, entry]) => {
-    const destination = governedAffiliateDestination(
-      (entry as any).destination,
-      (entry as any).campaign ?? slug,
-      governance as AffiliateGovernance,
-    );
-    return { params: { slug }, props: { destination } };
-  });
+export const prerender = false;
+
+const { slug } = Astro.params;
+const entry = slug ? (affiliates as Record<string, any>)[slug] : undefined;
+
+if (!entry) {
+  return Astro.redirect('/', 302);
 }
 
-const { destination } = Astro.props;
+const url = new URL((entry as any).destination);
+// Amazon Associates Operating Agreement: Special Links must be used as
+// provided. Do not append UTM (or any other) parameters to Amazon links.
+// The params land on Amazon's side, not ours, so they add zero analytics
+// value anyway. Same rule for CJ click URLs (tkqlhce/anrdoezrs/jdoqocy/
+// kqzyfj): the redirector only understands its own params, so per-slot
+// tracking rides the ?sid= baked into affiliates.json instead of UTMs.
+// Other retailers still get UTMs.
+const isTrackedNetwork = /(^|\.)amzn\.to$|(^|\.)amazon\.com$|(^|\.)tkqlhce\.com$|(^|\.)anrdoezrs\.net$|(^|\.)jdoqocy\.com$|(^|\.)kqzyfj\.com$/.test(url.hostname);
+if (!isTrackedNetwork) {
+  url.searchParams.set('utm_source', 'parentcoachdesk');
+  url.searchParams.set('utm_medium', 'affiliate');
+  url.searchParams.set('utm_campaign', (entry as any).campaign ?? slug);
+}
+const destination = url.toString();
+
+const campaign: string = (entry as any).campaign ?? slug;
+const retailer: string | null = (entry as any).retailer ?? null;
+
+// Fail-safe click logging: a failure here must never block or break the
+// redirect. Everything below is wrapped so nothing can throw past this point.
+try {
+  const env = cfEnv as { PCD_OPS_DB?: D1Database } | undefined;
+  const clickedAt = new Date().toISOString();
+  let referrerHost: string | null = null;
+  try {
+    referrerHost = new URL(Astro.request.headers.get('referer') || '').host;
+  } catch {
+    referrerHost = null;
+  }
+  const country = Astro.request.headers.get('cf-ipcountry') || null;
+
+  const stmt = env?.PCD_OPS_DB?.prepare(
+    'INSERT INTO affiliate_clicks (slug,campaign,retailer,clicked_at,referrer_host,country) VALUES (?1,?2,?3,?4,?5,?6)'
+  ).bind(slug, campaign, retailer, clickedAt, referrerHost, country);
+
+  const ctx = (Astro.locals as any)?.runtime?.ctx;
+  if (ctx?.waitUntil) {
+    ctx.waitUntil(stmt?.run().catch(() => {}));
+  } else {
+    try {
+      await stmt?.run();
+    } catch {
+      // swallow: logging must never break the redirect
+    }
+  }
+} catch {
+  // swallow: logging must never break the redirect
+}
+
+return new Response(null, {
+  status: 302,
+  headers: {
+    Location: destination,
+    'X-Robots-Tag': 'noindex, nofollow',
+    'Cache-Control': 'no-store',
+    'Referrer-Policy': 'no-referrer-when-downgrade',
+  },
+});
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content={`0; url=${destination}`} />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href={destination} />
-  <title>Redirecting...</title>
-  <!-- JS redirect removed: <meta http-equiv="refresh"> above handles it without unsafe-inline -->
-</head>
-<body>
-  <p>Redirecting to <a href={destination} rel="sponsored noopener">{destination}</a>...</p>
-</body>
-</html>

@@ -6,12 +6,7 @@
 
 name = "parent-coach-playbook-link-checker"
 main = "src/index.ts"
-compatibility_date = "2026-07-18"
-compatibility_flags = ["nodejs_compat"]
-
-[observability]
-enabled = true
-head_sampling_rate = 1
+compatibility_date = "2025-04-01"
 
 # Daily at 09:00 UTC = 1am PST / 2am PDT. Off-peak for both us and most external hosts.
 [triggers]
@@ -21,8 +16,8 @@ crons = ["0 9 * * *"]
 [[d1_databases]]
 binding = "DB"
 database_name = "parent-coach-playbook"
-database_id = "REPLACE_WITH_YOUR_D1_ID"
-preview_database_id = "REPLACE_WITH_YOUR_PREVIEW_D1_ID"
+database_id = "8336fa9f-cc4f-4475-8284-e75658e26399"
+preview_database_id = "REPLACE_WITH_YOUR_PREVIEW_D1_ID" # TODO: set preview id or remove for prod-only deploy
 
 # Optional: configure the manifest URL via env var so we can point at staging in dev.
 [vars]
@@ -30,9 +25,5 @@ MANIFEST_URL = "https://parentcoachdesk.com/link-manifest.json"
 LINKS_PER_RUN = "50"
 ROTATION_DAYS = "180"
 
-# This Worker is PAUSED until the placeholder D1 identifiers are replaced through
-# an approved deployment plan. Do not attach a route or configure its cron in a
-# production account before that review.
-#
-# Secret to set with `wrangler secret put` only when it is approved for use:
-#   ADMIN_API_KEY (Bearer credential for an ad-hoc check request)
+# Secrets to set with `wrangler secret put`:
+#   ADMIN_API_KEY (used by /admin/link-health/ to authenticate ad-hoc check requests)

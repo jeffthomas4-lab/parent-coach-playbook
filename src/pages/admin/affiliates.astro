@@ -1,0 +1,300 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { requireAdmin } from '../../lib/admin-auth';
+import { env as cfEnv } from 'cloudflare:workers';
+import affiliates from '../../data/affiliates.json';
+
+// SSR — pulls from D1 at request time so the dashboard is always current.
+// Read-only: no forms, no writes, no external fetches.
+export const prerender = false;
+
+const env = cfEnv as { ADMIN_EMAILS?: string; PCD_OPS_DB?: D1Database } | undefined;
+
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+const adminEmail = auth.email;
+
+const affiliateMap = affiliates as Record<string, { destination: string; retailer: string; campaign: string }>;
+
+const hostOf = (url: string) => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+};
+
+interface Totals {
+  last7: number;
+  last30: number;
+  allTime: number;
+}
+
+interface SlugRow {
+  slug: string;
+  n: number;
+}
+
+interface RetailerRow {
+  retailer: string | null;
+  n: number;
+}
+
+interface CampaignRow {
+  campaign: string | null;
+  n: number;
+}
+
+interface RecentRow {
+  clicked_at: string;
+  slug: string;
+  retailer: string | null;
+  referrer_host: string | null;
+  country: string | null;
+}
+
+let totals: Totals | null = null;
+let topSlugs: SlugRow[] = [];
+let byRetailer: RetailerRow[] = [];
+let byCampaign: CampaignRow[] = [];
+let recentClicks: RecentRow[] = [];
+let loadError = false;
+
+const now = new Date();
+const cutoff7 = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
+const cutoff30 = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString();
+
+if (env?.PCD_OPS_DB) {
+  try {
+    const db = env.PCD_OPS_DB;
+
+    const [last7Result, last30Result, allTimeResult] = await Promise.all([
+      db.prepare('SELECT COUNT(*) AS n FROM affiliate_clicks WHERE clicked_at >= ?').bind(cutoff7).first<{ n: number }>(),
+      db.prepare('SELECT COUNT(*) AS n FROM affiliate_clicks WHERE clicked_at >= ?').bind(cutoff30).first<{ n: number }>(),
+      db.prepare('SELECT COUNT(*) AS n FROM affiliate_clicks').first<{ n: number }>(),
+    ]);
+
+    totals = {
+      last7: last7Result?.n ?? 0,
+      last30: last30Result?.n ?? 0,
+      allTime: allTimeResult?.n ?? 0,
+    };
+
+    const topSlugsResult = await db
+      .prepare(
+        `SELECT slug, COUNT(*) AS n FROM affiliate_clicks WHERE clicked_at >= ? GROUP BY slug ORDER BY n DESC LIMIT 50`,
+      )
+      .bind(cutoff30)
+      .all<SlugRow>();
+    topSlugs = topSlugsResult.results ?? [];
+
+    const byRetailerResult = await db
+      .prepare(`SELECT retailer, COUNT(*) AS n FROM affiliate_clicks GROUP BY retailer ORDER BY n DESC`)
+      .all<RetailerRow>();
+    byRetailer = byRetailerResult.results ?? [];
+
+    const byCampaignResult = await db
+      .prepare(
+        `SELECT campaign, COUNT(*) AS n FROM affiliate_clicks WHERE clicked_at >= ? GROUP BY campaign ORDER BY n DESC LIMIT 25`,
+      )
+      .bind(cutoff30)
+      .all<CampaignRow>();
+    byCampaign = byCampaignResult.results ?? [];
+
+    const recentResult = await db
+      .prepare(
+        `SELECT clicked_at, slug, retailer, referrer_host, country FROM affiliate_clicks ORDER BY clicked_at DESC LIMIT 25`,
+      )
+      .all<RecentRow>();
+    recentClicks = recentResult.results ?? [];
+  } catch (err) {
+    console.error('affiliates dashboard query failed', err);
+    loadError = true;
+    totals = null;
+    topSlugs = [];
+    byRetailer = [];
+    byCampaign = [];
+    recentClicks = [];
+  }
+}
+
+const hasData = !loadError && env?.PCD_OPS_DB && totals !== null;
+
+const fmtDateTime = (s: string) =>
+  new Date(s).toLocaleString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+---
+<AdminLayout title="Affiliate clicks" description="Read-only affiliate click analytics." email={adminEmail}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">Admin · Affiliate clicks</p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+        Affiliate click analytics
+      </h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Read-only, first-party click counts by slug, campaign, and retailer. No external calls — everything below comes from the PCD_OPS_DB affiliate_clicks table.
+      </p>
+    </div>
+  </section>
+
+  {!hasData ? (
+    <section>
+      <div class="container-px py-10">
+        <p class="font-display italic text-ink-soft font-medium">
+          No click data yet — apply migration migrations-pcd-ops/0023_affiliate_clicks.sql and deploy, then clicks will appear here.
+        </p>
+      </div>
+    </section>
+  ) : (
+    <>
+      <section>
+        <div class="container-px py-10">
+          <div class="grid grid-cols-3 gap-px bg-bone">
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Last 7 days</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{totals!.last7}</p>
+            </div>
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">Last 30 days</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{totals!.last30}</p>
+            </div>
+            <div class="bg-paper p-4">
+              <p class="font-display italic text-ink-soft text-xs font-medium">All-time</p>
+              <p class="font-display text-ink text-2xl mt-1 font-medium">{totals!.allTime}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-t border-bone">
+        <div class="container-px py-10">
+          <h2 class="font-display text-ink text-xl font-medium mb-4">Top slugs (last 30 days)</h2>
+          {topSlugs.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">No clicks in the last 30 days.</p>
+          ) : (
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-bone">
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Slug</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Clicks</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Retailer</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Destination host</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topSlugs.map((row) => {
+                  const meta = affiliateMap[row.slug];
+                  return (
+                    <tr class="border-b border-bone hover:bg-paper-warm">
+                      <td class="py-2 pr-3 align-top font-display text-ink font-medium">{row.slug}</td>
+                      <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.n}</td>
+                      <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{meta?.retailer ?? '—'}</td>
+                      <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">
+                        {meta ? (
+                          hostOf(meta.destination)
+                        ) : (
+                          <span class="font-display italic px-2 py-0.5 text-xs text-paper font-medium" style="background: #9E5228;">
+                            Not in affiliates.json
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </section>
+
+      <section class="border-t border-bone">
+        <div class="container-px py-10">
+          <h2 class="font-display text-ink text-xl font-medium mb-4">Clicks by retailer (all-time)</h2>
+          {byRetailer.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">No click data.</p>
+          ) : (
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-bone">
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Retailer</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Clicks</th>
+                </tr>
+              </thead>
+              <tbody>
+                {byRetailer.map((row) => (
+                  <tr class="border-b border-bone hover:bg-paper-warm">
+                    <td class="py-2 pr-3 align-top font-display text-ink font-medium">{row.retailer ?? '—'}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.n}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </section>
+
+      <section class="border-t border-bone">
+        <div class="container-px py-10">
+          <h2 class="font-display text-ink text-xl font-medium mb-4">Clicks by campaign (last 30 days)</h2>
+          {byCampaign.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">No clicks in the last 30 days.</p>
+          ) : (
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-bone">
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Campaign</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Clicks</th>
+                </tr>
+              </thead>
+              <tbody>
+                {byCampaign.map((row) => (
+                  <tr class="border-b border-bone hover:bg-paper-warm">
+                    <td class="py-2 pr-3 align-top font-display text-ink font-medium">{row.campaign ?? '—'}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.n}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </section>
+
+      <section class="border-t border-bone">
+        <div class="container-px py-10">
+          <h2 class="font-display text-ink text-xl font-medium mb-4">Recent clicks (latest 25)</h2>
+          {recentClicks.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">No clicks recorded yet.</p>
+          ) : (
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-bone">
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Clicked at</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Slug</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Retailer</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Referrer host</th>
+                  <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Country</th>
+                </tr>
+              </thead>
+              <tbody>
+                {recentClicks.map((row) => (
+                  <tr class="border-b border-bone hover:bg-paper-warm">
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft text-xs font-medium">{fmtDateTime(row.clicked_at)}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink font-medium">{row.slug}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.retailer ?? '—'}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.referrer_host ?? '—'}</td>
+                    <td class="py-2 pr-3 align-top font-display text-ink-soft font-medium">{row.country ?? '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </section>
+    </>
+  )}
+</AdminLayout>

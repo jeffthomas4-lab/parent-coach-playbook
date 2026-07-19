@@ -48,4 +48,4 @@ The old subdomain, `parent-coach-playbook.kit.com`, is hardcoded in three places
 
 ## 3. Related, not required
 
-`kit-emails/KIT_SEQUENCE_DRAFTS.md` already in this folder is a different, older draft: a 6-email general welcome sequence (not the What to Say When drip), still branded "Parent Coach Playbook" with the old sender name and old domain throughout. It predates this session's rebrand work. Your call whether to retire it, rebrand it, or fold pieces of it into a future sequence. Not touched here since it's a separate decision from the drip this task was scoped to.
+`kit-emails/KIT_SEQUENCE_DRAFTS.md` already in this folder is a different, older draft: a 6-email general welcome sequence (not the What to Say When drip), still branded "Parent Coach Desk" with the old sender name and old domain throughout. It predates this session's rebrand work. Your call whether to retire it, rebrand it, or fold pieces of it into a future sequence. Not touched here since it's a separate decision from the drip this task was scoped to.

@@ -1,12 +1,12 @@
 # Kit free-tier welcome sequence — six drafts
 
-> **SUPERSEDED 2026-07-15.** Old branding (Parent Coach Playbook), old domain, gmail sender, pre-rebrand voice. Do not paste these into Kit. The current paste-ready sequence is `WELCOME-SEQUENCE-FINAL.md` in this folder. Kept for reference only.
+> **SUPERSEDED 2026-07-15.** Old branding (Parent Coach Desk), old domain, gmail sender, pre-rebrand voice. Do not paste these into Kit. The current paste-ready sequence is `WELCOME-SEQUENCE-FINAL.md` in this folder. Kept for reference only.
 
 Six emails over four weeks. No automation set up yet — paste each one into Kit when ready, set the trigger, do not send live until you've reviewed.
 
 Voice: warm, mom-friendly, declarative-but-soft. Same rules as `EDITORIAL_STANDARDS.md`. Keep emails short. Each one ends with a single clear next step.
 
-Sender: `Parent Coach Playbook Editorial <parentcoachplaybook@gmail.com>`. From-name option: "PCP Editorial" — friendlier than the full byline.
+Sender: `Parent Coach Desk Editorial <parentcoachplaybook@gmail.com>`. From-name option: "PCP Editorial" — friendlier than the full byline.
 
 ---
 
@@ -35,7 +35,7 @@ The next one lands Wednesday. It's about the first ninety seconds after a tough 
 Glad you're here.
 
 — The Editorial Team
-Parent Coach Playbook
+Parent Coach Desk
 ```
 
 **Trigger:** subscribe to free tier.
