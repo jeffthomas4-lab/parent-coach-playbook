@@ -5,7 +5,7 @@ import { relationshipMetrics, validateRelationshipRegistry, type RelationshipRec
 describe('trusted relationship registry', () => {
   it('keeps current candidates evidence-backed and entirely pre-outreach', () => {
     expect(validateRelationshipRegistry(registry)).toEqual([]);
-    expect(relationshipMetrics(registry.records as RelationshipRecord[])).toEqual({ candidates: 2, human_reviewed: 0, outreach_approved: 0, active_relationships: 0, do_not_contact: 0 });
+    expect(relationshipMetrics(registry.records as RelationshipRecord[])).toEqual({ candidates: 7, human_reviewed: 0, outreach_approved: 0, active_relationships: 0, do_not_contact: 0 });
   });
 
   it('rejects relationship claims and contact attempts without their human gates', () => {

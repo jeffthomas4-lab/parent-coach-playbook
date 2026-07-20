@@ -112,3 +112,17 @@ Earlier slice-specific evidence, commands, and claim boundaries are recorded at 
 8. Complete provider-specific newsletter proof before enabling any delivery.
 
 No step above authorizes payments, public social posting, marketing delivery, production data migration, or a production deployment by itself.
+
+
+## Post-baseline hardening pass (2026-07-18, from commit `e808801`)
+
+Four additional local slices landed after the audit above, addressing the open review questions Q5, Q3, and Q1/Q2. The warm-up doc fix (Q-warmup) was already applied in `e808801` and needed no change.
+
+| Slice | Outcome | Evidence |
+|---|---|---|
+| Q5 deploy auto-remediation | Implemented and verified locally | `scripts/deploy-remediation.mjs` rolls production back to the recorded good version id on smoke failure, or halts and alerts; wired into both deploy jobs conditioned on deploy-success and smoke-failure. Six tests against a mocked Wrangler CLI. The live staging rollback drill stays owner-gated. |
+| Q3 S4 freeze exemption | Implemented and verified locally | `deletion_opt_out_proposal` is a code-enforced exempt write class in `src/lib/maintenance-mode.ts`; the operator override cannot suppress it. Enforcement finding recorded in `PCD-AI-OS/00-FOUNDATIONS.md`: only the camps-sweep path is code-enforced; the other eight tasks are prompt-only. Three required tests plus coverage. |
+| Q1 smoke attestation verifier | Implemented and verified locally | `scripts/smoke-attestation.mjs` accepts or requires a GitHub Actions OIDC artifact attestation of the smoke receipt and checksum pair, no new secret. Eight tests. Wiring the live attestation issuance into the workflow remains a gated deploy-infra step. |
+| Q2 per-caller hash reconciliation | Implemented and verified locally | `scripts/caller-hashes.mjs` plus `coordination/release-evidence/scheduled-task-caller-hashes.json` replace reconciliation proof step 2's eyeball check with a SHA-256 hash match; added to `ci:release`. Six tests. |
+
+Final verification for this pass (rebased onto `0ccd55f`): Vitest 167 files / 843 tests, `astro check` 0 errors / 0 warnings / 356 hints, inventory checks pass, `check:root-organization` 85 / 36. Base `0ccd55f` alone was 165 files / 819 tests; the build compiles clean and completed on identical slice code at `e808801`. No external mutation. Commits: `557e62b2` (Q5), `ca0e9e00` (Q3), `c5331463` (Q1/Q2), plus this documentation update.

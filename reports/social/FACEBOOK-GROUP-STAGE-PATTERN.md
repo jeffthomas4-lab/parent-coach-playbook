@@ -19,6 +19,16 @@ This lane is for answering an existing parent question helpfully, not dropping u
 - **Copy:** The checklist that works is the one another adult can use without calling you. Put dates, arrival expectations, uniform details, emergency contacts, and the one communication channel in one place. This is the field-guide version, organized for the moments that usually cause confusion.
 - **Link:** https://parentcoachdesk.com/resources/what-to-say-when/?utm_source=facebook&utm_medium=social&utm_campaign=group-help-parent-guide
 
+### Facebook Draft 4
+- **Group fit:** A parent is asking how to help a kid who just got cut or did not make the team; no crisis or safeguarding concern, and the group allows first-party resources.
+- **Copy:** The first hour is not the time for the lesson. Water, a normal ride home, and less talking than you think. When they are ready, listen before you fix. Here is the short version of what helps and the one thing that usually makes it worse.
+- **Link:** https://parentcoachdesk.com/drive-home/on-not-making-varsity/?utm_source=facebook&utm_medium=social&utm_campaign=group-help-after-cuts
+
+### Facebook Draft 5
+- **Group fit:** A team-parent thread is asking how to estimate what a season really costs before committing; commercial recommendations are not the subject.
+- **Copy:** Registration is usually the small number. What gets people is gear, travel, and the extra tournaments that show up later. I put the categories in one place so you can add it up before you sign, not after.
+- **Link:** https://parentcoachdesk.com/cost-calculator/?utm_source=facebook&utm_medium=social&utm_campaign=group-help-season-cost
+
 ## Never do
 
 No credentials, API calls, schedulers, bots, automatic joins, direct messages, scraped member data, or posting on Jeff's behalf. Never conceal the Parent Coach Desk connection. Never use a group during a child-safety, medical, abuse, or legal situation as a distribution opportunity.

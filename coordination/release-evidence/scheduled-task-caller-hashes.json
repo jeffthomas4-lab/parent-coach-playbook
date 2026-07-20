@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "generated_from": "automation/TASK-RUN-LOG-RECONCILIATION.md",
+  "callers": [
+    {
+      "task_id": "org-discovery-daily-worklist",
+      "caller_path": "automation/agents/ranger/SKILL.md",
+      "sha256": "e64abaa1da6b1fd9cb9bdf05d214d800ee2fa677e9a435ad8ca6a12e88d6e949"
+    },
+    {
+      "task_id": "pcd-deletion-monitor",
+      "caller_path": "agents/pcd-deletion-monitor/SKILL.md",
+      "sha256": "d36f54cbdfd9fcdb6a73febd3b2a53aabd5cf51a0148716431556f0f07addc40"
+    },
+    {
+      "task_id": "pcd-deletion-monitor",
+      "caller_path": "automation/agents/vera/SKILL.md",
+      "sha256": "ff69f37f8cfc01f65cc8624064310429f1b522dd66d1f3847fb024036db3ff28"
+    },
+    {
+      "task_id": "pcd-link-health-monitor",
+      "caller_path": "automation/agents/hal/SKILL.md",
+      "sha256": "893a7b158e55e099261a5aad9a3ad118da079961c8493c19bc53aaf443e2af30"
+    },
+    {
+      "task_id": "weekly-gsc-review",
+      "caller_path": "automation/agents/nora/SKILL.md",
+      "sha256": "546a1afa85dcafb7b1efd496b031e808905ae3bdeaa550766937c467fc53a237"
+    },
+    {
+      "task_id": "pcd-rules-watcher",
+      "caller_path": "automation/agents/ed/SKILL.md",
+      "sha256": "894feff0bf2ea5c83d7b0a8fec13e3fbda097fbdf459404e24e23bc8dc2c2314"
+    },
+    {
+      "task_id": "pcd-friday-letter-draft",
+      "caller_path": "automation/agents/frida/SKILL.md",
+      "sha256": "5e7e7a11f382c82b63658000a5fee62db6bb04f3a40f3052e23cffa23875a39d"
+    },
+    {
+      "task_id": "pcd-camps-data-steward",
+      "caller_path": "automation/agents/ranger/SKILL.md",
+      "sha256": "e64abaa1da6b1fd9cb9bdf05d214d800ee2fa677e9a435ad8ca6a12e88d6e949"
+    },
+    {
+      "task_id": "pcd-seasonal-content-scheduler",
+      "caller_path": "automation/agents/ed/SKILL.md",
+      "sha256": "894feff0bf2ea5c83d7b0a8fec13e3fbda097fbdf459404e24e23bc8dc2c2314"
+    },
+    {
+      "task_id": "pcd-affiliate-reconciler",
+      "caller_path": "automation/agents/hal/SKILL.md",
+      "sha256": "893a7b158e55e099261a5aad9a3ad118da079961c8493c19bc53aaf443e2af30"
+    },
+    {
+      "task_id": "pcd-freshness-audit",
+      "caller_path": "automation/agents/ed/SKILL.md",
+      "sha256": "894feff0bf2ea5c83d7b0a8fec13e3fbda097fbdf459404e24e23bc8dc2c2314"
+    }
+  ]
+}

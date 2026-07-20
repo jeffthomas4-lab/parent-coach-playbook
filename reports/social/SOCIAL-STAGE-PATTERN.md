@@ -74,6 +74,27 @@ Every link verified HTTP 200 on 2026-07-15. Timing: tryouts are four weeks out, 
 - **Link:** https://parentcoachdesk.com/drive-home/when-the-cuts-list-goes-up/?utm_source=pinterest&utm_medium=social&utm_campaign=seasonal-queue
 - **Image:** imagegen prompt: "Flat vector illustration, a printed roster sheet taped to a gym door, one parent and kid seen from behind. Text overlay: WHEN THE CUTS LIST GOES UP. Rust and ink palette, 1000x1500 vertical."
 
+### Pin 6
+- **Board:** What to Say to Your Kid
+- **Title:** When your kid doesn't make varsity: what to say in the car
+- **Description:** The ride home after the cut is the hard part. This is what tends to help in the first hour, what can wait until morning, and the sentence that makes it worse. Written for sports parents by Parent Coach Desk.
+- **Link:** https://parentcoachdesk.com/drive-home/on-not-making-varsity/?utm_source=pinterest&utm_medium=social&utm_campaign=seasonal-queue
+- **Image:** imagegen prompt: "Flat vector illustration, a parent and teenager in a parked car seen from behind, gym in the background. Text overlay: DIDN'T MAKE VARSITY, WHAT TO SAY. Rust and ink palette, 1000x1500 vertical."
+
+### Pin 7
+- **Board:** Team Parent Checklists
+- **Title:** A practice plan another parent can run without calling you
+- **Description:** The plan that works is the one a substitute adult can read and run cold. Warmups, three stations, water breaks, and a clear end. Free template from Parent Coach Desk.
+- **Link:** https://parentcoachdesk.com/resources/practice-plan-template/?utm_source=pinterest&utm_medium=social&utm_campaign=seasonal-queue
+- **Image:** imagegen prompt: "Flat vector mockup of a one-page printed practice plan on a clipboard beside a whistle and cones. Text overlay: PRACTICE PLAN, ONE PAGE. Rust and ink palette, 1000x1500 vertical."
+
+### Pin 8
+- **Board:** Team Parent Checklists
+- **Title:** What one season actually costs, before you sign up
+- **Description:** Registration is the small number. The real total is fees, gear, travel, and the tournaments nobody mentions in March. Add it up first with the free cost calculator from Parent Coach Desk.
+- **Link:** https://parentcoachdesk.com/cost-calculator/?utm_source=pinterest&utm_medium=social&utm_campaign=seasonal-queue
+- **Image:** imagegen prompt: "Flat vector illustration, a receipt curling off a table next to cleats and a gym bag. Text overlay: WHAT A SEASON REALLY COSTS. Rust and ink palette, 1000x1500 vertical."
+
 ---
 
 ## What this pattern never does
