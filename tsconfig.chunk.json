@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.verify.json",
   "include": [
-    "sentry.client.config.ts",
     "test-classification.ts",
     ".astro/types.d.ts"
   ]
