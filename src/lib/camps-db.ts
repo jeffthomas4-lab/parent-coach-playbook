@@ -587,6 +587,33 @@ export async function getCampById(db: D1Database, id: string): Promise<Camp | nu
   return row ?? null;
 }
 
+/**
+ * Bulk counterpart to getCampById — one D1 round trip for any number of ids,
+ * instead of one round trip per id. Added 2026-07-20 alongside
+ * findFuzzyCampMatchesBulk to fix the admin queue page issuing one D1
+ * subrequest per campLookup entry (reviews + claims can reference the same
+ * camp repeatedly; this collapses it to a single IN (...) query).
+ */
+export async function getCampsByIds(db: D1Database, ids: string[]): Promise<Map<string, Camp>> {
+  const unique = Array.from(new Set(ids)).filter(Boolean);
+  const out = new Map<string, Camp>();
+  if (unique.length === 0) return out;
+  // D1/SQLite has a bound-parameter ceiling well above what this page ever
+  // needs (reviews + claims, not the full camps table), but chunk defensively
+  // so a future high-volume caller doesn't reintroduce a resource-limit bug.
+  const CHUNK = 200;
+  for (let i = 0; i < unique.length; i += CHUNK) {
+    const chunk = unique.slice(i, i + CHUNK);
+    const placeholders = chunk.map(() => '?').join(',');
+    const result = await db
+      .prepare(`${CAMP_SELECT} WHERE p.id IN (${placeholders})`)
+      .bind(...chunk)
+      .all<Camp>();
+    for (const camp of result.results ?? []) out.set(camp.id, camp);
+  }
+  return out;
+}
+
 export function todayDateISO(): string {
   return new Date().toISOString().slice(0, 10);
 }
@@ -1564,6 +1591,113 @@ export async function findFuzzyCampMatches(
   }
 
   return Array.from(seen.values());
+}
+
+/**
+ * Bulk counterpart to findFuzzyCampMatches, added 2026-07-20.
+ *
+ * The admin queue page (queue.astro) was calling findFuzzyCampMatches once
+ * per pending camp — each call re-running its own `WHERE pcd_status IN
+ * (approved, pending, rejected)` D1 query against the whole comparison pool.
+ * With N pending camps and that same pool size M, the page issued N separate
+ * D1 subrequests and did O(N*M) work re-deriving the same per-row normalized
+ * name/city/state/orgKey on every single call. Once the pending queue grew
+ * past a few dozen rows (exactly what a daily evergreen-extraction pipeline
+ * landing pcd_status='pending' rows does if nobody's approving them), this
+ * blew past Workers per-request subrequest/CPU limits and the whole queue
+ * page started 500ing (Cloudflare 1102 "Worker exceeded resource limits").
+ *
+ * This version fetches the comparison pool exactly once, precomputes each
+ * row's derived fields exactly once, and then matches every candidate against
+ * that single in-memory pool — one D1 round trip total, no matter how many
+ * candidates are pending. Matching logic is intentionally kept identical to
+ * findFuzzyCampMatches (same four reasons, same precedence), so results for
+ * a given candidate are the same whichever function computed them.
+ */
+export async function findFuzzyCampMatchesBulk(
+  db: D1Database,
+  candidates: Array<{
+    id: string;
+    name: string;
+    city: string;
+    state: string;
+    zip?: string | null;
+    address?: string | null;
+    website_url?: string | null;
+  }>,
+): Promise<Map<string, FuzzyMatchResult[]>> {
+  const out = new Map<string, FuzzyMatchResult[]>();
+  if (candidates.length === 0) return out;
+
+  const result = await db
+    .prepare(`${CAMP_SELECT} WHERE p.pcd_status IN ('approved', 'pending', 'rejected')`)
+    .all<Camp>();
+  const all = result.results ?? [];
+
+  // Precompute each comparison row's derived fields once, not once per candidate.
+  const pool = all.map((c) => ({
+    camp: c,
+    cCity: c.city.trim().toLowerCase(),
+    cState: c.state.trim().toUpperCase(),
+    cNameLower: c.name.trim().toLowerCase(),
+    cNormName: normalizeCampName(c.name),
+    cOrgKey: extractOrgKey(c.website_url),
+    cAddressLower: c.address.trim().toLowerCase(),
+    cZip: c.zip.trim(),
+  }));
+
+  for (const candidate of candidates) {
+    const candidateNormName = normalizeCampName(candidate.name);
+    const candidateNameLower = candidate.name.trim().toLowerCase();
+    const candidateCity = candidate.city.trim().toLowerCase();
+    const candidateState = candidate.state.trim().toUpperCase();
+    const candidateOrgKey = extractOrgKey(candidate.website_url ?? null);
+    const candidateAddress = (candidate.address ?? '').trim().toLowerCase();
+    const candidateZip = (candidate.zip ?? '').trim();
+
+    const seen = new Map<string, FuzzyMatchResult>();
+    const set = (camp: Camp, reason: FuzzyMatchResult['reason']) => {
+      if (!seen.has(camp.id)) seen.set(camp.id, { camp, reason });
+    };
+
+    for (const row of pool) {
+      if (
+        row.camp.status === 'rejected' &&
+        row.camp.reject_reason_code === 'dead-url' &&
+        candidate.website_url &&
+        row.camp.website_url &&
+        row.camp.website_url.trim().toLowerCase() === candidate.website_url.trim().toLowerCase()
+      ) {
+        set(row.camp, 'previously-rejected-dead-url');
+      }
+    }
+
+    for (const row of pool) {
+      if (row.camp.status === 'rejected') continue;
+
+      if (row.cNameLower === candidateNameLower && row.cCity === candidateCity && row.cState === candidateState) {
+        set(row.camp, 'exact-name-city'); continue;
+      }
+      if (row.cNormName && row.cNormName === candidateNormName && row.cCity === candidateCity && row.cState === candidateState) {
+        set(row.camp, 'normalized-name-city'); continue;
+      }
+      if (candidateOrgKey && row.cOrgKey && row.cOrgKey === candidateOrgKey) {
+        set(row.camp, 'same-website'); continue;
+      }
+      if (
+        candidateAddress && candidateZip &&
+        row.cAddressLower === candidateAddress &&
+        row.cCity === candidateCity &&
+        row.cZip === candidateZip
+      ) {
+        set(row.camp, 'same-address'); continue;
+      }
+    }
+
+    out.set(candidate.id, Array.from(seen.values()));
+  }
+
+  return out;
 }
 
 // ---------- URL health ----------

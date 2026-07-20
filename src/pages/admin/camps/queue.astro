@@ -4,8 +4,8 @@ import {
   listPendingCamps,
   listPendingReviews,
   listPendingClaims,
-  getCampById,
-  findFuzzyCampMatches,
+  getCampsByIds,
+  findFuzzyCampMatchesBulk,
   REJECT_REASON_CODES,
   type Camp,
   type CampReview,
@@ -40,24 +40,33 @@ if (env?.DB) {
     if (reviewsEnabled) pendingReviews = await listPendingReviews(env.DB);
     if (claimsEnabled) pendingClaims = await listPendingClaims(env.DB);
 
+    // Both lookups below used to run one D1 query per row (once per unique
+    // camp id for reviews/claims, once per pending camp for fuzzy matching).
+    // That N+1 pattern is what blew the Workers subrequest/CPU budget once
+    // the pending queue grew past a few dozen rows — see the doc comments on
+    // getCampsByIds / findFuzzyCampMatchesBulk in camps-db.ts. Both are now a
+    // single D1 round trip regardless of how many rows are on the page.
     const allCampIds = new Set<string>();
     pendingReviews.forEach((r) => allCampIds.add(r.camp_id));
     pendingClaims.forEach((c) => allCampIds.add(c.camp_id));
 
-    for (const campId of allCampIds) {
-      const camp = await getCampById(env.DB, campId);
-      if (camp) campLookup.set(campId, camp);
-    }
+    const lookedUp = await getCampsByIds(env.DB, Array.from(allCampIds));
+    for (const [campId, camp] of lookedUp) campLookup.set(campId, camp);
 
-    for (const camp of pendingCamps) {
-      const matches = await findFuzzyCampMatches(env.DB, {
+    const fuzzyResults = await findFuzzyCampMatchesBulk(
+      env.DB,
+      pendingCamps.map((camp) => ({
+        id: camp.id,
         name: camp.name,
         city: camp.city,
         state: camp.state,
         zip: camp.zip,
         address: camp.address,
         website_url: camp.website_url,
-      });
+      })),
+    );
+    for (const camp of pendingCamps) {
+      const matches = fuzzyResults.get(camp.id) ?? [];
       fuzzyByCamp.set(
         camp.id,
         matches.filter((m) => m.camp.id !== camp.id),
