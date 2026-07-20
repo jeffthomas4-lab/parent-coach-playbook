@@ -83,7 +83,7 @@
     "@fontsource/fraunces": "^5.0.20",
     "@fontsource/jetbrains-mono": "^5.0.20",
     "@fontsource/mulish": "^5.0.20",
-    "@sentry/astro": "^10.66.0",
+    "@sentry/astro": "^10.67.0",
     "@sentry/cloudflare": "^10.66.0",
     "@tailwindcss/vite": "^4.1.0",
     "@workos-inc/node": "10.7.0",
