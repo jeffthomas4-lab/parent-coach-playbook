@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-18T11:19:31.218Z",
-  "count": 678,
+  "generatedAt": "2026-07-20T21:09:10.837Z",
+  "count": 679,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -4464,6 +4464,12 @@
       "url": "https://www.usssa.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
+      ]
+    },
+    {
+      "url": "https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf",
+      "sources": [
+        "src/content/news/usssa-grade-exception-limit-2026.md"
       ]
     },
     {

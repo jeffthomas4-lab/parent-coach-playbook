@@ -66,7 +66,7 @@ Idempotency: before writing, check `reports/deletions/` for an existing staged f
 
 ## STEP 5 — notify Jeff in Slack (link only, no PII)
 
-If you staged one or more items, post ONE message with `slack_send_message` to the portfolio channel `#command` (channel_id `C0BGMPKT3GT`, workspace fieldforgeventures.slack.com). Bold dated header, then one line per staged item: the SOP tag "S4 deletion", "N days left", and a link or path to the staged markdown. Never put the requester's name, email, or any PII in the Slack post; the post points to the staged file, which itself names the record by id.
+If you staged one or more items, post ONE message with `slack_send_message` to the portfolio channel `#pcd-agent-notications` (channel_id `C0BJC3WTNKC`, workspace fieldforgeventures.slack.com). Bold dated header, then one line per staged item: the SOP tag "S4 deletion", "N days left", and a link or path to the staged markdown. Never put the requester's name, email, or any PII in the Slack post; the post points to the staged file, which itself names the record by id.
 
 If nothing was staged, do not post to Slack. The run still logs (STEP 6).
 

@@ -91,8 +91,13 @@ export interface Camp {
   age_min: number;
   age_max: number;
   age_known: 0 | 1;
-  start_date: string;
-  end_date: string;
+  // Nullable in the live DB — 296 approved programs carry a null
+  // session_start_date or session_end_date as of the 2026-07-15 audit. The
+  // type used to claim non-null, which is what let the SSR date formatters
+  // call .split() on null and throw. See camps/[slug].astro, camps/index.astro,
+  // camps/[state]/[city]/index.astro, camps/[state]/[city]/[sport]/index.astro.
+  start_date: string | null;
+  end_date: string | null;
   address: string;
   city: string;
   state: string;

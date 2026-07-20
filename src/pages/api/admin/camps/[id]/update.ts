@@ -152,10 +152,14 @@ export const POST: APIRoute = async ({ params, request }) => {
     if (!isIsoDate(data.end_date!)) return fail('end_date must be YYYY-MM-DD');
     fields.end_date = data.end_date!;
   }
-  // After both possibly assigned, validate ordering.
+  // After both possibly assigned, validate ordering. existing.start_date /
+  // existing.end_date can be null (legacy rows with a missing session date),
+  // so only compare when both sides of the final pair are present — a bare
+  // `>` on a null would fall back to JS's numeric coercion (null -> 0) and
+  // silently never fire.
   const finalStart = fields.start_date ?? existing.start_date;
   const finalEnd = fields.end_date ?? existing.end_date;
-  if (finalStart > finalEnd) return fail('start_date must be on or before end_date');
+  if (finalStart && finalEnd && finalStart > finalEnd) return fail('start_date must be on or before end_date');
 
   if (has('age_min') || has('age_max')) {
     const aMin = has('age_min')

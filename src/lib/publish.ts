@@ -15,8 +15,26 @@
 //
 // Env: GITHUB_TOKEN (contents:write on the repo). The repository's protected
 // deploy workflow builds and deploys the resulting main-branch commit.
+//
+// This also emits `pcd.editorial.published` to the PCD event bus (see
+// src/lib/events.ts) on a successful publish. That write is best-effort and
+// never blocks or fails the publish itself — see emitEventSafely's contract.
+// The mirror event, `pcd.editorial.draft_ready`, has no call site yet: today
+// a draft is flagged ready by Ed writing a `draft: true` file and, in the
+// same agent session, posting a link to Slack per automation/SLACK-STAGING.md
+// (the Slack MCP's slack_send_message tool, not a Worker route). There is no
+// server-side code path that observes "a draft became ready" the way this
+// function observes "a draft became published." Wire draft_ready once that
+// moment has a real call site — either Ed's session emits it directly (e.g.
+// via POST /api/agent-runs or a future events-ingest route, symmetrical with
+// how agent_runs is written today) or a new route fires it when the Slack
+// approval card (buildApprovalBlocks, still unused pending the Slack app
+// secrets) is actually sent. Don't guess at either until one of those is
+// built.
 
-export interface PublishEnv {
+import { emitEventSafely, type EventsEnv } from './events';
+
+export interface PublishEnv extends EventsEnv {
   GITHUB_TOKEN?: string;
   PUBLISH_COMMITTER_EMAIL?: string;
 }
@@ -242,8 +260,21 @@ export async function publishDraft(
     return { ok: false, code: 502, error: 'github commit failed' };
   }
   const putBody = (await putRes.json().catch(() => ({}))) as { commit?: { sha?: string } };
+  const commitSha = putBody.commit?.sha;
 
-  return { ok: true, path, commitSha: putBody.commit?.sha, deploy: 'queued' };
+  // Best-effort; see the file header. A failure here never undoes or blocks
+  // the publish that already happened above.
+  await emitEventSafely(env, {
+    eventType: 'pcd.editorial.published',
+    entityType: 'editorial_draft',
+    entityRef: `${input.collection}/${input.slug}`,
+    payload: { collection: input.collection, slug: input.slug, path, commitSha },
+    actorType: 'staff',
+    actorRef: input.approvedBy,
+    idempotencyKey: commitSha ? `pcd.editorial.published:${commitSha}` : undefined,
+  });
+
+  return { ok: true, path, commitSha, deploy: 'queued' };
 }
 
 /**

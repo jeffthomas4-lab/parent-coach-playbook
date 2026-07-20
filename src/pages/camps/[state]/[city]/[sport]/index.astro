@@ -46,12 +46,29 @@ if (filterAges) {
   if (range) visible = visible.filter((c) => c.age_known === 1 && c.age_max >= range[0] && c.age_min <= range[1]);
 }
 
-const fmtDateRange = (start: string, end: string) => {
-  const M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const [sy, sm, sd] = start.split('-').map(Number);
-  const [, em, ed] = end.split('-').map(Number);
-  if (sm === em) return `${M[sm-1]} ${sd}–${ed}, ${sy}`;
-  return `${M[sm-1]} ${sd} – ${M[em-1]} ${ed}, ${sy}`;
+const M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+// Null-safe. 296 approved programs carry a null session_start_date or
+// session_end_date (verified in activity-radar D1, 2026-07-15). The listing
+// query filters session_end_date >= today, but session_start_date can still
+// be null on a row that passes that filter. Calling .split() on a null threw
+// a TypeError in SSR frontmatter and returned a live HTTP 500. Degrade
+// instead of crash, same pattern as /camps/[slug].astro.
+const fmtDatePart = (s: string | null | undefined): { m: number; d: number; y: number } | null => {
+  if (!s) return null;
+  const [y, m, d] = s.split('-').map(Number);
+  if (!y || !m || !d || !M[m - 1]) return null;
+  return { m, d, y };
+};
+const fmtDateRange = (start: string | null | undefined, end: string | null | undefined): string => {
+  const a = fmtDatePart(start);
+  const b = fmtDatePart(end);
+  if (a && b) {
+    if (a.m === b.m) return `${M[a.m-1]} ${a.d}–${b.d}, ${a.y}`;
+    return `${M[a.m-1]} ${a.d} – ${M[b.m-1]} ${b.d}, ${a.y}`;
+  }
+  if (a) return `Starts ${M[a.m-1]} ${a.d}, ${a.y}`;
+  if (b) return `Through ${M[b.m-1]} ${b.d}, ${b.y}`;
+  return 'Dates to be announced';
 };
 
 const title = `${sportInfo.label} camps in ${cityLabel}, ${stateCode}`;

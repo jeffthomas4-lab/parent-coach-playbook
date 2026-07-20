@@ -10,8 +10,17 @@ Four-tier priority, Washington-outward within each tier:
 
 Sort key: (tier, state_rollout_index). T1-WA first, then T1-OR, ..., T2-WA, etc.
 
-USAGE:
+USAGE (legacy, pool built from raw IRS BMF files):
   python buildout/hit-rate-test/daily_discovery.py buildout/bmf/*.csv --limit 400
+
+USAGE (current, pool pre-filtered from the live D1 -- id,name,city,state columns):
+  python buildout/hit-rate-test/daily_discovery.py --pool out/db-pool.csv --limit 400
+
+  --pool skips the BMF load and NTEE filtering entirely (the D1 query that produces
+  the pool CSV already drops camp_unlikely orgs and anything with a website_url), and
+  trusts the `id` column as the org_id instead of recomputing one. Still runs every
+  row through tier_of() and cut_worklist() same as the legacy path, and still honors
+  --done so an org already in results.jsonl is never put on a worklist twice.
 """
 
 import argparse
@@ -156,6 +165,32 @@ def load_done(path):
     return done
 
 
+def build_pool_from_csv(path):
+    """Load a pre-filtered pool CSV (columns: id,name,city,state) as produced by the
+    D1 query in Step 1 of the org-discovery task. No NTEE/state filtering here --
+    the SQL already did that. `id` is trusted as-is (it's the live organizations.id)."""
+    pool = {}
+    seen = set()
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            rl = {k.lower().strip(): (v.strip() if isinstance(v, str) else v)
+                  for k, v in row.items()}
+            oid = get(rl, "id", "org_id")
+            name = get(rl, "name")
+            if not oid or not name:
+                continue
+            if oid in seen:
+                continue
+            seen.add(oid)
+            state = (get(rl, "state") or "").upper()[:2]
+            city = get(rl, "city") or ""
+            pool.setdefault(state, []).append({
+                "org_id": oid, "name": name, "city": city, "state": state,
+                "tier": tier_of(name),
+            })
+    return pool
+
+
 def build_pool(files, states_wanted):
     wanted = set(states_wanted)
     pool = {}
@@ -221,7 +256,8 @@ def cut_worklist(orgs, limit):
 def main():
     ap = argparse.ArgumentParser()
     here = os.path.dirname(__file__)
-    ap.add_argument("inputs", nargs="+", help="BMF CSV files (buildout/bmf/*.csv)")
+    ap.add_argument("inputs", nargs="*", help="BMF CSV files (buildout/bmf/*.csv). Omit when using --pool.")
+    ap.add_argument("--pool", default="", help="Pre-filtered id,name,city,state CSV pulled from the live D1 (skips BMF load + NTEE filtering).")
     ap.add_argument("--done", default=os.path.join(here, "out", "results.jsonl"))
     ap.add_argument("--out-dir", default=os.path.join(here, "out"))
     ap.add_argument("--limit", type=int, default=DAILY_TOTAL)
@@ -229,13 +265,21 @@ def main():
     args = ap.parse_args()
 
     rollout = [s.strip().upper() for s in args.rollout.split(",") if s.strip()]
-    files = []
-    for pat in args.inputs:
-        files.extend(glob.glob(pat))
-    if not files:
-        raise SystemExit("No BMF files matched.")
 
-    pool = build_pool(files, rollout)
+    if args.pool:
+        if args.inputs:
+            raise SystemExit("Pass either --pool or BMF file inputs, not both.")
+        if not os.path.exists(args.pool):
+            raise SystemExit("--pool file not found: %s" % args.pool)
+        pool = build_pool_from_csv(args.pool)
+    else:
+        files = []
+        for pat in args.inputs:
+            files.extend(glob.glob(pat))
+        if not files:
+            raise SystemExit("No BMF files matched. Pass BMF CSV paths, or use --pool instead.")
+        pool = build_pool(files, rollout)
+
     done = load_done(args.done)
 
     state_order = {s: i for i, s in enumerate(rollout)}

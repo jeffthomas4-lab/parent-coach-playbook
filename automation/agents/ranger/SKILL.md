@@ -47,7 +47,7 @@
 ## Every run, no exceptions
 
 - Close through `writeAgentRun()` with the same UUID, real aggregate numbers, redacted staged items, outputs, and real failure text. Two failures inside 24 hours pause Ranger through CANARY.
-- Post the Class C Slack line whenever anything is staged: agent name, one line, what happens if Jeff approves, the link. Example: "Ranger has 4 camp fixes staged, including 1 delete. reports/camps/CAMPS_REVIEW_2026-07-16.md" No PII in the message. The channel is not wired yet per `SLACK-STAGING.md`, so do not assume a channel ID and post blind.
+- Post the Class C Slack line whenever anything is staged: agent name, one line, what happens if Jeff approves, the link. Example: "Ranger has 4 camp fixes staged, including 1 delete. reports/camps/CAMPS_REVIEW_2026-07-16.md" No PII in the message. The channel is confirmed: post via `slack_send_message` to `#pcd-agent-notications` (`channel_id C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`). Never `#command` — that's Barnabus's portfolio channel, not PCD's.
 - Class D writes post nothing per run, because the threshold was pre-approved. Anything outside the threshold escalates to Slack exactly like Class C.
 - Say the accept rate out loud in every S7 summary, even a boring one. The number only becomes a trend if every run writes it down.
 

@@ -60,7 +60,7 @@ Write `reports/support/TRIAGE_YYYY-MM-DD.md`:
 ## STEP 4 — Close out
 
 1. Finish through `writeAgentRun()` with the same UUID; set `needs_you` for drafts or flags and describe each by category, never by content.
-2. Post one Slack line per `SLACK-STAGING.md`'s Class B rule: agent name, one line, the link. Example: "Sunny has 3 reply drafts ready and 1 flagged for you. reports/support/TRIAGE_2026-07-16.md" No PII in the message, ever. The channel is not wired yet per `SLACK-STAGING.md`'s open item, so do not assume a channel ID and post blind.
+2. Post one Slack line per `SLACK-STAGING.md`'s Class B rule: agent name, one line, the link. Example: "Sunny has 3 reply drafts ready and 1 flagged for you. reports/support/TRIAGE_2026-07-16.md" No PII in the message, ever. The channel is confirmed: post via `slack_send_message` to `#pcd-agent-notications` (`channel_id C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`). Never `#command` — that's Barnabus's portfolio channel, not PCD's.
 
 ## Every run, no exceptions
 

@@ -44,7 +44,7 @@
 ## Every run, no exceptions
 
 - Close through `writeAgentRun()` with the same UUID, status, summary, redacted needs-you items, outputs, and real failure text. A clean run with nothing for Jeff posts nothing.
-- Post the Class B Slack line only when a draft is actually ready: agent name, one line, the link. Example: "Hal has follow-up drafts for 3 networks pending over 30 days. reports/affiliate/AFFILIATE_REVIEW_2026-08.md" The channel is not wired yet per `SLACK-STAGING.md`'s open item, so do not assume a channel ID and post blind.
+- Post the Class B Slack line only when a draft is actually ready: agent name, one line, the link. Example: "Hal has follow-up drafts for 3 networks pending over 30 days. reports/affiliate/AFFILIATE_REVIEW_2026-08.md" The channel is confirmed: post via `slack_send_message` to `#pcd-agent-notications` (`channel_id C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`). Never `#command` — that's Barnabus's portfolio channel, not PCD's.
 - Say plainly when a flag was a false positive. A report that quietly drops last week's six flags teaches Jeff to distrust the number.
 - Say plainly when there is no revenue to report. There has never been any, and writing that sentence honestly every month is the point of the metric.
 

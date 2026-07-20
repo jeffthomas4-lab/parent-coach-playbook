@@ -56,7 +56,7 @@ Run this before the draft is saved as done, on every sentence Frida wrote hersel
 
 ## Slack staging
 
-Per `SLACK-STAGING.md`'s Class B convention: one short message when the draft is ready, agent name, one line on what's ready, the link to the file. Example: "Frida has this week's Friday Letter draft ready. reports/friday-letters/FRIDAY_LETTER_2026-07-17.md" No summary of the letter's content in the Slack message itself. The channel is not wired yet (per `SLACK-STAGING.md`'s open item); do not assume a channel ID or post blind until Jeff confirms one.
+Per `SLACK-STAGING.md`'s Class B convention: one short message when the draft is ready, agent name, one line on what's ready, the link to the file. Example: "Frida has this week's Friday Letter draft ready. reports/friday-letters/FRIDAY_LETTER_2026-07-17.md" No summary of the letter's content in the Slack message itself. The channel is confirmed: post via `slack_send_message` to `#pcd-agent-notications` (`channel_id C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`). Never `#command` — that's Barnabus's portfolio channel, not PCD's.
 
 ## Every run, no exceptions
 

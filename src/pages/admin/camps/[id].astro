@@ -49,9 +49,15 @@ const fmtDateTime = (s: string) =>
   new Date(s).toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 // fmtDate is for camp start_date / end_date which are YYYY-MM-DD strings. Parse
 // as local date (not UTC) to avoid the off-by-one timezone bug.
+// Null-safe: 296 approved programs carry a null session_start_date or
+// session_end_date (verified in activity-radar D1, 2026-07-15). Calling
+// .split() on a null here threw the same TypeError the public camp pages hit
+// before those were hardened — this page reads the same nullable Camp type.
 const MONTHS_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const fmtDate = (s: string) => {
+const fmtDate = (s: string | null): string => {
+  if (!s) return 'not set';
   const [y, m, d] = s.split('-').map(Number);
+  if (!y || !m || !d || !MONTHS_LONG[m - 1]) return 'not set';
   return `${MONTHS_LONG[m - 1]} ${d}, ${y}`;
 };
 
@@ -183,11 +189,11 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Start date
-                <input type="date" name="start_date" value={camp.start_date} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="date" name="start_date" value={camp.start_date ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 End date
-                <input type="date" name="end_date" value={camp.end_date} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="date" name="end_date" value={camp.end_date ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 

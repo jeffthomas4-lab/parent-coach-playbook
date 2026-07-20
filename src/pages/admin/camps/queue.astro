@@ -85,7 +85,10 @@ const urlHealthTone: Record<string, string> = {
 const fmt = (s: string) =>
   formatImportedAt(s);
 
-const fmtRange = (start: string, end: string) => formatCampDateRange(start, end);
+// start_date / end_date are nullable on the live Camp type (296 approved
+// programs carry a null session_start_date or session_end_date); formatCampDateRange
+// is already null-safe, so fmtRange just passes the nullable values through.
+const fmtRange = (start: string | null, end: string | null) => formatCampDateRange(start, end);
 ---
 
 <AdminLayout title="Admin queue" description="Unified moderation dashboard" email={adminEmail}>

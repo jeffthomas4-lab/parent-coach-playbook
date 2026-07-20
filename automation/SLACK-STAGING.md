@@ -1,6 +1,6 @@
 # PCD Slack Staging Convention
 
-**Status:** dedicated private alert channel created 2026-07-17; incoming webhook still pending.
+**Status:** channel confirmed by Jeff 2026-07-14: `#pcd-agent-notications` (`C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`). Every PCD agent posts here via the Slack MCP's `slack_send_message` tool with that `channel_id`, directly, in-session — not through a separate webhook Worker. This is the one and only PCD notification channel. Nothing PCD-related posts to `#command`; that channel is Barnabus's portfolio-wide chief-of-staff briefing, which covers every venture as one line item each, not a PCD agent notification stream.
 
 ---
 
@@ -38,7 +38,7 @@ One line per agent, so the pattern is written down once rather than reinvented p
 | Frida | B | Every completed run. A Friday Letter draft always needs Jeff before Friday | "Frida has this week's Friday Letter draft ready. [link]" |
 | Hal | A / B | A: only on a browser-confirmed broken link or a disclosure gap. B: follow-up drafts and swap proposals | "Hal has follow-up drafts for 3 networks pending over 30 days. [link]" |
 | Ranger | A / C / D | C: every staged fix, stating what happens on approval. D: nothing per run, the threshold was pre-approved. Anything outside the threshold escalates as C | "Ranger has 4 camp fixes staged, including 1 delete. [link]" |
-| Vera | B / C | Only when something is staged. A clean run posts nothing and still logs. Posts to `#command` (`C0BGMPKT3GT`) | "S4 deletion, 19 days left. [link]" |
+| Vera | B / C | Only when something is staged. A clean run posts nothing and still logs. Posts to `#pcd-agent-notications` (`C0BJC3WTNKC`), same as the rest of the roster — this row previously said `#command`, which was wrong; the deployed `pcd-deletion-monitor` SKILL.md has always used the correct channel, this doc just hadn't caught up | "S4 deletion, 19 days left. [link]" |
 | Sunny | B | Drafts waiting and flags raised, by count only | "Sunny has 3 reply drafts ready and 1 flagged for you. [link]" |
 
 **Two rules that bind harder than the message shape.**
@@ -49,6 +49,6 @@ A Class C line says what happens if Jeff approves. "4 fixes staged" is not enoug
 
 ## Delivery configuration
 
-The dedicated private channel is `#pcd-alerts` (`C0BJT2194E4`). It is the approved destination for Parent Coach Desk operational alerts; it is not a destination for personally identifiable information.
+The approved destination for every Parent Coach Desk operational alert is `#pcd-agent-notications` (`C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`), confirmed directly by Jeff on 2026-07-14. It is not a destination for personally identifiable information.
 
-The staging Worker must use a Slack Incoming Webhook scoped only to `#pcd-alerts`, stored as the secret `SLACK_WEBHOOK_URL`; do not place its full URL in this repository, a message, or a dashboard variable. A 2026-07-17 read-only channel receipt check found no synthetic-alert post in this approved channel, so the currently configured destination is not proven and must be reconciled or rotated before the notification gate can pass. `POST /api/agent-runs` posts only `failed` and `needs_you` run signals, and internal email alerts require that Slack relay before sending.
+**Correction, 2026-07-14:** an earlier version of this section named a different channel, `#pcd-alerts` (`C0BJT2194E4`), reached via a Slack Incoming Webhook Worker that was never confirmed live (a 2026-07-17-dated receipt check had found no synthetic-alert post there). That channel and that webhook plan are superseded. The working, confirmed mechanism is simpler: each agent calls the Slack MCP's `slack_send_message` tool directly with `channel_id: C0BJC3WTNKC` in-session, the same way `pcd-deletion-monitor` (Vera) already does today. No webhook, no `SLACK_WEBHOOK_URL` secret, no separate staging Worker required for this notification pattern. If a future build genuinely needs a webhook-based relay (e.g. `POST /api/agent-runs` triggering an alert outside a live agent session), point it at this same channel, not a third one.

@@ -19,7 +19,7 @@
 3. Spot-check the site itself: fetch a handful of pages GSC flags as problems (new 404s, pages that dropped out of the index) to confirm the flag is real and not a GSC lag artifact.
 4. Name the single highest-impact fix for the week, same framing as the Organic Search Audit's ranked table (impact vs. effort). Most weeks this will be "nothing new, keep executing the 30/60/90 plan" — that is a valid, honest answer, not a failure to find something.
 5. Write the week's report to `reports/seo/gsc-review-YYYY-MM-DD.md`. Plain numbers, the deltas, the one fix, links to anything cited.
-6. If nothing needs Jeff's attention, no Slack post (per `SLACK-STAGING.md`: Class A only posts when something needs eyes). If something does — a regression, a new backlink worth knowing about, a dashboard-only action only Jeff can take — set `needs_you = true` in the run log and post one line to the PCD Slack channel with a link to the file.
+6. If nothing needs Jeff's attention, no Slack post (per `SLACK-STAGING.md`: Class A only posts when something needs eyes). If something does — a regression, a new backlink worth knowing about, a dashboard-only action only Jeff can take — set `needs_you = true` in the run log and post one line via `slack_send_message` to `#pcd-agent-notications` (`channel_id C0BJC3WTNKC`, workspace `fieldforgeventures.slack.com`) with a link to the file. Never `#command` — that's Barnabus's portfolio channel, not PCD's.
 
 ## Indexing triage (part of the same weekly pass)
 

@@ -1,6 +1,6 @@
 export const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-7jM0mFGpXcqAf1xCf5Qt3LqYUrtVC06wbpBqjNbd0GQ=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-CxXgaUN/4H6r93PhYGVaQ63kVMDT3zxHOAiCtMOxlB4=' 'sha256-V88P4X0XR5ZRpkonKjzZr+TE/DZ1jUyHTY0f79llpTw=' https://static.cloudflareinsights.com https://www.googletagmanager.com",
+  "script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
