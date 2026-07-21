@@ -1,7 +1,8 @@
+<!-- Drafted 2026-07-20 to close legal Open Item 7. Not attorney-reviewed. Jeff: have counsel review before the reviews feature launches. -->
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../data/site';
-const updated = 'July 16, 2026';
+const updated = 'July 20, 2026';
 ---
 <BaseLayout
   title="Terms of use"
@@ -13,17 +14,18 @@ const updated = 'July 16, 2026';
       <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
         Terms of use.
       </h1>
-      <p class="font-display italic text-ink-soft text-sm mt-4">Last updated {updated}. By using this site you agree to these terms.</p>
+      <p class="font-display italic text-ink-soft text-sm mt-4">Effective date: {updated}. By using this site you agree to these terms.</p>
     </div>
   </section>
 
   <section class="border-b border-bone">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">What this site is</p>
+        <p class="font-display italic text-rust font-medium">Acceptance and who can use this site</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>{SITE.name} publishes editorial content for parents of kids in youth sports and activities, plus a directory of camps and leagues. The content is information, not professional advice. Nothing here is medical, legal, or financial advice, and nothing here replaces the judgment of a clinician, your league's protocols, or the relevant governing body. Our <a href="/disclosure/" class="text-rust hover:underline">privacy and disclosure page</a> covers how the site is funded and what data we collect.</p>
+        <p>By using parentcoachdesk.com you agree to these terms. If you do not agree, please do not use the site.</p>
+        <p>The site itself is open to anyone. Interactive features, meaning a review, a comment, a camp submission or correction, or a newsletter signup, require you to be at least 13 years old. If you are a parent or guardian acting on behalf of a child under 13, you are the one using the feature and the one responsible for what gets submitted under your name or email.</p>
       </div>
     </div>
   </section>
@@ -31,11 +33,11 @@ const updated = 'July 16, 2026';
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">The camps directory</p>
+        <p class="font-display italic text-rust font-medium">What this site provides</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>Listings come from public sources, camp operators, and reader submissions. We review submissions before they publish, but we do not inspect camps, verify their safety practices, or endorse them. A listing is not a recommendation. Vet any camp yourself before you send your kid.</p>
-        <p>Camp-owner claiming and public reviews are not currently open. Camp operators and readers can use our <a href="/trust/" class="text-rust hover:underline">correction and removal request form</a>. Any future claiming, owner-management, or review features will launch only with their applicable verification, moderation, privacy, payment, and additional terms in place.</p>
+        <p>{SITE.name} publishes general information for parents of kids in youth sports and activities: cost breakdowns, gear guides, drills, camp and program listings, and the parts of youth sports nobody explains well.</p>
+        <p>None of it is medical advice, legal advice, or a safety certification of any camp, coach, program, or piece of equipment. Decisions about your child's health, safety, or legal situation belong to you and the qualified professional you consult, not to an article on this site. Nothing here replaces the judgment of a physician, a certified athletic trainer, or a certified coach working directly with your child. When a topic touches injury, concussion, mental health, or return-to-play timing, follow your clinician, your league's protocol, and the relevant governing body first. Our <a href="/disclosure/" class="text-rust hover:underline">privacy and disclosure page</a> covers how the site is funded and what data we collect.</p>
       </div>
     </div>
   </section>
@@ -43,11 +45,49 @@ const updated = 'July 16, 2026';
   <section class="border-b border-bone">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">What you submit</p>
+        <p class="font-display italic text-rust font-medium">Reviews and comments: the license you grant us</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>When you submit a camp or correction, you keep ownership of material you own. You grant us a non-exclusive, royalty-free license to publish, edit for length and clarity, and display that material on this site. You represent that what you submit is yours to give and is accurate to the best of your knowledge.</p>
+        <p>When you submit a review, comment, or similar content to this site, you keep ownership of what you wrote. You grant {SITE.name} a license that is perpetual, worldwide, royalty-free, sublicensable, and non-exclusive to display, reproduce, edit for length and clarity, excerpt, moderate, and remove that content, in whole or in part, on the site and in related promotional material.</p>
+        <p>We do not sell your review or comment to a third party, and we do not license it to an advertiser. By submitting, you confirm the content describes your own first-hand experience, that you have the right to share it, that it does not contain private information about anyone else, especially a child, and that it was not written in exchange for undisclosed compensation from a camp, program, or brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Review rules</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Write about your own first-hand experience with a camp, program, product, or service, not something you heard secondhand.</p>
+        <p>Do not include a child's name, school, team, roster number, photo, or any other detail that could identify a minor. Write about the program, not the kid.</p>
+        <p>Do not post anything defamatory, threatening, or promotional. No advertising a competing business and no spam links.</p>
+        <p>We may decline to publish, edit, or remove any review or comment at our discretion, without notice, and we are not obligated to explain why.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">The camps directory and your submissions</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Camp and program listings come from public sources, camp operators, and reader submissions. We review submissions before they publish, but we do not inspect camps, verify their safety practices, or endorse them. A listing is not a recommendation; vet any camp yourself before you send your kid.</p>
+        <p>Review and camp-claiming features carry their own verification, moderation, and privacy controls and may not be open on every listing yet. Where they are open, the license and the review rules above are what govern them. Readers and camp operators can also use our <a href="/trust/" class="text-rust hover:underline">correction and removal request form</a> at any time.</p>
         <p><strong>Photos.</strong> By uploading photos you confirm you own them and have written consent from a parent or guardian for any child shown. We remove photos on request from a parent or guardian of a child pictured: email <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Affiliate disclosure</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Some links on this site pay us a commission when you buy through them, including links in the Amazon Services LLC Associates Program. Full detail on who pays us and how editorial independence is kept separate from that is on our <a href="/disclosure/" class="text-rust hover:underline">privacy and disclosure page</a>.</p>
       </div>
     </div>
   </section>
@@ -67,7 +107,7 @@ const updated = 'July 16, 2026';
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">Copyright and takedowns</p>
+        <p class="font-display italic text-rust font-medium">Site content and copyright</p>
       </div>
       <div class="md:col-span-8 article-body">
         <p>The editorial content on this site belongs to {SITE.name}. You can share excerpts with a link back. You cannot republish whole pieces, scrape the directory for a competing product, or pass our work off as yours.</p>
@@ -79,11 +119,34 @@ const updated = 'July 16, 2026';
   <section class="border-b border-bone">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Acceptable use and termination</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>Beyond the review rules above, do not use this site to harass, threaten, or defame another person, impersonate any person or organization, post another person's personal information without their consent, scrape or bulk-copy the directory or site content for a competing product or database, break the law, access data or admin systems you are not authorized to see, introduce malware, or interfere with the site's normal operation.</p>
+        <p>We can suspend or end your access to interactive features, meaning reviews, comments, the newsletter, or submission forms, at any time and for any reason, including a violation of these terms. You can stop using the site at any time. Ownership, the license you granted us, the disclaimers, the liability limits, and the indemnification below all continue to apply after your access ends.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
         <p class="font-display italic text-rust font-medium">No warranties, limited liability</p>
       </div>
       <div class="md:col-span-8 article-body">
         <p>The site is provided as-is. We work to keep information accurate and we post corrections when we get something wrong, but we make no warranty that any page is complete, current, or fit for your situation. Costs change, rules change, camps close.</p>
-        <p>To the fullest extent the law allows, {SITE.name} and its writers are not liable for damages arising from your use of the site, the directory, or anything you buy through links on it. Some jurisdictions do not allow these limits, so parts of this may not apply to you.</p>
+        <p>To the fullest extent the law allows, {SITE.name} and its writers are not liable for damages arising from your use of the site, the directory, a review you read, or anything you buy through links on it. Some jurisdictions do not allow these limits, so parts of this may not apply to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-bone bg-paper-warm">
+    <div class="container-px py-10 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <p class="font-display italic text-rust font-medium">Indemnification</p>
+      </div>
+      <div class="md:col-span-8 article-body">
+        <p>You agree to defend and hold harmless {SITE.name}, Field &amp; Forge Ventures, and their writers from any claim, damage, or expense, including reasonable legal fees, arising from content you submit, your violation of these terms, or your misuse of the site.</p>
       </div>
     </div>
   </section>
@@ -94,9 +157,10 @@ const updated = 'July 16, 2026';
         <p class="font-display italic text-rust font-medium">The boring rest</p>
       </div>
       <div class="md:col-span-8 article-body">
-        <p>These terms are governed by the laws of the State of Washington, USA. We may update these terms; the date at the top tells you when. If we change something material, we will say so plainly rather than bury it.</p>
+        <p>These terms are governed by the laws of the State of Washington, USA, without regard to conflict-of-law rules. Any dispute not resolved informally will be brought in the state or federal courts located in Pierce County, Washington, and you consent to that venue. We may update these terms; the effective date at the top tells you when. If we change something material, we will say so plainly rather than bury it.</p>
         <p>Parent Coach Desk is published by Field &amp; Forge Ventures.</p>
         <p>Questions: <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a>.</p>
+        <p class="text-sm mt-6">Effective 2026-07-20.</p>
       </div>
     </div>
   </section>

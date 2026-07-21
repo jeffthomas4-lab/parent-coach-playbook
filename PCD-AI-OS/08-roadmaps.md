@@ -335,3 +335,18 @@ The option not taken (point the same program at LegisRadar first) is retired, no
 ---
 
 *Files 05-platform-departments.md and 07-sops-events-agents.md are still unwritten, per the file map in 00-FOUNDATIONS.md. They are design files, not build files, and do not block Phase 0. Write them when the platform and event-map details are needed, not before.*
+
+---
+
+## Addendum 2026-07-20: Reviews (Remy) added to the build list
+
+Legal Open Item 7 closed today: Terms of Use with UGC license shipped at /terms (attorney review still recommended before launch). That unblocks the Reviews department. Jeff approved adding the build to the list.
+
+Scope of the build session when it comes up:
+
+1. Review submission form on camp pages: reviewer name, email, camp/program, season attended, the review. Turnstile-gated, server-side validated, same-origin only, per the security gate.
+2. D1 `reviews` table with a `status` column (new / staged / approved / rejected / removed). No review renders on the site until status is approved.
+3. Moderation queue behind the human gate: staged reviews go to a review file plus Slack card, Jeff approves, then the review renders. FAMILY FIREWALL applies: any submission naming a minor, a family, or an identifiable local team situation is auto-held, never auto-approved.
+4. Remy as a daily scheduled agent once the feature exists: stages new submissions, screens against the prohibited-conduct terms, executes Jeff's approval marks, tracks takedown requests through the same removal path as the rest of the estate.
+
+Gates before launch: attorney pass on /terms, privacy pillar and DATA-MAP.md updated for reviewer name/email storage, moderation SLA defined. This is a December-window build unless Jeff pulls it forward; the Aug-Nov idle override (Decision Journal 2026-07-20) covered existing agents, not new feature builds.
