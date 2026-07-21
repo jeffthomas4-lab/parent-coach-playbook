@@ -22,6 +22,8 @@ const US_STATES = [
 
 // CAMP_SPORTS is the canonical list shared between this form and the camps directory filter.
 const sportOptions = CAMP_SPORTS;
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 <BaseLayout
   title="Submit a camp"
@@ -214,6 +216,8 @@ const sportOptions = CAMP_SPORTS;
           </p>
         </fieldset>
 
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
         <div class="flex items-center gap-4 pt-2">
           <button type="submit" class="btn">Submit camp</button>
           <p class="font-display italic text-ink-soft text-sm hidden font-medium" data-status aria-live="polite"></p>
@@ -221,6 +225,8 @@ const sportOptions = CAMP_SPORTS;
       </form>
     </div>
   </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <script>
     const form = document.getElementById('camp-form') as HTMLFormElement | null;

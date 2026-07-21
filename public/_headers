@@ -28,10 +28,13 @@
   #   Tgv6pLix  Web Vitals module — bundled with analytics script
   #   k4+bVBk/  Leaflet map init — moved to bundled script in camps/[slug].astro
   # CDN domains removed (cdn.jsdelivr.net, unpkg.com) — Leaflet and web-vitals now self-hosted via npm.
+  # challenges.cloudflare.com added to script-src/connect-src/frame-src for the
+  # Turnstile widget on the 4 public forms (camp submit, camp suggest, review
+  # submit, claim submit) — see src/lib/turnstile.ts.
   # When you add or change any inline script, rerun scripts/hash-csp.py to refresh these,
   # and update BOTH this file and src/lib/security-headers.ts — tests/middleware.test.ts
   # fails the build if they drift apart again.
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io; frame-ancestors 'none'; form-action 'self' https://app.kit.com; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self' https://app.kit.com; base-uri 'self'; object-src 'none'
 
 # Static HTML: edge-cache for a day, browser-cache for 5 minutes, serve stale
 # while revalidating in the background. New deploys auto-purge the CF edge so

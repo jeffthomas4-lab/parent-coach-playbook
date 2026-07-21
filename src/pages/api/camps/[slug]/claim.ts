@@ -9,6 +9,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { enforcePublicRequestBoundary, firstOversizedField } from '../../../../lib/public-input';
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../../lib/public-rate-limit';
 import { executeIdempotentWrite, sha256Hex, suppliedIdempotencyKey } from '../../../../lib/public-idempotency';
+import { enforcePublicTurnstile } from '../../../../lib/turnstile';
 
 export const prerender = false;
 
@@ -21,7 +22,7 @@ const json = (body: unknown, status = 200, headers?: Record<string, string>) =>
 const isEmail = (s: string | undefined): boolean => !!s && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; CAMP_CLAIMS_ENABLED?: string; OWNER_RATE_LIMITER?: PublicRateLimiter } | undefined;
+  const env = cfEnv as { DB: D1Database; CAMP_CLAIMS_ENABLED?: string; OWNER_RATE_LIMITER?: PublicRateLimiter; TURNSTILE_SECRET_KEY?: string } | undefined;
   if (!featureEnabled(env?.CAMP_CLAIMS_ENABLED)) {
     return json({ ok: false, error: 'camp claims are not currently available' }, 404);
   }
@@ -45,6 +46,7 @@ export const POST: APIRoute = async ({ params, request }) => {
   const ct = (request.headers.get('content-type') ?? '').toLowerCase();
   let payload: {
     website?: string;
+    'cf-turnstile-response'?: string;
     claimant_email?: string;
     claimant_name?: string;
     organization?: string;
@@ -65,6 +67,9 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (payload.website && payload.website.trim().length > 0) {
     return json({ ok: true });
   }
+
+  const turnstileFailure = await enforcePublicTurnstile(env.TURNSTILE_SECRET_KEY, payload['cf-turnstile-response'], request);
+  if (turnstileFailure) return turnstileFailure;
 
   const oversized = firstOversizedField(payload as Record<string, unknown>, {
     claimant_email: 320, claimant_name: 120, organization: 200, phone: 60, notes: 4000,

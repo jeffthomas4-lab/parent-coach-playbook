@@ -8,6 +8,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { enforcePublicRequestBoundary, firstOversizedField } from '../../../../../lib/public-input';
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../../../lib/public-rate-limit';
 import { executeIdempotentWrite, sha256Hex, suppliedIdempotencyKey } from '../../../../../lib/public-idempotency';
+import { enforcePublicTurnstile } from '../../../../../lib/turnstile';
 
 export const prerender = false;
 
@@ -20,7 +21,7 @@ const json = (body: unknown, status = 200, headers?: Record<string, string>) =>
 const isEmail = (s: string | undefined): boolean => !!s && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; CAMP_REVIEWS_ENABLED?: string; COMMUNITY_RATE_LIMITER?: PublicRateLimiter } | undefined;
+  const env = cfEnv as { DB: D1Database; CAMP_REVIEWS_ENABLED?: string; COMMUNITY_RATE_LIMITER?: PublicRateLimiter; TURNSTILE_SECRET_KEY?: string } | undefined;
   if (!featureEnabled(env?.CAMP_REVIEWS_ENABLED)) {
     return json({ ok: false, error: 'camp reviews are not currently available' }, 404);
   }
@@ -38,7 +39,7 @@ export const POST: APIRoute = async ({ params, request }) => {
 
   // Parse payload (form or JSON).
   const ct = (request.headers.get('content-type') ?? '').toLowerCase();
-  let payload: { website?: string; idempotency_key?: string; reviewer_email?: string; reviewer_display_name?: string; rating?: string | number; body?: string } = {};
+  let payload: { website?: string; 'cf-turnstile-response'?: string; idempotency_key?: string; reviewer_email?: string; reviewer_display_name?: string; rating?: string | number; body?: string } = {};
   if (ct.includes('application/json')) {
     payload = (await request.json()) as typeof payload;
   } else {
@@ -52,6 +53,9 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (payload.website && payload.website.trim().length > 0) {
     return json({ ok: true });
   }
+
+  const turnstileFailure = await enforcePublicTurnstile(env.TURNSTILE_SECRET_KEY, payload['cf-turnstile-response'], request);
+  if (turnstileFailure) return turnstileFailure;
 
   const oversized = firstOversizedField(payload as Record<string, unknown>, {
     reviewer_email: 320, reviewer_display_name: 120, body: 2000,

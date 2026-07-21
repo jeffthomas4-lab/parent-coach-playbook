@@ -36,6 +36,7 @@ import {
 import { env as cfEnv } from 'cloudflare:workers';
 import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHttpUrl } from '../../../lib/public-input';
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
+import { enforcePublicTurnstile } from '../../../lib/turnstile';
 
 export const prerender = false;
 
@@ -48,6 +49,7 @@ const CONFIRMATION_MAX_PER_HOUR = 5;
 interface SubmitPayload {
   // honeypot
   website?: string;
+  'cf-turnstile-response'?: string;
   idempotency_key?: string;
   // duplicate-address ack ("yes, this is a different program at the same address")
   confirm_duplicate?: string;
@@ -132,7 +134,7 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
 
 export const POST: APIRoute = async ({ request }) => {
   const env = cfEnv as
-    | ({ DB: D1Database; SITE_URL?: string; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter } & EmailEnv)
+    | ({ DB: D1Database; SITE_URL?: string; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter; TURNSTILE_SECRET_KEY?: string } & EmailEnv)
     | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
@@ -144,6 +146,9 @@ export const POST: APIRoute = async ({ request }) => {
   if (data.website && data.website.trim().length > 0) {
     return ok({ ok: true });
   }
+
+  const turnstileFailure = await enforcePublicTurnstile(env.TURNSTILE_SECRET_KEY, data['cf-turnstile-response'], request);
+  if (turnstileFailure) return turnstileFailure;
 
   const oversized = firstOversizedField(data as Record<string, unknown>, {
     name: 200, sport: 80, address: 300, city: 120, state: 40, zip: 20,

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-21T01:53:13.239Z",
-  "count": 679,
+  "generatedAt": "2026-07-21T03:23:48.149Z",
+  "count": 680,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -438,6 +438,14 @@
         "src/content/adaptive/adhd-and-youth-sports.md",
         "src/content/adaptive/adhd-athlete.md",
         "src/content/adaptive/when-your-kid-struggles-in-neurotypical-sports.md"
+      ]
+    },
+    {
+      "url": "https://challenges.cloudflare.com/turnstile/v0/api.js",
+      "sources": [
+        "src/pages/camps/[slug].astro",
+        "src/pages/camps/submit.astro",
+        "src/pages/camps/suggest.astro"
       ]
     },
     {

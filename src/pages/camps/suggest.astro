@@ -7,6 +7,8 @@ export const prerender = true;
 
 const sportOptions = CAMP_SPORTS;
 
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
 const US_STATES = [
   ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
   ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['FL','Florida'],['GA','Georgia'],
@@ -103,6 +105,8 @@ const US_STATES = [
           </p>
         </fieldset>
 
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
         <div class="flex items-center gap-4 pt-2">
           <button type="submit" class="btn">Suggest it</button>
           <p class="font-display italic text-ink-soft text-sm hidden font-medium" data-status aria-live="polite"></p>
@@ -110,6 +114,8 @@ const US_STATES = [
       </form>
     </div>
   </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <script>
     const form = document.getElementById('suggest-form') as HTMLFormElement | null;

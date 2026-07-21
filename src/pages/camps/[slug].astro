@@ -24,6 +24,7 @@ const env = cfEnv as {
 } | undefined;
 const claimsEnabled = featureEnabled(env?.CAMP_CLAIMS_ENABLED);
 const reviewsEnabled = featureEnabled(env?.CAMP_REVIEWS_ENABLED);
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 const slug = Astro.params.slug;
 
 // State-code dispatch. Astro's routing prefers /camps/[slug].astro over
@@ -576,6 +577,8 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
                 <textarea name="body" required minlength="30" maxlength="2000" rows="5" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" placeholder="What was your kid's week like? What worked, what didn't? 50-300 words."></textarea>
               </label>
 
+              <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
               <div class="flex items-center gap-4">
                 <button type="submit" class="btn">Submit review</button>
                 <p data-review-status class="font-display italic text-ink-soft text-sm hidden font-medium" aria-live="polite"></p>
@@ -695,6 +698,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
                 <span class="sr-only">Proof of ownership</span>
                 <textarea name="notes" required minlength="20" rows="3" placeholder="Proof of ownership: your role, how to verify (e.g. 'I'm the head coach. Reach me via the school's main line.')" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
               </label>
+              <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
               <button type="submit" class="btn">Submit claim request</button>
               <p data-claim-status class="font-display italic text-ink-soft text-xs hidden font-medium" aria-live="polite"></p>
               <p class="font-display italic text-ink-soft text-xs font-medium">
@@ -711,6 +715,10 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
     </div>
   </section>
 
+
+  {(reviewsEnabled || claimsEnabled) && (
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  )}
 
   <script>
     (function () {

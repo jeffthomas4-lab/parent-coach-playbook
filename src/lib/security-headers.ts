@@ -1,10 +1,11 @@
 export const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com",
+  "script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com https://challenges.cloudflare.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io",
+  "connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io https://challenges.cloudflare.com",
+  "frame-src 'self' https://challenges.cloudflare.com",
   "frame-ancestors 'none'",
   "form-action 'self' https://app.kit.com",
   "base-uri 'self'",

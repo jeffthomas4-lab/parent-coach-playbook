@@ -12,11 +12,13 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHttpUrl } from '../../../lib/public-input';
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
 import { executeIdempotentWrite, sha256Hex, suppliedIdempotencyKey } from '../../../lib/public-idempotency';
+import { enforcePublicTurnstile } from '../../../lib/turnstile';
 
 export const prerender = false;
 
 interface SuggestPayload {
   website?: string; // honeypot
+  'cf-turnstile-response'?: string;
   idempotency_key?: string;
   org_name?: string;
   org_website?: string;
@@ -58,7 +60,7 @@ async function readPayload(req: Request): Promise<SuggestPayload> {
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const env = cfEnv as { DB: D1Database; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter } | undefined;
+  const env = cfEnv as { DB: D1Database; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter; TURNSTILE_SECRET_KEY?: string } | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const boundary = await enforcePublicRequestBoundary(request, 12_288);
@@ -69,6 +71,9 @@ export const POST: APIRoute = async ({ request }) => {
   if (data.website && data.website.trim().length > 0) {
     return ok({ ok: true });
   }
+
+  const turnstileFailure = await enforcePublicTurnstile(env.TURNSTILE_SECRET_KEY, data['cf-turnstile-response'], request);
+  if (turnstileFailure) return turnstileFailure;
 
   const oversized = firstOversizedField(data as Record<string, unknown>, {
     org_name: 200,
