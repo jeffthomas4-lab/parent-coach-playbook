@@ -26,6 +26,7 @@ import {
   type SkillLevel,
   type SpotsStatus,
 } from '../../../lib/camps-db';
+import { isDomainSkipListed } from '../../../lib/domain-skip-list';
 import { executeIdempotentWrite, lookupIdempotentWrite, sha256Hex, suppliedIdempotencyKey } from '../../../lib/public-idempotency';
 import { checkUrlHealth } from '../../../lib/url-health';
 import {
@@ -224,6 +225,22 @@ export const POST: APIRoute = async ({ request }) => {
     return fail(error instanceof Error ? error.message : 'website_url is invalid');
   }
   const sourceDomain = (data.source_domain && data.source_domain.trim().toLowerCase()) || extractDomain(normalizedWebsite);
+
+  // Admin skip-list gate (migrations/0017_domain_skip_list.sql, managed at
+  // /admin/source-quality). A domain with a track record bad enough for an
+  // admin to skip-list it is refused outright, the same way a previously
+  // rejected dead URL is refused above — this endpoint never auto-approves
+  // anything (every row lands 'pending' below), so there is no weaker
+  // "accept but force pending" option to fall back to; a clean 422 matching
+  // the existing quality-gate pattern is the correct fit for the contract.
+  if (sourceDomain && (await isDomainSkipListed(env.DB, sourceDomain))) {
+    return fail(
+      `Source domain "${sourceDomain}" is on the admin skip-list and is not being accepted. ` +
+      `An admin can remove it from /admin/source-quality if this was added in error.`,
+      422,
+    );
+  }
+
   const idempotency = suppliedIdempotencyKey(request, data.idempotency_key);
   if (idempotency.error) return fail(idempotency.error);
   if (!idempotency.key) return fail('Idempotency-Key is required');

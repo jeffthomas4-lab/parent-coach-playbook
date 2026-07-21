@@ -10,15 +10,44 @@ const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
 const components = await readOperationsStatus(env ?? {});
 const color = (state: string) => state === 'healthy' ? 'text-green-700' : state === 'degraded' ? 'text-amber-700' : state === 'failing' ? 'text-red-700' : 'text-ink-soft';
+
+// Where the fix for each component actually lives. This page stays read-only;
+// these links are the "go fix it" hop, not a control on this page itself.
+const componentLink = (component: string): string | null => {
+  if (component === 'Directory data quality') return '/admin/data-quality';
+  if (component === 'Trust and rights case SLA') return '/admin/trust/';
+  if (component === 'PCD agent runtime') return '/admin/agents';
+  return null;
+};
+
+// The moderation-backlog component reports four queues in one set of
+// metrics; link each metric row to the queue page it actually describes
+// instead of picking one page for the whole component.
+const queueLinkForMetric = (key: string): string | null => {
+  if (key.startsWith('camp_submissions')) return '/admin/camps/queue';
+  if (key.startsWith('organization_suggestions')) return '/admin/suggestions/';
+  if (key.startsWith('camp_claims')) return '/admin/claims/';
+  if (key.startsWith('camp_reviews')) return '/admin/reviews/';
+  return null;
+};
 ---
 <AdminLayout title="Operations status" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2">Admin · Operations</p><h1 class="font-display text-ink text-4xl font-medium">Operational status</h1>
-    <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only evidence, not a control panel. Unknown is intentional when durable or independent proof does not exist. This page cannot trigger jobs, pause agents, mutate data, or certify customer readiness.</p>
+    <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only evidence, not a control panel. Unknown is intentional when durable or independent proof does not exist. This page does not trigger jobs, pause agents, or mutate data directly — fixes for what shows up here live on the linked pages below.</p>
   </div></section>
-  <section class="container-px py-10"><ul class="grid gap-5">{components.map((item) => <li class="border border-bone bg-paper p-5">
-    <div class="flex flex-wrap justify-between gap-3"><h2 class="font-display text-xl font-medium">{item.component}</h2><p class:list={["font-mono text-xs uppercase", color(item.state)]}>{item.state}</p></div>
-    <p class="mt-2 text-ink-soft">{item.summary}</p><p class="font-mono text-xs mt-2">{item.code}</p>
-    <dl class="grid md:grid-cols-3 gap-2 mt-4">{Object.entries(item.metrics).map(([key, value]) => <div><dt class="font-mono text-xs text-ink-soft">{key}</dt><dd>{value ?? '—'}</dd></div>)}</dl>
-  </li>)}</ul></section>
+  <section class="container-px py-10"><ul class="grid gap-5">{components.map((item) => {
+    const link = componentLink(item.component);
+    return <li class="border border-bone bg-paper p-5">
+      <div class="flex flex-wrap justify-between gap-3">
+        <h2 class="font-display text-xl font-medium">{link ? <a href={link} class="hover:text-rust hover:underline">{item.component} →</a> : item.component}</h2>
+        <p class:list={["font-mono text-xs uppercase", color(item.state)]}>{item.state}</p>
+      </div>
+      <p class="mt-2 text-ink-soft">{item.summary}</p><p class="font-mono text-xs mt-2">{item.code}</p>
+      <dl class="grid md:grid-cols-3 gap-2 mt-4">{Object.entries(item.metrics).map(([key, value]) => {
+        const metricLink = item.component === 'Public moderation backlog' ? queueLinkForMetric(key) : null;
+        return <div><dt class="font-mono text-xs text-ink-soft">{metricLink ? <a href={metricLink} class="hover:text-rust hover:underline">{key} →</a> : key}</dt><dd>{value ?? '—'}</dd></div>;
+      })}</dl>
+    </li>;
+  })}</ul></section>
 </AdminLayout>

@@ -192,6 +192,9 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                               </li>
                             ))}
                           </ul>
+                          <button type="button" class="mt-2 font-display italic px-2 py-1 border border-rust bg-paper text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-duplicate">
+                            Reject as duplicate
+                          </button>
                         </div>
                       )}
                     </div>
@@ -210,6 +213,12 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Description</label>
                         <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="3" data-field="description">{camp.description}</textarea>
+                      </div>
+
+                      <div class="flex justify-end">
+                        <button type="button" class="save-edits-btn font-display italic px-3 py-1 border border-bone bg-paper-warm text-ink-soft text-sm hover:bg-paper transition-colors font-medium" data-action="save-edits" style="display: none;">
+                          Save edits
+                        </button>
                       </div>
 
                       <div class="grid gap-1">
@@ -400,9 +409,73 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       const campId = row.getAttribute('data-id');
       const statusDiv = row.querySelector('.status-message');
       const rejectRow = row.querySelector('.reject-reason-row');
+      const saveBtn = row.querySelector('[data-action="save-edits"]');
+      const editFields = row.querySelectorAll('[data-field="website_url"], [data-field="contact_email"], [data-field="description"]');
+      let dirty = false;
+
+      function setDirty(v) {
+        dirty = v;
+        if (saveBtn) saveBtn.style.display = v ? 'inline-block' : 'none';
+      }
+
+      editFields.forEach(function (field) {
+        field.setAttribute('data-original', field.value);
+        field.addEventListener('input', function () {
+          setDirty(true);
+        });
+      });
+
+      // Diffs the edit inputs against their last-saved values and POSTs only
+      // what changed. Returns true on success (or if nothing was dirty) and
+      // false on failure, so callers (approve/approve-verified) can bail out
+      // instead of approving over an edit that never made it to D1.
+      async function saveEdits() {
+        const payload = {};
+        editFields.forEach(function (field) {
+          if (field.value !== field.getAttribute('data-original')) {
+            payload[field.getAttribute('data-field')] = field.value;
+          }
+        });
+        if (Object.keys(payload).length === 0) {
+          setDirty(false);
+          return true;
+        }
+        try {
+          const resp = await fetch('/api/admin/camps/' + campId + '/update', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await resp.json();
+          if (data.ok) {
+            editFields.forEach(function (field) {
+              field.setAttribute('data-original', field.value);
+            });
+            setDirty(false);
+            statusDiv.textContent = 'Edits saved.';
+            statusDiv.style.display = 'block';
+            return true;
+          }
+          statusDiv.textContent = 'Save error: ' + (data.error || 'unknown');
+          statusDiv.style.display = 'block';
+          return false;
+        } catch (err) {
+          statusDiv.textContent = 'Save error: ' + (err instanceof Error ? err.message : 'network error');
+          statusDiv.style.display = 'block';
+          return false;
+        }
+      }
+
+      if (saveBtn) {
+        saveBtn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          await saveEdits();
+        });
+      }
 
       row.querySelectorAll('[data-action]').forEach(function (btn) {
         if (btn.type === 'file') return;
+        if (btn.getAttribute('data-action') === 'save-edits') return;
 
         btn.addEventListener('click', async function (e) {
           e.preventDefault();
@@ -418,6 +491,13 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
           }
 
           let endpoint, body;
+
+          if (action === 'approve-verified' || action === 'approve') {
+            if (dirty) {
+              const saved = await saveEdits();
+              if (!saved) return;
+            }
+          }
 
           if (action === 'approve-verified') {
             endpoint = '/api/admin/camps/' + campId + '/approve';
@@ -442,6 +522,9 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
             }
             endpoint = '/api/admin/camps/' + campId + '/reject';
             body = JSON.stringify({ notes: notes, reason_code: reasonCode });
+          } else if (action === 'reject-duplicate') {
+            endpoint = '/api/admin/camps/' + campId + '/reject';
+            body = JSON.stringify({ notes: 'Flagged as a likely duplicate from the fuzzy-match warning.', reason_code: 'duplicate' });
           } else {
             return;
           }
@@ -455,7 +538,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
             const data = await resp.json();
 
             if (data.ok) {
-              statusDiv.textContent = action === 'reject-confirm' ? 'Rejected' : 'Approved';
+              statusDiv.textContent = (action === 'reject-confirm' || action === 'reject-duplicate') ? 'Rejected' : 'Approved';
               statusDiv.style.display = 'block';
               setTimeout(function () {
                 row.style.opacity = '0.5';

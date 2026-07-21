@@ -17,11 +17,17 @@ Lists all camps with `status='pending'`. Each row shows:
 - Dates
 - Inline-editable fields: website URL, contact email, description
 - Submitter email and submission timestamp
+- If the fuzzy-duplicate check finds a likely match: a warning box listing the matched camp(s), with a one-click **Reject as duplicate** button
 
-Three action buttons:
+Inline-editable fields save for real. Typing in website URL, contact email, or description shows a **Save edits** button under the description field. Clicking it POSTs only the changed fields to `/api/admin/camps/{id}/update` and shows a success or error message inline. If the admin clicks Approve or Approve & verify while an edit is unsaved, the page saves the edit first and only proceeds to approve if the save succeeds — an unsaved edit is never silently discarded.
+
+Four action buttons:
 - **Approve & verified**: POSTs to `/api/admin/camps/{id}/approve` AND `/api/admin/camps/{id}/verify` (sets both status=approved and verified=1)
 - **Approve**: POSTs to `/api/admin/camps/{id}/approve` (status=approved only)
-- **Reject**: POSTs to `/api/admin/camps/{id}/reject`
+- **Reject**: opens the reason-code row (see below)
+- **Reject as duplicate** (only shown when the fuzzy-match warning is present): POSTs straight to `/api/admin/camps/{id}/reject` with `reason_code: 'duplicate'`, no extra clicks needed
+
+The **Reject** button opens an inline row with a reason-code dropdown (recorded for source-quality stats) and an optional notes field, plus Confirm reject / Cancel buttons. A reason code is required before Confirm reject will submit.
 
 Photo upload button: file input that POSTs to `/api/admin/camps/{id}/photo` (standard multipart/form-data). Accepts jpg, png, webp up to 5 MB.
 
@@ -54,10 +60,11 @@ Lists all claims with `status='pending'` (includes verified claims per the query
 - Current claim status (pending/verified)
 - Submission date
 
-Three action buttons:
+Two action buttons:
 - **Mark verified**: POSTs to `/api/admin/claims/{id}/update` with status='verified'
-- **Mark paid**: POSTs to `/api/admin/claims/{id}/update` with status='paid' (also activates camp's claimed flag and sets paid-until date)
 - **Reject**: POSTs to `/api/admin/claims/{id}/update` with status='rejected'
+
+(There is no "Mark paid" button on this page. That was documented here before but never shipped in `queue.astro`.)
 
 Same removal + status message pattern.
 
@@ -75,11 +82,13 @@ Plain ES5 JavaScript in DOMContentLoaded event. No TypeScript syntax.
 
 Rows are identified by `data-id` attribute. Each row has action buttons with `data-action` attribute:
 
-- `approve`, `approve-verified`, `reject` for camps
+- `approve`, `approve-verified`, `reject`, `reject-confirm`, `reject-cancel`, `reject-duplicate`, `save-edits` for camps
 - `approve`, `reject` for reviews
-- `mark-verified`, `mark-paid`, `reject` for claims
+- `mark-verified`, `reject` for claims
 
-On button click:
+Camp rows also track dirty state on the three edit inputs (`data-field="website_url"`, `data-field="contact_email"`, `data-field="description"`). Each input's server-rendered value is stashed in a `data-original` attribute on load; an `input` listener flips a per-row `dirty` flag and shows the `save-edits` button. `save-edits` diffs current values against `data-original` and POSTs only the changed keys to `/api/admin/camps/{id}/update`. On success it resets `data-original` and hides the button; on failure it leaves the row dirty and shows the error inline. Clicking `approve` or `approve-verified` while dirty runs the same save first and only proceeds to approve if it succeeds.
+
+On action-button click (approve/reject/mark-verified/reject-duplicate):
 1. Prevent default
 2. Construct appropriate fetch URL and body
 3. POST to `/api/admin/{resource}/{id}/{action}` (or `/api/admin/{resource}/{id}/update` for claims)
@@ -109,6 +118,14 @@ All buttons are 0.5rem 1rem padding, 0.85rem–1rem font size. Responsive grid l
 6. Check the count badges to track what's left
 7. When all sections are clear, close the tab
 
+## Legacy page: `/admin/camps/index.astro`
+
+Older, plain-HTML pending list. No JS, forms POST directly and reload. Kept working, not the primary tool.
+
+- Top of page links to `/admin/camps/queue` and tells Jeff to use that instead.
+- The reject form now carries a required reason-code `<select>` (same codes as the queue page, from `REJECT_REASON_CODES`) so a reject from this page still records a reason for source-quality stats. The browser blocks submit until a reason is picked.
+- Approve stays a plain form POST, no reason code needed there.
+
 ## Deployment
 
 - No new dependencies required
@@ -126,7 +143,6 @@ npm run dev
 ## Future enhancements (not in scope)
 
 - Bulk actions (select multiple, approve/reject all)
-- Inline edit save (currently fields are read-only for display; edit happens in the detail page)
 - Search/filter by camp name, submitter email, date range
 - Export queue to CSV
 - Undo button (requires soft deletes or a change log)

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-21T04:13:25.553Z",
-  "count": 680,
+  "generatedAt": "2026-07-21T06:08:16.816Z",
+  "count": 681,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -862,6 +862,12 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/",
       "sources": [
         "src/pages/about/sources.astro"
+      ]
+    },
+    {
+      "url": "https://REPLACE-WITH-DESTINATION-URL",
+      "sources": [
+        "src/pages/admin/affiliates.astro"
       ]
     },
     {

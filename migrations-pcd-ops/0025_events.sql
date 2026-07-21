@@ -19,7 +19,7 @@
 CREATE TABLE events (
   id TEXT PRIMARY KEY,
   -- Namespaced `pcd.<domain>.<event>`, e.g. `pcd.editorial.draft_ready`.
-  -- The CHECK enforces the namespace shape; it does not enumerate every
+  -- The CHECK enforces the namespace shape. It does not enumerate every
   -- event name, so new domains and event names do not require a migration.
   event_type TEXT NOT NULL CHECK (
     event_type LIKE 'pcd.%.%'
@@ -46,7 +46,7 @@ CREATE TABLE events (
   -- Optional caller-supplied dedupe key so a retried emit (e.g. a Slack
   -- action double-click already handled idempotently by publishDraft, or a
   -- worker retry) does not double-log. NULL is allowed for callers that have
-  -- no natural dedupe key; NULL values do not collide under UNIQUE.
+  -- no natural dedupe key. NULL values do not collide under UNIQUE.
   idempotency_key TEXT UNIQUE,
   created_at TEXT NOT NULL
 );

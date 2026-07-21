@@ -1,0 +1,98 @@
+---
+// One offending-program row on /admin/data-quality. Shared across every
+// issue-type section so the fix-control markup (and the data-* attributes the
+// page's single inline script reads) stay identical everywhere.
+
+interface FieldSpec {
+  key: string;
+  label: string;
+  type: 'number' | 'date' | 'text' | 'url';
+  value: string | number | null;
+  min?: number;
+  max?: number;
+}
+
+interface ActionSpec {
+  action: string;
+  label: string;
+  tone?: 'default' | 'rust' | 'sage';
+}
+
+interface Props {
+  id: string;
+  name: string;
+  editHref: string;
+  orgLine: string;
+  badge?: string | null;
+  fields?: FieldSpec[];
+  primaryAction?: ActionSpec | null;
+  secondaryActions?: ActionSpec[];
+}
+
+const {
+  id,
+  name,
+  editHref,
+  orgLine,
+  badge = null,
+  fields = [],
+  primaryAction = null,
+  secondaryActions = [],
+} = Astro.props;
+
+const toneClass = (tone?: string) =>
+  tone === 'rust'
+    ? 'border-rust bg-paper text-rust hover:bg-rust hover:text-paper'
+    : tone === 'sage'
+      ? 'border-sage bg-sage-bg text-sage hover:bg-sage hover:text-paper'
+      : 'border-bone bg-paper-warm text-ink hover:bg-paper';
+---
+
+<li class="border border-bone p-5 bg-paper dq-row" data-id={id}>
+  <p class="font-display text-ink text-lg font-medium">
+    <a href={editHref} class="hover:text-rust" target="_blank" rel="noopener">{name}</a>
+  </p>
+  <p class="font-display text-ink-soft text-sm mt-1">{orgLine}</p>
+  {badge && <p class="font-mono text-xs text-ink-soft mt-2">{badge}</p>}
+
+  {fields.length > 0 && (
+    <div class="grid gap-2 sm:grid-cols-3 mt-3 items-end">
+      {fields.map((f) => (
+        <div class="grid gap-1">
+          <label class="font-display italic text-ink-soft text-xs font-medium">{f.label}</label>
+          <input
+            type={f.type}
+            class="px-2 py-1 font-body bg-paper border border-bone text-sm"
+            value={f.value ?? ''}
+            data-field={f.key}
+            min={f.min}
+            max={f.max}
+          />
+        </div>
+      ))}
+    </div>
+  )}
+
+  <div class="flex flex-wrap gap-2 mt-3">
+    {primaryAction && (
+      <button
+        type="button"
+        class={`font-display italic px-3 py-2 border text-sm font-medium transition-colors ${toneClass(primaryAction.tone)}`}
+        data-fix-action={primaryAction.action}
+      >
+        {primaryAction.label}
+      </button>
+    )}
+    {secondaryActions.map((a) => (
+      <button
+        type="button"
+        class={`font-display italic px-3 py-2 border text-sm font-medium transition-colors ${toneClass(a.tone)}`}
+        data-fix-action={a.action}
+      >
+        {a.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="status-message text-xs font-display italic mt-2" style="display: none;" aria-live="polite"></div>
+</li>

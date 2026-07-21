@@ -24,6 +24,15 @@ const hostOf = (url: string) => {
   }
 };
 
+const AFFILIATES_JSON_PATH = 'src/data/affiliates.json';
+
+// Ready-to-paste JSON entry for a slug that clicked through but has no
+// matching entry in affiliates.json. Placeholders are unambiguous UPPER_CASE
+// tokens so pasting it in unedited is obviously wrong rather than silently
+// broken.
+const buildAffiliateSnippet = (slug: string) =>
+  `"${slug}": {\n  "destination": "https://REPLACE-WITH-DESTINATION-URL",\n  "retailer": "REPLACE-WITH-RETAILER",\n  "campaign": "${slug}"\n},`;
+
 interface Totals {
   last7: number;
   last30: number;
@@ -198,9 +207,23 @@ const fmtDateTime = (s: string) =>
                         {meta ? (
                           hostOf(meta.destination)
                         ) : (
-                          <span class="font-display italic px-2 py-0.5 text-xs text-paper font-medium" style="background: #9E5228;">
-                            Not in affiliates.json
-                          </span>
+                          <div class="grid gap-1" data-missing-affiliate data-slug={row.slug}>
+                            <span class="font-display italic px-2 py-0.5 text-xs text-paper font-medium w-fit" style="background: #9E5228;">
+                              Not in affiliates.json
+                            </span>
+                            <button type="button" class="snippet-toggle-btn font-display italic text-rust hover:underline text-xs font-medium text-left">
+                              Show ready-to-paste snippet →
+                            </button>
+                            <div class="snippet-block" style="display: none;">
+                              <p class="font-display italic text-ink-soft text-xs font-medium mt-1">
+                                Paste into <code>{AFFILIATES_JSON_PATH}</code> (drop the trailing comma if it's the last entry):
+                              </p>
+                              <pre class="snippet-text font-body text-xs bg-paper-warm border border-bone p-2 mt-1 overflow-x-auto" style="white-space: pre-wrap;">{buildAffiliateSnippet(row.slug)}</pre>
+                              <button type="button" class="copy-snippet-btn font-display italic px-2 py-1 border border-bone text-xs hover:bg-paper-warm font-medium mt-1">
+                                Copy snippet
+                              </button>
+                            </div>
+                          </div>
                         )}
                       </td>
                     </tr>
@@ -298,3 +321,50 @@ const fmtDateTime = (s: string) =>
     </>
   )}
 </AdminLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-missing-affiliate]').forEach(function (wrap) {
+      var toggleBtn = wrap.querySelector('.snippet-toggle-btn');
+      var block = wrap.querySelector('.snippet-block');
+      var copyBtn = wrap.querySelector('.copy-snippet-btn');
+      var pre = wrap.querySelector('.snippet-text');
+      if (!toggleBtn || !block) return;
+
+      toggleBtn.addEventListener('click', function () {
+        var showing = block.style.display !== 'none';
+        block.style.display = showing ? 'none' : 'block';
+        toggleBtn.textContent = showing ? 'Show ready-to-paste snippet →' : 'Hide snippet';
+      });
+
+      if (copyBtn && pre) {
+        copyBtn.addEventListener('click', function () {
+          var text = pre.textContent || '';
+          var original = copyBtn.textContent;
+          function done(ok) {
+            copyBtn.textContent = ok ? 'Copied!' : 'Copy failed';
+            setTimeout(function () { copyBtn.textContent = original; }, 1500);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+          } else {
+            try {
+              var ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.focus();
+              ta.select();
+              var ok = document.execCommand('copy');
+              document.body.removeChild(ta);
+              done(ok);
+            } catch (err) {
+              done(false);
+            }
+          }
+        });
+      }
+    });
+  });
+</script>

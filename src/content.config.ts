@@ -82,6 +82,15 @@ const editorialField = {
     status: z.enum(['draft','claude-reviewed','ready-for-jeff','jeff-approved','published','needs-revision']).default('draft'),
     reviewerNotes:              z.string().optional(),
     factCheckGoodThrough:       z.coerce.date().optional(),               // for evergreen content with date-sensitive facts
+    revisionNote:               z.string().optional(),                    // written by set-status.ts on a send-back-to-revision transition
+    flagResolutions:            z.array(
+      z.object({
+        flag:   z.string(),                                               // FLAG_FIELDS key, e.g. "INAPPROP", "IP", "SENS", "NOCITE"
+        reason: z.string(),
+        date:   z.string(),                                                // YYYY-MM-DD, written by set-status.ts
+        admin:  z.string(),                                                // admin email who resolved the flag
+      })
+    ).optional(),
   }).optional(),
 };
 

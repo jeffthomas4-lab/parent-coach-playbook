@@ -60,6 +60,34 @@ describe('POST /api/admin/camps/:id/update', () => {
     expect(campsDb.updateCamp).not.toHaveBeenCalled();
   });
 
+  it('happy path: a partial payload of only website/contact/description fields (the queue page inline-edit save) is accepted', async () => {
+    const ctx = makeContext({
+      request: adminRequest({
+        website_url: 'newsite.example.com',
+        contact_email: 'coach@example.com',
+        description: 'Updated description that is long enough to pass.',
+      }),
+      params: { id: 'camp_1' },
+      env: { DB: {}, ADMIN_EMAILS },
+    });
+    const res = await POST(ctx);
+    const body = await readJson(res);
+    expect(res.status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(campsDb.updateCamp).toHaveBeenCalledWith(
+      expect.anything(),
+      'camp_1',
+      expect.objectContaining({
+        website_url: 'https://newsite.example.com',
+        contact_email: 'coach@example.com',
+        description: 'Updated description that is long enough to pass.',
+      }),
+      'jeffthomas@pugetsound.edu',
+    );
+    // No address component was sent, so this partial save should not trigger a re-geocode.
+    expect(campsDb.geocodeCached).not.toHaveBeenCalled();
+  });
+
   it('happy path: an allowed admin updating the description succeeds', async () => {
     const ctx = makeContext({
       request: adminRequest({ description: 'Updated description that is long enough to pass.' }),

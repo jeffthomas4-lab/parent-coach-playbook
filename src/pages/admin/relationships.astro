@@ -19,7 +19,13 @@ const metrics = relationshipMetrics(records);
     <p class="font-display text-ink-soft mt-4 max-w-3xl">Research candidates are not relationships. This page cannot contact anyone, approve outreach, or turn a citation into an endorsement.</p>
   </div></section>
   <section class="container-px py-8">
-    {errors.length > 0 && <div class="border border-red-700 p-4 text-red-800">Registry invalid; relationship claims are unavailable.</div>}
+    {errors.length > 0 && <div class="border border-red-700 p-4 text-red-800">
+      <p class="font-display font-medium">Registry invalid; relationship claims are unavailable.</p>
+      <p class="font-mono text-xs mt-2">Fix directly in <code>automation/trusted-relationships-v1.json</code> (repo root: <code>parent-coach-desk/automation/trusted-relationships-v1.json</code>).</p>
+      <ul class="list-disc list-inside mt-3 font-mono text-xs space-y-1">
+        {errors.map((err) => <li>{err}</li>)}
+      </ul>
+    </div>}
     <dl class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-8">{Object.entries(metrics).map(([key, value]) => <div class="border border-bone bg-paper p-4"><dt class="font-mono text-xs text-ink-soft">{key}</dt><dd class="font-display text-2xl">{value}</dd></div>)}</dl>
     <div class="grid gap-4">{records.map((record) => <article class="border border-bone bg-paper p-5">
       <div class="flex flex-wrap justify-between gap-3"><h2 class="font-display text-xl font-medium">{record.organization_name}</h2><span class="font-mono text-xs uppercase">{record.stage}</span></div>

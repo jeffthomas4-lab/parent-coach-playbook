@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 149,
+  "route_count": 161,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -75,6 +75,26 @@
       "public_write_limiter": null
     },
     {
+      "route": "/admin/affiliates",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/affiliates.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/agents",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/agents.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
       "route": "/admin/api/camps/:id/reject",
       "methods": [
         "POST"
@@ -140,6 +160,16 @@
         "GET"
       ],
       "source": "admin/claims/index.astro",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/data-quality",
+      "methods": [
+        "GET"
+      ],
+      "source": "admin/data-quality.astro",
       "cache_class": "admin_preview",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -315,6 +345,16 @@
       "public_write_limiter": null
     },
     {
+      "route": "/api/admin/agents/:id/update",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/agents/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
       "route": "/api/admin/camps/:id/approve",
       "methods": [
         "POST"
@@ -370,6 +410,16 @@
         "POST"
       ],
       "source": "api/admin/claims/[id]/update.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/data-quality/fix",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/data-quality/fix.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -485,11 +535,51 @@
       "public_write_limiter": null
     },
     {
+      "route": "/api/admin/editorial/set-status",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/editorial/set-status.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
       "route": "/api/admin/editorial/sources/create",
       "methods": [
         "POST"
       ],
       "source": "api/admin/editorial/sources/create.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/link-health/recheck",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/link-health/recheck.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/link-health/resolve",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/link-health/resolve.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/link-health/suggest-replacement",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/link-health/suggest-replacement.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -510,6 +600,36 @@
         "POST"
       ],
       "source": "api/admin/reviews/[id]/reject.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/source-quality/reject-domain",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/source-quality/reject-domain.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/source-quality/skip",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/source-quality/skip.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/suggestions/:id/promote",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/suggestions/[id]/promote.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null

@@ -1,6 +1,7 @@
 ---
 import AdminLayout from '../../layouts/AdminLayout.astro';
 import { listDomainQuality, type DomainQuality } from '../../lib/camps-db';
+import { listSkipListedDomains, type DomainSkipEntry } from '../../lib/domain-skip-list';
 import { requireAdmin } from '../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -14,10 +15,12 @@ if (auth instanceof Response) return auth;
 const adminEmail = auth.email;
 
 let rows: DomainQuality[] = [];
+let skipList: Map<string, DomainSkipEntry> = new Map();
 let dbAvailable = !!env?.DB;
 if (env?.DB) {
   try {
     rows = await listDomainQuality(env.DB);
+    skipList = await listSkipListedDomains(env.DB);
   } catch (e) {
     console.error('listDomainQuality failed', e);
   }
@@ -28,6 +31,8 @@ interface Enriched extends DomainQuality {
   rejection_rate: number;
   high_pct: number;
   low_pct: number;
+  skip_listed: boolean;
+  skip_reason: string | null;
 }
 
 const enriched: Enriched[] = rows.map((r) => {
@@ -36,12 +41,15 @@ const enriched: Enriched[] = rows.map((r) => {
   const rejectionRate = decided > 0 ? r.rejected_count / decided : 0;
   const highPct = r.submitted_count > 0 ? r.high_confidence_count / r.submitted_count : 0;
   const lowPct = r.submitted_count > 0 ? r.low_confidence_count / r.submitted_count : 0;
+  const skipEntry = skipList.get(r.domain);
   return {
     ...r,
     approval_rate: approvalRate,
     rejection_rate: rejectionRate,
     high_pct: highPct,
     low_pct: lowPct,
+    skip_listed: !!skipEntry,
+    skip_reason: skipEntry?.reason ?? null,
   };
 });
 
@@ -135,6 +143,7 @@ const rateTone = (rate: number, decided: number): string => {
                     <th scope="col" class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">High conf</th>
                     <th scope="col" class="text-right px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Low conf</th>
                     <th scope="col" class="text-left px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Last seen</th>
+                    <th scope="col" class="text-left px-3 py-2 font-display italic text-ink-soft text-xs font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -142,11 +151,16 @@ const rateTone = (rate: number, decided: number): string => {
                     const decided = r.approved_count + r.rejected_count;
                     const tone = rateTone(r.approval_rate, decided);
                     return (
-                      <tr class="border-b border-bone last:border-b-0 hover:bg-paper-warm">
+                      <tr class="border-b border-bone last:border-b-0 hover:bg-paper-warm" data-domain-row data-domain={r.domain} data-skip-listed={r.skip_listed ? 'true' : 'false'}>
                         <td class="px-3 py-2 text-ink font-medium">
                           <a href={`https://${r.domain}`} target="_blank" rel="noopener" class="hover:underline">
                             {r.domain}
                           </a>
+                          {r.skip_listed && (
+                            <span class="block font-display italic text-rust text-xs mt-1 font-medium" title={r.skip_reason ?? ''}>
+                              Skip-listed{r.skip_reason ? `: ${r.skip_reason}` : ''}
+                            </span>
+                          )}
                         </td>
                         <td class="px-3 py-2 text-right text-ink">{r.submitted_count}</td>
                         <td class="px-3 py-2 text-right text-sage">{r.approved_count}</td>
@@ -167,6 +181,25 @@ const rateTone = (rate: number, decided: number): string => {
                           )}
                         </td>
                         <td class="px-3 py-2 text-ink-soft text-xs">{fmtDate(r.last_seen_at)}</td>
+                        <td class="px-3 py-2">
+                          <div class="flex flex-col gap-1 min-w-[160px]">
+                            <button type="button" data-action="skip-toggle" class="font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium">
+                              {r.skip_listed ? 'Unskip' : 'Add to skip-list'}
+                            </button>
+                            <button type="button" data-action="reject-domain-arm" class="font-display italic px-2 py-1 border border-rust text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium">
+                              Reject all pending
+                            </button>
+                            <div data-reject-confirm-row style="display: none;" class="flex gap-1 mt-1">
+                              <button type="button" data-action="reject-domain-confirm" class="font-display italic px-2 py-1 border border-rust bg-rust text-paper text-xs font-medium">
+                                Confirm reject all
+                              </button>
+                              <button type="button" data-action="reject-domain-cancel" class="font-display italic px-2 py-1 border border-bone text-ink-soft text-xs font-medium">
+                                Cancel
+                              </button>
+                            </div>
+                            <p data-status class="font-display italic text-xs mt-1 font-medium" style="display: none;"></p>
+                          </div>
+                        </td>
                       </tr>
                     );
                   })}
@@ -177,10 +210,91 @@ const rateTone = (rate: number, decided: number): string => {
 
           <p class="font-display italic text-ink-soft text-xs mt-4 font-medium">
             Domains with fewer than 3 decided submissions show — for approval rate (not enough signal).
-            Approval rate under 40% is shown in rust as a skip-this-source signal.
+            Approval rate under 40% is shown in rust as a skip-this-source signal. Skip-listed domains are
+            rejected server-side at submit time going forward; skip-listing does not touch existing rows.
           </p>
         </div>
       </section>
     </>
   )}
+
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('[data-domain-row]').forEach(function (row) {
+        var domain = row.getAttribute('data-domain');
+        var statusEl = row.querySelector('[data-status]');
+        var confirmRow = row.querySelector('[data-reject-confirm-row]');
+
+        function showStatus(text) {
+          if (!statusEl) return;
+          statusEl.textContent = text;
+          statusEl.style.display = 'block';
+        }
+
+        row.querySelectorAll('[data-action]').forEach(function (btn) {
+          btn.addEventListener('click', async function (e) {
+            e.preventDefault();
+            var action = this.getAttribute('data-action');
+
+            if (action === 'reject-domain-arm') {
+              if (confirmRow) confirmRow.style.display = 'flex';
+              return;
+            }
+            if (action === 'reject-domain-cancel') {
+              if (confirmRow) confirmRow.style.display = 'none';
+              return;
+            }
+
+            if (action === 'skip-toggle') {
+              var isSkipped = row.getAttribute('data-skip-listed') === 'true';
+              var body;
+              if (isSkipped) {
+                body = { domain: domain, action: 'remove' };
+              } else {
+                var reason = window.prompt('Reason for skip-listing ' + domain + ':');
+                if (!reason || !reason.trim()) return;
+                body = { domain: domain, action: 'add', reason: reason.trim() };
+              }
+              try {
+                var resp = await fetch('/api/admin/source-quality/skip', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(body),
+                });
+                var data = await resp.json();
+                if (data.ok) {
+                  showStatus(data.skip_listed ? 'Skip-listed' : 'Removed from skip-list');
+                  setTimeout(function () { window.location.reload(); }, 600);
+                } else {
+                  showStatus('Error: ' + (data.error || 'unknown'));
+                }
+              } catch (err) {
+                showStatus('Error: ' + (err instanceof Error ? err.message : 'network error'));
+              }
+              return;
+            }
+
+            if (action === 'reject-domain-confirm') {
+              try {
+                var resp2 = await fetch('/api/admin/source-quality/reject-domain', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ domain: domain, confirm: true }),
+                });
+                var data2 = await resp2.json();
+                if (data2.ok) {
+                  showStatus('Rejected ' + data2.rejected_count + ' pending program(s)');
+                  if (confirmRow) confirmRow.style.display = 'none';
+                } else {
+                  showStatus('Error: ' + (data2.error || 'unknown'));
+                }
+              } catch (err) {
+                showStatus('Error: ' + (err instanceof Error ? err.message : 'network error'));
+              }
+            }
+          });
+        });
+      });
+    })();
+  </script>
 </AdminLayout>

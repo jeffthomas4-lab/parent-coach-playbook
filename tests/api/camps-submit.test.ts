@@ -3,8 +3,28 @@
 // route's own validation and control flow, not the D1 layer (which has its
 // own coverage need, tracked separately — see STANDARD-AUDIT.md Pillar 9 row).
 
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { makeContext, jsonRequest, readJson } from '../helpers/context';
+
+// Turnstile fails closed (src/lib/turnstile.ts): every request past the
+// honeypot check must carry a token, and TURNSTILE_SECRET_KEY must be set in
+// env, or the route returns 503 before doing anything else. These tests
+// exercise the route's own logic downstream of that gate, so they supply a
+// secret and a token, and stub the Cloudflare siteverify call to succeed.
+const TURNSTILE_SECRET = 'test-turnstile-secret';
+const TURNSTILE_TOKEN = 'test-turnstile-token';
+const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
+function stubTurnstileSuccess() {
+  const fetchMock = vi.fn(async (url: string) => {
+    if (url === SITEVERIFY_URL) {
+      return new Response(JSON.stringify({ success: true }), { status: 200 });
+    }
+    throw new Error(`unexpected fetch to ${url} in this suite`);
+  });
+  vi.stubGlobal('fetch', fetchMock);
+  return fetchMock;
+}
 
 vi.mock('../../src/lib/camps-db', () => ({
   insertCamp: vi.fn().mockResolvedValue(undefined),
@@ -28,6 +48,10 @@ vi.mock('../../src/lib/url-health', () => ({
   checkUrlHealth: vi.fn().mockResolvedValue({ status: 'live', statusCode: 200, finalUrl: null }),
 }));
 
+vi.mock('../../src/lib/domain-skip-list', () => ({
+  isDomainSkipListed: vi.fn().mockResolvedValue(false),
+}));
+
 vi.mock('../../src/lib/public-idempotency', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../../src/lib/public-idempotency')>();
   return { ...actual, executeIdempotentWrite: vi.fn(), lookupIdempotentWrite: vi.fn() };
@@ -43,6 +67,7 @@ import * as idempotency from '../../src/lib/public-idempotency';
 import * as email from '../../src/lib/email';
 import * as campsDb from '../../src/lib/camps-db';
 import * as urlHealth from '../../src/lib/url-health';
+import * as domainSkipList from '../../src/lib/domain-skip-list';
 
 const VALID_PAYLOAD = {
   name: 'Test Soccer Camp',
@@ -58,11 +83,15 @@ const VALID_PAYLOAD = {
   description: 'A soccer camp for kids that runs Monday through Friday each week this summer.',
   submitted_by_email: 'parent@example.com',
   idempotency_key: 'program_default_key_1234',
+  'cf-turnstile-response': TURNSTILE_TOKEN,
 };
 
 describe('POST /api/camps/submit', () => {
+  let fetchMock: ReturnType<typeof vi.fn>;
+
   beforeEach(() => {
     vi.clearAllMocks();
+    fetchMock = stubTurnstileSuccess();
     (idempotency.executeIdempotentWrite as any).mockResolvedValue({
       outcome: 'created', resourceId: 'camp_test123', status: 200,
       body: { ok: true, id: 'camp_test123', slug: 'test-camp', status: 'pending', awaiting_review: false },
@@ -70,9 +99,13 @@ describe('POST /api/camps/submit', () => {
     (idempotency.lookupIdempotentWrite as any).mockResolvedValue(null);
   });
 
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it('happy path: a complete valid submission is accepted and inserted as pending', async () => {
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', VALID_PAYLOAD);
-    const ctx = makeContext({ request: req, env: { DB: {} } });
+    const ctx = makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(200);
@@ -84,7 +117,7 @@ describe('POST /api/camps/submit', () => {
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', { ...VALID_PAYLOAD, idempotency_key: 'program_retry_key_1234' }, {
       headers: { 'Idempotency-Key': 'program_retry_key_1234' },
     });
-    const res = await POST(makeContext({ request: req, env: { DB: {} } }));
+    const res = await POST(makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } }));
     expect(res.status).toBe(200);
     expect(res.headers.get('Idempotency-Replayed')).toBe('false');
     expect(idempotency.executeIdempotentWrite).toHaveBeenCalledWith(expect.objectContaining({
@@ -101,7 +134,7 @@ describe('POST /api/camps/submit', () => {
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', { ...VALID_PAYLOAD, idempotency_key: 'program_retry_key_1234' }, {
       headers: { 'Idempotency-Key': 'program_retry_key_1234' },
     });
-    const res = await POST(makeContext({ request: req, env: { DB: {} } }));
+    const res = await POST(makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } }));
     expect((await readJson(res)).id).toBe('camp_original');
     expect(res.headers.get('Idempotency-Replayed')).toBe('true');
     expect(campsDb.upsertDomainQuality).not.toHaveBeenCalled();
@@ -117,7 +150,7 @@ describe('POST /api/camps/submit', () => {
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', { ...VALID_PAYLOAD, idempotency_key: 'program_retry_key_1234' }, {
       headers: { 'Idempotency-Key': 'program_retry_key_1234' },
     });
-    const res = await POST(makeContext({ request: req, env: { DB: {} } }));
+    const res = await POST(makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } }));
     expect(res.status).toBe(409);
     expect(campsDb.upsertDomainQuality).not.toHaveBeenCalled();
     expect(email.sendAdminAlert).not.toHaveBeenCalled();
@@ -126,7 +159,7 @@ describe('POST /api/camps/submit', () => {
   it('failure path: missing required fields is rejected with a clean 400', async () => {
     const { name, ...incomplete } = VALID_PAYLOAD;
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', incomplete);
-    const ctx = makeContext({ request: req, env: { DB: {} } });
+    const ctx = makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(res.status).toBe(400);
@@ -140,7 +173,7 @@ describe('POST /api/camps/submit', () => {
       age_min: '15',
       age_max: '10',
     });
-    const ctx = makeContext({ request: req, env: { DB: {} } });
+    const ctx = makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     expect(res.status).toBe(400);
   });
@@ -170,7 +203,7 @@ describe('POST /api/camps/submit', () => {
     const campsDb = await import('../../src/lib/camps-db');
     (campsDb.shouldAutoApprove as any).mockResolvedValue(true);
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', VALID_PAYLOAD);
-    const ctx = makeContext({ request: req, env: { DB: {} } });
+    const ctx = makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(body.status).toBe('pending');
@@ -183,7 +216,7 @@ describe('POST /api/camps/submit', () => {
       ...VALID_PAYLOAD,
       import_token: 'bulk-secret',
     });
-    const ctx = makeContext({ request: req, env: { DB: {}, BULK_IMPORT_TOKEN: 'bulk-secret' } });
+    const ctx = makeContext({ request: req, env: { DB: {}, BULK_IMPORT_TOKEN: 'bulk-secret', TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(body.status).toBe('pending');
@@ -195,7 +228,7 @@ describe('POST /api/camps/submit', () => {
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', VALID_PAYLOAD, {
       headers: { Authorization: 'Bearer bulk-secret' },
     });
-    const ctx = makeContext({ request: req, env: { DB: {}, BULK_IMPORT_TOKEN: 'bulk-secret' } });
+    const ctx = makeContext({ request: req, env: { DB: {}, BULK_IMPORT_TOKEN: 'bulk-secret', TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(body.status).toBe('pending');
@@ -207,11 +240,27 @@ describe('POST /api/camps/submit', () => {
     const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', VALID_PAYLOAD, {
       headers: { Authorization: 'Bearer wrong-secret' },
     });
-    const ctx = makeContext({ request: req, env: { DB: {}, BULK_IMPORT_TOKEN: 'bulk-secret' } });
+    const ctx = makeContext({ request: req, env: { DB: {}, BULK_IMPORT_TOKEN: 'bulk-secret', TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     const body = await readJson(res);
     expect(body.status).toBe('pending');
     expect(body.awaiting_review).toBe(false);
+  });
+
+  it('security: a source_domain on the admin skip-list is refused with a clean 422, no write attempted', async () => {
+    (domainSkipList.isDomainSkipListed as any).mockResolvedValue(true);
+    const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', {
+      ...VALID_PAYLOAD,
+      source_domain: 'badsource.example.com',
+    });
+    const ctx = makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
+    const res = await POST(ctx);
+    const body = await readJson(res);
+    expect(res.status).toBe(422);
+    expect(body.ok).toBe(false);
+    expect(body.error).toContain('badsource.example.com');
+    expect(domainSkipList.isDomainSkipListed).toHaveBeenCalledWith(expect.anything(), 'badsource.example.com');
+    expect(idempotency.executeIdempotentWrite).not.toHaveBeenCalled();
   });
 
   it('security: rejects a private-network website URL before fetching or inserting', async () => {
@@ -220,9 +269,21 @@ describe('POST /api/camps/submit', () => {
       ...VALID_PAYLOAD,
       website_url: 'http://127.0.0.1/admin',
     });
-    const ctx = makeContext({ request: req, env: { DB: {} } });
+    const ctx = makeContext({ request: req, env: { DB: {}, TURNSTILE_SECRET_KEY: TURNSTILE_SECRET } });
     const res = await POST(ctx);
     expect(res.status).toBe(400);
     expect(campsDb.insertCampSubmission).not.toHaveBeenCalled();
+  });
+
+  it('security: fails closed with no TURNSTILE_SECRET_KEY set — returns 503 and writes nothing', async () => {
+    const req = jsonRequest('https://parentcoachdesk.com/api/camps/submit', VALID_PAYLOAD);
+    const ctx = makeContext({ request: req, env: { DB: {} } });
+    const res = await POST(ctx);
+    const body = await readJson(res);
+    expect(res.status).toBe(503);
+    expect(body.ok).toBe(false);
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(campsDb.insertCampSubmission).not.toHaveBeenCalled();
+    expect(idempotency.executeIdempotentWrite).not.toHaveBeenCalled();
   });
 });

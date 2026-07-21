@@ -1,0 +1,308 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import DataQualityRow from '../../components/DataQualityRow.astro';
+import { requireAdmin } from '../../lib/admin-auth';
+import { getDataQualityReport, type DataQualityReport, type ProgramIssueRow } from '../../lib/data-quality-db';
+import { env as cfEnv } from 'cloudflare:workers';
+
+export const prerender = false;
+
+const env = cfEnv as { DB?: D1Database; ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string } | undefined;
+const auth = await requireAdmin(Astro.request, env);
+if (auth instanceof Response) return auth;
+
+let report: DataQualityReport | null = null;
+let loadError: string | null = null;
+
+if (!env?.DB) {
+  loadError = 'Database not bound.';
+} else {
+  try {
+    report = await getDataQualityReport(env.DB);
+  } catch (e) {
+    console.error('getDataQualityReport failed', e);
+    loadError = 'Directory quality query failed.';
+  }
+}
+
+const orgLine = (row: ProgramIssueRow) =>
+  `${row.organization_name ?? 'Unknown organization'} · ${row.city ?? '—'}, ${row.state ?? '—'}`;
+const editHref = (row: ProgramIssueRow) => `/admin/camps/${row.id}`;
+
+const ageProps = (row: ProgramIssueRow) => ({
+  id: row.id,
+  name: row.name,
+  editHref: editHref(row),
+  orgLine: orgLine(row),
+  badge: `age_min: ${row.age_min ?? '—'} · age_max: ${row.age_max ?? '—'}`,
+  fields: [
+    { key: 'age_min', label: 'Min age', type: 'number' as const, value: row.age_min, min: 0, max: 25 },
+    { key: 'age_max', label: 'Max age', type: 'number' as const, value: row.age_max, min: 0, max: 25 },
+  ],
+  primaryAction: { action: 'set_age', label: 'Save' },
+});
+
+const datesProps = (row: ProgramIssueRow, reversed: boolean) => ({
+  id: row.id,
+  name: row.name,
+  editHref: editHref(row),
+  orgLine: orgLine(row),
+  badge: `start: ${row.session_start_date ?? '—'} · end: ${row.session_end_date ?? '—'}`,
+  fields: [
+    { key: 'session_start_date', label: 'Start date', type: 'date' as const, value: row.session_start_date },
+    { key: 'session_end_date', label: 'End date', type: 'date' as const, value: row.session_end_date },
+  ],
+  primaryAction: { action: 'set_dates', label: 'Save' },
+  secondaryActions: reversed ? [{ action: 'swap_dates', label: 'Swap dates' }] : [],
+});
+
+const priceProps = (row: ProgramIssueRow) => ({
+  id: row.id,
+  name: row.name,
+  editHref: editHref(row),
+  orgLine: orgLine(row),
+  badge: `price: ${row.price ?? '—'}`,
+  fields: [{ key: 'price', label: 'Price', type: 'number' as const, value: row.price }],
+  primaryAction: { action: 'set_price', label: 'Save' },
+  secondaryActions: [{ action: 'clear_price', label: 'Clear price', tone: 'rust' as const }],
+});
+
+const registrationUrlProps = (row: ProgramIssueRow, nonHttps: boolean) => ({
+  id: row.id,
+  name: row.name,
+  editHref: editHref(row),
+  orgLine: orgLine(row),
+  badge: `registration_url: ${row.registration_url ?? '—'}`,
+  fields: [{ key: 'registration_url', label: 'Registration URL', type: 'url' as const, value: row.registration_url }],
+  primaryAction: { action: 'set_registration_url', label: 'Save' },
+  secondaryActions: nonHttps ? [{ action: 'upgrade_https', label: 'Upgrade to https' }] : [],
+});
+
+const sourceDomainProps = (row: ProgramIssueRow) => ({
+  id: row.id,
+  name: row.name,
+  editHref: editHref(row),
+  orgLine: orgLine(row),
+  badge: `source_domain: ${row.source_domain ?? '—'} · registration_url: ${row.registration_url ?? '—'}`,
+  fields: [{ key: 'source_domain', label: 'Source domain', type: 'text' as const, value: row.source_domain }],
+  primaryAction: { action: 'set_source_domain', label: 'Save' },
+  secondaryActions: [{ action: 'derive_source_domain', label: 'Derive from URL' }],
+});
+
+const verifiedProps = (row: ProgramIssueRow) => ({
+  id: row.id,
+  name: row.name,
+  editHref: editHref(row),
+  orgLine: orgLine(row),
+  badge: `verified: ${row.verified} · last_verified_at: ${row.last_verified_at ?? '—'}`,
+  secondaryActions: [
+    { action: 'stamp_verified', label: 'Stamp now', tone: 'sage' as const },
+    { action: 'unverify', label: 'Unverify', tone: 'rust' as const },
+  ],
+});
+
+const sections = report
+  ? [
+      { key: 'age_missing', title: 'Age missing', rows: report.age_missing, propsFn: ageProps },
+      { key: 'age_impossible', title: 'Age impossible', rows: report.age_impossible, propsFn: ageProps },
+      { key: 'dates_missing', title: 'Dates missing', rows: report.dates_missing, propsFn: (r: ProgramIssueRow) => datesProps(r, false) },
+      { key: 'dates_reversed', title: 'Dates reversed', rows: report.dates_reversed, propsFn: (r: ProgramIssueRow) => datesProps(r, true) },
+      { key: 'negative_price', title: 'Negative price', rows: report.negative_price, propsFn: priceProps },
+      {
+        key: 'registration_url_missing',
+        title: 'Registration URL missing',
+        rows: report.registration_url_missing,
+        propsFn: (r: ProgramIssueRow) => registrationUrlProps(r, false),
+      },
+      {
+        key: 'registration_url_non_https',
+        title: 'Registration URL not https',
+        rows: report.registration_url_non_https,
+        propsFn: (r: ProgramIssueRow) => registrationUrlProps(r, true),
+      },
+      { key: 'source_domain_missing', title: 'Source domain missing', rows: report.source_domain_missing, propsFn: sourceDomainProps },
+      {
+        key: 'verified_without_timestamp',
+        title: 'Verified without a timestamp',
+        rows: report.verified_without_timestamp,
+        propsFn: verifiedProps,
+      },
+      {
+        key: 'verified_invalid_timestamp',
+        title: 'Verified with an invalid timestamp',
+        rows: report.verified_invalid_timestamp,
+        propsFn: verifiedProps,
+      },
+      {
+        key: 'verified_future_timestamp',
+        title: 'Verified with a future timestamp',
+        rows: report.verified_future_timestamp,
+        propsFn: verifiedProps,
+      },
+    ]
+  : [];
+---
+<AdminLayout title="Directory data quality" description="Row-level drill-down for the operations quality contract" email={auth.email}>
+  <section class="border-b border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">
+        <a href="/admin/operations" class="hover:underline">Admin · Operations</a> · Data quality
+      </p>
+      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Directory data quality</h1>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl">
+        Every offending approved program behind each aggregate metric on the operations page, with an inline fix for
+        each issue type. Fixing or rejecting a row here removes it from its list immediately.
+      </p>
+    </div>
+  </section>
+
+  {loadError ? (
+    <section><div class="container-px py-10"><p class="font-display italic text-ink-soft font-medium">{loadError}</p></div></section>
+  ) : (
+    <>
+      {sections.map((section) => (
+        <section class="border-b border-bone">
+          <div class="container-px py-10">
+            <div class="flex items-baseline justify-between gap-4 mb-6">
+              <h2 class="font-display text-ink text-2xl font-medium">{section.title}</h2>
+              <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
+                {section.rows.length}
+              </span>
+            </div>
+            {section.rows.length === 0 ? (
+              <p class="font-display italic text-ink-soft font-medium">None.</p>
+            ) : (
+              <ul class="grid gap-4">
+                {section.rows.map((row) => <DataQualityRow {...section.propsFn(row)} />)}
+              </ul>
+            )}
+          </div>
+        </section>
+      ))}
+
+      <section class="border-b border-bone">
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="font-display text-ink text-2xl font-medium">Exact duplicates</h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
+              {report!.duplicates.length} group{report!.duplicates.length === 1 ? '' : 's'}
+            </span>
+          </div>
+          {report!.duplicates.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">None.</p>
+          ) : (
+            <ul class="grid gap-4">
+              {report!.duplicates.map((group) => (
+                <li class="border border-bone p-5 bg-paper">
+                  <p class="font-mono text-xs text-ink-soft mb-3">dedupe key: {group.dedupe_key || '(blank)'}</p>
+                  <ul class="grid gap-3 sm:grid-cols-2">
+                    {group.members.map((member, index) => (
+                      <li class:list={['border p-3 dq-row', index === 0 ? 'border-bone bg-paper-warm' : 'border-rust bg-paper']} data-id={member.id}>
+                        <p class="font-display text-ink font-medium">
+                          <a href={editHref(member)} class="hover:text-rust" target="_blank" rel="noopener">{member.name}</a>
+                        </p>
+                        <p class="font-display text-ink-soft text-sm mt-1">{orgLine(member)}</p>
+                        <p class="font-mono text-xs text-ink-soft mt-1">
+                          {member.session_start_date ?? '—'} → {member.session_end_date ?? '—'}
+                        </p>
+                        {index === 0 ? (
+                          <p class="font-display italic text-ink-soft text-xs mt-2 font-medium">Kept (first of group)</p>
+                        ) : (
+                          <button
+                            type="button"
+                            class="mt-2 font-display italic px-3 py-1 border border-rust bg-paper text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium"
+                            data-fix-action="reject_duplicate"
+                          >
+                            Reject as duplicate
+                          </button>
+                        )}
+                        <div class="status-message text-xs font-display italic mt-2" style="display: none;" aria-live="polite"></div>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      <section>
+        <div class="container-px py-10">
+          <div class="flex items-baseline justify-between gap-4 mb-6">
+            <h2 class="font-display text-ink text-2xl font-medium">URL never checked</h2>
+            <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
+              showing {report!.url_never_checked.rows.length} of {report!.url_never_checked.total}
+            </span>
+          </div>
+          {report!.url_never_checked.rows.length === 0 ? (
+            <p class="font-display italic text-ink-soft font-medium">None.</p>
+          ) : (
+            <ul class="grid gap-2">
+              {report!.url_never_checked.rows.map((row) => (
+                <li class="border border-bone p-3 bg-paper flex flex-wrap justify-between gap-2">
+                  <a href={editHref(row)} class="font-display text-ink hover:text-rust font-medium" target="_blank" rel="noopener">{row.name}</a>
+                  <span class="font-display text-ink-soft text-sm">{orgLine(row)}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+    </>
+  )}
+</AdminLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.dq-row').forEach(function (row) {
+      var id = row.getAttribute('data-id');
+      var statusEl = row.querySelector('.status-message');
+
+      function showStatus(message, isError) {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+        statusEl.style.display = 'block';
+        statusEl.className = 'status-message text-xs font-display italic mt-2 ' + (isError ? 'text-rust' : 'text-sage');
+      }
+
+      row.querySelectorAll('[data-fix-action]').forEach(function (btn) {
+        btn.addEventListener('click', async function () {
+          var action = btn.getAttribute('data-fix-action');
+          var fields = {};
+          row.querySelectorAll('[data-field]').forEach(function (input) {
+            var key = input.getAttribute('data-field');
+            if (input.type === 'number') {
+              fields[key] = input.value === '' ? null : Number(input.value);
+            } else {
+              fields[key] = input.value;
+            }
+          });
+
+          btn.disabled = true;
+          try {
+            var resp = await fetch('/api/admin/data-quality/fix', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: id, action: action, fields: fields }),
+            });
+            var data = await resp.json();
+            if (data.ok) {
+              showStatus('Saved', false);
+              setTimeout(function () {
+                row.style.opacity = '0.5';
+                setTimeout(function () { row.remove(); }, 300);
+              }, 500);
+            } else {
+              showStatus('Error: ' + (data.error || 'unknown'), true);
+              btn.disabled = false;
+            }
+          } catch (err) {
+            showStatus('Error: ' + (err && err.message ? err.message : 'network error'), true);
+            btn.disabled = false;
+          }
+        });
+      });
+    });
+  });
+</script>

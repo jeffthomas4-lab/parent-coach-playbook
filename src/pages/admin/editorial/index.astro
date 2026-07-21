@@ -144,6 +144,25 @@ const statusColor: Record<string, string> = {
         <p class="font-display text-ink-soft text-xs mt-3 leading-relaxed">
           This queue never redirects or deletes content. Decommissioning still requires reviewed live traffic, an emitted-link audit, supersession evidence, and a human decision.
         </p>
+        <p class="font-display italic text-ink-soft text-xs mt-2 leading-relaxed">
+          Counts sourced from <code class="not-italic">reports/editorial/editorial-refresh-queue.json</code>.
+          {refreshQueue.items?.length ? '' : ' No refresh-due or fact-check-due items are queued right now (items: [] in that file).'}
+        </p>
+        {refreshQueue.next_refreshes && refreshQueue.next_refreshes.length > 0 && (
+          <details class="mt-3">
+            <summary class="font-display italic text-ink text-xs font-medium cursor-pointer">
+              Upcoming refreshes from the same file ({refreshQueue.next_refreshes.length})
+            </summary>
+            <ul class="mt-2 space-y-1 max-h-64 overflow-y-auto">
+              {refreshQueue.next_refreshes.map((n: { route: string; refresh_due_at: string; contains_affiliate_redirect: boolean }) => (
+                <li class="font-display text-xs text-ink-soft">
+                  <a href={n.route} class="text-ink hover:text-rust underline">{n.route}</a>
+                  {`, due ${n.refresh_due_at}`}{n.contains_affiliate_redirect ? ' · affiliate link' : ''}
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
       </div>
 
       <div class="mt-4 border border-bone bg-paper p-4" data-lifecycle-summary>
@@ -159,6 +178,22 @@ const statusColor: Record<string, string> = {
           <div><p class="font-display italic text-ink-soft text-xs font-medium">Retirement queue</p><p class="font-display text-ink text-xl font-medium">{lifecycle.counts.retirement_queue}</p></div>
         </div>
         <p class="font-display text-ink-soft text-xs mt-3 leading-relaxed">No item is auto-published, redirected, consolidated, or retired. Existing content remains a legacy baseline until source, claim, relationship, and human-approval evidence is recorded.</p>
+        <p class="font-display italic text-ink-soft text-xs mt-2 leading-relaxed">
+          Counts sourced from <code class="not-italic">reports/editorial/lifecycle.json</code>.
+          The research, claim-validation, human-approval, maintenance, and retirement queues are all empty right now (queues.*: [] in that file).
+        </p>
+        {lifecycle.collection_rollup && lifecycle.collection_rollup.length > 0 && (
+          <details class="mt-3">
+            <summary class="font-display italic text-ink text-xs font-medium cursor-pointer">
+              Corpus breakdown by collection, from the same file ({lifecycle.collection_rollup.length})
+            </summary>
+            <ul class="mt-2 grid grid-cols-2 md:grid-cols-3 gap-1">
+              {lifecycle.collection_rollup.map((c: { collection: string; items: number; live: number }) => (
+                <li class="font-display text-xs text-ink-soft">{c.collection}: {c.items} items, {c.live} live</li>
+              ))}
+            </ul>
+          </details>
+        )}
       </div>
 
       <!-- Filter bar -->
@@ -193,13 +228,18 @@ const statusColor: Record<string, string> = {
         <tbody>
           {rows.map((r) => {
             const status = r.editorial?.status || 'draft';
-            const flags = [
+            const flags: string[] = [
               r.editorial?.flagInappropriateness ? 'INAPPROP' : null,
               r.editorial?.flagIpRisk ? 'IP' : null,
               r.editorial?.flagSensitiveTopic ? 'SENS' : null,
               r.editorial?.citationCheckPassed ? null : 'NOCITE',
-            ].filter(Boolean).join(' ');
+            ].filter((f): f is string => Boolean(f));
             const flagged = !!(r.editorial?.flagInappropriateness || r.editorial?.flagIpRisk);
+            // Reviewable = still on the pre-publish side of the pipeline —
+            // these rows can be sent back to revision. Published pieces are
+            // excluded: sending a live post back without unpublishing it
+            // would misstate what's actually on the site.
+            const reviewable = status === 'draft' || status === 'claude-reviewed' || status === 'ready-for-jeff' || status === 'jeff-approved';
             return (
               <tr class="border-b border-bone hover:bg-paper-warm" data-status={status} data-flagged={flagged}>
                 <td class="py-2 pr-3">
@@ -213,22 +253,69 @@ const statusColor: Record<string, string> = {
                 <td class="py-2 pr-3 font-display text-ink font-medium">{fmtGrade(r.editorial?.qualityGrade)}</td>
                 <td class="py-2 pr-3 font-display text-ink font-medium">{fmtGrade(r.editorial?.originalityGrade)}</td>
                 <td class="py-2 pr-3 font-display text-ink font-medium">{fmtGrade(r.editorial?.voiceGrade)}</td>
-                <td class="py-2 pr-3 font-display text-ink-soft text-xs font-medium">{flags}</td>
+                <td class="py-2 pr-3" data-flags-cell>
+                  {flags.length === 0 ? (
+                    <span class="font-display italic text-ink-soft text-xs font-medium">—</span>
+                  ) : (
+                    <div class="flex flex-wrap gap-1">
+                      {flags.map((f) => (
+                        <span class="inline-flex items-center gap-1 font-display italic text-ink-soft text-xs font-medium">
+                          {f}
+                          <button
+                            type="button"
+                            class="resolve-flag-btn px-1.5 py-0.5 border border-bone text-ink-soft text-[10px] not-italic hover:bg-paper-warm hover:text-rust"
+                            data-collection={r.collection}
+                            data-slug={r.slug}
+                            data-flag={f}
+                            title="Resolve this flag. Commits a change to the content file in GitHub."
+                          >resolve</button>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </td>
                 <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.editorial?.claudeReviewedAt)}</td>
                 <td class="py-2 pr-3 font-display italic text-ink-soft text-xs font-medium">{fmtDate(r.editorial?.jeffReviewedAt)}</td>
                 <td class="py-2 pr-3" data-action-cell>
-                  {(status === 'claude-reviewed' || status === 'draft' || status === 'ready-for-jeff') ? (
-                    <button
-                      type="button"
-                      class="approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
-                      data-collection={r.collection}
-                      data-slug={r.slug}
-                    >Approve</button>
-                  ) : (status === 'jeff-approved' || status === 'published') ? (
-                    <span class="font-display italic text-pine text-xs font-medium">approved</span>
-                  ) : (
-                    <span class="font-display italic text-ink-soft text-xs font-medium">—</span>
-                  )}
+                  <div class="flex flex-wrap items-center gap-1">
+                    {(status === 'claude-reviewed' || status === 'draft' || status === 'ready-for-jeff') && (
+                      <button
+                        type="button"
+                        class="approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
+                        data-collection={r.collection}
+                        data-slug={r.slug}
+                      >Approve</button>
+                    )}
+                    {status === 'jeff-approved' && (
+                      <button
+                        type="button"
+                        class="publish-btn px-3 py-1 border border-pine bg-pine text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
+                        data-collection={r.collection}
+                        data-slug={r.slug}
+                        data-armed="false"
+                        title="Commits draft: false to GitHub. The site's protected CI/CD deploys it from there."
+                      >Publish</button>
+                    )}
+                    {status === 'published' && (
+                      <span class="font-display italic text-pine text-xs font-medium">live</span>
+                    )}
+                    {status === 'needs-revision' && (
+                      <button
+                        type="button"
+                        class="reopen-btn px-3 py-1 border border-bone text-ink-soft text-xs font-display italic font-medium hover:bg-paper-warm"
+                        data-collection={r.collection}
+                        data-slug={r.slug}
+                      >Reopen as draft</button>
+                    )}
+                    {reviewable && (
+                      <button
+                        type="button"
+                        class="send-back-btn px-2 py-1 border border-rust text-rust text-xs font-display italic font-medium hover:bg-rust hover:text-paper"
+                        data-collection={r.collection}
+                        data-slug={r.slug}
+                      >Send back</button>
+                    )}
+                  </div>
                 </td>
               </tr>
             );
@@ -267,6 +354,89 @@ const statusColor: Record<string, string> = {
       });
     }
 
+    // Shared bits for every action below: the status-color map (mirrors
+    // statusColor in the frontmatter above — duplicated because this script
+    // runs client-side and can't reach back into server-rendered JS), a
+    // status-pill updater, and an action-cell renderer so every handler
+    // leaves the row looking like a fresh server render would, without a
+    // page reload.
+    const STATUS_COLORS: Record<string, string> = {
+      draft: '#B8908F',
+      'claude-reviewed': '#D4AB6A',
+      'jeff-approved': '#5C7459',
+      published: '#5C7459',
+      'needs-revision': '#9E5228',
+    };
+
+    function updateStatusPill(row: Element, status: string) {
+      row.setAttribute('data-status', status);
+      const pill = row.querySelector('td:nth-child(3) span') as HTMLElement | null;
+      if (pill) {
+        pill.textContent = status;
+        pill.style.background = STATUS_COLORS[status] || '#B8908F';
+      }
+    }
+
+    function makeActionButton(text: string, cls: string, collection: string, slug: string, extraAttrs?: Record<string, string>): HTMLButtonElement {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = cls;
+      b.textContent = text;
+      b.setAttribute('data-collection', collection);
+      b.setAttribute('data-slug', slug);
+      if (extraAttrs) {
+        for (const key of Object.keys(extraAttrs)) b.setAttribute(key, extraAttrs[key]);
+      }
+      return b;
+    }
+
+    // Rebuilds an action cell's contents to match what the server would
+    // render for a given status — same button set, same classes.
+    function renderActionCell(actionCell: Element, status: string, collection: string, slug: string) {
+      const wrap = document.createElement('div');
+      wrap.className = 'flex flex-wrap items-center gap-1';
+
+      if (status === 'claude-reviewed' || status === 'draft' || status === 'ready-for-jeff') {
+        wrap.appendChild(makeActionButton(
+          'Approve',
+          'approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust',
+          collection, slug,
+        ));
+      }
+      if (status === 'jeff-approved') {
+        wrap.appendChild(makeActionButton(
+          'Publish',
+          'publish-btn px-3 py-1 border border-pine bg-pine text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust',
+          collection, slug,
+          { 'data-armed': 'false', title: 'Commits draft: false to GitHub. The site\'s protected CI/CD deploys it from there.' },
+        ));
+      }
+      if (status === 'published') {
+        const span = document.createElement('span');
+        span.className = 'font-display italic text-pine text-xs font-medium';
+        span.textContent = 'live';
+        wrap.appendChild(span);
+      }
+      if (status === 'needs-revision') {
+        wrap.appendChild(makeActionButton(
+          'Reopen as draft',
+          'reopen-btn px-3 py-1 border border-bone text-ink-soft text-xs font-display italic font-medium hover:bg-paper-warm',
+          collection, slug,
+        ));
+      }
+      const reviewable = status === 'draft' || status === 'claude-reviewed' || status === 'ready-for-jeff' || status === 'jeff-approved';
+      if (reviewable) {
+        wrap.appendChild(makeActionButton(
+          'Send back',
+          'send-back-btn px-2 py-1 border border-rust text-rust text-xs font-display italic font-medium hover:bg-rust hover:text-paper',
+          collection, slug,
+        ));
+      }
+
+      actionCell.innerHTML = '';
+      actionCell.appendChild(wrap);
+    }
+
     // Approve button: POST to /api/admin/editorial/approve, then update the
     // row optimistically. The committed change shows up after the next build.
     if (table) {
@@ -294,18 +464,11 @@ const statusColor: Record<string, string> = {
 
           const row = btn.closest('tr');
           if (row) {
-            row.setAttribute('data-status', 'jeff-approved');
+            updateStatusPill(row, 'jeff-approved');
 
             const actionCell = btn.closest('[data-action-cell]');
-            if (actionCell) {
-              actionCell.innerHTML =
-                '<span class="font-display italic text-pine text-xs font-medium">approved (pending build)</span>';
-            }
-
-            const statusPill = row.querySelector('td:nth-child(3) span');
-            if (statusPill) {
-              statusPill.textContent = 'jeff-approved';
-              (statusPill as HTMLElement).style.background = '#5C7459';
+            if (actionCell && collection && slug) {
+              renderActionCell(actionCell, 'jeff-approved', collection, slug);
             }
 
             if (data.jeffReviewedAt) {
@@ -322,6 +485,197 @@ const statusColor: Record<string, string> = {
           btn.disabled = false;
           btn.textContent = originalText;
           alert('Approve failed: ' + ((err as Error).message || 'unknown error'));
+        }
+      });
+    }
+
+    // Publish button: confirm-click pattern since this goes live. First
+    // click arms the button (and disarms itself after 4s if untouched);
+    // the second click within that window actually publishes.
+    if (table) {
+      table.addEventListener('click', async (e) => {
+        const btn = (e.target as Element).closest<HTMLButtonElement>('.publish-btn');
+        if (!btn) return;
+
+        const armed = btn.getAttribute('data-armed') === 'true';
+        if (!armed) {
+          btn.setAttribute('data-armed', 'true');
+          btn.dataset.originalText = btn.textContent || 'Publish';
+          btn.textContent = 'Click again to publish';
+          btn.classList.remove('bg-pine', 'border-pine');
+          btn.classList.add('bg-rust', 'border-rust');
+          const timeoutId = window.setTimeout(() => {
+            if (btn.isConnected && btn.getAttribute('data-armed') === 'true') {
+              btn.setAttribute('data-armed', 'false');
+              btn.textContent = btn.dataset.originalText || 'Publish';
+              btn.classList.remove('bg-rust', 'border-rust');
+              btn.classList.add('bg-pine', 'border-pine');
+            }
+          }, 4000);
+          btn.dataset.armTimeout = String(timeoutId);
+          return;
+        }
+
+        if (btn.dataset.armTimeout) window.clearTimeout(Number(btn.dataset.armTimeout));
+        const collection = btn.getAttribute('data-collection');
+        const slug = btn.getAttribute('data-slug');
+        if (!collection || !slug) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Publishing…';
+
+        try {
+          const res = await fetch('/api/admin/editorial/publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ collection, slug }),
+          });
+          const data = await res.json() as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+
+          const row = btn.closest('tr');
+          if (row) {
+            updateStatusPill(row, 'published');
+            const actionCell = btn.closest('[data-action-cell]');
+            if (actionCell) renderActionCell(actionCell, 'published', collection, slug);
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.setAttribute('data-armed', 'false');
+          btn.textContent = 'Publish';
+          btn.classList.remove('bg-rust', 'border-rust');
+          btn.classList.add('bg-pine', 'border-pine');
+          alert('Publish failed: ' + ((err as Error).message || 'unknown error'));
+        }
+      });
+    }
+
+    // Send back: POST to /api/admin/editorial/set-status with
+    // action:'send-back'. An optional note goes into the file's
+    // revisionNote. Cancelling the prompt aborts with no request sent.
+    if (table) {
+      table.addEventListener('click', async (e) => {
+        const btn = (e.target as Element).closest<HTMLButtonElement>('.send-back-btn');
+        if (!btn) return;
+        const collection = btn.getAttribute('data-collection');
+        const slug = btn.getAttribute('data-slug');
+        if (!collection || !slug) return;
+
+        const note = prompt('Send this back for revision. Optional note for the file (this commits a change to GitHub):', '');
+        if (note === null) return;
+
+        btn.disabled = true;
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending back…';
+
+        try {
+          const res = await fetch('/api/admin/editorial/set-status', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'send-back', collection, slug, note }),
+          });
+          const data = await res.json() as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+
+          const row = btn.closest('tr');
+          if (row) {
+            updateStatusPill(row, 'needs-revision');
+            const actionCell = btn.closest('[data-action-cell]');
+            if (actionCell) renderActionCell(actionCell, 'needs-revision', collection, slug);
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = originalText;
+          alert('Send back failed: ' + ((err as Error).message || 'unknown error'));
+        }
+      });
+    }
+
+    // Reopen as draft: only shown on needs-revision rows. Native confirm()
+    // since it's the one-click path back into the pipeline.
+    if (table) {
+      table.addEventListener('click', async (e) => {
+        const btn = (e.target as Element).closest<HTMLButtonElement>('.reopen-btn');
+        if (!btn) return;
+        const collection = btn.getAttribute('data-collection');
+        const slug = btn.getAttribute('data-slug');
+        if (!collection || !slug) return;
+        if (!confirm('Reopen as draft? This commits a change to the content file in GitHub.')) return;
+
+        btn.disabled = true;
+        const originalText = btn.textContent;
+        btn.textContent = 'Reopening…';
+
+        try {
+          const res = await fetch('/api/admin/editorial/set-status', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'reopen-draft', collection, slug }),
+          });
+          const data = await res.json() as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+
+          const row = btn.closest('tr');
+          if (row) {
+            updateStatusPill(row, 'draft');
+            const actionCell = btn.closest('[data-action-cell]');
+            if (actionCell) renderActionCell(actionCell, 'draft', collection, slug);
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = originalText;
+          alert('Reopen failed: ' + ((err as Error).message || 'unknown error'));
+        }
+      });
+    }
+
+    // Resolve flag: requires a short reason, which is committed into the
+    // file's flagResolutions list along with who cleared it and when.
+    if (table) {
+      table.addEventListener('click', async (e) => {
+        const btn = (e.target as Element).closest<HTMLButtonElement>('.resolve-flag-btn');
+        if (!btn) return;
+        const collection = btn.getAttribute('data-collection');
+        const slug = btn.getAttribute('data-slug');
+        const flag = btn.getAttribute('data-flag');
+        if (!collection || !slug || !flag) return;
+
+        const reason = prompt(`Reason for resolving ${flag} (this commits a change to the content file in GitHub):`, '');
+        if (reason === null) return;
+        if (reason.trim().length < 3) {
+          alert('A reason of at least 3 characters is required to resolve a flag.');
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = '…';
+
+        try {
+          const res = await fetch('/api/admin/editorial/set-status', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'resolve-flag', collection, slug, flag, reason }),
+          });
+          const data = await res.json() as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+
+          const flagsCell = btn.closest('[data-flags-cell]');
+          const pillSpan = btn.closest('span');
+          if (pillSpan) pillSpan.remove();
+          if (flagsCell && !flagsCell.querySelector('.resolve-flag-btn')) {
+            flagsCell.innerHTML = '<span class="font-display italic text-ink-soft text-xs font-medium">—</span>';
+          }
+          const row = btn.closest('tr');
+          if (row && (flag === 'INAPPROP' || flag === 'IP')) {
+            const stillFlagged = !!row.querySelector(
+              '[data-flags-cell] .resolve-flag-btn[data-flag="INAPPROP"], [data-flags-cell] .resolve-flag-btn[data-flag="IP"]',
+            );
+            row.setAttribute('data-flagged', String(stillFlagged));
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'resolve';
+          alert('Resolve flag failed: ' + ((err as Error).message || 'unknown error'));
         }
       });
     }

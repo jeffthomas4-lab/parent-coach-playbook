@@ -54,32 +54,33 @@ export async function readOperationsStatus(env: {
     try {
       const quality = await env.DB.prepare(
         `SELECT COUNT(*) AS approved,
-                SUM(CASE WHEN age_min IS NULL OR age_max IS NULL THEN 1 ELSE 0 END) AS age_missing,
-                SUM(CASE WHEN age_min < 0 OR age_max > 25 OR age_min > age_max THEN 1 ELSE 0 END) AS age_impossible,
-                SUM(CASE WHEN session_start_date IS NULL OR session_end_date IS NULL THEN 1 ELSE 0 END) AS dates_missing,
-                SUM(CASE WHEN session_start_date > session_end_date THEN 1 ELSE 0 END) AS dates_reversed,
-                SUM(CASE WHEN price < 0 THEN 1 ELSE 0 END) AS negative_price,
-                SUM(CASE WHEN registration_url IS NULL OR trim(registration_url) = '' THEN 1 ELSE 0 END) AS registration_url_missing,
-                SUM(CASE WHEN registration_url IS NOT NULL AND lower(registration_url) NOT LIKE 'https://%' THEN 1 ELSE 0 END) AS registration_url_non_https,
-                SUM(CASE WHEN source_domain IS NULL OR trim(source_domain) = '' THEN 1 ELSE 0 END) AS source_domain_missing,
-                SUM(CASE WHEN verified = 1 AND last_verified_at IS NULL THEN 1 ELSE 0 END) AS verified_without_timestamp,
-                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) IS NULL THEN 1 ELSE 0 END) AS verified_invalid_timestamp,
-                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) > datetime('now') THEN 1 ELSE 0 END) AS verified_future_timestamp,
-                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) <= datetime('now') AND datetime(last_verified_at) >= datetime('now', '-90 days') THEN 1 ELSE 0 END) AS verification_review_current,
-                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL AND datetime(last_verified_at) < datetime('now', '-90 days') THEN 1 ELSE 0 END) AS verification_review_due,
+                SUM(CASE WHEN p.age_min IS NULL OR p.age_max IS NULL THEN 1 ELSE 0 END) AS age_missing,
+                SUM(CASE WHEN p.age_min < 0 OR p.age_max > 25 OR p.age_min > p.age_max THEN 1 ELSE 0 END) AS age_impossible,
+                SUM(CASE WHEN p.session_start_date IS NULL OR p.session_end_date IS NULL THEN 1 ELSE 0 END) AS dates_missing,
+                SUM(CASE WHEN p.session_start_date > p.session_end_date THEN 1 ELSE 0 END) AS dates_reversed,
+                SUM(CASE WHEN p.price < 0 THEN 1 ELSE 0 END) AS negative_price,
+                SUM(CASE WHEN p.registration_url IS NULL OR trim(p.registration_url) = '' THEN 1 ELSE 0 END) AS registration_url_missing,
+                SUM(CASE WHEN p.registration_url IS NOT NULL AND lower(p.registration_url) NOT LIKE 'https://%' THEN 1 ELSE 0 END) AS registration_url_non_https,
+                SUM(CASE WHEN p.source_domain IS NULL OR trim(p.source_domain) = '' THEN 1 ELSE 0 END) AS source_domain_missing,
+                SUM(CASE WHEN p.verified = 1 AND p.last_verified_at IS NULL THEN 1 ELSE 0 END) AS verified_without_timestamp,
+                SUM(CASE WHEN p.verified = 1 AND p.last_verified_at IS NOT NULL AND datetime(p.last_verified_at) IS NULL THEN 1 ELSE 0 END) AS verified_invalid_timestamp,
+                SUM(CASE WHEN p.verified = 1 AND p.last_verified_at IS NOT NULL AND datetime(p.last_verified_at) > datetime('now') THEN 1 ELSE 0 END) AS verified_future_timestamp,
+                SUM(CASE WHEN p.verified = 1 AND p.last_verified_at IS NOT NULL AND datetime(p.last_verified_at) <= datetime('now') AND datetime(p.last_verified_at) >= datetime('now', '-90 days') THEN 1 ELSE 0 END) AS verification_review_current,
+                SUM(CASE WHEN p.verified = 1 AND p.last_verified_at IS NOT NULL AND datetime(p.last_verified_at) < datetime('now', '-90 days') THEN 1 ELSE 0 END) AS verification_review_due,
                 COUNT(*) - COUNT(DISTINCT
-                  lower(trim(COALESCE(name, ''))) || char(31) ||
-                  lower(trim(COALESCE(city, ''))) || char(31) ||
-                  upper(trim(COALESCE(state, ''))) || char(31) ||
-                  lower(trim(COALESCE(address, ''))) || char(31) ||
-                  COALESCE(session_start_date, '') || char(31) || COALESCE(session_end_date, '')
+                  lower(trim(COALESCE(p.name, ''))) || char(31) ||
+                  lower(trim(COALESCE(o.city, ''))) || char(31) ||
+                  upper(trim(COALESCE(o.state, ''))) || char(31) ||
+                  lower(trim(COALESCE(o.address, ''))) || char(31) ||
+                  COALESCE(p.session_start_date, '') || char(31) || COALESCE(p.session_end_date, '')
                 ) AS exact_duplicate_excess_records,
-                SUM(CASE WHEN verified = 1 AND last_verified_at IS NOT NULL THEN 1 ELSE 0 END) AS verified_with_evidence,
-                COUNT(DISTINCT CASE WHEN source_domain IS NOT NULL AND trim(source_domain) <> '' THEN lower(trim(source_domain)) END) AS distinct_source_domains,
-                MIN(CASE WHEN verified = 1 THEN last_verified_at END) AS oldest_verified_at,
-                MAX(CASE WHEN verified = 1 THEN last_verified_at END) AS latest_verified_at,
-                SUM(CASE WHEN url_last_checked_at IS NULL THEN 1 ELSE 0 END) AS url_never_checked
-           FROM programs WHERE pcd_status = 'approved'`,
+                SUM(CASE WHEN p.verified = 1 AND p.last_verified_at IS NOT NULL THEN 1 ELSE 0 END) AS verified_with_evidence,
+                COUNT(DISTINCT CASE WHEN p.source_domain IS NOT NULL AND trim(p.source_domain) <> '' THEN lower(trim(p.source_domain)) END) AS distinct_source_domains,
+                MIN(CASE WHEN p.verified = 1 THEN p.last_verified_at END) AS oldest_verified_at,
+                MAX(CASE WHEN p.verified = 1 THEN p.last_verified_at END) AS latest_verified_at,
+                SUM(CASE WHEN p.url_last_checked_at IS NULL THEN 1 ELSE 0 END) AS url_never_checked
+           FROM programs p LEFT JOIN organizations o ON o.id = p.organization_id
+          WHERE p.pcd_status = 'approved'`,
       ).first<Record<string, number | string | null>>();
       const metric = (name: string) => Number(quality?.[name] ?? 0);
       const critical = metric('age_impossible') + metric('dates_reversed') + metric('negative_price') + metric('verified_without_timestamp') + metric('verified_invalid_timestamp') + metric('verified_future_timestamp');

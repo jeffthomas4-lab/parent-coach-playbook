@@ -1,6 +1,6 @@
 ---
 import AdminLayout from '../../../layouts/AdminLayout.astro';
-import { listPendingCamps, type Camp } from '../../../lib/camps-db';
+import { listPendingCamps, REJECT_REASON_CODES, type Camp } from '../../../lib/camps-db';
 import { formatCampDateRange, formatCampDescription, formatImportedAt } from '../../../lib/camps-display';
 import { requireAdmin } from '../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
@@ -44,6 +44,9 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
         Pending camps
       </h1>
+      <p class="font-display italic text-rust text-sm mt-2 font-medium">
+        Use the unified queue at <a href="/admin/camps/queue" class="underline">/admin/camps/queue</a> — inline edit-and-save, duplicate detection, and one-click actions live there.
+      </p>
     </div>
   </section>
 
@@ -75,7 +78,13 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                   <form method="POST" action={`/api/admin/camps/${c.id}/approve`} class="inline">
                     <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium">Approve</button>
                   </form>
-                  <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline">
+                  <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline flex flex-col gap-1 items-end">
+                    <select name="reason_code" required class="px-2 py-1 font-body bg-paper border border-bone text-xs">
+                      <option value="">— pick a reason —</option>
+                      {REJECT_REASON_CODES.map((r) => (
+                        <option value={r.code}>{r.label}</option>
+                      ))}
+                    </select>
                     <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>

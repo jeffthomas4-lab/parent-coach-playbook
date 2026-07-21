@@ -92,12 +92,21 @@ if (env?.PCD_OPS_DB) {
                   <th scope="col" class="pb-2 pr-6">No results</th>
                   <th scope="col" class="pb-2 pr-6">Coverage</th>
                   <th scope="col" class="pb-2 pr-6">Score</th>
-                  <th scope="col" class="pb-2">Last seen</th>
+                  <th scope="col" class="pb-2 pr-6">Last seen</th>
+                  <th scope="col" class="pb-2">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {topQueries.map((row, i) => (
-                  <tr class="border-b border-bone hover:bg-paper-warm transition-colors">
+                  <tr
+                    class="border-b border-bone hover:bg-paper-warm transition-colors"
+                    data-signal-row
+                    data-query={row.query}
+                    data-searches={row.searches}
+                    data-zero-result-searches={row.zero_result_searches}
+                    data-last-seen-at={row.last_seen_at}
+                    data-coverage-status={row.coverage_status}
+                  >
                     <td class="py-2 pr-6 text-ink-soft">{i + 1}</td>
                     <td class="py-2 pr-6 text-ink font-medium">{row.query}</td>
                     <td class="py-2 pr-6 text-ink">{row.searches}</td>
@@ -106,7 +115,21 @@ if (env?.PCD_OPS_DB) {
                       {row.coverage_route ? <a href={row.coverage_route} class="text-rust hover:underline">{row.coverage_status}</a> : 'unknown'}
                     </td>
                     <td class="py-2 pr-6 text-ink">{row.opportunity_score}</td>
-                    <td class="py-2 text-ink-soft">{row.last_seen_at.slice(0, 10)}</td>
+                    <td class="py-2 pr-6 text-ink-soft">{row.last_seen_at.slice(0, 10)}</td>
+                    <td class="py-2">
+                      {row.coverage_status !== 'current' && (
+                        <>
+                          <button
+                            type="button"
+                            class="send-opportunity-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium"
+                            data-action="send-opportunity"
+                          >
+                            Send to editorial opportunities
+                          </button>
+                          <p class="signal-status font-display italic text-xs text-ink-soft mt-1" style="display: none;" aria-live="polite"></p>
+                        </>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -117,3 +140,58 @@ if (env?.PCD_OPS_DB) {
     </>
   )}
 </AdminLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-signal-row]').forEach(function (row) {
+      var btn = row.querySelector('[data-action="send-opportunity"]');
+      var statusEl = row.querySelector('.signal-status');
+      if (!btn || !statusEl) return;
+
+      btn.addEventListener('click', function () {
+        var query = row.getAttribute('data-query') || '';
+        var searches = parseInt(row.getAttribute('data-searches') || '0', 10);
+        var zeroResults = parseInt(row.getAttribute('data-zero-result-searches') || '0', 10);
+        var lastSeenAt = row.getAttribute('data-last-seen-at') || '';
+        var coverageStatus = row.getAttribute('data-coverage-status') || 'unknown';
+
+        var source = zeroResults > 0 ? 'no_result' : 'search';
+        var summary = '"' + query + '" -- ' + searches + ' searches, ' + zeroResults + ' zero-result, last seen ' + lastSeenAt + ', coverage ' + coverageStatus;
+
+        btn.disabled = true;
+        var original = btn.textContent;
+        btn.textContent = 'Sending…';
+
+        fetch('/api/admin/editorial/opportunities/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            source: source,
+            summary: summary,
+            ref: 'demand_events_v1:' + query,
+            target_keyword: query,
+          }),
+        }).then(function (res) {
+          return res.json().then(function (data) { return { ok: res.ok, status: res.status, data: data }; });
+        }).then(function (r) {
+          if (!r.ok || !r.data.ok) {
+            btn.disabled = false;
+            btn.textContent = original;
+            var msg = (r.data && r.data.error) || ('HTTP ' + r.status);
+            statusEl.textContent = 'Not queued: ' + msg;
+            statusEl.style.display = 'block';
+            return;
+          }
+          btn.textContent = 'Queued ✓';
+          statusEl.textContent = 'Sent to editorial opportunities.';
+          statusEl.style.display = 'block';
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = original;
+          statusEl.textContent = 'Not queued: network error';
+          statusEl.style.display = 'block';
+        });
+      });
+    });
+  });
+</script>

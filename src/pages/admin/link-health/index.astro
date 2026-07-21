@@ -16,11 +16,16 @@ let totals = { total: 0, broken: 0, redirected: 0, neverChecked: 0, dueSoon: 0 }
 
 if (env?.DB) {
   try {
+    // Resolved rows (an admin already fixed the link in content, or dismissed
+    // the flag) drop out of the default view — they never surface as broken
+    // again unless a future recheck flips them back and clears resolved_at.
     const result = await env.DB.prepare(
       `SELECT url, source_files, last_checked, last_status_code, final_url,
               is_broken, is_redirect, redirected_off_host, consecutive_failures,
-              last_broken_at, last_ok_at, wayback_snapshot, suggested_search, notes, first_seen
+              last_broken_at, last_ok_at, wayback_snapshot, suggested_search, notes, first_seen,
+              resolved_at, resolved_by, suggested_replacement
        FROM link_health
+       WHERE resolved_at IS NULL
        ORDER BY is_broken DESC, last_checked ASC NULLS FIRST
        LIMIT 500`
     ).all();
@@ -33,7 +38,8 @@ if (env?.DB) {
          SUM(CASE WHEN is_redirect = 1 THEN 1 ELSE 0 END) AS redirected,
          SUM(CASE WHEN last_checked IS NULL THEN 1 ELSE 0 END) AS neverChecked,
          SUM(CASE WHEN last_checked < datetime('now', '-150 days') AND is_broken = 0 THEN 1 ELSE 0 END) AS dueSoon
-       FROM link_health`
+       FROM link_health
+       WHERE resolved_at IS NULL`
     ).first();
     totals = totalsResult as any;
   } catch (err) {
@@ -99,11 +105,12 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
             <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Last checked</th>
             <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Used in</th>
             <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Replacement help</th>
+            <th scope="col" class="text-left py-2 pr-3 font-display italic text-rust font-medium">Actions</th>
           </tr>
         </thead>
         <tbody>
           {rows.length === 0 && (
-            <tr><td colspan="5" class="py-6 font-display italic text-ink-soft font-medium">
+            <tr><td colspan="6" class="py-6 font-display italic text-ink-soft font-medium">
               No data yet. Run the link-checker worker once to populate (`npm run deploy && open the manual trigger URL`).
             </td></tr>
           )}
@@ -113,8 +120,9 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
             const statusColor = status === 'broken' ? '#9E5228' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
             let sourceFiles: string[] = [];
             try { sourceFiles = JSON.parse(r.source_files || '[]'); } catch {}
+            const canResolveOrReplace = r.is_broken === 1 || r.redirected_off_host === 1;
             return (
-              <tr class="border-b border-bone hover:bg-paper-warm" data-status={status}>
+              <tr class="border-b border-bone hover:bg-paper-warm" data-status={status} data-url={r.url}>
                 <td class="py-2 pr-3 align-top max-w-md">
                   <a href={r.url} target="_blank" rel="noopener" class="font-display text-ink hover:text-rust break-all font-medium">{truncate(r.url, 80)}</a>
                   {r.final_url && r.final_url !== r.url && (
@@ -122,6 +130,11 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                   )}
                   {r.notes && (
                     <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">{r.notes}</p>
+                  )}
+                  {r.suggested_replacement && (
+                    <p class="font-display text-xs mt-1 break-all font-medium" style="color: #5C7459;">
+                      Suggested replacement: <a href={r.suggested_replacement} target="_blank" rel="noopener" class="hover:underline">{truncate(r.suggested_replacement, 60)}</a>
+                    </p>
                   )}
                 </td>
                 <td class="py-2 pr-3 align-top">
@@ -131,18 +144,55 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                 <td class="py-2 pr-3 align-top font-display italic text-ink-soft text-xs font-medium">
                   {sourceFiles.slice(0, 3).map(f => (<div>{truncate(f, 50)}</div>))}
                   {sourceFiles.length > 3 && <div class="text-ink-soft">+{sourceFiles.length - 3} more</div>}
+                  {r.suggested_replacement && sourceFiles.length > 0 && (
+                    <p class="font-display italic text-xs mt-1 font-medium" style="color: #5C7459;">Paste the replacement above into the file(s) listed here.</p>
+                  )}
                 </td>
                 <td class="py-2 pr-3 align-top">
-                  {r.is_broken === 1 && (
-                    <div class="grid gap-1">
-                      {r.wayback_snapshot && (
-                        <a href={r.wayback_snapshot} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs font-medium">→ Wayback snapshot</a>
-                      )}
-                      {r.suggested_search && (
-                        <a href={r.suggested_search} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs font-medium">→ Search for replacement</a>
-                      )}
-                    </div>
-                  )}
+                  <div class="grid gap-1">
+                    {r.wayback_snapshot && (
+                      <a href={r.wayback_snapshot} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs font-medium">→ Wayback snapshot</a>
+                    )}
+                    {r.suggested_search && (
+                      <a href={r.suggested_search} target="_blank" rel="noopener" class="font-display italic text-rust hover:underline text-xs font-medium">→ Search for replacement</a>
+                    )}
+                  </div>
+                </td>
+                <td class="py-2 pr-3 align-top" data-link-row>
+                  <div class="grid gap-1 min-w-[11rem]">
+                    <button type="button" class="recheck-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium" data-action="recheck">
+                      Recheck now
+                    </button>
+                    {canResolveOrReplace && (
+                      <button type="button" class="resolve-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium" data-action="resolve">
+                        Mark resolved
+                      </button>
+                    )}
+                    {canResolveOrReplace && (
+                      <details class="replace-details">
+                        <summary class="font-display italic text-rust text-xs font-medium cursor-pointer hover:underline">Replace URL</summary>
+                        <div class="grid gap-1 mt-1">
+                          <input
+                            type="text"
+                            class="replace-input px-2 py-1 font-body bg-paper border border-bone text-xs w-full"
+                            value={r.suggested_replacement || r.url}
+                          />
+                          {r.wayback_snapshot && (
+                            <button type="button" class="use-wayback-btn font-display italic text-ink-soft text-xs hover:underline text-left" data-wayback={r.wayback_snapshot}>
+                              Use Wayback snapshot as replacement
+                            </button>
+                          )}
+                          <button type="button" class="save-replacement-btn font-display italic px-2 py-1 border border-bone bg-paper-warm text-xs hover:bg-paper font-medium" data-action="suggest-replacement">
+                            Save suggested replacement
+                          </button>
+                          <p class="font-display italic text-ink-soft text-xs leading-snug">
+                            This link lives in markdown content, not the database — saving here only stores a suggestion. Paste it into the source file(s) in "Used in" to actually fix the page.
+                          </p>
+                        </div>
+                      </details>
+                    )}
+                    <div class="status-message text-xs font-display italic text-ink-soft" style="display: none;" aria-live="polite"></div>
+                  </div>
                 </td>
               </tr>
             );
@@ -179,5 +229,113 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
         });
       });
     }
+  </script>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-link-row]').forEach(function (cell) {
+        var tr = cell.closest('tr');
+        var url = tr ? tr.getAttribute('data-url') : null;
+        var statusDiv = cell.querySelector('.status-message');
+        if (!url || !statusDiv) return;
+
+        function showStatus(msg) {
+          statusDiv.textContent = msg;
+          statusDiv.style.display = 'block';
+        }
+
+        function postJson(endpoint, payload) {
+          return fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          }).then(function (res) {
+            return res.json().then(function (data) {
+              return { ok: res.ok, data: data };
+            }).catch(function () {
+              return { ok: false, data: { error: 'invalid response' } };
+            });
+          });
+        }
+
+        var recheckBtn = cell.querySelector('[data-action="recheck"]');
+        if (recheckBtn) {
+          recheckBtn.addEventListener('click', function () {
+            var original = recheckBtn.textContent;
+            recheckBtn.disabled = true;
+            recheckBtn.textContent = 'Checking…';
+            postJson('/api/admin/link-health/recheck', { url: url }).then(function (r) {
+              recheckBtn.disabled = false;
+              recheckBtn.textContent = original;
+              if (!r.ok || !r.data.ok) {
+                showStatus('Recheck failed: ' + (r.data.error || 'unknown error'));
+                return;
+              }
+              var result = r.data.result || {};
+              var newStatus = result.is_broken === 1 ? 'broken' : (result.is_redirect === 1 ? 'redirected' : 'ok');
+              if (tr) tr.setAttribute('data-status', newStatus);
+              showStatus('Rechecked: ' + (result.last_status_code != null ? result.last_status_code : 'no response') + (result.is_broken === 1 ? ' (still broken)' : ' (reachable)'));
+            }).catch(function () {
+              recheckBtn.disabled = false;
+              recheckBtn.textContent = original;
+              showStatus('Recheck failed: network error');
+            });
+          });
+        }
+
+        var resolveBtn = cell.querySelector('[data-action="resolve"]');
+        if (resolveBtn) {
+          resolveBtn.addEventListener('click', function () {
+            resolveBtn.disabled = true;
+            postJson('/api/admin/link-health/resolve', { url: url }).then(function (r) {
+              if (!r.ok || !r.data.ok) {
+                resolveBtn.disabled = false;
+                showStatus('Mark resolved failed: ' + (r.data.error || 'unknown error'));
+                return;
+              }
+              showStatus('Marked resolved.');
+              if (tr) {
+                tr.style.opacity = '0.4';
+                setTimeout(function () { tr.remove(); }, 400);
+              }
+            }).catch(function () {
+              resolveBtn.disabled = false;
+              showStatus('Mark resolved failed: network error');
+            });
+          });
+        }
+
+        var replaceInput = cell.querySelector('.replace-input');
+        var waybackBtn = cell.querySelector('.use-wayback-btn');
+        if (waybackBtn && replaceInput) {
+          waybackBtn.addEventListener('click', function () {
+            replaceInput.value = waybackBtn.getAttribute('data-wayback');
+          });
+        }
+
+        var saveReplacementBtn = cell.querySelector('[data-action="suggest-replacement"]');
+        if (saveReplacementBtn && replaceInput) {
+          saveReplacementBtn.addEventListener('click', function () {
+            var value = replaceInput.value.trim();
+            if (!value) {
+              showStatus('Enter a replacement URL first.');
+              return;
+            }
+            saveReplacementBtn.disabled = true;
+            postJson('/api/admin/link-health/suggest-replacement', { url: url, suggestedReplacement: value }).then(function (r) {
+              saveReplacementBtn.disabled = false;
+              if (!r.ok || !r.data.ok) {
+                showStatus('Save failed: ' + (r.data.error || 'unknown error'));
+                return;
+              }
+              showStatus('Suggested replacement saved — paste it into the source file(s) under "Used in."');
+            }).catch(function () {
+              saveReplacementBtn.disabled = false;
+              showStatus('Save failed: network error');
+            });
+          });
+        }
+      });
+    });
   </script>
 </AdminLayout>

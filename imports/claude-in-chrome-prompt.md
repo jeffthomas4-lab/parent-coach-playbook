@@ -140,6 +140,10 @@ If a submission returns 422 with a URL-related error:
 
 If submission returns 422 with a "previously rejected as dead" error, this URL is on the do-not-import list. Skip the row and move on. Do not try to bypass the gate by changing other fields.
 
+### Domain skip-list
+
+Jeff maintains a per-domain skip-list from `/admin/source-quality` (domains with a persistently low approval rate get flagged there and can be added to the skip-list with one click). The skip-list is enforced server-side at `/api/camps/submit` — a submission whose `source_domain` matches a skip-listed domain is rejected with HTTP 422 and an error naming the domain, the same as any other quality gate above. If you hit this, do not retry that domain. Move on; it means an admin already decided that source isn't worth pulling from.
+
 ## Step 3. Output incrementally as you go (do not batch everything to the end)
 
 **Critical: output CSV blocks per domain as you finish them, not all at the end.** Chrome sessions can get cut off mid-run; if you hold everything until the end, partial work is lost. The pattern is: finish a domain, immediately output that domain's CSV block, then move to the next domain. After all domains are done, output one final markdown block with the log updates.

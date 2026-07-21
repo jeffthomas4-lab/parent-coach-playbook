@@ -68,15 +68,19 @@ const fmt = (s: string) =>
                 <p class="font-display text-ink text-sm mt-3 leading-snug" style="white-space: pre-wrap;"><strong>Notes:</strong> {s.notes}</p>
               )}
 
-              <div class="mt-4 grid gap-2 sm:grid-cols-2 max-w-md">
+              <div class="mt-4 grid gap-2 sm:grid-cols-3 max-w-lg" data-suggestion-row data-suggestion-id={s.id}>
+                <button type="button" data-action="promote" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;">
+                  Create draft camp
+                </button>
                 <form method="POST" action={`/api/admin/suggestions/${s.id}/update`}>
                   <input type="hidden" name="status" value="imported" />
-                  <button type="submit" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;">Mark imported</button>
+                  <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark imported</button>
                 </form>
                 <form method="POST" action={`/api/admin/suggestions/${s.id}/update`}>
                   <input type="hidden" name="status" value="reviewed" />
                   <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark reviewed</button>
                 </form>
+                <p data-status class="font-display italic text-ink-soft text-xs mt-1 col-span-full" style="display: none;"></p>
               </div>
             </li>
           ))}
@@ -84,4 +88,47 @@ const fmt = (s: string) =>
       )}
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('[data-suggestion-row]').forEach(function (row) {
+        var id = row.getAttribute('data-suggestion-id');
+        var statusEl = row.querySelector('[data-status]');
+        var promoteBtn = row.querySelector('[data-action="promote"]');
+        if (!promoteBtn) return;
+
+        promoteBtn.addEventListener('click', async function (e) {
+          e.preventDefault();
+          promoteBtn.disabled = true;
+          try {
+            var resp = await fetch('/api/admin/suggestions/' + id + '/promote', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: '{}',
+            });
+            var data = await resp.json();
+            if (data.ok) {
+              if (statusEl) {
+                statusEl.textContent = 'Draft camp created, opening /admin/camps/' + data.program_id;
+                statusEl.style.display = 'block';
+              }
+              window.location.href = data.redirect;
+            } else {
+              promoteBtn.disabled = false;
+              if (statusEl) {
+                statusEl.textContent = 'Error: ' + (data.error || 'unknown');
+                statusEl.style.display = 'block';
+              }
+            }
+          } catch (err) {
+            promoteBtn.disabled = false;
+            if (statusEl) {
+              statusEl.textContent = 'Error: ' + (err instanceof Error ? err.message : 'network error');
+              statusEl.style.display = 'block';
+            }
+          }
+        });
+      });
+    })();
+  </script>
 </AdminLayout>

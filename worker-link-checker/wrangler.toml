@@ -12,12 +12,14 @@ compatibility_date = "2025-04-01"
 [triggers]
 crons = ["0 9 * * *"]
 
-# Bind to the same D1 database the camps directory uses. Schema lives in schema.sql.
+# Bind to the same D1 database the camps directory AND the /admin/link-health
+# page read: activity-radar. Corrected 2026-07-20 — this previously bound a
+# separate "parent-coach-playbook" D1 (8336fa9f), so the worker wrote results
+# to a database the admin page never reads. Schema lives in schema.sql.
 [[d1_databases]]
 binding = "DB"
-database_name = "parent-coach-playbook"
-database_id = "8336fa9f-cc4f-4475-8284-e75658e26399"
-preview_database_id = "REPLACE_WITH_YOUR_PREVIEW_D1_ID" # TODO: set preview id or remove for prod-only deploy
+database_name = "activity-radar"
+database_id = "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
 
 # Optional: configure the manifest URL via env var so we can point at staging in dev.
 [vars]

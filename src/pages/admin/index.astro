@@ -1,6 +1,7 @@
 ---
 import AdminLayout from '../../layouts/AdminLayout.astro';
 import { requireAdmin } from '../../lib/admin-auth';
+import affiliateReport from '../../../reports/affiliate/inventory.json';
 import { env as cfEnv } from 'cloudflare:workers';
 
 // SSR so the desk landing can show the signed-in Access identity and offer a
@@ -19,6 +20,16 @@ const sections = [
     href: '/admin/operations',
     title: 'Operational status',
     description: 'Read-only directory, scheduler, monitor, and agent-runtime evidence.',
+  },
+  {
+    href: '/admin/data-quality',
+    title: 'Data quality',
+    description: 'Drill into the offending rows behind each directory quality metric and fix them inline.',
+  },
+  {
+    href: '/admin/agents',
+    title: 'PCD agents',
+    description: 'Registered Forge Command agents and recent runs; pause, resume, or acknowledge.',
   },
   {
     href: '/admin/retention',
@@ -102,6 +113,52 @@ const sections = [
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <section class="border-t border-bone">
+    <div class="container-px py-10">
+      <p class="font-display italic text-rust mb-2 font-medium">Affiliate inventory reconciliation</p>
+      <h2 class="font-display text-ink text-2xl leading-tight font-medium">Governed snapshot</h2>
+      <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
+        Read-only report generated from the committed inventory: this desk cannot activate an account, change a destination, or publish a link.
+        Fix entries in <code>src/data/affiliates.json</code> and regenerate the report.
+      </p>
+      <dl class="mt-6 grid gap-4 sm:grid-cols-4">
+        <div class="border border-bone bg-paper p-4">
+          <dt class="font-display text-ink-soft text-sm">Inventory</dt>
+          <dd class="font-display text-ink text-2xl font-medium">{affiliateReport.inventoryCount}</dd>
+        </div>
+        <div class="border border-bone bg-paper p-4">
+          <dt class="font-display text-ink-soft text-sm">Referenced</dt>
+          <dd class="font-display text-ink text-2xl font-medium">{affiliateReport.referencedCount}</dd>
+        </div>
+        <div class="border border-bone bg-paper p-4">
+          <dt class="font-display text-ink-soft text-sm">Unreferenced</dt>
+          <dd class="font-display text-ink text-2xl font-medium">{affiliateReport.unreferencedCount}</dd>
+        </div>
+        <div class="border border-bone bg-paper p-4">
+          <dt class="font-display text-ink-soft text-sm">Errors</dt>
+          <dd class="font-display text-ink text-2xl font-medium">{affiliateReport.errorCount}</dd>
+        </div>
+      </dl>
+
+      <h3 class="font-display text-ink text-xl mt-8 font-medium">Unreferenced inventory candidates</h3>
+      <p class="font-display text-ink-soft mt-2 text-sm leading-snug">
+        Inventory entries no committed content references. Retire them from the inventory or link them from content.
+      </p>
+      {affiliateReport.links.filter((link) => link.sources.length === 0).length === 0 ? (
+        <p class="font-display text-ink-soft mt-4 text-sm">None. Every inventory entry is referenced by committed content.</p>
+      ) : (
+        <ul class="mt-4 grid gap-2">
+          {affiliateReport.links.filter((link) => link.sources.length === 0).map((link) => (
+            <li class="border border-bone bg-paper-warm p-3">
+              <span class="font-display text-ink font-medium">{link.slug}</span>
+              <span class="font-display text-ink-soft text-sm"> · {link.retailer} · {link.campaign}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   </section>
 </AdminLayout>
