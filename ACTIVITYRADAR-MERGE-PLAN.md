@@ -160,7 +160,7 @@ git push
 
 ### WP-7c: The Field & Forge record
 
-1. `Outputs/Field & Forge Ventures/Field-Forge-Ventures-Context-Index.md`: update the ActivityRadar portfolio line (retired 2026-07-10, folded into Parent Coach Desk, shared D1 unchanged).
+1. `Outputs/Field and Forge Ventures/Field-Forge-Ventures-Context-Index.md`: update the ActivityRadar portfolio line (retired 2026-07-10, folded into Parent Coach Desk, shared D1 unchanged).
 2. Log the decision to the Decision Journal page in Notion per the F&F norm: ActivityRadar retired as a separate product; one camp database, one repo, one front door; domain 301s to PCD.
 3. Regenerate `Outputs/PORTFOLIO-STATUS.md` via `/web:portfolio`.
 4. `Outputs/CONTINUITY.md`: remove or retire the ActivityRadar deploy row, add the two Workers under parent-coach-desk.
