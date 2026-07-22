@@ -1,7 +1,6 @@
 id,name,city,state
 org-daa0e308-0a27-57ce-9ba1-1c225e08d73b,Aberdeen Girls Softball Association,Aberdeen,WA
 org-21bfa88b-2240-5bdd-82f5-8dc4382f586f,Aberdeen Youth Football,Aberdeen,WA
-org-5af59a97-1160-5497-8c09-3d11d0ac96f3,Amber Empowering Resilience,Aberdeen,WA
 org-0d0d15e3-e1b5-527d-9ff6-bef5df21bd57,Grays Harbor Banjo Band,Aberdeen,WA
 org-7c493e56-ea5d-5884-a7f7-da2b539d74e4,Grays Harbor College Choker Club Association,Aberdeen,WA
 org-40c8c3fd-a594-557a-b7f2-baea7eaf7923,Grays Harbor Crushers,Aberdeen,WA
@@ -15,38 +14,21 @@ org-4387c0e0-e99d-5722-b5ed-b6c13ec53253,Chewelah Cougar Boosters,Addy,WA
 org-7f6315e1-0c14-5e9f-8d56-2bc19a656427,New Life Reltionships,Addy,WA
 org-22403eec-5b54-5973-8655-a94b0c624f29,Eastern Washington Atv Associationincorporated,Airway Heights,WA
 org-0fcf09f8-80e6-5bd4-a550-3e445d97a35d,Operation Sasquatch Pnw,Airway Hgts,WA
-org-fb5972c9-eb66-5ab0-abb7-e1e7ec9df898,Spokane Shakespeare Society,Airway Hgts,WA
 org-4986cc50-b9dc-5be9-84fc-104e8de3d15e,Swing Fever Of Western Washington,Allyn,WA
 org-ad925b4c-ff54-59f0-9af2-e7205842180e,Lake Merwin Campers Hideaway,Amboy,WA
 org-cb49e91f-af48-536d-89b9-a654561424e7,Anacortes Baseball Club,Anacortes,WA
 org-14d317cf-9988-50fb-984b-074072207710,Anacortes Boys Basketball Associati On,Anacortes,WA
 org-62b2149d-8d56-5c20-abf8-81ddc8bc9e6e,Anacortes Community & Youth Arts,Anacortes,WA
-org-bc667b00-2942-5e90-b024-9e79737669b0,Anacortes Community Theater Incorporated,Anacortes,WA
 org-a0a022a7-43d0-5b18-a8c7-7ba02c25e5a1,Anacortes Girls Basketball Association,Anacortes,WA
-org-cfb3ca7f-6e8a-57f5-b244-c69fa655dc0c,Anacortes Music Project,Anacortes,WA
 org-00b3589d-2b38-55dd-9c3f-502d6e0c99b2,Anacortes Parks Foundation,Anacortes,WA
 org-2e086a5e-0602-58b8-ae4d-65802fde4f10,Anacortes Small Boat Center,Anacortes,WA
 org-0a58fc56-9dec-5ee3-ad6f-354e3593507a,Educational Resources Ukraine,Anacortes,WA
-org-26e943b3-ee21-5e44-94ba-ab7888caf7c3,Fidalgo - San Juan Islands Chapter Puget Sound Anglers,Anacortes,WA
-org-60c84f20-7acd-59e9-98cb-eb046993887d,Fidalgo Danceworks,Anacortes,WA
-org-8b90a918-3bd6-56b6-9c6d-acfbaba77360,Fidalgo Fly Fishers,Anacortes,WA
 org-276bf389-4a26-5993-9b5c-4c4eacb1f5b3,Friends Of The Anacortes Public Library Inc,Anacortes,WA
-org-2a07a0ec-1450-57ea-a0b5-87343e2ec176,Guemes Island Chamber Music Series Committee,Anacortes,WA
 org-62108de0-afce-5be0-9c0c-193dfc1221f9,International Mountain Bicycling Association,Anacortes,WA
 org-534fd374-18f4-51a2-84b3-aa1622b868cf,Outdoor Service Guides,Anacortes,WA
-org-2fc7b072-4e1d-52ea-8077-4c6c5602f2f3,Paths To Understanding,Anacortes,WA
-org-eb52c273-0259-59c8-9324-1b8d6f1ae5ee,Predators Of The Heart,Anacortes,WA
 org-d3e555ea-e7a9-5634-bb32-b25661f1ec93,Salish Sea Early Music Festival,Anacortes,WA
 org-69ff2e94-707c-5cf6-b21e-68ec9faae8a7,Seahawks Shooting Sports Booster,Anacortes,WA
-org-c849f42b-2b80-5624-b49d-7bbbd70d040f,Selene Owners Association,Anacortes,WA
-org-b7848d48-ab6b-5647-9940-315948b642b7,Skagit Community Band,Anacortes,WA
 org-8a7029d4-b0b3-5721-aa17-1b7274914cf7,Anderson Island Community Fitness Center,Anderson Is,WA
-org-395faa70-dffb-5778-82fe-9725c6731947,Northwest Alfa Romeo Club Incorporated,Anderson Is,WA
-org-4802fb7d-ec98-56ed-88b5-dc46ce2fd3cc,Oro Bay Yacht Club,Anderson Is,WA
-org-764fbea1-24ec-5192-a9a3-21f733fdf941,Sparkly Princess Shoes Foundation,Appleton,WA
-org-8fdee012-0771-543a-a037-100c418d5c04,All In Stitches Quilt Guild,Arlington,WA
-org-3c0bbfc8-fef6-5326-ba61-a1e93b55f3dd,Arlington Eagles R-c Flyers,Arlington,WA
-org-c57af79b-3de9-5a05-8c54-ebb541927b32,Arlington Fly-in,Arlington,WA
 org-491e4ef6-cbfb-582c-b5c1-6083af0442bc,Arlington Gridiron Club,Arlington,WA
 org-1e92a4a2-fdcf-5560-92c0-5344d3c2c9d1,Arlington Lacrosse,Arlington,WA
 org-4b2bcca5-dca3-52f8-b6f5-8068b34ed40d,Arlington Youth Football,Arlington,WA
@@ -57,26 +39,21 @@ org-0352ab0b-8591-56b4-b72e-edeaed821de7,Punisher Wrestling Club,Arlington,WA
 org-441ae63b-ebb0-5d84-a92d-149f0b8c965c,Rf And Gc Crushers Team,Arlington,WA
 org-e0cbc596-6fb5-5aca-b0f7-3d7f6024c142,Skyline Elite Athletics Booster Club,Arlington,WA
 org-950ac63a-8fa8-5498-9d8f-bb83afd38f7d,Stilly Venom Baseball And Softball Club,Arlington,WA
-org-69bb566a-2acb-568c-87bf-0b2749a2fb8e,Team Fly Girls,Arlington,WA
 org-be9e12ec-dca5-59d8-a6cf-d3ad2a31bd2a,The Mike Turner Memorial Foundation,Arlington,WA
 org-bda2e836-9e1e-5687-9642-1d369fbee718,The Mudd Farm,Arlington,WA
 org-c19c099e-d514-5216-ab38-8f6376e91b7d,Tree Of Hope Boosters,Arlington,WA
 org-de3b4f84-dfd9-5163-bd0a-04c8b2e9558b,United States Bowling Congress Inc,Arlington,WA
 org-6ad3b556-2f3e-5511-a244-e446bc348140,4-H Leaders Council,Asotin,WA
 org-af452deb-a46b-5482-891f-6ed63bc4bb53,Washington State University,Asotin,WA
-org-3965571b-99d5-5ff4-b76d-011b59c9a413,Acers Fastpitch Organization,Auburn,WA
 org-de2d9078-4b9f-5a42-8553-8b766b3d18e5,African Heritage And Employment Services,Auburn,WA
 org-d5e8b862-47c6-59fc-80d1-f3cf3782a098,Auburn High School Girls Basketball Association,Auburn,WA
 org-bbd08169-e517-51c3-aef5-055ebb8d7c0a,Auburn Junior Lions,Auburn,WA
 org-be690081-4a72-5d45-b984-4ebf63968440,Auburn Youth Lacrosse Association,Auburn,WA
-org-efff75f1-ba8b-550f-b34e-5c62acbbb04a,Blue Flying Club,Auburn,WA
 org-532c65ae-3c83-5bc2-b375-3ca669cc3e49,Buzz Select Baseball Fastpitch Club,Auburn,WA
-org-5615daa2-5440-5c67-8ad3-ae8b9b4cfe4f,Cerberus Sports,Auburn,WA
 org-b15aafac-8dee-521a-811b-b4c0f943852e,Emerald City Supporters Football Club,Auburn,WA
 org-14a658f2-f2aa-5f67-900b-bcd2376ef7e2,Emerald Racing Club,Auburn,WA
 org-c10b6415-dcbf-56a0-9bec-76c1e4670541,Friends Of The Greater Maple Valley Washington Scouting Troops,Auburn,WA
 org-a5fe3ef7-4944-5fd0-8172-1235555b5244,Friends Of Troop 330,Auburn,WA
-org-5eea6968-d3d6-5f1a-93ca-e568445d5730,Girls Braids Club,Auburn,WA
 org-2f2a69cb-19a3-5039-b04c-1c13787f3dcc,Global Futures Initiatives,Auburn,WA
 org-5ad09236-2a95-5304-b950-4ced035000d1,Legacy Youth Lacrosse Club,Auburn,WA
 org-e3e07626-8ba0-5cd2-a19e-2b3843de9534,Mens Club At Auburn Golf Course,Auburn,WA
@@ -84,30 +61,19 @@ org-38385c84-5ded-5160-a225-0b3e1a52f5f2,National Federation Of Music Clubs,Aubu
 org-6a7e78d0-0b93-57fb-b18a-e865ddf92530,Ninja School Nonprofit Corp,Auburn,WA
 org-f852712d-93a3-5fb5-a71c-4f52eb29d89c,Northwest Rallye Council Club,Auburn,WA
 org-ebf3b931-87be-5fdc-973d-29f4846f6acd,Pro Gloria Dei Speech And Debate Club,Auburn,WA
-org-57985ef8-7188-52c6-92ab-37d247fa9b2e,Pro Se Potential,Auburn,WA
 org-67cae5bf-fbe5-53ea-9843-fb42a2729ca9,Safari Golf Seattle Club,Auburn,WA
-org-b32767c1-0184-57a5-87c0-85785b2b2aaa,Society For Makers Artists Researchers And Technologists,Auburn,WA
 org-6bbb501f-577a-5429-a06f-756b3b0b356e,Tacks Dance & Education,Auburn,WA
 org-e4f58662-c6d4-52e3-b016-82145d129015,Team Tread 3219,Auburn,WA
 org-6891f336-e56d-51d8-9cd3-e6f2a0a0fcd0,Trojan Touchdown Club,Auburn,WA
 org-d7a0f949-776e-5ab9-9c52-2fdaa3e2b409,Wafilam Golf Association,Auburn,WA
-org-7c358471-402a-5b64-81f9-177187aab76b,Washington Off-highway Vehicle Alliance,Auburn,WA
 org-d4c477d1-063c-5ff6-87a6-ce8b0af464f4,Washington State University,Auburn,WA
 org-ab26c89a-5248-5bfd-841e-6cf25a0b6f8a,Washington Youth Football Coaches Farm Association Wyfc,Auburn,WA
-org-4723d983-dd3d-5f13-991e-207708a9154c,Bainbridge Ballet Performance Group,Bainbridge Is,WA
-org-950315cd-8524-5aa5-abbd-799a19f6474f,Bainbridge Drama Society,Bainbridge Is,WA
 org-5c342fe8-642c-5d0b-9214-2bb35580ab72,Bainbridge Island Lacrosse Association,Bainbridge Is,WA
-org-d23f961b-63c2-589f-b303-cacc9b51e101,Bainbridge Island Mountain Biking Club,Bainbridge Is,WA
 org-7c830cbe-f210-5ba6-be3d-85f2282a9379,Bainbridge Island Rowing Club,Bainbridge Is,WA
-org-1d21a340-cd83-56dd-9498-38a798304a2d,Bainbridge Island Saddle Club Inc,Bainbridge Is,WA
-org-8724e8c7-d65c-5fc2-b0a7-032efef5adea,Bainbridge Island Sportsmans Club,Bainbridge Is,WA
 org-ef6f537a-0f3b-5532-8a2d-ae29682d605f,Bainbridge Island Swim Club,Bainbridge Is,WA
-org-fe36a465-648b-56bc-8fd2-00caa39fe8b5,Bainbridge Island Ultimate,Bainbridge Is,WA
 org-61da87ed-d27d-5631-ac8d-6f4357e0e83e,Bainbridge Island Womens Club,Bainbridge Is,WA
 org-de6319bd-3681-5657-b71f-5abb69cc9b28,Bainbridge Roller Hockey League,Bainbridge Is,WA
-org-1fd3505e-f005-57fb-a20f-bcc79155587a,Bam Booster Club,Bainbridge Is,WA
 org-f516300f-364d-54d0-ae35-17c2a58966e2,Cascadia Running Camp,Bainbridge Is,WA
-org-65d7b7c0-2bbb-5223-8a60-48b65fa3ccda,Concerts In The Barn,Bainbridge Is,WA
 org-5f025c0b-cf80-5efa-9098-4119740b2329,Eagle Harbor Yacht Club,Bainbridge Is,WA
 org-8e26d29f-1e48-5208-bb25-2b5c21192bb4,Firstservemyanmar,Bainbridge Is,WA
 org-999b2017-f508-52ce-b87e-76bd1d7f02ba,Fly Fishers International Inc,Bainbridge Is,WA
@@ -115,18 +81,10 @@ org-f42c4209-665b-5762-81ac-14b9add12d9a,Friends Of Argo,Bainbridge Is,WA
 org-9a477e9e-68d5-53c4-b0fc-ba260673bca0,Friends Of Bainbridge Island High School Sailing,Bainbridge Is,WA
 org-31b99fc1-8321-5ff4-87b3-3abac6e47f2f,Friends Of The New Bainbridge Pool,Bainbridge Is,WA
 org-74dcad4b-f694-5bca-a8e8-f147e85f4394,Go Girl Golf,Bainbridge Is,WA
-org-6bb02d46-3c60-595d-b8bc-b21019e88173,Go Run,Bainbridge Is,WA
-org-0d15ef82-191d-5219-898f-9517e82c81e0,Good Play America Foundation,Bainbridge Is,WA
-org-d43f6b01-462a-5fe1-a2e1-9a6528179719,Kids In Concert,Bainbridge Is,WA
-org-f57c721d-83a9-56e8-b123-ecec32a7c058,Neurodiversity Allies,Bainbridge Is,WA
 org-011e6c8a-a0da-5d36-af3e-5d5440069370,Rain Ross Dance,Bainbridge Is,WA
-org-4b8d6ca6-6f83-5b28-8311-95e2be722609,Team Sail Like A Girl,Bainbridge Is,WA
 org-c7310025-80d4-567e-8643-4d92831b4b77,Wonders Of Aviation,Bainbridge Is,WA
 org-0a8affc4-b611-5505-8cf1-c3e888a23744,Axiom Volleyball Club,Battle Ground,WA
-org-054fb55b-0d9d-531a-a2cc-adb06c08f670,Barny Ball,Battle Ground,WA
 org-4e214265-af69-54f1-b5ec-b50161b852fa,Bombers Fastpitch - Kyle,Battle Ground,WA
-org-f636194f-db98-5c19-bb8c-418fb7afc040,C10 Club Southwest Washington,Battle Ground,WA
-org-7e34fc0d-8a89-507c-968f-9025836b6427,Captain Strong Primary Pta,Battle Ground,WA
 org-8eb4b708-6a80-5d7a-88ee-c6c133d90996,Clark County Competitive Shooters,Battle Ground,WA
 org-34e4c124-f7f8-5f3b-a2bf-8f31ba000bcc,Clark County Rugby Club,Battle Ground,WA
 org-cc256388-1559-58ce-8df3-86ac33c1f7bf,Friends Of Gladstone Football,Battle Ground,WA
@@ -135,23 +93,13 @@ org-363fefbc-2455-5ca3-8d1c-0b39f2b457b8,Juniors Futsal Academy,Battle Ground,WA
 org-c253e4c7-2658-54d5-bf96-4143a97e8e78,Mudhounds Baseball Club,Battle Ground,WA
 org-56df14e4-adac-5db3-b72e-33d36edc7a03,Premier Baseball Club,Battle Ground,WA
 org-252f892e-bcf8-5cc4-bcbb-14062bf73d0e,Rydershowtime Baseball,Battle Ground,WA
-org-a18ac88f-ca2d-5a9b-96d9-f2d26dd682d9,Salmon Creek Flyfishers,Battle Ground,WA
 org-7db9367f-e3b2-5aea-a312-dfe018187ba3,Southwest Washington Paint Horse Club,Battle Ground,WA
 org-0e20a1c8-dbd1-574d-b3ca-58a9e0421eeb,Tiger Football Booster Club,Battle Ground,WA
-org-68fb7f0d-f841-56da-8b16-5df87be2afb0,United States Dwarf Futbol Association,Battle Ground,WA
-org-7f7534f2-6edd-58f0-a830-a0ffb51429d6,Warriors Fast Pitch,Battleground,WA
-org-02fe93eb-f163-54f4-bfb2-064f3f7e7f38,Robert Vasen Foundation,Beaux Arts,WA
 org-a35865d7-29ad-57cd-942e-7273bb9ef8da,North Mason Music Booster Club,Belfair,WA
 org-cf4d06d0-7cd8-5a53-9c1c-8a1743156a13,North Mason Senior Grad Night,Belfair,WA
 org-edf8bc72-b144-59a6-a963-90dd05f74a5a,North Mason Sports Complex,Belfair,WA
-org-b41bb520-cbf3-5098-8c34-8cb6c51ed36b,Spencer Durbin Legacy Foundation,Belfair,WA
-org-45d64357-537d-5b70-aa23-e83de29092e1,425 Kids Chess,Bellevue,WA
-org-1815d4ca-1fc3-5b3a-a1c7-501422dface6,8725 Dancesport,Bellevue,WA
 org-2422c223-caad-509c-af72-232c280ae8a7,Ai4teens Non Profit Organization,Bellevue,WA
 org-f115b473-35a4-50f4-92eb-a5701b83ebb7,Alphax Academy,Bellevue,WA
-org-5ecf9463-4439-56dc-85ec-40e29ca0e2e8,Art Makes You,Bellevue,WA
-org-0fc034b3-45cf-5d32-bbbf-98cb02ddbcdf,Arx Music Association,Bellevue,WA
-org-6427eac5-ca2a-5fef-835a-626a1626a920,Ballet Esperanca,Bellevue,WA
 org-6ccad906-d903-5beb-9661-ab9e3195a42a,Bellevue American Legion Youth Baseball Association,Bellevue,WA
 org-5aa6f950-e3da-5db8-af33-dcb399788aa1,Bellevue Baseball-softball Athletic Association,Bellevue,WA
 org-7d2153b4-e190-56cc-83f5-0268b5fbae89,Bellevue Boys Lacrosse Club,Bellevue,WA
@@ -160,40 +108,22 @@ org-92871cd2-2620-5d3e-95b0-7f0c4c6f6f32,Bellevue Girls Soccer Booster Club,Bell
 org-a0f4f3c6-d3fd-52db-a9c4-8cd1e8551792,Bellevue High School Football Club,Bellevue,WA
 org-e70c52ae-e1e0-54b0-9fd1-86a824cb2631,Bellevue Junior Football,Bellevue,WA
 org-e4fd4c16-94d0-569c-9094-b797dc9c68b2,Bellevue Korean Tennis Club,Bellevue,WA
-org-215cb955-bc96-566d-ab95-e9414df0e34c,Bellevue Womens Nine Hole Club,Bellevue,WA
 org-6f4a7154-eb40-5215-a90f-9bd73a29c334,Bellevue Youth Basketball Association,Bellevue,WA
-org-fba93c38-6076-5464-babe-f3c9aeaf63ba,Bellevue Youth Choirs,Bellevue,WA
 org-62aa5e56-0888-5013-affd-0227802f2a86,Bellevue Youth Soccer Club,Bellevue,WA
-org-9adefafa-c197-5a30-8717-94d0850de548,Bellevue Youth Theatre Foundation,Bellevue,WA
 org-e31dc18e-34b3-5460-aca3-dde13fb060f3,Boeing Employees Karate Association - Seattle,Bellevue,WA
-org-a85effc8-00bd-5d84-8cf4-644660b21eff,Boys Of Summer,Bellevue,WA
-org-4c7a0586-323b-59cd-b3f3-b28246713b04,Brass Band Northwest,Bellevue,WA
-org-d3906967-9e6d-583a-9ba5-f530a715500d,Breaking Boundaries Foundation,Bellevue,WA
-org-3b56df59-717e-524c-8664-d7db98b2ed3c,Bright Future Network,Bellevue,WA
 org-8b9d63b7-0c9e-5b0b-9272-9a39b5dec39d,Burdov Sports,Bellevue,WA
 org-7e5ccec2-f140-54ab-b0f5-605a9ffe17d7,Cascade Striders Track Club,Bellevue,WA
-org-4df73994-6282-5bf8-a8dd-672f3d34d506,Cascadian Chorale,Bellevue,WA
 org-f3abfa2d-0e39-51f9-a286-3f12d0ca745b,Catslax,Bellevue,WA
 org-bb81908d-7d52-5a39-a189-6b2c0ef001d0,Centre Line Production,Bellevue,WA
-org-99cee9c5-c5cf-5eed-8fdc-8e79a456292e,Champions Of Change,Bellevue,WA
-org-c34dcbfb-8abd-5220-9f63-6e39287a5dda,Childrens Business Foundation,Bellevue,WA
 org-34e518e6-62f0-5401-bc82-8886763ab157,Chinese Arts And Music Association,Bellevue,WA
 org-fa9b911c-a18c-50f3-b0a9-767ca3e33cdf,Coal Creek Baseball Club,Bellevue,WA
 org-4cbc61d6-a2fb-50df-9b76-6f025fbb2a51,Community Swim Club Inc,Bellevue,WA
 org-af2504ad-7b20-52ee-9cfc-2cd60351631d,Craft Club,Bellevue,WA
-org-8cb16703-94e7-50dd-8d47-90fbe088d25f,Crystal Mountain Alpine Club,Bellevue,WA
 org-51c24883-b0e8-59bb-a7cc-4e62c7c8e49d,Dave Irish Ministries,Bellevue,WA
-org-3d0a2b31-87fa-5c3a-98b9-b8325396c7c3,Demeng Foundation,Bellevue,WA
-org-c637d1db-84f4-5e12-9414-7b8be1660c8d,Dreambuilders Today,Bellevue,WA
-org-22cdf450-96d1-5ba9-b26f-9457ee8035d8,Eastshore Music Region,Bellevue,WA
 org-877d6400-038e-5211-9e28-1a2ffe47e794,Eastside Baseball Association Club,Bellevue,WA
-org-1ed8b127-92ef-5144-97c0-5436a177d99e,Eastside Chinese Presentation Group,Bellevue,WA
-org-1e523dd3-91d8-5f2b-9aee-0ad5e474f9ed,Eastside Lions Youth Academy,Bellevue,WA
 org-864b5af3-4584-5939-a8ac-24d5e30dacc6,Eastside Snowboard Asscociation,Bellevue,WA
 org-4590247a-20e0-5b56-91f5-4959a11ff8d6,Eastside Youth Swimming And Tennis Organization,Bellevue,WA
 org-0250b19a-78f4-56d7-8d17-a61c1a25fa49,Edmonds Ski School Inc,Bellevue,WA
-org-ad27ee44-b15f-582b-979e-6701ce92b17d,Emerald City Ringers Inc,Bellevue,WA
-org-099a1ea5-3cbe-536a-bb6c-f2d2f371ed37,Esports Pnw Council,Bellevue,WA
 org-9a70ba14-bc15-5c97-a708-62425b8154ac,Family Camp At Lake Wenatchee Llc,Bellevue,WA
 org-99ce9652-7038-5c3a-bf69-7478d6133c50,Flight Feathers Dance Collective,Bellevue,WA
 org-7a3ae73c-4edf-5dfb-ab68-b64d1989d47e,Friends Of Eastside Arts,Bellevue,WA
@@ -202,300 +132,370 @@ org-7e683f1c-a870-5b1d-af36-a63315b6db3a,Ge Youth Empowerment Association,Bellev
 org-fe883a70-4746-56a0-b293-99773edc9e10,Golden Pointe US,Bellevue,WA
 org-51fe258c-a227-5bf8-88ac-b024d435ca30,Gowri,Bellevue,WA
 org-e3ce5dcc-d6fd-59ca-85ab-43582155f055,Interlake Spirit Boosters,Bellevue,WA
-org-7fdab638-460b-53de-a7ec-11ab40a60a11,International Buddy,Bellevue,WA
 org-4cfff943-c64d-59c3-b70c-a401c6ba3c78,Iolair,Bellevue,WA
-org-78893bd2-1e47-5a9a-b41b-2b7d219d2421,Iskf Northwest Region,Bellevue,WA
 org-ea72978f-787a-5080-a688-9437306efaa2,Issaquah Baseball Club,Bellevue,WA
 org-1a85ae3d-4da5-56d0-8e05-039425babf89,Jackson Boys Basketball Booster Club,Bellevue,WA
 org-5129c581-800e-57cd-9a44-d11a99c658ca,Jamal Crawford Foundation,Bellevue,WA
 org-bf1d64a2-bdd4-5f0a-a6ac-fb12a5836bcc,Jeel Tennis,Bellevue,WA
 org-4c6325b3-8ab7-5504-92c1-1f0eb3516538,Juanita Baseball Club,Bellevue,WA
-org-e337341e-e31d-5e22-acb0-8281cd479966,Junity Youth Foundation,Bellevue,WA
 org-f9a49b85-c26f-524f-b851-af5f888a457b,Kempo Karate Foundation Of Washington,Bellevue,WA
 org-d37c9dbd-0ac4-5035-9298-385afa4e643e,Korean Amateur Sports Association,Bellevue,WA
-org-17b59704-be60-5c6c-942b-027544232e97,Korean Music Association,Bellevue,WA
 org-8676a373-bc03-51da-ba00-6e06b8c2abb7,La Clippers Foundation,Bellevue,WA
 org-daaca92a-d8b8-5712-aa13-4423e290502c,Ladies In Training,Bellevue,WA
-org-1e6e51f3-374b-570c-87c4-08419ee088e7,Lake Washington Saddle Club,Bellevue,WA
 org-17ab23d6-bd55-57bc-9616-37fac78afc4d,Light Of Future,Bellevue,WA
 org-826489f3-f34d-515e-bca8-a2e1e40100ea,Lions Giving Library,Bellevue,WA
 org-aad452a4-5bbd-5588-9dc5-5ca7bf2df61a,Mbyc Youth Sailing,Bellevue,WA
 org-ef77982d-be0a-5368-a619-1f3023d352b0,Midlakes United Foundation,Bellevue,WA
 org-ac46d1ce-f99f-55f7-9378-d7e02a138988,Monarch Crowns Sports Academy,Bellevue,WA
-org-923d57f1-8848-57ff-b81b-9dbf2f44c282,Music Works Northwest,Bellevue,WA
 org-846e1c3f-86e7-5073-8dc7-bf9c24f970f8,National Federation Of Music Clubs,Bellevue,WA
 org-5307e54c-f338-5da7-a0d5-9984e13b1acb,Newport Girls Basketball Assoc,Bellevue,WA
-org-a8bf1a00-3f30-5ded-bdcc-c0b92c33ffd7,Newport Lacrosseinc,Bellevue,WA
 org-61045294-be68-518c-b96e-7947f219f627,Newport Select Boys Basketball Club,Bellevue,WA
-org-da94d70a-d421-5050-b758-c52e4bc1001b,Nextgen Youth Empowerment,Bellevue,WA
 org-4373465e-8a31-533d-b26a-5f4487235312,Northwest Cricket Academy,Bellevue,WA
 org-8b2923da-3571-59cf-a2a6-06ab72f7d33b,Northwest Volleyball Foundation,Bellevue,WA
 org-9c2e5c45-cf1d-5fda-82a4-c66736cb9a78,Npsa Youth Soccer,Bellevue,WA
-org-c588742f-b968-54fd-9dd9-1affb2c31f0f,Outdoors For All Foundation,Bellevue,WA
-org-bfaad0e8-6288-52dd-970b-f54ffea553a2,Pacific Northwest Endurance Rides Inc,Bellevue,WA
-org-0f01f75d-cb7b-559c-865c-562b00c496f8,Pacific Northwest Freeride,Bellevue,WA
-org-e1e0ba2d-2bda-598a-a777-98ec4ed7563e,Pacific Northwest Naginata Federation,Bellevue,WA
-org-101fc50a-58b5-534a-b897-cf36c98903b5,Pacific Northwest School Of Music,Bellevue,WA
 org-51ce2fc4-d53f-5cba-bccb-73eb6ffbc330,Pacific Northwest Youth Club,Bellevue,WA
-org-77b2bcfc-8f5f-5792-8734-e8ff8de0ac80,Pacific Outdoor Club,Bellevue,WA
 org-8c4257dc-bfab-503b-b6e7-96be5e7d391e,Pack 726 Services,Bellevue,WA
 org-4e754c6b-3097-5c6c-bc20-c00a9df4dab7,Penn State Softball Booster Club,Bellevue,WA
-org-304a4c8c-a5c0-5838-b53a-090a6992ff6d,Performing Arts Center Eastside,Bellevue,WA
 org-28d844f2-4bb3-5448-8f10-5c0c0b1d6a4d,Phi Delta Theta Fraternity,Bellevue,WA
-org-9acc15f5-6a7d-5046-89eb-4a881dc91501,Providence Heights Fka The Purpose,Bellevue,WA
-org-2515f14d-17c3-57ef-95a0-4798cfadf0fc,Purpleu Youth Foundation,Bellevue,WA
-org-d1a28134-8e8c-536d-9c88-20a3d50009dd,Rainier Athletes,Bellevue,WA
-org-ff6f2e30-cb2f-5616-b943-6f3e776db7f8,Robocodo,Bellevue,WA
 org-04460d5e-3e32-5da0-a14e-8803ae38a0fc,Robopunk Foundation,Bellevue,WA
 org-3db681b4-9843-518c-bbe6-b46515c38a02,Run It Forward,Bellevue,WA
-org-84dc59aa-8e87-5099-abaa-bf8220db4ce3,Sambica,Bellevue,WA
-org-2e5850a5-622a-5c6a-9c7b-2b107e03184b,Samena Club Inc,Bellevue,WA
 org-4be8cdda-a168-520a-91e6-2b680030add4,Samena Squares Square Dance Club,Bellevue,WA
 org-617a99c1-fb30-5ffb-855a-5ed841dde137,Sammamish Lacrosse Club,Bellevue,WA
-org-b0169098-65a0-586e-86d7-39f5e6105003,Seattle Chapter American Association Of Woodturners,Bellevue,WA
 org-dfc02167-108f-5835-a8c6-87e93abba1b7,Seattle Eastern Beauty Choir,Bellevue,WA
-org-9be4891b-af03-5f4e-8514-b979ccf01607,Seattle Ensign,Bellevue,WA
 org-344742b1-7daa-5513-9c84-f61215e2800d,Seattle Hoo Hoo Club 34,Bellevue,WA
-org-51552026-2f7d-5727-944f-1ef0164d2abf,Seattle Leadership Academy,Bellevue,WA
 org-5ee5ae5f-2ff3-5f73-af5f-0be5cffc98ac,Seattle Nordic,Bellevue,WA
-org-0f9fbca8-a772-5f1c-8851-de60fa197602,Shoreline Robotics Society,Bellevue,WA
-org-8b109c77-f475-55e9-ae8b-d8b0e664171f,Sincerely Royal,Bellevue,WA
-org-b75d0966-ceae-59bc-a021-714ec004fee8,Sindhi Association Of Seattle-wa,Bellevue,WA
-org-b59f4918-1eef-55c0-9333-bc2b49775a71,Singing In Seattle Choir,Bellevue,WA
-org-48acd5d2-4d21-5ccb-9f2f-9c417e4529f7,Smartcents,Bellevue,WA
-org-43eb90d1-ac12-52f8-80a4-c9dc60a7a593,Snow Fairies,Bellevue,WA
 org-0b62d977-1078-56d8-bde1-4024da834be5,Snowfall,Bellevue,WA
-org-195575cf-00bb-5f4e-9881-fe9f075b8c2a,Soccer For Change,Bellevue,WA
 org-dbe368bd-600d-53e5-aac0-3959a6889200,Society For Preservation & Encourmt Of Barbershop Quartet Singing Amer,Bellevue,WA
-org-ddd2f306-88fd-51fb-9c7e-fa7d8be7a748,Speed Unlimited,Bellevue,WA
-org-43f29b2c-5310-57cb-8bd9-b2b76ea74ac5,Sports For Youth Foundation,Bellevue,WA
-org-973a210e-b32a-550c-a23e-cd51c0df5c0d,Sportspath Foundation,Bellevue,WA
 org-fcc3d10f-9d3c-5222-a0ba-74f31828c00c,Sprouts Of Hope Foundation,Bellevue,WA
 org-2a4157ea-dc61-53fd-8784-240c173129ad,St Cecilia Music Foundation,Bellevue,WA
-org-7ec4427d-a206-5971-ac3a-99464255fbd6,Stayrunning,Bellevue,WA
 org-b243adeb-0de3-5d52-85e3-2d81c054e934,Sudden Impact Volleyball Club,Bellevue,WA
 org-091bde10-432b-5ac4-ba70-4dc8a27d361d,Summit Hunter,Bellevue,WA
 org-192b2fc3-581e-5103-a640-09c6aff9a27a,Sunflowers Catchball Team,Bellevue,WA
-org-4bb8d934-b1d0-5d55-93ab-865fad2c801a,Supporters Of Bsa Troop 438,Bellevue,WA
 org-420e6d46-0ddc-5910-9ddb-53cb156cc96d,Supporters Of Issaquah Science Technology Engineering And Math,Bellevue,WA
 org-96b153fa-ad75-5763-a527-4b5047d833c4,Sylvan Swim Club,Bellevue,WA
 org-fa4774b7-dcfb-5c8e-9ccb-17c40a612895,Taekwondo For Kids,Bellevue,WA
 org-afaafa38-77d0-5f13-8db1-a9aa1fa46dec,Tat Volunteer Teaching Foundation,Bellevue,WA
-org-91eba0d4-f2ed-5f55-b78e-37850a00e488,Tea Education Association,Bellevue,WA
-org-d10bfd46-4556-5a5b-9fb0-f42de8492c0e,Theatre33,Bellevue,WA
-org-0c3da70c-de7a-57d7-8dd0-652a14a43e2f,Thriving Elements,Bellevue,WA
 org-f9c0e3a1-b55c-5fe1-bac9-215c44ea5065,Time To Tennis,Bellevue,WA
 org-3d4ed241-4c4e-5bc8-acf0-4806a475f994,Totem Grid Iron Club,Bellevue,WA
 org-600e887a-a89f-5508-b0f8-10cd8e527b9a,Totem Hoop Club,Bellevue,WA
-org-06d4aad3-d853-53b9-ba8c-b5145ed5e13a,Triangle Pool Inc,Bellevue,WA
-org-997d248d-4141-5210-94eb-d2a3bd742349,Trout Unlimited,Bellevue,WA
 org-fca68181-8721-5055-8976-6479ecaf06c5,US Judo Training Center,Bellevue,WA
 org-8a1596a7-17dc-579f-bbc3-24829df6a071,Ultimate Wellbeing,Bellevue,WA
 org-0d018a04-37de-527a-b97a-6ca46facaf54,Upward Bound Foundation,Bellevue,WA
-org-155a17c5-b709-50da-8361-aaa6da52de1b,Warriors Sports Academy,Bellevue,WA
 org-fd908503-32a2-5b55-b53d-705f318a73d2,Washington Chamber Ensemble,Bellevue,WA
 org-953c08ab-fd22-5070-9a21-b441950af706,Washington Womens Lacrosse Officials Association,Bellevue,WA
 org-eb20443b-6300-5296-9dab-20fa64db3229,Western Washington Shotokan Karate Group,Bellevue,WA
-org-c7883e4e-7220-5ffa-a1cd-b692e271fd01,Western Washington Walleye Club,Bellevue,WA
 org-9b2b23c0-f8df-56d6-9334-85f99a17c065,Westminster School Of Music,Bellevue,WA
 org-d81065d5-1b16-5883-9e0c-df5bea4c4dd6,Wright Way Foundation,Bellevue,WA
-org-2965e4ec-31c1-54c0-974b-79c9d8ea4437,Xing Yue Culture Exchange Association Of Seattle,Bellevue,WA
 org-f2eeafeb-b458-5b92-a829-4d576aef6ae5,Youth Cricket For Parks And Schools Inc,Bellevue,WA
 org-92ca8a13-84f8-5294-8e8d-c1dbc5d3420d,Youth Discovery Club,Bellevue,WA
 org-fa87c7b0-f1ba-503f-922f-30db5c80c2d9,Youth Empowerment Network,Bellevue,WA
-org-670a6cbe-3993-5d18-aaa0-c54bcf594f39,Youth Inspire Youth,Bellevue,WA
-org-7f5bf66b-4451-5ed3-9330-47c86c80e59f,Youthyc,Bellevue,WA
 org-00e6bf80-86f3-505e-8c9c-cf43d8598df1,Youyou Seattle Association,Bellevue,WA
-org-5cb55569-aa19-512d-943d-44e8c1efc111,Z Girls Foundation,Bellevue,WA
-org-fbf73e8e-6687-5e5d-9b50-b5fe69da3f5d,Airow Project,Bellingham,WA
-org-5dba5bac-bd4b-58d8-a7e9-da4abb30410b,American Theater Northwest,Bellingham,WA
 org-77ffdbcd-5f6d-5021-a794-b906155ee069,Apex Nw Volleyball Club,Bellingham,WA
 org-6bbe4c2b-d988-5723-a336-71ab26c08399,Bayhawk Basketball Club,Bellingham,WA
 org-506e267c-bf2f-5fc1-8256-8af00bf64aef,Bayside Splash,Bellingham,WA
-org-c43da868-3635-5e30-9a65-edf144afe4cb,Bellingham Bash Fastpitch,Bellingham,WA
-org-58fa08ed-ea26-5647-b7b0-74f24db39403,Bellingham Bay Community Boatingcenter,Bellingham,WA
-org-b9b08d91-1cc4-53f8-8c58-9589002c9d8a,Bellingham Bay Outrigger Paddlers,Bellingham,WA
 org-63078532-f7c6-56dd-a743-9041012e7e0a,Bellingham Bay Swim Team,Bellingham,WA
 org-b50b7627-a59b-5d35-8f08-3cd9b5cde114,Bellingham Bayhawks Lacrosse,Bellingham,WA
-org-e0ecb00f-d1b4-5ca5-a81e-3b92003023f1,Bellingham Bells Community Foundation,Bellingham,WA
 org-639dc782-750c-571a-8fb3-eb741dddd671,Bellingham Bmx Racing,Bellingham,WA
-org-c371612c-7bbd-507a-803f-c1baa9baf7ce,Bellingham Chamber Music Society,Bellingham,WA
-org-c4fd1142-e91d-5d3a-b0fc-5d53cd841f50,Bellingham Community Chorus Co-op,Bellingham,WA
-org-59ca9d2c-e62a-5b16-af1b-8a2fbd7cca21,Bellingham Distance Project,Bellingham,WA
-org-f874d12f-a932-51af-bf25-72f01be6dc60,Bellingham Figure Skating Club,Bellingham,WA
-org-9d01dd1f-64a1-535d-af9b-70afcf0a9128,Bellingham Helps Access Music,Bellingham,WA
-org-7848d45d-2703-5e60-b398-8e8670e2a2c6,Bellingham Music Club,Bellingham,WA
 org-60978d5a-2b49-52bf-b9de-b3cbb2cca0a6,Bellingham Repertory Dance,Bellingham,WA
 org-3f1ca4ec-7a40-52a7-b17e-57c6ac26a54b,Bellingham Sailing Foundation Inc,Bellingham,WA
-org-476968fa-5c6b-5c5e-8799-d3fdc07c0cb3,Bellingham Sonics,Bellingham,WA
-org-686320c2-83be-5978-8b19-8d6895f8196a,Bellingham Theatre Guild,Bellingham,WA
-org-43cd3e2d-3602-5140-9e70-0efdd0606bb1,Bellingham Threshold Singers,Bellingham,WA
 org-7d90404b-aed7-59d7-b20b-a10d81bf99bc,Bellingham Warriors Lacrosse,Bellingham,WA
 org-12e1fb84-0356-5965-82ab-d9ed813521e4,Bellingham Youth Baseball,Bellingham,WA
-org-7422bdcf-cd61-5a86-b07f-c48444cd4b58,Bellingham Youth Choir,Bellingham,WA
-org-22d86daf-9b24-57e8-a40d-6e7ff372a12a,Bellingham Youth Ultimate,Bellingham,WA
-org-46145a98-d497-5334-b91a-46dc7d64a6d4,Bike Instructor Certification Program,Bellingham,WA
 org-ffc54a52-54c0-5000-83c2-27787dab888e,Boys & Girls Clubs Of Whatcom Co,Bellingham,WA
 org-19a509f4-04ac-555c-bbed-4f681caf5c49,Camp Fire,Bellingham,WA
 org-d166bcdc-9f3e-5f43-8382-e48fb1244b79,Cascade Judo Academy,Bellingham,WA
-org-cba80010-203a-5de8-918e-9db002da23ab,Chuckanut Bay Athletic Association,Bellingham,WA
-org-eece9602-cd81-5746-a7d6-a2b5c6924141,Chuckanut Flying Club,Bellingham,WA
 org-d00a85bf-fe32-5e35-a68f-4b34390674b0,Chuckanut Tide Football Club,Bellingham,WA
-org-e906bcda-ad79-5328-8aa1-e38cba180178,Corvettes Unlimited,Bellingham,WA
 org-c5902090-0f6c-54e6-8de8-2d45dbe47583,Galbraith Gravity Junior Racing,Bellingham,WA
 org-a2314997-a4f6-52bd-a076-27a29ea96fb8,Gearheads Of Whatcom County,Bellingham,WA
-org-74a27d60-c95b-5c5b-a2cd-60384108b3ad,Gifts Of Music Nw,Bellingham,WA
 org-3c9ef425-b3a2-5387-993f-d952239d01bc,Hesh Foundation,Bellingham,WA
 org-ac79b7a8-578f-5a2d-a6e5-f77232eb1968,Incite Cycles,Bellingham,WA
-org-e3c28bb9-c906-54b8-b306-509764fae709,Jazz Project,Bellingham,WA
 org-3ee69743-7aa8-5e25-9572-cb7c5f6da901,Kai Pana Outrigger Canoe Club,Bellingham,WA
-org-9fef3080-fc1e-57ec-a248-da7af63de18c,Komo Kulshan Ski Club,Bellingham,WA
-org-0a90e18a-a013-5266-af68-f9d9bc2fd7cc,Kulshan Chorus,Bellingham,WA
 org-67bc49ab-34e0-50ba-a3f9-a5c3bced5408,Kuntz Community Arts,Bellingham,WA
-org-4810d48a-4fe1-5052-922c-80d86b60684e,Lindas Tai Chi,Bellingham,WA
 org-251aabc2-713c-586d-91bf-aeb25bff9bf3,Loving Space Programs Non Profit,Bellingham,WA
-org-d6e45a3a-8da5-55a5-9e78-df8c1c369e93,Mount Baker Bicycle Club,Bellingham,WA
-org-3ba250a2-3e77-583a-a6b0-23b1554289d2,Mt Baker Volunteer Association,Bellingham,WA
 org-4b489692-428b-5e24-b3b7-781b046fbfb6,Music For Life Institute,Bellingham,WA
 org-727618ff-ebc4-5cbb-9668-034c75ba3a2c,New Hope Therapeutic Society,Bellingham,WA
-org-5d1ebb76-f3dc-58b5-abfa-09e6a588e80d,Newcomers Club Of Whatcom County,Bellingham,WA
-org-5569d7de-4f87-504b-b624-13278c2b97ec,Nooksack Nordic Ski Club,Bellingham,WA
-org-d575951d-b24f-544d-b54f-f1bc985cc204,Nooksack Valley Riders Association,Bellingham,WA
 org-730e527f-f870-5197-b113-e9e0db159972,Northwest Washington Theatre Group,Bellingham,WA
-org-cf166582-dcb1-53cc-8578-380267b9e877,Out There Adventures,Bellingham,WA
 org-8f3d2010-9b85-5da2-a2ba-c483e9d18386,Pacific Northwest Coding Robotics And Stem,Bellingham,WA
 org-ea55aad7-df35-5ef8-8ef8-627d53a27110,Pacific Northwest Sports Foundation,Bellingham,WA
-org-6c70e5c0-e5be-5914-9d63-c9cac1e9461f,Presence Studio,Bellingham,WA
-org-245fb421-3bd7-5519-b36a-5cec6974c300,Puget Sound Guitar Workshop,Bellingham,WA
 org-b4630970-5d96-5cad-b7e0-691b7c98b7ba,Purpose Driven Outreach Org,Bellingham,WA
-org-e0630473-f17e-5f02-a1cb-758b74c43a48,Queens Of Dirt,Bellingham,WA
-org-63af7b7a-ab52-5430-9348-233feb21f557,Radio Theater Project,Bellingham,WA
-org-fe384d39-bfdc-5b2c-a1ec-3acd56952fa7,Resilient Project,Bellingham,WA
-org-1939ac95-65f5-5f88-8db7-b2a3b4d04f1f,Run Like A Girl,Bellingham,WA
 org-8e6cd739-4640-5691-a5ff-383f8cb0bf42,S O A P Box Players,Bellingham,WA
 org-323c447c-7fc1-5afd-923e-619451d34143,Sedro Woolley Girls Soccer Booster Club,Bellingham,WA
 org-877f52b0-68dd-57a6-886f-acd37d0f25a4,Sehome Boys Lacrosse,Bellingham,WA
 org-8ea5de86-45e2-5477-aaf8-e7c11739fa20,Semper Fi Park,Bellingham,WA
-org-220d6ae1-4e1d-55d8-9307-9b45a0f92609,Skimo Northwest,Bellingham,WA
-org-cf1bf893-86aa-5262-bf49-96a043ba96d3,Squalicum Musical Theater Institute,Bellingham,WA
 org-fd670d25-7405-57d3-ae2b-253fa541efdd,Squalicum Storm Lacrosse,Bellingham,WA
 org-4c86888b-0f39-5d5c-9c90-6fadc0e2e497,Stuen-walker Musical Arts Society,Bellingham,WA
-org-1eb918a1-b803-5671-aa46-72cbf9ddcce5,Subdued City Rollers Ein,Bellingham,WA
-org-8f7b13a1-9fb0-5c55-a528-1b230235af8b,Suzuki Association Of Washington State,Bellingham,WA
-org-75e5935a-7cd6-5c2a-8b90-f0b2bfec2607,The Penfield Foundation,Bellingham,WA
 org-4975634f-7094-5235-974c-20d78ba99c4e,Trail Guild A Nonprofit Corporation,Bellingham,WA
-org-4473cffd-9aec-5bbd-81c6-b1d559bb0228,Trulegacy,Bellingham,WA
-org-1190d89b-5522-5fd7-b3eb-5a2aa5f15fe0,Upfront Theatre,Bellingham,WA
-org-43cc3895-e68c-5c68-93ee-10280256a962,Vamos Outdoors Project,Bellingham,WA
-org-1551ff89-9a32-59ed-b0d0-3f21f02aeb97,Vox Pacifica,Bellingham,WA
-org-4bc798b7-d5ef-5e38-b9f6-6829ef1ed1d3,Washington Korfball,Bellingham,WA
 org-a333ca93-6eac-5927-87ac-8776db0a44cd,Washington State University,Bellingham,WA
-org-d4405254-0a76-5e4e-95eb-d06d36e225db,Whatcom Aquatics Foundation,Bellingham,WA
-org-68779c43-80e6-5066-bd04-a5d3d3e65988,Whatcom Chorale,Bellingham,WA
 org-33a915a2-31f4-5bf2-b926-ad6f5eca0b01,Whatcom Community Sailing,Bellingham,WA
 org-48c880a9-f0dd-59fc-8d34-5a29e86e3c0e,Whatcom Couinty Adult Soccer Association,Bellingham,WA
-org-e856db53-225e-588f-a4a0-ae5fb894d131,Whatcom County Amateur Hockey Association,Bellingham,WA
 org-88349f27-a78e-50bf-b841-1d34540553b6,Whatcom County Youth Soccer Association,Bellingham,WA
-org-0dd682d5-7d32-57c9-a04d-0556858cb363,Whatcom Events,Bellingham,WA
-org-bad27254-69ea-5783-828a-58869a579a86,Whatcom FC Rangers,Bellingham,WA
-org-3455dbbe-d6a5-5137-a358-6b6b2f89de1f,Whatcom Family & Community Network,Bellingham,WA
 org-7b1f5d1c-6e65-5b2e-a496-5ea5d675c2b4,Whatcom Girls Lacrosse,Bellingham,WA
-org-9de81725-0952-5021-9898-7acb81bf84b9,Whatcom Jazz Music Arts Center,Bellingham,WA
-org-58fb0e8d-1345-53b7-ac7b-3343096db9bc,Whatcom Mountain Bike Coalition,Bellingham,WA
 org-7b6ee31f-59f7-56aa-8c3a-0bb2080a3759,Whatcom Prep Baseball Association,Bellingham,WA
 org-6d0be66f-988a-556f-8f57-ee98d7acfd72,Whatcom Rowing Association,Bellingham,WA
 org-5d4cec51-22ce-56e8-b5be-c726f1a22848,Whatcom Sound Jazz,Bellingham,WA
 org-02f4e782-fae6-5318-85fe-d1cad88627ee,Whatcom Wav A Nonprofit Corporation,Bellingham,WA
-org-96485260-b50b-5d3d-90c5-e5f3cc47f15a,Whatcom Waves,Bellingham,WA
 org-66898ffb-4b80-56a5-bc2e-58689feeb21c,Whatcom Wrestling Academy,Bellingham,WA
 org-03adaddd-a51e-52ae-81b3-100eb79bb3a6,Whatcom Young Aviators,Bellingham,WA
 org-50eb1220-b578-5299-9d2a-9eb5944afb60,White Crow String Works,Bellingham,WA
 org-6dd89a91-388a-5420-bade-6bd4437bc6b3,Winds Of Grace,Bellingham,WA
 org-e68c7529-4a02-5fa5-ae37-2a1c3bf0dc6a,Woodstock Farm Concervancy,Bellingham,WA
-org-af9f4fcd-e1d8-57a9-9034-8c9c43633f78,Wwu Waterski Alumni Foundation,Bellingham,WA
 org-0566b4da-ea79-5947-96a5-a0a7e64fd7c1,Benton City Basketball Club,Benton City,WA
 org-aa84c5a6-ab7b-55a0-8f70-eaf18a8623db,Benton City Junior Fair & Rodeo Association,Benton City,WA
-org-37dbea6b-e391-561a-82ee-df13536c5700,Ignite Ministries,Benton City,WA
-org-80b649f5-aa95-5ab7-ae22-7a32c0dc19c2,The Columbia Basin Bass Club,Benton City,WA
-org-7c8ecd8f-ce8e-5e3d-a9de-da07a42551e2,Tri-city Spartans,Benton City,WA
-org-e3b844a8-4fec-584d-9245-2a3ef0aa425e,Bruin Club,Bingen,WA
 org-18c98156-6071-5134-a472-59efbe720a84,Kentlake Football Booster Club,Black Diamond,WA
-org-a809f7a0-6cb9-5fe0-a5de-c263d4cf4f93,Northwest Theatre Productions,Black Diamond,WA
 org-ed0f5c49-d178-5b79-8d77-f974b6f74123,Safehome Nonprofit,Black Diamond,WA
 org-494c3dcd-33f8-562f-9857-996505688842,Birch Bay Village Golf Club,Blaine,WA
 org-9b278eba-fd7a-54a9-8722-d931ccb46b5d,Blaine Cbp Explorer Post,Blaine,WA
-org-1fb11d78-8b57-5a79-9eb3-13812debfc87,Blaine Youth Sports,Blaine,WA
 org-a720d0d2-ff9e-599c-978b-fc5d674f373a,Bybf,Blaine,WA
-org-4a58a770-f9b8-58c3-bc90-860b47d4a20a,Jr Golf Tour,Blaine,WA
 org-258ccadc-53ac-5df6-a8eb-dc26a5e860b3,North Sound Music Association,Blaine,WA
-org-f7c9be39-3951-5c51-a34c-09dd8cab6996,Pacific Arts Association,Blaine,WA
 org-b06cd29b-026e-5d0c-9ffa-25a1a7c88e37,Peace Arch Unit No 86 American Legion Auxilliary,Blaine,WA
-org-114b4456-731b-5e64-bca1-34cefd250b46,Whatcom Speed Skating Club,Blaine,WA
-org-9104193d-6797-566a-986a-7633df03c0c5,Wounded Veterans Waterfowl Club - Washington,Blaine,WA
 org-fd56fbab-c3da-574b-b90f-63338784fa62,Young Life Of Canada-jeune Vie Du Canada,Blaine,WA
 org-769e1e13-4631-5834-986f-be5955005f0e,2 Wheels To Development,Bonney Lake,WA
 org-ee94b7fb-ab7f-5c08-a46c-dc52665f0c0e,American Youth Football Inc,Bonney Lake,WA
 org-588b84a6-20f3-5ef7-b503-a71e4a8fa454,Balls N Bats Club,Bonney Lake,WA
 org-d3e24de9-7cc9-5f88-b884-924bbec0ee3c,Dedicated Athletes In Youth Sports Club,Bonney Lake,WA
-org-9ed24839-f1bd-54c5-b315-f2ad3f4a8d05,Hoop For Austin,Bonney Lake,WA
-org-141f9adc-4dbf-5d73-bd31-325886d92406,I9 Sports Association - Chapter 426,Bonney Lake,WA
-org-39c88ef9-e709-5ea6-bc9a-906fb615cb5b,Kilted Patriot Foundation,Bonney Lake,WA
 org-322de3df-13c4-5dd1-816c-42a0499a72e4,Lake Tapps Lacrosse,Bonney Lake,WA
 org-5c158d74-19d3-5341-9759-f9a1b8bb4dee,Rainier Highlanders Youth Rugby Club,Bonney Lake,WA
-org-6978d0be-8b61-5412-a01c-3954dd7309b8,Seattle Wings Motorcycle Club,Bonney Lake,WA
 org-58a2dbef-9d0c-579a-84f7-d8a1c804555a,South Sound Alternative Baseball,Bonney Lake,WA
 org-b7a0762b-a806-59bd-a711-89180722e51f,Sumner Bonney Lake Youth Lacrosse,Bonney Lake,WA
 org-507f4d5c-eb21-5b92-b05b-70b88f20dbda,Sumner Valkyries,Bonney Lake,WA
 org-a8ec3f16-afa6-50e7-83c4-d197827436fb,Washington United Lax,Bonney Lake,WA
 org-96d05e88-6462-545e-9209-35d10c884fd7,Ability Unlimited Of Washington,Bothell,WA
-org-6bc89080-5d39-5e38-a3eb-af4d50d1362c,Agastya Gurukulam,Bothell,WA
 org-b55b28be-1fcc-56d6-8429-7aa9322262ff,Aws Children & Youth Development Center,Bothell,WA
-org-3ed29eb1-8a98-5eda-bd0e-de0735a730dc,Baon For Kids,Bothell,WA
 org-dee196fc-3f07-5d42-9ce6-34af96ca6013,Bothell Cougar Football Association,Bothell,WA
-org-a5432d33-165d-5b29-96ce-0a53e835b8a0,Bothell Select,Bothell,WA
-org-d385485d-5bd9-59d6-9d0c-f14f85f70aae,Bothell Vbc,Bothell,WA
-org-60991d62-0644-5762-ac43-985efc2edfa7,Cougar Football Club,Bothell,WA
-org-cef5ed00-0e40-597c-828d-ed4dfa63763a,Cpc Athletics Booster Club,Bothell,WA
-org-15f54a8c-a941-5d6d-b053-781226c2b617,Emerald City Supporters,Bothell,WA
-org-82eaa8e5-bd96-5db7-903d-36f8d675eabd,Evergreen Chess Club,Bothell,WA
 org-36da5b8d-93ae-5114-b974-8f0c03c82e90,Excel Swim Association,Bothell,WA
 org-cb2ed01e-3827-53f9-90ed-79787d297a88,Extra Innings Northwest,Bothell,WA
-org-98f4ed6c-3356-5800-9f63-8f8eea995202,Fernwood Elementary Ptsa Northshore Council 6 10 16,Bothell,WA
-org-84eb6ffa-3776-5331-b891-9139576536a5,Finance Forest,Bothell,WA
-org-a27e60cf-f10a-5406-a4f4-01af0087c263,Fire Mountain Staff Alumni Association,Bothell,WA
 org-b5cc0986-f978-50ad-a48b-5c6eba74bdf2,Friends Of Camp Bow-isle,Bothell,WA
 org-5d72f8bb-d7e9-5e6e-bbbe-826b94de0432,Inglemoor Boys Select Basketball,Bothell,WA
 org-368cfdad-d37e-5ade-a6e8-9f4ef6b4edbd,Inglemoor Lacrosse Club,Bothell,WA
 org-8e85e995-1b4b-5798-9a02-034fd15a494c,Jackson High School Girls Soccer Booster Club,Bothell,WA
 org-5f72e473-8f2a-513d-bb77-5fa9a3f52cc4,Junior Cougar Basketball Organization,Bothell,WA
 org-4887ce64-9b33-5eab-bde8-f4db1a932ec2,Little League Baseball Inc,Bothell,WA
-org-60055bc9-5cc3-5e72-acdf-3a234d67b0d8,Lynnwood Lady Royals,Bothell,WA
-org-6dc84e4c-e2a2-55b3-b92f-4490af0048dc,Ncw Sports Rink And Event Center,Bothell,WA
 org-576d8af6-5d3d-5e5a-aaba-c3b9b4806f00,Nextgen11cricketacademy,Bothell,WA
 org-8d3d0c5b-34a0-5d51-bc69-da831c8df7e8,North Creek Basketball Club,Bothell,WA
 org-a6c7d255-77e3-59ea-bec8-9efb00522b71,North Creek Junior Jaguars Football Association,Bothell,WA
-org-6ee12294-95ec-53e2-bbd3-626137576b73,North Creek Kids,Bothell,WA
 org-1d3e79df-b31d-5151-b655-bb9105cf7d12,North Creek Lacrosse Club,Bothell,WA
 org-d231170d-c9ca-5706-bac6-5bd88df989a4,North Creek United FC,Bothell,WA
-org-bfa33b45-f18c-523d-a6ea-f5200d18fcf0,Northshore Community Cooperative Preschool,Bothell,WA
 org-01b6b448-f917-5a6c-9199-4efc81e1fd2b,Northshore Girls Lacrosse,Bothell,WA
 org-e815e8ee-ba43-569c-b92e-0399ef1c5356,Northshore Lacrosse Club,Bothell,WA
-org-8a847753-0782-508b-b420-7b17903eddad,Pacific Coast Norwegian Singers Association,Bothell,WA
-org-38ff09ed-2abb-5b66-9af9-6b844b2b2aaf,Project Girl Mentoring Program,Bothell,WA
-org-a565460a-0d35-591d-8f17-8e4992f43af9,Puget Sound Chapter 50 Of National Association Of Watch & Clock,Bothell,WA
-org-8197a4d1-ff02-5fa6-a82e-2d0024e2634a,Rite Of Passage Journeys,Bothell,WA
-org-149c3e0a-fdcf-5477-b13f-1234d4e2df3f,River Winds Band,Bothell,WA
-org-d5b96f5b-e87f-56c8-a1fa-8855124e1e57,Sisters In Action Sports,Bothell,WA
 org-304de73f-93b5-5b66-af12-a3161a5e7575,Skinner Releasing Institute,Bothell,WA
 org-36bc288c-872e-58be-86b2-1cbdb05b934d,Snoking Youth Lacrosse League,Bothell,WA
 org-db05ff77-f812-5618-a1dc-77cd3ad092e8,Studio Del Creador,Bothell,WA
-org-3f5bc15d-eb5f-535f-9c8a-b3c701db7505,Sycamore Tree Theatre,Bothell,WA
 org-6bcf475f-3dd3-580b-9c62-e9be49147aa7,Thunder Boosters Club,Bothell,WA
 org-484e4b97-9c85-5b6b-9d97-7202bcfc7b61,Toastmasters International,Bothell,WA
-org-c1027ced-a44b-5704-8445-85785590a65e,Together We Shine,Bothell,WA
 org-0d25d33e-aaac-5863-93bc-f09905c4def4,Udaan Foundation,Bothell,WA
-org-26285971-1ea1-52a3-bb4e-7f9863cb15c4,Vg Jog Foundation,Bothell,WA
-org-9fba484b-4d0d-58fc-b28d-b238c6040b44,Washington State Homebrewers Collective,Bothell,WA
 org-8ba022fe-97a5-5412-9fdd-b105f11e7895,Youth Empowerment Services,Bothell,WA
-org-aa7b3a95-9e21-5089-bb31-206678c9c1c3,Bellingham Scottish Country Dancers,Bow,WA
 org-b39ba887-4802-5562-b19f-ee9c4408af10,Alternative Community Educational Society,Bremerton,WA
+org-3ab5f95b-6b33-52d8-97f6-c8ea97c36035,Bremerton Figure Skating Club,Bremerton,WA
+org-7332fcd8-37fd-5df1-9c71-895d548c0897,Bremerton Football Booster Club,Bremerton,WA
+org-7a10dbe0-4ce5-5a03-b4b9-0a3a1cadec83,Bremerton Parks Foundation,Bremerton,WA
+org-5643372d-7ba7-5241-ad90-6825b9d130e6,Bremerton Pilots Association,Bremerton,WA
+org-66a724e2-0cc9-5dc2-987e-581b7def2e75,Bremerton Soccer Club,Bremerton,WA
+org-403678d2-5792-58ac-afcd-40755fc7c297,Bremerton Wrestling Booster Club,Bremerton,WA
+org-7e074161-2497-545d-829d-ed5157baed31,Brownsville Yacht Club,Bremerton,WA
+org-96230b72-eb18-5a89-9c22-6efb51ba4b24,Changing Scene Theatre Northwest,Bremerton,WA
+org-2ba76f1e-8fd2-5667-83f7-e076a45d381c,Commit 360,Bremerton,WA
+org-d54fd611-c18c-5d2d-b78e-450698af29e9,Community Theatre Inc,Bremerton,WA
+org-c4345f52-7f36-5a78-bc7d-8b732876480e,Evergreen Bonsai Club Inc,Bremerton,WA
+org-772af369-5110-5343-9a40-cf1953d85738,Evergreen Chapter Amca Inc,Bremerton,WA
+org-cd16470a-adb4-56c6-bb61-1aa2ea35f370,Frontier Girls Silverdale Club,Bremerton,WA
+org-107e2581-373c-5697-a7d6-99628ef6c9d0,Gods Broken Home University,Bremerton,WA
+org-338cb105-ab0d-54a6-a23a-c6de4afbe652,Indian Motorcycle Riders Group Of Bremerton,Bremerton,WA
+org-dfbb4ad1-1711-57b5-8d77-e390a554b153,Kitsap Fair And Stampede Association,Bremerton,WA
+org-c881c842-5635-5ac4-9d96-ad72c182c025,Kitsap Fancy Crocheters Guild,Bremerton,WA
+org-9921edf7-0cad-5272-80fd-f7804cc580a6,Kitsap Peninsula Dance Theatre,Bremerton,WA
+org-7896843d-b050-5876-8293-51f8dce6b05e,Kitsap Peninsula Opera Guild,Bremerton,WA
+org-1babe573-aa5e-52e0-a960-4516883b9a73,Kitsap Philharmonic,Bremerton,WA
+org-47187a6e-c804-59d4-ba80-1bb66d2fafb0,Kitsap Pride Network,Bremerton,WA
+org-bc4afb4d-2e8b-5d50-b981-b6824d4f41b6,Kitsap Strong,Bremerton,WA
+org-1ee65e7c-fa29-5f90-b6cf-38a8221df7bc,Kitsap Tennis And Athletic Center,Bremerton,WA
+org-66cd6b67-58a3-5dd7-a929-76307c560d36,Love Me For Me,Bremerton,WA
+org-5bbc3c0d-180f-51f0-b7d8-0681df66aba4,Northwest Rat Terrier Association,Bremerton,WA
+org-bd4080c6-7076-566f-b736-a38755dcd4be,Olympic Adventure Experience,Bremerton,WA
+org-146b32ff-e077-573b-ba3b-aa21186da760,Olympic Peninsula Sports Union,Bremerton,WA
+org-7495b467-aed4-5f71-af7f-0af0f8a79536,Olympic Summer Baseball Club,Bremerton,WA
+org-e3563af8-f0db-579b-a7dd-0b7c711807b5,Olympics Edge Track And Field,Bremerton,WA
+org-11a26b34-d88a-5b79-a32f-6ad6dfe5137d,Panntoa,Bremerton,WA
+org-ddbfc98c-e3a2-5eee-8660-f89a5d7a90a6,Partnering For Youth Achievement,Bremerton,WA
+org-4ce459c5-b51e-5e93-9c87-0ffc426cb736,Peninsula Basketball Officials Association,Bremerton,WA
+org-079cdabe-f207-560f-bd96-7a675a79a1e1,Pinewood Community Club,Bremerton,WA
+org-70f08f8a-d8f8-51e0-8ef5-6956ac3ae918,Power House,Bremerton,WA
+org-fec76c32-b9be-5856-8e0d-b8692eb4b101,Seattle International Randonneurs,Bremerton,WA
+org-cad7e810-63ac-5283-8253-b504823d5c42,Sports Beyond,Bremerton,WA
+org-95c4a4d8-90ed-508c-bfc4-6b0d9f22e6fc,The Streetlight Network,Bremerton,WA
+org-6fe75a20-3fca-5f81-a13d-f2193f582189,United States Bowling Congress Inc,Bremerton,WA
+org-0a650b74-60ef-5a10-adb9-4565c5b7a728,Wa Trumpet Guild,Bremerton,WA
+org-64794c39-f725-5988-97ae-235047d74220,Warren Avenue Pee Wees,Bremerton,WA
+org-feafc13a-0d00-58c2-b4c3-22481c87f85b,Washington State University,Bremerton,WA
+org-f4021f7e-2d25-5f7a-8b7d-907fec76a33f,Washington Trumpet Guild,Bremerton,WA
+org-6f321eb3-5aa4-5fea-b96b-15c765f6436a,Wayzgoose Kitsap,Bremerton,WA
+org-f13b955b-79ee-5e25-b52f-fcf7c14cbba8,West Sound Cycling Club,Bremerton,WA
+org-5973a492-56b2-5500-8fd6-01dab46e0687,West Sound Roller Derby,Bremerton,WA
+org-4e054a72-f293-565b-97b7-36f616daef2e,Westsound Pickleball Community,Bremerton,WA
+org-ffdca693-d3f5-522c-a785-9707561c5203,Wrestling Supporting Wrestling,Bremerton,WA
+org-9cf38de0-e116-52c7-956e-0af042bfac58,Brewster Bearacudas Swim Club,Brewster,WA
+org-e8d9074b-5689-59a2-9fbb-5b1600dfcdeb,Brewster Community Senior Citizen Center,Brewster,WA
+org-67f42d31-9e14-5db6-8110-9cbb4f10bed0,Upper Valleyball Club,Bridgeport,WA
+org-ee8d2a24-81a2-5c14-b70c-03de2a7b12af,Ignite Worldwide,Brier,WA
+org-e7ad8fc7-634c-5460-99d1-51078de19c45,Innis Arden Ski Bus,Brier,WA
+org-39299ac5-8255-5e87-b8f6-db55cd7693a3,Puget Sound Academy,Brier,WA
+org-02e5abda-dd55-57be-a0a9-027aa1139721,Family Reclamation Project,Brinnon,WA
+org-34ad7977-4126-5bbb-ac78-576379d7fc06,Pleasant Harbor Yacht Club,Brinnon,WA
+org-c650f929-1d62-50a5-87a9-67afc30b8bbc,Cougar-charger Booster Club,Brownstown,WA
+org-d0315dbf-17d2-571f-a0b8-e6d69197c4fb,Battle Ground Highlands Little League,Brush Prairie,WA
+org-f09a6f49-89ea-5a97-8e52-4545d79b1899,Battle Ground Wrestling Foundation,Brush Prairie,WA
+org-0bbea637-ffd9-5d60-ae8e-246b7a9a5490,Brush Prairie Youth Sports,Brush Prairie,WA
+org-8d6325c4-25c2-53bf-8f8e-484ffbfd5976,Falcon Basketball Booster Club,Brush Prairie,WA
+org-631e2a0e-f565-5153-b2af-b27e77bae4cb,Hockinson Hoops Club,Brush Prairie,WA
+org-ec43ed69-a887-5039-af9a-60d27fd1718a,Hockinson Select Baseball Club,Brush Prairie,WA
+org-e0d7e0bd-8892-5594-8208-8216b92467d1,Latigo N Lace Drill Team,Brush Prairie,WA
+org-7aa71ce4-4c68-5e6e-bf82-60953866687f,Next Gen Leaders Foundation,Brush Prairie,WA
+org-ea1e4931-11f5-58ce-8020-8fa1fb0f6121,Phs Falcon Soccer Boosters,Brush Prairie,WA
+org-69d41f5e-1f76-5007-b47c-3e95c0ac4e9f,Prairie Dance Team Booster,Brush Prairie,WA
+org-71018ccc-77e6-5c77-8ea8-08666cd0c0dd,Prairie Football Boosters,Brush Prairie,WA
+org-e81e9e5a-8264-5c08-9fa1-af409c6ce199,Rocksolid Community Teen Center,Brush Prairie,WA
+org-c2b52cf1-c9a2-50c9-b624-32cc77ca3410,Silver Buckle Youth Equestrian Center,Brush Prairie,WA
+org-a55e7ed1-e988-5028-9205-afafee3af1a2,Enumclaw Athletic Association,Buckley,WA
+org-07177ea6-af34-592a-ac15-3eb3df684fe4,Enzian Swiss Ladies Choir,Buckley,WA
+org-1c2a2d51-dcb6-5c82-a83a-a21f3f5b60a9,Godsland Farm,Buckley,WA
+org-ed675308-e443-5563-8058-872cbf1ad61f,Iron Pigs Motorcycle Club,Buckley,WA
+org-e3d12355-a909-5f60-b009-e2ee46ced91f,Japan Karate Federation,Buckley,WA
+org-d72a950e-de1a-5428-b1a2-55c7682c7afa,Mount Rainier Futbol Club,Buckley,WA
+org-f04776f6-c9f7-592d-88a6-7dea3507f9f1,Northwest Sports Association,Buckley,WA
+org-f09d36bc-5106-5c14-8582-ad48b584db39,Pedals For The People,Buckley,WA
+org-a52e1eac-a787-5c8b-9d2c-378c237563c0,Plateau Sports Association,Buckley,WA
+org-4ceefdc1-7ed3-56a2-b70e-9336b3421f39,Wahset,Buckley,WA
+org-09e43bfd-0869-5f1f-bc6b-06f8617114b8,White River Girls Wrestling,Buckley,WA
+org-5d0917d4-5cc1-51fa-8c35-f3f8dfaf27f9,White River High School Baseball Bo Oster Club,Buckley,WA
+org-ca3811f7-77a8-570f-91ba-cdcee382a235,White River High School Boys Wrestl Ing Booster Club,Buckley,WA
+org-e584966c-4cf6-5b22-8a23-56bc58088138,White River Junior Wrestling Club,Buckley,WA
+org-ce6562ba-3e2f-5072-bc9c-d647b8235e2e,White River Lacrosse Booster Club,Buckley,WA
+org-d2bccaa1-cd1a-5e8b-95b1-e80f1678de6c,Burbank Wrestling Club,Burbank,WA
+org-5e6b1f02-fcc2-5bb3-a6ba-b2f0d8e47296,Columbia Basin Select,Burbank,WA
+org-a8f7963c-50f0-5173-8d90-9f696f2c876c,Columbia Burbank Class Of 2030,Burbank,WA
+org-57575e5e-0384-5d46-b0e7-36d8b2620c59,Two Rivers Riding Club,Burbank,WA
+org-b0968876-0ef9-5c70-ac9d-2915e952f569,Ancora,Burien,WA
+org-6f007bca-92f2-5fb9-8cdf-b1451345dabd,Burien Actors Theatre,Burien,WA
+org-d4c74a75-7480-593c-8a59-235385262241,Choose 180,Burien,WA
+org-55b23380-3633-52e9-8c48-3c565b124056,Evolution Basketball,Burien,WA
+org-1e616617-2b38-51df-ad4d-2df04c5403c4,FC Highline,Burien,WA
+org-194d0bbb-0d82-57b7-92e0-d3b97073b8f0,Friends Of Normandy Park Foundation,Burien,WA
+org-f9014752-b9ef-53c7-a28a-e0091846d902,Giving Greater Purpose Washington,Burien,WA
+org-1814c5fe-e54b-518c-8f9d-3c65050ee2e7,Highline Soccer Association,Burien,WA
+org-607d9abf-6959-52f5-974f-4d70729ed056,Hyak Alumni Reunion,Burien,WA
+org-d0d203a8-ccc7-5bca-b630-c3559a06afe3,Lifted Community,Burien,WA
+org-367c7056-4305-5eb4-9291-0be91efbb66a,Pearl Discovery,Burien,WA
+org-0cbdfc83-8a06-57c2-9aea-f477c2e95f62,Player Pathway Project,Burien,WA
+org-4345c49f-c6fc-54cd-9cc0-b9ee23d95ab3,The Yes Foundation Of White Center,Burien,WA
+org-e9baac6f-f2b0-5e78-9aef-0c06bd105ba4,Voices Of Tomorrow,Burien,WA
+org-05c173bd-570b-5cfa-9f4b-480e7a1160f2,White Center Kiwanis Youth Foundation,Burien,WA
+org-61b727c6-b1bd-5c46-91ef-225f4fd65f03,Behs Girls Golf Booster,Burlington,WA
+org-6855f9a9-f4db-5117-ae38-6dc36fb74112,Burlington Edison Boys Wrestling Booster,Burlington,WA
+org-3e540302-b317-52a7-966b-20f34204f877,Burlington Edison High School Basketball Booster Club,Burlington,WA
+org-ac4d9405-c3a5-5b47-9045-6db8ab86b339,Burlington Edison High School Tiger Football Booster Club,Burlington,WA
+org-a652da96-0540-58c9-9078-954ff68ecc2e,Burlington Edison Youth Football League,Burlington,WA
+org-12e87b90-1d9d-5b03-9bd8-2753eb61dcfb,Burlington-edison Girls Basketball Booster Club,Burlington,WA
+org-780aecfc-da00-5a93-9869-87d99350db13,Burlington-edison High School Girls Soccer Booster Club,Burlington,WA
+org-dd98020c-dca1-5ff3-8700-3b2902928e00,Burlington-edison Lacrosse Club,Burlington,WA
+org-27308a37-4707-5baf-998a-4b0ebd8db16d,Hoop For The Valley,Burlington,WA
+org-6aac13fe-e2cb-5795-91e8-95eba87ab739,Inspire Studios Nw Foundation,Burlington,WA
+org-877780b4-3e67-5008-b84b-fa7844850722,Outlaw Wrestling Club,Burlington,WA
+org-ab2df17c-37ae-5860-a347-85660f995fa1,Shelter Bay Chorus,Burlington,WA
+org-52a4d4f9-a76f-5d54-9cd0-3770326bfedf,Skagit County Fairgrounds Foundation,Burlington,WA
+org-c79b0b2c-eefb-5b61-b5ac-8df60f1d3fff,Skagit County R-c Club,Burlington,WA
+org-00d2b00d-f954-53fc-9ece-ee13bfb9c43c,Skagit Golf And Country Club,Burlington,WA
+org-322ed4be-8327-59eb-b3a3-fb7d6453bcb8,Skagit Quarter Midget Racing Club,Burlington,WA
+org-39cc2f88-225d-5b5c-90c2-089899874a0b,Skagit Valley Flyers Lacrosse Club,Burlington,WA
+org-e1f1bd77-43e4-5aa4-a944-ae94f0ca4b89,United States Bowling Congress Inc,Burlington,WA
+org-724da6a4-36aa-58f0-969c-3bdbed28e677,Washington State University,Burlington,WA
+org-7602dac0-2f71-563e-85d5-fc2dffbfc5ed,Arrowhead Ranch Foundation,Camano Island,WA
+org-a64334fc-80d5-5a88-87b1-bb8a36462bdf,Cama Beach Foundation,Camano Island,WA
+org-f87b27fb-54fa-5d5d-9542-f4b6cc3c1581,Camano Arts Association,Camano Island,WA
+org-ff20024d-235d-55c6-8309-b85238276467,Camano Stanwood Pickleball Association,Camano Island,WA
+org-844b1427-73df-5d33-886f-ec579b575956,Cascade Friends,Camano Island,WA
+org-f4525308-5de5-562d-85d7-93ee53f0fcd6,D-1 Elite,Camano Island,WA
+org-b7fd5e01-035d-5018-91e8-90cd481ca37c,Giles Memorial Skating Foundation,Camano Island,WA
+org-0a67abc5-cbbb-55e4-947c-8dc4628b0df4,Pnw Sugar Artist Charity,Camano Island,WA
+org-dd409b3c-bd50-5c58-a9d3-0d5363e5dd37,Stanwood Cannons Baseball And Softball,Camano Island,WA
+org-028b04c0-c4b6-5de2-aa65-12f83f1f942e,Stoa Defenders,Camano Island,WA
+org-6efbad6d-64d3-58c1-95e0-36bebcec7e43,C W Aviation Association,Camas,WA
+org-51e76f32-bbfe-57df-96d1-b55a38e8ce71,Camas Grad Night,Camas,WA
+org-bb5ca726-eb78-598f-ba73-a6928303cbfc,Camas Music Boosters,Camas,WA
+org-5435d271-0e18-531e-89fe-8a4426f9bea8,Camas Rugby Club,Camas,WA
+org-8ecb38ec-a484-5e4f-bbc7-0f694c60c1d9,Camas-washougal Babe Ruth Club,Camas,WA
+org-e756bc34-c08f-54dc-8b53-03267866f69b,Camas-washougal Flying Club Inc,Camas,WA
+org-535a2c81-823c-5ff2-91c8-a8a5dfec5c5a,Cheering For Children - Empire Athletics,Camas,WA
+org-1859aff3-8702-58af-8411-b61acfcddfc0,Clark County Titans Youth Foundation,Camas,WA
+org-45a7b9e8-9db6-5164-ae0e-7a7c17f53fcc,Columbia Future Forge,Camas,WA
+org-a1d24d5e-e054-5db0-b134-8f1e9855927a,Dance Evolution,Camas,WA
+org-13c6661d-e429-52cf-8ab3-89e49280f656,Evergreen Mustangs,Camas,WA
+org-267a6be0-f4eb-5abd-ba4e-fe6a96cbc7b9,Excel Nw Volleyball Club,Camas,WA
+org-ee126b20-5e35-571f-bba3-8b6593c08fc1,Feedback Project,Camas,WA
+org-0ca6f2fa-5a98-5c17-9126-d9a8c2d26b44,Fern Prairie Modelers Club,Camas,WA
+org-4ddc49f9-1976-565f-8e45-8eeb4179920f,Kp Sports Leadership Foundation,Camas,WA
+org-02b46f56-b7ce-52ff-8794-e02579908c07,Livewell Camas,Camas,WA
+org-4894d4da-cfc8-5a51-b675-f23e5cdfc573,Mountain View High School Lacrosse Club,Camas,WA
+org-fa977061-521c-5029-9dc0-ed66586080eb,Northwest Oil Painter Guild,Camas,WA
+org-dd771d95-d7a1-5eb3-8359-e9fb284b6efe,Nw Rampage,Camas,WA
+org-754eef6b-74a0-5759-8331-ef9ba68f19aa,Pacific Nw Vintage Snowmobile Club,Camas,WA
+org-a0e60083-7e29-5146-94a5-6916f3ea3197,Rising Above Daily,Camas,WA
+org-8ab77931-dfc3-589f-a15a-5d708942bc87,Union Cheer Boosters,Camas,WA
+org-3e6a656b-39b3-5d4c-a8ea-b8e81959fe5a,Union Vollyball Boosters,Camas,WA
+org-03c45f35-ab1a-564b-929b-abc7d711d161,Washington Hype,Camas,WA
+org-df9ebc24-1467-579c-a055-659733ae68dc,Chapter 430 Of The Experimental Aircraft Association,Carlsborg,WA
+org-e0dbd732-c2c5-5dcc-873e-a870c2285108,Clalllam County Junior Livestock Auction,Carlsborg,WA
+org-0b1e05eb-b534-5166-96ef-8c2eb307e824,Disabled Hikers,Carlsborg,WA
+org-b6e6f850-6cc9-507f-857f-987ec13f9a38,Nolypen Nosers,Carlsborg,WA
+org-710e1d97-221b-5758-b25b-eeb95492b2e0,American Legion Post 199 Bsa Troop 411 Foundation,Carnation,WA
+org-8c3d0157-f45c-5ddd-8ae3-5cd141e7c347,Carnation 4th Of July Committee,Carnation,WA
+org-96f2000d-bccc-5d03-a7f6-142112d95136,Carnation Farms,Carnation,WA
+org-ec1a4f15-839e-59f6-ad08-fc18f185b16e,Chs Cheer Booster Club,Carnation,WA
+org-f13c592f-3ec9-55cc-ab46-771dfe2b9b4e,International Race Drivers Club,Carnation,WA
+org-3b076b3d-0081-517d-865b-765c886e963b,Skamania County Saddle Club,Carson,WA
+org-4614f084-b0d6-5228-aa0f-c995f20d99ee,Cashmere Bulldog Youth Basketball,Cashmere,WA
+org-2505c644-cedf-5025-a1d1-2b47bc341430,Cashmere Community Coffee House,Cashmere,WA
+org-58f330f2-d85a-5c83-95bf-039d74cc7bd4,Cashmere Soccer Club,Cashmere,WA
+org-6eeec5e7-848d-567b-83bb-fa87c770bc65,Something Catchy,Cashmere,WA
+org-9ded019d-b94a-5843-914e-2b09f1fae6de,Castle Rock Quarter Midget Club,Castle Rock,WA
+org-923edb53-e57e-5df5-bfc9-9f73e8fb52f2,Castle Rock Youth Football League,Castle Rock,WA
+org-6d5ce235-c002-5f79-b38f-64adf3662047,Cowlitz County 4-H & Ffa Livestock Association,Castle Rock,WA
+org-8058ce5e-9879-51ef-a394-11f11086b50c,Cowlitz Elite Fastpitch,Castle Rock,WA
+org-2c0a9f21-87f3-5c06-9000-7228167d99d7,Friends Of The Castle Rock Fair,Castle Rock,WA
+org-d7dcd038-8e16-5408-8fe9-4fca0782f558,Kelso Wrestling Booster Club,Castle Rock,WA
+org-8ff60f63-cddb-5b7c-b9a1-a56780398b3e,Mima Marauders Club,Castle Rock,WA
+org-c5bacd8e-9cc7-5e9f-a184-8f4af2d0d257,North County Fastpitch Association,Castle Rock,WA
+org-960f4d8b-0faa-5709-a58a-c39ed3bcb70d,Thunder Mountain Wrestling Club,Castle Rock,WA
+org-3bb8810f-16fd-5d3f-8aac-96097ec8ff45,Toutle Lake Youth Cheer,Castle Rock,WA
+org-a3d26657-e4cb-5427-af36-268503e1e493,Veterans Motorcycle Outreach,Castle Rock,WA
+org-1de740e1-2717-5dcc-a234-06d143722246,Washington State University,Cathlamet,WA
+org-da08b0cb-ac82-5354-89ce-5e2a9b25de34,Washington Youth Golf Foundation,Cathlamet,WA
+org-1039452d-3927-5db5-bb51-88ca4c9dd12e,Artrails Of Southwest Washington,Centralia,WA
+org-c3139da1-40a0-54cf-898b-02f22c6851ed,Boys & Girls Club Of Lewis County,Centralia,WA
+org-ed86239d-acb5-5efc-9ecf-85ff85735685,Centralia Rifle Club And Jr Division,Centralia,WA
+org-b8431484-2e91-5d07-8207-165828cf8ed3,Centralia Tigers Booster Club,Centralia,WA
+org-e10ed5f7-fedc-50c5-9751-2950c0be950b,Centralia Youth Soccer,Centralia,WA
+org-328be25e-f925-57b0-aaee-b87d76871fcf,Evergreen Playhouse,Centralia,WA
+org-586c744d-0f69-5217-a919-0ace6f8bc4e0,Lewis County Swim Club,Centralia,WA
+org-0f3dbada-42ff-58d3-8768-963afa8dd090,Lewis County Youth Soccer Association,Centralia,WA
+org-a15454f3-1cfe-52cc-9b31-4212d72b3615,Little League Baseball Inc,Centralia,WA
+org-d8e14aa0-db98-5218-bdec-75628f8eec0b,Sabotage Northwest Fastpitch,Centralia,WA
+org-8968a7e2-a6d6-598f-a41e-84e071e771a3,Jt Ranch Vaulters,Chattaroy,WA
+org-0b9a5e5d-e2b5-5f0f-836c-ba9cd94e0f65,Ram Nation Boosters,Chattaroy,WA
+org-22002e2e-30ed-5d15-9309-c51b861ec83d,Advocate Foundation,Chehalis,WA
+org-63725ad7-b7e8-5c4e-bb21-4373928ee1a0,Chehalis Activators,Chehalis,WA
+org-c311908b-37b4-5323-9e1f-51870df78195,Chehalis Ballet Center,Chehalis,WA
+org-08fcd0bd-d1fb-5c71-b306-e2e916cb9fce,Chehalis Bearcat Booster Club,Chehalis,WA
+org-60bd3edb-d3d2-53d6-bc45-2359461aed34,Eaa Chapter 609 Experimental Aircraft Association,Chehalis,WA
+org-e8efca08-d45a-5ea3-af6b-5255a149c765,Empowering American Communities,Chehalis,WA
+org-56fc9f6d-fb61-5202-89e0-2bbff6f2f226,Friends Of Troop 373,Chehalis,WA
+org-986fa761-349b-58d3-bf2a-b86f74929665,Friends Of Westside Park,Chehalis,WA
+org-32fc6c08-ebdf-508e-8367-4b8f41b02a33,Lewis County Tennis Association,Chehalis,WA
+org-e6e4248a-974d-54e9-9060-c795715b3b41,Music And Arts Week,Chehalis,WA
+org-007da243-9254-5f0e-9986-e5eb67c306f0,Newaukum Valley Community Club,Chehalis,WA
+org-dd5cc35a-3472-57bc-8b49-ee94595c3e9c,Newaukum Valley Golf Men S Club,Chehalis,WA
+org-717c3839-b446-5254-963b-7b7d1c4a3e74,Noel Cole Fish & Wildlife Project,Chehalis,WA
+org-2e02ce14-0d11-5484-a018-d2ef32c27976,Promise Assembly 41 International Order Of The Rainbow For Girls,Chehalis,WA
+org-2b150aae-a090-5749-9a17-234ed6c8fd11,Southwest Washington Fair Association,Chehalis,WA
+org-fecb2ff5-64d1-5807-991a-b2cb13e1860b,Southwest Washington Junior Livestock Sale Committee,Chehalis,WA
+org-29e4c11a-ee11-5a1b-8f9f-b466da4a56f1,The United States Pony Clubs Inc,Chehalis,WA
+org-add75d03-cee8-58b2-af26-10a566365cfe,Toledo Soccer,Chehalis,WA
+org-6da63bb9-bdc8-58ef-bcbb-6cedf2d431fc,Washington State University,Chehalis,WA
+org-3b27e550-1ac9-5615-8e1b-027aab3aa1fd,Youth Sports Of Chehalis,Chehalis,WA

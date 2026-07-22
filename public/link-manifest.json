@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-21T06:58:42.810Z",
-  "count": 681,
+  "generatedAt": "2026-07-22T04:08:35.415Z",
+  "count": 684,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -423,6 +423,12 @@
       "url": "https://bookshop.org/shop/ParentCoachDesk",
       "sources": [
         "src/pages/books/index.astro"
+      ]
+    },
+    {
+      "url": "https://calmatters.org/environment/climate-change/2026/07/california-school-heat-illness-laws/",
+      "sources": [
+        "src/content/news/california-heat-safety-law-deadline-2026.md"
       ]
     },
     {
@@ -4376,9 +4382,14 @@
       "url": "https://www.uscg.mil/water-safety/",
       "sources": [
         "src/content/body/open-water-swim-safety.md",
-        "src/content/body/youth-crew-rowing-safety-briefing.md",
         "src/content/body/youth-triathlon-swim-safety.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.uscgboating.org/",
+      "sources": [
+        "src/content/body/youth-crew-rowing-safety-briefing.md"
       ]
     },
     {
@@ -4447,7 +4458,7 @@
       ]
     },
     {
-      "url": "https://www.ussa.org/",
+      "url": "https://www.usskiandsnowboard.org/",
       "sources": [
         "src/content/body/ski-snowboard-helmets.md"
       ]
@@ -4564,8 +4575,13 @@
       "sources": [
         "src/content/body/lightning-at-the-field.md",
         "src/content/body/lightning-strike-survivor.md",
-        "src/content/body/youth-golf-safety-briefing.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.weather.gov/safety/lightning-safety",
+      "sources": [
+        "src/content/body/youth-golf-safety-briefing.md"
       ]
     },
     {
