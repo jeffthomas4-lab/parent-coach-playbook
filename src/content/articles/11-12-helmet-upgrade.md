@@ -19,9 +19,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-03-29
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-07-21
 ---
 
 At eleven to twelve, your kid is going to outgrow their helmet. The question is whether you upgrade or buy new. It matters.

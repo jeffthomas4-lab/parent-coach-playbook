@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-07
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. AAP, FARE, AAAAI cited. The epi-first-then-911 protocol is the published standard."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 A kid with a known allergy stops mid-game and starts struggling to breathe. Hives blooming on the arms. Lips swelling. Nobody panics, because the team manager pulls the auto-injector out of the first-aid bag, the head coach administers it, and someone calls 911 in that order.

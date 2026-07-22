@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-06
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. SafeSport gap for private coaches is the load-bearing point. NSCA cited for credentialing."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 The private trainer industry runs parallel to youth-sports teams and operates under almost no shared oversight. Anyone can rent a batting cage, buy business cards, and start charging $80 an hour to teach 10-year-olds. There is no licensing requirement in any U.S. state for "skills coach" or "personal trainer for athletes."

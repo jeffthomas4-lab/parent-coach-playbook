@@ -24,9 +24,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-08
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. USA Wrestling, NFHS, NATA cited. Weight-cutting framed honestly with the published cardiac risks."
+  reviewerNotes: "Sensitive flagged. USA Wrestling, NFHS, NATA cited. Weight-cutting framed honestly with the published cardiac risks. Corrected the weight-descent line: minimum-weight rule is a body-fat-percentage floor, not a flat percent-below-bodyweight cap, and added the 2026-27 NFHS change raising the girls' floor from 12 to 19 percent."
+  factCheckGoodThrough: 2026-10-15
 ---
 
 Wrestling is a contact sport played on a mat, with weight classes, with a culture of weight management that makes it different from any other youth sport. The injury profile reflects that. The list below is what shows up most in published youth-wrestling epidemiology, ranked by frequency.
@@ -49,7 +50,7 @@ A kid with an active skin infection should not wrestle. Programs without these p
 
 USA Wrestling and most state high school associations have weight-management programs that monitor body fat and limit allowable weight loss per week. The standards exist because the unregulated culture produced deaths in the 1990s and the rules came in response.
 
-For youth wrestlers, the standard published guidance: do not cut more than 1 to 1.5 percent body weight per week, no more than 7 percent total below natural body weight at any season point, and never use rapid dehydration techniques (saunas, plastic suits, vomiting, laxatives).
+For youth wrestlers, the standard published guidance: do not cut more than 1 to 1.5 percent body weight per week, do not drop below the certified minimum body-fat floor (7 percent for boys, 19 percent for girls under the 2026-27 NFHS standard, raised from 12 percent the prior season), and never use rapid dehydration techniques (saunas, plastic suits, vomiting, laxatives).
 
 Programs that prioritize "going down a weight class" over kid health are programs whose culture is the risk.
 

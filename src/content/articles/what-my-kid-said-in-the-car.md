@@ -21,9 +21,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-05
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
   reviewerNotes: ""
+  factCheckGoodThrough: 2027-07-21
 ---
 
 You're driving home from practice. Your kid is in the back seat, helmet of hair smashed to one side, picking at a hole in his sock.

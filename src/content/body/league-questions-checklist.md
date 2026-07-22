@@ -37,9 +37,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-05
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
   reviewerNotes: "First-of-year publish. Twelve questions every parent should ask before paying registration. Sourced to SafeSport, CDC, KSI for the policies the questions probe."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 This is the safety vetting list. You walk to the registration table with it, you ask the twelve questions, and you watch how the league answers.

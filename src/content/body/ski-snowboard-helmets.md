@@ -9,7 +9,7 @@ ageBands: ["all-ages"]
 publishedAt: 2026-01-03
 governingBodies:
   - name: "U.S. Ski & Snowboard"
-    url: "https://www.ussa.org/"
+    url: "https://www.usskiandsnowboard.org/"
   - name: "National Ski Areas Association (NSAA)"
     url: "https://www.nsaa.org/"
   - name: "American Society for Testing and Materials (ASTM) International"
@@ -25,9 +25,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-03
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. U.S. Ski & Snowboard, NSAA, ASTM, CPSC cited. The 30 to 50 percent reduction figure is well-published."
+  reviewerNotes: "Sensitive flagged. U.S. Ski & Snowboard, NSAA, ASTM, CPSC cited. The 30 to 50 percent reduction figure is well-published. Fixed stale USSA link (org rebranded to U.S. Ski & Snowboard in 2017) to usskiandsnowboard.org."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 Skiing and snowboarding produce a meaningful share of youth-sport head injuries among kids in northern and mountain communities. The published evidence on helmet effectiveness is strong: helmets reduce head-injury rates by 30 to 50 percent in skiers and snowboarders, with similar reductions in severe head injuries.

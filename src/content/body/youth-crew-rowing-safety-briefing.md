@@ -5,14 +5,14 @@ subhub: "safety"
 format: "sport-briefing"
 sportTags: ["crew"]
 ageBands: ["13-14", "15-plus"]
-publishedAt: 2026-01-1
+publishedAt: 2026-01-01
 governingBodies:
   - name: "USRowing"
     url: "https://usrowing.org/"
   - name: "American Academy of Orthopaedic Surgeons (AAOS) / OrthoInfo"
     url: "https://orthoinfo.aaos.org/"
-  - name: "United States Coast Guard (USCG): Water Safety"
-    url: "https://www.uscg.mil/water-safety/"
+  - name: "United States Coast Guard (USCG): Boating and Water Safety"
+    url: "https://www.uscgboating.org/"
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -22,9 +22,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-01
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
-  reviewerNotes: "USRowing, AAOS, USCG cited. Crew is high-volume rowing in open water."
+  reviewerNotes: "USRowing, AAOS, USCG cited. Crew is high-volume rowing in open water. Fixed dead USCG link (uscg.mil/water-safety no longer resolves) to uscgboating.org."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 Crew and rowing produce overuse back injuries at one of the highest rates among adolescent sports, alongside the water-safety risks of any open-water activity. The catastrophic risks are rare but documented.

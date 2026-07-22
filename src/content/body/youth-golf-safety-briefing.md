@@ -14,7 +14,7 @@ governingBodies:
   - name: "American Academy of Orthopaedic Surgeons (AAOS) / OrthoInfo"
     url: "https://orthoinfo.aaos.org/"
   - name: "National Weather Service (NWS): Lightning Safety"
-    url: "https://www.weather.gov/safety/lightning"
+    url: "https://www.weather.gov/safety/lightning-safety"
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -24,9 +24,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-02
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
-  reviewerNotes: "USGA, U.S. Kids Golf, AAOS, NWS cited. Lightning is the load-bearing acute risk; overuse is the load-bearing chronic risk."
+  reviewerNotes: "USGA, U.S. Kids Golf, AAOS, NWS cited. Lightning is the load-bearing acute risk; overuse is the load-bearing chronic risk. Updated NWS link to current canonical lightning-safety URL."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 Golf looks like one of the safest youth sports. No contact, controlled environment, slow pace. The injury data is more interesting at competitive levels. Lightning is the leading cause of golf-related deaths in the United States. Overuse back and elbow injuries are common in serious junior golfers. Cart and club incidents, though rare, are associated with documented serious injuries.

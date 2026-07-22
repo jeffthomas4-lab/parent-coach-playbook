@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-04
+  claudeReviewedAt: 2026-07-21
   status: claude-reviewed
   reviewerNotes: "Sensitive flagged. AASP, APA Division 47, SafeSport cited. The licensed-vs-credentialed-vs-uncredentialed framework is the load-bearing distinction."
+  factCheckGoodThrough: 2027-07-21
 ---
 
 The mental performance coaching industry has expanded rapidly in youth sports. Parents whose kids face pre-game anxiety, performance plateaus, or post-injury identity struggles are increasingly offered "mental performance" services. Some of these are legitimate. Many are not.
