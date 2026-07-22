@@ -5,7 +5,7 @@
   "source_report": "reports/link-health/LINK_HEALTH_2026-07-20.md",
   "consumer": "pcd-affiliate-replacement-sourcer (Arnie)",
   "consumer_instructions": "Work items where status=='open'. For each: source a replacement matching product_intent, browser-verify it is live + In Stock + correct product (space Amazon requests 5-10s apart), then write the proposed new destination into resolution.proposed_destination and set status='proposed'. Do NOT edit affiliates.json or deploy — Jeff reviews and pushes. Reconcile against affiliate-governance.json and lifecycle.json before proposing (a slug may already be owned/retired there). If no good replacement exists, set status='retire-recommended' with a reason.",
-  "totals": { "open": 2, "high_priority": 1, "medium_priority": 0 },
+  "totals": { "open": 0, "high_priority": 0, "medium_priority": 0 },
   "items": [
     {
       "slug": "soccer-ball-size4",
@@ -18,8 +18,20 @@
       "product_intent": "Size 4 youth soccer ball (ages ~8-12), traditional/entry-level",
       "suggested_search_query": "size 4 youth soccer ball",
       "priority": "high",
-      "status": "open",
-      "resolution": null
+      "status": "approved",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B007ZQWLZE?tag=parentcoachpl-20",
+        "proposed_asin": "B007ZQWLZE",
+        "product_title": "Champion Sports Retro Soccer Ball, Size 4, Black/White",
+        "price": "$10.99",
+        "why_fits": "Classic black-and-white traditional design, official size/weight, explicitly 'ideal for players ages 8 to 12' — matches original intent and price point; Amazon's Choice, 4.4 stars, 3,400 ratings.",
+        "runner_up": "B000067R1H (Franklin Sports Competition 100 Soccer Ball, Size 4 — $21.99, 4.5 stars, 7,756 ratings, In Stock, but pricier for a single inflated ball)",
+        "validated_at": "2026-07-21",
+        "validated_in_browser": true,
+        "approved_by": "Jeff Thomas",
+        "approved_at": "2026-07-21",
+        "note": "Named-product card on guides/soccer.md (ages 8-10 section) said 'Wilson Traditional soccer ball, size 4' and claimed 'same construction as the size-3.' Updated card copy to 'Champion Sports Retro soccer ball, size 4' with accurate description before approval, since the new product is a different brand. No corrections.ts entry needed — page copy now matches the destination, not a stale claim a returning reader needs a correction notice for."
+      }
     },
     {
       "slug": "soccer-shin-guards-ankle-youth",
@@ -32,8 +44,20 @@
       "product_intent": "Youth soccer shin guards with ankle protection/sleeve",
       "suggested_search_query": "youth soccer shin guards ankle protection",
       "priority": "low",
-      "status": "open",
-      "resolution": null
+      "status": "approved",
+      "resolution": {
+        "proposed_destination": "https://www.amazon.com/dp/B00R2VBASG?tag=parentcoachpl-20",
+        "proposed_asin": "B00R2VBASG",
+        "product_title": "Vizari Soccer Shin Guards with Ankle Protection for Kids, Youth, Adult Sizes (Ages 3+) — Size Small, Blue/Maroon",
+        "price": "$9.29",
+        "why_fits": "Same Vizari brand family as the original Malaga listing, explicit padded ankle protection built in, sized for youth (kids 4-6/6-8/8-10/10-12/12-14 range), 4.6 stars across 1,003 ratings — a much deeper review base than other ankle-protection candidates.",
+        "runner_up": "B08V5JH6HC (Vizari Matera Soccer Shin Guards with Ankle Protection, XX-Small — $9.36, 4.6 stars but only 9 ratings and a smaller size)",
+        "validated_at": "2026-07-21",
+        "validated_in_browser": true,
+        "approved_by": "Jeff Thomas",
+        "approved_at": "2026-07-21",
+        "note": "No named-product card references this slug anywhere on site, only generic inline text links. Pure link-target swap, no correction needed."
+      }
     }
   ]
 }
