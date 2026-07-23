@@ -1,13 +1,14 @@
 {
   "current_authority": [
-    "README.md",
     "DEPLOYMENT-RUNBOOK.md",
-    "INCIDENT-RUNBOOK.md",
-    "PCD-OPERATING-MANUAL.md",
     "EDITORIAL_STANDARDS.md",
     "EDITORIAL_VOICE.md",
+    "INCIDENT-RUNBOOK.md",
+    "PCD-OPERATING-MANUAL.md",
+    "README.md",
     "SAFETY_EDITORIAL_STANDARDS.md",
-    "STYLE.md"
+    "STYLE.md",
+    "VOICE-RUBRIC.md"
   ],
   "current_business_input": [
     "AFFILIATE_FILL.xlsx",
@@ -46,16 +47,18 @@
     "BACKUP.md",
     "CAMPS_BUILD_PROMPT.md",
     "CONTENT_PLAN_50_JULY2026.md",
-    "NEXT_AUDIT.md",
-    "NEXT-SESSION-PROMPT.md",
     "NEXT-SESSION-PROMPT-15PLUS-BATCH2.md",
     "NEXT-SESSION-PROMPT-BRANCH-PORT.md",
+    "NEXT-SESSION-PROMPT.md",
+    "NEXT_AUDIT.md",
+    "PCD-AFFILIATE-BEST-PRACTICE-PLAN.md",
     "PCD-AUTOMATION-BUILD-PLAN.md",
     "PCD-CODEX-BUILD-PLAN-v2-2026-07-18.md",
     "QUEUE.md",
     "SAFETY_PLAN.md",
     "SITE_IMPROVEMENTS.md",
-    "TODO_LATER.md"
+    "TODO_LATER.md",
+    "editorial-queue.md"
   ],
   "historical_or_superseded": [
     "ASTRO5_POST_DEPLOY_CHECKLIST.md",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "as_of": "2026-07-18",
-  "inventory_sha256": "099819c8f833b7bb1851792fbf7d69322375a6a47781ee93acc9aaeabd3ef284",
+  "as_of": "2026-07-23",
+  "inventory_sha256": "51817018316dbfd336f875eb038fe6c5943a377384b08939c79db6609afdc2c7",
   "policy": {
     "refresh_months": 18,
     "source_reference_scope": "literal contextual references only; generated hub links require emitted-artifact evidence",
@@ -15,7 +15,7 @@
     ]
   },
   "summary": {
-    "live_articles": 804,
+    "live_articles": 805,
     "refresh_due": 0,
     "fact_check_due": 0,
     "refresh_due_without_explicit_source_reference": 0,
