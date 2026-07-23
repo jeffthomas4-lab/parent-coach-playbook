@@ -28,6 +28,7 @@
   ],
   "operations_governance_and_coordination": [
     ".claude",
+    ".githooks",
     ".github",
     "agents",
     "automation",
