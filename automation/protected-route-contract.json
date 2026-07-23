@@ -1,5 +1,17 @@
 {
   "routes": [
+    { "source": "src/pages/admin/affiliates.astro", "control": "app-auth" },
+    { "source": "src/pages/admin/agents.astro", "control": "app-auth" },
+    { "source": "src/pages/admin/data-quality.astro", "control": "app-auth" },
+    { "source": "src/pages/api/admin/agents/[id]/update.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/data-quality/fix.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/editorial/set-status.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/link-health/recheck.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/link-health/resolve.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/link-health/suggest-replacement.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/source-quality/reject-domain.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/source-quality/skip.ts", "control": "mutation" },
+    { "source": "src/pages/api/admin/suggestions/[id]/promote.ts", "control": "mutation" },
     { "source": "src/pages/admin/api/camps/[id]/reject.ts", "control": "mutation" },
     { "source": "src/pages/admin/api/camps/[id]/verify.ts", "control": "mutation" },
     { "source": "src/pages/admin/camps/[id].astro", "control": "mutation" },
