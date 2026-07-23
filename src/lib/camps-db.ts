@@ -144,6 +144,14 @@ export interface Camp {
   featured: 0 | 1;
   featured_order: number | null;
   featured_until: string | null;
+  // "More info" flow (migrations/0018_camp_info_requests.sql). Set together
+  // by requestCampInfo when an admin asks the research task to look for
+  // something specific. info_request_resolved_at is set by that task once it
+  // has either filled in what it found or rejected the camp outright.
+  info_requested_at: string | null;
+  info_requested_by: string | null;
+  info_request_notes: string | null;
+  info_request_resolved_at: string | null;
 }
 
 export type CampApprovalBlockCode = 'dates_missing' | 'dates_invalid' | 'dates_reversed' | 'session_ended' | 'approval_state_changed';
@@ -295,7 +303,11 @@ const CAMP_SELECT = `
     COALESCE(p.awaiting_review, 0)                        AS awaiting_review,
     COALESCE(p.featured, 0)                               AS featured,
     p.featured_order,
-    p.featured_until
+    p.featured_until,
+    p.info_requested_at,
+    p.info_requested_by,
+    p.info_request_notes,
+    p.info_request_resolved_at
   FROM programs p
   JOIN organizations o ON p.organization_id = o.id
 `;
@@ -674,11 +686,38 @@ export async function listPendingCamps(db: D1Database): Promise<Camp[]> {
   const result = await db
     .prepare(
       `${CAMP_SELECT}
-       WHERE p.pcd_status = 'pending' OR p.awaiting_review = 1
+       WHERE (p.pcd_status = 'pending' OR p.awaiting_review = 1)
+         AND (p.info_requested_at IS NULL OR p.info_request_resolved_at IS NOT NULL)
        ORDER BY p.submitted_at ASC NULLS LAST`,
     )
     .all<Camp>();
   return result.results ?? [];
+}
+
+// ---------- More info request ----------
+// Counterpart to approveCamp/rejectCamp. Pulls a camp out of the visible
+// pending queue (see the WHERE clause above) and hands it to the unattended
+// research task with the admin's freeform note on what's missing. The task
+// runs this exactly once — see migrations/0018_camp_info_requests.sql — and
+// either fills in what it finds (clearing info_requested_at so the camp
+// reappears in the queue for a normal decision) or rejects the camp outright.
+export async function requestCampInfo(
+  db: D1Database,
+  id: string,
+  requester: string,
+  notes: string,
+): Promise<Camp | null> {
+  const now = nowIso();
+  await db
+    .prepare(
+      `UPDATE programs
+       SET info_requested_at = ?, info_requested_by = ?, info_request_notes = ?,
+           info_request_resolved_at = NULL
+       WHERE id = ?`,
+    )
+    .bind(now, requester, notes, id)
+    .run();
+  return getCampById(db, id);
 }
 
 export async function listApprovedUnverifiedCamps(db: D1Database): Promise<Camp[]> {

@@ -1,0 +1,20 @@
+# Confirmed false positives from a full-history gitleaks dry run, 2026-07-22 (Packet C).
+# Each entry verified by hand before being added here — none are real credentials.
+#
+# tests/api/camps-suggest.test.ts:49 — idempotency-key test fixture ('retry_key_1234567890'),
+# a readable literal string, not a random secret.
+21f282de8b5b79a5f1108a9f3288efe2c39cb060:tests/api/camps-suggest.test.ts:generic-api-key:49
+#
+# tests/customer-lifecycle.integration.test.ts:142 — mock SHA-256 placeholder ('9'.repeat(64)),
+# not a real hash or token.
+21f282de8b5b79a5f1108a9f3288efe2c39cb060:tests/customer-lifecycle.integration.test.ts:generic-api-key:142
+#
+# wrangler.production.jsonc / wrangler.jsonc — Cloudflare Access Application Audience (AUD) tags.
+# Not a bearer credential (an audience identifier used in JWT validation, not a secret that
+# grants access on its own), already in a private repo. Flagged for Jeff's confirmation in
+# SECURITY-AUDIT.md rather than silently dismissed. Appears at two line positions each because
+# the same value persisted across two commits as the surrounding config was edited.
+21f282de8b5b79a5f1108a9f3288efe2c39cb060:wrangler.production.jsonc:generic-api-key:84
+21f282de8b5b79a5f1108a9f3288efe2c39cb060:wrangler.jsonc:generic-api-key:104
+9bea6cffd6e286d33f5f2edf5cb4577389996878:wrangler.production.jsonc:generic-api-key:46
+6635ef367bf0776fef5e3de548b1daa10da8345b:wrangler.jsonc:generic-api-key:74

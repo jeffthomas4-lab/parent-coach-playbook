@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import proofData from '../data/proof.json';
+import type { ProofFile, ProofItem } from '../lib/proof';
+import { approvedItems, hasAnyApprovedItem } from '../lib/proof';
+
+const proof = proofData as ProofFile;
+const groups = proof.groups.map((group) => ({
+  ...group,
+  approved: approvedItems(group),
+}));
+const anyApproved = hasAnyApprovedItem(proof);
+
+const sourceLabels: Record<string, string> = {
+  google: 'Google',
+  yelp: 'Yelp',
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  x: 'X',
+  email: 'Email',
+  sms: 'Text',
+  text: 'Text',
+  'third-party': 'Third party',
+  other: 'Other',
+};
+
+const sourceLabel = (item: ProofItem) => sourceLabels[item.source] ?? item.source;
+
+// Share-your-experience form posts to /api/proof-submit, which is SSR and
+// currently gated behind PROOF_SUBMIT_ENABLED (off by default -- see that
+// route's header comment). The form itself is safe to ship live now.
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+const productOptions = proof.groups.map((group) => ({ id: group.id, label: group.label }));
+---
+
+<BaseLayout
+  title="Proof"
+  description="Real feedback from parents who use Parent Coach Desk, grouped by what it is about."
+>
+  <section class="border-b border-bone">
+    <div class="container-px py-12 md:py-16">
+      <Eyebrow text="Reviews" class="mb-3" />
+      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+        {proof.headline}
+      </h1>
+      <p class="font-display text-ink-soft text-xl mt-5 max-w-3xl leading-snug">
+        {proof.intro}
+      </p>
+    </div>
+  </section>
+
+  {!anyApproved && (
+    <section class="border-b border-bone bg-paper-warm">
+      <div class="container-px py-8">
+        <p class="font-display text-ink-soft text-lg max-w-2xl">
+          Real reviews are being collected and will appear here.
+        </p>
+      </div>
+    </section>
+  )}
+
+  {groups.map((group) => (
+    <section class="border-b border-bone">
+      <div class="container-px py-10">
+        <h2 class="font-display text-ink text-2xl font-medium mb-6">{group.label}</h2>
+
+        {group.approved.length === 0 ? (
+          <p class="font-display text-ink-soft">
+            Real reviews are being collected and will appear here.
+          </p>
+        ) : (
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {group.approved.map((item) => (
+              <article class="border border-bone bg-paper-warm p-6 flex flex-col">
+                <blockquote class="font-display italic text-ink text-lg leading-snug m-0">
+                  "{item.quote}"
+                </blockquote>
+                <div class="mt-4 t-label text-ink-soft">
+                  {item.name}{item.context ? `, ${item.context}` : ''}
+                </div>
+                <div class="mt-2 t-label text-ink-soft">
+                  {sourceLabel(item)}
+                </div>
+                {item.sourceUrl && (
+                  <a href={item.sourceUrl} rel="noopener" class="t-cta mt-4" target="_blank">
+                    See the original ↗
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section class="border-t border-bone bg-paper-warm">
+    <div class="container-px py-10 md:py-14">
+      <h2 class="font-display text-ink text-2xl font-medium mb-2">Share your experience</h2>
+      <p class="font-display text-ink-soft mb-6 max-w-2xl">
+        Used something on this site and it helped, or it didn't? Tell us in your own words. We read every submission before anything goes on this page, and nothing gets posted without checking back with you first if we need to.
+      </p>
+
+      <form id="proof-share-form" class="max-w-2xl grid gap-6" novalidate>
+        <!-- Honeypot. Hidden from users via CSS. Bots will fill it. -->
+        <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+          <label>Website (leave empty)
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
+        <fieldset class="grid gap-4">
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">What happened</span>
+            <textarea name="quote" required maxlength="2000" rows="4" placeholder="Tell us what you used and how it went, in your own words." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none"></textarea>
+          </label>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm font-medium">Your name</span>
+              <input name="name" required maxlength="120" placeholder="First name and last initial is fine" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+            <label class="grid gap-1">
+              <span class="font-display italic text-ink text-sm font-medium">Context (optional)</span>
+              <input name="context" maxlength="200" placeholder="e.g. Youth soccer parent, Tacoma" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            </label>
+          </div>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">What is this about</span>
+            <select name="product" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+              <option value="">Not sure / the site in general</option>
+              {productOptions.map((option) => (
+                <option value={option.id}>{option.label}</option>
+              ))}
+            </select>
+          </label>
+
+          <label class="grid gap-1">
+            <span class="font-display italic text-ink text-sm font-medium">Link to where you posted this (optional)</span>
+            <input name="sourceUrl" type="url" placeholder="https://..." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+          </label>
+        </fieldset>
+
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+        <div class="flex items-center gap-4 pt-2">
+          <button type="submit" class="btn">Send it</button>
+          <p class="font-display italic text-ink-soft text-sm hidden font-medium" data-status aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <script>
+    const form = document.getElementById('proof-share-form') as HTMLFormElement | null;
+    const status = document.querySelector<HTMLElement>('[data-status]');
+    if (form && status) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.classList.remove('hidden');
+        status.textContent = 'Sending...';
+        status.style.color = '#5F5448';
+
+        const storageKey = 'pcd:proof:share:idempotency-key';
+        let idempotencyKey = sessionStorage.getItem(storageKey);
+        if (!idempotencyKey) {
+          idempotencyKey = crypto.randomUUID();
+          sessionStorage.setItem(storageKey, idempotencyKey);
+        }
+        const fd = new FormData(form);
+        fd.set('idempotency_key', idempotencyKey);
+        fd.set('source', 'form');
+        try {
+          const res = await fetch('/api/proof-submit', { method: 'POST', body: fd, headers: { 'Idempotency-Key': idempotencyKey } });
+          const data = (await res.json()) as { ok: boolean; error?: string };
+          if (!res.ok || !data.ok) {
+            status.textContent = data.error ? `Couldn't send: ${data.error}` : 'Something went wrong. Try again or email support@parentcoachdesk.com.';
+            status.style.color = '#9E5228';
+            return;
+          }
+          form.reset();
+          sessionStorage.removeItem(storageKey);
+          status.textContent = 'Thanks. We read every submission before it goes on this page.';
+          status.style.color = '#5C7459';
+        } catch (err) {
+          status.textContent = 'Network error. Try again.';
+          status.style.color = '#9E5228';
+        }
+      });
+    }
+  </script>
+</BaseLayout>

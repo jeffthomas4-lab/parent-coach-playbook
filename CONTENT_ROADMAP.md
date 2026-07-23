@@ -94,7 +94,7 @@ Scripts and frameworks for the hardest parent conversations.
 | How to handle a parent yelling at the ref | Editorial | Team Parent · Communication | PIPELINE |
 | Disagreeing with your co-coach in front of the team | Editorial | Team Parent · Communication | PIPELINE |
 | The friend you coached with who isn't coming back | Editorial | Drive Home | PIPELINE |
-| What to say when a parent asks "why isn't my kid pitching?" | Editorial | Team Parent · Communication | PIPELINE |
+| What to say when a parent asks "why isn't my kid pitching?" | Editorial | Team Parent · Communication | COVERED (how-to-talk-to-the-coach-about-playing-time.md, playing-time-how-to-have-the-conversation.md, how-to-handle-playing-time-complaints.md, when-a-parent-emails-about-playing-time.md already cover this ground) |
 
 ---
 

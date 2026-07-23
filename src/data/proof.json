@@ -1,0 +1,41 @@
+{
+  "headline": "Why people trust Parent Coach Desk",
+  "intro": "This page holds real feedback from parents who use the site, grouped by what it is about. We are collecting reviews now and will post them here as they come in.",
+  "groups": [
+    {
+      "id": "site-wide",
+      "label": "Parent Coach Desk overall",
+      "items": []
+    },
+    {
+      "id": "gear-files",
+      "label": "Gear Files (what to buy)",
+      "items": []
+    },
+    {
+      "id": "camps",
+      "label": "Camps directory",
+      "items": []
+    },
+    {
+      "id": "coaching-drills",
+      "label": "Drills and coaching tips",
+      "items": []
+    },
+    {
+      "id": "tools",
+      "label": "Tools (cost calculator, season calendar, and more)",
+      "items": []
+    },
+    {
+      "id": "team-parent",
+      "label": "Team parent resources",
+      "items": []
+    },
+    {
+      "id": "friday-letter",
+      "label": "The Friday Letter newsletter",
+      "items": []
+    }
+  ]
+}

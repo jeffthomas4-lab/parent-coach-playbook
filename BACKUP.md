@@ -31,6 +31,14 @@ The count is now tracked in `scripts\BACKUP-PROVING-LOG.md`, which the script ap
 
 The prior script, `scripts\backup-d1-activity-radar.ps1`, had no retention rule and no restore doc. It is retired in favor of the one above and kept only for history. The `backup-d1.ps1` before that dumped the retired flat `camps` table and is also retired. See `activityradar-archive/README.md`.
 
+## Layer 2b: off-machine D1 export (Cloudflare Worker, added 2026-07-22)
+
+**The Cowork `pcd-backup` scheduled task (weekly, Saturday, separate from the PS1 script above) was a false success and is superseded as of 2026-07-22.** Its prompt dumped the D1 to `backups/<date>/` in this repo and tried to `git add` + push it, but `backups/` is `.gitignore`'d (line 45) for exactly the reason described above — `git add backups/` on a gitignored path silently stages nothing, so every run pushed zero data while reporting success. The same lesson this section already learned about the PS1 script (don't commit multi-hundred-MB dumps) never reached the scheduled task.
+
+`worker-backup/` (a Cloudflare Worker with a Cron Trigger, see `worker-backup/README.md`) replaces it: exports `activity-radar` straight to the `pcd-db-backups` R2 bucket on the same weekly cadence, verifies every table's row count against an independent `COUNT(*)`, and alerts to Slack on any failure. No git, no size limit, no local-machine dependency. This is the offsite-copy answer the "What's NOT covered" section below used to flag as "not decided yet."
+
+Cutover is not automatic: the Cowork task is not modified by this change and keeps firing into the void (harmless — it still backs up nothing) until Jeff disables it, planned after the Worker records 2-3 verified runs in its own `backup-log.json`.
+
 Run manually any time:
 
 ```powershell
@@ -98,7 +106,7 @@ Camp hero photos live in the `activityradar-photos` R2 bucket (bound as `PHOTOS`
 - Cloudflare account itself: if you lose access to the account, everything Cloudflare-hosted (Pages, D1, R2) goes with it. Document your billing email and 2FA recovery codes somewhere safe (1Password, Bitwarden, or even a paper printout in a fireproof box).
 - The Coach Jeff Thomas site: doesn't use D1 or R2, so layer 1 (GitHub) covers it fully.
 - Notion content: separate system, separate backup. Notion has built-in version history but no offline export by default. Periodically export your Notion workspace to ZIP via Notion → Settings → Workspace → Export.
-- **D1 snapshots are local-only as of 2026-07-13** (see Layer 2 above) — if this machine's hard drive dies the same day as a bad D1 write, there's no offsite copy of the dump. D1's own Time Travel (30-day point-in-time restore, no export needed) covers the "bad write" case without depending on this machine at all, which is probably the real answer here. If you want a true offsite copy of the full dump, that needs somewhere other than this GitHub repo — an R2 bucket (`wrangler r2 object put`) or a cloud drive folder, not decided yet.
+- **D1 snapshots are local-only as of 2026-07-13** (see Layer 2 above) — the PS1 script's dumps still never leave this machine. D1's own Time Travel (30-day point-in-time restore, no export needed) covers the "bad write" case without depending on this machine at all. **The true offsite copy is now built** (see Layer 2b, added 2026-07-22): `worker-backup/` exports weekly straight to R2, independent of this machine, verified by row count. It has not yet completed its first 2-3 verified runs as of this writing — check `backup-log.json` in the `pcd-db-backups` R2 bucket for the current count before relying on it as proven.
 
 ## Quick check
 

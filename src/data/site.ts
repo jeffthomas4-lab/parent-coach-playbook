@@ -163,6 +163,7 @@ export type ToolsNavSlug = (typeof TOOLS_NAV)[number]['slug'];
 // NavBar.astro), so it's no longer a utility item.
 export const UTILITY_NAV = [
   { label: 'Friday Letter', href: '/newsletter/' },
+  { label: 'Reviews', href: '/proof/' },
   { label: 'About', href: '/about/' },
 ];
 
