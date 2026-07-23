@@ -96,6 +96,11 @@
     "tailwindcss": "^4.1.0",
     "web-vitals": "^5.3.0"
   },
+  "overrides": {
+    "sharp": "^0.35.0",
+    "fast-uri": "^3.1.4",
+    "svgo": "^4.0.2"
+  },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@babel/parser": "^7.29.3",

@@ -77,7 +77,7 @@ The hardest emotional terrain. Cornerstone-quality essays under the Editorial by
 | Your kid is the worst on the team. Now what. | Editorial | The Game (cornerstone) | PIPELINE |
 | Tempering a top kid's hunger for growth without crushing the team | Editorial | The Game | PIPELINE |
 | Making it fun for everyone when your own kid is struggling | Editorial | The Game | PIPELINE |
-| The "playing time" email from another parent | Editorial | Team Parent · Communication | PIPELINE |
+| The "playing time" email from another parent | Editorial | Team Parent · Communication | covered (when-a-parent-emails-about-playing-time.md, how-to-talk-to-the-coach-about-playing-time.md, playing-time-fairness.md) |
 | When your kid's friend makes the A team and your kid doesn't | Editorial | Drive Home | PIPELINE |
 | The kid on your team who is mean to your kid | Editorial | The Game | PIPELINE |
 | Co-parenting the season: who does what | Editorial | Drive There | PIPELINE |

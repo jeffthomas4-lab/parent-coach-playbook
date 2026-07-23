@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 161,
+  "route_count": 164,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -380,6 +380,16 @@
         "POST"
       ],
       "source": "api/admin/camps/[id]/reject.ts",
+      "cache_class": "api",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/admin/camps/:id/request-info",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/admin/camps/[id]/request-info.ts",
       "cache_class": "api",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
@@ -795,6 +805,16 @@
       "cache_class": "api",
       "auth_boundary": "public",
       "public_write_limiter": null
+    },
+    {
+      "route": "/api/proof-submit",
+      "methods": [
+        "POST"
+      ],
+      "source": "api/proof-submit.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
+      "public_write_limiter": "PUBLIC_SUBMISSION_RATE_LIMITER"
     },
     {
       "route": "/api/ready",
@@ -1252,6 +1272,16 @@
         "GET"
       ],
       "source": "pre-game-routine.astro",
+      "cache_class": "public_html",
+      "auth_boundary": "public",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/proof",
+      "methods": [
+        "GET"
+      ],
+      "source": "proof.astro",
       "cache_class": "public_html",
       "auth_boundary": "public",
       "public_write_limiter": null

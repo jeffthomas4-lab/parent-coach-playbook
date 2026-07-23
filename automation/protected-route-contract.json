@@ -1,52 +1,248 @@
 {
   "routes": [
-    { "source": "src/pages/admin/api/camps/[id]/reject.ts", "control": "mutation" },
-    { "source": "src/pages/admin/api/camps/[id]/verify.ts", "control": "mutation" },
-    { "source": "src/pages/admin/camps/[id].astro", "control": "mutation" },
-    { "source": "src/pages/admin/camps/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/camps/queue.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/camps/spot-check.astro", "control": "mutation" },
-    { "source": "src/pages/admin/claims/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/editorial/index.astro", "control": "access-only" },
-    { "source": "src/pages/admin/image-needs.md", "control": "access-only" },
-    { "source": "src/pages/admin/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/link-health/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/operations.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/relationships.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/preview/[collection]/[slug].astro", "control": "access-only" },
-    { "source": "src/pages/admin/reviews/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/retention.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/search-signals.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/source-quality.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/suggestions/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/trust/index.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/trust/deliveries.astro", "control": "app-auth" },
-    { "source": "src/pages/admin/trust/drafts.astro", "control": "app-auth" },
-    { "source": "src/pages/api/admin/camps/[id]/approve.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/camps/[id]/photo.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/camps/[id]/reject.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/camps/[id]/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/camps/[id]/verify.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/claims/[id]/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/approve.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/approvals/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/briefs/create.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/claims/[id]/validate.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/claims/create.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/maintenance/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/opportunities/[id]/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/opportunities/create.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/publish.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/relationships/create.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/reviews/create.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/editorial/sources/create.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/reviews/[id]/approve.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/reviews/[id]/reject.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/suggestions/[id]/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/trust/[id]/update.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/trust/[id]/suppression.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/trust/[id]/draft.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/trust/[id]/drafts/[draftId]/approve.ts", "control": "mutation" },
-    { "source": "src/pages/api/admin/trust/[id]/deliveries/[attemptId]/reconcile.ts", "control": "mutation" }
+    {
+      "source": "src/pages/admin/affiliates.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/agents.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/data-quality.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/agents/[id]/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/data-quality/fix.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/set-status.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/link-health/recheck.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/link-health/resolve.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/link-health/suggest-replacement.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/source-quality/reject-domain.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/source-quality/skip.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/suggestions/[id]/promote.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/admin/api/camps/[id]/reject.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/admin/api/camps/[id]/verify.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/admin/camps/[id].astro",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/admin/camps/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/camps/queue.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/camps/spot-check.astro",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/admin/claims/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/editorial/index.astro",
+      "control": "access-only"
+    },
+    {
+      "source": "src/pages/admin/image-needs.md",
+      "control": "access-only"
+    },
+    {
+      "source": "src/pages/admin/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/link-health/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/operations.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/relationships.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/preview/[collection]/[slug].astro",
+      "control": "access-only"
+    },
+    {
+      "source": "src/pages/admin/reviews/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/retention.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/search-signals.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/source-quality.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/suggestions/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/trust/index.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/trust/deliveries.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/admin/trust/drafts.astro",
+      "control": "app-auth"
+    },
+    {
+      "source": "src/pages/api/admin/camps/[id]/approve.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/camps/[id]/photo.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/camps/[id]/reject.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/camps/[id]/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/camps/[id]/verify.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/claims/[id]/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/approve.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/approvals/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/briefs/create.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/claims/[id]/validate.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/claims/create.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/maintenance/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/opportunities/[id]/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/opportunities/create.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/publish.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/relationships/create.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/reviews/create.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/editorial/sources/create.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/reviews/[id]/approve.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/reviews/[id]/reject.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/suggestions/[id]/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/trust/[id]/update.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/trust/[id]/suppression.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/trust/[id]/draft.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/trust/[id]/drafts/[draftId]/approve.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/trust/[id]/deliveries/[attemptId]/reconcile.ts",
+      "control": "mutation"
+    },
+    {
+      "source": "src/pages/api/admin/camps/[id]/request-info.ts",
+      "control": "mutation"
+    }
   ]
 }
