@@ -5,6 +5,7 @@
   "private": true,
   "description": "The Parent Coach Desk. Editorial content for parents who coach their own kid.",
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
     "dev": "astro dev",
     "start": "astro dev",
     "build:manifest": "node scripts/build-link-manifest.mjs",
