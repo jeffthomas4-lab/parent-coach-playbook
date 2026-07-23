@@ -5,6 +5,7 @@
   ],
   "independently_deployed_runtime": [
     "legacy-domain-redirect",
+    "worker-backup",
     "worker-cron",
     "worker-link-checker",
     "workers-activity-radar"
@@ -15,6 +16,7 @@
     "migrations",
     "migrations-activity-radar",
     "migrations-pcd-ops",
+    "proof-screenshots",
     "samples",
     "sport-vocab",
     "staging-fixtures"
