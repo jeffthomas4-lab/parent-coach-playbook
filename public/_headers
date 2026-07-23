@@ -11,19 +11,32 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Cross-Origin-Opener-Policy: same-origin
   # script-src hashes cover every remaining is:inline script in the codebase.
-  # Key (regenerated 2026-07-20 via scripts/hash-csp.py — the previous set was
-  # stale: queue.astro's script had drifted with no matching hash at all, which
-  # silently killed every Approve/Reject button on the admin moderation queue,
-  # and coaching-tips.astro's filter script had drifted the same way):
+  # Key (regenerated 2026-07-22 via scripts/hash-csp.py — the previous set was
+  # stale AGAIN: queue.astro's script had drifted from its hash a second time,
+  # which silently killed every Approve/Reject button on the admin moderation
+  # queue, and 7 other admin pages had never had their hashes added at all —
+  # affiliates, agents, data-quality, link-health, search-signals,
+  # source-quality, suggestions. Anytime an is:inline script's content changes,
+  # its SHA-256 changes with it, so the CSP hash must be regenerated in
+  # lockstep or the browser silently drops the script with no visible error):
+  #   5V4lMBGF  admin/affiliates.astro
+  #   OyZIXFGN  admin/agents.astro
+  #   HdShXPOp  admin/camps/queue.astro: approve/reject/more-info actions
+  #   3y+jxezA  admin/data-quality.astro
+  #   9aaXx/JC  admin/link-health/index.astro
+  #   ZNfag7ZT  admin/search-signals.astro
+  #   5O2r+5eq  admin/source-quality.astro
+  #   mO4Z+lMo  admin/suggestions/index.astro
   #   KaUsJOX4  body/index.astro: lens/format/age filter
   #   zTE7xvdV  coaching-tips/index.astro: sport/age/focus filter
   #   M7BKkLD4  reads/[topic].astro + team-parent/[topic].astro: filter (identical)
-  #   VM5QVeiu  admin/camps/queue.astro: approve/reject actions
   # Removed (script content changed or no longer present; drop stale hashes,
   # don't carry them forward):
+  #   0l7TZJHD  was admin/camps/queue.astro (pre more-info) — superseded by HdShXPOp above
+  #   VM5QVeiu  was admin/camps/queue.astro — superseded by HdShXPOp above
   #   7jM0mFGp  was coaching-tips.astro, superseded by zTE7xvdV above
   #   CxXgaUN/  was camps/index.astro (geolocation redirect) — script no longer present
-  #   V88P4X0X  was admin/camps/queue.astro — superseded by VM5QVeiu above
+  #   V88P4X0X  was admin/camps/queue.astro — superseded by HdShXPOp above
   #   e9aj8m7L  GA4 snippet — moved to bundled analytics script in BaseLayout
   #   Tgv6pLix  Web Vitals module — bundled with analytics script
   #   k4+bVBk/  Leaflet map init — moved to bundled script in camps/[slug].astro
@@ -34,7 +47,7 @@
   # When you add or change any inline script, rerun scripts/hash-csp.py to refresh these,
   # and update BOTH this file and src/lib/security-headers.ts — tests/middleware.test.ts
   # fails the build if they drift apart again.
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self' https://app.kit.com; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-5V4lMBGFmcNR+rO27pSnrwgEcE9xx6k/2EuQNZ010KI=' 'sha256-OyZIXFGNP0ome/sj/4OxMaz3nr4PHK9y/MHjd28KyTY=' 'sha256-HdShXPOp7sEo/UZLP/bVm0oFUvt8fxkCvIpgVc6hKQM=' 'sha256-3y+jxezA4ZS//6pZ4ySEtiFWfSqHtker0ZDLBrP+XD8=' 'sha256-9aaXx/JCcZmGATHAShXv+0gzh5tAhsph6Yr/5GLkuyQ=' 'sha256-ZNfag7ZTFaUKYrcQ45B81VZQbKoWkFbxfaIVah0bBjA=' 'sha256-5O2r+5eqOp1fTWrq9P0XcUpMo9ch2Lx8oxdmC/CbVfY=' 'sha256-mO4Z+lMoO61nkleD2H7rhVwyaYDIp9D+jtV/S+R0WFc=' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' https://static.cloudflareinsights.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://nominatim.openstreetmap.org https://app.kit.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://o4511599982346240.ingest.us.sentry.io https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self' https://app.kit.com; base-uri 'self'; object-src 'none'
 
 # Static HTML: edge-cache for a day, browser-cache for 5 minutes, serve stale
 # while revalidating in the background. New deploys auto-purge the CF edge so

@@ -23,3 +23,4 @@ _Ed's first run replaces the seed rows with real dates from seasonCalendars and 
 
 | Date drafted | Title | Lane | Status |
 |--------------|-------|------|--------|
+| 2026-07-22 | The hardest player to coach is *me* | Evergreen (CONTENT_ROADMAP.md, Mental health and identity) | drafted, awaiting review |

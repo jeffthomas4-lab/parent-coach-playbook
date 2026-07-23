@@ -9,6 +9,8 @@ D1 `activity-radar` (database_id 8cc3694a-26f8-4a56-b131-d5d3a68c49ef): tables i
 
 One database, one map (updated 2026-07-13, ActivityRadar merge): this file now covers `org_claims` and `org_suggestions` too, folded in from ActivityRadar's own data map (`activityradar-archive/DATA-MAP.md`, archived, no longer maintained separately).
 
+Added 2026-07-22: D1 `PCD_OPS_DB` (`parent-coach-desk-ops-production`), table `proof_inbox` (migration `migrations-pcd-ops/0026_proof_inbox.sql`). Not live yet: the migration is unapplied and the write route (`src/pages/api/proof-submit.ts`) is gated behind `PROOF_SUBMIT_ENABLED`, currently `false`. Listed here ahead of launch per this file's own rule below. Other `PCD_OPS_DB` tables (`trust_cases`, `demand_events`, etc.) predate this session and are a separate open item, not covered by this update.
+
 ## Personal data collected
 
 | Data | Collected at | Table / store | Sent to third party |
@@ -24,6 +26,7 @@ One database, one map (updated 2026-07-13, ActivityRadar merge): this file now c
 | GA4 aggregate traffic | All page loads (non-EU, non-DNT/GPC) | Google Analytics 4 | Google (anonymized, no signals) |
 | Org-claim name, email, role, evidence text | `/claim` (org-side claim flow) | `org_claims` | None |
 | Org-suggestion submitter email (optional) | `/suggest`-style org suggestion flow | `org_suggestions` | None |
+| Submitter name, testimonial text, optional context (role/city), optional link to where they posted it | `/proof` share-your-experience form | `PCD_OPS_DB` `proof_inbox` | None. Not live: see note under Data home. |
 
 ## Third parties
 
@@ -49,6 +52,7 @@ One database, one map (updated 2026-07-13, ActivityRadar merge): this file now c
 | Kit email list | Until unsubscribe | Newsletter function |
 | Org-claim records | Until claim resolved + 12 months | Dispute/verification window |
 | Org-suggestion records | Until reviewed + 12 months | Review reference |
+| Proof inbox submissions | Until reviewed (approved or rejected) + 12 months | Curation reference; only the curated quote/name/context a person approves is ever republished to the public `/proof` page |
 
 ## Deletion path
 
@@ -66,5 +70,6 @@ A user who wants access, correction, restriction, export, or deletion should use
 | Search events | Rows contain no email; cannot be tied to individual after the fact; no deletion path needed | N/A |
 | D1 `org_claims` | Row for that claim | `DELETE FROM org_claims WHERE id = ?` |
 | D1 `org_suggestions` | Row for that suggestion | `DELETE FROM org_suggestions WHERE id = ?` |
+| D1 `proof_inbox` | Row for that submission | `DELETE FROM proof_inbox WHERE id = ?`. If the same content was already promoted to the published `src/data/proof.json`, that entry must be removed separately (it is a committed file, not a database row). |
 
 A delete that clears one table and leaves copies is not a delete. The above covers every store. If a new data collection is added, this map must be updated before the feature ships.

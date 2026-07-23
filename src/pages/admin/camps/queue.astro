@@ -252,7 +252,22 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       </div>
                     </div>
 
-                    <div class="grid gap-2 sm:grid-cols-4">
+                    <div class="more-info-row gap-2 p-3 border border-bone bg-paper-warm" style="display: none;">
+                      <label class="font-display italic text-ink-soft text-xs font-medium">
+                        What do you need? (the research task runs this once — if it can't find it, the camp is rejected)
+                      </label>
+                      <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="2" placeholder="e.g. need actual camp name, session dates, registration link" data-field="info_request_notes"></textarea>
+                      <div class="flex gap-2">
+                        <button type="button" class="font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-send">
+                          Send request
+                        </button>
+                        <button type="button" class="font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-cancel">
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="grid gap-2 sm:grid-cols-5">
                       <div class="col-span-1">
                         <button type="button" class="w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="approve-verified">
                           Approve & verify
@@ -266,6 +281,11 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       <div class="col-span-1">
                         <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
+                        </button>
+                      </div>
+                      <div class="col-span-1">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info">
+                          More info
                         </button>
                       </div>
                       <div class="col-span-1">
@@ -409,6 +429,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       const campId = row.getAttribute('data-id');
       const statusDiv = row.querySelector('.status-message');
       const rejectRow = row.querySelector('.reject-reason-row');
+      const moreInfoRow = row.querySelector('.more-info-row');
       const saveBtn = row.querySelector('[data-action="save-edits"]');
       const editFields = row.querySelectorAll('[data-field="website_url"], [data-field="contact_email"], [data-field="description"]');
       let dirty = false;
@@ -482,11 +503,21 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
           const action = this.getAttribute('data-action');
 
           if (action === 'reject') {
+            if (moreInfoRow) moreInfoRow.style.display = 'none';
             if (rejectRow) rejectRow.style.display = 'grid';
             return;
           }
           if (action === 'reject-cancel') {
             if (rejectRow) rejectRow.style.display = 'none';
+            return;
+          }
+          if (action === 'more-info') {
+            if (rejectRow) rejectRow.style.display = 'none';
+            if (moreInfoRow) moreInfoRow.style.display = 'grid';
+            return;
+          }
+          if (action === 'more-info-cancel') {
+            if (moreInfoRow) moreInfoRow.style.display = 'none';
             return;
           }
 
@@ -525,6 +556,16 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
           } else if (action === 'reject-duplicate') {
             endpoint = '/api/admin/camps/' + campId + '/reject';
             body = JSON.stringify({ notes: 'Flagged as a likely duplicate from the fuzzy-match warning.', reason_code: 'duplicate' });
+          } else if (action === 'more-info-send') {
+            const notesField = row.querySelector('textarea[data-field="info_request_notes"]');
+            const infoNotes = notesField && notesField.value.trim() ? notesField.value.trim() : '';
+            if (!infoNotes) {
+              statusDiv.textContent = 'Say what you need first.';
+              statusDiv.style.display = 'block';
+              return;
+            }
+            endpoint = '/api/admin/camps/' + campId + '/request-info';
+            body = JSON.stringify({ notes: infoNotes });
           } else {
             return;
           }
@@ -538,7 +579,11 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
             const data = await resp.json();
 
             if (data.ok) {
-              statusDiv.textContent = (action === 'reject-confirm' || action === 'reject-duplicate') ? 'Rejected' : 'Approved';
+              statusDiv.textContent = (action === 'reject-confirm' || action === 'reject-duplicate')
+                ? 'Rejected'
+                : action === 'more-info-send'
+                  ? 'Sent to research'
+                  : 'Approved';
               statusDiv.style.display = 'block';
               setTimeout(function () {
                 row.style.opacity = '0.5';

@@ -14,50 +14,45 @@ const year = new Date().getFullYear();
       <p class="font-display text-ink-soft mt-3 max-w-md leading-snug">
         {SITE.shortPitch}
       </p>
+      <a href="/newsletter/" class="inline-block mt-5 font-display italic text-rust font-medium hover:underline">
+        → Get the Friday Letter
+      </a>
     </div>
 
-    <div class="md:col-span-2">
+    <div class="md:col-span-4">
+      <div class="t-section mb-3">Explore</div>
       <ul class="grid gap-2.5 font-display text-ink-soft">
         <li><a href="/start-here/" class="hover:text-rust">Start here</a></li>
-        <li><a href="/reads/" class="hover:text-rust">Reads</a></li>
-        <li><a href="/parent-coach/" class="hover:text-rust">Parent-coach</a></li>
-        <li><a href="/coaching-tips/" class="hover:text-rust">Drills</a></li>
-        <li><a href="/what-to-buy/" class="hover:text-rust">What to buy</a></li>
-        <li><a href="/team-parent/" class="hover:text-rust">Team parent</a></li>
-      </ul>
-    </div>
-
-    <div class="md:col-span-2">
-      <ul class="grid gap-2.5 font-display text-ink-soft">
-        <li><a href="/cost-calculator/" class="hover:text-rust">Cost calculator</a></li>
         <li><a href="/sports/" class="hover:text-rust">By sport</a></li>
-        <li><a href="/season-calendar/" class="hover:text-rust">Season calendar</a></li>
-        <li><a href="/pathways/" class="hover:text-rust">Age pathways</a></li>
-        <li><a href="/recruiting/" class="hover:text-rust">Recruiting</a></li>
-        <li><a href="/rules/" class="hover:text-rust">Rules at-a-glance</a></li>
+        <li><a href="/reads/" class="hover:text-rust">Reads</a></li>
         <li><a href="/camps/" class="hover:text-rust">Camps and leagues</a></li>
-        <li><a href="/governing-bodies/" class="hover:text-rust">Governing bodies</a></li>
-        <li><a href="/adaptive/" class="hover:text-rust">Adaptive athletes</a></li>
-        <li><a href="/news/" class="hover:text-rust">This Season</a></li>
+        <li><a href="/cost-calculator/" class="hover:text-rust">Cost calculator</a></li>
+        <li><a href="/season-calendar/" class="hover:text-rust">Season calendar</a></li>
       </ul>
     </div>
 
     <div class="md:col-span-3">
-      <div class="t-section mb-3">More</div>
+      <div class="t-section mb-3">The Desk</div>
       <ul class="grid gap-2.5 font-display text-ink-soft">
         <li><a href="/about/" class="hover:text-rust">About</a></li>
         <li><a href="/newsletter/" class="hover:text-rust">Newsletter</a></li>
+        <li><a href="/proof/" class="hover:text-rust">Reviews</a></li>
         <li><a href="/search/" class="hover:text-rust">Search</a></li>
-        <li><a href="/disclosure/" class="hover:text-rust">Privacy and disclosure</a></li>
-        <li><button type="button" data-privacy-choices class="hover:text-rust text-left cursor-pointer">Privacy choices</button></li>
-        <li><a href="/terms/" class="hover:text-rust">Terms of use</a></li>
-        <li><a href="/accessibility/" class="hover:text-rust">Accessibility</a></li>
-        <li><a href="/about/sources/" class="hover:text-rust">Sources</a></li>
-        <li><a href="/about/corrections/" class="hover:text-rust">Corrections</a></li>
-        <li><a href="/trust/" class="hover:text-rust">Corrections &amp; removal requests</a></li>
-        <li><a href="/rss.xml" class="hover:text-rust">RSS feed</a></li>
         <li><a href={`mailto:${SITE.email}`} class="hover:text-rust break-words">{SITE.email}</a></li>
       </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-bone">
+    <div class="container-px py-4">
+      <nav aria-label="Legal and policies" class="flex flex-wrap gap-x-4 gap-y-2 font-display italic text-ink-soft text-sm">
+        <a href="/disclosure/" class="hover:text-rust">Privacy &amp; disclosure</a>
+        <button type="button" data-privacy-choices class="hover:text-rust cursor-pointer italic">Privacy choices</button>
+        <a href="/terms/" class="hover:text-rust">Terms of use</a>
+        <a href="/accessibility/" class="hover:text-rust">Accessibility</a>
+        <a href="/trust/" class="hover:text-rust">Corrections &amp; removals</a>
+        <a href="/rss.xml" class="hover:text-rust">RSS feed</a>
+      </nav>
     </div>
   </div>
 
