@@ -123,7 +123,7 @@ Lighter touch, with explicit links out to professionals (AASP, SafeSport).
 | Identity and burnout: the kid who quits at 14 | Editorial | Drive Home (cornerstone) | PIPELINE |
 | Specialization vs. multi-sport, by age | Editorial | Foundations | PIPELINE |
 | The college-recruiting reality check | Editorial | Foundations (cornerstone) | PIPELINE |
-| Your own emotional regulation as the parent-coach | Editorial | Drive Home (cornerstone) | drafted 2026-07-23 |
+| Your own emotional regulation as the parent-coach | Editorial | Drive Home (cornerstone) | drafted 2026-07-22 (src/content/articles/the-hardest-player-to-coach-is-me.md) |
 
 ---
 
