@@ -88,7 +88,7 @@
     "@sentry/astro": "^10.66.0",
     "@sentry/cloudflare": "^10.66.0",
     "@tailwindcss/vite": "^4.1.0",
-    "@workos-inc/node": "10.7.0",
+    "@workos-inc/node": "10.8.0",
     "@workos/authkit-astro": "0.2.0",
     "astro": "^7.0.9",
     "leaflet": "^1.9.4",
