@@ -2,8 +2,8 @@
   "schema_version": 1,
   "state": "complete",
   "target_origin": "https://parentcoachdesk.com",
-  "contract_route_count": 48,
-  "observed_at": "2026-07-18T23:39:03Z",
+  "contract_route_count": 60,
+  "observed_at": "2026-07-23T14:24:43.867Z",
   "allowed_identity_class": "configured_admin",
   "denied_identity_class": "anonymous_untrusted",
   "allowed_results": [
@@ -235,16 +235,138 @@
       "mutation_invoked": false,
       "status_class": "authenticated_page"
     },
-    { "path": "/api/admin/editorial/approvals/update", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/briefs/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/claims/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/claims/probe-id/validate", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/maintenance/update", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/opportunities/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/opportunities/probe-id/update", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/relationships/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/reviews/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" },
-    { "path": "/api/admin/editorial/sources/create", "edge_authorized": true, "mutation_invoked": false, "status_class": "authenticated_page" }
+    {
+      "path": "/api/admin/editorial/approvals/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/briefs/create",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/claims/create",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/claims/probe-id/validate",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/maintenance/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/opportunities/create",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/opportunities/probe-id/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/relationships/create",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/reviews/create",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/sources/create",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/affiliates",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/agents",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/admin/data-quality",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/agents/probe-id/update",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/data-quality/fix",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/editorial/set-status",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/link-health/recheck",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/link-health/resolve",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/link-health/suggest-replacement",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/source-quality/reject-domain",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/source-quality/skip",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/suggestions/probe-id/promote",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
+    }
   ],
   "denied_results": [
     {
@@ -437,18 +559,118 @@
       "edge_blocked": true,
       "origin_reached": false
     },
-    { "path": "/api/admin/editorial/approvals/update", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/briefs/create", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/claims/create", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/claims/probe-id/validate", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/maintenance/update", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/opportunities/create", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/opportunities/probe-id/update", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/relationships/create", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/reviews/create", "edge_blocked": true, "origin_reached": false },
-    { "path": "/api/admin/editorial/sources/create", "edge_blocked": true, "origin_reached": false }
+    {
+      "path": "/api/admin/editorial/approvals/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/briefs/create",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/claims/create",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/claims/probe-id/validate",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/maintenance/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/opportunities/create",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/opportunities/probe-id/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/relationships/create",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/reviews/create",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/sources/create",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/affiliates",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/agents",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/admin/data-quality",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/agents/probe-id/update",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/data-quality/fix",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/editorial/set-status",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/link-health/recheck",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/link-health/resolve",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/link-health/suggest-replacement",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/source-quality/reject-domain",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/source-quality/skip",
+      "edge_blocked": true,
+      "origin_reached": false
+    },
+    {
+      "path": "/api/admin/suggestions/probe-id/promote",
+      "edge_blocked": true,
+      "origin_reached": false
+    }
   ],
-  "evidence_hash": "3e1e0f4383a049779b195d7e63c844f3136ef2a6b11a7aabd69425fd2f0598a1",
+  "evidence_hash": "68e4ff9fe8c02a79eb7dc2feb640f7cad61d6876ad6808e642877699b53d77de",
   "evidence_sources": [
     "anonymous-access-2026-07-18.json: all 48 denied routes returned a Cloudflare Access redirect before origin.",
     "Signed-in configured-admin browser session: GET-only sweep reached the protected origin for all contracted routes. /admin/camps/ and /admin/camps/queue returned application HTTP errors after passing the Access edge; no forms or mutation methods were invoked."

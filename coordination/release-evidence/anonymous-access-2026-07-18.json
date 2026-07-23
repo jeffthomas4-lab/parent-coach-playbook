@@ -2,12 +2,24 @@
   "schema_version": 1,
   "probe": "pcd-anonymous-admin-access",
   "target_origin": "https://parentcoachdesk.com",
-  "observed_at": "2026-07-18T22:38:12.847Z",
+  "observed_at": "2026-07-23T14:29:41.100Z",
   "ok": true,
-  "route_count": 48,
+  "route_count": 60,
   "results": [
     {
       "path": "/admin/",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/admin/affiliates",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/admin/agents",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
@@ -50,6 +62,12 @@
     },
     {
       "path": "/admin/claims/",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/admin/data-quality",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
@@ -139,6 +157,12 @@
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
     },
     {
+      "path": "/api/admin/agents/probe-id/update",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
       "path": "/api/admin/camps/probe-id/approve",
       "protected": true,
       "status": 302,
@@ -170,6 +194,12 @@
     },
     {
       "path": "/api/admin/claims/probe-id/update",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/data-quality/fix",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
@@ -241,7 +271,31 @@
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
     },
     {
+      "path": "/api/admin/editorial/set-status",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
       "path": "/api/admin/editorial/sources/create",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/link-health/recheck",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/link-health/resolve",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/link-health/suggest-replacement",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"
@@ -254,6 +308,24 @@
     },
     {
       "path": "/api/admin/reviews/probe-id/reject",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/source-quality/reject-domain",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/source-quality/skip",
+      "protected": true,
+      "status": 302,
+      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
+    },
+    {
+      "path": "/api/admin/suggestions/probe-id/promote",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"

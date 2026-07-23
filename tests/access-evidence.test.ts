@@ -28,7 +28,7 @@ describe('live Access evidence contracts', () => {
       evidence_hash: 'b'.repeat(64), allowed_results: [], denied_results: [],
     };
     expect(validateAuthenticatedAccessEvidence(complete).errors).toEqual(expect.arrayContaining([
-      'allowed_results must cover all 48 routes', 'denied_results must cover all 48 routes',
+      'allowed_results must cover all 60 routes', 'denied_results must cover all 60 routes',
     ]));
   });
 });
