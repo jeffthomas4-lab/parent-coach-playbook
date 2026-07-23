@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "secret:webhook": "wrangler secret put SLACK_WEBHOOK_URL --config ./wrangler.toml",
-    "secret:list": "wrangler secret list --config ./wrangler.toml"
+    "secret:list": "wrangler secret list --config ./wrangler.toml",
+    "restore": "node scripts/restore.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260708.1",

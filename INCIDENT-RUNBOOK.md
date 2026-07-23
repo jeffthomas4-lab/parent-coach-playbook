@@ -42,6 +42,14 @@ Cloudflare Workers keeps a version history for `parent-coach-desk`. Rolling back
 2. Confirm `PUBLIC_KIT_FORM_ID` still matches the live form in the Kit dashboard (form IDs can change if a form gets recreated instead of edited).
 3. Check the browser console on `/newsletter/` for a failed fetch to Kit's API — this is a client-side integration, not a Worker route, so Cloudflare logs will not show it.
 
+## Data loss on `activity-radar` (restore from the offsite R2 backup)
+
+`worker-backup/scripts/restore.mjs` restores a dated `pcd-db-backups` R2 export into a target D1,
+production-guarded (refuses `activity-radar` without `--overwrite-production` plus a typed
+`--confirm-token`, and `--dry-run` can never reach it). Dry-run into `pcd-restore-test` first, then
+see `worker-backup/README.md`'s "Restoring from a dump" section for the full runbook and the exact
+production-restore command.
+
 ## Recovery point / recovery time (written down, not left to platform defaults)
 
 - **Recovery point (how much data can be lost):** D1's point-in-time restore covers the last 30 days at roughly minute granularity (Cloudflare default). Accepted: up to a few minutes of the most recent writes on a worst-case restore.
