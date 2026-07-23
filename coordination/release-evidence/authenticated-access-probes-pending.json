@@ -2,8 +2,8 @@
   "schema_version": 1,
   "state": "complete",
   "target_origin": "https://parentcoachdesk.com",
-  "contract_route_count": 60,
-  "observed_at": "2026-07-23T14:24:43.867Z",
+  "contract_route_count": 61,
+  "observed_at": "2026-07-23T17:49:21.800Z",
   "allowed_identity_class": "configured_admin",
   "denied_identity_class": "anonymous_untrusted",
   "allowed_results": [
@@ -366,6 +366,12 @@
       "edge_authorized": true,
       "mutation_invoked": false,
       "status_class": "authenticated_page"
+    },
+    {
+      "path": "/api/admin/camps/probe-id/request-info",
+      "edge_authorized": true,
+      "mutation_invoked": false,
+      "status_class": "authenticated_page"
     }
   ],
   "denied_results": [
@@ -668,9 +674,14 @@
       "path": "/api/admin/suggestions/probe-id/promote",
       "edge_blocked": true,
       "origin_reached": false
+    },
+    {
+      "path": "/api/admin/camps/probe-id/request-info",
+      "edge_blocked": true,
+      "origin_reached": false
     }
   ],
-  "evidence_hash": "68e4ff9fe8c02a79eb7dc2feb640f7cad61d6876ad6808e642877699b53d77de",
+  "evidence_hash": "3aae0fcc7e4b1a6ec55436277a45d3f0e98b41c84110ed089364ef7163aa2ac6",
   "evidence_sources": [
     "anonymous-access-2026-07-18.json: all 48 denied routes returned a Cloudflare Access redirect before origin.",
     "Signed-in configured-admin browser session: GET-only sweep reached the protected origin for all contracted routes. /admin/camps/ and /admin/camps/queue returned application HTTP errors after passing the Access edge; no forms or mutation methods were invoked."
