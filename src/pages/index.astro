@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { serializeJsonLd } from '../lib/jsonld';
 import { PILLARS, EDITORIAL, TOPICS, SPORTS, SITE, SCHEMA_IDS } from '../data/site';
 import { isLive, freshnessDate, wasUpdated } from '../lib/publishFilter';
@@ -26,13 +25,10 @@ const NEWS_CATEGORY_LABELS: Record<string, string> = {
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
-// "Pinned at the Desk" — three reads to surface above the fold each week.
-// Update PINNED_SLUGS when the Friday Letter ships. Falls back to most recent 3.
-const PINNED_SLUGS: string[] = [
-  'how-to-evaluate-a-summer-camp',
-  'when-your-kid-doesnt-want-to-go-to-camp',
-  'three-teams-in-one-summer',
-];
+// "Fresh at the Desk" — the newest published pieces, surfaced automatically.
+// PINNED_SLUGS is an optional manual override: fill it with three slugs to
+// hand-pick the band, or leave it empty to always show the freshest content.
+const PINNED_SLUGS: string[] = [];
 const pinned = PINNED_SLUGS
   .map(s => all.find(a => a.id === s))
   .filter(Boolean) as typeof all;
@@ -135,7 +131,6 @@ const websiteSchema = {
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/start-here/" class="btn">Start here</a>
             <a href="/sports/" class="btn btn-ghost">Browse by sport</a>
-            <a href="https://parent-coach-playbook.kit.com/4b28f916b5" data-newsletter-cta="home_hero" class="btn btn-ghost">Get the Friday Letter</a>
           </div>
           <p class="font-display italic text-ink-soft text-sm mt-5 font-medium">
             Written by the <a href="/about/" class="hover:text-rust underline-offset-2 hover:underline">{EDITORIAL.byline}</a>.
@@ -208,9 +203,9 @@ const websiteSchema = {
   {/* ── PINNED AT THE DESK ───────────────────────────────────────────────── */}
   <section class="border-b border-bone" style="background: #F2E2D5;">
     <div class="container-px py-10 md:py-14">
-      <p class="font-display italic text-rust mb-2 font-medium">Pinned at the Desk</p>
+      <p class="font-display italic text-rust mb-2 font-medium">Fresh at the Desk</p>
       <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight max-w-2xl font-medium">
-        What we're <em class="text-rust">reaching for</em> this week.
+        What's <em class="text-rust">new</em> this week.
       </h2>
       <div class="mt-7 grid md:grid-cols-3 gap-px bg-bone">
         {pinnedFinal.map((p, i) => (
@@ -219,7 +214,7 @@ const websiteSchema = {
             class="bg-paper p-6 group block hover:bg-paper-warm transition-colors"
             style={`transform: rotate(${(i - 1) * 0.4}deg);`}
           >
-            <p class="font-display italic text-rust mb-2 text-xs font-medium">Pinned</p>
+            <p class="font-display italic text-rust mb-2 text-xs font-medium">New</p>
             <h3
               class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium"
               set:html={renderTitle(p.data.title)}
@@ -246,7 +241,7 @@ const websiteSchema = {
             Find your <em class="text-rust">sport</em>.
           </h2>
           <p class="font-display text-ink-soft mt-3 max-w-xl leading-snug">
-            Every article, drill, gear guide, season calendar, and recruiting note we have — organized by sport. Pick yours and the whole site filters to what's relevant.
+            Pick yours and the whole site filters to what's relevant.
           </p>
         </div>
         <a href="/sports/" class="t-cta whitespace-nowrap">All 26 sports →</a>
@@ -279,7 +274,7 @@ const websiteSchema = {
           Every game is <em class="text-rust">three drives</em>.
         </h2>
         <p class="font-display text-ink-soft text-lg mt-3 max-w-2xl leading-snug">
-          The car ride there. The game itself. The car ride home. Most of the work as a parent — whether you're their coach or not — happens before the game starts or after the final whistle.
+          The car ride there. The game itself. The car ride home. Most of the work happens before the game starts or after the final whistle.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-px bg-bone mt-8">
@@ -471,12 +466,6 @@ const websiteSchema = {
     </section>
   )}
 
-  {/* ── NEWSLETTER ───────────────────────────────────────────────────────── */}
+  {/* ── NEWSLETTER (single ask — lead magnet includes the Friday Letter signup) ── */}
   <LeadMagnetCTA />
-
-  <NewsletterSignup
-    headline="One short note a week"
-    blurb="The Friday Letter lands every Friday morning. One read, one idea, one thing worth passing on to the parent next to you in the bleachers. Free, always."
-    buttonLabel="Get the Friday Letter"
-  />
 </BaseLayout>

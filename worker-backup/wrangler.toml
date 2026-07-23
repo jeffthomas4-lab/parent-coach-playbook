@@ -1,0 +1,37 @@
+# Weekly off-machine backup of the activity-radar D1 to R2. Replaces the
+# broken Cowork pcd-backup task, whose git-based push silently carried zero
+# data because backups/ is gitignored (see BACKUP.md). This Worker writes to
+# R2 instead of git, so there is no size limit and no gitignore conflict.
+
+name = "pcd-backup-worker"
+main = "src/index.ts"
+compatibility_date = "2026-07-16"
+
+# 7:00 AM Pacific Daylight Time (UTC-7), Saturdays. Cloudflare Cron Triggers
+# are always UTC and do not observe DST — this expression drifts to 6:00 AM
+# Pacific Standard Time in winter (same limitation already accepted by
+# worker-link-checker's cron comment). Re-check the offset each fall/spring
+# if an exact wake time matters.
+[triggers]
+crons = ["0 14 * * 6"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[[d1_databases]]
+binding = "DB"
+database_name = "activity-radar"
+database_id = "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
+
+[[r2_buckets]]
+binding = "BACKUPS"
+bucket_name = "pcd-db-backups"
+
+# Secret required: SLACK_WEBHOOK_URL (incoming webhook for #pcd-agent-notications).
+# Set interactively with `npm run secret:webhook`; never place its value in
+# source, wrangler.toml, or a command line.
+#
+# No [vars] section: this Worker takes no configuration beyond the bindings
+# above, and exposes no fetch handler — nothing here is reachable from a
+# browser or any public route.

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T04:08:35.415Z",
+  "generatedAt": "2026-07-23T03:34:45.271Z",
   "count": 684,
   "links": [
     {
@@ -451,7 +451,8 @@
       "sources": [
         "src/pages/camps/[slug].astro",
         "src/pages/camps/submit.astro",
-        "src/pages/camps/suggest.astro"
+        "src/pages/camps/suggest.astro",
+        "src/pages/proof.astro"
       ]
     },
     {
@@ -1414,12 +1415,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B001L3URAS?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: soccer-ball-size4)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B001LJ4IQO?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: wrestling-knee-pad)"
@@ -1516,15 +1511,15 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B006IXH79A?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: soccer-shin-guards-ankle-youth)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B007UGK5S4?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: ace-wrap)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B007ZQWLZE?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-ball-size4)"
       ]
     },
     {
@@ -1613,6 +1608,12 @@
       "url": "https://www.amazon.com/dp/B00P9OJF9E?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: volleyball-knee-pads-youth)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B00R2VBASG?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: soccer-shin-guards-ankle-youth)"
       ]
     },
     {

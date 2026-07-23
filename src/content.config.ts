@@ -486,6 +486,7 @@ const news = defineCollection({
       sourceLabel: z.string().optional(),
       publishedAt: z.coerce.date(),
       draft: z.boolean().default(false),
+      ...editorialField,
     }),
 });
 

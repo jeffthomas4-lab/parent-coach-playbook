@@ -1,6 +1,6 @@
 export const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' 'sha256-VM5QVeiuU2BHF2LK3wFhViqeMBA/7RxdBo684ZIHbwo=' https://static.cloudflareinsights.com https://www.googletagmanager.com https://challenges.cloudflare.com",
+  "script-src 'self' 'sha256-5V4lMBGFmcNR+rO27pSnrwgEcE9xx6k/2EuQNZ010KI=' 'sha256-OyZIXFGNP0ome/sj/4OxMaz3nr4PHK9y/MHjd28KyTY=' 'sha256-HdShXPOp7sEo/UZLP/bVm0oFUvt8fxkCvIpgVc6hKQM=' 'sha256-3y+jxezA4ZS//6pZ4ySEtiFWfSqHtker0ZDLBrP+XD8=' 'sha256-9aaXx/JCcZmGATHAShXv+0gzh5tAhsph6Yr/5GLkuyQ=' 'sha256-ZNfag7ZTFaUKYrcQ45B81VZQbKoWkFbxfaIVah0bBjA=' 'sha256-5O2r+5eqOp1fTWrq9P0XcUpMo9ch2Lx8oxdmC/CbVfY=' 'sha256-mO4Z+lMoO61nkleD2H7rhVwyaYDIp9D+jtV/S+R0WFc=' 'sha256-KaUsJOX43utTgKBraenF9mW7aob/u5NQ5RHrytHNGPs=' 'sha256-zTE7xvdVTh0b6Pavu1kN+1atQqRHBikLoAx3wM54hg0=' 'sha256-M7BKkLD4+RHrQdpMGbPQ7bdchX1CAYh5a47OJQcODGI=' https://static.cloudflareinsights.com https://www.googletagmanager.com https://challenges.cloudflare.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' data:",

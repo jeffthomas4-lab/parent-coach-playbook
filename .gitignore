@@ -18,6 +18,13 @@ pnpm-debug.log*
 .env.production
 .env.local
 .env.*.local
+.env.*
+!.env.example
+.dev.vars
+*.pem
+*.key
+*session*.json
+*cookies*.json
 
 # editor
 .vscode/*
@@ -43,3 +50,11 @@ activityradar-archive/seed/0006_orgs_irs_r*.sql
 
 # D1 backups (local snapshots, too large for git, GitHub's 100MB limit)
 backups/
+
+# tsc scratch dumps left at repo root by ad-hoc typecheck debugging (27 were
+# git-tracked before this pass; untracked via git rm --cached, kept on disk)
+.tsc_*.txt
+
+# proof collection pipeline: raw screenshots stay local, README stays tracked
+proof-screenshots/*
+!proof-screenshots/README.md
