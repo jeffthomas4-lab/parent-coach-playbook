@@ -814,7 +814,7 @@
       "source": "api/proof-submit.ts",
       "cache_class": "api",
       "auth_boundary": "public",
-      "public_write_limiter": "MISSING_REVIEW"
+      "public_write_limiter": "PUBLIC_SUBMISSION_RATE_LIMITER"
     },
     {
       "route": "/api/ready",

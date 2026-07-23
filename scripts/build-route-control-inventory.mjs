@@ -40,6 +40,7 @@ function authBoundary(route) {
 
 const limiterByRoute = new Map([
   ['POST /api/camps/submit', 'PUBLIC_SUBMISSION_RATE_LIMITER'],
+  ['POST /api/proof-submit', 'PUBLIC_SUBMISSION_RATE_LIMITER'],
   ['POST /api/camps/suggest', 'PUBLIC_SUBMISSION_RATE_LIMITER'],
   ['POST /api/trust/request', 'TRUST_RATE_LIMITER'],
   ['POST /api/camps/:slug/reviews/submit', 'COMMUNITY_RATE_LIMITER'],
