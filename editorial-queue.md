@@ -24,3 +24,4 @@ _Ed's first run replaces the seed rows with real dates from seasonCalendars and 
 | Date drafted | Title | Lane | Status |
 |--------------|-------|------|--------|
 | 2026-07-22 | The hardest player to coach is *me* | Evergreen (CONTENT_ROADMAP.md, Mental health and identity) | drafted, awaiting review |
+| 2026-07-24 | Laundry stripping is the wrong move for your kid's sports gear | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review |

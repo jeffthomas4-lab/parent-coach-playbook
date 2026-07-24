@@ -43,7 +43,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | PIPELINE |
+| How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | drafted 2026-07-24 (src/content/articles/laundry-stripping-sports-gear.md) |
 | Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | PIPELINE |
 | Cleat care that triples the lifespan | Editorial | Team Parent · Equipment | PIPELINE |
 | Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | PIPELINE |
@@ -106,7 +106,7 @@ A small mini-series that can become a flagship cornerstone.
 |---|---|---|---|
 | Rec league vs travel ball: the honest comparison | Editorial | Foundations (cornerstone) | PIPELINE |
 | Six questions to ask before joining a travel organization | Editorial | Lead magnet (PDF, 1 page) | PIPELINE |
-| The travel-ball politics: how to stay out of them | Editorial | Team Parent · Travel | PIPELINE |
+| The travel-ball politics: how to stay out of them | Editorial | Team Parent · Travel | covered (travel-politics.md, travel-team-politics-the-playing-time-formula.md) |
 | What every family decides for itself (no judgment from us) | Editorial | Foundations | PIPELINE |
 | The night you decide to walk away from a travel team | Editorial | Drive Home | PIPELINE |
 
