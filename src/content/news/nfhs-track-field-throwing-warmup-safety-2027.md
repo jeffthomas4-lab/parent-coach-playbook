@@ -5,6 +5,17 @@ category: "safety"
 sport: "track-field"
 sourceUrl: "https://nfhs.org/stories/rules-changes-approved-for-high-school-track-and-field-cross-country"
 sourceLabel: "NFHS"
-publishedAt: 2026-07-11
-draft: true
+publishedAt: 2026-07-23
+draft: false
+editorial:
+  flagInappropriateness: false
+  flagIpRisk: false
+  flagSensitiveTopic: false
+  citationCheckPassed: true
+  sportLanguageCheckPassed: true
+  affiliateDisclosurePresent: false
+  claudeReviewedAt: 2026-07-23
+  status: published
+  reviewerNotes: "Verified against NFHS official rules-change coverage (nfhs.org, Athletic Business) and independent wire pickup. Rule confirmed as written: shot put/discus warmups must face the sector from inside the circle starting the 2027 outdoor season. Structure, banned-words, and pattern checks clear."
+  factCheckGoodThrough: 2027-03-01
 ---

@@ -22,8 +22,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-07-23
-  status: claude-reviewed
-  reviewerNotes: "Evergreen pull from CONTENT_ROADMAP.md, Month 3 priority list item 2. Cites the SafeSport coach survey (Jan 2026, ESPN) and the 2023 NASO officials survey. Related-links added to coaching-your-own-kid-fairly and coaching-your-own-kid-in-front-of-the-team, both already published under drive-home/game."
+  status: ready-for-jeff
+  reviewerNotes: "HOLD: flagSensitiveTopic is true. Per the hard-hold rule this routes to Jeff rather than publishing. For what it's worth, both cited stats check out: SafeSport's first National Coaches Survey (released Jan 29, 2026, ~3,500 coaches) does list managing parents among top reasons coaches quit, and NASO's 2023 survey (35,813 officials) found 40%+ named unruly parents the top job problem. Not scored further against the rubric."
 ---
 
 Youth coaches are quitting over parents. A national survey of 3,470 coaches, released by the U.S. Center for SafeSport in January, found that managing parents ranks among the top reasons coaches leave the job. One coach in the survey said it plainly: "They created tension. They instilled distrust. They were worse than children."

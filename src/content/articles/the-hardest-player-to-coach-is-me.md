@@ -21,9 +21,9 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-07-22
-  status: draft
-  reviewerNotes: "Evergreen pull from CONTENT_ROADMAP.md, Mental health and identity strand. Personal-essay format, no external factual claims requiring citation."
+  claudeReviewedAt: 2026-07-23
+  status: ready-for-jeff
+  reviewerNotes: "HOLD: flagSensitiveTopic is true (mental-health/identity content, personal essay on losing composure in front of own kid). Per the hard-hold rule this routes to Jeff rather than publishing, regardless of voice quality. Not scored further against the rubric."
 ---
 
 I yelled at a twelve-year-old umpire last spring. Not at my kid. Not at the other team. At a kid three years older than my own son who was working the plate alone because the league couldn't find a second official.
