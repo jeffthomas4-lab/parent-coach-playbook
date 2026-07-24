@@ -164,27 +164,64 @@ exactly this purpose — see the runbook below for how it was proved.
 
 ### Restore runbook: how this was proved
 
-As of 2026-07-22, `pcd-db-backups` has never been written to (`object_count: 0` — the Worker above
-has not yet been deployed/run for real; see the completion report for this packet). A true
-end-to-end dry-run against a real dated backup is therefore **not yet possible** and has not been
-claimed. What has been proved instead:
+As of 2026-07-23, `worker-backup` still has not been deployed, so `pcd-db-backups` has no real dated
+backup in it yet (confirmed: `wrangler r2 object get pcd-db-backups/backups/backup-log.json --remote`
+returns "The specified key does not exist"). A dry-run against a genuine weekly export is therefore
+not yet possible — a fixture backup was seeded instead (see below) so the first real dry-run is a
+single command away.
 
-- 39 automated tests (`npm test`, `scripts/restore.test.mjs`) cover the production guard (refuses
-  by name, by `database_id`, and when `--dry-run` is combined with a correct override; proceeds for
-  any other target), the FK-respecting schema/load-order parser, and a full round-trip fixture
-  (`NULL`, apostrophes/quotes, unicode, and a numeric-vs-text column pair) through a real SQLite
-  engine (`node:sqlite`) via genuine bound-parameter execution.
-- The same fixture was additionally replayed against a real, live Cloudflare D1
-  (`pcd-restore-test`) using this script's actual schema-parsing and batch-insert functions,
-  confirming the parameterized-insert approach round-trips correctly against the real D1 HTTP API
-  and not just the local fake.
-- `wrangler r2 object get` and `wrangler d1 info --json` were both exercised against the real
-  `pcd-db-backups` bucket and the real `pcd-restore-test` database respectively.
+What has actually been verified, by this session, with real command output:
 
-**Follow-up required before this is a fully proven DR path:** once `worker-backup` has been deployed
-and has produced at least one real `verified: true` dated backup, run
-`node scripts/restore.mjs --target pcd-restore-test --dry-run` for real and log the result here and
-in `INCIDENT-RUNBOOK.md`'s restore test log.
+- **39 automated tests pass** (`npm test`, `scripts/restore.test.mjs`), covering the production guard
+  (refuses `activity-radar` by name, by `database_id`, and when `--dry-run` is combined with a
+  correct override; proceeds for any other target, provably never calling `resolveTarget`,
+  `fetchObject`, or the D1 client when blocked), the FK-respecting schema/load-order parser, and a
+  full round-trip fixture (`NULL`, apostrophes/quotes, unicode, and a numeric-vs-text column pair)
+  through a real SQLite engine (`node:sqlite`) via genuine bound-parameter execution — never a
+  string-built query.
+- **The same fixture was independently replayed against a real, live, non-production Cloudflare D1**
+  (`pcd-restore-test`, `database_id e4569373-7263-443a-a860-315421cf72b6` — confirmed empty and
+  distinct from `activity-radar` before touching it): the exact `CREATE TABLE` statement and
+  parameterized `INSERT ... VALUES (?, ?, ...)` shape this script's own `buildInsertBatch` produces
+  were executed against the real D1 query API, and the round-trip was verified with a `SELECT ...,
+  typeof(...)` readback — `NULL` preserved, apostrophes and mixed quotes preserved, unicode/emoji
+  preserved, and the numeric-vs-text pair kept its real column types (`external_code` stayed `text`
+  with its leading zero, `member_count` stayed `integer`). The table was dropped afterward, leaving
+  `pcd-restore-test` empty again. This confirms the D1 side of the pipeline against production-grade
+  D1, not just the local fake — but it exercised the query shape directly, not `restore.mjs` as a
+  running process, because that requires a `CLOUDFLARE_API_TOKEN` this session does not have and did
+  not create (see "Real dry-run — the one command Jeff still needs to run" below).
+- `wrangler r2 object get`, `wrangler r2 object put`, and `wrangler d1 list` were all exercised for
+  real against the real `pcd-db-backups` bucket and the real `pcd-restore-test` database.
+- **A fixture backup was seeded into the real bucket** at `backups/restore-test-fixture/` (the same
+  tricky-values table above, plus a `manifest.json` with `verified: true`) so the command below runs
+  against real R2 data, not a placeholder.
+
+**What was not run, and should not be claimed as run:** `scripts/restore.mjs` has not been executed
+as a standalone process end-to-end. It needs `CLOUDFLARE_API_TOKEN` (D1 Edit scope) and
+`CLOUDFLARE_ACCOUNT_ID` in the environment for its D1 HTTP API writes — this session had `wrangler`
+access (OAuth, already covers D1/R2 reads and `d1 info`) but no scoped API token, and generating one
+is Jeff's call, not something to do silently.
+
+### Real dry-run — the one command Jeff still needs to run
+
+```powershell
+cd worker-backup
+$env:CLOUDFLARE_API_TOKEN = "<a token scoped to D1 Edit — Cloudflare dashboard -> My Profile -> API Tokens>"
+$env:CLOUDFLARE_ACCOUNT_ID = "d42a1d557371024c855bc44a2c4aa28c"
+node scripts/restore.mjs --target pcd-restore-test --date restore-test-fixture --dry-run
+```
+
+This restores the real seeded fixture from R2 into the real `pcd-restore-test` D1 and prints the
+verification report. Expect `ALL VERIFIED: true` and 3 rows restored to `organizations`. Confirm the
+report, then optionally clean up with:
+
+```powershell
+npx wrangler d1 execute pcd-restore-test --remote --command "DROP TABLE IF EXISTS organizations;"
+```
+
+Once `worker-backup` is deployed and has produced a real `verified: true` weekly export, repeat this
+against that real `--date` and log the result here and in `INCIDENT-RUNBOOK.md`'s restore test log.
 
 ## Local validation
 
