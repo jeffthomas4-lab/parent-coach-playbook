@@ -28,7 +28,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Editorial | `/team-parent/coach-certifications/` | PIPELINE |
+| The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Editorial | `/team-parent/coach-certifications/` | drafted 2026-07-27 (src/content/articles/coach-certifications-you-actually-need.md) |
 | Why SafeSport training is non-negotiable | Editorial | Foundations short read | PIPELINE |
 | The one-day coaching clinic: what to look for | Editorial | Team Parent · Tech setup | PIPELINE |
 | Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | PIPELINE |
