@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/camp-dropoff-line.webp"
+heroAlt: "A line of cars stretches along a tree-lined camp drive in morning haze, bags being unloaded at a distance."
 publishedAt: 2026-05-01
 featured: true
 editorial:

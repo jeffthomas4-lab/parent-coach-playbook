@@ -9,6 +9,8 @@ phase: "drive-home"
 topic: "rec-vs-travel"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/highway-at-night-headlights.webp"
+heroAlt: "A dark highway stretches ahead through a windshield at night, taillights visible and dashboard glow low."
 publishedAt: 2026-07-04
 draft: false
 editorial:

@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "football"
 age: "13-14"
 topic: "rules-of-play"
+hero: "/illustrations/football-helmets-on-grass.webp"
+heroAlt: "Three plain unbranded youth football helmets sit in a row on grass at a practice field's edge, chinstraps loose in evening light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

@@ -8,6 +8,8 @@ seoTitle: "Youth Soccer Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Cleats, shin guards, and the right ball size by age, with in-store fit tests and what soccer families can skip."
 costSummary: "The gear is cheap at every age. League fees are the real cost."
 seasonNote: "Fall is the main season in most US leagues. Spring is common. Year-round in California, Texas, and Florida."
+hero: "/illustrations/guide-soccer-gear.webp"
+heroAlt: "Molded cleats, rolled shin guards, tall socks, a soccer ball, a water bottle, and a folded pinnie arranged in a flat lay on worn grass."
 publishedAt: 2026-02-09
 ---
 

@@ -9,6 +9,8 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "11-12"
+hero: "/illustrations/coach-greeting-at-gate.webp"
+heroAlt: "An adult holds a field gate open as kids file through, seen from behind so only their back and arm show, children blurred past them."
 publishedAt: 2026-06-11
 draft: false
 editorial:

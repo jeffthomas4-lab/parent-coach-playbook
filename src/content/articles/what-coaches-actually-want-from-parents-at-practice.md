@@ -7,6 +7,8 @@ bluf: "The best thing a parent can do at practice is stay quiet, stay back, and 
 format: "essay"
 topic: "communication"
 phase: "drive-there"
+hero: "/illustrations/coach-greeting-at-gate.webp"
+heroAlt: "An adult holds a field gate open as kids file through, seen from behind so only their back and arm show, children blurred past them."
 publishedAt: 2026-06-17
 draft: false
 editorial:

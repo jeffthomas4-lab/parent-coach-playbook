@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: cheer
 age: all-ages
+hero: "/illustrations/cheer-mat-empty-gym.webp"
+heroAlt: "A blue practice mat rolls out across an empty gym floor, a water bottle at the edge under high window light."
 publishedAt: 2026-06-11
 featured: false
 editorial:

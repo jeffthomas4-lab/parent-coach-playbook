@@ -7,6 +7,8 @@ format: "note"
 phase: "game"
 sport: "baseball"
 age: "5-7"
+hero: "/illustrations/baseball-bleacher-shadow.webp"
+heroAlt: "Aluminum bleachers behind a backstop cast a striped shadow, one adult sitting alone at the top seen from behind in late afternoon light."
 publishedAt: 2026-03-31
 featured: false
 editorial:

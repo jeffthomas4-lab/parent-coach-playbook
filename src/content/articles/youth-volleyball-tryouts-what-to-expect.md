@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "volleyball"
 age: "11-12"
 topic: "rules-of-play"
+hero: "/illustrations/volleyball-outdoor-sand-dusk.webp"
+heroAlt: "An empty sand volleyball court sits at dusk, the net sagging slightly with footprints crossing the sand in warm low light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

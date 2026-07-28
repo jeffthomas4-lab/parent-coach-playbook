@@ -9,6 +9,8 @@ format: essay
 phase: game
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/scorebook-on-bench.webp"
+heroAlt: "A spiral scorebook lies open on a dugout bench with a pencil in the gutter and a glove beside it, marks too soft to read."
 publishedAt: 2026-05-13
 featured: false
 draft: false

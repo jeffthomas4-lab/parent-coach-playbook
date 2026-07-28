@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/scorebook-on-bench.webp"
+heroAlt: "A spiral scorebook lies open on a dugout bench with a pencil in the gutter and a glove beside it, marks too soft to read."
 publishedAt: 2026-01-28
 featured: false
 editorial:

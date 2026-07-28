@@ -9,6 +9,8 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "11-12"
+hero: "/illustrations/chalk-lines-being-laid.webp"
+heroAlt: "Fresh chalk lines mark a grass field in early morning, a line marker cart parked at the edge with dew still on the grass."
 publishedAt: 2026-06-11
 draft: false
 editorial:

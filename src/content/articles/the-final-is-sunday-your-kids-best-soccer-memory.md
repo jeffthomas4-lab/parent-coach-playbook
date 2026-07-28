@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "soccer"
 age: "all-ages"
 topic: "game-day"
+hero: "/illustrations/soccer-goal-net-empty.webp"
+heroAlt: "An empty soccer goal is photographed from behind the net at dusk, the grass worn in the goalmouth and the field stretching away."
 publishedAt: 2026-07-18
 draft: false
 editorial:

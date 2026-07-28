@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "season-ops"
+hero: "/illustrations/garage-gear-bins-shelf.webp"
+heroAlt: "Plastic bins of youth sports gear are stacked on garage shelving with balls and helmets visible and a bike leaning in the corner."
 publishedAt: 2026-07-04
 draft: false
 editorial:

@@ -8,6 +8,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/phone-text-in-car.webp"
+heroAlt: "A phone rests face-up in a car cupholder showing an open message thread, keys in the ignition and morning light on the dash."
 publishedAt: 2026-05-13
 featured: false
 draft: false

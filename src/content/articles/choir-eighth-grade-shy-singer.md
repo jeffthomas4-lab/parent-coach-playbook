@@ -8,6 +8,8 @@ format: "essay"
 phase: "drive-home"
 sport: "choir"
 age: "13-14"
+hero: "/illustrations/choir-back-of-rows-singing.webp"
+heroAlt: "A choir is seen from directly behind the back row, heads and shoulders facing warm stage light with no faces visible."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

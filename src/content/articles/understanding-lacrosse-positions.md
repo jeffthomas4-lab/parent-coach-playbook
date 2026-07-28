@@ -9,6 +9,8 @@ sport: "lacrosse"
 age: "8-10"
 phase: "drive-there"
 topic: "rules-of-play"
+hero: "/illustrations/lacrosse-stick-ball-grass.webp"
+heroAlt: "A lacrosse stick lies across grass with a plain ball in the head, dew coating the blades in low morning light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

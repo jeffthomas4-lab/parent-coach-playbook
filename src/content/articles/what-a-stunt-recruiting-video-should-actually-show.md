@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "stunt"
 age: 15-plus
 topic: tryouts
+hero: "/illustrations/stunt-mat-gym-empty.webp"
+heroAlt: "A competition mat lies laid out in an empty gym with folding chairs stacked at the edge under overhead lights."
 publishedAt: 2026-07-06
 draft: false
 editorial:

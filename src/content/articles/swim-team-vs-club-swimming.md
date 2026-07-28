@@ -9,6 +9,8 @@ sport: "swimming"
 age: "8-10"
 phase: "drive-there"
 topic: "rules-of-play"
+hero: "/illustrations/swimming-blocks-from-behind.webp"
+heroAlt: "Starting blocks stand at the end of a pool shot from behind, one swimmer on the deck beyond seen only from the back in morning light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

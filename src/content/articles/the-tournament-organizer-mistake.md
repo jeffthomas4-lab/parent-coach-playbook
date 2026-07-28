@@ -9,6 +9,8 @@ format: note
 phase: game
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/sideline-distance-watching.webp"
+heroAlt: "A small figure in plain kit stands apart at the edge of a field watching play happen far away, seen from behind under flat overcast light."
 publishedAt: 2026-05-13
 featured: false
 draft: false

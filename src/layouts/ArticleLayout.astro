@@ -232,13 +232,16 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         </header>
 
         {data.hero && (
-          <div class="mt-10 rounded-lg overflow-hidden">
+          <div class="mt-5 md:mt-10 rounded-lg overflow-hidden">
             <img
               src={data.hero}
               alt={data.heroAlt ?? data.title}
-              class="w-full object-cover"
-              style="max-height: 480px;"
+              class="w-full object-cover max-h-[220px] md:max-h-[480px]"
+              width="1536"
+              height="1024"
               loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
         )}

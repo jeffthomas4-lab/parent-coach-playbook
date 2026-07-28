@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "13-14"
+hero: "/illustrations/receipts-on-counter.webp"
+heroAlt: "A small stack of paper receipts and a calculator sit on a kitchen counter beside car keys, the numbers too soft to read in morning light."
 publishedAt: 2026-04-21
 featured: false
 editorial:

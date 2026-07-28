@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "equipment"
+hero: "/illustrations/shared-gear-bin.webp"
+heroAlt: "A communal mesh bag of plain unbranded balls sits on grass at a practice field's edge with cones stacked beside it in morning light."
 publishedAt: 2026-07-04
 draft: false
 editorial:

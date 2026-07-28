@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "football"
 age: 5-7
 topic: "rules-of-play"
+hero: "/illustrations/football-goalpost-empty-field.webp"
+heroAlt: "A goalpost stands at the end of an empty youth football field, photographed at low angle in morning fog with hash marks fading away."
 publishedAt: 2026-06-11
 draft: false
 editorial:

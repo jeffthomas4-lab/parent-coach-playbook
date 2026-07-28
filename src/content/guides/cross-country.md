@@ -7,6 +7,8 @@ seoTitle: "Youth Cross Country Gear: Shoes, Spikes, and Cold-Weather Kit"
 seoDescription: "Where the money goes in cross country: real trainers, when spikes make sense, and the cold-weather kit for October and November meets."
 costSummary: "Shoes are most of the cost. Everything else is layers you may already own."
 seasonNote: "Cross country season is fall, typically July through November, depending on your region. Most races happen September through November."
+hero: "/illustrations/guide-cross-country-gear.webp"
+heroAlt: "Muddy racing spikes, a spike wrench with loose spikes, running socks, a folded singlet, and a windbreaker arranged in a flat lay on dry grass."
 publishedAt: 2026-04-30
 ---
 

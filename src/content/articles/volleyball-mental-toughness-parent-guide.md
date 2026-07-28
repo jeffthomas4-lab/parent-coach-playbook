@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "volleyball"
 age: "13-14"
 topic: communication
+hero: "/illustrations/volleyball-net-empty-gym.webp"
+heroAlt: "A volleyball net stretches across an empty gym court, shot from the floor at one post with light falling from high windows."
 publishedAt: 2026-06-11
 draft: false
 editorial:

@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: softball
 age: 11-12
+hero: "/illustrations/softball-circle-chalk.webp"
+heroAlt: "A youth softball field's pitching circle shows fresh chalk in morning light, a plain yellow ball resting in the dirt."
 publishedAt: 2026-06-10
 featured: false
 editorial:

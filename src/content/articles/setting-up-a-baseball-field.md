@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "baseball"
 age: "all-ages"
+hero: "/illustrations/baseball-infield-dirt-morning.webp"
+heroAlt: "A youth baseball infield shows freshly raked dirt and chalk baselines in early morning, bases set and nobody on the field."
 publishedAt: 2026-04-26
 featured: false
 editorial:

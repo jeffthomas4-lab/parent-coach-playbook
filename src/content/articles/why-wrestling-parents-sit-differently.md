@@ -9,6 +9,8 @@ phase: "drive-home"
 topic: "the-hard-stuff"
 sport: "wrestling"
 age: "all-ages"
+hero: "/illustrations/wrestling-shoes-headgear-bench.webp"
+heroAlt: "A pair of wrestling shoes and plain headgear sit on a bench beside a towel under dim gym light."
 publishedAt: 2026-07-04
 draft: false
 editorial:

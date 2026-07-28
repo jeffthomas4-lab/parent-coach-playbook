@@ -8,6 +8,8 @@ format: "essay"
 sport: "gymnastics"
 age: "15-plus"
 phase: "drive-there"
+hero: "/illustrations/gymnastics-grips-tape-bench.webp"
+heroAlt: "Worn hand grips and a roll of athletic tape sit on a bench beside a chalk-dusted water bottle under side light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

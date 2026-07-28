@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "basketball"
 age: "all-ages"
 topic: equipment
+hero: "/illustrations/basketball-shoes-baseline.webp"
+heroAlt: "A pair of worn court shoes and a rolled towel sit on a gym baseline beside a water bottle under hard overhead light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

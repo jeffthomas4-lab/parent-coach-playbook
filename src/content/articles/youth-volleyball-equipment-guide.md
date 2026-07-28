@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "volleyball"
 age: "all-ages"
 topic: equipment
+hero: "/illustrations/volleyball-knee-pads-bench.webp"
+heroAlt: "Rolled knee pads, a plain volleyball, and a water bottle sit on a gym bench under side light with a worn floor beneath."
 publishedAt: 2026-06-11
 draft: false
 editorial:

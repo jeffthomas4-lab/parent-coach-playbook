@@ -7,6 +7,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/kid-on-stairs-cleats.webp"
+heroAlt: "A child sits on interior stairs putting on cleats, seen from above and behind so only the crown of the head, back, and hands show."
 publishedAt: 2026-06-11
 featured: false
 editorial:

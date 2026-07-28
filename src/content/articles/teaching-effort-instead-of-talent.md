@@ -6,6 +6,8 @@ sport: multi-sport
 age: all-ages
 topic: communication
 draft: false
+hero: "/illustrations/kitchen-phone-group-thread.webp"
+heroAlt: "A parent holds a phone at a kitchen island in the evening with a messaging thread open, dinner half cleared behind them."
 publishedAt: 2026-06-11
 editorial:
   qualityGrade: 8

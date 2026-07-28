@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/parent-hands-in-pockets.webp"
+heroAlt: "An adult stands at a sideline fence with hands in pockets, cropped from the shoulders down, a bright field out of focus beyond the fence."
 publishedAt: 2026-02-03
 featured: false
 editorial:

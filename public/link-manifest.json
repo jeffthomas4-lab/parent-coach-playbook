@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-23T03:34:45.271Z",
-  "count": 684,
+  "generatedAt": "2026-07-28T19:09:37.201Z",
+  "count": 686,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -660,6 +660,12 @@
       ]
     },
     {
+      "url": "https://nsga.org/news/nfhs-makes-football-rule-changes-for-2026/",
+      "sources": [
+        "src/content/news/nfhs-football-equipment-rules-2026.md"
+      ]
+    },
+    {
       "url": "https://on3.com/nil/news/",
       "sources": [
         "src/content/recruiting/nil-basics-for-hs.md"
@@ -729,7 +735,6 @@
     {
       "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
       "sources": [
-        "src/pages/index.astro",
         "src/pages/newsletter.astro"
       ]
     },
@@ -2563,6 +2568,12 @@
         "src/content/body/youth-equestrian-safety-briefing.md",
         "src/content/body/youth-lacrosse-girls-safety-briefing.md",
         "src/pages/governing-bodies.astro"
+      ]
+    },
+    {
+      "url": "https://www.athleticbusiness.com/operations/governing-bodies/article/15830925/ohio-public-school-students-gain-opportunities-to-play-sports-under-new-state-law",
+      "sources": [
+        "src/content/news/ohio-sam-act-athlete-mobility-2026.md"
       ]
     },
     {

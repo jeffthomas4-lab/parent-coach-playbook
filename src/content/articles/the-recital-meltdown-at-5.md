@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "dance"
 age: "5-7"
+hero: "/illustrations/dance-studio-barre-morning.webp"
+heroAlt: "Two dancers' feet and ankles rest at the barre in a sunlit studio, shot low along a worn wood floor with bodies cropped above the knee."
 publishedAt: 2026-04-23
 featured: false
 editorial:

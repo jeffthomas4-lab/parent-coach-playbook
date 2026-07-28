@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "ballet"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/ballet-studio-mirror-morning.webp"
+heroAlt: "An empty ballet studio in the morning shows barres along a mirrored wall, sunlight striping across the sprung floor."
 publishedAt: 2026-07-06
 draft: false
 editorial:

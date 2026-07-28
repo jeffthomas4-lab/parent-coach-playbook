@@ -8,6 +8,8 @@ sport: multi-sport
 age: all-ages
 topic: communication
 draft: false
+hero: "/illustrations/carpool-curb-handoff.webp"
+heroAlt: "A duffel bag is passed down from a minivan's open side door at a curb, forearms in focus, wet pavement reflecting streetlight at dusk."
 publishedAt: 2026-06-11
 editorial:
   qualityGrade: 8

@@ -14,6 +14,8 @@ format: essay
 phase: drive-home
 sport: ballet
 age: 8-10
+hero: "/illustrations/ballet-studio-mirror-morning.webp"
+heroAlt: "An empty ballet studio in the morning shows barres along a mirrored wall, sunlight striping across the sprung floor."
 publishedAt: '2026-05-12'
 featured: false
 editorial:

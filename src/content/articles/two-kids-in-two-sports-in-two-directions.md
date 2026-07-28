@@ -9,6 +9,8 @@ format: essay
 phase: drive-home
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/gear-dumped-entryway.webp"
+heroAlt: "A duffel bag sits dumped open in a home entryway with cleats and a water bottle spilling onto the tile in evening light."
 publishedAt: 2026-05-13
 featured: false
 draft: false

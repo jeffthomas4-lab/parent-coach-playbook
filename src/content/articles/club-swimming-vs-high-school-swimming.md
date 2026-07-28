@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "swimming"
 age: "15-plus"
 topic: season-ops
+hero: "/illustrations/swimming-blocks-from-behind.webp"
+heroAlt: "Starting blocks stand at the end of a pool shot from behind, one swimmer on the deck beyond seen only from the back in morning light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

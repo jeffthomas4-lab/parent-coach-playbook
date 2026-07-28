@@ -9,6 +9,8 @@ phase: "drive-home"
 topic: "the-hard-stuff"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/porch-teen-headphones.webp"
+heroAlt: "A teenager sits on front porch steps in mid-afternoon light wearing headphones, head down, a backpack dropped beside them."
 publishedAt: 2026-07-04
 draft: false
 editorial:

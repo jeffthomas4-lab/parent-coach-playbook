@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: basketball
 age: 5-7
+hero: "/illustrations/basketball-shoes-baseline.webp"
+heroAlt: "A pair of worn court shoes and a rolled towel sit on a gym baseline beside a water bottle under hard overhead light."
 publishedAt: 2026-06-10
 featured: false
 editorial:

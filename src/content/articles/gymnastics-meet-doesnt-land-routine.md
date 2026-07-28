@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "gymnastics"
 age: "8-10"
 topic: "the-hard-stuff"
+hero: "/illustrations/gymnastics-chalk-bowl-bars.webp"
+heroAlt: "A chalk bowl sits beside uneven bars in a training gym, white dust dusting the rail and floor in morning light."
 publishedAt: 2026-07-04
 draft: false
 editorial:

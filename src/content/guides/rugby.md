@@ -8,6 +8,8 @@ seoTitle: "Youth Rugby Gear Guide: What to Buy by Age (and What the Club..."
 seoDescription: "Mouthguard, rugby cleats, scrum cap, and shoulder pads by age. What every youth rugby family needs to buy, and what the club usually handles."
 costSummary: "Starter kit runs $80–150. Rugby has less gear than tackle football at every age."
 seasonNote: "Spring and fall seasons vary by region. USA Rugby has a growing youth 7s circuit. Club programs often run year-round."
+hero: "/illustrations/guide-rugby-gear.webp"
+heroAlt: "A rugby ball, a padded scrum cap, a mouthguard, molded boots, rolled socks, and strapping tape arranged in a flat lay on cut grass."
 publishedAt: 2026-06-11
 ---
 

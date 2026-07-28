@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/laundry-pile-jerseys.webp"
+heroAlt: "A pile of grass-stained youth jerseys and socks sits on top of a dryer in a utility room, lit by morning light through a small window."
 publishedAt: 2026-06-13
 draft: false
 editorial:

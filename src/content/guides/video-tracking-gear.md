@@ -7,6 +7,8 @@ lede: "Film the practice. Inflate the ball. Two purchases that pay back every we
 seoTitle: "Youth Sports Video and Tracking Gear: Phone Tripod, Action Cam,..."
 seoDescription: "Phone tripod for filming practice, action cam for game film, ball pump with gauge. What every parent-coach eventually buys and the versions worth owning."
 costSummary: "Phone tripod under $30. Ball pump under $20. Action cam is the one splurge if you want it."
+hero: "/illustrations/guide-video-tracking-gear.webp"
+heroAlt: "A folded tripod, a phone mount clamp, a small action camera, a power bank, a coiled cable, and a lens cloth arranged in a flat lay on dark wood."
 publishedAt: 2026-06-11
 ---
 

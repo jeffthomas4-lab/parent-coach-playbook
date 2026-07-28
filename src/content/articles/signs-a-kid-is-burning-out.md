@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/parent-standing-apart.webp"
+heroAlt: "A single adult stands well apart from a loose group of other adults on a sideline, hands in pockets, seen from behind under overcast light."
 publishedAt: 2026-06-13
 draft: false
 editorial:

@@ -8,6 +8,8 @@ seoTitle: "Youth Wrestling Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Singlet, headgear, and wrestling shoes are the essentials. What each costs, when to buy, and what the club provides. Folkstyle and freestyle covered."
 costSummary: "First-year cost is $80–150 if the club provides a singlet. More if you're buying one."
 seasonNote: "Folkstyle runs October through March in most states. Freestyle and Greco-Roman camps pick up in spring and summer."
+hero: "/illustrations/guide-wrestling-gear.webp"
+heroAlt: "Wrestling shoes, plain headgear, a folded singlet, a mouthguard case, knee pads, and a towel arranged in a flat lay on a worn wrestling mat."
 publishedAt: 2026-06-11
 ---
 

@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "soccer"
 age: "all-ages"
+hero: "/illustrations/soccer-cleats-shinguards-bench.webp"
+heroAlt: "Worn soccer cleats and rolled shin guards sit on a wooden bench beside a ball in morning light through a fence."
 publishedAt: 2026-04-24
 featured: false
 editorial:

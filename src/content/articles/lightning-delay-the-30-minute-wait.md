@@ -9,6 +9,8 @@ phase: "game"
 sport: "multi-sport"
 age: "all-ages"
 topic: "game-day"
+hero: "/illustrations/sideline-chairs-pregame.webp"
+heroAlt: "A row of empty folding camp chairs sits set up along a sideline before anyone arrives, a cooler at the end and long morning shadows."
 publishedAt: 2026-07-04
 draft: false
 editorial:

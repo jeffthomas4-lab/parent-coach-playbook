@@ -9,6 +9,8 @@ phase: "game"
 sport: "basketball"
 age: "all-ages"
 topic: "rules-of-play"
+hero: "/illustrations/basketball-empty-gym-morning.webp"
+heroAlt: "An empty school gym in the morning shows light from high windows falling across the floor, a ball at rest near the baseline."
 publishedAt: 2026-06-11
 draft: false
 editorial:

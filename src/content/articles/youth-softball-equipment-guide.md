@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "softball"
 age: "all-ages"
 topic: equipment
+hero: "/illustrations/softball-outfield-dusk-figures.webp"
+heroAlt: "Two small figures walk in from the outfield at dusk, seen from behind at long distance with a fence line and trees beyond."
 publishedAt: 2026-06-11
 draft: false
 editorial:

@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "stunt"
 age: 15-plus
 topic: rules-of-play
+hero: "/illustrations/stunt-hands-wrap-bench.webp"
+heroAlt: "Wrapped wrists and hands rest on a gym bench, cropped at the forearm, chalk dust and a water bottle beside them."
 publishedAt: 2026-07-06
 draft: false
 editorial:

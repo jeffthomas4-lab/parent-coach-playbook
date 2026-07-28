@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/scoreboard-blank-dusk.webp"
+heroAlt: "A simple scoreboard with a blank unlit display stands at the end of a field at dusk, silhouetted trees behind it."
 publishedAt: 2026-02-22
 featured: false
 editorial:

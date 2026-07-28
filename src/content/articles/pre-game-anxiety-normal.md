@@ -7,6 +7,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 8-10
+hero: "/illustrations/car-in-driveway-not-leaving.webp"
+heroAlt: "A car sits in a driveway with the driver's door closed and nobody visible, the house dark behind it in early morning fog."
 publishedAt: 2026-06-11
 featured: false
 editorial:

@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "tennis"
 age: "15-plus"
 topic: "season-ops"
+hero: "/illustrations/tennis-racket-balls-bench.webp"
+heroAlt: "A racket and three plain tennis balls sit on a courtside bench beside a towel and water bottle in afternoon light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

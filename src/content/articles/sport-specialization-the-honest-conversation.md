@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/two-schedules-side-by-side.webp"
+heroAlt: "Two printed schedule sheets lie side by side on a wooden table with a pen across one, the grids visible but text unreadable."
 publishedAt: 2026-06-13
 draft: false
 editorial:

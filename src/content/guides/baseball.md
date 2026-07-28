@@ -8,6 +8,8 @@ seoTitle: "Youth Baseball Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Every glove, bat, helmet, and cleat a kid actually needs from tee-ball to high school, with sizing tests and the gear you can skip."
 costSummary: "Tee-ball is the cheap year. Costs climb once travel ball starts."
 seasonNote: "Spring is the main season. Fall ball is optional and often shorter. Winter cages and lessons start in January."
+hero: "/illustrations/guide-baseball-gear.webp"
+heroAlt: "A broken-in glove, a scuffed baseball, a wooden bat, batting gloves, a helmet, and rolled socks arranged in a flat lay on weathered planks."
 publishedAt: 2026-01-12
 ---
 

@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: lacrosse-girls
 age: 8-10
+hero: "/illustrations/lacrosse-girls-field-dusk-distance.webp"
+heroAlt: "A youth lacrosse field at dusk shows players small and backlit in the far third, a goal in the foreground with long shadows."
 publishedAt: 2026-06-10
 featured: false
 editorial:

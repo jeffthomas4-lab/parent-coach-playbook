@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/signup-paperwork-table.webp"
+heroAlt: "Registration paperwork and a pen sit on a folding table at a rec center under fluorescent light, a stack of blank forms beside them."
 publishedAt: 2026-03-07
 featured: false
 editorial:

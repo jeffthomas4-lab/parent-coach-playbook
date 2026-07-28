@@ -8,6 +8,8 @@ format: "essay"
 phase: "drive-home"
 sport: "dance"
 age: "11-12"
+hero: "/illustrations/dance-wings-backstage-dark.webp"
+heroAlt: "The dark wings of a stage are seen from backstage with a strip of bright stage light beyond and one small figure waiting in silhouette."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

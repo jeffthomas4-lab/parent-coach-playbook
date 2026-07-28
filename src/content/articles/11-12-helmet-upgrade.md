@@ -8,6 +8,8 @@ format: note
 phase: drive-there
 sport: football
 age: 11-12
+hero: "/illustrations/football-helmets-on-grass.webp"
+heroAlt: "Three plain unbranded youth football helmets sit in a row on grass at a practice field's edge, chinstraps loose in evening light."
 publishedAt: 2026-02-02
 featured: false
 editorial:

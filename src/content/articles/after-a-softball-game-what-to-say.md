@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "softball"
 age: "11-12"
 topic: communication
+hero: "/illustrations/softball-circle-chalk.webp"
+heroAlt: "A youth softball field's pitching circle shows fresh chalk in morning light, a plain yellow ball resting in the dirt."
 publishedAt: 2026-06-11
 draft: false
 editorial:

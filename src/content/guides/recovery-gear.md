@@ -7,6 +7,8 @@ seoTitle: "Recovery Gear for Youth Athletes: What to Buy and When"
 seoDescription: "Foam rollers, percussion massagers, resistance bands, and ice packs for youth athletes. Real age guidance on what helps, what hurts, and what to skip until high school."
 costSummary: "A foam roller and a couple of ice packs cover most kids under 14. Percussion massagers and sleep tools are optional add-ons for serious high school athletes."
 seasonNote: "Recovery gear is year-round. Most of it is useful regardless of season or sport."
+hero: "/illustrations/guide-recovery-gear.webp"
+heroAlt: "A foam roller, a massage ball, a coiled resistance band, an ice wrap, folded compression sleeves, and a water bottle arranged in a flat lay on light wood."
 publishedAt: 2026-06-11
 ---
 

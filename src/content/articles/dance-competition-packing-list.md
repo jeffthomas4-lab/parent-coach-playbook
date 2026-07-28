@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: dance
 age: all-ages
+hero: "/illustrations/dance-wings-backstage-dark.webp"
+heroAlt: "The dark wings of a stage are seen from backstage with a strip of bright stage light beyond and one small figure waiting in silhouette."
 publishedAt: 2026-06-10
 featured: false
 editorial:

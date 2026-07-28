@@ -7,6 +7,8 @@ seoTitle: "Stunt and Tumbling Gear for Kids: What to Buy by Level"
 seoDescription: "Shoes, practice wear, and conditioning gear for stunt and tumbling athletes by level, and what to skip."
 costSummary: "Cheap to start. Mat shoes are the main purchase. The program provides the uniform."
 seasonNote: "Stunt season follows the school calendar. Most programs run August through early spring with competitions November through February."
+hero: "/illustrations/guide-stunt-gear.webp"
+heroAlt: "Training shoes, wrist supports, a rolled mat strap, athletic tape, a folded fitted top, and a water bottle arranged in a flat lay on a practice mat."
 publishedAt: 2026-04-30
 ---
 

@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: band
 age: all-ages
+hero: "/illustrations/band-marching-field-distance.webp"
+heroAlt: "A marching band formation spreads across a practice field seen from very high and far away at dusk, figures small and anonymous."
 publishedAt: 2026-06-10
 featured: false
 editorial:

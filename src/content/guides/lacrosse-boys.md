@@ -8,6 +8,8 @@ seoTitle: "Boys' Lacrosse Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Stick, helmet, pads, and cleats by age, what boys' lacrosse really costs, and the gear that can wait a season."
 costSummary: "Mid-range to start. Gear costs climb by middle school, and travel or club play is the big-ticket item."
 seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor box leagues in winter."
+hero: "/illustrations/guide-lacrosse-boys-gear.webp"
+heroAlt: "A lacrosse head and shaft, arm pads, gloves, a helmet, a mouthguard, and a ball arranged in a flat lay on cut grass."
 publishedAt: 2026-03-23
 ---
 

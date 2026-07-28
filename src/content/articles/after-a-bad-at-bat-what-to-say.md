@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "baseball"
 age: "11-12"
 topic: communication
+hero: "/illustrations/baseball-infield-dirt-morning.webp"
+heroAlt: "A youth baseball infield shows freshly raked dirt and chalk baselines in early morning, bases set and nobody on the field."
 publishedAt: 2026-06-11
 draft: false
 editorial:

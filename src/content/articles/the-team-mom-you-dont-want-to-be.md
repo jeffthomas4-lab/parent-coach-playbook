@@ -7,6 +7,8 @@ format: "note"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/water-jug-table.webp"
+heroAlt: "An orange water cooler and a stack of paper cups sit on a folding table at a field's edge, ice melting in midday light."
 publishedAt: 2026-04-24
 featured: false
 editorial:

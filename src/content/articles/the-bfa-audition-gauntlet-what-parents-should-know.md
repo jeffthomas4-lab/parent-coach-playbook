@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "theater"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/theater-empty-seats-worklight.webp"
+heroAlt: "An empty theater house is seen from the stage under a single bare work light, rows of seats fading into the dark."
 publishedAt: 2026-07-06
 draft: false
 editorial:

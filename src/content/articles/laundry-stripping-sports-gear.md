@@ -8,6 +8,8 @@ phase: "team-parent"
 teamParentTopic: "tools"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/shared-gear-bin.webp"
+heroAlt: "A communal mesh bag of plain unbranded balls sits on grass at a practice field's edge with cones stacked beside it in morning light."
 publishedAt: 2026-07-24
 featured: false
 draft: true
@@ -21,8 +23,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-07-24
-  status: draft
-  reviewerNotes: ""
+  status: needs-revision
+  reviewerNotes: "FAIL Section C item 5: two 'It's' sentence-starters back to back ('It's not detergent residue. It's bacteria living in the polyester weave...'), exceeds one weak-starter per 300 words of body. FAIL Section E item 5: dek is 20 words, cap is 15. FAIL Section E item 4: seoDescription is 190 characters, schema max is 180, fails content collection validation."
 ---
 
 Everyone's stripping their laundry right now. Borax, washing soda, a scoop of powder detergent, an overnight soak in the hottest water your machine can pull. It works great on white cotton sheets that have ten years of fabric softener buildup.

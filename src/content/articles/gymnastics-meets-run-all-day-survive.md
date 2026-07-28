@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "gymnastics"
 age: "all-ages"
 topic: "season-ops"
+hero: "/illustrations/gymnastics-grips-tape-bench.webp"
+heroAlt: "Worn hand grips and a roll of athletic tape sit on a bench beside a chalk-dusted water bottle under side light."
 publishedAt: 2026-07-04
 draft: false
 editorial:

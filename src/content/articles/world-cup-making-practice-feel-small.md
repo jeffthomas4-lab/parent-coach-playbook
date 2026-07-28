@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "soccer"
 age: "8-10"
 topic: "the-hard-stuff"
+hero: "/illustrations/soccer-sideline-parents-fence.webp"
+heroAlt: "Adults stand along a chain-link fence watching a youth soccer match, seen from behind at hip height under bright overcast light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

@@ -7,6 +7,8 @@ format: note
 phase: game
 sport: multi-sport
 age: 8-10
+hero: "/illustrations/bench-end-alone.webp"
+heroAlt: "A child sits alone at the far end of a bench, seen from behind and to the side, teammates loosely blurred in the middle distance."
 publishedAt: 2026-06-11
 featured: false
 editorial:

@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "volleyball"
 age: "11-12"
 topic: "rules-of-play"
+hero: "/illustrations/volleyball-line-of-players-behind.webp"
+heroAlt: "A row of young players stands along a sideline seen from directly behind, hands on hips, all facing the court away from the camera."
 publishedAt: 2026-06-11
 draft: false
 editorial:

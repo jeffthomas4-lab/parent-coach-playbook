@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "theater"
 age: "11-12"
+hero: "/illustrations/theater-costume-rack-backstage.webp"
+heroAlt: "A rack of costumes stands backstage in dim light, the fabric layered and worn with a mirror bulb glowing beyond."
 publishedAt: 2026-04-26
 featured: false
 editorial:

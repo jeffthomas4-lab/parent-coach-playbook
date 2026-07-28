@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: baseball
 age: 5-7
+hero: "/illustrations/baseball-batting-cage-net.webp"
+heroAlt: "The inside of a batting cage is seen through the netting, one small figure mid-swing far down the cage, out of focus and unidentifiable."
 publishedAt: 2026-01-12
 featured: false
 editorial:

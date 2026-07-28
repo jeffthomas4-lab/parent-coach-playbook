@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/driveway-parked-car-dusk.webp"
+heroAlt: "A car sits parked in a driveway with its interior light on and two silhouettes still inside, seen from across the street at dusk."
 publishedAt: 2026-03-28
 featured: false
 editorial:

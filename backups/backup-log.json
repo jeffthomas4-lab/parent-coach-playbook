@@ -1,0 +1,15 @@
+[
+  {
+    "date": "2026-07-25",
+    "database": "activity-radar",
+    "database_id": "8cc3694a-26f8-4a56-b131-d5d3a68c49ef",
+    "tables": 27,
+    "tables_verified": 19,
+    "tables_incomplete": 8,
+    "total_rows_in_db": 419420,
+    "total_rows_captured": 106,
+    "verified": false,
+    "pushed": false,
+    "notes": "First backup run. 19 of 27 tables fully captured and verified (46 rows: activity_categories, d1_migrations, geocoded_addresses, trust_signals, sqlite_sequence, plus 14 empty tables). camp_scan_queue partial (60 of 673 rows). organizations (198287), enrichment_queue (182884), programs (2763), zip_centroids (33791), link_health (681), search_events (163), programs_staging (106) not exported this run -- row-level export via the D1 MCP query tool is not feasible at this scale without a bulk-export path (no wrangler CLI auth in sandbox, no dedicated export tool). _cf_KV inaccessible (SQLITE_AUTH, Cloudflare-internal). Additionally, git commit failed: .git/HEAD.lock present and un-removable (Operation not permitted), commit hung/timed out repeatedly -- repo appears to have a concurrent writer (other agent commits visible in log: Sasha, Ed). Files exist on disk under backups/2026-07-25/ but are NOT committed or pushed as of this run. See NOTES.md in this dated folder. Not a clean run -- does not count toward the Phase 0 proving clock."
+  }
+]

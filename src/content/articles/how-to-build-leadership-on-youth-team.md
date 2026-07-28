@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "communication"
+hero: "/illustrations/coach-clipboard-parents-huddle.webp"
+heroAlt: "A small ring of adults stands on grass after youth practice, one holding a clipboard low, seen from behind so no faces show."
 publishedAt: 2026-06-11
 draft: false
 editorial:

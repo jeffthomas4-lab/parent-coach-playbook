@@ -8,6 +8,8 @@ seoTitle: "Youth Softball Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Gloves, bats, helmets, and fastpitch gear by age band, with sizing checks and what to skip until travel ball."
 costSummary: "Tee-ball is the cheap year. Costs climb once travel ball starts."
 seasonNote: "Spring and summer are the main seasons. Fall ball is common. High school season runs spring."
+hero: "/illustrations/guide-softball-gear.webp"
+heroAlt: "A fielding glove, a yellow softball, a bat, a face-mask helmet, batting gloves, and rolled socks arranged in a flat lay on weathered planks."
 publishedAt: 2026-01-26
 ---
 

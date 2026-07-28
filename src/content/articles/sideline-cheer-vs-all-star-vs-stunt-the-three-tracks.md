@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "cheer"
 age: 15-plus
 topic: rules-of-play
+hero: "/illustrations/cheer-mat-empty-gym.webp"
+heroAlt: "A blue practice mat rolls out across an empty gym floor, a water bottle at the edge under high window light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

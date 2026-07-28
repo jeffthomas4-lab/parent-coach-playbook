@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "gymnastics"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/gymnastics-chalk-bowl-bars.webp"
+heroAlt: "A chalk bowl sits beside uneven bars in a training gym, white dust dusting the rail and floor in morning light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

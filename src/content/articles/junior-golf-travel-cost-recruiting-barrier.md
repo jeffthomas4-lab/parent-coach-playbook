@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "golf"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/golf-putting-green-long-shadow.webp"
+heroAlt: "A putting green sits at low sun with a flagstick and a single ball near the cup, one long shadow crossing the grass."
 publishedAt: 2026-07-06
 draft: false
 editorial:

@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "choir"
 age: 15-plus
 topic: tryouts
+hero: "/illustrations/choir-back-of-rows-singing.webp"
+heroAlt: "A choir is seen from directly behind the back row, heads and shoulders facing warm stage light with no faces visible."
 publishedAt: 2026-07-06
 draft: false
 editorial:

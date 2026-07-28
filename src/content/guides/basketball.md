@@ -8,6 +8,8 @@ seoTitle: "Youth Basketball Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Shoes, ball sizes, and practice gear by age, plus the stuff your kid does not need yet."
 costSummary: "One of the cheapest sports to outfit. Shoes are most of the bill, and the bill grows with travel ball."
 seasonNote: "School season runs winter. AAU and travel runs spring through summer. Year-round if you want it."
+hero: "/illustrations/guide-basketball-gear.webp"
+heroAlt: "A scuffed basketball, worn court shoes, rolled socks, a water bottle, and a folded towel arranged in a flat lay on weathered planks."
 publishedAt: 2026-02-23
 ---
 

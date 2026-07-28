@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "soccer"
 age: "8-10"
 topic: "rules-of-play"
+hero: "/illustrations/soccer-practice-sunset-silhouettes.webp"
+heroAlt: "A youth soccer practice is photographed from far behind the touchline at sunset, players reading as warm rim-lit silhouettes with long shadows."
 publishedAt: 2026-06-11
 draft: false
 editorial:

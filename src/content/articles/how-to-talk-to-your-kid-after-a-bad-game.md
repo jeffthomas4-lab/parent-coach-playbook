@@ -7,6 +7,8 @@ bluf: "After a bad game, your kid needs to decompress before they can process an
 format: "essay"
 topic: "the-hard-stuff"
 phase: "drive-home"
+hero: "/illustrations/kitchen-late-parent-alone.webp"
+heroAlt: "An adult stands at a dark kitchen counter at night, seen only as a shoulder and forearm, hands wrapped around a mug."
 publishedAt: 2026-06-18
 draft: false
 editorial:

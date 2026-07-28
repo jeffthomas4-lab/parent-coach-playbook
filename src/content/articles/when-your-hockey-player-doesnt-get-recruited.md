@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "hockey"
 age: "15-plus"
 topic: the-hard-stuff
+hero: "/illustrations/hockey-rink-empty-early.webp"
+heroAlt: "An empty ice rink sits ready before anyone arrives, a fresh sheet of ice with overhead lights reflecting off the surface."
 publishedAt: 2026-07-06
 draft: false
 editorial:

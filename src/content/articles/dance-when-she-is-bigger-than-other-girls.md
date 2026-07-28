@@ -8,6 +8,8 @@ format: "essay"
 phase: "drive-home"
 sport: "dance"
 age: "11-12"
+hero: "/illustrations/dance-studio-barre-morning.webp"
+heroAlt: "Two dancers' feet and ankles rest at the barre in a sunlit studio, shot low along a worn wood floor with bodies cropped above the knee."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

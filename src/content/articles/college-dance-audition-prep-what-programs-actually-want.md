@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "dance"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/dance-studio-barre-morning.webp"
+heroAlt: "Two dancers' feet and ankles rest at the barre in a sunlit studio, shot low along a worn wood floor with bodies cropped above the knee."
 publishedAt: 2026-07-06
 draft: false
 editorial:

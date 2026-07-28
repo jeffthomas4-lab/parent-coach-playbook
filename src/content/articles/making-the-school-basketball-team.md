@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: basketball
 age: 13-14
+hero: "/illustrations/basketball-hoop-outdoor-dusk.webp"
+heroAlt: "An outdoor basketball hoop with a worn net stands against a dusk sky, its backboard weathered and shot from below."
 publishedAt: 2026-06-10
 featured: false
 editorial:

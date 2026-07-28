@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: volleyball
 age: 15-plus
+hero: "/illustrations/volleyball-outdoor-sand-dusk.webp"
+heroAlt: "An empty sand volleyball court sits at dusk, the net sagging slightly with footprints crossing the sand in warm low light."
 publishedAt: 2026-07-06
 featured: false
 editorial:

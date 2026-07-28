@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/canopy-tent-setup.webp"
+heroAlt: "A pop-up canopy is raised at a field's edge in the morning, two adults lifting a corner with their faces hidden by the fabric."
 publishedAt: 2026-06-13
 draft: false
 editorial:

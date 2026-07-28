@@ -8,6 +8,8 @@ seoTitle: "The Sideline Kit: What Sports Parents Actually Need at Games"
 seoDescription: "Chairs, shade, hydration, and the small stuff that saves a tournament weekend, in one packable list."
 costSummary: "Chair quality drives most of the cost. The rest of the kit is cheap."
 seasonNote: "A basic kit works year-round. Hot seasons add fans and sunscreen. Cold seasons add blankets and hand warmers."
+hero: "/illustrations/guide-sideline-kit.webp"
+heroAlt: "A canvas tote, sunscreen, bug spray, a folded pop-up shade, a hand towel, and a water jug arranged in a flat lay on cut grass."
 publishedAt: 2026-05-01
 ---
 

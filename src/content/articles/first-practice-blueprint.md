@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/team-snack-table-setup.webp"
+heroAlt: "A folding table at a field's edge holds orange slices, paper cups, and a water jug in morning light, an adult forearm setting something down."
 publishedAt: 2026-06-11
 draft: false
 editorial:

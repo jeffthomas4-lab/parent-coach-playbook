@@ -9,6 +9,8 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/whistle-lanyard-still.webp"
+heroAlt: "A referee's whistle hangs from a worn lanyard on a chain-link fence post with a soft field visible behind it in morning light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

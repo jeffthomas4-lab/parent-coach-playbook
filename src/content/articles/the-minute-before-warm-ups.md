@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-home"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/handshake-line-distance.webp"
+heroAlt: "Two lines of young players pass each other in a postgame handshake line, seen from far behind so every face turns away, late afternoon light."
 publishedAt: 2026-04-26
 featured: false
 editorial:

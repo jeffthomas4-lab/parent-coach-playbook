@@ -8,6 +8,8 @@ seoTitle: "Youth Swim Team Gear: What to Buy by Age and Level"
 seoDescription: "Suits, goggles, caps, and meet gear for swim team, what a season costs, and the equipment the club already provides."
 costSummary: "The cheapest sport to start. Four items and you're done."
 seasonNote: "USA Swimming has teams year-round, but most recreational programs run in summer. Competitive seasons vary by region. Check with your local team."
+hero: "/illustrations/guide-swimming-gear.webp"
+heroAlt: "Goggles, a silicone cap, a folded training suit, a kickboard, a pull buoy, and a mesh bag arranged in a flat lay on wet pool deck tile."
 publishedAt: 2026-04-30
 ---
 

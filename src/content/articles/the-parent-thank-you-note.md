@@ -8,6 +8,8 @@ phase: "team-parent"
 teamParentTopic: "communication"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/kitchen-phone-group-thread.webp"
+heroAlt: "A parent holds a phone at a kitchen island in the evening with a messaging thread open, dinner half cleared behind them."
 publishedAt: 2026-04-30
 featured: false
 editorial:

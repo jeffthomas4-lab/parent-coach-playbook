@@ -7,6 +7,8 @@ seoTitle: "Youth Track and Field Gear by Event: What to Buy"
 seoDescription: "Trainers, spikes by event, and meet-day gear for youth track by age, plus what to skip the first season."
 costSummary: "Cheap to outfit. Trainers first, spikes once your kid picks an event."
 seasonNote: "Track season typically runs March through May. Cross country overlaps in fall. Check your school or local club for exact dates."
+hero: "/illustrations/guide-track-field-gear.webp"
+heroAlt: "Sprint spikes, a spike wrench with loose spikes, a folded singlet, running shorts, a stopwatch, and a water bottle arranged in a flat lay on a track surface."
 publishedAt: 2026-04-30
 ---
 

@@ -8,6 +8,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 15-plus
+hero: "/illustrations/parents-waiting-outside-gym.webp"
+heroAlt: "Adults stand and sit in a hallway outside closed gym doors, seen at distance down the corridor under fluorescent light."
 publishedAt: 2026-02-06
 featured: false
 editorial:

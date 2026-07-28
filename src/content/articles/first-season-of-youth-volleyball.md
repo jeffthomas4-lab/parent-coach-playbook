@@ -9,6 +9,8 @@ format: essay
 phase: drive-there
 sport: volleyball
 age: 8-10
+hero: "/illustrations/volleyball-line-of-players-behind.webp"
+heroAlt: "A row of young players stands along a sideline seen from directly behind, hands on hips, all facing the court away from the camera."
 publishedAt: 2026-06-11
 featured: false
 editorial:

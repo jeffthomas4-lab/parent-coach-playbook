@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: lacrosse-girls
 age: all-ages
+hero: "/illustrations/lacrosse-girls-sticks-fence.webp"
+heroAlt: "Several lacrosse sticks lean against a chain-link fence at a field's edge, goggles hanging from one in morning light."
 publishedAt: 2026-06-10
 featured: false
 editorial:

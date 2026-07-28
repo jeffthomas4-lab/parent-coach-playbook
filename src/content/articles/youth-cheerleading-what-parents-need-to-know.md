@@ -8,6 +8,8 @@ format: "essay"
 sport: "cheer"
 age: "8-10"
 phase: "drive-there"
+hero: "/illustrations/cheer-mat-empty-gym.webp"
+heroAlt: "A blue practice mat rolls out across an empty gym floor, a water bottle at the edge under high window light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

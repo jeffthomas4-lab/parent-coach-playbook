@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: swimming
 age: all-ages
+hero: "/illustrations/swimming-lane-lines-empty.webp"
+heroAlt: "An empty swimming pool sits at early morning with lane lines strung across still water, natatorium windows glowing behind."
 publishedAt: 2026-06-10
 featured: false
 editorial:

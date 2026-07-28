@@ -10,6 +10,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/tournament-schedule-paper.webp"
+heroAlt: "A printed weekend schedule grid lies on a car dashboard with a coffee cup in the holder, text soft and unreadable in early light."
 publishedAt: 2026-01-24
 featured: false
 editorial:

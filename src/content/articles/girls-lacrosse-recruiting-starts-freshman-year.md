@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "lacrosse-girls"
 age: "13-14"
 topic: "rec-vs-travel"
+hero: "/illustrations/lacrosse-girls-field-dusk-distance.webp"
+heroAlt: "A youth lacrosse field at dusk shows players small and backlit in the far third, a goal in the foreground with long shadows."
 publishedAt: 2026-07-04
 draft: false
 editorial:

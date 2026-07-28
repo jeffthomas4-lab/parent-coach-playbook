@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/carpool-curb-handoff.webp"
+heroAlt: "A duffel bag is passed down from a minivan's open side door at a curb, forearms in focus, wet pavement reflecting streetlight at dusk."
 publishedAt: 2026-06-11
 draft: false
 editorial:

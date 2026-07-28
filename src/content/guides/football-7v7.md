@@ -7,6 +7,8 @@ seoTitle: "7v7 Football Gear: What to Buy for the Passing Season"
 seoDescription: "The short list for 7on7: cleats, gloves, soft-shell helmet rules, and what your kid does not need for the passing circuit."
 costSummary: "Closer to flag than tackle. Cleats and gloves are the main spend, plus team kit."
 seasonNote: "Most 7v7 runs spring through summer (Mar-Jul) as a complement to school football. Some indoor leagues run winter. Showcase events and recruiting tournaments cluster Apr-Jul."
+hero: "/illustrations/guide-football-7v7-gear.webp"
+heroAlt: "Receiver gloves, turf trainers, a scrimmage cap, a football, a reversible pinnie, and a water bottle arranged in a flat lay on green turf."
 publishedAt: 2026-04-30
 ---
 

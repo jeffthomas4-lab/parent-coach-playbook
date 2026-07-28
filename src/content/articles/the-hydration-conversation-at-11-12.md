@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "multi-sport"
 age: "11-12"
+hero: "/illustrations/car-trunk-loading-morning.webp"
+heroAlt: "A duffel bag is loaded into a car trunk in a driveway at first light, an arm in frame and breath visible in the cold air."
 publishedAt: 2026-04-23
 featured: false
 editorial:

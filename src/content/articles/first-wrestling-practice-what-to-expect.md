@@ -9,6 +9,8 @@ phase: "drive-there"
 topic: "the-hard-stuff"
 sport: "wrestling"
 age: "8-10"
+hero: "/illustrations/wrestling-mat-circle-empty.webp"
+heroAlt: "An empty wrestling mat is photographed from the edge under gym lights, its circle markings plain with folded bleachers behind."
 publishedAt: 2026-07-04
 draft: false
 editorial:

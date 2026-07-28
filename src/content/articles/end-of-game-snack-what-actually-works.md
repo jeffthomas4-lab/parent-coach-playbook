@@ -10,6 +10,8 @@ phase: team-parent
 teamParentTopic: logistics
 sport: multi-sport
 age: 5-7
+hero: "/illustrations/trunk-folding-chairs-loaded.webp"
+heroAlt: "An open car trunk in a driveway holds folding camp chairs, a cooler, and a ball bag in early morning light."
 publishedAt: 2026-03-10
 featured: false
 editorial:

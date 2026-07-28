@@ -8,6 +8,8 @@ phase: drive-home
 sport: multi-sport
 age: 8-10
 seasonPhase: mid
+hero: "/illustrations/driveway-dusk-empty.webp"
+heroAlt: "An empty driveway at dusk shows a basketball hoop above the garage and a ball resting on the concrete, house lights just coming on."
 publishedAt: 2026-03-05
 editorial:
   qualityGrade: 8

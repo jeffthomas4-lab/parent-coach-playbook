@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "communication"
+hero: "/illustrations/bleachers-two-parents-side.webp"
+heroAlt: "Two adults sit a seat apart on aluminum bleachers, shot from behind and below, a bright field beyond them."
 publishedAt: 2026-06-11
 draft: false
 editorial:

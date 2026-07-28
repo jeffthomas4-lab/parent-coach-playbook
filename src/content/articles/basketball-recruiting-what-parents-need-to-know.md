@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "basketball"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/basketball-huddle-from-behind.webp"
+heroAlt: "A youth team huddle is shot from directly behind one player's back so all faces turn inward and hidden, hands stacked low in the middle."
 publishedAt: 2026-06-11
 draft: false
 editorial:

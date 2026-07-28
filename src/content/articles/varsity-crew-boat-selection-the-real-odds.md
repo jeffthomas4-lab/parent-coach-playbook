@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "crew"
 age: 15-plus
 topic: tryouts
+hero: "/illustrations/crew-boathouse-dawn-dock.webp"
+heroAlt: "A dock outside a boathouse sits at dawn with an empty rack and flat water beyond, mist rising off the surface."
 publishedAt: 2026-07-06
 draft: false
 editorial:

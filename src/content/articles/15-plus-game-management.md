@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: multi-sport
 age: 15-plus
+hero: "/illustrations/officials-hands-flag.webp"
+heroAlt: "An official's hands rest at the belt holding a plain yellow cloth, cropped at the chest with a blurred green field behind."
 publishedAt: 2026-03-12
 featured: false
 editorial:

@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "track-field"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/track-blocks-and-spikes.webp"
+heroAlt: "Starting blocks sit set in a lane with a pair of spikes beside them, hard morning shadow crossing the track."
 publishedAt: 2026-07-06
 draft: false
 editorial:

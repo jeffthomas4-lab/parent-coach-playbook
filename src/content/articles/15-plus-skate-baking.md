@@ -8,6 +8,8 @@ format: note
 phase: drive-there
 sport: hockey
 age: 15-plus
+hero: "/illustrations/hockey-gear-drying-garage.webp"
+heroAlt: "Youth hockey gear hangs to dry on hooks in a garage, pads and a plain helmet visible with skates on the floor in cold morning light."
 publishedAt: 2026-02-25
 featured: false
 editorial:

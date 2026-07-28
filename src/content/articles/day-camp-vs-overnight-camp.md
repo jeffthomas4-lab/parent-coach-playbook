@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/duffel-unpacked-laundry.webp"
+heroAlt: "A camp duffel sits dumped open on a laundry room floor, clothes spilling out with a damp towel on top in afternoon light."
 publishedAt: 2026-04-26
 featured: false
 editorial:

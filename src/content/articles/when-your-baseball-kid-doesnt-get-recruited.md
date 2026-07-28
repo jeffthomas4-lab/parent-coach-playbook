@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "baseball"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/baseball-bleacher-shadow.webp"
+heroAlt: "Aluminum bleachers behind a backstop cast a striped shadow, one adult sitting alone at the top seen from behind in late afternoon light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

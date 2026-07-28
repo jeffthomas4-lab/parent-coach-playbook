@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/coach-alone-folding-chairs.webp"
+heroAlt: "A lone adult stacks folding chairs on an empty sideline at dusk, seen from behind at middle distance after everyone else has gone."
 publishedAt: 2026-06-13
 draft: false
 editorial:

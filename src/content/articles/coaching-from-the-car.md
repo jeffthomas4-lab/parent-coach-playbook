@@ -9,6 +9,8 @@ phase: "drive-there"
 topic: "the-hard-stuff"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/kid-on-stairs-cleats.webp"
+heroAlt: "A child sits on interior stairs putting on cleats, seen from above and behind so only the crown of the head, back, and hands show."
 publishedAt: 2026-07-04
 draft: false
 editorial:

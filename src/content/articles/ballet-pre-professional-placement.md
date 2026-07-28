@@ -14,6 +14,8 @@ format: essay
 phase: team-parent
 sport: ballet
 age: 11-12
+hero: "/illustrations/ballet-pointe-shoes-hanging.webp"
+heroAlt: "A pair of worn pointe shoes hangs by its ribbons from a hook against a plain wall, lit by soft window light."
 publishedAt: '2026-05-12'
 featured: false
 editorial:

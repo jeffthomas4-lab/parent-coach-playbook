@@ -9,6 +9,8 @@ format: note
 phase: drive-home
 sport: track-field
 age: 15-plus
+hero: "/illustrations/track-blocks-and-spikes.webp"
+heroAlt: "Starting blocks sit set in a lane with a pair of spikes beside them, hard morning shadow crossing the track."
 publishedAt: 2026-06-10
 featured: false
 editorial:

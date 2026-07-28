@@ -9,6 +9,8 @@ format: essay
 phase: drive-there
 sport: band
 age: 11-12
+hero: "/illustrations/band-instrument-cases-hallway.webp"
+heroAlt: "Open instrument cases line a school hallway before rehearsal with a trumpet and clarinet resting inside, one student walking toward a lit window."
 publishedAt: 2026-06-11
 featured: false
 editorial:

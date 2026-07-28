@@ -8,6 +8,8 @@ seoTitle: "Youth Pickleball Gear Guide: Paddle, Shoes, and What to Skip"
 seoDescription: "Youth pickleball paddle recommendations by age, outdoor vs indoor balls, court shoes, and what kids don't need yet. Fast-growing youth sport, low overhead."
 costSummary: "First full setup runs $60–120. Paddle is the only real decision."
 seasonNote: "Year-round in most regions thanks to indoor court availability. Outdoor season peaks spring through fall."
+hero: "/illustrations/guide-pickleball-gear.webp"
+heroAlt: "Two paddles crossed, a perforated ball, court shoes, a sweatband, a towel, and a water bottle arranged in a flat lay on a textured court surface."
 publishedAt: 2026-06-11
 ---
 

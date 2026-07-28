@@ -10,6 +10,8 @@ phase: team-parent
 teamParentTopic: communication
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/carpool-curb-handoff.webp"
+heroAlt: "A duffel bag is passed down from a minivan's open side door at a curb, forearms in focus, wet pavement reflecting streetlight at dusk."
 publishedAt: 2026-05-13
 featured: false
 editorial:

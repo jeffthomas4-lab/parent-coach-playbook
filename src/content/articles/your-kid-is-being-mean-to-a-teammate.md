@@ -8,6 +8,8 @@ format: note
 phase: drive-home
 sport: multi-sport
 age: 8-10
+hero: "/illustrations/bedroom-door-ajar-gear.webp"
+heroAlt: "A child's bedroom door stands half open at night, a uniform dropped on the floor inside and one strip of hallway light across the carpet."
 publishedAt: 2026-02-05
 featured: false
 editorial:

@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: softball
 age: 8-10
+hero: "/illustrations/softball-outfield-dusk-figures.webp"
+heroAlt: "Two small figures walk in from the outfield at dusk, seen from behind at long distance with a fence line and trees beyond."
 publishedAt: 2026-06-10
 featured: false
 editorial:

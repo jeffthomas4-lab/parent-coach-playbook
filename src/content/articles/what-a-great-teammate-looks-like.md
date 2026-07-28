@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/kitchen-counter-calendar-paperwork.webp"
+heroAlt: "A kitchen counter at evening holds a paper wall calendar, a coffee mug, car keys, and team paperwork, an adult hand resting at the edge with a pen."
 publishedAt: 2026-06-13
 draft: false
 editorial:

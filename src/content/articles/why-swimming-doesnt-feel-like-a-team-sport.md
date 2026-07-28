@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "swimming"
 age: "all-ages"
 topic: "the-hard-stuff"
+hero: "/illustrations/swimming-goggles-cap-deck.webp"
+heroAlt: "A pair of goggles and a plain silicone cap sit on a wet pool deck beside a towel, light rippling across the surface."
 publishedAt: 2026-07-04
 draft: false
 editorial:

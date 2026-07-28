@@ -9,6 +9,8 @@ sport: "hockey"
 age: "all-ages"
 phase: "drive-there"
 topic: "rules-of-play"
+hero: "/illustrations/hockey-gear-drying-garage.webp"
+heroAlt: "Youth hockey gear hangs to dry on hooks in a garage, pads and a plain helmet visible with skates on the floor in cold morning light."
 publishedAt: 2026-06-11
 draft: false
 editorial:
