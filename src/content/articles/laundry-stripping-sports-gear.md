@@ -1,7 +1,7 @@
 ---
 title: "Laundry stripping is the wrong move for your kid's sports gear"
 dek: "Borax and an overnight hot soak work great on white cotton sheets. They break down the stretch in a jersey."
-seoDescription: "Laundry stripping is trending right now. It degrades the elastane in synthetic sports jerseys. Vinegar, baking soda, and skipping fabric softener get the smell out without wrecking the gear."
+seoDescription: "Laundry stripping degrades the elastane in synthetic sports jerseys. Vinegar, baking soda, and skipping fabric softener get the smell out without wrecking the gear."
 topic: "equipment"
 format: "note"
 phase: "team-parent"
