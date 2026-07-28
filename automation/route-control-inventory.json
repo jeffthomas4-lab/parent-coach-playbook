@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 164,
+  "route_count": 165,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -110,6 +110,17 @@
         "POST"
       ],
       "source": "admin/api/camps/[id]/verify.ts",
+      "cache_class": "admin_preview",
+      "auth_boundary": "cloudflare_access_and_app_authorization",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/admin/api/content/:key",
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "source": "admin/api/content/[key].ts",
       "cache_class": "admin_preview",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null
