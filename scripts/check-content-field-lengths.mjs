@@ -13,14 +13,62 @@
  * This runs in about a second and names every offender at once.
  *
  * Usage:
- *   node scripts/check-content-field-lengths.mjs           # report
- *   node scripts/check-content-field-lengths.mjs --check   # exit 1 on any violation
- *   node scripts/check-content-field-lengths.mjs --near 0.95  # also warn near the cap
+ *   node scripts/check-content-field-lengths.mjs            # report violations
+ *   node scripts/check-content-field-lengths.mjs --check    # exit 1 on any violation
+ *   node scripts/check-content-field-lengths.mjs --near     # also list entries near the cap
+ *   node scripts/check-content-field-lengths.mjs --near 0.9 # ... at a custom threshold
+ *
+ * The near-cap list is opt-in. 89 entries currently sit within 5% of their
+ * limit, and printing all of them on every `npm run build` buries the thing you
+ * actually need to see. In the default and --check modes it collapses to a
+ * single count.
  */
 
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, open } from 'node:fs/promises';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+/**
+ * Frontmatter lives at the top of the file, so reading the whole body is waste.
+ *
+ * 8KB measured against the corpus on 2026-07-28: the largest frontmatter in the
+ * four schema-constrained collections is 2,471 bytes (scripts), so this carries
+ * roughly 3x headroom. The largest anywhere in src/content is 12,701 bytes
+ * (pathways/ballet.md), which is NOT in a constrained collection and never gets
+ * scanned. readFrontmatterHead falls back to a full read if the closing
+ * delimiter is missing from the probe, so a future oversized entry is slow, not
+ * silently skipped.
+ */
+const FRONTMATTER_PROBE_BYTES = 8192;
+
+/**
+ * Read just enough of a file to capture its frontmatter block.
+ *
+ * Reading all 1,463 entries in full took ~5s, which blew the default vitest
+ * timeout and made this guard annoying enough to skip. Probing the first 8KB
+ * cuts it to well under a second, with a full-read fallback for the rare entry
+ * whose frontmatter runs past the probe.
+ */
+async function readFrontmatterHead(path) {
+  let handle;
+  try {
+    handle = await open(path, 'r');
+    const buf = Buffer.alloc(FRONTMATTER_PROBE_BYTES);
+    const { bytesRead } = await handle.read(buf, 0, FRONTMATTER_PROBE_BYTES, 0);
+    const head = buf.subarray(0, bytesRead).toString('utf8');
+    // Closing delimiter present, or the file is shorter than the probe: done.
+    if (head.indexOf('\n---', 3) !== -1 || bytesRead < FRONTMATTER_PROBE_BYTES) return head;
+  } catch {
+    return null;
+  } finally {
+    await handle?.close();
+  }
+  try {
+    return await readFile(path, 'utf8');
+  } catch {
+    return null;
+  }
+}
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CONFIG = join(ROOT, 'src/content.config.ts');
@@ -29,7 +77,9 @@ const CONTENT = join(ROOT, 'src/content');
 const args = process.argv.slice(2);
 const strict = args.includes('--check');
 const nearIdx = args.indexOf('--near');
-const nearRatio = nearIdx !== -1 ? Number(args[nearIdx + 1]) : 0.95;
+const listNear = nearIdx !== -1;
+const nearArg = listNear ? Number(args[nearIdx + 1]) : NaN;
+const nearRatio = Number.isFinite(nearArg) && nearArg > 0 && nearArg < 1 ? nearArg : 0.95;
 
 /**
  * Parse the collection schemas out of content.config.ts.
@@ -166,8 +216,13 @@ for (const dir of dirs) {
   try { files = (await readdir(join(CONTENT, dir))).filter((f) => f.endsWith('.md') || f.endsWith('.mdx')); }
   catch { continue; }
 
-  for (const file of files) {
-    const raw = await readFile(join(CONTENT, dir, file), 'utf8');
+  // Read the batch concurrently; the per-file work is I/O, not CPU.
+  const heads = await Promise.all(
+    files.map(async (file) => [file, await readFrontmatterHead(join(CONTENT, dir, file))]),
+  );
+
+  for (const [file, raw] of heads) {
+    if (raw === null) continue;
     const fm = frontmatter(raw);
     if (!fm) continue;
     scanned++;
@@ -201,8 +256,13 @@ if (violations.length) {
 }
 
 if (near.length) {
-  console.log(`Within ${Math.round(nearRatio * 100)}% of the cap (${near.length}) — one edit from breaking the build:`);
-  for (const v of near) console.log(`  ${String(v.n).padStart(4)}/${v.limit}  ${v.dir}/${v.file}  (${v.field})`);
+  const pct = Math.round(nearRatio * 100);
+  if (listNear) {
+    console.log(`Within ${pct}% of the cap (${near.length}) — one edit from breaking the build:`);
+    for (const v of near) console.log(`  ${String(v.n).padStart(4)}/${v.limit}  ${v.dir}/${v.file}  (${v.field})`);
+  } else {
+    console.log(`${near.length} entries sit within ${pct}% of their cap. Run with --near to list them.`);
+  }
   console.log('');
 }
 
