@@ -2,7 +2,7 @@
 title: "Your temper is a different problem when you're the parent-coach"
 seoTitle: "Managing your temper as a parent-coach"
 seoDescription: "A parent-coach's temper isn't the same problem as a regular coach's. Why the two-role version is harder, and the rule that actually holds up on the field."
-dek: "A regular coach gets frustrated by the mistake. You get frustrated by the mistake and by whose kid made it, at the same time."
+dek: "A regular coach sees the mistake. You also see whose kid made it."
 bluf: "The fix for a parent-coach's temper isn't more willpower in the moment. Set the rule before the season starts: one sentence per correction, then move on, with someone else holding permission to flag it when you break the rule."
 topic: "the-hard-stuff"
 format: "essay"
@@ -11,9 +11,9 @@ sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/backseat-window-evening.webp"
 heroAlt: "A child in a car's back seat looks out the side window, head turned fully away, a sports bag slumped beside them in evening light."
-publishedAt: 2026-07-23
+publishedAt: 2026-07-28
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 7
   originalityGrade: 8
@@ -24,8 +24,9 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-07-23
-  status: ready-for-jeff
-  reviewerNotes: "HOLD: flagSensitiveTopic is true. Per the hard-hold rule this routes to Jeff rather than publishing. For what it's worth, both cited stats check out: SafeSport's first National Coaches Survey (released Jan 29, 2026, ~3,500 coaches) does list managing parents among top reasons coaches quit, and NASO's 2023 survey (35,813 officials) found 40%+ named unruly parents the top job problem. Not scored further against the rubric."
+  status: published
+  reviewerNotes: "HOLD REVIEWED AND CLEARED BY JEFF 2026-07-28. Penny placed a hard hold on flagSensitiveTopic and did not score it against the rubric. Jeff read it and approved publication: the subject is core Parent Coach Desk material and the advice is preventative (set the rule before the season, name an accountability partner) rather than punitive. Penny independently verified both statistics before the hold: the U.S. Center for SafeSport National Coaches Survey (released 2026-01-29) and the NASO 2023 officials survey (35,813 respondents, over 40 percent naming unruly parents). flagSensitiveTopic stays true on purpose, because the flag is accurate; it was the hold that was overridden, not the flag. Dek tightened from 24 words to 13 at publish time to meet Section E item 5, which went unchecked because the hard hold stopped rubric scoring."
+  factCheckGoodThrough: 2027-01-29
 ---
 
 Youth coaches are quitting over parents. A national survey of 3,470 coaches, released by the U.S. Center for SafeSport in January, found that managing parents ranks among the top reasons coaches leave the job. One coach in the survey said it plainly: "They created tension. They instilled distrust. They were worse than children."

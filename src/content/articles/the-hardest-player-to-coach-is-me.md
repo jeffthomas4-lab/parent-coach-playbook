@@ -2,7 +2,7 @@
 title: "The hardest player to coach is *me*"
 seoTitle: "Emotional regulation for the parent-coach"
 seoDescription: "The sideline meltdown was never about the ref. It's about me. What I do to regulate my own emotions before I lose it in front of my kid's team."
-dek: "The sideline meltdown was never about the ref. Here's what I do before I lose it in front of the team."
+dek: "The sideline meltdown was never about the ref. Here's what I do instead."
 bluf: "The parent-coach's hardest job isn't managing the roster. It's managing yourself. Notice the trigger before the reaction, build a between-innings reset, and separate the coach voice from the parent voice. The team learns to regulate by watching you fail to and then recover."
 topic: "the-hard-stuff"
 format: "essay"
@@ -11,9 +11,9 @@ sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/passenger-seat-gear-bag.webp"
 heroAlt: "An empty car passenger seat holds a youth sports bag with the seatbelt buckled around nothing, an empty parking lot beyond the windshield at dusk."
-publishedAt: 2026-07-22
+publishedAt: 2026-07-28
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -24,8 +24,8 @@ editorial:
   citationCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-07-23
-  status: ready-for-jeff
-  reviewerNotes: "HOLD: flagSensitiveTopic is true (mental-health/identity content, personal essay on losing composure in front of own kid). Per the hard-hold rule this routes to Jeff rather than publishing, regardless of voice quality. Not scored further against the rubric."
+  status: published
+  reviewerNotes: "HOLD REVIEWED AND CLEARED BY JEFF 2026-07-28. Penny placed a hard hold on flagSensitiveTopic (mental-health/identity, personal essay on losing composure in front of own kid) and did not score it against the rubric. Jeff read it and approved publication: the subject is core Parent Coach Desk material, the regulation techniques described (paced breathing, distance from the trigger, delaying correction) are constructive and carry no self-harm or physical-discomfort advice, and no individual is identified. flagSensitiveTopic stays true on purpose, because the flag is accurate; it was the hold that was overridden, not the flag. Dek tightened from 21 words to 13 at publish time to meet Section E item 5, which went unchecked because the hard hold stopped rubric scoring."
 ---
 
 I yelled at a twelve-year-old umpire last spring. Not at my kid. Not at the other team. At a kid three years older than my own son who was working the plate alone because the league couldn't find a second official.
