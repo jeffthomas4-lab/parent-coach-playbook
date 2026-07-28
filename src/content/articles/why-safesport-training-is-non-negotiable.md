@@ -26,8 +26,8 @@ editorial:
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-07-28
-  status: draft
-  reviewerNotes: "Companion piece to coach-certifications-you-actually-need.md, going deeper on the one certification from that list that's actually mandatory. Sensitive flagged (child abuse prevention subject matter); stays in the compliance/logistics lane, no graphic detail. Facts verified against uscenterforsafesport.org/about/faqs (training cadence, MAAPP, audit and sanction process) and the Center's 2018 legislative fact sheet on the Protecting Young Victims from Sexual Abuse and Safe Sport Authorization Act of 2017. No overlap with safesport-basics-for-parents.md (parent-vetting-a-coach angle) or safesport-reporting-walkthrough.md (how to report); this piece is the parent-coach's own compliance obligation."
+  status: ready-for-jeff
+  reviewerNotes: "HOLD: flagSensitiveTopic is true (child abuse prevention subject matter), routing to Jeff per the hard-holds list; voice scoring stopped there. Mechanical checks still run: dek is 17 words against the 15-word cap (Section E5 fail, needs a trim, e.g. cut 'and skipping it' clause) — quote: 'SafeSport training is federal law for youth sports coaches, and skipping it takes you off the field.' seoDescription (159 chars) and seoTitle (not set) are within schema range. No em dashes anywhere in the file. Frontmatter otherwise schema-complete. Companion piece to coach-certifications-you-actually-need.md (published this run); no content overlap with safesport-basics-for-parents.md or safesport-reporting-walkthrough.md. Not independently fact-verified beyond the dek check since the hold stops further review."
 ---
 
 Coaches skip the certifications that feel optional. SafeSport doesn't fall in that bucket, even though it gets treated that way half the time.

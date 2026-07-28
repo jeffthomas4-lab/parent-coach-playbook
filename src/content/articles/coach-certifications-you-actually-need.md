@@ -12,9 +12,9 @@ sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/laundry-pile-jerseys.webp"
 heroAlt: "A pile of grass-stained youth jerseys and socks sits on top of a dryer in a utility room, lit by morning light through a small window."
-publishedAt: 2026-07-27
+publishedAt: 2026-07-28
 featured: false
-draft: true
+draft: false
 editorial:
   qualityGrade: 8
   originalityGrade: 7
@@ -25,9 +25,10 @@ editorial:
   citationCheckPassed: true
   sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-07-27
-  status: draft
-  reviewerNotes: "Self-check pass: no banned words, no em dashes, paragraphs capped at 3 sentences, one fragment-style close per section. Facts verified against usahockey.com/uscenterforsafesport.org (SafeSport), usafootball.com (Heads Up Football), usabaseball.com (Coach A/B/C), nocsae.org, and hecc.org."
+  claudeReviewedAt: 2026-07-28
+  status: published
+  reviewerNotes: "Penny: rubric-clean, all of A/B/C/E pass. Independently re-verified every fact via live search this run: SafeSport 90-min Core plus 4-year refresher/recert cycle (uscenterforsafesport.org), Heads Up Football $10-15/coach and four-course curriculum (usafootball.com), USA Baseball Coach A/B/C free tiers (usabaseball.com), NOCSAE standards-body role plus HECC as the independent hockey-equipment certifier (nocsae.org, hecc.org). Hero image confirmed valid (1536x1024, 70KB). Existing hero image was reused from the laundry-stripping library asset per the shared-illustration-library norm in PHOTO_STANDARD.md."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Five names get thrown around when parents ask what a coach needs to be certified in: SafeSport, Heads Up Football, USA Baseball, NOCSAE, HECC. Two of those aren't things you get. The other three are, and only one of them is actually required.
