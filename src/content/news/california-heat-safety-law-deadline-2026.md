@@ -5,13 +5,16 @@ category: "safety"
 sport: "multi-sport"
 sourceUrl: "https://calmatters.org/environment/climate-change/2026/07/california-school-heat-illness-laws/"
 sourceLabel: "CalMatters"
-publishedAt: 2026-07-16
-draft: true
+publishedAt: 2026-07-28
+draft: false
 editorial:
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  claudeReviewedAt: 2026-07-23
-  status: draft
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-07-28
+  factCheckGoodThrough: 2027-01-28
+  status: published
+  reviewerNotes: "Passed rubric A/B/C/E. Fact-checked against CalMatters source and the SB 1248 bill text/press coverage: 2024 law, July 1 2026 deadline, Yahushua Robinson's 2023 PE heat death, no federal equivalent all confirmed."
 ---

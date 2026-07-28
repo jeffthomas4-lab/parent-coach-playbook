@@ -5,13 +5,16 @@ category: "registration"
 sport: "soccer"
 sourceUrl: "https://www.usyouthsoccer.org/news/2025/06/10/updated-decision-on-age-group-formation/"
 sourceLabel: "US Youth Soccer"
-publishedAt: 2026-07-14
-draft: true
+publishedAt: 2026-07-28
+draft: false
 editorial:
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
-  claudeReviewedAt: 2026-07-23
-  status: draft
+  sportLanguageCheckPassed: true
+  claudeReviewedAt: 2026-07-28
+  factCheckGoodThrough: 2027-01-28
+  status: published
+  reviewerNotes: "Passed rubric A/B/C/E. Confirmed against AYSO's June 2025 press release: AYSO/US Club Soccer/US Youth Soccer moved to an Aug 1-July 31 school-year cutoff effective the 2026-27 season/registration year, reverting to pre-2017 formation."
 ---

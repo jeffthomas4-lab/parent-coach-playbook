@@ -11,7 +11,8 @@ editorial:
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
-  citationCheckPassed: true
-  claudeReviewedAt: 2026-07-23
-  status: draft
+  citationCheckPassed: false
+  claudeReviewedAt: 2026-07-28
+  status: ready-for-jeff
+  reviewerNotes: "HOLD, unverifiable eligibility claim. Fetched the cited sourceUrl (usssa.com/docs/baseball/usssa_bb_rules.pdf, same doc as the 2026 National By-Laws PDF) and the current USSSA Rule 3.00 page in full: neither contains a 3-grade-exception-players-per-team cap, an August 12 2026 effective date, or a showcase exemption. Web search kept repeating the claim verbatim across queries but never pointed to a primary source that states it, which reads like an echo/hallucination rather than a sourced fact. Mechanical checks: headline 77 chars, summary 322 chars, both within schema bounds; category/sport enums valid; no em dashes; no open flags. Recommend either finding an actual USSSA bulletin/press release confirming this rule before republishing, or killing the piece."
 ---
