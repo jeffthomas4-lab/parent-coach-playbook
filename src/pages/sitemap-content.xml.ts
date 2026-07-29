@@ -20,6 +20,11 @@ export async function GET() {
   const scripts = await getCollection('scripts', ({ data }) => isLive(data));
   const decisions = await getCollection('decisions', ({ data }) => isLive(data));
   const news = await getCollection('news', ({ data }) => !data.draft);
+  // pillar was missing from this sitemap entirely until 2026-07-28. All 17
+  // Ultimate Parent Guides returned 200 live and were invisible to crawlers,
+  // despite /pillar/<slug>/ being their own declared canonical (see
+  // src/pages/pillar/[slug].astro). Found by scripts/check-publish-queue-drift.mjs.
+  const pillar = await getCollection('pillar', ({ data }) => isLive(data));
 
   const STATIC_LASTMOD: Record<string, string> = {
     '/': '2026-06-11',
@@ -98,6 +103,10 @@ export async function GET() {
     ...scripts.map(s => ({ loc: `/scripts/${s.id}/`, lastmod: s.data.publishedAt.toISOString() })),
     ...decisions.map(d => ({ loc: `/decisions/${d.id}/`, lastmod: d.data.publishedAt.toISOString() })),
     ...news.map(n => ({ loc: `/news/${n.id}/`, lastmod: n.data.publishedAt.toISOString() })),
+    // Canonical route is /pillar/, not /guides/. /guides/<slug>/ renders the
+    // same entry and carries a canonical pointing here, so only this one is
+    // listed. Listing both would be self-inflicted duplicate content.
+    ...pillar.map(p => ({ loc: `/pillar/${p.id}/`, lastmod: p.data.publishedAt.toISOString() })),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

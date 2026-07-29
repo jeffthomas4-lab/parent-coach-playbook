@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { isLive } from '../../lib/publishFilter';
+import { SITE } from '../../data/site';
 
 export async function getStaticPaths() {
   const pillars = await getCollection('pillar', ({ data }) => isLive(data));
@@ -17,8 +18,17 @@ const { Content } = await render(entry);
 
 const pageTitle = entry.data.seoTitle ?? entry.data.title;
 const pageDescription = entry.data.seoDescription ?? '';
+
+// This route renders the SAME pillar entry as /pillar/<slug>/, which declares
+// itself canonical (src/pages/pillar/[slug].astro). Until 2026-07-28 this page
+// shipped with no canonical at all, so Google saw two identical pages and chose
+// its own winner. That is the same "Duplicate, Google chose different canonical"
+// class of problem the www-to-bare-domain redirect fixed in the 2026-07 SEO
+// audit. Point every /guides/ pillar page at /pillar/ and let the sitemap list
+// only the canonical.
+const canonicalUrl = new URL(`/pillar/${entry.id}/`, SITE.url).toString();
 ---
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} canonical={canonicalUrl}>
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">

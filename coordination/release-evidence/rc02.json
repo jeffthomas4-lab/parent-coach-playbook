@@ -1,58 +1,58 @@
 {
   "release_id": "pcd-rc02",
   "environment": "production",
-  "created_at": "2026-07-29T03:39:21.778Z",
-  "expires_at": "2026-08-05T03:39:21.778Z",
+  "created_at": "2026-07-29T04:59:25.989Z",
+  "expires_at": "2026-08-05T04:59:25.989Z",
   "supersedes": "pcd-local-rc01",
-  "candidate_commit": "ad0f20c8de0d17f1dd2a629021425e152412dbf8",
+  "candidate_commit": "a545a30a4932cabe6d1c1cf2ed03454b858059f2",
   "candidate_branch": "feat/pcd-inline-editor",
-  "cut_note": "Cut 2026-07-29T03:39:21.778Z against ad0f20c8 by scripts/cut-release-evidence.mjs. rc01 was pinned to a 2026-07-18 candidate and expired 2026-07-25, blocking ci:release. Rather than renew that packet's date over eleven commit-pinned pass marks, the commit-sensitive gates were re-run here, environment gates were carried with their original dates visible, and deploy_approval plus post_deploy_observation were RESET because they described a superseded candidate. This packet is deliberately not ready: the gates that were never closed on rc01 are still open.",
+  "cut_note": "Cut 2026-07-29T04:59:25.989Z against a545a30a by scripts/cut-release-evidence.mjs. rc01 was pinned to a 2026-07-18 candidate and expired 2026-07-25, blocking ci:release. Rather than renew that packet's date over eleven commit-pinned pass marks, the commit-sensitive gates were re-run here, environment gates were carried with their original dates visible, and deploy_approval plus post_deploy_observation were RESET because they described a superseded candidate. This packet is deliberately not ready: the gates that were never closed on rc01 are still open.",
   "gates": {
     "source_commit": {
-      "state": "pass",
-      "summary": "Candidate is commit ad0f20c8de0d17f1dd2a629021425e152412dbf8 (\"Add inline-editor route and KV binding to the production manifest contract\") on branch feat/pcd-inline-editor, cut from a clean working tree.",
+      "state": "fail",
+      "summary": "Working tree is DIRTY at a545a30a; a release candidate must be cut from a clean tree so the artifact is reproducible.",
       "evidence": [
-        "commit: ad0f20c8de0d17f1dd2a629021425e152412dbf8",
-        "short: ad0f20c8",
+        "commit: a545a30a4932cabe6d1c1cf2ed03454b858059f2",
+        "short: a545a30a",
         "branch: feat/pcd-inline-editor",
-        "subject: Add inline-editor route and KV binding to the production manifest contract",
-        "working tree clean: true",
-        "recorded at: 2026-07-29T03:39:21.778Z"
+        "subject: Penny: 0 published, 1 to revision (laundry stripping), 1 held (Ohio SAM Act roster-minimum claim)",
+        "working tree clean: false",
+        "recorded at: 2026-07-29T04:59:25.989Z"
       ]
     },
     "secret_scan": {
       "state": "pass",
-      "summary": "Repository files and full git history passed the secret scanner against this candidate. Established 2026-07-29T03:39:21.778Z by scripts/cut-release-evidence.mjs.",
+      "summary": "Repository files and full git history passed the secret scanner against this candidate. Established 2026-07-29T04:59:25.989Z by scripts/cut-release-evidence.mjs.",
       "evidence": [
         "command: npm run --silent check:secrets",
         "exit code: 0",
         "output sha256 (first 16): c8cb282804ae6749",
         "final line: Secret scan passed for current repository files and complete Git history.",
-        "duration: 20.1s",
-        "run at: 2026-07-29T03:39:21.778Z"
+        "duration: 17.5s",
+        "run at: 2026-07-29T04:59:25.989Z"
       ]
     },
     "production_manifest": {
-      "state": "pass",
-      "summary": "The production manifest contract passes against production configuration for this candidate. Established 2026-07-29T03:39:21.778Z by scripts/cut-release-evidence.mjs.",
+      "state": "fail",
+      "summary": "The production manifest contract FAILED for this candidate. Established 2026-07-29T04:59:25.989Z by scripts/cut-release-evidence.mjs.",
       "evidence": [
         "command: npm run --silent check:production-manifest",
-        "exit code: 0",
-        "output sha256 (first 16): 4a0da09b0b7dc8f4",
-        "final line: Production deployment manifest verified: identity, bindings, Access vars, observability, and safe feature defaults match the release contract.",
-        "duration: 104.8s",
-        "run at: 2026-07-29T03:39:21.778Z"
+        "exit code: 1",
+        "output sha256 (first 16): f97de9999c5d7a95",
+        "final line: at [nodejs.internal.kHybridDispatch] (node:internal/event_target:843:20)\u001b[22m",
+        "duration: 33.3s",
+        "run at: 2026-07-29T04:59:25.989Z"
       ]
     },
     "tests_and_build": {
       "state": "pass",
-      "summary": "Unit suite and the production build both completed for commit ad0f20c8.",
+      "summary": "Unit suite and the production build both completed for commit a545a30a.",
       "evidence": [
-        "tests: npm run --silent test:unit -> exit 0, sha256 78d9176dc3dac6b9, 22s",
-        "tests final line: \u001b[2m   Duration \u001b[22m 20.72s\u001b[2m (transform 57.76s, setup 0ms, import 99.14s, tests 16.90s, environment 67ms)\u001b[22m",
-        "build: npm run --silent build -> exit 0, sha256 50fc367bece0e932, 82.8s",
-        "build final line: \u001b[2m20:43:12\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m",
-        "completed at: 2026-07-29T03:43:12.497Z"
+        "tests: npm run --silent test:unit -> exit 0, sha256 bd77e181402f64a6, 16.8s",
+        "tests final line: \u001b[2m   Duration \u001b[22m 15.13s\u001b[2m (transform 33.71s, setup 0ms, import 65.53s, tests 10.30s, environment 51ms)\u001b[22m",
+        "build: npm run --silent build -> exit 0, sha256 bc956275bb7aeadc, 80.7s",
+        "build final line: \u001b[2m22:01:54\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m",
+        "completed at: 2026-07-29T05:01:55.140Z"
       ]
     },
     "access_policy": {
@@ -63,7 +63,7 @@
         "coordination/release-evidence/anonymous-access-2026-07-16.json",
         "coordination/release-evidence/live-production-runtime-drift-2026-07-17.json",
         "tests/access-evidence.test.ts",
-        "carried forward on 2026-07-29T03:39:21.778Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T04:59:25.989Z from pcd-local-rc01"
       ]
     },
     "anonymous_access_probes": {
@@ -73,7 +73,7 @@
         "coordination/release-evidence/anonymous-access-2026-07-16.json",
         "automation/protected-route-contract.json",
         "tests/anonymous-admin-probe.test.ts",
-        "carried forward on 2026-07-29T03:39:21.778Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T04:59:25.989Z from pcd-local-rc01"
       ]
     },
     "database_restore": {
@@ -82,7 +82,7 @@
       "evidence": [
         "coordination/release-evidence/database-queue-repair-and-restore-2026-07-17.json",
         "scripts/prove-d1-restore.py",
-        "carried forward on 2026-07-29T03:39:21.778Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T04:59:25.989Z from pcd-local-rc01"
       ]
     },
     "r2_recovery": {
@@ -92,7 +92,7 @@
         "coordination/release-evidence/r2-recovery-owner-disposition-2026-07-17.json",
         "coordination/release-evidence/production-r2-inventory-preflight-2026-07-17.json",
         "coordination/release-evidence/staging-isolation-and-journey-2026-07-17.json",
-        "carried forward on 2026-07-29T03:39:21.778Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T04:59:25.989Z from pcd-local-rc01"
       ],
       "approved_by": "Jeff Thomas"
     },
@@ -102,7 +102,7 @@
       "evidence": [
         "coordination/release-evidence/worker-rollback-target-2026-07-16.json",
         "tests/worker-rollback-target.test.ts",
-        "carried forward on 2026-07-29T03:39:21.778Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T04:59:25.989Z from pcd-local-rc01"
       ]
     },
     "rollback_rehearsal": {
@@ -112,21 +112,21 @@
         "coordination/release-evidence/recovery-tabletop-2026-07-16.json",
         "coordination/release-evidence/staging-worker-rollback-rehearsal-2026-07-17.json",
         "tests/recovery-tabletop.test.ts",
-        "carried forward on 2026-07-29T03:39:21.778Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T04:59:25.989Z from pcd-local-rc01"
       ]
     },
     "deploy_approval": {
       "state": "pending",
       "summary": "[RESET for this candidate] Jeff has not approved THIS candidate for production. The pcd-local-rc01 record described a different commit and is not carried: \"Jeff approved production deployment of the reviewed Plan 015 repair. Commit bf4c424 was deployed as Worker version 35449\"",
       "evidence": [
-        "reset on 2026-07-29T03:39:21.778Z because the previous evidence was pinned to a superseded candidate"
+        "reset on 2026-07-29T04:59:25.989Z because the previous evidence was pinned to a superseded candidate"
       ]
     },
     "post_deploy_observation": {
       "state": "pending",
       "summary": "[RESET for this candidate] This candidate has not been deployed, so there is nothing to observe yet. The pcd-local-rc01 record described a different commit and is not carried: \"A bounded, unauthenticated GET-only monitor completed after the Plan 015 deployment: home, directory, privacy, terms, he\"",
       "evidence": [
-        "reset on 2026-07-29T03:39:21.778Z because the previous evidence was pinned to a superseded candidate"
+        "reset on 2026-07-29T04:59:25.989Z because the previous evidence was pinned to a superseded candidate"
       ]
     },
     "authenticated_access_probes": {
@@ -136,7 +136,7 @@
         "coordination/release-evidence/authenticated-access-probes-pending.json",
         "automation/protected-route-contract.json",
         "tests/access-evidence.test.ts",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     },
     "database_backup": {
@@ -149,7 +149,7 @@
         "coordination/release-evidence/database-backup-fresh-export-2026-07-17.json",
         "coordination/release-evidence/database-queue-repair-and-restore-2026-07-17.json",
         "coordination/release-evidence/complete-local-d1-recovery-batch-2026-07-17.json",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     },
     "customer_journeys": {
@@ -169,7 +169,7 @@
         "coordination/reviews/2026-07-16-rendered-mobile-web-audit.md",
         "automation/mobile-web-contract.json",
         "tests/mobile-web-contract.test.ts",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     },
     "notification_receipt": {
@@ -183,7 +183,7 @@
         "coordination/release-evidence/notification-channel-receipt-check-2026-07-17.json",
         "coordination/release-evidence/staging-notification-secret-preflight-2026-07-17.json",
         "tests/failure-isolation-evidence.test.ts",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     },
     "failure_isolation": {
@@ -192,7 +192,7 @@
       "evidence": [
         "coordination/release-evidence/integrated-failure-isolation-2026-07-16.json",
         "tests/integrated-failure-isolation.test.ts",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     },
     "open_risk_decision": {
@@ -200,7 +200,7 @@
       "summary": "[STILL OPEN, carried from pcd-local-rc01] Open stop-ship risks have not been explicitly accepted or closed for this candidate. This includes a 2026-07-17 unintended production-target deployment that was restored to the exact approved Plan 015 version within approximately 56 seconds; no operator-initiated data mutation occurred, but the evidence does not claim absence of third-party requests. The deployment-target prevention control and its review remain required.",
       "evidence": [
         "coordination/release-evidence/production-deployment-scope-incident-2026-07-17.json",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     },
     "migration_approval": {
@@ -215,7 +215,7 @@
         "tests/trust-migration-rehearsal.test.ts",
         "tests/production-schema-compatibility.test.ts",
         "tests/staging-pcd-ops-rehearsal.test.ts",
-        "still open as of 2026-07-29T03:39:21.778Z"
+        "still open as of 2026-07-29T04:59:25.989Z"
       ]
     }
   }
