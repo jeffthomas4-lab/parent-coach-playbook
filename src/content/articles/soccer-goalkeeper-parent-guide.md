@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "soccer"
 age: "11-12"
 topic: communication
+hero: "/illustrations/soccer-sideline-parents-fence.webp"
+heroAlt: "Adults stand along a chain-link fence watching a youth soccer match, seen from behind at hip height under bright overcast light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

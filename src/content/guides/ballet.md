@@ -7,6 +7,8 @@ seoTitle: "Ballet Gear for Kids: What to Buy for Class, by Age"
 seoDescription: "Leotards, tights, shoes, and the pointe conversation, by age and what the studio dress code really requires."
 costSummary: "One of the cheaper activities to start. Pointe shoes are the big purchase later."
 seasonNote: "Ballet studios run year-round with classes multiple times per week. Recitals and performances happen throughout the year, typically at least once annually."
+hero: "/illustrations/guide-ballet-gear.webp"
+heroAlt: "Worn pointe shoes with coiled ribbons, soft practice shoes, folded tights, a rosin box, and a hair net arranged in a flat lay on pale wood."
 publishedAt: 2026-04-30
 ---
 

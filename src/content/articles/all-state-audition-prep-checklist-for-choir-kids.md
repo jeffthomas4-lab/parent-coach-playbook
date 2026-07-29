@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "choir"
 age: 15-plus
 topic: tryouts
+hero: "/illustrations/choir-risers-empty-hall.webp"
+heroAlt: "Empty choral risers sit in a rehearsal hall with folding chairs and a music stand, afternoon light coming through high windows."
 publishedAt: 2026-07-06
 draft: false
 editorial:

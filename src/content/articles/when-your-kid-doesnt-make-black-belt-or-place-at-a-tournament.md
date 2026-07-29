@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "martial-arts"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/martial-arts-mat-bare-feet.webp"
+heroAlt: "Bare feet stand on a worn training mat, cropped at mid-shin with one line of morning light crossing the floor."
 publishedAt: 2026-07-06
 draft: false
 editorial:

@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-home"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/roster-sheet-on-door.webp"
+heroAlt: "A single sheet of paper tapes to a gym door, hallway light angled across it and the text too soft to read."
 publishedAt: 2026-03-17
 featured: false
 editorial:

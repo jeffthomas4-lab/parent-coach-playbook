@@ -7,6 +7,8 @@ lede: "You're the coach. Not a spectator. The gear list looks different from her
 seoTitle: "Parent-Coach Gear Guide: What You Actually Need on the Bench"
 seoDescription: "Clipboard, stopwatch, pennies, coach bag, whiteboard, and first aid fanny pack. What every parent-coach buys, and which versions are worth the money."
 costSummary: "The full setup runs $150–300 one time. Most of it lasts for years."
+hero: "/illustrations/guide-parent-coach-gear.webp"
+heroAlt: "A clipboard, a whistle on a lanyard, a mechanical pencil, stacked cones, a stopwatch, and a rolled ball pump arranged in a flat lay on weathered wood."
 publishedAt: 2026-06-11
 ---
 

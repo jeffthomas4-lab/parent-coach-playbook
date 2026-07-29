@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-07-29T15:38:38.974Z",
+  "expires_at": "2026-08-05T15:38:38.974Z",
+  "worker_name": "parent-coach-desk",
+  "active_deployment_id": "5c62560a-d512-4086-ae24-1de099c2c12c",
+  "active_version_id": "2acba9fb-a44d-44ea-bf17-8955e1507cfd",
+  "target_version_id": "2acba9fb-a44d-44ea-bf17-8955e1507cfd",
+  "traffic_percentage": 100,
+  "script_etag": "2e33b651b7ea86ef76de0854f73b052bccae33ab3d3569b37d37cc8de4e8e97f",
+  "candidate_usage": "next_release_only",
+  "bindings": {
+    "ACCESS_AUD": "plain_text",
+    "ACCESS_TEAM_DOMAIN": "plain_text",
+    "ADMIN_EMAILS": "plain_text",
+    "ASSETS": "assets",
+    "BULK_IMPORT_TOKEN": "secret_text",
+    "CAMP_CLAIMS_ENABLED": "plain_text",
+    "CAMP_REVIEWS_ENABLED": "plain_text",
+    "COMMUNITY_RATE_LIMITER": "ratelimit",
+    "CRON_KEY": "secret_text",
+    "DB": "d1",
+    "DEMAND_RATE_LIMITER": "ratelimit",
+    "DEMAND_TELEMETRY_ENABLED": "plain_text",
+    "FORGE_DB": "d1",
+    "GITHUB_TOKEN": "secret_text",
+    "IDEMPOTENCY_CLEANUP_ENABLED": "plain_text",
+    "OWNER_RATE_LIMITER": "ratelimit",
+    "PCD_COMMERCE_TEST_MODE_ENABLED": "plain_text",
+    "PCD_CUSTOMER_FOUNDATION_ENABLED": "plain_text",
+    "PCD_OPS_DB": "d1",
+    "PHOTOS": "r2_bucket",
+    "PUBLIC_SUBMISSION_RATE_LIMITER": "ratelimit",
+    "SESSION": "kv_namespace",
+    "SITE_URL": "plain_text",
+    "TRUST_INTAKE_ENABLED": "plain_text",
+    "TRUST_RATE_LIMITER": "ratelimit"
+  },
+  "health_evidence": [
+    "coordination/release-evidence/anonymous-access-2026-07-18.json",
+    "coordination/release-evidence/live-public-monitor-2026-07-16.json"
+  ],
+  "predecessor_finding": {
+    "version_id": "3c89983f-3694-4c54-93b3-6be7321e96d0",
+    "same_script_etag": true,
+    "safe": false,
+    "missing_binding_names": [],
+    "observation": "Observed: predecessor carries every binding the live version carries."
+  },
+  "storage_rollback_included": false,
+  "pages_is_rollback_target": false,
+  "limitations": [
+    "This receipt proves a fully bound exact Worker version for rollback after the next approved release; it does not authorize or execute rollback.",
+    "Worker versions do not roll back D1, R2, KV, Durable Object, or other stored state.",
+    "A separately approved tabletop or non-production rehearsal and candidate-specific data recovery evidence remain required.",
+    "Observed by scripts/observe-worker-rollback-target.mjs from live wrangler output; expires 2026-08-05T15:38:38.974Z."
+  ],
+  "external_changes": []
+}

@@ -7,6 +7,8 @@ seoTitle: "Kids' Golf Gear: Club Sizing and What to Buy by Age"
 seoDescription: "Junior club sets by height, balls, bag, and shoes, and what to skip until your kid commits."
 costSummary: "The starter set is the big purchase. Used clubs cut the cost way down."
 seasonNote: "Golf runs spring through fall in most regions. Many programs offer summer camps and after-school clinics year-round."
+hero: "/illustrations/guide-golf-gear.webp"
+heroAlt: "A youth iron and putter crossed, a glove, three golf balls, tees, a ball marker, and a towel arranged in a flat lay on cut grass."
 publishedAt: 2026-04-30
 ---
 

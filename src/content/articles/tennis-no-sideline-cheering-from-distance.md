@@ -9,6 +9,8 @@ phase: "game"
 sport: "tennis"
 age: "all-ages"
 topic: "the-hard-stuff"
+hero: "/illustrations/tennis-court-empty-net-dusk.webp"
+heroAlt: "An empty tennis court at dusk is photographed from behind the baseline, the net sagging slightly with a fence beyond."
 publishedAt: 2026-07-04
 draft: false
 editorial:

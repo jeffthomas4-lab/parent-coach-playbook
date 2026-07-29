@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: cross-country
 age: 11-12
+hero: "/illustrations/cross-country-trail-morning-fog.webp"
+heroAlt: "A grass and dirt course trail winds through morning fog with course flags marking the turns and no runners in frame."
 publishedAt: 2026-06-10
 featured: false
 editorial:

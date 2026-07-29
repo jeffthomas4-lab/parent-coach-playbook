@@ -8,6 +8,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/pinnies-on-fence.webp"
+heroAlt: "Plain colored practice pinnies drape over a chain-link fence in a row, an empty field stretching behind them in morning light."
 publishedAt: 2026-02-12
 featured: false
 editorial:

@@ -9,6 +9,8 @@ format: note
 phase: team-parent
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/sideline-two-parents-talking.webp"
+heroAlt: "Two parents stand a few feet apart on a youth practice field sideline in late afternoon, both turned toward the field mid-conversation."
 publishedAt: 2026-05-13
 featured: false
 editorial:

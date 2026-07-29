@@ -58,3 +58,12 @@ backups/
 # proof collection pipeline: raw screenshots stay local, README stays tracked
 proof-screenshots/*
 !proof-screenshots/README.md
+
+# Failing-gate build logs from scripts/cut-release-evidence.mjs. Local debug
+# artifact only: can contain environment detail, never belongs in a commit.
+coordination/release-evidence/logs/
+
+# Ad-hoc build logs dropped at the repo root by Tee-Object during debugging.
+# Scoped to the root on purpose: two intentional logs are tracked deeper in the
+# tree (buildout/, imports/) and a blanket *.log would shadow that pattern.
+/*.log

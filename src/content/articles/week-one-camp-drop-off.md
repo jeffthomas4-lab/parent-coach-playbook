@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "multi-sport"
 age: "5-7"
+hero: "/illustrations/duffel-packed-on-bed.webp"
+heroAlt: "A packed duffel bag sits open on a made bed with folded clothes and a towel inside, lit by afternoon window light."
 publishedAt: 2026-04-18
 featured: false
 editorial:

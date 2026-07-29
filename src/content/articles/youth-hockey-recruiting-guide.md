@@ -8,6 +8,8 @@ format: "essay"
 sport: "hockey"
 age: "15-plus"
 phase: "drive-there"
+hero: "/illustrations/hockey-rink-empty-early.webp"
+heroAlt: "An empty ice rink sits ready before anyone arrives, a fresh sheet of ice with overhead lights reflecting off the surface."
 publishedAt: 2026-06-11
 draft: false
 editorial:

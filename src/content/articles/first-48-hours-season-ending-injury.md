@@ -9,6 +9,8 @@ phase: "drive-home"
 topic: "the-hard-stuff"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/passenger-seat-gear-bag.webp"
+heroAlt: "An empty car passenger seat holds a youth sports bag with the seatbelt buckled around nothing, an empty parking lot beyond the windshield at dusk."
 publishedAt: 2026-07-04
 draft: false
 editorial:

@@ -1,55 +1,55 @@
 # Friday Letter No. 3 — send 2026-07-31
 
 **Status:** DRAFT. Review, edit, paste into Kit. Never sent from here.
-**Written:** 2026-07-22 (Wednesday cycle, on schedule).
-**Why this date:** `FRIDAY_LETTER_2026-07-24.md` already exists (written 7-16, still marked DRAFT, presumably in your review queue for this Friday). Rather than rewrite work that's already sitting in front of you, this run drafts the *following* issue — No. 3, for 7-31 — so there's a finished draft ready one cycle ahead. If you'd rather I redo No. 2 instead, say so and I'll take another pass at that file.
+**Written:** 2026-07-29 (Wednesday cycle, on schedule). Revises the 2026-07-22 draft of this same issue.
+**Why revised:** Three strong, on-topic pieces published to the site on 2026-07-28 (`coach-certifications-you-actually-need`, `your-temper-as-the-parent-coach`, `the-hardest-player-to-coach-is-me`), all `draft: false` and live, after the prior draft of this letter was written. Step 1 of the process is "identify this week's new/updated content" — these are genuinely this week's content, fresher and more specific than the 6/13-reviewed piece the last draft linked, so this pass swaps them in. The seasonal lead and archive pick from the 7/22 draft still hold up against the calendar and are kept.
 
 ---
 
 ## Subject line
 
-**Primary:** The quiet week before camp gets loud
+**Primary:** The quiet week has two things on the list
 
-**Alt 1:** One week left before two-a-days
+**Alt 1:** One week out: the paperwork and the temper check
 
-**Alt 2:** The last easy morning of the summer
+**Alt 2:** Before pads go on, two things worth five minutes
 
 ---
 
 ## Preview text
 
-What to do — and not do — the week before pads go on, plus the twenty-minute meeting worth actually showing up for.
+The certifications that are actually required (fewer than you'd guess), and the reset one coach built so a bad call doesn't become a bad memory for his own kid.
 
 ---
 
 ## Lead
 
-Right now is the quietest week of the year, and it will not last. Camps open in the next week or two depending on your sport and your state, and the parents who get this week right are mostly the ones doing almost nothing about it.
+Right now is the quiet week. Staff meetings start rolling out over the next several days, first practices aren't far behind, and school is two or three weeks out depending on where you live. This is the week to get two boring things handled before the calendar gets loud: the paperwork, and yourself.
 
-Two mistakes show up every summer. One kid is still grinding, chasing a personal best in the driveway the night before pads go on, and shows up to day one already tired. The other kid has fully checked out, and August lands like a truck. Neither is the move. This week is a taper, not a sprint and not a shutdown: light activity, real sleep, real food, water starting today instead of the morning of.
+The paperwork first. If you're coaching this fall, or handing your kid off to someone who is, five names get thrown around as "certifications": SafeSport, Heads Up Football, USA Baseball, NOCSAE, HECC. Only one of those is actually required by federal law, and it's probably not the one you'd guess.
 
-Somewhere in your inbox is a preseason parent meeting invite, or it is about to be. Go. Twenty minutes, and it matters more than it looks like it will. Skip the playing-time conversation entirely, wrong room for it, and ask the two questions that actually tell you something about the person coaching your kid this fall.
+The other thing worth handling now, while it's quiet, is your own temper. Not your kid's coach's temper. Yours, if you're the one running practice. One coach wrote about the night he yelled at a twelve-year-old umpire with his own son on deck, and the thirty feet he now walks before he says anything to a player after a mistake. Worth five minutes even if you've never lost it on a sideline. Especially if you have.
 
-One read on what that meeting should sound like, one on the number that decides whether a two-a-day gets shortened, and one from the archive that is about to get very relevant, on account of the calendar turning to August in a few days.
+One read on the certifications, one on the temper, and one from the archive on the week itself.
 
 ---
 
 ## Content links
 
-**1. The Pre-Season Meeting With the New Coach**
-Twenty minutes, two questions worth asking, and the one topic (you know the one) that should wait for a different day entirely.
-https://parentcoachdesk.com/drive-there/pre-season-meeting-with-the-new-coach/
+**1. The Certifications You Actually Need Before You Coach**
+SafeSport is federal law if your league answers to a national governing body. NOCSAE and HECC certify helmets, not people, and almost nobody tells you that part.
+https://parentcoachdesk.com/team-parent/coach-certifications-you-actually-need/
 
-**2. Summer Heat Protocols: What Most State Associations Require Before a Coach Can Pull Kids Off the Field**
-The heat-index numbers — 95°F and 104°F — that trigger mandatory breaks or a stopped practice, and the one question to ask your program before the first hot Tuesday of camp.
-https://parentcoachdesk.com/news/summer-heat-protocol-youth-sports-2026/
+**2. The Hardest Player to Coach Is *Me***
+One coach's honest account of the night he lost it on a twelve-year-old umpire, and the rule he built afterward so it wouldn't happen again.
+https://parentcoachdesk.com/drive-home/the-hardest-player-to-coach-is-me/
 
 ---
 
 ## Archive resurface
 
 **August First: The Pre-Season Week**
-Tryouts are days away for some of you, camp for the rest. The week to get the kid right without overdoing any of it: taper, not push, and the three-sentence script for the morning of.
+Tryouts and camp are days away for some of you. The week to get the kid right without overdoing any of it: taper, not push.
 https://parentcoachdesk.com/drive-there/august-first-the-pre-season-week/
 
 ---
@@ -64,10 +64,10 @@ Glad you're here. See you next Friday.
 
 ## Notes for Jeff
 
-- **Sequencing:** No. 2 (7-24) exists as a DRAFT, not READY, from last week's overflow run — its World Cup-letdown / tryout-clock thread is still live and doesn't need touching. This run picks up the next open date (7-31) rather than duplicate that work. Delete this note if you'd prefer I always target the literal next Friday regardless of what's already drafted.
-- **Seasonal hook:** confirmed against your calendar — First Staff Meeting is 8-03, which lines up with every fall sport's season calendar in the repo (football, soccer, etc. all show practice opening "mid-August," with a July "dead period" / conditioning-only stretch right up until then). By 7-31, camp is days to two weeks out depending on sport. Archive pick "August First" is dated almost exactly right: it's about the first week of August, and this letter sends the Friday before August starts.
-- **Content chosen:** both links are evergreen, sport-agnostic, and `draft: false` (live). "Pre-season meeting with the new coach" was last editorially reviewed 6-13 but nothing newer displaced it as the best fit. No sport-specific content link this issue — kept it general since camp timing varies a lot by sport, and the meeting + heat pieces apply to nearly everyone on the list at once.
-- **Considered and skipped:** the two newest news items in the repo — the California heat-safety-law piece (7-16) and the USSSA grade-exception piece (7-18) — are both still `draft: true`, i.e. not live on the site. Not linked. Also skipped the baseball recruiting-odds batch (varsity baseball roster, when-your-baseball-kid-doesn't-get-recruited) and "What my kid said in the car" / "11-12 helmet upgrade" — all recently re-reviewed editorially but not freshly *published*, and less on-theme for the pre-camp week than the two picks above.
-- **Amazon scan: clean.** Zero Amazon links in the body. Both content links and the archive link are parentcoachdesk.com pages; none of the three source articles have Amazon/`/go/` links reproduced here.
-- **Link verification:** not fetched live (fetch restrictions on this domain from this environment). Slugs verified against the repo instead — routes are `src/pages/[phase]/[slug].astro` for articles (no custom `slug:` frontmatter on either article) and `src/pages/news/[slug].astro` for the news item, which filters to `draft: false` only at build time, so the heat-protocol link should resolve. Worth a quick click before you send, same caveat as prior issues.
-- Lead word count: 221.
+- **Sequencing:** confirmed `FRIDAY_LETTER_2026-07-24.md` (No. 2) is still sitting as DRAFT from last week's overflow run. This run continues to target No. 3 for 7-31 rather than duplicate that work, same call the 7-22 draft made.
+- **Seasonal hook, re-verified against your calendar:** "First Staff Meetin[g]" is 8-03, "NWC Football Pre-Season Meeting" is 8-05. Both land the week right after this letter sends, so "quiet week before it gets loud" still holds exactly.
+- **Content swap, the actual change this run made:** dropped "Pre-Season Meeting With the New Coach" (last editorially reviewed 6-13) and the heat-protocol news item in favor of two pieces published 7-28: `coach-certifications-you-actually-need` (note, live) and `the-hardest-player-to-coach-is-me` (essay, live, cleared by you on 7-28 per its reviewer notes after a sensitive-topic hold). Both are fresher, both are `draft: false`, and the certifications piece in particular is a better logistics fit for the week two staff meetings land in.
+- **Considered and skipped:** `your-temper-as-the-parent-coach` (7-28, live) covers close to the same ground as `the-hardest-player-to-coach-is-me` and reads as the more clinical companion piece rather than a second distinct read; picked the stronger, more specific essay of the two rather than run both. `why-safesport-training-is-non-negotiable` and `laundry-stripping-sports-gear` (both 7-28) are still `draft: true`, not live, not linked.
+- **Amazon scan: clean.** Zero Amazon links in the body or in either source article. Both content links and the archive link are parentcoachdesk.com pages.
+- **Link verification:** not fetched live (fetch restrictions on this domain from this environment). Verified against the repo instead: `coach-certifications-you-actually-need` has `phase: team-parent`, routed by `src/pages/team-parent/[slug].astro`, which filters on `isLive(data)` (true here since `draft: false`); `the-hardest-player-to-coach-is-me` has `phase: drive-home`, routed by `src/pages/drive-home/[slug].astro` on the same filter; both pass. Neither article has a custom `slug:` in frontmatter, so the filename is the route segment for both. Archive link unchanged from the prior draft and was already verified. Worth a quick click before you send, same caveat as prior issues.
+- Lead word count: 219.

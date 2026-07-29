@@ -8,6 +8,8 @@ seoTitle: "Youth Volleyball Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Volleyball shoes, knee pads, and ball sizes by age, with the universal shoe test and what club season adds."
 costSummary: "Cheap to start. Shoes and knee pads are the whole buy until club season raises the stakes."
 seasonNote: "School season runs fall (girls) or spring (boys, varies by region). Club season runs December through June."
+hero: "/illustrations/guide-volleyball-gear.webp"
+heroAlt: "A volleyball, rolled knee pads, court shoes, ankle braces, a water bottle, and a folded practice top arranged in a flat lay on a worn gym floor."
 publishedAt: 2026-03-30
 ---
 

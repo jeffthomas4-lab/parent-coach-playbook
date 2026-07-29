@@ -9,6 +9,8 @@ format: note
 phase: drive-home
 sport: softball
 age: 15-plus
+hero: "/illustrations/softball-dugout-bench-gear.webp"
+heroAlt: "A row of gloves and helmets lines a dugout bench, chain-link shadow striping across them in afternoon light."
 publishedAt: 2026-06-10
 featured: false
 editorial:

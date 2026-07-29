@@ -4,10 +4,22 @@
 // To queue a post, set publishedAt to a future date in the frontmatter.
 // The next site rebuild after that date publishes it.
 //
-// The Cloudflare Worker in worker-cron/ rebuilds the site daily so the queue
-// drains on its own without anyone having to push a button.
+// WARNING, corrected 2026-07-28: this comment used to claim "the Cloudflare
+// Worker in worker-cron/ rebuilds the site daily so the queue drains on its own
+// without anyone having to push a button." That is FALSE. The Pages deploy hook
+// that did the daily rebuild was removed in the Pages-to-Workers cutover and
+// nothing replaced it (see worker-cron/src/index.ts, which now only fires the
+// camps sweep). Nothing rebuilds this site on a schedule.
 //
-// See QUEUE.md at the project root for the operator manual.
+// So future-dating is a FILTER, not a SCHEDULER. It means "not before this
+// date", not "on this date". A build only runs on a deploy, and a deploy only
+// happens when a human merges to main and approves the protected production
+// environment. A post dated for next Friday appears whenever the next build
+// after next Friday happens, which could be never.
+//
+// See QUEUE.md at the project root for the operator manual, and
+// scripts/check-publish-queue-drift.mjs to find content that is eligible
+// locally but missing from the live site.
 
 type LiveCheckable = {
   draft?: boolean;

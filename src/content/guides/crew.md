@@ -7,6 +7,8 @@ seoTitle: "Youth Crew and Rowing Gear: What to Buy for a First Season"
 seoDescription: "What a new rower actually needs, from unisuit to water bottle, what the boathouse provides, and what to skip."
 costSummary: "The club provides the expensive equipment. You buy the personal kit."
 seasonNote: "Junior crew season runs spring, typically February through May. Some clubs offer summer camps or fall racing. Check your local program."
+hero: "/illustrations/guide-crew-gear.webp"
+heroAlt: "Rowing pogies, a folded unisuit, blister tape, a water bottle, sunglasses with a strap, and a towel arranged in a flat lay on wet dock boards."
 publishedAt: 2026-04-30
 ---
 

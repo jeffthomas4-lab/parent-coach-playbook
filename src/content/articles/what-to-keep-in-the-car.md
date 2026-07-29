@@ -7,6 +7,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/gear-untouched-corner.webp"
+heroAlt: "A youth sports bag sits zipped and untouched in a bedroom corner, dust visible in the afternoon light beside a ball."
 publishedAt: 2026-06-11
 featured: false
 editorial:

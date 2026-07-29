@@ -10,6 +10,8 @@ phase: team-parent
 teamParentTopic: logistics
 sport: swimming
 age: all-ages
+hero: "/illustrations/swimming-goggles-cap-deck.webp"
+heroAlt: "A pair of goggles and a plain silicone cap sit on a wet pool deck beside a towel, light rippling across the surface."
 publishedAt: 2026-05-13
 featured: false
 editorial:

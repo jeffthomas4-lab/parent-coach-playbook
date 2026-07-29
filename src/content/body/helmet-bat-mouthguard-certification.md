@@ -14,7 +14,7 @@ governingBodies:
   - name: "USA Baseball: Bat Standards"
     url: "https://www.usabat.com/"
   - name: "USA Softball: Equipment Standards"
-    url: "https://www.usasoftball.com/play/"
+    url: "https://www.usasoftball.com/certified-equipment/"
   - name: "NFHS: National Federation of State High School Associations"
     url: "https://www.nfhs.org/"
 editorial:
@@ -26,9 +26,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-22
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Pre-spring season prep. Concrete on what stamps to find. NOCSAE, USA Baseball/Softball directly cited."
+  reviewerNotes: "Pre-spring season prep. Concrete on what stamps to find. NOCSAE, USA Baseball/Softball directly cited. Flo refresh 2026-07-28: fixed stale USA Softball link (usasoftball.com/play/ does not resolve to the equipment page; corrected to /certified-equipment/). NOCSAE 10-year cap and USABat 2018 standard verified current."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Most parents have never read the inside of their kid's helmet. There are stamps in there that mean things, and the ones that are missing or expired are the ones that should pull a piece of equipment out of the bag.

@@ -1,0 +1,5 @@
+seq,org_id,name,city,state,tier,engine,query,search_url
+1,org-16e2cb9c-3380-5604-bbb5-59856dd67abc,Cheney Events Association,Cheney,WA,2,duckduckgo,"""Cheney Events Association"" Cheney WA",https://html.duckduckgo.com/html/?q=%22Cheney+Events+Association%22+Cheney+WA
+2,org-e8efca08-d45a-5ea3-af6b-5255a149c765,Empowering American Communities,Chehalis,WA,3,bing,"""Empowering American Communities"" Chehalis WA",https://www.bing.com/search?q=%22Empowering+American+Communities%22+Chehalis+WA
+3,org-29e4c11a-ee11-5a1b-8f9f-b466da4a56f1,The United States Pony Clubs Inc,Chehalis,WA,3,brave,"""The United States Pony Clubs Inc"" Chehalis WA",https://search.brave.com/search?q=%22The+United+States+Pony+Clubs+Inc%22+Chehalis+WA
+4,org-986fa761-349b-58d3-bf2a-b86f74929665,Friends Of Westside Park,Chehalis,WA,4,mojeek,"""Friends Of Westside Park"" Chehalis WA",https://www.mojeek.com/search?q=%22Friends+Of+Westside+Park%22+Chehalis+WA

@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/dorm-cot-bare.webp"
+heroAlt: "A bare cot with a folded blanket sits in a plain camp cabin, a duffel on the floor beside it lit by a screened window."
 publishedAt: 2026-05-11
 featured: false
 editorial:

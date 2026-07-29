@@ -1,0 +1,34 @@
+#!/bin/sh
+# Keep release-governance artifacts in sync at commit time, so a deploy never
+# fails on a stale queue or an unregistered path (the failure mode that stalled
+# every Deploy Workers run through 2026-07-23).
+#
+# Enabled once per clone with:  git config core.hooksPath .githooks
+# (the "prepare" npm script does this automatically on npm install).
+
+staged=$(git diff --cached --name-only)
+
+# 1) Editorial refresh queue is fully generated from src/. Whenever any source
+#    file is staged, regenerate it and re-stage so the committed snapshot always
+#    matches what CI's `check:editorial-refresh` will regenerate.
+case "$staged" in
+  *src/*)
+    if ! node scripts/editorial-refresh-queue.mjs >/dev/null 2>&1; then
+      echo "pre-commit: failed to regenerate reports/editorial/editorial-refresh-queue.json — commit blocked." >&2
+      echo "           run 'node scripts/editorial-refresh-queue.mjs' and fix the error before committing." >&2
+      exit 1
+    fi
+    git add reports/editorial/editorial-refresh-queue.json
+    ;;
+esac
+
+# 2) Root/dir registries need human classification, so warn (do not block) when a
+#    newly tracked root file or top-level directory hasn't been classified yet.
+if ! node scripts/check-root-organization.mjs >/dev/null 2>&1; then
+  echo "pre-commit WARNING: root/dir registry is out of date." >&2
+  echo "  A new root file or top-level directory is not yet classified. Before the next deploy, add it to" >&2
+  echo "  coordination/root-file-registry.json or coordination/top-level-directory-registry.json." >&2
+  echo "  (Run 'npm run check:root-organization' to see exactly what's unclassified.)" >&2
+fi
+
+exit 0

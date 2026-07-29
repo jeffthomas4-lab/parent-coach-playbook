@@ -9,6 +9,8 @@ sport: "hockey"
 age: "11-12"
 phase: "drive-there"
 topic: "communication"
+hero: "/illustrations/hockey-bench-skates-laced.webp"
+heroAlt: "Skates and a stick rest against a rink bench beside a plain helmet, lit by cold blue light through the glass."
 publishedAt: 2026-06-11
 draft: false
 editorial:

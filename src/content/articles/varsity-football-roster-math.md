@@ -9,6 +9,8 @@ format: note
 phase: drive-home
 sport: football
 age: 15-plus
+hero: "/illustrations/football-goalpost-empty-field.webp"
+heroAlt: "A goalpost stands at the end of an empty youth football field, photographed at low angle in morning fog with hash marks fading away."
 publishedAt: 2026-06-10
 featured: false
 editorial:

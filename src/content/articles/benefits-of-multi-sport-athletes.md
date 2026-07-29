@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/rulebook-on-bleacher.webp"
+heroAlt: "A thin plain booklet rests open face-down on an aluminum bleacher seat beside a water bottle in bright side light."
 publishedAt: 2026-04-29
 featured: false
 editorial:

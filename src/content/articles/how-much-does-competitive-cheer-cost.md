@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: cheer
 age: all-ages
+hero: "/illustrations/cheer-line-from-behind-arms.webp"
+heroAlt: "A line of young athletes stands in formation seen from directly behind, arms raised in a high V, all facing away from the camera."
 publishedAt: 2026-06-10
 featured: false
 editorial:

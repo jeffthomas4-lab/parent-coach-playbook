@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/gear-untouched-corner.webp"
+heroAlt: "A youth sports bag sits zipped and untouched in a bedroom corner, dust visible in the afternoon light beside a ball."
 publishedAt: 2026-05-13
 featured: false
 editorial:

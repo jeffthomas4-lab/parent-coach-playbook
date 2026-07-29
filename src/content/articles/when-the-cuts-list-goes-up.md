@@ -9,6 +9,8 @@ format: essay
 phase: drive-home
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/phone-in-hand-waiting.webp"
+heroAlt: "A phone hangs loosely at an adult's side with a dark screen, seen from behind at hip height in a dim hallway."
 publishedAt: 2026-02-13
 featured: true
 editorial:

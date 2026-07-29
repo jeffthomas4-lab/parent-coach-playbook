@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "softball"
 age: 15-plus
 topic: tryouts
+hero: "/illustrations/softball-dugout-bench-gear.webp"
+heroAlt: "A row of gloves and helmets lines a dugout bench, chain-link shadow striping across them in afternoon light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

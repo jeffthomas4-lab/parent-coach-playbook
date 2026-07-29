@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "football"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/football-practice-distance-dusk.webp"
+heroAlt: "A youth football practice is seen from far outside the fence at dusk, players small and backlit with blocking sleds at the edge."
 publishedAt: 2026-07-06
 draft: false
 editorial:

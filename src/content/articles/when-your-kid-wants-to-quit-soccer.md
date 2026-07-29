@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "soccer"
 age: "11-12"
 topic: communication
+hero: "/illustrations/soccer-goal-net-empty.webp"
+heroAlt: "An empty soccer goal is photographed from behind the net at dusk, the grass worn in the goalmouth and the field stretching away."
 publishedAt: 2026-06-11
 draft: false
 editorial:

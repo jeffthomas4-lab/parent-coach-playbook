@@ -8,6 +8,8 @@ seoTitle: "Choir for Kids: What to Buy (Less Than You Think)"
 seoDescription: "Concert dress, folder, and the short list of what choir actually costs, plus what the program provides."
 costSummary: "The cheapest activity to outfit. Concert clothes and a folder cover most years."
 seasonNote: "School choir runs the school year. Summer camps and audition-only honor choirs run June–August."
+hero: "/illustrations/guide-choir-gear.webp"
+heroAlt: "A black music folder, blank sheet music, a pitch pipe, a throat spray bottle, a garment bag, and low dress shoes arranged in a flat lay on dark wood."
 publishedAt: 2026-04-20
 ---
 

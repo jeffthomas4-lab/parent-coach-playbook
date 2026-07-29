@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-23T03:34:45.271Z",
-  "count": 684,
+  "generatedAt": "2026-07-29T15:22:15.114Z",
+  "count": 689,
   "links": [
     {
       "url": "http://www.w3.org/2000/svg",
@@ -342,6 +342,12 @@
       ]
     },
     {
+      "url": "https://bnq.qc.ca/en/certification/protection-and-safety/neck-protectors-c2.html",
+      "sources": [
+        "src/content/body/hockey-equipment-safety.md"
+      ]
+    },
+    {
       "url": "https://bookshop.org/a/125074/9780071395977",
       "sources": [
         "src/data/affiliates.json (slug: book-mind-gym)"
@@ -510,9 +516,22 @@
       ]
     },
     {
+      "url": "https://hecc.org/",
+      "sources": [
+        "src/content/body/hockey-equipment-safety.md",
+        "src/content/body/youth-hockey-safety-briefing.md"
+      ]
+    },
+    {
       "url": "https://ibjjf.com/",
       "sources": [
         "src/content/guides/martial-arts.md"
+      ]
+    },
+    {
+      "url": "https://inside.fifa.com/health-and-medical/injury-prevention",
+      "sources": [
+        "src/content/body/youth-soccer-safety-briefing.md"
       ]
     },
     {
@@ -660,6 +679,12 @@
       ]
     },
     {
+      "url": "https://nsga.org/news/nfhs-makes-football-rule-changes-for-2026/",
+      "sources": [
+        "src/content/news/nfhs-football-equipment-rules-2026.md"
+      ]
+    },
+    {
       "url": "https://on3.com/nil/news/",
       "sources": [
         "src/content/recruiting/nil-basics-for-hs.md"
@@ -729,7 +754,6 @@
     {
       "url": "https://parent-coach-playbook.kit.com/4b28f916b5",
       "sources": [
-        "src/pages/index.astro",
         "src/pages/newsletter.astro"
       ]
     },
@@ -2566,6 +2590,12 @@
       ]
     },
     {
+      "url": "https://www.athleticbusiness.com/operations/governing-bodies/article/15830925/ohio-public-school-students-gain-opportunities-to-play-sports-under-new-state-law",
+      "sources": [
+        "src/content/news/ohio-sam-act-athlete-mobility-2026.md"
+      ]
+    },
+    {
       "url": "https://www.auanet.org/",
       "sources": [
         "src/content/body/testicular-torsion-vs-bruise.md"
@@ -2861,12 +2891,6 @@
       ]
     },
     {
-      "url": "https://www.fifa.com/who-we-are/news/fifa-medical-fifa-11-injury-prevention-programme",
-      "sources": [
-        "src/content/body/youth-soccer-safety-briefing.md"
-      ]
-    },
-    {
       "url": "https://www.fifatrainingcentre.com/en/",
       "sources": [
         "src/content/body/acl-prevention-warmup.md"
@@ -2982,8 +3006,6 @@
     {
       "url": "https://www.hecc.net/",
       "sources": [
-        "src/content/body/hockey-equipment-safety.md",
-        "src/content/body/youth-hockey-safety-briefing.md",
         "src/pages/governing-bodies.astro"
       ]
     },
@@ -3156,9 +3178,14 @@
       ]
     },
     {
+      "url": "https://www.naera.net/",
+      "sources": [
+        "src/content/body/helmet-recertification.md"
+      ]
+    },
+    {
       "url": "https://www.naera.org/",
       "sources": [
-        "src/content/body/helmet-recertification.md",
         "src/pages/governing-bodies.astro"
       ]
     },
@@ -4140,8 +4167,13 @@
     {
       "url": "https://www.usahockey.com/page/show/910900-safety",
       "sources": [
+        "src/content/body/travel-team-rooming-chaperones.md"
+      ]
+    },
+    {
+      "url": "https://www.usahockey.com/playersafety",
+      "sources": [
         "src/content/body/hockey-equipment-safety.md",
-        "src/content/body/travel-team-rooming-chaperones.md",
         "src/content/body/youth-hockey-safety-briefing.md"
       ]
     },
@@ -4243,7 +4275,7 @@
       ]
     },
     {
-      "url": "https://www.usasoftball.com/play/",
+      "url": "https://www.usasoftball.com/certified-equipment/",
       "sources": [
         "src/content/body/helmet-bat-mouthguard-certification.md"
       ]
@@ -4481,7 +4513,7 @@
       ]
     },
     {
-      "url": "https://www.ussoccer.com/playerhealth-and-safety/concussion-initiatives",
+      "url": "https://www.ussoccer.com/soccer-forward/resource-hub/the-concussion-initiative-and-reducing-heading",
       "sources": [
         "src/content/body/youth-soccer-safety-briefing.md"
       ]
@@ -4490,12 +4522,6 @@
       "url": "https://www.usssa.com",
       "sources": [
         "src/pages/resources/national-organizations.astro"
-      ]
-    },
-    {
-      "url": "https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf",
-      "sources": [
-        "src/content/news/usssa-grade-exception-limit-2026.md"
       ]
     },
     {

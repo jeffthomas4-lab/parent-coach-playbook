@@ -9,6 +9,8 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "13-14"
+hero: "/illustrations/phone-text-in-car.webp"
+heroAlt: "A phone rests face-up in a car cupholder showing an open message thread, keys in the ignition and morning light on the dash."
 publishedAt: 2026-06-11
 draft: false
 editorial:

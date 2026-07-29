@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "soccer"
 age: "all-ages"
 topic: "the-hard-stuff"
+hero: "/illustrations/soccer-ball-wet-grass.webp"
+heroAlt: "A scuffed plain white soccer ball rests in wet grass with dew, shot at very low angle as early morning light rakes across the field."
 publishedAt: 2026-07-07
 draft: false
 editorial:

@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "choir"
 age: "8-10"
+hero: "/illustrations/choir-folders-stacked-chair.webp"
+heroAlt: "A stack of black music folders sits on a chair with blank sheet music visible, worn edges lit by side light."
 publishedAt: 2026-04-24
 featured: false
 editorial:

@@ -10,6 +10,8 @@ format: essay
 phase: drive-there
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/gear-by-back-door-predawn.webp"
+heroAlt: "Worn cleats, shin guards, and a half-zipped duffel sit on the floor by a back door in blue predawn light, a kitchen lamp lit behind."
 publishedAt: 2026-05-13
 featured: false
 draft: false

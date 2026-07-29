@@ -7,6 +7,8 @@ seoTitle: "Kids' Tennis Gear by Age: Racquet Sizes and What to Buy"
 seoDescription: "Racquet length by age and height, ball stages, shoes, and what a season of youth tennis really costs."
 costSummary: "Mid-range to start. The racket and court shoes are the big two, restringing is the recurring cost."
 seasonNote: "Tennis runs year-round in most regions. Spring and fall are the primary seasons, though many programs offer summer and winter play."
+hero: "/illustrations/guide-tennis-gear.webp"
+heroAlt: "A racket, three tennis balls, overgrip rolls, a wristband, court shoes, and a towel arranged in a flat lay on a textured court surface."
 publishedAt: 2026-04-30
 ---
 

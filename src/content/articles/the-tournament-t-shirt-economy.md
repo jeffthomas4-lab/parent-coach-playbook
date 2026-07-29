@@ -9,6 +9,8 @@ format: note
 phase: game
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/equipment-bag-open-sideline.webp"
+heroAlt: "A long equipment bag lies open on the grass at a sideline with plain balls and cones spilling out under midday shadow."
 publishedAt: 2026-05-13
 featured: false
 draft: false

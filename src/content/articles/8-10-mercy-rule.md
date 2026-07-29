@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: multi-sport
 age: 8-10
+hero: "/illustrations/field-lines-low-angle.webp"
+heroAlt: "Painted boundary lines mark grass at a very low angle in strong side light, the turf's texture visible with nobody in frame."
 publishedAt: 2026-01-24
 featured: false
 editorial:

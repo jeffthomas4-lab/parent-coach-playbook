@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "crew"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/crew-oars-racked-shadow.webp"
+heroAlt: "Oars rest racked in a row inside a dim boathouse, their blades plain and unpainted under one shaft of morning light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

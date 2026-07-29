@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "summer-camps"
+hero: "/illustrations/flyer-board-hallway.webp"
+heroAlt: "A cork bulletin board in a rec center hallway holds blank unprinted paper flyers pinned to it under fluorescent light."
 publishedAt: 2026-07-04
 draft: false
 editorial:

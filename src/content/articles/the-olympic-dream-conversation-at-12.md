@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "11-12"
+hero: "/illustrations/field-sign-blank-dusk.webp"
+heroAlt: "A blank weathered sign board mounts on a chain-link fence at a field entrance, dusk light glowing behind it."
 publishedAt: 2026-04-20
 featured: false
 editorial:

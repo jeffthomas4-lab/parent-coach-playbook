@@ -8,6 +8,8 @@ format: "essay"
 phase: "team-parent"
 sport: "dance"
 age: "11-12"
+hero: "/illustrations/dance-shoes-bag-bench.webp"
+heroAlt: "Worn dance shoes, a rolled pair of tights, and a small duffel sit on a studio bench under window light."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

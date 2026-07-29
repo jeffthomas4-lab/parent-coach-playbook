@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "martial-arts"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/martial-arts-belts-hooks.webp"
+heroAlt: "Several worn practice belts hang from wall hooks in a training hall, plain fabric lit by soft window light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

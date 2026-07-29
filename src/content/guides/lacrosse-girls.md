@@ -8,6 +8,8 @@ seoTitle: "Girls' Lacrosse Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Stick, goggles, mouthguard, and cleats by age, plus the differences from the boys' game that change what you buy."
 costSummary: "One of the cheaper kits to start. Costs rise at varsity, and club play adds the most."
 seasonNote: "Spring is the main season east of the Rockies. Fall ball is common. Some areas have indoor leagues in winter."
+hero: "/illustrations/guide-lacrosse-girls-gear.webp"
+heroAlt: "A women's lacrosse stick, protective goggles, a mouthguard, a ball, a headband, and turf shoes arranged in a flat lay on cut grass."
 publishedAt: 2026-03-23
 ---
 

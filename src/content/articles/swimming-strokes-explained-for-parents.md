@@ -9,6 +9,8 @@ sport: "swimming"
 age: "8-10"
 phase: "drive-there"
 topic: "rules-of-play"
+hero: "/illustrations/swimming-goggles-cap-deck.webp"
+heroAlt: "A pair of goggles and a plain silicone cap sit on a wet pool deck beside a towel, light rippling across the surface."
 publishedAt: 2026-06-11
 draft: false
 editorial:

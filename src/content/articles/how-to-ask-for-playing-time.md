@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/drive-thru-window-dusk.webp"
+heroAlt: "A car window at a fast food drive-thru glows with warm sign light at dusk, seen from inside past a shoulder."
 publishedAt: 2026-04-13
 featured: false
 editorial:

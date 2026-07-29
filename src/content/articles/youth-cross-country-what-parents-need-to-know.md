@@ -9,6 +9,8 @@ sport: "cross-country"
 age: "11-12"
 phase: "drive-there"
 topic: "rules-of-play"
+hero: "/illustrations/cross-country-spikes-mud.webp"
+heroAlt: "A pair of muddy racing spikes sits on grass beside a discarded warm-up top under overcast light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

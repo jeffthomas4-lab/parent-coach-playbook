@@ -9,6 +9,8 @@ phase: "team-parent"
 topic: "rec-vs-travel"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/two-schedules-side-by-side.webp"
+heroAlt: "Two printed schedule sheets lie side by side on a wooden table with a pen across one, the grids visible but text unreadable."
 publishedAt: 2026-07-04
 draft: false
 editorial:

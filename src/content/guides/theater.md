@@ -8,6 +8,8 @@ seoTitle: "Kids' Theater Gear: What to Buy Before the First Rehearsal"
 seoDescription: "Rehearsal clothes, character shoes, the makeup kit, and what a production season really costs a theater family."
 costSummary: "Personal gear stays cheap at most school programs. Tuition and summer camps are where the money goes."
 seasonNote: "School productions run twice a year (fall and spring). Community theater is year-round. Summer camps run June through August."
+hero: "/illustrations/guide-theater-gear.webp"
+heroAlt: "A bound script, a mechanical pencil, spike tape rolls, soft-soled shoes, a closed makeup kit, and a folded shirt arranged in a flat lay on a black stage floor."
 publishedAt: 2026-04-06
 ---
 

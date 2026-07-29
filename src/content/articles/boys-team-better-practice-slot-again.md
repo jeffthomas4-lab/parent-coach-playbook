@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "lacrosse-girls"
 age: "all-ages"
 topic: "rec-vs-travel"
+hero: "/illustrations/lacrosse-girls-sticks-fence.webp"
+heroAlt: "Several lacrosse sticks lean against a chain-link fence at a field's edge, goggles hanging from one in morning light."
 publishedAt: 2026-07-04
 draft: false
 editorial:

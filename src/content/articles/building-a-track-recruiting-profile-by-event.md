@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "track-field"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/track-lanes-empty-morning.webp"
+heroAlt: "An empty outdoor track is photographed low along the lane lines in early morning, dew visible on the surface."
 publishedAt: 2026-07-06
 draft: false
 editorial:

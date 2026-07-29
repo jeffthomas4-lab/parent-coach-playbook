@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: baseball
 age: all-ages
+hero: "/illustrations/baseball-bleacher-shadow.webp"
+heroAlt: "Aluminum bleachers behind a backstop cast a striped shadow, one adult sitting alone at the top seen from behind in late afternoon light."
 publishedAt: 2026-06-10
 featured: false
 editorial:

@@ -8,6 +8,8 @@ phase: "team-parent"
 teamParentTopic: "communication"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/empty-bleacher-after.webp"
+heroAlt: "Empty aluminum bleachers sit after a game with one forgotten water bottle on the bottom row as field lights come on at dusk."
 publishedAt: 2026-05-05
 featured: false
 editorial:

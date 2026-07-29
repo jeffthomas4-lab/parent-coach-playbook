@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "football"
 age: "13-14"
 topic: "rules-of-play"
+hero: "/illustrations/football-shoulder-pads-locker.webp"
+heroAlt: "Shoulder pads and a plain jersey hang in an open locker under one overhead bulb, no numbers or lettering visible."
 publishedAt: 2026-06-11
 draft: false
 editorial:

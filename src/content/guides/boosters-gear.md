@@ -7,6 +7,8 @@ lede: "Folding table, payment box, PA speaker. For the parent running the table.
 seoTitle: "Band and Booster Club Gear Guide: What to Buy for Running Events"
 seoDescription: "Folding table, lockable cash box, portable PA speaker, label maker, Square card reader. What the booster parent actually needs to run a concession stand, fundraiser, or school..."
 costSummary: "A functional event setup runs $150–300. Most of it lasts for years and transfers across programs."
+hero: "/illustrations/guide-boosters-gear.webp"
+heroAlt: "A folded camp chair, a rolled stadium blanket, an insulated tumbler, a rain shell, a cash box, and raffle tickets arranged in a flat lay on a tailgate."
 publishedAt: 2026-06-11
 ---
 

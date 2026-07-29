@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "stunt"
 age: "13-14"
 topic: "rec-vs-travel"
+hero: "/illustrations/stunt-hands-wrap-bench.webp"
+heroAlt: "Wrapped wrists and hands rest on a gym bench, cropped at the forearm, chalk dust and a water bottle beside them."
 publishedAt: 2026-07-04
 draft: false
 editorial:

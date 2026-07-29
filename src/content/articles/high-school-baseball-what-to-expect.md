@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "baseball"
 age: "13-14"
 topic: "rules-of-play"
+hero: "/illustrations/baseball-batting-cage-net.webp"
+heroAlt: "The inside of a batting cage is seen through the netting, one small figure mid-swing far down the cage, out of focus and unidentifiable."
 publishedAt: 2026-06-11
 draft: false
 editorial:

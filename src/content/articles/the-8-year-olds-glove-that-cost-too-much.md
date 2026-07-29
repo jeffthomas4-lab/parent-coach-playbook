@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "baseball"
 age: "8-10"
+hero: "/illustrations/baseball-dugout-fence-quiet.webp"
+heroAlt: "A young player rests forearms against a dugout's chain-link fence in late afternoon, face turned away in profile, a worn glove on the bench behind."
 publishedAt: 2026-04-17
 featured: false
 editorial:

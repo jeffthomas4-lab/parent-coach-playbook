@@ -8,6 +8,8 @@ format: note
 phase: drive-home
 sport: multi-sport
 age: 8-10
+hero: "/illustrations/passenger-seat-gear-bag.webp"
+heroAlt: "An empty car passenger seat holds a youth sports bag with the seatbelt buckled around nothing, an empty parking lot beyond the windshield at dusk."
 publishedAt: 2026-05-13
 featured: false
 draft: false

@@ -7,6 +7,8 @@ seoTitle: "Youth Cheer Gear: Shoes, Bows, and What to Buy by Season"
 seoDescription: "Cheer shoes, bows, hair gel, and tape, what the team orders for you, and why to wait on the competition uniform."
 costSummary: "Cheap to start. The real costs show up when your kid makes an All-Star team."
 seasonNote: "All-Star cheer runs year-round with seasons and competitions. High school cheer follows the school calendar, typically August through February."
+hero: "/illustrations/guide-cheer-gear.webp"
+heroAlt: "Cheer shoes, a fabric hair bow, wrist wraps, a rolled mat strap, and a water bottle arranged in a flat lay on light wood."
 publishedAt: 2026-04-30
 ---
 

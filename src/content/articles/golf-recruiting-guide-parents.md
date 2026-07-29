@@ -8,6 +8,8 @@ format: "essay"
 sport: "golf"
 age: "15-plus"
 phase: "drive-there"
+hero: "/illustrations/golf-bag-cart-path-dawn.webp"
+heroAlt: "A youth golf bag stands on a cart path at dawn with plain clubs inside, the fairway fading into mist beyond."
 publishedAt: 2026-06-11
 draft: false
 editorial:

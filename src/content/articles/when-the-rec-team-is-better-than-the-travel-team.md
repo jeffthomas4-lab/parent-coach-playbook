@@ -9,6 +9,8 @@ format: note
 phase: drive-home
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/highway-at-night-headlights.webp"
+heroAlt: "A dark highway stretches ahead through a windshield at night, taillights visible and dashboard glow low."
 publishedAt: 2026-01-30
 featured: false
 editorial:

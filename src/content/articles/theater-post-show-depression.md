@@ -8,6 +8,8 @@ format: "essay"
 phase: "drive-home"
 sport: "theater"
 age: "13-14"
+hero: "/illustrations/theater-empty-seats-worklight.webp"
+heroAlt: "An empty theater house is seen from the stage under a single bare work light, rows of seats fading into the dark."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

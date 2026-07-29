@@ -9,6 +9,8 @@ sport: "cheer"
 age: "11-12"
 phase: "drive-there"
 topic: "the-hard-stuff"
+hero: "/illustrations/cheer-mat-empty-gym.webp"
+heroAlt: "A blue practice mat rolls out across an empty gym floor, a water bottle at the edge under high window light."
 publishedAt: 2026-06-11
 draft: false
 editorial:

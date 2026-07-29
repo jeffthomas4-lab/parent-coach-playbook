@@ -8,6 +8,8 @@ seoTitle: "Kids' Dance Gear by Age: What to Buy for Class and Competition"
 seoDescription: "Shoes by style, practice wear, and competition gear for dance kids, plus what to skip."
 costSummary: "Shoes for every style add up. Competition years and pointe years cost the most."
 seasonNote: "Studio season runs September–June with recitals in June. Competition dance runs February–July. Summer intensives run June–August."
+hero: "/illustrations/guide-dance-gear.webp"
+heroAlt: "Soft jazz shoes, a folded leotard, rolled tights, a roll of toe tape, a mesh bag, and a water bottle arranged in a flat lay on pale wood."
 publishedAt: 2026-04-27
 ---
 

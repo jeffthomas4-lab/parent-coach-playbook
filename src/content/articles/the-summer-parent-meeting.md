@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/signup-paperwork-table.webp"
+heroAlt: "Registration paperwork and a pen sit on a folding table at a rec center under fluorescent light, a stack of blank forms beside them."
 publishedAt: 2026-05-09
 featured: false
 editorial:

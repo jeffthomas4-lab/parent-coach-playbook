@@ -8,6 +8,8 @@ format: "essay"
 sport: "lacrosse"
 age: "15-plus"
 phase: "drive-there"
+hero: "/illustrations/lacrosse-goal-empty-field.webp"
+heroAlt: "An empty lacrosse goal is seen from behind the net on a worn field at dusk, the crease paint faded with a treeline beyond."
 publishedAt: 2026-06-11
 draft: false
 editorial:

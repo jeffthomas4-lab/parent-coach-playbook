@@ -9,6 +9,8 @@ format: essay
 phase: game
 sport: multi-sport
 age: 5-7
+hero: "/illustrations/coach-kneeling-huddle.webp"
+heroAlt: "An adult kneels with their back to the camera in front of a loose half-circle of young players, all faces turned away from the camera."
 publishedAt: 2026-05-13
 featured: false
 draft: false

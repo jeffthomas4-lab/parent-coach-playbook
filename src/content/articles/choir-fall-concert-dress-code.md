@@ -8,6 +8,8 @@ format: "note"
 phase: "team-parent"
 sport: "choir"
 age: "11-12"
+hero: "/illustrations/choir-risers-empty-hall.webp"
+heroAlt: "Empty choral risers sit in a rehearsal hall with folding chairs and a music stand, afternoon light coming through high windows."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

@@ -9,6 +9,8 @@ format: essay
 phase: drive-there
 sport: volleyball
 age: 15-plus
+hero: "/illustrations/volleyball-net-empty-gym.webp"
+heroAlt: "A volleyball net stretches across an empty gym court, shot from the floor at one post with light falling from high windows."
 publishedAt: 2026-07-06
 featured: false
 editorial:

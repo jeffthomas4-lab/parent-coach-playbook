@@ -7,6 +7,8 @@ seoTitle: "Kids' Gymnastics Gear by Age: What to Buy (and Skip)"
 seoDescription: "Leotards, grips, and practice wear by level, what gymnastics really costs per year, and what to wait on."
 costSummary: "Cheap to start. Leotards are the main cost, and the gym provides the apparatus."
 seasonNote: "Gymnastics programs run year-round. Most gyms offer classes multiple times per week. Competition season varies by club but typically happens winter through spring."
+hero: "/illustrations/guide-gymnastics-gear.webp"
+heroAlt: "Worn hand grips, athletic tape, a chalk block, a folded leotard, a wrist brace, and a water bottle arranged in a flat lay on a practice mat."
 publishedAt: 2026-04-30
 ---
 

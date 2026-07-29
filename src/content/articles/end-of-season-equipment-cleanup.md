@@ -9,6 +9,8 @@ format: note
 phase: drive-home
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/muddy-cleats-on-mat.webp"
+heroAlt: "A pair of mud-caked youth cleats sits on a doormat just inside a door, dried grass scattered around them in evening light."
 publishedAt: 2026-05-13
 featured: false
 editorial:

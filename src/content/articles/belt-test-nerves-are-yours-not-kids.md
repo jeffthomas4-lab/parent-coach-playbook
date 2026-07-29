@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "martial-arts"
 age: "5-7"
 topic: "the-hard-stuff"
+hero: "/illustrations/martial-arts-mat-bare-feet.webp"
+heroAlt: "Bare feet stand on a worn training mat, cropped at mid-shin with one line of morning light crossing the floor."
 publishedAt: 2026-07-04
 draft: false
 editorial:

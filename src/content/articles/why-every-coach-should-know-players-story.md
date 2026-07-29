@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "communication"
+hero: "/illustrations/parking-lot-after-practice.webp"
+heroAlt: "Two adults talk beside a car in a gravel parking lot at dusk, seen at distance through a gap between vehicles."
 publishedAt: 2026-06-11
 draft: false
 editorial:

@@ -28,8 +28,8 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Editorial | `/team-parent/coach-certifications/` | PIPELINE |
-| Why SafeSport training is non-negotiable | Editorial | Foundations short read | PIPELINE |
+| The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Editorial | `/team-parent/coach-certifications/` | drafted 2026-07-27 (src/content/articles/coach-certifications-you-actually-need.md) |
+| Why SafeSport training is non-negotiable | Editorial | Foundations short read | drafted 2026-07-28 (src/content/articles/why-safesport-training-is-non-negotiable.md) |
 | The one-day coaching clinic: what to look for | Editorial | Team Parent · Tech setup | PIPELINE |
 | Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | PIPELINE |
 | Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | PIPELINE |
@@ -43,7 +43,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 
 | Topic | Voice | Destination | Status |
 |---|---|---|---|
-| How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | PIPELINE |
+| How to wash your kid's sports gear (laundry stripping for that smell) | Editorial | Team Parent · Tech setup | drafted 2026-07-24 (src/content/articles/laundry-stripping-sports-gear.md) |
 | Helmet care without ruining the helmet (vinegar/water, no abrasives) | Editorial | Team Parent · Equipment | PIPELINE |
 | Cleat care that triples the lifespan | Editorial | Team Parent · Equipment | PIPELINE |
 | Glove break-in: the right way and the wrong way (warm water at 150-170F, hinge points) | Editorial | Add to baseball guide + standalone article | PIPELINE |
@@ -106,7 +106,7 @@ A small mini-series that can become a flagship cornerstone.
 |---|---|---|---|
 | Rec league vs travel ball: the honest comparison | Editorial | Foundations (cornerstone) | PIPELINE |
 | Six questions to ask before joining a travel organization | Editorial | Lead magnet (PDF, 1 page) | PIPELINE |
-| The travel-ball politics: how to stay out of them | Editorial | Team Parent · Travel | PIPELINE |
+| The travel-ball politics: how to stay out of them | Editorial | Team Parent · Travel | covered (travel-politics.md, travel-team-politics-the-playing-time-formula.md) |
 | What every family decides for itself (no judgment from us) | Editorial | Foundations | PIPELINE |
 | The night you decide to walk away from a travel team | Editorial | Drive Home | PIPELINE |
 
@@ -157,6 +157,10 @@ Genuinely new rule/equipment/deadline items the weekly rules watch turns up, que
 | USSSA travel baseball caps every team at 3 grade-exception players (rostered by school grade, not strict age), effective 8/12/2026; individual events/showcases exempt. Confirmed against the primary USSSA rulebook (Rule 3.00 header). | USSSA Baseball | https://www.usssa.com/docs/baseball/usssa_bb_rules.pdf | 2026-07-18 | NEWS-DRAFTED (src/content/news/usssa-grade-exception-limit-2026.md) |
 | NOCSAE finalized ND006, the first-ever youth-specific football helmet performance standard (distinct from the ND002 recert already covered); effective date pushed to Sept 1, 2027. Not parent-actionable yet, but the day youth helmets need a separate stamp is coming. Candidate for a future explainer. | NOCSAE | https://nocsae.org/overview-nocsae-youth-football-helmet-standard/ | 2026-07-18 | PIPELINE |
 | California's SB 1248 required every school to have a written heat-safety plan for outdoor activities (sports practice, recess) in place by July 1, 2026 — monitoring forecasts, naming an indoor alternative, staff training on heat-stress signs. Passed after the 2023 heat-related death of a 12-year-old during PE. No federal equivalent exists. Good hook for a future piece on "does your league have a written heat policy" nationally. | CalMatters | https://calmatters.org/environment/climate-change/2026/07/california-school-heat-illness-laws/ | 2026-07-21 | NEWS-DRAFTED (src/content/news/california-heat-safety-law-deadline-2026.md) |
+| Ohio's new Student Athlete Mobility (SAM) Act lets a public high schooler petition to play a sport at a neighboring public school if their own school doesn't offer it, effective the 2026-27 school year. Both superintendents must approve; OHSAA roster minimums still apply. Not open enrollment — the home school must skip the sport entirely first. Good hook for a "does your state allow this" roundup piece. | Athletic Business (citing OHSAA/Sports Illustrated reporting) | https://www.athleticbusiness.com/operations/governing-bodies/article/15830925/ohio-public-school-students-gain-opportunities-to-play-sports-under-new-state-law | 2026-07-28 | NEWS-DRAFTED (src/content/news/ohio-sam-act-athlete-mobility-2026.md) |
+| NFHS bans non-functional attachments on football mouth/tooth protectors and now allows play cards (QB wristbands) to be worn on the belt instead of just the arm, effective the 2026 high school season. Announced Feb. 4, 2026, but surfaced now because fall practice — and pad-up mouth guard checks — start within 30 days. | National Sporting Goods Association (NFHS rule coverage) | https://nsga.org/news/nfhs-makes-football-rule-changes-for-2026/ | 2026-07-28 | NEWS-DRAFTED (src/content/news/nfhs-football-equipment-rules-2026.md) |
+| NFHS approved 13 high school soccer rule changes for 2026-27: goalkeeper release window goes from 6 to 8 seconds (a violation now awards a corner kick instead of an indirect free kick), a reworked penalty-kick encroachment/warning process, and a ban on players wearing personal audio/video devices during a match. Effective this fall, imminent but mostly procedural rather than gear-buying. Candidate for a short read once the season starts and parents start asking about the card/device calls. | NFHS (via Athletes Untapped / MaxPreps coverage) | https://athletesuntapped.com/blog/high-school-soccer-rules-are-changing-for-2026-27-what-players-and-parents-should-know/ | 2026-07-28 | PIPELINE |
+| NFHS approved 7 high school baseball and 4 softball rule changes for the 2027 season: baseball gets an 18-inch first-base option (alternative to the previously mandated double first base) to cut collisions, pitchers in both sports can now receive one-way dugout communication, and a new non-wood bat certification standard (USA Baseball BBCOR .50 or Bat Performance Standard) phases in for 2028. Not imminent — 2027 spring season — but a real "what to buy next year" piece once bat brands publish compliant models. | NFHS (via Athletic Business) | https://www.athleticbusiness.com/operations/governing-bodies/article/15829710/nfhs-announces-rules-changes-for-track-baseball-and-softball | 2026-07-28 | PIPELINE |
 
 ---
 

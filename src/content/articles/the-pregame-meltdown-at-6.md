@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 5-7
+hero: "/illustrations/uniform-on-hanger-morning.webp"
+heroAlt: "A plain youth uniform hangs on a closet door in early morning light with cleats on the floor beneath it."
 publishedAt: 2026-02-26
 featured: false
 editorial:

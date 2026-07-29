@@ -8,6 +8,8 @@ seoTitle: "Youth Football Gear List by Age: What to Buy (and Skip)"
 seoDescription: "Helmets, cleats, girdles, and mouthguards by age, what the league provides, what football really costs, and the one place never to save money."
 costSummary: "Most leagues provide helmets and pads through middle school. The bill jumps in high school."
 seasonNote: "Fall is the season everywhere. Spring 7-on-7 is optional and growing. Summer two-a-days start in late July."
+hero: "/illustrations/guide-football-gear.webp"
+heroAlt: "A plain helmet, shoulder pads, a mouthguard, molded cleats, a padded girdle, and a practice jersey arranged in a flat lay on weathered planks."
 publishedAt: 2026-03-09
 ---
 

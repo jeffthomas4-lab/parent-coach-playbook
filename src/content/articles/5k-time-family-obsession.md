@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "cross-country"
 age: "11-12"
 topic: "the-hard-stuff"
+hero: "/illustrations/cross-country-trail-morning-fog.webp"
+heroAlt: "A grass and dirt course trail winds through morning fog with course flags marking the turns and no runners in frame."
 publishedAt: 2026-07-04
 draft: false
 editorial:

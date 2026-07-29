@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "track-field"
 age: "11-12"
 topic: "the-hard-stuff"
+hero: "/illustrations/track-blocks-and-spikes.webp"
+heroAlt: "Starting blocks sit set in a lane with a pair of spikes beside them, hard morning shadow crossing the track."
 publishedAt: 2026-07-04
 draft: false
 editorial:

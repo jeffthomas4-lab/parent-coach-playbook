@@ -10,6 +10,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 8-10
+hero: "/illustrations/predawn-kitchen-packing.webp"
+heroAlt: "A kitchen counter before sunrise holds an open cooler, filled water bottles, and sandwich bags under one overhead light."
 publishedAt: 2026-05-13
 featured: false
 editorial:

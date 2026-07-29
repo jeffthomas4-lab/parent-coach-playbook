@@ -8,6 +8,8 @@ format: "essay"
 phase: "drive-there"
 sport: "theater"
 age: "13-14"
+hero: "/illustrations/theater-stage-marks-tape.webp"
+heroAlt: "Colored spike tape marks a black stage floor under raking light, a folding chair sitting at the edge."
 publishedAt: "2026-05-12"
 featured: false
 editorial:

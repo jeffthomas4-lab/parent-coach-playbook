@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "crew"
 age: "all-ages"
 topic: "season-ops"
+hero: "/illustrations/crew-boathouse-dawn-dock.webp"
+heroAlt: "A dock outside a boathouse sits at dawn with an empty rack and flat water beyond, mist rising off the surface."
 publishedAt: 2026-07-04
 draft: false
 editorial:

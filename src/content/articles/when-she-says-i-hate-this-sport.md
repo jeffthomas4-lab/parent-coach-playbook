@@ -8,6 +8,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "8-10"
+hero: "/illustrations/kitchen-late-parent-alone.webp"
+heroAlt: "An adult stands at a dark kitchen counter at night, seen only as a shoulder and forearm, hands wrapped around a mug."
 publishedAt: 2026-04-23
 featured: true
 editorial:

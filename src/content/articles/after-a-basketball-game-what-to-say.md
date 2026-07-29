@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "basketball"
 age: "8-10"
 topic: communication
+hero: "/illustrations/basketball-hoop-outdoor-dusk.webp"
+heroAlt: "An outdoor basketball hoop with a worn net stands against a dusk sky, its backboard weathered and shot from below."
 publishedAt: 2026-06-11
 draft: false
 editorial:

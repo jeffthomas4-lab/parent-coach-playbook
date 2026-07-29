@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: flag-football
 age: 5-7
+hero: "/illustrations/flag-football-belts-grass.webp"
+heroAlt: "Flag football belts with plain colored flags lie on grass beside a ball, dew visible in morning light."
 publishedAt: 2026-06-10
 featured: false
 editorial:

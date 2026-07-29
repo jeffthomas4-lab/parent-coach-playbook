@@ -8,6 +8,8 @@ format: note
 phase: drive-home
 sport: multi-sport
 age: 15-plus
+hero: "/illustrations/two-fields-through-fence.webp"
+heroAlt: "Two adjacent playing fields are seen through a chain-link fence, one busy in the distance and one empty in the foreground at late day."
 publishedAt: 2026-03-10
 featured: false
 editorial:

@@ -8,6 +8,8 @@ seoTitle: "School Band Costs: Renting vs Buying Instruments, by Grade"
 seoDescription: "Instrument rent-vs-buy math, supplies, and marching season costs, with the questions to ask before you sign a rental contract."
 costSummary: "Renting keeps the first years cheap. Buying outright is the big spend, so wait until your kid sticks."
 seasonNote: "Concert band runs the school year (September–May). Marching band adds August/September pre-season. Jazz and chamber are year-round."
+hero: "/illustrations/guide-band-gear.webp"
+heroAlt: "A brass mouthpiece, a box of reeds, valve oil, a folded music stand, a cleaning cloth, and a black folder arranged in a flat lay on dark wood."
 publishedAt: 2026-04-13
 ---
 

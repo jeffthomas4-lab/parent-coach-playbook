@@ -7,6 +7,8 @@ seoTitle: "Flag Football Gear for Kids: The Short List of What to Buy"
 seoDescription: "Mouthguard, cleats, and almost nothing else. What flag football really takes to start, what the league provides, and what to skip."
 costSummary: "The cheapest version of football. A mouthguard and cleats cover it."
 seasonNote: "Most flag football leagues run fall and spring. Check with your local NFL Flag or youth program for season dates in your area."
+hero: "/illustrations/guide-flag-football-gear.webp"
+heroAlt: "A flag belt with colored flags, turf shoes, a youth football, a mouthguard case, and a rolled undershirt arranged in a flat lay on green turf."
 publishedAt: 2026-04-30
 ---
 

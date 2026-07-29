@@ -8,9 +8,9 @@ ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-01-11
 governingBodies:
   - name: "USA Hockey: Player Safety"
-    url: "https://www.usahockey.com/page/show/910900-safety"
+    url: "https://www.usahockey.com/playersafety"
   - name: "HECC"
-    url: "https://www.hecc.net/"
+    url: "https://hecc.org/"
   - name: "American Academy of Pediatrics: Ice Hockey"
     url: "https://publications.aap.org/pediatrics/"
   - name: "CDC HEADS UP"
@@ -24,9 +24,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-11
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. USA Hockey, HECC, AAP, CDC cited. Ranks risks by published epidemiology."
+  reviewerNotes: "Sensitive flagged. USA Hockey, HECC, AAP, CDC cited. Ranks risks by published epidemiology. Flo refresh 2026-07-28: fixed dead HECC link, updated to current USA Hockey URL, corrected neck-guard rule (BNQ neck laceration protection has been mandatory for all players and on-ice officials under 18 since 2024-08-01, not just goalies under 12)."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Youth hockey is fast, full-contact at the older ages, and played on a hard surface with sharp metal blades. The injury profile is distinct from any other youth sport. The list below is what published epidemiology says matters most, ranked by frequency and severity.
@@ -41,7 +42,7 @@ U.S. Centers for Disease Control and Prevention (CDC) HEADS UP for hockey-specif
 
 Mouthguards are required by most affiliated leagues for ages 12 and up. Boil-and-bite is the floor; custom is better.
 
-**Three. Lacerations from skate blades.** Skate-blade lacerations to neck, throat, hand, and forearm are real and have caused fatalities at the highest levels. USA Hockey requires goalies under 12 to wear BNQ-certified neck-and-collarbone protectors. Many programs require neck guards for skaters too. The neck-guard is not a comfort item.
+**Three. Lacerations from skate blades.** Skate-blade lacerations to neck, throat, hand, and forearm are real and have caused fatalities at the highest levels. Since August 1, 2024, USA Hockey requires BNQ-certified (or equivalent) neck laceration protection for every player and on-ice official under 18, in both practices and games, not just goalies. The rule followed the death of professional player Adam Johnson from a skate-blade cut in October 2023. The neck-guard is not a comfort item.
 
 **Four. Shoulder, clavicle, and AC-joint injuries.** Body checking (where allowed) and direct boards contact produce shoulder injuries at higher rates than most sports. Properly fitted shoulder pads and instruction in proper checking technique reduce but do not eliminate the risk.
 
@@ -63,7 +64,7 @@ Mouthguards are required by most affiliated leagues for ages 12 and up. Boil-and
 
 "Where is the AED at the rink, and who is CPR/AED certified during practice?"
 
-"Do skaters wear neck guards (mandatory or strongly recommended)?"
+"Is every skater wearing a certified neck guard, not just the goalies? It's a USA Hockey rule now, not a house preference."
 
 A program with answers is a program that has done the work. A program that skips these protocols on any of those is one that hasn't.
 

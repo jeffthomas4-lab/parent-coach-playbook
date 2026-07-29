@@ -7,6 +7,8 @@ format: "note"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/coach-kneeling-huddle.webp"
+heroAlt: "An adult kneels with their back to the camera in front of a loose half-circle of young players, all faces turned away from the camera."
 publishedAt: 2026-04-03
 featured: false
 editorial:

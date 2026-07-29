@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "13-14"
+hero: "/illustrations/fitting-helmet-hands.webp"
+heroAlt: "An adult's hands adjust the chin strap of a plain youth helmet, the child's face hidden behind the helmet and the adult's forearm."
 publishedAt: 2026-04-14
 featured: false
 editorial:

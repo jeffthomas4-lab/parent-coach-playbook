@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-home"
 sport: "multi-sport"
 age: "11-12"
+hero: "/illustrations/porch-teen-headphones.webp"
+heroAlt: "A teenager sits on front porch steps in mid-afternoon light wearing headphones, head down, a backpack dropped beside them."
 publishedAt: 2026-03-18
 featured: false
 editorial:

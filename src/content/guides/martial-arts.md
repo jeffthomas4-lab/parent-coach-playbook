@@ -7,6 +7,8 @@ seoTitle: "Kids' Martial Arts Gear: What to Buy by Age and Style"
 seoDescription: "Uniform, sparring gear, and belt progression costs for karate, taekwondo, and BJJ, plus what the dojo supplies."
 costSummary: "Cheap to start. Many schools include the gi with enrollment. Sparring gear adds up at the intermediate level."
 seasonNote: "Martial arts programs run year-round. Most gyms offer classes multiple times per week. Tournament seasons vary by style and governing body."
+hero: "/illustrations/guide-martial-arts-gear.webp"
+heroAlt: "A folded practice uniform, a coiled cloth belt, sparring gloves, shin guards, and a mouthguard case arranged in a flat lay on a training mat."
 publishedAt: 2026-04-30
 ---
 

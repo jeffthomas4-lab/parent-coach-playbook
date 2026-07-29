@@ -13,6 +13,8 @@ format: essay
 phase: drive-home
 sport: ballet
 age: 13-14
+hero: "/illustrations/ballet-feet-first-position.webp"
+heroAlt: "A dancer's feet in soft shoes rest in first position on a worn studio floor, cropped at mid-calf under hard side light."
 publishedAt: '2026-05-12'
 featured: false
 editorial:

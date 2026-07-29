@@ -8,6 +8,8 @@ seoTitle: "Youth Sports First Aid Kit: What to Actually Pack"
 seoDescription: "The sideline first aid kit that covers real youth sports injuries, item by item, without packing a trauma bag."
 costSummary: "Cheap to stock. Most items last a full season."
 seasonNote: "Restock every four weeks during season. Keep extra tape, bandages, and cold packs in the car."
+hero: "/illustrations/guide-first-aid-kit.webp"
+heroAlt: "A canvas zip pouch, a gel cold pack, rolls of athletic tape, folded gauze, adhesive bandages, and tweezers arranged in a flat lay on a truck tailgate."
 publishedAt: 2026-05-01
 ---
 

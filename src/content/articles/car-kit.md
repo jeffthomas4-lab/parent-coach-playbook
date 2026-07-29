@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/gear-shop-aisle.webp"
+heroAlt: "A sporting goods store aisle stretches into the distance with racks of unbranded gear and one adult figure soft-focused far down the row."
 publishedAt: 2026-03-14
 featured: false
 editorial:

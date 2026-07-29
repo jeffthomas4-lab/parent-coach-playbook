@@ -9,6 +9,8 @@ format: "essay"
 phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/signup-clipboard-fence.webp"
+heroAlt: "A clipboard hangs from a chain-link fence by a length of string, its pages blank, an empty field behind it in bright flat light."
 publishedAt: 2026-06-13
 draft: false
 editorial:

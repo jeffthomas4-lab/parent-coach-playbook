@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "multi-sport"
 age: "all-ages"
 topic: "the-hard-stuff"
+hero: "/illustrations/bedroom-door-ajar-gear.webp"
+heroAlt: "A child's bedroom door stands half open at night, a uniform dropped on the floor inside and one strip of hallway light across the carpet."
 publishedAt: 2026-07-20
 draft: false
 editorial:

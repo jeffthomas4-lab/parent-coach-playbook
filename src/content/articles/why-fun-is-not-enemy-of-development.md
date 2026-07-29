@@ -6,6 +6,8 @@ sport: multi-sport
 age: all-ages
 topic: communication
 draft: false
+hero: "/illustrations/laptop-email-draft-late.webp"
+heroAlt: "A laptop sits open on a dining table late at night with a long email draft on screen and a cold mug beside it."
 publishedAt: 2026-06-11
 editorial:
   qualityGrade: 8

@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "lacrosse-girls"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/lacrosse-girls-field-dusk-distance.webp"
+heroAlt: "A youth lacrosse field at dusk shows players small and backlit in the far third, a goal in the foreground with long shadows."
 publishedAt: 2026-07-06
 draft: false
 editorial:

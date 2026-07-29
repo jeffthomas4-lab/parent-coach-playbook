@@ -9,6 +9,8 @@ format: essay
 phase: drive-there
 sport: cheer
 age: all-ages
+hero: "/illustrations/cheer-shoes-bow-bench.webp"
+heroAlt: "Cheer shoes, a plain hair bow, and a rolled wrap sit on a gym bench under side light."
 publishedAt: 2026-06-11
 featured: false
 editorial:

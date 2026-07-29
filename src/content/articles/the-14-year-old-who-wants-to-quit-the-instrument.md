@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "band"
 age: "13-14"
+hero: "/illustrations/band-music-stands-empty-room.webp"
+heroAlt: "Rows of empty music stands and folding chairs sit in a rehearsal room after everyone has left, blank sheet music in afternoon light."
 publishedAt: 2026-04-28
 featured: false
 editorial:

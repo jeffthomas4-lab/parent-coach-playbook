@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: basketball
 age: all-ages
+hero: "/illustrations/basketball-empty-gym-morning.webp"
+heroAlt: "An empty school gym in the morning shows light from high windows falling across the floor, a ball at rest near the baseline."
 publishedAt: 2026-06-10
 featured: false
 editorial:

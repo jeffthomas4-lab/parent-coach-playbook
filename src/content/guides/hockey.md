@@ -8,6 +8,8 @@ seoTitle: "Youth Hockey Gear List by Age: What to Buy (and Skip)"
 seoDescription: "The full pad-by-pad list for youth hockey, what it really costs by age, where used gear is smart, and what to buy new."
 costSummary: "The most expensive youth sport. Costs climb every age band, and travel hockey multiplies everything."
 seasonNote: "Season runs late August through March in most areas. Spring 3-on-3 leagues are common. Summer skills camps are optional."
+hero: "/illustrations/guide-hockey-gear.webp"
+heroAlt: "Skates with blade guards, shin pads, elbow pads, a mouthguard, a stick blade, and a helmet cage arranged in a flat lay on rubber flooring."
 publishedAt: 2026-03-16
 ---
 

@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-home"
 sport: "multi-sport"
 age: "5-7"
+hero: "/illustrations/backseat-window-evening.webp"
+heroAlt: "A child in a car's back seat looks out the side window, head turned fully away, a sports bag slumped beside them in evening light."
 publishedAt: 2026-03-23
 featured: false
 editorial:

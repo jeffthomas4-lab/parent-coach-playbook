@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "ballet"
 age: 15-plus
 topic: tryouts
+hero: "/illustrations/ballet-pointe-shoes-hanging.webp"
+heroAlt: "A pair of worn pointe shoes hangs by its ribbons from a hook against a plain wall, lit by soft window light."
 publishedAt: 2026-07-06
 draft: false
 editorial:

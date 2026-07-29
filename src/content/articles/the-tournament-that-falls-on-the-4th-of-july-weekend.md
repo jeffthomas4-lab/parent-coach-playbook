@@ -9,6 +9,8 @@ phase: "team-parent"
 sport: "multi-sport"
 age: "all-ages"
 topic: "season-ops"
+hero: "/illustrations/trunk-folding-chairs-loaded.webp"
+heroAlt: "An open car trunk in a driveway holds folding camp chairs, a cooler, and a ball bag in early morning light."
 publishedAt: 2026-07-03
 draft: false
 editorial:

@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-home"
 sport: "multi-sport"
 age: "11-12"
+hero: "/illustrations/pickup-line-waiting.webp"
+heroAlt: "Cars wait in a line at a camp pickup area, seen from behind the row with a few adults standing by open doors at distance in hot midday light."
 publishedAt: 2026-04-29
 featured: false
 editorial:

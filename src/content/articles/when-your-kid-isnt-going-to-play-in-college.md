@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "15-plus"
+hero: "/illustrations/rulebook-kitchen-table.webp"
+heroAlt: "A plain booklet and a pair of reading glasses sit on a kitchen table under a hanging lamp at night."
 publishedAt: 2026-04-16
 featured: false
 editorial:

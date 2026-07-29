@@ -10,6 +10,7 @@ costSummary: "The basics don't cost much. Tournament travel is what drives the b
 seasonNote: "Most essentials stay consistent year-round. Tour and tournament seasons push cooler and travel gear higher."
 publishedAt: 2026-05-01
 hero: /illustrations/season-essentials-flatlay.webp
+heroAlt: "An open duffel bag packed with labeled toiletries, water bottle, flashlight, and journal sits beside a cap, sunscreen, snack bar, charger, and hand sanitizer on a wood floor."
 ---
 
 Your kid has cleats. You have a glove or whatever sport-specific equipment lives in the garage. Now you need the support infrastructure. Recovery tools that prevent muscle soreness from becoming an excuse to sit out. Hydration systems that work for a three-game Saturday. Travel logistics that get everything to the tournament site without forgetting the mouthguards.

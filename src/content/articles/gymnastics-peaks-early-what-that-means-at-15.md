@@ -9,6 +9,8 @@ phase: "drive-there"
 sport: "gymnastics"
 age: 15-plus
 topic: season-ops
+hero: "/illustrations/gymnastics-beam-empty-low.webp"
+heroAlt: "A balance beam is photographed at very low angle down its length in an empty gym, a foam pit blurred beyond."
 publishedAt: 2026-07-06
 draft: false
 editorial:

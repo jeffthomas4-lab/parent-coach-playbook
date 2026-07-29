@@ -7,6 +7,8 @@ bluf: "Before you talk to the coach about playing time, separate what your kid w
 format: "essay"
 topic: "communication"
 phase: "drive-there"
+hero: "/illustrations/phone-text-in-car.webp"
+heroAlt: "A phone rests face-up in a car cupholder showing an open message thread, keys in the ignition and morning light on the dash."
 publishedAt: 2026-06-20
 draft: false
 editorial:

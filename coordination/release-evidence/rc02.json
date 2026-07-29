@@ -1,0 +1,224 @@
+{
+  "release_id": "pcd-rc02",
+  "environment": "production",
+  "created_at": "2026-07-29T13:43:46.996Z",
+  "expires_at": "2026-08-05T13:43:46.996Z",
+  "supersedes": "pcd-local-rc01",
+  "candidate_commit": "48cf7c3b467ff43ab64de5a76b0ea6ace4369a50",
+  "candidate_branch": "feat/pcd-inline-editor",
+  "cut_note": "Cut 2026-07-29T13:43:46.996Z against 48cf7c3b by scripts/cut-release-evidence.mjs. rc01 was pinned to a 2026-07-18 candidate and expired 2026-07-25, blocking ci:release. Rather than renew that packet's date over eleven commit-pinned pass marks, the commit-sensitive gates were re-run here, environment gates were carried with their original dates visible, and deploy_approval plus post_deploy_observation were RESET because they described a superseded candidate. This packet is deliberately not ready: the gates that were never closed on rc01 are still open.",
+  "gates": {
+    "source_commit": {
+      "state": "pass",
+      "summary": "Candidate is commit 48cf7c3b467ff43ab64de5a76b0ea6ace4369a50 (\"Distinguish a failed production build from a failed manifest contract\") on branch feat/pcd-inline-editor, cut from a clean working tree.",
+      "evidence": [
+        "commit: 48cf7c3b467ff43ab64de5a76b0ea6ace4369a50",
+        "short: 48cf7c3b",
+        "branch: feat/pcd-inline-editor",
+        "subject: Distinguish a failed production build from a failed manifest contract",
+        "working tree clean: true",
+        "recorded at: 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "secret_scan": {
+      "state": "pass",
+      "summary": "Repository files and full git history passed the secret scanner against this candidate. Established 2026-07-29T13:43:46.996Z by scripts/cut-release-evidence.mjs.",
+      "evidence": [
+        "command: npm run --silent check:secrets",
+        "exit code: 0",
+        "output sha256 (first 16): c8cb282804ae6749",
+        "final line: Secret scan passed for current repository files and complete Git history.",
+        "duration: 17.8s",
+        "run at: 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "production_manifest": {
+      "state": "pass",
+      "summary": "The production manifest contract passes against production configuration for this candidate. Established 2026-07-29T13:43:46.996Z by scripts/cut-release-evidence.mjs.",
+      "evidence": [
+        "command: npm run --silent check:production-manifest",
+        "exit code: 0",
+        "output sha256 (first 16): 75780714e7d39290",
+        "final line: Production deployment manifest verified: identity, bindings, Access vars, observability, and safe feature defaults match the release contract.",
+        "duration: 87.2s",
+        "run at: 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "tests_and_build": {
+      "state": "pass",
+      "summary": "Unit suite and the production build both completed for commit 48cf7c3b.",
+      "evidence": [
+        "tests: npm run --silent test:unit -> exit 0, sha256 9d991970b88f1bfc, 11.9s",
+        "tests final line: \u001b[2m   Duration \u001b[22m 10.81s\u001b[2m (transform 24.34s, setup 0ms, import 47.70s, tests 8.36s, environment 39ms)\u001b[22m",
+        "build: npm run --silent build -> exit 0, sha256 bd734c3ffbcacf25, 84.2s",
+        "build final line: \u001b[2m06:47:08\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m",
+        "completed at: 2026-07-29T13:47:08.951Z"
+      ]
+    },
+    "access_policy": {
+      "state": "pass",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Cloudflare Access configuration is independent of the application commit. A fresh authenticated dashboard read-only export proves the Parent Coach Desk Production Admin application covers parentcoachdesk.com/admin* and /api/admin* with one bounded allow policy. The policy admits exactly eepskalla@gmail.com and jeffthomas4@gmail.com; it does not allow everyone. The Worker runtime remains an independently tracked deployment-drift and post-deploy concern.",
+      "evidence": [
+        "coordination/release-evidence/access-policy-export-pending.json (exported 2026-07-17)",
+        "coordination/release-evidence/anonymous-access-2026-07-16.json",
+        "coordination/release-evidence/live-production-runtime-drift-2026-07-17.json",
+        "tests/access-evidence.test.ts",
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01"
+      ]
+    },
+    "anonymous_access_probes": {
+      "state": "pass",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Unauthenticated route probes against the live site; re-run after this candidate deploys. A fresh anonymous GET-only probe covered all 38 current protected routes; every route returned a redacted 302 to the expected Cloudflare Access origin, including the protected trusted-relationship workspace.",
+      "evidence": [
+        "coordination/release-evidence/anonymous-access-2026-07-16.json",
+        "automation/protected-route-contract.json",
+        "tests/anonymous-admin-probe.test.ts",
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01"
+      ]
+    },
+    "database_restore": {
+      "state": "pass",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Restore proof is a property of the export tooling, not of this commit. The five derived camp_scan_queue orphans were removed through an explicitly approved, exact-count production repair. A fresh post-repair export restored locally with integrity_check=ok and zero foreign-key violations; organizations were not written.",
+      "evidence": [
+        "coordination/release-evidence/database-queue-repair-and-restore-2026-07-17.json",
+        "scripts/prove-d1-restore.py",
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01"
+      ]
+    },
+    "r2_recovery": {
+      "state": "not_applicable",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Owner-approved empty-scope disposition; the bucket state has not changed. Owner accepted an empty-scope not-applicable disposition on 2026-07-17 (disposition A). The production PHOTOS bucket 'activityradar-photos' is empty at 0 objects / 0 bytes, so there is no production payload to export or sample. The disposition is void if production R2 media is added later, which would require a fresh independent export plus representative retrieval and SHA-256 match proof. The prior synthetic staging R2 restore with matching SHA-256 remains the recovery-mechanism proof.",
+      "evidence": [
+        "coordination/release-evidence/r2-recovery-owner-disposition-2026-07-17.json",
+        "coordination/release-evidence/production-r2-inventory-preflight-2026-07-17.json",
+        "coordination/release-evidence/staging-isolation-and-journey-2026-07-17.json",
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01"
+      ],
+      "approved_by": "Jeff Thomas"
+    },
+    "rollback_target": {
+      "state": "pass",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Rollback target is a deployment property, unchanged by this candidate. The currently active, fully bound Worker version is pinned as the exact rollback target for the next approved release. The original code-upload version lacks three secret bindings and Pages exposes historical admin artifacts, so neither is accepted.",
+      "evidence": [
+        "coordination/release-evidence/worker-rollback-target-2026-07-29.json",
+        "coordination/release-evidence/worker-rollback-target-2026-07-16.json",
+        "tests/worker-rollback-target.test.ts",
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01",
+        "The 2026-07-16 receipt expired on 2026-07-25 and is retained for provenance only. The 2026-07-29 receipt was observed from live production by scripts/observe-worker-rollback-target.mjs and is the receipt the checker and the deploy workflow now use."
+      ]
+    },
+    "rollback_rehearsal": {
+      "state": "pass",
+      "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Rehearsal exercised the rollback mechanism, not this commit. A controlled staging-only Worker rollback moved 100% of isolated staging traffic to a compatible prior revision, verified public, health, and readiness endpoints, then restored the exact current revision. The rehearsal did not mutate production or bound data resources and does not substitute for data recovery proof.",
+      "evidence": [
+        "coordination/release-evidence/recovery-tabletop-2026-07-16.json",
+        "coordination/release-evidence/staging-worker-rollback-rehearsal-2026-07-17.json",
+        "tests/recovery-tabletop.test.ts",
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01"
+      ]
+    },
+    "deploy_approval": {
+      "state": "pending",
+      "summary": "[RESET for this candidate] Jeff has not approved THIS candidate for production. The pcd-local-rc01 record described a different commit and is not carried: \"Jeff approved production deployment of the reviewed Plan 015 repair. Commit bf4c424 was deployed as Worker version 35449\"",
+      "evidence": [
+        "reset on 2026-07-29T13:43:46.996Z because the previous evidence was pinned to a superseded candidate"
+      ]
+    },
+    "post_deploy_observation": {
+      "state": "pending",
+      "summary": "[RESET for this candidate] This candidate has not been deployed, so there is nothing to observe yet. The pcd-local-rc01 record described a different commit and is not carried: \"A bounded, unauthenticated GET-only monitor completed after the Plan 015 deployment: home, directory, privacy, terms, he\"",
+      "evidence": [
+        "reset on 2026-07-29T13:43:46.996Z because the previous evidence was pinned to a superseded candidate"
+      ]
+    },
+    "authenticated_access_probes": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] A non-mutating 37-route allowed/denied identity probe contract exists, but no redacted live results have been recorded.",
+      "evidence": [
+        "coordination/release-evidence/authenticated-access-probes-pending.json",
+        "automation/protected-route-contract.json",
+        "tests/access-evidence.test.ts",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "database_backup": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] A fresh complete local batch now covers all three production D1 databases and each export restores cleanly in isolated SQLite. Copies remain local-only, however; immutable independent offsite storage, R2 inventory/payload recovery, a separate verifier retrieval exercise, and separate-day proving runs are absent, so the backup gate cannot pass yet.",
+      "evidence": [
+        "scripts/BACKUP-PROVING-LOG.md runs 1-5",
+        "coordination/release-evidence/database-backup-restore-proving-2026-07-17.json",
+        "coordination/release-evidence/database-backup-restore-clone-remediation-proof-2026-07-17.json",
+        "coordination/release-evidence/database-backup-fresh-export-2026-07-17.json",
+        "coordination/release-evidence/database-queue-repair-and-restore-2026-07-17.json",
+        "coordination/release-evidence/complete-local-d1-recovery-batch-2026-07-17.json",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "customer_journeys": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] The current production Worker passes populated directory reflow at 320, 360, 390 and 430px, plus a fresh 640x320 landscape check of the populated directory and representative detail route, with no measured horizontal overflow. The directory detail route passes 320px reflow; production main has tabindex -1 and direct skip-link activation moves focus to MAIN#main. A fresh bounded GET-only monitor passed home, directory, privacy, terms, health, and readiness on both production and verified staging. The camp-submission form renders at 320px, but the correction/removal/privacy page remains a safe email fallback because the durable trust-intake feature is deliberately false. Native keyboard dispatch through the available browser automation remains inconclusive, not failed. Screen-reader behavior, real touch, 200% zoom, safe-area and virtual-keyboard behavior, constrained-network failure, and complete form/subscription/payment journeys remain pending.",
+      "evidence": [
+        "coordination/release-evidence/staging-deployment-and-recovery-rehearsal-2026-07-17.json",
+        "coordination/release-evidence/staging-isolation-and-journey-2026-07-17.json",
+        "coordination/release-evidence/staging-public-journey-2026-07-17.json",
+        "coordination/release-evidence/staging-mobile-recheck-2026-07-17.json",
+        "coordination/release-evidence/verified-staging-deployment-2026-07-17.json",
+        "coordination/release-evidence/live-production-runtime-drift-2026-07-17.json",
+        "coordination/release-evidence/production-mobile-reflow-2026-07-17.json",
+        "coordination/release-evidence/production-landscape-mobile-reflow-2026-07-17.json",
+        "coordination/release-evidence/public-customer-journey-monitor-2026-07-17.json",
+        "coordination/plans/017-public-trust-intake-activation.md",
+        "coordination/reviews/2026-07-16-rendered-mobile-web-audit.md",
+        "automation/mobile-web-contract.json",
+        "tests/mobile-web-contract.test.ts",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "notification_receipt": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] Resend confirms the original staging-only internal administrator alert was delivered, but a fresh read-only inspection of the approved #pcd-alerts channel found no matching drill alert. A current secret-name-only inventory confirms the isolated staging Worker has both Resend and Slack secret names, but cannot prove delivery or receipt. An accepted replacement staging submission is therefore not treated as channel delivery. Reconcile or rotate the configured Slack webhook, then perform one approved synthetic drill and record both provider/channel receipt and Jeff Thomas acknowledgement before the operator path is considered end to end.",
+      "evidence": [
+        "coordination/release-evidence/resend-domain-dns-2026-07-17.json",
+        "coordination/release-evidence/notification-receipt-pending.json",
+        "coordination/release-evidence/notification-receipt-staging-2026-07-17.json",
+        "coordination/release-evidence/notification-drill-replacement-pending-2026-07-17.json",
+        "coordination/release-evidence/notification-channel-receipt-check-2026-07-17.json",
+        "coordination/release-evidence/staging-notification-secret-preflight-2026-07-17.json",
+        "tests/failure-isolation-evidence.test.ts",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "failure_isolation": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] A local integrated simulation proves D1, Forge, scheduler, notification-ambiguity and public-monitor isolation, but environment-level failure and receipt evidence remain absent.",
+      "evidence": [
+        "coordination/release-evidence/integrated-failure-isolation-2026-07-16.json",
+        "tests/integrated-failure-isolation.test.ts",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "open_risk_decision": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] Open stop-ship risks have not been explicitly accepted or closed for this candidate. This includes a 2026-07-17 unintended production-target deployment that was restored to the exact approved Plan 015 version within approximately 56 seconds; no operator-initiated data mutation occurred, but the evidence does not claim absence of third-party requests. The deployment-target prevention control and its review remain required.",
+      "evidence": [
+        "coordination/release-evidence/production-deployment-scope-incident-2026-07-17.json",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    },
+    "migration_approval": {
+      "state": "pending",
+      "summary": "[STILL OPEN, carried from pcd-local-rc01] Read-only production evidence proves the directory DB is the incompatible Activity Radar graph lineage. The live Worker is bound to a separate empty PCD operational D1 database in WNAM, but all PCD migrations 0011 through 0022 remain pending and the trust/notification tables are absent. Staging uses separate synthetic-directory and operations databases; PCD_OPS_DB is migrated through 0022 there and its pre- and post-migration exports restored separately. No production migration or customer-data write has occurred. Any production migration remains separately approval-gated and requires independent offsite backup/retrieval coverage.",
+      "evidence": [
+        "coordination/release-evidence/production-pcd-ops-provisioning-2026-07-17.json",
+        "coordination/release-evidence/production-pcd-ops-preflight-2026-07-17.json",
+        "coordination/release-evidence/staging-isolation-and-journey-2026-07-17.json",
+        "coordination/release-evidence/trust-migration-rehearsal-2026-07-16.json",
+        "coordination/release-evidence/production-schema-compatibility-2026-07-16.json",
+        "tests/trust-migration-rehearsal.test.ts",
+        "tests/production-schema-compatibility.test.ts",
+        "tests/staging-pcd-ops-rehearsal.test.ts",
+        "still open as of 2026-07-29T13:43:46.996Z"
+      ]
+    }
+  }
+}

@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/walk-from-car-to-house.webp"
+heroAlt: "An adult and child walk from a driveway toward a lit front door, both seen from behind at a distance, the child carrying an oversized bag."
 publishedAt: 2026-04-05
 featured: false
 editorial:

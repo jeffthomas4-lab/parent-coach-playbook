@@ -13,6 +13,8 @@ format: essay
 phase: team-parent
 sport: band
 age: 8-10
+hero: "/illustrations/band-marching-field-distance.webp"
+heroAlt: "A marching band formation spreads across a practice field seen from very high and far away at dusk, figures small and anonymous."
 publishedAt: '2026-05-12'
 featured: false
 editorial:

@@ -7,6 +7,8 @@ format: "note"
 phase: "drive-there"
 sport: "baseball"
 age: "all-ages"
+hero: "/illustrations/baseball-glove-ball-bench.webp"
+heroAlt: "A broken-in leather glove with a scuffed baseball in the pocket rests on a dugout bench under hard side light."
 publishedAt: 2026-04-28
 featured: false
 editorial:

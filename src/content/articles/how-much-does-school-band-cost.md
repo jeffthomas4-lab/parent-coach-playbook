@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: band
 age: all-ages
+hero: "/illustrations/band-music-stands-empty-room.webp"
+heroAlt: "Rows of empty music stands and folding chairs sit in a rehearsal room after everyone has left, blank sheet music in afternoon light."
 publishedAt: 2026-06-10
 featured: false
 editorial:

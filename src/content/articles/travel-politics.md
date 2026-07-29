@@ -7,6 +7,8 @@ format: "note"
 phase: "game"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/half-empty-stands.webp"
+heroAlt: "Sparse spectators scatter across aluminum stands at a youth game, seen from the field side at a distance under overcast light."
 publishedAt: 2026-03-18
 featured: false
 editorial:

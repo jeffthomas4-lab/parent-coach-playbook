@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "cross-country"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/cross-country-runners-far-ridge.webp"
+heroAlt: "A line of runners strings out along a distant ridge at dawn, tiny and silhouetted against the sky with foreground grass in soft focus."
 publishedAt: 2026-07-06
 draft: false
 editorial:

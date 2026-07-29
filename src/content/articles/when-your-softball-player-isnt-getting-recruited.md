@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "softball"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/softball-circle-chalk.webp"
+heroAlt: "A youth softball field's pitching circle shows fresh chalk in morning light, a plain yellow ball resting in the dirt."
 publishedAt: 2026-07-06
 draft: false
 editorial:

@@ -8,6 +8,8 @@ format: note
 phase: game
 sport: multi-sport
 age: 13-14
+hero: "/illustrations/water-jug-table.webp"
+heroAlt: "An orange water cooler and a stack of paper cups sit on a folding table at a field's edge, ice melting in midday light."
 publishedAt: 2026-02-09
 featured: false
 editorial:

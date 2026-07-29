@@ -9,6 +9,8 @@ format: note
 phase: drive-home
 sport: volleyball
 age: 15-plus
+hero: "/illustrations/volleyball-line-of-players-behind.webp"
+heroAlt: "A row of young players stands along a sideline seen from directly behind, hands on hips, all facing the court away from the camera."
 publishedAt: 2026-06-10
 featured: false
 editorial:

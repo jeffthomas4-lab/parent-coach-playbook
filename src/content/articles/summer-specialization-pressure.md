@@ -9,6 +9,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: 11-12
+hero: "/illustrations/rec-field-vs-complex.webp"
+heroAlt: "A worn neighborhood grass field sits in the foreground with a manicured multi-field complex visible beyond it in morning light."
 publishedAt: 2026-05-13
 featured: false
 editorial:

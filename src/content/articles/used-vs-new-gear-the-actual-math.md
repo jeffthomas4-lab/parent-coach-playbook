@@ -8,6 +8,8 @@ format: note
 phase: drive-there
 sport: multi-sport
 age: all-ages
+hero: "/illustrations/outgrown-cleats-lineup.webp"
+heroAlt: "Four pairs of worn youth cleats line up on a garage floor in ascending size, lit by side light from an open door."
 publishedAt: 2026-01-22
 featured: false
 editorial:

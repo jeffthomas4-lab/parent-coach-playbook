@@ -7,6 +7,8 @@ format: "essay"
 phase: "drive-home"
 sport: "multi-sport"
 age: "all-ages"
+hero: "/illustrations/rearview-hands-wheel.webp"
+heroAlt: "An adult's hands rest on a steering wheel at dusk, the rearview mirror showing only the top of a child's head as the road blurs ahead."
 publishedAt: 2026-03-30
 featured: false
 editorial:

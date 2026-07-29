@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "soccer"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/soccer-practice-sunset-silhouettes.webp"
+heroAlt: "A youth soccer practice is photographed from far behind the touchline at sunset, players reading as warm rim-lit silhouettes with long shadows."
 publishedAt: 2026-07-06
 draft: false
 editorial:

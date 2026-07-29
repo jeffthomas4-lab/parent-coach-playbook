@@ -9,6 +9,8 @@ phase: "drive-home"
 sport: "dance"
 age: 15-plus
 topic: the-hard-stuff
+hero: "/illustrations/dance-shoes-bag-bench.webp"
+heroAlt: "Worn dance shoes, a rolled pair of tights, and a small duffel sit on a studio bench under window light."
 publishedAt: 2026-07-06
 draft: false
 editorial:
