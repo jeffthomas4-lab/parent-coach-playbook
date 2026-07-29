@@ -132,7 +132,7 @@ function run(label, command) {
     console.log(`    full output: ${logPath}`);
     return {
       ok: false, command, exitCode: code, digest: sha256(combined).slice(0, 16),
-      tail: lastLine(combined), seconds: Number(secs), logPath,
+      tail: lastLine(combined), seconds: Number(secs), logPath, output: combined,
     };
   }
 }
@@ -251,10 +251,25 @@ gates.secret_scan = gateFromRun(
 );
 
 const manifestRun = run('check:production-manifest', 'npm run --silent check:production-manifest');
+
+// `check:production-manifest` is `build:production && check-deployment-manifest.mjs`.
+// A production build failure and a manifest contract violation both exit 1 from
+// that chain, and on 2026-07-29 two consecutive cuts recorded "the production
+// manifest contract FAILED" when the contract had never executed: the build died
+// first. Verified minutes later by running the same command standalone, where it
+// printed "Production deployment manifest verified". Same red gate, two entirely
+// different problems, and the wrong one sent me looking at the manifest.
+//
+// The build prints `[build] Complete!` as its last act, so its absence means the
+// chain never reached the checker. Say so in the gate rather than making the next
+// reader re-derive it.
+const reachedContract = manifestRun.ok || /\[build\] Complete!/.test(manifestRun.output ?? '');
 gates.production_manifest = gateFromRun(
   manifestRun,
   'The production manifest contract passes against production configuration for this candidate.',
-  'The production manifest contract FAILED for this candidate.',
+  reachedContract
+    ? 'The production manifest contract FAILED for this candidate: the build succeeded and the contract check rejected it.'
+    : 'NOT a manifest finding. The production BUILD failed before the manifest contract ran, so the contract is unevaluated for this candidate, neither passing nor failing. Read the build log named below.',
 );
 
 // tests_and_build starts pending and is filled in AFTER the first write.
