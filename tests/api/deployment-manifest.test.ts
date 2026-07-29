@@ -5,10 +5,14 @@ const VALID_MANIFEST = {
   name: 'parent-coach-desk',
   topLevelName: 'parent-coach-desk',
   configPath: '/repo/wrangler.production.jsonc',
-  assets: { binding: 'ASSETS', run_worker_first: ['/admin', '/admin/*', '/api/admin', '/api/admin/*', '/sitemap-camps.xml'] },
+  // "/" and CONTENT_OVERLAY added 2026-07-28 with the inline editor. The
+  // homepage is a prerendered static asset, so it has to invoke the Worker
+  // first for HTMLRewriter to swap in overlay values; CONTENT_OVERLAY is the
+  // KV namespace those values live in.
+  assets: { binding: 'ASSETS', run_worker_first: ['/', '/admin', '/admin/*', '/api/admin', '/api/admin/*', '/sitemap-camps.xml'] },
   d1_databases: [{ binding: 'DB' }, { binding: 'FORGE_DB' }, { binding: 'PCD_OPS_DB' }],
   r2_buckets: [{ binding: 'PHOTOS' }],
-  kv_namespaces: [{ binding: 'SESSION' }],
+  kv_namespaces: [{ binding: 'CONTENT_OVERLAY' }, { binding: 'SESSION' }],
   ratelimits: [
     { name: 'PUBLIC_SUBMISSION_RATE_LIMITER' },
     { name: 'TRUST_RATE_LIMITER' },

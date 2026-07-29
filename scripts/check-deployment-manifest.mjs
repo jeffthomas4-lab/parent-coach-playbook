@@ -32,7 +32,11 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
   }
   expectBindings('D1 bindings', manifest.d1_databases, ['DB', 'FORGE_DB', 'PCD_OPS_DB']);
   expectBindings('R2 bindings', manifest.r2_buckets, ['PHOTOS']);
-  expectBindings('KV bindings', manifest.kv_namespaces, ['SESSION']);
+  // CONTENT_OVERLAY added 2026-07-28 for the inline editor. It holds live site
+  // chrome and marketing copy, read by HTMLRewriter in the Worker. Production
+  // and staging bind DIFFERENT namespace ids by requirement (Pillar 13 item 2);
+  // tests/overlay-environment-isolation.test.ts fails closed if they ever match.
+  expectBindings('KV bindings', manifest.kv_namespaces, ['CONTENT_OVERLAY', 'SESSION']);
   expectBindings('rate-limit bindings', manifest.ratelimits, [
     'PUBLIC_SUBMISSION_RATE_LIMITER',
     'TRUST_RATE_LIMITER',
@@ -42,7 +46,13 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
   ], 'name');
   expectEqual('assets binding', manifest.assets?.binding, 'ASSETS');
   const workerFirst = [...(manifest.assets?.run_worker_first ?? [])].sort();
-  const expectedWorkerFirst = ['/admin', '/admin/*', '/api/admin', '/api/admin/*', '/sitemap-camps.xml'].sort();
+  // "/" added 2026-07-28 for the inline editor: the homepage is a prerendered
+  // static asset, so it must invoke the Worker first for HTMLRewriter to swap
+  // in CONTENT_OVERLAY values. Without it the overlay silently never applies
+  // and edits appear to save while the live page never changes.
+  // Keep this list in sync with OVERLAY_ROUTES in src/lib/overlay-rewriter.ts;
+  // tests/overlay-route-coverage.test.ts asserts the pairing.
+  const expectedWorkerFirst = ['/', '/admin', '/admin/*', '/api/admin', '/api/admin/*', '/sitemap-camps.xml'].sort();
   expectEqual('required Worker-first routes', JSON.stringify(workerFirst), JSON.stringify(expectedWorkerFirst));
   expectEqual('site URL', manifest.vars?.SITE_URL, 'https://parentcoachdesk.com');
   expectEqual('observability enabled', manifest.observability?.enabled, true);
