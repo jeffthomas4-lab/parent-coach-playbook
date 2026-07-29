@@ -70,7 +70,7 @@ const fmtDate = (s: string) =>
 // Color tone for approval rate: low approval = warning.
 const rateTone = (rate: number, decided: number): string => {
   if (decided < 3) return 'text-ink-soft'; // not enough signal
-  if (rate >= 0.7) return 'text-sage';
+  if (rate >= 0.7) return 'text-accent';
   if (rate >= 0.4) return 'text-ink-soft';
   return 'text-rust';
 };
@@ -113,7 +113,7 @@ const rateTone = (rate: number, decided: number): string => {
             </div>
             <div class="border border-bone p-4 bg-paper">
               <p class="font-display italic text-ink-soft text-xs font-medium">Approved</p>
-              <p class="font-display text-sage text-2xl mt-1 font-medium">{totalApproved}</p>
+              <p class="font-display text-accent text-2xl mt-1 font-medium">{totalApproved}</p>
             </div>
             <div class="border border-bone p-4 bg-paper">
               <p class="font-display italic text-ink-soft text-xs font-medium">Rejected</p>
@@ -163,7 +163,7 @@ const rateTone = (rate: number, decided: number): string => {
                           )}
                         </td>
                         <td class="px-3 py-2 text-right text-ink">{r.submitted_count}</td>
-                        <td class="px-3 py-2 text-right text-sage">{r.approved_count}</td>
+                        <td class="px-3 py-2 text-right text-accent">{r.approved_count}</td>
                         <td class="px-3 py-2 text-right text-rust">{r.rejected_count}</td>
                         <td class={`px-3 py-2 text-right font-medium ${tone}`}>
                           {decided > 0 ? fmtPct(r.approval_rate) : '—'}

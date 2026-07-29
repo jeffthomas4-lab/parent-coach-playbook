@@ -78,13 +78,13 @@ if (env?.DB) {
 }
 
 const confidenceTone: Record<string, string> = {
-  high: 'border-sage bg-sage-bg text-sage',
+  high: 'border-accent bg-stripe text-accent',
   medium: 'border-bone bg-paper-warm text-ink-soft',
   low: 'border-rust bg-paper-warm text-rust',
 };
 
 const urlHealthTone: Record<string, string> = {
-  live: 'border-sage bg-sage-bg text-sage',
+  live: 'border-accent bg-stripe text-accent',
   redirect: 'border-bone bg-paper-warm text-ink-soft',
   unchecked: 'border-bone bg-paper-warm text-ink-soft',
   dead: 'border-rust bg-paper-warm text-rust',
@@ -274,7 +274,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium" data-action="approve">
+                        <button type="button" class="w-full font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-action="approve">
                           Approve
                         </button>
                       </div>
@@ -340,7 +340,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       </p>
 
                       <div class="grid gap-2 sm:grid-cols-2">
-                        <button type="button" class="font-display italic px-3 py-2 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium" data-action="approve">
+                        <button type="button" class="font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-action="approve">
                           Approve
                         </button>
                         <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">

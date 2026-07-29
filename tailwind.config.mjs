@@ -26,6 +26,28 @@ export default {
       maxWidth: {
         prose: pcdTokens.layout.prose,
         container: pcdTokens.layout.maxWidth,
+        measure: '68ch',
+      },
+      borderRadius: {
+        card: 'var(--radius-card)',
+        btn: 'var(--radius-btn)',
+        pill: 'var(--radius-pill)',
+      },
+      boxShadow: {
+        card: 'var(--shadow-card)',
+        cardHover: 'var(--shadow-card-hover)',
+      },
+      spacing: {
+        s1: 'var(--s1)',
+        s2: 'var(--s2)',
+        s3: 'var(--s3)',
+        s4: 'var(--s4)',
+        s5: 'var(--s5)',
+        s6: 'var(--s6)',
+        s7: 'var(--s7)',
+        s8: 'var(--s8)',
+        s9: 'var(--s9)',
+        s10: 'var(--s10)',
       },
     },
   },

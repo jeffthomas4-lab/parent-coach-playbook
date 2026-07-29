@@ -12,6 +12,7 @@ import { listCampsByCity, slugifyCity, type Camp } from '../../../../lib/camps-d
 import { CAMP_SPORTS, AGE_BANDS } from '../../../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../../../lib/jsonld';
+import { formatDateAdded } from '../../../../lib/camp-freshness';
 
 export const prerender = false;
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=86400');
@@ -124,19 +125,19 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
   </section>
 
   {sportPills.length > 1 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="border-b border-bone band-surface">
       <div class="container-px py-6 flex flex-wrap gap-2">
         <span class="font-display italic text-ink-soft text-sm self-center mr-2" style="font-weight: 500;">By sport:</span>
         <a
           href={`/camps/${stateParam}/${cityParam}/`}
-          class="font-display text-sm px-3 py-1 rounded-full border bg-rust text-paper border-rust"
-          style="font-weight: 500;"
+          class="tag-pill tag-pill-active"
+          style="min-height: 44px;"
         >All</a>
         {sportPills.map((s) => (
           <a
             href={`/camps/${stateParam}/${cityParam}/${s.slug}/`}
-            class="font-display text-sm px-3 py-1 rounded-full border border-bone hover:border-rust"
-            style="font-weight: 500;"
+            class="tag-pill tag-pill-outline"
+            style="min-height: 44px;"
           >{s.label}</a>
         ))}
       </div>
@@ -148,14 +149,14 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
       <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">By age:</span>
       <a
         href="./"
-        class={`font-display text-xs px-2 py-1 rounded-full border ${!filterAges ? 'bg-rust text-paper border-rust' : 'border-bone hover:border-rust'}`}
-        style="font-weight: 500;"
+        class={`tag-pill ${!filterAges ? 'tag-pill-active' : 'tag-pill-outline'}`}
+        style="min-height: 44px;"
       >Any</a>
       {AGE_BANDS.map((b) => (
         <a
           href={ageQS(b.slug)}
-          class={`font-display text-xs px-2 py-1 rounded-full border ${filterAges === b.slug ? 'bg-rust text-paper border-rust' : 'border-bone hover:border-rust'}`}
-          style="font-weight: 500;"
+          class={`tag-pill ${filterAges === b.slug ? 'tag-pill-active' : 'tag-pill-outline'}`}
+          style="min-height: 44px;"
         >{b.label}</a>
       ))}
     </div>
@@ -164,13 +165,16 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
   <section>
     <div class="container-px py-10">
       {visible.length === 0 ? (
-        <p class="font-display italic text-ink-soft" style="font-weight: 500;">
-          No camps match those filters. <a href={`/camps/${stateParam}/${cityParam}/`} class="text-rust hover:underline">Clear filters</a>.
-        </p>
+        <div class="card p-6 max-w-xl">
+          <h2 class="font-display text-ink text-lg font-medium mb-2">No camps match those filters</h2>
+          <p class="font-body text-ink-soft">
+            <a href={`/camps/${stateParam}/${cityParam}/`} class="text-rust hover:underline">Clear filters</a> to see everything in {cityLabel}.
+          </p>
+        </div>
       ) : (
         <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((c) => (
-            <li class="border border-bone p-5 rounded">
+            <li class="card card-hover hover:shadow-cardHover transition-shadow p-5">
               <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
                 {sportLabel(c.sport)} · {fmtDateRange(c.start_date, c.end_date)} · {c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided'}
               </p>
@@ -180,6 +184,9 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
               <p class="font-display text-ink-soft text-sm leading-snug" style="font-weight: 500;">
                 {c.address}, {c.city} · {c.price_text || 'Contact for pricing'}
               </p>
+              {formatDateAdded(c.date_added) && (
+                <p class="font-body text-muted text-xs mt-2">Added {formatDateAdded(c.date_added)}</p>
+              )}
             </li>
           ))}
         </ul>

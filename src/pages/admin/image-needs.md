@@ -34,10 +34,12 @@ These have been generated, processed (resized/cropped to spec), and saved to `pu
 > calm and human. Backgrounds always favor depth and natural light over
 > graphic flatness.
 >
-> **Palette:** Cream paper (#FAF6EE) and warm paper (#F2EAD9) backgrounds.
-> Ink (#2D2520) for grounding. Terracotta (#C5713D) and honey (#D4AB6A)
-> as warm accents. Sage green (#8FA68C) for outdoors. Bone (#E7DECB) and
-> linen (#DDD2BD) as neutrals. No saturated reds, blues, or neons.
+> **Palette:** Light grey-blue page background (#EDF1F5) and white card
+> surfaces (#FFFFFF). Deep navy (#041E42) for grounding. Royal blue
+> (#003594) as the one warm-to-cool accent swap. Silver green (#8A9BA0)
+> as a quiet decorative note. Borders/dividers (#C9D2DA) as neutrals.
+> No saturated reds, oranges, or neons — this is the navy/silver-green
+> palette (2026-07-29 remap), not the old cream/terracotta editorial look.
 >
 > **Format:** WebP, 1600×1000 for hero images, 1200×630 for OG cards,
 > 1400×600 for landscape dividers. Transparent only for icons; backgrounds

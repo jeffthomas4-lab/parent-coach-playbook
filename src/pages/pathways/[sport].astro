@@ -27,13 +27,14 @@ const bandLabel = (slug: string) => AGE_BANDS.find(b => b.slug === slug)?.label 
 const order = ['5-7', '8-10', '11-12', '13-14', '15-plus'];
 const orderedBands = [...pathway.data.bands].sort((a, b) => order.indexOf(a.age) - order.indexOf(b.age));
 
-// Per-band accent color. Rotates through the site palette.
+// Per-band accent color. Monotonic pale-to-navy ramp (navy/silver-green
+// palette only — no separate hue per band).
 const bandAccent: Record<string, string> = {
-  '5-7':     '#8FA68C',
-  '8-10':    '#D4AB6A',
-  '11-12':   '#C5713D',
-  '13-14':   '#B0894A',
-  '15-plus': '#5C7459',
+  '5-7':     '#5F7075',
+  '8-10':    '#003594',
+  '11-12':   '#002873',
+  '13-14':   '#041E42',
+  '15-plus': '#041E42',
 };
 ---
 <BaseLayout
@@ -164,7 +165,7 @@ const bandAccent: Record<string, string> = {
   <!-- LTAD closing line -->
   <section class="border-b border-bone bg-ink text-paper">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm font-medium" style="color: #D4AB6A">Where your kid is on the path</p>
+      <p class="font-display italic mb-3 text-sm font-medium" style="color: #8A9BA0">Where your kid is on the path</p>
       <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
         {pathway.data.ltadStage}
       </p>

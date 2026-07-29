@@ -32,8 +32,8 @@ const isCard = variant === 'card';
 const isCompact = variant === 'compact';
 ---
 {isCompact ? (
-  <aside class="border border-bone bg-paper-warm rounded-lg p-5">
-    <p class="font-display italic text-rust mb-1 font-medium" style="font-size: 0.95rem;">
+  <aside class="card card-rule p-5">
+    <p class="t-section mb-1">
       The Friday Letter
     </p>
     <h3 class="font-display text-ink text-xl leading-tight font-medium">
@@ -54,9 +54,9 @@ const isCompact = variant === 'compact';
     </p>
   </aside>
 ) : (
-  <section class={`${isCard ? 'border border-ink bg-ink text-paper overflow-hidden' : 'border-t border-b border-bone py-14'}`}>
+  <section class={`${isCard ? 'card card-rule overflow-hidden' : 'rule-hair border-b border-line py-14'}`}>
     {isCard && (
-      <figure class="border-b border-paper-warm/20">
+      <figure class="border-b border-line">
         <img
           src="/illustrations/newsletter-banner.webp"
           alt="A rural mailbox at sunset with a folded copy of The Parent Coach Desk newspaper inside. A driveway leads to a small lit house in the distance."
@@ -66,20 +66,15 @@ const isCompact = variant === 'compact';
         />
       </figure>
     )}
-    <div class={`${isCard ? 'p-10' : 'container-px'} grid md:grid-cols-12 gap-8 items-end`}>
+    <div class={`${isCard ? 'p-6 md:p-8' : 'container-px'} grid md:grid-cols-12 gap-8 items-end`}>
       <div class="md:col-span-6">
-        <p
-          class="font-display italic mb-3"
-          style={`font-weight: 500; color: ${isCard ? '#D4AB6A' : 'var(--rust)'};`}
-        >
+        <p class="t-section mb-3">
           The Friday Letter
         </p>
-        <h3
-          class={`font-display text-3xl md:text-[2.5rem] leading-[1.07] font-medium ${isCard ? 'text-paper' : 'text-ink'}`}
-        >
+        <h3 class="t-display t-h2">
           {headline}
         </h3>
-        <p class={`font-display mt-3 leading-snug ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
+        <p class="font-display text-ink-soft mt-3 leading-snug">
           {blurb}
         </p>
       </div>
@@ -88,13 +83,13 @@ const isCompact = variant === 'compact';
         <a
           href={KIT_HOSTED_URL}
           data-newsletter-cta="site_banner"
-          class={`btn-soft inline-block ${isCard ? '' : ''}`}
+          class="btn-soft inline-block"
         >
           {buttonLabel}
         </a>
-        <p class={`font-display italic text-xs mt-3 ${isCard ? 'text-paper-warm' : 'text-ink-soft'}`}>
+        <p class="font-display italic text-ink-soft text-xs mt-3">
           Kit shows an unsubscribe option. By subscribing you
-          agree to our <a href="/disclosure/" class={`underline ${isCard ? 'text-paper' : 'text-rust'} hover:opacity-80`}>privacy notice</a>.
+          agree to our <a href="/disclosure/" class="underline text-rust hover:opacity-80">privacy notice</a>.
         </p>
       </div>
     </div>

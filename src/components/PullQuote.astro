@@ -5,9 +5,9 @@ interface Props {
 }
 const { quote, attribution } = Astro.props;
 ---
-<figure class="my-12 border-t border-b border-ink py-8 max-w-prose mx-auto">
-  <blockquote class="font-display italic text-2xl md:text-3xl leading-snug text-ink text-center m-0">
-    “{quote}”
+<figure class="my-12 max-w-measure mx-auto">
+  <blockquote class="t-quote">
+    <p>{quote}</p>
   </blockquote>
   {attribution && (
     <figcaption class="t-label text-ink-soft text-center mt-5">{attribution}</figcaption>

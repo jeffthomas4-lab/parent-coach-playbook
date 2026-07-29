@@ -62,9 +62,9 @@ const fmtDate = (s: string | null): string => {
 };
 
 const statusColor: Record<string, string> = {
-  pending: '#B0894A',
-  approved: '#5C7459',
-  rejected: '#9E5228',
+  pending: '#5F7075',
+  approved: '#003594',
+  rejected: '#041E42',
 };
 ---
 <AdminLayout title={`Review: ${camp.name}`} description="Admin review" email={adminEmail}>
@@ -141,13 +141,13 @@ const statusColor: Record<string, string> = {
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Camp name
-              <input type="text" name="name" value={camp.name} maxlength="200" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input type="text" name="name" value={camp.name} maxlength="200" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Sport (slug)
-                <select name="sport" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                <select name="sport" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm">
                   {CAMP_SPORTS.map((s) => (
                     <option value={s.slug} selected={s.slug === camp.sport}>{s.label}</option>
                   ))}
@@ -159,7 +159,7 @@ const statusColor: Record<string, string> = {
 
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Format
-                <select name="day_or_overnight" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                <select name="day_or_overnight" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm">
                   <option value="day" selected={camp.day_or_overnight === 'day'}>Day</option>
                   <option value="overnight" selected={camp.day_or_overnight === 'overnight'}>Overnight</option>
                 </select>
@@ -169,15 +169,15 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-3 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Age min
-                <input type="number" name="age_min" value={camp.age_min} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="number" name="age_min" value={camp.age_min} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Age max
-                <input type="number" name="age_max" value={camp.age_max} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="number" name="age_max" value={camp.age_max} min="3" max="22" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Skill level
-                <select name="skill_level" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                <select name="skill_level" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm">
                   <option value="all" selected={camp.skill_level === 'all'}>all</option>
                   <option value="beginner" selected={camp.skill_level === 'beginner'}>beginner</option>
                   <option value="intermediate" selected={camp.skill_level === 'intermediate'}>intermediate</option>
@@ -189,46 +189,46 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Start date
-                <input type="date" name="start_date" value={camp.start_date ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="date" name="start_date" value={camp.start_date ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 End date
-                <input type="date" name="end_date" value={camp.end_date ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="date" name="end_date" value={camp.end_date ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Address
-              <input type="text" name="address" value={camp.address} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input type="text" name="address" value={camp.address} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
             </label>
             <div class="grid sm:grid-cols-3 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 City
-                <input type="text" name="city" value={camp.city} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="city" value={camp.city} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 State
-                <input type="text" name="state" value={camp.state} maxlength="2" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm uppercase" />
+                <input type="text" name="state" value={camp.state} maxlength="2" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm uppercase" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 ZIP
-                <input type="text" name="zip" value={camp.zip} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="zip" value={camp.zip} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Description (30-4000 chars)
-              <textarea name="description" rows="6" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">{camp.description}</textarea>
+              <textarea name="description" rows="6" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm">{camp.description}</textarea>
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Price text
-                <input type="text" name="price_text" value={camp.price_text ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="price_text" value={camp.price_text ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Spots
-                <select name="spots_status" class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm">
+                <select name="spots_status" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm">
                   <option value="open" selected={camp.spots_status === 'open'}>open</option>
                   <option value="waitlist" selected={camp.spots_status === 'waitlist'}>waitlist</option>
                   <option value="full" selected={camp.spots_status === 'full'}>full</option>
@@ -239,17 +239,17 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Contact email
-                <input type="text" name="contact_email" value={camp.contact_email ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="contact_email" value={camp.contact_email ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Contact phone
-                <input type="text" name="contact_phone" value={camp.contact_phone ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input type="text" name="contact_phone" value={camp.contact_phone ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
               </label>
             </div>
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Website URL
-              <input type="text" name="website_url" value={camp.website_url ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+              <input type="text" name="website_url" value={camp.website_url ?? ''} class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
@@ -295,14 +295,14 @@ const statusColor: Record<string, string> = {
           <form method="POST" action={`/api/admin/camps/${camp.id}/approve`} class="grid gap-2">
             <label class="font-display italic text-ink-soft text-xs font-medium">
               Approval notes (optional)
-              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
+              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm"></textarea>
             </label>
             <button type="submit" class="btn">Approve</button>
           </form>
           <form method="POST" action={`/api/admin/camps/${camp.id}/reject`} class="grid gap-2 pt-4 border-t border-bone">
             <label class="font-display italic text-ink-soft text-xs font-medium">
               Rejection notes (sent to internal log only)
-              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
+              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust focus:outline-none text-sm"></textarea>
             </label>
             <button type="submit" class="btn btn-ghost">Reject</button>
           </form>
@@ -339,11 +339,11 @@ const statusColor: Record<string, string> = {
             <input type="hidden" name="featured" value={camp.featured ? '0' : '1'} />
             <div class="mb-3">
               <label class="font-display text-ink-soft text-xs block mb-1">Display order (lower = higher)</label>
-              <input type="number" name="featured_order" value={camp.featured_order ?? ''} class="font-display border border-bone px-3 py-2 text-sm w-32" />
+              <input type="number" name="featured_order" value={camp.featured_order ?? ''} class="font-display border border-muted focus:border-rust focus:outline-none px-3 py-2 text-sm w-32" />
             </div>
             <div class="mb-4">
               <label class="font-display text-ink-soft text-xs block mb-1">Featured until (YYYY-MM-DD, blank = no expiry)</label>
-              <input type="text" name="featured_until" value={camp.featured_until ?? ''} class="font-display border border-bone px-3 py-2 text-sm w-40" placeholder="2026-12-31" />
+              <input type="text" name="featured_until" value={camp.featured_until ?? ''} class="font-display border border-muted focus:border-rust focus:outline-none px-3 py-2 text-sm w-40" placeholder="2026-12-31" />
             </div>
             <button type="submit" class="btn">
               {camp.featured ? 'Remove from featured' : 'Mark as featured'}

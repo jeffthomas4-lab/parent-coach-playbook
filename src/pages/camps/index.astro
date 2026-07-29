@@ -5,7 +5,7 @@ import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps
 import { CAMP_SPORTS } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../lib/jsonld';
-import { campFreshnessLabel, campVerificationFreshness } from '../../lib/camp-freshness';
+import { campFreshnessLabel, campVerificationFreshness, formatDateAdded, isRecentlyAdded, daysSinceAdded } from '../../lib/camp-freshness';
 
 const sportLabel = (slug: string): string => {
   const match = CAMP_SPORTS.find((s) => s.slug === slug);
@@ -78,6 +78,20 @@ const PNW = new Set(['WA', 'OR', 'ID', 'MT', 'AK']);
 const pnw = camps.filter(c => PNW.has(c.state));
 const elsewhere = camps.filter(c => !PNW.has(c.state));
 
+// "Recently added" — derived in-memory from the same `camps` array already
+// fetched above. Does not issue a second D1 query and does not change what
+// camps are eligible to appear anywhere else on this page; it only reorders
+// a slice of the existing approved-camps result for display. Null-safe:
+// camps with an unparseable date_added simply sort last / are excluded from
+// the "added in the last 30 days" count below rather than throwing.
+const RECENTLY_ADDED_WINDOW_DAYS = 30;
+const RECENTLY_ADDED_CAP = 12;
+const recentlyAddedCamps = [...camps]
+  .filter((c) => daysSinceAdded(c.date_added) !== null)
+  .sort((a, b) => (b.date_added || '').localeCompare(a.date_added || ''))
+  .slice(0, RECENTLY_ADDED_CAP);
+const recentlyAddedCount = camps.filter((c) => isRecentlyAdded(c.date_added, RECENTLY_ADDED_WINDOW_DAYS)).length;
+
 // Render cards as HTML strings in the frontmatter and inject via set:html.
 // Astro's per-element JSX iteration was costing ~50-100µs per card; at 1308
 // camps that pushed past the Cloudflare Pages Function CPU budget and triggered
@@ -87,6 +101,13 @@ const escHtml = (s: unknown) => String(s ?? '')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const ageLabel = (c: Camp) => c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided';
 const verificationLabel = (c: Camp) => campFreshnessLabel(campVerificationFreshness(c.verified, c.last_verified_at));
+// Null-safe even though programs.created_at is NOT NULL in the schema — see
+// camp-freshness.ts. Degrades to no line rather than "Invalid Date".
+const dateAddedLabel = (c: Camp) => formatDateAdded(c.date_added);
+const newPillHtml = (c: Camp): string =>
+  isRecentlyAdded(c.date_added, RECENTLY_ADDED_WINDOW_DAYS)
+    ? `<span class="tag-pill" style="--pill-bg: var(--stripe); --pill-accent: var(--navy);">New</span>`
+    : '';
 
 const renderCardHtml = (c: Camp): string => {
   const photo = c.hero_photo_key
@@ -100,7 +121,11 @@ const renderCardHtml = (c: Camp): string => {
   const price = c.price_text
     ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`
     : '';
-  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+  const added = dateAddedLabel(c);
+  const addedLine = added
+    ? `<p class="font-body text-muted text-xs mt-2">Added ${escHtml(added)}</p>`
+    : '';
+  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p><div class="flex items-center gap-2">${newPillHtml(c)}${verified}</div></div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}${addedLine}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
 };
 const pnwHtml = pnw.map(renderCardHtml).join('');
 const nationalHtml = elsewhere.map(renderCardHtml).join('');
@@ -117,10 +142,15 @@ const renderFeaturedCardHtml = (c: Camp): string => {
   const price = c.price_text
     ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`
     : '';
-  const featuredBadge = `<span class="t-label text-rust border border-rust px-2 py-0.5 text-xs font-medium">Featured</span>`;
-  return `<div class="camp-card bg-paper p-5 hover:bg-paper-warm transition-colors group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
+  const featuredBadge = `<span class="tag-pill" style="--pill-bg: var(--stripe); --pill-accent: var(--navy);">Featured</span>`;
+  const added = dateAddedLabel(c);
+  const addedLine = added
+    ? `<p class="font-body text-muted text-xs mt-2">Added ${escHtml(added)}</p>`
+    : '';
+  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}${newPillHtml(c)}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="font-display text-ink text-xl mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}${addedLine}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
 };
 const featuredCardsHtml = featuredCamps.map(renderFeaturedCardHtml).join('');
+const recentlyAddedHtml = recentlyAddedCamps.map(renderCardHtml).join('');
 
 // Serialize camps for client-side JS — slim payload. Client filters only
 // touch the fields below, so dropping the rest cuts the JSON payload from
@@ -218,25 +248,42 @@ const itemListSchema = featuredCamps.length > 0 ? {
   </section>
 
   {featuredCamps.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="border-b border-bone band-surface">
       <div class="container-px py-8">
         <p class="font-display italic text-rust mb-2 font-medium text-sm">Featured</p>
         <h2 class="font-display text-ink text-xl leading-tight font-medium mb-5">Featured camps</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" set:html={featuredCardsHtml} />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" set:html={featuredCardsHtml} />
+      </div>
+    </section>
+  )}
+
+  {recentlyAddedCamps.length > 0 && (
+    <section class="border-b border-bone">
+      <div class="container-px py-8">
+        <p class="font-display italic text-rust mb-2 font-medium text-sm">Recently added</p>
+        <h2 class="font-display text-ink text-xl leading-tight font-medium mb-5">New in the directory</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" set:html={recentlyAddedHtml} />
       </div>
     </section>
   )}
 
   <section id="all-camps">
     <div class="container-px py-12">
+      {dbAvailable && camps.length > 0 && (
+        <p class="font-body text-muted text-sm mb-6">
+          {camps.length} camp{camps.length === 1 ? '' : 's'} listed · {recentlyAddedCount} added in the last {RECENTLY_ADDED_WINDOW_DAYS} days
+        </p>
+      )}
       {!dbAvailable ? (
-        <p class="font-display italic text-ink-soft font-medium">Directory is warming up. Try again in a moment.</p>
+        <div class="card p-6 max-w-xl">
+          <p class="font-body text-ink-soft">Directory is warming up. Try again in a moment.</p>
+        </div>
       ) : camps.length === 0 ? (
-        <div>
+        <div class="card p-6 md:p-8">
           <img
             src="/illustrations/camps-empty-state.webp"
             alt="A summer camp at golden hour: a wooded lakeside, a wooden dock, two canoes."
-            class="w-full max-w-3xl mb-8 rounded"
+            class="w-full max-w-3xl mb-8 rounded-card"
             loading="lazy"
           />
           <p class="font-display italic text-rust mb-3 font-medium">Coming online</p>
@@ -252,13 +299,13 @@ const itemListSchema = featuredCamps.length > 0 ? {
           {/* Map */}
           <div
             id="camps-map"
-            class="mb-8 border border-bone"
-            style="height: 400px; width: 100%; background: #EAEFE7;"
+            class="mb-8 border border-bone rounded-card overflow-hidden"
+            style="height: 400px; width: 100%; background: var(--stripe);"
             aria-label="Map showing all camps in the directory"
           ></div>
 
           {/* Filter Bar */}
-          <div id="camp-filters" class="mb-8 border border-bone bg-paper-warm p-6">
+          <div id="camp-filters" class="card mb-8 p-6">
             <div class="flex flex-wrap items-end gap-4 mb-6">
               {/* Search by name */}
               <div>
@@ -267,14 +314,15 @@ const itemListSchema = featuredCamps.length > 0 ? {
                   type="search"
                   id="filter-search"
                   placeholder="Camp name, org, or keyword"
-                  class="font-display px-3 py-2 border border-bone bg-paper w-64"
+                  class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn w-64"
+                  style="min-height: 44px;"
                 />
               </div>
 
               {/* Sport Dropdown */}
               <div>
                 <label for="filter-sport" class="font-display italic text-rust text-xs block mb-2 font-medium">Sport</label>
-                <select id="filter-sport" class="font-display px-3 py-2 border border-bone bg-paper">
+                <select id="filter-sport" class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn" style="min-height: 44px;">
                   <option value="">All sports</option>
                 </select>
               </div>
@@ -290,7 +338,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
                     placeholder="Min"
                     min="3"
                     max="22"
-                    class="font-display px-3 py-2 border border-bone bg-paper w-16"
+                    class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn w-16"
+                    style="min-height: 44px;"
                   />
                   <span class="text-ink-soft px-1">to</span>
                   <input
@@ -300,7 +349,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
                     placeholder="Max"
                     min="3"
                     max="22"
-                    class="font-display px-3 py-2 border border-bone bg-paper w-16"
+                    class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn w-16"
+                    style="min-height: 44px;"
                   />
                 </div>
               </div>
@@ -313,14 +363,16 @@ const itemListSchema = featuredCamps.length > 0 ? {
                     type="date"
                     id="filter-date-start"
                     aria-label="Earliest start date"
-                    class="font-display px-2 sm:px-3 py-2 border border-bone bg-paper w-full min-w-0"
+                    class="font-display px-2 sm:px-3 py-2 border border-bone bg-paper-warm rounded-btn w-full min-w-0"
+                    style="min-height: 44px;"
                   />
                   <span class="text-ink-soft px-1">to</span>
                   <input
                     type="date"
                     id="filter-date-end"
                     aria-label="Latest end date"
-                    class="font-display px-2 sm:px-3 py-2 border border-bone bg-paper w-full min-w-0"
+                    class="font-display px-2 sm:px-3 py-2 border border-bone bg-paper-warm rounded-btn w-full min-w-0"
+                    style="min-height: 44px;"
                   />
                 </div>
               </div>
@@ -329,9 +381,9 @@ const itemListSchema = featuredCamps.length > 0 ? {
               <div>
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">Format</p>
                 <div class="flex gap-2">
-                  <button type="button" data-filter-dayovernght="all" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors" data-active="true" style="background: var(--rust); color: white; border-color: var(--rust);">All</button>
-                  <button type="button" data-filter-dayovernght="day" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Day</button>
-                  <button type="button" data-filter-dayovernght="overnight" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Overnight</button>
+                  <button type="button" data-filter-dayovernght="all" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" data-active="true" style="min-height: 44px; background: var(--rust); color: white; border-color: var(--rust);">All</button>
+                  <button type="button" data-filter-dayovernght="day" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Day</button>
+                  <button type="button" data-filter-dayovernght="overnight" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Overnight</button>
                 </div>
               </div>
 
@@ -339,23 +391,23 @@ const itemListSchema = featuredCamps.length > 0 ? {
               <div>
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">Include</p>
                 <div class="flex gap-2">
-                  <button type="button" id="filter-show-leagues" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Leagues</button>
-                  <button type="button" id="filter-show-full" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Full programs</button>
+                  <button type="button" id="filter-show-leagues" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Leagues</button>
+                  <button type="button" id="filter-show-full" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Full programs</button>
                 </div>
               </div>
 
               <div>
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">Trust & availability</p>
                 <div class="flex gap-2">
-                  <button type="button" id="filter-verified-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Verified only</button>
-                  <button type="button" id="filter-open-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper hover:bg-paper-warm transition-colors">Open only</button>
+                  <button type="button" id="filter-verified-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Verified only</button>
+                  <button type="button" id="filter-open-only" class="filter-toggle font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn hover:bg-stripe transition-colors" style="min-height: 44px;">Open only</button>
                 </div>
               </div>
 
               {/* State Dropdown */}
               <div>
                 <label for="filter-state" class="font-display italic text-rust text-xs block mb-2 font-medium">State</label>
-                <select id="filter-state" class="font-display px-3 py-2 border border-bone bg-paper">
+                <select id="filter-state" class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn" style="min-height: 44px;">
                   <option value="">All states</option>
                 </select>
               </div>
@@ -369,12 +421,13 @@ const itemListSchema = featuredCamps.length > 0 ? {
                     id="filter-zip"
                     placeholder="e.g. 98101"
                     maxlength="10"
-                    class="font-display px-3 py-2 border border-bone bg-paper w-full sm:w-32 min-w-0 max-w-full"
+                    class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn w-full sm:w-32 min-w-0 max-w-full"
+                    style="min-height: 44px;"
                   />
                 </div>
                 <div class="min-w-0">
                   <label for="filter-radius" class="font-display italic text-rust text-xs block mb-2 font-medium">Radius</label>
-                  <select id="filter-radius" class="font-display px-3 py-2 border border-bone bg-paper w-full min-w-0 max-w-full">
+                  <select id="filter-radius" class="font-display px-3 py-2 border border-bone bg-paper-warm rounded-btn w-full min-w-0 max-w-full" style="min-height: 44px;">
                     <option value="10">10 miles</option>
                     <option value="25">25 miles</option>
                     <option value="50">50 miles</option>
@@ -382,12 +435,12 @@ const itemListSchema = featuredCamps.length > 0 ? {
                     <option value="all">Any distance</option>
                   </select>
                 </div>
-                <button type="submit" class="font-display px-4 py-2 border border-rust bg-rust text-white hover:opacity-90 transition-opacity col-span-2 sm:w-auto">Search</button>
+                <button type="submit" class="btn col-span-2 sm:w-auto">Search</button>
               </form>
             </div>
 
             {/* Clear Filters */}
-            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2 py-2">Clear all filters</button>
+            <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2 inline-flex items-center" style="min-height: 44px;">Clear all filters</button>
           </div>
 
           {/* Camps Grid — cards are pre-rendered as an HTML string in the
@@ -397,14 +450,14 @@ const itemListSchema = featuredCamps.length > 0 ? {
             {pnw.length > 0 && (
               <div class="mb-12">
                 <p class="font-display italic text-rust mb-3 font-medium">Pacific Northwest</p>
-                <div id="pnw-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" set:html={pnwHtml}></div>
+                <div id="pnw-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" set:html={pnwHtml}></div>
               </div>
             )}
 
             {elsewhere.length > 0 && (
               <div>
                 <p class="font-display italic text-rust mb-3 font-medium">National</p>
-                <div id="national-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-bone" set:html={nationalHtml}></div>
+                <div id="national-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" set:html={nationalHtml}></div>
               </div>
             )}
           </div>
@@ -444,9 +497,9 @@ const itemListSchema = featuredCamps.length > 0 ? {
       const h = 38;
       return L.divIcon({
         className: 'camp-pin',
-        html: `<svg width="${w}" height="${h}" viewBox="0 0 26 38" xmlns="http://www.w3.org/2000/svg" style="display:block; filter: drop-shadow(0 1px 2px rgba(45,37,32,0.45));">
-          <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="#9E5228"/>
-          <circle cx="13" cy="13" r="5" fill="#FAF6EE"/>
+        html: `<svg width="${w}" height="${h}" viewBox="0 0 26 38" xmlns="http://www.w3.org/2000/svg" style="display:block; filter: drop-shadow(0 1px 2px rgba(4,30,66,0.45));">
+          <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="var(--accent)"/>
+          <circle cx="13" cy="13" r="5" fill="var(--surface)"/>
         </svg>`,
         iconSize: [w, h],
         iconAnchor: [w / 2, h],
@@ -954,19 +1007,19 @@ const itemListSchema = featuredCamps.length > 0 ? {
   </script>
 
   <style is:global>
-    /* Cluster bubbles themed to the site's rust palette instead of
+    /* Cluster bubbles themed to the site's navy/accent palette instead of
        leaflet.markercluster's default green/yellow/orange. Pure CSS —
        no external images, so nothing here can 404 like the old marker did. */
     .marker-cluster-small,
     .marker-cluster-medium,
     .marker-cluster-large {
-      background-color: rgba(158, 82, 40, 0.25);
+      background-color: color-mix(in srgb, var(--accent) 25%, transparent);
     }
     .marker-cluster-small div,
     .marker-cluster-medium div,
     .marker-cluster-large div {
-      background-color: #9E5228;
-      color: #FAF6EE;
+      background-color: var(--accent);
+      color: var(--surface);
       font-family: inherit;
       font-weight: 600;
       display: flex;

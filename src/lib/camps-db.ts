@@ -117,6 +117,14 @@ export interface Camp {
   status: CampStatus;
   submitted_by_email: string;
   submitted_at: string;
+  // Public-facing "date added" — sourced straight from programs.created_at,
+  // which is NOT NULL in the schema. ISO timestamp. Distinct from
+  // submitted_at (which COALESCEs to created_at only as a fallback for a
+  // missing submission timestamp, so the two can diverge). Treat this as
+  // possibly missing at every UI call site anyway — see the .split()-on-null
+  // incident noted above for start_date/end_date; the same defensive rule
+  // applies here even though the column itself cannot be null.
+  date_added: string;
   reviewed_by: string | null;
   reviewed_at: string | null;
   review_notes: string | null;
@@ -277,6 +285,12 @@ const CAMP_SELECT = `
     p.pcd_status                                          AS status,
     COALESCE(p.submitted_by_email, 'system')              AS submitted_by_email,
     COALESCE(p.submitted_at,       p.created_at)          AS submitted_at,
+    -- Public-facing "date added" shown on the camps UI (see Camp.date_added).
+    -- Distinct from submitted_at above: submitted_at coalesces to created_at
+    -- only when a submission timestamp is missing, so it can drift from the
+    -- row's actual creation date. date_added is always the raw programs.created_at,
+    -- which is NOT NULL in the schema (migrations-activity-radar/0001_core_graph.sql).
+    p.created_at                                          AS date_added,
     p.reviewed_by,
     p.reviewed_at,
     p.review_notes,

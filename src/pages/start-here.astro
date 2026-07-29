@@ -102,7 +102,7 @@ const startHereTools = TOOLS_NAV.filter(t =>
         {featuredSports.map((sport) => (
           <a
             href={`/sports/${sport.slug}/`}
-            class="bg-paper px-5 py-4 group hover:bg-[#F2E2D5] transition-colors block"
+            class="bg-paper px-5 py-4 group hover:bg-stripe transition-colors block"
           >
             <h3 class="font-display text-ink text-base leading-tight group-hover:text-rust transition-colors font-medium">
               {sport.label}
@@ -228,7 +228,7 @@ const startHereTools = TOOLS_NAV.filter(t =>
         {startHereTools.map((t) => (
           <a
             href={t.href}
-            class="bg-paper p-5 group hover:bg-[#F2E2D5] transition-colors block"
+            class="bg-paper p-5 group hover:bg-stripe transition-colors block"
           >
             <h3 class="font-display text-ink text-base leading-tight group-hover:text-rust transition-colors font-medium">
               {t.label}
