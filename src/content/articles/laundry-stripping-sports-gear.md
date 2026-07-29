@@ -22,9 +22,9 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-07-24
+  claudeReviewedAt: 2026-07-28
   status: needs-revision
-  reviewerNotes: "FAIL Section C item 5: two 'It's' sentence-starters back to back ('It's not detergent residue. It's bacteria living in the polyester weave...'), exceeds one weak-starter per 300 words of body. FAIL Section E item 5: dek is 20 words, cap is 15. FAIL Section E item 4: seoDescription is 190 characters, schema max is 180, fails content collection validation."
+  reviewerNotes: "Re-reviewed, still not publishable, unrevised since 2026-07-24. seoDescription is now 164 characters and passes schema (that one's fixed). Three items still fail: FAIL Section A item 1: the 'What gets the smell out' paragraph starting 'Fabric softener makes it worse' runs four sentences, cap is three. FAIL Section C item 5: 'It's not detergent residue. It's bacteria living in the polyester weave, feeding on sweat.' is still two 'It's' starters back to back. FAIL Section E item 5: dek is still 20 words against the 15-word cap ('Borax and an overnight hot soak work great on white cotton sheets. They break down the stretch in a jersey.'). Needs Ed's pass, not a mechanical fix: trim the dek to one clause, split or cut a sentence from the four-sentence paragraph, and replace one of the two 'It's' openers."
 ---
 
 Everyone's stripping their laundry right now. Borax, washing soda, a scoop of powder detergent, an overnight soak in the hottest water your machine can pull. It works great on white cotton sheets that have ten years of fabric softener buildup.
