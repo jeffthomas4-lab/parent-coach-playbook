@@ -49,7 +49,7 @@
 
 import { execSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { REQUIRED_GATES, validateReleaseEvidence } from './release-evidence.mjs';
@@ -75,6 +75,46 @@ const stamp = iso(now);
 // several thousand lines of build log into a governance artifact.
 // ---------------------------------------------------------------------------
 
+// Where a failing gate's full output goes. Gitignored: a build log is a local
+// debugging artifact, it can contain environment detail, and it has no business
+// in a governance packet or a commit.
+const LOG_DIR = resolve(DIR, 'logs');
+
+/**
+ * Persist the whole output of a failed command.
+ *
+ * WHY. Until 2026-07-29 a failure recorded only a sha256 and the last line. On
+ * that day `build` failed inside a cut and the entire record of it was:
+ *
+ *   final line: at [nodejs.internal.kHybridDispatch] (node:internal/event_target:843:20)
+ *
+ * which is the bottom frame of an async stack and says nothing about what broke.
+ * Diagnosing it meant re-running a sixty-second build to see an error the script
+ * had already captured and thrown away. The digest is still the receipt; this is
+ * the evidence. Only failures are written, because a passing build log is noise.
+ */
+function writeFailureLog(label, command, exitCode, output) {
+  try {
+    mkdirSync(LOG_DIR, { recursive: true });
+    const safe = label.replace(/[^a-z0-9._-]+/gi, '-');
+    const file = resolve(LOG_DIR, `${safe}-${stamp.replace(/[:.]/g, '-')}.log`);
+    const header = [
+      `# ${label}`,
+      `# command: ${command}`,
+      `# exit code: ${exitCode}`,
+      `# run at: ${stamp}`,
+      `# commit: ${git('rev-parse HEAD', 'unknown')}`,
+      '',
+    ].join('\n');
+    writeFileSync(file, header + output);
+    return file.slice(ROOT.length + 1).replace(/\\/g, '/');
+  } catch (error) {
+    // A logging failure must never turn a recorded gate failure into a crash.
+    // The gate still fails; we just say why the log is missing.
+    return `(could not write log: ${error.message})`;
+  }
+}
+
 function run(label, command) {
   process.stdout.write(`  running: ${label} ... `);
   const started = Date.now();
@@ -88,7 +128,12 @@ function run(label, command) {
     const code = error.status ?? 1;
     console.log(`FAILED exit ${code} (${secs}s)`);
     const combined = `${error.stdout ?? ''}${error.stderr ?? ''}`;
-    return { ok: false, command, exitCode: code, digest: sha256(combined).slice(0, 16), tail: lastLine(combined), seconds: Number(secs) };
+    const logPath = writeFailureLog(label, command, code, combined);
+    console.log(`    full output: ${logPath}`);
+    return {
+      ok: false, command, exitCode: code, digest: sha256(combined).slice(0, 16),
+      tail: lastLine(combined), seconds: Number(secs), logPath,
+    };
   }
 }
 
@@ -114,6 +159,7 @@ function gateFromRun(result, passSummary, failSummary) {
       `exit code: ${result.exitCode}`,
       `output sha256 (first 16): ${result.digest}`,
       `final line: ${result.tail}`,
+      ...(result.logPath ? [`full output: ${result.logPath}`] : []),
       `duration: ${result.seconds}s`,
       `run at: ${stamp}`,
     ],

@@ -58,3 +58,7 @@ backups/
 # proof collection pipeline: raw screenshots stay local, README stays tracked
 proof-screenshots/*
 !proof-screenshots/README.md
+
+# Failing-gate build logs from scripts/cut-release-evidence.mjs. Local debug
+# artifact only: can contain environment detail, never belongs in a commit.
+coordination/release-evidence/logs/
