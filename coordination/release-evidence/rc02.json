@@ -100,9 +100,11 @@
       "state": "pass",
       "summary": "[CARRIED from pcd-local-rc01, established 2026-07-18T00:00:00Z] Rollback target is a deployment property, unchanged by this candidate. The currently active, fully bound Worker version is pinned as the exact rollback target for the next approved release. The original code-upload version lacks three secret bindings and Pages exposes historical admin artifacts, so neither is accepted.",
       "evidence": [
+        "coordination/release-evidence/worker-rollback-target-2026-07-29.json",
         "coordination/release-evidence/worker-rollback-target-2026-07-16.json",
         "tests/worker-rollback-target.test.ts",
-        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01"
+        "carried forward on 2026-07-29T13:43:46.996Z from pcd-local-rc01",
+        "The 2026-07-16 receipt expired on 2026-07-25 and is retained for provenance only. The 2026-07-29 receipt was observed from live production by scripts/observe-worker-rollback-target.mjs and is the receipt the checker and the deploy workflow now use."
       ]
     },
     "rollback_rehearsal": {

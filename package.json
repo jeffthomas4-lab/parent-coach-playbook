@@ -40,7 +40,7 @@
     "check:release-evidence": "node scripts/check-release-evidence.mjs coordination/release-evidence/rc02.json --structure-only",
     "cut:release-evidence": "node scripts/cut-release-evidence.mjs",
     "check:publish-drift": "node scripts/check-publish-queue-drift.mjs",
-    "check:rollback-target": "node scripts/check-worker-rollback-target.mjs coordination/release-evidence/worker-rollback-target-2026-07-16.json",
+    "check:rollback-target": "node scripts/check-worker-rollback-target.mjs coordination/release-evidence/worker-rollback-target-2026-07-29.json",
     "check:recovery-tabletop": "node scripts/check-recovery-tabletop.mjs coordination/release-evidence/recovery-tabletop-2026-07-16.json",
     "check:failure-isolation": "node scripts/check-failure-isolation-evidence.mjs coordination/release-evidence/integrated-failure-isolation-2026-07-16.json",
     "check:access-evidence": "node scripts/check-access-evidence.mjs coordination/release-evidence/access-policy-export-pending.json coordination/release-evidence/authenticated-access-probes-pending.json",

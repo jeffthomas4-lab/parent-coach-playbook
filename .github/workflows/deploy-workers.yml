@@ -205,7 +205,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: node scripts/deploy-remediation.mjs --target production --rollback-target coordination/release-evidence/worker-rollback-target-2026-07-16.json --config wrangler.production.jsonc
+        run: node scripts/deploy-remediation.mjs --target production --rollback-target coordination/release-evidence/worker-rollback-target-2026-07-29.json --config wrangler.production.jsonc
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: pcd-production-smoke-${{ env.DEPLOY_SHA }}
