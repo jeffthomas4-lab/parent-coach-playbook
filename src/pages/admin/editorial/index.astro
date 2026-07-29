@@ -88,11 +88,11 @@ const fmtDate = (d: Date | undefined) =>
 const fmtGrade = (n: number | undefined) => n === undefined ? '—' : `${n}/10`;
 
 const statusColor: Record<string, string> = {
-  'draft':            '#B8908F',
-  'claude-reviewed':  '#D4AB6A',
-  'jeff-approved':    '#5C7459',
-  'published':        '#5C7459',
-  'needs-revision':   '#9E5228',
+  'draft':            '#5F7075',
+  'claude-reviewed':  '#003594',
+  'jeff-approved':    '#002873',
+  'published':        '#041E42',
+  'needs-revision':   '#5A6468',
 };
 ---
 <BaseLayout title="Editorial dashboard" description="Per-piece editorial state across the site.">
@@ -289,7 +289,7 @@ const statusColor: Record<string, string> = {
                     {status === 'jeff-approved' && (
                       <button
                         type="button"
-                        class="publish-btn px-3 py-1 border border-pine bg-pine text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
+                        class="publish-btn px-3 py-1 border border-accent bg-accent text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
                         data-collection={r.collection}
                         data-slug={r.slug}
                         data-armed="false"
@@ -297,7 +297,7 @@ const statusColor: Record<string, string> = {
                       >Publish</button>
                     )}
                     {status === 'published' && (
-                      <span class="font-display italic text-pine text-xs font-medium">live</span>
+                      <span class="font-display italic text-accent text-xs font-medium">live</span>
                     )}
                     {status === 'needs-revision' && (
                       <button
@@ -361,11 +361,11 @@ const statusColor: Record<string, string> = {
     // leaves the row looking like a fresh server render would, without a
     // page reload.
     const STATUS_COLORS: Record<string, string> = {
-      draft: '#B8908F',
-      'claude-reviewed': '#D4AB6A',
-      'jeff-approved': '#5C7459',
-      published: '#5C7459',
-      'needs-revision': '#9E5228',
+      draft: '#5F7075',
+      'claude-reviewed': '#003594',
+      'jeff-approved': '#002873',
+      published: '#041E42',
+      'needs-revision': '#5A6468',
     };
 
     function updateStatusPill(row: Element, status: string) {
@@ -373,7 +373,7 @@ const statusColor: Record<string, string> = {
       const pill = row.querySelector('td:nth-child(3) span') as HTMLElement | null;
       if (pill) {
         pill.textContent = status;
-        pill.style.background = STATUS_COLORS[status] || '#B8908F';
+        pill.style.background = STATUS_COLORS[status] || '#5F7075';
       }
     }
 
@@ -406,14 +406,14 @@ const statusColor: Record<string, string> = {
       if (status === 'jeff-approved') {
         wrap.appendChild(makeActionButton(
           'Publish',
-          'publish-btn px-3 py-1 border border-pine bg-pine text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust',
+          'publish-btn px-3 py-1 border border-accent bg-accent text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust',
           collection, slug,
           { 'data-armed': 'false', title: 'Commits draft: false to GitHub. The site\'s protected CI/CD deploys it from there.' },
         ));
       }
       if (status === 'published') {
         const span = document.createElement('span');
-        span.className = 'font-display italic text-pine text-xs font-medium';
+        span.className = 'font-display italic text-accent text-xs font-medium';
         span.textContent = 'live';
         wrap.appendChild(span);
       }
@@ -502,14 +502,14 @@ const statusColor: Record<string, string> = {
           btn.setAttribute('data-armed', 'true');
           btn.dataset.originalText = btn.textContent || 'Publish';
           btn.textContent = 'Click again to publish';
-          btn.classList.remove('bg-pine', 'border-pine');
+          btn.classList.remove('bg-accent', 'border-accent');
           btn.classList.add('bg-rust', 'border-rust');
           const timeoutId = window.setTimeout(() => {
             if (btn.isConnected && btn.getAttribute('data-armed') === 'true') {
               btn.setAttribute('data-armed', 'false');
               btn.textContent = btn.dataset.originalText || 'Publish';
               btn.classList.remove('bg-rust', 'border-rust');
-              btn.classList.add('bg-pine', 'border-pine');
+              btn.classList.add('bg-accent', 'border-accent');
             }
           }, 4000);
           btn.dataset.armTimeout = String(timeoutId);
@@ -544,7 +544,7 @@ const statusColor: Record<string, string> = {
           btn.setAttribute('data-armed', 'false');
           btn.textContent = 'Publish';
           btn.classList.remove('bg-rust', 'border-rust');
-          btn.classList.add('bg-pine', 'border-pine');
+          btn.classList.add('bg-accent', 'border-accent');
           alert('Publish failed: ' + ((err as Error).message || 'unknown error'));
         }
       });

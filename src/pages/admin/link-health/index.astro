@@ -70,7 +70,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
         </div>
         <div class="bg-paper p-4">
           <p class="font-display italic text-ink-soft text-xs font-medium">Broken</p>
-          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? 'var(--rust)' : '#5C7459'};`}>{totals.broken ?? 0}</p>
+          <p class="font-display text-2xl mt-1" style={`font-weight: 500; color: ${totals.broken > 0 ? 'var(--rust)' : '#5F7075'};`}>{totals.broken ?? 0}</p>
         </div>
         <div class="bg-paper p-4">
           <p class="font-display italic text-ink-soft text-xs font-medium">Redirected</p>
@@ -117,7 +117,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
           {rows.map((r) => {
             const status = r.is_broken === 1 ? 'broken' : (r.is_redirect === 1 ? 'redirected' : (r.last_checked ? 'ok' : 'never'));
             const statusLabel = status === 'broken' ? `BROKEN ${r.last_status_code ?? ''}` : (status === 'redirected' ? `${r.last_status_code} (redirect)` : (status === 'ok' ? `${r.last_status_code}` : '—'));
-            const statusColor = status === 'broken' ? '#9E5228' : (status === 'redirected' ? '#D4AB6A' : (status === 'ok' ? '#5C7459' : '#B8908F'));
+            const statusColor = status === 'broken' ? '#041E42' : (status === 'redirected' ? '#003594' : (status === 'ok' ? '#5F7075' : '#5A6468'));
             let sourceFiles: string[] = [];
             try { sourceFiles = JSON.parse(r.source_files || '[]'); } catch {}
             const canResolveOrReplace = r.is_broken === 1 || r.redirected_off_host === 1;
@@ -132,7 +132,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                     <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">{r.notes}</p>
                   )}
                   {r.suggested_replacement && (
-                    <p class="font-display text-xs mt-1 break-all font-medium" style="color: #5C7459;">
+                    <p class="font-display text-xs mt-1 break-all font-medium" style="color: #5F7075;">
                       Suggested replacement: <a href={r.suggested_replacement} target="_blank" rel="noopener" class="hover:underline">{truncate(r.suggested_replacement, 60)}</a>
                     </p>
                   )}
@@ -145,7 +145,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                   {sourceFiles.slice(0, 3).map(f => (<div>{truncate(f, 50)}</div>))}
                   {sourceFiles.length > 3 && <div class="text-ink-soft">+{sourceFiles.length - 3} more</div>}
                   {r.suggested_replacement && sourceFiles.length > 0 && (
-                    <p class="font-display italic text-xs mt-1 font-medium" style="color: #5C7459;">Paste the replacement above into the file(s) listed here.</p>
+                    <p class="font-display italic text-xs mt-1 font-medium" style="color: #5F7075;">Paste the replacement above into the file(s) listed here.</p>
                   )}
                 </td>
                 <td class="py-2 pr-3 align-top">

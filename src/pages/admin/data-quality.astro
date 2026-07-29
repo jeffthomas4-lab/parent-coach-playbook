@@ -263,7 +263,7 @@ const sections = report
         if (!statusEl) return;
         statusEl.textContent = message;
         statusEl.style.display = 'block';
-        statusEl.className = 'status-message text-xs font-display italic mt-2 ' + (isError ? 'text-rust' : 'text-sage');
+        statusEl.className = 'status-message text-xs font-display italic mt-2 ' + (isError ? 'text-rust' : 'text-accent');
       }
 
       row.querySelectorAll('[data-fix-action]').forEach(function (btn) {

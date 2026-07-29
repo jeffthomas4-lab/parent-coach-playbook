@@ -4,7 +4,7 @@ import { getCampBySlug, getCampBySlugAny, listApprovedReviewsForCamp, listOtherC
 import { SPORTS, BUYING_GUIDES, CAMP_SPORTS, SITE } from '../../data/site';
 import { featureEnabled } from '../../lib/feature-flags';
 import { serializeJsonLd } from '../../lib/jsonld';
-import { CAMP_VERIFICATION_REVIEW_DAYS, campFreshnessLabel, campVerificationFreshness } from '../../lib/camp-freshness';
+import { CAMP_VERIFICATION_REVIEW_DAYS, campFreshnessLabel, campVerificationFreshness, formatDateAdded } from '../../lib/camp-freshness';
 import { buildCampEventSchema } from '../../lib/camp-event-schema';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -188,6 +188,9 @@ const reviewedLabel = formatReviewedAt(camp?.reviewed_at);
 const verifiedLabel = formatReviewedAt(camp?.last_verified_at);
 const verificationFreshness = camp ? campVerificationFreshness(camp.verified, camp.last_verified_at) : 'missing';
 const verificationFreshnessLabel = campFreshnessLabel(verificationFreshness);
+// Null-safe even though programs.created_at is NOT NULL in the schema — see
+// camp-freshness.ts. Degrades to no line rather than "Invalid Date".
+const dateAddedLabel = camp ? formatDateAdded(camp.date_added) : null;
 
 // Sport label: prefer the SPORTS array's title-cased label; fall back to capitalizing.
 const sportLabel = (slug: string): string => {
@@ -341,8 +344,8 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
             <li>
               <a
                 href={`/camps/${(slug || '').toLowerCase()}/${slugifyCity(c.city)}/`}
-                class="font-display text-ink hover:text-rust block border border-bone rounded p-3"
-                style="font-weight: 500;"
+                class="card card-hover hover:shadow-cardHover transition-shadow font-display text-ink hover:text-rust block p-3"
+                style="font-weight: 500; min-height: 44px;"
               >
                 <span class="text-base">{c.city}</span>
                 <span class="font-display italic text-ink-soft text-sm ml-2" style="font-weight: 500;">
@@ -375,7 +378,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           <img
             src={`/camp-photos/${camp.logo_key}`}
             alt={`${camp.name} logo`}
-            class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 object-contain bg-paper-warm border border-bone"
+            class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 object-contain bg-paper-warm border border-bone rounded-card"
             loading="eager"
             decoding="async"
             width="96"
@@ -385,7 +388,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.0] font-medium">
           {camp.name}
           {camp.verified === 1 && (
-            <span class="inline-block ml-2 align-middle font-display italic text-rust text-base border border-rust px-2 py-0.5 font-medium" title="Listed details compared with the cited source; not a safety or quality endorsement">
+            <span class="tag-pill align-middle" style="--pill-bg: var(--stripe); --pill-accent: var(--navy);" title="Listed details compared with the cited source; not a safety or quality endorsement">
               Verified ✓
             </span>
           )}
@@ -404,9 +407,14 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           Verified{verifiedLabel ? ` on ${verifiedLabel}` : ''}. <strong>{verificationFreshnessLabel}</strong>{verificationFreshness === 'review_due' ? ` under the ${CAMP_VERIFICATION_REVIEW_DAYS}-day review policy` : ''}. PCD compared the listed details with the cited source; this is not an inspection or endorsement of safety, quality, staff, insurance, or suitability. <a href="/camps/verification/" class="text-rust hover:underline">Read the methodology</a>.
         </p>
       )}
+      {dateAddedLabel && (
+        <p class="font-body text-muted text-sm mt-2 max-w-2xl">
+          Added {dateAddedLabel}
+        </p>
+      )}
 
       {camp.hero_photo_key && (
-        <div class="mt-8 max-w-3xl border border-bone bg-paper-warm" style="aspect-ratio: 16/9; overflow: hidden;">
+        <div class="mt-8 max-w-3xl border border-bone bg-paper-warm rounded-card" style="aspect-ratio: 16/9; overflow: hidden;">
           <img
             src={`/camp-photos/${camp.hero_photo_key}`}
             alt={`${camp.name} hero photo`}
@@ -421,20 +429,20 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
       )}
 
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl">
-        <div class="border border-bone p-3 bg-paper-warm">
+        <div class="card p-3">
           <p class="font-display italic text-rust text-xs font-medium">Format</p>
           <p class="font-display text-ink mt-0.5 font-medium">{dayLabel}</p>
         </div>
-        <div class="border border-bone p-3 bg-paper-warm">
+        <div class="card p-3">
           <p class="font-display italic text-rust text-xs font-medium">Skill level</p>
           <p class="font-display text-ink mt-0.5 font-medium">{skillLabel[camp.skill_level] ?? camp.skill_level}</p>
         </div>
-        <div class="border border-bone p-3 bg-paper-warm">
+        <div class="card p-3">
           <p class="font-display italic text-rust text-xs font-medium">Spots</p>
           <p class="font-display text-ink mt-0.5 font-medium">{spotsLabel[camp.spots_status] ?? camp.spots_status}</p>
         </div>
         {camp.price_text && (
-          <div class="border border-bone p-3 bg-paper-warm">
+          <div class="card p-3">
             <p class="font-display italic text-rust text-xs font-medium">Listed price — confirm with provider</p>
             <p class="font-display text-ink mt-0.5 font-medium">{camp.price_text}</p>
           </div>
@@ -447,7 +455,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
             href={registrationHref}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block font-display px-6 py-3 bg-rust text-paper hover:opacity-90 transition-opacity font-medium"
+            class="btn"
           >
             Register now ↗
           </a>
@@ -477,7 +485,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
               {galleryKeys.map((key, idx) => (
-                <div class="border border-bone bg-paper-warm overflow-hidden" style="aspect-ratio: 4/3;">
+                <div class="border border-bone bg-paper-warm rounded-card overflow-hidden" style="aspect-ratio: 4/3;">
                   <img
                     src={`/camp-photos/${key}`}
                     alt={`${camp.name} photo ${idx + 1}`}
@@ -502,10 +510,10 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
               Most {sportPretty.toLowerCase()} camps expect kids to bring their own basic gear. Our guide covers what to buy at every age band, fit tests, and used-gear notes.
             </p>
             <div class="mt-4 flex flex-wrap gap-3">
-              <a href={`/what-to-buy/${sportGuide.slug}/`} class="font-display italic px-4 py-2 border border-rust text-rust hover:bg-rust hover:text-paper transition-colors font-medium">
+              <a href={`/what-to-buy/${sportGuide.slug}/`} class="btn-soft">
                 Gear file for {sportPretty.toLowerCase()} →
               </a>
-              <a href={`/what-to-buy/${sportGuide.slug}/sizing/`} class="font-display italic px-4 py-2 border border-bone text-ink hover:bg-paper-warm transition-colors font-medium">
+              <a href={`/what-to-buy/${sportGuide.slug}/sizing/`} class="btn-soft-ghost">
                 {sportPretty} sizing guide →
               </a>
             </div>
@@ -527,7 +535,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           ) : (
             <ul class="grid gap-5">
               {reviews.map((r) => (
-                <li class="border border-bone p-4 bg-paper-warm">
+                <li class="card p-4">
                   <p class="font-display italic text-rust text-sm font-medium">
                     {r.rating}/5 · {r.reviewer_display_name ?? 'A parent'} · {new Date(r.submitted_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                   </p>
@@ -537,7 +545,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
             </ul>
           )}
 
-          <details class="mt-8 border border-bone bg-paper">
+          <details class="card mt-8">
             <summary class="font-display italic text-rust px-4 py-3 cursor-pointer font-medium">
               Leave a review (your kid attended) →
             </summary>
@@ -550,19 +558,19 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Your email</span>
-                <input name="reviewer_email" type="email" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+                <input name="reviewer_email" type="email" required class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust" />
                 <span class="font-display italic text-ink-soft text-xs font-medium">Stays private. Used only to verify and follow up if needed.</span>
               </label>
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Display name (optional)</span>
-                <input name="reviewer_display_name" maxlength="40" placeholder='e.g. "Tacoma soccer mom"' class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+                <input name="reviewer_display_name" maxlength="40" placeholder='e.g. "Tacoma soccer mom"' class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust" />
                 <span class="font-display italic text-ink-soft text-xs font-medium">If you skip this, your review shows as "A parent."</span>
               </label>
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Rating (1-5)</span>
-                <select name="rating" required class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none max-w-xs">
+                <select name="rating" required class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust max-w-xs">
                   <option value="">Choose...</option>
                   <option value="5">5: would do again</option>
                   <option value="4">4: solid, minor gripes</option>
@@ -574,7 +582,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Your review</span>
-                <textarea name="body" required minlength="30" maxlength="2000" rows="5" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" placeholder="What was your kid's week like? What worked, what didn't? 50-300 words."></textarea>
+                <textarea name="body" required minlength="30" maxlength="2000" rows="5" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust" placeholder="What was your kid's week like? What worked, what didn't? 50-300 words."></textarea>
               </label>
 
               <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
@@ -602,15 +610,15 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         {hasGeo ? (
           <div
             id="camp-map"
-            class="mt-3 border border-bone"
-            style="height: 220px; width: 100%; background: #EAEFE7;"
+            class="mt-3 border border-bone rounded-card overflow-hidden"
+            style="height: 220px; width: 100%; background: var(--stripe);"
             data-lat={camp.latitude}
             data-lon={camp.longitude}
             data-name={camp.name}
             aria-label={`Map showing ${camp.name}`}
           ></div>
         ) : (
-          <div class="mt-3 border border-bone bg-paper-warm p-4">
+          <div class="card mt-3 p-4">
             <p class="font-display italic text-ink-soft text-sm font-medium">Map coming once we verify the address.</p>
           </div>
         )}
@@ -680,23 +688,23 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
               </div>
               <label class="grid gap-1">
                 <span class="sr-only">Your email</span>
-                <input name="claimant_email" type="email" required placeholder="Your email" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input name="claimant_email" type="email" required placeholder="Your email" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Your name</span>
-                <input name="claimant_name" placeholder="Your name" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input name="claimant_name" placeholder="Your name" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Organization</span>
-                <input name="organization" placeholder="Organization (e.g. Lincoln High School Athletics)" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input name="organization" placeholder="Organization (e.g. Lincoln High School Athletics)" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Phone (optional)</span>
-                <input name="phone" placeholder="Phone (optional)" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm" />
+                <input name="phone" placeholder="Phone (optional)" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Proof of ownership</span>
-                <textarea name="notes" required minlength="20" rows="3" placeholder="Proof of ownership: your role, how to verify (e.g. 'I'm the head coach. Reach me via the school's main line.')" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"></textarea>
+                <textarea name="notes" required minlength="20" rows="3" placeholder="Proof of ownership: your role, how to verify (e.g. 'I'm the head coach. Reach me via the school's main line.')" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm"></textarea>
               </label>
               <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
               <button type="submit" class="btn">Submit claim request</button>
@@ -730,7 +738,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         e.preventDefault();
         status.classList.remove('hidden');
         status.textContent = 'Submitting...';
-        status.style.color = '#5F5448';
+        status.style.color = 'var(--ink-soft)';
         const storageKey = 'pcd:camps:review:' + slug + ':idempotency-key';
         let idempotencyKey = sessionStorage.getItem(storageKey);
         if (!idempotencyKey) {
@@ -744,17 +752,17 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
-              status.style.color = '#9E5228';
+              status.style.color = 'var(--navy)';
               return;
             }
             form.reset();
             sessionStorage.removeItem(storageKey);
             status.textContent = 'Thanks. Review queued for moderation.';
-            status.style.color = '#5C7459';
+            status.style.color = 'var(--accent)';
           })
           .catch(function () {
             status.textContent = 'Network error. Try again.';
-            status.style.color = '#9E5228';
+            status.style.color = 'var(--navy)';
           });
       });
     })();
@@ -768,7 +776,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         e.preventDefault();
         status.classList.remove('hidden');
         status.textContent = 'Submitting...';
-        status.style.color = '#5F5448';
+        status.style.color = 'var(--ink-soft)';
         const storageKey = 'pcd:camps:claim:' + slug + ':idempotency-key';
         let idempotencyKey = sessionStorage.getItem(storageKey);
         if (!idempotencyKey) {
@@ -782,17 +790,17 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
           .then(function (data) {
             if (!data.ok) {
               status.textContent = data.error ? "Couldn't submit: " + data.error : 'Something went wrong. Try again.';
-              status.style.color = '#9E5228';
+              status.style.color = 'var(--navy)';
               return;
             }
             form.reset();
             sessionStorage.removeItem(storageKey);
             status.textContent = data.message || 'Claim request received.';
-            status.style.color = '#5C7459';
+            status.style.color = 'var(--accent)';
           })
           .catch(function () {
             status.textContent = 'Network error. Try again.';
-            status.style.color = '#9E5228';
+            status.style.color = 'var(--navy)';
           });
       });
     })();
@@ -822,8 +830,8 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
         const pinIcon = L.divIcon({
           className: 'camp-pin',
           html: `<svg width="${w}" height="${h}" viewBox="0 0 26 38" xmlns="http://www.w3.org/2000/svg" style="display:block; filter: drop-shadow(0 1px 2px rgba(45,37,32,0.45));">
-            <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="#9E5228"/>
-            <circle cx="13" cy="13" r="5" fill="#FAF6EE"/>
+            <path d="M13 0C5.82 0 0 5.82 0 13c0 9.75 13 25 13 25s13-15.25 13-25C26 5.82 20.18 0 13 0z" fill="var(--accent)"/>
+            <circle cx="13" cy="13" r="5" fill="var(--surface)"/>
           </svg>`,
           iconSize: [w, h],
           iconAnchor: [w / 2, h],

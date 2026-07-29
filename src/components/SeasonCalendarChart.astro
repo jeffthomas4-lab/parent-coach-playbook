@@ -20,13 +20,14 @@ const monthLabel: Record<MonthEntry['key'], string> = {
   jul: 'Jul', aug: 'Aug', sep: 'Sep', oct: 'Oct', nov: 'Nov', dec: 'Dec',
 };
 
-// Map intensity to a bar height + color. The site palette (rust / sage / honey).
+// Map intensity to a bar height + color. Monotonic pale-to-navy intensity
+// scale (navy/silver-green palette only, no separate hue per step).
 const bar: Record<MonthEntry['intensity'], { h: string; bg: string; label: string }> = {
-  off:   { h: '8px',  bg: '#EAE3D8', label: 'Off' },
-  rest:  { h: '14px', bg: '#D9CFBE', label: 'Rest' },
-  build: { h: '28px', bg: '#8FA68C', label: 'Build' },
-  taper: { h: '20px', bg: '#D4AB6A', label: 'Taper' },
-  peak:  { h: '44px', bg: '#C5713D', label: 'Peak' },
+  off:   { h: '8px',  bg: '#F4F7FA', label: 'Off' },
+  rest:  { h: '14px', bg: '#C9D2DA', label: 'Rest' },
+  build: { h: '28px', bg: '#8A9BA0', label: 'Build' },
+  taper: { h: '20px', bg: '#003594', label: 'Taper' },
+  peak:  { h: '44px', bg: '#041E42', label: 'Peak' },
 };
 
 // Make sure the months render Jan–Dec even if input is in a different order.

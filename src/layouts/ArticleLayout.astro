@@ -203,24 +203,24 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
 
   <div class="container-px py-10 md:py-14">
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
-      <article class="lg:col-span-8">
+      <article class="lg:col-span-8 card p-6 md:p-8">
         <header>
           <h1
-            class={`font-display text-ink leading-[1.05] font-medium ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
+            class={`t-display ${isShort ? 't-h2' : 't-h1'}`}
             set:html={titleHtml}
           />
           {data.dek && !isShort && (
-            <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 leading-snug">
+            <p class="t-dek mt-6">
               {data.dek}
             </p>
           )}
 
           <!-- Byline -->
-          <div class="mt-8 pt-5 border-t border-bone">
+          <div class="mt-8 pt-5 rule-navy">
             <div class="font-display italic text-rust font-medium">
               {EDITORIAL.byline}
             </div>
-            <div class="font-display italic text-ink-soft text-sm mt-1">
+            <div class="font-display italic text-muted text-sm mt-1">
               Published {data.publishedAt.toLocaleDateString('en-US', dateOpts)}
               {showReviewed && reviewedDate && (
                 <span> · Last reviewed {reviewedDate.toLocaleDateString('en-US', dateOpts)}</span>
@@ -232,7 +232,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         </header>
 
         {data.hero && (
-          <div class="mt-5 md:mt-10 rounded-lg overflow-hidden">
+          <div class="mt-5 md:mt-10 rounded-card overflow-hidden">
             <img
               src={data.hero}
               alt={data.heroAlt ?? data.title}
@@ -247,8 +247,8 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         )}
 
         {data.bluf && (
-          <aside class="mt-10 border-l-4 border-rust pl-5 py-1" aria-label="Quick answer">
-            <p class="font-mono text-rust uppercase text-[0.7rem] tracking-label mb-2 font-medium">
+          <aside class="mt-10 border-l-[3px] border-navy bg-stripe rounded-r-card px-5 py-4" aria-label="Quick answer">
+            <p class="t-eyebrow mb-2">
               The short version
             </p>
             <p class="font-display text-ink text-lg md:text-xl leading-snug" style="font-weight: 500;">
@@ -263,8 +263,8 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         </div>
 
         <!-- Editorial note at the bottom -->
-        <aside class="mt-16 pt-8 border-t border-bone">
-          <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
+        <aside class="mt-16 pt-8 rule-navy">
+          <p class="t-section mb-2">About this piece</p>
           <p class="font-display text-ink-soft text-sm leading-snug">
             Written and edited by {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
           </p>
@@ -289,8 +289,8 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         />
 
         {sidebarRelated.length > 0 && (
-          <div class="border border-bone bg-paper-warm rounded-lg p-5">
-            <p class="font-display italic text-rust mb-3 font-medium" style="font-size: 0.95rem;">
+          <div class="card card-rule p-5">
+            <p class="t-section mb-3">
               More from {pillar.label.toLowerCase()}
             </p>
             <ul class="space-y-3">

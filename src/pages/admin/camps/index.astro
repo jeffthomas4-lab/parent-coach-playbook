@@ -76,7 +76,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                 <div class="flex flex-col gap-2 items-end">
                   <a href={`/admin/camps/${c.id}/`} class="t-cta">Review →</a>
                   <form method="POST" action={`/api/admin/camps/${c.id}/approve`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-sage bg-sage-bg text-sm hover:bg-sage hover:text-paper transition-colors font-medium">Approve</button>
+                    <button type="submit" class="font-display italic px-3 py-1 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium">Approve</button>
                   </form>
                   <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline flex flex-col gap-1 items-end">
                     <select name="reason_code" required class="px-2 py-1 font-body bg-paper border border-bone text-xs">

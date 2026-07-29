@@ -113,23 +113,23 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
         <fieldset class="grid gap-4">
           <label class="grid gap-1">
             <span class="font-display italic text-ink text-sm font-medium">What happened</span>
-            <textarea name="quote" required maxlength="2000" rows="4" placeholder="Tell us what you used and how it went, in your own words." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none"></textarea>
+            <textarea name="quote" required maxlength="2000" rows="4" placeholder="Tell us what you used and how it went, in your own words." class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none"></textarea>
           </label>
 
           <div class="grid sm:grid-cols-2 gap-4">
             <label class="grid gap-1">
               <span class="font-display italic text-ink text-sm font-medium">Your name</span>
-              <input name="name" required maxlength="120" placeholder="First name and last initial is fine" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+              <input name="name" required maxlength="120" placeholder="First name and last initial is fine" class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none" />
             </label>
             <label class="grid gap-1">
               <span class="font-display italic text-ink text-sm font-medium">Context (optional)</span>
-              <input name="context" maxlength="200" placeholder="e.g. Youth soccer parent, Tacoma" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+              <input name="context" maxlength="200" placeholder="e.g. Youth soccer parent, Tacoma" class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none" />
             </label>
           </div>
 
           <label class="grid gap-1">
             <span class="font-display italic text-ink text-sm font-medium">What is this about</span>
-            <select name="product" class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none">
+            <select name="product" class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none">
               <option value="">Not sure / the site in general</option>
               {productOptions.map((option) => (
                 <option value={option.id}>{option.label}</option>
@@ -139,7 +139,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
 
           <label class="grid gap-1">
             <span class="font-display italic text-ink text-sm font-medium">Link to where you posted this (optional)</span>
-            <input name="sourceUrl" type="url" placeholder="https://..." class="px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none" />
+            <input name="sourceUrl" type="url" placeholder="https://..." class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none" />
           </label>
         </fieldset>
 
@@ -163,7 +163,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
         e.preventDefault();
         status.classList.remove('hidden');
         status.textContent = 'Sending...';
-        status.style.color = '#5F5448';
+        status.style.color = '#5A6468';
 
         const storageKey = 'pcd:proof:share:idempotency-key';
         let idempotencyKey = sessionStorage.getItem(storageKey);
@@ -179,16 +179,16 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
           const data = (await res.json()) as { ok: boolean; error?: string };
           if (!res.ok || !data.ok) {
             status.textContent = data.error ? `Couldn't send: ${data.error}` : 'Something went wrong. Try again or email support@parentcoachdesk.com.';
-            status.style.color = '#9E5228';
+            status.style.color = '#003594';
             return;
           }
           form.reset();
           sessionStorage.removeItem(storageKey);
           status.textContent = 'Thanks. We read every submission before it goes on this page.';
-          status.style.color = '#5C7459';
+          status.style.color = '#5F7075';
         } catch (err) {
           status.textContent = 'Network error. Try again.';
-          status.style.color = '#9E5228';
+          status.style.color = '#003594';
         }
       });
     }

@@ -19,36 +19,36 @@ A simple diagram of where to put them:
 
 <div style="border: 0.5px solid var(--bone); background: var(--paper-warm); padding: 18px; margin: 1.5em 0; max-width: 480px;">
   <svg viewBox="0 0 300 200" width="100%" role="img" aria-label="T-ball field with five cones marking infield positions">
-    <rect x="0" y="0" width="300" height="200" fill="#FAF6EE"/>
-    <path d="M 150 180 L 60 90 L 150 30 L 240 90 Z" fill="#EAEFE7" stroke="#5C7459" stroke-width="1" stroke-dasharray="4 3"/>
-    <circle cx="150" cy="180" r="6" fill="#2D2520"/>
-    <text x="150" y="198" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">Home</text>
-    <circle cx="240" cy="90" r="5" fill="#2D2520"/>
-    <text x="248" y="93" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">1B</text>
-    <circle cx="150" cy="30" r="5" fill="#2D2520"/>
-    <text x="150" y="22" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">2B</text>
-    <circle cx="60" cy="90" r="5" fill="#2D2520"/>
-    <text x="52" y="93" text-anchor="end" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">3B</text>
-    <circle cx="150" cy="105" r="5" fill="#2D2520"/>
-    <text x="150" y="125" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#5F5448">Pitcher / SS</text>
-    <g fill="#C5713D">
+    <rect x="0" y="0" width="300" height="200" fill="#EDF1F5"/>
+    <path d="M 150 180 L 60 90 L 150 30 L 240 90 Z" fill="#F4F7FA" stroke="#5F7075" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle cx="150" cy="180" r="6" fill="#041E42"/>
+    <text x="150" y="198" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#2E3A45">Home</text>
+    <circle cx="240" cy="90" r="5" fill="#041E42"/>
+    <text x="248" y="93" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#2E3A45">1B</text>
+    <circle cx="150" cy="30" r="5" fill="#041E42"/>
+    <text x="150" y="22" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#2E3A45">2B</text>
+    <circle cx="60" cy="90" r="5" fill="#041E42"/>
+    <text x="52" y="93" text-anchor="end" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#2E3A45">3B</text>
+    <circle cx="150" cy="105" r="5" fill="#041E42"/>
+    <text x="150" y="125" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="11" fill="#2E3A45">Pitcher / SS</text>
+    <g fill="#003594">
       <polygon points="240,75 234,87 246,87"/>
-      <text x="240" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#C5713D">cone</text>
+      <text x="240" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#003594">cone</text>
     </g>
-    <g fill="#C5713D">
+    <g fill="#003594">
       <polygon points="150,15 144,27 156,27"/>
     </g>
-    <g fill="#C5713D">
+    <g fill="#003594">
       <polygon points="60,75 54,87 66,87"/>
     </g>
-    <g fill="#C5713D">
+    <g fill="#003594">
       <polygon points="150,90 144,102 156,102"/>
     </g>
-    <g fill="#C5713D">
+    <g fill="#003594">
       <polygon points="200,140 194,152 206,152"/>
     </g>
   </svg>
-  <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #8A7E6E; margin-top: 10px; text-transform: uppercase;">Cones in rust. Position labels in italic.</p>
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #5A6468; margin-top: 10px; text-transform: uppercase;">Cones in royal blue. Position labels in italic.</p>
 </div>
 
 The fifth cone goes at the "rover" position (between first and second base, slightly out from the basepath). Most t-ball leagues have at least one rover or short-fielder. Same idea.

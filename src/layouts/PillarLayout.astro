@@ -38,15 +38,15 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
     <div class="container-px py-16 md:py-20 grid lg:grid-cols-12 gap-12">
       <div class="lg:col-span-8">
         <div
-          class="font-display italic"
-          style={`color: ${meta.accent}; font-weight: 500; font-size: 1rem;`}
+          class="t-section"
+          style={`color: ${meta.accent};`}
         >
           {meta.eyebrow}
         </div>
-        <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] mt-4 font-medium">
+        <h1 class="t-display t-h1 mt-4">
           {meta.label}
         </h1>
-        <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
+        <p class="t-dek mt-6 max-w-2xl">
           {meta.blurb}
         </p>
         {pillar === 'drive-there' && (
@@ -54,7 +54,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
             <img
               src="/illustrations/pillar-drive-there.webp"
               alt="Interior of a car at dawn — a parent's hands on the wheel, sport bag and water bottle visible, sunrise through the windshield."
-              class="w-full max-w-2xl border border-bone"
+              class="w-full max-w-2xl rounded-card border border-line"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -66,7 +66,7 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
             <img
               src="/illustrations/pillar-drive-home.webp"
               alt="Same car interior at dusk — kid asleep in back seat with a helmet in their lap, warm streetlight glow, parent visible only as a shoulder."
-              class="w-full max-w-2xl border border-bone"
+              class="w-full max-w-2xl rounded-card border border-line"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -88,14 +88,14 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
           data-filter-bar
           style={`--pill-accent: ${meta.accent}; --pill-bg: ${meta.accentBg};`}
         >
-          <button data-filter="all" class="tag-pill tag-pill-active" type="button">All issues</button>
+          <button data-filter="all" class="tag-pill tag-pill-active min-h-11" type="button">All issues</button>
           {sportsUsed.map(s => (
-            <button data-filter-sport={s} class="tag-pill tag-pill-outline" type="button">
+            <button data-filter-sport={s} class="tag-pill tag-pill-outline min-h-11" type="button">
               {SPORTS.find(x => x.slug === s)?.label ?? s}
             </button>
           ))}
           {agesUsed.map(a => (
-            <button data-filter-age={a} class="tag-pill tag-pill-outline" type="button">
+            <button data-filter-age={a} class="tag-pill tag-pill-outline min-h-11" type="button">
               Age {AGE_BANDS.find(x => x.slug === a)?.label ?? a}
             </button>
           ))}

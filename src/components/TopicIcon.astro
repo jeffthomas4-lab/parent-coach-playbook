@@ -1,7 +1,8 @@
 ---
 // Inline SVG topic icons for the Reads index and homepage browse-by-topic grid.
-// Brand-aligned: warm ink line, terracotta + sage + honey + rose accents,
-// editorial-warm rather than craft. Each icon is ~120x120, scales freely.
+// Brand-aligned: navy line, royal-blue accent, silver-green decorative fill —
+// matches the navy/silver-green design system (src/styles/pcd-tokens.mjs).
+// Each icon is ~120x120, scales freely.
 
 interface Props {
   topic: string;
@@ -11,13 +12,17 @@ interface Props {
 
 const { topic, size = 96, class: className = '' } = Astro.props;
 
-// Color tokens used inside the SVGs (matches global.css :root).
-const ink = '#2D2520';
-const rust = '#C5713D';
-const sage = '#8FA68C';
-const honey = '#D4AB6A';
-const rose = '#B8908F';
-const paper = '#FAF6EE';
+// Color tokens used inside the SVGs — CSS custom properties from
+// src/styles/global.css :root, not hardcoded hex. The old palette had four
+// distinct decorative accents (rust/sage/honey/rose); the navy/silver-green
+// remap collapsed sage/honey/rose into one decorative silver-green, so all
+// three now reference the same --silver token.
+const ink = 'var(--navy)';
+const rust = 'var(--accent)';
+const sage = 'var(--silver)';
+const honey = 'var(--silver)';
+const rose = 'var(--silver)';
+const paper = 'var(--surface)';
 ---
 <svg
   width={size}

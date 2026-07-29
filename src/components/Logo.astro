@@ -1,11 +1,11 @@
 ---
 // Wordmark for Parent Coach Desk.
-// Three words. "Parent Coach" warm ink, "Desk" terracotta italic.
+// Three words. "Parent Coach" navy, "Desk" accent-blue italic.
 //
 // Variants:
-//   variant="dark"   — warm-ink + terracotta (default, on cream)
-//   variant="light"  — paper + honey (use on dark surfaces)
-//   variant="solid"  — single-color warm-ink (subtle contexts)
+//   variant="dark"   — navy + accent blue (default, on light surfaces)
+//   variant="light"  — white + silver-green (use on dark surfaces)
+//   variant="solid"  — single-color navy (subtle contexts)
 
 interface Props {
   variant?: 'dark' | 'light' | 'solid';
@@ -22,13 +22,13 @@ const {
 } = Astro.props;
 
 const baseColor =
-  variant === 'light' ? '#FAF6EE' :
-  '#2D2520';
+  variant === 'light' ? 'var(--surface)' :
+  'var(--navy)';
 
 const accentColor =
-  variant === 'light' ? '#D4AB6A' :
-  variant === 'solid' ? '#2D2520' :
-  '#C5713D';
+  variant === 'light' ? 'var(--silver)' :
+  variant === 'solid' ? 'var(--navy)' :
+  'var(--accent)';
 ---
 <a
   href="/"

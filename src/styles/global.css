@@ -7,14 +7,9 @@
 @import "@fontsource/fraunces/500-italic.css";
 @import "@fontsource/fraunces/600-italic.css";
 
-/* Mulish: warmer humanist sans for body text. Replaces Inter, which read as
-   too neutral / Silicon-Valley. Mulish is editorial-friendly and reads
-   warmer at small sizes without losing readability. */
-@import "@fontsource/mulish/300.css";
-@import "@fontsource/mulish/400.css";
-@import "@fontsource/mulish/500.css";
-@import "@fontsource/mulish/600.css";
-@import "@fontsource/mulish/700.css";
+/* Body sans: Inter, resolved from the system stack (not an installed
+   dependency — no self-hosted @fontsource/inter import). Replaces Mulish,
+   which read too warm/editorial for the navy/silver-green palette. */
 
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/500.css";
@@ -25,13 +20,13 @@
    same approximate dimensions as the real font, so when the real font swaps
    in, the layout doesn't shift. Eliminates the swap-induced CLS that mobile
    Lighthouse flagged on /cost-calculator/ (0.154) and /drive-home/ (0.119).
-   Numbers tuned against Mulish + Fraunces metrics. */
+   Numbers tuned against Inter + Fraunces metrics. */
 @font-face {
-  font-family: "Mulish Fallback";
+  font-family: "Inter Fallback";
   src: local("Arial"), local("Helvetica");
-  size-adjust: 99.5%;
-  ascent-override: 100%;
-  descent-override: 25%;
+  size-adjust: 100%;
+  ascent-override: 96%;
+  descent-override: 24%;
   line-gap-override: 0%;
 }
 @font-face {
@@ -48,29 +43,70 @@
 
 /* ---------- Base reset ---------- */
 :root {
-  --paper: #FAF6EE;          /* cream */
-  --paper-warm: #F2EAD9;     /* warmer cream for cards */
-  --ink: #2D2520;            /* warm dark brown */
-  --ink-soft: #5F5448;       /* walnut for body */
-  --rust: #9E5228;           /* terracotta — darkened from #C5713D 2026-07-07 for WCAG AA: rust-on-paper 5.3:1, rust-on-paper-warm 4.8:1, paper-on-rust 5.3:1 (old value was 3.4:1 all three ways) */
-  --turf: #8FA68C;           /* sage */
-  --bone: #DDD2BD;           /* linen */
-  --trophy: #D4AB6A;         /* honey */
-  --rose: #B8908F;           /* dusty rose; tertiary accent for pull quotes + soft callouts */
-  --rose-bg: #EDDBD9;        /* light rose tint for backgrounds */
+  /* Legacy token names kept as aliases pointing at the new hexes — .astro
+     files across the site reference these via var(--rust), var(--bone), etc.
+     (~4187 usages of the matching Tailwind utilities). Do not rename. */
+  --paper: #EDF1F5;          /* was cream #FAF6EE — page background, light grey-blue */
+  --paper-warm: #FFFFFF;     /* was warmer cream #F2EAD9 — card/content surfaces */
+  --ink: #041E42;            /* was warm dark brown #2D2520 — deep navy */
+  --ink-soft: #2E3A45;       /* was walnut #5F5448 — body text */
+  --rust: #003594;           /* was terracotta #9E5228 — PRIMARY ACCENT */
+  --turf: #8A9BA0;           /* was sage #8FA68C — silver green, DECORATIVE ONLY */
+  --bone: #C9D2DA;           /* was linen #DDD2BD — borders/dividers */
+  --trophy: #8A9BA0;         /* was honey #D4AB6A — collapsed into silver green */
+  --rose: #8A9BA0;           /* was dusty rose #B8908F — collapsed into silver green */
+  --rose-bg: #F4F7FA;        /* was light rose tint #EDDBD9 — palest fill */
+
+  /* ---------- New semantic tokens (2026-07-29 navy/silver-green remap) ---------- */
+  --surface: #FFFFFF;
+  --surface-sunken: #EDF1F5;
+  --stripe: #F4F7FA;         /* zebra rows, hover rows */
+  --accent: #003594;
+  --accent-hover: #002873;
+  --navy: #041E42;
+  --muted: #5A6468;          /* muted text, captions */
+  --line: #C9D2DA;
+  /* silver (#8A9BA0) is 2.89:1 on white — DECORATIVE ONLY (fills, borders,
+     glyphs). Never body text. silver-deep (#5F7075) is the AA-safe
+     silver-green for eyebrow/label TEXT — 5.17:1 on white, 4.56:1 on
+     #EDF1F5. turf/trophy/rose above are deliberately the same value as
+     silver — kept as separate legacy names only so existing utility classes
+     keep working; there is no third accent color in this palette. */
+  --silver: #8A9BA0;
+  --silver-deep: #5F7075;
+
+  /* ---------- 8px spacing scale ---------- */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 40px;
+  --s6: 48px;
+  --s7: 64px;
+  --s8: 80px;
+  --s9: 96px;
+  --s10: 128px;
+
+  /* ---------- Radius / shadow / measure ---------- */
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 999px;
+  --measure: 68ch;
+  --shadow-card: 0 1px 2px rgba(4,30,66,0.04), 0 2px 8px rgba(4,30,66,0.06);
+  --shadow-card-hover: 0 2px 4px rgba(4,30,66,0.06), 0 8px 20px rgba(4,30,66,0.08);
 }
 
 html {
-  background: var(--paper);
+  background: var(--surface-sunken);
   color: var(--ink-soft);
-  font-family: "Mulish", "Mulish Fallback", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--paper);
+  background: var(--surface-sunken);
   color: var(--ink-soft);
   margin: 0;
   min-height: 100vh;
@@ -78,78 +114,71 @@ body {
 
 /* ---------- Editorial type primitives ---------- */
 .t-display {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
-  font-weight: 500;            /* softened from 600 */
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
+  font-weight: 600;
   color: var(--ink);
-  letter-spacing: -0.005em;
-  line-height: 1.07;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
 }
 
-.t-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-.t-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-.t-h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+.t-h1 { font-size: clamp(2.125rem, 4.5vw, 3.25rem); }
+.t-h2 { font-size: clamp(1.625rem, 3vw, 2.25rem); line-height: 1.18; }
+.t-h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.28; }
 
 .t-display em {
   font-style: italic;
-  color: var(--rust);
-  font-weight: 500;
+  color: var(--accent);
+  font-weight: 600;
 }
 
-/* Tiny uppercase metadata only. Use sparingly. */
+/* Tiny uppercase metadata only. Use sparingly. The ONLY all-caps allowed. */
 .t-eyebrow,
 .t-label {
-  font-family: "JetBrains Mono", Menlo, monospace;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--ink);
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--silver-deep);
 }
 
 /* Softer mid-size section labels. Replaces all-caps mono in body chrome. */
 .t-section {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--rust);
+  color: var(--accent);
   font-size: 1rem;
   letter-spacing: 0;
 }
 
 /* Soft call-to-action link, replaces "READ →" all-caps */
 .t-cta {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--rust);
+  color: var(--accent);
   font-size: 1.0625rem;
 }
 
 .t-dek {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.5;
-  color: var(--ink-soft);
+  color: var(--muted);
 }
 
 /* ---------- Article body ---------- */
 .article-body {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.125rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--ink-soft);
-  max-width: 680px;
+  max-width: var(--measure);
 }
 
-/* Slightly smaller body on mobile improves dwell time and reduces vertical
-   scrolling without sacrificing readability. Per the strategic audit. */
-@media (max-width: 640px) {
-  .article-body {
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-}
+/* 18px is the floor on every breakpoint now — no mobile step-down. */
 
 .article-body p { margin: 0 0 1.5em 0; }
 
@@ -162,12 +191,12 @@ body {
 .article-body ol { list-style: decimal; }
 .article-body ul { list-style: disc; }
 .article-body li { margin: 0 0 0.5em 0; }
-.article-body li::marker { color: var(--rust); font-weight: 500; }
+.article-body li::marker { color: var(--accent); font-weight: 500; }
 .article-body li > p { margin: 0 0 0.5em 0; }
 .article-body li > p:last-child { margin-bottom: 0; }
 
 .article-body h2 {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-weight: 600;
   font-size: 1.75rem;
   color: var(--ink);
@@ -175,52 +204,52 @@ body {
   line-height: 1.2;
 }
 .article-body h3 {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-weight: 600;
   font-size: 1.375rem;
   color: var(--ink);
   margin: 1.75em 0 0.5em;
 }
-.article-body em { color: var(--rust); font-style: italic; }
+.article-body em { font-style: italic; }
 .article-body a {
-  color: var(--rust);
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-.article-body a:hover { color: var(--ink); }
+.article-body a:hover { color: var(--accent-hover); }
 
 .article-body blockquote {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-style: italic;
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.4;
-  color: var(--ink);
+  color: var(--navy);
   margin: 2.5em 0;
   padding: 1.25em 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   text-align: center;
 }
 
 .article-body blockquote p { margin: 0; }
 
-/* Pull quote — softer, dusty-rose-accented variation. Use this when you want
-   the line to land warmer than a classic editorial blockquote. */
+/* Pull quote — navy-rule, silver-fill variation. */
 .t-quote,
 .article-body .t-quote {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.35;
-  color: var(--ink);
+  color: var(--navy);
   margin: 2.5em 0;
   padding: 1.5em 1.5em 1.5em 1.75em;
-  border-left: 3px solid var(--rose);
-  background: var(--rose-bg);
+  border-left: 3px solid var(--navy);
+  background: var(--stripe);
   text-align: left;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
 }
 .t-quote p,
 .article-body .t-quote p { margin: 0; }
@@ -228,12 +257,12 @@ body {
 .t-quote::before,
 .article-body .t-quote::before {
   content: '"';
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 500;
   font-size: 3rem;
   line-height: 0.5;
-  color: var(--rose);
+  color: var(--accent);
   display: inline-block;
   margin-right: 0.1em;
   vertical-align: -0.1em;
@@ -241,63 +270,124 @@ body {
 
 /* Drop cap */
 .article-body > p:first-of-type::first-letter {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
-  font-weight: 500;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
+  font-weight: 600;
   font-size: 5.25rem;
   line-height: 0.9;
   float: left;
   margin: 0.05em 0.08em -0.05em 0;
-  color: var(--rust);
+  color: var(--navy);
 }
 
 /* ---------- Rules ---------- */
-.rule-hair { border-top: 1px solid var(--bone); }
-.rule-strong { border-top: 1px solid var(--ink); }
+.rule-hair { border-top: 1px solid var(--line); }
+.rule-strong { border-top: 1px solid var(--navy); }
+.rule-navy { border-top: 1px solid var(--navy); }
+
+/* ---------- Component primitives ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+.card-rule {
+  border-top: 3px solid var(--navy);
+  /* Corners stay rounded at 12px — the top rule does not square them off. */
+}
+.band {
+  padding-block: var(--s8);
+}
+.band-surface {
+  background: var(--surface);
+}
+.band-sunken {
+  background: var(--surface-sunken);
+}
+.table-zebra {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-zebra th {
+  color: var(--navy);
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 16px;
+}
+.table-zebra td {
+  padding: 12px 16px;
+}
+.table-zebra tbody tr:nth-child(even) {
+  background: var(--stripe);
+}
+.table-zebra tbody tr:hover {
+  background: var(--stripe);
+}
 
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--paper);
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-btn);
+  background: var(--accent);
+  color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
-  transition: background 200ms cubic-bezier(.2,.7,.2,1), color 200ms cubic-bezier(.2,.7,.2,1);
+  transition: background 200ms cubic-bezier(.2,.7,.2,1), border-color 200ms cubic-bezier(.2,.7,.2,1), color 200ms cubic-bezier(.2,.7,.2,1);
 }
-.btn:hover { background: var(--rust); border-color: var(--rust); color: var(--paper); }
+.btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #FFFFFF; }
 
 .btn-ghost {
-  background: transparent;
-  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid var(--navy);
+  border-radius: var(--radius-btn);
+  background: #FFFFFF;
+  color: var(--navy);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms cubic-bezier(.2,.7,.2,1);
 }
-.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.btn-ghost:hover { background: var(--stripe); }
 
 /* ---------- Soft button (mom-to-mom voice) ----------
    Used for the warm, primary CTAs (newsletter submit, lead-magnet button,
-   sidebar widgets). Keep .btn (mono caps) for editorial chrome. Soft is for
-   moments where the page is talking to a person, not a reader. */
+   sidebar widgets). Same primary look as .btn — kept as a separate class
+   name because it's used across the site as the "talking to a person"
+   variant, but the visual style is now unified with .btn. */
 .btn-soft {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  font-family: "Mulish", "Mulish Fallback", -apple-system, sans-serif;
-  font-size: 0.95rem;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.005em;
-  border: 1px solid var(--rust);
-  background: var(--rust);
-  color: var(--paper);
-  border-radius: 999px;
+  letter-spacing: 0;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #FFFFFF;
+  border-radius: var(--radius-btn);
   text-decoration: none;
   cursor: pointer;
   transition: background 200ms cubic-bezier(.2,.7,.2,1),
@@ -305,17 +395,30 @@ body {
               color 200ms cubic-bezier(.2,.7,.2,1);
 }
 .btn-soft:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #FFFFFF;
 }
 .btn-soft-ghost {
-  background: transparent;
-  color: var(--rust);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid var(--navy);
+  border-radius: var(--radius-btn);
+  background: #FFFFFF;
+  color: var(--navy);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms cubic-bezier(.2,.7,.2,1);
 }
 .btn-soft-ghost:hover {
-  background: var(--rust);
-  color: var(--paper);
+  background: var(--stripe);
 }
 
 /* ---------- Tag pill (rounded, sentence-case) ----------
@@ -326,15 +429,16 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  min-height: 32px;
   padding: 0.3rem 0.75rem;
-  font-family: "Mulish", "Mulish Fallback", -apple-system, sans-serif;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid transparent;
-  background: var(--pill-bg, var(--paper-warm));
-  color: var(--pill-accent, var(--ink-soft));
+  background: var(--pill-bg, var(--stripe));
+  color: var(--pill-accent, var(--navy));
   text-decoration: none;
   white-space: nowrap;
   transition: filter 150ms cubic-bezier(.2,.7,.2,1);
@@ -344,24 +448,24 @@ body {
 }
 .tag-pill-outline {
   background: transparent;
-  border-color: var(--pill-accent, var(--bone));
+  border-color: var(--pill-accent, var(--line));
   color: var(--pill-accent, var(--ink-soft));
 }
 .tag-pill-active {
-  background: var(--pill-accent, var(--ink));
-  color: var(--paper);
-  border-color: var(--pill-accent, var(--ink));
+  background: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
 }
 
 /* ---------- Container ---------- */
 .container-px {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--s3);
 }
 
 @media (max-width: 768px) {
-  .container-px { padding: 0 24px; }
+  .container-px { padding: 0 var(--s2); }
   .article-body > p:first-of-type::first-letter { font-size: 4rem; }
 }
 
@@ -370,16 +474,17 @@ body {
   transition: background 200ms cubic-bezier(.2,.7,.2,1);
 }
 .card-hover:hover {
-  background: var(--paper-warm);
+  background: var(--stripe);
 }
 
 /* ---------- Gear pick card (used inside guide markdown) ---------- */
 .gear-pick {
-  border: 0.5px solid var(--bone);
-  background: var(--paper-warm);
-  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: var(--s3);
   margin: 1.75em 0;
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
 }
 .gear-pick header {
   display: flex;
@@ -390,26 +495,26 @@ body {
   margin-bottom: 8px;
 }
 .gear-pick h4 {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
-  font-weight: 500;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
+  font-weight: 600;
   font-size: 1.15rem;
   line-height: 1.2;
-  color: var(--ink);
+  color: var(--navy);
   margin: 0;
 }
 .gear-pick .price {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains Mono", Menlo, monospace;
   font-size: 0.78rem;
   letter-spacing: 0.06em;
-  color: var(--rust);
+  color: var(--muted);
   white-space: nowrap;
 }
 .gear-pick .hook {
-  font-family: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 500;
   font-size: 0.98rem;
-  color: var(--rust);
+  color: var(--accent);
   margin: 0 0 12px 0;
 }
 .gear-pick > p {
@@ -419,35 +524,41 @@ body {
   margin: 0 0 14px 0;
 }
 .gear-pick .how-to-choose {
+  background: var(--stripe);
+  border-left: 3px solid var(--navy);
   font-size: 0.9rem;
   line-height: 1.55;
   color: var(--ink-soft);
   padding: 10px 12px;
-  background: var(--paper);
-  border-left: 2px solid var(--rust);
   margin: 0 0 16px 0;
 }
 .gear-pick .how-to-choose strong {
-  font-weight: 500;
-  color: var(--ink);
+  font-weight: 600;
+  color: var(--navy);
 }
 .gear-pick .gear-pick-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  color: var(--paper);
-  background: var(--ink);
-  padding: 9px 16px;
+  min-height: 44px;
+  font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #FFFFFF;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-btn);
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
-  text-transform: uppercase;
   transition: background 200ms cubic-bezier(.2,.7,.2,1);
 }
 .gear-pick .gear-pick-cta:hover {
-  background: var(--rust);
-  color: var(--paper);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #FFFFFF;
 }
 
 /* ---------- Reduced motion ---------- */
@@ -461,12 +572,12 @@ body {
 
 /* ---------- Selection ---------- */
 ::selection {
-  background: var(--rust);
-  color: var(--paper);
+  background: var(--accent);
+  color: #FFFFFF;
 }
 
 /* ---------- Focus ---------- */
 *:focus-visible {
-  outline: 2px solid var(--rust);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }

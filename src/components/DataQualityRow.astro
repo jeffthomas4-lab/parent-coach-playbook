@@ -42,13 +42,13 @@ const {
 
 const toneClass = (tone?: string) =>
   tone === 'rust'
-    ? 'border-rust bg-paper text-rust hover:bg-rust hover:text-paper'
+    ? 'border-rust bg-paper-warm text-rust hover:bg-rust hover:text-paper-warm'
     : tone === 'sage'
-      ? 'border-sage bg-sage-bg text-sage hover:bg-sage hover:text-paper'
-      : 'border-bone bg-paper-warm text-ink hover:bg-paper';
+      ? 'border-line bg-stripe text-silver-deep hover:bg-stripe hover:text-navy'
+      : 'border-bone bg-paper-warm text-ink hover:bg-stripe';
 ---
 
-<li class="border border-bone p-5 bg-paper dq-row" data-id={id}>
+<li class="card p-5 dq-row" data-id={id}>
   <p class="font-display text-ink text-lg font-medium">
     <a href={editHref} class="hover:text-rust" target="_blank" rel="noopener">{name}</a>
   </p>
@@ -62,7 +62,8 @@ const toneClass = (tone?: string) =>
           <label class="font-display italic text-ink-soft text-xs font-medium">{f.label}</label>
           <input
             type={f.type}
-            class="px-2 py-1 font-body bg-paper border border-bone text-sm"
+            class="px-2 py-1 font-body bg-paper-warm border border-bone rounded-btn text-sm"
+            style="min-height: 44px;"
             value={f.value ?? ''}
             data-field={f.key}
             min={f.min}
@@ -77,7 +78,8 @@ const toneClass = (tone?: string) =>
     {primaryAction && (
       <button
         type="button"
-        class={`font-display italic px-3 py-2 border text-sm font-medium transition-colors ${toneClass(primaryAction.tone)}`}
+        class={`font-display italic px-3 py-2 border rounded-btn text-sm font-medium transition-colors ${toneClass(primaryAction.tone)}`}
+        style="min-height: 44px;"
         data-fix-action={primaryAction.action}
       >
         {primaryAction.label}
@@ -86,7 +88,8 @@ const toneClass = (tone?: string) =>
     {secondaryActions.map((a) => (
       <button
         type="button"
-        class={`font-display italic px-3 py-2 border text-sm font-medium transition-colors ${toneClass(a.tone)}`}
+        class={`font-display italic px-3 py-2 border rounded-btn text-sm font-medium transition-colors ${toneClass(a.tone)}`}
+        style="min-height: 44px;"
         data-fix-action={a.action}
       >
         {a.label}
