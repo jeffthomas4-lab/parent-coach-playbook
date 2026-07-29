@@ -91,6 +91,23 @@ function wrangler(argv) {
 }
 
 /** Pull the first defined value at any of several candidate paths. Shapes vary by wrangler version. */
+/**
+ * Same as wrangler(), but returns null instead of exiting when the command fails
+ * or returns no JSON. Only for genuinely optional detail. Anything the receipt
+ * asserts as fact must go through wrangler() so a missing answer stops the run.
+ */
+function wranglerOptional(argv) {
+  try {
+    const out = execFileSync(process.execPath, [WRANGLER_ENTRY, ...argv], {
+      cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 32 * 1024 * 1024,
+    });
+    const start = out.search(/[[{]/);
+    return start === -1 ? null : JSON.parse(out.slice(start));
+  } catch {
+    return null;
+  }
+}
+
 function pick(object, paths, label, command) {
   for (const path of paths) {
     let value = object;
@@ -150,18 +167,36 @@ if (!Array.isArray(versionList)) fail('versions list did not return an array');
 const predecessor = versionList.find((v) => (v.id ?? v.version_id) !== activeVersionId);
 if (!predecessor) fail('no predecessor version exists to record');
 const predecessorId = predecessor.id ?? predecessor.version_id;
-const predecessorEtag = predecessor?.resources?.script?.etag ?? predecessor?.script?.etag ?? null;
+
+// `versions list` does NOT carry per-version bindings or etags; only `versions
+// view` does. The first cut of this script read them straight off the list
+// entry, got undefined, and reported that the predecessor was missing all 25
+// bindings. That is a fabricated finding dressed as an observation, and it is
+// exactly the thing this script exists to avoid, so the predecessor now gets its
+// own view call and reports "not observed" when the call fails.
+const predecessorDetail = wranglerOptional(['versions', 'view', predecessorId, '--config', config, '--json']);
+
+let predecessorEtag = null;
+let missingBindingNames = null;
+let predecessorNote = `Not observed: \`wrangler versions view ${predecessorId}\` did not return usable detail, so binding and etag comparison is unknown rather than assumed.`;
+
+if (predecessorDetail) {
+  predecessorEtag = predecessorDetail?.resources?.script?.etag ?? predecessorDetail?.script?.etag ?? null;
+  const rawPredecessorBindings = predecessorDetail?.resources?.bindings ?? predecessorDetail?.bindings;
+  if (Array.isArray(rawPredecessorBindings)) {
+    const names = new Set(rawPredecessorBindings.map((b) => b?.name ?? b?.binding).filter(Boolean));
+    missingBindingNames = Object.keys(bindings).filter((name) => !names.has(name)).sort();
+    predecessorNote = missingBindingNames.length === 0
+      ? 'Observed: predecessor carries every binding the live version carries.'
+      : `Observed: predecessor is missing ${missingBindingNames.length} of ${Object.keys(bindings).length} bindings.`;
+  }
+}
 
 // The contract requires the predecessor be recorded as NOT safe. That is a
-// deliberate stance, not a computed one: the certified rollback target is the
-// version that is live and fully bound right now, and the one before it has not
-// been through this check. Recording which bindings it lacks makes the reason
-// legible instead of asserting "unsafe" with no basis.
-const predecessorBindings = new Set(
-  (predecessor?.resources?.bindings ?? predecessor?.bindings ?? [])
-    .map((b) => b?.name ?? b?.binding).filter(Boolean),
-);
-const missingBindingNames = Object.keys(bindings).filter((name) => !predecessorBindings.has(name)).sort();
+// deliberate stance rather than a computed one: the certified rollback target is
+// the version live and fully bound right now, and the one before it has not been
+// through this check. The fields above say what was actually seen; `safe: false`
+// says what the contract asserts regardless.
 
 // --- 4. Health evidence ---------------------------------------------------
 // Must reference at least two real files. Pick the newest anonymous-access and
@@ -204,6 +239,7 @@ const receipt = {
     same_script_etag: predecessorEtag !== null ? predecessorEtag === scriptEtag : null,
     safe: false,
     missing_binding_names: missingBindingNames,
+    observation: predecessorNote,
   },
   storage_rollback_included: false,
   pages_is_rollback_target: false,
