@@ -11,6 +11,45 @@ const valueAfter = (argv, flag) => {
   return index >= 0 ? argv[index + 1] : undefined;
 };
 
+// Cache and routing headers only. Never Set-Cookie, Authorization, or anything
+// that could carry a credential into a build log.
+const DIAGNOSTIC_HEADERS = ['cf-cache-status', 'cf-ray', 'age', 'content-type', 'content-length', 'etag', 'server'];
+
+// A 404 on the exact built asset tells us the status and nothing else, which is
+// not enough to tell "this version never shipped its assets" apart from "the
+// edge has not caught up yet". So on failure, ask the live origin what asset
+// URLs its own HTML is currently pointing at. If the homepage references a
+// different /_astro/ build than the one we just deployed, the origin is serving
+// an older version and the asset is not the problem.
+async function diagnoseAssetFailure({ base, response, expectedPath, fetchImpl }) {
+  const headers = {};
+  for (const name of DIAGNOSTIC_HEADERS) {
+    const value = response.headers?.get?.(name);
+    if (value) headers[name] = value;
+  }
+  let referencedAssets = null;
+  let note = null;
+  try {
+    const home = await fetchImpl(new URL('/', base), {
+      method: 'GET',
+      redirect: 'manual',
+      headers: { 'user-agent': 'pcd-deployment-smoke-diagnostic/1' },
+    });
+    if (home.status === 200) {
+      const html = await home.text();
+      referencedAssets = [...new Set(html.match(/\/_astro\/[A-Za-z0-9._-]+\.(?:js|css)/g) ?? [])].slice(0, 8);
+      note = referencedAssets.includes(expectedPath)
+        ? 'The live homepage references the expected asset, so the deployed HTML and the missing asset come from the same build.'
+        : 'The live homepage does NOT reference the expected asset, so the origin is serving HTML from a different build than the one just deployed.';
+    } else {
+      note = `Diagnostic homepage fetch returned ${home.status}, so the asset reference comparison is unavailable rather than assumed.`;
+    }
+  } catch (error) {
+    note = `Diagnostic homepage fetch failed (${error?.message ?? 'unknown error'}), so the asset reference comparison is unavailable rather than assumed.`;
+  }
+  return { expected_asset: expectedPath, response_headers: headers, homepage_referenced_assets: referencedAssets, observation: note };
+}
+
 export function deploymentSmokeChecks(target, assetPath) {
   const checks = [
     { path: '/', method: 'GET', statuses: [200], kind: 'public_html' },
@@ -59,6 +98,10 @@ export async function runDeploymentSmoke({
     }
     const passed = check.statuses.includes(response.status) && assetMatched !== false;
     results.push({ path: check.path, method: check.method, kind: check.kind, status: response.status, attempts, asset_matched: assetMatched, passed });
+    if (!passed && check.kind === 'exact_static_asset') {
+      const diagnostic = await diagnoseAssetFailure({ base, response, expectedPath: check.path, fetchImpl });
+      console.error(`${target} static-asset diagnostic:\n${JSON.stringify(diagnostic, null, 2)}`);
+    }
     if (assetMatched === false) throw new Error(`${target} smoke failed: ${check.path} did not match exact built asset bytes`);
     if (!passed) throw new Error(`${target} smoke failed: ${check.path} returned ${response.status}; expected ${check.statuses.join(' or ')}`);
   }
