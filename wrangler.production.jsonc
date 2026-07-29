@@ -17,12 +17,7 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    // "/" is here so the prerendered homepage streams through the Worker and
-    // picks up inline-editor overlay values via HTMLRewriter. Adding a route
-    // here means it stops being a pure edge asset hit, so keep this list to
-    // pages that actually carry editable regions (OVERLAY_ROUTES in
-    // src/lib/overlay-rewriter.ts must stay in sync; a test asserts it).
-    "run_worker_first": ["/", "/admin", "/admin/*", "/api/admin", "/api/admin/*", "/sitemap-camps.xml"]
+    "run_worker_first": ["/admin", "/admin/*", "/api/admin", "/api/admin/*", "/sitemap-camps.xml"]
   },
 
   "d1_databases": [
@@ -82,23 +77,11 @@
     {
       "binding": "SESSION",
       "id": "1e0eb975e7784b799ecedc05ab754096"
-    },
-    // Inline editor overlay (site chrome + marketing copy). PRODUCTION namespace.
-    // Distinct id from the staging namespace in wrangler.jsonc by requirement,
-    // not by accident — Pillar 13 item 2. Never copy production overlay values
-    // down to staging.
-    {
-      "binding": "CONTENT_OVERLAY",
-      "id": "50d9a32383d8437189f2555b0a154e97"
     }
   ],
 
   "vars": {
     "SITE_URL": "https://parentcoachdesk.com",
-    "ENVIRONMENT": "production",
-    // Kill switch. Set to "false" and redeploy to return every editable region
-    // to its in-repo fallback with no other change. See docs/INLINE-EDITOR.md.
-    "CONTENT_OVERLAY_ENABLED": "true",
     "ADMIN_EMAILS": "eepskalla@gmail.com,jeffthomas4@gmail.com",
     "ACCESS_TEAM_DOMAIN": "fieldforge.cloudflareaccess.com",
     "ACCESS_AUD": "f62ae793e5e4685b8490c8f16ab196069649420860eec79d860921ae4b65aa23",

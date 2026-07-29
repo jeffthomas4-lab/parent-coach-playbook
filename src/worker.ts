@@ -3,8 +3,6 @@ import * as Sentry from '@sentry/cloudflare';
 import type { AdminAuthEnv } from './lib/admin-auth';
 import { enforceAdministrativeRequest } from './lib/admin-runtime-gate';
 import { withWorkerSecurityHeaders } from './lib/security-headers';
-import { applyOverlay } from './lib/overlay-rewriter';
-import type { OverlayEnv } from './lib/content-overlay';
 import {
   createInstrumentedHandler,
   type SentryWorkerEnv,
@@ -13,7 +11,7 @@ import {
 } from './lib/sentry-worker';
 
 type AstroWorkerEnv = Parameters<typeof astroWorker.fetch>[1];
-type PcdWorkerEnv = AstroWorkerEnv & AdminAuthEnv & SentryWorkerEnv & OverlayEnv;
+type PcdWorkerEnv = AstroWorkerEnv & AdminAuthEnv & SentryWorkerEnv;
 
 export async function fetchWithAdminGate(
   request: Request,
@@ -23,14 +21,7 @@ export async function fetchWithAdminGate(
   const url = new URL(request.url);
   const authFailure = await enforceAdministrativeRequest(request, env);
   if (authFailure) return withWorkerSecurityHeaders(authFailure, url.pathname);
-
-  const response = await astroWorker.fetch(request, env, context);
-
-  // Inline editor: swap overlay values into prerendered HTML on the routes that
-  // carry editable regions. Fails open by design — if KV is off, empty or
-  // unreachable, applyOverlay returns the response untouched and the page
-  // renders its in-repo fallbacks. It never throws into this path.
-  return applyOverlay(response, url.pathname, env, request);
+  return astroWorker.fetch(request, env, context);
 }
 
 // The admin-gated composition root is the Worker's real handler.
