@@ -58,12 +58,23 @@ function fail(message, detail) {
   process.exit(1);
 }
 
+// Invoke wrangler's entry script with the current node binary rather than going
+// through `npm exec` or the .bin shim. On Windows the npm executable is npm.cmd,
+// which execFileSync cannot resolve without a shell, and this failed with a bare
+// `spawnSync npm ENOENT` on 2026-07-29. Adding `shell: true` would fix that and
+// introduce quoting bugs on any path containing a space, which this repo's path
+// does ("Claude Cowork"). Calling the .js entry point directly sidesteps both.
+const WRANGLER_ENTRY = resolve(ROOT, 'node_modules/wrangler/bin/wrangler.js');
+if (!existsSync(WRANGLER_ENTRY)) {
+  fail(`wrangler is not installed at ${WRANGLER_ENTRY}`, 'Run npm install, then retry.');
+}
+
 /** Run a read-only wrangler command and parse JSON, or fail loudly. */
 function wrangler(argv) {
-  const printable = `npm exec wrangler -- ${argv.join(' ')}`;
+  const printable = `wrangler ${argv.join(' ')}`;
   let out;
   try {
-    out = execFileSync('npm', ['exec', 'wrangler', '--', ...argv], {
+    out = execFileSync(process.execPath, [WRANGLER_ENTRY, ...argv], {
       cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 32 * 1024 * 1024,
     });
   } catch (error) {
@@ -231,3 +242,4 @@ console.log(`  expires        : ${expiresAt.toISOString()}`);
 console.log('\nNext: point the checker at it, then verify.');
 console.log(`  package.json  "check:rollback-target": "node scripts/check-worker-rollback-target.mjs ${outputRelative}"`);
 console.log('  npm run check:rollback-target');
+console.log('\nThis receipt expires in ' + days + ' days. Re-run this script rather than editing the date.');
