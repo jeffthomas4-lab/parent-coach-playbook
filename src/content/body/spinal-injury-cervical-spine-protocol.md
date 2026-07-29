@@ -32,9 +32,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-02-06
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. NATA, ACEP, AAOS cited. The 'do not remove helmet' rule is the published standard for football-equipped athletes."
+  reviewerNotes: "Sensitive flagged. NATA, ACEP, AAOS cited. The 'do not remove helmet' rule is the published standard for football-equipped athletes. Flo refresh 2026-07-28: links and protocol verified current, no changes needed."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 This is the page you read while it is happening. The protocol below is the next 10 minutes when you suspect a spinal injury.

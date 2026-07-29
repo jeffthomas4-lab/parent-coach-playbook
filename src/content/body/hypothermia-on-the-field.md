@@ -32,9 +32,10 @@ editorial:
   flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-31
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Sensitive flagged. NATA position statement on environmental cold is the primary source. ARC and CDC referenced. Counter-intuitive 'no rapid rewarming' rule called out."
+  reviewerNotes: "Sensitive flagged. NATA position statement on environmental cold is the primary source. ARC and CDC referenced. Counter-intuitive 'no rapid rewarming' rule called out. Flo refresh 2026-07-28: links and protocol verified current, no changes needed."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Hypothermia in youth sports is rare in the headlines, common enough in the data to take seriously. It happens at outdoor practices below 50°F when a kid is wet from rain or sweat, in cross-country runners on long fall trail courses, in soccer goalies who stop moving for 20 minutes, and in swim-meet competitors between heats in cool pool decks.

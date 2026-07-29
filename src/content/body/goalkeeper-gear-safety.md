@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-02-12
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Soccer headgear evidence is contested in published research; framed honestly. Lacrosse goalie gear is well-defined."
+  reviewerNotes: "Soccer headgear evidence is contested in published research; framed honestly. Lacrosse goalie gear is well-defined. Flo refresh 2026-07-28: links, NOCSAE ND200 and ASTM F3137 standards verified current, no changes needed."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 The kid in the cage takes more impacts per game than any other position. The gear that protects them is sport-specific and the rules are different.

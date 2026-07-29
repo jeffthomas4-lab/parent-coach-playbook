@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-14
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "ADA, AAPD, ASD direct sources. Honest about the concussion-marketing gap."
+  reviewerNotes: "ADA, AAPD, ASD direct sources. Honest about the concussion-marketing gap. Flo refresh 2026-07-28: links and NFHS requirement list verified current, no changes needed."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 The mouthguard is one of the lowest-cost, highest-impact pieces of youth-sports gear. The fit matters more than parents realize. The custom-versus-boil-and-bite question has a real answer.

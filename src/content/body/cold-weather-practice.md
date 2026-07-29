@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-01-09
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "January topical. NATA and NWS sources. Wind-chill specifics with concrete thresholds."
+  reviewerNotes: "January topical. NATA and NWS sources. Wind-chill specifics with concrete thresholds. Flo refresh 2026-07-28: links and thresholds verified current, no changes needed."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Cold-weather practice rarely lands in the headline news. Heat does. But cold injures kids every winter in soccer, lacrosse, cross country, and youth football late seasons, and the protocol gets less attention than it should.

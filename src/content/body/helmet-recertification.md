@@ -11,7 +11,7 @@ governingBodies:
   - name: "NOCSAE"
     url: "https://nocsae.org/"
   - name: "NAERA: National Athletic Equipment Reconditioners Association"
-    url: "https://www.naera.org/"
+    url: "https://www.naera.net/"
   - name: "NFHS: Football Equipment Rules"
     url: "https://www.nfhs.org/"
 editorial:
@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-02-01
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Specifically about the recert sticker and the 10-year cap. NAERA and NOCSAE direct sources."
+  reviewerNotes: "Specifically about the recert sticker and the 10-year cap. NAERA and NOCSAE direct sources. Flo refresh 2026-07-28: fixed dead NAERA link (naera.org does not resolve to the org; correct domain is naera.net). 10-year recert cap verified current."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 A football helmet has two dates inside it. The manufacture date and the recertification date. Both matter, and parents who have never looked rarely know which their kid is wearing.

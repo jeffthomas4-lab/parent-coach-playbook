@@ -9,11 +9,11 @@ ageBands: ["8-10", "11-12", "13-14", "15-plus"]
 publishedAt: 2026-02-14
 governingBodies:
   - name: "USA Hockey: Equipment Rules"
-    url: "https://www.usahockey.com/page/show/910900-safety"
+    url: "https://www.usahockey.com/playersafety"
   - name: "HECC: Hockey Equipment Certification Council"
-    url: "https://www.hecc.net/"
+    url: "https://hecc.org/"
   - name: "BNQ: Bureau de normalisation du Québec (neck guard standard)"
-    url: "https://www.usahockey.com/page/show/910900-safety"
+    url: "https://bnq.qc.ca/en/certification/protection-and-safety/neck-protectors-c2.html"
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -23,9 +23,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-02-14
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "Hockey-specific. Cites USA Hockey, HECC, BNQ directly. Fit and oversized-pads point is original."
+  reviewerNotes: "Hockey-specific. Cites USA Hockey, HECC, BNQ directly. Fit and oversized-pads point is original. Flo refresh 2026-07-28: fixed dead HECC link, fixed mislabeled BNQ link (was pointing at USA Hockey), corrected neck-guard rule (mandatory for all skaters and goalies under 18 since 2024-08-01, not just goalies 12 and under)."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Hockey is the most equipment-heavy youth sport. The gear catalog is long, the certifications are specific, and "it'll fit later" is a phrase that gets kids hurt.
@@ -34,9 +35,9 @@ Hockey is the most equipment-heavy youth sport. The gear catalog is long, the ce
 
 Full face shields, not half-cages, are required for players under 18 in USA Hockey. The cage or shield must be HECC-certified for the helmet model.
 
-**Neck guards: the BNQ standard.** USA Hockey requires goalies to wear a Bureau de normalisation du Québec (BNQ)-certified neck and collarbone protector for ages 12 and under. Many leagues mandate it for all goalies. Many also require neck guards for skaters, though the rule is league-specific.
+**Neck guards: the BNQ standard.** Since August 1, 2024, USA Hockey requires a Bureau de normalisation du Québec (BNQ)-certified, or equivalent, neck laceration protector for every player and on-ice official under 18, skaters and goalies alike, in both practices and games. It is not a goalie-only or league-specific rule anymore. USA Hockey adopted it after the on-ice death of professional player Adam Johnson from a skate-blade cut in October 2023.
 
-The neck guard is the piece of equipment that sounds optional and is not. Goalies catch errant skate blades to the throat in a non-trivial percentage of high-speed save sequences. The protector adds little cost to the gear list and dramatically lowers the risk profile.
+The neck guard is the piece of equipment that sounds optional and is not. Skaters and goalies both catch errant skate blades to the throat in a non-trivial percentage of high-speed sequences. The protector adds little cost to the gear list and dramatically lowers the risk profile.
 
 **Mouthguards.** Most USA Hockey-affiliated leagues require mouthguards for skaters under 18. Boil-and-bite is the floor; custom-fit is better; a mouthguard with a tether to the helmet cage is the operational standard for most kids who would otherwise lose it.
 
@@ -58,6 +59,6 @@ Shoulder pads, elbow pads, shin guards: covered area aligned, no compressed foam
 
 Skates: blades hollow-ground at start of season, holders not cracked, laces in good shape.
 
-For goalies: BNQ-certified neck and collarbone protector, mask cage with no welding cracks, throat dangler.
+For every skater and goalie: BNQ-certified (or equivalent) neck laceration protector, worn every practice and every game. For goalies specifically: mask cage with no welding cracks, throat dangler.
 
 The cost of new hockey gear is real. The cost of a bad-fit set of pads is also real, and it shows up as injuries that did not have to happen.

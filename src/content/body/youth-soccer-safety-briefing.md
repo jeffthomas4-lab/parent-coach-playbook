@@ -10,11 +10,11 @@ governingBodies:
   - name: "U.S. Soccer Federation"
     url: "https://www.ussoccer.com/"
   - name: "U.S. Soccer Heading Policy"
-    url: "https://www.ussoccer.com/playerhealth-and-safety/concussion-initiatives"
+    url: "https://www.ussoccer.com/soccer-forward/resource-hub/the-concussion-initiative-and-reducing-heading"
   - name: "AAOS / OrthoInfo: ACL Injury"
     url: "https://orthoinfo.aaos.org/"
   - name: "FIFA 11+ Warm-up"
-    url: "https://www.fifa.com/who-we-are/news/fifa-medical-fifa-11-injury-prevention-programme"
+    url: "https://inside.fifa.com/health-and-medical/injury-prevention"
 editorial:
   qualityGrade: 9
   originalityGrade: 8
@@ -24,9 +24,10 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-02-03
+  claudeReviewedAt: 2026-07-28
   status: claude-reviewed
-  reviewerNotes: "U.S. Soccer heading policy and FIFA 11+ are the load-bearing primary sources. ACL data sourced to AAOS."
+  reviewerNotes: "U.S. Soccer heading policy and FIFA 11+ are the load-bearing primary sources. ACL data sourced to AAOS. Flo refresh 2026-07-28: fixed dead FIFA 11+ link (moved to inside.fifa.com) and stale U.S. Soccer concussion-initiative link. Heading policy (U11 and under banned, 11-13 limited) and ACL rate range verified current."
+  factCheckGoodThrough: 2027-07-28
 ---
 
 Soccer is the highest-participation youth sport in the U.S. The injury data is well-mapped because of that volume. The list below is what shows up most, ranked by frequency and severity.
