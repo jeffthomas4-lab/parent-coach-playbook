@@ -57,6 +57,10 @@
       "control": "mutation"
     },
     {
+      "source": "src/pages/admin/api/content/[key].ts",
+      "control": "mutation"
+    },
+    {
       "source": "src/pages/admin/camps/[id].astro",
       "control": "mutation"
     },
