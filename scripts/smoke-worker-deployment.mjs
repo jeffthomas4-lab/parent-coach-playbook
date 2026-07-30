@@ -15,18 +15,30 @@ const valueAfter = (argv, flag) => {
 // that could carry a credential into a build log.
 const DIAGNOSTIC_HEADERS = ['cf-cache-status', 'cf-ray', 'age', 'content-type', 'content-length', 'etag', 'server'];
 
-// A 404 on the exact built asset tells us the status and nothing else, which is
-// not enough to tell "this version never shipped its assets" apart from "the
-// edge has not caught up yet". So on failure, ask the live origin what asset
-// URLs its own HTML is currently pointing at. If the homepage references a
-// different /_astro/ build than the one we just deployed, the origin is serving
-// an older version and the asset is not the problem.
+// A 404 on the exact built asset alone tells us the status and nothing else,
+// which is not enough to tell "this version never shipped its assets" apart
+// from "the edge cached a negative response before the asset ever propagated".
+// Cloudflare can and does cache a 404 HTML error page under the asset's own
+// content-hashed URL (cf-cache-status: HIT, content-type: text/html), and a
+// retry against that same URL will keep reading the cached negative forever,
+// never the real asset. So on failure: (1) if the response itself looks like
+// a cached negative, say so plainly rather than blaming the build. (2)
+// Otherwise, ask the live origin what asset URLs its own homepage currently
+// references. If the homepage references a different build, that is a real
+// build-mismatch signal worth keeping. If it does not, that is inconclusive
+// rather than proof of a stale build: the asset proof selects the largest
+// hashed asset, which may be a route-specific chunk (for example the Leaflet
+// bundle used only by /camps/) that the homepage would never reference
+// regardless of how fresh the build is.
 async function diagnoseAssetFailure({ base, response, expectedPath, fetchImpl }) {
   const headers = {};
   for (const name of DIAGNOSTIC_HEADERS) {
     const value = response.headers?.get?.(name);
     if (value) headers[name] = value;
   }
+  const cacheStatus = (headers['cf-cache-status'] ?? '').toUpperCase();
+  const contentType = (headers['content-type'] ?? '').toLowerCase();
+  const looksLikeCachedNegative = cacheStatus === 'HIT' || contentType.includes('text/html');
   let referencedAssets = null;
   let note = null;
   try {
@@ -38,9 +50,13 @@ async function diagnoseAssetFailure({ base, response, expectedPath, fetchImpl })
     if (home.status === 200) {
       const html = await home.text();
       referencedAssets = [...new Set(html.match(/\/_astro\/[A-Za-z0-9._-]+\.(?:js|css)/g) ?? [])].slice(0, 8);
-      note = referencedAssets.includes(expectedPath)
-        ? 'The live homepage references the expected asset, so the deployed HTML and the missing asset come from the same build.'
-        : 'The live homepage does NOT reference the expected asset, so the origin is serving HTML from a different build than the one just deployed.';
+      if (looksLikeCachedNegative) {
+        note = 'The failing response looks like a cached negative (cf-cache-status HIT and/or content-type text/html on a JS/CSS path), which a retry against the same URL cannot recover from. This points at asset propagation lag plus edge negative caching, not a missing build.';
+      } else if (referencedAssets.includes(expectedPath)) {
+        note = 'The live homepage references the expected asset, so the deployed HTML and the missing asset come from the same build.';
+      } else {
+        note = 'Inconclusive: the live homepage does not reference the expected asset, but the asset proof selects the largest hashed asset, which can be a route-specific chunk (for example the Leaflet bundle used only by /camps/) that the homepage would never load. This does not by itself indicate a build mismatch.';
+      }
     } else {
       note = `Diagnostic homepage fetch returned ${home.status}, so the asset reference comparison is unavailable rather than assumed.`;
     }
@@ -83,10 +99,24 @@ export async function runDeploymentSmoke({
     let attempts = 0;
     do {
       attempts += 1;
-      response = await fetchImpl(new URL(check.path, base), {
+      // Every attempt asks the edge not to serve a cached response. That alone
+      // reduces the odds of a poisoned negative, but Cloudflare can still hand
+      // back a cached 404 despite the request header, so retries beyond the
+      // first also bust the cache key itself with a unique query param. The
+      // canonical, no-query URL is only ever used on attempt 1 (what a real
+      // user loads) and is what gets recorded in the report below.
+      const requestUrl = new URL(check.path, base);
+      if (check.kind === 'exact_static_asset' && attempts > 1) {
+        requestUrl.searchParams.set('pcd-smoke-retry', `${Date.now()}-${attempts}`);
+      }
+      response = await fetchImpl(requestUrl, {
         method: check.method,
         redirect: 'manual',
-        headers: { 'user-agent': `pcd-${target}-deployment-smoke/2` },
+        headers: {
+          'user-agent': `pcd-${target}-deployment-smoke/2`,
+          'cache-control': 'no-cache',
+          'pragma': 'no-cache',
+        },
       });
       if (check.kind !== 'exact_static_asset' || check.statuses.includes(response.status) || attempts === STATIC_ASSET_MAX_ATTEMPTS) break;
       await sleep(STATIC_ASSET_RETRY_MS);
