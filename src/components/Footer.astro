@@ -8,20 +8,20 @@ const year = new Date().getFullYear();
   <div class="container-px py-16 grid gap-12 md:grid-cols-12">
     <div class="md:col-span-5">
       <Logo size={32} />
-      <p class="font-display text-ink-soft text-lg mt-6 max-w-md leading-snug">
-        <em class="text-rust italic">{SITE.tagline}</em>
+      <p class="font-body text-ink-soft text-lg mt-6 max-w-md leading-snug">
+        <em class="text-rust font-semibold not-italic">{SITE.tagline}</em>
       </p>
-      <p class="font-display text-ink-soft mt-3 max-w-md leading-snug">
+      <p class="font-body text-ink-soft mt-3 max-w-md leading-snug">
         {SITE.shortPitch}
       </p>
-      <a href="/newsletter/" class="inline-block mt-5 font-display italic text-rust font-medium hover:underline">
+      <a href="/newsletter/" class="inline-block mt-5 font-body text-rust font-medium hover:underline">
         → Get the Friday Letter
       </a>
     </div>
 
     <div class="md:col-span-4">
       <div class="t-section mb-3">Explore</div>
-      <ul class="grid gap-2.5 font-display text-ink-soft">
+      <ul class="grid gap-2.5 font-body text-ink-soft">
         <li><a href="/start-here/" class="hover:text-rust">Start here</a></li>
         <li><a href="/sports/" class="hover:text-rust">By sport</a></li>
         <li><a href="/reads/" class="hover:text-rust">Reads</a></li>
@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
 
     <div class="md:col-span-3">
       <div class="t-section mb-3">The Desk</div>
-      <ul class="grid gap-2.5 font-display text-ink-soft">
+      <ul class="grid gap-2.5 font-body text-ink-soft">
         <li><a href="/about/" class="hover:text-rust">About</a></li>
         <li><a href="/newsletter/" class="hover:text-rust">Newsletter</a></li>
         <li><a href="/proof/" class="hover:text-rust">Reviews</a></li>
@@ -45,9 +45,9 @@ const year = new Date().getFullYear();
 
   <div class="border-t border-bone">
     <div class="container-px py-4">
-      <nav aria-label="Legal and policies" class="flex flex-wrap gap-x-4 gap-y-2 font-display italic text-ink-soft text-sm">
+      <nav aria-label="Legal and policies" class="flex flex-wrap gap-x-4 gap-y-2 font-body text-ink-soft text-sm">
         <a href="/disclosure/" class="hover:text-rust">Privacy &amp; disclosure</a>
-        <button type="button" data-privacy-choices class="hover:text-rust cursor-pointer italic">Privacy choices</button>
+        <button type="button" data-privacy-choices class="hover:text-rust cursor-pointer">Privacy choices</button>
         <a href="/terms/" class="hover:text-rust">Terms of use</a>
         <a href="/accessibility/" class="hover:text-rust">Accessibility</a>
         <a href="/trust/" class="hover:text-rust">Corrections &amp; removals</a>
@@ -58,13 +58,13 @@ const year = new Date().getFullYear();
 
   <div class="border-t border-bone">
     <div class="container-px py-6 grid gap-3 md:flex md:justify-between md:items-center">
-      <div class="font-display italic text-muted text-sm">
+      <div class="font-body text-muted text-sm">
         © {year} {SITE.name}.
       </div>
-      <div class="font-display italic text-muted text-sm md:text-right max-w-md">
+      <div class="font-body text-muted text-sm md:text-right max-w-md">
         Some links pay us when you buy. Affiliate relationships are disclosed. As an Amazon Associate we earn from qualifying purchases.
       </div>
-      <div class="font-display italic text-muted text-sm md:text-right">
+      <div class="font-body text-muted text-sm md:text-right">
         Written by {SITE.byline}.
       </div>
     </div>

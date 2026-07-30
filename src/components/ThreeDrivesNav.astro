@@ -27,11 +27,11 @@ const items = [PILLARS['drive-there'], PILLARS.game, PILLARS['drive-home']];
             style={`color: ${isActive ? p.accent : 'var(--navy)'};`}
           >
             <span
-              class="font-display italic"
+              class="font-body"
               style={`color: ${p.accent}; font-weight: 500; font-size: 0.95rem; min-width: 1.6rem;`}
             >{num}</span>
             <span
-              class="font-display text-lg leading-tight transition-colors font-medium"
+              class="font-body text-lg leading-tight transition-colors font-medium"
               onmouseover={`this.style.color='${p.accent}'`}
               onmouseout={`this.style.color='${isActive ? p.accent : 'var(--navy)'}'`}
             >
