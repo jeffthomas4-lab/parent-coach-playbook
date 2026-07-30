@@ -148,7 +148,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
     title={stripTitle(resource.data.title)}
     description={resource.data.summary}
   >
-    <section class="border-b border-bone" style={`background: ${cat.accent}15;`}>
+    <section class="section-band" style={`background: ${cat.accent}15;`}>
       <div class="container-px py-12">
         <p class="font-display italic mb-2" style={`color: ${cat.accent}; font-weight: 500;`}>
           <a href="/team-parent/" class="hover:underline">Team Parent</a> · <a href={`/team-parent/#${cat.slug}`} class="hover:underline">{cat.label}</a>

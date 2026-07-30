@@ -107,7 +107,7 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
   <script slot="head" type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />
   <script slot="head" type="application/ld+json" set:html={serializeJsonLd(breadcrumbSchema)} />
 
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3" style="font-weight: 500;">
         <a href="/camps/" class="hover:underline">Camps</a> ·
@@ -125,7 +125,7 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
   </section>
 
   {sportPills.length > 1 && (
-    <section class="border-b border-bone band-surface">
+    <section class="section-band">
       <div class="container-px py-6 flex flex-wrap gap-2">
         <span class="font-display italic text-ink-soft text-sm self-center mr-2" style="font-weight: 500;">By sport:</span>
         <a
@@ -144,7 +144,7 @@ const ageQS = (band: string | null) => band ? `?ages=${band}` : '';
     </section>
   )}
 
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-4 flex flex-wrap gap-2 items-center">
       <span class="font-display italic text-ink-soft text-sm" style="font-weight: 500;">By age:</span>
       <a

@@ -66,6 +66,17 @@
   --navy: #041E42;
   --muted: #5A6468;          /* muted text, captions */
   --line: #C9D2DA;
+  /* --rule is the SECTION divider, deliberately darker than --bone/--line.
+     Those two are card and input borders at #C9D2DA, which is 1.53:1 on
+     white. That is fine for a border that merely outlines a shape the reader
+     can already see. It is not fine when the rule is the only thing telling
+     the reader one section ended and another began, which is what happened on
+     the sport hubs once --paper-warm collapsed to #FFFFFF and the band
+     alternation went to 1.00:1. #7C8B99 is 3.49:1 on white, clearing the
+     WCAG 1.4.11 non-text bar. Kept as its own token instead of darkening
+     --bone because --bone has 320 usages and most of them are card borders
+     that should not get heavier. */
+  --rule: #7C8B99;
   /* silver (#8A9BA0) is 2.89:1 on white — DECORATIVE ONLY (fills, borders,
      glyphs). Never body text. silver-deep (#5F7075) is the AA-safe
      silver-green for eyebrow/label TEXT — 5.17:1 on white, 4.56:1 on
@@ -367,6 +378,28 @@ body {
   background: var(--surface);
 }
 .band-sunken {
+  background: var(--surface-sunken);
+}
+
+/* ---------- Section bands (everything that is not the homepage) ----------
+   The homepage uses .band above, which carries its own 80px padding. Every
+   other page puts padding on an inner container and hand-rolled the band as
+   `border-b border-bone bg-paper-warm`. That stopped working in the
+   2026-07-29 remap: --paper-warm became #FFFFFF, the same as --surface, so
+   alternating bands sat at 1.00:1 against each other and the only boundary
+   left was a 1.53:1 hairline. Sections ran together, most visibly on the
+   sport hubs where a gear file, a reads list and a calendar stack with
+   nothing between them.
+
+   These two classes replace that pattern. They set background and rule only,
+   never padding, so the existing inner `py-*` on every page is untouched and
+   no vertical rhythm changes. Alternate them the way index.astro alternates
+   .band-surface and .band-sunken. */
+.section-band {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+.section-band-sunken {
   background: var(--surface-sunken);
 }
 .table-zebra {

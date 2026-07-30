@@ -64,7 +64,7 @@ const breadcrumbSchema = {
   )}
 
   <!-- Hero -->
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
@@ -78,7 +78,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- The question reframed -->
-  <section class="border-b border-bone bg-paper-warm">
+  <section class="section-band section-band-sunken">
     <div class="container-px py-8 max-w-3xl">
       <p class="t-eyebrow mb-2">The real question</p>
       <p class="font-display text-ink text-xl leading-snug font-medium">
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Benefits + Costs -->
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         {decision.data.benefits.length > 0 && (
@@ -116,7 +116,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Signs it fits / signs it doesn't -->
-  <section class="border-b border-bone bg-paper-warm">
+  <section class="section-band section-band-sunken">
     <div class="container-px py-10">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         {decision.data.signsItsAGoodFit.length > 0 && (
@@ -145,7 +145,7 @@ const breadcrumbSchema = {
 
   <!-- How to handle it -->
   {decision.data.howToHandleIt.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 max-w-3xl">
         <p class="t-eyebrow mb-3">How to handle the conversation</p>
         <ul class="grid gap-2">
@@ -178,7 +178,7 @@ const breadcrumbSchema = {
 
   <!-- You might also need -->
   {(relatedScripts.length > 0 || relatedDecisions.length > 0) && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-10">
         <p class="t-eyebrow mb-4">You might also need</p>
         <div class="grid md:grid-cols-2 gap-6">

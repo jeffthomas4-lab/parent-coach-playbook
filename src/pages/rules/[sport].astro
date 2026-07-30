@@ -66,7 +66,7 @@ const faqSchema = faqEntries.length > 0
   description={piece.data.summary}
 >
   {faqSchema && <script slot="head" type="application/ld+json" set:html={serializeJsonLd(faqSchema)} />}
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
@@ -83,7 +83,7 @@ const faqSchema = faqEntries.length > 0
   </section>
 
   <!-- Structured rules block -->
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10 md:py-12">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         <div>

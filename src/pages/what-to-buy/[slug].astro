@@ -67,7 +67,7 @@ const itemListSchema = gearItems.length > 0 ? {
   {itemListSchema && (
     <script type="application/ld+json" set:html={serializeJsonLd(itemListSchema)} />
   )}
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/what-to-buy/" class="hover:underline">Gear Files</a> · {meta.category === 'sport' ? 'Sports' : meta.category === 'activity' ? 'Performing arts' : meta.category === 'coach-gear' ? 'Coach gear' : 'Essentials'}

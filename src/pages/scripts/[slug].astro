@@ -94,7 +94,7 @@ const breadcrumbSchema = {
     />
   )}
   <!-- Hero -->
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/scripts/" class="hover:underline">Scripts</a>
@@ -108,7 +108,7 @@ const breadcrumbSchema = {
 
   <!-- Section 1: What they're feeling -->
   {script.data.whatTheyAreFeeling.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 max-w-3xl">
         <p class="t-eyebrow mb-3">What they're feeling</p>
         <ul class="grid gap-2">
@@ -122,7 +122,7 @@ const breadcrumbSchema = {
 
   <!-- Section 2: What to say -->
   {script.data.whatToSay.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-10 max-w-3xl">
         <p class="t-eyebrow mb-3">What to say (pick one)</p>
         <ul class="grid gap-3">
@@ -139,7 +139,7 @@ const breadcrumbSchema = {
 
   <!-- Section 3: What NOT to say -->
   {script.data.whatNotToSay.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 max-w-3xl">
         <p class="t-eyebrow mb-3">What not to say</p>
         <ul class="grid gap-2">
@@ -163,7 +163,7 @@ const breadcrumbSchema = {
 
   <!-- Section 5: If they bring it up -->
   {script.data.ifTheyBringItUp.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 max-w-3xl">
         <p class="t-eyebrow mb-3">If they bring it up</p>
         <ul class="grid gap-2">
@@ -177,7 +177,7 @@ const breadcrumbSchema = {
 
   <!-- Section 6: Save block -->
   {script.data.saveBlockBullets.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-10 max-w-3xl">
         <div class="border-2 border-ink p-6 bg-paper">
           <p class="t-eyebrow mb-2">Pin this</p>
@@ -208,7 +208,7 @@ const breadcrumbSchema = {
 
   <!-- Related scripts (You might also need) -->
   {related.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-10">
         <p class="t-eyebrow mb-4">You might also need</p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
