@@ -64,6 +64,15 @@
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Illustrations. Content-addressed by hand: a file's contents never change
+# under a given name — a new picture gets a new filename — so these are safe to
+# cache like hashed bundles. Before this rule they inherited the framework
+# default (`max-age=0, must-revalidate`) and every illustration on the page
+# round-tripped to the edge on every visit. Confirmed live 2026-07-30: the
+# 134KB homepage hero revalidated on each load. That is the LCP image on mobile.
+/illustrations/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Long-lived static assets that we update in place (no content hash). One day
 # at the edge, an hour in the browser, allow stale-while-revalidate.
 /og-default.jpg
