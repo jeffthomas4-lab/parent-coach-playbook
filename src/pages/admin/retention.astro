@@ -5,24 +5,31 @@ import { requireAdmin } from '../../lib/admin-auth';
 import { runRetentionAudit } from '../../lib/retention-audit';
 
 export const prerender = false;
-const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string } | undefined;
+const env = cfEnv as { DB?: D1Database; PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string; ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string } | undefined;
 const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
-const results = env?.PCD_OPS_DB ? await runRetentionAudit(env.PCD_OPS_DB) : [];
+// The audited tables are split across two bindings — only trust_cases lives in
+// the operational database, the other six are still in the shared directory
+// database — so the whole env goes in and each policy names the binding that
+// holds its table. Every statement the audit issues is a SELECT.
+const results = await runRetentionAudit(env);
+// Only suppress the whole table when no audited database is reachable at all.
+// A single missing binding now degrades one row, not the entire report.
+const noDatabaseReachable = results.every((row) => row.error === 'database-unavailable');
 ---
 <AdminLayout title="Retention aging report" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2">Admin · Privacy operations</p>
-    <h1 class="font-display text-ink text-4xl font-medium">Retention aging report</h1>
+    <h1 class="t-h1-compact font-display text-ink font-medium">Retention aging report</h1>
     <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only counts of data domains crossing a review horizon. A row never authorizes deletion. Approved schedules, legal holds, backup propagation, a dry run, recovery proof, and explicit production approval remain required.</p>
   </div></section>
   <section class="container-px py-10">
-    {!env?.PCD_OPS_DB ? <p class="text-rust">Operational database unavailable. No retention conclusion can be drawn.</p> : <div class="overflow-x-auto"><table class="w-full border-collapse text-left">
+    {noDatabaseReachable ? <p class="text-rust">Retention databases unavailable. No retention conclusion can be drawn.</p> : <div class="overflow-x-auto"><table class="w-full border-collapse text-left">
       <thead><tr class="border-b border-bone"><th class="p-3">Domain</th><th class="p-3">Table</th><th class="p-3">Horizon</th><th class="p-3">Total</th><th class="p-3">Past horizon</th><th class="p-3">Oldest</th><th class="p-3">State</th></tr></thead>
       <tbody>{results.map((row) => <tr class="border-b border-bone align-top">
         <td class="p-3">{row.domain}</td><td class="p-3 font-mono text-xs">{row.table}</td><td class="p-3">{row.reviewAfterDays} days</td>
         <td class="p-3">{row.totalPersonalRecords ?? '—'}</td><td class="p-3">{row.recordsPastReviewHorizon ?? '—'}</td><td class="p-3">{row.oldestRecordAt ?? '—'}</td>
-        <td class="p-3">{!row.tablePresent ? 'Not installed' : row.error ? 'Query unavailable' : row.disposition === 'proposal-only' ? 'Policy proposal' : 'Counsel decision required'}</td>
+        <td class="p-3">{row.error === 'database-unavailable' ? 'Database unavailable' : row.error ? 'Query unavailable' : !row.tablePresent ? 'Not installed' : row.disposition === 'proposal-only' ? 'Policy proposal' : 'Counsel decision required'}</td>
       </tr>)}</tbody>
     </table></div>}
   </section>

@@ -45,8 +45,8 @@ const scriptReads = scripts
   {/* Hero — names the niche directly */}
   <section class="border-b border-bone">
     <div class="container-px py-16 md:py-24">
-      <p class="font-display italic text-rust mb-4 font-medium">The parent-coach</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4.5rem] leading-[1.0] max-w-4xl font-medium">
+      <p class="t-eyebrow mb-4">The parent-coach</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-4xl font-medium">
         If you're <em class="italic text-rust">also</em> on the bench.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-7 max-w-2xl leading-relaxed">
@@ -72,15 +72,15 @@ const scriptReads = scripts
   {cornerstone.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-14 md:py-16">
-        <p class="font-display italic text-rust mb-2 font-medium">If you only read three</p>
-        <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-8">
+        <p class="t-eyebrow mb-2">If you only read three</p>
+        <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium mb-8">
           The <em class="text-rust">cornerstone</em> pieces.
         </h2>
         <ul class="grid md:grid-cols-3 gap-px bg-bone">
           {cornerstone.map((c) => (
             <li class="bg-paper p-6 hover:bg-paper-warm transition-colors group">
               <a href={`/${c.data.phase}/${c.id}/`} class="block">
-                <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(c.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(c.data.title)} />
                 {c.data.dek && (
                   <p class="font-display text-ink-soft text-sm mt-3 leading-snug">{c.data.dek}</p>
                 )}
@@ -98,8 +98,8 @@ const scriptReads = scripts
     <div class="container-px py-14 md:py-16">
       <div class="grid lg:grid-cols-12 gap-10 items-start">
         <div class="lg:col-span-7">
-          <p class="font-display italic text-rust mb-2 font-medium">For practice this week</p>
-          <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium">
+          <p class="t-eyebrow mb-2">For practice this week</p>
+          <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium">
             Drills you can <em class="text-rust">actually run</em>.
           </h2>
           <p class="font-display text-ink-soft text-lg mt-4 max-w-xl leading-snug">
@@ -133,8 +133,8 @@ const scriptReads = scripts
   {decisionReads.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-14 md:py-16">
-        <p class="font-display italic text-rust mb-2 font-medium">The decisions</p>
-        <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-7">
+        <p class="t-eyebrow mb-2">The decisions</p>
+        <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium mb-7">
           Should I <em class="text-rust">coach this team</em>?
         </h2>
         <ul class="grid md:grid-cols-2 gap-x-6 gap-y-1 max-w-3xl">
@@ -157,8 +157,8 @@ const scriptReads = scripts
   {scriptReads.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-14 md:py-16">
-        <p class="font-display italic text-rust mb-2 font-medium">For the moment in the car</p>
-        <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-7">
+        <p class="t-eyebrow mb-2">For the moment in the car</p>
+        <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium mb-7">
           What to <em class="text-rust">say</em>.
         </h2>
         <ul class="grid md:grid-cols-2 gap-x-6 gap-y-1 max-w-3xl">

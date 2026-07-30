@@ -31,7 +31,7 @@ const fmt = (s: string) =>
       <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Suggestions
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Suggested organizations</h1>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">Suggested organizations</h1>
       <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
         Leads from the public "suggest an organization" form. Research each one, then either build the full listing through the normal camps pipeline and mark <strong>imported</strong>, or mark <strong>reviewed</strong> if it's not actionable yet.
       </p>
@@ -56,7 +56,7 @@ const fmt = (s: string) =>
               <p class="font-display italic text-rust text-xs font-medium">
                 {s.status} · {fmt(s.submitted_at)}
               </p>
-              <h3 class="font-display text-ink text-lg leading-tight mt-1 font-medium">
+              <h3 class="t-h3 font-display text-ink leading-tight mt-1 font-medium">
                 {s.org_website ? <a href={s.org_website} class="hover:text-rust" target="_blank" rel="noopener">{s.org_name}</a> : s.org_name}
               </h3>
               <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
@@ -74,11 +74,11 @@ const fmt = (s: string) =>
                 </button>
                 <form method="POST" action={`/api/admin/suggestions/${s.id}/update`}>
                   <input type="hidden" name="status" value="imported" />
-                  <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark imported</button>
+                  <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark imported</button>
                 </form>
                 <form method="POST" action={`/api/admin/suggestions/${s.id}/update`}>
                   <input type="hidden" name="status" value="reviewed" />
-                  <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark reviewed</button>
+                  <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium w-full">Mark reviewed</button>
                 </form>
                 <p data-status class="font-display italic text-ink-soft text-xs mt-1 col-span-full" style="display: none;"></p>
               </div>

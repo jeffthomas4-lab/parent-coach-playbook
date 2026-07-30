@@ -17,8 +17,8 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- Hero: what this section is, fast -->
   <section class="border-b border-bone">
     <div class="container-px py-10 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">The Gear Files</p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[4rem] leading-[1.05] max-w-3xl font-medium">
+      <p class="t-eyebrow mb-3">The Gear Files</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.05] max-w-3xl font-medium">
         What you <em class="text-rust">actually need</em>, by sport.
       </h1>
       <p class="font-display text-ink-soft text-lg md:text-2xl mt-5 max-w-2xl leading-snug">
@@ -30,7 +30,7 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- What this section is: the explainer Jeff asked for -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-8 md:py-10 max-w-3xl">
-      <p class="font-display italic text-rust mb-3 text-sm font-medium">How this works</p>
+      <p class="t-eyebrow mb-3">How this works</p>
       <p class="font-display text-ink leading-relaxed text-base md:text-lg">
         Pick your sport or activity below. Each guide has a starter list, the gear that actually matters, and what to skip. Sizing companion pages where the sport needs them. Affiliate links where used; <a href="/disclosure/" class="text-rust hover:underline">disclosure here</a>.
       </p>
@@ -42,11 +42,11 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
     <div class="container-px py-5">
       <p class="font-display italic text-ink-soft text-xs mb-3 font-medium">Jump to</p>
       <div class="flex flex-wrap gap-2">
-        <a href="#team-sports"       class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Team sports</a>
-        <a href="#individual-sports" class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Individual sports</a>
-        <a href="#performing-arts"   class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Performing arts</a>
-        <a href="#essentials"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Essentials</a>
-        <a href="#coach-gear"        class="font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Coach gear</a>
+        <a href="#team-sports"       class="min-h-11 inline-flex items-center justify-center font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Team sports</a>
+        <a href="#individual-sports" class="min-h-11 inline-flex items-center justify-center font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Individual sports</a>
+        <a href="#performing-arts"   class="min-h-11 inline-flex items-center justify-center font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Performing arts</a>
+        <a href="#essentials"        class="min-h-11 inline-flex items-center justify-center font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Essentials</a>
+        <a href="#coach-gear"        class="min-h-11 inline-flex items-center justify-center font-display italic text-ink hover:text-rust border border-bone px-4 py-2 hover:bg-paper-warm transition-colors text-sm font-medium">Coach gear</a>
       </div>
     </div>
   </section>
@@ -54,7 +54,7 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- Team sports: compact text-list grid (mobile-fast) -->
   <section id="team-sports" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Team sports</p>
+      <p class="t-eyebrow mb-4">Team sports</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {teamSports.map((g) => (
           <li>
@@ -71,7 +71,7 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- Individual sports -->
   <section id="individual-sports" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Individual sports</p>
+      <p class="t-eyebrow mb-4">Individual sports</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {individualSports.map((g) => (
           <li>
@@ -88,7 +88,7 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- Performing arts -->
   <section id="performing-arts" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Performing arts</p>
+      <p class="t-eyebrow mb-4">Performing arts</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {performingArts.map((g) => (
           <li>
@@ -105,7 +105,7 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- Essentials -->
   <section id="essentials" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-4 font-medium" style="font-size: 1.05rem">Essentials</p>
+      <p class="t-eyebrow mb-4">Essentials</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {essentials.map((g) => (
           <li>
@@ -122,7 +122,7 @@ const coachGear        = BUYING_GUIDES.filter(g => g.category === 'coach-gear');
   <!-- Coach gear -->
   <section id="coach-gear" class="border-b border-bone scroll-mt-16">
     <div class="container-px py-8 md:py-10">
-      <p class="font-display italic text-rust mb-2 font-medium" style="font-size: 1.05rem">Coach gear</p>
+      <p class="t-eyebrow mb-2">Coach gear</p>
       <p class="font-display text-ink-soft text-sm mb-4 max-w-xl">For the parent who's also on the bench. Clipboard, timer, video, training gear, and event supplies.</p>
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
         {coachGear.map((g) => (

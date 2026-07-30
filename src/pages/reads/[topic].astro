@@ -41,8 +41,8 @@ const ageLabel = (a: string | undefined) =>
       <div class="grid md:grid-cols-12 gap-8">
         <div class="md:col-span-4">
           <TopicIcon topic={topic} size={64} />
-          <p class="font-display italic text-rust mb-2 mt-3 font-medium">Topic</p>
-          <h1 class="font-display text-ink text-3xl md:text-4xl leading-[1.07] font-medium">
+          <p class="t-eyebrow mb-2 mt-3">Topic</p>
+          <h1 class="t-h1-compact font-display text-ink leading-[1.07] font-medium">
             {topicMeta.label}
           </h1>
           <p class="font-display text-ink-soft mt-3 leading-snug">{topicMeta.blurb}</p>
@@ -57,9 +57,9 @@ const ageLabel = (a: string | undefined) =>
               {/* Age filter */}
               <div class="flex flex-wrap items-center gap-2" data-age-filter>
                 <span class="font-display italic text-ink-soft text-sm font-medium">Age:</span>
-                <button data-age="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All ages</button>
+                <button data-age="" class="font-display italic inline-flex items-center min-h-11 px-2 py-0.5 border border-accent bg-accent text-paper text-xs font-medium">All ages</button>
                 {AGE_BANDS.map((a) => (
-                  <button data-age={a.slug} class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">{a.label}</button>
+                  <button data-age={a.slug} class="font-display italic inline-flex items-center min-h-11 px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">{a.label}</button>
                 ))}
               </div>
               {/* Sport dropdown */}
@@ -67,7 +67,7 @@ const ageLabel = (a: string | undefined) =>
                 <span class="font-display italic text-ink-soft text-sm font-medium">Sport:</span>
                 <select
                   data-sport-select
-                  class="font-display italic px-2 py-1 border border-bone text-ink-soft text-sm"
+                  class="min-h-11 font-display italic px-2 py-1 border border-bone text-ink-soft text-sm"
                 >
                   <option value="">All sports</option>
                   {SPORTS.slice(0, 8).map((s) => (
@@ -79,9 +79,9 @@ const ageLabel = (a: string | undefined) =>
               {/* Format toggle */}
               <div class="flex flex-wrap items-center gap-2" data-format-filter>
                 <span class="font-display italic text-ink-soft text-sm font-medium">Format:</span>
-                <button data-format="" class="font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All</button>
-                <button data-format="note" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Note</button>
-                <button data-format="essay" class="font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Essay</button>
+                <button data-format="" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-0.5 border border-ink bg-ink text-paper text-xs font-medium">All</button>
+                <button data-format="note" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Note</button>
+                <button data-format="essay" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-0.5 border border-bone text-ink-soft text-xs hover:bg-paper font-medium">Essay</button>
               </div>
               {/* Search */}
               <div class="flex items-center gap-2">
@@ -89,7 +89,7 @@ const ageLabel = (a: string | undefined) =>
                   type="search"
                   placeholder="Search this topic..."
                   data-search-input
-                  class="w-full max-w-sm px-2 py-1 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"
+                  class="min-h-11 w-full max-w-sm px-2 py-1 font-body bg-paper border border-bone focus:border-rust text-sm"
                 />
               </div>
             </div>
@@ -108,7 +108,7 @@ const ageLabel = (a: string | undefined) =>
                         <img
                           src={a.data.hero}
                           alt={a.data.heroAlt || a.data.title}
-                          class="w-full h-32 object-cover rounded mb-3 group-hover:opacity-90 transition-opacity"
+                          class="w-full h-32 object-cover rounded-card mb-3 group-hover:opacity-90 transition-opacity"
                           loading="lazy"
                           decoding="async"
                           width="600"
@@ -126,7 +126,7 @@ const ageLabel = (a: string | undefined) =>
                         </p>
                       </div>
                       <h3
-                        class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium"
+                        class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium"
                         set:html={renderTitle(a.data.title)}
                       />
                       {a.data.dek && (

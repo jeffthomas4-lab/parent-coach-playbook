@@ -87,8 +87,8 @@ const sections = [
 <AdminLayout title="Admin desk" description="Parent Coach Desk administration" email={adminEmail}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2 font-medium">Admin</p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <p class="t-eyebrow mb-2">Admin</p>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         Desk operations
       </h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
@@ -106,9 +106,9 @@ const sections = [
               href={section.href}
               class="block h-full border border-bone bg-paper p-5 transition-colors hover:bg-paper-warm"
             >
-              <h2 class="font-display text-ink text-xl font-medium">{section.title}</h2>
+              <h2 class="t-h2 font-display text-ink font-medium">{section.title}</h2>
               <p class="font-display text-ink-soft mt-2 text-sm leading-snug">{section.description}</p>
-              <p class="font-display italic text-rust mt-4 text-sm font-medium">Open workspace →</p>
+              <p class="t-eyebrow mt-4">Open workspace →</p>
             </a>
           </li>
         ))}
@@ -118,8 +118,8 @@ const sections = [
 
   <section class="border-t border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2 font-medium">Affiliate inventory reconciliation</p>
-      <h2 class="font-display text-ink text-2xl leading-tight font-medium">Governed snapshot</h2>
+      <p class="t-eyebrow mb-2">Affiliate inventory reconciliation</p>
+      <h2 class="t-h2 font-display text-ink leading-tight font-medium">Governed snapshot</h2>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
         Read-only report generated from the committed inventory: this desk cannot activate an account, change a destination, or publish a link.
         Fix entries in <code>src/data/affiliates.json</code> and regenerate the report.
@@ -143,7 +143,7 @@ const sections = [
         </div>
       </dl>
 
-      <h3 class="font-display text-ink text-xl mt-8 font-medium">Unreferenced inventory candidates</h3>
+      <h3 class="t-h3 font-display text-ink mt-8 font-medium">Unreferenced inventory candidates</h3>
       <p class="font-display text-ink-soft mt-2 text-sm leading-snug">
         Inventory entries no committed content references. Retire them from the inventory or link them from content.
       </p>

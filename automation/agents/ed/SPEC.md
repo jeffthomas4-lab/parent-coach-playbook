@@ -1,5 +1,7 @@
 # Ed: Editorial
 
+> **SUPERSEDED 2026-07-29.** The scheduled tasks are the source of truth. Ed's scope now runs as `pcd-editorial-writer` (daily draft), `pcd-review-publish` (Penny, daily reviewer-publisher), `pcd-blog-refresher` (Flo) and `pcd-freshness-audit`. This SPEC is the design record for that pipeline, not a separate agent to build. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-13 (Session 3 of the PCD Automation Build Plan). Third agent on the roster.
 **Workstream:** Editorial (S9, S11).
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Ed.

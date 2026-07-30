@@ -42,6 +42,50 @@ const USER_AGENT = 'Mozilla/5.0 (compatible; ParentCoachDeskLinkChecker/1.0; +ht
 export const RECHECK_TIMEOUT_MS = 10_000;
 
 /**
+ * The complete set of strings a failed fetch can put in `notes`. The value is
+ * persisted to link_health, handed back in the recheck API response, and
+ * rendered on /admin/link-health/, so it has to be a fixed vocabulary rather
+ * than whatever text the remote host or the runtime happened to produce.
+ * Four buckets, because those are the four an admin acts on differently:
+ * the host is slow, the host is unreachable, the certificate is bad, or
+ * something else went wrong and the logs have it.
+ */
+export const FETCH_FAILURE_NOTES = {
+  timeout: 'fetch failed: timed out',
+  connection: 'fetch failed: dns or connection error',
+  tls: 'fetch failed: tls error',
+  other: 'fetch failed: unknown error',
+} as const;
+
+const TIMEOUT_CODES = new Set(['ETIMEDOUT', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_HEADERS_TIMEOUT', 'UND_ERR_BODY_TIMEOUT']);
+const CONNECTION_CODES = new Set([
+  'ENOTFOUND', 'EAI_AGAIN', 'ECONNREFUSED', 'ECONNRESET', 'EHOSTUNREACH', 'ENETUNREACH', 'EPIPE', 'EPROTO',
+]);
+
+/**
+ * Buckets a thrown fetch error by its name/code — never by its message, which
+ * can carry the remote host's own text. Returns one of FETCH_FAILURE_NOTES.
+ */
+function classifyFetchFailure(err: unknown): string {
+  const e = (err ?? {}) as { name?: string; code?: string; cause?: { name?: string; code?: string } };
+  const name = String(e.name ?? e.cause?.name ?? '');
+  const code = String(e.code ?? e.cause?.code ?? '');
+
+  if (name === 'TimeoutError' || name === 'AbortError' || TIMEOUT_CODES.has(code)) {
+    return FETCH_FAILURE_NOTES.timeout;
+  }
+  if (code.startsWith('ERR_TLS') || code.startsWith('ERR_SSL') || code.startsWith('CERT_') ||
+      code === 'DEPTH_ZERO_SELF_SIGNED_CERT' || code === 'UNABLE_TO_VERIFY_LEAF_SIGNATURE' ||
+      code === 'SELF_SIGNED_CERT_IN_CHAIN' || code === 'HOSTNAME_MISMATCH') {
+    return FETCH_FAILURE_NOTES.tls;
+  }
+  if (CONNECTION_CODES.has(code)) {
+    return FETCH_FAILURE_NOTES.connection;
+  }
+  return FETCH_FAILURE_NOTES.other;
+}
+
+/**
  * Server-side fetch of a single URL for the admin "Recheck now" action.
  * HEAD first, falling back to GET when HEAD is rejected or unsupported —
  * mirrors worker-link-checker/src/index.ts's checkLink, on a shorter
@@ -73,7 +117,11 @@ export async function checkLinkNow(url: string): Promise<LinkCheckResult> {
       notes.push('HEAD not supported; checked via GET');
     }
   } catch (err) {
-    notes.push(`fetch threw: ${(err as Error).message}`);
+    // Whatever lands in notes gets stored in D1, echoed by the recheck API and
+    // rendered on the dashboard, so only the bucketed reason goes in. The full
+    // error stays server-side, where debugging actually happens.
+    console.error('[link-health] recheck fetch failed', url, err);
+    notes.push(classifyFetchFailure(err));
     return {
       statusCode: null,
       finalUrl: url,

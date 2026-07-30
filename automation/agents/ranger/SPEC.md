@@ -1,5 +1,7 @@
 # Ranger: Camp Discovery, Data Quality, and the Database Safety Net
 
+> **SUPERSEDED 2026-07-29.** Ranger never ran. His scope now runs as `pcd-camps-data-steward`, `pcd-evergreen-daily`, `org-discovery-daily-worklist`, `pcd-camp-info-requests` and `pcd-backup`. Design record only. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-15 (Session 6 of the PCD Automation Build Plan). Fifth agent on the roster.
 **Workstream:** Camp lead generation (S7, S8), plus the D1 backup and rollback path (Open Item 10).
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Ranger, plus the two Phase-5 additions the manual allows (a stated rollback path and a named owner workstream), because this is the one agent that needs both.

@@ -49,14 +49,6 @@
       "control": "mutation"
     },
     {
-      "source": "src/pages/admin/api/camps/[id]/reject.ts",
-      "control": "mutation"
-    },
-    {
-      "source": "src/pages/admin/api/camps/[id]/verify.ts",
-      "control": "mutation"
-    },
-    {
       "source": "src/pages/admin/camps/[id].astro",
       "control": "mutation"
     },

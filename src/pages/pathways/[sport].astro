@@ -48,7 +48,7 @@ const bandAccent: Record<string, string> = {
         <a href="/pathways/" class="hover:underline">Age pathways</a> ·
         {sportLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(pathway.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(pathway.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {pathway.data.summary}
       </p>
@@ -62,14 +62,14 @@ const bandAccent: Record<string, string> = {
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-3">
             <p class="font-display italic mb-2 text-sm" style={`color: ${bandAccent[b.age]}; font-weight: 500;`}>Age band</p>
-            <h2 class="font-display text-ink text-3xl md:text-4xl leading-[1.0] font-medium">
+            <h2 class="t-h2 font-display text-ink leading-[1.0] font-medium">
               {bandLabel(b.age)}
             </h2>
           </div>
           <div class="md:col-span-9 grid md:grid-cols-2 gap-x-8 gap-y-6">
             {b.skillMilestones && b.skillMilestones.length > 0 && (
               <div>
-                <p class="font-display italic text-rust text-sm mb-2 font-medium">Skill milestones</p>
+                <p class="t-eyebrow mb-2">Skill milestones</p>
                 <ul class="grid gap-1.5">
                   {b.skillMilestones.map((s) => (
                     <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
@@ -79,7 +79,7 @@ const bandAccent: Record<string, string> = {
             )}
             {b.practiceShape && b.practiceShape.length > 0 && (
               <div>
-                <p class="font-display italic text-rust text-sm mb-2 font-medium">What good practice looks like</p>
+                <p class="t-eyebrow mb-2">What good practice looks like</p>
                 <ul class="grid gap-1.5">
                   {b.practiceShape.map((s) => (
                     <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
@@ -89,7 +89,7 @@ const bandAccent: Record<string, string> = {
             )}
             {b.socialEmotional && b.socialEmotional.length > 0 && (
               <div>
-                <p class="font-display italic text-rust text-sm mb-2 font-medium">Social and emotional</p>
+                <p class="t-eyebrow mb-2">Social and emotional</p>
                 <ul class="grid gap-1.5">
                   {b.socialEmotional.map((s) => (
                     <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
@@ -99,7 +99,7 @@ const bandAccent: Record<string, string> = {
             )}
             {b.decisionPoints && b.decisionPoints.length > 0 && (
               <div>
-                <p class="font-display italic text-rust text-sm mb-2 font-medium">Parent decision points</p>
+                <p class="t-eyebrow mb-2">Parent decision points</p>
                 <ul class="grid gap-1.5">
                   {b.decisionPoints.map((s) => (
                     <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
@@ -119,8 +119,8 @@ const bandAccent: Record<string, string> = {
       <div class="container-px py-10">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-3">
-            <p class="font-display italic text-rust mb-2 text-sm font-medium">Body hub link</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05] font-medium">
+            <p class="t-eyebrow mb-2">Body hub link</p>
+            <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium">
               Do not do this <em class="text-rust">yet</em>.
             </h2>
             <p class="font-display italic text-ink-soft text-sm mt-3 font-medium">
@@ -145,8 +145,8 @@ const bandAccent: Record<string, string> = {
       <div class="container-px py-10">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-3">
-            <p class="font-display italic text-rust mb-2 text-sm font-medium">Reframe</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl leading-[1.05] font-medium">
+            <p class="t-eyebrow mb-2">Reframe</p>
+            <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium">
               If your kid is <em class="text-rust">"ahead" or "behind"</em>.
             </h2>
           </div>
@@ -163,10 +163,10 @@ const bandAccent: Record<string, string> = {
   )}
 
   <!-- LTAD closing line -->
-  <section class="border-b border-bone bg-ink text-paper">
+  <section class="border-t-4 border-t-accent border-b border-b-bone bg-stripe">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm font-medium" style="color: #8A9BA0">Where your kid is on the path</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
+      <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">Where your kid is on the path</p>
+      <p class="font-display text-ink text-2xl md:text-3xl leading-snug font-medium">
         {pathway.data.ltadStage}
       </p>
     </div>
@@ -183,7 +183,7 @@ const bandAccent: Record<string, string> = {
   {(relatedBody.length > 0 || relatedCalendars.length > 0) && (
     <section class="border-t border-bone bg-paper-warm">
       <div class="container-px py-10">
-        <p class="font-display italic text-rust mb-4 font-medium">For this sport</p>
+        <p class="t-eyebrow mb-4">For this sport</p>
         <div class="grid md:grid-cols-3 gap-6">
           {relatedBody.length > 0 && (
             <div>

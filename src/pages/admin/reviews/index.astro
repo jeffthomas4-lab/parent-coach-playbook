@@ -40,7 +40,7 @@ const fmt = (s: string) =>
       <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Reviews
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Pending reviews</h1>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">Pending reviews</h1>
       <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
         {reviewsEnabled
           ? 'Review moderation is enabled for this environment.'
@@ -71,7 +71,7 @@ const fmt = (s: string) =>
                 <p class="font-display italic text-rust text-xs font-medium">
                   {r.rating}/5 · {fmt(r.submitted_at)} · from {r.reviewer_email}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight mt-1 font-medium">
+                <h3 class="t-h3 font-display text-ink leading-tight mt-1 font-medium">
                   {camp ? (
                     <a href={`/camps/${camp.slug}/`} class="hover:text-rust" target="_blank" rel="noopener">{camp.name}</a>
                   ) : (
@@ -82,10 +82,10 @@ const fmt = (s: string) =>
                 <p class="font-display text-ink-soft text-sm mt-3 leading-snug" style="white-space: pre-wrap;">{r.body}</p>
                 <div class="flex flex-wrap gap-2 mt-4">
                   <form method="POST" action={`/api/admin/reviews/${r.id}/approve`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium">Approve</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium">Approve</button>
                   </form>
                   <form method="POST" action={`/api/admin/reviews/${r.id}/reject`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>
               </li>

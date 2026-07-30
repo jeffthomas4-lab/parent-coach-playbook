@@ -19,7 +19,6 @@ vi.mock('../../src/lib/camps-db', async () => {
 });
 
 import { POST } from '../../src/pages/api/admin/camps/[id]/reject';
-import { POST as adminApiPOST } from '../../src/pages/admin/api/camps/[id]/reject';
 import * as campsDb from '../../src/lib/camps-db';
 
 const ADMIN_EMAILS = 'jeffthomas@pugetsound.edu';
@@ -130,58 +129,6 @@ describe('POST /api/admin/camps/:id/reject', () => {
     const req = adminRequest({}, { origin: 'https://evil.example.com' });
     const ctx = makeContext({ request: req, params: { id: 'camp_1' }, env: { DB: {}, ADMIN_EMAILS } });
     const res = await POST(ctx);
-    expect(res.status).toBe(403);
-    expect(campsDb.rejectCamp).not.toHaveBeenCalled();
-  });
-});
-
-// Mirror route under /admin/api/*. Imports the exact same rejectCamp from
-// src/lib/camps-db (mocked once, above, for this whole test file), so the
-// atomicity/idempotency guarantee is shared — this block only needs to
-// confirm the mirror route wires transitioned -> upsert the same way.
-describe('POST /admin/api/camps/:id/reject (mirror route, same rejectCamp)', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-    (campsDb.rejectCamp as any).mockResolvedValue({ camp: mockCamp, transitioned: true });
-    (campsDb.upsertDomainQuality as any).mockResolvedValue(undefined);
-  });
-
-  it('happy path: transitions once and upserts domain quality once', async () => {
-    const ctx = makeContext({
-      request: adminRequest({ notes: 'dead link', reason_code: 'dead-url' }),
-      params: { id: 'camp_1' },
-      env: { DB: {}, ADMIN_EMAILS },
-    });
-    const res = await adminApiPOST(ctx);
-    expect(res.status).toBe(303);
-    expect(campsDb.rejectCamp).toHaveBeenCalledWith(expect.anything(), 'camp_1', 'jeffthomas@pugetsound.edu', 'dead link', 'dead-url');
-    expect(campsDb.upsertDomainQuality).toHaveBeenCalledTimes(1);
-  });
-
-  it('sequential replay: a second reject on an already-rejected camp does not upsert', async () => {
-    (campsDb.rejectCamp as any).mockResolvedValue({ camp: mockCamp, transitioned: false });
-    const ctx = makeContext({
-      request: adminRequest({ notes: 'dead link', reason_code: 'dead-url' }),
-      params: { id: 'camp_1' },
-      env: { DB: {}, ADMIN_EMAILS },
-    });
-    const res = await adminApiPOST(ctx);
-    expect(res.status).toBe(303);
-    expect(campsDb.upsertDomainQuality).not.toHaveBeenCalled();
-  });
-
-  it('failure path: a camp id that does not exist returns 404 and never upserts', async () => {
-    (campsDb.rejectCamp as any).mockResolvedValue({ camp: null, transitioned: false });
-    const ctx = makeContext({ request: adminRequest(), params: { id: 'does-not-exist' }, env: { DB: {}, ADMIN_EMAILS } });
-    const res = await adminApiPOST(ctx);
-    expect(res.status).toBe(404);
-    expect(campsDb.upsertDomainQuality).not.toHaveBeenCalled();
-  });
-
-  it('failure path: a cross-origin request is rejected even with valid admin auth', async () => {
-    const req = adminRequest({}, { origin: 'https://evil.example.com' });
-    const ctx = makeContext({ request: req, params: { id: 'camp_1' }, env: { DB: {}, ADMIN_EMAILS } });
-    const res = await adminApiPOST(ctx);
     expect(res.status).toBe(403);
     expect(campsDb.rejectCamp).not.toHaveBeenCalled();
   });

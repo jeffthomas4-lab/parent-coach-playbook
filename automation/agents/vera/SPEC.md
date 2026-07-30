@@ -1,5 +1,7 @@
 # Vera: Compliance
 
+> **LIVE 2026-07-29.** Runs as the scheduled task `pcd-deletion-monitor` (daily 7:04 AM), exactly as the reconcile note below already states. This SPEC is current. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-15 (Session 7 of the PCD Automation Build Plan). Sixth agent on the roster, and the only one that was already running before it had a name.
 **Workstream:** Support/Ops (S4).
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Vera.

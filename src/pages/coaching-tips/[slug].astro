@@ -58,7 +58,7 @@ const howToSchema = howToSteps ? {
         {tip.data.age && <> · {tip.data.age}</>}
         {tip.data.focus && <> · {tip.data.focus}</>}
       </p>
-      <h1 class="font-display text-ink text-[2rem] md:text-[3rem] leading-[1.0] max-w-3xl font-medium" set:html={renderTitle(tip.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium" set:html={renderTitle(tip.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {tip.data.summary}
       </p>

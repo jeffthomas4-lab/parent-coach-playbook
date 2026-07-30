@@ -12,6 +12,28 @@ export const prerender = false;
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
 const ACTIONS = ['score', 'classify', 'advance_to_claims_validated', 'begin_review', 'complete_relationship_mapping'] as const;
 
+// Domain errors authored in src/lib/editorial-records.ts by the five functions
+// this route calls. These are the only messages echoed to the caller; anything
+// else — a D1 driver failure, say — is logged server-side and collapses to a
+// fixed slug so provider text never reaches the browser. The regex entries
+// cover the messages that interpolate a state name.
+const KNOWN_ERRORS: readonly (string | RegExp)[] = [
+  'opportunity not found',
+  'opportunity changed concurrently',
+  'score must be an integer 0-100',
+  'opportunity must be briefed before advancing to claims validation',
+  'opportunity has no active brief',
+  'brief has no claims to validate',
+  'every claim on the active brief must be validated first',
+  'at least one recorded source is required before claims validation',
+  'opportunity is not ready to leave relationship mapping',
+  'at least one relationship must be mapped first',
+  /^invalid opportunity transition/,
+  /^opportunity cannot enter /,
+];
+const isKnownError = (message: string) =>
+  KNOWN_ERRORS.some((known) => (typeof known === 'string' ? known === message : known.test(message)));
+
 export const POST: APIRoute = async ({ params, request }) => {
   const env = cfEnv as { PCD_OPS_DB?: D1Database; ADMIN_EMAILS?: string; EDITORIAL_LIFECYCLE_ENABLED?: string } | undefined;
   if (!env?.PCD_OPS_DB) return json({ ok: false, error: 'operational database not available' }, 503);
@@ -23,7 +45,12 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (!featureEnabled(env.EDITORIAL_LIFECYCLE_ENABLED)) return json({ ok: false, error: 'editorial lifecycle admin routes are not currently available' }, 404);
   if (!params.id) return json({ ok: false, error: 'missing id' }, 400);
 
-  const body = await request.json() as Record<string, unknown>;
+  let body: Record<string, unknown>;
+  try {
+    body = await request.json() as Record<string, unknown>;
+  } catch {
+    return json({ ok: false, error: 'invalid json body' }, 400);
+  }
   const action = body.action;
   if (typeof action !== 'string' || !(ACTIONS as readonly string[]).includes(action)) return json({ ok: false, error: 'invalid action' }, 400);
 
@@ -66,8 +93,15 @@ export const POST: APIRoute = async ({ params, request }) => {
     const opportunity = await markRelationshipMappingComplete(env.PCD_OPS_DB, { opportunityId: params.id, actor: auth.email });
     return json({ ok: true, opportunity });
   } catch (error) {
-    if (error instanceof Error && error.message.endsWith('not found')) return json({ ok: false, error: error.message }, 404);
-    if (error instanceof Error) return json({ ok: false, error: error.message }, 409);
-    throw error;
+    const message = error instanceof Error ? error.message : '';
+    if (isKnownError(message)) {
+      return json({ ok: false, error: message }, message.endsWith('not found') ? 404 : 409);
+    }
+    console.error(JSON.stringify({
+      event: 'editorial_record_write_failed',
+      route: 'editorial/opportunities/update',
+      code: error instanceof Error ? error.message : 'unknown_error',
+    }));
+    return json({ ok: false, error: 'editorial_record_write_failed' }, 500);
   }
 };

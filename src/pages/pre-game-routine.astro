@@ -42,18 +42,18 @@ export const prerender = true;
         font-size: 0.7rem;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: #888;
+        color: var(--muted);
         margin-bottom: 0.25rem;
       }
       .print-value {
         font-size: 1rem;
-        color: #1a1a1a;
-        border-bottom: 1px solid #ddd;
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
         padding-bottom: 0.25rem;
         min-height: 1.5rem;
       }
       .print-header {
-        border-bottom: 2px solid #1a1a1a;
+        border-bottom: 2px solid var(--ink);
         padding-bottom: 0.75rem;
         margin-bottom: 1.5rem;
       }
@@ -62,7 +62,7 @@ export const prerender = true;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.06em;
-        color: #555;
+        color: var(--silver-deep);
         margin: 1rem 0 0.5rem;
       }
       .print-grid {
@@ -76,8 +76,8 @@ export const prerender = true;
   <!-- Header -->
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">A tool for game day</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <p class="t-eyebrow mb-3">A tool for game day</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Pre-game routine builder.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -99,7 +99,7 @@ export const prerender = true;
         <div>
           <div class="flex items-center gap-3 mb-5">
             <div class="h-px flex-1 bg-bone"></div>
-            <p class="font-display italic text-rust font-medium text-sm shrink-0">Night before</p>
+            <p class="t-eyebrow shrink-0">Night before</p>
             <div class="h-px flex-1 bg-bone"></div>
           </div>
 
@@ -111,7 +111,7 @@ export const prerender = true;
                 type="text"
                 id="bedtime"
                 placeholder="e.g., 9:30 pm"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -122,7 +122,7 @@ export const prerender = true;
                 type="text"
                 id="dinner"
                 placeholder="e.g., pasta, grilled chicken, rice"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -133,7 +133,7 @@ export const prerender = true;
                 id="gear-check"
                 rows="3"
                 placeholder="e.g., uniform, cleats, shin guards, water bottle, snack"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust resize-none"
+                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust resize-none"
               ></textarea>
             </div>
 
@@ -144,7 +144,7 @@ export const prerender = true;
                 type="text"
                 id="mental-prep"
                 placeholder="e.g., read for 20 min, no screens after 8pm"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
           </div>
@@ -154,7 +154,7 @@ export const prerender = true;
         <div>
           <div class="flex items-center gap-3 mb-5">
             <div class="h-px flex-1 bg-bone"></div>
-            <p class="font-display italic text-rust font-medium text-sm shrink-0">Morning of</p>
+            <p class="t-eyebrow shrink-0">Morning of</p>
             <div class="h-px flex-1 bg-bone"></div>
           </div>
 
@@ -166,7 +166,7 @@ export const prerender = true;
                 type="text"
                 id="wake-time"
                 placeholder="e.g., 7:00 am"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -177,7 +177,7 @@ export const prerender = true;
                 type="text"
                 id="breakfast"
                 placeholder="e.g., oatmeal and eggs, toast with peanut butter"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -188,7 +188,7 @@ export const prerender = true;
                 type="text"
                 id="travel-prep"
                 placeholder="e.g., leave by 9:15, bag by door the night before"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -199,7 +199,7 @@ export const prerender = true;
                 type="text"
                 id="car-vibe"
                 placeholder="e.g., their playlist, no game talk, just drive"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
           </div>
@@ -209,7 +209,7 @@ export const prerender = true;
         <div>
           <div class="flex items-center gap-3 mb-5">
             <div class="h-px flex-1 bg-bone"></div>
-            <p class="font-display italic text-rust font-medium text-sm shrink-0">Arrival</p>
+            <p class="t-eyebrow shrink-0">Arrival</p>
             <div class="h-px flex-1 bg-bone"></div>
           </div>
 
@@ -221,7 +221,7 @@ export const prerender = true;
                 type="text"
                 id="arrive-time"
                 placeholder="e.g., 30 min before game time"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -232,7 +232,7 @@ export const prerender = true;
                 type="text"
                 id="warmup"
                 placeholder="e.g., passing drills with teammates, light jog first"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -243,7 +243,7 @@ export const prerender = true;
                 type="text"
                 id="focus-mode"
                 placeholder="e.g., headphones until warmup starts, then off"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -254,7 +254,7 @@ export const prerender = true;
                 type="text"
                 id="parent-role"
                 placeholder='e.g., "have fun", then go find your seat'
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
 
@@ -264,7 +264,7 @@ export const prerender = true;
                 type="text"
                 id="kid-name"
                 placeholder="e.g., Maya"
-                class="w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:outline-none focus:border-rust"
+                class="min-h-11 w-full border border-bone bg-paper-warm font-display text-ink text-sm px-4 py-2 focus:border-rust"
               >
             </div>
           </div>
@@ -289,8 +289,8 @@ export const prerender = true;
 
       <div id="routine-card" class="border border-bone p-8 bg-paper-warm">
         <div class="print-header border-b border-bone pb-5 mb-6">
-          <p class="font-display italic text-rust text-sm font-medium mb-1">Pre-game routine</p>
-          <h2 id="card-name" class="font-display text-ink text-2xl md:text-3xl font-medium"></h2>
+          <p class="t-eyebrow mb-1">Pre-game routine</p>
+          <h2 id="card-name" class="t-h2 font-display text-ink font-medium"></h2>
         </div>
 
         <!-- Night before block -->
@@ -386,22 +386,22 @@ export const prerender = true;
   <!-- Related -->
   <section class="border-b border-bone print-hide">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4 font-medium">Related</p>
+      <p class="t-eyebrow mb-4">Related</p>
       <div class="grid sm:grid-cols-2 gap-px bg-bone max-w-4xl">
         <a href="/burnout-check/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Burnout check</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Burnout check</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Nine questions. A clear read on where your kid actually is.</p>
         </a>
         <a href="/drive-there/pre-game-anxiety-normal/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Pre-game anxiety: normal vs. not</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Pre-game anxiety: normal vs. not</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The line between healthy nerves and something to address.</p>
         </a>
         <a href="/scripts/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Scripts for the drive there</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Scripts for the drive there</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to say in the car. Word for word.</p>
         </a>
         <a href="/drive-home/is-this-burnout-or-a-bad-week/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Is this burnout, or a bad week?</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Is this burnout, or a bad week?</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The difference matters. The response is completely different.</p>
         </a>
       </div>

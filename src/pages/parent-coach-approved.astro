@@ -18,8 +18,8 @@ const approved = approvedRegistry.products.filter((product) => product.status ==
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">Product testing methodology</p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+      <p class="t-eyebrow mb-3">Product testing methodology</p>
+      <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Parent Coach Approved is earned through use, not placement.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-3xl leading-snug">
@@ -30,7 +30,7 @@ const approved = approvedRegistry.products.filter((product) => product.status ==
 
   <section class="border-b border-bone">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4"><p class="font-display italic text-rust font-medium">The minimum evidence</p></div>
+      <div class="md:col-span-4"><p class="t-eyebrow">The minimum evidence</p></div>
       <div class="md:col-span-8 article-body">
         <ul>
           <li>At least {approvedRegistry.minimum_use_weeks} weeks of regular first-hand use by a parent-coach.</li>
@@ -45,7 +45,7 @@ const approved = approvedRegistry.products.filter((product) => product.status ==
 
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4"><p class="font-display italic text-rust font-medium">What it does not mean</p></div>
+      <div class="md:col-span-4"><p class="t-eyebrow">What it does not mean</p></div>
       <div class="md:col-span-8 article-body">
         <p>It is not a safety certification, accreditation, guarantee, or universal "best." Governing standards remain the relevant authorities. A manufacturer cannot buy the mark, and affiliate commission cannot create or preserve it.</p>
       </div>
@@ -54,7 +54,7 @@ const approved = approvedRegistry.products.filter((product) => product.status ==
 
   <section class="border-b border-bone">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4"><p class="font-display italic text-rust font-medium">Loss, correction, and response</p></div>
+      <div class="md:col-span-4"><p class="t-eyebrow">Loss, correction, and response</p></div>
       <div class="md:col-span-8 article-body">
         <p>A recall, material product change, later-season failure, contrary evidence, or an unsupported claim can move a product back to review or revoke the mark.</p>
         <p><a href="/trust/?category=content_correction" class="text-rust hover:underline">Submit a correction or manufacturer response</a>.</p>
@@ -64,7 +64,7 @@ const approved = approvedRegistry.products.filter((product) => product.status ==
 
   <section>
     <div class="container-px py-10">
-      <h2 class="font-display text-ink text-2xl font-medium">Current marked products</h2>
+      <h2 class="t-h2 font-display text-ink font-medium">Current marked products</h2>
       {approved.length === 0 ? (
         <p class="font-display text-ink-soft mt-3">None. The framework exists before the first badge, so the evidence bar cannot be written around a product afterward.</p>
       ) : (

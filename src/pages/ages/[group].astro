@@ -91,7 +91,7 @@ const fmtDate = (d: Date) =>
         <a href="/ages/" class="hover:underline underline-offset-2">By age</a>
         {' '}→ Ages {groupLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Your kid is <em class="text-rust">{groupLabel}</em>. Here's everything.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -107,8 +107,8 @@ const fmtDate = (d: Date) =>
   {articles.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12 md:py-14">
-        <p class="font-display italic text-rust mb-3 font-medium">Reads</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+        <p class="t-eyebrow mb-3">Reads</p>
+        <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
           Articles for ages <em class="text-rust">{groupLabel}</em>
         </h2>
         <div class="grid md:grid-cols-2 gap-x-10">
@@ -117,7 +117,7 @@ const fmtDate = (d: Date) =>
               <p class="font-display italic text-rust text-xs font-medium">
                 {a.data.sport ? `${a.data.sport} · ` : ''}{fmtDate(a.data.publishedAt)}
               </p>
-              <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+              <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
               {a.data.dek && (
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
               )}
@@ -132,8 +132,8 @@ const fmtDate = (d: Date) =>
   {tips.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-12 md:py-14">
-        <p class="font-display italic text-rust mb-3 font-medium">Drills</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+        <p class="t-eyebrow mb-3">Drills</p>
+        <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
           Coaching tips for ages <em class="text-rust">{groupLabel}</em>
         </h2>
         <p class="font-display italic text-ink-soft text-sm mb-4 font-medium">{tips.length} drills total.</p>
@@ -144,7 +144,7 @@ const fmtDate = (d: Date) =>
                 <p class="font-display italic text-rust text-xs font-medium">
                   {t.data.sport ? `${t.data.sport}` : ''}{t.data.focus ? ` · ${t.data.focus}` : ''}
                 </p>
-                <h3 class="font-display text-ink text-base leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
                 {t.data.summary && (
                   <p class="font-display text-ink-soft text-xs mt-1 leading-snug">{t.data.summary}</p>
                 )}
@@ -165,15 +165,15 @@ const fmtDate = (d: Date) =>
   {scripts.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12 md:py-14">
-        <p class="font-display italic text-rust mb-3 font-medium">Scripts</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+        <p class="t-eyebrow mb-3">Scripts</p>
+        <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
           What to say at ages <em class="text-rust">{groupLabel}</em>
         </h2>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {scripts.map((s) => (
             <li>
               <a href={`/scripts/${s.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
                 {s.data.summary && (
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{s.data.summary}</p>
                 )}
@@ -189,15 +189,15 @@ const fmtDate = (d: Date) =>
   {decisions.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-12 md:py-14">
-        <p class="font-display italic text-rust mb-3 font-medium">Decisions</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+        <p class="t-eyebrow mb-3">Decisions</p>
+        <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
           Big calls at ages <em class="text-rust">{groupLabel}</em>
         </h2>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {decisions.map((d) => (
             <li>
               <a href={`/decisions/${d.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(d.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(d.data.title)} />
                 {d.data.summary && (
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{d.data.summary}</p>
                 )}

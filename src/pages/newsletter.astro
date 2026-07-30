@@ -17,35 +17,39 @@ const fmt = (d: Date) =>
   description="One short read every Friday from the Parent Coach Desk. Sideline notes for parents who coach. Free, no spam."
 >
   <!-- Lead -->
-  <section class="border-b border-ink bg-ink text-paper relative overflow-hidden">
-    {/* Mailbox-at-sunset cover sits at 25% opacity behind a near-opaque dark wash. */}
+  <section class="border-b border-bone bg-surface relative overflow-hidden">
+    {/* Mailbox-at-sunset cover sits full-opacity behind a flat 90% white
+        scrim -- same pattern as index.astro's hero (bg-surface/90). The old
+        treatment was a left-to-right dark gradient over the retired warm-ink
+        brown (in decimal rgba, which is how it survived every hex sweep). It
+        broke two brief rules at once (no gradients, no dark heroes) and left
+        the accent-navy eyebrow and <em> at 1.53:1 on the dark fill. A flat
+        wash also keeps contrast constant across the band, so the headline
+        does not get less legible toward the right edge the way a gradient
+        scrim does. */}
     <img
       src="/illustrations/newsletter-mailbox-cta.webp"
       alt="A suburban mailbox at sunset with a Parent Coach Desk envelope sticking out."
-      class="absolute inset-0 w-full h-full object-cover opacity-25"
+      class="absolute inset-0 w-full h-full object-cover"
       loading="eager"
       fetchpriority="high"
       decoding="async"
     />
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(to right, rgba(26,22,19,0.85) 0%, rgba(26,22,19,0.65) 60%, rgba(26,22,19,0.4) 100%);"
-      aria-hidden="true"
-    ></div>
+    <div class="absolute inset-0 bg-surface/90" aria-hidden="true"></div>
     <div class="container-px py-16 md:py-20 grid md:grid-cols-12 gap-10 items-end relative">
       <div class="md:col-span-7">
-        <p class="font-display italic text-accent mb-3 font-medium">The Friday Letter</p>
-        <h1 class="font-display text-paper text-[2.5rem] md:text-[4.25rem] leading-[1.0] font-medium">
+        <p class="t-eyebrow mb-3">The Friday Letter</p>
+        <h1 class="t-h1-hero font-display text-ink leading-[1.0] font-medium">
           One short read every Friday. <em class="text-rust">No spam.</em>
         </h1>
-        <p class="font-display text-paper-warm text-xl mt-6 max-w-xl leading-snug">
+        <p class="font-display text-ink-soft text-xl mt-6 max-w-xl leading-snug">
           A letter from the Parent Coach Desk lands in your inbox every Friday. Sometimes it's about a hard parent conversation. Sometimes a drill. Sometimes a piece of gear that finally got the kid to stop complaining. Always under five minutes to read.
         </p>
       </div>
       <div class="md:col-span-5">
-        <aside class="bg-paper p-6 md:p-7 border border-bone">
-          <p class="font-display italic text-rust mb-2 font-medium">Get the Friday Letter</p>
-          <h3 class="font-display text-ink text-2xl leading-tight font-medium">
+        <aside class="bg-paper p-6 md:p-7 border border-bone rounded-card">
+          <p class="t-eyebrow mb-2">Get the Friday Letter</p>
+          <h3 class="t-h3 font-display text-ink leading-tight font-medium">
             Friday morning, free, no list-share.
           </h3>
           <a
@@ -67,11 +71,11 @@ const fmt = (d: Date) =>
   <section class="border-b border-bone">
     <div class="container-px py-12">
       <div class="flex items-baseline justify-between flex-wrap gap-3 mb-8">
-        <p class="font-display italic text-rust font-medium">Past issues</p>
+        <p class="t-eyebrow">Past issues</p>
       </div>
       {issues.length === 0 ? (
         <div class="max-w-2xl">
-          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
+          <h2 class="t-h2 font-display text-ink leading-tight font-medium">
             The first letter is on the way.
           </h2>
           <p class="font-display text-ink-soft text-base mt-4 leading-snug">
@@ -95,7 +99,7 @@ const fmt = (d: Date) =>
                 </span>
                 <div>
                   <h3
-                    class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium"
+                    class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium"
                     set:html={renderTitle(a.title)}
                   />
                   {a.dek && (
@@ -115,18 +119,18 @@ const fmt = (d: Date) =>
   <!-- What you get -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-12">
-      <p class="font-display italic text-rust mb-3 font-medium">What you get</p>
+      <p class="t-eyebrow mb-3">What you get</p>
       <div class="grid md:grid-cols-3 gap-8 max-w-4xl">
         <div>
-          <h3 class="font-display text-ink text-xl leading-tight font-medium">A short read every Friday.</h3>
+          <h3 class="t-h3 font-display text-ink leading-tight font-medium">A short read every Friday.</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Five minutes or less. Topical to the season your kid is in.</p>
         </div>
         <div>
-          <h3 class="font-display text-ink text-xl leading-tight font-medium">Free PDFs as we ship them.</h3>
+          <h3 class="t-h3 font-display text-ink leading-tight font-medium">Free PDFs as we ship them.</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to Say When, the Practice Plan Template, the Pre-Game Pocket Card. Subscribers get them first.</p>
         </div>
         <div>
-          <h3 class="font-display text-ink text-xl leading-tight font-medium">Questions and corrections are welcome.</h3>
+          <h3 class="t-h3 font-display text-ink leading-tight font-medium">Questions and corrections are welcome.</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Hit reply on any issue. The Parent Coach Desk writes back.</p>
         </div>
       </div>

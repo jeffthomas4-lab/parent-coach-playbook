@@ -52,7 +52,12 @@ export const POST: APIRoute = async ({ request }) => {
   if (!existing) return json({ ok: false, error: 'url is not tracked in link_health' }, 404);
 
   const result = await checkLinkNow(url);
-  await applyLinkCheckResult(env.DB, url, result);
+  // applyLinkCheckResult reports its own change count. Zero means the row went
+  // away between the SELECT above and the UPDATE, so nothing was written —
+  // same conflict resolve.ts already returns 409 for.
+  const applied = await applyLinkCheckResult(env.DB, url, result);
+  if (!applied) return json({ ok: false, error: 'url could not be updated' }, 409);
+
   const updated = await getLinkHealthByUrl(env.DB, url);
 
   return json({ ok: true, result: updated });

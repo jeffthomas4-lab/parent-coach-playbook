@@ -56,8 +56,8 @@ const axes = [
   })} />
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">A way to think about it</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <p class="t-eyebrow mb-3">A way to think about it</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         The youth sports <em class="text-rust">pendulum</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -89,23 +89,23 @@ const axes = [
   {axes.map((a) => (
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-12 max-w-4xl">
-        <p class="font-display italic text-rust mb-3 text-sm font-medium">Axis</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">
+        <p class="t-eyebrow mb-3">Axis</p>
+        <h2 class="t-h2 font-display text-ink leading-tight font-medium">
           {a.label}
         </h2>
 
         <!-- Visual spectrum -->
         <div class="mt-6 flex items-center gap-3">
-          <span class="font-display italic text-sm font-medium" style="color: #5F7075">{a.leftLabel}</span>
+          <span class="font-display italic text-sm font-medium text-silver-deep">{a.leftLabel}</span>
           <div class="flex-1 h-2 bg-bone relative">
-            <div class="absolute top-1/2 -translate-y-1/2 h-4 w-4 bg-rust rounded-full" style="left: 50%; transform: translate(-50%, -50%);"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 h-4 w-4 bg-rust rounded-pill" style="left: 50%; transform: translate(-50%, -50%);"></div>
           </div>
-          <span class="font-display italic text-sm font-medium" style="color: var(--rust)">{a.rightLabel}</span>
+          <span class="font-display italic text-sm font-medium text-rust">{a.rightLabel}</span>
         </div>
 
         <div class="mt-6 grid md:grid-cols-2 gap-6">
           <div>
-            <p class="font-display italic text-sm mb-2 font-medium" style="color: #5F7075">{a.leftLabel}</p>
+            <p class="font-display italic text-sm mb-2 font-medium text-silver-deep">{a.leftLabel}</p>
             <p class="font-display text-ink leading-snug">{a.leftBlurb}</p>
           </div>
           <div>
@@ -124,13 +124,13 @@ const axes = [
   ))}
 
   <!-- The big idea -->
-  <section class="border-b border-bone bg-ink text-paper">
+  <section class="border-t-4 border-t-accent border-b border-b-bone bg-stripe">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm font-medium" style="color: #8A9BA0">The point</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
+      <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">The point</p>
+      <p class="font-display text-ink text-2xl md:text-3xl leading-snug font-medium">
         Find where your family actually is on each axis. Then ask: is that where we want to be?
       </p>
-      <p class="font-display text-paper-warm mt-5 leading-relaxed">
+      <p class="font-display text-ink-soft mt-5 leading-relaxed">
         Most parenting decisions in youth sports are not yes-or-no decisions. They're position-on-the-pendulum decisions. The travel team isn't good or bad. The question is whether it pulls you in the direction you want to go right now.
       </p>
     </div>
@@ -139,22 +139,22 @@ const axes = [
   <!-- Where to go from here -->
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4 font-medium">From here</p>
+      <p class="t-eyebrow mb-4">From here</p>
       <div class="grid sm:grid-cols-2 gap-px bg-bone max-w-4xl">
         <a href="/decisions/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Walk through the big decisions</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Walk through the big decisions</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Travel, quit, specialize, multi-sport. Page each.</p>
         </a>
         <a href="/scripts/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Open the Scripts hub</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Open the Scripts hub</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What to say in the moments that matter.</p>
         </a>
         <a href="/cost-calculator/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Open the calculator</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Open the calculator</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">What does each tier of the pendulum cost in real dollars?</p>
         </a>
         <a href="/body/burnout-signs/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Read on burnout signs</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Read on burnout signs</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">If the pendulum is sliding toward the wrong end.</p>
         </a>
       </div>

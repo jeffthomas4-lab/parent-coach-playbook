@@ -106,7 +106,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Pending</a> · Queue · <a href="/admin/camps/spot-check" class="hover:underline">Spot check</a> · <a href="/admin/source-quality" class="hover:underline">Source quality</a>
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         Moderation queue
       </h1>
       {!adminEmail && (
@@ -128,7 +128,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl font-medium">
+            <h2 class="t-h2 font-display text-ink font-medium">
               Pending camp submissions
             </h2>
             <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
@@ -149,7 +149,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       <p class="font-display italic text-rust text-xs font-medium">
                         {camp.sport} · ages {camp.age_min}–{camp.age_max} · {camp.day_or_overnight}
                       </p>
-                      <h3 class="font-display text-ink text-lg leading-tight mt-0.5 font-medium">
+                      <h3 class="t-h3 font-display text-ink leading-tight mt-0.5 font-medium">
                         {camp.name}
                       </h3>
                       <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
@@ -192,7 +192,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                               </li>
                             ))}
                           </ul>
-                          <button type="button" class="mt-2 font-display italic px-2 py-1 border border-rust bg-paper text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-duplicate">
+                          <button type="button" class="min-h-11 inline-flex items-center justify-center mt-2 font-display italic px-2 py-1 border border-rust bg-paper text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-duplicate">
                             Reject as duplicate
                           </button>
                         </div>
@@ -202,12 +202,12 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                     <div class="grid gap-3 text-sm">
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Website</label>
-                        <input type="url" class="px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.website_url || ''} placeholder="https://..." data-field="website_url" />
+                        <input type="url" class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.website_url || ''} placeholder="https://..." data-field="website_url" />
                       </div>
 
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Contact email</label>
-                        <input type="email" class="px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.contact_email || ''} placeholder="email@example.com" data-field="contact_email" />
+                        <input type="email" class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.contact_email || ''} placeholder="email@example.com" data-field="contact_email" />
                       </div>
 
                       <div class="grid gap-1">
@@ -216,7 +216,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       </div>
 
                       <div class="flex justify-end">
-                        <button type="button" class="save-edits-btn font-display italic px-3 py-1 border border-bone bg-paper-warm text-ink-soft text-sm hover:bg-paper transition-colors font-medium" data-action="save-edits" style="display: none;">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center save-edits-btn font-display italic px-3 py-1 border border-bone bg-paper-warm text-ink-soft text-sm hover:bg-paper transition-colors font-medium" data-action="save-edits" style="display: none;">
                           Save edits
                         </button>
                       </div>
@@ -235,18 +235,18 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       <label class="font-display italic text-ink-soft text-xs font-medium">
                         Reject reason (recorded for source-quality stats)
                       </label>
-                      <select class="px-2 py-1 font-body bg-paper border border-bone text-sm" data-field="reason_code">
+                      <select class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" data-field="reason_code">
                         <option value="">— pick a reason —</option>
                         {REJECT_REASON_CODES.map((r) => (
                           <option value={r.code}>{r.label}</option>
                         ))}
                       </select>
-                      <input type="text" class="px-2 py-1 font-body bg-paper border border-bone text-sm" placeholder="optional notes" data-field="reject_notes" />
+                      <input type="text" class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" placeholder="optional notes" data-field="reject_notes" />
                       <div class="flex gap-2">
-                        <button type="button" class="font-display italic px-3 py-1 border border-rust bg-paper text-rust text-sm hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-confirm">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-rust bg-paper text-rust text-sm hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-confirm">
                           Confirm reject
                         </button>
-                        <button type="button" class="font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject-cancel">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject-cancel">
                           Cancel
                         </button>
                       </div>
@@ -258,10 +258,10 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       </label>
                       <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="2" placeholder="e.g. need actual camp name, session dates, registration link" data-field="info_request_notes"></textarea>
                       <div class="flex gap-2">
-                        <button type="button" class="font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-send">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-send">
                           Send request
                         </button>
-                        <button type="button" class="font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-cancel">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-cancel">
                           Cancel
                         </button>
                       </div>
@@ -269,22 +269,22 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
 
                     <div class="grid gap-2 sm:grid-cols-5">
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="approve-verified">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center w-full font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="approve-verified">
                           Approve & verify
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-action="approve">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center w-full font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-action="approve">
                           Approve
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
                         </button>
                       </div>
                       <div class="col-span-1">
-                        <button type="button" class="w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center w-full font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info">
                           More info
                         </button>
                       </div>
@@ -309,7 +309,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl font-medium">
+            <h2 class="t-h2 font-display text-ink font-medium">
               Pending camp reviews
             </h2>
             <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
@@ -340,10 +340,10 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       </p>
 
                       <div class="grid gap-2 sm:grid-cols-2">
-                        <button type="button" class="font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-action="approve">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-action="approve">
                           Approve
                         </button>
-                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
                         </button>
                       </div>
@@ -361,7 +361,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       <section>
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl font-medium">
+            <h2 class="t-h2 font-display text-ink font-medium">
               Pending claim requests
             </h2>
             <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
@@ -402,10 +402,10 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       </div>
 
                       <div class="grid gap-2 sm:grid-cols-2">
-                        <button type="button" class="font-display italic px-3 py-2 border border-paper-warm bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="mark-verified">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-paper-warm bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-action="mark-verified">
                           Mark verified
                         </button>
-                        <button type="button" class="font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
+                        <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="reject">
                           Reject
                         </button>
                       </div>
@@ -531,13 +531,12 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
           }
 
           if (action === 'approve-verified') {
+            // The verify call runs AFTER the approve succeeds, below.
+            // campVerificationBlock() refuses any camp whose status is not
+            // already 'approved', so verifying first always returns 409 and
+            // silently left the camp approved-but-unverified.
             endpoint = '/api/admin/camps/' + campId + '/approve';
             body = JSON.stringify({ notes: null });
-            await fetch('/api/admin/camps/' + campId + '/verify', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ verified: true }),
-            });
           } else if (action === 'approve') {
             endpoint = '/api/admin/camps/' + campId + '/approve';
             body = JSON.stringify({ notes: null });
@@ -579,11 +578,31 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
             const data = await resp.json();
 
             if (data.ok) {
-              statusDiv.textContent = (action === 'reject-confirm' || action === 'reject-duplicate')
+              let label = (action === 'reject-confirm' || action === 'reject-duplicate')
                 ? 'Rejected'
                 : action === 'more-info-send'
                   ? 'Sent to research'
                   : 'Approved';
+
+              if (action === 'approve-verified') {
+                const verifyResp = await fetch('/api/admin/camps/' + campId + '/verify', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ verified: true }),
+                });
+                let verifyData = null;
+                try { verifyData = await verifyResp.json(); } catch (e) { verifyData = null; }
+                if (verifyData && verifyData.ok) {
+                  label = 'Approved + verified';
+                } else {
+                  statusDiv.textContent = 'Approved, but NOT verified: '
+                    + ((verifyData && verifyData.error) || 'verify failed');
+                  statusDiv.style.display = 'block';
+                  return;
+                }
+              }
+
+              statusDiv.textContent = label;
               statusDiv.style.display = 'block';
               setTimeout(function () {
                 row.style.opacity = '0.5';

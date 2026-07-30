@@ -76,7 +76,7 @@ const groups = Object.entries(sources);
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/about/" class="hover:underline">About</a> · Sources
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Where the numbers come from.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
@@ -108,7 +108,7 @@ const groups = Object.entries(sources);
   <section class="bg-paper-warm">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">The full external-link manifest</p>
+        <p class="t-eyebrow">The full external-link manifest</p>
       </div>
       <div class="md:col-span-8 article-body">
         <p>Every external URL on the site lives in a public manifest, regenerated on every build. A Cloudflare Worker validates a rolling subset on a daily cron and writes results to a Cloudflare D1 database. Broken links surface in the editorial dashboard with a Wayback snapshot fallback.</p>

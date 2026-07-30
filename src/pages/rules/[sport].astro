@@ -75,7 +75,7 @@ const faqSchema = faqEntries.length > 0
           <><a href={hub.href} class="hover:underline">{hub.label}</a>{index < sportHubs.length - 1 && ' / '}</>
         ))}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {piece.data.summary}
       </p>
@@ -87,18 +87,18 @@ const faqSchema = faqEntries.length > 0
     <div class="container-px py-10 md:py-12">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         <div>
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Field/court setup</p>
+          <p class="t-eyebrow mb-2">Field/court setup</p>
           <p class="font-display text-ink leading-snug">{piece.data.fieldSetup}</p>
         </div>
         <div>
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Game length</p>
+          <p class="t-eyebrow mb-2">Game length</p>
           <p class="font-display text-ink leading-snug">{piece.data.gameLength}</p>
         </div>
       </div>
 
       {piece.data.scoringBasics && piece.data.scoringBasics.length > 0 && (
         <div class="mt-8 max-w-3xl">
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Scoring basics</p>
+          <p class="t-eyebrow mb-2">Scoring basics</p>
           <ul class="grid gap-1.5">
             {piece.data.scoringBasics.map((s) => (
               <li class="font-display text-ink leading-snug">· {s}</li>
@@ -109,7 +109,7 @@ const faqSchema = faqEntries.length > 0
 
       {piece.data.commonCalls && piece.data.commonCalls.length > 0 && (
         <div class="mt-8 max-w-3xl">
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Calls you'll see</p>
+          <p class="t-eyebrow mb-2">Calls you'll see</p>
           <ul class="grid gap-1.5">
             {piece.data.commonCalls.map((s) => (
               <li class="font-display text-ink leading-snug">· {s}</li>
@@ -119,8 +119,8 @@ const faqSchema = faqEntries.length > 0
       )}
 
       {piece.data.thingsParentsGetWrong && piece.data.thingsParentsGetWrong.length > 0 && (
-        <div class="mt-8 max-w-3xl bg-paper-warm border-l-4 pl-4 py-3" style="border-color: #003594;">
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Three things parents most often get wrong</p>
+        <div class="mt-8 max-w-3xl bg-paper-warm border-l-4 border-l-accent pl-4 py-3">
+          <p class="t-eyebrow mb-2">Three things parents most often get wrong</p>
           <ul class="grid gap-1.5">
             {piece.data.thingsParentsGetWrong.map((s) => (
               <li class="font-display text-ink leading-snug">· {s}</li>
@@ -137,7 +137,7 @@ const faqSchema = faqEntries.length > 0
       <Content />
 
       <aside class="mt-10 pt-6 border-t border-bone">
-        <p class="font-display italic text-rust mb-2 font-medium">The official rulebook</p>
+        <p class="t-eyebrow mb-2">The official rulebook</p>
         <p class="font-display text-ink leading-snug">
           {piece.data.governingBody.name}:
           <a href={piece.data.governingBody.url} target="_blank" rel="noopener" class="text-rust hover:underline">{piece.data.governingBody.url} ↗</a>

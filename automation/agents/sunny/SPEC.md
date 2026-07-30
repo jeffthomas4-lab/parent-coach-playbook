@@ -1,5 +1,7 @@
 # Sunny: Support
 
+> **NOT IMPLEMENTED 2026-07-29 — open gap, not dead code.** No scheduled task covers PCD public-alias mail triage. `jarvis-desk-triage` is the pugetsound.edu coaching inbox and is walled off from portfolio work; `pcd-deletion-monitor` reads support@ for deletion requests only. Mail to PCD's aliases that is neither a deletion request nor spam is currently unanswered. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-15 (Session 8 of the PCD Automation Build Plan). Seventh agent, and the last one the build plan names.
 **Workstream:** Support/Ops (S12).
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Sunny.

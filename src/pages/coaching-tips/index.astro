@@ -23,8 +23,8 @@ const focusOptions = [
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">Drills</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] font-medium">
+      <p class="t-eyebrow mb-3">Drills</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] font-medium">
         Drills, notes, and the <em class="text-rust">cones</em> diagram.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -40,32 +40,32 @@ const focusOptions = [
           <div class="grid gap-4">
             <div class="flex flex-wrap items-center gap-2" data-sport-filter>
               <span class="font-display italic text-ink-soft text-sm font-medium">Sport:</span>
-              <button data-sport="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
-              <button data-sport="baseball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Baseball</button>
-              <button data-sport="soccer" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Soccer</button>
-              <button data-sport="basketball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Basketball</button>
-              <button data-sport="softball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Softball</button>
-              <button data-sport="football" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Football</button>
-              <button data-sport="volleyball" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Volleyball</button>
-              <button data-sport="hockey" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Hockey</button>
-              <button data-sport="lacrosse" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Lacrosse</button>
-              <button data-sport="flag-football" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Flag Football</button>
-              <button data-sport="tennis" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Tennis</button>
-              <button data-sport="swimming" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Swimming</button>
-              <button data-sport="track-field" class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Track &amp; Field</button>
+              <button data-sport="" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-accent bg-accent text-paper text-sm font-medium">All</button>
+              <button data-sport="baseball" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Baseball</button>
+              <button data-sport="soccer" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Soccer</button>
+              <button data-sport="basketball" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Basketball</button>
+              <button data-sport="softball" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Softball</button>
+              <button data-sport="football" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Football</button>
+              <button data-sport="volleyball" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Volleyball</button>
+              <button data-sport="hockey" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Hockey</button>
+              <button data-sport="lacrosse" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Lacrosse</button>
+              <button data-sport="flag-football" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Flag Football</button>
+              <button data-sport="tennis" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Tennis</button>
+              <button data-sport="swimming" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Swimming</button>
+              <button data-sport="track-field" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">Track &amp; Field</button>
             </div>
             <div class="flex flex-wrap items-center gap-2" data-age-filter>
               <span class="font-display italic text-ink-soft text-sm font-medium">Age:</span>
-              <button data-age="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+              <button data-age="" class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-accent bg-accent text-paper text-sm font-medium">All</button>
               {AGE_BANDS.map((a) => (
-                <button data-age={a.slug} class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{a.label}</button>
+                <button data-age={a.slug} class="font-display italic inline-flex items-center min-h-11 px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{a.label}</button>
               ))}
             </div>
             <div class="flex flex-wrap items-center gap-2" data-focus-filter>
               <span class="font-display italic text-ink-soft text-sm font-medium">Focus:</span>
-              <button data-focus="" class="font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
+              <button data-focus="" class="min-h-11 inline-flex items-center justify-center font-display italic px-3.5 py-2 border border-ink bg-ink text-paper text-sm font-medium">All</button>
               {focusOptions.map((f) => (
-                <button data-focus={f.slug} class="font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{f.label}</button>
+                <button data-focus={f.slug} class="min-h-11 inline-flex items-center justify-center font-display italic px-3.5 py-2 border border-bone text-ink-soft text-sm hover:bg-paper font-medium">{f.label}</button>
               ))}
             </div>
             <div class="flex items-center gap-2">
@@ -73,7 +73,7 @@ const focusOptions = [
                 type="search"
                 placeholder="Search drills, e.g. cones, hitting, defense..."
                 data-search-input
-                class="w-full max-w-md px-3 py-2 font-body bg-paper border border-bone focus:border-rust focus:outline-none text-sm"
+                class="min-h-11 w-full max-w-md px-3 py-2 font-body bg-paper border border-bone focus:border-rust text-sm"
               />
             </div>
           </div>
@@ -96,7 +96,7 @@ const focusOptions = [
                 <p class="font-display italic text-rust text-xs mb-2 font-medium">
                   {[t.data.sport, t.data.age, t.data.focus].filter(Boolean).join(' · ')}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
                   {t.data.summary}
                 </p>
@@ -205,8 +205,8 @@ const focusOptions = [
   ) : (
     <section>
       <div class="container-px py-16">
-        <p class="font-display italic text-rust mb-3 font-medium">Coming next</p>
-        <h2 class="font-display text-ink text-3xl leading-tight max-w-2xl font-medium">
+        <p class="t-eyebrow mb-3">Coming next</p>
+        <h2 class="t-h2 font-display text-ink leading-tight max-w-2xl font-medium">
           The drill library is loading. First batch ships this month.
         </h2>
         <p class="font-display text-ink-soft mt-5 max-w-2xl leading-snug">

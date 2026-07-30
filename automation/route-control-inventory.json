@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 164,
+  "route_count": 162,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -90,26 +90,6 @@
         "GET"
       ],
       "source": "admin/agents.astro",
-      "cache_class": "admin_preview",
-      "auth_boundary": "cloudflare_access_and_app_authorization",
-      "public_write_limiter": null
-    },
-    {
-      "route": "/admin/api/camps/:id/reject",
-      "methods": [
-        "POST"
-      ],
-      "source": "admin/api/camps/[id]/reject.ts",
-      "cache_class": "admin_preview",
-      "auth_boundary": "cloudflare_access_and_app_authorization",
-      "public_write_limiter": null
-    },
-    {
-      "route": "/admin/api/camps/:id/verify",
-      "methods": [
-        "POST"
-      ],
-      "source": "admin/api/camps/[id]/verify.ts",
       "cache_class": "admin_preview",
       "auth_boundary": "cloudflare_access_and_app_authorization",
       "public_write_limiter": null

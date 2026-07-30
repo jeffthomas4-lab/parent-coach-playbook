@@ -17,6 +17,13 @@ export interface PromoteResult {
   organizationCreated: boolean;
 }
 
+// Residual race, knowingly left in place: this is a read, and the INSERT that
+// depends on it happens later, so two promotes for the same org name that both
+// miss here each create an organization row. There is no unique index on
+// LOWER(organizations.name) to lean on, and adding one needs a migration plus a
+// dedupe of existing rows. The promote route's status claim already caps this
+// at one org per suggestion; the leftover exposure is two DIFFERENT suggestions
+// naming the same org, which the admin merges on /admin/data-quality.
 async function findOrganizationIdByName(db: D1Database, name: string): Promise<string | null> {
   const row = await db
     .prepare('SELECT id FROM organizations WHERE LOWER(name) = LOWER(?) LIMIT 1')
@@ -38,6 +45,10 @@ export async function promoteOrgSuggestionToProgram(
 ): Promise<PromoteResult> {
   const now = new Date().toISOString();
   const programId = generateCampId();
+  // Same residual race as findOrganizationIdByName: uniqueSlug checks for a
+  // conflict and returns, and the INSERT lands afterwards, so two promotes
+  // running at once can be handed the same slug. Closing it properly needs a
+  // unique index on programs.slug (migration + dedupe), not a code change here.
   const programSlug = await uniqueSlug(db, suggestion.org_name);
 
   const existingOrgId = await findOrganizationIdByName(db, suggestion.org_name);

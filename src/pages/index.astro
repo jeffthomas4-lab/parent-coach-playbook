@@ -134,7 +134,7 @@ const websiteSchema = {
         {/* Latest reads rail */}
         <aside class="lg:col-span-4 card card-rule p-6">
           <p class="t-section mb-2">Latest</p>
-          <h2 class="t-display text-xl leading-tight mb-4">
+          <h2 class="t-h2 t-display leading-tight mb-4">
             Right off the <em>desk</em>
           </h2>
           <ul class="border-t border-line">
@@ -144,7 +144,7 @@ const websiteSchema = {
                   <p class="t-eyebrow">
                     {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {wasUpdated(a.data) ? 'Updated ' : ''}{fmtDate(freshnessDate(a.data))}
                   </p>
-                  <h3 class="font-display text-ink text-sm leading-snug mt-1 group-hover:text-accent transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+                  <h3 class="t-card-title font-display text-ink leading-snug mt-1 group-hover:text-accent transition-colors font-medium" set:html={renderTitle(a.data.title)} />
                 </a>
               </li>
             ))}
@@ -183,7 +183,7 @@ const websiteSchema = {
                   {NEWS_CATEGORY_LABELS[item.data.category] ?? item.data.category}
                   {item.data.sport && <span> · {item.data.sport}</span>}
                 </p>
-                <h3 class="font-display text-ink text-base leading-snug group-hover:text-accent transition-colors font-medium">
+                <h3 class="t-card-title font-display text-ink leading-snug group-hover:text-accent transition-colors font-medium">
                   {item.data.headline}
                 </h3>
               </a>
@@ -209,7 +209,7 @@ const websiteSchema = {
           >
             <p class="t-eyebrow mb-2">New</p>
             <h3
-              class="font-display text-ink text-xl leading-tight group-hover:text-accent transition-colors font-medium"
+              class="t-card-title font-display text-ink leading-tight group-hover:text-accent transition-colors font-medium"
               set:html={renderTitle(p.data.title)}
             />
             {p.data.dek && (
@@ -245,7 +245,7 @@ const websiteSchema = {
             href={`/sports/${sport.slug}/`}
             class="card card-hover group px-5 py-4 block rounded-card min-h-11"
           >
-            <h3 class="font-display text-ink text-base leading-tight group-hover:text-accent transition-colors font-medium">
+            <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-accent transition-colors font-medium">
               {sport.label}
             </h3>
             <p class="t-cta mt-1 text-sm">→ Guide</p>
@@ -294,7 +294,7 @@ const websiteSchema = {
                   {p.eyebrow}
                 </span>
               </div>
-              <h3 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-accent transition-colors font-medium">
+              <h3 class="t-h3 font-display text-ink leading-tight group-hover:text-accent transition-colors font-medium">
                 {p.label}
               </h3>
               <p class="text-ink-soft text-base mt-3 leading-snug">
@@ -343,7 +343,7 @@ const websiteSchema = {
           <li>
             <a href="/game/coaching-your-own-kid-in-front-of-the-team/" class="block py-4 border-b border-line group transition-colors">
               <span class="t-eyebrow">Essay</span>
-              <h3 class="font-display text-ink text-xl leading-tight mt-1 font-medium group-hover:text-accent transition-colors">
+              <h3 class="t-card-title font-display text-ink leading-tight mt-1 font-medium group-hover:text-accent transition-colors">
                 Coaching your own kid <em class="text-accent italic">in front of the team</em>
               </h3>
               <p class="text-ink-soft text-sm mt-1 leading-snug">
@@ -354,7 +354,7 @@ const websiteSchema = {
           <li>
             <a href="/drive-home/three-drives-one-relationship/" class="block py-4 border-b border-line group transition-colors">
               <span class="t-eyebrow">Framework</span>
-              <h3 class="font-display text-ink text-xl leading-tight mt-1 font-medium group-hover:text-accent transition-colors">
+              <h3 class="t-card-title font-display text-ink leading-tight mt-1 font-medium group-hover:text-accent transition-colors">
                 Three drives. <em class="text-accent italic">One relationship.</em>
               </h3>
               <p class="text-ink-soft text-sm mt-1 leading-snug">
@@ -365,7 +365,7 @@ const websiteSchema = {
           <li>
             <a href="/drive-home/the-you-should-be-assistant-coaching-pressure/" class="block py-4 group transition-colors">
               <span class="t-eyebrow">Decision</span>
-              <h3 class="font-display text-ink text-xl leading-tight mt-1 font-medium group-hover:text-accent transition-colors">
+              <h3 class="t-card-title font-display text-ink leading-tight mt-1 font-medium group-hover:text-accent transition-colors">
                 The <em class="text-accent italic">"you should be assistant coaching"</em> pressure
               </h3>
               <p class="text-ink-soft text-sm mt-1 leading-snug">
@@ -388,7 +388,7 @@ const websiteSchema = {
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
         <a href="/scripts/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
           <p class="t-eyebrow">Scripts</p>
-          <h3 class="font-display text-ink text-lg md:text-xl leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
+          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
             What to <em>actually</em> say.
           </h3>
           <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
@@ -399,7 +399,7 @@ const websiteSchema = {
 
         <a href="/decisions/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
           <p class="t-eyebrow">Decisions</p>
-          <h3 class="font-display text-ink text-lg md:text-xl leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
+          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
             The big calls, walked through.
           </h3>
           <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
@@ -410,7 +410,7 @@ const websiteSchema = {
 
         <a href="/youth-sports-pendulum/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
           <p class="t-eyebrow">Pendulum</p>
-          <h3 class="font-display text-ink text-lg md:text-xl leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
+          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
             Where is your family right now?
           </h3>
           <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
@@ -421,7 +421,7 @@ const websiteSchema = {
 
         <a href="/cost-calculator/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
           <p class="t-eyebrow">Cost calculator</p>
-          <h3 class="font-display text-ink text-lg md:text-xl leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
+          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
             What does a year <em>actually</em> cost?
           </h3>
           <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">

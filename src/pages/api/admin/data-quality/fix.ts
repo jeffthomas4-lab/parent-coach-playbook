@@ -159,7 +159,12 @@ export const POST: APIRoute = async ({ request }) => {
     case 'reject_duplicate': {
       const result = await rejectAsDuplicate(env.DB, id, auth.email);
       if (!result.camp) return fail('program not found', 404);
-      changed = true;
+      // rejectCamp's UPDATE is guarded on pcd_status != 'rejected', so a second
+      // click moves nothing. Report its real change count instead of a blanket
+      // true — the drill-down clears the row whenever this comes back ok, and
+      // claiming success would hide a row that never changed.
+      changed = result.transitioned;
+      if (!changed) return fail('program was already rejected', 409);
       break;
     }
     default:

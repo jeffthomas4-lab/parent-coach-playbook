@@ -70,7 +70,7 @@ const breadcrumbSchema = {
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/decisions/" class="hover:underline">Decisions</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(decision.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(decision.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {decision.data.summary}
       </p>
@@ -80,7 +80,7 @@ const breadcrumbSchema = {
   <!-- The question reframed -->
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-8 max-w-3xl">
-      <p class="font-display italic text-rust mb-2 text-sm font-medium">The real question</p>
+      <p class="t-eyebrow mb-2">The real question</p>
       <p class="font-display text-ink text-xl leading-snug font-medium">
         {decision.data.theQuestion}
       </p>
@@ -93,7 +93,7 @@ const breadcrumbSchema = {
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         {decision.data.benefits.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm font-medium" style="color: #5F7075">Benefits</p>
+            <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">Benefits</p>
             <ul class="grid gap-2">
               {decision.data.benefits.map((b) => (
                 <li class="font-display text-ink leading-snug pl-4 -indent-4" style="font-weight: 400;">· {b}</li>
@@ -121,7 +121,7 @@ const breadcrumbSchema = {
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         {decision.data.signsItsAGoodFit.length > 0 && (
           <div>
-            <p class="font-display italic mb-3 text-sm font-medium" style="color: #5F7075">Signs it's a good fit</p>
+            <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">Signs it's a good fit</p>
             <ul class="grid gap-2">
               {decision.data.signsItsAGoodFit.map((s) => (
                 <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {s}</li>
@@ -147,7 +147,7 @@ const breadcrumbSchema = {
   {decision.data.howToHandleIt.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm font-medium">How to handle the conversation</p>
+        <p class="t-eyebrow mb-3">How to handle the conversation</p>
         <ul class="grid gap-2">
           {decision.data.howToHandleIt.map((h) => (
             <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {h}</li>
@@ -158,10 +158,10 @@ const breadcrumbSchema = {
   )}
 
   <!-- The rule -->
-  <section class="border-b border-bone bg-ink text-paper">
+  <section class="border-t-4 border-t-accent border-b border-b-bone bg-stripe">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm font-medium" style="color: #8A9BA0">The rule</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
+      <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">The rule</p>
+      <p class="font-display text-ink text-2xl md:text-3xl leading-snug font-medium">
         {decision.data.theRule}
       </p>
     </div>
@@ -180,7 +180,7 @@ const breadcrumbSchema = {
   {(relatedScripts.length > 0 || relatedDecisions.length > 0) && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10">
-        <p class="font-display italic text-rust mb-4 font-medium">You might also need</p>
+        <p class="t-eyebrow mb-4">You might also need</p>
         <div class="grid md:grid-cols-2 gap-6">
           {relatedScripts.length > 0 && (
             <div>

@@ -19,7 +19,7 @@ const overdue = (value: string) => Number.isFinite(Date.parse(value)) && Date.pa
 <AdminLayout title="Trust cases" description="Protected correction, removal, and rights-request queue" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · Trust</p>
-    <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Open trust cases</h1>
+    <h1 class="t-h1-compact font-display text-ink font-medium">Open trust cases</h1>
     <p class="font-display italic text-ink-soft text-sm mt-2 max-w-3xl">Corrections, removals, privacy, copyright, accessibility, and safety-related content reports. Production changes, deletion, and outbound responses remain separately approved.</p>
     <p class="mt-3 flex flex-wrap gap-4"><a href="/admin/trust/drafts/" class="text-rust hover:underline">Review protected response drafts →</a><a href="/admin/trust/deliveries/" class="text-rust hover:underline">Reconcile ambiguous deliveries →</a></p>
   </div></section>
@@ -35,19 +35,19 @@ const overdue = (value: string) => Number.isFinite(Date.parse(value)) && Date.pa
         <p class="mt-2 text-sm text-ink-soft">Contact: {item.requester_email}{item.requester_name ? ` · ${item.requester_name}` : ''}</p>
         <form method="POST" action={`/api/admin/trust/${item.id}/draft`} class="grid gap-2 mt-4 max-w-xl border-t border-bone pt-4">
           <p class="text-sm text-ink-soft">Create a protected response draft. Saving does not approve or send it.</p>
-          <label class="grid gap-1"><span class="text-sm">Subject</span><input name="subject" minlength="3" maxlength="200" required class="px-2 py-1 border border-bone bg-paper" /></label>
+          <label class="grid gap-1"><span class="text-sm">Subject</span><input name="subject" minlength="3" maxlength="200" required class="min-h-11 px-2 py-1 border border-bone bg-paper" /></label>
           <label class="grid gap-1"><span class="text-sm">Response draft</span><textarea name="body_text" minlength="20" maxlength="10000" rows="6" required class="px-2 py-1 border border-bone bg-paper"></textarea></label>
           <button class="btn btn-ghost" type="submit">Save protected draft</button>
         </form>
         <form method="POST" action={`/api/admin/trust/${item.id}/update`} class="grid gap-2 mt-4 max-w-xl">
-          <label class="grid gap-1"><span class="text-sm">Next state</span><select name="status" class="px-2 py-1 border border-bone bg-paper"><option value="in_review">Mark in review</option><option value="resolved">Resolve</option><option value="closed">Close</option></select></label>
-          <label class="grid gap-1"><span class="text-sm">Resolution code (required for resolve/close)</span><select name="resolution_code" class="px-2 py-1 border border-bone bg-paper"><option value="">Not terminal</option><option value="corrected">Corrected</option><option value="removed">Removed</option><option value="fulfilled">Rights request fulfilled</option><option value="no_action">No action</option><option value="duplicate">Duplicate</option><option value="out_of_scope">Out of scope</option><option value="referred">Referred</option></select></label>
+          <label class="grid gap-1"><span class="text-sm">Next state</span><select name="status" class="min-h-11 px-2 py-1 border border-bone bg-paper"><option value="in_review">Mark in review</option><option value="resolved">Resolve</option><option value="closed">Close</option></select></label>
+          <label class="grid gap-1"><span class="text-sm">Resolution code (required for resolve/close)</span><select name="resolution_code" class="min-h-11 px-2 py-1 border border-bone bg-paper"><option value="">Not terminal</option><option value="corrected">Corrected</option><option value="removed">Removed</option><option value="fulfilled">Rights request fulfilled</option><option value="no_action">No action</option><option value="duplicate">Duplicate</option><option value="out_of_scope">Out of scope</option><option value="referred">Referred</option></select></label>
           <label class="grid gap-1"><span class="text-sm">Internal notes (minimum 10 characters for resolve/close)</span><textarea name="notes" maxlength="2000" rows="2" placeholder="Evidence reviewed, decision, action/proposal, and follow-up." class="px-2 py-1 border border-bone bg-paper"></textarea></label>
           <button class="btn" type="submit">Update case</button>
         </form>
         {(item.camp_slug || item.target_url) && <form method="POST" action={`/api/admin/trust/${item.id}/suppression`} class="grid gap-2 mt-4 pt-4 border-t border-bone max-w-xl">
           <p class="text-sm text-ink-soft">Create an inert suppression proposal so approved removals cannot be silently reimported. This does not remove content or activate suppression.</p>
-          <label class="grid gap-1"><span class="text-sm">Suppression reason</span><select name="reason_code" required class="px-2 py-1 border border-bone bg-paper"><option value="">Choose reason</option><option value="rights_request">Rights request</option><option value="operator_request">Operator request</option><option value="duplicate">Duplicate</option><option value="unsafe_source">Unsafe source</option><option value="legal_hold">Legal hold</option><option value="other">Other</option></select></label>
+          <label class="grid gap-1"><span class="text-sm">Suppression reason</span><select name="reason_code" required class="min-h-11 px-2 py-1 border border-bone bg-paper"><option value="">Choose reason</option><option value="rights_request">Rights request</option><option value="operator_request">Operator request</option><option value="duplicate">Duplicate</option><option value="unsafe_source">Unsafe source</option><option value="legal_hold">Legal hold</option><option value="other">Other</option></select></label>
           <button class="btn btn-ghost" type="submit">Propose suppression</button>
         </form>}
       </li>)}</ul>

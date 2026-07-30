@@ -115,7 +115,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
           <> · <a href={`/sports/${sportSlug}/`} class="hover:underline">{sportLabel}</a></>
         )}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.5rem] leading-[1.05] max-w-3xl font-medium">
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium">
         {data.title}
       </h1>
       {data.seoDescription && (
@@ -158,7 +158,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
       <aside class="lg:col-span-4 lg:sticky lg:top-8 lg:self-start space-y-6">
         {sportEntry && (
           <div class="border border-bone bg-paper-warm p-5">
-            <p class="font-display italic text-rust mb-3 font-medium" style="font-size: 0.95rem;">
+            <p class="t-eyebrow mb-3">
               {sportLabel} hub
             </p>
             <p class="font-display text-ink-soft text-sm leading-snug mb-4">
@@ -175,7 +175,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         )}
 
         <div class="border border-bone bg-paper-warm p-5">
-          <p class="font-display italic text-rust mb-2 font-medium" style="font-size: 0.95rem;">
+          <p class="t-eyebrow mb-2">
             All sports
           </p>
           <a

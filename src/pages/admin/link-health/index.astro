@@ -55,8 +55,8 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
 <AdminLayout title="Link health" description="External-link health dashboard." email={auth.email}>
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2 font-medium">Admin · Link health</p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <p class="t-eyebrow mb-2">Admin · Link health</p>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         External-link health
       </h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
@@ -87,10 +87,10 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
       </div>
 
       <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic font-medium" data-filter-bar>
-        <button data-filter="all"        class="px-3 py-1 border border-ink bg-ink text-paper">All</button>
-        <button data-filter="broken"     class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Broken</button>
-        <button data-filter="redirected" class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Redirected</button>
-        <button data-filter="never"      class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Never checked</button>
+        <button data-filter="all"        class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-ink bg-ink text-paper">All</button>
+        <button data-filter="broken"     class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Broken</button>
+        <button data-filter="redirected" class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Redirected</button>
+        <button data-filter="never"      class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Never checked</button>
       </div>
     </div>
   </section>
@@ -132,7 +132,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                     <p class="font-display italic text-ink-soft text-xs mt-1 font-medium">{r.notes}</p>
                   )}
                   {r.suggested_replacement && (
-                    <p class="font-display text-xs mt-1 break-all font-medium" style="color: #5F7075;">
+                    <p class="font-display text-xs mt-1 break-all font-medium text-silver-deep">
                       Suggested replacement: <a href={r.suggested_replacement} target="_blank" rel="noopener" class="hover:underline">{truncate(r.suggested_replacement, 60)}</a>
                     </p>
                   )}
@@ -145,7 +145,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                   {sourceFiles.slice(0, 3).map(f => (<div>{truncate(f, 50)}</div>))}
                   {sourceFiles.length > 3 && <div class="text-ink-soft">+{sourceFiles.length - 3} more</div>}
                   {r.suggested_replacement && sourceFiles.length > 0 && (
-                    <p class="font-display italic text-xs mt-1 font-medium" style="color: #5F7075;">Paste the replacement above into the file(s) listed here.</p>
+                    <p class="font-display italic text-xs mt-1 font-medium text-silver-deep">Paste the replacement above into the file(s) listed here.</p>
                   )}
                 </td>
                 <td class="py-2 pr-3 align-top">
@@ -160,11 +160,11 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                 </td>
                 <td class="py-2 pr-3 align-top" data-link-row>
                   <div class="grid gap-1 min-w-[11rem]">
-                    <button type="button" class="recheck-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium" data-action="recheck">
+                    <button type="button" class="min-h-11 inline-flex items-center justify-center recheck-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium" data-action="recheck">
                       Recheck now
                     </button>
                     {canResolveOrReplace && (
-                      <button type="button" class="resolve-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium" data-action="resolve">
+                      <button type="button" class="min-h-11 inline-flex items-center justify-center resolve-btn font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium" data-action="resolve">
                         Mark resolved
                       </button>
                     )}
@@ -174,7 +174,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                         <div class="grid gap-1 mt-1">
                           <input
                             type="text"
-                            class="replace-input px-2 py-1 font-body bg-paper border border-bone text-xs w-full"
+                            class="min-h-11 replace-input px-2 py-1 font-body bg-paper border border-bone text-xs w-full"
                             value={r.suggested_replacement || r.url}
                           />
                           {r.wayback_snapshot && (
@@ -182,7 +182,7 @@ const truncate = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' 
                               Use Wayback snapshot as replacement
                             </button>
                           )}
-                          <button type="button" class="save-replacement-btn font-display italic px-2 py-1 border border-bone bg-paper-warm text-xs hover:bg-paper font-medium" data-action="suggest-replacement">
+                          <button type="button" class="min-h-11 inline-flex items-center justify-center save-replacement-btn font-display italic px-2 py-1 border border-bone bg-paper-warm text-xs hover:bg-paper font-medium" data-action="suggest-replacement">
                             Save suggested replacement
                           </button>
                           <p class="font-display italic text-ink-soft text-xs leading-snug">

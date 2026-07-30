@@ -153,7 +153,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
         <p class="font-display italic mb-2" style={`color: ${cat.accent}; font-weight: 500;`}>
           <a href="/team-parent/" class="hover:underline">Team Parent</a> · <a href={`/team-parent/#${cat.slug}`} class="hover:underline">{cat.label}</a>
         </p>
-        <h1 class="font-display text-ink text-[2rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium" set:html={renderTitle(resource.data.title)} />
+        <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium" set:html={renderTitle(resource.data.title)} />
         <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
           {resource.data.summary}
         </p>
@@ -215,8 +215,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
     <article class="container-px py-10 md:py-14">
       <header class="max-w-prose mx-auto">
         <h1
-          class={`font-display text-ink leading-[1.05] ${isShort ? 'text-[2rem] md:text-[2.75rem]' : 'text-[2.25rem] md:text-[3.75rem]'}`}
-          class="font-medium"
+          class={`font-display text-ink font-medium leading-[1.05] ${isShort ? 't-h1' : 't-h1-hero'}`}
           set:html={titleHtml}
         />
         {article.data.dek && !isShort && (
@@ -242,7 +241,7 @@ const cat = resource ? TEAM_PARENT_CATEGORIES.find((c) => c.slug === resource.da
       </div>
 
       <aside class="max-w-prose mx-auto mt-16 pt-8 border-t border-bone">
-        <p class="font-display italic text-rust mb-2 font-medium">About this piece</p>
+        <p class="t-eyebrow mb-2">About this piece</p>
         <p class="font-display text-ink-soft text-sm leading-snug">
           Written and edited by the {EDITORIAL.byline}. Sources reviewed against governing-body guidance where possible. Corrections welcome at <a href={`mailto:${SITE.email}`} class="hover:text-rust underline-offset-2 hover:underline">{SITE.email}</a>.
         </p>
