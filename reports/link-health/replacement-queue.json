@@ -18,7 +18,7 @@
       "product_intent": "Youth/junior wrestling headgear (ear guards) for wrestling gear guide and pillar page",
       "suggested_search_query": "youth wrestling headgear ear guards",
       "priority": "high",
-      "status": "proposed",
+      "status": "approved",
       "resolution": {
         "proposed_destination": "https://www.amazon.com/dp/B07GZX6Y6S?tag=parentcoachpl-20",
         "proposed_asin": "B07GZX6Y6S",
@@ -31,7 +31,9 @@
         "validated_at": "2026-07-28",
         "validated_in_browser": true,
         "named_card_found": true,
-        "named_card_location": "src/content/guides/wrestling.md (h3 \"Cliff Keen youth wrestling headgear\") — brand and product type already match, no copy rewrite needed."
+        "named_card_location": "src/content/guides/wrestling.md (h3 \"Cliff Keen youth wrestling headgear\") — brand and product type already match, no copy rewrite needed.",
+        "approved_by": "jeff",
+        "approved_at": "2026-07-29"
       }
     },
     {
@@ -45,7 +47,7 @@
       "product_intent": "Starter-level youth ice hockey protective pad set (shin/shoulder/elbow starter kit) for hockey gear guide and pillar page",
       "suggested_search_query": "youth ice hockey starter protective pad set",
       "priority": "high",
-      "status": "proposed",
+      "status": "approved",
       "resolution": {
         "proposed_destination": "https://www.amazon.com/dp/B07KFV9MFL?tag=parentcoachpl-20",
         "proposed_asin": "B07KFV9MFL",
@@ -58,7 +60,9 @@
         "validated_at": "2026-07-28",
         "validated_in_browser": true,
         "named_card_found": true,
-        "named_card_location": "src/content/guides/hockey.md (h3 \"Bauer Prodigy youth hockey starter kit\") — NOTE: proposed replacement is Winnwell, not Bauer. Card copy names a different brand/model and will need a rewrite if this swap ships. (No bundled Bauer Prodigy 5-piece starter kit could be found for sale on Amazon at all this run — Bauer only sells individual pad pieces there.)"
+        "named_card_location": "src/content/guides/hockey.md (h3 \"Bauer Prodigy youth hockey starter kit\") — NOTE: proposed replacement is Winnwell, not Bauer. Card copy names a different brand/model and will need a rewrite if this swap ships. (No bundled Bauer Prodigy 5-piece starter kit could be found for sale on Amazon at all this run — Bauer only sells individual pad pieces there.)",
+        "approved_by": "jeff",
+        "approved_at": "2026-07-29"
       }
     },
     {
@@ -72,7 +76,7 @@
       "product_intent": "Youth basketball shoe for basketball equipment guide, basketball guide, and basketball pillar page",
       "suggested_search_query": "Nike youth basketball shoe big kid",
       "priority": "high",
-      "status": "proposed",
+      "status": "approved",
       "resolution": {
         "proposed_destination": "https://www.amazon.com/dp/B0F14PHJCY?tag=parentcoachpl-20",
         "proposed_asin": "B0F14PHJCY",
@@ -85,7 +89,9 @@
         "validated_at": "2026-07-28",
         "validated_in_browser": true,
         "named_card_found": false,
-        "named_card_location": null
+        "named_card_location": null,
+        "approved_by": "jeff",
+        "approved_at": "2026-07-29"
       }
     },
     {
@@ -99,7 +105,7 @@
       "product_intent": "Youth gymnastics slippers/grips for ballet, dance, and gymnastics guides",
       "suggested_search_query": "youth gymnastics slippers grip sole",
       "priority": "medium",
-      "status": "proposed",
+      "status": "approved",
       "resolution": {
         "proposed_destination": "https://www.amazon.com/dp/B0DQYG586R?tag=parentcoachpl-20",
         "proposed_asin": "B0DQYG586R",
@@ -112,7 +118,9 @@
         "validated_at": "2026-07-28",
         "validated_in_browser": true,
         "named_card_found": true,
-        "named_card_location": "src/content/guides/gymnastics.md (h3 \"Capezio youth gymnastics slippers\"), src/content/guides/ballet.md (h3 \"Capezio youth ballet slippers\"), src/content/guides/dance.md (h3 \"Capezio youth ballet slippers\") — brand matches on all three, but copy describes split-sole canvas construction; proposed item is full-sole leather. Construction detail in the copy will need updating even though the brand name does not."
+        "named_card_location": "src/content/guides/gymnastics.md (h3 \"Capezio youth gymnastics slippers\"), src/content/guides/ballet.md (h3 \"Capezio youth ballet slippers\"), src/content/guides/dance.md (h3 \"Capezio youth ballet slippers\") — brand matches on all three, but copy describes split-sole canvas construction; proposed item is full-sole leather. Construction detail in the copy will need updating even though the brand name does not.",
+        "approved_by": "jeff",
+        "approved_at": "2026-07-29"
       }
     },
     {

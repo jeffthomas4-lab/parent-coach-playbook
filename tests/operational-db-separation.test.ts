@@ -12,11 +12,29 @@ const operationalFiles = [
   '../src/pages/admin/trust/index.astro',
   '../src/pages/admin/trust/drafts.astro',
   '../src/pages/admin/trust/deliveries.astro',
-  '../src/pages/admin/retention.astro',
 ];
 
+// Read-only exemption, 2026-07-30: `src/pages/admin/retention.astro` was on the
+// list above until the retention audit was corrected. The invariant this file
+// enforces — operational state is written only through PCD_OPS_DB — is real and
+// unchanged. But the retention aging report is not operational state; it is a
+// SELECT-only count across seven personal-data domains, and six of those tables
+// (search_events, org_suggestions, camp_claims, camp_reviews, programs,
+// submitters) live in the directory DB, not PCD_OPS_DB. Verified against
+// production 2026-07-29: PCD_OPS_DB holds only trust_cases of the seven.
+// Keeping the page on this list forced it to query the wrong database, so it
+// reported "Not installed" for six of seven rows and the privacy page said
+// nothing about the personal data it exists to age.
+//
+// The exemption is narrow and holds only while runRetentionAudit stays
+// read-only. `retention-audit.ts` issues SELECT exclusively, every policy is
+// disposition 'proposal-only' or 'counsel-required', and
+// tests/api/retention-audit.test.ts asserts read-only-by-construction. If a
+// deletion or purge path is ever added there, this exemption is void and the
+// separation question has to be reopened.
+
 describe('PCD operational database separation', () => {
-  it('routes trust, retention, and demand state only through PCD_OPS_DB', async () => {
+  it('routes trust and demand state only through PCD_OPS_DB', async () => {
     for (const file of operationalFiles) {
       const source = await readFile(new URL(file, import.meta.url), 'utf8');
       expect(source, file).toContain('PCD_OPS_DB');

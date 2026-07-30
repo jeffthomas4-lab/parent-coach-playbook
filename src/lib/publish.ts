@@ -257,6 +257,14 @@ export async function publishDraft(
   }
   if (!putRes.ok) {
     console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'write', code: 'provider_rejected', status: putRes.status }));
+    // A 409 from the Contents API is the optimistic-concurrency check firing:
+    // someone edited the file between our read and our write. That is a
+    // conflict the caller can resolve by retrying, not an upstream outage,
+    // so it must not be reported as a 502. Matches the mapping in
+    // api/admin/editorial/approve.ts and set-status.ts.
+    if (putRes.status === 409) {
+      return { ok: false, code: 409, error: 'content_changed_concurrently' };
+    }
     return { ok: false, code: 502, error: 'github commit failed' };
   }
   const putBody = (await putRes.json().catch(() => ({}))) as { commit?: { sha?: string } };

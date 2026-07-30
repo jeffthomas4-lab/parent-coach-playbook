@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 describe('affiliate lifecycle migration', () => {
   it('defines the complete provider-neutral lifecycle without customer surveillance', async () => {
-    const sql = await readFile('migrations-pcd-ops/0023_affiliate_recommendation_lifecycle.sql', 'utf8');
+    const sql = await readFile('migrations-pcd-ops/0027_affiliate_recommendation_lifecycle.sql', 'utf8');
     for (const table of [
       'affiliate_merchants',
       'affiliate_products',
@@ -24,7 +24,7 @@ describe('affiliate lifecycle migration', () => {
   });
 
   it('keeps recommendation publication, offers, and revenue evidence human-gated', async () => {
-    const sql = await readFile('migrations-pcd-ops/0023_affiliate_recommendation_lifecycle.sql', 'utf8');
+    const sql = await readFile('migrations-pcd-ops/0027_affiliate_recommendation_lifecycle.sql', 'utf8');
     expect(sql).toContain("status NOT IN ('approved','published','maintenance_due')");
     expect(sql).toContain("status NOT IN ('approved','active')");
     expect(sql).toContain('statement_sha256');
