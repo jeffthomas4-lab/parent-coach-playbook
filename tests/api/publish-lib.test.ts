@@ -186,7 +186,11 @@ describe('publishDraft', () => {
       .mockResolvedValueOnce(new Response('sha mismatch', { status: 409 }));
     vi.stubGlobal('fetch', fetchMock);
     const result = await publishDraft(ENV, { collection: 'articles', slug: 'a-test-post', approvedBy: 'a@b.com' });
-    expect(result).toMatchObject({ ok: false, code: 502 });
+    // A stale sha is the optimistic-concurrency check firing, not an upstream
+    // outage: someone edited the file between our read and our write. Reported
+    // as 409 so the admin sees "retry", the same mapping approve.ts and
+    // set-status.ts use. Changed from 502 on 2026-07-30.
+    expect(result).toMatchObject({ ok: false, code: 409, error: 'content_changed_concurrently' });
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 

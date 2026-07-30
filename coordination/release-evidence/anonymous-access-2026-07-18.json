@@ -4,7 +4,7 @@
   "target_origin": "https://parentcoachdesk.com",
   "observed_at": "2026-07-23T17:50:06.282Z",
   "ok": true,
-  "route_count": 61,
+  "route_count": 59,
   "results": [
     {
       "path": "/admin/",
@@ -20,18 +20,6 @@
     },
     {
       "path": "/admin/agents",
-      "protected": true,
-      "status": 302,
-      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
-    },
-    {
-      "path": "/admin/api/camps/probe-id/reject",
-      "protected": true,
-      "status": 302,
-      "redirect_origin": "https://fieldforge.cloudflareaccess.com"
-    },
-    {
-      "path": "/admin/api/camps/probe-id/verify",
       "protected": true,
       "status": 302,
       "redirect_origin": "https://fieldforge.cloudflareaccess.com"

@@ -2,25 +2,13 @@
   "schema_version": 1,
   "state": "complete",
   "target_origin": "https://parentcoachdesk.com",
-  "contract_route_count": 61,
+  "contract_route_count": 59,
   "observed_at": "2026-07-23T17:49:21.800Z",
   "allowed_identity_class": "configured_admin",
   "denied_identity_class": "anonymous_untrusted",
   "allowed_results": [
     {
       "path": "/admin/",
-      "edge_authorized": true,
-      "mutation_invoked": false,
-      "status_class": "authenticated_page"
-    },
-    {
-      "path": "/admin/api/camps/probe-id/reject",
-      "edge_authorized": true,
-      "mutation_invoked": false,
-      "status_class": "authenticated_page"
-    },
-    {
-      "path": "/admin/api/camps/probe-id/verify",
       "edge_authorized": true,
       "mutation_invoked": false,
       "status_class": "authenticated_page"
@@ -377,16 +365,6 @@
   "denied_results": [
     {
       "path": "/admin/",
-      "edge_blocked": true,
-      "origin_reached": false
-    },
-    {
-      "path": "/admin/api/camps/probe-id/reject",
-      "edge_blocked": true,
-      "origin_reached": false
-    },
-    {
-      "path": "/admin/api/camps/probe-id/verify",
       "edge_blocked": true,
       "origin_reached": false
     },
