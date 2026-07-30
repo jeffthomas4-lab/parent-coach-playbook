@@ -39,20 +39,37 @@ const NEWS_CATEGORY_ICONS: Record<string, string> = {
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
   .sort((a, b) => freshnessDate(b.data).getTime() - freshnessDate(a.data).getTime());
 
-// "Fresh at the Desk" — the newest published pieces, surfaced automatically.
+// Featured cornerstone — first essay marked featured, fallback to most recent.
+const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
+
+// Latest 3 for the hero right-rail — excludes featured.
+//
+// Was 5. The rail is what sets the hero's height, and at 5 items it ran 744px
+// against a 370px left column, so half the hero was empty on desktop. Three
+// items bring the two columns within ~100px of each other and pull the This
+// Season band up above the fold without moving any markup. The archive link
+// under the rail is what carries the reader to the rest.
+const latestRail = all.filter(a => a.id !== featured?.id).slice(0, 3);
+
+// "Fresh at the Desk" — the newest pieces the hero rail is NOT already showing.
+//
+// This has to be computed after latestRail, and it has to subtract it. Both
+// used to read off the top of the same sorted array, which is what put the
+// same three headlines in both places. Shrinking the rail from 5 to 3 made
+// that worse, not better: the overlap went from 3-of-5 to 3-of-3, an exact
+// repeat. Excluding the rail's ids gives each section a real job — the rail is
+// the newest three, this band is what came just before them.
+//
 // PINNED_SLUGS is an optional manual override: fill it with three slugs to
-// hand-pick the band, or leave it empty to always show the freshest content.
+// hand-pick the band, or leave it empty to take the next three automatically.
 const PINNED_SLUGS: string[] = [];
 const pinned = PINNED_SLUGS
   .map(s => all.find(a => a.id === s))
   .filter(Boolean) as typeof all;
-const pinnedFinal = pinned.length === 3 ? pinned : all.slice(0, 3);
-
-// Featured cornerstone — first essay marked featured, fallback to most recent.
-const featured = all.find(a => a.data.featured && a.data.format === 'essay') ?? all[0];
-
-// Latest 5 for the hero right-rail — excludes featured.
-const latestRail = all.filter(a => a.id !== featured?.id).slice(0, 5);
+const railIds = new Set(latestRail.map(a => a.id));
+const pinnedFinal = pinned.length === 3
+  ? pinned
+  : all.filter(a => !railIds.has(a.id) && a.id !== featured?.id).slice(0, 3);
 
 // The "three drives" homepage section is specifically about the original
 // drive-there/game/drive-home phases — team-parent is a separate content
@@ -177,7 +194,16 @@ const websiteSchema = {
       class="absolute inset-0 w-full h-full object-cover"
       eager
     />
-    <div class="absolute inset-0 bg-surface/90" aria-hidden="true"></div>
+    {/*
+      70%, not 90%. At 90% the sideline photo was a barely-visible texture
+      behind a near-solid white panel, which is a lot of bytes for something
+      nobody can see. Measured against the actual image before loosening it:
+      navy #041E42 on the composited background is 7.85:1 at its worst pixel
+      under the text, which clears the 4.5:1 AA floor and the 7:1 AAA bar.
+      Re-run that math if the hero image is ever swapped — a darker photo
+      would not survive this opacity.
+    */}
+    <div class="absolute inset-0 bg-surface/70" aria-hidden="true"></div>
     <div class="container-px py-16 md:py-24 relative">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
@@ -195,7 +221,11 @@ const websiteSchema = {
             <a href="/sports/" class="btn btn-ghost">Browse by sport</a>
           </div>
           <p class="text-ink-soft text-base mt-5">
-            Written by the <a href="/about/" class="text-accent underline-offset-2 hover:underline hover:text-accent-hover">{EDITORIAL.byline}</a>.
+            {/* EDITORIAL.byline is already "the Parent Coach Desk", so a
+                leading "the" here rendered "Written by the the Parent Coach
+                Desk." Footer.astro and ArticleLayout.astro were always correct;
+                this was the only call site with the extra article. */}
+            Written by <a href="/about/" class="text-accent underline-offset-2 hover:underline hover:text-accent-hover">{EDITORIAL.byline}</a>.
           </p>
         </div>
 
@@ -271,18 +301,19 @@ const websiteSchema = {
 
   {/* ── PINNED AT THE DESK ───────────────────────────────────────────────── */}
   {/*
-    Hidden below md on purpose. On desktop the hero rail ("Right off the desk")
-    sits in a right-hand column and this band sits below it, so the two read as
-    two different shelves. On a phone the rail collapses underneath the hero
-    copy and lands directly above this band — and since latestRail and
-    pinnedFinal both come off the top of the same sorted list, a phone showed
-    the same three headlines twice, about 950px apart, with nothing between them
-    but a color change. Dropping the band on mobile costs the deks and saves the
-    repetition; the rail already links every one of these pieces.
+    Still hidden below md, but the reason has changed and it is now a length
+    call rather than a duplication one.
 
-    Known follow-up: desktop still overlaps. The clean fix is to source
-    pinnedFinal from articles the rail is not already showing, which changes
-    what desktop displays and is a separate call.
+    Originally this band and the hero rail both read off the top of the same
+    sorted list, so a phone (where the rail collapses to sit right above this
+    band) showed the same three headlines twice about 950px apart. That is
+    fixed at the source now: pinnedFinal subtracts the rail's ids, so the two
+    sections carry different pieces on every breakpoint.
+
+    It stays hidden on mobile because the phone page already runs ~9,600px and
+    this band adds another ~950px of the same card pattern. That is a judgment
+    about scroll length, not a bug, so unhiding it is a one-word change
+    (`hidden md:block` → nothing) whenever the call goes the other way.
   */}
   <section class="band band-surface hidden md:block">
     <div class="container-px">
