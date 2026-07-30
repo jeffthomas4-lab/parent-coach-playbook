@@ -88,13 +88,30 @@ if (props.kind === 'article') {
   isShort = article.data.format === 'note';
   titleHtml = renderTitle(article.data.title);
 
-  related = (
+  // One live-article fetch (same-phase, self excluded), then build the 3-card
+  // list with graceful sport-aware fallback: same-sport team-parent pieces
+  // surface first when this article has a sport, backfilled with newest
+  // same-phase so the module is never thin. No sport means no hard filter —
+  // newest-first same-phase, same as before.
+  const samePhaseLive = (
     await getCollection('articles', ({ data: d, id: s }) =>
       isLive(d) && d.phase === 'team-parent' && s !== article!.id
     )
-  )
-    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
-    .slice(0, 3);
+  ).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+  const relatedSeen = new Set<string>();
+  const fillRelated = (pool: Article[]) => {
+    for (const a of pool) {
+      if (related.length >= 3) break;
+      if (relatedSeen.has(a.id)) continue;
+      relatedSeen.add(a.id);
+      related.push(a);
+    }
+  };
+  if (article!.data.sport) {
+    fillRelated(samePhaseLive.filter((a) => a.data.sport === article!.data.sport));
+  }
+  fillRelated(samePhaseLive);
 
   articleSchema = {
     '@context': 'https://schema.org',

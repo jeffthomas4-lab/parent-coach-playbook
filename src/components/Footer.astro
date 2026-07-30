@@ -4,7 +4,11 @@ import { SITE } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
-<footer class="mt-24 border-t border-navy bg-paper">
+{/* Footer sits on white, not the grey-blue page background, so it reads as a
+    distinct plane instead of blending into the last section. The 3px navy top
+    rule is the design system's main structural accent and separates the footer
+    even when the section above it is also white. */}
+<footer class="mt-24 border-t-[3px] border-navy bg-surface">
   <div class="container-px py-16 grid gap-12 md:grid-cols-12">
     <div class="md:col-span-5">
       <Logo size={32} />
@@ -20,7 +24,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="md:col-span-4">
-      <div class="t-section mb-3">Explore</div>
+      <div class="t-eyebrow mb-4">Explore</div>
       <ul class="grid gap-2.5 font-body text-ink-soft">
         <li><a href="/start-here/" class="hover:text-rust">Start here</a></li>
         <li><a href="/sports/" class="hover:text-rust">By sport</a></li>
@@ -32,7 +36,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="md:col-span-3">
-      <div class="t-section mb-3">The Desk</div>
+      <div class="t-eyebrow mb-4">The Desk</div>
       <ul class="grid gap-2.5 font-body text-ink-soft">
         <li><a href="/about/" class="hover:text-rust">About</a></li>
         <li><a href="/newsletter/" class="hover:text-rust">Newsletter</a></li>
@@ -43,7 +47,10 @@ const year = new Date().getFullYear();
     </div>
   </div>
 
-  <div class="border-t border-bone">
+  {/* Silver-green hairline + palest fill steps the legal/copyright base down in
+      tone from the white footer body, so the footer reads as two zones rather
+      than one flat slab. Silver green is decorative here (a 1px rule), never text. */}
+  <div class="border-t border-silver bg-stripe">
     <div class="container-px py-4">
       <nav aria-label="Legal and policies" class="flex flex-wrap gap-x-4 gap-y-2 font-body text-ink-soft text-sm">
         <a href="/disclosure/" class="hover:text-rust">Privacy &amp; disclosure</a>
@@ -56,7 +63,7 @@ const year = new Date().getFullYear();
     </div>
   </div>
 
-  <div class="border-t border-bone">
+  <div class="border-t border-line bg-stripe">
     <div class="container-px py-6 grid gap-3 md:flex md:justify-between md:items-center">
       <div class="font-body text-muted text-sm">
         © {year} {SITE.name}.

@@ -24,10 +24,55 @@ const pillar = PILLARS[data.phase];
 const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
 
-// Related: same phase, exclude this article, top 3
-const related = (await getCollection('articles', ({ data: d, id: s }) =>
-  isLive(d) && d.phase === data.phase && s !== slug
-)).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+// Related content: one live-article fetch feeds both modules.
+//
+// Sidebar rail (4 items) is the tight, sport-relevant list: same sport across
+// every phase when the article carries one, backfilled with same-phase so it
+// is never thin. Falls back to today's same-phase behavior when the article
+// has no sport.
+//
+// Below-article module (3 items) stays same-phase ("this drive"), but
+// excludes whatever the sidebar already showed so the two modules never
+// repeat. Backfilled with remaining same-sport, then any newest live
+// article, so it never shrinks below 3 as long as enough distinct live
+// articles exist site-wide.
+const allLive = (await getCollection('articles', ({ data: d }) => isLive(d)))
+  .filter((a) => a.id !== slug);
+
+const byNewest = (a: CollectionEntry<'articles'>, b: CollectionEntry<'articles'>) =>
+  b.data.publishedAt.getTime() - a.data.publishedAt.getTime();
+
+const samePhase = allLive.filter((a) => a.data.phase === data.phase).sort(byNewest);
+const sameSport = data.sport
+  ? allLive.filter((a) => a.data.sport === data.sport).sort(byNewest)
+  : [];
+
+const sidebarSeen = new Set<string>();
+const sidebarRelated: CollectionEntry<'articles'>[] = [];
+const fillSidebar = (pool: CollectionEntry<'articles'>[]) => {
+  for (const a of pool) {
+    if (sidebarRelated.length >= 4) break;
+    if (sidebarSeen.has(a.id)) continue;
+    sidebarSeen.add(a.id);
+    sidebarRelated.push(a);
+  }
+};
+fillSidebar(data.sport ? sameSport : samePhase);
+if (data.sport) fillSidebar(samePhase);
+
+const belowSeen = new Set<string>(sidebarSeen);
+const related: CollectionEntry<'articles'>[] = [];
+const fillBelow = (pool: CollectionEntry<'articles'>[]) => {
+  for (const a of pool) {
+    if (related.length >= 3) break;
+    if (belowSeen.has(a.id)) continue;
+    belowSeen.add(a.id);
+    related.push(a);
+  }
+};
+fillBelow(samePhase);
+if (data.sport) fillBelow(sameSport);
+fillBelow(allLive.slice().sort(byNewest));
 
 // JSON-LD: Article schema. Author entity is resolved via authorEntity()
 // — Organization while AUTHOR_REVEALED is false, Person after the November
@@ -136,9 +181,11 @@ const isShort = data.format === 'note';
 const articleTheme = themeFor(data.topic ?? data.phase);
 const topicChipLabel = data.topic ? articleTheme.label : pillar.label;
 
-// Sidebar rail. Top 4 related links (vertical list). Reuse the `related`
-// query already computed above. Surface the title and a short tag suffix.
-const sidebarRelated = related.slice(0, 4);
+// Sidebar eyebrow label: sport-specific when the article has a sport (e.g.
+// "More soccer"), otherwise the existing same-phase label.
+const sidebarLabel = data.sport && sportLabel
+  ? `More ${sportLabel.toLowerCase()}`
+  : `More from ${pillar.label.toLowerCase()}`;
 
 // Last reviewed: surface the most recent editorial review date if it exceeds publishedAt.
 const reviewedRaw = data.editorial?.jeffReviewedAt ?? data.editorial?.claudeReviewedAt;
@@ -291,7 +338,7 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
         {sidebarRelated.length > 0 && (
           <div class="card card-rule p-5">
             <p class="t-section mb-3">
-              More from {pillar.label.toLowerCase()}
+              {sidebarLabel}
             </p>
             <ul class="space-y-3">
               {sidebarRelated.map((r) => (

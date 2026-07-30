@@ -16,21 +16,19 @@ const { articles, pillarLabel } = Astro.props;
       <h2 class="t-display t-h2 mb-8">
         More from this <em>drive</em>
       </h2>
-      <div class="grid md:grid-cols-3 gap-0 md:gap-px md:bg-line">
+      <div class="grid md:grid-cols-3 gap-6">
         {articles.slice(0, 3).map((a) => (
-          <div class="bg-paper">
-            <ArticleCard
-              href={`/${a.data.phase}/${a.id}/`}
-              format={a.data.format}
-              sport={a.data.sport}
-              age={a.data.age}
-              phase={a.data.phase}
-              topic={a.data.topic}
-              title={a.data.title}
-              dek={a.data.dek}
-              variant="grid"
-            />
-          </div>
+          <ArticleCard
+            href={`/${a.data.phase}/${a.id}/`}
+            format={a.data.format}
+            sport={a.data.sport}
+            age={a.data.age}
+            phase={a.data.phase}
+            topic={a.data.topic}
+            title={a.data.title}
+            dek={a.data.dek}
+            variant="grid"
+          />
         ))}
       </div>
     </div>

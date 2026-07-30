@@ -31,3 +31,4 @@ Checked this run and not queued: the Pop Warner "age cutoff moved to July 14" cl
 | 2026-07-24 | Laundry stripping is the wrong move for your kid's sports gear | Evergreen (CONTENT_ROADMAP.md, Equipment maintenance) | drafted, awaiting review |
 | 2026-07-27 | The certifications you actually need before you coach | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
 | 2026-07-28 | Why SafeSport training is non-negotiable | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
+| 2026-07-29 | The one-day coaching clinic: what to look for | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
