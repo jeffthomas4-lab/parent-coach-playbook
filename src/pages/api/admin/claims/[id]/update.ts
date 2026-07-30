@@ -54,6 +54,12 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (!claim) return json({ ok: false, error: 'claim not found' }, 404);
 
   const updated = await updateClaimStatus(env.DB, id, status, auth.email, payload.notes?.trim() || null);
+  // updateClaimStatus returns null when the row is gone by the time it re-reads
+  // it, i.e. the claim was deleted between the check above and this write. That
+  // is the same answer as line 54's miss, so it gets the same 404. Without this
+  // guard the destructure below throws on null and the caller gets a 500 that
+  // says nothing.
+  if (!updated) return json({ ok: false, error: 'claim not found' }, 404);
   // The UPDATE is guarded on the claim still being in a decidable state. A
   // false `transitioned` means another admin already decided it; returning 200
   // here would hide that their decision was overwritten.
