@@ -26,7 +26,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
           <div class="relative" data-dropdown-root>
             <button
               type="button"
-              class="font-display italic text-[1.05rem] hover:text-rust transition-colors inline-flex items-center gap-1 min-h-11"
+              class="font-body text-[1.05rem] hover:text-rust transition-colors inline-flex items-center gap-1 min-h-11"
               style={`font-weight: 500; color: ${isActive(item.href) ? 'var(--rust)' : 'var(--ink)'};`}
               data-dropdown-trigger
               aria-haspopup="true"
@@ -43,9 +43,9 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
               >
                 <div class="grid grid-cols-2 gap-x-6 gap-y-1">
                   {READS_NAV.map((r) => (
-                    <a href={r.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
+                    <a href={r.href} class="font-body text-ink hover:text-rust block py-1.5 font-medium">
                       {r.label}
-                      <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{r.blurb}</span>
+                      <span class="block font-body text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{r.blurb}</span>
                     </a>
                   ))}
                 </div>
@@ -63,41 +63,41 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
               >
                 <div class="grid grid-cols-4 gap-x-6 gap-y-1">
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm font-medium">Field & team sports</p>
+                    <p class="font-body text-rust mb-2 text-sm font-medium">Field & team sports</p>
                     <ul class="grid gap-1">
                       {teamSportGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-body text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm font-medium">Individual sports</p>
+                    <p class="font-body text-rust mb-2 text-sm font-medium">Individual sports</p>
                     <ul class="grid gap-1">
                       {individualSportGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-body text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm font-medium">Performing arts</p>
+                    <p class="font-body text-rust mb-2 text-sm font-medium">Performing arts</p>
                     <ul class="grid gap-1">
                       {activityGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-body text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-sm font-medium">For coaches</p>
+                    <p class="font-body text-rust mb-2 text-sm font-medium">For coaches</p>
                     <ul class="grid gap-1">
                       {coachGearGuides.map((g) => (
                         <li>
-                          <a href={`/what-to-buy/${g.slug}/`} class="font-display text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
+                          <a href={`/what-to-buy/${g.slug}/`} class="font-body text-ink hover:text-rust block py-1 text-sm font-medium">{g.label}</a>
                         </li>
                       ))}
                     </ul>
@@ -117,20 +117,20 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
               >
                 <div class="grid grid-cols-2 gap-x-8 gap-y-1">
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">CALCULATORS & CHECKS</p>
+                    <p class="font-body text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">CALCULATORS & CHECKS</p>
                     {toolsCol1.map((t) => (
-                      <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
+                      <a href={t.href} class="font-body text-ink hover:text-rust block py-1.5 font-medium">
                         {t.label}
-                        <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
+                        <span class="block font-body text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
                       </a>
                     ))}
                   </div>
                   <div>
-                    <p class="font-display italic text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">PLANNING & REFERENCE</p>
+                    <p class="font-body text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">PLANNING & REFERENCE</p>
                     {toolsCol2.map((t) => (
-                      <a href={t.href} class="font-display text-ink hover:text-rust block py-1.5 font-medium">
+                      <a href={t.href} class="font-body text-ink hover:text-rust block py-1.5 font-medium">
                         {t.label}
-                        <span class="block font-display italic text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
+                        <span class="block font-body text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
                       </a>
                     ))}
                   </div>
@@ -144,7 +144,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
         ) : (
           <a
             href={item.href}
-            class="font-display italic text-[1.05rem] hover:text-rust transition-colors inline-flex items-center min-h-11"
+            class="font-body text-[1.05rem] hover:text-rust transition-colors inline-flex items-center min-h-11"
             style={`font-weight: 500; color: ${isActive(item.href) ? 'var(--rust)' : 'var(--ink)'};`}
           >
             {item.label}
@@ -156,7 +156,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
     <div class="flex items-center gap-5">
       <a
         href="/search/"
-        class="hidden md:inline-flex items-center gap-1 font-display italic text-ink hover:text-rust transition-colors font-medium min-h-11"
+        class="hidden md:inline-flex items-center gap-1 font-body text-ink hover:text-rust transition-colors font-medium min-h-11"
         style="font-size: 0.95rem"
         aria-label="Search the site"
       >
@@ -169,13 +169,13 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
       {UTILITY_NAV.map((item) => (
         <a
           href={item.href}
-          class="hidden md:inline-flex items-center min-h-11 font-display italic text-ink hover:text-rust transition-colors font-medium"
+          class="hidden md:inline-flex items-center min-h-11 font-body text-ink hover:text-rust transition-colors font-medium"
           style="font-size: 0.95rem"
         >{item.label}</a>
       ))}
       <button
         type="button"
-        class="lg:hidden font-display italic text-ink font-medium min-h-11 px-2 -mr-2"
+        class="lg:hidden font-body text-ink font-medium min-h-11 px-2 -mr-2"
         style="font-size: 0.95rem"
         aria-label="Toggle menu"
         data-menu-toggle
@@ -186,35 +186,35 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
   {/* Mobile menu — flat links with section labels for orientation */}
   <div class="lg:hidden hidden border-b border-bone bg-paper-warm" data-mobile-menu>
     <div class="container-px py-6 grid gap-1">
-      <a href="/start-here/" class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2.5 border-b border-bone font-medium">Start here</a>
+      <a href="/start-here/" class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2.5 border-b border-bone font-medium">Start here</a>
 
-      <p class="font-display italic text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">READS</p>
-      <a href="/reads/"        class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">All reads</a>
-      <a href="/scripts/"      class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Scripts</a>
-      <a href="/decisions/"    class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Decisions</a>
-      <a href="/body/"         class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">The Sideline File</a>
-      <a href="/parent-coach/" class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Parent-coach</a>
+      <p class="font-body text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">READS</p>
+      <a href="/reads/"        class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">All reads</a>
+      <a href="/scripts/"      class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Scripts</a>
+      <a href="/decisions/"    class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Decisions</a>
+      <a href="/body/"         class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">The Sideline File</a>
+      <a href="/parent-coach/" class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Parent-coach</a>
 
-      <p class="font-display italic text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">SPORT & GEAR</p>
-      <a href="/sports/"       class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">By sport</a>
-      <a href="/coaching-tips/" class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Drills</a>
-      <a href="/what-to-buy/"  class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Gear Files</a>
-      <a href="/camps/"        class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Camps</a>
+      <p class="font-body text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">SPORT & GEAR</p>
+      <a href="/sports/"       class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">By sport</a>
+      <a href="/coaching-tips/" class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Drills</a>
+      <a href="/what-to-buy/"  class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Gear Files</a>
+      <a href="/camps/"        class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Camps</a>
 
-      <p class="font-display italic text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">TOOLS</p>
-      <a href="/cost-calculator/"      class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Cost calculator</a>
-      <a href="/season-calendar/"      class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Season calendar</a>
-      <a href="/pathways/"             class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Age pathways</a>
-      <a href="/youth-sports-pendulum/" class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">The pendulum</a>
-      <a href="/recruiting/"           class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Recruiting</a>
-      <a href="/rules/"                class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Rules at-a-glance</a>
-      <a href="/news/"                 class="font-display italic text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">This Season</a>
+      <p class="font-body text-rust text-xs font-medium pt-4 pb-1" style="letter-spacing: 0.05em;">TOOLS</p>
+      <a href="/cost-calculator/"      class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Cost calculator</a>
+      <a href="/season-calendar/"      class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Season calendar</a>
+      <a href="/pathways/"             class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Age pathways</a>
+      <a href="/youth-sports-pendulum/" class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">The pendulum</a>
+      <a href="/recruiting/"           class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Recruiting</a>
+      <a href="/rules/"                class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">Rules at-a-glance</a>
+      <a href="/news/"                 class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2 font-medium">This Season</a>
 
       <div class="pt-4 border-t border-bone mt-2 flex flex-wrap gap-5">
-        <a href="/search/"     class="font-display italic text-ink hover:text-rust font-medium flex items-center min-h-11">Search</a>
-        <a href="/newsletter/" class="font-display italic text-ink hover:text-rust font-medium flex items-center min-h-11">Friday Letter</a>
-        <a href="/proof/"      class="font-display italic text-ink hover:text-rust font-medium flex items-center min-h-11">Reviews</a>
-        <a href="/about/"      class="font-display italic text-ink hover:text-rust font-medium flex items-center min-h-11">About</a>
+        <a href="/search/"     class="font-body text-ink hover:text-rust font-medium flex items-center min-h-11">Search</a>
+        <a href="/newsletter/" class="font-body text-ink hover:text-rust font-medium flex items-center min-h-11">Friday Letter</a>
+        <a href="/proof/"      class="font-body text-ink hover:text-rust font-medium flex items-center min-h-11">Reviews</a>
+        <a href="/about/"      class="font-body text-ink hover:text-rust font-medium flex items-center min-h-11">About</a>
       </div>
     </div>
   </div>
