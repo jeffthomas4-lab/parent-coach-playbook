@@ -52,7 +52,10 @@ describe('deployment smoke evidence', () => {
   });
 
   it('recovers from a cached-negative asset response via the cache-busted retry', async () => {
-    const fetchImpl = async (url) => {
+    // `any` is deliberate: this stands in for the platform `fetch`, whose real
+    // signature is (URL | RequestInfo, RequestInit<CfProperties>). Restating
+    // that in a stub buys nothing and trips strictFunctionTypes on assignment.
+    const fetchImpl = async (url: any) => {
       const u = new URL(String(url));
       if (u.pathname === assetProof.path) {
         if (u.searchParams.has('pcd-smoke-retry')) {
@@ -75,12 +78,13 @@ describe('deployment smoke evidence', () => {
     });
     const assetResult = report.results.find((item) => item.kind === 'exact_static_asset');
     expect(assetResult).toMatchObject({ passed: true, asset_matched: true });
-    expect(assetResult.attempts).toBeGreaterThan(1);
+    expect(assetResult).toBeDefined();
+    expect(assetResult!.attempts).toBeGreaterThan(1);
   });
 
   it('sends cache-defeating headers on the asset request', async () => {
-    const capturedHeaders = [];
-    const fetchImpl = async (url, init) => {
+    const capturedHeaders: Record<string, string>[] = [];
+    const fetchImpl = async (url: any, init: any) => {
       const u = new URL(String(url));
       if (u.pathname === assetProof.path) {
         capturedHeaders.push(init.headers);
@@ -98,7 +102,10 @@ describe('deployment smoke evidence', () => {
   });
 
   it('keeps the canonical asset path in the report even after a cache-busted retry', async () => {
-    const fetchImpl = async (url) => {
+    // `any` is deliberate: this stands in for the platform `fetch`, whose real
+    // signature is (URL | RequestInfo, RequestInit<CfProperties>). Restating
+    // that in a stub buys nothing and trips strictFunctionTypes on assignment.
+    const fetchImpl = async (url: any) => {
       const u = new URL(String(url));
       if (u.pathname === assetProof.path) {
         if (u.searchParams.has('pcd-smoke-retry')) return new Response('hello', { status: 200 });
@@ -112,13 +119,17 @@ describe('deployment smoke evidence', () => {
       sleep: async () => {},
     });
     const assetResult = report.results.find((item) => item.kind === 'exact_static_asset');
-    expect(assetResult.path).toBe(assetProof.path);
-    expect(assetResult.path).not.toMatch(/\?/);
+    expect(assetResult).toBeDefined();
+    expect(assetResult!.path).toBe(assetProof.path);
+    expect(assetResult!.path).not.toMatch(/\?/);
   });
 
   it('reports an inconclusive diagnosis instead of a false build-mismatch claim', async () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-    const fetchImpl = async (url) => {
+    // `any` is deliberate: this stands in for the platform `fetch`, whose real
+    // signature is (URL | RequestInfo, RequestInit<CfProperties>). Restating
+    // that in a stub buys nothing and trips strictFunctionTypes on assignment.
+    const fetchImpl = async (url: any) => {
       const u = new URL(String(url));
       if (u.pathname === assetProof.path) {
         // Not a cached negative: no cf-cache-status HIT, not text/html. A
