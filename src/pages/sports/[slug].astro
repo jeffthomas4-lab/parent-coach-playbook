@@ -66,7 +66,7 @@ const fmtDate = (d: Date) =>
   title={pageTitle}
   description={pageDescription}
 >
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/sports/" class="hover:underline">All sports</a> · Sport guide
@@ -85,7 +85,7 @@ const fmtDate = (d: Date) =>
 
   {/* Complete Parent Guide banner — only shown when a pillar page exists for this sport */}
   {matchedPillar && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-8 md:py-10">
         <a href={`/pillar/${matchedPillar.id}/`} class="block group max-w-3xl">
           <p class="t-eyebrow mb-1">Complete Parent Guide</p>
@@ -104,7 +104,7 @@ const fmtDate = (d: Date) =>
   )}
 
   {/* Tools row: cost calculator + pathway + calendar + rules */}
-  <section class="border-b border-bone bg-paper-warm">
+  <section class="section-band section-band-sunken">
     <div class="container-px py-10 md:py-12">
       <p class="font-display italic text-rust mb-2 font-medium">From The Drawer for {sportLabel.toLowerCase()}</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
@@ -156,7 +156,7 @@ const fmtDate = (d: Date) =>
 
   {/* What to buy */}
   {matchedGuide && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 md:py-12">
         <p class="t-eyebrow mb-2">Gear file</p>
         <a href={`/what-to-buy/${sportSlug}/`} class="block max-w-2xl group">
@@ -172,7 +172,7 @@ const fmtDate = (d: Date) =>
 
   {/* Reads (articles tagged this sport) */}
   {matchedArticles.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-12 md:py-14">
         <p class="t-eyebrow mb-3">Reads</p>
         <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
@@ -197,7 +197,7 @@ const fmtDate = (d: Date) =>
 
   {/* Drills */}
   {matchedTips.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-12 md:py-14">
         <p class="t-eyebrow mb-3">Drills</p>
         <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
@@ -225,7 +225,7 @@ const fmtDate = (d: Date) =>
 
   {/* Body topics specific to this sport */}
   {matchedBody.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-12">
         <p class="t-eyebrow mb-3">The Sideline File</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
@@ -244,7 +244,7 @@ const fmtDate = (d: Date) =>
 
   {/* Recruiting */}
   {matchedRecruiting.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-12">
         <p class="t-eyebrow mb-3">Recruiting</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
@@ -263,7 +263,7 @@ const fmtDate = (d: Date) =>
 
   {/* Scripts */}
   {matchedScripts.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-12">
         <p class="t-eyebrow mb-3">Scripts</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
@@ -281,7 +281,7 @@ const fmtDate = (d: Date) =>
   )}
 
   {totalCount === 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-16 text-center">
         <p class="font-display italic text-ink-soft font-medium">
           We're working on the {sportLabel.toLowerCase()} content. Check back soon.

@@ -13,7 +13,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
   title="Age pathways"
   description="What good looks like at 7, 10, 13, 15. Per sport. Skill milestones, practice shape, social and emotional markers, and the parent decision points that come up at each age."
 >
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> · Age pathways
@@ -39,7 +39,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
     </div>
   </section>
 
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-12">
       {pathways.length === 0 ? (
         <p class="font-display italic text-ink-soft font-medium">

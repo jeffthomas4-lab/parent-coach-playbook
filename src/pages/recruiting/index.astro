@@ -39,7 +39,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
   title="HS-to-college recruiting"
   description="A no-hype guide to how college recruiting really works, broken out by sport and by level. Real numbers, real timelines, written by a Division III head coach with two decades of recruiting experience."
 >
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-12 md:py-16">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> · Recruiting
@@ -55,7 +55,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 
   {/* Pillar piece — front and center */}
   {pillar && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-12 md:py-16">
         <p class="t-eyebrow mb-3">Read this first</p>
         <a href={`/recruiting/${pillar.id}/`} class="block group max-w-3xl">
@@ -71,7 +71,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 
   {/* Sport-specific deep dives */}
   {sportPieces.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-12">
         <p class="t-eyebrow mb-2">By sport</p>
         <h2 class="t-h2 font-display text-ink leading-tight max-w-2xl mb-6 font-medium">
@@ -107,7 +107,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
 
   {/* Topical sub-pieces */}
   {groupedTopics.length > 0 && groupedTopics.map((g) => (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 md:py-12">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-4">
@@ -130,7 +130,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
     </section>
   ))}
 
-  <section class="border-b border-bone bg-paper-warm">
+  <section class="section-band section-band-sunken">
     <div class="container-px py-10 max-w-3xl">
       <p class="t-eyebrow mb-3">A note on the byline</p>
       <p class="font-display text-ink leading-relaxed">

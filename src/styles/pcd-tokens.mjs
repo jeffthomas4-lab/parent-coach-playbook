@@ -43,6 +43,10 @@ export const pcdTokens = {
     navy: '#041E42',
     muted: '#5A6468', // muted text, captions
     line: '#C9D2DA',
+    // Section divider. Darker than bone/line on purpose — see the --rule
+    // comment in global.css. 3.49:1 on white (WCAG 1.4.11 non-text wants 3:1
+    // when a rule is the sole carrier of a boundary).
+    rule: '#7C8B99',
     // silver (#8A9BA0) is 2.89:1 on white — DECORATIVE ONLY (fills, borders,
     // glyphs). Never use it for body or label text; use silverDeep instead.
     silver: '#8A9BA0',

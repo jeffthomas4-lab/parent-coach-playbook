@@ -38,7 +38,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
   title="Proof"
   description="Real feedback from parents who use Parent Coach Desk, grouped by what it is about."
 >
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-12 md:py-16">
       <Eyebrow text="Reviews" class="mb-3" />
       <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium">
@@ -51,7 +51,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
   </section>
 
   {!anyApproved && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-8">
         <p class="font-display text-ink-soft text-lg max-w-2xl">
           Real reviews are being collected and will appear here.
@@ -61,7 +61,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
   )}
 
   {groups.map((group) => (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10">
         <h2 class="t-h2 font-display text-ink font-medium mb-6">{group.label}</h2>
 

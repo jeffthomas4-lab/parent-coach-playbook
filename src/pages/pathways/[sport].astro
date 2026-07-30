@@ -41,7 +41,7 @@ const bandAccent: Record<string, string> = {
   title={`${sportLabel} pathway`}
   description={pathway.data.summary}
 >
-  <section class="border-b border-bone">
+  <section class="section-band">
     <div class="container-px py-10 md:py-14">
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
@@ -57,7 +57,7 @@ const bandAccent: Record<string, string> = {
 
   <!-- Age band timeline -->
   {orderedBands.map((b) => (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10 md:py-12">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-3">
@@ -115,7 +115,7 @@ const bandAccent: Record<string, string> = {
 
   <!-- Do not do this yet -->
   {pathway.data.notYet && pathway.data.notYet.length > 0 && (
-    <section class="border-b border-bone bg-paper-warm">
+    <section class="section-band section-band-sunken">
       <div class="container-px py-10">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-3">
@@ -141,7 +141,7 @@ const bandAccent: Record<string, string> = {
 
   <!-- Ahead or behind -->
   {pathway.data.aheadBehind && pathway.data.aheadBehind.length > 0 && (
-    <section class="border-b border-bone">
+    <section class="section-band">
       <div class="container-px py-10">
         <div class="grid md:grid-cols-12 gap-8">
           <div class="md:col-span-3">
