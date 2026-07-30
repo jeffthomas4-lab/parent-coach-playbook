@@ -44,7 +44,7 @@ const lastUpdated = calendar.data.updatedAt ?? calendar.data.publishedAt;
         <a href="/season-calendar/" class="hover:underline">Season calendar</a> ·
         {sportLabel}
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(calendar.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(calendar.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {calendar.data.summary}
       </p>

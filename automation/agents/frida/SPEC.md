@@ -1,5 +1,7 @@
 # Frida: Newsletter
 
+> **SUPERSEDED 2026-07-29.** The Wednesday newsletter task this SPEC was written to give an owner is `pcd-friday-letter-draft`, and it is live. Frida was never wired up; the task runs without her. Design record only. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-13 (Session 4 of the PCD Automation Build Plan). Fourth agent on the roster.
 **Workstream:** Marketing (S10).
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Frida.

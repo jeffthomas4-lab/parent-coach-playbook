@@ -849,27 +849,58 @@ export async function listCitiesInState(
 // Also updates record_status on both programs and organizations so ActivityRadar
 // display stays consistent with PCD editorial decisions.
 
+export interface ApproveCampResult extends Camp {
+  // True only when THIS call promoted the row into 'approved' from a
+  // non-approved state. Derived solely from the guarded UPDATE's own reported
+  // change count — never from a prior SELECT — so a replayed approve, or two
+  // admins racing on the same id, cannot both credit the domain and the
+  // submitter for one approval (TOCTOU). Clearing awaiting_review on a row
+  // that was already approved at bulk-import time is bookkeeping, not a new
+  // approval, and reports false: the same side-effect rule the route used to
+  // derive by reading state first.
+  transitioned: boolean;
+}
+
 export async function approveCamp(
   db: D1Database,
   id: string,
   reviewer: string,
   notes: string | null = null,
-): Promise<Camp | null> {
+): Promise<ApproveCampResult | null> {
   const camp = await getCampById(db, id);
   if (!camp) return null;
   const blocked = campApprovalBlock(camp);
   if (blocked) throw new CampApprovalBlockedError(blocked);
   const now = nowIso();
   const results = await db.batch([
+    // 1. The editorial promotion. The pcd_status guard is what makes the
+    //    reported change count trustworthy: a second approve on a row that is
+    //    already approved matches nothing here, so it cannot re-credit the
+    //    domain or the submitter.
     db.prepare(
       `UPDATE programs
        SET pcd_status = 'approved', record_status = 'active',
            awaiting_review = 0, reviewed_by = ?, reviewed_at = ?, review_notes = ?
-       WHERE id = ? AND session_start_date = ? AND session_end_date = ?`,
+       WHERE id = ? AND session_start_date = ? AND session_end_date = ?
+         AND pcd_status != 'approved'`,
     )
     .bind(reviewer, now, notes, id, camp.start_date, camp.end_date),
-    // Sync org only when the guarded program transition succeeded in the same
-    // D1 batch. D1 batches are transactional, preventing a half-approved row.
+    // 2. Bulk-imported rows land already approved but flagged for review.
+    //    Clearing that flag is bookkeeping, not a new approval, so it gets its
+    //    own guarded statement whose change count is deliberately NOT counted
+    //    as a transition. Mutually exclusive with statement 1: if that one
+    //    matched, awaiting_review is already 0 by the time this runs.
+    db.prepare(
+      `UPDATE programs
+       SET record_status = 'active', awaiting_review = 0,
+           reviewed_by = ?, reviewed_at = ?, review_notes = ?
+       WHERE id = ? AND session_start_date = ? AND session_end_date = ?
+         AND pcd_status = 'approved' AND awaiting_review = 1`,
+    )
+    .bind(reviewer, now, notes, id, camp.start_date, camp.end_date),
+    // 3. Sync org only when the guarded program transition succeeded in the
+    //    same D1 batch. D1 batches are transactional, preventing a
+    //    half-approved row.
     db.prepare(
       `UPDATE organizations SET record_status = 'active'
        WHERE id = (SELECT organization_id FROM programs
@@ -878,13 +909,27 @@ export async function approveCamp(
     )
     .bind(id, camp.start_date, camp.end_date),
   ]);
-  if (Number(results[0]?.meta?.changes ?? 0) !== 1) {
-    throw new CampApprovalBlockedError('approval_state_changed');
+  const promoted = Number(results[0]?.meta?.changes ?? 0) === 1;
+  const flagCleared = Number(results[1]?.meta?.changes ?? 0) === 1;
+  if (!promoted && !flagCleared) {
+    // Nothing matched. Either the row is already approved and already
+    // reviewed (a replayed approve: a no-op, and no side effects owed), or
+    // the session dates moved between the read and the write, which is a real
+    // conflict the admin needs to see.
+    const current = await getCampById(db, id);
+    if (!current) return null;
+    const settled = current.status === 'approved'
+      && current.awaiting_review === 0
+      && current.start_date === camp.start_date
+      && current.end_date === camp.end_date;
+    if (!settled) throw new CampApprovalBlockedError('approval_state_changed');
+    return { ...current, transitioned: false };
   }
-  if (!(camp.status === 'approved' && camp.awaiting_review === 1)) {
+  if (promoted) {
     await incrementSubmitterApproved(db, camp.submitted_by_email);
   }
-  return getCampById(db, id);
+  const updated = await getCampById(db, id);
+  return updated ? { ...updated, transitioned: promoted } : null;
 }
 
 export interface RejectCampResult {
@@ -1131,20 +1176,36 @@ export async function getClaimById(db: D1Database, id: string): Promise<CampClai
   return row ?? null;
 }
 
+export interface ClaimTransitionResult extends CampClaim {
+  // True only when THIS call changed the claim's status, read from the
+  // guarded UPDATE's own reported change count. False means the claim was
+  // already in that status or had left the reviewable set, so the caller knows
+  // it did not just overwrite another admin's decision.
+  transitioned: boolean;
+}
+
 export async function updateClaimStatus(
   db: D1Database,
   id: string,
   status: ClaimStatus,
   reviewer: string,
   notes: string | null = null,
-): Promise<CampClaim | null> {
-  await db
+): Promise<ClaimTransitionResult | null> {
+  // Guarded so evidence review cannot silently overwrite a decision another
+  // admin already made: only a claim still in the reviewable set moves, and
+  // only when the stored status actually differs. 'paid' and 'rejected' are
+  // terminal here — a paid claim is an entitlement, not something moderation
+  // may downgrade.
+  const result = await db
     .prepare(
-      `UPDATE camp_claims SET status = ?, reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
+      `UPDATE camp_claims SET status = ?, reviewed_by = ?, reviewed_at = ?, review_notes = ?
+       WHERE id = ? AND status IN ('pending', 'verified') AND status != ?`,
     )
-    .bind(status, reviewer, nowIso(), notes, id)
+    .bind(status, reviewer, nowIso(), notes, id, status)
     .run();
-  return getClaimById(db, id);
+  const claim = await getClaimById(db, id);
+  if (!claim) return null;
+  return { ...claim, transitioned: Number(result?.meta?.changes ?? 0) > 0 };
 }
 
 export function generateClaimId(): string {
@@ -1216,13 +1277,31 @@ export async function getOrgSuggestionById(db: D1Database, id: string): Promise<
   return row ?? null;
 }
 
+export interface OrgSuggestionTransitionResult extends OrgSuggestion {
+  // True only when THIS call changed the suggestion's status, read from the
+  // guarded UPDATE's own reported change count.
+  transitioned: boolean;
+}
+
 export async function updateOrgSuggestionStatus(
   db: D1Database,
   id: string,
   status: OrgSuggestionStatus,
-): Promise<OrgSuggestion | null> {
-  await db.prepare('UPDATE org_suggestions SET status = ? WHERE id = ?').bind(status, id).run();
-  return getOrgSuggestionById(db, id);
+): Promise<OrgSuggestionTransitionResult | null> {
+  // 'imported' is terminal: the suggestion has already been researched into a
+  // real listing, so re-importing it duplicates work (and, from the promote
+  // route, a camp row). Guarding on that plus "the stored status actually
+  // differs" makes a double submit a no-op instead of a silent overwrite.
+  const result = await db
+    .prepare(
+      `UPDATE org_suggestions SET status = ?
+       WHERE id = ? AND status != 'imported' AND status != ?`,
+    )
+    .bind(status, id, status)
+    .run();
+  const suggestion = await getOrgSuggestionById(db, id);
+  if (!suggestion) return null;
+  return { ...suggestion, transitioned: Number(result?.meta?.changes ?? 0) > 0 };
 }
 
 // ---------- Shared-address handling ----------
@@ -1482,19 +1561,32 @@ export async function getReviewById(db: D1Database, id: string): Promise<CampRev
   return row ?? null;
 }
 
+export interface ReviewTransitionResult extends CampReview {
+  // True only when THIS call moved the row out of 'pending'. Read from the
+  // guarded UPDATE's own reported change count, so a second moderator acting
+  // on a review someone else already decided gets a false instead of silently
+  // overwriting the first decision, and an already-rejected review can no
+  // longer be flipped to approved. Spread onto the row so callers that only
+  // need the review keep working unchanged.
+  transitioned: boolean;
+}
+
 export async function approveReview(
   db: D1Database,
   id: string,
   reviewer: string,
   notes: string | null = null,
-): Promise<CampReview | null> {
-  await db
+): Promise<ReviewTransitionResult | null> {
+  const result = await db
     .prepare(
-      `UPDATE camp_reviews SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
+      `UPDATE camp_reviews SET status = 'approved', reviewed_by = ?, reviewed_at = ?, review_notes = ?
+       WHERE id = ? AND status = 'pending'`,
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
-  return getReviewById(db, id);
+  const review = await getReviewById(db, id);
+  if (!review) return null;
+  return { ...review, transitioned: Number(result?.meta?.changes ?? 0) > 0 };
 }
 
 export async function rejectReview(
@@ -1502,14 +1594,17 @@ export async function rejectReview(
   id: string,
   reviewer: string,
   notes: string | null = null,
-): Promise<CampReview | null> {
-  await db
+): Promise<ReviewTransitionResult | null> {
+  const result = await db
     .prepare(
-      `UPDATE camp_reviews SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ? WHERE id = ?`,
+      `UPDATE camp_reviews SET status = 'rejected', reviewed_by = ?, reviewed_at = ?, review_notes = ?
+       WHERE id = ? AND status = 'pending'`,
     )
     .bind(reviewer, nowIso(), notes, id)
     .run();
-  return getReviewById(db, id);
+  const review = await getReviewById(db, id);
+  if (!review) return null;
+  return { ...review, transitioned: Number(result?.meta?.changes ?? 0) > 0 };
 }
 
 export function generateReviewId(): string {

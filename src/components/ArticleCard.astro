@@ -60,9 +60,10 @@ const tagBits = [
 
 import { renderTitle } from '../lib/title';
 
-const titleSize = format === 'essay'
-  ? 'text-2xl md:text-[1.65rem]'
-  : 'text-xl md:text-[1.4rem]';
+// Two card-title tiers, now on tokens instead of four ad-hoc sizes. Essays
+// keep the larger tier so the editorial hierarchy between an essay card and
+// a standard card survives. See STANDARD-AUDIT #45.
+const titleSize = format === 'essay' ? 't-h3' : 't-card-title';
 ---
 <article class={`card-hover ${variant === 'grid' ? 'card card-rule rounded-card p-6' : 'border-b border-bone py-6'}`}>
   <a href={href} class="block group">

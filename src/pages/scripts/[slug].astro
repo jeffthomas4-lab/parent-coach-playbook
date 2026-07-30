@@ -99,7 +99,7 @@ const breadcrumbSchema = {
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/scripts/" class="hover:underline">Scripts</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(script.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(script.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {script.data.summary}
       </p>
@@ -110,7 +110,7 @@ const breadcrumbSchema = {
   {script.data.whatTheyAreFeeling.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm font-medium">What they're feeling</p>
+        <p class="t-eyebrow mb-3">What they're feeling</p>
         <ul class="grid gap-2">
           {script.data.whatTheyAreFeeling.map((f) => (
             <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {f}</li>
@@ -124,7 +124,7 @@ const breadcrumbSchema = {
   {script.data.whatToSay.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm font-medium">What to say (pick one)</p>
+        <p class="t-eyebrow mb-3">What to say (pick one)</p>
         <ul class="grid gap-3">
           {script.data.whatToSay.map((line) => (
             <li class="font-display text-ink text-lg italic leading-snug pl-4 border-l-2 border-rust" style="font-weight: 400;">"{line}"</li>
@@ -141,7 +141,7 @@ const breadcrumbSchema = {
   {script.data.whatNotToSay.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm font-medium">What not to say</p>
+        <p class="t-eyebrow mb-3">What not to say</p>
         <ul class="grid gap-2">
           {script.data.whatNotToSay.map((line) => (
             <li class="font-display text-ink-soft leading-snug line-through" style="font-weight: 400;">"{line}"</li>
@@ -152,10 +152,10 @@ const breadcrumbSchema = {
   )}
 
   <!-- Section 4: The rule -->
-  <section class="border-b border-bone bg-ink text-paper">
+  <section class="border-t-4 border-t-accent border-b border-b-bone bg-stripe">
     <div class="container-px py-12 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm font-medium" style="color: #8A9BA0">The rule</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
+      <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">The rule</p>
+      <p class="font-display text-ink text-2xl md:text-3xl leading-snug font-medium">
         {script.data.theRule}
       </p>
     </div>
@@ -165,7 +165,7 @@ const breadcrumbSchema = {
   {script.data.ifTheyBringItUp.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-10 max-w-3xl">
-        <p class="font-display italic text-rust mb-3 text-sm font-medium">If they bring it up</p>
+        <p class="t-eyebrow mb-3">If they bring it up</p>
         <ul class="grid gap-2">
           {script.data.ifTheyBringItUp.map((line) => (
             <li class="font-display text-ink leading-snug" style="font-weight: 400;">· {line}</li>
@@ -180,8 +180,8 @@ const breadcrumbSchema = {
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10 max-w-3xl">
         <div class="border-2 border-ink p-6 bg-paper">
-          <p class="font-display italic text-rust mb-2 text-sm font-medium">Pin this</p>
-          <h2 class="font-display text-ink text-xl mb-4 font-medium">
+          <p class="t-eyebrow mb-2">Pin this</p>
+          <h2 class="t-h2 font-display text-ink mb-4 font-medium">
             {script.data.saveBlockTitle ?? stripTitle(script.data.title)}
           </h2>
           <ul class="grid gap-2">
@@ -210,11 +210,11 @@ const breadcrumbSchema = {
   {related.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-10">
-        <p class="font-display italic text-rust mb-4 font-medium">You might also need</p>
+        <p class="t-eyebrow mb-4">You might also need</p>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
           {related.map((r) => (
             <a href={`/scripts/${r.id}/`} class="bg-paper p-5 group block hover:bg-paper-warm transition-colors">
-              <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
+              <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{r.data.summary}</p>
             </a>
           ))}

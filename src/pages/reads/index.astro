@@ -46,8 +46,8 @@ const fmtDate = (d: Date) =>
   {/* Hero + inline search */}
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">Reads</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] font-medium">
+      <p class="t-eyebrow mb-3">Reads</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] font-medium">
         Articles, organized by <em class="text-rust">topic</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -69,7 +69,7 @@ const fmtDate = (d: Date) =>
             type="search"
             name="q"
             placeholder="Try: tryouts, recruiting, concussion, AAU, gear, cost..."
-            class="flex-1 px-4 py-3 font-body bg-paper border border-ink focus:border-rust focus:outline-none"
+            class="flex-1 px-4 py-3 font-body bg-paper border border-ink focus:border-rust"
           />
           <button type="submit" class="btn" style="border-radius: 0;">
             Search
@@ -88,8 +88,8 @@ const fmtDate = (d: Date) =>
       <div class="grid lg:grid-cols-12 gap-10">
         {/* LEFT: Browse by topic grid */}
         <div class="lg:col-span-8">
-          <p class="font-display italic text-rust mb-2 font-medium">Browse by topic</p>
-          <h2 class="font-display text-ink text-3xl md:text-[2.5rem] leading-[1.05] font-medium mb-7">
+          <p class="t-eyebrow mb-2">Browse by topic</p>
+          <h2 class="t-h2 font-display text-ink leading-[1.05] font-medium mb-7">
             Pick what's <em class="text-rust">on your mind</em>.
           </h2>
           <div class="grid sm:grid-cols-2 gap-4">
@@ -99,7 +99,7 @@ const fmtDate = (d: Date) =>
               class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
             >
               <TopicIcon topic="body" size={48} class="mb-4" />
-              <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+              <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium">
                 {bodyTile.label}
               </h3>
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{bodyTile.blurb}</p>
@@ -121,7 +121,7 @@ const fmtDate = (d: Date) =>
                 class="border border-bone bg-paper p-6 hover:bg-paper-warm transition-colors group"
               >
                 <TopicIcon topic={t.slug} size={48} class="mb-4" />
-                <h3 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium">
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium">
                   {t.label}
                 </h3>
                 <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{t.blurb}</p>
@@ -143,8 +143,8 @@ const fmtDate = (d: Date) =>
         {/* RIGHT RAIL: Latest reads */}
         <aside class="lg:col-span-4">
           <div class="lg:sticky lg:top-6">
-            <p class="font-display italic text-rust mb-2 font-medium">Latest</p>
-            <h2 class="font-display text-ink text-2xl md:text-[1.75rem] leading-[1.1] font-medium mb-5">
+            <p class="t-eyebrow mb-2">Latest</p>
+            <h2 class="t-h2 font-display text-ink leading-[1.1] font-medium mb-5">
               What's <em class="text-rust">new</em>.
             </h2>
             <ul class="border-t border-bone">
@@ -157,7 +157,7 @@ const fmtDate = (d: Date) =>
                     <p class="font-display italic text-rust text-xs font-medium">
                       {a.data.topic ? TOPICS.find(t => t.slug === a.data.topic)?.label : 'General'} · {wasUpdated(a.data) ? 'Updated ' : ''}{fmtDate(freshnessDate(a.data))}
                     </p>
-                    <h3 class="font-display text-ink text-base leading-snug mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+                    <h3 class="t-card-title font-display text-ink leading-snug mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
                   </a>
                 </li>
               ))}

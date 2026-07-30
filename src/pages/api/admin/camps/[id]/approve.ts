@@ -2,7 +2,7 @@
 // Approves a pending camp. Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { approveCamp, CampApprovalBlockedError, getCampById, upsertDomainQuality } from '../../../../../lib/camps-db';
+import { approveCamp, CampApprovalBlockedError, upsertDomainQuality } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { env as cfEnv } from 'cloudflare:workers';
 
@@ -48,17 +48,17 @@ export const POST: APIRoute = async ({ params, request }) => {
     // ignore
   }
 
-  // Read prior state so we can tell whether this approve is a true
-  // pending→approved transition or just clearing the awaiting_review flag on
-  // a row that was already auto-approved at bulk-import time. The latter case
-  // skips the domain-quality increment to avoid double-counting an approve.
-  const before = await getCampById(env.DB, id);
-  const wasAlreadyApproved =
-    before?.status === 'approved' && before?.awaiting_review === 1;
-
-  let camp;
+  // approveCamp reports whether THIS call performed the promotion into
+  // 'approved'. Gating the domain-quality credit on that reported change
+  // count — not on a prior read of camp state — is what makes a replayed
+  // approve, or two admins racing on the same id, a no-op for the second
+  // caller instead of a double credit. Clearing the awaiting_review flag on a
+  // row that was already auto-approved at bulk-import time is not a promotion
+  // and reports false. approveCamp applies the same gate to the submitter's
+  // approved count.
+  let approved;
   try {
-    camp = await approveCamp(env.DB, id, auth.email, notes);
+    approved = await approveCamp(env.DB, id, auth.email, notes);
   } catch (error) {
     if (error instanceof CampApprovalBlockedError) {
       return new Response(JSON.stringify({ ok: false, error: 'camp is not eligible for approval', code: error.code }), {
@@ -68,14 +68,17 @@ export const POST: APIRoute = async ({ params, request }) => {
     }
     throw error;
   }
-  if (!camp) {
+  if (!approved) {
     return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
       status: 404,
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
     });
   }
 
-  if (!wasAlreadyApproved) {
+  // Split the transition flag off the row so the response body keeps the
+  // camp shape callers already expect.
+  const { transitioned, ...camp } = approved;
+  if (transitioned) {
     await upsertDomainQuality(env.DB, camp.source_domain, 'approved');
   }
 

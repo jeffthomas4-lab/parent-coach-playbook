@@ -37,7 +37,7 @@ describe('retention aging audit', () => {
 
   it('reports counts, missing migrations, and query failures without mutating data or leaking errors', async () => {
     const { db, cutoffs } = fakeDb();
-    const rows = await runRetentionAudit(db, new Date('2026-07-16T00:00:00.000Z'));
+    const rows = await runRetentionAudit({ DB: db, PCD_OPS_DB: db }, new Date('2026-07-16T00:00:00.000Z'));
     const search = rows.find((row) => row.table === 'search_events');
     const suggestions = rows.find((row) => row.table === 'org_suggestions');
     const trust = rows.find((row) => row.table === 'trust_cases');

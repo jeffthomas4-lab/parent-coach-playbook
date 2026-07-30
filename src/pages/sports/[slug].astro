@@ -71,7 +71,7 @@ const fmtDate = (d: Date) =>
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/sports/" class="hover:underline">All sports</a> · Sport guide
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         {sportLabel}, for the <em class="text-rust">parent in it</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -88,8 +88,8 @@ const fmtDate = (d: Date) =>
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-8 md:py-10">
         <a href={`/pillar/${matchedPillar.id}/`} class="block group max-w-3xl">
-          <p class="font-display italic text-rust mb-1 font-medium text-sm">Complete Parent Guide</p>
-          <h2 class="font-display text-ink text-xl md:text-2xl leading-tight group-hover:text-rust transition-colors font-medium">
+          <p class="t-eyebrow mb-1">Complete Parent Guide</p>
+          <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium">
             {matchedPillar.data.title}
           </h2>
           {matchedPillar.data.seoDescription && (
@@ -97,9 +97,7 @@ const fmtDate = (d: Date) =>
               {matchedPillar.data.seoDescription}
             </p>
           )}
-          <p class="font-display italic text-rust text-sm mt-3 font-medium group-hover:underline">
-            → Read the full guide
-          </p>
+          <p class="t-eyebrow mt-3 group-hover:underline">→ Read the full guide</p>
         </a>
       </div>
     </section>
@@ -112,7 +110,7 @@ const fmtDate = (d: Date) =>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
         <a href={`/cost-calculator/?sport=${sportSlug}`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
           <p class="font-display italic text-rust text-xs font-medium">Cost</p>
-          <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+          <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
             What does {sportLabel.toLowerCase()} actually cost?
           </h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
@@ -122,7 +120,7 @@ const fmtDate = (d: Date) =>
         {matchedPathway && (
           <a href={`/pathways/${sportSlug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
             <p class="font-display italic text-rust text-xs font-medium">Pathway</p>
-            <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+            <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
               {sportLabel} by age
             </h3>
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
@@ -133,7 +131,7 @@ const fmtDate = (d: Date) =>
         {matchedCalendar && (
           <a href={`/season-calendar/${matchedCalendar.id}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
             <p class="font-display italic text-rust text-xs font-medium">Calendar</p>
-            <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+            <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
               The {sportLabel.toLowerCase()} year
             </h3>
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
@@ -144,7 +142,7 @@ const fmtDate = (d: Date) =>
         {matchedRules && (
           <a href={`/rules/${sportSlug}/`} class="border border-bone bg-paper p-5 hover:bg-paper-warm transition-colors group">
             <p class="font-display italic text-rust text-xs font-medium">Rules</p>
-            <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
+            <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium">
               Rules at-a-glance
             </h3>
             <p class="font-display text-ink-soft text-sm mt-2 leading-snug">
@@ -160,13 +158,13 @@ const fmtDate = (d: Date) =>
   {matchedGuide && (
     <section class="border-b border-bone">
       <div class="container-px py-10 md:py-12">
-        <p class="font-display italic text-rust mb-2 font-medium">Gear file</p>
+        <p class="t-eyebrow mb-2">Gear file</p>
         <a href={`/what-to-buy/${sportSlug}/`} class="block max-w-2xl group">
-          <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight group-hover:text-rust transition-colors font-medium">
+          <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium">
             The {sportLabel.toLowerCase()} buying guide
           </h2>
           <p class="font-display text-ink-soft mt-3 leading-snug">{matchedGuide.data.lede}</p>
-          <p class="font-display italic text-rust text-sm mt-4 font-medium">→ Read the guide</p>
+          <p class="t-eyebrow mt-4">→ Read the guide</p>
         </a>
       </div>
     </section>
@@ -176,8 +174,8 @@ const fmtDate = (d: Date) =>
   {matchedArticles.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12 md:py-14">
-        <p class="font-display italic text-rust mb-3 font-medium">Reads</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+        <p class="t-eyebrow mb-3">Reads</p>
+        <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
           {sportLabel} <em class="text-rust">articles</em>
         </h2>
         <div class="grid md:grid-cols-2 gap-x-10">
@@ -186,7 +184,7 @@ const fmtDate = (d: Date) =>
               <p class="font-display italic text-rust text-xs font-medium">
                 {a.data.age ? `age ${a.data.age} · ` : ''}{fmtDate(a.data.publishedAt)}
               </p>
-              <h3 class="font-display text-ink text-lg leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
+              <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(a.data.title)} />
               {a.data.dek && (
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{a.data.dek}</p>
               )}
@@ -201,8 +199,8 @@ const fmtDate = (d: Date) =>
   {matchedTips.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-12 md:py-14">
-        <p class="font-display italic text-rust mb-3 font-medium">Drills</p>
-        <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight mb-6 font-medium">
+        <p class="t-eyebrow mb-3">Drills</p>
+        <h2 class="t-h2 font-display text-ink leading-tight mb-6 font-medium">
           {sportLabel} <em class="text-rust">drills</em>
         </h2>
         <p class="font-display italic text-ink-soft text-sm mb-4 font-medium">{matchedTips.length} drills total. Most recent shown.</p>
@@ -213,7 +211,7 @@ const fmtDate = (d: Date) =>
                 <p class="font-display italic text-rust text-xs font-medium">
                   {t.data.age ? `age ${t.data.age}` : ''}{t.data.focus ? ` · ${t.data.focus}` : ''}
                 </p>
-                <h3 class="font-display text-ink text-base leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight mt-1 group-hover:text-rust transition-colors font-medium" set:html={renderTitle(t.data.title)} />
               </a>
             </li>
           ))}
@@ -229,12 +227,12 @@ const fmtDate = (d: Date) =>
   {matchedBody.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12">
-        <p class="font-display italic text-rust mb-3 font-medium">The Sideline File</p>
+        <p class="t-eyebrow mb-3">The Sideline File</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedBody.map((b) => (
             <li>
               <a href={`/body/${b.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(b.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(b.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{b.data.summary}</p>
               </a>
             </li>
@@ -248,12 +246,12 @@ const fmtDate = (d: Date) =>
   {matchedRecruiting.length > 0 && (
     <section class="border-b border-bone bg-paper-warm">
       <div class="container-px py-12">
-        <p class="font-display italic text-rust mb-3 font-medium">Recruiting</p>
+        <p class="t-eyebrow mb-3">Recruiting</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedRecruiting.map((r) => (
             <li>
               <a href={`/recruiting/${r.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(r.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{r.data.summary}</p>
               </a>
             </li>
@@ -267,12 +265,12 @@ const fmtDate = (d: Date) =>
   {matchedScripts.length > 0 && (
     <section class="border-b border-bone">
       <div class="container-px py-12">
-        <p class="font-display italic text-rust mb-3 font-medium">Scripts</p>
+        <p class="t-eyebrow mb-3">Scripts</p>
         <ul class="grid md:grid-cols-2 gap-x-10">
           {matchedScripts.map((s) => (
             <li>
               <a href={`/scripts/${s.id}/`} class="block py-4 border-b border-bone group hover:bg-paper-warm transition-colors">
-                <h3 class="font-display text-ink text-lg leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">{s.data.summary}</p>
               </a>
             </li>

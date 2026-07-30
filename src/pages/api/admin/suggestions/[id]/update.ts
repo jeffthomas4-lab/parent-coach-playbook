@@ -47,5 +47,16 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (!suggestion) return json({ ok: false, error: 'suggestion not found' }, 404);
 
   const updated = await updateOrgSuggestionStatus(env.DB, id, status);
-  return json({ ok: true, suggestion: updated });
+  if (!updated) return json({ ok: false, error: 'suggestion not found' }, 404);
+
+  // `transitioned` is the guarded UPDATE's own change count. An explicit false
+  // means the row is already 'imported' (terminal) or already at the requested
+  // status, so nothing moved — a 200 here would tell the admin UI otherwise.
+  // It is stripped from the body so the JSON shape callers see is unchanged.
+  const { transitioned, ...suggestionRow } = updated;
+  if (transitioned === false) {
+    return json({ ok: false, error: 'suggestion status was not changed' }, 409);
+  }
+
+  return json({ ok: true, suggestion: suggestionRow });
 };

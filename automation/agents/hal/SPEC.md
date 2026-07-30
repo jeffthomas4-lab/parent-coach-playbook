@@ -1,5 +1,7 @@
 # Hal: Affiliate Ops
 
+> **SUPERSEDED 2026-07-29.** Hal never ran. His scope now runs as a four-stage pipeline with a human gate: `pcd-link-health-monitor` (Linda, detect), `pcd-affiliate-replacement-sourcer` (Arnie, source), `pcd-alfred-affiliate-link-deploy` (Alfred, stage a PR), `pcd-affiliate-reconciler` (revenue). Design record only. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-15 (Session 5 of the PCD Automation Build Plan). Fourth agent on the roster.
 **Workstream:** Affiliate buying guides (S5, S6), with a Finance hand-off on the revenue numbers.
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Hal.

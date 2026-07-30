@@ -17,7 +17,7 @@ const expired = (value: string) => Date.parse(value) <= Date.now();
 <AdminLayout title="Trust response drafts" description="Protected response draft approval queue" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
     <p class="font-display italic text-rust mb-2 font-medium"><a href="/admin/" class="hover:underline">Admin</a> · <a href="/admin/trust/" class="hover:underline">Trust</a> · Drafts</p>
-    <h1 class="font-display text-ink text-3xl md:text-4xl font-medium">Pending response drafts</h1>
+    <h1 class="t-h1-compact font-display text-ink font-medium">Pending response drafts</h1>
     <p class="font-display italic text-ink-soft text-sm mt-2 max-w-3xl">Approval is bound to the displayed recipient, subject, body, hash, and expiry. Approval does not send the message.</p>
   </div></section>
   <section><div class="container-px py-10">

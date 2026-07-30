@@ -81,7 +81,7 @@ const rateTone = (rate: number, decided: number): string => {
       <p class="font-display italic text-rust mb-2 font-medium">
         Admin · <a href="/admin/camps/" class="hover:underline">Pending</a> · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · Source quality
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         Source quality
       </h1>
       <p class="font-body text-ink-soft text-base mt-3 leading-snug max-w-2xl">
@@ -183,17 +183,17 @@ const rateTone = (rate: number, decided: number): string => {
                         <td class="px-3 py-2 text-ink-soft text-xs">{fmtDate(r.last_seen_at)}</td>
                         <td class="px-3 py-2">
                           <div class="flex flex-col gap-1 min-w-[160px]">
-                            <button type="button" data-action="skip-toggle" class="font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium">
+                            <button type="button" data-action="skip-toggle" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-1 border border-bone text-ink-soft text-xs hover:bg-paper-warm font-medium">
                               {r.skip_listed ? 'Unskip' : 'Add to skip-list'}
                             </button>
-                            <button type="button" data-action="reject-domain-arm" class="font-display italic px-2 py-1 border border-rust text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium">
+                            <button type="button" data-action="reject-domain-arm" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-1 border border-rust text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium">
                               Reject all pending
                             </button>
                             <div data-reject-confirm-row style="display: none;" class="flex gap-1 mt-1">
-                              <button type="button" data-action="reject-domain-confirm" class="font-display italic px-2 py-1 border border-rust bg-rust text-paper text-xs font-medium">
+                              <button type="button" data-action="reject-domain-confirm" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-1 border border-rust bg-rust text-paper text-xs font-medium">
                                 Confirm reject all
                               </button>
-                              <button type="button" data-action="reject-domain-cancel" class="font-display italic px-2 py-1 border border-bone text-ink-soft text-xs font-medium">
+                              <button type="button" data-action="reject-domain-cancel" class="min-h-11 inline-flex items-center justify-center font-display italic px-2 py-1 border border-bone text-ink-soft text-xs font-medium">
                                 Cancel
                               </button>
                             </div>

@@ -37,18 +37,15 @@ export default {
         card: 'var(--shadow-card)',
         cardHover: 'var(--shadow-card-hover)',
       },
-      spacing: {
-        s1: 'var(--s1)',
-        s2: 'var(--s2)',
-        s3: 'var(--s3)',
-        s4: 'var(--s4)',
-        s5: 'var(--s5)',
-        s6: 'var(--s6)',
-        s7: 'var(--s7)',
-        s8: 'var(--s8)',
-        s9: 'var(--s9)',
-        s10: 'var(--s10)',
-      },
+      // NOTE (2026-07-29 color/UI deep dive): the `spacing` key that mirrored
+      // --s1..--s10 into Tailwind utilities (`py-s6`, `gap-s3`, ...) was
+      // removed. A full sweep of src/ excluding src/content found ZERO
+      // consumers -- not one `p-s*`, `m-s*`, or `gap-s*` in any .astro file.
+      // It was dead config advertising a system nothing used. The CSS custom
+      // properties themselves stay in global.css, where .band, .container-px,
+      // and .gear-pick do consume --s2/--s3/--s8. Page templates still use
+      // literal Tailwind spacing (py-12, py-20, ...). Wiring ~100 templates
+      // onto the ramp is a real mechanical pass; see STANDARD-AUDIT #40.
     },
   },
 };

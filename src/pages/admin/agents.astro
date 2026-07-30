@@ -31,6 +31,17 @@ interface AgentRunRow {
 
 const FORGE_UNAVAILABLE = 'FORGE_DB binding missing or query failed';
 
+// Forge Command tags this venture four different ways in production:
+// 'pcd', 'PCD', 'parent-coach-desk', and comma lists such as 'pcd, press'.
+// An exact `venture = 'pcd'` match hid every row but the first spelling.
+// Normalize the column to a comma-delimited lowercase list with no spaces,
+// then match each alias as a whole list element, so 'pcd-legacy' or
+// 'not-pcd' can never slip in. Parameters stay bound; only the fixed SQL
+// shape is interpolated.
+const VENTURE_LIST = `(',' || REPLACE(LOWER(venture), ' ', '') || ',')`;
+const PCD_VENTURE_SQL = `(${VENTURE_LIST} LIKE ? OR ${VENTURE_LIST} LIKE ?)`;
+const PCD_VENTURE_PARAMS = ['%,pcd,%', '%,parent-coach-desk,%'];
+
 let agents: AgentRegistryRow[] = [];
 let runs: AgentRunRow[] = [];
 let agentsError: string | null = null;
@@ -41,7 +52,9 @@ if (!env?.FORGE_DB) {
   runsError = FORGE_UNAVAILABLE;
 } else {
   try {
-    const res = await env.FORGE_DB.prepare(`SELECT * FROM agent_registry WHERE venture = 'pcd' ORDER BY agent`).all<AgentRegistryRow>();
+    const res = await env.FORGE_DB.prepare(`SELECT * FROM agent_registry WHERE ${PCD_VENTURE_SQL} ORDER BY agent`)
+      .bind(...PCD_VENTURE_PARAMS)
+      .all<AgentRegistryRow>();
     agents = res.results ?? [];
   } catch (e) {
     console.error('[admin/agents] agent_registry query failed', e);
@@ -49,8 +62,10 @@ if (!env?.FORGE_DB) {
   }
   try {
     const res = await env.FORGE_DB.prepare(
-      `SELECT * FROM agent_runs WHERE venture = 'pcd' ORDER BY COALESCE(finished_at, started_at) DESC LIMIT 20`,
-    ).all<AgentRunRow>();
+      `SELECT * FROM agent_runs WHERE ${PCD_VENTURE_SQL} ORDER BY COALESCE(finished_at, started_at) DESC LIMIT 20`,
+    )
+      .bind(...PCD_VENTURE_PARAMS)
+      .all<AgentRunRow>();
     runs = res.results ?? [];
   } catch (e) {
     console.error('[admin/agents] agent_runs query failed', e);
@@ -70,7 +85,7 @@ const fmt = (s: string | null | undefined) =>
       <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/operations" class="hover:underline">Admin · Operations</a> · Agents
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">PCD agents</h1>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">PCD agents</h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl">
         Registered agents from Forge Command's <code>agent_registry</code>, and the last 20 recorded runs for this
         venture. Pause, resume, or acknowledge directly from here.
@@ -80,7 +95,7 @@ const fmt = (s: string | null | undefined) =>
 
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <h2 class="font-display text-ink text-2xl font-medium mb-6">Registered agents</h2>
+      <h2 class="t-h2 font-display text-ink font-medium mb-6">Registered agents</h2>
       {agentsError ? (
         <p class="font-display italic text-ink-soft font-medium">{agentsError}</p>
       ) : agents.length === 0 ? (
@@ -92,17 +107,17 @@ const fmt = (s: string | null | undefined) =>
             return (
               <li class:list={['border p-5 bg-paper agent-row', paused ? 'border-rust bg-paper-warm' : 'border-bone']} data-agent={agent.agent}>
                 <div class="flex flex-wrap justify-between gap-3">
-                  <h3 class="font-display text-ink text-lg font-medium">{agent.agent}</h3>
+                  <h3 class="t-h3 font-display text-ink font-medium">{agent.agent}</h3>
                   <p class:list={['font-mono text-xs uppercase', paused ? 'text-rust' : 'text-ink-soft']}>{agent.status ?? 'unknown'}</p>
                 </div>
                 <p class="font-display text-ink-soft text-sm mt-1">Last run: {fmt(agent.last_run_at)}</p>
                 <div class="mt-3 flex gap-2">
                   {paused ? (
-                    <button type="button" class="font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-agent-action="resume">
+                    <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium" data-agent-action="resume">
                       Resume
                     </button>
                   ) : (
-                    <button type="button" class="font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-agent-action="pause">
+                    <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-agent-action="pause">
                       Pause
                     </button>
                   )}
@@ -118,7 +133,7 @@ const fmt = (s: string | null | undefined) =>
 
   <section>
     <div class="container-px py-10">
-      <h2 class="font-display text-ink text-2xl font-medium mb-6">Last 20 runs</h2>
+      <h2 class="t-h2 font-display text-ink font-medium mb-6">Last 20 runs</h2>
       {runsError ? (
         <p class="font-display italic text-ink-soft font-medium">{runsError}</p>
       ) : runs.length === 0 ? (
@@ -131,7 +146,7 @@ const fmt = (s: string | null | undefined) =>
             return (
               <li class:list={['border p-5 bg-paper run-row', flagged ? 'border-rust bg-paper-warm' : 'border-bone']} data-run-id={run.run_id}>
                 <div class="flex flex-wrap justify-between gap-3">
-                  <h3 class="font-display text-ink text-lg font-medium">{run.agent}</h3>
+                  <h3 class="t-h3 font-display text-ink font-medium">{run.agent}</h3>
                   <p class:list={['font-mono text-xs uppercase', flagged ? 'text-rust' : 'text-ink-soft']}>
                     {run.status}{stuck ? ' · stuck' : ''}
                   </p>
@@ -142,7 +157,7 @@ const fmt = (s: string | null | undefined) =>
                 {Number(run.needs_you) === 1 && (
                   <div class="mt-3 flex gap-2 items-center">
                     <span class="font-display italic text-rust text-xs font-medium px-2 py-1 border border-rust bg-paper-warm">needs you</span>
-                    <button type="button" class="font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-run-action="acknowledge">
+                    <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-2 border border-bone bg-paper-warm text-sm hover:bg-paper transition-colors font-medium" data-run-action="acknowledge">
                       Acknowledge
                     </button>
                   </div>
@@ -183,7 +198,10 @@ const fmt = (s: string | null | undefined) =>
               btn.disabled = false;
             }
           } catch (err) {
-            statusEl.textContent = 'Error: ' + (err && err.message ? err.message : 'network error');
+            // The raw rejection can carry internal detail; keep it in the
+            // console and show the operator a fixed line.
+            console.error('[admin/agents] agent action request failed', err);
+            statusEl.textContent = 'Request failed. Try again.';
             statusEl.style.display = 'block';
             btn.disabled = false;
           }
@@ -217,7 +235,8 @@ const fmt = (s: string | null | undefined) =>
               btn.disabled = false;
             }
           } catch (err) {
-            statusEl.textContent = 'Error: ' + (err && err.message ? err.message : 'network error');
+            console.error('[admin/agents] run acknowledge request failed', err);
+            statusEl.textContent = 'Request failed. Try again.';
             statusEl.style.display = 'block';
             btn.disabled = false;
           }

@@ -98,8 +98,8 @@ const statusColor: Record<string, string> = {
 <BaseLayout title="Editorial dashboard" description="Per-piece editorial state across the site.">
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-2 font-medium">Admin · Editorial</p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <p class="t-eyebrow mb-2">Admin · Editorial</p>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         Editorial review board
       </h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
@@ -132,7 +132,7 @@ const statusColor: Record<string, string> = {
 
       <div class="mt-6 border border-bone bg-paper-warm p-4" data-refresh-summary>
         <div class="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 class="font-display text-ink text-lg font-medium">18-month refresh queue</h2>
+          <h2 class="t-h2 font-display text-ink font-medium">18-month refresh queue</h2>
           <p class="font-display italic text-ink-soft text-xs font-medium">Snapshot {refreshQueue.as_of}</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
@@ -167,7 +167,7 @@ const statusColor: Record<string, string> = {
 
       <div class="mt-4 border border-bone bg-paper p-4" data-lifecycle-summary>
         <div class="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 class="font-display text-ink text-lg font-medium">Editorial lifecycle control plane</h2>
+          <h2 class="t-h2 font-display text-ink font-medium">Editorial lifecycle control plane</h2>
           <p class="font-display italic text-ink-soft text-xs font-medium">Baseline {lifecycle.as_of}</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-3">
@@ -198,12 +198,12 @@ const statusColor: Record<string, string> = {
 
       <!-- Filter bar -->
       <div class="mt-6 flex flex-wrap gap-2 text-sm font-display italic font-medium" data-filter-bar>
-        <button data-filter="all"             class="px-3 py-1 border border-ink bg-ink text-paper">All</button>
-        <button data-filter="needs-review"    class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs review</button>
-        <button data-filter="claude-reviewed" class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Claude reviewed</button>
-        <button data-filter="jeff-approved"   class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Jeff approved</button>
-        <button data-filter="flagged"         class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Flagged</button>
-        <button data-filter="needs-revision"  class="px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs revision</button>
+        <button data-filter="all"             class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-ink bg-ink text-paper">All</button>
+        <button data-filter="needs-review"    class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs review</button>
+        <button data-filter="claude-reviewed" class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Claude reviewed</button>
+        <button data-filter="jeff-approved"   class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Jeff approved</button>
+        <button data-filter="flagged"         class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Flagged</button>
+        <button data-filter="needs-revision"  class="min-h-11 inline-flex items-center justify-center px-3 py-1 border border-bone text-ink-soft hover:bg-paper-warm">Needs revision</button>
       </div>
     </div>
   </section>
@@ -263,7 +263,7 @@ const statusColor: Record<string, string> = {
                           {f}
                           <button
                             type="button"
-                            class="resolve-flag-btn px-1.5 py-0.5 border border-bone text-ink-soft text-[10px] not-italic hover:bg-paper-warm hover:text-rust"
+                            class="min-h-11 inline-flex items-center justify-center resolve-flag-btn px-1.5 py-0.5 border border-bone text-ink-soft text-[10px] not-italic hover:bg-paper-warm hover:text-rust"
                             data-collection={r.collection}
                             data-slug={r.slug}
                             data-flag={f}
@@ -281,7 +281,7 @@ const statusColor: Record<string, string> = {
                     {(status === 'claude-reviewed' || status === 'draft' || status === 'ready-for-jeff') && (
                       <button
                         type="button"
-                        class="approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
+                        class="min-h-11 inline-flex items-center justify-center approve-btn px-3 py-1 border border-ink bg-ink text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
                         data-collection={r.collection}
                         data-slug={r.slug}
                       >Approve</button>
@@ -289,7 +289,7 @@ const statusColor: Record<string, string> = {
                     {status === 'jeff-approved' && (
                       <button
                         type="button"
-                        class="publish-btn px-3 py-1 border border-accent bg-accent text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
+                        class="min-h-11 inline-flex items-center justify-center publish-btn px-3 py-1 border border-accent bg-accent text-paper text-xs font-display italic font-medium hover:bg-rust hover:border-rust"
                         data-collection={r.collection}
                         data-slug={r.slug}
                         data-armed="false"
@@ -302,7 +302,7 @@ const statusColor: Record<string, string> = {
                     {status === 'needs-revision' && (
                       <button
                         type="button"
-                        class="reopen-btn px-3 py-1 border border-bone text-ink-soft text-xs font-display italic font-medium hover:bg-paper-warm"
+                        class="min-h-11 inline-flex items-center justify-center reopen-btn px-3 py-1 border border-bone text-ink-soft text-xs font-display italic font-medium hover:bg-paper-warm"
                         data-collection={r.collection}
                         data-slug={r.slug}
                       >Reopen as draft</button>
@@ -310,7 +310,7 @@ const statusColor: Record<string, string> = {
                     {reviewable && (
                       <button
                         type="button"
-                        class="send-back-btn px-2 py-1 border border-rust text-rust text-xs font-display italic font-medium hover:bg-rust hover:text-paper"
+                        class="min-h-11 inline-flex items-center justify-center send-back-btn px-2 py-1 border border-rust text-rust text-xs font-display italic font-medium hover:bg-rust hover:text-paper"
                         data-collection={r.collection}
                         data-slug={r.slug}
                       >Send back</button>

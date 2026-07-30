@@ -75,17 +75,17 @@
   --silver: #8A9BA0;
   --silver-deep: #5F7075;
 
-  /* ---------- 8px spacing scale ---------- */
-  --s1: 8px;
-  --s2: 16px;
-  --s3: 24px;
-  --s4: 32px;
-  --s5: 40px;
-  --s6: 48px;
-  --s7: 64px;
-  --s8: 80px;
-  --s9: 96px;
-  --s10: 128px;
+  /* ---------- 8px spacing scale: DELETED 2026-07-29 ----------
+     --s1..--s10 were 8/16/24/32/40/48/64/80/96/128px, which is an EXACT
+     rename of Tailwind's own default scale (py-2/4/6/8/10/12/16/20/24/32).
+     Every section-level padding literal on the site was already on the 8px
+     grid, so converting `py-12` to `py-s6` across ~100 templates would have
+     bought zero rhythm and added a second vocabulary for the same numbers.
+     The four internal consumers in this file now use literal values.
+     Do not reintroduce this ramp. Use Tailwind's scale.
+     The real open gap is documented in STANDARD-AUDIT #46: section padding
+     varies across py-8/10/12/14/16 with no rule for which tier to use. That
+     is a spacing-policy problem, not a missing-token problem. */
 
   /* ---------- Radius / shadow / measure ---------- */
   --radius-card: 12px;
@@ -121,9 +121,49 @@ body {
   line-height: 1.12;
 }
 
-.t-h1 { font-size: clamp(2.125rem, 4.5vw, 3.25rem); }
-.t-h2 { font-size: clamp(1.625rem, 3vw, 2.25rem); line-height: 1.18; }
-.t-h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.28; }
+/* ---------- Heading size tiers (2026-07-29) ----------
+   SIZE ONLY, on purpose. Family/weight/color live on .t-display (or on the
+   page's own `font-display text-ink font-medium`), exactly as .t-h1/.t-h2/
+   .t-h3 already worked. That separation is what makes this a low-churn
+   conversion: replacing a size cluster does not silently restyle weight or
+   color on 294 headings.
+
+   The three h1 tiers are not invented. They are the three clusters the site
+   already had, measured across 93 <h1>s:
+     hero    text-[2.5rem] md:text-[4rem]      and neighbours  ~38 uses
+     default text-[2.25rem] md:text-[3.25rem]  and neighbours  ~29 uses
+     compact text-3xl md:text-4xl              and neighbours  ~26 uses
+   14 distinct ad-hoc h1 sizes collapse onto these 3 with almost no
+   rendered change. See STANDARD-AUDIT #45. */
+/* FONT-SIZE ONLY -- no line-height here, deliberately. This file is unlayered
+   and Tailwind's utilities are layered, so unlayered wins regardless of
+   specificity. A `line-height` on these tiers would therefore silently
+   override the `leading-tight` / `leading-[1.0]` / `leading-snug` already on
+   213 of the 278 converted headings, turning those utilities into dead code
+   that still looks live. Per-tier leading lives on the .t-display compound
+   selectors below instead, which is where it can't collide. */
+.t-h1-hero    { font-size: clamp(2.5rem, 6vw, 4rem); }
+.t-h1         { font-size: clamp(2.125rem, 4.5vw, 3.25rem); }
+.t-h1-compact { font-size: clamp(1.875rem, 3.5vw, 2.25rem); }
+.t-h2         { font-size: clamp(1.625rem, 3vw, 2.25rem); }
+.t-h3         { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+/* Token-native usage (.t-display + a tier) gets the designed leading. Pages
+   that carry their own `leading-*` are untouched by these. */
+.t-display.t-h1-compact { line-height: 1.15; }
+.t-display.t-h2         { line-height: 1.18; }
+.t-display.t-h3         { line-height: 1.28; }
+
+/* Card and grid-tile titles. A separate tier from .t-h3 because a card
+   title's hierarchy context is the card, not the page flow -- forcing 42
+   card titles up to .t-h3's 20-24px would blow out tight card grids for no
+   hierarchy gain. Sits above the 18px body floor and below .t-h3, so
+   h2 -> h3 -> card-title still steps distinctly. */
+.t-card-title { font-size: 1.125rem; }
+@media (min-width: 768px) {
+  .t-card-title { font-size: 1.25rem; }
+}
+.t-display.t-card-title { line-height: 1.3; }
 
 .t-display em {
   font-style: italic;
@@ -131,8 +171,29 @@ body {
   font-weight: 600;
 }
 
-/* Tiny uppercase metadata only. Use sparingly. The ONLY all-caps allowed. */
-.t-eyebrow,
+/* ---------- Eyebrow: the single section-label vocabulary (2026-07-29) ----------
+   The site ran two competing eyebrow patterns. The serif-italic one won on
+   the evidence: 230 hand-rolled `font-display italic text-rust font-medium`
+   labels across 62 files, against 17 uses of the old uppercase .t-eyebrow
+   (14 of them on index.astro alone). Redefining .t-eyebrow in place converts
+   those 17 for free and gives the 230 a token to collapse onto.
+   Sentence case, not all-caps -- which also removes 230 elements from the
+   brief's "no all-caps" exposure rather than adding to it.
+   See STANDARD-AUDIT #45. */
+.t-eyebrow {
+  font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent);
+}
+
+/* Tiny uppercase micro-metadata only: gear-card labels, pull-quote
+   attribution, footer column headers, TopRule labels. Use sparingly. The
+   ONLY all-caps allowed. NOT for section eyebrows -- that is .t-eyebrow. */
 .t-label {
   font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
@@ -300,7 +361,7 @@ body {
   /* Corners stay rounded at 12px — the top rule does not square them off. */
 }
 .band {
-  padding-block: var(--s8);
+  padding-block: 80px;
 }
 .band-surface {
   background: var(--surface);
@@ -440,7 +501,13 @@ body {
   font-weight: 600;
   line-height: 1;
   border-radius: var(--radius-pill);
-  border: 1px solid transparent;
+  /* Silver-green hairline is where the differentiating tone earns its keep at
+     scale: 38 tag-pill call sites, the exact use the brief names ("tags,
+     eyebrows, quiet fills, small doses"). Decorative only -- 1px, non-text,
+     and the --pill-bg fill (not the border) is what identifies the pill, so
+     WCAG 1.4.11 does not bind on it. Was `transparent`, which left every
+     chip on the site as a faint edgeless smudge on --stripe. */
+  border: 1px solid var(--silver);
   background: var(--pill-bg, var(--stripe));
   color: var(--pill-accent, var(--navy));
   text-decoration: none;
@@ -465,11 +532,11 @@ body {
 .container-px {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--s3);
+  padding: 0 24px;
 }
 
 @media (max-width: 768px) {
-  .container-px { padding: 0 var(--s2); }
+  .container-px { padding: 0 16px; }
   .article-body > p:first-of-type::first-letter { font-size: 4rem; }
 }
 
@@ -486,7 +553,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
-  padding: var(--s3);
+  padding: 24px;
   margin: 1.75em 0;
   font-family: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
 }
@@ -580,7 +647,19 @@ body {
   color: #FFFFFF;
 }
 
-/* ---------- Focus ---------- */
+/* ---------- Focus ----------
+   Keep this rule OUTSIDE any @layer.
+
+   As of 2026-07-29 there are ZERO `outline-none` / `focus:outline-none` uses
+   left in src/ (all 56, across 11 files, were deleted; their paired
+   `focus:border-rust` was kept, so a focused control now gets both this ring
+   and an accent border). So the ring no longer depends on the cascade to
+   survive -- but the rule stays unlayered anyway, because that is what makes
+   it authoritative against any future utility that tries to cancel it.
+
+   If you ever need to suppress this ring on a specific control, add an
+   explicit replacement affordance in this file. Do not reintroduce
+   `focus:outline-none` in markup. See STANDARD-AUDIT #43. */
 *:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;

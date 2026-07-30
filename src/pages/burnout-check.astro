@@ -23,8 +23,8 @@ export const prerender = true;
   <!-- Header -->
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">A quick read</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <p class="t-eyebrow mb-3">A quick read</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Burnout check.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -235,8 +235,8 @@ export const prerender = true;
         <!-- Low risk -->
         <div id="result-low" class="hidden">
           <div class="border border-bone p-6 bg-paper-warm">
-            <p class="font-display italic text-sm font-medium mb-1" style="color: #5F7075">Score 0-3</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl font-medium leading-tight mb-4">Probably a bad week.</h2>
+            <p class="font-display italic text-sm font-medium mb-1 text-silver-deep">Score 0-3</p>
+            <h2 class="t-h2 font-display text-ink font-medium leading-tight mb-4">Probably a bad week.</h2>
             <p class="font-display text-ink leading-relaxed">
               The signals you are describing are consistent with normal seasonal stress: a hard stretch of games, a coach who got under their skin, a scheduling crunch, or just being ten and tired. Most kids go through this several times a season.
             </p>
@@ -245,7 +245,7 @@ export const prerender = true;
             </p>
           </div>
           <div class="mt-6 border border-bone p-6">
-            <p class="font-display italic text-rust font-medium text-sm mb-4">What to do this week</p>
+            <p class="t-eyebrow mb-4">What to do this week</p>
             <ul class="space-y-4">
               <li class="font-display text-ink text-sm leading-relaxed">
                 <span class="font-medium">Keep the drive home quiet.</span> The fifteen minutes after a bad practice or game is the wrong time to diagnose what went wrong. Let them set the tone. If they want to talk, follow. If they want music, do music.
@@ -267,7 +267,7 @@ export const prerender = true;
         <div id="result-moderate" class="hidden">
           <div class="border border-bone p-6 bg-paper-warm">
             <p class="font-display italic text-sm font-medium mb-1" style="color: var(--rust)">Score 4-6</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl font-medium leading-tight mb-4">Watch this.</h2>
+            <h2 class="t-h2 font-display text-ink font-medium leading-tight mb-4">Watch this.</h2>
             <p class="font-display text-ink leading-relaxed">
               The pattern you are describing has enough consistency to take seriously. This is not necessarily burnout, but it is the stage before burnout if nothing changes. The kid is running on lower reserves than they were a month ago.
             </p>
@@ -276,7 +276,7 @@ export const prerender = true;
             </p>
           </div>
           <div class="mt-6 border border-bone p-6">
-            <p class="font-display italic text-rust font-medium text-sm mb-4">What to do now</p>
+            <p class="t-eyebrow mb-4">What to do now</p>
             <ul class="space-y-4">
               <li class="font-display text-ink text-sm leading-relaxed">
                 <span class="font-medium">Have a real conversation, not a check-in.</span> Find a low-pressure moment, not right before or after a game, and say: "I want to hear how you're actually feeling about all of this. I'm not going to make any decisions tonight. I just want to know." Then listen without solving.
@@ -296,9 +296,9 @@ export const prerender = true;
 
         <!-- High risk -->
         <div id="result-high" class="hidden">
-          <div class="border p-6" style="background-color: #F4F7FA; border-color: #003594;">
-            <p class="font-display italic text-sm font-medium mb-1 text-rust">Score 7-10</p>
-            <h2 class="font-display text-ink text-2xl md:text-3xl font-medium leading-tight mb-4">Burnout territory.</h2>
+          <div class="border border-accent bg-stripe p-6">
+            <p class="t-eyebrow mb-1">Score 7-10</p>
+            <h2 class="t-h2 font-display text-ink font-medium leading-tight mb-4">Burnout territory.</h2>
             <p class="font-display text-ink leading-relaxed">
               What you are describing is a consistent pattern across multiple areas: motivation, mood, sleep, physical response, and what they say about the sport. That combination does not fix itself with one good game.
             </p>
@@ -307,7 +307,7 @@ export const prerender = true;
             </p>
           </div>
           <div class="mt-6 border border-bone p-6">
-            <p class="font-display italic text-rust font-medium text-sm mb-4">What to do this week, specifically</p>
+            <p class="t-eyebrow mb-4">What to do this week, specifically</p>
             <ul class="space-y-4">
               <li class="font-display text-ink text-sm leading-relaxed">
                 <span class="font-medium">Pull back the schedule now, not at the end of the season.</span> Talk to the coach directly: "My kid is showing signs of being worn down. We need to reduce practice attendance for the next two weeks. We want to finish the season, but not at this cost." Most coaches will work with you. If they do not, that is important information too.
@@ -342,22 +342,22 @@ export const prerender = true;
   <!-- Related -->
   <section class="border-b border-bone">
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-4 font-medium">Related</p>
+      <p class="t-eyebrow mb-4">Related</p>
       <div class="grid sm:grid-cols-2 gap-px bg-bone max-w-4xl">
         <a href="/drive-home/is-this-burnout-or-a-bad-week/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Is this burnout, or just a bad week?</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Is this burnout, or just a bad week?</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The difference matters. The response is completely different.</p>
         </a>
         <a href="/pre-game-routine/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Build a pre-game routine</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Build a pre-game routine</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Structure for the night before, morning of, and arrival.</p>
         </a>
         <a href="/youth-sports-pendulum/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">The youth sports pendulum</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">The youth sports pendulum</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">Where are you on the growth-to-burnout axis right now?</p>
         </a>
         <a href="/drive-there/pre-game-anxiety-normal/" class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-          <h3 class="font-display text-ink text-xl group-hover:text-rust transition-colors font-medium">Pre-game anxiety: normal vs. not</h3>
+          <h3 class="t-card-title font-display text-ink group-hover:text-rust transition-colors font-medium">Pre-game anxiety: normal vs. not</h3>
           <p class="font-display text-ink-soft text-sm mt-2 leading-snug">The line between healthy nerves and something to address.</p>
         </a>
       </div>

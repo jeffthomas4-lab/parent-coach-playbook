@@ -30,7 +30,7 @@ const ageLabel = AGE_BANDS.find(a => a.slug === age)?.label;
   <div class="t-label text-ink-soft mb-2">
     {[retailer, sportLabel, ageLabel].filter(Boolean).join(' / ')}
   </div>
-  <h3 class="font-display text-ink text-2xl font-semibold leading-tight">{name}</h3>
+  <h3 class="t-h3 font-display text-ink font-semibold leading-tight">{name}</h3>
   {priceRange && <div class="t-label text-rust mt-2">{priceRange}</div>}
   <p class="font-display text-ink-soft mt-4 leading-snug">{description}</p>
   {ourTake && (

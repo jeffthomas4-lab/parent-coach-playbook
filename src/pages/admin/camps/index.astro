@@ -41,7 +41,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
       <p class="font-display italic text-rust mb-2 font-medium">
         Admin · Pending · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · <a href="/admin/camps/spot-check" class="hover:underline">Spot check</a> · <a href="/admin/source-quality" class="hover:underline">Source quality</a> · <a href="/admin/claims/" class="hover:underline">Claims</a> · <a href="/admin/suggestions/" class="hover:underline">Suggestions</a>
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         Pending camps
       </h1>
       <p class="font-display italic text-rust text-sm mt-2 font-medium">
@@ -65,7 +65,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                   <p class="font-display italic text-rust text-xs font-medium">
                     {c.sport} · ages {c.age_min}–{c.age_max} · {fmtRange(c.start_date, c.end_date)}
                   </p>
-                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5 font-medium">{c.name}</h3>
+                  <h3 class="t-h3 font-display text-ink leading-tight mt-0.5 font-medium">{c.name}</h3>
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
                     {c.city}, {c.state} · submitted by {c.submitted_by_email} · {fmtDateTime(c.submitted_at)}
                   </p>
@@ -76,16 +76,16 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                 <div class="flex flex-col gap-2 items-end">
                   <a href={`/admin/camps/${c.id}/`} class="t-cta">Review →</a>
                   <form method="POST" action={`/api/admin/camps/${c.id}/approve`} class="inline">
-                    <button type="submit" class="font-display italic px-3 py-1 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium">Approve</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium">Approve</button>
                   </form>
                   <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline flex flex-col gap-1 items-end">
-                    <select name="reason_code" required class="px-2 py-1 font-body bg-paper border border-bone text-xs">
+                    <select name="reason_code" required class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-xs">
                       <option value="">— pick a reason —</option>
                       {REJECT_REASON_CODES.map((r) => (
                         <option value={r.code}>{r.label}</option>
                       ))}
                     </select>
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>
               </div>

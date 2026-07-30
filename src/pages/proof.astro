@@ -41,7 +41,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
       <Eyebrow text="Reviews" class="mb-3" />
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium">
         {proof.headline}
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-3xl leading-snug">
@@ -63,7 +63,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
   {groups.map((group) => (
     <section class="border-b border-bone">
       <div class="container-px py-10">
-        <h2 class="font-display text-ink text-2xl font-medium mb-6">{group.label}</h2>
+        <h2 class="t-h2 font-display text-ink font-medium mb-6">{group.label}</h2>
 
         {group.approved.length === 0 ? (
           <p class="font-display text-ink-soft">
@@ -97,7 +97,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
 
   <section class="border-t border-bone bg-paper-warm">
     <div class="container-px py-10 md:py-14">
-      <h2 class="font-display text-ink text-2xl font-medium mb-2">Share your experience</h2>
+      <h2 class="t-h2 font-display text-ink font-medium mb-2">Share your experience</h2>
       <p class="font-display text-ink-soft mb-6 max-w-2xl">
         Used something on this site and it helped, or it didn't? Tell us in your own words. We read every submission before anything goes on this page, and nothing gets posted without checking back with you first if we need to.
       </p>
@@ -113,23 +113,23 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
         <fieldset class="grid gap-4">
           <label class="grid gap-1">
             <span class="font-display italic text-ink text-sm font-medium">What happened</span>
-            <textarea name="quote" required maxlength="2000" rows="4" placeholder="Tell us what you used and how it went, in your own words." class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none"></textarea>
+            <textarea name="quote" required maxlength="2000" rows="4" placeholder="Tell us what you used and how it went, in your own words." class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust"></textarea>
           </label>
 
           <div class="grid sm:grid-cols-2 gap-4">
             <label class="grid gap-1">
               <span class="font-display italic text-ink text-sm font-medium">Your name</span>
-              <input name="name" required maxlength="120" placeholder="First name and last initial is fine" class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none" />
+              <input name="name" required maxlength="120" placeholder="First name and last initial is fine" class="min-h-11 px-3 py-2 font-body bg-paper border border-muted focus:border-rust" />
             </label>
             <label class="grid gap-1">
               <span class="font-display italic text-ink text-sm font-medium">Context (optional)</span>
-              <input name="context" maxlength="200" placeholder="e.g. Youth soccer parent, Tacoma" class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none" />
+              <input name="context" maxlength="200" placeholder="e.g. Youth soccer parent, Tacoma" class="min-h-11 px-3 py-2 font-body bg-paper border border-muted focus:border-rust" />
             </label>
           </div>
 
           <label class="grid gap-1">
             <span class="font-display italic text-ink text-sm font-medium">What is this about</span>
-            <select name="product" class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none">
+            <select name="product" class="min-h-11 px-3 py-2 font-body bg-paper border border-muted focus:border-rust">
               <option value="">Not sure / the site in general</option>
               {productOptions.map((option) => (
                 <option value={option.id}>{option.label}</option>
@@ -139,7 +139,7 @@ const productOptions = proof.groups.map((group) => ({ id: group.id, label: group
 
           <label class="grid gap-1">
             <span class="font-display italic text-ink text-sm font-medium">Link to where you posted this (optional)</span>
-            <input name="sourceUrl" type="url" placeholder="https://..." class="px-3 py-2 font-body bg-paper border border-muted focus:border-rust focus:outline-none" />
+            <input name="sourceUrl" type="url" placeholder="https://..." class="min-h-11 px-3 py-2 font-body bg-paper border border-muted focus:border-rust" />
           </label>
         </fieldset>
 

@@ -72,7 +72,7 @@ const itemListSchema = gearItems.length > 0 ? {
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/what-to-buy/" class="hover:underline">Gear Files</a> · {meta.category === 'sport' ? 'Sports' : meta.category === 'activity' ? 'Performing arts' : meta.category === 'coach-gear' ? 'Coach gear' : 'Essentials'}
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Gear file for <em class="text-rust">{guide.data.activity.toLowerCase()}</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-6 max-w-2xl leading-snug">
@@ -80,12 +80,12 @@ const itemListSchema = gearItems.length > 0 ? {
       </p>
       <div class="mt-6 grid sm:grid-cols-2 gap-3 max-w-2xl">
         <div class="border border-bone p-4 bg-paper-warm">
-          <p class="font-display italic text-rust text-sm font-medium">Rough cost</p>
+          <p class="t-eyebrow">Rough cost</p>
           <p class="font-display text-ink mt-1 font-medium">{guide.data.costSummary}</p>
         </div>
         {guide.data.seasonNote && (
           <div class="border border-bone p-4 bg-paper-warm">
-            <p class="font-display italic text-rust text-sm font-medium">Season notes</p>
+            <p class="t-eyebrow">Season notes</p>
             <p class="font-display text-ink mt-1 font-medium">{guide.data.seasonNote}</p>
           </div>
         )}
@@ -97,7 +97,7 @@ const itemListSchema = gearItems.length > 0 ? {
     <div class="container-px py-12 grid lg:grid-cols-12 gap-10">
       {jumpNav.length > 1 && (
         <aside class="lg:col-span-3 lg:sticky lg:top-6 self-start">
-          <p class="font-display italic text-rust mb-3 font-medium">Jump to</p>
+          <p class="t-eyebrow mb-3">Jump to</p>
           <ul class="grid gap-2">
             {jumpNav.map((h) => (
               <li>

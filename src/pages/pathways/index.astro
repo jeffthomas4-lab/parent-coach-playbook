@@ -18,7 +18,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> · Age pathways
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         What "<em class="text-rust">good</em>" looks like at every age.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -50,7 +50,7 @@ const sportLabel = (s: string) => SPORTS.find(x => x.slug === s)?.label ?? s;
           {pathways.map((p) => (
             <a href={`/pathways/${p.data.sport}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
               <p class="font-display italic text-rust text-xs mb-2 font-medium">{sportLabel(p.data.sport)}</p>
-              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(p.data.title)} />
+              <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(p.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{p.data.summary}</p>
               <p class="t-cta mt-3">Open the pathway →</p>
             </a>

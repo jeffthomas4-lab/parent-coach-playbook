@@ -54,6 +54,13 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (!claim) return json({ ok: false, error: 'claim not found' }, 404);
 
   const updated = await updateClaimStatus(env.DB, id, status, auth.email, payload.notes?.trim() || null);
+  // The UPDATE is guarded on the claim still being in a decidable state. A
+  // false `transitioned` means another admin already decided it; returning 200
+  // here would hide that their decision was overwritten.
+  const { transitioned, ...claim } = updated;
+  if (transitioned === false) {
+    return json({ ok: false, error: 'claim already decided', code: 'claim_state_changed' }, 409);
+  }
 
-  return json({ ok: true, claim: updated });
+  return json({ ok: true, claim });
 };

@@ -419,7 +419,11 @@ export async function recordReview(
       logEvent(db, 'opportunity', input.opportunityId, opportunity.status, to, `${input.reviewType}_review_passed`, input.actor, now, `review:${id}`),
     );
   }
-  await db.batch(statements);
+  const results = await db.batch(statements);
+  // A passing review is the thing that moves the opportunity forward. If the
+  // guarded UPDATE matched nothing, someone changed the status underneath us
+  // and the review row would otherwise claim a transition that never happened.
+  if (input.outcome === 'pass' && Number(results[2]?.meta?.changes ?? 0) !== 1) throw new Error('opportunity changed concurrently');
   return (await db.prepare(`SELECT * FROM editorial_reviews WHERE id = ?`).bind(id).first<EditorialReview>())!;
 }
 
@@ -611,13 +615,19 @@ export async function proposeMaintenance(
     logEvent(db, 'maintenance_proposal', id, null, 'proposed', `${input.proposalType}_proposed`, input.actor, now),
   ];
   const targetStatus: EditorialState | null = input.proposalType === 'refresh' ? 'update_proposed' : input.proposalType === 'consolidate' ? 'consolidation_proposed' : null;
-  if (targetStatus && canTransition(opportunity.status as EditorialState, targetStatus)) {
+  const movesOpportunity = Boolean(targetStatus && canTransition(opportunity.status as EditorialState, targetStatus));
+  if (movesOpportunity) {
     statements.push(
       db.prepare(`UPDATE editorial_opportunities SET status = ?, updated_at = ? WHERE id = ? AND status = ?`).bind(targetStatus, now, input.opportunityId, opportunity.status),
-      logEvent(db, 'opportunity', input.opportunityId, opportunity.status, targetStatus, `${input.proposalType}_proposed`, input.actor, now, `maintenance_proposal:${id}`),
+      logEvent(db, 'opportunity', input.opportunityId, opportunity.status, targetStatus!, `${input.proposalType}_proposed`, input.actor, now, `maintenance_proposal:${id}`),
     );
   }
-  await db.batch(statements);
+  const results = await db.batch(statements);
+  // Retirement proposals never move the opportunity (there is no
+  // "retirement_proposed" state), so only check the guarded UPDATE when one
+  // was actually queued. A lost update here would leave the proposal recorded
+  // against a status it no longer applies to.
+  if (movesOpportunity && Number(results[2]?.meta?.changes ?? 0) !== 1) throw new Error('opportunity changed concurrently');
   return (await db.prepare(`SELECT * FROM editorial_maintenance_proposals WHERE id = ?`).bind(id).first<EditorialMaintenanceProposal>())!;
 }
 

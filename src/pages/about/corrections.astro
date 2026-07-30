@@ -23,7 +23,7 @@ const updated = lastCorrectionISO ? fmt(lastCorrectionISO) : null;
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/about/" class="hover:underline">About</a> · Corrections
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1 font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Every fix, on the record.
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
@@ -38,7 +38,7 @@ const updated = lastCorrectionISO ? fmt(lastCorrectionISO) : null;
   <section class="border-b border-bone">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">What counts as a correction</p>
+        <p class="t-eyebrow">What counts as a correction</p>
       </div>
       <div class="md:col-span-8 article-body">
         <p>Three things get logged on this page.</p>
@@ -55,7 +55,7 @@ const updated = lastCorrectionISO ? fmt(lastCorrectionISO) : null;
   <section class="border-b border-bone bg-paper-warm">
     <div class="container-px py-10 grid md:grid-cols-12 gap-10">
       <div class="md:col-span-4">
-        <p class="font-display italic text-rust font-medium">Submit a correction</p>
+        <p class="t-eyebrow">Submit a correction</p>
       </div>
       <div class="md:col-span-8 article-body">
         <p>If you spot something that looks wrong, write to <a href={`mailto:${SITE.email}`} class="text-rust hover:underline">{SITE.email}</a> with a link to the piece and what you saw. We re-check, fix the read if you're right, and log the change here.</p>
@@ -66,7 +66,7 @@ const updated = lastCorrectionISO ? fmt(lastCorrectionISO) : null;
 
   <section>
     <div class="container-px py-10">
-      <p class="font-display italic text-rust mb-6 font-medium max-w-3xl">The log</p>
+      <p class="t-eyebrow mb-6 max-w-3xl">The log</p>
       {sorted.length === 0 ? (
         <p class="font-display italic text-ink-soft max-w-3xl font-medium">No corrections logged yet.</p>
       ) : (
@@ -74,7 +74,7 @@ const updated = lastCorrectionISO ? fmt(lastCorrectionISO) : null;
           {sorted.map((c) => (
             <li class="border-l-2 border-rust pl-5">
               <p class="font-display italic text-rust text-sm font-medium">{fmt(c.date)}</p>
-              <h2 class="font-display text-ink text-xl leading-tight mt-1 font-medium">
+              <h2 class="t-h2 font-display text-ink leading-tight mt-1 font-medium">
                 <a href={c.url} class="hover:underline">{c.piece}</a>
               </h2>
               <p class="font-display text-ink mt-3 leading-snug">{c.change}</p>

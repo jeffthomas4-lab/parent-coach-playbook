@@ -47,7 +47,12 @@ export const POST: APIRoute = async ({ params, request }) => {
     // optional
   }
 
-  const review = await rejectReview(env.DB, id, auth.email, notes);
-  if (!review) return json({ ok: false, error: 'review not found' }, 404);
+  const result = await rejectReview(env.DB, id, auth.email, notes);
+  if (!result) return json({ ok: false, error: 'review not found' }, 404);
+  // Guarded on status = 'pending' — see the note in approve.ts.
+  const { transitioned, ...review } = result;
+  if (transitioned === false) {
+    return json({ ok: false, error: 'review already decided', code: 'review_state_changed' }, 409);
+  }
   return json({ ok: true, review });
 };

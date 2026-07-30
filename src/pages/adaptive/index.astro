@@ -32,14 +32,14 @@ const grouped = categories.map(c => ({
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> · Adaptive
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Sports for <em class="text-rust">every kid</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
         ADHD, autism, sensory needs, physical disability, intellectual disability. The programs that exist. The accommodations that work. The conversations to have with coaches.
       </p>
-      <aside class="mt-8 border-l-4 pl-4 py-3 max-w-2xl" style="border-color: var(--rose); background: var(--rose-bg);">
-        <p class="font-display italic text-rust text-sm font-medium">What this is</p>
+      <aside class="mt-8 border-l-4 border-l-silver bg-stripe pl-4 py-3 max-w-2xl">
+        <p class="t-eyebrow">What this is</p>
         <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
           Practical guidance from parent-coaches who've worked with neurodivergent and adaptive athletes. Not a substitute for IEP teams, OT/PT clinicians, or developmental pediatricians. Use this as a starting point for the conversations with the right specialists.
         </p>
@@ -57,8 +57,8 @@ const grouped = categories.map(c => ({
         <div class="container-px py-10 md:py-12">
           <div class="grid md:grid-cols-12 gap-8">
             <div class="md:col-span-4">
-              <p class="font-display italic text-rust mb-2 font-medium">Topic</p>
-              <h2 class="font-display text-ink text-2xl md:text-3xl leading-tight font-medium">{g.label}</h2>
+              <p class="t-eyebrow mb-2">Topic</p>
+              <h2 class="t-h2 font-display text-ink leading-tight font-medium">{g.label}</h2>
               <p class="font-display text-ink-soft mt-3 leading-snug">{g.blurb}</p>
             </div>
             <div class="md:col-span-8">

@@ -23,7 +23,7 @@ const { Content } = await render(piece);
         <a href="/tools/" class="hover:underline">The Drawer</a> ·
         <a href="/recruiting/" class="hover:underline">Recruiting</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
+      <h1 class="t-h1 font-display text-ink leading-[1.05] max-w-3xl font-medium" set:html={renderTitle(piece.data.title)} />
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
         {piece.data.summary}
       </p>
@@ -42,7 +42,7 @@ const { Content } = await render(piece);
 
       {piece.data.governingBodies && piece.data.governingBodies.length > 0 && (
         <aside class="mt-10 pt-6 border-t border-bone">
-          <p class="font-display italic text-rust mb-3 font-medium">Sources</p>
+          <p class="t-eyebrow mb-3">Sources</p>
           <ul class="grid gap-2">
             {piece.data.governingBodies.map((g) => (
               <li>

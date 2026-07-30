@@ -1,6 +1,6 @@
 ---
 import AdminLayout from '../../../layouts/AdminLayout.astro';
-import { listApprovedUnverifiedCamps, setVerified, rejectCamp, type Camp } from '../../../lib/camps-db';
+import { listApprovedUnverifiedCamps, setVerified, rejectCamp, upsertDomainQuality, type Camp } from '../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../lib/admin-auth';
 import {
   formatCampDateRange,
@@ -19,17 +19,34 @@ const auth = await requireAdmin(Astro.request, env);
 if (auth instanceof Response) return auth;
 const adminEmail = auth.email;
 
+// Every outcome the POST handler can reach, as a fixed enum code. The code
+// travels back on the redirect and is looked up here, so nothing a caller
+// supplied is ever echoed into the page.
+const ACTION_STATUSES = {
+  verified: { ok: true, text: 'Verified.' },
+  rejected: { ok: true, text: 'Rejected.' },
+  'missing-id': { ok: false, text: 'Missing camp id.' },
+  'not-found': { ok: false, text: 'Camp not found.' },
+  'unknown-action': { ok: false, text: 'Unknown action.' },
+  'no-database': { ok: false, text: 'Database not bound; action ignored.' },
+  failed: { ok: false, text: 'Action failed; check the server logs.' },
+} as const;
+type ActionStatus = keyof typeof ACTION_STATUSES;
+
 // Handle verify/reject POSTs in-page. Form posts to this same URL with a
 // hidden `action` field. requireAdmin() above already gates both GET and
 // POST on the same ADMIN_EMAILS allowlist the API routes use; the
 // same-origin check below is additional CSRF defense, not the primary gate.
-let actionBanner: { ok: boolean; text: string } | null = null;
 if (Astro.request.method === 'POST') {
+  // Return the 403 the same-origin check produced, exactly like every API
+  // route does. Rendering a 200 page with a warning banner told a blocked
+  // cross-origin caller the request succeeded.
   const originErr = requireSameOrigin(Astro.request);
-  if (originErr) {
-    actionBanner = { ok: false, text: 'Cross-origin request blocked.' };
-  } else if (!env?.DB) {
-    actionBanner = { ok: false, text: 'Database not bound; action ignored.' };
+  if (originErr) return originErr;
+
+  let status: ActionStatus = 'failed';
+  if (!env?.DB) {
+    status = 'no-database';
   } else {
     try {
       const fd = await Astro.request.formData();
@@ -37,22 +54,42 @@ if (Astro.request.method === 'POST') {
       const id = String(fd.get('camp_id') ?? '').trim();
       const reviewer = adminEmail || 'spot-check (cookie auth)';
       if (!id) {
-        actionBanner = { ok: false, text: 'Missing camp id.' };
+        status = 'missing-id';
       } else if (action === 'verify') {
         await setVerified(env.DB, id, true);
-        actionBanner = { ok: true, text: 'Verified.' };
+        status = 'verified';
       } else if (action === 'reject') {
-        await rejectCamp(env.DB, id, reviewer, null);
-        actionBanner = { ok: true, text: 'Rejected.' };
+        // Parity with /api/admin/camps/:id/reject: the domain-quality
+        // decrement is gated on the change count rejectCamp reports, so a
+        // reject from this screen scores the source domain exactly the same
+        // way an API reject does, and a replay stays a no-op.
+        const { camp, transitioned } = await rejectCamp(env.DB, id, reviewer, null);
+        if (!camp) {
+          status = 'not-found';
+        } else {
+          if (transitioned) await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
+          status = 'rejected';
+        }
       } else {
-        actionBanner = { ok: false, text: `Unknown action: ${action}` };
+        status = 'unknown-action';
       }
     } catch (e) {
       console.error('spot-check action failed', e);
-      actionBanner = { ok: false, text: 'Action failed; check the server logs.' };
+      status = 'failed';
     }
   }
+
+  // POST-redirect-GET. Without it a browser refresh replays the verify or
+  // reject against the same camp id.
+  return new Response(null, {
+    status: 303,
+    headers: { Location: `/admin/camps/spot-check?status=${status}` },
+  });
 }
+
+const statusParam = Astro.url.searchParams.get('status');
+const actionBanner =
+  statusParam && statusParam in ACTION_STATUSES ? ACTION_STATUSES[statusParam as ActionStatus] : null;
 
 let camps: Camp[] = [];
 let dbAvailable = !!env?.DB;
@@ -89,7 +126,7 @@ const campViews = camps.map((c) => ({
       <p class="font-display italic text-rust mb-2 font-medium">
         Admin · <a href="/admin/camps/" class="hover:underline">Pending</a> · <a href="/admin/camps/queue" class="hover:underline">Queue</a> · Spot check
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">
         Spot check queue
       </h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl leading-snug">
@@ -122,7 +159,7 @@ const campViews = camps.map((c) => ({
                   <p class="font-display italic text-rust text-xs font-medium">
                     {v.camp.sport} · ages {v.camp.age_min}–{v.camp.age_max} · {v.dateRange}{v.camp.program_type === 'league' ? ' · league' : ''}{v.camp.spots_status === 'full' ? ' · full' : v.camp.spots_status === 'waitlist' ? ' · waitlist' : ''}
                   </p>
-                  <h3 class="font-display text-ink text-xl leading-tight mt-0.5 font-medium">{v.camp.name}</h3>
+                  <h3 class="t-h3 font-display text-ink leading-tight mt-0.5 font-medium">{v.camp.name}</h3>
                   <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
                     {v.location} · imported {v.importedAt}
                   </p>
@@ -148,12 +185,12 @@ const campViews = camps.map((c) => ({
                   <form method="POST" action="/admin/camps/spot-check" class="inline">
                     <input type="hidden" name="action" value="verify" />
                     <input type="hidden" name="camp_id" value={v.camp.id} />
-                    <button type="submit" class="font-display italic px-3 py-1 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium">Mark verified ✓</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium">Mark verified ✓</button>
                   </form>
                   <form method="POST" action="/admin/camps/spot-check" class="inline">
                     <input type="hidden" name="action" value="reject" />
                     <input type="hidden" name="camp_id" value={v.camp.id} />
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium">Reject</button>
                   </form>
                 </div>
               </div>

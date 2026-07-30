@@ -76,7 +76,7 @@ const publicUrl = publicUrlFor(collection, entry);
     <div class="container-px py-6">
       <div class="flex flex-wrap items-baseline justify-between gap-4">
         <div>
-          <p class="font-display italic text-rust mb-1 font-medium">Admin · Editorial preview</p>
+          <p class="t-eyebrow mb-1">Admin · Editorial preview</p>
           <p class="font-display italic text-ink-soft text-xs font-medium">
             This is a preview. The public page is{' '}
             <a href={publicUrl} class="underline hover:text-rust">{publicUrl}</a>
@@ -87,7 +87,7 @@ const publicUrl = publicUrlFor(collection, entry);
         </div>
         <a
           href="/admin/editorial/"
-          class="font-display italic text-xs px-3 py-1 border border-ink text-ink hover:bg-ink hover:text-paper font-medium"
+          class="min-h-11 inline-flex items-center justify-center font-display italic text-xs px-3 py-1 border border-ink text-ink hover:bg-ink hover:text-paper font-medium"
         >← Back to dashboard</a>
       </div>
 
@@ -116,7 +116,7 @@ const publicUrl = publicUrlFor(collection, entry);
 
   <section>
     <div class="container-px py-8 max-w-3xl">
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium" set:html={renderTitle(title)}></h1>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium" set:html={renderTitle(title)}></h1>
       {dek && <p class="font-display text-ink-soft mt-3 leading-snug max-w-2xl">{dek}</p>}
 
       <article class="mt-6 prose prose-ink max-w-none">

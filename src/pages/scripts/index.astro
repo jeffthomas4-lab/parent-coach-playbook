@@ -46,8 +46,8 @@ const grouped = moments.map(g => ({
   })} />
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">Scripts</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <p class="t-eyebrow mb-3">Scripts</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         What to say in the <em class="text-rust">moments that matter</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -71,7 +71,7 @@ const grouped = moments.map(g => ({
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-bone">
             {g.items.map((s) => (
               <a href={`/scripts/${s.id}/`} class="bg-paper p-6 group block hover:bg-paper-warm transition-colors">
-                <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
+                <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(s.data.title)} />
                 <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{s.data.summary}</p>
                 <p class="t-cta mt-3">30-second read →</p>
               </a>
@@ -83,13 +83,13 @@ const grouped = moments.map(g => ({
   )}
 
   <!-- The big idea -->
-  <section class="border-b border-bone bg-ink text-paper">
+  <section class="border-t-4 border-t-accent border-b border-b-bone bg-stripe">
     <div class="container-px py-14 max-w-3xl">
-      <p class="font-display italic mb-3 text-sm font-medium" style="color: #8A9BA0">The rule under all of this</p>
-      <p class="font-display text-paper text-2xl md:text-3xl leading-snug font-medium">
+      <p class="font-display italic mb-3 text-sm font-medium text-silver-deep">The rule under all of this</p>
+      <p class="font-display text-ink text-2xl md:text-3xl leading-snug font-medium">
         The car ride is not for coaching. It's for connection.
       </p>
-      <p class="font-display text-paper-warm mt-4 leading-relaxed">
+      <p class="font-display text-ink-soft mt-4 leading-relaxed">
         These scripts are tools, not formulas. The point isn't to say the perfect line. The point is to make the car a place your kid wants to be after a hard day.
       </p>
     </div>

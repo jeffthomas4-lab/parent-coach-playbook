@@ -40,7 +40,7 @@ const fmt = (s: string) =>
       <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/camps/" class="hover:underline">Admin · Camps</a> · Claims
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Pending claims</h1>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">Pending claims</h1>
       <p class="font-display italic text-ink-soft text-sm mt-2 max-w-2xl font-medium">
         {claimsEnabled
           ? 'Claim operations are enabled for this environment. Follow the approved ownership and entitlement procedures.'
@@ -71,7 +71,7 @@ const fmt = (s: string) =>
                 <p class="font-display italic text-rust text-xs font-medium">
                   {cl.status} · {fmt(cl.submitted_at)}
                 </p>
-                <h3 class="font-display text-ink text-lg leading-tight mt-1 font-medium">
+                <h3 class="t-h3 font-display text-ink leading-tight mt-1 font-medium">
                   {camp ? <a href={`/camps/${camp.slug}/`} class="hover:text-rust" target="_blank" rel="noopener">{camp.name}</a> : 'Unknown camp'}
                 </h3>
                 <p class="font-display text-ink-soft text-sm mt-1 leading-snug">
@@ -86,12 +86,12 @@ const fmt = (s: string) =>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="verified" />
                     <textarea name="notes" rows="2" placeholder="Verification notes (called school, confirmed role)" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper font-medium">Mark verified</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper font-medium">Mark verified</button>
                   </form>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="rejected" />
                     <textarea name="notes" rows="2" placeholder="Reject reason" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
-                    <button type="submit" class="font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">Reject</button>
+                    <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">Reject</button>
                   </form>
                 </div>
                 <p class="font-display italic text-ink-soft text-xs mt-3 font-medium">Payment and account activation are unavailable until customer identity, entitlement, reconciliation, and paid-product launch gates pass.</p>

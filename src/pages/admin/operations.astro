@@ -33,14 +33,14 @@ const queueLinkForMetric = (key: string): string | null => {
 ---
 <AdminLayout title="Operations status" email={auth.email}>
   <section class="border-b border-bone"><div class="container-px py-10">
-    <p class="font-display italic text-rust mb-2">Admin · Operations</p><h1 class="font-display text-ink text-4xl font-medium">Operational status</h1>
+    <p class="font-display italic text-rust mb-2">Admin · Operations</p><h1 class="t-h1-compact font-display text-ink font-medium">Operational status</h1>
     <p class="font-display text-ink-soft mt-4 max-w-3xl">Read-only evidence, not a control panel. Unknown is intentional when durable or independent proof does not exist. This page does not trigger jobs, pause agents, or mutate data directly — fixes for what shows up here live on the linked pages below.</p>
   </div></section>
   <section class="container-px py-10"><ul class="grid gap-5">{components.map((item) => {
     const link = componentLink(item.component);
     return <li class="border border-bone bg-paper p-5">
       <div class="flex flex-wrap justify-between gap-3">
-        <h2 class="font-display text-xl font-medium">{link ? <a href={link} class="hover:text-rust hover:underline">{item.component} →</a> : item.component}</h2>
+        <h2 class="t-h2 font-display font-medium">{link ? <a href={link} class="hover:text-rust hover:underline">{item.component} →</a> : item.component}</h2>
         <p class:list={["font-mono text-xs uppercase", color(item.state)]}>{item.state}</p>
       </div>
       <p class="mt-2 text-ink-soft">{item.summary}</p><p class="font-mono text-xs mt-2">{item.code}</p>

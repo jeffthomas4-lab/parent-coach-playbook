@@ -24,8 +24,8 @@ const fmtDate = (d: Date) =>
 >
   <section class="border-b border-bone">
     <div class="container-px py-12 md:py-16">
-      <p class="font-display italic text-rust mb-3 font-medium">This Season</p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] font-medium">
+      <p class="t-eyebrow mb-3">This Season</p>
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] font-medium">
         What's changing <em class="text-rust">right now</em>.
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -59,7 +59,7 @@ const fmtDate = (d: Date) =>
                     · {fmtDate(item.data.publishedAt)}
                   </span>
                 </div>
-                <h2 class="font-display text-ink text-xl md:text-2xl leading-snug group-hover:text-rust transition-colors font-medium">
+                <h2 class="t-h2 font-display text-ink leading-snug group-hover:text-rust transition-colors font-medium">
                   {item.data.headline}
                 </h2>
                 <p class="font-display text-ink-soft mt-2 leading-snug max-w-3xl">

@@ -40,7 +40,7 @@ const levelAccent: Record<string, string> = {
       <p class="font-display italic text-rust mb-3 font-medium">
         <a href="/tools/" class="hover:underline">The Drawer</a> · Season calendar
       </p>
-      <h1 class="font-display text-ink text-[2.5rem] md:text-[4rem] leading-[1.0] max-w-3xl font-medium">
+      <h1 class="t-h1-hero font-display text-ink leading-[1.0] max-w-3xl font-medium">
         Twelve months. <em class="text-rust">Pick the shape that fits.</em>
       </h1>
       <p class="font-display text-ink-soft text-xl md:text-2xl mt-6 max-w-2xl leading-snug">
@@ -65,7 +65,7 @@ const levelAccent: Record<string, string> = {
               <p class="font-display italic text-xs mb-2" style={`color: ${levelAccent[c.data.level]}; font-weight: 500;`}>
                 {sportLabel(c.data.sport)} · {levelLabel[c.data.level]}{c.data.region ? ` · ${c.data.region}` : ''}
               </p>
-              <h2 class="font-display text-ink text-xl leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(c.data.title)} />
+              <h2 class="t-h2 font-display text-ink leading-tight group-hover:text-rust transition-colors font-medium" set:html={renderTitle(c.data.title)} />
               <p class="font-display text-ink-soft text-sm mt-2 leading-snug">{c.data.summary}</p>
               <p class="font-display italic text-ink-soft text-xs mt-3 font-medium">
                 {c.data.durationLabel}

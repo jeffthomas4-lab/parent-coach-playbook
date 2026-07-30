@@ -9,10 +9,17 @@
 
 import type { APIRoute } from 'astro';
 import { requireAdmin, requireSameOrigin } from '../../../../lib/admin-auth';
-import { BRANCH, COLLECTION_PATHS, REPO } from '../../../../lib/publish';
+import { BRANCH, COLLECTION_PATHS, REPO, isSafeSlug } from '../../../../lib/publish';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
+
+// Statuses this route refuses to approve from. `published` is the one that
+// matters: re-stamping a live piece as `jeff-approved` would silently revert
+// it, and this route never unpublishes. A deny list rather than an allow list
+// on purpose — files predate the canonical status vocabulary in
+// src/lib/editorial-frontmatter.ts, and approving one of those is harmless.
+const APPROVE_BLOCKED_FROM = ['published'];
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -34,6 +41,22 @@ function decodeBase64(b64: string): string {
   const bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   return new TextDecoder().decode(bytes);
+}
+
+/**
+ * Read the current `status:` out of the editorial block, or '' when the file
+ * has no editorial block or no status key (both are legal — the schema
+ * default is 'draft'). Mirrors getStatus in src/lib/editorial-frontmatter.ts,
+ * kept local for the same reason the base64 helpers are: this route carries
+ * no import-order dependency on its siblings.
+ */
+function readEditorialStatus(content: string): string {
+  const fmMatch = content.match(/^(---\r?\n)([\s\S]*?)(\r?\n---\r?\n)([\s\S]*)$/);
+  if (!fmMatch) return '';
+  const editorialMatch = fmMatch[2].match(/^(editorial:\r?\n)((?:  [^\n]*\r?\n?)+)/m);
+  if (!editorialMatch) return '';
+  const statusMatch = editorialMatch[2].match(/^  status:\s*([^\n]*)/m);
+  return statusMatch ? statusMatch[1].trim() : '';
 }
 
 /**
@@ -140,12 +163,16 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ ok: false, error: `unknown collection: ${collection}` }, 400);
   }
 
-  // Slugs in our content collections map 1:1 to filenames.
-  // Light defense against path traversal.
-  if (slug.includes('..') || slug.includes('/')) {
+  // Slugs in our content collections map 1:1 to filenames. Same check as
+  // ./set-status.ts and src/lib/publish.ts: an allowlist regex, not an
+  // ad-hoc blocklist, so `?` and `#` cannot smuggle a query string or
+  // fragment into the GitHub URLs built below.
+  if (!isSafeSlug(slug)) {
     return json({ ok: false, error: 'invalid slug' }, 400);
   }
-  const path = `${dir}/${slug}.md`;
+  // `dir` is a server-side constant from COLLECTION_PATHS and carries the
+  // path separators; only the caller-supplied segment gets encoded.
+  const path = `${dir}/${encodeURIComponent(slug)}.md`;
 
   const ghHeaders: Record<string, string> = {
     Authorization: `Bearer ${env.GITHUB_TOKEN}`,
@@ -173,7 +200,18 @@ export const POST: APIRoute = async ({ request }) => {
   const fileData = (await getRes.json()) as { content: string; sha: string };
   const currentContent = decodeBase64(fileData.content);
 
-  // 2. Update frontmatter.
+  // 2. Check the transition against the file's CURRENT status, read fresh from
+  // GitHub in this request — not whatever the client claims. Same
+  // non-negotiable as ./set-status.ts: the server decides what's a legal move.
+  const currentStatus = readEditorialStatus(currentContent);
+  if (APPROVE_BLOCKED_FROM.includes(currentStatus)) {
+    return json(
+      { ok: false, error: `invalid transition: ${currentStatus} -> jeff-approved` },
+      400,
+    );
+  }
+
+  // 3. Update frontmatter.
   const today = new Date().toISOString().slice(0, 10);
   const updated = updateEditorialFrontmatter(currentContent, today);
   if (updated === null) {
@@ -183,7 +221,7 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ ok: false, error: 'no change to write' }, 400);
   }
 
-  // 3. PUT the file with the existing sha (optimistic concurrency).
+  // 4. PUT the file with the existing sha (optimistic concurrency).
   const putRes = await fetch(
     `https://api.github.com/repos/${REPO}/contents/${path}`,
     {
@@ -207,6 +245,12 @@ export const POST: APIRoute = async ({ request }) => {
       operation: 'write',
       status: putRes.status,
     }));
+    // A 409 from the Contents API is the stale-sha case: someone edited the
+    // file between our read and our write. That is a conflict the caller can
+    // retry, not an upstream outage, so it does not get reported as a 502.
+    if (putRes.status === 409) {
+      return json({ ok: false, error: 'content_changed_concurrently' }, 409);
+    }
     return json({ ok: false, error: 'github_write_rejected' }, 502);
   }
 

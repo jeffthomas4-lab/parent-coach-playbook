@@ -257,6 +257,12 @@ export const POST: APIRoute = async ({ request }) => {
       operation: 'write',
       status: putRes.status,
     }));
+    // A 409 from the Contents API is the stale-sha case: someone edited the
+    // file between our read and our write. That is a conflict the caller can
+    // retry, not an upstream outage, so it does not get reported as a 502.
+    if (putRes.status === 409) {
+      return json({ ok: false, error: 'content_changed_concurrently' }, 409);
+    }
     return json({ ok: false, error: 'github_write_rejected' }, 502);
   }
 

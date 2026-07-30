@@ -47,7 +47,14 @@ export const POST: APIRoute = async ({ params, request }) => {
     // optional
   }
 
-  const review = await approveReview(env.DB, id, auth.email, notes);
-  if (!review) return json({ ok: false, error: 'review not found' }, 404);
+  const result = await approveReview(env.DB, id, auth.email, notes);
+  if (!result) return json({ ok: false, error: 'review not found' }, 404);
+  // approveReview's UPDATE is guarded on status = 'pending'. A false
+  // `transitioned` means another admin already decided this review, so
+  // reporting success here would silently overwrite their call.
+  const { transitioned, ...review } = result;
+  if (transitioned === false) {
+    return json({ ok: false, error: 'review already decided', code: 'review_state_changed' }, 409);
+  }
   return json({ ok: true, review });
 };

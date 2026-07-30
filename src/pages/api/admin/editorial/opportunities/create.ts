@@ -18,9 +18,14 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (!featureEnabled(env.EDITORIAL_LIFECYCLE_ENABLED)) return json({ ok: false, error: 'editorial lifecycle admin routes are not currently available' }, 404);
 
-  const body = await request.json() as {
-    source?: string; summary?: string; ref?: string; content_type?: string; target_keyword?: string;
-  };
+  let body: { source?: string; summary?: string; ref?: string; content_type?: string; target_keyword?: string };
+  try {
+    body = await request.json() as {
+      source?: string; summary?: string; ref?: string; content_type?: string; target_keyword?: string;
+    };
+  } catch {
+    return json({ ok: false, error: 'invalid json body' }, 400);
+  }
   if (!body.source || !(OPPORTUNITY_SOURCES as readonly string[]).includes(body.source)) return json({ ok: false, error: 'invalid source' }, 400);
   if (typeof body.summary !== 'string' || !body.summary.trim()) return json({ ok: false, error: 'summary is required' }, 400);
 

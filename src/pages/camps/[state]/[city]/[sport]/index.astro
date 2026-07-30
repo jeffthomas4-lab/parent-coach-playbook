@@ -109,7 +109,7 @@ const breadcrumbSchema = {
         <a href={`/camps/${stateParam}/`} class="hover:underline">{stateCode}</a> ·
         <a href={`/camps/${stateParam}/${cityParam}/`} class="hover:underline">{cityLabel}</a>
       </p>
-      <h1 class="font-display text-ink text-[2.25rem] md:text-[3.25rem] leading-[1.05]" style="font-weight: 500;">
+      <h1 class="t-h1 font-display text-ink leading-[1.05]" style="font-weight: 500;">
         {title}
       </h1>
       <p class="font-display text-ink-soft text-xl mt-5 max-w-2xl leading-snug">
@@ -143,7 +143,7 @@ const breadcrumbSchema = {
     <div class="container-px py-10">
       {visible.length === 0 ? (
         <div class="card p-6 max-w-xl">
-          <h2 class="font-display text-ink text-lg font-medium mb-2">No camps match that age band</h2>
+          <h2 class="t-h2 font-display text-ink font-medium mb-2">No camps match that age band</h2>
           <p class="font-body text-ink-soft">
             <a href={`/camps/${stateParam}/${cityParam}/${sportParam}/`} class="text-rust hover:underline">Clear age filter</a> to see every age.
           </p>
@@ -155,7 +155,7 @@ const breadcrumbSchema = {
               <p class="font-display italic text-rust text-xs mb-2" style="font-weight: 500;">
                 {fmtDateRange(c.start_date, c.end_date)} · {c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided'}
               </p>
-              <h3 class="font-display text-ink text-lg leading-snug mb-2" style="font-weight: 500;">
+              <h3 class="t-h3 font-display text-ink leading-snug mb-2" style="font-weight: 500;">
                 <a href={`/camps/${c.slug}/`} class="hover:text-rust">{c.name}</a>
               </h3>
               <p class="font-display text-ink-soft text-sm leading-snug" style="font-weight: 500;">

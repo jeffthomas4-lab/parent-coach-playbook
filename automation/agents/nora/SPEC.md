@@ -1,5 +1,7 @@
 # Nora: SEO and Distribution
 
+> **LIVE 2026-07-29.** Runs as the scheduled task `weekly-gsc-review` (Sunday 9:00 PM). Registry row `nora` is active and logging runs. This SPEC is current. See `ROSTER-RECONCILIATION.md`.
+
 **Status:** built 2026-07-13 (Session 1 of the PCD Automation Build Plan). First agent on the roster.
 **Workstream:** Marketing (S1, plus the July distribution fixes named in the Organic Search Audit).
 **Built from:** `automation/SKILL-TEMPLATE.md`, `automation/APPROVAL-MATRIX.md`, `automation/SLACK-STAGING.md`, `automation/RUN-LOG.md`. Nothing here overrides those; this is the template's nine fields filled in for Nora.

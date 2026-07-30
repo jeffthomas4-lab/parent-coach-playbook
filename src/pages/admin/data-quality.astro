@@ -148,7 +148,7 @@ const sections = report
       <p class="font-display italic text-rust mb-2 font-medium">
         <a href="/admin/operations" class="hover:underline">Admin · Operations</a> · Data quality
       </p>
-      <h1 class="font-display text-ink text-3xl md:text-4xl leading-tight font-medium">Directory data quality</h1>
+      <h1 class="t-h1-compact font-display text-ink leading-tight font-medium">Directory data quality</h1>
       <p class="font-display text-ink-soft mt-3 max-w-2xl">
         Every offending approved program behind each aggregate metric on the operations page, with an inline fix for
         each issue type. Fixing or rejecting a row here removes it from its list immediately.
@@ -164,7 +164,7 @@ const sections = report
         <section class="border-b border-bone">
           <div class="container-px py-10">
             <div class="flex items-baseline justify-between gap-4 mb-6">
-              <h2 class="font-display text-ink text-2xl font-medium">{section.title}</h2>
+              <h2 class="t-h2 font-display text-ink font-medium">{section.title}</h2>
               <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
                 {section.rows.length}
               </span>
@@ -183,7 +183,7 @@ const sections = report
       <section class="border-b border-bone">
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl font-medium">Exact duplicates</h2>
+            <h2 class="t-h2 font-display text-ink font-medium">Exact duplicates</h2>
             <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
               {report!.duplicates.length} group{report!.duplicates.length === 1 ? '' : 's'}
             </span>
@@ -210,7 +210,7 @@ const sections = report
                         ) : (
                           <button
                             type="button"
-                            class="mt-2 font-display italic px-3 py-1 border border-rust bg-paper text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium"
+                            class="min-h-11 inline-flex items-center justify-center mt-2 font-display italic px-3 py-1 border border-rust bg-paper text-rust text-xs hover:bg-rust hover:text-paper transition-colors font-medium"
                             data-fix-action="reject_duplicate"
                           >
                             Reject as duplicate
@@ -230,7 +230,7 @@ const sections = report
       <section>
         <div class="container-px py-10">
           <div class="flex items-baseline justify-between gap-4 mb-6">
-            <h2 class="font-display text-ink text-2xl font-medium">URL never checked</h2>
+            <h2 class="t-h2 font-display text-ink font-medium">URL never checked</h2>
             <span class="font-display italic text-rust text-sm bg-paper-warm px-2 py-1 border border-bone font-medium">
               showing {report!.url_never_checked.rows.length} of {report!.url_never_checked.total}
             </span>
