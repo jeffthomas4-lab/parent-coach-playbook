@@ -1,0 +1,59 @@
+---
+// Responsive illustration image.
+//
+// Every file in public/illustrations/ is authored at 1536w. That is four times
+// wider than a phone needs, and before this component the homepage shipped the
+// full 1536w file to a 375px viewport — 134KB for the hero alone. The build
+// step scripts/build-illustration-variants.py writes a -480.webp and a -960.webp
+// next to each source file, and this component points srcset at them so a phone
+// downloads ~22KB instead.
+//
+// Pass `base` as the filename with no extension and no path:
+//   <Illo base="the-car-ride-home" alt="..." sizes="(min-width: 768px) 33vw, 100vw" />
+//
+// width/height are always emitted so the browser reserves the box before the
+// bytes land. Missing intrinsic dimensions are the single most common cause of
+// layout shift, and CLS is a Pillar 4 number, not a nicety.
+
+interface Props {
+  base: string;
+  alt: string;
+  /** Sizes hint. Default assumes the image spans the viewport on mobile. */
+  sizes?: string;
+  /** Intrinsic width of the source file. All current illustrations are 1536w. */
+  width?: number;
+  height?: number;
+  class?: string;
+  /** Set true only for the LCP image. Everything else stays lazy. */
+  eager?: boolean;
+}
+
+const {
+  base,
+  alt,
+  sizes = '100vw',
+  width = 1536,
+  height = 1024,
+  class: className = '',
+  eager = false,
+} = Astro.props;
+
+const src = `/illustrations/${base}.webp`;
+const srcset = [
+  `/illustrations/${base}-480.webp 480w`,
+  `/illustrations/${base}-960.webp 960w`,
+  `${src} ${width}w`,
+].join(', ');
+---
+<img
+  src={src}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={eager ? 'eager' : 'lazy'}
+  fetchpriority={eager ? 'high' : 'auto'}
+  decoding="async"
+/>

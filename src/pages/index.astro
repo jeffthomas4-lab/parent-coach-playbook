@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import Illo from '../components/Illo.astro';
+import TopicIcon from '../components/TopicIcon.astro';
 import { serializeJsonLd } from '../lib/jsonld';
 import { PILLARS, EDITORIAL, TOPICS, SPORTS, SITE, SCHEMA_IDS } from '../data/site';
 import { isLive, freshnessDate, wasUpdated } from '../lib/publishFilter';
@@ -20,6 +22,18 @@ const NEWS_CATEGORY_LABELS: Record<string, string> = {
   'season-dates': 'Season dates',
   'safety':       'Safety',
   'general':      'General',
+};
+
+// Each news category borrows an existing TopicIcon so the This Season cards
+// read as three distinct things at a glance instead of three text blocks.
+// Inline SVG, so this costs no network request.
+const NEWS_CATEGORY_ICONS: Record<string, string> = {
+  'rule-change':  'rules-of-play',
+  'equipment':    'equipment',
+  'registration': 'logistics',
+  'season-dates': 'season-ops',
+  'safety':       'body',
+  'general':      'tools',
 };
 
 const all = (await getCollection('articles', ({ data }) => isLive(data)))
@@ -47,16 +61,56 @@ const drives = [PILLARS['drive-there'], PILLARS.game, PILLARS['drive-home']];
 
 const driveImages = [
   {
-    src: '/illustrations/walk-to-the-field.webp',
+    base: 'walk-to-the-field',
     alt: 'A dad and son walking together through the parking lot toward the field at twilight.',
   },
   {
-    src: '/illustrations/coach-setting-cones.webp',
+    base: 'coach-setting-cones',
     alt: 'A coach kneeling on the field at golden hour, setting up orange cones for a drill.',
   },
   {
-    src: '/illustrations/the-car-ride-home.webp',
+    base: 'the-car-ride-home',
     alt: 'A dad driving with his young son in the passenger seat, soccer cleats in the foreground, sunset out the windshield.',
+  },
+];
+
+// Each of the four tools gets an icon so the grid reads as four different
+// things on a phone. The mobile card hides its description (see below), which
+// left nothing but a title and an arrow — the icon is what carries it now.
+// `title` is trusted authored markup, not user input — it carries the same
+// <em> emphasis the rest of the page uses and is rendered with set:html.
+const TOOL_CARDS = [
+  {
+    href: '/scripts/',
+    icon: 'communication',
+    eyebrow: 'Scripts',
+    title: 'What to <em>actually</em> say.',
+    blurb: 'The first 90 seconds after a bad game. The night before tryouts. The post-cut text.',
+    cta: '→ Scripts',
+  },
+  {
+    href: '/decisions/',
+    icon: 'rec-vs-travel',
+    eyebrow: 'Decisions',
+    title: 'The big calls, walked through.',
+    blurb: 'Travel ball or rec. Specialize or stay multi-sport. Quit or push through.',
+    cta: '→ Decisions',
+  },
+  {
+    href: '/youth-sports-pendulum/',
+    icon: 'the-hard-stuff',
+    eyebrow: 'Pendulum',
+    title: 'Where is your family right now?',
+    blurb: 'Fun-to-performance spectrum. The check-in that pulls families back from the edge.',
+    cta: '→ Take the check-in',
+  },
+  {
+    href: '/cost-calculator/',
+    icon: 'money',
+    eyebrow: 'Cost calculator',
+    title: 'What does a year <em>actually</em> cost?',
+    blurb: 'Pre-filled with national medians at every tier. Edit any line. Honest math either way.',
+    cta: '→ Run your numbers',
   },
 ];
 
@@ -69,6 +123,21 @@ const FEATURED_SPORTS = [
 const featuredSports = FEATURED_SPORTS
   .map(slug => SPORTS.find(s => s.slug === slug))
   .filter(Boolean) as typeof SPORTS[number][];
+
+// One illustration per featured sport. On a phone this band was eight stacked
+// text tiles and nothing else — the longest unbroken run of type on the page.
+// The alt text is deliberately plain: the photo is the sport's visual label,
+// not information the link text doesn't already carry.
+const SPORT_THUMBS: Record<string, { base: string; alt: string }> = {
+  'baseball':       { base: 'baseball-glove-ball-bench',      alt: 'A baseball glove and ball resting on a dugout bench.' },
+  'soccer':         { base: 'soccer-ball-wet-grass',          alt: 'A soccer ball on wet morning grass.' },
+  'basketball':     { base: 'basketball-hoop-outdoor-dusk',   alt: 'An outdoor basketball hoop at dusk.' },
+  'football':       { base: 'football-helmets-on-grass',      alt: 'Football helmets lined up on the grass.' },
+  'softball':       { base: 'softball-dugout-bench-gear',     alt: 'Softball gear packed along a dugout bench.' },
+  'volleyball':     { base: 'volleyball-net-empty-gym',       alt: 'A volleyball net strung across an empty gym.' },
+  'swimming':       { base: 'swimming-goggles-cap-deck',      alt: 'Swim goggles and a cap on the pool deck.' },
+  'lacrosse-girls': { base: 'lacrosse-girls-sticks-fence',    alt: "Girls' lacrosse sticks leaning against a fence." },
+};
 
 // timeZone: 'UTC' required — publishedAt parses to midnight UTC.
 const fmtDate = (d: Date) =>
@@ -101,13 +170,12 @@ const websiteSchema = {
 
   {/* ── HERO ─────────────────────────────────────────────────────────────── */}
   <section class="relative overflow-hidden">
-    <img
-      src="/illustrations/sports-family-sideline.webp"
+    <Illo
+      base="sports-family-sideline"
       alt="A family of four sitting close together on the sideline at a youth game, smiling."
+      sizes="100vw"
       class="absolute inset-0 w-full h-full object-cover"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
+      eager
     />
     <div class="absolute inset-0 bg-surface/90" aria-hidden="true"></div>
     <div class="container-px py-16 md:py-24 relative">
@@ -177,15 +245,22 @@ const websiteSchema = {
             <li>
               <a
                 href={`/news/${item.id}/`}
-                class="card card-hover group block p-5 h-full rounded-card"
+                class="card card-hover group flex gap-4 items-start p-5 h-full rounded-card"
               >
-                <p class="t-eyebrow mb-2">
-                  {NEWS_CATEGORY_LABELS[item.data.category] ?? item.data.category}
-                  {item.data.sport && <span> · {item.data.sport}</span>}
-                </p>
-                <h3 class="t-card-title font-display text-ink leading-snug group-hover:text-accent transition-colors font-medium">
-                  {item.data.headline}
-                </h3>
+                <TopicIcon
+                  topic={NEWS_CATEGORY_ICONS[item.data.category] ?? 'tools'}
+                  size={40}
+                  class="shrink-0 mt-0.5"
+                />
+                <div>
+                  <p class="t-eyebrow mb-2">
+                    {NEWS_CATEGORY_LABELS[item.data.category] ?? item.data.category}
+                    {item.data.sport && <span> · {item.data.sport}</span>}
+                  </p>
+                  <h3 class="t-card-title font-display text-ink leading-snug group-hover:text-accent transition-colors font-medium">
+                    {item.data.headline}
+                  </h3>
+                </div>
               </a>
             </li>
           ))}
@@ -195,7 +270,21 @@ const websiteSchema = {
   )}
 
   {/* ── PINNED AT THE DESK ───────────────────────────────────────────────── */}
-  <section class="band band-surface">
+  {/*
+    Hidden below md on purpose. On desktop the hero rail ("Right off the desk")
+    sits in a right-hand column and this band sits below it, so the two read as
+    two different shelves. On a phone the rail collapses underneath the hero
+    copy and lands directly above this band — and since latestRail and
+    pinnedFinal both come off the top of the same sorted list, a phone showed
+    the same three headlines twice, about 950px apart, with nothing between them
+    but a color change. Dropping the band on mobile costs the deks and saves the
+    repetition; the rail already links every one of these pieces.
+
+    Known follow-up: desktop still overlaps. The clean fix is to source
+    pinnedFinal from articles the rail is not already showing, which changes
+    what desktop displays and is a separate call.
+  */}
+  <section class="band band-surface hidden md:block">
     <div class="container-px">
       <p class="t-section mb-2">Fresh at the Desk</p>
       <h2 class="t-display t-h2 max-w-2xl">
@@ -240,17 +329,32 @@ const websiteSchema = {
         <a href="/sports/" class="t-cta whitespace-nowrap">All 26 sports →</a>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {featuredSports.map((sport) => (
-          <a
-            href={`/sports/${sport.slug}/`}
-            class="card card-hover group px-5 py-4 block rounded-card min-h-11"
-          >
-            <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-accent transition-colors font-medium">
-              {sport.label}
-            </h3>
-            <p class="t-cta mt-1 text-sm">→ Guide</p>
-          </a>
-        ))}
+        {featuredSports.map((sport) => {
+          const thumb = SPORT_THUMBS[sport.slug];
+          return (
+            <a
+              href={`/sports/${sport.slug}/`}
+              class="card card-hover group block overflow-hidden rounded-card min-h-11"
+            >
+              {thumb && (
+                <div class="aspect-[3/2] overflow-hidden bg-stripe">
+                  <Illo
+                    base={thumb.base}
+                    alt={thumb.alt}
+                    sizes="(min-width: 640px) 25vw, 50vw"
+                    class="w-full h-full object-cover rounded-t-card group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+              )}
+              <div class="px-5 py-4">
+                <h3 class="t-card-title font-display text-ink leading-tight group-hover:text-accent transition-colors font-medium">
+                  {sport.label}
+                </h3>
+                <p class="t-cta mt-1 text-sm">→ Guide</p>
+              </div>
+            </a>
+          );
+        })}
       </div>
       <p class="text-ink-soft text-base mt-5">
         Don't see yours? <a href="/sports/" class="text-accent hover:underline hover:text-accent-hover">All sports including dance, theater, band, gymnastics, and more →</a>
@@ -277,12 +381,11 @@ const websiteSchema = {
             class="card card-rule card-hover group block overflow-hidden rounded-card"
           >
             <div class="aspect-[3/2] overflow-hidden bg-stripe">
-              <img
-                src={driveImages[i].src}
+              <Illo
+                base={driveImages[i].base}
                 alt={driveImages[i].alt}
+                sizes="(min-width: 768px) 33vw, 100vw"
                 class="w-full h-full object-cover rounded-t-card group-hover:scale-[1.02] transition-transform duration-500"
-                loading="lazy"
-                decoding="async"
               />
             </div>
             <div class="p-6 md:p-8">
@@ -312,12 +415,11 @@ const websiteSchema = {
 
   {/* ── PARENT-COACH ─────────────────────────────────────────────────────── */}
   <section class="band band-sunken relative overflow-hidden">
-    <img
-      src="/illustrations/empty-gym-after-practice.webp"
+    <Illo
+      base="empty-gym-after-practice"
       alt="An empty high school gym in late afternoon light: basketball on the floor near the bench, Teamwork Respect Integrity banner on the wall."
+      sizes="100vw"
       class="absolute inset-0 w-full h-full object-cover opacity-20"
-      loading="lazy"
-      decoding="async"
     />
     <div class="absolute inset-0 bg-surface-sunken/90" aria-hidden="true"></div>
     <div class="container-px relative">
@@ -386,49 +488,20 @@ const websiteSchema = {
         Tools, not <em>advice columns</em>.
       </h2>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-        <a href="/scripts/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
-          <p class="t-eyebrow">Scripts</p>
-          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
-            What to <em>actually</em> say.
-          </h3>
-          <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
-            The first 90 seconds after a bad game. The night before tryouts. The post-cut text.
-          </p>
-          <p class="t-cta mt-4 text-sm">→ Scripts</p>
-        </a>
-
-        <a href="/decisions/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
-          <p class="t-eyebrow">Decisions</p>
-          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
-            The big calls, walked through.
-          </h3>
-          <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
-            Travel ball or rec. Specialize or stay multi-sport. Quit or push through.
-          </p>
-          <p class="t-cta mt-4 text-sm">→ Decisions</p>
-        </a>
-
-        <a href="/youth-sports-pendulum/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
-          <p class="t-eyebrow">Pendulum</p>
-          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
-            Where is your family right now?
-          </h3>
-          <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
-            Fun-to-performance spectrum. The check-in that pulls families back from the edge.
-          </p>
-          <p class="t-cta mt-4 text-sm">→ Take the check-in</p>
-        </a>
-
-        <a href="/cost-calculator/" class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
-          <p class="t-eyebrow">Cost calculator</p>
-          <h3 class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium">
-            What does a year <em>actually</em> cost?
-          </h3>
-          <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
-            Pre-filled with national medians at every tier. Edit any line. Honest math either way.
-          </p>
-          <p class="t-cta mt-4 text-sm">→ Run your numbers</p>
-        </a>
+        {TOOL_CARDS.map((tool) => (
+          <a href={tool.href} class="card card-rule card-hover group block p-5 md:p-6 rounded-card">
+            <TopicIcon topic={tool.icon} size={44} class="mb-3" />
+            <p class="t-eyebrow">{tool.eyebrow}</p>
+            <h3
+              class="t-card-title font-display text-ink leading-tight mt-2 group-hover:text-accent transition-colors font-medium"
+              set:html={tool.title}
+            />
+            <p class="text-ink-soft text-sm mt-3 leading-snug hidden md:block">
+              {tool.blurb}
+            </p>
+            <p class="t-cta mt-4 text-sm">{tool.cta}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -438,17 +511,31 @@ const websiteSchema = {
     <section class="band band-sunken">
       <div class="container-px">
         <p class="t-section mb-3">If you only read one thing</p>
-        <a href={`/${featured.data.phase}/${featured.id}/`} class="block group max-w-3xl">
-          <h2
-            class="t-display t-h1 group-hover:text-accent transition-colors"
-            set:html={renderTitle(featured.data.title)}
-          />
-          {featured.data.dek && (
-            <p class="text-ink-soft text-xl mt-5 leading-snug max-w-2xl">
-              {featured.data.dek}
-            </p>
-          )}
-          <div class="t-cta mt-6">Read it →</div>
+        <a href={`/${featured.data.phase}/${featured.id}/`} class="block group">
+          <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+            <div class="md:col-span-5 md:order-2">
+              <div class="aspect-[3/2] overflow-hidden rounded-card bg-stripe">
+                <Illo
+                  base="bleachers-two-parents-side"
+                  alt="Two parents sitting side by side in the bleachers, watching a game."
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+            </div>
+            <div class="md:col-span-7 md:order-1">
+              <h2
+                class="t-display t-h1 group-hover:text-accent transition-colors"
+                set:html={renderTitle(featured.data.title)}
+              />
+              {featured.data.dek && (
+                <p class="text-ink-soft text-xl mt-5 leading-snug max-w-2xl">
+                  {featured.data.dek}
+                </p>
+              )}
+              <div class="t-cta mt-6">Read it →</div>
+            </div>
+          </div>
         </a>
       </div>
     </section>

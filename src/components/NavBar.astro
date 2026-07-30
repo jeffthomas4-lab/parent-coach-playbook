@@ -173,18 +173,28 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
           style="font-size: 0.95rem"
         >{item.label}</a>
       ))}
+      {/*
+        aria-expanded/aria-controls are the whole accessible state of this
+        control. Without them a screen reader announces "Menu, button" and never
+        says whether the menu it controls is open or closed — and on a phone
+        this button IS the navigation, so that gap is the site's primary
+        navigation being unusable non-visually. The script below keeps
+        aria-expanded in sync with the class toggle.
+      */}
       <button
         type="button"
         class="lg:hidden font-body text-ink font-medium min-h-11 px-2 -mr-2"
         style="font-size: 0.95rem"
         aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
         data-menu-toggle
       >Menu</button>
     </div>
   </div>
 
   {/* Mobile menu — flat links with section labels for orientation */}
-  <div class="lg:hidden hidden border-b border-bone bg-paper-warm" data-mobile-menu>
+  <div id="mobile-menu" class="lg:hidden hidden border-b border-bone bg-paper-warm" data-mobile-menu>
     <div class="container-px py-6 grid gap-1">
       <a href="/start-here/" class="font-body text-ink hover:text-rust flex items-center min-h-11 py-2.5 border-b border-bone font-medium">Start here</a>
 
@@ -224,7 +234,10 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
   const btn = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-mobile-menu]');
   if (btn && menu) {
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    btn.addEventListener('click', () => {
+      const nowOpen = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(nowOpen));
+    });
   }
 
   document.querySelectorAll('[data-dropdown-root]').forEach((root) => {

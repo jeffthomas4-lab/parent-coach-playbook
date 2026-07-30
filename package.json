@@ -33,6 +33,8 @@
     "illustrations:generate": "python3 scripts/build-illustrations.py",
     "imports:process": "python3 scripts/process-imports.py",
     "imports:dry": "python3 scripts/process-imports.py --dry-run",
+    "illustrations:variants": "python3 scripts/build-illustration-variants.py",
+    "illustrations:variants:all": "python3 scripts/build-illustration-variants.py --all",
     "illustrations:wire": "python3 scripts/wire-illustrations.py",
     "illustrations:wire:dry": "python3 scripts/wire-illustrations.py --dry-run",
     "check": "astro check",
