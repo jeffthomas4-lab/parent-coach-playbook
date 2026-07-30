@@ -561,15 +561,30 @@ body {
   border-color: var(--accent);
 }
 
-/* ---------- Container ---------- */
+/* ---------- Container ----------
+   padding-inline, NOT the `padding` shorthand. This is load-bearing.
+
+   363 elements across the site are written as `class="container-px py-10"` or
+   similar. `padding: 0 24px` sets all four sides, and because .container-px is
+   declared later in this stylesheet than Tailwind's utilities and carries the
+   same single-class specificity, it silently zeroed padding-block on every one
+   of them. The result was a site with no vertical space between sections at
+   all: `py-10` was in the markup, computed 40px in isolation, and rendered 0px
+   in place. That is why sections ran into each other everywhere except the
+   homepage, which escapes it because .band puts padding-block on the <section>
+   rather than on the inner container.
+
+   Using the logical-axis property keeps this rule on the inline axis where it
+   belongs and lets the py-* utilities do their job. Do not "simplify" it back
+   to the shorthand. */
 .container-px {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding-inline: 24px;
 }
 
 @media (max-width: 768px) {
-  .container-px { padding: 0 16px; }
+  .container-px { padding-inline: 16px; }
   .article-body > p:first-of-type::first-letter { font-size: 4rem; }
 }
 
