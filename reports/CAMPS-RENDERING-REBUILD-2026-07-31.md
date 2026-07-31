@@ -646,3 +646,118 @@ contain `.innerHTML`, and running `tsc --noEmit` against the three edited
 test files (0 new errors beyond a pre-existing, unrelated `D1Database`
 global-type gap that exists with or without these changes). Jeff should run
 `npm test` for real before merging to confirm all 8 go green.
+
+## 2026-07-31, fixing the 3 full-suite failures CI never ran
+
+`npm test` (full vitest, `vitest.config.ts`) failed in 3 files on
+`audit/full-standard-2026-07-30`: 6 failures in `tests/api/trust-request.test.ts`
+plus suite-level errors in `tests/customer-lifecycle.integration.test.ts` and
+`tests/editorial-records-migration.test.ts`. `test-classification.ts`
+excludes all three from `vitest.unit.config.ts` (the project CI's unit job
+runs), which is why CI never caught them. Both root causes were pre-diagnosed;
+this session fixed them without touching the security controls that caused
+the failures.
+
+### Cause 1, Turnstile added, test not updated
+
+`src/pages/api/trust/request.ts` correctly gained `enforcePublicTurnstile`
+under this branch's Pillar 1 lane. `tests/api/trust-request.test.ts` never
+got the matching update, so every test hit the fail-closed 503 before
+reaching validation. Fixed the test file only, following the exact pattern
+already used in `camps-submit.test.ts` / `camps-suggest.test.ts` /
+`camps-claim.test.ts`: added `TURNSTILE_SECRET`, `TURNSTILE_TOKEN`, a
+`stubTurnstileSuccess()` helper, `beforeEach`/`afterEach` wiring, and
+`'cf-turnstile-response': TURNSTILE_TOKEN` on the shared `valid` payload.
+Added `TURNSTILE_SECRET_KEY` to every `env` that needs to pass the gate.
+The two tests that resolve before the gate (feature-disabled 404 and the
+honeypot 200) correctly still don't need it. Added the missing house-style
+test, "security: fails closed with no TURNSTILE_SECRET_KEY set", matching
+the other three files' wording and shape.
+
+**Verdict on `replayed`:** fell out on its own, not a separate bug. Reading
+`request.ts` line by line, the idempotency-key lookup runs after the
+Turnstile gate, and the mocked `insertTrustCase` always resolves
+`{ outcome: 'created', ... }` on first insert, so `inserted.outcome ===
+'replayed'` is `false` on the first call once Turnstile stops short-circuiting
+at 503. No code change needed beyond the test env fix above.
+
+File: `tests/api/trust-request.test.ts`.
+
+### Cause 2, migration 0029's triggers vs. a naive SQL splitter
+
+Both integration test files defined an identical `createDisposableOpsDatabase()`
+that did `sql.split(';')` against every migration file's text. Migration
+`0029_admin_action_receipts.sql` (Pillar 13 tamper-evidence: append-only
+receipts, hash-chained, enforced by `trg_admin_receipts_no_update` and
+`trg_admin_receipts_no_delete`) has 2 `CREATE TRIGGER ... BEGIN ... END`
+blocks whose bodies carry their own semicolons, which the naive splitter
+shredded. The triggers stayed untouched; only the test harness changed.
+
+Extracted the duplicated helper into `tests/helpers/disposable-ops-db.ts`,
+matching this repo's existing convention of one named-export helper file per
+concern (`tests/helpers/access-token.ts`, `context.ts`, `d1.ts`). Rewrote the
+split as `splitSqlStatements()`, a character-by-character scanner that
+tracks BEGIN/END depth (only treating `;` as a terminator at depth zero) and
+quote state (`'` and `"`, with doubled-quote escaping), so semicolons or
+BEGIN/END-shaped text inside a string never affect statement boundaries.
+`tests/customer-lifecycle.integration.test.ts` and
+`tests/editorial-records-migration.test.ts` now both import
+`createDisposableOpsDatabase` from the shared helper instead of defining
+their own copy. Each still passes its own Miniflare D1 database ID so the
+two suites stay isolated from each other; `customer-lifecycle` also spins up
+a third, disposable one for its commerce sub-block, updated to a distinct
+ID too.
+
+While building the standalone verification below, found a second, real bug
+in the pre-existing comment-stripping regex (`sql.replace(/^--.*$/gm, '')`):
+it only strips comment lines with zero leading whitespace. 0029's column
+comments are indented two spaces (e.g. `  -- 'staging' | 'production' |
+'local'`), so they survived stripping, and their apostrophes fed straight
+into the new quote-aware splitter as if they opened real string literals.
+That corrupted statement boundaries worse than the original naive splitter
+did. Fixed by widening the regex to `/^\s*--.*$/gm`. This is a real fix, not
+scope creep: the BEGIN/END-aware splitter is more sensitive to unstripped
+comment text than a dumb `split(';')` was, so it needed the same fix to
+actually work.
+
+Files: `tests/helpers/disposable-ops-db.ts` (new),
+`tests/customer-lifecycle.integration.test.ts`,
+`tests/editorial-records-migration.test.ts`.
+
+**Standalone node verification.** Ran the exact `splitSqlStatements()` logic
+against the real `migrations-pcd-ops/0029_admin_action_receipts.sql` text
+with plain `node`. Result: 7 statements, including both `CREATE TRIGGER`
+statements fully intact, each with matching `BEGIN`/`END`, full body, and
+correct boundaries. Then ran the same function against all 19 files in
+`migrations-pcd-ops/`. Every file split with 0 BEGIN/END-count mismatches,
+and the trigger count across the entire directory came back as exactly 2,
+both from 0029, matching the known schema. This is a change from what a
+first pass without the comment-stripping fix produced (2 statements from
+0029, the second one starting mid-comment, garbled), confirming the second
+bug was real and the fix corrects it.
+
+**Do the two suites still skip?** No `it.skip`/`describe.skip` or
+environment-gated skip exists in either file (checked directly, no matches).
+Both suites' tests reporting as SKIPPED under the old code was a side effect
+of `beforeAll` throwing `D1_ERROR: incomplete input: SQLITE_ERROR` before any
+test body ran. Vitest marks tests in a suite as skipped when their
+`beforeAll` hook errors. With `beforeAll` now completing (migrations apply
+cleanly per the standalone verification above), the suites should execute
+for real rather than staying skipped. This could not be confirmed by
+actually running vitest in this sandbox (see below).
+
+### What could not be verified here
+
+Per this session's constraints: `astro build`/`npm run build`/`npm install`
+were off-limits, and `npx vitest run` cannot execute in this sandbox
+(missing native binding, the same standing limitation noted throughout this
+file). Verified instead by: reading `src/pages/api/trust/request.ts` and
+`src/lib/turnstile.ts` line by line to confirm the `replayed` verdict rather
+than guessing; running the splitter logic standalone against the real
+migration files with plain `node` (output above); and running TypeScript's
+`transpileModule` (syntax-only, no project-wide resolution, since a full
+`tsc --noEmit` against this project timed out past the sandbox's 45-second
+command limit) against all 4 changed/created files, which came back with 0
+diagnostics. Jeff should run `npm test` for real before merging to confirm
+all 3 files go green and the two integration suites actually execute their
+tests instead of reporting skipped.

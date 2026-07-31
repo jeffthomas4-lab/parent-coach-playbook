@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { readFile, readdir } from 'node:fs/promises';
-import { Miniflare } from 'miniflare';
+import type { Miniflare } from 'miniflare';
 import type { D1Database } from '@cloudflare/workers-types';
+import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 import {
   addClaim,
   addSource,
@@ -27,27 +27,8 @@ import {
 let db: D1Database;
 let mf: Miniflare;
 
-async function createDisposableOpsDatabase(): Promise<{ mf: Miniflare; db: D1Database }> {
-  const isolated = new Miniflare({
-    modules: true,
-    script: 'export default { fetch() { return new Response("test only"); } }',
-    compatibilityDate: '2026-07-15',
-    d1Databases: { DB: '00000000-0000-0000-0000-000000000002' },
-  });
-  const isolatedDb = (await isolated.getD1Database('DB')) as unknown as D1Database;
-  const directory = new URL('../migrations-pcd-ops/', import.meta.url);
-  const migrations = (await readdir(directory)).filter((name) => name.endsWith('.sql')).sort();
-  for (const migration of migrations) {
-    const sql = (await readFile(new URL(migration, directory), 'utf8')).replace(/^--.*$/gm, '');
-    for (const statement of sql.split(';').map((value) => value.trim()).filter(Boolean)) {
-      await isolatedDb.prepare(statement).run();
-    }
-  }
-  return { mf: isolated, db: isolatedDb };
-}
-
 beforeAll(async () => {
-  ({ mf, db } = await createDisposableOpsDatabase());
+  ({ mf, db } = await createDisposableOpsDatabase('00000000-0000-0000-0000-000000000002'));
 }, 30_000);
 
 afterAll(async () => mf?.dispose());

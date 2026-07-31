@@ -1,6 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { readFile, readdir } from 'node:fs/promises';
-import { Miniflare } from 'miniflare';
+import type { Miniflare } from 'miniflare';
 import type { D1Database } from '@cloudflare/workers-types';
 import { acceptCustomerInvitation, listAuthorizedOrganizations, recordIdentityProviderEvent } from '../src/lib/customer-store';
 import { createOwnerClaim, createProposedEdit, decideOwnerClaim, submitOwnerClaim, transitionProposedEditByCustomer, transitionProposedEditByStaff } from '../src/lib/owner-store';
@@ -8,31 +7,13 @@ import { consumeRecoveryChallenge, recordRecoveryFailure } from '../src/lib/reco
 import { openOwnerDisputeByCustomer, resolveOwnerDisputeByStaff } from '../src/lib/owner-dispute-store';
 import { claimPrivacyCascadeExecution, recordPrivacyExportArtifact, settlePrivacyCascadeExecution } from '../src/lib/privacy-execution-store';
 import { grantVerifiedEntitlement, reconcileVerifiedPayment, recordVerifiedCommerceEvent, requestRefundByStaff, settleVerifiedRefund } from '../src/lib/commerce-store';
+import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 
 let db: D1Database;
 let mf: Miniflare;
 
-async function createDisposableOpsDatabase(): Promise<{ mf: Miniflare; db: D1Database }> {
-  const isolated = new Miniflare({
-    modules: true,
-    script: 'export default { fetch() { return new Response("test only"); } }',
-    compatibilityDate: '2026-07-15',
-    d1Databases: { DB: '00000000-0000-0000-0000-000000000001' },
-  });
-  const isolatedDb = await isolated.getD1Database('DB') as unknown as D1Database;
-  const directory = new URL('../migrations-pcd-ops/', import.meta.url);
-  const migrations = (await readdir(directory)).filter((name) => name.endsWith('.sql')).sort();
-  for (const migration of migrations) {
-    const sql = (await readFile(new URL(migration, directory), 'utf8')).replace(/^--.*$/gm, '');
-    for (const statement of sql.split(';').map((value) => value.trim()).filter(Boolean)) {
-      await isolatedDb.prepare(statement).run();
-    }
-  }
-  return { mf: isolated, db: isolatedDb };
-}
-
 beforeAll(async () => {
-  ({ mf, db } = await createDisposableOpsDatabase());
+  ({ mf, db } = await createDisposableOpsDatabase('00000000-0000-0000-0000-000000000001'));
 
   await db.batch([
     db.prepare(`INSERT INTO customer_users (id,status,primary_email_normalized,email_verified_at,created_at,updated_at) VALUES (?1,'active',?2,?3,?3,?3)`).bind('user-owner', 'owner@example.com', '2026-07-16T00:00:00Z'),
@@ -162,7 +143,7 @@ describe('disposable D1 customer lifecycle', () => {
     // This scenario performs a dense sequence of D1 write batches. Keep it
     // isolated from the lifecycle fixture so Windows/Miniflare worker cleanup
     // cannot terminate the entire integration suite after a partial pass.
-    const commerce = await createDisposableOpsDatabase();
+    const commerce = await createDisposableOpsDatabase('00000000-0000-0000-0000-000000000003');
     const commerceDb = commerce.db;
     try {
       await commerceDb.batch([
