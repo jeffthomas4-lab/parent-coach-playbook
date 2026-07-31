@@ -6,16 +6,8 @@ import { listApprovedCamps, listFeaturedCamps, type Camp } from '../../lib/camps
 import { CAMP_SPORTS } from '../../data/site';
 import { env as cfEnv } from 'cloudflare:workers';
 import { serializeJsonLd } from '../../lib/jsonld';
-import { campFreshnessLabel, campVerificationFreshness, formatDateAdded, isRecentlyAdded, daysSinceAdded } from '../../lib/camp-freshness';
-
-const sportLabel = (slug: string): string => {
-  const match = CAMP_SPORTS.find((s) => s.slug === slug);
-  if (match) return match.label;
-  return slug
-    .split(/[\s_-]+/)
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
-};
+import { isRecentlyAdded, daysSinceAdded } from '../../lib/camp-freshness';
+import { renderCardHtml, renderFeaturedCardHtml, RECENTLY_ADDED_WINDOW_DAYS } from '../../lib/camp-card';
 
 // SSR. Pulls live from D1 each request, but the response is cached at
 // Cloudflare's edge for 10 minutes (s-maxage=600), with stale-while-revalidate
@@ -48,33 +40,6 @@ if (env?.DB) {
   }
 }
 
-// Parse YYYY-MM-DD as local date (not UTC). Avoids the off-by-one timezone bug
-// where new Date('2026-08-03') becomes Aug 2 in Pacific time.
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-// Null-safe. 296 approved programs carry a null session_start_date or
-// session_end_date (verified in activity-radar D1, 2026-07-15). The listing
-// queries filter session_end_date >= today, but session_start_date can still
-// be null on a row that passes that filter. Calling .split() on a null threw
-// a TypeError in SSR frontmatter and returned a live HTTP 500. Degrade
-// instead of crash, same pattern as /camps/[slug].astro.
-const fmtDatePart = (s: string | null | undefined): { m: number; d: number; y: number } | null => {
-  if (!s) return null;
-  const [y, m, d] = s.split('-').map(Number);
-  if (!y || !m || !d || !MONTHS[m - 1]) return null;
-  return { m, d, y };
-};
-const fmtDateRange = (start: string | null | undefined, end: string | null | undefined): string => {
-  const a = fmtDatePart(start);
-  const b = fmtDatePart(end);
-  if (a && b) {
-    if (a.m === b.m && a.y === b.y) return `${MONTHS[a.m - 1]} ${a.d}–${b.d}, ${a.y}`;
-    return `${MONTHS[a.m - 1]} ${a.d} – ${MONTHS[b.m - 1]} ${b.d}, ${b.y}`;
-  }
-  if (a) return `Starts ${MONTHS[a.m - 1]} ${a.d}, ${a.y}`;
-  if (b) return `Through ${MONTHS[b.m - 1]} ${b.d}, ${b.y}`;
-  return 'Dates to be announced';
-};
-
 const PNW = new Set(['WA', 'OR', 'ID', 'MT', 'AK']);
 const pnw = camps.filter(c => PNW.has(c.state));
 const elsewhere = camps.filter(c => !PNW.has(c.state));
@@ -85,7 +50,6 @@ const elsewhere = camps.filter(c => !PNW.has(c.state));
 // a slice of the existing approved-camps result for display. Null-safe:
 // camps with an unparseable date_added simply sort last / are excluded from
 // the "added in the last 30 days" count below rather than throwing.
-const RECENTLY_ADDED_WINDOW_DAYS = 30;
 const RECENTLY_ADDED_CAP = 12;
 const recentlyAddedCamps = [...camps]
   .filter((c) => daysSinceAdded(c.date_added) !== null)
@@ -93,70 +57,53 @@ const recentlyAddedCamps = [...camps]
   .slice(0, RECENTLY_ADDED_CAP);
 const recentlyAddedCount = camps.filter((c) => isRecentlyAdded(c.date_added, RECENTLY_ADDED_WINDOW_DAYS)).length;
 
-// Render cards as HTML strings in the frontmatter and inject via set:html.
-// Astro's per-element JSX iteration was costing ~50-100µs per card; at 1308
-// camps that pushed past the Cloudflare Pages Function CPU budget and triggered
-// 1102 errors. A pre-built HTML string is roughly 10x faster on the server.
-const escHtml = (s: unknown) => String(s ?? '')
-  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-const ageLabel = (c: Camp) => c.age_known === 1 ? `ages ${c.age_min}–${c.age_max}` : 'ages not provided';
-const verificationLabel = (c: Camp) => campFreshnessLabel(campVerificationFreshness(c.verified, c.last_verified_at));
-// Null-safe even though programs.created_at is NOT NULL in the schema — see
-// camp-freshness.ts. Degrades to no line rather than "Invalid Date".
-const dateAddedLabel = (c: Camp) => formatDateAdded(c.date_added);
-const newPillHtml = (c: Camp): string =>
-  isRecentlyAdded(c.date_added, RECENTLY_ADDED_WINDOW_DAYS)
-    ? `<span class="tag-pill" style="--pill-bg: var(--stripe); --pill-accent: var(--navy);">New</span>`
-    : '';
+// Card HTML rendering lives in src/lib/camp-card.ts now — shared with the
+// client-side filter script below so a card built on the server and a card
+// built in the browser are byte-identical. See that file's header comment
+// for why (2026-07-31, Pillar 14 open item #74).
+//
+// This page still decides HOW MANY cards to hand the renderer. The Featured
+// and Recently Added rails render in full — they're already small and
+// bounded (a curated set, and RECENTLY_ADDED_CAP). The PNW and National
+// grids are the ones that grow with the directory, so they render only a
+// first window; the client renders the rest of the same campsLite data on
+// "Show more" or when a filter changes. That's the actual fix: before this
+// change every approved camp became a DOM node on every visit (323 nodes
+// live at 603KB on 2026-07-31, on its way to far more as the directory
+// grows), because the client filter only ever toggled display:none on cards
+// that already existed. It never rendered a card itself. Now it can.
+const CARD_WINDOW = 24;
 
-const renderCardHtml = (c: Camp): string => {
-  const photo = c.hero_photo_key
-    ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
-    : '';
-  const verified = c.verified === 1
-    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing, ${escHtml(verificationLabel(c))}; read the verification methodology">Verified ✓ · ${escHtml(verificationLabel(c))}</a>`
-    : '';
-  const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
-  const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
-  const price = c.price_text
-    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`
-    : '';
-  const added = dateAddedLabel(c);
-  const addedLine = added
-    ? `<p class="font-body text-muted text-xs mt-2">Added ${escHtml(added)}</p>`
-    : '';
-  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p><div class="flex items-center gap-2">${newPillHtml(c)}${verified}</div></div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="t-card-title font-display text-ink mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}${addedLine}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
-};
-const pnwHtml = pnw.map(renderCardHtml).join('');
-const nationalHtml = elsewhere.map(renderCardHtml).join('');
+// Mirrors the client's default filter state (state.showLeagues = false,
+// state.showFull = false — see the client script below), so the server's
+// first-paint window matches what the client shows once it takes over.
+// Without this, a reader would see leagues and full programs in the first
+// 24 cards for a moment, then watch them vanish once JS applies the real
+// default filter.
+const defaultVisible = (list: Camp[]) => list.filter((c) => c.program_type !== 'league' && c.spots_status !== 'full');
+const pnwVisible = defaultVisible(pnw);
+const nationalVisible = defaultVisible(elsewhere);
+const pnwWindow = pnwVisible.slice(0, CARD_WINDOW);
+const nationalWindow = nationalVisible.slice(0, CARD_WINDOW);
+const pnwHasMore = pnwVisible.length > pnwWindow.length;
+const nationalHasMore = nationalVisible.length > nationalWindow.length;
+// True total match count under the default filter — reported on the results
+// line and kept current by the client as filters change. Not the same as
+// the rendered-card count once windowing is in play.
+const totalVisibleDefault = pnwVisible.length + nationalVisible.length;
 
-const renderFeaturedCardHtml = (c: Camp): string => {
-  const photo = c.hero_photo_key
-    ? `<div class="mb-3 border border-bone overflow-hidden bg-paper-warm" style="aspect-ratio: 16/9;"><img src="https://parentcoachdesk.com/camp-photos/${escHtml(c.hero_photo_key)}" alt="${escHtml(c.name)}" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" /></div>`
-    : '';
-  const verified = c.verified === 1
-    ? `<a href="/camps/verification/" class="font-display text-rust text-xs font-medium hover:underline" style="white-space: nowrap" aria-label="Verified listing, ${escHtml(verificationLabel(c))}; read the verification methodology">Verified ✓ · ${escHtml(verificationLabel(c))}</a>`
-    : '';
-  const dayLabel = c.day_or_overnight === 'day' ? 'Day camp' : 'Overnight';
-  const spotsLabel = c.spots_status === 'open' ? 'Open' : c.spots_status === 'waitlist' ? 'Waitlist' : 'Full';
-  const price = c.price_text
-    ? `<p class="font-display italic text-rust text-xs mt-2 font-medium">Listed price: ${escHtml(c.price_text)} · confirm with provider</p>`
-    : '';
-  const featuredBadge = `<span class="tag-pill" style="--pill-bg: var(--stripe); --pill-accent: var(--navy);">Featured</span>`;
-  const added = dateAddedLabel(c);
-  const addedLine = added
-    ? `<p class="font-body text-muted text-xs mt-2">Added ${escHtml(added)}</p>`
-    : '';
-  return `<div class="camp-card card card-hover hover:shadow-cardHover transition-shadow p-5 group" data-camp-id="${escHtml(c.id)}">${photo}<div class="flex items-start justify-between gap-2 mb-1">${featuredBadge}${newPillHtml(c)}</div><div class="flex items-start justify-between gap-2 mb-1"><p class="font-display italic text-ink-soft text-xs font-medium">${escHtml(sportLabel(c.sport))} · ${escHtml(ageLabel(c))} · ${escHtml(fmtDateRange(c.start_date, c.end_date))}</p>${verified}</div><a href="/camps/${escHtml(c.slug)}/" class="block"><h3 class="t-card-title font-display text-ink mt-1 leading-tight group-hover:text-rust transition-colors font-medium">${escHtml(c.name)}</h3></a><p class="font-display text-ink-soft text-sm mt-1 leading-snug">${escHtml(c.city)}, ${escHtml(c.state)} · ${dayLabel} · ${spotsLabel}</p>${price}${addedLine}<a href="/camps/${escHtml(c.slug)}/" class="t-cta inline-block mt-3">View</a></div>`;
-};
-const featuredCardsHtml = featuredCamps.map(renderFeaturedCardHtml).join('');
-const recentlyAddedHtml = recentlyAddedCamps.map(renderCardHtml).join('');
+const featuredCardsHtml = featuredCamps.map((c) => renderFeaturedCardHtml(c, CAMP_SPORTS)).join('');
+const recentlyAddedHtml = recentlyAddedCamps.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
+const pnwHtml = pnwWindow.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
+const nationalHtml = nationalWindow.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
 
-// Serialize camps for client-side JS — slim payload. Client filters only
-// touch the fields below, so dropping the rest cuts the JSON payload from
-// ~2 MB to ~400 KB on a 1300-camp directory. Description is truncated to
-// 200 chars (still enough for substring search).
+// Serialize camps for client-side JS — slim payload, not the full DB row.
+// This is the data the map and the filters both work from; it stays
+// comprehensive (bounded only by listApprovedCamps' hard cap, not by the
+// CARD_WINDOW above) because the map needs a point for every matching camp
+// even when only 24 of them are cards in the DOM. Extended 2026-07-31 with
+// the four fields the shared card renderer needs that weren't here before:
+// hero_photo_key, price_text, last_verified_at, date_added.
 const campsLite = camps.map(c => ({
   id: c.id,
   name: c.name,
@@ -172,10 +119,14 @@ const campsLite = camps.map(c => ({
   day_or_overnight: c.day_or_overnight,
   spots_status: c.spots_status,
   verified: c.verified,
+  last_verified_at: c.last_verified_at,
   program_type: c.program_type,
   latitude: c.latitude,
   longitude: c.longitude,
   description: (c.description || '').slice(0, 200),
+  hero_photo_key: c.hero_photo_key,
+  price_text: c.price_text,
+  date_added: c.date_added,
 }));
 const campsJson = JSON.stringify(campsLite);
 // CAMP_SPORTS already includes the camp-only options (multi-sport, outdoor, stem, general, etc).
@@ -263,7 +214,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
       <div class="container-px py-8">
         <p class="t-eyebrow mb-2">Recently added</p>
         <h2 class="t-h2 font-display text-ink leading-tight font-medium mb-5">New in the directory</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" set:html={recentlyAddedHtml} />
+        <div id="recently-added-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" set:html={recentlyAddedHtml} />
       </div>
     </section>
   )}
@@ -272,9 +223,15 @@ const itemListSchema = featuredCamps.length > 0 ? {
     <div class="container-px py-12">
       {dbAvailable && camps.length > 0 && (
         <p class="font-body text-muted text-sm mb-6">
-          {camps.length} camp{camps.length === 1 ? '' : 's'} listed · {recentlyAddedCount} added in the last {RECENTLY_ADDED_WINDOW_DAYS} days
+          <span id="camps-results-count" aria-live="polite">{totalVisibleDefault} camp{totalVisibleDefault === 1 ? '' : 's'} listed</span> · {recentlyAddedCount} added in the last {RECENTLY_ADDED_WINDOW_DAYS} days
         </p>
       )}
+      {/* Announces "Show more" loads to screen reader users — drawing new
+          cards into the DOM is silent otherwise, so someone using a screen
+          reader gets no signal that anything happened. Kept separate from
+          #camps-results-count, which reports the filtered total, not what
+          "Show more" just added. Visually hidden (Tailwind's sr-only). */}
+      <div id="camps-load-announcer" aria-live="polite" class="sr-only"></div>
       {!dbAvailable ? (
         <div class="card p-6 max-w-xl">
           <p class="font-body text-ink-soft">Directory is warming up. Try again in a moment.</p>
@@ -444,14 +401,33 @@ const itemListSchema = featuredCamps.length > 0 ? {
             <button id="clear-filters" class="font-display italic text-rust text-sm hover:underline font-medium px-2 inline-flex items-center" style="min-height: 44px;">Clear all filters</button>
           </div>
 
-          {/* Camps Grid — cards are pre-rendered as an HTML string in the
-               frontmatter (much faster than per-element JSX over 1000+ rows)
-               and injected via set:html. */}
+          {/* No JS on this page means no filtering, search, map, or "Show
+               more" — all of that runs client-side (see the script below).
+               Without JS the reader gets the first CARD_WINDOW matching
+               cards per region, server-rendered, plus the Featured and
+               Recently Added rails in full. The .js-show-more rule below
+               hides the "Show more" buttons in that case instead of shipping
+               a button that does nothing when clicked. */}
+          <noscript><style>.js-show-more{display:none}</style></noscript>
+
+          {/* Camps Grid — cards are pre-rendered as an HTML string by
+               src/lib/camp-card.ts (much faster than per-element JSX over
+               hundreds of rows) and injected via set:html. Only the first
+               CARD_WINDOW matching cards per region render server-side; the
+               client script renders the rest of the same campsLite data on
+               "Show more" or when a filter changes, using the identical
+               renderer so a card never looks different card to card. */}
           <div id="camps-directory">
             {pnw.length > 0 && (
               <div class="mb-12">
                 <p class="t-eyebrow mb-3">Pacific Northwest</p>
                 <div id="pnw-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" set:html={pnwHtml}></div>
+                <div class="mt-6 text-center">
+                  <button type="button" id="pnw-show-more" class="btn btn-ghost js-show-more" style="min-height: 44px;" hidden={!pnwHasMore}>Show more Pacific Northwest camps</button>
+                </div>
+                <noscript>
+                  <p class="font-body text-ink-soft text-sm mt-4">Showing the first {pnwWindow.length} Pacific Northwest camps. Turn on JavaScript to filter, search by zip, see the map, or load more.</p>
+                </noscript>
               </div>
             )}
 
@@ -459,6 +435,12 @@ const itemListSchema = featuredCamps.length > 0 ? {
               <div>
                 <p class="t-eyebrow mb-3">National</p>
                 <div id="national-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" set:html={nationalHtml}></div>
+                <div class="mt-6 text-center">
+                  <button type="button" id="national-show-more" class="btn btn-ghost js-show-more" style="min-height: 44px;" hidden={!nationalHasMore}>Show more National camps</button>
+                </div>
+                <noscript>
+                  <p class="font-body text-ink-soft text-sm mt-4">Showing the first {nationalWindow.length} National camps. Turn on JavaScript to filter, search by zip, see the map, or load more.</p>
+                </noscript>
               </div>
             )}
           </div>
@@ -485,6 +467,7 @@ const itemListSchema = featuredCamps.length > 0 ? {
     import 'leaflet.markercluster/dist/MarkerCluster.css';
     import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
     import { buildCampDemandPayload } from '../../lib/camp-demand';
+    import { renderCardHtml, escHtml, type CardCamp, type SportOption } from '../../lib/camp-card';
 
     // Self-contained inline-SVG pin. The prior fix imported Leaflet's default
     // marker PNGs and pointed L.Icon.Default at them, but pins still didn't
@@ -524,26 +507,57 @@ const itemListSchema = featuredCamps.length > 0 ? {
         day_or_overnight: string;
         spots_status: string;
         verified: 0 | 1;
+        last_verified_at: string | null;
         program_type: string | null;
         latitude: number | null;
         longitude: number | null;
         description: string;
+        hero_photo_key: string | null;
+        price_text: string | null;
+        date_added: string | null;
       }
-      interface SportOption {
-        slug: string;
-        label: string;
-      }
+      // LiteCamp above must keep satisfying CardCamp (imported from
+      // camp-card.ts) structurally — it's what gets handed to
+      // renderCardHtml below. TypeScript enforces that at the call site.
 
       const dataEl = document.getElementById('camps-data');
       const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
       const camps: LiteCamp[] = _data.camps || [];
       const sportsList: SportOption[] = _data.sports || [];
 
-      // Helper: get sport label
+      // Helper: get sport label (used by the map popup below; renderCardHtml
+      // does its own lookup against the same sportsList internally).
       function sportLabel(slug: string): string {
         const match = sportsList.find(s => s.slug === slug);
         return match ? match.label : slug.split(/[\s_-]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       }
+
+      const PNW = new Set(['WA', 'OR', 'ID', 'MT', 'AK']);
+      const CARD_WINDOW = 24;
+
+      // Pillar 14 QA (2026-07-31): the desktop CARD_WINDOW (24 per grid) at
+      // 60 total first-paint cards (24 PNW + 24 National + 12 Recently
+      // Added) projected to ~15,000-21,000px on a 390px viewport, still well
+      // above the ~8,000px flag. This page is cached at Cloudflare's edge
+      // (see the Cache-Control header up top) so the *server* can't render a
+      // smaller window for phones without either breaking that shared cache
+      // or adding Vary: viewport-width plumbing neither Cloudflare nor this
+      // app has. But applyFilters() below already re-renders the grids from
+      // campsLite on every load regardless of device, so the client can pick
+      // a smaller starting window for narrow viewports without touching SSR
+      // or the no-JS/crawler path at all. matches Tailwind's md breakpoint
+      // (768px), same one .container-px and .t-card-title already use.
+      const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
+      // 6, not 24 — see the height arithmetic in
+      // reports/CAMPS-RENDERING-REBUILD-2026-07-31.md. 6+6 grid cards + the
+      // Recently Added rail capped to 3 on mobile (CSS, this file's
+      // <style is:global> block) is what actually clears the ~8,000px flag
+      // once the photo is also stripped on mobile; 8+8+4 (the first attempt)
+      // still projected to ~8,400px, over the line.
+      const CARD_WINDOW_MOBILE = 6;
+      const activeCardWindow = () => (isMobileViewport() ? CARD_WINDOW_MOBILE : CARD_WINDOW);
+      let pnwShown = activeCardWindow();
+      let nationalShown = activeCardWindow();
 
       // Helper: haversine distance in miles
       function haversineMiles(lat1: number, lon1: number, lat2: number, lon2: number): number {
@@ -713,11 +727,17 @@ const itemListSchema = featuredCamps.length > 0 ? {
           if (typeof c.latitude === 'number' && typeof c.longitude === 'number') {
             const [latJ, lonJ] = jitterFor(c.latitude, c.longitude);
             const marker = L.marker([latJ, lonJ], { icon: campPinIcon() });
+            // Escaped exactly like renderCardHtml — camp name/city/state come
+            // from public submissions and moderator review does not guarantee
+            // a raw script/HTML string in one of those fields gets caught, so
+            // this popup is as much a stored-XSS surface as a card. Found
+            // unescaped in QA (2026-07-31) and fixed here; leaflet's
+            // bindPopup renders whatever string it is handed as real HTML.
             const popup = `<div style="font-size: 14px;">
-              <strong>${c.name}</strong><br/>
-              ${c.city}, ${c.state}<br/>
-              ${sportLabel(c.sport)}<br/>
-              <a href="/camps/${c.slug}/" style="color: var(--rust); text-decoration: none;">View camp ↗</a>
+              <strong>${escHtml(c.name)}</strong><br/>
+              ${escHtml(c.city)}, ${escHtml(c.state)}<br/>
+              ${escHtml(sportLabel(c.sport))}<br/>
+              <a href="/camps/${escHtml(c.slug)}/" style="color: var(--rust); text-decoration: none;">View camp ↗</a>
             </div>`;
             marker.bindPopup(popup);
             activeClusterGroup.addLayer(marker);
@@ -786,14 +806,77 @@ const itemListSchema = featuredCamps.length > 0 ? {
           return true;
         });
 
-        // Hide/show camp cards
+        // Featured and Recently Added stay fully rendered (small, bounded
+        // rails) and just get toggled with display:none like before. PNW
+        // and National are the windowed grids — renderGrids() below rebuilds
+        // their contents outright instead of hiding pre-existing nodes, so
+        // skip them here to avoid doing (and then immediately overwriting)
+        // the same work twice.
         document.querySelectorAll<HTMLElement>('.camp-card').forEach(card => {
+          if (card.closest('#pnw-grid') || card.closest('#national-grid')) return;
           const campId = card.getAttribute('data-camp-id');
           const isVisible = visibleCamps.some(c => c.id === campId);
           card.style.display = isVisible ? '' : 'none';
         });
 
+        // A new filter result restarts each region's window at the first
+        // activeCardWindow() matches (device-sized — see its definition
+        // above). "Show more" bumps pnwShown/nationalShown directly and
+        // calls renderGrids() without going through here, so it isn't reset
+        // out from under itself.
+        pnwShown = activeCardWindow();
+        nationalShown = activeCardWindow();
+        renderGrids();
+        updateResultsCount();
         renderMap();
+      }
+
+      // Rebuilds the PNW and National grids from the current visibleCamps,
+      // rendering only pnwShown / nationalShown cards per region through the
+      // same renderCardHtml the server used for first paint. The map (see
+      // renderMap) still gets every matching camp regardless of what's
+      // rendered here — windowing is a DOM concern, not a data concern.
+      function renderGrids() {
+        const pnwMatches = visibleCamps.filter(c => PNW.has(c.state));
+        const nationalMatches = visibleCamps.filter(c => !PNW.has(c.state));
+
+        const pnwGrid = document.getElementById('pnw-grid');
+        if (pnwGrid) pnwGrid.innerHTML = pnwMatches.slice(0, pnwShown).map(c => renderCardHtml(c, sportsList)).join('');
+
+        const nationalGrid = document.getElementById('national-grid');
+        if (nationalGrid) nationalGrid.innerHTML = nationalMatches.slice(0, nationalShown).map(c => renderCardHtml(c, sportsList)).join('');
+
+        toggleShowMore('pnw-show-more', pnwMatches.length, pnwShown);
+        toggleShowMore('national-show-more', nationalMatches.length, nationalShown);
+      }
+
+      function toggleShowMore(buttonId: string, totalMatches: number, shown: number) {
+        const btn = document.getElementById(buttonId) as HTMLButtonElement | null;
+        if (!btn) return;
+        const remaining = totalMatches - shown;
+        if (remaining > 0) {
+          btn.hidden = false;
+          btn.textContent = `Show ${Math.min(activeCardWindow(), remaining)} more (${remaining} left)`;
+        } else {
+          btn.hidden = true;
+        }
+      }
+
+      // Screen-reader announcement for a "Show more" click — see the
+      // #camps-load-announcer element in the markup above. renderGrids()
+      // itself stays silent (it also runs from applyFilters(), which already
+      // has its own results-count announcement) so only an actual "Show
+      // more" click speaks up.
+      function announceLoaded(label: string, added: number) {
+        const el = document.getElementById('camps-load-announcer');
+        if (el) el.textContent = `Showing ${added} more ${label} camps.`;
+      }
+
+      // Keeps the results line honest: the true total match count under the
+      // current filters, not the number of cards actually in the DOM.
+      function updateResultsCount() {
+        const el = document.getElementById('camps-results-count');
+        if (el) el.textContent = `${visibleCamps.length} camp${visibleCamps.length === 1 ? '' : 's'} listed`;
       }
 
       // Populate dropdowns
@@ -989,6 +1072,23 @@ const itemListSchema = featuredCamps.length > 0 ? {
           applyFilters();
         });
 
+        // "Show more" — bumps this region's window and re-renders just the
+        // grids. Deliberately not applyFilters(): that recomputes
+        // visibleCamps and resets both windows back to CARD_WINDOW, which
+        // would undo the click that triggered it.
+        document.getElementById('pnw-show-more')?.addEventListener('click', () => {
+          const step = activeCardWindow();
+          pnwShown += step;
+          renderGrids();
+          announceLoaded('Pacific Northwest', step);
+        });
+        document.getElementById('national-show-more')?.addEventListener('click', () => {
+          const step = activeCardWindow();
+          nationalShown += step;
+          renderGrids();
+          announceLoaded('National', step);
+        });
+
         // Delegation observes user-driven filter changes after each control's
         // own handler updates state. Clear-all produces no event because the
         // minimized payload builder returns null for an unfiltered directory.
@@ -1008,6 +1108,27 @@ const itemListSchema = featuredCamps.length > 0 ? {
   </script>
 
   <style is:global>
+    /* Pillar 14 mobile-height fix (2026-07-31 QA). At 390px the 16:9 photo
+       is the single largest thing in a card (~179px + margin) and a phone
+       reader can find a camp fine from the title, dates, location, and CTA
+       alone — the photo is decoration at this width, not information the
+       card can't work without. Hidden below md (768px, same breakpoint
+       .container-px already uses); untouched on tablet/desktop. Combined
+       with the smaller mobile "Show more" window in the script below and
+       the Recently Added cap right after this rule — see
+       reports/CAMPS-RENDERING-REBUILD-2026-07-31.md for the full
+       arithmetic behind these three changes together. */
+    @media (max-width: 767px) {
+      .camp-card-photo { display: none; }
+
+      /* Recently Added duplicates camps that are already in the PNW/National
+         grids below it — it's a preview rail, not the only place a given
+         camp appears. Capping it to 3 on a phone (from 12) removes real
+         height without removing a camp from the directory; the same camp
+         is still reachable through the main grids and "Show more". */
+      #recently-added-grid > .camp-card:nth-child(n+4) { display: none; }
+    }
+
     /* Cluster bubbles themed to the site's navy/accent palette instead of
        leaflet.markercluster's default green/yellow/orange. Pure CSS —
        no external images, so nothing here can 404 like the old marker did. */
