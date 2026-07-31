@@ -109,8 +109,24 @@ export interface Camp {
   day_or_overnight: DayOrOvernight;
   skill_level: SkillLevel;
   spots_status: SpotsStatus;
+  /** COALESCE(programs.contact_email, organizations.email) — the resolved value the public page shows. */
   contact_email: string | null;
+  /** COALESCE(programs.contact_phone, organizations.phone) — the resolved value the public page shows. */
   contact_phone: string | null;
+  // The two sides of that COALESCE, exposed separately so the admin edit form
+  // can show which layer a value actually came from. Without these, the form
+  // rendered the coalesced value into an input named `contact_email`, so saving
+  // an untouched form silently copied the ORG's email down into the PROGRAM's
+  // override column — quietly converting a shared org contact into a per-program
+  // one and making the org value impossible to correct from the UI.
+  /** programs.contact_email, raw. Null when this program has no override. */
+  program_contact_email: string | null;
+  /** programs.contact_phone, raw. Null when this program has no override. */
+  program_contact_phone: string | null;
+  /** organizations.email, raw. The org-wide fallback channel. */
+  org_email: string | null;
+  /** organizations.phone, raw. The org-wide fallback channel. */
+  org_phone: string | null;
   website_url: string | null;
   lunch_included: 0 | 1;
   aftercare_available: 0 | 1;
@@ -279,6 +295,12 @@ const CAMP_SELECT = `
     END                                                   AS spots_status,
     COALESCE(p.contact_email,  o.email)                   AS contact_email,
     COALESCE(p.contact_phone,  o.phone)                   AS contact_phone,
+    -- Both sides of the COALESCE above, unresolved, so the admin form can edit
+    -- the program override and the org-wide channel as the separate things they are.
+    p.contact_email                                       AS program_contact_email,
+    p.contact_phone                                       AS program_contact_phone,
+    o.email                                               AS org_email,
+    o.phone                                               AS org_phone,
     o.website_url,
     COALESCE(p.lunch_included,      0)                    AS lunch_included,
     COALESCE(p.aftercare_available, 0)                    AS aftercare_available,
@@ -990,8 +1012,22 @@ export interface CampEditFields {
   day_or_overnight?: DayOrOvernight;
   skill_level?: SkillLevel;
   spots_status?: SpotsStatus;
+  // Program-level contact override, written to programs.contact_email/phone.
+  // Use when one offering has a different coordinator than the org as a whole.
   contact_email?: string | null;
   contact_phone?: string | null;
+  // Organization-level contact, written to organizations.email/phone. These are
+  // the fields the public read path falls back to via
+  // COALESCE(p.contact_email, o.email). Before these existed, an admin editing a
+  // camp could only ever write the program-level override, so organizations.email
+  // and organizations.phone were set at first insert and never corrected again --
+  // the org-verification pass was silently discarding its own contact findings.
+  //
+  // Both are general org channels, never a named person. Named contacts (name,
+  // title, direct line) belong in org_contacts in PCD_OPS_DB per ADR-046.
+  // See src/lib/org-contacts.ts and CONTACT-DATA-MAP.md.
+  org_email?: string | null;
+  org_phone?: string | null;
   website_url?: string | null;
   lunch_included?: boolean;
   aftercare_available?: boolean;
@@ -1056,6 +1092,10 @@ export async function updateCamp(
   if ('latitude'  in fields) pushOrg('latitude',   fields.latitude ?? null);
   if ('longitude' in fields) pushOrg('longitude',  fields.longitude ?? null);
   if ('website_url' in fields) pushOrg('website_url', fields.website_url ?? null);
+  // Org-level contact. These columns exist in the current schema (0001_core_graph)
+  // and were simply never reachable from the admin edit path until now.
+  if ('org_email' in fields) pushOrg('email',      fields.org_email ?? null);
+  if ('org_phone' in fields) pushOrg('phone',      fields.org_phone ?? null);
 
   if (orgSets.length > 0) {
     orgSets.push('updated_at = ?');  orgVals.push(now);

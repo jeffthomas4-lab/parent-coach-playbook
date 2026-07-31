@@ -25,6 +25,7 @@
 // imported by server-side route handlers.
 
 import { postToSlack, type SlackEnv, type SlackPostResult } from './slack';
+import { log } from './log';
 
 export interface EmailEnv extends SlackEnv {
   /** "stage" (default) or "send". Governs mail to people outside the system. */
@@ -109,7 +110,7 @@ export async function sendEmail(
   // An internal message may only go to an address already on the admin
   // allowlist. Without this, an 'internal' call is just an ungated send.
   if (message.emailClass === 'internal' && !adminAllowList(env).has(to)) {
-    console.error('[email] internal message addressed off the admin allowlist — suppressed');
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/email', action: 'internal_message_off_allowlist', effect: 'suppressed' });
     return { outcome: 'suppressed', error: 'recipient not on admin allowlist' };
   }
 
@@ -121,7 +122,7 @@ export async function sendEmail(
   }
 
   if (!env?.RESEND_API_KEY || !env?.EMAIL_FROM) {
-    console.error('[email] mode is send but RESEND_API_KEY/EMAIL_FROM are not set — staging instead');
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/email', action: 'send_mode_not_configured', effect: 'staging_instead' });
     const staged = await stageToSlack(env, message, to);
     return staged.ok
       ? { outcome: 'staged', error: 'send mode not configured' }
@@ -147,13 +148,13 @@ export async function sendEmail(
     });
     if (!res.ok) {
       // Provider bodies can echo recipient or message content. Never persist them.
-      console.error(JSON.stringify({ event: 'email_send_failed', code: 'provider_rejected', status: res.status }));
+      log('error', { requestId: crypto.randomUUID(), route: 'lib/email', action: 'email_send_failed', code: 'provider_rejected', status: res.status });
       return { outcome: 'failed', error: 'provider rejected the message' };
     }
     const body = (await res.json().catch(() => ({}))) as { id?: string };
     return { outcome: 'sent', id: body.id };
-  } catch {
-    console.error(JSON.stringify({ event: 'email_send_failed', code: 'fetch_failed' }));
+  } catch (error) {
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/email', action: 'email_send_failed', code: 'fetch_failed', error });
     return { outcome: 'failed', error: 'send failed' };
   }
 }
@@ -262,10 +263,12 @@ export async function sendAdminAlert(
   if (modeFor(env, 'internal') === 'send') {
     const slack = await stageInternalEmailRelayInSlack(env);
     if (!slack.ok) {
-      console.error(JSON.stringify({
-        event: 'internal_alert_suppressed',
+      log('error', {
+        requestId: crypto.randomUUID(),
+        route: 'lib/email',
+        action: 'internal_alert_suppressed',
         code: slack.skipped ? 'slack_not_configured' : 'slack_provider_rejected',
-      }));
+      });
       return { outcome: 'failed', error: 'internal alert Slack relay unavailable' };
     }
   }

@@ -33,6 +33,7 @@
 // built.
 
 import { emitEventSafely, type EventsEnv } from './events';
+import { log } from './log';
 
 export interface PublishEnv extends EventsEnv {
   GITHUB_TOKEN?: string;
@@ -217,12 +218,12 @@ export async function publishDraft(
       headers,
       signal: AbortSignal.timeout(GH_TIMEOUT_MS),
     });
-  } catch {
-    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'read', code: 'fetch_failed' }));
+  } catch (error) {
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/publish', action: 'github_publish_failed', operation: 'read', code: 'fetch_failed', collection: input.collection, slug: input.slug, error });
     return { ok: false, code: 502, error: 'could not reach GitHub' };
   }
   if (!getRes.ok) {
-    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'read', code: 'provider_rejected', status: getRes.status }));
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/publish', action: 'github_publish_failed', operation: 'read', code: 'provider_rejected', status: getRes.status, collection: input.collection, slug: input.slug });
     return getRes.status === 404
       ? { ok: false, code: 404, error: 'draft not found' }
       : { ok: false, code: 502, error: 'github read failed' };
@@ -251,12 +252,12 @@ export async function publishDraft(
       }),
       signal: AbortSignal.timeout(GH_TIMEOUT_MS),
     });
-  } catch {
-    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'write', code: 'fetch_failed' }));
+  } catch (error) {
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/publish', action: 'github_publish_failed', operation: 'write', code: 'fetch_failed', collection: input.collection, slug: input.slug, error });
     return { ok: false, code: 502, error: 'could not reach GitHub' };
   }
   if (!putRes.ok) {
-    console.error(JSON.stringify({ event: 'github_publish_failed', operation: 'write', code: 'provider_rejected', status: putRes.status }));
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/publish', action: 'github_publish_failed', operation: 'write', code: 'provider_rejected', status: putRes.status, collection: input.collection, slug: input.slug });
     // A 409 from the Contents API is the optimistic-concurrency check firing:
     // someone edited the file between our read and our write. That is a
     // conflict the caller can resolve by retrying, not an upstream outage,

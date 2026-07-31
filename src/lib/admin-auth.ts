@@ -20,6 +20,7 @@
 // configuration error and fails closed; it must never restore a former admin.
 
 import { verifyAccessJwt, type AccessJwtConfig } from './access-jwt';
+import { log, requestIdFrom } from './log';
 
 function parseAllowList(raw: string): Set<string> {
   return new Set(
@@ -79,7 +80,12 @@ export async function getAdminIdentity(
   env?: AdminAuthEnv,
 ): Promise<IdentityResult> {
   if (!accessVerificationConfigured(env)) {
-    console.error('[admin-auth] ACCESS_TEAM_DOMAIN/ACCESS_AUD not set; refusing authentication');
+    log('error', {
+      requestId: requestIdFrom(request),
+      route: 'lib/admin-auth',
+      action: 'access_verification_not_configured',
+      effect: 'refusing_authentication',
+    });
     return { email: null, verified: false };
   }
   const token = getAccessToken(request);
@@ -89,7 +95,12 @@ export async function getAdminIdentity(
     aud: env!.ACCESS_AUD!,
   });
   if (!result.ok) {
-    console.warn('[admin-auth] Access JWT rejected:', result.reason);
+    log('warn', {
+      requestId: requestIdFrom(request),
+      route: 'lib/admin-auth',
+      action: 'access_jwt_rejected',
+      reason: result.reason,
+    });
     return { email: null, verified: false };
   }
   return { email: result.claims.email, verified: true };

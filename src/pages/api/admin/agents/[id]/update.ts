@@ -11,6 +11,7 @@
 
 import type { APIRoute } from 'astro';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { createRequestLogger } from '../../../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -31,6 +32,8 @@ export const POST: APIRoute = async ({ params, request }) => {
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/agents/update', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -58,7 +61,7 @@ export const POST: APIRoute = async ({ params, request }) => {
       if ((res.meta?.changes ?? 0) === 0) return fail('run not found', 404);
     }
   } catch (e) {
-    console.error('[admin/agents/update] query failed', e);
+    logger.error('query_failed', e, { action, targetId: id });
     return fail('FORGE_DB binding missing or query failed', 500);
   }
 

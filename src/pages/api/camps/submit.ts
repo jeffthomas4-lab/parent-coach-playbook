@@ -38,6 +38,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHttpUrl } from '../../../lib/public-input';
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
 import { enforcePublicTurnstile } from '../../../lib/turnstile';
+import { createRequestLogger, type RequestLogger } from '../../../lib/log';
 
 export const prerender = false;
 
@@ -113,7 +114,7 @@ const ok = (body: unknown, status = 200, extraHeaders?: Record<string, string>) 
 const fail = (message: string, status = 400) =>
   ok({ ok: false, error: message }, status);
 
-async function readPayload(req: Request): Promise<SubmitPayload> {
+async function readPayload(req: Request, logger: RequestLogger): Promise<SubmitPayload> {
   const ct = (req.headers.get('content-type') ?? '').toLowerCase();
   if (ct.includes('application/json')) {
     return (await req.json()) as SubmitPayload;
@@ -128,12 +129,14 @@ async function readPayload(req: Request): Promise<SubmitPayload> {
   }
   try {
     return (await req.json()) as SubmitPayload;
-  } catch {
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'treating_as_empty_payload' });
     return {};
   }
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'camps/submit', userId: null });
   const env = cfEnv as
     | ({ DB: D1Database; SITE_URL?: string; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter; TURNSTILE_SECRET_KEY?: string } & EmailEnv)
     | undefined;
@@ -142,7 +145,7 @@ export const POST: APIRoute = async ({ request }) => {
   const boundary = await enforcePublicRequestBoundary(request, 32_768);
   if (boundary) return boundary;
 
-  const data = await readPayload(request);
+  const data = await readPayload(request, logger);
 
   if (data.website && data.website.trim().length > 0) {
     return ok({ ok: true });
@@ -286,8 +289,11 @@ export const POST: APIRoute = async ({ request }) => {
       lat = g.lat;
       lon = g.lon;
     }
-  } catch {
-    // ignore
+  } catch (error) {
+    // Not fatal to the submission — an admin can set coordinates on review —
+    // but a swallowed geocode failure is why a camp can go live with no
+    // map pin and nobody notices until a parent reports it.
+    logger.error('geocode_lookup_failed', error, { fallback: 'submitting_without_coordinates' });
   }
 
   const id = generateCampId();
@@ -400,8 +406,8 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       const health = await checkUrlHealth(normalizedWebsite);
       await updateUrlHealth(env.DB, id, health.status, health.statusCode);
-    } catch {
-      // ignore
+    } catch (error) {
+      logger.error('url_health_check_failed', error, { fallback: 'proceeding_without_health_record', campId: id });
     }
   }
 
@@ -427,7 +433,7 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
   } catch (e) {
-    console.error('[submit] confirmation email failed', e);
+    logger.error('confirmation_email_failed', e, { campId: id });
   }
 
   try {
@@ -441,7 +447,7 @@ export const POST: APIRoute = async ({ request }) => {
       ].join('\n'),
     });
   } catch (e) {
-    console.error('[submit] admin alert failed', e);
+    logger.error('admin_alert_failed', e, { campId: id });
   }
 
   return ok(responseBody, 200, { 'Idempotency-Replayed': String(replayed) });

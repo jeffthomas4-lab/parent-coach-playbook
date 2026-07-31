@@ -3,6 +3,7 @@ import { listAllCampSlugsApproved } from '../lib/camps-db';
 import type { APIContext } from 'astro';
 import { env as cfEnv } from 'cloudflare:workers';
 import { campSitemapResponseMeta } from '../lib/sitemap-health';
+import { createRequestLogger } from '../lib/log';
 
 // SSR (on-demand) so approved camps from D1 appear in the sitemap at request
 // time. Deliberately imports NO content collections — keeping the 14 MiB Astro
@@ -11,6 +12,7 @@ import { campSitemapResponseMeta } from '../lib/sitemap-health';
 export const prerender = false;
 
 export async function GET(ctx: APIContext) {
+  const logger = createRequestLogger(ctx.request, { route: 'sitemap-camps.xml', userId: null });
   const env = cfEnv as { DB: D1Database } | undefined;
   let campSlugs: { slug: string; lastmod: string }[] = [];
   if (env?.DB) {
@@ -20,14 +22,16 @@ export async function GET(ctx: APIContext) {
       // Sitemap still renders even if D1 is unavailable, but log loud —
       // this used to fail silently and the camps sitemap went empty for two
       // weeks before anyone noticed (2026-07-05 incident).
-      console.error('[sitemap-camps] D1 query failed, serving empty urlset:', e);
+      logger.error('d1_query_failed', e, { effect: 'serving_empty_urlset' });
     }
   } else {
-    console.error('[sitemap-camps] no D1 binding on request, serving empty urlset');
+    logger.error('no_d1_binding_on_request', undefined, { effect: 'serving_empty_urlset' });
   }
 
   if (campSlugs.length === 0) {
-    console.error('[sitemap-camps] ALERT: 0 approved+future camps. Either the camps queue is genuinely empty or pcd_status got reset again. Check /api/cron/camps-sweep logs and the programs table.');
+    logger.error('sitemap_camps_zero_approved_future', undefined, {
+      hint: 'camps queue may be genuinely empty or pcd_status got reset again; check /api/cron/camps-sweep logs and the programs table',
+    });
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

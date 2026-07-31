@@ -19,6 +19,7 @@
 import type { APIRoute } from 'astro';
 import { verifySlackSignature } from '../../../lib/slack';
 import { publishDraft, type PublishEnv } from '../../../lib/publish';
+import { createRequestLogger, type RequestLogger } from '../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -55,7 +56,7 @@ function approverIds(env: SlackActionsEnv | undefined): Set<string> {
 }
 
 /** Post the outcome back to the message Jeff clicked from. Best-effort. */
-async function respond(responseUrl: string | undefined, message: string): Promise<void> {
+async function respond(responseUrl: string | undefined, message: string, logger: RequestLogger): Promise<void> {
   if (!responseUrl) return;
   try {
     await fetch(responseUrl, {
@@ -64,14 +65,16 @@ async function respond(responseUrl: string | undefined, message: string): Promis
       body: JSON.stringify({ replace_original: false, text: message }),
       signal: AbortSignal.timeout(5000),
     });
-  } catch {
-    // Fetch exceptions may include Slack's secret response URL.
-    console.error(JSON.stringify({ event: 'slack_action_response_failed', code: 'fetch_failed' }));
+  } catch (error) {
+    // Fetch exceptions may include Slack's secret response URL, so the error
+    // itself never gets logged — only that the response post failed.
+    logger.error('slack_action_response_failed', undefined, { code: 'fetch_failed', errorType: error instanceof Error ? error.name : typeof error });
   }
 }
 
 export const POST: APIRoute = async (ctx) => {
   const { request } = ctx;
+  const logger = createRequestLogger(request, { route: 'slack/actions', userId: null });
   const env = cfEnv as SlackActionsEnv | undefined;
 
   // Raw body first, before any parsing — the signature is over these exact bytes.
@@ -80,7 +83,7 @@ export const POST: APIRoute = async (ctx) => {
   const sig = await verifySlackSignature(request, rawBody, env?.SLACK_SIGNING_SECRET);
   if (!sig.ok) {
     // The reason goes to the log. An unverified caller learns nothing.
-    console.warn('[slack-actions] signature check failed:', sig.reason);
+    logger.warn('slack_signature_check_failed', { reason: sig.reason });
     return text('forbidden', 403);
   }
 
@@ -111,11 +114,11 @@ export const POST: APIRoute = async (ctx) => {
   const allowed = approverIds(env);
   const userId = payload.user?.id ?? '';
   if (allowed.size === 0) {
-    console.error('[slack-actions] SLACK_APPROVER_IDS not set — refusing to publish');
+    logger.error('slack_approver_ids_not_set', undefined, { effect: 'refusing_to_publish' });
     return ephemeral('Publishing is not configured yet: no approver allowlist is set.');
   }
   if (!allowed.has(userId)) {
-    console.warn(JSON.stringify({ event: 'slack_publish_blocked', code: 'unauthorized_approver' }));
+    logger.warn('slack_publish_blocked', { code: 'unauthorized_approver', slackUserId: userId });
     return ephemeral('You are not on the approver list for publishing.');
   }
 
@@ -137,12 +140,13 @@ export const POST: APIRoute = async (ctx) => {
   const work = async () => {
     const result = await publishDraft(env, { collection, slug, approvedBy });
     if (!result.ok) {
-      await respond(responseUrl, `Did not publish \`${collection}/${slug}\`: ${result.error}`);
+      await respond(responseUrl, `Did not publish \`${collection}/${slug}\`: ${result.error}`, logger);
       return;
     }
     await respond(
       responseUrl,
       `Published \`${collection}/${slug}\`. The protected CI/CD workflow was queued from the main-branch commit; production still requires its configured approval.`,
+      logger,
     );
   };
 

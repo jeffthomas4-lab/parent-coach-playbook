@@ -17,8 +17,11 @@ import {
   type DayOrOvernight,
   type SkillLevel,
   type SpotsStatus,
+  type Camp,
 } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
+import { createRequestLogger, type RequestLogger } from '../../../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -65,6 +68,10 @@ interface UpdatePayload {
   spots_status?: string;
   contact_email?: string;
   contact_phone?: string;
+  // Organization-level contact channels, distinct from the program-level
+  // override above. See CampEditFields in lib/camps-db for the split.
+  org_email?: string;
+  org_phone?: string;
   website_url?: string;
   lunch_included?: string;
   aftercare_available?: string;
@@ -72,7 +79,7 @@ interface UpdatePayload {
   redirect?: string;
 }
 
-async function readPayload(req: Request): Promise<UpdatePayload> {
+async function readPayload(req: Request, logger: RequestLogger): Promise<UpdatePayload> {
   const ct = (req.headers.get('content-type') ?? '').toLowerCase();
   if (ct.includes('application/json')) {
     return (await req.json()) as UpdatePayload;
@@ -87,17 +94,22 @@ async function readPayload(req: Request): Promise<UpdatePayload> {
   }
   try {
     return (await req.json()) as UpdatePayload;
-  } catch {
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'treating_as_empty_payload' });
     return {};
   }
 }
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+  const env = cfEnv as
+    | { DB: D1Database; ADMIN_EMAILS?: string; PCD_OPS_DB?: D1Database; SITE_URL?: string }
+    | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/camps/update', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -108,7 +120,7 @@ export const POST: APIRoute = async ({ params, request }) => {
   const existing = await getCampById(env.DB, id);
   if (!existing) return fail('camp not found', 404);
 
-  const data = await readPayload(request);
+  const data = await readPayload(request, logger);
 
   const has = (k: keyof UpdatePayload): boolean => k in data && typeof data[k] === 'string';
 
@@ -204,6 +216,15 @@ export const POST: APIRoute = async ({ params, request }) => {
     const v = data.contact_phone!.trim();
     fields.contact_phone = v ? v : null;
   }
+  if (has('org_email')) {
+    const v = data.org_email!.trim();
+    if (v && !isEmail(v)) return fail('org_email is not a valid email');
+    fields.org_email = v ? v : null;
+  }
+  if (has('org_phone')) {
+    const v = data.org_phone!.trim();
+    fields.org_phone = v ? v : null;
+  }
   if (has('website_url')) {
     const v = data.website_url!.trim();
     fields.website_url = v ? normalizeUrl(v) : null;
@@ -237,12 +258,41 @@ export const POST: APIRoute = async ({ params, request }) => {
         fields.latitude = null;
         fields.longitude = null;
       }
-    } catch {
-      // ignore — admin can edit again to retry
+    } catch (error) {
+      // Not fatal to the edit — admin can edit again to retry geocoding —
+      // but it must not vanish silently, since a swallowed geocode failure
+      // is why a camp can sit with a stale lat/lon after an address edit.
+      logger.error('geocode_lookup_failed', error, { fallback: 'leaving_existing_coordinates_in_place' });
     }
   }
 
-  const updated = await updateCamp(env.DB, id, fields, auth.email);
+  const requestId = logger.requestId;
+  const editedFieldNames = Object.keys(fields).sort().join(',') || '(no fields)';
+
+  const receipted = await withAdminReceipt(
+    {
+      env,
+      environment: env.SITE_URL ?? 'unknown',
+      actorEmail: auth.email,
+      action: 'camp.update',
+      resourceType: 'camp',
+      resourceId: id,
+      requestId,
+      authorizationContext: 'cloudflare-access-jwt:admin-allowlist',
+    },
+    async (): Promise<MutationOutcome<{ camp: Camp | null }>> => {
+      const updated = await updateCamp(env.DB, id, fields, auth.email);
+      return {
+        outcome: 'success',
+        value: { camp: updated },
+        beforeSummary: `fields_before_edit(${editedFieldNames})`,
+        afterSummary: `fields_changed=${editedFieldNames}`,
+      };
+    },
+  );
+
+  if ('response' in receipted) return receipted.response;
+  const { camp: updated } = receipted.value;
 
   // If the form requested a redirect (browser submission), send them back —
   // but only to a safe same-origin relative path, never an arbitrary URL.
