@@ -9,7 +9,10 @@
     "PHOTO_STANDARD.md",
     "README.md",
     "REGULATORY-RISK.md",
+    "REVIEW.md",
     "SAFETY_EDITORIAL_STANDARDS.md",
+    "SECURITY-AUDIT.md",
+    "STANDARD-AUDIT.md",
     "STYLE.md",
     "VOICE-RUBRIC.md"
   ],
@@ -88,20 +91,25 @@
     "PCD-SESSION-TWO-INPUT-from-reviews-2026-07-13.md",
     "RESTRUCTURE_NOTES.md",
     "RESTRUCTURE_PLAN.md",
-    "REVIEW.md",
     "SANITY.md",
-    "SECURITY-AUDIT.md",
     "SEO-RECOVERY-PROGRESS.md",
     "SEO-RECOVERY-PROMPT.md",
     "SITE_AUDIT_2026-06-11.md",
     "SITE_REVIEW_2026-06-10.md",
     "SITE_REVIEW_ACTION_PLAN_2026-07-04.md",
-    "STANDARD-AUDIT.md",
     "STRATEGIC_AUDIT_2026-05-05.md"
   ],
   "generated_or_diagnostic_artifact": [
     "body-link-audit.csv",
     "link-audit-2026-05-06-17-24-35.csv",
     "SYNC_PROBE_FILE.txt"
-  ]
+  ],
+  "_descriptions": {
+    "current_authority": "Files that currently govern how the site is built, secured, or operated. Test: does a live standard, reviewer, or runbook depend on this file being accurate today?",
+    "current_business_input": "Files feeding active business decisions (affiliates, business plan, research) rather than the technical build itself. Test: would pulling this file up for a real decision this week return live, unretracted input?",
+    "active_work_queue": "Open plans, backlogs, and build prompts for work not yet done. Test: does this file name at least one task that is still pending?",
+    "historical_or_superseded": "Point-in-time reports, completed audits, and anything replaced by a newer file. Test: is this file a record of something that already happened or already got replaced, rather than a live instruction?",
+    "generated_or_diagnostic_artifact": "Machine-generated output, not authored documentation. Test: was this file produced by a script or tool run rather than written by a person as guidance?",
+    "_note": "This key is registry metadata, not a file category. scripts/check-root-organization.mjs ignores any top-level key starting with an underscore."
+  }
 }

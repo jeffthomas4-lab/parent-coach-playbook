@@ -31,6 +31,7 @@
 //   Camp.gallery_keys     = organizations.gallery_keys
 
 import type { D1Database } from '@cloudflare/workers-types';
+import { log } from './log';
 
 export type CampStatus = 'pending' | 'approved' | 'rejected';
 export type TrustLevel = 'new' | 'trusted' | 'banned';
@@ -706,16 +707,51 @@ export async function listFeaturedCamps(db: D1Database): Promise<Camp[]> {
   return result.results ?? [];
 }
 
-export async function listApprovedCamps(db: D1Database): Promise<Camp[]> {
+// Hard ceiling on a single listApprovedCamps call. Before 2026-07-31 this
+// query had no LIMIT at all — it returned every approved future camp, and
+// the /camps/ page serialized the whole result into the page (both as
+// pre-rendered card HTML and as the client-side campsLite JSON). That is
+// what let the directory grow into an 84,749px mobile page (Pillar 14 open
+// item #74). The cap below does not fix the page by itself — camps/index.astro
+// also stopped rendering every row as a DOM card — but it closes the actual
+// root cause: the query is now bounded no matter how large the directory
+// grows.
+//
+// 311 approved camps as of 2026-07-31 (verified live). 1000 leaves about 3x
+// headroom, comfortable for a while but not infinite on purpose. If a call
+// ever comes back at exactly the cap, that is the signal (see the
+// console.error below) that real pagination is due, not a reason to raise
+// this number again.
+export const APPROVED_CAMPS_HARD_CAP = 1000;
+
+export async function listApprovedCamps(db: D1Database, limit: number = APPROVED_CAMPS_HARD_CAP): Promise<Camp[]> {
   const result = await db
     .prepare(
       `${CAMP_SELECT}
        WHERE p.pcd_status = 'approved' AND p.session_end_date >= ?
-       ORDER BY p.session_start_date ASC`,
+       ORDER BY p.session_start_date ASC
+       LIMIT ?`,
     )
-    .bind(todayDateISO())
+    .bind(todayDateISO(), limit)
     .all<Camp>();
-  return result.results ?? [];
+  const rows = result.results ?? [];
+  if (rows.length >= limit) {
+    // A silent truncation here would make real approved camps invisible
+    // with nobody noticing. Log loud instead so an operator sees it before
+    // a parent does. Structured (Pillar 8's src/lib/log.ts), not
+    // console.error directly — this file has no Request to bind a
+    // requestId to, so it generates one the same way lib/events.ts and
+    // other non-request callers of log() do (QA fix, 2026-07-31: this was
+    // a bare console.error until now).
+    log('error', {
+      requestId: crypto.randomUUID(),
+      route: 'lib/camps-db',
+      action: 'approved_camps_cap_hit',
+      cap: limit,
+      rowCount: rows.length,
+    });
+  }
+  return rows;
 }
 
 export async function listPendingCamps(db: D1Database): Promise<Camp[]> {
