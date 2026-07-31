@@ -7,6 +7,15 @@ vi.mock('../../src/lib/camps-db', () => ({
   approveReview: vi.fn(),
 }));
 
+// See admin-camps-approve.test.ts for why this route-level mock exists —
+// receipt persistence is covered separately in admin-receipts.test.ts.
+vi.mock('../../src/lib/admin-receipts', () => ({
+  withAdminReceipt: vi.fn(async (_input: unknown, run: () => Promise<any>) => {
+    const outcome = await run();
+    return outcome.outcome === 'success' ? { value: outcome.value } : { response: outcome.response };
+  }),
+}));
+
 import { POST } from '../../src/pages/api/admin/reviews/[id]/approve';
 import * as campsDb from '../../src/lib/camps-db';
 

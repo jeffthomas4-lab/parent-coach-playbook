@@ -16,6 +16,8 @@
 //
 // Docs: https://developers.cloudflare.com/cloudflare-one/identity/authorization-cookie/validating-json/
 
+import { log } from './log';
+
 export interface AccessJwtConfig {
   ACCESS_TEAM_DOMAIN?: string;
   ACCESS_AUD?: string;
@@ -124,7 +126,11 @@ async function getSigningKeys(teamDomain: string): Promise<Map<string, CryptoKey
   try {
     const res = await fetch(url, { signal: AbortSignal.timeout(KEY_FETCH_TIMEOUT_MS) });
     if (!res.ok) {
-      console.error('[access-jwt] certs fetch returned', res.status);
+      // No inbound Request in scope here (this is a background key-fetch
+      // shared across requests via keyCache), so the id below is generated,
+      // not carried from a caller. Still structured, just not cross-boundary
+      // correlated — see src/lib/log.ts.
+      log('error', { requestId: crypto.randomUUID(), route: 'lib/access-jwt', action: 'certs_fetch_rejected', status: res.status });
       return cached?.keys ?? keys;
     }
     const body = (await res.json()) as { keys?: Jwk[] };
@@ -134,7 +140,7 @@ async function getSigningKeys(teamDomain: string): Promise<Map<string, CryptoKey
       if (key) keys.set(jwk.kid, key);
     }
   } catch (e) {
-    console.error('[access-jwt] certs fetch failed', e);
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/access-jwt', action: 'certs_fetch_failed', error: e });
     // Serve the stale cache rather than locking every admin out on one blip.
     return cached?.keys ?? keys;
   }

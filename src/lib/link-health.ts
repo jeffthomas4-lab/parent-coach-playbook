@@ -8,6 +8,8 @@
 // Writing a "replacement" here therefore can never change the published
 // page by itself; see setSuggestedReplacement below.
 
+import { log } from './log';
+
 export interface LinkCheckResult {
   statusCode: number | null;
   finalUrl: string;
@@ -120,7 +122,7 @@ export async function checkLinkNow(url: string): Promise<LinkCheckResult> {
     // Whatever lands in notes gets stored in D1, echoed by the recheck API and
     // rendered on the dashboard, so only the bucketed reason goes in. The full
     // error stays server-side, where debugging actually happens.
-    console.error('[link-health] recheck fetch failed', url, err);
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/link-health', action: 'recheck_fetch_failed', url, error: err });
     notes.push(classifyFetchFailure(err));
     return {
       statusCode: null,

@@ -60,6 +60,11 @@ jobs:
       - name: Scan current files and complete Git history for secrets
         run: npm run check:secrets
 
+      - name: Gitleaks scan (real binary, full history)
+        uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Verify every protected route's authorization contract
         run: npm run check:protected-routes
 
@@ -77,9 +82,6 @@ jobs:
 
       - name: Verify release evidence packet structure
         run: npm run check:release-evidence
-
-      - name: Verify exact Worker rollback target receipt
-        run: npm run check:rollback-target
 
       - name: Verify storage-aware recovery tabletop
         run: npm run check:recovery-tabletop

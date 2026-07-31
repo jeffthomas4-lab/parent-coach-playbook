@@ -48,6 +48,7 @@ import {
   upsertScalar,
   yamlQuote,
 } from '../../../../lib/editorial-frontmatter';
+import { createRequestLogger } from '../../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -95,6 +96,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/editorial/set-status', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -159,11 +162,7 @@ export const POST: APIRoute = async ({ request }) => {
     { headers: ghHeaders },
   );
   if (!getRes.ok) {
-    console.error(JSON.stringify({
-      event: 'github_editorial_set_status_rejected',
-      operation: 'read',
-      status: getRes.status,
-    }));
+    logger.error('github_editorial_set_status_rejected', undefined, { operation: 'read', status: getRes.status, action, collection, slug });
     return json(
       { ok: false, error: 'github_read_rejected' },
       getRes.status === 404 ? 404 : 502,
@@ -252,11 +251,7 @@ export const POST: APIRoute = async ({ request }) => {
     },
   );
   if (!putRes.ok) {
-    console.error(JSON.stringify({
-      event: 'github_editorial_set_status_rejected',
-      operation: 'write',
-      status: putRes.status,
-    }));
+    logger.error('github_editorial_set_status_rejected', undefined, { operation: 'write', status: putRes.status, action, collection, slug });
     // A 409 from the Contents API is the stale-sha case: someone edited the
     // file between our read and our write. That is a conflict the caller can
     // retry, not an upstream outage, so it does not get reported as a 502.

@@ -8,6 +8,7 @@ import { findFuzzyCampMatches, getDomainQuality, extractDomain } from '../../../
 import { env as cfEnv } from 'cloudflare:workers';
 import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHttpUrl } from '../../../lib/public-input';
 import { bearerCredential, secretsMatch } from '../../../lib/secrets';
+import { createRequestLogger, type RequestLogger } from '../../../lib/log';
 
 export const prerender = false;
 
@@ -28,7 +29,7 @@ const ok = (body: unknown, status = 200) =>
 
 const fail = (message: string, status = 400) => ok({ ok: false, error: message }, status);
 
-async function readPayload(req: Request): Promise<CheckPayload> {
+async function readPayload(req: Request, logger: RequestLogger): Promise<CheckPayload> {
   const ct = (req.headers.get('content-type') ?? '').toLowerCase();
   if (ct.includes('application/json')) {
     return (await req.json()) as CheckPayload;
@@ -43,12 +44,14 @@ async function readPayload(req: Request): Promise<CheckPayload> {
   }
   try {
     return (await req.json()) as CheckPayload;
-  } catch {
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'treating_as_empty_payload' });
     return {};
   }
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'camps/check', userId: null });
   const env = cfEnv as { DB: D1Database; BULK_IMPORT_TOKEN?: string } | undefined;
   if (!env?.DB) return fail('database not available', 500);
   if (!env.BULK_IMPORT_TOKEN) return fail('service not configured', 503);
@@ -56,7 +59,7 @@ export const POST: APIRoute = async ({ request }) => {
   const boundary = await enforcePublicRequestBoundary(request, 8_192);
   if (boundary) return boundary;
 
-  const data = await readPayload(request);
+  const data = await readPayload(request, logger);
   const oversized = firstOversizedField(data as Record<string, unknown>, {
     name: 200, city: 120, state: 40, zip: 20, address: 300, website_url: 2048,
   });

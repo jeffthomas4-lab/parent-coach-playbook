@@ -141,13 +141,13 @@ const statusColor: Record<string, string> = {
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Camp name
-              <input type="text" name="name" value={camp.name} maxlength="200" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+              <input type="text" name="name" value={camp.name} maxlength="200" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Sport (slug)
-                <select name="sport" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm">
+                <select name="sport" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm">
                   {CAMP_SPORTS.map((s) => (
                     <option value={s.slug} selected={s.slug === camp.sport}>{s.label}</option>
                   ))}
@@ -159,7 +159,7 @@ const statusColor: Record<string, string> = {
 
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Format
-                <select name="day_or_overnight" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm">
+                <select name="day_or_overnight" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm">
                   <option value="day" selected={camp.day_or_overnight === 'day'}>Day</option>
                   <option value="overnight" selected={camp.day_or_overnight === 'overnight'}>Overnight</option>
                 </select>
@@ -169,15 +169,15 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-3 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Age min
-                <input type="number" name="age_min" value={camp.age_min} min="3" max="22" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="number" name="age_min" value={camp.age_min} min="3" max="22" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Age max
-                <input type="number" name="age_max" value={camp.age_max} min="3" max="22" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="number" name="age_max" value={camp.age_max} min="3" max="22" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Skill level
-                <select name="skill_level" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm">
+                <select name="skill_level" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm">
                   <option value="all" selected={camp.skill_level === 'all'}>all</option>
                   <option value="beginner" selected={camp.skill_level === 'beginner'}>beginner</option>
                   <option value="intermediate" selected={camp.skill_level === 'intermediate'}>intermediate</option>
@@ -189,46 +189,46 @@ const statusColor: Record<string, string> = {
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Start date
-                <input type="date" name="start_date" value={camp.start_date ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="date" name="start_date" value={camp.start_date ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 End date
-                <input type="date" name="end_date" value={camp.end_date ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="date" name="end_date" value={camp.end_date ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
             </div>
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Address
-              <input type="text" name="address" value={camp.address} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+              <input type="text" name="address" value={camp.address} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
             </label>
             <div class="grid sm:grid-cols-3 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 City
-                <input type="text" name="city" value={camp.city} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="text" name="city" value={camp.city} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 State
-                <input type="text" name="state" value={camp.state} maxlength="2" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm uppercase" />
+                <input type="text" name="state" value={camp.state} maxlength="2" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm uppercase" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 ZIP
-                <input type="text" name="zip" value={camp.zip} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="text" name="zip" value={camp.zip} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
             </div>
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Description (30-4000 chars)
-              <textarea name="description" rows="6" class="w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm">{camp.description}</textarea>
+              <textarea name="description" rows="6" class="w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm">{camp.description}</textarea>
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Price text
-                <input type="text" name="price_text" value={camp.price_text ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+                <input type="text" name="price_text" value={camp.price_text ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
               </label>
               <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
                 Spots
-                <select name="spots_status" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm">
+                <select name="spots_status" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm">
                   <option value="open" selected={camp.spots_status === 'open'}>open</option>
                   <option value="waitlist" selected={camp.spots_status === 'waitlist'}>waitlist</option>
                   <option value="full" selected={camp.spots_status === 'full'}>full</option>
@@ -236,20 +236,56 @@ const statusColor: Record<string, string> = {
               </label>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4">
-              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
-                Contact email
-                <input type="text" name="contact_email" value={camp.contact_email ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
-              </label>
-              <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
-                Contact phone
-                <input type="text" name="contact_phone" value={camp.contact_phone ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
-              </label>
-            </div>
+            {/*
+              Contact is two layers, not one. The public page shows
+              COALESCE(programs.contact_email, organizations.email), so a single
+              input bound to the coalesced value silently copied the org's email
+              into this program's override on every save. These are bound to the
+              raw columns instead, and the org row is the one to fill during a
+              verification pass — it is the fallback every program under the org
+              inherits.
+            */}
+            <fieldset class="border border-bone p-3 grid gap-4">
+              <legend class="font-display italic text-ink-soft text-xs px-1 font-medium">Organization contact</legend>
+              <p class="font-body text-ink-soft text-xs">
+                Applies to every program under this organization. Fill this in during a verification pass.
+                General org channels only — a named person belongs in the contacts layer, not here.
+              </p>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
+                  Org email
+                  <input type="text" name="org_email" value={camp.org_email ?? ''} placeholder="info@example.org" class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
+                </label>
+                <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
+                  Org phone
+                  <input type="text" name="org_phone" value={camp.org_phone ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="border border-bone p-3 grid gap-4">
+              <legend class="font-display italic text-ink-soft text-xs px-1 font-medium">Program contact override</legend>
+              <p class="font-body text-ink-soft text-xs">
+                Only when this specific program has a different coordinator. Leave blank to inherit the organization contact above.
+              </p>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
+                  Contact email
+                  <input type="text" name="contact_email" value={camp.program_contact_email ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
+                </label>
+                <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
+                  Contact phone
+                  <input type="text" name="contact_phone" value={camp.program_contact_phone ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
+                </label>
+              </div>
+              <p class="font-body text-ink-soft text-xs">
+                Public page currently shows: <strong>{camp.contact_email ?? 'no email'}</strong> / <strong>{camp.contact_phone ?? 'no phone'}</strong>
+              </p>
+            </fieldset>
 
             <label class="font-display italic text-ink-soft text-xs grid gap-1 font-medium">
               Website URL
-              <input type="text" name="website_url" value={camp.website_url ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm" />
+              <input type="text" name="website_url" value={camp.website_url ?? ''} class="min-h-11 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm" />
             </label>
 
             <div class="grid sm:grid-cols-2 gap-4">
@@ -295,14 +331,14 @@ const statusColor: Record<string, string> = {
           <form method="POST" action={`/api/admin/camps/${camp.id}/approve`} class="grid gap-2">
             <label class="font-display italic text-ink-soft text-xs font-medium">
               Approval notes (optional)
-              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm"></textarea>
+              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm"></textarea>
             </label>
             <button type="submit" class="btn">Approve</button>
           </form>
           <form method="POST" action={`/api/admin/camps/${camp.id}/reject`} class="grid gap-2 pt-4 border-t border-bone">
             <label class="font-display italic text-ink-soft text-xs font-medium">
               Rejection notes (sent to internal log only)
-              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-muted focus:border-rust text-sm"></textarea>
+              <textarea name="notes" rows="2" class="mt-1 w-full px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm"></textarea>
             </label>
             <button type="submit" class="btn btn-ghost">Reject</button>
           </form>
@@ -339,11 +375,11 @@ const statusColor: Record<string, string> = {
             <input type="hidden" name="featured" value={camp.featured ? '0' : '1'} />
             <div class="mb-3">
               <label class="font-display text-ink-soft text-xs block mb-1">Display order (lower = higher)</label>
-              <input type="number" name="featured_order" value={camp.featured_order ?? ''} class="min-h-11 font-display border border-muted focus:border-rust px-3 py-2 text-sm w-32" />
+              <input type="number" name="featured_order" value={camp.featured_order ?? ''} class="min-h-11 font-display border border-input focus:border-rust px-3 py-2 text-sm w-32" />
             </div>
             <div class="mb-4">
               <label class="font-display text-ink-soft text-xs block mb-1">Featured until (YYYY-MM-DD, blank = no expiry)</label>
-              <input type="text" name="featured_until" value={camp.featured_until ?? ''} class="min-h-11 font-display border border-muted focus:border-rust px-3 py-2 text-sm w-40" placeholder="2026-12-31" />
+              <input type="text" name="featured_until" value={camp.featured_until ?? ''} class="min-h-11 font-display border border-input focus:border-rust px-3 py-2 text-sm w-40" placeholder="2026-12-31" />
             </div>
             <button type="submit" class="btn">
               {camp.featured ? 'Remove from featured' : 'Mark as featured'}

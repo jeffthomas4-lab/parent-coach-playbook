@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { renderTitle } from '../lib/title';
+import Illo from '../components/Illo.astro';
 
 // Newsletter archive. Will list actual Friday Letter issues once they ship.
 // Until then, the archive is empty and the page leads with the signup CTA.
@@ -27,13 +28,11 @@ const fmt = (d: Date) =>
         wash also keeps contrast constant across the band, so the headline
         does not get less legible toward the right edge the way a gradient
         scrim does. */}
-    <img
-      src="/illustrations/newsletter-mailbox-cta.webp"
+    <Illo
+      base="newsletter-mailbox-cta"
       alt="A suburban mailbox at sunset with a Parent Coach Desk envelope sticking out."
       class="absolute inset-0 w-full h-full object-cover"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
+      eager={true}
     />
     <div class="absolute inset-0 bg-surface/90" aria-hidden="true"></div>
     <div class="container-px py-16 md:py-20 grid md:grid-cols-12 gap-10 items-end relative">

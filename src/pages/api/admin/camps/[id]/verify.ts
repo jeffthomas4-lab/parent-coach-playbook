@@ -3,8 +3,10 @@
 // Requires Cloudflare Access (admin email).
 
 import type { APIRoute } from 'astro';
-import { CampVerificationBlockedError, setVerified, getCampById } from '../../../../../lib/camps-db';
+import { CampVerificationBlockedError, setVerified, getCampById, type Camp } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
+import { createRequestLogger } from '../../../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -16,11 +18,15 @@ const json = (body: unknown, status = 200) =>
   });
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+  const env = cfEnv as
+    | { DB: D1Database; ADMIN_EMAILS?: string; PCD_OPS_DB?: D1Database; SITE_URL?: string }
+    | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/camps/verify', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -41,21 +47,52 @@ export const POST: APIRoute = async ({ params, request }) => {
       const v = fd.get('verified');
       verified = v === 'true' || v === 'on' || v === '1';
     }
-  } catch {
-    // default to true
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'defaulting_verified_true' });
   }
 
-  const existing = await getCampById(env.DB, id);
-  if (!existing) return json({ ok: false, error: 'camp not found' }, 404);
-  try {
-    await setVerified(env.DB, id, verified);
-  } catch (error) {
-    if (error instanceof CampVerificationBlockedError) {
-      return json({ ok: false, error: error.code }, 409);
-    }
-    throw error;
-  }
-  const camp = await getCampById(env.DB, id);
+  const requestId = logger.requestId;
+
+  const receipted = await withAdminReceipt(
+    {
+      env,
+      environment: env.SITE_URL ?? 'unknown',
+      actorEmail: auth.email,
+      action: 'camp.verify',
+      resourceType: 'camp',
+      resourceId: id,
+      requestId,
+      authorizationContext: 'cloudflare-access-jwt:admin-allowlist',
+    },
+    async (): Promise<MutationOutcome<{ camp: Camp | null }>> => {
+      const existing = await getCampById(env.DB, id);
+      if (!existing) {
+        return {
+          outcome: 'error',
+          reason: 'camp_not_found',
+          response: json({ ok: false, error: 'camp not found' }, 404),
+        };
+      }
+      try {
+        await setVerified(env.DB, id, verified);
+      } catch (error) {
+        if (error instanceof CampVerificationBlockedError) {
+          return { outcome: 'blocked', reason: error.code, response: json({ ok: false, error: error.code }, 409) };
+        }
+        throw error;
+      }
+      const camp = await getCampById(env.DB, id);
+      return {
+        outcome: 'success',
+        value: { camp },
+        beforeSummary: `verified=${existing.verified ?? false}`,
+        afterSummary: `verified=${verified}`,
+      };
+    },
+  );
+
+  if ('response' in receipted) return receipted.response;
+  const { camp } = receipted.value;
 
   // Browser form submissions get redirected back to the camp's admin page.
   // Programmatic JSON callers still receive the JSON response.

@@ -12,6 +12,8 @@
 // Nothing here throws into a request path. A Slack outage must not fail a camp
 // submission or an approval; every post is best-effort and logs on failure.
 
+import { log, requestIdFrom } from './log';
+
 export interface SlackEnv {
   SLACK_WEBHOOK_URL?: string;
   SLACK_SIGNING_SECRET?: string;
@@ -40,7 +42,7 @@ export async function postToSlack(
 ): Promise<SlackPostResult> {
   const url = env?.SLACK_WEBHOOK_URL?.trim();
   if (!url) {
-    console.warn(JSON.stringify({ event: 'slack_post_skipped', code: 'not_configured' }));
+    log('warn', { requestId: crypto.randomUUID(), route: 'lib/slack', action: 'slack_post_skipped', code: 'not_configured' });
     return { ok: false, skipped: true, error: 'not configured' };
   }
   try {
@@ -53,13 +55,14 @@ export async function postToSlack(
       signal: AbortSignal.timeout(POST_TIMEOUT_MS),
     });
     if (!res.ok) {
-      console.error(JSON.stringify({ event: 'slack_post_failed', code: 'provider_rejected', status: res.status }));
+      log('error', { requestId: crypto.randomUUID(), route: 'lib/slack', action: 'slack_post_failed', code: 'provider_rejected', status: res.status });
       return { ok: false, error: `slack returned ${res.status}` };
     }
     return { ok: true };
-  } catch {
-    // Fetch exceptions may include the secret webhook URL.
-    console.error(JSON.stringify({ event: 'slack_post_failed', code: 'fetch_failed' }));
+  } catch (error) {
+    // Fetch exceptions may include the secret webhook URL, so only the error
+    // type is logged, never the error object itself.
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/slack', action: 'slack_post_failed', code: 'fetch_failed', errorType: error instanceof Error ? error.name : typeof error });
     return { ok: false, error: 'post failed' };
   }
 }
@@ -123,7 +126,7 @@ export async function verifySlackSignature(
     if (!timingSafeEqual(expected, provided)) return { ok: false, reason: 'signature mismatch' };
     return { ok: true };
   } catch (e) {
-    console.error('[slack] signature verify threw', e);
+    log('error', { requestId: requestIdFrom(request), route: 'lib/slack', action: 'signature_verify_threw', error: e });
     return { ok: false, reason: 'verify failed' };
   }
 }

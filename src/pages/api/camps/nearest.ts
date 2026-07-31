@@ -9,6 +9,7 @@
 import type { APIRoute } from 'astro';
 import { slugifyCity } from '../../../lib/camps-db';
 import { env as cfEnv } from 'cloudflare:workers';
+import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
 
 export const prerender = false;
 
@@ -35,8 +36,11 @@ function distMiles(lat1: number, lon1: number, lat2: number, lon2: number): numb
 const MAX_MILES = 75;
 
 export const GET: APIRoute = async ({ request }) => {
-  const env = cfEnv as { DB?: D1Database } | undefined;
+  const env = cfEnv as { DB?: D1Database; PUBLIC_READ_RATE_LIMITER?: PublicRateLimiter } | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
+
+  const limited = await enforcePublicWriteRateLimit(env.PUBLIC_READ_RATE_LIMITER, request, 'camps-nearest', null);
+  if (limited) return limited;
 
   const url = new URL(request.url);
   const lat = parseFloat(url.searchParams.get('lat') || '');
