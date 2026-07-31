@@ -97,40 +97,16 @@ const recentlyAddedHtml = recentlyAddedCamps.map((c) => renderCardHtml(c, CAMP_S
 const pnwHtml = pnwWindow.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
 const nationalHtml = nationalWindow.map((c) => renderCardHtml(c, CAMP_SPORTS)).join('');
 
-// Serialize camps for client-side JS — slim payload, not the full DB row.
-// This is the data the map and the filters both work from; it stays
-// comprehensive (bounded only by listApprovedCamps' hard cap, not by the
-// CARD_WINDOW above) because the map needs a point for every matching camp
-// even when only 24 of them are cards in the DOM. Extended 2026-07-31 with
-// the four fields the shared card renderer needs that weren't here before:
-// hero_photo_key, price_text, last_verified_at, date_added.
-const campsLite = camps.map(c => ({
-  id: c.id,
-  name: c.name,
-  slug: c.slug,
-  sport: c.sport,
-  age_min: c.age_min,
-  age_max: c.age_max,
-  age_known: c.age_known,
-  start_date: c.start_date,
-  end_date: c.end_date,
-  city: c.city,
-  state: c.state,
-  day_or_overnight: c.day_or_overnight,
-  spots_status: c.spots_status,
-  verified: c.verified,
-  last_verified_at: c.last_verified_at,
-  program_type: c.program_type,
-  latitude: c.latitude,
-  longitude: c.longitude,
-  description: (c.description || '').slice(0, 200),
-  hero_photo_key: c.hero_photo_key,
-  price_text: c.price_text,
-  date_added: c.date_added,
-}));
-const campsJson = JSON.stringify(campsLite);
-// CAMP_SPORTS already includes the camp-only options (multi-sport, outdoor, stem, general, etc).
-const sportsListJson = JSON.stringify(CAMP_SPORTS);
+// The full campsLite dataset (every field the client's search, filters, and
+// map read) no longer gets built or serialized here. Until 2026-07-31 this
+// page built that array and inlined it as a JSON <script> island on every
+// load (~253,500 bytes projected at 311 approved camps) even though nothing
+// on the page needs it until JavaScript is ready to filter or map something
+// — the server-rendered cards above need none of it. It now lives behind
+// GET /api/camps/lite (src/pages/api/camps/lite.ts, sharing its projection
+// with src/lib/camps-lite.ts), which the client script below fetches in the
+// background after first paint. See
+// reports/CAMPS-RENDERING-REBUILD-2026-07-31.md.
 
 // JSON-LD: this directory hub emitted nothing before this fix (2026-07
 // audit: "Schema.org emission is unverified across the site" -- verified
@@ -254,13 +230,40 @@ const itemListSchema = featuredCamps.length > 0 ? {
         </div>
       ) : (
         <>
-          {/* Map */}
+          {/* Map. Static fallback text doubles as the no-JS state and the
+               JS-enabled-but-data-not-yet-arrived state — Leaflet replaces
+               this container's contents outright once initMap() runs, which
+               only happens after the background camps-lite fetch below
+               resolves. */}
           <div
             id="camps-map"
-            class="mb-8 border border-bone rounded-card overflow-hidden"
+            class="mb-8 border border-bone rounded-card overflow-hidden flex items-center justify-center"
             style="height: 400px; width: 100%; background: var(--stripe);"
             aria-label="Map showing all camps in the directory"
-          ></div>
+          ><p class="font-body text-ink-soft text-sm px-4 text-center">Map loads once the full camp directory finishes loading.</p></div>
+
+          {/* Data-load status. Visible AND announced (Pillar 6: "state is
+               announced, not just drawn") — this text is both the on-screen
+               banner and the aria-live region a screen reader hears, since
+               its own content changes are what's being announced. Starts
+               visible in the pending state to match the client script's
+               first call (setControlsPending()) so there's no flash of the
+               wrong state; JS hides it once the background fetch succeeds,
+               or leaves it up with a retry button if the fetch fails. A
+               reader with JavaScript off never sees this — nothing here
+               depends on the fetch this element is reporting on, so it's
+               harmless as static markup but the "loading" text would be
+               permanently wrong for a no-JS reader if left visible, hence
+               <noscript> hides it below. */}
+          <div
+            id="camps-data-status"
+            class="card p-4 mb-6 flex flex-wrap items-center gap-3 text-sm"
+            aria-live="polite"
+          >
+            <span id="camps-data-status-text">Loading the full camp directory to power search, filters, and the map…</span>
+            <button type="button" id="camps-data-retry" class="btn btn-ghost" style="min-height: 44px;" hidden>Try again</button>
+          </div>
+          <noscript><style>#camps-data-status{display:none}</style></noscript>
 
           {/* Filter Bar */}
           <div id="camp-filters" class="card mb-8 p-6">
@@ -455,11 +458,6 @@ const itemListSchema = featuredCamps.length > 0 ? {
   />
 
 
-  {/* JSON data island — non-executable, exempt from script-src CSP. The
-      bundled script below reads it via getElementById so we can remove
-      is:inline + define:vars and eliminate that unsafe-inline vector. */}
-  <script type="application/json" id="camps-data" set:html={serializeJsonLd({ camps: campsLite, sports: CAMP_SPORTS })} />
-
   <script>
     import L from 'leaflet';
     import 'leaflet/dist/leaflet.css';
@@ -520,10 +518,14 @@ const itemListSchema = featuredCamps.length > 0 ? {
       // camp-card.ts) structurally — it's what gets handed to
       // renderCardHtml below. TypeScript enforces that at the call site.
 
-      const dataEl = document.getElementById('camps-data');
-      const _data = dataEl ? JSON.parse(dataEl.textContent || '{}') : {};
-      const camps: LiteCamp[] = _data.camps || [];
-      const sportsList: SportOption[] = _data.sports || [];
+      // Populated by loadCampsLite() below, in the background, after first
+      // paint — not from an inline JSON island anymore. Every function in
+      // this file that reads `camps` already ran fine with an empty array
+      // before this change ever executed (nothing called them until the
+      // bottom of this IIFE), so leaving them empty here and filling them in
+      // once the fetch resolves is a safe default, not a special case.
+      let camps: LiteCamp[] = [];
+      let sportsList: SportOption[] = [];
 
       // Helper: get sport label (used by the map popup below; renderCardHtml
       // does its own lookup against the same sportsList internally).
@@ -655,6 +657,13 @@ const itemListSchema = featuredCamps.length > 0 ? {
       function initMap() {
         const mapEl = document.getElementById('camps-map');
         if (!mapEl || typeof L === 'undefined') return setTimeout(initMap, 100);
+
+        // Leaflet does not clear a container's existing children on init —
+        // it only errors if the container already holds a Leaflet map. The
+        // "Map loads once..." fallback text (see the markup) is a real DOM
+        // child of #camps-map, so it has to be cleared explicitly or it
+        // would sit underneath the map panes Leaflet appends next.
+        mapEl.innerHTML = '';
 
         const campsWithGeo = camps.filter(c => typeof c.latitude === 'number' && typeof c.longitude === 'number');
 
@@ -1096,14 +1105,145 @@ const itemListSchema = featuredCamps.length > 0 ? {
         filterPanel.addEventListener('input', scheduleDemandEvent);
         filterPanel.addEventListener('change', scheduleDemandEvent);
         filterPanel.addEventListener('click', scheduleDemandEvent);
+
+        // Retry after a failed background camps-lite fetch — see
+        // loadCampsLite() below. Safe to attach here even though the button
+        // starts `hidden`: it only becomes clickable once the error state
+        // shows it.
+        document.getElementById('camps-data-retry')?.addEventListener('click', () => {
+          void loadCampsLite();
+        });
       }
 
-      // Initial setup
-      populateFilters();
+      // ---- Background data load (2026-07-31, closes STANDARD-AUDIT.md item
+      // #23 for this page) ----
+      //
+      // The full campsLite dataset used to arrive as an inline JSON <script>
+      // island, present and parsed before this IIFE ever ran. It now comes
+      // from GET /api/camps/lite, fetched here in the background after first
+      // paint so the server-rendered cards above (which need none of this)
+      // are never blocked on it. Everything that reads the full dataset —
+      // every filter control, both "Show more" buttons, and the Leaflet map
+      // — stays disabled until this resolves. Pillar 13 of the Website Build
+      // Standard: a control that looks live but does nothing on click is a
+      // fail, a disabled one with a stated reason is not.
+      const CAMPS_LITE_ENDPOINT = '/api/camps/lite';
+
+      // Every control the fetch above gates: the whole filter bar (search,
+      // sport, age, dates, day/overnight, leagues/full/verified/open
+      // toggles, state, zip + radius + its submit button, clear-filters) by
+      // one selector, plus the two "Show more" buttons, which live outside
+      // #camp-filters.
+      function campsLiteGatedControls(): (HTMLInputElement | HTMLSelectElement | HTMLButtonElement)[] {
+        const inFilterBar = Array.from(
+          document.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>(
+            '#camp-filters input, #camp-filters select, #camp-filters button',
+          ),
+        );
+        const showMore = [document.getElementById('pnw-show-more'), document.getElementById('national-show-more')]
+          .filter((el): el is HTMLButtonElement => el !== null);
+        return [...inFilterBar, ...showMore];
+      }
+
+      // The visible half of "state is announced, not just drawn": this text
+      // is the on-screen banner itself, and (via aria-live="polite" on
+      // #camps-data-status in the markup above) the same text change is what
+      // a screen reader announces. One function, one source of truth for
+      // both channels.
+      function setDataStatus(message: string, opts: { visible: boolean; retryVisible: boolean; isError: boolean }) {
+        const bar = document.getElementById('camps-data-status');
+        const text = document.getElementById('camps-data-status-text');
+        const retry = document.getElementById('camps-data-retry') as HTMLButtonElement | null;
+        if (text) text.textContent = message;
+        if (bar) {
+          bar.hidden = !opts.visible;
+          bar.style.borderColor = opts.isError ? 'var(--rust)' : '';
+        }
+        if (retry) retry.hidden = !opts.retryVisible;
+      }
+
+      function setControlsPending() {
+        campsLiteGatedControls().forEach((el) => { el.disabled = true; });
+        document.getElementById('camp-filters')?.setAttribute('data-pending', 'true');
+        setDataStatus('Loading the full camp directory to power search, filters, and the map…', {
+          visible: true,
+          retryVisible: false,
+          isError: false,
+        });
+      }
+
+      function setControlsReady() {
+        campsLiteGatedControls().forEach((el) => { el.disabled = false; });
+        document.getElementById('camp-filters')?.removeAttribute('data-pending');
+        // toggleShowMore() (called from renderGrids(), called from
+        // applyFilters() below) already sets each "Show more" button's real
+        // hidden/label state from the loaded data — the blanket `disabled =
+        // false` above just lifts the pending gate; it does not override
+        // that.
+        setDataStatus('Full camp directory loaded. Search, filters, and the map are ready.', {
+          visible: false,
+          retryVisible: false,
+          isError: false,
+        });
+      }
+
+      function setControlsErrorState() {
+        // Controls stay disabled — there is no full dataset to filter or map
+        // without this fetch — but the page is still useful: every
+        // server-rendered card above this point works with no JavaScript at
+        // all, fetch failure or not. No raw error detail is shown (Pillar
+        // 13: raw exceptions never reach the customer); the retry button is
+        // the one actionable next step.
+        document.getElementById('camp-filters')?.setAttribute('data-pending', 'true');
+        setDataStatus(
+          'Could not load the full camp directory. Search, filters, and the map are unavailable right now — the camps listed above still work. Try again, or check back shortly.',
+          { visible: true, retryVisible: true, isError: true },
+        );
+      }
+
+      async function loadCampsLite() {
+        setControlsPending();
+        try {
+          const res = await fetch(CAMPS_LITE_ENDPOINT);
+          if (!res.ok) throw new Error(`camps lite endpoint returned ${res.status}`);
+          const data = (await res.json()) as { ok?: boolean; camps?: LiteCamp[]; sports?: SportOption[] };
+          if (!data.ok || !Array.isArray(data.camps)) throw new Error('camps lite endpoint returned an unexpected shape');
+          camps = data.camps;
+          sportsList = data.sports ?? [];
+          populateFilters();
+          initMap();
+          applyFilters(); // also renders the grids, the results count, and the map markers
+          setControlsReady();
+        } catch {
+          setControlsErrorState();
+        }
+      }
+
+      // requestIdleCallback (with a setTimeout fallback for Safari, which
+      // has never shipped it) defers the fetch until the browser has an idle
+      // moment after first paint — this is a background load, not a race
+      // with rendering the page the reader actually asked for. A 2s timeout
+      // caps how long a genuinely idle-starved page (heavy scroll/animation)
+      // can delay it.
+      function scheduleCampsLiteLoad() {
+        const w = window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number };
+        if (typeof w.requestIdleCallback === 'function') {
+          w.requestIdleCallback(() => { void loadCampsLite(); }, { timeout: 2000 });
+        } else {
+          setTimeout(() => { void loadCampsLite(); }, 200);
+        }
+      }
+
+      // Initial setup. attachListeners() is safe to run immediately even
+      // though the data it depends on hasn't arrived yet: setControlsPending()
+      // (called first, synchronously, inside loadCampsLite() -> and mirrored
+      // here so the disabled state exists from the first frame rather than
+      // only once the fetch actually starts) disables every control these
+      // listeners are bound to, and a disabled control does not fire input,
+      // change, or click events in any browser this site supports.
       attachListeners();
-      initMap();
-      renderMap();
-      applyFilters();
+      setControlsPending();
+      scheduleCampsLiteLoad();
     })();
   </script>
 
@@ -1127,6 +1267,17 @@ const itemListSchema = featuredCamps.length > 0 ? {
          height without removing a camp from the directory; the same camp
          is still reachable through the main grids and "Show more". */
       #recently-added-grid > .camp-card:nth-child(n+4) { display: none; }
+    }
+
+    /* Pending state for the filter bar and "Show more" buttons (2026-07-31):
+       disabled while the background camps-lite fetch (see loadCampsLite() in
+       the client script) hasn't resolved yet. Native `disabled` already
+       blocks interaction; this makes that state visibly obvious too, not
+       just technically true — Pillar 6's "state is announced, not just
+       drawn." */
+    #camp-filters[data-pending="true"],
+    .js-show-more:disabled {
+      opacity: 0.55;
     }
 
     /* Cluster bubbles themed to the site's navy/accent palette instead of

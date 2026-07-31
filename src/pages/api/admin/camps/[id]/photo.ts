@@ -8,6 +8,7 @@ import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { sniffAllowedImageType, type AllowedImageType } from '../../../../../lib/image-upload';
 import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
 import { createRequestLogger } from '../../../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../../../lib/camps-lite-cache';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -117,6 +118,10 @@ export const POST: APIRoute = async ({ params, request }) => {
       }
 
       const updated = await getCampById(env.DB, id);
+      // hero_photo_key is a campsLite field (drives the card photo — see
+      // src/lib/camp-card.ts's photoHtml()). See src/lib/camps-lite-cache.ts
+      // for this call's stated TTL and invalidation path.
+      await purgeCampsLiteEdgeCache();
       return {
         outcome: 'success',
         value: { key, camp: updated },
