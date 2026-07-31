@@ -1,72 +1,114 @@
-import { readFileSync } from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
 import {
   REMEDIATION_HALTED,
   REMEDIATION_NONE,
-  REMEDIATION_ROLLBACK_FAILED,
-  REMEDIATION_ROLLED_BACK,
+  precedingVersionFrom,
   remediateAfterSmoke,
   rollbackWranglerArgs,
 } from '../scripts/deploy-remediation.mjs';
 
-const goodTarget = JSON.parse(
-  readFileSync('coordination/release-evidence/worker-rollback-target-2026-07-16.json', 'utf8'),
-);
-// Any instant inside the receipt's validity window (observed 2026-07-18, expires 2026-07-25).
-const withinWindow = Date.parse('2026-07-19T00:00:00Z');
-const versionId = goodTarget.target_version_id;
+// Newest first, the way wrangler returns them.
+const versions = [
+  { id: 'v3-just-deployed', created_on: '2026-07-30T21:00:00Z' },
+  { id: 'v2-previous-good', created_on: '2026-07-30T18:00:00Z' },
+  { id: 'v1-older', created_on: '2026-07-29T15:38:00Z' },
+];
 
-describe('deploy auto-remediation', () => {
-  it('builds the exact wrangler args that restore 100% traffic to the good version', () => {
-    expect(rollbackWranglerArgs('production', versionId, 'wrangler.production.jsonc')).toEqual([
-      'versions', 'deploy', `${versionId}@100%`,
-      '--config', 'wrangler.production.jsonc',
-      '--yes',
-      '--message', `auto-remediation: roll production back to ${versionId} after post-deploy smoke failure`,
-    ]);
+describe('preceding version selection', () => {
+  it('excludes the just-deployed version by id when it is known', () => {
+    expect(precedingVersionFrom(versions, 'v3-just-deployed')).toMatchObject({ versionId: 'v2-previous-good' });
   });
 
+  it('falls back to the second-newest when the deployed id is unknown', () => {
+    expect(precedingVersionFrom(versions)).toMatchObject({ versionId: 'v2-previous-good' });
+  });
+
+  it('sorts by created date rather than trusting list order', () => {
+    const shuffled = [versions[2], versions[0], versions[1]];
+    expect(precedingVersionFrom(shuffled, 'v3-just-deployed')).toMatchObject({ versionId: 'v2-previous-good' });
+  });
+
+  it('reads the id and timestamp across wrangler JSON shapes', () => {
+    const alt = [
+      { version_id: 'newest', createdOn: '2026-07-30T21:00:00Z' },
+      { versionId: 'older', created_at: '2026-07-30T10:00:00Z' },
+    ];
+    expect(precedingVersionFrom(alt, 'newest')).toMatchObject({ versionId: 'older' });
+  });
+
+  it('returns null rather than guessing when there is no preceding version', () => {
+    expect(precedingVersionFrom([versions[0]], 'v3-just-deployed')).toBeNull();
+    expect(precedingVersionFrom([], 'anything')).toBeNull();
+    expect(precedingVersionFrom(null as unknown as [])).toBeNull();
+  });
+});
+
+describe('post-deploy remediation', () => {
   it('does nothing when the smoke check passed', () => {
-    const runWrangler = vi.fn((_args: string[]) => ({ status: 0 }));
-    const outcome = remediateAfterSmoke({ smokeFailed: false, target: 'production', rollbackTarget: goodTarget, runWrangler, now: withinWindow });
+    const readVersions = vi.fn(() => versions);
+    const outcome = remediateAfterSmoke({ smokeFailed: false, target: 'production', readVersions });
     expect(outcome).toMatchObject({ action: REMEDIATION_NONE, remediated: false });
-    expect(runWrangler).not.toHaveBeenCalled();
+    expect(readVersions).not.toHaveBeenCalled();
   });
 
-  it('auto-rolls back to the recorded good version on smoke failure', () => {
-    // Mocked Wrangler CLI: succeeds.
-    const runWrangler = vi.fn((_args: string[]) => ({ status: 0 }));
-    const outcome = remediateAfterSmoke({ smokeFailed: true, target: 'production', rollbackTarget: goodTarget, runWrangler, now: withinWindow });
-    expect(outcome).toMatchObject({ action: REMEDIATION_ROLLED_BACK, remediated: true, versionId });
-    expect(runWrangler).toHaveBeenCalledTimes(1);
-    expect(runWrangler.mock.calls[0][0]).toEqual(rollbackWranglerArgs('production', versionId, 'wrangler.production.jsonc'));
-  });
-
-  it('halts and alerts, without touching wrangler, when no valid rollback target exists', () => {
-    const runWrangler = vi.fn((_args: string[]) => ({ status: 0 }));
-    const expired = Date.parse('2027-01-01T00:00:00Z'); // past the receipt's expiry
-    const outcome = remediateAfterSmoke({ smokeFailed: true, target: 'production', rollbackTarget: goodTarget, runWrangler, now: expired });
+  // The 2026-07-30 regression: this used to execute a rollback.
+  it('HALTS on production smoke failure and never executes a rollback', () => {
+    const readVersions = vi.fn(() => versions);
+    const outcome = remediateAfterSmoke({
+      smokeFailed: true, target: 'production', deployedVersionId: 'v3-just-deployed', readVersions,
+    });
     expect(outcome.action).toBe(REMEDIATION_HALTED);
     expect(outcome.remediated).toBe(false);
-    expect(outcome.alert).toMatch(/manual rollback required NOW/);
-    expect(runWrangler).not.toHaveBeenCalled();
+    expect(outcome).not.toHaveProperty('wranglerStatus');
   });
 
-  it('reports rollback_failed with a loud alert when the rollback command itself fails', () => {
-    // Mocked Wrangler CLI: non-zero exit.
-    const runWrangler = vi.fn((_args: string[]) => ({ status: 1 }));
-    const outcome = remediateAfterSmoke({ smokeFailed: true, target: 'production', rollbackTarget: goodTarget, runWrangler, now: withinWindow });
-    expect(outcome).toMatchObject({ action: REMEDIATION_ROLLBACK_FAILED, remediated: false, versionId, wranglerStatus: 1 });
-    expect(outcome.alert).toMatch(/the failed version is LIVE/i);
-    expect(runWrangler).toHaveBeenCalledTimes(1);
+  it('resolves the rollback target live instead of from a checked-in receipt', () => {
+    const readVersions = vi.fn(() => versions);
+    const outcome = remediateAfterSmoke({
+      smokeFailed: true, target: 'production', deployedVersionId: 'v3-just-deployed', readVersions,
+    });
+    expect(readVersions).toHaveBeenCalledWith('wrangler.production.jsonc');
+    expect(outcome.versionId).toBe('v2-previous-good');
+    // Not the stale receipt id that caused the incident.
+    expect(outcome.versionId).not.toBe('2acba9fb-a44d-44ea-bf17-8955e1507cfd');
   });
 
-  it('halt-only mode always alerts and never rolls back (staging, no recorded target)', () => {
-    const runWrangler = vi.fn((_args: string[]) => ({ status: 0 }));
-    const outcome = remediateAfterSmoke({ smokeFailed: true, target: 'staging', rollbackTarget: null, haltOnly: true, runWrangler, now: withinWindow });
+  it('hands a human the exact paste-ready rollback command', () => {
+    const outcome = remediateAfterSmoke({
+      smokeFailed: true, target: 'production', deployedVersionId: 'v3-just-deployed', readVersions: () => versions,
+    });
+    expect(outcome.command).toBe(
+      `npx wrangler ${rollbackWranglerArgs('production', 'v2-previous-good', 'wrangler.production.jsonc').join(' ')}`,
+    );
+    expect(outcome.alert).toContain('v2-previous-good');
+    expect(outcome.alert).toMatch(/nothing has been rolled back automatically/i);
+  });
+
+  it('warns that a lone asset 404 is usually edge caching, not a bad build', () => {
+    const outcome = remediateAfterSmoke({
+      smokeFailed: true, target: 'production', deployedVersionId: 'v3-just-deployed', readVersions: () => versions,
+    });
+    expect(outcome.alert).toMatch(/cf-cache-status HIT is usually edge negative-caching/i);
+  });
+
+  it('still halts loudly when the version list cannot be read', () => {
+    const outcome = remediateAfterSmoke({
+      smokeFailed: true, target: 'production', readVersions: () => null,
+    });
     expect(outcome.action).toBe(REMEDIATION_HALTED);
-    expect(outcome.remediated).toBe(false);
-    expect(outcome.alert).toMatch(/No automated rollback is configured for staging/);
-    expect(runWrangler).not.toHaveBeenCalled();
+    expect(outcome.versionId).toBeNull();
+    expect(outcome.alert).toMatch(/Inspect the deployment by hand NOW/);
+  });
+
+  it('behaves the same for staging', () => {
+    const outcome = remediateAfterSmoke({
+      smokeFailed: true, target: 'staging', deployedVersionId: 'v3-just-deployed', readVersions: () => versions,
+    });
+    expect(outcome.action).toBe(REMEDIATION_HALTED);
+    expect(outcome.versionId).toBe('v2-previous-good');
+  });
+
+  it('rejects an unknown target', () => {
+    expect(() => remediateAfterSmoke({ smokeFailed: true, target: 'prod' as 'production' })).toThrow(/staging or production/);
   });
 });
