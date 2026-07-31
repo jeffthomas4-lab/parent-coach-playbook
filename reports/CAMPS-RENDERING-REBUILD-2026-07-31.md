@@ -543,3 +543,106 @@ was never hit until now.
    `curl | wc -c` pass against the deployed page would confirm or correct
    the ~105,000–115,000-byte figure the same way Pillar 14's mobile-height
    number in the section above still needs a live pass.
+
+## CI run #239 fix, 2026-07-31 (session 5)
+
+CI run #239 on this branch reported 8 test failures across 5 files, all
+caused by earlier work in this branch. Fixed all 8. No production code
+changed except the regenerated route inventory artifact.
+
+**`tests/camp-truthfulness.test.ts` (2 failures) — test fix.** Both
+assertions checked literal strings (`ages not provided`, `Listed price:`)
+that used to live directly in `src/pages/camps/index.astro` and moved into
+`src/lib/camp-card.ts` when card rendering was extracted (session 1, item
+#74). Confirmed both strings are still rendered by reading `camp-card.ts`
+directly, not by trusting the diff. Fixed by loading `camp-card.ts`
+alongside `index.astro` in both tests and checking the combined surface —
+the directory guarantee still holds, the assertions just needed to look at
+the file the markup actually lives in now.
+
+**`tests/camp-verification-methodology.test.ts` (1 failure) — test fix.**
+Same root cause: the verified-badge link moved into `camp-card.ts`. But the
+expected count (2) was also wrong once pointed at the right file. Before
+the extraction, `index.astro` carried two separate inline copies of the
+link (one in the standard card renderer, one in the Featured renderer). The
+extraction consolidated both onto one shared helper, `verifiedHtml()`,
+called by both renderers — so the source now contains the link once, not
+twice, even though every verified card at runtime still links out exactly
+as before. Fixed the test to assert zero occurrences in `index.astro` and
+one in `camp-card.ts`.
+
+**`tests/events.test.ts` (3 failures) — test fix, no regression.**
+The structured-logging rollout changed `emitEventSafely`'s failure log from
+a hand-rolled `console.error(JSON.stringify({event, event_type, code}))` to
+`log('error', {...})` from `src/lib/log.ts`. Checked whether the new line
+still carries the same information: `event` → `action` (same value,
+`pcd_event_emit_failed`), `event_type` → `eventType` (same value), `code` →
+`errorMessage` (same value for both the D1-failure and bad-event-type
+cases, since both are thrown `Error`s and `errorMessage` is `Error.message`).
+One real behavior change, not a loss: a non-`Error` throw used to collapse
+to a generic `'unknown_error'` marker; the new logger's `errorFields()`
+`String()`s whatever was actually thrown, so the real value now reaches the
+log line instead of being discarded. That is more information reaching
+Cloudflare Worker logs, not less, and it never reaches the caller or a
+customer-facing response either way. Updated all three assertions to the
+new field names and the new (more informative) non-Error case.
+
+**`tests/route-control-inventory.test.ts` (1 failure) — code fix (generated
+artifact).** `automation/route-control-inventory.json` was stale after this
+branch added `GET /api/camps/lite`. Ran
+`node scripts/build-route-control-inventory.mjs` to regenerate it (162 →
+163 routes), then reran `--check`, which now passes. Inspected the new
+route's classification before accepting it: `cache_class: "api"`,
+`auth_boundary: "public"`, `methods: ["GET"]`, `public_write_limiter: null`.
+Confirmed this is honest, not a generator default masking a POST-shaped
+route: `src/pages/api/camps/lite.ts` exports only `GET`, so it isn't in
+scope for the anonymous-POST limiter-review rule, and its `api` cache class
+is correct even though the route itself sets its own edge-cache headers —
+there's no separate "cached API" bucket in this classifier and there
+doesn't need to be one.
+
+**`tests/unsafe-html-contract.test.ts` (1 failure) — security review, then
+a contract update (no sink was unsafe).** `src/pages/camps/index.astro`
+gained three `.innerHTML` sinks when the client filter script started
+rendering cards itself (session 1): `mapEl.innerHTML = ''` in `initMap()`,
+and `pnwGrid.innerHTML` / `nationalGrid.innerHTML` in `renderGrids()`.
+Reviewed each individually rather than assuming the extraction was safe
+because `camp-card.ts` says it escapes:
+
+- `mapEl.innerHTML = ''` assigns a literal empty string to clear the
+  static no-JS fallback markup before Leaflet mounts. No interpolation, no
+  sink risk.
+- Both grid sinks are set from `renderCardHtml(c, sportsList).join('')`.
+  Read `renderCardHtml`, `renderFeaturedCardHtml`, `photoHtml`,
+  `verifiedHtml`, `priceHtml`, and `addedLineHtml` directly in
+  `camp-card.ts` line by line: every camp-derived field (id, slug, name,
+  city, state, sport, hero_photo_key, price_text, date_added, the
+  verification/freshness label) passes through `escHtml()` at its
+  interpolation point. `sportsList` itself is `CAMP_SPORTS` from
+  `src/data/site.ts`, served back through `GET /api/camps/lite`, and is
+  also escaped at the call site regardless of its source. No unescaped
+  path found in either the base "Show more" render or the sport-label
+  fallback path.
+
+No code fix was needed — both sinks were already safe. Added
+`src/pages/camps/index.astro` to `automation/unsafe-html-contract.json`'s
+`reviewed_inner_html_files` with a note naming all three sinks and why each
+is safe. Separately, the Leaflet popup in the same script
+(`marker.bindPopup`) is not matched by this contract (it doesn't use
+`.innerHTML`) but was already fixed for the same class of bug in the
+session-1 QA pass; noted in the contract entry so a future reader isn't
+left wondering why it isn't listed.
+
+**Could not verify by running tests.** `npx vitest run` cannot execute in
+this sandbox (missing native module, same standing limitation as every
+prior session in this file) and `astro build`/`npm install` were off-limits
+per this session's brief. Verified instead by: reading every changed
+source/test file directly rather than trusting the diagnosis, running
+`scripts/build-route-control-inventory.mjs` for real (plain Node, no Astro
+dependency) and inspecting its JSON output with a throwaway Node script,
+validating the JSON contract file parses, confirming with a targeted grep
+that exactly the 4 files listed in `reviewed_inner_html_files` actually
+contain `.innerHTML`, and running `tsc --noEmit` against the three edited
+test files (0 new errors beyond a pre-existing, unrelated `D1Database`
+global-type gap that exists with or without these changes). Jeff should run
+`npm test` for real before merging to confirm all 8 go green.

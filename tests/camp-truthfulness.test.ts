@@ -6,15 +6,21 @@ const load = (path: string) => readFile(new URL(`../${path}`, import.meta.url), 
 
 describe('public camp truthfulness contract', () => {
   it('does not convert missing age data into a 0-99 customer claim', async () => {
-    const [db, directory, detail, city, sport] = await Promise.all([
+    const [db, directory, cardRenderer, detail, city, sport] = await Promise.all([
       load('src/lib/camps-db.ts'),
       load('src/pages/camps/index.astro'),
+      // Card markup for the directory page was extracted into camp-card.ts
+      // on 2026-07-31 (Pillar 14 fix, open item #74). The directory's true
+      // rendered surface is index.astro (filters, layout, prose) plus this
+      // module (the actual card HTML), so both are checked together below.
+      load('src/lib/camp-card.ts'),
       load('src/pages/camps/[slug].astro'),
       load('src/pages/camps/[state]/[city]/index.astro'),
       load('src/pages/camps/[state]/[city]/[sport]/index.astro'),
     ]);
     expect(db).toContain('(p.age_min IS NOT NULL AND p.age_max IS NOT NULL)');
-    for (const page of [directory, detail, city, sport]) expect(page).toContain('ages not provided');
+    const directorySurface = directory + cardRenderer;
+    for (const page of [directorySurface, detail, city, sport]) expect(page).toContain('ages not provided');
     expect(directory).toContain('c.age_known !== 1');
     expect(city).toContain('c.age_known === 1 &&');
     expect(sport).toContain('c.age_known === 1 &&');
@@ -23,6 +29,9 @@ describe('public camp truthfulness contract', () => {
   it('reserves verified language for individually verified rows and defines its limits', async () => {
     const pages = (await Promise.all([
       load('src/pages/camps/index.astro'),
+      // See the note above: card markup (including the verified badge and
+      // the listed-price line) now lives in camp-card.ts, not index.astro.
+      load('src/lib/camp-card.ts'),
       load('src/pages/camps/[slug].astro'),
       load('src/pages/camps/[state]/[city]/index.astro'),
       load('src/pages/camps/[state]/[city]/[sport]/index.astro'),
