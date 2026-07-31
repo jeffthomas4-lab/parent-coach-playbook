@@ -65,6 +65,10 @@ interface UpdatePayload {
   spots_status?: string;
   contact_email?: string;
   contact_phone?: string;
+  // Organization-level contact channels, distinct from the program-level
+  // override above. See CampEditFields in lib/camps-db for the split.
+  org_email?: string;
+  org_phone?: string;
   website_url?: string;
   lunch_included?: string;
   aftercare_available?: string;
@@ -203,6 +207,15 @@ export const POST: APIRoute = async ({ params, request }) => {
   if (has('contact_phone')) {
     const v = data.contact_phone!.trim();
     fields.contact_phone = v ? v : null;
+  }
+  if (has('org_email')) {
+    const v = data.org_email!.trim();
+    if (v && !isEmail(v)) return fail('org_email is not a valid email');
+    fields.org_email = v ? v : null;
+  }
+  if (has('org_phone')) {
+    const v = data.org_phone!.trim();
+    fields.org_phone = v ? v : null;
   }
   if (has('website_url')) {
     const v = data.website_url!.trim();
