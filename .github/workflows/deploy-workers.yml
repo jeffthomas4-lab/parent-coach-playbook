@@ -144,7 +144,10 @@ jobs:
           sha256sum -c staging-smoke.json.sha256
       - name: Halt and alert on staging smoke failure
         if: always() && steps.smoke-staging.outcome == 'failure'
-        run: node scripts/deploy-remediation.mjs --target staging --halt-only
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: node scripts/deploy-remediation.mjs --target staging --config wrangler.jsonc
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: pcd-staging-smoke-${{ env.DEPLOY_SHA }}
@@ -200,12 +203,23 @@ jobs:
           node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production --asset-proof production-static-asset.json --report production-smoke.json
           sha256sum production-smoke.json > production-smoke.json.sha256
           sha256sum -c production-smoke.json.sha256
-      - name: Auto-remediate on production smoke failure (rollback to recorded good version)
+      # Halt and alert. Does NOT roll back.
+      #
+      # This step used to auto-roll-back production to a version id read from a
+      # checked-in receipt. On 2026-07-30 a false-positive smoke failure (a cold
+      # route-only asset 404 with cf-cache-status HIT) fired it, and the receipt
+      # had aged past several releases, so production reverted roughly a day of
+      # shipped work. See STANDARD-AUDIT item 56.
+      #
+      # Now it resolves the immediately-preceding version live from
+      # `wrangler versions list` and prints the exact rollback command for a
+      # human. The run still goes red so nobody misses it.
+      - name: Halt and alert on production smoke failure
         if: always() && steps.smoke-production.outcome == 'failure'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: node scripts/deploy-remediation.mjs --target production --rollback-target coordination/release-evidence/worker-rollback-target-2026-07-29.json --config wrangler.production.jsonc
+        run: node scripts/deploy-remediation.mjs --target production --config wrangler.production.jsonc
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: pcd-production-smoke-${{ env.DEPLOY_SHA }}
