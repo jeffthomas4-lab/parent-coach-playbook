@@ -24,6 +24,7 @@ import { featureEnabled } from '../../../lib/feature-flags';
 import { secretsMatch } from '../../../lib/secrets';
 import { writeHeldDuringMaintenance } from '../../../lib/maintenance-mode';
 import { createRequestLogger } from '../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../lib/camps-lite-cache';
 
 export const prerender = false;
 
@@ -99,6 +100,13 @@ export const POST: APIRoute = async ({ request }) => {
     staleArchiveHasMore = archive.hasMore;
     if (archive.hasMore) {
       logger.warn('camps_sweep_backlog', { code: 'stale_archive_has_more', archived: archive.archived });
+    }
+    if (archive.archived > 0) {
+      // Archiving removes camps from GET /api/camps/lite's result set
+      // (approved -> rejected). Only worth purging when this stage actually
+      // changed something — see src/lib/camps-lite-cache.ts for the stated
+      // TTL and invalidation path this call is part of.
+      await purgeCampsLiteEdgeCache();
     }
   } catch (error) {
     failures.push('stale_archive_failed');

@@ -341,3 +341,205 @@ page — if the real number lands materially over 8,000px, the next lever in
 line (not yet built) is switching "Show more" to `IntersectionObserver`-based
 scroll-triggered loading, which was the other option this pass considered
 and didn't need per this arithmetic.
+
+## Background data load for campsLite, 2026-07-31 (session 4, anchor: CAMPS-LITE-ENDPOINT-2026-07-31)
+
+Closes STANDARD-AUDIT.md item #23 (Pillar 8: "Camp-listing pages read D1 on
+every request with no Cache API or KV layer in front of them"). The prior
+two sessions on this page cut the DOM node count from 323 cards to a
+windowed first paint. They left one thing untouched: the full `campsLite`
+array, projected at ~253,000-254,000 bytes for 311 camps, still shipped as
+an inline `<script type="application/json" id="camps-data">` island on
+every page load. This session moves that payload to a background fetch.
+
+### The design
+
+Jeff's directive was explicit: small batch on first paint, full set arrives
+shortly after, filters and the map never silently return wrong answers by
+seeing a partial dataset. The build has three pieces.
+
+**1. `GET /api/camps/lite`** (`src/pages/api/camps/lite.ts`). Returns the
+full `campsLite` array plus the sports list, projected from `Camp[]` by a
+single shared function (`toCampsLite`, `src/lib/camps-lite.ts`) so the
+endpoint and the old inline-JSON path can never drift in shape. The route
+checks method (GET only, 405 otherwise), applies the existing
+`PUBLIC_READ_RATE_LIMITER` tier (same as `/api/camps/nearest` and
+`/api/camps/search-priority`), and serves from an edge cache before ever
+touching D1.
+
+**2. Edge cache** (`src/lib/camps-lite-cache.ts`). Uses the Cache API
+(`caches.default`), not KV. This repo has one KV namespace (`SESSION`,
+auto-provisioned for Astro sessions) and none bound for general caching;
+the Cache API needs no wrangler binding at all, so caching this one read
+adds zero infrastructure. TTL: 5 minutes fresh
+(`CAMPS_LITE_CACHE_TTL_SECONDS`), then up to 1 hour
+stale-while-revalidate (`CAMPS_LITE_STALE_WHILE_REVALIDATE_SECONDS`)
+before an entry is unusable. Chosen tighter than `/camps/`'s own 10-minute
+HTML cache because an admin who just approved or edited a camp is a more
+time-sensitive reader than a parent browsing.
+
+**3. Client fetch** (`src/pages/camps/index.astro`, the bundled
+`<script>`). `scheduleCampsLiteLoad()` uses `requestIdleCallback` with a
+`setTimeout(…, 200)` fallback for Safari (which has never shipped
+`requestIdleCallback`). The fetch runs after first paint, never blocking
+render.
+
+### Why not paginate campsLite
+
+Explicitly ruled out per the brief. The client's sport/age/date/day-overnight/
+spots/ZIP-radius filters and the Leaflet map all read the full array on
+every filter change (`applyFilters()` in the client script). A paginated
+lite endpoint would mean a sport filter in a low-inventory state could
+silently miss camps sitting on an unfetched page. The endpoint returns
+everything `listApprovedCamps()` returns (bounded only by its existing
+1,000-row hard cap), same as the inline island did.
+
+### Cache invalidation: the stated path
+
+Pillar 8 requires a stated invalidation path, not just a TTL. Every admin
+mutation that can change what this endpoint returns calls
+`purgeCampsLiteEdgeCache()` after its write commits:
+`admin/camps/[id]/{approve,reject,verify,update,photo}.ts`, and
+`cron/camps-sweep.ts`'s stale-archive stage (only when it actually archived
+something).
+
+**Honest limitation, stated plainly:** Cloudflare's Cache API is per-colo,
+not global. A purge from the colo that handled an admin's request clears
+that colo's copy only, not every edge location worldwide. The 5-minute TTL
+is the real cross-edge staleness bound; the purge call is a best-effort
+optimization, not a global-invalidation guarantee. This is written directly
+into `src/lib/camps-lite-cache.ts`'s file header so a future reader doesn't
+have to rediscover it.
+
+The endpoint also does its own background revalidation, independent of the
+admin-triggered purge: on a cache hit older than 4 minutes
+(`CAMPS_LITE_REVALIDATE_AFTER_SECONDS`), it kicks a non-blocking
+`waitUntil()` refresh so the next request in that colo is more likely to
+find a fresh copy already in place. This is the "revalidate in the
+background" half of stale-while-revalidate; the `Cache-Control` header on
+every response is the half that governs any downstream cache (a browser,
+a CDN layer) that reads this endpoint directly.
+
+### States between paint and data arrival
+
+A visible, `aria-live="polite"` status banner (`#camps-data-status`) sits
+above the filter bar. It starts in a pending state that matches the
+client's first synchronous call, so there is no flash of the wrong state.
+Every filter control, both "Show more" buttons, and the map container are
+gated:
+
+- **Pending:** every control in `#camp-filters` plus both "Show more"
+  buttons gets `disabled = true` (native, not just visual) and a `0.55`
+  opacity rule so the state is drawn, not only announced. The map container
+  keeps static text ("Map loads once the full camp directory finishes
+  loading") until `initMap()` actually runs.
+- **Ready:** controls re-enable, the banner hides, and the map/grids render
+  from the fetched data.
+- **Error:** controls stay disabled, the banner turns rust-bordered with a
+  "Try again" button, and the text states plainly that search, filters, and
+  the map are unavailable while the server-rendered cards above still work.
+  No raw error detail reaches the page. That follows Pillar 13's rule that
+  raw exceptions never reach the customer.
+
+If the fetch never succeeds, the page stays fully useful: every
+server-rendered card, the results count, and every link on the page came
+from SSR and needs nothing from this fetch.
+
+### First-paint bytes: projection, not a measurement
+
+This branch is not deployed, so nothing below is a live number. It is
+arithmetic built on the prior session's own projection (itself unmeasured),
+plus source-level byte counts of what this session actually added or
+removed, measured directly with `wc -c` against the current source.
+
+| Component | Bytes |
+|---|---|
+| Prior session's projected total page weight | ~358,000 |
+| Of which, the `camps-data` JSON island (removed entirely this session) | ~253,000–254,000 |
+| Status banner + map fallback markup added (source, `wc -c`) | 2,223 |
+| Pending-state CSS rule added (source, `wc -c`) | 678 |
+| New client-side JS for the background load/pending-state logic (source, `wc -c`, pre-minification) | 7,311 |
+
+Net: 358,000 − 253,500 (midpoint) + 2,223 + 678 + 7,311 ≈ **114,700 bytes**,
+call it **~105,000–115,000 bytes projected**. The 7,311-byte JS figure is
+raw source with comments; Astro's Vite bundling minifies and strips
+comments from bundled `<script>` tags in a real build, so the real shipped
+number is very likely lower than this arithmetic implies. That direction of
+error (this projection running a little high, not low) is the safer one to
+be wrong in.
+
+**Inline JSON remaining on first paint: zero.** The server-rendered cards
+(Featured, Recently Added, and the first window of PNW/National) need no
+client data at all. Their markup is complete HTML from
+`src/lib/camp-card.ts`, unchanged by this session. Nothing was inlined to
+replace the removed island; the brief's "or nothing if nothing is needed"
+option is what fit.
+
+### What was tested
+
+`tests/api/camps-lite.test.ts`: happy path (200, full `camps`/`sports`
+returned, admin-only fields like `contact_email` confirmed absent from the
+lite projection), failure path (a D1 read failure returns 500 with no raw
+error string in the body), refusal (a non-GET method returns 405 without
+ever calling `listApprovedCamps`), plus a bonus DB-unavailable case.
+
+**Found and fixed a real pre-existing gap while writing these tests:**
+`tests/helpers/context.ts`'s `makeContext()` defaulted five rate-limiter
+bindings to an always-allow stub but not `PUBLIC_READ_RATE_LIMITER`, which
+`enforcePublicWriteRateLimit()` (`src/lib/public-rate-limit.ts`) fails
+closed on with a 503 when undefined. Both `tests/api/camps-nearest.test.ts`
+and `tests/api/camps-search-priority.test.ts` are pre-existing tests on
+this same rate-limit tier, and both would get a 503 instead of the status
+each test actually asserts, on any real `npm test` run. Fixed by adding the same
+default the other five limiters already get. This was found by reading
+`enforcePublicWriteRateLimit`'s source, not by a red test run: vitest
+cannot execute in this sandbox (`@rolldown/binding-linux-x64-gnu` missing,
+confirmed again this session, same as the prior session's note). Jeff
+should confirm this fix actually goes green on a real `npm test`.
+
+### Validation performed (no `npm install`/`astro build`/`vitest` available)
+
+`@astrojs/compiler`'s `transform()` against `src/pages/camps/index.astro`:
+0 error-level diagnostics, 2 pre-existing informational hints on the
+unrelated JSON-LD `<script slot="head">` tags (down from 3 in the prior
+session's baseline; the removed `camps-data` island was the third).
+`tsc --noEmit` against narrow throwaway tsconfigs (deleted after use, not
+committed): `src/lib/camps-lite.ts` + `src/lib/camps-lite-cache.ts`, the
+`/api/camps/lite` route with its full dependency chain, all five admin
+routes plus `cron/camps-sweep.ts`, the extracted client `<script>` block
+against a DOM-lib config, and the new test file plus the fixed
+`context.ts`. All six passes returned 0 errors.
+
+One real bug surfaced by that process, not by inspection: this project's
+tsconfig has no explicit `"lib"` override, so TypeScript's default lib for
+its target silently includes the DOM lib alongside
+`@cloudflare/workers-types`. DOM's own `CacheStorage`/`Cache` types (the
+browser Service Worker Cache API, which has no `.default`) shadow
+Cloudflare's declarations for the same global names, so `caches.default`
+does not typecheck under this project's real settings even though it is a
+genuine, documented Cloudflare Workers API that works at runtime.
+Confirmed with an isolated one-line repro against this repo's own
+`node_modules` before concluding it was real. Fixed in
+`src/lib/camps-lite-cache.ts` with local interfaces describing only the
+Cloudflare shape this file uses, cast through `unknown`. That is a
+compile-time workaround for the type collision, not a runtime change.
+Nothing else in
+this codebase used the Cache API before this session, so this collision
+was never hit until now.
+
+### Escalating to Jeff
+
+1. Run `npm install && npm run build && npm run check && npm test` before
+   this branch ships, same standing note as the rest of this file. The
+   `PUBLIC_READ_RATE_LIMITER` test-default fix above and the `caches.default`
+   type fix were both verified by reading source and by narrow `tsc`
+   passes, not by a real green test run.
+2. Once deployed, confirm the cache actually behaves: `curl -i` the
+   endpoint twice in a row and check `cf-cache-status` / age between the
+   two responses, then approve a camp in `/admin/` and confirm the next
+   read reflects it (or explains the up-to-5-minute cross-colo staleness
+   window if it doesn't).
+3. The byte-weight arithmetic above is unmeasured. A real Lighthouse or
+   `curl | wc -c` pass against the deployed page would confirm or correct
+   the ~105,000–115,000-byte figure the same way Pillar 14's mobile-height
+   number in the section above still needs a live pass.

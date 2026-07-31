@@ -6,6 +6,7 @@ import { approveCamp, CampApprovalBlockedError, upsertDomainQuality, type Camp }
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
 import { createRequestLogger } from '../../../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../../../lib/camps-lite-cache';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -108,6 +109,12 @@ export const POST: APIRoute = async ({ params, request }) => {
       const { transitioned, ...camp } = approved;
       if (transitioned) {
         await upsertDomainQuality(env.DB, camp.source_domain, 'approved');
+        // An approve is the one action here that can newly ADD a camp to
+        // /api/camps/lite's result set (pending -> approved). GET
+        // /api/camps/lite's edge cache — see src/lib/camps-lite-cache.ts
+        // for its stated TTL and this call's stated (best-effort,
+        // single-colo) invalidation path.
+        await purgeCampsLiteEdgeCache();
       }
 
       return {

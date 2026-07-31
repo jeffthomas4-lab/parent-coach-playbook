@@ -22,6 +22,7 @@ import {
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
 import { createRequestLogger, type RequestLogger } from '../../../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../../../lib/camps-lite-cache';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -282,6 +283,14 @@ export const POST: APIRoute = async ({ params, request }) => {
     },
     async (): Promise<MutationOutcome<{ camp: Camp | null }>> => {
       const updated = await updateCamp(env.DB, id, fields, auth.email);
+      // Almost every editable field here is also a campsLite field (name,
+      // sport, ages, dates, location, price, day/overnight, spots status,
+      // contact/registration links). Purging on every edit — not just the
+      // ones that touch a campsLite column — keeps this call simple and
+      // correct rather than tracking which of ~20 possible fields changed.
+      // See src/lib/camps-lite-cache.ts for the stated TTL and invalidation
+      // path this call is part of.
+      await purgeCampsLiteEdgeCache();
       return {
         outcome: 'success',
         value: { camp: updated },

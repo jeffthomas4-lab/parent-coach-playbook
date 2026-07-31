@@ -12,6 +12,7 @@ import {
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
 import { createRequestLogger } from '../../../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../../../lib/camps-lite-cache';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -103,6 +104,10 @@ export const POST: APIRoute = async ({ params, request }) => {
 
       if (transitioned) {
         await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
+        // A reject can REMOVE a camp from /api/camps/lite's result set
+        // (approved -> rejected). See src/lib/camps-lite-cache.ts for this
+        // call's stated TTL and invalidation path.
+        await purgeCampsLiteEdgeCache();
       }
 
       return {
