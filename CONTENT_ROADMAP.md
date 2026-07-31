@@ -31,7 +31,7 @@ Topics from your expansion list. Most of these go under Team Parent or as their 
 | The certifications you actually need (USA Baseball, NOCSAE, HECC, Heads Up Football, SafeSport) | Editorial | `/team-parent/coach-certifications/` | drafted 2026-07-27 (src/content/articles/coach-certifications-you-actually-need.md) |
 | Why SafeSport training is non-negotiable | Editorial | Foundations short read | drafted 2026-07-28 (src/content/articles/why-safesport-training-is-non-negotiable.md) |
 | The one-day coaching clinic: what to look for | Editorial | Team Parent · Tech setup | drafted 2026-07-29 (src/content/articles/one-day-coaching-clinic-what-to-look-for.md) |
-| Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | PIPELINE |
+| Concussion protocols: the parent-coach version | Editorial | Drive Home (cornerstone) + link to CDC | drafted 2026-07-30 (src/content/articles/the-concussion-call-is-not-yours-to-make.md) |
 | Heat, lightning, and weather decision trees | Editorial | Team Parent · Game day | PIPELINE |
 | First-aid kit for the dugout (what's in it) | Editorial | Team Parent · Game day | PIPELINE |
 | The pre-season parent meeting agenda | Editorial | Lead magnet (PDF) | PIPELINE |

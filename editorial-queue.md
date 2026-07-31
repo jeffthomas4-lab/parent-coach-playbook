@@ -32,3 +32,4 @@ Checked this run and not queued: the Pop Warner "age cutoff moved to July 14" cl
 | 2026-07-27 | The certifications you actually need before you coach | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
 | 2026-07-28 | Why SafeSport training is non-negotiable | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
 | 2026-07-29 | The one-day coaching clinic: what to look for | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |
+| 2026-07-30 | The concussion call is not yours to make | Evergreen (CONTENT_ROADMAP.md, Foundations) | drafted, awaiting review |

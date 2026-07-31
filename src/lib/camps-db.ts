@@ -990,8 +990,21 @@ export interface CampEditFields {
   day_or_overnight?: DayOrOvernight;
   skill_level?: SkillLevel;
   spots_status?: SpotsStatus;
+  // Program-level contact override, written to programs.contact_email/phone.
+  // Use when one offering has a different coordinator than the org as a whole.
   contact_email?: string | null;
   contact_phone?: string | null;
+  // Organization-level contact, written to organizations.email/phone. These are
+  // the fields the public read path falls back to via
+  // COALESCE(p.contact_email, o.email). Before this existed, an admin editing a
+  // camp could only ever write the program-level override, so organizations.email
+  // and organizations.phone were set at first insert and never corrected again --
+  // the org-verification pass was silently discarding its own contact findings.
+  //
+  // Both are general org channels, never a named person. Named contacts (name,
+  // title, direct line) belong in org_contacts in PCD_OPS_DB per ADR-046.
+  org_email?: string | null;
+  org_phone?: string | null;
   website_url?: string | null;
   lunch_included?: boolean;
   aftercare_available?: boolean;
@@ -1056,6 +1069,10 @@ export async function updateCamp(
   if ('latitude'  in fields) pushOrg('latitude',   fields.latitude ?? null);
   if ('longitude' in fields) pushOrg('longitude',  fields.longitude ?? null);
   if ('website_url' in fields) pushOrg('website_url', fields.website_url ?? null);
+  // Org-level contact. These columns exist in the current schema (0001_core_graph)
+  // and were simply never reachable from the admin edit path until now.
+  if ('org_email' in fields) pushOrg('email',      fields.org_email ?? null);
+  if ('org_phone' in fields) pushOrg('phone',      fields.org_phone ?? null);
 
   if (orgSets.length > 0) {
     orgSets.push('updated_at = ?');  orgVals.push(now);
