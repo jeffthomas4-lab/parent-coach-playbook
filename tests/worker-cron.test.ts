@@ -18,7 +18,10 @@ const makeEnv = (overrides: Partial<Env> = {}): Env => ({
   ...overrides,
 });
 
-afterEach(() => vi.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.useRealTimers();
+});
 
 describe('camps-sweep scheduler', () => {
   it('exposes a non-mutating liveness response', async () => {
@@ -34,6 +37,8 @@ describe('camps-sweep scheduler', () => {
   });
 
   it('reports readiness without exposing which secret or variable is missing', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     const response = await worker.fetch(
       new Request('https://scheduler.example/ready'),
       makeEnv({ CRON_KEY: undefined }),
