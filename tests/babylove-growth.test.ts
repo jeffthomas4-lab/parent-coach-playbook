@@ -163,7 +163,7 @@ describe('BabyLoveGrowth webhook boundary', () => {
     expect(pending).toHaveLength(0);
   });
 
-  it('acknowledges after durable receipt creation and completes disabled publishing in the background', async () => {
+  it('acknowledges only after durable receipt processing completes', async () => {
     const fake = makeFakeD1();
     const pending: Promise<unknown>[] = [];
     const response = await handleBabyLoveWebhook(
@@ -174,10 +174,56 @@ describe('BabyLoveGrowth webhook boundary', () => {
 
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ ok: true, accepted: true, replayed: false });
-    expect(pending).toHaveLength(1);
-    await Promise.all(pending);
+    expect(pending).toHaveLength(0);
     expect(fake.calls.some((call) =>
       call.sql.includes('UPDATE external_article_receipts') && call.params[0] === 'held'
+    )).toBe(true);
+  });
+
+  it('returns a retryable failure when GitHub rejects a production publish', async () => {
+    const fake = makeFakeD1();
+    const fetchMock = vi.fn().mockResolvedValueOnce(new Response('unauthorized', { status: 401 }));
+    vi.stubGlobal('fetch', fetchMock);
+
+    const response = await handleBabyLoveWebhook(
+      webhookRequest(JSON.stringify(PAYLOAD)),
+      env(fake.db, {
+        BABYLOVE_AUTOPUBLISH_ENABLED: 'true',
+        GITHUB_TOKEN: 'expired-github-token',
+      }),
+      executionContext([]),
+    );
+
+    expect(response.status).toBe(503);
+    expect(await response.json()).toEqual({ ok: false, error: 'publish_failed', retryable: true });
+    expect(fake.calls.some((call) =>
+      call.sql.includes('UPDATE external_article_receipts')
+      && call.params[0] === 'retryable_failure'
+      && call.params[3] === 'github_read_401'
+    )).toBe(true);
+  });
+
+  it('returns success only after GitHub commits an automatic publish', async () => {
+    const fake = makeFakeD1();
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response('not found', { status: 404 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ commit: { sha: 'commit-webhook-123' } }), { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+
+    const response = await handleBabyLoveWebhook(
+      webhookRequest(JSON.stringify(PAYLOAD)),
+      env(fake.db, {
+        BABYLOVE_AUTOPUBLISH_ENABLED: 'true',
+        GITHUB_TOKEN: 'github-test-token',
+      }),
+      executionContext([]),
+    );
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ ok: true, accepted: true, replayed: false });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fake.calls.some((call) =>
+      call.sql.includes('UPDATE external_article_receipts') && call.params[0] === 'published'
     )).toBe(true);
   });
 
