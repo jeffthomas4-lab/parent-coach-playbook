@@ -450,12 +450,16 @@ Sessions 1 through 5 are the MVP. Sessions 6 through 10 are the rest.
 
 ### Build status
 
-| Session | Agent | Scheduled task | State |
-|---|---|---|---|
-| 6 | Link Earning (**Lonnie**) | `pcd-link-earning`, Wed 7:15 AM | **Built 2026-07-31.** Needs no credentials. |
-| 8 | Directory Index Policy (**Dex**) | `pcd-directory-index-policy`, day 4 of month 7:45 AM | **Built 2026-07-31.** Needs no credentials. |
-| 1, 4, 5 | GSC pull, Nora on API, Index Economics | not yet created | **Blocked** on the Google Cloud service account. |
-| 2, 3, 7, 9, 10 | crawl script, migrations, run logging, `/web:seo`, portability | not yet created | Sequenced after the above. |
+An agent counts as built only when all three surfaces exist: the repo SPEC, the live scheduled task, and the `agent_registry` row. `automation/agents/ROSTER-RECONCILIATION.md` exists because those three drifted apart once already.
+
+| Session | Agent | Repo SPEC | Scheduled task | Registry row |
+|---|---|---|---|---|
+| 6 | Link Earning (**Lonnie**) | `automation/agents/lonnie/` ✅ | `pcd-link-earning`, Wed 7:15 AM ✅ | **owed** (SQL in the roster addendum) |
+| 8 | Directory Index Policy (**Dex**) | `automation/agents/dex/` ✅ | `pcd-directory-index-policy`, day 4, 7:45 AM ✅ | **owed** (SQL in the roster addendum) |
+| 1, 4, 5 | GSC pull, Nora on API, Index Economics | not written | not created | **Blocked** on the Google Cloud service account |
+| 2, 3, 7, 9, 10 | crawl script, migrations, run logging, `/web:seo`, portability | not written | not created | Sequenced after the above |
+
+Each built agent has a `SPEC.md` filled against the nine fields of `automation/SKILL-TEMPLATE.md` and a `SKILL.md` mirroring the live task prompt. Per the roster rule, the scheduled task is the source of truth and the SPEC is the design record; editing one means editing the other.
 
 Both built tasks reference `scripts/seo/pull-gsc.mjs` conditionally ("if it exists by the time you run") and fall back to Claude in Chrome against the GSC dashboard, so neither breaks while the service account is pending. Both commit through `scripts/safe-commit.sh` rather than plain git, per the documented mount problem in `pcd-review-publish`.
 
