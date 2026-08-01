@@ -11,9 +11,6 @@ import { createDisposableOpsDatabase } from './helpers/disposable-ops-db';
 
 let db: D1Database;
 let mf: Miniflare;
-// Set right before the commerce sub-scenario disposes `mf` early (see the
-// last `it` below) so `afterAll` never double-disposes it.
-let primaryDisposedEarly = false;
 
 beforeAll(async () => {
   ({ mf, db } = await createDisposableOpsDatabase('00000000-0000-0000-0000-000000000001'));
@@ -34,9 +31,7 @@ beforeAll(async () => {
   ]);
 }, 30_000);
 
-afterAll(async () => {
-  if (!primaryDisposedEarly) await mf?.dispose();
-});
+afterAll(async () => mf?.dispose());
 
 describe('disposable D1 customer lifecycle', () => {
   it('atomically accepts a matching invitation and denies replay', async () => {
@@ -148,17 +143,6 @@ describe('disposable D1 customer lifecycle', () => {
     // This scenario performs a dense sequence of D1 write batches. Keep it
     // isolated from the lifecycle fixture so Windows/Miniflare worker cleanup
     // cannot terminate the entire integration suite after a partial pass.
-    //
-    // This test does not read `db`/`mf` (only `commerceDb` below), and it is
-    // the last test in the file, so the primary Miniflare instance is disposed
-    // here rather than left running until `afterAll`. Under this repo's
-    // single-threaded integration pool (vitest.integration.config.ts: pool
-    // 'threads', maxWorkers 1), having two live workerd native processes at
-    // once inside one thread is what was hanging this test — dispose() on
-    // one of them never returned. Never running two at once removes the
-    // overlap instead of papering over a hang with a timeout.
-    await mf.dispose();
-    primaryDisposedEarly = true;
     const commerce = await createDisposableOpsDatabase('00000000-0000-0000-0000-000000000003');
     const commerceDb = commerce.db;
     try {
