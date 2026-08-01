@@ -57,6 +57,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('happy path: the correct key runs the sweep and returns a summary', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     const ctx = makeContext({ request: cronRequest(CRON_KEY), env: { DB: {}, CRON_KEY } });
     const res = await POST(ctx);
     const body = await readJson(res);
@@ -69,6 +71,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('business-metric alert: pings OPS_HEARTBEAT_URL when the count is healthy', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     const ctx = makeContext({
       request: cronRequest(CRON_KEY),
       env: { DB: {}, CRON_KEY, OPS_HEARTBEAT_URL: 'https://hc-ping.example.com/abc' },
@@ -78,6 +82,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('business-metric alert: does NOT ping when the approved-future count is zero', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     (campsDb.countApprovedFutureCamps as any).mockResolvedValue(0);
     const ctx = makeContext({
       request: cronRequest(CRON_KEY),
@@ -93,6 +99,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('returns failure when the URL stage throws instead of a false green', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     (campsDb.listCampsForUrlSweep as any).mockRejectedValueOnce(new Error('private D1 detail'));
     const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: {}, CRON_KEY } }));
     const body = await readJson(res);
@@ -103,6 +111,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('does not send a healthy heartbeat after a prior stage failure', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     (campsDb.archiveStaleCamps as any).mockRejectedValueOnce(new Error('archive failed'));
     const res = await POST(makeContext({
       request: cronRequest(CRON_KEY),
@@ -115,6 +125,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('reports a bounded stale backlog without pretending it was fully drained', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     (campsDb.archiveStaleCamps as any).mockResolvedValueOnce({ archived: 25, hasMore: true });
     const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: {}, CRON_KEY } }));
     const body = await readJson(res);
@@ -123,6 +135,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('runs bounded idempotency cleanup only when explicitly enabled', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     (publicIdempotency.deleteExpiredIdempotencyRecords as any).mockResolvedValueOnce(17);
     const res = await POST(makeContext({
       request: cronRequest(CRON_KEY), env: { DB: {}, CRON_KEY, IDEMPOTENCY_CLEANUP_ENABLED: 'true' },
@@ -133,6 +147,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('fails visibly and suppresses the healthy heartbeat when configured cleanup fails', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     (publicIdempotency.deleteExpiredIdempotencyRecords as any).mockRejectedValueOnce(new Error('private schema detail'));
     const res = await POST(makeContext({
       request: cronRequest(CRON_KEY),
@@ -146,6 +162,8 @@ describe('POST /api/cron/camps-sweep', () => {
   });
 
   it('marks heartbeat delivery failure without leaking the heartbeat URL', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     global.fetch = vi.fn().mockRejectedValue(new Error('https://hc-ping.example.com/private-token'));
     const res = await POST(makeContext({
       request: cronRequest(CRON_KEY),
