@@ -181,18 +181,23 @@ describe('POST /api/cron/camps-sweep', () => {
     expect(res.status).toBe(403);
   });
 
-  it('returns a zero-write hold during the August-November idle', async () => {
+  // The August-November calendar auto-freeze was removed 2026-08-01. An August
+  // date no longer holds anything on its own; only the operator switch does.
+  it('runs the sweep normally on an August date now that the calendar freeze is gone', async () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-08-01T13:00:00Z'));
-    const db = { prepare: vi.fn() };
-    const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: db, CRON_KEY } }));
+    const ctx = makeContext({ request: cronRequest(CRON_KEY), env: { DB: {}, CRON_KEY } });
+    const res = await POST(ctx);
+    const body = await readJson(res);
     expect(res.status).toBe(200);
-    expect(await readJson(res)).toEqual({ ok: true, held: true, code: 'maintenance_mode', writes: 0 });
-    expect(db.prepare).not.toHaveBeenCalled();
-    expect(campsDb.listCampsForUrlSweep).not.toHaveBeenCalled();
+    expect(body.ok).toBe(true);
+    expect(body.held).toBeUndefined();
+    expect(campsDb.listCampsForUrlSweep).toHaveBeenCalled();
   });
 
-  it('honors the operator kill switch outside the calendar idle', async () => {
+  it('still holds writes via the PCD_MAINTENANCE_MODE operator switch, even in August', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-08-01T13:00:00Z'));
     const db = { prepare: vi.fn() };
     const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: db, CRON_KEY, PCD_MAINTENANCE_MODE: 'true' } }));
     expect(await readJson(res)).toMatchObject({ held: true, writes: 0 });
