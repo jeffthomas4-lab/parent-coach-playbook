@@ -66,8 +66,13 @@ describe('camps-sweep scheduler', () => {
   // working PCD nightly through the season now, so an August or November
   // scheduled run must go through exactly like any other month.
   it('no longer holds sweep and ledger writes in August or November', async () => {
-    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
-      Response.json({ ok: true, approved_future_count: 12 }),
+    // mockImplementation, not mockResolvedValue: this test drives two scheduled
+    // runs, and fireCampsSweep reads response.text() on each one.
+    // mockResolvedValue hands both calls the same Response instance, and a body
+    // can only be read once, so the second run threw "Body is unusable: Body
+    // has already been read". Build a fresh Response per call instead.
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(
+      async () => Response.json({ ok: true, approved_future_count: 12 }),
     );
     const prepare = vi.fn().mockReturnValue({
       bind: () => ({ run: async () => ({ meta: { changes: 1 } }) }),
