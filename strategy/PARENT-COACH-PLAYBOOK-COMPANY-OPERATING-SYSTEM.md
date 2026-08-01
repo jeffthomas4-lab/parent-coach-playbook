@@ -588,14 +588,16 @@ those fields is decoration.
 - **Annual health:** legal, tax, insurance, contracts, privacy, accessibility,
   intellectual property, continuity, and strategic fit.
 
-### 11.2 Seasonal maintenance mode
+### 11.2 Seasonal maintenance mode (updated 2026-08-01)
 
-From August through November, Parent Coach Playbook yields founder attention to
-UPS football and Chain Reaction. Build work pauses or becomes report-only.
-Automated writes are disabled unless a separate year-round obligation and
-authorization exists. The company continues only the always-on obligations and
-urgent continuity checks. December begins with a quarterly close, not an
-automatic restart of every paused task.
+The automatic August-through-November pause is removed. Jeff is working
+Parent Coach Playbook nightly through UPS football and Chain Reaction season
+now, so build work, automated writes, and the rest of the company continue
+on their normal footing in-season. Maintenance mode is operator-controlled
+only: Jeff flips `PCD_MAINTENANCE_MODE` on when he wants a deliberate pause,
+and off when he wants writes running again. The always-on obligations
+(the S4 deletion watch and urgent continuity checks) run regardless of the
+toggle, and the toggle cannot suppress them.
 
 ### 11.3 Reliability standard
 
