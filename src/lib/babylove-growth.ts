@@ -382,7 +382,7 @@ async function acceptArticle(env: BabyLoveEnv, article: BabyLoveArticle, source:
   return { receipt, replay: Boolean(before) };
 }
 
-export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, context: ExecutionContext): Promise<Response> {
+export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, _context: ExecutionContext): Promise<Response> {
   if (request.method !== 'POST') return json({ ok: false, error: 'method_not_allowed' }, 405);
   if (!env.BABYLOVE_WEBHOOK_TOKEN || !env.PCD_OPS_DB) return json({ ok: false, error: 'integration_unavailable' }, 503);
   if (!(await secretsMatch(bearerCredential(request), env.BABYLOVE_WEBHOOK_TOKEN))) {
@@ -419,7 +419,11 @@ export async function handleBabyLoveWebhook(request: Request, env: BabyLoveEnv, 
   try {
     const accepted = await acceptArticle(env, article, 'webhook');
     if (accepted.receipt.status !== 'published') {
-      context.waitUntil(publishReceipt(env, accepted.receipt, article).catch(() => undefined));
+      try {
+        await publishReceipt(env, accepted.receipt, article);
+      } catch {
+        return json({ ok: false, error: 'publish_failed', retryable: true }, 503);
+      }
     }
     return json({ ok: true, accepted: true, replayed: accepted.replay });
   } catch {
