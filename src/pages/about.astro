@@ -8,8 +8,8 @@ import { serializeJsonLd } from '../lib/jsonld';
 const personJsonLd = personSchema();
 ---
 <BaseLayout
-  title="About"
-  description="Parent Coach Desk is sideline notes for the parent who coaches, drives, snack-packs, and supervises the group chat. Editorial process, sources, and how we write."
+  title="About Our Editorial Process"
+  description="Learn who created Parent Coach Desk, why the site exists, how articles are researched and reviewed, which sources we trust, and how corrections are handled."
 >
   {personJsonLd && (
     <script slot="head" type="application/ld+json" set:html={serializeJsonLd(personJsonLd)} />

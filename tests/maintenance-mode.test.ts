@@ -7,10 +7,10 @@ import {
 } from '../src/lib/maintenance-mode';
 
 describe('PCD maintenance mode', () => {
-  it('enforces the August-November calendar boundary even when config is false', () => {
+  it('stays active year-round unless the operator enables maintenance', () => {
     expect(pcdMaintenanceModeActive('false', new Date('2026-07-31T23:59:59Z'))).toBe(false);
-    expect(pcdMaintenanceModeActive('false', new Date('2026-08-01T00:00:00Z'))).toBe(true);
-    expect(pcdMaintenanceModeActive('false', new Date('2026-11-30T23:59:59Z'))).toBe(true);
+    expect(pcdMaintenanceModeActive('false', new Date('2026-08-01T00:00:00Z'))).toBe(false);
+    expect(pcdMaintenanceModeActive('false', new Date('2026-11-30T23:59:59Z'))).toBe(false);
     expect(pcdMaintenanceModeActive('false', new Date('2026-12-01T00:00:00Z'))).toBe(false);
   });
 
@@ -30,23 +30,22 @@ describe('maintenance-mode write-class exemption (S4 deletion opt-out bypass)', 
     expect(isMaintenanceExemptWriteClass('camps_sweep')).toBe(false);
   });
 
-  // (a) ordinary writes are held across the whole Aug 1 – Nov 30 window.
-  it('holds ordinary writes during the August 1 – November 30 freeze', () => {
-    expect(writeHeldDuringMaintenance('camps_sweep', 'false', new Date('2026-08-01T00:00:00Z'))).toBe(true);
-    expect(writeHeldDuringMaintenance('camps_sweep', 'false', insideWindow)).toBe(true);
-    expect(writeHeldDuringMaintenance('camps_sweep', 'false', new Date('2026-11-30T23:59:59Z'))).toBe(true);
+  // Ordinary writes remain active year-round when the operator switch is off.
+  it('does not hold ordinary writes based on the calendar', () => {
+    expect(writeHeldDuringMaintenance('camps_sweep', 'false', new Date('2026-08-01T00:00:00Z'))).toBe(false);
+    expect(writeHeldDuringMaintenance('camps_sweep', 'false', insideWindow)).toBe(false);
+    expect(writeHeldDuringMaintenance('camps_sweep', 'false', new Date('2026-11-30T23:59:59Z'))).toBe(false);
     // ...and are free again outside the window.
     expect(writeHeldDuringMaintenance('camps_sweep', 'false', outsideWindow)).toBe(false);
   });
 
-  // (b) the S4 path succeeds (is never held) inside the freeze window.
-  it('never holds the S4 deletion opt-out proposal inside the freeze window', () => {
+  it('never holds the S4 deletion opt-out proposal', () => {
     expect(writeHeldDuringMaintenance('deletion_opt_out_proposal', 'false', new Date('2026-08-01T00:00:00Z'))).toBe(false);
     expect(writeHeldDuringMaintenance('deletion_opt_out_proposal', 'false', insideWindow)).toBe(false);
     expect(writeHeldDuringMaintenance('deletion_opt_out_proposal', 'false', new Date('2026-11-30T23:59:59Z'))).toBe(false);
   });
 
-  // (c) the operator override cannot suppress the S4 path, though it still holds ordinary writes.
+  // The operator override cannot suppress the S4 path, though it still holds ordinary writes.
   it('does not let the operator override suppress the S4 path', () => {
     expect(writeHeldDuringMaintenance('deletion_opt_out_proposal', 'true', outsideWindow)).toBe(false);
     expect(writeHeldDuringMaintenance('deletion_opt_out_proposal', 'on', insideWindow)).toBe(false);

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import Illo from '../../components/Illo.astro';
 import { TEAM_PARENT_TOPICS, TEAM_PARENT_CATEGORIES } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle } from '../../lib/title';
@@ -29,7 +30,7 @@ const topicData = TEAM_PARENT_TOPICS.map(topic => {
 const recentArticles = teamParentArticles.slice(0, 6);
 ---
 <BaseLayout
-  title="Team Parent"
+  title="Team Parent Resources and Tools"
   description="Practical resources for being the team parent. Templates, scripts, communication norms, fundraising, fair lineups, snack signups that actually fill."
 >
   <!-- Hero -->
@@ -43,13 +44,12 @@ const recentArticles = teamParentArticles.slice(0, 6);
         Articles, templates, and scripts for managing logistics, communication, money, photos, conflict, and the operational stuff that makes a season work.
       </p>
       <figure class="mt-10 max-w-4xl">
-        <img
-          src="/illustrations/pillar-team-parent.webp"
-          alt="A team-parent binder open on a wooden table, surrounded by snack-rotation post-its, a jersey-numbers list, three sharpies, an April calendar, and a mug. Editorial flat-lay."
+        <Illo
+          base="pillar-team-parent"
+          alt="Open team-parent binder with a snack schedule, jersey list, calendar, and markers."
+          sizes="(min-width: 1024px) 896px, 100vw"
           class="w-full border border-bone"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
+          eager
         />
       </figure>
     </div>
