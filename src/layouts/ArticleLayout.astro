@@ -5,6 +5,7 @@ import RelatedArticles from '../components/RelatedArticles.astro';
 import BuyingGuideDisclosure from '../components/BuyingGuideDisclosure.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import Illo from '../components/Illo.astro';
 import { PILLARS, SPORTS, AGE_BANDS, SITE, SCHEMA_IDS, EDITORIAL, authorEntity, themeFor } from '../data/site';
 import { isLive } from '../lib/publishFilter';
 import { renderTitle } from '../lib/title';
@@ -20,6 +21,11 @@ const { data, id: slug } = article;
 // placed before the first affiliate link. Computed from the raw body so it
 // only renders on articles that actually contain /go/ redirect links.
 const hasAffiliateLinks = (article.body ?? '').includes('/go/');
+// Every article hero lives at /illustrations/<slug>.webp (812/812 as of
+// 2026-07-31), so it always has -480/-960 variants on disk. Derive the Illo
+// `base` from the path instead of hardcoding it, and keep a plain-<img>
+// fallback for the one-off case where a hero ever points somewhere else.
+const heroIllustrationBase = data.hero?.match(/^\/illustrations\/(.+)\.webp$/)?.[1] ?? null;
 const pillar = PILLARS[data.phase];
 const sportLabel = SPORTS.find(s => s.slug === data.sport)?.label;
 const ageLabel = AGE_BANDS.find(a => a.slug === data.age)?.label;
@@ -280,16 +286,26 @@ const dateOpts = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UT
 
         {data.hero && (
           <div class="mt-5 md:mt-10 rounded-card overflow-hidden">
-            <img
-              src={data.hero}
-              alt={data.heroAlt ?? data.title}
-              class="w-full object-cover max-h-[220px] md:max-h-[480px]"
-              width="1536"
-              height="1024"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
+            {heroIllustrationBase ? (
+              <Illo
+                base={heroIllustrationBase}
+                alt={data.heroAlt ?? data.title}
+                class="w-full object-cover max-h-[220px] md:max-h-[480px]"
+                sizes="(min-width: 768px) 700px, 100vw"
+                eager={true}
+              />
+            ) : (
+              <img
+                src={data.hero}
+                alt={data.heroAlt ?? data.title}
+                class="w-full object-cover max-h-[220px] md:max-h-[480px]"
+                width="1536"
+                height="1024"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            )}
           </div>
         )}
 

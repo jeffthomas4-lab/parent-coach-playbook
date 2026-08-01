@@ -4,6 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import ThreeDrivesNav from '../components/ThreeDrivesNav.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import Illo from '../components/Illo.astro';
 import { PILLARS, SPORTS, AGE_BANDS, type PillarSlug } from '../data/site';
 import { isLive, freshnessDate } from '../lib/publishFilter';
 
@@ -51,25 +52,21 @@ const agesUsed = [...new Set(articles.map(a => a.data.age).filter(Boolean))] as 
         </p>
         {pillar === 'drive-there' && (
           <figure class="mt-10">
-            <img
-              src="/illustrations/pillar-drive-there.webp"
+            <Illo
+              base="pillar-drive-there"
               alt="Interior of a car at dawn — a parent's hands on the wheel, sport bag and water bottle visible, sunrise through the windshield."
               class="w-full max-w-2xl rounded-card border border-line"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
+              eager={true}
             />
           </figure>
         )}
         {pillar === 'drive-home' && (
           <figure class="mt-10">
-            <img
-              src="/illustrations/pillar-drive-home.webp"
+            <Illo
+              base="pillar-drive-home"
               alt="Same car interior at dusk — kid asleep in back seat with a helmet in their lap, warm streetlight glow, parent visible only as a shoulder."
               class="w-full max-w-2xl rounded-card border border-line"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
+              eager={true}
             />
           </figure>
         )}

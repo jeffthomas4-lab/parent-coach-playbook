@@ -448,6 +448,19 @@ Each row is one working session. Sonnet writes the code, Opus does the judgment.
 
 Sessions 1 through 5 are the MVP. Sessions 6 through 10 are the rest.
 
+### Build status
+
+| Session | Agent | Scheduled task | State |
+|---|---|---|---|
+| 6 | Link Earning (**Lonnie**) | `pcd-link-earning`, Wed 7:15 AM | **Built 2026-07-31.** Needs no credentials. |
+| 8 | Directory Index Policy (**Dex**) | `pcd-directory-index-policy`, day 4 of month 7:45 AM | **Built 2026-07-31.** Needs no credentials. |
+| 1, 4, 5 | GSC pull, Nora on API, Index Economics | not yet created | **Blocked** on the Google Cloud service account. |
+| 2, 3, 7, 9, 10 | crawl script, migrations, run logging, `/web:seo`, portability | not yet created | Sequenced after the above. |
+
+Both built tasks reference `scripts/seo/pull-gsc.mjs` conditionally ("if it exists by the time you run") and fall back to Claude in Chrome against the GSC dashboard, so neither breaks while the service account is pending. Both commit through `scripts/safe-commit.sh` rather than plain git, per the documented mount problem in `pcd-review-publish`.
+
+Dex fires first, on August 4. His first job is closing the `/adaptive/` question that has been open since July 28.
+
 ---
 
 ## 8. Thirty-day rollout
