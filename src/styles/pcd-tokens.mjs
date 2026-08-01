@@ -47,6 +47,13 @@ export const pcdTokens = {
     // comment in global.css. 3.49:1 on white (WCAG 1.4.11 non-text wants 3:1
     // when a rule is the sole carrier of a boundary).
     rule: '#7C8B99',
+    // Border on real form controls (input/select/textarea). Same 3.49:1
+    // hex as rule, on purpose — same job, a boundary the reader needs to
+    // find the control, not decoration. Its own token per STANDARD-AUDIT
+    // #53: not bone (#C9D2DA, 1.53:1, ~4000 decorative usages that don't
+    // need 3:1) and not muted (a text-color token an earlier pass borrowed
+    // as a stopgap on a few forms).
+    inputBorder: '#7C8B99',
     // silver (#8A9BA0) is 2.89:1 on white — DECORATIVE ONLY (fills, borders,
     // glyphs). Never use it for body or label text; use silverDeep instead.
     silver: '#8A9BA0',
@@ -102,6 +109,7 @@ export function tailwindColorsFrom(tokens) {
     navy: tokens.colors.navy,
     muted: tokens.colors.muted,
     line: tokens.colors.line,
+    input: tokens.colors.inputBorder,
     silver: tokens.colors.silver,
     'silver-deep': tokens.colors.silverDeep,
   };
