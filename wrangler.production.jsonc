@@ -3,21 +3,25 @@
   // Keep wrangler.jsonc staging-only; production commands must name this file.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "parent-coach-desk",
-  "compatibility_date": "2026-04-30",
+  "compatibility_date": "2026-08-01",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
   },
   "secrets": {
-    "required": ["AGENT_RUNS_TOKEN", "BULK_IMPORT_TOKEN", "CRON_KEY", "GITHUB_TOKEN"]
+    "required": ["AGENT_RUNS_TOKEN", "BULK_IMPORT_TOKEN", "CRON_KEY", "GITHUB_TOKEN", "BABYLOVE_API_KEY", "BABYLOVE_WEBHOOK_TOKEN"]
+  },
+
+  "triggers": {
+    "crons": ["17 */6 * * *"]
   },
 
   "main": "./src/worker.ts",
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/admin", "/admin/*", "/api/admin", "/api/admin/*", "/sitemap-camps.xml"]
+    "run_worker_first": ["/admin", "/admin/*", "/api/admin", "/api/admin/*", "/api/integrations/babylovegrowth/articles", "/sitemap-camps.xml"]
   },
 
   "d1_databases": [
@@ -94,6 +98,7 @@
     "PCD_CUSTOMER_FOUNDATION_ENABLED": "false",
     "PCD_COMMERCE_TEST_MODE_ENABLED": "false",
     "EDITORIAL_LIFECYCLE_ENABLED": "false",
-    "PROOF_SUBMIT_ENABLED": "false"
+    "PROOF_SUBMIT_ENABLED": "false",
+    "BABYLOVE_AUTOPUBLISH_ENABLED": "true"
   }
 }

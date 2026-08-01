@@ -38,10 +38,17 @@ describe('deployment authority', () => {
       readFile('wrangler.production.jsonc', 'utf8'),
       readFile('wrangler.jsonc', 'utf8'),
     ]);
-    const expected = ['AGENT_RUNS_TOKEN', 'BULK_IMPORT_TOKEN', 'CRON_KEY', 'GITHUB_TOKEN'];
+    const expected = [
+      'AGENT_RUNS_TOKEN',
+      'BABYLOVE_API_KEY',
+      'BABYLOVE_WEBHOOK_TOKEN',
+      'BULK_IMPORT_TOKEN',
+      'CRON_KEY',
+      'GITHUB_TOKEN',
+    ];
     expect(production).toContain('"secrets"');
     for (const name of expected) expect(production).toContain(`"${name}"`);
     expect(staging).not.toContain('"secrets"');
-    expect(production).not.toMatch(/(?:AGENT_RUNS_TOKEN|BULK_IMPORT_TOKEN|CRON_KEY|GITHUB_TOKEN)"\s*:\s*"/);
+    expect(production).not.toMatch(/(?:AGENT_RUNS_TOKEN|BABYLOVE_API_KEY|BABYLOVE_WEBHOOK_TOKEN|BULK_IMPORT_TOKEN|CRON_KEY|GITHUB_TOKEN)"\s*:\s*"/);
   });
 });

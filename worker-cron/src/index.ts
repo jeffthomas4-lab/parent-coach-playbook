@@ -13,18 +13,15 @@ export interface Env {
   // Canonical Forge Command runtime database. A scheduled mutation is not
   // allowed to run unless its attempt can first be recorded durably.
   FORGE_DB?: D1Database;
-  // Operator kill switch. The August-November calendar boundary also applies
-  // even if this variable is accidentally left false.
+  // Operator kill switch. There is no automatic seasonal shutdown.
   PCD_MAINTENANCE_MODE?: string;
 }
 
 const WORKFLOW_ID = 'pcd-camps-sweep';
 
-export function maintenanceModeActive(env: Pick<Env, 'PCD_MAINTENANCE_MODE'>, at: number): boolean {
+export function maintenanceModeActive(env: Pick<Env, 'PCD_MAINTENANCE_MODE'>, _at: number): boolean {
   const explicit = env.PCD_MAINTENANCE_MODE?.trim().toLowerCase();
-  if (explicit === 'true' || explicit === '1' || explicit === 'on') return true;
-  const month = new Date(at).getUTCMonth() + 1;
-  return month >= 8 && month <= 11;
+  return explicit === 'true' || explicit === '1' || explicit === 'on';
 }
 
 type SweepMetrics = {

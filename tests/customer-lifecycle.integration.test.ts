@@ -23,7 +23,7 @@ async function createDisposableOpsDatabase(): Promise<{ mf: Miniflare; db: D1Dat
   const directory = new URL('../migrations-pcd-ops/', import.meta.url);
   const migrations = (await readdir(directory)).filter((name) => name.endsWith('.sql')).sort();
   for (const migration of migrations) {
-    const sql = (await readFile(new URL(migration, directory), 'utf8')).replace(/^--.*$/gm, '');
+    const sql = (await readFile(new URL(migration, directory), 'utf8')).replace(/^\s*--.*$/gm, '');
     for (const statement of sql.split(';').map((value) => value.trim()).filter(Boolean)) {
       await isolatedDb.prepare(statement).run();
     }

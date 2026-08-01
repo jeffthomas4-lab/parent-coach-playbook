@@ -123,6 +123,12 @@ const articles = defineCollection({
       publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
       draft: z.boolean().default(false),
+      externalSource: z.object({
+        provider: z.literal('babylovegrowth'),
+        articleId: z.string().min(1).max(80),
+        payloadSha256: z.string().regex(/^[a-f0-9]{64}$/),
+        importedAt: z.coerce.date(),
+      }).optional(),
       ...faqField,
       ...editorialField,
     }).superRefine((data, ctx) => {

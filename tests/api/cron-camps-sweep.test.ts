@@ -163,18 +163,17 @@ describe('POST /api/cron/camps-sweep', () => {
     expect(res.status).toBe(403);
   });
 
-  it('returns a zero-write hold during the August-November idle', async () => {
+  it('keeps sweeping during the former August-November idle', async () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-08-01T13:00:00Z'));
     const db = { prepare: vi.fn() };
     const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: db, CRON_KEY } }));
     expect(res.status).toBe(200);
-    expect(await readJson(res)).toEqual({ ok: true, held: true, code: 'maintenance_mode', writes: 0 });
-    expect(db.prepare).not.toHaveBeenCalled();
-    expect(campsDb.listCampsForUrlSweep).not.toHaveBeenCalled();
+    expect(await readJson(res)).toMatchObject({ ok: true, approved_future_count: 10 });
+    expect(campsDb.listCampsForUrlSweep).toHaveBeenCalled();
   });
 
-  it('honors the operator kill switch outside the calendar idle', async () => {
+  it('honors the explicit operator kill switch', async () => {
     const db = { prepare: vi.fn() };
     const res = await POST(makeContext({ request: cronRequest(CRON_KEY), env: { DB: db, CRON_KEY, PCD_MAINTENANCE_MODE: 'true' } }));
     expect(await readJson(res)).toMatchObject({ held: true, writes: 0 });

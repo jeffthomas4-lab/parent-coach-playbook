@@ -57,22 +57,15 @@ describe('camps-sweep scheduler', () => {
     await expect(response.json()).resolves.toMatchObject({ ok: true, check: 'readiness', maintenance_mode: expect.any(Boolean) });
   });
 
-  it('holds all sweep and ledger writes from August through November', async () => {
-    const fetchSpy = vi.spyOn(globalThis, 'fetch');
-    const prepare = vi.fn();
-    const env = makeEnv({ FORGE_DB: { prepare } as unknown as D1Database });
-
-    await runScheduledSweep(env, Date.UTC(2026, 7, 1, 13));
-    await runScheduledSweep(env, Date.UTC(2026, 10, 30, 13));
-
-    expect(fetchSpy).not.toHaveBeenCalled();
-    expect(prepare).not.toHaveBeenCalled();
+  it('keeps the scheduler active during August through November', () => {
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 7, 1, 13))).toBe(false);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 10, 30, 13))).toBe(false);
   });
 
-  it('supports an operator maintenance switch outside the calendar idle', async () => {
+  it('supports the operator maintenance switch without a calendar idle', async () => {
     expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'true' }, Date.UTC(2026, 0, 1))).toBe(true);
     expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 6, 31))).toBe(false);
-    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 7, 1))).toBe(true);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 7, 1))).toBe(false);
   });
 
   it('fails closed before the sweep when the durable ledger is unavailable', async () => {
