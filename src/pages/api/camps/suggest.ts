@@ -13,6 +13,7 @@ import { enforcePublicRequestBoundary, firstOversizedField, normalizeExternalHtt
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
 import { executeIdempotentWrite, sha256Hex, suppliedIdempotencyKey } from '../../../lib/public-idempotency';
 import { enforcePublicTurnstile } from '../../../lib/turnstile';
+import { createRequestLogger, type RequestLogger } from '../../../lib/log';
 
 export const prerender = false;
 
@@ -39,7 +40,7 @@ const ok = (body: unknown, status = 200, headers?: Record<string, string>) =>
 
 const fail = (message: string, status = 400) => ok({ ok: false, error: message }, status);
 
-async function readPayload(req: Request): Promise<SuggestPayload> {
+async function readPayload(req: Request, logger: RequestLogger): Promise<SuggestPayload> {
   const ct = (req.headers.get('content-type') ?? '').toLowerCase();
   if (ct.includes('application/json')) {
     return (await req.json()) as SuggestPayload;
@@ -54,19 +55,21 @@ async function readPayload(req: Request): Promise<SuggestPayload> {
   }
   try {
     return (await req.json()) as SuggestPayload;
-  } catch {
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'treating_as_empty_payload' });
     return {};
   }
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'camps/suggest', userId: null });
   const env = cfEnv as { DB: D1Database; PUBLIC_SUBMISSION_RATE_LIMITER?: PublicRateLimiter; TURNSTILE_SECRET_KEY?: string } | undefined;
   if (!env?.DB) return fail('database not available', 500);
 
   const boundary = await enforcePublicRequestBoundary(request, 12_288);
   if (boundary) return boundary;
 
-  const data = await readPayload(request);
+  const data = await readPayload(request, logger);
 
   if (data.website && data.website.trim().length > 0) {
     return ok({ ok: true });

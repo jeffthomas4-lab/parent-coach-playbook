@@ -18,7 +18,10 @@ const makeEnv = (overrides: Partial<Env> = {}): Env => ({
   ...overrides,
 });
 
-afterEach(() => vi.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.useRealTimers();
+});
 
 describe('camps-sweep scheduler', () => {
   it('exposes a non-mutating liveness response', async () => {
@@ -34,6 +37,8 @@ describe('camps-sweep scheduler', () => {
   });
 
   it('reports readiness without exposing which secret or variable is missing', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-07-15T12:00:00Z')); // July: outside the Aug-Nov freeze window
     const response = await worker.fetch(
       new Request('https://scheduler.example/ready'),
       makeEnv({ CRON_KEY: undefined }),
@@ -57,22 +62,46 @@ describe('camps-sweep scheduler', () => {
     await expect(response.json()).resolves.toMatchObject({ ok: true, check: 'readiness', maintenance_mode: expect.any(Boolean) });
   });
 
-  it('holds all sweep and ledger writes from August through November', async () => {
-    const fetchSpy = vi.spyOn(globalThis, 'fetch');
-    const prepare = vi.fn();
+  // The August-November calendar auto-freeze was removed 2026-08-01. Jeff is
+  // working PCD nightly through the season now, so an August or November
+  // scheduled run must go through exactly like any other month.
+  it('no longer holds sweep and ledger writes in August or November', async () => {
+    // mockImplementation, not mockResolvedValue: this test drives two scheduled
+    // runs, and fireCampsSweep reads response.text() on each one.
+    // mockResolvedValue hands both calls the same Response instance, and a body
+    // can only be read once, so the second run threw "Body is unusable: Body
+    // has already been read". Build a fresh Response per call instead.
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(
+      async () => Response.json({ ok: true, approved_future_count: 12 }),
+    );
+    const prepare = vi.fn().mockReturnValue({
+      bind: () => ({ run: async () => ({ meta: { changes: 1 } }) }),
+    });
     const env = makeEnv({ FORGE_DB: { prepare } as unknown as D1Database });
 
     await runScheduledSweep(env, Date.UTC(2026, 7, 1, 13));
     await runScheduledSweep(env, Date.UTC(2026, 10, 30, 13));
 
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(prepare).toHaveBeenCalled();
+  });
+
+  it('still holds writes via the operator switch, regardless of month', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch');
+    const prepare = vi.fn();
+    const env = makeEnv({ FORGE_DB: { prepare } as unknown as D1Database, PCD_MAINTENANCE_MODE: 'true' });
+
+    await runScheduledSweep(env, Date.UTC(2026, 7, 1, 13)); // August
+    await runScheduledSweep(env, Date.UTC(2026, 0, 1, 13)); // January
+
     expect(fetchSpy).not.toHaveBeenCalled();
     expect(prepare).not.toHaveBeenCalled();
   });
 
-  it('supports an operator maintenance switch outside the calendar idle', async () => {
-    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'true' }, Date.UTC(2026, 0, 1))).toBe(true);
-    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 6, 31))).toBe(false);
-    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' }, Date.UTC(2026, 7, 1))).toBe(true);
+  it('supports an operator maintenance switch, with no calendar boundary', async () => {
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'true' })).toBe(true);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: 'false' })).toBe(false);
+    expect(maintenanceModeActive({ PCD_MAINTENANCE_MODE: undefined })).toBe(false);
   });
 
   it('fails closed before the sweep when the durable ledger is unavailable', async () => {

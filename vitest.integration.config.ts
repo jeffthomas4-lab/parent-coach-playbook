@@ -13,6 +13,14 @@ export default defineConfig({
     pool: 'threads',
     maxWorkers: 1,
     fileParallelism: false,
+    // Explicit, generous bounds so a hung hook or test (e.g. a workerd
+    // process that never returns from dispose()) surfaces as a real timeout
+    // failure instead of blocking the run indefinitely with no signal. The
+    // vitest defaults (5s test / 10s hook) are too tight for this suite's own
+    // per-test overrides (up to 30s); these are the outer bound, not a
+    // replacement for those overrides.
+    testTimeout: 30_000,
+    hookTimeout: 30_000,
   },
   resolve: {
     alias: {

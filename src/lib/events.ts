@@ -15,6 +15,8 @@
 // a caller's real work (publishing a draft, flipping a status) just because
 // the event log isn't wired up yet in a given environment.
 
+import { log } from './log';
+
 const MAX_PAYLOAD_LEN = 8000;
 const EVENT_TYPE_RE = /^pcd\.[a-z0-9_]+\.[a-z0-9_]+$/;
 
@@ -111,13 +113,7 @@ export async function emitEventSafely(
     await emitEvent(env.PCD_OPS_DB, input);
     return true;
   } catch (err) {
-    console.error(
-      JSON.stringify({
-        event: 'pcd_event_emit_failed',
-        event_type: input.eventType,
-        code: err instanceof Error ? err.message : 'unknown_error',
-      }),
-    );
+    log('error', { requestId: crypto.randomUUID(), route: 'lib/events', action: 'pcd_event_emit_failed', eventType: input.eventType, error: err });
     return false;
   }
 }

@@ -30,7 +30,7 @@ const expired = (value: string) => Date.parse(value) <= Date.now();
         <pre class="mt-3 whitespace-pre-wrap font-body border border-bone p-3 bg-white">{draft.body_text}</pre>
         <p class="font-mono text-xs break-all mt-3 text-ink-soft">SHA-256: {draft.content_hash}</p>
         {!expired(draft.expires_at) && <form method="POST" action={`/api/admin/trust/${draft.case_id}/drafts/${draft.id}/approve`} class="grid gap-2 mt-4 max-w-xl">
-          <label class="grid gap-1"><span class="text-sm">Approval note</span><textarea name="note" minlength="10" maxlength="1000" rows="2" required class="px-2 py-1 border border-bone bg-paper" placeholder="Evidence reviewed and reason this response is appropriate."></textarea></label>
+          <label class="grid gap-1"><span class="text-sm">Approval note</span><textarea name="note" minlength="10" maxlength="1000" rows="2" required class="px-2 py-1 border border-input bg-paper" placeholder="Evidence reviewed and reason this response is appropriate."></textarea></label>
           <label class="flex gap-2 items-start text-sm"><input type="checkbox" name="confirm_payload" value="yes" required class="mt-1" /><span>I reviewed the recipient, subject, body, hash, and expiry. I understand approval does not send.</span></label>
           <button class="btn" type="submit">Approve immutable draft</button>
         </form>}

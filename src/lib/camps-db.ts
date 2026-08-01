@@ -31,6 +31,7 @@
 //   Camp.gallery_keys     = organizations.gallery_keys
 
 import type { D1Database } from '@cloudflare/workers-types';
+import { log } from './log';
 
 export type CampStatus = 'pending' | 'approved' | 'rejected';
 export type TrustLevel = 'new' | 'trusted' | 'banned';
@@ -109,8 +110,24 @@ export interface Camp {
   day_or_overnight: DayOrOvernight;
   skill_level: SkillLevel;
   spots_status: SpotsStatus;
+  /** COALESCE(programs.contact_email, organizations.email) — the resolved value the public page shows. */
   contact_email: string | null;
+  /** COALESCE(programs.contact_phone, organizations.phone) — the resolved value the public page shows. */
   contact_phone: string | null;
+  // The two sides of that COALESCE, exposed separately so the admin edit form
+  // can show which layer a value actually came from. Without these, the form
+  // rendered the coalesced value into an input named `contact_email`, so saving
+  // an untouched form silently copied the ORG's email down into the PROGRAM's
+  // override column — quietly converting a shared org contact into a per-program
+  // one and making the org value impossible to correct from the UI.
+  /** programs.contact_email, raw. Null when this program has no override. */
+  program_contact_email: string | null;
+  /** programs.contact_phone, raw. Null when this program has no override. */
+  program_contact_phone: string | null;
+  /** organizations.email, raw. The org-wide fallback channel. */
+  org_email: string | null;
+  /** organizations.phone, raw. The org-wide fallback channel. */
+  org_phone: string | null;
   website_url: string | null;
   lunch_included: 0 | 1;
   aftercare_available: 0 | 1;
@@ -279,6 +296,12 @@ const CAMP_SELECT = `
     END                                                   AS spots_status,
     COALESCE(p.contact_email,  o.email)                   AS contact_email,
     COALESCE(p.contact_phone,  o.phone)                   AS contact_phone,
+    -- Both sides of the COALESCE above, unresolved, so the admin form can edit
+    -- the program override and the org-wide channel as the separate things they are.
+    p.contact_email                                       AS program_contact_email,
+    p.contact_phone                                       AS program_contact_phone,
+    o.email                                               AS org_email,
+    o.phone                                               AS org_phone,
     o.website_url,
     COALESCE(p.lunch_included,      0)                    AS lunch_included,
     COALESCE(p.aftercare_available, 0)                    AS aftercare_available,
@@ -684,16 +707,51 @@ export async function listFeaturedCamps(db: D1Database): Promise<Camp[]> {
   return result.results ?? [];
 }
 
-export async function listApprovedCamps(db: D1Database): Promise<Camp[]> {
+// Hard ceiling on a single listApprovedCamps call. Before 2026-07-31 this
+// query had no LIMIT at all — it returned every approved future camp, and
+// the /camps/ page serialized the whole result into the page (both as
+// pre-rendered card HTML and as the client-side campsLite JSON). That is
+// what let the directory grow into an 84,749px mobile page (Pillar 14 open
+// item #74). The cap below does not fix the page by itself — camps/index.astro
+// also stopped rendering every row as a DOM card — but it closes the actual
+// root cause: the query is now bounded no matter how large the directory
+// grows.
+//
+// 311 approved camps as of 2026-07-31 (verified live). 1000 leaves about 3x
+// headroom, comfortable for a while but not infinite on purpose. If a call
+// ever comes back at exactly the cap, that is the signal (see the
+// console.error below) that real pagination is due, not a reason to raise
+// this number again.
+export const APPROVED_CAMPS_HARD_CAP = 1000;
+
+export async function listApprovedCamps(db: D1Database, limit: number = APPROVED_CAMPS_HARD_CAP): Promise<Camp[]> {
   const result = await db
     .prepare(
       `${CAMP_SELECT}
        WHERE p.pcd_status = 'approved' AND p.session_end_date >= ?
-       ORDER BY p.session_start_date ASC`,
+       ORDER BY p.session_start_date ASC
+       LIMIT ?`,
     )
-    .bind(todayDateISO())
+    .bind(todayDateISO(), limit)
     .all<Camp>();
-  return result.results ?? [];
+  const rows = result.results ?? [];
+  if (rows.length >= limit) {
+    // A silent truncation here would make real approved camps invisible
+    // with nobody noticing. Log loud instead so an operator sees it before
+    // a parent does. Structured (Pillar 8's src/lib/log.ts), not
+    // console.error directly — this file has no Request to bind a
+    // requestId to, so it generates one the same way lib/events.ts and
+    // other non-request callers of log() do (QA fix, 2026-07-31: this was
+    // a bare console.error until now).
+    log('error', {
+      requestId: crypto.randomUUID(),
+      route: 'lib/camps-db',
+      action: 'approved_camps_cap_hit',
+      cap: limit,
+      rowCount: rows.length,
+    });
+  }
+  return rows;
 }
 
 export async function listPendingCamps(db: D1Database): Promise<Camp[]> {
@@ -996,13 +1054,14 @@ export interface CampEditFields {
   contact_phone?: string | null;
   // Organization-level contact, written to organizations.email/phone. These are
   // the fields the public read path falls back to via
-  // COALESCE(p.contact_email, o.email). Before this existed, an admin editing a
+  // COALESCE(p.contact_email, o.email). Before these existed, an admin editing a
   // camp could only ever write the program-level override, so organizations.email
   // and organizations.phone were set at first insert and never corrected again --
   // the org-verification pass was silently discarding its own contact findings.
   //
   // Both are general org channels, never a named person. Named contacts (name,
   // title, direct line) belong in org_contacts in PCD_OPS_DB per ADR-046.
+  // See src/lib/org-contacts.ts and CONTACT-DATA-MAP.md.
   org_email?: string | null;
   org_phone?: string | null;
   website_url?: string | null;

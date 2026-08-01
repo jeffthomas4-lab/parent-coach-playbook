@@ -4,9 +4,14 @@ import { pathToFileURL } from "node:url";
 
 const ARTIFACT = /\.(?:md|docx|xlsx|csv|txt)$/i;
 
+// Keys starting with "_" are registry metadata (e.g. "_descriptions"), not
+// file/directory categories, and are ignored by every check below.
+const isMetaKey = (key) => key.startsWith("_");
+const categoryEntries = (registry) => Object.entries(registry).filter(([key]) => !isMetaKey(key));
+
 export function validateRootRegistry(registry, trackedFiles) {
   const errors = [];
-  const entries = Object.entries(registry).flatMap(([category, files]) =>
+  const entries = categoryEntries(registry).flatMap(([category, files]) =>
     files.map((file) => ({ category, file })),
   );
   const counts = new Map();
@@ -29,14 +34,14 @@ export function validateRootRegistry(registry, trackedFiles) {
     errors,
     artifactCount: actual.length,
     categoryCounts: Object.fromEntries(
-      Object.entries(registry).map(([category, files]) => [category, files.length]),
+      categoryEntries(registry).map(([category, files]) => [category, files.length]),
     ),
   };
 }
 
 export function validateDirectoryRegistry(registry, trackedFiles) {
   const errors = [];
-  const entries = Object.entries(registry).flatMap(([category, directories]) =>
+  const entries = categoryEntries(registry).flatMap(([category, directories]) =>
     directories.map((directory) => ({ category, directory })),
   );
   const counts = new Map();
@@ -55,7 +60,7 @@ export function validateDirectoryRegistry(registry, trackedFiles) {
   return {
     errors,
     directoryCount: actual.length,
-    categoryCounts: Object.fromEntries(Object.entries(registry).map(([category, directories]) => [category, directories.length])),
+    categoryCounts: Object.fromEntries(categoryEntries(registry).map(([category, directories]) => [category, directories.length])),
   };
 }
 

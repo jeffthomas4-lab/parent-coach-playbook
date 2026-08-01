@@ -245,15 +245,15 @@ The PCD scheduled load is front-loaded onto Monday and spread thin across the re
 - **Monthly:** seasonal content (day 1), affiliate reconcile (day 2)
 - **Quarterly:** freshness audit (day 5)
 
-Monday thinned when the two GSC tasks were consolidated (Open Item 2, resolved 2026-07-13): two marketing and affiliate reports now, not three. The daily row grew instead, and that is the right trade. The deletion watch is the only thing on this list with a legal clock attached and it is the only one that keeps this shape from August through November.
+Monday thinned when the two GSC tasks were consolidated (Open Item 2, resolved 2026-07-13): two marketing and affiliate reports now, not three. The daily row grew instead, and that is the right trade. The deletion watch is the only thing on this list with a legal clock attached, and it is the only one that keeps this shape regardless of maintenance mode.
 
-## 3.4 Maintenance mode: August through November
+## 3.4 Maintenance mode: operator-controlled (updated 2026-08-01)
 
-PCD idles during football season. The live site is Cloudflare-hosted and needs no attention to keep serving. The rule is simple: content, marketing, camp lead-gen, and the STANDARD-AUDIT fixes all hold until December.
+The automatic August-through-November idle is removed. Jeff is working PCD nightly through football season now, so the assumption behind the old freeze, that the founder disappears for four months, no longer holds. The live site is Cloudflare-hosted and needs no attention to keep serving either way.
 
-During the idle every PCD scheduled task runs maintenance-only: it pauses or degrades to report-only, with no writes and no active build work. That includes the editorial pipeline, the Friday Letter, seasonal planning, the SEO fix work, the camp discovery build-out, and S7's autonomous camp writes, which stop for the season (Jeff's call, 2026-07-13, resolving Open Item 5).
+Maintenance mode now runs on the `PCD_MAINTENANCE_MODE` toggle only. When Jeff turns it on, every PCD scheduled task pauses or degrades to report-only, with no writes and no active build work. That includes the editorial pipeline, the Friday Letter, seasonal planning, the SEO fix work, the camp discovery build-out, and S7's autonomous camp writes. When the toggle is off, all of that runs normally, in any month.
 
-What does not pause: the data-deletion watch (S4), because its 30-day SLA runs year-round. What Barnabus escalates as genuinely urgent: a lapsed domain, a failed Cloudflare or Kit payment, or a deletion request going unanswered. Everything else holds until the December quarterly close.
+What never pauses, toggle on or off: the data-deletion watch (S4), because its 30-day SLA runs year-round. What Barnabus escalates as genuinely urgent: a lapsed domain, a failed Cloudflare or Kit payment, or a deletion request going unanswered. There is no more calendar-driven quarterly close on this; a maintenance window ends whenever Jeff turns the toggle back off.
 
 ---
 
@@ -463,11 +463,13 @@ The working set stays capped at about eight portfolio-wide, and PCD's seven do n
 
 # 5. Maturity roadmap
 
-The order follows one rule from the binding: traffic and revenue-moving work ranks ahead of internal elegance, and everything respects the August-through-November idle. The audit's own 30/60/90 plan is the distribution spine; the internal wiring waits behind it.
+**Updated 2026-08-01:** this roadmap was written against a hard August-through-November idle that no longer exists (see section 3.4). Jeff is working PCD nightly through the season, so the phases below run on their merits, not on a calendar gate. The August/idle language in the phase descriptions is left below as the historical record of why they were sequenced this way; treat "idle" as "maintenance mode off" going forward.
 
-**Now to fall camp (July, before the idle):** distribution first. Run the audit's day-0-to-30 fixes as sessions: the mojibake fix, the www-to-bare 301, the dead-brand link purge, the camp-page 301 policy, and the author reveal and first outreach push. These are the only work that moves causes 1 and 2 from the audit, and they are low effort. One internal build joins them, and only one. The S4 data-deletion and opt-out monitor gets built in July before the idle, because its 30-day compliance SLA runs year-round and nothing watches the inbox today. Everything else internal still waits behind distribution.
+The order follows one rule from the binding: traffic and revenue-moving work ranks ahead of internal elegance. The audit's own 30/60/90 plan is the distribution spine; the internal wiring waits behind it.
 
-**The idle (August through November):** hold. PCD runs on its schedule at report-and-draft level or paused per section 3.4. Football season and LegisRadar (portfolio Priority 1) own the calendar. The only live watch is the data-deletion SLA.
+**Now to fall camp (July, originally "before the idle"):** distribution first. Run the audit's day-0-to-30 fixes as sessions: the mojibake fix, the www-to-bare 301, the dead-brand link purge, the camp-page 301 policy, and the author reveal and first outreach push. These are the only work that moves causes 1 and 2 from the audit, and they are low effort. One internal build joins them, and only one. The S4 data-deletion and opt-out monitor gets built in July, because its 30-day compliance SLA runs year-round and nothing watches the inbox today. Everything else internal still waits behind distribution.
+
+**August through November:** no longer an automatic hold. PCD keeps running its schedule at normal level unless Jeff turns `PCD_MAINTENANCE_MODE` on for a stretch. Football season and LegisRadar (portfolio Priority 1) still compete for Jeff's attention, so pacing may slow, but nothing pauses by default. The data-deletion SLA watch stays live regardless.
 
 **December (the first quarterly close):** judge and wire. Re-pull GSC and re-audit against the Organic Search Audit to see whether the July distribution work moved indexing and backlinks. Make the promotion calls: does the SEO monitor become an owned agent, does camp discovery get registered and logged. This is where Phases 6 and 7 (logging, registry, kill switches) land, because now there are real numbers to justify the wiring.
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_from": "src/pages",
-  "route_count": 162,
+  "route_count": 163,
   "default_rule": "Every source route must be classified; public writes require an explicit limiter or documented exemption.",
   "routes": [
     {
@@ -723,6 +723,16 @@
       "source": "api/camps/check.ts",
       "cache_class": "api",
       "auth_boundary": "shared_secret",
+      "public_write_limiter": null
+    },
+    {
+      "route": "/api/camps/lite",
+      "methods": [
+        "GET"
+      ],
+      "source": "api/camps/lite.ts",
+      "cache_class": "api",
+      "auth_boundary": "public",
       "public_write_limiter": null
     },
     {

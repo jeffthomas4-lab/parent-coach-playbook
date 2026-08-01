@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { collections } from '../content.config';
 import { SITE, BUYING_GUIDES, SPORTS } from '../data/site';
 import { isLive } from '../lib/publishFilter';
 
@@ -6,25 +7,73 @@ import { isLive } from '../lib/publishFilter';
 // pages. Because it is prerendered, getCollection runs during the build and the
 // content store is NOT bundled into the runtime Cloudflare worker. Camps live in
 // /sitemap-camps.xml (SSR, D1-backed) so this file never touches D1.
+//
+// Drift guard (2026-07-31, closes open item #32 for real): this file used to
+// enumerate collections purely by hand, which is exactly how `pillar` went
+// missing for weeks and all 17 Ultimate Parent Guides were live and invisible
+// to Google. COLLECTION_URL_BUILDERS below is still a hand-written map
+// (each collection's URL shape is genuinely different, so a fully generic
+// loop isn't possible), but the enumeration itself is now validated against
+// `collections` exported from content.config.ts — the actual source of
+// truth for what collections exist — every build. Add a collection to
+// content.config.ts and forget to wire it in here, and the sitemap route
+// throws instead of silently shipping an invisible collection.
+type SitemapUrl = { loc: string; lastmod: string };
+
+const COLLECTION_URL_BUILDERS: Record<string, () => Promise<SitemapUrl[]>> = {
+  articles: async () => (await getCollection('articles', ({ data }) => isLive(data)))
+    .map(a => ({ loc: `/${a.data.phase}/${a.id}/`, lastmod: a.data.publishedAt.toISOString() })),
+  guides: async () => (await getCollection('guides', ({ data }) => isLive(data)))
+    .map(g => ({ loc: `/what-to-buy/${g.id}/`, lastmod: (g.data.updatedAt ?? g.data.publishedAt).toISOString() })),
+  resources: async () => (await getCollection('resources', ({ data }) => isLive(data) && data.type !== 'external'))
+    .map(r => ({ loc: `/team-parent/${r.id}/`, lastmod: r.data.publishedAt.toISOString() })),
+  coachingTips: async () => (await getCollection('coachingTips', ({ data }) => isLive(data)))
+    .map(t => ({ loc: `/coaching-tips/${t.id}/`, lastmod: t.data.publishedAt.toISOString() })),
+  seasonCalendars: async () => (await getCollection('seasonCalendars', ({ data }) => isLive(data)))
+    .map(c => ({ loc: `/season-calendar/${c.id}/`, lastmod: (c.data.updatedAt ?? c.data.publishedAt).toISOString() })),
+  body: async () => (await getCollection('body', ({ data }) => isLive(data)))
+    .map(t => ({ loc: `/body/${t.id}/`, lastmod: t.data.publishedAt.toISOString() })),
+  pathways: async () => (await getCollection('pathways', ({ data }) => isLive(data)))
+    .map(p => ({ loc: `/pathways/${p.data.sport}/`, lastmod: p.data.publishedAt.toISOString() })),
+  recruiting: async () => (await getCollection('recruiting', ({ data }) => isLive(data)))
+    .map(r => ({ loc: `/recruiting/${r.id}/`, lastmod: r.data.publishedAt.toISOString() })),
+  adaptive: async () => (await getCollection('adaptive', ({ data }) => isLive(data)))
+    .map(a => ({ loc: `/adaptive/${a.id}/`, lastmod: a.data.publishedAt.toISOString() })),
+  rules: async () => (await getCollection('rules', ({ data }) => isLive(data)))
+    .map(r => ({ loc: `/rules/${r.data.sport}/`, lastmod: r.data.publishedAt.toISOString() })),
+  scripts: async () => (await getCollection('scripts', ({ data }) => isLive(data)))
+    .map(s => ({ loc: `/scripts/${s.id}/`, lastmod: s.data.publishedAt.toISOString() })),
+  decisions: async () => (await getCollection('decisions', ({ data }) => isLive(data)))
+    .map(d => ({ loc: `/decisions/${d.id}/`, lastmod: d.data.publishedAt.toISOString() })),
+  news: async () => (await getCollection('news', ({ data }) => !data.draft))
+    .map(n => ({ loc: `/news/${n.id}/`, lastmod: n.data.publishedAt.toISOString() })),
+  // Canonical route is /pillar/, not /guides/. /guides/<slug>/ renders the
+  // same entry and carries a canonical pointing here, so only this one is
+  // listed. Listing both would be self-inflicted duplicate content.
+  pillar: async () => (await getCollection('pillar', ({ data }) => isLive(data)))
+    .map(p => ({ loc: `/pillar/${p.id}/`, lastmod: p.data.publishedAt.toISOString() })),
+};
+
+function assertNoCollectionDrift() {
+  const configKeys = Object.keys(collections).sort();
+  const wiredKeys = Object.keys(COLLECTION_URL_BUILDERS).sort();
+  const missing = configKeys.filter(k => !wiredKeys.includes(k));
+  if (missing.length > 0) {
+    throw new Error(
+      `sitemap-content.xml.ts: content.config.ts declares collection(s) [${missing.join(', ')}] with ` +
+      `no matching entry in COLLECTION_URL_BUILDERS. Wire the collection's URL shape in before ` +
+      `deploying, or its canonical pages ship live and invisible to crawlers (this is exactly how ` +
+      `all 17 Ultimate Parent Guides went missing — see open item #32 in STANDARD-AUDIT.md).`
+    );
+  }
+}
+
 export async function GET() {
-  const articles = await getCollection('articles', ({ data }) => isLive(data));
-  const guides = await getCollection('guides', ({ data }) => isLive(data));
-  const resources = await getCollection('resources', ({ data }) => isLive(data) && data.type !== 'external');
-  const tips = await getCollection('coachingTips', ({ data }) => isLive(data));
-  const calendars = await getCollection('seasonCalendars', ({ data }) => isLive(data));
-  const bodyTopics = await getCollection('body', ({ data }) => isLive(data));
-  const pathways = await getCollection('pathways', ({ data }) => isLive(data));
-  const recruiting = await getCollection('recruiting', ({ data }) => isLive(data));
-  const adaptive = await getCollection('adaptive', ({ data }) => isLive(data));
-  const rules = await getCollection('rules', ({ data }) => isLive(data));
-  const scripts = await getCollection('scripts', ({ data }) => isLive(data));
-  const decisions = await getCollection('decisions', ({ data }) => isLive(data));
-  const news = await getCollection('news', ({ data }) => !data.draft);
-  // pillar was missing from this sitemap entirely until 2026-07-28. All 17
-  // Ultimate Parent Guides returned 200 live and were invisible to crawlers,
-  // despite /pillar/<slug>/ being their own declared canonical (see
-  // src/pages/pillar/[slug].astro). Found by scripts/check-publish-queue-drift.mjs.
-  const pillar = await getCollection('pillar', ({ data }) => isLive(data));
+  assertNoCollectionDrift();
+
+  const collectionUrls = (
+    await Promise.all(Object.values(COLLECTION_URL_BUILDERS).map(build => build()))
+  ).flat();
 
   const STATIC_LASTMOD: Record<string, string> = {
     '/': '2026-06-11',
@@ -90,23 +139,7 @@ export async function GET() {
 
   const urls = [
     ...staticUrls.map(loc => ({ loc, lastmod: STATIC_LASTMOD[loc] ?? STATIC_FALLBACK })),
-    ...articles.map(a => ({ loc: `/${a.data.phase}/${a.id}/`, lastmod: a.data.publishedAt.toISOString() })),
-    ...guides.map(g => ({ loc: `/what-to-buy/${g.id}/`, lastmod: (g.data.updatedAt ?? g.data.publishedAt).toISOString() })),
-    ...resources.map(r => ({ loc: `/team-parent/${r.id}/`, lastmod: r.data.publishedAt.toISOString() })),
-    ...tips.map(t => ({ loc: `/coaching-tips/${t.id}/`, lastmod: t.data.publishedAt.toISOString() })),
-    ...calendars.map(c => ({ loc: `/season-calendar/${c.id}/`, lastmod: (c.data.updatedAt ?? c.data.publishedAt).toISOString() })),
-    ...bodyTopics.map(t => ({ loc: `/body/${t.id}/`, lastmod: t.data.publishedAt.toISOString() })),
-    ...pathways.map(p => ({ loc: `/pathways/${p.data.sport}/`, lastmod: p.data.publishedAt.toISOString() })),
-    ...recruiting.map(r => ({ loc: `/recruiting/${r.id}/`, lastmod: r.data.publishedAt.toISOString() })),
-    ...adaptive.map(a => ({ loc: `/adaptive/${a.id}/`, lastmod: a.data.publishedAt.toISOString() })),
-    ...rules.map(r => ({ loc: `/rules/${r.data.sport}/`, lastmod: r.data.publishedAt.toISOString() })),
-    ...scripts.map(s => ({ loc: `/scripts/${s.id}/`, lastmod: s.data.publishedAt.toISOString() })),
-    ...decisions.map(d => ({ loc: `/decisions/${d.id}/`, lastmod: d.data.publishedAt.toISOString() })),
-    ...news.map(n => ({ loc: `/news/${n.id}/`, lastmod: n.data.publishedAt.toISOString() })),
-    // Canonical route is /pillar/, not /guides/. /guides/<slug>/ renders the
-    // same entry and carries a canonical pointing here, so only this one is
-    // listed. Listing both would be self-inflicted duplicate content.
-    ...pillar.map(p => ({ loc: `/pillar/${p.id}/`, lastmod: p.data.publishedAt.toISOString() })),
+    ...collectionUrls,
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

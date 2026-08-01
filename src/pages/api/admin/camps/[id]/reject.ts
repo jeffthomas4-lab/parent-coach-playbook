@@ -7,8 +7,12 @@ import {
   upsertDomainQuality,
   REJECT_REASON_CODES,
   type RejectReasonCode,
+  type Camp,
 } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
+import { createRequestLogger } from '../../../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../../../lib/camps-lite-cache';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -16,7 +20,9 @@ export const prerender = false;
 const VALID_REASON_CODES = new Set<RejectReasonCode>(REJECT_REASON_CODES.map((r) => r.code));
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string } | undefined;
+  const env = cfEnv as
+    | { DB: D1Database; ADMIN_EMAILS?: string; PCD_OPS_DB?: D1Database; SITE_URL?: string }
+    | undefined;
   if (!env?.DB) {
     return new Response(JSON.stringify({ ok: false, error: 'database not available' }), {
       status: 500,
@@ -26,6 +32,8 @@ export const POST: APIRoute = async ({ params, request }) => {
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/camps/reject', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -58,27 +66,61 @@ export const POST: APIRoute = async ({ params, request }) => {
         reasonCode = rc as RejectReasonCode;
       }
     }
-  } catch {
-    // ignore
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'proceeding_with_no_notes_or_reason' });
   }
 
-  // rejectCamp performs a single atomic conditional UPDATE and reports
-  // whether THIS call transitioned the row (WHERE pcd_status != 'rejected').
-  // Gating the domain-quality upsert on that reported change count — not a
-  // prior read of camp state — is what makes a repeat reject on an
-  // already-rejected camp, or two concurrent reject requests racing on the
-  // same id, a no-op for the second caller instead of a double decrement.
-  const { camp, transitioned } = await rejectCamp(env.DB, id, auth.email, notes, reasonCode);
-  if (!camp) {
-    return new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
-      status: 404,
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    });
-  }
+  const requestId = logger.requestId;
 
-  if (transitioned) {
-    await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
-  }
+  const receipted = await withAdminReceipt(
+    {
+      env,
+      environment: env.SITE_URL ?? 'unknown',
+      actorEmail: auth.email,
+      action: 'camp.reject',
+      resourceType: 'camp',
+      resourceId: id,
+      requestId,
+      authorizationContext: 'cloudflare-access-jwt:admin-allowlist',
+    },
+    async (): Promise<MutationOutcome<{ camp: Camp }>> => {
+      // rejectCamp performs a single atomic conditional UPDATE and reports
+      // whether THIS call transitioned the row (WHERE pcd_status != 'rejected').
+      // Gating the domain-quality upsert on that reported change count — not a
+      // prior read of camp state — is what makes a repeat reject on an
+      // already-rejected camp, or two concurrent reject requests racing on the
+      // same id, a no-op for the second caller instead of a double decrement.
+      const { camp, transitioned } = await rejectCamp(env.DB, id, auth.email, notes, reasonCode);
+      if (!camp) {
+        return {
+          outcome: 'error',
+          reason: 'camp_not_found',
+          response: new Response(JSON.stringify({ ok: false, error: 'camp not found' }), {
+            status: 404,
+            headers: { 'Content-Type': 'application/json; charset=utf-8' },
+          }),
+        };
+      }
+
+      if (transitioned) {
+        await upsertDomainQuality(env.DB, camp.source_domain, 'rejected');
+        // A reject can REMOVE a camp from /api/camps/lite's result set
+        // (approved -> rejected). See src/lib/camps-lite-cache.ts for this
+        // call's stated TTL and invalidation path.
+        await purgeCampsLiteEdgeCache();
+      }
+
+      return {
+        outcome: 'success',
+        value: { camp },
+        beforeSummary: 'pcd_status!=rejected',
+        afterSummary: `pcd_status=rejected${reasonCode ? ` reason=${reasonCode}` : ''}`,
+      };
+    },
+  );
+
+  if ('response' in receipted) return receipted.response;
+  const { camp } = receipted.value;
 
   if (isForm) {
     return new Response(null, {

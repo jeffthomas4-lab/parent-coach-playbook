@@ -13,18 +13,17 @@ export interface Env {
   // Canonical Forge Command runtime database. A scheduled mutation is not
   // allowed to run unless its attempt can first be recorded durably.
   FORGE_DB?: D1Database;
-  // Operator kill switch. The August-November calendar boundary also applies
-  // even if this variable is accidentally left false.
+  // Operator kill switch. The old August-November calendar auto-freeze was
+  // removed 2026-08-01 (Jeff is working PCD nightly through the season now);
+  // this is the only remaining way to hold writes, and it is manual only.
   PCD_MAINTENANCE_MODE?: string;
 }
 
 const WORKFLOW_ID = 'pcd-camps-sweep';
 
-export function maintenanceModeActive(env: Pick<Env, 'PCD_MAINTENANCE_MODE'>, at: number): boolean {
+export function maintenanceModeActive(env: Pick<Env, 'PCD_MAINTENANCE_MODE'>): boolean {
   const explicit = env.PCD_MAINTENANCE_MODE?.trim().toLowerCase();
-  if (explicit === 'true' || explicit === '1' || explicit === 'on') return true;
-  const month = new Date(at).getUTCMonth() + 1;
-  return month >= 8 && month <= 11;
+  return explicit === 'true' || explicit === '1' || explicit === 'on';
 }
 
 type SweepMetrics = {
@@ -121,7 +120,7 @@ export async function fireCampsSweep(env: Env, source: string): Promise<SweepMet
 }
 
 export async function runScheduledSweep(env: Env, scheduledTime: number): Promise<void> {
-  if (maintenanceModeActive(env, scheduledTime)) {
+  if (maintenanceModeActive(env)) {
     console.log(JSON.stringify({
       event: 'camps_sweep_held',
       workflowId: WORKFLOW_ID,
@@ -183,7 +182,7 @@ export default {
           ok: ready,
           service: 'pcd-camps-sweep-scheduler',
           check: 'readiness',
-          maintenance_mode: maintenanceModeActive(env, Date.now()),
+          maintenance_mode: maintenanceModeActive(env),
           ...(ready ? {} : { code: 'required_configuration_missing' }),
         },
         { status: ready ? 200 : 503, headers: { 'Cache-Control': 'no-store' } },

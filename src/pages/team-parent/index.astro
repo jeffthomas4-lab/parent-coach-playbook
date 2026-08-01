@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import Illo from '../../components/Illo.astro';
 import { TEAM_PARENT_TOPICS, TEAM_PARENT_CATEGORIES } from '../../data/site';
 import { isLive } from '../../lib/publishFilter';
 import { renderTitle } from '../../lib/title';
@@ -43,13 +44,11 @@ const recentArticles = teamParentArticles.slice(0, 6);
         Articles, templates, and scripts for managing logistics, communication, money, photos, conflict, and the operational stuff that makes a season work.
       </p>
       <figure class="mt-10 max-w-4xl">
-        <img
-          src="/illustrations/pillar-team-parent.webp"
+        <Illo
+          base="pillar-team-parent"
           alt="A team-parent binder open on a wooden table, surrounded by snack-rotation post-its, a jersey-numbers list, three sharpies, an April calendar, and a mug. Editorial flat-lay."
           class="w-full border border-bone"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
+          eager={true}
         />
       </figure>
     </div>

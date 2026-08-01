@@ -52,5 +52,15 @@
     "activityradar-archive",
     "studio",
     "wip-archive"
-  ]
+  ],
+  "_descriptions": {
+    "product_runtime": "Directories that ship as the live site. Test: does this directory's content get built or served to a real visitor?",
+    "independently_deployed_runtime": "Separate services that deploy on their own target, apart from the main site build. Test: does this directory have its own deploy command distinct from the main site's?",
+    "data_lineage_and_fixtures": "Data inputs, migrations, backups, and sample or staging data that feed the product without being the running app itself. Test: does this directory hold data used to seed, migrate, or verify the product rather than code that runs it?",
+    "tests_and_quality_evidence": "Test suites and QA or audit evidence. Test: does this directory exist to prove the product works rather than to run it?",
+    "operations_governance_and_coordination": "Tooling, scripts, CI config, and coordination files that run the engineering process itself. Test: does this directory support how the team builds and ships rather than what gets shipped to users?",
+    "business_editorial_and_reports": "Editorial content pipelines, reports, and business-facing generated material. Test: does this directory hold business or editorial output rather than app code or ops tooling?",
+    "inactive_or_historical": "Directories parked or retired from the current build. Test: is this directory disconnected from the live build and kept only for reference or possible future reactivation?",
+    "_note": "This key is registry metadata, not a directory category. scripts/check-root-organization.mjs ignores any top-level key starting with an underscore."
+  }
 }

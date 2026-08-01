@@ -113,15 +113,25 @@ describe('emitEventSafely', () => {
     expect(errorSpy).not.toHaveBeenCalled();
   });
 
+  // events.ts logs its failure path through src/lib/log.ts (Pillar 8's
+  // structured logger) now instead of a hand-rolled
+  // console.error(JSON.stringify({event, event_type, code})). The three
+  // assertions below moved to the logger's field names rather than the old
+  // ad hoc ones, because the underlying information is still on the line:
+  // `event` -> `action` (still 'pcd_event_emit_failed'), `event_type` ->
+  // `eventType` (still the namespaced event type), `code` -> `errorMessage`
+  // (still the failure reason, now taken from Error.message rather than a
+  // hand-picked string). Nothing here got dropped in the rollout.
+
   it('swallows an unmigrated table and logs the reason instead of breaking the caller', async () => {
     const d1 = makeFakeD1({ throwOn: /INSERT INTO events/ });
     await expect(emitEventSafely({ PCD_OPS_DB: d1.db }, validInput)).resolves.toBe(false);
 
     expect(errorSpy).toHaveBeenCalledTimes(1);
     const logged = JSON.parse(errorSpy.mock.calls[0][0] as string);
-    expect(logged.event).toBe('pcd_event_emit_failed');
-    expect(logged.event_type).toBe('pcd.editorial.draft_ready');
-    expect(logged.code).toBe('d1 exploded');
+    expect(logged.action).toBe('pcd_event_emit_failed');
+    expect(logged.eventType).toBe('pcd.editorial.draft_ready');
+    expect(logged.errorMessage).toBe('d1 exploded');
   });
 
   it('swallows a bad event type the same way, and logs it', async () => {
@@ -130,7 +140,7 @@ describe('emitEventSafely', () => {
       emitEventSafely({ PCD_OPS_DB: d1.db }, { ...validInput, eventType: 'nope' }),
     ).resolves.toBe(false);
     expect(d1.calls).toHaveLength(0);
-    expect(JSON.parse(errorSpy.mock.calls[0][0] as string).code).toMatch(/not namespaced/);
+    expect(JSON.parse(errorSpy.mock.calls[0][0] as string).errorMessage).toMatch(/not namespaced/);
   });
 
   it('reports a non-Error throw without leaking it', async () => {
@@ -140,6 +150,15 @@ describe('emitEventSafely', () => {
       },
     };
     await expect(emitEventSafely({ PCD_OPS_DB: db }, validInput)).resolves.toBe(false);
-    expect(JSON.parse(errorSpy.mock.calls[0][0] as string).code).toBe('unknown_error');
+    // The old hand-rolled logger collapsed any non-Error throw to a generic
+    // 'unknown_error' marker. src/lib/log.ts's errorFields() does not: for a
+    // non-Error value it String()s whatever was actually thrown, so the real
+    // value reaches the server-side log line instead of being discarded.
+    // That's strictly more information for whoever reads the Worker logs,
+    // not a leak to the caller or the customer — emitEventSafely still just
+    // returns false either way.
+    const logged = JSON.parse(errorSpy.mock.calls[0][0] as string);
+    expect(logged.errorMessage).toBe('a string, not an Error');
+    expect(logged.errorName).toBeUndefined();
   });
 });

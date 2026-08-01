@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadMagnetCTA from '../components/LeadMagnetCTA.astro';
+import Illo from '../components/Illo.astro';
 import { serializeJsonLd } from '../lib/jsonld';
 
 export const prerender = true;
@@ -64,12 +65,10 @@ const axes = [
         Youth sports isn't one thing. There's a fun-first lane and a performance-first lane. There's rec and there's travel. Every family ends up somewhere on the spectrum. The job is knowing where you are.
       </p>
       <figure class="mt-10">
-        <img
-          src="/illustrations/pendulum-fun-vs-performance.webp"
+        <Illo
+          base="pendulum-fun-vs-performance"
           alt="The Pendulum: Fun on one side, Performance on the other, kids playing soccer underneath."
           class="w-full h-auto border border-bone"
-          loading="lazy"
-          decoding="async"
         />
       </figure>
     </div>

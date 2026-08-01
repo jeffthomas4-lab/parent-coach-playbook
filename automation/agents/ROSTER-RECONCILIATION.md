@@ -49,3 +49,34 @@ UPDATE agent_registry SET status = 'active' WHERE agent = 'pcd-backup' AND ventu
 ```
 
 Deliberately not included: any statement touching `ed`, `nora`, or `pcd-deletion-monitor`. Those three are live and correct; `ed` shows no runs only because the writer task does not log them yet, and retiring it would hide a working agent.
+
+---
+
+## Addendum — 2026-07-31: two agents added
+
+Two SEO agents were built this session under `SEO-OS-ARCHITECTURE.md`. Both were created on all three surfaces in the same session, deliberately, so they do not repeat the split this file documents.
+
+| SPEC | Workstream | Live scheduled task | Registry row | State |
+|---|---|---|---|---|
+| **Lonnie** — link earning | S1 (authority half, under Nora) | `pcd-link-earning` (Wed 7:15 AM) | **owed** — see SQL below | Task live, SPEC written, registry row not yet inserted. |
+| **Dex** — directory index policy | S8 (SEO half, alongside Ranger) | `pcd-directory-index-policy` (day 4, 7:45 AM) | **owed** — see SQL below | Task live, SPEC written, registry row not yet inserted. First run 2026-08-04. |
+
+Both are Class A/B only. Neither writes to the directory, sends mail, commits to main, or deploys. Both commit through `scripts/safe-commit.sh` rather than plain git, per the mount problem documented in `pcd-review-publish`.
+
+**Why these two and not the other two.** `SEO-OS-ARCHITECTURE.md` names four agents. The other two (Index Economics, and Nora moved onto the Search Console API) both depend on a Google Cloud service account that does not exist yet. Building them now would put two permanently-failing tasks in the run log, which is the opposite of what this file is for. They get built in the session after the service account exists.
+
+**Boundary with Ranger.** Ranger owns whether a camp record is accurate. Dex owns whether a camp page deserves to be in Google's index. Dex reads and proposes; every directory write stays Ranger's. If the two ever disagree about a record, accuracy wins and Dex logs the conflict rather than arguing it in a report.
+
+**Boundary with Nora.** Nora keeps measurement and indexing triage. Lonnie takes authority. Dex reads Nora's GSC numbers instead of taking a second independent pull, so the two never publish different figures for the same week.
+
+### Registry SQL for Jeff (writes — run these yourself)
+
+Inserts against `agent_registry` in the `forge-command` D1 (`747cf988-a557-48bd-9d03-bea09e184f94`). Confirm the column list against the live table before running; this file has never asserted the full schema.
+
+```sql
+INSERT INTO agent_registry (agent, venture, status) VALUES
+  ('lonnie', 'pcd', 'active'),
+  ('dex',    'pcd', 'active');
+```
+
+Note the pre-existing display bug from item #50 of the admin review: `src/pages/admin/agents.astro:44` filters `venture = 'pcd'` exactly, so rows tagged `PCD`, `parent-coach-desk`, or `pcd, press` do not render. `'pcd'` above matches the filter.
