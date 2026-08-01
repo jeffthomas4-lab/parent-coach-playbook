@@ -51,7 +51,7 @@ Most rec programs require bare feet in the gym. Some programs use lightweight gy
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Gymnastics · Ages 4–10</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Capezio youth gymnastics slippers</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Split-sole canvas slip with a suede sole. For programs that require a slipper — most rec programs don't, so ask first.</p>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Full-sole leather slipper with a drawstring and elastic. For programs that require a slipper — most rec programs don't, so ask first.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Ask your gym before buying. If they want slippers, this is the one to get.</p>
     <a href="/go/gymnastics-slippers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>

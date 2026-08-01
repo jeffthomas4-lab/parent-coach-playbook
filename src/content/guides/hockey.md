@@ -91,9 +91,9 @@ Buy pads used. A used set of shoulder pads from a kid who grew out of them is fu
 <div class="my-8">
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Hockey · Ages 5–9</div>
-    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Bauer Prodigy youth hockey starter kit</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Starter pad set covering shoulder pads, elbow pads, shin guards, and gloves in youth sizing. Everything except helmet and skates.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If the local used market has nothing in your kid's size, this kit covers all five pad pieces in one purchase. Still buy the helmet new.</p>
+    <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Winnwell youth hockey starter kit</h3>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Six-piece starter set covering shoulder pads, elbow pads, shin guards, gloves, pants, and a bag in youth sizing. Everything except helmet and skates.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: If the local used market has nothing in your kid's size, this kit covers the full pad set plus pants and a bag in one purchase. Still buy the helmet new.</p>
     <a href="/go/hockey-pads-starter/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>

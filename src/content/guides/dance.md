@@ -62,7 +62,7 @@ Most studios have a dress code that specifies leotard color, neckline, and brand
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Dance · Ages 4–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Capezio youth ballet slippers</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Split-sole canvas slipper with pre-sewn elastic. The standard starter slipper for ballet and used in many lyrical and contemporary classes as well.</p>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Full-sole leather slipper with a drawstring and elastic. The standard starter slipper for beginning ballet, and used in many lyrical and contemporary classes early on as well.</p>
     <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Try them on with tights, not bare feet — the fit is different. Buy from a dancewear shop if possible; fitting matters here.</p>
     <a href="/go/gymnastics-slippers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
