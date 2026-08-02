@@ -1,7 +1,9 @@
 ---
 title: "How to *vet a camp for safety*"
-dek: "Your kid focuses on the fun. You focus on keeping them safe. The questions to ask before you sign the check, especially for overnight."
-seoDescription: "Your kid is excited. They're packing the bag, picking the cabin assignment, telling you which friend they hope to bunk with. That excitement is the point."
+dek: "Ask for the policies behind the promise before you sign the check."
+seoTitle: "How to Vet a Summer Camp for Safety"
+seoDescription: "Vet a summer camp by checking written screening, supervision, abuse-prevention, health, emergency, release, and parent-communication policies."
+bluf: "Do not ask whether a camp is safe. Ask for the written policies behind staff screening, supervision, one-on-one contact, health care, emergencies, pickup, and parent notification. Verify accreditation and licensing claims yourself. Vague answers are a reason to pause before paying."
 topic: "summer-camps"
 format: "essay"
 phase: "drive-there"
@@ -10,169 +12,94 @@ age: "all-ages"
 hero: "/illustrations/duffel-packed-on-bed.webp"
 heroAlt: "A packed duffel bag sits open on a made bed with folded clothes and a towel inside, lit by afternoon window light."
 publishedAt: 2026-04-21
+updatedAt: 2026-08-02
 featured: true
 editorial:
-  qualityGrade: 8
+  qualityGrade: 9
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
-  flagSensitiveTopic: false
+  flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Rebuilt as a sourced parent screening guide. Removed universal annual background-check, fingerprint, two-adult, medical-staffing, reporting, accreditation, and law-enforcement claims that current primary authorities do not support for every camp."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-Your kid is excited. They're packing the bag, picking the cabin assignment, telling you which friend they hope to bunk with. That excitement is the point. Don't take it from them.
+A camp can have warm counselors, polished photos, and no clear answer for what happens when an adult is alone with a child. It can display an accreditation logo that a parent never verifies. Safety screening starts when the brochure ends.
 
-Your job is different. Your job is the part of camp safety they shouldn't have to think about.
+This is a parent research guide, not legal or medical advice. Requirements vary by location and program. Ask for the camp's current written policy, then verify outside claims with the organization that issued them.
 
-This is the list of questions to ask the camp before you sign the check. None of them require your kid to know you're asking. They focus on the fun. You focus on keeping them safe.
+If you need a fast first pass, start with the [10-minute camp evaluation](/drive-there/how-to-evaluate-a-summer-camp/). Use this deeper review before an overnight stay, transportation, swimming, high-risk activity, or any program that will not let you observe the day.
 
-## Background checks. The basic floor.
+## Verify the adults and the chain of responsibility
 
-Every adult on staff should have a current background check. Not "we run background checks." Current, this season, on file. Ask specifically.
+Ask who hires staff, who supervises them, and who has authority when the director is away. Get the name or role of the person who receives a parent concern during camp hours and after hours.
 
-*Are background checks run on every adult on staff every year, or only at hire?*
+Then ask for the screening process in concrete terms:
 
-Some camps check at hire and never again. A counselor who has worked there four summers has not been re-checked since 2022. That's a gap. Camps that re-check annually are the floor.
+- Which paid staff, volunteers, contractors, and drivers are screened?
+- What checks, references, and interviews are used?
+- When are checks repeated?
+- What would disqualify someone from working with campers?
+- Who reviews and documents the result?
 
-For overnight camps, ask whether the check covers the FBI fingerprint database, not just state-level checks. State-level only is incomplete. The FBI database catches movement across state lines.
+There is no single screening schedule in the sources reviewed that applies to every camp. The American Camp Association says its [accreditation standards address staff screening](https://www.acacamps.org/parents-families/fun-safety-aca-accredited-camps-set-standard), including background checks, interviews, reference checks, training, and supervision. A non-accredited camp can still have strong controls, but it should be able to describe them without asking you to rely on trust.
 
-## Mandatory reporter training
+Do not accept "everyone is a mandatory reporter" as a complete answer. The Child Welfare Information Gateway's [summary of state reporting laws](https://www.childwelfare.gov/resources/mandatory-reporting-child-abuse-and-neglect/) shows that who must report and what training is required vary by state. Ask which law applies, which staff receive training, how a concern is escalated, and where the written process is kept.
 
-Every adult on staff should be a mandatory reporter, trained, and required to escalate. Ask:
+## Ask about one-on-one contact and camper conduct
 
-*What's your protocol when a counselor sees a sign of abuse, suspects abuse, or hears a disclosure from a camper?*
+Use direct language: "What prevents an adult from being isolated with a child in a cabin, vehicle, changing area, treatment space, or private lesson?"
 
-A real camp has a one-page protocol that includes immediate notification of the camp director, contact with parents, and contact with state child welfare agencies as required by law. If the camp can't articulate the protocol in 60 seconds, they don't have one.
+Ask about observable and interruptible interactions, bathroom and changing-room access, electronic messages, transportation, overnight supervision, and exceptions for emergencies. Ask how exceptions are documented and reviewed.
 
-## Sexual abuse prevention training
+The U.S. Center for SafeSport's [Minor Athlete Abuse Prevention Policies](https://maapp.uscenterforsafesport.org/) limit one-on-one adult and minor interactions within the U.S. Olympic and Paralympic Movement. That policy is not a universal rule for every summer camp. For a sport camp affiliated with a national governing body or local member organization, ask whether that policy governs the program and request its local version.
 
-Ask directly. Use the words.
+Also ask what happens when one camper threatens, targets, or makes another camper uncomfortable. You want a reporting path, separation and supervision steps, documentation, parent communication rules, and a process for deciding whether the child can remain safely in the program.
 
-*What sexual abuse prevention training do your counselors complete? Is it annual? Is it certified by an external organization?*
+Do not ask a child to investigate the system for you. Give them a simple exit plan.
 
-Programs that take this seriously use one of three certifications. Praesidium, Darkness to Light's Stewards of Children, or USOPC SafeSport for sports-specific camps. If your camp uses none of those and can't name what they do use, that is a real flag.
+Try: "If a person or situation makes you uncomfortable, move toward other people and tell an adult you choose. You can ask to call us. We will listen first."
 
-Camps that have done the work will answer this question proudly. Camps that haven't will get evasive.
+## Check health, emergencies, communication, and release
 
-## Title IX and harassment training
+Ask who receives health information, who provides routine and urgent care, and how the camp decides when to contact a parent or emergency service. Do not assume every camp has an on-site nurse or a fixed response time.
 
-For camps run on college campuses or affiliated with educational institutions, Title IX training is the standard. Ask:
+The American Academy of Pediatrics' [camp health guidance](https://publications.aap.org/pediatrics/article/144/1/e20191355/37095/Improving-Health-and-Safety-at-Camp) calls for families, health professionals, and camps to share relevant information and expectations. It also advises camps to maintain policies, procedures, and support appropriate to the children and activities they serve.
 
-*What harassment and discrimination training do your staff complete?*
+Use the camp's answers to fill in this list:
 
-For non-Title IX camps, ask about general harassment training and bystander intervention training. Real camps train counselors to recognize bullying, exclusion, and discrimination, and to act on it the same day.
+1. Where does a sick or injured child go?
+2. Who is qualified to provide care, and when are emergency services called?
+3. How are medication, allergies, disabilities, and access needs handled?
+4. When and how are parents notified?
+5. What is the plan for fire, severe weather, missing campers, transportation failure, and evacuation?
+6. Who may pick up a child, and how is identity verified?
 
-## The two-deep leadership rule
+ACA's [standards overview](https://www.acacamps.org/accreditation/overview/standards-glance) lists emergency response, transportation, parent notification, missing-person plans, health care, staff qualifications, supervision, and release verification among the areas its standards cover. Use those categories to question any camp. Do not treat the list as proof that a particular camp follows them.
 
-This is the most important question for overnight camp. Ask:
+Ask how parents reach a responsible person and how quickly the camp aims to respond. A no-phone rule for campers does not remove the need for a parent communication route.
 
-*What is your two-deep leadership rule?*
+## Verify credentials and decide on the gaps
 
-The two-deep rule means no adult is alone with a child in any space, ever. Two adults present at all times in cabins, bathrooms, transportation, and one-on-one coaching situations. This is the standard from Boy Scouts, USA Swimming, and most major youth-serving organizations.
+ACA describes its accreditation as a [voluntary peer-review process](https://www.acacamps.org/staff-professionals/accreditation-standards/accreditation/about-aca-accreditation) covering health, safety, and risk management. Verify a claimed accreditation through ACA. Accreditation adds an outside review; it does not guarantee that no incident will occur.
 
-If a camp doesn't have a two-deep rule, that camp is not safe for an overnight, full stop. This is non-negotiable.
+Licensing and inspection rules vary by state and camp type. Ask which agency has jurisdiction, then confirm the license or inspection record with that agency. If the camp operates through a school, university, club, or governing body, verify the relationship on the partner's own website.
 
-For day camps, the rule is similar but adapted. No counselor alone with a child in a closed-door space. Bathrooms supervised by two adults if accompaniment is needed. Transportation always has two adults.
+Do not fill a policy gap with a reassuring phone call. Pause if the camp will not provide a current policy, cannot identify who owns a decision, gives conflicting answers, or says its safety record makes a process unnecessary.
 
-## Bunk and bathroom supervision
+Your child's readiness matters too. Compare [day camp and overnight camp](/drive-home/day-camp-vs-overnight-camp/) before choosing the longer separation. Once the program clears the review, use the [summer camp packing list](/drive-there/summer-camp-packing-list/) and give your child the contact and exit plan again.
 
-For overnight camps, ask:
+The [camp directory](/camps/) can start a local search. The camp's current documents and the issuing authorities finish it.
 
-*How are bunks and bathrooms supervised at night?*
+## Sources reviewed
 
-Real answers include named adults sleeping in or adjacent to cabins, a check-in protocol at lights out, a counselor on overnight duty rotation, and bathrooms that lock from the inside but have an external override the camp director can use in emergency.
-
-The wrong answer is *the kids are pretty good about it.* That's not supervision.
-
-## Camper-on-camper conduct
-
-Most abuse at camp is camper-on-camper, not adult-on-camper. Ask:
-
-*What's your protocol when one camper makes another camper uncomfortable, physically or verbally?*
-
-Real camps have an escalation path. Counselor talks to both campers. If serious, both sets of parents are called. If physical or sexual in nature, the police are called and the camp follows mandatory reporting requirements.
-
-The wrong answer is *we let kids work it out.* Kids cannot work out abuse with each other.
-
-## Medical staff and emergency protocols
-
-Ask:
-
-*Is there a medical professional on site? What's the response time for an injury or illness? What's the protocol if a kid needs an emergency room?*
-
-Real camps have a registered nurse on site or on call within 15 minutes. Real camps have a designated hospital and a transport plan. Real camps inform parents immediately when their kid sees the medical staff for anything beyond a band-aid.
-
-For sports camps specifically, ask about concussion protocols. Real camps have one. They follow the protocol every time, even when the kid says they're fine.
-
-## Phone and communication policy
-
-Ask:
-
-*What's the phone policy for campers? How do parents communicate during the week if needed?*
-
-For overnight camps, most have a no-phone policy for kids. That's fine. The question is the parent communication path. Real camps have a 24-hour parent line with a person who answers, not a voicemail.
-
-Ask specifically how the camp handles a parent who calls because they haven't heard from their kid and are worried. The answer should be a same-day callback with a check-in on the kid. If the camp's answer is *we don't usually do that,* you have an information problem.
-
-## Where to look up the camp's record
-
-For overnight camps, two resources to check:
-
-The American Camp Association at acacamps.org. Their accreditation is meaningful, not perfunctory. Look up the camp by name. If accredited, the certification is real.
-
-State health and licensing department records. Most states require overnight camps to be licensed. Look up the camp's record. Look for past incidents, complaints, and license renewals. This is public information in most states.
-
-For day camps, check the Better Business Bureau, parent reviews on multiple sites (not just the camp's own page), and any local news mentions.
-
-## What to ask other parents
-
-Find a parent whose kid attended last summer. Not from the camp's testimonial page. Through your network or the local parent group chat.
-
-Ask:
-
-*Did anything happen during the week that worried you? Was there an incident the camp didn't handle well? Would you send your kid back?*
-
-The third question is the most useful. If the answer is *yes, without question,* the camp is probably fine. If the answer is *I think so,* dig in.
-
-## What you tell your kid
-
-You don't tell them any of this. Not the questions, not the answers, not the protocols.
-
-What you tell them, the day you drop them off:
-
-*If anything happens at camp that makes you uncomfortable, tell a counselor. If it's a counselor making you uncomfortable, tell a different counselor or the director. You can call us anytime, and we will come get you, no questions asked. There is no rule about toughing it out. Your job is to have fun. Our job is to be reachable.*
-
-Two minutes. Calm. Specific. Done.
-
-Then they go have a great week, and you have done the work behind the scenes that lets them.
-
-## The hardest part
-
-The hardest part of this list is asking it without sounding like you don't trust the camp. You don't have to trust the camp yet. Trust is earned by camps that answer these questions cleanly.
-
-Camps that are doing the work will answer all of these in 15 minutes and thank you for asking. Camps that aren't will deflect, get short, or say "we've never had a problem."
-
-*We've never had a problem* is not an answer. It's a marketing line. The camps that have done the work have specific answers, written protocols, and named training programs. Those are the camps you want.
-
-## The two questions that filter most camps
-
-If you have time for only two:
-
-*What sexual abuse prevention training do your counselors complete every year?*
-
-*What is your two-deep leadership rule, and how do you enforce it?*
-
-A camp that answers both clearly is a camp that has thought about this. A camp that fumbles either is not.
-
-Your kid focuses on the fun. You focus on the questions. That's the deal.
-
----
-
-Looking for camps that publish their safety credentials? <a href="/camps/">Browse our directory</a>. Verified listings include accreditations and training certifications.
-
-Run a camp? <a href="/camps/submit/">Add your listing</a>. Camps that publish safety protocols and training programs earn parent trust faster.
+- American Academy of Pediatrics, [Improving Health and Safety at Camp](https://publications.aap.org/pediatrics/article/144/1/e20191355/37095/Improving-Health-and-Safety-at-Camp), 2019.
+- American Camp Association, [Standards at a Glance](https://www.acacamps.org/accreditation/overview/standards-glance), accessed August 2026.
+- American Camp Association, [About ACA Accreditation](https://www.acacamps.org/staff-professionals/accreditation-standards/accreditation/about-aca-accreditation), accessed August 2026.
+- Child Welfare Information Gateway, [Mandatory Reporting of Child Abuse and Neglect](https://www.childwelfare.gov/resources/mandatory-reporting-child-abuse-and-neglect/), accessed August 2026.
+- U.S. Center for SafeSport, [Minor Athlete Abuse Prevention Policies](https://maapp.uscenterforsafesport.org/), 2025.

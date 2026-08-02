@@ -41,8 +41,8 @@
   "summary": {
     "eligible_articles": 808,
     "selected_articles": 100,
-    "refreshed": 10,
-    "pending": 90
+    "refreshed": 20,
+    "pending": 80
   },
   "batches": [
     {
@@ -363,7 +363,7 @@
     },
     {
       "batch": 2,
-      "status": "pending",
+      "status": "refreshed",
       "items": [
         {
           "rank": 11,
@@ -393,8 +393,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 12,
@@ -421,8 +421,8 @@
             "has_seo_title": true,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 13,
@@ -452,8 +452,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 14,
@@ -484,8 +484,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 15,
@@ -514,8 +514,8 @@
             "has_seo_title": true,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 16,
@@ -543,8 +543,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 17,
@@ -573,8 +573,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 18,
@@ -602,8 +602,8 @@
             "has_seo_title": true,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 19,
@@ -632,8 +632,8 @@
             "has_seo_title": true,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 20,
@@ -662,8 +662,8 @@
             "has_seo_title": true,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         }
       ]
     },
