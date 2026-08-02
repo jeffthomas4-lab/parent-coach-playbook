@@ -13,6 +13,7 @@ import type { APIRoute } from 'astro';
 import { getOrgSuggestionById, updateOrgSuggestionStatus } from '../../../../../lib/camps-db';
 import { promoteOrgSuggestionToProgram, type PromoteResult } from '../../../../../lib/suggestion-promotion';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
+import { createRequestLogger } from '../../../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -29,6 +30,8 @@ export const POST: APIRoute = async ({ params, request }) => {
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/suggestions/promote', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -66,7 +69,7 @@ export const POST: APIRoute = async ({ params, request }) => {
     // The claim already landed, so the suggestion is off the pending queue with
     // no draft behind it. Surface a fixed message and keep the real error in
     // the logs; the admin re-adds the org by hand from /admin/camps/new.
-    console.error('[admin/suggestions/promote] draft creation failed after claim', { suggestionId: id, err });
+    logger.error('draft_creation_failed_after_claim', err, { suggestionId: id });
     return json({ ok: false, error: 'draft camp could not be created' }, 500);
   }
   const { programId, organizationId, organizationCreated } = promoted;

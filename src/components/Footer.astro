@@ -18,7 +18,7 @@ const year = new Date().getFullYear();
       <p class="font-body text-ink-soft mt-3 max-w-md leading-snug">
         {SITE.shortPitch}
       </p>
-      <a href="/newsletter/" class="inline-block mt-5 font-body text-rust font-medium hover:underline">
+      <a href="/newsletter/" class="inline-flex items-center min-h-11 mt-5 font-body text-rust font-medium hover:underline">
         → Get the Friday Letter
       </a>
     </div>
@@ -26,23 +26,23 @@ const year = new Date().getFullYear();
     <div class="md:col-span-4">
       <div class="t-label mb-4">Explore</div>
       <ul class="grid gap-2.5 font-body text-ink-soft">
-        <li><a href="/start-here/" class="hover:text-rust">Start here</a></li>
-        <li><a href="/sports/" class="hover:text-rust">By sport</a></li>
-        <li><a href="/reads/" class="hover:text-rust">Reads</a></li>
-        <li><a href="/camps/" class="hover:text-rust">Camps and leagues</a></li>
-        <li><a href="/cost-calculator/" class="hover:text-rust">Cost calculator</a></li>
-        <li><a href="/season-calendar/" class="hover:text-rust">Season calendar</a></li>
+        <li><a href="/start-here/" class="flex items-center min-h-11 hover:text-rust">Start here</a></li>
+        <li><a href="/sports/" class="flex items-center min-h-11 hover:text-rust">By sport</a></li>
+        <li><a href="/reads/" class="flex items-center min-h-11 hover:text-rust">Reads</a></li>
+        <li><a href="/camps/" class="flex items-center min-h-11 hover:text-rust">Camps and leagues</a></li>
+        <li><a href="/cost-calculator/" class="flex items-center min-h-11 hover:text-rust">Cost calculator</a></li>
+        <li><a href="/season-calendar/" class="flex items-center min-h-11 hover:text-rust">Season calendar</a></li>
       </ul>
     </div>
 
     <div class="md:col-span-3">
       <div class="t-label mb-4">The Desk</div>
       <ul class="grid gap-2.5 font-body text-ink-soft">
-        <li><a href="/about/" class="hover:text-rust">About</a></li>
-        <li><a href="/newsletter/" class="hover:text-rust">Newsletter</a></li>
-        <li><a href="/proof/" class="hover:text-rust">Reviews</a></li>
-        <li><a href="/search/" class="hover:text-rust">Search</a></li>
-        <li><a href={`mailto:${SITE.email}`} class="hover:text-rust break-words">{SITE.email}</a></li>
+        <li><a href="/about/" class="flex items-center min-h-11 hover:text-rust">About</a></li>
+        <li><a href="/newsletter/" class="flex items-center min-h-11 hover:text-rust">Newsletter</a></li>
+        <li><a href="/proof/" class="flex items-center min-h-11 hover:text-rust">Reviews</a></li>
+        <li><a href="/search/" class="flex items-center min-h-11 hover:text-rust">Search</a></li>
+        <li><a href={`mailto:${SITE.email}`} class="flex items-center min-h-11 hover:text-rust break-words">{SITE.email}</a></li>
       </ul>
     </div>
   </div>
@@ -53,12 +53,12 @@ const year = new Date().getFullYear();
   <div class="border-t border-silver bg-stripe">
     <div class="container-px py-4">
       <nav aria-label="Legal and policies" class="flex flex-wrap gap-x-4 gap-y-2 font-body text-ink-soft text-sm">
-        <a href="/disclosure/" class="hover:text-rust">Privacy &amp; disclosure</a>
-        <button type="button" data-privacy-choices class="hover:text-rust cursor-pointer">Privacy choices</button>
-        <a href="/terms/" class="hover:text-rust">Terms of use</a>
-        <a href="/accessibility/" class="hover:text-rust">Accessibility</a>
-        <a href="/trust/" class="hover:text-rust">Corrections &amp; removals</a>
-        <a href="/rss.xml" class="hover:text-rust">RSS feed</a>
+        <a href="/disclosure/" class="inline-flex items-center min-h-11 hover:text-rust">Privacy &amp; disclosure</a>
+        <button type="button" data-privacy-choices class="inline-flex items-center min-h-11 hover:text-rust cursor-pointer">Privacy choices</button>
+        <a href="/terms/" class="inline-flex items-center min-h-11 hover:text-rust">Terms of use</a>
+        <a href="/accessibility/" class="inline-flex items-center min-h-11 hover:text-rust">Accessibility</a>
+        <a href="/trust/" class="inline-flex items-center min-h-11 hover:text-rust">Corrections &amp; removals</a>
+        <a href="/rss.xml" class="inline-flex items-center min-h-11 hover:text-rust">RSS feed</a>
       </nav>
     </div>
   </div>

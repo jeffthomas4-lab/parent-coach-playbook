@@ -1,3 +1,8 @@
+// The August-November calendar auto-freeze was removed 2026-08-01. Jeff is
+// working PCD nightly through the season, so the "founder unavailable
+// four months a year" assumption behind the old freeze no longer holds.
+// Maintenance mode is now operator-controlled only: PCD_MAINTENANCE_MODE
+// stays as a manual lever so Jeff can still pause writes deliberately.
 export function pcdMaintenanceModeActive(configured: string | undefined, _at = new Date()): boolean {
   const explicit = configured?.trim().toLowerCase();
   return explicit === 'true' || explicit === '1' || explicit === 'on';
@@ -23,8 +28,11 @@ export function isMaintenanceExemptWriteClass(writeClass: string): boolean {
 }
 
 /**
- * Whether a write of the given class is held by an explicit operator switch.
- * There is no automatic seasonal shutdown; normal work stays active year-round.
+ * Whether a write of the given class is held by maintenance mode.
+ *
+ * Ordinary writes are held only when the PCD_MAINTENANCE_MODE operator
+ * override is on. Exempt classes on the named bypass list are never held,
+ * and the operator override cannot force them to be held.
  */
 export function writeHeldDuringMaintenance(
   writeClass: string,

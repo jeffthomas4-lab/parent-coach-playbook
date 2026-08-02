@@ -77,6 +77,19 @@
      --bone because --bone has 320 usages and most of them are card borders
      that should not get heavier. */
   --rule: #7C8B99;
+  /* --input-border is the border on real form controls (input/select/
+     textarea). Same job as --rule — a boundary the reader relies on to find
+     the control, not decoration — so it gets the same 3.49:1-passing hex and
+     its own name (STANDARD-AUDIT #53). It is NOT --bone: --bone stays
+     #C9D2DA (1.53:1, fails WCAG 1.4.11) because it also draws ~4000
+     decorative card/table borders that don't need to hit 3:1, and darkening
+     it there would make every one of those heavier for no reason. It is also
+     not --muted (a text-color token an earlier pass borrowed for a few form
+     borders as a stopgap) — reusing a text token for a structural border job
+     is exactly the "solve it by darkening/reusing something else" move the
+     standard calls out; this token exists so form borders have a home that
+     is neither. */
+  --input-border: #7C8B99;
   /* silver (#8A9BA0) is 2.89:1 on white — DECORATIVE ONLY (fills, borders,
      glyphs). Never body text. silver-deep (#5F7075) is the AA-safe
      silver-green for eyebrow/label TEXT — 5.17:1 on white, 4.56:1 on

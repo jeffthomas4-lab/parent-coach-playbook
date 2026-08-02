@@ -25,6 +25,7 @@ const VALID_MANIFEST = {
     { name: 'COMMUNITY_RATE_LIMITER' },
     { name: 'DEMAND_RATE_LIMITER' },
     { name: 'OWNER_RATE_LIMITER' },
+    { name: 'PUBLIC_READ_RATE_LIMITER' },
   ],
   observability: { enabled: true, head_sampling_rate: 1 },
   secrets: {

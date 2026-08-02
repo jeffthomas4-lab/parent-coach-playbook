@@ -17,6 +17,19 @@ vi.mock('../../src/lib/camps-db', () => ({
   upsertDomainQuality: vi.fn().mockResolvedValue(undefined),
 }));
 
+// The receipt write itself (hash chaining, D1 persistence) is unit-tested in
+// admin-receipts.test.ts against a real SQLite engine. Route tests only need
+// to prove the route calls through to the mutation and honors the
+// success/blocked/error contract — so this mock runs the real callback and
+// unwraps it the same way the real withAdminReceipt does on a successful
+// receipt write, without needing a working PCD_OPS_DB mock here.
+vi.mock('../../src/lib/admin-receipts', () => ({
+  withAdminReceipt: vi.fn(async (_input: unknown, run: () => Promise<any>) => {
+    const outcome = await run();
+    return outcome.outcome === 'success' ? { value: outcome.value } : { response: outcome.response };
+  }),
+}));
+
 const mockPendingCamp = { id: 'camp_1', status: 'pending', awaiting_review: 0, source_domain: 'example.com' };
 
 import { POST } from '../../src/pages/api/admin/camps/[id]/approve';

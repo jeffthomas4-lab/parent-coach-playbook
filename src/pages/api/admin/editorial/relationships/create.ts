@@ -3,6 +3,7 @@ import { env as cfEnv } from 'cloudflare:workers';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { featureEnabled } from '../../../../../lib/feature-flags';
 import { mapRelationship } from '../../../../../lib/editorial-records';
+import { createRequestLogger } from '../../../../../lib/log';
 
 export const prerender = false;
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
@@ -22,6 +23,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (!env?.PCD_OPS_DB) return json({ ok: false, error: 'operational database not available' }, 503);
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+  const logger = createRequestLogger(request, { route: 'admin/editorial/relationships/create', userId: auth.email });
   const originError = requireSameOrigin(request);
   if (originError) return originError;
 
@@ -50,11 +52,7 @@ export const POST: APIRoute = async ({ request }) => {
     if (KNOWN_ERRORS.includes(message)) {
       return json({ ok: false, error: message }, message.endsWith('not found') ? 404 : 409);
     }
-    console.error(JSON.stringify({
-      event: 'editorial_record_write_failed',
-      route: 'editorial/relationships/create',
-      code: error instanceof Error ? error.message : 'unknown_error',
-    }));
+    logger.error('editorial_record_write_failed', error, { opportunityId: body.opportunity_id });
     return json({ ok: false, error: 'editorial_record_write_failed' }, 500);
   }
 };

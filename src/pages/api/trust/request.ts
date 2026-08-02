@@ -4,6 +4,7 @@ import { enforcePublicRequestBoundary, firstOversizedField } from '../../../lib/
 import { findTrustCaseByIntakeKey, insertTrustCase, TRUST_CASE_CATEGORIES, trustCaseDueAt, trustCasePriority, type TrustCaseCategory } from '../../../lib/trust-cases';
 import { featureEnabled } from '../../../lib/feature-flags';
 import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
+import { enforcePublicTurnstile } from '../../../lib/turnstile';
 
 export const prerender = false;
 
@@ -27,7 +28,12 @@ async function payload(request: Request): Promise<Record<string, string>> {
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const env = cfEnv as { PCD_OPS_DB?: D1Database; TRUST_INTAKE_ENABLED?: string; TRUST_RATE_LIMITER?: PublicRateLimiter } | undefined;
+  const env = cfEnv as {
+    PCD_OPS_DB?: D1Database;
+    TRUST_INTAKE_ENABLED?: string;
+    TRUST_RATE_LIMITER?: PublicRateLimiter;
+    TURNSTILE_SECRET_KEY?: string;
+  } | undefined;
   if (!featureEnabled(env?.TRUST_INTAKE_ENABLED)) return json({ ok: false, error: 'trust intake is not currently available' }, 404);
   if (!env?.PCD_OPS_DB) return json({ ok: false, error: 'operational database not available' }, 503);
   const boundary = await enforcePublicRequestBoundary(request, 16_384);
@@ -36,6 +42,9 @@ export const POST: APIRoute = async ({ request }) => {
   let data: Record<string, string>;
   try { data = await payload(request); } catch { return json({ ok: false, error: 'invalid request' }, 400); }
   if (data.website?.trim()) return json({ ok: true });
+
+  const turnstileFailure = await enforcePublicTurnstile(env.TURNSTILE_SECRET_KEY, data['cf-turnstile-response'], request);
+  if (turnstileFailure) return turnstileFailure;
 
   const oversized = firstOversizedField(data, {
     category: 40, target_url: 2048, camp_slug: 200, requester_email: 320,

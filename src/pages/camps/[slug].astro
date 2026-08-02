@@ -558,19 +558,19 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Your email</span>
-                <input name="reviewer_email" type="email" required class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust" />
+                <input name="reviewer_email" type="email" required class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust" />
                 <span class="font-display italic text-ink-soft text-xs font-medium">Stays private. Used only to verify and follow up if needed.</span>
               </label>
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Display name (optional)</span>
-                <input name="reviewer_display_name" maxlength="40" placeholder='e.g. "Tacoma soccer mom"' class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust" />
+                <input name="reviewer_display_name" maxlength="40" placeholder='e.g. "Tacoma soccer mom"' class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust" />
                 <span class="font-display italic text-ink-soft text-xs font-medium">If you skip this, your review shows as "A parent."</span>
               </label>
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Rating (1-5)</span>
-                <select name="rating" required class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust max-w-xs">
+                <select name="rating" required class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust max-w-xs">
                   <option value="">Choose...</option>
                   <option value="5">5: would do again</option>
                   <option value="4">4: solid, minor gripes</option>
@@ -582,7 +582,7 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
 
               <label class="grid gap-1">
                 <span class="font-display italic text-ink text-sm font-medium">Your review</span>
-                <textarea name="body" required minlength="30" maxlength="2000" rows="5" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust" placeholder="What was your kid's week like? What worked, what didn't? 50-300 words."></textarea>
+                <textarea name="body" required minlength="30" maxlength="2000" rows="5" class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust" placeholder="What was your kid's week like? What worked, what didn't? 50-300 words."></textarea>
               </label>
 
               <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
@@ -688,23 +688,23 @@ const stateCanonical = (stateCities && stateCities.length > 0) ? `${SITE.url}/ca
               </div>
               <label class="grid gap-1">
                 <span class="sr-only">Your email</span>
-                <input name="claimant_email" type="email" required placeholder="Your email" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
+                <input name="claimant_email" type="email" required placeholder="Your email" class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Your name</span>
-                <input name="claimant_name" placeholder="Your name" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
+                <input name="claimant_name" placeholder="Your name" class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Organization</span>
-                <input name="organization" placeholder="Organization (e.g. Lincoln High School Athletics)" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
+                <input name="organization" placeholder="Organization (e.g. Lincoln High School Athletics)" class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Phone (optional)</span>
-                <input name="phone" placeholder="Phone (optional)" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm" />
+                <input name="phone" placeholder="Phone (optional)" class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust text-sm" />
               </label>
               <label class="grid gap-1">
                 <span class="sr-only">Proof of ownership</span>
-                <textarea name="notes" required minlength="20" rows="3" placeholder="Proof of ownership: your role, how to verify (e.g. 'I'm the head coach. Reach me via the school's main line.')" class="px-3 py-2 font-body bg-paper-warm border border-bone rounded-btn min-h-[44px] focus:border-rust text-sm"></textarea>
+                <textarea name="notes" required minlength="20" rows="3" placeholder="Proof of ownership: your role, how to verify (e.g. 'I'm the head coach. Reach me via the school's main line.')" class="px-3 py-2 font-body bg-paper-warm border border-input rounded-btn min-h-[44px] focus:border-rust text-sm"></textarea>
               </label>
               <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
               <button type="submit" class="btn">Submit claim request</button>

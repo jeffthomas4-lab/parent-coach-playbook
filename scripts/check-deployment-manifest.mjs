@@ -39,6 +39,7 @@ export function verifyDeploymentManifest(manifest, serverEntry = '') {
     'COMMUNITY_RATE_LIMITER',
     'DEMAND_RATE_LIMITER',
     'OWNER_RATE_LIMITER',
+    'PUBLIC_READ_RATE_LIMITER',
   ], 'name');
   expectEqual('assets binding', manifest.assets?.binding, 'ASSETS');
   const workerFirst = [...(manifest.assets?.run_worker_first ?? [])].sort();

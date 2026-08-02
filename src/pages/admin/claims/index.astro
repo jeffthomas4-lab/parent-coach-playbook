@@ -85,12 +85,12 @@ const fmt = (s: string) =>
                 <div class="mt-4 grid gap-2 sm:grid-cols-2">
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="verified" />
-                    <textarea name="notes" rows="2" placeholder="Verification notes (called school, confirmed role)" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
+                    <textarea name="notes" rows="2" placeholder="Verification notes (called school, confirmed role)" class="px-2 py-1 font-body bg-paper border border-input text-xs"></textarea>
                     <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper-warm text-sm hover:bg-paper font-medium">Mark verified</button>
                   </form>
                   <form method="POST" action={`/api/admin/claims/${cl.id}/update`} class="grid gap-2">
                     <input type="hidden" name="status" value="rejected" />
-                    <textarea name="notes" rows="2" placeholder="Reject reason" class="px-2 py-1 font-body bg-paper border border-bone text-xs"></textarea>
+                    <textarea name="notes" rows="2" placeholder="Reject reason" class="px-2 py-1 font-body bg-paper border border-input text-xs"></textarea>
                     <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone text-ink-soft text-sm hover:bg-paper-warm font-medium">Reject</button>
                   </form>
                 </div>

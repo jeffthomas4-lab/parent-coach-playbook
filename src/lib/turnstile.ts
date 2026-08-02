@@ -13,6 +13,8 @@
 //   TURNSTILE_SECRET_KEY — paired with the site key baked into each public
 //                           form's cf-turnstile widget (PUBLIC_TURNSTILE_SITE_KEY)
 
+import { log, requestIdFrom } from './log';
+
 const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 interface SiteverifyResponse {
@@ -66,7 +68,7 @@ export async function enforcePublicTurnstile(
   const headers = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' };
 
   if (!secretKey) {
-    console.error('[turnstile] TURNSTILE_SECRET_KEY not set, rejecting submission.');
+    log('error', { requestId: requestIdFrom(request), route: 'lib/turnstile', action: 'secret_key_not_set', effect: 'rejecting_submission' });
     return new Response(JSON.stringify({ ok: false, error: 'verification unavailable' }), { status: 503, headers });
   }
   if (!token || typeof token !== 'string' || !token.trim()) {

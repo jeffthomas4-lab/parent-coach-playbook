@@ -41,8 +41,8 @@ Pointe shoes are the big purchase, but only when your teacher says so. Most stud
   <article class="border border-bone bg-paper-warm p-6 flex flex-col">
     <div class="t-label text-ink-soft mb-2 text-xs">Amazon · Ballet · Ages 4–12</div>
     <h3 class="font-display text-ink text-2xl font-semibold leading-tight" style="margin: 0;">Capezio youth ballet slippers</h3>
-    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Split-sole canvas ballet slipper with pre-sewn elastic. Lighter and more flexible than leather full-sole slippers. Ask your studio which type they require before ordering.</p>
-    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fit them snug — ballet slippers stretch. Try them on with tights, not socks. When in doubt, get fitted at a dancewear store.</p>
+    <p class="font-display text-ink-soft mt-4 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Full-sole leather ballet slipper with a drawstring and elastic. The traditional first slipper for younger dancers. Ask your studio which type they require before ordering.</p>
+    <p class="font-display text-ink mt-4 italic border-l-2 border-rust pl-3 leading-snug" style="margin-top: 1rem; margin-bottom: 0;">Our take: Fit them snug and let the leather break in over the first few wears. Try them on with tights, not socks. When in doubt, get fitted at a dancewear store.</p>
     <a href="/go/gymnastics-slippers-youth/" rel="sponsored nofollow noopener" class="btn mt-6 self-start">See it at Amazon ↗</a>
   </article>
   <p class="t-label text-ink-soft mt-3 text-xs" style="text-transform: none; letter-spacing: 0;">As an Amazon Associate we earn from qualifying purchases.</p>

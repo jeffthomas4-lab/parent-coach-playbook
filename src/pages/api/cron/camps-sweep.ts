@@ -23,6 +23,8 @@ import { deleteExpiredIdempotencyRecords } from '../../../lib/public-idempotency
 import { featureEnabled } from '../../../lib/feature-flags';
 import { secretsMatch } from '../../../lib/secrets';
 import { writeHeldDuringMaintenance } from '../../../lib/maintenance-mode';
+import { createRequestLogger } from '../../../lib/log';
+import { purgeCampsLiteEdgeCache } from '../../../lib/camps-lite-cache';
 
 export const prerender = false;
 
@@ -46,6 +48,7 @@ const json = (body: unknown, status = 200) =>
   });
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'cron/camps-sweep', userId: null });
   const env = cfEnv as CronEnv | undefined;
   const headerKey = request.headers.get('x-cron-key') ?? '';
   if (!env?.CRON_KEY || !(await secretsMatch(headerKey, env.CRON_KEY))) {
@@ -83,9 +86,9 @@ export const POST: APIRoute = async ({ request }) => {
       else if (result.status === 'timeout') urlTimeout += 1;
       else if (result.status === 'redirect') urlRedirect += 1;
     }
-  } catch {
+  } catch (error) {
     failures.push('url_sweep_failed');
-    console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'url_sweep_failed' }));
+    logger.error('camps_sweep_stage_failed', error, { code: 'url_sweep_failed' });
   }
 
   // 2. Stale-archive — move past-date approved camps to rejected.
@@ -96,11 +99,18 @@ export const POST: APIRoute = async ({ request }) => {
     staleArchived = archive.archived;
     staleArchiveHasMore = archive.hasMore;
     if (archive.hasMore) {
-      console.warn(JSON.stringify({ event: 'camps_sweep_backlog', code: 'stale_archive_has_more', archived: archive.archived }));
+      logger.warn('camps_sweep_backlog', { code: 'stale_archive_has_more', archived: archive.archived });
     }
-  } catch {
+    if (archive.archived > 0) {
+      // Archiving removes camps from GET /api/camps/lite's result set
+      // (approved -> rejected). Only worth purging when this stage actually
+      // changed something — see src/lib/camps-lite-cache.ts for the stated
+      // TTL and invalidation path this call is part of.
+      await purgeCampsLiteEdgeCache();
+    }
+  } catch (error) {
     failures.push('stale_archive_failed');
-    console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'stale_archive_failed' }));
+    logger.error('camps_sweep_stage_failed', error, { code: 'stale_archive_failed' });
   }
 
   // 3. Expired retry metadata cleanup. Default-off until migration 0015 and
@@ -111,9 +121,9 @@ export const POST: APIRoute = async ({ request }) => {
   if (idempotencyCleanupEnabled) {
     try {
       idempotencyExpiredDeleted = await deleteExpiredIdempotencyRecords(env.DB, new Date().toISOString(), 100);
-    } catch {
+    } catch (error) {
       failures.push('idempotency_cleanup_failed');
-      console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'idempotency_cleanup_failed' }));
+      logger.error('camps_sweep_stage_failed', error, { code: 'idempotency_cleanup_failed' });
     }
   }
 
@@ -127,7 +137,7 @@ export const POST: APIRoute = async ({ request }) => {
     approvedFutureCount = await countApprovedFutureCamps(env.DB);
     if (approvedFutureCount === 0) {
       failures.push('directory_blackout');
-      console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'directory_blackout' }));
+      logger.error('camps_sweep_stage_failed', undefined, { code: 'directory_blackout' });
     } else if (failures.length === 0 && env.OPS_HEARTBEAT_URL) {
       // Business-metric alert (Pillar 8): ping the heartbeat monitor only when
       // the number is healthy. If this run fails, throws, or the count drops
@@ -136,14 +146,15 @@ export const POST: APIRoute = async ({ request }) => {
       // the sweep itself.
       try {
         await fetch(env.OPS_HEARTBEAT_URL, { method: 'GET' });
-      } catch {
+        logger.info('camps_sweep_heartbeat_sent', { approvedFutureCount });
+      } catch (error) {
         failures.push('heartbeat_failed');
-        console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'heartbeat_failed' }));
+        logger.error('camps_sweep_stage_failed', error, { code: 'heartbeat_failed' });
       }
     }
-  } catch {
+  } catch (error) {
     failures.push('directory_probe_failed');
-    console.error(JSON.stringify({ event: 'camps_sweep_stage_failed', code: 'directory_probe_failed' }));
+    logger.error('camps_sweep_stage_failed', error, { code: 'directory_probe_failed' });
   }
 
   return json({

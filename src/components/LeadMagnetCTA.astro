@@ -1,5 +1,6 @@
 ---
 import NewsletterSignup from './NewsletterSignup.astro';
+import Illo from './Illo.astro';
 
 interface Props {
   title?: string;
@@ -27,12 +28,11 @@ const {
           kind of templates inside the download. Hidden on small screens to keep
           the CTA tight on mobile. */}
       <div class="hidden md:block mt-7 max-w-md">
-        <img
-          src="/illustrations/family-season-calendar.webp"
+        <Illo
+          base="family-season-calendar"
           alt="Family wall calendar with color-coded youth sports and activities."
           class="w-full h-auto rounded-card shadow-card border border-line"
-          loading="lazy"
-          decoding="async"
+          sizes="(min-width: 768px) 448px, 100vw"
         />
       </div>
     </div>

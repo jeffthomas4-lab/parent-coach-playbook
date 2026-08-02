@@ -5,6 +5,8 @@ import type { APIRoute } from 'astro';
 import { rejectReview } from '../../../../../lib/camps-db';
 import { requireAdmin, requireSameOrigin } from '../../../../../lib/admin-auth';
 import { featureEnabled } from '../../../../../lib/feature-flags';
+import { withAdminReceipt, type MutationOutcome } from '../../../../../lib/admin-receipts';
+import { createRequestLogger } from '../../../../../lib/log';
 import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
@@ -16,11 +18,15 @@ const json = (body: unknown, status = 200) =>
   });
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const env = cfEnv as { DB: D1Database; ADMIN_EMAILS?: string; CAMP_REVIEWS_ENABLED?: string } | undefined;
+  const env = cfEnv as
+    | { DB: D1Database; ADMIN_EMAILS?: string; CAMP_REVIEWS_ENABLED?: string; PCD_OPS_DB?: D1Database; SITE_URL?: string }
+    | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500);
 
   const auth = await requireAdmin(request, env);
   if (auth instanceof Response) return auth;
+
+  const logger = createRequestLogger(request, { route: 'admin/reviews/reject', userId: auth.email });
 
   const originErr = requireSameOrigin(request);
   if (originErr) return originErr;
@@ -43,16 +49,50 @@ export const POST: APIRoute = async ({ params, request }) => {
       const v = fd.get('notes');
       if (typeof v === 'string' && v.trim()) notes = v.trim();
     }
-  } catch {
-    // optional
+  } catch (error) {
+    logger.error('parse_body_failed', error, { fallback: 'proceeding_with_no_notes' });
   }
 
-  const result = await rejectReview(env.DB, id, auth.email, notes);
-  if (!result) return json({ ok: false, error: 'review not found' }, 404);
-  // Guarded on status = 'pending' — see the note in approve.ts.
-  const { transitioned, ...review } = result;
-  if (transitioned === false) {
-    return json({ ok: false, error: 'review already decided', code: 'review_state_changed' }, 409);
-  }
-  return json({ ok: true, review });
+  const requestId = logger.requestId;
+
+  const receipted = await withAdminReceipt(
+    {
+      env,
+      environment: env.SITE_URL ?? 'unknown',
+      actorEmail: auth.email,
+      action: 'review.reject',
+      resourceType: 'camp_review',
+      resourceId: id,
+      requestId,
+      authorizationContext: 'cloudflare-access-jwt:admin-allowlist',
+    },
+    async (): Promise<MutationOutcome<{ review: Record<string, unknown> }>> => {
+      const result = await rejectReview(env.DB, id, auth.email, notes);
+      if (!result) {
+        return {
+          outcome: 'error',
+          reason: 'review_not_found',
+          response: json({ ok: false, error: 'review not found' }, 404),
+        };
+      }
+      // Guarded on status = 'pending' — see the note in approve.ts.
+      const { transitioned, ...review } = result;
+      if (transitioned === false) {
+        return {
+          outcome: 'blocked',
+          reason: 'review_state_changed',
+          response: json({ ok: false, error: 'review already decided', code: 'review_state_changed' }, 409),
+        };
+      }
+      return {
+        outcome: 'success',
+        value: { review },
+        beforeSummary: 'status=pending',
+        afterSummary: `status=rejected${notes ? ' notes_set' : ''}`,
+      };
+    },
+  );
+
+  if ('response' in receipted) return receipted.response;
+  return json({ ok: true, review: receipted.value.review });
 };

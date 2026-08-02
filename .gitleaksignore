@@ -18,3 +18,7 @@
 21f282de8b5b79a5f1108a9f3288efe2c39cb060:wrangler.jsonc:generic-api-key:104
 9bea6cffd6e286d33f5f2edf5cb4577389996878:wrangler.production.jsonc:generic-api-key:46
 6635ef367bf0776fef5e3de548b1daa10da8345b:wrangler.jsonc:generic-api-key:74
+#
+# reports/affiliate/DEPLOYED_2026-07-31.md:10 — ordinary prose describing the
+# three gymnastics/ballet/dance copy rewrites, not a credential or token.
+2a035184f773043ba6e129e47f525e6caaa10c34:reports/affiliate/DEPLOYED_2026-07-31.md:generic-api-key:10

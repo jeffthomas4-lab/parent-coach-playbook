@@ -29,9 +29,9 @@ describe('test engineering contract', () => {
     expect(workflow).toContain('npm run test:integration');
   });
 
-  it('runs disposable-D1 integration tests in one deterministic worker thread', async () => {
+  it('runs disposable-D1 integration tests in one deterministic worker fork', async () => {
     const config = await read('vitest.integration.config.ts');
-    expect(config).toContain("pool: 'threads'");
+    expect(config).toContain("pool: 'forks'");
     expect(config).toContain('maxWorkers: 1');
     expect(config).toContain('fileParallelism: false');
   });

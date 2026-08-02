@@ -9,6 +9,8 @@
 //
 // To swap the destination form, change KIT_HOSTED_URL.
 
+import Illo from './Illo.astro';
+
 interface Props {
   variant?: 'inline' | 'card' | 'compact';
   headline?: string;
@@ -57,12 +59,11 @@ const isCompact = variant === 'compact';
   <section class={`${isCard ? 'card card-rule overflow-hidden' : 'rule-hair border-b border-line py-14'}`}>
     {isCard && (
       <figure class="border-b border-line">
-        <img
-          src="/illustrations/newsletter-banner.webp"
+        <Illo
+          base="newsletter-banner"
           alt="Mailbox at sunset holding the Parent Coach Desk Friday Letter."
           class="w-full h-48 md:h-64 object-cover"
-          loading="lazy"
-          decoding="async"
+          sizes="(min-width: 768px) 768px, 100vw"
         />
       </figure>
     )}

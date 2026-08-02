@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../data/site';
-const updated = 'July 16, 2026';
+const updated = 'July 30, 2026';
 ---
 <BaseLayout
   title="Privacy and Editorial Disclosure"
@@ -59,7 +59,10 @@ const updated = 'July 16, 2026';
           <li><strong>Corrections, removals, privacy, copyright, accessibility, and safety requests</strong>, if the structured request form is enabled. We store the contact details and description you provide so a person can investigate and respond. The request is not published.</li>
           <li><strong>Camp reviews</strong>, only if that currently disabled feature is opened. We would store the reviewer's email for moderation and the chosen display name for publication. The launch gate requires retention, moderation, removal, and additional notice first.</li>
           <li><strong>Listing claims</strong>, only if that currently disabled feature is opened. We would store the name, email, organization, phone, and verification record needed to manage the claim. The launch gate requires verification, retention, support, and additional terms first.</li>
+          <li><strong>Reader testimonials</strong>, only if that currently disabled feature is opened. We would store the name, testimonial text, and optional context you submit for our editorial team to review before anything publishes.</li>
+          <li><strong>Camp and program staff contact information</strong> — a director, registrar, coach, or front-desk contact's name, title, email, or phone. Unlike the data above, this is not something the person sends us. We compile it from that organization's own public website (its contact, about, staff, or coaches page) so we can verify a listing and reach the right person. We never publish a staff member's name; if we publish a contact channel at all, it is a role label like "Camp Registrar," not a person's name. A camp or program staff member can ask us to stop holding or contacting them at our <a href="/trust/" class="text-rust hover:underline">request page</a>, and that opt-out is permanent and survives us re-checking the organization's site later. This is not yet live on the site; it will be reachable through claimed-listing self-editing once it launches.</li>
           <li><strong>Location tools</strong>, when you deliberately enter a ZIP code in the camp directory. The ZIP is sent directly from your browser to the OpenStreetMap Foundation's Nominatim service to turn it into approximate coordinates; the <a href="https://osmfoundation.org/wiki/Privacy_Policy" class="text-rust hover:underline" rel="noopener noreferrer" target="_blank">OpenStreetMap Foundation privacy policy</a> applies. We do not store that ZIP in our directory database. Browser geolocation is not currently enabled by our site permissions policy.</li>
+          <li><strong>Spam prevention (Cloudflare Turnstile)</strong>, on every public form (camp submit, camp suggest, review, claim). Turnstile runs a challenge in your browser to prove you are not a bot. We do not receive or store a personal profile from it; Cloudflare's own privacy terms cover what it sees.</li>
         </ol>
         <p>We do not sell or share your email. We do not run third-party advertising trackers. We do not run remarketing or behavioral ads.</p>
         <p>You can opt out of Google Analytics tracking site-wide by installing the <a href="https://tools.google.com/dlpage/gaoptout" class="text-rust hover:underline" rel="noopener nofollow noreferrer" target="_blank">Google Analytics opt-out browser add-on</a>, or by enabling "Do Not Track" / "Global Privacy Control" in your browser, which we honor automatically.</p>

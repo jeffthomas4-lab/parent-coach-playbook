@@ -15,9 +15,18 @@ Or via the npm wrapper:
 Idempotent — skips slugs whose JPG is newer than the source markdown
 unless --force is passed.
 
-Design intent: visually consistent with the brand (cream paper, italic
-Fraunces, terracotta accent), but each card carries the article title
+Design intent: visually consistent with the brand (grey-blue paper, italic
+Fraunces, navy/royal-blue accent), but each card carries the article title
 so social previews aren't all interchangeable.
+
+STANDARD-AUDIT #36 (2026-07-30/31): this file's colors were hardcoded to the
+retired warm-editorial palette (cream/terracotta/sage) and did NOT move when
+the site remapped to navy/silver-green on 2026-07-29 — a --force regen alone
+would have re-rendered the exact same wrong colors, since nothing in this file
+read the new tokens. Fixed 2026-07-31: constants below now match
+src/styles/pcd-tokens.mjs. Regen still has to run on a machine with the
+Brotli extension for fontTools (this sandbox lacks it — see the bottom of
+this file).
 """
 
 import os, sys, glob, re, tempfile
@@ -31,16 +40,17 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 FORCE = '--force' in sys.argv
 
-# --- Brand tokens (matched to tailwind config) ---
-PAPER       = (250, 246, 238)
-PAPER_WARM  = (242, 234, 217)
-INK         = (45,  37,  32)
-INK_SOFT    = (95,  84,  72)
-TERRACOTTA  = (197, 113, 61)
-HONEY       = (212, 171, 106)
-SAGE        = (143, 166, 140)
-LINEN       = (221, 210, 189)
-BONE        = (231, 222, 203)
+# --- Brand tokens (matched to src/styles/pcd-tokens.mjs, navy/silver-green
+#     palette, 2026-07-29 remap) ---
+PAPER       = (237, 241, 245)   # --paper #EDF1F5, page background
+PAPER_WARM  = (255, 255, 255)   # --paper-warm #FFFFFF, card surfaces
+INK         = (4,   30,  66)    # --ink / --navy #041E42
+INK_SOFT    = (46,  58,  69)    # --ink-soft #2E3A45
+TERRACOTTA  = (0,   53,  148)   # --rust / --accent #003594, PRIMARY ACCENT (name kept, value isn't terracotta anymore)
+HONEY       = (138, 155, 160)   # --trophy, collapsed into silver green #8A9BA0
+SAGE        = (138, 155, 160)   # --turf, silver green #8A9BA0 — same value as HONEY on purpose, see pcd-tokens.mjs
+LINEN       = (201, 210, 218)   # --bone / --line #C9D2DA, borders/dividers
+BONE        = (201, 210, 218)   # unused today, kept in sync with LINEN
 
 W, H = 1200, 630
 

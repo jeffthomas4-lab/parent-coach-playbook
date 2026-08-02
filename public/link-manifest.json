@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T15:12:27.471Z",
+  "generatedAt": "2026-08-02T16:42:09.278Z",
   "count": 700,
   "links": [
     {
@@ -458,7 +458,8 @@
         "src/pages/camps/[slug].astro",
         "src/pages/camps/submit.astro",
         "src/pages/camps/suggest.astro",
-        "src/pages/proof.astro"
+        "src/pages/proof.astro",
+        "src/pages/trust.astro"
       ]
     },
     {
@@ -1499,12 +1500,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B003BSRB3U?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: wrestling-headgear)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B003L23NJ4?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: coach-clipboard-dry-erase)"
@@ -1810,9 +1805,21 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B07GZX6Y6S?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: wrestling-headgear)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B07HTD6166?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: flag-football-belt-set)"
+      ]
+    },
+    {
+      "url": "https://www.amazon.com/dp/B07KFV9MFL?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: hockey-pads-starter)"
       ]
     },
     {
@@ -2164,12 +2171,6 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0CQTM2SBD?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: hockey-pads-starter)"
-      ]
-    },
-    {
       "url": "https://www.amazon.com/dp/B0CYTHP5JD?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: multi-sport-shoe-bag)"
@@ -2254,6 +2255,12 @@
       ]
     },
     {
+      "url": "https://www.amazon.com/dp/B0DQYG586R?tag=parentcoachpl-20",
+      "sources": [
+        "src/data/affiliates.json (slug: gymnastics-slippers-youth)"
+      ]
+    },
+    {
       "url": "https://www.amazon.com/dp/B0DRC1HJN8?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: multi-sport-cleats-youth)"
@@ -2278,7 +2285,7 @@
       ]
     },
     {
-      "url": "https://www.amazon.com/dp/B0F14NVK54?tag=parentcoachpl-20",
+      "url": "https://www.amazon.com/dp/B0F14PHJCY?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: basketball-shoes-youth)"
       ]
@@ -2323,12 +2330,6 @@
       "url": "https://www.amazon.com/dp/B0FSMY5J8B?tag=parentcoachpl-20",
       "sources": [
         "src/data/affiliates.json (slug: xc-trainers-youth)"
-      ]
-    },
-    {
-      "url": "https://www.amazon.com/dp/B0GC3TTFQN?tag=parentcoachpl-20",
-      "sources": [
-        "src/data/affiliates.json (slug: gymnastics-slippers-youth)"
       ]
     },
     {
