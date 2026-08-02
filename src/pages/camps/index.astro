@@ -1136,10 +1136,8 @@ const itemListSchema = featuredCamps.length > 0 ? {
       // #camp-filters.
       function campsLiteGatedControls(): (HTMLInputElement | HTMLSelectElement | HTMLButtonElement)[] {
         const inFilterBar = Array.from(
-          document.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>(
-            '#camp-filters input, #camp-filters select, #camp-filters button',
-          ),
-        );
+          document.querySelectorAll('#camp-filters input, #camp-filters select, #camp-filters button'),
+        ) as unknown as (HTMLInputElement | HTMLSelectElement | HTMLButtonElement)[];
         const showMore = [document.getElementById('pnw-show-more'), document.getElementById('national-show-more')]
           .filter((el): el is HTMLButtonElement => el !== null);
         return [...inFilterBar, ...showMore];

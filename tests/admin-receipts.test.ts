@@ -143,6 +143,7 @@ describe('recordAdminReceipt + verifyReceiptChain (real SQLite via the D1 adapte
       afterSummary: 'pcd_status=approved',
     });
     expect(result.ok).toBe(true);
+    if (result.id === undefined) throw new Error('expected receipt id');
     const row = raw.prepare('SELECT * FROM admin_action_receipts WHERE id = ?').get(result.id) as Record<string, unknown>;
     const serialized = JSON.stringify(row);
     expect(serialized).not.toContain('jeffthomas@pugetsound.edu');
@@ -178,6 +179,7 @@ describe('recordAdminReceipt + verifyReceiptChain (real SQLite via the D1 adapte
       resourceType: 'camp', resourceId: 'camp_1', requestId: 'r1',
       authorizationContext: 'ctx', result: 'success', reason: long, beforeSummary: long, afterSummary: long,
     });
+    if (result.id === undefined) throw new Error('expected receipt id');
     const row = raw.prepare('SELECT reason, before_summary, after_summary FROM admin_action_receipts WHERE id = ?')
       .get(result.id) as Record<string, string>;
     expect(row.reason.length).toBeLessThanOrEqual(200);
@@ -334,7 +336,7 @@ describe('withAdminReceipt', () => {
     expect('response' in outcome).toBe(true);
     if ('response' in outcome) {
       expect(outcome.response.status).toBe(500);
-      const body = await outcome.response.clone().json();
+      const body = await outcome.response.clone().json() as { code: string; ok: boolean };
       expect(body.code).toBe('RECEIPT_WRITE_FAILED');
       expect(body.ok).toBe(false);
     }
@@ -351,7 +353,7 @@ describe('withAdminReceipt', () => {
     expect('response' in outcome).toBe(true);
     if ('response' in outcome) {
       expect(outcome.response.status).toBe(500);
-      const body = await outcome.response.clone().json();
+      const body = await outcome.response.clone().json() as { code: string };
       expect(body.code).toBe('RECEIPT_WRITE_FAILED');
     }
   });
