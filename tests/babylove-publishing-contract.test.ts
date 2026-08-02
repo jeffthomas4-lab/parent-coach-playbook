@@ -32,4 +32,19 @@ describe('BabyLoveGrowth publishing contract', () => {
       expect(config).not.toContain('blog.parentcoachdesk.com');
     }
   });
+
+  it('normalizes governed evidence before deploying provider article commits', () => {
+    const normalizer = readFileSync(
+      resolve(root, '.github/workflows/babylove-normalize.yml'),
+      'utf8',
+    );
+    const deploy = readFileSync(resolve(root, '.github/workflows/deploy-workers.yml'), 'utf8');
+
+    expect(normalizer).toContain("startsWith(github.event.head_commit.message, 'Publish BabyLoveGrowth article ')");
+    expect(normalizer).toContain('npm run report:editorial-refresh');
+    expect(normalizer).toContain('reports/editorial/editorial-refresh-queue.json');
+    expect(normalizer).toContain('secrets.BABYLOVE_PUBLISH_TOKEN');
+    expect(normalizer).toContain('git push origin HEAD:main');
+    expect(deploy).toContain("!startsWith(github.event.head_commit.message, 'Publish BabyLoveGrowth article ')");
+  });
 });
