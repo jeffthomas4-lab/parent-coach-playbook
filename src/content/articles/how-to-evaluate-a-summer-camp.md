@@ -1,15 +1,18 @@
 ---
 title: "How to evaluate a summer camp in *10 minutes*"
-dek: "Eight questions. Two minutes apiece. Watch what they answer with, not just what they say."
-seoDescription: "You don't have an hour to research every camp. You have ten minutes between the laundry and the email backlog. Here's the version that works."
+dek: "Eight questions. Ten minutes. Specific answers beat a polished brochure."
+seoTitle: "How to Evaluate a Summer Camp in 10 Minutes"
+seoDescription: "Use eight questions to screen a summer camp quickly, including staff, supervision, daily schedule, safety plans, communication, and total cost."
+bluf: "Evaluate a summer camp by asking who supervises your child, how staff are screened and trained, what a normal day looks like, and what happens during an emergency. Specific written answers matter more than polished photos. If basic policies are hard to get, keep looking."
 topic: "summer-camps"
-format: "note"
+format: "essay"
 phase: "drive-there"
 sport: "multi-sport"
 age: "all-ages"
 hero: "/illustrations/dorm-cot-bare.webp"
 heroAlt: "A bare cot with a folded blanket sits in a plain camp cabin, a duffel on the floor beside it lit by a screened window."
 publishedAt: 2026-04-25
+updatedAt: 2026-08-02
 featured: true
 editorial:
   qualityGrade: 8
@@ -20,59 +23,77 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Refreshed 2026-08-02 against current American Camp Association parent guidance; removed unsupported ratio thresholds."
 ---
 
-You don't have an hour to research every camp. You have ten minutes between the laundry and the email backlog. Here's the version that works.
+Open the camp website, the registration page, and a blank note. You are not trying to prove the camp is perfect. You are checking whether the people running it can answer ordinary parent questions without hiding behind "elite," "life-changing," or a photo of a kid jumping off a dock.
 
-Pull up the camp's website. Set a timer. Ask these eight questions in this order. The way they answer, or don't, tells you almost everything.
+Ten useful minutes can eliminate a bad fit. A final safety decision deserves a longer review.
 
-**1. Who is running the camp this week?**
+## First, identify who is responsible
 
-Not the program director. The actual head coach on the field. If the website lists a coach who hasn't worked the camp in three years, that's not an accident.
+Ask: *Who is supervising my child's group each day, and who do I contact if there is a problem?*
 
-**2. What's the kid-to-coach ratio?**
+You want the role, not a celebrity name on the homepage. Find out who leads the group, whether staff rotate, and who has authority when the director is elsewhere.
 
-Anything over 12 to 1 is a glorified daycare. 6 to 1 is what you're paying for at a real camp. If the site doesn't say, that's the answer.
+Then ask how those staff members are screened and trained. The American Camp Association's [current accreditation overview](https://www.acacamps.org/parents-families/fun-safety-aca-accredited-camps-set-standard) says its accredited camps use staff screening that includes background checks, interviews, and reference checks, along with supervision and training standards.
 
-**3. What does a Tuesday afternoon actually look like?**
+A camp does not have to be accredited to give you a specific answer. It does have to tell you what it actually does.
 
-Not Monday morning, when everyone is fresh. Tuesday at 2pm. If the schedule is vague after lunch, the camp is light after lunch.
+Skip the opening ceremony. Ask for Tuesday afternoon.
 
-**4. What happens when a kid is struggling?**
+Ask for four specifics:
 
-Real camps have a response. Pull-aside coaching. A gear adjustment. A different coach. If the answer is "they get better with practice," that's not an answer.
+- What is the group doing after lunch?
+- How much time is instruction, free play, transition, and waiting?
+- Who supervises the walk between activities?
+- Where does a kid go when they need a break?
 
-**5. What's the lunch situation?**
+For a sport camp, ask what skill gets taught and how groups are divided. "Players improve their game" is copy. "The 10-year-old group spends the first hour on passing and small-sided play" is an answer.
 
-Pack their own. Catered. Field trip to a sandwich shop. Each one is fine. The camp not knowing is not.
+The American Camp Association's [parent checklist for choosing a camp](https://www.acacamps.org/press-room/how-to-choose-camp/preparing-for-camp) also recommends asking about staff training, transportation, extended care, food, swimming, supervision, and the correct contact for a concern. Use the parts that match your child's day.
 
-**6. Where are the bathrooms?**
+## Check the safety and communication plan
 
-For overnight, this is a bigger question than parents ask. Cabin? Across the field? Are they shared? Is there hot water? Your kid will drink less if they're worried about the answer.
+Ask these four questions together:
 
-**7. What's the refund policy?**
+1. What happens if my child is injured or becomes ill?
+2. How and when are parents notified?
+3. What is the pickup and release process?
+4. What changes for swimming, transportation, or an off-site trip?
 
-If a kid hates day one. If they get the flu. If you have a death in the family. Camps that have run for years have a real policy. Camps that don't will tell you "we'll work with you," which means they will not.
+The point is not to get a promise that nothing will happen. No camp can make that promise. You are looking for a written procedure and a person responsible for following it.
 
-**8. What do parents say about week three of last summer?**
+Accreditation and state licensing are also different. American Camp Association accreditation is voluntary, while licensing requirements vary by state; ACA standards cover areas such as emergency planning, health care, staff qualifications, and supervision. Read our deeper guide on [how to vet a camp for safety](/drive-there/how-to-vet-a-camp-for-safety/) before paying for an overnight, aquatic, travel, or high-risk program.
 
-Not the testimonial on the site. Reviews. Comments. A real opinion from a parent who paid the same money you're about to pay.
+## Price the whole week and verify the answers
 
-**The pattern that matters**
+Ask whether the listed price includes meals, transportation, extended care, field trips, equipment, photos, and required clothing. Read the cancellation, illness, and refund terms before checkout.
 
-Good camps answer each of these in one or two specific sentences. Bad camps reach for marketing language. The word "elite" appears more than once on the homepage. The phrase "world-class" appears anywhere. The staff page is a list of bios for people not actually on site this summer.
+"We will work with you" is not a refund policy. Get the actual deadline, amount, and exception rules in writing.
 
-**The ten-minute version**
+If you are choosing between two solid options, use the [five-question camp comparison](/drive-there/comparing-two-summer-camp-options/) after this screen. The closer or less expensive camp can win a tie. It should not win because the other camp would not answer basic questions.
 
-Two minutes per question. Not all eight. Pick the four that matter most for your kid. For a five-year-old it's questions 2, 5, 6, and 8. For an eleven-year-old it's 1, 3, 4, and 7. For a college-bound fourteen-year-old it's 1, 4, 7, and a ninth question we didn't put in the list. *Will the actual college coach be on the field, or just at the welcome dinner?*
+Check whether the staff names, dates, location, and schedule agree across the website and registration form. Search for recent parent reviews, but treat them as leads rather than proof.
 
-You learn that one by reading recent reviews from parents who paid for the camp last summer.
+One angry review is a story. A repeated complaint about pickup, supervision, or surprise fees is a question to take back to the director.
 
----
+If a camp says it is accredited, verify that claim through the American Camp Association rather than relying on a logo. If it names a school, university, or club partner, confirm the relationship on the partner's own site.
 
-Looking for camps near you? <a href="/camps/">Browse our camp directory</a>. Filter by sport, age, and state.
+## Make the ten-minute call
 
-Run a camp? <a href="/camps/submit/">Add your listing for free</a>. Camp directors can claim a verified listing at no cost and add photos, registration links, and a logo.
+At the end of the screen, you should know:
+
+- who has your kid;
+- what the kid does all day;
+- how the camp handles problems;
+- how parents get reached;
+- what the complete week costs.
+
+If you have those answers, keep evaluating. If two or three remain vague, do not talk yourself into the deposit.
+
+Ready to look locally? [Browse the camp directory](/camps/) by activity, age, and state.
+
+A directory listing starts the search. The camp's own current policies finish it.

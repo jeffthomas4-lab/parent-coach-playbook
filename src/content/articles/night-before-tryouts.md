@@ -1,6 +1,9 @@
 ---
 title: "The night before *tryouts*"
-seoDescription: "Your kid packed their bag four times tonight. Pinnies, right shoes, water bottle that doesn't leak, spare hair ties from earlier losses."
+seoTitle: "What to Do the Night Before Tryouts"
+seoDescription: "The night before tryouts, keep dinner, packing, bedtime, and conversation normal. Give your 11- or 12-year-old less pressure, not one last lesson."
+bluf: "The night before tryouts, keep the house boring. Pack the bag, eat a familiar dinner, and use the normal bedtime. Answer questions without giving a speech. Your 11- or 12-year-old does not need one more lesson. They need a parent who is steady."
+topic: "tryouts"
 format: "note"
 issue: 4
 phase: "drive-there"
@@ -8,6 +11,7 @@ sport: "multi-sport"
 age: "11-12"
 seasonPhase: "pre-season"
 publishedAt: 2026-03-19
+updatedAt: 2026-08-02
 hero: /illustrations/night-before-tryouts.webp
 heroAlt: "A kid's bedroom at night. Cleats, glove, and folded jersey laid out on a chair. Soft lamp light and muted rose tones, parent silhouette in doorway."
 editorial:
@@ -19,27 +23,51 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Refreshed 2026-08-02: preserved the quiet 11-12 parent script, removed incidental affiliate placement, and separated it from the age 5-7 and 8-10 versions."
 ---
 
-Your kid packed their bag four times tonight. Pinnies, right shoes, [water bottle](/go/multi-sport-water-bottle/) that doesn't leak, spare hair ties from earlier losses. You watch them line them up, pull them out, put them back.
+Your kid has packed the bag four times. Shoes, pinnie, water bottle, spare hair ties.
 
-They're trying to make the A team. You pretend to have an opinion about what goes in the bag, because you think it helps to have someone in the room.
+Everything comes out. Everything goes back in.
 
-Don't talk about tryouts the night before tryouts.
+They are trying to control tomorrow with a zipper.
 
-Two seasons in, you learned this. The night before, you asked how they were feeling. They fell apart. Not because of tryouts. Because the question put a magnifying glass on the thing they were already thinking about.
+Do not add a speech.
 
-Now you just sit in their room. You fold the towel that came out of the dryer. You ask if they want you to braid their hair in the morning. You don't ask how they're feeling.
+## Give the evening one small job
 
-When they're ready, they'll tell you. Or they won't. Both are fine.
+Pack the bag together once. Check the time and address. Put the keys where you can find them in the morning.
 
-The night before tryouts is for presence. Not pep talks. Presence. You sitting on the bed, being a person who is on their side, not asking anything of them.
+Then close the bag.
 
-If your kid is trying out for something tomorrow, here's what works. Pack the bag together. Make a normal dinner. Do something dumb after dinner. Watch an episode you've already seen. Go to bed at the normal time.
+If dinner has not been planned, use the ordinary meal your kid already eats. [The pre-tryout dinner](/drive-there/pre-tryout-dinner/) does not need to become a nutrition experiment or a family ceremony.
 
-Don't ask how they're feeling. Don't tell them you believe in them. They know.
+## Let them choose the conversation
 
-Just be in the same room.
+At 11 or 12, your kid knows what selection means. Asking *How are you feeling?* can be useful when they want to talk.
+
+It can also turn the whole room toward the thing they were trying to set down.
+
+Try a smaller opening: *Want company while you pack, or do you want space?*
+
+If they talk, listen. If they ask what the coach wants, say what you actually know and stop there.
+
+Do not promise a roster spot. Do not turn the bedroom into a late practice.
+
+The younger versions need a different touch. For a first tryout, read [the age 5-to-7 night-before script](/drive-there/the-night-before-tryouts-5-to-7/). For a kid who wants more detail about the schedule, use [the age 8-to-10 plan](/drive-there/the-night-before-tryouts-at-8-to-10/).
+
+## Keep tomorrow ordinary too
+
+Use the normal bedtime. Set one alarm. Leave enough time that nobody has to shout about a missing sock.
+
+On the drive, let your kid pick the music. A useful last sentence is:
+
+*Play hard. Be a good teammate. We will see you after.*
+
+That is enough.
+
+If this is their first serious travel selection, [the 11-to-12 travel tryout guide](/drive-there/the-travel-team-tryout-at-11-to-12/) covers the expectations and the result. Tonight is smaller.
+
+Bag closed. Lights out. Parent steady.

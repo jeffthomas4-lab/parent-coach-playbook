@@ -166,6 +166,7 @@ export function validateArticleContent(markdown, source = '<article>') {
     ['mojibake', MOJIBAKE, 'mojibake or a replacement character is present'],
     ['body_h1', /^#\s+/m, 'the layout owns the H1; remove the body H1'],
     ['em_dash', /\u2014/, 'em dashes are not allowed'],
+    ['smart_quotes', /[\u2018\u2019\u201C\u201D]/, 'use straight quotes and apostrophes in refreshed article text'],
   ];
   for (const [code, pattern, message] of directChecks) {
     const match = pattern.exec(reviewedText);
@@ -289,7 +290,15 @@ async function main() {
   const batch = batchIndex >= 0 ? Number(args[batchIndex + 1]) : null;
   const all = args.includes('--all');
   const reportPath = reportIndex >= 0 ? args[reportIndex + 1] : DEFAULT_REPORT;
-  const consumed = new Set([batchIndex, batchIndex + 1, reportIndex, reportIndex + 1].filter((index) => index >= 0));
+  const consumed = new Set();
+  if (batchIndex >= 0) {
+    consumed.add(batchIndex);
+    consumed.add(batchIndex + 1);
+  }
+  if (reportIndex >= 0) {
+    consumed.add(reportIndex);
+    consumed.add(reportIndex + 1);
+  }
   const files = args.filter((arg, index) => !consumed.has(index) && !arg.startsWith('--'));
   const results = await checkArticleFiles({ batch, all, reportPath, files });
   let errorCount = 0;

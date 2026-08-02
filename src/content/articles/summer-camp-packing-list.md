@@ -1,7 +1,9 @@
 ---
 title: "The summer camp *packing list* that actually works"
+seoTitle: "Summer camp packing list for day and overnight camp"
+seoDescription: "Pack for summer camp without overloading the bag: day-camp essentials, overnight additions, what to skip, and a simple pickup routine for wet gear."
 dek: "What to pack. What to skip. What every parent forgets."
-bluf: "Pack three sets of socks per day, not one. Bring two water bottles. Skip the new gear, send what they already trust. Label everything with their name in a Sharpie. Most parents over-pack clothes and under-pack the small things that actually decide whether camp is good or bad."
+bluf: "Start with the camp's own list, then pack for the problems kids can solve themselves: water, sun, wet clothes, and one missing item. Label everything. Send familiar gear, not brand-new gear. For overnight camp, add comfort and a laundry system."
 topic: "summer-camps"
 format: "note"
 phase: "drive-there"
@@ -10,97 +12,45 @@ age: "8-10"
 hero: "/illustrations/camp-dropoff-line.webp"
 heroAlt: "A line of cars stretches along a tree-lined camp drive in morning haze, bags being unloaded at a distance."
 publishedAt: 2026-05-01
+updatedAt: 2026-08-02
 featured: true
 editorial:
-  qualityGrade: 8
+  qualityGrade: 9
   originalityGrade: 8
-  voiceGrade: 8
+  voiceGrade: 9
   flagInappropriateness: false
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Narrowed against the separate first-overnight checklist, removed an undisclosed affiliate link, and verified sun and insect-repellent guidance against CDC and EPA."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-The packing list the camp sends you is a starting point. It's also written by people who have never had to find a clean pair of socks at 6:45am for a week.
+Start with the camp's list. It knows whether your kid needs a sleeping bag, sport gear, medications at check-in, or a white shirt for the Thursday-night activity. Our list is the layer that keeps one missing sock or one wet towel from wrecking the bag.
 
-Here is what we actually pack. Day camp version first, overnight version second.
+Write your kid's name on everything. Send gear they already know, and let the good clothes stay home.
 
-## Day camp, the bag
+## Pack the day-camp bag
 
-Two [water bottles](/go/multi-sport-water-bottle/), both filled the night before. One stays in the bag, one goes on the field. The math is that one will get lost or set down somewhere wet. Two means your kid drinks water all week.
+Pack two filled water bottles, a sun hat, a small towel, a wet bag, backup socks and underwear, and one allowed snack. Put a card with your phone number in the front pocket. The backup items belong where a kid can reach them, not under three towels.
 
-A sun hat. Not a baseball cap. A hat with a brim that covers ears. Most camps run on fields without shade. The week-three sunburn most kids get is from camps that didn't enforce hats.
+Ask how the camp handles sunscreen and insect repellent before sending either. The [CDC recommends wide-brimmed hats and sunscreen of SPF 15 or higher](https://www.cdc.gov/early-care/communication-resources/outdoor-play-and-safety-for-children-in-ece.html), while the [EPA tells adults to follow the repellent label and not let children handle the product](https://www.epa.gov/insect-repellents/using-insect-repellents-safely-and-effectively). Camp staff may collect these products or apply them on a schedule.
 
-Sunscreen, kid-applied size. The bottle in the bag, not the family-size in the car. They will not put it on. Spray is the only kind they'll actually use.
+Pack cleats, gloves, racquets, or dance shoes only when the camp asks. Brand-new gear stays home. Camp is a bad place to discover that a shoe rubs or a mouthguard does not fit.
 
-Two snack bars. Camps feed lunch. They don't feed the 2pm collapse.
+## Add only what overnight camp needs
 
-A small towel. For the inevitable wet thing. Sweat, water bottle leak, sprinkler, lake.
+For an overnight week, add one outfit per day plus two extras, extra socks and underwear, a sweatshirt, rain layer, two swimsuits when water is involved, a flashlight, and a laundry bag. A familiar pillowcase and a short note from home do more work than another pile of clothes.
 
-A ziplock bag. For the inevitable wet thing they have to bring home.
+Use our [first overnight camp packing list](/drive-there/first-overnight-camp-packing-list/) for the full cabin version. If you are still deciding whether the timing is right, read the [day-camp versus overnight readiness check](/drive-home/day-camp-vs-overnight-camp/) before buying anything.
 
-Backup socks and underwear. In the bag, not in the bottom. Day three, your kid will be glad these exist.
+Skip cash unless the camp names an amount. Skip phones, expensive gear, favorite irreplaceable items, and five different evening activities. One book and one deck of cards are enough.
 
-A laminated card with your phone number. In the front zip pocket. Most camps have this on a wristband but the wristband comes off by Wednesday.
+## Unpack outside
 
-## Overnight, the trunk
+Open the bag on the porch or in the garage. Sort wet, dirty, and salvageable before anything reaches the laundry room, then check the camp's lost-and-found instructions while the missing item is still easy to identify.
 
-Six pairs of socks for a five-day camp. They will lose two and ruin one. Six gets you through, and the [season essentials guide](/what-to-buy/season-essentials/) has the moisture-wicking multi-packs that hold up better than the cotton ones in the drawer.
-
-Five t-shirts and three pairs of shorts. Don't pack their good clothes. The good clothes will come home stained.
-
-A single pair of jeans or sweatpants for the chilly night. Most parents skip this. Most kids freeze on a Wednesday night.
-
-Two swimsuits if there's water. One is wet.
-
-Real shoes plus a backup. The backup is not flip-flops. The backup is a pair of cheap sneakers that can get wrecked.
-
-A flashlight. Not a phone. Camps that allow phones still say no phone after lights out.
-
-A book. Even kids who don't read at home read at camp because there is nothing to scroll.
-
-A small framed photo or a folded piece of paper from home. For the night two homesickness wave that hits almost every kid.
-
-Stamps and pre-addressed postcards if the camp does mail. Three of them. You will be amazed at the postcards that come back.
-
-Ziplock bags. Lots. Wet, dirty, broken, sandy. All the things ziplocks solve.
-
-A pillowcase from home. Not the pillow itself. The pillowcase carries the smell of home and lasts a week.
-
-## What to skip
-
-Brand-new gear. New cleats break in painfully and the kid won't say anything until Wednesday.
-
-Their favorite stuffed animal. It will get lost or wrecked. Send the second-favorite if they need one.
-
-Cash. Most camps have a store account system. If they don't, $20 is plenty.
-
-Five board games and a deck of cards. Two of those things, total. Camps run their own evenings.
-
-Aerosol bug spray for under-12. Lotion or wipes only. The aerosol cans get sprayed in eyes, mouths, and into other kids' faces by Tuesday.
-
-## What every parent forgets
-
-Hair ties for any kid with hair past the shoulders. Ten of them. They will lose six. Four is enough for the week.
-
-A small refillable shampoo bottle. The full-size one will not survive the trunk and you'll find it leaking on Friday.
-
-Foot powder for any kid in cleats five days running. Saves the week.
-
-A pre-stamped, pre-addressed envelope to home. For the kid who really needs to send something.
-
-A $5 bill folded in their pocket. Not for spending. For the moment they need to feel like they have it.
-
-## The after-camp ritual
-
-Empty the trunk on the porch, not in the laundry room. Pre-sort wet, dirty, salvageable. The trunk will smell like camp for two weeks. That smell is the proof of a good week.
-
----
-
-Heading to camp soon? <a href="/camps/">Browse our directory</a> for camps near you with packing list and what-to-bring details.
-
-Run a camp? <a href="/camps/submit/">Add your listing</a>. Camps that publish a clear packing list earn parent trust faster.
+Still choosing a session? [Browse camps by age, activity, and format](/camps/) before you build the bag.

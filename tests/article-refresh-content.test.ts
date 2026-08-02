@@ -47,7 +47,7 @@ describe('article refresh content validator', () => {
   it('reports every objective provider, robots, encoding, structure, voice, link, and disclosure failure', () => {
     const markdown = article(`# Duplicate title
 
-This comprehensive journey has four sentences. It will unlock results. It is seamless. It uses an em dash\u2014badly.
+This comprehensive journey has four sentences. It will unlock "results" with smart quotes: “results.” It is seamless. It uses an em dash\u2014badly.
 
 ## Table of Contents
 
@@ -74,6 +74,7 @@ Broken encoding: Ã¢â‚¬â„¢ and ï¿½.
       'mojibake',
       'body_h1',
       'em_dash',
+      'smart_quotes',
       'manual_table_of_contents',
       'key_takeaways_template',
       'pro_tip_template',
