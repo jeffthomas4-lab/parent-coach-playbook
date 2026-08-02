@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-02",
   "inventory_sha256": "ac65a04f8221ec9aab1fb43ce43aefed8c0bc59e45df3ae7d7dcf3eb5e880163",
   "policy": {
     "refresh_months": 18,

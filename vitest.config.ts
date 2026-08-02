@@ -12,6 +12,23 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['tests/**/*.test.ts'],
+    // These two suites each own a real Miniflare/workerd native process
+    // (see tests/helpers/disposable-ops-db.ts). This default config has no
+    // pool/parallelism limits, so under `npm test` they can end up running
+    // concurrently with each other, and customer-lifecycle even holds two
+    // live Miniflare instances at once inside a single test. That native
+    // process contention is what crashes the vitest worker fork ("Worker
+    // exited unexpectedly"), not a test assertion failure. They already
+    // belong to, and correctly run in, `npm run test:integration`
+    // (vitest.integration.config.ts pins pool: 'threads', maxWorkers: 1,
+    // fileParallelism: false for exactly this reason), which CI runs as the
+    // "Integration paths" step in .github/workflows/ci.yml. Excluding them
+    // here does not stop them running; it routes them to the config that
+    // isolates native runtimes correctly.
+    exclude: [
+      'tests/customer-lifecycle.integration.test.ts',
+      'tests/editorial-records-migration.test.ts',
+    ],
     globals: false,
   },
   resolve: {

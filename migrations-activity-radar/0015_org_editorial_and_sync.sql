@@ -81,8 +81,8 @@ ALTER TABLE organizations ADD COLUMN public_contact_label TEXT;
 -- Stable external key for downstream consumers. Unlike `slug` (renamed when a
 -- name changes) and unlike the internal `id` (an implementation detail), this
 -- is the value published as `directory_source_records.source_record_key` on the
--- SightSmash side. Once assigned it never changes. Backfill with a generated
--- opaque value; do not derive it from the name.
+-- SightSmash side. Once assigned it never changes. Backfilled deterministically
+-- from the row id by scripts/backfill_external_keys.py.
 ALTER TABLE organizations ADD COLUMN external_key TEXT;
 
 -- Hash of the syndicated field set only. Lets an export skip unchanged rows and

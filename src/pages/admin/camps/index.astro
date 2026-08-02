@@ -79,7 +79,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                     <button type="submit" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-accent bg-stripe text-sm hover:bg-accent hover:text-paper transition-colors font-medium">Approve</button>
                   </form>
                   <form method="POST" action={`/api/admin/camps/${c.id}/reject`} class="inline flex flex-col gap-1 items-end">
-                    <select name="reason_code" required class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-xs">
+                    <select name="reason_code" required class="min-h-11 px-2 py-1 font-body bg-paper border border-input text-xs">
                       <option value="">— pick a reason —</option>
                       {REJECT_REASON_CODES.map((r) => (
                         <option value={r.code}>{r.label}</option>

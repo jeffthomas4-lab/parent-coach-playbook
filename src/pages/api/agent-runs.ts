@@ -32,6 +32,7 @@ import {
 } from '../../lib/agent-runs';
 import { readBoundedJson } from '../../lib/demand-telemetry';
 import { bearerCredential, secretsMatch } from '../../lib/secrets';
+import { createRequestLogger } from '../../lib/log';
 
 export const prerender = false;
 
@@ -83,17 +84,18 @@ interface Payload {
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'agent-runs', userId: null });
   const env = cfEnv as AgentRunsEnv | undefined;
 
   if (!env?.AGENT_RUNS_TOKEN) {
-    console.error('[agent-runs] AGENT_RUNS_TOKEN not configured — refusing all writes');
+    logger.error('agent_runs_token_not_configured', undefined, { effect: 'refusing_all_writes' });
     return json({ ok: false, error: 'not configured' }, 503);
   }
   if (!(await secretsMatch(bearerCredential(request), env.AGENT_RUNS_TOKEN))) {
     return json({ ok: false, error: 'forbidden' }, 403);
   }
   if (!env.FORGE_DB) {
-    console.error('[agent-runs] FORGE_DB binding missing');
+    logger.error('forge_db_binding_missing');
     return json({ ok: false, error: 'run log not available' }, 500);
   }
 
@@ -171,7 +173,7 @@ export const POST: APIRoute = async ({ request }) => {
       try {
         canary = await applyCanary(env.FORGE_DB, agent);
       } catch (e) {
-        console.error('[agent-runs] canary check failed', e);
+        logger.error('canary_check_failed', e, { agent });
       }
     }
 
@@ -180,7 +182,7 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       await alertRun(env, finishInput, canary);
     } catch (e) {
-      console.error('[agent-runs] alert failed', e);
+      logger.error('alert_failed', e, { agent });
     }
 
     return json({
@@ -192,7 +194,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
   } catch (e) {
     // The real error goes to the log, not the response body.
-    console.error('[agent-runs] write failed', e);
+    logger.error('write_failed', e, { agent, runId });
     return json({ ok: false, error: 'run log write failed' }, 500);
   }
 };

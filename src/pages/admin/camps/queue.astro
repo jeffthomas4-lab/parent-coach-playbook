@@ -202,17 +202,17 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                     <div class="grid gap-3 text-sm">
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Website</label>
-                        <input type="url" class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.website_url || ''} placeholder="https://..." data-field="website_url" />
+                        <input type="url" class="min-h-11 px-2 py-1 font-body bg-paper border border-input text-sm" value={camp.website_url || ''} placeholder="https://..." data-field="website_url" />
                       </div>
 
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Contact email</label>
-                        <input type="email" class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" value={camp.contact_email || ''} placeholder="email@example.com" data-field="contact_email" />
+                        <input type="email" class="min-h-11 px-2 py-1 font-body bg-paper border border-input text-sm" value={camp.contact_email || ''} placeholder="email@example.com" data-field="contact_email" />
                       </div>
 
                       <div class="grid gap-1">
                         <label class="font-display text-ink-soft italic text-xs font-medium">Description</label>
-                        <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="3" data-field="description">{camp.description}</textarea>
+                        <textarea class="px-2 py-1 font-body bg-paper border border-input text-sm" rows="3" data-field="description">{camp.description}</textarea>
                       </div>
 
                       <div class="flex justify-end">
@@ -235,13 +235,13 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       <label class="font-display italic text-ink-soft text-xs font-medium">
                         Reject reason (recorded for source-quality stats)
                       </label>
-                      <select class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" data-field="reason_code">
+                      <select class="min-h-11 px-2 py-1 font-body bg-paper border border-input text-sm" data-field="reason_code">
                         <option value="">— pick a reason —</option>
                         {REJECT_REASON_CODES.map((r) => (
                           <option value={r.code}>{r.label}</option>
                         ))}
                       </select>
-                      <input type="text" class="min-h-11 px-2 py-1 font-body bg-paper border border-bone text-sm" placeholder="optional notes" data-field="reject_notes" />
+                      <input type="text" class="min-h-11 px-2 py-1 font-body bg-paper border border-input text-sm" placeholder="optional notes" data-field="reject_notes" />
                       <div class="flex gap-2">
                         <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-rust bg-paper text-rust text-sm hover:bg-rust hover:text-paper transition-colors font-medium" data-action="reject-confirm">
                           Confirm reject
@@ -256,7 +256,7 @@ const fmtRange = (start: string | null, end: string | null) => formatCampDateRan
                       <label class="font-display italic text-ink-soft text-xs font-medium">
                         What do you need? (the research task runs this once — if it can't find it, the camp is rejected)
                       </label>
-                      <textarea class="px-2 py-1 font-body bg-paper border border-bone text-sm" rows="2" placeholder="e.g. need actual camp name, session dates, registration link" data-field="info_request_notes"></textarea>
+                      <textarea class="px-2 py-1 font-body bg-paper border border-input text-sm" rows="2" placeholder="e.g. need actual camp name, session dates, registration link" data-field="info_request_notes"></textarea>
                       <div class="flex gap-2">
                         <button type="button" class="min-h-11 inline-flex items-center justify-center font-display italic px-3 py-1 border border-bone bg-paper text-ink-soft text-sm hover:bg-paper-warm transition-colors font-medium" data-action="more-info-send">
                           Send request

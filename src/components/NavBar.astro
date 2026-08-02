@@ -43,7 +43,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
               >
                 <div class="grid grid-cols-2 gap-x-6 gap-y-1">
                   {READS_NAV.map((r) => (
-                    <a href={r.href} class="min-h-11 flex items-center font-body text-ink hover:text-rust py-1.5 font-medium">
+                    <a href={r.href} class="min-h-11 flex flex-col justify-center items-start font-body text-ink hover:text-rust py-1.5 font-medium">
                       {r.label}
                       <span class="block font-body text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{r.blurb}</span>
                     </a>
@@ -119,7 +119,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
                   <div>
                     <p class="font-body text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">CALCULATORS & CHECKS</p>
                     {toolsCol1.map((t) => (
-                      <a href={t.href} class="min-h-11 flex items-center font-body text-ink hover:text-rust py-1.5 font-medium">
+                      <a href={t.href} class="min-h-11 flex flex-col justify-center items-start font-body text-ink hover:text-rust py-1.5 font-medium">
                         {t.label}
                         <span class="block font-body text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
                       </a>
@@ -128,7 +128,7 @@ const toolsCol2 = TOOLS_NAV.slice(4);     // recruiting, rules, this season
                   <div>
                     <p class="font-body text-rust mb-2 text-xs font-medium" style="letter-spacing: 0.04em;">PLANNING & REFERENCE</p>
                     {toolsCol2.map((t) => (
-                      <a href={t.href} class="min-h-11 flex items-center font-body text-ink hover:text-rust py-1.5 font-medium">
+                      <a href={t.href} class="min-h-11 flex flex-col justify-center items-start font-body text-ink hover:text-rust py-1.5 font-medium">
                         {t.label}
                         <span class="block font-body text-ink-soft text-xs mt-0.5" style="font-weight: 400;">{t.blurb}</span>
                       </a>

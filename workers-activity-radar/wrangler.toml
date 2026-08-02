@@ -22,8 +22,22 @@ crons = ["0 * * * *"]
 # enrichment path. Maintenance mode is an independent emergency hold.
 CAMP_ENRICHMENT_ENABLED = "false"
 PCD_MAINTENANCE_MODE = "false"
+# Independent switch for named-contact capture into org_contacts. Separate from
+# CAMP_ENRICHMENT_ENABLED because this one writes PII with a 30-day deletion SLA
+# (DATA-MAP.md) and must be killable without stopping the camp scan.
+CONTACT_CAPTURE_ENABLED = "false"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "activity-radar"
 database_id = "8cc3694a-26f8-4a56-b131-d5d3a68c49ef"
+
+# The PCD operational D1. Holds org_contacts (migrations-pcd-ops/0028), the
+# named-human contact layer. Kept in a different database from the directory
+# graph on purpose: activity-radar syndicates wholesale to the SightSmash public
+# directory, and a person's name in that database would make every export a
+# per-row privacy decision. See CONTACT-DATA-MAP.md.
+[[d1_databases]]
+binding = "PCD_OPS_DB"
+database_name = "parent-coach-desk-ops-production"
+database_id = "b38d5f37-54df-4e0f-9706-023edc12c7fe"

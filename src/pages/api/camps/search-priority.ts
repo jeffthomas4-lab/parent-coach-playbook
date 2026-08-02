@@ -19,6 +19,7 @@ import {
   slimNote,
 } from '../../../lib/search-registry';
 import { env as cfEnv } from 'cloudflare:workers';
+import { enforcePublicWriteRateLimit, type PublicRateLimiter } from '../../../lib/public-rate-limit';
 
 export const prerender = false;
 
@@ -34,8 +35,11 @@ const json = (body: unknown, status = 200, cache = true) =>
 const today = () => new Date().toISOString().slice(0, 10);
 
 export const GET: APIRoute = async ({ request }) => {
-  const env = cfEnv as { DB?: D1Database } | undefined;
+  const env = cfEnv as { DB?: D1Database; PUBLIC_READ_RATE_LIMITER?: PublicRateLimiter } | undefined;
   if (!env?.DB) return json({ ok: false, error: 'database not available' }, 500, false);
+
+  const limited = await enforcePublicWriteRateLimit(env.PUBLIC_READ_RATE_LIMITER, request, 'camps-search-priority', null);
+  if (limited) return limited;
 
   const url = new URL(request.url);
   const anchor = (url.searchParams.get('anchor') ?? 'tacoma-wa-25mi').trim().toLowerCase();

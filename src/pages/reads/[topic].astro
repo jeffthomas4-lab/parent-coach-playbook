@@ -67,7 +67,7 @@ const ageLabel = (a: string | undefined) =>
                 <span class="font-display italic text-ink-soft text-sm font-medium">Sport:</span>
                 <select
                   data-sport-select
-                  class="min-h-11 font-display italic px-2 py-1 border border-bone text-ink-soft text-sm"
+                  class="min-h-11 font-display italic px-2 py-1 border border-input text-ink-soft text-sm"
                 >
                   <option value="">All sports</option>
                   {SPORTS.slice(0, 8).map((s) => (
@@ -89,7 +89,7 @@ const ageLabel = (a: string | undefined) =>
                   type="search"
                   placeholder="Search this topic..."
                   data-search-input
-                  class="min-h-11 w-full max-w-sm px-2 py-1 font-body bg-paper border border-bone focus:border-rust text-sm"
+                  class="min-h-11 w-full max-w-sm px-2 py-1 font-body bg-paper border border-input focus:border-rust text-sm"
                 />
               </div>
             </div>
@@ -107,6 +107,8 @@ const ageLabel = (a: string | undefined) =>
                       {a.data.hero && (
                         <img
                           src={a.data.hero}
+                          srcset={`${a.data.hero.replace(/\.webp$/, '-480.webp')} 480w, ${a.data.hero.replace(/\.webp$/, '-960.webp')} 960w, ${a.data.hero} 1536w`}
+                          sizes="(min-width: 768px) 33vw, 100vw"
                           alt={a.data.heroAlt || a.data.title}
                           class="w-full h-32 object-cover rounded-card mb-3 group-hover:opacity-90 transition-opacity"
                           loading="lazy"

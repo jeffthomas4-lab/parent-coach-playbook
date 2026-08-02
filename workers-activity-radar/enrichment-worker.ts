@@ -17,11 +17,22 @@
 
 export interface Env {
   DB: D1Database;
+  // The PCD operational D1. Holds `org_contacts` (migration 0028 in
+  // migrations-pcd-ops), the named-human contact layer. Optional on purpose:
+  // this worker's real job is the camp scan, and a missing binding or an
+  // unapplied 0028 must degrade to "no contacts captured", never to a failed
+  // scan. See CONTACT-DATA-MAP.md for why the person lives in a different
+  // database than the org.
+  PCD_OPS_DB?: D1Database;
   // Optional shared secret for the manual bearer-authenticated trigger. Set with:
   //   npx wrangler secret put RUN_KEY --config wrangler.toml
   RUN_KEY?: string;
   CAMP_ENRICHMENT_ENABLED?: string;
   PCD_MAINTENANCE_MODE?: string;
+  // Independent hold on contact capture, separate from CAMP_ENRICHMENT_ENABLED.
+  // Contact data is PII with a deletion SLA; it gets its own switch so the camp
+  // scan can run without it and it can be killed without stopping the scan.
+  CONTACT_CAPTURE_ENABLED?: string;
 }
 
 interface CampQueueRow {
@@ -224,6 +235,538 @@ function extractSocialUrls(html: string): Record<string, string> {
   const ig = /href="(https?:\/\/(?:www\.)?instagram\.com\/(?!p\/)[^"?#]+)"/.exec(html);
   if (ig) out.instagram = ig[1];
   return out;
+}
+
+// ---------------------------------------------------------------------------
+// Contact capture — the org's general email, and named humans on staff pages
+//
+// Two different things with two different homes, and the split is the whole
+// point (CONTACT-DATA-MAP.md):
+//
+//   a CHANNEL  (info@org.com)      -> organizations.email, activity-radar DB
+//   a PERSON   (Dana Reyes, Camp   -> org_contacts, PCD_OPS_DB
+//               Director, dana@...)
+//
+// activity-radar syndicates wholesale to the SightSmash public directory. The
+// moment a person's name is in that database every export becomes a per-row
+// privacy decision, so named humans never go there. They go to PCD_OPS_DB and
+// they are the CRM's source of truth.
+//
+// SAFETY POSTURE. This runs unattended against arbitrary third-party HTML on a
+// youth-sports site, so it is built to under-capture rather than over-capture:
+//   * a name is only kept when a staff TITLE sits next to it. A bare
+//     capitalized pair is not a contact, it is a false positive waiting to
+//     become a real person's name in a CRM.
+//   * roster/participant pages are skipped outright. That is where a minor's
+//     name would be, and no title check would save us there.
+//   * every row is written is_public = 0. Publishing is a human-only action.
+//   * a do_not_contact row is never overwritten, so a re-scan cannot resurrect
+//     somebody who opted out. That is the single most important rule here.
+// ---------------------------------------------------------------------------
+
+const EMAIL_RE = /[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,24}/g;
+
+// Addresses that are never a contact: transactional senders, vendor/CMS noise,
+// tracking stubs, and image filenames the naive regex would otherwise swallow
+// (e.g. "logo@2x.png").
+const EMAIL_JUNK_RE = new RegExp(
+  [
+    'no-?reply', 'do-?not-?reply', 'donotreply', 'mailer-daemon', 'postmaster',
+    'example\\.(com|org|net)', 'yourdomain', 'domain\\.com', 'email\\.com',
+    'sentry\\.io', 'wixpress', 'squarespace', 'godaddy', 'wordpress', 'shopify',
+    'cloudflare', 'google-?analytics', 'facebook\\.com', 'schema\\.org',
+    '@2x', '\\.(png|jpe?g|gif|svg|webp|css|js|ico|woff2?)$',
+    'u003', 'sentry', 'placeholder', 'test@test',
+  ].join('|'),
+  'i',
+);
+
+// Generic mailbox names. These belong to the organization, not to a person, so
+// they fill organizations.email and never create a named contact row.
+const ROLE_MAILBOX_RE = /^(info|contact|hello|hi|office|admin|administration|mail|inquiries|enquiries|general|frontdesk|front_?desk|reception|support|help|team|staff|camps?|registration|register|programs?|questions|customerservice|service|main)$/i;
+
+function normalizeEmail(raw: string): string | null {
+  const e = (raw || '').trim().toLowerCase().replace(/^mailto:/, '').split('?')[0];
+  if (!e || e.length > 320) return null;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) return null;
+  if (EMAIL_JUNK_RE.test(e)) return null;
+  // A TLD-looking tail of digits is a version string, not an address.
+  if (/\.\d+$/.test(e)) return null;
+  return e;
+}
+
+/**
+ * Every usable address on the page, mailto: links first because they are the
+ * deliberate ones. Text-scraped addresses follow and are deduped against them.
+ */
+function extractEmails(html: string): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (raw: string) => {
+    const e = normalizeEmail(raw);
+    if (e && !seen.has(e)) { seen.add(e); out.push(e); }
+  };
+
+  const mailtoRe = /href=["']mailto:([^"'?]+)/gi;
+  let m: RegExpExecArray | null;
+  while ((m = mailtoRe.exec(html)) !== null) push(m[1]);
+
+  const text = stripTags(html);
+  const textRe = new RegExp(EMAIL_RE.source, 'g');
+  while ((m = textRe.exec(text)) !== null) push(m[0]);
+
+  return out.slice(0, 40);
+}
+
+/** The address that best represents the organization itself. */
+function pickOrgEmail(emails: string[]): string | null {
+  const role = emails.find((e) => ROLE_MAILBOX_RE.test(e.split('@')[0]));
+  return role ?? emails[0] ?? null;
+}
+
+// Title keyword -> org_contacts.role enum. Ordered most-specific first; the
+// first hit wins, so 'camp director' resolves to director before 'coach' can
+// match a later word in the same title.
+const ROLE_PATTERNS: [RegExp, string][] = [
+  [/\b(owner|founder|co-?founder|proprietor|president|ceo|principal)\b/i, 'owner'],
+  [/\b(executive director|camp director|program director|athletic director|director|head of|superintendent)\b/i, 'director'],
+  [/\b(registrar|registration|enrollment|admissions)\b/i, 'registrar'],
+  [/\b(head coach|assistant coach|coach|instructor|trainer|teacher|counselor)\b/i, 'coach'],
+  [/\b(marketing|communications|outreach|social media|publicity)\b/i, 'marketing'],
+  [/\b(billing|accounts|accounting|finance|bursar|treasurer)\b/i, 'billing'],
+  [/\b(media|press|photographer|videographer)\b/i, 'media'],
+  [/\b(office manager|administrator|administrative|coordinator|manager|operations|secretary|supervisor)\b/i, 'admin'],
+];
+
+// Word boundaries are kept from the source patterns on purpose: without them
+// "admin" matches inside "administration" and the role mapping gets sloppy.
+const TITLE_SOURCE = ROLE_PATTERNS.map(([re]) => re.source).join('|');
+const TITLE_RE = new RegExp(TITLE_SOURCE, 'gi');
+// Non-global twin. TITLE_RE carries lastIndex between calls, so a bare .test()
+// on it silently returns the wrong answer every other invocation.
+const TITLE_TEST_RE = new RegExp(TITLE_SOURCE, 'i');
+
+// Words that qualify a title rather than being one. They decide the role when
+// the matched keyword alone would classify wrong: "Coordinator" on its own is
+// admin, but "Marketing Coordinator" is marketing, and the deciding word sits
+// to the LEFT of the match.
+const TITLE_MODIFIER_RE = /\b(executive|camp|program|athletic|aquatics?|head|assistant|associate|senior|deputy|interim|general|office|business|operations|marketing|communications|admissions|enrollment|membership|facility|volunteer)\s+$/i;
+
+function roleFromTitle(title: string): string {
+  for (const [re, role] of ROLE_PATTERNS) if (re.test(title)) return role;
+  return 'unknown';
+}
+
+// Capitalized pairs that are page furniture, not people. Cheap guard that kills
+// the bulk of false positives before the title check even runs.
+const NOT_A_NAME_RE = /\b(contact|about|home|our|the|read|learn|sign|get|click|view|more|us|we|you|your|new|summer|winter|spring|fall|camp|camps|youth|sports|team|teams|program|programs|register|registration|privacy|policy|terms|service|copyright|rights|reserved|main|office|front|desk|phone|email|address|street|avenue|road|suite|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
+
+// Any word that belongs to a job title rather than to a person. A name
+// candidate containing one of these is a boundary artifact, not a human:
+// "Alicia Moreau Head Coach" otherwise yields the pair "Moreau Head".
+const TITLE_WORD_RE = /\b(executive|camp|program|athletic|aquatic|aquatics|head|assistant|associate|senior|deputy|interim|general|office|business|operations|marketing|communications|admissions|enrollment|membership|facility|volunteer|director|coach|coaching|registrar|owner|founder|cofounder|president|ceo|principal|manager|administrator|administrative|coordinator|supervisor|secretary|instructor|trainer|teacher|counselor|billing|accounts|accounting|finance|bursar|treasurer|media|press|photographer|videographer|publicity|outreach|social|registration|staff|team|contact|email|phone)\b/i;
+
+const NAME_TOKEN_RE = /^(?:Mc|Mac|O['’]|Van|Von|De|Del|La)?[A-Z][A-Za-z'’\-]{1,19}$/;
+const INITIAL_RE = /^[A-Z]\.?$/;
+
+/**
+ * Adjacent capitalized-word pairs that could be a person's name, WITH their
+ * position in the context.
+ *
+ * Deliberately not a single regex. A regex scans left to right and consumes
+ * what it matches, so in "Coach Alicia Moreau Head Coach" it locks onto
+ * "Coach Alicia" and the real name "Alicia Moreau" is never even offered as a
+ * candidate. Tokenizing and sliding a window produces overlapping candidates,
+ * so the correct pair is always in the set and the filters below decide.
+ */
+function candidateNames(context: string): { name: string; index: number }[] {
+  const tokens: { w: string; i: number }[] = [];
+  const tokenRe = /[A-Za-z'’.\-]+/g;
+  let t: RegExpExecArray | null;
+  while ((t = tokenRe.exec(context)) !== null) tokens.push({ w: t[0], i: t.index });
+
+  const out: { name: string; index: number }[] = [];
+  for (let k = 0; k + 1 < tokens.length; k += 1) {
+    const first = tokens[k];
+    if (!NAME_TOKEN_RE.test(first.w)) continue;
+
+    // Allow one middle initial: "Jane A. Smith".
+    let initial: string | null = null;
+    let surnameAt = k + 1;
+    if (INITIAL_RE.test(tokens[k + 1].w) && k + 2 < tokens.length) {
+      initial = tokens[k + 1].w;
+      surnameAt = k + 2;
+    }
+    const surname = tokens[surnameAt];
+    if (!surname || !NAME_TOKEN_RE.test(surname.w)) continue;
+    if (INITIAL_RE.test(surname.w)) continue;
+
+    const name = first.w + ' ' + (initial ? initial + ' ' : '') + surname.w;
+    if (TITLE_WORD_RE.test(name)) continue;
+    if (NOT_A_NAME_RE.test(name)) continue;
+    out.push({ name, index: first.i });
+  }
+  return out;
+}
+
+/**
+ * Pages that can carry a minor's name. Rosters, player lists, team pages,
+ * anything about participants rather than staff. Skipped entirely — there is no
+ * title check that reliably separates "Coach Dana Reyes" from a 10-year-old on
+ * a roster, so the page never gets parsed for contacts at all.
+ */
+const MINOR_RISK_URL_RE = /\/(roster|rosters|players?|athletes?|students?|participants?|kids?|campers?|teams?\/|our-?kids|meet-the-(?:team|players|kids))/i;
+
+/** Signals inside a text window that it is describing a child, not a staffer. */
+const MINOR_RISK_TEXT_RE = /\b(grade\s*\d|\d{1,2}(?:st|nd|rd|th)\s*grade|ages?\s*\d{1,2}|u-?\d{1,2}\b|born\s+in|birthday|my (?:son|daughter|child)|parent of)\b/i;
+
+export interface ScrapedContact {
+  fullName: string | null;
+  title: string | null;
+  role: string;
+  email: string | null;
+  confidence: 'high' | 'medium' | 'low';
+  sourceUrl: string;
+}
+
+/**
+ * Named contacts from one page. Anchored on email addresses: for each address,
+ * read the surrounding text and keep the name only when a staff title sits
+ * beside it. No email, no contact — a name with no way to reach it is not worth
+ * the privacy cost of storing it.
+ */
+export function extractContacts(html: string, pageUrl: string, isStaffPage: boolean): ScrapedContact[] {
+  if (MINOR_RISK_URL_RE.test(pageUrl)) return [];
+
+  const text = stripTags(html);
+  const out: ScrapedContact[] = [];
+  const seen = new Set<string>();
+
+  const haystack = html.toLowerCase();
+
+  for (const email of extractEmails(html)) {
+    if (seen.has(email)) continue;
+
+    const local = email.split('@')[0];
+    const isRoleMailbox = ROLE_MAILBOX_RE.test(local);
+
+    // Locate the address in the RAW HTML, not the stripped text. A link like
+    // <a href="mailto:dana@org.com">Email Dana</a> has the address only in the
+    // attribute, so searching stripped text would find nothing and every such
+    // contact would lose its name and title. This is the common case on real
+    // sites, not the edge case.
+    const at = haystack.indexOf(email);
+    if (at < 0) continue;
+
+    // Read backwards to just before the address and forwards past it, then
+    // strip tags on each side separately so the two stay ordered. The tail of
+    // the "before" side is the nearest context, which on a staff card is the
+    // person's own name and title.
+    const before = stripTags(html.slice(Math.max(0, at - 1500), at)).slice(-240);
+    const after = stripTags(html.slice(at, at + 500));
+    const context = before + ' | ' + after;
+    const emailAt = before.length;
+
+    // Context that reads like it is describing a child is dropped, whatever
+    // else it contains.
+    if (MINOR_RISK_TEXT_RE.test(context)) continue;
+
+    // The LAST title BEFORE the address wins, not the first one in the window.
+    // The window reaches back over the previous person's card, so taking the
+    // first match would staple the previous person's title, and then their
+    // name, onto this address. Only when nothing precedes the address do we
+    // fall forward to the first title after it.
+    TITLE_RE.lastIndex = 0;
+    let titleMatch: RegExpExecArray | null = null;
+    let firstAfter: RegExpExecArray | null = null;
+    let tm: RegExpExecArray | null;
+    while ((tm = TITLE_RE.exec(context)) !== null) {
+      if (tm.index < emailAt) titleMatch = tm;
+      else if (!firstAfter) firstAfter = tm;
+    }
+    if (!titleMatch) titleMatch = firstAfter;
+
+    // Expand the match left across a qualifying word, so the role is decided by
+    // the whole title and not just the noun that happened to match.
+    let title: string | null = null;
+    if (titleMatch) {
+      const lead = context.slice(Math.max(0, titleMatch.index - 30), titleMatch.index);
+      const mod = TITLE_MODIFIER_RE.exec(lead);
+      title = ((mod ? mod[1] + ' ' : '') + titleMatch[0]).trim().slice(0, 160);
+    }
+
+    let fullName: string | null = null;
+    if (title && titleMatch && !isRoleMailbox) {
+      let best: string | null = null;
+      let bestDist = Infinity;
+      for (const cand of candidateNames(context)) {
+        // Prefer the name nearest the title; that pairing is what a staff
+        // listing actually looks like.
+        const dist = Math.abs(cand.index - titleMatch.index);
+        if (dist < bestDist) { bestDist = dist; best = cand.name; }
+      }
+      // A name more than ~120 chars from its title is probably a different
+      // person in a different block.
+      if (best && bestDist <= 120) fullName = best.slice(0, 160);
+    }
+
+    // A role mailbox with no name is a channel, not a person. It is already
+    // captured as organizations.email and does not need a contact row.
+    if (!fullName && isRoleMailbox) continue;
+
+    const confidence: 'high' | 'medium' | 'low' =
+      fullName && title && isStaffPage ? 'high'
+      : fullName && title ? 'medium'
+      : 'low';
+
+    seen.add(email);
+    out.push({
+      fullName,
+      title,
+      role: title ? roleFromTitle(title) : 'unknown',
+      email,
+      confidence,
+      sourceUrl: pageUrl,
+    });
+  }
+
+  return out.slice(0, 25);
+}
+
+const CONTACT_PAGE_RE = /(contact|about|staff|coaches|coaching|leadership|our-?team|meet-?the-?staff|directory|administration|front-?office)/i;
+
+/** Same-origin links that look like a contact or staff page, best first. */
+export function findContactPages(html: string, baseUrl: string, limit = 3): string[] {
+  const found: { url: string; score: number }[] = [];
+  const seen = new Set<string>();
+  const re = /<a[^>]+href=["']([^"'#]+)["'][^>]*>([\s\S]{0,120}?)<\/a>/gi;
+  let m: RegExpExecArray | null;
+
+  while ((m = re.exec(html)) !== null) {
+    const href = m[1];
+    const label = stripTags(m[2]);
+    if (!CONTACT_PAGE_RE.test(href) && !CONTACT_PAGE_RE.test(label)) continue;
+    if (MINOR_RISK_URL_RE.test(href)) continue;
+    // Never follow an authenticated or transactional path.
+    if (/\/(admin|login|account|dashboard|cart|checkout|wp-admin|private)\b/i.test(href)) continue;
+
+    const resolved = resolveUrl(href, baseUrl);
+    if (!resolved || seen.has(resolved) || resolved === baseUrl) continue;
+    seen.add(resolved);
+
+    // Staff pages beat generic contact pages: they carry names AND titles.
+    const score = /staff|coaches|leadership|our-?team|administration/i.test(href + ' ' + label) ? 2 : 1;
+    found.push({ url: resolved, score });
+  }
+
+  return found.sort((a, b) => b.score - a.score).slice(0, limit).map((f) => f.url);
+}
+
+function isStaffUrl(url: string): boolean {
+  return /staff|coaches|leadership|our-?team|administration|front-?office|directory/i.test(url);
+}
+
+async function sha256Hex(input: string): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', encoder.encode(input));
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+/**
+ * Write one contact to org_contacts in PCD_OPS_DB.
+ *
+ * Deliberately mirrors upsertOrgContact() in src/lib/org-contacts.ts rather
+ * than importing it: this worker is a separate deploy unit with zero imports by
+ * design. The rules that must stay identical in both places are (1) a
+ * do_not_contact row is never written, and (2) is_public is hardcoded to 0. If
+ * you change either one, change it in both files.
+ *
+ * Best-effort throughout. A missing binding or an unapplied 0028 returns false
+ * and never breaks the camp scan that is this worker's actual job.
+ */
+async function writeContact(
+  opsDb: D1Database,
+  organizationId: string,
+  c: ScrapedContact,
+  now: string,
+): Promise<'created' | 'updated' | 'suppressed' | 'skipped'> {
+  if (!c.email && !c.fullName) return 'skipped';
+
+  try {
+    const existing = c.email
+      ? await opsDb
+          .prepare(`SELECT id, do_not_contact FROM org_contacts WHERE organization_id = ? AND email = ? AND deleted_at IS NULL`)
+          .bind(organizationId, c.email)
+          .first<{ id: string; do_not_contact: number }>()
+      : null;
+
+    // The opt-out survives re-discovery. A scraper has no idea this person
+    // asked to be left alone; the database does, and it wins.
+    if (existing?.do_not_contact === 1) return 'suppressed';
+
+    const contentHash = await sha256Hex(
+      [organizationId, '', c.fullName ?? '', c.title ?? '', c.role, c.email ?? '', '', '']
+        .join(' ')
+        .toLowerCase(),
+    );
+
+    if (existing) {
+      // COALESCE so a thinner re-scan never erases a richer earlier pass.
+      await opsDb
+        .prepare(
+          `UPDATE org_contacts SET
+             full_name    = COALESCE(?, full_name),
+             title        = COALESCE(?, title),
+             role         = CASE WHEN role = 'unknown' THEN ? ELSE role END,
+             source_url   = COALESCE(?, source_url),
+             confidence   = ?,
+             content_hash = ?,
+             updated_at   = ?
+           WHERE id = ?`,
+        )
+        .bind(c.fullName, c.title, c.role, c.sourceUrl, c.confidence, contentHash, now, existing.id)
+        .run();
+      return 'updated';
+    }
+
+    await opsDb
+      .prepare(
+        `INSERT INTO org_contacts (
+           id, organization_id, full_name, title, role, email,
+           is_primary, is_public, source, source_url, confidence,
+           verification_method, content_hash, created_at, updated_at
+         ) VALUES (?,?,?,?,?,?,0,0,'enrichment',?,?, 'website', ?,?,?)`,
+      )
+      .bind(
+        crypto.randomUUID(), organizationId, c.fullName, c.title, c.role, c.email,
+        c.sourceUrl, c.confidence, contentHash, now, now,
+      )
+      .run();
+    return 'created';
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err ?? '');
+    // 0028 not applied in this environment is an expected state, not a fault.
+    if (/no such table/i.test(msg)) return 'skipped';
+    // Unique-index collision from a concurrent scan of the same org.
+    if (/UNIQUE constraint/i.test(msg)) return 'skipped';
+    console.log(JSON.stringify({ event: 'contact_write_failed', organizationId, error: msg.slice(0, 200) }));
+    return 'skipped';
+  }
+}
+
+/**
+ * Nominate one contact per org as the primary, so a CRM has an obvious "who do
+ * I actually email" without a human sorting 196k orgs by hand.
+ *
+ * Only ever fills an empty slot. If a human has already set a primary, that
+ * choice is theirs and a scraper does not get to relitigate it — the same
+ * COALESCE-guarded posture as every other field this worker writes.
+ *
+ * Ranking is by who can say yes: an owner or director outranks a registrar,
+ * a named person outranks a bare address, and a high-confidence extraction
+ * outranks a guess.
+ */
+async function promotePrimary(opsDb: D1Database, organizationId: string, now: string): Promise<void> {
+  try {
+    const existing = await opsDb
+      .prepare(`SELECT id FROM org_contacts WHERE organization_id = ? AND is_primary = 1 AND deleted_at IS NULL`)
+      .bind(organizationId)
+      .first<{ id: string }>();
+    if (existing) return;
+
+    const best = await opsDb
+      .prepare(
+        `SELECT id FROM org_contacts
+          WHERE organization_id = ? AND deleted_at IS NULL AND do_not_contact = 0
+          ORDER BY
+            CASE role
+              WHEN 'owner' THEN 1 WHEN 'director' THEN 2 WHEN 'registrar' THEN 3
+              WHEN 'admin'  THEN 4 WHEN 'coach'    THEN 5 WHEN 'marketing' THEN 6
+              WHEN 'billing' THEN 7 WHEN 'media'   THEN 8 ELSE 9 END,
+            CASE WHEN full_name IS NOT NULL THEN 0 ELSE 1 END,
+            CASE confidence WHEN 'high' THEN 1 WHEN 'medium' THEN 2 ELSE 3 END,
+            created_at
+          LIMIT 1`,
+      )
+      .bind(organizationId)
+      .first<{ id: string }>();
+    if (!best) return;
+
+    await opsDb
+      .prepare(`UPDATE org_contacts SET is_primary = 1, updated_at = ? WHERE id = ?`)
+      .bind(now, best.id)
+      .run();
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err ?? '');
+    // A concurrent scan of the same org won the race for the primary slot.
+    if (/no such table|UNIQUE constraint/i.test(msg)) return;
+    console.log(JSON.stringify({ event: 'promote_primary_failed', organizationId, error: msg.slice(0, 200) }));
+  }
+}
+
+/**
+ * The contact pass for one org: homepage + up to three contact/staff pages.
+ * Returns the org-level email so the caller can fold it into its own UPDATE.
+ * Counts only in the log line — never a name, never an address (PII must not
+ * reach the log sink; see src/lib/org-contacts.ts header).
+ */
+async function captureContacts(
+  env: Env,
+  organizationId: string,
+  homepageHtml: string,
+  websiteUrl: string,
+  now: string,
+): Promise<{ orgEmail: string | null }> {
+  const homepageEmails = extractEmails(homepageHtml);
+  let orgEmail = pickOrgEmail(homepageEmails);
+
+  if (!enabled(env.CONTACT_CAPTURE_ENABLED) || !env.PCD_OPS_DB) {
+    return { orgEmail };
+  }
+
+  const pages: { url: string; html: string }[] = [{ url: websiteUrl, html: homepageHtml }];
+  for (const url of findContactPages(homepageHtml, websiteUrl)) {
+    const html = await fetchText(url);
+    if (html) pages.push({ url, html });
+  }
+
+  // A contact page often holds the real org mailbox when the homepage does not.
+  if (!orgEmail) {
+    for (const p of pages.slice(1)) {
+      orgEmail = pickOrgEmail(extractEmails(p.html));
+      if (orgEmail) break;
+    }
+  }
+
+  const byEmail = new Map<string, ScrapedContact>();
+  for (const p of pages) {
+    for (const c of extractContacts(p.html, p.url, isStaffUrl(p.url))) {
+      const key = c.email ?? c.fullName ?? '';
+      const prior = byEmail.get(key);
+      // Keep the richest observation of the same person across pages.
+      if (!prior || (!prior.fullName && c.fullName) || (prior.confidence === 'low' && c.confidence !== 'low')) {
+        byEmail.set(key, c);
+      }
+    }
+  }
+
+  let created = 0, updated = 0, suppressed = 0;
+  for (const c of byEmail.values()) {
+    const r = await writeContact(env.PCD_OPS_DB, organizationId, c, now);
+    if (r === 'created') created += 1;
+    else if (r === 'updated') updated += 1;
+    else if (r === 'suppressed') suppressed += 1;
+  }
+
+  if (created || updated) await promotePrimary(env.PCD_OPS_DB, organizationId, now);
+
+  if (created || updated || suppressed) {
+    console.log(JSON.stringify({
+      event: 'contacts_captured', organizationId, pages: pages.length,
+      created, updated, suppressed,
+    }));
+  }
+
+  return { orgEmail };
 }
 
 // Activity category from a camp name, falling back to the org's category.
@@ -536,12 +1079,13 @@ async function markNoCamps(db: D1Database, orgId: string, queueId: string, now: 
   await db.prepare(`UPDATE camp_scan_queue SET status = 'done', camp_detected = 0, scanned_at = ? WHERE id = ?`).bind(now, queueId).run();
 }
 
-async function processCampRow(db: D1Database, row: CampQueueRow): Promise<'done' | 'retry'> {
+async function processCampRow(env: Env, row: CampQueueRow): Promise<'done' | 'retry'> {
+  const db = env.DB;
   const now = new Date().toISOString();
   const org = await db
-    .prepare('SELECT id, name, slug, city, state, categories, phone, description, social_urls FROM organizations WHERE id = ?')
+    .prepare('SELECT id, name, slug, city, state, categories, phone, email, description, social_urls, is_claimed FROM organizations WHERE id = ?')
     .bind(row.org_id)
-    .first<{ id: string; name: string; slug: string; city: string | null; state: string | null; categories: string | null; phone: string | null; description: string | null; social_urls: string | null }>();
+    .first<{ id: string; name: string; slug: string; city: string | null; state: string | null; categories: string | null; phone: string | null; email: string | null; description: string | null; social_urls: string | null; is_claimed: number | null }>();
   if (!org) return 'done';
 
   const html = await fetchText(row.website_url);
@@ -550,7 +1094,20 @@ async function processCampRow(db: D1Database, row: CampQueueRow): Promise<'done'
   let sourceDomain = '';
   try { sourceDomain = new URL(row.website_url).hostname.replace(/^www\./, ''); } catch { /* ignore */ }
 
-  // Light org-level enrichment from the homepage (no API): description, phone, socials.
+  // Contact pass. Runs before the camp check so an org with no camps still gets
+  // its contacts — a CRM cares about the organization, not about whether this
+  // particular scan found a camp on the page.
+  //
+  // Skipped entirely on a claimed org: once an owner has taken the listing over,
+  // their own entered contact details are authoritative and a scraper must not
+  // second-guess them.
+  const { orgEmail } = org.is_claimed === 1
+    ? { orgEmail: null }
+    : await captureContacts(env, org.id, html, row.website_url, now);
+
+  // Light org-level enrichment from the homepage (no API): description, phone,
+  // email, socials. Every field is COALESCE-guarded so enrichment only ever
+  // fills a blank and never overwrites a verified or human-entered value.
   const desc = metaDescription(html);
   const phone = telPhone(html);
   const socials = extractSocialUrls(html);
@@ -561,9 +1118,10 @@ async function processCampRow(db: D1Database, row: CampQueueRow): Promise<'done'
   await db.prepare(`
     UPDATE organizations SET
       description = COALESCE(description, ?), phone = COALESCE(phone, ?),
+      email = COALESCE(email, ?),
       social_urls = COALESCE(social_urls, ?), last_enriched_at = ?, updated_at = ?
     WHERE id = ?
-  `).bind(desc, phone, socialJson, now, now, org.id).run();
+  `).bind(desc, phone, orgEmail, socialJson, now, now, org.id).run();
 
   if (!/\bcamp(s)?\b/i.test(html)) { await markNoCamps(db, org.id, row.id, now); return 'done'; }
 
@@ -612,7 +1170,7 @@ async function runCampScan(env: Env): Promise<number> {
     const ts = new Date().toISOString();
     await env.DB.prepare(`UPDATE camp_scan_queue SET status = 'processing', attempts = attempts + 1 WHERE id = ?`).bind(row.id).run();
     try {
-      const outcome = await processCampRow(env.DB, row);
+      const outcome = await processCampRow(env, row);
       if (outcome === 'retry') {
         const newAttempts = row.attempts + 1;
         await env.DB.prepare(`UPDATE camp_scan_queue SET status = ?, scanned_at = ? WHERE id = ?`)

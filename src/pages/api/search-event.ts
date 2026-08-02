@@ -25,6 +25,7 @@ import {
   enforcePublicWriteRateLimit,
   type PublicRateLimiter,
 } from '../../lib/public-rate-limit';
+import { createRequestLogger } from '../../lib/log';
 
 export const prerender = false;
 
@@ -48,6 +49,7 @@ const respond = (body: unknown, status = 200) =>
   });
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'search-event', userId: null });
   const env = cfEnv as {
     PCD_OPS_DB?: D1Database;
     DEMAND_TELEMETRY_ENABLED?: string;
@@ -134,7 +136,7 @@ export const POST: APIRoute = async ({ request }) => {
   } catch (err) {
     // Table may not exist yet (migration not yet applied). Log and return ok:false
     // without crashing — the client ignores this response anyway.
-    console.error('[search-event] D1 write failed:', err);
+    logger.error('d1_write_failed', err);
     return respond({ ok: false, error: 'write failed' }, 500);
   }
 };

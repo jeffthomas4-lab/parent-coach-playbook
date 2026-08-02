@@ -44,6 +44,19 @@ export function makeContext(opts: {
   testEnv.COMMUNITY_RATE_LIMITER ??= allow;
   testEnv.DEMAND_RATE_LIMITER ??= allow;
   testEnv.OWNER_RATE_LIMITER ??= allow;
+  // Found missing 2026-07-31 while adding tests/api/camps-lite.test.ts:
+  // enforcePublicWriteRateLimit (src/lib/public-rate-limit.ts) fails closed
+  // with a 503 when its limiter arg is undefined, and every GET route on the
+  // PUBLIC_READ_RATE_LIMITER tier (camps/nearest, camps/search-priority,
+  // camps/lite) calls it with `env.PUBLIC_READ_RATE_LIMITER`. Without a
+  // default here every one of those routes' tests gets a 503 instead of the
+  // status the test actually asserts. Vitest cannot run in this sandbox
+  // (`@rolldown/binding-linux-x64-gnu` missing — see
+  // reports/CAMPS-RENDERING-REBUILD-2026-07-31.md) so this was caught by
+  // reading enforcePublicWriteRateLimit's source, not by a red test run;
+  // Jeff should confirm green on a real `npm test` before trusting this note
+  // over an actual run.
+  testEnv.PUBLIC_READ_RATE_LIMITER ??= allow;
   if ('ADMIN_EMAILS' in testEnv) {
     testEnv.ACCESS_TEAM_DOMAIN ??= TEAM_DOMAIN;
     testEnv.ACCESS_AUD ??= AUD;

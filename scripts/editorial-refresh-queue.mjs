@@ -49,7 +49,19 @@ export async function buildEditorialRefreshQueue({ root = process.cwd(), asOf = 
   const articleRoot = resolve(root, ARTICLE_DIR);
   const articleFiles = (await filesUnder(articleRoot)).filter((file) => extname(file) === '.md').sort();
   const sourceFiles = (await filesUnder(resolve(root, 'src'))).filter((file) => ['.md', '.astro', '.ts'].includes(extname(file))).sort();
-  const sourceBodies = await Promise.all(sourceFiles.map(async (file) => ({ file, text: await readFile(file, 'utf8') })));
+  // Read in bounded batches. An unbounded Promise.all over src/ opens ~1,900 file
+  // handles at once, which throws EMFILE anywhere the descriptor limit is low
+  // (default macOS is 256, and the audit sandbox's FUSE mount caps lower still).
+  // The hook that calls this script blocks the commit on a non-zero exit, so an
+  // unbounded read here is a machine-dependent commit blocker, not just a slow read.
+  const READ_CONCURRENCY = 64;
+  const sourceBodies = [];
+  for (let i = 0; i < sourceFiles.length; i += READ_CONCURRENCY) {
+    const batch = sourceFiles.slice(i, i + READ_CONCURRENCY);
+    sourceBodies.push(
+      ...(await Promise.all(batch.map(async (file) => ({ file, text: await readFile(file, 'utf8') })))),
+    );
+  }
   const inventory = [];
 
   for (const file of articleFiles) {

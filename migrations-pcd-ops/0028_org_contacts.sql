@@ -32,11 +32,10 @@
 --     nothing at the database level enforces that the org exists.
 --   * every read is two queries and a join in the Worker: fetch org rows from
 --     `DB`, collect ids, then `SELECT ... FROM org_contacts WHERE
---     organization_id IN (...)` against `PCD_OPS_DB`.
---   * orphans are possible. `scripts/` should carry a reconciliation job that
---     reports contacts whose `organization_id` no longer resolves. Do not add a
---     cascade delete; soft-delete via `deleted_at` instead so the CRM sync can
---     see the tombstone.
+--     organization_id IN (...)` against `PCD_OPS_DB`. See src/lib/org-contacts.ts.
+--   * orphans are possible. A reconciliation job should report contacts whose
+--     `organization_id` no longer resolves. Do not add a cascade delete; soft-
+--     delete via `deleted_at` instead so the CRM sync can see the tombstone.
 --
 -- This is the cost of the boundary and it is the intended trade. Contact lookup
 -- is an admin and CRM path, never a hot public path. The public camp page reads
@@ -55,7 +54,9 @@
 -- STATUS: additive and intentionally unapplied, same convention as 0023-0027 in
 -- this directory. Do not apply remotely and do not point production code at it
 -- as a hard dependency until reviewed and approved per this directory's README.
--- No route, feature flag, or UI is enabled by this file.
+-- No route, feature flag, or UI is enabled by this file. src/lib/org-contacts.ts
+-- is written defensively against it, exactly like src/lib/events.ts is against
+-- 0025: every call is a best-effort no-op until this migration lands.
 
 CREATE TABLE IF NOT EXISTS org_contacts (
   id                  TEXT PRIMARY KEY,
@@ -112,7 +113,7 @@ CREATE TABLE IF NOT EXISTS org_contacts (
   -- Free-text confidence is a trap; three tiers matching programs.pcd_confidence.
   confidence          TEXT NOT NULL DEFAULT 'medium' CHECK (confidence IN ('high', 'medium', 'low')),
 
-  verified_by         TEXT,            -- admin email who confirmed it
+  verified_by         TEXT,            -- admin email or agent name who confirmed it
   verified_at         TEXT,            -- ISO 8601
   verification_method TEXT CHECK (verification_method IS NULL OR verification_method IN (
                         'website', 'phone_call', 'email_reply', 'claim', 'in_person', 'other'

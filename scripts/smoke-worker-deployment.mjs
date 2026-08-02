@@ -3,28 +3,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 
-// Asset propagation budget.
-//
-// Was 6 attempts × 2s = a 10-second window. Every deploy on 2026-07-30 failed
-// inside it: the step ran 11s, meaning it burned all six attempts and the asset
-// still was not being served. Cloudflare had not finished making the new build's
-// assets available at the edge yet, so this was never a bad build — the budget
-// was simply shorter than propagation.
-//
-// The earlier fix that session (STANDARD-AUDIT item 55, pick a homepage-
-// referenced asset instead of the largest route-only chunk) was correct on its
-// own terms and did not fix this, because the binding constraint is time, not
-// which asset gets probed. Both matter: probe something the homepage loads, AND
-// wait long enough for it to exist.
-//
-// Now: 12 attempts on a growing backoff, capped at 10s, for a ~90 second
-// budget. Retries past the first already bust the cache key with a unique query
-// param, which is what defeats a negative cached during the window.
-const STATIC_ASSET_MAX_ATTEMPTS = 12;
-const STATIC_ASSET_RETRY_CAP_MS = 10_000;
-/** 2s, 4s, 6s, 8s, then 10s each — ~90s total across 12 attempts. */
-export const staticAssetRetryDelayMs = (attempt) =>
-  Math.min(2_000 * attempt, STATIC_ASSET_RETRY_CAP_MS);
+const STATIC_ASSET_MAX_ATTEMPTS = 6;
+const STATIC_ASSET_RETRY_MS = 2_000;
 
 const valueAfter = (argv, flag) => {
   const index = argv.indexOf(flag);
@@ -139,7 +119,7 @@ export async function runDeploymentSmoke({
         },
       });
       if (check.kind !== 'exact_static_asset' || check.statuses.includes(response.status) || attempts === STATIC_ASSET_MAX_ATTEMPTS) break;
-      await sleep(staticAssetRetryDelayMs(attempts));
+      await sleep(STATIC_ASSET_RETRY_MS);
     } while (true);
     let assetMatched = null;
     if (check.kind === 'exact_static_asset' && check.statuses.includes(response.status)) {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T02:30:07.517Z",
+  "generatedAt": "2026-07-31T21:52:43.988Z",
   "count": 689,
   "links": [
     {
@@ -458,7 +458,8 @@
         "src/pages/camps/[slug].astro",
         "src/pages/camps/submit.astro",
         "src/pages/camps/suggest.astro",
-        "src/pages/proof.astro"
+        "src/pages/proof.astro",
+        "src/pages/trust.astro"
       ]
     },
     {

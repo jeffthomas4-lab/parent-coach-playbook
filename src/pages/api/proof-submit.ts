@@ -30,6 +30,7 @@ import {
   PROOF_SOURCES,
   type ProofInboxSource,
 } from '../../lib/proof-inbox-db';
+import { createRequestLogger } from '../../lib/log';
 
 export const prerender = false;
 
@@ -70,6 +71,7 @@ async function readPayload(request: Request): Promise<ProofSubmitPayload> {
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  const logger = createRequestLogger(request, { route: 'proof-submit', userId: null });
   const env = cfEnv as {
     PCD_OPS_DB?: D1Database;
     PROOF_SUBMIT_ENABLED?: string;
@@ -183,7 +185,7 @@ export const POST: APIRoute = async ({ request }) => {
   } catch (error) {
     // Full error stays server-side. The caller never sees SQL, table names,
     // or a stack trace.
-    console.error('[proof-submit] insert failed', error instanceof Error ? error.message : error);
+    logger.error('insert_failed', error);
     return json({ ok: false, error: 'could not save submission' }, 500);
   }
 };
