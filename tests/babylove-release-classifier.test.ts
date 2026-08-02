@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classifyBabyLoveRelease } from '../scripts/classify-babylove-release.mjs';
+import { classifyBabyLoveRelease, lineageDenialReason } from '../scripts/classify-babylove-release.mjs';
 
 const article = `---
 title: "A useful article for parents"
@@ -26,6 +26,12 @@ const eligible = {
 };
 
 describe('BabyLove content-only release classifier', () => {
+  it('treats merge lineage as ineligible rather than an operational error', () => {
+    expect(lineageDenialReason(2)).toBe('deploy_commit_not_single_parent');
+    expect(lineageDenialReason(1, 2)).toBe('publish_commit_not_single_parent');
+    expect(lineageDenialReason(1, 1)).toBe('');
+  });
+
   it('authorizes exactly one normalized provider article and its governed evidence', () => {
     expect(classifyBabyLoveRelease(eligible)).toEqual({
       eligible: true,
