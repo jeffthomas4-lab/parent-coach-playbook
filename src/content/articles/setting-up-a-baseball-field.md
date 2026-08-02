@@ -1,7 +1,9 @@
 ---
 title: "Setting up a baseball field"
-dek: "Home plate, bases, pitching distance. The measurements that matter. How to set it up right."
-seoDescription: "You're setting up a baseball field for practice or a game."
+dek: "Start with the controlling field diagram, verify every anchor and line, then hand unresolved conditions to the field owner."
+seoTitle: "How to Set Up a Baseball Field"
+seoDescription: "Set up a baseball field from the league's current diagram, using its measurement points for bases, pitching plate, batter's boxes, and foul lines."
+bluf: "Use the current field diagram for the exact league, division, and facility. Establish home plate first, follow the diagram's stated measurement points, verify the base and pitching locations before marking lines, then walk the complete playing surface with the responsible field representative."
 topic: "equipment"
 format: "note"
 phase: "drive-there"
@@ -10,9 +12,10 @@ age: "all-ages"
 hero: "/illustrations/baseball-infield-dirt-morning.webp"
 heroAlt: "A youth baseball infield shows freshly raked dirt and chalk baselines in early morning, bases set and nobody on the field."
 publishedAt: 2026-04-26
+updatedAt: 2026-08-02
 featured: false
 editorial:
-  qualityGrade: 8
+  qualityGrade: 9
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
@@ -20,169 +23,48 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Removed incorrect age-based dimensions, generic center-to-center measurement, mound and warning-track claims, setup times, substitute-base advice, affiliate promotion, and universal safety assertions."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-You're setting up a baseball field for practice or a game.
+Do not set a baseball field from a dimension chart copied out of context. The correct layout depends on the governing organization, division, event, and facility.
 
-You need to know the right distances and positions.
+Get the controlling diagram and the field owner's instructions before moving a base, pitching plate, or line. A field can host more than one division, which makes the unused anchor nearby look very convincing.
 
-This is more precise than most people realize.
+## Confirm the layout before measuring
 
-**Home plate position**
+Write the organization, division, and game date at the top of the work sheet. Confirm the base path, pitching distance, batter's boxes, foul-line endpoint, and any local double-base or temporary-field instructions from the same current source.
 
-Home plate is the starting point.
+Little League publishes separate [field specifications and downloadable layouts](https://www.littleleague.org/league-officials/field-specifications/) for Major and Minor, Intermediate, Junior and Senior, and softball fields. The page also directs tournament users back to the applicable playing rules.
 
-Usually marked with a white plate or chalk.
+Do not mix measurements from different diagrams. If the field is governed by another organization, use that organization's current document instead.
 
-Position it in an open area with room for the batter's box on both sides.
+Check who may install anchors, move a pitching plate, or alter a mound. Those are facility changes, not ordinary game-day volunteer work.
 
-**The baselines**
+## Establish the diamond in order
 
-First base, second base, and third base form the diamond.
+Start from the home-plate reference point identified on the controlling diagram. Use a long tape, stakes or temporary marks, string, and a second person who reads each measurement back.
 
-Distance between bases (for youth, depends on age):
+Place temporary marks for the bases and pitching location using the exact endpoints shown in the diagram. Do not assume every distance is measured center to center; the shape and orientation of a base can change the stated measurement point.
 
-- 8U/10U: 60 feet
-- 12U/14U: 60 feet
-- 16U and up: 90 feet
+Verify the diamond before securing removable bases or marking lines. If two measurements disagree, stop and resolve the diagram, anchor, or reference point instead of averaging the error.
 
-(Some leagues vary. Check your specific league rules.)
+Use only the facility's approved bases, anchors, plugs, plates, and installation method. A loose base or exposed anchor needs the field representative, not an improvised shim.
 
-**How to measure**
+## Mark, groom, and hand off the field
 
-Use a measuring tape.
+Run each foul line from the home-plate reference through the position specified by the field diagram. Mark batter's boxes and other required areas from the correct template or dimensions for that division.
 
-Measure from the center of one base to the center of the next.
+The separate [chalking-the-lines guide](/drive-there/chalking-the-lines/) covers the marking workflow. Groom the infield only after the measurements are locked; [raking the infield](/drive-there/raking-the-infield/) explains how to protect grass edges and report wet or unstable areas.
 
-Mark each base at the correct distance.
+Walk the complete field with the owner or game administrator. Check installed bases, exposed hardware, holes, standing water, fencing, gates, dugouts, and anything the facility's own checklist requires.
 
-**The pitcher's mound distance**
+Do not declare a questionable field playable on the strength of a quick repair. Hand the condition to the person with authority to open, close, or modify the field.
 
-From home plate to the pitcher's mound (depending on age):
+Once the field is accepted, move setup tools out of play and tell the coach or umpire what was changed. The team can then use [the first-game blueprint](/team-parent/first-game-blueprint/) without discovering a field problem during warmups.
 
-- 8U/10U: 40-46 feet (check your league)
-- 12U/14U: 46 feet
-- 16U and up: 60 feet 6 inches
+### Source reviewed
 
-(Again, varies by league. Know your league's rules.)
-
-**How to set up the mound**
-
-The pitcher's mound is raised slightly (about 10 inches higher than home plate at MLB level, less for youth).
-
-Most youth fields don't have an actual mound. It's flat.
-
-The pitcher just stands at the pitching distance line.
-
-**The bases themselves**
-
-Each base is a square marked with chalk or a [base pad](/go/baseball-bases-rubber/).
-
-Align them so they form a perfect diamond.
-
-Use a level if possible to make sure the field is as flat as possible.
-
-**The foul lines**
-
-First base line: extends from home plate through first base.
-
-Third base line: extends from home plate through third base.
-
-Mark these with chalk or tape.
-
-These define fair territory.
-
-**The grass lines**
-
-If your field has grass:
-
-Keep the grass maintained.
-
-Mark the lines clearly with chalk.
-
-Rake or groom as needed.
-
-**The warning track distance**
-
-If you're setting up an outfield:
-
-The warning track (if you have one) is usually 400 feet from home plate in center field, 330 feet down the lines.
-
-(Most youth fields don't have warning tracks.)
-
-**The thing you actually need for youth**
-
-Home plate, clearly marked.
-
-Three bases at the right distance apart.
-
-Pitcher's distance marked.
-
-Foul lines marked.
-
-That's it.
-
-Everything else is nice-to-have.
-
-**The mistakes people make**
-
-Measuring wrong. Double-check your distances.
-
-Not marking the foul lines. Do this so umpires can make fair/foul calls.
-
-Leaving the field uneven. Level it as much as possible.
-
-**The equipment you need**
-
-Measuring tape (100 feet minimum).
-
-Chalk or marking tape for lines.
-
-Base pads (or mark with chalk).
-
-Home plate (or chalk).
-
-Rakes to level (optional but helpful). The [gear guide](/what-to-buy/baseball/) covers the rest of what's worth owning for backyard practice, throw-down bases and soft tee-ball balls included.
-
-**The setup time**
-
-For a youth field with chalk:
-
-15-20 minutes for one person.
-
-10 minutes with two people.
-
-For a field with actual bases and mound:
-
-20-30 minutes.
-
-**The maintenance thing**
-
-Keep lines fresh. Re-chalk if it rains.
-
-Keep the field level and free of holes.
-
-Rake the infield between games if possible.
-
-**The safety check**
-
-Before a game, walk the field.
-
-Look for holes, ruts, or anything that could cause someone to trip or twist an ankle.
-
-Fix what you can.
-
-**The final thing**
-
-Correct distances matter.
-
-Accurate field setup matters.
-
-It's not complicated, but it is important.
-
-Take the 15-20 minutes to set it up right.
-
-Your kids will notice the difference.
+- Little League, [Field Specifications](https://www.littleleague.org/league-officials/field-specifications/), accessed August 2026.

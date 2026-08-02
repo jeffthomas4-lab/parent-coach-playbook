@@ -1,7 +1,9 @@
 ---
 title: "Raking the infield"
-dek: "The difference between a good field and a bad one. The maintenance that prevents injuries."
-seoDescription: "You're at a baseball field and you notice: some fields are perfectly smooth. Others are rutted and lumpy."
+dek: "Use the field owner's tools, protect the grass edge, and leave major repairs to the person responsible for the field."
+seoTitle: "How to Rake a Baseball Infield"
+seoDescription: "Rake a baseball infield by following the facility plan, repairing approved high-wear areas, protecting grass edges, and reporting wet or unsafe spots."
+bluf: "Before raking, confirm that the field is open and ask which tools, materials, and repair methods the owner allows. Hand-rake high-wear areas, drag only the infield skin you are assigned, keep material out of grass edges, and report anything routine grooming cannot fix."
 topic: "equipment"
 format: "note"
 phase: "drive-there"
@@ -10,9 +12,10 @@ age: "all-ages"
 hero: "/illustrations/baseball-glove-ball-bench.webp"
 heroAlt: "A broken-in leather glove with a scuffed baseball in the pocket rests on a dugout bench under hard side light."
 publishedAt: 2026-04-28
+updatedAt: 2026-08-02
 featured: false
 editorial:
-  qualityGrade: 8
+  qualityGrade: 9
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
@@ -20,168 +23,44 @@ editorial:
   flagSensitiveTopic: false
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Removed injury-prevention promises, time estimates, equipment-wear claims, powered-drag instructions, wet-field improvisation, affiliate promotion, and universal maintenance rules."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-You're at a baseball field and you notice: some fields are perfectly smooth. Others are rutted and lumpy.
+Routine raking is volunteer work. Regrading, adding material, deciding whether a wet field is playable, or operating powered equipment belongs to the facility or league representative who owns that decision.
 
-The difference is maintenance. Specifically, raking.
+Get that person before you get creative. A bag of mystery dirt and twenty helpful parents can turn a small low spot into next week's larger repair.
 
-A well-raked infield plays better and prevents injuries.
+## Start with the field owner's plan
 
-**Why raking matters**
+Ask whether the field is open, which areas you are assigned, and which rake or drag belongs on each surface. Confirm where approved infield mix is stored and whether volunteers may use it.
 
-Holes and ruts cause bad hops.
+Walk the infield skin before moving material. Remove loose debris, note holes or raised edges, and flag standing water, soft footing, damaged base hardware, or a mound or plate area that needs more than light grooming.
 
-A ball bounces unpredictably off a lumpy infield.
+Do not add drying products, clay, soil, or water unless the field owner directs it. Little League's [field-maintenance guidance](https://www.littleleague.org/university/articles/field-maintenance-tips-what-you-can-do-to-improve-the-playability-durability-of-your-little-league-field/) separates wet- and dry-field methods and ties the choice to current field conditions.
 
-Players can twist ankles running on uneven ground.
+## Use the right tool for the assigned area
 
-A smooth, well-raked infield prevents both.
+Loosen and level only the routine wear the facility expects a volunteer to handle. Fill an approved shallow low spot with the field's matching material, level it with the surrounding skin, and stop if the base is unstable or the repair will not hold.
 
-**When to rake**
+Little League recommends a screen drag for the infield skin and hand rakes for baselines, cutouts, the mound, and the home-plate area. Its guidance also says to rake with a grass edge instead of pulling material into it, and to keep a drag at least six inches from that edge.
 
-Before games: always.
+That grass-lip detail is the whole trick. A fast pass that deposits infield mix into the turf creates more work for the grounds crew.
 
-Between games in a tournament: yes.
+Follow the facility's direction of travel and finish pattern. Keep people clear of the work area, and do not tow a drag with a vehicle unless the owner has authorized the operator and method.
 
-After rain: yes, especially.
+## Finish, inspect, and hand off
 
-Between practices on the same day: only if there are major divots.
+Remove the drag, rake, hoses, and loose material from play. Walk the skin from home plate through the base paths and look again at the high-wear areas.
 
-**What you need**
+If a spot stays soft, rutted, raised, or unstable, mark it and call the field representative. Raking does not make every surface playable.
 
-A field rake (different from a yard rake).
+The companion guide to [setting up a baseball field](/drive-there/setting-up-a-baseball-field/) covers the measurement and handoff sequence. When lines are also your assignment, use [the chalking guide](/drive-there/chalking-the-lines/) only after the facility confirms the field layout.
 
-A drag or harrow (optional, for larger fields).
+The clean finish is simple: approved work completed, tools stored, unresolved conditions reported. No heroics with a rake.
 
-Water (if the infield is hard-packed).
+### Source reviewed
 
-**The field rake**
-
-Long handle. Multiple tines.
-
-You drag it across the infield, breaking up packed dirt and smoothing out holes.
-
-**The raking process**
-
-1. Walk the infield first and identify major holes or ruts.
-
-2. Start at one end and rake toward the other.
-
-3. Overlap your passes so you cover the whole infield.
-
-4. Pay special attention to around the bases (high traffic area).
-
-5. Make one final pass to smooth everything out.
-
-**The time estimate**
-
-Depends on field size and current condition:
-
-Small youth field: 10-15 minutes
-
-Full-size field: 20-30 minutes
-
-Badly roughed-up field: 30-45 minutes
-
-**The drag method**
-
-If you have a tow vehicle:
-
-Attach a drag or harrow behind a truck.
-
-Drive slowly across the field.
-
-This covers more area faster.
-
-Good for larger fields or when you have a lot of fields to maintain.
-
-**The water thing**
-
-If the infield is hard-packed and cracked:
-
-Water it lightly to soften the dirt.
-
-Then rake.
-
-The rake works better on slightly moist dirt than on hard-packed or dust-dry dirt.
-
-**The divot repair**
-
-If there's a deep hole or divot:
-
-Fill it with infield mix (clay and dirt combination).
-
-Level it with the surrounding field.
-
-Let it set for a game or two.
-
-**The baseline raking**
-
-Don't forget the baselines and the running lanes.
-
-Runners need smooth ground.
-
-Rake these too.
-
-**The tournament situation**
-
-If you're hosting a tournament with multiple fields:
-
-Rake before the first game.
-
-Rake between game sessions if possible.
-
-At minimum, rake heavily-used infields between games.
-
-**The volunteer move**
-
-Assign someone to be the field maintenance person.
-
-Arrives early. Rakes before games. Checks for holes.
-
-This person saves time and prevents injuries.
-
-**The thing nobody mentions**
-
-Worn infields wear down the heels of cleats faster.
-
-A smooth, well-maintained infield actually saves equipment wear.
-
-Another reason to rake.
-
-**The heavy weather thing**
-
-After rain or heavy use:
-
-The infield might have puddles or soft spots.
-
-You might need to rake more frequently to keep it playable.
-
-In wet conditions, you might need to add infield mix to keep the surface firm.
-
-**The final thing**
-
-A well-raked infield is smooth, playable, and safe.
-
-10-15 minutes of raking before a game is worth it.
-
-Your players will notice. The field plays better.
-
-And you'll prevent ankle injuries and bad hops.
-
-That's worth the effort.
-
-
----
-
-**Gear mentioned in this article** (affiliate)
-
-[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
-
-[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
-
-*As an Amazon Associate we earn from qualifying purchases.*
+- Little League, [Field Maintenance Tips](https://www.littleleague.org/university/articles/field-maintenance-tips-what-you-can-do-to-improve-the-playability-durability-of-your-little-league-field/), accessed August 2026.

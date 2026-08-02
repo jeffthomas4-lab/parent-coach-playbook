@@ -41,8 +41,8 @@
   "summary": {
     "eligible_articles": 808,
     "selected_articles": 100,
-    "refreshed": 30,
-    "pending": 70
+    "refreshed": 40,
+    "pending": 60
   },
   "batches": [
     {
@@ -977,7 +977,7 @@
     },
     {
       "batch": 4,
-      "status": "pending",
+      "status": "refreshed",
       "items": [
         {
           "rank": 31,
@@ -1006,8 +1006,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 32,
@@ -1037,8 +1037,8 @@
             "has_seo_title": false,
             "has_seo_description": false
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 33,
@@ -1068,8 +1068,8 @@
             "has_seo_title": false,
             "has_seo_description": false
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 34,
@@ -1098,8 +1098,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 35,
@@ -1128,8 +1128,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 36,
@@ -1158,8 +1158,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 37,
@@ -1188,8 +1188,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 38,
@@ -1218,8 +1218,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 39,
@@ -1247,8 +1247,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         },
         {
           "rank": 40,
@@ -1277,8 +1277,8 @@
             "has_seo_title": false,
             "has_seo_description": true
           },
-          "status": "pending",
-          "refreshed_at": null
+          "status": "refreshed",
+          "refreshed_at": "2026-08-02"
         }
       ]
     },

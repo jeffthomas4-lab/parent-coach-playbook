@@ -1,8 +1,9 @@
 ---
 title: Why Tee-Ball Doesn't Have Strikeouts
-dek: The rule exists for a reason.
-seoDescription: Tee-ball doesn't have strikeouts. Every kid bats until they hit it.
-  This is not soft. This is smart coaching.
+dek: "The answer starts with your league's current rulebook."
+seoTitle: "Tee-Ball Strikeout Rules for Parents"
+seoDescription: "Tee-ball strikeout rules vary by program. Check the current local rule, explain the at-bat simply, and save older-division expectations for later."
+bluf: "Tee-ball does not have one universal strikeout rule. Some programs let each batter swing until the ball is put in play, and others set a swing limit. Read your league's current rule before explaining an out, then coach only the rule your child will use."
 topic: rules-of-play
 format: note
 phase: game
@@ -11,6 +12,7 @@ age: 5-7
 hero: "/illustrations/baseball-batting-cage-net.webp"
 heroAlt: "The inside of a batting cage is seen through the netting, one small figure mid-swing far down the cage, out of focus and unidentifiable."
 publishedAt: 2026-01-12
+updatedAt: 2026-08-02
 featured: false
 editorial:
   qualityGrade: 8
@@ -20,46 +22,40 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-16
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Corrected the universal no-strikeout premise. Reframed the article around the local tee-ball rule, cited Little League's current instructional-division and mandatory-play guidance, and removed unsupported development, confidence, and age-transition claims plus affiliate content."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-Tee-ball doesn't have strikeouts. Every kid bats until they hit it. This is not soft. This is smart coaching.
+Your child swings, misses, and looks toward the dugout. The adult behind the tee says, "Again," but another league might call the at-bat finished after a set number of swings.
 
-**Why it matters at this age**
-A five-year-old doesn't understand what a strike is. They don't understand the count. They understand one thing: the ball came at me, I swung, something happened. That's the whole perception.
+That difference is not a coaching debate. It is a rulebook question.
 
-Strikeouts teach failure before they understand what they're failing at. A kid who strikes out doesn't learn. They learn to fear the at-bat.
+## Read the local rule first
 
-**What the rule actually teaches**
-Persistence. Every swing, you keep going. Every miss, you try again. The ball comes from the tee, you have another chance. That's the lesson.
+Little League describes [Tee Ball as an instructional division for league ages 4 to 7](https://www.littleleague.org/associated-terms-of-little-league/). That description does not create one strikeout procedure for every tee-ball program in the country.
 
-By age seven, after two years of "keep swinging," kids understand effort. They understand that trying again works. Then you introduce outs in machine pitch.
+Ask the coach how an at-bat ends in this division. Does the batter continue until putting the ball in play, get a set number of swings, or move to a coach-assisted option?
 
-**The structure**
-Most tee-ball rules give a set number of swings off the tee, often five, or let the kid swing until they hit it. Some say you can't get out at tee-ball at all. Both work. The point is: every kid leaves the field having hit the ball at least once.
+Use the rule sheet for the current season. Little League points families to its current official rules through the [league and rulebook resources](https://www.littleleague.org/play-little-league/league-finder/), and another baseball organization may use a different process.
 
-**The confidence piece**
-Going home after hitting the ball builds confidence. Going home after striking out builds frustration. At five, confidence matters more than anything else.
+## Coach the at-bat they have
 
-**When it changes**
-Coach pitch or machine pitch (roughly 6-9): three strikes and you're out, but no walks, because nobody calls balls on a coach or a machine. Now she understands the count because she can see the pitches. Strikeouts become normal here.
+Give one instruction before the swing: watch the ball, set the feet, or swing through the ball. One cue is enough for a 5- to 7-year-old at the plate.
 
-Player pitch (roughly 10-12): full count, called balls, walks. She understands pitches and patience now.
+If the rule allows another swing, reset the ball and repeat the same cue. If the rule ends the at-bat, say, "Your turn is done. Glove on."
 
-**The parent job**
-Don't push strikeouts earlier than the league has them. Don't tell your kid they should have hit it. Just say, "Good at-bat. We'll get the next one." Then let it go.
+Do not invent an out to make the game feel older. Do not promise that every batter will get a hit when the written rule says otherwise.
 
-The strikeout rule will come. Until then, celebrate that they swung.
+Little League's [mandatory-play guidance](https://www.littleleague.org/university/articles/mandatory-play-what-parents-need-to-know/) requires at least one at-bat in its regular-season program, with a limited Tee Ball and Minor League option for large rosters. That guarantees participation under that program, not a hit in every game.
 
----
+## Let the next division be next
 
-**Gear mentioned in this article** (affiliate)
+Coach pitch, machine pitch, and player pitch can use different counts and out rules. The league decides when those rules enter, so ask before teaching a future division's version at home.
 
-[Youth baseball glove →](/go/baseball-glove-youth/), a solid pick for youth baseball players.
+The [baseball pathway](/pathways/baseball/) shows how formats change across age bands. Keep the rule lesson here narrow: what ends today's at-bat, and what does the child do next?
 
-[Full Baseball gear guide →](/what-to-buy/baseball/), all picks by age and level.
-
-*As an Amazon Associate we earn from qualifying purchases.*
+If an out turns into tears after the game, use the short response in [the 5-to-7 strikeout conversation](/drive-home/the-5-to-7-meltdown-after-a-strikeout/). At the field, follow the rule and move to the next play.

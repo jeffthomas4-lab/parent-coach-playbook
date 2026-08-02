@@ -1,6 +1,10 @@
 ---
 title: "The Late Pickup Problem: A Parent Coach's Guide"
-format: essay
+seoTitle: "Late Pickup Policy for Youth Coaches"
+seoDescription: "Set a written pickup window, collect approved contacts, follow your program's safeguarding rules, and use a calm escalation plan when a ride is late."
+dek: "A written pickup policy protects the child and gives volunteers a clear plan."
+bluf: "Before the season, set a specific pickup time, collect two current contacts, and learn the program's supervision and emergency rules. When a ride is late, keep the child in the approved observable space, follow the contact order, document the handoff, and escalate through the organization."
+format: note
 phase: team-parent
 sport: multi-sport
 age: all-ages
@@ -9,42 +13,62 @@ draft: false
 hero: "/illustrations/team-snack-table-setup.webp"
 heroAlt: "A folding table at a field's edge holds orange slices, paper cups, and a water jug in morning light, an adult forearm setting something down."
 publishedAt: 2026-06-11
+updatedAt: 2026-08-02
 editorial:
   qualityGrade: 8
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
-  flagSensitiveTopic: false
+  flagSensitiveTopic: true
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Refreshed as a policy-first missed-pickup response. Replaced unsupported legal absolutes and informal ride-home advice with the program's written safeguarding and emergency process. Cannibalization checked against parent-meeting and carpool pages; this article owns the coach's after-practice response."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-Most coaches do not expect one of their trickiest challenges to happen after practice ends. The drills are done. The equipment is packed. Every other family has cleared the parking lot. One kid is still sitting on the curb. You are standing there with your own keys in your hand, and you have no plan for this.
+Practice ended at 6. The last family left at 6:10. One child is still waiting, and the coach is searching an old group text for a second phone number.
 
-Late pickups catch coaches off guard because the job description ends at the whistle. But supervision does not end when practice does. The kid is still your responsibility until a parent or approved adult arrives. That reality needs a plan before it becomes a situation.
+That is a policy failure before it is a punctuality problem.
 
-Most late pickups are not intentional. Work runs over. Traffic happens. A sibling had an emergency. The parent who is forty-five minutes late is almost never the parent who does not care. They are usually embarrassed and apologetic, sometimes frantic, often dealing with something that has nothing to do with the sport. The default starting point is empathy, not frustration.
+## Put the pickup rule in writing
 
-But coaches still need systems, because every child deserves to be safe and every volunteer deserves clear expectations. The time to build the system is before the season starts, not after the first incident.
+Give families a specific practice end time, pickup window, and contact method before the first session. Name what happens when a ride is late and which organization contact takes over if the coach cannot reach a caregiver.
 
-Set expectations in writing before the first practice. Include it in the parent communication at the beginning of the season: what time coaches arrive, what time supervised activity begins, what time pickup is expected to happen. Not a vague "please be on time." A specific window. "Our practice ends at 6:00 PM. Coaches leave supervision at 6:15. Please plan accordingly." Most parents will read it, remember it, and that alone cuts the incidents in half.
+Collect a primary contact, a backup contact, and the names of adults approved to pick up the child. Use the program's registration system and privacy rules. Do not build a volunteer side spreadsheet full of family information unless the organization requires and protects it.
 
-Collect current emergency contacts for every player before the season, not just the first parent's number. Two contacts minimum. An alternate pickup person who is cleared to get the child if the primary parent cannot. Updated phone numbers. The information that helps you solve the problem is the information you gathered in September, not the information you are trying to find at 6:30 when the parking lot is dark.
+The [10-minute parent meeting script](/team-parent/10-minute-parent-meeting-script/) gives the policy a place in the preseason conversation. Put the same words in the team message so nobody has to remember a parking-lot speech.
 
-Never leave a child alone. This is not negotiable and should not feel like a burden to say out loud. The child waits with you or with another cleared adult until their ride arrives. If you cannot stay for a legitimate reason, have a plan in writing for who can cover. Another coach, a trusted parent volunteer, a carpool parent who stays late. The plan exists before you need it.
+## Follow the safeguarding policy while waiting
 
-Be thoughtful about one-adult, one-child situations. It protects the child and it protects you. If you are the only adult left and the only one waiting with the child, consider staying in a visible public space rather than an isolated area of the parking lot or facility.
+The current [U.S. Center for SafeSport 2025 MAAPP](https://maapp.uscenterforsafesport.org/2025-maapp/) sets minimum interaction rules for organizations in the U.S. Olympic and Paralympic Movement. Covered programs may add stricter rules, and programs outside that system need their own written child-safeguarding policy.
 
-When you finally reach the parent, lead with concern, not frustration. "Hey, everything okay? We wanted to make sure you got here." That tone opens the door. The parent who feels accused shuts down. The parent who feels that the coach is genuinely checking on the situation is usually embarrassed and grateful.
+Learn which policy governs your team. The MAAPP model requires covered one-on-one in-program contact to be observable and interruptible unless a documented exception applies.
 
-A repeat offense calls for a private conversation focused on solving the problem rather than documenting the violation. "Is there anything we can do to help find a solution?" is a better opener than a warning. Maybe there is a work conflict on a specific day. Maybe carpooling with another family would solve it. Maybe the parent did not fully understand the pickup window. Most repeat situations have a practical fix available and the conversation finds it faster when it starts from problem-solving.
+In plain language: stay in the program-approved public area, keep another cleared adult present when the policy calls for one, and do not improvise a private ride home. Follow the facility closing rule and the organization's emergency contact process.
 
-The child should not feel at fault in any of this. Not by what you say, not by your tone, not by the way you interact with them while you wait. "Let's hang out a bit, your ride's on the way" is the register. Keep it light. The kid is not responsible for the logistics of their own pickup and should not be made to feel the discomfort of the situation landing on them.
+### Use the contact order every time
 
-The best long-term solution is community. Families who know each other, carpool networks that run naturally, parents who have each other's numbers and cover for each other when something comes up. That village does not build itself. It builds when coaches create early-season structure for families to meet each other: a first-practice gathering, a parent directory, an introduction at the pre-season meeting. The families who have each other's contact information solve most logistics problems before they reach the coach.
+When the pickup window closes, run the same sequence:
 
-Build the community. Set the expectations early. Have the contacts ready. The late pickup stops being a crisis when it has already been planned for.
+1. Contact the primary caregiver through the approved channel.
+2. Contact the listed backup or approved pickup adult.
+3. Notify the program director or on-call contact.
+4. Follow the written emergency step if no approved adult responds.
+
+Record the times, contact attempts, organization contact, and final handoff in the place the program names. Keep the note factual. "Pickup completed at 6:28 by listed adult" helps; a paragraph about respect does not.
+
+When the caregiver arrives, start with "Everything okay?" Confirm the handoff, then save the policy conversation for a private follow-up.
+
+## Fix a repeat pattern without blaming the child
+
+A second late pickup needs a direct adult conversation. Name the dates, restate the pickup window, and ask which approved backup plan will work next time.
+
+Do not discipline the child for an adult logistics problem. Do not discuss the caregiver's mistake in front of teammates or other families.
+
+The [carpool text template](/drive-there/the-carpool-text-that-prevents-fights/) helps families agree on times and responsibilities. For a larger team rotation, the [carpool spreadsheet guide](/team-parent/the-carpool-spreadsheet-that-saves-marriages/) owns the scheduling work.
+
+If late pickups continue, hand the record to the organization and follow its participation or supervision policy. A volunteer coach should not invent a private penalty or keep absorbing an open-ended duty that the program has not addressed.

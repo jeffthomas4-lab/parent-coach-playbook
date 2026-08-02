@@ -1,7 +1,9 @@
 ---
 title: "The case for *one sport per season*"
-dek: "We over-schedule kids. The actual research. What one season buys you. The pushback you will get."
-seoDescription: "I know a mom with a fourth-grader who plays travel soccer in the fall, basketball in the winter, baseball in the spring, and a summer tournament team in..."
+dek: "One active team is a calendar rule, not a prediction about talent."
+seoTitle: "One Sport Per Season for Kids"
+seoDescription: "Use one active team per season to protect rest days and family time without forcing year-round specialization or promising better athletic results."
+bluf: "One sport per season means one active team at a time, not one sport all year. It gives the family one calendar to judge and makes weekly rest easier to see. The rule is useful when schedules overlap, but it is not a promise about injury, burnout, or talent."
 topic: "rules-of-play"
 format: "essay"
 phase: "drive-home"
@@ -10,6 +12,7 @@ age: "all-ages"
 hero: "/illustrations/field-sign-blank-dusk.webp"
 heroAlt: "A blank weathered sign board mounts on a chain-link fence at a field entrance, dusk light glowing behind it."
 publishedAt: 2026-04-20
+updatedAt: 2026-08-02
 featured: true
 editorial:
   qualityGrade: 8
@@ -19,90 +22,56 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-13
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Preserved the one-team-at-a-time calendar position while removing invented hours, family stories, college outcomes, and universal injury, burnout, development, and performance claims. Current AAP guidance is cited directly and the article is separated from the broader specialization and travel-decision pages."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-I know a mom with a fourth-grader who plays travel soccer in the fall, basketball in the winter, baseball in the spring, and a summer tournament team in baseball. The summer team's season ends three weeks before fall soccer evaluations.
+The soccer coach adds a winter league. Basketball starts the same week. Two ordinary registrations have become five practices, two games, and no blank day.
 
-She is exhausted. Her kid is tired. The marriage is fine but the calendar is the third spouse.
+Our rule is plain: one active team per season unless the full calendar still leaves room for rest and family life.
 
-She asked me in October if her family was doing this wrong. The answer is yes, and the fix is simple. One sport per season.
+## Use one calendar, not one slogan
 
-## The math
+"One sport per season" does not mean choosing one sport forever. A kid can play soccer in fall, basketball in winter, and baseball in spring without carrying two team schedules at once.
 
-Three sports a year, two of them with travel commitments, is roughly 350 to 450 hours of organized activity for the kid, plus another 200 hours of driving for the parent.
+It also does not mean every season must contain a sport. An empty month can stay empty.
 
-That's the entire year. There is no time left. Family dinners are around the schedule. Vacations are around the schedule. Friend birthday parties are around the schedule.
+Put every practice, game, tournament, lesson, commute, and school conflict on one calendar before accepting the second roster. Look for the week that actually happens, not the clean version shown on registration day.
 
-One sport per season is roughly 150 to 200 hours of organized activity. Less than half. The kid still gets to play. The kid does not have a calendar that looks like a college student's.
+Run one ordinary week on paper before paying. Mark school dismissal, homework, meals, travel, practice, games, and the one day with no organized sport. If two programs use the same evening, decide which one loses before either coach has to ask.
 
-## The research is cleaner than parents think
+Then run the worst scheduled week: tournament, school event, and sibling obligation. A plan that works only when nothing changes is not a family plan. Keep one unclaimed block of time instead of assigning every open hour.
 
-Sports medicine consensus is now consistent on multi-sport play through age 14, and rest at all ages. Specialization before high school correlates with higher injury rates and earlier dropout. The kid who plays year-round in one sport is more likely to quit by 16 than the kid who played three sports through middle school.
+The [travel-sports decision guide](/decisions/should-my-kid-play-travel-sports/) handles the larger question of team fit, money, and family commitment. This article solves the narrower calendar collision.
 
-This is not a hot take. It's the position of the American Academy of Pediatrics, the major orthopedic associations, and almost every major collegiate sports program. The data is twenty years deep.
+## Follow the current rest guidance
 
-The kids you know who are playing one sport year-round at 11 and going to camps for that sport every summer are not the kids who go on to play that sport in college. The kids who go on to play in college played multiple sports growing up, and most of them only specialized in their sport in high school.
+The American Academy of Pediatrics' [2024 clinical report on overuse, overtraining, and burnout](https://publications.aap.org/pediatrics/article/153/2/e2023065129/196435/Overuse-Injuries-Overtraining-and-Burnout-in-Young) recommends no more than one sport in a day, at least one day each week away from all organized sports, one team during a season, and two to three months away from each specific sport each year.
 
-## What one sport per season buys you
+Those are pediatric recommendations, not a guarantee that one calendar choice prevents an injury or keeps every kid interested. Training load, sport, age, coaching, sleep, and the individual child still matter.
 
-Time. The most underrated youth-sports asset is time the kid does not have a structured commitment.
+The AAP's [organized-sports report, reaffirmed in 2023](https://publications.aap.org/pediatrics/article-abstract/143/6/e20190997/37135), also tells programs to account for developmental stage and allow sleep and rest between activity. A family calendar can show whether the proposed schedule leaves that space; it cannot diagnose whether a child is healthy enough for a workload.
 
-Your kid practicing soccer four days a week in the fall is fine. Your kid practicing soccer four days a week in the fall, basketball three days a week in the winter, and baseball five days a week in the spring is a kid whose nervous system has not had a week off in eleven months.
+## Decide which season owns the week
 
-One sport per season builds in natural rest weeks. Off-season is a real thing. Off-season at twelve is when a kid reads a book, learns a hobby, gets into a video game phase, hangs out with friends without a coach on the field.
+When two teams overlap, ask which commitment is primary through the last scheduled event. Then ask the secondary program whether partial attendance is openly allowed.
 
-Off-season is when the next season's energy is built. Skipping off-season is why kids burn out.
+Do not register on the hope that coaches will quietly forgive every conflict. Get the attendance policy in writing and show both schedules to both coaches.
 
-## What one sport per season buys the family
+If the child wants variety, rotate sports between seasons instead of stacking teams inside one week. If the child wants the same sport again, the [off-season guide by age](/drive-there/what-off-season-actually-means/) separates time away from complete inactivity.
 
-Dinners. Saturdays. The ability to see grandparents. Two weeks at the beach.
+The family can still choose an overlap. Name the cost first: the lost rest day, the rushed meal, the missed practice, or the sibling schedule that has to move.
 
-The most depressing thing in youth sports is the family that can't take a summer vacation because the travel baseball team has tournaments in eight of the ten available weeks. The kid is nine. The family vacation will not be replaceable.
+## Answer year-round pressure directly
 
-One sport per season means the family has weekends. The family has summers. The family is a thing the kid wants to be in.
+A coach may call an optional winter session necessary. Ask what happens if the player skips it, which dates are required, and whether the next team selection depends on attendance.
 
-## The pushback you'll get
+Use one sentence with the program: "We are honoring the current season, so we will not add a second team until it ends." No defense brief required.
 
-You will get pushback from three groups.
+The [early-specialization pressure guide](/team-parent/dealing-with-early-specialization-pressure/) covers the evidence and the sales pitch in depth. Keep the calendar answer here simpler.
 
-The other parents. Their kids are playing year-round. They will tell you, in the carpool line, that your kid will fall behind. They will tell you that the other kids are getting ahead in the sport. This is mostly insecurity dressed up as advice.
-
-The coaches. Some travel coaches will tell you that off-season practice is necessary, that summer leagues are mandatory, that skipping a season hurts the team. Sometimes that's true at 14 and 15. It is not true at 8, 9, 10, or 11. If a 10-year-old's coach is telling you year-round commitment is mandatory, find a different coach.
-
-Your own kid, sometimes. They will see their friends going to specific camps and want to go too. The right answer here is yes to one camp, no to four. Pick the one. Skip the rest. *I love that you want to do this. We're doing one this summer. The other three sound great. Let's pick the favorite one.*
-
-## What one sport per season looks like in practice
-
-Fall: soccer, season runs August through November. Two practices a week, one game on weekends. Done.
-
-Winter: basketball, December through February. Two practices a week, one game on weekends. Done.
-
-Spring: baseball, March through May. Two practices a week, one game on weekends. Done.
-
-Summer: nothing organized. Two weeks of camp, one of which is the kid's primary sport, the other can be anything. The rest is unstructured. Pickup games. Family vacation. Reading. Swimming. Friends.
-
-This schedule produces a kid with a wide athletic base and a real chance to find their primary sport at 14 instead of 9. It also produces a family that survives.
-
-## The exception
-
-Some kids genuinely thrive on year-round play. They are the kids who, when given an open week, ask to go to the field anyway. They have intrinsic motivation that is unmistakable.
-
-If you have one of those kids, the calculus is different. They are very rare. The kids I thought were like this turned out to be responding to my schedule, not generating their own.
-
-The test is the open week. Give your kid two weeks of true off-season. Watch what they do. If they ask to find practice, you have one of those kids. If they relax for three days and then start asking for screen time and friends, they are most kids.
-
-## The hardest part
-
-The hardest part of one sport per season is the social pressure. The other parents will look at you funny. Your kid will get FOMO when their friend is at a tournament they aren't.
-
-You hold the line. The kid will thank you in seven years.
-
-The kid who played three sports in fifth grade, took summers off, and had family dinners is the kid who is still playing the sport they love at 16. The kid who specialized at nine is often the kid who quit at 13.
-
-You are playing a long game. The other parents are playing a short one.
-
-The math is on your side.
+Review the schedule again when the season ends. One active roster should make the week legible; if it does not, the next cut belongs on the calendar before the next registration.

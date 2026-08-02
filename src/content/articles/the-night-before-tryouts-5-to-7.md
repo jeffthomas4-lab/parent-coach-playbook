@@ -1,19 +1,19 @@
 ---
 title: What to Do the Night Before Tryouts at Age 5-7 (Which Is to Say, Almost Nothing)
-dek: '*Normal bedtime* is the only rule.'
-seoDescription: They're 5 to 7. They don't know what tryouts are. They've never felt
-  the weight of wanting something they might not get.
+dek: "Pack once, answer one question, and use the normal bedtime."
+seoTitle: "Night Before Tryouts at Ages 5-7"
+seoDescription: "The night before a first tryout at age 5 to 7, confirm the plan, pack familiar gear, answer questions plainly, and keep the usual family routine."
+bluf: "The night before tryouts at age 5 to 7, confirm the time and place, pack familiar gear, and keep the usual dinner and bedtime. Tell your child what will happen in one plain sentence. Skip the backyard lesson, roster prediction, and long pep talk."
 topic: tryouts
 format: note
 phase: drive-there
 sport: multi-sport
 age: 5-7
 publishedAt: 2026-02-17
+updatedAt: 2026-08-02
 featured: false
 hero: /illustrations/the-night-before-tryouts-5-to-7.webp
-heroAlt: A six-year-old at kitchen table, hair damp from bath, eating small bowl of
-  pasta in pajamas. Parent across table reading a book, not on phone. Clock on wall
-  reads 7:50 PM.
+heroAlt: A six-year-old at kitchen table, hair damp from bath, eating small bowl of pasta in pajamas. Parent across table reading a book, not on phone. Clock on wall reads 7:50 PM.
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -22,22 +22,40 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-24
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Preserved the normal-night position and age-specific parent script. Removed unsupported claims about memory, anxiety, conditional love, emotional development, and performance; linked older age-band pages rather than duplicating them."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-They're 5 to 7. They don't know what tryouts are. They've never felt the weight of wanting something they might not get.
+Tryouts are tomorrow, and your 6-year-old has one useful question: "What are we doing?"
 
-Don't change anything the night before. Don't have a serious talk. Don't say "do your best" three times with a meaningful look. Don't put them through a little practice in the backyard. Don't tell them stories about your youth sports success.
+Answer that question. Do not make tonight carry the result.
 
-Get them to bed on time. Same dinner, same routine. If they ask what tryouts are, tell them: "You're going to play some games and have some fun with [coach name]. Just play hard like you always do."
+## Make the morning easy tonight
 
-If they say they're nervous, listen. Don't fix it or pep-talk it away. Say: "Yeah, new things can feel funny. You're going to be fine. Let's get ready for bed." Move on.
+Confirm the address, arrival time, check-in instruction, and equipment list from the program email. Put the familiar clothes, shoes, water bottle, and required gear by the door.
 
-This age is too young to carry your expectations. If you treat it like a big deal, they hear that your love for them might be conditional on how they perform. That's heavy for a 6-year-old.
+Do not add a new snack, new shoes, or a late backyard lesson. The [pre-tryout dinner guide](/drive-there/pre-tryout-dinner/) keeps the meal question separate; this page is about the rest of the evening.
 
-Treat it like a normal day. Because it is.
+Use the normal family bedtime. The goal is not to create a perfect pre-tryout routine at 5 to 7. It is to avoid turning an ordinary night into a ceremony.
 
-If they don't make the team, they won't remember tomorrow. They'll remember how you acted about it today. Low-key parent energy is the only energy that works here.
+## Give one plain explanation
+
+Say what you know: "We will check in, a coach will show you some games, and I will meet you when it is done."
+
+If the program has shared its exact plan, add one detail your child can picture. If it has not, do not invent drills, promise a team, or say every child gets the same result.
+
+Ask whether they have a question. Answer it, then return to the evening.
+
+The age-specific boundary matters here. The [8-to-10 night-before plan](/drive-there/the-night-before-tryouts-at-8-to-10/) can include more schedule detail, and the [11-to-12 version](/drive-there/night-before-tryouts/) gives an older child more control over the conversation.
+
+## Keep the last sentence small
+
+At bedtime, use the same goodnight you use on any school night. If your child asks what you want them to do tomorrow, try: "Listen to the coach and join the next game."
+
+That instruction gives them an action without predicting how the coach will evaluate it. No "make us proud," no list of skills, and no second speech from the doorway.
+
+After the tryout, follow the program's stated timeline before asking about placement. The [post-tryout family conversation](/drive-home/the-post-tryout-family-conversation/) handles the result; tonight ends when the bag is packed and the light goes off.

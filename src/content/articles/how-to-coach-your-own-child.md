@@ -1,6 +1,10 @@
 ---
 title: "How to Coach Your Own Child Without Ruining Family Time"
-format: essay
+seoTitle: "How to Coach Your Own Child"
+seoDescription: "Set a clear boundary between coach time and family time, apply the same team standard, and give your child a private way to say when the role is too much."
+dek: "Coach at practice. Be the parent again when practice ends."
+bluf: "Coach your child by using the same standards, tone, and correction length you use with teammates. End coaching when practice ends, ask permission before discussing sports at home, and give your child another trusted coach. A weekly private check-in catches resentment before it becomes the family routine."
+format: note
 phase: team-parent
 sport: multi-sport
 age: all-ages
@@ -9,6 +13,7 @@ draft: false
 hero: "/illustrations/parking-lot-after-practice.webp"
 heroAlt: "Two adults talk beside a car in a gravel parking lot at dusk, seen at distance through a gap between vehicles."
 publishedAt: 2026-06-11
+updatedAt: 2026-08-02
 editorial:
   qualityGrade: 8
   originalityGrade: 8
@@ -17,32 +22,57 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Preserved the original coach-at-practice, parent-at-home position and added a usable boundary, correction test, and weekly check-in. Cannibalization checked against coaching-your-own-kid-fairly and coaching-your-own-kid-in-front-of-the-team; those pages retain the fairness audit and public team dynamics."
 ---
 
-Coaching your own kid can be one of the best things you do together. It can also quietly damage the relationship if you are not careful about where the coach role ends and the parent role begins. Most coaches who have been through it can tell you which one they got.
+Practice ends at 7. Your child heard three corrections from you on the field, then gets a fourth before the car leaves the lot.
 
-The common assumption is that the main risk is favoritism: putting your own kid in the best position, protecting them from hard feedback, and giving them advantages other players do not get. That does happen. But the more common version, the one that actually shows up most often, is the opposite.
+That fourth correction is where the coach role starts eating family time.
 
-Parent-coaches tend to overcorrect. They are harder on their own kid than on anyone else because they are hyperconscious of the favoritism risk. The kid ends up experiencing the worst of both worlds: the full standard applied to everyone else and then an extra layer applied specifically to them because they are yours.
+## Set the boundary before the season
 
-That player starts to feel like they can never just be a player. Every practice has the coach hat on. Every mistake is a correction, not just a correction from a coach, but a correction from Mom or Dad in front of their teammates. The home version and the team version start to bleed together. Dinner becomes film review. The drive home becomes a coaching session that never ends.
+Tell your child exactly when you are the coach and when you are the parent. A workable rule is simple: coaching ends when practice or the match ends, unless the child asks to keep talking.
 
-Rule one is the one most parent-coaches have to repeat to themselves regularly: when practice ends, coaching ends. Not mostly. Not with one more thing. Coaching ends at the whistle and does not restart at the dinner table.
+Say it out loud before the first practice: "At the field, I am one of your coaches. At home, I am your parent. I will not bring practice home unless you ask me to."
 
-Your kid needs to be able to come home and exist as your kid, not as a player whose performance you are still processing.
+Then keep the promise. No film review at dinner.
 
-Being fair does not mean treating your kid worse than everyone else to prove a point. Hold everyone to the same standards. If the standard is that players sprint to and from drills, your kid sprints. If the standard is that nobody complains, your kid does not complain. That is not harsher treatment. That is the same treatment. Harsher treatment to demonstrate fairness is not fair.
+No footwork correction in the driveway. No "one last thing" while they are brushing their teeth.
 
-Avoid using your own kid as the repeated public example for corrections. Every coach picks someone to demonstrate a point or address a mistake out loud. It is a useful tool. But when it keeps being the same kid, and that kid is yours, it reads as personal even when it is not intended that way. Other players notice. More importantly, your kid notices.
+## Use the same correction test
 
-Find other coaches and mentors your child can learn from. Sometimes the exact same feedback lands completely differently depending on who says it. The thing you have told your kid seventeen times that has not gotten through might take one conversation with another coach to click.
+Parent-coaches overcorrect their own child to prove they are not playing favorites. The result is still unequal treatment.
 
-That is not a failure of your relationship. It is a feature of theirs. Let it happen. A relationship with a trusted outside coach is not competition for your role as parent. It adds to what you are building.
+Before correcting your child, ask one question: Would I use these words, this tone, and this amount of time with another player? If the answer is no, shorten the correction or let an assistant handle it.
 
-Ask your kid what they think, what they enjoy, what they find frustrating. Their answers tell you more than any observational assessment you can run during practice. "What part of practice do you like most?" is a different question than "How did the footwork drills go?" The first one invites the kid's perspective. The second one invites your evaluation. Kids talk more when they are being asked about their experience rather than their performance.
+Do not use your child as the standing demonstration for every mistake. The team notices. Your child notices first.
 
-The season ends. The relationship stays. When both are going well, when your kid goes to college and still calls, when they want to come to your games, when they talk about that season with something other than relief that it is over, you will know which one you protected. Make sure it was the relationship.
+The [fairness check for coaching your own kid](/drive-home/coaching-your-own-kid-fairly/) owns the deeper playing-time and correction audit. The guide to [coaching your child in front of the team](/game/coaching-your-own-kid-in-front-of-the-team/) covers the public-team problem.
+
+### Give another coach room
+
+Your child needs a coach who is not also deciding bedtime, homework, and weekend plans. Let an assistant lead a drill, give position feedback, or handle a hard correction.
+
+The same words land differently from another adult. Good. You do not need to win every coaching moment.
+
+Tell the assistant what boundary you are trying to keep. Ask them to flag the moment when your correction becomes longer, sharper, or more personal than the one you gave the previous player.
+
+## Run a private weekly check-in
+
+Ask about the experience, not the stat line. Three questions are enough:
+
+1. What part of practice did you like this week?
+2. Did I treat you like the other players?
+3. Do you want me to coach you again next week?
+
+Listen before defending yourself. If the answer hurts, that is information. Change one visible behavior at the next practice and ask again a week later.
+
+If two adults at home see the boundary differently, settle it away from the child. The guide for [when your spouse disagrees with your coaching](/drive-home/when-your-spouse-disagrees-with-how-youre-coaching/) gives that conversation its own room.
+
+At the whistle, handle team duties, close the field, and stop coaching your child. In the car, ask whether they want music, food, or conversation.
+
+The season gets a schedule. The parent relationship does not need office hours.
