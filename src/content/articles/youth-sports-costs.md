@@ -21,7 +21,7 @@ externalSource:
 editorial:
   status: published
   citationCheckPassed: false
-  factCheckGoodThrough: 2027-01-01
+  factCheckGoodThrough: 2026-12-31
   reviewerNotes: "Imported from authenticated BabyLoveGrowth publishing; normalized, source-reviewed, and production-path canary verified by Codex on 2026-08-02. Citation follow-up remains queued for generalized cost ranges."
 ---
 
