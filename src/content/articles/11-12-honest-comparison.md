@@ -1,8 +1,9 @@
 ---
 title: The 11-12 Honest Comparison
-dek: How to decide between rec and travel when it actually matters.
-seoDescription: At eleven to twelve, if your kid is good and you have the budget,
-  rec versus travel is an actual choice. Here's how to make it without guessing.
+dek: "Compare the two real teams, then let one season answer the question."
+seoTitle: "Rec vs Travel Sports at Ages 11-12"
+seoDescription: "Compare rec and travel sports for an 11- or 12-year-old by roster role, coaching, schedule, family cost, and the child's own reason for playing."
+bluf: "At 11 or 12, compare the actual rec and travel offers, not the labels. Put coaching, roster role, practice time, travel, total family cost, and your child's preference on one page. Choose one season, set a review date, and keep the next choice open."
 topic: rec-vs-travel
 format: note
 phase: drive-there
@@ -11,6 +12,7 @@ age: 11-12
 hero: "/illustrations/rec-field-vs-complex.webp"
 heroAlt: "A worn neighborhood grass field sits in the foreground with a manicured multi-field complex visible beyond it in morning light."
 publishedAt: 2026-02-07
+updatedAt: 2026-08-02
 featured: false
 editorial:
   qualityGrade: 8
@@ -20,40 +22,45 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-08
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Replaced universal rec and travel claims with a comparison of two actual offers. Removed unsupported price, stress, development, roster, and specialization claims; kept this age-specific first-choice page distinct from the 13-14 renewal conversation."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-At eleven to twelve, if your kid is good and you have the budget, rec versus travel is an actual choice. Here's how to make it without guessing.
+At 11 or 12, "rec" and "travel" still describe many different programs. One local team may practice more than a nearby club, and one travel roster may offer less playing opportunity than the label suggests.
 
-**The rec side**
-One practice a week. One or two games a week. Home by six on most nights. Cost: seventy-five to one fifty a season. Your kid plays with people from school. Everyone who wants to play gets in.
+Compare what is being offered this season. Do not make the label decide for you.
 
-Development is slower. Competition is lighter. But the relationship between coach and player is easier. The environment is lower-stress.
+## Put both offers on one page
 
-**The travel side**
-Three to four practices a week. Four to six tournaments spring through summer. Home varies. Cost: two hundred to five hundred a month for a serious program. Kids come from multiple towns. Only the best make the team.
+Ask each program for its written schedule, roster policy, coach information, fees, refund terms, and expected travel. Then compare:
 
-Development is faster. Competition is real. But the time commitment is enormous. The stress is higher. And if your kid doesn't make the elite roster, you're paying for a B team that doesn't compete much.
+- days and hours of practice;
+- likely roster role and how playing time is handled;
+- coach communication and feedback;
+- season length and weekends away;
+- complete family cost, including travel;
+- conflicts with school, another sport, siblings, and rest.
 
-**The honest question**
-Is your kid asking to move up? Or are you pushing because you think they should? Those two answers determine what happens next.
+Use actual calendars and program documents. A parent description from last season is not a current offer.
 
-If they're begging to play travel and asking to go to extra workouts: they're ready. If you're suggesting it and they're quiet: they're not ready.
+The broader [rec-versus-travel decision guide](/decisions/should-my-kid-play-travel-sports/) helps the family weigh commitment across sports. Keep this page focused on the two teams available to this 11- or 12-year-old now.
 
-**The schedule piece**
-Walk the travel schedule. Really walk it. Spring starts in March. Tournaments every April, May, June, July. That's your summer gone. That's every Saturday from March through July. Some families love that. Some hate it.
+## Ask for the child's reason
 
-**The middle ground**
-Some kids play rec in fall and winter, travel in spring and summer. Some play rec while trying out for travel in February. You don't have to pick one forever. You can switch.
+Describe both options without selling either one. Try: "This team has these practices and trips; this team has this schedule and roster plan. What matters most to you?"
 
-**The call**
-Watch them play. Ask them directly: "Would you rather play more games or have your weekends?" Then listen.
+Listen for a reason the child can explain, such as a coach, teammates, competition, more practice, another activity, or weekends at home. Interest is information, not permission to spend beyond the family budget.
 
-Some kids are travel kids. Some are rec kids. Some kids change their minds at fourteen. That's all okay.
+If the child is talented but hesitant, the conversation in [not ready for travel at 11](/drive-there/the-11-year-old-whos-not-ready-for-travel/) separates ability from willingness. If money sets the boundary, use [the travel-budget script](/drive-home/when-you-cant-afford-travel/) without asking the child to solve the finances.
 
-Give them the choice once they understand what both actually cost.
+## Make a one-season decision
 
-The research on early specialization is pretty clear. David Epstein's [*Range*](/go/book-range/) makes the case in full, most elite athletes were multi-sport kids longer than you'd expect.
+Choose for one defined season and write down what would make it a good fit: attendance, enjoyment, coach communication, manageable family logistics, or a role the player understands. Pick a date after the season to review those points together.
+
+A no now is not a permanent no. A yes now is not a promise to renew.
+
+The later [13-14 renewal conversation](/drive-there/13-14-cost-benefit/) asks whether an established travel commitment is still worth repeating. At 11 or 12, the cleaner question is whether this specific next season fits the child and the household.

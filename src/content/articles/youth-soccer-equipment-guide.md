@@ -1,9 +1,9 @@
 ---
 title: "Youth soccer equipment guide"
-seoTitle: "Youth soccer equipment guide for parents"
-seoDescription: "What gear your kid actually needs for youth soccer, what to buy new vs. used, and what to skip."
-dek: "The short list of what you actually need, and where you can save money."
-bluf: "Youth soccer requires cleats, shin guards, soccer socks, and a ball. The league provides jerseys. Cleats and shin guards are the only items where fit matters enough to buy in person. Everything else can be ordered online or bought used."
+seoTitle: "Youth Soccer Equipment Checklist for Parents"
+seoDescription: "Use the team list and current soccer rules to choose footwear, shinguards, socks, and only the optional gear your young player needs."
+dek: "The team list decides the ball, uniform, footwear, and optional extras."
+bluf: "Youth soccer has a short match-day equipment list, but the team still decides the uniform, ball size, and permitted footwear. Ask before buying. Under the current Laws of the Game, shinguards must be suitable, appropriately sized, and covered by socks; jewelry is not allowed."
 format: "note"
 phase: "drive-there"
 sport: "soccer"
@@ -12,6 +12,7 @@ topic: equipment
 hero: "/illustrations/soccer-cleats-shinguards-bench.webp"
 heroAlt: "Worn soccer cleats and rolled shin guards sit on a wooden bench beside a ball in morning light through a fence."
 publishedAt: 2026-06-11
+updatedAt: 2026-08-02
 draft: false
 editorial:
   qualityGrade: 8
@@ -21,30 +22,37 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  status: published
+  reviewerNotes: "Rewritten as a current rules-first checklist. Removed prices, brands, affiliate links, age-based ball-size claims, goalkeeper upsells, footwear absolutes, and unsupported performance claims. Product selection remains in what-to-buy/soccer."
 ---
 
-Soccer has a short required gear list. Here is what to buy and where to spend carefully; the [full soccer gear guide](/what-to-buy/soccer/) has the complete picks by age if you want them all in one place.
+Get the team equipment list before choosing cleats, a ball, or goalkeeper gear.
 
-*Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+Soccer's core list is short, but age groups, fields, and competitions can use different local requirements.
 
-Cleats: buy these in person if possible, or at minimum know the brand sizing before ordering online. Soccer cleats fit narrower than sneakers. [Molded rubber cleats](/go/soccer-cleats-youth/) work on most surfaces and are required at youth rec levels.
+## Start with Law 4 and the team list
 
-Turf shoes (flat rubber nubs) work on artificial turf. Metal studs are for older players on natural grass and are not appropriate for youth leagues. Budget $30-$80 for rec, $80-$180 if your kid is in a club program and training multiple times per week.
+The current IFAB [Law 4 on players' equipment](https://www.theifab.com/laws/latest/the-players-equipment/) names a shirt with sleeves, shorts, socks, shinguards, and footwear as compulsory match equipment. Youth programs often arrange some uniform pieces, so confirm exactly what the family must provide.
 
-Shin guards: required and inspected by referees before games. They need to be worn inside the socks, not over them. [Ankle guard shin guards](/go/soccer-shin-guards-ankle-youth/) (the ones with ankle straps) are easier for younger kids to keep in place.
+Law 4 also says shinguards must be made of suitable material, be an appropriate size, and be covered by the socks. Players are responsible for the size and suitability of their shinguards.
 
-[Slip-in shin guards](/go/soccer-shin-guards-youth/) are lighter and preferred by older players. Used is fine. Buy a size that covers from just below the knee to just above the ankle.
+The same law prohibits jewelry during play. Taping over jewelry does not make it acceptable under the IFAB rule, although the referee and competition rules remain the practical authority at the field.
 
-Soccer socks: they need to cover the shin guards completely. Most leagues include a pair with the team kit. Buy a [backup pair](/go/soccer-socks-youth/) in a neutral color so you are not scrambling on game day when the team socks go missing.
+## Fit the player and the surface
 
-Ball: your kid needs a training ball at home. [Size 3](/go/soccer-ball-size3/) for under age 8, [size 4](/go/soccer-ball-size4/) for ages 8-12, [size 5](/go/soccer-ball-size5/) for ages 12 and up.
+Choose footwear only after the program identifies the playing surface and permitted sole or stud type. A store category such as "soccer cleats" does not prove that a shoe is accepted by the league or suitable for that field.
 
-A $15-$25 ball is fine for training. You do not need a match ball for backyard practice.
+Have the player try the shoes with the socks they will wear. Check that the shinguards stay covered and do not stop the player from moving normally. The [soccer buying guide](/what-to-buy/soccer/) handles product and sizing choices after those requirements are known.
 
-Goalkeeper-specific gear: if your kid plays goalkeeper, add [gloves](/go/soccer-goalie-gloves-youth/) ($30-$80) and padded goalkeeper pants for training sessions that involve a lot of diving work.
+Do not guess at a ball size from age alone. Ask the coach which size and type the team uses, and whether players need to bring a ball to practice. Match balls are normally supplied by the organizer, but a local practice policy may differ.
 
-What to skip: expensive branded training gear, personalized ball bags, and premium ankle socks with special compression features. None of it changes performance at the youth level. Save the money for tournament fees if you move to club socce
+## Keep optional items optional
+
+Goalkeeper gloves are allowed, not listed as compulsory equipment in Law 4. Buy them only after the coach confirms the player's role and what the team expects.
+
+A labeled water bottle and a simple bag make the handoff easier without changing the rules. Use the [soccer bag checklist](/drive-there/soccer-bag-checklist/) for game-day packing, and read [what to expect at soccer tryouts](/drive-there/youth-soccer-tryouts-what-to-expect/) before the first evaluation.
+
+The final check is simple: team list, shinguards under socks, approved footwear, uniform pieces, water, and no jewelry.

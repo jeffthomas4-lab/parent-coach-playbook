@@ -1,9 +1,9 @@
 ---
 title: "Youth volleyball equipment guide: what you actually need"
-seoTitle: "Youth Volleyball Equipment Guide: What You Actually Need"
-seoDescription: "What gear your kid actually needs for youth volleyball. Court shoes, knee pads, and what to skip. No fluff."
-dek: "Court shoes and knee pads. That's the list. Everything else is optional."
-bluf: "Youth volleyball requires court shoes with gum soles, knee pads, and athletic shorts or spandex. A league jersey is usually provided. Skip the branded gear bags and training equipment until your kid is playing club and actually needs them."
+seoTitle: "Youth Volleyball Equipment Checklist"
+seoDescription: "Start youth volleyball with program-approved shoes, practice clothes, water, and the uniform pieces the team names. Wait for the coach before buying extras."
+dek: "Use the program list for shoes, uniform pieces, knee pads, and a ball."
+bluf: "For a first volleyball season, start with program-approved indoor shoes, practice clothes, water, and the uniform pieces the team names. Knee pads are common but not universal. Ask before buying a ball, ankle braces, training tools, or branded bags. Product picks come after the coach's list."
 format: "note"
 phase: "drive-there"
 sport: "volleyball"
@@ -12,6 +12,7 @@ topic: equipment
 hero: "/illustrations/volleyball-knee-pads-bench.webp"
 heroAlt: "Rolled knee pads, a plain volleyball, and a water bottle sit on a gym bench under side light with a worn floor beneath."
 publishedAt: 2026-06-11
+updatedAt: 2026-08-02
 draft: false
 editorial:
   qualityGrade: 8
@@ -21,32 +22,37 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  status: published
+  reviewerNotes: "Rewritten as a program-first equipment checklist. Removed prices, brands, affiliate links, durability claims, footwear performance claims, knee-pad mandates, brace recommendations, and unsupported injury-prevention language. Product selection remains in what-to-buy/volleyball."
 ---
 
-Volleyball gear list, no fluff.
+Start with the program's equipment email, not a club-season shopping video.
 
-*Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+The team decides its uniform, practice dress, ball policy, and any required protective item.
 
-**Court shoes.** The one item worth spending real money on. Volleyball shoes have gum rubber soles for hardwood grip and extra cushioning in the forefoot for landing after jumps. Running shoes work in a pinch but slide on gym floors and don't absorb impact the same way.
+## Buy from the program list
 
-A [solid pair](/go/volleyball-shoes-upcourt/) from Mizuno, ASICS, or Nike runs $65 to $95 and lasts one to two seasons. Buy these before anything else.
+Ask which uniform pieces the club or league supplies and which pieces the family buys. Confirm the required practice clothing, approved shoe type, sock or kneepad rules, and whether a player must bring a ball.
 
-**Knee pads.** Required at any level where diving and floor defense happen, which is basically any organized play past early rec. Volleyball-specific knee pads are low-profile and designed for lateral movement. [Mizuno LR6 pads](/go/volleyball-knee-pads-lr6/) are the standard for youth players: $20 to $30, durable, and comfortable enough to wear for two-hour practices.
+Indoor court shoes are a sensible starting category, but the facility and program make the final call. Have the player try them with game socks, then check that the pair fits securely and is accepted on the gym floor.
 
-Avoid thick basketball-style pads. They shift and restrict movement.
+The current [USA Volleyball rulebooks page](https://usavolleyball.org/resources-for-officials/rulebooks-and-interpretations/) publishes the 2025-27 indoor rules and current interpretations. A local league, school association, or tournament may use a different rules code, so use the rules named by the program.
 
-**Shorts or spandex.** Athletic shorts work fine for practice. Many female players prefer [compression spandex](/go/volleyball-spandex-youth/) for matches. The league provides a jersey.
+## Treat knee pads and a ball as team decisions
 
-For practice, any moisture-wicking top works.
+Knee pads are common in youth volleyball, but that does not make one style mandatory for every program or player. Ask whether they are required, then let the player test the fit and movement during practice.
 
-**Ankle braces.** Worth considering for any player with a prior ankle sprain. [Lace-up braces like the ASO model](/go/volleyball-ankle-brace/) run $25 to $35 and provide real protection. Not required from day one, but useful for players on high-volume training schedules.
+Do not buy a ball until the coach confirms the size, weight category, and whether players bring one. Teams often have practice balls, and a ball selected from an age chart may not match the group's training plan.
 
-**A ball.** Nice to have for home practice but not required. A [Molten or Mikasa recreational volleyball](/go/volleyball-volley-lite/) runs $25 to $45. Make sure the size matches the level: size 5 is standard for most youth and adult play.
+The [volleyball buying guide](/what-to-buy/volleyball/) covers product categories after those decisions are settled. It is the right place for comparisons; this page is the pre-purchase checklist.
 
-**Skip these.** Jumping trainers, setting targets, and branded volleyball bags are marketed heavily in club circles. Most of it is optional until your kid is training seriously three or four days a week at the club level. Start with the shoes and knee pads and add from there.
+## Leave optional training gear for later
 
-The [full volleyball gear guide](/what-to-buy/volleyball/) has these picks broken out by age if you want more than the short list.
+Ankle braces, resistance tools, setting targets, and specialized bags are not default first-season purchases. A player with an injury history should follow the family's clinician and program process rather than a general shopping list.
+
+Pack the confirmed uniform or practice clothing, approved shoes, labeled water, and any knee pads or ball the coach requested. The [first-season volleyball guide](/drive-there/first-season-of-youth-volleyball/) explains the larger season handoff, while [volleyball tryout expectations](/drive-there/youth-volleyball-tryouts-what-to-expect/) covers evaluation day.
+
+If a rule question remains, the [five-minute volleyball rules primer](/rules/volleyball/) gives parents the vocabulary to ask the coach or official a precise question.

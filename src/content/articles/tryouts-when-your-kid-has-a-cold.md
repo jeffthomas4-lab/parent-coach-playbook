@@ -1,8 +1,9 @@
 ---
 title: Tryouts when your kid has a *cold*
-dek: Saturday. Tryouts. He's congested and tired. The decision.
-seoDescription: Friday night. Tryouts are tomorrow at 9. Your kid has a runny nose
-  and a cough. He says he feels okay-ish. You don't know what to do.
+dek: The roster matters. So does keeping a respiratory illness out of the gym.
+seoTitle: Should a Kid Attend Tryouts With a Cold?
+seoDescription: Use current CDC respiratory guidance, the team's illness policy, and a make-up request to decide what to do when your child is sick before tryouts.
+bluf: "A fever-free morning does not automatically make a child ready for tryouts. Follow the team's illness policy and current CDC guidance: stay home while respiratory symptoms are not improving overall, and return only after at least 24 hours without fever or fever-reducing medicine."
 topic: tryouts
 format: note
 phase: drive-there
@@ -11,89 +12,54 @@ age: 11-12
 hero: "/illustrations/parents-waiting-outside-gym.webp"
 heroAlt: "Adults stand and sit in a hallway outside closed gym doors, seen at distance down the corridor under fluorescent light."
 publishedAt: 2026-02-08
+updatedAt: 2026-08-02
 featured: false
 editorial:
-  qualityGrade: 8
+  qualityGrade: 9
   originalityGrade: 8
   voiceGrade: 8
   flagInappropriateness: false
   flagIpRisk: false
-  flagSensitiveTopic: false
+  flagSensitiveTopic: true
   citationCheckPassed: true
   affiliateDisclosurePresent: false
-  claudeReviewedAt: 2026-04-10
-  status: claude-reviewed
-  reviewerNotes: ""
+  claudeReviewedAt: 2026-08-02
+  status: published
+  reviewerNotes: "Replaced diagnosis, medication, performance, relapse, and self-clearance claims with a current CDC-based public-health threshold, red-flag escalation, and a make-up tryout script."
+  factCheckGoodThrough: 2027-08-02
 ---
 
-Friday night. Tryouts are tomorrow at 9. Your kid has a runny nose and a cough. He says he feels okay-ish. You don't know what to do.
+**Last reviewed:** August 2026 | **Reviewed by:** Parent Coach Playbook Editorial
 
-**The triage**
+*This article provides general educational information and is not medical advice. For symptoms, diagnosis, treatment, or return-to-sport decisions, consult a qualified health care professional who can evaluate your child.*
 
-Three questions.
+The night before a tryout is a bad time to invent a medical test. A parent cannot identify the virus, measure contagiousness, or clear intense exercise by deciding whether a cough sounds like it is in the throat or chest.
 
-Does he have a fever? If yes, he doesn't go.
+## Use the public-health threshold first
 
-Is the cough at his chest or his throat? Throat is fine. Chest is not. Chest cough means he stays home.
+The CDC's [current respiratory-virus guidance](https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html) says people with respiratory symptoms should stay home until symptoms have been improving overall for at least 24 hours and any fever has been gone for 24 hours without fever-reducing medicine.
 
-Is he sleeping normally? If yes, he probably has a cold. If no, he's getting sicker. Wait and see.
+That is a return-to-normal-activities threshold, not individualized clearance for a hard tryout. Follow the team, school, or facility illness policy too. A stricter rule controls attendance.
 
-**If he has a basic cold, no fever**
+Do not use medicine to hide a fever or make the child appear eligible. For any medication question, follow the label and ask the child's clinician or pharmacist.
 
-He goes. Most colds at the early stage don't significantly affect performance. He'll have less energy than usual. Coaches will not weight that heavily if he plays through.
+## Email before the roster closes
 
-Tell coach when you arrive. *He's fighting a cold. He's playing today but he's not 100%.* This is honest, sets context, and protects against the kid being marked down for what looks like effort issues.
+Write the coach as soon as the child fails the attendance threshold:
 
-**The energy question**
+"My child has respiratory symptoms and will not attend while sick. Is there a make-up session or another evaluation route? I can provide the information you need without sharing private medical details."
 
-Mid-cold means his energy is 80%. He should pace himself. Don't sprint the warm-up. Save it for the drills.
+A coach may offer a later session, prior-practice evaluation, or no alternative. Missing the tryout can still be the correct decision.
 
-**The hygiene question**
+If the child meets the public-health threshold and the program allows attendance, the CDC recommends added precautions for the next five days because transmission can still occur. Ask the organizer what precautions work in that setting rather than promising that hand sanitizer alone solves the risk.
 
-He doesn't share water bottles. He covers his cough. He uses hand sanitizer between drills. Don't make a thing of it. Just have the kit.
+## Know what the article cannot decide
 
-Most coaches appreciate the kid who manages his cold well during tryouts.
+CDC lists trouble breathing, chest pain, dehydration, severe weakness, bluish lips or face, and symptoms that improve then return or worsen among reasons to seek prompt medical care. Use the [CDC respiratory-illness warning signs](https://www.cdc.gov/respiratory-viruses/about/index.html), not a tryout warm-up, when symptoms are concerning.
 
-**If it's worse than a cold**
+When the illness is over, return to ordinary preparation with [the night-before tryout guide](/drive-there/night-before-tryouts/). During the session, [how to read the tryout drill](/drive-there/how-to-read-the-tryout-drill/) explains what parents are seeing. If the result takes time, use [the post-tryouts wait](/drive-home/the-post-tryouts-wait/) without turning one absence into a verdict on the child.
 
-If he has a fever, body aches, fatigue beyond the cold range. Stay home.
+### Sources reviewed
 
-The temptation is to push through. The cost is the rest of the week. The cost might be the next four kids he infects on the field.
-
-Coaches understand. Email coach Friday night. *He's sick. We're not coming tomorrow. Is there a make-up?*
-
-Most teams have a make-up tryout the following weekend. Some don't, but you ask.
-
-**If there's no make-up**
-
-You eat the loss. He misses tryouts. He tries out next year.
-
-This is rare and feels harsh. It also teaches him that health is not something you push through arbitrarily. That's a real adult lesson.
-
-**What you don't do**
-
-Dose him with cold medication and send him out. Most cold meds dehydrate him further. Performance drops more than the cold itself.
-
-Lie to the coach about how sick he is. Coaches see through it.
-
-The kid coughing through warm-up is harder to evaluate than the kid who said *I'm fighting something* up front.
-
-**The post-tryout**
-
-If he went sick, the recovery is real. Fluids, rest, early bedtime. Skip Sunday's optional activities.
-
-Don't let him jump back into a full schedule on Monday. He'll relapse.
-
-**The harder version**
-
-The tryout is for a team that matters a lot. The cold is real but he might be okay. You don't know.
-
-Trust the body. If he can warm up without coughing hard, he plays. If the warm-up makes him worse, he stops.
-
-Most kids self-regulate during tryouts. The kid who said he was okay and is dragging at minute 20 will tell you. Listen to him.
-
-**The longer arc**
-
-One missed tryout, one cold-affected tryout, neither defines a sports career. Coaches who see kids over time see all the data. They factor in injury and illness.
-
-If your kid is genuinely capable, missing one tryout because of a real cold is a footnote, not a chapter. Don't make it bigger than it is.
+- Centers for Disease Control and Prevention, [Preventing Spread of Respiratory Viruses When You're Sick](https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html), updated August 2025.
+- Centers for Disease Control and Prevention, [About Respiratory Illnesses](https://www.cdc.gov/respiratory-viruses/about/index.html), updated August 2025.

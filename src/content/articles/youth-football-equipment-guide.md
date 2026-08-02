@@ -1,9 +1,9 @@
 ---
 title: "Youth football equipment guide"
-seoTitle: "Youth football equipment guide for parents"
-seoDescription: "What gear your kid actually needs for youth football, what to buy new vs. used, and what to skip."
-dek: "What to buy, what to skip, and where used gear is fine."
-bluf: "The required list for youth tackle football: helmet, shoulder pads, mouth guard, cleats, girdle with hip/thigh pads, and athletic cup. Helmets and shoulder pads should be bought new or certified reconditioned. Everything else can be bought used."
+seoTitle: "Youth Football Equipment Checklist for Parents"
+seoDescription: "Ask what the league supplies, verify helmet certification and recertification records, and buy only the youth football gear your program requires."
+dek: "Start with the league list, then verify the helmet record and fit."
+bluf: "Before buying youth tackle football gear, ask what the league supplies and get its current equipment list. Do not buy a helmet until the program confirms the model, certification label, fitting process, and recertification history. Flag football uses a different, much shorter list."
 format: "note"
 phase: "drive-there"
 sport: "football"
@@ -12,6 +12,7 @@ topic: equipment
 hero: "/illustrations/football-goalpost-empty-field.webp"
 heroAlt: "A goalpost stands at the end of an empty youth football field, photographed at low angle in morning fog with hash marks fading away."
 publishedAt: 2026-06-11
+updatedAt: 2026-08-02
 draft: false
 editorial:
   qualityGrade: 8
@@ -21,38 +22,40 @@ editorial:
   flagIpRisk: false
   flagSensitiveTopic: false
   citationCheckPassed: true
+  sportLanguageCheckPassed: true
   affiliateDisclosurePresent: false
   claudeReviewedAt: 2026-06-11
-  status: claude-reviewed
-  reviewerNotes: ""
+  status: published
+  reviewerNotes: "Rewritten as a rules-first equipment checklist. Removed prices, brands, affiliate links, used-gear absolutes, fit prescriptions, and unsupported cup, cleat, and performance claims. Product selection remains in what-to-buy/football."
 ---
 
-The registration confirmation will usually include a gear list. Here is how to read it without overspending.
+Do not start in the sporting-goods aisle. Start with the league email.
 
-*Some links below are affiliate links. As an Amazon Associate we earn from qualifying purchases.*
+The program may supply the most expensive pieces, and its current rules decide which remaining items a player must bring.
 
-Helmet: buy new or buy NOCSAE-certified reconditioned. Do not buy a used helmet from a garage sale or a sporting goods store's clearance rack. The helmet is the only piece of football equipment where the condition of the foam liner is not visible.
+## Ask the league before buying
 
-A helmet that has taken real hits may look fine and not be fine. Riddell, Schutt, and Xenith all make youth models in the $80-$150 range.
+First confirm whether the season is tackle or flag, then request the equipment list for the player's division. Ask who supplies the helmet, shoulder pads, practice pants or girdle, game uniform, and flags.
 
-Your league may provide helmets. Ask before you buy.
+For tackle, buy only the personal items named on that list. That may include a mouthguard, practice clothing, permitted footwear, a labeled water bottle, and program-specified padding. Do not assume a list from another league or last season still applies.
 
-Shoulder pads: new or certified reconditioned here too. Fit matters. The pads should cover the entire shoulder cap, the top of the chest, and the upper back.
+Flag football has a smaller equipment load and different local rules. The [flag football buying guide](/what-to-buy/flag-football/) keeps those decisions separate from tackle gear.
 
-If your kid's arms cannot move freely, they are too big. Most sporting goods stores will fit them if you bring the kid.
+## Verify the helmet record and fit
 
-Mouth guard: [buy new every season](/go/football-mouthguard-sisu/). They run $5-$15. This is not an area to economize.
+NOCSAE writes performance standards, but it does not certify or approve individual football helmets. Its [football helmet certification clarification](https://nocsae.org/nocsae-issues-clarification-about-football-helmet-certification-to-nocsae-standards/) explains that an independent certifying body oversees manufacturer compliance.
 
-Cleats: used is fine. [Football cleats with detachable molded rubber cleats](/go/football-cleats-youth/) are the standard. Metal cleats are typically not allowed at youth levels.
+For a league-provided or family-owned helmet, look for the required certification and recertification labels, then follow the manufacturer's fitting instructions. NOCSAE's [recertification guidance](https://nocsae.org/general-recertification-requirements-and-recommendations/) says the recertification label identifies who performed the work and when, while the manufacturer sets the interval.
 
-Your kid's foot will grow faster than the cleats wear out, so buy a half-size up.
+Do not buy an anonymous used helmet with no readable history. Ask the equipment manager to confirm that the exact helmet is accepted, current, complete, and fitted before the first contact practice.
 
-Girdle with integrated pads: this is the [padded compression shorts](/go/football-girdle-youth/) that protect hips, thighs, and tailbone. Used is fine. They take no real impact.
+## Pack the confirmed list
 
-Athletic cup: [required for boys](/go/football-cup-shorts-youth/) in most programs. Used is not fine.
+Use one final check before leaving home:
 
-Gloves: [optional but commonly used](/go/football-gloves-receiver-youth/) by skill position players. Not required.
+- helmet and shoulder pads, if the program says the player brings them
+- every required pad or garment, installed as the program directs
+- mouthguard and permitted footwear named by the league
+- practice jersey or shirt, labeled water bottle, and any required paperwork
 
-For flag football: the gear list is much shorter. Cleats, mouth guard, athletic supporter. The league provides the flags. The [flag football gear guide](/what-to-buy/flag-football/) covers that shorter list if tackle is a year or two off.
-
-One number to have in your head before you start: equipping a kid for youth tackle football from scratch runs $150-$400 depending on whether you buy new or certified used. The helmet is always the biggest line item and should 
+The [football buying guide](/what-to-buy/football/) covers sizing and product categories after the team confirms the rules. The guide to [what happens at youth football practice](/drive-there/youth-football-practice-what-to-expect/) covers the routine, so this page can stay focused on the equipment handoff.
