@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "as_of": "2026-08-02",
-  "inventory_sha256": "0d0f7f0ba0135e8916ceed7193a01d23eda01de6c5c20f6b4b84357b7d633ba1",
+  "inventory_sha256": "95cbd5e2729acabd4a12bfcf8647dbc3542d6d0ea92c611eb09ceb39b8cb2e23",
   "policy": {
     "refresh_months": 18,
     "source_reference_scope": "literal contextual references only; generated hub links require emitted-artifact evidence",
