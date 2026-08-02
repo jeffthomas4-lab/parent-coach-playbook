@@ -22,6 +22,7 @@ env:
 
 jobs:
   verify-ref:
+    if: github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'Publish BabyLoveGrowth article ')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
