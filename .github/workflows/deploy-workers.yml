@@ -36,6 +36,34 @@ jobs:
           git cat-file -e "$DEPLOY_SHA^{commit}"
           git merge-base --is-ancestor "$DEPLOY_SHA" origin/main
 
+  classify-release:
+    needs: verify-ref
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      eligible: ${{ steps.classify.outputs.eligible }}
+      article_id: ${{ steps.classify.outputs.article_id }}
+      article_slug: ${{ steps.classify.outputs.article_slug }}
+      article_route: ${{ steps.classify.outputs.article_route }}
+      reason: ${{ steps.classify.outputs.reason }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Classify the immutable release diff
+        id: classify
+        run: node scripts/classify-babylove-release.mjs --sha "$DEPLOY_SHA" --output babylove-release-classification.json
+      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        with:
+          name: pcd-release-classification-${{ env.DEPLOY_SHA }}
+          path: babylove-release-classification.json
+          if-no-files-found: error
+          retention-days: 90
+
   build-staging:
     needs: verify-ref
     runs-on: ubuntu-latest
@@ -102,7 +130,7 @@ jobs:
           retention-days: 30
 
   deploy-staging:
-    needs: [build-staging, build-production]
+    needs: [classify-release, build-staging, build-production]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
@@ -143,6 +171,15 @@ jobs:
           node scripts/smoke-worker-deployment.mjs --origin https://parent-coach-desk-staging.eepskalla.workers.dev --target staging --asset-proof staging-static-asset.json --report staging-smoke.json
           sha256sum staging-smoke.json > staging-smoke.json.sha256
           sha256sum -c staging-smoke.json.sha256
+      - name: Prove the eligible BabyLove article on staging
+        if: needs.classify-release.outputs.eligible == 'true'
+        run: |
+          node scripts/smoke-babylove-article.mjs \
+            --origin https://parent-coach-desk-staging.eepskalla.workers.dev \
+            --canonical-origin https://parentcoachdesk.com \
+            --route "${{ needs.classify-release.outputs.article_route }}" \
+            --report babylove-staging-smoke.json
+          sha256sum babylove-staging-smoke.json > babylove-staging-smoke.json.sha256
       - name: Halt and alert on staging smoke failure
         if: always() && steps.smoke-staging.outcome == 'failure'
         env:
@@ -157,9 +194,35 @@ jobs:
             staging-smoke.json.sha256
           if-no-files-found: error
           retention-days: 30
+      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        if: needs.classify-release.outputs.eligible == 'true'
+        with:
+          name: pcd-babylove-staging-smoke-${{ env.DEPLOY_SHA }}
+          path: |
+            babylove-staging-smoke.json
+            babylove-staging-smoke.json.sha256
+          if-no-files-found: error
+          retention-days: 90
+
+  approve-babylove-production:
+    needs: [classify-release, deploy-staging]
+    if: needs.classify-release.outputs.eligible == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Approve only this classifier-proven content deployment
+        env:
+          BABYLOVE_DEPLOY_APPROVER_TOKEN: ${{ secrets.BABYLOVE_PUBLISH_TOKEN }}
+        run: node scripts/approve-babylove-production.mjs
 
   deploy-production:
-    needs: deploy-staging
+    needs: [classify-release, deploy-staging]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
@@ -204,6 +267,15 @@ jobs:
           node scripts/smoke-worker-deployment.mjs --origin https://parentcoachdesk.com --target production --asset-proof production-static-asset.json --report production-smoke.json
           sha256sum production-smoke.json > production-smoke.json.sha256
           sha256sum -c production-smoke.json.sha256
+      - name: Prove the eligible BabyLove article on production
+        if: needs.classify-release.outputs.eligible == 'true'
+        run: |
+          node scripts/smoke-babylove-article.mjs \
+            --origin https://parentcoachdesk.com \
+            --canonical-origin https://parentcoachdesk.com \
+            --route "${{ needs.classify-release.outputs.article_route }}" \
+            --report babylove-production-smoke.json
+          sha256sum babylove-production-smoke.json > babylove-production-smoke.json.sha256
       # Halt and alert. Does NOT roll back.
       #
       # This step used to auto-roll-back production to a version id read from a
@@ -227,5 +299,14 @@ jobs:
           path: |
             production-smoke.json
             production-smoke.json.sha256
+          if-no-files-found: error
+          retention-days: 90
+      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        if: needs.classify-release.outputs.eligible == 'true'
+        with:
+          name: pcd-babylove-production-smoke-${{ env.DEPLOY_SHA }}
+          path: |
+            babylove-production-smoke.json
+            babylove-production-smoke.json.sha256
           if-no-files-found: error
           retention-days: 90

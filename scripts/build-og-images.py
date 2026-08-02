@@ -135,7 +135,7 @@ def render_card(title: str, eyebrow: str, accent, out_path: Path):
 
     # Top-left site mark (uppercase)
     site_font = ImageFont.truetype(str(F_REGULAR_500), 18)
-    draw.text((PAD_X, PAD_Y + 18), 'PARENTCOACHPLAYBOOK.COM', font=site_font, fill=INK)
+    draw.text((PAD_X, PAD_Y + 18), 'PARENTCOACHDESK.COM', font=site_font, fill=INK)
 
     # Top-right eyebrow (the article phase)
     eyebrow_text = eyebrow.upper()

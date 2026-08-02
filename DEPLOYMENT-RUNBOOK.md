@@ -12,10 +12,20 @@ separately governed rollback target, not the normal deployment path.
    both before extracting it.
 4. Staging deploys the verified generated `dist/server/wrangler.json` and passes
    target-specific smoke tests.
-5. The production job waits at the protected GitHub `production` Environment.
-   Its Cloudflare credential is unavailable until Jeff approves the job.
-6. Production dry-runs and deploys the same verified generated manifest, then
+5. The release classifier checks whether the immutable commit is the governed
+   normalization child of exactly one BabyLoveGrowth article commit. It fails
+   closed unless the combined diff contains only that article and
+   `reports/editorial/editorial-refresh-queue.json`, with matching provider ID,
+   slug, phase, and published frontmatter.
+6. Every release waits at the protected GitHub `production` Environment.
+   After the same full build, staging deploy, checksum, and smoke gates pass,
+   a parallel job may approve that one pending deployment through GitHub's
+   deployment-review API only when the classifier proves an eligible
+   content-only BabyLove release. All other releases still require Jeff.
+7. Production dry-runs and deploys the same verified generated manifest, then
    records version and secret-name evidence and runs public smoke tests.
+   Eligible BabyLove releases also prove the exact article route, canonical,
+   H1, indexability, and absence of visible provider promotion.
 
 Each build also selects one content-hashed Astro CSS/JS asset and records its
 exact byte length and SHA-256 next to the artifact. Post-deploy smoke must fetch
@@ -27,9 +37,16 @@ The GitHub Environments must restrict deployment to `main`. Disable protection
 bypass where the repository plan supports it. Store separate
 `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` values in `staging` and
 `production`; never store the production token as a repository-wide secret.
+The repository-scoped `BABYLOVE_PUBLISH_TOKEN` is also the deployment reviewer
+for eligible content-only releases and therefore requires Contents write plus
+Deployments write for this repository. The approval script is not a general
+bypass: it only targets the current run's pending `production` Environment and
+runs only from the checksummed classifier output for the exact allowlisted
+two-file lineage. Keep `prevent_self_review` disabled for this machine reviewer.
 Set the Environment variable `DEPLOY_GATE_CONFIGURED=true` only after its branch
-restriction and required-reviewer policy have been verified. The workflow
-fails closed when that marker is absent.
+restriction and appropriate reviewer policy have been verified. The workflow
+fails closed when that marker is absent. Changes to the classifier, deploy
+workflow, or smoke scripts require review as production authorization code.
 
 ## Emergency path
 
