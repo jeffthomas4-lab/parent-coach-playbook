@@ -22,7 +22,7 @@ editorial:
   status: published
   citationCheckPassed: false
   factCheckGoodThrough: 2027-01-01
-  reviewerNotes: "Imported from authenticated BabyLoveGrowth publishing; normalized and source-reviewed by Codex on 2026-08-02. Citation follow-up remains queued for generalized cost ranges."
+  reviewerNotes: "Imported from authenticated BabyLoveGrowth publishing; normalized, source-reviewed, and production-path canary verified by Codex on 2026-08-02. Citation follow-up remains queued for generalized cost ranges."
 ---
 
 Many American families now spend a substantial amount per child on their primary sport each year, and that spending has risen sharply over recent years. Before you sign anything this season, do two things: search your city's parks and recreation page for scholarship programs, and compare the full-season cost of a recreational league against a club team. That single comparison can save you hundreds of dollars and a lot of stress.
